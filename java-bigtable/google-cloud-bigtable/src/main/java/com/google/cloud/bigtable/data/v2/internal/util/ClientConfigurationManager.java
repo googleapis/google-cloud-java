@@ -386,40 +386,8 @@ public class ClientConfigurationManager implements AutoCloseable {
     return future;
   }
 
-  @SuppressWarnings("deprecation")
   private ClientConfiguration normalizeConfig(ClientConfiguration cfg) {
     ClientConfiguration.Builder builder = cfg.toBuilder();
-
-    // TODO: remove this once server is updated
-    // Patch PollingConfiguration (migrating PollingInterval)
-    if (!cfg.hasPollingConfiguration()) {
-      builder.setPollingConfiguration(
-          defaultConfig.getPollingConfiguration().toBuilder()
-              .setPollingInterval(cfg.getPollingInterval()));
-    }
-
-    // TODO: remove this once server is updated
-    // Patch SessionPoolConfiguration (migrating LoadBalancingOptions)
-    if (!cfg.getSessionConfiguration().hasSessionPoolConfiguration()) {
-      builder
-          .getSessionConfigurationBuilder()
-          .clearLoadBalancingOptions()
-          .setSessionPoolConfiguration(
-              defaultConfig.getSessionConfiguration().getSessionPoolConfiguration().toBuilder()
-                  .setLoadBalancingOptions(cfg.getSessionConfiguration().getLoadBalancingOptions())
-                  .build());
-    } else {
-      // ignore LoadBalancing options when we migrated to SessionPoolConfig
-      builder.getSessionConfigurationBuilder().clearLoadBalancingOptions();
-    }
-    // TODO: remove this once server is updated
-    // Patch ChannelPoolConfiguration
-    if (!cfg.getSessionConfiguration().hasChannelConfiguration()) {
-      builder
-          .getSessionConfigurationBuilder()
-          .setChannelConfiguration(
-              defaultConfig.getSessionConfiguration().getChannelConfiguration());
-    }
 
     // Patch debug tag level
     switch (cfg.getTelemetryConfiguration().getDebugTagLevel()) {
@@ -446,8 +414,8 @@ public class ClientConfigurationManager implements AutoCloseable {
     }
 
     // When sessions are disabled make sure to clear out the config. Read from the builder, not
-    // cfg, so that a nonzero session_load supplied via the override sys-prop is honoured even when
-    // the server-returned config has session_load=0.
+    // cfg, so that a diversion config supplied via the override sys-prop is honoured even when
+    // the server-returned config disables sessions.
     if (!divertsAnyTrafficToSessions(builder.getSessionConfiguration())) {
       builder.clearSessionConfiguration();
       return builder.build();

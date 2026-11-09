@@ -803,6 +803,578 @@ import org.jspecify.annotations.Nullable;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> CreateAutoProtectionPolicy</td>
+ *      <td><p> Creates a new AutoProtectionPolicy in a given project and location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createAutoProtectionPolicyAsync(CreateAutoProtectionPolicyRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> createAutoProtectionPolicyAsync(LocationName parent, AutoProtectionPolicy autoProtectionPolicy, String autoProtectionPolicyId)
+ *           <li><p> createAutoProtectionPolicyAsync(String parent, AutoProtectionPolicy autoProtectionPolicy, String autoProtectionPolicyId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createAutoProtectionPolicyOperationCallable()
+ *           <li><p> createAutoProtectionPolicyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListAutoProtectionPolicies</td>
+ *      <td><p> Lists AutoProtectionPolicies for a given project and location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listAutoProtectionPolicies(ListAutoProtectionPoliciesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listAutoProtectionPolicies(LocationName parent)
+ *           <li><p> listAutoProtectionPolicies(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listAutoProtectionPoliciesPagedCallable()
+ *           <li><p> listAutoProtectionPoliciesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetAutoProtectionPolicy</td>
+ *      <td><p> Gets details of a single AutoProtectionPolicy.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getAutoProtectionPolicy(GetAutoProtectionPolicyRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getAutoProtectionPolicy(AutoProtectionPolicyName name)
+ *           <li><p> getAutoProtectionPolicy(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getAutoProtectionPolicyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateAutoProtectionPolicy</td>
+ *      <td><p> Updates the parameters of a single AutoProtectionPolicy.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateAutoProtectionPolicyAsync(UpdateAutoProtectionPolicyRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> updateAutoProtectionPolicyAsync(AutoProtectionPolicy autoProtectionPolicy, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateAutoProtectionPolicyOperationCallable()
+ *           <li><p> updateAutoProtectionPolicyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteAutoProtectionPolicy</td>
+ *      <td><p> Deletes a single AutoProtectionPolicy.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteAutoProtectionPolicyAsync(DeleteAutoProtectionPolicyRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> deleteAutoProtectionPolicyAsync(AutoProtectionPolicyName name)
+ *           <li><p> deleteAutoProtectionPolicyAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteAutoProtectionPolicyOperationCallable()
+ *           <li><p> deleteAutoProtectionPolicyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateAutoProtectionPolicyBinding</td>
+ *      <td><p> Creates a new AutoProtectionPolicyBinding in a given project and location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createAutoProtectionPolicyBindingAsync(CreateAutoProtectionPolicyBindingRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> createAutoProtectionPolicyBindingAsync(AutoProtectionPolicyName parent, AutoProtectionPolicyBinding autoProtectionPolicyBinding, String autoProtectionPolicyBindingId)
+ *           <li><p> createAutoProtectionPolicyBindingAsync(String parent, AutoProtectionPolicyBinding autoProtectionPolicyBinding, String autoProtectionPolicyBindingId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createAutoProtectionPolicyBindingOperationCallable()
+ *           <li><p> createAutoProtectionPolicyBindingCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetAutoProtectionPolicyBinding</td>
+ *      <td><p> Returns the auto protection policy binding read from the CCFE tables.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getAutoProtectionPolicyBinding(GetAutoProtectionPolicyBindingRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getAutoProtectionPolicyBinding(AutoProtectionPolicyBindingName name)
+ *           <li><p> getAutoProtectionPolicyBinding(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getAutoProtectionPolicyBindingCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListAutoProtectionPolicyBindings</td>
+ *      <td><p> Returns the auto protection policy bindings read from the CCFE tables.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listAutoProtectionPolicyBindings(ListAutoProtectionPolicyBindingsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listAutoProtectionPolicyBindings(AutoProtectionPolicyName parent)
+ *           <li><p> listAutoProtectionPolicyBindings(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listAutoProtectionPolicyBindingsPagedCallable()
+ *           <li><p> listAutoProtectionPolicyBindingsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListAppliedAutoProtectionPolicies</td>
+ *      <td><p> Lists AppliedAutoProtectionPolicies in a given project and location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listAppliedAutoProtectionPolicies(ListAppliedAutoProtectionPoliciesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listAppliedAutoProtectionPolicies(LocationName parent)
+ *           <li><p> listAppliedAutoProtectionPolicies(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listAppliedAutoProtectionPoliciesPagedCallable()
+ *           <li><p> listAppliedAutoProtectionPoliciesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> InitiateDeleteAutoProtectionPolicyBinding</td>
+ *      <td><p> InitiateDeleteAutoProtectionPolicyBinding initiates delete for AutoProtectionPolicy Binding</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> initiateDeleteAutoProtectionPolicyBindingAsync(InitiateDeleteAutoProtectionPolicyBindingRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> initiateDeleteAutoProtectionPolicyBindingAsync(AutoProtectionPolicyBindingName name)
+ *           <li><p> initiateDeleteAutoProtectionPolicyBindingAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> initiateDeleteAutoProtectionPolicyBindingOperationCallable()
+ *           <li><p> initiateDeleteAutoProtectionPolicyBindingCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListBindingMatchingResources</td>
+ *      <td><p> Lists Binding Matching Resources for a given AutoProtectionPolicyBinding.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listBindingMatchingResources(ListBindingMatchingResourcesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listBindingMatchingResources(AutoProtectionPolicyBindingName parent)
+ *           <li><p> listBindingMatchingResources(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listBindingMatchingResourcesPagedCallable()
+ *           <li><p> listBindingMatchingResourcesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateRestoreTemplate</td>
+ *      <td><p> Creates a new RestoreTemplate in a given project and location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createRestoreTemplateAsync(CreateRestoreTemplateRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> createRestoreTemplateAsync(LocationName parent, RestoreTemplate restoreTemplate, String restoreTemplateId)
+ *           <li><p> createRestoreTemplateAsync(String parent, RestoreTemplate restoreTemplate, String restoreTemplateId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createRestoreTemplateOperationCallable()
+ *           <li><p> createRestoreTemplateCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetRestoreTemplate</td>
+ *      <td><p> Gets details of a RestoreTemplate.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getRestoreTemplate(GetRestoreTemplateRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getRestoreTemplate(RestoreTemplateName name)
+ *           <li><p> getRestoreTemplate(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getRestoreTemplateCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListRestoreTemplates</td>
+ *      <td><p> Lists RestoreTemplates in a given project and location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listRestoreTemplates(ListRestoreTemplatesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listRestoreTemplates(LocationName parent)
+ *           <li><p> listRestoreTemplates(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listRestoreTemplatesPagedCallable()
+ *           <li><p> listRestoreTemplatesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateRestoreTemplate</td>
+ *      <td><p> Updates the settings of a RestoreTemplate.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateRestoreTemplateAsync(UpdateRestoreTemplateRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> updateRestoreTemplateAsync(RestoreTemplate restoreTemplate, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateRestoreTemplateOperationCallable()
+ *           <li><p> updateRestoreTemplateCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteRestoreTemplate</td>
+ *      <td><p> Deletes a RestoreTemplate.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteRestoreTemplateAsync(DeleteRestoreTemplateRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> deleteRestoreTemplateAsync(RestoreTemplateName name)
+ *           <li><p> deleteRestoreTemplateAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteRestoreTemplateOperationCallable()
+ *           <li><p> deleteRestoreTemplateCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> RunRestoreTemplate</td>
+ *      <td><p> Runs a RestoreTemplate.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> runRestoreTemplateAsync(RunRestoreTemplateRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> runRestoreTemplateAsync(RestoreTemplateName name)
+ *           <li><p> runRestoreTemplateAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> runRestoreTemplateOperationCallable()
+ *           <li><p> runRestoreTemplateCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetRestoreTemplateExecution</td>
+ *      <td><p> Gets details of a RestoreTemplateExecution.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getRestoreTemplateExecution(GetRestoreTemplateExecutionRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getRestoreTemplateExecution(RestoreTemplateExecutionName name)
+ *           <li><p> getRestoreTemplateExecution(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getRestoreTemplateExecutionCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListRestoreTemplateExecutions</td>
+ *      <td><p> Lists RestoreTemplateExecutions in a given project, location and restore template.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listRestoreTemplateExecutions(ListRestoreTemplateExecutionsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listRestoreTemplateExecutions(RestoreTemplateName parent)
+ *           <li><p> listRestoreTemplateExecutions(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listRestoreTemplateExecutionsPagedCallable()
+ *           <li><p> listRestoreTemplateExecutionsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> TriggerRestoreCleanup</td>
+ *      <td><p> Triggers cleanup of restored resources created during execution.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> triggerRestoreCleanupAsync(TriggerRestoreCleanupRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> triggerRestoreCleanupAsync(RestoreTemplateExecutionName name)
+ *           <li><p> triggerRestoreCleanupAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> triggerRestoreCleanupOperationCallable()
+ *           <li><p> triggerRestoreCleanupCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateRestoreVerificationPlan</td>
+ *      <td><p> Creates a new RestoreVerificationPlan in a given project and location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createRestoreVerificationPlanAsync(CreateRestoreVerificationPlanRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> createRestoreVerificationPlanAsync(LocationName parent, RestoreVerificationPlan restoreVerificationPlan, String restoreVerificationPlanId)
+ *           <li><p> createRestoreVerificationPlanAsync(String parent, RestoreVerificationPlan restoreVerificationPlan, String restoreVerificationPlanId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createRestoreVerificationPlanOperationCallable()
+ *           <li><p> createRestoreVerificationPlanCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateRestoreVerificationPlanAssociation</td>
+ *      <td><p> Creates a new RestoreVerificationPlanAssociation in a given RestoreVerificationPlan.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createRestoreVerificationPlanAssociationAsync(CreateRestoreVerificationPlanAssociationRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> createRestoreVerificationPlanAssociationAsync(RestoreVerificationPlanName parent, RestoreVerificationPlanAssociation restoreVerificationPlanAssociation, String restoreVerificationPlanAssociationId)
+ *           <li><p> createRestoreVerificationPlanAssociationAsync(String parent, RestoreVerificationPlanAssociation restoreVerificationPlanAssociation, String restoreVerificationPlanAssociationId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createRestoreVerificationPlanAssociationOperationCallable()
+ *           <li><p> createRestoreVerificationPlanAssociationCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetRestoreVerificationPlanAssociation</td>
+ *      <td><p> Gets details of a single RestoreVerificationPlanAssociation in a given RestoreVerificationPlan.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getRestoreVerificationPlanAssociation(GetRestoreVerificationPlanAssociationRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getRestoreVerificationPlanAssociation(RestoreVerificationPlanAssociationName name)
+ *           <li><p> getRestoreVerificationPlanAssociation(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getRestoreVerificationPlanAssociationCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListRestoreVerificationPlanAssociations</td>
+ *      <td><p> Lists RestoreVerificationPlanAssociations in a given RestoreVerificationPlan.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listRestoreVerificationPlanAssociations(ListRestoreVerificationPlanAssociationsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listRestoreVerificationPlanAssociations(RestoreVerificationPlanName parent)
+ *           <li><p> listRestoreVerificationPlanAssociations(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listRestoreVerificationPlanAssociationsPagedCallable()
+ *           <li><p> listRestoreVerificationPlanAssociationsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteRestoreVerificationPlanAssociation</td>
+ *      <td><p> Deletes a single RestoreVerificationPlanAssociation in a given RestoreVerificationPlan.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteRestoreVerificationPlanAssociationAsync(DeleteRestoreVerificationPlanAssociationRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> deleteRestoreVerificationPlanAssociationAsync(RestoreVerificationPlanAssociationName name)
+ *           <li><p> deleteRestoreVerificationPlanAssociationAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteRestoreVerificationPlanAssociationOperationCallable()
+ *           <li><p> deleteRestoreVerificationPlanAssociationCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> TriggerRestoreVerification</td>
+ *      <td><p> Triggers a new Restore Verification for the association in a given RestoreVerificationPlan.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> triggerRestoreVerificationAsync(TriggerRestoreVerificationRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> triggerRestoreVerificationAsync(RestoreVerificationPlanAssociationName name)
+ *           <li><p> triggerRestoreVerificationAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> triggerRestoreVerificationOperationCallable()
+ *           <li><p> triggerRestoreVerificationCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetRestoreVerificationPlan</td>
+ *      <td><p> Gets details of a single RestoreVerificationPlan. Returns the requested RestoreVerificationPlan.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getRestoreVerificationPlan(GetRestoreVerificationPlanRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getRestoreVerificationPlan(RestoreVerificationPlanName name)
+ *           <li><p> getRestoreVerificationPlan(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getRestoreVerificationPlanCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListRestoreVerificationPlans</td>
+ *      <td><p> Lists RestoreVerificationPlans in a given project and location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listRestoreVerificationPlans(ListRestoreVerificationPlansRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listRestoreVerificationPlans(LocationName parent)
+ *           <li><p> listRestoreVerificationPlans(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listRestoreVerificationPlansPagedCallable()
+ *           <li><p> listRestoreVerificationPlansCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteRestoreVerificationPlan</td>
+ *      <td><p> Deletes a single RestoreVerificationPlan. If the `force` flag is set to `true`, any RestoreVerificationPlanAssociations linked to this RestoreVerificationPlan will also be deleted.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteRestoreVerificationPlanAsync(DeleteRestoreVerificationPlanRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> deleteRestoreVerificationPlanAsync(RestoreVerificationPlanName name)
+ *           <li><p> deleteRestoreVerificationPlanAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteRestoreVerificationPlanOperationCallable()
+ *           <li><p> deleteRestoreVerificationPlanCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> ListLocations</td>
  *      <td><p> Lists information about the supported locations for this service.</td>
  *      <td>
@@ -5925,6 +6497,10 @@ public class BackupDRClient implements BackgroundResource {
    *                       "[PROJECT]", "[LOCATION]", "[BACKUP_PLAN_ASSOCIATION]")
    *                   .toString())
    *           .setRequestId("requestId693933066")
+   *           .setAutoProtectionPolicyBinding(
+   *               AutoProtectionPolicyBindingName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]", "[BINDING]")
+   *                   .toString())
    *           .build();
    *   backupDRClient.deleteBackupPlanAssociationAsync(request).get();
    * }
@@ -5958,6 +6534,10 @@ public class BackupDRClient implements BackgroundResource {
    *                       "[PROJECT]", "[LOCATION]", "[BACKUP_PLAN_ASSOCIATION]")
    *                   .toString())
    *           .setRequestId("requestId693933066")
+   *           .setAutoProtectionPolicyBinding(
+   *               AutoProtectionPolicyBindingName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]", "[BINDING]")
+   *                   .toString())
    *           .build();
    *   OperationFuture<Empty, OperationMetadata> future =
    *       backupDRClient.deleteBackupPlanAssociationOperationCallable().futureCall(request);
@@ -5991,6 +6571,10 @@ public class BackupDRClient implements BackgroundResource {
    *                       "[PROJECT]", "[LOCATION]", "[BACKUP_PLAN_ASSOCIATION]")
    *                   .toString())
    *           .setRequestId("requestId693933066")
+   *           .setAutoProtectionPolicyBinding(
+   *               AutoProtectionPolicyBindingName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]", "[BINDING]")
+   *                   .toString())
    *           .build();
    *   ApiFuture<Operation> future =
    *       backupDRClient.deleteBackupPlanAssociationCallable().futureCall(request);
@@ -6763,6 +7347,4879 @@ public class BackupDRClient implements BackgroundResource {
    */
   public final UnaryCallable<InitializeServiceRequest, Operation> initializeServiceCallable() {
     return stub.initializeServiceCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new AutoProtectionPolicy in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   AutoProtectionPolicy autoProtectionPolicy = AutoProtectionPolicy.newBuilder().build();
+   *   String autoProtectionPolicyId = "autoProtectionPolicyId1759243253";
+   *   AutoProtectionPolicy response =
+   *       backupDRClient
+   *           .createAutoProtectionPolicyAsync(parent, autoProtectionPolicy, autoProtectionPolicyId)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource where this policy will be created. Format:
+   *     projects/{project}/locations/{location}
+   * @param autoProtectionPolicy Required. The AutoProtectionPolicy resource to create.
+   * @param autoProtectionPolicyId Required. The ID to use for the policy. This will become the
+   *     final component of the policy's resource name.
+   *     <p>This value must start with a lowercase letter followed by up to 62 lowercase letters,
+   *     numbers, or hyphens, and cannot end with a hyphen.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<AutoProtectionPolicy, OperationMetadata>
+      createAutoProtectionPolicyAsync(
+          @Nullable LocationName parent,
+          AutoProtectionPolicy autoProtectionPolicy,
+          String autoProtectionPolicyId) {
+    CreateAutoProtectionPolicyRequest request =
+        CreateAutoProtectionPolicyRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setAutoProtectionPolicy(autoProtectionPolicy)
+            .setAutoProtectionPolicyId(autoProtectionPolicyId)
+            .build();
+    return createAutoProtectionPolicyAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new AutoProtectionPolicy in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   AutoProtectionPolicy autoProtectionPolicy = AutoProtectionPolicy.newBuilder().build();
+   *   String autoProtectionPolicyId = "autoProtectionPolicyId1759243253";
+   *   AutoProtectionPolicy response =
+   *       backupDRClient
+   *           .createAutoProtectionPolicyAsync(parent, autoProtectionPolicy, autoProtectionPolicyId)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource where this policy will be created. Format:
+   *     projects/{project}/locations/{location}
+   * @param autoProtectionPolicy Required. The AutoProtectionPolicy resource to create.
+   * @param autoProtectionPolicyId Required. The ID to use for the policy. This will become the
+   *     final component of the policy's resource name.
+   *     <p>This value must start with a lowercase letter followed by up to 62 lowercase letters,
+   *     numbers, or hyphens, and cannot end with a hyphen.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<AutoProtectionPolicy, OperationMetadata>
+      createAutoProtectionPolicyAsync(
+          String parent, AutoProtectionPolicy autoProtectionPolicy, String autoProtectionPolicyId) {
+    CreateAutoProtectionPolicyRequest request =
+        CreateAutoProtectionPolicyRequest.newBuilder()
+            .setParent(parent)
+            .setAutoProtectionPolicy(autoProtectionPolicy)
+            .setAutoProtectionPolicyId(autoProtectionPolicyId)
+            .build();
+    return createAutoProtectionPolicyAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new AutoProtectionPolicy in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   CreateAutoProtectionPolicyRequest request =
+   *       CreateAutoProtectionPolicyRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setAutoProtectionPolicyId("autoProtectionPolicyId1759243253")
+   *           .setAutoProtectionPolicy(AutoProtectionPolicy.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   AutoProtectionPolicy response = backupDRClient.createAutoProtectionPolicyAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<AutoProtectionPolicy, OperationMetadata>
+      createAutoProtectionPolicyAsync(CreateAutoProtectionPolicyRequest request) {
+    return createAutoProtectionPolicyOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new AutoProtectionPolicy in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   CreateAutoProtectionPolicyRequest request =
+   *       CreateAutoProtectionPolicyRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setAutoProtectionPolicyId("autoProtectionPolicyId1759243253")
+   *           .setAutoProtectionPolicy(AutoProtectionPolicy.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<AutoProtectionPolicy, OperationMetadata> future =
+   *       backupDRClient.createAutoProtectionPolicyOperationCallable().futureCall(request);
+   *   // Do something.
+   *   AutoProtectionPolicy response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          CreateAutoProtectionPolicyRequest, AutoProtectionPolicy, OperationMetadata>
+      createAutoProtectionPolicyOperationCallable() {
+    return stub.createAutoProtectionPolicyOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new AutoProtectionPolicy in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   CreateAutoProtectionPolicyRequest request =
+   *       CreateAutoProtectionPolicyRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setAutoProtectionPolicyId("autoProtectionPolicyId1759243253")
+   *           .setAutoProtectionPolicy(AutoProtectionPolicy.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       backupDRClient.createAutoProtectionPolicyCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateAutoProtectionPolicyRequest, Operation>
+      createAutoProtectionPolicyCallable() {
+    return stub.createAutoProtectionPolicyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists AutoProtectionPolicies for a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   for (AutoProtectionPolicy element :
+   *       backupDRClient.listAutoProtectionPolicies(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The project and location for which to retrieve the list of policies.
+   *     Format: projects/{project}/locations/{location}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListAutoProtectionPoliciesPagedResponse listAutoProtectionPolicies(
+      @Nullable LocationName parent) {
+    ListAutoProtectionPoliciesRequest request =
+        ListAutoProtectionPoliciesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listAutoProtectionPolicies(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists AutoProtectionPolicies for a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   for (AutoProtectionPolicy element :
+   *       backupDRClient.listAutoProtectionPolicies(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The project and location for which to retrieve the list of policies.
+   *     Format: projects/{project}/locations/{location}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListAutoProtectionPoliciesPagedResponse listAutoProtectionPolicies(String parent) {
+    ListAutoProtectionPoliciesRequest request =
+        ListAutoProtectionPoliciesRequest.newBuilder().setParent(parent).build();
+    return listAutoProtectionPolicies(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists AutoProtectionPolicies for a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   ListAutoProtectionPoliciesRequest request =
+   *       ListAutoProtectionPoliciesRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   for (AutoProtectionPolicy element :
+   *       backupDRClient.listAutoProtectionPolicies(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListAutoProtectionPoliciesPagedResponse listAutoProtectionPolicies(
+      ListAutoProtectionPoliciesRequest request) {
+    return listAutoProtectionPoliciesPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists AutoProtectionPolicies for a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   ListAutoProtectionPoliciesRequest request =
+   *       ListAutoProtectionPoliciesRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   ApiFuture<AutoProtectionPolicy> future =
+   *       backupDRClient.listAutoProtectionPoliciesPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (AutoProtectionPolicy element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          ListAutoProtectionPoliciesRequest, ListAutoProtectionPoliciesPagedResponse>
+      listAutoProtectionPoliciesPagedCallable() {
+    return stub.listAutoProtectionPoliciesPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists AutoProtectionPolicies for a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   ListAutoProtectionPoliciesRequest request =
+   *       ListAutoProtectionPoliciesRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   while (true) {
+   *     ListAutoProtectionPoliciesResponse response =
+   *         backupDRClient.listAutoProtectionPoliciesCallable().call(request);
+   *     for (AutoProtectionPolicy element : response.getAutoProtectionPoliciesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListAutoProtectionPoliciesRequest, ListAutoProtectionPoliciesResponse>
+      listAutoProtectionPoliciesCallable() {
+    return stub.listAutoProtectionPoliciesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single AutoProtectionPolicy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   AutoProtectionPolicyName name =
+   *       AutoProtectionPolicyName.of("[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]");
+   *   AutoProtectionPolicy response = backupDRClient.getAutoProtectionPolicy(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the policy to retrieve. Format:
+   *     projects/{project}/locations/{location}/autoProtectionPolicies/{auto_protection_policy}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AutoProtectionPolicy getAutoProtectionPolicy(
+      @Nullable AutoProtectionPolicyName name) {
+    GetAutoProtectionPolicyRequest request =
+        GetAutoProtectionPolicyRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getAutoProtectionPolicy(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single AutoProtectionPolicy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   String name =
+   *       AutoProtectionPolicyName.of("[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]")
+   *           .toString();
+   *   AutoProtectionPolicy response = backupDRClient.getAutoProtectionPolicy(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the policy to retrieve. Format:
+   *     projects/{project}/locations/{location}/autoProtectionPolicies/{auto_protection_policy}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AutoProtectionPolicy getAutoProtectionPolicy(String name) {
+    GetAutoProtectionPolicyRequest request =
+        GetAutoProtectionPolicyRequest.newBuilder().setName(name).build();
+    return getAutoProtectionPolicy(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single AutoProtectionPolicy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   GetAutoProtectionPolicyRequest request =
+   *       GetAutoProtectionPolicyRequest.newBuilder()
+   *           .setName(
+   *               AutoProtectionPolicyName.of("[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]")
+   *                   .toString())
+   *           .build();
+   *   AutoProtectionPolicy response = backupDRClient.getAutoProtectionPolicy(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AutoProtectionPolicy getAutoProtectionPolicy(
+      GetAutoProtectionPolicyRequest request) {
+    return getAutoProtectionPolicyCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single AutoProtectionPolicy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   GetAutoProtectionPolicyRequest request =
+   *       GetAutoProtectionPolicyRequest.newBuilder()
+   *           .setName(
+   *               AutoProtectionPolicyName.of("[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<AutoProtectionPolicy> future =
+   *       backupDRClient.getAutoProtectionPolicyCallable().futureCall(request);
+   *   // Do something.
+   *   AutoProtectionPolicy response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetAutoProtectionPolicyRequest, AutoProtectionPolicy>
+      getAutoProtectionPolicyCallable() {
+    return stub.getAutoProtectionPolicyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the parameters of a single AutoProtectionPolicy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   AutoProtectionPolicy autoProtectionPolicy = AutoProtectionPolicy.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   AutoProtectionPolicy response =
+   *       backupDRClient.updateAutoProtectionPolicyAsync(autoProtectionPolicy, updateMask).get();
+   * }
+   * }</pre>
+   *
+   * @param autoProtectionPolicy Required. The policy to update.
+   * @param updateMask Optional. Field mask is used to specify the fields to be overwritten in the
+   *     AutoProtectionPolicy resource by the update. The fields specified in the update_mask are
+   *     relative to the resource, not the full request. A field will be overwritten if it is in the
+   *     mask. If the user does not provide a mask then all fields will be overwritten.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<AutoProtectionPolicy, OperationMetadata>
+      updateAutoProtectionPolicyAsync(
+          AutoProtectionPolicy autoProtectionPolicy, FieldMask updateMask) {
+    UpdateAutoProtectionPolicyRequest request =
+        UpdateAutoProtectionPolicyRequest.newBuilder()
+            .setAutoProtectionPolicy(autoProtectionPolicy)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateAutoProtectionPolicyAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the parameters of a single AutoProtectionPolicy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   UpdateAutoProtectionPolicyRequest request =
+   *       UpdateAutoProtectionPolicyRequest.newBuilder()
+   *           .setAutoProtectionPolicy(AutoProtectionPolicy.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   AutoProtectionPolicy response = backupDRClient.updateAutoProtectionPolicyAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<AutoProtectionPolicy, OperationMetadata>
+      updateAutoProtectionPolicyAsync(UpdateAutoProtectionPolicyRequest request) {
+    return updateAutoProtectionPolicyOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the parameters of a single AutoProtectionPolicy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   UpdateAutoProtectionPolicyRequest request =
+   *       UpdateAutoProtectionPolicyRequest.newBuilder()
+   *           .setAutoProtectionPolicy(AutoProtectionPolicy.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<AutoProtectionPolicy, OperationMetadata> future =
+   *       backupDRClient.updateAutoProtectionPolicyOperationCallable().futureCall(request);
+   *   // Do something.
+   *   AutoProtectionPolicy response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          UpdateAutoProtectionPolicyRequest, AutoProtectionPolicy, OperationMetadata>
+      updateAutoProtectionPolicyOperationCallable() {
+    return stub.updateAutoProtectionPolicyOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the parameters of a single AutoProtectionPolicy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   UpdateAutoProtectionPolicyRequest request =
+   *       UpdateAutoProtectionPolicyRequest.newBuilder()
+   *           .setAutoProtectionPolicy(AutoProtectionPolicy.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       backupDRClient.updateAutoProtectionPolicyCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateAutoProtectionPolicyRequest, Operation>
+      updateAutoProtectionPolicyCallable() {
+    return stub.updateAutoProtectionPolicyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single AutoProtectionPolicy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   AutoProtectionPolicyName name =
+   *       AutoProtectionPolicyName.of("[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]");
+   *   backupDRClient.deleteAutoProtectionPolicyAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the policy to delete. Format:
+   *     projects/{project}/locations/{location}/autoProtectionPolicies/{auto_protection_policy}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteAutoProtectionPolicyAsync(
+      @Nullable AutoProtectionPolicyName name) {
+    DeleteAutoProtectionPolicyRequest request =
+        DeleteAutoProtectionPolicyRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return deleteAutoProtectionPolicyAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single AutoProtectionPolicy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   String name =
+   *       AutoProtectionPolicyName.of("[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]")
+   *           .toString();
+   *   backupDRClient.deleteAutoProtectionPolicyAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the policy to delete. Format:
+   *     projects/{project}/locations/{location}/autoProtectionPolicies/{auto_protection_policy}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteAutoProtectionPolicyAsync(
+      String name) {
+    DeleteAutoProtectionPolicyRequest request =
+        DeleteAutoProtectionPolicyRequest.newBuilder().setName(name).build();
+    return deleteAutoProtectionPolicyAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single AutoProtectionPolicy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   DeleteAutoProtectionPolicyRequest request =
+   *       DeleteAutoProtectionPolicyRequest.newBuilder()
+   *           .setName(
+   *               AutoProtectionPolicyName.of("[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]")
+   *                   .toString())
+   *           .setEtag("etag3123477")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   backupDRClient.deleteAutoProtectionPolicyAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteAutoProtectionPolicyAsync(
+      DeleteAutoProtectionPolicyRequest request) {
+    return deleteAutoProtectionPolicyOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single AutoProtectionPolicy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   DeleteAutoProtectionPolicyRequest request =
+   *       DeleteAutoProtectionPolicyRequest.newBuilder()
+   *           .setName(
+   *               AutoProtectionPolicyName.of("[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]")
+   *                   .toString())
+   *           .setEtag("etag3123477")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Empty, OperationMetadata> future =
+   *       backupDRClient.deleteAutoProtectionPolicyOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeleteAutoProtectionPolicyRequest, Empty, OperationMetadata>
+      deleteAutoProtectionPolicyOperationCallable() {
+    return stub.deleteAutoProtectionPolicyOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single AutoProtectionPolicy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   DeleteAutoProtectionPolicyRequest request =
+   *       DeleteAutoProtectionPolicyRequest.newBuilder()
+   *           .setName(
+   *               AutoProtectionPolicyName.of("[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]")
+   *                   .toString())
+   *           .setEtag("etag3123477")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       backupDRClient.deleteAutoProtectionPolicyCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteAutoProtectionPolicyRequest, Operation>
+      deleteAutoProtectionPolicyCallable() {
+    return stub.deleteAutoProtectionPolicyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new AutoProtectionPolicyBinding in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   AutoProtectionPolicyName parent =
+   *       AutoProtectionPolicyName.of("[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]");
+   *   AutoProtectionPolicyBinding autoProtectionPolicyBinding =
+   *       AutoProtectionPolicyBinding.newBuilder().build();
+   *   String autoProtectionPolicyBindingId = "autoProtectionPolicyBindingId2122957414";
+   *   AutoProtectionPolicyBinding response =
+   *       backupDRClient
+   *           .createAutoProtectionPolicyBindingAsync(
+   *               parent, autoProtectionPolicyBinding, autoProtectionPolicyBindingId)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource where this binding will be created. Format:
+   *     projects/{project}/locations/{location}/autoProtectionPolicies/{auto_protection_policy}
+   * @param autoProtectionPolicyBinding Required. The AutoProtectionPolicyBinding resource to
+   *     create.
+   * @param autoProtectionPolicyBindingId Required. The ID to use for the binding. This will become
+   *     the final component of the binding's resource name.
+   *     <p>This value must start with a lowercase letter followed by up to 62 lowercase letters,
+   *     numbers, or hyphens, and cannot end with a hyphen.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<AutoProtectionPolicyBinding, OperationMetadata>
+      createAutoProtectionPolicyBindingAsync(
+          @Nullable AutoProtectionPolicyName parent,
+          AutoProtectionPolicyBinding autoProtectionPolicyBinding,
+          String autoProtectionPolicyBindingId) {
+    CreateAutoProtectionPolicyBindingRequest request =
+        CreateAutoProtectionPolicyBindingRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setAutoProtectionPolicyBinding(autoProtectionPolicyBinding)
+            .setAutoProtectionPolicyBindingId(autoProtectionPolicyBindingId)
+            .build();
+    return createAutoProtectionPolicyBindingAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new AutoProtectionPolicyBinding in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   String parent =
+   *       AutoProtectionPolicyName.of("[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]")
+   *           .toString();
+   *   AutoProtectionPolicyBinding autoProtectionPolicyBinding =
+   *       AutoProtectionPolicyBinding.newBuilder().build();
+   *   String autoProtectionPolicyBindingId = "autoProtectionPolicyBindingId2122957414";
+   *   AutoProtectionPolicyBinding response =
+   *       backupDRClient
+   *           .createAutoProtectionPolicyBindingAsync(
+   *               parent, autoProtectionPolicyBinding, autoProtectionPolicyBindingId)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource where this binding will be created. Format:
+   *     projects/{project}/locations/{location}/autoProtectionPolicies/{auto_protection_policy}
+   * @param autoProtectionPolicyBinding Required. The AutoProtectionPolicyBinding resource to
+   *     create.
+   * @param autoProtectionPolicyBindingId Required. The ID to use for the binding. This will become
+   *     the final component of the binding's resource name.
+   *     <p>This value must start with a lowercase letter followed by up to 62 lowercase letters,
+   *     numbers, or hyphens, and cannot end with a hyphen.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<AutoProtectionPolicyBinding, OperationMetadata>
+      createAutoProtectionPolicyBindingAsync(
+          String parent,
+          AutoProtectionPolicyBinding autoProtectionPolicyBinding,
+          String autoProtectionPolicyBindingId) {
+    CreateAutoProtectionPolicyBindingRequest request =
+        CreateAutoProtectionPolicyBindingRequest.newBuilder()
+            .setParent(parent)
+            .setAutoProtectionPolicyBinding(autoProtectionPolicyBinding)
+            .setAutoProtectionPolicyBindingId(autoProtectionPolicyBindingId)
+            .build();
+    return createAutoProtectionPolicyBindingAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new AutoProtectionPolicyBinding in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   CreateAutoProtectionPolicyBindingRequest request =
+   *       CreateAutoProtectionPolicyBindingRequest.newBuilder()
+   *           .setParent(
+   *               AutoProtectionPolicyName.of("[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]")
+   *                   .toString())
+   *           .setAutoProtectionPolicyBindingId("autoProtectionPolicyBindingId2122957414")
+   *           .setAutoProtectionPolicyBinding(AutoProtectionPolicyBinding.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   AutoProtectionPolicyBinding response =
+   *       backupDRClient.createAutoProtectionPolicyBindingAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<AutoProtectionPolicyBinding, OperationMetadata>
+      createAutoProtectionPolicyBindingAsync(CreateAutoProtectionPolicyBindingRequest request) {
+    return createAutoProtectionPolicyBindingOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new AutoProtectionPolicyBinding in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   CreateAutoProtectionPolicyBindingRequest request =
+   *       CreateAutoProtectionPolicyBindingRequest.newBuilder()
+   *           .setParent(
+   *               AutoProtectionPolicyName.of("[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]")
+   *                   .toString())
+   *           .setAutoProtectionPolicyBindingId("autoProtectionPolicyBindingId2122957414")
+   *           .setAutoProtectionPolicyBinding(AutoProtectionPolicyBinding.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<AutoProtectionPolicyBinding, OperationMetadata> future =
+   *       backupDRClient.createAutoProtectionPolicyBindingOperationCallable().futureCall(request);
+   *   // Do something.
+   *   AutoProtectionPolicyBinding response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          CreateAutoProtectionPolicyBindingRequest, AutoProtectionPolicyBinding, OperationMetadata>
+      createAutoProtectionPolicyBindingOperationCallable() {
+    return stub.createAutoProtectionPolicyBindingOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new AutoProtectionPolicyBinding in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   CreateAutoProtectionPolicyBindingRequest request =
+   *       CreateAutoProtectionPolicyBindingRequest.newBuilder()
+   *           .setParent(
+   *               AutoProtectionPolicyName.of("[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]")
+   *                   .toString())
+   *           .setAutoProtectionPolicyBindingId("autoProtectionPolicyBindingId2122957414")
+   *           .setAutoProtectionPolicyBinding(AutoProtectionPolicyBinding.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       backupDRClient.createAutoProtectionPolicyBindingCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateAutoProtectionPolicyBindingRequest, Operation>
+      createAutoProtectionPolicyBindingCallable() {
+    return stub.createAutoProtectionPolicyBindingCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the auto protection policy binding read from the CCFE tables.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   AutoProtectionPolicyBindingName name =
+   *       AutoProtectionPolicyBindingName.of(
+   *           "[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]", "[BINDING]");
+   *   AutoProtectionPolicyBinding response = backupDRClient.getAutoProtectionPolicyBinding(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the binding to retrieve. Format:
+   *     projects/{project}/locations/{location}/autoProtectionPolicies/{auto_protection_policy}/bindings/{binding}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AutoProtectionPolicyBinding getAutoProtectionPolicyBinding(
+      @Nullable AutoProtectionPolicyBindingName name) {
+    GetAutoProtectionPolicyBindingRequest request =
+        GetAutoProtectionPolicyBindingRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getAutoProtectionPolicyBinding(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the auto protection policy binding read from the CCFE tables.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   String name =
+   *       AutoProtectionPolicyBindingName.of(
+   *               "[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]", "[BINDING]")
+   *           .toString();
+   *   AutoProtectionPolicyBinding response = backupDRClient.getAutoProtectionPolicyBinding(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the binding to retrieve. Format:
+   *     projects/{project}/locations/{location}/autoProtectionPolicies/{auto_protection_policy}/bindings/{binding}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AutoProtectionPolicyBinding getAutoProtectionPolicyBinding(String name) {
+    GetAutoProtectionPolicyBindingRequest request =
+        GetAutoProtectionPolicyBindingRequest.newBuilder().setName(name).build();
+    return getAutoProtectionPolicyBinding(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the auto protection policy binding read from the CCFE tables.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   GetAutoProtectionPolicyBindingRequest request =
+   *       GetAutoProtectionPolicyBindingRequest.newBuilder()
+   *           .setName(
+   *               AutoProtectionPolicyBindingName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]", "[BINDING]")
+   *                   .toString())
+   *           .build();
+   *   AutoProtectionPolicyBinding response = backupDRClient.getAutoProtectionPolicyBinding(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AutoProtectionPolicyBinding getAutoProtectionPolicyBinding(
+      GetAutoProtectionPolicyBindingRequest request) {
+    return getAutoProtectionPolicyBindingCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the auto protection policy binding read from the CCFE tables.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   GetAutoProtectionPolicyBindingRequest request =
+   *       GetAutoProtectionPolicyBindingRequest.newBuilder()
+   *           .setName(
+   *               AutoProtectionPolicyBindingName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]", "[BINDING]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<AutoProtectionPolicyBinding> future =
+   *       backupDRClient.getAutoProtectionPolicyBindingCallable().futureCall(request);
+   *   // Do something.
+   *   AutoProtectionPolicyBinding response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetAutoProtectionPolicyBindingRequest, AutoProtectionPolicyBinding>
+      getAutoProtectionPolicyBindingCallable() {
+    return stub.getAutoProtectionPolicyBindingCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the auto protection policy bindings read from the CCFE tables.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   AutoProtectionPolicyName parent =
+   *       AutoProtectionPolicyName.of("[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]");
+   *   for (AutoProtectionPolicyBinding element :
+   *       backupDRClient.listAutoProtectionPolicyBindings(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The project and location for which to retrieve the list of policies.
+   *     Format: projects/{project}/locations/{location}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListAutoProtectionPolicyBindingsPagedResponse listAutoProtectionPolicyBindings(
+      @Nullable AutoProtectionPolicyName parent) {
+    ListAutoProtectionPolicyBindingsRequest request =
+        ListAutoProtectionPolicyBindingsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listAutoProtectionPolicyBindings(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the auto protection policy bindings read from the CCFE tables.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   String parent =
+   *       AutoProtectionPolicyName.of("[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]")
+   *           .toString();
+   *   for (AutoProtectionPolicyBinding element :
+   *       backupDRClient.listAutoProtectionPolicyBindings(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The project and location for which to retrieve the list of policies.
+   *     Format: projects/{project}/locations/{location}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListAutoProtectionPolicyBindingsPagedResponse listAutoProtectionPolicyBindings(
+      String parent) {
+    ListAutoProtectionPolicyBindingsRequest request =
+        ListAutoProtectionPolicyBindingsRequest.newBuilder().setParent(parent).build();
+    return listAutoProtectionPolicyBindings(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the auto protection policy bindings read from the CCFE tables.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   ListAutoProtectionPolicyBindingsRequest request =
+   *       ListAutoProtectionPolicyBindingsRequest.newBuilder()
+   *           .setParent(
+   *               AutoProtectionPolicyName.of("[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   for (AutoProtectionPolicyBinding element :
+   *       backupDRClient.listAutoProtectionPolicyBindings(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListAutoProtectionPolicyBindingsPagedResponse listAutoProtectionPolicyBindings(
+      ListAutoProtectionPolicyBindingsRequest request) {
+    return listAutoProtectionPolicyBindingsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the auto protection policy bindings read from the CCFE tables.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   ListAutoProtectionPolicyBindingsRequest request =
+   *       ListAutoProtectionPolicyBindingsRequest.newBuilder()
+   *           .setParent(
+   *               AutoProtectionPolicyName.of("[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   ApiFuture<AutoProtectionPolicyBinding> future =
+   *       backupDRClient.listAutoProtectionPolicyBindingsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (AutoProtectionPolicyBinding element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          ListAutoProtectionPolicyBindingsRequest, ListAutoProtectionPolicyBindingsPagedResponse>
+      listAutoProtectionPolicyBindingsPagedCallable() {
+    return stub.listAutoProtectionPolicyBindingsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the auto protection policy bindings read from the CCFE tables.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   ListAutoProtectionPolicyBindingsRequest request =
+   *       ListAutoProtectionPolicyBindingsRequest.newBuilder()
+   *           .setParent(
+   *               AutoProtectionPolicyName.of("[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   while (true) {
+   *     ListAutoProtectionPolicyBindingsResponse response =
+   *         backupDRClient.listAutoProtectionPolicyBindingsCallable().call(request);
+   *     for (AutoProtectionPolicyBinding element : response.getAutoProtectionPolicyBindingsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          ListAutoProtectionPolicyBindingsRequest, ListAutoProtectionPolicyBindingsResponse>
+      listAutoProtectionPolicyBindingsCallable() {
+    return stub.listAutoProtectionPolicyBindingsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists AppliedAutoProtectionPolicies in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   for (AppliedAutoProtectionPolicy element :
+   *       backupDRClient.listAppliedAutoProtectionPolicies(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The project and location for which to retrieve the list of applied
+   *     policies. Format: projects/{project}/locations/{location}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListAppliedAutoProtectionPoliciesPagedResponse listAppliedAutoProtectionPolicies(
+      @Nullable LocationName parent) {
+    ListAppliedAutoProtectionPoliciesRequest request =
+        ListAppliedAutoProtectionPoliciesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listAppliedAutoProtectionPolicies(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists AppliedAutoProtectionPolicies in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   for (AppliedAutoProtectionPolicy element :
+   *       backupDRClient.listAppliedAutoProtectionPolicies(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The project and location for which to retrieve the list of applied
+   *     policies. Format: projects/{project}/locations/{location}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListAppliedAutoProtectionPoliciesPagedResponse listAppliedAutoProtectionPolicies(
+      String parent) {
+    ListAppliedAutoProtectionPoliciesRequest request =
+        ListAppliedAutoProtectionPoliciesRequest.newBuilder().setParent(parent).build();
+    return listAppliedAutoProtectionPolicies(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists AppliedAutoProtectionPolicies in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   ListAppliedAutoProtectionPoliciesRequest request =
+   *       ListAppliedAutoProtectionPoliciesRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   for (AppliedAutoProtectionPolicy element :
+   *       backupDRClient.listAppliedAutoProtectionPolicies(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListAppliedAutoProtectionPoliciesPagedResponse listAppliedAutoProtectionPolicies(
+      ListAppliedAutoProtectionPoliciesRequest request) {
+    return listAppliedAutoProtectionPoliciesPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists AppliedAutoProtectionPolicies in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   ListAppliedAutoProtectionPoliciesRequest request =
+   *       ListAppliedAutoProtectionPoliciesRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   ApiFuture<AppliedAutoProtectionPolicy> future =
+   *       backupDRClient.listAppliedAutoProtectionPoliciesPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (AppliedAutoProtectionPolicy element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          ListAppliedAutoProtectionPoliciesRequest, ListAppliedAutoProtectionPoliciesPagedResponse>
+      listAppliedAutoProtectionPoliciesPagedCallable() {
+    return stub.listAppliedAutoProtectionPoliciesPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists AppliedAutoProtectionPolicies in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   ListAppliedAutoProtectionPoliciesRequest request =
+   *       ListAppliedAutoProtectionPoliciesRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   while (true) {
+   *     ListAppliedAutoProtectionPoliciesResponse response =
+   *         backupDRClient.listAppliedAutoProtectionPoliciesCallable().call(request);
+   *     for (AppliedAutoProtectionPolicy element :
+   *         response.getAppliedAutoProtectionPoliciesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          ListAppliedAutoProtectionPoliciesRequest, ListAppliedAutoProtectionPoliciesResponse>
+      listAppliedAutoProtectionPoliciesCallable() {
+    return stub.listAppliedAutoProtectionPoliciesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * InitiateDeleteAutoProtectionPolicyBinding initiates delete for AutoProtectionPolicy Binding
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   AutoProtectionPolicyBindingName name =
+   *       AutoProtectionPolicyBindingName.of(
+   *           "[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]", "[BINDING]");
+   *   AutoProtectionPolicyBinding response =
+   *       backupDRClient.initiateDeleteAutoProtectionPolicyBindingAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the binding to delete. Format:
+   *     projects/{project}/locations/{location}/autoProtectionPolicies/{auto_protection_policy}/bindings/{binding}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<AutoProtectionPolicyBinding, OperationMetadata>
+      initiateDeleteAutoProtectionPolicyBindingAsync(
+          @Nullable AutoProtectionPolicyBindingName name) {
+    InitiateDeleteAutoProtectionPolicyBindingRequest request =
+        InitiateDeleteAutoProtectionPolicyBindingRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return initiateDeleteAutoProtectionPolicyBindingAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * InitiateDeleteAutoProtectionPolicyBinding initiates delete for AutoProtectionPolicy Binding
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   String name =
+   *       AutoProtectionPolicyBindingName.of(
+   *               "[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]", "[BINDING]")
+   *           .toString();
+   *   AutoProtectionPolicyBinding response =
+   *       backupDRClient.initiateDeleteAutoProtectionPolicyBindingAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the binding to delete. Format:
+   *     projects/{project}/locations/{location}/autoProtectionPolicies/{auto_protection_policy}/bindings/{binding}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<AutoProtectionPolicyBinding, OperationMetadata>
+      initiateDeleteAutoProtectionPolicyBindingAsync(String name) {
+    InitiateDeleteAutoProtectionPolicyBindingRequest request =
+        InitiateDeleteAutoProtectionPolicyBindingRequest.newBuilder().setName(name).build();
+    return initiateDeleteAutoProtectionPolicyBindingAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * InitiateDeleteAutoProtectionPolicyBinding initiates delete for AutoProtectionPolicy Binding
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   InitiateDeleteAutoProtectionPolicyBindingRequest request =
+   *       InitiateDeleteAutoProtectionPolicyBindingRequest.newBuilder()
+   *           .setName(
+   *               AutoProtectionPolicyBindingName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]", "[BINDING]")
+   *                   .toString())
+   *           .setEtag("etag3123477")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   AutoProtectionPolicyBinding response =
+   *       backupDRClient.initiateDeleteAutoProtectionPolicyBindingAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<AutoProtectionPolicyBinding, OperationMetadata>
+      initiateDeleteAutoProtectionPolicyBindingAsync(
+          InitiateDeleteAutoProtectionPolicyBindingRequest request) {
+    return initiateDeleteAutoProtectionPolicyBindingOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * InitiateDeleteAutoProtectionPolicyBinding initiates delete for AutoProtectionPolicy Binding
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   InitiateDeleteAutoProtectionPolicyBindingRequest request =
+   *       InitiateDeleteAutoProtectionPolicyBindingRequest.newBuilder()
+   *           .setName(
+   *               AutoProtectionPolicyBindingName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]", "[BINDING]")
+   *                   .toString())
+   *           .setEtag("etag3123477")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<AutoProtectionPolicyBinding, OperationMetadata> future =
+   *       backupDRClient
+   *           .initiateDeleteAutoProtectionPolicyBindingOperationCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   AutoProtectionPolicyBinding response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          InitiateDeleteAutoProtectionPolicyBindingRequest,
+          AutoProtectionPolicyBinding,
+          OperationMetadata>
+      initiateDeleteAutoProtectionPolicyBindingOperationCallable() {
+    return stub.initiateDeleteAutoProtectionPolicyBindingOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * InitiateDeleteAutoProtectionPolicyBinding initiates delete for AutoProtectionPolicy Binding
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   InitiateDeleteAutoProtectionPolicyBindingRequest request =
+   *       InitiateDeleteAutoProtectionPolicyBindingRequest.newBuilder()
+   *           .setName(
+   *               AutoProtectionPolicyBindingName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]", "[BINDING]")
+   *                   .toString())
+   *           .setEtag("etag3123477")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       backupDRClient.initiateDeleteAutoProtectionPolicyBindingCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<InitiateDeleteAutoProtectionPolicyBindingRequest, Operation>
+      initiateDeleteAutoProtectionPolicyBindingCallable() {
+    return stub.initiateDeleteAutoProtectionPolicyBindingCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists Binding Matching Resources for a given AutoProtectionPolicyBinding.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   AutoProtectionPolicyBindingName parent =
+   *       AutoProtectionPolicyBindingName.of(
+   *           "[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]", "[BINDING]");
+   *   for (BindingMatchingResource element :
+   *       backupDRClient.listBindingMatchingResources(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The project, location, auto protection policy and binding for which to
+   *     retrieve `BindingMatchingResources` information. Format:
+   *     `projects/{project}/locations/{location}/autoProtectionPolicies/{auto_protection_policy}/bindings/{binding}`.
+   *     In Google Cloud Backup and DR, locations map to Google Cloud regions, for example
+   *     &#42;&#42;us-central1&#42;&#42;.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListBindingMatchingResourcesPagedResponse listBindingMatchingResources(
+      @Nullable AutoProtectionPolicyBindingName parent) {
+    ListBindingMatchingResourcesRequest request =
+        ListBindingMatchingResourcesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listBindingMatchingResources(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists Binding Matching Resources for a given AutoProtectionPolicyBinding.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   String parent =
+   *       AutoProtectionPolicyBindingName.of(
+   *               "[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]", "[BINDING]")
+   *           .toString();
+   *   for (BindingMatchingResource element :
+   *       backupDRClient.listBindingMatchingResources(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The project, location, auto protection policy and binding for which to
+   *     retrieve `BindingMatchingResources` information. Format:
+   *     `projects/{project}/locations/{location}/autoProtectionPolicies/{auto_protection_policy}/bindings/{binding}`.
+   *     In Google Cloud Backup and DR, locations map to Google Cloud regions, for example
+   *     &#42;&#42;us-central1&#42;&#42;.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListBindingMatchingResourcesPagedResponse listBindingMatchingResources(
+      String parent) {
+    ListBindingMatchingResourcesRequest request =
+        ListBindingMatchingResourcesRequest.newBuilder().setParent(parent).build();
+    return listBindingMatchingResources(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists Binding Matching Resources for a given AutoProtectionPolicyBinding.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   ListBindingMatchingResourcesRequest request =
+   *       ListBindingMatchingResourcesRequest.newBuilder()
+   *           .setParent(
+   *               AutoProtectionPolicyBindingName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]", "[BINDING]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   for (BindingMatchingResource element :
+   *       backupDRClient.listBindingMatchingResources(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListBindingMatchingResourcesPagedResponse listBindingMatchingResources(
+      ListBindingMatchingResourcesRequest request) {
+    return listBindingMatchingResourcesPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists Binding Matching Resources for a given AutoProtectionPolicyBinding.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   ListBindingMatchingResourcesRequest request =
+   *       ListBindingMatchingResourcesRequest.newBuilder()
+   *           .setParent(
+   *               AutoProtectionPolicyBindingName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]", "[BINDING]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   ApiFuture<BindingMatchingResource> future =
+   *       backupDRClient.listBindingMatchingResourcesPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (BindingMatchingResource element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          ListBindingMatchingResourcesRequest, ListBindingMatchingResourcesPagedResponse>
+      listBindingMatchingResourcesPagedCallable() {
+    return stub.listBindingMatchingResourcesPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists Binding Matching Resources for a given AutoProtectionPolicyBinding.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   ListBindingMatchingResourcesRequest request =
+   *       ListBindingMatchingResourcesRequest.newBuilder()
+   *           .setParent(
+   *               AutoProtectionPolicyBindingName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]", "[BINDING]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   while (true) {
+   *     ListBindingMatchingResourcesResponse response =
+   *         backupDRClient.listBindingMatchingResourcesCallable().call(request);
+   *     for (BindingMatchingResource element : response.getMatchingResourcesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          ListBindingMatchingResourcesRequest, ListBindingMatchingResourcesResponse>
+      listBindingMatchingResourcesCallable() {
+    return stub.listBindingMatchingResourcesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new RestoreTemplate in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   RestoreTemplate restoreTemplate = RestoreTemplate.newBuilder().build();
+   *   String restoreTemplateId = "restoreTemplateId-84741021";
+   *   RestoreTemplate response =
+   *       backupDRClient
+   *           .createRestoreTemplateAsync(parent, restoreTemplate, restoreTemplateId)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The restore template project and location in the format
+   *     'projects/{project_id}/locations/{location}'.
+   * @param restoreTemplate Required. A RestoreTemplate resource.
+   * @param restoreTemplateId Required. The ID of the restore template to create. The ID must be
+   *     unique for the specified project and location.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<RestoreTemplate, OperationMetadata> createRestoreTemplateAsync(
+      @Nullable LocationName parent, RestoreTemplate restoreTemplate, String restoreTemplateId) {
+    CreateRestoreTemplateRequest request =
+        CreateRestoreTemplateRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setRestoreTemplate(restoreTemplate)
+            .setRestoreTemplateId(restoreTemplateId)
+            .build();
+    return createRestoreTemplateAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new RestoreTemplate in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   RestoreTemplate restoreTemplate = RestoreTemplate.newBuilder().build();
+   *   String restoreTemplateId = "restoreTemplateId-84741021";
+   *   RestoreTemplate response =
+   *       backupDRClient
+   *           .createRestoreTemplateAsync(parent, restoreTemplate, restoreTemplateId)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The restore template project and location in the format
+   *     'projects/{project_id}/locations/{location}'.
+   * @param restoreTemplate Required. A RestoreTemplate resource.
+   * @param restoreTemplateId Required. The ID of the restore template to create. The ID must be
+   *     unique for the specified project and location.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<RestoreTemplate, OperationMetadata> createRestoreTemplateAsync(
+      String parent, RestoreTemplate restoreTemplate, String restoreTemplateId) {
+    CreateRestoreTemplateRequest request =
+        CreateRestoreTemplateRequest.newBuilder()
+            .setParent(parent)
+            .setRestoreTemplate(restoreTemplate)
+            .setRestoreTemplateId(restoreTemplateId)
+            .build();
+    return createRestoreTemplateAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new RestoreTemplate in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   CreateRestoreTemplateRequest request =
+   *       CreateRestoreTemplateRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setRestoreTemplateId("restoreTemplateId-84741021")
+   *           .setRestoreTemplate(RestoreTemplate.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   RestoreTemplate response = backupDRClient.createRestoreTemplateAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<RestoreTemplate, OperationMetadata> createRestoreTemplateAsync(
+      CreateRestoreTemplateRequest request) {
+    return createRestoreTemplateOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new RestoreTemplate in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   CreateRestoreTemplateRequest request =
+   *       CreateRestoreTemplateRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setRestoreTemplateId("restoreTemplateId-84741021")
+   *           .setRestoreTemplate(RestoreTemplate.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<RestoreTemplate, OperationMetadata> future =
+   *       backupDRClient.createRestoreTemplateOperationCallable().futureCall(request);
+   *   // Do something.
+   *   RestoreTemplate response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<CreateRestoreTemplateRequest, RestoreTemplate, OperationMetadata>
+      createRestoreTemplateOperationCallable() {
+    return stub.createRestoreTemplateOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new RestoreTemplate in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   CreateRestoreTemplateRequest request =
+   *       CreateRestoreTemplateRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setRestoreTemplateId("restoreTemplateId-84741021")
+   *           .setRestoreTemplate(RestoreTemplate.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       backupDRClient.createRestoreTemplateCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateRestoreTemplateRequest, Operation>
+      createRestoreTemplateCallable() {
+    return stub.createRestoreTemplateCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a RestoreTemplate.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   RestoreTemplateName name =
+   *       RestoreTemplateName.of("[PROJECT]", "[LOCATION]", "[RESTORE_TEMPLATE]");
+   *   RestoreTemplate response = backupDRClient.getRestoreTemplate(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the restore template to retrieve. Format:
+   *     'projects/{project_id}/locations/{location}/restoreTemplates/{restore_template_id}'
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RestoreTemplate getRestoreTemplate(@Nullable RestoreTemplateName name) {
+    GetRestoreTemplateRequest request =
+        GetRestoreTemplateRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getRestoreTemplate(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a RestoreTemplate.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   String name =
+   *       RestoreTemplateName.of("[PROJECT]", "[LOCATION]", "[RESTORE_TEMPLATE]").toString();
+   *   RestoreTemplate response = backupDRClient.getRestoreTemplate(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the restore template to retrieve. Format:
+   *     'projects/{project_id}/locations/{location}/restoreTemplates/{restore_template_id}'
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RestoreTemplate getRestoreTemplate(String name) {
+    GetRestoreTemplateRequest request =
+        GetRestoreTemplateRequest.newBuilder().setName(name).build();
+    return getRestoreTemplate(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a RestoreTemplate.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   GetRestoreTemplateRequest request =
+   *       GetRestoreTemplateRequest.newBuilder()
+   *           .setName(
+   *               RestoreTemplateName.of("[PROJECT]", "[LOCATION]", "[RESTORE_TEMPLATE]")
+   *                   .toString())
+   *           .build();
+   *   RestoreTemplate response = backupDRClient.getRestoreTemplate(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RestoreTemplate getRestoreTemplate(GetRestoreTemplateRequest request) {
+    return getRestoreTemplateCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a RestoreTemplate.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   GetRestoreTemplateRequest request =
+   *       GetRestoreTemplateRequest.newBuilder()
+   *           .setName(
+   *               RestoreTemplateName.of("[PROJECT]", "[LOCATION]", "[RESTORE_TEMPLATE]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<RestoreTemplate> future =
+   *       backupDRClient.getRestoreTemplateCallable().futureCall(request);
+   *   // Do something.
+   *   RestoreTemplate response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetRestoreTemplateRequest, RestoreTemplate>
+      getRestoreTemplateCallable() {
+    return stub.getRestoreTemplateCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists RestoreTemplates in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   for (RestoreTemplate element : backupDRClient.listRestoreTemplates(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The project and location from which to list the restore templates.
+   *     Format: `projects/{project}/locations/{location}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListRestoreTemplatesPagedResponse listRestoreTemplates(
+      @Nullable LocationName parent) {
+    ListRestoreTemplatesRequest request =
+        ListRestoreTemplatesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listRestoreTemplates(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists RestoreTemplates in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   for (RestoreTemplate element : backupDRClient.listRestoreTemplates(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The project and location from which to list the restore templates.
+   *     Format: `projects/{project}/locations/{location}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListRestoreTemplatesPagedResponse listRestoreTemplates(String parent) {
+    ListRestoreTemplatesRequest request =
+        ListRestoreTemplatesRequest.newBuilder().setParent(parent).build();
+    return listRestoreTemplates(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists RestoreTemplates in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   ListRestoreTemplatesRequest request =
+   *       ListRestoreTemplatesRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   for (RestoreTemplate element : backupDRClient.listRestoreTemplates(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListRestoreTemplatesPagedResponse listRestoreTemplates(
+      ListRestoreTemplatesRequest request) {
+    return listRestoreTemplatesPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists RestoreTemplates in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   ListRestoreTemplatesRequest request =
+   *       ListRestoreTemplatesRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   ApiFuture<RestoreTemplate> future =
+   *       backupDRClient.listRestoreTemplatesPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (RestoreTemplate element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListRestoreTemplatesRequest, ListRestoreTemplatesPagedResponse>
+      listRestoreTemplatesPagedCallable() {
+    return stub.listRestoreTemplatesPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists RestoreTemplates in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   ListRestoreTemplatesRequest request =
+   *       ListRestoreTemplatesRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   while (true) {
+   *     ListRestoreTemplatesResponse response =
+   *         backupDRClient.listRestoreTemplatesCallable().call(request);
+   *     for (RestoreTemplate element : response.getRestoreTemplatesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListRestoreTemplatesRequest, ListRestoreTemplatesResponse>
+      listRestoreTemplatesCallable() {
+    return stub.listRestoreTemplatesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the settings of a RestoreTemplate.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   RestoreTemplate restoreTemplate = RestoreTemplate.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   RestoreTemplate response =
+   *       backupDRClient.updateRestoreTemplateAsync(restoreTemplate, updateMask).get();
+   * }
+   * }</pre>
+   *
+   * @param restoreTemplate Required. The restore template to update.
+   * @param updateMask Optional. The list of fields to update. Field mask is used to specify the
+   *     fields to be overwritten in the RestoreTemplate resource by the update. The fields
+   *     specified in the update_mask are relative to the resource, not the full request. A field
+   *     will be overwritten if it is in the mask.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<RestoreTemplate, OperationMetadata> updateRestoreTemplateAsync(
+      RestoreTemplate restoreTemplate, FieldMask updateMask) {
+    UpdateRestoreTemplateRequest request =
+        UpdateRestoreTemplateRequest.newBuilder()
+            .setRestoreTemplate(restoreTemplate)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateRestoreTemplateAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the settings of a RestoreTemplate.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   UpdateRestoreTemplateRequest request =
+   *       UpdateRestoreTemplateRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setRestoreTemplate(RestoreTemplate.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .setValidateOnly(true)
+   *           .build();
+   *   RestoreTemplate response = backupDRClient.updateRestoreTemplateAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<RestoreTemplate, OperationMetadata> updateRestoreTemplateAsync(
+      UpdateRestoreTemplateRequest request) {
+    return updateRestoreTemplateOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the settings of a RestoreTemplate.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   UpdateRestoreTemplateRequest request =
+   *       UpdateRestoreTemplateRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setRestoreTemplate(RestoreTemplate.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .setValidateOnly(true)
+   *           .build();
+   *   OperationFuture<RestoreTemplate, OperationMetadata> future =
+   *       backupDRClient.updateRestoreTemplateOperationCallable().futureCall(request);
+   *   // Do something.
+   *   RestoreTemplate response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<UpdateRestoreTemplateRequest, RestoreTemplate, OperationMetadata>
+      updateRestoreTemplateOperationCallable() {
+    return stub.updateRestoreTemplateOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the settings of a RestoreTemplate.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   UpdateRestoreTemplateRequest request =
+   *       UpdateRestoreTemplateRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setRestoreTemplate(RestoreTemplate.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .setValidateOnly(true)
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       backupDRClient.updateRestoreTemplateCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateRestoreTemplateRequest, Operation>
+      updateRestoreTemplateCallable() {
+    return stub.updateRestoreTemplateCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a RestoreTemplate.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   RestoreTemplateName name =
+   *       RestoreTemplateName.of("[PROJECT]", "[LOCATION]", "[RESTORE_TEMPLATE]");
+   *   backupDRClient.deleteRestoreTemplateAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the restore template to delete. Format:
+   *     'projects/{project_id}/locations/{location}/restoreTemplates/{restore_template_id}'
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteRestoreTemplateAsync(
+      @Nullable RestoreTemplateName name) {
+    DeleteRestoreTemplateRequest request =
+        DeleteRestoreTemplateRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return deleteRestoreTemplateAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a RestoreTemplate.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   String name =
+   *       RestoreTemplateName.of("[PROJECT]", "[LOCATION]", "[RESTORE_TEMPLATE]").toString();
+   *   backupDRClient.deleteRestoreTemplateAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the restore template to delete. Format:
+   *     'projects/{project_id}/locations/{location}/restoreTemplates/{restore_template_id}'
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteRestoreTemplateAsync(String name) {
+    DeleteRestoreTemplateRequest request =
+        DeleteRestoreTemplateRequest.newBuilder().setName(name).build();
+    return deleteRestoreTemplateAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a RestoreTemplate.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   DeleteRestoreTemplateRequest request =
+   *       DeleteRestoreTemplateRequest.newBuilder()
+   *           .setName(
+   *               RestoreTemplateName.of("[PROJECT]", "[LOCATION]", "[RESTORE_TEMPLATE]")
+   *                   .toString())
+   *           .setRequestId("requestId693933066")
+   *           .setForce(true)
+   *           .build();
+   *   backupDRClient.deleteRestoreTemplateAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteRestoreTemplateAsync(
+      DeleteRestoreTemplateRequest request) {
+    return deleteRestoreTemplateOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a RestoreTemplate.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   DeleteRestoreTemplateRequest request =
+   *       DeleteRestoreTemplateRequest.newBuilder()
+   *           .setName(
+   *               RestoreTemplateName.of("[PROJECT]", "[LOCATION]", "[RESTORE_TEMPLATE]")
+   *                   .toString())
+   *           .setRequestId("requestId693933066")
+   *           .setForce(true)
+   *           .build();
+   *   OperationFuture<Empty, OperationMetadata> future =
+   *       backupDRClient.deleteRestoreTemplateOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeleteRestoreTemplateRequest, Empty, OperationMetadata>
+      deleteRestoreTemplateOperationCallable() {
+    return stub.deleteRestoreTemplateOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a RestoreTemplate.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   DeleteRestoreTemplateRequest request =
+   *       DeleteRestoreTemplateRequest.newBuilder()
+   *           .setName(
+   *               RestoreTemplateName.of("[PROJECT]", "[LOCATION]", "[RESTORE_TEMPLATE]")
+   *                   .toString())
+   *           .setRequestId("requestId693933066")
+   *           .setForce(true)
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       backupDRClient.deleteRestoreTemplateCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteRestoreTemplateRequest, Operation>
+      deleteRestoreTemplateCallable() {
+    return stub.deleteRestoreTemplateCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Runs a RestoreTemplate.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   RestoreTemplateName name =
+   *       RestoreTemplateName.of("[PROJECT]", "[LOCATION]", "[RESTORE_TEMPLATE]");
+   *   RunRestoreTemplateResponse response = backupDRClient.runRestoreTemplateAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the restore template to run. Format:
+   *     'projects/{project_id}/locations/{location}/restoreTemplates/{restore_template_id}'
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<RunRestoreTemplateResponse, OperationMetadata>
+      runRestoreTemplateAsync(@Nullable RestoreTemplateName name) {
+    RunRestoreTemplateRequest request =
+        RunRestoreTemplateRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return runRestoreTemplateAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Runs a RestoreTemplate.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   String name =
+   *       RestoreTemplateName.of("[PROJECT]", "[LOCATION]", "[RESTORE_TEMPLATE]").toString();
+   *   RunRestoreTemplateResponse response = backupDRClient.runRestoreTemplateAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the restore template to run. Format:
+   *     'projects/{project_id}/locations/{location}/restoreTemplates/{restore_template_id}'
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<RunRestoreTemplateResponse, OperationMetadata>
+      runRestoreTemplateAsync(String name) {
+    RunRestoreTemplateRequest request =
+        RunRestoreTemplateRequest.newBuilder().setName(name).build();
+    return runRestoreTemplateAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Runs a RestoreTemplate.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   RunRestoreTemplateRequest request =
+   *       RunRestoreTemplateRequest.newBuilder()
+   *           .setName(
+   *               RestoreTemplateName.of("[PROJECT]", "[LOCATION]", "[RESTORE_TEMPLATE]")
+   *                   .toString())
+   *           .setBackup(
+   *               BackupName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[BACKUPVAULT]", "[DATASOURCE]", "[BACKUP]")
+   *                   .toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   RunRestoreTemplateResponse response = backupDRClient.runRestoreTemplateAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<RunRestoreTemplateResponse, OperationMetadata>
+      runRestoreTemplateAsync(RunRestoreTemplateRequest request) {
+    return runRestoreTemplateOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Runs a RestoreTemplate.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   RunRestoreTemplateRequest request =
+   *       RunRestoreTemplateRequest.newBuilder()
+   *           .setName(
+   *               RestoreTemplateName.of("[PROJECT]", "[LOCATION]", "[RESTORE_TEMPLATE]")
+   *                   .toString())
+   *           .setBackup(
+   *               BackupName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[BACKUPVAULT]", "[DATASOURCE]", "[BACKUP]")
+   *                   .toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<RunRestoreTemplateResponse, OperationMetadata> future =
+   *       backupDRClient.runRestoreTemplateOperationCallable().futureCall(request);
+   *   // Do something.
+   *   RunRestoreTemplateResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          RunRestoreTemplateRequest, RunRestoreTemplateResponse, OperationMetadata>
+      runRestoreTemplateOperationCallable() {
+    return stub.runRestoreTemplateOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Runs a RestoreTemplate.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   RunRestoreTemplateRequest request =
+   *       RunRestoreTemplateRequest.newBuilder()
+   *           .setName(
+   *               RestoreTemplateName.of("[PROJECT]", "[LOCATION]", "[RESTORE_TEMPLATE]")
+   *                   .toString())
+   *           .setBackup(
+   *               BackupName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[BACKUPVAULT]", "[DATASOURCE]", "[BACKUP]")
+   *                   .toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future = backupDRClient.runRestoreTemplateCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<RunRestoreTemplateRequest, Operation> runRestoreTemplateCallable() {
+    return stub.runRestoreTemplateCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a RestoreTemplateExecution.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   RestoreTemplateExecutionName name =
+   *       RestoreTemplateExecutionName.of(
+   *           "[PROJECT]", "[LOCATION]", "[RESTORE_TEMPLATE]", "[EXECUTION]");
+   *   RestoreTemplateExecution response = backupDRClient.getRestoreTemplateExecution(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the restore template execution to retrieve. Format:
+   *     'projects/{project_id}/locations/{location}/restoreTemplates/{restore_template_id}/executions/{execution_id}'
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RestoreTemplateExecution getRestoreTemplateExecution(
+      @Nullable RestoreTemplateExecutionName name) {
+    GetRestoreTemplateExecutionRequest request =
+        GetRestoreTemplateExecutionRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getRestoreTemplateExecution(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a RestoreTemplateExecution.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   String name =
+   *       RestoreTemplateExecutionName.of(
+   *               "[PROJECT]", "[LOCATION]", "[RESTORE_TEMPLATE]", "[EXECUTION]")
+   *           .toString();
+   *   RestoreTemplateExecution response = backupDRClient.getRestoreTemplateExecution(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the restore template execution to retrieve. Format:
+   *     'projects/{project_id}/locations/{location}/restoreTemplates/{restore_template_id}/executions/{execution_id}'
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RestoreTemplateExecution getRestoreTemplateExecution(String name) {
+    GetRestoreTemplateExecutionRequest request =
+        GetRestoreTemplateExecutionRequest.newBuilder().setName(name).build();
+    return getRestoreTemplateExecution(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a RestoreTemplateExecution.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   GetRestoreTemplateExecutionRequest request =
+   *       GetRestoreTemplateExecutionRequest.newBuilder()
+   *           .setName(
+   *               RestoreTemplateExecutionName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[RESTORE_TEMPLATE]", "[EXECUTION]")
+   *                   .toString())
+   *           .build();
+   *   RestoreTemplateExecution response = backupDRClient.getRestoreTemplateExecution(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RestoreTemplateExecution getRestoreTemplateExecution(
+      GetRestoreTemplateExecutionRequest request) {
+    return getRestoreTemplateExecutionCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a RestoreTemplateExecution.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   GetRestoreTemplateExecutionRequest request =
+   *       GetRestoreTemplateExecutionRequest.newBuilder()
+   *           .setName(
+   *               RestoreTemplateExecutionName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[RESTORE_TEMPLATE]", "[EXECUTION]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<RestoreTemplateExecution> future =
+   *       backupDRClient.getRestoreTemplateExecutionCallable().futureCall(request);
+   *   // Do something.
+   *   RestoreTemplateExecution response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetRestoreTemplateExecutionRequest, RestoreTemplateExecution>
+      getRestoreTemplateExecutionCallable() {
+    return stub.getRestoreTemplateExecutionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists RestoreTemplateExecutions in a given project, location and restore template.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   RestoreTemplateName parent =
+   *       RestoreTemplateName.of("[PROJECT]", "[LOCATION]", "[RESTORE_TEMPLATE]");
+   *   for (RestoreTemplateExecution element :
+   *       backupDRClient.listRestoreTemplateExecutions(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The project, location, and restore template for which to retrieve
+   *     executions information. Format:
+   *     `projects/{project}/locations/{location}/restoreTemplates/{restore_template}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListRestoreTemplateExecutionsPagedResponse listRestoreTemplateExecutions(
+      @Nullable RestoreTemplateName parent) {
+    ListRestoreTemplateExecutionsRequest request =
+        ListRestoreTemplateExecutionsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listRestoreTemplateExecutions(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists RestoreTemplateExecutions in a given project, location and restore template.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   String parent =
+   *       RestoreTemplateName.of("[PROJECT]", "[LOCATION]", "[RESTORE_TEMPLATE]").toString();
+   *   for (RestoreTemplateExecution element :
+   *       backupDRClient.listRestoreTemplateExecutions(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The project, location, and restore template for which to retrieve
+   *     executions information. Format:
+   *     `projects/{project}/locations/{location}/restoreTemplates/{restore_template}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListRestoreTemplateExecutionsPagedResponse listRestoreTemplateExecutions(
+      String parent) {
+    ListRestoreTemplateExecutionsRequest request =
+        ListRestoreTemplateExecutionsRequest.newBuilder().setParent(parent).build();
+    return listRestoreTemplateExecutions(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists RestoreTemplateExecutions in a given project, location and restore template.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   ListRestoreTemplateExecutionsRequest request =
+   *       ListRestoreTemplateExecutionsRequest.newBuilder()
+   *           .setParent(
+   *               RestoreTemplateName.of("[PROJECT]", "[LOCATION]", "[RESTORE_TEMPLATE]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   for (RestoreTemplateExecution element :
+   *       backupDRClient.listRestoreTemplateExecutions(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListRestoreTemplateExecutionsPagedResponse listRestoreTemplateExecutions(
+      ListRestoreTemplateExecutionsRequest request) {
+    return listRestoreTemplateExecutionsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists RestoreTemplateExecutions in a given project, location and restore template.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   ListRestoreTemplateExecutionsRequest request =
+   *       ListRestoreTemplateExecutionsRequest.newBuilder()
+   *           .setParent(
+   *               RestoreTemplateName.of("[PROJECT]", "[LOCATION]", "[RESTORE_TEMPLATE]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   ApiFuture<RestoreTemplateExecution> future =
+   *       backupDRClient.listRestoreTemplateExecutionsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (RestoreTemplateExecution element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          ListRestoreTemplateExecutionsRequest, ListRestoreTemplateExecutionsPagedResponse>
+      listRestoreTemplateExecutionsPagedCallable() {
+    return stub.listRestoreTemplateExecutionsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists RestoreTemplateExecutions in a given project, location and restore template.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   ListRestoreTemplateExecutionsRequest request =
+   *       ListRestoreTemplateExecutionsRequest.newBuilder()
+   *           .setParent(
+   *               RestoreTemplateName.of("[PROJECT]", "[LOCATION]", "[RESTORE_TEMPLATE]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   while (true) {
+   *     ListRestoreTemplateExecutionsResponse response =
+   *         backupDRClient.listRestoreTemplateExecutionsCallable().call(request);
+   *     for (RestoreTemplateExecution element : response.getRestoreTemplateExecutionsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          ListRestoreTemplateExecutionsRequest, ListRestoreTemplateExecutionsResponse>
+      listRestoreTemplateExecutionsCallable() {
+    return stub.listRestoreTemplateExecutionsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Triggers cleanup of restored resources created during execution.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   RestoreTemplateExecutionName name =
+   *       RestoreTemplateExecutionName.of(
+   *           "[PROJECT]", "[LOCATION]", "[RESTORE_TEMPLATE]", "[EXECUTION]");
+   *   RestoreTemplateExecution response = backupDRClient.triggerRestoreCleanupAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the restore template execution. Format:
+   *     'projects/{project_id}/locations/{location}/restoreTemplates/{restore_template_id}/executions/{execution_id}'
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<RestoreTemplateExecution, OperationMetadata>
+      triggerRestoreCleanupAsync(@Nullable RestoreTemplateExecutionName name) {
+    TriggerRestoreCleanupRequest request =
+        TriggerRestoreCleanupRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return triggerRestoreCleanupAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Triggers cleanup of restored resources created during execution.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   String name =
+   *       RestoreTemplateExecutionName.of(
+   *               "[PROJECT]", "[LOCATION]", "[RESTORE_TEMPLATE]", "[EXECUTION]")
+   *           .toString();
+   *   RestoreTemplateExecution response = backupDRClient.triggerRestoreCleanupAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the restore template execution. Format:
+   *     'projects/{project_id}/locations/{location}/restoreTemplates/{restore_template_id}/executions/{execution_id}'
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<RestoreTemplateExecution, OperationMetadata>
+      triggerRestoreCleanupAsync(String name) {
+    TriggerRestoreCleanupRequest request =
+        TriggerRestoreCleanupRequest.newBuilder().setName(name).build();
+    return triggerRestoreCleanupAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Triggers cleanup of restored resources created during execution.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   TriggerRestoreCleanupRequest request =
+   *       TriggerRestoreCleanupRequest.newBuilder()
+   *           .setName(
+   *               RestoreTemplateExecutionName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[RESTORE_TEMPLATE]", "[EXECUTION]")
+   *                   .toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   RestoreTemplateExecution response = backupDRClient.triggerRestoreCleanupAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<RestoreTemplateExecution, OperationMetadata>
+      triggerRestoreCleanupAsync(TriggerRestoreCleanupRequest request) {
+    return triggerRestoreCleanupOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Triggers cleanup of restored resources created during execution.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   TriggerRestoreCleanupRequest request =
+   *       TriggerRestoreCleanupRequest.newBuilder()
+   *           .setName(
+   *               RestoreTemplateExecutionName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[RESTORE_TEMPLATE]", "[EXECUTION]")
+   *                   .toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<RestoreTemplateExecution, OperationMetadata> future =
+   *       backupDRClient.triggerRestoreCleanupOperationCallable().futureCall(request);
+   *   // Do something.
+   *   RestoreTemplateExecution response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          TriggerRestoreCleanupRequest, RestoreTemplateExecution, OperationMetadata>
+      triggerRestoreCleanupOperationCallable() {
+    return stub.triggerRestoreCleanupOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Triggers cleanup of restored resources created during execution.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   TriggerRestoreCleanupRequest request =
+   *       TriggerRestoreCleanupRequest.newBuilder()
+   *           .setName(
+   *               RestoreTemplateExecutionName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[RESTORE_TEMPLATE]", "[EXECUTION]")
+   *                   .toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       backupDRClient.triggerRestoreCleanupCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<TriggerRestoreCleanupRequest, Operation>
+      triggerRestoreCleanupCallable() {
+    return stub.triggerRestoreCleanupCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new RestoreVerificationPlan in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   RestoreVerificationPlan restoreVerificationPlan =
+   *       RestoreVerificationPlan.newBuilder().build();
+   *   String restoreVerificationPlanId = "restoreVerificationPlanId-1986447539";
+   *   RestoreVerificationPlan response =
+   *       backupDRClient
+   *           .createRestoreVerificationPlanAsync(
+   *               parent, restoreVerificationPlan, restoreVerificationPlanId)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The `RestoreVerificationPlan` project and location in the format
+   *     `projects/{project}/locations/{location}`. In Google Cloud Backup and DR locations map to
+   *     Google Cloud regions, for example &#42;&#42;us-central1&#42;&#42;.
+   * @param restoreVerificationPlan Required. The `RestoreVerificationPlan` resource object to
+   *     create.
+   * @param restoreVerificationPlanId Required. The name of the `RestoreVerificationPlan` to create.
+   *     The name must be unique for the specified project and location. The name must start with a
+   *     lowercase letter followed by up to 62 lowercase letters, numbers, or hyphens. Pattern,
+   *     `^[a-z]([-a-z0-9]&#42;[a-z0-9])?$`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<RestoreVerificationPlan, OperationMetadata>
+      createRestoreVerificationPlanAsync(
+          @Nullable LocationName parent,
+          RestoreVerificationPlan restoreVerificationPlan,
+          String restoreVerificationPlanId) {
+    CreateRestoreVerificationPlanRequest request =
+        CreateRestoreVerificationPlanRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setRestoreVerificationPlan(restoreVerificationPlan)
+            .setRestoreVerificationPlanId(restoreVerificationPlanId)
+            .build();
+    return createRestoreVerificationPlanAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new RestoreVerificationPlan in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   RestoreVerificationPlan restoreVerificationPlan =
+   *       RestoreVerificationPlan.newBuilder().build();
+   *   String restoreVerificationPlanId = "restoreVerificationPlanId-1986447539";
+   *   RestoreVerificationPlan response =
+   *       backupDRClient
+   *           .createRestoreVerificationPlanAsync(
+   *               parent, restoreVerificationPlan, restoreVerificationPlanId)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The `RestoreVerificationPlan` project and location in the format
+   *     `projects/{project}/locations/{location}`. In Google Cloud Backup and DR locations map to
+   *     Google Cloud regions, for example &#42;&#42;us-central1&#42;&#42;.
+   * @param restoreVerificationPlan Required. The `RestoreVerificationPlan` resource object to
+   *     create.
+   * @param restoreVerificationPlanId Required. The name of the `RestoreVerificationPlan` to create.
+   *     The name must be unique for the specified project and location. The name must start with a
+   *     lowercase letter followed by up to 62 lowercase letters, numbers, or hyphens. Pattern,
+   *     `^[a-z]([-a-z0-9]&#42;[a-z0-9])?$`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<RestoreVerificationPlan, OperationMetadata>
+      createRestoreVerificationPlanAsync(
+          String parent,
+          RestoreVerificationPlan restoreVerificationPlan,
+          String restoreVerificationPlanId) {
+    CreateRestoreVerificationPlanRequest request =
+        CreateRestoreVerificationPlanRequest.newBuilder()
+            .setParent(parent)
+            .setRestoreVerificationPlan(restoreVerificationPlan)
+            .setRestoreVerificationPlanId(restoreVerificationPlanId)
+            .build();
+    return createRestoreVerificationPlanAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new RestoreVerificationPlan in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   CreateRestoreVerificationPlanRequest request =
+   *       CreateRestoreVerificationPlanRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setRestoreVerificationPlanId("restoreVerificationPlanId-1986447539")
+   *           .setRestoreVerificationPlan(RestoreVerificationPlan.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   RestoreVerificationPlan response =
+   *       backupDRClient.createRestoreVerificationPlanAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<RestoreVerificationPlan, OperationMetadata>
+      createRestoreVerificationPlanAsync(CreateRestoreVerificationPlanRequest request) {
+    return createRestoreVerificationPlanOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new RestoreVerificationPlan in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   CreateRestoreVerificationPlanRequest request =
+   *       CreateRestoreVerificationPlanRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setRestoreVerificationPlanId("restoreVerificationPlanId-1986447539")
+   *           .setRestoreVerificationPlan(RestoreVerificationPlan.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<RestoreVerificationPlan, OperationMetadata> future =
+   *       backupDRClient.createRestoreVerificationPlanOperationCallable().futureCall(request);
+   *   // Do something.
+   *   RestoreVerificationPlan response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          CreateRestoreVerificationPlanRequest, RestoreVerificationPlan, OperationMetadata>
+      createRestoreVerificationPlanOperationCallable() {
+    return stub.createRestoreVerificationPlanOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new RestoreVerificationPlan in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   CreateRestoreVerificationPlanRequest request =
+   *       CreateRestoreVerificationPlanRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setRestoreVerificationPlanId("restoreVerificationPlanId-1986447539")
+   *           .setRestoreVerificationPlan(RestoreVerificationPlan.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       backupDRClient.createRestoreVerificationPlanCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateRestoreVerificationPlanRequest, Operation>
+      createRestoreVerificationPlanCallable() {
+    return stub.createRestoreVerificationPlanCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new RestoreVerificationPlanAssociation in a given RestoreVerificationPlan.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   RestoreVerificationPlanName parent =
+   *       RestoreVerificationPlanName.of("[PROJECT]", "[LOCATION]", "[RESTOREVERIFICATIONPLAN]");
+   *   RestoreVerificationPlanAssociation restoreVerificationPlanAssociation =
+   *       RestoreVerificationPlanAssociation.newBuilder().build();
+   *   String restoreVerificationPlanAssociationId =
+   *       "restoreVerificationPlanAssociationId-1096897526";
+   *   RestoreVerificationPlanAssociation response =
+   *       backupDRClient
+   *           .createRestoreVerificationPlanAssociationAsync(
+   *               parent, restoreVerificationPlanAssociation, restoreVerificationPlanAssociationId)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource where this association will be created. Format:
+   *     `projects/{project}/locations/{location}/restoreVerificationPlans/{restore_verification_plan}`
+   * @param restoreVerificationPlanAssociation Required. The RestoreVerificationPlanAssociation
+   *     resource to create.
+   * @param restoreVerificationPlanAssociationId Required. The ID to use for the association, which
+   *     will become the final component of the association's resource name.
+   *     <p>This value should be 1-63 characters, and valid characters are /[a-z0-9_-]/.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<RestoreVerificationPlanAssociation, OperationMetadata>
+      createRestoreVerificationPlanAssociationAsync(
+          @Nullable RestoreVerificationPlanName parent,
+          RestoreVerificationPlanAssociation restoreVerificationPlanAssociation,
+          String restoreVerificationPlanAssociationId) {
+    CreateRestoreVerificationPlanAssociationRequest request =
+        CreateRestoreVerificationPlanAssociationRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setRestoreVerificationPlanAssociation(restoreVerificationPlanAssociation)
+            .setRestoreVerificationPlanAssociationId(restoreVerificationPlanAssociationId)
+            .build();
+    return createRestoreVerificationPlanAssociationAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new RestoreVerificationPlanAssociation in a given RestoreVerificationPlan.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   String parent =
+   *       RestoreVerificationPlanName.of("[PROJECT]", "[LOCATION]", "[RESTOREVERIFICATIONPLAN]")
+   *           .toString();
+   *   RestoreVerificationPlanAssociation restoreVerificationPlanAssociation =
+   *       RestoreVerificationPlanAssociation.newBuilder().build();
+   *   String restoreVerificationPlanAssociationId =
+   *       "restoreVerificationPlanAssociationId-1096897526";
+   *   RestoreVerificationPlanAssociation response =
+   *       backupDRClient
+   *           .createRestoreVerificationPlanAssociationAsync(
+   *               parent, restoreVerificationPlanAssociation, restoreVerificationPlanAssociationId)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource where this association will be created. Format:
+   *     `projects/{project}/locations/{location}/restoreVerificationPlans/{restore_verification_plan}`
+   * @param restoreVerificationPlanAssociation Required. The RestoreVerificationPlanAssociation
+   *     resource to create.
+   * @param restoreVerificationPlanAssociationId Required. The ID to use for the association, which
+   *     will become the final component of the association's resource name.
+   *     <p>This value should be 1-63 characters, and valid characters are /[a-z0-9_-]/.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<RestoreVerificationPlanAssociation, OperationMetadata>
+      createRestoreVerificationPlanAssociationAsync(
+          String parent,
+          RestoreVerificationPlanAssociation restoreVerificationPlanAssociation,
+          String restoreVerificationPlanAssociationId) {
+    CreateRestoreVerificationPlanAssociationRequest request =
+        CreateRestoreVerificationPlanAssociationRequest.newBuilder()
+            .setParent(parent)
+            .setRestoreVerificationPlanAssociation(restoreVerificationPlanAssociation)
+            .setRestoreVerificationPlanAssociationId(restoreVerificationPlanAssociationId)
+            .build();
+    return createRestoreVerificationPlanAssociationAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new RestoreVerificationPlanAssociation in a given RestoreVerificationPlan.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   CreateRestoreVerificationPlanAssociationRequest request =
+   *       CreateRestoreVerificationPlanAssociationRequest.newBuilder()
+   *           .setParent(
+   *               RestoreVerificationPlanName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[RESTOREVERIFICATIONPLAN]")
+   *                   .toString())
+   *           .setRestoreVerificationPlanAssociationId(
+   *               "restoreVerificationPlanAssociationId-1096897526")
+   *           .setRestoreVerificationPlanAssociation(
+   *               RestoreVerificationPlanAssociation.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   RestoreVerificationPlanAssociation response =
+   *       backupDRClient.createRestoreVerificationPlanAssociationAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<RestoreVerificationPlanAssociation, OperationMetadata>
+      createRestoreVerificationPlanAssociationAsync(
+          CreateRestoreVerificationPlanAssociationRequest request) {
+    return createRestoreVerificationPlanAssociationOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new RestoreVerificationPlanAssociation in a given RestoreVerificationPlan.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   CreateRestoreVerificationPlanAssociationRequest request =
+   *       CreateRestoreVerificationPlanAssociationRequest.newBuilder()
+   *           .setParent(
+   *               RestoreVerificationPlanName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[RESTOREVERIFICATIONPLAN]")
+   *                   .toString())
+   *           .setRestoreVerificationPlanAssociationId(
+   *               "restoreVerificationPlanAssociationId-1096897526")
+   *           .setRestoreVerificationPlanAssociation(
+   *               RestoreVerificationPlanAssociation.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<RestoreVerificationPlanAssociation, OperationMetadata> future =
+   *       backupDRClient
+   *           .createRestoreVerificationPlanAssociationOperationCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   RestoreVerificationPlanAssociation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          CreateRestoreVerificationPlanAssociationRequest,
+          RestoreVerificationPlanAssociation,
+          OperationMetadata>
+      createRestoreVerificationPlanAssociationOperationCallable() {
+    return stub.createRestoreVerificationPlanAssociationOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new RestoreVerificationPlanAssociation in a given RestoreVerificationPlan.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   CreateRestoreVerificationPlanAssociationRequest request =
+   *       CreateRestoreVerificationPlanAssociationRequest.newBuilder()
+   *           .setParent(
+   *               RestoreVerificationPlanName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[RESTOREVERIFICATIONPLAN]")
+   *                   .toString())
+   *           .setRestoreVerificationPlanAssociationId(
+   *               "restoreVerificationPlanAssociationId-1096897526")
+   *           .setRestoreVerificationPlanAssociation(
+   *               RestoreVerificationPlanAssociation.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       backupDRClient.createRestoreVerificationPlanAssociationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateRestoreVerificationPlanAssociationRequest, Operation>
+      createRestoreVerificationPlanAssociationCallable() {
+    return stub.createRestoreVerificationPlanAssociationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single RestoreVerificationPlanAssociation in a given RestoreVerificationPlan.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   RestoreVerificationPlanAssociationName name =
+   *       RestoreVerificationPlanAssociationName.of(
+   *           "[PROJECT]", "[LOCATION]", "[RESTORE_VERIFICATION_PLAN]", "[ASSOCIATION]");
+   *   RestoreVerificationPlanAssociation response =
+   *       backupDRClient.getRestoreVerificationPlanAssociation(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the RestoreVerificationPlanAssociation to retrieve.
+   *     Format:
+   *     `projects/{project}/locations/{location}/restoreVerificationPlans/{restore_verification_plan}/associations/{association}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RestoreVerificationPlanAssociation getRestoreVerificationPlanAssociation(
+      @Nullable RestoreVerificationPlanAssociationName name) {
+    GetRestoreVerificationPlanAssociationRequest request =
+        GetRestoreVerificationPlanAssociationRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getRestoreVerificationPlanAssociation(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single RestoreVerificationPlanAssociation in a given RestoreVerificationPlan.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   String name =
+   *       RestoreVerificationPlanAssociationName.of(
+   *               "[PROJECT]", "[LOCATION]", "[RESTORE_VERIFICATION_PLAN]", "[ASSOCIATION]")
+   *           .toString();
+   *   RestoreVerificationPlanAssociation response =
+   *       backupDRClient.getRestoreVerificationPlanAssociation(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the RestoreVerificationPlanAssociation to retrieve.
+   *     Format:
+   *     `projects/{project}/locations/{location}/restoreVerificationPlans/{restore_verification_plan}/associations/{association}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RestoreVerificationPlanAssociation getRestoreVerificationPlanAssociation(
+      String name) {
+    GetRestoreVerificationPlanAssociationRequest request =
+        GetRestoreVerificationPlanAssociationRequest.newBuilder().setName(name).build();
+    return getRestoreVerificationPlanAssociation(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single RestoreVerificationPlanAssociation in a given RestoreVerificationPlan.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   GetRestoreVerificationPlanAssociationRequest request =
+   *       GetRestoreVerificationPlanAssociationRequest.newBuilder()
+   *           .setName(
+   *               RestoreVerificationPlanAssociationName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[RESTORE_VERIFICATION_PLAN]", "[ASSOCIATION]")
+   *                   .toString())
+   *           .build();
+   *   RestoreVerificationPlanAssociation response =
+   *       backupDRClient.getRestoreVerificationPlanAssociation(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RestoreVerificationPlanAssociation getRestoreVerificationPlanAssociation(
+      GetRestoreVerificationPlanAssociationRequest request) {
+    return getRestoreVerificationPlanAssociationCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single RestoreVerificationPlanAssociation in a given RestoreVerificationPlan.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   GetRestoreVerificationPlanAssociationRequest request =
+   *       GetRestoreVerificationPlanAssociationRequest.newBuilder()
+   *           .setName(
+   *               RestoreVerificationPlanAssociationName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[RESTORE_VERIFICATION_PLAN]", "[ASSOCIATION]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<RestoreVerificationPlanAssociation> future =
+   *       backupDRClient.getRestoreVerificationPlanAssociationCallable().futureCall(request);
+   *   // Do something.
+   *   RestoreVerificationPlanAssociation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          GetRestoreVerificationPlanAssociationRequest, RestoreVerificationPlanAssociation>
+      getRestoreVerificationPlanAssociationCallable() {
+    return stub.getRestoreVerificationPlanAssociationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists RestoreVerificationPlanAssociations in a given RestoreVerificationPlan.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   RestoreVerificationPlanName parent =
+   *       RestoreVerificationPlanName.of("[PROJECT]", "[LOCATION]", "[RESTOREVERIFICATIONPLAN]");
+   *   for (RestoreVerificationPlanAssociation element :
+   *       backupDRClient.listRestoreVerificationPlanAssociations(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent RestoreVerificationPlan name. Format:
+   *     `projects/{project}/locations/{location}/restoreVerificationPlans/{restore_verification_plan}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListRestoreVerificationPlanAssociationsPagedResponse
+      listRestoreVerificationPlanAssociations(@Nullable RestoreVerificationPlanName parent) {
+    ListRestoreVerificationPlanAssociationsRequest request =
+        ListRestoreVerificationPlanAssociationsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listRestoreVerificationPlanAssociations(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists RestoreVerificationPlanAssociations in a given RestoreVerificationPlan.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   String parent =
+   *       RestoreVerificationPlanName.of("[PROJECT]", "[LOCATION]", "[RESTOREVERIFICATIONPLAN]")
+   *           .toString();
+   *   for (RestoreVerificationPlanAssociation element :
+   *       backupDRClient.listRestoreVerificationPlanAssociations(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent RestoreVerificationPlan name. Format:
+   *     `projects/{project}/locations/{location}/restoreVerificationPlans/{restore_verification_plan}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListRestoreVerificationPlanAssociationsPagedResponse
+      listRestoreVerificationPlanAssociations(String parent) {
+    ListRestoreVerificationPlanAssociationsRequest request =
+        ListRestoreVerificationPlanAssociationsRequest.newBuilder().setParent(parent).build();
+    return listRestoreVerificationPlanAssociations(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists RestoreVerificationPlanAssociations in a given RestoreVerificationPlan.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   ListRestoreVerificationPlanAssociationsRequest request =
+   *       ListRestoreVerificationPlanAssociationsRequest.newBuilder()
+   *           .setParent(
+   *               RestoreVerificationPlanName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[RESTOREVERIFICATIONPLAN]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   for (RestoreVerificationPlanAssociation element :
+   *       backupDRClient.listRestoreVerificationPlanAssociations(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListRestoreVerificationPlanAssociationsPagedResponse
+      listRestoreVerificationPlanAssociations(
+          ListRestoreVerificationPlanAssociationsRequest request) {
+    return listRestoreVerificationPlanAssociationsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists RestoreVerificationPlanAssociations in a given RestoreVerificationPlan.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   ListRestoreVerificationPlanAssociationsRequest request =
+   *       ListRestoreVerificationPlanAssociationsRequest.newBuilder()
+   *           .setParent(
+   *               RestoreVerificationPlanName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[RESTOREVERIFICATIONPLAN]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   ApiFuture<RestoreVerificationPlanAssociation> future =
+   *       backupDRClient.listRestoreVerificationPlanAssociationsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (RestoreVerificationPlanAssociation element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          ListRestoreVerificationPlanAssociationsRequest,
+          ListRestoreVerificationPlanAssociationsPagedResponse>
+      listRestoreVerificationPlanAssociationsPagedCallable() {
+    return stub.listRestoreVerificationPlanAssociationsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists RestoreVerificationPlanAssociations in a given RestoreVerificationPlan.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   ListRestoreVerificationPlanAssociationsRequest request =
+   *       ListRestoreVerificationPlanAssociationsRequest.newBuilder()
+   *           .setParent(
+   *               RestoreVerificationPlanName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[RESTOREVERIFICATIONPLAN]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   while (true) {
+   *     ListRestoreVerificationPlanAssociationsResponse response =
+   *         backupDRClient.listRestoreVerificationPlanAssociationsCallable().call(request);
+   *     for (RestoreVerificationPlanAssociation element :
+   *         response.getRestoreVerificationPlanAssociationsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          ListRestoreVerificationPlanAssociationsRequest,
+          ListRestoreVerificationPlanAssociationsResponse>
+      listRestoreVerificationPlanAssociationsCallable() {
+    return stub.listRestoreVerificationPlanAssociationsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single RestoreVerificationPlanAssociation in a given RestoreVerificationPlan.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   RestoreVerificationPlanAssociationName name =
+   *       RestoreVerificationPlanAssociationName.of(
+   *           "[PROJECT]", "[LOCATION]", "[RESTORE_VERIFICATION_PLAN]", "[ASSOCIATION]");
+   *   backupDRClient.deleteRestoreVerificationPlanAssociationAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the RestoreVerificationPlanAssociation to delete.
+   *     Format:
+   *     `projects/{project}/locations/{location}/restoreVerificationPlans/{restore_verification_plan}/associations/{association}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata>
+      deleteRestoreVerificationPlanAssociationAsync(
+          @Nullable RestoreVerificationPlanAssociationName name) {
+    DeleteRestoreVerificationPlanAssociationRequest request =
+        DeleteRestoreVerificationPlanAssociationRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return deleteRestoreVerificationPlanAssociationAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single RestoreVerificationPlanAssociation in a given RestoreVerificationPlan.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   String name =
+   *       RestoreVerificationPlanAssociationName.of(
+   *               "[PROJECT]", "[LOCATION]", "[RESTORE_VERIFICATION_PLAN]", "[ASSOCIATION]")
+   *           .toString();
+   *   backupDRClient.deleteRestoreVerificationPlanAssociationAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the RestoreVerificationPlanAssociation to delete.
+   *     Format:
+   *     `projects/{project}/locations/{location}/restoreVerificationPlans/{restore_verification_plan}/associations/{association}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata>
+      deleteRestoreVerificationPlanAssociationAsync(String name) {
+    DeleteRestoreVerificationPlanAssociationRequest request =
+        DeleteRestoreVerificationPlanAssociationRequest.newBuilder().setName(name).build();
+    return deleteRestoreVerificationPlanAssociationAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single RestoreVerificationPlanAssociation in a given RestoreVerificationPlan.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   DeleteRestoreVerificationPlanAssociationRequest request =
+   *       DeleteRestoreVerificationPlanAssociationRequest.newBuilder()
+   *           .setName(
+   *               RestoreVerificationPlanAssociationName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[RESTORE_VERIFICATION_PLAN]", "[ASSOCIATION]")
+   *                   .toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   backupDRClient.deleteRestoreVerificationPlanAssociationAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata>
+      deleteRestoreVerificationPlanAssociationAsync(
+          DeleteRestoreVerificationPlanAssociationRequest request) {
+    return deleteRestoreVerificationPlanAssociationOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single RestoreVerificationPlanAssociation in a given RestoreVerificationPlan.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   DeleteRestoreVerificationPlanAssociationRequest request =
+   *       DeleteRestoreVerificationPlanAssociationRequest.newBuilder()
+   *           .setName(
+   *               RestoreVerificationPlanAssociationName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[RESTORE_VERIFICATION_PLAN]", "[ASSOCIATION]")
+   *                   .toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Empty, OperationMetadata> future =
+   *       backupDRClient
+   *           .deleteRestoreVerificationPlanAssociationOperationCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          DeleteRestoreVerificationPlanAssociationRequest, Empty, OperationMetadata>
+      deleteRestoreVerificationPlanAssociationOperationCallable() {
+    return stub.deleteRestoreVerificationPlanAssociationOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single RestoreVerificationPlanAssociation in a given RestoreVerificationPlan.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   DeleteRestoreVerificationPlanAssociationRequest request =
+   *       DeleteRestoreVerificationPlanAssociationRequest.newBuilder()
+   *           .setName(
+   *               RestoreVerificationPlanAssociationName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[RESTORE_VERIFICATION_PLAN]", "[ASSOCIATION]")
+   *                   .toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       backupDRClient.deleteRestoreVerificationPlanAssociationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteRestoreVerificationPlanAssociationRequest, Operation>
+      deleteRestoreVerificationPlanAssociationCallable() {
+    return stub.deleteRestoreVerificationPlanAssociationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Triggers a new Restore Verification for the association in a given RestoreVerificationPlan.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   RestoreVerificationPlanAssociationName name =
+   *       RestoreVerificationPlanAssociationName.of(
+   *           "[PROJECT]", "[LOCATION]", "[RESTORE_VERIFICATION_PLAN]", "[ASSOCIATION]");
+   *   TriggerRestoreVerificationResponse response =
+   *       backupDRClient.triggerRestoreVerificationAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the RestoreVerificationPlanAssociation to trigger.
+   *     Format:
+   *     `projects/{project}/locations/{location}/restoreVerificationPlans/{restore_verification_plan}/associations/{association}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<TriggerRestoreVerificationResponse, OperationMetadata>
+      triggerRestoreVerificationAsync(@Nullable RestoreVerificationPlanAssociationName name) {
+    TriggerRestoreVerificationRequest request =
+        TriggerRestoreVerificationRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return triggerRestoreVerificationAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Triggers a new Restore Verification for the association in a given RestoreVerificationPlan.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   String name =
+   *       RestoreVerificationPlanAssociationName.of(
+   *               "[PROJECT]", "[LOCATION]", "[RESTORE_VERIFICATION_PLAN]", "[ASSOCIATION]")
+   *           .toString();
+   *   TriggerRestoreVerificationResponse response =
+   *       backupDRClient.triggerRestoreVerificationAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the RestoreVerificationPlanAssociation to trigger.
+   *     Format:
+   *     `projects/{project}/locations/{location}/restoreVerificationPlans/{restore_verification_plan}/associations/{association}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<TriggerRestoreVerificationResponse, OperationMetadata>
+      triggerRestoreVerificationAsync(String name) {
+    TriggerRestoreVerificationRequest request =
+        TriggerRestoreVerificationRequest.newBuilder().setName(name).build();
+    return triggerRestoreVerificationAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Triggers a new Restore Verification for the association in a given RestoreVerificationPlan.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   TriggerRestoreVerificationRequest request =
+   *       TriggerRestoreVerificationRequest.newBuilder()
+   *           .setName(
+   *               RestoreVerificationPlanAssociationName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[RESTORE_VERIFICATION_PLAN]", "[ASSOCIATION]")
+   *                   .toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   TriggerRestoreVerificationResponse response =
+   *       backupDRClient.triggerRestoreVerificationAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<TriggerRestoreVerificationResponse, OperationMetadata>
+      triggerRestoreVerificationAsync(TriggerRestoreVerificationRequest request) {
+    return triggerRestoreVerificationOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Triggers a new Restore Verification for the association in a given RestoreVerificationPlan.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   TriggerRestoreVerificationRequest request =
+   *       TriggerRestoreVerificationRequest.newBuilder()
+   *           .setName(
+   *               RestoreVerificationPlanAssociationName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[RESTORE_VERIFICATION_PLAN]", "[ASSOCIATION]")
+   *                   .toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<TriggerRestoreVerificationResponse, OperationMetadata> future =
+   *       backupDRClient.triggerRestoreVerificationOperationCallable().futureCall(request);
+   *   // Do something.
+   *   TriggerRestoreVerificationResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          TriggerRestoreVerificationRequest, TriggerRestoreVerificationResponse, OperationMetadata>
+      triggerRestoreVerificationOperationCallable() {
+    return stub.triggerRestoreVerificationOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Triggers a new Restore Verification for the association in a given RestoreVerificationPlan.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   TriggerRestoreVerificationRequest request =
+   *       TriggerRestoreVerificationRequest.newBuilder()
+   *           .setName(
+   *               RestoreVerificationPlanAssociationName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[RESTORE_VERIFICATION_PLAN]", "[ASSOCIATION]")
+   *                   .toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       backupDRClient.triggerRestoreVerificationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<TriggerRestoreVerificationRequest, Operation>
+      triggerRestoreVerificationCallable() {
+    return stub.triggerRestoreVerificationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single RestoreVerificationPlan. Returns the requested
+   * RestoreVerificationPlan.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   RestoreVerificationPlanName name =
+   *       RestoreVerificationPlanName.of("[PROJECT]", "[LOCATION]", "[RESTOREVERIFICATIONPLAN]");
+   *   RestoreVerificationPlan response = backupDRClient.getRestoreVerificationPlan(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the `RestoreVerificationPlan` to retrieve.
+   *     <p>Format:
+   *     `projects/{project}/locations/{location}/restoreVerificationPlans/{restoreVerificationPlan}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RestoreVerificationPlan getRestoreVerificationPlan(
+      @Nullable RestoreVerificationPlanName name) {
+    GetRestoreVerificationPlanRequest request =
+        GetRestoreVerificationPlanRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getRestoreVerificationPlan(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single RestoreVerificationPlan. Returns the requested
+   * RestoreVerificationPlan.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   String name =
+   *       RestoreVerificationPlanName.of("[PROJECT]", "[LOCATION]", "[RESTOREVERIFICATIONPLAN]")
+   *           .toString();
+   *   RestoreVerificationPlan response = backupDRClient.getRestoreVerificationPlan(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the `RestoreVerificationPlan` to retrieve.
+   *     <p>Format:
+   *     `projects/{project}/locations/{location}/restoreVerificationPlans/{restoreVerificationPlan}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RestoreVerificationPlan getRestoreVerificationPlan(String name) {
+    GetRestoreVerificationPlanRequest request =
+        GetRestoreVerificationPlanRequest.newBuilder().setName(name).build();
+    return getRestoreVerificationPlan(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single RestoreVerificationPlan. Returns the requested
+   * RestoreVerificationPlan.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   GetRestoreVerificationPlanRequest request =
+   *       GetRestoreVerificationPlanRequest.newBuilder()
+   *           .setName(
+   *               RestoreVerificationPlanName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[RESTOREVERIFICATIONPLAN]")
+   *                   .toString())
+   *           .build();
+   *   RestoreVerificationPlan response = backupDRClient.getRestoreVerificationPlan(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RestoreVerificationPlan getRestoreVerificationPlan(
+      GetRestoreVerificationPlanRequest request) {
+    return getRestoreVerificationPlanCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single RestoreVerificationPlan. Returns the requested
+   * RestoreVerificationPlan.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   GetRestoreVerificationPlanRequest request =
+   *       GetRestoreVerificationPlanRequest.newBuilder()
+   *           .setName(
+   *               RestoreVerificationPlanName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[RESTOREVERIFICATIONPLAN]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<RestoreVerificationPlan> future =
+   *       backupDRClient.getRestoreVerificationPlanCallable().futureCall(request);
+   *   // Do something.
+   *   RestoreVerificationPlan response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetRestoreVerificationPlanRequest, RestoreVerificationPlan>
+      getRestoreVerificationPlanCallable() {
+    return stub.getRestoreVerificationPlanCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists RestoreVerificationPlans in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   for (RestoreVerificationPlan element :
+   *       backupDRClient.listRestoreVerificationPlans(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The project and location for which to retrieve
+   *     `RestoreVerificationPlans` information. Format: `projects/{project}/locations/{location}`.
+   *     In Google Cloud Backup and DR, locations map to Google Cloud regions, for example
+   *     &#42;&#42;us-central1&#42;&#42;. To retrieve restore verification plans for all locations,
+   *     use "-" for the `{location}` value.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListRestoreVerificationPlansPagedResponse listRestoreVerificationPlans(
+      @Nullable LocationName parent) {
+    ListRestoreVerificationPlansRequest request =
+        ListRestoreVerificationPlansRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listRestoreVerificationPlans(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists RestoreVerificationPlans in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   for (RestoreVerificationPlan element :
+   *       backupDRClient.listRestoreVerificationPlans(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The project and location for which to retrieve
+   *     `RestoreVerificationPlans` information. Format: `projects/{project}/locations/{location}`.
+   *     In Google Cloud Backup and DR, locations map to Google Cloud regions, for example
+   *     &#42;&#42;us-central1&#42;&#42;. To retrieve restore verification plans for all locations,
+   *     use "-" for the `{location}` value.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListRestoreVerificationPlansPagedResponse listRestoreVerificationPlans(
+      String parent) {
+    ListRestoreVerificationPlansRequest request =
+        ListRestoreVerificationPlansRequest.newBuilder().setParent(parent).build();
+    return listRestoreVerificationPlans(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists RestoreVerificationPlans in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   ListRestoreVerificationPlansRequest request =
+   *       ListRestoreVerificationPlansRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   for (RestoreVerificationPlan element :
+   *       backupDRClient.listRestoreVerificationPlans(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListRestoreVerificationPlansPagedResponse listRestoreVerificationPlans(
+      ListRestoreVerificationPlansRequest request) {
+    return listRestoreVerificationPlansPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists RestoreVerificationPlans in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   ListRestoreVerificationPlansRequest request =
+   *       ListRestoreVerificationPlansRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   ApiFuture<RestoreVerificationPlan> future =
+   *       backupDRClient.listRestoreVerificationPlansPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (RestoreVerificationPlan element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          ListRestoreVerificationPlansRequest, ListRestoreVerificationPlansPagedResponse>
+      listRestoreVerificationPlansPagedCallable() {
+    return stub.listRestoreVerificationPlansPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists RestoreVerificationPlans in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   ListRestoreVerificationPlansRequest request =
+   *       ListRestoreVerificationPlansRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   while (true) {
+   *     ListRestoreVerificationPlansResponse response =
+   *         backupDRClient.listRestoreVerificationPlansCallable().call(request);
+   *     for (RestoreVerificationPlan element : response.getRestoreVerificationPlansList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          ListRestoreVerificationPlansRequest, ListRestoreVerificationPlansResponse>
+      listRestoreVerificationPlansCallable() {
+    return stub.listRestoreVerificationPlansCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single RestoreVerificationPlan. If the `force` flag is set to `true`, any
+   * RestoreVerificationPlanAssociations linked to this RestoreVerificationPlan will also be
+   * deleted.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   RestoreVerificationPlanName name =
+   *       RestoreVerificationPlanName.of("[PROJECT]", "[LOCATION]", "[RESTOREVERIFICATIONPLAN]");
+   *   backupDRClient.deleteRestoreVerificationPlanAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the `RestoreVerificationPlan` to delete.
+   *     <p>Format:
+   *     `projects/{project}/locations/{location}/restoreVerificationPlans/{restoreVerificationPlan}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteRestoreVerificationPlanAsync(
+      @Nullable RestoreVerificationPlanName name) {
+    DeleteRestoreVerificationPlanRequest request =
+        DeleteRestoreVerificationPlanRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return deleteRestoreVerificationPlanAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single RestoreVerificationPlan. If the `force` flag is set to `true`, any
+   * RestoreVerificationPlanAssociations linked to this RestoreVerificationPlan will also be
+   * deleted.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   String name =
+   *       RestoreVerificationPlanName.of("[PROJECT]", "[LOCATION]", "[RESTOREVERIFICATIONPLAN]")
+   *           .toString();
+   *   backupDRClient.deleteRestoreVerificationPlanAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the `RestoreVerificationPlan` to delete.
+   *     <p>Format:
+   *     `projects/{project}/locations/{location}/restoreVerificationPlans/{restoreVerificationPlan}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteRestoreVerificationPlanAsync(
+      String name) {
+    DeleteRestoreVerificationPlanRequest request =
+        DeleteRestoreVerificationPlanRequest.newBuilder().setName(name).build();
+    return deleteRestoreVerificationPlanAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single RestoreVerificationPlan. If the `force` flag is set to `true`, any
+   * RestoreVerificationPlanAssociations linked to this RestoreVerificationPlan will also be
+   * deleted.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   DeleteRestoreVerificationPlanRequest request =
+   *       DeleteRestoreVerificationPlanRequest.newBuilder()
+   *           .setName(
+   *               RestoreVerificationPlanName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[RESTOREVERIFICATIONPLAN]")
+   *                   .toString())
+   *           .setRequestId("requestId693933066")
+   *           .setForce(true)
+   *           .build();
+   *   backupDRClient.deleteRestoreVerificationPlanAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteRestoreVerificationPlanAsync(
+      DeleteRestoreVerificationPlanRequest request) {
+    return deleteRestoreVerificationPlanOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single RestoreVerificationPlan. If the `force` flag is set to `true`, any
+   * RestoreVerificationPlanAssociations linked to this RestoreVerificationPlan will also be
+   * deleted.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   DeleteRestoreVerificationPlanRequest request =
+   *       DeleteRestoreVerificationPlanRequest.newBuilder()
+   *           .setName(
+   *               RestoreVerificationPlanName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[RESTOREVERIFICATIONPLAN]")
+   *                   .toString())
+   *           .setRequestId("requestId693933066")
+   *           .setForce(true)
+   *           .build();
+   *   OperationFuture<Empty, OperationMetadata> future =
+   *       backupDRClient.deleteRestoreVerificationPlanOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeleteRestoreVerificationPlanRequest, Empty, OperationMetadata>
+      deleteRestoreVerificationPlanOperationCallable() {
+    return stub.deleteRestoreVerificationPlanOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single RestoreVerificationPlan. If the `force` flag is set to `true`, any
+   * RestoreVerificationPlanAssociations linked to this RestoreVerificationPlan will also be
+   * deleted.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   DeleteRestoreVerificationPlanRequest request =
+   *       DeleteRestoreVerificationPlanRequest.newBuilder()
+   *           .setName(
+   *               RestoreVerificationPlanName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[RESTOREVERIFICATIONPLAN]")
+   *                   .toString())
+   *           .setRequestId("requestId693933066")
+   *           .setForce(true)
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       backupDRClient.deleteRestoreVerificationPlanCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteRestoreVerificationPlanRequest, Operation>
+      deleteRestoreVerificationPlanCallable() {
+    return stub.deleteRestoreVerificationPlanCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -8226,6 +13683,797 @@ public class BackupDRClient implements BackgroundResource {
     protected FetchDataSourceReferencesForResourceTypeFixedSizeCollection createCollection(
         @Nullable List<FetchDataSourceReferencesForResourceTypePage> pages, int collectionSize) {
       return new FetchDataSourceReferencesForResourceTypeFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListAutoProtectionPoliciesPagedResponse
+      extends AbstractPagedListResponse<
+          ListAutoProtectionPoliciesRequest,
+          ListAutoProtectionPoliciesResponse,
+          AutoProtectionPolicy,
+          ListAutoProtectionPoliciesPage,
+          ListAutoProtectionPoliciesFixedSizeCollection> {
+
+    public static ApiFuture<ListAutoProtectionPoliciesPagedResponse> createAsync(
+        PageContext<
+                ListAutoProtectionPoliciesRequest,
+                ListAutoProtectionPoliciesResponse,
+                AutoProtectionPolicy>
+            context,
+        ApiFuture<ListAutoProtectionPoliciesResponse> futureResponse) {
+      ApiFuture<ListAutoProtectionPoliciesPage> futurePage =
+          ListAutoProtectionPoliciesPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListAutoProtectionPoliciesPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListAutoProtectionPoliciesPagedResponse(ListAutoProtectionPoliciesPage page) {
+      super(page, ListAutoProtectionPoliciesFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListAutoProtectionPoliciesPage
+      extends AbstractPage<
+          ListAutoProtectionPoliciesRequest,
+          ListAutoProtectionPoliciesResponse,
+          AutoProtectionPolicy,
+          ListAutoProtectionPoliciesPage> {
+
+    private ListAutoProtectionPoliciesPage(
+        @Nullable
+            PageContext<
+                ListAutoProtectionPoliciesRequest,
+                ListAutoProtectionPoliciesResponse,
+                AutoProtectionPolicy>
+            context,
+        @Nullable ListAutoProtectionPoliciesResponse response) {
+      super(context, response);
+    }
+
+    private static ListAutoProtectionPoliciesPage createEmptyPage() {
+      return new ListAutoProtectionPoliciesPage(null, null);
+    }
+
+    @Override
+    protected ListAutoProtectionPoliciesPage createPage(
+        @Nullable
+            PageContext<
+                ListAutoProtectionPoliciesRequest,
+                ListAutoProtectionPoliciesResponse,
+                AutoProtectionPolicy>
+            context,
+        @Nullable ListAutoProtectionPoliciesResponse response) {
+      return new ListAutoProtectionPoliciesPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListAutoProtectionPoliciesPage> createPageAsync(
+        @Nullable
+            PageContext<
+                ListAutoProtectionPoliciesRequest,
+                ListAutoProtectionPoliciesResponse,
+                AutoProtectionPolicy>
+            context,
+        ApiFuture<ListAutoProtectionPoliciesResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListAutoProtectionPoliciesFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListAutoProtectionPoliciesRequest,
+          ListAutoProtectionPoliciesResponse,
+          AutoProtectionPolicy,
+          ListAutoProtectionPoliciesPage,
+          ListAutoProtectionPoliciesFixedSizeCollection> {
+
+    private ListAutoProtectionPoliciesFixedSizeCollection(
+        @Nullable List<ListAutoProtectionPoliciesPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListAutoProtectionPoliciesFixedSizeCollection createEmptyCollection() {
+      return new ListAutoProtectionPoliciesFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListAutoProtectionPoliciesFixedSizeCollection createCollection(
+        @Nullable List<ListAutoProtectionPoliciesPage> pages, int collectionSize) {
+      return new ListAutoProtectionPoliciesFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListAutoProtectionPolicyBindingsPagedResponse
+      extends AbstractPagedListResponse<
+          ListAutoProtectionPolicyBindingsRequest,
+          ListAutoProtectionPolicyBindingsResponse,
+          AutoProtectionPolicyBinding,
+          ListAutoProtectionPolicyBindingsPage,
+          ListAutoProtectionPolicyBindingsFixedSizeCollection> {
+
+    public static ApiFuture<ListAutoProtectionPolicyBindingsPagedResponse> createAsync(
+        PageContext<
+                ListAutoProtectionPolicyBindingsRequest,
+                ListAutoProtectionPolicyBindingsResponse,
+                AutoProtectionPolicyBinding>
+            context,
+        ApiFuture<ListAutoProtectionPolicyBindingsResponse> futureResponse) {
+      ApiFuture<ListAutoProtectionPolicyBindingsPage> futurePage =
+          ListAutoProtectionPolicyBindingsPage.createEmptyPage()
+              .createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListAutoProtectionPolicyBindingsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListAutoProtectionPolicyBindingsPagedResponse(
+        ListAutoProtectionPolicyBindingsPage page) {
+      super(page, ListAutoProtectionPolicyBindingsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListAutoProtectionPolicyBindingsPage
+      extends AbstractPage<
+          ListAutoProtectionPolicyBindingsRequest,
+          ListAutoProtectionPolicyBindingsResponse,
+          AutoProtectionPolicyBinding,
+          ListAutoProtectionPolicyBindingsPage> {
+
+    private ListAutoProtectionPolicyBindingsPage(
+        @Nullable
+            PageContext<
+                ListAutoProtectionPolicyBindingsRequest,
+                ListAutoProtectionPolicyBindingsResponse,
+                AutoProtectionPolicyBinding>
+            context,
+        @Nullable ListAutoProtectionPolicyBindingsResponse response) {
+      super(context, response);
+    }
+
+    private static ListAutoProtectionPolicyBindingsPage createEmptyPage() {
+      return new ListAutoProtectionPolicyBindingsPage(null, null);
+    }
+
+    @Override
+    protected ListAutoProtectionPolicyBindingsPage createPage(
+        @Nullable
+            PageContext<
+                ListAutoProtectionPolicyBindingsRequest,
+                ListAutoProtectionPolicyBindingsResponse,
+                AutoProtectionPolicyBinding>
+            context,
+        @Nullable ListAutoProtectionPolicyBindingsResponse response) {
+      return new ListAutoProtectionPolicyBindingsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListAutoProtectionPolicyBindingsPage> createPageAsync(
+        @Nullable
+            PageContext<
+                ListAutoProtectionPolicyBindingsRequest,
+                ListAutoProtectionPolicyBindingsResponse,
+                AutoProtectionPolicyBinding>
+            context,
+        ApiFuture<ListAutoProtectionPolicyBindingsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListAutoProtectionPolicyBindingsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListAutoProtectionPolicyBindingsRequest,
+          ListAutoProtectionPolicyBindingsResponse,
+          AutoProtectionPolicyBinding,
+          ListAutoProtectionPolicyBindingsPage,
+          ListAutoProtectionPolicyBindingsFixedSizeCollection> {
+
+    private ListAutoProtectionPolicyBindingsFixedSizeCollection(
+        @Nullable List<ListAutoProtectionPolicyBindingsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListAutoProtectionPolicyBindingsFixedSizeCollection createEmptyCollection() {
+      return new ListAutoProtectionPolicyBindingsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListAutoProtectionPolicyBindingsFixedSizeCollection createCollection(
+        @Nullable List<ListAutoProtectionPolicyBindingsPage> pages, int collectionSize) {
+      return new ListAutoProtectionPolicyBindingsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListAppliedAutoProtectionPoliciesPagedResponse
+      extends AbstractPagedListResponse<
+          ListAppliedAutoProtectionPoliciesRequest,
+          ListAppliedAutoProtectionPoliciesResponse,
+          AppliedAutoProtectionPolicy,
+          ListAppliedAutoProtectionPoliciesPage,
+          ListAppliedAutoProtectionPoliciesFixedSizeCollection> {
+
+    public static ApiFuture<ListAppliedAutoProtectionPoliciesPagedResponse> createAsync(
+        PageContext<
+                ListAppliedAutoProtectionPoliciesRequest,
+                ListAppliedAutoProtectionPoliciesResponse,
+                AppliedAutoProtectionPolicy>
+            context,
+        ApiFuture<ListAppliedAutoProtectionPoliciesResponse> futureResponse) {
+      ApiFuture<ListAppliedAutoProtectionPoliciesPage> futurePage =
+          ListAppliedAutoProtectionPoliciesPage.createEmptyPage()
+              .createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListAppliedAutoProtectionPoliciesPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListAppliedAutoProtectionPoliciesPagedResponse(
+        ListAppliedAutoProtectionPoliciesPage page) {
+      super(page, ListAppliedAutoProtectionPoliciesFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListAppliedAutoProtectionPoliciesPage
+      extends AbstractPage<
+          ListAppliedAutoProtectionPoliciesRequest,
+          ListAppliedAutoProtectionPoliciesResponse,
+          AppliedAutoProtectionPolicy,
+          ListAppliedAutoProtectionPoliciesPage> {
+
+    private ListAppliedAutoProtectionPoliciesPage(
+        @Nullable
+            PageContext<
+                ListAppliedAutoProtectionPoliciesRequest,
+                ListAppliedAutoProtectionPoliciesResponse,
+                AppliedAutoProtectionPolicy>
+            context,
+        @Nullable ListAppliedAutoProtectionPoliciesResponse response) {
+      super(context, response);
+    }
+
+    private static ListAppliedAutoProtectionPoliciesPage createEmptyPage() {
+      return new ListAppliedAutoProtectionPoliciesPage(null, null);
+    }
+
+    @Override
+    protected ListAppliedAutoProtectionPoliciesPage createPage(
+        @Nullable
+            PageContext<
+                ListAppliedAutoProtectionPoliciesRequest,
+                ListAppliedAutoProtectionPoliciesResponse,
+                AppliedAutoProtectionPolicy>
+            context,
+        @Nullable ListAppliedAutoProtectionPoliciesResponse response) {
+      return new ListAppliedAutoProtectionPoliciesPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListAppliedAutoProtectionPoliciesPage> createPageAsync(
+        @Nullable
+            PageContext<
+                ListAppliedAutoProtectionPoliciesRequest,
+                ListAppliedAutoProtectionPoliciesResponse,
+                AppliedAutoProtectionPolicy>
+            context,
+        ApiFuture<ListAppliedAutoProtectionPoliciesResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListAppliedAutoProtectionPoliciesFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListAppliedAutoProtectionPoliciesRequest,
+          ListAppliedAutoProtectionPoliciesResponse,
+          AppliedAutoProtectionPolicy,
+          ListAppliedAutoProtectionPoliciesPage,
+          ListAppliedAutoProtectionPoliciesFixedSizeCollection> {
+
+    private ListAppliedAutoProtectionPoliciesFixedSizeCollection(
+        @Nullable List<ListAppliedAutoProtectionPoliciesPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListAppliedAutoProtectionPoliciesFixedSizeCollection createEmptyCollection() {
+      return new ListAppliedAutoProtectionPoliciesFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListAppliedAutoProtectionPoliciesFixedSizeCollection createCollection(
+        @Nullable List<ListAppliedAutoProtectionPoliciesPage> pages, int collectionSize) {
+      return new ListAppliedAutoProtectionPoliciesFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListBindingMatchingResourcesPagedResponse
+      extends AbstractPagedListResponse<
+          ListBindingMatchingResourcesRequest,
+          ListBindingMatchingResourcesResponse,
+          BindingMatchingResource,
+          ListBindingMatchingResourcesPage,
+          ListBindingMatchingResourcesFixedSizeCollection> {
+
+    public static ApiFuture<ListBindingMatchingResourcesPagedResponse> createAsync(
+        PageContext<
+                ListBindingMatchingResourcesRequest,
+                ListBindingMatchingResourcesResponse,
+                BindingMatchingResource>
+            context,
+        ApiFuture<ListBindingMatchingResourcesResponse> futureResponse) {
+      ApiFuture<ListBindingMatchingResourcesPage> futurePage =
+          ListBindingMatchingResourcesPage.createEmptyPage()
+              .createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListBindingMatchingResourcesPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListBindingMatchingResourcesPagedResponse(ListBindingMatchingResourcesPage page) {
+      super(page, ListBindingMatchingResourcesFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListBindingMatchingResourcesPage
+      extends AbstractPage<
+          ListBindingMatchingResourcesRequest,
+          ListBindingMatchingResourcesResponse,
+          BindingMatchingResource,
+          ListBindingMatchingResourcesPage> {
+
+    private ListBindingMatchingResourcesPage(
+        @Nullable
+            PageContext<
+                ListBindingMatchingResourcesRequest,
+                ListBindingMatchingResourcesResponse,
+                BindingMatchingResource>
+            context,
+        @Nullable ListBindingMatchingResourcesResponse response) {
+      super(context, response);
+    }
+
+    private static ListBindingMatchingResourcesPage createEmptyPage() {
+      return new ListBindingMatchingResourcesPage(null, null);
+    }
+
+    @Override
+    protected ListBindingMatchingResourcesPage createPage(
+        @Nullable
+            PageContext<
+                ListBindingMatchingResourcesRequest,
+                ListBindingMatchingResourcesResponse,
+                BindingMatchingResource>
+            context,
+        @Nullable ListBindingMatchingResourcesResponse response) {
+      return new ListBindingMatchingResourcesPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListBindingMatchingResourcesPage> createPageAsync(
+        @Nullable
+            PageContext<
+                ListBindingMatchingResourcesRequest,
+                ListBindingMatchingResourcesResponse,
+                BindingMatchingResource>
+            context,
+        ApiFuture<ListBindingMatchingResourcesResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListBindingMatchingResourcesFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListBindingMatchingResourcesRequest,
+          ListBindingMatchingResourcesResponse,
+          BindingMatchingResource,
+          ListBindingMatchingResourcesPage,
+          ListBindingMatchingResourcesFixedSizeCollection> {
+
+    private ListBindingMatchingResourcesFixedSizeCollection(
+        @Nullable List<ListBindingMatchingResourcesPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListBindingMatchingResourcesFixedSizeCollection createEmptyCollection() {
+      return new ListBindingMatchingResourcesFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListBindingMatchingResourcesFixedSizeCollection createCollection(
+        @Nullable List<ListBindingMatchingResourcesPage> pages, int collectionSize) {
+      return new ListBindingMatchingResourcesFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListRestoreTemplatesPagedResponse
+      extends AbstractPagedListResponse<
+          ListRestoreTemplatesRequest,
+          ListRestoreTemplatesResponse,
+          RestoreTemplate,
+          ListRestoreTemplatesPage,
+          ListRestoreTemplatesFixedSizeCollection> {
+
+    public static ApiFuture<ListRestoreTemplatesPagedResponse> createAsync(
+        PageContext<ListRestoreTemplatesRequest, ListRestoreTemplatesResponse, RestoreTemplate>
+            context,
+        ApiFuture<ListRestoreTemplatesResponse> futureResponse) {
+      ApiFuture<ListRestoreTemplatesPage> futurePage =
+          ListRestoreTemplatesPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListRestoreTemplatesPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListRestoreTemplatesPagedResponse(ListRestoreTemplatesPage page) {
+      super(page, ListRestoreTemplatesFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListRestoreTemplatesPage
+      extends AbstractPage<
+          ListRestoreTemplatesRequest,
+          ListRestoreTemplatesResponse,
+          RestoreTemplate,
+          ListRestoreTemplatesPage> {
+
+    private ListRestoreTemplatesPage(
+        @Nullable
+            PageContext<ListRestoreTemplatesRequest, ListRestoreTemplatesResponse, RestoreTemplate>
+            context,
+        @Nullable ListRestoreTemplatesResponse response) {
+      super(context, response);
+    }
+
+    private static ListRestoreTemplatesPage createEmptyPage() {
+      return new ListRestoreTemplatesPage(null, null);
+    }
+
+    @Override
+    protected ListRestoreTemplatesPage createPage(
+        @Nullable
+            PageContext<ListRestoreTemplatesRequest, ListRestoreTemplatesResponse, RestoreTemplate>
+            context,
+        @Nullable ListRestoreTemplatesResponse response) {
+      return new ListRestoreTemplatesPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListRestoreTemplatesPage> createPageAsync(
+        @Nullable
+            PageContext<ListRestoreTemplatesRequest, ListRestoreTemplatesResponse, RestoreTemplate>
+            context,
+        ApiFuture<ListRestoreTemplatesResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListRestoreTemplatesFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListRestoreTemplatesRequest,
+          ListRestoreTemplatesResponse,
+          RestoreTemplate,
+          ListRestoreTemplatesPage,
+          ListRestoreTemplatesFixedSizeCollection> {
+
+    private ListRestoreTemplatesFixedSizeCollection(
+        @Nullable List<ListRestoreTemplatesPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListRestoreTemplatesFixedSizeCollection createEmptyCollection() {
+      return new ListRestoreTemplatesFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListRestoreTemplatesFixedSizeCollection createCollection(
+        @Nullable List<ListRestoreTemplatesPage> pages, int collectionSize) {
+      return new ListRestoreTemplatesFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListRestoreTemplateExecutionsPagedResponse
+      extends AbstractPagedListResponse<
+          ListRestoreTemplateExecutionsRequest,
+          ListRestoreTemplateExecutionsResponse,
+          RestoreTemplateExecution,
+          ListRestoreTemplateExecutionsPage,
+          ListRestoreTemplateExecutionsFixedSizeCollection> {
+
+    public static ApiFuture<ListRestoreTemplateExecutionsPagedResponse> createAsync(
+        PageContext<
+                ListRestoreTemplateExecutionsRequest,
+                ListRestoreTemplateExecutionsResponse,
+                RestoreTemplateExecution>
+            context,
+        ApiFuture<ListRestoreTemplateExecutionsResponse> futureResponse) {
+      ApiFuture<ListRestoreTemplateExecutionsPage> futurePage =
+          ListRestoreTemplateExecutionsPage.createEmptyPage()
+              .createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListRestoreTemplateExecutionsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListRestoreTemplateExecutionsPagedResponse(ListRestoreTemplateExecutionsPage page) {
+      super(page, ListRestoreTemplateExecutionsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListRestoreTemplateExecutionsPage
+      extends AbstractPage<
+          ListRestoreTemplateExecutionsRequest,
+          ListRestoreTemplateExecutionsResponse,
+          RestoreTemplateExecution,
+          ListRestoreTemplateExecutionsPage> {
+
+    private ListRestoreTemplateExecutionsPage(
+        @Nullable
+            PageContext<
+                ListRestoreTemplateExecutionsRequest,
+                ListRestoreTemplateExecutionsResponse,
+                RestoreTemplateExecution>
+            context,
+        @Nullable ListRestoreTemplateExecutionsResponse response) {
+      super(context, response);
+    }
+
+    private static ListRestoreTemplateExecutionsPage createEmptyPage() {
+      return new ListRestoreTemplateExecutionsPage(null, null);
+    }
+
+    @Override
+    protected ListRestoreTemplateExecutionsPage createPage(
+        @Nullable
+            PageContext<
+                ListRestoreTemplateExecutionsRequest,
+                ListRestoreTemplateExecutionsResponse,
+                RestoreTemplateExecution>
+            context,
+        @Nullable ListRestoreTemplateExecutionsResponse response) {
+      return new ListRestoreTemplateExecutionsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListRestoreTemplateExecutionsPage> createPageAsync(
+        @Nullable
+            PageContext<
+                ListRestoreTemplateExecutionsRequest,
+                ListRestoreTemplateExecutionsResponse,
+                RestoreTemplateExecution>
+            context,
+        ApiFuture<ListRestoreTemplateExecutionsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListRestoreTemplateExecutionsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListRestoreTemplateExecutionsRequest,
+          ListRestoreTemplateExecutionsResponse,
+          RestoreTemplateExecution,
+          ListRestoreTemplateExecutionsPage,
+          ListRestoreTemplateExecutionsFixedSizeCollection> {
+
+    private ListRestoreTemplateExecutionsFixedSizeCollection(
+        @Nullable List<ListRestoreTemplateExecutionsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListRestoreTemplateExecutionsFixedSizeCollection createEmptyCollection() {
+      return new ListRestoreTemplateExecutionsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListRestoreTemplateExecutionsFixedSizeCollection createCollection(
+        @Nullable List<ListRestoreTemplateExecutionsPage> pages, int collectionSize) {
+      return new ListRestoreTemplateExecutionsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListRestoreVerificationPlanAssociationsPagedResponse
+      extends AbstractPagedListResponse<
+          ListRestoreVerificationPlanAssociationsRequest,
+          ListRestoreVerificationPlanAssociationsResponse,
+          RestoreVerificationPlanAssociation,
+          ListRestoreVerificationPlanAssociationsPage,
+          ListRestoreVerificationPlanAssociationsFixedSizeCollection> {
+
+    public static ApiFuture<ListRestoreVerificationPlanAssociationsPagedResponse> createAsync(
+        PageContext<
+                ListRestoreVerificationPlanAssociationsRequest,
+                ListRestoreVerificationPlanAssociationsResponse,
+                RestoreVerificationPlanAssociation>
+            context,
+        ApiFuture<ListRestoreVerificationPlanAssociationsResponse> futureResponse) {
+      ApiFuture<ListRestoreVerificationPlanAssociationsPage> futurePage =
+          ListRestoreVerificationPlanAssociationsPage.createEmptyPage()
+              .createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListRestoreVerificationPlanAssociationsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListRestoreVerificationPlanAssociationsPagedResponse(
+        ListRestoreVerificationPlanAssociationsPage page) {
+      super(
+          page, ListRestoreVerificationPlanAssociationsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListRestoreVerificationPlanAssociationsPage
+      extends AbstractPage<
+          ListRestoreVerificationPlanAssociationsRequest,
+          ListRestoreVerificationPlanAssociationsResponse,
+          RestoreVerificationPlanAssociation,
+          ListRestoreVerificationPlanAssociationsPage> {
+
+    private ListRestoreVerificationPlanAssociationsPage(
+        @Nullable
+            PageContext<
+                ListRestoreVerificationPlanAssociationsRequest,
+                ListRestoreVerificationPlanAssociationsResponse,
+                RestoreVerificationPlanAssociation>
+            context,
+        @Nullable ListRestoreVerificationPlanAssociationsResponse response) {
+      super(context, response);
+    }
+
+    private static ListRestoreVerificationPlanAssociationsPage createEmptyPage() {
+      return new ListRestoreVerificationPlanAssociationsPage(null, null);
+    }
+
+    @Override
+    protected ListRestoreVerificationPlanAssociationsPage createPage(
+        @Nullable
+            PageContext<
+                ListRestoreVerificationPlanAssociationsRequest,
+                ListRestoreVerificationPlanAssociationsResponse,
+                RestoreVerificationPlanAssociation>
+            context,
+        @Nullable ListRestoreVerificationPlanAssociationsResponse response) {
+      return new ListRestoreVerificationPlanAssociationsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListRestoreVerificationPlanAssociationsPage> createPageAsync(
+        @Nullable
+            PageContext<
+                ListRestoreVerificationPlanAssociationsRequest,
+                ListRestoreVerificationPlanAssociationsResponse,
+                RestoreVerificationPlanAssociation>
+            context,
+        ApiFuture<ListRestoreVerificationPlanAssociationsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListRestoreVerificationPlanAssociationsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListRestoreVerificationPlanAssociationsRequest,
+          ListRestoreVerificationPlanAssociationsResponse,
+          RestoreVerificationPlanAssociation,
+          ListRestoreVerificationPlanAssociationsPage,
+          ListRestoreVerificationPlanAssociationsFixedSizeCollection> {
+
+    private ListRestoreVerificationPlanAssociationsFixedSizeCollection(
+        @Nullable List<ListRestoreVerificationPlanAssociationsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListRestoreVerificationPlanAssociationsFixedSizeCollection
+        createEmptyCollection() {
+      return new ListRestoreVerificationPlanAssociationsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListRestoreVerificationPlanAssociationsFixedSizeCollection createCollection(
+        @Nullable List<ListRestoreVerificationPlanAssociationsPage> pages, int collectionSize) {
+      return new ListRestoreVerificationPlanAssociationsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListRestoreVerificationPlansPagedResponse
+      extends AbstractPagedListResponse<
+          ListRestoreVerificationPlansRequest,
+          ListRestoreVerificationPlansResponse,
+          RestoreVerificationPlan,
+          ListRestoreVerificationPlansPage,
+          ListRestoreVerificationPlansFixedSizeCollection> {
+
+    public static ApiFuture<ListRestoreVerificationPlansPagedResponse> createAsync(
+        PageContext<
+                ListRestoreVerificationPlansRequest,
+                ListRestoreVerificationPlansResponse,
+                RestoreVerificationPlan>
+            context,
+        ApiFuture<ListRestoreVerificationPlansResponse> futureResponse) {
+      ApiFuture<ListRestoreVerificationPlansPage> futurePage =
+          ListRestoreVerificationPlansPage.createEmptyPage()
+              .createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListRestoreVerificationPlansPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListRestoreVerificationPlansPagedResponse(ListRestoreVerificationPlansPage page) {
+      super(page, ListRestoreVerificationPlansFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListRestoreVerificationPlansPage
+      extends AbstractPage<
+          ListRestoreVerificationPlansRequest,
+          ListRestoreVerificationPlansResponse,
+          RestoreVerificationPlan,
+          ListRestoreVerificationPlansPage> {
+
+    private ListRestoreVerificationPlansPage(
+        @Nullable
+            PageContext<
+                ListRestoreVerificationPlansRequest,
+                ListRestoreVerificationPlansResponse,
+                RestoreVerificationPlan>
+            context,
+        @Nullable ListRestoreVerificationPlansResponse response) {
+      super(context, response);
+    }
+
+    private static ListRestoreVerificationPlansPage createEmptyPage() {
+      return new ListRestoreVerificationPlansPage(null, null);
+    }
+
+    @Override
+    protected ListRestoreVerificationPlansPage createPage(
+        @Nullable
+            PageContext<
+                ListRestoreVerificationPlansRequest,
+                ListRestoreVerificationPlansResponse,
+                RestoreVerificationPlan>
+            context,
+        @Nullable ListRestoreVerificationPlansResponse response) {
+      return new ListRestoreVerificationPlansPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListRestoreVerificationPlansPage> createPageAsync(
+        @Nullable
+            PageContext<
+                ListRestoreVerificationPlansRequest,
+                ListRestoreVerificationPlansResponse,
+                RestoreVerificationPlan>
+            context,
+        ApiFuture<ListRestoreVerificationPlansResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListRestoreVerificationPlansFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListRestoreVerificationPlansRequest,
+          ListRestoreVerificationPlansResponse,
+          RestoreVerificationPlan,
+          ListRestoreVerificationPlansPage,
+          ListRestoreVerificationPlansFixedSizeCollection> {
+
+    private ListRestoreVerificationPlansFixedSizeCollection(
+        @Nullable List<ListRestoreVerificationPlansPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListRestoreVerificationPlansFixedSizeCollection createEmptyCollection() {
+      return new ListRestoreVerificationPlansFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListRestoreVerificationPlansFixedSizeCollection createCollection(
+        @Nullable List<ListRestoreVerificationPlansPage> pages, int collectionSize) {
+      return new ListRestoreVerificationPlansFixedSizeCollection(pages, collectionSize);
     }
   }
 

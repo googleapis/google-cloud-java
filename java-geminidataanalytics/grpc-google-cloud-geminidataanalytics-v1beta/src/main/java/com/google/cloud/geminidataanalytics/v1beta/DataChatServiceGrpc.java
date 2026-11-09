@@ -481,7 +481,7 @@ public final class DataChatServiceGrpc {
      *
      * <pre>
      * Answers a data question by generating a stream of
-     * [Message][google.cloud.geminidataanalytics.v1.Message] objects.
+     * [Message][google.cloud.geminidataanalytics.v1beta.Message] objects.
      * </pre>
      */
     default void chat(
@@ -641,7 +641,7 @@ public final class DataChatServiceGrpc {
      *
      * <pre>
      * Answers a data question by generating a stream of
-     * [Message][google.cloud.geminidataanalytics.v1.Message] objects.
+     * [Message][google.cloud.geminidataanalytics.v1beta.Message] objects.
      * </pre>
      */
     public void chat(
@@ -799,7 +799,7 @@ public final class DataChatServiceGrpc {
      *
      * <pre>
      * Answers a data question by generating a stream of
-     * [Message][google.cloud.geminidataanalytics.v1.Message] objects.
+     * [Message][google.cloud.geminidataanalytics.v1beta.Message] objects.
      * </pre>
      */
     @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/10918")
@@ -935,7 +935,7 @@ public final class DataChatServiceGrpc {
      *
      * <pre>
      * Answers a data question by generating a stream of
-     * [Message][google.cloud.geminidataanalytics.v1.Message] objects.
+     * [Message][google.cloud.geminidataanalytics.v1beta.Message] objects.
      * </pre>
      */
     public java.util.Iterator<com.google.cloud.geminidataanalytics.v1beta.Message> chat(

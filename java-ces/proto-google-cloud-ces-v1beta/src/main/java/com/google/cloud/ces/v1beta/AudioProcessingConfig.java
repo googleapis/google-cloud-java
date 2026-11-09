@@ -52,7 +52,9 @@ public final class AudioProcessingConfig extends com.google.protobuf.GeneratedMe
     super(builder);
   }
 
-  private AudioProcessingConfig() {}
+  private AudioProcessingConfig() {
+    customVoiceSamples_ = java.util.Collections.emptyList();
+  }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.ces.v1beta.AppProto
@@ -434,6 +436,93 @@ public final class AudioProcessingConfig extends com.google.protobuf.GeneratedMe
         : ambientSoundConfig_;
   }
 
+  public static final int CUSTOM_VOICE_SAMPLES_FIELD_NUMBER = 10;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.ces.v1beta.CustomVoiceSample> customVoiceSamples_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configures custom voice samples for voice cloning.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.ces.v1beta.CustomVoiceSample custom_voice_samples = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.ces.v1beta.CustomVoiceSample> getCustomVoiceSamplesList() {
+    return customVoiceSamples_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configures custom voice samples for voice cloning.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.ces.v1beta.CustomVoiceSample custom_voice_samples = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.ces.v1beta.CustomVoiceSampleOrBuilder>
+      getCustomVoiceSamplesOrBuilderList() {
+    return customVoiceSamples_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configures custom voice samples for voice cloning.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.ces.v1beta.CustomVoiceSample custom_voice_samples = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public int getCustomVoiceSamplesCount() {
+    return customVoiceSamples_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configures custom voice samples for voice cloning.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.ces.v1beta.CustomVoiceSample custom_voice_samples = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.ces.v1beta.CustomVoiceSample getCustomVoiceSamples(int index) {
+    return customVoiceSamples_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configures custom voice samples for voice cloning.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.ces.v1beta.CustomVoiceSample custom_voice_samples = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.ces.v1beta.CustomVoiceSampleOrBuilder getCustomVoiceSamplesOrBuilder(
+      int index) {
+    return customVoiceSamples_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -461,6 +550,9 @@ public final class AudioProcessingConfig extends com.google.protobuf.GeneratedMe
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(5, getAmbientSoundConfig());
+    }
+    for (int i = 0; i < customVoiceSamples_.size(); i++) {
+      output.writeMessage(10, customVoiceSamples_.get(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -493,6 +585,10 @@ public final class AudioProcessingConfig extends com.google.protobuf.GeneratedMe
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getAmbientSoundConfig());
     }
+    for (int i = 0; i < customVoiceSamples_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(10, customVoiceSamples_.get(i));
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -523,6 +619,7 @@ public final class AudioProcessingConfig extends com.google.protobuf.GeneratedMe
     if (hasAmbientSoundConfig()) {
       if (!getAmbientSoundConfig().equals(other.getAmbientSoundConfig())) return false;
     }
+    if (!getCustomVoiceSamplesList().equals(other.getCustomVoiceSamplesList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -549,6 +646,10 @@ public final class AudioProcessingConfig extends com.google.protobuf.GeneratedMe
     if (hasAmbientSoundConfig()) {
       hash = (37 * hash) + AMBIENT_SOUND_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getAmbientSoundConfig().hashCode();
+    }
+    if (getCustomVoiceSamplesCount() > 0) {
+      hash = (37 * hash) + CUSTOM_VOICE_SAMPLES_FIELD_NUMBER;
+      hash = (53 * hash) + getCustomVoiceSamplesList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -717,6 +818,7 @@ public final class AudioProcessingConfig extends com.google.protobuf.GeneratedMe
         internalGetBargeInConfigFieldBuilder();
         internalGetInactivityTimeoutFieldBuilder();
         internalGetAmbientSoundConfigFieldBuilder();
+        internalGetCustomVoiceSamplesFieldBuilder();
       }
     }
 
@@ -740,6 +842,13 @@ public final class AudioProcessingConfig extends com.google.protobuf.GeneratedMe
         ambientSoundConfigBuilder_.dispose();
         ambientSoundConfigBuilder_ = null;
       }
+      if (customVoiceSamplesBuilder_ == null) {
+        customVoiceSamples_ = java.util.Collections.emptyList();
+      } else {
+        customVoiceSamples_ = null;
+        customVoiceSamplesBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000010);
       return this;
     }
 
@@ -767,11 +876,25 @@ public final class AudioProcessingConfig extends com.google.protobuf.GeneratedMe
     public com.google.cloud.ces.v1beta.AudioProcessingConfig buildPartial() {
       com.google.cloud.ces.v1beta.AudioProcessingConfig result =
           new com.google.cloud.ces.v1beta.AudioProcessingConfig(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.ces.v1beta.AudioProcessingConfig result) {
+      if (customVoiceSamplesBuilder_ == null) {
+        if (((bitField0_ & 0x00000010) != 0)) {
+          customVoiceSamples_ = java.util.Collections.unmodifiableList(customVoiceSamples_);
+          bitField0_ = (bitField0_ & ~0x00000010);
+        }
+        result.customVoiceSamples_ = customVoiceSamples_;
+      } else {
+        result.customVoiceSamples_ = customVoiceSamplesBuilder_.build();
+      }
     }
 
     private void buildPartial0(com.google.cloud.ces.v1beta.AudioProcessingConfig result) {
@@ -828,6 +951,33 @@ public final class AudioProcessingConfig extends com.google.protobuf.GeneratedMe
       }
       if (other.hasAmbientSoundConfig()) {
         mergeAmbientSoundConfig(other.getAmbientSoundConfig());
+      }
+      if (customVoiceSamplesBuilder_ == null) {
+        if (!other.customVoiceSamples_.isEmpty()) {
+          if (customVoiceSamples_.isEmpty()) {
+            customVoiceSamples_ = other.customVoiceSamples_;
+            bitField0_ = (bitField0_ & ~0x00000010);
+          } else {
+            ensureCustomVoiceSamplesIsMutable();
+            customVoiceSamples_.addAll(other.customVoiceSamples_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.customVoiceSamples_.isEmpty()) {
+          if (customVoiceSamplesBuilder_.isEmpty()) {
+            customVoiceSamplesBuilder_.dispose();
+            customVoiceSamplesBuilder_ = null;
+            customVoiceSamples_ = other.customVoiceSamples_;
+            bitField0_ = (bitField0_ & ~0x00000010);
+            customVoiceSamplesBuilder_ =
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                    ? internalGetCustomVoiceSamplesFieldBuilder()
+                    : null;
+          } else {
+            customVoiceSamplesBuilder_.addAllMessages(other.customVoiceSamples_);
+          }
+        }
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -891,6 +1041,19 @@ public final class AudioProcessingConfig extends com.google.protobuf.GeneratedMe
                 bitField0_ |= 0x00000008;
                 break;
               } // case 42
+            case 82:
+              {
+                com.google.cloud.ces.v1beta.CustomVoiceSample m =
+                    input.readMessage(
+                        com.google.cloud.ces.v1beta.CustomVoiceSample.parser(), extensionRegistry);
+                if (customVoiceSamplesBuilder_ == null) {
+                  ensureCustomVoiceSamplesIsMutable();
+                  customVoiceSamples_.add(m);
+                } else {
+                  customVoiceSamplesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 82
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1916,6 +2079,420 @@ public final class AudioProcessingConfig extends com.google.protobuf.GeneratedMe
         ambientSoundConfig_ = null;
       }
       return ambientSoundConfigBuilder_;
+    }
+
+    private java.util.List<com.google.cloud.ces.v1beta.CustomVoiceSample> customVoiceSamples_ =
+        java.util.Collections.emptyList();
+
+    private void ensureCustomVoiceSamplesIsMutable() {
+      if (!((bitField0_ & 0x00000010) != 0)) {
+        customVoiceSamples_ =
+            new java.util.ArrayList<com.google.cloud.ces.v1beta.CustomVoiceSample>(
+                customVoiceSamples_);
+        bitField0_ |= 0x00000010;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.cloud.ces.v1beta.CustomVoiceSample,
+            com.google.cloud.ces.v1beta.CustomVoiceSample.Builder,
+            com.google.cloud.ces.v1beta.CustomVoiceSampleOrBuilder>
+        customVoiceSamplesBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configures custom voice samples for voice cloning.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.ces.v1beta.CustomVoiceSample custom_voice_samples = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.ces.v1beta.CustomVoiceSample>
+        getCustomVoiceSamplesList() {
+      if (customVoiceSamplesBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(customVoiceSamples_);
+      } else {
+        return customVoiceSamplesBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configures custom voice samples for voice cloning.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.ces.v1beta.CustomVoiceSample custom_voice_samples = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public int getCustomVoiceSamplesCount() {
+      if (customVoiceSamplesBuilder_ == null) {
+        return customVoiceSamples_.size();
+      } else {
+        return customVoiceSamplesBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configures custom voice samples for voice cloning.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.ces.v1beta.CustomVoiceSample custom_voice_samples = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.ces.v1beta.CustomVoiceSample getCustomVoiceSamples(int index) {
+      if (customVoiceSamplesBuilder_ == null) {
+        return customVoiceSamples_.get(index);
+      } else {
+        return customVoiceSamplesBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configures custom voice samples for voice cloning.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.ces.v1beta.CustomVoiceSample custom_voice_samples = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setCustomVoiceSamples(
+        int index, com.google.cloud.ces.v1beta.CustomVoiceSample value) {
+      if (customVoiceSamplesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureCustomVoiceSamplesIsMutable();
+        customVoiceSamples_.set(index, value);
+        onChanged();
+      } else {
+        customVoiceSamplesBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configures custom voice samples for voice cloning.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.ces.v1beta.CustomVoiceSample custom_voice_samples = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setCustomVoiceSamples(
+        int index, com.google.cloud.ces.v1beta.CustomVoiceSample.Builder builderForValue) {
+      if (customVoiceSamplesBuilder_ == null) {
+        ensureCustomVoiceSamplesIsMutable();
+        customVoiceSamples_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        customVoiceSamplesBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configures custom voice samples for voice cloning.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.ces.v1beta.CustomVoiceSample custom_voice_samples = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addCustomVoiceSamples(com.google.cloud.ces.v1beta.CustomVoiceSample value) {
+      if (customVoiceSamplesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureCustomVoiceSamplesIsMutable();
+        customVoiceSamples_.add(value);
+        onChanged();
+      } else {
+        customVoiceSamplesBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configures custom voice samples for voice cloning.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.ces.v1beta.CustomVoiceSample custom_voice_samples = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addCustomVoiceSamples(
+        int index, com.google.cloud.ces.v1beta.CustomVoiceSample value) {
+      if (customVoiceSamplesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureCustomVoiceSamplesIsMutable();
+        customVoiceSamples_.add(index, value);
+        onChanged();
+      } else {
+        customVoiceSamplesBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configures custom voice samples for voice cloning.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.ces.v1beta.CustomVoiceSample custom_voice_samples = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addCustomVoiceSamples(
+        com.google.cloud.ces.v1beta.CustomVoiceSample.Builder builderForValue) {
+      if (customVoiceSamplesBuilder_ == null) {
+        ensureCustomVoiceSamplesIsMutable();
+        customVoiceSamples_.add(builderForValue.build());
+        onChanged();
+      } else {
+        customVoiceSamplesBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configures custom voice samples for voice cloning.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.ces.v1beta.CustomVoiceSample custom_voice_samples = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addCustomVoiceSamples(
+        int index, com.google.cloud.ces.v1beta.CustomVoiceSample.Builder builderForValue) {
+      if (customVoiceSamplesBuilder_ == null) {
+        ensureCustomVoiceSamplesIsMutable();
+        customVoiceSamples_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        customVoiceSamplesBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configures custom voice samples for voice cloning.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.ces.v1beta.CustomVoiceSample custom_voice_samples = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAllCustomVoiceSamples(
+        java.lang.Iterable<? extends com.google.cloud.ces.v1beta.CustomVoiceSample> values) {
+      if (customVoiceSamplesBuilder_ == null) {
+        ensureCustomVoiceSamplesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, customVoiceSamples_);
+        onChanged();
+      } else {
+        customVoiceSamplesBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configures custom voice samples for voice cloning.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.ces.v1beta.CustomVoiceSample custom_voice_samples = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearCustomVoiceSamples() {
+      if (customVoiceSamplesBuilder_ == null) {
+        customVoiceSamples_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000010);
+        onChanged();
+      } else {
+        customVoiceSamplesBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configures custom voice samples for voice cloning.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.ces.v1beta.CustomVoiceSample custom_voice_samples = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeCustomVoiceSamples(int index) {
+      if (customVoiceSamplesBuilder_ == null) {
+        ensureCustomVoiceSamplesIsMutable();
+        customVoiceSamples_.remove(index);
+        onChanged();
+      } else {
+        customVoiceSamplesBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configures custom voice samples for voice cloning.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.ces.v1beta.CustomVoiceSample custom_voice_samples = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.ces.v1beta.CustomVoiceSample.Builder getCustomVoiceSamplesBuilder(
+        int index) {
+      return internalGetCustomVoiceSamplesFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configures custom voice samples for voice cloning.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.ces.v1beta.CustomVoiceSample custom_voice_samples = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.ces.v1beta.CustomVoiceSampleOrBuilder getCustomVoiceSamplesOrBuilder(
+        int index) {
+      if (customVoiceSamplesBuilder_ == null) {
+        return customVoiceSamples_.get(index);
+      } else {
+        return customVoiceSamplesBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configures custom voice samples for voice cloning.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.ces.v1beta.CustomVoiceSample custom_voice_samples = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<? extends com.google.cloud.ces.v1beta.CustomVoiceSampleOrBuilder>
+        getCustomVoiceSamplesOrBuilderList() {
+      if (customVoiceSamplesBuilder_ != null) {
+        return customVoiceSamplesBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(customVoiceSamples_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configures custom voice samples for voice cloning.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.ces.v1beta.CustomVoiceSample custom_voice_samples = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.ces.v1beta.CustomVoiceSample.Builder addCustomVoiceSamplesBuilder() {
+      return internalGetCustomVoiceSamplesFieldBuilder()
+          .addBuilder(com.google.cloud.ces.v1beta.CustomVoiceSample.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configures custom voice samples for voice cloning.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.ces.v1beta.CustomVoiceSample custom_voice_samples = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.ces.v1beta.CustomVoiceSample.Builder addCustomVoiceSamplesBuilder(
+        int index) {
+      return internalGetCustomVoiceSamplesFieldBuilder()
+          .addBuilder(index, com.google.cloud.ces.v1beta.CustomVoiceSample.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configures custom voice samples for voice cloning.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.ces.v1beta.CustomVoiceSample custom_voice_samples = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.ces.v1beta.CustomVoiceSample.Builder>
+        getCustomVoiceSamplesBuilderList() {
+      return internalGetCustomVoiceSamplesFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.cloud.ces.v1beta.CustomVoiceSample,
+            com.google.cloud.ces.v1beta.CustomVoiceSample.Builder,
+            com.google.cloud.ces.v1beta.CustomVoiceSampleOrBuilder>
+        internalGetCustomVoiceSamplesFieldBuilder() {
+      if (customVoiceSamplesBuilder_ == null) {
+        customVoiceSamplesBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilder<
+                com.google.cloud.ces.v1beta.CustomVoiceSample,
+                com.google.cloud.ces.v1beta.CustomVoiceSample.Builder,
+                com.google.cloud.ces.v1beta.CustomVoiceSampleOrBuilder>(
+                customVoiceSamples_,
+                ((bitField0_ & 0x00000010) != 0),
+                getParentForChildren(),
+                isClean());
+        customVoiceSamples_ = null;
+      }
+      return customVoiceSamplesBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.ces.v1beta.AudioProcessingConfig)

@@ -77,7 +77,7 @@ public class RowBuilderShim<ReqT, ProtoRespT, RowT> implements UnaryShim<ReqT, R
               column.getQualifier(),
               cell.getTimestampMicros(),
               cell.getLabelsList(),
-              0);
+              cell.getValue().size());
           builder.cellValue(cell.getValue());
           builder.finishCell();
         }

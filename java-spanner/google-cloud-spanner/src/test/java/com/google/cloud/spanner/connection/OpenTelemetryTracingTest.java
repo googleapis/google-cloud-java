@@ -83,6 +83,7 @@ public class OpenTelemetryTracingTest extends AbstractMockServerTest {
 
   @AfterClass
   public static void closeOpenTelemetry() {
+    SpannerOptionsTestHelper.resetActiveTracingFramework();
     SpannerPool.closeSpannerPool();
     if (openTelemetry != null) {
       openTelemetry.close();

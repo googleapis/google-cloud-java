@@ -126,8 +126,9 @@ class BigQueryJsonArray extends BigQueryBaseArray {
     if (this.enableTimestampPicos && BigQueryTemporalUtility.isPicosecondTimestamp(this.schema)) {
       return BigQueryTemporalUtility.formatTimestampValue(fieldValue.getStringValue(), true);
     }
-    if (this.enableTimestampPicos && BigQueryJsonResultSet.isRangeTimestamp(this.schema)) {
-      return BigQueryJsonResultSet.formatRangeTimestamp(fieldValue);
+    if (BigQueryTemporalUtility.isRange(this.schema)) {
+      return BigQueryTemporalUtility.formatRange(
+          this.schema, fieldValue, this.enableTimestampPicos);
     }
     return BigQueryTypeRegistry.convert(fieldValue, this.schema.getType().getStandardType(), null);
   }

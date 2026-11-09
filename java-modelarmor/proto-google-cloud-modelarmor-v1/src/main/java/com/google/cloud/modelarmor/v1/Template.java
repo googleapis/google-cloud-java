@@ -356,7 +356,7 @@ public final class Template extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. Specifies the modalities to scan.
-     * If empty, only text modality will be scanned.
+     * If not specified or empty, only text modality will be scanned.
      * </pre>
      *
      * <code>
@@ -372,7 +372,7 @@ public final class Template extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. Specifies the modalities to scan.
-     * If empty, only text modality will be scanned.
+     * If not specified or empty, only text modality will be scanned.
      * </pre>
      *
      * <code>
@@ -388,7 +388,7 @@ public final class Template extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. Specifies the modalities to scan.
-     * If empty, only text modality will be scanned.
+     * If not specified or empty, only text modality will be scanned.
      * </pre>
      *
      * <code>
@@ -405,7 +405,7 @@ public final class Template extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. Specifies the modalities to scan.
-     * If empty, only text modality will be scanned.
+     * If not specified or empty, only text modality will be scanned.
      * </pre>
      *
      * <code>
@@ -421,7 +421,7 @@ public final class Template extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. Specifies the modalities to scan.
-     * If empty, only text modality will be scanned.
+     * If not specified or empty, only text modality will be scanned.
      * </pre>
      *
      * <code>
@@ -1672,7 +1672,7 @@ public final class Template extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. Specifies the modalities to scan.
-     * If empty, only text modality will be scanned.
+     * If not specified or empty, only text modality will be scanned.
      * </pre>
      *
      * <code>
@@ -1692,7 +1692,7 @@ public final class Template extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. Specifies the modalities to scan.
-     * If empty, only text modality will be scanned.
+     * If not specified or empty, only text modality will be scanned.
      * </pre>
      *
      * <code>
@@ -1711,7 +1711,7 @@ public final class Template extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. Specifies the modalities to scan.
-     * If empty, only text modality will be scanned.
+     * If not specified or empty, only text modality will be scanned.
      * </pre>
      *
      * <code>
@@ -1731,7 +1731,7 @@ public final class Template extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. Specifies the modalities to scan.
-     * If empty, only text modality will be scanned.
+     * If not specified or empty, only text modality will be scanned.
      * </pre>
      *
      * <code>
@@ -1750,7 +1750,7 @@ public final class Template extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. Specifies the modalities to scan.
-     * If empty, only text modality will be scanned.
+     * If not specified or empty, only text modality will be scanned.
      * </pre>
      *
      * <code>
@@ -3638,7 +3638,7 @@ public final class Template extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Optional. Specifies the modalities to scan.
-       * If empty, only text modality will be scanned.
+       * If not specified or empty, only text modality will be scanned.
        * </pre>
        *
        * <code>
@@ -3657,7 +3657,7 @@ public final class Template extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Optional. Specifies the modalities to scan.
-       * If empty, only text modality will be scanned.
+       * If not specified or empty, only text modality will be scanned.
        * </pre>
        *
        * <code>
@@ -3675,7 +3675,7 @@ public final class Template extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Optional. Specifies the modalities to scan.
-       * If empty, only text modality will be scanned.
+       * If not specified or empty, only text modality will be scanned.
        * </pre>
        *
        * <code>
@@ -3694,7 +3694,7 @@ public final class Template extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Optional. Specifies the modalities to scan.
-       * If empty, only text modality will be scanned.
+       * If not specified or empty, only text modality will be scanned.
        * </pre>
        *
        * <code>
@@ -3720,7 +3720,7 @@ public final class Template extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Optional. Specifies the modalities to scan.
-       * If empty, only text modality will be scanned.
+       * If not specified or empty, only text modality will be scanned.
        * </pre>
        *
        * <code>
@@ -3745,7 +3745,7 @@ public final class Template extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Optional. Specifies the modalities to scan.
-       * If empty, only text modality will be scanned.
+       * If not specified or empty, only text modality will be scanned.
        * </pre>
        *
        * <code>
@@ -3770,7 +3770,7 @@ public final class Template extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Optional. Specifies the modalities to scan.
-       * If empty, only text modality will be scanned.
+       * If not specified or empty, only text modality will be scanned.
        * </pre>
        *
        * <code>
@@ -3791,7 +3791,7 @@ public final class Template extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Optional. Specifies the modalities to scan.
-       * If empty, only text modality will be scanned.
+       * If not specified or empty, only text modality will be scanned.
        * </pre>
        *
        * <code>
@@ -3810,7 +3810,7 @@ public final class Template extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Optional. Specifies the modalities to scan.
-       * If empty, only text modality will be scanned.
+       * If not specified or empty, only text modality will be scanned.
        * </pre>
        *
        * <code>
@@ -3829,7 +3829,7 @@ public final class Template extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Optional. Specifies the modalities to scan.
-       * If empty, only text modality will be scanned.
+       * If not specified or empty, only text modality will be scanned.
        * </pre>
        *
        * <code>
@@ -3852,7 +3852,7 @@ public final class Template extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Optional. Specifies the modalities to scan.
-       * If empty, only text modality will be scanned.
+       * If not specified or empty, only text modality will be scanned.
        * </pre>
        *
        * <code>
@@ -3874,7 +3874,7 @@ public final class Template extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Optional. Specifies the modalities to scan.
-       * If empty, only text modality will be scanned.
+       * If not specified or empty, only text modality will be scanned.
        * </pre>
        *
        * <code>

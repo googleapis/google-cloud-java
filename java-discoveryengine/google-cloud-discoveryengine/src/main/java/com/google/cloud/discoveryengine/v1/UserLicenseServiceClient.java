@@ -54,9 +54,8 @@ import org.jspecify.annotations.Nullable;
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (UserLicenseServiceClient userLicenseServiceClient = UserLicenseServiceClient.create()) {
  *   UserStoreName parent = UserStoreName.of("[PROJECT]", "[LOCATION]", "[USER_STORE]");
- *   for (UserLicense element : userLicenseServiceClient.listUserLicenses(parent).iterateAll()) {
- *     // doThingsWith(element);
- *   }
+ *   ListLicenseConfigsUsageStatsResponse response =
+ *       userLicenseServiceClient.listLicenseConfigsUsageStats(parent);
  * }
  * }</pre>
  *
@@ -88,6 +87,25 @@ import org.jspecify.annotations.Nullable;
  *      <ul>
  *           <li><p> listUserLicensesPagedCallable()
  *           <li><p> listUserLicensesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListLicenseConfigsUsageStats</td>
+ *      <td><p> Lists all the [LicenseConfigUsageStats][google.cloud.discoveryengine.v1.LicenseConfigUsageStats]s associated with the project.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listLicenseConfigsUsageStats(ListLicenseConfigsUsageStatsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listLicenseConfigsUsageStats(UserStoreName parent)
+ *           <li><p> listLicenseConfigsUsageStats(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listLicenseConfigsUsageStatsCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -260,7 +278,8 @@ public class UserLicenseServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The parent [UserStore][] resource name, format:
+   * @param parent Required. The parent [UserStore][google.cloud.discoveryengine.v1.UserStore]
+   *     resource name, format:
    *     `projects/{project}/locations/{location}/userStores/{user_store_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -292,7 +311,8 @@ public class UserLicenseServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The parent [UserStore][] resource name, format:
+   * @param parent Required. The parent [UserStore][google.cloud.discoveryengine.v1.UserStore]
+   *     resource name, format:
    *     `projects/{project}/locations/{location}/userStores/{user_store_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -321,6 +341,7 @@ public class UserLicenseServiceClient implements BackgroundResource {
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
    *           .build();
    *   for (UserLicense element : userLicenseServiceClient.listUserLicenses(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -354,6 +375,7 @@ public class UserLicenseServiceClient implements BackgroundResource {
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
    *           .build();
    *   ApiFuture<UserLicense> future =
    *       userLicenseServiceClient.listUserLicensesPagedCallable().futureCall(request);
@@ -388,6 +410,7 @@ public class UserLicenseServiceClient implements BackgroundResource {
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
    *           .build();
    *   while (true) {
    *     ListUserLicensesResponse response =
@@ -408,6 +431,135 @@ public class UserLicenseServiceClient implements BackgroundResource {
   public final UnaryCallable<ListUserLicensesRequest, ListUserLicensesResponse>
       listUserLicensesCallable() {
     return stub.listUserLicensesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all the
+   * [LicenseConfigUsageStats][google.cloud.discoveryengine.v1.LicenseConfigUsageStats]s associated
+   * with the project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (UserLicenseServiceClient userLicenseServiceClient = UserLicenseServiceClient.create()) {
+   *   UserStoreName parent = UserStoreName.of("[PROJECT]", "[LOCATION]", "[USER_STORE]");
+   *   ListLicenseConfigsUsageStatsResponse response =
+   *       userLicenseServiceClient.listLicenseConfigsUsageStats(parent);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent branch resource name, such as
+   *     `projects/{project}/locations/{location}/userStores/{user_store_id}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListLicenseConfigsUsageStatsResponse listLicenseConfigsUsageStats(
+      @Nullable UserStoreName parent) {
+    ListLicenseConfigsUsageStatsRequest request =
+        ListLicenseConfigsUsageStatsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listLicenseConfigsUsageStats(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all the
+   * [LicenseConfigUsageStats][google.cloud.discoveryengine.v1.LicenseConfigUsageStats]s associated
+   * with the project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (UserLicenseServiceClient userLicenseServiceClient = UserLicenseServiceClient.create()) {
+   *   String parent = UserStoreName.of("[PROJECT]", "[LOCATION]", "[USER_STORE]").toString();
+   *   ListLicenseConfigsUsageStatsResponse response =
+   *       userLicenseServiceClient.listLicenseConfigsUsageStats(parent);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent branch resource name, such as
+   *     `projects/{project}/locations/{location}/userStores/{user_store_id}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListLicenseConfigsUsageStatsResponse listLicenseConfigsUsageStats(String parent) {
+    ListLicenseConfigsUsageStatsRequest request =
+        ListLicenseConfigsUsageStatsRequest.newBuilder().setParent(parent).build();
+    return listLicenseConfigsUsageStats(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all the
+   * [LicenseConfigUsageStats][google.cloud.discoveryengine.v1.LicenseConfigUsageStats]s associated
+   * with the project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (UserLicenseServiceClient userLicenseServiceClient = UserLicenseServiceClient.create()) {
+   *   ListLicenseConfigsUsageStatsRequest request =
+   *       ListLicenseConfigsUsageStatsRequest.newBuilder()
+   *           .setParent(UserStoreName.of("[PROJECT]", "[LOCATION]", "[USER_STORE]").toString())
+   *           .build();
+   *   ListLicenseConfigsUsageStatsResponse response =
+   *       userLicenseServiceClient.listLicenseConfigsUsageStats(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListLicenseConfigsUsageStatsResponse listLicenseConfigsUsageStats(
+      ListLicenseConfigsUsageStatsRequest request) {
+    return listLicenseConfigsUsageStatsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all the
+   * [LicenseConfigUsageStats][google.cloud.discoveryengine.v1.LicenseConfigUsageStats]s associated
+   * with the project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (UserLicenseServiceClient userLicenseServiceClient = UserLicenseServiceClient.create()) {
+   *   ListLicenseConfigsUsageStatsRequest request =
+   *       ListLicenseConfigsUsageStatsRequest.newBuilder()
+   *           .setParent(UserStoreName.of("[PROJECT]", "[LOCATION]", "[USER_STORE]").toString())
+   *           .build();
+   *   ApiFuture<ListLicenseConfigsUsageStatsResponse> future =
+   *       userLicenseServiceClient.listLicenseConfigsUsageStatsCallable().futureCall(request);
+   *   // Do something.
+   *   ListLicenseConfigsUsageStatsResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          ListLicenseConfigsUsageStatsRequest, ListLicenseConfigsUsageStatsResponse>
+      listLicenseConfigsUsageStatsCallable() {
+    return stub.listLicenseConfigsUsageStatsCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

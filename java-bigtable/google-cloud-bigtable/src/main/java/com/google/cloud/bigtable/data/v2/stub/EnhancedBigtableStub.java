@@ -328,7 +328,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
     ServerStreamingCallable<Query, RowT> readRowCallable =
         new TransformingServerStreamingCallable<>(
             readRowsCallable,
-            (query) -> query.limit(1).toProto(requestContext),
+            (query) -> query.toProto(requestContext).toBuilder().setRowsLimit(1).build(),
             Functions.identity());
 
     BigtableUnaryOperationCallable<Query, RowT> classic =

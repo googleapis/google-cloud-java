@@ -877,8 +877,7 @@ public final class DataAgentServiceGrpc {
      *
      * <pre>
      * Enables/Disables required GCP services and configures AgentOps
-     * observability settings calling the Admin Settings executable node to
-     * update the AgentOps Observability feature.
+     * observability settings.
      * </pre>
      */
     default void setAgentOpsObservability(
@@ -1127,8 +1126,7 @@ public final class DataAgentServiceGrpc {
      *
      * <pre>
      * Enables/Disables required GCP services and configures AgentOps
-     * observability settings calling the Admin Settings executable node to
-     * update the AgentOps Observability feature.
+     * observability settings.
      * </pre>
      */
     public void setAgentOpsObservability(
@@ -1338,8 +1336,7 @@ public final class DataAgentServiceGrpc {
      *
      * <pre>
      * Enables/Disables required GCP services and configures AgentOps
-     * observability settings calling the Admin Settings executable node to
-     * update the AgentOps Observability feature.
+     * observability settings.
      * </pre>
      */
     public com.google.longrunning.Operation setAgentOpsObservability(
@@ -1532,8 +1529,7 @@ public final class DataAgentServiceGrpc {
      *
      * <pre>
      * Enables/Disables required GCP services and configures AgentOps
-     * observability settings calling the Admin Settings executable node to
-     * update the AgentOps Observability feature.
+     * observability settings.
      * </pre>
      */
     public com.google.longrunning.Operation setAgentOpsObservability(
@@ -1734,8 +1730,7 @@ public final class DataAgentServiceGrpc {
      *
      * <pre>
      * Enables/Disables required GCP services and configures AgentOps
-     * observability settings calling the Admin Settings executable node to
-     * update the AgentOps Observability feature.
+     * observability settings.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>

@@ -54,6 +54,8 @@ public final class ToolResponse extends com.google.protobuf.GeneratedMessage
   private ToolResponse() {
     id_ = "";
     displayName_ = "";
+    parentToolCallId_ = "";
+    agentName_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -430,6 +432,120 @@ public final class ToolResponse extends com.google.protobuf.GeneratedMessage
     return response_ == null ? com.google.protobuf.Struct.getDefaultInstance() : response_;
   }
 
+  public static final int PARENT_TOOL_CALL_ID_FIELD_NUMBER = 6;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parentToolCallId_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The id of the tool call that caused this one, when it was
+   * issued by a sub-agent working on behalf of a parent call. Empty for
+   * top-level calls. Lets a client group a sub-agent's work under the call that
+   * started it instead of rendering every step as a sibling.
+   * </pre>
+   *
+   * <code>string parent_tool_call_id = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The parentToolCallId.
+   */
+  @java.lang.Override
+  public java.lang.String getParentToolCallId() {
+    java.lang.Object ref = parentToolCallId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      parentToolCallId_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The id of the tool call that caused this one, when it was
+   * issued by a sub-agent working on behalf of a parent call. Empty for
+   * top-level calls. Lets a client group a sub-agent's work under the call that
+   * started it instead of rendering every step as a sibling.
+   * </pre>
+   *
+   * <code>string parent_tool_call_id = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for parentToolCallId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getParentToolCallIdBytes() {
+    java.lang.Object ref = parentToolCallId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      parentToolCallId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int AGENT_NAME_FIELD_NUMBER = 7;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object agentName_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Human-readable name of the agent that issued this call, e.g.
+   * "Contract Architect". Empty when the root agent issued it.
+   * </pre>
+   *
+   * <code>string agent_name = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The agentName.
+   */
+  @java.lang.Override
+  public java.lang.String getAgentName() {
+    java.lang.Object ref = agentName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      agentName_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Human-readable name of the agent that issued this call, e.g.
+   * "Contract Architect". Empty when the root agent issued it.
+   * </pre>
+   *
+   * <code>string agent_name = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for agentName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getAgentNameBytes() {
+    java.lang.Object ref = agentName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      agentName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -459,6 +575,12 @@ public final class ToolResponse extends com.google.protobuf.GeneratedMessage
     if (toolIdentifierCase_ == 5) {
       output.writeMessage(5, (com.google.cloud.ces.v1beta.ToolsetTool) toolIdentifier_);
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(parentToolCallId_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 6, parentToolCallId_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(agentName_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 7, agentName_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -485,6 +607,12 @@ public final class ToolResponse extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               5, (com.google.cloud.ces.v1beta.ToolsetTool) toolIdentifier_);
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(parentToolCallId_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(6, parentToolCallId_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(agentName_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(7, agentName_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -506,6 +634,8 @@ public final class ToolResponse extends com.google.protobuf.GeneratedMessage
     if (hasResponse()) {
       if (!getResponse().equals(other.getResponse())) return false;
     }
+    if (!getParentToolCallId().equals(other.getParentToolCallId())) return false;
+    if (!getAgentName().equals(other.getAgentName())) return false;
     if (!getToolIdentifierCase().equals(other.getToolIdentifierCase())) return false;
     switch (toolIdentifierCase_) {
       case 2:
@@ -536,6 +666,10 @@ public final class ToolResponse extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + RESPONSE_FIELD_NUMBER;
       hash = (53 * hash) + getResponse().hashCode();
     }
+    hash = (37 * hash) + PARENT_TOOL_CALL_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getParentToolCallId().hashCode();
+    hash = (37 * hash) + AGENT_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getAgentName().hashCode();
     switch (toolIdentifierCase_) {
       case 2:
         hash = (37 * hash) + TOOL_FIELD_NUMBER;
@@ -707,6 +841,8 @@ public final class ToolResponse extends com.google.protobuf.GeneratedMessage
         responseBuilder_.dispose();
         responseBuilder_ = null;
       }
+      parentToolCallId_ = "";
+      agentName_ = "";
       toolIdentifierCase_ = 0;
       toolIdentifier_ = null;
       return this;
@@ -757,6 +893,12 @@ public final class ToolResponse extends com.google.protobuf.GeneratedMessage
         result.response_ = responseBuilder_ == null ? response_ : responseBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.parentToolCallId_ = parentToolCallId_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.agentName_ = agentName_;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -792,6 +934,16 @@ public final class ToolResponse extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasResponse()) {
         mergeResponse(other.getResponse());
+      }
+      if (!other.getParentToolCallId().isEmpty()) {
+        parentToolCallId_ = other.parentToolCallId_;
+        bitField0_ |= 0x00000020;
+        onChanged();
+      }
+      if (!other.getAgentName().isEmpty()) {
+        agentName_ = other.agentName_;
+        bitField0_ |= 0x00000040;
+        onChanged();
       }
       switch (other.getToolIdentifierCase()) {
         case TOOL:
@@ -870,6 +1022,18 @@ public final class ToolResponse extends com.google.protobuf.GeneratedMessage
                 toolIdentifierCase_ = 5;
                 break;
               } // case 42
+            case 50:
+              {
+                parentToolCallId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 50
+            case 58:
+              {
+                agentName_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 58
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1737,6 +1901,248 @@ public final class ToolResponse extends com.google.protobuf.GeneratedMessage
         response_ = null;
       }
       return responseBuilder_;
+    }
+
+    private java.lang.Object parentToolCallId_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The id of the tool call that caused this one, when it was
+     * issued by a sub-agent working on behalf of a parent call. Empty for
+     * top-level calls. Lets a client group a sub-agent's work under the call that
+     * started it instead of rendering every step as a sibling.
+     * </pre>
+     *
+     * <code>string parent_tool_call_id = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The parentToolCallId.
+     */
+    public java.lang.String getParentToolCallId() {
+      java.lang.Object ref = parentToolCallId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        parentToolCallId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The id of the tool call that caused this one, when it was
+     * issued by a sub-agent working on behalf of a parent call. Empty for
+     * top-level calls. Lets a client group a sub-agent's work under the call that
+     * started it instead of rendering every step as a sibling.
+     * </pre>
+     *
+     * <code>string parent_tool_call_id = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for parentToolCallId.
+     */
+    public com.google.protobuf.ByteString getParentToolCallIdBytes() {
+      java.lang.Object ref = parentToolCallId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        parentToolCallId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The id of the tool call that caused this one, when it was
+     * issued by a sub-agent working on behalf of a parent call. Empty for
+     * top-level calls. Lets a client group a sub-agent's work under the call that
+     * started it instead of rendering every step as a sibling.
+     * </pre>
+     *
+     * <code>string parent_tool_call_id = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The parentToolCallId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setParentToolCallId(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      parentToolCallId_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The id of the tool call that caused this one, when it was
+     * issued by a sub-agent working on behalf of a parent call. Empty for
+     * top-level calls. Lets a client group a sub-agent's work under the call that
+     * started it instead of rendering every step as a sibling.
+     * </pre>
+     *
+     * <code>string parent_tool_call_id = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearParentToolCallId() {
+      parentToolCallId_ = getDefaultInstance().getParentToolCallId();
+      bitField0_ = (bitField0_ & ~0x00000020);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The id of the tool call that caused this one, when it was
+     * issued by a sub-agent working on behalf of a parent call. Empty for
+     * top-level calls. Lets a client group a sub-agent's work under the call that
+     * started it instead of rendering every step as a sibling.
+     * </pre>
+     *
+     * <code>string parent_tool_call_id = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for parentToolCallId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setParentToolCallIdBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      parentToolCallId_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object agentName_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Human-readable name of the agent that issued this call, e.g.
+     * "Contract Architect". Empty when the root agent issued it.
+     * </pre>
+     *
+     * <code>string agent_name = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The agentName.
+     */
+    public java.lang.String getAgentName() {
+      java.lang.Object ref = agentName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        agentName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Human-readable name of the agent that issued this call, e.g.
+     * "Contract Architect". Empty when the root agent issued it.
+     * </pre>
+     *
+     * <code>string agent_name = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for agentName.
+     */
+    public com.google.protobuf.ByteString getAgentNameBytes() {
+      java.lang.Object ref = agentName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        agentName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Human-readable name of the agent that issued this call, e.g.
+     * "Contract Architect". Empty when the root agent issued it.
+     * </pre>
+     *
+     * <code>string agent_name = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The agentName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAgentName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      agentName_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Human-readable name of the agent that issued this call, e.g.
+     * "Contract Architect". Empty when the root agent issued it.
+     * </pre>
+     *
+     * <code>string agent_name = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAgentName() {
+      agentName_ = getDefaultInstance().getAgentName();
+      bitField0_ = (bitField0_ & ~0x00000040);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Human-readable name of the agent that issued this call, e.g.
+     * "Contract Architect". Empty when the root agent issued it.
+     * </pre>
+     *
+     * <code>string agent_name = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for agentName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAgentNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      agentName_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.ces.v1beta.ToolResponse)

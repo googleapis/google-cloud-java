@@ -141,7 +141,7 @@ public final class KeyValuePair extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Required. The values of the label to match.
-   * There will be explicit “OR” between values of array.
+   * There will be explicit "OR" between values of array.
    * Each value must be in the format `{label_value}`.
    * The value must match the regex
    * Format: `[&#92;&#92;p{Ll}&#92;&#92;p{Lo}&#92;&#92;p{N}_-]{1,63}`.
@@ -160,7 +160,7 @@ public final class KeyValuePair extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Required. The values of the label to match.
-   * There will be explicit “OR” between values of array.
+   * There will be explicit "OR" between values of array.
    * Each value must be in the format `{label_value}`.
    * The value must match the regex
    * Format: `[&#92;&#92;p{Ll}&#92;&#92;p{Lo}&#92;&#92;p{N}_-]{1,63}`.
@@ -179,7 +179,7 @@ public final class KeyValuePair extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Required. The values of the label to match.
-   * There will be explicit “OR” between values of array.
+   * There will be explicit "OR" between values of array.
    * Each value must be in the format `{label_value}`.
    * The value must match the regex
    * Format: `[&#92;&#92;p{Ll}&#92;&#92;p{Lo}&#92;&#92;p{N}_-]{1,63}`.
@@ -199,7 +199,7 @@ public final class KeyValuePair extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Required. The values of the label to match.
-   * There will be explicit “OR” between values of array.
+   * There will be explicit "OR" between values of array.
    * Each value must be in the format `{label_value}`.
    * The value must match the regex
    * Format: `[&#92;&#92;p{Ll}&#92;&#92;p{Lo}&#92;&#92;p{N}_-]{1,63}`.
@@ -702,7 +702,7 @@ public final class KeyValuePair extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The values of the label to match.
-     * There will be explicit “OR” between values of array.
+     * There will be explicit "OR" between values of array.
      * Each value must be in the format `{label_value}`.
      * The value must match the regex
      * Format: `[&#92;&#92;p{Ll}&#92;&#92;p{Lo}&#92;&#92;p{N}_-]{1,63}`.
@@ -722,7 +722,7 @@ public final class KeyValuePair extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The values of the label to match.
-     * There will be explicit “OR” between values of array.
+     * There will be explicit "OR" between values of array.
      * Each value must be in the format `{label_value}`.
      * The value must match the regex
      * Format: `[&#92;&#92;p{Ll}&#92;&#92;p{Lo}&#92;&#92;p{N}_-]{1,63}`.
@@ -741,7 +741,7 @@ public final class KeyValuePair extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The values of the label to match.
-     * There will be explicit “OR” between values of array.
+     * There will be explicit "OR" between values of array.
      * Each value must be in the format `{label_value}`.
      * The value must match the regex
      * Format: `[&#92;&#92;p{Ll}&#92;&#92;p{Lo}&#92;&#92;p{N}_-]{1,63}`.
@@ -761,7 +761,7 @@ public final class KeyValuePair extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The values of the label to match.
-     * There will be explicit “OR” between values of array.
+     * There will be explicit "OR" between values of array.
      * Each value must be in the format `{label_value}`.
      * The value must match the regex
      * Format: `[&#92;&#92;p{Ll}&#92;&#92;p{Lo}&#92;&#92;p{N}_-]{1,63}`.
@@ -781,7 +781,7 @@ public final class KeyValuePair extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The values of the label to match.
-     * There will be explicit “OR” between values of array.
+     * There will be explicit "OR" between values of array.
      * Each value must be in the format `{label_value}`.
      * The value must match the regex
      * Format: `[&#92;&#92;p{Ll}&#92;&#92;p{Lo}&#92;&#92;p{N}_-]{1,63}`.
@@ -809,7 +809,7 @@ public final class KeyValuePair extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The values of the label to match.
-     * There will be explicit “OR” between values of array.
+     * There will be explicit "OR" between values of array.
      * Each value must be in the format `{label_value}`.
      * The value must match the regex
      * Format: `[&#92;&#92;p{Ll}&#92;&#92;p{Lo}&#92;&#92;p{N}_-]{1,63}`.
@@ -836,7 +836,7 @@ public final class KeyValuePair extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The values of the label to match.
-     * There will be explicit “OR” between values of array.
+     * There will be explicit "OR" between values of array.
      * Each value must be in the format `{label_value}`.
      * The value must match the regex
      * Format: `[&#92;&#92;p{Ll}&#92;&#92;p{Lo}&#92;&#92;p{N}_-]{1,63}`.
@@ -860,7 +860,7 @@ public final class KeyValuePair extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The values of the label to match.
-     * There will be explicit “OR” between values of array.
+     * There will be explicit "OR" between values of array.
      * Each value must be in the format `{label_value}`.
      * The value must match the regex
      * Format: `[&#92;&#92;p{Ll}&#92;&#92;p{Lo}&#92;&#92;p{N}_-]{1,63}`.
@@ -883,7 +883,7 @@ public final class KeyValuePair extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The values of the label to match.
-     * There will be explicit “OR” between values of array.
+     * There will be explicit "OR" between values of array.
      * Each value must be in the format `{label_value}`.
      * The value must match the regex
      * Format: `[&#92;&#92;p{Ll}&#92;&#92;p{Lo}&#92;&#92;p{N}_-]{1,63}`.
