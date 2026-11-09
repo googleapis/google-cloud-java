@@ -35,7 +35,6 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import org.mockito.Mockito;
-import com.google.cloud.spanner.SpannerExceptionFactory;
 
 /** Unit tests for {@link SpannerExceptionFactory}. */
 @RunWith(JUnit4.class)

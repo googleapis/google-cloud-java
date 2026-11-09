@@ -51,7 +51,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ExecutionException;
 import javax.annotation.Nullable;
-import com.google.cloud.spanner.SpannerExceptionFactory;
 
 /**
  * Implementation of {@link Session}. Sessions are managed internally by the client library, and

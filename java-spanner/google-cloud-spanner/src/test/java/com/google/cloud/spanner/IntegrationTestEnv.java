@@ -48,7 +48,6 @@ import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.junit.rules.ExternalResource;
-import com.google.cloud.spanner.SpannerExceptionFactory;
 
 /**
  * JUnit 4 test rule that provides access to a Cloud Spanner instance to use for tests, and allows

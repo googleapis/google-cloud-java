@@ -66,7 +66,6 @@ import org.junit.runners.JUnit4;
 import org.mockito.Mockito;
 import org.mockito.invocation.InvocationOnMock;
 import org.mockito.stubbing.Answer;
-import com.google.cloud.spanner.SpannerExceptionFactory;
 
 @RunWith(JUnit4.class)
 public class AsyncResultSetImplTest {

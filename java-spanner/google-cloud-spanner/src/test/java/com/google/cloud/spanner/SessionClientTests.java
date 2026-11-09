@@ -60,7 +60,6 @@ import org.mockito.Captor;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
-import com.google.cloud.spanner.SpannerExceptionFactory;
 
 @RunWith(Parameterized.class)
 public class SessionClientTests {

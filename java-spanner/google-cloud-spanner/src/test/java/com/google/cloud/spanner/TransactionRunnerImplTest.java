@@ -84,7 +84,6 @@ import org.mockito.ArgumentCaptor;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
-import com.google.cloud.spanner.SpannerExceptionFactory;
 
 /** Unit test for {@link com.google.cloud.spanner.TransactionRunnerImpl} */
 @RunWith(JUnit4.class)

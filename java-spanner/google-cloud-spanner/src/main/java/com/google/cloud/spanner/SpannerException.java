@@ -29,7 +29,6 @@ import io.grpc.Status;
 import io.grpc.protobuf.ProtoUtils;
 import java.util.Map;
 import javax.annotation.Nullable;
-import com.google.cloud.spanner.SpannerExceptionFactory;
 
 /** Base exception type for all exceptions produced by the Cloud Spanner service. */
 public class SpannerException extends BaseGrpcServiceException {

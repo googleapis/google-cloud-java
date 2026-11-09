@@ -19,7 +19,6 @@ package com.google.cloud.spanner;
 import com.google.api.core.ApiFuture;
 import com.google.cloud.Timestamp;
 import java.util.concurrent.ExecutionException;
-import com.google.cloud.spanner.SpannerExceptionFactory;
 
 /**
  * Represents a {@link TransactionManager} using a multiplexed session that is not yet ready. The

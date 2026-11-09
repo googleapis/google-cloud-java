@@ -19,7 +19,6 @@ package com.google.cloud.spanner;
 import com.google.api.gax.rpc.ApiException;
 import java.util.regex.Pattern;
 import javax.annotation.Nullable;
-import com.google.cloud.spanner.SpannerExceptionFactory;
 
 /**
  * Exception thrown by Spanner when a DDL statement failed because no default sequence kind has been

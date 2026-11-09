@@ -20,7 +20,6 @@ import com.google.api.core.ApiFuture;
 import com.google.cloud.Timestamp;
 import java.util.concurrent.ExecutionException;
 import javax.annotation.Nullable;
-import com.google.cloud.spanner.SpannerExceptionFactory;
 
 /**
  * Represents a {@link TransactionRunner} using a multiplexed session that is not yet ready. The

@@ -19,7 +19,6 @@ package com.google.cloud.spanner;
 import com.google.cloud.spanner.connection.Connection;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
-import com.google.cloud.spanner.SpannerExceptionFactory;
 
 /**
  * Exception thrown by a {@link Connection} when a database operation detects that a transaction has

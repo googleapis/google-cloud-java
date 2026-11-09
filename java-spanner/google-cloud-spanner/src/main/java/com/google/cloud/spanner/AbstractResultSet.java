@@ -42,7 +42,6 @@ import java.util.UUID;
 import java.util.function.Function;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
-import com.google.cloud.spanner.SpannerExceptionFactory;
 
 /** Implementation of {@link ResultSet}. */
 abstract class AbstractResultSet<R> extends AbstractStructReader implements ResultSet {

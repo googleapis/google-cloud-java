@@ -81,7 +81,6 @@ import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameter;
 import org.junit.runners.Parameterized.Parameters;
 import org.mockito.Mockito;
-import com.google.cloud.spanner.SpannerExceptionFactory;
 
 /** Unit tests for {@link ResumableStreamIterator}. */
 @RunWith(Parameterized.class)

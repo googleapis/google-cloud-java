@@ -20,7 +20,6 @@ import com.google.api.gax.rpc.ApiException;
 import com.google.cloud.spanner.SpannerException.ResourceNotFoundException;
 import com.google.rpc.ResourceInfo;
 import javax.annotation.Nullable;
-import com.google.cloud.spanner.SpannerExceptionFactory;
 
 /**
  * Exception thrown by Cloud Spanner when an operation detects that the database that is being used

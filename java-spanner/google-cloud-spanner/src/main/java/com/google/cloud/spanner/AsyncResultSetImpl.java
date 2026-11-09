@@ -45,7 +45,6 @@ import java.util.concurrent.LinkedBlockingDeque;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.annotation.concurrent.GuardedBy;
-import com.google.cloud.spanner.SpannerExceptionFactory;
 
 /** Default implementation for {@link AsyncResultSet}. */
 class AsyncResultSetImpl extends ForwardingStructReader

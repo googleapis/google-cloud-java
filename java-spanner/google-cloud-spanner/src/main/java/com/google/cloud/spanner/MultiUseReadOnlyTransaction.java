@@ -42,7 +42,6 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.locks.ReentrantLock;
 import javax.annotation.Nullable;
 import javax.annotation.concurrent.GuardedBy;
-import com.google.cloud.spanner.SpannerExceptionFactory;
 
 /**
  * A {@link ReadOnlyTransaction} implementation for multi-use transactions. This allows multiple

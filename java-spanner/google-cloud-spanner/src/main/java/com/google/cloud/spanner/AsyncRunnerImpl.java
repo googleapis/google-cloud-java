@@ -26,7 +26,6 @@ import com.google.common.base.Preconditions;
 import com.google.common.util.concurrent.MoreExecutors;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executor;
-import com.google.cloud.spanner.SpannerExceptionFactory;
 
 class AsyncRunnerImpl implements AsyncRunner {
   private final TransactionRunnerImpl delegate;

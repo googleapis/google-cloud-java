@@ -34,7 +34,6 @@ import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.annotation.Nullable;
-import com.google.cloud.spanner.SpannerExceptionFactory;
 
 /** Adapts a streaming read/query call into an iterator over partial result sets. */
 @VisibleForTesting

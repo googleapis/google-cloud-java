@@ -33,7 +33,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
 import javax.annotation.Nullable;
-import com.google.cloud.spanner.SpannerExceptionFactory;
 
 class DatabaseClientImpl implements DatabaseClient {
   private static final String READ_WRITE_TRANSACTION = "CloudSpanner.ReadWriteTransaction";

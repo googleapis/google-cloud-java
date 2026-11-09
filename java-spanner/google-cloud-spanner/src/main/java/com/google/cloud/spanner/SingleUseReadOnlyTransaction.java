@@ -24,7 +24,6 @@ import com.google.spanner.v1.TransactionOptions;
 import com.google.spanner.v1.TransactionSelector;
 import javax.annotation.Nullable;
 import javax.annotation.concurrent.GuardedBy;
-import com.google.cloud.spanner.SpannerExceptionFactory;
 
 /**
  * A {@link ReadOnlyTransaction} implementation for single-use transactions. This can only be used

@@ -37,7 +37,6 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
-import com.google.cloud.spanner.SpannerExceptionFactory;
 
 @RunWith(MockitoJUnitRunner.class)
 public class AsyncTransactionManagerImplTest {
