@@ -27,6 +27,12 @@ public interface VpnTunnelCipherSuiteOrBuilder
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
+   * <pre>
+   * Cipher algorithms for IKE phase 1.
+   * </pre>
+   *
    * <code>optional .google.cloud.compute.v1.VpnTunnelPhase1Algorithms phase1 = 84289046;</code>
    *
    * @return Whether the phase1 field is set.
@@ -34,16 +40,36 @@ public interface VpnTunnelCipherSuiteOrBuilder
   boolean hasPhase1();
 
   /**
+   *
+   *
+   * <pre>
+   * Cipher algorithms for IKE phase 1.
+   * </pre>
+   *
    * <code>optional .google.cloud.compute.v1.VpnTunnelPhase1Algorithms phase1 = 84289046;</code>
    *
    * @return The phase1.
    */
   com.google.cloud.compute.v1.VpnTunnelPhase1Algorithms getPhase1();
 
-  /** <code>optional .google.cloud.compute.v1.VpnTunnelPhase1Algorithms phase1 = 84289046;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Cipher algorithms for IKE phase 1.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.VpnTunnelPhase1Algorithms phase1 = 84289046;</code>
+   */
   com.google.cloud.compute.v1.VpnTunnelPhase1AlgorithmsOrBuilder getPhase1OrBuilder();
 
   /**
+   *
+   *
+   * <pre>
+   * Cipher algorithms for IKE phase 2.
+   * </pre>
+   *
    * <code>optional .google.cloud.compute.v1.VpnTunnelPhase2Algorithms phase2 = 84289047;</code>
    *
    * @return Whether the phase2 field is set.
@@ -51,12 +77,26 @@ public interface VpnTunnelCipherSuiteOrBuilder
   boolean hasPhase2();
 
   /**
+   *
+   *
+   * <pre>
+   * Cipher algorithms for IKE phase 2.
+   * </pre>
+   *
    * <code>optional .google.cloud.compute.v1.VpnTunnelPhase2Algorithms phase2 = 84289047;</code>
    *
    * @return The phase2.
    */
   com.google.cloud.compute.v1.VpnTunnelPhase2Algorithms getPhase2();
 
-  /** <code>optional .google.cloud.compute.v1.VpnTunnelPhase2Algorithms phase2 = 84289047;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Cipher algorithms for IKE phase 2.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.VpnTunnelPhase2Algorithms phase2 = 84289047;</code>
+   */
   com.google.cloud.compute.v1.VpnTunnelPhase2AlgorithmsOrBuilder getPhase2OrBuilder();
 }

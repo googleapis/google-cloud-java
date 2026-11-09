@@ -267,6 +267,50 @@ public interface CompilationResultActionOrBuilder
    *
    *
    * <pre>
+   * The unit test executed by this action.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataform.v1beta1.CompilationResultAction.BigQueryUnitTest bigquery_unit_test = 11;
+   * </code>
+   *
+   * @return Whether the bigqueryUnitTest field is set.
+   */
+  boolean hasBigqueryUnitTest();
+
+  /**
+   *
+   *
+   * <pre>
+   * The unit test executed by this action.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataform.v1beta1.CompilationResultAction.BigQueryUnitTest bigquery_unit_test = 11;
+   * </code>
+   *
+   * @return The bigqueryUnitTest.
+   */
+  com.google.cloud.dataform.v1beta1.CompilationResultAction.BigQueryUnitTest getBigqueryUnitTest();
+
+  /**
+   *
+   *
+   * <pre>
+   * The unit test executed by this action.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataform.v1beta1.CompilationResultAction.BigQueryUnitTest bigquery_unit_test = 11;
+   * </code>
+   */
+  com.google.cloud.dataform.v1beta1.CompilationResultAction.BigQueryUnitTestOrBuilder
+      getBigqueryUnitTestOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * This action's identifier. Unique within the compilation result.
    * </pre>
    *

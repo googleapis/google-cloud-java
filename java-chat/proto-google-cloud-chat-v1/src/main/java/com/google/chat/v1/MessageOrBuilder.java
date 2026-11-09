@@ -1554,6 +1554,82 @@ public interface MessageOrBuilder
    *
    *
    * <pre>
+   * Optional. Additional message components, including inline `citations`
+   * (where each citation is associated with a specific portion of the message
+   * text) and `cited_sources` (which are general references used to generate
+   * the response and are not directly linked to specific segments of the text).
+   *
+   * On input, provide `elements` when creating or updating a message. On
+   * output, both `citations` and `cited_sources` are populated when reading a
+   * message that contains them. Callers can read structured citation metadata
+   * from `elements`, while `formatted_text` also includes inline citation tags
+   * or source links depending on `markup_syntax`.
+   *
+   * These differ from `annotations`, which are output-only and offer
+   * supplementary information tied to message fragments or the entire message
+   * text.
+   * </pre>
+   *
+   * <code>.google.chat.v1.Elements elements = 45 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the elements field is set.
+   */
+  boolean hasElements();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Additional message components, including inline `citations`
+   * (where each citation is associated with a specific portion of the message
+   * text) and `cited_sources` (which are general references used to generate
+   * the response and are not directly linked to specific segments of the text).
+   *
+   * On input, provide `elements` when creating or updating a message. On
+   * output, both `citations` and `cited_sources` are populated when reading a
+   * message that contains them. Callers can read structured citation metadata
+   * from `elements`, while `formatted_text` also includes inline citation tags
+   * or source links depending on `markup_syntax`.
+   *
+   * These differ from `annotations`, which are output-only and offer
+   * supplementary information tied to message fragments or the entire message
+   * text.
+   * </pre>
+   *
+   * <code>.google.chat.v1.Elements elements = 45 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The elements.
+   */
+  com.google.chat.v1.Elements getElements();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Additional message components, including inline `citations`
+   * (where each citation is associated with a specific portion of the message
+   * text) and `cited_sources` (which are general references used to generate
+   * the response and are not directly linked to specific segments of the text).
+   *
+   * On input, provide `elements` when creating or updating a message. On
+   * output, both `citations` and `cited_sources` are populated when reading a
+   * message that contains them. Callers can read structured citation metadata
+   * from `elements`, while `formatted_text` also includes inline citation tags
+   * or source links depending on `markup_syntax`.
+   *
+   * These differ from `annotations`, which are output-only and offer
+   * supplementary information tied to message fragments or the entire message
+   * text.
+   * </pre>
+   *
+   * <code>.google.chat.v1.Elements elements = 45 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  com.google.chat.v1.ElementsOrBuilder getElementsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. Specifies how the server interprets the message `text` field
    * content.
    * </pre>

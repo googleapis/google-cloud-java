@@ -203,6 +203,7 @@ public class IntegrationTestEnv extends ExternalResource {
             .setTracerProvider(sdkTracerProvider)
             .setPropagators(ContextPropagators.create(W3CTraceContextPropagator.getInstance()))
             .build();
+    SpannerOptions.resetActiveTracingFramework();
     SpannerOptions.enableOpenTelemetryTraces();
     return options.toBuilder()
         .setOpenTelemetry(openTelemetry)
@@ -217,8 +218,15 @@ public class IntegrationTestEnv extends ExternalResource {
 
   @Override
   protected void after() {
-    cleanUpInstance();
-    this.config.tearDown();
+    try {
+      cleanUpInstance();
+    } finally {
+      try {
+        this.config.tearDown();
+      } finally {
+        SpannerOptions.resetActiveTracingFramework();
+      }
+    }
   }
 
   private void initializeInstance(InstanceId instanceId) throws Exception {

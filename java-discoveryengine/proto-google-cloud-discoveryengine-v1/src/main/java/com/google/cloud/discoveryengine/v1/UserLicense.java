@@ -138,6 +138,16 @@ public final class UserLicense extends com.google.protobuf.GeneratedMessage
      * <code>NO_LICENSE_ATTEMPTED_LOGIN = 4;</code>
      */
     NO_LICENSE_ATTEMPTED_LOGIN(4),
+    /**
+     *
+     *
+     * <pre>
+     * User is blocked from assigning a license.
+     * </pre>
+     *
+     * <code>BLOCKED = 5;</code>
+     */
+    BLOCKED(5),
     UNRECOGNIZED(-1),
     ;
 
@@ -211,6 +221,17 @@ public final class UserLicense extends com.google.protobuf.GeneratedMessage
      */
     public static final int NO_LICENSE_ATTEMPTED_LOGIN_VALUE = 4;
 
+    /**
+     *
+     *
+     * <pre>
+     * User is blocked from assigning a license.
+     * </pre>
+     *
+     * <code>BLOCKED = 5;</code>
+     */
+    public static final int BLOCKED_VALUE = 5;
+
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -245,6 +266,8 @@ public final class UserLicense extends com.google.protobuf.GeneratedMessage
           return NO_LICENSE;
         case 4:
           return NO_LICENSE_ATTEMPTED_LOGIN;
+        case 5:
+          return BLOCKED;
         default:
           return null;
       }
@@ -426,7 +449,7 @@ public final class UserLicense extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Output only. License assignment state of the user.
-   * If the user is assigned with a license config, the user loggin will be
+   * If the user is assigned with a license config, the user login will be
    * assigned with the license;
    * If the user's license assignment state is unassigned or unspecified, no
    * license config will be associated to the user;
@@ -448,7 +471,7 @@ public final class UserLicense extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Output only. License assignment state of the user.
-   * If the user is assigned with a license config, the user loggin will be
+   * If the user is assigned with a license config, the user login will be
    * assigned with the license;
    * If the user's license assignment state is unassigned or unspecified, no
    * license config will be associated to the user;
@@ -1449,7 +1472,7 @@ public final class UserLicense extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. License assignment state of the user.
-     * If the user is assigned with a license config, the user loggin will be
+     * If the user is assigned with a license config, the user login will be
      * assigned with the license;
      * If the user's license assignment state is unassigned or unspecified, no
      * license config will be associated to the user;
@@ -1471,7 +1494,7 @@ public final class UserLicense extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. License assignment state of the user.
-     * If the user is assigned with a license config, the user loggin will be
+     * If the user is assigned with a license config, the user login will be
      * assigned with the license;
      * If the user's license assignment state is unassigned or unspecified, no
      * license config will be associated to the user;
@@ -1496,7 +1519,7 @@ public final class UserLicense extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. License assignment state of the user.
-     * If the user is assigned with a license config, the user loggin will be
+     * If the user is assigned with a license config, the user login will be
      * assigned with the license;
      * If the user's license assignment state is unassigned or unspecified, no
      * license config will be associated to the user;
@@ -1524,7 +1547,7 @@ public final class UserLicense extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. License assignment state of the user.
-     * If the user is assigned with a license config, the user loggin will be
+     * If the user is assigned with a license config, the user login will be
      * assigned with the license;
      * If the user's license assignment state is unassigned or unspecified, no
      * license config will be associated to the user;
@@ -1553,7 +1576,7 @@ public final class UserLicense extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. License assignment state of the user.
-     * If the user is assigned with a license config, the user loggin will be
+     * If the user is assigned with a license config, the user login will be
      * assigned with the license;
      * If the user's license assignment state is unassigned or unspecified, no
      * license config will be associated to the user;
