@@ -24,9 +24,9 @@ import static com.google.common.truth.Truth.assertThat;
 import com.google.api.core.ApiFuture;
 import com.google.api.gax.grpc.GrpcCallContext;
 import com.google.cloud.storage.ITObjectReadSessionFakeTest.FakeStorage;
-import com.google.cloud.storage.StorageDataClient.FastOpenObjectReadSession;
 import com.google.cloud.storage.ZeroCopySupport.DisposableByteString;
 import com.google.cloud.storage.it.ChecksummedTestContent;
+import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.io.ByteStreams;
 import com.google.protobuf.ByteString;
@@ -137,10 +137,10 @@ public final class ITStorageDataClientFakeTest {
                       .build())
               .build();
 
-      ApiFuture<FastOpenObjectReadSession<P>> f =
-          dataClient.fastOpenReadSession(req, GrpcCallContext.createDefault(), config);
-      try (FastOpenObjectReadSession<P> fastOpen = f.get(3, TimeUnit.SECONDS)) {
-        byte[] apply = func.apply(fastOpen.getProjection());
+      ApiFuture<ObjectReadSession> f =
+          dataClient.readSession(req, GrpcCallContext.createDefault(), ImmutableList.of(config));
+      try (ObjectReadSession session = f.get(3, TimeUnit.SECONDS)) {
+        byte[] apply = func.apply(session.readAs(config));
         assertThat(xxd(apply)).isEqualTo(xxd(content.getBytes()));
       }
     }

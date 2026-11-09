@@ -41,7 +41,6 @@ import com.google.cloud.storage.Crc32cValue.Crc32cLengthKnown;
 import com.google.cloud.storage.Hasher.UncheckedChecksumMismatchException;
 import com.google.cloud.storage.OtelStorageDecorator.OtelDecoratingBlobReadSession;
 import com.google.cloud.storage.Storage.BlobSourceOption;
-import com.google.cloud.storage.StorageDataClient.FastOpenObjectReadSession;
 import com.google.cloud.storage.ZeroCopySupport.DisposableByteString;
 import com.google.cloud.storage.it.ChecksummedTestContent;
 import com.google.cloud.storage.it.GrpcPlainRequestLoggingInterceptor;
@@ -1310,7 +1309,7 @@ public final class ITObjectReadSessionFakeTest {
   }
 
   @Test
-  public void gettingSessionFromFastOpenKeepsTheSessionOpenUntilClosed() throws Exception {
+  public void fastOpenRead_thenMoreReadsOnTheSameSession() throws Exception {
     ChecksummedTestContent expected = ChecksummedTestContent.of(ALL_OBJECT_BYTES, 10, 30);
 
     ChecksummedTestContent content1 = ChecksummedTestContent.of(ALL_OBJECT_BYTES, 10, 10);
@@ -1384,19 +1383,17 @@ public final class ITObjectReadSessionFakeTest {
                       .build())
               .build();
 
-      ApiFuture<FastOpenObjectReadSession<ApiFuture<DisposableByteString>>> future =
-          dataClient.fastOpenReadSession(
-              req,
-              GrpcCallContext.createDefault(),
-              ReadProjectionConfigs.asFutureByteString().withRangeSpec(RangeSpec.of(10, 10)));
+      ReadAsFutureByteString fastOpenConfig =
+          ReadProjectionConfigs.asFutureByteString().withRangeSpec(RangeSpec.of(10, 10));
+      ApiFuture<ObjectReadSession> future =
+          dataClient.readSession(
+              req, GrpcCallContext.createDefault(), ImmutableList.of(fastOpenConfig));
 
       ByteString bytes = ByteString.empty();
       Exception caught = null;
 
-      try (FastOpenObjectReadSession<ApiFuture<DisposableByteString>> fastOpenChannel =
-              future.get(5, TimeUnit.SECONDS);
-          ObjectReadSession session = fastOpenChannel.getSession()) {
-        ApiFuture<DisposableByteString> futureBytes1 = fastOpenChannel.getProjection();
+      try (ObjectReadSession session = future.get(5, TimeUnit.SECONDS)) {
+        ApiFuture<DisposableByteString> futureBytes1 = session.readAs(fastOpenConfig);
         try (DisposableByteString disposableByteString = futureBytes1.get()) {
           bytes = bytes.concat(disposableByteString.byteString());
         }
