@@ -47,6 +47,7 @@ import org.junit.experimental.categories.Category;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import com.google.cloud.spanner.SpannerExceptionFactory;
+import java.util.concurrent.ExecutionException;
 
 @Category(ParallelIntegrationTest.class)
 @RunWith(JUnit4.class)
