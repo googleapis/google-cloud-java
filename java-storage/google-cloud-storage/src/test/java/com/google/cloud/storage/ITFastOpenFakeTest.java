@@ -33,11 +33,13 @@ import com.google.api.gax.rpc.OutOfRangeException;
 import com.google.cloud.storage.ITObjectReadSessionFakeTest.FakeStorage;
 import com.google.cloud.storage.ReadProjectionConfigs.BaseConfig;
 import com.google.cloud.storage.Storage.BlobSourceOption;
+import com.google.cloud.storage.ZeroCopySupport.DisposableByteString;
 import com.google.cloud.storage.it.ChecksummedTestContent;
 import com.google.cloud.storage.otel.TestExporter;
 import com.google.common.base.Throwables;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
+import com.google.common.io.ByteStreams;
 import com.google.protobuf.Any;
 import com.google.storage.v2.BidiReadObjectError;
 import com.google.storage.v2.BidiReadObjectRequest;
@@ -56,8 +58,11 @@ import io.opentelemetry.sdk.OpenTelemetrySdk;
 import io.opentelemetry.sdk.trace.SdkTracerProvider;
 import io.opentelemetry.sdk.trace.data.SpanData;
 import io.opentelemetry.sdk.trace.export.SimpleSpanProcessor;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.UncheckedIOException;
+import java.nio.channels.Channels;
+import java.nio.channels.ScatteringByteChannel;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -311,7 +316,190 @@ public final class ITFastOpenFakeTest {
   }
 
   @Test
-  public void readSession_withMoreThanOneFastOpenConfig_isRejected() throws Exception {
+  public void readSession_withThreeFastOpenReads_servesEachInAnyOrder() throws Exception {
+    ReadAsFutureByteString byteString30To40 =
+        ReadProjectionConfigs.asFutureByteString().withRangeSpec(RangeSpec.of(30, 10));
+    BidiReadObjectRequest openWithThreeReads =
+        OPEN.toBuilder()
+            .addReadRanges(getReadRange(1, 10, 10))
+            .addReadRanges(getReadRange(2, 20, 10))
+            .addReadRanges(getReadRange(3, 30, 10))
+            .build();
+    BidiReadObjectResponse allThree =
+        metadataAndBytes(1, 10, 10).toBuilder()
+            .addObjectDataRanges(bytes(2, 20, 10).getObjectDataRanges(0))
+            .addObjectDataRanges(bytes(3, 30, 10).getObjectDataRanges(0))
+            .build();
+    FakeStorage server = fakeServer(ImmutableMap.of(openWithThreeReads, allThree));
+
+    try (FakeServer fakeServer = FakeServer.of(server);
+        Storage storage = fakeServer.getGrpcStorageOptions().getService()) {
+      StorageDataClient dataClient = maybeGetStorageDataClient(storage);
+
+      try (ObjectReadSession session =
+          dataClient
+              .readSession(
+                  OPEN, CTX, ImmutableList.of(READ_10_TO_20, READ_20_TO_30, byteString30To40))
+              .get(5, SECONDS)) {
+        try (DisposableByteString third = session.readAs(byteString30To40).get(2, SECONDS)) {
+          assertThat(xxd(third.byteString().toByteArray())).isEqualTo(xxd(slice(30, 10)));
+        }
+        assertThat(xxd(session.readAs(READ_20_TO_30).get(2, SECONDS)))
+            .isEqualTo(xxd(slice(20, 10)));
+        assertThat(xxd(session.readAs(READ_10_TO_20).get(2, SECONDS)))
+            .isEqualTo(xxd(slice(10, 10)));
+      }
+    }
+
+    assertThat(requestsReceived).containsExactly(openWithThreeReads);
+  }
+
+  @Test
+  public void close_withSomeFastOpenReadsUnclaimed_sendsNothingMore() throws Exception {
+    BidiReadObjectRequest openWithTwoReads =
+        OPEN_WITH_READ_OF_10_TO_20.toBuilder().addReadRanges(getReadRange(2, 20, 10)).build();
+    BidiReadObjectResponse both =
+        metadataAndBytes(1, 10, 10).toBuilder()
+            .addObjectDataRanges(bytes(2, 20, 10).getObjectDataRanges(0))
+            .build();
+    FakeStorage server = fakeServer(ImmutableMap.of(openWithTwoReads, both));
+
+    try (FakeServer fakeServer = FakeServer.of(server);
+        Storage storage = fakeServer.getGrpcStorageOptions().getService()) {
+      StorageDataClient dataClient = maybeGetStorageDataClient(storage);
+
+      ObjectReadSession session =
+          dataClient
+              .readSession(OPEN, CTX, ImmutableList.of(READ_10_TO_20, READ_20_TO_30))
+              .get(5, SECONDS);
+      session.readAs(READ_10_TO_20).get(2, SECONDS);
+      session.close();
+
+      assertThrows(IllegalStateException.class, () -> session.readAs(READ_20_TO_30));
+    }
+
+    assertThat(requestsReceived).containsExactly(openWithTwoReads);
+  }
+
+  @Test
+  public void readAsChannel_whileAFastOpenReadIsInProgress_usesItsOwnStream() throws Exception {
+    BidiReadObjectRequest openWithTwoReads =
+        OPEN_WITH_READ_OF_10_TO_20.toBuilder().addReadRanges(getReadRange(2, 20, 10)).build();
+    // read 2 gets only half its bytes, so it stays in progress on the first stream
+    BidiReadObjectResponse firstAndHalfOfSecond =
+        metadataAndBytes(1, 10, 10).toBuilder()
+            .addObjectDataRanges(
+                bytes(2, 20, 5).getObjectDataRanges(0).toBuilder().setRangeEnd(false))
+            .build();
+    BidiReadObjectRequest channelOnNewStream =
+        OPEN.toBuilder()
+            .setReadObjectSpec(OPEN.getReadObjectSpec().toBuilder().setGeneration(1))
+            .addReadRanges(getReadRange(3, 40, 10))
+            .build();
+    FakeStorage server =
+        fakeServer(
+            ImmutableMap.of(
+                openWithTwoReads,
+                firstAndHalfOfSecond,
+                channelOnNewStream,
+                metadataAndBytes(3, 40, 10)));
+
+    try (FakeServer fakeServer = FakeServer.of(server);
+        Storage storage = fakeServer.getGrpcStorageOptions().getService()) {
+      StorageDataClient dataClient = maybeGetStorageDataClient(storage);
+
+      try (ObjectReadSession session =
+          dataClient
+              .readSession(OPEN, CTX, ImmutableList.of(READ_10_TO_20, READ_20_TO_30))
+              .get(5, SECONDS)) {
+        session.readAs(READ_10_TO_20).get(2, SECONDS);
+        ByteArrayOutputStream actual = new ByteArrayOutputStream();
+        try (ScatteringByteChannel channel =
+            session.readAs(ReadProjectionConfigs.asChannel().withRangeSpec(RangeSpec.of(40, 10)))) {
+          ByteStreams.copy(channel, Channels.newChannel(actual));
+        }
+        assertThat(xxd(actual.toByteArray())).isEqualTo(xxd(slice(40, 10)));
+      }
+    }
+
+    assertThat(requestsReceived).containsExactly(openWithTwoReads, channelOnNewStream).inOrder();
+  }
+
+  @Test
+  public void readSession_with100FastOpenConfigs_sendsThemAllInTheOpen() throws Exception {
+    List<ReadProjectionConfig<?>> configs = new ArrayList<>();
+    BidiReadObjectRequest.Builder openWith100Reads = OPEN.toBuilder();
+    for (int i = 0; i < 100; i++) {
+      configs.add(ReadProjectionConfigs.asFutureBytes().withRangeSpec(RangeSpec.of(i, 1)));
+      openWith100Reads.addReadRanges(getReadRange(i + 1, i, 1));
+    }
+    FakeStorage server = fakeServer(ImmutableMap.of(openWith100Reads.build(), metadataOnly()));
+
+    try (FakeServer fakeServer = FakeServer.of(server);
+        Storage storage = fakeServer.getGrpcStorageOptions().getService()) {
+      StorageDataClient dataClient = maybeGetStorageDataClient(storage);
+
+      dataClient.readSession(OPEN, CTX, configs).get(5, SECONDS).close();
+    }
+
+    assertThat(requestsReceived).containsExactly(openWith100Reads.build());
+  }
+
+  @Test
+  public void readSession_withTheSameRangeAsBytesAndByteString_sendsAndServesBoth()
+      throws Exception {
+    ReadAsFutureByteString byteString10To20 =
+        ReadProjectionConfigs.asFutureByteString().withRangeSpec(RangeSpec.of(10, 10));
+    BidiReadObjectRequest openWithTheRangeTwice =
+        OPEN_WITH_READ_OF_10_TO_20.toBuilder().addReadRanges(getReadRange(2, 10, 10)).build();
+    BidiReadObjectResponse both =
+        metadataAndBytes(1, 10, 10).toBuilder()
+            .addObjectDataRanges(bytes(2, 10, 10).getObjectDataRanges(0))
+            .build();
+    FakeStorage server = fakeServer(ImmutableMap.of(openWithTheRangeTwice, both));
+
+    try (FakeServer fakeServer = FakeServer.of(server);
+        Storage storage = fakeServer.getGrpcStorageOptions().getService()) {
+      StorageDataClient dataClient = maybeGetStorageDataClient(storage);
+
+      try (ObjectReadSession session =
+          dataClient
+              .readSession(OPEN, CTX, ImmutableList.of(READ_10_TO_20, byteString10To20))
+              .get(5, SECONDS)) {
+        assertThat(xxd(session.readAs(READ_10_TO_20).get(2, SECONDS)))
+            .isEqualTo(xxd(slice(10, 10)));
+        try (DisposableByteString second = session.readAs(byteString10To20).get(2, SECONDS)) {
+          assertThat(xxd(second.byteString().toByteArray())).isEqualTo(xxd(slice(10, 10)));
+        }
+      }
+    }
+
+    assertThat(requestsReceived).containsExactly(openWithTheRangeTwice);
+  }
+
+  @Test
+  public void readSession_withMoreThan100FastOpenConfigs_isRejected() throws Exception {
+    List<ReadProjectionConfig<?>> configs = new ArrayList<>();
+    for (int i = 0; i < 101; i++) {
+      configs.add(ReadProjectionConfigs.asFutureBytes().withRangeSpec(RangeSpec.of(i, 1)));
+    }
+
+    assertRejectedWithoutSending(configs);
+  }
+
+  @Test
+  public void readSession_withTheSameConfigTwice_isRejected() throws Exception {
+    assertRejectedWithoutSending(ImmutableList.of(READ_10_TO_20, READ_10_TO_20));
+  }
+
+  @Test
+  public void readSession_withAChannelAndAnotherConfig_isRejected() throws Exception {
+    assertRejectedWithoutSending(
+        ImmutableList.of(ReadProjectionConfigs.asChannel(), READ_10_TO_20));
+  }
+
+  private void assertRejectedWithoutSending(List<ReadProjectionConfig<?>> configs)
+      throws Exception {
     FakeStorage server = fakeServer(ImmutableMap.of());
 
     try (FakeServer fakeServer = FakeServer.of(server);
@@ -319,8 +507,7 @@ public final class ITFastOpenFakeTest {
       StorageDataClient dataClient = maybeGetStorageDataClient(storage);
 
       assertThrows(
-          IllegalArgumentException.class,
-          () -> dataClient.readSession(OPEN, CTX, ImmutableList.of(READ_10_TO_20, READ_20_TO_30)));
+          IllegalArgumentException.class, () -> dataClient.readSession(OPEN, CTX, configs));
     }
 
     assertThat(requestsReceived).isEmpty();
