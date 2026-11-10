@@ -41,6 +41,7 @@ public class SyncUpdateService {
               .setService(Service.newBuilder().build())
               .setValidateOnly(true)
               .setAllowMissing(true)
+              .setForceNewRevision(true)
               .build();
       Service response = servicesClient.updateServiceAsync(request).get();
     }

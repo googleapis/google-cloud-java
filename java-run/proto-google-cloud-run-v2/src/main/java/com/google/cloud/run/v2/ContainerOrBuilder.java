@@ -86,7 +86,8 @@ public interface ContainerOrBuilder
    *
    *
    * <pre>
-   * Optional. Location of the source.
+   * Optional. Location of the source. This field is only supported in Cloud Run
+   * Service.
    * </pre>
    *
    * <code>
@@ -101,7 +102,8 @@ public interface ContainerOrBuilder
    *
    *
    * <pre>
-   * Optional. Location of the source.
+   * Optional. Location of the source. This field is only supported in Cloud Run
+   * Service.
    * </pre>
    *
    * <code>
@@ -116,7 +118,8 @@ public interface ContainerOrBuilder
    *
    *
    * <pre>
-   * Optional. Location of the source.
+   * Optional. Location of the source. This field is only supported in Cloud Run
+   * Service.
    * </pre>
    *
    * <code>
@@ -746,4 +749,32 @@ public interface ContainerOrBuilder
    * </code>
    */
   com.google.cloud.run.v2.BuildInfoOrBuilder getBuildInfoOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Indicates that this container can act as a sandbox supervisor and
+   * launch sandboxes.
+   * </pre>
+   *
+   * <code>optional bool sandbox_launcher = 22 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the sandboxLauncher field is set.
+   */
+  boolean hasSandboxLauncher();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Indicates that this container can act as a sandbox supervisor and
+   * launch sandboxes.
+   * </pre>
+   *
+   * <code>optional bool sandbox_launcher = 22 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The sandboxLauncher.
+   */
+  boolean getSandboxLauncher();
 }

@@ -360,6 +360,66 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     }
   }
 
+  public static final int PROGRESS_FIELD_NUMBER = 7;
+  private com.google.cloud.hypercomputecluster.v1beta.OperationProgress progress_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Progress of the operation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.hypercomputecluster.v1beta.OperationProgress progress = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the progress field is set.
+   */
+  @java.lang.Override
+  public boolean hasProgress() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Progress of the operation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.hypercomputecluster.v1beta.OperationProgress progress = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The progress.
+   */
+  @java.lang.Override
+  public com.google.cloud.hypercomputecluster.v1beta.OperationProgress getProgress() {
+    return progress_ == null
+        ? com.google.cloud.hypercomputecluster.v1beta.OperationProgress.getDefaultInstance()
+        : progress_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Progress of the operation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.hypercomputecluster.v1beta.OperationProgress progress = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.hypercomputecluster.v1beta.OperationProgressOrBuilder
+      getProgressOrBuilder() {
+    return progress_ == null
+        ? com.google.cloud.hypercomputecluster.v1beta.OperationProgress.getDefaultInstance()
+        : progress_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -392,6 +452,9 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(apiVersion_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 6, apiVersion_);
     }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(7, getProgress());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -418,6 +481,9 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(apiVersion_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(6, apiVersion_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getProgress());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -447,6 +513,10 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     if (!getVerb().equals(other.getVerb())) return false;
     if (getRequestedCancellation() != other.getRequestedCancellation()) return false;
     if (!getApiVersion().equals(other.getApiVersion())) return false;
+    if (hasProgress() != other.hasProgress()) return false;
+    if (hasProgress()) {
+      if (!getProgress().equals(other.getProgress())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -474,6 +544,10 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getRequestedCancellation());
     hash = (37 * hash) + API_VERSION_FIELD_NUMBER;
     hash = (53 * hash) + getApiVersion().hashCode();
+    if (hasProgress()) {
+      hash = (37 * hash) + PROGRESS_FIELD_NUMBER;
+      hash = (53 * hash) + getProgress().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -618,6 +692,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
         internalGetCreateTimeFieldBuilder();
         internalGetEndTimeFieldBuilder();
+        internalGetProgressFieldBuilder();
       }
     }
 
@@ -639,6 +714,11 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       verb_ = "";
       requestedCancellation_ = false;
       apiVersion_ = "";
+      progress_ = null;
+      if (progressBuilder_ != null) {
+        progressBuilder_.dispose();
+        progressBuilder_ = null;
+      }
       return this;
     }
 
@@ -698,6 +778,10 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.apiVersion_ = apiVersion_;
       }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.progress_ = progressBuilder_ == null ? progress_ : progressBuilder_.build();
+        to_bitField0_ |= 0x00000004;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -738,6 +822,9 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
         apiVersion_ = other.apiVersion_;
         bitField0_ |= 0x00000020;
         onChanged();
+      }
+      if (other.hasProgress()) {
+        mergeProgress(other.getProgress());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -802,6 +889,13 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
                 bitField0_ |= 0x00000020;
                 break;
               } // case 50
+            case 58:
+              {
+                input.readMessage(
+                    internalGetProgressFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 58
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1634,6 +1728,225 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       bitField0_ |= 0x00000020;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.hypercomputecluster.v1beta.OperationProgress progress_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.hypercomputecluster.v1beta.OperationProgress,
+            com.google.cloud.hypercomputecluster.v1beta.OperationProgress.Builder,
+            com.google.cloud.hypercomputecluster.v1beta.OperationProgressOrBuilder>
+        progressBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Progress of the operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.hypercomputecluster.v1beta.OperationProgress progress = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the progress field is set.
+     */
+    public boolean hasProgress() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Progress of the operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.hypercomputecluster.v1beta.OperationProgress progress = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The progress.
+     */
+    public com.google.cloud.hypercomputecluster.v1beta.OperationProgress getProgress() {
+      if (progressBuilder_ == null) {
+        return progress_ == null
+            ? com.google.cloud.hypercomputecluster.v1beta.OperationProgress.getDefaultInstance()
+            : progress_;
+      } else {
+        return progressBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Progress of the operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.hypercomputecluster.v1beta.OperationProgress progress = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setProgress(
+        com.google.cloud.hypercomputecluster.v1beta.OperationProgress value) {
+      if (progressBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        progress_ = value;
+      } else {
+        progressBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Progress of the operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.hypercomputecluster.v1beta.OperationProgress progress = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setProgress(
+        com.google.cloud.hypercomputecluster.v1beta.OperationProgress.Builder builderForValue) {
+      if (progressBuilder_ == null) {
+        progress_ = builderForValue.build();
+      } else {
+        progressBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Progress of the operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.hypercomputecluster.v1beta.OperationProgress progress = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeProgress(
+        com.google.cloud.hypercomputecluster.v1beta.OperationProgress value) {
+      if (progressBuilder_ == null) {
+        if (((bitField0_ & 0x00000040) != 0)
+            && progress_ != null
+            && progress_
+                != com.google.cloud.hypercomputecluster.v1beta.OperationProgress
+                    .getDefaultInstance()) {
+          getProgressBuilder().mergeFrom(value);
+        } else {
+          progress_ = value;
+        }
+      } else {
+        progressBuilder_.mergeFrom(value);
+      }
+      if (progress_ != null) {
+        bitField0_ |= 0x00000040;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Progress of the operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.hypercomputecluster.v1beta.OperationProgress progress = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearProgress() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      progress_ = null;
+      if (progressBuilder_ != null) {
+        progressBuilder_.dispose();
+        progressBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Progress of the operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.hypercomputecluster.v1beta.OperationProgress progress = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.hypercomputecluster.v1beta.OperationProgress.Builder
+        getProgressBuilder() {
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return internalGetProgressFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Progress of the operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.hypercomputecluster.v1beta.OperationProgress progress = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.hypercomputecluster.v1beta.OperationProgressOrBuilder
+        getProgressOrBuilder() {
+      if (progressBuilder_ != null) {
+        return progressBuilder_.getMessageOrBuilder();
+      } else {
+        return progress_ == null
+            ? com.google.cloud.hypercomputecluster.v1beta.OperationProgress.getDefaultInstance()
+            : progress_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Progress of the operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.hypercomputecluster.v1beta.OperationProgress progress = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.hypercomputecluster.v1beta.OperationProgress,
+            com.google.cloud.hypercomputecluster.v1beta.OperationProgress.Builder,
+            com.google.cloud.hypercomputecluster.v1beta.OperationProgressOrBuilder>
+        internalGetProgressFieldBuilder() {
+      if (progressBuilder_ == null) {
+        progressBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.hypercomputecluster.v1beta.OperationProgress,
+                com.google.cloud.hypercomputecluster.v1beta.OperationProgress.Builder,
+                com.google.cloud.hypercomputecluster.v1beta.OperationProgressOrBuilder>(
+                getProgress(), getParentForChildren(), isClean());
+        progress_ = null;
+      }
+      return progressBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.hypercomputecluster.v1beta.OperationMetadata)

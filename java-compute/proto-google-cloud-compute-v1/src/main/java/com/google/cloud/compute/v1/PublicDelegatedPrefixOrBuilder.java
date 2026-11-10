@@ -671,6 +671,117 @@ public interface PublicDelegatedPrefixOrBuilder
    *
    *
    * <pre>
+   * Immutable. The purpose of the public delegated prefix.
+   *
+   * This field can only be set for the top-level global public delegated
+   * prefix. It is an output-only field for the sub-delegates that inherit the
+   * value from the top-level global public delegated prefix. Once the value is
+   * set, it cannot be changed.
+   *
+   * The field cannot be set for regional public delegated prefixes.
+   *
+   * The supported values are:
+   *
+   *
+   * - APPLICATION_AND_PROXY_LOAD_BALANCERS: The global public
+   * delegated prefix can only be used by Global External Application and
+   * Proxy Load Balancers to allocate addresses for forwarding rules. This is
+   * the default value.
+   * - PASSTHROUGH_LOAD_BALANCER_AVAILABILITY_GROUP0: The
+   * global public delegated prefix can only be used by Global External
+   * Passthrough Network Load Balancers to allocate Availability Group 0
+   * addresses for forwarding rules.
+   * - PASSTHROUGH_LOAD_BALANCER_AVAILABILITY_GROUP1: The
+   * global public delegated prefix can only be used by Global External
+   * Passthrough Network Load Balancers to allocate Availability Group 1
+   * addresses for forwarding rules.
+   * Check the Purpose enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string purpose = 316407070;</code>
+   *
+   * @return Whether the purpose field is set.
+   */
+  boolean hasPurpose();
+
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The purpose of the public delegated prefix.
+   *
+   * This field can only be set for the top-level global public delegated
+   * prefix. It is an output-only field for the sub-delegates that inherit the
+   * value from the top-level global public delegated prefix. Once the value is
+   * set, it cannot be changed.
+   *
+   * The field cannot be set for regional public delegated prefixes.
+   *
+   * The supported values are:
+   *
+   *
+   * - APPLICATION_AND_PROXY_LOAD_BALANCERS: The global public
+   * delegated prefix can only be used by Global External Application and
+   * Proxy Load Balancers to allocate addresses for forwarding rules. This is
+   * the default value.
+   * - PASSTHROUGH_LOAD_BALANCER_AVAILABILITY_GROUP0: The
+   * global public delegated prefix can only be used by Global External
+   * Passthrough Network Load Balancers to allocate Availability Group 0
+   * addresses for forwarding rules.
+   * - PASSTHROUGH_LOAD_BALANCER_AVAILABILITY_GROUP1: The
+   * global public delegated prefix can only be used by Global External
+   * Passthrough Network Load Balancers to allocate Availability Group 1
+   * addresses for forwarding rules.
+   * Check the Purpose enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string purpose = 316407070;</code>
+   *
+   * @return The purpose.
+   */
+  java.lang.String getPurpose();
+
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The purpose of the public delegated prefix.
+   *
+   * This field can only be set for the top-level global public delegated
+   * prefix. It is an output-only field for the sub-delegates that inherit the
+   * value from the top-level global public delegated prefix. Once the value is
+   * set, it cannot be changed.
+   *
+   * The field cannot be set for regional public delegated prefixes.
+   *
+   * The supported values are:
+   *
+   *
+   * - APPLICATION_AND_PROXY_LOAD_BALANCERS: The global public
+   * delegated prefix can only be used by Global External Application and
+   * Proxy Load Balancers to allocate addresses for forwarding rules. This is
+   * the default value.
+   * - PASSTHROUGH_LOAD_BALANCER_AVAILABILITY_GROUP0: The
+   * global public delegated prefix can only be used by Global External
+   * Passthrough Network Load Balancers to allocate Availability Group 0
+   * addresses for forwarding rules.
+   * - PASSTHROUGH_LOAD_BALANCER_AVAILABILITY_GROUP1: The
+   * global public delegated prefix can only be used by Global External
+   * Passthrough Network Load Balancers to allocate Availability Group 1
+   * addresses for forwarding rules.
+   * Check the Purpose enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string purpose = 316407070;</code>
+   *
+   * @return The bytes for purpose.
+   */
+  com.google.protobuf.ByteString getPurposeBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. [Output Only] URL of the region where the public delegated prefix resides.
    * This field applies only to the region resource. You must specify this
    * field as part of the HTTP request URL. It is not settable as a field in

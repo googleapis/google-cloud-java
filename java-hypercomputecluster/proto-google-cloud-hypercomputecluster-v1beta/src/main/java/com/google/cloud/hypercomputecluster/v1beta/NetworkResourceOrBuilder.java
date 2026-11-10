@@ -30,10 +30,12 @@ public interface NetworkResourceOrBuilder
    *
    *
    * <pre>
-   * Reference to a network in Google Compute Engine.
+   * Output only. A reference to a network in Google Compute Engine.
    * </pre>
    *
-   * <code>.google.cloud.hypercomputecluster.v1beta.NetworkReference network = 3;</code>
+   * <code>
+   * .google.cloud.hypercomputecluster.v1beta.NetworkReference network = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the network field is set.
    */
@@ -43,10 +45,12 @@ public interface NetworkResourceOrBuilder
    *
    *
    * <pre>
-   * Reference to a network in Google Compute Engine.
+   * Output only. A reference to a network in Google Compute Engine.
    * </pre>
    *
-   * <code>.google.cloud.hypercomputecluster.v1beta.NetworkReference network = 3;</code>
+   * <code>
+   * .google.cloud.hypercomputecluster.v1beta.NetworkReference network = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The network.
    */
@@ -56,10 +60,12 @@ public interface NetworkResourceOrBuilder
    *
    *
    * <pre>
-   * Reference to a network in Google Compute Engine.
+   * Output only. A reference to a network in Google Compute Engine.
    * </pre>
    *
-   * <code>.google.cloud.hypercomputecluster.v1beta.NetworkReference network = 3;</code>
+   * <code>
+   * .google.cloud.hypercomputecluster.v1beta.NetworkReference network = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.cloud.hypercomputecluster.v1beta.NetworkReferenceOrBuilder getNetworkOrBuilder();
 

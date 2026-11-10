@@ -2099,6 +2099,212 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
+   * The machine image to create the disk from. You can provide this as a
+   * partial or full URL to the resource. For example, the following are valid
+   * values:
+   *
+   *
+   * - https://www.googleapis.com/compute/v1/projects/project/global/machineImages/machineImage
+   * - projects/project/global/machineImages/machineImage
+   * - global/machineImages/machineImage
+   * </pre>
+   *
+   * <code>optional string source_machine_image = 21769791;</code>
+   *
+   * @return Whether the sourceMachineImage field is set.
+   */
+  boolean hasSourceMachineImage();
+
+  /**
+   *
+   *
+   * <pre>
+   * The machine image to create the disk from. You can provide this as a
+   * partial or full URL to the resource. For example, the following are valid
+   * values:
+   *
+   *
+   * - https://www.googleapis.com/compute/v1/projects/project/global/machineImages/machineImage
+   * - projects/project/global/machineImages/machineImage
+   * - global/machineImages/machineImage
+   * </pre>
+   *
+   * <code>optional string source_machine_image = 21769791;</code>
+   *
+   * @return The sourceMachineImage.
+   */
+  java.lang.String getSourceMachineImage();
+
+  /**
+   *
+   *
+   * <pre>
+   * The machine image to create the disk from. You can provide this as a
+   * partial or full URL to the resource. For example, the following are valid
+   * values:
+   *
+   *
+   * - https://www.googleapis.com/compute/v1/projects/project/global/machineImages/machineImage
+   * - projects/project/global/machineImages/machineImage
+   * - global/machineImages/machineImage
+   * </pre>
+   *
+   * <code>optional string source_machine_image = 21769791;</code>
+   *
+   * @return The bytes for sourceMachineImage.
+   */
+  com.google.protobuf.ByteString getSourceMachineImageBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The device name of a disk within a given machine image. The
+   * source_machine_image must be specified.
+   * </pre>
+   *
+   * <code>optional string source_machine_image_disk_device_name = 68623666;</code>
+   *
+   * @return Whether the sourceMachineImageDiskDeviceName field is set.
+   */
+  boolean hasSourceMachineImageDiskDeviceName();
+
+  /**
+   *
+   *
+   * <pre>
+   * The device name of a disk within a given machine image. The
+   * source_machine_image must be specified.
+   * </pre>
+   *
+   * <code>optional string source_machine_image_disk_device_name = 68623666;</code>
+   *
+   * @return The sourceMachineImageDiskDeviceName.
+   */
+  java.lang.String getSourceMachineImageDiskDeviceName();
+
+  /**
+   *
+   *
+   * <pre>
+   * The device name of a disk within a given machine image. The
+   * source_machine_image must be specified.
+   * </pre>
+   *
+   * <code>optional string source_machine_image_disk_device_name = 68623666;</code>
+   *
+   * @return The bytes for sourceMachineImageDiskDeviceName.
+   */
+  com.google.protobuf.ByteString getSourceMachineImageDiskDeviceNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Thecustomer-supplied
+   * encryption key of the source machine image. Required if the source
+   * machine image is protected by a customer-supplied encryption key.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.CustomerEncryptionKey source_machine_image_encryption_key = 192839075;
+   * </code>
+   *
+   * @return Whether the sourceMachineImageEncryptionKey field is set.
+   */
+  boolean hasSourceMachineImageEncryptionKey();
+
+  /**
+   *
+   *
+   * <pre>
+   * Thecustomer-supplied
+   * encryption key of the source machine image. Required if the source
+   * machine image is protected by a customer-supplied encryption key.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.CustomerEncryptionKey source_machine_image_encryption_key = 192839075;
+   * </code>
+   *
+   * @return The sourceMachineImageEncryptionKey.
+   */
+  com.google.cloud.compute.v1.CustomerEncryptionKey getSourceMachineImageEncryptionKey();
+
+  /**
+   *
+   *
+   * <pre>
+   * Thecustomer-supplied
+   * encryption key of the source machine image. Required if the source
+   * machine image is protected by a customer-supplied encryption key.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.CustomerEncryptionKey source_machine_image_encryption_key = 192839075;
+   * </code>
+   */
+  com.google.cloud.compute.v1.CustomerEncryptionKeyOrBuilder
+      getSourceMachineImageEncryptionKeyOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] The unique ID of the machine image used to create this disk.
+   * This value identifies the exact machine image that was used to create this
+   * persistent disk. For example, if you created the persistent disk from a
+   * machine image that was later deleted and recreated under the same name, the
+   * source machine image ID would identify the exact version of the machine
+   * image that was used.
+   * </pre>
+   *
+   * <code>optional string source_machine_image_id = 3876635;</code>
+   *
+   * @return Whether the sourceMachineImageId field is set.
+   */
+  boolean hasSourceMachineImageId();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] The unique ID of the machine image used to create this disk.
+   * This value identifies the exact machine image that was used to create this
+   * persistent disk. For example, if you created the persistent disk from a
+   * machine image that was later deleted and recreated under the same name, the
+   * source machine image ID would identify the exact version of the machine
+   * image that was used.
+   * </pre>
+   *
+   * <code>optional string source_machine_image_id = 3876635;</code>
+   *
+   * @return The sourceMachineImageId.
+   */
+  java.lang.String getSourceMachineImageId();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] The unique ID of the machine image used to create this disk.
+   * This value identifies the exact machine image that was used to create this
+   * persistent disk. For example, if you created the persistent disk from a
+   * machine image that was later deleted and recreated under the same name, the
+   * source machine image ID would identify the exact version of the machine
+   * image that was used.
+   * </pre>
+   *
+   * <code>optional string source_machine_image_id = 3876635;</code>
+   *
+   * @return The bytes for sourceMachineImageId.
+   */
+  com.google.protobuf.ByteString getSourceMachineImageIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * The source snapshot used to create this disk. You can provide this as a
    * partial or full URL to the resource. For example, the following are valid
    * values:

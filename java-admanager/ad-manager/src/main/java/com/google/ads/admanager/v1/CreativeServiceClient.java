@@ -27,6 +27,7 @@ import com.google.api.gax.paging.AbstractPagedListResponse;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.common.util.concurrent.MoreExecutors;
+import com.google.protobuf.FieldMask;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -100,6 +101,75 @@ import org.jspecify.annotations.Nullable;
  *      <ul>
  *           <li><p> listCreativesPagedCallable()
  *           <li><p> listCreativesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateCreative</td>
+ *      <td><p> Creates a `Creative` object.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createCreative(CreateCreativeRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> createCreative(NetworkName parent, Creative creative)
+ *           <li><p> createCreative(String parent, Creative creative)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createCreativeCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateCreative</td>
+ *      <td><p> Updates a `Creative` object.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateCreative(UpdateCreativeRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateCreative(Creative creative, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateCreativeCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> BatchCreateCreatives</td>
+ *      <td><p> Creates `Creative` objects.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> batchCreateCreatives(NetworkName parent, List&lt;CreateCreativeRequest&gt; requests)
+ *           <li><p> batchCreateCreatives(String parent, List&lt;CreateCreativeRequest&gt; requests)
+ *           <li><p> batchCreateCreatives(BatchCreateCreativesRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> batchCreateCreativesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> BatchUpdateCreatives</td>
+ *      <td><p> Batch updates `Creative` objects.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> batchUpdateCreatives(NetworkName parent, List&lt;UpdateCreativeRequest&gt; requests)
+ *           <li><p> batchUpdateCreatives(String parent, List&lt;UpdateCreativeRequest&gt; requests)
+ *           <li><p> batchUpdateCreatives(BatchUpdateCreativesRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> batchUpdateCreativesCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -517,6 +587,478 @@ public class CreativeServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<ListCreativesRequest, ListCreativesResponse> listCreativesCallable() {
     return stub.listCreativesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a `Creative` object.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CreativeServiceClient creativeServiceClient = CreativeServiceClient.create()) {
+   *   NetworkName parent = NetworkName.of("[NETWORK_CODE]");
+   *   Creative creative = Creative.newBuilder().build();
+   *   Creative response = creativeServiceClient.createCreative(parent, creative);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource where this `Creative` will be created. Format:
+   *     `networks/{network_code}`
+   * @param creative Required. The `Creative` to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Creative createCreative(@Nullable NetworkName parent, Creative creative) {
+    CreateCreativeRequest request =
+        CreateCreativeRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setCreative(creative)
+            .build();
+    return createCreative(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a `Creative` object.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CreativeServiceClient creativeServiceClient = CreativeServiceClient.create()) {
+   *   String parent = NetworkName.of("[NETWORK_CODE]").toString();
+   *   Creative creative = Creative.newBuilder().build();
+   *   Creative response = creativeServiceClient.createCreative(parent, creative);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource where this `Creative` will be created. Format:
+   *     `networks/{network_code}`
+   * @param creative Required. The `Creative` to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Creative createCreative(String parent, Creative creative) {
+    CreateCreativeRequest request =
+        CreateCreativeRequest.newBuilder().setParent(parent).setCreative(creative).build();
+    return createCreative(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a `Creative` object.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CreativeServiceClient creativeServiceClient = CreativeServiceClient.create()) {
+   *   CreateCreativeRequest request =
+   *       CreateCreativeRequest.newBuilder()
+   *           .setParent(NetworkName.of("[NETWORK_CODE]").toString())
+   *           .setCreative(Creative.newBuilder().build())
+   *           .build();
+   *   Creative response = creativeServiceClient.createCreative(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Creative createCreative(CreateCreativeRequest request) {
+    return createCreativeCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a `Creative` object.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CreativeServiceClient creativeServiceClient = CreativeServiceClient.create()) {
+   *   CreateCreativeRequest request =
+   *       CreateCreativeRequest.newBuilder()
+   *           .setParent(NetworkName.of("[NETWORK_CODE]").toString())
+   *           .setCreative(Creative.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Creative> future =
+   *       creativeServiceClient.createCreativeCallable().futureCall(request);
+   *   // Do something.
+   *   Creative response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateCreativeRequest, Creative> createCreativeCallable() {
+    return stub.createCreativeCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a `Creative` object.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CreativeServiceClient creativeServiceClient = CreativeServiceClient.create()) {
+   *   Creative creative = Creative.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   Creative response = creativeServiceClient.updateCreative(creative, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param creative Required. The `Creative` to update.
+   *     <p>The `Creative`'s name is used to identify the `Creative` to update. Format:
+   *     `networks/{network_code}/creatives/{creative_id}`
+   * @param updateMask Optional. The list of fields to update.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Creative updateCreative(Creative creative, FieldMask updateMask) {
+    UpdateCreativeRequest request =
+        UpdateCreativeRequest.newBuilder().setCreative(creative).setUpdateMask(updateMask).build();
+    return updateCreative(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a `Creative` object.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CreativeServiceClient creativeServiceClient = CreativeServiceClient.create()) {
+   *   UpdateCreativeRequest request =
+   *       UpdateCreativeRequest.newBuilder()
+   *           .setCreative(Creative.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   Creative response = creativeServiceClient.updateCreative(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Creative updateCreative(UpdateCreativeRequest request) {
+    return updateCreativeCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a `Creative` object.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CreativeServiceClient creativeServiceClient = CreativeServiceClient.create()) {
+   *   UpdateCreativeRequest request =
+   *       UpdateCreativeRequest.newBuilder()
+   *           .setCreative(Creative.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Creative> future =
+   *       creativeServiceClient.updateCreativeCallable().futureCall(request);
+   *   // Do something.
+   *   Creative response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateCreativeRequest, Creative> updateCreativeCallable() {
+    return stub.updateCreativeCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates `Creative` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CreativeServiceClient creativeServiceClient = CreativeServiceClient.create()) {
+   *   NetworkName parent = NetworkName.of("[NETWORK_CODE]");
+   *   List<CreateCreativeRequest> requests = new ArrayList<>();
+   *   BatchCreateCreativesResponse response =
+   *       creativeServiceClient.batchCreateCreatives(parent, requests);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource where `Creatives` will be created. Format:
+   *     `networks/{network_code}` The parent field in the CreateCreativeRequest must match this
+   *     field.
+   * @param requests Required. The `Creative` objects to create. A maximum of 100 objects can be
+   *     created in a batch.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchCreateCreativesResponse batchCreateCreatives(
+      @Nullable NetworkName parent, List<CreateCreativeRequest> requests) {
+    BatchCreateCreativesRequest request =
+        BatchCreateCreativesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .addAllRequests(requests)
+            .build();
+    return batchCreateCreatives(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates `Creative` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CreativeServiceClient creativeServiceClient = CreativeServiceClient.create()) {
+   *   String parent = NetworkName.of("[NETWORK_CODE]").toString();
+   *   List<CreateCreativeRequest> requests = new ArrayList<>();
+   *   BatchCreateCreativesResponse response =
+   *       creativeServiceClient.batchCreateCreatives(parent, requests);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource where `Creatives` will be created. Format:
+   *     `networks/{network_code}` The parent field in the CreateCreativeRequest must match this
+   *     field.
+   * @param requests Required. The `Creative` objects to create. A maximum of 100 objects can be
+   *     created in a batch.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchCreateCreativesResponse batchCreateCreatives(
+      String parent, List<CreateCreativeRequest> requests) {
+    BatchCreateCreativesRequest request =
+        BatchCreateCreativesRequest.newBuilder().setParent(parent).addAllRequests(requests).build();
+    return batchCreateCreatives(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates `Creative` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CreativeServiceClient creativeServiceClient = CreativeServiceClient.create()) {
+   *   BatchCreateCreativesRequest request =
+   *       BatchCreateCreativesRequest.newBuilder()
+   *           .setParent(NetworkName.of("[NETWORK_CODE]").toString())
+   *           .addAllRequests(new ArrayList<CreateCreativeRequest>())
+   *           .build();
+   *   BatchCreateCreativesResponse response = creativeServiceClient.batchCreateCreatives(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchCreateCreativesResponse batchCreateCreatives(
+      BatchCreateCreativesRequest request) {
+    return batchCreateCreativesCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates `Creative` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CreativeServiceClient creativeServiceClient = CreativeServiceClient.create()) {
+   *   BatchCreateCreativesRequest request =
+   *       BatchCreateCreativesRequest.newBuilder()
+   *           .setParent(NetworkName.of("[NETWORK_CODE]").toString())
+   *           .addAllRequests(new ArrayList<CreateCreativeRequest>())
+   *           .build();
+   *   ApiFuture<BatchCreateCreativesResponse> future =
+   *       creativeServiceClient.batchCreateCreativesCallable().futureCall(request);
+   *   // Do something.
+   *   BatchCreateCreativesResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<BatchCreateCreativesRequest, BatchCreateCreativesResponse>
+      batchCreateCreativesCallable() {
+    return stub.batchCreateCreativesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Batch updates `Creative` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CreativeServiceClient creativeServiceClient = CreativeServiceClient.create()) {
+   *   NetworkName parent = NetworkName.of("[NETWORK_CODE]");
+   *   List<UpdateCreativeRequest> requests = new ArrayList<>();
+   *   BatchUpdateCreativesResponse response =
+   *       creativeServiceClient.batchUpdateCreatives(parent, requests);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource where `Creatives` will be updated. Format:
+   *     `networks/{network_code}` The parent field in the UpdateCreativeRequest must match this
+   *     field.
+   * @param requests Required. The `Creative` objects to update. A maximum of 100 objects can be
+   *     updated in a batch.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchUpdateCreativesResponse batchUpdateCreatives(
+      @Nullable NetworkName parent, List<UpdateCreativeRequest> requests) {
+    BatchUpdateCreativesRequest request =
+        BatchUpdateCreativesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .addAllRequests(requests)
+            .build();
+    return batchUpdateCreatives(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Batch updates `Creative` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CreativeServiceClient creativeServiceClient = CreativeServiceClient.create()) {
+   *   String parent = NetworkName.of("[NETWORK_CODE]").toString();
+   *   List<UpdateCreativeRequest> requests = new ArrayList<>();
+   *   BatchUpdateCreativesResponse response =
+   *       creativeServiceClient.batchUpdateCreatives(parent, requests);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource where `Creatives` will be updated. Format:
+   *     `networks/{network_code}` The parent field in the UpdateCreativeRequest must match this
+   *     field.
+   * @param requests Required. The `Creative` objects to update. A maximum of 100 objects can be
+   *     updated in a batch.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchUpdateCreativesResponse batchUpdateCreatives(
+      String parent, List<UpdateCreativeRequest> requests) {
+    BatchUpdateCreativesRequest request =
+        BatchUpdateCreativesRequest.newBuilder().setParent(parent).addAllRequests(requests).build();
+    return batchUpdateCreatives(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Batch updates `Creative` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CreativeServiceClient creativeServiceClient = CreativeServiceClient.create()) {
+   *   BatchUpdateCreativesRequest request =
+   *       BatchUpdateCreativesRequest.newBuilder()
+   *           .setParent(NetworkName.of("[NETWORK_CODE]").toString())
+   *           .addAllRequests(new ArrayList<UpdateCreativeRequest>())
+   *           .build();
+   *   BatchUpdateCreativesResponse response = creativeServiceClient.batchUpdateCreatives(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchUpdateCreativesResponse batchUpdateCreatives(
+      BatchUpdateCreativesRequest request) {
+    return batchUpdateCreativesCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Batch updates `Creative` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CreativeServiceClient creativeServiceClient = CreativeServiceClient.create()) {
+   *   BatchUpdateCreativesRequest request =
+   *       BatchUpdateCreativesRequest.newBuilder()
+   *           .setParent(NetworkName.of("[NETWORK_CODE]").toString())
+   *           .addAllRequests(new ArrayList<UpdateCreativeRequest>())
+   *           .build();
+   *   ApiFuture<BatchUpdateCreativesResponse> future =
+   *       creativeServiceClient.batchUpdateCreativesCallable().futureCall(request);
+   *   // Do something.
+   *   BatchUpdateCreativesResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<BatchUpdateCreativesRequest, BatchUpdateCreativesResponse>
+      batchUpdateCreativesCallable() {
+    return stub.batchUpdateCreativesCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

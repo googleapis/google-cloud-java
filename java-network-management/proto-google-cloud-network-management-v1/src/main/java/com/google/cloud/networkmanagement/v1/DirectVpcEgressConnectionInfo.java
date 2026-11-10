@@ -84,7 +84,8 @@ public final class DirectVpcEgressConnectionInfo extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * URI of direct access network.
+   * URI of the VPC network for direct egress.
+   * Format: `projects/{project_id}/global/networks/{network_id}`
    * </pre>
    *
    * <code>string network_uri = 1;</code>
@@ -108,7 +109,8 @@ public final class DirectVpcEgressConnectionInfo extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * URI of direct access network.
+   * URI of the VPC network for direct egress.
+   * Format: `projects/{project_id}/global/networks/{network_id}`
    * </pre>
    *
    * <code>string network_uri = 1;</code>
@@ -137,7 +139,9 @@ public final class DirectVpcEgressConnectionInfo extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * URI of direct access subnetwork.
+   * URI of the subnetwork for direct egress.
+   * Format:
+   * `projects/{project_id}/regions/{region}/subnetworks/{subnetwork_id}`
    * </pre>
    *
    * <code>string subnetwork_uri = 2;</code>
@@ -161,7 +165,9 @@ public final class DirectVpcEgressConnectionInfo extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * URI of direct access subnetwork.
+   * URI of the subnetwork for direct egress.
+   * Format:
+   * `projects/{project_id}/regions/{region}/subnetworks/{subnetwork_id}`
    * </pre>
    *
    * <code>string subnetwork_uri = 2;</code>
@@ -762,7 +768,8 @@ public final class DirectVpcEgressConnectionInfo extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * URI of direct access network.
+     * URI of the VPC network for direct egress.
+     * Format: `projects/{project_id}/global/networks/{network_id}`
      * </pre>
      *
      * <code>string network_uri = 1;</code>
@@ -785,7 +792,8 @@ public final class DirectVpcEgressConnectionInfo extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * URI of direct access network.
+     * URI of the VPC network for direct egress.
+     * Format: `projects/{project_id}/global/networks/{network_id}`
      * </pre>
      *
      * <code>string network_uri = 1;</code>
@@ -808,7 +816,8 @@ public final class DirectVpcEgressConnectionInfo extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * URI of direct access network.
+     * URI of the VPC network for direct egress.
+     * Format: `projects/{project_id}/global/networks/{network_id}`
      * </pre>
      *
      * <code>string network_uri = 1;</code>
@@ -830,7 +839,8 @@ public final class DirectVpcEgressConnectionInfo extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * URI of direct access network.
+     * URI of the VPC network for direct egress.
+     * Format: `projects/{project_id}/global/networks/{network_id}`
      * </pre>
      *
      * <code>string network_uri = 1;</code>
@@ -848,7 +858,8 @@ public final class DirectVpcEgressConnectionInfo extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * URI of direct access network.
+     * URI of the VPC network for direct egress.
+     * Format: `projects/{project_id}/global/networks/{network_id}`
      * </pre>
      *
      * <code>string network_uri = 1;</code>
@@ -873,7 +884,9 @@ public final class DirectVpcEgressConnectionInfo extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * URI of direct access subnetwork.
+     * URI of the subnetwork for direct egress.
+     * Format:
+     * `projects/{project_id}/regions/{region}/subnetworks/{subnetwork_id}`
      * </pre>
      *
      * <code>string subnetwork_uri = 2;</code>
@@ -896,7 +909,9 @@ public final class DirectVpcEgressConnectionInfo extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * URI of direct access subnetwork.
+     * URI of the subnetwork for direct egress.
+     * Format:
+     * `projects/{project_id}/regions/{region}/subnetworks/{subnetwork_id}`
      * </pre>
      *
      * <code>string subnetwork_uri = 2;</code>
@@ -919,7 +934,9 @@ public final class DirectVpcEgressConnectionInfo extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * URI of direct access subnetwork.
+     * URI of the subnetwork for direct egress.
+     * Format:
+     * `projects/{project_id}/regions/{region}/subnetworks/{subnetwork_id}`
      * </pre>
      *
      * <code>string subnetwork_uri = 2;</code>
@@ -941,7 +958,9 @@ public final class DirectVpcEgressConnectionInfo extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * URI of direct access subnetwork.
+     * URI of the subnetwork for direct egress.
+     * Format:
+     * `projects/{project_id}/regions/{region}/subnetworks/{subnetwork_id}`
      * </pre>
      *
      * <code>string subnetwork_uri = 2;</code>
@@ -959,7 +978,9 @@ public final class DirectVpcEgressConnectionInfo extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * URI of direct access subnetwork.
+     * URI of the subnetwork for direct egress.
+     * Format:
+     * `projects/{project_id}/regions/{region}/subnetworks/{subnetwork_id}`
      * </pre>
      *
      * <code>string subnetwork_uri = 2;</code>

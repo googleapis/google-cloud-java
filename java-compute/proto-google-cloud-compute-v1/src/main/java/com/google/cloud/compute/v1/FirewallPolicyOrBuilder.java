@@ -524,6 +524,75 @@ public interface FirewallPolicyOrBuilder
    *
    *
    * <pre>
+   * Indicates the source of this Firewall Policy. This field is optional on
+   * creation and defaults to USER_DEFINED.
+   *
+   * The USER_DEFINED value indicates a regular firewall policy.
+   *
+   * The SYSTEM value indicates a system-level policy managed by an
+   * internal service like GKE. This SYSTEM value is reserved for
+   * internal services and cannot be set by users during policy creation.
+   * Policies with a SYSTEM source cannot be modified or deleted by
+   * users.
+   * Check the PolicySource enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string policy_source = 232383432;</code>
+   *
+   * @return Whether the policySource field is set.
+   */
+  boolean hasPolicySource();
+
+  /**
+   *
+   *
+   * <pre>
+   * Indicates the source of this Firewall Policy. This field is optional on
+   * creation and defaults to USER_DEFINED.
+   *
+   * The USER_DEFINED value indicates a regular firewall policy.
+   *
+   * The SYSTEM value indicates a system-level policy managed by an
+   * internal service like GKE. This SYSTEM value is reserved for
+   * internal services and cannot be set by users during policy creation.
+   * Policies with a SYSTEM source cannot be modified or deleted by
+   * users.
+   * Check the PolicySource enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string policy_source = 232383432;</code>
+   *
+   * @return The policySource.
+   */
+  java.lang.String getPolicySource();
+
+  /**
+   *
+   *
+   * <pre>
+   * Indicates the source of this Firewall Policy. This field is optional on
+   * creation and defaults to USER_DEFINED.
+   *
+   * The USER_DEFINED value indicates a regular firewall policy.
+   *
+   * The SYSTEM value indicates a system-level policy managed by an
+   * internal service like GKE. This SYSTEM value is reserved for
+   * internal services and cannot be set by users during policy creation.
+   * Policies with a SYSTEM source cannot be modified or deleted by
+   * users.
+   * Check the PolicySource enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string policy_source = 232383432;</code>
+   *
+   * @return The bytes for policySource.
+   */
+  com.google.protobuf.ByteString getPolicySourceBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * The type of the firewall policy. This field can be one of
    * VPC_POLICY, RDMA_ROCE_POLICY or ULL_POLICY.
    *
