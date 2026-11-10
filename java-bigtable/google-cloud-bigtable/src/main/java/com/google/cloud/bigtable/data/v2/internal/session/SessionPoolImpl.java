@@ -287,8 +287,7 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
                 budget.updateConfig(newConfig);
                 poolSizer.updateConfig(newConfig);
                 picker.updateConfig(newConfig);
-                if (newConfig.equals(
-                    SessionClientConfiguration.SessionPoolConfiguration.getDefaultInstance())) {
+                if (poolSizer.isDisabled()) {
                   if (retryCreateSessionFuture != null) {
                     retryCreateSessionFuture.cancel();
                     retryCreateSessionFuture = null;
@@ -574,7 +573,7 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
 
   @GuardedBy("poolLock")
   private void maybeScheduleCreateSessionRetry() {
-    if (retryCreateSessionFuture != null || budget.getMaxConcurrentRequest() <= 0) {
+    if (retryCreateSessionFuture != null || poolSizer.isDisabled()) {
       return;
     }
     // This interval could be 0 or negative if nextAvailableBudget is now. In which case

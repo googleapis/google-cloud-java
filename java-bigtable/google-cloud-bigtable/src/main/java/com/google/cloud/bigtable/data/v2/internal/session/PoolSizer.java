@@ -42,6 +42,8 @@ class PoolSizer {
   // the session is ready it takes 10-40ms to process all pending calls.
   private volatile int pendingVRpcsPerSession;
 
+  private boolean disabled;
+
   interface Sized {
     int getSize();
   }
@@ -52,11 +54,7 @@ class PoolSizer {
       SessionClientConfiguration.SessionPoolConfiguration poolConfig) {
     this.stats = stats;
     this.pendingRpcs = pendingRpcs;
-
-    this.idlesSessionHeadRoom = poolConfig.getHeadroom();
-    this.minIdleSessions = poolConfig.getMinSessionCount();
-    this.maxIdleSessions = poolConfig.getMaxSessionCount();
-    this.pendingVRpcsPerSession = poolConfig.getNewSessionQueueLength();
+    updateConfig(poolConfig);
   }
 
   void updateConfig(SessionClientConfiguration.SessionPoolConfiguration poolConfiguration) {
@@ -64,10 +62,14 @@ class PoolSizer {
     this.minIdleSessions = poolConfiguration.getMinSessionCount();
     this.maxIdleSessions = poolConfiguration.getMaxSessionCount();
     this.pendingVRpcsPerSession = poolConfiguration.getNewSessionQueueLength();
+    this.disabled =
+        poolConfiguration.equals(
+                SessionClientConfiguration.SessionPoolConfiguration.getDefaultInstance())
+            || this.maxIdleSessions <= 0;
   }
 
   boolean isDisabled() {
-    return maxIdleSessions <= 0;
+    return disabled;
   }
 
   public int getScaleDelta() {
