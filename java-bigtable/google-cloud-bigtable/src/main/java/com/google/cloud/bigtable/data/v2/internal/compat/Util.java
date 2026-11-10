@@ -18,6 +18,7 @@ package com.google.cloud.bigtable.data.v2.internal.compat;
 import com.google.api.gax.grpc.GrpcCallContext;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.UnaryCallSettings;
+import com.google.common.base.Preconditions;
 import com.google.common.cache.CacheBuilder;
 import com.google.common.cache.CacheLoader;
 import com.google.common.cache.LoadingCache;
@@ -68,6 +69,7 @@ public class Util {
   @Nonnull
   public static Deadline extractDeadline(
       @Nullable GrpcCallContext callContext, @Nonnull Duration defaultDeadline) {
+    Preconditions.checkNotNull(defaultDeadline, "defaultDeadline can't be null");
     // NOTE: ignoring callContext.timeout because its an attempt timeout
     Optional<Deadline> ambientDeadline = Optional.ofNullable(Context.current().getDeadline());
     Duration totalTimeout =
