@@ -169,7 +169,7 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
   private final CompletableFuture<Void> drainedFuture = new CompletableFuture<>();
 
   @GuardedBy("poolLock")
-  private BigtableTimer.Timeout retryCreateSessionFuture = null;
+  private BigtableTimer.Timeout retryCreateSessionTimeout = null;
 
   // TODO: get the max from ClientConfiguration
   @GuardedBy("poolLock")
@@ -193,7 +193,7 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
   private final DebugTagTracer debugTagTracer;
 
   // @SuppressWarnings("GuardedBy"): error-prone flags writes to @GuardedBy("poolLock") fields
-  // (sessions, picker, poolSizer, pendingRpcs, budget, retryCreateSessionFuture) inside the
+  // (sessions, picker, poolSizer, pendingRpcs, budget, retryCreateSessionTimeout) inside the
   // constructor without holding the monitor. This is safe because the object is not yet published
   // to other threads — no external reference exists until the constructor returns.
   @SuppressWarnings("GuardedBy")
@@ -288,9 +288,9 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
                 poolSizer.updateConfig(newConfig);
                 picker.updateConfig(newConfig);
                 if (poolSizer.isDisabled()) {
-                  if (retryCreateSessionFuture != null) {
-                    retryCreateSessionFuture.cancel();
-                    retryCreateSessionFuture = null;
+                  if (retryCreateSessionTimeout != null) {
+                    retryCreateSessionTimeout.cancel();
+                    retryCreateSessionTimeout = null;
                   }
                   toCancel = popClosableRpcs();
                   CloseSessionRequest closeReq =
@@ -386,9 +386,9 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
         afeListPruneTimeout.cancel();
         afeListPruneTimeout = null;
       }
-      if (retryCreateSessionFuture != null) {
-        retryCreateSessionFuture.cancel();
-        retryCreateSessionFuture = null;
+      if (retryCreateSessionTimeout != null) {
+        retryCreateSessionTimeout.cancel();
+        retryCreateSessionTimeout = null;
       }
       // Watchdog stays alive past close() so it can escalate any session that lingers in
       // WAIT_SERVER_CLOSE during shutdown. awaitTerminated() takes ownership of closing it.
@@ -573,7 +573,7 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
 
   @GuardedBy("poolLock")
   private void maybeScheduleCreateSessionRetry() {
-    if (retryCreateSessionFuture != null || poolSizer.isDisabled()) {
+    if (retryCreateSessionTimeout != null || poolSizer.isDisabled()) {
       return;
     }
     // This interval could be 0 or negative if nextAvailableBudget is now. In which case
@@ -583,12 +583,12 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
     if (retryIntervalMs < 1) {
       retryIntervalMs = 1;
     }
-    retryCreateSessionFuture =
+    retryCreateSessionTimeout =
         timer.newTimeout(
             () -> {
               poolLock.lock();
               try {
-                retryCreateSessionFuture = null;
+                retryCreateSessionTimeout = null;
                 while (poolState != PoolState.CLOSED && poolSizer.getScaleDelta() > 0) {
                   if (!createSession(openParams)) {
                     break;
@@ -922,7 +922,7 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
     private boolean isCancelled = false;
     private VRpc<ReqT, RespT> realCall;
 
-    private BigtableTimer.Timeout deadlineMonitor;
+    private BigtableTimer.Timeout deadlineTimeout;
 
     public PendingVRpc(VRpcDescriptor<?, ReqT, RespT> desc) {
       this.desc = desc;
@@ -984,7 +984,7 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
         // Only arm the deadline monitor after we've committed to queueing; otherwise the
         // fast-fail early return above would leak a timer that fires later and emits a phantom
         // tracer.onAttemptFinish on the Active state's stale listener.
-        this.deadlineMonitor = monitorDeadline(ctx.getOperationInfo().getDeadline());
+        this.deadlineTimeout = monitorDeadline(ctx.getOperationInfo().getDeadline());
         pendingRpcs.add(this);
 
         if (logger.isLoggable(Level.FINE)) {
@@ -1024,8 +1024,8 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
     // region below.
     @SuppressWarnings("GuardedBy")
     private void cancel(Status status, boolean onlyCancelPendingCall) {
-      if (deadlineMonitor != null) {
-        deadlineMonitor.cancel();
+      if (deadlineTimeout != null) {
+        deadlineTimeout.cancel();
       }
       // The eager removal is only an optimization to skip a wasted session pick in
       // tryDrainPendingRpcs.
@@ -1059,8 +1059,8 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
     }
 
     void cancelWithResult(VRpcResult result) {
-      if (deadlineMonitor != null) {
-        deadlineMonitor.cancel();
+      if (deadlineTimeout != null) {
+        deadlineTimeout.cancel();
       }
       ctx.getExecutor()
           .execute(
@@ -1088,8 +1088,8 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
     }
 
     private void drainTo(SessionHandle handle) {
-      if (deadlineMonitor != null) {
-        deadlineMonitor.cancel();
+      if (deadlineTimeout != null) {
+        deadlineTimeout.cancel();
       }
       ctx.getExecutor()
           .execute(
