@@ -240,7 +240,12 @@ public final class GcpChannelPoolBuiltInMetricsTest {
     GcpChannelPoolBuiltInMetrics.resetPoolIndexForTest();
     String first = GcpMetricsOptions.nextBuiltInMetricsPoolIndex();
     GcpManagedChannel pool =
-        newStaticPool(1, Attributes.of(AttributeKey.stringKey("pool_index"), first));
+        newPool(
+            GcpChannelPoolOptions.newBuilder().setMaxSize(1).setMinSize(1).build(),
+            GcpMetricsOptions.newBuilder()
+                .withBuiltInMetrics(meter, CLOUDPATH)
+                .withBuiltInMetricsPoolIndex(first)
+                .build());
     pool.shutdownNow();
 
     assertThat(GcpMetricsOptions.nextBuiltInMetricsPoolIndex()).isEqualTo("2");
@@ -374,6 +379,50 @@ public final class GcpChannelPoolBuiltInMetricsTest {
         .containsEntry(attributes("cloudpath", "static", "active"), 2L);
     assertThat(channelCounts(findChannelCountMetric(otherReader.collectAllMetrics())))
         .containsEntry(attributes("cloudpath", "static", "active"), 3L);
+  }
+
+  @Test
+  public void poolIndexIsAddedToChannelCount() {
+    newPool(
+        GcpChannelPoolOptions.newBuilder().setMaxSize(2).setMinSize(2).build(),
+        GcpMetricsOptions.newBuilder()
+            .withBuiltInMetrics(meter, CLOUDPATH)
+            .withBuiltInMetricsPoolIndex("3")
+            .build());
+
+    assertThat(collectChannelCounts())
+        .containsExactly(
+            withPoolIndex(attributes("cloudpath", "static", "active"), "3"), 2L,
+            withPoolIndex(attributes("cloudpath", "static", "draining"), "3"), 0L);
+  }
+
+  @Test
+  public void poolIndexOverridesCallerPoolIndexAttribute() {
+    newPool(
+        GcpChannelPoolOptions.newBuilder().setMaxSize(1).setMinSize(1).build(),
+        GcpMetricsOptions.newBuilder()
+            .withBuiltInMetrics(
+                meter,
+                CLOUDPATH.toBuilder().put(GcpMetricsConstants.POOL_INDEX_LABEL, "wrong").build())
+            .withBuiltInMetricsPoolIndex("1")
+            .build());
+
+    assertThat(collectChannelCounts())
+        .containsEntry(withPoolIndex(attributes("cloudpath", "static", "active"), "1"), 1L);
+  }
+
+  @Test
+  public void metricsOptionsCopyKeepsPoolIndex() {
+    GcpMetricsOptions options =
+        GcpMetricsOptions.newBuilder()
+            .withBuiltInMetrics(meter, CLOUDPATH)
+            .withBuiltInMetricsPoolIndex("2")
+            .build();
+
+    GcpMetricsOptions copy = GcpMetricsOptions.newBuilder(options).build();
+
+    assertThat(copy.getBuiltInMetricsPoolIndex()).isEqualTo("2");
+    assertThat(GcpMetricsOptions.newBuilder().build().getBuiltInMetricsPoolIndex()).isNull();
   }
 
   @Test
@@ -576,5 +625,9 @@ public final class GcpChannelPoolBuiltInMetricsTest {
         .put(GcpMetricsConstants.POOL_MODE_LABEL, poolMode)
         .put(GcpMetricsConstants.STATE_LABEL, state)
         .build();
+  }
+
+  private static Attributes withPoolIndex(Attributes attributes, String poolIndex) {
+    return attributes.toBuilder().put(GcpMetricsConstants.POOL_INDEX_LABEL, poolIndex).build();
   }
 }

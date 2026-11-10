@@ -456,14 +456,18 @@ public class GcpManagedChannel extends ManagedChannel {
       builtInActiveAttributes = Attributes.empty();
       builtInDrainingAttributes = Attributes.empty();
     } else {
-      Attributes poolAttributes =
+      AttributesBuilder countAttributes =
           metricsOptions.getBuiltInMetricsAttributes().toBuilder()
               .put(
                   GcpMetricsConstants.POOL_MODE_LABEL,
                   isDynamicScalingEnabled
                       ? GcpMetricsConstants.POOL_MODE_DYNAMIC
-                      : GcpMetricsConstants.POOL_MODE_STATIC)
-              .build();
+                      : GcpMetricsConstants.POOL_MODE_STATIC);
+      String poolIndex = metricsOptions.getBuiltInMetricsPoolIndex();
+      if (poolIndex != null) {
+        countAttributes.put(GcpMetricsConstants.POOL_INDEX_LABEL, poolIndex);
+      }
+      Attributes poolAttributes = countAttributes.build();
       builtInActiveAttributes =
           poolAttributes.toBuilder()
               .put(GcpMetricsConstants.STATE_LABEL, GcpMetricsConstants.STATE_ACTIVE)
