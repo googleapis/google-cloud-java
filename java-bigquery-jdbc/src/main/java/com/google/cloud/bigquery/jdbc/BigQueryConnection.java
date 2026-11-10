@@ -107,6 +107,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
               BigQueryJdbcUrlUtility.DEFAULT_DATASET_PROPERTY_NAME,
               BigQueryJdbcUrlUtility.LOCATION_PROPERTY_NAME,
               BigQueryJdbcUrlUtility.ENABLE_HTAPI_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.ENABLE_QUERY_RESULTS_ARROW_FORMAT_PROPERTY_NAME,
               BigQueryJdbcUrlUtility.UNSUPPORTED_HTAPI_FALLBACK_PROPERTY_NAME,
               BigQueryJdbcUrlUtility.HTAPI_MIN_TABLE_SIZE_PROPERTY_NAME,
               BigQueryJdbcUrlUtility.HTAPI_ACTIVATION_RATIO_PROPERTY_NAME,
@@ -192,6 +193,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
   DatasetId defaultDataset;
   String location;
   boolean enableHighThroughputAPI;
+  private boolean enableQueryResultsArrowFormat;
   int highThroughputMinTableSize;
   int highThroughputActivationRatio;
   boolean enableSession;
@@ -354,6 +356,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
       this.defaultDataset = BigQueryJdbcUrlUtility.parseDefaultDataset(ds.getDefaultDataset());
       this.location = ds.getLocation();
       this.enableHighThroughputAPI = ds.getEnableHighThroughputAPI();
+      this.enableQueryResultsArrowFormat = ds.getEnableQueryResultsArrowFormat();
       this.highThroughputMinTableSize = ds.getHighThroughputMinTableSize();
       this.highThroughputActivationRatio = ds.getHighThroughputActivationRatio();
       this.useQueryCache = ds.getUseQueryCache();
@@ -785,6 +788,10 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
 
   boolean isEnableHighThroughputAPI() {
     return this.enableHighThroughputAPI;
+  }
+
+  boolean isEnableQueryResultsArrowFormat() {
+    return this.enableQueryResultsArrowFormat;
   }
 
   boolean isUseQueryCache() {

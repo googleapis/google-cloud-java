@@ -110,6 +110,8 @@ final class BigQueryJdbcUrlUtility {
   static final String DEFAULT_OAUTH_CLIENT_ID = "977385342095.apps.googleusercontent.com";
   static final String DEFAULT_OAUTH_CLIENT_SECRET = "wbER7576mc_1YOII0dGk7jEE";
   static final String ENABLE_HTAPI_PROPERTY_NAME = "EnableHighThroughputAPI";
+  static final String ENABLE_QUERY_RESULTS_ARROW_FORMAT_PROPERTY_NAME =
+      "EnableQueryResultsArrowFormat";
   static final String PROXY_HOST_PROPERTY_NAME = "ProxyHost";
   static final String PROXY_PORT_PROPERTY_NAME = "ProxyPort";
   static final String PROXY_USER_ID_PROPERTY_NAME = "ProxyUid";
@@ -117,6 +119,7 @@ final class BigQueryJdbcUrlUtility {
   static final String HTTP_CONNECT_TIMEOUT_PROPERTY_NAME = "HttpConnectTimeout";
   static final String HTTP_READ_TIMEOUT_PROPERTY_NAME = "HttpReadTimeout";
   static final boolean DEFAULT_ENABLE_HTAPI_VALUE = false;
+  static final boolean DEFAULT_ENABLE_QUERY_RESULTS_ARROW_FORMAT_VALUE = false;
   static final boolean DEFAULT_ENABLE_SESSION_VALUE = false;
   static final int DEFAULT_LOG_LEVEL = 0;
   static final String LOG_LEVEL_PROPERTY_NAME = "LogLevel";
@@ -442,6 +445,15 @@ final class BigQueryJdbcUrlUtility {
                           "If the number of total rows exceeds this value, the connector switches"
                               + " to the BigQuery Storage API for faster processing.")
                       .setDefaultValue(String.valueOf(DEFAULT_HTAPI_MIN_TABLE_SIZE_VALUE))
+                      .build(),
+                  BigQueryConnectionProperty.newBuilder()
+                      .setName(ENABLE_QUERY_RESULTS_ARROW_FORMAT_PROPERTY_NAME)
+                      .setDescription(
+                          "Reads query results in the Apache Arrow format: the first page of"
+                              + " jobs.query and the query job's Storage Read API stream (Preview)."
+                              + " Disabled by default.")
+                      .setDefaultValue(
+                          String.valueOf(DEFAULT_ENABLE_QUERY_RESULTS_ARROW_FORMAT_VALUE))
                       .build(),
                   BigQueryConnectionProperty.newBuilder()
                       .setName(ENABLE_SESSION_PROPERTY_NAME)
