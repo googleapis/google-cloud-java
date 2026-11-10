@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.shopping</groupId>
   <artifactId>google-shopping-merchant-quota</artifactId>
-  <version>1.29.0</version><!-- {x-version-update:google-shopping-merchant-quota:current} -->
+  <version>1.30.0</version><!-- {x-version-update:google-shopping-merchant-quota:current} -->
   <packaging>jar</packaging>
   <name>Google Merchant Quota API</name>
   <description>Merchant Quota API Programmatically manage your Merchant Center accounts.</description>
   <parent>
     <groupId>com.google.shopping</groupId>
     <artifactId>google-shopping-merchant-quota-parent</artifactId>
-    <version>1.29.0</version><!-- {x-version-update:google-shopping-merchant-quota:current} -->
+    <version>1.30.0</version><!-- {x-version-update:google-shopping-merchant-quota:current} -->
   </parent>
   <properties>
     <site.installationModule>google-shopping-merchant-quota</site.installationModule>
@@ -46,10 +46,6 @@
       <groupId>com.google.shopping.api.grpc</groupId>
       <artifactId>proto-google-shopping-merchant-quota-v1</artifactId>
     </dependency>
-    <dependency>
-      <groupId>com.google.shopping.api.grpc</groupId>
-      <artifactId>proto-google-shopping-merchant-quota-v1beta</artifactId>
-    </dependency>
     <!-- {x-generated-proto-dependencies-end} -->
     <dependency>
       <groupId>com.google.guava</groupId>
@@ -76,11 +72,6 @@
     <dependency>
       <groupId>com.google.shopping.api.grpc</groupId>
       <artifactId>grpc-google-shopping-merchant-quota-v1</artifactId>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>com.google.shopping.api.grpc</groupId>
-      <artifactId>grpc-google-shopping-merchant-quota-v1beta</artifactId>
       <scope>test</scope>
     </dependency>
     <!-- {x-generated-grpc-dependencies-end} -->

@@ -121,7 +121,8 @@ public abstract class ResumableUploadOptions {
 
     /**
      * Sets the listener notified of upload progress and state transitions. Updates are delivered in
-     * order, beginning with {@link ResumableUploadProgress#STATE_STARTING}. Callbacks are
+     * order, beginning with {@link ResumableUploadProgress#STATE_STARTING} for new uploads or
+     * {@link ResumableUploadProgress#STATE_RECOVERING} for resumed uploads. Callbacks are
      * dispatched on the client's background executor.
      */
     public abstract Builder setProgressListener(

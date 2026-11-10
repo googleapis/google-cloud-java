@@ -44,6 +44,7 @@ import com.google.cloud.bigtable.data.v2.internal.api.InstanceName;
 import com.google.cloud.bigtable.data.v2.internal.csm.NoopMetrics;
 import com.google.cloud.bigtable.data.v2.internal.csm.attributes.ClientInfo;
 import com.google.cloud.bigtable.data.v2.internal.util.ClientConfigurationManager.ConfigListener;
+import com.google.common.collect.Iterables;
 import com.google.protobuf.TextFormat;
 import com.google.protobuf.util.Durations;
 import io.grpc.CallOptions;
@@ -56,10 +57,16 @@ import io.grpc.ManagedChannelBuilder;
 import io.grpc.Metadata;
 import io.grpc.MethodDescriptor;
 import io.grpc.Server;
+import io.grpc.ServerBuilder;
+import io.grpc.ServerCall;
+import io.grpc.ServerCallHandler;
+import io.grpc.ServerInterceptor;
 import io.grpc.Status;
 import io.grpc.stub.StreamObserver;
 import java.io.IOException;
+import java.util.List;
 import java.util.Properties;
+import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ScheduledExecutorService;
@@ -251,78 +258,66 @@ class ClientConfigurationManagerTest {
   }
 
   @Test
-  void testDisabledSessionsOverriddenBySysProp()
-      throws ExecutionException, InterruptedException, IOException {
-    // Server returns session_load=0 (sessions disabled from the server's perspective)…
-    ClientConfiguration.Builder disabledBuilder = manager.getDefaultConfig().toBuilder();
-    disabledBuilder.getSessionConfigurationBuilder().setSessionLoad(0);
-    service.config.set(disabledBuilder.build());
-
-    // …but a sys-prop override forces session_load>0 to opt this client into sessions.
-    manager.close();
-    String clientConfigOverrides =
-        TextFormat.printer()
-            .printToString(
-                ClientConfiguration.newBuilder()
-                    .setSessionConfiguration(
-                        SessionClientConfiguration.newBuilder()
-                            .setSessionDiversionConfiguration(
-                                SessionDiversionConfiguration.newBuilder()
-                                    .setGlobalDiversion(
-                                        SessionScopeDiversionConfiguration.newBuilder()
-                                            .setSessionLoad(0.75f))))
-                    .build());
-    Properties sysProps = new Properties();
-    sysProps.setProperty(ClientConfigurationManager.OVERRIDE_SYS_PROP_KEY, clientConfigOverrides);
-    manager =
-        new ClientConfigurationManager(
-            sysProps, FEATURE_FLAGS, CLIENT_INFO, channelProvider, noopDebugTracer, mockExecutor);
-
-    ClientConfiguration resolvedConfig = manager.start().get();
-
-    // The override must be honoured: the diversion config and the default SessionPoolConfiguration
-    // must survive normalization instead of being cleared as if sessions were disabled.
-    assertThat(
-            resolvedConfig
-                .getSessionConfiguration()
-                .getSessionDiversionConfiguration()
-                .getGlobalDiversion()
-                .getSessionLoad())
-        .isEqualTo(0.75f);
-    assertThat(resolvedConfig.getSessionConfiguration().getSessionPoolConfiguration())
-        .isEqualTo(
-            manager.getDefaultConfig().getSessionConfiguration().getSessionPoolConfiguration());
-    assertThat(manager.areSessionsRequired()).isTrue();
-  }
-
-  @Test
   void testSysPropOverride() throws Exception {
     manager.close();
 
-    String clientConfigOverrides =
-        TextFormat.printer()
-            .printToString(
-                ClientConfiguration.newBuilder()
-                    .setSessionConfiguration(
-                        SessionClientConfiguration.newBuilder()
-                            .setSessionDiversionConfiguration(
-                                SessionDiversionConfiguration.newBuilder()
-                                    .setGlobalDiversion(
-                                        SessionScopeDiversionConfiguration.newBuilder()
-                                            .setSessionLoad(0.75f)))
-                            .setSessionPoolConfiguration(
-                                SessionPoolConfiguration.newBuilder().setHeadroom(0.7f)))
-                    .build());
-    Properties sysProps = new Properties();
-    sysProps.setProperty(ClientConfigurationManager.OVERRIDE_SYS_PROP_KEY, clientConfigOverrides);
+    ClientConfiguration rawOverrideProto =
+        ClientConfiguration.newBuilder()
+            .setSessionConfiguration(
+                SessionClientConfiguration.newBuilder()
+                    .setSessionDiversionConfiguration(
+                        SessionDiversionConfiguration.newBuilder()
+                            .setGlobalDiversion(
+                                SessionScopeDiversionConfiguration.newBuilder()
+                                    .setSessionLoad(0.75f)))
+                    .setSessionPoolConfiguration(
+                        SessionPoolConfiguration.newBuilder().setHeadroom(0.7f)))
+            .build();
+    String clientConfigOverrides = TextFormat.printer().printToString(rawOverrideProto);
+
+    // 1. Raw override without OVERRIDE_USE_DEFAULT_SYS_PROP_KEY: completely ignores both server
+    // config and defaultConfig, uses only the textproto, and does not poll the server.
+    Properties rawSysProps = new Properties();
+    rawSysProps.setProperty(
+        ClientConfigurationManager.OVERRIDE_SYS_PROP_KEY, clientConfigOverrides);
     manager =
         new ClientConfigurationManager(
-            sysProps, FEATURE_FLAGS, CLIENT_INFO, channelProvider, noopDebugTracer, mockExecutor);
+            rawSysProps,
+            FEATURE_FLAGS,
+            CLIENT_INFO,
+            channelProvider,
+            noopDebugTracer,
+            mockExecutor);
 
-    ClientConfiguration initialConfig = manager.start().get();
+    ClientConfiguration rawResolvedConfig = manager.start().get();
+    ClientConfiguration expectedRawConfig =
+        rawOverrideProto.toBuilder()
+            .setTelemetryConfiguration(manager.getDefaultConfig().getTelemetryConfiguration())
+            .build();
+    assertThat(rawResolvedConfig).isEqualTo(expectedRawConfig);
+    assertThat(manager.areSessionsRequired()).isTrue();
+    verify(mockExecutor, never()).schedule(any(Runnable.class), anyLong(), any(TimeUnit.class));
+    manager.close();
 
-    // The effective config should be the server config with the overlayed fields
-    ClientConfiguration.Builder expectedConfig = service.config.get().toBuilder();
+    // 2. Override with OVERRIDE_USE_DEFAULT_SYS_PROP_KEY=true: merges override onto defaultConfig
+    // and does not poll the server.
+    Properties useDefaultSysProps = new Properties();
+    useDefaultSysProps.setProperty(
+        ClientConfigurationManager.OVERRIDE_USE_DEFAULT_SYS_PROP_KEY, "true");
+    useDefaultSysProps.setProperty(
+        ClientConfigurationManager.OVERRIDE_SYS_PROP_KEY, clientConfigOverrides);
+    manager =
+        new ClientConfigurationManager(
+            useDefaultSysProps,
+            FEATURE_FLAGS,
+            CLIENT_INFO,
+            channelProvider,
+            noopDebugTracer,
+            mockExecutor);
+
+    ClientConfiguration mergedConfig = manager.start().get();
+
+    ClientConfiguration.Builder expectedConfig = manager.getDefaultConfig().toBuilder();
     expectedConfig
         .getSessionConfigurationBuilder()
         .getSessionDiversionConfigurationBuilder()
@@ -333,35 +328,29 @@ class ClientConfigurationManagerTest {
         .getSessionPoolConfigurationBuilder()
         .setHeadroom(0.7f);
 
-    assertThat(initialConfig).isEqualTo(expectedConfig.build());
+    assertThat(mergedConfig).isEqualTo(expectedConfig.build());
     assertThat(manager.areSessionsRequired()).isTrue();
-  }
-
-  /** Verify that proto merging works when the override the same as the default value */
-  @Test
-  void testSysPropOverrideSessionLoadZero() throws Exception {
+    verify(mockExecutor, never()).schedule(any(Runnable.class), anyLong(), any(TimeUnit.class));
     manager.close();
 
-    String clientConfigOverrides =
-        TextFormat.printer()
-            .printToString(
-                ClientConfiguration.newBuilder()
-                    .setSessionConfiguration(
-                        SessionClientConfiguration.newBuilder().setSessionLoad(0))
-                    .build());
-    Properties sysProps = new Properties();
-    sysProps.setProperty(ClientConfigurationManager.OVERRIDE_SYS_PROP_KEY, clientConfigOverrides);
+    // 3. OVERRIDE_USE_DEFAULT_SYS_PROP_KEY=true without OVERRIDE_SYS_PROP_KEY: ignored, polls the
+    // server normally.
+    Properties onlyUseDefaultSysProps = new Properties();
+    onlyUseDefaultSysProps.setProperty(
+        ClientConfigurationManager.OVERRIDE_USE_DEFAULT_SYS_PROP_KEY, "true");
     manager =
         new ClientConfigurationManager(
-            sysProps, FEATURE_FLAGS, CLIENT_INFO, channelProvider, noopDebugTracer, mockExecutor);
+            onlyUseDefaultSysProps,
+            FEATURE_FLAGS,
+            CLIENT_INFO,
+            channelProvider,
+            noopDebugTracer,
+            mockExecutor);
 
-    ClientConfiguration initialConfig = manager.start().get();
-
-    // The effective config should be the server config with the overlayed fields
-    ClientConfiguration.Builder expectedConfig = service.config.get().toBuilder();
-    expectedConfig.getSessionConfigurationBuilder().setSessionLoad(0);
-
-    assertThat(initialConfig).isEqualTo(service.config.get());
+    ClientConfiguration serverConfig = manager.start().get();
+    assertThat(serverConfig).isEqualTo(service.config.get());
+    assertThat(manager.areSessionsRequired()).isFalse();
+    verify(mockExecutor, times(1)).schedule(any(Runnable.class), anyLong(), any(TimeUnit.class));
   }
 
   @Test
@@ -453,17 +442,14 @@ class ClientConfigurationManagerTest {
   }
 
   /**
-   * Restarts the manager against a server that reports session_load=0, with the supplied session
-   * configuration supplied as a sys-prop override, and returns the resolved config.
+   * Restarts the manager with {@code OVERRIDE_USE_DEFAULT_SYS_PROP_KEY=true} and the supplied
+   * session configuration supplied as a sys-prop override, and returns the resolved config.
    */
   private ClientConfiguration startWithSessionOverride(
       SessionClientConfiguration.Builder sessionOverride) throws Exception {
-    ClientConfiguration.Builder serverConfig = manager.getDefaultConfig().toBuilder();
-    serverConfig.getSessionConfigurationBuilder().setSessionLoad(0);
-    service.config.set(serverConfig.build());
-
     manager.close();
     Properties sysProps = new Properties();
+    sysProps.setProperty(ClientConfigurationManager.OVERRIDE_USE_DEFAULT_SYS_PROP_KEY, "true");
     sysProps.setProperty(
         ClientConfigurationManager.OVERRIDE_SYS_PROP_KEY,
         TextFormat.printer()
@@ -620,9 +606,11 @@ class ClientConfigurationManagerTest {
 
   @Test
   void disableDirectPathFallbackTest() throws Exception {
-    Properties sysProps = new Properties();
-    sysProps.setProperty(
+    Properties overrideSysProps = new Properties();
+    overrideSysProps.setProperty(
         ClientConfigurationManager.DISABLE_DIRECT_ACCESS_FALLBACK_SYS_PROP_KEY, "true");
+    overrideSysProps.setProperty(
+        ClientConfigurationManager.OVERRIDE_USE_DEFAULT_SYS_PROP_KEY, "true");
     String clientConfigOverrides =
         TextFormat.printer()
             .printToString(
@@ -639,21 +627,40 @@ class ClientConfigurationManagerTest {
                                     .setDirectAccessWithFallback(
                                         DirectAccessWithFallback.getDefaultInstance())))
                     .build());
-    sysProps.setProperty(ClientConfigurationManager.OVERRIDE_SYS_PROP_KEY, clientConfigOverrides);
+    overrideSysProps.setProperty(
+        ClientConfigurationManager.OVERRIDE_SYS_PROP_KEY, clientConfigOverrides);
 
-    try (ClientConfigurationManager fallbackDisabledManager =
+    try (ClientConfigurationManager overrideFallbackDisabledManager =
         new ClientConfigurationManager(
-            sysProps, FEATURE_FLAGS, CLIENT_INFO, channelProvider, noopDebugTracer, mockExecutor)) {
-
-      // Check initial default config with override has fallback disabled and direct_access_only set
+            overrideSysProps,
+            FEATURE_FLAGS,
+            CLIENT_INFO,
+            channelProvider,
+            noopDebugTracer,
+            mockExecutor)) {
+      // Check initial config with override has fallback disabled and direct_access_only set
       SessionClientConfiguration.ChannelPoolConfiguration initialChannelConfig =
-          fallbackDisabledManager
+          overrideFallbackDisabledManager
               .getClientConfiguration()
               .getSessionConfiguration()
               .getChannelConfiguration();
       assertThat(initialChannelConfig.hasDirectAccessOnly()).isTrue();
       assertThat(initialChannelConfig.hasDirectAccessWithFallback()).isFalse();
+    }
 
+    // Also verify server-fetched config (without local override) converts
+    // direct_access_with_fallback
+    Properties serverSysProps = new Properties();
+    serverSysProps.setProperty(
+        ClientConfigurationManager.DISABLE_DIRECT_ACCESS_FALLBACK_SYS_PROP_KEY, "true");
+    try (ClientConfigurationManager fallbackDisabledManager =
+        new ClientConfigurationManager(
+            serverSysProps,
+            FEATURE_FLAGS,
+            CLIENT_INFO,
+            channelProvider,
+            noopDebugTracer,
+            mockExecutor)) {
       // Start manager and fetch server config (which sends direct_access_with_fallback)
       ClientConfiguration fetchedConfig = fallbackDisabledManager.start().get();
       SessionClientConfiguration.ChannelPoolConfiguration fetchedChannelConfig =
@@ -688,12 +695,107 @@ class ClientConfigurationManagerTest {
     verify(mockExecutor, never()).schedule(any(Runnable.class), anyLong(), any(TimeUnit.class));
   }
 
+  @Test
+  void metadataDoesNotAccumulateAcrossPollsWithHeaderAttachingInterceptor() throws Exception {
+    manager.close();
+
+    Metadata.Key<String> traceparentKey =
+        Metadata.Key.of("traceparent", Metadata.ASCII_STRING_MARSHALLER);
+    Metadata.Key<String> requestParamsKey =
+        Metadata.Key.of("x-goog-request-params", Metadata.ASCII_STRING_MARSHALLER);
+    Metadata.Key<String> featureFlagsKey =
+        Metadata.Key.of("bigtable-features", Metadata.ASCII_STRING_MARSHALLER);
+
+    List<Integer> traceparentCountsOnServer = new CopyOnWriteArrayList<>();
+    List<Integer> requestParamsCountsOnServer = new CopyOnWriteArrayList<>();
+    List<Integer> featureFlagsCountsOnServer = new CopyOnWriteArrayList<>();
+
+    ServerInterceptor headerCapturingServerInterceptor =
+        new ServerInterceptor() {
+          @Override
+          public <ReqT, RespT> ServerCall.Listener<ReqT> interceptCall(
+              ServerCall<ReqT, RespT> call, Metadata headers, ServerCallHandler<ReqT, RespT> next) {
+            traceparentCountsOnServer.add(Iterables.size(headers.getAll(traceparentKey)));
+            requestParamsCountsOnServer.add(Iterables.size(headers.getAll(requestParamsKey)));
+            featureFlagsCountsOnServer.add(Iterables.size(headers.getAll(featureFlagsKey)));
+            return next.startCall(call, headers);
+          }
+        };
+
+    // Enforce a tight 1 KiB SETTINGS_MAX_HEADER_LIST_SIZE so any per-poll header accumulation in
+    // ClientConfigurationManager.metadata trips Netty's HpackEncoder HeaderListSizeException
+    // (Status.INTERNAL: "http2 exception") within ~8 polls.
+    Server boundedHeaderServer =
+        ServerBuilder.forPort(0)
+            .addService(service)
+            .intercept(headerCapturingServerInterceptor)
+            .maxInboundMetadataSize(1024)
+            .build()
+            .start();
+
+    ClientInterceptor tracingInterceptor =
+        new ClientInterceptor() {
+          @Override
+          public <ReqT, RespT> ClientCall<ReqT, RespT> interceptCall(
+              MethodDescriptor<ReqT, RespT> method, CallOptions callOptions, Channel next) {
+            return new ForwardingClientCall.SimpleForwardingClientCall<ReqT, RespT>(
+                next.newCall(method, callOptions)) {
+              @Override
+              public void start(Listener<RespT> responseListener, Metadata headers) {
+                headers.put(
+                    traceparentKey, "00-4bf92f3577b34da6a3ce929d0e0e4736-00f067aa0ba902b7-01");
+                super.start(responseListener, headers);
+              }
+            };
+          }
+        };
+
+    ChannelProviders.ChannelProvider tracingChannelProvider =
+        new ForwardingChannelProvider(
+            new ChannelProviders.EmulatorChannelProvider(
+                "localhost", boundedHeaderServer.getPort())) {
+          @Override
+          public ManagedChannelBuilder<?> newChannelBuilder() {
+            return super.newChannelBuilder()
+                .intercept(outstandingRpcCounter)
+                .intercept(tracingInterceptor);
+          }
+        };
+
+    try (ClientConfigurationManager localManager =
+        new ClientConfigurationManager(
+            FEATURE_FLAGS, CLIENT_INFO, tracingChannelProvider, noopDebugTracer, mockExecutor)) {
+      localManager.start().get();
+
+      ArgumentCaptor<Runnable> pollCaptor = ArgumentCaptor.forClass(Runnable.class);
+      verify(mockExecutor, Mockito.atLeastOnce())
+          .schedule(pollCaptor.capture(), anyLong(), any(TimeUnit.class));
+      Runnable scheduledPoll = pollCaptor.getValue();
+
+      for (int i = 0; i < 25; i++) {
+        scheduledPoll.run();
+        outstandingRpcCounter.waitUntilRpcsDone();
+      }
+
+      assertThat(service.requestCount.get()).isEqualTo(26);
+      assertThat(traceparentCountsOnServer).hasSize(26);
+      for (int i = 0; i < 26; i++) {
+        assertThat(traceparentCountsOnServer.get(i)).isEqualTo(1);
+        assertThat(requestParamsCountsOnServer.get(i)).isEqualTo(1);
+        assertThat(featureFlagsCountsOnServer.get(i)).isEqualTo(1);
+      }
+    } finally {
+      boundedHeaderServer.shutdownNow();
+    }
+  }
+
   static class FakeConfigService extends BigtableGrpc.BigtableImplBase {
     private final AtomicReference<ClientConfiguration> config = new AtomicReference<>();
 
     // Number of leading requests to answer with a clean (OK) close that delivers no message,
     // simulating the server closing the stream without ever returning a configuration.
     private final AtomicInteger emptyResponses = new AtomicInteger(0);
+    private final AtomicInteger requestCount = new AtomicInteger(0);
 
     public FakeConfigService() throws IOException {
       ClientConfiguration.Builder builder = ClientConfigurationManager.loadDefault().toBuilder();
@@ -716,6 +818,7 @@ class ClientConfigurationManagerTest {
     public void getClientConfiguration(
         GetClientConfigurationRequest request,
         StreamObserver<ClientConfiguration> responseObserver) {
+      requestCount.incrementAndGet();
       if (emptyResponses.getAndDecrement() > 0) {
         // Close cleanly without sending a message.
         responseObserver.onCompleted();
