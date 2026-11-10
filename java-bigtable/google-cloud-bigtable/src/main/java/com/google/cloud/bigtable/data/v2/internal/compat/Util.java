@@ -30,6 +30,7 @@ import java.util.Optional;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Function;
 import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 
 public class Util {
   public static <K, V extends Closeable> LoadingCache<K, V> createSessionMap(
@@ -59,11 +60,14 @@ public class Util {
             });
   }
 
-  public static Duration extractTimeout(UnaryCallSettings<?, ?> settings) {
+  @Nonnull
+  public static Duration extractTimeout(@Nonnull UnaryCallSettings<?, ?> settings) {
     return settings.getRetrySettings().getTotalTimeoutDuration();
   }
 
-  public static Deadline extractDeadline(GrpcCallContext callContext, Duration defaultDeadline) {
+  @Nonnull
+  public static Deadline extractDeadline(
+      @Nullable GrpcCallContext callContext, @Nonnull Duration defaultDeadline) {
     // NOTE: ignoring callContext.timeout because its an attempt timeout
     Optional<Deadline> ambientDeadline = Optional.ofNullable(Context.current().getDeadline());
     Duration totalTimeout =

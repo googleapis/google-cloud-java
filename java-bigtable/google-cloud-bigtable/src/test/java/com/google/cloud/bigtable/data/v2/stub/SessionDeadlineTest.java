@@ -70,9 +70,11 @@ public class SessionDeadlineTest {
   private Server server;
   private EnhancedBigtableStubSettings defaultSettings;
   private FakeDataService fakeDataService;
+  private ScheduledExecutorService contextScheduler;
 
   @Before
   public void setUp() throws IOException {
+    contextScheduler = Executors.newSingleThreadScheduledExecutor();
     fakeDataService = new FakeDataService();
     server =
         NettyServerBuilder.forPort(0)
@@ -93,6 +95,9 @@ public class SessionDeadlineTest {
 
   @After
   public void tearDown() throws InterruptedException {
+    if (contextScheduler != null) {
+      contextScheduler.shutdownNow();
+    }
     if (fakeDataService != null) {
       fakeDataService.shutdown();
     }
@@ -111,11 +116,7 @@ public class SessionDeadlineTest {
       Query request = Query.create(TableId.of("fake-table")).rowKey("row-key");
 
       try (io.grpc.Context.CancellableContext ctx =
-          io.grpc.Context.current()
-              .withDeadlineAfter(
-                  5,
-                  TimeUnit.MILLISECONDS,
-                  settings.getBackgroundExecutorProvider().getExecutor())) {
+          io.grpc.Context.current().withDeadlineAfter(5, TimeUnit.MILLISECONDS, contextScheduler)) {
 
         ctx.run(
             () -> {
@@ -142,9 +143,7 @@ public class SessionDeadlineTest {
       Query request = Query.create(TableId.of("fake-table")).rowKey("row-key");
 
       try (Context.CancellableContext ctx =
-          Context.current()
-              .withDeadlineAfter(
-                  1, TimeUnit.SECONDS, settings.getBackgroundExecutorProvider().getExecutor())) {
+          Context.current().withDeadlineAfter(1, TimeUnit.SECONDS, contextScheduler)) {
         ctx.run(
             () -> {
               ApiFuture<Row> future = stub.readRowCallable().futureCall(request);
@@ -204,9 +203,7 @@ public class SessionDeadlineTest {
 
     try (EnhancedBigtableStub stub = EnhancedBigtableStub.create(settings);
         Context.CancellableContext ambientCtx =
-            Context.current()
-                .withDeadlineAfter(
-                    30, TimeUnit.SECONDS, settings.getBackgroundExecutorProvider().getExecutor())) {
+            Context.current().withDeadlineAfter(30, TimeUnit.SECONDS, contextScheduler)) {
       ambientCtx.run(
           () -> {
             try {
