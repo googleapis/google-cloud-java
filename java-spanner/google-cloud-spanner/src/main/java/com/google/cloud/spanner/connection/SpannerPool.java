@@ -16,7 +16,6 @@
 
 package com.google.cloud.spanner.connection;
 
-import com.google.cloud.NoCredentials;
 import com.google.cloud.grpc.GcpManagedChannelOptions.GcpChannelPoolOptions;
 import com.google.cloud.spanner.DecodeMode;
 import com.google.cloud.spanner.ErrorCode;
@@ -25,11 +24,11 @@ import com.google.cloud.spanner.Spanner;
 import com.google.cloud.spanner.SpannerException;
 import com.google.cloud.spanner.SpannerExceptionFactory;
 import com.google.cloud.spanner.SpannerOptions;
+import com.google.cloud.spanner.omni.SpannerOmniCredentials;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Preconditions;
 import com.google.common.base.Ticker;
-import io.grpc.ManagedChannelBuilder;
 import io.opentelemetry.api.OpenTelemetry;
 import java.io.IOException;
 import java.time.Duration;
@@ -535,20 +534,22 @@ public class SpannerPool {
     if (options.isEndToEndTracingEnabled()) {
       builder.setEnableEndToEndTracing(true);
     }
+    if (key.instanceType != null) {
+      builder.setType(key.instanceType);
+    }
     if (key.usePlainText) {
-      // Credentials may not be sent over a plain text channel.
-      builder.setCredentials(NoCredentials.getInstance());
-      // Set a custom channel configurator to allow http instead of https.
-      builder.setChannelConfigurator(ManagedChannelBuilder::usePlaintext);
+      // Credentials may not be sent over a plain text channel, unless it is Spanner Omni
+      // credentials.
+      builder.usePlainText();
+      if (options.getCredentials() instanceof SpannerOmniCredentials) {
+        builder.setCredentials(options.getCredentials());
+      }
     }
     if (key.clientCertificate != null || key.clientCertificateKey != null) {
       builder.useClientCert(key.clientCertificate, key.clientCertificateKey);
     }
     if (key.caCertificate != null) {
       builder.setCaCertificate(key.caCertificate);
-    }
-    if (key.instanceType != null) {
-      builder.setType(key.instanceType);
     }
     if (key.enableDirectAccess != null) {
       builder.setEnableDirectAccess(key.enableDirectAccess);
