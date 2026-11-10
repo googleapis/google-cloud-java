@@ -35,6 +35,7 @@ import java.util.UUID;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
+import org.junit.Before;
 import org.junit.ClassRule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -43,6 +44,15 @@ import org.junit.runners.JUnit4;
 @RunWith(JUnit4.class)
 public class ReadModifyWriteIT {
   @ClassRule public static TestEnvRule testEnvRule = new TestEnvRule();
+
+  @Before
+  public void setUp() {
+    // TODO: Remove this skip once ReadModifyWriteRow is enabled on the session test backend.
+    assume()
+        .withMessage("ReadModifyWriteRow is not yet enabled on the session test backend")
+        .that(System.getProperty("bigtable.internal.client-config-override", ""))
+        .isEmpty();
+  }
 
   @Test
   public void test() throws InterruptedException, ExecutionException, TimeoutException {
