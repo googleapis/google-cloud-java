@@ -193,7 +193,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
   DatasetId defaultDataset;
   String location;
   boolean enableHighThroughputAPI;
-  private boolean enableQueryResultsArrowFormat;
+  boolean enableQueryResultsArrowFormat;
   int highThroughputMinTableSize;
   int highThroughputActivationRatio;
   boolean enableSession;
