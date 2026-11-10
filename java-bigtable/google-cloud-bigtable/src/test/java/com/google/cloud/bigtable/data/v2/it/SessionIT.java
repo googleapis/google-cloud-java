@@ -32,7 +32,6 @@ import com.google.cloud.bigtable.test_helpers.env.AbstractTestEnv.ConnectionMode
 import com.google.cloud.bigtable.test_helpers.env.CloudEnv;
 import com.google.cloud.bigtable.test_helpers.env.PrefixGenerator;
 import com.google.cloud.bigtable.test_helpers.env.TestEnvRule;
-import com.google.common.base.Stopwatch;
 import com.google.common.collect.ImmutableSet;
 import io.grpc.CallOptions;
 import io.grpc.Channel;
@@ -48,7 +47,6 @@ import java.util.Base64;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.CopyOnWriteArrayList;
-import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.junit.After;
 import org.junit.Before;
@@ -117,10 +115,12 @@ public class SessionIT {
                 .getDataClientSettings()
                 .getStubSettings()
                 .getTransportChannelProvider();
+    InstantiatingGrpcChannelProvider.Builder transportBuilder =
+        defaultTransportProvider.toBuilder();
     ApiFunction<ManagedChannelBuilder, ManagedChannelBuilder> oldConfigurator =
-        defaultTransportProvider.toBuilder().getChannelConfigurator();
+        transportBuilder.getChannelConfigurator();
     InstantiatingGrpcChannelProvider instrumentedTransportProvider =
-        defaultTransportProvider.toBuilder()
+        transportBuilder
             .setChannelConfigurator(
                 b -> {
                   if (oldConfigurator != null) {
@@ -145,14 +145,9 @@ public class SessionIT {
   }
 
   @Test
-  public void testReadAndWriteSucceed() throws InterruptedException {
-    waitForSessionReady();
-
+  public void testReadAndWriteOverSession() {
     TableId tableId = testEnvRule.env().getTableId();
     String rowKey = PrefixGenerator.newPrefix("SessionIT#readWrite");
-
-    classicDataRpcs.clear();
-    int virtualRpcsBefore = virtualRpcCount.get();
 
     stub.mutateRowCallable()
         .call(
@@ -166,23 +161,18 @@ public class SessionIT {
 
     assertWithMessage(
             "Expected mutateRow and readRow to execute as session VirtualRpcs without falling back"
-                + " to classic RPCs, but classic RPCs were: "
-                + classicDataRpcs)
+                + " to classic RPCs, but classic RPCs were: %s",
+            classicDataRpcs)
         .that(classicDataRpcs)
         .isEmpty();
 
-    assertWithMessage("Expected 2 session VirtualRpcs (mutateRow + readRow)")
-        .that(virtualRpcCount.get() - virtualRpcsBefore)
+    assertWithMessage("Expected at least 2 session VirtualRpcs (mutateRow + readRow)")
+        .that(virtualRpcCount.get())
         .isAtLeast(2);
-  }
-
-  @Test
-  public void testSessionsAreEstablished() throws InterruptedException {
-    waitForSessionReady();
 
     assertWithMessage(
-            "Sessions should have a known transport type, not SESSION_UNKNOWN. Observed: "
-                + observedTypes)
+            "Sessions should have a known transport type, not SESSION_UNKNOWN. Observed: %s",
+            observedTypes)
         .that(observedTypes)
         .doesNotContain(TransportType.TRANSPORT_TYPE_SESSION_UNKNOWN);
 
@@ -200,34 +190,14 @@ public class SessionIT {
               mode, observedTypes)
           .that(observedTypes)
           .contains(TransportType.TRANSPORT_TYPE_SESSION_CLOUD_PATH);
-    }
-  }
-
-  private void waitForSessionReady() throws InterruptedException {
-    Stopwatch stopwatch = Stopwatch.createStarted();
-    boolean sessionReady = false;
-    while (!sessionReady && stopwatch.elapsed(TimeUnit.SECONDS) < 60) {
-      stub.readRowCallable().call(Query.create(testEnvRule.env().getTableId()).rowKey("probe-key"));
+    } else {
       assertWithMessage(
-              "Expected readRow to use the session path, but fell back to classic RPCs: %s",
-              classicDataRpcs)
-          .that(classicDataRpcs)
-          .isEmpty();
-      sessionReady =
-          observedTypes.stream().anyMatch(t -> t.name().startsWith("TRANSPORT_TYPE_SESSION_"))
-              && virtualRpcCount.get() > 0;
-      if (!sessionReady) {
-        Thread.sleep(500);
-      }
+              "Expected a session transport type (TRANSPORT_TYPE_SESSION_*), but observed: %s",
+              observedTypes)
+          .that(
+              observedTypes.stream().anyMatch(t -> t.name().startsWith("TRANSPORT_TYPE_SESSION_")))
+          .isTrue();
     }
-
-    assertWithMessage(
-            "Expected a session-type transport in bigtable-peer-info (TRANSPORT_TYPE_SESSION_*)"
-                + " and VirtualRpcs > 0 within 60s, but observedTypes=%s, virtualRpcCount=%s,"
-                + " classicDataRpcs=%s",
-            observedTypes, virtualRpcCount.get(), classicDataRpcs)
-        .that(sessionReady)
-        .isTrue();
   }
 
   private class PeerInfoCapturingInterceptor implements ClientInterceptor {
