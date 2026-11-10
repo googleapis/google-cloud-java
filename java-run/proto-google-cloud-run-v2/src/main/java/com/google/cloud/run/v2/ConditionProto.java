@@ -56,7 +56,7 @@ public final class ConditionProto extends com.google.protobuf.GeneratedFile {
       "\n"
           + "#google/cloud/run/v2/condition.proto\022\023g"
           + "oogle.cloud.run.v2\032\037google/api/field_beh"
-          + "avior.proto\032\037google/protobuf/timestamp.proto\"\345\014\n"
+          + "avior.proto\032\037google/protobuf/timestamp.proto\"\375\016\n"
           + "\tCondition\022\014\n"
           + "\004type\030\001 \001(\t\0223\n"
           + "\005state\030\002 \001(\0162$.google.cloud.run.v2.Condition.State\022\017\n"
@@ -68,7 +68,9 @@ public final class ConditionProto extends com.google.protobuf.GeneratedFile {
           + "\017revision_reason\030\t \001(\0162-.goog"
           + "le.cloud.run.v2.Condition.RevisionReasonB\004\342A\001\003H\000\022P\n"
           + "\020execution_reason\030\013 \001(\0162..goo"
-          + "gle.cloud.run.v2.Condition.ExecutionReasonB\004\342A\001\003H\000\"\177\n"
+          + "gle.cloud.run.v2.Condition.ExecutionReasonB\004\342A\001\003H\000\022N\n"
+          + "\017instance_reason\030\014 \001(\0162-.go"
+          + "ogle.cloud.run.v2.Condition.InstanceReasonB\004\342A\001\003H\000\"\177\n"
           + "\005State\022\025\n"
           + "\021STATE_UNSPECIFIED\020\000\022\025\n"
           + "\021CONDITION_PENDING\020\001\022\031\n"
@@ -113,7 +115,7 @@ public final class ConditionProto extends com.google.protobuf.GeneratedFile {
           + "NO_DEPLOYMENT\020\n"
           + "\022\030\n"
           + "\024HEALTH_CHECK_SKIPPED\020\013\022\031\n"
-          + "\025MIN_INSTANCES_WARMING\020\014\"\266\001\n"
+          + "\025MIN_INSTANCES_WARMING\020\014\"\346\001\n"
           + "\017ExecutionReason\022\036\n"
           + "\032EXECUTION_REASON_UNDEFINED\020\000\022$\n"
           + " JOB_STATUS_SERVICE_POLLING_ERROR\020\001\022\026\n"
@@ -121,7 +123,14 @@ public final class ConditionProto extends com.google.protobuf.GeneratedFile {
           + "\tCANCELLED\020\003\022\016\n\n"
           + "CANCELLING\020\004\022\013\n"
           + "\007DELETED\020\005\022\031\n"
-          + "\025DELAYED_START_PENDING\020\006B\t\n"
+          + "\025DELAYED_START_PENDING\020\006\022.\n"
+          + "*DELAYED_EXECUTION_EXCEEDING_DURATION_LIMIT\020\007\"\225\001\n"
+          + "\016InstanceReason\022\037\n"
+          + "\033INSTANCE_REASON_UNSPECIFIED\020\000\022\024\n"
+          + "\020INSTANCE_DELETED\020\001\022\024\n"
+          + "\020INSTANCE_STOPPED\020\002\022\025\n"
+          + "\021INSTANCE_STOPPING\020\003\022\037\n"
+          + "\033INSTANCE_NON_ZERO_EXIT_CODE\020\004B\t\n"
           + "\007reasonsBV\n"
           + "\027com.google.cloud.run.v2B\016ConditionProtoP\001Z)cloud.google.com/go/run/apiv2"
           + "/runpb;runpbb\006proto3"
@@ -146,6 +155,7 @@ public final class ConditionProto extends com.google.protobuf.GeneratedFile {
               "Reason",
               "RevisionReason",
               "ExecutionReason",
+              "InstanceReason",
               "Reasons",
             });
     descriptor.resolveAllFeaturesImmutable();

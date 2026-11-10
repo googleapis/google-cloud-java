@@ -191,11 +191,12 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. The unique identifier for the Job. The name of the job becomes
+   * Optional. The unique identifier for the Job. The name of the job becomes
    * {parent}/jobs/{job_id}.
+   * If not provided, the server will generate a unique `job_id`.
    * </pre>
    *
-   * <code>string job_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string job_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The jobId.
    */
@@ -216,11 +217,12 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. The unique identifier for the Job. The name of the job becomes
+   * Optional. The unique identifier for the Job. The name of the job becomes
    * {parent}/jobs/{job_id}.
+   * If not provided, the server will generate a unique `job_id`.
    * </pre>
    *
-   * <code>string job_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string job_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for jobId.
    */
@@ -980,11 +982,12 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The unique identifier for the Job. The name of the job becomes
+     * Optional. The unique identifier for the Job. The name of the job becomes
      * {parent}/jobs/{job_id}.
+     * If not provided, the server will generate a unique `job_id`.
      * </pre>
      *
-     * <code>string job_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string job_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The jobId.
      */
@@ -1004,11 +1007,12 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The unique identifier for the Job. The name of the job becomes
+     * Optional. The unique identifier for the Job. The name of the job becomes
      * {parent}/jobs/{job_id}.
+     * If not provided, the server will generate a unique `job_id`.
      * </pre>
      *
-     * <code>string job_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string job_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for jobId.
      */
@@ -1028,11 +1032,12 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The unique identifier for the Job. The name of the job becomes
+     * Optional. The unique identifier for the Job. The name of the job becomes
      * {parent}/jobs/{job_id}.
+     * If not provided, the server will generate a unique `job_id`.
      * </pre>
      *
-     * <code>string job_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string job_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The jobId to set.
      * @return This builder for chaining.
@@ -1051,11 +1056,12 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The unique identifier for the Job. The name of the job becomes
+     * Optional. The unique identifier for the Job. The name of the job becomes
      * {parent}/jobs/{job_id}.
+     * If not provided, the server will generate a unique `job_id`.
      * </pre>
      *
-     * <code>string job_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string job_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -1070,11 +1076,12 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The unique identifier for the Job. The name of the job becomes
+     * Optional. The unique identifier for the Job. The name of the job becomes
      * {parent}/jobs/{job_id}.
+     * If not provided, the server will generate a unique `job_id`.
      * </pre>
      *
-     * <code>string job_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string job_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for jobId to set.
      * @return This builder for chaining.

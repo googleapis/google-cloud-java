@@ -27,6 +27,12 @@ public interface DeleteInstanceRequestOrBuilder
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
+   * <pre>
+   * Required. The name of the Instance to delete.
+   * </pre>
+   *
    * <code>
    * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
@@ -36,6 +42,12 @@ public interface DeleteInstanceRequestOrBuilder
   java.lang.String getName();
 
   /**
+   *
+   *
+   * <pre>
+   * Required. The name of the Instance to delete.
+   * </pre>
+   *
    * <code>
    * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>

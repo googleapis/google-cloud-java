@@ -99,6 +99,7 @@ public class TasksClientHttpJsonTest {
             .setExecution(
                 ExecutionName.of("[PROJECT]", "[LOCATION]", "[JOB]", "[EXECUTION]").toString())
             .addAllContainers(new ArrayList<Container>())
+            .setSandboxes(SandboxConfiguration.newBuilder().build())
             .addAllVolumes(new ArrayList<Volume>())
             .setMaxRetries(1129288043)
             .setTimeout(Duration.newBuilder().build())
@@ -116,6 +117,7 @@ public class TasksClientHttpJsonTest {
             .setSatisfiesPzs(true)
             .setNodeSelector(NodeSelector.newBuilder().build())
             .setGpuZonalRedundancyDisabled(true)
+            .setWorkloadIdentityConfig(WorkloadIdentityConfig.newBuilder().build())
             .setEtag("etag3123477")
             .build();
     mockService.addResponse(expectedResponse);
@@ -177,6 +179,7 @@ public class TasksClientHttpJsonTest {
             .setExecution(
                 ExecutionName.of("[PROJECT]", "[LOCATION]", "[JOB]", "[EXECUTION]").toString())
             .addAllContainers(new ArrayList<Container>())
+            .setSandboxes(SandboxConfiguration.newBuilder().build())
             .addAllVolumes(new ArrayList<Volume>())
             .setMaxRetries(1129288043)
             .setTimeout(Duration.newBuilder().build())
@@ -194,6 +197,7 @@ public class TasksClientHttpJsonTest {
             .setSatisfiesPzs(true)
             .setNodeSelector(NodeSelector.newBuilder().build())
             .setGpuZonalRedundancyDisabled(true)
+            .setWorkloadIdentityConfig(WorkloadIdentityConfig.newBuilder().build())
             .setEtag("etag3123477")
             .build();
     mockService.addResponse(expectedResponse);

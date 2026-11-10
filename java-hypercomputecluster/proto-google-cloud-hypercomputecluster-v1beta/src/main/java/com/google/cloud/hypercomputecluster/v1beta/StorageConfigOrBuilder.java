@@ -31,7 +31,8 @@ public interface StorageConfigOrBuilder
    *
    * <pre>
    * Required. ID of the storage resource to mount, which must match a key in
-   * the cluster's [storage_resources](Cluster.storage_resources).
+   * the cluster's
+   * [storage_resources][google.cloud.hypercomputecluster.v1beta.Cluster.storage_resources].
    * </pre>
    *
    * <code>string id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -45,7 +46,8 @@ public interface StorageConfigOrBuilder
    *
    * <pre>
    * Required. ID of the storage resource to mount, which must match a key in
-   * the cluster's [storage_resources](Cluster.storage_resources).
+   * the cluster's
+   * [storage_resources][google.cloud.hypercomputecluster.v1beta.Cluster.storage_resources].
    * </pre>
    *
    * <code>string id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
