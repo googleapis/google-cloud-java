@@ -968,6 +968,26 @@ libraries:
     version: 0.40.0
     apis:
       - path: google/cloud/chronicle/v1
+        java:
+          additional_protos:
+            - path: backstory/collection.proto
+              generate_proto_classes: true
+              copy_to_output: true
+            - path: backstory/data_access.proto
+              generate_proto_classes: true
+              copy_to_output: true
+            - path: backstory/entity.proto
+              generate_proto_classes: true
+              copy_to_output: true
+            - path: backstory/entity_risk.proto
+              generate_proto_classes: true
+              copy_to_output: true
+            - path: backstory/id.proto
+              generate_proto_classes: true
+              copy_to_output: true
+            - path: backstory/udm.proto
+              generate_proto_classes: true
+              copy_to_output: true
     java:
       api_id_override: chronicle.googleapis.com
       api_description_override: The Google Cloud Security Operations API, popularly known as the Chronicle API, serves endpoints that enable security analysts to analyze and mitigate a security threat throughout its lifecycle
