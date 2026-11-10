@@ -99,12 +99,14 @@ import com.google.common.base.Preconditions;
 import com.google.common.base.Strings;
 import com.google.common.base.Suppliers;
 import com.google.common.collect.ImmutableMap;
+import com.google.common.hash.Hashing;
 import com.google.crypto.tink.util.SecretBytes;
 import io.grpc.Deadline;
 import io.grpc.Deadline.Ticker;
 import io.opentelemetry.api.OpenTelemetry;
 import java.io.IOException;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -705,6 +707,8 @@ public class ConnectionOptions {
   private final boolean typeExplicitlySet;
   private final String warnings;
   private final Credentials fixedCredentials;
+  private final @Nullable String encodedCredentialsHash;
+  private final @Nullable String oAuthTokenHash;
 
   private final String host;
   private final String projectId;
@@ -800,6 +804,8 @@ public class ConnectionOptions {
         SpannerOptions.getDefaultSpannerOmniCredentialsFromSysEnv();
     String username = getInitialConnectionPropertyValue(ConnectionProperties.USERNAME);
     String password = getInitialConnectionPropertyValue(ConnectionProperties.PASSWORD);
+    String oAuthTokenHash = null;
+    String encodedCredentialsHash = null;
     // Using credentials on a plain text connection is not allowed, so if the user has not specified
     // any credentials and is using a plain text connection, we should not try to get the
     // credentials from the environment, but default to NoCredentials.
@@ -812,9 +818,16 @@ public class ConnectionOptions {
         && usePlainText) {
       this.credentials = NoCredentials.getInstance();
     } else if (getInitialConnectionPropertyValue(OAUTH_TOKEN) != null) {
-      this.credentials =
-          new GoogleCredentials(
-              new AccessToken(getInitialConnectionPropertyValue(OAUTH_TOKEN), null));
+      String oAuthToken = getInitialConnectionPropertyValue(OAUTH_TOKEN);
+      oAuthTokenHash =
+          "oauth:" + Hashing.sha256().hashString(oAuthToken, StandardCharsets.UTF_8).toString();
+      this.credentials = new GoogleCredentials(new AccessToken(oAuthToken, null));
+      // Clear the OAuth token from the initial connection state to allow it to be GC'd.
+      this.initialConnectionState.setValue(
+          OAUTH_TOKEN,
+          /* value= */ null,
+          ConnectionProperty.Context.STARTUP,
+          /* inTransaction= */ false);
     } else if (isSpannerOmniPattern || isSpannerOmni()) {
       if (!Strings.isNullOrEmpty(username) && !Strings.isNullOrEmpty(password)) {
         SecretBytes secretBytes =
@@ -843,14 +856,24 @@ public class ConnectionOptions {
     } else if (this.fixedCredentials != null) {
       this.credentials = fixedCredentials;
     } else if (getInitialConnectionPropertyValue(ENCODED_CREDENTIALS) != null) {
-      this.credentials =
-          getCredentialsService()
-              .decodeCredentials(getInitialConnectionPropertyValue(ENCODED_CREDENTIALS));
+      String encodedCredentials = getInitialConnectionPropertyValue(ENCODED_CREDENTIALS);
+      encodedCredentialsHash =
+          "encoded:"
+              + Hashing.sha256().hashString(encodedCredentials, StandardCharsets.UTF_8).toString();
+      this.credentials = getCredentialsService().decodeCredentials(encodedCredentials);
+      // Clear the encoded credentials from the initial connection state to allow it to be GC'd.
+      this.initialConnectionState.setValue(
+          ENCODED_CREDENTIALS,
+          /* value= */ null,
+          ConnectionProperty.Context.STARTUP,
+          /* inTransaction= */ false);
     } else {
       this.credentials =
           getCredentialsService()
               .createCredentials(getInitialConnectionPropertyValue(CREDENTIALS_URL));
     }
+    this.oAuthTokenHash = oAuthTokenHash;
+    this.encodedCredentialsHash = encodedCredentialsHash;
 
     if (getInitialConnectionPropertyValue(MIN_SESSIONS) != null
         || getInitialConnectionPropertyValue(MAX_SESSIONS) != null
@@ -1048,8 +1071,14 @@ public class ConnectionOptions {
     return getInitialConnectionPropertyValue(CREDENTIALS_URL);
   }
 
-  String getOAuthToken() {
-    return getInitialConnectionPropertyValue(OAUTH_TOKEN);
+  @Nullable
+  String getEncodedCredentialsHash() {
+    return this.encodedCredentialsHash;
+  }
+
+  @Nullable
+  String getOAuthTokenHash() {
+    return this.oAuthTokenHash;
   }
 
   Credentials getFixedCredentials() {

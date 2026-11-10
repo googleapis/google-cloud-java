@@ -25,6 +25,7 @@ import com.google.cloud.spanner.Spanner;
 import com.google.cloud.spanner.SpannerException;
 import com.google.cloud.spanner.SpannerExceptionFactory;
 import com.google.cloud.spanner.SpannerOptions;
+import com.google.cloud.spanner.omni.SpannerOmniCredentials;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Preconditions;
@@ -45,7 +46,6 @@ import java.util.concurrent.TimeUnit;
 import java.util.function.Function;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import java.util.stream.Stream;
 import javax.annotation.concurrent.GuardedBy;
 
 /**
@@ -123,17 +123,31 @@ public class SpannerPool {
     static final Object DEFAULT_CREDENTIALS_KEY = new Object();
     final Object key;
 
+    /**
+     * Resolves the credential identity to use for pooling. Credential sources are evaluated in
+     * priority order using direct branching to short-circuit immediately on the first match and
+     * avoid intermediate object allocations on the connection acquisition path.
+     */
     static CredentialsKey create(ConnectionOptions options) throws IOException {
-      return new CredentialsKey(
-          Stream.of(
-                  options.getOAuthToken(),
-                  options.getCredentialsProvider() == null ? null : options.getCredentials(),
-                  options.getFixedCredentials(),
-                  options.getCredentialsUrl(),
-                  DEFAULT_CREDENTIALS_KEY)
-              .filter(Objects::nonNull)
-              .findFirst()
-              .get());
+      if (options.getOAuthTokenHash() != null) {
+        return new CredentialsKey(options.getOAuthTokenHash());
+      }
+      if (options.getEncodedCredentialsHash() != null) {
+        return new CredentialsKey(options.getEncodedCredentialsHash());
+      }
+      if (options.getCredentialsProvider() != null && options.getCredentials() != null) {
+        return new CredentialsKey(options.getCredentials());
+      }
+      if (options.getFixedCredentials() != null) {
+        return new CredentialsKey(options.getFixedCredentials());
+      }
+      if (options.getCredentialsUrl() != null) {
+        return new CredentialsKey(options.getCredentialsUrl());
+      }
+      if (options.getCredentials() instanceof SpannerOmniCredentials) {
+        return new CredentialsKey(options.getCredentials());
+      }
+      return new CredentialsKey(DEFAULT_CREDENTIALS_KEY);
     }
 
     private CredentialsKey(Object key) {

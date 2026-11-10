@@ -19,7 +19,9 @@ package com.google.cloud.spanner.omni;
 import com.google.api.core.InternalApi;
 import com.google.auth.oauth2.AccessToken;
 import com.google.auth.oauth2.GoogleCredentials;
+import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Preconditions;
+import com.google.crypto.tink.InsecureSecretKeyAccess;
 import com.google.crypto.tink.util.SecretBytes;
 import io.grpc.ManagedChannel;
 import io.grpc.netty.shaded.io.grpc.netty.NettyChannelBuilder;
@@ -32,21 +34,25 @@ import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import java.util.Base64;
 import java.util.Date;
+import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Logger;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * Credentials implementation for Spanner Omni. Uses the OPAQUE protocol to authenticate and fetches
  * short-lived access tokens.
  */
+@NullMarked
 public class SpannerOmniCredentials extends GoogleCredentials {
   private static final Logger logger = Logger.getLogger(SpannerOmniCredentials.class.getName());
 
   private final String username;
   private final SecretBytes password;
-  private String target;
+  private final String target;
   private boolean usePlainText = false;
-  private SslContext sslContext = null;
+  private @Nullable SslContext sslContext = null;
 
   public static SecretBytes convertToSecretBytes(char[] passwordChars) {
     byte[] passwordBytes = null;
@@ -60,8 +66,7 @@ public class SpannerOmniCredentials extends GoogleCredentials {
       byteBuffer.flip();
       passwordBytes = new byte[byteBuffer.remaining()];
       byteBuffer.get(passwordBytes);
-      return SecretBytes.copyFrom(
-          passwordBytes, com.google.crypto.tink.InsecureSecretKeyAccess.get());
+      return SecretBytes.copyFrom(passwordBytes, InsecureSecretKeyAccess.get());
     } finally {
       if (byteBuffer != null) {
         Arrays.fill(byteBuffer.array(), (byte) 0);
@@ -79,15 +84,49 @@ public class SpannerOmniCredentials extends GoogleCredentials {
     Preconditions.checkNotNull(target);
 
     // Parse target and initialize settings. If target starts with http://, use plaintext.
+    String parsedTarget;
     if (target.startsWith("http://")) {
-      this.target = target.substring(7);
+      parsedTarget = target.substring(7);
       this.usePlainText = true;
       logger.warning("Using plaintext connection for Spanner Omni credentials.");
     } else if (target.startsWith("https://")) {
-      this.target = target.substring(8);
+      parsedTarget = target.substring(8);
+    } else if (target.startsWith("//")) {
+      parsedTarget = target.substring(2);
     } else {
-      this.target = target;
+      parsedTarget = target;
     }
+    while (parsedTarget.endsWith("/")) {
+      parsedTarget = parsedTarget.substring(0, parsedTarget.length() - 1);
+    }
+    this.target = parsedTarget;
+  }
+
+  @VisibleForTesting
+  String getUsername() {
+    return this.username;
+  }
+
+  @Override
+  public boolean equals(@Nullable Object obj) {
+    if (this == obj) {
+      return true;
+    }
+    if (!(obj instanceof SpannerOmniCredentials)) {
+      return false;
+    }
+    SpannerOmniCredentials other = (SpannerOmniCredentials) obj;
+    return Objects.equals(this.username, other.username)
+        && this.password.equalsSecretBytes(other.password)
+        && Objects.equals(this.target, other.target);
+  }
+
+  @Override
+  public int hashCode() {
+    // Password is intentionally excluded from hashCode() to prevent any possibility of reverse
+    // calculation or offline cracking from 32-bit hash codes. Java's hashCode contract is fully
+    // satisfied because equal credentials will produce identical hashCodes.
+    return Objects.hash(this.username, this.target);
   }
 
   @InternalApi

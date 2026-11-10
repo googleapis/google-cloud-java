@@ -36,14 +36,21 @@ import com.google.cloud.spanner.ErrorCode;
 import com.google.cloud.spanner.SessionPoolOptions;
 import com.google.cloud.spanner.Spanner;
 import com.google.cloud.spanner.SpannerException;
+import com.google.cloud.spanner.SpannerOptions;
 import com.google.cloud.spanner.connection.ConnectionImpl.LeakedConnectionException;
 import com.google.cloud.spanner.connection.SpannerPool.CheckAndCloseSpannersMode;
+import com.google.cloud.spanner.connection.SpannerPool.CredentialsKey;
 import com.google.cloud.spanner.connection.SpannerPool.SpannerPoolKey;
+import com.google.cloud.spanner.omni.SpannerOmniCredentials;
 import com.google.common.base.Ticker;
+import com.google.common.io.BaseEncoding;
+import com.google.common.io.Files;
 import com.google.common.testing.FakeTicker;
 import io.opentelemetry.api.OpenTelemetry;
 import io.opentelemetry.sdk.OpenTelemetrySdk;
 import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.IOException;
 import java.io.OutputStream;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.ConsoleHandler;
@@ -921,5 +928,283 @@ public class SpannerPoolTest {
     SpannerPoolKey key = SpannerPoolKey.of(options);
     assertThrows(
         IllegalArgumentException.class, () -> SpannerPool.INSTANCE.createSpanner(key, options));
+  }
+
+  @Test
+  public void testGetSpannerWithOmniCredentials() {
+    SpannerPool pool = createSubjectAndMocks();
+
+    ConnectionOptions optionsOmniAlice1 = mock(ConnectionOptions.class, withSettings().lenient());
+    when(optionsOmniAlice1.getHost()).thenReturn("localhost:15000");
+    when(optionsOmniAlice1.getProjectId()).thenReturn(SpannerOptions.SPANNER_OMNI_PROJECT_ID);
+    when(optionsOmniAlice1.getInstanceType()).thenReturn(SpannerOptions.InstanceType.OMNI);
+    SpannerOmniCredentials credentialsAlice1 =
+        new SpannerOmniCredentials(
+            "alice",
+            SpannerOmniCredentials.convertToSecretBytes(new char[] {'p', 'a', 's', 's', '1'}),
+            "localhost:15000");
+    when(optionsOmniAlice1.getCredentials()).thenReturn(credentialsAlice1);
+
+    ConnectionOptions optionsOmniAlice1Duplicate =
+        mock(ConnectionOptions.class, withSettings().lenient());
+    when(optionsOmniAlice1Duplicate.getHost()).thenReturn("localhost:15000");
+    when(optionsOmniAlice1Duplicate.getProjectId())
+        .thenReturn(SpannerOptions.SPANNER_OMNI_PROJECT_ID);
+    when(optionsOmniAlice1Duplicate.getInstanceType()).thenReturn(SpannerOptions.InstanceType.OMNI);
+    SpannerOmniCredentials credentialsAlice1Duplicate =
+        new SpannerOmniCredentials(
+            "alice",
+            SpannerOmniCredentials.convertToSecretBytes(new char[] {'p', 'a', 's', 's', '1'}),
+            "localhost:15000");
+    when(optionsOmniAlice1Duplicate.getCredentials()).thenReturn(credentialsAlice1Duplicate);
+
+    ConnectionOptions optionsOmniAliceWrongPassword =
+        mock(ConnectionOptions.class, withSettings().lenient());
+    when(optionsOmniAliceWrongPassword.getHost()).thenReturn("localhost:15000");
+    when(optionsOmniAliceWrongPassword.getProjectId())
+        .thenReturn(SpannerOptions.SPANNER_OMNI_PROJECT_ID);
+    when(optionsOmniAliceWrongPassword.getInstanceType())
+        .thenReturn(SpannerOptions.InstanceType.OMNI);
+    SpannerOmniCredentials credentialsAliceWrongPassword =
+        new SpannerOmniCredentials(
+            "alice",
+            SpannerOmniCredentials.convertToSecretBytes(new char[] {'w', 'r', 'o', 'n', 'g'}),
+            "localhost:15000");
+    when(optionsOmniAliceWrongPassword.getCredentials()).thenReturn(credentialsAliceWrongPassword);
+
+    ConnectionOptions optionsOmniBob = mock(ConnectionOptions.class, withSettings().lenient());
+    when(optionsOmniBob.getHost()).thenReturn("localhost:15000");
+    when(optionsOmniBob.getProjectId()).thenReturn(SpannerOptions.SPANNER_OMNI_PROJECT_ID);
+    when(optionsOmniBob.getInstanceType()).thenReturn(SpannerOptions.InstanceType.OMNI);
+    SpannerOmniCredentials credentialsBob =
+        new SpannerOmniCredentials(
+            "bob",
+            SpannerOmniCredentials.convertToSecretBytes(new char[] {'p', 'a', 's', 's', '1'}),
+            "localhost:15000");
+    when(optionsOmniBob.getCredentials()).thenReturn(credentialsBob);
+
+    ConnectionOptions optionsOmniNoCredentials =
+        mock(ConnectionOptions.class, withSettings().lenient());
+    when(optionsOmniNoCredentials.getHost()).thenReturn("localhost:15000");
+    when(optionsOmniNoCredentials.getProjectId())
+        .thenReturn(SpannerOptions.SPANNER_OMNI_PROJECT_ID);
+    when(optionsOmniNoCredentials.getInstanceType()).thenReturn(SpannerOptions.InstanceType.OMNI);
+    when(optionsOmniNoCredentials.getCredentials()).thenReturn(NoCredentials.getInstance());
+
+    // 1. Same user and password reuses the Spanner client.
+    Spanner spannerAlice1 = pool.getSpanner(optionsOmniAlice1, connection1);
+    Spanner spannerAlice1Duplicate = pool.getSpanner(optionsOmniAlice1Duplicate, connection2);
+    assertEquals(spannerAlice1, spannerAlice1Duplicate);
+
+    // 2. Same user with wrong password does NOT reuse the Spanner client (prevents auth bypass).
+    Spanner spannerAliceWrongPassword = pool.getSpanner(optionsOmniAliceWrongPassword, connection3);
+    assertNotEquals(spannerAlice1, spannerAliceWrongPassword);
+
+    // 3. Different user does NOT reuse the Spanner client.
+    Spanner spannerBob = pool.getSpanner(optionsOmniBob, connection1);
+    assertNotEquals(spannerAlice1, spannerBob);
+    assertNotEquals(spannerAliceWrongPassword, spannerBob);
+
+    // 4. No credentials does NOT reuse the authenticated Spanner client.
+    Spanner spannerNoCredentials = pool.getSpanner(optionsOmniNoCredentials, connection2);
+    assertNotEquals(spannerAlice1, spannerNoCredentials);
+  }
+
+  @Test
+  public void testGetSpannerWithEncodedCredentials() {
+    SpannerPool pool = createSubjectAndMocks();
+
+    ConnectionOptions optionsTenantA1 = mock(ConnectionOptions.class, withSettings().lenient());
+    when(optionsTenantA1.getProjectId()).thenReturn("test-project-1");
+    when(optionsTenantA1.getEncodedCredentialsHash()).thenReturn("encoded:hash_tenant_a");
+
+    ConnectionOptions optionsTenantA2 = mock(ConnectionOptions.class, withSettings().lenient());
+    when(optionsTenantA2.getProjectId()).thenReturn("test-project-1");
+    when(optionsTenantA2.getEncodedCredentialsHash()).thenReturn("encoded:hash_tenant_a");
+
+    ConnectionOptions optionsTenantB = mock(ConnectionOptions.class, withSettings().lenient());
+    when(optionsTenantB.getProjectId()).thenReturn("test-project-1");
+    when(optionsTenantB.getEncodedCredentialsHash()).thenReturn("encoded:hash_tenant_b");
+
+    ConnectionOptions optionsDefaultCredentials =
+        mock(ConnectionOptions.class, withSettings().lenient());
+    when(optionsDefaultCredentials.getProjectId()).thenReturn("test-project-1");
+
+    // 1. Same tenant with identical encodedCredentials shares the Spanner instance.
+    Spanner spannerTenantA1 = pool.getSpanner(optionsTenantA1, connection1);
+    Spanner spannerTenantA2 = pool.getSpanner(optionsTenantA2, connection2);
+    assertEquals(spannerTenantA1, spannerTenantA2);
+
+    // 2. Different tenant with different encodedCredentials gets a separate Spanner instance
+    // (prevents cross-tenant credential reuse).
+    Spanner spannerTenantB = pool.getSpanner(optionsTenantB, connection3);
+    assertNotEquals(spannerTenantA1, spannerTenantB);
+
+    // 3. Connection with default credentials does NOT reuse the tenant's Spanner instance.
+    Spanner spannerDefault = pool.getSpanner(optionsDefaultCredentials, connection1);
+    assertNotEquals(spannerTenantA1, spannerDefault);
+    assertNotEquals(spannerTenantB, spannerDefault);
+  }
+
+  @Test
+  public void testGetSpannerWithOAuthToken() {
+    SpannerPool pool = createSubjectAndMocks();
+
+    ConnectionOptions optionsOAuth1 = mock(ConnectionOptions.class, withSettings().lenient());
+    when(optionsOAuth1.getProjectId()).thenReturn("test-project-1");
+    when(optionsOAuth1.getOAuthTokenHash()).thenReturn("oauth:hash_token_1");
+
+    ConnectionOptions optionsOAuth1Duplicate =
+        mock(ConnectionOptions.class, withSettings().lenient());
+    when(optionsOAuth1Duplicate.getProjectId()).thenReturn("test-project-1");
+    when(optionsOAuth1Duplicate.getOAuthTokenHash()).thenReturn("oauth:hash_token_1");
+
+    ConnectionOptions optionsOAuth2 = mock(ConnectionOptions.class, withSettings().lenient());
+    when(optionsOAuth2.getProjectId()).thenReturn("test-project-1");
+    when(optionsOAuth2.getOAuthTokenHash()).thenReturn("oauth:hash_token_2");
+
+    // 1. Same OAuth token shares the Spanner instance.
+    Spanner spanner1 = pool.getSpanner(optionsOAuth1, connection1);
+    Spanner spanner1Duplicate = pool.getSpanner(optionsOAuth1Duplicate, connection2);
+    assertEquals(spanner1, spanner1Duplicate);
+
+    // 2. Different OAuth token gets a separate Spanner instance.
+    Spanner spanner2 = pool.getSpanner(optionsOAuth2, connection3);
+    assertNotEquals(spanner1, spanner2);
+  }
+
+  @Test
+  public void testPoolKeyWithOmniCredentialsFromUri() {
+    ConnectionOptions optionsAlice =
+        ConnectionOptions.newBuilder()
+            .setUri(
+                "spanner://localhost:15000/projects/default/instances/default/databases/test-db"
+                    + ";usePlainText=true;type=omni;username=alice;password=correct_password")
+            .build();
+    ConnectionOptions optionsAliceDuplicate =
+        ConnectionOptions.newBuilder()
+            .setUri(
+                "spanner://localhost:15000/projects/default/instances/default/databases/test-db"
+                    + ";usePlainText=true;type=omni;username=alice;password=correct_password")
+            .build();
+    ConnectionOptions optionsAliceWrongPassword =
+        ConnectionOptions.newBuilder()
+            .setUri(
+                "spanner://localhost:15000/projects/default/instances/default/databases/test-db"
+                    + ";usePlainText=true;type=omni;username=alice;password=wrong_password")
+            .build();
+    ConnectionOptions optionsBob =
+        ConnectionOptions.newBuilder()
+            .setUri(
+                "spanner://localhost:15000/projects/default/instances/default/databases/test-db"
+                    + ";usePlainText=true;type=omni;username=bob;password=correct_password")
+            .build();
+    ConnectionOptions optionsAliceHttps =
+        ConnectionOptions.newBuilder()
+            .setUri(
+                "spanner://localhost:15000/projects/default/instances/default/databases/test-db"
+                    + ";usePlainText=false;type=omni;username=alice;password=correct_password")
+            .build();
+
+    SpannerPoolKey keyAlice = SpannerPoolKey.of(optionsAlice);
+    SpannerPoolKey keyAliceDuplicate = SpannerPoolKey.of(optionsAliceDuplicate);
+    SpannerPoolKey keyAliceWrongPassword = SpannerPoolKey.of(optionsAliceWrongPassword);
+    SpannerPoolKey keyBob = SpannerPoolKey.of(optionsBob);
+    SpannerPoolKey keyAliceHttps = SpannerPoolKey.of(optionsAliceHttps);
+
+    assertEquals(keyAlice, keyAliceDuplicate);
+    assertEquals(keyAlice.hashCode(), keyAliceDuplicate.hashCode());
+
+    assertNotEquals(keyAlice, keyAliceWrongPassword);
+    assertNotEquals(keyAlice, keyBob);
+    assertNotEquals(keyAliceWrongPassword, keyBob);
+    assertNotEquals(keyAlice, keyAliceHttps);
+  }
+
+  @Test
+  public void testPoolKeyWithOAuthTokenFromUri() {
+    ConnectionOptions optionsToken1 =
+        ConnectionOptions.newBuilder()
+            .setUri(
+                "cloudspanner:/projects/test-project/instances/test-instance/databases/test-database?oauthToken=token1")
+            .build();
+    ConnectionOptions optionsToken1Duplicate =
+        ConnectionOptions.newBuilder()
+            .setUri(
+                "cloudspanner:/projects/test-project/instances/test-instance/databases/test-database?oauthToken=token1")
+            .build();
+    ConnectionOptions optionsToken2 =
+        ConnectionOptions.newBuilder()
+            .setUri(
+                "cloudspanner:/projects/test-project/instances/test-instance/databases/test-database?oauthToken=token2")
+            .build();
+
+    SpannerPoolKey key1 = SpannerPoolKey.of(optionsToken1);
+    SpannerPoolKey key1Duplicate = SpannerPoolKey.of(optionsToken1Duplicate);
+    SpannerPoolKey key2 = SpannerPoolKey.of(optionsToken2);
+
+    assertEquals(key1, key1Duplicate);
+    assertEquals(key1.hashCode(), key1Duplicate.hashCode());
+
+    assertNotEquals(key1, key2);
+  }
+
+  @Test
+  public void testPoolKeyWithEncodedCredentialsFromUri() throws Throwable {
+    ConnectionOptionsTest.runWithSystemPropertyEnabled(
+        ConnectionOptions.ENABLE_ENCODED_CREDENTIALS_SYSTEM_PROPERTY,
+        () -> {
+          String key1Path = ConnectionOptionsTest.class.getResource("test-key.json").getFile();
+          String key2Path =
+              ConnectionOptionsTest.class.getResource("test-key-app-default.json").getFile();
+          String encoded1 =
+              BaseEncoding.base64Url().encode(Files.asByteSource(new File(key1Path)).read());
+          String encoded2 =
+              BaseEncoding.base64Url().encode(Files.asByteSource(new File(key2Path)).read());
+
+          ConnectionOptions options1 =
+              ConnectionOptions.newBuilder()
+                  .setUri(
+                      "cloudspanner:/projects/test-project/instances/test-instance/databases/test-database?encodedCredentials="
+                          + encoded1)
+                  .build();
+          ConnectionOptions options1Duplicate =
+              ConnectionOptions.newBuilder()
+                  .setUri(
+                      "cloudspanner:/projects/test-project/instances/test-instance/databases/test-database?encodedCredentials="
+                          + encoded1)
+                  .build();
+          ConnectionOptions options2 =
+              ConnectionOptions.newBuilder()
+                  .setUri(
+                      "cloudspanner:/projects/test-project/instances/test-instance/databases/test-database?encodedCredentials="
+                          + encoded2)
+                  .build();
+
+          SpannerPoolKey poolKey1 = SpannerPoolKey.of(options1);
+          SpannerPoolKey poolKey1Duplicate = SpannerPoolKey.of(options1Duplicate);
+          SpannerPoolKey poolKey2 = SpannerPoolKey.of(options2);
+
+          assertEquals(poolKey1, poolKey1Duplicate);
+          assertEquals(poolKey1.hashCode(), poolKey1Duplicate.hashCode());
+
+          assertNotEquals(poolKey1, poolKey2);
+        });
+  }
+
+  @Test
+  public void testCredentialsKeyWithNullCredentialsFromProvider() throws IOException {
+    ConnectionOptions optionsWithNullProviderCredentials =
+        mock(ConnectionOptions.class, withSettings().lenient());
+    when(optionsWithNullProviderCredentials.getCredentialsProvider()).thenReturn(() -> null);
+    when(optionsWithNullProviderCredentials.getCredentials()).thenReturn(null);
+
+    ConnectionOptions defaultOptions = mock(ConnectionOptions.class, withSettings().lenient());
+
+    CredentialsKey keyWithNullProvider = CredentialsKey.create(optionsWithNullProviderCredentials);
+    CredentialsKey defaultKey = CredentialsKey.create(defaultOptions);
+
+    assertEquals(defaultKey, keyWithNullProvider);
+    assertEquals(defaultKey.hashCode(), keyWithNullProvider.hashCode());
   }
 }
