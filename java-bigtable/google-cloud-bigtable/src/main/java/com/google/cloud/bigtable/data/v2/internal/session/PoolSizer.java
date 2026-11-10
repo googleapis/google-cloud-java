@@ -42,7 +42,7 @@ class PoolSizer {
   // the session is ready it takes 10-40ms to process all pending calls.
   private volatile int pendingVRpcsPerSession;
 
-  private boolean disabled;
+  private volatile boolean disabled;
 
   interface Sized {
     int getSize();

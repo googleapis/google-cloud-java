@@ -88,9 +88,9 @@ class SessionList {
   void removeUnstartedHandle(SessionHandle handle) {
     if (allSessions.remove(handle)) {
       poolStats.startingCount--;
-      if (handle.inExpectedCount) {
+      if (!handle.closing) {
         poolStats.expectedCapacity--;
-        handle.inExpectedCount = false;
+        handle.closing = true;
       }
     }
   }
