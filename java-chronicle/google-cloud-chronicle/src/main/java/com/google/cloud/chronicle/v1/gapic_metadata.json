@@ -415,6 +415,21 @@
           }
         }
       }
+    },
+    "SearchService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "SearchServiceClient",
+          "rpcs": {
+            "ListSearchedResults": {
+              "methods": ["listSearchedResults", "listSearchedResults", "listSearchedResults", "listSearchedResultsPagedCallable", "listSearchedResultsCallable"]
+            },
+            "Search": {
+              "methods": ["searchAsync", "searchAsync", "searchAsync", "searchOperationCallable", "searchCallable"]
+            }
+          }
+        }
+      }
     }
   }
 }

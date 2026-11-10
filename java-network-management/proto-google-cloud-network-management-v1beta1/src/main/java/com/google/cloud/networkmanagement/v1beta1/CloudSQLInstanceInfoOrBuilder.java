@@ -56,7 +56,8 @@ public interface CloudSQLInstanceInfoOrBuilder
    *
    *
    * <pre>
-   * URI of a Cloud SQL instance.
+   * URI of a Cloud SQL instance in format
+   * "projects/{project}/instances/{instance}"
    * </pre>
    *
    * <code>string uri = 2;</code>
@@ -69,7 +70,8 @@ public interface CloudSQLInstanceInfoOrBuilder
    *
    *
    * <pre>
-   * URI of a Cloud SQL instance.
+   * URI of a Cloud SQL instance in format
+   * "projects/{project}/instances/{instance}"
    * </pre>
    *
    * <code>string uri = 2;</code>
@@ -83,7 +85,7 @@ public interface CloudSQLInstanceInfoOrBuilder
    *
    * <pre>
    * URI of a Cloud SQL instance network or empty string if the instance does
-   * not have one.
+   * not have one. In format "projects/{project}/global/networks/{network}".
    * </pre>
    *
    * <code>string network_uri = 4;</code>
@@ -97,7 +99,7 @@ public interface CloudSQLInstanceInfoOrBuilder
    *
    * <pre>
    * URI of a Cloud SQL instance network or empty string if the instance does
-   * not have one.
+   * not have one. In format "projects/{project}/global/networks/{network}".
    * </pre>
    *
    * <code>string network_uri = 4;</code>

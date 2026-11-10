@@ -78,6 +78,60 @@ public interface NetworkOrBuilder
    *
    *
    * <pre>
+   * Output only. [Output Only] Additional tags for this resource.
+   * </pre>
+   *
+   * <code>repeated string additional_tags = 418903345;</code>
+   *
+   * @return A list containing the additionalTags.
+   */
+  java.util.List<java.lang.String> getAdditionalTagsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] Additional tags for this resource.
+   * </pre>
+   *
+   * <code>repeated string additional_tags = 418903345;</code>
+   *
+   * @return The count of additionalTags.
+   */
+  int getAdditionalTagsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] Additional tags for this resource.
+   * </pre>
+   *
+   * <code>repeated string additional_tags = 418903345;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The additionalTags at the given index.
+   */
+  java.lang.String getAdditionalTags(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] Additional tags for this resource.
+   * </pre>
+   *
+   * <code>repeated string additional_tags = 418903345;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the additionalTags at the given index.
+   */
+  com.google.protobuf.ByteString getAdditionalTagsBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * Must be set to create a VPC network. If not set, a legacy network is
    * created.
    *

@@ -794,6 +794,31 @@ public final class ExadbVmCluster extends com.google.protobuf.GeneratedMessage
         : identityConnector_;
   }
 
+  public static final int IDENTITY_CONNECTOR_DISABLED_FIELD_NUMBER = 13;
+  private boolean identityConnectorDisabled_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. If set to true, disables the automatic
+   * provisioning of the Workload Identity Connector during creation. If set to
+   * false or omitted, the Workload Identity Connector will be automatically
+   * provisioned by default. Note: Provisioning the Workload Identity Connector
+   * is a prerequisite for enabling Google Cloud CMEK.
+   * </pre>
+   *
+   * <code>
+   * bool identity_connector_disabled = 13 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The identityConnectorDisabled.
+   */
+  @java.lang.Override
+  public boolean getIdentityConnectorDisabled() {
+    return identityConnectorDisabled_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -839,6 +864,9 @@ public final class ExadbVmCluster extends com.google.protobuf.GeneratedMessage
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(12, getIdentityConnector());
+    }
+    if (identityConnectorDisabled_ != false) {
+      output.writeBool(13, identityConnectorDisabled_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -889,6 +917,9 @@ public final class ExadbVmCluster extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(12, getIdentityConnector());
     }
+    if (identityConnectorDisabled_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(13, identityConnectorDisabled_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -925,6 +956,7 @@ public final class ExadbVmCluster extends com.google.protobuf.GeneratedMessage
     if (hasIdentityConnector()) {
       if (!getIdentityConnector().equals(other.getIdentityConnector())) return false;
     }
+    if (getIdentityConnectorDisabled() != other.getIdentityConnectorDisabled()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -966,6 +998,8 @@ public final class ExadbVmCluster extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + IDENTITY_CONNECTOR_FIELD_NUMBER;
       hash = (53 * hash) + getIdentityConnector().hashCode();
     }
+    hash = (37 * hash) + IDENTITY_CONNECTOR_DISABLED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIdentityConnectorDisabled());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1164,6 +1198,7 @@ public final class ExadbVmCluster extends com.google.protobuf.GeneratedMessage
         identityConnectorBuilder_.dispose();
         identityConnectorBuilder_ = null;
       }
+      identityConnectorDisabled_ = false;
       return this;
     }
 
@@ -1241,6 +1276,9 @@ public final class ExadbVmCluster extends com.google.protobuf.GeneratedMessage
                 : identityConnectorBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.identityConnectorDisabled_ = identityConnectorDisabled_;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -1302,6 +1340,9 @@ public final class ExadbVmCluster extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasIdentityConnector()) {
         mergeIdentityConnector(other.getIdentityConnector());
+      }
+      if (other.getIdentityConnectorDisabled() != false) {
+        setIdentityConnectorDisabled(other.getIdentityConnectorDisabled());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1404,6 +1445,12 @@ public final class ExadbVmCluster extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000400;
                 break;
               } // case 98
+            case 104:
+              {
+                identityConnectorDisabled_ = input.readBool();
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 104
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3153,6 +3200,80 @@ public final class ExadbVmCluster extends com.google.protobuf.GeneratedMessage
         identityConnector_ = null;
       }
       return identityConnectorBuilder_;
+    }
+
+    private boolean identityConnectorDisabled_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Immutable. If set to true, disables the automatic
+     * provisioning of the Workload Identity Connector during creation. If set to
+     * false or omitted, the Workload Identity Connector will be automatically
+     * provisioned by default. Note: Provisioning the Workload Identity Connector
+     * is a prerequisite for enabling Google Cloud CMEK.
+     * </pre>
+     *
+     * <code>
+     * bool identity_connector_disabled = 13 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return The identityConnectorDisabled.
+     */
+    @java.lang.Override
+    public boolean getIdentityConnectorDisabled() {
+      return identityConnectorDisabled_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Immutable. If set to true, disables the automatic
+     * provisioning of the Workload Identity Connector during creation. If set to
+     * false or omitted, the Workload Identity Connector will be automatically
+     * provisioned by default. Note: Provisioning the Workload Identity Connector
+     * is a prerequisite for enabling Google Cloud CMEK.
+     * </pre>
+     *
+     * <code>
+     * bool identity_connector_disabled = 13 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @param value The identityConnectorDisabled to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIdentityConnectorDisabled(boolean value) {
+
+      identityConnectorDisabled_ = value;
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Immutable. If set to true, disables the automatic
+     * provisioning of the Workload Identity Connector during creation. If set to
+     * false or omitted, the Workload Identity Connector will be automatically
+     * provisioned by default. Note: Provisioning the Workload Identity Connector
+     * is a prerequisite for enabling Google Cloud CMEK.
+     * </pre>
+     *
+     * <code>
+     * bool identity_connector_disabled = 13 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearIdentityConnectorDisabled() {
+      bitField0_ = (bitField0_ & ~0x00000800);
+      identityConnectorDisabled_ = false;
+      onChanged();
+      return this;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.oracledatabase.v1.ExadbVmCluster)

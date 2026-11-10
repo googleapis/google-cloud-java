@@ -3140,4 +3140,49 @@ public interface LineItemOrBuilder
    * @return The enum numeric value on the wire of allowedFormats at the given index.
    */
   int getAllowedFormatsValue(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The allocation delivery profile for the line item.
+   * </pre>
+   *
+   * <code>
+   * optional string allocation_delivery_profile = 131 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return Whether the allocationDeliveryProfile field is set.
+   */
+  boolean hasAllocationDeliveryProfile();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The allocation delivery profile for the line item.
+   * </pre>
+   *
+   * <code>
+   * optional string allocation_delivery_profile = 131 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The allocationDeliveryProfile.
+   */
+  java.lang.String getAllocationDeliveryProfile();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The allocation delivery profile for the line item.
+   * </pre>
+   *
+   * <code>
+   * optional string allocation_delivery_profile = 131 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for allocationDeliveryProfile.
+   */
+  com.google.protobuf.ByteString getAllocationDeliveryProfileBytes();
 }

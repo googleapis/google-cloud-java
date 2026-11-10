@@ -85,6 +85,14 @@ public final class HypercomputeClusterProto extends com.google.protobuf.Generate
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_hypercomputecluster_v1beta_DeleteClusterRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_hypercomputecluster_v1beta_ListNodesRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_hypercomputecluster_v1beta_ListNodesRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_hypercomputecluster_v1beta_ListNodesResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_hypercomputecluster_v1beta_ListNodesResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_hypercomputecluster_v1beta_NetworkResource_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_hypercomputecluster_v1beta_NetworkResource_fieldAccessorTable;
@@ -161,6 +169,10 @@ public final class HypercomputeClusterProto extends com.google.protobuf.Generate
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_hypercomputecluster_v1beta_ExistingLustreConfig_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_hypercomputecluster_v1beta_ExistingNfsConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_hypercomputecluster_v1beta_ExistingNfsConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_hypercomputecluster_v1beta_ComputeResource_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_hypercomputecluster_v1beta_ComputeResource_fieldAccessorTable;
@@ -209,6 +221,10 @@ public final class HypercomputeClusterProto extends com.google.protobuf.Generate
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_hypercomputecluster_v1beta_ComputeInstanceSlurmNodeSet_LabelsEntry_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_hypercomputecluster_v1beta_ResourcePolicyConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_hypercomputecluster_v1beta_ResourcePolicyConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_hypercomputecluster_v1beta_SlurmPartition_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_hypercomputecluster_v1beta_SlurmPartition_fieldAccessorTable;
@@ -221,6 +237,10 @@ public final class HypercomputeClusterProto extends com.google.protobuf.Generate
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_hypercomputecluster_v1beta_SlurmLoginNodes_LabelsEntry_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_hypercomputecluster_v1beta_ServiceAccount_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_hypercomputecluster_v1beta_ServiceAccount_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_hypercomputecluster_v1beta_StorageConfig_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_hypercomputecluster_v1beta_StorageConfig_fieldAccessorTable;
@@ -228,6 +248,58 @@ public final class HypercomputeClusterProto extends com.google.protobuf.Generate
       internal_static_google_cloud_hypercomputecluster_v1beta_ComputeInstance_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_hypercomputecluster_v1beta_ComputeInstance_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_hypercomputecluster_v1beta_Node_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_hypercomputecluster_v1beta_Node_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_hypercomputecluster_v1beta_SlurmNodeDetails_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_hypercomputecluster_v1beta_SlurmNodeDetails_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_hypercomputecluster_v1beta_ComputeEngineNodeDetails_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_hypercomputecluster_v1beta_ComputeEngineNodeDetails_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_hypercomputecluster_v1beta_ComputeEngineOrchestrator_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_hypercomputecluster_v1beta_ComputeEngineOrchestrator_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_hypercomputecluster_v1beta_ComputeEngineOrchestrator_ManagedInstanceGroupsEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_hypercomputecluster_v1beta_ComputeEngineOrchestrator_ManagedInstanceGroupsEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_hypercomputecluster_v1beta_ComputeEngineOrchestrator_ExistingInstancesEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_hypercomputecluster_v1beta_ComputeEngineOrchestrator_ExistingInstancesEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_hypercomputecluster_v1beta_ManagedInstanceGroup_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_hypercomputecluster_v1beta_ManagedInstanceGroup_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_hypercomputecluster_v1beta_ManagedInstanceGroup_AdditionalDisksEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_hypercomputecluster_v1beta_ManagedInstanceGroup_AdditionalDisksEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_hypercomputecluster_v1beta_ManagedInstanceGroup_MetadataEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_hypercomputecluster_v1beta_ManagedInstanceGroup_MetadataEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_hypercomputecluster_v1beta_ManagedInstanceGroup_LabelsEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_hypercomputecluster_v1beta_ManagedInstanceGroup_LabelsEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_hypercomputecluster_v1beta_Disk_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_hypercomputecluster_v1beta_Disk_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_hypercomputecluster_v1beta_ExistingInstances_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_hypercomputecluster_v1beta_ExistingInstances_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_hypercomputecluster_v1beta_ExistingInstances_LabelsEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_hypercomputecluster_v1beta_ExistingInstances_LabelsEntry_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -246,7 +318,7 @@ public final class HypercomputeClusterProto extends com.google.protobuf.Generate
           + "esource.proto\032@google/cloud/hypercomputecluster/v1beta/operation_metadata.proto\032"
           + "#google/longrunning/operations.proto\032\036go"
           + "ogle/protobuf/duration.proto\032\033google/protobuf/empty.proto\032"
-          + " google/protobuf/field_mask.proto\032\037google/protobuf/timestamp.proto\"\253\t\n"
+          + " google/protobuf/field_mask.proto\032\037google/protobuf/timestamp.proto\"\306\t\n"
           + "\007Cluster\022\022\n"
           + "\004name\030\001 \001(\tB\004\342A\001\010\022\031\n"
           + "\013description\030\t \001(\tB\004\342A\001\001\022R\n"
@@ -266,34 +338,35 @@ public final class HypercomputeClusterProto extends com.google.protobuf.Generate
           + " \003(\0132F.google.cloud.hypercomputecluster.v1b"
           + "eta.Cluster.ComputeResourcesEntryB\004\342A\001\001\022Q\n"
           + "\014orchestrator\030\010 \001(\01325.google.cloud.hyp"
-          + "ercomputecluster.v1beta.OrchestratorB\004\342A\001\001\032-\n"
+          + "ercomputecluster.v1beta.OrchestratorB\004\342A\001\001\022\031\n"
+          + "\003uid\030\020 \001(\tB\014\342A\001\003\342\214\317\327\010\002\010\001\032-\n"
           + "\013LabelsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001\032q\n"
           + "\025NetworkResourcesEntry\022\013\n"
           + "\003key\030\001 \001(\t\022G\n"
-          + "\005value\030\002 \001(\01328.google.cloud.hy"
-          + "percomputecluster.v1beta.NetworkResource:\0028\001\032q\n"
+          + "\005value\030\002"
+          + " \001(\01328.google.cloud.hypercomputecluster.v1beta.NetworkResource:\0028\001\032q\n"
           + "\025StorageResourcesEntry\022\013\n"
           + "\003key\030\001 \001(\t\022G\n"
-          + "\005value\030\002 \001(\01328.google.cloud.hyperco"
-          + "mputecluster.v1beta.StorageResource:\0028\001\032q\n"
+          + "\005value\030\002"
+          + " \001(\01328.google.cloud.hypercomputecluster.v1beta.StorageResource:\0028\001\032q\n"
           + "\025ComputeResourcesEntry\022\013\n"
           + "\003key\030\001 \001(\t\022G\n"
-          + "\005value\030\002"
-          + " \001(\01328.google.cloud.hypercomputecluster.v1beta.ComputeResource:\0028\001:~\352A{\n"
-          + "*hypercomputecluster.googleapis.com/Cluster\022:projects/{project}/locations/{locat"
-          + "ion}/clusters/{cluster}*\010clusters2\007cluster\"\273\001\n"
+          + "\005value\030\002 \001(\0132"
+          + "8.google.cloud.hypercomputecluster.v1beta.ComputeResource:\0028\001:~\352A{\n"
+          + "*hypercomputecluster.googleapis.com/Cluster\022:projects"
+          + "/{project}/locations/{location}/clusters/{cluster}*\010clusters2\007cluster\"\273\001\n"
           + "\023ListClustersRequest\022C\n"
-          + "\006parent\030\001 \001("
-          + "\tB3\342A\001\002\372A,\022*hypercomputecluster.googleapis.com/Cluster\022\027\n"
+          + "\006parent\030\001 \001(\tB3\342A\001\002\372A,\022*"
+          + "hypercomputecluster.googleapis.com/Cluster\022\027\n"
           + "\tpage_size\030\002 \001(\005B\004\342A\001\001\022\030\n\n"
           + "page_token\030\003 \001(\tB\004\342A\001\001\022\024\n"
           + "\006filter\030\004 \001(\tB\004\342A\001\001\022\026\n"
           + "\010order_by\030\005 \001(\tB\004\342A\001\001\"\210\001\n"
           + "\024ListClustersResponse\022B\n"
-          + "\010clusters\030\001 \003(\01320.go"
-          + "ogle.cloud.hypercomputecluster.v1beta.Cluster\022\027\n"
+          + "\010clusters\030\001"
+          + " \003(\01320.google.cloud.hypercomputecluster.v1beta.Cluster\022\027\n"
           + "\017next_page_token\030\002 \001(\t\022\023\n"
           + "\013unreachable\030\003 \003(\t\"V\n"
           + "\021GetClusterRequest\022A\n"
@@ -303,13 +376,13 @@ public final class HypercomputeClusterProto extends com.google.protobuf.Generate
           + "\006parent\030\001 \001("
           + "\tB3\342A\001\002\372A,\022*hypercomputecluster.googleapis.com/Cluster\022\030\n\n"
           + "cluster_id\030\002 \001(\tB\004\342A\001\002\022G\n"
-          + "\007cluster\030\003 \001(\01320.g"
-          + "oogle.cloud.hypercomputecluster.v1beta.ClusterB\004\342A\001\002\022 \n\n"
+          + "\007cluster\030\003 \001(\01320.google.cloud.h"
+          + "ypercomputecluster.v1beta.ClusterB\004\342A\001\002\022 \n\n"
           + "request_id\030\004 \001("
           + "\tB\014\342A\001\001\342\214\317\327\010\002\010\001\"\270\001\n"
           + "\024UpdateClusterRequest\022G\n"
-          + "\007cluster\030\002"
-          + " \001(\01320.google.cloud.hypercomputecluster.v1beta.ClusterB\004\342A\001\002\0225\n"
+          + "\007cluster\030\002 \001(\01320.go"
+          + "ogle.cloud.hypercomputecluster.v1beta.ClusterB\004\342A\001\002\0225\n"
           + "\013update_mask\030\001 \001(\0132\032.google.protobuf.FieldMaskB\004\342A\001\001\022"
           + " \n\n"
           + "request_id\030\003 \001(\tB\014\342A\001\001\342\214\317\327\010\002\010\001\"{\n"
@@ -317,12 +390,22 @@ public final class HypercomputeClusterProto extends com.google.protobuf.Generate
           + "\004name\030\001 \001(\tB3\342A\001\002\372A,\n"
           + "*hypercomputecluster.googleapis.com/Cluster\022 \n\n"
           + "request_id\030\002 \001("
-          + "\tB\014\342A\001\001\342\214\317\327\010\002\010\001\"\302\001\n"
-          + "\017NetworkResource\022L\n"
-          + "\007network\030\003 \001(\01329.go"
-          + "ogle.cloud.hypercomputecluster.v1beta.NetworkReferenceH\000\022T\n"
-          + "\006config\030\002 \001(\0132>.googl"
-          + "e.cloud.hypercomputecluster.v1beta.NetworkResourceConfigB\004\342A\001\005B\013\n"
+          + "\tB\014\342A\001\001\342\214\317\327\010\002\010\001\"\265\001\n"
+          + "\020ListNodesRequest\022@\n"
+          + "\006parent\030\001 \001("
+          + "\tB0\342A\001\002\372A)\022\'hypercomputecluster.googleapis.com/Node\022\027\n"
+          + "\tpage_size\030\002 \001(\005B\004\342A\001\001\022\030\n\n"
+          + "page_token\030\003 \001(\tB\004\342A\001\001\022\024\n"
+          + "\006filter\030\004 \001(\tB\004\342A\001\001\022\026\n"
+          + "\010order_by\030\005 \001(\tB\004\342A\001\001\"j\n"
+          + "\021ListNodesResponse\022<\n"
+          + "\005nodes\030\001 \003(\0132-.google.cloud.hypercomputecluster.v1beta.Node\022\027\n"
+          + "\017next_page_token\030\002 \001(\t\"\310\001\n"
+          + "\017NetworkResource\022R\n"
+          + "\007network\030\003 \001(\01329.goo"
+          + "gle.cloud.hypercomputecluster.v1beta.NetworkReferenceB\004\342A\001\003H\000\022T\n"
+          + "\006config\030\002 \001(\0132>."
+          + "google.cloud.hypercomputecluster.v1beta.NetworkResourceConfigB\004\342A\001\005B\013\n"
           + "\treference\"\214\001\n"
           + "\020NetworkReference\0228\n"
           + "\007network\030\001 \001(\tB\'\342A\001\003\372A \n"
@@ -330,10 +413,10 @@ public final class HypercomputeClusterProto extends com.google.protobuf.Generate
           + "subnetwork\030\002 \001(\tB*\342A\001\003\372A#\n"
           + "!compute.googleapis.com/Subnetwork\"\335\001\n"
           + "\025NetworkResourceConfig\022W\n"
-          + "\013new_network\030\003 \001(\01329.google.cloud"
-          + ".hypercomputecluster.v1beta.NewNetworkConfigB\005\342A\002\001\005H\000\022a\n"
-          + "\020existing_network\030\004 \001(\0132"
-          + ">.google.cloud.hypercomputecluster.v1beta.ExistingNetworkConfigB\005\342A\002\001\005H\000B\010\n"
+          + "\013new_network\030\003 \001(\01329.google."
+          + "cloud.hypercomputecluster.v1beta.NewNetworkConfigB\005\342A\002\001\005H\000\022a\n"
+          + "\020existing_network\030\004"
+          + " \001(\0132>.google.cloud.hypercomputecluster.v1beta.ExistingNetworkConfigB\005\342A\002\001\005H\000B\010\n"
           + "\006config\"i\n"
           + "\020NewNetworkConfig\0229\n"
           + "\007network\030\001 \001(\tB(\342A\002\002\005\372A \n"
@@ -343,50 +426,53 @@ public final class HypercomputeClusterProto extends com.google.protobuf.Generate
           + "\007network\030\001 \001(\tB(\342A\002\002\005\372A \n"
           + "\036compute.googleapis.com/Network\022?\n\n"
           + "subnetwork\030\002 \001(\tB+\342A\002\002\005\372A#\n"
-          + "!compute.googleapis.com/Subnetwork\"\337\002\n"
-          + "\017StorageResource\022P\n"
-          + "\tfilestore\030\001 \001(\0132;.google.cloud.hyperc"
-          + "omputecluster.v1beta.FilestoreReferenceH\000\022J\n"
-          + "\006bucket\030\002"
-          + " \001(\01328.google.cloud.hypercomputecluster.v1beta.BucketReferenceH\000\022J\n"
-          + "\006lustre\030\003"
-          + " \001(\01328.google.cloud.hypercomputecluster.v1beta.LustreReferenceH\000\022U\n"
-          + "\006config\030\004 \001(\0132>.google.cloud.hypercomputeclu"
-          + "ster.v1beta.StorageResourceConfigB\005\342A\002\002\005B\013\n"
+          + "!compute.googleapis.com/Subnetwork\"\361\002\n"
+          + "\017StorageResource\022V\n"
+          + "\tfilestore\030\001 \001(\0132;.google.cloud.h"
+          + "ypercomputecluster.v1beta.FilestoreReferenceB\004\342A\001\003H\000\022P\n"
+          + "\006bucket\030\002 \001(\01328.google.cl"
+          + "oud.hypercomputecluster.v1beta.BucketReferenceB\004\342A\001\003H\000\022P\n"
+          + "\006lustre\030\003 \001(\01328.google."
+          + "cloud.hypercomputecluster.v1beta.LustreReferenceB\004\342A\001\003H\000\022U\n"
+          + "\006config\030\004 \001(\0132>.googl"
+          + "e.cloud.hypercomputecluster.v1beta.StorageResourceConfigB\005\342A\002\002\005B\013\n"
           + "\treference\"R\n"
           + "\022FilestoreReference\022<\n"
           + "\tfilestore\030\001 \001(\tB)\342A\001\003\372A\"\n"
           + " file.googleapis.com/FileInstance\"I\n"
           + "\017BucketReference\0226\n"
           + "\006bucket\030\001 \001(\tB&\342A\001\003\372A\037\n"
-          + "\035storage.googleapis.com/Bucket\"P\n"
-          + "\017LustreReference\022=\n"
-          + "\006lustre\030\001 \001(\tB-\342A\001\003\372A&\n"
-          + "$lustre.googleapis.com/LustreInstance\"\325\004\n"
+          + "\035storage.googleapis.com/Bucket\"J\n"
+          + "\017LustreReference\0227\n"
+          + "\006lustre\030\001 \001(\tB\'\342A\001\003\372A \n"
+          + "\036lustre.googleapis.com/Instance\"\260\005\n"
           + "\025StorageResourceConfig\022[\n\r"
-          + "new_filestore\030\001 \001(\0132;.google.cloud.h"
-          + "ypercomputecluster.v1beta.NewFilestoreConfigB\005\342A\002\001\005H\000\022e\n"
-          + "\022existing_filestore\030\002 \001("
-          + "\0132@.google.cloud.hypercomputecluster.v1beta.ExistingFilestoreConfigB\005\342A\002\001\005H\000\022U\n\n"
-          + "new_bucket\030\003 \001(\01328.google.cloud.hypercom"
-          + "putecluster.v1beta.NewBucketConfigB\005\342A\002\001\005H\000\022_\n"
-          + "\017existing_bucket\030\004 \001(\0132=.google.cl"
-          + "oud.hypercomputecluster.v1beta.ExistingBucketConfigB\005\342A\002\001\005H\000\022U\n\n"
-          + "new_lustre\030\005 \001(\013"
-          + "28.google.cloud.hypercomputecluster.v1beta.NewLustreConfigB\005\342A\002\001\005H\000\022_\n"
-          + "\017existing_lustre\030\006 \001(\0132=.google.cloud.hypercompute"
-          + "cluster.v1beta.ExistingLustreConfigB\005\342A\002\001\005H\000B\010\n"
+          + "new_filestore\030\001 \001(\013"
+          + "2;.google.cloud.hypercomputecluster.v1beta.NewFilestoreConfigB\005\342A\002\001\005H\000\022e\n"
+          + "\022existing_filestore\030\002 \001(\0132@.google.cloud.hyperc"
+          + "omputecluster.v1beta.ExistingFilestoreConfigB\005\342A\002\001\005H\000\022U\n\n"
+          + "new_bucket\030\003 \001(\01328.goog"
+          + "le.cloud.hypercomputecluster.v1beta.NewBucketConfigB\005\342A\002\001\005H\000\022_\n"
+          + "\017existing_bucket\030\004"
+          + " \001(\0132=.google.cloud.hypercomputecluster.v1beta.ExistingBucketConfigB\005\342A\002\001\005H\000\022U\n"
+          + "\n"
+          + "new_lustre\030\005 \001(\01328.google.cloud.hyperco"
+          + "mputecluster.v1beta.NewLustreConfigB\005\342A\002\001\005H\000\022_\n"
+          + "\017existing_lustre\030\006 \001(\0132=.google.c"
+          + "loud.hypercomputecluster.v1beta.ExistingLustreConfigB\005\342A\002\001\005H\000\022Y\n"
+          + "\014existing_nfs\030\007 "
+          + "\001(\0132:.google.cloud.hypercomputecluster.v1beta.ExistingNfsConfigB\005\342A\002\001\005H\000B\010\n"
           + "\006config\"\360\003\n"
           + "\022NewFilestoreConfig\022=\n"
           + "\tfilestore\030\001 \001(\tB*\342A\002\002\005\372A\"\n"
           + " file.googleapis.com/FileInstance\022\032\n"
           + "\013description\030\004 \001(\tB\005\342A\002\001\005\022T\n"
-          + "\013file_shares\030\002 \003(\01328.google.c"
-          + "loud.hypercomputecluster.v1beta.FileShareConfigB\005\342A\002\002\005\022U\n"
-          + "\004tier\030\003 \001(\0162@.google.cl"
-          + "oud.hypercomputecluster.v1beta.NewFilestoreConfig.TierB\005\342A\002\002\005\022^\n"
-          + "\010protocol\030\005 \001(\0162"
-          + "D.google.cloud.hypercomputecluster.v1beta.NewFilestoreConfig.ProtocolB\006\342A\003\001\001\005\"5\n"
+          + "\013file_shares\030\002 \003(\01328.google.cloud.hyperco"
+          + "mputecluster.v1beta.FileShareConfigB\005\342A\002\002\005\022U\n"
+          + "\004tier\030\003 \001(\0162@.google.cloud.hypercom"
+          + "putecluster.v1beta.NewFilestoreConfig.TierB\005\342A\002\002\005\022^\n"
+          + "\010protocol\030\005 \001(\0162D.google.clo"
+          + "ud.hypercomputecluster.v1beta.NewFilestoreConfig.ProtocolB\006\342A\003\001\001\005\"5\n"
           + "\004Tier\022\024\n"
           + "\020TIER_UNSPECIFIED\020\000\022\t\n"
           + "\005ZONAL\020\004\022\014\n"
@@ -400,110 +486,141 @@ public final class HypercomputeClusterProto extends com.google.protobuf.Generate
           + "file_share\030\002 \001(\tB\004\342A\001\002\"X\n"
           + "\027ExistingFilestoreConfig\022=\n"
           + "\tfilestore\030\001 \001(\tB*\342A\002\002\005\372A\"\n"
-          + " file.googleapis.com/FileInstance\"\352\003\n"
+          + " file.googleapis.com/FileInstance\"\365\003\n"
           + "\017NewBucketConfig\022W\n"
-          + "\tautoclass\030\002 \001(\0132;.goo"
-          + "gle.cloud.hypercomputecluster.v1beta.GcsAutoclassConfigB\005\342A\002\001\005H\000\022e\n\r"
-          + "storage_class\030\003 \001(\0162E.google.cloud.hypercomputeclust"
-          + "er.v1beta.NewBucketConfig.StorageClassB\005\342A\002\001\005H\000\0227\n"
+          + "\tautoclass\030\002 \001(\0132;.google.cloud.hy"
+          + "percomputecluster.v1beta.GcsAutoclassConfigB\005\342A\002\001\005H\000\022e\n\r"
+          + "storage_class\030\003 \001(\0162E.go"
+          + "ogle.cloud.hypercomputecluster.v1beta.NewBucketConfig.StorageClassB\005\342A\002\001\005H\000\0227\n"
           + "\006bucket\030\001 \001(\tB\'\342A\002\002\005\372A\037\n"
           + "\035storage.googleapis.com/Bucket\022n\n"
-          + "\026hierarchical_namespace\030\004 \001(\0132G.google.cloud.hypercom"
-          + "putecluster.v1beta.GcsHierarchicalNamespaceConfigB\005\342A\002\001\005\"d\n"
+          + "\026hierarchical_namespace\030\004 \001(\0132G.google.cloud.hypercomputecluster."
+          + "v1beta.GcsHierarchicalNamespaceConfigB\005\342A\002\001\005\"o\n"
           + "\014StorageClass\022\035\n"
           + "\031STORAGE_CLASS_UNSPECIFIED\020\000\022\014\n"
           + "\010STANDARD\020\001\022\014\n"
           + "\010NEARLINE\020\002\022\014\n"
           + "\010COLDLINE\020\003\022\013\n"
-          + "\007ARCHIVE\020\004B\010\n"
-          + "\006option\"\343\001\n"
+          + "\007ARCHIVE\020\004\022\t\n"
+          + "\005RAPID\020\005B\010\n"
+          + "\006option\"\376\001\n"
           + "\022GcsAutoclassConfig\022\025\n"
           + "\007enabled\030\001 \001(\010B\004\342A\001\002\022v\n"
-          + "\026terminal_storage_class\030\002 \001(\0162P.google.cloud.hypercomputecluste"
-          + "r.v1beta.GcsAutoclassConfig.TerminalStorageClassB\004\342A\001\001\">\n"
+          + "\026terminal_storage_class\030\002 \001(\0162P.google.cloud.hypercomputecluster"
+          + ".v1beta.GcsAutoclassConfig.TerminalStorageClassB\004\342A\001\001\"Y\n"
           + "\024TerminalStorageClass\022&\n"
-          + "\"TERMINAL_STORAGE_CLASS_UNSPECIFIED\020\000\"7\n"
+          + "\"TERMINAL_STORAGE_CLASS_UNSPECIFIED\020\000\022\014\n"
+          + "\010NEARLINE\020\001\022\013\n"
+          + "\007ARCHIVE\020\002\"7\n"
           + "\036GcsHierarchicalNamespaceConfig\022\025\n"
           + "\007enabled\030\001 \001(\010B\004\342A\001\002\"O\n"
           + "\024ExistingBucketConfig\0227\n"
           + "\006bucket\030\001 \001(\tB\'\342A\002\002\005\372A\037\n"
-          + "\035storage.googleapis.com/Bucket\"{\n"
+          + "\035storage.googleapis.com/Bucket\"\247\001\n"
           + "\017NewLustreConfig\022\025\n"
           + "\006lustre\030\001 \001(\tB\005\342A\002\002\005\022\032\n"
           + "\013description\030\002 \001(\tB\005\342A\002\001\005\022\031\n\n"
           + "filesystem\030\003 \001(\tB\005\342A\002\002\005\022\032\n"
-          + "\013capacity_gb\030\004 \001(\003B\005\342A\002\002\005\"V\n"
-          + "\024ExistingLustreConfig\022>\n"
-          + "\006lustre\030\001 \001(\tB.\342A\002\002\005\372A&\n"
-          + "$lustre.googleapis.com/LustreInstance\"h\n"
+          + "\013capacity_gb\030\004 \001(\003B\005\342A\002\002\005\022*\n"
+          + "\033per_unit_storage_throughput\030\005 \001(\003B\005\342A\002\001\005\"P\n"
+          + "\024ExistingLustreConfig\0228\n"
+          + "\006lustre\030\001 \001(\tB(\342A\002\002\005\372A \n"
+          + "\036lustre.googleapis.com/Instance\"x\n"
+          + "\021ExistingNfsConfig\022(\n"
+          + "\021server_ip_address\030\001 \001(\tB\r"
+          + "\342A\002\002\005\342\214\317\327\010\002\010\004\022\033\n"
+          + "\014remote_mount\030\002 \001(\tB\005\342A\002\002\005\022\034\n\r"
+          + "mount_options\030\003 \001(\tB\005\342A\002\001\005\"h\n"
           + "\017ComputeResource\022U\n"
-          + "\006config\030\006 \001(\0132>.google.cloud."
-          + "hypercomputecluster.v1beta.ComputeResourceConfigB\005\342A\002\002\005\"\325\003\n"
+          + "\006config\030\006 \001(\0132>.google.cloud.hypercomputec"
+          + "luster.v1beta.ComputeResourceConfigB\005\342A\002\002\005\"\325\003\n"
           + "\025ComputeResourceConfig\022m\n"
-          + "\027new_on_demand_instances\030\001 \001(\0132C.goo"
-          + "gle.cloud.hypercomputecluster.v1beta.NewOnDemandInstancesConfigB\005\342A\002\001\005H\000\022d\n"
-          + "\022new_spot_instances\030\002 \001(\0132?.google.cloud.hype"
-          + "rcomputecluster.v1beta.NewSpotInstancesConfigB\005\342A\002\001\005H\000\022l\n"
-          + "\026new_reserved_instances\030\003 \001(\0132C.google.cloud.hypercomputecluste"
-          + "r.v1beta.NewReservedInstancesConfigB\005\342A\002\001\005H\000\022o\n"
-          + "\030new_flex_start_instances\030\005 \001(\0132D"
-          + ".google.cloud.hypercomputecluster.v1beta.NewFlexStartInstancesConfigB\005\342A\002\001\005H\000B\010\n"
-          + "\006config\"N\n"
+          + "\027new_on_demand_instances\030\001 \001(\0132C.google.cloud.hyp"
+          + "ercomputecluster.v1beta.NewOnDemandInstancesConfigB\005\342A\002\001\005H\000\022d\n"
+          + "\022new_spot_instances\030\002 \001(\0132?.google.cloud.hypercomputeclust"
+          + "er.v1beta.NewSpotInstancesConfigB\005\342A\002\001\005H\000\022l\n"
+          + "\026new_reserved_instances\030\003 \001(\0132C.goog"
+          + "le.cloud.hypercomputecluster.v1beta.NewReservedInstancesConfigB\005\342A\002\001\005H\000\022o\n"
+          + "\030new_flex_start_instances\030\005 \001(\0132D.google.cloud"
+          + ".hypercomputecluster.v1beta.NewFlexStartInstancesConfigB\005\342A\002\001\005H\000B\010\n"
+          + "\006config\"k\n"
           + "\032NewOnDemandInstancesConfig\022\023\n"
           + "\004zone\030\001 \001(\tB\005\342A\002\002\005\022\033\n"
-          + "\014machine_type\030\002 \001(\tB\005\342A\002\002\005\"J\n"
+          + "\014machine_type\030\002 \001(\tB\005\342A\002\002\005\022\033\n"
+          + "\014network_tags\030\004 \003(\tB\005\342A\002\001\005\"\253\002\n"
           + "\026NewSpotInstancesConfig\022\023\n"
           + "\004zone\030\001 \001(\tB\005\342A\002\002\005\022\033\n"
-          + "\014machine_type\030\002 \001(\tB\005\342A\002\002\005\"k\n"
+          + "\014machine_type\030\002 \001(\tB\005\342A\002\002\005\022s\n"
+          + "\022termination_action\030\005 \001(\0162Q.google.cloud.hypercomputeclus"
+          + "ter.v1beta.NewSpotInstancesConfig.TerminationActionB\004\342A\001\001\022\033\n"
+          + "\014network_tags\030\006 \003(\tB\005\342A\002\001\005\"M\n"
+          + "\021TerminationAction\022\"\n"
+          + "\036TERMINATION_ACTION_UNSPECIFIED\020\000\022\010\n"
+          + "\004STOP\020\001\022\n\n"
+          + "\006DELETE\020\002\"\257\002\n"
           + "\032NewReservedInstancesConfig\022C\n"
           + "\013reservation\030\001 \001(\tB,\342A\002\001\005\372A$\n"
-          + "\"compute.googleapis.com/ReservationH\000B\010\n"
-          + "\006source\"\207\001\n"
+          + "\"compute.googleapis.com/ReservationH\000\022N\n"
+          + "\021reservation_block\030\007 \001(\tB1\342A\002\001\005\372A)\n"
+          + "\'compute.googleapis.com/ReservationBlockH\000\022U\n"
+          + "\025reservation_sub_block\030\010 \001(\tB4\342A\002\001\005\372A,\n"
+          + "*compute.googleapis.com/ReservationSubBlockH\000\022\033\n"
+          + "\014network_tags\030\t \003(\tB\005\342A\002\001\005B\010\n"
+          + "\006source\"\244\001\n"
           + "\033NewFlexStartInstancesConfig\022\023\n"
           + "\004zone\030\001 \001(\tB\005\342A\002\002\005\022\033\n"
           + "\014machine_type\030\002 \001(\tB\005\342A\002\002\005\0226\n"
           + "\014max_duration\030\003"
-          + " \001(\0132\031.google.protobuf.DurationB\005\342A\002\002\005\"[\n"
-          + "\010BootDisk\0227\n"
-          + "\004type\030\001 \001(\tB)\342A\002\002\005\372A!\n"
-          + "\037compute.googleapis.com/DiskType\022\026\n"
-          + "\007size_gb\030\002 \001(\003B\005\342A\002\002\005\"k\n"
+          + " \001(\0132\031.google.protobuf.DurationB\005\342A\002\002\005\022\033\n"
+          + "\014network_tags\030\007 \003(\tB\005\342A\002\001\005\"\235\001\n"
+          + "\010BootDisk\0226\n"
+          + "\004type\030\001 \001(\tB(\342A\001\001\372A!\n"
+          + "\037compute.googleapis.com/DiskType\022\025\n"
+          + "\007size_gb\030\002 \001(\003B\004\342A\001\001\022B\n\r"
+          + "storage_pools\030\005 \003(\tB+\342A\001\001\372A$\n"
+          + "\"compute.googleapis.com/StoragePool\"\317\001\n"
           + "\014Orchestrator\022Q\n"
-          + "\005slurm\030\001 \001(\0132:.google.cloud.hypercompu"
-          + "tecluster.v1beta.SlurmOrchestratorB\004\342A\001\001H\000B\010\n"
+          + "\005slurm\030\001 \001(\0132:.google."
+          + "cloud.hypercomputecluster.v1beta.SlurmOrchestratorB\004\342A\001\001H\000\022b\n"
+          + "\016compute_engine\030\002 \001(\0132B.google.cloud.hypercomputecluster.v1"
+          + "beta.ComputeEngineOrchestratorB\004\342A\001\001H\000B\010\n"
           + "\006option\"\362\002\n"
           + "\021SlurmOrchestrator\022S\n"
-          + "\013login_nodes\030\006 \001(\01328.google.cloud.hypercomp"
-          + "utecluster.v1beta.SlurmLoginNodesB\004\342A\001\002\022N\n"
-          + "\tnode_sets\030\001 \003(\01325.google.cloud.hyperc"
-          + "omputecluster.v1beta.SlurmNodeSetB\004\342A\001\002\022Q\n\n"
-          + "partitions\030\002 \003(\01327.google.cloud.hyper"
-          + "computecluster.v1beta.SlurmPartitionB\004\342A\001\002\022\037\n"
+          + "\013login_nodes\030\006"
+          + " \001(\01328.google.cloud.hypercomputecluster.v1beta.SlurmLoginNodesB\004\342A\001\002\022N\n"
+          + "\tnode_sets\030\001"
+          + " \003(\01325.google.cloud.hypercomputecluster.v1beta.SlurmNodeSetB\004\342A\001\001\022Q\n\n"
+          + "partitions\030\002 \003(\01327.google.cloud.hypercomp"
+          + "utecluster.v1beta.SlurmPartitionB\004\342A\001\001\022\037\n"
           + "\021default_partition\030\003 \001(\tB\004\342A\001\001\022!\n"
           + "\023prolog_bash_scripts\030\004 \003(\tB\004\342A\001\001\022!\n"
-          + "\023epilog_bash_scripts\030\005 \003(\tB\004\342A\001\001\"\310\002\n"
+          + "\023epilog_bash_scripts\030\005 \003(\tB\004\342A\001\001\"\255\003\n"
           + "\014SlurmNodeSet\022f\n"
-          + "\020compute_instance\030\021 \001(\0132D.google.cl"
-          + "oud.hypercomputecluster.v1beta.ComputeInstanceSlurmNodeSetB\004\342A\001\001H\000\022\020\n"
+          + "\020compute_instance\030\021 \001(\0132D.google.cloud."
+          + "hypercomputecluster.v1beta.ComputeInstanceSlurmNodeSetB\004\342A\001\001H\000\022\020\n"
           + "\002id\030\001 \001(\tB\004\342A\001\002\022\030\n\n"
-          + "compute_id\030\020 \001(\tB\004\342A\001\001\022U\n"
+          + "compute_id\030\020 \001(\tB\004\342A\001\002\022U\n"
           + "\017storage_configs\030\003"
           + " \003(\01326.google.cloud.hypercomputecluster.v1beta.StorageConfigB\004\342A\001\001\022\037\n"
           + "\021static_node_count\030\004 \001(\003B\004\342A\001\001\022$\n"
-          + "\026max_dynamic_node_count\030\005 \001(\003B\004\342A\001\001B\006\n"
+          + "\026max_dynamic_node_count\030\005 \001(\003B\004\342A\001\001\022c\n"
+          + "\026resource_policy_config\030\023 \001(\0132=.google.cloud.hypercom"
+          + "putecluster.v1beta.ResourcePolicyConfigB\004\342A\001\001B\006\n"
           + "\004type\"\236\002\n"
           + "\033ComputeInstanceSlurmNodeSet\022\034\n"
           + "\016startup_script\030\001 \001(\tB\004\342A\001\001\022f\n"
-          + "\006labels\030\002 \003(\0132P.google.cloud.hypercomputecluster.v1beta.Com"
-          + "puteInstanceSlurmNodeSet.LabelsEntryB\004\342A\001\001\022J\n"
-          + "\tboot_disk\030\003 \001(\01321.google.cloud.hyp"
-          + "ercomputecluster.v1beta.BootDiskB\004\342A\001\001\032-\n"
+          + "\006labels\030\002 \003(\0132P.google.cloud.hypercomputec"
+          + "luster.v1beta.ComputeInstanceSlurmNodeSet.LabelsEntryB\004\342A\001\001\022J\n"
+          + "\tboot_disk\030\003 \001(\01321"
+          + ".google.cloud.hypercomputecluster.v1beta.BootDiskB\004\342A\001\001\032-\n"
           + "\013LabelsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
-          + "\005value\030\002 \001(\t:\0028\001\">\n"
+          + "\005value\030\002 \001(\t:\0028\001\":\n"
+          + "\024ResourcePolicyConfig\022\"\n"
+          + "\024accelerator_topology\030\002 \001(\tB\004\342A\001\001\">\n"
           + "\016SlurmPartition\022\020\n"
           + "\002id\030\001 \001(\tB\004\342A\001\002\022\032\n"
-          + "\014node_set_ids\030\002 \003(\tB\004\342A\001\002\"\265\004\n"
+          + "\014node_set_ids\030\002 \003(\tB\004\342A\001\002\"\321\004\n"
           + "\017SlurmLoginNodes\022\023\n"
           + "\005count\030\003 \001(\003B\004\342A\001\002\022\022\n"
           + "\004zone\030\002 \001(\tB\004\342A\001\002\022\032\n"
@@ -511,76 +628,244 @@ public final class HypercomputeClusterProto extends com.google.protobuf.Generate
           + "\016startup_script\030\005 \001(\tB\004\342A\001\001\022\035\n"
           + "\017enable_os_login\030\006 \001(\010B\004\342A\001\001\022\037\n"
           + "\021enable_public_ips\030\007 \001(\010B\004\342A\001\001\022Z\n"
-          + "\006labels\030\010 \003(\0132D.google.cl"
-          + "oud.hypercomputecluster.v1beta.SlurmLoginNodes.LabelsEntryB\004\342A\001\001\022U\n"
+          + "\006labels\030\010 \003(\0132D.google.cloud"
+          + ".hypercomputecluster.v1beta.SlurmLoginNodes.LabelsEntryB\004\342A\001\001\022U\n"
           + "\017storage_configs\030\014"
           + " \003(\01326.google.cloud.hypercomputecluster.v1beta.StorageConfigB\004\342A\001\001\022Q\n"
           + "\tinstances\030\n"
           + " \003(\01328.google.cloud.hypercomputecluster.v1beta.ComputeInstanceB\004\342A\001\003\022J\n"
           + "\tboot_disk\030\r"
-          + " \001(\01321.google.cloud.hypercomputecluster.v1beta.BootDiskB\004\342A\001\001\032-\n"
+          + " \001(\01321.google.cloud.hypercomputecluster.v1beta.BootDiskB\004\342A\001\001\022\032\n"
+          + "\014network_tags\030\016 \003(\tB\004\342A\001\001\032-\n"
           + "\013LabelsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
-          + "\005value\030\002 \001(\t:\0028\001\"<\n"
-          + "\r"
+          + "\005value\030\002 \001(\t:\0028\001\";\n"
+          + "\016ServiceAccount\022\023\n"
+          + "\005email\030\001 \001(\tB\004\342A\001\001\022\024\n"
+          + "\006scopes\030\002 \003(\tB\004\342A\001\001\"<\n\r"
           + "StorageConfig\022\020\n"
           + "\002id\030\001 \001(\tB\004\342A\001\002\022\031\n"
           + "\013local_mount\030\002 \001(\tB\004\342A\001\002\"T\n"
           + "\017ComputeInstance\022A\n"
           + "\010instance\030\001 \001(\tB/\342A\001\003\372A(\n"
-          + "&compute.googleapis.com/ComputeInstance2\270\t\n"
+          + "&compute.googleapis.com/ComputeInstance\"\365\007\n"
+          + "\004Node\022\022\n"
+          + "\004name\030\001 \001(\tB\004\342A\001\010\022\022\n"
+          + "\004zone\030\002 \001(\tB\004\342A\001\003\022H\n"
+          + "\005state\030\003"
+          + " \001(\01623.google.cloud.hypercomputecluster.v1beta.Node.StateB\004\342A\001\003\022\033\n\r"
+          + "state_message\030\004 \001(\tB\004\342A\001\003\022\032\n"
+          + "\014running_jobs\030\005 \001(\010B\004\342A\001\003\022\034\n"
+          + "\016accepting_jobs\030\006 \001(\010B\004\342A\001\003\022a\n"
+          + "\022provisioning_model\030\014 \001(\0162?.google.c"
+          + "loud.hypercomputecluster.v1beta.Node.ProvisioningModelB\004\342A\001\003\022V\n\r"
+          + "slurm_details\030\007 "
+          + "\001(\01329.google.cloud.hypercomputecluster.v1beta.SlurmNodeDetailsB\004\342A\001\003\022g\n"
+          + "\026compute_engine_details\030\010 \001(\0132A.google.cloud.hype"
+          + "rcomputecluster.v1beta.ComputeEngineNodeDetailsB\004\342A\001\003\0225\n"
+          + "\013create_time\030\n"
+          + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\0225\n"
+          + "\013update_time\030\013"
+          + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\"\223\001\n"
+          + "\005State\022\025\n"
+          + "\021STATE_UNSPECIFIED\020\000\022\014\n"
+          + "\010CREATING\020\001\022\n\n"
+          + "\006ACTIVE\020\002\022\016\n\n"
+          + "SUSPENDING\020\003\022\r"
+          + "\n"
+          + "\tSUSPENDED\020\004\022\r\n"
+          + "\tREPAIRING\020\005\022\n\n"
+          + "\006FAILED\020\006\022\014\n"
+          + "\010DELETING\020\007\022\021\n\r"
+          + "UNPROVISIONED\020\010\"w\n"
+          + "\021ProvisioningModel\022\"\n"
+          + "\036PROVISIONING_MODEL_UNSPECIFIED\020\000\022\r\n"
+          + "\tON_DEMAND\020\001\022\010\n"
+          + "\004SPOT\020\002\022\025\n"
+          + "\021RESERVATION_BOUND\020\003\022\016\n\n"
+          + "FLEX_START\020\004:\202\001\352A\177\n"
+          + "\'hypercomputecluster.googleapis.com/Node\022Gprojects/{project}/locations/{locatio"
+          + "n}/clusters/{cluster}/nodes/{node}*\005nodes2\004node\"\206\001\n"
+          + "\020SlurmNodeDetails\022\024\n"
+          + "\006states\030\001 \003(\tB\004\342A\001\003\022\024\n"
+          + "\006reason\030\002 \001(\tB\004\342A\001\003\022\030\n\n"
+          + "partitions\030\003 \003(\tB\004\342A\001\003\022\025\n"
+          + "\007nodeset\030\004 \001(\tB\004\342A\001\003\022\025\n"
+          + "\007comment\030\005 \001(\tB\004\342A\001\003\"\344\001\n"
+          + "\030ComputeEngineNodeDetails\022A\n"
+          + "\010instance\030\001 \001(\tB/\342A\001\003\372A(\n"
+          + "&compute.googleapis.com/ComputeInstance\022\032\n"
+          + "\014machine_type\030\002 \001(\tB\004\342A\001\003\022\023\n"
+          + "\005state\030\003 \001(\tB\004\342A\001\003\022T\n"
+          + "\026instance_group_manager\030\004 \001(\tB4\342A\001\003\372A-\n"
+          + "+compute.googleapis.com/InstanceGroupManager\"\222\004\n"
+          + "\031ComputeEngineOrchestrator\022\204\001\n"
+          + "\027managed_instance_groups\030\001 \003(\0132].google.cloud.hypercomputecluster.v1bet"
+          + "a.ComputeEngineOrchestrator.ManagedInstanceGroupsEntryB\004\342A\001\001\022{\n"
+          + "\022existing_instances\030\002 \003(\0132Y.google.cloud.hypercomputeclus"
+          + "ter.v1beta.ComputeEngineOrchestrator.ExistingInstancesEntryB\004\342A\001\001\032{\n"
+          + "\032ManagedInstanceGroupsEntry\022\013\n"
+          + "\003key\030\001 \001(\t\022L\n"
+          + "\005value\030\002 "
+          + "\001(\0132=.google.cloud.hypercomputecluster.v1beta.ManagedInstanceGroup:\0028\001\032t\n"
+          + "\026ExistingInstancesEntry\022\013\n"
+          + "\003key\030\001 \001(\t\022I\n"
+          + "\005value\030\002"
+          + " \001(\0132:.google.cloud.hypercomputecluster.v1beta.ExistingInstances:\0028\001\"\357"
+          + "\t\n"
+          + "\024ManagedInstanceGroup\022T\n"
+          + "\026instance_group_manager\030\007 \001(\tB4\342A\001\003\372A-\n"
+          + "+compute.googleapis.com/InstanceGroupManager\022\030\n\n"
+          + "compute_id\030\001 \001(\tB\004\342A\001\002\022\031\n"
+          + "\013target_size\030\002 \001(\003B\004\342A\001\001\022U\n"
+          + "\017storage_configs\030\003 \003(\01326.google.cloud.hyperco"
+          + "mputecluster.v1beta.StorageConfigB\004\342A\001\001\022K\n"
+          + "\021instance_template\030\004 \001(\tB0\342A\001\003\372A)\n"
+          + "\'compute.googleapis.com/InstanceTemplate\022c\n"
+          + "\026resource_policy_config\030\005 \001(\0132=.google.cl"
+          + "oud.hypercomputecluster.v1beta.ResourcePolicyConfigB\004\342A\001\001\022J\n"
+          + "\tboot_disk\030\006 \001(\01321.g"
+          + "oogle.cloud.hypercomputecluster.v1beta.BootDiskB\004\342A\001\001\022r\n"
+          + "\020additional_disks\030\017 \003(\0132R.google.cloud.hypercomputecluster.v1bet"
+          + "a.ManagedInstanceGroup.AdditionalDisksEntryB\004\342A\001\001\022\034\n"
+          + "\016startup_script\030\010 \001(\tB\004\342A\001\001\022\037\n"
+          + "\021enable_public_ips\030\t \001(\010B\004\342A\001\001\022\035\n"
+          + "\017enable_os_login\030\n"
+          + " \001(\010B\004\342A\001\001\022?\n"
+          + "\026startup_script_timeout\030\013"
+          + " \001(\0132\031.google.protobuf.DurationB\004\342A\001\001\022c\n"
+          + "\010metadata\030\014 \003(\0132K.google.clou"
+          + "d.hypercomputecluster.v1beta.ManagedInstanceGroup.MetadataEntryB\004\342A\001\001\022W\n"
+          + "\017service_account\030\r"
+          + " \001(\01327.google.cloud.hypercompu"
+          + "tecluster.v1beta.ServiceAccountB\005\342A\002\002\005\022_\n"
+          + "\006labels\030\016 \003(\0132I.google.cloud.hypercompu"
+          + "tecluster.v1beta.ManagedInstanceGroup.LabelsEntryB\004\342A\001\001\032e\n"
+          + "\024AdditionalDisksEntry\022\013\n"
+          + "\003key\030\001 \001(\t\022<\n"
+          + "\005value\030\002 \001(\0132-.google.clo"
+          + "ud.hypercomputecluster.v1beta.Disk:\0028\001\032/\n\r"
+          + "MetadataEntry\022\013\n"
+          + "\003key\030\001 \001(\t\022\r\n"
+          + "\005value\030\002 \001(\t:\0028\001\032-\n"
+          + "\013LabelsEntry\022\013\n"
+          + "\003key\030\001 \001(\t\022\r\n"
+          + "\005value\030\002 \001(\t:\0028\001\"\224\002\n"
+          + "\004Disk\0226\n"
+          + "\005image\030\003 \001(\tB%\342A\001\001\372A\036\n"
+          + "\034compute.googleapis.com/ImageH\000\022<\n"
+          + "\010snapshot\030\004 \001(\tB(\342A\001\001\372A!\n"
+          + "\037compute.googleapis.com/SnapshotH\000\022=\n\r"
+          + "existing_disk\030\005 \001(\tB$\342A\001\001\372A\035\n"
+          + "\033compute.googleapis.com/DiskH\000\0226\n"
+          + "\004type\030\001 \001(\tB(\342A\001\001\372A!\n"
+          + "\037compute.googleapis.com/DiskType\022\025\n"
+          + "\007size_gb\030\002 \001(\003B\004\342A\001\001B\010\n"
+          + "\006source\"\355\005\n"
+          + "\021ExistingInstances\022H\n"
+          + "\007project\030\007 \001(\tB5\342A\002\001\005\372A-\n"
+          + "+cloudresourcemanager.googleapis.com/ProjectH\000\022W\n"
+          + "\026instance_group_manager\030\001 \001(\tB5\342A\002\001\005\372A-\n"
+          + "+compute.googleapis.com/InstanceGroupManagerH\000\022^\n"
+          + "\035region_instance_group_manager\030\002 \001(\tB5\342A\002\001\005\372A-\n"
+          + "+compute.googleapis.com/InstanceGroupManagerH\000\022C\n"
+          + "\013reservation\030\003 \001(\tB,\342A\002\001\005\372A$\n"
+          + "\"compute.googleapis.com/ReservationH\000\022N\n"
+          + "\021reservation_block\030\004 \001(\tB1\342A\002\001\005\372A)\n"
+          + "\'compute.googleapis.com/ReservationBlockH\000\022U\n"
+          + "\025reservation_sub_block\030\005 \001(\tB4\342A\002\001\005\372A,\n"
+          + "*compute.googleapis.com/ReservationSubBlockH\000\022]\n"
+          + "\006labels\030\006 \003(\0132F.google.clou"
+          + "d.hypercomputecluster.v1beta.ExistingInstances.LabelsEntryB\005\342A\002\001\005\022Q\n"
+          + "\010networks\030\010 "
+          + "\003(\01329.google.cloud.hypercomputecluster.v1beta.NetworkReferenceB\004\342A\001\003\032-\n"
+          + "\013LabelsEntry\022\013\n"
+          + "\003key\030\001 \001(\t\022\r\n"
+          + "\005value\030\002 \001(\t:\0028\001B\010\n"
+          + "\006source2\210\013\n"
           + "\023HypercomputeCluster\022\316\001\n"
-          + "\014ListClusters\022<.google.cloud.hypercomputecluster.v1beta.ListCluster"
-          + "sRequest\032=.google.cloud.hypercomputeclus"
-          + "ter.v1beta.ListClustersResponse\"A\332A\006pare"
-          + "nt\202\323\344\223\0022\0220/v1beta/{parent=projects/*/locations/*}/clusters\022\273\001\n\n"
-          + "GetCluster\022:.google.cloud.hypercomputecluster.v1beta.GetC"
-          + "lusterRequest\0320.google.cloud.hypercomput"
-          + "ecluster.v1beta.Cluster\"?\332A\004name\202\323\344\223\0022\0220"
-          + "/v1beta/{name=projects/*/locations/*/clusters/*}\022\353\001\n\r"
-          + "CreateCluster\022=.google.cloud.hypercomputecluster.v1beta.CreateClust"
-          + "erRequest\032\035.google.longrunning.Operation\"|\312A\034\n"
-          + "\007Cluster\022\021OperationMetadata\332A\031pare"
-          + "nt,cluster,cluster_id\202\323\344\223\002;\"0/v1beta/{pa"
-          + "rent=projects/*/locations/*}/clusters:\007cluster\022\355\001\n\r"
-          + "UpdateCluster\022=.google.cloud.hypercomputecluster.v1beta.UpdateCluster"
-          + "Request\032\035.google.longrunning.Operation\"~\312A\034\n"
-          + "\007Cluster\022\021OperationMetadata\332A\023cluste"
-          + "r,update_mask\202\323\344\223\002C28/v1beta/{cluster.na"
-          + "me=projects/*/locations/*/clusters/*}:\007cluster\022\333\001\n\r"
-          + "DeleteCluster\022=.google.cloud.hypercomputecluster.v1beta.DeleteCluster"
-          + "Request\032\035.google.longrunning.Operation\"l\312A*\n"
-          + "\025google.protobuf.Empty\022\021OperationMet"
-          + "adata\332A\004name\202\323\344\223\0022*0/v1beta/{name=projec"
-          + "ts/*/locations/*/clusters/*}\032V\312A\"hyperco"
-          + "mputecluster.googleapis.com\322A.https://www.googleapis.com/auth/cloud-platformB\250\013\n"
-          + "+com.google.cloud.hypercomputecluster.v1betaB\030HypercomputeClusterProtoP\001Z]cloud."
-          + "google.com/go/hypercomputecluster/apiv1beta/hypercomputeclusterpb;hypercomputecl"
-          + "usterpb\252\002\'Google.Cloud.HypercomputeClust"
-          + "er.V1Beta\312\002\'Google\\Cloud\\HypercomputeClu"
-          + "ster\\V1beta\352\002*Google::Cloud::HypercomputeCluster::V1beta\352A^\n"
-          + "&compute.googleapis."
-          + "com/ComputeInstance\0224projects/{project}/zones/{zone}/instances/{instance}\352AX\n"
-          + "\037compute.googleapis.com/DiskType\0225projects/"
-          + "{project}/zones/{zone}/diskTypes/{disk_type}\352AH\n"
-          + "\034compute.googleapis.com/Image\022(projects/{project}/global/images/{image}\352AN\n"
-          + "\036compute.googleapis.com/Network\022,proj"
-          + "ects/{project}/global/networks/{network}\352A`\n"
-          + "\"compute.googleapis.com/Reservation\022"
-          + ":projects/{project}/zones/{zone}/reservations/{reservation}\352A\213\001\n"
-          + "\'compute.googleapis.com/ReservationBlock\022`projects/{proj"
-          + "ect}/zones/{zone}/reservations/{reservat"
-          + "ion}/reservationBlocks/{reservation_block}\352A\274\001\n"
-          + "*compute.googleapis.com/ReservationSubBlock\022\215\001projects/{project}/zones/{z"
-          + "one}/reservations/{reservation}/reservat"
-          + "ionBlocks/{reservation_block}/reservationSubBlocks/{reservation_sub_block}\352Aa\n"
-          + "!compute.googleapis.com/Subnetwork\022<projec"
-          + "ts/{project}/regions/{region}/subnetworks/{subnetwork}\352A`\n"
-          + " file.googleapis.com/F"
-          + "ileInstance\022<projects/{project}/locations/{location}/instances/{instance}\352Ad\n"
-          + "$lustre.googleapis.com/LustreInstance\022<proj"
-          + "ects/{project}/locations/{location}/instances/{instance}\352AD\n"
-          + "\035storage.googleapis.com/Bucket\022#projects/{project}/buckets/{bucket}b\006proto3"
+          + "\014ListClusters\022<.google.cloud.hypercomputecluste"
+          + "r.v1beta.ListClustersRequest\032=.google.cloud.hypercomputecluster.v1beta.ListClust"
+          + "ersResponse\"A\332A\006parent\202\323\344\223\0022\0220/v1beta/{p"
+          + "arent=projects/*/locations/*}/clusters\022\273\001\n\n"
+          + "GetCluster\022:.google.cloud.hypercomputecluster.v1beta.GetClusterRequest\0320.goog"
+          + "le.cloud.hypercomputecluster.v1beta.Clus"
+          + "ter\"?\332A\004name\202\323\344\223\0022\0220/v1beta/{name=projects/*/locations/*/clusters/*}\022\353\001\n\r"
+          + "CreateCluster\022=.google.cloud.hypercomputecluste"
+          + "r.v1beta.CreateClusterRequest\032\035.google.longrunning.Operation\"|\312A\034\n"
+          + "\007Cluster\022\021OperationMetadata\332A\031parent,cluster,cluster_i"
+          + "d\202\323\344\223\002;\"0/v1beta/{parent=projects/*/locations/*}/clusters:\007cluster\022\355\001\n\r"
+          + "UpdateCluster\022=.google.cloud.hypercomputecluster."
+          + "v1beta.UpdateClusterRequest\032\035.google.longrunning.Operation\"~\312A\034\n"
+          + "\007Cluster\022\021OperationMetadata\332A\023cluster,update_mask\202\323\344\223\002C2"
+          + "8/v1beta/{cluster.name=projects/*/locations/*/clusters/*}:\007cluster\022\333\001\n\r"
+          + "DeleteClu",
+      "ster\022=.google.cloud.hypercomputecluster."
+          + "v1beta.DeleteClusterRequest\032\035.google.lon"
+          + "grunning.Operation\"l\312A*\n\025google.protobuf"
+          + ".Empty\022\021OperationMetadata\332A\004name\202\323\344\223\0022*0"
+          + "/v1beta/{name=projects/*/locations/*/clu"
+          + "sters/*}\022\315\001\n\tListNodes\0229.google.cloud.hy"
+          + "percomputecluster.v1beta.ListNodesReques"
+          + "t\032:.google.cloud.hypercomputecluster.v1b"
+          + "eta.ListNodesResponse\"I\332A\006parent\202\323\344\223\002:\0228"
+          + "/v1beta/{parent=projects/*/locations/*/c"
+          + "lusters/*}/nodes\032V\312A\"hypercomputecluster"
+          + ".googleapis.com\322A.https://www.googleapis"
+          + ".com/auth/cloud-platformB\310\020\n+com.google."
+          + "cloud.hypercomputecluster.v1betaB\030Hyperc"
+          + "omputeClusterProtoP\001Z]cloud.google.com/g"
+          + "o/hypercomputecluster/apiv1beta/hypercom"
+          + "puteclusterpb;hypercomputeclusterpb\252\002\'Go"
+          + "ogle.Cloud.HypercomputeCluster.V1Beta\312\002\'"
+          + "Google\\Cloud\\HypercomputeCluster\\V1beta\352"
+          + "\002*Google::Cloud::HypercomputeCluster::V1"
+          + "beta\352A^\n&compute.googleapis.com/ComputeI"
+          + "nstance\0224projects/{project}/zones/{zone}"
+          + "/instances/{instance}\352AK\n\033compute.google"
+          + "apis.com/Disk\022,projects/{project}/zones/"
+          + "{zone}/disks/{disk}\352AX\n\037compute.googleap"
+          + "is.com/DiskType\0225projects/{project}/zone"
+          + "s/{zone}/diskTypes/{disk_type}\352AH\n\034compu"
+          + "te.googleapis.com/Image\022(projects/{proje"
+          + "ct}/global/images/{image}\352A\321\001\n+compute.g"
+          + "oogleapis.com/InstanceGroupManager\022Nproj"
+          + "ects/{project}/zones/{zone}/instanceGrou"
+          + "pManagers/{instance_group_manager}\022Rproj"
+          + "ects/{project}/regions/{region}/instance"
+          + "GroupManagers/{instance_group_manager}\352A"
+          + "j\n\'compute.googleapis.com/InstanceTempla"
+          + "te\022?projects/{project}/global/instanceTe"
+          + "mplates/{instance_template}\352AN\n\036compute."
+          + "googleapis.com/Network\022,projects/{projec"
+          + "t}/global/networks/{network}\352A`\n\"compute"
+          + ".googleapis.com/Reservation\022:projects/{p"
+          + "roject}/zones/{zone}/reservations/{reser"
+          + "vation}\352A\213\001\n\'compute.googleapis.com/Rese"
+          + "rvationBlock\022`projects/{project}/zones/{"
+          + "zone}/reservations/{reservation}/reserva"
+          + "tionBlocks/{reservation_block}\352A\274\001\n*comp"
+          + "ute.googleapis.com/ReservationSubBlock\022\215"
+          + "\001projects/{project}/zones/{zone}/reserva"
+          + "tions/{reservation}/reservationBlocks/{r"
+          + "eservation_block}/reservationSubBlocks/{"
+          + "reservation_sub_block}\352A\213\001\n\037compute.goog"
+          + "leapis.com/Snapshot\022.projects/{project}/"
+          + "global/snapshots/{snapshot}\0228projects/{p"
+          + "roject}/regions/{region}/snapshots/{snap"
+          + "shot}\352Aa\n!compute.googleapis.com/Subnetw"
+          + "ork\022<projects/{project}/regions/{region}"
+          + "/subnetworks/{subnetwork}\352A`\n file.googl"
+          + "eapis.com/FileInstance\022<projects/{projec"
+          + "t}/locations/{location}/instances/{insta"
+          + "nce}\352AD\n\035storage.googleapis.com/Bucket\022#"
+          + "projects/{project}/buckets/{bucket}\352A\200\001\n"
+          + "\034container.googleapis.com/Pod\022`projects/"
+          + "{project}/locations/{location}/clusters/"
+          + "{cluster}/k8s/namespaces/{namespace}/pod"
+          + "s/{pod}\352Aa\n\"compute.googleapis.com/Stora"
+          + "gePool\022;projects/{project}/zones/{zone}/"
+          + "storagePools/{storage_pool}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -614,6 +899,7 @@ public final class HypercomputeClusterProto extends com.google.protobuf.Generate
               "StorageResources",
               "ComputeResources",
               "Orchestrator",
+              "Uid",
             });
     internal_static_google_cloud_hypercomputecluster_v1beta_Cluster_LabelsEntry_descriptor =
         internal_static_google_cloud_hypercomputecluster_v1beta_Cluster_descriptor.getNestedType(0);
@@ -695,8 +981,24 @@ public final class HypercomputeClusterProto extends com.google.protobuf.Generate
             new java.lang.String[] {
               "Name", "RequestId",
             });
-    internal_static_google_cloud_hypercomputecluster_v1beta_NetworkResource_descriptor =
+    internal_static_google_cloud_hypercomputecluster_v1beta_ListNodesRequest_descriptor =
         getDescriptor().getMessageType(7);
+    internal_static_google_cloud_hypercomputecluster_v1beta_ListNodesRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_hypercomputecluster_v1beta_ListNodesRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
+            });
+    internal_static_google_cloud_hypercomputecluster_v1beta_ListNodesResponse_descriptor =
+        getDescriptor().getMessageType(8);
+    internal_static_google_cloud_hypercomputecluster_v1beta_ListNodesResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_hypercomputecluster_v1beta_ListNodesResponse_descriptor,
+            new java.lang.String[] {
+              "Nodes", "NextPageToken",
+            });
+    internal_static_google_cloud_hypercomputecluster_v1beta_NetworkResource_descriptor =
+        getDescriptor().getMessageType(9);
     internal_static_google_cloud_hypercomputecluster_v1beta_NetworkResource_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_hypercomputecluster_v1beta_NetworkResource_descriptor,
@@ -704,7 +1006,7 @@ public final class HypercomputeClusterProto extends com.google.protobuf.Generate
               "Network", "Config", "Reference",
             });
     internal_static_google_cloud_hypercomputecluster_v1beta_NetworkReference_descriptor =
-        getDescriptor().getMessageType(8);
+        getDescriptor().getMessageType(10);
     internal_static_google_cloud_hypercomputecluster_v1beta_NetworkReference_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_hypercomputecluster_v1beta_NetworkReference_descriptor,
@@ -712,7 +1014,7 @@ public final class HypercomputeClusterProto extends com.google.protobuf.Generate
               "Network", "Subnetwork",
             });
     internal_static_google_cloud_hypercomputecluster_v1beta_NetworkResourceConfig_descriptor =
-        getDescriptor().getMessageType(9);
+        getDescriptor().getMessageType(11);
     internal_static_google_cloud_hypercomputecluster_v1beta_NetworkResourceConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_hypercomputecluster_v1beta_NetworkResourceConfig_descriptor,
@@ -720,7 +1022,7 @@ public final class HypercomputeClusterProto extends com.google.protobuf.Generate
               "NewNetwork", "ExistingNetwork", "Config",
             });
     internal_static_google_cloud_hypercomputecluster_v1beta_NewNetworkConfig_descriptor =
-        getDescriptor().getMessageType(10);
+        getDescriptor().getMessageType(12);
     internal_static_google_cloud_hypercomputecluster_v1beta_NewNetworkConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_hypercomputecluster_v1beta_NewNetworkConfig_descriptor,
@@ -728,7 +1030,7 @@ public final class HypercomputeClusterProto extends com.google.protobuf.Generate
               "Network", "Description",
             });
     internal_static_google_cloud_hypercomputecluster_v1beta_ExistingNetworkConfig_descriptor =
-        getDescriptor().getMessageType(11);
+        getDescriptor().getMessageType(13);
     internal_static_google_cloud_hypercomputecluster_v1beta_ExistingNetworkConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_hypercomputecluster_v1beta_ExistingNetworkConfig_descriptor,
@@ -736,7 +1038,7 @@ public final class HypercomputeClusterProto extends com.google.protobuf.Generate
               "Network", "Subnetwork",
             });
     internal_static_google_cloud_hypercomputecluster_v1beta_StorageResource_descriptor =
-        getDescriptor().getMessageType(12);
+        getDescriptor().getMessageType(14);
     internal_static_google_cloud_hypercomputecluster_v1beta_StorageResource_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_hypercomputecluster_v1beta_StorageResource_descriptor,
@@ -744,7 +1046,7 @@ public final class HypercomputeClusterProto extends com.google.protobuf.Generate
               "Filestore", "Bucket", "Lustre", "Config", "Reference",
             });
     internal_static_google_cloud_hypercomputecluster_v1beta_FilestoreReference_descriptor =
-        getDescriptor().getMessageType(13);
+        getDescriptor().getMessageType(15);
     internal_static_google_cloud_hypercomputecluster_v1beta_FilestoreReference_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_hypercomputecluster_v1beta_FilestoreReference_descriptor,
@@ -752,7 +1054,7 @@ public final class HypercomputeClusterProto extends com.google.protobuf.Generate
               "Filestore",
             });
     internal_static_google_cloud_hypercomputecluster_v1beta_BucketReference_descriptor =
-        getDescriptor().getMessageType(14);
+        getDescriptor().getMessageType(16);
     internal_static_google_cloud_hypercomputecluster_v1beta_BucketReference_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_hypercomputecluster_v1beta_BucketReference_descriptor,
@@ -760,7 +1062,7 @@ public final class HypercomputeClusterProto extends com.google.protobuf.Generate
               "Bucket",
             });
     internal_static_google_cloud_hypercomputecluster_v1beta_LustreReference_descriptor =
-        getDescriptor().getMessageType(15);
+        getDescriptor().getMessageType(17);
     internal_static_google_cloud_hypercomputecluster_v1beta_LustreReference_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_hypercomputecluster_v1beta_LustreReference_descriptor,
@@ -768,7 +1070,7 @@ public final class HypercomputeClusterProto extends com.google.protobuf.Generate
               "Lustre",
             });
     internal_static_google_cloud_hypercomputecluster_v1beta_StorageResourceConfig_descriptor =
-        getDescriptor().getMessageType(16);
+        getDescriptor().getMessageType(18);
     internal_static_google_cloud_hypercomputecluster_v1beta_StorageResourceConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_hypercomputecluster_v1beta_StorageResourceConfig_descriptor,
@@ -779,10 +1081,11 @@ public final class HypercomputeClusterProto extends com.google.protobuf.Generate
               "ExistingBucket",
               "NewLustre",
               "ExistingLustre",
+              "ExistingNfs",
               "Config",
             });
     internal_static_google_cloud_hypercomputecluster_v1beta_NewFilestoreConfig_descriptor =
-        getDescriptor().getMessageType(17);
+        getDescriptor().getMessageType(19);
     internal_static_google_cloud_hypercomputecluster_v1beta_NewFilestoreConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_hypercomputecluster_v1beta_NewFilestoreConfig_descriptor,
@@ -790,7 +1093,7 @@ public final class HypercomputeClusterProto extends com.google.protobuf.Generate
               "Filestore", "Description", "FileShares", "Tier", "Protocol",
             });
     internal_static_google_cloud_hypercomputecluster_v1beta_FileShareConfig_descriptor =
-        getDescriptor().getMessageType(18);
+        getDescriptor().getMessageType(20);
     internal_static_google_cloud_hypercomputecluster_v1beta_FileShareConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_hypercomputecluster_v1beta_FileShareConfig_descriptor,
@@ -798,7 +1101,7 @@ public final class HypercomputeClusterProto extends com.google.protobuf.Generate
               "CapacityGb", "FileShare",
             });
     internal_static_google_cloud_hypercomputecluster_v1beta_ExistingFilestoreConfig_descriptor =
-        getDescriptor().getMessageType(19);
+        getDescriptor().getMessageType(21);
     internal_static_google_cloud_hypercomputecluster_v1beta_ExistingFilestoreConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_hypercomputecluster_v1beta_ExistingFilestoreConfig_descriptor,
@@ -806,7 +1109,7 @@ public final class HypercomputeClusterProto extends com.google.protobuf.Generate
               "Filestore",
             });
     internal_static_google_cloud_hypercomputecluster_v1beta_NewBucketConfig_descriptor =
-        getDescriptor().getMessageType(20);
+        getDescriptor().getMessageType(22);
     internal_static_google_cloud_hypercomputecluster_v1beta_NewBucketConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_hypercomputecluster_v1beta_NewBucketConfig_descriptor,
@@ -814,7 +1117,7 @@ public final class HypercomputeClusterProto extends com.google.protobuf.Generate
               "Autoclass", "StorageClass", "Bucket", "HierarchicalNamespace", "Option",
             });
     internal_static_google_cloud_hypercomputecluster_v1beta_GcsAutoclassConfig_descriptor =
-        getDescriptor().getMessageType(21);
+        getDescriptor().getMessageType(23);
     internal_static_google_cloud_hypercomputecluster_v1beta_GcsAutoclassConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_hypercomputecluster_v1beta_GcsAutoclassConfig_descriptor,
@@ -822,7 +1125,7 @@ public final class HypercomputeClusterProto extends com.google.protobuf.Generate
               "Enabled", "TerminalStorageClass",
             });
     internal_static_google_cloud_hypercomputecluster_v1beta_GcsHierarchicalNamespaceConfig_descriptor =
-        getDescriptor().getMessageType(22);
+        getDescriptor().getMessageType(24);
     internal_static_google_cloud_hypercomputecluster_v1beta_GcsHierarchicalNamespaceConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_hypercomputecluster_v1beta_GcsHierarchicalNamespaceConfig_descriptor,
@@ -830,7 +1133,7 @@ public final class HypercomputeClusterProto extends com.google.protobuf.Generate
               "Enabled",
             });
     internal_static_google_cloud_hypercomputecluster_v1beta_ExistingBucketConfig_descriptor =
-        getDescriptor().getMessageType(23);
+        getDescriptor().getMessageType(25);
     internal_static_google_cloud_hypercomputecluster_v1beta_ExistingBucketConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_hypercomputecluster_v1beta_ExistingBucketConfig_descriptor,
@@ -838,23 +1141,31 @@ public final class HypercomputeClusterProto extends com.google.protobuf.Generate
               "Bucket",
             });
     internal_static_google_cloud_hypercomputecluster_v1beta_NewLustreConfig_descriptor =
-        getDescriptor().getMessageType(24);
+        getDescriptor().getMessageType(26);
     internal_static_google_cloud_hypercomputecluster_v1beta_NewLustreConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_hypercomputecluster_v1beta_NewLustreConfig_descriptor,
             new java.lang.String[] {
-              "Lustre", "Description", "Filesystem", "CapacityGb",
+              "Lustre", "Description", "Filesystem", "CapacityGb", "PerUnitStorageThroughput",
             });
     internal_static_google_cloud_hypercomputecluster_v1beta_ExistingLustreConfig_descriptor =
-        getDescriptor().getMessageType(25);
+        getDescriptor().getMessageType(27);
     internal_static_google_cloud_hypercomputecluster_v1beta_ExistingLustreConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_hypercomputecluster_v1beta_ExistingLustreConfig_descriptor,
             new java.lang.String[] {
               "Lustre",
             });
+    internal_static_google_cloud_hypercomputecluster_v1beta_ExistingNfsConfig_descriptor =
+        getDescriptor().getMessageType(28);
+    internal_static_google_cloud_hypercomputecluster_v1beta_ExistingNfsConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_hypercomputecluster_v1beta_ExistingNfsConfig_descriptor,
+            new java.lang.String[] {
+              "ServerIpAddress", "RemoteMount", "MountOptions",
+            });
     internal_static_google_cloud_hypercomputecluster_v1beta_ComputeResource_descriptor =
-        getDescriptor().getMessageType(26);
+        getDescriptor().getMessageType(29);
     internal_static_google_cloud_hypercomputecluster_v1beta_ComputeResource_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_hypercomputecluster_v1beta_ComputeResource_descriptor,
@@ -862,7 +1173,7 @@ public final class HypercomputeClusterProto extends com.google.protobuf.Generate
               "Config",
             });
     internal_static_google_cloud_hypercomputecluster_v1beta_ComputeResourceConfig_descriptor =
-        getDescriptor().getMessageType(27);
+        getDescriptor().getMessageType(30);
     internal_static_google_cloud_hypercomputecluster_v1beta_ComputeResourceConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_hypercomputecluster_v1beta_ComputeResourceConfig_descriptor,
@@ -874,55 +1185,55 @@ public final class HypercomputeClusterProto extends com.google.protobuf.Generate
               "Config",
             });
     internal_static_google_cloud_hypercomputecluster_v1beta_NewOnDemandInstancesConfig_descriptor =
-        getDescriptor().getMessageType(28);
+        getDescriptor().getMessageType(31);
     internal_static_google_cloud_hypercomputecluster_v1beta_NewOnDemandInstancesConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_hypercomputecluster_v1beta_NewOnDemandInstancesConfig_descriptor,
             new java.lang.String[] {
-              "Zone", "MachineType",
+              "Zone", "MachineType", "NetworkTags",
             });
     internal_static_google_cloud_hypercomputecluster_v1beta_NewSpotInstancesConfig_descriptor =
-        getDescriptor().getMessageType(29);
+        getDescriptor().getMessageType(32);
     internal_static_google_cloud_hypercomputecluster_v1beta_NewSpotInstancesConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_hypercomputecluster_v1beta_NewSpotInstancesConfig_descriptor,
             new java.lang.String[] {
-              "Zone", "MachineType",
+              "Zone", "MachineType", "TerminationAction", "NetworkTags",
             });
     internal_static_google_cloud_hypercomputecluster_v1beta_NewReservedInstancesConfig_descriptor =
-        getDescriptor().getMessageType(30);
+        getDescriptor().getMessageType(33);
     internal_static_google_cloud_hypercomputecluster_v1beta_NewReservedInstancesConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_hypercomputecluster_v1beta_NewReservedInstancesConfig_descriptor,
             new java.lang.String[] {
-              "Reservation", "Source",
+              "Reservation", "ReservationBlock", "ReservationSubBlock", "NetworkTags", "Source",
             });
     internal_static_google_cloud_hypercomputecluster_v1beta_NewFlexStartInstancesConfig_descriptor =
-        getDescriptor().getMessageType(31);
+        getDescriptor().getMessageType(34);
     internal_static_google_cloud_hypercomputecluster_v1beta_NewFlexStartInstancesConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_hypercomputecluster_v1beta_NewFlexStartInstancesConfig_descriptor,
             new java.lang.String[] {
-              "Zone", "MachineType", "MaxDuration",
+              "Zone", "MachineType", "MaxDuration", "NetworkTags",
             });
     internal_static_google_cloud_hypercomputecluster_v1beta_BootDisk_descriptor =
-        getDescriptor().getMessageType(32);
+        getDescriptor().getMessageType(35);
     internal_static_google_cloud_hypercomputecluster_v1beta_BootDisk_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_hypercomputecluster_v1beta_BootDisk_descriptor,
             new java.lang.String[] {
-              "Type", "SizeGb",
+              "Type", "SizeGb", "StoragePools",
             });
     internal_static_google_cloud_hypercomputecluster_v1beta_Orchestrator_descriptor =
-        getDescriptor().getMessageType(33);
+        getDescriptor().getMessageType(36);
     internal_static_google_cloud_hypercomputecluster_v1beta_Orchestrator_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_hypercomputecluster_v1beta_Orchestrator_descriptor,
             new java.lang.String[] {
-              "Slurm", "Option",
+              "Slurm", "ComputeEngine", "Option",
             });
     internal_static_google_cloud_hypercomputecluster_v1beta_SlurmOrchestrator_descriptor =
-        getDescriptor().getMessageType(34);
+        getDescriptor().getMessageType(37);
     internal_static_google_cloud_hypercomputecluster_v1beta_SlurmOrchestrator_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_hypercomputecluster_v1beta_SlurmOrchestrator_descriptor,
@@ -935,7 +1246,7 @@ public final class HypercomputeClusterProto extends com.google.protobuf.Generate
               "EpilogBashScripts",
             });
     internal_static_google_cloud_hypercomputecluster_v1beta_SlurmNodeSet_descriptor =
-        getDescriptor().getMessageType(35);
+        getDescriptor().getMessageType(38);
     internal_static_google_cloud_hypercomputecluster_v1beta_SlurmNodeSet_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_hypercomputecluster_v1beta_SlurmNodeSet_descriptor,
@@ -946,10 +1257,11 @@ public final class HypercomputeClusterProto extends com.google.protobuf.Generate
               "StorageConfigs",
               "StaticNodeCount",
               "MaxDynamicNodeCount",
+              "ResourcePolicyConfig",
               "Type",
             });
     internal_static_google_cloud_hypercomputecluster_v1beta_ComputeInstanceSlurmNodeSet_descriptor =
-        getDescriptor().getMessageType(36);
+        getDescriptor().getMessageType(39);
     internal_static_google_cloud_hypercomputecluster_v1beta_ComputeInstanceSlurmNodeSet_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_hypercomputecluster_v1beta_ComputeInstanceSlurmNodeSet_descriptor,
@@ -965,8 +1277,16 @@ public final class HypercomputeClusterProto extends com.google.protobuf.Generate
             new java.lang.String[] {
               "Key", "Value",
             });
+    internal_static_google_cloud_hypercomputecluster_v1beta_ResourcePolicyConfig_descriptor =
+        getDescriptor().getMessageType(40);
+    internal_static_google_cloud_hypercomputecluster_v1beta_ResourcePolicyConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_hypercomputecluster_v1beta_ResourcePolicyConfig_descriptor,
+            new java.lang.String[] {
+              "AcceleratorTopology",
+            });
     internal_static_google_cloud_hypercomputecluster_v1beta_SlurmPartition_descriptor =
-        getDescriptor().getMessageType(37);
+        getDescriptor().getMessageType(41);
     internal_static_google_cloud_hypercomputecluster_v1beta_SlurmPartition_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_hypercomputecluster_v1beta_SlurmPartition_descriptor,
@@ -974,7 +1294,7 @@ public final class HypercomputeClusterProto extends com.google.protobuf.Generate
               "Id", "NodeSetIds",
             });
     internal_static_google_cloud_hypercomputecluster_v1beta_SlurmLoginNodes_descriptor =
-        getDescriptor().getMessageType(38);
+        getDescriptor().getMessageType(42);
     internal_static_google_cloud_hypercomputecluster_v1beta_SlurmLoginNodes_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_hypercomputecluster_v1beta_SlurmLoginNodes_descriptor,
@@ -989,6 +1309,7 @@ public final class HypercomputeClusterProto extends com.google.protobuf.Generate
               "StorageConfigs",
               "Instances",
               "BootDisk",
+              "NetworkTags",
             });
     internal_static_google_cloud_hypercomputecluster_v1beta_SlurmLoginNodes_LabelsEntry_descriptor =
         internal_static_google_cloud_hypercomputecluster_v1beta_SlurmLoginNodes_descriptor
@@ -999,8 +1320,16 @@ public final class HypercomputeClusterProto extends com.google.protobuf.Generate
             new java.lang.String[] {
               "Key", "Value",
             });
+    internal_static_google_cloud_hypercomputecluster_v1beta_ServiceAccount_descriptor =
+        getDescriptor().getMessageType(43);
+    internal_static_google_cloud_hypercomputecluster_v1beta_ServiceAccount_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_hypercomputecluster_v1beta_ServiceAccount_descriptor,
+            new java.lang.String[] {
+              "Email", "Scopes",
+            });
     internal_static_google_cloud_hypercomputecluster_v1beta_StorageConfig_descriptor =
-        getDescriptor().getMessageType(39);
+        getDescriptor().getMessageType(44);
     internal_static_google_cloud_hypercomputecluster_v1beta_StorageConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_hypercomputecluster_v1beta_StorageConfig_descriptor,
@@ -1008,12 +1337,154 @@ public final class HypercomputeClusterProto extends com.google.protobuf.Generate
               "Id", "LocalMount",
             });
     internal_static_google_cloud_hypercomputecluster_v1beta_ComputeInstance_descriptor =
-        getDescriptor().getMessageType(40);
+        getDescriptor().getMessageType(45);
     internal_static_google_cloud_hypercomputecluster_v1beta_ComputeInstance_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_hypercomputecluster_v1beta_ComputeInstance_descriptor,
             new java.lang.String[] {
               "Instance",
+            });
+    internal_static_google_cloud_hypercomputecluster_v1beta_Node_descriptor =
+        getDescriptor().getMessageType(46);
+    internal_static_google_cloud_hypercomputecluster_v1beta_Node_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_hypercomputecluster_v1beta_Node_descriptor,
+            new java.lang.String[] {
+              "Name",
+              "Zone",
+              "State",
+              "StateMessage",
+              "RunningJobs",
+              "AcceptingJobs",
+              "ProvisioningModel",
+              "SlurmDetails",
+              "ComputeEngineDetails",
+              "CreateTime",
+              "UpdateTime",
+            });
+    internal_static_google_cloud_hypercomputecluster_v1beta_SlurmNodeDetails_descriptor =
+        getDescriptor().getMessageType(47);
+    internal_static_google_cloud_hypercomputecluster_v1beta_SlurmNodeDetails_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_hypercomputecluster_v1beta_SlurmNodeDetails_descriptor,
+            new java.lang.String[] {
+              "States", "Reason", "Partitions", "Nodeset", "Comment",
+            });
+    internal_static_google_cloud_hypercomputecluster_v1beta_ComputeEngineNodeDetails_descriptor =
+        getDescriptor().getMessageType(48);
+    internal_static_google_cloud_hypercomputecluster_v1beta_ComputeEngineNodeDetails_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_hypercomputecluster_v1beta_ComputeEngineNodeDetails_descriptor,
+            new java.lang.String[] {
+              "Instance", "MachineType", "State", "InstanceGroupManager",
+            });
+    internal_static_google_cloud_hypercomputecluster_v1beta_ComputeEngineOrchestrator_descriptor =
+        getDescriptor().getMessageType(49);
+    internal_static_google_cloud_hypercomputecluster_v1beta_ComputeEngineOrchestrator_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_hypercomputecluster_v1beta_ComputeEngineOrchestrator_descriptor,
+            new java.lang.String[] {
+              "ManagedInstanceGroups", "ExistingInstances",
+            });
+    internal_static_google_cloud_hypercomputecluster_v1beta_ComputeEngineOrchestrator_ManagedInstanceGroupsEntry_descriptor =
+        internal_static_google_cloud_hypercomputecluster_v1beta_ComputeEngineOrchestrator_descriptor
+            .getNestedType(0);
+    internal_static_google_cloud_hypercomputecluster_v1beta_ComputeEngineOrchestrator_ManagedInstanceGroupsEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_hypercomputecluster_v1beta_ComputeEngineOrchestrator_ManagedInstanceGroupsEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
+            });
+    internal_static_google_cloud_hypercomputecluster_v1beta_ComputeEngineOrchestrator_ExistingInstancesEntry_descriptor =
+        internal_static_google_cloud_hypercomputecluster_v1beta_ComputeEngineOrchestrator_descriptor
+            .getNestedType(1);
+    internal_static_google_cloud_hypercomputecluster_v1beta_ComputeEngineOrchestrator_ExistingInstancesEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_hypercomputecluster_v1beta_ComputeEngineOrchestrator_ExistingInstancesEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
+            });
+    internal_static_google_cloud_hypercomputecluster_v1beta_ManagedInstanceGroup_descriptor =
+        getDescriptor().getMessageType(50);
+    internal_static_google_cloud_hypercomputecluster_v1beta_ManagedInstanceGroup_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_hypercomputecluster_v1beta_ManagedInstanceGroup_descriptor,
+            new java.lang.String[] {
+              "InstanceGroupManager",
+              "ComputeId",
+              "TargetSize",
+              "StorageConfigs",
+              "InstanceTemplate",
+              "ResourcePolicyConfig",
+              "BootDisk",
+              "AdditionalDisks",
+              "StartupScript",
+              "EnablePublicIps",
+              "EnableOsLogin",
+              "StartupScriptTimeout",
+              "Metadata",
+              "ServiceAccount",
+              "Labels",
+            });
+    internal_static_google_cloud_hypercomputecluster_v1beta_ManagedInstanceGroup_AdditionalDisksEntry_descriptor =
+        internal_static_google_cloud_hypercomputecluster_v1beta_ManagedInstanceGroup_descriptor
+            .getNestedType(0);
+    internal_static_google_cloud_hypercomputecluster_v1beta_ManagedInstanceGroup_AdditionalDisksEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_hypercomputecluster_v1beta_ManagedInstanceGroup_AdditionalDisksEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
+            });
+    internal_static_google_cloud_hypercomputecluster_v1beta_ManagedInstanceGroup_MetadataEntry_descriptor =
+        internal_static_google_cloud_hypercomputecluster_v1beta_ManagedInstanceGroup_descriptor
+            .getNestedType(1);
+    internal_static_google_cloud_hypercomputecluster_v1beta_ManagedInstanceGroup_MetadataEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_hypercomputecluster_v1beta_ManagedInstanceGroup_MetadataEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
+            });
+    internal_static_google_cloud_hypercomputecluster_v1beta_ManagedInstanceGroup_LabelsEntry_descriptor =
+        internal_static_google_cloud_hypercomputecluster_v1beta_ManagedInstanceGroup_descriptor
+            .getNestedType(2);
+    internal_static_google_cloud_hypercomputecluster_v1beta_ManagedInstanceGroup_LabelsEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_hypercomputecluster_v1beta_ManagedInstanceGroup_LabelsEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
+            });
+    internal_static_google_cloud_hypercomputecluster_v1beta_Disk_descriptor =
+        getDescriptor().getMessageType(51);
+    internal_static_google_cloud_hypercomputecluster_v1beta_Disk_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_hypercomputecluster_v1beta_Disk_descriptor,
+            new java.lang.String[] {
+              "Image", "Snapshot", "ExistingDisk", "Type", "SizeGb", "Source",
+            });
+    internal_static_google_cloud_hypercomputecluster_v1beta_ExistingInstances_descriptor =
+        getDescriptor().getMessageType(52);
+    internal_static_google_cloud_hypercomputecluster_v1beta_ExistingInstances_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_hypercomputecluster_v1beta_ExistingInstances_descriptor,
+            new java.lang.String[] {
+              "Project",
+              "InstanceGroupManager",
+              "RegionInstanceGroupManager",
+              "Reservation",
+              "ReservationBlock",
+              "ReservationSubBlock",
+              "Labels",
+              "Networks",
+              "Source",
+            });
+    internal_static_google_cloud_hypercomputecluster_v1beta_ExistingInstances_LabelsEntry_descriptor =
+        internal_static_google_cloud_hypercomputecluster_v1beta_ExistingInstances_descriptor
+            .getNestedType(0);
+    internal_static_google_cloud_hypercomputecluster_v1beta_ExistingInstances_LabelsEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_hypercomputecluster_v1beta_ExistingInstances_LabelsEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
             });
     descriptor.resolveAllFeaturesImmutable();
     com.google.api.AnnotationsProto.getDescriptor();

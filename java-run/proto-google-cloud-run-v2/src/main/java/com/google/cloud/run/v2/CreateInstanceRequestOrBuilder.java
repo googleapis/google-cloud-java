@@ -27,6 +27,13 @@ public interface CreateInstanceRequestOrBuilder
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
+   * <pre>
+   * Required. The location and project in which this Instance should be
+   * created.
+   * </pre>
+   *
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
@@ -36,6 +43,13 @@ public interface CreateInstanceRequestOrBuilder
   java.lang.String getParent();
 
   /**
+   *
+   *
+   * <pre>
+   * Required. The location and project in which this Instance should be
+   * created.
+   * </pre>
+   *
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
@@ -70,12 +84,13 @@ public interface CreateInstanceRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The unique identifier for the Instance. It must begin with
+   * Optional. The unique identifier for the Instance. It must begin with
    * letter, and cannot end with hyphen; must contain fewer than 50 characters.
    * The name of the instance becomes {parent}/instances/{instance_id}.
+   * If not provided, the server will generate a unique `instance_id`.
    * </pre>
    *
-   * <code>string instance_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string instance_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The instanceId.
    */
@@ -85,12 +100,13 @@ public interface CreateInstanceRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The unique identifier for the Instance. It must begin with
+   * Optional. The unique identifier for the Instance. It must begin with
    * letter, and cannot end with hyphen; must contain fewer than 50 characters.
    * The name of the instance becomes {parent}/instances/{instance_id}.
+   * If not provided, the server will generate a unique `instance_id`.
    * </pre>
    *
-   * <code>string instance_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string instance_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for instanceId.
    */

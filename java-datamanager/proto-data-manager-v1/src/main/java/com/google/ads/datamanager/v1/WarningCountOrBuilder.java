@@ -64,4 +64,47 @@ public interface WarningCountOrBuilder
    * @return The reason.
    */
   com.google.ads.datamanager.v1.ProcessingWarningReason getReason();
+
+  /**
+   *
+   *
+   * <pre>
+   * The 0-based indices of the records in the original request that had this
+   * warning reason.
+   * </pre>
+   *
+   * <code>repeated int32 record_indices = 3;</code>
+   *
+   * @return A list containing the recordIndices.
+   */
+  java.util.List<java.lang.Integer> getRecordIndicesList();
+
+  /**
+   *
+   *
+   * <pre>
+   * The 0-based indices of the records in the original request that had this
+   * warning reason.
+   * </pre>
+   *
+   * <code>repeated int32 record_indices = 3;</code>
+   *
+   * @return The count of recordIndices.
+   */
+  int getRecordIndicesCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * The 0-based indices of the records in the original request that had this
+   * warning reason.
+   * </pre>
+   *
+   * <code>repeated int32 record_indices = 3;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The recordIndices at the given index.
+   */
+  int getRecordIndices(int index);
 }
