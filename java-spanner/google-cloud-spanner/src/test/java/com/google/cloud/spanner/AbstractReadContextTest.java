@@ -411,6 +411,56 @@ public class AbstractReadContextTest {
   }
 
   @Test
+  public void testBuildRequestOptionsPreexistingClientContextPrecedence() {
+    RequestOptions.ClientContext defaultClientContext =
+        RequestOptions.ClientContext.newBuilder()
+            .putSecureContext(
+                "key1", com.google.protobuf.Value.newBuilder().setStringValue("default1").build())
+            .putSecureContext(
+                "key2", com.google.protobuf.Value.newBuilder().setStringValue("default2").build())
+            .build();
+    when(context.session.getSpanner().getOptions().getClientContext())
+        .thenReturn(defaultClientContext);
+
+    RequestOptions.ClientContext preexistingContext =
+        RequestOptions.ClientContext.newBuilder()
+            .putSecureContext(
+                "key2",
+                com.google.protobuf.Value.newBuilder().setStringValue("preexisting2").build())
+            .putSecureContext(
+                "key3",
+                com.google.protobuf.Value.newBuilder().setStringValue("preexisting3").build())
+            .build();
+
+    RequestOptions.ClientContext explicitContext =
+        RequestOptions.ClientContext.newBuilder()
+            .putSecureContext(
+                "key3", com.google.protobuf.Value.newBuilder().setStringValue("explicit3").build())
+            .putSecureContext(
+                "key4", com.google.protobuf.Value.newBuilder().setStringValue("explicit4").build())
+            .build();
+
+    RequestOptions requestOptions =
+        context.buildRequestOptions(
+            Options.fromQueryOptions(Options.clientContext(explicitContext)),
+            false,
+            preexistingContext);
+
+    assertEquals(
+        "default1",
+        requestOptions.getClientContext().getSecureContextOrThrow("key1").getStringValue());
+    assertEquals(
+        "preexisting2",
+        requestOptions.getClientContext().getSecureContextOrThrow("key2").getStringValue());
+    assertEquals(
+        "explicit3",
+        requestOptions.getClientContext().getSecureContextOrThrow("key3").getStringValue());
+    assertEquals(
+        "explicit4",
+        requestOptions.getClientContext().getSecureContextOrThrow("key4").getStringValue());
+  }
+
+  @Test
   public void testGetExecuteSqlRequestBuilderWithDirectedReadOptions() {
     ExecuteSqlRequest.Builder request =
         context.getExecuteSqlRequestBuilder(

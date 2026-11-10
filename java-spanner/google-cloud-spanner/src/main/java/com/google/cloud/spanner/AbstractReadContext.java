@@ -48,6 +48,7 @@ import com.google.spanner.v1.MultiplexedSessionPrecommitToken;
 import com.google.spanner.v1.PartialResultSet;
 import com.google.spanner.v1.ReadRequest;
 import com.google.spanner.v1.RequestOptions;
+import com.google.spanner.v1.RequestOptions.ClientContext;
 import com.google.spanner.v1.Transaction;
 import com.google.spanner.v1.TransactionSelector;
 import io.opentelemetry.api.common.Attributes;
@@ -360,11 +361,27 @@ abstract class AbstractReadContext
   }
 
   RequestOptions buildRequestOptions(Options options) {
+    return buildRequestOptions(options, false, null);
+  }
+
+  RequestOptions buildRequestOptions(Options options, boolean hasPreexistingRequestTag) {
+    return buildRequestOptions(options, hasPreexistingRequestTag, null);
+  }
+
+  RequestOptions buildRequestOptions(
+      Options options,
+      boolean hasPreexistingRequestTag,
+      @Nullable ClientContext preexistingClientContext) {
     RequestOptions.Builder builder = options.toRequestOptionsProto(false).toBuilder();
-    RequestOptions.ClientContext defaultClientContext =
-        session.getSpanner().getOptions().getClientContext();
-    if (defaultClientContext != null) {
-      RequestOptions.ClientContext.Builder clientContextBuilder = defaultClientContext.toBuilder();
+    ClientContext defaultClientContext = session.getSpanner().getOptions().getClientContext();
+    if (defaultClientContext != null || preexistingClientContext != null) {
+      ClientContext.Builder clientContextBuilder =
+          defaultClientContext == null
+              ? RequestOptions.ClientContext.newBuilder()
+              : defaultClientContext.toBuilder();
+      if (preexistingClientContext != null) {
+        clientContextBuilder.mergeFrom(preexistingClientContext);
+      }
       if (builder.hasClientContext()) {
         clientContextBuilder.mergeFrom(builder.getClientContext());
       }
@@ -376,7 +393,8 @@ abstract class AbstractReadContext
       if (!getTransactionTag().isEmpty()) {
         builder.setTransactionTag(getTransactionTag());
       }
-    } else if (session.getSpanner().getOptions().isAutoTaggingEnabled()
+    } else if (!hasPreexistingRequestTag
+        && session.getSpanner().getOptions().isAutoTaggingEnabled()
         && builder.getRequestTag().isEmpty()) {
       // Read-only contexts (both single-use and multi-use) do not support transaction-level tags.
       // We lazily resolve and populate the request tag instead.
@@ -405,8 +423,7 @@ abstract class AbstractReadContext
       @Nullable ByteString partitionToken,
       boolean withTransactionSelector) {
     ExecuteSqlRequest.Builder builder =
-        ExecuteSqlRequest.newBuilder().setSql(statement.getSql()).setQueryMode(queryMode);
-    addParameters(builder, statement.getParameters());
+        statement.toExecuteSqlRequestBuilder().setQueryMode(queryMode);
     if (withTransactionSelector) {
       TransactionSelector selector = getTransactionSelector();
       if (selector != null) {
@@ -598,6 +615,26 @@ abstract class AbstractReadContext
             statement, queryMode, options, partitionToken, /* withTransactionSelector= */ false),
         this.tracer.createStatementAttributes(statement, options),
         options);
+  }
+
+  ResultSet executeQueryInternalWithOptions(
+      final ExecuteSqlRequest executeSqlRequest,
+      final @Nullable Options options,
+      final ByteString partitionToken) {
+    beforeReadOrQuery();
+    // Parameters are already serialized in executeSqlRequest for RPC execution. This Statement is
+    // created with only the SQL text to provide context for tracing and error logs.
+    Statement statement = Statement.of(executeSqlRequest.getSql());
+    ExecuteSqlRequest.Builder builder = executeSqlRequest.toBuilder();
+    builder.setQueryMode(QueryMode.NORMAL);
+    builder.setQueryOptions(buildQueryOptions(executeSqlRequest.getQueryOptions()));
+    Options effectiveOptions = options == null ? Options.fromQueryOptions() : options;
+    ReadOrQueryRequest.Query request =
+        ReadOrQueryRequest.forQuery(this, builder, statement, effectiveOptions, partitionToken);
+    return createStreamingResultSet(
+        request,
+        this.tracer.createStatementAttributes(statement, effectiveOptions),
+        effectiveOptions);
   }
 
   static Map<SpannerRpc.Option, ?> getChannelHintOptions(

@@ -35,7 +35,6 @@ import com.google.protobuf.ByteString;
 import com.google.spanner.v1.BeginTransactionRequest;
 import com.google.spanner.v1.ExecuteSqlRequest;
 import com.google.spanner.v1.PartialResultSet;
-import com.google.spanner.v1.RequestOptions;
 import com.google.spanner.v1.Transaction;
 import com.google.spanner.v1.TransactionOptions;
 import com.google.spanner.v1.TransactionSelector;
@@ -200,26 +199,13 @@ public class PartitionedDmlTransaction implements SessionImpl.SessionTransaction
     final TransactionSelector transactionSelector =
         TransactionSelector.newBuilder().setId(transactionId).build();
     final ExecuteSqlRequest.Builder builder =
-        ExecuteSqlRequest.newBuilder()
-            .setSql(statement.getSql())
+        statement
+            .toExecuteSqlRequestBuilder()
             .setQueryMode(ExecuteSqlRequest.QueryMode.NORMAL)
             .setSession(session.getName())
-            .setTransaction(transactionSelector);
-
-    setParameters(builder, statement.getParameters());
-
-    builder.setResumeToken(ByteString.EMPTY);
-
-    if (options.hasPriority() || options.hasTag()) {
-      RequestOptions.Builder requestOptionsBuilder = RequestOptions.newBuilder();
-      if (options.hasPriority()) {
-        requestOptionsBuilder.setPriority(options.priority());
-      }
-      if (options.hasTag()) {
-        requestOptionsBuilder.setRequestTag(options.tag());
-      }
-      builder.setRequestOptions(requestOptionsBuilder.build());
-    }
+            .setTransaction(transactionSelector)
+            .setResumeToken(ByteString.EMPTY);
+    options.applyTo(builder);
     return builder.build();
   }
 
@@ -240,11 +226,5 @@ public class PartitionedDmlTransaction implements SessionImpl.SessionTransaction
           "Failed to init transaction, missing transaction id\n" + session.getName());
     }
     return tx.getId();
-  }
-
-  private void setParameters(
-      final ExecuteSqlRequest.Builder requestBuilder,
-      final Map<String, Value> statementParameters) {
-    AbstractReadContext.addParameters(requestBuilder, statementParameters);
   }
 }
