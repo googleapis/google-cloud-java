@@ -42,6 +42,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
@@ -63,7 +64,7 @@ public final class GcpChannelPoolBuiltInMetricsTest {
   private static final Attributes DIRECTPATH = Attributes.of(LANE, "directpath");
 
   private final ExecutorService executor = MoreExecutors.newDirectExecutorService();
-  private final List<ManagedChannel> pools = new ArrayList<>();
+  private final List<ManagedChannel> pools = new CopyOnWriteArrayList<>();
   private final List<SdkMeterProvider> meterProviders = new ArrayList<>();
   private SdkMeterProvider meterProvider;
   private InMemoryMetricReader reader;
