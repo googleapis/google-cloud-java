@@ -66,33 +66,22 @@ public class Util {
   public static Deadline extractDeadline(GrpcCallContext callContext, Duration defaultDeadline) {
     // NOTE: ignoring callContext.timeout because its an attempt timeout
     Optional<Deadline> ambientDeadline = Optional.ofNullable(Context.current().getDeadline());
-    Optional<Duration> retryTotalTimeout =
+    Duration totalTimeout =
         Optional.ofNullable(callContext)
             .flatMap(ctx -> Optional.ofNullable(ctx.getRetrySettings()))
-            .map(RetrySettings::getTotalTimeoutDuration);
+            .map(RetrySettings::getTotalTimeoutDuration)
+            .orElse(defaultDeadline);
     Optional<Deadline> grpcCallDeadline =
         Optional.ofNullable(callContext)
             .flatMap(ctx -> Optional.ofNullable(ctx.getCallOptions()))
             .flatMap(ctx -> Optional.ofNullable(ctx.getDeadline()));
 
-    Deadline effectiveDeadline = null;
-    if (ambientDeadline.isPresent()) {
+    Deadline effectiveDeadline = Deadline.after(totalTimeout.toMillis(), TimeUnit.MILLISECONDS);
+    if (ambientDeadline.isPresent() && ambientDeadline.get().isBefore(effectiveDeadline)) {
       effectiveDeadline = ambientDeadline.get();
     }
-    if (grpcCallDeadline.isPresent()) {
-      if (effectiveDeadline == null || grpcCallDeadline.get().isBefore(effectiveDeadline)) {
-        effectiveDeadline = grpcCallDeadline.get();
-      }
-    }
-    if (retryTotalTimeout.isPresent()) {
-      Deadline retryDeadline =
-          Deadline.after(retryTotalTimeout.get().toMillis(), TimeUnit.MILLISECONDS);
-      if (effectiveDeadline == null || retryDeadline.isBefore(effectiveDeadline)) {
-        effectiveDeadline = retryDeadline;
-      }
-    }
-    if (effectiveDeadline == null) {
-      effectiveDeadline = Deadline.after(defaultDeadline.toMillis(), TimeUnit.MILLISECONDS);
+    if (grpcCallDeadline.isPresent() && grpcCallDeadline.get().isBefore(effectiveDeadline)) {
+      effectiveDeadline = grpcCallDeadline.get();
     }
     return effectiveDeadline;
   }
