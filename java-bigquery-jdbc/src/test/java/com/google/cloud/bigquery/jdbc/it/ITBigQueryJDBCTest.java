@@ -277,10 +277,10 @@ public class ITBigQueryJDBCTest extends ITBase {
     Statement statement = connection.createStatement();
     int expectedCnt = 5000;
     String longQuery = String.format("SELECT * FROM UNNEST(GENERATE_ARRAY(1, %s));", expectedCnt);
-    ResultSet jsonResultSet = statement.executeQuery(longQuery);
-    assertTrue(jsonResultSet.getClass().getName().contains("BigQueryJsonResultSet"));
-    assertEquals(expectedCnt, resultSetRowCount(jsonResultSet));
-    jsonResultSet.close();
+try (ResultSet jsonResultSet = statement.executeQuery(longQuery)) {
+  assertTrue(jsonResultSet.getClass().getName().contains("BigQueryJsonResultSet"));
+  assertEquals(expectedCnt, resultSetRowCount(jsonResultSet));
+}
     connection.close();
   }
 
