@@ -237,10 +237,25 @@ public class ITStatementTest extends ITBase {
     String longQuery = String.format(BASE_QUERY, expectedCnt);
     String longerQuery = String.format(BASE_QUERY, 700000);
     String longerQuery2 = String.format(BASE_QUERY, 900000);
-    statement.execute(longQuery + longerQuery + longerQuery2);
+    assertTrue(statement.execute(longQuery + longerQuery + longerQuery2));
+
     ResultSet arrowResultSet = statement.getResultSet();
+    assertTrue(arrowResultSet.getClass().getName().contains("BigQueryArrowResultSet"));
     assertEquals(500000, resultSetRowCount(arrowResultSet));
+
+    assertTrue(statement.getMoreResults());
+    arrowResultSet = statement.getResultSet();
+    assertTrue(arrowResultSet.getClass().getName().contains("BigQueryArrowResultSet"));
+    assertEquals(700000, resultSetRowCount(arrowResultSet));
+
+    assertTrue(statement.getMoreResults());
+    arrowResultSet = statement.getResultSet();
+    assertTrue(arrowResultSet.getClass().getName().contains("BigQueryArrowResultSet"));
+    assertEquals(900000, resultSetRowCount(arrowResultSet));
+
+    assertFalse(statement.getMoreResults());
     arrowResultSet.close();
+    statement.close();
     connection.close();
   }
 
