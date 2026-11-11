@@ -168,20 +168,25 @@ final class StorageErrorTypeMapper {
     return null;
   }
 
-  static @Nullable String extractHttpStatusCode(@Nullable Throwable t) {
+  /**
+   * Extracts a positive HTTP response status code as a {@link Long} from the causal chain of {@code
+   * t} (inspecting {@link StorageException} and {@link HttpResponseException}), bounded by {@link
+   * #MAX_CAUSE_DEPTH}, or returns {@code null} if no positive HTTP status code is found.
+   */
+  static @Nullable Long extractHttpStatusCode(@Nullable Throwable t) {
     Throwable curr = t;
     int depth = 0;
     while (curr != null && depth < MAX_CAUSE_DEPTH) {
       if (curr instanceof StorageException) {
         int code = ((StorageException) curr).getCode();
         if (code > 0) {
-          return Integer.toString(code);
+          return (long) code;
         }
       }
       if (curr instanceof HttpResponseException) {
         int code = ((HttpResponseException) curr).getStatusCode();
         if (code > 0) {
-          return Integer.toString(code);
+          return (long) code;
         }
       }
       Throwable next = curr.getCause();

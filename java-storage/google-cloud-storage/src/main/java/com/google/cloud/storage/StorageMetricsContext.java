@@ -43,6 +43,9 @@ final class StorageMetricsContext {
   static final CallOptions.Key<StorageMetricsContext> GRPC_CALL_OPTIONS_KEY =
       CallOptions.Key.create("storage-metrics-context");
 
+  private static final long HTTP_STATUS_OK = 200L;
+  private static final long HTTP_STATUS_UNSET = 0L;
+
   @Nullable private final StorageClientMetrics metrics;
   private final String operationName;
   private final ApiClock clock;
@@ -229,7 +232,7 @@ final class StorageMetricsContext {
           attemptBase.toBuilder()
               .put(StorageClientMetrics.KEY_ERROR_TYPE, StorageErrorTypeMapper.STATUS_OK)
               .put(StorageClientMetrics.KEY_NETWORK_PATH, resolveNetworkPath());
-      putAttemptStatusCodes(builder, null, StorageErrorTypeMapper.STATUS_OK, "200");
+      putAttemptStatusCodes(builder, null, StorageErrorTypeMapper.STATUS_OK, HTTP_STATUS_OK);
       metrics.getAttempts().add(1, builder.build());
     }
   }
@@ -259,37 +262,45 @@ final class StorageMetricsContext {
             attemptBase.toBuilder()
                 .put(StorageClientMetrics.KEY_ERROR_TYPE, errorType)
                 .put(StorageClientMetrics.KEY_NETWORK_PATH, networkPath);
-        putAttemptStatusCodes(builder, e, StorageErrorTypeMapper.STATUS_UNKNOWN, "0");
+        putAttemptStatusCodes(builder, e, StorageErrorTypeMapper.STATUS_UNKNOWN, HTTP_STATUS_UNSET);
         metrics.getAttempts().add(1, builder.build());
       }
     }
   }
 
+  /**
+   * Populates both {@code rpc.response.status_code} and {@code http.response.status_code} on
+   * attempt metrics so every {@code gcp.storage.client.attempts} data point emits a consistent set
+   * of attribute keys for {@code GoogleCloudMetricExporter} ({@code SEND_ONCE}). Uses {@code 0L}
+   * ({@link #HTTP_STATUS_UNSET}) when no HTTP response was received or for gRPC attempts, matching
+   * the Go SDK's {@code attribute.Int64("http.response.status_code", 0)} convention.
+   */
   private void putAttemptStatusCodes(
       AttributesBuilder builder,
       @Nullable Throwable error,
       String defaultGrpcStatus,
-      String defaultHttpStatus) {
+      long defaultHttpStatus) {
     String rpcSystemName = baseAttributes.get(StorageClientMetrics.KEY_RPC_SYSTEM_NAME);
     if ("grpc".equals(rpcSystemName)) {
       String rpcStatus = extractRpcStatusCode(error);
       builder.put(
           StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE,
           rpcStatus != null ? rpcStatus : defaultGrpcStatus);
-      builder.put(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE, "");
+      builder.put(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE, HTTP_STATUS_UNSET);
     } else if ("http".equals(rpcSystemName)) {
-      String httpStatus = extractHttpStatusCode(error);
+      Long httpStatus = extractHttpStatusCode(error);
       builder.put(
           StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE,
           httpStatus != null ? httpStatus : defaultHttpStatus);
       builder.put(StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE, "");
     } else {
       String rpcStatus = extractRpcStatusCode(error);
-      String httpStatus = extractHttpStatusCode(error);
+      Long httpStatus = extractHttpStatusCode(error);
       builder.put(
           StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE, rpcStatus != null ? rpcStatus : "");
       builder.put(
-          StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE, httpStatus != null ? httpStatus : "");
+          StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE,
+          httpStatus != null ? httpStatus : HTTP_STATUS_UNSET);
     }
   }
 
@@ -327,8 +338,8 @@ final class StorageMetricsContext {
     return fromContext != null ? fromContext : StorageErrorTypeMapper.extractRpcStatusCode(e);
   }
 
-  private @Nullable String extractHttpStatusCode(@Nullable Throwable e) {
-    String fromContext = baseAttributes.get(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE);
+  private @Nullable Long extractHttpStatusCode(@Nullable Throwable e) {
+    Long fromContext = baseAttributes.get(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE);
     return fromContext != null ? fromContext : StorageErrorTypeMapper.extractHttpStatusCode(e);
   }
 

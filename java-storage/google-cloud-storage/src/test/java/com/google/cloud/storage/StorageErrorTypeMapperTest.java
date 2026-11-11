@@ -722,13 +722,15 @@ public final class StorageErrorTypeMapperTest {
     assertThat(StorageErrorTypeMapper.extractHttpStatusCode(null)).isNull();
     assertThat(StorageErrorTypeMapper.extractHttpStatusCode(new RuntimeException("no http")))
         .isNull();
+    assertThat(StorageErrorTypeMapper.extractHttpStatusCode(new StorageException(0, "No status")))
+        .isNull();
     assertThat(StorageErrorTypeMapper.extractHttpStatusCode(new StorageException(404, "Not Found")))
-        .isEqualTo("404");
+        .isEqualTo(404L);
 
     HttpResponseException hre =
         new HttpResponseException.Builder(429, "Too Many Requests", new HttpHeaders()).build();
     assertThat(StorageErrorTypeMapper.extractHttpStatusCode(new RuntimeException(hre)))
-        .isEqualTo("429");
+        .isEqualTo(429L);
 
     Throwable deep = new StorageException(503, "Service Unavailable");
     for (int i = 0; i < 25; i++) {

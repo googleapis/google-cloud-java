@@ -331,7 +331,7 @@ public final class StorageMetricsContextTest {
     assertThat(point.getAttributes().get(StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE))
         .isEqualTo("");
     assertThat(point.getAttributes().get(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE))
-        .isEqualTo("");
+        .isEqualTo(0L);
     // Errors counter must not be recorded on success
     assertThat(findMetric(collected, StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_ERRORS))
         .isNull();
@@ -354,7 +354,7 @@ public final class StorageMetricsContextTest {
     assertThat(point.getAttributes().get(StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE))
         .isEqualTo("OK");
     assertThat(point.getAttributes().get(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE))
-        .isEqualTo("");
+        .isEqualTo(0L);
     assertThat(point.getAttributes().get(StorageClientMetrics.KEY_NETWORK_PATH))
         .isEqualTo(StorageClientMetrics.NETWORK_PATH_DIRECTPATH);
   }
@@ -369,7 +369,7 @@ public final class StorageMetricsContextTest {
     LongPointData point =
         getSinglePoint(collected, StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_ATTEMPTS);
     assertThat(point.getAttributes().get(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE))
-        .isEqualTo("200");
+        .isEqualTo(200L);
     assertThat(point.getAttributes().get(StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE))
         .isEqualTo("");
   }
@@ -380,7 +380,7 @@ public final class StorageMetricsContextTest {
         Attributes.builder()
             .put(StorageClientMetrics.KEY_RPC_SYSTEM_NAME, "grpc")
             .put(StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE, "ALREADY_EXISTS")
-            .put(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE, "204")
+            .put(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE, 204L)
             .put(
                 StorageClientMetrics.KEY_NETWORK_PATH, StorageClientMetrics.NETWORK_PATH_DIRECTPATH)
             .build();
@@ -393,9 +393,26 @@ public final class StorageMetricsContextTest {
     assertThat(point.getAttributes().get(StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE))
         .isEqualTo("ALREADY_EXISTS");
     assertThat(point.getAttributes().get(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE))
-        .isEqualTo("");
+        .isEqualTo(0L);
     assertThat(point.getAttributes().get(StorageClientMetrics.KEY_NETWORK_PATH))
         .isEqualTo(StorageClientMetrics.NETWORK_PATH_DIRECTPATH);
+
+    resetMetrics();
+    Attributes httpBase =
+        Attributes.builder()
+            .put(StorageClientMetrics.KEY_RPC_SYSTEM_NAME, "http")
+            .put(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE, 204L)
+            .build();
+    StorageMetricsContext httpContext = StorageMetricsContext.create("GetObject", httpBase);
+    httpContext.recordAttemptSuccess(metrics);
+
+    collected = reader.collectAllMetrics();
+    LongPointData httpPoint =
+        getSinglePoint(collected, StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_ATTEMPTS);
+    assertThat(httpPoint.getAttributes().get(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE))
+        .isEqualTo(204L);
+    assertThat(httpPoint.getAttributes().get(StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE))
+        .isEqualTo("");
   }
 
   @Test
@@ -430,7 +447,7 @@ public final class StorageMetricsContextTest {
     assertThat(attemptPoint.getAttributes().get(StorageClientMetrics.KEY_ERROR_TYPE))
         .isEqualTo("NOT_FOUND");
     assertThat(attemptPoint.getAttributes().get(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE))
-        .isEqualTo("404");
+        .isEqualTo(404L);
     assertThat(attemptPoint.getAttributes().get(StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE))
         .isEqualTo("");
     assertThat(attemptPoint.getAttributes().get(StorageClientMetrics.KEY_NETWORK_PATH))
@@ -463,7 +480,7 @@ public final class StorageMetricsContextTest {
     assertThat(attemptPoint.getAttributes().get(StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE))
         .isEqualTo("NOT_FOUND");
     assertThat(attemptPoint.getAttributes().get(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE))
-        .isEqualTo("");
+        .isEqualTo(0L);
 
     LongPointData errorPoint =
         getSinglePoint(collected, StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_ERRORS);
@@ -486,7 +503,7 @@ public final class StorageMetricsContextTest {
     assertThat(attemptPoint.getAttributes().get(StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE))
         .isEqualTo("PERMISSION_DENIED");
     assertThat(attemptPoint.getAttributes().get(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE))
-        .isEqualTo("");
+        .isEqualTo(0L);
   }
 
   @Test
@@ -508,7 +525,7 @@ public final class StorageMetricsContextTest {
     assertThat(attemptPoint.getAttributes().get(StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE))
         .isEqualTo("ALREADY_EXISTS");
     assertThat(attemptPoint.getAttributes().get(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE))
-        .isEqualTo("");
+        .isEqualTo(0L);
   }
 
   @Test
@@ -525,7 +542,7 @@ public final class StorageMetricsContextTest {
     assertThat(attemptPoint.getAttributes().get(StorageClientMetrics.KEY_ERROR_TYPE))
         .isEqualTo("RESOURCE_EXHAUSTED");
     assertThat(attemptPoint.getAttributes().get(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE))
-        .isEqualTo("429");
+        .isEqualTo(429L);
     assertThat(attemptPoint.getAttributes().get(StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE))
         .isEqualTo("");
   }
@@ -544,7 +561,7 @@ public final class StorageMetricsContextTest {
     assertThat(attemptPoint.getAttributes().get(StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE))
         .isEqualTo("UNAVAILABLE");
     assertThat(attemptPoint.getAttributes().get(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE))
-        .isEqualTo("");
+        .isEqualTo(0L);
 
     resetMetrics();
     Attributes httpBase = Attributes.of(StorageClientMetrics.KEY_RPC_SYSTEM_NAME, "http");
@@ -555,7 +572,7 @@ public final class StorageMetricsContextTest {
     attemptPoint =
         getSinglePoint(collected, StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_ATTEMPTS);
     assertThat(attemptPoint.getAttributes().get(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE))
-        .isEqualTo("503");
+        .isEqualTo(503L);
     assertThat(attemptPoint.getAttributes().get(StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE))
         .isEqualTo("");
   }
@@ -588,7 +605,7 @@ public final class StorageMetricsContextTest {
     LongPointData httpPoint =
         getSinglePoint(collected, StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_ATTEMPTS);
     assertThat(httpPoint.getAttributes().get(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE))
-        .isEqualTo("0");
+        .isEqualTo(0L);
   }
 
   @Test
@@ -617,7 +634,7 @@ public final class StorageMetricsContextTest {
         Attributes.builder()
             .put(StorageClientMetrics.KEY_RPC_SYSTEM_NAME, "grpc")
             .put(StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE, "OVERRIDDEN_RPC")
-            .put(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE, "999")
+            .put(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE, 999L)
             .put(
                 StorageClientMetrics.KEY_NETWORK_PATH, StorageClientMetrics.NETWORK_PATH_DIRECTPATH)
             .build();
@@ -630,7 +647,7 @@ public final class StorageMetricsContextTest {
     assertThat(attemptPoint.getAttributes().get(StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE))
         .isEqualTo("OVERRIDDEN_RPC");
     assertThat(attemptPoint.getAttributes().get(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE))
-        .isEqualTo("");
+        .isEqualTo(0L);
     assertThat(attemptPoint.getAttributes().get(StorageClientMetrics.KEY_NETWORK_PATH))
         .isEqualTo(StorageClientMetrics.NETWORK_PATH_DIRECTPATH);
 
@@ -638,6 +655,27 @@ public final class StorageMetricsContextTest {
         getSinglePoint(collected, StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_ERRORS);
     assertThat(errorPoint.getAttributes().get(StorageClientMetrics.KEY_NETWORK_PATH))
         .isEqualTo(StorageClientMetrics.NETWORK_PATH_DIRECTPATH);
+
+    resetMetrics();
+    Attributes httpBase =
+        Attributes.builder()
+            .put(StorageClientMetrics.KEY_RPC_SYSTEM_NAME, "http")
+            .put(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE, 999L)
+            .build();
+    StorageMetricsContext httpContext = StorageMetricsContext.create("GetObject", httpBase);
+    httpContext.recordAttemptFailure(metrics, new StorageException(404, "Not Found"));
+
+    collected = reader.collectAllMetrics();
+    LongPointData httpAttemptPoint =
+        getSinglePoint(collected, StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_ATTEMPTS);
+    assertThat(
+            httpAttemptPoint
+                .getAttributes()
+                .get(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE))
+        .isEqualTo(999L);
+    assertThat(
+            httpAttemptPoint.getAttributes().get(StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE))
+        .isEqualTo("");
   }
 
   @Test
@@ -696,7 +734,7 @@ public final class StorageMetricsContextTest {
             grpcAttemptPoint
                 .getAttributes()
                 .get(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE))
-        .isEqualTo("");
+        .isEqualTo(0L);
 
     resetMetrics();
     Attributes httpBase = Attributes.of(StorageClientMetrics.KEY_RPC_SYSTEM_NAME, "http");
@@ -710,7 +748,7 @@ public final class StorageMetricsContextTest {
             httpAttemptPoint
                 .getAttributes()
                 .get(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE))
-        .isEqualTo("0");
+        .isEqualTo(0L);
     assertThat(
             httpAttemptPoint.getAttributes().get(StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE))
         .isEqualTo("");
@@ -782,7 +820,7 @@ public final class StorageMetricsContextTest {
             httpAttemptPoint
                 .getAttributes()
                 .get(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE))
-        .isEqualTo("503");
+        .isEqualTo(503L);
   }
 
   @Test
