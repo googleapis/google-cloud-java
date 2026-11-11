@@ -2054,40 +2054,35 @@ public class ConnectionImplTest {
       connection.execute(Statement.of("SELECT FOO FROM BAR"));
       assertArrayEquals(protoDescriptors, connection.getProtoDescriptors());
 
-      // proto descriptor file path should reset after executing a DDL statement
-      connection.setProtoDescriptorsFilePath(protoDescriptorsFilePath);
-      assertArrayEquals(protoDescriptors, connection.getProtoDescriptors());
-      connection.execute(Statement.of("CREATE PROTO BUNDLE (examples.spanner.music.SingerInfo)"));
-      assertNull(connection.getProtoDescriptors());
-      assertNull(connection.getProtoDescriptorsFilePath());
+      // SET PROTO_DESCRIPTORS_FILE_PATH should throw an unsupported exception explaining how to use
+      // SET PROTO_DESCRIPTORS
+      SpannerException setException =
+          assertThrows(
+              SpannerException.class,
+              () ->
+                  connection.execute(
+                      Statement.of(
+                          String.format(
+                              "SET PROTO_DESCRIPTORS_FILE_PATH = '%s'",
+                              protoDescriptorsFilePath))));
+      assertEquals(ErrorCode.INVALID_ARGUMENT, setException.getErrorCode());
+      assertTrue(
+          setException.getMessage().contains("SET PROTO_DESCRIPTORS_FILE_PATH is not supported"));
+      assertTrue(
+          setException
+              .getMessage()
+              .contains("SET PROTO_DESCRIPTORS = '<base64_encoded_proto_descriptors>'"));
 
-      // proto descriptor file path should not reset if the statement is not a DDL statement
-      connection.setProtoDescriptorsFilePath(protoDescriptorsFilePath);
-      assertArrayEquals(protoDescriptors, connection.getProtoDescriptors());
-      connection.execute(Statement.of("SELECT FOO FROM BAR"));
-      assertArrayEquals(protoDescriptors, connection.getProtoDescriptors());
-      assertEquals(protoDescriptorsFilePath, connection.getProtoDescriptorsFilePath());
-
-      // test proto descriptor file path as input
-      connection.setProtoDescriptorsFilePath(protoDescriptorsFilePath);
-      assertArrayEquals(protoDescriptors, connection.getProtoDescriptors());
-      connection.execute(Statement.of("CREATE PROTO BUNDLE (examples.spanner.music.SingerInfo)"));
-      assertNull(connection.getProtoDescriptors());
-
-      // proto descriptor set through file path should overwrite the proto descriptor set from
-      // byte[]
-      connection.setProtoDescriptors("protoDescriptors".getBytes());
-      connection.setProtoDescriptorsFilePath(protoDescriptorsFilePath);
-      assertArrayEquals(protoDescriptors, connection.getProtoDescriptors());
-      connection.execute(Statement.of("CREATE PROTO BUNDLE (examples.spanner.music.SingerInfo)"));
-      assertNull(connection.getProtoDescriptors());
-
-      // proto descriptor set through byte[] should overwrite the proto descriptor from file path
-      connection.setProtoDescriptorsFilePath(protoDescriptorsFilePath);
-      connection.setProtoDescriptors("protoDescriptors".getBytes());
-      assertArrayEquals("protoDescriptors".getBytes(), connection.getProtoDescriptors());
-      connection.execute(Statement.of("CREATE PROTO BUNDLE (examples.spanner.music.SingerInfo)"));
-      assertNull(connection.getProtoDescriptors());
+      // SHOW VARIABLE PROTO_DESCRIPTORS_FILE_PATH should throw an unsupported exception
+      SpannerException showException =
+          assertThrows(
+              SpannerException.class,
+              () -> connection.execute(Statement.of("SHOW VARIABLE PROTO_DESCRIPTORS_FILE_PATH")));
+      assertEquals(ErrorCode.INVALID_ARGUMENT, showException.getErrorCode());
+      assertTrue(
+          showException
+              .getMessage()
+              .contains("SHOW VARIABLE PROTO_DESCRIPTORS_FILE_PATH is not supported"));
     }
   }
 }

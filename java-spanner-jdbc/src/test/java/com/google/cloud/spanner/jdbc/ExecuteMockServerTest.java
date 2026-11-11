@@ -1035,4 +1035,30 @@ public class ExecuteMockServerTest extends AbstractMockServerTest {
     assertFalse(
         mockSpanner.getRequestsOfType(ExecuteBatchDmlRequest.class).get(0).getLastStatements());
   }
+
+  @Test
+  public void testSetProtoDescriptorsFilePathUnsupported() throws SQLException {
+    if (dialect == Dialect.GOOGLE_STANDARD_SQL) {
+      try (Connection connection = createJdbcConnection();
+          Statement statement = connection.createStatement()) {
+        SQLException setException =
+            assertThrows(
+                SQLException.class,
+                () -> statement.execute("SET PROTO_DESCRIPTORS_FILE_PATH = 'descriptors.pb'"));
+        assertEquals(Code.INVALID_ARGUMENT.getNumber(), setException.getErrorCode());
+        assertTrue(
+            setException.getMessage().contains("SET PROTO_DESCRIPTORS_FILE_PATH is not supported"));
+
+        SQLException showException =
+            assertThrows(
+                SQLException.class,
+                () -> statement.execute("SHOW VARIABLE PROTO_DESCRIPTORS_FILE_PATH"));
+        assertEquals(Code.INVALID_ARGUMENT.getNumber(), showException.getErrorCode());
+        assertTrue(
+            showException
+                .getMessage()
+                .contains("SHOW VARIABLE PROTO_DESCRIPTORS_FILE_PATH is not supported"));
+      }
+    }
+  }
 }
