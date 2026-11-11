@@ -72,7 +72,53 @@ public interface ConfidentialInstanceConfigOrBuilder
    *
    *
    * <pre>
+   * Defines a set of Confidential Paravisor (SVSM) options.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.ConfidentialParavisorConfig confidential_paravisor_config = 99055285;
+   * </code>
+   *
+   * @return Whether the confidentialParavisorConfig field is set.
+   */
+  boolean hasConfidentialParavisorConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Defines a set of Confidential Paravisor (SVSM) options.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.ConfidentialParavisorConfig confidential_paravisor_config = 99055285;
+   * </code>
+   *
+   * @return The confidentialParavisorConfig.
+   */
+  com.google.cloud.compute.v1.ConfidentialParavisorConfig getConfidentialParavisorConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Defines a set of Confidential Paravisor (SVSM) options.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.ConfidentialParavisorConfig confidential_paravisor_config = 99055285;
+   * </code>
+   */
+  com.google.cloud.compute.v1.ConfidentialParavisorConfigOrBuilder
+      getConfidentialParavisorConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Defines whether the instance should have confidential compute enabled.
+   * When enabled, the technology used defaults to
+   * AMD SEV unless confidentialInstanceType is specified.
    * </pre>
    *
    * <code>optional bool enable_confidential_compute = 102135228;</code>
@@ -86,6 +132,8 @@ public interface ConfidentialInstanceConfigOrBuilder
    *
    * <pre>
    * Defines whether the instance should have confidential compute enabled.
+   * When enabled, the technology used defaults to
+   * AMD SEV unless confidentialInstanceType is specified.
    * </pre>
    *
    * <code>optional bool enable_confidential_compute = 102135228;</code>

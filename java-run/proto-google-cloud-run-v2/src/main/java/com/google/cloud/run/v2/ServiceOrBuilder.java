@@ -1021,6 +1021,32 @@ public interface ServiceOrBuilder
    *
    *
    * <pre>
+   * Optional. Enables SSH access to the Service.
+   * </pre>
+   *
+   * <code>optional bool ssh_enabled = 29 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the sshEnabled field is set.
+   */
+  boolean hasSshEnabled();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Enables SSH access to the Service.
+   * </pre>
+   *
+   * <code>optional bool ssh_enabled = 29 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The sshEnabled.
+   */
+  boolean getSshEnabled();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. Settings for multi-region deployment.
    * </pre>
    *
@@ -1518,6 +1544,36 @@ public interface ServiceOrBuilder
    * </code>
    */
   com.google.cloud.run.v2.BuildConfigOrBuilder getBuildConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The functional type of the Service.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.run.v2.FunctionalType functional_type = 42 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for functionalType.
+   */
+  int getFunctionalTypeValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The functional type of the Service.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.run.v2.FunctionalType functional_type = 42 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The functionalType.
+   */
+  com.google.cloud.run.v2.FunctionalType getFunctionalType();
 
   /**
    *

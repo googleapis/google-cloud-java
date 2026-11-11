@@ -82,6 +82,16 @@ public enum DBWorkload implements com.google.protobuf.ProtocolMessageEnum {
    * <code>APEX = 4;</code>
    */
   APEX(4),
+  /**
+   *
+   *
+   * <pre>
+   * Autonomous Database with the Lakehouse workload type.
+   * </pre>
+   *
+   * <code>LH = 5;</code>
+   */
+  LH(5),
   UNRECOGNIZED(-1),
   ;
 
@@ -151,6 +161,17 @@ public enum DBWorkload implements com.google.protobuf.ProtocolMessageEnum {
    */
   public static final int APEX_VALUE = 4;
 
+  /**
+   *
+   *
+   * <pre>
+   * Autonomous Database with the Lakehouse workload type.
+   * </pre>
+   *
+   * <code>LH = 5;</code>
+   */
+  public static final int LH_VALUE = 5;
+
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
       throw new java.lang.IllegalArgumentException(
@@ -185,6 +206,8 @@ public enum DBWorkload implements com.google.protobuf.ProtocolMessageEnum {
         return AJD;
       case 4:
         return APEX;
+      case 5:
+        return LH;
       default:
         return null;
     }

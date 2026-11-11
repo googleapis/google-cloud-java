@@ -30,13 +30,13 @@ public interface BootDiskOrBuilder
    *
    *
    * <pre>
-   * Required. Immutable. [Persistent disk
+   * Optional. [Persistent disk
    * type](https://cloud.google.com/compute/docs/disks#disk-types), in the
    * format `projects/{project}/zones/{zone}/diskTypes/{disk_type}`.
    * </pre>
    *
    * <code>
-   * string type = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+   * string type = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The type.
@@ -47,13 +47,13 @@ public interface BootDiskOrBuilder
    *
    *
    * <pre>
-   * Required. Immutable. [Persistent disk
+   * Optional. [Persistent disk
    * type](https://cloud.google.com/compute/docs/disks#disk-types), in the
    * format `projects/{project}/zones/{zone}/diskTypes/{disk_type}`.
    * </pre>
    *
    * <code>
-   * string type = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+   * string type = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The bytes for type.
@@ -64,14 +64,99 @@ public interface BootDiskOrBuilder
    *
    *
    * <pre>
-   * Required. Immutable. Size of the disk in gigabytes. Must be at least 10GB.
+   * Optional. The size of the disk in gigabytes (GB), which must be at least 40
+   * GB.
    * </pre>
    *
-   * <code>
-   * int64 size_gb = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
-   * </code>
+   * <code>int64 size_gb = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The sizeGb.
    */
   long getSizeGb();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The [storage
+   * pools](https://docs.cloud.google.com/compute/docs/disks/storage-pools) used
+   * for creating the boot disk, in the format:
+   * `projects/{project}/zones/{zone}/storagePools/{storage_pool}`.
+   *
+   * Currently, only one Hyperdisk Balanced storage pool is supported.
+   * The storage pool must reside in the same zone as the compute instance.
+   * </pre>
+   *
+   * <code>
+   * repeated string storage_pools = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return A list containing the storagePools.
+   */
+  java.util.List<java.lang.String> getStoragePoolsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The [storage
+   * pools](https://docs.cloud.google.com/compute/docs/disks/storage-pools) used
+   * for creating the boot disk, in the format:
+   * `projects/{project}/zones/{zone}/storagePools/{storage_pool}`.
+   *
+   * Currently, only one Hyperdisk Balanced storage pool is supported.
+   * The storage pool must reside in the same zone as the compute instance.
+   * </pre>
+   *
+   * <code>
+   * repeated string storage_pools = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The count of storagePools.
+   */
+  int getStoragePoolsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The [storage
+   * pools](https://docs.cloud.google.com/compute/docs/disks/storage-pools) used
+   * for creating the boot disk, in the format:
+   * `projects/{project}/zones/{zone}/storagePools/{storage_pool}`.
+   *
+   * Currently, only one Hyperdisk Balanced storage pool is supported.
+   * The storage pool must reside in the same zone as the compute instance.
+   * </pre>
+   *
+   * <code>
+   * repeated string storage_pools = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The storagePools at the given index.
+   */
+  java.lang.String getStoragePools(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The [storage
+   * pools](https://docs.cloud.google.com/compute/docs/disks/storage-pools) used
+   * for creating the boot disk, in the format:
+   * `projects/{project}/zones/{zone}/storagePools/{storage_pool}`.
+   *
+   * Currently, only one Hyperdisk Balanced storage pool is supported.
+   * The storage pool must reside in the same zone as the compute instance.
+   * </pre>
+   *
+   * <code>
+   * repeated string storage_pools = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the storagePools at the given index.
+   */
+  com.google.protobuf.ByteString getStoragePoolsBytes(int index);
 }

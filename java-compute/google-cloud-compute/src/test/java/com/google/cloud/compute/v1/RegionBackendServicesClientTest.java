@@ -174,6 +174,7 @@ public class RegionBackendServicesClientTest {
             .addAllCustomRequestHeaders(new ArrayList<String>())
             .addAllCustomResponseHeaders(new ArrayList<String>())
             .setDescription("description-1724546052")
+            .setDynamicForwarding(BackendServiceDynamicForwarding.newBuilder().build())
             .setEdgeSecurityPolicy("edgeSecurityPolicy-630226001")
             .setEnableCDN(true)
             .setExternalManagedMigrationState("externalManagedMigrationState252654551")

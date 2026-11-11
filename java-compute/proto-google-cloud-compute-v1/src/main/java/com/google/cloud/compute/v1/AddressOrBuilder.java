@@ -711,6 +711,51 @@ public interface AddressOrBuilder
    *
    *
    * <pre>
+   * Optional. The URL of the network attachment that this address comes from in the
+   * following format:
+   * projects/{project}/regions/{region_name}/networkAttachments/{network_attachment_name}.
+   * </pre>
+   *
+   * <code>optional string network_attachment = 224644052;</code>
+   *
+   * @return Whether the networkAttachment field is set.
+   */
+  boolean hasNetworkAttachment();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The URL of the network attachment that this address comes from in the
+   * following format:
+   * projects/{project}/regions/{region_name}/networkAttachments/{network_attachment_name}.
+   * </pre>
+   *
+   * <code>optional string network_attachment = 224644052;</code>
+   *
+   * @return The networkAttachment.
+   */
+  java.lang.String getNetworkAttachment();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The URL of the network attachment that this address comes from in the
+   * following format:
+   * projects/{project}/regions/{region_name}/networkAttachments/{network_attachment_name}.
+   * </pre>
+   *
+   * <code>optional string network_attachment = 224644052;</code>
+   *
+   * @return The bytes for networkAttachment.
+   */
+  com.google.protobuf.ByteString getNetworkAttachmentBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * This signifies the networking tier used for configuring this address and
    * can only take the following values: PREMIUM orSTANDARD. Internal IP addresses are always Premium Tier;
    * global external IP addresses are always Premium Tier; regional external IP
@@ -1008,6 +1053,51 @@ public interface AddressOrBuilder
    * @return The bytes for selfLink.
    */
   com.google.protobuf.ByteString getSelfLinkBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Producer Service's Service class ID for the region of this address. Can
+   * only be used with network_attachment. It is not possible to use on its own;
+   * however, network_attachment can be used without service_class_id.
+   * </pre>
+   *
+   * <code>optional string service_class_id = 422763404;</code>
+   *
+   * @return Whether the serviceClassId field is set.
+   */
+  boolean hasServiceClassId();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Producer Service's Service class ID for the region of this address. Can
+   * only be used with network_attachment. It is not possible to use on its own;
+   * however, network_attachment can be used without service_class_id.
+   * </pre>
+   *
+   * <code>optional string service_class_id = 422763404;</code>
+   *
+   * @return The serviceClassId.
+   */
+  java.lang.String getServiceClassId();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Producer Service's Service class ID for the region of this address. Can
+   * only be used with network_attachment. It is not possible to use on its own;
+   * however, network_attachment can be used without service_class_id.
+   * </pre>
+   *
+   * <code>optional string service_class_id = 422763404;</code>
+   *
+   * @return The bytes for serviceClassId.
+   */
+  com.google.protobuf.ByteString getServiceClassIdBytes();
 
   /**
    *

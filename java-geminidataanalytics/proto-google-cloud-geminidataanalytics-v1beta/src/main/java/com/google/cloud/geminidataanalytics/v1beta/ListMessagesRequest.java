@@ -271,6 +271,28 @@ public final class ListMessagesRequest extends com.google.protobuf.GeneratedMess
     }
   }
 
+  public static final int PENDING_WRITE_WAIT_SKIPPED_FIELD_NUMBER = 7;
+  private boolean pendingWriteWaitSkipped_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If true, the wait for in-flight writes on the most recent turn is
+   * skipped. By default ListMessages waits for those writes to become durable
+   * so a caller reading right after a chat turn does not miss the tail of that
+   * turn's messages.
+   * </pre>
+   *
+   * <code>bool pending_write_wait_skipped = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The pendingWriteWaitSkipped.
+   */
+  @java.lang.Override
+  public boolean getPendingWriteWaitSkipped() {
+    return pendingWriteWaitSkipped_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -297,6 +319,9 @@ public final class ListMessagesRequest extends com.google.protobuf.GeneratedMess
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(filter_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 5, filter_);
     }
+    if (pendingWriteWaitSkipped_ != false) {
+      output.writeBool(7, pendingWriteWaitSkipped_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -318,6 +343,9 @@ public final class ListMessagesRequest extends com.google.protobuf.GeneratedMess
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(filter_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(5, filter_);
     }
+    if (pendingWriteWaitSkipped_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(7, pendingWriteWaitSkipped_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -338,6 +366,7 @@ public final class ListMessagesRequest extends com.google.protobuf.GeneratedMess
     if (getPageSize() != other.getPageSize()) return false;
     if (!getPageToken().equals(other.getPageToken())) return false;
     if (!getFilter().equals(other.getFilter())) return false;
+    if (getPendingWriteWaitSkipped() != other.getPendingWriteWaitSkipped()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -357,6 +386,8 @@ public final class ListMessagesRequest extends com.google.protobuf.GeneratedMess
     hash = (53 * hash) + getPageToken().hashCode();
     hash = (37 * hash) + FILTER_FIELD_NUMBER;
     hash = (53 * hash) + getFilter().hashCode();
+    hash = (37 * hash) + PENDING_WRITE_WAIT_SKIPPED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getPendingWriteWaitSkipped());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -502,6 +533,7 @@ public final class ListMessagesRequest extends com.google.protobuf.GeneratedMess
       pageSize_ = 0;
       pageToken_ = "";
       filter_ = "";
+      pendingWriteWaitSkipped_ = false;
       return this;
     }
 
@@ -552,6 +584,9 @@ public final class ListMessagesRequest extends com.google.protobuf.GeneratedMess
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.filter_ = filter_;
       }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.pendingWriteWaitSkipped_ = pendingWriteWaitSkipped_;
+      }
     }
 
     @java.lang.Override
@@ -586,6 +621,9 @@ public final class ListMessagesRequest extends com.google.protobuf.GeneratedMess
         filter_ = other.filter_;
         bitField0_ |= 0x00000008;
         onChanged();
+      }
+      if (other.getPendingWriteWaitSkipped() != false) {
+        setPendingWriteWaitSkipped(other.getPendingWriteWaitSkipped());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -637,6 +675,12 @@ public final class ListMessagesRequest extends com.google.protobuf.GeneratedMess
                 bitField0_ |= 0x00000008;
                 break;
               } // case 42
+            case 56:
+              {
+                pendingWriteWaitSkipped_ = input.readBool();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 56
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1095,6 +1139,71 @@ public final class ListMessagesRequest extends com.google.protobuf.GeneratedMess
       checkByteStringIsUtf8(value);
       filter_ = value;
       bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    private boolean pendingWriteWaitSkipped_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, the wait for in-flight writes on the most recent turn is
+     * skipped. By default ListMessages waits for those writes to become durable
+     * so a caller reading right after a chat turn does not miss the tail of that
+     * turn's messages.
+     * </pre>
+     *
+     * <code>bool pending_write_wait_skipped = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The pendingWriteWaitSkipped.
+     */
+    @java.lang.Override
+    public boolean getPendingWriteWaitSkipped() {
+      return pendingWriteWaitSkipped_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, the wait for in-flight writes on the most recent turn is
+     * skipped. By default ListMessages waits for those writes to become durable
+     * so a caller reading right after a chat turn does not miss the tail of that
+     * turn's messages.
+     * </pre>
+     *
+     * <code>bool pending_write_wait_skipped = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The pendingWriteWaitSkipped to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPendingWriteWaitSkipped(boolean value) {
+
+      pendingWriteWaitSkipped_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, the wait for in-flight writes on the most recent turn is
+     * skipped. By default ListMessages waits for those writes to become durable
+     * so a caller reading right after a chat turn does not miss the tail of that
+     * turn's messages.
+     * </pre>
+     *
+     * <code>bool pending_write_wait_skipped = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPendingWriteWaitSkipped() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      pendingWriteWaitSkipped_ = false;
       onChanged();
       return this;
     }

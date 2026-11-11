@@ -249,6 +249,15 @@
       "exampleStatements": ["show transaction isolation level","show variable transaction isolation level"]
     },
     {
+      "name": "SHOW [VARIABLE] TRANSACTION_ISOLATION",
+      "executorName": "ClientSideStatementNoParamExecutor",
+      "resultType": "RESULT_SET",
+      "statementType": "SHOW_TRANSACTION_ISOLATION_LEVEL",
+      "regex": "(?is)\\A\\s*show\\s+(?:variable\\s+)?transaction_isolation\\s*\\z",
+      "method": "statementShowTransactionIsolationLevel",
+      "exampleStatements": ["show transaction_isolation","show variable transaction_isolation"]
+    },
+    {
       "name": "SHOW [VARIABLE] DEFAULT_TRANSACTION_ISOLATION",
       "executorName": "ClientSideStatementNoParamExecutor",
       "resultType": "RESULT_SET",

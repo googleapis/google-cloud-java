@@ -135,7 +135,9 @@ public final class CloudRunRevisionInfo extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * URI of a Cloud Run revision.
+   * URI of the Cloud Run revision.
+   * Format:
+   * `projects/{project_id}/locations/{location}/revisions/{revision_id}`
    * </pre>
    *
    * <code>string uri = 2;</code>
@@ -159,7 +161,9 @@ public final class CloudRunRevisionInfo extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * URI of a Cloud Run revision.
+   * URI of the Cloud Run revision.
+   * Format:
+   * `projects/{project_id}/locations/{location}/revisions/{revision_id}`
    * </pre>
    *
    * <code>string uri = 2;</code>
@@ -242,6 +246,8 @@ public final class CloudRunRevisionInfo extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * URI of Cloud Run service this revision belongs to.
+   * Format: `projects/{project_id}/locations/{location}/services/{service_id}`
+   * Mutually exclusive with `worker_pool_uri`.
    * </pre>
    *
    * <code>string service_uri = 5;</code>
@@ -266,6 +272,8 @@ public final class CloudRunRevisionInfo extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * URI of Cloud Run service this revision belongs to.
+   * Format: `projects/{project_id}/locations/{location}/services/{service_id}`
+   * Mutually exclusive with `worker_pool_uri`.
    * </pre>
    *
    * <code>string service_uri = 5;</code>
@@ -785,7 +793,9 @@ public final class CloudRunRevisionInfo extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * URI of a Cloud Run revision.
+     * URI of the Cloud Run revision.
+     * Format:
+     * `projects/{project_id}/locations/{location}/revisions/{revision_id}`
      * </pre>
      *
      * <code>string uri = 2;</code>
@@ -808,7 +818,9 @@ public final class CloudRunRevisionInfo extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * URI of a Cloud Run revision.
+     * URI of the Cloud Run revision.
+     * Format:
+     * `projects/{project_id}/locations/{location}/revisions/{revision_id}`
      * </pre>
      *
      * <code>string uri = 2;</code>
@@ -831,7 +843,9 @@ public final class CloudRunRevisionInfo extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * URI of a Cloud Run revision.
+     * URI of the Cloud Run revision.
+     * Format:
+     * `projects/{project_id}/locations/{location}/revisions/{revision_id}`
      * </pre>
      *
      * <code>string uri = 2;</code>
@@ -853,7 +867,9 @@ public final class CloudRunRevisionInfo extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * URI of a Cloud Run revision.
+     * URI of the Cloud Run revision.
+     * Format:
+     * `projects/{project_id}/locations/{location}/revisions/{revision_id}`
      * </pre>
      *
      * <code>string uri = 2;</code>
@@ -871,7 +887,9 @@ public final class CloudRunRevisionInfo extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * URI of a Cloud Run revision.
+     * URI of the Cloud Run revision.
+     * Format:
+     * `projects/{project_id}/locations/{location}/revisions/{revision_id}`
      * </pre>
      *
      * <code>string uri = 2;</code>
@@ -1008,6 +1026,8 @@ public final class CloudRunRevisionInfo extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * URI of Cloud Run service this revision belongs to.
+     * Format: `projects/{project_id}/locations/{location}/services/{service_id}`
+     * Mutually exclusive with `worker_pool_uri`.
      * </pre>
      *
      * <code>string service_uri = 5;</code>
@@ -1031,6 +1051,8 @@ public final class CloudRunRevisionInfo extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * URI of Cloud Run service this revision belongs to.
+     * Format: `projects/{project_id}/locations/{location}/services/{service_id}`
+     * Mutually exclusive with `worker_pool_uri`.
      * </pre>
      *
      * <code>string service_uri = 5;</code>
@@ -1054,6 +1076,8 @@ public final class CloudRunRevisionInfo extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * URI of Cloud Run service this revision belongs to.
+     * Format: `projects/{project_id}/locations/{location}/services/{service_id}`
+     * Mutually exclusive with `worker_pool_uri`.
      * </pre>
      *
      * <code>string service_uri = 5;</code>
@@ -1076,6 +1100,8 @@ public final class CloudRunRevisionInfo extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * URI of Cloud Run service this revision belongs to.
+     * Format: `projects/{project_id}/locations/{location}/services/{service_id}`
+     * Mutually exclusive with `worker_pool_uri`.
      * </pre>
      *
      * <code>string service_uri = 5;</code>
@@ -1094,6 +1120,8 @@ public final class CloudRunRevisionInfo extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * URI of Cloud Run service this revision belongs to.
+     * Format: `projects/{project_id}/locations/{location}/services/{service_id}`
+     * Mutually exclusive with `worker_pool_uri`.
      * </pre>
      *
      * <code>string service_uri = 5;</code>

@@ -24,7 +24,7 @@ package com.google.ads.admanager.v1;
  *
  *
  * <pre>
- * Response object for [RunDeliveryForecast][] method.
+ * Response object for `RunDeliveryForecast` method.
  * </pre>
  *
  * Protobuf type {@code google.ads.admanager.v1.RunDeliveryForecastResponse}
@@ -294,7 +294,7 @@ public final class RunDeliveryForecastResponse extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Response object for [RunDeliveryForecast][] method.
+   * Response object for `RunDeliveryForecast` method.
    * </pre>
    *
    * Protobuf type {@code google.ads.admanager.v1.RunDeliveryForecastResponse}

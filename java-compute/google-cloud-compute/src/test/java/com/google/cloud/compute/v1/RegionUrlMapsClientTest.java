@@ -173,6 +173,7 @@ public class RegionUrlMapsClientTest {
             .addAllPathMatchers(new ArrayList<PathMatcher>())
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
+            .setStatus(UrlMapStatus.newBuilder().build())
             .addAllTests(new ArrayList<UrlMapTest>())
             .build();
     mockService.addResponse(expectedResponse);
