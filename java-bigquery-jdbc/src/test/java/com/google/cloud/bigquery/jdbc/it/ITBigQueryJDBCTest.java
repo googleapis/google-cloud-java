@@ -228,7 +228,6 @@ public class ITBigQueryJDBCTest extends ITBase {
   }
 
   @Test
-  @Tag("disable_tpc")
   public void testReadAPIPathLarge() throws SQLException {
     Properties withReadApi = new Properties();
     withReadApi.setProperty("EnableHighThroughputAPI", "1");
@@ -240,15 +239,15 @@ public class ITBigQueryJDBCTest extends ITBase {
         DriverManager.getConnection(String.format(connectionUrl, DEFAULT_CATALOG), withReadApi);
     Statement statement = connection.createStatement();
     int expectedCnt = 5000;
-    String longQuery = String.format(BASE_QUERY, expectedCnt);
+    String longQuery = String.format("SELECT * FROM UNNEST(GENERATE_ARRAY(1, %s));", expectedCnt);
     ResultSet arrowResultSet = statement.executeQuery(longQuery);
+    assertTrue(arrowResultSet.getClass().getName().contains("BigQueryArrowResultSet"));
     assertEquals(expectedCnt, resultSetRowCount(arrowResultSet));
     arrowResultSet.close();
     connection.close();
   }
 
   @Test
-  @Tag("disable_tpc")
   public void testReadAPIPathLargeWithThresholdParameters() throws SQLException {
     String connectionUri =
         ITBigQueryJDBCTest.connection_uri
@@ -259,15 +258,15 @@ public class ITBigQueryJDBCTest extends ITBase {
     Connection connection = DriverManager.getConnection(connectionUri);
     Statement statement = connection.createStatement();
     int expectedCnt = 1000;
-    String longQuery = String.format(BASE_QUERY, expectedCnt);
+    String longQuery = String.format("SELECT * FROM UNNEST(GENERATE_ARRAY(1, %s));", expectedCnt);
     ResultSet arrowResultSet = statement.executeQuery(longQuery);
+    assertTrue(arrowResultSet.getClass().getName().contains("BigQueryArrowResultSet"));
     assertEquals(expectedCnt, resultSetRowCount(arrowResultSet));
     arrowResultSet.close();
     connection.close();
   }
 
   @Test
-  @Tag("disable_tpc")
   public void testReadAPIPathLargeWithThresholdNotMet() throws SQLException {
     String connectionUri =
         ITBigQueryJDBCTest.connection_uri
@@ -277,10 +276,11 @@ public class ITBigQueryJDBCTest extends ITBase {
     Connection connection = DriverManager.getConnection(connectionUri);
     Statement statement = connection.createStatement();
     int expectedCnt = 5000;
-    String longQuery = String.format(BASE_QUERY, expectedCnt);
-    ResultSet arrowResultSet = statement.executeQuery(longQuery);
-    assertEquals(expectedCnt, resultSetRowCount(arrowResultSet));
-    arrowResultSet.close();
+    String longQuery = String.format("SELECT * FROM UNNEST(GENERATE_ARRAY(1, %s));", expectedCnt);
+    ResultSet jsonResultSet = statement.executeQuery(longQuery);
+    assertTrue(jsonResultSet.getClass().getName().contains("BigQueryJsonResultSet"));
+    assertEquals(expectedCnt, resultSetRowCount(jsonResultSet));
+    jsonResultSet.close();
     connection.close();
   }
 

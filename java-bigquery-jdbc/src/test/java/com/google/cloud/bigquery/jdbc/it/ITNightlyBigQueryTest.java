@@ -327,7 +327,6 @@ public class ITNightlyBigQueryTest extends ITBase {
   }
 
   @Test
-  @Tag("disable_tpc")
   public void testHTAPIWithValidDestinationTableSavesQueriesWithStandardSQL() throws SQLException {
     // setup
     String connection_uri =
@@ -346,6 +345,9 @@ public class ITNightlyBigQueryTest extends ITBase {
 
     // assertion
     assertNotNull(resultSet);
+    assertTrue(resultSet.getClass().getName().contains("BigQueryArrowResultSet"));
+    resultSet.close();
+    connection.close();
     String selectQuery = "SELECT * FROM INTEGRATION_TESTS.destination_table_test;";
     ResultSet actualResultSet = bigQueryStatement.executeQuery(selectQuery);
     assertEquals(200000, resultSetRowCount(actualResultSet));
@@ -1670,7 +1672,6 @@ public class ITNightlyBigQueryTest extends ITBase {
   }
 
   @Test
-  @Tag("disable_tpc")
   public void testReadAPIPathLarge() throws SQLException {
     Properties withReadApi = new Properties();
     withReadApi.setProperty("EnableHighThroughputAPI", "1");
@@ -1690,7 +1691,6 @@ public class ITNightlyBigQueryTest extends ITBase {
   }
 
   @Test
-  @Tag("disable_tpc")
   public void testReadAPIPathLargeWithThresholdParameters() throws SQLException {
     String connectionUri =
         ITNightlyBigQueryTest.connection_uri
