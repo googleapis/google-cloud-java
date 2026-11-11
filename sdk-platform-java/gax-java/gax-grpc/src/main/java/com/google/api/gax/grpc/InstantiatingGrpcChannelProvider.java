@@ -449,6 +449,10 @@ public final class InstantiatingGrpcChannelProvider implements TransportChannelP
     return Boolean.parseBoolean(directPathXdsEnv);
   }
 
+  private boolean isInterconnectEnabledViaBuilderOption() {
+    return Boolean.TRUE.equals(attemptDirectPathXdsOverInterconnect);
+  }
+
   private boolean isAttemptDirectPathXdsOverInterconnect() {
     String directPathInterconnectEnv =
         envProvider.getenv(DIRECT_PATH_ENV_ENABLE_XDS_OVER_INTERCONNECT);
@@ -461,7 +465,7 @@ public final class InstantiatingGrpcChannelProvider implements TransportChannelP
         return false;
       }
     }
-    return Boolean.TRUE.equals(attemptDirectPathXdsOverInterconnect);
+    return isInterconnectEnabledViaBuilderOption();
   }
 
   /**
@@ -484,27 +488,36 @@ public final class InstantiatingGrpcChannelProvider implements TransportChannelP
   // builder or createSingleChannel, only in getTransportChannel which creates the first channel
   // for a client.
   private void logDirectPathMisconfig() {
+    // Interconnect that this client asked for, as opposed to Interconnect inherited from the
+    // process-wide environment variable, which every other client in an application that enables
+    // it for one of them also sees (the same situation as DIRECT_PATH_ENV_ENABLE_XDS, below).
+    boolean interconnectViaBuilderOption =
+        isAttemptDirectPathXdsOverInterconnect() && isInterconnectEnabledViaBuilderOption();
     // Off GCE, DirectPath is normally unavailable, so misconfigurations are only logged at FINE.
-    // DirectPath over Interconnect is meant to run off GCE, so its misconfigurations are warnings.
-    Level level =
-        isOnComputeEngine() || isAttemptDirectPathXdsOverInterconnect()
-            ? Level.WARNING
-            : Level.FINE;
+    // DirectPath over Interconnect is meant to run off GCE, so when the client asked for it, its
+    // misconfigurations are warnings.
+    Level level = isOnComputeEngine() || interconnectViaBuilderOption ? Level.WARNING : Level.FINE;
 
     if (!isDirectPathEnabled()) {
       // Checked before the xDS cases: clients such as Storage set the xDS option together with
       // attemptDirectPath, so with the kill switch set the xDS message would wrongly report
       // attemptDirectPath as unset.
-      if (isAttemptDirectPathXdsOverInterconnect()) {
+      if (interconnectViaBuilderOption) {
         LOG.log(
             level,
             "DirectPath over Interconnect is misconfigured. The attemptDirectPathXdsOverInterconnect"
-                + " option or the "
-                + DIRECT_PATH_ENV_ENABLE_XDS_OVER_INTERCONNECT
-                + " environment variable was set, but DirectPath is not enabled for this client."
-                + " Please set the attemptDirectPath option as well, and make sure "
+                + " option was set, but DirectPath is not enabled for this client. Please set the"
+                + " attemptDirectPath option as well, and make sure "
                 + DIRECT_PATH_ENV_DISABLE_DIRECT_PATH
                 + " is not set to true.");
+      } else if (isAttemptDirectPathXdsOverInterconnect()) {
+        LOG.log(
+            level,
+            "Env var "
+                + DIRECT_PATH_ENV_ENABLE_XDS_OVER_INTERCONNECT
+                + " was found and set to TRUE, but DirectPath was not enabled for this client. If"
+                + " this is intended for this client, please note that this is a misconfiguration"
+                + " and set the attemptDirectPath option as well.");
       }
       // Direct Path xDS can be enabled two ways: via environment variable or via builder.
       // Case 1: Direct Path is only enabled via xDS env var. We will _warn_ the user that this is
@@ -1431,7 +1444,9 @@ public final class InstantiatingGrpcChannelProvider implements TransportChannelP
      *
      * <p>This can also be enabled or disabled via the {@code
      * GOOGLE_CLOUD_ENABLE_DIRECT_PATH_XDS_OVER_INTERCONNECT} environment variable ({@code "true"}
-     * or {@code "false"}), which takes precedence over this builder option.
+     * or {@code "false"}), which takes precedence over this builder option. The environment
+     * variable applies to every client in the process; a client that does not enable DirectPath
+     * logs it only at {@code FINE} outside GCE.
      */
     @InternalApi("For internal use by google-cloud-java clients only")
     public Builder setAttemptDirectPathXdsOverInterconnect(
