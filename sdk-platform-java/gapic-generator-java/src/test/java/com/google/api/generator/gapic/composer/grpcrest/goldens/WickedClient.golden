@@ -24,11 +24,15 @@ import org.jspecify.annotations.Nullable;
  * // - It may require correct/in-range values for request initialization.
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
- * try (WickedClient wickedClient = WickedClient.create()) {
- *   EvilRequest request =
- *       EvilRequest.newBuilder().setMaliciousIdea("maliciousIdea712541645").build();
- *   EvilResponse response = wickedClient.craftEvilPlan(request);
- * }
+ * // - The samples create a client that can be re-used for multiple requests
+ * // and are expected to be long-lived.
+ * // The clients should be resource managed properly and eventually closed.
+ * // For more information on client lifecycle, see
+ * // https://docs.cloud.google.com/java/docs/client-lifecycle
+ * WickedClient wickedClient = WickedClient.create();
+ * EvilRequest request =
+ *     EvilRequest.newBuilder().setMaliciousIdea("maliciousIdea712541645").build();
+ * EvilResponse response = wickedClient.craftEvilPlan(request);
  * }</pre>
  *
  * <p>Note: close() needs to be called on the WickedClient object to clean up resources such as
@@ -94,6 +98,11 @@ import org.jspecify.annotations.Nullable;
  * // - It may require correct/in-range values for request initialization.
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * // - The samples create a client that can be re-used for multiple requests
+ * // and are expected to be long-lived.
+ * // The clients should be resource managed properly and eventually closed.
+ * // For more information on client lifecycle, see
+ * // https://docs.cloud.google.com/java/docs/client-lifecycle
  * WickedSettings wickedSettings =
  *     WickedSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -109,6 +118,11 @@ import org.jspecify.annotations.Nullable;
  * // - It may require correct/in-range values for request initialization.
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * // - The samples create a client that can be re-used for multiple requests
+ * // and are expected to be long-lived.
+ * // The clients should be resource managed properly and eventually closed.
+ * // For more information on client lifecycle, see
+ * // https://docs.cloud.google.com/java/docs/client-lifecycle
  * WickedSettings wickedSettings = WickedSettings.newBuilder().setEndpoint(myEndpoint).build();
  * WickedClient wickedClient = WickedClient.create(wickedSettings);
  * }</pre>
@@ -175,11 +189,15 @@ public class WickedClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (WickedClient wickedClient = WickedClient.create()) {
-   *   EvilRequest request =
-   *       EvilRequest.newBuilder().setMaliciousIdea("maliciousIdea712541645").build();
-   *   EvilResponse response = wickedClient.craftEvilPlan(request);
-   * }
+   * // - The samples create a client that can be re-used for multiple requests
+   * // and are expected to be long-lived.
+   * // The clients should be resource managed properly and eventually closed.
+   * // For more information on client lifecycle, see
+   * // https://docs.cloud.google.com/java/docs/client-lifecycle
+   * WickedClient wickedClient = WickedClient.create();
+   * EvilRequest request =
+   *     EvilRequest.newBuilder().setMaliciousIdea("maliciousIdea712541645").build();
+   * EvilResponse response = wickedClient.craftEvilPlan(request);
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
@@ -199,13 +217,17 @@ public class WickedClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (WickedClient wickedClient = WickedClient.create()) {
-   *   EvilRequest request =
-   *       EvilRequest.newBuilder().setMaliciousIdea("maliciousIdea712541645").build();
-   *   ApiFuture<EvilResponse> future = wickedClient.craftEvilPlanCallable().futureCall(request);
-   *   // Do something.
-   *   EvilResponse response = future.get();
-   * }
+   * // - The samples create a client that can be re-used for multiple requests
+   * // and are expected to be long-lived.
+   * // The clients should be resource managed properly and eventually closed.
+   * // For more information on client lifecycle, see
+   * // https://docs.cloud.google.com/java/docs/client-lifecycle
+   * WickedClient wickedClient = WickedClient.create();
+   * EvilRequest request =
+   *     EvilRequest.newBuilder().setMaliciousIdea("maliciousIdea712541645").build();
+   * ApiFuture<EvilResponse> future = wickedClient.craftEvilPlanCallable().futureCall(request);
+   * // Do something.
+   * EvilResponse response = future.get();
    * }</pre>
    */
   public final UnaryCallable<EvilRequest, EvilResponse> craftEvilPlanCallable() {
@@ -222,15 +244,19 @@ public class WickedClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (WickedClient wickedClient = WickedClient.create()) {
-   *   BidiStream<EvilRequest, EvilResponse> bidiStream =
-   *       wickedClient.brainstormEvilPlansCallable().call();
-   *   EvilRequest request =
-   *       EvilRequest.newBuilder().setMaliciousIdea("maliciousIdea712541645").build();
-   *   bidiStream.send(request);
-   *   for (EvilResponse response : bidiStream) {
-   *     // Do something when a response is received.
-   *   }
+   * // - The samples create a client that can be re-used for multiple requests
+   * // and are expected to be long-lived.
+   * // The clients should be resource managed properly and eventually closed.
+   * // For more information on client lifecycle, see
+   * // https://docs.cloud.google.com/java/docs/client-lifecycle
+   * WickedClient wickedClient = WickedClient.create();
+   * BidiStream<EvilRequest, EvilResponse> bidiStream =
+   *     wickedClient.brainstormEvilPlansCallable().call();
+   * EvilRequest request =
+   *     EvilRequest.newBuilder().setMaliciousIdea("maliciousIdea712541645").build();
+   * bidiStream.send(request);
+   * for (EvilResponse response : bidiStream) {
+   *   // Do something when a response is received.
    * }
    * }</pre>
    */
@@ -248,30 +274,34 @@ public class WickedClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (WickedClient wickedClient = WickedClient.create()) {
-   *   ApiStreamObserver<EvilRequest> responseObserver =
-   *       new ApiStreamObserver<EvilRequest>() {
-   *         {@literal @}Override
-   *         public void onNext(EvilResponse response) {
-   *           // Do something when a response is received.
-   *         }
+   * // - The samples create a client that can be re-used for multiple requests
+   * // and are expected to be long-lived.
+   * // The clients should be resource managed properly and eventually closed.
+   * // For more information on client lifecycle, see
+   * // https://docs.cloud.google.com/java/docs/client-lifecycle
+   * WickedClient wickedClient = WickedClient.create();
+   * ApiStreamObserver<EvilRequest> responseObserver =
+   *     new ApiStreamObserver<EvilRequest>() {
+   *       {@literal @}Override
+   *       public void onNext(EvilResponse response) {
+   *         // Do something when a response is received.
+   *       }
    *
-   *         {@literal @}Override
-   *         public void onError(Throwable t) {
-   *           // Add error-handling
-   *         }
+   *       {@literal @}Override
+   *       public void onError(Throwable t) {
+   *         // Add error-handling
+   *       }
    *
-   *         {@literal @}Override
-   *         public void onCompleted() {
-   *           // Do something when complete.
-   *         }
-   *       };
-   *   ApiStreamObserver<EvilRequest> requestObserver =
-   *       wickedClient.persuadeEvilPlan().clientStreamingCall(responseObserver);
-   *   EvilRequest request =
-   *       EvilRequest.newBuilder().setMaliciousIdea("maliciousIdea712541645").build();
-   *   requestObserver.onNext(request);
-   * }
+   *       {@literal @}Override
+   *       public void onCompleted() {
+   *         // Do something when complete.
+   *       }
+   *     };
+   * ApiStreamObserver<EvilRequest> requestObserver =
+   *     wickedClient.persuadeEvilPlan().clientStreamingCall(responseObserver);
+   * EvilRequest request =
+   *     EvilRequest.newBuilder().setMaliciousIdea("maliciousIdea712541645").build();
+   * requestObserver.onNext(request);
    * }</pre>
    */
   public final ClientStreamingCallable<EvilRequest, EvilResponse> persuadeEvilPlanCallable() {
