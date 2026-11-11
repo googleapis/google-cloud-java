@@ -277,17 +277,17 @@ public interface ShipmentOrBuilder
    *
    *
    * <pre>
-   * If the shipment is not completed, this penalty is added to the overall
-   * cost of the routes. A shipment is considered completed if one of its pickup
-   * and delivery alternatives is visited. The cost may be expressed in the
-   * same unit used for all other cost-related fields in the model and must be
-   * positive.
+   * Optional. If the shipment is not completed, this penalty is added to the
+   * overall cost of the routes. A shipment is considered completed if one of
+   * its pickup and delivery alternatives is visited. The cost may be expressed
+   * in the same unit used for all other cost-related fields in the model and
+   * must be non-negative.
    *
-   * *IMPORTANT*: If this penalty is not specified, it is considered infinite,
-   * i.e. the shipment must be completed.
+   * *IMPORTANT*: If this penalty is not specified, it is considered higher
+   * priority than shipments with a specified `penalty cost`.
    * </pre>
    *
-   * <code>optional double penalty_cost = 4;</code>
+   * <code>optional double penalty_cost = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return Whether the penaltyCost field is set.
    */
@@ -297,17 +297,17 @@ public interface ShipmentOrBuilder
    *
    *
    * <pre>
-   * If the shipment is not completed, this penalty is added to the overall
-   * cost of the routes. A shipment is considered completed if one of its pickup
-   * and delivery alternatives is visited. The cost may be expressed in the
-   * same unit used for all other cost-related fields in the model and must be
-   * positive.
+   * Optional. If the shipment is not completed, this penalty is added to the
+   * overall cost of the routes. A shipment is considered completed if one of
+   * its pickup and delivery alternatives is visited. The cost may be expressed
+   * in the same unit used for all other cost-related fields in the model and
+   * must be non-negative.
    *
-   * *IMPORTANT*: If this penalty is not specified, it is considered infinite,
-   * i.e. the shipment must be completed.
+   * *IMPORTANT*: If this penalty is not specified, it is considered higher
+   * priority than shipments with a specified `penalty cost`.
    * </pre>
    *
-   * <code>optional double penalty_cost = 4;</code>
+   * <code>optional double penalty_cost = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The penaltyCost.
    */

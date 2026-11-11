@@ -44,6 +44,10 @@ public final class UserLicenseProto extends com.google.protobuf.GeneratedFile {
       internal_static_google_cloud_discoveryengine_v1_UserLicense_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_discoveryengine_v1_UserLicense_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1_LicenseConfigUsageStats_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1_LicenseConfigUsageStats_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -57,7 +61,7 @@ public final class UserLicenseProto extends com.google.protobuf.GeneratedFile {
           + "icense.proto\022\037google.cloud.discoveryengi"
           + "ne.v1\032\037google/api/field_behavior.proto\032\031"
           + "google/api/resource.proto\032\037google/protob"
-          + "uf/timestamp.proto\"\300\004\n\013UserLicense\022\035\n\016us"
+          + "uf/timestamp.proto\"\315\004\n\013UserLicense\022\035\n\016us"
           + "er_principal\030\001 \001(\tB\005\342A\002\005\002\022\032\n\014user_profil"
           + "e\030\003 \001(\tB\004\342A\001\001\022k\n\030license_assignment_stat"
           + "e\030\004 \001(\0162C.google.cloud.discoveryengine.v"
@@ -68,17 +72,20 @@ public final class UserLicenseProto extends com.google.protobuf.GeneratedFile {
           + ".TimestampB\004\342A\001\003\0225\n\013update_time\030\007 \001(\0132\032."
           + "google.protobuf.TimestampB\004\342A\001\003\0229\n\017last_"
           + "login_time\030\010 \001(\0132\032.google.protobuf.Times"
-          + "tampB\004\342A\001\003\"\220\001\n\026LicenseAssignmentState\022(\n"
+          + "tampB\004\342A\001\003\"\235\001\n\026LicenseAssignmentState\022(\n"
           + "$LICENSE_ASSIGNMENT_STATE_UNSPECIFIED\020\000\022"
           + "\014\n\010ASSIGNED\020\001\022\016\n\nUNASSIGNED\020\002\022\016\n\nNO_LICE"
-          + "NSE\020\003\022\036\n\032NO_LICENSE_ATTEMPTED_LOGIN\020\004B\203\002"
-          + "\n#com.google.cloud.discoveryengine.v1B\020U"
-          + "serLicenseProtoP\001ZMcloud.google.com/go/d"
-          + "iscoveryengine/apiv1/discoveryenginepb;d"
-          + "iscoveryenginepb\242\002\017DISCOVERYENGINE\252\002\037Goo"
-          + "gle.Cloud.DiscoveryEngine.V1\312\002\037Google\\Cl"
-          + "oud\\DiscoveryEngine\\V1\352\002\"Google::Cloud::"
-          + "DiscoveryEngine::V1b\006proto3"
+          + "NSE\020\003\022\036\n\032NO_LICENSE_ATTEMPTED_LOGIN\020\004\022\013\n"
+          + "\007BLOCKED\020\005\"Y\n\027LicenseConfigUsageStats\022\034\n"
+          + "\016license_config\030\001 \001(\tB\004\342A\001\002\022 \n\022used_lice"
+          + "nse_count\030\002 \001(\003B\004\342A\001\002B\203\002\n#com.google.clo"
+          + "ud.discoveryengine.v1B\020UserLicenseProtoP"
+          + "\001ZMcloud.google.com/go/discoveryengine/a"
+          + "piv1/discoveryenginepb;discoveryenginepb"
+          + "\242\002\017DISCOVERYENGINE\252\002\037Google.Cloud.Discov"
+          + "eryEngine.V1\312\002\037Google\\Cloud\\DiscoveryEng"
+          + "ine\\V1\352\002\"Google::Cloud::DiscoveryEngine:"
+          + ":V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -101,6 +108,14 @@ public final class UserLicenseProto extends com.google.protobuf.GeneratedFile {
               "CreateTime",
               "UpdateTime",
               "LastLoginTime",
+            });
+    internal_static_google_cloud_discoveryengine_v1_LicenseConfigUsageStats_descriptor =
+        getDescriptor().getMessageType(1);
+    internal_static_google_cloud_discoveryengine_v1_LicenseConfigUsageStats_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1_LicenseConfigUsageStats_descriptor,
+            new java.lang.String[] {
+              "LicenseConfig", "UsedLicenseCount",
             });
     descriptor.resolveAllFeaturesImmutable();
     com.google.api.FieldBehaviorProto.getDescriptor();

@@ -20,15 +20,23 @@ import static com.google.cloud.backupdr.v1.BackupDRClient.FetchBackupPlanAssocia
 import static com.google.cloud.backupdr.v1.BackupDRClient.FetchBackupsForResourceTypePagedResponse;
 import static com.google.cloud.backupdr.v1.BackupDRClient.FetchDataSourceReferencesForResourceTypePagedResponse;
 import static com.google.cloud.backupdr.v1.BackupDRClient.FetchUsableBackupVaultsPagedResponse;
+import static com.google.cloud.backupdr.v1.BackupDRClient.ListAppliedAutoProtectionPoliciesPagedResponse;
+import static com.google.cloud.backupdr.v1.BackupDRClient.ListAutoProtectionPoliciesPagedResponse;
+import static com.google.cloud.backupdr.v1.BackupDRClient.ListAutoProtectionPolicyBindingsPagedResponse;
 import static com.google.cloud.backupdr.v1.BackupDRClient.ListBackupPlanAssociationsPagedResponse;
 import static com.google.cloud.backupdr.v1.BackupDRClient.ListBackupPlanRevisionsPagedResponse;
 import static com.google.cloud.backupdr.v1.BackupDRClient.ListBackupPlansPagedResponse;
 import static com.google.cloud.backupdr.v1.BackupDRClient.ListBackupVaultsPagedResponse;
 import static com.google.cloud.backupdr.v1.BackupDRClient.ListBackupsPagedResponse;
+import static com.google.cloud.backupdr.v1.BackupDRClient.ListBindingMatchingResourcesPagedResponse;
 import static com.google.cloud.backupdr.v1.BackupDRClient.ListDataSourceReferencesPagedResponse;
 import static com.google.cloud.backupdr.v1.BackupDRClient.ListDataSourcesPagedResponse;
 import static com.google.cloud.backupdr.v1.BackupDRClient.ListLocationsPagedResponse;
 import static com.google.cloud.backupdr.v1.BackupDRClient.ListManagementServersPagedResponse;
+import static com.google.cloud.backupdr.v1.BackupDRClient.ListRestoreTemplateExecutionsPagedResponse;
+import static com.google.cloud.backupdr.v1.BackupDRClient.ListRestoreTemplatesPagedResponse;
+import static com.google.cloud.backupdr.v1.BackupDRClient.ListRestoreVerificationPlanAssociationsPagedResponse;
+import static com.google.cloud.backupdr.v1.BackupDRClient.ListRestoreVerificationPlansPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.httpjson.GaxHttpJsonProperties;
@@ -60,6 +68,7 @@ import com.google.protobuf.ByteString;
 import com.google.protobuf.Duration;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
+import com.google.protobuf.Struct;
 import com.google.protobuf.Timestamp;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -1748,6 +1757,7 @@ public class BackupDRClientHttpJsonTest {
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
             .addAllKmsKeyVersions(new ArrayList<String>())
+            .setVerificationSummary(VerificationSummary.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1811,6 +1821,7 @@ public class BackupDRClientHttpJsonTest {
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
             .addAllKmsKeyVersions(new ArrayList<String>())
+            .setVerificationSummary(VerificationSummary.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1874,6 +1885,7 @@ public class BackupDRClientHttpJsonTest {
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
             .addAllKmsKeyVersions(new ArrayList<String>())
+            .setVerificationSummary(VerificationSummary.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1903,6 +1915,7 @@ public class BackupDRClientHttpJsonTest {
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
             .addAllKmsKeyVersions(new ArrayList<String>())
+            .setVerificationSummary(VerificationSummary.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -1952,6 +1965,7 @@ public class BackupDRClientHttpJsonTest {
               .setSatisfiesPzs(true)
               .setSatisfiesPzi(true)
               .addAllKmsKeyVersions(new ArrayList<String>())
+              .setVerificationSummary(VerificationSummary.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateBackupAsync(backup, updateMask).get();
@@ -1982,6 +1996,7 @@ public class BackupDRClientHttpJsonTest {
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
             .addAllKmsKeyVersions(new ArrayList<String>())
+            .setVerificationSummary(VerificationSummary.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2050,6 +2065,7 @@ public class BackupDRClientHttpJsonTest {
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
             .addAllKmsKeyVersions(new ArrayList<String>())
+            .setVerificationSummary(VerificationSummary.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2957,6 +2973,10 @@ public class BackupDRClientHttpJsonTest {
             .setDataSource("dataSource1272470629")
             .setBackupPlanRevisionId("backupPlanRevisionId-222788415")
             .setBackupPlanRevisionName("backupPlanRevisionName648847537")
+            .setAutoProtectionPolicyBinding(
+                AutoProtectionPolicyBindingName.of(
+                        "[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]", "[BINDING]")
+                    .toString())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -3027,6 +3047,10 @@ public class BackupDRClientHttpJsonTest {
             .setDataSource("dataSource1272470629")
             .setBackupPlanRevisionId("backupPlanRevisionId-222788415")
             .setBackupPlanRevisionName("backupPlanRevisionName648847537")
+            .setAutoProtectionPolicyBinding(
+                AutoProtectionPolicyBindingName.of(
+                        "[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]", "[BINDING]")
+                    .toString())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -3097,6 +3121,10 @@ public class BackupDRClientHttpJsonTest {
             .setDataSource("dataSource1272470629")
             .setBackupPlanRevisionId("backupPlanRevisionId-222788415")
             .setBackupPlanRevisionName("backupPlanRevisionName648847537")
+            .setAutoProtectionPolicyBinding(
+                AutoProtectionPolicyBindingName.of(
+                        "[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]", "[BINDING]")
+                    .toString())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -3120,6 +3148,10 @@ public class BackupDRClientHttpJsonTest {
             .setDataSource("dataSource1272470629")
             .setBackupPlanRevisionId("backupPlanRevisionId-222788415")
             .setBackupPlanRevisionName("backupPlanRevisionName648847537")
+            .setAutoProtectionPolicyBinding(
+                AutoProtectionPolicyBindingName.of(
+                        "[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]", "[BINDING]")
+                    .toString())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -3166,6 +3198,10 @@ public class BackupDRClientHttpJsonTest {
               .setDataSource("dataSource1272470629")
               .setBackupPlanRevisionId("backupPlanRevisionId-222788415")
               .setBackupPlanRevisionName("backupPlanRevisionName648847537")
+              .setAutoProtectionPolicyBinding(
+                  AutoProtectionPolicyBindingName.of(
+                          "[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]", "[BINDING]")
+                      .toString())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateBackupPlanAssociationAsync(backupPlanAssociation, updateMask).get();
@@ -3190,6 +3226,10 @@ public class BackupDRClientHttpJsonTest {
             .setDataSource("dataSource1272470629")
             .setBackupPlanRevisionId("backupPlanRevisionId-222788415")
             .setBackupPlanRevisionName("backupPlanRevisionName648847537")
+            .setAutoProtectionPolicyBinding(
+                AutoProtectionPolicyBindingName.of(
+                        "[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]", "[BINDING]")
+                    .toString())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -3247,6 +3287,10 @@ public class BackupDRClientHttpJsonTest {
             .setDataSource("dataSource1272470629")
             .setBackupPlanRevisionId("backupPlanRevisionId-222788415")
             .setBackupPlanRevisionName("backupPlanRevisionName648847537")
+            .setAutoProtectionPolicyBinding(
+                AutoProtectionPolicyBindingName.of(
+                        "[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]", "[BINDING]")
+                    .toString())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -3606,6 +3650,10 @@ public class BackupDRClientHttpJsonTest {
             .setDataSource("dataSource1272470629")
             .setBackupPlanRevisionId("backupPlanRevisionId-222788415")
             .setBackupPlanRevisionName("backupPlanRevisionName648847537")
+            .setAutoProtectionPolicyBinding(
+                AutoProtectionPolicyBindingName.of(
+                        "[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]", "[BINDING]")
+                    .toString())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -3670,6 +3718,10 @@ public class BackupDRClientHttpJsonTest {
             .setDataSource("dataSource1272470629")
             .setBackupPlanRevisionId("backupPlanRevisionId-222788415")
             .setBackupPlanRevisionName("backupPlanRevisionName648847537")
+            .setAutoProtectionPolicyBinding(
+                AutoProtectionPolicyBindingName.of(
+                        "[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]", "[BINDING]")
+                    .toString())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -4095,6 +4147,3304 @@ public class BackupDRClientHttpJsonTest {
               .setRequestId("requestId693933066")
               .build();
       client.initializeServiceAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void createAutoProtectionPolicyTest() throws Exception {
+    AutoProtectionPolicy expectedResponse =
+        AutoProtectionPolicy.newBuilder()
+            .setName(
+                AutoProtectionPolicyName.of("[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]")
+                    .toString())
+            .setDescription("description-1724546052")
+            .addAllBackupPlanDetails(new ArrayList<BackupPlanDetail>())
+            .setCriteria(Criteria.newBuilder().build())
+            .setEtag("etag3123477")
+            .setBindingSummary(BindingSummary.newBuilder().build())
+            .setPolicyEvaluationSummary(PolicyEvaluationSummary.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createAutoProtectionPolicyTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    AutoProtectionPolicy autoProtectionPolicy = AutoProtectionPolicy.newBuilder().build();
+    String autoProtectionPolicyId = "autoProtectionPolicyId1759243253";
+
+    AutoProtectionPolicy actualResponse =
+        client
+            .createAutoProtectionPolicyAsync(parent, autoProtectionPolicy, autoProtectionPolicyId)
+            .get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createAutoProtectionPolicyExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      AutoProtectionPolicy autoProtectionPolicy = AutoProtectionPolicy.newBuilder().build();
+      String autoProtectionPolicyId = "autoProtectionPolicyId1759243253";
+      client
+          .createAutoProtectionPolicyAsync(parent, autoProtectionPolicy, autoProtectionPolicyId)
+          .get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void createAutoProtectionPolicyTest2() throws Exception {
+    AutoProtectionPolicy expectedResponse =
+        AutoProtectionPolicy.newBuilder()
+            .setName(
+                AutoProtectionPolicyName.of("[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]")
+                    .toString())
+            .setDescription("description-1724546052")
+            .addAllBackupPlanDetails(new ArrayList<BackupPlanDetail>())
+            .setCriteria(Criteria.newBuilder().build())
+            .setEtag("etag3123477")
+            .setBindingSummary(BindingSummary.newBuilder().build())
+            .setPolicyEvaluationSummary(PolicyEvaluationSummary.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createAutoProtectionPolicyTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String parent = "projects/project-5833/locations/location-5833";
+    AutoProtectionPolicy autoProtectionPolicy = AutoProtectionPolicy.newBuilder().build();
+    String autoProtectionPolicyId = "autoProtectionPolicyId1759243253";
+
+    AutoProtectionPolicy actualResponse =
+        client
+            .createAutoProtectionPolicyAsync(parent, autoProtectionPolicy, autoProtectionPolicyId)
+            .get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createAutoProtectionPolicyExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      AutoProtectionPolicy autoProtectionPolicy = AutoProtectionPolicy.newBuilder().build();
+      String autoProtectionPolicyId = "autoProtectionPolicyId1759243253";
+      client
+          .createAutoProtectionPolicyAsync(parent, autoProtectionPolicy, autoProtectionPolicyId)
+          .get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void listAutoProtectionPoliciesTest() throws Exception {
+    AutoProtectionPolicy responsesElement = AutoProtectionPolicy.newBuilder().build();
+    ListAutoProtectionPoliciesResponse expectedResponse =
+        ListAutoProtectionPoliciesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllAutoProtectionPolicies(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListAutoProtectionPoliciesPagedResponse pagedListResponse =
+        client.listAutoProtectionPolicies(parent);
+
+    List<AutoProtectionPolicy> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getAutoProtectionPoliciesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listAutoProtectionPoliciesExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listAutoProtectionPolicies(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listAutoProtectionPoliciesTest2() throws Exception {
+    AutoProtectionPolicy responsesElement = AutoProtectionPolicy.newBuilder().build();
+    ListAutoProtectionPoliciesResponse expectedResponse =
+        ListAutoProtectionPoliciesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllAutoProtectionPolicies(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-5833/locations/location-5833";
+
+    ListAutoProtectionPoliciesPagedResponse pagedListResponse =
+        client.listAutoProtectionPolicies(parent);
+
+    List<AutoProtectionPolicy> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getAutoProtectionPoliciesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listAutoProtectionPoliciesExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      client.listAutoProtectionPolicies(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getAutoProtectionPolicyTest() throws Exception {
+    AutoProtectionPolicy expectedResponse =
+        AutoProtectionPolicy.newBuilder()
+            .setName(
+                AutoProtectionPolicyName.of("[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]")
+                    .toString())
+            .setDescription("description-1724546052")
+            .addAllBackupPlanDetails(new ArrayList<BackupPlanDetail>())
+            .setCriteria(Criteria.newBuilder().build())
+            .setEtag("etag3123477")
+            .setBindingSummary(BindingSummary.newBuilder().build())
+            .setPolicyEvaluationSummary(PolicyEvaluationSummary.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    AutoProtectionPolicyName name =
+        AutoProtectionPolicyName.of("[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]");
+
+    AutoProtectionPolicy actualResponse = client.getAutoProtectionPolicy(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getAutoProtectionPolicyExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      AutoProtectionPolicyName name =
+          AutoProtectionPolicyName.of("[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]");
+      client.getAutoProtectionPolicy(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getAutoProtectionPolicyTest2() throws Exception {
+    AutoProtectionPolicy expectedResponse =
+        AutoProtectionPolicy.newBuilder()
+            .setName(
+                AutoProtectionPolicyName.of("[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]")
+                    .toString())
+            .setDescription("description-1724546052")
+            .addAllBackupPlanDetails(new ArrayList<BackupPlanDetail>())
+            .setCriteria(Criteria.newBuilder().build())
+            .setEtag("etag3123477")
+            .setBindingSummary(BindingSummary.newBuilder().build())
+            .setPolicyEvaluationSummary(PolicyEvaluationSummary.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-6984/locations/location-6984/autoProtectionPolicies/autoProtectionPolicie-6984";
+
+    AutoProtectionPolicy actualResponse = client.getAutoProtectionPolicy(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getAutoProtectionPolicyExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-6984/locations/location-6984/autoProtectionPolicies/autoProtectionPolicie-6984";
+      client.getAutoProtectionPolicy(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateAutoProtectionPolicyTest() throws Exception {
+    AutoProtectionPolicy expectedResponse =
+        AutoProtectionPolicy.newBuilder()
+            .setName(
+                AutoProtectionPolicyName.of("[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]")
+                    .toString())
+            .setDescription("description-1724546052")
+            .addAllBackupPlanDetails(new ArrayList<BackupPlanDetail>())
+            .setCriteria(Criteria.newBuilder().build())
+            .setEtag("etag3123477")
+            .setBindingSummary(BindingSummary.newBuilder().build())
+            .setPolicyEvaluationSummary(PolicyEvaluationSummary.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateAutoProtectionPolicyTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    AutoProtectionPolicy autoProtectionPolicy =
+        AutoProtectionPolicy.newBuilder()
+            .setName(
+                AutoProtectionPolicyName.of("[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]")
+                    .toString())
+            .setDescription("description-1724546052")
+            .addAllBackupPlanDetails(new ArrayList<BackupPlanDetail>())
+            .setCriteria(Criteria.newBuilder().build())
+            .setEtag("etag3123477")
+            .setBindingSummary(BindingSummary.newBuilder().build())
+            .setPolicyEvaluationSummary(PolicyEvaluationSummary.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    AutoProtectionPolicy actualResponse =
+        client.updateAutoProtectionPolicyAsync(autoProtectionPolicy, updateMask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateAutoProtectionPolicyExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      AutoProtectionPolicy autoProtectionPolicy =
+          AutoProtectionPolicy.newBuilder()
+              .setName(
+                  AutoProtectionPolicyName.of("[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]")
+                      .toString())
+              .setDescription("description-1724546052")
+              .addAllBackupPlanDetails(new ArrayList<BackupPlanDetail>())
+              .setCriteria(Criteria.newBuilder().build())
+              .setEtag("etag3123477")
+              .setBindingSummary(BindingSummary.newBuilder().build())
+              .setPolicyEvaluationSummary(PolicyEvaluationSummary.newBuilder().build())
+              .setCreateTime(Timestamp.newBuilder().build())
+              .setUpdateTime(Timestamp.newBuilder().build())
+              .build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateAutoProtectionPolicyAsync(autoProtectionPolicy, updateMask).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void deleteAutoProtectionPolicyTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteAutoProtectionPolicyTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    AutoProtectionPolicyName name =
+        AutoProtectionPolicyName.of("[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]");
+
+    client.deleteAutoProtectionPolicyAsync(name).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteAutoProtectionPolicyExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      AutoProtectionPolicyName name =
+          AutoProtectionPolicyName.of("[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]");
+      client.deleteAutoProtectionPolicyAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void deleteAutoProtectionPolicyTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteAutoProtectionPolicyTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name =
+        "projects/project-6984/locations/location-6984/autoProtectionPolicies/autoProtectionPolicie-6984";
+
+    client.deleteAutoProtectionPolicyAsync(name).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteAutoProtectionPolicyExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-6984/locations/location-6984/autoProtectionPolicies/autoProtectionPolicie-6984";
+      client.deleteAutoProtectionPolicyAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void createAutoProtectionPolicyBindingTest() throws Exception {
+    AutoProtectionPolicyBinding expectedResponse =
+        AutoProtectionPolicyBinding.newBuilder()
+            .setName(
+                AutoProtectionPolicyBindingName.of(
+                        "[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]", "[BINDING]")
+                    .toString())
+            .setDescription("description-1724546052")
+            .setScope(
+                AutoProtectionPolicyName.of("[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]")
+                    .toString())
+            .setBindingEvaluationSummary(BindingEvaluationSummary.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createAutoProtectionPolicyBindingTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    AutoProtectionPolicyName parent =
+        AutoProtectionPolicyName.of("[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]");
+    AutoProtectionPolicyBinding autoProtectionPolicyBinding =
+        AutoProtectionPolicyBinding.newBuilder().build();
+    String autoProtectionPolicyBindingId = "autoProtectionPolicyBindingId2122957414";
+
+    AutoProtectionPolicyBinding actualResponse =
+        client
+            .createAutoProtectionPolicyBindingAsync(
+                parent, autoProtectionPolicyBinding, autoProtectionPolicyBindingId)
+            .get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createAutoProtectionPolicyBindingExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      AutoProtectionPolicyName parent =
+          AutoProtectionPolicyName.of("[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]");
+      AutoProtectionPolicyBinding autoProtectionPolicyBinding =
+          AutoProtectionPolicyBinding.newBuilder().build();
+      String autoProtectionPolicyBindingId = "autoProtectionPolicyBindingId2122957414";
+      client
+          .createAutoProtectionPolicyBindingAsync(
+              parent, autoProtectionPolicyBinding, autoProtectionPolicyBindingId)
+          .get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void createAutoProtectionPolicyBindingTest2() throws Exception {
+    AutoProtectionPolicyBinding expectedResponse =
+        AutoProtectionPolicyBinding.newBuilder()
+            .setName(
+                AutoProtectionPolicyBindingName.of(
+                        "[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]", "[BINDING]")
+                    .toString())
+            .setDescription("description-1724546052")
+            .setScope(
+                AutoProtectionPolicyName.of("[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]")
+                    .toString())
+            .setBindingEvaluationSummary(BindingEvaluationSummary.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createAutoProtectionPolicyBindingTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String parent =
+        "projects/project-3065/locations/location-3065/autoProtectionPolicies/autoProtectionPolicie-3065";
+    AutoProtectionPolicyBinding autoProtectionPolicyBinding =
+        AutoProtectionPolicyBinding.newBuilder().build();
+    String autoProtectionPolicyBindingId = "autoProtectionPolicyBindingId2122957414";
+
+    AutoProtectionPolicyBinding actualResponse =
+        client
+            .createAutoProtectionPolicyBindingAsync(
+                parent, autoProtectionPolicyBinding, autoProtectionPolicyBindingId)
+            .get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createAutoProtectionPolicyBindingExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent =
+          "projects/project-3065/locations/location-3065/autoProtectionPolicies/autoProtectionPolicie-3065";
+      AutoProtectionPolicyBinding autoProtectionPolicyBinding =
+          AutoProtectionPolicyBinding.newBuilder().build();
+      String autoProtectionPolicyBindingId = "autoProtectionPolicyBindingId2122957414";
+      client
+          .createAutoProtectionPolicyBindingAsync(
+              parent, autoProtectionPolicyBinding, autoProtectionPolicyBindingId)
+          .get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void getAutoProtectionPolicyBindingTest() throws Exception {
+    AutoProtectionPolicyBinding expectedResponse =
+        AutoProtectionPolicyBinding.newBuilder()
+            .setName(
+                AutoProtectionPolicyBindingName.of(
+                        "[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]", "[BINDING]")
+                    .toString())
+            .setDescription("description-1724546052")
+            .setScope(
+                AutoProtectionPolicyBindingName.of(
+                        "[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]", "[BINDING]")
+                    .toString())
+            .setBindingEvaluationSummary(BindingEvaluationSummary.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    AutoProtectionPolicyBindingName name =
+        AutoProtectionPolicyBindingName.of(
+            "[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]", "[BINDING]");
+
+    AutoProtectionPolicyBinding actualResponse = client.getAutoProtectionPolicyBinding(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getAutoProtectionPolicyBindingExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      AutoProtectionPolicyBindingName name =
+          AutoProtectionPolicyBindingName.of(
+              "[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]", "[BINDING]");
+      client.getAutoProtectionPolicyBinding(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getAutoProtectionPolicyBindingTest2() throws Exception {
+    AutoProtectionPolicyBinding expectedResponse =
+        AutoProtectionPolicyBinding.newBuilder()
+            .setName(
+                AutoProtectionPolicyBindingName.of(
+                        "[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]", "[BINDING]")
+                    .toString())
+            .setDescription("description-1724546052")
+            .setScope(
+                AutoProtectionPolicyBindingName.of(
+                        "[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]", "[BINDING]")
+                    .toString())
+            .setBindingEvaluationSummary(BindingEvaluationSummary.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-9760/locations/location-9760/autoProtectionPolicies/autoProtectionPolicie-9760/bindings/binding-9760";
+
+    AutoProtectionPolicyBinding actualResponse = client.getAutoProtectionPolicyBinding(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getAutoProtectionPolicyBindingExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-9760/locations/location-9760/autoProtectionPolicies/autoProtectionPolicie-9760/bindings/binding-9760";
+      client.getAutoProtectionPolicyBinding(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listAutoProtectionPolicyBindingsTest() throws Exception {
+    AutoProtectionPolicyBinding responsesElement = AutoProtectionPolicyBinding.newBuilder().build();
+    ListAutoProtectionPolicyBindingsResponse expectedResponse =
+        ListAutoProtectionPolicyBindingsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllAutoProtectionPolicyBindings(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    AutoProtectionPolicyName parent =
+        AutoProtectionPolicyName.of("[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]");
+
+    ListAutoProtectionPolicyBindingsPagedResponse pagedListResponse =
+        client.listAutoProtectionPolicyBindings(parent);
+
+    List<AutoProtectionPolicyBinding> resources =
+        Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(
+        expectedResponse.getAutoProtectionPolicyBindingsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listAutoProtectionPolicyBindingsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      AutoProtectionPolicyName parent =
+          AutoProtectionPolicyName.of("[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]");
+      client.listAutoProtectionPolicyBindings(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listAutoProtectionPolicyBindingsTest2() throws Exception {
+    AutoProtectionPolicyBinding responsesElement = AutoProtectionPolicyBinding.newBuilder().build();
+    ListAutoProtectionPolicyBindingsResponse expectedResponse =
+        ListAutoProtectionPolicyBindingsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllAutoProtectionPolicyBindings(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent =
+        "projects/project-3065/locations/location-3065/autoProtectionPolicies/autoProtectionPolicie-3065";
+
+    ListAutoProtectionPolicyBindingsPagedResponse pagedListResponse =
+        client.listAutoProtectionPolicyBindings(parent);
+
+    List<AutoProtectionPolicyBinding> resources =
+        Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(
+        expectedResponse.getAutoProtectionPolicyBindingsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listAutoProtectionPolicyBindingsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent =
+          "projects/project-3065/locations/location-3065/autoProtectionPolicies/autoProtectionPolicie-3065";
+      client.listAutoProtectionPolicyBindings(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listAppliedAutoProtectionPoliciesTest() throws Exception {
+    AppliedAutoProtectionPolicy responsesElement = AppliedAutoProtectionPolicy.newBuilder().build();
+    ListAppliedAutoProtectionPoliciesResponse expectedResponse =
+        ListAppliedAutoProtectionPoliciesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllAppliedAutoProtectionPolicies(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListAppliedAutoProtectionPoliciesPagedResponse pagedListResponse =
+        client.listAppliedAutoProtectionPolicies(parent);
+
+    List<AppliedAutoProtectionPolicy> resources =
+        Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(
+        expectedResponse.getAppliedAutoProtectionPoliciesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listAppliedAutoProtectionPoliciesExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listAppliedAutoProtectionPolicies(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listAppliedAutoProtectionPoliciesTest2() throws Exception {
+    AppliedAutoProtectionPolicy responsesElement = AppliedAutoProtectionPolicy.newBuilder().build();
+    ListAppliedAutoProtectionPoliciesResponse expectedResponse =
+        ListAppliedAutoProtectionPoliciesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllAppliedAutoProtectionPolicies(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-5833/locations/location-5833";
+
+    ListAppliedAutoProtectionPoliciesPagedResponse pagedListResponse =
+        client.listAppliedAutoProtectionPolicies(parent);
+
+    List<AppliedAutoProtectionPolicy> resources =
+        Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(
+        expectedResponse.getAppliedAutoProtectionPoliciesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listAppliedAutoProtectionPoliciesExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      client.listAppliedAutoProtectionPolicies(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void initiateDeleteAutoProtectionPolicyBindingTest() throws Exception {
+    AutoProtectionPolicyBinding expectedResponse =
+        AutoProtectionPolicyBinding.newBuilder()
+            .setName(
+                AutoProtectionPolicyBindingName.of(
+                        "[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]", "[BINDING]")
+                    .toString())
+            .setDescription("description-1724546052")
+            .setScope(
+                AutoProtectionPolicyBindingName.of(
+                        "[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]", "[BINDING]")
+                    .toString())
+            .setBindingEvaluationSummary(BindingEvaluationSummary.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("initiateDeleteAutoProtectionPolicyBindingTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    AutoProtectionPolicyBindingName name =
+        AutoProtectionPolicyBindingName.of(
+            "[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]", "[BINDING]");
+
+    AutoProtectionPolicyBinding actualResponse =
+        client.initiateDeleteAutoProtectionPolicyBindingAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void initiateDeleteAutoProtectionPolicyBindingExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      AutoProtectionPolicyBindingName name =
+          AutoProtectionPolicyBindingName.of(
+              "[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]", "[BINDING]");
+      client.initiateDeleteAutoProtectionPolicyBindingAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void initiateDeleteAutoProtectionPolicyBindingTest2() throws Exception {
+    AutoProtectionPolicyBinding expectedResponse =
+        AutoProtectionPolicyBinding.newBuilder()
+            .setName(
+                AutoProtectionPolicyBindingName.of(
+                        "[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]", "[BINDING]")
+                    .toString())
+            .setDescription("description-1724546052")
+            .setScope(
+                AutoProtectionPolicyBindingName.of(
+                        "[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]", "[BINDING]")
+                    .toString())
+            .setBindingEvaluationSummary(BindingEvaluationSummary.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("initiateDeleteAutoProtectionPolicyBindingTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name =
+        "projects/project-9760/locations/location-9760/autoProtectionPolicies/autoProtectionPolicie-9760/bindings/binding-9760";
+
+    AutoProtectionPolicyBinding actualResponse =
+        client.initiateDeleteAutoProtectionPolicyBindingAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void initiateDeleteAutoProtectionPolicyBindingExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-9760/locations/location-9760/autoProtectionPolicies/autoProtectionPolicie-9760/bindings/binding-9760";
+      client.initiateDeleteAutoProtectionPolicyBindingAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void listBindingMatchingResourcesTest() throws Exception {
+    BindingMatchingResource responsesElement = BindingMatchingResource.newBuilder().build();
+    ListBindingMatchingResourcesResponse expectedResponse =
+        ListBindingMatchingResourcesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllMatchingResources(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    AutoProtectionPolicyBindingName parent =
+        AutoProtectionPolicyBindingName.of(
+            "[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]", "[BINDING]");
+
+    ListBindingMatchingResourcesPagedResponse pagedListResponse =
+        client.listBindingMatchingResources(parent);
+
+    List<BindingMatchingResource> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getMatchingResourcesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listBindingMatchingResourcesExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      AutoProtectionPolicyBindingName parent =
+          AutoProtectionPolicyBindingName.of(
+              "[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]", "[BINDING]");
+      client.listBindingMatchingResources(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listBindingMatchingResourcesTest2() throws Exception {
+    BindingMatchingResource responsesElement = BindingMatchingResource.newBuilder().build();
+    ListBindingMatchingResourcesResponse expectedResponse =
+        ListBindingMatchingResourcesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllMatchingResources(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent =
+        "projects/project-5871/locations/location-5871/autoProtectionPolicies/autoProtectionPolicie-5871/bindings/binding-5871";
+
+    ListBindingMatchingResourcesPagedResponse pagedListResponse =
+        client.listBindingMatchingResources(parent);
+
+    List<BindingMatchingResource> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getMatchingResourcesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listBindingMatchingResourcesExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent =
+          "projects/project-5871/locations/location-5871/autoProtectionPolicies/autoProtectionPolicie-5871/bindings/binding-5871";
+      client.listBindingMatchingResources(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createRestoreTemplateTest() throws Exception {
+    RestoreTemplate expectedResponse =
+        RestoreTemplate.newBuilder()
+            .setName(
+                RestoreTemplateName.of("[PROJECT]", "[LOCATION]", "[RESTORE_TEMPLATE]").toString())
+            .setDescription("description-1724546052")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setResourceType("resourceType-384364440")
+            .putAllLabels(new HashMap<String, String>())
+            .setBackupSelectionConfig(BackupSelectionConfig.newBuilder().build())
+            .setPreRestoreConfig(PreRestoreConfig.newBuilder().build())
+            .setPostRestoreConfig(PostRestoreConfig.newBuilder().build())
+            .setVerificationConfig(VerificationConfig.newBuilder().build())
+            .setRestoreProperties(Struct.newBuilder().build())
+            .setExecutionSummary(ExecutionSummary.newBuilder().build())
+            .setEtag("etag3123477")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createRestoreTemplateTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    RestoreTemplate restoreTemplate = RestoreTemplate.newBuilder().build();
+    String restoreTemplateId = "restoreTemplateId-84741021";
+
+    RestoreTemplate actualResponse =
+        client.createRestoreTemplateAsync(parent, restoreTemplate, restoreTemplateId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createRestoreTemplateExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      RestoreTemplate restoreTemplate = RestoreTemplate.newBuilder().build();
+      String restoreTemplateId = "restoreTemplateId-84741021";
+      client.createRestoreTemplateAsync(parent, restoreTemplate, restoreTemplateId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void createRestoreTemplateTest2() throws Exception {
+    RestoreTemplate expectedResponse =
+        RestoreTemplate.newBuilder()
+            .setName(
+                RestoreTemplateName.of("[PROJECT]", "[LOCATION]", "[RESTORE_TEMPLATE]").toString())
+            .setDescription("description-1724546052")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setResourceType("resourceType-384364440")
+            .putAllLabels(new HashMap<String, String>())
+            .setBackupSelectionConfig(BackupSelectionConfig.newBuilder().build())
+            .setPreRestoreConfig(PreRestoreConfig.newBuilder().build())
+            .setPostRestoreConfig(PostRestoreConfig.newBuilder().build())
+            .setVerificationConfig(VerificationConfig.newBuilder().build())
+            .setRestoreProperties(Struct.newBuilder().build())
+            .setExecutionSummary(ExecutionSummary.newBuilder().build())
+            .setEtag("etag3123477")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createRestoreTemplateTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String parent = "projects/project-5833/locations/location-5833";
+    RestoreTemplate restoreTemplate = RestoreTemplate.newBuilder().build();
+    String restoreTemplateId = "restoreTemplateId-84741021";
+
+    RestoreTemplate actualResponse =
+        client.createRestoreTemplateAsync(parent, restoreTemplate, restoreTemplateId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createRestoreTemplateExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      RestoreTemplate restoreTemplate = RestoreTemplate.newBuilder().build();
+      String restoreTemplateId = "restoreTemplateId-84741021";
+      client.createRestoreTemplateAsync(parent, restoreTemplate, restoreTemplateId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void getRestoreTemplateTest() throws Exception {
+    RestoreTemplate expectedResponse =
+        RestoreTemplate.newBuilder()
+            .setName(
+                RestoreTemplateName.of("[PROJECT]", "[LOCATION]", "[RESTORE_TEMPLATE]").toString())
+            .setDescription("description-1724546052")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setResourceType("resourceType-384364440")
+            .putAllLabels(new HashMap<String, String>())
+            .setBackupSelectionConfig(BackupSelectionConfig.newBuilder().build())
+            .setPreRestoreConfig(PreRestoreConfig.newBuilder().build())
+            .setPostRestoreConfig(PostRestoreConfig.newBuilder().build())
+            .setVerificationConfig(VerificationConfig.newBuilder().build())
+            .setRestoreProperties(Struct.newBuilder().build())
+            .setExecutionSummary(ExecutionSummary.newBuilder().build())
+            .setEtag("etag3123477")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    RestoreTemplateName name =
+        RestoreTemplateName.of("[PROJECT]", "[LOCATION]", "[RESTORE_TEMPLATE]");
+
+    RestoreTemplate actualResponse = client.getRestoreTemplate(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getRestoreTemplateExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      RestoreTemplateName name =
+          RestoreTemplateName.of("[PROJECT]", "[LOCATION]", "[RESTORE_TEMPLATE]");
+      client.getRestoreTemplate(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getRestoreTemplateTest2() throws Exception {
+    RestoreTemplate expectedResponse =
+        RestoreTemplate.newBuilder()
+            .setName(
+                RestoreTemplateName.of("[PROJECT]", "[LOCATION]", "[RESTORE_TEMPLATE]").toString())
+            .setDescription("description-1724546052")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setResourceType("resourceType-384364440")
+            .putAllLabels(new HashMap<String, String>())
+            .setBackupSelectionConfig(BackupSelectionConfig.newBuilder().build())
+            .setPreRestoreConfig(PreRestoreConfig.newBuilder().build())
+            .setPostRestoreConfig(PostRestoreConfig.newBuilder().build())
+            .setVerificationConfig(VerificationConfig.newBuilder().build())
+            .setRestoreProperties(Struct.newBuilder().build())
+            .setExecutionSummary(ExecutionSummary.newBuilder().build())
+            .setEtag("etag3123477")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-5157/locations/location-5157/restoreTemplates/restoreTemplate-5157";
+
+    RestoreTemplate actualResponse = client.getRestoreTemplate(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getRestoreTemplateExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-5157/locations/location-5157/restoreTemplates/restoreTemplate-5157";
+      client.getRestoreTemplate(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listRestoreTemplatesTest() throws Exception {
+    RestoreTemplate responsesElement = RestoreTemplate.newBuilder().build();
+    ListRestoreTemplatesResponse expectedResponse =
+        ListRestoreTemplatesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllRestoreTemplates(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListRestoreTemplatesPagedResponse pagedListResponse = client.listRestoreTemplates(parent);
+
+    List<RestoreTemplate> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getRestoreTemplatesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listRestoreTemplatesExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listRestoreTemplates(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listRestoreTemplatesTest2() throws Exception {
+    RestoreTemplate responsesElement = RestoreTemplate.newBuilder().build();
+    ListRestoreTemplatesResponse expectedResponse =
+        ListRestoreTemplatesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllRestoreTemplates(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-5833/locations/location-5833";
+
+    ListRestoreTemplatesPagedResponse pagedListResponse = client.listRestoreTemplates(parent);
+
+    List<RestoreTemplate> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getRestoreTemplatesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listRestoreTemplatesExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      client.listRestoreTemplates(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateRestoreTemplateTest() throws Exception {
+    RestoreTemplate expectedResponse =
+        RestoreTemplate.newBuilder()
+            .setName(
+                RestoreTemplateName.of("[PROJECT]", "[LOCATION]", "[RESTORE_TEMPLATE]").toString())
+            .setDescription("description-1724546052")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setResourceType("resourceType-384364440")
+            .putAllLabels(new HashMap<String, String>())
+            .setBackupSelectionConfig(BackupSelectionConfig.newBuilder().build())
+            .setPreRestoreConfig(PreRestoreConfig.newBuilder().build())
+            .setPostRestoreConfig(PostRestoreConfig.newBuilder().build())
+            .setVerificationConfig(VerificationConfig.newBuilder().build())
+            .setRestoreProperties(Struct.newBuilder().build())
+            .setExecutionSummary(ExecutionSummary.newBuilder().build())
+            .setEtag("etag3123477")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateRestoreTemplateTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    RestoreTemplate restoreTemplate =
+        RestoreTemplate.newBuilder()
+            .setName(
+                RestoreTemplateName.of("[PROJECT]", "[LOCATION]", "[RESTORE_TEMPLATE]").toString())
+            .setDescription("description-1724546052")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setResourceType("resourceType-384364440")
+            .putAllLabels(new HashMap<String, String>())
+            .setBackupSelectionConfig(BackupSelectionConfig.newBuilder().build())
+            .setPreRestoreConfig(PreRestoreConfig.newBuilder().build())
+            .setPostRestoreConfig(PostRestoreConfig.newBuilder().build())
+            .setVerificationConfig(VerificationConfig.newBuilder().build())
+            .setRestoreProperties(Struct.newBuilder().build())
+            .setExecutionSummary(ExecutionSummary.newBuilder().build())
+            .setEtag("etag3123477")
+            .build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    RestoreTemplate actualResponse =
+        client.updateRestoreTemplateAsync(restoreTemplate, updateMask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateRestoreTemplateExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      RestoreTemplate restoreTemplate =
+          RestoreTemplate.newBuilder()
+              .setName(
+                  RestoreTemplateName.of("[PROJECT]", "[LOCATION]", "[RESTORE_TEMPLATE]")
+                      .toString())
+              .setDescription("description-1724546052")
+              .setCreateTime(Timestamp.newBuilder().build())
+              .setUpdateTime(Timestamp.newBuilder().build())
+              .setResourceType("resourceType-384364440")
+              .putAllLabels(new HashMap<String, String>())
+              .setBackupSelectionConfig(BackupSelectionConfig.newBuilder().build())
+              .setPreRestoreConfig(PreRestoreConfig.newBuilder().build())
+              .setPostRestoreConfig(PostRestoreConfig.newBuilder().build())
+              .setVerificationConfig(VerificationConfig.newBuilder().build())
+              .setRestoreProperties(Struct.newBuilder().build())
+              .setExecutionSummary(ExecutionSummary.newBuilder().build())
+              .setEtag("etag3123477")
+              .build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateRestoreTemplateAsync(restoreTemplate, updateMask).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void deleteRestoreTemplateTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteRestoreTemplateTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    RestoreTemplateName name =
+        RestoreTemplateName.of("[PROJECT]", "[LOCATION]", "[RESTORE_TEMPLATE]");
+
+    client.deleteRestoreTemplateAsync(name).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteRestoreTemplateExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      RestoreTemplateName name =
+          RestoreTemplateName.of("[PROJECT]", "[LOCATION]", "[RESTORE_TEMPLATE]");
+      client.deleteRestoreTemplateAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void deleteRestoreTemplateTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteRestoreTemplateTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name =
+        "projects/project-5157/locations/location-5157/restoreTemplates/restoreTemplate-5157";
+
+    client.deleteRestoreTemplateAsync(name).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteRestoreTemplateExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-5157/locations/location-5157/restoreTemplates/restoreTemplate-5157";
+      client.deleteRestoreTemplateAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void runRestoreTemplateTest() throws Exception {
+    RunRestoreTemplateResponse expectedResponse =
+        RunRestoreTemplateResponse.newBuilder()
+            .setRestoreTemplateExecution(
+                RestoreTemplateExecutionName.of(
+                        "[PROJECT]", "[LOCATION]", "[RESTORE_TEMPLATE]", "[EXECUTION]")
+                    .toString())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("runRestoreTemplateTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    RestoreTemplateName name =
+        RestoreTemplateName.of("[PROJECT]", "[LOCATION]", "[RESTORE_TEMPLATE]");
+
+    RunRestoreTemplateResponse actualResponse = client.runRestoreTemplateAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void runRestoreTemplateExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      RestoreTemplateName name =
+          RestoreTemplateName.of("[PROJECT]", "[LOCATION]", "[RESTORE_TEMPLATE]");
+      client.runRestoreTemplateAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void runRestoreTemplateTest2() throws Exception {
+    RunRestoreTemplateResponse expectedResponse =
+        RunRestoreTemplateResponse.newBuilder()
+            .setRestoreTemplateExecution(
+                RestoreTemplateExecutionName.of(
+                        "[PROJECT]", "[LOCATION]", "[RESTORE_TEMPLATE]", "[EXECUTION]")
+                    .toString())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("runRestoreTemplateTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name =
+        "projects/project-5157/locations/location-5157/restoreTemplates/restoreTemplate-5157";
+
+    RunRestoreTemplateResponse actualResponse = client.runRestoreTemplateAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void runRestoreTemplateExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-5157/locations/location-5157/restoreTemplates/restoreTemplate-5157";
+      client.runRestoreTemplateAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void getRestoreTemplateExecutionTest() throws Exception {
+    RestoreTemplateExecution expectedResponse =
+        RestoreTemplateExecution.newBuilder()
+            .setName(
+                RestoreTemplateExecutionName.of(
+                        "[PROJECT]", "[LOCATION]", "[RESTORE_TEMPLATE]", "[EXECUTION]")
+                    .toString())
+            .setResourceType("resourceType-384364440")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setPreparePhaseInfo(PreparePhaseInfo.newBuilder().build())
+            .setPreRestorePhaseInfo(PreRestorePhaseInfo.newBuilder().build())
+            .setRestorePhaseInfo(RestorePhaseInfo.newBuilder().build())
+            .setPostRestorePhaseInfo(PostRestorePhaseInfo.newBuilder().build())
+            .setVerificationPhaseInfo(VerificationPhaseInfo.newBuilder().build())
+            .setCleanupPhaseInfo(CleanupPhaseInfo.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    RestoreTemplateExecutionName name =
+        RestoreTemplateExecutionName.of(
+            "[PROJECT]", "[LOCATION]", "[RESTORE_TEMPLATE]", "[EXECUTION]");
+
+    RestoreTemplateExecution actualResponse = client.getRestoreTemplateExecution(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getRestoreTemplateExecutionExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      RestoreTemplateExecutionName name =
+          RestoreTemplateExecutionName.of(
+              "[PROJECT]", "[LOCATION]", "[RESTORE_TEMPLATE]", "[EXECUTION]");
+      client.getRestoreTemplateExecution(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getRestoreTemplateExecutionTest2() throws Exception {
+    RestoreTemplateExecution expectedResponse =
+        RestoreTemplateExecution.newBuilder()
+            .setName(
+                RestoreTemplateExecutionName.of(
+                        "[PROJECT]", "[LOCATION]", "[RESTORE_TEMPLATE]", "[EXECUTION]")
+                    .toString())
+            .setResourceType("resourceType-384364440")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setPreparePhaseInfo(PreparePhaseInfo.newBuilder().build())
+            .setPreRestorePhaseInfo(PreRestorePhaseInfo.newBuilder().build())
+            .setRestorePhaseInfo(RestorePhaseInfo.newBuilder().build())
+            .setPostRestorePhaseInfo(PostRestorePhaseInfo.newBuilder().build())
+            .setVerificationPhaseInfo(VerificationPhaseInfo.newBuilder().build())
+            .setCleanupPhaseInfo(CleanupPhaseInfo.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-1190/locations/location-1190/restoreTemplates/restoreTemplate-1190/executions/execution-1190";
+
+    RestoreTemplateExecution actualResponse = client.getRestoreTemplateExecution(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getRestoreTemplateExecutionExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-1190/locations/location-1190/restoreTemplates/restoreTemplate-1190/executions/execution-1190";
+      client.getRestoreTemplateExecution(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listRestoreTemplateExecutionsTest() throws Exception {
+    RestoreTemplateExecution responsesElement = RestoreTemplateExecution.newBuilder().build();
+    ListRestoreTemplateExecutionsResponse expectedResponse =
+        ListRestoreTemplateExecutionsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllRestoreTemplateExecutions(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    RestoreTemplateName parent =
+        RestoreTemplateName.of("[PROJECT]", "[LOCATION]", "[RESTORE_TEMPLATE]");
+
+    ListRestoreTemplateExecutionsPagedResponse pagedListResponse =
+        client.listRestoreTemplateExecutions(parent);
+
+    List<RestoreTemplateExecution> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(
+        expectedResponse.getRestoreTemplateExecutionsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listRestoreTemplateExecutionsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      RestoreTemplateName parent =
+          RestoreTemplateName.of("[PROJECT]", "[LOCATION]", "[RESTORE_TEMPLATE]");
+      client.listRestoreTemplateExecutions(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listRestoreTemplateExecutionsTest2() throws Exception {
+    RestoreTemplateExecution responsesElement = RestoreTemplateExecution.newBuilder().build();
+    ListRestoreTemplateExecutionsResponse expectedResponse =
+        ListRestoreTemplateExecutionsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllRestoreTemplateExecutions(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent =
+        "projects/project-172/locations/location-172/restoreTemplates/restoreTemplate-172";
+
+    ListRestoreTemplateExecutionsPagedResponse pagedListResponse =
+        client.listRestoreTemplateExecutions(parent);
+
+    List<RestoreTemplateExecution> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(
+        expectedResponse.getRestoreTemplateExecutionsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listRestoreTemplateExecutionsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent =
+          "projects/project-172/locations/location-172/restoreTemplates/restoreTemplate-172";
+      client.listRestoreTemplateExecutions(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void triggerRestoreCleanupTest() throws Exception {
+    RestoreTemplateExecution expectedResponse =
+        RestoreTemplateExecution.newBuilder()
+            .setName(
+                RestoreTemplateExecutionName.of(
+                        "[PROJECT]", "[LOCATION]", "[RESTORE_TEMPLATE]", "[EXECUTION]")
+                    .toString())
+            .setResourceType("resourceType-384364440")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setPreparePhaseInfo(PreparePhaseInfo.newBuilder().build())
+            .setPreRestorePhaseInfo(PreRestorePhaseInfo.newBuilder().build())
+            .setRestorePhaseInfo(RestorePhaseInfo.newBuilder().build())
+            .setPostRestorePhaseInfo(PostRestorePhaseInfo.newBuilder().build())
+            .setVerificationPhaseInfo(VerificationPhaseInfo.newBuilder().build())
+            .setCleanupPhaseInfo(CleanupPhaseInfo.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("triggerRestoreCleanupTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    RestoreTemplateExecutionName name =
+        RestoreTemplateExecutionName.of(
+            "[PROJECT]", "[LOCATION]", "[RESTORE_TEMPLATE]", "[EXECUTION]");
+
+    RestoreTemplateExecution actualResponse = client.triggerRestoreCleanupAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void triggerRestoreCleanupExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      RestoreTemplateExecutionName name =
+          RestoreTemplateExecutionName.of(
+              "[PROJECT]", "[LOCATION]", "[RESTORE_TEMPLATE]", "[EXECUTION]");
+      client.triggerRestoreCleanupAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void triggerRestoreCleanupTest2() throws Exception {
+    RestoreTemplateExecution expectedResponse =
+        RestoreTemplateExecution.newBuilder()
+            .setName(
+                RestoreTemplateExecutionName.of(
+                        "[PROJECT]", "[LOCATION]", "[RESTORE_TEMPLATE]", "[EXECUTION]")
+                    .toString())
+            .setResourceType("resourceType-384364440")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setPreparePhaseInfo(PreparePhaseInfo.newBuilder().build())
+            .setPreRestorePhaseInfo(PreRestorePhaseInfo.newBuilder().build())
+            .setRestorePhaseInfo(RestorePhaseInfo.newBuilder().build())
+            .setPostRestorePhaseInfo(PostRestorePhaseInfo.newBuilder().build())
+            .setVerificationPhaseInfo(VerificationPhaseInfo.newBuilder().build())
+            .setCleanupPhaseInfo(CleanupPhaseInfo.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("triggerRestoreCleanupTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name =
+        "projects/project-1190/locations/location-1190/restoreTemplates/restoreTemplate-1190/executions/execution-1190";
+
+    RestoreTemplateExecution actualResponse = client.triggerRestoreCleanupAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void triggerRestoreCleanupExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-1190/locations/location-1190/restoreTemplates/restoreTemplate-1190/executions/execution-1190";
+      client.triggerRestoreCleanupAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void createRestoreVerificationPlanTest() throws Exception {
+    RestoreVerificationPlan expectedResponse =
+        RestoreVerificationPlan.newBuilder()
+            .setName(
+                RestoreVerificationPlanName.of(
+                        "[PROJECT]", "[LOCATION]", "[RESTOREVERIFICATIONPLAN]")
+                    .toString())
+            .setDescription("description-1724546052")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setSchedule("schedule-697920873")
+            .setTimeZone("timeZone-2077180903")
+            .setSuccessCleanupRule(RestoreVerificationCleanupRule.newBuilder().build())
+            .setFailureCleanupRule(RestoreVerificationCleanupRule.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createRestoreVerificationPlanTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    RestoreVerificationPlan restoreVerificationPlan = RestoreVerificationPlan.newBuilder().build();
+    String restoreVerificationPlanId = "restoreVerificationPlanId-1986447539";
+
+    RestoreVerificationPlan actualResponse =
+        client
+            .createRestoreVerificationPlanAsync(
+                parent, restoreVerificationPlan, restoreVerificationPlanId)
+            .get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createRestoreVerificationPlanExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      RestoreVerificationPlan restoreVerificationPlan =
+          RestoreVerificationPlan.newBuilder().build();
+      String restoreVerificationPlanId = "restoreVerificationPlanId-1986447539";
+      client
+          .createRestoreVerificationPlanAsync(
+              parent, restoreVerificationPlan, restoreVerificationPlanId)
+          .get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void createRestoreVerificationPlanTest2() throws Exception {
+    RestoreVerificationPlan expectedResponse =
+        RestoreVerificationPlan.newBuilder()
+            .setName(
+                RestoreVerificationPlanName.of(
+                        "[PROJECT]", "[LOCATION]", "[RESTOREVERIFICATIONPLAN]")
+                    .toString())
+            .setDescription("description-1724546052")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setSchedule("schedule-697920873")
+            .setTimeZone("timeZone-2077180903")
+            .setSuccessCleanupRule(RestoreVerificationCleanupRule.newBuilder().build())
+            .setFailureCleanupRule(RestoreVerificationCleanupRule.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createRestoreVerificationPlanTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String parent = "projects/project-5833/locations/location-5833";
+    RestoreVerificationPlan restoreVerificationPlan = RestoreVerificationPlan.newBuilder().build();
+    String restoreVerificationPlanId = "restoreVerificationPlanId-1986447539";
+
+    RestoreVerificationPlan actualResponse =
+        client
+            .createRestoreVerificationPlanAsync(
+                parent, restoreVerificationPlan, restoreVerificationPlanId)
+            .get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createRestoreVerificationPlanExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      RestoreVerificationPlan restoreVerificationPlan =
+          RestoreVerificationPlan.newBuilder().build();
+      String restoreVerificationPlanId = "restoreVerificationPlanId-1986447539";
+      client
+          .createRestoreVerificationPlanAsync(
+              parent, restoreVerificationPlan, restoreVerificationPlanId)
+          .get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void createRestoreVerificationPlanAssociationTest() throws Exception {
+    RestoreVerificationPlanAssociation expectedResponse =
+        RestoreVerificationPlanAssociation.newBuilder()
+            .setName(
+                RestoreVerificationPlanAssociationName.of(
+                        "[PROJECT]", "[LOCATION]", "[RESTORE_VERIFICATION_PLAN]", "[ASSOCIATION]")
+                    .toString())
+            .setDescription("description-1724546052")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setTriggerSummary(TriggerSummary.newBuilder().build())
+            .setResourceType("resourceType-384364440")
+            .putAllLabels(new HashMap<String, String>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createRestoreVerificationPlanAssociationTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    RestoreVerificationPlanName parent =
+        RestoreVerificationPlanName.of("[PROJECT]", "[LOCATION]", "[RESTOREVERIFICATIONPLAN]");
+    RestoreVerificationPlanAssociation restoreVerificationPlanAssociation =
+        RestoreVerificationPlanAssociation.newBuilder().build();
+    String restoreVerificationPlanAssociationId = "restoreVerificationPlanAssociationId-1096897526";
+
+    RestoreVerificationPlanAssociation actualResponse =
+        client
+            .createRestoreVerificationPlanAssociationAsync(
+                parent, restoreVerificationPlanAssociation, restoreVerificationPlanAssociationId)
+            .get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createRestoreVerificationPlanAssociationExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      RestoreVerificationPlanName parent =
+          RestoreVerificationPlanName.of("[PROJECT]", "[LOCATION]", "[RESTOREVERIFICATIONPLAN]");
+      RestoreVerificationPlanAssociation restoreVerificationPlanAssociation =
+          RestoreVerificationPlanAssociation.newBuilder().build();
+      String restoreVerificationPlanAssociationId =
+          "restoreVerificationPlanAssociationId-1096897526";
+      client
+          .createRestoreVerificationPlanAssociationAsync(
+              parent, restoreVerificationPlanAssociation, restoreVerificationPlanAssociationId)
+          .get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void createRestoreVerificationPlanAssociationTest2() throws Exception {
+    RestoreVerificationPlanAssociation expectedResponse =
+        RestoreVerificationPlanAssociation.newBuilder()
+            .setName(
+                RestoreVerificationPlanAssociationName.of(
+                        "[PROJECT]", "[LOCATION]", "[RESTORE_VERIFICATION_PLAN]", "[ASSOCIATION]")
+                    .toString())
+            .setDescription("description-1724546052")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setTriggerSummary(TriggerSummary.newBuilder().build())
+            .setResourceType("resourceType-384364440")
+            .putAllLabels(new HashMap<String, String>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createRestoreVerificationPlanAssociationTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String parent =
+        "projects/project-9694/locations/location-9694/restoreVerificationPlans/restoreVerificationPlan-9694";
+    RestoreVerificationPlanAssociation restoreVerificationPlanAssociation =
+        RestoreVerificationPlanAssociation.newBuilder().build();
+    String restoreVerificationPlanAssociationId = "restoreVerificationPlanAssociationId-1096897526";
+
+    RestoreVerificationPlanAssociation actualResponse =
+        client
+            .createRestoreVerificationPlanAssociationAsync(
+                parent, restoreVerificationPlanAssociation, restoreVerificationPlanAssociationId)
+            .get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createRestoreVerificationPlanAssociationExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent =
+          "projects/project-9694/locations/location-9694/restoreVerificationPlans/restoreVerificationPlan-9694";
+      RestoreVerificationPlanAssociation restoreVerificationPlanAssociation =
+          RestoreVerificationPlanAssociation.newBuilder().build();
+      String restoreVerificationPlanAssociationId =
+          "restoreVerificationPlanAssociationId-1096897526";
+      client
+          .createRestoreVerificationPlanAssociationAsync(
+              parent, restoreVerificationPlanAssociation, restoreVerificationPlanAssociationId)
+          .get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void getRestoreVerificationPlanAssociationTest() throws Exception {
+    RestoreVerificationPlanAssociation expectedResponse =
+        RestoreVerificationPlanAssociation.newBuilder()
+            .setName(
+                RestoreVerificationPlanAssociationName.of(
+                        "[PROJECT]", "[LOCATION]", "[RESTORE_VERIFICATION_PLAN]", "[ASSOCIATION]")
+                    .toString())
+            .setDescription("description-1724546052")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setTriggerSummary(TriggerSummary.newBuilder().build())
+            .setResourceType("resourceType-384364440")
+            .putAllLabels(new HashMap<String, String>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    RestoreVerificationPlanAssociationName name =
+        RestoreVerificationPlanAssociationName.of(
+            "[PROJECT]", "[LOCATION]", "[RESTORE_VERIFICATION_PLAN]", "[ASSOCIATION]");
+
+    RestoreVerificationPlanAssociation actualResponse =
+        client.getRestoreVerificationPlanAssociation(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getRestoreVerificationPlanAssociationExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      RestoreVerificationPlanAssociationName name =
+          RestoreVerificationPlanAssociationName.of(
+              "[PROJECT]", "[LOCATION]", "[RESTORE_VERIFICATION_PLAN]", "[ASSOCIATION]");
+      client.getRestoreVerificationPlanAssociation(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getRestoreVerificationPlanAssociationTest2() throws Exception {
+    RestoreVerificationPlanAssociation expectedResponse =
+        RestoreVerificationPlanAssociation.newBuilder()
+            .setName(
+                RestoreVerificationPlanAssociationName.of(
+                        "[PROJECT]", "[LOCATION]", "[RESTORE_VERIFICATION_PLAN]", "[ASSOCIATION]")
+                    .toString())
+            .setDescription("description-1724546052")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setTriggerSummary(TriggerSummary.newBuilder().build())
+            .setResourceType("resourceType-384364440")
+            .putAllLabels(new HashMap<String, String>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-8853/locations/location-8853/restoreVerificationPlans/restoreVerificationPlan-8853/associations/association-8853";
+
+    RestoreVerificationPlanAssociation actualResponse =
+        client.getRestoreVerificationPlanAssociation(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getRestoreVerificationPlanAssociationExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-8853/locations/location-8853/restoreVerificationPlans/restoreVerificationPlan-8853/associations/association-8853";
+      client.getRestoreVerificationPlanAssociation(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listRestoreVerificationPlanAssociationsTest() throws Exception {
+    RestoreVerificationPlanAssociation responsesElement =
+        RestoreVerificationPlanAssociation.newBuilder().build();
+    ListRestoreVerificationPlanAssociationsResponse expectedResponse =
+        ListRestoreVerificationPlanAssociationsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllRestoreVerificationPlanAssociations(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    RestoreVerificationPlanName parent =
+        RestoreVerificationPlanName.of("[PROJECT]", "[LOCATION]", "[RESTOREVERIFICATIONPLAN]");
+
+    ListRestoreVerificationPlanAssociationsPagedResponse pagedListResponse =
+        client.listRestoreVerificationPlanAssociations(parent);
+
+    List<RestoreVerificationPlanAssociation> resources =
+        Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(
+        expectedResponse.getRestoreVerificationPlanAssociationsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listRestoreVerificationPlanAssociationsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      RestoreVerificationPlanName parent =
+          RestoreVerificationPlanName.of("[PROJECT]", "[LOCATION]", "[RESTOREVERIFICATIONPLAN]");
+      client.listRestoreVerificationPlanAssociations(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listRestoreVerificationPlanAssociationsTest2() throws Exception {
+    RestoreVerificationPlanAssociation responsesElement =
+        RestoreVerificationPlanAssociation.newBuilder().build();
+    ListRestoreVerificationPlanAssociationsResponse expectedResponse =
+        ListRestoreVerificationPlanAssociationsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllRestoreVerificationPlanAssociations(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent =
+        "projects/project-9694/locations/location-9694/restoreVerificationPlans/restoreVerificationPlan-9694";
+
+    ListRestoreVerificationPlanAssociationsPagedResponse pagedListResponse =
+        client.listRestoreVerificationPlanAssociations(parent);
+
+    List<RestoreVerificationPlanAssociation> resources =
+        Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(
+        expectedResponse.getRestoreVerificationPlanAssociationsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listRestoreVerificationPlanAssociationsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent =
+          "projects/project-9694/locations/location-9694/restoreVerificationPlans/restoreVerificationPlan-9694";
+      client.listRestoreVerificationPlanAssociations(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteRestoreVerificationPlanAssociationTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteRestoreVerificationPlanAssociationTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    RestoreVerificationPlanAssociationName name =
+        RestoreVerificationPlanAssociationName.of(
+            "[PROJECT]", "[LOCATION]", "[RESTORE_VERIFICATION_PLAN]", "[ASSOCIATION]");
+
+    client.deleteRestoreVerificationPlanAssociationAsync(name).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteRestoreVerificationPlanAssociationExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      RestoreVerificationPlanAssociationName name =
+          RestoreVerificationPlanAssociationName.of(
+              "[PROJECT]", "[LOCATION]", "[RESTORE_VERIFICATION_PLAN]", "[ASSOCIATION]");
+      client.deleteRestoreVerificationPlanAssociationAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void deleteRestoreVerificationPlanAssociationTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteRestoreVerificationPlanAssociationTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name =
+        "projects/project-8853/locations/location-8853/restoreVerificationPlans/restoreVerificationPlan-8853/associations/association-8853";
+
+    client.deleteRestoreVerificationPlanAssociationAsync(name).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteRestoreVerificationPlanAssociationExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-8853/locations/location-8853/restoreVerificationPlans/restoreVerificationPlan-8853/associations/association-8853";
+      client.deleteRestoreVerificationPlanAssociationAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void triggerRestoreVerificationTest() throws Exception {
+    TriggerRestoreVerificationResponse expectedResponse =
+        TriggerRestoreVerificationResponse.newBuilder()
+            .setRestoreTemplateExecution(
+                RestoreTemplateExecutionName.of(
+                        "[PROJECT]", "[LOCATION]", "[RESTORE_TEMPLATE]", "[EXECUTION]")
+                    .toString())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("triggerRestoreVerificationTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    RestoreVerificationPlanAssociationName name =
+        RestoreVerificationPlanAssociationName.of(
+            "[PROJECT]", "[LOCATION]", "[RESTORE_VERIFICATION_PLAN]", "[ASSOCIATION]");
+
+    TriggerRestoreVerificationResponse actualResponse =
+        client.triggerRestoreVerificationAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void triggerRestoreVerificationExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      RestoreVerificationPlanAssociationName name =
+          RestoreVerificationPlanAssociationName.of(
+              "[PROJECT]", "[LOCATION]", "[RESTORE_VERIFICATION_PLAN]", "[ASSOCIATION]");
+      client.triggerRestoreVerificationAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void triggerRestoreVerificationTest2() throws Exception {
+    TriggerRestoreVerificationResponse expectedResponse =
+        TriggerRestoreVerificationResponse.newBuilder()
+            .setRestoreTemplateExecution(
+                RestoreTemplateExecutionName.of(
+                        "[PROJECT]", "[LOCATION]", "[RESTORE_TEMPLATE]", "[EXECUTION]")
+                    .toString())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("triggerRestoreVerificationTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name =
+        "projects/project-8853/locations/location-8853/restoreVerificationPlans/restoreVerificationPlan-8853/associations/association-8853";
+
+    TriggerRestoreVerificationResponse actualResponse =
+        client.triggerRestoreVerificationAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void triggerRestoreVerificationExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-8853/locations/location-8853/restoreVerificationPlans/restoreVerificationPlan-8853/associations/association-8853";
+      client.triggerRestoreVerificationAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void getRestoreVerificationPlanTest() throws Exception {
+    RestoreVerificationPlan expectedResponse =
+        RestoreVerificationPlan.newBuilder()
+            .setName(
+                RestoreVerificationPlanName.of(
+                        "[PROJECT]", "[LOCATION]", "[RESTOREVERIFICATIONPLAN]")
+                    .toString())
+            .setDescription("description-1724546052")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setSchedule("schedule-697920873")
+            .setTimeZone("timeZone-2077180903")
+            .setSuccessCleanupRule(RestoreVerificationCleanupRule.newBuilder().build())
+            .setFailureCleanupRule(RestoreVerificationCleanupRule.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    RestoreVerificationPlanName name =
+        RestoreVerificationPlanName.of("[PROJECT]", "[LOCATION]", "[RESTOREVERIFICATIONPLAN]");
+
+    RestoreVerificationPlan actualResponse = client.getRestoreVerificationPlan(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getRestoreVerificationPlanExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      RestoreVerificationPlanName name =
+          RestoreVerificationPlanName.of("[PROJECT]", "[LOCATION]", "[RESTOREVERIFICATIONPLAN]");
+      client.getRestoreVerificationPlan(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getRestoreVerificationPlanTest2() throws Exception {
+    RestoreVerificationPlan expectedResponse =
+        RestoreVerificationPlan.newBuilder()
+            .setName(
+                RestoreVerificationPlanName.of(
+                        "[PROJECT]", "[LOCATION]", "[RESTOREVERIFICATIONPLAN]")
+                    .toString())
+            .setDescription("description-1724546052")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setSchedule("schedule-697920873")
+            .setTimeZone("timeZone-2077180903")
+            .setSuccessCleanupRule(RestoreVerificationCleanupRule.newBuilder().build())
+            .setFailureCleanupRule(RestoreVerificationCleanupRule.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-7073/locations/location-7073/restoreVerificationPlans/restoreVerificationPlan-7073";
+
+    RestoreVerificationPlan actualResponse = client.getRestoreVerificationPlan(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getRestoreVerificationPlanExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-7073/locations/location-7073/restoreVerificationPlans/restoreVerificationPlan-7073";
+      client.getRestoreVerificationPlan(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listRestoreVerificationPlansTest() throws Exception {
+    RestoreVerificationPlan responsesElement = RestoreVerificationPlan.newBuilder().build();
+    ListRestoreVerificationPlansResponse expectedResponse =
+        ListRestoreVerificationPlansResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllRestoreVerificationPlans(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListRestoreVerificationPlansPagedResponse pagedListResponse =
+        client.listRestoreVerificationPlans(parent);
+
+    List<RestoreVerificationPlan> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(
+        expectedResponse.getRestoreVerificationPlansList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listRestoreVerificationPlansExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listRestoreVerificationPlans(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listRestoreVerificationPlansTest2() throws Exception {
+    RestoreVerificationPlan responsesElement = RestoreVerificationPlan.newBuilder().build();
+    ListRestoreVerificationPlansResponse expectedResponse =
+        ListRestoreVerificationPlansResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllRestoreVerificationPlans(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-5833/locations/location-5833";
+
+    ListRestoreVerificationPlansPagedResponse pagedListResponse =
+        client.listRestoreVerificationPlans(parent);
+
+    List<RestoreVerificationPlan> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(
+        expectedResponse.getRestoreVerificationPlansList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listRestoreVerificationPlansExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      client.listRestoreVerificationPlans(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteRestoreVerificationPlanTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteRestoreVerificationPlanTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    RestoreVerificationPlanName name =
+        RestoreVerificationPlanName.of("[PROJECT]", "[LOCATION]", "[RESTOREVERIFICATIONPLAN]");
+
+    client.deleteRestoreVerificationPlanAsync(name).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteRestoreVerificationPlanExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      RestoreVerificationPlanName name =
+          RestoreVerificationPlanName.of("[PROJECT]", "[LOCATION]", "[RESTOREVERIFICATIONPLAN]");
+      client.deleteRestoreVerificationPlanAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void deleteRestoreVerificationPlanTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteRestoreVerificationPlanTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name =
+        "projects/project-7073/locations/location-7073/restoreVerificationPlans/restoreVerificationPlan-7073";
+
+    client.deleteRestoreVerificationPlanAsync(name).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteRestoreVerificationPlanExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-7073/locations/location-7073/restoreVerificationPlans/restoreVerificationPlan-7073";
+      client.deleteRestoreVerificationPlanAsync(name).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
     }

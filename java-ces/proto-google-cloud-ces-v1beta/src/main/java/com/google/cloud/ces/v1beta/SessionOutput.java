@@ -1391,6 +1391,8 @@ public final class SessionOutput extends com.google.protobuf.GeneratedMessage
     GOOGLE_SEARCH_SUGGESTIONS(10),
     END_SESSION(9),
     PAYLOAD(11),
+    IMAGE(13),
+    PROGRESS(14),
     OUTPUTTYPE_NOT_SET(0);
     private final int value;
 
@@ -1424,6 +1426,10 @@ public final class SessionOutput extends com.google.protobuf.GeneratedMessage
           return END_SESSION;
         case 11:
           return PAYLOAD;
+        case 13:
+          return IMAGE;
+        case 14:
+          return PROGRESS;
         case 0:
           return OUTPUTTYPE_NOT_SET;
         default:
@@ -1827,6 +1833,133 @@ public final class SessionOutput extends com.google.protobuf.GeneratedMessage
     return com.google.protobuf.Struct.getDefaultInstance();
   }
 
+  public static final int IMAGE_FIELD_NUMBER = 13;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output image from the CES agent.
+   * </pre>
+   *
+   * <code>.google.cloud.ces.v1beta.Image image = 13;</code>
+   *
+   * @return Whether the image field is set.
+   */
+  @java.lang.Override
+  public boolean hasImage() {
+    return outputTypeCase_ == 13;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output image from the CES agent.
+   * </pre>
+   *
+   * <code>.google.cloud.ces.v1beta.Image image = 13;</code>
+   *
+   * @return The image.
+   */
+  @java.lang.Override
+  public com.google.cloud.ces.v1beta.Image getImage() {
+    if (outputTypeCase_ == 13) {
+      return (com.google.cloud.ces.v1beta.Image) outputType_;
+    }
+    return com.google.cloud.ces.v1beta.Image.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output image from the CES agent.
+   * </pre>
+   *
+   * <code>.google.cloud.ces.v1beta.Image image = 13;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.ces.v1beta.ImageOrBuilder getImageOrBuilder() {
+    if (outputTypeCase_ == 13) {
+      return (com.google.cloud.ces.v1beta.Image) outputType_;
+    }
+    return com.google.cloud.ces.v1beta.Image.getDefaultInstance();
+  }
+
+  public static final int PROGRESS_FIELD_NUMBER = 14;
+
+  /**
+   *
+   *
+   * <pre>
+   * Intermediate progress update from the CES agent.
+   * </pre>
+   *
+   * <code>string progress = 14;</code>
+   *
+   * @return Whether the progress field is set.
+   */
+  public boolean hasProgress() {
+    return outputTypeCase_ == 14;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Intermediate progress update from the CES agent.
+   * </pre>
+   *
+   * <code>string progress = 14;</code>
+   *
+   * @return The progress.
+   */
+  public java.lang.String getProgress() {
+    java.lang.Object ref = "";
+    if (outputTypeCase_ == 14) {
+      ref = outputType_;
+    }
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      if (outputTypeCase_ == 14) {
+        outputType_ = s;
+      }
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Intermediate progress update from the CES agent.
+   * </pre>
+   *
+   * <code>string progress = 14;</code>
+   *
+   * @return The bytes for progress.
+   */
+  public com.google.protobuf.ByteString getProgressBytes() {
+    java.lang.Object ref = "";
+    if (outputTypeCase_ == 14) {
+      ref = outputType_;
+    }
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      if (outputTypeCase_ == 14) {
+        outputType_ = b;
+      }
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int TURN_INDEX_FIELD_NUMBER = 6;
   private int turnIndex_ = 0;
 
@@ -2055,6 +2188,12 @@ public final class SessionOutput extends com.google.protobuf.GeneratedMessage
     for (int i = 0; i < context_.size(); i++) {
       output.writeMessage(12, context_.get(i));
     }
+    if (outputTypeCase_ == 13) {
+      output.writeMessage(13, (com.google.cloud.ces.v1beta.Image) outputType_);
+    }
+    if (outputTypeCase_ == 14) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 14, outputType_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -2109,6 +2248,14 @@ public final class SessionOutput extends com.google.protobuf.GeneratedMessage
     for (int i = 0; i < context_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(12, context_.get(i));
     }
+    if (outputTypeCase_ == 13) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              13, (com.google.cloud.ces.v1beta.Image) outputType_);
+    }
+    if (outputTypeCase_ == 14) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(14, outputType_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2154,6 +2301,12 @@ public final class SessionOutput extends com.google.protobuf.GeneratedMessage
         break;
       case 11:
         if (!getPayload().equals(other.getPayload())) return false;
+        break;
+      case 13:
+        if (!getImage().equals(other.getImage())) return false;
+        break;
+      case 14:
+        if (!getProgress().equals(other.getProgress())) return false;
         break;
       case 0:
       default:
@@ -2209,6 +2362,14 @@ public final class SessionOutput extends com.google.protobuf.GeneratedMessage
       case 11:
         hash = (37 * hash) + PAYLOAD_FIELD_NUMBER;
         hash = (53 * hash) + getPayload().hashCode();
+        break;
+      case 13:
+        hash = (37 * hash) + IMAGE_FIELD_NUMBER;
+        hash = (53 * hash) + getImage().hashCode();
+        break;
+      case 14:
+        hash = (37 * hash) + PROGRESS_FIELD_NUMBER;
+        hash = (53 * hash) + getProgress().hashCode();
         break;
       case 0:
       default:
@@ -2378,6 +2539,9 @@ public final class SessionOutput extends com.google.protobuf.GeneratedMessage
       if (payloadBuilder_ != null) {
         payloadBuilder_.clear();
       }
+      if (imageBuilder_ != null) {
+        imageBuilder_.clear();
+      }
       turnIndex_ = 0;
       turnCompleted_ = false;
       diagnosticInfo_ = null;
@@ -2391,7 +2555,7 @@ public final class SessionOutput extends com.google.protobuf.GeneratedMessage
         context_ = null;
         contextBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00001000);
       outputTypeCase_ = 0;
       outputType_ = null;
       return this;
@@ -2432,9 +2596,9 @@ public final class SessionOutput extends com.google.protobuf.GeneratedMessage
 
     private void buildPartialRepeatedFields(com.google.cloud.ces.v1beta.SessionOutput result) {
       if (contextBuilder_ == null) {
-        if (((bitField0_ & 0x00000400) != 0)) {
+        if (((bitField0_ & 0x00001000) != 0)) {
           context_ = java.util.Collections.unmodifiableList(context_);
-          bitField0_ = (bitField0_ & ~0x00000400);
+          bitField0_ = (bitField0_ & ~0x00001000);
         }
         result.context_ = context_;
       } else {
@@ -2444,14 +2608,14 @@ public final class SessionOutput extends com.google.protobuf.GeneratedMessage
 
     private void buildPartial0(com.google.cloud.ces.v1beta.SessionOutput result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.turnIndex_ = turnIndex_;
       }
-      if (((from_bitField0_ & 0x00000100) != 0)) {
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         result.turnCompleted_ = turnCompleted_;
       }
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000200) != 0)) {
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         result.diagnosticInfo_ =
             diagnosticInfoBuilder_ == null ? diagnosticInfo_ : diagnosticInfoBuilder_.build();
         to_bitField0_ |= 0x00000001;
@@ -2476,6 +2640,9 @@ public final class SessionOutput extends com.google.protobuf.GeneratedMessage
       }
       if (outputTypeCase_ == 11 && payloadBuilder_ != null) {
         result.outputType_ = payloadBuilder_.build();
+      }
+      if (outputTypeCase_ == 13 && imageBuilder_ != null) {
+        result.outputType_ = imageBuilder_.build();
       }
     }
 
@@ -2504,7 +2671,7 @@ public final class SessionOutput extends com.google.protobuf.GeneratedMessage
         if (!other.context_.isEmpty()) {
           if (context_.isEmpty()) {
             context_ = other.context_;
-            bitField0_ = (bitField0_ & ~0x00000400);
+            bitField0_ = (bitField0_ & ~0x00001000);
           } else {
             ensureContextIsMutable();
             context_.addAll(other.context_);
@@ -2517,7 +2684,7 @@ public final class SessionOutput extends com.google.protobuf.GeneratedMessage
             contextBuilder_.dispose();
             contextBuilder_ = null;
             context_ = other.context_;
-            bitField0_ = (bitField0_ & ~0x00000400);
+            bitField0_ = (bitField0_ & ~0x00001000);
             contextBuilder_ =
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
                     ? internalGetContextFieldBuilder()
@@ -2563,6 +2730,18 @@ public final class SessionOutput extends com.google.protobuf.GeneratedMessage
         case PAYLOAD:
           {
             mergePayload(other.getPayload());
+            break;
+          }
+        case IMAGE:
+          {
+            mergeImage(other.getImage());
+            break;
+          }
+        case PROGRESS:
+          {
+            outputTypeCase_ = 14;
+            outputType_ = other.outputType_;
+            onChanged();
             break;
           }
         case OUTPUTTYPE_NOT_SET:
@@ -2619,20 +2798,20 @@ public final class SessionOutput extends com.google.protobuf.GeneratedMessage
             case 32:
               {
                 turnCompleted_ = input.readBool();
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 32
             case 48:
               {
                 turnIndex_ = input.readInt32();
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 48
             case 58:
               {
                 input.readMessage(
                     internalGetDiagnosticInfoFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 58
             case 66:
@@ -2675,6 +2854,19 @@ public final class SessionOutput extends com.google.protobuf.GeneratedMessage
                 }
                 break;
               } // case 98
+            case 106:
+              {
+                input.readMessage(internalGetImageFieldBuilder().getBuilder(), extensionRegistry);
+                outputTypeCase_ = 13;
+                break;
+              } // case 106
+            case 114:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                outputTypeCase_ = 14;
+                outputType_ = s;
+                break;
+              } // case 114
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4028,6 +4220,360 @@ public final class SessionOutput extends com.google.protobuf.GeneratedMessage
       return payloadBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.ces.v1beta.Image,
+            com.google.cloud.ces.v1beta.Image.Builder,
+            com.google.cloud.ces.v1beta.ImageOrBuilder>
+        imageBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output image from the CES agent.
+     * </pre>
+     *
+     * <code>.google.cloud.ces.v1beta.Image image = 13;</code>
+     *
+     * @return Whether the image field is set.
+     */
+    @java.lang.Override
+    public boolean hasImage() {
+      return outputTypeCase_ == 13;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output image from the CES agent.
+     * </pre>
+     *
+     * <code>.google.cloud.ces.v1beta.Image image = 13;</code>
+     *
+     * @return The image.
+     */
+    @java.lang.Override
+    public com.google.cloud.ces.v1beta.Image getImage() {
+      if (imageBuilder_ == null) {
+        if (outputTypeCase_ == 13) {
+          return (com.google.cloud.ces.v1beta.Image) outputType_;
+        }
+        return com.google.cloud.ces.v1beta.Image.getDefaultInstance();
+      } else {
+        if (outputTypeCase_ == 13) {
+          return imageBuilder_.getMessage();
+        }
+        return com.google.cloud.ces.v1beta.Image.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output image from the CES agent.
+     * </pre>
+     *
+     * <code>.google.cloud.ces.v1beta.Image image = 13;</code>
+     */
+    public Builder setImage(com.google.cloud.ces.v1beta.Image value) {
+      if (imageBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        outputType_ = value;
+        onChanged();
+      } else {
+        imageBuilder_.setMessage(value);
+      }
+      outputTypeCase_ = 13;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output image from the CES agent.
+     * </pre>
+     *
+     * <code>.google.cloud.ces.v1beta.Image image = 13;</code>
+     */
+    public Builder setImage(com.google.cloud.ces.v1beta.Image.Builder builderForValue) {
+      if (imageBuilder_ == null) {
+        outputType_ = builderForValue.build();
+        onChanged();
+      } else {
+        imageBuilder_.setMessage(builderForValue.build());
+      }
+      outputTypeCase_ = 13;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output image from the CES agent.
+     * </pre>
+     *
+     * <code>.google.cloud.ces.v1beta.Image image = 13;</code>
+     */
+    public Builder mergeImage(com.google.cloud.ces.v1beta.Image value) {
+      if (imageBuilder_ == null) {
+        if (outputTypeCase_ == 13
+            && outputType_ != com.google.cloud.ces.v1beta.Image.getDefaultInstance()) {
+          outputType_ =
+              com.google.cloud.ces.v1beta.Image.newBuilder(
+                      (com.google.cloud.ces.v1beta.Image) outputType_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          outputType_ = value;
+        }
+        onChanged();
+      } else {
+        if (outputTypeCase_ == 13) {
+          imageBuilder_.mergeFrom(value);
+        } else {
+          imageBuilder_.setMessage(value);
+        }
+      }
+      outputTypeCase_ = 13;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output image from the CES agent.
+     * </pre>
+     *
+     * <code>.google.cloud.ces.v1beta.Image image = 13;</code>
+     */
+    public Builder clearImage() {
+      if (imageBuilder_ == null) {
+        if (outputTypeCase_ == 13) {
+          outputTypeCase_ = 0;
+          outputType_ = null;
+          onChanged();
+        }
+      } else {
+        if (outputTypeCase_ == 13) {
+          outputTypeCase_ = 0;
+          outputType_ = null;
+        }
+        imageBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output image from the CES agent.
+     * </pre>
+     *
+     * <code>.google.cloud.ces.v1beta.Image image = 13;</code>
+     */
+    public com.google.cloud.ces.v1beta.Image.Builder getImageBuilder() {
+      return internalGetImageFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output image from the CES agent.
+     * </pre>
+     *
+     * <code>.google.cloud.ces.v1beta.Image image = 13;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.ces.v1beta.ImageOrBuilder getImageOrBuilder() {
+      if ((outputTypeCase_ == 13) && (imageBuilder_ != null)) {
+        return imageBuilder_.getMessageOrBuilder();
+      } else {
+        if (outputTypeCase_ == 13) {
+          return (com.google.cloud.ces.v1beta.Image) outputType_;
+        }
+        return com.google.cloud.ces.v1beta.Image.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output image from the CES agent.
+     * </pre>
+     *
+     * <code>.google.cloud.ces.v1beta.Image image = 13;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.ces.v1beta.Image,
+            com.google.cloud.ces.v1beta.Image.Builder,
+            com.google.cloud.ces.v1beta.ImageOrBuilder>
+        internalGetImageFieldBuilder() {
+      if (imageBuilder_ == null) {
+        if (!(outputTypeCase_ == 13)) {
+          outputType_ = com.google.cloud.ces.v1beta.Image.getDefaultInstance();
+        }
+        imageBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.ces.v1beta.Image,
+                com.google.cloud.ces.v1beta.Image.Builder,
+                com.google.cloud.ces.v1beta.ImageOrBuilder>(
+                (com.google.cloud.ces.v1beta.Image) outputType_, getParentForChildren(), isClean());
+        outputType_ = null;
+      }
+      outputTypeCase_ = 13;
+      onChanged();
+      return imageBuilder_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Intermediate progress update from the CES agent.
+     * </pre>
+     *
+     * <code>string progress = 14;</code>
+     *
+     * @return Whether the progress field is set.
+     */
+    @java.lang.Override
+    public boolean hasProgress() {
+      return outputTypeCase_ == 14;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Intermediate progress update from the CES agent.
+     * </pre>
+     *
+     * <code>string progress = 14;</code>
+     *
+     * @return The progress.
+     */
+    @java.lang.Override
+    public java.lang.String getProgress() {
+      java.lang.Object ref = "";
+      if (outputTypeCase_ == 14) {
+        ref = outputType_;
+      }
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (outputTypeCase_ == 14) {
+          outputType_ = s;
+        }
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Intermediate progress update from the CES agent.
+     * </pre>
+     *
+     * <code>string progress = 14;</code>
+     *
+     * @return The bytes for progress.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getProgressBytes() {
+      java.lang.Object ref = "";
+      if (outputTypeCase_ == 14) {
+        ref = outputType_;
+      }
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        if (outputTypeCase_ == 14) {
+          outputType_ = b;
+        }
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Intermediate progress update from the CES agent.
+     * </pre>
+     *
+     * <code>string progress = 14;</code>
+     *
+     * @param value The progress to set.
+     * @return This builder for chaining.
+     */
+    public Builder setProgress(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      outputTypeCase_ = 14;
+      outputType_ = value;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Intermediate progress update from the CES agent.
+     * </pre>
+     *
+     * <code>string progress = 14;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearProgress() {
+      if (outputTypeCase_ == 14) {
+        outputTypeCase_ = 0;
+        outputType_ = null;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Intermediate progress update from the CES agent.
+     * </pre>
+     *
+     * <code>string progress = 14;</code>
+     *
+     * @param value The bytes for progress to set.
+     * @return This builder for chaining.
+     */
+    public Builder setProgressBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      outputTypeCase_ = 14;
+      outputType_ = value;
+      onChanged();
+      return this;
+    }
+
     private int turnIndex_;
 
     /**
@@ -4063,7 +4609,7 @@ public final class SessionOutput extends com.google.protobuf.GeneratedMessage
     public Builder setTurnIndex(int value) {
 
       turnIndex_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -4081,7 +4627,7 @@ public final class SessionOutput extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearTurnIndex() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000200);
       turnIndex_ = 0;
       onChanged();
       return this;
@@ -4122,7 +4668,7 @@ public final class SessionOutput extends com.google.protobuf.GeneratedMessage
     public Builder setTurnCompleted(boolean value) {
 
       turnCompleted_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -4140,7 +4686,7 @@ public final class SessionOutput extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearTurnCompleted() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000400);
       turnCompleted_ = false;
       onChanged();
       return this;
@@ -4169,7 +4715,7 @@ public final class SessionOutput extends com.google.protobuf.GeneratedMessage
      * @return Whether the diagnosticInfo field is set.
      */
     public boolean hasDiagnosticInfo() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00000800) != 0);
     }
 
     /**
@@ -4220,7 +4766,7 @@ public final class SessionOutput extends com.google.protobuf.GeneratedMessage
       } else {
         diagnosticInfoBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -4245,7 +4791,7 @@ public final class SessionOutput extends com.google.protobuf.GeneratedMessage
       } else {
         diagnosticInfoBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -4266,7 +4812,7 @@ public final class SessionOutput extends com.google.protobuf.GeneratedMessage
     public Builder mergeDiagnosticInfo(
         com.google.cloud.ces.v1beta.SessionOutput.DiagnosticInfo value) {
       if (diagnosticInfoBuilder_ == null) {
-        if (((bitField0_ & 0x00000200) != 0)
+        if (((bitField0_ & 0x00000800) != 0)
             && diagnosticInfo_ != null
             && diagnosticInfo_
                 != com.google.cloud.ces.v1beta.SessionOutput.DiagnosticInfo.getDefaultInstance()) {
@@ -4278,7 +4824,7 @@ public final class SessionOutput extends com.google.protobuf.GeneratedMessage
         diagnosticInfoBuilder_.mergeFrom(value);
       }
       if (diagnosticInfo_ != null) {
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       return this;
@@ -4298,7 +4844,7 @@ public final class SessionOutput extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearDiagnosticInfo() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000800);
       diagnosticInfo_ = null;
       if (diagnosticInfoBuilder_ != null) {
         diagnosticInfoBuilder_.dispose();
@@ -4323,7 +4869,7 @@ public final class SessionOutput extends com.google.protobuf.GeneratedMessage
      */
     public com.google.cloud.ces.v1beta.SessionOutput.DiagnosticInfo.Builder
         getDiagnosticInfoBuilder() {
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000800;
       onChanged();
       return internalGetDiagnosticInfoFieldBuilder().getBuilder();
     }
@@ -4385,9 +4931,9 @@ public final class SessionOutput extends com.google.protobuf.GeneratedMessage
     private java.util.List<com.google.protobuf.Any> context_ = java.util.Collections.emptyList();
 
     private void ensureContextIsMutable() {
-      if (!((bitField0_ & 0x00000400) != 0)) {
+      if (!((bitField0_ & 0x00001000) != 0)) {
         context_ = new java.util.ArrayList<com.google.protobuf.Any>(context_);
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00001000;
       }
     }
 
@@ -4609,7 +5155,7 @@ public final class SessionOutput extends com.google.protobuf.GeneratedMessage
     public Builder clearContext() {
       if (contextBuilder_ == null) {
         context_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000400);
+        bitField0_ = (bitField0_ & ~0x00001000);
         onChanged();
       } else {
         contextBuilder_.clear();
@@ -4736,7 +5282,7 @@ public final class SessionOutput extends com.google.protobuf.GeneratedMessage
                 com.google.protobuf.Any,
                 com.google.protobuf.Any.Builder,
                 com.google.protobuf.AnyOrBuilder>(
-                context_, ((bitField0_ & 0x00000400) != 0), getParentForChildren(), isClean());
+                context_, ((bitField0_ & 0x00001000) != 0), getParentForChildren(), isClean());
         context_ = null;
       }
       return contextBuilder_;

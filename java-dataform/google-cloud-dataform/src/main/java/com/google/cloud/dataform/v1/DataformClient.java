@@ -1041,6 +1041,26 @@ import org.jspecify.annotations.Nullable;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> CreateCompilationResultLongRunning</td>
+ *      <td><p> Creates a new CompilationResult in a given project and location asynchronously.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createCompilationResultLongRunningAsync(CreateCompilationResultRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> createCompilationResultLongRunningAsync(RepositoryName parent, CompilationResult compilationResult)
+ *           <li><p> createCompilationResultLongRunningAsync(String parent, CompilationResult compilationResult)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createCompilationResultLongRunningOperationCallable()
+ *           <li><p> createCompilationResultLongRunningCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> QueryCompilationResultActions</td>
  *      <td><p> Returns CompilationResultActions in a given CompilationResult.</td>
  *      <td>
@@ -7580,6 +7600,169 @@ public class DataformClient implements BackgroundResource {
   public final UnaryCallable<CreateCompilationResultRequest, CompilationResult>
       createCompilationResultCallable() {
     return stub.createCompilationResultCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new CompilationResult in a given project and location asynchronously.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   RepositoryName parent = RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]");
+   *   CompilationResult compilationResult = CompilationResult.newBuilder().build();
+   *   CompilationResult response =
+   *       dataformClient.createCompilationResultLongRunningAsync(parent, compilationResult).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The repository in which to create the compilation result. Must be in
+   *     the format `projects/&#42;/locations/&#42;/repositories/&#42;`.
+   * @param compilationResult Required. The compilation result to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<CompilationResult, CreateCompilationResultMetadata>
+      createCompilationResultLongRunningAsync(
+          @Nullable RepositoryName parent, CompilationResult compilationResult) {
+    CreateCompilationResultRequest request =
+        CreateCompilationResultRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setCompilationResult(compilationResult)
+            .build();
+    return createCompilationResultLongRunningAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new CompilationResult in a given project and location asynchronously.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   String parent = RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString();
+   *   CompilationResult compilationResult = CompilationResult.newBuilder().build();
+   *   CompilationResult response =
+   *       dataformClient.createCompilationResultLongRunningAsync(parent, compilationResult).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The repository in which to create the compilation result. Must be in
+   *     the format `projects/&#42;/locations/&#42;/repositories/&#42;`.
+   * @param compilationResult Required. The compilation result to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<CompilationResult, CreateCompilationResultMetadata>
+      createCompilationResultLongRunningAsync(String parent, CompilationResult compilationResult) {
+    CreateCompilationResultRequest request =
+        CreateCompilationResultRequest.newBuilder()
+            .setParent(parent)
+            .setCompilationResult(compilationResult)
+            .build();
+    return createCompilationResultLongRunningAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new CompilationResult in a given project and location asynchronously.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   CreateCompilationResultRequest request =
+   *       CreateCompilationResultRequest.newBuilder()
+   *           .setParent(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+   *           .setCompilationResult(CompilationResult.newBuilder().build())
+   *           .build();
+   *   CompilationResult response =
+   *       dataformClient.createCompilationResultLongRunningAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<CompilationResult, CreateCompilationResultMetadata>
+      createCompilationResultLongRunningAsync(CreateCompilationResultRequest request) {
+    return createCompilationResultLongRunningOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new CompilationResult in a given project and location asynchronously.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   CreateCompilationResultRequest request =
+   *       CreateCompilationResultRequest.newBuilder()
+   *           .setParent(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+   *           .setCompilationResult(CompilationResult.newBuilder().build())
+   *           .build();
+   *   OperationFuture<CompilationResult, CreateCompilationResultMetadata> future =
+   *       dataformClient.createCompilationResultLongRunningOperationCallable().futureCall(request);
+   *   // Do something.
+   *   CompilationResult response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          CreateCompilationResultRequest, CompilationResult, CreateCompilationResultMetadata>
+      createCompilationResultLongRunningOperationCallable() {
+    return stub.createCompilationResultLongRunningOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new CompilationResult in a given project and location asynchronously.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   CreateCompilationResultRequest request =
+   *       CreateCompilationResultRequest.newBuilder()
+   *           .setParent(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+   *           .setCompilationResult(CompilationResult.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       dataformClient.createCompilationResultLongRunningCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateCompilationResultRequest, Operation>
+      createCompilationResultLongRunningCallable() {
+    return stub.createCompilationResultLongRunningCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

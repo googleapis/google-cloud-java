@@ -60,6 +60,7 @@ import com.google.cloud.dataform.v1.CompilationResult;
 import com.google.cloud.dataform.v1.ComputeRepositoryAccessTokenStatusRequest;
 import com.google.cloud.dataform.v1.ComputeRepositoryAccessTokenStatusResponse;
 import com.google.cloud.dataform.v1.Config;
+import com.google.cloud.dataform.v1.CreateCompilationResultMetadata;
 import com.google.cloud.dataform.v1.CreateCompilationResultRequest;
 import com.google.cloud.dataform.v1.CreateFolderRequest;
 import com.google.cloud.dataform.v1.CreateReleaseConfigRequest;
@@ -202,6 +203,8 @@ public class HttpJsonDataformStub extends DataformStub {
   private static final TypeRegistry typeRegistry =
       TypeRegistry.newBuilder()
           .add(Empty.getDescriptor())
+          .add(CompilationResult.getDescriptor())
+          .add(CreateCompilationResultMetadata.getDescriptor())
           .add(MoveFolderMetadata.getDescriptor())
           .add(MoveRepositoryMetadata.getDescriptor())
           .add(DeleteFolderTreeMetadata.getDescriptor())
@@ -2297,6 +2300,48 @@ public class HttpJsonDataformStub extends DataformStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<CreateCompilationResultRequest, Operation>
+      createCompilationResultLongRunningMethodDescriptor =
+          ApiMethodDescriptor.<CreateCompilationResultRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.dataform.v1.Dataform/CreateCompilationResultLongRunning")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CreateCompilationResultRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*/repositories/*}/compilationResults:createLongRunning",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateCompilationResultRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateCompilationResultRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "compilationResult", request.getCompilationResult(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (CreateCompilationResultRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
   private static final ApiMethodDescriptor<
           QueryCompilationResultActionsRequest, QueryCompilationResultActionsResponse>
       queryCompilationResultActionsMethodDescriptor =
@@ -3123,6 +3168,11 @@ public class HttpJsonDataformStub extends DataformStub {
       getCompilationResultCallable;
   private final UnaryCallable<CreateCompilationResultRequest, CompilationResult>
       createCompilationResultCallable;
+  private final UnaryCallable<CreateCompilationResultRequest, Operation>
+      createCompilationResultLongRunningCallable;
+  private final OperationCallable<
+          CreateCompilationResultRequest, CompilationResult, CreateCompilationResultMetadata>
+      createCompilationResultLongRunningOperationCallable;
   private final UnaryCallable<
           QueryCompilationResultActionsRequest, QueryCompilationResultActionsResponse>
       queryCompilationResultActionsCallable;
@@ -3958,6 +4008,19 @@ public class HttpJsonDataformStub extends DataformStub {
                     })
                 .setResourceNameExtractor(request -> request.getParent())
                 .build();
+    HttpJsonCallSettings<CreateCompilationResultRequest, Operation>
+        createCompilationResultLongRunningTransportSettings =
+            HttpJsonCallSettings.<CreateCompilationResultRequest, Operation>newBuilder()
+                .setMethodDescriptor(createCompilationResultLongRunningMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
     HttpJsonCallSettings<
             QueryCompilationResultActionsRequest, QueryCompilationResultActionsResponse>
         queryCompilationResultActionsTransportSettings =
@@ -4501,6 +4564,17 @@ public class HttpJsonDataformStub extends DataformStub {
             createCompilationResultTransportSettings,
             settings.createCompilationResultSettings(),
             clientContext);
+    this.createCompilationResultLongRunningCallable =
+        callableFactory.createUnaryCallable(
+            createCompilationResultLongRunningTransportSettings,
+            settings.createCompilationResultLongRunningSettings(),
+            clientContext);
+    this.createCompilationResultLongRunningOperationCallable =
+        callableFactory.createOperationCallable(
+            createCompilationResultLongRunningTransportSettings,
+            settings.createCompilationResultLongRunningOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.queryCompilationResultActionsCallable =
         callableFactory.createUnaryCallable(
             queryCompilationResultActionsTransportSettings,
@@ -4671,6 +4745,7 @@ public class HttpJsonDataformStub extends DataformStub {
     methodDescriptors.add(listCompilationResultsMethodDescriptor);
     methodDescriptors.add(getCompilationResultMethodDescriptor);
     methodDescriptors.add(createCompilationResultMethodDescriptor);
+    methodDescriptors.add(createCompilationResultLongRunningMethodDescriptor);
     methodDescriptors.add(queryCompilationResultActionsMethodDescriptor);
     methodDescriptors.add(listWorkflowConfigsMethodDescriptor);
     methodDescriptors.add(getWorkflowConfigMethodDescriptor);
@@ -5094,6 +5169,19 @@ public class HttpJsonDataformStub extends DataformStub {
   public UnaryCallable<CreateCompilationResultRequest, CompilationResult>
       createCompilationResultCallable() {
     return createCompilationResultCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateCompilationResultRequest, Operation>
+      createCompilationResultLongRunningCallable() {
+    return createCompilationResultLongRunningCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          CreateCompilationResultRequest, CompilationResult, CreateCompilationResultMetadata>
+      createCompilationResultLongRunningOperationCallable() {
+    return createCompilationResultLongRunningOperationCallable;
   }
 
   @Override
