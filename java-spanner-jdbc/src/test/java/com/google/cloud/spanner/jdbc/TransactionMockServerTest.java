@@ -136,6 +136,22 @@ public class TransactionMockServerTest extends AbstractMockServerTest {
   }
 
   @Test
+  public void testReportsCurrentTransactionIsolationLevel() throws SQLException {
+    try (Connection connection = createJdbcConnection();
+        Statement statement = connection.createStatement()) {
+      connection.setAutoCommit(true);
+      connection.setTransactionIsolation(Connection.TRANSACTION_SERIALIZABLE);
+      assertEquals(Connection.TRANSACTION_SERIALIZABLE, connection.getTransactionIsolation());
+
+      statement.execute("begin transaction isolation level repeatable read");
+      assertEquals(Connection.TRANSACTION_REPEATABLE_READ, connection.getTransactionIsolation());
+
+      statement.execute("rollback");
+      assertEquals(Connection.TRANSACTION_SERIALIZABLE, connection.getTransactionIsolation());
+    }
+  }
+
+  @Test
   public void testUsesDefaultIsolationLevelInConnectionString() throws SQLException {
     for (IsolationLevel isolationLevel :
         new IsolationLevel[] {IsolationLevel.SERIALIZABLE, IsolationLevel.REPEATABLE_READ}) {

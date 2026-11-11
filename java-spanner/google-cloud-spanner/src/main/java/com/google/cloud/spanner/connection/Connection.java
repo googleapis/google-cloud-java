@@ -237,6 +237,11 @@ public interface Connection extends AutoCloseable {
   /** Returns the default isolation level for read/write transactions for this connection. */
   IsolationLevel getDefaultIsolationLevel();
 
+  /** Returns the isolation level of the current transaction, or the connection default. */
+  default IsolationLevel getTransactionIsolationLevel() {
+    return getDefaultIsolationLevel();
+  }
+
   /** Sets the read lock mode for read/write transactions for this connection. */
   void setReadLockMode(ReadLockMode readLockMode);
 
