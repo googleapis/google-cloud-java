@@ -164,7 +164,9 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
               BigQueryJdbcUrlUtility.OAUTH_SA_IMPERSONATION_TOKEN_LIFETIME_PROPERTY_NAME,
               BigQueryJdbcUrlUtility.OAUTH_SA_EMAIL_PROPERTY_NAME,
               BigQueryJdbcUrlUtility.OAUTH_PVT_KEY_PATH_PROPERTY_NAME,
-              BigQueryJdbcUrlUtility.OAUTH_CLIENT_ID_PROPERTY_NAME)
+              BigQueryJdbcUrlUtility.OAUTH_CLIENT_ID_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.ENABLE_DIAGNOSTIC_TELEMETRY_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.ENABLE_GRAPH_METADATA_PROPERTY_NAME)
           .build();
   private HeaderProvider headerProvider;
   BigQueryReadClient bigQueryReadClient = null;
@@ -240,6 +242,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
   boolean enableGcpLogExporter;
   OpenTelemetry customOpenTelemetry;
   boolean useGlobalOpenTelemetry;
+  boolean enableGraphMetadata;
   private OpenTelemetry openTelemetry;
   private Context otelContext;
   Tracer tracer =
@@ -314,7 +317,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
       }
 
       this.reqGoogleDriveScope =
-          BigQueryJdbcUrlUtility.convertIntToBoolean(
+          BigQueryJdbcUrlUtility.convertToBoolean(
               String.valueOf(ds.getRequestGoogleDriveScope()),
               BigQueryJdbcUrlUtility.REQUEST_GOOGLE_DRIVE_SCOPE_PROPERTY_NAME);
 
@@ -397,6 +400,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
       this.connectionPoolSize = ds.getConnectionPoolSize();
       this.listenerPoolSize = ds.getListenerPoolSize();
       this.partnerToken = ds.getPartnerToken();
+      this.enableGraphMetadata = ds.getEnableGraphMetadata();
 
       this.headerProvider = createHeaderProvider();
       this.enableGcpTraceExporter = ds.getEnableGcpTraceExporter();
@@ -865,6 +869,10 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
 
   Long getListenerPoolSize() {
     return listenerPoolSize;
+  }
+
+  boolean isEnableGraphMetadata() {
+    return this.enableGraphMetadata;
   }
 
   @Override
@@ -1390,15 +1398,14 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
       bigQueryOptions.setRetrySettings(retry_settings_builder.build());
     }
 
-    // ISO8601_STRING is the only output format carrying the full 12-digit fraction
-    // ("YYYY-MM-DDTHH:MM:SS.FFFFFFFFFFFFZ"). The default FLOAT64 and the INT64 alternative both
-    // cap out at microseconds.
-    if (this.enableTimestampPicos) {
-      bigQueryOptions.setDataFormatOptions(
-          DataFormatOptions.newBuilder()
-              .timestampFormatOptions(DataFormatOptions.TimestampFormatOptions.ISO8601_STRING)
-              .build());
-    }
+    // Default FLOAT64 timestamps lose microseconds far from the epoch. ISO8601_STRING is the only
+    // format carrying picoseconds; BigQuery rejects it combined with useInt64Timestamp.
+    bigQueryOptions.setDataFormatOptions(
+        this.enableTimestampPicos
+            ? DataFormatOptions.newBuilder()
+                .timestampFormatOptions(DataFormatOptions.TimestampFormatOptions.ISO8601_STRING)
+                .build()
+            : DataFormatOptions.newBuilder().useInt64Timestamp(true).build());
 
     if (this.catalog != null) {
       bigQueryOptions.setProjectId(this.catalog);
@@ -1644,7 +1651,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
     String readonlyValue =
         authProps.get(BigQueryJdbcUrlUtility.OAUTH_ACCESS_TOKEN_READONLY_PROPERTY_NAME);
     if (readonlyValue != null) {
-      return BigQueryJdbcUrlUtility.convertIntToBoolean(
+      return BigQueryJdbcUrlUtility.convertToBoolean(
           readonlyValue, BigQueryJdbcUrlUtility.OAUTH_ACCESS_TOKEN_READONLY_PROPERTY_NAME);
     }
     return false;

@@ -554,7 +554,7 @@ public final class Workspace extends com.google.protobuf.GeneratedMessage
    * checkout for this workspace. If defined and greater than 0, the Git
    * repository will be created as a shallow clone with the given depth,
    * otherwise a full clone will be performed. This field is available only for
-   * GitHub, Gitlab and 1p repositories with enabled branch management.
+   * GitHub, GitLab and 1p repositories with enabled branch management.
    * </pre>
    *
    * <code>
@@ -2447,7 +2447,7 @@ public final class Workspace extends com.google.protobuf.GeneratedMessage
      * checkout for this workspace. If defined and greater than 0, the Git
      * repository will be created as a shallow clone with the given depth,
      * otherwise a full clone will be performed. This field is available only for
-     * GitHub, Gitlab and 1p repositories with enabled branch management.
+     * GitHub, GitLab and 1p repositories with enabled branch management.
      * </pre>
      *
      * <code>
@@ -2469,7 +2469,7 @@ public final class Workspace extends com.google.protobuf.GeneratedMessage
      * checkout for this workspace. If defined and greater than 0, the Git
      * repository will be created as a shallow clone with the given depth,
      * otherwise a full clone will be performed. This field is available only for
-     * GitHub, Gitlab and 1p repositories with enabled branch management.
+     * GitHub, GitLab and 1p repositories with enabled branch management.
      * </pre>
      *
      * <code>
@@ -2495,7 +2495,7 @@ public final class Workspace extends com.google.protobuf.GeneratedMessage
      * checkout for this workspace. If defined and greater than 0, the Git
      * repository will be created as a shallow clone with the given depth,
      * otherwise a full clone will be performed. This field is available only for
-     * GitHub, Gitlab and 1p repositories with enabled branch management.
+     * GitHub, GitLab and 1p repositories with enabled branch management.
      * </pre>
      *
      * <code>

@@ -68,10 +68,13 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
 
   private ForwardingRule() {
     iPAddress_ = "";
+    iPAddresses_ = com.google.protobuf.LazyStringArrayList.emptyList();
     iPProtocol_ = "";
     attachedExtensions_ = java.util.Collections.emptyList();
+    availabilityGroup_ = "";
     backendService_ = "";
     baseForwardingRule_ = "";
+    childForwardingRules_ = com.google.protobuf.LazyStringArrayList.emptyList();
     creationTimestamp_ = "";
     description_ = "";
     externalManagedBackendBucketMigrationState_ = "";
@@ -85,6 +88,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
     name_ = "";
     network_ = "";
     networkTier_ = "";
+    parentForwardingRule_ = "";
     portRange_ = "";
     ports_ = com.google.protobuf.LazyStringArrayList.emptyList();
     pscConnectionStatus_ = "";
@@ -124,6 +128,177 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
         .ensureFieldAccessorsInitialized(
             com.google.cloud.compute.v1.ForwardingRule.class,
             com.google.cloud.compute.v1.ForwardingRule.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] Specifies the load balancing availability group, one of the
+   * two that collectively provide high availability.
+   *
+   * Specifies the availability group of the forwarding rule. This
+   * field is for use by global external passthrough load balancers (load
+   * balancing scheme EXTERNAL_PASSTHROUGH) and is set for the
+   * child forwarding rules only. The possible values are:
+   *
+   * - AVAILABILITY_GROUP0: Set for the child forwarding rule
+   * that is programmed on the AVAILABILITY_GROUP0 load balancing
+   * stack. The child forwarding rule has the same IP protocol, port, and
+   * backend service settings as the parent forwarding rule, but has only one of
+   * the two IP addresses of the parent forwarding rule, the one with the
+   * purpose PASSTHROUGH_LOAD_BALANCER_AVAILABILITY_GROUP0.
+   * - AVAILABILITY_GROUP1: Set for the child forwarding rule
+   * that is programmed on the AVAILABILITY_GROUP1 load balancing
+   * stack. The child forwarding rule has the same IP protocol, port and backend
+   * service settings as the parent forwarding rule, but has only one of the two
+   * IP addresses of the parent forwarding rule, the one with the purposePASSTHROUGH_LOAD_BALANCER_AVAILABILITY_GROUP1.
+   *
+   *
+   *
+   * For each global external Passthrough Network Load Balancer forwarding rule
+   * (a parent forwarding rule) that you create, Google Cloud generates two
+   * output-only child forwarding rules, one forAVAILABILITY_GROUP0 and one forAVAILABILITY_GROUP1.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.compute.v1.ForwardingRule.AvailabilityGroup}
+   */
+  public enum AvailabilityGroup implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_AVAILABILITY_GROUP = 0;</code>
+     */
+    UNDEFINED_AVAILABILITY_GROUP(0),
+    /** <code>AVAILABILITY_GROUP0 = 79044885;</code> */
+    AVAILABILITY_GROUP0(79044885),
+    /** <code>AVAILABILITY_GROUP1 = 79044886;</code> */
+    AVAILABILITY_GROUP1(79044886),
+    /** <code>AVAILABILITY_GROUP_UNSPECIFIED = 510741331;</code> */
+    AVAILABILITY_GROUP_UNSPECIFIED(510741331),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 6,
+          /* suffix= */ "",
+          "AvailabilityGroup");
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_AVAILABILITY_GROUP = 0;</code>
+     */
+    public static final int UNDEFINED_AVAILABILITY_GROUP_VALUE = 0;
+
+    /** <code>AVAILABILITY_GROUP0 = 79044885;</code> */
+    public static final int AVAILABILITY_GROUP0_VALUE = 79044885;
+
+    /** <code>AVAILABILITY_GROUP1 = 79044886;</code> */
+    public static final int AVAILABILITY_GROUP1_VALUE = 79044886;
+
+    /** <code>AVAILABILITY_GROUP_UNSPECIFIED = 510741331;</code> */
+    public static final int AVAILABILITY_GROUP_UNSPECIFIED_VALUE = 510741331;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static AvailabilityGroup valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static AvailabilityGroup forNumber(int value) {
+      switch (value) {
+        case 0:
+          return UNDEFINED_AVAILABILITY_GROUP;
+        case 79044885:
+          return AVAILABILITY_GROUP0;
+        case 79044886:
+          return AVAILABILITY_GROUP1;
+        case 510741331:
+          return AVAILABILITY_GROUP_UNSPECIFIED;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<AvailabilityGroup>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<AvailabilityGroup>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<AvailabilityGroup>() {
+              public AvailabilityGroup findValueByNumber(int number) {
+                return AvailabilityGroup.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.compute.v1.ForwardingRule.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final AvailabilityGroup[] VALUES = values();
+
+    public static AvailabilityGroup valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private AvailabilityGroup(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.ForwardingRule.AvailabilityGroup)
   }
 
   /**
@@ -268,7 +443,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
     }
 
     public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-      return com.google.cloud.compute.v1.ForwardingRule.getDescriptor().getEnumTypes().get(0);
+      return com.google.cloud.compute.v1.ForwardingRule.getDescriptor().getEnumTypes().get(1);
     }
 
     private static final ExternalManagedBackendBucketMigrationState[] VALUES = values();
@@ -448,7 +623,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
     }
 
     public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-      return com.google.cloud.compute.v1.ForwardingRule.getDescriptor().getEnumTypes().get(1);
+      return com.google.cloud.compute.v1.ForwardingRule.getDescriptor().getEnumTypes().get(2);
     }
 
     private static final IPProtocolEnum[] VALUES = values();
@@ -593,7 +768,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
     }
 
     public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-      return com.google.cloud.compute.v1.ForwardingRule.getDescriptor().getEnumTypes().get(2);
+      return com.google.cloud.compute.v1.ForwardingRule.getDescriptor().getEnumTypes().get(3);
     }
 
     private static final IpVersion[] VALUES = values();
@@ -644,6 +819,8 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
     EXTERNAL(35607499),
     /** <code>EXTERNAL_MANAGED = 512006923;</code> */
     EXTERNAL_MANAGED(512006923),
+    /** <code>EXTERNAL_PASSTHROUGH = 216895232;</code> */
+    EXTERNAL_PASSTHROUGH(216895232),
     /** <code>INTERNAL = 279295677;</code> */
     INTERNAL(279295677),
     /** <code>INTERNAL_MANAGED = 37350397;</code> */
@@ -681,6 +858,9 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
 
     /** <code>EXTERNAL_MANAGED = 512006923;</code> */
     public static final int EXTERNAL_MANAGED_VALUE = 512006923;
+
+    /** <code>EXTERNAL_PASSTHROUGH = 216895232;</code> */
+    public static final int EXTERNAL_PASSTHROUGH_VALUE = 216895232;
 
     /** <code>INTERNAL = 279295677;</code> */
     public static final int INTERNAL_VALUE = 279295677;
@@ -724,6 +904,8 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
           return EXTERNAL;
         case 512006923:
           return EXTERNAL_MANAGED;
+        case 216895232:
+          return EXTERNAL_PASSTHROUGH;
         case 279295677:
           return INTERNAL;
         case 37350397:
@@ -763,7 +945,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
     }
 
     public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-      return com.google.cloud.compute.v1.ForwardingRule.getDescriptor().getEnumTypes().get(3);
+      return com.google.cloud.compute.v1.ForwardingRule.getDescriptor().getEnumTypes().get(4);
     }
 
     private static final LoadBalancingScheme[] VALUES = values();
@@ -992,7 +1174,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
     }
 
     public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-      return com.google.cloud.compute.v1.ForwardingRule.getDescriptor().getEnumTypes().get(4);
+      return com.google.cloud.compute.v1.ForwardingRule.getDescriptor().getEnumTypes().get(5);
     }
 
     private static final NetworkTier[] VALUES = values();
@@ -1242,7 +1424,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
     }
 
     public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-      return com.google.cloud.compute.v1.ForwardingRule.getDescriptor().getEnumTypes().get(5);
+      return com.google.cloud.compute.v1.ForwardingRule.getDescriptor().getEnumTypes().get(6);
     }
 
     private static final PscConnectionStatus[] VALUES = values();
@@ -1468,6 +1650,290 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int I_P_ADDRESSES_FIELD_NUMBER = 498656157;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList iPAddresses_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+
+  /**
+   *
+   *
+   * <pre>
+   * IP addresses for which this forwarding rule accepts traffic. All IP
+   * addresses must have the same IP version, IPv4 or IPv6. When a client sends
+   * traffic that matches one of the specified IP addresses, protocol and ports,
+   * the forwarding rule directs the traffic to the referencedbackendService. All IP addresses are served by the same set of
+   * backends, and they share the target capacities specified in the backend
+   * service fairly.
+   *
+   * Global external Passthrough Network Load Balancer requires two IP addresses
+   * for each forwarding rule to provide high availability when both IP
+   * addresses are used to serve client requests. The two IP addresses must come
+   * from global IP pools that belong to two distinct Availability
+   * Groups, represented by the purposePASSTHROUGH_LOAD_BALANCER_AVAILABILITY_GROUP0 andPASSTHROUGH_LOAD_BALANCER_AVAILABILITY_GROUP1. TheIPAddresses field specifies zero, one, or two IP addresses:
+   *
+   * - If omitted, Google Cloud assigns two ephemeral IP addresses, one from
+   * each Availability Group.
+   * - If you specify one IP address that references an existing static IP
+   * address resource from one Availability Group, Google Cloud assigns an
+   * ephemeral IP address from the other Availability Group.
+   * - If you specify two IP addresses that reference existing static IP
+   * address resources, they are required to be from different Availability
+   * Groups.
+   *
+   *
+   *
+   * For global external Passthrough Network Load Balancer, each IP address can be one of the following:
+   *
+   * - A static or ephemeral IPv4 address from a Google-owned IP pool.
+   * - A static IPv4 address from a global public delegated prefix.
+   * - A static or ephemeral IPv6 /96 prefix from a Google-owned IP pool.
+   *
+   *
+   *
+   * For global external Passthrough Network Load Balancer, the two IP addresses
+   * can be of different types. One IP address can be from a BYOIP prefix while
+   * the other is from a Google-owned IP pool. One IP address can be static
+   * while the other is ephemeral. However, both IP addresses must have the same
+   * IP version, IPv4 or IPv6.
+   *
+   * The IP addresses can only be set at creation and cannot be updated.
+   *
+   * When creating a global external Passthrough Network Load Balancer
+   * forwarding rule (a parent forwarding rule), you must use theIPAddresses field, but the Google Cloud-generated child
+   * forwarding rules set the IPAddress field instead. Refer to theavailabilityGroup field for further details.
+   *
+   * Refer to the IPAddress field for the formats that can be used
+   * to specify IP addresses while creating a forwarding rule.
+   *
+   * Because Passthrough Network Load Balancers do not terminate or translate
+   * traffic, the backend stack types must be compatible with the forwarding
+   * rule IP version:
+   *
+   * - If the forwarding rule IP version is IPv4, backends should be
+   * configured as dual-stack or IPv4-only.
+   * - If the forwarding rule IP version is IPv6, backends should be
+   * configured as dual-stack or IPv6-only.
+   * </pre>
+   *
+   * <code>repeated string I_p_addresses = 498656157;</code>
+   *
+   * @return A list containing the iPAddresses.
+   */
+  public com.google.protobuf.ProtocolStringList getIPAddressesList() {
+    return iPAddresses_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * IP addresses for which this forwarding rule accepts traffic. All IP
+   * addresses must have the same IP version, IPv4 or IPv6. When a client sends
+   * traffic that matches one of the specified IP addresses, protocol and ports,
+   * the forwarding rule directs the traffic to the referencedbackendService. All IP addresses are served by the same set of
+   * backends, and they share the target capacities specified in the backend
+   * service fairly.
+   *
+   * Global external Passthrough Network Load Balancer requires two IP addresses
+   * for each forwarding rule to provide high availability when both IP
+   * addresses are used to serve client requests. The two IP addresses must come
+   * from global IP pools that belong to two distinct Availability
+   * Groups, represented by the purposePASSTHROUGH_LOAD_BALANCER_AVAILABILITY_GROUP0 andPASSTHROUGH_LOAD_BALANCER_AVAILABILITY_GROUP1. TheIPAddresses field specifies zero, one, or two IP addresses:
+   *
+   * - If omitted, Google Cloud assigns two ephemeral IP addresses, one from
+   * each Availability Group.
+   * - If you specify one IP address that references an existing static IP
+   * address resource from one Availability Group, Google Cloud assigns an
+   * ephemeral IP address from the other Availability Group.
+   * - If you specify two IP addresses that reference existing static IP
+   * address resources, they are required to be from different Availability
+   * Groups.
+   *
+   *
+   *
+   * For global external Passthrough Network Load Balancer, each IP address can be one of the following:
+   *
+   * - A static or ephemeral IPv4 address from a Google-owned IP pool.
+   * - A static IPv4 address from a global public delegated prefix.
+   * - A static or ephemeral IPv6 /96 prefix from a Google-owned IP pool.
+   *
+   *
+   *
+   * For global external Passthrough Network Load Balancer, the two IP addresses
+   * can be of different types. One IP address can be from a BYOIP prefix while
+   * the other is from a Google-owned IP pool. One IP address can be static
+   * while the other is ephemeral. However, both IP addresses must have the same
+   * IP version, IPv4 or IPv6.
+   *
+   * The IP addresses can only be set at creation and cannot be updated.
+   *
+   * When creating a global external Passthrough Network Load Balancer
+   * forwarding rule (a parent forwarding rule), you must use theIPAddresses field, but the Google Cloud-generated child
+   * forwarding rules set the IPAddress field instead. Refer to theavailabilityGroup field for further details.
+   *
+   * Refer to the IPAddress field for the formats that can be used
+   * to specify IP addresses while creating a forwarding rule.
+   *
+   * Because Passthrough Network Load Balancers do not terminate or translate
+   * traffic, the backend stack types must be compatible with the forwarding
+   * rule IP version:
+   *
+   * - If the forwarding rule IP version is IPv4, backends should be
+   * configured as dual-stack or IPv4-only.
+   * - If the forwarding rule IP version is IPv6, backends should be
+   * configured as dual-stack or IPv6-only.
+   * </pre>
+   *
+   * <code>repeated string I_p_addresses = 498656157;</code>
+   *
+   * @return The count of iPAddresses.
+   */
+  public int getIPAddressesCount() {
+    return iPAddresses_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * IP addresses for which this forwarding rule accepts traffic. All IP
+   * addresses must have the same IP version, IPv4 or IPv6. When a client sends
+   * traffic that matches one of the specified IP addresses, protocol and ports,
+   * the forwarding rule directs the traffic to the referencedbackendService. All IP addresses are served by the same set of
+   * backends, and they share the target capacities specified in the backend
+   * service fairly.
+   *
+   * Global external Passthrough Network Load Balancer requires two IP addresses
+   * for each forwarding rule to provide high availability when both IP
+   * addresses are used to serve client requests. The two IP addresses must come
+   * from global IP pools that belong to two distinct Availability
+   * Groups, represented by the purposePASSTHROUGH_LOAD_BALANCER_AVAILABILITY_GROUP0 andPASSTHROUGH_LOAD_BALANCER_AVAILABILITY_GROUP1. TheIPAddresses field specifies zero, one, or two IP addresses:
+   *
+   * - If omitted, Google Cloud assigns two ephemeral IP addresses, one from
+   * each Availability Group.
+   * - If you specify one IP address that references an existing static IP
+   * address resource from one Availability Group, Google Cloud assigns an
+   * ephemeral IP address from the other Availability Group.
+   * - If you specify two IP addresses that reference existing static IP
+   * address resources, they are required to be from different Availability
+   * Groups.
+   *
+   *
+   *
+   * For global external Passthrough Network Load Balancer, each IP address can be one of the following:
+   *
+   * - A static or ephemeral IPv4 address from a Google-owned IP pool.
+   * - A static IPv4 address from a global public delegated prefix.
+   * - A static or ephemeral IPv6 /96 prefix from a Google-owned IP pool.
+   *
+   *
+   *
+   * For global external Passthrough Network Load Balancer, the two IP addresses
+   * can be of different types. One IP address can be from a BYOIP prefix while
+   * the other is from a Google-owned IP pool. One IP address can be static
+   * while the other is ephemeral. However, both IP addresses must have the same
+   * IP version, IPv4 or IPv6.
+   *
+   * The IP addresses can only be set at creation and cannot be updated.
+   *
+   * When creating a global external Passthrough Network Load Balancer
+   * forwarding rule (a parent forwarding rule), you must use theIPAddresses field, but the Google Cloud-generated child
+   * forwarding rules set the IPAddress field instead. Refer to theavailabilityGroup field for further details.
+   *
+   * Refer to the IPAddress field for the formats that can be used
+   * to specify IP addresses while creating a forwarding rule.
+   *
+   * Because Passthrough Network Load Balancers do not terminate or translate
+   * traffic, the backend stack types must be compatible with the forwarding
+   * rule IP version:
+   *
+   * - If the forwarding rule IP version is IPv4, backends should be
+   * configured as dual-stack or IPv4-only.
+   * - If the forwarding rule IP version is IPv6, backends should be
+   * configured as dual-stack or IPv6-only.
+   * </pre>
+   *
+   * <code>repeated string I_p_addresses = 498656157;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The iPAddresses at the given index.
+   */
+  public java.lang.String getIPAddresses(int index) {
+    return iPAddresses_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * IP addresses for which this forwarding rule accepts traffic. All IP
+   * addresses must have the same IP version, IPv4 or IPv6. When a client sends
+   * traffic that matches one of the specified IP addresses, protocol and ports,
+   * the forwarding rule directs the traffic to the referencedbackendService. All IP addresses are served by the same set of
+   * backends, and they share the target capacities specified in the backend
+   * service fairly.
+   *
+   * Global external Passthrough Network Load Balancer requires two IP addresses
+   * for each forwarding rule to provide high availability when both IP
+   * addresses are used to serve client requests. The two IP addresses must come
+   * from global IP pools that belong to two distinct Availability
+   * Groups, represented by the purposePASSTHROUGH_LOAD_BALANCER_AVAILABILITY_GROUP0 andPASSTHROUGH_LOAD_BALANCER_AVAILABILITY_GROUP1. TheIPAddresses field specifies zero, one, or two IP addresses:
+   *
+   * - If omitted, Google Cloud assigns two ephemeral IP addresses, one from
+   * each Availability Group.
+   * - If you specify one IP address that references an existing static IP
+   * address resource from one Availability Group, Google Cloud assigns an
+   * ephemeral IP address from the other Availability Group.
+   * - If you specify two IP addresses that reference existing static IP
+   * address resources, they are required to be from different Availability
+   * Groups.
+   *
+   *
+   *
+   * For global external Passthrough Network Load Balancer, each IP address can be one of the following:
+   *
+   * - A static or ephemeral IPv4 address from a Google-owned IP pool.
+   * - A static IPv4 address from a global public delegated prefix.
+   * - A static or ephemeral IPv6 /96 prefix from a Google-owned IP pool.
+   *
+   *
+   *
+   * For global external Passthrough Network Load Balancer, the two IP addresses
+   * can be of different types. One IP address can be from a BYOIP prefix while
+   * the other is from a Google-owned IP pool. One IP address can be static
+   * while the other is ephemeral. However, both IP addresses must have the same
+   * IP version, IPv4 or IPv6.
+   *
+   * The IP addresses can only be set at creation and cannot be updated.
+   *
+   * When creating a global external Passthrough Network Load Balancer
+   * forwarding rule (a parent forwarding rule), you must use theIPAddresses field, but the Google Cloud-generated child
+   * forwarding rules set the IPAddress field instead. Refer to theavailabilityGroup field for further details.
+   *
+   * Refer to the IPAddress field for the formats that can be used
+   * to specify IP addresses while creating a forwarding rule.
+   *
+   * Because Passthrough Network Load Balancers do not terminate or translate
+   * traffic, the backend stack types must be compatible with the forwarding
+   * rule IP version:
+   *
+   * - If the forwarding rule IP version is IPv4, backends should be
+   * configured as dual-stack or IPv4-only.
+   * - If the forwarding rule IP version is IPv6, backends should be
+   * configured as dual-stack or IPv6-only.
+   * </pre>
+   *
+   * <code>repeated string I_p_addresses = 498656157;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the iPAddresses at the given index.
+   */
+  public com.google.protobuf.ByteString getIPAddressesBytes(int index) {
+    return iPAddresses_.getByteString(index);
   }
 
   public static final int I_P_PROTOCOL_FIELD_NUMBER = 488094525;
@@ -1801,6 +2267,150 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
     return attachedExtensions_.get(index);
   }
 
+  public static final int AVAILABILITY_GROUP_FIELD_NUMBER = 62963355;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object availabilityGroup_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] Specifies the load balancing availability group, one of the
+   * two that collectively provide high availability.
+   *
+   * Specifies the availability group of the forwarding rule. This
+   * field is for use by global external passthrough load balancers (load
+   * balancing scheme EXTERNAL_PASSTHROUGH) and is set for the
+   * child forwarding rules only. The possible values are:
+   *
+   * - AVAILABILITY_GROUP0: Set for the child forwarding rule
+   * that is programmed on the AVAILABILITY_GROUP0 load balancing
+   * stack. The child forwarding rule has the same IP protocol, port, and
+   * backend service settings as the parent forwarding rule, but has only one of
+   * the two IP addresses of the parent forwarding rule, the one with the
+   * purpose PASSTHROUGH_LOAD_BALANCER_AVAILABILITY_GROUP0.
+   * - AVAILABILITY_GROUP1: Set for the child forwarding rule
+   * that is programmed on the AVAILABILITY_GROUP1 load balancing
+   * stack. The child forwarding rule has the same IP protocol, port and backend
+   * service settings as the parent forwarding rule, but has only one of the two
+   * IP addresses of the parent forwarding rule, the one with the purposePASSTHROUGH_LOAD_BALANCER_AVAILABILITY_GROUP1.
+   *
+   *
+   *
+   * For each global external Passthrough Network Load Balancer forwarding rule
+   * (a parent forwarding rule) that you create, Google Cloud generates two
+   * output-only child forwarding rules, one forAVAILABILITY_GROUP0 and one forAVAILABILITY_GROUP1.
+   * Check the AvailabilityGroup enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string availability_group = 62963355;</code>
+   *
+   * @return Whether the availabilityGroup field is set.
+   */
+  @java.lang.Override
+  public boolean hasAvailabilityGroup() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] Specifies the load balancing availability group, one of the
+   * two that collectively provide high availability.
+   *
+   * Specifies the availability group of the forwarding rule. This
+   * field is for use by global external passthrough load balancers (load
+   * balancing scheme EXTERNAL_PASSTHROUGH) and is set for the
+   * child forwarding rules only. The possible values are:
+   *
+   * - AVAILABILITY_GROUP0: Set for the child forwarding rule
+   * that is programmed on the AVAILABILITY_GROUP0 load balancing
+   * stack. The child forwarding rule has the same IP protocol, port, and
+   * backend service settings as the parent forwarding rule, but has only one of
+   * the two IP addresses of the parent forwarding rule, the one with the
+   * purpose PASSTHROUGH_LOAD_BALANCER_AVAILABILITY_GROUP0.
+   * - AVAILABILITY_GROUP1: Set for the child forwarding rule
+   * that is programmed on the AVAILABILITY_GROUP1 load balancing
+   * stack. The child forwarding rule has the same IP protocol, port and backend
+   * service settings as the parent forwarding rule, but has only one of the two
+   * IP addresses of the parent forwarding rule, the one with the purposePASSTHROUGH_LOAD_BALANCER_AVAILABILITY_GROUP1.
+   *
+   *
+   *
+   * For each global external Passthrough Network Load Balancer forwarding rule
+   * (a parent forwarding rule) that you create, Google Cloud generates two
+   * output-only child forwarding rules, one forAVAILABILITY_GROUP0 and one forAVAILABILITY_GROUP1.
+   * Check the AvailabilityGroup enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string availability_group = 62963355;</code>
+   *
+   * @return The availabilityGroup.
+   */
+  @java.lang.Override
+  public java.lang.String getAvailabilityGroup() {
+    java.lang.Object ref = availabilityGroup_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      availabilityGroup_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] Specifies the load balancing availability group, one of the
+   * two that collectively provide high availability.
+   *
+   * Specifies the availability group of the forwarding rule. This
+   * field is for use by global external passthrough load balancers (load
+   * balancing scheme EXTERNAL_PASSTHROUGH) and is set for the
+   * child forwarding rules only. The possible values are:
+   *
+   * - AVAILABILITY_GROUP0: Set for the child forwarding rule
+   * that is programmed on the AVAILABILITY_GROUP0 load balancing
+   * stack. The child forwarding rule has the same IP protocol, port, and
+   * backend service settings as the parent forwarding rule, but has only one of
+   * the two IP addresses of the parent forwarding rule, the one with the
+   * purpose PASSTHROUGH_LOAD_BALANCER_AVAILABILITY_GROUP0.
+   * - AVAILABILITY_GROUP1: Set for the child forwarding rule
+   * that is programmed on the AVAILABILITY_GROUP1 load balancing
+   * stack. The child forwarding rule has the same IP protocol, port and backend
+   * service settings as the parent forwarding rule, but has only one of the two
+   * IP addresses of the parent forwarding rule, the one with the purposePASSTHROUGH_LOAD_BALANCER_AVAILABILITY_GROUP1.
+   *
+   *
+   *
+   * For each global external Passthrough Network Load Balancer forwarding rule
+   * (a parent forwarding rule) that you create, Google Cloud generates two
+   * output-only child forwarding rules, one forAVAILABILITY_GROUP0 and one forAVAILABILITY_GROUP1.
+   * Check the AvailabilityGroup enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string availability_group = 62963355;</code>
+   *
+   * @return The bytes for availabilityGroup.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getAvailabilityGroupBytes() {
+    java.lang.Object ref = availabilityGroup_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      availabilityGroup_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int BACKEND_SERVICE_FIELD_NUMBER = 306946058;
 
   @SuppressWarnings("serial")
@@ -1831,7 +2441,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasBackendService() {
-    return ((bitField0_ & 0x00000020) != 0);
+    return ((bitField0_ & 0x00000040) != 0);
   }
 
   /**
@@ -1929,7 +2539,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasBaseForwardingRule() {
-    return ((bitField0_ & 0x00000040) != 0);
+    return ((bitField0_ & 0x00000080) != 0);
   }
 
   /**
@@ -1990,6 +2600,102 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public static final int CHILD_FORWARDING_RULES_FIELD_NUMBER = 334878200;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList childForwardingRules_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] The resource URLs for the child forwarding rules.
+   *
+   * Applicable only to the parent forwarding rule of global
+   * external passthrough load balancers. This field contains the list of child
+   * forwarding rule URLs associated with the parent forwarding rule: one for
+   * each availability group. AVAILABILITY_GROUP0 will be the first element, and
+   * AVAILABILITY_GROUP1 will be the second element. Refer to theavailabilityGroup field for further details. It cannot be set
+   * by any other forwarding rules.
+   * </pre>
+   *
+   * <code>repeated string child_forwarding_rules = 334878200;</code>
+   *
+   * @return A list containing the childForwardingRules.
+   */
+  public com.google.protobuf.ProtocolStringList getChildForwardingRulesList() {
+    return childForwardingRules_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] The resource URLs for the child forwarding rules.
+   *
+   * Applicable only to the parent forwarding rule of global
+   * external passthrough load balancers. This field contains the list of child
+   * forwarding rule URLs associated with the parent forwarding rule: one for
+   * each availability group. AVAILABILITY_GROUP0 will be the first element, and
+   * AVAILABILITY_GROUP1 will be the second element. Refer to theavailabilityGroup field for further details. It cannot be set
+   * by any other forwarding rules.
+   * </pre>
+   *
+   * <code>repeated string child_forwarding_rules = 334878200;</code>
+   *
+   * @return The count of childForwardingRules.
+   */
+  public int getChildForwardingRulesCount() {
+    return childForwardingRules_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] The resource URLs for the child forwarding rules.
+   *
+   * Applicable only to the parent forwarding rule of global
+   * external passthrough load balancers. This field contains the list of child
+   * forwarding rule URLs associated with the parent forwarding rule: one for
+   * each availability group. AVAILABILITY_GROUP0 will be the first element, and
+   * AVAILABILITY_GROUP1 will be the second element. Refer to theavailabilityGroup field for further details. It cannot be set
+   * by any other forwarding rules.
+   * </pre>
+   *
+   * <code>repeated string child_forwarding_rules = 334878200;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The childForwardingRules at the given index.
+   */
+  public java.lang.String getChildForwardingRules(int index) {
+    return childForwardingRules_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] The resource URLs for the child forwarding rules.
+   *
+   * Applicable only to the parent forwarding rule of global
+   * external passthrough load balancers. This field contains the list of child
+   * forwarding rule URLs associated with the parent forwarding rule: one for
+   * each availability group. AVAILABILITY_GROUP0 will be the first element, and
+   * AVAILABILITY_GROUP1 will be the second element. Refer to theavailabilityGroup field for further details. It cannot be set
+   * by any other forwarding rules.
+   * </pre>
+   *
+   * <code>repeated string child_forwarding_rules = 334878200;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the childForwardingRules at the given index.
+   */
+  public com.google.protobuf.ByteString getChildForwardingRulesBytes(int index) {
+    return childForwardingRules_.getByteString(index);
+  }
+
   public static final int CREATION_TIMESTAMP_FIELD_NUMBER = 30525366;
 
   @SuppressWarnings("serial")
@@ -2009,7 +2715,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasCreationTimestamp() {
-    return ((bitField0_ & 0x00000080) != 0);
+    return ((bitField0_ & 0x00000100) != 0);
   }
 
   /**
@@ -2081,7 +2787,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasDescription() {
-    return ((bitField0_ & 0x00000100) != 0);
+    return ((bitField0_ & 0x00000200) != 0);
   }
 
   /**
@@ -2168,7 +2874,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasExternalManagedBackendBucketMigrationState() {
-    return ((bitField0_ & 0x00000200) != 0);
+    return ((bitField0_ & 0x00000400) != 0);
   }
 
   /**
@@ -2276,7 +2982,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasExternalManagedBackendBucketMigrationTestingPercentage() {
-    return ((bitField0_ & 0x00000400) != 0);
+    return ((bitField0_ & 0x00000800) != 0);
   }
 
   /**
@@ -2328,7 +3034,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasFingerprint() {
-    return ((bitField0_ & 0x00000800) != 0);
+    return ((bitField0_ & 0x00001000) != 0);
   }
 
   /**
@@ -2410,7 +3116,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasId() {
-    return ((bitField0_ & 0x00001000) != 0);
+    return ((bitField0_ & 0x00002000) != 0);
   }
 
   /**
@@ -2457,7 +3163,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasIpCollection() {
-    return ((bitField0_ & 0x00002000) != 0);
+    return ((bitField0_ & 0x00004000) != 0);
   }
 
   /**
@@ -2546,7 +3252,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasIpVersion() {
-    return ((bitField0_ & 0x00004000) != 0);
+    return ((bitField0_ & 0x00008000) != 0);
   }
 
   /**
@@ -2620,7 +3326,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasIsMirroringCollector() {
-    return ((bitField0_ & 0x00008000) != 0);
+    return ((bitField0_ & 0x00010000) != 0);
   }
 
   /**
@@ -2660,7 +3366,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasKind() {
-    return ((bitField0_ & 0x00010000) != 0);
+    return ((bitField0_ & 0x00020000) != 0);
   }
 
   /**
@@ -2737,7 +3443,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasLabelFingerprint() {
-    return ((bitField0_ & 0x00020000) != 0);
+    return ((bitField0_ & 0x00040000) != 0);
   }
 
   /**
@@ -2937,7 +3643,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasLoadBalancingScheme() {
-    return ((bitField0_ & 0x00040000) != 0);
+    return ((bitField0_ & 0x00080000) != 0);
   }
 
   /**
@@ -3203,7 +3909,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasName() {
-    return ((bitField0_ & 0x00080000) != 0);
+    return ((bitField0_ & 0x00100000) != 0);
   }
 
   /**
@@ -3316,7 +4022,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasNetwork() {
-    return ((bitField0_ & 0x00100000) != 0);
+    return ((bitField0_ & 0x00200000) != 0);
   }
 
   /**
@@ -3413,7 +4119,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasNetworkTier() {
-    return ((bitField0_ & 0x00200000) != 0);
+    return ((bitField0_ & 0x00400000) != 0);
   }
 
   /**
@@ -3498,7 +4204,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasNoAutomateDnsZone() {
-    return ((bitField0_ & 0x00400000) != 0);
+    return ((bitField0_ & 0x00800000) != 0);
   }
 
   /**
@@ -3517,6 +4223,87 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
   @java.lang.Override
   public boolean getNoAutomateDnsZone() {
     return noAutomateDnsZone_;
+  }
+
+  public static final int PARENT_FORWARDING_RULE_FIELD_NUMBER = 329325929;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parentForwardingRule_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] The resource URL for the parent forwarding rule.
+   *
+   * Applicable only to the child forwarding rules of global external
+   * passthrough load balancers. This field contains the URL of the parent
+   * forwarding rule.
+   * </pre>
+   *
+   * <code>optional string parent_forwarding_rule = 329325929;</code>
+   *
+   * @return Whether the parentForwardingRule field is set.
+   */
+  @java.lang.Override
+  public boolean hasParentForwardingRule() {
+    return ((bitField0_ & 0x01000000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] The resource URL for the parent forwarding rule.
+   *
+   * Applicable only to the child forwarding rules of global external
+   * passthrough load balancers. This field contains the URL of the parent
+   * forwarding rule.
+   * </pre>
+   *
+   * <code>optional string parent_forwarding_rule = 329325929;</code>
+   *
+   * @return The parentForwardingRule.
+   */
+  @java.lang.Override
+  public java.lang.String getParentForwardingRule() {
+    java.lang.Object ref = parentForwardingRule_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      parentForwardingRule_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] The resource URL for the parent forwarding rule.
+   *
+   * Applicable only to the child forwarding rules of global external
+   * passthrough load balancers. This field contains the URL of the parent
+   * forwarding rule.
+   * </pre>
+   *
+   * <code>optional string parent_forwarding_rule = 329325929;</code>
+   *
+   * @return The bytes for parentForwardingRule.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getParentForwardingRuleBytes() {
+    java.lang.Object ref = parentForwardingRule_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      parentForwardingRule_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int PORT_RANGE_FIELD_NUMBER = 217518079;
@@ -3563,7 +4350,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasPortRange() {
-    return ((bitField0_ & 0x00800000) != 0);
+    return ((bitField0_ & 0x02000000) != 0);
   }
 
   /**
@@ -3850,7 +4637,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasPscConnectionId() {
-    return ((bitField0_ & 0x01000000) != 0);
+    return ((bitField0_ & 0x04000000) != 0);
   }
 
   /**
@@ -3888,7 +4675,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasPscConnectionStatus() {
-    return ((bitField0_ & 0x02000000) != 0);
+    return ((bitField0_ & 0x08000000) != 0);
   }
 
   /**
@@ -3962,7 +4749,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasRegion() {
-    return ((bitField0_ & 0x04000000) != 0);
+    return ((bitField0_ & 0x10000000) != 0);
   }
 
   /**
@@ -4037,7 +4824,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasSelfLink() {
-    return ((bitField0_ & 0x08000000) != 0);
+    return ((bitField0_ & 0x20000000) != 0);
   }
 
   /**
@@ -4106,7 +4893,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasSelfLinkWithId() {
-    return ((bitField0_ & 0x10000000) != 0);
+    return ((bitField0_ & 0x40000000) != 0);
   }
 
   /**
@@ -4282,7 +5069,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasServiceLabel() {
-    return ((bitField0_ & 0x20000000) != 0);
+    return ((bitField0_ & 0x80000000) != 0);
   }
 
   /**
@@ -4376,7 +5163,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasServiceName() {
-    return ((bitField0_ & 0x40000000) != 0);
+    return ((bitField1_ & 0x00000001) != 0);
   }
 
   /**
@@ -4545,7 +5332,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasSubnetwork() {
-    return ((bitField0_ & 0x80000000) != 0);
+    return ((bitField1_ & 0x00000002) != 0);
   }
 
   /**
@@ -4651,7 +5438,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasTarget() {
-    return ((bitField1_ & 0x00000001) != 0);
+    return ((bitField1_ & 0x00000004) != 0);
   }
 
   /**
@@ -4766,34 +5553,37 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (((bitField0_ & 0x00001000) != 0)) {
+    if (((bitField0_ & 0x00002000) != 0)) {
       output.writeUInt64(3355, id_);
     }
-    if (((bitField0_ & 0x00010000) != 0)) {
+    if (((bitField0_ & 0x00020000) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 3292052, kind_);
     }
-    if (((bitField0_ & 0x00080000) != 0)) {
+    if (((bitField0_ & 0x00100000) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 3373707, name_);
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 30525366, creationTimestamp_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 42976943, iPAddress_);
     }
-    if (((bitField0_ & 0x10000000) != 0)) {
+    if (((bitField0_ & 0x40000000) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 44520962, selfLinkWithId_);
     }
-    if (((bitField0_ & 0x00400000) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 62963355, availabilityGroup_);
+    }
+    if (((bitField0_ & 0x00800000) != 0)) {
       output.writeBool(64546991, noAutomateDnsZone_);
     }
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       output.writeFloat(105676592, externalManagedBackendBucketMigrationTestingPercentage_);
     }
     for (int i = 0; i < ports_.size(); i++) {
       com.google.protobuf.GeneratedMessage.writeString(output, 106854418, ports_.getRaw(i));
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(
           output, 107811370, externalManagedBackendBucketMigrationState_);
     }
@@ -4801,70 +5591,77 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
       com.google.protobuf.GeneratedMessage.writeString(
           output, 111563210, sourceIpRanges_.getRaw(i));
     }
-    if (((bitField0_ & 0x00008000) != 0)) {
+    if (((bitField0_ & 0x00010000) != 0)) {
       output.writeBool(119255164, isMirroringCollector_);
     }
-    if (((bitField0_ & 0x04000000) != 0)) {
+    if (((bitField0_ & 0x10000000) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 138946292, region_);
     }
-    if (((bitField0_ & 0x00002000) != 0)) {
+    if (((bitField0_ & 0x00004000) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 176818358, ipCollection_);
     }
-    if (((bitField0_ & 0x00020000) != 0)) {
+    if (((bitField0_ & 0x00040000) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 178124825, labelFingerprint_);
     }
-    if (((bitField0_ & 0x02000000) != 0)) {
+    if (((bitField0_ & 0x08000000) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 184149172, pscConnectionStatus_);
     }
-    if (((bitField1_ & 0x00000001) != 0)) {
+    if (((bitField1_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 192835985, target_);
     }
-    if (((bitField0_ & 0x00800000) != 0)) {
+    if (((bitField0_ & 0x02000000) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 217518079, portRange_);
     }
     for (int i = 0; i < serviceDirectoryRegistrations_.size(); i++) {
       output.writeMessage(223549694, serviceDirectoryRegistrations_.get(i));
     }
-    if (((bitField0_ & 0x00100000) != 0)) {
+    if (((bitField0_ & 0x00200000) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 232872494, network_);
     }
-    if (((bitField0_ & 0x00000800) != 0)) {
+    if (((bitField0_ & 0x00001000) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 234678500, fingerprint_);
     }
     if (((bitField0_ & 0x00000010) != 0)) {
       output.writeBool(263471819, allowPscGlobalAccess_);
     }
-    if (((bitField0_ & 0x01000000) != 0)) {
+    if (((bitField0_ & 0x04000000) != 0)) {
       output.writeUInt64(292082397, pscConnectionId_);
     }
-    if (((bitField0_ & 0x00004000) != 0)) {
+    if (((bitField0_ & 0x00008000) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 294959552, ipVersion_);
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 306946058, backendService_);
     }
-    if (((bitField0_ & 0x80000000) != 0)) {
+    if (((bitField1_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 307827694, subnetwork_);
     }
-    if (((bitField0_ & 0x40000000) != 0)) {
+    if (((bitField0_ & 0x01000000) != 0)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 329325929, parentForwardingRule_);
+    }
+    for (int i = 0; i < childForwardingRules_.size(); i++) {
+      com.google.protobuf.GeneratedMessage.writeString(
+          output, 334878200, childForwardingRules_.getRaw(i));
+    }
+    if (((bitField1_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 359880149, serviceName_);
     }
-    if (((bitField0_ & 0x00040000) != 0)) {
+    if (((bitField0_ & 0x00080000) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 363890244, loadBalancingScheme_);
     }
     for (int i = 0; i < attachedExtensions_.size(); i++) {
       output.writeMessage(385226127, attachedExtensions_.get(i));
     }
-    if (((bitField0_ & 0x20000000) != 0)) {
+    if (((bitField0_ & 0x80000000) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 417008874, serviceLabel_);
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 422937596, description_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeBool(445175796, allPorts_);
     }
-    if (((bitField0_ & 0x08000000) != 0)) {
+    if (((bitField0_ & 0x20000000) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 456214797, selfLink_);
     }
     for (int i = 0; i < metadataFilters_.size(); i++) {
@@ -4873,15 +5670,18 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 488094525, iPProtocol_);
     }
+    for (int i = 0; i < iPAddresses_.size(); i++) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 498656157, iPAddresses_.getRaw(i));
+    }
     if (((bitField0_ & 0x00000008) != 0)) {
       output.writeBool(499409674, allowGlobalAccess_);
     }
     com.google.protobuf.GeneratedMessage.serializeStringMapTo(
         output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 500195327);
-    if (((bitField0_ & 0x00200000) != 0)) {
+    if (((bitField0_ & 0x00400000) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 517397843, networkTier_);
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 524873104, baseForwardingRule_);
     }
     getUnknownFields().writeTo(output);
@@ -4893,28 +5693,31 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
     if (size != -1) return size;
 
     size = 0;
-    if (((bitField0_ & 0x00001000) != 0)) {
+    if (((bitField0_ & 0x00002000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeUInt64Size(3355, id_);
     }
-    if (((bitField0_ & 0x00010000) != 0)) {
+    if (((bitField0_ & 0x00020000) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(3292052, kind_);
     }
-    if (((bitField0_ & 0x00080000) != 0)) {
+    if (((bitField0_ & 0x00100000) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(3373707, name_);
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(30525366, creationTimestamp_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(42976943, iPAddress_);
     }
-    if (((bitField0_ & 0x10000000) != 0)) {
+    if (((bitField0_ & 0x40000000) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(44520962, selfLinkWithId_);
     }
-    if (((bitField0_ & 0x00400000) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(62963355, availabilityGroup_);
+    }
+    if (((bitField0_ & 0x00800000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(64546991, noAutomateDnsZone_);
     }
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeFloatSize(
               105676592, externalManagedBackendBucketMigrationTestingPercentage_);
@@ -4927,7 +5730,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
       size += dataSize;
       size += 5 * getPortsList().size();
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessage.computeStringSize(
               107811370, externalManagedBackendBucketMigrationState_);
@@ -4940,27 +5743,27 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
       size += dataSize;
       size += 5 * getSourceIpRangesList().size();
     }
-    if (((bitField0_ & 0x00008000) != 0)) {
+    if (((bitField0_ & 0x00010000) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeBoolSize(119255164, isMirroringCollector_);
     }
-    if (((bitField0_ & 0x04000000) != 0)) {
+    if (((bitField0_ & 0x10000000) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(138946292, region_);
     }
-    if (((bitField0_ & 0x00002000) != 0)) {
+    if (((bitField0_ & 0x00004000) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(176818358, ipCollection_);
     }
-    if (((bitField0_ & 0x00020000) != 0)) {
+    if (((bitField0_ & 0x00040000) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(178124825, labelFingerprint_);
     }
-    if (((bitField0_ & 0x02000000) != 0)) {
+    if (((bitField0_ & 0x08000000) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessage.computeStringSize(184149172, pscConnectionStatus_);
     }
-    if (((bitField1_ & 0x00000001) != 0)) {
+    if (((bitField1_ & 0x00000004) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(192835985, target_);
     }
-    if (((bitField0_ & 0x00800000) != 0)) {
+    if (((bitField0_ & 0x02000000) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(217518079, portRange_);
     }
     for (int i = 0; i < serviceDirectoryRegistrations_.size(); i++) {
@@ -4968,32 +5771,44 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               223549694, serviceDirectoryRegistrations_.get(i));
     }
-    if (((bitField0_ & 0x00100000) != 0)) {
+    if (((bitField0_ & 0x00200000) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(232872494, network_);
     }
-    if (((bitField0_ & 0x00000800) != 0)) {
+    if (((bitField0_ & 0x00001000) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(234678500, fingerprint_);
     }
     if (((bitField0_ & 0x00000010) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeBoolSize(263471819, allowPscGlobalAccess_);
     }
-    if (((bitField0_ & 0x01000000) != 0)) {
+    if (((bitField0_ & 0x04000000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeUInt64Size(292082397, pscConnectionId_);
     }
-    if (((bitField0_ & 0x00004000) != 0)) {
+    if (((bitField0_ & 0x00008000) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(294959552, ipVersion_);
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(306946058, backendService_);
     }
-    if (((bitField0_ & 0x80000000) != 0)) {
+    if (((bitField1_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(307827694, subnetwork_);
     }
-    if (((bitField0_ & 0x40000000) != 0)) {
+    if (((bitField0_ & 0x01000000) != 0)) {
+      size +=
+          com.google.protobuf.GeneratedMessage.computeStringSize(329325929, parentForwardingRule_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < childForwardingRules_.size(); i++) {
+        dataSize += computeStringSizeNoTag(childForwardingRules_.getRaw(i));
+      }
+      size += dataSize;
+      size += 5 * getChildForwardingRulesList().size();
+    }
+    if (((bitField1_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(359880149, serviceName_);
     }
-    if (((bitField0_ & 0x00040000) != 0)) {
+    if (((bitField0_ & 0x00080000) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessage.computeStringSize(363890244, loadBalancingScheme_);
     }
@@ -5002,16 +5817,16 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               385226127, attachedExtensions_.get(i));
     }
-    if (((bitField0_ & 0x20000000) != 0)) {
+    if (((bitField0_ & 0x80000000) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(417008874, serviceLabel_);
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(422937596, description_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(445175796, allPorts_);
     }
-    if (((bitField0_ & 0x08000000) != 0)) {
+    if (((bitField0_ & 0x20000000) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(456214797, selfLink_);
     }
     for (int i = 0; i < metadataFilters_.size(); i++) {
@@ -5021,6 +5836,14 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(488094525, iPProtocol_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < iPAddresses_.size(); i++) {
+        dataSize += computeStringSizeNoTag(iPAddresses_.getRaw(i));
+      }
+      size += dataSize;
+      size += 5 * getIPAddressesList().size();
     }
     if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(499409674, allowGlobalAccess_);
@@ -5035,10 +5858,10 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(500195327, labels__);
     }
-    if (((bitField0_ & 0x00200000) != 0)) {
+    if (((bitField0_ & 0x00400000) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(517397843, networkTier_);
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessage.computeStringSize(524873104, baseForwardingRule_);
     }
@@ -5062,6 +5885,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
     if (hasIPAddress()) {
       if (!getIPAddress().equals(other.getIPAddress())) return false;
     }
+    if (!getIPAddressesList().equals(other.getIPAddressesList())) return false;
     if (hasIPProtocol() != other.hasIPProtocol()) return false;
     if (hasIPProtocol()) {
       if (!getIPProtocol().equals(other.getIPProtocol())) return false;
@@ -5079,6 +5903,10 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
       if (getAllowPscGlobalAccess() != other.getAllowPscGlobalAccess()) return false;
     }
     if (!getAttachedExtensionsList().equals(other.getAttachedExtensionsList())) return false;
+    if (hasAvailabilityGroup() != other.hasAvailabilityGroup()) return false;
+    if (hasAvailabilityGroup()) {
+      if (!getAvailabilityGroup().equals(other.getAvailabilityGroup())) return false;
+    }
     if (hasBackendService() != other.hasBackendService()) return false;
     if (hasBackendService()) {
       if (!getBackendService().equals(other.getBackendService())) return false;
@@ -5087,6 +5915,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
     if (hasBaseForwardingRule()) {
       if (!getBaseForwardingRule().equals(other.getBaseForwardingRule())) return false;
     }
+    if (!getChildForwardingRulesList().equals(other.getChildForwardingRulesList())) return false;
     if (hasCreationTimestamp() != other.hasCreationTimestamp()) return false;
     if (hasCreationTimestamp()) {
       if (!getCreationTimestamp().equals(other.getCreationTimestamp())) return false;
@@ -5159,6 +5988,10 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
     if (hasNoAutomateDnsZone()) {
       if (getNoAutomateDnsZone() != other.getNoAutomateDnsZone()) return false;
     }
+    if (hasParentForwardingRule() != other.hasParentForwardingRule()) return false;
+    if (hasParentForwardingRule()) {
+      if (!getParentForwardingRule().equals(other.getParentForwardingRule())) return false;
+    }
     if (hasPortRange() != other.hasPortRange()) return false;
     if (hasPortRange()) {
       if (!getPortRange().equals(other.getPortRange())) return false;
@@ -5218,6 +6051,10 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + I_P_ADDRESS_FIELD_NUMBER;
       hash = (53 * hash) + getIPAddress().hashCode();
     }
+    if (getIPAddressesCount() > 0) {
+      hash = (37 * hash) + I_P_ADDRESSES_FIELD_NUMBER;
+      hash = (53 * hash) + getIPAddressesList().hashCode();
+    }
     if (hasIPProtocol()) {
       hash = (37 * hash) + I_P_PROTOCOL_FIELD_NUMBER;
       hash = (53 * hash) + getIPProtocol().hashCode();
@@ -5238,6 +6075,10 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + ATTACHED_EXTENSIONS_FIELD_NUMBER;
       hash = (53 * hash) + getAttachedExtensionsList().hashCode();
     }
+    if (hasAvailabilityGroup()) {
+      hash = (37 * hash) + AVAILABILITY_GROUP_FIELD_NUMBER;
+      hash = (53 * hash) + getAvailabilityGroup().hashCode();
+    }
     if (hasBackendService()) {
       hash = (37 * hash) + BACKEND_SERVICE_FIELD_NUMBER;
       hash = (53 * hash) + getBackendService().hashCode();
@@ -5245,6 +6086,10 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
     if (hasBaseForwardingRule()) {
       hash = (37 * hash) + BASE_FORWARDING_RULE_FIELD_NUMBER;
       hash = (53 * hash) + getBaseForwardingRule().hashCode();
+    }
+    if (getChildForwardingRulesCount() > 0) {
+      hash = (37 * hash) + CHILD_FORWARDING_RULES_FIELD_NUMBER;
+      hash = (53 * hash) + getChildForwardingRulesList().hashCode();
     }
     if (hasCreationTimestamp()) {
       hash = (37 * hash) + CREATION_TIMESTAMP_FIELD_NUMBER;
@@ -5321,6 +6166,10 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
     if (hasNoAutomateDnsZone()) {
       hash = (37 * hash) + NO_AUTOMATE_DNS_ZONE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getNoAutomateDnsZone());
+    }
+    if (hasParentForwardingRule()) {
+      hash = (37 * hash) + PARENT_FORWARDING_RULE_FIELD_NUMBER;
+      hash = (53 * hash) + getParentForwardingRule().hashCode();
     }
     if (hasPortRange()) {
       hash = (37 * hash) + PORT_RANGE_FIELD_NUMBER;
@@ -5553,6 +6402,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
       bitField0_ = 0;
       bitField1_ = 0;
       iPAddress_ = "";
+      iPAddresses_ = com.google.protobuf.LazyStringArrayList.emptyList();
       iPProtocol_ = "";
       allPorts_ = false;
       allowGlobalAccess_ = false;
@@ -5563,9 +6413,11 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
         attachedExtensions_ = null;
         attachedExtensionsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
+      availabilityGroup_ = "";
       backendService_ = "";
       baseForwardingRule_ = "";
+      childForwardingRules_ = com.google.protobuf.LazyStringArrayList.emptyList();
       creationTimestamp_ = "";
       description_ = "";
       externalManagedBackendBucketMigrationState_ = "";
@@ -5585,11 +6437,12 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
         metadataFilters_ = null;
         metadataFiltersBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00200000);
+      bitField0_ = (bitField0_ & ~0x01000000);
       name_ = "";
       network_ = "";
       networkTier_ = "";
       noAutomateDnsZone_ = false;
+      parentForwardingRule_ = "";
       portRange_ = "";
       ports_ = com.google.protobuf.LazyStringArrayList.emptyList();
       pscConnectionId_ = 0L;
@@ -5603,7 +6456,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
         serviceDirectoryRegistrations_ = null;
         serviceDirectoryRegistrationsBuilder_.clear();
       }
-      bitField1_ = (bitField1_ & ~0x00000002);
+      bitField1_ = (bitField1_ & ~0x00000020);
       serviceLabel_ = "";
       serviceName_ = "";
       sourceIpRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
@@ -5649,28 +6502,28 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
 
     private void buildPartialRepeatedFields(com.google.cloud.compute.v1.ForwardingRule result) {
       if (attachedExtensionsBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)) {
+        if (((bitField0_ & 0x00000040) != 0)) {
           attachedExtensions_ = java.util.Collections.unmodifiableList(attachedExtensions_);
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ = (bitField0_ & ~0x00000040);
         }
         result.attachedExtensions_ = attachedExtensions_;
       } else {
         result.attachedExtensions_ = attachedExtensionsBuilder_.build();
       }
       if (metadataFiltersBuilder_ == null) {
-        if (((bitField0_ & 0x00200000) != 0)) {
+        if (((bitField0_ & 0x01000000) != 0)) {
           metadataFilters_ = java.util.Collections.unmodifiableList(metadataFilters_);
-          bitField0_ = (bitField0_ & ~0x00200000);
+          bitField0_ = (bitField0_ & ~0x01000000);
         }
         result.metadataFilters_ = metadataFilters_;
       } else {
         result.metadataFilters_ = metadataFiltersBuilder_.build();
       }
       if (serviceDirectoryRegistrationsBuilder_ == null) {
-        if (((bitField1_ & 0x00000002) != 0)) {
+        if (((bitField1_ & 0x00000020) != 0)) {
           serviceDirectoryRegistrations_ =
               java.util.Collections.unmodifiableList(serviceDirectoryRegistrations_);
-          bitField1_ = (bitField1_ & ~0x00000002);
+          bitField1_ = (bitField1_ & ~0x00000020);
         }
         result.serviceDirectoryRegistrations_ = serviceDirectoryRegistrations_;
       } else {
@@ -5686,122 +6539,122 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        iPAddresses_.makeImmutable();
+        result.iPAddresses_ = iPAddresses_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
         result.iPProtocol_ = iPProtocol_;
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.allPorts_ = allPorts_;
         to_bitField0_ |= 0x00000004;
       }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.allowGlobalAccess_ = allowGlobalAccess_;
         to_bitField0_ |= 0x00000008;
       }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.allowPscGlobalAccess_ = allowPscGlobalAccess_;
         to_bitField0_ |= 0x00000010;
       }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
-        result.backendService_ = backendService_;
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.availabilityGroup_ = availabilityGroup_;
         to_bitField0_ |= 0x00000020;
       }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
-        result.baseForwardingRule_ = baseForwardingRule_;
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.backendService_ = backendService_;
         to_bitField0_ |= 0x00000040;
       }
-      if (((from_bitField0_ & 0x00000100) != 0)) {
-        result.creationTimestamp_ = creationTimestamp_;
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.baseForwardingRule_ = baseForwardingRule_;
         to_bitField0_ |= 0x00000080;
       }
-      if (((from_bitField0_ & 0x00000200) != 0)) {
-        result.description_ = description_;
-        to_bitField0_ |= 0x00000100;
-      }
       if (((from_bitField0_ & 0x00000400) != 0)) {
-        result.externalManagedBackendBucketMigrationState_ =
-            externalManagedBackendBucketMigrationState_;
-        to_bitField0_ |= 0x00000200;
+        childForwardingRules_.makeImmutable();
+        result.childForwardingRules_ = childForwardingRules_;
       }
       if (((from_bitField0_ & 0x00000800) != 0)) {
-        result.externalManagedBackendBucketMigrationTestingPercentage_ =
-            externalManagedBackendBucketMigrationTestingPercentage_;
-        to_bitField0_ |= 0x00000400;
+        result.creationTimestamp_ = creationTimestamp_;
+        to_bitField0_ |= 0x00000100;
       }
       if (((from_bitField0_ & 0x00001000) != 0)) {
-        result.fingerprint_ = fingerprint_;
-        to_bitField0_ |= 0x00000800;
+        result.description_ = description_;
+        to_bitField0_ |= 0x00000200;
       }
       if (((from_bitField0_ & 0x00002000) != 0)) {
-        result.id_ = id_;
-        to_bitField0_ |= 0x00001000;
+        result.externalManagedBackendBucketMigrationState_ =
+            externalManagedBackendBucketMigrationState_;
+        to_bitField0_ |= 0x00000400;
       }
       if (((from_bitField0_ & 0x00004000) != 0)) {
-        result.ipCollection_ = ipCollection_;
-        to_bitField0_ |= 0x00002000;
+        result.externalManagedBackendBucketMigrationTestingPercentage_ =
+            externalManagedBackendBucketMigrationTestingPercentage_;
+        to_bitField0_ |= 0x00000800;
       }
       if (((from_bitField0_ & 0x00008000) != 0)) {
-        result.ipVersion_ = ipVersion_;
-        to_bitField0_ |= 0x00004000;
+        result.fingerprint_ = fingerprint_;
+        to_bitField0_ |= 0x00001000;
       }
       if (((from_bitField0_ & 0x00010000) != 0)) {
-        result.isMirroringCollector_ = isMirroringCollector_;
-        to_bitField0_ |= 0x00008000;
+        result.id_ = id_;
+        to_bitField0_ |= 0x00002000;
       }
       if (((from_bitField0_ & 0x00020000) != 0)) {
-        result.kind_ = kind_;
-        to_bitField0_ |= 0x00010000;
+        result.ipCollection_ = ipCollection_;
+        to_bitField0_ |= 0x00004000;
       }
       if (((from_bitField0_ & 0x00040000) != 0)) {
-        result.labelFingerprint_ = labelFingerprint_;
-        to_bitField0_ |= 0x00020000;
+        result.ipVersion_ = ipVersion_;
+        to_bitField0_ |= 0x00008000;
       }
       if (((from_bitField0_ & 0x00080000) != 0)) {
-        result.labels_ = internalGetLabels();
-        result.labels_.makeImmutable();
+        result.isMirroringCollector_ = isMirroringCollector_;
+        to_bitField0_ |= 0x00010000;
       }
       if (((from_bitField0_ & 0x00100000) != 0)) {
-        result.loadBalancingScheme_ = loadBalancingScheme_;
+        result.kind_ = kind_;
+        to_bitField0_ |= 0x00020000;
+      }
+      if (((from_bitField0_ & 0x00200000) != 0)) {
+        result.labelFingerprint_ = labelFingerprint_;
         to_bitField0_ |= 0x00040000;
       }
       if (((from_bitField0_ & 0x00400000) != 0)) {
-        result.name_ = name_;
-        to_bitField0_ |= 0x00080000;
+        result.labels_ = internalGetLabels();
+        result.labels_.makeImmutable();
       }
       if (((from_bitField0_ & 0x00800000) != 0)) {
-        result.network_ = network_;
-        to_bitField0_ |= 0x00100000;
-      }
-      if (((from_bitField0_ & 0x01000000) != 0)) {
-        result.networkTier_ = networkTier_;
-        to_bitField0_ |= 0x00200000;
+        result.loadBalancingScheme_ = loadBalancingScheme_;
+        to_bitField0_ |= 0x00080000;
       }
       if (((from_bitField0_ & 0x02000000) != 0)) {
-        result.noAutomateDnsZone_ = noAutomateDnsZone_;
-        to_bitField0_ |= 0x00400000;
+        result.name_ = name_;
+        to_bitField0_ |= 0x00100000;
       }
       if (((from_bitField0_ & 0x04000000) != 0)) {
-        result.portRange_ = portRange_;
-        to_bitField0_ |= 0x00800000;
+        result.network_ = network_;
+        to_bitField0_ |= 0x00200000;
       }
       if (((from_bitField0_ & 0x08000000) != 0)) {
-        ports_.makeImmutable();
-        result.ports_ = ports_;
+        result.networkTier_ = networkTier_;
+        to_bitField0_ |= 0x00400000;
       }
       if (((from_bitField0_ & 0x10000000) != 0)) {
-        result.pscConnectionId_ = pscConnectionId_;
-        to_bitField0_ |= 0x01000000;
+        result.noAutomateDnsZone_ = noAutomateDnsZone_;
+        to_bitField0_ |= 0x00800000;
       }
       if (((from_bitField0_ & 0x20000000) != 0)) {
-        result.pscConnectionStatus_ = pscConnectionStatus_;
-        to_bitField0_ |= 0x02000000;
+        result.parentForwardingRule_ = parentForwardingRule_;
+        to_bitField0_ |= 0x01000000;
       }
       if (((from_bitField0_ & 0x40000000) != 0)) {
-        result.region_ = region_;
-        to_bitField0_ |= 0x04000000;
+        result.portRange_ = portRange_;
+        to_bitField0_ |= 0x02000000;
       }
       if (((from_bitField0_ & 0x80000000) != 0)) {
-        result.selfLink_ = selfLink_;
-        to_bitField0_ |= 0x08000000;
+        ports_.makeImmutable();
+        result.ports_ = ports_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -5810,29 +6663,45 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
       int from_bitField1_ = bitField1_;
       int to_bitField0_ = 0;
       if (((from_bitField1_ & 0x00000001) != 0)) {
-        result.selfLinkWithId_ = selfLinkWithId_;
-        to_bitField0_ |= 0x10000000;
+        result.pscConnectionId_ = pscConnectionId_;
+        to_bitField0_ |= 0x04000000;
+      }
+      if (((from_bitField1_ & 0x00000002) != 0)) {
+        result.pscConnectionStatus_ = pscConnectionStatus_;
+        to_bitField0_ |= 0x08000000;
       }
       if (((from_bitField1_ & 0x00000004) != 0)) {
-        result.serviceLabel_ = serviceLabel_;
-        to_bitField0_ |= 0x20000000;
+        result.region_ = region_;
+        to_bitField0_ |= 0x10000000;
       }
       if (((from_bitField1_ & 0x00000008) != 0)) {
-        result.serviceName_ = serviceName_;
-        to_bitField0_ |= 0x40000000;
+        result.selfLink_ = selfLink_;
+        to_bitField0_ |= 0x20000000;
       }
       if (((from_bitField1_ & 0x00000010) != 0)) {
-        sourceIpRanges_.makeImmutable();
-        result.sourceIpRanges_ = sourceIpRanges_;
+        result.selfLinkWithId_ = selfLinkWithId_;
+        to_bitField0_ |= 0x40000000;
       }
-      if (((from_bitField1_ & 0x00000020) != 0)) {
-        result.subnetwork_ = subnetwork_;
+      if (((from_bitField1_ & 0x00000040) != 0)) {
+        result.serviceLabel_ = serviceLabel_;
         to_bitField0_ |= 0x80000000;
       }
       int to_bitField1_ = 0;
-      if (((from_bitField1_ & 0x00000040) != 0)) {
-        result.target_ = target_;
+      if (((from_bitField1_ & 0x00000080) != 0)) {
+        result.serviceName_ = serviceName_;
         to_bitField1_ |= 0x00000001;
+      }
+      if (((from_bitField1_ & 0x00000100) != 0)) {
+        sourceIpRanges_.makeImmutable();
+        result.sourceIpRanges_ = sourceIpRanges_;
+      }
+      if (((from_bitField1_ & 0x00000200) != 0)) {
+        result.subnetwork_ = subnetwork_;
+        to_bitField1_ |= 0x00000002;
+      }
+      if (((from_bitField1_ & 0x00000400) != 0)) {
+        result.target_ = target_;
+        to_bitField1_ |= 0x00000004;
       }
       result.bitField0_ |= to_bitField0_;
       result.bitField1_ |= to_bitField1_;
@@ -5855,9 +6724,19 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
         bitField0_ |= 0x00000001;
         onChanged();
       }
+      if (!other.iPAddresses_.isEmpty()) {
+        if (iPAddresses_.isEmpty()) {
+          iPAddresses_ = other.iPAddresses_;
+          bitField0_ |= 0x00000002;
+        } else {
+          ensureIPAddressesIsMutable();
+          iPAddresses_.addAll(other.iPAddresses_);
+        }
+        onChanged();
+      }
       if (other.hasIPProtocol()) {
         iPProtocol_ = other.iPProtocol_;
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasAllPorts()) {
@@ -5873,7 +6752,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
         if (!other.attachedExtensions_.isEmpty()) {
           if (attachedExtensions_.isEmpty()) {
             attachedExtensions_ = other.attachedExtensions_;
-            bitField0_ = (bitField0_ & ~0x00000020);
+            bitField0_ = (bitField0_ & ~0x00000040);
           } else {
             ensureAttachedExtensionsIsMutable();
             attachedExtensions_.addAll(other.attachedExtensions_);
@@ -5886,7 +6765,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
             attachedExtensionsBuilder_.dispose();
             attachedExtensionsBuilder_ = null;
             attachedExtensions_ = other.attachedExtensions_;
-            bitField0_ = (bitField0_ & ~0x00000020);
+            bitField0_ = (bitField0_ & ~0x00000040);
             attachedExtensionsBuilder_ =
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
                     ? internalGetAttachedExtensionsFieldBuilder()
@@ -5896,30 +6775,45 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
           }
         }
       }
+      if (other.hasAvailabilityGroup()) {
+        availabilityGroup_ = other.availabilityGroup_;
+        bitField0_ |= 0x00000080;
+        onChanged();
+      }
       if (other.hasBackendService()) {
         backendService_ = other.backendService_;
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       if (other.hasBaseForwardingRule()) {
         baseForwardingRule_ = other.baseForwardingRule_;
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000200;
+        onChanged();
+      }
+      if (!other.childForwardingRules_.isEmpty()) {
+        if (childForwardingRules_.isEmpty()) {
+          childForwardingRules_ = other.childForwardingRules_;
+          bitField0_ |= 0x00000400;
+        } else {
+          ensureChildForwardingRulesIsMutable();
+          childForwardingRules_.addAll(other.childForwardingRules_);
+        }
         onChanged();
       }
       if (other.hasCreationTimestamp()) {
         creationTimestamp_ = other.creationTimestamp_;
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       if (other.hasDescription()) {
         description_ = other.description_;
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       if (other.hasExternalManagedBackendBucketMigrationState()) {
         externalManagedBackendBucketMigrationState_ =
             other.externalManagedBackendBucketMigrationState_;
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00002000;
         onChanged();
       }
       if (other.hasExternalManagedBackendBucketMigrationTestingPercentage()) {
@@ -5928,7 +6822,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasFingerprint()) {
         fingerprint_ = other.fingerprint_;
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00008000;
         onChanged();
       }
       if (other.hasId()) {
@@ -5936,12 +6830,12 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasIpCollection()) {
         ipCollection_ = other.ipCollection_;
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00020000;
         onChanged();
       }
       if (other.hasIpVersion()) {
         ipVersion_ = other.ipVersion_;
-        bitField0_ |= 0x00008000;
+        bitField0_ |= 0x00040000;
         onChanged();
       }
       if (other.hasIsMirroringCollector()) {
@@ -5949,26 +6843,26 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasKind()) {
         kind_ = other.kind_;
-        bitField0_ |= 0x00020000;
+        bitField0_ |= 0x00100000;
         onChanged();
       }
       if (other.hasLabelFingerprint()) {
         labelFingerprint_ = other.labelFingerprint_;
-        bitField0_ |= 0x00040000;
+        bitField0_ |= 0x00200000;
         onChanged();
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00400000;
       if (other.hasLoadBalancingScheme()) {
         loadBalancingScheme_ = other.loadBalancingScheme_;
-        bitField0_ |= 0x00100000;
+        bitField0_ |= 0x00800000;
         onChanged();
       }
       if (metadataFiltersBuilder_ == null) {
         if (!other.metadataFilters_.isEmpty()) {
           if (metadataFilters_.isEmpty()) {
             metadataFilters_ = other.metadataFilters_;
-            bitField0_ = (bitField0_ & ~0x00200000);
+            bitField0_ = (bitField0_ & ~0x01000000);
           } else {
             ensureMetadataFiltersIsMutable();
             metadataFilters_.addAll(other.metadataFilters_);
@@ -5981,7 +6875,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
             metadataFiltersBuilder_.dispose();
             metadataFiltersBuilder_ = null;
             metadataFilters_ = other.metadataFilters_;
-            bitField0_ = (bitField0_ & ~0x00200000);
+            bitField0_ = (bitField0_ & ~0x01000000);
             metadataFiltersBuilder_ =
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
                     ? internalGetMetadataFiltersFieldBuilder()
@@ -5993,31 +6887,36 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasName()) {
         name_ = other.name_;
-        bitField0_ |= 0x00400000;
+        bitField0_ |= 0x02000000;
         onChanged();
       }
       if (other.hasNetwork()) {
         network_ = other.network_;
-        bitField0_ |= 0x00800000;
+        bitField0_ |= 0x04000000;
         onChanged();
       }
       if (other.hasNetworkTier()) {
         networkTier_ = other.networkTier_;
-        bitField0_ |= 0x01000000;
+        bitField0_ |= 0x08000000;
         onChanged();
       }
       if (other.hasNoAutomateDnsZone()) {
         setNoAutomateDnsZone(other.getNoAutomateDnsZone());
       }
+      if (other.hasParentForwardingRule()) {
+        parentForwardingRule_ = other.parentForwardingRule_;
+        bitField0_ |= 0x20000000;
+        onChanged();
+      }
       if (other.hasPortRange()) {
         portRange_ = other.portRange_;
-        bitField0_ |= 0x04000000;
+        bitField0_ |= 0x40000000;
         onChanged();
       }
       if (!other.ports_.isEmpty()) {
         if (ports_.isEmpty()) {
           ports_ = other.ports_;
-          bitField0_ |= 0x08000000;
+          bitField0_ |= 0x80000000;
         } else {
           ensurePortsIsMutable();
           ports_.addAll(other.ports_);
@@ -6029,29 +6928,29 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasPscConnectionStatus()) {
         pscConnectionStatus_ = other.pscConnectionStatus_;
-        bitField0_ |= 0x20000000;
+        bitField1_ |= 0x00000002;
         onChanged();
       }
       if (other.hasRegion()) {
         region_ = other.region_;
-        bitField0_ |= 0x40000000;
+        bitField1_ |= 0x00000004;
         onChanged();
       }
       if (other.hasSelfLink()) {
         selfLink_ = other.selfLink_;
-        bitField0_ |= 0x80000000;
+        bitField1_ |= 0x00000008;
         onChanged();
       }
       if (other.hasSelfLinkWithId()) {
         selfLinkWithId_ = other.selfLinkWithId_;
-        bitField1_ |= 0x00000001;
+        bitField1_ |= 0x00000010;
         onChanged();
       }
       if (serviceDirectoryRegistrationsBuilder_ == null) {
         if (!other.serviceDirectoryRegistrations_.isEmpty()) {
           if (serviceDirectoryRegistrations_.isEmpty()) {
             serviceDirectoryRegistrations_ = other.serviceDirectoryRegistrations_;
-            bitField1_ = (bitField1_ & ~0x00000002);
+            bitField1_ = (bitField1_ & ~0x00000020);
           } else {
             ensureServiceDirectoryRegistrationsIsMutable();
             serviceDirectoryRegistrations_.addAll(other.serviceDirectoryRegistrations_);
@@ -6064,7 +6963,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
             serviceDirectoryRegistrationsBuilder_.dispose();
             serviceDirectoryRegistrationsBuilder_ = null;
             serviceDirectoryRegistrations_ = other.serviceDirectoryRegistrations_;
-            bitField1_ = (bitField1_ & ~0x00000002);
+            bitField1_ = (bitField1_ & ~0x00000020);
             serviceDirectoryRegistrationsBuilder_ =
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
                     ? internalGetServiceDirectoryRegistrationsFieldBuilder()
@@ -6077,18 +6976,18 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasServiceLabel()) {
         serviceLabel_ = other.serviceLabel_;
-        bitField1_ |= 0x00000004;
+        bitField1_ |= 0x00000040;
         onChanged();
       }
       if (other.hasServiceName()) {
         serviceName_ = other.serviceName_;
-        bitField1_ |= 0x00000008;
+        bitField1_ |= 0x00000080;
         onChanged();
       }
       if (!other.sourceIpRanges_.isEmpty()) {
         if (sourceIpRanges_.isEmpty()) {
           sourceIpRanges_ = other.sourceIpRanges_;
-          bitField1_ |= 0x00000010;
+          bitField1_ |= 0x00000100;
         } else {
           ensureSourceIpRangesIsMutable();
           sourceIpRanges_.addAll(other.sourceIpRanges_);
@@ -6097,12 +6996,12 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasSubnetwork()) {
         subnetwork_ = other.subnetwork_;
-        bitField1_ |= 0x00000020;
+        bitField1_ |= 0x00000200;
         onChanged();
       }
       if (other.hasTarget()) {
         target_ = other.target_;
-        bitField1_ |= 0x00000040;
+        bitField1_ |= 0x00000400;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -6134,25 +7033,25 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
             case 26840:
               {
                 id_ = input.readUInt64();
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00010000;
                 break;
               } // case 26840
             case 26336418:
               {
                 kind_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00020000;
+                bitField0_ |= 0x00100000;
                 break;
               } // case 26336418
             case 26989658:
               {
                 name_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00400000;
+                bitField0_ |= 0x02000000;
                 break;
               } // case 26989658
             case 244202930:
               {
                 creationTimestamp_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 244202930
             case 343815546:
@@ -6164,19 +7063,25 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
             case 356167698:
               {
                 selfLinkWithId_ = input.readStringRequireUtf8();
-                bitField1_ |= 0x00000001;
+                bitField1_ |= 0x00000010;
                 break;
               } // case 356167698
+            case 503706842:
+              {
+                availabilityGroup_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 503706842
             case 516375928:
               {
                 noAutomateDnsZone_ = input.readBool();
-                bitField0_ |= 0x02000000;
+                bitField0_ |= 0x10000000;
                 break;
               } // case 516375928
             case 845412741:
               {
                 externalManagedBackendBucketMigrationTestingPercentage_ = input.readFloat();
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00004000;
                 break;
               } // case 845412741
             case 854835346:
@@ -6189,7 +7094,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
             case 862490962:
               {
                 externalManagedBackendBucketMigrationState_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00002000;
                 break;
               } // case 862490962
             case 892505682:
@@ -6202,43 +7107,43 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
             case 954041312:
               {
                 isMirroringCollector_ = input.readBool();
-                bitField0_ |= 0x00010000;
+                bitField0_ |= 0x00080000;
                 break;
               } // case 954041312
             case 1111570338:
               {
                 region_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x40000000;
+                bitField1_ |= 0x00000004;
                 break;
               } // case 1111570338
             case 1414546866:
               {
                 ipCollection_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00004000;
+                bitField0_ |= 0x00020000;
                 break;
               } // case 1414546866
             case 1424998602:
               {
                 labelFingerprint_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00040000;
+                bitField0_ |= 0x00200000;
                 break;
               } // case 1424998602
             case 1473193378:
               {
                 pscConnectionStatus_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x20000000;
+                bitField1_ |= 0x00000002;
                 break;
               } // case 1473193378
             case 1542687882:
               {
                 target_ = input.readStringRequireUtf8();
-                bitField1_ |= 0x00000040;
+                bitField1_ |= 0x00000400;
                 break;
               } // case 1542687882
             case 1740144634:
               {
                 portRange_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x04000000;
+                bitField0_ |= 0x40000000;
                 break;
               } // case 1740144634
             case 1788397554:
@@ -6259,55 +7164,68 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
             case 1862979954:
               {
                 network_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00800000;
+                bitField0_ |= 0x04000000;
                 break;
               } // case 1862979954
             case 1877428002:
               {
                 fingerprint_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00008000;
                 break;
               } // case 1877428002
             case 2107774552:
               {
                 allowPscGlobalAccess_ = input.readBool();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 2107774552
             case -1958308120:
               {
                 pscConnectionId_ = input.readUInt64();
-                bitField0_ |= 0x10000000;
+                bitField1_ |= 0x00000001;
                 break;
               } // case -1958308120
             case -1935290878:
               {
                 ipVersion_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00008000;
+                bitField0_ |= 0x00040000;
                 break;
               } // case -1935290878
             case -1839398830:
               {
                 backendService_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000100;
                 break;
               } // case -1839398830
             case -1832345742:
               {
                 subnetwork_ = input.readStringRequireUtf8();
-                bitField1_ |= 0x00000020;
+                bitField1_ |= 0x00000200;
                 break;
               } // case -1832345742
+            case -1660359862:
+              {
+                parentForwardingRule_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x20000000;
+                break;
+              } // case -1660359862
+            case -1615941694:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureChildForwardingRulesIsMutable();
+                childForwardingRules_.add(s);
+                break;
+              } // case -1615941694
             case -1415926102:
               {
                 serviceName_ = input.readStringRequireUtf8();
-                bitField1_ |= 0x00000008;
+                bitField1_ |= 0x00000080;
                 break;
               } // case -1415926102
             case -1383845342:
               {
                 loadBalancingScheme_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00100000;
+                bitField0_ |= 0x00800000;
                 break;
               } // case -1383845342
             case -1213158278:
@@ -6327,25 +7245,25 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
             case -958896302:
               {
                 serviceLabel_ = input.readStringRequireUtf8();
-                bitField1_ |= 0x00000004;
+                bitField1_ |= 0x00000040;
                 break;
               } // case -958896302
             case -911466526:
               {
                 description_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00001000;
                 break;
               } // case -911466526
             case -733560928:
               {
                 allPorts_ = input.readBool();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case -733560928
             case -645248918:
               {
                 selfLink_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x80000000;
+                bitField1_ |= 0x00000008;
                 break;
               } // case -645248918
             case -577161382:
@@ -6364,13 +7282,20 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
             case -390211094:
               {
                 iPProtocol_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000004;
                 break;
               } // case -390211094
+            case -305718038:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureIPAddressesIsMutable();
+                iPAddresses_.add(s);
+                break;
+              } // case -305718038
             case -299689904:
               {
                 allowGlobalAccess_ = input.readBool();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case -299689904
             case -293404678:
@@ -6382,19 +7307,19 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
-                bitField0_ |= 0x00080000;
+                bitField0_ |= 0x00400000;
                 break;
               } // case -293404678
             case -155784550:
               {
                 networkTier_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x01000000;
+                bitField0_ |= 0x08000000;
                 break;
               } // case -155784550
             case -95982462:
               {
                 baseForwardingRule_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000200;
                 break;
               } // case -95982462
             default:
@@ -6807,6 +7732,675 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
+    private com.google.protobuf.LazyStringArrayList iPAddresses_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureIPAddressesIsMutable() {
+      if (!iPAddresses_.isModifiable()) {
+        iPAddresses_ = new com.google.protobuf.LazyStringArrayList(iPAddresses_);
+      }
+      bitField0_ |= 0x00000002;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * IP addresses for which this forwarding rule accepts traffic. All IP
+     * addresses must have the same IP version, IPv4 or IPv6. When a client sends
+     * traffic that matches one of the specified IP addresses, protocol and ports,
+     * the forwarding rule directs the traffic to the referencedbackendService. All IP addresses are served by the same set of
+     * backends, and they share the target capacities specified in the backend
+     * service fairly.
+     *
+     * Global external Passthrough Network Load Balancer requires two IP addresses
+     * for each forwarding rule to provide high availability when both IP
+     * addresses are used to serve client requests. The two IP addresses must come
+     * from global IP pools that belong to two distinct Availability
+     * Groups, represented by the purposePASSTHROUGH_LOAD_BALANCER_AVAILABILITY_GROUP0 andPASSTHROUGH_LOAD_BALANCER_AVAILABILITY_GROUP1. TheIPAddresses field specifies zero, one, or two IP addresses:
+     *
+     * - If omitted, Google Cloud assigns two ephemeral IP addresses, one from
+     * each Availability Group.
+     * - If you specify one IP address that references an existing static IP
+     * address resource from one Availability Group, Google Cloud assigns an
+     * ephemeral IP address from the other Availability Group.
+     * - If you specify two IP addresses that reference existing static IP
+     * address resources, they are required to be from different Availability
+     * Groups.
+     *
+     *
+     *
+     * For global external Passthrough Network Load Balancer, each IP address can be one of the following:
+     *
+     * - A static or ephemeral IPv4 address from a Google-owned IP pool.
+     * - A static IPv4 address from a global public delegated prefix.
+     * - A static or ephemeral IPv6 /96 prefix from a Google-owned IP pool.
+     *
+     *
+     *
+     * For global external Passthrough Network Load Balancer, the two IP addresses
+     * can be of different types. One IP address can be from a BYOIP prefix while
+     * the other is from a Google-owned IP pool. One IP address can be static
+     * while the other is ephemeral. However, both IP addresses must have the same
+     * IP version, IPv4 or IPv6.
+     *
+     * The IP addresses can only be set at creation and cannot be updated.
+     *
+     * When creating a global external Passthrough Network Load Balancer
+     * forwarding rule (a parent forwarding rule), you must use theIPAddresses field, but the Google Cloud-generated child
+     * forwarding rules set the IPAddress field instead. Refer to theavailabilityGroup field for further details.
+     *
+     * Refer to the IPAddress field for the formats that can be used
+     * to specify IP addresses while creating a forwarding rule.
+     *
+     * Because Passthrough Network Load Balancers do not terminate or translate
+     * traffic, the backend stack types must be compatible with the forwarding
+     * rule IP version:
+     *
+     * - If the forwarding rule IP version is IPv4, backends should be
+     * configured as dual-stack or IPv4-only.
+     * - If the forwarding rule IP version is IPv6, backends should be
+     * configured as dual-stack or IPv6-only.
+     * </pre>
+     *
+     * <code>repeated string I_p_addresses = 498656157;</code>
+     *
+     * @return A list containing the iPAddresses.
+     */
+    public com.google.protobuf.ProtocolStringList getIPAddressesList() {
+      iPAddresses_.makeImmutable();
+      return iPAddresses_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * IP addresses for which this forwarding rule accepts traffic. All IP
+     * addresses must have the same IP version, IPv4 or IPv6. When a client sends
+     * traffic that matches one of the specified IP addresses, protocol and ports,
+     * the forwarding rule directs the traffic to the referencedbackendService. All IP addresses are served by the same set of
+     * backends, and they share the target capacities specified in the backend
+     * service fairly.
+     *
+     * Global external Passthrough Network Load Balancer requires two IP addresses
+     * for each forwarding rule to provide high availability when both IP
+     * addresses are used to serve client requests. The two IP addresses must come
+     * from global IP pools that belong to two distinct Availability
+     * Groups, represented by the purposePASSTHROUGH_LOAD_BALANCER_AVAILABILITY_GROUP0 andPASSTHROUGH_LOAD_BALANCER_AVAILABILITY_GROUP1. TheIPAddresses field specifies zero, one, or two IP addresses:
+     *
+     * - If omitted, Google Cloud assigns two ephemeral IP addresses, one from
+     * each Availability Group.
+     * - If you specify one IP address that references an existing static IP
+     * address resource from one Availability Group, Google Cloud assigns an
+     * ephemeral IP address from the other Availability Group.
+     * - If you specify two IP addresses that reference existing static IP
+     * address resources, they are required to be from different Availability
+     * Groups.
+     *
+     *
+     *
+     * For global external Passthrough Network Load Balancer, each IP address can be one of the following:
+     *
+     * - A static or ephemeral IPv4 address from a Google-owned IP pool.
+     * - A static IPv4 address from a global public delegated prefix.
+     * - A static or ephemeral IPv6 /96 prefix from a Google-owned IP pool.
+     *
+     *
+     *
+     * For global external Passthrough Network Load Balancer, the two IP addresses
+     * can be of different types. One IP address can be from a BYOIP prefix while
+     * the other is from a Google-owned IP pool. One IP address can be static
+     * while the other is ephemeral. However, both IP addresses must have the same
+     * IP version, IPv4 or IPv6.
+     *
+     * The IP addresses can only be set at creation and cannot be updated.
+     *
+     * When creating a global external Passthrough Network Load Balancer
+     * forwarding rule (a parent forwarding rule), you must use theIPAddresses field, but the Google Cloud-generated child
+     * forwarding rules set the IPAddress field instead. Refer to theavailabilityGroup field for further details.
+     *
+     * Refer to the IPAddress field for the formats that can be used
+     * to specify IP addresses while creating a forwarding rule.
+     *
+     * Because Passthrough Network Load Balancers do not terminate or translate
+     * traffic, the backend stack types must be compatible with the forwarding
+     * rule IP version:
+     *
+     * - If the forwarding rule IP version is IPv4, backends should be
+     * configured as dual-stack or IPv4-only.
+     * - If the forwarding rule IP version is IPv6, backends should be
+     * configured as dual-stack or IPv6-only.
+     * </pre>
+     *
+     * <code>repeated string I_p_addresses = 498656157;</code>
+     *
+     * @return The count of iPAddresses.
+     */
+    public int getIPAddressesCount() {
+      return iPAddresses_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * IP addresses for which this forwarding rule accepts traffic. All IP
+     * addresses must have the same IP version, IPv4 or IPv6. When a client sends
+     * traffic that matches one of the specified IP addresses, protocol and ports,
+     * the forwarding rule directs the traffic to the referencedbackendService. All IP addresses are served by the same set of
+     * backends, and they share the target capacities specified in the backend
+     * service fairly.
+     *
+     * Global external Passthrough Network Load Balancer requires two IP addresses
+     * for each forwarding rule to provide high availability when both IP
+     * addresses are used to serve client requests. The two IP addresses must come
+     * from global IP pools that belong to two distinct Availability
+     * Groups, represented by the purposePASSTHROUGH_LOAD_BALANCER_AVAILABILITY_GROUP0 andPASSTHROUGH_LOAD_BALANCER_AVAILABILITY_GROUP1. TheIPAddresses field specifies zero, one, or two IP addresses:
+     *
+     * - If omitted, Google Cloud assigns two ephemeral IP addresses, one from
+     * each Availability Group.
+     * - If you specify one IP address that references an existing static IP
+     * address resource from one Availability Group, Google Cloud assigns an
+     * ephemeral IP address from the other Availability Group.
+     * - If you specify two IP addresses that reference existing static IP
+     * address resources, they are required to be from different Availability
+     * Groups.
+     *
+     *
+     *
+     * For global external Passthrough Network Load Balancer, each IP address can be one of the following:
+     *
+     * - A static or ephemeral IPv4 address from a Google-owned IP pool.
+     * - A static IPv4 address from a global public delegated prefix.
+     * - A static or ephemeral IPv6 /96 prefix from a Google-owned IP pool.
+     *
+     *
+     *
+     * For global external Passthrough Network Load Balancer, the two IP addresses
+     * can be of different types. One IP address can be from a BYOIP prefix while
+     * the other is from a Google-owned IP pool. One IP address can be static
+     * while the other is ephemeral. However, both IP addresses must have the same
+     * IP version, IPv4 or IPv6.
+     *
+     * The IP addresses can only be set at creation and cannot be updated.
+     *
+     * When creating a global external Passthrough Network Load Balancer
+     * forwarding rule (a parent forwarding rule), you must use theIPAddresses field, but the Google Cloud-generated child
+     * forwarding rules set the IPAddress field instead. Refer to theavailabilityGroup field for further details.
+     *
+     * Refer to the IPAddress field for the formats that can be used
+     * to specify IP addresses while creating a forwarding rule.
+     *
+     * Because Passthrough Network Load Balancers do not terminate or translate
+     * traffic, the backend stack types must be compatible with the forwarding
+     * rule IP version:
+     *
+     * - If the forwarding rule IP version is IPv4, backends should be
+     * configured as dual-stack or IPv4-only.
+     * - If the forwarding rule IP version is IPv6, backends should be
+     * configured as dual-stack or IPv6-only.
+     * </pre>
+     *
+     * <code>repeated string I_p_addresses = 498656157;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The iPAddresses at the given index.
+     */
+    public java.lang.String getIPAddresses(int index) {
+      return iPAddresses_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * IP addresses for which this forwarding rule accepts traffic. All IP
+     * addresses must have the same IP version, IPv4 or IPv6. When a client sends
+     * traffic that matches one of the specified IP addresses, protocol and ports,
+     * the forwarding rule directs the traffic to the referencedbackendService. All IP addresses are served by the same set of
+     * backends, and they share the target capacities specified in the backend
+     * service fairly.
+     *
+     * Global external Passthrough Network Load Balancer requires two IP addresses
+     * for each forwarding rule to provide high availability when both IP
+     * addresses are used to serve client requests. The two IP addresses must come
+     * from global IP pools that belong to two distinct Availability
+     * Groups, represented by the purposePASSTHROUGH_LOAD_BALANCER_AVAILABILITY_GROUP0 andPASSTHROUGH_LOAD_BALANCER_AVAILABILITY_GROUP1. TheIPAddresses field specifies zero, one, or two IP addresses:
+     *
+     * - If omitted, Google Cloud assigns two ephemeral IP addresses, one from
+     * each Availability Group.
+     * - If you specify one IP address that references an existing static IP
+     * address resource from one Availability Group, Google Cloud assigns an
+     * ephemeral IP address from the other Availability Group.
+     * - If you specify two IP addresses that reference existing static IP
+     * address resources, they are required to be from different Availability
+     * Groups.
+     *
+     *
+     *
+     * For global external Passthrough Network Load Balancer, each IP address can be one of the following:
+     *
+     * - A static or ephemeral IPv4 address from a Google-owned IP pool.
+     * - A static IPv4 address from a global public delegated prefix.
+     * - A static or ephemeral IPv6 /96 prefix from a Google-owned IP pool.
+     *
+     *
+     *
+     * For global external Passthrough Network Load Balancer, the two IP addresses
+     * can be of different types. One IP address can be from a BYOIP prefix while
+     * the other is from a Google-owned IP pool. One IP address can be static
+     * while the other is ephemeral. However, both IP addresses must have the same
+     * IP version, IPv4 or IPv6.
+     *
+     * The IP addresses can only be set at creation and cannot be updated.
+     *
+     * When creating a global external Passthrough Network Load Balancer
+     * forwarding rule (a parent forwarding rule), you must use theIPAddresses field, but the Google Cloud-generated child
+     * forwarding rules set the IPAddress field instead. Refer to theavailabilityGroup field for further details.
+     *
+     * Refer to the IPAddress field for the formats that can be used
+     * to specify IP addresses while creating a forwarding rule.
+     *
+     * Because Passthrough Network Load Balancers do not terminate or translate
+     * traffic, the backend stack types must be compatible with the forwarding
+     * rule IP version:
+     *
+     * - If the forwarding rule IP version is IPv4, backends should be
+     * configured as dual-stack or IPv4-only.
+     * - If the forwarding rule IP version is IPv6, backends should be
+     * configured as dual-stack or IPv6-only.
+     * </pre>
+     *
+     * <code>repeated string I_p_addresses = 498656157;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the iPAddresses at the given index.
+     */
+    public com.google.protobuf.ByteString getIPAddressesBytes(int index) {
+      return iPAddresses_.getByteString(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * IP addresses for which this forwarding rule accepts traffic. All IP
+     * addresses must have the same IP version, IPv4 or IPv6. When a client sends
+     * traffic that matches one of the specified IP addresses, protocol and ports,
+     * the forwarding rule directs the traffic to the referencedbackendService. All IP addresses are served by the same set of
+     * backends, and they share the target capacities specified in the backend
+     * service fairly.
+     *
+     * Global external Passthrough Network Load Balancer requires two IP addresses
+     * for each forwarding rule to provide high availability when both IP
+     * addresses are used to serve client requests. The two IP addresses must come
+     * from global IP pools that belong to two distinct Availability
+     * Groups, represented by the purposePASSTHROUGH_LOAD_BALANCER_AVAILABILITY_GROUP0 andPASSTHROUGH_LOAD_BALANCER_AVAILABILITY_GROUP1. TheIPAddresses field specifies zero, one, or two IP addresses:
+     *
+     * - If omitted, Google Cloud assigns two ephemeral IP addresses, one from
+     * each Availability Group.
+     * - If you specify one IP address that references an existing static IP
+     * address resource from one Availability Group, Google Cloud assigns an
+     * ephemeral IP address from the other Availability Group.
+     * - If you specify two IP addresses that reference existing static IP
+     * address resources, they are required to be from different Availability
+     * Groups.
+     *
+     *
+     *
+     * For global external Passthrough Network Load Balancer, each IP address can be one of the following:
+     *
+     * - A static or ephemeral IPv4 address from a Google-owned IP pool.
+     * - A static IPv4 address from a global public delegated prefix.
+     * - A static or ephemeral IPv6 /96 prefix from a Google-owned IP pool.
+     *
+     *
+     *
+     * For global external Passthrough Network Load Balancer, the two IP addresses
+     * can be of different types. One IP address can be from a BYOIP prefix while
+     * the other is from a Google-owned IP pool. One IP address can be static
+     * while the other is ephemeral. However, both IP addresses must have the same
+     * IP version, IPv4 or IPv6.
+     *
+     * The IP addresses can only be set at creation and cannot be updated.
+     *
+     * When creating a global external Passthrough Network Load Balancer
+     * forwarding rule (a parent forwarding rule), you must use theIPAddresses field, but the Google Cloud-generated child
+     * forwarding rules set the IPAddress field instead. Refer to theavailabilityGroup field for further details.
+     *
+     * Refer to the IPAddress field for the formats that can be used
+     * to specify IP addresses while creating a forwarding rule.
+     *
+     * Because Passthrough Network Load Balancers do not terminate or translate
+     * traffic, the backend stack types must be compatible with the forwarding
+     * rule IP version:
+     *
+     * - If the forwarding rule IP version is IPv4, backends should be
+     * configured as dual-stack or IPv4-only.
+     * - If the forwarding rule IP version is IPv6, backends should be
+     * configured as dual-stack or IPv6-only.
+     * </pre>
+     *
+     * <code>repeated string I_p_addresses = 498656157;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The iPAddresses to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIPAddresses(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureIPAddressesIsMutable();
+      iPAddresses_.set(index, value);
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * IP addresses for which this forwarding rule accepts traffic. All IP
+     * addresses must have the same IP version, IPv4 or IPv6. When a client sends
+     * traffic that matches one of the specified IP addresses, protocol and ports,
+     * the forwarding rule directs the traffic to the referencedbackendService. All IP addresses are served by the same set of
+     * backends, and they share the target capacities specified in the backend
+     * service fairly.
+     *
+     * Global external Passthrough Network Load Balancer requires two IP addresses
+     * for each forwarding rule to provide high availability when both IP
+     * addresses are used to serve client requests. The two IP addresses must come
+     * from global IP pools that belong to two distinct Availability
+     * Groups, represented by the purposePASSTHROUGH_LOAD_BALANCER_AVAILABILITY_GROUP0 andPASSTHROUGH_LOAD_BALANCER_AVAILABILITY_GROUP1. TheIPAddresses field specifies zero, one, or two IP addresses:
+     *
+     * - If omitted, Google Cloud assigns two ephemeral IP addresses, one from
+     * each Availability Group.
+     * - If you specify one IP address that references an existing static IP
+     * address resource from one Availability Group, Google Cloud assigns an
+     * ephemeral IP address from the other Availability Group.
+     * - If you specify two IP addresses that reference existing static IP
+     * address resources, they are required to be from different Availability
+     * Groups.
+     *
+     *
+     *
+     * For global external Passthrough Network Load Balancer, each IP address can be one of the following:
+     *
+     * - A static or ephemeral IPv4 address from a Google-owned IP pool.
+     * - A static IPv4 address from a global public delegated prefix.
+     * - A static or ephemeral IPv6 /96 prefix from a Google-owned IP pool.
+     *
+     *
+     *
+     * For global external Passthrough Network Load Balancer, the two IP addresses
+     * can be of different types. One IP address can be from a BYOIP prefix while
+     * the other is from a Google-owned IP pool. One IP address can be static
+     * while the other is ephemeral. However, both IP addresses must have the same
+     * IP version, IPv4 or IPv6.
+     *
+     * The IP addresses can only be set at creation and cannot be updated.
+     *
+     * When creating a global external Passthrough Network Load Balancer
+     * forwarding rule (a parent forwarding rule), you must use theIPAddresses field, but the Google Cloud-generated child
+     * forwarding rules set the IPAddress field instead. Refer to theavailabilityGroup field for further details.
+     *
+     * Refer to the IPAddress field for the formats that can be used
+     * to specify IP addresses while creating a forwarding rule.
+     *
+     * Because Passthrough Network Load Balancers do not terminate or translate
+     * traffic, the backend stack types must be compatible with the forwarding
+     * rule IP version:
+     *
+     * - If the forwarding rule IP version is IPv4, backends should be
+     * configured as dual-stack or IPv4-only.
+     * - If the forwarding rule IP version is IPv6, backends should be
+     * configured as dual-stack or IPv6-only.
+     * </pre>
+     *
+     * <code>repeated string I_p_addresses = 498656157;</code>
+     *
+     * @param value The iPAddresses to add.
+     * @return This builder for chaining.
+     */
+    public Builder addIPAddresses(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureIPAddressesIsMutable();
+      iPAddresses_.add(value);
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * IP addresses for which this forwarding rule accepts traffic. All IP
+     * addresses must have the same IP version, IPv4 or IPv6. When a client sends
+     * traffic that matches one of the specified IP addresses, protocol and ports,
+     * the forwarding rule directs the traffic to the referencedbackendService. All IP addresses are served by the same set of
+     * backends, and they share the target capacities specified in the backend
+     * service fairly.
+     *
+     * Global external Passthrough Network Load Balancer requires two IP addresses
+     * for each forwarding rule to provide high availability when both IP
+     * addresses are used to serve client requests. The two IP addresses must come
+     * from global IP pools that belong to two distinct Availability
+     * Groups, represented by the purposePASSTHROUGH_LOAD_BALANCER_AVAILABILITY_GROUP0 andPASSTHROUGH_LOAD_BALANCER_AVAILABILITY_GROUP1. TheIPAddresses field specifies zero, one, or two IP addresses:
+     *
+     * - If omitted, Google Cloud assigns two ephemeral IP addresses, one from
+     * each Availability Group.
+     * - If you specify one IP address that references an existing static IP
+     * address resource from one Availability Group, Google Cloud assigns an
+     * ephemeral IP address from the other Availability Group.
+     * - If you specify two IP addresses that reference existing static IP
+     * address resources, they are required to be from different Availability
+     * Groups.
+     *
+     *
+     *
+     * For global external Passthrough Network Load Balancer, each IP address can be one of the following:
+     *
+     * - A static or ephemeral IPv4 address from a Google-owned IP pool.
+     * - A static IPv4 address from a global public delegated prefix.
+     * - A static or ephemeral IPv6 /96 prefix from a Google-owned IP pool.
+     *
+     *
+     *
+     * For global external Passthrough Network Load Balancer, the two IP addresses
+     * can be of different types. One IP address can be from a BYOIP prefix while
+     * the other is from a Google-owned IP pool. One IP address can be static
+     * while the other is ephemeral. However, both IP addresses must have the same
+     * IP version, IPv4 or IPv6.
+     *
+     * The IP addresses can only be set at creation and cannot be updated.
+     *
+     * When creating a global external Passthrough Network Load Balancer
+     * forwarding rule (a parent forwarding rule), you must use theIPAddresses field, but the Google Cloud-generated child
+     * forwarding rules set the IPAddress field instead. Refer to theavailabilityGroup field for further details.
+     *
+     * Refer to the IPAddress field for the formats that can be used
+     * to specify IP addresses while creating a forwarding rule.
+     *
+     * Because Passthrough Network Load Balancers do not terminate or translate
+     * traffic, the backend stack types must be compatible with the forwarding
+     * rule IP version:
+     *
+     * - If the forwarding rule IP version is IPv4, backends should be
+     * configured as dual-stack or IPv4-only.
+     * - If the forwarding rule IP version is IPv6, backends should be
+     * configured as dual-stack or IPv6-only.
+     * </pre>
+     *
+     * <code>repeated string I_p_addresses = 498656157;</code>
+     *
+     * @param values The iPAddresses to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllIPAddresses(java.lang.Iterable<java.lang.String> values) {
+      ensureIPAddressesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, iPAddresses_);
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * IP addresses for which this forwarding rule accepts traffic. All IP
+     * addresses must have the same IP version, IPv4 or IPv6. When a client sends
+     * traffic that matches one of the specified IP addresses, protocol and ports,
+     * the forwarding rule directs the traffic to the referencedbackendService. All IP addresses are served by the same set of
+     * backends, and they share the target capacities specified in the backend
+     * service fairly.
+     *
+     * Global external Passthrough Network Load Balancer requires two IP addresses
+     * for each forwarding rule to provide high availability when both IP
+     * addresses are used to serve client requests. The two IP addresses must come
+     * from global IP pools that belong to two distinct Availability
+     * Groups, represented by the purposePASSTHROUGH_LOAD_BALANCER_AVAILABILITY_GROUP0 andPASSTHROUGH_LOAD_BALANCER_AVAILABILITY_GROUP1. TheIPAddresses field specifies zero, one, or two IP addresses:
+     *
+     * - If omitted, Google Cloud assigns two ephemeral IP addresses, one from
+     * each Availability Group.
+     * - If you specify one IP address that references an existing static IP
+     * address resource from one Availability Group, Google Cloud assigns an
+     * ephemeral IP address from the other Availability Group.
+     * - If you specify two IP addresses that reference existing static IP
+     * address resources, they are required to be from different Availability
+     * Groups.
+     *
+     *
+     *
+     * For global external Passthrough Network Load Balancer, each IP address can be one of the following:
+     *
+     * - A static or ephemeral IPv4 address from a Google-owned IP pool.
+     * - A static IPv4 address from a global public delegated prefix.
+     * - A static or ephemeral IPv6 /96 prefix from a Google-owned IP pool.
+     *
+     *
+     *
+     * For global external Passthrough Network Load Balancer, the two IP addresses
+     * can be of different types. One IP address can be from a BYOIP prefix while
+     * the other is from a Google-owned IP pool. One IP address can be static
+     * while the other is ephemeral. However, both IP addresses must have the same
+     * IP version, IPv4 or IPv6.
+     *
+     * The IP addresses can only be set at creation and cannot be updated.
+     *
+     * When creating a global external Passthrough Network Load Balancer
+     * forwarding rule (a parent forwarding rule), you must use theIPAddresses field, but the Google Cloud-generated child
+     * forwarding rules set the IPAddress field instead. Refer to theavailabilityGroup field for further details.
+     *
+     * Refer to the IPAddress field for the formats that can be used
+     * to specify IP addresses while creating a forwarding rule.
+     *
+     * Because Passthrough Network Load Balancers do not terminate or translate
+     * traffic, the backend stack types must be compatible with the forwarding
+     * rule IP version:
+     *
+     * - If the forwarding rule IP version is IPv4, backends should be
+     * configured as dual-stack or IPv4-only.
+     * - If the forwarding rule IP version is IPv6, backends should be
+     * configured as dual-stack or IPv6-only.
+     * </pre>
+     *
+     * <code>repeated string I_p_addresses = 498656157;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearIPAddresses() {
+      iPAddresses_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000002);
+      ;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * IP addresses for which this forwarding rule accepts traffic. All IP
+     * addresses must have the same IP version, IPv4 or IPv6. When a client sends
+     * traffic that matches one of the specified IP addresses, protocol and ports,
+     * the forwarding rule directs the traffic to the referencedbackendService. All IP addresses are served by the same set of
+     * backends, and they share the target capacities specified in the backend
+     * service fairly.
+     *
+     * Global external Passthrough Network Load Balancer requires two IP addresses
+     * for each forwarding rule to provide high availability when both IP
+     * addresses are used to serve client requests. The two IP addresses must come
+     * from global IP pools that belong to two distinct Availability
+     * Groups, represented by the purposePASSTHROUGH_LOAD_BALANCER_AVAILABILITY_GROUP0 andPASSTHROUGH_LOAD_BALANCER_AVAILABILITY_GROUP1. TheIPAddresses field specifies zero, one, or two IP addresses:
+     *
+     * - If omitted, Google Cloud assigns two ephemeral IP addresses, one from
+     * each Availability Group.
+     * - If you specify one IP address that references an existing static IP
+     * address resource from one Availability Group, Google Cloud assigns an
+     * ephemeral IP address from the other Availability Group.
+     * - If you specify two IP addresses that reference existing static IP
+     * address resources, they are required to be from different Availability
+     * Groups.
+     *
+     *
+     *
+     * For global external Passthrough Network Load Balancer, each IP address can be one of the following:
+     *
+     * - A static or ephemeral IPv4 address from a Google-owned IP pool.
+     * - A static IPv4 address from a global public delegated prefix.
+     * - A static or ephemeral IPv6 /96 prefix from a Google-owned IP pool.
+     *
+     *
+     *
+     * For global external Passthrough Network Load Balancer, the two IP addresses
+     * can be of different types. One IP address can be from a BYOIP prefix while
+     * the other is from a Google-owned IP pool. One IP address can be static
+     * while the other is ephemeral. However, both IP addresses must have the same
+     * IP version, IPv4 or IPv6.
+     *
+     * The IP addresses can only be set at creation and cannot be updated.
+     *
+     * When creating a global external Passthrough Network Load Balancer
+     * forwarding rule (a parent forwarding rule), you must use theIPAddresses field, but the Google Cloud-generated child
+     * forwarding rules set the IPAddress field instead. Refer to theavailabilityGroup field for further details.
+     *
+     * Refer to the IPAddress field for the formats that can be used
+     * to specify IP addresses while creating a forwarding rule.
+     *
+     * Because Passthrough Network Load Balancers do not terminate or translate
+     * traffic, the backend stack types must be compatible with the forwarding
+     * rule IP version:
+     *
+     * - If the forwarding rule IP version is IPv4, backends should be
+     * configured as dual-stack or IPv4-only.
+     * - If the forwarding rule IP version is IPv6, backends should be
+     * configured as dual-stack or IPv6-only.
+     * </pre>
+     *
+     * <code>repeated string I_p_addresses = 498656157;</code>
+     *
+     * @param value The bytes of the iPAddresses to add.
+     * @return This builder for chaining.
+     */
+    public Builder addIPAddressesBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureIPAddressesIsMutable();
+      iPAddresses_.add(value);
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object iPProtocol_ = "";
 
     /**
@@ -6829,7 +8423,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
      * @return Whether the iPProtocol field is set.
      */
     public boolean hasIPProtocol() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
 
     /**
@@ -6919,7 +8513,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       iPProtocol_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -6945,7 +8539,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearIPProtocol() {
       iPProtocol_ = getDefaultInstance().getIPProtocol();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -6976,7 +8570,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       iPProtocol_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -7011,7 +8605,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasAllPorts() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
 
     /**
@@ -7075,7 +8669,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
     public Builder setAllPorts(boolean value) {
 
       allPorts_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -7107,7 +8701,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearAllPorts() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       allPorts_ = false;
       onChanged();
       return this;
@@ -7133,7 +8727,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasAllowGlobalAccess() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
 
     /**
@@ -7177,7 +8771,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
     public Builder setAllowGlobalAccess(boolean value) {
 
       allowGlobalAccess_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -7199,7 +8793,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearAllowGlobalAccess() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       allowGlobalAccess_ = false;
       onChanged();
       return this;
@@ -7221,7 +8815,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasAllowPscGlobalAccess() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
 
     /**
@@ -7257,7 +8851,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
     public Builder setAllowPscGlobalAccess(boolean value) {
 
       allowPscGlobalAccess_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -7275,7 +8869,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearAllowPscGlobalAccess() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       allowPscGlobalAccess_ = false;
       onChanged();
       return this;
@@ -7285,11 +8879,11 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
         attachedExtensions_ = java.util.Collections.emptyList();
 
     private void ensureAttachedExtensionsIsMutable() {
-      if (!((bitField0_ & 0x00000020) != 0)) {
+      if (!((bitField0_ & 0x00000040) != 0)) {
         attachedExtensions_ =
             new java.util.ArrayList<com.google.cloud.compute.v1.ForwardingRuleAttachedExtension>(
                 attachedExtensions_);
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
       }
     }
 
@@ -7545,7 +9139,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
     public Builder clearAttachedExtensions() {
       if (attachedExtensionsBuilder_ == null) {
         attachedExtensions_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000040);
         onChanged();
       } else {
         attachedExtensionsBuilder_.clear();
@@ -7697,12 +9291,288 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
                 com.google.cloud.compute.v1.ForwardingRuleAttachedExtension.Builder,
                 com.google.cloud.compute.v1.ForwardingRuleAttachedExtensionOrBuilder>(
                 attachedExtensions_,
-                ((bitField0_ & 0x00000020) != 0),
+                ((bitField0_ & 0x00000040) != 0),
                 getParentForChildren(),
                 isClean());
         attachedExtensions_ = null;
       }
       return attachedExtensionsBuilder_;
+    }
+
+    private java.lang.Object availabilityGroup_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] Specifies the load balancing availability group, one of the
+     * two that collectively provide high availability.
+     *
+     * Specifies the availability group of the forwarding rule. This
+     * field is for use by global external passthrough load balancers (load
+     * balancing scheme EXTERNAL_PASSTHROUGH) and is set for the
+     * child forwarding rules only. The possible values are:
+     *
+     * - AVAILABILITY_GROUP0: Set for the child forwarding rule
+     * that is programmed on the AVAILABILITY_GROUP0 load balancing
+     * stack. The child forwarding rule has the same IP protocol, port, and
+     * backend service settings as the parent forwarding rule, but has only one of
+     * the two IP addresses of the parent forwarding rule, the one with the
+     * purpose PASSTHROUGH_LOAD_BALANCER_AVAILABILITY_GROUP0.
+     * - AVAILABILITY_GROUP1: Set for the child forwarding rule
+     * that is programmed on the AVAILABILITY_GROUP1 load balancing
+     * stack. The child forwarding rule has the same IP protocol, port and backend
+     * service settings as the parent forwarding rule, but has only one of the two
+     * IP addresses of the parent forwarding rule, the one with the purposePASSTHROUGH_LOAD_BALANCER_AVAILABILITY_GROUP1.
+     *
+     *
+     *
+     * For each global external Passthrough Network Load Balancer forwarding rule
+     * (a parent forwarding rule) that you create, Google Cloud generates two
+     * output-only child forwarding rules, one forAVAILABILITY_GROUP0 and one forAVAILABILITY_GROUP1.
+     * Check the AvailabilityGroup enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string availability_group = 62963355;</code>
+     *
+     * @return Whether the availabilityGroup field is set.
+     */
+    public boolean hasAvailabilityGroup() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] Specifies the load balancing availability group, one of the
+     * two that collectively provide high availability.
+     *
+     * Specifies the availability group of the forwarding rule. This
+     * field is for use by global external passthrough load balancers (load
+     * balancing scheme EXTERNAL_PASSTHROUGH) and is set for the
+     * child forwarding rules only. The possible values are:
+     *
+     * - AVAILABILITY_GROUP0: Set for the child forwarding rule
+     * that is programmed on the AVAILABILITY_GROUP0 load balancing
+     * stack. The child forwarding rule has the same IP protocol, port, and
+     * backend service settings as the parent forwarding rule, but has only one of
+     * the two IP addresses of the parent forwarding rule, the one with the
+     * purpose PASSTHROUGH_LOAD_BALANCER_AVAILABILITY_GROUP0.
+     * - AVAILABILITY_GROUP1: Set for the child forwarding rule
+     * that is programmed on the AVAILABILITY_GROUP1 load balancing
+     * stack. The child forwarding rule has the same IP protocol, port and backend
+     * service settings as the parent forwarding rule, but has only one of the two
+     * IP addresses of the parent forwarding rule, the one with the purposePASSTHROUGH_LOAD_BALANCER_AVAILABILITY_GROUP1.
+     *
+     *
+     *
+     * For each global external Passthrough Network Load Balancer forwarding rule
+     * (a parent forwarding rule) that you create, Google Cloud generates two
+     * output-only child forwarding rules, one forAVAILABILITY_GROUP0 and one forAVAILABILITY_GROUP1.
+     * Check the AvailabilityGroup enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string availability_group = 62963355;</code>
+     *
+     * @return The availabilityGroup.
+     */
+    public java.lang.String getAvailabilityGroup() {
+      java.lang.Object ref = availabilityGroup_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        availabilityGroup_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] Specifies the load balancing availability group, one of the
+     * two that collectively provide high availability.
+     *
+     * Specifies the availability group of the forwarding rule. This
+     * field is for use by global external passthrough load balancers (load
+     * balancing scheme EXTERNAL_PASSTHROUGH) and is set for the
+     * child forwarding rules only. The possible values are:
+     *
+     * - AVAILABILITY_GROUP0: Set for the child forwarding rule
+     * that is programmed on the AVAILABILITY_GROUP0 load balancing
+     * stack. The child forwarding rule has the same IP protocol, port, and
+     * backend service settings as the parent forwarding rule, but has only one of
+     * the two IP addresses of the parent forwarding rule, the one with the
+     * purpose PASSTHROUGH_LOAD_BALANCER_AVAILABILITY_GROUP0.
+     * - AVAILABILITY_GROUP1: Set for the child forwarding rule
+     * that is programmed on the AVAILABILITY_GROUP1 load balancing
+     * stack. The child forwarding rule has the same IP protocol, port and backend
+     * service settings as the parent forwarding rule, but has only one of the two
+     * IP addresses of the parent forwarding rule, the one with the purposePASSTHROUGH_LOAD_BALANCER_AVAILABILITY_GROUP1.
+     *
+     *
+     *
+     * For each global external Passthrough Network Load Balancer forwarding rule
+     * (a parent forwarding rule) that you create, Google Cloud generates two
+     * output-only child forwarding rules, one forAVAILABILITY_GROUP0 and one forAVAILABILITY_GROUP1.
+     * Check the AvailabilityGroup enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string availability_group = 62963355;</code>
+     *
+     * @return The bytes for availabilityGroup.
+     */
+    public com.google.protobuf.ByteString getAvailabilityGroupBytes() {
+      java.lang.Object ref = availabilityGroup_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        availabilityGroup_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] Specifies the load balancing availability group, one of the
+     * two that collectively provide high availability.
+     *
+     * Specifies the availability group of the forwarding rule. This
+     * field is for use by global external passthrough load balancers (load
+     * balancing scheme EXTERNAL_PASSTHROUGH) and is set for the
+     * child forwarding rules only. The possible values are:
+     *
+     * - AVAILABILITY_GROUP0: Set for the child forwarding rule
+     * that is programmed on the AVAILABILITY_GROUP0 load balancing
+     * stack. The child forwarding rule has the same IP protocol, port, and
+     * backend service settings as the parent forwarding rule, but has only one of
+     * the two IP addresses of the parent forwarding rule, the one with the
+     * purpose PASSTHROUGH_LOAD_BALANCER_AVAILABILITY_GROUP0.
+     * - AVAILABILITY_GROUP1: Set for the child forwarding rule
+     * that is programmed on the AVAILABILITY_GROUP1 load balancing
+     * stack. The child forwarding rule has the same IP protocol, port and backend
+     * service settings as the parent forwarding rule, but has only one of the two
+     * IP addresses of the parent forwarding rule, the one with the purposePASSTHROUGH_LOAD_BALANCER_AVAILABILITY_GROUP1.
+     *
+     *
+     *
+     * For each global external Passthrough Network Load Balancer forwarding rule
+     * (a parent forwarding rule) that you create, Google Cloud generates two
+     * output-only child forwarding rules, one forAVAILABILITY_GROUP0 and one forAVAILABILITY_GROUP1.
+     * Check the AvailabilityGroup enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string availability_group = 62963355;</code>
+     *
+     * @param value The availabilityGroup to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAvailabilityGroup(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      availabilityGroup_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] Specifies the load balancing availability group, one of the
+     * two that collectively provide high availability.
+     *
+     * Specifies the availability group of the forwarding rule. This
+     * field is for use by global external passthrough load balancers (load
+     * balancing scheme EXTERNAL_PASSTHROUGH) and is set for the
+     * child forwarding rules only. The possible values are:
+     *
+     * - AVAILABILITY_GROUP0: Set for the child forwarding rule
+     * that is programmed on the AVAILABILITY_GROUP0 load balancing
+     * stack. The child forwarding rule has the same IP protocol, port, and
+     * backend service settings as the parent forwarding rule, but has only one of
+     * the two IP addresses of the parent forwarding rule, the one with the
+     * purpose PASSTHROUGH_LOAD_BALANCER_AVAILABILITY_GROUP0.
+     * - AVAILABILITY_GROUP1: Set for the child forwarding rule
+     * that is programmed on the AVAILABILITY_GROUP1 load balancing
+     * stack. The child forwarding rule has the same IP protocol, port and backend
+     * service settings as the parent forwarding rule, but has only one of the two
+     * IP addresses of the parent forwarding rule, the one with the purposePASSTHROUGH_LOAD_BALANCER_AVAILABILITY_GROUP1.
+     *
+     *
+     *
+     * For each global external Passthrough Network Load Balancer forwarding rule
+     * (a parent forwarding rule) that you create, Google Cloud generates two
+     * output-only child forwarding rules, one forAVAILABILITY_GROUP0 and one forAVAILABILITY_GROUP1.
+     * Check the AvailabilityGroup enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string availability_group = 62963355;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAvailabilityGroup() {
+      availabilityGroup_ = getDefaultInstance().getAvailabilityGroup();
+      bitField0_ = (bitField0_ & ~0x00000080);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] Specifies the load balancing availability group, one of the
+     * two that collectively provide high availability.
+     *
+     * Specifies the availability group of the forwarding rule. This
+     * field is for use by global external passthrough load balancers (load
+     * balancing scheme EXTERNAL_PASSTHROUGH) and is set for the
+     * child forwarding rules only. The possible values are:
+     *
+     * - AVAILABILITY_GROUP0: Set for the child forwarding rule
+     * that is programmed on the AVAILABILITY_GROUP0 load balancing
+     * stack. The child forwarding rule has the same IP protocol, port, and
+     * backend service settings as the parent forwarding rule, but has only one of
+     * the two IP addresses of the parent forwarding rule, the one with the
+     * purpose PASSTHROUGH_LOAD_BALANCER_AVAILABILITY_GROUP0.
+     * - AVAILABILITY_GROUP1: Set for the child forwarding rule
+     * that is programmed on the AVAILABILITY_GROUP1 load balancing
+     * stack. The child forwarding rule has the same IP protocol, port and backend
+     * service settings as the parent forwarding rule, but has only one of the two
+     * IP addresses of the parent forwarding rule, the one with the purposePASSTHROUGH_LOAD_BALANCER_AVAILABILITY_GROUP1.
+     *
+     *
+     *
+     * For each global external Passthrough Network Load Balancer forwarding rule
+     * (a parent forwarding rule) that you create, Google Cloud generates two
+     * output-only child forwarding rules, one forAVAILABILITY_GROUP0 and one forAVAILABILITY_GROUP1.
+     * Check the AvailabilityGroup enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string availability_group = 62963355;</code>
+     *
+     * @param value The bytes for availabilityGroup to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAvailabilityGroupBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      availabilityGroup_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
     }
 
     private java.lang.Object backendService_ = "";
@@ -7731,7 +9601,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
      * @return Whether the backendService field is set.
      */
     public boolean hasBackendService() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
 
     /**
@@ -7833,7 +9703,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       backendService_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -7863,7 +9733,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearBackendService() {
       backendService_ = getDefaultInstance().getBackendService();
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -7898,7 +9768,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       backendService_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -7922,7 +9792,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
      * @return Whether the baseForwardingRule field is set.
      */
     public boolean hasBaseForwardingRule() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
 
     /**
@@ -8003,7 +9873,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       baseForwardingRule_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -8026,7 +9896,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearBaseForwardingRule() {
       baseForwardingRule_ = getDefaultInstance().getBaseForwardingRule();
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000200);
       onChanged();
       return this;
     }
@@ -8054,7 +9924,253 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       baseForwardingRule_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringArrayList childForwardingRules_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureChildForwardingRulesIsMutable() {
+      if (!childForwardingRules_.isModifiable()) {
+        childForwardingRules_ = new com.google.protobuf.LazyStringArrayList(childForwardingRules_);
+      }
+      bitField0_ |= 0x00000400;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] The resource URLs for the child forwarding rules.
+     *
+     * Applicable only to the parent forwarding rule of global
+     * external passthrough load balancers. This field contains the list of child
+     * forwarding rule URLs associated with the parent forwarding rule: one for
+     * each availability group. AVAILABILITY_GROUP0 will be the first element, and
+     * AVAILABILITY_GROUP1 will be the second element. Refer to theavailabilityGroup field for further details. It cannot be set
+     * by any other forwarding rules.
+     * </pre>
+     *
+     * <code>repeated string child_forwarding_rules = 334878200;</code>
+     *
+     * @return A list containing the childForwardingRules.
+     */
+    public com.google.protobuf.ProtocolStringList getChildForwardingRulesList() {
+      childForwardingRules_.makeImmutable();
+      return childForwardingRules_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] The resource URLs for the child forwarding rules.
+     *
+     * Applicable only to the parent forwarding rule of global
+     * external passthrough load balancers. This field contains the list of child
+     * forwarding rule URLs associated with the parent forwarding rule: one for
+     * each availability group. AVAILABILITY_GROUP0 will be the first element, and
+     * AVAILABILITY_GROUP1 will be the second element. Refer to theavailabilityGroup field for further details. It cannot be set
+     * by any other forwarding rules.
+     * </pre>
+     *
+     * <code>repeated string child_forwarding_rules = 334878200;</code>
+     *
+     * @return The count of childForwardingRules.
+     */
+    public int getChildForwardingRulesCount() {
+      return childForwardingRules_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] The resource URLs for the child forwarding rules.
+     *
+     * Applicable only to the parent forwarding rule of global
+     * external passthrough load balancers. This field contains the list of child
+     * forwarding rule URLs associated with the parent forwarding rule: one for
+     * each availability group. AVAILABILITY_GROUP0 will be the first element, and
+     * AVAILABILITY_GROUP1 will be the second element. Refer to theavailabilityGroup field for further details. It cannot be set
+     * by any other forwarding rules.
+     * </pre>
+     *
+     * <code>repeated string child_forwarding_rules = 334878200;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The childForwardingRules at the given index.
+     */
+    public java.lang.String getChildForwardingRules(int index) {
+      return childForwardingRules_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] The resource URLs for the child forwarding rules.
+     *
+     * Applicable only to the parent forwarding rule of global
+     * external passthrough load balancers. This field contains the list of child
+     * forwarding rule URLs associated with the parent forwarding rule: one for
+     * each availability group. AVAILABILITY_GROUP0 will be the first element, and
+     * AVAILABILITY_GROUP1 will be the second element. Refer to theavailabilityGroup field for further details. It cannot be set
+     * by any other forwarding rules.
+     * </pre>
+     *
+     * <code>repeated string child_forwarding_rules = 334878200;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the childForwardingRules at the given index.
+     */
+    public com.google.protobuf.ByteString getChildForwardingRulesBytes(int index) {
+      return childForwardingRules_.getByteString(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] The resource URLs for the child forwarding rules.
+     *
+     * Applicable only to the parent forwarding rule of global
+     * external passthrough load balancers. This field contains the list of child
+     * forwarding rule URLs associated with the parent forwarding rule: one for
+     * each availability group. AVAILABILITY_GROUP0 will be the first element, and
+     * AVAILABILITY_GROUP1 will be the second element. Refer to theavailabilityGroup field for further details. It cannot be set
+     * by any other forwarding rules.
+     * </pre>
+     *
+     * <code>repeated string child_forwarding_rules = 334878200;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The childForwardingRules to set.
+     * @return This builder for chaining.
+     */
+    public Builder setChildForwardingRules(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureChildForwardingRulesIsMutable();
+      childForwardingRules_.set(index, value);
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] The resource URLs for the child forwarding rules.
+     *
+     * Applicable only to the parent forwarding rule of global
+     * external passthrough load balancers. This field contains the list of child
+     * forwarding rule URLs associated with the parent forwarding rule: one for
+     * each availability group. AVAILABILITY_GROUP0 will be the first element, and
+     * AVAILABILITY_GROUP1 will be the second element. Refer to theavailabilityGroup field for further details. It cannot be set
+     * by any other forwarding rules.
+     * </pre>
+     *
+     * <code>repeated string child_forwarding_rules = 334878200;</code>
+     *
+     * @param value The childForwardingRules to add.
+     * @return This builder for chaining.
+     */
+    public Builder addChildForwardingRules(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureChildForwardingRulesIsMutable();
+      childForwardingRules_.add(value);
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] The resource URLs for the child forwarding rules.
+     *
+     * Applicable only to the parent forwarding rule of global
+     * external passthrough load balancers. This field contains the list of child
+     * forwarding rule URLs associated with the parent forwarding rule: one for
+     * each availability group. AVAILABILITY_GROUP0 will be the first element, and
+     * AVAILABILITY_GROUP1 will be the second element. Refer to theavailabilityGroup field for further details. It cannot be set
+     * by any other forwarding rules.
+     * </pre>
+     *
+     * <code>repeated string child_forwarding_rules = 334878200;</code>
+     *
+     * @param values The childForwardingRules to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllChildForwardingRules(java.lang.Iterable<java.lang.String> values) {
+      ensureChildForwardingRulesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, childForwardingRules_);
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] The resource URLs for the child forwarding rules.
+     *
+     * Applicable only to the parent forwarding rule of global
+     * external passthrough load balancers. This field contains the list of child
+     * forwarding rule URLs associated with the parent forwarding rule: one for
+     * each availability group. AVAILABILITY_GROUP0 will be the first element, and
+     * AVAILABILITY_GROUP1 will be the second element. Refer to theavailabilityGroup field for further details. It cannot be set
+     * by any other forwarding rules.
+     * </pre>
+     *
+     * <code>repeated string child_forwarding_rules = 334878200;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearChildForwardingRules() {
+      childForwardingRules_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000400);
+      ;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] The resource URLs for the child forwarding rules.
+     *
+     * Applicable only to the parent forwarding rule of global
+     * external passthrough load balancers. This field contains the list of child
+     * forwarding rule URLs associated with the parent forwarding rule: one for
+     * each availability group. AVAILABILITY_GROUP0 will be the first element, and
+     * AVAILABILITY_GROUP1 will be the second element. Refer to theavailabilityGroup field for further details. It cannot be set
+     * by any other forwarding rules.
+     * </pre>
+     *
+     * <code>repeated string child_forwarding_rules = 334878200;</code>
+     *
+     * @param value The bytes of the childForwardingRules to add.
+     * @return This builder for chaining.
+     */
+    public Builder addChildForwardingRulesBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureChildForwardingRulesIsMutable();
+      childForwardingRules_.add(value);
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -8074,7 +10190,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
      * @return Whether the creationTimestamp field is set.
      */
     public boolean hasCreationTimestamp() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000800) != 0);
     }
 
     /**
@@ -8143,7 +10259,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       creationTimestamp_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -8162,7 +10278,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearCreationTimestamp() {
       creationTimestamp_ = getDefaultInstance().getCreationTimestamp();
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000800);
       onChanged();
       return this;
     }
@@ -8186,7 +10302,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       creationTimestamp_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -8206,7 +10322,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
      * @return Whether the description field is set.
      */
     public boolean hasDescription() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00001000) != 0);
     }
 
     /**
@@ -8275,7 +10391,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       description_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -8294,7 +10410,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearDescription() {
       description_ = getDefaultInstance().getDescription();
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00001000);
       onChanged();
       return this;
     }
@@ -8318,7 +10434,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       description_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -8353,7 +10469,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
      * @return Whether the externalManagedBackendBucketMigrationState field is set.
      */
     public boolean hasExternalManagedBackendBucketMigrationState() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00002000) != 0);
     }
 
     /**
@@ -8467,7 +10583,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       externalManagedBackendBucketMigrationState_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -8502,7 +10618,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
     public Builder clearExternalManagedBackendBucketMigrationState() {
       externalManagedBackendBucketMigrationState_ =
           getDefaultInstance().getExternalManagedBackendBucketMigrationState();
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00002000);
       onChanged();
       return this;
     }
@@ -8542,7 +10658,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       externalManagedBackendBucketMigrationState_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -8571,7 +10687,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasExternalManagedBackendBucketMigrationTestingPercentage() {
-      return ((bitField0_ & 0x00000800) != 0);
+      return ((bitField0_ & 0x00004000) != 0);
     }
 
     /**
@@ -8623,7 +10739,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
     public Builder setExternalManagedBackendBucketMigrationTestingPercentage(float value) {
 
       externalManagedBackendBucketMigrationTestingPercentage_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -8649,7 +10765,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearExternalManagedBackendBucketMigrationTestingPercentage() {
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00004000);
       externalManagedBackendBucketMigrationTestingPercentage_ = 0F;
       onChanged();
       return this;
@@ -8676,7 +10792,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
      * @return Whether the fingerprint field is set.
      */
     public boolean hasFingerprint() {
-      return ((bitField0_ & 0x00001000) != 0);
+      return ((bitField0_ & 0x00008000) != 0);
     }
 
     /**
@@ -8763,7 +10879,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       fingerprint_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -8788,7 +10904,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearFingerprint() {
       fingerprint_ = getDefaultInstance().getFingerprint();
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       onChanged();
       return this;
     }
@@ -8818,7 +10934,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       fingerprint_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -8839,7 +10955,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasId() {
-      return ((bitField0_ & 0x00002000) != 0);
+      return ((bitField0_ & 0x00010000) != 0);
     }
 
     /**
@@ -8875,7 +10991,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
     public Builder setId(long value) {
 
       id_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -8893,7 +11009,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearId() {
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       id_ = 0L;
       onChanged();
       return this;
@@ -8922,7 +11038,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
      * @return Whether the ipCollection field is set.
      */
     public boolean hasIpCollection() {
-      return ((bitField0_ & 0x00004000) != 0);
+      return ((bitField0_ & 0x00020000) != 0);
     }
 
     /**
@@ -9015,7 +11131,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       ipCollection_ = value;
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -9042,7 +11158,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearIpCollection() {
       ipCollection_ = getDefaultInstance().getIpCollection();
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       onChanged();
       return this;
     }
@@ -9074,7 +11190,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       ipCollection_ = value;
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -9095,7 +11211,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
      * @return Whether the ipVersion field is set.
      */
     public boolean hasIpVersion() {
-      return ((bitField0_ & 0x00008000) != 0);
+      return ((bitField0_ & 0x00040000) != 0);
     }
 
     /**
@@ -9167,7 +11283,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       ipVersion_ = value;
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -9187,7 +11303,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearIpVersion() {
       ipVersion_ = getDefaultInstance().getIpVersion();
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00040000);
       onChanged();
       return this;
     }
@@ -9212,7 +11328,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       ipVersion_ = value;
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -9235,7 +11351,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasIsMirroringCollector() {
-      return ((bitField0_ & 0x00010000) != 0);
+      return ((bitField0_ & 0x00080000) != 0);
     }
 
     /**
@@ -9275,7 +11391,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
     public Builder setIsMirroringCollector(boolean value) {
 
       isMirroringCollector_ = value;
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -9295,7 +11411,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearIsMirroringCollector() {
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00080000);
       isMirroringCollector_ = false;
       onChanged();
       return this;
@@ -9315,7 +11431,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
      * @return Whether the kind field is set.
      */
     public boolean hasKind() {
-      return ((bitField0_ & 0x00020000) != 0);
+      return ((bitField0_ & 0x00100000) != 0);
     }
 
     /**
@@ -9381,7 +11497,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       kind_ = value;
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -9399,7 +11515,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearKind() {
       kind_ = getDefaultInstance().getKind();
-      bitField0_ = (bitField0_ & ~0x00020000);
+      bitField0_ = (bitField0_ & ~0x00100000);
       onChanged();
       return this;
     }
@@ -9422,7 +11538,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       kind_ = value;
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -9449,7 +11565,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
      * @return Whether the labelFingerprint field is set.
      */
     public boolean hasLabelFingerprint() {
-      return ((bitField0_ & 0x00040000) != 0);
+      return ((bitField0_ & 0x00200000) != 0);
     }
 
     /**
@@ -9539,7 +11655,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       labelFingerprint_ = value;
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -9565,7 +11681,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearLabelFingerprint() {
       labelFingerprint_ = getDefaultInstance().getLabelFingerprint();
-      bitField0_ = (bitField0_ & ~0x00040000);
+      bitField0_ = (bitField0_ & ~0x00200000);
       onChanged();
       return this;
     }
@@ -9596,7 +11712,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       labelFingerprint_ = value;
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -9618,7 +11734,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00400000;
       onChanged();
       return labels_;
     }
@@ -9712,7 +11828,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
     }
 
     public Builder clearLabels() {
-      bitField0_ = (bitField0_ & ~0x00080000);
+      bitField0_ = (bitField0_ & ~0x00400000);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -9738,7 +11854,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00400000;
       return internalGetMutableLabels().getMutableMap();
     }
 
@@ -9760,7 +11876,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException("map value");
       }
       internalGetMutableLabels().getMutableMap().put(key, value);
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00400000;
       return this;
     }
 
@@ -9776,7 +11892,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00400000;
       return this;
     }
 
@@ -9798,7 +11914,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
      * @return Whether the loadBalancingScheme field is set.
      */
     public boolean hasLoadBalancingScheme() {
-      return ((bitField0_ & 0x00100000) != 0);
+      return ((bitField0_ & 0x00800000) != 0);
     }
 
     /**
@@ -9876,7 +11992,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       loadBalancingScheme_ = value;
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -9898,7 +12014,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearLoadBalancingScheme() {
       loadBalancingScheme_ = getDefaultInstance().getLoadBalancingScheme();
-      bitField0_ = (bitField0_ & ~0x00100000);
+      bitField0_ = (bitField0_ & ~0x00800000);
       onChanged();
       return this;
     }
@@ -9925,7 +12041,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       loadBalancingScheme_ = value;
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -9934,10 +12050,10 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
         java.util.Collections.emptyList();
 
     private void ensureMetadataFiltersIsMutable() {
-      if (!((bitField0_ & 0x00200000) != 0)) {
+      if (!((bitField0_ & 0x01000000) != 0)) {
         metadataFilters_ =
             new java.util.ArrayList<com.google.cloud.compute.v1.MetadataFilter>(metadataFilters_);
-        bitField0_ |= 0x00200000;
+        bitField0_ |= 0x01000000;
       }
     }
 
@@ -10372,7 +12488,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
     public Builder clearMetadataFilters() {
       if (metadataFiltersBuilder_ == null) {
         metadataFilters_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00200000);
+        bitField0_ = (bitField0_ & ~0x01000000);
         onChanged();
       } else {
         metadataFiltersBuilder_.clear();
@@ -10636,7 +12752,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
                 com.google.cloud.compute.v1.MetadataFilter.Builder,
                 com.google.cloud.compute.v1.MetadataFilterOrBuilder>(
                 metadataFilters_,
-                ((bitField0_ & 0x00200000) != 0),
+                ((bitField0_ & 0x01000000) != 0),
                 getParentForChildren(),
                 isClean());
         metadataFilters_ = null;
@@ -10675,7 +12791,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
      * @return Whether the name field is set.
      */
     public boolean hasName() {
-      return ((bitField0_ & 0x00400000) != 0);
+      return ((bitField0_ & 0x02000000) != 0);
     }
 
     /**
@@ -10792,7 +12908,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       name_ = value;
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x02000000;
       onChanged();
       return this;
     }
@@ -10827,7 +12943,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearName() {
       name_ = getDefaultInstance().getName();
-      bitField0_ = (bitField0_ & ~0x00400000);
+      bitField0_ = (bitField0_ & ~0x02000000);
       onChanged();
       return this;
     }
@@ -10867,7 +12983,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       name_ = value;
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x02000000;
       onChanged();
       return this;
     }
@@ -10896,7 +13012,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
      * @return Whether the network field is set.
      */
     public boolean hasNetwork() {
-      return ((bitField0_ & 0x00800000) != 0);
+      return ((bitField0_ & 0x04000000) != 0);
     }
 
     /**
@@ -10992,7 +13108,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       network_ = value;
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x04000000;
       onChanged();
       return this;
     }
@@ -11020,7 +13136,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearNetwork() {
       network_ = getDefaultInstance().getNetwork();
-      bitField0_ = (bitField0_ & ~0x00800000);
+      bitField0_ = (bitField0_ & ~0x04000000);
       onChanged();
       return this;
     }
@@ -11053,7 +13169,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       network_ = value;
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x04000000;
       onChanged();
       return this;
     }
@@ -11080,7 +13196,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
      * @return Whether the networkTier field is set.
      */
     public boolean hasNetworkTier() {
-      return ((bitField0_ & 0x01000000) != 0);
+      return ((bitField0_ & 0x08000000) != 0);
     }
 
     /**
@@ -11170,7 +13286,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       networkTier_ = value;
-      bitField0_ |= 0x01000000;
+      bitField0_ |= 0x08000000;
       onChanged();
       return this;
     }
@@ -11196,7 +13312,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearNetworkTier() {
       networkTier_ = getDefaultInstance().getNetworkTier();
-      bitField0_ = (bitField0_ & ~0x01000000);
+      bitField0_ = (bitField0_ & ~0x08000000);
       onChanged();
       return this;
     }
@@ -11227,7 +13343,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       networkTier_ = value;
-      bitField0_ |= 0x01000000;
+      bitField0_ |= 0x08000000;
       onChanged();
       return this;
     }
@@ -11249,7 +13365,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasNoAutomateDnsZone() {
-      return ((bitField0_ & 0x02000000) != 0);
+      return ((bitField0_ & 0x10000000) != 0);
     }
 
     /**
@@ -11287,7 +13403,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
     public Builder setNoAutomateDnsZone(boolean value) {
 
       noAutomateDnsZone_ = value;
-      bitField0_ |= 0x02000000;
+      bitField0_ |= 0x10000000;
       onChanged();
       return this;
     }
@@ -11306,8 +13422,158 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearNoAutomateDnsZone() {
-      bitField0_ = (bitField0_ & ~0x02000000);
+      bitField0_ = (bitField0_ & ~0x10000000);
       noAutomateDnsZone_ = false;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object parentForwardingRule_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] The resource URL for the parent forwarding rule.
+     *
+     * Applicable only to the child forwarding rules of global external
+     * passthrough load balancers. This field contains the URL of the parent
+     * forwarding rule.
+     * </pre>
+     *
+     * <code>optional string parent_forwarding_rule = 329325929;</code>
+     *
+     * @return Whether the parentForwardingRule field is set.
+     */
+    public boolean hasParentForwardingRule() {
+      return ((bitField0_ & 0x20000000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] The resource URL for the parent forwarding rule.
+     *
+     * Applicable only to the child forwarding rules of global external
+     * passthrough load balancers. This field contains the URL of the parent
+     * forwarding rule.
+     * </pre>
+     *
+     * <code>optional string parent_forwarding_rule = 329325929;</code>
+     *
+     * @return The parentForwardingRule.
+     */
+    public java.lang.String getParentForwardingRule() {
+      java.lang.Object ref = parentForwardingRule_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        parentForwardingRule_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] The resource URL for the parent forwarding rule.
+     *
+     * Applicable only to the child forwarding rules of global external
+     * passthrough load balancers. This field contains the URL of the parent
+     * forwarding rule.
+     * </pre>
+     *
+     * <code>optional string parent_forwarding_rule = 329325929;</code>
+     *
+     * @return The bytes for parentForwardingRule.
+     */
+    public com.google.protobuf.ByteString getParentForwardingRuleBytes() {
+      java.lang.Object ref = parentForwardingRule_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        parentForwardingRule_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] The resource URL for the parent forwarding rule.
+     *
+     * Applicable only to the child forwarding rules of global external
+     * passthrough load balancers. This field contains the URL of the parent
+     * forwarding rule.
+     * </pre>
+     *
+     * <code>optional string parent_forwarding_rule = 329325929;</code>
+     *
+     * @param value The parentForwardingRule to set.
+     * @return This builder for chaining.
+     */
+    public Builder setParentForwardingRule(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      parentForwardingRule_ = value;
+      bitField0_ |= 0x20000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] The resource URL for the parent forwarding rule.
+     *
+     * Applicable only to the child forwarding rules of global external
+     * passthrough load balancers. This field contains the URL of the parent
+     * forwarding rule.
+     * </pre>
+     *
+     * <code>optional string parent_forwarding_rule = 329325929;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearParentForwardingRule() {
+      parentForwardingRule_ = getDefaultInstance().getParentForwardingRule();
+      bitField0_ = (bitField0_ & ~0x20000000);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] The resource URL for the parent forwarding rule.
+     *
+     * Applicable only to the child forwarding rules of global external
+     * passthrough load balancers. This field contains the URL of the parent
+     * forwarding rule.
+     * </pre>
+     *
+     * <code>optional string parent_forwarding_rule = 329325929;</code>
+     *
+     * @param value The bytes for parentForwardingRule to set.
+     * @return This builder for chaining.
+     */
+    public Builder setParentForwardingRuleBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      parentForwardingRule_ = value;
+      bitField0_ |= 0x20000000;
       onChanged();
       return this;
     }
@@ -11352,7 +13618,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
      * @return Whether the portRange field is set.
      */
     public boolean hasPortRange() {
-      return ((bitField0_ & 0x04000000) != 0);
+      return ((bitField0_ & 0x40000000) != 0);
     }
 
     /**
@@ -11496,7 +13762,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       portRange_ = value;
-      bitField0_ |= 0x04000000;
+      bitField0_ |= 0x40000000;
       onChanged();
       return this;
     }
@@ -11540,7 +13806,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearPortRange() {
       portRange_ = getDefaultInstance().getPortRange();
-      bitField0_ = (bitField0_ & ~0x04000000);
+      bitField0_ = (bitField0_ & ~0x40000000);
       onChanged();
       return this;
     }
@@ -11589,7 +13855,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       portRange_ = value;
-      bitField0_ |= 0x04000000;
+      bitField0_ |= 0x40000000;
       onChanged();
       return this;
     }
@@ -11601,7 +13867,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
       if (!ports_.isModifiable()) {
         ports_ = new com.google.protobuf.LazyStringArrayList(ports_);
       }
-      bitField0_ |= 0x08000000;
+      bitField0_ |= 0x80000000;
     }
 
     /**
@@ -11811,7 +14077,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
       }
       ensurePortsIsMutable();
       ports_.set(index, value);
-      bitField0_ |= 0x08000000;
+      bitField0_ |= 0x80000000;
       onChanged();
       return this;
     }
@@ -11859,7 +14125,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
       }
       ensurePortsIsMutable();
       ports_.add(value);
-      bitField0_ |= 0x08000000;
+      bitField0_ |= 0x80000000;
       onChanged();
       return this;
     }
@@ -11904,7 +14170,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
     public Builder addAllPorts(java.lang.Iterable<java.lang.String> values) {
       ensurePortsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, ports_);
-      bitField0_ |= 0x08000000;
+      bitField0_ |= 0x80000000;
       onChanged();
       return this;
     }
@@ -11947,7 +14213,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearPorts() {
       ports_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x08000000);
+      bitField0_ = (bitField0_ & ~0x80000000);
       ;
       onChanged();
       return this;
@@ -11997,7 +14263,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
       checkByteStringIsUtf8(value);
       ensurePortsIsMutable();
       ports_.add(value);
-      bitField0_ |= 0x08000000;
+      bitField0_ |= 0x80000000;
       onChanged();
       return this;
     }
@@ -12017,7 +14283,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasPscConnectionId() {
-      return ((bitField0_ & 0x10000000) != 0);
+      return ((bitField1_ & 0x00000001) != 0);
     }
 
     /**
@@ -12051,7 +14317,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
     public Builder setPscConnectionId(long value) {
 
       pscConnectionId_ = value;
-      bitField0_ |= 0x10000000;
+      bitField1_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -12068,7 +14334,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearPscConnectionId() {
-      bitField0_ = (bitField0_ & ~0x10000000);
+      bitField1_ = (bitField1_ & ~0x00000001);
       pscConnectionId_ = 0L;
       onChanged();
       return this;
@@ -12089,7 +14355,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
      * @return Whether the pscConnectionStatus field is set.
      */
     public boolean hasPscConnectionStatus() {
-      return ((bitField0_ & 0x20000000) != 0);
+      return ((bitField1_ & 0x00000002) != 0);
     }
 
     /**
@@ -12158,7 +14424,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       pscConnectionStatus_ = value;
-      bitField0_ |= 0x20000000;
+      bitField1_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -12177,7 +14443,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearPscConnectionStatus() {
       pscConnectionStatus_ = getDefaultInstance().getPscConnectionStatus();
-      bitField0_ = (bitField0_ & ~0x20000000);
+      bitField1_ = (bitField1_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -12201,7 +14467,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       pscConnectionStatus_ = value;
-      bitField0_ |= 0x20000000;
+      bitField1_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -12223,7 +14489,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
      * @return Whether the region field is set.
      */
     public boolean hasRegion() {
-      return ((bitField0_ & 0x40000000) != 0);
+      return ((bitField1_ & 0x00000004) != 0);
     }
 
     /**
@@ -12298,7 +14564,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       region_ = value;
-      bitField0_ |= 0x40000000;
+      bitField1_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -12319,7 +14585,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearRegion() {
       region_ = getDefaultInstance().getRegion();
-      bitField0_ = (bitField0_ & ~0x40000000);
+      bitField1_ = (bitField1_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -12345,7 +14611,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       region_ = value;
-      bitField0_ |= 0x40000000;
+      bitField1_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -12364,7 +14630,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
      * @return Whether the selfLink field is set.
      */
     public boolean hasSelfLink() {
-      return ((bitField0_ & 0x80000000) != 0);
+      return ((bitField1_ & 0x00000008) != 0);
     }
 
     /**
@@ -12430,7 +14696,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       selfLink_ = value;
-      bitField0_ |= 0x80000000;
+      bitField1_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -12448,7 +14714,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearSelfLink() {
       selfLink_ = getDefaultInstance().getSelfLink();
-      bitField0_ = (bitField0_ & ~0x80000000);
+      bitField1_ = (bitField1_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -12471,7 +14737,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       selfLink_ = value;
-      bitField0_ |= 0x80000000;
+      bitField1_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -12490,7 +14756,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
      * @return Whether the selfLinkWithId field is set.
      */
     public boolean hasSelfLinkWithId() {
-      return ((bitField1_ & 0x00000001) != 0);
+      return ((bitField1_ & 0x00000010) != 0);
     }
 
     /**
@@ -12556,7 +14822,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       selfLinkWithId_ = value;
-      bitField1_ |= 0x00000001;
+      bitField1_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -12574,7 +14840,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearSelfLinkWithId() {
       selfLinkWithId_ = getDefaultInstance().getSelfLinkWithId();
-      bitField1_ = (bitField1_ & ~0x00000001);
+      bitField1_ = (bitField1_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -12597,7 +14863,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       selfLinkWithId_ = value;
-      bitField1_ |= 0x00000001;
+      bitField1_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -12606,12 +14872,12 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
         serviceDirectoryRegistrations_ = java.util.Collections.emptyList();
 
     private void ensureServiceDirectoryRegistrationsIsMutable() {
-      if (!((bitField1_ & 0x00000002) != 0)) {
+      if (!((bitField1_ & 0x00000020) != 0)) {
         serviceDirectoryRegistrations_ =
             new java.util.ArrayList<
                 com.google.cloud.compute.v1.ForwardingRuleServiceDirectoryRegistration>(
                 serviceDirectoryRegistrations_);
-        bitField1_ |= 0x00000002;
+        bitField1_ |= 0x00000020;
       }
     }
 
@@ -12883,7 +15149,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
     public Builder clearServiceDirectoryRegistrations() {
       if (serviceDirectoryRegistrationsBuilder_ == null) {
         serviceDirectoryRegistrations_ = java.util.Collections.emptyList();
-        bitField1_ = (bitField1_ & ~0x00000002);
+        bitField1_ = (bitField1_ & ~0x00000020);
         onChanged();
       } else {
         serviceDirectoryRegistrationsBuilder_.clear();
@@ -13046,7 +15312,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
                 com.google.cloud.compute.v1.ForwardingRuleServiceDirectoryRegistration.Builder,
                 com.google.cloud.compute.v1.ForwardingRuleServiceDirectoryRegistrationOrBuilder>(
                 serviceDirectoryRegistrations_,
-                ((bitField1_ & 0x00000002) != 0),
+                ((bitField1_ & 0x00000020) != 0),
                 getParentForChildren(),
                 isClean());
         serviceDirectoryRegistrations_ = null;
@@ -13079,7 +15345,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
      * @return Whether the serviceLabel field is set.
      */
     public boolean hasServiceLabel() {
-      return ((bitField1_ & 0x00000004) != 0);
+      return ((bitField1_ & 0x00000040) != 0);
     }
 
     /**
@@ -13178,7 +15444,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       serviceLabel_ = value;
-      bitField1_ |= 0x00000004;
+      bitField1_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -13207,7 +15473,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearServiceLabel() {
       serviceLabel_ = getDefaultInstance().getServiceLabel();
-      bitField1_ = (bitField1_ & ~0x00000004);
+      bitField1_ = (bitField1_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -13241,7 +15507,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       serviceLabel_ = value;
-      bitField1_ |= 0x00000004;
+      bitField1_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -13263,7 +15529,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
      * @return Whether the serviceName field is set.
      */
     public boolean hasServiceName() {
-      return ((bitField1_ & 0x00000008) != 0);
+      return ((bitField1_ & 0x00000080) != 0);
     }
 
     /**
@@ -13338,7 +15604,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       serviceName_ = value;
-      bitField1_ |= 0x00000008;
+      bitField1_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -13359,7 +15625,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearServiceName() {
       serviceName_ = getDefaultInstance().getServiceName();
-      bitField1_ = (bitField1_ & ~0x00000008);
+      bitField1_ = (bitField1_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -13385,7 +15651,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       serviceName_ = value;
-      bitField1_ |= 0x00000008;
+      bitField1_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -13397,7 +15663,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
       if (!sourceIpRanges_.isModifiable()) {
         sourceIpRanges_ = new com.google.protobuf.LazyStringArrayList(sourceIpRanges_);
       }
-      bitField1_ |= 0x00000010;
+      bitField1_ |= 0x00000100;
     }
 
     /**
@@ -13507,7 +15773,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
       }
       ensureSourceIpRangesIsMutable();
       sourceIpRanges_.set(index, value);
-      bitField1_ |= 0x00000010;
+      bitField1_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -13535,7 +15801,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
       }
       ensureSourceIpRangesIsMutable();
       sourceIpRanges_.add(value);
-      bitField1_ |= 0x00000010;
+      bitField1_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -13560,7 +15826,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
     public Builder addAllSourceIpRanges(java.lang.Iterable<java.lang.String> values) {
       ensureSourceIpRangesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, sourceIpRanges_);
-      bitField1_ |= 0x00000010;
+      bitField1_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -13583,7 +15849,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearSourceIpRanges() {
       sourceIpRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField1_ = (bitField1_ & ~0x00000010);
+      bitField1_ = (bitField1_ & ~0x00000100);
       ;
       onChanged();
       return this;
@@ -13613,7 +15879,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
       checkByteStringIsUtf8(value);
       ensureSourceIpRangesIsMutable();
       sourceIpRanges_.add(value);
-      bitField1_ |= 0x00000010;
+      bitField1_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -13638,7 +15904,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
      * @return Whether the subnetwork field is set.
      */
     public boolean hasSubnetwork() {
-      return ((bitField1_ & 0x00000020) != 0);
+      return ((bitField1_ & 0x00000200) != 0);
     }
 
     /**
@@ -13722,7 +15988,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       subnetwork_ = value;
-      bitField1_ |= 0x00000020;
+      bitField1_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -13746,7 +16012,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearSubnetwork() {
       subnetwork_ = getDefaultInstance().getSubnetwork();
-      bitField1_ = (bitField1_ & ~0x00000020);
+      bitField1_ = (bitField1_ & ~0x00000200);
       onChanged();
       return this;
     }
@@ -13775,7 +16041,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       subnetwork_ = value;
-      bitField1_ |= 0x00000020;
+      bitField1_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -13819,7 +16085,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
      * @return Whether the target field is set.
      */
     public boolean hasTarget() {
-      return ((bitField1_ & 0x00000040) != 0);
+      return ((bitField1_ & 0x00000400) != 0);
     }
 
     /**
@@ -13960,7 +16226,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       target_ = value;
-      bitField1_ |= 0x00000040;
+      bitField1_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -14003,7 +16269,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearTarget() {
       target_ = getDefaultInstance().getTarget();
-      bitField1_ = (bitField1_ & ~0x00000040);
+      bitField1_ = (bitField1_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -14051,7 +16317,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       target_ = value;
-      bitField1_ |= 0x00000040;
+      bitField1_ |= 0x00000400;
       onChanged();
       return this;
     }

@@ -72,5 +72,52 @@ public interface OrchestratorOrBuilder
    */
   com.google.cloud.hypercomputecluster.v1beta.SlurmOrchestratorOrBuilder getSlurmOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If set, indicates that the cluster should use Compute Engine as
+   * the orchestrator.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.hypercomputecluster.v1beta.ComputeEngineOrchestrator compute_engine = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the computeEngine field is set.
+   */
+  boolean hasComputeEngine();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If set, indicates that the cluster should use Compute Engine as
+   * the orchestrator.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.hypercomputecluster.v1beta.ComputeEngineOrchestrator compute_engine = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The computeEngine.
+   */
+  com.google.cloud.hypercomputecluster.v1beta.ComputeEngineOrchestrator getComputeEngine();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If set, indicates that the cluster should use Compute Engine as
+   * the orchestrator.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.hypercomputecluster.v1beta.ComputeEngineOrchestrator compute_engine = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.hypercomputecluster.v1beta.ComputeEngineOrchestratorOrBuilder
+      getComputeEngineOrBuilder();
+
   com.google.cloud.hypercomputecluster.v1beta.Orchestrator.OptionCase getOptionCase();
 }

@@ -54,6 +54,7 @@ public final class WireProperties extends com.google.protobuf.GeneratedMessage
   private WireProperties() {
     bandwidthAllocation_ = "";
     faultResponse_ = "";
+    flowManagement_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -437,6 +438,175 @@ public final class WireProperties extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.WireProperties.FaultResponse)
   }
 
+  /**
+   *
+   *
+   * <pre>
+   * The flow management configuration for the wire.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.compute.v1.WireProperties.FlowManagement}
+   */
+  public enum FlowManagement implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_FLOW_MANAGEMENT = 0;</code>
+     */
+    UNDEFINED_FLOW_MANAGEMENT(0),
+    /**
+     *
+     *
+     * <pre>
+     * The wire uses dynamic paths.
+     * </pre>
+     *
+     * <code>DYNAMIC_PATH = 243852357;</code>
+     */
+    DYNAMIC_PATH(243852357),
+    /**
+     *
+     *
+     * <pre>
+     * The wire uses fixed paths.
+     * </pre>
+     *
+     * <code>FIXED_PATH = 74947120;</code>
+     */
+    FIXED_PATH(74947120),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 6,
+          /* suffix= */ "",
+          "FlowManagement");
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_FLOW_MANAGEMENT = 0;</code>
+     */
+    public static final int UNDEFINED_FLOW_MANAGEMENT_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * The wire uses dynamic paths.
+     * </pre>
+     *
+     * <code>DYNAMIC_PATH = 243852357;</code>
+     */
+    public static final int DYNAMIC_PATH_VALUE = 243852357;
+
+    /**
+     *
+     *
+     * <pre>
+     * The wire uses fixed paths.
+     * </pre>
+     *
+     * <code>FIXED_PATH = 74947120;</code>
+     */
+    public static final int FIXED_PATH_VALUE = 74947120;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static FlowManagement valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static FlowManagement forNumber(int value) {
+      switch (value) {
+        case 0:
+          return UNDEFINED_FLOW_MANAGEMENT;
+        case 243852357:
+          return DYNAMIC_PATH;
+        case 74947120:
+          return FIXED_PATH;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<FlowManagement> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<FlowManagement> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<FlowManagement>() {
+          public FlowManagement findValueByNumber(int number) {
+            return FlowManagement.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.compute.v1.WireProperties.getDescriptor().getEnumTypes().get(2);
+    }
+
+    private static final FlowManagement[] VALUES = values();
+
+    public static FlowManagement valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private FlowManagement(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.WireProperties.FlowManagement)
+  }
+
   private int bitField0_;
   public static final int BANDWIDTH_ALLOCATION_FIELD_NUMBER = 90651950;
 
@@ -658,6 +828,78 @@ public final class WireProperties extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public static final int FLOW_MANAGEMENT_FIELD_NUMBER = 183886836;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object flowManagement_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * The flow management configuration for the wire.
+   * Check the FlowManagement enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string flow_management = 183886836;</code>
+   *
+   * @return Whether the flowManagement field is set.
+   */
+  @java.lang.Override
+  public boolean hasFlowManagement() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The flow management configuration for the wire.
+   * Check the FlowManagement enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string flow_management = 183886836;</code>
+   *
+   * @return The flowManagement.
+   */
+  @java.lang.Override
+  public java.lang.String getFlowManagement() {
+    java.lang.Object ref = flowManagement_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      flowManagement_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The flow management configuration for the wire.
+   * Check the FlowManagement enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string flow_management = 183886836;</code>
+   *
+   * @return The bytes for flowManagement.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getFlowManagementBytes() {
+    java.lang.Object ref = flowManagement_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      flowManagement_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -674,6 +916,9 @@ public final class WireProperties extends com.google.protobuf.GeneratedMessage
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 90651950, bandwidthAllocation_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 183886836, flowManagement_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeInt64(272650017, bandwidthUnmetered_);
@@ -693,6 +938,9 @@ public final class WireProperties extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000001) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessage.computeStringSize(90651950, bandwidthAllocation_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(183886836, flowManagement_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size +=
@@ -729,6 +977,10 @@ public final class WireProperties extends com.google.protobuf.GeneratedMessage
     if (hasFaultResponse()) {
       if (!getFaultResponse().equals(other.getFaultResponse())) return false;
     }
+    if (hasFlowManagement() != other.hasFlowManagement()) return false;
+    if (hasFlowManagement()) {
+      if (!getFlowManagement().equals(other.getFlowManagement())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -751,6 +1003,10 @@ public final class WireProperties extends com.google.protobuf.GeneratedMessage
     if (hasFaultResponse()) {
       hash = (37 * hash) + FAULT_RESPONSE_FIELD_NUMBER;
       hash = (53 * hash) + getFaultResponse().hashCode();
+    }
+    if (hasFlowManagement()) {
+      hash = (37 * hash) + FLOW_MANAGEMENT_FIELD_NUMBER;
+      hash = (53 * hash) + getFlowManagement().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -895,6 +1151,7 @@ public final class WireProperties extends com.google.protobuf.GeneratedMessage
       bandwidthAllocation_ = "";
       bandwidthUnmetered_ = 0L;
       faultResponse_ = "";
+      flowManagement_ = "";
       return this;
     }
 
@@ -944,6 +1201,10 @@ public final class WireProperties extends com.google.protobuf.GeneratedMessage
         result.faultResponse_ = faultResponse_;
         to_bitField0_ |= 0x00000004;
       }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.flowManagement_ = flowManagement_;
+        to_bitField0_ |= 0x00000008;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -970,6 +1231,11 @@ public final class WireProperties extends com.google.protobuf.GeneratedMessage
       if (other.hasFaultResponse()) {
         faultResponse_ = other.faultResponse_;
         bitField0_ |= 0x00000004;
+        onChanged();
+      }
+      if (other.hasFlowManagement()) {
+        flowManagement_ = other.flowManagement_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1004,6 +1270,12 @@ public final class WireProperties extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000001;
                 break;
               } // case 725215602
+            case 1471094690:
+              {
+                flowManagement_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 1471094690
             case -2113767160:
               {
                 bandwidthUnmetered_ = input.readInt64();
@@ -1449,6 +1721,138 @@ public final class WireProperties extends com.google.protobuf.GeneratedMessage
       checkByteStringIsUtf8(value);
       faultResponse_ = value;
       bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object flowManagement_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * The flow management configuration for the wire.
+     * Check the FlowManagement enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string flow_management = 183886836;</code>
+     *
+     * @return Whether the flowManagement field is set.
+     */
+    public boolean hasFlowManagement() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The flow management configuration for the wire.
+     * Check the FlowManagement enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string flow_management = 183886836;</code>
+     *
+     * @return The flowManagement.
+     */
+    public java.lang.String getFlowManagement() {
+      java.lang.Object ref = flowManagement_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        flowManagement_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The flow management configuration for the wire.
+     * Check the FlowManagement enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string flow_management = 183886836;</code>
+     *
+     * @return The bytes for flowManagement.
+     */
+    public com.google.protobuf.ByteString getFlowManagementBytes() {
+      java.lang.Object ref = flowManagement_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        flowManagement_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The flow management configuration for the wire.
+     * Check the FlowManagement enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string flow_management = 183886836;</code>
+     *
+     * @param value The flowManagement to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFlowManagement(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      flowManagement_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The flow management configuration for the wire.
+     * Check the FlowManagement enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string flow_management = 183886836;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearFlowManagement() {
+      flowManagement_ = getDefaultInstance().getFlowManagement();
+      bitField0_ = (bitField0_ & ~0x00000008);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The flow management configuration for the wire.
+     * Check the FlowManagement enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string flow_management = 183886836;</code>
+     *
+     * @param value The bytes for flowManagement to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFlowManagementBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      flowManagement_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

@@ -135,6 +135,7 @@ public class LineItemServiceClientTest {
             .setTargeting(Targeting.newBuilder().build())
             .addAllCreativeTargetings(new ArrayList<CreativeTargeting>())
             .addAllAllowedFormats(new ArrayList<LineItemAllowedFormatEnum.LineItemAllowedFormat>())
+            .setAllocationDeliveryProfile("allocationDeliveryProfile-1749748203")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -228,6 +229,7 @@ public class LineItemServiceClientTest {
             .setTargeting(Targeting.newBuilder().build())
             .addAllCreativeTargetings(new ArrayList<CreativeTargeting>())
             .addAllAllowedFormats(new ArrayList<LineItemAllowedFormatEnum.LineItemAllowedFormat>())
+            .setAllocationDeliveryProfile("allocationDeliveryProfile-1749748203")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -421,6 +423,7 @@ public class LineItemServiceClientTest {
             .setTargeting(Targeting.newBuilder().build())
             .addAllCreativeTargetings(new ArrayList<CreativeTargeting>())
             .addAllAllowedFormats(new ArrayList<LineItemAllowedFormatEnum.LineItemAllowedFormat>())
+            .setAllocationDeliveryProfile("allocationDeliveryProfile-1749748203")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -516,6 +519,7 @@ public class LineItemServiceClientTest {
             .setTargeting(Targeting.newBuilder().build())
             .addAllCreativeTargetings(new ArrayList<CreativeTargeting>())
             .addAllAllowedFormats(new ArrayList<LineItemAllowedFormatEnum.LineItemAllowedFormat>())
+            .setAllocationDeliveryProfile("allocationDeliveryProfile-1749748203")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -703,6 +707,7 @@ public class LineItemServiceClientTest {
             .setTargeting(Targeting.newBuilder().build())
             .addAllCreativeTargetings(new ArrayList<CreativeTargeting>())
             .addAllAllowedFormats(new ArrayList<LineItemAllowedFormatEnum.LineItemAllowedFormat>())
+            .setAllocationDeliveryProfile("allocationDeliveryProfile-1749748203")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -758,6 +763,7 @@ public class LineItemServiceClientTest {
             .setTargeting(Targeting.newBuilder().build())
             .addAllCreativeTargetings(new ArrayList<CreativeTargeting>())
             .addAllAllowedFormats(new ArrayList<LineItemAllowedFormatEnum.LineItemAllowedFormat>())
+            .setAllocationDeliveryProfile("allocationDeliveryProfile-1749748203")
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -840,6 +846,7 @@ public class LineItemServiceClientTest {
               .addAllCreativeTargetings(new ArrayList<CreativeTargeting>())
               .addAllAllowedFormats(
                   new ArrayList<LineItemAllowedFormatEnum.LineItemAllowedFormat>())
+              .setAllocationDeliveryProfile("allocationDeliveryProfile-1749748203")
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateLineItem(lineItem, updateMask);

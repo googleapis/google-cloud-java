@@ -67,6 +67,18 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
         .internal_static_google_cloud_auditmanager_v1_AuditReport_descriptor;
   }
 
+  @SuppressWarnings({"rawtypes"})
+  @java.lang.Override
+  protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+      int number) {
+    switch (number) {
+      case 16:
+        return internalGetCloudControlParameterStates();
+      default:
+        throw new RuntimeException("Invalid map field number: " + number);
+    }
+  }
+
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internalGetFieldAccessorTable() {
@@ -559,7 +571,7 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.auditmanager.v1.AuditReport.compliance_standard is deprecated. See
-   *     google/cloud/auditmanager/v1/auditmanager.proto;l=877
+   *     google/cloud/auditmanager/v1/auditmanager.proto;l=892
    * @return The complianceStandard.
    */
   @java.lang.Override
@@ -590,7 +602,7 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.auditmanager.v1.AuditReport.compliance_standard is deprecated. See
-   *     google/cloud/auditmanager/v1/auditmanager.proto;l=877
+   *     google/cloud/auditmanager/v1/auditmanager.proto;l=892
    * @return The bytes for complianceStandard.
    */
   @java.lang.Override
@@ -964,6 +976,143 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public static final int CLOUD_CONTROL_PARAMETER_STATES_FIELD_NUMBER = 16;
+
+  private static final class CloudControlParameterStatesDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<
+            java.lang.String, com.google.cloud.auditmanager.v1.CloudControlParameterStates>
+        defaultEntry =
+            com.google.protobuf.MapEntry
+                .<java.lang.String, com.google.cloud.auditmanager.v1.CloudControlParameterStates>
+                    newDefaultInstance(
+                        com.google.cloud.auditmanager.v1.V1mainProto
+                            .internal_static_google_cloud_auditmanager_v1_AuditReport_CloudControlParameterStatesEntry_descriptor,
+                        com.google.protobuf.WireFormat.FieldType.STRING,
+                        "",
+                        com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                        com.google.cloud.auditmanager.v1.CloudControlParameterStates
+                            .getDefaultInstance());
+  }
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.MapField<
+          java.lang.String, com.google.cloud.auditmanager.v1.CloudControlParameterStates>
+      cloudControlParameterStates_;
+
+  private com.google.protobuf.MapField<
+          java.lang.String, com.google.cloud.auditmanager.v1.CloudControlParameterStates>
+      internalGetCloudControlParameterStates() {
+    if (cloudControlParameterStates_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(
+          CloudControlParameterStatesDefaultEntryHolder.defaultEntry);
+    }
+    return cloudControlParameterStates_;
+  }
+
+  public int getCloudControlParameterStatesCount() {
+    return internalGetCloudControlParameterStates().getMap().size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Parameter values provided by the user and values for
+   * tunable parameters, stored in the DB, keyed by control name.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.auditmanager.v1.CloudControlParameterStates&gt; cloud_control_parameter_states = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public boolean containsCloudControlParameterStates(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    return internalGetCloudControlParameterStates().getMap().containsKey(key);
+  }
+
+  /** Use {@link #getCloudControlParameterStatesMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<
+          java.lang.String, com.google.cloud.auditmanager.v1.CloudControlParameterStates>
+      getCloudControlParameterStates() {
+    return getCloudControlParameterStatesMap();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Parameter values provided by the user and values for
+   * tunable parameters, stored in the DB, keyed by control name.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.auditmanager.v1.CloudControlParameterStates&gt; cloud_control_parameter_states = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.Map<
+          java.lang.String, com.google.cloud.auditmanager.v1.CloudControlParameterStates>
+      getCloudControlParameterStatesMap() {
+    return internalGetCloudControlParameterStates().getMap();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Parameter values provided by the user and values for
+   * tunable parameters, stored in the DB, keyed by control name.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.auditmanager.v1.CloudControlParameterStates&gt; cloud_control_parameter_states = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public /* nullable */ com.google.cloud.auditmanager.v1.CloudControlParameterStates
+      getCloudControlParameterStatesOrDefault(
+          java.lang.String key,
+          /* nullable */
+          com.google.cloud.auditmanager.v1.CloudControlParameterStates defaultValue) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, com.google.cloud.auditmanager.v1.CloudControlParameterStates>
+        map = internalGetCloudControlParameterStates().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Parameter values provided by the user and values for
+   * tunable parameters, stored in the DB, keyed by control name.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.auditmanager.v1.CloudControlParameterStates&gt; cloud_control_parameter_states = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.auditmanager.v1.CloudControlParameterStates
+      getCloudControlParameterStatesOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, com.google.cloud.auditmanager.v1.CloudControlParameterStates>
+        map = internalGetCloudControlParameterStates().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1014,6 +1163,11 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(scopeId_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 11, scopeId_);
     }
+    com.google.protobuf.GeneratedMessage.serializeStringMapTo(
+        output,
+        internalGetCloudControlParameterStates(),
+        CloudControlParameterStatesDefaultEntryHolder.defaultEntry,
+        16);
     getUnknownFields().writeTo(output);
   }
 
@@ -1059,6 +1213,21 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(scopeId_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(11, scopeId_);
     }
+    for (java.util.Map.Entry<
+            java.lang.String, com.google.cloud.auditmanager.v1.CloudControlParameterStates>
+        entry : internalGetCloudControlParameterStates().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<
+              java.lang.String, com.google.cloud.auditmanager.v1.CloudControlParameterStates>
+          cloudControlParameterStates__ =
+              CloudControlParameterStatesDefaultEntryHolder.defaultEntry
+                  .newBuilderForType()
+                  .setKey(entry.getKey())
+                  .setValue(entry.getValue())
+                  .build();
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              16, cloudControlParameterStates__);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1095,6 +1264,8 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
     if (reportGenerationState_ != other.reportGenerationState_) return false;
     if (!getComplianceFramework().equals(other.getComplianceFramework())) return false;
     if (!getScopeId().equals(other.getScopeId())) return false;
+    if (!internalGetCloudControlParameterStates()
+        .equals(other.internalGetCloudControlParameterStates())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1136,6 +1307,10 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
     hash = (53 * hash) + getComplianceFramework().hashCode();
     hash = (37 * hash) + SCOPE_ID_FIELD_NUMBER;
     hash = (53 * hash) + getScopeId().hashCode();
+    if (!internalGetCloudControlParameterStates().getMap().isEmpty()) {
+      hash = (37 * hash) + CLOUD_CONTROL_PARAMETER_STATES_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetCloudControlParameterStates().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1255,6 +1430,28 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
           .internal_static_google_cloud_auditmanager_v1_AuditReport_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+        int number) {
+      switch (number) {
+        case 16:
+          return internalGetCloudControlParameterStates();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMutableMapFieldReflection(
+        int number) {
+      switch (number) {
+        case 16:
+          return internalGetMutableCloudControlParameterStates();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -1317,6 +1514,7 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
       reportGenerationState_ = 0;
       complianceFramework_ = "";
       scopeId_ = "";
+      internalGetMutableCloudControlParameterStates().clear();
       return this;
     }
 
@@ -1404,6 +1602,11 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x00000400) != 0)) {
         result.scopeId_ = scopeId_;
       }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.cloudControlParameterStates_ =
+            internalGetCloudControlParameterStates()
+                .build(CloudControlParameterStatesDefaultEntryHolder.defaultEntry);
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -1488,6 +1691,9 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
         bitField0_ |= 0x00000400;
         onChanged();
       }
+      internalGetMutableCloudControlParameterStates()
+          .mergeFrom(other.internalGetCloudControlParameterStates());
+      bitField0_ |= 0x00000800;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1591,6 +1797,24 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000400;
                 break;
               } // case 90
+            case 130:
+              {
+                com.google.protobuf.MapEntry<
+                        java.lang.String,
+                        com.google.cloud.auditmanager.v1.CloudControlParameterStates>
+                    cloudControlParameterStates__ =
+                        input.readMessage(
+                            CloudControlParameterStatesDefaultEntryHolder.defaultEntry
+                                .getParserForType(),
+                            extensionRegistry);
+                internalGetMutableCloudControlParameterStates()
+                    .ensureBuilderMap()
+                    .put(
+                        cloudControlParameterStates__.getKey(),
+                        cloudControlParameterStates__.getValue());
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 130
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2309,7 +2533,7 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.auditmanager.v1.AuditReport.compliance_standard is deprecated. See
-     *     google/cloud/auditmanager/v1/auditmanager.proto;l=877
+     *     google/cloud/auditmanager/v1/auditmanager.proto;l=892
      * @return The complianceStandard.
      */
     @java.lang.Deprecated
@@ -2339,7 +2563,7 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.auditmanager.v1.AuditReport.compliance_standard is deprecated. See
-     *     google/cloud/auditmanager/v1/auditmanager.proto;l=877
+     *     google/cloud/auditmanager/v1/auditmanager.proto;l=892
      * @return The bytes for complianceStandard.
      */
     @java.lang.Deprecated
@@ -2369,7 +2593,7 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.auditmanager.v1.AuditReport.compliance_standard is deprecated. See
-     *     google/cloud/auditmanager/v1/auditmanager.proto;l=877
+     *     google/cloud/auditmanager/v1/auditmanager.proto;l=892
      * @param value The complianceStandard to set.
      * @return This builder for chaining.
      */
@@ -2398,7 +2622,7 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.auditmanager.v1.AuditReport.compliance_standard is deprecated. See
-     *     google/cloud/auditmanager/v1/auditmanager.proto;l=877
+     *     google/cloud/auditmanager/v1/auditmanager.proto;l=892
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -2423,7 +2647,7 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.auditmanager.v1.AuditReport.compliance_standard is deprecated. See
-     *     google/cloud/auditmanager/v1/auditmanager.proto;l=877
+     *     google/cloud/auditmanager/v1/auditmanager.proto;l=892
      * @param value The bytes for complianceStandard to set.
      * @return This builder for chaining.
      */
@@ -3540,6 +3764,295 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
       bitField0_ |= 0x00000400;
       onChanged();
       return this;
+    }
+
+    private static final class CloudControlParameterStatesConverter
+        implements com.google.protobuf.MapFieldBuilder.Converter<
+            java.lang.String,
+            com.google.cloud.auditmanager.v1.CloudControlParameterStatesOrBuilder,
+            com.google.cloud.auditmanager.v1.CloudControlParameterStates> {
+      @java.lang.Override
+      public com.google.cloud.auditmanager.v1.CloudControlParameterStates build(
+          com.google.cloud.auditmanager.v1.CloudControlParameterStatesOrBuilder val) {
+        if (val instanceof com.google.cloud.auditmanager.v1.CloudControlParameterStates) {
+          return (com.google.cloud.auditmanager.v1.CloudControlParameterStates) val;
+        }
+        return ((com.google.cloud.auditmanager.v1.CloudControlParameterStates.Builder) val).build();
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.MapEntry<
+              java.lang.String, com.google.cloud.auditmanager.v1.CloudControlParameterStates>
+          defaultEntry() {
+        return CloudControlParameterStatesDefaultEntryHolder.defaultEntry;
+      }
+    }
+    ;
+
+    private static final CloudControlParameterStatesConverter cloudControlParameterStatesConverter =
+        new CloudControlParameterStatesConverter();
+
+    private com.google.protobuf.MapFieldBuilder<
+            java.lang.String,
+            com.google.cloud.auditmanager.v1.CloudControlParameterStatesOrBuilder,
+            com.google.cloud.auditmanager.v1.CloudControlParameterStates,
+            com.google.cloud.auditmanager.v1.CloudControlParameterStates.Builder>
+        cloudControlParameterStates_;
+
+    private com.google.protobuf.MapFieldBuilder<
+            java.lang.String,
+            com.google.cloud.auditmanager.v1.CloudControlParameterStatesOrBuilder,
+            com.google.cloud.auditmanager.v1.CloudControlParameterStates,
+            com.google.cloud.auditmanager.v1.CloudControlParameterStates.Builder>
+        internalGetCloudControlParameterStates() {
+      if (cloudControlParameterStates_ == null) {
+        return new com.google.protobuf.MapFieldBuilder<>(cloudControlParameterStatesConverter);
+      }
+      return cloudControlParameterStates_;
+    }
+
+    private com.google.protobuf.MapFieldBuilder<
+            java.lang.String,
+            com.google.cloud.auditmanager.v1.CloudControlParameterStatesOrBuilder,
+            com.google.cloud.auditmanager.v1.CloudControlParameterStates,
+            com.google.cloud.auditmanager.v1.CloudControlParameterStates.Builder>
+        internalGetMutableCloudControlParameterStates() {
+      if (cloudControlParameterStates_ == null) {
+        cloudControlParameterStates_ =
+            new com.google.protobuf.MapFieldBuilder<>(cloudControlParameterStatesConverter);
+      }
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return cloudControlParameterStates_;
+    }
+
+    public int getCloudControlParameterStatesCount() {
+      return internalGetCloudControlParameterStates().ensureBuilderMap().size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Parameter values provided by the user and values for
+     * tunable parameters, stored in the DB, keyed by control name.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.auditmanager.v1.CloudControlParameterStates&gt; cloud_control_parameter_states = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public boolean containsCloudControlParameterStates(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetCloudControlParameterStates().ensureBuilderMap().containsKey(key);
+    }
+
+    /** Use {@link #getCloudControlParameterStatesMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<
+            java.lang.String, com.google.cloud.auditmanager.v1.CloudControlParameterStates>
+        getCloudControlParameterStates() {
+      return getCloudControlParameterStatesMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Parameter values provided by the user and values for
+     * tunable parameters, stored in the DB, keyed by control name.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.auditmanager.v1.CloudControlParameterStates&gt; cloud_control_parameter_states = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.Map<
+            java.lang.String, com.google.cloud.auditmanager.v1.CloudControlParameterStates>
+        getCloudControlParameterStatesMap() {
+      return internalGetCloudControlParameterStates().getImmutableMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Parameter values provided by the user and values for
+     * tunable parameters, stored in the DB, keyed by control name.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.auditmanager.v1.CloudControlParameterStates&gt; cloud_control_parameter_states = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public /* nullable */ com.google.cloud.auditmanager.v1.CloudControlParameterStates
+        getCloudControlParameterStatesOrDefault(
+            java.lang.String key,
+            /* nullable */
+            com.google.cloud.auditmanager.v1.CloudControlParameterStates defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<
+              java.lang.String,
+              com.google.cloud.auditmanager.v1.CloudControlParameterStatesOrBuilder>
+          map = internalGetMutableCloudControlParameterStates().ensureBuilderMap();
+      return map.containsKey(key)
+          ? cloudControlParameterStatesConverter.build(map.get(key))
+          : defaultValue;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Parameter values provided by the user and values for
+     * tunable parameters, stored in the DB, keyed by control name.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.auditmanager.v1.CloudControlParameterStates&gt; cloud_control_parameter_states = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.auditmanager.v1.CloudControlParameterStates
+        getCloudControlParameterStatesOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<
+              java.lang.String,
+              com.google.cloud.auditmanager.v1.CloudControlParameterStatesOrBuilder>
+          map = internalGetMutableCloudControlParameterStates().ensureBuilderMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return cloudControlParameterStatesConverter.build(map.get(key));
+    }
+
+    public Builder clearCloudControlParameterStates() {
+      bitField0_ = (bitField0_ & ~0x00000800);
+      internalGetMutableCloudControlParameterStates().clear();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Parameter values provided by the user and values for
+     * tunable parameters, stored in the DB, keyed by control name.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.auditmanager.v1.CloudControlParameterStates&gt; cloud_control_parameter_states = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder removeCloudControlParameterStates(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      internalGetMutableCloudControlParameterStates().ensureBuilderMap().remove(key);
+      return this;
+    }
+
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<
+            java.lang.String, com.google.cloud.auditmanager.v1.CloudControlParameterStates>
+        getMutableCloudControlParameterStates() {
+      bitField0_ |= 0x00000800;
+      return internalGetMutableCloudControlParameterStates().ensureMessageMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Parameter values provided by the user and values for
+     * tunable parameters, stored in the DB, keyed by control name.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.auditmanager.v1.CloudControlParameterStates&gt; cloud_control_parameter_states = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder putCloudControlParameterStates(
+        java.lang.String key, com.google.cloud.auditmanager.v1.CloudControlParameterStates value) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      if (value == null) {
+        throw new NullPointerException("map value");
+      }
+      internalGetMutableCloudControlParameterStates().ensureBuilderMap().put(key, value);
+      bitField0_ |= 0x00000800;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Parameter values provided by the user and values for
+     * tunable parameters, stored in the DB, keyed by control name.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.auditmanager.v1.CloudControlParameterStates&gt; cloud_control_parameter_states = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder putAllCloudControlParameterStates(
+        java.util.Map<
+                java.lang.String, com.google.cloud.auditmanager.v1.CloudControlParameterStates>
+            values) {
+      for (java.util.Map.Entry<
+              java.lang.String, com.google.cloud.auditmanager.v1.CloudControlParameterStates>
+          e : values.entrySet()) {
+        if (e.getKey() == null || e.getValue() == null) {
+          throw new NullPointerException();
+        }
+      }
+      internalGetMutableCloudControlParameterStates().ensureBuilderMap().putAll(values);
+      bitField0_ |= 0x00000800;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Parameter values provided by the user and values for
+     * tunable parameters, stored in the DB, keyed by control name.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.auditmanager.v1.CloudControlParameterStates&gt; cloud_control_parameter_states = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.auditmanager.v1.CloudControlParameterStates.Builder
+        putCloudControlParameterStatesBuilderIfAbsent(java.lang.String key) {
+      java.util.Map<
+              java.lang.String,
+              com.google.cloud.auditmanager.v1.CloudControlParameterStatesOrBuilder>
+          builderMap = internalGetMutableCloudControlParameterStates().ensureBuilderMap();
+      com.google.cloud.auditmanager.v1.CloudControlParameterStatesOrBuilder entry =
+          builderMap.get(key);
+      if (entry == null) {
+        entry = com.google.cloud.auditmanager.v1.CloudControlParameterStates.newBuilder();
+        builderMap.put(key, entry);
+      }
+      if (entry instanceof com.google.cloud.auditmanager.v1.CloudControlParameterStates) {
+        entry = ((com.google.cloud.auditmanager.v1.CloudControlParameterStates) entry).toBuilder();
+        builderMap.put(key, entry);
+      }
+      return (com.google.cloud.auditmanager.v1.CloudControlParameterStates.Builder) entry;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.auditmanager.v1.AuditReport)

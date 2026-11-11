@@ -53,6 +53,10 @@ public final class OdbSubnetProto extends com.google.protobuf.GeneratedFile {
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_oracledatabase_v1_CreateOdbSubnetRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_oracledatabase_v1_UpdateOdbSubnetRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_oracledatabase_v1_UpdateOdbSubnetRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_oracledatabase_v1_DeleteOdbSubnetRequest_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_oracledatabase_v1_DeleteOdbSubnetRequest_fieldAccessorTable;
@@ -80,26 +84,26 @@ public final class OdbSubnetProto extends com.google.protobuf.GeneratedFile {
       "\n"
           + "/google/cloud/oracledatabase/v1/odb_subnet.proto\022\036google.cloud.oracledatabase.v"
           + "1\032\037google/api/field_behavior.proto\032\033goog"
-          + "le/api/field_info.proto\032\031google/api/reso"
-          + "urce.proto\032\037google/protobuf/timestamp.proto\"\306\005\n"
+          + "le/api/field_info.proto\032\031google/api/resource.proto\032"
+          + " google/protobuf/field_mask.proto\032\037google/protobuf/timestamp.proto\"\310\005\n"
           + "\tOdbSubnet\022\022\n"
-          + "\004name\030\001 \001(\tB\004\342A\001\010\022\030\n"
-          + "\n"
-          + "cidr_range\030\002 \001(\tB\004\342A\001\002\022H\n"
-          + "\007purpose\030\003 \001(\016"
-          + "21.google.cloud.oracledatabase.v1.OdbSubnet.PurposeB\004\342A\001\002\022K\n"
-          + "\006labels\030\004 \003(\01325.goog"
-          + "le.cloud.oracledatabase.v1.OdbSubnet.LabelsEntryB\004\342A\001\001\0225\n"
+          + "\004name\030\001 \001(\tB\004\342A\001\010\022\031\n\n"
+          + "cidr_range\030\002 \001(\tB\005\342A\002\002\005\022I\n"
+          + "\007purpose\030\003 \001(\01621.go"
+          + "ogle.cloud.oracledatabase.v1.OdbSubnet.PurposeB\005\342A\002\002\005\022K\n"
+          + "\006labels\030\004 \003(\01325.google.c"
+          + "loud.oracledatabase.v1.OdbSubnet.LabelsEntryB\004\342A\001\001\0225\n"
           + "\013create_time\030\005"
           + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\022D\n"
-          + "\005state\030\006"
-          + " \001(\0162/.google.cloud.oracledatabase.v1.OdbSubnet.StateB\004\342A\001\003\032-\n"
+          + "\005state\030\006 \001(\016"
+          + "2/.google.cloud.oracledatabase.v1.OdbSubnet.StateB\004\342A\001\003\032-\n"
           + "\013LabelsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001\"H\n"
           + "\007Purpose\022\027\n"
           + "\023PURPOSE_UNSPECIFIED\020\000\022\021\n\r"
-          + "CLIENT_SUBNET\020\001\022\021\n\r"
+          + "CLIENT_SUBNET\020\001\022\021\n"
+          + "\r"
           + "BACKUP_SUBNET\020\002\"\\\n"
           + "\005State\022\025\n"
           + "\021STATE_UNSPECIFIED\020\000\022\020\n"
@@ -107,16 +111,23 @@ public final class OdbSubnetProto extends com.google.protobuf.GeneratedFile {
           + "\tAVAILABLE\020\002\022\017\n"
           + "\013TERMINATING\020\003\022\n\n"
           + "\006FAILED\020\004:\237\001\352A\233\001\n"
-          + "\'oracledatabase.googleapis.com/OdbSubnet\022Yprojects/{project}/locations/{locati"
-          + "on}/odbNetworks/{odb_network}/odbSubnets/{odb_subnet}*\n"
+          + "\'oracledatabase.googleapis.com/OdbSubnet\022Yprojects/{project}/locations/{location}/"
+          + "odbNetworks/{odb_network}/odbSubnets/{odb_subnet}*\n"
           + "odbSubnets2\todbSubnet\"\336\001\n"
           + "\026CreateOdbSubnetRequest\022@\n"
-          + "\006parent\030\001 \001(\tB"
-          + "0\342A\001\002\372A)\022\'oracledatabase.googleapis.com/OdbSubnet\022\033\n\r"
+          + "\006parent\030\001 \001(\tB0\342A\001"
+          + "\002\372A)\022\'oracledatabase.googleapis.com/OdbSubnet\022\033\n\r"
           + "odb_subnet_id\030\002 \001(\tB\004\342A\001\002\022C\n\n"
           + "odb_subnet\030\003"
           + " \001(\0132).google.cloud.oracledatabase.v1.OdbSubnetB\004\342A\001\002\022 \n\n"
-          + "request_id\030\004 \001(\tB\014\342A\001\001\342\214\317\327\010\002\010\001\"z\n"
+          + "request_id\030\004 \001("
+          + "\tB\014\342A\001\001\342\214\317\327\010\002\010\001\"\266\001\n"
+          + "\026UpdateOdbSubnetRequest\0225\n"
+          + "\013update_mask\030\001"
+          + " \001(\0132\032.google.protobuf.FieldMaskB\004\342A\001\001\022C\n\n"
+          + "odb_subnet\030\002 \001(\0132"
+          + ").google.cloud.oracledatabase.v1.OdbSubnetB\004\342A\001\002\022 \n\n"
+          + "request_id\030\003 \001(\tB\014\342A\001\001\342\214\317\327\010\002\010\001\"z\n"
           + "\026DeleteOdbSubnetRequest\022>\n"
           + "\004name\030\001 \001(\tB0\342A\001\002\372A)\n"
           + "\'oracledatabase.googleapis.com/OdbSubnet\022 \n\n"
@@ -136,11 +147,11 @@ public final class OdbSubnetProto extends com.google.protobuf.GeneratedFile {
           + "\023GetOdbSubnetRequest\022>\n"
           + "\004name\030\001 \001(\tB0\342A\001\002\372A)\n"
           + "\'oracledatabase.googleapis.com/OdbSubnetB\350\001\n"
-          + "\"com.google.cloud.oracledatabase.v1B\016OdbSubnetProtoP\001ZJcloud.google.com/go/ora"
-          + "cledatabase/apiv1/oracledatabasepb;oracl"
-          + "edatabasepb\252\002\036Google.Cloud.OracleDatabas"
-          + "e.V1\312\002\036Google\\Cloud\\OracleDatabase\\V1\352\002!"
-          + "Google::Cloud::OracleDatabase::V1b\006proto3"
+          + "\"com.google.cloud.oracledatabase.v1B\016OdbSubnetProtoP\001ZJcl"
+          + "oud.google.com/go/oracledatabase/apiv1/o"
+          + "racledatabasepb;oracledatabasepb\252\002\036Googl"
+          + "e.Cloud.OracleDatabase.V1\312\002\036Google\\Cloud"
+          + "\\OracleDatabase\\V1\352\002!Google::Cloud::OracleDatabase::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -149,6 +160,7 @@ public final class OdbSubnetProto extends com.google.protobuf.GeneratedFile {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.FieldInfoProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
+              com.google.protobuf.FieldMaskProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
             });
     internal_static_google_cloud_oracledatabase_v1_OdbSubnet_descriptor =
@@ -175,8 +187,16 @@ public final class OdbSubnetProto extends com.google.protobuf.GeneratedFile {
             new java.lang.String[] {
               "Parent", "OdbSubnetId", "OdbSubnet", "RequestId",
             });
-    internal_static_google_cloud_oracledatabase_v1_DeleteOdbSubnetRequest_descriptor =
+    internal_static_google_cloud_oracledatabase_v1_UpdateOdbSubnetRequest_descriptor =
         getDescriptor().getMessageType(2);
+    internal_static_google_cloud_oracledatabase_v1_UpdateOdbSubnetRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_oracledatabase_v1_UpdateOdbSubnetRequest_descriptor,
+            new java.lang.String[] {
+              "UpdateMask", "OdbSubnet", "RequestId",
+            });
+    internal_static_google_cloud_oracledatabase_v1_DeleteOdbSubnetRequest_descriptor =
+        getDescriptor().getMessageType(3);
     internal_static_google_cloud_oracledatabase_v1_DeleteOdbSubnetRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_oracledatabase_v1_DeleteOdbSubnetRequest_descriptor,
@@ -184,7 +204,7 @@ public final class OdbSubnetProto extends com.google.protobuf.GeneratedFile {
               "Name", "RequestId",
             });
     internal_static_google_cloud_oracledatabase_v1_ListOdbSubnetsRequest_descriptor =
-        getDescriptor().getMessageType(3);
+        getDescriptor().getMessageType(4);
     internal_static_google_cloud_oracledatabase_v1_ListOdbSubnetsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_oracledatabase_v1_ListOdbSubnetsRequest_descriptor,
@@ -192,7 +212,7 @@ public final class OdbSubnetProto extends com.google.protobuf.GeneratedFile {
               "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
             });
     internal_static_google_cloud_oracledatabase_v1_ListOdbSubnetsResponse_descriptor =
-        getDescriptor().getMessageType(4);
+        getDescriptor().getMessageType(5);
     internal_static_google_cloud_oracledatabase_v1_ListOdbSubnetsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_oracledatabase_v1_ListOdbSubnetsResponse_descriptor,
@@ -200,7 +220,7 @@ public final class OdbSubnetProto extends com.google.protobuf.GeneratedFile {
               "OdbSubnets", "NextPageToken", "Unreachable",
             });
     internal_static_google_cloud_oracledatabase_v1_GetOdbSubnetRequest_descriptor =
-        getDescriptor().getMessageType(5);
+        getDescriptor().getMessageType(6);
     internal_static_google_cloud_oracledatabase_v1_GetOdbSubnetRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_oracledatabase_v1_GetOdbSubnetRequest_descriptor,
@@ -211,6 +231,7 @@ public final class OdbSubnetProto extends com.google.protobuf.GeneratedFile {
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.FieldInfoProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
+    com.google.protobuf.FieldMaskProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

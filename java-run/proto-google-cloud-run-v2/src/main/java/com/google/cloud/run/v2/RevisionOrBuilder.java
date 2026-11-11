@@ -447,7 +447,7 @@ public interface RevisionOrBuilder
    *
    * Note that this value might not be what was used
    * as input. For example, if ALPHA was provided as input in the parent
-   * resource, but only BETA and GA-level features are were, this field will be
+   * resource, but only BETA and GA-level features are used, this field will be
    * BETA.
    * </pre>
    *
@@ -468,7 +468,7 @@ public interface RevisionOrBuilder
    *
    * Note that this value might not be what was used
    * as input. For example, if ALPHA was provided as input in the parent
-   * resource, but only BETA and GA-level features are were, this field will be
+   * resource, but only BETA and GA-level features are used, this field will be
    * BETA.
    * </pre>
    *
@@ -669,7 +669,7 @@ public interface RevisionOrBuilder
    *
    *
    * <pre>
-   * Holds the single container that defines the unit of execution for this
+   * Holds the list which define the units of execution for this
    * Revision.
    * </pre>
    *
@@ -681,7 +681,7 @@ public interface RevisionOrBuilder
    *
    *
    * <pre>
-   * Holds the single container that defines the unit of execution for this
+   * Holds the list which define the units of execution for this
    * Revision.
    * </pre>
    *
@@ -693,7 +693,7 @@ public interface RevisionOrBuilder
    *
    *
    * <pre>
-   * Holds the single container that defines the unit of execution for this
+   * Holds the list which define the units of execution for this
    * Revision.
    * </pre>
    *
@@ -705,7 +705,7 @@ public interface RevisionOrBuilder
    *
    *
    * <pre>
-   * Holds the single container that defines the unit of execution for this
+   * Holds the list which define the units of execution for this
    * Revision.
    * </pre>
    *
@@ -717,13 +717,56 @@ public interface RevisionOrBuilder
    *
    *
    * <pre>
-   * Holds the single container that defines the unit of execution for this
+   * Holds the list which define the units of execution for this
    * Revision.
    * </pre>
    *
    * <code>repeated .google.cloud.run.v2.Container containers = 17;</code>
    */
   com.google.cloud.run.v2.ContainerOrBuilder getContainersOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Configuration for sandboxes.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.run.v2.SandboxConfiguration sandboxes = 56 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the sandboxes field is set.
+   */
+  boolean hasSandboxes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Configuration for sandboxes.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.run.v2.SandboxConfiguration sandboxes = 56 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The sandboxes.
+   */
+  com.google.cloud.run.v2.SandboxConfiguration getSandboxes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Configuration for sandboxes.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.run.v2.SandboxConfiguration sandboxes = 56 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.run.v2.SandboxConfigurationOrBuilder getSandboxesOrBuilder();
 
   /**
    *
@@ -1182,6 +1225,49 @@ public interface RevisionOrBuilder
    *
    *
    * <pre>
+   * Optional. The Revision's workload identity settings.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.run.v2.WorkloadIdentityConfig workload_identity_config = 52 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the workloadIdentityConfig field is set.
+   */
+  boolean hasWorkloadIdentityConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Revision's workload identity settings.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.run.v2.WorkloadIdentityConfig workload_identity_config = 52 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The workloadIdentityConfig.
+   */
+  com.google.cloud.run.v2.WorkloadIdentityConfig getWorkloadIdentityConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Revision's workload identity settings.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.run.v2.WorkloadIdentityConfig workload_identity_config = 52 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.run.v2.WorkloadIdentityConfigOrBuilder getWorkloadIdentityConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. Output only. True if GPU zonal redundancy is disabled on this
    * revision.
    * </pre>
@@ -1235,6 +1321,101 @@ public interface RevisionOrBuilder
    * @return The bytes for creator.
    */
   com.google.protobuf.ByteString getCreatorBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Arbitrary identifier for the API client.
+   * </pre>
+   *
+   * <code>string client = 53 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The client.
+   */
+  java.lang.String getClient();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Arbitrary identifier for the API client.
+   * </pre>
+   *
+   * <code>string client = 53 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for client.
+   */
+  com.google.protobuf.ByteString getClientBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Arbitrary version identifier for the API client.
+   * </pre>
+   *
+   * <code>string client_version = 54 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The clientVersion.
+   */
+  java.lang.String getClientVersion();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Arbitrary version identifier for the API client.
+   * </pre>
+   *
+   * <code>string client_version = 54 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for clientVersion.
+   */
+  com.google.protobuf.ByteString getClientVersionBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The ambient networking configuration for this revision.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.run.v2.AmbientNetworking ambient_networking = 59 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the ambientNetworking field is set.
+   */
+  boolean hasAmbientNetworking();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The ambient networking configuration for this revision.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.run.v2.AmbientNetworking ambient_networking = 59 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The ambientNetworking.
+   */
+  com.google.cloud.run.v2.AmbientNetworking getAmbientNetworking();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The ambient networking configuration for this revision.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.run.v2.AmbientNetworking ambient_networking = 59 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.run.v2.AmbientNetworkingOrBuilder getAmbientNetworkingOrBuilder();
 
   /**
    *

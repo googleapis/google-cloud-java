@@ -1226,7 +1226,7 @@ public final class Event extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Optional. A bucket of any [event
-   * parameters](https://developers.google.com/analytics/devguides/collection/protocol/ga4/reference/events)
+   * parameters](https://developers.google.com/data-manager/api/reference/analytics/recommended-events)
    * to be included within the event that were not already specified using other
    * structured fields.
    * </pre>
@@ -1246,7 +1246,7 @@ public final class Event extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Optional. A bucket of any [event
-   * parameters](https://developers.google.com/analytics/devguides/collection/protocol/ga4/reference/events)
+   * parameters](https://developers.google.com/data-manager/api/reference/analytics/recommended-events)
    * to be included within the event that were not already specified using other
    * structured fields.
    * </pre>
@@ -1266,7 +1266,7 @@ public final class Event extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Optional. A bucket of any [event
-   * parameters](https://developers.google.com/analytics/devguides/collection/protocol/ga4/reference/events)
+   * parameters](https://developers.google.com/data-manager/api/reference/analytics/recommended-events)
    * to be included within the event that were not already specified using other
    * structured fields.
    * </pre>
@@ -1285,7 +1285,7 @@ public final class Event extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Optional. A bucket of any [event
-   * parameters](https://developers.google.com/analytics/devguides/collection/protocol/ga4/reference/events)
+   * parameters](https://developers.google.com/data-manager/api/reference/analytics/recommended-events)
    * to be included within the event that were not already specified using other
    * structured fields.
    * </pre>
@@ -1304,7 +1304,7 @@ public final class Event extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Optional. A bucket of any [event
-   * parameters](https://developers.google.com/analytics/devguides/collection/protocol/ga4/reference/events)
+   * parameters](https://developers.google.com/data-manager/api/reference/analytics/recommended-events)
    * to be included within the event that were not already specified using other
    * structured fields.
    * </pre>
@@ -1501,6 +1501,68 @@ public final class Event extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public static final int CALL_INFO_FIELD_NUMBER = 24;
+  private com.google.ads.datamanager.v1.CallInfo callInfo_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Information gathered about the call (if any) which led to this
+   * event.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.datamanager.v1.CallInfo call_info = 24 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the callInfo field is set.
+   */
+  @java.lang.Override
+  public boolean hasCallInfo() {
+    return ((bitField0_ & 0x00001000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Information gathered about the call (if any) which led to this
+   * event.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.datamanager.v1.CallInfo call_info = 24 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The callInfo.
+   */
+  @java.lang.Override
+  public com.google.ads.datamanager.v1.CallInfo getCallInfo() {
+    return callInfo_ == null
+        ? com.google.ads.datamanager.v1.CallInfo.getDefaultInstance()
+        : callInfo_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Information gathered about the call (if any) which led to this
+   * event.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.datamanager.v1.CallInfo call_info = 24 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.ads.datamanager.v1.CallInfoOrBuilder getCallInfoOrBuilder() {
+    return callInfo_ == null
+        ? com.google.ads.datamanager.v1.CallInfo.getDefaultInstance()
+        : callInfo_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1584,6 +1646,9 @@ public final class Event extends com.google.protobuf.GeneratedMessage
     }
     if (((bitField0_ & 0x00000040) != 0)) {
       output.writeDouble(23, conversionCount_);
+    }
+    if (((bitField0_ & 0x00001000) != 0)) {
+      output.writeMessage(24, getCallInfo());
     }
     getUnknownFields().writeTo(output);
   }
@@ -1673,6 +1738,9 @@ public final class Event extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000040) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeDoubleSize(23, conversionCount_);
     }
+    if (((bitField0_ & 0x00001000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(24, getCallInfo());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1750,6 +1818,10 @@ public final class Event extends com.google.protobuf.GeneratedMessage
       if (!getEventLocation().equals(other.getEventLocation())) return false;
     }
     if (!getAppInstanceId().equals(other.getAppInstanceId())) return false;
+    if (hasCallInfo() != other.hasCallInfo()) return false;
+    if (hasCallInfo()) {
+      if (!getCallInfo().equals(other.getCallInfo())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1845,6 +1917,10 @@ public final class Event extends com.google.protobuf.GeneratedMessage
     }
     hash = (37 * hash) + APP_INSTANCE_ID_FIELD_NUMBER;
     hash = (53 * hash) + getAppInstanceId().hashCode();
+    if (hasCallInfo()) {
+      hash = (37 * hash) + CALL_INFO_FIELD_NUMBER;
+      hash = (53 * hash) + getCallInfo().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1998,6 +2074,7 @@ public final class Event extends com.google.protobuf.GeneratedMessage
         internalGetAdditionalEventParametersFieldBuilder();
         internalGetThirdPartyUserDataFieldBuilder();
         internalGetEventLocationFieldBuilder();
+        internalGetCallInfoFieldBuilder();
       }
     }
 
@@ -2086,6 +2163,11 @@ public final class Event extends com.google.protobuf.GeneratedMessage
         eventLocationBuilder_ = null;
       }
       appInstanceId_ = "";
+      callInfo_ = null;
+      if (callInfoBuilder_ != null) {
+        callInfoBuilder_.dispose();
+        callInfoBuilder_ = null;
+      }
       return this;
     }
 
@@ -2237,6 +2319,10 @@ public final class Event extends com.google.protobuf.GeneratedMessage
       }
       if (((from_bitField0_ & 0x00400000) != 0)) {
         result.appInstanceId_ = appInstanceId_;
+      }
+      if (((from_bitField0_ & 0x00800000) != 0)) {
+        result.callInfo_ = callInfoBuilder_ == null ? callInfo_ : callInfoBuilder_.build();
+        to_bitField0_ |= 0x00001000;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2412,6 +2498,9 @@ public final class Event extends com.google.protobuf.GeneratedMessage
         appInstanceId_ = other.appInstanceId_;
         bitField0_ |= 0x00400000;
         onChanged();
+      }
+      if (other.hasCallInfo()) {
+        mergeCallInfo(other.getCallInfo());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -2609,6 +2698,13 @@ public final class Event extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000200;
                 break;
               } // case 185
+            case 194:
+              {
+                input.readMessage(
+                    internalGetCallInfoFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00800000;
+                break;
+              } // case 194
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -6314,7 +6410,7 @@ public final class Event extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. A bucket of any [event
-     * parameters](https://developers.google.com/analytics/devguides/collection/protocol/ga4/reference/events)
+     * parameters](https://developers.google.com/data-manager/api/reference/analytics/recommended-events)
      * to be included within the event that were not already specified using other
      * structured fields.
      * </pre>
@@ -6337,7 +6433,7 @@ public final class Event extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. A bucket of any [event
-     * parameters](https://developers.google.com/analytics/devguides/collection/protocol/ga4/reference/events)
+     * parameters](https://developers.google.com/data-manager/api/reference/analytics/recommended-events)
      * to be included within the event that were not already specified using other
      * structured fields.
      * </pre>
@@ -6359,7 +6455,7 @@ public final class Event extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. A bucket of any [event
-     * parameters](https://developers.google.com/analytics/devguides/collection/protocol/ga4/reference/events)
+     * parameters](https://developers.google.com/data-manager/api/reference/analytics/recommended-events)
      * to be included within the event that were not already specified using other
      * structured fields.
      * </pre>
@@ -6381,7 +6477,7 @@ public final class Event extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. A bucket of any [event
-     * parameters](https://developers.google.com/analytics/devguides/collection/protocol/ga4/reference/events)
+     * parameters](https://developers.google.com/data-manager/api/reference/analytics/recommended-events)
      * to be included within the event that were not already specified using other
      * structured fields.
      * </pre>
@@ -6410,7 +6506,7 @@ public final class Event extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. A bucket of any [event
-     * parameters](https://developers.google.com/analytics/devguides/collection/protocol/ga4/reference/events)
+     * parameters](https://developers.google.com/data-manager/api/reference/analytics/recommended-events)
      * to be included within the event that were not already specified using other
      * structured fields.
      * </pre>
@@ -6436,7 +6532,7 @@ public final class Event extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. A bucket of any [event
-     * parameters](https://developers.google.com/analytics/devguides/collection/protocol/ga4/reference/events)
+     * parameters](https://developers.google.com/data-manager/api/reference/analytics/recommended-events)
      * to be included within the event that were not already specified using other
      * structured fields.
      * </pre>
@@ -6465,7 +6561,7 @@ public final class Event extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. A bucket of any [event
-     * parameters](https://developers.google.com/analytics/devguides/collection/protocol/ga4/reference/events)
+     * parameters](https://developers.google.com/data-manager/api/reference/analytics/recommended-events)
      * to be included within the event that were not already specified using other
      * structured fields.
      * </pre>
@@ -6494,7 +6590,7 @@ public final class Event extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. A bucket of any [event
-     * parameters](https://developers.google.com/analytics/devguides/collection/protocol/ga4/reference/events)
+     * parameters](https://developers.google.com/data-manager/api/reference/analytics/recommended-events)
      * to be included within the event that were not already specified using other
      * structured fields.
      * </pre>
@@ -6520,7 +6616,7 @@ public final class Event extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. A bucket of any [event
-     * parameters](https://developers.google.com/analytics/devguides/collection/protocol/ga4/reference/events)
+     * parameters](https://developers.google.com/data-manager/api/reference/analytics/recommended-events)
      * to be included within the event that were not already specified using other
      * structured fields.
      * </pre>
@@ -6546,7 +6642,7 @@ public final class Event extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. A bucket of any [event
-     * parameters](https://developers.google.com/analytics/devguides/collection/protocol/ga4/reference/events)
+     * parameters](https://developers.google.com/data-manager/api/reference/analytics/recommended-events)
      * to be included within the event that were not already specified using other
      * structured fields.
      * </pre>
@@ -6572,7 +6668,7 @@ public final class Event extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. A bucket of any [event
-     * parameters](https://developers.google.com/analytics/devguides/collection/protocol/ga4/reference/events)
+     * parameters](https://developers.google.com/data-manager/api/reference/analytics/recommended-events)
      * to be included within the event that were not already specified using other
      * structured fields.
      * </pre>
@@ -6597,7 +6693,7 @@ public final class Event extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. A bucket of any [event
-     * parameters](https://developers.google.com/analytics/devguides/collection/protocol/ga4/reference/events)
+     * parameters](https://developers.google.com/data-manager/api/reference/analytics/recommended-events)
      * to be included within the event that were not already specified using other
      * structured fields.
      * </pre>
@@ -6622,7 +6718,7 @@ public final class Event extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. A bucket of any [event
-     * parameters](https://developers.google.com/analytics/devguides/collection/protocol/ga4/reference/events)
+     * parameters](https://developers.google.com/data-manager/api/reference/analytics/recommended-events)
      * to be included within the event that were not already specified using other
      * structured fields.
      * </pre>
@@ -6641,7 +6737,7 @@ public final class Event extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. A bucket of any [event
-     * parameters](https://developers.google.com/analytics/devguides/collection/protocol/ga4/reference/events)
+     * parameters](https://developers.google.com/data-manager/api/reference/analytics/recommended-events)
      * to be included within the event that were not already specified using other
      * structured fields.
      * </pre>
@@ -6664,7 +6760,7 @@ public final class Event extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. A bucket of any [event
-     * parameters](https://developers.google.com/analytics/devguides/collection/protocol/ga4/reference/events)
+     * parameters](https://developers.google.com/data-manager/api/reference/analytics/recommended-events)
      * to be included within the event that were not already specified using other
      * structured fields.
      * </pre>
@@ -6687,7 +6783,7 @@ public final class Event extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. A bucket of any [event
-     * parameters](https://developers.google.com/analytics/devguides/collection/protocol/ga4/reference/events)
+     * parameters](https://developers.google.com/data-manager/api/reference/analytics/recommended-events)
      * to be included within the event that were not already specified using other
      * structured fields.
      * </pre>
@@ -6707,7 +6803,7 @@ public final class Event extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. A bucket of any [event
-     * parameters](https://developers.google.com/analytics/devguides/collection/protocol/ga4/reference/events)
+     * parameters](https://developers.google.com/data-manager/api/reference/analytics/recommended-events)
      * to be included within the event that were not already specified using other
      * structured fields.
      * </pre>
@@ -6727,7 +6823,7 @@ public final class Event extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. A bucket of any [event
-     * parameters](https://developers.google.com/analytics/devguides/collection/protocol/ga4/reference/events)
+     * parameters](https://developers.google.com/data-manager/api/reference/analytics/recommended-events)
      * to be included within the event that were not already specified using other
      * structured fields.
      * </pre>
@@ -7328,6 +7424,227 @@ public final class Event extends com.google.protobuf.GeneratedMessage
       bitField0_ |= 0x00400000;
       onChanged();
       return this;
+    }
+
+    private com.google.ads.datamanager.v1.CallInfo callInfo_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.ads.datamanager.v1.CallInfo,
+            com.google.ads.datamanager.v1.CallInfo.Builder,
+            com.google.ads.datamanager.v1.CallInfoOrBuilder>
+        callInfoBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Information gathered about the call (if any) which led to this
+     * event.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.datamanager.v1.CallInfo call_info = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the callInfo field is set.
+     */
+    public boolean hasCallInfo() {
+      return ((bitField0_ & 0x00800000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Information gathered about the call (if any) which led to this
+     * event.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.datamanager.v1.CallInfo call_info = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The callInfo.
+     */
+    public com.google.ads.datamanager.v1.CallInfo getCallInfo() {
+      if (callInfoBuilder_ == null) {
+        return callInfo_ == null
+            ? com.google.ads.datamanager.v1.CallInfo.getDefaultInstance()
+            : callInfo_;
+      } else {
+        return callInfoBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Information gathered about the call (if any) which led to this
+     * event.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.datamanager.v1.CallInfo call_info = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setCallInfo(com.google.ads.datamanager.v1.CallInfo value) {
+      if (callInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        callInfo_ = value;
+      } else {
+        callInfoBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00800000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Information gathered about the call (if any) which led to this
+     * event.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.datamanager.v1.CallInfo call_info = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setCallInfo(com.google.ads.datamanager.v1.CallInfo.Builder builderForValue) {
+      if (callInfoBuilder_ == null) {
+        callInfo_ = builderForValue.build();
+      } else {
+        callInfoBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00800000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Information gathered about the call (if any) which led to this
+     * event.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.datamanager.v1.CallInfo call_info = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeCallInfo(com.google.ads.datamanager.v1.CallInfo value) {
+      if (callInfoBuilder_ == null) {
+        if (((bitField0_ & 0x00800000) != 0)
+            && callInfo_ != null
+            && callInfo_ != com.google.ads.datamanager.v1.CallInfo.getDefaultInstance()) {
+          getCallInfoBuilder().mergeFrom(value);
+        } else {
+          callInfo_ = value;
+        }
+      } else {
+        callInfoBuilder_.mergeFrom(value);
+      }
+      if (callInfo_ != null) {
+        bitField0_ |= 0x00800000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Information gathered about the call (if any) which led to this
+     * event.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.datamanager.v1.CallInfo call_info = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearCallInfo() {
+      bitField0_ = (bitField0_ & ~0x00800000);
+      callInfo_ = null;
+      if (callInfoBuilder_ != null) {
+        callInfoBuilder_.dispose();
+        callInfoBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Information gathered about the call (if any) which led to this
+     * event.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.datamanager.v1.CallInfo call_info = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.datamanager.v1.CallInfo.Builder getCallInfoBuilder() {
+      bitField0_ |= 0x00800000;
+      onChanged();
+      return internalGetCallInfoFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Information gathered about the call (if any) which led to this
+     * event.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.datamanager.v1.CallInfo call_info = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.datamanager.v1.CallInfoOrBuilder getCallInfoOrBuilder() {
+      if (callInfoBuilder_ != null) {
+        return callInfoBuilder_.getMessageOrBuilder();
+      } else {
+        return callInfo_ == null
+            ? com.google.ads.datamanager.v1.CallInfo.getDefaultInstance()
+            : callInfo_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Information gathered about the call (if any) which led to this
+     * event.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.datamanager.v1.CallInfo call_info = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.ads.datamanager.v1.CallInfo,
+            com.google.ads.datamanager.v1.CallInfo.Builder,
+            com.google.ads.datamanager.v1.CallInfoOrBuilder>
+        internalGetCallInfoFieldBuilder() {
+      if (callInfoBuilder_ == null) {
+        callInfoBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.ads.datamanager.v1.CallInfo,
+                com.google.ads.datamanager.v1.CallInfo.Builder,
+                com.google.ads.datamanager.v1.CallInfoOrBuilder>(
+                getCallInfo(), getParentForChildren(), isClean());
+        callInfo_ = null;
+      }
+      return callInfoBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.ads.datamanager.v1.Event)

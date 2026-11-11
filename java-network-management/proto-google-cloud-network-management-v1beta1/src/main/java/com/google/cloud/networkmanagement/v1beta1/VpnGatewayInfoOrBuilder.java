@@ -56,7 +56,11 @@ public interface VpnGatewayInfoOrBuilder
    *
    *
    * <pre>
-   * URI of a VPN gateway.
+   * URI of the VPN gateway.
+   * Format:
+   * * `projects/{project_id}/regions/{region}/vpnGateways/{vpn_gateway_id}` (HA
+   * VPN gateway)
+   * * `projects/{project_id}/regions/{region}/targetVpnGateways/{target_vpn_gateway_id}` (Classic VPN gateway)
    * </pre>
    *
    * <code>string uri = 2;</code>
@@ -69,7 +73,11 @@ public interface VpnGatewayInfoOrBuilder
    *
    *
    * <pre>
-   * URI of a VPN gateway.
+   * URI of the VPN gateway.
+   * Format:
+   * * `projects/{project_id}/regions/{region}/vpnGateways/{vpn_gateway_id}` (HA
+   * VPN gateway)
+   * * `projects/{project_id}/regions/{region}/targetVpnGateways/{target_vpn_gateway_id}` (Classic VPN gateway)
    * </pre>
    *
    * <code>string uri = 2;</code>
@@ -82,7 +90,8 @@ public interface VpnGatewayInfoOrBuilder
    *
    *
    * <pre>
-   * URI of a Compute Engine network where the VPN gateway is configured.
+   * URI of the VPC network where the VPN gateway is configured.
+   * Format: `projects/{project_id}/global/networks/{network_id}`
    * </pre>
    *
    * <code>string network_uri = 3;</code>
@@ -95,7 +104,8 @@ public interface VpnGatewayInfoOrBuilder
    *
    *
    * <pre>
-   * URI of a Compute Engine network where the VPN gateway is configured.
+   * URI of the VPC network where the VPN gateway is configured.
+   * Format: `projects/{project_id}/global/networks/{network_id}`
    * </pre>
    *
    * <code>string network_uri = 3;</code>
@@ -134,9 +144,10 @@ public interface VpnGatewayInfoOrBuilder
    *
    *
    * <pre>
-   * A VPN tunnel that is associated with this VPN gateway.
+   * URI of the VPN tunnel associated with the VPN gateway.
    * There may be multiple VPN tunnels configured on a VPN gateway, and only
    * the one relevant to the test is displayed.
+   * Format: `projects/{project_id}/regions/{region}/vpnTunnels/{vpn_tunnel_id}`
    * </pre>
    *
    * <code>string vpn_tunnel_uri = 5;</code>
@@ -149,9 +160,10 @@ public interface VpnGatewayInfoOrBuilder
    *
    *
    * <pre>
-   * A VPN tunnel that is associated with this VPN gateway.
+   * URI of the VPN tunnel associated with the VPN gateway.
    * There may be multiple VPN tunnels configured on a VPN gateway, and only
    * the one relevant to the test is displayed.
+   * Format: `projects/{project_id}/regions/{region}/vpnTunnels/{vpn_tunnel_id}`
    * </pre>
    *
    * <code>string vpn_tunnel_uri = 5;</code>

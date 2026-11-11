@@ -73,6 +73,10 @@ public final class DbSystemProto extends com.google.protobuf.GeneratedFile {
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_oracledatabase_v1_DeleteDbSystemRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_oracledatabase_v1_UpdateDbSystemRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_oracledatabase_v1_UpdateDbSystemRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_oracledatabase_v1_GetDbSystemRequest_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_oracledatabase_v1_GetDbSystemRequest_fieldAccessorTable;
@@ -97,22 +101,21 @@ public final class DbSystemProto extends com.google.protobuf.GeneratedFile {
           + ".google/cloud/oracledatabase/v1/db_system.proto\022\036google.cloud.oracledatabase.v1"
           + "\032\037google/api/field_behavior.proto\032\033googl"
           + "e/api/field_info.proto\032\031google/api/resou"
-          + "rce.proto\032-google/cloud/oracledatabase/v"
-          + "1/database.proto\032\037google/protobuf/timest"
-          + "amp.proto\032\032google/type/datetime.proto\"\235\005\n"
+          + "rce.proto\032-google/cloud/oracledatabase/v1/database.proto\032 google/protobuf/field_"
+          + "mask.proto\032\037google/protobuf/timestamp.proto\032\032google/type/datetime.proto\"\242\005\n"
           + "\010DbSystem\022\022\n"
-          + "\004name\030\001 \001(\tB\004\342A\001\010\022L\n\n"
+          + "\004name\030\001 \001(\tB\004\342A\001\010\022M\n\n"
           + "properties\030\002"
-          + " \001(\01322.google.cloud.oracledatabase.v1.DbSystemPropertiesB\004\342A\001\001\022\035\n"
-          + "\017gcp_oracle_zone\030\003 \001(\tB\004\342A\001\001\022J\n"
-          + "\006labels\030\004 \003(\01324.go"
-          + "ogle.cloud.oracledatabase.v1.DbSystem.LabelsEntryB\004\342A\001\001\022F\n"
-          + "\013odb_network\030\005 \001(\tB1\342A\001\001\372A*\n"
-          + "(oracledatabase.googleapis.com/OdbNetwork\022D\n\n"
-          + "odb_subnet\030\006 \001(\tB0\342A\001\002\372A)\n"
+          + " \001(\01322.google.cloud.oracledatabase.v1.DbSystemPropertiesB\005\342A\002\001\005\022\036\n"
+          + "\017gcp_oracle_zone\030\003 \001(\tB\005\342A\002\001\005\022J\n"
+          + "\006labels\030\004 \003(\01324.google"
+          + ".cloud.oracledatabase.v1.DbSystem.LabelsEntryB\004\342A\001\001\022G\n"
+          + "\013odb_network\030\005 \001(\tB2\342A\002\001\005\372A*\n"
+          + "(oracledatabase.googleapis.com/OdbNetwork\022E\n\n"
+          + "odb_subnet\030\006 \001(\tB1\342A\002\002\005\372A)\n"
           + "\'oracledatabase.googleapis.com/OdbSubnet\022\034\n"
-          + "\016entitlement_id\030\007 \001(\tB\004\342A\001\003\022\032\n"
-          + "\014display_name\030\010 \001(\tB\004\342A\001\002\0225\n"
+          + "\016entitlement_id\030\007 \001(\tB\004\342A\001\003\022\033\n"
+          + "\014display_name\030\010 \001(\tB\005\342A\002\002\005\0225\n"
           + "\013create_time\030\t"
           + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\022\025\n"
           + "\007oci_url\030\n"
@@ -120,38 +123,38 @@ public final class DbSystemProto extends com.google.protobuf.GeneratedFile {
           + "\013LabelsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001:\177\352A|\n"
-          + "&oracledatabase.googleapis.com/DbSystem\022=projects/{pro"
-          + "ject}/locations/{location}/dbSystems/{db_system}*\tdbSystems2\010dbSystem\"\375\014\n"
+          + "&oracledatabase.googleapis.com/DbSystem\022=projects/{proj"
+          + "ect}/locations/{location}/dbSystems/{db_system}*\tdbSystems2\010dbSystem\"\375\014\n"
           + "\022DbSystemProperties\022\023\n"
           + "\005shape\030\001 \001(\tB\004\342A\001\002\022\033\n\r"
           + "compute_count\030\002 \001(\005B\004\342A\001\002\022*\n"
           + "\034initial_data_storage_size_gb\030\003 \001(\005B\004\342A\001\002\022j\n"
-          + "\020database_edition\030\004 \001(\0162J.google.cloud.oracledataba"
-          + "se.v1.DbSystemProperties.DbSystemDatabaseEditionB\004\342A\001\002\022\\\n\r"
-          + "license_model\030\005 \001(\0162?."
-          + "google.cloud.oracledatabase.v1.DbSystemProperties.LicenseModelB\004\342A\001\002\022\035\n"
+          + "\020database_edition\030\004 \001(\0162J.google.cloud.oracledatabas"
+          + "e.v1.DbSystemProperties.DbSystemDatabaseEditionB\004\342A\001\002\022\\\n\r"
+          + "license_model\030\005 \001(\0162?.g"
+          + "oogle.cloud.oracledatabase.v1.DbSystemProperties.LicenseModelB\004\342A\001\002\022\035\n"
           + "\017ssh_public_keys\030\006 \003(\tB\004\342A\001\002\022\035\n"
           + "\017hostname_prefix\030\007 \001(\tB\004\342A\001\001\022\026\n"
           + "\010hostname\030\010 \001(\tB\004\342A\001\003\022\030\n\n"
           + "private_ip\030\t \001(\tB\004\342A\001\001\022d\n"
           + "\027data_collection_options\030\n"
-          + " \001(\0132=.google.cloud.oracledatab"
-          + "ase.v1.DataCollectionOptionsDbSystemB\004\342A\001\001\022.\n"
+          + " \001(\0132=.google.cloud.oracledataba"
+          + "se.v1.DataCollectionOptionsDbSystemB\004\342A\001\001\022.\n"
           + "\ttime_zone\030\013 \001(\0132\025.google.type.TimeZoneB\004\342A\001\001\022h\n"
-          + "\017lifecycle_state\030\014 \001(\0162I.go"
-          + "ogle.cloud.oracledatabase.v1.DbSystemProperties.DbSystemLifecycleStateB\004\342A\001\003\022=\n"
+          + "\017lifecycle_state\030\014 \001(\0162I.goo"
+          + "gle.cloud.oracledatabase.v1.DbSystemProperties.DbSystemLifecycleStateB\004\342A\001\003\022=\n"
           + "\007db_home\030\r"
           + " \001(\0132&.google.cloud.oracledatabase.v1.DbHomeB\004\342A\001\001\022\022\n"
           + "\004ocid\030\016 \001(\tB\004\342A\001\003\022\034\n"
           + "\016memory_size_gb\030\017 \001(\005B\004\342A\001\001\022\\\n\r"
-          + "compute_model\030\020 \001(\0162?.google.cloud.oracledataba"
-          + "se.v1.DbSystemProperties.ComputeModelB\004\342A\001\001\022\"\n"
+          + "compute_model\030\020 \001(\0162?.google.cloud.oracledatabas"
+          + "e.v1.DbSystemProperties.ComputeModelB\004\342A\001\001\022\"\n"
           + "\024data_storage_size_gb\030\021 \001(\005B\004\342A\001\001\022\"\n"
           + "\024reco_storage_size_gb\030\022 \001(\005B\004\342A\001\001\022\024\n"
           + "\006domain\030\023 \001(\tB\004\342A\001\001\022\030\n\n"
           + "node_count\030\024 \001(\005B\004\342A\001\001\022P\n"
-          + "\021db_system_options\030\025 \001(\0132/.google."
-          + "cloud.oracledatabase.v1.DbSystemOptionsB\004\342A\001\001\"\234\001\n"
+          + "\021db_system_options\030\025 \001(\0132/.google.c"
+          + "loud.oracledatabase.v1.DbSystemOptionsB\004\342A\001\001\"\234\001\n"
           + "\027DbSystemDatabaseEdition\022*\n"
           + "&DB_SYSTEM_DATABASE_EDITION_UNSPECIFIED\020\000\022\024\n"
           + "\020STANDARD_EDITION\020\001\022\026\n"
@@ -182,8 +185,8 @@ public final class DbSystemProto extends com.google.protobuf.GeneratedFile {
           + "\035is_diagnostics_events_enabled\030\001 \001(\010B\004\342A\001\001\022&\n"
           + "\030is_incident_logs_enabled\030\002 \001(\010B\004\342A\001\001\"\301\001\n"
           + "\017DbSystemOptions\022c\n"
-          + "\022storage_management\030\001 \001(\0162A.google.cloud.oracl"
-          + "edatabase.v1.DbSystemOptions.StorageManagementB\004\342A\001\001\"I\n"
+          + "\022storage_management\030\001 \001(\0162A.google.cloud.oracle"
+          + "database.v1.DbSystemOptions.StorageManagementB\004\342A\001\001\"I\n"
           + "\021StorageManagement\022\"\n"
           + "\036STORAGE_MANAGEMENT_UNSPECIFIED\020\000\022\007\n"
           + "\003ASM\020\001\022\007\n"
@@ -198,19 +201,26 @@ public final class DbSystemProto extends com.google.protobuf.GeneratedFile {
           + "\006parent\030\001 \001("
           + "\tB/\342A\001\002\372A(\022&oracledatabase.googleapis.com/DbSystem\022\032\n"
           + "\014db_system_id\030\002 \001(\tB\004\342A\001\002\022A\n"
-          + "\tdb_system\030\003 \001(\0132"
-          + "(.google.cloud.oracledatabase.v1.DbSystemB\004\342A\001\002\022 \n\n"
+          + "\tdb_system\030\003 \001(\0132("
+          + ".google.cloud.oracledatabase.v1.DbSystemB\004\342A\001\002\022 \n\n"
           + "request_id\030\004 \001(\tB\014\342A\001\001\342\214\317\327\010\002\010\001\"x\n"
           + "\025DeleteDbSystemRequest\022=\n"
           + "\004name\030\001 \001(\tB/\342A\001\002\372A(\n"
           + "&oracledatabase.googleapis.com/DbSystem\022 \n\n"
-          + "request_id\030\002 \001(\tB\014\342A\001\001\342\214\317\327\010\002\010\001\"S\n"
+          + "request_id\030\002 \001("
+          + "\tB\014\342A\001\001\342\214\317\327\010\002\010\001\"\263\001\n"
+          + "\025UpdateDbSystemRequest\0225\n"
+          + "\013update_mask\030\001"
+          + " \001(\0132\032.google.protobuf.FieldMaskB\004\342A\001\001\022A\n"
+          + "\tdb_system\030\002"
+          + " \001(\0132(.google.cloud.oracledatabase.v1.DbSystemB\004\342A\001\002\022 \n\n"
+          + "request_id\030\003 \001(\tB\014\342A\001\001\342\214\317\327\010\002\010\001\"S\n"
           + "\022GetDbSystemRequest\022=\n"
           + "\004name\030\001 \001(\tB/\342A\001\002\372A(\n"
           + "&oracledatabase.googleapis.com/DbSystem\"\270\001\n"
           + "\024ListDbSystemsRequest\022?\n"
-          + "\006parent\030\001 \001("
-          + "\tB/\342A\001\002\372A(\022&oracledatabase.googleapis.com/DbSystem\022\027\n"
+          + "\006parent\030\001 \001(\tB/\342A\001\002\372A(\022"
+          + "&oracledatabase.googleapis.com/DbSystem\022\027\n"
           + "\tpage_size\030\002 \001(\005B\004\342A\001\001\022\030\n\n"
           + "page_token\030\003 \001(\tB\004\342A\001\001\022\024\n"
           + "\006filter\030\004 \001(\tB\004\342A\001\001\022\026\n"
@@ -220,10 +230,10 @@ public final class DbSystemProto extends com.google.protobuf.GeneratedFile {
           + "\017next_page_token\030\002 \001(\t\022\023\n"
           + "\013unreachable\030\003 \003(\tB\347\001\n"
           + "\"com.google.cloud.oracledatabase.v1B\r"
-          + "DbSystemProtoP\001ZJcloud.google.com/go/oracledatabase/apiv1/oracledataba"
-          + "sepb;oracledatabasepb\252\002\036Google.Cloud.Ora"
-          + "cleDatabase.V1\312\002\036Google\\Cloud\\OracleData"
-          + "base\\V1\352\002!Google::Cloud::OracleDatabase::V1b\006proto3"
+          + "DbSystemProtoP\001ZJcloud.google.com/go/oracledataba"
+          + "se/apiv1/oracledatabasepb;oracledatabase"
+          + "pb\252\002\036Google.Cloud.OracleDatabase.V1\312\002\036Go"
+          + "ogle\\Cloud\\OracleDatabase\\V1\352\002!Google::Cloud::OracleDatabase::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -233,6 +243,7 @@ public final class DbSystemProto extends com.google.protobuf.GeneratedFile {
               com.google.api.FieldInfoProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.oracledatabase.v1.DatabaseProto.getDescriptor(),
+              com.google.protobuf.FieldMaskProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
               com.google.type.DateTimeProto.getDescriptor(),
             });
@@ -329,8 +340,16 @@ public final class DbSystemProto extends com.google.protobuf.GeneratedFile {
             new java.lang.String[] {
               "Name", "RequestId",
             });
-    internal_static_google_cloud_oracledatabase_v1_GetDbSystemRequest_descriptor =
+    internal_static_google_cloud_oracledatabase_v1_UpdateDbSystemRequest_descriptor =
         getDescriptor().getMessageType(7);
+    internal_static_google_cloud_oracledatabase_v1_UpdateDbSystemRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_oracledatabase_v1_UpdateDbSystemRequest_descriptor,
+            new java.lang.String[] {
+              "UpdateMask", "DbSystem", "RequestId",
+            });
+    internal_static_google_cloud_oracledatabase_v1_GetDbSystemRequest_descriptor =
+        getDescriptor().getMessageType(8);
     internal_static_google_cloud_oracledatabase_v1_GetDbSystemRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_oracledatabase_v1_GetDbSystemRequest_descriptor,
@@ -338,7 +357,7 @@ public final class DbSystemProto extends com.google.protobuf.GeneratedFile {
               "Name",
             });
     internal_static_google_cloud_oracledatabase_v1_ListDbSystemsRequest_descriptor =
-        getDescriptor().getMessageType(8);
+        getDescriptor().getMessageType(9);
     internal_static_google_cloud_oracledatabase_v1_ListDbSystemsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_oracledatabase_v1_ListDbSystemsRequest_descriptor,
@@ -346,7 +365,7 @@ public final class DbSystemProto extends com.google.protobuf.GeneratedFile {
               "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
             });
     internal_static_google_cloud_oracledatabase_v1_ListDbSystemsResponse_descriptor =
-        getDescriptor().getMessageType(9);
+        getDescriptor().getMessageType(10);
     internal_static_google_cloud_oracledatabase_v1_ListDbSystemsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_oracledatabase_v1_ListDbSystemsResponse_descriptor,
@@ -358,6 +377,7 @@ public final class DbSystemProto extends com.google.protobuf.GeneratedFile {
     com.google.api.FieldInfoProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.oracledatabase.v1.DatabaseProto.getDescriptor();
+    com.google.protobuf.FieldMaskProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
     com.google.type.DateTimeProto.getDescriptor();
     com.google.protobuf.ExtensionRegistry registry =

@@ -455,4 +455,53 @@ public interface ProcessorVersionOrBuilder
    */
   com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfoOrBuilder
       getGenAiModelInfoOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The grounding settings of the processor version. This can only
+   * be set using TrainProcessorVersionRequest to override the default grounding
+   * settings.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.documentai.v1beta3.GroundingSettings grounding_settings = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the groundingSettings field is set.
+   */
+  boolean hasGroundingSettings();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The grounding settings of the processor version. This can only
+   * be set using TrainProcessorVersionRequest to override the default grounding
+   * settings.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.documentai.v1beta3.GroundingSettings grounding_settings = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The groundingSettings.
+   */
+  com.google.cloud.documentai.v1beta3.GroundingSettings getGroundingSettings();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The grounding settings of the processor version. This can only
+   * be set using TrainProcessorVersionRequest to override the default grounding
+   * settings.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.documentai.v1beta3.GroundingSettings grounding_settings = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.documentai.v1beta3.GroundingSettingsOrBuilder getGroundingSettingsOrBuilder();
 }

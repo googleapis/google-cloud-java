@@ -1366,6 +1366,59 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public static final int STATUS_FIELD_NUMBER = 181260274;
+  private com.google.cloud.compute.v1.UrlMapStatus status_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] The status of the URL map.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.UrlMapStatus status = 181260274;</code>
+   *
+   * @return Whether the status field is set.
+   */
+  @java.lang.Override
+  public boolean hasStatus() {
+    return ((bitField0_ & 0x00002000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] The status of the URL map.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.UrlMapStatus status = 181260274;</code>
+   *
+   * @return The status.
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.UrlMapStatus getStatus() {
+    return status_ == null
+        ? com.google.cloud.compute.v1.UrlMapStatus.getDefaultInstance()
+        : status_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] The status of the URL map.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.UrlMapStatus status = 181260274;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.UrlMapStatusOrBuilder getStatusOrBuilder() {
+    return status_ == null
+        ? com.google.cloud.compute.v1.UrlMapStatus.getDefaultInstance()
+        : status_;
+  }
+
   public static final int TESTS_FIELD_NUMBER = 110251553;
 
   @SuppressWarnings("serial")
@@ -1497,6 +1550,9 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000800) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 138946292, region_);
     }
+    if (((bitField0_ & 0x00002000) != 0)) {
+      output.writeMessage(181260274, getStatus());
+    }
     if (((bitField0_ & 0x00000040) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 234678500, fingerprint_);
     }
@@ -1555,6 +1611,9 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessage
     }
     if (((bitField0_ & 0x00000800) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(138946292, region_);
+    }
+    if (((bitField0_ & 0x00002000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(181260274, getStatus());
     }
     if (((bitField0_ & 0x00000040) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(234678500, fingerprint_);
@@ -1661,6 +1720,10 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessage
     if (hasSelfLink()) {
       if (!getSelfLink().equals(other.getSelfLink())) return false;
     }
+    if (hasStatus() != other.hasStatus()) return false;
+    if (hasStatus()) {
+      if (!getStatus().equals(other.getStatus())) return false;
+    }
     if (!getTestsList().equals(other.getTestsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -1732,6 +1795,10 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessage
     if (hasSelfLink()) {
       hash = (37 * hash) + SELF_LINK_FIELD_NUMBER;
       hash = (53 * hash) + getSelfLink().hashCode();
+    }
+    if (hasStatus()) {
+      hash = (37 * hash) + STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + getStatus().hashCode();
     }
     if (getTestsCount() > 0) {
       hash = (37 * hash) + TESTS_FIELD_NUMBER;
@@ -1913,6 +1980,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessage
         internalGetHeaderActionFieldBuilder();
         internalGetHostRulesFieldBuilder();
         internalGetPathMatchersFieldBuilder();
+        internalGetStatusFieldBuilder();
         internalGetTestsFieldBuilder();
       }
     }
@@ -1964,13 +2032,18 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessage
       bitField0_ = (bitField0_ & ~0x00001000);
       region_ = "";
       selfLink_ = "";
+      status_ = null;
+      if (statusBuilder_ != null) {
+        statusBuilder_.dispose();
+        statusBuilder_ = null;
+      }
       if (testsBuilder_ == null) {
         tests_ = java.util.Collections.emptyList();
       } else {
         tests_ = null;
         testsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       return this;
     }
 
@@ -2025,9 +2098,9 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessage
         result.pathMatchers_ = pathMatchersBuilder_.build();
       }
       if (testsBuilder_ == null) {
-        if (((bitField0_ & 0x00008000) != 0)) {
+        if (((bitField0_ & 0x00010000) != 0)) {
           tests_ = java.util.Collections.unmodifiableList(tests_);
-          bitField0_ = (bitField0_ & ~0x00008000);
+          bitField0_ = (bitField0_ & ~0x00010000);
         }
         result.tests_ = tests_;
       } else {
@@ -2099,6 +2172,10 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x00004000) != 0)) {
         result.selfLink_ = selfLink_;
         to_bitField0_ |= 0x00001000;
+      }
+      if (((from_bitField0_ & 0x00008000) != 0)) {
+        result.status_ = statusBuilder_ == null ? status_ : statusBuilder_.build();
+        to_bitField0_ |= 0x00002000;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2224,11 +2301,14 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessage
         bitField0_ |= 0x00004000;
         onChanged();
       }
+      if (other.hasStatus()) {
+        mergeStatus(other.getStatus());
+      }
       if (testsBuilder_ == null) {
         if (!other.tests_.isEmpty()) {
           if (tests_.isEmpty()) {
             tests_ = other.tests_;
-            bitField0_ = (bitField0_ & ~0x00008000);
+            bitField0_ = (bitField0_ & ~0x00010000);
           } else {
             ensureTestsIsMutable();
             tests_.addAll(other.tests_);
@@ -2241,7 +2321,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessage
             testsBuilder_.dispose();
             testsBuilder_ = null;
             tests_ = other.tests_;
-            bitField0_ = (bitField0_ & ~0x00008000);
+            bitField0_ = (bitField0_ & ~0x00010000);
             testsBuilder_ =
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
                     ? internalGetTestsFieldBuilder()
@@ -2328,6 +2408,12 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00002000;
                 break;
               } // case 1111570338
+            case 1450082194:
+              {
+                input.readMessage(internalGetStatusFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00008000;
+                break;
+              } // case 1450082194
             case 1877428002:
               {
                 fingerprint_ = input.readStringRequireUtf8();
@@ -5828,13 +5914,207 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
+    private com.google.cloud.compute.v1.UrlMapStatus status_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.compute.v1.UrlMapStatus,
+            com.google.cloud.compute.v1.UrlMapStatus.Builder,
+            com.google.cloud.compute.v1.UrlMapStatusOrBuilder>
+        statusBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] The status of the URL map.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.UrlMapStatus status = 181260274;</code>
+     *
+     * @return Whether the status field is set.
+     */
+    public boolean hasStatus() {
+      return ((bitField0_ & 0x00008000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] The status of the URL map.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.UrlMapStatus status = 181260274;</code>
+     *
+     * @return The status.
+     */
+    public com.google.cloud.compute.v1.UrlMapStatus getStatus() {
+      if (statusBuilder_ == null) {
+        return status_ == null
+            ? com.google.cloud.compute.v1.UrlMapStatus.getDefaultInstance()
+            : status_;
+      } else {
+        return statusBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] The status of the URL map.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.UrlMapStatus status = 181260274;</code>
+     */
+    public Builder setStatus(com.google.cloud.compute.v1.UrlMapStatus value) {
+      if (statusBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        status_ = value;
+      } else {
+        statusBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] The status of the URL map.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.UrlMapStatus status = 181260274;</code>
+     */
+    public Builder setStatus(com.google.cloud.compute.v1.UrlMapStatus.Builder builderForValue) {
+      if (statusBuilder_ == null) {
+        status_ = builderForValue.build();
+      } else {
+        statusBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] The status of the URL map.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.UrlMapStatus status = 181260274;</code>
+     */
+    public Builder mergeStatus(com.google.cloud.compute.v1.UrlMapStatus value) {
+      if (statusBuilder_ == null) {
+        if (((bitField0_ & 0x00008000) != 0)
+            && status_ != null
+            && status_ != com.google.cloud.compute.v1.UrlMapStatus.getDefaultInstance()) {
+          getStatusBuilder().mergeFrom(value);
+        } else {
+          status_ = value;
+        }
+      } else {
+        statusBuilder_.mergeFrom(value);
+      }
+      if (status_ != null) {
+        bitField0_ |= 0x00008000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] The status of the URL map.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.UrlMapStatus status = 181260274;</code>
+     */
+    public Builder clearStatus() {
+      bitField0_ = (bitField0_ & ~0x00008000);
+      status_ = null;
+      if (statusBuilder_ != null) {
+        statusBuilder_.dispose();
+        statusBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] The status of the URL map.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.UrlMapStatus status = 181260274;</code>
+     */
+    public com.google.cloud.compute.v1.UrlMapStatus.Builder getStatusBuilder() {
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return internalGetStatusFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] The status of the URL map.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.UrlMapStatus status = 181260274;</code>
+     */
+    public com.google.cloud.compute.v1.UrlMapStatusOrBuilder getStatusOrBuilder() {
+      if (statusBuilder_ != null) {
+        return statusBuilder_.getMessageOrBuilder();
+      } else {
+        return status_ == null
+            ? com.google.cloud.compute.v1.UrlMapStatus.getDefaultInstance()
+            : status_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] The status of the URL map.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.UrlMapStatus status = 181260274;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.compute.v1.UrlMapStatus,
+            com.google.cloud.compute.v1.UrlMapStatus.Builder,
+            com.google.cloud.compute.v1.UrlMapStatusOrBuilder>
+        internalGetStatusFieldBuilder() {
+      if (statusBuilder_ == null) {
+        statusBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.compute.v1.UrlMapStatus,
+                com.google.cloud.compute.v1.UrlMapStatus.Builder,
+                com.google.cloud.compute.v1.UrlMapStatusOrBuilder>(
+                getStatus(), getParentForChildren(), isClean());
+        status_ = null;
+      }
+      return statusBuilder_;
+    }
+
     private java.util.List<com.google.cloud.compute.v1.UrlMapTest> tests_ =
         java.util.Collections.emptyList();
 
     private void ensureTestsIsMutable() {
-      if (!((bitField0_ & 0x00008000) != 0)) {
+      if (!((bitField0_ & 0x00010000) != 0)) {
         tests_ = new java.util.ArrayList<com.google.cloud.compute.v1.UrlMapTest>(tests_);
-        bitField0_ |= 0x00008000;
+        bitField0_ |= 0x00010000;
       }
     }
 
@@ -6103,7 +6383,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessage
     public Builder clearTests() {
       if (testsBuilder_ == null) {
         tests_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00008000);
+        bitField0_ = (bitField0_ & ~0x00010000);
         onChanged();
       } else {
         testsBuilder_.clear();
@@ -6259,7 +6539,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessage
                 com.google.cloud.compute.v1.UrlMapTest,
                 com.google.cloud.compute.v1.UrlMapTest.Builder,
                 com.google.cloud.compute.v1.UrlMapTestOrBuilder>(
-                tests_, ((bitField0_ & 0x00008000) != 0), getParentForChildren(), isClean());
+                tests_, ((bitField0_ & 0x00010000) != 0), getParentForChildren(), isClean());
         tests_ = null;
       }
       return testsBuilder_;

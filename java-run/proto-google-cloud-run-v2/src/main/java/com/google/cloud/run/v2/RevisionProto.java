@@ -84,10 +84,10 @@ public final class RevisionProto extends com.google.protobuf.GeneratedFile {
           + "/api/field_behavior.proto\032\035google/api/la"
           + "unch_stage.proto\032\031google/api/resource.pr"
           + "oto\032\030google/api/routing.proto\032#google/cl"
-          + "oud/run/v2/condition.proto\032!google/cloud/run/v2/k8s.min.proto\032 google/cloud/run/"
-          + "v2/status.proto\032)google/cloud/run/v2/vendor_settings.proto\032#google/longrunning/o"
-          + "perations.proto\032\036google/protobuf/duratio"
-          + "n.proto\032\037google/protobuf/timestamp.proto\"H\n"
+          + "oud/run/v2/condition.proto\032!google/cloud"
+          + "/run/v2/k8s.min.proto\032!google/cloud/run/v2/sandbox.proto\032 google/cloud/run/v2/st"
+          + "atus.proto\032)google/cloud/run/v2/vendor_settings.proto\032#google/longrunning/operat"
+          + "ions.proto\032\036google/protobuf/duration.proto\032\037google/protobuf/timestamp.proto\"H\n"
           + "\022GetRevisionRequest\0222\n"
           + "\004name\030\001 \001(\tB$\342A\001\002\372A\035\n"
           + "\033run.googleapis.com/Revision\"\211\001\n"
@@ -104,15 +104,15 @@ public final class RevisionProto extends com.google.protobuf.GeneratedFile {
           + "\004name\030\001 \001(\tB$\342A\001\002\372A\035\n"
           + "\033run.googleapis.com/Revision\022\025\n\r"
           + "validate_only\030\002 \001(\010\022\014\n"
-          + "\004etag\030\003 \001(\t\"\334\016\n"
+          + "\004etag\030\003 \001(\t\"\363\020\n"
           + "\010Revision\022\022\n"
           + "\004name\030\001 \001(\tB\004\342A\001\003\022\021\n"
           + "\003uid\030\002 \001(\tB\004\342A\001\003\022\030\n\n"
           + "generation\030\003 \001(\003B\004\342A\001\003\022?\n"
-          + "\006labels\030\004 \003"
-          + "(\0132).google.cloud.run.v2.Revision.LabelsEntryB\004\342A\001\003\022I\n"
-          + "\013annotations\030\005 \003(\0132..googl"
-          + "e.cloud.run.v2.Revision.AnnotationsEntryB\004\342A\001\003\0225\n"
+          + "\006labels\030\004 \003(\0132)."
+          + "google.cloud.run.v2.Revision.LabelsEntryB\004\342A\001\003\022I\n"
+          + "\013annotations\030\005 \003(\0132..google.clo"
+          + "ud.run.v2.Revision.AnnotationsEntryB\004\342A\001\003\0225\n"
           + "\013create_time\030\006"
           + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\0225\n"
           + "\013update_time\030\007"
@@ -131,15 +131,17 @@ public final class RevisionProto extends com.google.protobuf.GeneratedFile {
           + " max_instance_request_concurrency\030\" \001(\005\022*\n"
           + "\007timeout\030\017 \001(\0132\031.google.protobuf.Duration\022\027\n"
           + "\017service_account\030\020 \001(\t\0222\n\n"
-          + "containers\030\021 \003(\0132\036.google.cloud.run.v2.Container\022,\n"
+          + "containers\030\021 \003(\0132\036.google.cloud.run.v2.Container\022B\n"
+          + "\tsandboxes\0308"
+          + " \001(\0132).google.cloud.run.v2.SandboxConfigurationB\004\342A\001\003\022,\n"
           + "\007volumes\030\022 \003(\0132\033.google.cloud.run.v2.Volume\022H\n"
           + "\025execution_environment\030\024"
           + " \001(\0162).google.cloud.run.v2.ExecutionEnvironment\022>\n"
           + "\016encryption_key\030\025 \001(\tB&\372A#\n"
           + "!cloudkms.googleapis.com/CryptoKey\0226\n"
           + "\014service_mesh\030\026 \001(\0132 .google.cloud.run.v2.ServiceMesh\022\\\n"
-          + " encryption_key_revocation_action\030\027 \001(\0162"
-          + "2.google.cloud.run.v2.EncryptionKeyRevocationAction\022C\n"
+          + " encryption_key_revocation_action\030\027"
+          + " \001(\01622.google.cloud.run.v2.EncryptionKeyRevocationAction\022C\n"
           + " encryption_key_shutdown_duration\030\030"
           + " \001(\0132\031.google.protobuf.Duration\022\031\n"
           + "\013reconciling\030\036 \001(\010B\004\342A\001\003\0228\n\n"
@@ -151,10 +153,16 @@ public final class RevisionProto extends com.google.protobuf.GeneratedFile {
           + "\020session_affinity\030& \001(\010\022H\n"
           + "\016scaling_status\030\'"
           + " \001(\0132*.google.cloud.run.v2.RevisionScalingStatusB\004\342A\001\003\0228\n\r"
-          + "node_selector\030( \001(\0132!.google.cloud.run.v2.NodeSelector\0221\n"
+          + "node_selector\030( \001(\0132!.google.cloud.run.v2.NodeSelector\022S\n"
+          + "\030workload_identity_config\0304 \001(\0132+.google.clo"
+          + "ud.run.v2.WorkloadIdentityConfigB\004\342A\001\001\0221\n"
           + "\035gpu_zonal_redundancy_disabled\0300"
           + " \001(\010B\005\342A\002\001\003H\000\210\001\001\022\025\n"
-          + "\007creator\0301 \001(\tB\004\342A\001\003\022\022\n"
+          + "\007creator\0301 \001(\tB\004\342A\001\003\022\024\n"
+          + "\006client\0305 \001(\tB\004\342A\001\003\022\034\n"
+          + "\016client_version\0306 \001(\tB\004\342A\001\003\022H\n"
+          + "\022ambient_networking\030; \001(\0132&.googl"
+          + "e.cloud.run.v2.AmbientNetworkingB\004\342A\001\003\022\022\n"
           + "\004etag\030c \001(\tB\004\342A\001\003\032-\n"
           + "\013LabelsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
@@ -162,29 +170,30 @@ public final class RevisionProto extends com.google.protobuf.GeneratedFile {
           + "\020AnnotationsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001:t\352Aq\n"
-          + "\033run.googleapis.com/Revision\022Oprojects/{project}/locations/{location}/s"
-          + "ervices/{service}/revisions/{revision}R\001\001B \n"
-          + "\036_gpu_zonal_redundancy_disabled2\304\007\n"
+          + "\033run.googleapis.com/Revision\022Oproject"
+          + "s/{project}/locations/{location}/services/{service}/revisions/{revision}R\001\001B \n"
+          + "\036_gpu_zonal_redundancy_disabled2\226\010\n"
           + "\tRevisions\022\222\002\n"
-          + "\013GetRevision\022\'.google.cloud.run.v2.GetRevisionRequest\032\035.google.clou"
-          + "d.run.v2.Revision\"\272\001\332A\004name\202\323\344\223\002y\0228/v2/{"
-          + "name=projects/*/locations/*/services/*/revisions/*}Z=\022;/v2/{name=projects/*/loca"
-          + "tions/*/workerPools/*/revisions/*}\212\323\344\223\002.\022,\n"
+          + "\013GetRevision\022\'.google.cloud.run.v2.GetRevisionRequest\032\035.google.cloud.run."
+          + "v2.Revision\"\272\001\332A\004name\202\323\344\223\002y\0228/v2/{name=p"
+          + "rojects/*/locations/*/services/*/revisio"
+          + "ns/*}Z=\022;/v2/{name=projects/*/locations/*/workerPools/*/revisions/*}\212\323\344\223\002.\022,\n"
           + "\004name\022$projects/*/locations/{location=*}/**\022\247\002\n\r"
-          + "ListRevisions\022).google.cloud.run.v2.ListRevisionsRequest\032*.google.clo"
-          + "ud.run.v2.ListRevisionsResponse\"\276\001\332A\006par"
-          + "ent\202\323\344\223\002y\0228/v2/{parent=projects/*/locati"
-          + "ons/*/services/*}/revisionsZ=\022;/v2/{pare"
-          + "nt=projects/*/locations/*/workerPools/*}/revisions\212\323\344\223\0020\022.\n"
+          + "ListRevisions\022).google.cloud.run.v2.ListRevisionsRequest\032*.google.cloud.run"
+          + ".v2.ListRevisionsResponse\"\276\001\332A\006parent\202\323\344"
+          + "\223\002y\0228/v2/{parent=projects/*/locations/*/"
+          + "services/*}/revisionsZ=\022;/v2/{parent=pro"
+          + "jects/*/locations/*/workerPools/*}/revisions\212\323\344\223\0020\022.\n"
           + "\006parent\022$projects/*/locations/{location=*}/**\022\257\002\n"
-          + "\016DeleteRevision\022*.google.cloud.run.v2.DeleteRevision"
-          + "Request\032\035.google.longrunning.Operation\"\321\001\312A\024\n"
-          + "\010Revision\022\010Revision\332A\004name\202\323\344\223\002y*8/"
-          + "v2/{name=projects/*/locations/*/services/*/revisions/*}Z=*;/v2/{name=projects/*/"
-          + "locations/*/workerPools/*/revisions/*}\212\323\344\223\002.\022,\n"
-          + "\004name\022$projects/*/locations/{loca"
-          + "tion=*}/**\032F\312A\022run.googleapis.com\322A.http"
-          + "s://www.googleapis.com/auth/cloud-platformBU\n"
+          + "\016DeleteRevision\022*."
+          + "google.cloud.run.v2.DeleteRevisionRequest\032\035.google.longrunning.Operation\"\321\001\312A\024\n"
+          + "\010Revision\022\010Revision\332A\004name\202\323\344\223\002y*8/v2/{na"
+          + "me=projects/*/locations/*/services/*/revisions/*}Z=*;/v2/{name=projects/*/locati"
+          + "ons/*/workerPools/*/revisions/*}\212\323\344\223\002.\022,\n"
+          + "\004name\022$projects/*/locations/{location=*"
+          + "}/**\032\227\001\312A\022run.googleapis.com\322A\177https://w"
+          + "ww.googleapis.com/auth/cloud-platform,https://www.googleapis.com/auth/run,https:"
+          + "//www.googleapis.com/auth/run.readonlyBU\n"
           + "\027com.google.cloud.run.v2B\r"
           + "RevisionProtoP\001Z)cloud.google.com/go/run/apiv2/runpb;runpbb\006proto3"
     };
@@ -200,6 +209,7 @@ public final class RevisionProto extends com.google.protobuf.GeneratedFile {
               com.google.api.RoutingProto.getDescriptor(),
               com.google.cloud.run.v2.ConditionProto.getDescriptor(),
               com.google.cloud.run.v2.K8sMinProto.getDescriptor(),
+              com.google.cloud.run.v2.SandboxProto.getDescriptor(),
               com.google.cloud.run.v2.StatusProto.getDescriptor(),
               com.google.cloud.run.v2.VendorSettingsProto.getDescriptor(),
               com.google.longrunning.OperationsProto.getDescriptor(),
@@ -260,6 +270,7 @@ public final class RevisionProto extends com.google.protobuf.GeneratedFile {
               "Timeout",
               "ServiceAccount",
               "Containers",
+              "Sandboxes",
               "Volumes",
               "ExecutionEnvironment",
               "EncryptionKey",
@@ -274,8 +285,12 @@ public final class RevisionProto extends com.google.protobuf.GeneratedFile {
               "SessionAffinity",
               "ScalingStatus",
               "NodeSelector",
+              "WorkloadIdentityConfig",
               "GpuZonalRedundancyDisabled",
               "Creator",
+              "Client",
+              "ClientVersion",
+              "AmbientNetworking",
               "Etag",
             });
     internal_static_google_cloud_run_v2_Revision_LabelsEntry_descriptor =
@@ -303,6 +318,7 @@ public final class RevisionProto extends com.google.protobuf.GeneratedFile {
     com.google.api.RoutingProto.getDescriptor();
     com.google.cloud.run.v2.ConditionProto.getDescriptor();
     com.google.cloud.run.v2.K8sMinProto.getDescriptor();
+    com.google.cloud.run.v2.SandboxProto.getDescriptor();
     com.google.cloud.run.v2.StatusProto.getDescriptor();
     com.google.cloud.run.v2.VendorSettingsProto.getDescriptor();
     com.google.longrunning.OperationsProto.getDescriptor();

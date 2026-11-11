@@ -32,6 +32,8 @@ public interface NgfwPacketInspectionInfoOrBuilder
    * <pre>
    * URI of the security profile group associated with this firewall packet
    * inspection.
+   * Format:
+   * `organizations/{organization_id}/locations/global/securityProfileGroups/{security_profile_group_id}`
    * </pre>
    *
    * <code>string security_profile_group_uri = 1;</code>
@@ -46,6 +48,8 @@ public interface NgfwPacketInspectionInfoOrBuilder
    * <pre>
    * URI of the security profile group associated with this firewall packet
    * inspection.
+   * Format:
+   * `organizations/{organization_id}/locations/global/securityProfileGroups/{security_profile_group_id}`
    * </pre>
    *
    * <code>string security_profile_group_uri = 1;</code>

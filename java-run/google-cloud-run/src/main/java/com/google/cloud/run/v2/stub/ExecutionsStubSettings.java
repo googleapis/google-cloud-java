@@ -147,7 +147,11 @@ import org.jspecify.annotations.Nullable;
 public class ExecutionsStubSettings extends StubSettings<ExecutionsStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
-      ImmutableList.<String>builder().add("https://www.googleapis.com/auth/cloud-platform").build();
+      ImmutableList.<String>builder()
+          .add("https://www.googleapis.com/auth/cloud-platform")
+          .add("https://www.googleapis.com/auth/run")
+          .add("https://www.googleapis.com/auth/run.readonly")
+          .build();
 
   private final UnaryCallSettings<GetExecutionRequest, Execution> getExecutionSettings;
   private final PagedCallSettings<

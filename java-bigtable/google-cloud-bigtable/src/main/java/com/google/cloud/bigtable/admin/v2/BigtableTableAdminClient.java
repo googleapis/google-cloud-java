@@ -93,7 +93,10 @@ import java.util.concurrent.ScheduledExecutorService;
 import javax.annotation.Nonnull;
 
 /**
- * Client for creating, configuring, and deleting Cloud Bigtable tables
+ * This class is obsolete. For the recommended proto-based approach, please see {@link
+ * BigtableTableAdminClientV2}.
+ *
+ * <p>Client for creating, configuring, and deleting Cloud Bigtable tables
  *
  * <p>Provides access to the table schemas only, not the data stored within the tables.
  *
@@ -166,13 +169,20 @@ import javax.annotation.Nonnull;
  * BigtableTableAdminClient client = BigtableTableAdminClient.create(settingsBuilder.build());
  * }</pre>
  */
+@ObsoleteApi("Use BigtableTableAdminClientV2 instead.")
 public final class BigtableTableAdminClient implements AutoCloseable {
   private final EnhancedBigtableTableAdminStub stub;
   private final String projectId;
   private final String instanceId;
   private BigtableTableAdminClientV2 v2Client;
 
-  /** Constructs an instance of BigtableTableAdminClient with the given project and instance IDs. */
+  /**
+   * This method is obsolete. For the recommended proto-based approach, please see {@link
+   * com.google.cloud.bigtable.admin.v2.BigtableTableAdminClientV2#create()}.
+   *
+   * <p>Constructs an instance of BigtableTableAdminClient with the given project and instance IDs.
+   */
+  @ObsoleteApi("Use BigtableTableAdminClientV2.create() instead.")
   public static BigtableTableAdminClient create(
       @Nonnull String projectId, @Nonnull String instanceId) throws IOException {
     return create(
@@ -182,7 +192,13 @@ public final class BigtableTableAdminClient implements AutoCloseable {
             .build());
   }
 
-  /** Constructs an instance of BigtableTableAdminClient with the given settings. */
+  /**
+   * This method is obsolete. For the recommended proto-based approach, please see {@link
+   * com.google.cloud.bigtable.admin.v2.BigtableTableAdminClientV2#create(com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminSettings)}.
+   *
+   * <p>Constructs an instance of BigtableTableAdminClient with the given settings.
+   */
+  @ObsoleteApi("Use BigtableTableAdminClientV2.create(BaseBigtableTableAdminSettings) instead.")
   public static BigtableTableAdminClient create(@Nonnull BigtableTableAdminSettings settings)
       throws IOException {
     TableAdminRequestContext requestContext =
@@ -192,7 +208,13 @@ public final class BigtableTableAdminClient implements AutoCloseable {
     return create(settings.getProjectId(), settings.getInstanceId(), stub);
   }
 
-  /** Constructs an instance of BigtableTableAdminClient with the given instance name and stub. */
+  /**
+   * This method is obsolete. For the recommended proto-based approach, please see {@link
+   * com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient#create(com.google.cloud.bigtable.admin.v2.stub.BigtableTableAdminStub)}.
+   *
+   * <p>Constructs an instance of BigtableTableAdminClient with the given instance name and stub.
+   */
+  @ObsoleteApi("Use BaseBigtableTableAdminClient.create(BigtableTableAdminStub) instead.")
   public static BigtableTableAdminClient create(
       @Nonnull String projectId,
       @Nonnull String instanceId,
@@ -1070,6 +1092,13 @@ public final class BigtableTableAdminClient implements AutoCloseable {
         stub.awaitReplicationCallable().futureCall(tableName));
   }
 
+  /**
+   * This method is obsolete. For the recommended proto-based approach, please see {@link
+   * com.google.cloud.bigtable.admin.v2.BigtableTableAdminClientV2#waitForConsistency(com.google.bigtable.admin.v2.TableName,
+   * String)} or {@link
+   * com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient#checkConsistency(com.google.bigtable.admin.v2.CheckConsistencyRequest)}.
+   */
+  @ObsoleteApi("Use getBaseClient() to access the auto-generated proto-based methods instead.")
   public void awaitConsistency(ConsistencyRequest consistencyRequest) {
     ApiExceptions.callAndTranslateApiException(
         stub.awaitConsistencyCallable().futureCall(consistencyRequest));
@@ -1487,7 +1516,10 @@ public final class BigtableTableAdminClient implements AutoCloseable {
   }
 
   /**
-   * Awaits the completion of the "Optimize Restored Table" operation.
+   * This method is obsolete. For the recommended proto-based approach, please see {@link
+   * com.google.cloud.bigtable.admin.v2.BigtableTableAdminClientV2#awaitOptimizeRestoredTable(ApiFuture)}.
+   *
+   * <p>Awaits the completion of the "Optimize Restored Table" operation.
    *
    * <p>This method blocks until the restore operation is complete, extracts the optimization token,
    * and returns an ApiFuture for the optimization phase.
@@ -1495,6 +1527,7 @@ public final class BigtableTableAdminClient implements AutoCloseable {
    * @param restoreFuture The future returned by restoreTableAsync().
    * @return An ApiFuture that tracks the optimization progress.
    */
+  @ObsoleteApi("Use getBaseClient().awaitOptimizeRestoredTable(ApiFuture) instead.")
   public ApiFuture<Empty> awaitOptimizeRestoredTable(ApiFuture<RestoredTableResult> restoreFuture) {
     // 1. Block and wait for the restore operation to complete
     RestoredTableResult result;
@@ -1518,7 +1551,10 @@ public final class BigtableTableAdminClient implements AutoCloseable {
   }
 
   /**
-   * Awaits a restored table is fully optimized.
+   * This method is obsolete. For the recommended proto-based approach, please see {@link
+   * com.google.cloud.bigtable.admin.v2.BigtableTableAdminClientV2#awaitOptimizeRestoredTable(com.google.cloud.bigtable.admin.v2.OptimizeRestoredTableOperationToken)}.
+   *
+   * <p>Awaits a restored table is fully optimized.
    *
    * <p>Sample code
    *
@@ -1528,13 +1564,19 @@ public final class BigtableTableAdminClient implements AutoCloseable {
    * client.awaitOptimizeRestoredTable(result.getOptimizeRestoredTableOperationToken());
    * }</pre>
    */
+  @ObsoleteApi(
+      "Use getBaseClient().awaitOptimizeRestoredTable(OptimizeRestoredTableOperationToken)"
+          + " instead.")
   public void awaitOptimizeRestoredTable(OptimizeRestoredTableOperationToken token)
       throws ExecutionException, InterruptedException {
     awaitOptimizeRestoredTableAsync(token).get();
   }
 
   /**
-   * Awaits a restored table is fully optimized asynchronously.
+   * This method is obsolete. For the recommended proto-based approach, please see {@link
+   * com.google.cloud.bigtable.admin.v2.BigtableTableAdminClientV2#awaitOptimizeRestoredTableAsync(com.google.cloud.bigtable.admin.v2.OptimizeRestoredTableOperationToken)}.
+   *
+   * <p>Awaits a restored table is fully optimized asynchronously.
    *
    * <p>Sample code
    *
@@ -1559,6 +1601,9 @@ public final class BigtableTableAdminClient implements AutoCloseable {
    * );
    * }</pre>
    */
+  @ObsoleteApi(
+      "Use getBaseClient().awaitOptimizeRestoredTableAsync(OptimizeRestoredTableOperationToken)"
+          + " instead.")
   public ApiFuture<Void> awaitOptimizeRestoredTableAsync(
       OptimizeRestoredTableOperationToken token) {
     return transformToVoid(
@@ -1695,24 +1740,38 @@ public final class BigtableTableAdminClient implements AutoCloseable {
   }
 
   /**
-   * Polls an existing consistency token until table replication is consistent across all clusters.
-   * Useful for checking consistency of a token generated in a separate process. Blocks until
-   * completion.
+   * This method is obsolete. For the recommended proto-based approach, please see {@link
+   * com.google.cloud.bigtable.admin.v2.BigtableTableAdminClientV2#waitForConsistency(String,
+   * String)} or {@link
+   * com.google.cloud.bigtable.admin.v2.BigtableTableAdminClientV2#waitForConsistency(com.google.bigtable.admin.v2.TableName,
+   * String)}.
+   *
+   * <p>Polls an existing consistency token until table replication is consistent across all
+   * clusters. Useful for checking consistency of a token generated in a separate process. Blocks
+   * until completion.
    *
    * @param tableId The table to check.
    * @param consistencyToken The token to poll.
    */
+  @ObsoleteApi("Use getBaseClient().waitForConsistency() instead.")
   public void waitForConsistency(String tableId, String consistencyToken) {
     ApiExceptions.callAndTranslateApiException(waitForConsistencyAsync(tableId, consistencyToken));
   }
 
   /**
-   * Asynchronously polls the consistency token. Returns a future that completes when table
+   * This method is obsolete. For the recommended proto-based approach, please see {@link
+   * com.google.cloud.bigtable.admin.v2.BigtableTableAdminClientV2#waitForConsistencyAsync(String,
+   * String)} or {@link
+   * com.google.cloud.bigtable.admin.v2.BigtableTableAdminClientV2#waitForConsistencyAsync(com.google.bigtable.admin.v2.TableName,
+   * String)}.
+   *
+   * <p>Asynchronously polls the consistency token. Returns a future that completes when table
    * replication is consistent across all clusters.
    *
    * @param tableId The table to check.
    * @param consistencyToken The token to poll.
    */
+  @ObsoleteApi("Use getBaseClient().waitForConsistencyAsync() instead.")
   public ApiFuture<Void> waitForConsistencyAsync(String tableId, String consistencyToken) {
     return stub.awaitConsistencyCallable()
         .futureCall(ConsistencyRequest.forReplication(tableId, consistencyToken));
