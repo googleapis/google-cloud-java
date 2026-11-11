@@ -269,9 +269,8 @@ public final class StorageMetricsContextTest {
     LongPointData errorPoint =
         getSinglePoint(collected, StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_ERRORS);
     assertThat(errorPoint.getValue()).isEqualTo(1L);
-    assertThat(errorPoint.getAttributes().get(StorageClientMetrics.KEY_GCP_CLIENT_INSTANCE_ID))
-        .isEqualTo(
-            metrics.getClientAttributes().get(StorageClientMetrics.KEY_GCP_CLIENT_INSTANCE_ID));
+    assertThat(errorPoint.getAttributes().get(StorageClientMetrics.KEY_GCP_CLIENT_ARTIFACT))
+        .isEqualTo(StorageClientMetrics.ARTIFACT_STORAGE);
 
     LongPointData opPoint =
         getSinglePoint(collected, StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_OPERATIONS);

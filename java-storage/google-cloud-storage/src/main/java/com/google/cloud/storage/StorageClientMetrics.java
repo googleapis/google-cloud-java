@@ -441,11 +441,11 @@ final class StorageClientMetrics implements AutoCloseable {
   }
 
   StorageMetricsContext createContext(String operationName) {
-    return StorageMetricsContext.create(operationName, baseAttributes);
+    return StorageMetricsContext.create(this, operationName, baseAttributes);
   }
 
   StorageMetricsContext createMultiStepContext(String operationName) {
-    return StorageMetricsContext.createForMultiStep(operationName, baseAttributes);
+    return StorageMetricsContext.createForMultiStep(this, operationName, baseAttributes);
   }
 
   @Nullable
