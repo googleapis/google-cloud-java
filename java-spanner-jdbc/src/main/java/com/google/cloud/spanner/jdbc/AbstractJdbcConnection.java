@@ -157,7 +157,7 @@ abstract class AbstractJdbcConnection extends AbstractJdbcWrapper
     checkClosed();
     IsolationLevel isolationLevel = spanner.getDefaultIsolationLevel();
     if (isolationLevel == IsolationLevel.ISOLATION_LEVEL_UNSPECIFIED) {
-      return getMetaData().getDefaultTransactionIsolation();
+      return JdbcDatabaseMetaData.getDatabaseDefaultTransactionIsolation(getDatabaseClient());
     }
     //noinspection MagicConstant
     return IsolationLevelConverter.convertToJdbc(isolationLevel);

@@ -19,6 +19,7 @@ package com.google.cloud.spanner.jdbc;
 import com.google.auth.Credentials;
 import com.google.auth.ServiceAccountSigner;
 import com.google.auth.oauth2.UserCredentials;
+import com.google.cloud.spanner.DatabaseClient;
 import com.google.cloud.spanner.Dialect;
 import com.google.cloud.spanner.ErrorCode;
 import com.google.cloud.spanner.ResultSets;
@@ -675,9 +676,13 @@ class JdbcDatabaseMetaData extends AbstractJdbcWrapper implements DatabaseMetaDa
 
   @Override
   public int getDefaultTransactionIsolation() throws SQLException {
+    return getDatabaseDefaultTransactionIsolation(connection.getDatabaseClient());
+  }
+
+  static int getDatabaseDefaultTransactionIsolation(DatabaseClient databaseClient)
+      throws SQLException {
     try {
-      IsolationLevel isolationLevel =
-          connection.getDatabaseClient().getDatabaseDefaultIsolationLevel();
+      IsolationLevel isolationLevel = databaseClient.getDatabaseDefaultIsolationLevel();
       if (isolationLevel == IsolationLevel.UNRECOGNIZED) {
         throw JdbcSqlExceptionFactory.of(
             "The default isolation level of the database is not supported by this version of the"
@@ -687,6 +692,8 @@ class JdbcDatabaseMetaData extends AbstractJdbcWrapper implements DatabaseMetaDa
       return IsolationLevelConverter.convertToJdbc(isolationLevel);
     } catch (SpannerException e) {
       throw JdbcSqlExceptionFactory.of(e);
+    } catch (RuntimeException e) {
+      throw JdbcSqlExceptionFactory.of(e.getMessage(), Code.INTERNAL, e);
     }
   }
 
