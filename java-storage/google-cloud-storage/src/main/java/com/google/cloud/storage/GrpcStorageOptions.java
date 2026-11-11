@@ -326,7 +326,7 @@ public final class GrpcStorageOptions extends StorageOptions
         InstantiatingGrpcChannelProvider.newBuilder()
             .setEndpoint(endpoint)
             .setAllowNonDefaultServiceAccount(true)
-            .setAttemptDirectPath(attemptDirectPath || attemptDirectPathXdsOverInterconnect)
+            .setAttemptDirectPath(attemptDirectPath)
             .setAttemptDirectPathXdsOverInterconnect(attemptDirectPathXdsOverInterconnect);
 
     if (!DIRECT_PATH_BOUND_TOKEN_DISABLED) {
@@ -346,16 +346,36 @@ public final class GrpcStorageOptions extends StorageOptions
       channelProviderBuilder.setChannelConfigurator(ManagedChannelBuilder::usePlaintext);
     }
 
+    @Nullable MeterProvider grpcMeterProvider = null;
     if (enableGrpcClientMetrics) {
-      ChannelConfigurator channelConfigurator =
-          OpenTelemetryBootstrappingUtils.enableGrpcMetrics(
+      OpenTelemetryBootstrappingUtils.GrpcMetricsBootstrapResult metricsBootstrap =
+          OpenTelemetryBootstrappingUtils.bootstrapGrpcMetrics(
               ChannelConfigurator.lift(channelProviderBuilder.getChannelConfigurator()),
               endpoint,
               this.getProjectId(),
               this.getUniverseDomain(),
               !grpcClientMetricsManuallyEnabled);
-      channelProviderBuilder.setChannelConfigurator(channelConfigurator);
+      channelProviderBuilder.setChannelConfigurator(metricsBootstrap.getChannelConfigurator());
+      grpcMeterProvider = metricsBootstrap.getMeterProvider();
     }
+
+    InstantiatingGrpcChannelProvider baseProvider = channelProviderBuilder.build();
+    InstantiatingGrpcChannelProvider telemetryProvider =
+        credentials instanceof NoCredentials
+            ? baseProvider
+            : (InstantiatingGrpcChannelProvider) baseProvider.withCredentials(credentials);
+    boolean interconnectEnabled =
+        GrpcChannelTelemetry.isDirectPathInterconnectEnabled(attemptDirectPathXdsOverInterconnect);
+    boolean grpcSupportsForceXds = GrpcChannelTelemetry.grpcForceXdsIsSupported();
+    String effectiveTarget =
+        GrpcChannelTelemetry.resolveEffectiveTarget(telemetryProvider, interconnectEnabled);
+    GrpcChannelTelemetry.logChannelConfiguration(
+        effectiveTarget, null, interconnectEnabled, grpcSupportsForceXds);
+    GrpcChannelTelemetry.ChannelReadyCallback channelReadyCallback =
+        GrpcChannelTelemetry.makeChannelMetricsCallback(grpcMeterProvider);
+    channelProviderBuilder.setChannelPrimer(
+        GrpcChannelTelemetry.createChannelPrimer(
+            effectiveTarget, grpcSupportsForceXds, channelReadyCallback));
 
     builder.setTransportChannelProvider(channelProviderBuilder.build());
     RetrySettings baseRetrySettings = getRetrySettings();
