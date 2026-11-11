@@ -108,5 +108,45 @@ public interface AssistantGroundedContentOrBuilder
    */
   com.google.cloud.discoveryengine.v1.AssistantContentOrBuilder getContentOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Source attribution of the generated content. See also
+   * https://cloud.google.com/vertex-ai/generative-ai/docs/learn/overview#citation_check
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1.CitationMetadata citation_metadata = 5;</code>
+   *
+   * @return Whether the citationMetadata field is set.
+   */
+  boolean hasCitationMetadata();
+
+  /**
+   *
+   *
+   * <pre>
+   * Source attribution of the generated content. See also
+   * https://cloud.google.com/vertex-ai/generative-ai/docs/learn/overview#citation_check
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1.CitationMetadata citation_metadata = 5;</code>
+   *
+   * @return The citationMetadata.
+   */
+  com.google.cloud.discoveryengine.v1.CitationMetadata getCitationMetadata();
+
+  /**
+   *
+   *
+   * <pre>
+   * Source attribution of the generated content. See also
+   * https://cloud.google.com/vertex-ai/generative-ai/docs/learn/overview#citation_check
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1.CitationMetadata citation_metadata = 5;</code>
+   */
+  com.google.cloud.discoveryengine.v1.CitationMetadataOrBuilder getCitationMetadataOrBuilder();
+
   com.google.cloud.discoveryengine.v1.AssistantGroundedContent.MetadataCase getMetadataCase();
 }

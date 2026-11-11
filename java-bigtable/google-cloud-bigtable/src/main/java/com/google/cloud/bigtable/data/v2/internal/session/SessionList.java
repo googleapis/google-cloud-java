@@ -88,9 +88,9 @@ class SessionList {
   void removeUnstartedHandle(SessionHandle handle) {
     if (allSessions.remove(handle)) {
       poolStats.startingCount--;
-      if (handle.inExpectedCount) {
+      if (!handle.closing) {
         poolStats.expectedCapacity--;
-        handle.inExpectedCount = false;
+        handle.closing = true;
       }
     }
   }
@@ -160,7 +160,7 @@ class SessionList {
   @NotThreadSafe
   class SessionHandle {
     private final Session session;
-    private boolean inExpectedCount = true;
+    private boolean closing = false;
 
     @SuppressWarnings("OptionalUsedAsFieldOrParameterType")
     private Optional<AfeHandle> afe = Optional.empty();
@@ -180,15 +180,17 @@ class SessionList {
       AfeHandle afeHandle =
           afeHandles.computeIfAbsent(AfeId.extract(peerInfo), (ignored) -> new AfeHandle());
       this.afe = Optional.of(afeHandle);
-      afeHandle.sessions.add(this);
       afeHandle.refCount++;
       afeHandle.lastConnected = Instant.now();
-      if (afeHandle.sessions.size() == 1) {
-        afesWithReadySessions.add(afeHandle);
-      }
 
       poolStats.startingCount--;
-      poolStats.readyCount++;
+      if (!closing) {
+        afeHandle.sessions.add(this);
+        if (afeHandle.sessions.size() == 1) {
+          afesWithReadySessions.add(afeHandle);
+        }
+        poolStats.readyCount++;
+      }
     }
 
     /**
@@ -221,7 +223,7 @@ class SessionList {
       poolStats.inUseCount--;
       inUseSessions.remove(this);
 
-      if (session.getState() == SessionState.READY) {
+      if (!closing && session.getState() == SessionState.READY) {
         poolStats.readyCount++;
         afeHandle.sessions.add(this);
         afeHandle.lastConnected = Instant.now();
@@ -256,8 +258,10 @@ class SessionList {
         poolStats.readyCount--;
       }
       // eagerly decrement expected count and make sure to avoid double counting in onSessionClosed
-      poolStats.expectedCapacity--;
-      inExpectedCount = false;
+      if (!closing) {
+        poolStats.expectedCapacity--;
+        closing = true;
+      }
     }
 
     void onSessionClosed(SessionState prevState) {
@@ -271,9 +275,9 @@ class SessionList {
       // stranded handle blocks drainedFuture and pool.awaitTerminated hangs until the shared close
       // deadline elapses.
       try {
-        if (inExpectedCount) {
+        if (!closing) {
           poolStats.expectedCapacity--;
-          inExpectedCount = false;
+          closing = true;
         }
         // only update counts after the session started and has an afe associated
         afe.ifPresent(afeHandle -> afeHandle.refCount--);

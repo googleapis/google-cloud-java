@@ -153,6 +153,59 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
     return loadSucceeded_;
   }
 
+  public static final int QUOTA_USAGE_FIELD_NUMBER = 238511386;
+  private com.google.cloud.compute.v1.UrlMapQuotaUsage quotaUsage_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Summary of quota usage for given UrlMap.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.UrlMapQuotaUsage quota_usage = 238511386;</code>
+   *
+   * @return Whether the quotaUsage field is set.
+   */
+  @java.lang.Override
+  public boolean hasQuotaUsage() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Summary of quota usage for given UrlMap.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.UrlMapQuotaUsage quota_usage = 238511386;</code>
+   *
+   * @return The quotaUsage.
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.UrlMapQuotaUsage getQuotaUsage() {
+    return quotaUsage_ == null
+        ? com.google.cloud.compute.v1.UrlMapQuotaUsage.getDefaultInstance()
+        : quotaUsage_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Summary of quota usage for given UrlMap.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.UrlMapQuotaUsage quota_usage = 238511386;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.UrlMapQuotaUsageOrBuilder getQuotaUsageOrBuilder() {
+    return quotaUsage_ == null
+        ? com.google.cloud.compute.v1.UrlMapQuotaUsage.getDefaultInstance()
+        : quotaUsage_;
+  }
+
   public static final int TEST_FAILURES_FIELD_NUMBER = 505934134;
 
   @SuppressWarnings("serial")
@@ -206,7 +259,7 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public boolean hasTestPassed() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
 
   /**
@@ -243,8 +296,11 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeBool(128326216, loadSucceeded_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       output.writeBool(192708797, testPassed_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(238511386, getQuotaUsage());
     }
     for (int i = 0; i < loadErrors_.size(); i++) {
       com.google.protobuf.GeneratedMessage.writeString(output, 310147300, loadErrors_.getRaw(i));
@@ -264,8 +320,11 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(128326216, loadSucceeded_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(192708797, testPassed_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(238511386, getQuotaUsage());
     }
     {
       int dataSize = 0;
@@ -300,6 +359,10 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
     if (hasLoadSucceeded()) {
       if (getLoadSucceeded() != other.getLoadSucceeded()) return false;
     }
+    if (hasQuotaUsage() != other.hasQuotaUsage()) return false;
+    if (hasQuotaUsage()) {
+      if (!getQuotaUsage().equals(other.getQuotaUsage())) return false;
+    }
     if (!getTestFailuresList().equals(other.getTestFailuresList())) return false;
     if (hasTestPassed() != other.hasTestPassed()) return false;
     if (hasTestPassed()) {
@@ -323,6 +386,10 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
     if (hasLoadSucceeded()) {
       hash = (37 * hash) + LOAD_SUCCEEDED_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getLoadSucceeded());
+    }
+    if (hasQuotaUsage()) {
+      hash = (37 * hash) + QUOTA_USAGE_FIELD_NUMBER;
+      hash = (53 * hash) + getQuotaUsage().hashCode();
     }
     if (getTestFailuresCount() > 0) {
       hash = (37 * hash) + TEST_FAILURES_FIELD_NUMBER;
@@ -462,10 +529,20 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
     }
 
     // Construct using com.google.cloud.compute.v1.UrlMapValidationResult.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        internalGetQuotaUsageFieldBuilder();
+        internalGetTestFailuresFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -474,13 +551,18 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
       bitField0_ = 0;
       loadErrors_ = com.google.protobuf.LazyStringArrayList.emptyList();
       loadSucceeded_ = false;
+      quotaUsage_ = null;
+      if (quotaUsageBuilder_ != null) {
+        quotaUsageBuilder_.dispose();
+        quotaUsageBuilder_ = null;
+      }
       if (testFailuresBuilder_ == null) {
         testFailures_ = java.util.Collections.emptyList();
       } else {
         testFailures_ = null;
         testFailuresBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       testPassed_ = false;
       return this;
     }
@@ -520,9 +602,9 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
     private void buildPartialRepeatedFields(
         com.google.cloud.compute.v1.UrlMapValidationResult result) {
       if (testFailuresBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)) {
+        if (((bitField0_ & 0x00000008) != 0)) {
           testFailures_ = java.util.Collections.unmodifiableList(testFailures_);
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000008);
         }
         result.testFailures_ = testFailures_;
       } else {
@@ -541,9 +623,13 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
         result.loadSucceeded_ = loadSucceeded_;
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
-        result.testPassed_ = testPassed_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.quotaUsage_ = quotaUsageBuilder_ == null ? quotaUsage_ : quotaUsageBuilder_.build();
         to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.testPassed_ = testPassed_;
+        to_bitField0_ |= 0x00000004;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -574,11 +660,14 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
       if (other.hasLoadSucceeded()) {
         setLoadSucceeded(other.getLoadSucceeded());
       }
+      if (other.hasQuotaUsage()) {
+        mergeQuotaUsage(other.getQuotaUsage());
+      }
       if (testFailuresBuilder_ == null) {
         if (!other.testFailures_.isEmpty()) {
           if (testFailures_.isEmpty()) {
             testFailures_ = other.testFailures_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureTestFailuresIsMutable();
             testFailures_.addAll(other.testFailures_);
@@ -591,7 +680,7 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
             testFailuresBuilder_.dispose();
             testFailuresBuilder_ = null;
             testFailures_ = other.testFailures_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000008);
             testFailuresBuilder_ =
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
                     ? internalGetTestFailuresFieldBuilder()
@@ -639,9 +728,16 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
             case 1541670376:
               {
                 testPassed_ = input.readBool();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 1541670376
+            case 1908091090:
+              {
+                input.readMessage(
+                    internalGetQuotaUsageFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 1908091090
             case -1813788894:
               {
                 java.lang.String s = input.readStringRequireUtf8();
@@ -886,14 +982,209 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
       return this;
     }
 
+    private com.google.cloud.compute.v1.UrlMapQuotaUsage quotaUsage_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.compute.v1.UrlMapQuotaUsage,
+            com.google.cloud.compute.v1.UrlMapQuotaUsage.Builder,
+            com.google.cloud.compute.v1.UrlMapQuotaUsageOrBuilder>
+        quotaUsageBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Summary of quota usage for given UrlMap.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.UrlMapQuotaUsage quota_usage = 238511386;</code>
+     *
+     * @return Whether the quotaUsage field is set.
+     */
+    public boolean hasQuotaUsage() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Summary of quota usage for given UrlMap.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.UrlMapQuotaUsage quota_usage = 238511386;</code>
+     *
+     * @return The quotaUsage.
+     */
+    public com.google.cloud.compute.v1.UrlMapQuotaUsage getQuotaUsage() {
+      if (quotaUsageBuilder_ == null) {
+        return quotaUsage_ == null
+            ? com.google.cloud.compute.v1.UrlMapQuotaUsage.getDefaultInstance()
+            : quotaUsage_;
+      } else {
+        return quotaUsageBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Summary of quota usage for given UrlMap.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.UrlMapQuotaUsage quota_usage = 238511386;</code>
+     */
+    public Builder setQuotaUsage(com.google.cloud.compute.v1.UrlMapQuotaUsage value) {
+      if (quotaUsageBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        quotaUsage_ = value;
+      } else {
+        quotaUsageBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Summary of quota usage for given UrlMap.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.UrlMapQuotaUsage quota_usage = 238511386;</code>
+     */
+    public Builder setQuotaUsage(
+        com.google.cloud.compute.v1.UrlMapQuotaUsage.Builder builderForValue) {
+      if (quotaUsageBuilder_ == null) {
+        quotaUsage_ = builderForValue.build();
+      } else {
+        quotaUsageBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Summary of quota usage for given UrlMap.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.UrlMapQuotaUsage quota_usage = 238511386;</code>
+     */
+    public Builder mergeQuotaUsage(com.google.cloud.compute.v1.UrlMapQuotaUsage value) {
+      if (quotaUsageBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)
+            && quotaUsage_ != null
+            && quotaUsage_ != com.google.cloud.compute.v1.UrlMapQuotaUsage.getDefaultInstance()) {
+          getQuotaUsageBuilder().mergeFrom(value);
+        } else {
+          quotaUsage_ = value;
+        }
+      } else {
+        quotaUsageBuilder_.mergeFrom(value);
+      }
+      if (quotaUsage_ != null) {
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Summary of quota usage for given UrlMap.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.UrlMapQuotaUsage quota_usage = 238511386;</code>
+     */
+    public Builder clearQuotaUsage() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      quotaUsage_ = null;
+      if (quotaUsageBuilder_ != null) {
+        quotaUsageBuilder_.dispose();
+        quotaUsageBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Summary of quota usage for given UrlMap.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.UrlMapQuotaUsage quota_usage = 238511386;</code>
+     */
+    public com.google.cloud.compute.v1.UrlMapQuotaUsage.Builder getQuotaUsageBuilder() {
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return internalGetQuotaUsageFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Summary of quota usage for given UrlMap.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.UrlMapQuotaUsage quota_usage = 238511386;</code>
+     */
+    public com.google.cloud.compute.v1.UrlMapQuotaUsageOrBuilder getQuotaUsageOrBuilder() {
+      if (quotaUsageBuilder_ != null) {
+        return quotaUsageBuilder_.getMessageOrBuilder();
+      } else {
+        return quotaUsage_ == null
+            ? com.google.cloud.compute.v1.UrlMapQuotaUsage.getDefaultInstance()
+            : quotaUsage_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Summary of quota usage for given UrlMap.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.UrlMapQuotaUsage quota_usage = 238511386;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.compute.v1.UrlMapQuotaUsage,
+            com.google.cloud.compute.v1.UrlMapQuotaUsage.Builder,
+            com.google.cloud.compute.v1.UrlMapQuotaUsageOrBuilder>
+        internalGetQuotaUsageFieldBuilder() {
+      if (quotaUsageBuilder_ == null) {
+        quotaUsageBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.compute.v1.UrlMapQuotaUsage,
+                com.google.cloud.compute.v1.UrlMapQuotaUsage.Builder,
+                com.google.cloud.compute.v1.UrlMapQuotaUsageOrBuilder>(
+                getQuotaUsage(), getParentForChildren(), isClean());
+        quotaUsage_ = null;
+      }
+      return quotaUsageBuilder_;
+    }
+
     private java.util.List<com.google.cloud.compute.v1.TestFailure> testFailures_ =
         java.util.Collections.emptyList();
 
     private void ensureTestFailuresIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         testFailures_ =
             new java.util.ArrayList<com.google.cloud.compute.v1.TestFailure>(testFailures_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
       }
     }
 
@@ -1031,7 +1322,7 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
     public Builder clearTestFailures() {
       if (testFailuresBuilder_ == null) {
         testFailures_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
       } else {
         testFailuresBuilder_.clear();
@@ -1104,7 +1395,7 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
                 com.google.cloud.compute.v1.TestFailure,
                 com.google.cloud.compute.v1.TestFailure.Builder,
                 com.google.cloud.compute.v1.TestFailureOrBuilder>(
-                testFailures_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
+                testFailures_, ((bitField0_ & 0x00000008) != 0), getParentForChildren(), isClean());
         testFailures_ = null;
       }
       return testFailuresBuilder_;
@@ -1126,7 +1417,7 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
      */
     @java.lang.Override
     public boolean hasTestPassed() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
 
     /**
@@ -1162,7 +1453,7 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
     public Builder setTestPassed(boolean value) {
 
       testPassed_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1180,7 +1471,7 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearTestPassed() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       testPassed_ = false;
       onChanged();
       return this;

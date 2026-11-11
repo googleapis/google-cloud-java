@@ -35,10 +35,9 @@ import com.google.cloud.storage.ZeroCopySupport.DisposableByteString;
 import com.google.cloud.storage.it.ChecksummedTestContent;
 import com.google.cloud.storage.it.runner.StorageITRunner;
 import com.google.cloud.storage.it.runner.annotations.Backend;
-import com.google.cloud.storage.it.runner.annotations.BucketFixture;
-import com.google.cloud.storage.it.runner.annotations.BucketType;
 import com.google.cloud.storage.it.runner.annotations.CrossRun;
 import com.google.cloud.storage.it.runner.annotations.Inject;
+import com.google.cloud.storage.it.runner.annotations.LocationType;
 import com.google.cloud.storage.it.runner.registry.Generator;
 import com.google.common.base.Stopwatch;
 import com.google.common.hash.Hasher;
@@ -65,16 +64,17 @@ import org.junit.runner.RunWith;
 @RunWith(StorageITRunner.class)
 @CrossRun(
     backends = {Backend.TEST_BENCH},
-    transports = Transport.GRPC)
+    transports = Transport.GRPC,
+    locations = {LocationType.ZONAL_RAPID, LocationType.REGIONAL_RAPID})
+// TODO: Enable REGIONAL_RAPID tests once RCU is available in prod
+@CrossRun.Ignore(locations = {LocationType.REGIONAL_RAPID})
 public final class ITObjectReadSessionTest {
 
   private static final int _512KiB = 512 * 1024;
 
   @Inject public Storage storage;
 
-  @Inject
-  @BucketFixture(BucketType.RAPID)
-  public BucketInfo bucket;
+  @Inject public BucketInfo bucket;
 
   @Inject public Generator generator;
 
@@ -356,7 +356,10 @@ public final class ITObjectReadSessionTest {
 
   private BlobInfo create(ChecksummedTestContent content)
       throws IOException, ExecutionException, InterruptedException, TimeoutException {
-    BlobInfo info = BlobInfo.newBuilder(bucket, generator.randomObjectName()).build();
+    BlobInfo info =
+        BlobInfo.newBuilder(bucket, generator.randomObjectName())
+            .setStorageClass(StorageClass.valueOf("RAPID"))
+            .build();
 
     BlobAppendableUploadConfig config = BlobAppendableUploadConfig.of();
     if (backend == Backend.TEST_BENCH) {

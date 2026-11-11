@@ -931,6 +931,43 @@ public interface UrlMapOrBuilder
    *
    *
    * <pre>
+   * Output only. [Output Only] The status of the URL map.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.UrlMapStatus status = 181260274;</code>
+   *
+   * @return Whether the status field is set.
+   */
+  boolean hasStatus();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] The status of the URL map.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.UrlMapStatus status = 181260274;</code>
+   *
+   * @return The status.
+   */
+  com.google.cloud.compute.v1.UrlMapStatus getStatus();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] The status of the URL map.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.UrlMapStatus status = 181260274;</code>
+   */
+  com.google.cloud.compute.v1.UrlMapStatusOrBuilder getStatusOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * The list of expected URL mapping tests. Request to update theUrlMap succeeds only if all test cases pass. You can specify a
    * maximum of 100 tests per UrlMap.
    *

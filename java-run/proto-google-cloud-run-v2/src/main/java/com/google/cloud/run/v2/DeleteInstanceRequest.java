@@ -69,6 +69,12 @@ public final class DeleteInstanceRequest extends com.google.protobuf.GeneratedMe
   private volatile java.lang.Object name_ = "";
 
   /**
+   *
+   *
+   * <pre>
+   * Required. The name of the Instance to delete.
+   * </pre>
+   *
    * <code>
    * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
@@ -89,6 +95,12 @@ public final class DeleteInstanceRequest extends com.google.protobuf.GeneratedMe
   }
 
   /**
+   *
+   *
+   * <pre>
+   * Required. The name of the Instance to delete.
+   * </pre>
+   *
    * <code>
    * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
@@ -533,6 +545,12 @@ public final class DeleteInstanceRequest extends com.google.protobuf.GeneratedMe
     private java.lang.Object name_ = "";
 
     /**
+     *
+     *
+     * <pre>
+     * Required. The name of the Instance to delete.
+     * </pre>
+     *
      * <code>
      * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
@@ -552,6 +570,12 @@ public final class DeleteInstanceRequest extends com.google.protobuf.GeneratedMe
     }
 
     /**
+     *
+     *
+     * <pre>
+     * Required. The name of the Instance to delete.
+     * </pre>
+     *
      * <code>
      * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
@@ -571,6 +595,12 @@ public final class DeleteInstanceRequest extends com.google.protobuf.GeneratedMe
     }
 
     /**
+     *
+     *
+     * <pre>
+     * Required. The name of the Instance to delete.
+     * </pre>
+     *
      * <code>
      * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
@@ -589,6 +619,12 @@ public final class DeleteInstanceRequest extends com.google.protobuf.GeneratedMe
     }
 
     /**
+     *
+     *
+     * <pre>
+     * Required. The name of the Instance to delete.
+     * </pre>
+     *
      * <code>
      * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
@@ -603,6 +639,12 @@ public final class DeleteInstanceRequest extends com.google.protobuf.GeneratedMe
     }
 
     /**
+     *
+     *
+     * <pre>
+     * Required. The name of the Instance to delete.
+     * </pre>
+     *
      * <code>
      * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>

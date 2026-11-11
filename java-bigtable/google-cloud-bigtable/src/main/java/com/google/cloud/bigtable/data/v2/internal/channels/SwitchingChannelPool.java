@@ -30,6 +30,7 @@ import io.grpc.CallOptions;
 import io.grpc.ClientInterceptor;
 import io.grpc.ManagedChannel;
 import io.grpc.MethodDescriptor;
+import io.grpc.Status;
 import java.time.Duration;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.function.Supplier;
@@ -69,19 +70,11 @@ public class SwitchingChannelPool implements ChannelPool {
     currentConfiguration =
         configManager.getClientConfiguration().getSessionConfiguration().getChannelConfiguration();
 
-    if (channelProvider.getFallback().isPresent()) {
-      fallbackAvailable = true;
-      delegate = createChannelPoolForCurrentMode();
-    } else {
-      // Depending on whether DirectAccess is avaialbe, the channelProvider
-      // is either a DirectAccess with fallback to Cloudpath
-      // or a basic Cloudpath.
-      // If it's a basic cloudpath we can't do any fallback,
-      // and we can't do directaccess without fallback.
-      // Essentially, fallback configuration is not applicable here.
-      fallbackAvailable = false;
-      delegate = newChannelPoolFromProvider(channelProvider);
-    }
+    // Depending on whether DirectAccess is available, the channelProvider is either a DirectAccess
+    // with fallback to Cloudpath or a basic Cloudpath. If it's a basic cloudpath we can't do any
+    // fallback, and we can't do directaccess without fallback.
+    fallbackAvailable = channelProvider.getFallback().isPresent();
+    delegate = createDelegate();
 
     // Subscribe to config changes.
     configListener =
@@ -95,16 +88,34 @@ public class SwitchingChannelPool implements ChannelPool {
       return;
     }
 
-    if (fallbackAvailable && currentConfiguration.getModeCase() != newConfig.getModeCase()) {
-      // Mode has changed and we can change modes.
+    boolean wasDisabled = isDisabled(currentConfiguration);
+    boolean nowDisabled = isDisabled(newConfig);
+    if (wasDisabled != nowDisabled
+        || (!nowDisabled
+            && fallbackAvailable
+            && currentConfiguration.getModeCase() != newConfig.getModeCase())) {
       currentConfiguration = newConfig;
-      ChannelPool cp = createChannelPoolForCurrentMode();
+      ChannelPool cp = createDelegate();
       replaceChannelPool(cp);
       return;
     }
 
     currentConfiguration = newConfig;
     delegate.updateConfig(currentConfiguration);
+  }
+
+  private static boolean isDisabled(ChannelPoolConfiguration config) {
+    return config.equals(ChannelPoolConfiguration.getDefaultInstance());
+  }
+
+  private ChannelPool createDelegate() {
+    if (isDisabled(currentConfiguration)) {
+      return NoopChannelPool.INSTANCE;
+    }
+    if (fallbackAvailable) {
+      return createChannelPoolForCurrentMode();
+    }
+    return newChannelPoolFromProvider(channelProvider);
   }
 
   private ChannelPool createChannelPoolForCurrentMode() {
@@ -217,5 +228,25 @@ public class SwitchingChannelPool implements ChannelPool {
   private Supplier<ManagedChannel> channelSupplier(
       ChannelProvider channelProvider, ClientInterceptor... interceptors) {
     return () -> channelProvider.newChannelBuilder().intercept(interceptors).build();
+  }
+
+  private static class NoopChannelPool implements ChannelPool {
+    private static final NoopChannelPool INSTANCE = new NoopChannelPool();
+
+    @Override
+    public SessionStream newStream(
+        MethodDescriptor<SessionRequest, SessionResponse> desc, CallOptions callOptions) {
+      return new FailingSessionStream(
+          Status.UNAVAILABLE.withDescription("ChannelPool is disabled"));
+    }
+
+    @Override
+    public void start() {}
+
+    @Override
+    public void updateConfig(ChannelPoolConfiguration config) {}
+
+    @Override
+    public void close() {}
   }
 }

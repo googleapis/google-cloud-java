@@ -211,6 +211,7 @@ class ITBigQueryStorageTest {
     }
   }
 
+  @Disabled("Flaky test: b/579437450")
   @Test
   void testSimpleRead() {
     String table =

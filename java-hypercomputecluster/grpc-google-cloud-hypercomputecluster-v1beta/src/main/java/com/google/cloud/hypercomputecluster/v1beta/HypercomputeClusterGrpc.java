@@ -265,6 +265,53 @@ public final class HypercomputeClusterGrpc {
     return getDeleteClusterMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.hypercomputecluster.v1beta.ListNodesRequest,
+          com.google.cloud.hypercomputecluster.v1beta.ListNodesResponse>
+      getListNodesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListNodes",
+      requestType = com.google.cloud.hypercomputecluster.v1beta.ListNodesRequest.class,
+      responseType = com.google.cloud.hypercomputecluster.v1beta.ListNodesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.hypercomputecluster.v1beta.ListNodesRequest,
+          com.google.cloud.hypercomputecluster.v1beta.ListNodesResponse>
+      getListNodesMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.hypercomputecluster.v1beta.ListNodesRequest,
+            com.google.cloud.hypercomputecluster.v1beta.ListNodesResponse>
+        getListNodesMethod;
+    if ((getListNodesMethod = HypercomputeClusterGrpc.getListNodesMethod) == null) {
+      synchronized (HypercomputeClusterGrpc.class) {
+        if ((getListNodesMethod = HypercomputeClusterGrpc.getListNodesMethod) == null) {
+          HypercomputeClusterGrpc.getListNodesMethod =
+              getListNodesMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.hypercomputecluster.v1beta.ListNodesRequest,
+                          com.google.cloud.hypercomputecluster.v1beta.ListNodesResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListNodes"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.hypercomputecluster.v1beta.ListNodesRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.hypercomputecluster.v1beta.ListNodesResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new HypercomputeClusterMethodDescriptorSupplier("ListNodes"))
+                      .build();
+        }
+      }
+    }
+    return getListNodesMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static HypercomputeClusterStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<HypercomputeClusterStub> factory =
@@ -399,6 +446,20 @@ public final class HypercomputeClusterGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getDeleteClusterMethod(), responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Nodes in a given cluster.
+     * </pre>
+     */
+    default void listNodes(
+        com.google.cloud.hypercomputecluster.v1beta.ListNodesRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.hypercomputecluster.v1beta.ListNodesResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListNodesMethod(), responseObserver);
+    }
   }
 
   /**
@@ -516,6 +577,21 @@ public final class HypercomputeClusterGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Nodes in a given cluster.
+     * </pre>
+     */
+    public void listNodes(
+        com.google.cloud.hypercomputecluster.v1beta.ListNodesRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.hypercomputecluster.v1beta.ListNodesResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListNodesMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -607,6 +683,20 @@ public final class HypercomputeClusterGrpc {
       return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteClusterMethod(), getCallOptions(), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Nodes in a given cluster.
+     * </pre>
+     */
+    public com.google.cloud.hypercomputecluster.v1beta.ListNodesResponse listNodes(
+        com.google.cloud.hypercomputecluster.v1beta.ListNodesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListNodesMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -692,6 +782,19 @@ public final class HypercomputeClusterGrpc {
         com.google.cloud.hypercomputecluster.v1beta.DeleteClusterRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteClusterMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Nodes in a given cluster.
+     * </pre>
+     */
+    public com.google.cloud.hypercomputecluster.v1beta.ListNodesResponse listNodes(
+        com.google.cloud.hypercomputecluster.v1beta.ListNodesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListNodesMethod(), getCallOptions(), request);
     }
   }
 
@@ -781,6 +884,20 @@ public final class HypercomputeClusterGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteClusterMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Nodes in a given cluster.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.hypercomputecluster.v1beta.ListNodesResponse>
+        listNodes(com.google.cloud.hypercomputecluster.v1beta.ListNodesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListNodesMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_CLUSTERS = 0;
@@ -788,6 +905,7 @@ public final class HypercomputeClusterGrpc {
   private static final int METHODID_CREATE_CLUSTER = 2;
   private static final int METHODID_UPDATE_CLUSTER = 3;
   private static final int METHODID_DELETE_CLUSTER = 4;
+  private static final int METHODID_LIST_NODES = 5;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -833,6 +951,13 @@ public final class HypercomputeClusterGrpc {
           serviceImpl.deleteCluster(
               (com.google.cloud.hypercomputecluster.v1beta.DeleteClusterRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_LIST_NODES:
+          serviceImpl.listNodes(
+              (com.google.cloud.hypercomputecluster.v1beta.ListNodesRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.hypercomputecluster.v1beta.ListNodesResponse>)
+                  responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -884,6 +1009,13 @@ public final class HypercomputeClusterGrpc {
                 new MethodHandlers<
                     com.google.cloud.hypercomputecluster.v1beta.DeleteClusterRequest,
                     com.google.longrunning.Operation>(service, METHODID_DELETE_CLUSTER)))
+        .addMethod(
+            getListNodesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.hypercomputecluster.v1beta.ListNodesRequest,
+                    com.google.cloud.hypercomputecluster.v1beta.ListNodesResponse>(
+                    service, METHODID_LIST_NODES)))
         .build();
   }
 
@@ -940,6 +1072,7 @@ public final class HypercomputeClusterGrpc {
                       .addMethod(getCreateClusterMethod())
                       .addMethod(getUpdateClusterMethod())
                       .addMethod(getDeleteClusterMethod())
+                      .addMethod(getListNodesMethod())
                       .build();
         }
       }

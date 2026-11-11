@@ -56,7 +56,8 @@ public interface InstanceInfoOrBuilder
    *
    *
    * <pre>
-   * URI of a Compute Engine instance.
+   * URI of a Compute Engine instance in format
+   * "projects/{project}/zones/{zone}/instances/{instance}"
    * </pre>
    *
    * <code>string uri = 2;</code>
@@ -69,7 +70,8 @@ public interface InstanceInfoOrBuilder
    *
    *
    * <pre>
-   * URI of a Compute Engine instance.
+   * URI of a Compute Engine instance in format
+   * "projects/{project}/zones/{zone}/instances/{instance}"
    * </pre>
    *
    * <code>string uri = 2;</code>
@@ -108,7 +110,8 @@ public interface InstanceInfoOrBuilder
    *
    *
    * <pre>
-   * URI of a Compute Engine network.
+   * URI of a Compute Engine network in format
+   * "projects/{project}/global/networks/{network}"
    * </pre>
    *
    * <code>string network_uri = 4;</code>
@@ -121,7 +124,8 @@ public interface InstanceInfoOrBuilder
    *
    *
    * <pre>
-   * URI of a Compute Engine network.
+   * URI of a Compute Engine network in format
+   * "projects/{project}/global/networks/{network}"
    * </pre>
    *
    * <code>string network_uri = 4;</code>
@@ -246,7 +250,7 @@ public interface InstanceInfoOrBuilder
    * <code>string service_account = 8 [deprecated = true];</code>
    *
    * @deprecated google.cloud.networkmanagement.v1beta1.InstanceInfo.service_account is deprecated.
-   *     See google/cloud/networkmanagement/v1beta1/trace.proto;l=426
+   *     See google/cloud/networkmanagement/v1beta1/trace.proto;l=434
    * @return The serviceAccount.
    */
   @java.lang.Deprecated
@@ -262,7 +266,7 @@ public interface InstanceInfoOrBuilder
    * <code>string service_account = 8 [deprecated = true];</code>
    *
    * @deprecated google.cloud.networkmanagement.v1beta1.InstanceInfo.service_account is deprecated.
-   *     See google/cloud/networkmanagement/v1beta1/trace.proto;l=426
+   *     See google/cloud/networkmanagement/v1beta1/trace.proto;l=434
    * @return The bytes for serviceAccount.
    */
   @java.lang.Deprecated
@@ -272,7 +276,9 @@ public interface InstanceInfoOrBuilder
    *
    *
    * <pre>
-   * URI of the PSC network attachment the NIC is attached to (if relevant).
+   * URI of the PSC network attachment the NIC is attached to (if relevant) in
+   * format
+   * "projects/{project}/regions/{region}/networkAttachments/{network_attachment}"
    * </pre>
    *
    * <code>string psc_network_attachment_uri = 9;</code>
@@ -285,7 +291,9 @@ public interface InstanceInfoOrBuilder
    *
    *
    * <pre>
-   * URI of the PSC network attachment the NIC is attached to (if relevant).
+   * URI of the PSC network attachment the NIC is attached to (if relevant) in
+   * format
+   * "projects/{project}/regions/{region}/networkAttachments/{network_attachment}"
    * </pre>
    *
    * <code>string psc_network_attachment_uri = 9;</code>
@@ -305,7 +313,7 @@ public interface InstanceInfoOrBuilder
    * <code>bool running = 10 [deprecated = true];</code>
    *
    * @deprecated google.cloud.networkmanagement.v1beta1.InstanceInfo.running is deprecated. See
-   *     google/cloud/networkmanagement/v1beta1/trace.proto;l=433
+   *     google/cloud/networkmanagement/v1beta1/trace.proto;l=443
    * @return The running.
    */
   @java.lang.Deprecated

@@ -18,6 +18,7 @@ package com.google.cloud.hypercomputecluster.v1beta.stub;
 
 import static com.google.cloud.hypercomputecluster.v1beta.HypercomputeClusterClient.ListClustersPagedResponse;
 import static com.google.cloud.hypercomputecluster.v1beta.HypercomputeClusterClient.ListLocationsPagedResponse;
+import static com.google.cloud.hypercomputecluster.v1beta.HypercomputeClusterClient.ListNodesPagedResponse;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -29,6 +30,8 @@ import com.google.cloud.hypercomputecluster.v1beta.DeleteClusterRequest;
 import com.google.cloud.hypercomputecluster.v1beta.GetClusterRequest;
 import com.google.cloud.hypercomputecluster.v1beta.ListClustersRequest;
 import com.google.cloud.hypercomputecluster.v1beta.ListClustersResponse;
+import com.google.cloud.hypercomputecluster.v1beta.ListNodesRequest;
+import com.google.cloud.hypercomputecluster.v1beta.ListNodesResponse;
 import com.google.cloud.hypercomputecluster.v1beta.OperationMetadata;
 import com.google.cloud.hypercomputecluster.v1beta.UpdateClusterRequest;
 import com.google.cloud.location.GetLocationRequest;
@@ -99,6 +102,14 @@ public abstract class HypercomputeClusterStub implements BackgroundResource {
 
   public UnaryCallable<DeleteClusterRequest, Operation> deleteClusterCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteClusterCallable()");
+  }
+
+  public UnaryCallable<ListNodesRequest, ListNodesPagedResponse> listNodesPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listNodesPagedCallable()");
+  }
+
+  public UnaryCallable<ListNodesRequest, ListNodesResponse> listNodesCallable() {
+    throw new UnsupportedOperationException("Not implemented: listNodesCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

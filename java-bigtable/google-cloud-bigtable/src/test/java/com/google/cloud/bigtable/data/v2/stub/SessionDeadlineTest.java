@@ -19,8 +19,10 @@ import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.fail;
 
 import com.google.api.core.ApiFuture;
+import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.retrying.RetrySettings;
+import com.google.auth.Credentials;
 import com.google.bigtable.v2.BigtableGrpc;
 import com.google.bigtable.v2.ClientConfiguration;
 import com.google.bigtable.v2.GetClientConfigurationRequest;
@@ -47,8 +49,12 @@ import io.grpc.ServerInterceptor;
 import io.grpc.netty.shaded.io.grpc.netty.NettyServerBuilder;
 import io.grpc.stub.StreamObserver;
 import java.io.IOException;
+import java.net.URI;
 import java.util.Base64;
+import java.util.Collections;
 import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
 import java.util.Queue;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executors;
@@ -64,9 +70,11 @@ public class SessionDeadlineTest {
   private Server server;
   private EnhancedBigtableStubSettings defaultSettings;
   private FakeDataService fakeDataService;
+  private ScheduledExecutorService contextScheduler;
 
   @Before
   public void setUp() throws IOException {
+    contextScheduler = Executors.newSingleThreadScheduledExecutor();
     fakeDataService = new FakeDataService();
     server =
         NettyServerBuilder.forPort(0)
@@ -87,6 +95,9 @@ public class SessionDeadlineTest {
 
   @After
   public void tearDown() throws InterruptedException {
+    if (contextScheduler != null) {
+      contextScheduler.shutdownNow();
+    }
     if (fakeDataService != null) {
       fakeDataService.shutdown();
     }
@@ -105,11 +116,7 @@ public class SessionDeadlineTest {
       Query request = Query.create(TableId.of("fake-table")).rowKey("row-key");
 
       try (io.grpc.Context.CancellableContext ctx =
-          io.grpc.Context.current()
-              .withDeadlineAfter(
-                  5,
-                  TimeUnit.MILLISECONDS,
-                  settings.getBackgroundExecutorProvider().getExecutor())) {
+          io.grpc.Context.current().withDeadlineAfter(5, TimeUnit.MILLISECONDS, contextScheduler)) {
 
         ctx.run(
             () -> {
@@ -136,9 +143,7 @@ public class SessionDeadlineTest {
       Query request = Query.create(TableId.of("fake-table")).rowKey("row-key");
 
       try (Context.CancellableContext ctx =
-          Context.current()
-              .withDeadlineAfter(
-                  1, TimeUnit.SECONDS, settings.getBackgroundExecutorProvider().getExecutor())) {
+          Context.current().withDeadlineAfter(1, TimeUnit.SECONDS, contextScheduler)) {
         ctx.run(
             () -> {
               ApiFuture<Row> future = stub.readRowCallable().futureCall(request);
@@ -188,58 +193,90 @@ public class SessionDeadlineTest {
             .setMaxAttempts(1)
             .build();
     EnhancedBigtableStubSettings.Builder settingsBuilder =
-        defaultSettings.toBuilder().setSessionsEnabled(true);
+        defaultSettings.toBuilder()
+            .setSessionsEnabled(true)
+            .setCredentialsProvider(FixedCredentialsProvider.create(new FakeCredentials()));
     settingsBuilder.readRowSettings().setRetrySettings(readRowRetrySettings);
     settingsBuilder.mutateRowSettings().setRetrySettings(mutateRowRetrySettings);
     settingsBuilder.readRowsSettings().setRetrySettings(readRowsRetrySettings);
     EnhancedBigtableStubSettings settings = settingsBuilder.build();
 
-    try (EnhancedBigtableStub stub = EnhancedBigtableStub.create(settings)) {
-      try {
-        stub.readRowCallable().futureCall(Query.create("fake-table").rowKey("row-key")).get();
-      } catch (Exception e) {
-        // client would throw missed heartbeat exception which is expected.
-        // but the deadline should still be captured.
-      }
+    try (EnhancedBigtableStub stub = EnhancedBigtableStub.create(settings);
+        Context.CancellableContext ambientCtx =
+            Context.current().withDeadlineAfter(30, TimeUnit.SECONDS, contextScheduler)) {
+      ambientCtx.run(
+          () -> {
+            try {
+              stub.readRowCallable().futureCall(Query.create("fake-table").rowKey("row-key")).get();
+            } catch (Exception e) {
+              // client would throw missed heartbeat exception which is expected.
+              // but the deadline should still be captured.
+            }
 
-      assertThat(fakeDataService.capturedDeadlines).isNotEmpty();
-      com.google.protobuf.Duration captured = fakeDataService.capturedDeadlines.poll();
-      assertThat(captured).isNotNull();
-      assertThat(Durations.toMillis(captured))
-          .isAtMost(java.time.Duration.ofSeconds(10).toMillis());
-      assertThat(Durations.toMillis(captured)).isGreaterThan(10);
+            assertThat(fakeDataService.capturedDeadlines).isNotEmpty();
+            com.google.protobuf.Duration captured = fakeDataService.capturedDeadlines.poll();
+            assertThat(captured).isNotNull();
+            assertThat(Durations.toMillis(captured))
+                .isAtMost(java.time.Duration.ofSeconds(10).toMillis());
+            assertThat(Durations.toMillis(captured)).isGreaterThan(10);
 
-      try {
-        stub.mutateRowCallable()
-            .call(RowMutation.create("fake-table", "row-key").setCell("cf", "q", "v"));
-      } catch (Exception e) {
-        // client would throw missed heartbeat exception which is expected.
-        // but the deadline should still be captured.
-      }
+            try {
+              stub.mutateRowCallable()
+                  .call(RowMutation.create("fake-table", "row-key").setCell("cf", "q", "v"));
+            } catch (Exception e) {
+              // client would throw missed heartbeat exception which is expected.
+              // but the deadline should still be captured.
+            }
 
-      assertThat(fakeDataService.capturedDeadlines).isNotEmpty();
-      captured = fakeDataService.capturedDeadlines.poll();
-      assertThat(captured).isNotNull();
-      assertThat(Durations.toMillis(captured))
-          .isAtMost(java.time.Duration.ofSeconds(10).toMillis());
-      assertThat(Durations.toMillis(captured)).isGreaterThan(10);
+            assertThat(fakeDataService.capturedDeadlines).isNotEmpty();
+            captured = fakeDataService.capturedDeadlines.poll();
+            assertThat(captured).isNotNull();
+            assertThat(Durations.toMillis(captured))
+                .isAtMost(java.time.Duration.ofSeconds(10).toMillis());
+            assertThat(Durations.toMillis(captured)).isGreaterThan(10);
 
-      try {
-        stub.readRowsCallable().call(Query.create("fake-table").rowKey("row-key")).stream()
-            .iterator()
-            .next();
-      } catch (Exception e) {
-        // client would throw missed heartbeat exception which is expected.
-        // but the deadline should still be captured.
-      }
+            try {
+              stub.readRowsCallable().call(Query.create("fake-table").rowKey("row-key")).stream()
+                  .iterator()
+                  .next();
+            } catch (Exception e) {
+              // client would throw missed heartbeat exception which is expected.
+              // but the deadline should still be captured.
+            }
 
-      assertThat(fakeDataService.capturedDeadlines).isNotEmpty();
-      captured = fakeDataService.capturedDeadlines.poll();
-      assertThat(captured).isNotNull();
-      assertThat(Durations.toMillis(captured))
-          .isAtMost(java.time.Duration.ofSeconds(10).toMillis());
-      assertThat(Durations.toMillis(captured)).isGreaterThan(10);
+            assertThat(fakeDataService.capturedDeadlines).isNotEmpty();
+            captured = fakeDataService.capturedDeadlines.poll();
+            assertThat(captured).isNotNull();
+            assertThat(Durations.toMillis(captured))
+                .isAtMost(java.time.Duration.ofSeconds(10).toMillis());
+            assertThat(Durations.toMillis(captured)).isGreaterThan(10);
+          });
     }
+  }
+
+  private static class FakeCredentials extends Credentials {
+    @Override
+    public String getAuthenticationType() {
+      return "fake";
+    }
+
+    @Override
+    public Map<String, List<String>> getRequestMetadata(URI uri) {
+      return Collections.emptyMap();
+    }
+
+    @Override
+    public boolean hasRequestMetadata() {
+      return false;
+    }
+
+    @Override
+    public boolean hasRequestMetadataOnly() {
+      return false;
+    }
+
+    @Override
+    public void refresh() {}
   }
 
   private static class FakeDataService extends BigtableGrpc.BigtableImplBase {

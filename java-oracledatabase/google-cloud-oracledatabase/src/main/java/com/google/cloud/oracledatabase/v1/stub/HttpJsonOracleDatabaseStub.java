@@ -23,9 +23,11 @@ import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListAutono
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListCloudExadataInfrastructuresPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListCloudVmClustersPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListDatabaseCharacterSetsPagedResponse;
+import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListDatabaseConnectionsPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListDatabasesPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListDbNodesPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListDbServersPagedResponse;
+import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListDbSystemComputePerformancesPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListDbSystemInitialStorageSizesPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListDbSystemShapesPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListDbSystemsPagedResponse;
@@ -33,6 +35,7 @@ import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListDbVers
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListEntitlementsPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListExadbVmClustersPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListExascaleDbStorageVaultsPagedResponse;
+import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListFlexComponentsPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListGiVersionsPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListGoldengateConnectionAssignmentsPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListGoldengateConnectionTypesPagedResponse;
@@ -76,6 +79,7 @@ import com.google.cloud.oracledatabase.v1.ConfigureExascaleCloudExadataInfrastru
 import com.google.cloud.oracledatabase.v1.CreateAutonomousDatabaseRequest;
 import com.google.cloud.oracledatabase.v1.CreateCloudExadataInfrastructureRequest;
 import com.google.cloud.oracledatabase.v1.CreateCloudVmClusterRequest;
+import com.google.cloud.oracledatabase.v1.CreateDatabaseConnectionRequest;
 import com.google.cloud.oracledatabase.v1.CreateDbSystemRequest;
 import com.google.cloud.oracledatabase.v1.CreateExadbVmClusterRequest;
 import com.google.cloud.oracledatabase.v1.CreateExascaleDbStorageVaultRequest;
@@ -86,10 +90,12 @@ import com.google.cloud.oracledatabase.v1.CreateOdbDnsZoneRequest;
 import com.google.cloud.oracledatabase.v1.CreateOdbNetworkRequest;
 import com.google.cloud.oracledatabase.v1.CreateOdbSubnetRequest;
 import com.google.cloud.oracledatabase.v1.Database;
+import com.google.cloud.oracledatabase.v1.DatabaseConnection;
 import com.google.cloud.oracledatabase.v1.DbSystem;
 import com.google.cloud.oracledatabase.v1.DeleteAutonomousDatabaseRequest;
 import com.google.cloud.oracledatabase.v1.DeleteCloudExadataInfrastructureRequest;
 import com.google.cloud.oracledatabase.v1.DeleteCloudVmClusterRequest;
+import com.google.cloud.oracledatabase.v1.DeleteDatabaseConnectionRequest;
 import com.google.cloud.oracledatabase.v1.DeleteDbSystemRequest;
 import com.google.cloud.oracledatabase.v1.DeleteExadbVmClusterRequest;
 import com.google.cloud.oracledatabase.v1.DeleteExascaleDbStorageVaultRequest;
@@ -99,8 +105,14 @@ import com.google.cloud.oracledatabase.v1.DeleteGoldengateDeploymentRequest;
 import com.google.cloud.oracledatabase.v1.DeleteOdbDnsZoneRequest;
 import com.google.cloud.oracledatabase.v1.DeleteOdbNetworkRequest;
 import com.google.cloud.oracledatabase.v1.DeleteOdbSubnetRequest;
+import com.google.cloud.oracledatabase.v1.DisableCloudVmClusterIdentityConnectorRequest;
+import com.google.cloud.oracledatabase.v1.DisableExadbVmClusterIdentityConnectorRequest;
+import com.google.cloud.oracledatabase.v1.EnableCloudVmClusterIdentityConnectorRequest;
+import com.google.cloud.oracledatabase.v1.EnableExadbVmClusterIdentityConnectorRequest;
 import com.google.cloud.oracledatabase.v1.ExadbVmCluster;
 import com.google.cloud.oracledatabase.v1.ExascaleDbStorageVault;
+import com.google.cloud.oracledatabase.v1.ExecuteSqlRequest;
+import com.google.cloud.oracledatabase.v1.ExecuteSqlResponse;
 import com.google.cloud.oracledatabase.v1.FailoverAutonomousDatabaseRequest;
 import com.google.cloud.oracledatabase.v1.GenerateAutonomousDatabaseWalletRequest;
 import com.google.cloud.oracledatabase.v1.GenerateAutonomousDatabaseWalletResponse;
@@ -108,6 +120,7 @@ import com.google.cloud.oracledatabase.v1.GetAutonomousDatabaseRefreshableClones
 import com.google.cloud.oracledatabase.v1.GetAutonomousDatabaseRequest;
 import com.google.cloud.oracledatabase.v1.GetCloudExadataInfrastructureRequest;
 import com.google.cloud.oracledatabase.v1.GetCloudVmClusterRequest;
+import com.google.cloud.oracledatabase.v1.GetDatabaseConnectionRequest;
 import com.google.cloud.oracledatabase.v1.GetDatabaseRequest;
 import com.google.cloud.oracledatabase.v1.GetDbSystemRequest;
 import com.google.cloud.oracledatabase.v1.GetExadbVmClusterRequest;
@@ -136,12 +149,16 @@ import com.google.cloud.oracledatabase.v1.ListCloudVmClustersRequest;
 import com.google.cloud.oracledatabase.v1.ListCloudVmClustersResponse;
 import com.google.cloud.oracledatabase.v1.ListDatabaseCharacterSetsRequest;
 import com.google.cloud.oracledatabase.v1.ListDatabaseCharacterSetsResponse;
+import com.google.cloud.oracledatabase.v1.ListDatabaseConnectionsRequest;
+import com.google.cloud.oracledatabase.v1.ListDatabaseConnectionsResponse;
 import com.google.cloud.oracledatabase.v1.ListDatabasesRequest;
 import com.google.cloud.oracledatabase.v1.ListDatabasesResponse;
 import com.google.cloud.oracledatabase.v1.ListDbNodesRequest;
 import com.google.cloud.oracledatabase.v1.ListDbNodesResponse;
 import com.google.cloud.oracledatabase.v1.ListDbServersRequest;
 import com.google.cloud.oracledatabase.v1.ListDbServersResponse;
+import com.google.cloud.oracledatabase.v1.ListDbSystemComputePerformancesRequest;
+import com.google.cloud.oracledatabase.v1.ListDbSystemComputePerformancesResponse;
 import com.google.cloud.oracledatabase.v1.ListDbSystemInitialStorageSizesRequest;
 import com.google.cloud.oracledatabase.v1.ListDbSystemInitialStorageSizesResponse;
 import com.google.cloud.oracledatabase.v1.ListDbSystemShapesRequest;
@@ -156,6 +173,8 @@ import com.google.cloud.oracledatabase.v1.ListExadbVmClustersRequest;
 import com.google.cloud.oracledatabase.v1.ListExadbVmClustersResponse;
 import com.google.cloud.oracledatabase.v1.ListExascaleDbStorageVaultsRequest;
 import com.google.cloud.oracledatabase.v1.ListExascaleDbStorageVaultsResponse;
+import com.google.cloud.oracledatabase.v1.ListFlexComponentsRequest;
+import com.google.cloud.oracledatabase.v1.ListFlexComponentsResponse;
 import com.google.cloud.oracledatabase.v1.ListGiVersionsRequest;
 import com.google.cloud.oracledatabase.v1.ListGiVersionsResponse;
 import com.google.cloud.oracledatabase.v1.ListGoldengateConnectionAssignmentsRequest;
@@ -196,10 +215,22 @@ import com.google.cloud.oracledatabase.v1.StartGoldengateDeploymentRequest;
 import com.google.cloud.oracledatabase.v1.StopAutonomousDatabaseRequest;
 import com.google.cloud.oracledatabase.v1.StopGoldengateDeploymentRequest;
 import com.google.cloud.oracledatabase.v1.SwitchoverAutonomousDatabaseRequest;
+import com.google.cloud.oracledatabase.v1.TestDatabaseConnectionRequest;
+import com.google.cloud.oracledatabase.v1.TestDatabaseConnectionResponse;
 import com.google.cloud.oracledatabase.v1.TestGoldengateConnectionAssignmentRequest;
 import com.google.cloud.oracledatabase.v1.TestGoldengateConnectionAssignmentResponse;
 import com.google.cloud.oracledatabase.v1.UpdateAutonomousDatabaseRequest;
+import com.google.cloud.oracledatabase.v1.UpdateCloudExadataInfrastructureRequest;
+import com.google.cloud.oracledatabase.v1.UpdateCloudVmClusterRequest;
+import com.google.cloud.oracledatabase.v1.UpdateDatabaseConnectionRequest;
+import com.google.cloud.oracledatabase.v1.UpdateDbSystemRequest;
 import com.google.cloud.oracledatabase.v1.UpdateExadbVmClusterRequest;
+import com.google.cloud.oracledatabase.v1.UpdateExascaleDbStorageVaultRequest;
+import com.google.cloud.oracledatabase.v1.UpdateGoldengateConnectionAssignmentRequest;
+import com.google.cloud.oracledatabase.v1.UpdateGoldengateConnectionRequest;
+import com.google.cloud.oracledatabase.v1.UpdateGoldengateDeploymentRequest;
+import com.google.cloud.oracledatabase.v1.UpdateOdbNetworkRequest;
+import com.google.cloud.oracledatabase.v1.UpdateOdbSubnetRequest;
 import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
@@ -235,6 +266,7 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
           .add(OdbDnsZone.getDescriptor())
           .add(ExadbVmCluster.getDescriptor())
           .add(GoldengateDeployment.getDescriptor())
+          .add(DatabaseConnection.getDescriptor())
           .add(OdbSubnet.getDescriptor())
           .add(GoldengateConnectionAssignment.getDescriptor())
           .add(DbSystem.getDescriptor())
@@ -366,6 +398,55 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
                       .build())
               .setOperationSnapshotFactory(
                   (CreateCloudExadataInfrastructureRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<UpdateCloudExadataInfrastructureRequest, Operation>
+      updateCloudExadataInfrastructureMethodDescriptor =
+          ApiMethodDescriptor.<UpdateCloudExadataInfrastructureRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.oracledatabase.v1.OracleDatabase/UpdateCloudExadataInfrastructure")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateCloudExadataInfrastructureRequest>newBuilder()
+                      .setPath(
+                          "/v1/{cloudExadataInfrastructure.name=projects/*/locations/*/cloudExadataInfrastructures/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateCloudExadataInfrastructureRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields,
+                                "cloudExadataInfrastructure.name",
+                                request.getCloudExadataInfrastructure().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateCloudExadataInfrastructureRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "cloudExadataInfrastructure",
+                                      request.getCloudExadataInfrastructure(),
+                                      true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (UpdateCloudExadataInfrastructureRequest request, Operation response) ->
                       HttpJsonOperationSnapshot.create(response))
               .build();
 
@@ -569,6 +650,52 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
                       HttpJsonOperationSnapshot.create(response))
               .build();
 
+  private static final ApiMethodDescriptor<UpdateCloudVmClusterRequest, Operation>
+      updateCloudVmClusterMethodDescriptor =
+          ApiMethodDescriptor.<UpdateCloudVmClusterRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.oracledatabase.v1.OracleDatabase/UpdateCloudVmCluster")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateCloudVmClusterRequest>newBuilder()
+                      .setPath(
+                          "/v1/{cloudVmCluster.name=projects/*/locations/*/cloudVmClusters/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateCloudVmClusterRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields,
+                                "cloudVmCluster.name",
+                                request.getCloudVmCluster().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateCloudVmClusterRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("cloudVmCluster", request.getCloudVmCluster(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (UpdateCloudVmClusterRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
   private static final ApiMethodDescriptor<DeleteCloudVmClusterRequest, Operation>
       deleteCloudVmClusterMethodDescriptor =
           ApiMethodDescriptor.<DeleteCloudVmClusterRequest, Operation>newBuilder()
@@ -609,6 +736,174 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
                       HttpJsonOperationSnapshot.create(response))
               .build();
 
+  private static final ApiMethodDescriptor<EnableCloudVmClusterIdentityConnectorRequest, Operation>
+      enableCloudVmClusterIdentityConnectorMethodDescriptor =
+          ApiMethodDescriptor.<EnableCloudVmClusterIdentityConnectorRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.oracledatabase.v1.OracleDatabase/EnableCloudVmClusterIdentityConnector")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter
+                      .<EnableCloudVmClusterIdentityConnectorRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/cloudVmClusters/*}:enableIdentityConnector",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<EnableCloudVmClusterIdentityConnectorRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<EnableCloudVmClusterIdentityConnectorRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (EnableCloudVmClusterIdentityConnectorRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<DisableCloudVmClusterIdentityConnectorRequest, Operation>
+      disableCloudVmClusterIdentityConnectorMethodDescriptor =
+          ApiMethodDescriptor.<DisableCloudVmClusterIdentityConnectorRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.oracledatabase.v1.OracleDatabase/DisableCloudVmClusterIdentityConnector")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter
+                      .<DisableCloudVmClusterIdentityConnectorRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/cloudVmClusters/*}:disableIdentityConnector",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DisableCloudVmClusterIdentityConnectorRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DisableCloudVmClusterIdentityConnectorRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (DisableCloudVmClusterIdentityConnectorRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<EnableExadbVmClusterIdentityConnectorRequest, Operation>
+      enableExadbVmClusterIdentityConnectorMethodDescriptor =
+          ApiMethodDescriptor.<EnableExadbVmClusterIdentityConnectorRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.oracledatabase.v1.OracleDatabase/EnableExadbVmClusterIdentityConnector")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter
+                      .<EnableExadbVmClusterIdentityConnectorRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/exadbVmClusters/*}:enableIdentityConnector",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<EnableExadbVmClusterIdentityConnectorRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<EnableExadbVmClusterIdentityConnectorRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (EnableExadbVmClusterIdentityConnectorRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<DisableExadbVmClusterIdentityConnectorRequest, Operation>
+      disableExadbVmClusterIdentityConnectorMethodDescriptor =
+          ApiMethodDescriptor.<DisableExadbVmClusterIdentityConnectorRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.oracledatabase.v1.OracleDatabase/DisableExadbVmClusterIdentityConnector")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter
+                      .<DisableExadbVmClusterIdentityConnectorRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/exadbVmClusters/*}:disableIdentityConnector",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DisableExadbVmClusterIdentityConnectorRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DisableExadbVmClusterIdentityConnectorRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (DisableExadbVmClusterIdentityConnectorRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
   private static final ApiMethodDescriptor<ListEntitlementsRequest, ListEntitlementsResponse>
       listEntitlementsMethodDescriptor =
           ApiMethodDescriptor.<ListEntitlementsRequest, ListEntitlementsResponse>newBuilder()
@@ -641,6 +936,43 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<ListEntitlementsResponse>newBuilder()
                       .setDefaultInstance(ListEntitlementsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<ListFlexComponentsRequest, ListFlexComponentsResponse>
+      listFlexComponentsMethodDescriptor =
+          ApiMethodDescriptor.<ListFlexComponentsRequest, ListFlexComponentsResponse>newBuilder()
+              .setFullMethodName("google.cloud.oracledatabase.v1.OracleDatabase/ListFlexComponents")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListFlexComponentsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*}/flexComponents",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListFlexComponentsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListFlexComponentsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListFlexComponentsResponse>newBuilder()
+                      .setDefaultInstance(ListFlexComponentsResponse.getDefaultInstance())
                       .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
@@ -1646,6 +1978,49 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
                       HttpJsonOperationSnapshot.create(response))
               .build();
 
+  private static final ApiMethodDescriptor<UpdateOdbNetworkRequest, Operation>
+      updateOdbNetworkMethodDescriptor =
+          ApiMethodDescriptor.<UpdateOdbNetworkRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.oracledatabase.v1.OracleDatabase/UpdateOdbNetwork")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateOdbNetworkRequest>newBuilder()
+                      .setPath(
+                          "/v1/{odbNetwork.name=projects/*/locations/*/odbNetworks/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateOdbNetworkRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "odbNetwork.name", request.getOdbNetwork().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateOdbNetworkRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("odbNetwork", request.getOdbNetwork(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (UpdateOdbNetworkRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
   private static final ApiMethodDescriptor<DeleteOdbNetworkRequest, Operation>
       deleteOdbNetworkMethodDescriptor =
           ApiMethodDescriptor.<DeleteOdbNetworkRequest, Operation>newBuilder()
@@ -1796,6 +2171,49 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
                       .build())
               .setOperationSnapshotFactory(
                   (CreateOdbSubnetRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<UpdateOdbSubnetRequest, Operation>
+      updateOdbSubnetMethodDescriptor =
+          ApiMethodDescriptor.<UpdateOdbSubnetRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.oracledatabase.v1.OracleDatabase/UpdateOdbSubnet")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateOdbSubnetRequest>newBuilder()
+                      .setPath(
+                          "/v1/{odbSubnet.name=projects/*/locations/*/odbNetworks/*/odbSubnets/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateOdbSubnetRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "odbSubnet.name", request.getOdbSubnet().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateOdbSubnetRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("odbSubnet", request.getOdbSubnet(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (UpdateOdbSubnetRequest request, Operation response) ->
                       HttpJsonOperationSnapshot.create(response))
               .build();
 
@@ -2359,6 +2777,55 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
                       HttpJsonOperationSnapshot.create(response))
               .build();
 
+  private static final ApiMethodDescriptor<UpdateExascaleDbStorageVaultRequest, Operation>
+      updateExascaleDbStorageVaultMethodDescriptor =
+          ApiMethodDescriptor.<UpdateExascaleDbStorageVaultRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.oracledatabase.v1.OracleDatabase/UpdateExascaleDbStorageVault")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateExascaleDbStorageVaultRequest>newBuilder()
+                      .setPath(
+                          "/v1/{exascaleDbStorageVault.name=projects/*/locations/*/exascaleDbStorageVaults/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateExascaleDbStorageVaultRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields,
+                                "exascaleDbStorageVault.name",
+                                request.getExascaleDbStorageVault().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateExascaleDbStorageVaultRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "exascaleDbStorageVault",
+                                      request.getExascaleDbStorageVault(),
+                                      true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (UpdateExascaleDbStorageVaultRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
   private static final ApiMethodDescriptor<DeleteExascaleDbStorageVaultRequest, Operation>
       deleteExascaleDbStorageVaultMethodDescriptor =
           ApiMethodDescriptor.<DeleteExascaleDbStorageVaultRequest, Operation>newBuilder()
@@ -2435,6 +2902,48 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
                   ProtoMessageResponseParser.<ListDbSystemInitialStorageSizesResponse>newBuilder()
                       .setDefaultInstance(
                           ListDbSystemInitialStorageSizesResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          ListDbSystemComputePerformancesRequest, ListDbSystemComputePerformancesResponse>
+      listDbSystemComputePerformancesMethodDescriptor =
+          ApiMethodDescriptor
+              .<ListDbSystemComputePerformancesRequest, ListDbSystemComputePerformancesResponse>
+                  newBuilder()
+              .setFullMethodName(
+                  "google.cloud.oracledatabase.v1.OracleDatabase/ListDbSystemComputePerformances")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListDbSystemComputePerformancesRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*}/dbSystemComputePerformances",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListDbSystemComputePerformancesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListDbSystemComputePerformancesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListDbSystemComputePerformancesResponse>newBuilder()
+                      .setDefaultInstance(
+                          ListDbSystemComputePerformancesResponse.getDefaultInstance())
                       .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
@@ -2699,6 +3208,49 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
                       HttpJsonOperationSnapshot.create(response))
               .build();
 
+  private static final ApiMethodDescriptor<UpdateDbSystemRequest, Operation>
+      updateDbSystemMethodDescriptor =
+          ApiMethodDescriptor.<UpdateDbSystemRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.oracledatabase.v1.OracleDatabase/UpdateDbSystem")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateDbSystemRequest>newBuilder()
+                      .setPath(
+                          "/v1/{dbSystem.name=projects/*/locations/*/dbSystems/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateDbSystemRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "dbSystem.name", request.getDbSystem().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateDbSystemRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("dbSystem", request.getDbSystem(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (UpdateDbSystemRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
   private static final ApiMethodDescriptor<DeleteDbSystemRequest, Operation>
       deleteDbSystemMethodDescriptor =
           ApiMethodDescriptor.<DeleteDbSystemRequest, Operation>newBuilder()
@@ -2859,6 +3411,55 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
                       .build())
               .setOperationSnapshotFactory(
                   (CreateGoldengateDeploymentRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<UpdateGoldengateDeploymentRequest, Operation>
+      updateGoldengateDeploymentMethodDescriptor =
+          ApiMethodDescriptor.<UpdateGoldengateDeploymentRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.oracledatabase.v1.OracleDatabase/UpdateGoldengateDeployment")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateGoldengateDeploymentRequest>newBuilder()
+                      .setPath(
+                          "/v1/{goldengateDeployment.name=projects/*/locations/*/goldengateDeployments/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateGoldengateDeploymentRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields,
+                                "goldengateDeployment.name",
+                                request.getGoldengateDeployment().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateGoldengateDeploymentRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "goldengateDeployment",
+                                      request.getGoldengateDeployment(),
+                                      true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (UpdateGoldengateDeploymentRequest request, Operation response) ->
                       HttpJsonOperationSnapshot.create(response))
               .build();
 
@@ -3105,6 +3706,55 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
                       .build())
               .setOperationSnapshotFactory(
                   (CreateGoldengateConnectionRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<UpdateGoldengateConnectionRequest, Operation>
+      updateGoldengateConnectionMethodDescriptor =
+          ApiMethodDescriptor.<UpdateGoldengateConnectionRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.oracledatabase.v1.OracleDatabase/UpdateGoldengateConnection")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateGoldengateConnectionRequest>newBuilder()
+                      .setPath(
+                          "/v1/{goldengateConnection.name=projects/*/locations/*/goldengateConnections/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateGoldengateConnectionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields,
+                                "goldengateConnection.name",
+                                request.getGoldengateConnection().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateGoldengateConnectionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "goldengateConnection",
+                                      request.getGoldengateConnection(),
+                                      true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (UpdateGoldengateConnectionRequest request, Operation response) ->
                       HttpJsonOperationSnapshot.create(response))
               .build();
 
@@ -3530,6 +4180,56 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
                       HttpJsonOperationSnapshot.create(response))
               .build();
 
+  private static final ApiMethodDescriptor<UpdateGoldengateConnectionAssignmentRequest, Operation>
+      updateGoldengateConnectionAssignmentMethodDescriptor =
+          ApiMethodDescriptor.<UpdateGoldengateConnectionAssignmentRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.oracledatabase.v1.OracleDatabase/UpdateGoldengateConnectionAssignment")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter
+                      .<UpdateGoldengateConnectionAssignmentRequest>newBuilder()
+                      .setPath(
+                          "/v1/{goldengateConnectionAssignment.name=projects/*/locations/*/goldengateConnectionAssignments/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateGoldengateConnectionAssignmentRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields,
+                                "goldengateConnectionAssignment.name",
+                                request.getGoldengateConnectionAssignment().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateGoldengateConnectionAssignmentRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "goldengateConnectionAssignment",
+                                      request.getGoldengateConnectionAssignment(),
+                                      true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (UpdateGoldengateConnectionAssignmentRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
   private static final ApiMethodDescriptor<DeleteGoldengateConnectionAssignmentRequest, Operation>
       deleteGoldengateConnectionAssignmentMethodDescriptor =
           ApiMethodDescriptor.<DeleteGoldengateConnectionAssignmentRequest, Operation>newBuilder()
@@ -3615,6 +4315,290 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<
+          ListDatabaseConnectionsRequest, ListDatabaseConnectionsResponse>
+      listDatabaseConnectionsMethodDescriptor =
+          ApiMethodDescriptor
+              .<ListDatabaseConnectionsRequest, ListDatabaseConnectionsResponse>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.oracledatabase.v1.OracleDatabase/ListDatabaseConnections")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListDatabaseConnectionsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*}/databaseConnections",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListDatabaseConnectionsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListDatabaseConnectionsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListDatabaseConnectionsResponse>newBuilder()
+                      .setDefaultInstance(ListDatabaseConnectionsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetDatabaseConnectionRequest, DatabaseConnection>
+      getDatabaseConnectionMethodDescriptor =
+          ApiMethodDescriptor.<GetDatabaseConnectionRequest, DatabaseConnection>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.oracledatabase.v1.OracleDatabase/GetDatabaseConnection")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetDatabaseConnectionRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/databaseConnections/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetDatabaseConnectionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetDatabaseConnectionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<DatabaseConnection>newBuilder()
+                      .setDefaultInstance(DatabaseConnection.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<CreateDatabaseConnectionRequest, Operation>
+      createDatabaseConnectionMethodDescriptor =
+          ApiMethodDescriptor.<CreateDatabaseConnectionRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.oracledatabase.v1.OracleDatabase/CreateDatabaseConnection")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CreateDatabaseConnectionRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*}/databaseConnections",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateDatabaseConnectionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateDatabaseConnectionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields, "databaseConnectionId", request.getDatabaseConnectionId());
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "databaseConnection", request.getDatabaseConnection(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (CreateDatabaseConnectionRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<UpdateDatabaseConnectionRequest, Operation>
+      updateDatabaseConnectionMethodDescriptor =
+          ApiMethodDescriptor.<UpdateDatabaseConnectionRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.oracledatabase.v1.OracleDatabase/UpdateDatabaseConnection")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateDatabaseConnectionRequest>newBuilder()
+                      .setPath(
+                          "/v1/{databaseConnection.name=projects/*/locations/*/databaseConnections/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateDatabaseConnectionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields,
+                                "databaseConnection.name",
+                                request.getDatabaseConnection().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateDatabaseConnectionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "databaseConnection", request.getDatabaseConnection(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (UpdateDatabaseConnectionRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteDatabaseConnectionRequest, Operation>
+      deleteDatabaseConnectionMethodDescriptor =
+          ApiMethodDescriptor.<DeleteDatabaseConnectionRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.oracledatabase.v1.OracleDatabase/DeleteDatabaseConnection")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteDatabaseConnectionRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/databaseConnections/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteDatabaseConnectionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteDatabaseConnectionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (DeleteDatabaseConnectionRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<
+          TestDatabaseConnectionRequest, TestDatabaseConnectionResponse>
+      testDatabaseConnectionMethodDescriptor =
+          ApiMethodDescriptor
+              .<TestDatabaseConnectionRequest, TestDatabaseConnectionResponse>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.oracledatabase.v1.OracleDatabase/TestDatabaseConnection")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<TestDatabaseConnectionRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/databaseConnections/*}:test",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<TestDatabaseConnectionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<TestDatabaseConnectionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<TestDatabaseConnectionResponse>newBuilder()
+                      .setDefaultInstance(TestDatabaseConnectionResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<ExecuteSqlRequest, ExecuteSqlResponse>
+      executeSqlMethodDescriptor =
+          ApiMethodDescriptor.<ExecuteSqlRequest, ExecuteSqlResponse>newBuilder()
+              .setFullMethodName("google.cloud.oracledatabase.v1.OracleDatabase/ExecuteSql")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ExecuteSqlRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/databaseConnections/*}:executeSql",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ExecuteSqlRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ExecuteSqlRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ExecuteSqlResponse>newBuilder()
+                      .setDefaultInstance(ExecuteSqlResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           ApiMethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -3696,6 +4680,11 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
   private final OperationCallable<
           CreateCloudExadataInfrastructureRequest, CloudExadataInfrastructure, OperationMetadata>
       createCloudExadataInfrastructureOperationCallable;
+  private final UnaryCallable<UpdateCloudExadataInfrastructureRequest, Operation>
+      updateCloudExadataInfrastructureCallable;
+  private final OperationCallable<
+          UpdateCloudExadataInfrastructureRequest, CloudExadataInfrastructure, OperationMetadata>
+      updateCloudExadataInfrastructureOperationCallable;
   private final UnaryCallable<DeleteCloudExadataInfrastructureRequest, Operation>
       deleteCloudExadataInfrastructureCallable;
   private final OperationCallable<DeleteCloudExadataInfrastructureRequest, Empty, OperationMetadata>
@@ -3715,13 +4704,40 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
   private final UnaryCallable<CreateCloudVmClusterRequest, Operation> createCloudVmClusterCallable;
   private final OperationCallable<CreateCloudVmClusterRequest, CloudVmCluster, OperationMetadata>
       createCloudVmClusterOperationCallable;
+  private final UnaryCallable<UpdateCloudVmClusterRequest, Operation> updateCloudVmClusterCallable;
+  private final OperationCallable<UpdateCloudVmClusterRequest, CloudVmCluster, OperationMetadata>
+      updateCloudVmClusterOperationCallable;
   private final UnaryCallable<DeleteCloudVmClusterRequest, Operation> deleteCloudVmClusterCallable;
   private final OperationCallable<DeleteCloudVmClusterRequest, Empty, OperationMetadata>
       deleteCloudVmClusterOperationCallable;
+  private final UnaryCallable<EnableCloudVmClusterIdentityConnectorRequest, Operation>
+      enableCloudVmClusterIdentityConnectorCallable;
+  private final OperationCallable<
+          EnableCloudVmClusterIdentityConnectorRequest, CloudVmCluster, OperationMetadata>
+      enableCloudVmClusterIdentityConnectorOperationCallable;
+  private final UnaryCallable<DisableCloudVmClusterIdentityConnectorRequest, Operation>
+      disableCloudVmClusterIdentityConnectorCallable;
+  private final OperationCallable<
+          DisableCloudVmClusterIdentityConnectorRequest, CloudVmCluster, OperationMetadata>
+      disableCloudVmClusterIdentityConnectorOperationCallable;
+  private final UnaryCallable<EnableExadbVmClusterIdentityConnectorRequest, Operation>
+      enableExadbVmClusterIdentityConnectorCallable;
+  private final OperationCallable<
+          EnableExadbVmClusterIdentityConnectorRequest, ExadbVmCluster, OperationMetadata>
+      enableExadbVmClusterIdentityConnectorOperationCallable;
+  private final UnaryCallable<DisableExadbVmClusterIdentityConnectorRequest, Operation>
+      disableExadbVmClusterIdentityConnectorCallable;
+  private final OperationCallable<
+          DisableExadbVmClusterIdentityConnectorRequest, ExadbVmCluster, OperationMetadata>
+      disableExadbVmClusterIdentityConnectorOperationCallable;
   private final UnaryCallable<ListEntitlementsRequest, ListEntitlementsResponse>
       listEntitlementsCallable;
   private final UnaryCallable<ListEntitlementsRequest, ListEntitlementsPagedResponse>
       listEntitlementsPagedCallable;
+  private final UnaryCallable<ListFlexComponentsRequest, ListFlexComponentsResponse>
+      listFlexComponentsCallable;
+  private final UnaryCallable<ListFlexComponentsRequest, ListFlexComponentsPagedResponse>
+      listFlexComponentsPagedCallable;
   private final UnaryCallable<ListDbServersRequest, ListDbServersResponse> listDbServersCallable;
   private final UnaryCallable<ListDbServersRequest, ListDbServersPagedResponse>
       listDbServersPagedCallable;
@@ -3826,6 +4842,9 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
   private final UnaryCallable<CreateOdbNetworkRequest, Operation> createOdbNetworkCallable;
   private final OperationCallable<CreateOdbNetworkRequest, OdbNetwork, OperationMetadata>
       createOdbNetworkOperationCallable;
+  private final UnaryCallable<UpdateOdbNetworkRequest, Operation> updateOdbNetworkCallable;
+  private final OperationCallable<UpdateOdbNetworkRequest, OdbNetwork, OperationMetadata>
+      updateOdbNetworkOperationCallable;
   private final UnaryCallable<DeleteOdbNetworkRequest, Operation> deleteOdbNetworkCallable;
   private final OperationCallable<DeleteOdbNetworkRequest, Empty, OperationMetadata>
       deleteOdbNetworkOperationCallable;
@@ -3836,6 +4855,9 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
   private final UnaryCallable<CreateOdbSubnetRequest, Operation> createOdbSubnetCallable;
   private final OperationCallable<CreateOdbSubnetRequest, OdbSubnet, OperationMetadata>
       createOdbSubnetOperationCallable;
+  private final UnaryCallable<UpdateOdbSubnetRequest, Operation> updateOdbSubnetCallable;
+  private final OperationCallable<UpdateOdbSubnetRequest, OdbSubnet, OperationMetadata>
+      updateOdbSubnetOperationCallable;
   private final UnaryCallable<DeleteOdbSubnetRequest, Operation> deleteOdbSubnetCallable;
   private final OperationCallable<DeleteOdbSubnetRequest, Empty, OperationMetadata>
       deleteOdbSubnetOperationCallable;
@@ -3882,6 +4904,11 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
   private final OperationCallable<
           CreateExascaleDbStorageVaultRequest, ExascaleDbStorageVault, OperationMetadata>
       createExascaleDbStorageVaultOperationCallable;
+  private final UnaryCallable<UpdateExascaleDbStorageVaultRequest, Operation>
+      updateExascaleDbStorageVaultCallable;
+  private final OperationCallable<
+          UpdateExascaleDbStorageVaultRequest, ExascaleDbStorageVault, OperationMetadata>
+      updateExascaleDbStorageVaultOperationCallable;
   private final UnaryCallable<DeleteExascaleDbStorageVaultRequest, Operation>
       deleteExascaleDbStorageVaultCallable;
   private final OperationCallable<DeleteExascaleDbStorageVaultRequest, Empty, OperationMetadata>
@@ -3892,6 +4919,12 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
   private final UnaryCallable<
           ListDbSystemInitialStorageSizesRequest, ListDbSystemInitialStorageSizesPagedResponse>
       listDbSystemInitialStorageSizesPagedCallable;
+  private final UnaryCallable<
+          ListDbSystemComputePerformancesRequest, ListDbSystemComputePerformancesResponse>
+      listDbSystemComputePerformancesCallable;
+  private final UnaryCallable<
+          ListDbSystemComputePerformancesRequest, ListDbSystemComputePerformancesPagedResponse>
+      listDbSystemComputePerformancesPagedCallable;
   private final UnaryCallable<ListDatabasesRequest, ListDatabasesResponse> listDatabasesCallable;
   private final UnaryCallable<ListDatabasesRequest, ListDatabasesPagedResponse>
       listDatabasesPagedCallable;
@@ -3909,6 +4942,9 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
   private final UnaryCallable<CreateDbSystemRequest, Operation> createDbSystemCallable;
   private final OperationCallable<CreateDbSystemRequest, DbSystem, OperationMetadata>
       createDbSystemOperationCallable;
+  private final UnaryCallable<UpdateDbSystemRequest, Operation> updateDbSystemCallable;
+  private final OperationCallable<UpdateDbSystemRequest, DbSystem, OperationMetadata>
+      updateDbSystemOperationCallable;
   private final UnaryCallable<DeleteDbSystemRequest, Operation> deleteDbSystemCallable;
   private final OperationCallable<DeleteDbSystemRequest, Empty, OperationMetadata>
       deleteDbSystemOperationCallable;
@@ -3924,6 +4960,11 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
   private final OperationCallable<
           CreateGoldengateDeploymentRequest, GoldengateDeployment, OperationMetadata>
       createGoldengateDeploymentOperationCallable;
+  private final UnaryCallable<UpdateGoldengateDeploymentRequest, Operation>
+      updateGoldengateDeploymentCallable;
+  private final OperationCallable<
+          UpdateGoldengateDeploymentRequest, GoldengateDeployment, OperationMetadata>
+      updateGoldengateDeploymentOperationCallable;
   private final UnaryCallable<DeleteGoldengateDeploymentRequest, Operation>
       deleteGoldengateDeploymentCallable;
   private final OperationCallable<DeleteGoldengateDeploymentRequest, Empty, OperationMetadata>
@@ -3950,6 +4991,11 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
   private final OperationCallable<
           CreateGoldengateConnectionRequest, GoldengateConnection, OperationMetadata>
       createGoldengateConnectionOperationCallable;
+  private final UnaryCallable<UpdateGoldengateConnectionRequest, Operation>
+      updateGoldengateConnectionCallable;
+  private final OperationCallable<
+          UpdateGoldengateConnectionRequest, GoldengateConnection, OperationMetadata>
+      updateGoldengateConnectionOperationCallable;
   private final UnaryCallable<DeleteGoldengateConnectionRequest, Operation>
       deleteGoldengateConnectionCallable;
   private final OperationCallable<DeleteGoldengateConnectionRequest, Empty, OperationMetadata>
@@ -4004,6 +5050,13 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
           GoldengateConnectionAssignment,
           OperationMetadata>
       createGoldengateConnectionAssignmentOperationCallable;
+  private final UnaryCallable<UpdateGoldengateConnectionAssignmentRequest, Operation>
+      updateGoldengateConnectionAssignmentCallable;
+  private final OperationCallable<
+          UpdateGoldengateConnectionAssignmentRequest,
+          GoldengateConnectionAssignment,
+          OperationMetadata>
+      updateGoldengateConnectionAssignmentOperationCallable;
   private final UnaryCallable<DeleteGoldengateConnectionAssignmentRequest, Operation>
       deleteGoldengateConnectionAssignmentCallable;
   private final OperationCallable<
@@ -4012,6 +5065,29 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
   private final UnaryCallable<
           TestGoldengateConnectionAssignmentRequest, TestGoldengateConnectionAssignmentResponse>
       testGoldengateConnectionAssignmentCallable;
+  private final UnaryCallable<ListDatabaseConnectionsRequest, ListDatabaseConnectionsResponse>
+      listDatabaseConnectionsCallable;
+  private final UnaryCallable<ListDatabaseConnectionsRequest, ListDatabaseConnectionsPagedResponse>
+      listDatabaseConnectionsPagedCallable;
+  private final UnaryCallable<GetDatabaseConnectionRequest, DatabaseConnection>
+      getDatabaseConnectionCallable;
+  private final UnaryCallable<CreateDatabaseConnectionRequest, Operation>
+      createDatabaseConnectionCallable;
+  private final OperationCallable<
+          CreateDatabaseConnectionRequest, DatabaseConnection, OperationMetadata>
+      createDatabaseConnectionOperationCallable;
+  private final UnaryCallable<UpdateDatabaseConnectionRequest, Operation>
+      updateDatabaseConnectionCallable;
+  private final OperationCallable<
+          UpdateDatabaseConnectionRequest, DatabaseConnection, OperationMetadata>
+      updateDatabaseConnectionOperationCallable;
+  private final UnaryCallable<DeleteDatabaseConnectionRequest, Operation>
+      deleteDatabaseConnectionCallable;
+  private final OperationCallable<DeleteDatabaseConnectionRequest, Empty, OperationMetadata>
+      deleteDatabaseConnectionOperationCallable;
+  private final UnaryCallable<TestDatabaseConnectionRequest, TestDatabaseConnectionResponse>
+      testDatabaseConnectionCallable;
+  private final UnaryCallable<ExecuteSqlRequest, ExecuteSqlResponse> executeSqlCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -4130,6 +5206,20 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
                     })
                 .setResourceNameExtractor(request -> request.getParent())
                 .build();
+    HttpJsonCallSettings<UpdateCloudExadataInfrastructureRequest, Operation>
+        updateCloudExadataInfrastructureTransportSettings =
+            HttpJsonCallSettings.<UpdateCloudExadataInfrastructureRequest, Operation>newBuilder()
+                .setMethodDescriptor(updateCloudExadataInfrastructureMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "cloud_exadata_infrastructure.name",
+                          String.valueOf(request.getCloudExadataInfrastructure().getName()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<DeleteCloudExadataInfrastructureRequest, Operation>
         deleteCloudExadataInfrastructureTransportSettings =
             HttpJsonCallSettings.<DeleteCloudExadataInfrastructureRequest, Operation>newBuilder()
@@ -4197,6 +5287,20 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
                     })
                 .setResourceNameExtractor(request -> request.getParent())
                 .build();
+    HttpJsonCallSettings<UpdateCloudVmClusterRequest, Operation>
+        updateCloudVmClusterTransportSettings =
+            HttpJsonCallSettings.<UpdateCloudVmClusterRequest, Operation>newBuilder()
+                .setMethodDescriptor(updateCloudVmClusterMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "cloud_vm_cluster.name",
+                          String.valueOf(request.getCloudVmCluster().getName()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<DeleteCloudVmClusterRequest, Operation>
         deleteCloudVmClusterTransportSettings =
             HttpJsonCallSettings.<DeleteCloudVmClusterRequest, Operation>newBuilder()
@@ -4210,10 +5314,79 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
                     })
                 .setResourceNameExtractor(request -> request.getName())
                 .build();
+    HttpJsonCallSettings<EnableCloudVmClusterIdentityConnectorRequest, Operation>
+        enableCloudVmClusterIdentityConnectorTransportSettings =
+            HttpJsonCallSettings
+                .<EnableCloudVmClusterIdentityConnectorRequest, Operation>newBuilder()
+                .setMethodDescriptor(enableCloudVmClusterIdentityConnectorMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    HttpJsonCallSettings<DisableCloudVmClusterIdentityConnectorRequest, Operation>
+        disableCloudVmClusterIdentityConnectorTransportSettings =
+            HttpJsonCallSettings
+                .<DisableCloudVmClusterIdentityConnectorRequest, Operation>newBuilder()
+                .setMethodDescriptor(disableCloudVmClusterIdentityConnectorMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    HttpJsonCallSettings<EnableExadbVmClusterIdentityConnectorRequest, Operation>
+        enableExadbVmClusterIdentityConnectorTransportSettings =
+            HttpJsonCallSettings
+                .<EnableExadbVmClusterIdentityConnectorRequest, Operation>newBuilder()
+                .setMethodDescriptor(enableExadbVmClusterIdentityConnectorMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    HttpJsonCallSettings<DisableExadbVmClusterIdentityConnectorRequest, Operation>
+        disableExadbVmClusterIdentityConnectorTransportSettings =
+            HttpJsonCallSettings
+                .<DisableExadbVmClusterIdentityConnectorRequest, Operation>newBuilder()
+                .setMethodDescriptor(disableExadbVmClusterIdentityConnectorMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
     HttpJsonCallSettings<ListEntitlementsRequest, ListEntitlementsResponse>
         listEntitlementsTransportSettings =
             HttpJsonCallSettings.<ListEntitlementsRequest, ListEntitlementsResponse>newBuilder()
                 .setMethodDescriptor(listEntitlementsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    HttpJsonCallSettings<ListFlexComponentsRequest, ListFlexComponentsResponse>
+        listFlexComponentsTransportSettings =
+            HttpJsonCallSettings.<ListFlexComponentsRequest, ListFlexComponentsResponse>newBuilder()
+                .setMethodDescriptor(listFlexComponentsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
                 .setParamsExtractor(
                     request -> {
@@ -4562,6 +5735,18 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
                 })
             .setResourceNameExtractor(request -> request.getParent())
             .build();
+    HttpJsonCallSettings<UpdateOdbNetworkRequest, Operation> updateOdbNetworkTransportSettings =
+        HttpJsonCallSettings.<UpdateOdbNetworkRequest, Operation>newBuilder()
+            .setMethodDescriptor(updateOdbNetworkMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
+                      "odb_network.name", String.valueOf(request.getOdbNetwork().getName()));
+                  return builder.build();
+                })
+            .build();
     HttpJsonCallSettings<DeleteOdbNetworkRequest, Operation> deleteOdbNetworkTransportSettings =
         HttpJsonCallSettings.<DeleteOdbNetworkRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteOdbNetworkMethodDescriptor)
@@ -4610,6 +5795,17 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getParent())
+            .build();
+    HttpJsonCallSettings<UpdateOdbSubnetRequest, Operation> updateOdbSubnetTransportSettings =
+        HttpJsonCallSettings.<UpdateOdbSubnetRequest, Operation>newBuilder()
+            .setMethodDescriptor(updateOdbSubnetMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("odb_subnet.name", String.valueOf(request.getOdbSubnet().getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<DeleteOdbSubnetRequest, Operation> deleteOdbSubnetTransportSettings =
         HttpJsonCallSettings.<DeleteOdbSubnetRequest, Operation>newBuilder()
@@ -4794,6 +5990,20 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
                     })
                 .setResourceNameExtractor(request -> request.getParent())
                 .build();
+    HttpJsonCallSettings<UpdateExascaleDbStorageVaultRequest, Operation>
+        updateExascaleDbStorageVaultTransportSettings =
+            HttpJsonCallSettings.<UpdateExascaleDbStorageVaultRequest, Operation>newBuilder()
+                .setMethodDescriptor(updateExascaleDbStorageVaultMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "exascale_db_storage_vault.name",
+                          String.valueOf(request.getExascaleDbStorageVault().getName()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<DeleteExascaleDbStorageVaultRequest, Operation>
         deleteExascaleDbStorageVaultTransportSettings =
             HttpJsonCallSettings.<DeleteExascaleDbStorageVaultRequest, Operation>newBuilder()
@@ -4814,6 +6024,22 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
                 .<ListDbSystemInitialStorageSizesRequest, ListDbSystemInitialStorageSizesResponse>
                     newBuilder()
                 .setMethodDescriptor(listDbSystemInitialStorageSizesMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    HttpJsonCallSettings<
+            ListDbSystemComputePerformancesRequest, ListDbSystemComputePerformancesResponse>
+        listDbSystemComputePerformancesTransportSettings =
+            HttpJsonCallSettings
+                .<ListDbSystemComputePerformancesRequest, ListDbSystemComputePerformancesResponse>
+                    newBuilder()
+                .setMethodDescriptor(listDbSystemComputePerformancesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
                 .setParamsExtractor(
                     request -> {
@@ -4912,6 +6138,17 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
                 })
             .setResourceNameExtractor(request -> request.getParent())
             .build();
+    HttpJsonCallSettings<UpdateDbSystemRequest, Operation> updateDbSystemTransportSettings =
+        HttpJsonCallSettings.<UpdateDbSystemRequest, Operation>newBuilder()
+            .setMethodDescriptor(updateDbSystemMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("db_system.name", String.valueOf(request.getDbSystem().getName()));
+                  return builder.build();
+                })
+            .build();
     HttpJsonCallSettings<DeleteDbSystemRequest, Operation> deleteDbSystemTransportSettings =
         HttpJsonCallSettings.<DeleteDbSystemRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteDbSystemMethodDescriptor)
@@ -4963,6 +6200,20 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
                       return builder.build();
                     })
                 .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    HttpJsonCallSettings<UpdateGoldengateDeploymentRequest, Operation>
+        updateGoldengateDeploymentTransportSettings =
+            HttpJsonCallSettings.<UpdateGoldengateDeploymentRequest, Operation>newBuilder()
+                .setMethodDescriptor(updateGoldengateDeploymentMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "goldengate_deployment.name",
+                          String.valueOf(request.getGoldengateDeployment().getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<DeleteGoldengateDeploymentRequest, Operation>
         deleteGoldengateDeploymentTransportSettings =
@@ -5042,6 +6293,20 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
                       return builder.build();
                     })
                 .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    HttpJsonCallSettings<UpdateGoldengateConnectionRequest, Operation>
+        updateGoldengateConnectionTransportSettings =
+            HttpJsonCallSettings.<UpdateGoldengateConnectionRequest, Operation>newBuilder()
+                .setMethodDescriptor(updateGoldengateConnectionMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "goldengate_connection.name",
+                          String.valueOf(request.getGoldengateConnection().getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<DeleteGoldengateConnectionRequest, Operation>
         deleteGoldengateConnectionTransportSettings =
@@ -5195,6 +6460,21 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
                     })
                 .setResourceNameExtractor(request -> request.getParent())
                 .build();
+    HttpJsonCallSettings<UpdateGoldengateConnectionAssignmentRequest, Operation>
+        updateGoldengateConnectionAssignmentTransportSettings =
+            HttpJsonCallSettings
+                .<UpdateGoldengateConnectionAssignmentRequest, Operation>newBuilder()
+                .setMethodDescriptor(updateGoldengateConnectionAssignmentMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "goldengate_connection_assignment.name",
+                          String.valueOf(request.getGoldengateConnectionAssignment().getName()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<DeleteGoldengateConnectionAssignmentRequest, Operation>
         deleteGoldengateConnectionAssignmentTransportSettings =
             HttpJsonCallSettings
@@ -5226,6 +6506,99 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
                     })
                 .setResourceNameExtractor(request -> request.getName())
                 .build();
+    HttpJsonCallSettings<ListDatabaseConnectionsRequest, ListDatabaseConnectionsResponse>
+        listDatabaseConnectionsTransportSettings =
+            HttpJsonCallSettings
+                .<ListDatabaseConnectionsRequest, ListDatabaseConnectionsResponse>newBuilder()
+                .setMethodDescriptor(listDatabaseConnectionsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    HttpJsonCallSettings<GetDatabaseConnectionRequest, DatabaseConnection>
+        getDatabaseConnectionTransportSettings =
+            HttpJsonCallSettings.<GetDatabaseConnectionRequest, DatabaseConnection>newBuilder()
+                .setMethodDescriptor(getDatabaseConnectionMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    HttpJsonCallSettings<CreateDatabaseConnectionRequest, Operation>
+        createDatabaseConnectionTransportSettings =
+            HttpJsonCallSettings.<CreateDatabaseConnectionRequest, Operation>newBuilder()
+                .setMethodDescriptor(createDatabaseConnectionMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    HttpJsonCallSettings<UpdateDatabaseConnectionRequest, Operation>
+        updateDatabaseConnectionTransportSettings =
+            HttpJsonCallSettings.<UpdateDatabaseConnectionRequest, Operation>newBuilder()
+                .setMethodDescriptor(updateDatabaseConnectionMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "database_connection.name",
+                          String.valueOf(request.getDatabaseConnection().getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<DeleteDatabaseConnectionRequest, Operation>
+        deleteDatabaseConnectionTransportSettings =
+            HttpJsonCallSettings.<DeleteDatabaseConnectionRequest, Operation>newBuilder()
+                .setMethodDescriptor(deleteDatabaseConnectionMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    HttpJsonCallSettings<TestDatabaseConnectionRequest, TestDatabaseConnectionResponse>
+        testDatabaseConnectionTransportSettings =
+            HttpJsonCallSettings
+                .<TestDatabaseConnectionRequest, TestDatabaseConnectionResponse>newBuilder()
+                .setMethodDescriptor(testDatabaseConnectionMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    HttpJsonCallSettings<ExecuteSqlRequest, ExecuteSqlResponse> executeSqlTransportSettings =
+        HttpJsonCallSettings.<ExecuteSqlRequest, ExecuteSqlResponse>newBuilder()
+            .setMethodDescriptor(executeSqlMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
             HttpJsonCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -5276,6 +6649,17 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
             settings.createCloudExadataInfrastructureOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.updateCloudExadataInfrastructureCallable =
+        callableFactory.createUnaryCallable(
+            updateCloudExadataInfrastructureTransportSettings,
+            settings.updateCloudExadataInfrastructureSettings(),
+            clientContext);
+    this.updateCloudExadataInfrastructureOperationCallable =
+        callableFactory.createOperationCallable(
+            updateCloudExadataInfrastructureTransportSettings,
+            settings.updateCloudExadataInfrastructureOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.deleteCloudExadataInfrastructureCallable =
         callableFactory.createUnaryCallable(
             deleteCloudExadataInfrastructureTransportSettings,
@@ -5324,6 +6708,17 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
             settings.createCloudVmClusterOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.updateCloudVmClusterCallable =
+        callableFactory.createUnaryCallable(
+            updateCloudVmClusterTransportSettings,
+            settings.updateCloudVmClusterSettings(),
+            clientContext);
+    this.updateCloudVmClusterOperationCallable =
+        callableFactory.createOperationCallable(
+            updateCloudVmClusterTransportSettings,
+            settings.updateCloudVmClusterOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.deleteCloudVmClusterCallable =
         callableFactory.createUnaryCallable(
             deleteCloudVmClusterTransportSettings,
@@ -5335,12 +6730,66 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
             settings.deleteCloudVmClusterOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.enableCloudVmClusterIdentityConnectorCallable =
+        callableFactory.createUnaryCallable(
+            enableCloudVmClusterIdentityConnectorTransportSettings,
+            settings.enableCloudVmClusterIdentityConnectorSettings(),
+            clientContext);
+    this.enableCloudVmClusterIdentityConnectorOperationCallable =
+        callableFactory.createOperationCallable(
+            enableCloudVmClusterIdentityConnectorTransportSettings,
+            settings.enableCloudVmClusterIdentityConnectorOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.disableCloudVmClusterIdentityConnectorCallable =
+        callableFactory.createUnaryCallable(
+            disableCloudVmClusterIdentityConnectorTransportSettings,
+            settings.disableCloudVmClusterIdentityConnectorSettings(),
+            clientContext);
+    this.disableCloudVmClusterIdentityConnectorOperationCallable =
+        callableFactory.createOperationCallable(
+            disableCloudVmClusterIdentityConnectorTransportSettings,
+            settings.disableCloudVmClusterIdentityConnectorOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.enableExadbVmClusterIdentityConnectorCallable =
+        callableFactory.createUnaryCallable(
+            enableExadbVmClusterIdentityConnectorTransportSettings,
+            settings.enableExadbVmClusterIdentityConnectorSettings(),
+            clientContext);
+    this.enableExadbVmClusterIdentityConnectorOperationCallable =
+        callableFactory.createOperationCallable(
+            enableExadbVmClusterIdentityConnectorTransportSettings,
+            settings.enableExadbVmClusterIdentityConnectorOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.disableExadbVmClusterIdentityConnectorCallable =
+        callableFactory.createUnaryCallable(
+            disableExadbVmClusterIdentityConnectorTransportSettings,
+            settings.disableExadbVmClusterIdentityConnectorSettings(),
+            clientContext);
+    this.disableExadbVmClusterIdentityConnectorOperationCallable =
+        callableFactory.createOperationCallable(
+            disableExadbVmClusterIdentityConnectorTransportSettings,
+            settings.disableExadbVmClusterIdentityConnectorOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.listEntitlementsCallable =
         callableFactory.createUnaryCallable(
             listEntitlementsTransportSettings, settings.listEntitlementsSettings(), clientContext);
     this.listEntitlementsPagedCallable =
         callableFactory.createPagedCallable(
             listEntitlementsTransportSettings, settings.listEntitlementsSettings(), clientContext);
+    this.listFlexComponentsCallable =
+        callableFactory.createUnaryCallable(
+            listFlexComponentsTransportSettings,
+            settings.listFlexComponentsSettings(),
+            clientContext);
+    this.listFlexComponentsPagedCallable =
+        callableFactory.createPagedCallable(
+            listFlexComponentsTransportSettings,
+            settings.listFlexComponentsSettings(),
+            clientContext);
     this.listDbServersCallable =
         callableFactory.createUnaryCallable(
             listDbServersTransportSettings, settings.listDbServersSettings(), clientContext);
@@ -5562,6 +7011,15 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
             settings.createOdbNetworkOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.updateOdbNetworkCallable =
+        callableFactory.createUnaryCallable(
+            updateOdbNetworkTransportSettings, settings.updateOdbNetworkSettings(), clientContext);
+    this.updateOdbNetworkOperationCallable =
+        callableFactory.createOperationCallable(
+            updateOdbNetworkTransportSettings,
+            settings.updateOdbNetworkOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.deleteOdbNetworkCallable =
         callableFactory.createUnaryCallable(
             deleteOdbNetworkTransportSettings, settings.deleteOdbNetworkSettings(), clientContext);
@@ -5587,6 +7045,15 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
         callableFactory.createOperationCallable(
             createOdbSubnetTransportSettings,
             settings.createOdbSubnetOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.updateOdbSubnetCallable =
+        callableFactory.createUnaryCallable(
+            updateOdbSubnetTransportSettings, settings.updateOdbSubnetSettings(), clientContext);
+    this.updateOdbSubnetOperationCallable =
+        callableFactory.createOperationCallable(
+            updateOdbSubnetTransportSettings,
+            settings.updateOdbSubnetOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
     this.deleteOdbSubnetCallable =
@@ -5710,6 +7177,17 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
             settings.createExascaleDbStorageVaultOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.updateExascaleDbStorageVaultCallable =
+        callableFactory.createUnaryCallable(
+            updateExascaleDbStorageVaultTransportSettings,
+            settings.updateExascaleDbStorageVaultSettings(),
+            clientContext);
+    this.updateExascaleDbStorageVaultOperationCallable =
+        callableFactory.createOperationCallable(
+            updateExascaleDbStorageVaultTransportSettings,
+            settings.updateExascaleDbStorageVaultOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.deleteExascaleDbStorageVaultCallable =
         callableFactory.createUnaryCallable(
             deleteExascaleDbStorageVaultTransportSettings,
@@ -5730,6 +7208,16 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
         callableFactory.createPagedCallable(
             listDbSystemInitialStorageSizesTransportSettings,
             settings.listDbSystemInitialStorageSizesSettings(),
+            clientContext);
+    this.listDbSystemComputePerformancesCallable =
+        callableFactory.createUnaryCallable(
+            listDbSystemComputePerformancesTransportSettings,
+            settings.listDbSystemComputePerformancesSettings(),
+            clientContext);
+    this.listDbSystemComputePerformancesPagedCallable =
+        callableFactory.createPagedCallable(
+            listDbSystemComputePerformancesTransportSettings,
+            settings.listDbSystemComputePerformancesSettings(),
             clientContext);
     this.listDatabasesCallable =
         callableFactory.createUnaryCallable(
@@ -5773,6 +7261,15 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
             settings.createDbSystemOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.updateDbSystemCallable =
+        callableFactory.createUnaryCallable(
+            updateDbSystemTransportSettings, settings.updateDbSystemSettings(), clientContext);
+    this.updateDbSystemOperationCallable =
+        callableFactory.createOperationCallable(
+            updateDbSystemTransportSettings,
+            settings.updateDbSystemOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.deleteDbSystemCallable =
         callableFactory.createUnaryCallable(
             deleteDbSystemTransportSettings, settings.deleteDbSystemSettings(), clientContext);
@@ -5806,6 +7303,17 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
         callableFactory.createOperationCallable(
             createGoldengateDeploymentTransportSettings,
             settings.createGoldengateDeploymentOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.updateGoldengateDeploymentCallable =
+        callableFactory.createUnaryCallable(
+            updateGoldengateDeploymentTransportSettings,
+            settings.updateGoldengateDeploymentSettings(),
+            clientContext);
+    this.updateGoldengateDeploymentOperationCallable =
+        callableFactory.createOperationCallable(
+            updateGoldengateDeploymentTransportSettings,
+            settings.updateGoldengateDeploymentOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
     this.deleteGoldengateDeploymentCallable =
@@ -5865,6 +7373,17 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
         callableFactory.createOperationCallable(
             createGoldengateConnectionTransportSettings,
             settings.createGoldengateConnectionOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.updateGoldengateConnectionCallable =
+        callableFactory.createUnaryCallable(
+            updateGoldengateConnectionTransportSettings,
+            settings.updateGoldengateConnectionSettings(),
+            clientContext);
+    this.updateGoldengateConnectionOperationCallable =
+        callableFactory.createOperationCallable(
+            updateGoldengateConnectionTransportSettings,
+            settings.updateGoldengateConnectionOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
     this.deleteGoldengateConnectionCallable =
@@ -5960,6 +7479,17 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
             settings.createGoldengateConnectionAssignmentOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.updateGoldengateConnectionAssignmentCallable =
+        callableFactory.createUnaryCallable(
+            updateGoldengateConnectionAssignmentTransportSettings,
+            settings.updateGoldengateConnectionAssignmentSettings(),
+            clientContext);
+    this.updateGoldengateConnectionAssignmentOperationCallable =
+        callableFactory.createOperationCallable(
+            updateGoldengateConnectionAssignmentTransportSettings,
+            settings.updateGoldengateConnectionAssignmentOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.deleteGoldengateConnectionAssignmentCallable =
         callableFactory.createUnaryCallable(
             deleteGoldengateConnectionAssignmentTransportSettings,
@@ -5976,6 +7506,62 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
             testGoldengateConnectionAssignmentTransportSettings,
             settings.testGoldengateConnectionAssignmentSettings(),
             clientContext);
+    this.listDatabaseConnectionsCallable =
+        callableFactory.createUnaryCallable(
+            listDatabaseConnectionsTransportSettings,
+            settings.listDatabaseConnectionsSettings(),
+            clientContext);
+    this.listDatabaseConnectionsPagedCallable =
+        callableFactory.createPagedCallable(
+            listDatabaseConnectionsTransportSettings,
+            settings.listDatabaseConnectionsSettings(),
+            clientContext);
+    this.getDatabaseConnectionCallable =
+        callableFactory.createUnaryCallable(
+            getDatabaseConnectionTransportSettings,
+            settings.getDatabaseConnectionSettings(),
+            clientContext);
+    this.createDatabaseConnectionCallable =
+        callableFactory.createUnaryCallable(
+            createDatabaseConnectionTransportSettings,
+            settings.createDatabaseConnectionSettings(),
+            clientContext);
+    this.createDatabaseConnectionOperationCallable =
+        callableFactory.createOperationCallable(
+            createDatabaseConnectionTransportSettings,
+            settings.createDatabaseConnectionOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.updateDatabaseConnectionCallable =
+        callableFactory.createUnaryCallable(
+            updateDatabaseConnectionTransportSettings,
+            settings.updateDatabaseConnectionSettings(),
+            clientContext);
+    this.updateDatabaseConnectionOperationCallable =
+        callableFactory.createOperationCallable(
+            updateDatabaseConnectionTransportSettings,
+            settings.updateDatabaseConnectionOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.deleteDatabaseConnectionCallable =
+        callableFactory.createUnaryCallable(
+            deleteDatabaseConnectionTransportSettings,
+            settings.deleteDatabaseConnectionSettings(),
+            clientContext);
+    this.deleteDatabaseConnectionOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteDatabaseConnectionTransportSettings,
+            settings.deleteDatabaseConnectionOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.testDatabaseConnectionCallable =
+        callableFactory.createUnaryCallable(
+            testDatabaseConnectionTransportSettings,
+            settings.testDatabaseConnectionSettings(),
+            clientContext);
+    this.executeSqlCallable =
+        callableFactory.createUnaryCallable(
+            executeSqlTransportSettings, settings.executeSqlSettings(), clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -5996,13 +7582,20 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
     methodDescriptors.add(listCloudExadataInfrastructuresMethodDescriptor);
     methodDescriptors.add(getCloudExadataInfrastructureMethodDescriptor);
     methodDescriptors.add(createCloudExadataInfrastructureMethodDescriptor);
+    methodDescriptors.add(updateCloudExadataInfrastructureMethodDescriptor);
     methodDescriptors.add(deleteCloudExadataInfrastructureMethodDescriptor);
     methodDescriptors.add(configureExascaleCloudExadataInfrastructureMethodDescriptor);
     methodDescriptors.add(listCloudVmClustersMethodDescriptor);
     methodDescriptors.add(getCloudVmClusterMethodDescriptor);
     methodDescriptors.add(createCloudVmClusterMethodDescriptor);
+    methodDescriptors.add(updateCloudVmClusterMethodDescriptor);
     methodDescriptors.add(deleteCloudVmClusterMethodDescriptor);
+    methodDescriptors.add(enableCloudVmClusterIdentityConnectorMethodDescriptor);
+    methodDescriptors.add(disableCloudVmClusterIdentityConnectorMethodDescriptor);
+    methodDescriptors.add(enableExadbVmClusterIdentityConnectorMethodDescriptor);
+    methodDescriptors.add(disableExadbVmClusterIdentityConnectorMethodDescriptor);
     methodDescriptors.add(listEntitlementsMethodDescriptor);
+    methodDescriptors.add(listFlexComponentsMethodDescriptor);
     methodDescriptors.add(listDbServersMethodDescriptor);
     methodDescriptors.add(listDbNodesMethodDescriptor);
     methodDescriptors.add(listGiVersionsMethodDescriptor);
@@ -6028,10 +7621,12 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
     methodDescriptors.add(listOdbNetworksMethodDescriptor);
     methodDescriptors.add(getOdbNetworkMethodDescriptor);
     methodDescriptors.add(createOdbNetworkMethodDescriptor);
+    methodDescriptors.add(updateOdbNetworkMethodDescriptor);
     methodDescriptors.add(deleteOdbNetworkMethodDescriptor);
     methodDescriptors.add(listOdbSubnetsMethodDescriptor);
     methodDescriptors.add(getOdbSubnetMethodDescriptor);
     methodDescriptors.add(createOdbSubnetMethodDescriptor);
+    methodDescriptors.add(updateOdbSubnetMethodDescriptor);
     methodDescriptors.add(deleteOdbSubnetMethodDescriptor);
     methodDescriptors.add(listOdbDnsZonesMethodDescriptor);
     methodDescriptors.add(getOdbDnsZoneMethodDescriptor);
@@ -6046,8 +7641,10 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
     methodDescriptors.add(listExascaleDbStorageVaultsMethodDescriptor);
     methodDescriptors.add(getExascaleDbStorageVaultMethodDescriptor);
     methodDescriptors.add(createExascaleDbStorageVaultMethodDescriptor);
+    methodDescriptors.add(updateExascaleDbStorageVaultMethodDescriptor);
     methodDescriptors.add(deleteExascaleDbStorageVaultMethodDescriptor);
     methodDescriptors.add(listDbSystemInitialStorageSizesMethodDescriptor);
+    methodDescriptors.add(listDbSystemComputePerformancesMethodDescriptor);
     methodDescriptors.add(listDatabasesMethodDescriptor);
     methodDescriptors.add(getDatabaseMethodDescriptor);
     methodDescriptors.add(listPluggableDatabasesMethodDescriptor);
@@ -6055,16 +7652,19 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
     methodDescriptors.add(listDbSystemsMethodDescriptor);
     methodDescriptors.add(getDbSystemMethodDescriptor);
     methodDescriptors.add(createDbSystemMethodDescriptor);
+    methodDescriptors.add(updateDbSystemMethodDescriptor);
     methodDescriptors.add(deleteDbSystemMethodDescriptor);
     methodDescriptors.add(listGoldengateDeploymentsMethodDescriptor);
     methodDescriptors.add(getGoldengateDeploymentMethodDescriptor);
     methodDescriptors.add(createGoldengateDeploymentMethodDescriptor);
+    methodDescriptors.add(updateGoldengateDeploymentMethodDescriptor);
     methodDescriptors.add(deleteGoldengateDeploymentMethodDescriptor);
     methodDescriptors.add(stopGoldengateDeploymentMethodDescriptor);
     methodDescriptors.add(startGoldengateDeploymentMethodDescriptor);
     methodDescriptors.add(listGoldengateConnectionsMethodDescriptor);
     methodDescriptors.add(getGoldengateConnectionMethodDescriptor);
     methodDescriptors.add(createGoldengateConnectionMethodDescriptor);
+    methodDescriptors.add(updateGoldengateConnectionMethodDescriptor);
     methodDescriptors.add(deleteGoldengateConnectionMethodDescriptor);
     methodDescriptors.add(listGoldengateDeploymentVersionsMethodDescriptor);
     methodDescriptors.add(listGoldengateDeploymentTypesMethodDescriptor);
@@ -6075,8 +7675,16 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
     methodDescriptors.add(listGoldengateConnectionAssignmentsMethodDescriptor);
     methodDescriptors.add(getGoldengateConnectionAssignmentMethodDescriptor);
     methodDescriptors.add(createGoldengateConnectionAssignmentMethodDescriptor);
+    methodDescriptors.add(updateGoldengateConnectionAssignmentMethodDescriptor);
     methodDescriptors.add(deleteGoldengateConnectionAssignmentMethodDescriptor);
     methodDescriptors.add(testGoldengateConnectionAssignmentMethodDescriptor);
+    methodDescriptors.add(listDatabaseConnectionsMethodDescriptor);
+    methodDescriptors.add(getDatabaseConnectionMethodDescriptor);
+    methodDescriptors.add(createDatabaseConnectionMethodDescriptor);
+    methodDescriptors.add(updateDatabaseConnectionMethodDescriptor);
+    methodDescriptors.add(deleteDatabaseConnectionMethodDescriptor);
+    methodDescriptors.add(testDatabaseConnectionMethodDescriptor);
+    methodDescriptors.add(executeSqlMethodDescriptor);
     methodDescriptors.add(listLocationsMethodDescriptor);
     methodDescriptors.add(getLocationMethodDescriptor);
     return methodDescriptors;
@@ -6117,6 +7725,19 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
           CreateCloudExadataInfrastructureRequest, CloudExadataInfrastructure, OperationMetadata>
       createCloudExadataInfrastructureOperationCallable() {
     return createCloudExadataInfrastructureOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateCloudExadataInfrastructureRequest, Operation>
+      updateCloudExadataInfrastructureCallable() {
+    return updateCloudExadataInfrastructureCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          UpdateCloudExadataInfrastructureRequest, CloudExadataInfrastructure, OperationMetadata>
+      updateCloudExadataInfrastructureOperationCallable() {
+    return updateCloudExadataInfrastructureOperationCallable;
   }
 
   @Override
@@ -6175,6 +7796,17 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
   }
 
   @Override
+  public UnaryCallable<UpdateCloudVmClusterRequest, Operation> updateCloudVmClusterCallable() {
+    return updateCloudVmClusterCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateCloudVmClusterRequest, CloudVmCluster, OperationMetadata>
+      updateCloudVmClusterOperationCallable() {
+    return updateCloudVmClusterOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<DeleteCloudVmClusterRequest, Operation> deleteCloudVmClusterCallable() {
     return deleteCloudVmClusterCallable;
   }
@@ -6183,6 +7815,58 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
   public OperationCallable<DeleteCloudVmClusterRequest, Empty, OperationMetadata>
       deleteCloudVmClusterOperationCallable() {
     return deleteCloudVmClusterOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<EnableCloudVmClusterIdentityConnectorRequest, Operation>
+      enableCloudVmClusterIdentityConnectorCallable() {
+    return enableCloudVmClusterIdentityConnectorCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          EnableCloudVmClusterIdentityConnectorRequest, CloudVmCluster, OperationMetadata>
+      enableCloudVmClusterIdentityConnectorOperationCallable() {
+    return enableCloudVmClusterIdentityConnectorOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DisableCloudVmClusterIdentityConnectorRequest, Operation>
+      disableCloudVmClusterIdentityConnectorCallable() {
+    return disableCloudVmClusterIdentityConnectorCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          DisableCloudVmClusterIdentityConnectorRequest, CloudVmCluster, OperationMetadata>
+      disableCloudVmClusterIdentityConnectorOperationCallable() {
+    return disableCloudVmClusterIdentityConnectorOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<EnableExadbVmClusterIdentityConnectorRequest, Operation>
+      enableExadbVmClusterIdentityConnectorCallable() {
+    return enableExadbVmClusterIdentityConnectorCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          EnableExadbVmClusterIdentityConnectorRequest, ExadbVmCluster, OperationMetadata>
+      enableExadbVmClusterIdentityConnectorOperationCallable() {
+    return enableExadbVmClusterIdentityConnectorOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DisableExadbVmClusterIdentityConnectorRequest, Operation>
+      disableExadbVmClusterIdentityConnectorCallable() {
+    return disableExadbVmClusterIdentityConnectorCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          DisableExadbVmClusterIdentityConnectorRequest, ExadbVmCluster, OperationMetadata>
+      disableExadbVmClusterIdentityConnectorOperationCallable() {
+    return disableExadbVmClusterIdentityConnectorOperationCallable;
   }
 
   @Override
@@ -6195,6 +7879,18 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
   public UnaryCallable<ListEntitlementsRequest, ListEntitlementsPagedResponse>
       listEntitlementsPagedCallable() {
     return listEntitlementsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListFlexComponentsRequest, ListFlexComponentsResponse>
+      listFlexComponentsCallable() {
+    return listFlexComponentsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListFlexComponentsRequest, ListFlexComponentsPagedResponse>
+      listFlexComponentsPagedCallable() {
+    return listFlexComponentsPagedCallable;
   }
 
   @Override
@@ -6473,6 +8169,17 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
   }
 
   @Override
+  public UnaryCallable<UpdateOdbNetworkRequest, Operation> updateOdbNetworkCallable() {
+    return updateOdbNetworkCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateOdbNetworkRequest, OdbNetwork, OperationMetadata>
+      updateOdbNetworkOperationCallable() {
+    return updateOdbNetworkOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<DeleteOdbNetworkRequest, Operation> deleteOdbNetworkCallable() {
     return deleteOdbNetworkCallable;
   }
@@ -6508,6 +8215,17 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
   public OperationCallable<CreateOdbSubnetRequest, OdbSubnet, OperationMetadata>
       createOdbSubnetOperationCallable() {
     return createOdbSubnetOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateOdbSubnetRequest, Operation> updateOdbSubnetCallable() {
+    return updateOdbSubnetCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateOdbSubnetRequest, OdbSubnet, OperationMetadata>
+      updateOdbSubnetOperationCallable() {
+    return updateOdbSubnetOperationCallable;
   }
 
   @Override
@@ -6654,6 +8372,19 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
   }
 
   @Override
+  public UnaryCallable<UpdateExascaleDbStorageVaultRequest, Operation>
+      updateExascaleDbStorageVaultCallable() {
+    return updateExascaleDbStorageVaultCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          UpdateExascaleDbStorageVaultRequest, ExascaleDbStorageVault, OperationMetadata>
+      updateExascaleDbStorageVaultOperationCallable() {
+    return updateExascaleDbStorageVaultOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<DeleteExascaleDbStorageVaultRequest, Operation>
       deleteExascaleDbStorageVaultCallable() {
     return deleteExascaleDbStorageVaultCallable;
@@ -6677,6 +8408,20 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
           ListDbSystemInitialStorageSizesRequest, ListDbSystemInitialStorageSizesPagedResponse>
       listDbSystemInitialStorageSizesPagedCallable() {
     return listDbSystemInitialStorageSizesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          ListDbSystemComputePerformancesRequest, ListDbSystemComputePerformancesResponse>
+      listDbSystemComputePerformancesCallable() {
+    return listDbSystemComputePerformancesCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          ListDbSystemComputePerformancesRequest, ListDbSystemComputePerformancesPagedResponse>
+      listDbSystemComputePerformancesPagedCallable() {
+    return listDbSystemComputePerformancesPagedCallable;
   }
 
   @Override
@@ -6741,6 +8486,17 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
   }
 
   @Override
+  public UnaryCallable<UpdateDbSystemRequest, Operation> updateDbSystemCallable() {
+    return updateDbSystemCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateDbSystemRequest, DbSystem, OperationMetadata>
+      updateDbSystemOperationCallable() {
+    return updateDbSystemOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<DeleteDbSystemRequest, Operation> deleteDbSystemCallable() {
     return deleteDbSystemCallable;
   }
@@ -6780,6 +8536,19 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
           CreateGoldengateDeploymentRequest, GoldengateDeployment, OperationMetadata>
       createGoldengateDeploymentOperationCallable() {
     return createGoldengateDeploymentOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateGoldengateDeploymentRequest, Operation>
+      updateGoldengateDeploymentCallable() {
+    return updateGoldengateDeploymentCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          UpdateGoldengateDeploymentRequest, GoldengateDeployment, OperationMetadata>
+      updateGoldengateDeploymentOperationCallable() {
+    return updateGoldengateDeploymentOperationCallable;
   }
 
   @Override
@@ -6848,6 +8617,19 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
           CreateGoldengateConnectionRequest, GoldengateConnection, OperationMetadata>
       createGoldengateConnectionOperationCallable() {
     return createGoldengateConnectionOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateGoldengateConnectionRequest, Operation>
+      updateGoldengateConnectionCallable() {
+    return updateGoldengateConnectionCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          UpdateGoldengateConnectionRequest, GoldengateConnection, OperationMetadata>
+      updateGoldengateConnectionOperationCallable() {
+    return updateGoldengateConnectionOperationCallable;
   }
 
   @Override
@@ -6977,6 +8759,21 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
   }
 
   @Override
+  public UnaryCallable<UpdateGoldengateConnectionAssignmentRequest, Operation>
+      updateGoldengateConnectionAssignmentCallable() {
+    return updateGoldengateConnectionAssignmentCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          UpdateGoldengateConnectionAssignmentRequest,
+          GoldengateConnectionAssignment,
+          OperationMetadata>
+      updateGoldengateConnectionAssignmentOperationCallable() {
+    return updateGoldengateConnectionAssignmentOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<DeleteGoldengateConnectionAssignmentRequest, Operation>
       deleteGoldengateConnectionAssignmentCallable() {
     return deleteGoldengateConnectionAssignmentCallable;
@@ -6993,6 +8790,71 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
           TestGoldengateConnectionAssignmentRequest, TestGoldengateConnectionAssignmentResponse>
       testGoldengateConnectionAssignmentCallable() {
     return testGoldengateConnectionAssignmentCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListDatabaseConnectionsRequest, ListDatabaseConnectionsResponse>
+      listDatabaseConnectionsCallable() {
+    return listDatabaseConnectionsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListDatabaseConnectionsRequest, ListDatabaseConnectionsPagedResponse>
+      listDatabaseConnectionsPagedCallable() {
+    return listDatabaseConnectionsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetDatabaseConnectionRequest, DatabaseConnection>
+      getDatabaseConnectionCallable() {
+    return getDatabaseConnectionCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateDatabaseConnectionRequest, Operation>
+      createDatabaseConnectionCallable() {
+    return createDatabaseConnectionCallable;
+  }
+
+  @Override
+  public OperationCallable<CreateDatabaseConnectionRequest, DatabaseConnection, OperationMetadata>
+      createDatabaseConnectionOperationCallable() {
+    return createDatabaseConnectionOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateDatabaseConnectionRequest, Operation>
+      updateDatabaseConnectionCallable() {
+    return updateDatabaseConnectionCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateDatabaseConnectionRequest, DatabaseConnection, OperationMetadata>
+      updateDatabaseConnectionOperationCallable() {
+    return updateDatabaseConnectionOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteDatabaseConnectionRequest, Operation>
+      deleteDatabaseConnectionCallable() {
+    return deleteDatabaseConnectionCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteDatabaseConnectionRequest, Empty, OperationMetadata>
+      deleteDatabaseConnectionOperationCallable() {
+    return deleteDatabaseConnectionOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<TestDatabaseConnectionRequest, TestDatabaseConnectionResponse>
+      testDatabaseConnectionCallable() {
+    return testDatabaseConnectionCallable;
+  }
+
+  @Override
+  public UnaryCallable<ExecuteSqlRequest, ExecuteSqlResponse> executeSqlCallable() {
+    return executeSqlCallable;
   }
 
   @Override

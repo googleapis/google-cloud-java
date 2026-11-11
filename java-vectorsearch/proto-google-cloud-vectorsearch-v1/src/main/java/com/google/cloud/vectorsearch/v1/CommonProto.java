@@ -49,20 +49,25 @@ public final class CommonProto extends com.google.protobuf.GeneratedFile {
   static {
     java.lang.String[] descriptorData = {
       "\n)google/cloud/vectorsearch/v1/common.pr"
-          + "oto\022\034google.cloud.vectorsearch.v1*W\n\016Dis"
-          + "tanceMetric\022\037\n\033DISTANCE_METRIC_UNSPECIFI"
-          + "ED\020\000\022\017\n\013DOT_PRODUCT\020\001\022\023\n\017COSINE_DISTANCE"
-          + "\020\002B\327\001\n com.google.cloud.vectorsearch.v1B"
-          + "\013CommonProtoP\001ZDcloud.google.com/go/vect"
-          + "orsearch/apiv1/vectorsearchpb;vectorsear"
-          + "chpb\252\002\034Google.Cloud.VectorSearch.V1\312\002\034Go"
-          + "ogle\\Cloud\\VectorSearch\\V1\352\002\037Google::Clo"
-          + "ud::VectorSearch::V1b\006proto3"
+          + "oto\022\034google.cloud.vectorsearch.v1\032\037googl"
+          + "e/api/field_behavior.proto*W\n\016DistanceMe"
+          + "tric\022\037\n\033DISTANCE_METRIC_UNSPECIFIED\020\000\022\017\n"
+          + "\013DOT_PRODUCT\020\001\022\023\n\017COSINE_DISTANCE\020\002B\327\001\n "
+          + "com.google.cloud.vectorsearch.v1B\013Common"
+          + "ProtoP\001ZDcloud.google.com/go/vectorsearc"
+          + "h/apiv1/vectorsearchpb;vectorsearchpb\252\002\034"
+          + "Google.Cloud.VectorSearch.V1\312\002\034Google\\Cl"
+          + "oud\\VectorSearch\\V1\352\002\037Google::Cloud::Vec"
+          + "torSearch::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-            descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {});
+            descriptorData,
+            new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.FieldBehaviorProto.getDescriptor(),
+            });
     descriptor.resolveAllFeaturesImmutable();
+    com.google.api.FieldBehaviorProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)
