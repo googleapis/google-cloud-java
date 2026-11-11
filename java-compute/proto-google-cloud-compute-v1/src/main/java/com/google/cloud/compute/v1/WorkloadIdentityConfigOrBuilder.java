@@ -60,4 +60,46 @@ public interface WorkloadIdentityConfigOrBuilder
    * @return The identityCertificateEnabled.
    */
   boolean getIdentityCertificateEnabled();
+
+  /**
+   *
+   *
+   * <pre>
+   *
+   * Check the IdentityType enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string identity_type = 25665051;</code>
+   *
+   * @return Whether the identityType field is set.
+   */
+  boolean hasIdentityType();
+
+  /**
+   *
+   *
+   * <pre>
+   *
+   * Check the IdentityType enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string identity_type = 25665051;</code>
+   *
+   * @return The identityType.
+   */
+  java.lang.String getIdentityType();
+
+  /**
+   *
+   *
+   * <pre>
+   *
+   * Check the IdentityType enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string identity_type = 25665051;</code>
+   *
+   * @return The bytes for identityType.
+   */
+  com.google.protobuf.ByteString getIdentityTypeBytes();
 }

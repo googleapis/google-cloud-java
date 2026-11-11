@@ -41,6 +41,7 @@ public class AsyncUpdateAutoProtectionPolicy {
           UpdateAutoProtectionPolicyRequest.newBuilder()
               .setAutoProtectionPolicy(AutoProtectionPolicy.newBuilder().build())
               .setUpdateMask(FieldMask.newBuilder().build())
+              .setRequestId("requestId693933066")
               .build();
       ApiFuture<Operation> future =
           backupDRClient.updateAutoProtectionPolicyCallable().futureCall(request);

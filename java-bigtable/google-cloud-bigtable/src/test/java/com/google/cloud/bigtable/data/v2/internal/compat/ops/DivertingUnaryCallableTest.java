@@ -34,6 +34,7 @@ import com.google.bigtable.v2.TelemetryConfiguration;
 import com.google.cloud.bigtable.data.v2.internal.csm.tracers.DebugTagTracer;
 import com.google.cloud.bigtable.data.v2.internal.util.ClientConfigurationManager;
 import com.google.cloud.bigtable.data.v2.internal.util.SessionScope;
+import io.grpc.Context;
 import io.grpc.Deadline;
 import java.io.IOException;
 import java.net.URI;
@@ -43,6 +44,9 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -172,6 +176,26 @@ class DivertingUnaryCallableTest {
     assertThat(experimental.callCount).isEqualTo(0);
   }
 
+  @Test
+  void ambientDeadlineLongerThanDefaultTimeout_usesDefaultTimeout() {
+    DivertingUnaryCallable<String, String> callable = callable();
+    ScheduledExecutorService scheduler = Executors.newSingleThreadScheduledExecutor();
+    try (Context.CancellableContext ctx =
+        Context.current().withDeadlineAfter(60, TimeUnit.SECONDS, scheduler)) {
+      ctx.run(
+          () -> {
+            @SuppressWarnings("unused")
+            ApiFuture<?> ignored = callable.futureCall("req", null);
+          });
+    } finally {
+      scheduler.shutdownNow();
+    }
+
+    assertThat(experimental.callCount).isEqualTo(1);
+    assertThat(experimental.lastDeadline).isNotNull();
+    assertThat(experimental.lastDeadline.timeRemaining(TimeUnit.SECONDS)).isAtMost(10);
+  }
+
   // --- helpers ---
 
   private DivertingUnaryCallable<String, String> callable() {
@@ -240,10 +264,12 @@ class DivertingUnaryCallableTest {
 
   private static class RecordingShim<ReqT, RespT> implements UnaryShim<ReqT, RespT> {
     int callCount;
+    Deadline lastDeadline;
 
     @Override
     public CompletableFuture<RespT> call(ReqT request, Deadline deadline) {
       callCount++;
+      lastDeadline = deadline;
       return new CompletableFuture<>(); // never completes — test doesn't wait on it
     }
 

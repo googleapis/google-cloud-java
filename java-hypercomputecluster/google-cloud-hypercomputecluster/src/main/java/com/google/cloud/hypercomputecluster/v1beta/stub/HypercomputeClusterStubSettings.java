@@ -18,6 +18,7 @@ package com.google.cloud.hypercomputecluster.v1beta.stub;
 
 import static com.google.cloud.hypercomputecluster.v1beta.HypercomputeClusterClient.ListClustersPagedResponse;
 import static com.google.cloud.hypercomputecluster.v1beta.HypercomputeClusterClient.ListLocationsPagedResponse;
+import static com.google.cloud.hypercomputecluster.v1beta.HypercomputeClusterClient.ListNodesPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
@@ -56,6 +57,9 @@ import com.google.cloud.hypercomputecluster.v1beta.DeleteClusterRequest;
 import com.google.cloud.hypercomputecluster.v1beta.GetClusterRequest;
 import com.google.cloud.hypercomputecluster.v1beta.ListClustersRequest;
 import com.google.cloud.hypercomputecluster.v1beta.ListClustersResponse;
+import com.google.cloud.hypercomputecluster.v1beta.ListNodesRequest;
+import com.google.cloud.hypercomputecluster.v1beta.ListNodesResponse;
+import com.google.cloud.hypercomputecluster.v1beta.Node;
 import com.google.cloud.hypercomputecluster.v1beta.OperationMetadata;
 import com.google.cloud.hypercomputecluster.v1beta.UpdateClusterRequest;
 import com.google.cloud.location.GetLocationRequest;
@@ -175,6 +179,8 @@ public class HypercomputeClusterStubSettings extends StubSettings<HypercomputeCl
   private final UnaryCallSettings<DeleteClusterRequest, Operation> deleteClusterSettings;
   private final OperationCallSettings<DeleteClusterRequest, Empty, OperationMetadata>
       deleteClusterOperationSettings;
+  private final PagedCallSettings<ListNodesRequest, ListNodesResponse, ListNodesPagedResponse>
+      listNodesSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -211,6 +217,40 @@ public class HypercomputeClusterStubSettings extends StubSettings<HypercomputeCl
             @Override
             public Iterable<Cluster> extractResources(ListClustersResponse payload) {
               return payload.getClustersList();
+            }
+          };
+
+  private static final PagedListDescriptor<ListNodesRequest, ListNodesResponse, Node>
+      LIST_NODES_PAGE_STR_DESC =
+          new PagedListDescriptor<ListNodesRequest, ListNodesResponse, Node>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListNodesRequest injectToken(ListNodesRequest payload, String token) {
+              return ListNodesRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListNodesRequest injectPageSize(ListNodesRequest payload, int pageSize) {
+              return ListNodesRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListNodesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListNodesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Node> extractResources(ListNodesResponse payload) {
+              return payload.getNodesList();
             }
           };
 
@@ -262,6 +302,23 @@ public class HypercomputeClusterStubSettings extends StubSettings<HypercomputeCl
               PageContext<ListClustersRequest, ListClustersResponse, Cluster> pageContext =
                   PageContext.create(callable, LIST_CLUSTERS_PAGE_STR_DESC, request, context);
               return ListClustersPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListNodesRequest, ListNodesResponse, ListNodesPagedResponse>
+      LIST_NODES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListNodesRequest, ListNodesResponse, ListNodesPagedResponse>() {
+            @Override
+            public ApiFuture<ListNodesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListNodesRequest, ListNodesResponse> callable,
+                ListNodesRequest request,
+                ApiCallContext context,
+                ApiFuture<ListNodesResponse> futureResponse) {
+              PageContext<ListNodesRequest, ListNodesResponse, Node> pageContext =
+                  PageContext.create(callable, LIST_NODES_PAGE_STR_DESC, request, context);
+              return ListNodesPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -324,6 +381,12 @@ public class HypercomputeClusterStubSettings extends StubSettings<HypercomputeCl
   public OperationCallSettings<DeleteClusterRequest, Empty, OperationMetadata>
       deleteClusterOperationSettings() {
     return deleteClusterOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listNodes. */
+  public PagedCallSettings<ListNodesRequest, ListNodesResponse, ListNodesPagedResponse>
+      listNodesSettings() {
+    return listNodesSettings;
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -456,6 +519,7 @@ public class HypercomputeClusterStubSettings extends StubSettings<HypercomputeCl
     updateClusterOperationSettings = settingsBuilder.updateClusterOperationSettings().build();
     deleteClusterSettings = settingsBuilder.deleteClusterSettings().build();
     deleteClusterOperationSettings = settingsBuilder.deleteClusterOperationSettings().build();
+    listNodesSettings = settingsBuilder.listNodesSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
   }
@@ -486,6 +550,9 @@ public class HypercomputeClusterStubSettings extends StubSettings<HypercomputeCl
     private final UnaryCallSettings.Builder<DeleteClusterRequest, Operation> deleteClusterSettings;
     private final OperationCallSettings.Builder<DeleteClusterRequest, Empty, OperationMetadata>
         deleteClusterOperationSettings;
+    private final PagedCallSettings.Builder<
+            ListNodesRequest, ListNodesResponse, ListNodesPagedResponse>
+        listNodesSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -549,6 +616,7 @@ public class HypercomputeClusterStubSettings extends StubSettings<HypercomputeCl
       updateClusterOperationSettings = OperationCallSettings.newBuilder();
       deleteClusterSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteClusterOperationSettings = OperationCallSettings.newBuilder();
+      listNodesSettings = PagedCallSettings.newBuilder(LIST_NODES_PAGE_STR_FACT);
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -559,6 +627,7 @@ public class HypercomputeClusterStubSettings extends StubSettings<HypercomputeCl
               createClusterSettings,
               updateClusterSettings,
               deleteClusterSettings,
+              listNodesSettings,
               listLocationsSettings,
               getLocationSettings);
       initDefaults(this);
@@ -575,6 +644,7 @@ public class HypercomputeClusterStubSettings extends StubSettings<HypercomputeCl
       updateClusterOperationSettings = settings.updateClusterOperationSettings.toBuilder();
       deleteClusterSettings = settings.deleteClusterSettings.toBuilder();
       deleteClusterOperationSettings = settings.deleteClusterOperationSettings.toBuilder();
+      listNodesSettings = settings.listNodesSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
 
@@ -585,6 +655,7 @@ public class HypercomputeClusterStubSettings extends StubSettings<HypercomputeCl
               createClusterSettings,
               updateClusterSettings,
               deleteClusterSettings,
+              listNodesSettings,
               listLocationsSettings,
               getLocationSettings);
     }
@@ -638,6 +709,11 @@ public class HypercomputeClusterStubSettings extends StubSettings<HypercomputeCl
           .deleteClusterSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .listNodesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .listLocationsSettings()
@@ -782,6 +858,12 @@ public class HypercomputeClusterStubSettings extends StubSettings<HypercomputeCl
     public OperationCallSettings.Builder<DeleteClusterRequest, Empty, OperationMetadata>
         deleteClusterOperationSettings() {
       return deleteClusterOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listNodes. */
+    public PagedCallSettings.Builder<ListNodesRequest, ListNodesResponse, ListNodesPagedResponse>
+        listNodesSettings() {
+      return listNodesSettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

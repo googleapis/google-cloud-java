@@ -55,6 +55,7 @@ public final class DeleteBackupPlanAssociationRequest extends com.google.protobu
   private DeleteBackupPlanAssociationRequest() {
     name_ = "";
     requestId_ = "";
+    autoProtectionPolicyBinding_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -212,6 +213,71 @@ public final class DeleteBackupPlanAssociationRequest extends com.google.protobu
     }
   }
 
+  public static final int AUTO_PROTECTION_POLICY_BINDING_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object autoProtectionPolicyBinding_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This field is exclusively used by Backup and DR's auto-protection
+   * feature. The resource name of the `AutoProtectionPolicyBinding` that
+   * triggered the deletion of this association.
+   * Format:
+   * `projects/{project}/locations/{location}/autoProtectionPolicies/{policy}/bindings/{binding}`.
+   * </pre>
+   *
+   * <code>
+   * string auto_protection_policy_binding = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The autoProtectionPolicyBinding.
+   */
+  @java.lang.Override
+  public java.lang.String getAutoProtectionPolicyBinding() {
+    java.lang.Object ref = autoProtectionPolicyBinding_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      autoProtectionPolicyBinding_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This field is exclusively used by Backup and DR's auto-protection
+   * feature. The resource name of the `AutoProtectionPolicyBinding` that
+   * triggered the deletion of this association.
+   * Format:
+   * `projects/{project}/locations/{location}/autoProtectionPolicies/{policy}/bindings/{binding}`.
+   * </pre>
+   *
+   * <code>
+   * string auto_protection_policy_binding = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for autoProtectionPolicyBinding.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getAutoProtectionPolicyBindingBytes() {
+    java.lang.Object ref = autoProtectionPolicyBinding_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      autoProtectionPolicyBinding_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -232,6 +298,9 @@ public final class DeleteBackupPlanAssociationRequest extends com.google.protobu
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(requestId_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 2, requestId_);
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(autoProtectionPolicyBinding_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 3, autoProtectionPolicyBinding_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -246,6 +315,10 @@ public final class DeleteBackupPlanAssociationRequest extends com.google.protobu
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(requestId_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(2, requestId_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(autoProtectionPolicyBinding_)) {
+      size +=
+          com.google.protobuf.GeneratedMessage.computeStringSize(3, autoProtectionPolicyBinding_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -265,6 +338,8 @@ public final class DeleteBackupPlanAssociationRequest extends com.google.protobu
 
     if (!getName().equals(other.getName())) return false;
     if (!getRequestId().equals(other.getRequestId())) return false;
+    if (!getAutoProtectionPolicyBinding().equals(other.getAutoProtectionPolicyBinding()))
+      return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -280,6 +355,8 @@ public final class DeleteBackupPlanAssociationRequest extends com.google.protobu
     hash = (53 * hash) + getName().hashCode();
     hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
     hash = (53 * hash) + getRequestId().hashCode();
+    hash = (37 * hash) + AUTO_PROTECTION_POLICY_BINDING_FIELD_NUMBER;
+    hash = (53 * hash) + getAutoProtectionPolicyBinding().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -423,6 +500,7 @@ public final class DeleteBackupPlanAssociationRequest extends com.google.protobu
       bitField0_ = 0;
       name_ = "";
       requestId_ = "";
+      autoProtectionPolicyBinding_ = "";
       return this;
     }
 
@@ -467,6 +545,9 @@ public final class DeleteBackupPlanAssociationRequest extends com.google.protobu
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.requestId_ = requestId_;
       }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.autoProtectionPolicyBinding_ = autoProtectionPolicyBinding_;
+      }
     }
 
     @java.lang.Override
@@ -492,6 +573,11 @@ public final class DeleteBackupPlanAssociationRequest extends com.google.protobu
       if (!other.getRequestId().isEmpty()) {
         requestId_ = other.requestId_;
         bitField0_ |= 0x00000002;
+        onChanged();
+      }
+      if (!other.getAutoProtectionPolicyBinding().isEmpty()) {
+        autoProtectionPolicyBinding_ = other.autoProtectionPolicyBinding_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -532,6 +618,12 @@ public final class DeleteBackupPlanAssociationRequest extends com.google.protobu
                 bitField0_ |= 0x00000002;
                 break;
               } // case 18
+            case 26:
+              {
+                autoProtectionPolicyBinding_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -854,6 +946,147 @@ public final class DeleteBackupPlanAssociationRequest extends com.google.protobu
       checkByteStringIsUtf8(value);
       requestId_ = value;
       bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object autoProtectionPolicyBinding_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This field is exclusively used by Backup and DR's auto-protection
+     * feature. The resource name of the `AutoProtectionPolicyBinding` that
+     * triggered the deletion of this association.
+     * Format:
+     * `projects/{project}/locations/{location}/autoProtectionPolicies/{policy}/bindings/{binding}`.
+     * </pre>
+     *
+     * <code>
+     * string auto_protection_policy_binding = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The autoProtectionPolicyBinding.
+     */
+    public java.lang.String getAutoProtectionPolicyBinding() {
+      java.lang.Object ref = autoProtectionPolicyBinding_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        autoProtectionPolicyBinding_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This field is exclusively used by Backup and DR's auto-protection
+     * feature. The resource name of the `AutoProtectionPolicyBinding` that
+     * triggered the deletion of this association.
+     * Format:
+     * `projects/{project}/locations/{location}/autoProtectionPolicies/{policy}/bindings/{binding}`.
+     * </pre>
+     *
+     * <code>
+     * string auto_protection_policy_binding = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for autoProtectionPolicyBinding.
+     */
+    public com.google.protobuf.ByteString getAutoProtectionPolicyBindingBytes() {
+      java.lang.Object ref = autoProtectionPolicyBinding_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        autoProtectionPolicyBinding_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This field is exclusively used by Backup and DR's auto-protection
+     * feature. The resource name of the `AutoProtectionPolicyBinding` that
+     * triggered the deletion of this association.
+     * Format:
+     * `projects/{project}/locations/{location}/autoProtectionPolicies/{policy}/bindings/{binding}`.
+     * </pre>
+     *
+     * <code>
+     * string auto_protection_policy_binding = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The autoProtectionPolicyBinding to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAutoProtectionPolicyBinding(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      autoProtectionPolicyBinding_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This field is exclusively used by Backup and DR's auto-protection
+     * feature. The resource name of the `AutoProtectionPolicyBinding` that
+     * triggered the deletion of this association.
+     * Format:
+     * `projects/{project}/locations/{location}/autoProtectionPolicies/{policy}/bindings/{binding}`.
+     * </pre>
+     *
+     * <code>
+     * string auto_protection_policy_binding = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAutoProtectionPolicyBinding() {
+      autoProtectionPolicyBinding_ = getDefaultInstance().getAutoProtectionPolicyBinding();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This field is exclusively used by Backup and DR's auto-protection
+     * feature. The resource name of the `AutoProtectionPolicyBinding` that
+     * triggered the deletion of this association.
+     * Format:
+     * `projects/{project}/locations/{location}/autoProtectionPolicies/{policy}/bindings/{binding}`.
+     * </pre>
+     *
+     * <code>
+     * string auto_protection_policy_binding = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes for autoProtectionPolicyBinding to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAutoProtectionPolicyBindingBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      autoProtectionPolicyBinding_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

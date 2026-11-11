@@ -33,6 +33,10 @@ import static com.google.cloud.backupdr.v1beta.BackupDRClient.ListDataSourceRefe
 import static com.google.cloud.backupdr.v1beta.BackupDRClient.ListDataSourcesPagedResponse;
 import static com.google.cloud.backupdr.v1beta.BackupDRClient.ListLocationsPagedResponse;
 import static com.google.cloud.backupdr.v1beta.BackupDRClient.ListManagementServersPagedResponse;
+import static com.google.cloud.backupdr.v1beta.BackupDRClient.ListRestoreTemplateExecutionsPagedResponse;
+import static com.google.cloud.backupdr.v1beta.BackupDRClient.ListRestoreTemplatesPagedResponse;
+import static com.google.cloud.backupdr.v1beta.BackupDRClient.ListRestoreVerificationPlanAssociationsPagedResponse;
+import static com.google.cloud.backupdr.v1beta.BackupDRClient.ListRestoreVerificationPlansPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
@@ -80,6 +84,9 @@ import com.google.cloud.backupdr.v1beta.CreateBackupPlanAssociationRequest;
 import com.google.cloud.backupdr.v1beta.CreateBackupPlanRequest;
 import com.google.cloud.backupdr.v1beta.CreateBackupVaultRequest;
 import com.google.cloud.backupdr.v1beta.CreateManagementServerRequest;
+import com.google.cloud.backupdr.v1beta.CreateRestoreTemplateRequest;
+import com.google.cloud.backupdr.v1beta.CreateRestoreVerificationPlanAssociationRequest;
+import com.google.cloud.backupdr.v1beta.CreateRestoreVerificationPlanRequest;
 import com.google.cloud.backupdr.v1beta.DataSource;
 import com.google.cloud.backupdr.v1beta.DataSourceReference;
 import com.google.cloud.backupdr.v1beta.DeleteAutoProtectionPolicyRequest;
@@ -88,6 +95,9 @@ import com.google.cloud.backupdr.v1beta.DeleteBackupPlanRequest;
 import com.google.cloud.backupdr.v1beta.DeleteBackupRequest;
 import com.google.cloud.backupdr.v1beta.DeleteBackupVaultRequest;
 import com.google.cloud.backupdr.v1beta.DeleteManagementServerRequest;
+import com.google.cloud.backupdr.v1beta.DeleteRestoreTemplateRequest;
+import com.google.cloud.backupdr.v1beta.DeleteRestoreVerificationPlanAssociationRequest;
+import com.google.cloud.backupdr.v1beta.DeleteRestoreVerificationPlanRequest;
 import com.google.cloud.backupdr.v1beta.FetchBackupPlanAssociationsForResourceTypeRequest;
 import com.google.cloud.backupdr.v1beta.FetchBackupPlanAssociationsForResourceTypeResponse;
 import com.google.cloud.backupdr.v1beta.FetchBackupsForResourceTypeRequest;
@@ -107,6 +117,10 @@ import com.google.cloud.backupdr.v1beta.GetBindingMatchingResourceRequest;
 import com.google.cloud.backupdr.v1beta.GetDataSourceReferenceRequest;
 import com.google.cloud.backupdr.v1beta.GetDataSourceRequest;
 import com.google.cloud.backupdr.v1beta.GetManagementServerRequest;
+import com.google.cloud.backupdr.v1beta.GetRestoreTemplateExecutionRequest;
+import com.google.cloud.backupdr.v1beta.GetRestoreTemplateRequest;
+import com.google.cloud.backupdr.v1beta.GetRestoreVerificationPlanAssociationRequest;
+import com.google.cloud.backupdr.v1beta.GetRestoreVerificationPlanRequest;
 import com.google.cloud.backupdr.v1beta.InitializeServiceRequest;
 import com.google.cloud.backupdr.v1beta.InitializeServiceResponse;
 import com.google.cloud.backupdr.v1beta.InitiateDeleteAutoProtectionPolicyBindingRequest;
@@ -134,17 +148,35 @@ import com.google.cloud.backupdr.v1beta.ListDataSourcesRequest;
 import com.google.cloud.backupdr.v1beta.ListDataSourcesResponse;
 import com.google.cloud.backupdr.v1beta.ListManagementServersRequest;
 import com.google.cloud.backupdr.v1beta.ListManagementServersResponse;
+import com.google.cloud.backupdr.v1beta.ListRestoreTemplateExecutionsRequest;
+import com.google.cloud.backupdr.v1beta.ListRestoreTemplateExecutionsResponse;
+import com.google.cloud.backupdr.v1beta.ListRestoreTemplatesRequest;
+import com.google.cloud.backupdr.v1beta.ListRestoreTemplatesResponse;
+import com.google.cloud.backupdr.v1beta.ListRestoreVerificationPlanAssociationsRequest;
+import com.google.cloud.backupdr.v1beta.ListRestoreVerificationPlanAssociationsResponse;
+import com.google.cloud.backupdr.v1beta.ListRestoreVerificationPlansRequest;
+import com.google.cloud.backupdr.v1beta.ListRestoreVerificationPlansResponse;
 import com.google.cloud.backupdr.v1beta.ManagementServer;
 import com.google.cloud.backupdr.v1beta.OperationMetadata;
 import com.google.cloud.backupdr.v1beta.RestoreBackupRequest;
 import com.google.cloud.backupdr.v1beta.RestoreBackupResponse;
+import com.google.cloud.backupdr.v1beta.RestoreTemplate;
+import com.google.cloud.backupdr.v1beta.RestoreTemplateExecution;
+import com.google.cloud.backupdr.v1beta.RestoreVerificationPlan;
+import com.google.cloud.backupdr.v1beta.RestoreVerificationPlanAssociation;
+import com.google.cloud.backupdr.v1beta.RunRestoreTemplateRequest;
+import com.google.cloud.backupdr.v1beta.RunRestoreTemplateResponse;
 import com.google.cloud.backupdr.v1beta.TriggerBackupRequest;
+import com.google.cloud.backupdr.v1beta.TriggerRestoreCleanupRequest;
+import com.google.cloud.backupdr.v1beta.TriggerRestoreVerificationRequest;
+import com.google.cloud.backupdr.v1beta.TriggerRestoreVerificationResponse;
 import com.google.cloud.backupdr.v1beta.UpdateAutoProtectionPolicyRequest;
 import com.google.cloud.backupdr.v1beta.UpdateBackupPlanAssociationRequest;
 import com.google.cloud.backupdr.v1beta.UpdateBackupPlanRequest;
 import com.google.cloud.backupdr.v1beta.UpdateBackupRequest;
 import com.google.cloud.backupdr.v1beta.UpdateBackupVaultRequest;
 import com.google.cloud.backupdr.v1beta.UpdateDataSourceRequest;
+import com.google.cloud.backupdr.v1beta.UpdateRestoreTemplateRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -269,6 +301,85 @@ public class BackupDRStubSettings extends StubSettings<BackupDRStubSettings> {
       deleteManagementServerSettings;
   private final OperationCallSettings<DeleteManagementServerRequest, Empty, OperationMetadata>
       deleteManagementServerOperationSettings;
+  private final UnaryCallSettings<CreateRestoreTemplateRequest, Operation>
+      createRestoreTemplateSettings;
+  private final OperationCallSettings<
+          CreateRestoreTemplateRequest, RestoreTemplate, OperationMetadata>
+      createRestoreTemplateOperationSettings;
+  private final UnaryCallSettings<GetRestoreTemplateRequest, RestoreTemplate>
+      getRestoreTemplateSettings;
+  private final PagedCallSettings<
+          ListRestoreTemplatesRequest,
+          ListRestoreTemplatesResponse,
+          ListRestoreTemplatesPagedResponse>
+      listRestoreTemplatesSettings;
+  private final UnaryCallSettings<UpdateRestoreTemplateRequest, Operation>
+      updateRestoreTemplateSettings;
+  private final OperationCallSettings<
+          UpdateRestoreTemplateRequest, RestoreTemplate, OperationMetadata>
+      updateRestoreTemplateOperationSettings;
+  private final UnaryCallSettings<DeleteRestoreTemplateRequest, Operation>
+      deleteRestoreTemplateSettings;
+  private final OperationCallSettings<DeleteRestoreTemplateRequest, Empty, OperationMetadata>
+      deleteRestoreTemplateOperationSettings;
+  private final UnaryCallSettings<RunRestoreTemplateRequest, Operation> runRestoreTemplateSettings;
+  private final OperationCallSettings<
+          RunRestoreTemplateRequest, RunRestoreTemplateResponse, OperationMetadata>
+      runRestoreTemplateOperationSettings;
+  private final UnaryCallSettings<GetRestoreTemplateExecutionRequest, RestoreTemplateExecution>
+      getRestoreTemplateExecutionSettings;
+  private final PagedCallSettings<
+          ListRestoreTemplateExecutionsRequest,
+          ListRestoreTemplateExecutionsResponse,
+          ListRestoreTemplateExecutionsPagedResponse>
+      listRestoreTemplateExecutionsSettings;
+  private final UnaryCallSettings<TriggerRestoreCleanupRequest, Operation>
+      triggerRestoreCleanupSettings;
+  private final OperationCallSettings<
+          TriggerRestoreCleanupRequest, RestoreTemplateExecution, OperationMetadata>
+      triggerRestoreCleanupOperationSettings;
+  private final UnaryCallSettings<CreateRestoreVerificationPlanRequest, Operation>
+      createRestoreVerificationPlanSettings;
+  private final OperationCallSettings<
+          CreateRestoreVerificationPlanRequest, RestoreVerificationPlan, OperationMetadata>
+      createRestoreVerificationPlanOperationSettings;
+  private final UnaryCallSettings<CreateRestoreVerificationPlanAssociationRequest, Operation>
+      createRestoreVerificationPlanAssociationSettings;
+  private final OperationCallSettings<
+          CreateRestoreVerificationPlanAssociationRequest,
+          RestoreVerificationPlanAssociation,
+          OperationMetadata>
+      createRestoreVerificationPlanAssociationOperationSettings;
+  private final UnaryCallSettings<
+          GetRestoreVerificationPlanAssociationRequest, RestoreVerificationPlanAssociation>
+      getRestoreVerificationPlanAssociationSettings;
+  private final PagedCallSettings<
+          ListRestoreVerificationPlanAssociationsRequest,
+          ListRestoreVerificationPlanAssociationsResponse,
+          ListRestoreVerificationPlanAssociationsPagedResponse>
+      listRestoreVerificationPlanAssociationsSettings;
+  private final UnaryCallSettings<DeleteRestoreVerificationPlanAssociationRequest, Operation>
+      deleteRestoreVerificationPlanAssociationSettings;
+  private final OperationCallSettings<
+          DeleteRestoreVerificationPlanAssociationRequest, Empty, OperationMetadata>
+      deleteRestoreVerificationPlanAssociationOperationSettings;
+  private final UnaryCallSettings<TriggerRestoreVerificationRequest, Operation>
+      triggerRestoreVerificationSettings;
+  private final OperationCallSettings<
+          TriggerRestoreVerificationRequest, TriggerRestoreVerificationResponse, OperationMetadata>
+      triggerRestoreVerificationOperationSettings;
+  private final UnaryCallSettings<GetRestoreVerificationPlanRequest, RestoreVerificationPlan>
+      getRestoreVerificationPlanSettings;
+  private final PagedCallSettings<
+          ListRestoreVerificationPlansRequest,
+          ListRestoreVerificationPlansResponse,
+          ListRestoreVerificationPlansPagedResponse>
+      listRestoreVerificationPlansSettings;
+  private final UnaryCallSettings<DeleteRestoreVerificationPlanRequest, Operation>
+      deleteRestoreVerificationPlanSettings;
+  private final OperationCallSettings<
+          DeleteRestoreVerificationPlanRequest, Empty, OperationMetadata>
+      deleteRestoreVerificationPlanOperationSettings;
   private final UnaryCallSettings<CreateBackupVaultRequest, Operation> createBackupVaultSettings;
   private final OperationCallSettings<CreateBackupVaultRequest, BackupVault, OperationMetadata>
       createBackupVaultOperationSettings;
@@ -476,6 +587,187 @@ public class BackupDRStubSettings extends StubSettings<BackupDRStubSettings> {
             public Iterable<ManagementServer> extractResources(
                 ListManagementServersResponse payload) {
               return payload.getManagementServersList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListRestoreTemplatesRequest, ListRestoreTemplatesResponse, RestoreTemplate>
+      LIST_RESTORE_TEMPLATES_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListRestoreTemplatesRequest, ListRestoreTemplatesResponse, RestoreTemplate>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListRestoreTemplatesRequest injectToken(
+                ListRestoreTemplatesRequest payload, String token) {
+              return ListRestoreTemplatesRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListRestoreTemplatesRequest injectPageSize(
+                ListRestoreTemplatesRequest payload, int pageSize) {
+              return ListRestoreTemplatesRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListRestoreTemplatesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListRestoreTemplatesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<RestoreTemplate> extractResources(
+                ListRestoreTemplatesResponse payload) {
+              return payload.getRestoreTemplatesList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListRestoreTemplateExecutionsRequest,
+          ListRestoreTemplateExecutionsResponse,
+          RestoreTemplateExecution>
+      LIST_RESTORE_TEMPLATE_EXECUTIONS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListRestoreTemplateExecutionsRequest,
+              ListRestoreTemplateExecutionsResponse,
+              RestoreTemplateExecution>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListRestoreTemplateExecutionsRequest injectToken(
+                ListRestoreTemplateExecutionsRequest payload, String token) {
+              return ListRestoreTemplateExecutionsRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public ListRestoreTemplateExecutionsRequest injectPageSize(
+                ListRestoreTemplateExecutionsRequest payload, int pageSize) {
+              return ListRestoreTemplateExecutionsRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListRestoreTemplateExecutionsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListRestoreTemplateExecutionsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<RestoreTemplateExecution> extractResources(
+                ListRestoreTemplateExecutionsResponse payload) {
+              return payload.getRestoreTemplateExecutionsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListRestoreVerificationPlanAssociationsRequest,
+          ListRestoreVerificationPlanAssociationsResponse,
+          RestoreVerificationPlanAssociation>
+      LIST_RESTORE_VERIFICATION_PLAN_ASSOCIATIONS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListRestoreVerificationPlanAssociationsRequest,
+              ListRestoreVerificationPlanAssociationsResponse,
+              RestoreVerificationPlanAssociation>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListRestoreVerificationPlanAssociationsRequest injectToken(
+                ListRestoreVerificationPlanAssociationsRequest payload, String token) {
+              return ListRestoreVerificationPlanAssociationsRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public ListRestoreVerificationPlanAssociationsRequest injectPageSize(
+                ListRestoreVerificationPlanAssociationsRequest payload, int pageSize) {
+              return ListRestoreVerificationPlanAssociationsRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListRestoreVerificationPlanAssociationsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(
+                ListRestoreVerificationPlanAssociationsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<RestoreVerificationPlanAssociation> extractResources(
+                ListRestoreVerificationPlanAssociationsResponse payload) {
+              return payload.getRestoreVerificationPlanAssociationsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListRestoreVerificationPlansRequest,
+          ListRestoreVerificationPlansResponse,
+          RestoreVerificationPlan>
+      LIST_RESTORE_VERIFICATION_PLANS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListRestoreVerificationPlansRequest,
+              ListRestoreVerificationPlansResponse,
+              RestoreVerificationPlan>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListRestoreVerificationPlansRequest injectToken(
+                ListRestoreVerificationPlansRequest payload, String token) {
+              return ListRestoreVerificationPlansRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public ListRestoreVerificationPlansRequest injectPageSize(
+                ListRestoreVerificationPlansRequest payload, int pageSize) {
+              return ListRestoreVerificationPlansRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListRestoreVerificationPlansRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListRestoreVerificationPlansResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<RestoreVerificationPlan> extractResources(
+                ListRestoreVerificationPlansResponse payload) {
+              return payload.getRestoreVerificationPlansList();
             }
           };
 
@@ -1187,6 +1479,128 @@ public class BackupDRStubSettings extends StubSettings<BackupDRStubSettings> {
           };
 
   private static final PagedListResponseFactory<
+          ListRestoreTemplatesRequest,
+          ListRestoreTemplatesResponse,
+          ListRestoreTemplatesPagedResponse>
+      LIST_RESTORE_TEMPLATES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListRestoreTemplatesRequest,
+              ListRestoreTemplatesResponse,
+              ListRestoreTemplatesPagedResponse>() {
+            @Override
+            public ApiFuture<ListRestoreTemplatesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListRestoreTemplatesRequest, ListRestoreTemplatesResponse> callable,
+                ListRestoreTemplatesRequest request,
+                ApiCallContext context,
+                ApiFuture<ListRestoreTemplatesResponse> futureResponse) {
+              PageContext<
+                      ListRestoreTemplatesRequest, ListRestoreTemplatesResponse, RestoreTemplate>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_RESTORE_TEMPLATES_PAGE_STR_DESC, request, context);
+              return ListRestoreTemplatesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListRestoreTemplateExecutionsRequest,
+          ListRestoreTemplateExecutionsResponse,
+          ListRestoreTemplateExecutionsPagedResponse>
+      LIST_RESTORE_TEMPLATE_EXECUTIONS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListRestoreTemplateExecutionsRequest,
+              ListRestoreTemplateExecutionsResponse,
+              ListRestoreTemplateExecutionsPagedResponse>() {
+            @Override
+            public ApiFuture<ListRestoreTemplateExecutionsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<
+                        ListRestoreTemplateExecutionsRequest, ListRestoreTemplateExecutionsResponse>
+                    callable,
+                ListRestoreTemplateExecutionsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListRestoreTemplateExecutionsResponse> futureResponse) {
+              PageContext<
+                      ListRestoreTemplateExecutionsRequest,
+                      ListRestoreTemplateExecutionsResponse,
+                      RestoreTemplateExecution>
+                  pageContext =
+                      PageContext.create(
+                          callable,
+                          LIST_RESTORE_TEMPLATE_EXECUTIONS_PAGE_STR_DESC,
+                          request,
+                          context);
+              return ListRestoreTemplateExecutionsPagedResponse.createAsync(
+                  pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListRestoreVerificationPlanAssociationsRequest,
+          ListRestoreVerificationPlanAssociationsResponse,
+          ListRestoreVerificationPlanAssociationsPagedResponse>
+      LIST_RESTORE_VERIFICATION_PLAN_ASSOCIATIONS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListRestoreVerificationPlanAssociationsRequest,
+              ListRestoreVerificationPlanAssociationsResponse,
+              ListRestoreVerificationPlanAssociationsPagedResponse>() {
+            @Override
+            public ApiFuture<ListRestoreVerificationPlanAssociationsPagedResponse>
+                getFuturePagedResponse(
+                    UnaryCallable<
+                            ListRestoreVerificationPlanAssociationsRequest,
+                            ListRestoreVerificationPlanAssociationsResponse>
+                        callable,
+                    ListRestoreVerificationPlanAssociationsRequest request,
+                    ApiCallContext context,
+                    ApiFuture<ListRestoreVerificationPlanAssociationsResponse> futureResponse) {
+              PageContext<
+                      ListRestoreVerificationPlanAssociationsRequest,
+                      ListRestoreVerificationPlanAssociationsResponse,
+                      RestoreVerificationPlanAssociation>
+                  pageContext =
+                      PageContext.create(
+                          callable,
+                          LIST_RESTORE_VERIFICATION_PLAN_ASSOCIATIONS_PAGE_STR_DESC,
+                          request,
+                          context);
+              return ListRestoreVerificationPlanAssociationsPagedResponse.createAsync(
+                  pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListRestoreVerificationPlansRequest,
+          ListRestoreVerificationPlansResponse,
+          ListRestoreVerificationPlansPagedResponse>
+      LIST_RESTORE_VERIFICATION_PLANS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListRestoreVerificationPlansRequest,
+              ListRestoreVerificationPlansResponse,
+              ListRestoreVerificationPlansPagedResponse>() {
+            @Override
+            public ApiFuture<ListRestoreVerificationPlansPagedResponse> getFuturePagedResponse(
+                UnaryCallable<
+                        ListRestoreVerificationPlansRequest, ListRestoreVerificationPlansResponse>
+                    callable,
+                ListRestoreVerificationPlansRequest request,
+                ApiCallContext context,
+                ApiFuture<ListRestoreVerificationPlansResponse> futureResponse) {
+              PageContext<
+                      ListRestoreVerificationPlansRequest,
+                      ListRestoreVerificationPlansResponse,
+                      RestoreVerificationPlan>
+                  pageContext =
+                      PageContext.create(
+                          callable,
+                          LIST_RESTORE_VERIFICATION_PLANS_PAGE_STR_DESC,
+                          request,
+                          context);
+              return ListRestoreVerificationPlansPagedResponse.createAsync(
+                  pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
           ListBackupVaultsRequest, ListBackupVaultsResponse, ListBackupVaultsPagedResponse>
       LIST_BACKUP_VAULTS_PAGE_STR_FACT =
           new PagedListResponseFactory<
@@ -1643,6 +2057,210 @@ public class BackupDRStubSettings extends StubSettings<BackupDRStubSettings> {
   public OperationCallSettings<DeleteManagementServerRequest, Empty, OperationMetadata>
       deleteManagementServerOperationSettings() {
     return deleteManagementServerOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createRestoreTemplate. */
+  public UnaryCallSettings<CreateRestoreTemplateRequest, Operation>
+      createRestoreTemplateSettings() {
+    return createRestoreTemplateSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createRestoreTemplate. */
+  public OperationCallSettings<CreateRestoreTemplateRequest, RestoreTemplate, OperationMetadata>
+      createRestoreTemplateOperationSettings() {
+    return createRestoreTemplateOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getRestoreTemplate. */
+  public UnaryCallSettings<GetRestoreTemplateRequest, RestoreTemplate>
+      getRestoreTemplateSettings() {
+    return getRestoreTemplateSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listRestoreTemplates. */
+  public PagedCallSettings<
+          ListRestoreTemplatesRequest,
+          ListRestoreTemplatesResponse,
+          ListRestoreTemplatesPagedResponse>
+      listRestoreTemplatesSettings() {
+    return listRestoreTemplatesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateRestoreTemplate. */
+  public UnaryCallSettings<UpdateRestoreTemplateRequest, Operation>
+      updateRestoreTemplateSettings() {
+    return updateRestoreTemplateSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateRestoreTemplate. */
+  public OperationCallSettings<UpdateRestoreTemplateRequest, RestoreTemplate, OperationMetadata>
+      updateRestoreTemplateOperationSettings() {
+    return updateRestoreTemplateOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteRestoreTemplate. */
+  public UnaryCallSettings<DeleteRestoreTemplateRequest, Operation>
+      deleteRestoreTemplateSettings() {
+    return deleteRestoreTemplateSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteRestoreTemplate. */
+  public OperationCallSettings<DeleteRestoreTemplateRequest, Empty, OperationMetadata>
+      deleteRestoreTemplateOperationSettings() {
+    return deleteRestoreTemplateOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to runRestoreTemplate. */
+  public UnaryCallSettings<RunRestoreTemplateRequest, Operation> runRestoreTemplateSettings() {
+    return runRestoreTemplateSettings;
+  }
+
+  /** Returns the object with the settings used for calls to runRestoreTemplate. */
+  public OperationCallSettings<
+          RunRestoreTemplateRequest, RunRestoreTemplateResponse, OperationMetadata>
+      runRestoreTemplateOperationSettings() {
+    return runRestoreTemplateOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getRestoreTemplateExecution. */
+  public UnaryCallSettings<GetRestoreTemplateExecutionRequest, RestoreTemplateExecution>
+      getRestoreTemplateExecutionSettings() {
+    return getRestoreTemplateExecutionSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listRestoreTemplateExecutions. */
+  public PagedCallSettings<
+          ListRestoreTemplateExecutionsRequest,
+          ListRestoreTemplateExecutionsResponse,
+          ListRestoreTemplateExecutionsPagedResponse>
+      listRestoreTemplateExecutionsSettings() {
+    return listRestoreTemplateExecutionsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to triggerRestoreCleanup. */
+  public UnaryCallSettings<TriggerRestoreCleanupRequest, Operation>
+      triggerRestoreCleanupSettings() {
+    return triggerRestoreCleanupSettings;
+  }
+
+  /** Returns the object with the settings used for calls to triggerRestoreCleanup. */
+  public OperationCallSettings<
+          TriggerRestoreCleanupRequest, RestoreTemplateExecution, OperationMetadata>
+      triggerRestoreCleanupOperationSettings() {
+    return triggerRestoreCleanupOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createRestoreVerificationPlan. */
+  public UnaryCallSettings<CreateRestoreVerificationPlanRequest, Operation>
+      createRestoreVerificationPlanSettings() {
+    return createRestoreVerificationPlanSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createRestoreVerificationPlan. */
+  public OperationCallSettings<
+          CreateRestoreVerificationPlanRequest, RestoreVerificationPlan, OperationMetadata>
+      createRestoreVerificationPlanOperationSettings() {
+    return createRestoreVerificationPlanOperationSettings;
+  }
+
+  /**
+   * Returns the object with the settings used for calls to
+   * createRestoreVerificationPlanAssociation.
+   */
+  public UnaryCallSettings<CreateRestoreVerificationPlanAssociationRequest, Operation>
+      createRestoreVerificationPlanAssociationSettings() {
+    return createRestoreVerificationPlanAssociationSettings;
+  }
+
+  /**
+   * Returns the object with the settings used for calls to
+   * createRestoreVerificationPlanAssociation.
+   */
+  public OperationCallSettings<
+          CreateRestoreVerificationPlanAssociationRequest,
+          RestoreVerificationPlanAssociation,
+          OperationMetadata>
+      createRestoreVerificationPlanAssociationOperationSettings() {
+    return createRestoreVerificationPlanAssociationOperationSettings;
+  }
+
+  /**
+   * Returns the object with the settings used for calls to getRestoreVerificationPlanAssociation.
+   */
+  public UnaryCallSettings<
+          GetRestoreVerificationPlanAssociationRequest, RestoreVerificationPlanAssociation>
+      getRestoreVerificationPlanAssociationSettings() {
+    return getRestoreVerificationPlanAssociationSettings;
+  }
+
+  /**
+   * Returns the object with the settings used for calls to listRestoreVerificationPlanAssociations.
+   */
+  public PagedCallSettings<
+          ListRestoreVerificationPlanAssociationsRequest,
+          ListRestoreVerificationPlanAssociationsResponse,
+          ListRestoreVerificationPlanAssociationsPagedResponse>
+      listRestoreVerificationPlanAssociationsSettings() {
+    return listRestoreVerificationPlanAssociationsSettings;
+  }
+
+  /**
+   * Returns the object with the settings used for calls to
+   * deleteRestoreVerificationPlanAssociation.
+   */
+  public UnaryCallSettings<DeleteRestoreVerificationPlanAssociationRequest, Operation>
+      deleteRestoreVerificationPlanAssociationSettings() {
+    return deleteRestoreVerificationPlanAssociationSettings;
+  }
+
+  /**
+   * Returns the object with the settings used for calls to
+   * deleteRestoreVerificationPlanAssociation.
+   */
+  public OperationCallSettings<
+          DeleteRestoreVerificationPlanAssociationRequest, Empty, OperationMetadata>
+      deleteRestoreVerificationPlanAssociationOperationSettings() {
+    return deleteRestoreVerificationPlanAssociationOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to triggerRestoreVerification. */
+  public UnaryCallSettings<TriggerRestoreVerificationRequest, Operation>
+      triggerRestoreVerificationSettings() {
+    return triggerRestoreVerificationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to triggerRestoreVerification. */
+  public OperationCallSettings<
+          TriggerRestoreVerificationRequest, TriggerRestoreVerificationResponse, OperationMetadata>
+      triggerRestoreVerificationOperationSettings() {
+    return triggerRestoreVerificationOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getRestoreVerificationPlan. */
+  public UnaryCallSettings<GetRestoreVerificationPlanRequest, RestoreVerificationPlan>
+      getRestoreVerificationPlanSettings() {
+    return getRestoreVerificationPlanSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listRestoreVerificationPlans. */
+  public PagedCallSettings<
+          ListRestoreVerificationPlansRequest,
+          ListRestoreVerificationPlansResponse,
+          ListRestoreVerificationPlansPagedResponse>
+      listRestoreVerificationPlansSettings() {
+    return listRestoreVerificationPlansSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteRestoreVerificationPlan. */
+  public UnaryCallSettings<DeleteRestoreVerificationPlanRequest, Operation>
+      deleteRestoreVerificationPlanSettings() {
+    return deleteRestoreVerificationPlanSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteRestoreVerificationPlan. */
+  public OperationCallSettings<DeleteRestoreVerificationPlanRequest, Empty, OperationMetadata>
+      deleteRestoreVerificationPlanOperationSettings() {
+    return deleteRestoreVerificationPlanOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to createBackupVault. */
@@ -2220,6 +2838,55 @@ public class BackupDRStubSettings extends StubSettings<BackupDRStubSettings> {
     deleteManagementServerSettings = settingsBuilder.deleteManagementServerSettings().build();
     deleteManagementServerOperationSettings =
         settingsBuilder.deleteManagementServerOperationSettings().build();
+    createRestoreTemplateSettings = settingsBuilder.createRestoreTemplateSettings().build();
+    createRestoreTemplateOperationSettings =
+        settingsBuilder.createRestoreTemplateOperationSettings().build();
+    getRestoreTemplateSettings = settingsBuilder.getRestoreTemplateSettings().build();
+    listRestoreTemplatesSettings = settingsBuilder.listRestoreTemplatesSettings().build();
+    updateRestoreTemplateSettings = settingsBuilder.updateRestoreTemplateSettings().build();
+    updateRestoreTemplateOperationSettings =
+        settingsBuilder.updateRestoreTemplateOperationSettings().build();
+    deleteRestoreTemplateSettings = settingsBuilder.deleteRestoreTemplateSettings().build();
+    deleteRestoreTemplateOperationSettings =
+        settingsBuilder.deleteRestoreTemplateOperationSettings().build();
+    runRestoreTemplateSettings = settingsBuilder.runRestoreTemplateSettings().build();
+    runRestoreTemplateOperationSettings =
+        settingsBuilder.runRestoreTemplateOperationSettings().build();
+    getRestoreTemplateExecutionSettings =
+        settingsBuilder.getRestoreTemplateExecutionSettings().build();
+    listRestoreTemplateExecutionsSettings =
+        settingsBuilder.listRestoreTemplateExecutionsSettings().build();
+    triggerRestoreCleanupSettings = settingsBuilder.triggerRestoreCleanupSettings().build();
+    triggerRestoreCleanupOperationSettings =
+        settingsBuilder.triggerRestoreCleanupOperationSettings().build();
+    createRestoreVerificationPlanSettings =
+        settingsBuilder.createRestoreVerificationPlanSettings().build();
+    createRestoreVerificationPlanOperationSettings =
+        settingsBuilder.createRestoreVerificationPlanOperationSettings().build();
+    createRestoreVerificationPlanAssociationSettings =
+        settingsBuilder.createRestoreVerificationPlanAssociationSettings().build();
+    createRestoreVerificationPlanAssociationOperationSettings =
+        settingsBuilder.createRestoreVerificationPlanAssociationOperationSettings().build();
+    getRestoreVerificationPlanAssociationSettings =
+        settingsBuilder.getRestoreVerificationPlanAssociationSettings().build();
+    listRestoreVerificationPlanAssociationsSettings =
+        settingsBuilder.listRestoreVerificationPlanAssociationsSettings().build();
+    deleteRestoreVerificationPlanAssociationSettings =
+        settingsBuilder.deleteRestoreVerificationPlanAssociationSettings().build();
+    deleteRestoreVerificationPlanAssociationOperationSettings =
+        settingsBuilder.deleteRestoreVerificationPlanAssociationOperationSettings().build();
+    triggerRestoreVerificationSettings =
+        settingsBuilder.triggerRestoreVerificationSettings().build();
+    triggerRestoreVerificationOperationSettings =
+        settingsBuilder.triggerRestoreVerificationOperationSettings().build();
+    getRestoreVerificationPlanSettings =
+        settingsBuilder.getRestoreVerificationPlanSettings().build();
+    listRestoreVerificationPlansSettings =
+        settingsBuilder.listRestoreVerificationPlansSettings().build();
+    deleteRestoreVerificationPlanSettings =
+        settingsBuilder.deleteRestoreVerificationPlanSettings().build();
+    deleteRestoreVerificationPlanOperationSettings =
+        settingsBuilder.deleteRestoreVerificationPlanOperationSettings().build();
     createBackupVaultSettings = settingsBuilder.createBackupVaultSettings().build();
     createBackupVaultOperationSettings =
         settingsBuilder.createBackupVaultOperationSettings().build();
@@ -2351,6 +3018,93 @@ public class BackupDRStubSettings extends StubSettings<BackupDRStubSettings> {
     private final OperationCallSettings.Builder<
             DeleteManagementServerRequest, Empty, OperationMetadata>
         deleteManagementServerOperationSettings;
+    private final UnaryCallSettings.Builder<CreateRestoreTemplateRequest, Operation>
+        createRestoreTemplateSettings;
+    private final OperationCallSettings.Builder<
+            CreateRestoreTemplateRequest, RestoreTemplate, OperationMetadata>
+        createRestoreTemplateOperationSettings;
+    private final UnaryCallSettings.Builder<GetRestoreTemplateRequest, RestoreTemplate>
+        getRestoreTemplateSettings;
+    private final PagedCallSettings.Builder<
+            ListRestoreTemplatesRequest,
+            ListRestoreTemplatesResponse,
+            ListRestoreTemplatesPagedResponse>
+        listRestoreTemplatesSettings;
+    private final UnaryCallSettings.Builder<UpdateRestoreTemplateRequest, Operation>
+        updateRestoreTemplateSettings;
+    private final OperationCallSettings.Builder<
+            UpdateRestoreTemplateRequest, RestoreTemplate, OperationMetadata>
+        updateRestoreTemplateOperationSettings;
+    private final UnaryCallSettings.Builder<DeleteRestoreTemplateRequest, Operation>
+        deleteRestoreTemplateSettings;
+    private final OperationCallSettings.Builder<
+            DeleteRestoreTemplateRequest, Empty, OperationMetadata>
+        deleteRestoreTemplateOperationSettings;
+    private final UnaryCallSettings.Builder<RunRestoreTemplateRequest, Operation>
+        runRestoreTemplateSettings;
+    private final OperationCallSettings.Builder<
+            RunRestoreTemplateRequest, RunRestoreTemplateResponse, OperationMetadata>
+        runRestoreTemplateOperationSettings;
+    private final UnaryCallSettings.Builder<
+            GetRestoreTemplateExecutionRequest, RestoreTemplateExecution>
+        getRestoreTemplateExecutionSettings;
+    private final PagedCallSettings.Builder<
+            ListRestoreTemplateExecutionsRequest,
+            ListRestoreTemplateExecutionsResponse,
+            ListRestoreTemplateExecutionsPagedResponse>
+        listRestoreTemplateExecutionsSettings;
+    private final UnaryCallSettings.Builder<TriggerRestoreCleanupRequest, Operation>
+        triggerRestoreCleanupSettings;
+    private final OperationCallSettings.Builder<
+            TriggerRestoreCleanupRequest, RestoreTemplateExecution, OperationMetadata>
+        triggerRestoreCleanupOperationSettings;
+    private final UnaryCallSettings.Builder<CreateRestoreVerificationPlanRequest, Operation>
+        createRestoreVerificationPlanSettings;
+    private final OperationCallSettings.Builder<
+            CreateRestoreVerificationPlanRequest, RestoreVerificationPlan, OperationMetadata>
+        createRestoreVerificationPlanOperationSettings;
+    private final UnaryCallSettings.Builder<
+            CreateRestoreVerificationPlanAssociationRequest, Operation>
+        createRestoreVerificationPlanAssociationSettings;
+    private final OperationCallSettings.Builder<
+            CreateRestoreVerificationPlanAssociationRequest,
+            RestoreVerificationPlanAssociation,
+            OperationMetadata>
+        createRestoreVerificationPlanAssociationOperationSettings;
+    private final UnaryCallSettings.Builder<
+            GetRestoreVerificationPlanAssociationRequest, RestoreVerificationPlanAssociation>
+        getRestoreVerificationPlanAssociationSettings;
+    private final PagedCallSettings.Builder<
+            ListRestoreVerificationPlanAssociationsRequest,
+            ListRestoreVerificationPlanAssociationsResponse,
+            ListRestoreVerificationPlanAssociationsPagedResponse>
+        listRestoreVerificationPlanAssociationsSettings;
+    private final UnaryCallSettings.Builder<
+            DeleteRestoreVerificationPlanAssociationRequest, Operation>
+        deleteRestoreVerificationPlanAssociationSettings;
+    private final OperationCallSettings.Builder<
+            DeleteRestoreVerificationPlanAssociationRequest, Empty, OperationMetadata>
+        deleteRestoreVerificationPlanAssociationOperationSettings;
+    private final UnaryCallSettings.Builder<TriggerRestoreVerificationRequest, Operation>
+        triggerRestoreVerificationSettings;
+    private final OperationCallSettings.Builder<
+            TriggerRestoreVerificationRequest,
+            TriggerRestoreVerificationResponse,
+            OperationMetadata>
+        triggerRestoreVerificationOperationSettings;
+    private final UnaryCallSettings.Builder<
+            GetRestoreVerificationPlanRequest, RestoreVerificationPlan>
+        getRestoreVerificationPlanSettings;
+    private final PagedCallSettings.Builder<
+            ListRestoreVerificationPlansRequest,
+            ListRestoreVerificationPlansResponse,
+            ListRestoreVerificationPlansPagedResponse>
+        listRestoreVerificationPlansSettings;
+    private final UnaryCallSettings.Builder<DeleteRestoreVerificationPlanRequest, Operation>
+        deleteRestoreVerificationPlanSettings;
+    private final OperationCallSettings.Builder<
+            DeleteRestoreVerificationPlanRequest, Empty, OperationMetadata>
+        deleteRestoreVerificationPlanOperationSettings;
     private final UnaryCallSettings.Builder<CreateBackupVaultRequest, Operation>
         createBackupVaultSettings;
     private final OperationCallSettings.Builder<
@@ -2600,6 +3354,43 @@ public class BackupDRStubSettings extends StubSettings<BackupDRStubSettings> {
       createManagementServerOperationSettings = OperationCallSettings.newBuilder();
       deleteManagementServerSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteManagementServerOperationSettings = OperationCallSettings.newBuilder();
+      createRestoreTemplateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createRestoreTemplateOperationSettings = OperationCallSettings.newBuilder();
+      getRestoreTemplateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listRestoreTemplatesSettings =
+          PagedCallSettings.newBuilder(LIST_RESTORE_TEMPLATES_PAGE_STR_FACT);
+      updateRestoreTemplateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateRestoreTemplateOperationSettings = OperationCallSettings.newBuilder();
+      deleteRestoreTemplateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteRestoreTemplateOperationSettings = OperationCallSettings.newBuilder();
+      runRestoreTemplateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      runRestoreTemplateOperationSettings = OperationCallSettings.newBuilder();
+      getRestoreTemplateExecutionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listRestoreTemplateExecutionsSettings =
+          PagedCallSettings.newBuilder(LIST_RESTORE_TEMPLATE_EXECUTIONS_PAGE_STR_FACT);
+      triggerRestoreCleanupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      triggerRestoreCleanupOperationSettings = OperationCallSettings.newBuilder();
+      createRestoreVerificationPlanSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createRestoreVerificationPlanOperationSettings = OperationCallSettings.newBuilder();
+      createRestoreVerificationPlanAssociationSettings =
+          UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createRestoreVerificationPlanAssociationOperationSettings =
+          OperationCallSettings.newBuilder();
+      getRestoreVerificationPlanAssociationSettings =
+          UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listRestoreVerificationPlanAssociationsSettings =
+          PagedCallSettings.newBuilder(LIST_RESTORE_VERIFICATION_PLAN_ASSOCIATIONS_PAGE_STR_FACT);
+      deleteRestoreVerificationPlanAssociationSettings =
+          UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteRestoreVerificationPlanAssociationOperationSettings =
+          OperationCallSettings.newBuilder();
+      triggerRestoreVerificationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      triggerRestoreVerificationOperationSettings = OperationCallSettings.newBuilder();
+      getRestoreVerificationPlanSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listRestoreVerificationPlansSettings =
+          PagedCallSettings.newBuilder(LIST_RESTORE_VERIFICATION_PLANS_PAGE_STR_FACT);
+      deleteRestoreVerificationPlanSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteRestoreVerificationPlanOperationSettings = OperationCallSettings.newBuilder();
       createBackupVaultSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createBackupVaultOperationSettings = OperationCallSettings.newBuilder();
       listBackupVaultsSettings = PagedCallSettings.newBuilder(LIST_BACKUP_VAULTS_PAGE_STR_FACT);
@@ -2692,6 +3483,24 @@ public class BackupDRStubSettings extends StubSettings<BackupDRStubSettings> {
               getManagementServerSettings,
               createManagementServerSettings,
               deleteManagementServerSettings,
+              createRestoreTemplateSettings,
+              getRestoreTemplateSettings,
+              listRestoreTemplatesSettings,
+              updateRestoreTemplateSettings,
+              deleteRestoreTemplateSettings,
+              runRestoreTemplateSettings,
+              getRestoreTemplateExecutionSettings,
+              listRestoreTemplateExecutionsSettings,
+              triggerRestoreCleanupSettings,
+              createRestoreVerificationPlanSettings,
+              createRestoreVerificationPlanAssociationSettings,
+              getRestoreVerificationPlanAssociationSettings,
+              listRestoreVerificationPlanAssociationsSettings,
+              deleteRestoreVerificationPlanAssociationSettings,
+              triggerRestoreVerificationSettings,
+              getRestoreVerificationPlanSettings,
+              listRestoreVerificationPlansSettings,
+              deleteRestoreVerificationPlanSettings,
               createBackupVaultSettings,
               listBackupVaultsSettings,
               fetchUsableBackupVaultsSettings,
@@ -2756,6 +3565,53 @@ public class BackupDRStubSettings extends StubSettings<BackupDRStubSettings> {
       deleteManagementServerSettings = settings.deleteManagementServerSettings.toBuilder();
       deleteManagementServerOperationSettings =
           settings.deleteManagementServerOperationSettings.toBuilder();
+      createRestoreTemplateSettings = settings.createRestoreTemplateSettings.toBuilder();
+      createRestoreTemplateOperationSettings =
+          settings.createRestoreTemplateOperationSettings.toBuilder();
+      getRestoreTemplateSettings = settings.getRestoreTemplateSettings.toBuilder();
+      listRestoreTemplatesSettings = settings.listRestoreTemplatesSettings.toBuilder();
+      updateRestoreTemplateSettings = settings.updateRestoreTemplateSettings.toBuilder();
+      updateRestoreTemplateOperationSettings =
+          settings.updateRestoreTemplateOperationSettings.toBuilder();
+      deleteRestoreTemplateSettings = settings.deleteRestoreTemplateSettings.toBuilder();
+      deleteRestoreTemplateOperationSettings =
+          settings.deleteRestoreTemplateOperationSettings.toBuilder();
+      runRestoreTemplateSettings = settings.runRestoreTemplateSettings.toBuilder();
+      runRestoreTemplateOperationSettings =
+          settings.runRestoreTemplateOperationSettings.toBuilder();
+      getRestoreTemplateExecutionSettings =
+          settings.getRestoreTemplateExecutionSettings.toBuilder();
+      listRestoreTemplateExecutionsSettings =
+          settings.listRestoreTemplateExecutionsSettings.toBuilder();
+      triggerRestoreCleanupSettings = settings.triggerRestoreCleanupSettings.toBuilder();
+      triggerRestoreCleanupOperationSettings =
+          settings.triggerRestoreCleanupOperationSettings.toBuilder();
+      createRestoreVerificationPlanSettings =
+          settings.createRestoreVerificationPlanSettings.toBuilder();
+      createRestoreVerificationPlanOperationSettings =
+          settings.createRestoreVerificationPlanOperationSettings.toBuilder();
+      createRestoreVerificationPlanAssociationSettings =
+          settings.createRestoreVerificationPlanAssociationSettings.toBuilder();
+      createRestoreVerificationPlanAssociationOperationSettings =
+          settings.createRestoreVerificationPlanAssociationOperationSettings.toBuilder();
+      getRestoreVerificationPlanAssociationSettings =
+          settings.getRestoreVerificationPlanAssociationSettings.toBuilder();
+      listRestoreVerificationPlanAssociationsSettings =
+          settings.listRestoreVerificationPlanAssociationsSettings.toBuilder();
+      deleteRestoreVerificationPlanAssociationSettings =
+          settings.deleteRestoreVerificationPlanAssociationSettings.toBuilder();
+      deleteRestoreVerificationPlanAssociationOperationSettings =
+          settings.deleteRestoreVerificationPlanAssociationOperationSettings.toBuilder();
+      triggerRestoreVerificationSettings = settings.triggerRestoreVerificationSettings.toBuilder();
+      triggerRestoreVerificationOperationSettings =
+          settings.triggerRestoreVerificationOperationSettings.toBuilder();
+      getRestoreVerificationPlanSettings = settings.getRestoreVerificationPlanSettings.toBuilder();
+      listRestoreVerificationPlansSettings =
+          settings.listRestoreVerificationPlansSettings.toBuilder();
+      deleteRestoreVerificationPlanSettings =
+          settings.deleteRestoreVerificationPlanSettings.toBuilder();
+      deleteRestoreVerificationPlanOperationSettings =
+          settings.deleteRestoreVerificationPlanOperationSettings.toBuilder();
       createBackupVaultSettings = settings.createBackupVaultSettings.toBuilder();
       createBackupVaultOperationSettings = settings.createBackupVaultOperationSettings.toBuilder();
       listBackupVaultsSettings = settings.listBackupVaultsSettings.toBuilder();
@@ -2853,6 +3709,24 @@ public class BackupDRStubSettings extends StubSettings<BackupDRStubSettings> {
               getManagementServerSettings,
               createManagementServerSettings,
               deleteManagementServerSettings,
+              createRestoreTemplateSettings,
+              getRestoreTemplateSettings,
+              listRestoreTemplatesSettings,
+              updateRestoreTemplateSettings,
+              deleteRestoreTemplateSettings,
+              runRestoreTemplateSettings,
+              getRestoreTemplateExecutionSettings,
+              listRestoreTemplateExecutionsSettings,
+              triggerRestoreCleanupSettings,
+              createRestoreVerificationPlanSettings,
+              createRestoreVerificationPlanAssociationSettings,
+              getRestoreVerificationPlanAssociationSettings,
+              listRestoreVerificationPlanAssociationsSettings,
+              deleteRestoreVerificationPlanAssociationSettings,
+              triggerRestoreVerificationSettings,
+              getRestoreVerificationPlanSettings,
+              listRestoreVerificationPlansSettings,
+              deleteRestoreVerificationPlanSettings,
               createBackupVaultSettings,
               listBackupVaultsSettings,
               fetchUsableBackupVaultsSettings,
@@ -2947,6 +3821,96 @@ public class BackupDRStubSettings extends StubSettings<BackupDRStubSettings> {
 
       builder
           .deleteManagementServerSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .createRestoreTemplateSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .getRestoreTemplateSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listRestoreTemplatesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .updateRestoreTemplateSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .deleteRestoreTemplateSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .runRestoreTemplateSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .getRestoreTemplateExecutionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listRestoreTemplateExecutionsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .triggerRestoreCleanupSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .createRestoreVerificationPlanSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .createRestoreVerificationPlanAssociationSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .getRestoreVerificationPlanAssociationSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listRestoreVerificationPlanAssociationsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .deleteRestoreVerificationPlanAssociationSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .triggerRestoreVerificationSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .getRestoreVerificationPlanSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listRestoreVerificationPlansSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .deleteRestoreVerificationPlanSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
@@ -3117,53 +4081,53 @@ public class BackupDRStubSettings extends StubSettings<BackupDRStubSettings> {
 
       builder
           .createAutoProtectionPolicySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .listAutoProtectionPoliciesSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .getAutoProtectionPolicySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .updateAutoProtectionPolicySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .deleteAutoProtectionPolicySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .createAutoProtectionPolicyBindingSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .getAutoProtectionPolicyBindingSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .listAutoProtectionPolicyBindingsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .listAppliedAutoProtectionPoliciesSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .initiateDeleteAutoProtectionPolicyBindingSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .getBindingMatchingResourceSettings()
@@ -3172,8 +4136,8 @@ public class BackupDRStubSettings extends StubSettings<BackupDRStubSettings> {
 
       builder
           .listBindingMatchingResourcesSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .listLocationsSettings()
@@ -3229,6 +4193,254 @@ public class BackupDRStubSettings extends StubSettings<BackupDRStubSettings> {
           .setInitialCallSettings(
               UnaryCallSettings
                   .<DeleteManagementServerRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .createRestoreTemplateOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<CreateRestoreTemplateRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(RestoreTemplate.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .updateRestoreTemplateOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdateRestoreTemplateRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(RestoreTemplate.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .deleteRestoreTemplateOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteRestoreTemplateRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .runRestoreTemplateOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<RunRestoreTemplateRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(
+                  RunRestoreTemplateResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .triggerRestoreCleanupOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<TriggerRestoreCleanupRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(RestoreTemplateExecution.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .createRestoreVerificationPlanOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<CreateRestoreVerificationPlanRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(RestoreVerificationPlan.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .createRestoreVerificationPlanAssociationOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<CreateRestoreVerificationPlanAssociationRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(
+                  RestoreVerificationPlanAssociation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .deleteRestoreVerificationPlanAssociationOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteRestoreVerificationPlanAssociationRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .triggerRestoreVerificationOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<TriggerRestoreVerificationRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(
+                  TriggerRestoreVerificationResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .deleteRestoreVerificationPlanOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteRestoreVerificationPlanRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
                   .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
                   .build())
@@ -3618,8 +4830,8 @@ public class BackupDRStubSettings extends StubSettings<BackupDRStubSettings> {
               UnaryCallSettings
                   .<CreateAutoProtectionPolicyRequest, OperationSnapshot>
                       newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(AutoProtectionPolicy.class))
@@ -3643,8 +4855,8 @@ public class BackupDRStubSettings extends StubSettings<BackupDRStubSettings> {
               UnaryCallSettings
                   .<UpdateAutoProtectionPolicyRequest, OperationSnapshot>
                       newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(AutoProtectionPolicy.class))
@@ -3668,8 +4880,8 @@ public class BackupDRStubSettings extends StubSettings<BackupDRStubSettings> {
               UnaryCallSettings
                   .<DeleteAutoProtectionPolicyRequest, OperationSnapshot>
                       newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
@@ -3693,8 +4905,8 @@ public class BackupDRStubSettings extends StubSettings<BackupDRStubSettings> {
               UnaryCallSettings
                   .<CreateAutoProtectionPolicyBindingRequest, OperationSnapshot>
                       newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(
@@ -3719,8 +4931,8 @@ public class BackupDRStubSettings extends StubSettings<BackupDRStubSettings> {
               UnaryCallSettings
                   .<InitiateDeleteAutoProtectionPolicyBindingRequest, OperationSnapshot>
                       newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(
@@ -3795,6 +5007,217 @@ public class BackupDRStubSettings extends StubSettings<BackupDRStubSettings> {
     public OperationCallSettings.Builder<DeleteManagementServerRequest, Empty, OperationMetadata>
         deleteManagementServerOperationSettings() {
       return deleteManagementServerOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createRestoreTemplate. */
+    public UnaryCallSettings.Builder<CreateRestoreTemplateRequest, Operation>
+        createRestoreTemplateSettings() {
+      return createRestoreTemplateSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createRestoreTemplate. */
+    public OperationCallSettings.Builder<
+            CreateRestoreTemplateRequest, RestoreTemplate, OperationMetadata>
+        createRestoreTemplateOperationSettings() {
+      return createRestoreTemplateOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getRestoreTemplate. */
+    public UnaryCallSettings.Builder<GetRestoreTemplateRequest, RestoreTemplate>
+        getRestoreTemplateSettings() {
+      return getRestoreTemplateSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listRestoreTemplates. */
+    public PagedCallSettings.Builder<
+            ListRestoreTemplatesRequest,
+            ListRestoreTemplatesResponse,
+            ListRestoreTemplatesPagedResponse>
+        listRestoreTemplatesSettings() {
+      return listRestoreTemplatesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateRestoreTemplate. */
+    public UnaryCallSettings.Builder<UpdateRestoreTemplateRequest, Operation>
+        updateRestoreTemplateSettings() {
+      return updateRestoreTemplateSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateRestoreTemplate. */
+    public OperationCallSettings.Builder<
+            UpdateRestoreTemplateRequest, RestoreTemplate, OperationMetadata>
+        updateRestoreTemplateOperationSettings() {
+      return updateRestoreTemplateOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteRestoreTemplate. */
+    public UnaryCallSettings.Builder<DeleteRestoreTemplateRequest, Operation>
+        deleteRestoreTemplateSettings() {
+      return deleteRestoreTemplateSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteRestoreTemplate. */
+    public OperationCallSettings.Builder<DeleteRestoreTemplateRequest, Empty, OperationMetadata>
+        deleteRestoreTemplateOperationSettings() {
+      return deleteRestoreTemplateOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to runRestoreTemplate. */
+    public UnaryCallSettings.Builder<RunRestoreTemplateRequest, Operation>
+        runRestoreTemplateSettings() {
+      return runRestoreTemplateSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to runRestoreTemplate. */
+    public OperationCallSettings.Builder<
+            RunRestoreTemplateRequest, RunRestoreTemplateResponse, OperationMetadata>
+        runRestoreTemplateOperationSettings() {
+      return runRestoreTemplateOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getRestoreTemplateExecution. */
+    public UnaryCallSettings.Builder<GetRestoreTemplateExecutionRequest, RestoreTemplateExecution>
+        getRestoreTemplateExecutionSettings() {
+      return getRestoreTemplateExecutionSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listRestoreTemplateExecutions. */
+    public PagedCallSettings.Builder<
+            ListRestoreTemplateExecutionsRequest,
+            ListRestoreTemplateExecutionsResponse,
+            ListRestoreTemplateExecutionsPagedResponse>
+        listRestoreTemplateExecutionsSettings() {
+      return listRestoreTemplateExecutionsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to triggerRestoreCleanup. */
+    public UnaryCallSettings.Builder<TriggerRestoreCleanupRequest, Operation>
+        triggerRestoreCleanupSettings() {
+      return triggerRestoreCleanupSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to triggerRestoreCleanup. */
+    public OperationCallSettings.Builder<
+            TriggerRestoreCleanupRequest, RestoreTemplateExecution, OperationMetadata>
+        triggerRestoreCleanupOperationSettings() {
+      return triggerRestoreCleanupOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createRestoreVerificationPlan. */
+    public UnaryCallSettings.Builder<CreateRestoreVerificationPlanRequest, Operation>
+        createRestoreVerificationPlanSettings() {
+      return createRestoreVerificationPlanSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createRestoreVerificationPlan. */
+    public OperationCallSettings.Builder<
+            CreateRestoreVerificationPlanRequest, RestoreVerificationPlan, OperationMetadata>
+        createRestoreVerificationPlanOperationSettings() {
+      return createRestoreVerificationPlanOperationSettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * createRestoreVerificationPlanAssociation.
+     */
+    public UnaryCallSettings.Builder<CreateRestoreVerificationPlanAssociationRequest, Operation>
+        createRestoreVerificationPlanAssociationSettings() {
+      return createRestoreVerificationPlanAssociationSettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * createRestoreVerificationPlanAssociation.
+     */
+    public OperationCallSettings.Builder<
+            CreateRestoreVerificationPlanAssociationRequest,
+            RestoreVerificationPlanAssociation,
+            OperationMetadata>
+        createRestoreVerificationPlanAssociationOperationSettings() {
+      return createRestoreVerificationPlanAssociationOperationSettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to getRestoreVerificationPlanAssociation.
+     */
+    public UnaryCallSettings.Builder<
+            GetRestoreVerificationPlanAssociationRequest, RestoreVerificationPlanAssociation>
+        getRestoreVerificationPlanAssociationSettings() {
+      return getRestoreVerificationPlanAssociationSettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * listRestoreVerificationPlanAssociations.
+     */
+    public PagedCallSettings.Builder<
+            ListRestoreVerificationPlanAssociationsRequest,
+            ListRestoreVerificationPlanAssociationsResponse,
+            ListRestoreVerificationPlanAssociationsPagedResponse>
+        listRestoreVerificationPlanAssociationsSettings() {
+      return listRestoreVerificationPlanAssociationsSettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * deleteRestoreVerificationPlanAssociation.
+     */
+    public UnaryCallSettings.Builder<DeleteRestoreVerificationPlanAssociationRequest, Operation>
+        deleteRestoreVerificationPlanAssociationSettings() {
+      return deleteRestoreVerificationPlanAssociationSettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * deleteRestoreVerificationPlanAssociation.
+     */
+    public OperationCallSettings.Builder<
+            DeleteRestoreVerificationPlanAssociationRequest, Empty, OperationMetadata>
+        deleteRestoreVerificationPlanAssociationOperationSettings() {
+      return deleteRestoreVerificationPlanAssociationOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to triggerRestoreVerification. */
+    public UnaryCallSettings.Builder<TriggerRestoreVerificationRequest, Operation>
+        triggerRestoreVerificationSettings() {
+      return triggerRestoreVerificationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to triggerRestoreVerification. */
+    public OperationCallSettings.Builder<
+            TriggerRestoreVerificationRequest,
+            TriggerRestoreVerificationResponse,
+            OperationMetadata>
+        triggerRestoreVerificationOperationSettings() {
+      return triggerRestoreVerificationOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getRestoreVerificationPlan. */
+    public UnaryCallSettings.Builder<GetRestoreVerificationPlanRequest, RestoreVerificationPlan>
+        getRestoreVerificationPlanSettings() {
+      return getRestoreVerificationPlanSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listRestoreVerificationPlans. */
+    public PagedCallSettings.Builder<
+            ListRestoreVerificationPlansRequest,
+            ListRestoreVerificationPlansResponse,
+            ListRestoreVerificationPlansPagedResponse>
+        listRestoreVerificationPlansSettings() {
+      return listRestoreVerificationPlansSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteRestoreVerificationPlan. */
+    public UnaryCallSettings.Builder<DeleteRestoreVerificationPlanRequest, Operation>
+        deleteRestoreVerificationPlanSettings() {
+      return deleteRestoreVerificationPlanSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteRestoreVerificationPlan. */
+    public OperationCallSettings.Builder<
+            DeleteRestoreVerificationPlanRequest, Empty, OperationMetadata>
+        deleteRestoreVerificationPlanOperationSettings() {
+      return deleteRestoreVerificationPlanOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to createBackupVault. */

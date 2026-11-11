@@ -1310,6 +1310,7 @@ public class AuditManagerClient implements BackgroundResource {
    *           .setComplianceStandard("complianceStandard-1534269448")
    *           .setComplianceFramework("complianceFramework-1808314333")
    *           .setValidateOnly(true)
+   *           .putAllParameterOverrides(new HashMap<String, ParameterOverrides>())
    *           .build();
    *   AuditScopeReport response = auditManagerClient.generateAuditScopeReport(request);
    * }
@@ -1349,6 +1350,7 @@ public class AuditManagerClient implements BackgroundResource {
    *           .setComplianceStandard("complianceStandard-1534269448")
    *           .setComplianceFramework("complianceFramework-1808314333")
    *           .setValidateOnly(true)
+   *           .putAllParameterOverrides(new HashMap<String, ParameterOverrides>())
    *           .build();
    *   ApiFuture<AuditScopeReport> future =
    *       auditManagerClient.generateAuditScopeReportCallable().futureCall(request);
@@ -1437,6 +1439,7 @@ public class AuditManagerClient implements BackgroundResource {
    *           .setScope("scope109264468")
    *           .setComplianceStandard("complianceStandard-1534269448")
    *           .setComplianceFramework("complianceFramework-1808314333")
+   *           .putAllParameterOverrides(new HashMap<String, ParameterOverrides>())
    *           .setValidateOnly(true)
    *           .build();
    *   AuditReport response = auditManagerClient.generateAuditReportAsync(request).get();
@@ -1470,6 +1473,7 @@ public class AuditManagerClient implements BackgroundResource {
    *           .setScope("scope109264468")
    *           .setComplianceStandard("complianceStandard-1534269448")
    *           .setComplianceFramework("complianceFramework-1808314333")
+   *           .putAllParameterOverrides(new HashMap<String, ParameterOverrides>())
    *           .setValidateOnly(true)
    *           .build();
    *   OperationFuture<AuditReport, OperationMetadata> future =
@@ -1503,6 +1507,7 @@ public class AuditManagerClient implements BackgroundResource {
    *           .setScope("scope109264468")
    *           .setComplianceStandard("complianceStandard-1534269448")
    *           .setComplianceFramework("complianceFramework-1808314333")
+   *           .putAllParameterOverrides(new HashMap<String, ParameterOverrides>())
    *           .setValidateOnly(true)
    *           .build();
    *   ApiFuture<Operation> future =

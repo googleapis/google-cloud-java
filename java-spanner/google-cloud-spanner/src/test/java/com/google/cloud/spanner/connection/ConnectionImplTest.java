@@ -86,6 +86,7 @@ import com.google.common.io.ByteStreams;
 import com.google.spanner.admin.database.v1.UpdateDatabaseDdlMetadata;
 import com.google.spanner.v1.ExecuteSqlRequest.QueryOptions;
 import com.google.spanner.v1.ResultSetStats;
+import com.google.spanner.v1.TransactionOptions.IsolationLevel;
 import java.io.InputStream;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -254,6 +255,8 @@ public class ConnectionImplTest {
     DdlClient ddlClient = createDefaultMockDdlClient();
     DatabaseClient dbClient = mock(DatabaseClient.class);
     when(dbClient.getDialect()).thenReturn(dialect);
+    when(dbClient.getDatabaseDefaultIsolationLevel())
+        .thenReturn(IsolationLevel.ISOLATION_LEVEL_UNSPECIFIED);
     ReadOnlyTransaction singleUseReadOnlyTx = mock(ReadOnlyTransaction.class);
 
     ResultSet mockResultSetWithStats = createSelect1MockResultSet();

@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-observability</artifactId>
-  <version>0.1.0</version><!-- {x-version-update:google-cloud-observability:current} -->
+  <version>0.2.0</version><!-- {x-version-update:google-cloud-observability:current} -->
   <packaging>jar</packaging>
   <name>Google Observability</name>
   <description>Observability Provides functionality for configuring the observability scope, which
@@ -11,7 +11,7 @@ controls the log, metric, and trace data that you can view.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-observability-parent</artifactId>
-    <version>0.1.0</version><!-- {x-version-update:google-cloud-observability:current} -->
+    <version>0.2.0</version><!-- {x-version-update:google-cloud-observability:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-observability</site.installationModule>

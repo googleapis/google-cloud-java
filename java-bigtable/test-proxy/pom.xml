@@ -11,11 +11,11 @@
   <parent>
     <artifactId>google-cloud-bigtable-parent</artifactId>
     <groupId>com.google.cloud</groupId>
-    <version>2.87.0</version><!-- {x-version-update:google-cloud-bigtable:current} -->
+    <version>2.88.0</version><!-- {x-version-update:google-cloud-bigtable:current} -->
   </parent>
 
   <properties>
-    <bigtable.client.version>2.87.0</bigtable.client.version><!-- {x-version-update:google-cloud-bigtable:current} -->
+    <bigtable.client.version>2.88.0</bigtable.client.version><!-- {x-version-update:google-cloud-bigtable:current} -->
   </properties>
 
   <dependencyManagement>

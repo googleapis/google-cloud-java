@@ -232,7 +232,7 @@ public final class Item extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Optional. A bucket of any [event parameters related to an
-   * item](https://developers.google.com/analytics/devguides/collection/protocol/ga4/reference/events)
+   * item](https://developers.google.com/data-manager/api/reference/analytics/recommended-events)
    * to be included within the event that were not already specified using other
    * structured fields.
    * </pre>
@@ -252,7 +252,7 @@ public final class Item extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Optional. A bucket of any [event parameters related to an
-   * item](https://developers.google.com/analytics/devguides/collection/protocol/ga4/reference/events)
+   * item](https://developers.google.com/data-manager/api/reference/analytics/recommended-events)
    * to be included within the event that were not already specified using other
    * structured fields.
    * </pre>
@@ -272,7 +272,7 @@ public final class Item extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Optional. A bucket of any [event parameters related to an
-   * item](https://developers.google.com/analytics/devguides/collection/protocol/ga4/reference/events)
+   * item](https://developers.google.com/data-manager/api/reference/analytics/recommended-events)
    * to be included within the event that were not already specified using other
    * structured fields.
    * </pre>
@@ -291,7 +291,7 @@ public final class Item extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Optional. A bucket of any [event parameters related to an
-   * item](https://developers.google.com/analytics/devguides/collection/protocol/ga4/reference/events)
+   * item](https://developers.google.com/data-manager/api/reference/analytics/recommended-events)
    * to be included within the event that were not already specified using other
    * structured fields.
    * </pre>
@@ -310,7 +310,7 @@ public final class Item extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Optional. A bucket of any [event parameters related to an
-   * item](https://developers.google.com/analytics/devguides/collection/protocol/ga4/reference/events)
+   * item](https://developers.google.com/data-manager/api/reference/analytics/recommended-events)
    * to be included within the event that were not already specified using other
    * structured fields.
    * </pre>
@@ -1622,7 +1622,7 @@ public final class Item extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. A bucket of any [event parameters related to an
-     * item](https://developers.google.com/analytics/devguides/collection/protocol/ga4/reference/events)
+     * item](https://developers.google.com/data-manager/api/reference/analytics/recommended-events)
      * to be included within the event that were not already specified using other
      * structured fields.
      * </pre>
@@ -1645,7 +1645,7 @@ public final class Item extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. A bucket of any [event parameters related to an
-     * item](https://developers.google.com/analytics/devguides/collection/protocol/ga4/reference/events)
+     * item](https://developers.google.com/data-manager/api/reference/analytics/recommended-events)
      * to be included within the event that were not already specified using other
      * structured fields.
      * </pre>
@@ -1667,7 +1667,7 @@ public final class Item extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. A bucket of any [event parameters related to an
-     * item](https://developers.google.com/analytics/devguides/collection/protocol/ga4/reference/events)
+     * item](https://developers.google.com/data-manager/api/reference/analytics/recommended-events)
      * to be included within the event that were not already specified using other
      * structured fields.
      * </pre>
@@ -1689,7 +1689,7 @@ public final class Item extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. A bucket of any [event parameters related to an
-     * item](https://developers.google.com/analytics/devguides/collection/protocol/ga4/reference/events)
+     * item](https://developers.google.com/data-manager/api/reference/analytics/recommended-events)
      * to be included within the event that were not already specified using other
      * structured fields.
      * </pre>
@@ -1718,7 +1718,7 @@ public final class Item extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. A bucket of any [event parameters related to an
-     * item](https://developers.google.com/analytics/devguides/collection/protocol/ga4/reference/events)
+     * item](https://developers.google.com/data-manager/api/reference/analytics/recommended-events)
      * to be included within the event that were not already specified using other
      * structured fields.
      * </pre>
@@ -1744,7 +1744,7 @@ public final class Item extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. A bucket of any [event parameters related to an
-     * item](https://developers.google.com/analytics/devguides/collection/protocol/ga4/reference/events)
+     * item](https://developers.google.com/data-manager/api/reference/analytics/recommended-events)
      * to be included within the event that were not already specified using other
      * structured fields.
      * </pre>
@@ -1772,7 +1772,7 @@ public final class Item extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. A bucket of any [event parameters related to an
-     * item](https://developers.google.com/analytics/devguides/collection/protocol/ga4/reference/events)
+     * item](https://developers.google.com/data-manager/api/reference/analytics/recommended-events)
      * to be included within the event that were not already specified using other
      * structured fields.
      * </pre>
@@ -1801,7 +1801,7 @@ public final class Item extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. A bucket of any [event parameters related to an
-     * item](https://developers.google.com/analytics/devguides/collection/protocol/ga4/reference/events)
+     * item](https://developers.google.com/data-manager/api/reference/analytics/recommended-events)
      * to be included within the event that were not already specified using other
      * structured fields.
      * </pre>
@@ -1827,7 +1827,7 @@ public final class Item extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. A bucket of any [event parameters related to an
-     * item](https://developers.google.com/analytics/devguides/collection/protocol/ga4/reference/events)
+     * item](https://developers.google.com/data-manager/api/reference/analytics/recommended-events)
      * to be included within the event that were not already specified using other
      * structured fields.
      * </pre>
@@ -1853,7 +1853,7 @@ public final class Item extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. A bucket of any [event parameters related to an
-     * item](https://developers.google.com/analytics/devguides/collection/protocol/ga4/reference/events)
+     * item](https://developers.google.com/data-manager/api/reference/analytics/recommended-events)
      * to be included within the event that were not already specified using other
      * structured fields.
      * </pre>
@@ -1879,7 +1879,7 @@ public final class Item extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. A bucket of any [event parameters related to an
-     * item](https://developers.google.com/analytics/devguides/collection/protocol/ga4/reference/events)
+     * item](https://developers.google.com/data-manager/api/reference/analytics/recommended-events)
      * to be included within the event that were not already specified using other
      * structured fields.
      * </pre>
@@ -1904,7 +1904,7 @@ public final class Item extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. A bucket of any [event parameters related to an
-     * item](https://developers.google.com/analytics/devguides/collection/protocol/ga4/reference/events)
+     * item](https://developers.google.com/data-manager/api/reference/analytics/recommended-events)
      * to be included within the event that were not already specified using other
      * structured fields.
      * </pre>
@@ -1929,7 +1929,7 @@ public final class Item extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. A bucket of any [event parameters related to an
-     * item](https://developers.google.com/analytics/devguides/collection/protocol/ga4/reference/events)
+     * item](https://developers.google.com/data-manager/api/reference/analytics/recommended-events)
      * to be included within the event that were not already specified using other
      * structured fields.
      * </pre>
@@ -1948,7 +1948,7 @@ public final class Item extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. A bucket of any [event parameters related to an
-     * item](https://developers.google.com/analytics/devguides/collection/protocol/ga4/reference/events)
+     * item](https://developers.google.com/data-manager/api/reference/analytics/recommended-events)
      * to be included within the event that were not already specified using other
      * structured fields.
      * </pre>
@@ -1971,7 +1971,7 @@ public final class Item extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. A bucket of any [event parameters related to an
-     * item](https://developers.google.com/analytics/devguides/collection/protocol/ga4/reference/events)
+     * item](https://developers.google.com/data-manager/api/reference/analytics/recommended-events)
      * to be included within the event that were not already specified using other
      * structured fields.
      * </pre>
@@ -1994,7 +1994,7 @@ public final class Item extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. A bucket of any [event parameters related to an
-     * item](https://developers.google.com/analytics/devguides/collection/protocol/ga4/reference/events)
+     * item](https://developers.google.com/data-manager/api/reference/analytics/recommended-events)
      * to be included within the event that were not already specified using other
      * structured fields.
      * </pre>
@@ -2014,7 +2014,7 @@ public final class Item extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. A bucket of any [event parameters related to an
-     * item](https://developers.google.com/analytics/devguides/collection/protocol/ga4/reference/events)
+     * item](https://developers.google.com/data-manager/api/reference/analytics/recommended-events)
      * to be included within the event that were not already specified using other
      * structured fields.
      * </pre>
@@ -2034,7 +2034,7 @@ public final class Item extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. A bucket of any [event parameters related to an
-     * item](https://developers.google.com/analytics/devguides/collection/protocol/ga4/reference/events)
+     * item](https://developers.google.com/data-manager/api/reference/analytics/recommended-events)
      * to be included within the event that were not already specified using other
      * structured fields.
      * </pre>

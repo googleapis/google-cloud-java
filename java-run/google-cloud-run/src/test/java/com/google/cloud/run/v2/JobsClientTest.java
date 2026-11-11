@@ -125,6 +125,7 @@ public class JobsClientTest {
             .setLatestCreatedExecution(ExecutionReference.newBuilder().build())
             .setReconciling(true)
             .setSatisfiesPzs(true)
+            .setFunctionalType(FunctionalType.forNumber(0))
             .setEtag("etag3123477")
             .build();
     Operation resultOperation =
@@ -200,6 +201,7 @@ public class JobsClientTest {
             .setLatestCreatedExecution(ExecutionReference.newBuilder().build())
             .setReconciling(true)
             .setSatisfiesPzs(true)
+            .setFunctionalType(FunctionalType.forNumber(0))
             .setEtag("etag3123477")
             .build();
     Operation resultOperation =
@@ -275,6 +277,7 @@ public class JobsClientTest {
             .setLatestCreatedExecution(ExecutionReference.newBuilder().build())
             .setReconciling(true)
             .setSatisfiesPzs(true)
+            .setFunctionalType(FunctionalType.forNumber(0))
             .setEtag("etag3123477")
             .build();
     mockJobs.addResponse(expectedResponse);
@@ -336,6 +339,7 @@ public class JobsClientTest {
             .setLatestCreatedExecution(ExecutionReference.newBuilder().build())
             .setReconciling(true)
             .setSatisfiesPzs(true)
+            .setFunctionalType(FunctionalType.forNumber(0))
             .setEtag("etag3123477")
             .build();
     mockJobs.addResponse(expectedResponse);
@@ -485,6 +489,7 @@ public class JobsClientTest {
             .setLatestCreatedExecution(ExecutionReference.newBuilder().build())
             .setReconciling(true)
             .setSatisfiesPzs(true)
+            .setFunctionalType(FunctionalType.forNumber(0))
             .setEtag("etag3123477")
             .build();
     Operation resultOperation =
@@ -554,6 +559,7 @@ public class JobsClientTest {
             .setLatestCreatedExecution(ExecutionReference.newBuilder().build())
             .setReconciling(true)
             .setSatisfiesPzs(true)
+            .setFunctionalType(FunctionalType.forNumber(0))
             .setEtag("etag3123477")
             .build();
     Operation resultOperation =
@@ -623,6 +629,7 @@ public class JobsClientTest {
             .setLatestCreatedExecution(ExecutionReference.newBuilder().build())
             .setReconciling(true)
             .setSatisfiesPzs(true)
+            .setFunctionalType(FunctionalType.forNumber(0))
             .setEtag("etag3123477")
             .build();
     Operation resultOperation =
@@ -696,6 +703,8 @@ public class JobsClientTest {
             .setRetriedCount(-1654679545)
             .setLogUri("logUri-1097354360")
             .setSatisfiesPzs(true)
+            .setClient("client-1357712437")
+            .setClientVersion("clientVersion771880589")
             .setEtag("etag3123477")
             .build();
     Operation resultOperation =
@@ -769,6 +778,8 @@ public class JobsClientTest {
             .setRetriedCount(-1654679545)
             .setLogUri("logUri-1097354360")
             .setSatisfiesPzs(true)
+            .setClient("client-1357712437")
+            .setClientVersion("clientVersion771880589")
             .setEtag("etag3123477")
             .build();
     Operation resultOperation =
