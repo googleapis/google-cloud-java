@@ -57,7 +57,10 @@ class CompositeTracer extends BaseApiTracer {
 
     try {
       for (ApiTracer child : children) {
-        childScopes.add(child.inScope());
+        Scope childScope = child.inScope();
+        if (childScope != null) {
+          childScopes.add(childScope);
+        }
       }
     } catch (RuntimeException e) {
       for (int i = childScopes.size() - 1; i >= 0; i--) {
@@ -91,22 +94,28 @@ class CompositeTracer extends BaseApiTracer {
 
   @Override
   public void operationSucceeded() {
-    for (int i = children.size() - 1; i >= 0; i--) {
-      children.get(i).operationSucceeded();
+    try (Scope ignored = inScope()) {
+      for (int i = children.size() - 1; i >= 0; i--) {
+        children.get(i).operationSucceeded();
+      }
     }
   }
 
   @Override
   public void operationCancelled() {
-    for (int i = children.size() - 1; i >= 0; i--) {
-      children.get(i).operationCancelled();
+    try (Scope ignored = inScope()) {
+      for (int i = children.size() - 1; i >= 0; i--) {
+        children.get(i).operationCancelled();
+      }
     }
   }
 
   @Override
   public void operationFailed(Throwable error) {
-    for (int i = children.size() - 1; i >= 0; i--) {
-      children.get(i).operationFailed(error);
+    try (Scope ignored = inScope()) {
+      for (int i = children.size() - 1; i >= 0; i--) {
+        children.get(i).operationFailed(error);
+      }
     }
   }
 
@@ -134,43 +143,55 @@ class CompositeTracer extends BaseApiTracer {
 
   @Override
   public void attemptSucceeded() {
-    for (int i = children.size() - 1; i >= 0; i--) {
-      children.get(i).attemptSucceeded();
+    try (Scope ignored = inScope()) {
+      for (int i = children.size() - 1; i >= 0; i--) {
+        children.get(i).attemptSucceeded();
+      }
     }
   }
 
   @Override
   public void attemptCancelled() {
-    for (int i = children.size() - 1; i >= 0; i--) {
-      children.get(i).attemptCancelled();
+    try (Scope ignored = inScope()) {
+      for (int i = children.size() - 1; i >= 0; i--) {
+        children.get(i).attemptCancelled();
+      }
     }
   }
 
   @Override
   public void attemptFailed(Throwable error, org.threeten.bp.Duration delay) {
-    for (int i = children.size() - 1; i >= 0; i--) {
-      children.get(i).attemptFailed(error, delay);
+    try (Scope ignored = inScope()) {
+      for (int i = children.size() - 1; i >= 0; i--) {
+        children.get(i).attemptFailed(error, delay);
+      }
     }
   }
 
   @Override
   public void attemptFailedDuration(Throwable error, java.time.Duration delay) {
-    for (int i = children.size() - 1; i >= 0; i--) {
-      children.get(i).attemptFailedDuration(error, delay);
+    try (Scope ignored = inScope()) {
+      for (int i = children.size() - 1; i >= 0; i--) {
+        children.get(i).attemptFailedDuration(error, delay);
+      }
     }
   }
 
   @Override
   public void attemptFailedRetriesExhausted(Throwable error) {
-    for (int i = children.size() - 1; i >= 0; i--) {
-      children.get(i).attemptFailedRetriesExhausted(error);
+    try (Scope ignored = inScope()) {
+      for (int i = children.size() - 1; i >= 0; i--) {
+        children.get(i).attemptFailedRetriesExhausted(error);
+      }
     }
   }
 
   @Override
   public void attemptPermanentFailure(Throwable error) {
-    for (int i = children.size() - 1; i >= 0; i--) {
-      children.get(i).attemptPermanentFailure(error);
+    try (Scope ignored = inScope()) {
+      for (int i = children.size() - 1; i >= 0; i--) {
+        children.get(i).attemptPermanentFailure(error);
+      }
     }
   }
 
