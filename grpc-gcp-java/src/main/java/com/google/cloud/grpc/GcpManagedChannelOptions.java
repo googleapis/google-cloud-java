@@ -820,6 +820,8 @@ public class GcpManagedChannelOptions {
      * to "10" in creation order, then "other". Values are unique within the process and never
      * reused. A client library that creates several pools for one client (for example one per
      * network path) should call this once per client and pass the same value to all of its pools.
+     * If several pools share a pool index, give each of them a different value for at least one
+     * other attribute, for example {@code lane}, so that their counts are reported separately.
      */
     @InternalApi("For use by Google Cloud client libraries only")
     public static String nextBuiltInMetricsPoolIndex() {
@@ -976,14 +978,14 @@ public class GcpManagedChannelOptions {
       }
 
       /**
-       * Sets the pool index that is added as the {@code pool_index} attribute to the built-in
-       * channel count metric of this pool. Use {@link
-       * GcpMetricsOptions#nextBuiltInMetricsPoolIndex()} to get a value. The pool index is not
-       * added to the other built-in channel pool metrics.
+       * Sets the value of the {@code pool_index} attribute on the built-in {@code channel_count}
+       * metric of this pool. Get the value from {@link
+       * GcpMetricsOptions#nextBuiltInMetricsPoolIndex()}.
        *
        * <p>This is not intended for application use.
        *
-       * @param poolIndex the pool index, or null to leave it out.
+       * @param poolIndex the pool index, or null to report {@code channel_count} without a {@code
+       *     pool_index} attribute.
        */
       @InternalApi("For use by Google Cloud client libraries only")
       public Builder withBuiltInMetricsPoolIndex(@Nullable String poolIndex) {

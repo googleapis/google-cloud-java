@@ -31,17 +31,15 @@ import java.util.WeakHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
- * Process-wide reader of the channel pool metrics that a Google Cloud client library sends to its
- * built-in metrics pipeline.
+ * Process-wide singleton reader of built-in channel pool metrics for a {@link Meter}. All channel
+ * pools configured with that meter register with this shared instance (retrieved via {@link
+ * #forMeter(Meter)}).
  *
- * <p>There is one instance per built-in metrics {@link Meter}. Every pool configured with that
- * meter joins it, and a single callback, registered once, reads the active and draining channel
- * counts of all live pools whenever metrics are collected. Counts of pools with the same attributes
- * are added up, so several pools in one process are reported correctly. Reading the real pool sizes
- * at collection time means the values cannot drift.
- *
- * <p>A pool leaves on shutdown. Pools are held weakly, so a pool that is never shut down does not
- * stay reachable because of these metrics.
+ * <p>Whenever metrics are collected, a single callback samples the current sizes of the active and
+ * draining channel lists across all registered pools. Channel counts from pools with identical
+ * attributes are summed together so they do not overwrite each other. Reading the live collections
+ * directly on each export—rather than maintaining an incremental running counter—guarantees that
+ * reported counts never desynchronize from the actual number of channels.
  */
 final class GcpChannelPoolBuiltInMetrics {
 
@@ -61,9 +59,10 @@ final class GcpChannelPoolBuiltInMetrics {
   private GcpChannelPoolBuiltInMetrics() {}
 
   /**
-   * Returns the next pool index for this process: "1" to "10" in order, then "other". Indexes are
-   * never reused, so the data of a closed pool is never mixed with a newer pool. The cap keeps the
-   * number of time series bounded for applications that create many clients.
+   * Returns a process-unique pool index: sequentially from "1" to "10", and "other" thereafter.
+   *
+   * <p>Indices are never reused. Capping the index bounds metric cardinality in Cloud Monitoring
+   * when applications create multiple channel pools.
    */
   static String nextPoolIndex() {
     int index = lastPoolIndex.updateAndGet(i -> Math.min(i + 1, MAX_POOL_INDEX + 1));
@@ -89,8 +88,6 @@ final class GcpChannelPoolBuiltInMetrics {
   }
 
   private void registerInstruments(Meter meter) {
-    // An asynchronous up-down counter, not a gauge: the value is a total number of channels, which
-    // stays meaningful when attributes are dropped and the values are added up.
     meter
         .upDownCounterBuilder(GcpMetricsConstants.METRIC_CHANNEL_POOL_CHANNEL_COUNT)
         .setDescription("The number of channels in the pool, by state.")
@@ -118,7 +115,9 @@ final class GcpChannelPoolBuiltInMetrics {
     }
     Map<Attributes, Long> totals = new HashMap<>();
     for (GcpManagedChannel pool : snapshot) {
-      pool.addBuiltInChannelCounts(totals);
+      if (pool != null) {
+        pool.addBuiltInChannelCounts(totals);
+      }
     }
     totals.forEach((attributes, count) -> measurement.record(count, attributes));
   }

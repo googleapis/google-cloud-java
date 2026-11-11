@@ -86,6 +86,7 @@ public final class GcpChannelPoolBuiltInMetricsTest {
       provider.close();
     }
     executor.shutdownNow();
+    GcpChannelPoolBuiltInMetrics.resetPoolIndexForTest();
   }
 
   @Test
@@ -224,7 +225,6 @@ public final class GcpChannelPoolBuiltInMetricsTest {
 
   @Test
   public void poolIndexCountsUpToTenThenReportsOther() {
-    GcpChannelPoolBuiltInMetrics.resetPoolIndexForTest();
     List<String> indexes = new ArrayList<>();
     for (int i = 0; i < 12; i++) {
       indexes.add(GcpMetricsOptions.nextBuiltInMetricsPoolIndex());
@@ -237,7 +237,6 @@ public final class GcpChannelPoolBuiltInMetricsTest {
 
   @Test
   public void poolIndexIsNotReusedAfterPoolShutdown() {
-    GcpChannelPoolBuiltInMetrics.resetPoolIndexForTest();
     String first = GcpMetricsOptions.nextBuiltInMetricsPoolIndex();
     GcpManagedChannel pool =
         newPool(
@@ -253,7 +252,6 @@ public final class GcpChannelPoolBuiltInMetricsTest {
 
   @Test
   public void poolIndexIsUniqueAcrossThreads() throws Exception {
-    GcpChannelPoolBuiltInMetrics.resetPoolIndexForTest();
     ExecutorService threads = Executors.newFixedThreadPool(8);
     try {
       List<Future<String>> futures = new ArrayList<>();
