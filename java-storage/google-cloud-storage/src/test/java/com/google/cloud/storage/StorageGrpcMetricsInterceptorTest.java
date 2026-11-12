@@ -103,8 +103,7 @@ public final class StorageGrpcMetricsInterceptorTest {
   @Test
   public void interceptCall_recordsFullMethodNameAcrossOperations() {
     StorageClientMetrics metrics = StorageClientMetrics.create(meterProvider, true, false);
-    StorageGrpcMetricsInterceptor interceptor =
-        new StorageGrpcMetricsInterceptor(metrics, clock, "storage.googleapis.com");
+    StorageGrpcMetricsInterceptor interceptor = new StorageGrpcMetricsInterceptor(metrics, clock);
 
     for (MethodDescriptor<Void, Void> method :
         ImmutableList.of(
@@ -162,7 +161,11 @@ public final class StorageGrpcMetricsInterceptorTest {
     assertThat(
             StorageGrpcMetricsInterceptor.isDirectPathIp(
                 InetAddress.getByName("2001:4860:8044::1")))
-        .isFalse();
+        .isTrue();
+    assertThat(
+            StorageGrpcMetricsInterceptor.isDirectPathIp(
+                InetAddress.getByName("2001:4860:807f::1")))
+        .isTrue();
     assertThat(
             StorageGrpcMetricsInterceptor.isDirectPathIp(
                 InetAddress.getByName("2001:4860:8080:0000:0000:0000:0000:0001")))
@@ -202,8 +205,7 @@ public final class StorageGrpcMetricsInterceptorTest {
   @Test
   public void interceptCall_unaryCallSuccess_recordsMetricWithErrorTypeOk() throws Exception {
     StorageClientMetrics metrics = StorageClientMetrics.create(meterProvider, true, false);
-    StorageGrpcMetricsInterceptor interceptor =
-        new StorageGrpcMetricsInterceptor(metrics, clock, "https://storage.googleapis.com");
+    StorageGrpcMetricsInterceptor interceptor = new StorageGrpcMetricsInterceptor(metrics, clock);
 
     Attributes callAttrs =
         Attributes.newBuilder()
@@ -250,8 +252,7 @@ public final class StorageGrpcMetricsInterceptorTest {
   @Test
   public void interceptCall_callFails_recordsErrorType() throws Exception {
     StorageClientMetrics metrics = StorageClientMetrics.create(meterProvider, true, false);
-    StorageGrpcMetricsInterceptor interceptor =
-        new StorageGrpcMetricsInterceptor(metrics, clock, "storage.googleapis.com");
+    StorageGrpcMetricsInterceptor interceptor = new StorageGrpcMetricsInterceptor(metrics, clock);
 
     TestClientCall<Void, Void> testCall = new TestClientCall<>(Attributes.EMPTY);
     TestChannel testChannel = new TestChannel(testCall, "storage.googleapis.com");
@@ -283,8 +284,7 @@ public final class StorageGrpcMetricsInterceptorTest {
   @Test
   public void interceptCall_disabledMetrics_doesNotRecord() {
     StorageClientMetrics metrics = StorageClientMetrics.create(meterProvider, false, false);
-    StorageGrpcMetricsInterceptor interceptor =
-        new StorageGrpcMetricsInterceptor(metrics, clock, "storage.googleapis.com");
+    StorageGrpcMetricsInterceptor interceptor = new StorageGrpcMetricsInterceptor(metrics, clock);
 
     TestClientCall<Void, Void> testCall = new TestClientCall<>(Attributes.EMPTY);
     TestChannel testChannel = new TestChannel(testCall, "storage.googleapis.com");
@@ -298,37 +298,18 @@ public final class StorageGrpcMetricsInterceptorTest {
   }
 
   @Test
-  public void interceptCall_nullDefaultEndpoint_fallsBackToChannelAuthority() {
-    StorageClientMetrics metrics = StorageClientMetrics.create(meterProvider, true, false);
-    StorageGrpcMetricsInterceptor interceptor =
-        new StorageGrpcMetricsInterceptor(metrics, clock, null);
-
-    TestClientCall<Void, Void> testCall = new TestClientCall<>(Attributes.EMPTY);
-    TestChannel testChannel = new TestChannel(testCall, "storage.googleapis.com:443");
-
-    ClientCall<Void, Void> call =
-        interceptor.interceptCall(READ_OBJECT_METHOD, CallOptions.DEFAULT, testChannel);
-    call.start(new TestListener<>(), new Metadata());
-    testCall.close(Status.OK, new Metadata());
-
-    MetricData rpcDurationData =
-        reader.collectAllMetrics().stream()
-            .filter(m -> m.getName().equals(StorageClientMetrics.METRIC_RPC_CLIENT_CALL_DURATION))
-            .findFirst()
-            .orElse(null);
-
-    assertThat(rpcDurationData).isNotNull();
-    HistogramPointData point = rpcDurationData.getHistogramData().getPoints().iterator().next();
-    assertThat(point.getAttributes().get(StorageClientMetrics.KEY_SERVER_ADDRESS))
-        .isEqualTo("storage.googleapis.com");
-  }
-
-  @Test
   public void googleC2pEndpoint_setsUnknownWhenRemoteAddrAbsent() {
-    StorageClientMetrics metrics = StorageClientMetrics.create(meterProvider, true, false);
-    StorageGrpcMetricsInterceptor interceptor =
-        new StorageGrpcMetricsInterceptor(
-            metrics, clock, "  google-c2p:///storage.googleapis.com  ");
+    GrpcStorageOptions grpcOptions =
+        StorageOptions.grpc()
+            .setProjectId("test-project")
+            .setCredentials(NoCredentials.getInstance())
+            .setEnableOtelMetrics(true)
+            .setMeterProvider(meterProvider)
+            .setHost("  google-c2p:///storage.googleapis.com  ")
+            .build();
+    StorageClientMetrics metrics = grpcOptions.getStorageClientMetrics();
+    assertThat(metrics).isNotNull();
+    StorageGrpcMetricsInterceptor interceptor = new StorageGrpcMetricsInterceptor(metrics, clock);
 
     TestClientCall<Void, Void> testCall = new TestClientCall<>(Attributes.EMPTY);
     TestChannel testChannel = new TestChannel(testCall, "storage.googleapis.com");
@@ -355,8 +336,7 @@ public final class StorageGrpcMetricsInterceptorTest {
   @Test
   public void interceptCall_statusWithNetworkCause_recordsCauseErrorType() {
     StorageClientMetrics metrics = StorageClientMetrics.create(meterProvider, true, false);
-    StorageGrpcMetricsInterceptor interceptor =
-        new StorageGrpcMetricsInterceptor(metrics, clock, "storage.googleapis.com");
+    StorageGrpcMetricsInterceptor interceptor = new StorageGrpcMetricsInterceptor(metrics, clock);
 
     TestClientCall<Void, Void> testCall = new TestClientCall<>(Attributes.EMPTY);
     TestChannel testChannel = new TestChannel(testCall, "storage.googleapis.com");
@@ -385,8 +365,7 @@ public final class StorageGrpcMetricsInterceptorTest {
   @Test
   public void interceptCall_duplicateOnClose_recordsOnlyOnce() {
     StorageClientMetrics metrics = StorageClientMetrics.create(meterProvider, true, false);
-    StorageGrpcMetricsInterceptor interceptor =
-        new StorageGrpcMetricsInterceptor(metrics, clock, "storage.googleapis.com");
+    StorageGrpcMetricsInterceptor interceptor = new StorageGrpcMetricsInterceptor(metrics, clock);
 
     TestClientCall<Void, Void> testCall = new TestClientCall<>(Attributes.EMPTY);
     TestChannel testChannel = new TestChannel(testCall, "storage.googleapis.com");
@@ -410,15 +389,21 @@ public final class StorageGrpcMetricsInterceptorTest {
   }
 
   @Test
-  public void interceptCall_withStorageMetricsContext_propagatesContext() {
+  public void interceptCall_withStorageMetricsContext_propagatesContextAndFeedsNetworkPath()
+      throws Exception {
     StorageClientMetrics metrics = StorageClientMetrics.create(meterProvider, true, false);
-    StorageGrpcMetricsInterceptor interceptor =
-        new StorageGrpcMetricsInterceptor(metrics, clock, "storage.googleapis.com");
+    StorageGrpcMetricsInterceptor interceptor = new StorageGrpcMetricsInterceptor(metrics, clock);
 
     StorageMetricsContext metricsContext = StorageMetricsContext.create("ReadObject");
     CallOptions callOptions = metricsContext.attach(CallOptions.DEFAULT);
 
-    TestClientCall<Void, Void> testCall = new TestClientCall<>(Attributes.EMPTY);
+    Attributes directPathAttrs =
+        Attributes.newBuilder()
+            .set(
+                Grpc.TRANSPORT_ATTR_REMOTE_ADDR,
+                new InetSocketAddress(InetAddress.getByName("34.126.1.2"), 443))
+            .build();
+    TestClientCall<Void, Void> testCall = new TestClientCall<>(directPathAttrs);
     TestChannel testChannel = new TestChannel(testCall, "storage.googleapis.com");
 
     ClientCall<Void, Void> call =
@@ -426,14 +411,34 @@ public final class StorageGrpcMetricsInterceptorTest {
     call.start(new TestListener<>(), new Metadata());
     testCall.close(Status.OK, new Metadata());
 
+    metricsContext.recordAttemptSuccess(metrics);
+
+    Collection<MetricData> allMetrics = reader.collectAllMetrics();
     MetricData rpcDurationData =
-        reader.collectAllMetrics().stream()
+        allMetrics.stream()
             .filter(m -> m.getName().equals(StorageClientMetrics.METRIC_RPC_CLIENT_CALL_DURATION))
             .findFirst()
             .orElse(null);
 
     assertThat(rpcDurationData).isNotNull();
     assertThat(rpcDurationData.getHistogramData().getPoints()).hasSize(1);
+
+    MetricData attemptsData =
+        allMetrics.stream()
+            .filter(
+                m -> m.getName().equals(StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_ATTEMPTS))
+            .findFirst()
+            .orElse(null);
+    assertThat(attemptsData).isNotNull();
+    assertThat(
+            attemptsData
+                .getLongSumData()
+                .getPoints()
+                .iterator()
+                .next()
+                .getAttributes()
+                .get(StorageClientMetrics.KEY_NETWORK_PATH))
+        .isEqualTo(StorageClientMetrics.NETWORK_PATH_DIRECTPATH);
   }
 
   @Test
@@ -475,8 +480,7 @@ public final class StorageGrpcMetricsInterceptorTest {
     Mockito.when(mockMeterProvider.meterBuilder(Mockito.anyString())).thenReturn(mockMeterBuilder);
 
     StorageClientMetrics metrics = StorageClientMetrics.create(mockMeterProvider, true, false);
-    StorageGrpcMetricsInterceptor interceptor =
-        new StorageGrpcMetricsInterceptor(metrics, clock, "storage.googleapis.com");
+    StorageGrpcMetricsInterceptor interceptor = new StorageGrpcMetricsInterceptor(metrics, clock);
 
     TestClientCall<Void, Void> testCall = new TestClientCall<>(Attributes.EMPTY);
     TestChannel testChannel = new TestChannel(testCall, "storage.googleapis.com");
@@ -589,6 +593,33 @@ public final class StorageGrpcMetricsInterceptorTest {
     assertThat(emptyCombinedProvider.getInterceptors().get(0))
         .isInstanceOf(StorageGrpcMetricsInterceptor.class);
     assertThat(customCalled.get()).isFalse();
+
+    GrpcInterceptorProvider userProvider = () -> ImmutableList.of(customInterceptor);
+    GrpcStorageOptions disabledCustomOptions =
+        StorageOptions.grpc()
+            .setProjectId("test-project")
+            .setCredentials(NoCredentials.getInstance())
+            .setEnableOtelMetrics(false)
+            .setGrpcInterceptorProvider(userProvider)
+            .build();
+    InstantiatingGrpcChannelProvider disabledCustomChannelProvider =
+        (InstantiatingGrpcChannelProvider)
+            disabledCustomOptions.getStorageSettings().getTransportChannelProvider();
+    GrpcInterceptorProvider disabledCustomExtracted =
+        extractInterceptorProvider(disabledCustomChannelProvider);
+    assertThat(disabledCustomExtracted).isSameInstanceAs(userProvider);
+    assertThat(disabledCustomExtracted.getInterceptors()).containsExactly(customInterceptor);
+
+    GrpcStorageOptions disabledDefaultOptions =
+        StorageOptions.grpc()
+            .setProjectId("test-project")
+            .setCredentials(NoCredentials.getInstance())
+            .setEnableOtelMetrics(false)
+            .build();
+    InstantiatingGrpcChannelProvider disabledDefaultChannelProvider =
+        (InstantiatingGrpcChannelProvider)
+            disabledDefaultOptions.getStorageSettings().getTransportChannelProvider();
+    assertThat(extractInterceptorProvider(disabledDefaultChannelProvider)).isNull();
   }
 
   private static GrpcInterceptorProvider extractInterceptorProvider(
