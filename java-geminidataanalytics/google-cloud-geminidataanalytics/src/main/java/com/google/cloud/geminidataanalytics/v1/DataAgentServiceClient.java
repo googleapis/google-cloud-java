@@ -293,7 +293,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> SetAgentOpsObservability</td>
- *      <td><p> Enables/Disables required GCP services and configures AgentOps observability settings calling the Admin Settings executable node to update the AgentOps Observability feature.</td>
+ *      <td><p> Enables/Disables required GCP services and configures AgentOps observability settings.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -1982,8 +1982,7 @@ public class DataAgentServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Enables/Disables required GCP services and configures AgentOps observability settings calling
-   * the Admin Settings executable node to update the AgentOps Observability feature.
+   * Enables/Disables required GCP services and configures AgentOps observability settings.
    *
    * <p>Sample code:
    *
@@ -2026,8 +2025,7 @@ public class DataAgentServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Enables/Disables required GCP services and configures AgentOps observability settings calling
-   * the Admin Settings executable node to update the AgentOps Observability feature.
+   * Enables/Disables required GCP services and configures AgentOps observability settings.
    *
    * <p>Sample code:
    *
@@ -2070,8 +2068,7 @@ public class DataAgentServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Enables/Disables required GCP services and configures AgentOps observability settings calling
-   * the Admin Settings executable node to update the AgentOps Observability feature.
+   * Enables/Disables required GCP services and configures AgentOps observability settings.
    *
    * <p>Sample code:
    *
@@ -2105,8 +2102,7 @@ public class DataAgentServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Enables/Disables required GCP services and configures AgentOps observability settings calling
-   * the Admin Settings executable node to update the AgentOps Observability feature.
+   * Enables/Disables required GCP services and configures AgentOps observability settings.
    *
    * <p>Sample code:
    *
@@ -2142,8 +2138,7 @@ public class DataAgentServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Enables/Disables required GCP services and configures AgentOps observability settings calling
-   * the Admin Settings executable node to update the AgentOps Observability feature.
+   * Enables/Disables required GCP services and configures AgentOps observability settings.
    *
    * <p>Sample code:
    *

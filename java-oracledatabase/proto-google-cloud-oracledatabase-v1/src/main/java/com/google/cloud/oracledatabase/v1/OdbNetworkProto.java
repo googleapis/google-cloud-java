@@ -57,6 +57,10 @@ public final class OdbNetworkProto extends com.google.protobuf.GeneratedFile {
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_oracledatabase_v1_DeleteOdbNetworkRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_oracledatabase_v1_UpdateOdbNetworkRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_oracledatabase_v1_UpdateOdbNetworkRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_oracledatabase_v1_ListOdbNetworksRequest_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_oracledatabase_v1_ListOdbNetworksRequest_fieldAccessorTable;
@@ -68,6 +72,14 @@ public final class OdbNetworkProto extends com.google.protobuf.GeneratedFile {
       internal_static_google_cloud_oracledatabase_v1_GetOdbNetworkRequest_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_oracledatabase_v1_GetOdbNetworkRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_oracledatabase_v1_PscInterfaceConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_oracledatabase_v1_PscInterfaceConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_oracledatabase_v1_ServiceConnectivityConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_oracledatabase_v1_ServiceConnectivityConfig_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -80,20 +92,23 @@ public final class OdbNetworkProto extends com.google.protobuf.GeneratedFile {
       "\n"
           + "0google/cloud/oracledatabase/v1/odb_network.proto\022\036google.cloud.oracledatabase."
           + "v1\032\037google/api/field_behavior.proto\032\033goo"
-          + "gle/api/field_info.proto\032\031google/api/res"
-          + "ource.proto\032\037google/protobuf/timestamp.proto\"\375\004\n\n"
+          + "gle/api/field_info.proto\032\031google/api/resource.proto\032"
+          + " google/protobuf/field_mask.proto\032\037google/protobuf/timestamp.proto\"\200\006\n\n"
           + "OdbNetwork\022\022\n"
-          + "\004name\030\001 \001(\tB\004\342A\001\010\0228\n"
-          + "\007network\030\002 \001(\tB\'\342A\001\002\372A \n"
+          + "\004name\030\001 \001(\tB\004\342A\001\010\0229\n"
+          + "\007network\030\002 \001(\tB(\342A\002\002\005\372A \n"
           + "\036compute.googleapis.com/Network\022L\n"
-          + "\006labels\030\003 \003(\01326.goog"
-          + "le.cloud.oracledatabase.v1.OdbNetwork.LabelsEntryB\004\342A\001\001\0225\n"
+          + "\006labels\030\003 \003(\01326.google.cl"
+          + "oud.oracledatabase.v1.OdbNetwork.LabelsEntryB\004\342A\001\001\0225\n"
           + "\013create_time\030\004"
           + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\022E\n"
-          + "\005state\030\005"
-          + " \001(\01620.google.cloud.oracledatabase.v1.OdbNetwork.StateB\004\342A\001\003\022\034\n"
-          + "\016entitlement_id\030\006 \001(\tB\004\342A\001\003\022\035\n"
-          + "\017gcp_oracle_zone\030\007 \001(\tB\004\342A\001\001\032-\n"
+          + "\005state\030\005 \001(\016"
+          + "20.google.cloud.oracledatabase.v1.OdbNetwork.StateB\004\342A\001\003\022\034\n"
+          + "\016entitlement_id\030\006 \001(\tB\004\342A\001\003\022\036\n"
+          + "\017gcp_oracle_zone\030\007 \001(\tB\005\342A\002\001\005\022d\n"
+          + "\033service_connectivity_config\030\010 \001(\01329.go"
+          + "ogle.cloud.oracledatabase.v1.ServiceConnectivityConfigB\004\342A\001\001\022\031\n"
+          + "\013reconciling\030\t \001(\010B\004\342A\001\003\032-\n"
           + "\013LabelsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001\"\\\n"
@@ -103,41 +118,54 @@ public final class OdbNetworkProto extends com.google.protobuf.GeneratedFile {
           + "\tAVAILABLE\020\002\022\017\n"
           + "\013TERMINATING\020\003\022\n\n"
           + "\006FAILED\020\004:\212\001\352A\206\001\n"
-          + "(oracledatabase.googleapis.com/OdbNetwork\022Aprojec"
-          + "ts/{project}/locations/{location}/odbNetworks/{odb_network}*\013odbNetworks2\n"
+          + "(oracledatabase.googleapis.com/OdbNetwork\022Ap"
+          + "rojects/{project}/locations/{location}/odbNetworks/{odb_network}*\013odbNetworks2\n"
           + "odbNetwork\"\343\001\n"
           + "\027CreateOdbNetworkRequest\022A\n"
           + "\006parent\030\001 \001("
           + "\tB1\342A\001\002\372A*\022(oracledatabase.googleapis.com/OdbNetwork\022\034\n"
           + "\016odb_network_id\030\002 \001(\tB\004\342A\001\002\022E\n"
-          + "\013odb_network\030\003 \001(\0132*.google."
-          + "cloud.oracledatabase.v1.OdbNetworkB\004\342A\001\002\022 \n\n"
+          + "\013odb_network\030\003 \001(\0132*.go"
+          + "ogle.cloud.oracledatabase.v1.OdbNetworkB\004\342A\001\002\022 \n\n"
           + "request_id\030\004 \001(\tB\014\342A\001\001\342\214\317\327\010\002\010\001\"|\n"
           + "\027DeleteOdbNetworkRequest\022?\n"
           + "\004name\030\001 \001(\tB1\342A\001\002\372A*\n"
           + "(oracledatabase.googleapis.com/OdbNetwork\022 \n\n"
           + "request_id\030\002 \001("
+          + "\tB\014\342A\001\001\342\214\317\327\010\002\010\001\"\271\001\n"
+          + "\027UpdateOdbNetworkRequest\0225\n"
+          + "\013update_mask\030\001"
+          + " \001(\0132\032.google.protobuf.FieldMaskB\004\342A\001\001\022E\n"
+          + "\013odb_network\030\002 \001(\0132*.google.c"
+          + "loud.oracledatabase.v1.OdbNetworkB\004\342A\001\002\022 \n\n"
+          + "request_id\030\003 \001("
           + "\tB\014\342A\001\001\342\214\317\327\010\002\010\001\"\274\001\n"
           + "\026ListOdbNetworksRequest\022A\n"
-          + "\006parent\030\001 \001("
-          + "\tB1\342A\001\002\372A*\022(oracledatabase.googleapis.com/OdbNetwork\022\027\n"
+          + "\006parent\030\001 \001(\tB1\342A"
+          + "\001\002\372A*\022(oracledatabase.googleapis.com/OdbNetwork\022\027\n"
           + "\tpage_size\030\002 \001(\005B\004\342A\001\001\022\030\n\n"
           + "page_token\030\003 \001(\tB\004\342A\001\001\022\024\n"
           + "\006filter\030\004 \001(\tB\004\342A\001\001\022\026\n"
           + "\010order_by\030\005 \001(\tB\004\342A\001\001\"\211\001\n"
           + "\027ListOdbNetworksResponse\022@\n"
-          + "\014odb_networks\030\001 \003("
-          + "\0132*.google.cloud.oracledatabase.v1.OdbNetwork\022\027\n"
+          + "\014odb_networks\030\001 \003(\0132*.goo"
+          + "gle.cloud.oracledatabase.v1.OdbNetwork\022\027\n"
           + "\017next_page_token\030\002 \001(\t\022\023\n"
           + "\013unreachable\030\003 \003(\t\"W\n"
           + "\024GetOdbNetworkRequest\022?\n"
           + "\004name\030\001 \001(\tB1\342A\001\002\372A*\n"
-          + "(oracledatabase.googleapis.com/OdbNetworkB\351\001\n"
-          + "\"com.google.cloud.oracledatabase.v1B\017OdbNetworkProtoP\001ZJ"
-          + "cloud.google.com/go/oracledatabase/apiv1"
-          + "/oracledatabasepb;oracledatabasepb\252\002\036Goo"
-          + "gle.Cloud.OracleDatabase.V1\312\002\036Google\\Clo"
-          + "ud\\OracleDatabase\\V1\352\002!Google::Cloud::OracleDatabase::V1b\006proto3"
+          + "(oracledatabase.googleapis.com/OdbNetwork\"c\n"
+          + "\022PscInterfaceConfig\022M\n"
+          + "\022network_attachment\030\001 \001(\tB1\342A\001\001\372A*\n"
+          + "(compute.googleapis.com/NetworkAttachment\"s\n"
+          + "\031ServiceConnectivityConfig\022V\n"
+          + "\024psc_interface_config\030\001"
+          + " \001(\01322.google.cloud.oracledatabase.v1.PscInterfaceConfigB\004\342A\001\001B\351\001\n"
+          + "\"com.google.cloud.oracledatabase.v1B\017OdbNetwo"
+          + "rkProtoP\001ZJcloud.google.com/go/oracledatabase/apiv1/oracledatabasepb;oracledatab"
+          + "asepb\252\002\036Google.Cloud.OracleDatabase.V1\312\002"
+          + "\036Google\\Cloud\\OracleDatabase\\V1\352\002!Google"
+          + "::Cloud::OracleDatabase::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -146,6 +174,7 @@ public final class OdbNetworkProto extends com.google.protobuf.GeneratedFile {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.FieldInfoProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
+              com.google.protobuf.FieldMaskProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
             });
     internal_static_google_cloud_oracledatabase_v1_OdbNetwork_descriptor =
@@ -154,7 +183,15 @@ public final class OdbNetworkProto extends com.google.protobuf.GeneratedFile {
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_oracledatabase_v1_OdbNetwork_descriptor,
             new java.lang.String[] {
-              "Name", "Network", "Labels", "CreateTime", "State", "EntitlementId", "GcpOracleZone",
+              "Name",
+              "Network",
+              "Labels",
+              "CreateTime",
+              "State",
+              "EntitlementId",
+              "GcpOracleZone",
+              "ServiceConnectivityConfig",
+              "Reconciling",
             });
     internal_static_google_cloud_oracledatabase_v1_OdbNetwork_LabelsEntry_descriptor =
         internal_static_google_cloud_oracledatabase_v1_OdbNetwork_descriptor.getNestedType(0);
@@ -180,8 +217,16 @@ public final class OdbNetworkProto extends com.google.protobuf.GeneratedFile {
             new java.lang.String[] {
               "Name", "RequestId",
             });
-    internal_static_google_cloud_oracledatabase_v1_ListOdbNetworksRequest_descriptor =
+    internal_static_google_cloud_oracledatabase_v1_UpdateOdbNetworkRequest_descriptor =
         getDescriptor().getMessageType(3);
+    internal_static_google_cloud_oracledatabase_v1_UpdateOdbNetworkRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_oracledatabase_v1_UpdateOdbNetworkRequest_descriptor,
+            new java.lang.String[] {
+              "UpdateMask", "OdbNetwork", "RequestId",
+            });
+    internal_static_google_cloud_oracledatabase_v1_ListOdbNetworksRequest_descriptor =
+        getDescriptor().getMessageType(4);
     internal_static_google_cloud_oracledatabase_v1_ListOdbNetworksRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_oracledatabase_v1_ListOdbNetworksRequest_descriptor,
@@ -189,7 +234,7 @@ public final class OdbNetworkProto extends com.google.protobuf.GeneratedFile {
               "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
             });
     internal_static_google_cloud_oracledatabase_v1_ListOdbNetworksResponse_descriptor =
-        getDescriptor().getMessageType(4);
+        getDescriptor().getMessageType(5);
     internal_static_google_cloud_oracledatabase_v1_ListOdbNetworksResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_oracledatabase_v1_ListOdbNetworksResponse_descriptor,
@@ -197,17 +242,34 @@ public final class OdbNetworkProto extends com.google.protobuf.GeneratedFile {
               "OdbNetworks", "NextPageToken", "Unreachable",
             });
     internal_static_google_cloud_oracledatabase_v1_GetOdbNetworkRequest_descriptor =
-        getDescriptor().getMessageType(5);
+        getDescriptor().getMessageType(6);
     internal_static_google_cloud_oracledatabase_v1_GetOdbNetworkRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_oracledatabase_v1_GetOdbNetworkRequest_descriptor,
             new java.lang.String[] {
               "Name",
             });
+    internal_static_google_cloud_oracledatabase_v1_PscInterfaceConfig_descriptor =
+        getDescriptor().getMessageType(7);
+    internal_static_google_cloud_oracledatabase_v1_PscInterfaceConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_oracledatabase_v1_PscInterfaceConfig_descriptor,
+            new java.lang.String[] {
+              "NetworkAttachment",
+            });
+    internal_static_google_cloud_oracledatabase_v1_ServiceConnectivityConfig_descriptor =
+        getDescriptor().getMessageType(8);
+    internal_static_google_cloud_oracledatabase_v1_ServiceConnectivityConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_oracledatabase_v1_ServiceConnectivityConfig_descriptor,
+            new java.lang.String[] {
+              "PscInterfaceConfig",
+            });
     descriptor.resolveAllFeaturesImmutable();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.FieldInfoProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
+    com.google.protobuf.FieldMaskProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

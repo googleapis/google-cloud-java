@@ -155,7 +155,12 @@ import org.jspecify.annotations.Nullable;
  *    <tr>
  *      <td><p> IngestAdEvents</td>
  *      <td><p> Uploads a list of [AdEvent][google.ads.datamanager.v1.AdEvent] resources to Google Analytics.
- * <p>  This feature is only available to accounts on an allowlist.</td>
+ * <p>  This feature is only available to accounts on an allowlist.
+ * <p>  Authorization Headers:
+ * <p>  This method also requires the following header to define how the API authorizes access for the request:
+ * <ul>
+ * <li>  `login-account`: (Required) The resource name of the Data Partner account   where the Google Account of the credentials is a user. Format:   `accountTypes/DATA_PARTNER/accounts/{loginAccountId}`
+ * </ul></td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -713,6 +718,17 @@ public class IngestionServiceClient implements BackgroundResource {
    *
    * <p>This feature is only available to accounts on an allowlist.
    *
+   * <p>Authorization Headers:
+   *
+   * <p>This method also requires the following header to define how the API authorizes access for
+   * the request:
+   *
+   * <ul>
+   *   <li>`login-account`: (Required) The resource name of the Data Partner account where the
+   *       Google Account of the credentials is a user. Format:
+   *       `accountTypes/DATA_PARTNER/accounts/{loginAccountId}`
+   * </ul>
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -744,6 +760,17 @@ public class IngestionServiceClient implements BackgroundResource {
    * Uploads a list of [AdEvent][google.ads.datamanager.v1.AdEvent] resources to Google Analytics.
    *
    * <p>This feature is only available to accounts on an allowlist.
+   *
+   * <p>Authorization Headers:
+   *
+   * <p>This method also requires the following header to define how the API authorizes access for
+   * the request:
+   *
+   * <ul>
+   *   <li>`login-account`: (Required) The resource name of the Data Partner account where the
+   *       Google Account of the credentials is a user. Format:
+   *       `accountTypes/DATA_PARTNER/accounts/{loginAccountId}`
+   * </ul>
    *
    * <p>Sample code:
    *

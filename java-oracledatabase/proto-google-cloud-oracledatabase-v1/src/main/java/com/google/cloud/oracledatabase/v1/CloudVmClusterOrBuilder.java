@@ -58,13 +58,13 @@ public interface CloudVmClusterOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the Exadata Infrastructure resource on which VM
-   * cluster resource is created, in the following format:
+   * Required. Immutable. The name of the Exadata Infrastructure resource on
+   * which VM cluster resource is created, in the following format:
    * projects/{project}/locations/{region}/cloudExadataInfrastuctures/{cloud_extradata_infrastructure}
    * </pre>
    *
    * <code>
-   * string exadata_infrastructure = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * string exadata_infrastructure = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The exadataInfrastructure.
@@ -75,13 +75,13 @@ public interface CloudVmClusterOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the Exadata Infrastructure resource on which VM
-   * cluster resource is created, in the following format:
+   * Required. Immutable. The name of the Exadata Infrastructure resource on
+   * which VM cluster resource is created, in the following format:
    * projects/{project}/locations/{region}/cloudExadataInfrastuctures/{cloud_extradata_infrastructure}
    * </pre>
    *
    * <code>
-   * string exadata_infrastructure = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * string exadata_infrastructure = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The bytes for exadataInfrastructure.
@@ -92,10 +92,12 @@ public interface CloudVmClusterOrBuilder
    *
    *
    * <pre>
-   * Optional. User friendly name for this resource.
+   * Optional. Immutable. User friendly name for this resource.
    * </pre>
    *
-   * <code>string display_name = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string display_name = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The displayName.
    */
@@ -105,10 +107,12 @@ public interface CloudVmClusterOrBuilder
    *
    *
    * <pre>
-   * Optional. User friendly name for this resource.
+   * Optional. Immutable. User friendly name for this resource.
    * </pre>
    *
-   * <code>string display_name = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string display_name = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The bytes for displayName.
    */
@@ -118,11 +122,11 @@ public interface CloudVmClusterOrBuilder
    *
    *
    * <pre>
-   * Optional. Various properties of the VM Cluster.
+   * Optional. Immutable. Various properties of the VM Cluster.
    * </pre>
    *
    * <code>
-   * .google.cloud.oracledatabase.v1.CloudVmClusterProperties properties = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.oracledatabase.v1.CloudVmClusterProperties properties = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
    * @return Whether the properties field is set.
@@ -133,11 +137,11 @@ public interface CloudVmClusterOrBuilder
    *
    *
    * <pre>
-   * Optional. Various properties of the VM Cluster.
+   * Optional. Immutable. Various properties of the VM Cluster.
    * </pre>
    *
    * <code>
-   * .google.cloud.oracledatabase.v1.CloudVmClusterProperties properties = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.oracledatabase.v1.CloudVmClusterProperties properties = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
    * @return The properties.
@@ -148,11 +152,11 @@ public interface CloudVmClusterOrBuilder
    *
    *
    * <pre>
-   * Optional. Various properties of the VM Cluster.
+   * Optional. Immutable. Various properties of the VM Cluster.
    * </pre>
    *
    * <code>
-   * .google.cloud.oracledatabase.v1.CloudVmClusterProperties properties = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.oracledatabase.v1.CloudVmClusterProperties properties = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    */
   com.google.cloud.oracledatabase.v1.CloudVmClusterPropertiesOrBuilder getPropertiesOrBuilder();
@@ -264,10 +268,13 @@ public interface CloudVmClusterOrBuilder
    *
    *
    * <pre>
-   * Optional. Network settings. CIDR to use for cluster IP allocation.
+   * Optional. Immutable. Network settings. CIDR to use for cluster IP
+   * allocation.
    * </pre>
    *
-   * <code>string cidr = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string cidr = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The cidr.
    */
@@ -277,10 +284,13 @@ public interface CloudVmClusterOrBuilder
    *
    *
    * <pre>
-   * Optional. Network settings. CIDR to use for cluster IP allocation.
+   * Optional. Immutable. Network settings. CIDR to use for cluster IP
+   * allocation.
    * </pre>
    *
-   * <code>string cidr = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string cidr = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The bytes for cidr.
    */
@@ -290,10 +300,12 @@ public interface CloudVmClusterOrBuilder
    *
    *
    * <pre>
-   * Optional. CIDR range of the backup subnet.
+   * Optional. Immutable. CIDR range of the backup subnet.
    * </pre>
    *
-   * <code>string backup_subnet_cidr = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string backup_subnet_cidr = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The backupSubnetCidr.
    */
@@ -303,10 +315,12 @@ public interface CloudVmClusterOrBuilder
    *
    *
    * <pre>
-   * Optional. CIDR range of the backup subnet.
+   * Optional. Immutable. CIDR range of the backup subnet.
    * </pre>
    *
-   * <code>string backup_subnet_cidr = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string backup_subnet_cidr = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The bytes for backupSubnetCidr.
    */
@@ -316,12 +330,12 @@ public interface CloudVmClusterOrBuilder
    *
    *
    * <pre>
-   * Optional. The name of the VPC network.
+   * Optional. Immutable. The name of the VPC network.
    * Format: projects/{project}/global/networks/{network}
    * </pre>
    *
    * <code>
-   * string network = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * string network = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The network.
@@ -332,12 +346,12 @@ public interface CloudVmClusterOrBuilder
    *
    *
    * <pre>
-   * Optional. The name of the VPC network.
+   * Optional. Immutable. The name of the VPC network.
    * Format: projects/{project}/global/networks/{network}
    * </pre>
    *
    * <code>
-   * string network = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * string network = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The bytes for network.
@@ -378,15 +392,15 @@ public interface CloudVmClusterOrBuilder
    *
    *
    * <pre>
-   * Optional. The name of the OdbNetwork associated with the VM Cluster.
-   * Format:
+   * Optional. Immutable. The name of the OdbNetwork associated with the VM
+   * Cluster. Format:
    * projects/{project}/locations/{location}/odbNetworks/{odb_network}
    * It is optional but if specified, this should match the parent ODBNetwork of
    * the odb_subnet and backup_odb_subnet.
    * </pre>
    *
    * <code>
-   * string odb_network = 13 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * string odb_network = 13 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The odbNetwork.
@@ -397,15 +411,15 @@ public interface CloudVmClusterOrBuilder
    *
    *
    * <pre>
-   * Optional. The name of the OdbNetwork associated with the VM Cluster.
-   * Format:
+   * Optional. Immutable. The name of the OdbNetwork associated with the VM
+   * Cluster. Format:
    * projects/{project}/locations/{location}/odbNetworks/{odb_network}
    * It is optional but if specified, this should match the parent ODBNetwork of
    * the odb_subnet and backup_odb_subnet.
    * </pre>
    *
    * <code>
-   * string odb_network = 13 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * string odb_network = 13 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The bytes for odbNetwork.
@@ -416,13 +430,13 @@ public interface CloudVmClusterOrBuilder
    *
    *
    * <pre>
-   * Optional. The name of the OdbSubnet associated with the VM Cluster for
-   * IP allocation. Format:
+   * Optional. Immutable. The name of the OdbSubnet associated with the VM
+   * Cluster for IP allocation. Format:
    * projects/{project}/locations/{location}/odbNetworks/{odb_network}/odbSubnets/{odb_subnet}
    * </pre>
    *
    * <code>
-   * string odb_subnet = 14 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * string odb_subnet = 14 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The odbSubnet.
@@ -433,13 +447,13 @@ public interface CloudVmClusterOrBuilder
    *
    *
    * <pre>
-   * Optional. The name of the OdbSubnet associated with the VM Cluster for
-   * IP allocation. Format:
+   * Optional. Immutable. The name of the OdbSubnet associated with the VM
+   * Cluster for IP allocation. Format:
    * projects/{project}/locations/{location}/odbNetworks/{odb_network}/odbSubnets/{odb_subnet}
    * </pre>
    *
    * <code>
-   * string odb_subnet = 14 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * string odb_subnet = 14 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The bytes for odbSubnet.
@@ -450,13 +464,13 @@ public interface CloudVmClusterOrBuilder
    *
    *
    * <pre>
-   * Optional. The name of the backup OdbSubnet associated with the VM Cluster.
-   * Format:
+   * Optional. Immutable. The name of the backup OdbSubnet associated with the
+   * VM Cluster. Format:
    * projects/{project}/locations/{location}/odbNetworks/{odb_network}/odbSubnets/{odb_subnet}
    * </pre>
    *
    * <code>
-   * string backup_odb_subnet = 15 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * string backup_odb_subnet = 15 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The backupOdbSubnet.
@@ -467,18 +481,52 @@ public interface CloudVmClusterOrBuilder
    *
    *
    * <pre>
-   * Optional. The name of the backup OdbSubnet associated with the VM Cluster.
-   * Format:
+   * Optional. Immutable. The name of the backup OdbSubnet associated with the
+   * VM Cluster. Format:
    * projects/{project}/locations/{location}/odbNetworks/{odb_network}/odbSubnets/{odb_subnet}
    * </pre>
    *
    * <code>
-   * string backup_odb_subnet = 15 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * string backup_odb_subnet = 15 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The bytes for backupOdbSubnet.
    */
   com.google.protobuf.ByteString getBackupOdbSubnetBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. The name of the OdbDnsZone for using custom domain
+   * name for the VM Cluster. Format:
+   * projects/{project}/locations/{location}/odbNetworks/{odb_network}/odbDnsZones/{odb_dns_zone}
+   * </pre>
+   *
+   * <code>
+   * string odb_dns_zone = 18 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The odbDnsZone.
+   */
+  java.lang.String getOdbDnsZone();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. The name of the OdbDnsZone for using custom domain
+   * name for the VM Cluster. Format:
+   * projects/{project}/locations/{location}/odbNetworks/{odb_network}/odbDnsZones/{odb_dns_zone}
+   * </pre>
+   *
+   * <code>
+   * string odb_dns_zone = 18 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for odbDnsZone.
+   */
+  com.google.protobuf.ByteString getOdbDnsZoneBytes();
 
   /**
    *
@@ -530,13 +578,13 @@ public interface CloudVmClusterOrBuilder
    *
    *
    * <pre>
-   * Optional. The name of ExascaleDbStorageVault associated with the VM
-   * Cluster. Format:
+   * Optional. Immutable. The name of ExascaleDbStorageVault associated with the
+   * VM Cluster. Format:
    * projects/{project}/locations/{location}/exascaleDbStorageVaults/{exascale_db_storage_vault}
    * </pre>
    *
    * <code>
-   * string exascale_db_storage_vault = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * string exascale_db_storage_vault = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The exascaleDbStorageVault.
@@ -547,16 +595,35 @@ public interface CloudVmClusterOrBuilder
    *
    *
    * <pre>
-   * Optional. The name of ExascaleDbStorageVault associated with the VM
-   * Cluster. Format:
+   * Optional. Immutable. The name of ExascaleDbStorageVault associated with the
+   * VM Cluster. Format:
    * projects/{project}/locations/{location}/exascaleDbStorageVaults/{exascale_db_storage_vault}
    * </pre>
    *
    * <code>
-   * string exascale_db_storage_vault = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * string exascale_db_storage_vault = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The bytes for exascaleDbStorageVault.
    */
   com.google.protobuf.ByteString getExascaleDbStorageVaultBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. If set to true, disables the automatic
+   * provisioning of the Workload Identity Connector during creation. If set to
+   * false or omitted, the Workload Identity Connector will be automatically
+   * provisioned by default. Note: Provisioning the Workload Identity Connector
+   * is a prerequisite for enabling Google Cloud CMEK.
+   * </pre>
+   *
+   * <code>
+   * bool identity_connector_disabled = 19 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The identityConnectorDisabled.
+   */
+  boolean getIdentityConnectorDisabled();
 }

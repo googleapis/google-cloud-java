@@ -297,6 +297,29 @@ public class MockDeveloperConnectImpl extends DeveloperConnectImplBase {
   }
 
   @Override
+  public void openGitRepositoryLinkPullRequest(
+      OpenGitRepositoryLinkPullRequestRequest request,
+      StreamObserver<PullRequest> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof PullRequest) {
+      requests.add(request);
+      responseObserver.onNext(((PullRequest) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method OpenGitRepositoryLinkPullRequest,"
+                      + " expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  PullRequest.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void fetchLinkableGitRepositories(
       FetchLinkableGitRepositoriesRequest request,
       StreamObserver<FetchLinkableGitRepositoriesResponse> responseObserver) {
@@ -359,6 +382,213 @@ public class MockDeveloperConnectImpl extends DeveloperConnectImplBase {
                   "Unrecognized response type %s for method FetchGitRefs, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   FetchGitRefsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void diffGitRepositoryLinkCommit(
+      DiffGitRepositoryLinkCommitRequest request,
+      StreamObserver<DiffGitRepositoryLinkCommitResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof DiffGitRepositoryLinkCommitResponse) {
+      requests.add(request);
+      responseObserver.onNext(((DiffGitRepositoryLinkCommitResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DiffGitRepositoryLinkCommit, expected"
+                      + " %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  DiffGitRepositoryLinkCommitResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void fetchGitRepositoryLinkCommit(
+      FetchGitRepositoryLinkCommitRequest request,
+      StreamObserver<FetchGitRepositoryLinkCommitResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof FetchGitRepositoryLinkCommitResponse) {
+      requests.add(request);
+      responseObserver.onNext(((FetchGitRepositoryLinkCommitResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method FetchGitRepositoryLinkCommit, expected"
+                      + " %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  FetchGitRepositoryLinkCommitResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void fetchGitRepositoryLinkCommitList(
+      FetchGitRepositoryLinkCommitListRequest request,
+      StreamObserver<FetchGitRepositoryLinkCommitListResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof FetchGitRepositoryLinkCommitListResponse) {
+      requests.add(request);
+      responseObserver.onNext(((FetchGitRepositoryLinkCommitListResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method FetchGitRepositoryLinkCommitList,"
+                      + " expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  FetchGitRepositoryLinkCommitListResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void fetchGitRepositoryLinkFileBlame(
+      FetchGitRepositoryLinkFileBlameRequest request,
+      StreamObserver<FetchGitRepositoryLinkFileBlameResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof FetchGitRepositoryLinkFileBlameResponse) {
+      requests.add(request);
+      responseObserver.onNext(((FetchGitRepositoryLinkFileBlameResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method FetchGitRepositoryLinkFileBlame,"
+                      + " expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  FetchGitRepositoryLinkFileBlameResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void fetchGitRepositoryLinkPullRequest(
+      FetchGitRepositoryLinkPullRequestRequest request,
+      StreamObserver<PullRequest> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof PullRequest) {
+      requests.add(request);
+      responseObserver.onNext(((PullRequest) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method FetchGitRepositoryLinkPullRequest,"
+                      + " expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  PullRequest.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void addGitRepositoryLinkPullRequestComment(
+      AddGitRepositoryLinkPullRequestCommentRequest request,
+      StreamObserver<PullRequestComment> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof PullRequestComment) {
+      requests.add(request);
+      responseObserver.onNext(((PullRequestComment) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method AddGitRepositoryLinkPullRequestComment,"
+                      + " expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  PullRequestComment.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void addGitRepositoryLinkPullRequestReviewComment(
+      AddGitRepositoryLinkPullRequestReviewCommentRequest request,
+      StreamObserver<PullRequestReviewComment> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof PullRequestReviewComment) {
+      requests.add(request);
+      responseObserver.onNext(((PullRequestReviewComment) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method"
+                      + " AddGitRepositoryLinkPullRequestReviewComment, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  PullRequestReviewComment.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void modifyGitRepositoryLinkPullRequest(
+      ModifyGitRepositoryLinkPullRequestRequest request,
+      StreamObserver<PullRequest> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof PullRequest) {
+      requests.add(request);
+      responseObserver.onNext(((PullRequest) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ModifyGitRepositoryLinkPullRequest,"
+                      + " expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  PullRequest.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void fetchGitRepositoryLinkPullRequestList(
+      FetchGitRepositoryLinkPullRequestListRequest request,
+      StreamObserver<FetchGitRepositoryLinkPullRequestListResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof FetchGitRepositoryLinkPullRequestListResponse) {
+      requests.add(request);
+      responseObserver.onNext(((FetchGitRepositoryLinkPullRequestListResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method FetchGitRepositoryLinkPullRequestList,"
+                      + " expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  FetchGitRepositoryLinkPullRequestListResponse.class.getName(),
                   Exception.class.getName())));
     }
   }

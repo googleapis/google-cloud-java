@@ -62,6 +62,9 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import java.io.IOException;
@@ -154,7 +157,11 @@ import org.jspecify.annotations.Nullable;
 public class DataStoreServiceStubSettings extends StubSettings<DataStoreServiceStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
-      ImmutableList.<String>builder().add("https://www.googleapis.com/auth/cloud-platform").build();
+      ImmutableList.<String>builder()
+          .add("https://www.googleapis.com/auth/cloud-platform")
+          .add("https://www.googleapis.com/auth/discoveryengine.readwrite")
+          .add("https://www.googleapis.com/auth/discoveryengine.serving.readwrite")
+          .build();
 
   private final UnaryCallSettings<CreateDataStoreRequest, Operation> createDataStoreSettings;
   private final OperationCallSettings<CreateDataStoreRequest, DataStore, CreateDataStoreMetadata>
@@ -167,6 +174,8 @@ public class DataStoreServiceStubSettings extends StubSettings<DataStoreServiceS
   private final OperationCallSettings<DeleteDataStoreRequest, Empty, DeleteDataStoreMetadata>
       deleteDataStoreOperationSettings;
   private final UnaryCallSettings<UpdateDataStoreRequest, DataStore> updateDataStoreSettings;
+  private final UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings;
+  private final UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings;
 
   private static final PagedListDescriptor<ListDataStoresRequest, ListDataStoresResponse, DataStore>
       LIST_DATA_STORES_PAGE_STR_DESC =
@@ -257,6 +266,16 @@ public class DataStoreServiceStubSettings extends StubSettings<DataStoreServiceS
   /** Returns the object with the settings used for calls to updateDataStore. */
   public UnaryCallSettings<UpdateDataStoreRequest, DataStore> updateDataStoreSettings() {
     return updateDataStoreSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getIamPolicy. */
+  public UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings() {
+    return getIamPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to setIamPolicy. */
+  public UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings() {
+    return setIamPolicySettings;
   }
 
   public DataStoreServiceStub createStub() throws IOException {
@@ -377,6 +396,8 @@ public class DataStoreServiceStubSettings extends StubSettings<DataStoreServiceS
     deleteDataStoreSettings = settingsBuilder.deleteDataStoreSettings().build();
     deleteDataStoreOperationSettings = settingsBuilder.deleteDataStoreOperationSettings().build();
     updateDataStoreSettings = settingsBuilder.updateDataStoreSettings().build();
+    getIamPolicySettings = settingsBuilder.getIamPolicySettings().build();
+    setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
   }
 
   @Override
@@ -407,6 +428,8 @@ public class DataStoreServiceStubSettings extends StubSettings<DataStoreServiceS
         deleteDataStoreOperationSettings;
     private final UnaryCallSettings.Builder<UpdateDataStoreRequest, DataStore>
         updateDataStoreSettings;
+    private final UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings;
+    private final UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -441,6 +464,8 @@ public class DataStoreServiceStubSettings extends StubSettings<DataStoreServiceS
       deleteDataStoreSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteDataStoreOperationSettings = OperationCallSettings.newBuilder();
       updateDataStoreSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -448,7 +473,9 @@ public class DataStoreServiceStubSettings extends StubSettings<DataStoreServiceS
               getDataStoreSettings,
               listDataStoresSettings,
               deleteDataStoreSettings,
-              updateDataStoreSettings);
+              updateDataStoreSettings,
+              getIamPolicySettings,
+              setIamPolicySettings);
       initDefaults(this);
     }
 
@@ -462,6 +489,8 @@ public class DataStoreServiceStubSettings extends StubSettings<DataStoreServiceS
       deleteDataStoreSettings = settings.deleteDataStoreSettings.toBuilder();
       deleteDataStoreOperationSettings = settings.deleteDataStoreOperationSettings.toBuilder();
       updateDataStoreSettings = settings.updateDataStoreSettings.toBuilder();
+      getIamPolicySettings = settings.getIamPolicySettings.toBuilder();
+      setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -469,7 +498,9 @@ public class DataStoreServiceStubSettings extends StubSettings<DataStoreServiceS
               getDataStoreSettings,
               listDataStoresSettings,
               deleteDataStoreSettings,
-              updateDataStoreSettings);
+              updateDataStoreSettings,
+              getIamPolicySettings,
+              setIamPolicySettings);
     }
 
     private static Builder createDefault() {
@@ -519,6 +550,16 @@ public class DataStoreServiceStubSettings extends StubSettings<DataStoreServiceS
 
       builder
           .updateDataStoreSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getIamPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .setIamPolicySettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -625,6 +666,16 @@ public class DataStoreServiceStubSettings extends StubSettings<DataStoreServiceS
     /** Returns the builder for the settings used for calls to updateDataStore. */
     public UnaryCallSettings.Builder<UpdateDataStoreRequest, DataStore> updateDataStoreSettings() {
       return updateDataStoreSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getIamPolicy. */
+    public UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings() {
+      return getIamPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to setIamPolicy. */
+    public UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings() {
+      return setIamPolicySettings;
     }
 
     @Override

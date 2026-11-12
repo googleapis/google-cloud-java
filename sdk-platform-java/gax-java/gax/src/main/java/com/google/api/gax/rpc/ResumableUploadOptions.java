@@ -97,8 +97,9 @@ public abstract class ResumableUploadOptions {
   public abstract static class Builder {
     /**
      * Sets the chunk size in bytes. The payload is sent in chunks of this size, and each chunk is
-     * buffered in memory so it can be resent if the upload needs to recover. Must be positive;
-     * defaults to 8 MB.
+     * buffered in memory so it can be resent if the upload needs to recover. If the server
+     * specifies a chunk granularity, the effective chunk size is rounded down to a multiple of that
+     * granularity (or raised to the granularity if smaller). Must be positive; defaults to 8 MB.
      */
     public abstract Builder setChunkSize(int chunkSize);
 
@@ -120,7 +121,8 @@ public abstract class ResumableUploadOptions {
 
     /**
      * Sets the listener notified of upload progress and state transitions. Updates are delivered in
-     * order, beginning with {@link ResumableUploadProgress#STATE_STARTING}. Callbacks are
+     * order, beginning with {@link ResumableUploadProgress#STATE_STARTING} for new uploads or
+     * {@link ResumableUploadProgress#STATE_RECOVERING} for resumed uploads. Callbacks are
      * dispatched on the client's background executor.
      */
     public abstract Builder setProgressListener(

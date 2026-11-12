@@ -16,7 +16,10 @@
 
 package com.google.cloud.discoveryengine.v1.stub;
 
+import static com.google.cloud.discoveryengine.v1.AssistantServiceClient.ListAssistantsPagedResponse;
+
 import com.google.api.core.ApiFunction;
+import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
 import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.core.GaxProperties;
@@ -29,20 +32,34 @@ import com.google.api.gax.httpjson.GaxHttpJsonProperties;
 import com.google.api.gax.httpjson.HttpJsonTransportChannel;
 import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
 import com.google.api.gax.retrying.RetrySettings;
+import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.LibraryMetadata;
+import com.google.api.gax.rpc.PageContext;
+import com.google.api.gax.rpc.PagedCallSettings;
+import com.google.api.gax.rpc.PagedListDescriptor;
+import com.google.api.gax.rpc.PagedListResponseFactory;
 import com.google.api.gax.rpc.ServerStreamingCallSettings;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
+import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.discoveryengine.v1.Assistant;
+import com.google.cloud.discoveryengine.v1.CreateAssistantRequest;
+import com.google.cloud.discoveryengine.v1.DeleteAssistantRequest;
+import com.google.cloud.discoveryengine.v1.GetAssistantRequest;
+import com.google.cloud.discoveryengine.v1.ListAssistantsRequest;
+import com.google.cloud.discoveryengine.v1.ListAssistantsResponse;
 import com.google.cloud.discoveryengine.v1.StreamAssistRequest;
 import com.google.cloud.discoveryengine.v1.StreamAssistResponse;
+import com.google.cloud.discoveryengine.v1.UpdateAssistantRequest;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
+import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
@@ -68,7 +85,7 @@ import org.jspecify.annotations.Nullable;
  *
  * <p>For example, to set the
  * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
- * of streamAssist:
+ * of createAssistant:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -79,10 +96,10 @@ import org.jspecify.annotations.Nullable;
  * AssistantServiceStubSettings.Builder assistantServiceSettingsBuilder =
  *     AssistantServiceStubSettings.newBuilder();
  * assistantServiceSettingsBuilder
- *     .streamAssistSettings()
+ *     .createAssistantSettings()
  *     .setRetrySettings(
  *         assistantServiceSettingsBuilder
- *             .streamAssistSettings()
+ *             .createAssistantSettings()
  *             .getRetrySettings()
  *             .toBuilder()
  *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
@@ -107,15 +124,106 @@ import org.jspecify.annotations.Nullable;
 public class AssistantServiceStubSettings extends StubSettings<AssistantServiceStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
-      ImmutableList.<String>builder().add("https://www.googleapis.com/auth/cloud-platform").build();
+      ImmutableList.<String>builder()
+          .add("https://www.googleapis.com/auth/cloud-platform")
+          .add("https://www.googleapis.com/auth/discoveryengine.assist.readwrite")
+          .add("https://www.googleapis.com/auth/discoveryengine.readwrite")
+          .add("https://www.googleapis.com/auth/discoveryengine.serving.readwrite")
+          .build();
 
   private final ServerStreamingCallSettings<StreamAssistRequest, StreamAssistResponse>
       streamAssistSettings;
+  private final UnaryCallSettings<CreateAssistantRequest, Assistant> createAssistantSettings;
+  private final UnaryCallSettings<DeleteAssistantRequest, Empty> deleteAssistantSettings;
+  private final UnaryCallSettings<UpdateAssistantRequest, Assistant> updateAssistantSettings;
+  private final UnaryCallSettings<GetAssistantRequest, Assistant> getAssistantSettings;
+  private final PagedCallSettings<
+          ListAssistantsRequest, ListAssistantsResponse, ListAssistantsPagedResponse>
+      listAssistantsSettings;
+
+  private static final PagedListDescriptor<ListAssistantsRequest, ListAssistantsResponse, Assistant>
+      LIST_ASSISTANTS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListAssistantsRequest, ListAssistantsResponse, Assistant>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListAssistantsRequest injectToken(ListAssistantsRequest payload, String token) {
+              return ListAssistantsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListAssistantsRequest injectPageSize(
+                ListAssistantsRequest payload, int pageSize) {
+              return ListAssistantsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListAssistantsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListAssistantsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Assistant> extractResources(ListAssistantsResponse payload) {
+              return payload.getAssistantsList();
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListAssistantsRequest, ListAssistantsResponse, ListAssistantsPagedResponse>
+      LIST_ASSISTANTS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListAssistantsRequest, ListAssistantsResponse, ListAssistantsPagedResponse>() {
+            @Override
+            public ApiFuture<ListAssistantsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListAssistantsRequest, ListAssistantsResponse> callable,
+                ListAssistantsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListAssistantsResponse> futureResponse) {
+              PageContext<ListAssistantsRequest, ListAssistantsResponse, Assistant> pageContext =
+                  PageContext.create(callable, LIST_ASSISTANTS_PAGE_STR_DESC, request, context);
+              return ListAssistantsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
 
   /** Returns the object with the settings used for calls to streamAssist. */
   public ServerStreamingCallSettings<StreamAssistRequest, StreamAssistResponse>
       streamAssistSettings() {
     return streamAssistSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createAssistant. */
+  public UnaryCallSettings<CreateAssistantRequest, Assistant> createAssistantSettings() {
+    return createAssistantSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteAssistant. */
+  public UnaryCallSettings<DeleteAssistantRequest, Empty> deleteAssistantSettings() {
+    return deleteAssistantSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateAssistant. */
+  public UnaryCallSettings<UpdateAssistantRequest, Assistant> updateAssistantSettings() {
+    return updateAssistantSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getAssistant. */
+  public UnaryCallSettings<GetAssistantRequest, Assistant> getAssistantSettings() {
+    return getAssistantSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listAssistants. */
+  public PagedCallSettings<
+          ListAssistantsRequest, ListAssistantsResponse, ListAssistantsPagedResponse>
+      listAssistantsSettings() {
+    return listAssistantsSettings;
   }
 
   public AssistantServiceStub createStub() throws IOException {
@@ -230,6 +338,11 @@ public class AssistantServiceStubSettings extends StubSettings<AssistantServiceS
     super(settingsBuilder);
 
     streamAssistSettings = settingsBuilder.streamAssistSettings().build();
+    createAssistantSettings = settingsBuilder.createAssistantSettings().build();
+    deleteAssistantSettings = settingsBuilder.deleteAssistantSettings().build();
+    updateAssistantSettings = settingsBuilder.updateAssistantSettings().build();
+    getAssistantSettings = settingsBuilder.getAssistantSettings().build();
+    listAssistantsSettings = settingsBuilder.listAssistantsSettings().build();
   }
 
   @Override
@@ -246,6 +359,15 @@ public class AssistantServiceStubSettings extends StubSettings<AssistantServiceS
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
     private final ServerStreamingCallSettings.Builder<StreamAssistRequest, StreamAssistResponse>
         streamAssistSettings;
+    private final UnaryCallSettings.Builder<CreateAssistantRequest, Assistant>
+        createAssistantSettings;
+    private final UnaryCallSettings.Builder<DeleteAssistantRequest, Empty> deleteAssistantSettings;
+    private final UnaryCallSettings.Builder<UpdateAssistantRequest, Assistant>
+        updateAssistantSettings;
+    private final UnaryCallSettings.Builder<GetAssistantRequest, Assistant> getAssistantSettings;
+    private final PagedCallSettings.Builder<
+            ListAssistantsRequest, ListAssistantsResponse, ListAssistantsPagedResponse>
+        listAssistantsSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -253,7 +375,12 @@ public class AssistantServiceStubSettings extends StubSettings<AssistantServiceS
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
-          "retry_policy_2_codes",
+          "retry_policy_3_codes",
+          ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
+      definitions.put(
+          "no_retry_2_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put(
+          "retry_policy_1_codes",
           ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
@@ -273,7 +400,26 @@ public class AssistantServiceStubSettings extends StubSettings<AssistantServiceS
               .setMaxRpcTimeoutDuration(Duration.ofMillis(300000L))
               .setTotalTimeoutDuration(Duration.ofMillis(300000L))
               .build();
-      definitions.put("retry_policy_2_params", settings);
+      definitions.put("retry_policy_3_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(30000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(30000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(30000L))
+              .build();
+      definitions.put("no_retry_2_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRetryDelayDuration(Duration.ofMillis(1000L))
+              .setRetryDelayMultiplier(1.3)
+              .setMaxRetryDelayDuration(Duration.ofMillis(10000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(30000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(30000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(30000L))
+              .build();
+      definitions.put("retry_policy_1_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -285,8 +431,19 @@ public class AssistantServiceStubSettings extends StubSettings<AssistantServiceS
       super(clientContext);
 
       streamAssistSettings = ServerStreamingCallSettings.newBuilder();
+      createAssistantSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteAssistantSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateAssistantSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getAssistantSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listAssistantsSettings = PagedCallSettings.newBuilder(LIST_ASSISTANTS_PAGE_STR_FACT);
 
-      unaryMethodSettingsBuilders = ImmutableList.<UnaryCallSettings.Builder<?, ?>>of();
+      unaryMethodSettingsBuilders =
+          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              createAssistantSettings,
+              deleteAssistantSettings,
+              updateAssistantSettings,
+              getAssistantSettings,
+              listAssistantsSettings);
       initDefaults(this);
     }
 
@@ -294,8 +451,19 @@ public class AssistantServiceStubSettings extends StubSettings<AssistantServiceS
       super(settings);
 
       streamAssistSettings = settings.streamAssistSettings.toBuilder();
+      createAssistantSettings = settings.createAssistantSettings.toBuilder();
+      deleteAssistantSettings = settings.deleteAssistantSettings.toBuilder();
+      updateAssistantSettings = settings.updateAssistantSettings.toBuilder();
+      getAssistantSettings = settings.getAssistantSettings.toBuilder();
+      listAssistantsSettings = settings.listAssistantsSettings.toBuilder();
 
-      unaryMethodSettingsBuilders = ImmutableList.<UnaryCallSettings.Builder<?, ?>>of();
+      unaryMethodSettingsBuilders =
+          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              createAssistantSettings,
+              deleteAssistantSettings,
+              updateAssistantSettings,
+              getAssistantSettings,
+              listAssistantsSettings);
     }
 
     private static Builder createDefault() {
@@ -325,8 +493,33 @@ public class AssistantServiceStubSettings extends StubSettings<AssistantServiceS
     private static Builder initDefaults(Builder builder) {
       builder
           .streamAssistSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_2_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_2_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_3_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_3_params"));
+
+      builder
+          .createAssistantSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"));
+
+      builder
+          .deleteAssistantSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"));
+
+      builder
+          .updateAssistantSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"));
+
+      builder
+          .getAssistantSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .listAssistantsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
 
       return builder;
     }
@@ -350,6 +543,33 @@ public class AssistantServiceStubSettings extends StubSettings<AssistantServiceS
     public ServerStreamingCallSettings.Builder<StreamAssistRequest, StreamAssistResponse>
         streamAssistSettings() {
       return streamAssistSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createAssistant. */
+    public UnaryCallSettings.Builder<CreateAssistantRequest, Assistant> createAssistantSettings() {
+      return createAssistantSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteAssistant. */
+    public UnaryCallSettings.Builder<DeleteAssistantRequest, Empty> deleteAssistantSettings() {
+      return deleteAssistantSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateAssistant. */
+    public UnaryCallSettings.Builder<UpdateAssistantRequest, Assistant> updateAssistantSettings() {
+      return updateAssistantSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getAssistant. */
+    public UnaryCallSettings.Builder<GetAssistantRequest, Assistant> getAssistantSettings() {
+      return getAssistantSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listAssistants. */
+    public PagedCallSettings.Builder<
+            ListAssistantsRequest, ListAssistantsResponse, ListAssistantsPagedResponse>
+        listAssistantsSettings() {
+      return listAssistantsSettings;
     }
 
     @Override

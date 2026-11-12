@@ -79,7 +79,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> Chat</td>
- *      <td><p> Answers a data question by generating a stream of [Message][google.cloud.geminidataanalytics.v1.Message] objects.</td>
+ *      <td><p> Answers a data question by generating a stream of [Message][google.cloud.geminidataanalytics.v1beta.Message] objects.</td>
  *      <td>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
@@ -360,7 +360,7 @@ public class DataChatServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Answers a data question by generating a stream of
-   * [Message][google.cloud.geminidataanalytics.v1.Message] objects.
+   * [Message][google.cloud.geminidataanalytics.v1beta.Message] objects.
    *
    * <p>Sample code:
    *
@@ -1108,6 +1108,7 @@ public class DataChatServiceClient implements BackgroundResource {
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
+   *           .setPendingWriteWaitSkipped(true)
    *           .build();
    *   for (StorageMessage element : dataChatServiceClient.listMessages(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -1142,6 +1143,7 @@ public class DataChatServiceClient implements BackgroundResource {
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
+   *           .setPendingWriteWaitSkipped(true)
    *           .build();
    *   ApiFuture<StorageMessage> future =
    *       dataChatServiceClient.listMessagesPagedCallable().futureCall(request);
@@ -1177,6 +1179,7 @@ public class DataChatServiceClient implements BackgroundResource {
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
+   *           .setPendingWriteWaitSkipped(true)
    *           .build();
    *   while (true) {
    *     ListMessagesResponse response = dataChatServiceClient.listMessagesCallable().call(request);

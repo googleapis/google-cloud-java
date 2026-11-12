@@ -23,6 +23,7 @@ import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQueryException;
 import com.google.cloud.bigquery.BigQueryOptions;
 import com.google.cloud.bigquery.QueryJobConfiguration;
+import com.google.cloud.bigquery.QueryResultsFormat;
 import org.apache.arrow.vector.FieldVector;
 import org.apache.arrow.vector.VectorSchemaRoot;
 
@@ -52,8 +53,11 @@ public class QueryArrow {
       // once, and can be reused for multiple requests.
       BigQuery bigquery = BigQueryOptions.getDefaultInstance().getService();
 
-      // Create the query configuration.
-      QueryJobConfiguration queryConfig = QueryJobConfiguration.newBuilder(query).build();
+      // Create the query configuration with Arrow results format.
+      QueryJobConfiguration queryConfig =
+          QueryJobConfiguration.newBuilder(query)
+              .setQueryResultsFormat(QueryResultsFormat.ARROW)
+              .build();
 
       // Execute the query using queryArrow. Always close ArrowQueryResult to free off-heap memory.
       try (ArrowQueryResult result = bigquery.queryArrow(queryConfig)) {

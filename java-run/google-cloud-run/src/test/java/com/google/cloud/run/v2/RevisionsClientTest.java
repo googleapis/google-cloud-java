@@ -112,6 +112,7 @@ public class RevisionsClientTest {
             .setTimeout(Duration.newBuilder().build())
             .setServiceAccount("serviceAccount1079137720")
             .addAllContainers(new ArrayList<Container>())
+            .setSandboxes(SandboxConfiguration.newBuilder().build())
             .addAllVolumes(new ArrayList<Volume>())
             .setExecutionEnvironment(ExecutionEnvironment.forNumber(0))
             .setEncryptionKey("encryptionKey-36224036")
@@ -126,8 +127,12 @@ public class RevisionsClientTest {
             .setSessionAffinity(true)
             .setScalingStatus(RevisionScalingStatus.newBuilder().build())
             .setNodeSelector(NodeSelector.newBuilder().build())
+            .setWorkloadIdentityConfig(WorkloadIdentityConfig.newBuilder().build())
             .setGpuZonalRedundancyDisabled(true)
             .setCreator("creator1028554796")
+            .setClient("client-1357712437")
+            .setClientVersion("clientVersion771880589")
+            .setAmbientNetworking(AmbientNetworking.newBuilder().build())
             .setEtag("etag3123477")
             .build();
     mockRevisions.addResponse(expectedResponse);
@@ -184,6 +189,7 @@ public class RevisionsClientTest {
             .setTimeout(Duration.newBuilder().build())
             .setServiceAccount("serviceAccount1079137720")
             .addAllContainers(new ArrayList<Container>())
+            .setSandboxes(SandboxConfiguration.newBuilder().build())
             .addAllVolumes(new ArrayList<Volume>())
             .setExecutionEnvironment(ExecutionEnvironment.forNumber(0))
             .setEncryptionKey("encryptionKey-36224036")
@@ -198,8 +204,12 @@ public class RevisionsClientTest {
             .setSessionAffinity(true)
             .setScalingStatus(RevisionScalingStatus.newBuilder().build())
             .setNodeSelector(NodeSelector.newBuilder().build())
+            .setWorkloadIdentityConfig(WorkloadIdentityConfig.newBuilder().build())
             .setGpuZonalRedundancyDisabled(true)
             .setCreator("creator1028554796")
+            .setClient("client-1357712437")
+            .setClientVersion("clientVersion771880589")
+            .setAmbientNetworking(AmbientNetworking.newBuilder().build())
             .setEtag("etag3123477")
             .build();
     mockRevisions.addResponse(expectedResponse);
@@ -344,6 +354,7 @@ public class RevisionsClientTest {
             .setTimeout(Duration.newBuilder().build())
             .setServiceAccount("serviceAccount1079137720")
             .addAllContainers(new ArrayList<Container>())
+            .setSandboxes(SandboxConfiguration.newBuilder().build())
             .addAllVolumes(new ArrayList<Volume>())
             .setExecutionEnvironment(ExecutionEnvironment.forNumber(0))
             .setEncryptionKey("encryptionKey-36224036")
@@ -358,8 +369,12 @@ public class RevisionsClientTest {
             .setSessionAffinity(true)
             .setScalingStatus(RevisionScalingStatus.newBuilder().build())
             .setNodeSelector(NodeSelector.newBuilder().build())
+            .setWorkloadIdentityConfig(WorkloadIdentityConfig.newBuilder().build())
             .setGpuZonalRedundancyDisabled(true)
             .setCreator("creator1028554796")
+            .setClient("client-1357712437")
+            .setClientVersion("clientVersion771880589")
+            .setAmbientNetworking(AmbientNetworking.newBuilder().build())
             .setEtag("etag3123477")
             .build();
     Operation resultOperation =
@@ -424,6 +439,7 @@ public class RevisionsClientTest {
             .setTimeout(Duration.newBuilder().build())
             .setServiceAccount("serviceAccount1079137720")
             .addAllContainers(new ArrayList<Container>())
+            .setSandboxes(SandboxConfiguration.newBuilder().build())
             .addAllVolumes(new ArrayList<Volume>())
             .setExecutionEnvironment(ExecutionEnvironment.forNumber(0))
             .setEncryptionKey("encryptionKey-36224036")
@@ -438,8 +454,12 @@ public class RevisionsClientTest {
             .setSessionAffinity(true)
             .setScalingStatus(RevisionScalingStatus.newBuilder().build())
             .setNodeSelector(NodeSelector.newBuilder().build())
+            .setWorkloadIdentityConfig(WorkloadIdentityConfig.newBuilder().build())
             .setGpuZonalRedundancyDisabled(true)
             .setCreator("creator1028554796")
+            .setClient("client-1357712437")
+            .setClientVersion("clientVersion771880589")
+            .setAmbientNetworking(AmbientNetworking.newBuilder().build())
             .setEtag("etag3123477")
             .build();
     Operation resultOperation =

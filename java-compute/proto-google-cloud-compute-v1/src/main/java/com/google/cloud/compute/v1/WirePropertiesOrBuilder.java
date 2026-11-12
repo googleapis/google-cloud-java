@@ -176,4 +176,46 @@ public interface WirePropertiesOrBuilder
    * @return The bytes for faultResponse.
    */
   com.google.protobuf.ByteString getFaultResponseBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The flow management configuration for the wire.
+   * Check the FlowManagement enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string flow_management = 183886836;</code>
+   *
+   * @return Whether the flowManagement field is set.
+   */
+  boolean hasFlowManagement();
+
+  /**
+   *
+   *
+   * <pre>
+   * The flow management configuration for the wire.
+   * Check the FlowManagement enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string flow_management = 183886836;</code>
+   *
+   * @return The flowManagement.
+   */
+  java.lang.String getFlowManagement();
+
+  /**
+   *
+   *
+   * <pre>
+   * The flow management configuration for the wire.
+   * Check the FlowManagement enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string flow_management = 183886836;</code>
+   *
+   * @return The bytes for flowManagement.
+   */
+  com.google.protobuf.ByteString getFlowManagementBytes();
 }

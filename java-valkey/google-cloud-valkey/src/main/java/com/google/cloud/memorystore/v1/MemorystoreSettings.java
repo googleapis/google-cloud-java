@@ -16,6 +16,8 @@
 
 package com.google.cloud.memorystore.v1;
 
+import static com.google.cloud.memorystore.v1.MemorystoreClient.ListAclPoliciesPagedResponse;
+import static com.google.cloud.memorystore.v1.MemorystoreClient.ListAclPolicyRevisionsPagedResponse;
 import static com.google.cloud.memorystore.v1.MemorystoreClient.ListAuthTokensPagedResponse;
 import static com.google.cloud.memorystore.v1.MemorystoreClient.ListBackupCollectionsPagedResponse;
 import static com.google.cloud.memorystore.v1.MemorystoreClient.ListBackupsPagedResponse;
@@ -66,7 +68,7 @@ import org.jspecify.annotations.Nullable;
  *
  * <p>For example, to set the
  * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
- * of getInstance:
+ * of getAclPolicy:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -76,10 +78,10 @@ import org.jspecify.annotations.Nullable;
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * MemorystoreSettings.Builder memorystoreSettingsBuilder = MemorystoreSettings.newBuilder();
  * memorystoreSettingsBuilder
- *     .getInstanceSettings()
+ *     .getAclPolicySettings()
  *     .setRetrySettings(
  *         memorystoreSettingsBuilder
- *             .getInstanceSettings()
+ *             .getAclPolicySettings()
  *             .getRetrySettings()
  *             .toBuilder()
  *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
@@ -127,15 +129,32 @@ import org.jspecify.annotations.Nullable;
 @Generated("by gapic-generator-java")
 public class MemorystoreSettings extends ClientSettings<MemorystoreSettings> {
 
+  /** Returns the object with the settings used for calls to listAclPolicies. */
+  public PagedCallSettings<
+          ListAclPoliciesRequest, ListAclPoliciesResponse, ListAclPoliciesPagedResponse>
+      listAclPoliciesSettings() {
+    return ((MemorystoreStubSettings) getStubSettings()).listAclPoliciesSettings();
+  }
+
   /** Returns the object with the settings used for calls to listInstances. */
   public PagedCallSettings<ListInstancesRequest, ListInstancesResponse, ListInstancesPagedResponse>
       listInstancesSettings() {
     return ((MemorystoreStubSettings) getStubSettings()).listInstancesSettings();
   }
 
+  /** Returns the object with the settings used for calls to getAclPolicy. */
+  public UnaryCallSettings<GetAclPolicyRequest, AclPolicy> getAclPolicySettings() {
+    return ((MemorystoreStubSettings) getStubSettings()).getAclPolicySettings();
+  }
+
   /** Returns the object with the settings used for calls to getInstance. */
   public UnaryCallSettings<GetInstanceRequest, Instance> getInstanceSettings() {
     return ((MemorystoreStubSettings) getStubSettings()).getInstanceSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createAclPolicy. */
+  public UnaryCallSettings<CreateAclPolicyRequest, AclPolicy> createAclPolicySettings() {
+    return ((MemorystoreStubSettings) getStubSettings()).createAclPolicySettings();
   }
 
   /** Returns the object with the settings used for calls to createInstance. */
@@ -149,6 +168,17 @@ public class MemorystoreSettings extends ClientSettings<MemorystoreSettings> {
     return ((MemorystoreStubSettings) getStubSettings()).createInstanceOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to updateAclPolicy. */
+  public UnaryCallSettings<UpdateAclPolicyRequest, Operation> updateAclPolicySettings() {
+    return ((MemorystoreStubSettings) getStubSettings()).updateAclPolicySettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateAclPolicy. */
+  public OperationCallSettings<UpdateAclPolicyRequest, AclPolicy, OperationMetadata>
+      updateAclPolicyOperationSettings() {
+    return ((MemorystoreStubSettings) getStubSettings()).updateAclPolicyOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to updateInstance. */
   public UnaryCallSettings<UpdateInstanceRequest, Operation> updateInstanceSettings() {
     return ((MemorystoreStubSettings) getStubSettings()).updateInstanceSettings();
@@ -158,6 +188,32 @@ public class MemorystoreSettings extends ClientSettings<MemorystoreSettings> {
   public OperationCallSettings<UpdateInstanceRequest, Instance, OperationMetadata>
       updateInstanceOperationSettings() {
     return ((MemorystoreStubSettings) getStubSettings()).updateInstanceOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteAclPolicy. */
+  public UnaryCallSettings<DeleteAclPolicyRequest, Operation> deleteAclPolicySettings() {
+    return ((MemorystoreStubSettings) getStubSettings()).deleteAclPolicySettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteAclPolicy. */
+  public OperationCallSettings<DeleteAclPolicyRequest, Empty, OperationMetadata>
+      deleteAclPolicyOperationSettings() {
+    return ((MemorystoreStubSettings) getStubSettings()).deleteAclPolicyOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getAclPolicyRevision. */
+  public UnaryCallSettings<GetAclPolicyRevisionRequest, AclPolicyRevision>
+      getAclPolicyRevisionSettings() {
+    return ((MemorystoreStubSettings) getStubSettings()).getAclPolicyRevisionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listAclPolicyRevisions. */
+  public PagedCallSettings<
+          ListAclPolicyRevisionsRequest,
+          ListAclPolicyRevisionsResponse,
+          ListAclPolicyRevisionsPagedResponse>
+      listAclPolicyRevisionsSettings() {
+    return ((MemorystoreStubSettings) getStubSettings()).listAclPolicyRevisionsSettings();
   }
 
   /** Returns the object with the settings used for calls to deleteInstance. */
@@ -470,6 +526,13 @@ public class MemorystoreSettings extends ClientSettings<MemorystoreSettings> {
       return this;
     }
 
+    /** Returns the builder for the settings used for calls to listAclPolicies. */
+    public PagedCallSettings.Builder<
+            ListAclPoliciesRequest, ListAclPoliciesResponse, ListAclPoliciesPagedResponse>
+        listAclPoliciesSettings() {
+      return getStubSettingsBuilder().listAclPoliciesSettings();
+    }
+
     /** Returns the builder for the settings used for calls to listInstances. */
     public PagedCallSettings.Builder<
             ListInstancesRequest, ListInstancesResponse, ListInstancesPagedResponse>
@@ -477,9 +540,19 @@ public class MemorystoreSettings extends ClientSettings<MemorystoreSettings> {
       return getStubSettingsBuilder().listInstancesSettings();
     }
 
+    /** Returns the builder for the settings used for calls to getAclPolicy. */
+    public UnaryCallSettings.Builder<GetAclPolicyRequest, AclPolicy> getAclPolicySettings() {
+      return getStubSettingsBuilder().getAclPolicySettings();
+    }
+
     /** Returns the builder for the settings used for calls to getInstance. */
     public UnaryCallSettings.Builder<GetInstanceRequest, Instance> getInstanceSettings() {
       return getStubSettingsBuilder().getInstanceSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createAclPolicy. */
+    public UnaryCallSettings.Builder<CreateAclPolicyRequest, AclPolicy> createAclPolicySettings() {
+      return getStubSettingsBuilder().createAclPolicySettings();
     }
 
     /** Returns the builder for the settings used for calls to createInstance. */
@@ -493,6 +566,17 @@ public class MemorystoreSettings extends ClientSettings<MemorystoreSettings> {
       return getStubSettingsBuilder().createInstanceOperationSettings();
     }
 
+    /** Returns the builder for the settings used for calls to updateAclPolicy. */
+    public UnaryCallSettings.Builder<UpdateAclPolicyRequest, Operation> updateAclPolicySettings() {
+      return getStubSettingsBuilder().updateAclPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateAclPolicy. */
+    public OperationCallSettings.Builder<UpdateAclPolicyRequest, AclPolicy, OperationMetadata>
+        updateAclPolicyOperationSettings() {
+      return getStubSettingsBuilder().updateAclPolicyOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to updateInstance. */
     public UnaryCallSettings.Builder<UpdateInstanceRequest, Operation> updateInstanceSettings() {
       return getStubSettingsBuilder().updateInstanceSettings();
@@ -502,6 +586,32 @@ public class MemorystoreSettings extends ClientSettings<MemorystoreSettings> {
     public OperationCallSettings.Builder<UpdateInstanceRequest, Instance, OperationMetadata>
         updateInstanceOperationSettings() {
       return getStubSettingsBuilder().updateInstanceOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteAclPolicy. */
+    public UnaryCallSettings.Builder<DeleteAclPolicyRequest, Operation> deleteAclPolicySettings() {
+      return getStubSettingsBuilder().deleteAclPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteAclPolicy. */
+    public OperationCallSettings.Builder<DeleteAclPolicyRequest, Empty, OperationMetadata>
+        deleteAclPolicyOperationSettings() {
+      return getStubSettingsBuilder().deleteAclPolicyOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getAclPolicyRevision. */
+    public UnaryCallSettings.Builder<GetAclPolicyRevisionRequest, AclPolicyRevision>
+        getAclPolicyRevisionSettings() {
+      return getStubSettingsBuilder().getAclPolicyRevisionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listAclPolicyRevisions. */
+    public PagedCallSettings.Builder<
+            ListAclPolicyRevisionsRequest,
+            ListAclPolicyRevisionsResponse,
+            ListAclPolicyRevisionsPagedResponse>
+        listAclPolicyRevisionsSettings() {
+      return getStubSettingsBuilder().listAclPolicyRevisionsSettings();
     }
 
     /** Returns the builder for the settings used for calls to deleteInstance. */

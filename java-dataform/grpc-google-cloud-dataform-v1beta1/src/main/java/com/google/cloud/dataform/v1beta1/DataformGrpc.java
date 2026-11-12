@@ -1992,6 +1992,55 @@ public final class DataformGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.dataform.v1beta1.FetchWorkspaceHistoryRequest,
+          com.google.cloud.dataform.v1beta1.FetchWorkspaceHistoryResponse>
+      getFetchWorkspaceHistoryMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "FetchWorkspaceHistory",
+      requestType = com.google.cloud.dataform.v1beta1.FetchWorkspaceHistoryRequest.class,
+      responseType = com.google.cloud.dataform.v1beta1.FetchWorkspaceHistoryResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.dataform.v1beta1.FetchWorkspaceHistoryRequest,
+          com.google.cloud.dataform.v1beta1.FetchWorkspaceHistoryResponse>
+      getFetchWorkspaceHistoryMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.dataform.v1beta1.FetchWorkspaceHistoryRequest,
+            com.google.cloud.dataform.v1beta1.FetchWorkspaceHistoryResponse>
+        getFetchWorkspaceHistoryMethod;
+    if ((getFetchWorkspaceHistoryMethod = DataformGrpc.getFetchWorkspaceHistoryMethod) == null) {
+      synchronized (DataformGrpc.class) {
+        if ((getFetchWorkspaceHistoryMethod = DataformGrpc.getFetchWorkspaceHistoryMethod)
+            == null) {
+          DataformGrpc.getFetchWorkspaceHistoryMethod =
+              getFetchWorkspaceHistoryMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.dataform.v1beta1.FetchWorkspaceHistoryRequest,
+                          com.google.cloud.dataform.v1beta1.FetchWorkspaceHistoryResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "FetchWorkspaceHistory"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dataform.v1beta1.FetchWorkspaceHistoryRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dataform.v1beta1.FetchWorkspaceHistoryResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DataformMethodDescriptorSupplier("FetchWorkspaceHistory"))
+                      .build();
+        }
+      }
+    }
+    return getFetchWorkspaceHistoryMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.dataform.v1beta1.CommitWorkspaceChangesRequest,
           com.google.cloud.dataform.v1beta1.CommitWorkspaceChangesResponse>
       getCommitWorkspaceChangesMethod;
@@ -2927,6 +2976,59 @@ public final class DataformGrpc {
       }
     }
     return getCreateCompilationResultMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.dataform.v1beta1.CreateCompilationResultRequest,
+          com.google.longrunning.Operation>
+      getCreateCompilationResultLongRunningMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateCompilationResultLongRunning",
+      requestType = com.google.cloud.dataform.v1beta1.CreateCompilationResultRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.dataform.v1beta1.CreateCompilationResultRequest,
+          com.google.longrunning.Operation>
+      getCreateCompilationResultLongRunningMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.dataform.v1beta1.CreateCompilationResultRequest,
+            com.google.longrunning.Operation>
+        getCreateCompilationResultLongRunningMethod;
+    if ((getCreateCompilationResultLongRunningMethod =
+            DataformGrpc.getCreateCompilationResultLongRunningMethod)
+        == null) {
+      synchronized (DataformGrpc.class) {
+        if ((getCreateCompilationResultLongRunningMethod =
+                DataformGrpc.getCreateCompilationResultLongRunningMethod)
+            == null) {
+          DataformGrpc.getCreateCompilationResultLongRunningMethod =
+              getCreateCompilationResultLongRunningMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.dataform.v1beta1.CreateCompilationResultRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              SERVICE_NAME, "CreateCompilationResultLongRunning"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dataform.v1beta1.CreateCompilationResultRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DataformMethodDescriptorSupplier(
+                              "CreateCompilationResultLongRunning"))
+                      .build();
+        }
+      }
+    }
+    return getCreateCompilationResultLongRunningMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<
@@ -4428,6 +4530,21 @@ public final class DataformGrpc {
      *
      *
      * <pre>
+     * Fetches a Workspace's history of commits.
+     * </pre>
+     */
+    default void fetchWorkspaceHistory(
+        com.google.cloud.dataform.v1beta1.FetchWorkspaceHistoryRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.dataform.v1beta1.FetchWorkspaceHistoryResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getFetchWorkspaceHistoryMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Applies a Git commit for uncommitted files in a Workspace.
      * </pre>
      */
@@ -4725,6 +4842,21 @@ public final class DataformGrpc {
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getCreateCompilationResultMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new CompilationResult in a given project and location
+     * asynchronously.
+     * </pre>
+     */
+    default void createCompilationResultLongRunning(
+        com.google.cloud.dataform.v1beta1.CreateCompilationResultRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateCompilationResultLongRunningMethod(), responseObserver);
     }
 
     /**
@@ -5752,6 +5884,23 @@ public final class DataformGrpc {
      *
      *
      * <pre>
+     * Fetches a Workspace's history of commits.
+     * </pre>
+     */
+    public void fetchWorkspaceHistory(
+        com.google.cloud.dataform.v1beta1.FetchWorkspaceHistoryRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.dataform.v1beta1.FetchWorkspaceHistoryResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getFetchWorkspaceHistoryMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Applies a Git commit for uncommitted files in a Workspace.
      * </pre>
      */
@@ -6083,6 +6232,23 @@ public final class DataformGrpc {
             responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateCompilationResultMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new CompilationResult in a given project and location
+     * asynchronously.
+     * </pre>
+     */
+    public void createCompilationResultLongRunning(
+        com.google.cloud.dataform.v1beta1.CreateCompilationResultRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateCompilationResultLongRunningMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -7021,6 +7187,20 @@ public final class DataformGrpc {
      *
      *
      * <pre>
+     * Fetches a Workspace's history of commits.
+     * </pre>
+     */
+    public com.google.cloud.dataform.v1beta1.FetchWorkspaceHistoryResponse fetchWorkspaceHistory(
+        com.google.cloud.dataform.v1beta1.FetchWorkspaceHistoryRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getFetchWorkspaceHistoryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Applies a Git commit for uncommitted files in a Workspace.
      * </pre>
      */
@@ -7297,6 +7477,21 @@ public final class DataformGrpc {
         throws io.grpc.StatusException {
       return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateCompilationResultMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new CompilationResult in a given project and location
+     * asynchronously.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createCompilationResultLongRunning(
+        com.google.cloud.dataform.v1beta1.CreateCompilationResultRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateCompilationResultLongRunningMethod(), getCallOptions(), request);
     }
 
     /**
@@ -8144,6 +8339,19 @@ public final class DataformGrpc {
      *
      *
      * <pre>
+     * Fetches a Workspace's history of commits.
+     * </pre>
+     */
+    public com.google.cloud.dataform.v1beta1.FetchWorkspaceHistoryResponse fetchWorkspaceHistory(
+        com.google.cloud.dataform.v1beta1.FetchWorkspaceHistoryRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFetchWorkspaceHistoryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Applies a Git commit for uncommitted files in a Workspace.
      * </pre>
      */
@@ -8403,6 +8611,20 @@ public final class DataformGrpc {
         com.google.cloud.dataform.v1beta1.CreateCompilationResultRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateCompilationResultMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new CompilationResult in a given project and location
+     * asynchronously.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createCompilationResultLongRunning(
+        com.google.cloud.dataform.v1beta1.CreateCompilationResultRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateCompilationResultLongRunningMethod(), getCallOptions(), request);
     }
 
     /**
@@ -9276,6 +9498,21 @@ public final class DataformGrpc {
      *
      *
      * <pre>
+     * Fetches a Workspace's history of commits.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.dataform.v1beta1.FetchWorkspaceHistoryResponse>
+        fetchWorkspaceHistory(
+            com.google.cloud.dataform.v1beta1.FetchWorkspaceHistoryRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getFetchWorkspaceHistoryMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Applies a Git commit for uncommitted files in a Workspace.
      * </pre>
      */
@@ -9560,6 +9797,22 @@ public final class DataformGrpc {
             com.google.cloud.dataform.v1beta1.CreateCompilationResultRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateCompilationResultMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new CompilationResult in a given project and location
+     * asynchronously.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        createCompilationResultLongRunning(
+            com.google.cloud.dataform.v1beta1.CreateCompilationResultRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateCompilationResultLongRunningMethod(), getCallOptions()),
+          request);
     }
 
     /**
@@ -9868,43 +10121,45 @@ public final class DataformGrpc {
   private static final int METHODID_PUSH_GIT_COMMITS = 39;
   private static final int METHODID_FETCH_FILE_GIT_STATUSES = 40;
   private static final int METHODID_FETCH_GIT_AHEAD_BEHIND = 41;
-  private static final int METHODID_COMMIT_WORKSPACE_CHANGES = 42;
-  private static final int METHODID_RESET_WORKSPACE_CHANGES = 43;
-  private static final int METHODID_FETCH_FILE_DIFF = 44;
-  private static final int METHODID_QUERY_DIRECTORY_CONTENTS = 45;
-  private static final int METHODID_SEARCH_FILES = 46;
-  private static final int METHODID_MAKE_DIRECTORY = 47;
-  private static final int METHODID_REMOVE_DIRECTORY = 48;
-  private static final int METHODID_MOVE_DIRECTORY = 49;
-  private static final int METHODID_READ_FILE = 50;
-  private static final int METHODID_REMOVE_FILE = 51;
-  private static final int METHODID_MOVE_FILE = 52;
-  private static final int METHODID_WRITE_FILE = 53;
-  private static final int METHODID_LIST_RELEASE_CONFIGS = 54;
-  private static final int METHODID_GET_RELEASE_CONFIG = 55;
-  private static final int METHODID_CREATE_RELEASE_CONFIG = 56;
-  private static final int METHODID_UPDATE_RELEASE_CONFIG = 57;
-  private static final int METHODID_DELETE_RELEASE_CONFIG = 58;
-  private static final int METHODID_LIST_COMPILATION_RESULTS = 59;
-  private static final int METHODID_GET_COMPILATION_RESULT = 60;
-  private static final int METHODID_CREATE_COMPILATION_RESULT = 61;
-  private static final int METHODID_QUERY_COMPILATION_RESULT_ACTIONS = 62;
-  private static final int METHODID_LIST_WORKFLOW_CONFIGS = 63;
-  private static final int METHODID_GET_WORKFLOW_CONFIG = 64;
-  private static final int METHODID_CREATE_WORKFLOW_CONFIG = 65;
-  private static final int METHODID_UPDATE_WORKFLOW_CONFIG = 66;
-  private static final int METHODID_DELETE_WORKFLOW_CONFIG = 67;
-  private static final int METHODID_LIST_WORKFLOW_INVOCATIONS = 68;
-  private static final int METHODID_GET_WORKFLOW_INVOCATION = 69;
-  private static final int METHODID_CREATE_WORKFLOW_INVOCATION = 70;
-  private static final int METHODID_DELETE_WORKFLOW_INVOCATION = 71;
-  private static final int METHODID_CANCEL_WORKFLOW_INVOCATION = 72;
-  private static final int METHODID_QUERY_WORKFLOW_INVOCATION_ACTIONS = 73;
-  private static final int METHODID_GET_CONFIG = 74;
-  private static final int METHODID_UPDATE_CONFIG = 75;
-  private static final int METHODID_GET_IAM_POLICY = 76;
-  private static final int METHODID_SET_IAM_POLICY = 77;
-  private static final int METHODID_TEST_IAM_PERMISSIONS = 78;
+  private static final int METHODID_FETCH_WORKSPACE_HISTORY = 42;
+  private static final int METHODID_COMMIT_WORKSPACE_CHANGES = 43;
+  private static final int METHODID_RESET_WORKSPACE_CHANGES = 44;
+  private static final int METHODID_FETCH_FILE_DIFF = 45;
+  private static final int METHODID_QUERY_DIRECTORY_CONTENTS = 46;
+  private static final int METHODID_SEARCH_FILES = 47;
+  private static final int METHODID_MAKE_DIRECTORY = 48;
+  private static final int METHODID_REMOVE_DIRECTORY = 49;
+  private static final int METHODID_MOVE_DIRECTORY = 50;
+  private static final int METHODID_READ_FILE = 51;
+  private static final int METHODID_REMOVE_FILE = 52;
+  private static final int METHODID_MOVE_FILE = 53;
+  private static final int METHODID_WRITE_FILE = 54;
+  private static final int METHODID_LIST_RELEASE_CONFIGS = 55;
+  private static final int METHODID_GET_RELEASE_CONFIG = 56;
+  private static final int METHODID_CREATE_RELEASE_CONFIG = 57;
+  private static final int METHODID_UPDATE_RELEASE_CONFIG = 58;
+  private static final int METHODID_DELETE_RELEASE_CONFIG = 59;
+  private static final int METHODID_LIST_COMPILATION_RESULTS = 60;
+  private static final int METHODID_GET_COMPILATION_RESULT = 61;
+  private static final int METHODID_CREATE_COMPILATION_RESULT = 62;
+  private static final int METHODID_CREATE_COMPILATION_RESULT_LONG_RUNNING = 63;
+  private static final int METHODID_QUERY_COMPILATION_RESULT_ACTIONS = 64;
+  private static final int METHODID_LIST_WORKFLOW_CONFIGS = 65;
+  private static final int METHODID_GET_WORKFLOW_CONFIG = 66;
+  private static final int METHODID_CREATE_WORKFLOW_CONFIG = 67;
+  private static final int METHODID_UPDATE_WORKFLOW_CONFIG = 68;
+  private static final int METHODID_DELETE_WORKFLOW_CONFIG = 69;
+  private static final int METHODID_LIST_WORKFLOW_INVOCATIONS = 70;
+  private static final int METHODID_GET_WORKFLOW_INVOCATION = 71;
+  private static final int METHODID_CREATE_WORKFLOW_INVOCATION = 72;
+  private static final int METHODID_DELETE_WORKFLOW_INVOCATION = 73;
+  private static final int METHODID_CANCEL_WORKFLOW_INVOCATION = 74;
+  private static final int METHODID_QUERY_WORKFLOW_INVOCATION_ACTIONS = 75;
+  private static final int METHODID_GET_CONFIG = 76;
+  private static final int METHODID_UPDATE_CONFIG = 77;
+  private static final int METHODID_GET_IAM_POLICY = 78;
+  private static final int METHODID_SET_IAM_POLICY = 79;
+  private static final int METHODID_TEST_IAM_PERMISSIONS = 80;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -10185,6 +10440,13 @@ public final class DataformGrpc {
                       com.google.cloud.dataform.v1beta1.FetchGitAheadBehindResponse>)
                   responseObserver);
           break;
+        case METHODID_FETCH_WORKSPACE_HISTORY:
+          serviceImpl.fetchWorkspaceHistory(
+              (com.google.cloud.dataform.v1beta1.FetchWorkspaceHistoryRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.dataform.v1beta1.FetchWorkspaceHistoryResponse>)
+                  responseObserver);
+          break;
         case METHODID_COMMIT_WORKSPACE_CHANGES:
           serviceImpl.commitWorkspaceChanges(
               (com.google.cloud.dataform.v1beta1.CommitWorkspaceChangesRequest) request,
@@ -10309,6 +10571,11 @@ public final class DataformGrpc {
               (com.google.cloud.dataform.v1beta1.CreateCompilationResultRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.dataform.v1beta1.CompilationResult>)
                   responseObserver);
+          break;
+        case METHODID_CREATE_COMPILATION_RESULT_LONG_RUNNING:
+          serviceImpl.createCompilationResultLongRunning(
+              (com.google.cloud.dataform.v1beta1.CreateCompilationResultRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         case METHODID_QUERY_COMPILATION_RESULT_ACTIONS:
           serviceImpl.queryCompilationResultActions(
@@ -10713,6 +10980,13 @@ public final class DataformGrpc {
                     com.google.cloud.dataform.v1beta1.FetchGitAheadBehindResponse>(
                     service, METHODID_FETCH_GIT_AHEAD_BEHIND)))
         .addMethod(
+            getFetchWorkspaceHistoryMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataform.v1beta1.FetchWorkspaceHistoryRequest,
+                    com.google.cloud.dataform.v1beta1.FetchWorkspaceHistoryResponse>(
+                    service, METHODID_FETCH_WORKSPACE_HISTORY)))
+        .addMethod(
             getCommitWorkspaceChangesMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -10851,6 +11125,13 @@ public final class DataformGrpc {
                     com.google.cloud.dataform.v1beta1.CreateCompilationResultRequest,
                     com.google.cloud.dataform.v1beta1.CompilationResult>(
                     service, METHODID_CREATE_COMPILATION_RESULT)))
+        .addMethod(
+            getCreateCompilationResultLongRunningMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataform.v1beta1.CreateCompilationResultRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_CREATE_COMPILATION_RESULT_LONG_RUNNING)))
         .addMethod(
             getQueryCompilationResultActionsMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -11053,6 +11334,7 @@ public final class DataformGrpc {
                       .addMethod(getPushGitCommitsMethod())
                       .addMethod(getFetchFileGitStatusesMethod())
                       .addMethod(getFetchGitAheadBehindMethod())
+                      .addMethod(getFetchWorkspaceHistoryMethod())
                       .addMethod(getCommitWorkspaceChangesMethod())
                       .addMethod(getResetWorkspaceChangesMethod())
                       .addMethod(getFetchFileDiffMethod())
@@ -11073,6 +11355,7 @@ public final class DataformGrpc {
                       .addMethod(getListCompilationResultsMethod())
                       .addMethod(getGetCompilationResultMethod())
                       .addMethod(getCreateCompilationResultMethod())
+                      .addMethod(getCreateCompilationResultLongRunningMethod())
                       .addMethod(getQueryCompilationResultActionsMethod())
                       .addMethod(getListWorkflowConfigsMethod())
                       .addMethod(getGetWorkflowConfigMethod())

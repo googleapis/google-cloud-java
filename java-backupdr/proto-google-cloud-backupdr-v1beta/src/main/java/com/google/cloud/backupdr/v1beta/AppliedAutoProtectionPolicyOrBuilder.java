@@ -65,7 +65,9 @@ public interface AppliedAutoProtectionPolicyOrBuilder
    * projects/{admin-project}/locations/{location}/autoProtectionPolicies/{policy_id}/autoProtectionPolicyBindings/{binding_id}.
    * </pre>
    *
-   * <code>string source_binding = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string source_binding = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The sourceBinding.
    */
@@ -80,7 +82,9 @@ public interface AppliedAutoProtectionPolicyOrBuilder
    * projects/{admin-project}/locations/{location}/autoProtectionPolicies/{policy_id}/autoProtectionPolicyBindings/{binding_id}.
    * </pre>
    *
-   * <code>string source_binding = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string source_binding = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for sourceBinding.
    */
