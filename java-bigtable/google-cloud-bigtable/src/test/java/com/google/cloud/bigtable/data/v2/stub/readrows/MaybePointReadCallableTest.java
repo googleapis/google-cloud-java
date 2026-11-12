@@ -165,6 +165,19 @@ public class MaybePointReadCallableTest {
   }
 
   @Test
+  public void cancelWhenFutureAlreadyCompleted_propagatesCancellationWithoutResponse() {
+    Query query = Query.create(TABLE_ID).rowKey("a");
+    pointReader.response.set(ROW_A);
+    pointReader.onCall = () -> observer.controller.cancel();
+
+    callable.call(query, observer, null);
+
+    assertThat(observer.responses).isEmpty();
+    assertThat(observer.error).isInstanceOf(CancellationException.class);
+    assertThat(observer.completed).isFalse();
+  }
+
+  @Test
   public void futureCallThrows_routesThroughOnError() {
     Query query = Query.create(TABLE_ID).rowKey("a");
     RuntimeException failure = new RuntimeException("sync boom");

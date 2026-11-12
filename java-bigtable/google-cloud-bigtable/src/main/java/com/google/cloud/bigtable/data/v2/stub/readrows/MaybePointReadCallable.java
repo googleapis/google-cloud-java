@@ -59,7 +59,7 @@ public class MaybePointReadCallable<RowT> extends ServerStreamingCallable<Query,
     // autoFlowControl can be plain booleans instead of AtomicBooleans.
     AtomicBoolean hasStarted = new AtomicBoolean();
     AtomicBoolean autoFlowControl = new AtomicBoolean(true);
-    AtomicBoolean cancelled = new AtomicBoolean();
+    AtomicReference<CancellationException> cancellation = new AtomicReference<>();
     SettableApiFuture<Void> demand = SettableApiFuture.create();
     AtomicReference<ApiFuture<RowT>> futureRef = new AtomicReference<>();
 
@@ -67,11 +67,13 @@ public class MaybePointReadCallable<RowT> extends ServerStreamingCallable<Query,
         new StreamController() {
           @Override
           public void cancel() {
-            cancelled.set(true);
-            demand.cancel(false);
-            ApiFuture<RowT> f = futureRef.get();
-            if (f != null) {
-              f.cancel(false);
+            if (cancellation.compareAndSet(
+                null, new CancellationException("User cancelled stream"))) {
+              demand.cancel(false);
+              ApiFuture<RowT> f = futureRef.get();
+              if (f != null) {
+                f.cancel(false);
+              }
             }
           }
 
@@ -110,12 +112,12 @@ public class MaybePointReadCallable<RowT> extends ServerStreamingCallable<Query,
               row -> ApiFutures.transform(demand, unused -> row, MoreExecutors.directExecutor()),
               MoreExecutors.directExecutor());
     } catch (Throwable t) {
-      responseObserver.onError(
-          cancelled.get() ? new CancellationException("User cancelled stream") : t);
+      CancellationException e = cancellation.get();
+      responseObserver.onError(e != null ? e : t);
       return;
     }
     futureRef.set(future);
-    if (cancelled.get()) {
+    if (cancellation.get() != null) {
       future.cancel(false);
     }
 
@@ -124,6 +126,11 @@ public class MaybePointReadCallable<RowT> extends ServerStreamingCallable<Query,
         new ApiFutureCallback<RowT>() {
           @Override
           public void onSuccess(RowT row) {
+            CancellationException e = cancellation.get();
+            if (e != null) {
+              responseObserver.onError(e);
+              return;
+            }
             if (row != null) {
               try {
                 responseObserver.onResponse(row);
@@ -131,8 +138,9 @@ public class MaybePointReadCallable<RowT> extends ServerStreamingCallable<Query,
                 responseObserver.onError(t);
                 return;
               }
-              if (cancelled.get()) {
-                responseObserver.onError(new CancellationException("User cancelled stream"));
+              e = cancellation.get();
+              if (e != null) {
+                responseObserver.onError(e);
                 return;
               }
             }
@@ -141,7 +149,8 @@ public class MaybePointReadCallable<RowT> extends ServerStreamingCallable<Query,
 
           @Override
           public void onFailure(Throwable t) {
-            responseObserver.onError(t);
+            CancellationException e = cancellation.get();
+            responseObserver.onError(e != null ? e : t);
           }
         },
         MoreExecutors.directExecutor());
