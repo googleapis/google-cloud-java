@@ -4,6 +4,10 @@ target-it/**
 **/ITBigQueryJDBCLocalTest.java
 **/BigQueryStatementE2EBenchmark.java
 
+# Agent files: ignore local/generated content, but track shared skills.
+.agents/*
+!.agents/skills/
+
 tools/**/*.class
 tools/**/drivers/**
 tools/**/logs/**
