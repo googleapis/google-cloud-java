@@ -277,6 +277,26 @@ public class MaybePointReadCallableTest {
   }
 
   @Test
+  public void manualFlowControl_nullRowCompletesWithoutWaitingForDemand() {
+    Query query = Query.create(TABLE_ID).rowKey("missing");
+    RecordingObserver manualObserver =
+        new RecordingObserver() {
+          @Override
+          public void onStart(StreamController controller) {
+            super.onStart(controller);
+            controller.disableAutoInboundFlowControl();
+          }
+        };
+
+    callable.call(query, manualObserver, null);
+    pointReader.response.set(null);
+
+    assertThat(manualObserver.responses).isEmpty();
+    assertThat(manualObserver.completed).isTrue();
+    assertThat(manualObserver.error).isNull();
+  }
+
+  @Test
   public void manualFlowControl_cancelBeforeRequestDeliversCancellationWithoutRow() {
     Query query = Query.create(TABLE_ID).rowKey("a");
     RecordingObserver manualObserver =

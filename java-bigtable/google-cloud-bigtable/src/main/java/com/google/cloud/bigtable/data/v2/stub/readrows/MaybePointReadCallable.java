@@ -110,7 +110,10 @@ public class MaybePointReadCallable<RowT> extends ServerStreamingCallable<Query,
       future =
           ApiFutures.transformAsync(
               pointReader.futureCall(request, context),
-              row -> ApiFutures.transform(demand, unused -> row, MoreExecutors.directExecutor()),
+              row ->
+                  row == null
+                      ? ApiFutures.immediateFuture(null)
+                      : ApiFutures.transform(demand, unused -> row, MoreExecutors.directExecutor()),
               MoreExecutors.directExecutor());
     } catch (Throwable t) {
       responseObserver.onError(MoreObjects.firstNonNull(cancellation.get(), t));
