@@ -89,7 +89,8 @@ class GcpMetricsConstants {
   static final String METRIC_CHANNEL_POOL_CHANNEL_LOAD = "channel_pool.channel_load";
   static final List<Long> CHANNEL_LOAD_BUCKETS =
       Collections.unmodifiableList(
-          Arrays.asList(1L, 2L, 4L, 8L, 12L, 15L, 20L, 25L, 30L, 40L, 50L, 75L, 100L, 150L, 200L));
+          Arrays.asList(
+              1L, 2L, 3L, 5L, 8L, 12L, 16L, 20L, 25L, 30L, 40L, 50L, 75L, 100L, 150L, 200L));
   static final String POOL_MODE_LABEL = "pool_mode";
   static final String POOL_MODE_STATIC = "static";
   static final String POOL_MODE_DYNAMIC = "dynamic";

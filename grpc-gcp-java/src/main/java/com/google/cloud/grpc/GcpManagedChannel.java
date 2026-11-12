@@ -1293,8 +1293,8 @@ public class GcpManagedChannel extends ManagedChannel {
     }
     try {
       builtInMetrics.recordChannelLoad(load, callOptions);
-    } catch (RuntimeException e) {
-      logger.log(Level.FINE, "Failed to record channel_load.", e);
+    } catch (Throwable t) {
+      logger.log(Level.FINE, "Failed to record channel_load.", t);
     }
   }
 
