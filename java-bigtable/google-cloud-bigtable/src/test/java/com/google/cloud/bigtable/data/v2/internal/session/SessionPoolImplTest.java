@@ -304,7 +304,6 @@ public class SessionPoolImplTest {
             .setReason(CloseSessionRequest.CloseSessionReason.CLOSE_SESSION_REASON_USER)
             .setDescription("empty pool")
             .build());
-    assertThat(sessionPool.watchdog.isClosed()).isTrue();
     assertThat(sessionPool.awaitTerminated(Duration.ofMillis(100))).isTrue();
   }
 
@@ -331,38 +330,6 @@ public class SessionPoolImplTest {
             .build());
 
     assertThat(sessionPool.awaitTerminated(Duration.ofSeconds(10))).isTrue();
-  }
-
-  @Test
-  void closeStopsWatchdogAfterSessionsDrainWithoutAwaitTerminated()
-      throws InterruptedException, ExecutionException, TimeoutException {
-    // Callers such as TableBase.close() (invoked when an idle table is evicted from the
-    // per-table session cache in compat.Util.createSessionMap) only call sessionPool.close()
-    // and never call awaitTerminated(). Verify that the watchdog is still closed once all
-    // sessions finish draining so the closed pool is not retained by the shared timer.
-    sessionPool.start(OpenFakeSessionRequest.getDefaultInstance(), new Metadata());
-
-    VRpc<SessionFakeScriptedRequest, SessionFakeScriptedResponse> vrpc =
-        sessionPool.newCall(FakeDescriptor.SCRIPTED);
-    UnaryResponseFuture<SessionFakeScriptedResponse> resultFuture = new UnaryResponseFuture<>();
-    vrpc.start(
-        SessionFakeScriptedRequest.getDefaultInstance(),
-        VRpcCallContext.create(Deadline.after(10, TimeUnit.SECONDS), true, vrpcTracer),
-        resultFuture);
-    resultFuture.get(10, TimeUnit.SECONDS);
-    assertThat(sessionPool.watchdog.isClosed()).isFalse();
-
-    sessionPool.close(
-        CloseSessionRequest.newBuilder()
-            .setReason(CloseSessionRequest.CloseSessionReason.CLOSE_SESSION_REASON_USER)
-            .setDescription("evicted table pool")
-            .build());
-
-    long deadlineMs = System.currentTimeMillis() + 10_000;
-    while (!sessionPool.watchdog.isClosed() && System.currentTimeMillis() < deadlineMs) {
-      Thread.sleep(10);
-    }
-    assertThat(sessionPool.watchdog.isClosed()).isTrue();
   }
 
   @Test
@@ -865,16 +832,16 @@ public class SessionPoolImplTest {
     @Test
     public void test() throws Exception {
       ArgumentCaptor<Runnable> runnableCaptor = ArgumentCaptor.forClass(Runnable.class);
-      // Filter out watchdog (5 min, exact), AFE prune (10 min, exact), and per-session open-timeout
-      // (OPEN_SESSION_TIMEOUT, exact) ticks. The retry-create-session site computes its delay
-      // against the real wall clock and the fake budget clock, so it can land anywhere from
-      // sub-second to a couple of penalty intervals. Match anything that isn't one of the fixed
-      // cadences.
-      long watchdogMs = Duration.ofMinutes(5).toMillis();
+      // Filter out close-timeout (5 min, exact), AFE prune (10 min, exact), and per-session
+      // open-timeout (OPEN_SESSION_TIMEOUT, exact) ticks. The retry-create-session site computes
+      // its delay against the real wall clock and the fake budget clock, so it can land anywhere
+      // from sub-second to a couple of penalty intervals. Match anything that isn't one of the
+      // fixed cadences.
+      long closeTimeoutMs = SessionImpl.CLOSE_SESSION_TIMEOUT.toMillis();
       long afePruneMs = SessionList.SESSION_LIST_PRUNE_INTERVAL.toMillis();
       long openTimeoutMs = SessionImpl.OPEN_SESSION_TIMEOUT.toMillis();
       LongPredicate isRetrySchedule =
-          d -> d > 0 && d != watchdogMs && d != afePruneMs && d != openTimeoutMs;
+          d -> d > 0 && d != closeTimeoutMs && d != afePruneMs && d != openTimeoutMs;
 
       // start the pool
       sessionPool.start(

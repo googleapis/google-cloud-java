@@ -93,6 +93,11 @@ public class SessionImpl implements Session, VRpcSessionApi {
           .setDescription("session open timeout")
           .build();
 
+  @VisibleForTesting
+  // Upper bound on how long a session may remain in WAIT_SERVER_CLOSE waiting for the server to
+  // close the stream after CloseSessionRequest is sent.
+  static final Duration CLOSE_SESSION_TIMEOUT = Duration.ofMinutes(5);
+
   private final Clock clock;
   private final BigtableTimer timer;
   // Serializes all session state mutations. Stream callbacks and the heartbeat tick dispatch
@@ -148,6 +153,10 @@ public class SessionImpl implements Session, VRpcSessionApi {
   // Handle for the open-handshake deadline (armed while STARTING). Cancelled the moment the
   // session leaves STARTING so a session that opens normally never trips it.
   @Nullable private BigtableTimer.Timeout openTimeout;
+
+  // Handle for the graceful-close deadline (armed while WAIT_SERVER_CLOSE). Cancelled the moment
+  // the session leaves WAIT_SERVER_CLOSE.
+  @Nullable private BigtableTimer.Timeout closeTimeout;
 
   // Set by the global SyncContext handler when an uncaught exception triggers an abort. Read on
   // re-entry to break out instead of looping. Only accessed inside sessionSyncContext.
@@ -419,6 +428,7 @@ public class SessionImpl implements Session, VRpcSessionApi {
 
     // TODO: send metrics
     updateState(SessionState.WAIT_SERVER_CLOSE);
+    scheduleCloseTimeoutCheck();
 
     // Should never happen
     if (closeReason == null) {
@@ -530,6 +540,47 @@ public class SessionImpl implements Session, VRpcSessionApi {
             info.getLogName(), OPEN_SESSION_TIMEOUT));
     debugTagTracer.record(TelemetryConfiguration.Level.WARN, "session_open_timeout");
     forceClose(OPEN_TIMEOUT_CLOSE_REQUEST);
+  }
+
+  private void scheduleCloseTimeoutCheck() {
+    closeTimeout =
+        timer.newTimeout(
+            this::checkCloseTimeout,
+            sessionSyncContext,
+            CLOSE_SESSION_TIMEOUT.toMillis(),
+            TimeUnit.MILLISECONDS);
+  }
+
+  private void cancelCloseTimeout() {
+    if (closeTimeout != null) {
+      closeTimeout.cancel();
+      closeTimeout = null;
+    }
+  }
+
+  // Runs on sessionSyncContext (dispatched from the wheel-timer tick body). If the session is
+  // still in WAIT_SERVER_CLOSE, the server never closed the stream after CloseSessionRequest;
+  // force-close so the session reaches CLOSED.
+  private void checkCloseTimeout() {
+    sessionSyncContext.throwIfNotInThisSynchronizationContext();
+    if (state != SessionState.WAIT_SERVER_CLOSE) {
+      return;
+    }
+    debugTagTracer.record(TelemetryConfiguration.Level.WARN, "watchdog_close_session");
+    logger.fine(
+        String.format(
+            "Found session %s that lingered too long in WAIT_SERVER_CLOSE state, canceling"
+                + " session",
+            info.getLogName()));
+    forceClose(
+        CloseSessionRequest.newBuilder()
+            .setReason(CloseSessionReason.CLOSE_SESSION_REASON_ERROR)
+            .setDescription(
+                String.format(
+                    "Watchdog found session %s in awaiting close for too long. Last"
+                        + " activity was %s ago.",
+                    info.getLogName(), Duration.between(lastStateChangedAt, clock.instant())))
+            .build());
   }
 
   private void scheduleHeartbeatCheck() {
@@ -934,6 +985,9 @@ public class SessionImpl implements Session, VRpcSessionApi {
     // session churn.
     if (newState.phase >= SessionState.WAIT_SERVER_CLOSE.phase) {
       cancelHeartbeatTimeout();
+    }
+    if (newState != SessionState.WAIT_SERVER_CLOSE) {
+      cancelCloseTimeout();
     }
   }
 
