@@ -95,6 +95,7 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
+import java.util.concurrent.atomic.AtomicReference;
 import java.util.function.Supplier;
 import java.util.stream.Stream;
 import org.checkerframework.checker.nullness.qual.Nullable;
@@ -1750,22 +1751,28 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage, 
 
   private <T, U> U runNullable(
       String operationName, ResultRetryAlgorithm<?> algorithm, Callable<T> c, Decoder<T, U> f) {
-    StorageException notFound = new StorageException(404, "Not Found");
+    StorageMetricsContext metricsContext =
+        StorageClientMetrics.createContext(getOptions().getStorageClientMetrics(), operationName);
+    if (metricsContext == null) {
+      return retrier.run(algorithm, c, f);
+    }
+    AtomicReference<StorageException> notFound = new AtomicReference<>();
     try {
       return retrier.run(
           nonRetryingOnNotFound(algorithm, notFound),
           () -> {
             T result = c.call();
             if (result == null) {
-              throw notFound;
+              StorageException ex = new StorageException(404, "Not Found");
+              notFound.set(ex);
+              throw ex;
             }
             return result;
           },
           f,
-          StorageClientMetrics.createContext(
-              getOptions().getStorageClientMetrics(), operationName));
+          metricsContext);
     } catch (StorageException e) {
-      if (e == notFound) {
+      if (e != null && e == notFound.get()) {
         return null;
       }
       throw e;
@@ -1783,11 +1790,11 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage, 
   }
 
   private static ResultRetryAlgorithm<?> nonRetryingOnNotFound(
-      ResultRetryAlgorithm<?> delegate, StorageException notFound) {
+      ResultRetryAlgorithm<?> delegate, AtomicReference<StorageException> notFound) {
     return new BasicResultRetryAlgorithm<Object>() {
       @Override
       public boolean shouldRetry(Throwable previousThrowable, Object previousResponse) {
-        if (previousThrowable == notFound) {
+        if (previousThrowable != null && previousThrowable == notFound.get()) {
           return false;
         }
         return delegate.shouldRetry(previousThrowable, null);
