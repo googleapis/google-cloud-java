@@ -26,6 +26,7 @@ import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.StreamController;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.bigtable.data.v2.models.Query;
+import com.google.common.base.MoreObjects;
 import com.google.common.base.Preconditions;
 import com.google.common.util.concurrent.MoreExecutors;
 import java.util.concurrent.CancellationException;
@@ -112,8 +113,7 @@ public class MaybePointReadCallable<RowT> extends ServerStreamingCallable<Query,
               row -> ApiFutures.transform(demand, unused -> row, MoreExecutors.directExecutor()),
               MoreExecutors.directExecutor());
     } catch (Throwable t) {
-      CancellationException e = cancellation.get();
-      responseObserver.onError(e != null ? e : t);
+      responseObserver.onError(MoreObjects.firstNonNull(cancellation.get(), t));
       return;
     }
     futureRef.set(future);
@@ -149,8 +149,7 @@ public class MaybePointReadCallable<RowT> extends ServerStreamingCallable<Query,
 
           @Override
           public void onFailure(Throwable t) {
-            CancellationException e = cancellation.get();
-            responseObserver.onError(e != null ? e : t);
+            responseObserver.onError(MoreObjects.firstNonNull(cancellation.get(), t));
           }
         },
         MoreExecutors.directExecutor());
