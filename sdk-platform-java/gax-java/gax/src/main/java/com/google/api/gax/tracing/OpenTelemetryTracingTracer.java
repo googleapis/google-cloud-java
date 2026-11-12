@@ -61,14 +61,38 @@ class OpenTelemetryTracingTracer implements ApiTracer {
   private final Context parentContext;
   // Trace context containing the operationSpan, serving as the parent for attempt spans.
   private final Context operationContext;
-  private @Nullable Span operationSpan;
-  private @Nullable Span attemptSpan;
+  private volatile @Nullable Span operationSpan;
+  private volatile @Nullable Span attemptSpan;
+
+  /**
+   * Activates the current span on the calling thread's OpenTelemetry Context.
+   *
+   * @return a {@link Scope} that restores the previous context when closed
+   */
+  @Override
+  public Scope inScope() {
+    // Prefer attemptSpan during an attempt; fall back to operationSpan at completion.
+    Span currentSpan = attemptSpan;
+    if (currentSpan == null) {
+      currentSpan = operationSpan;
+    }
+    if (currentSpan == null) {
+      return () -> {};
+    }
+
+    // Make the span current on this thread and return a closeable handle.
+    io.opentelemetry.context.Scope otelScope = currentSpan.makeCurrent();
+    return otelScope::close;
+  }
 
   @Override
   public void injectTraceContext(Map<String, String> carrier) {
     // Prefer the active attempt span so outgoing RPC wire context reflects the specific attempt;
     // fall back to the overall operation span if no attempt is currently in-flight.
-    Span currentSpan = attemptSpan != null ? attemptSpan : operationSpan;
+    Span currentSpan = attemptSpan;
+    if (currentSpan == null) {
+      currentSpan = operationSpan;
+    }
     if (currentSpan != null) {
       Context context = Context.current().with(currentSpan);
       W3CTraceContextPropagator.getInstance()

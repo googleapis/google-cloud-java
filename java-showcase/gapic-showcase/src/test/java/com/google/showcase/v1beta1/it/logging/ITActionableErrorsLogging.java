@@ -29,8 +29,12 @@ import com.google.api.client.testing.http.MockLowLevelHttpRequest;
 import com.google.api.client.testing.http.MockLowLevelHttpResponse;
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.rpc.ApiException;
+import com.google.api.gax.tracing.CompositeTracerFactory;
 import com.google.api.gax.tracing.LoggingTracerFactory;
 import com.google.api.gax.tracing.ObservabilityAttributes;
+import com.google.api.gax.tracing.OpenTelemetryMetricsFactory;
+import com.google.api.gax.tracing.OpenTelemetryTracingFactory;
+import com.google.common.collect.ImmutableList;
 import com.google.protobuf.Any;
 import com.google.rpc.ErrorInfo;
 import com.google.rpc.Status;
@@ -38,10 +42,29 @@ import com.google.showcase.v1beta1.EchoClient;
 import com.google.showcase.v1beta1.EchoRequest;
 import com.google.showcase.v1beta1.EchoSettings;
 import com.google.showcase.v1beta1.it.util.TestClientInitializer;
+import com.google.showcase.v1beta1.stub.EchoStubSettings;
+import io.grpc.CallOptions;
+import io.grpc.Channel;
+import io.grpc.ClientCall;
+import io.grpc.ClientInterceptor;
+import io.grpc.ManagedChannelBuilder;
+import io.grpc.MethodDescriptor;
+import io.opentelemetry.api.OpenTelemetry;
+import io.opentelemetry.api.trace.Span;
+import io.opentelemetry.api.trace.SpanContext;
+import io.opentelemetry.sdk.OpenTelemetrySdk;
+import io.opentelemetry.sdk.metrics.SdkMeterProvider;
+import io.opentelemetry.sdk.metrics.data.HistogramPointData;
+import io.opentelemetry.sdk.testing.exporter.InMemoryMetricReader;
+import io.opentelemetry.sdk.testing.exporter.InMemorySpanExporter;
+import io.opentelemetry.sdk.trace.SdkTracerProvider;
+import io.opentelemetry.sdk.trace.export.SimpleSpanProcessor;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.TimeUnit;
 import org.awaitility.Awaitility;
 import org.junit.jupiter.api.AfterAll;
@@ -322,6 +345,186 @@ public class ITActionableErrorsLogging {
     } finally {
       client.shutdownNow();
       client.awaitTermination(TestClientInitializer.AWAIT_TERMINATION_SECONDS, TimeUnit.SECONDS);
+    }
+  }
+
+  @Test
+  void testHttpJson_spanContextCapturedInScopeDuringErrorLog() throws Exception {
+    InMemorySpanExporter spanExporter = InMemorySpanExporter.create();
+    InMemoryMetricReader metricReader = InMemoryMetricReader.create();
+    SdkTracerProvider tracerProvider =
+        SdkTracerProvider.builder()
+            .addSpanProcessor(SimpleSpanProcessor.create(spanExporter))
+            .build();
+    SdkMeterProvider meterProvider =
+        SdkMeterProvider.builder().registerMetricReader(metricReader).build();
+    OpenTelemetry openTelemetry =
+        OpenTelemetrySdk.builder()
+            .setTracerProvider(tracerProvider)
+            .setMeterProvider(meterProvider)
+            .build();
+
+    CompositeTracerFactory nestedTracerFactory =
+        new CompositeTracerFactory(
+            ImmutableList.of(
+                new LoggingTracerFactory(),
+                new CompositeTracerFactory(
+                    ImmutableList.of(
+                        new OpenTelemetryMetricsFactory(openTelemetry),
+                        new OpenTelemetryTracingFactory(openTelemetry)))));
+
+    EchoSettings httpJsonEchoSettings =
+        EchoSettings.newHttpJsonBuilder()
+            .setCredentialsProvider(NoCredentialsProvider.create())
+            .setTransportChannelProvider(
+                EchoSettings.defaultHttpJsonTransportProviderBuilder()
+                    .setHttpTransport(
+                        new MockHttpTransport() {
+                          @Override
+                          public LowLevelHttpRequest buildRequest(String method, String url) {
+                            return new MockLowLevelHttpRequest() {
+                              @Override
+                              public LowLevelHttpResponse execute() {
+                                MockLowLevelHttpResponse response = new MockLowLevelHttpResponse();
+                                response.setStatusCode(409);
+                                response.setContentType("application/json");
+                                response.setContent(
+                                    "{\"error\": {\"code\": 409, \"message\": \"Aborted"
+                                        + " failure\"}}");
+                                return response;
+                              }
+                            };
+                          }
+                        })
+                    .setEndpoint(TestClientInitializer.DEFAULT_HTTPJSON_ENDPOINT)
+                    .build())
+            .build();
+
+    EchoStubSettings echoStubSettings =
+        (EchoStubSettings)
+            httpJsonEchoSettings.getStubSettings().toBuilder()
+                .setTracerFactory(nestedTracerFactory)
+                .build();
+
+    try (EchoClient client = EchoClient.create(echoStubSettings.createStub())) {
+      assertThrows(ApiException.class, () -> client.echo(EchoRequest.newBuilder().build()));
+
+      ILoggingEvent errorEvent = getErrorLoggingEvent();
+      ILoggingEvent debugEvent =
+          testAppender.events.stream()
+              .filter(e -> e.getLevel() == Level.DEBUG)
+              .findFirst()
+              .orElseThrow(() -> new AssertionError("Expected DEBUG attempt log event"));
+
+      SpanContext debugSpanContext = testAppender.eventSpanContexts.get(debugEvent);
+      SpanContext errorSpanContext = testAppender.eventSpanContexts.get(errorEvent);
+
+      assertThat(debugSpanContext.isValid()).isTrue();
+      assertThat(errorSpanContext.isValid()).isTrue();
+      assertThat(debugSpanContext.getTraceId()).isEqualTo(errorSpanContext.getTraceId());
+      // L4 DEBUG log links to T4 attemptSpan; L3 ERROR log links to T3 operationSpan
+      assertThat(debugSpanContext.getSpanId()).isNotEqualTo(errorSpanContext.getSpanId());
+
+      // M1 metric exemplar links to T3 operationSpan
+      HistogramPointData point =
+          metricReader
+              .collectAllMetrics()
+              .iterator()
+              .next()
+              .getHistogramData()
+              .getPoints()
+              .iterator()
+              .next();
+      assertThat(point.getExemplars()).hasSize(1);
+      assertThat(point.getExemplars().get(0).getSpanContext().getSpanId())
+          .isEqualTo(errorSpanContext.getSpanId());
+
+      assertThat(Span.current().getSpanContext().isValid()).isFalse();
+    }
+  }
+
+  @Test
+  void testGrpc_spanContextCapturedInScopeDuringErrorLogAndDownstreamInterceptor()
+      throws Exception {
+    InMemorySpanExporter spanExporter = InMemorySpanExporter.create();
+    InMemoryMetricReader metricReader = InMemoryMetricReader.create();
+    SdkTracerProvider tracerProvider =
+        SdkTracerProvider.builder()
+            .addSpanProcessor(SimpleSpanProcessor.create(spanExporter))
+            .build();
+    SdkMeterProvider meterProvider =
+        SdkMeterProvider.builder().registerMetricReader(metricReader).build();
+    OpenTelemetry openTelemetry =
+        OpenTelemetrySdk.builder()
+            .setTracerProvider(tracerProvider)
+            .setMeterProvider(meterProvider)
+            .build();
+
+    CompositeTracerFactory nestedTracerFactory =
+        new CompositeTracerFactory(
+            ImmutableList.of(
+                new LoggingTracerFactory(),
+                new CompositeTracerFactory(
+                    ImmutableList.of(
+                        new OpenTelemetryMetricsFactory(openTelemetry),
+                        new OpenTelemetryTracingFactory(openTelemetry)))));
+
+    List<SpanContext> downstreamGrpcContexts = new CopyOnWriteArrayList<>();
+
+    EchoSettings grpcEchoSettings =
+        EchoSettings.newBuilder()
+            .setCredentialsProvider(NoCredentialsProvider.create())
+            .setTransportChannelProvider(
+                EchoSettings.defaultGrpcTransportProviderBuilder()
+                    .setChannelConfigurator(ManagedChannelBuilder::usePlaintext)
+                    .setInterceptorProvider(
+                        () ->
+                            ImmutableList.of(
+                                new ClientInterceptor() {
+                                  @Override
+                                  public <ReqT, RespT> ClientCall<ReqT, RespT> interceptCall(
+                                      MethodDescriptor<ReqT, RespT> method,
+                                      CallOptions callOptions,
+                                      Channel next) {
+                                    downstreamGrpcContexts.add(Span.current().getSpanContext());
+                                    return next.newCall(method, callOptions);
+                                  }
+                                }))
+                    .build())
+            .setEndpoint(TestClientInitializer.DEFAULT_GRPC_ENDPOINT)
+            .build();
+
+    EchoStubSettings echoStubSettings =
+        (EchoStubSettings)
+            grpcEchoSettings.getStubSettings().toBuilder()
+                .setTracerFactory(nestedTracerFactory)
+                .build();
+
+    try (EchoClient client = EchoClient.create(echoStubSettings.createStub())) {
+      EchoRequest request = buildErrorRequest();
+      assertThrows(ApiException.class, () -> client.echo(request));
+
+      ILoggingEvent errorEvent = getErrorLoggingEvent();
+      ILoggingEvent debugEvent =
+          testAppender.events.stream()
+              .filter(e -> e.getLevel() == Level.DEBUG)
+              .findFirst()
+              .orElseThrow(() -> new AssertionError("Expected DEBUG attempt log event"));
+
+      SpanContext debugSpanContext = testAppender.eventSpanContexts.get(debugEvent);
+      SpanContext errorSpanContext = testAppender.eventSpanContexts.get(errorEvent);
+
+      assertThat(debugSpanContext.isValid()).isTrue();
+      assertThat(errorSpanContext.isValid()).isTrue();
+      assertThat(debugSpanContext.getTraceId()).isEqualTo(errorSpanContext.getTraceId());
+      // L4 DEBUG log links to T4 attemptSpan; L3 ERROR log links to T3 operationSpan
+      assertThat(debugSpanContext.getSpanId()).isNotEqualTo(errorSpanContext.getSpanId());
+
+      // Downstream gRPC ClientInterceptor saw active T4 attemptSpan during newCall
+      assertThat(downstreamGrpcContexts).isNotEmpty();
+      assertThat(downstreamGrpcContexts.get(0)).isEqualTo(debugSpanContext);
+
+      assertThat(Span.current().getSpanContext().isValid()).isFalse();
     }
   }
 }

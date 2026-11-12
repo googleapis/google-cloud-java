@@ -29,6 +29,7 @@
  */
 package com.google.api.gax.tracing;
 
+import static com.google.common.truth.Truth.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -38,9 +39,28 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
+import com.google.api.gax.rpc.LibraryMetadata;
 import com.google.common.collect.ImmutableMap;
+import io.opentelemetry.api.OpenTelemetry;
+import io.opentelemetry.api.trace.Span;
+import io.opentelemetry.api.trace.SpanContext;
+import io.opentelemetry.sdk.OpenTelemetrySdk;
+import io.opentelemetry.sdk.metrics.SdkMeterProvider;
+import io.opentelemetry.sdk.metrics.data.DoubleExemplarData;
+import io.opentelemetry.sdk.metrics.data.HistogramPointData;
+import io.opentelemetry.sdk.metrics.data.MetricData;
+import io.opentelemetry.sdk.testing.exporter.InMemoryMetricReader;
+import io.opentelemetry.sdk.testing.exporter.InMemorySpanExporter;
+import io.opentelemetry.sdk.trace.SdkTracerProvider;
+import io.opentelemetry.sdk.trace.data.SpanData;
+import io.opentelemetry.sdk.trace.export.SimpleSpanProcessor;
+import java.time.Duration;
 import java.util.Arrays;
+import java.util.Collection;
+import java.util.List;
 import java.util.Map;
+import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.concurrent.atomic.AtomicBoolean;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InOrder;
@@ -148,6 +168,27 @@ class CompositeTracerTest {
     InOrder inOrder = inOrder(child2, child1);
     inOrder.verify(child2).operationFailed(error);
     inOrder.verify(child1).operationFailed(error);
+  }
+
+  @Test
+  void testCompletionMethods_enterAndCloseScopeAroundChildren() {
+    ApiTracer.Scope scope1 =
+        mock(ApiTracer.Scope.class, Mockito.withSettings().withoutAnnotations());
+    ApiTracer.Scope scope2 =
+        mock(ApiTracer.Scope.class, Mockito.withSettings().withoutAnnotations());
+    when(child1.inScope()).thenReturn(scope1);
+    when(child2.inScope()).thenReturn(scope2);
+
+    Throwable error = new RuntimeException("test error");
+    compositeTracer.operationFailed(error);
+
+    InOrder inOrder = inOrder(child1, child2, scope1, scope2);
+    inOrder.verify(child1).inScope();
+    inOrder.verify(child2).inScope();
+    inOrder.verify(child2).operationFailed(error);
+    inOrder.verify(child1).operationFailed(error);
+    inOrder.verify(scope2).close();
+    inOrder.verify(scope1).close();
   }
 
   @Test
@@ -292,5 +333,135 @@ class CompositeTracerTest {
     InOrder inOrder = inOrder(child1, child2);
     inOrder.verify(child1).requestUrlResolved("the-url");
     inOrder.verify(child2).requestUrlResolved("the-url");
+  }
+
+  @Test
+  void testNestedCompositeTracer_crossThreadScopingAndMetricsExemplars() throws Exception {
+    InMemorySpanExporter spanExporter = InMemorySpanExporter.create();
+    InMemoryMetricReader metricReader = InMemoryMetricReader.create();
+
+    SdkTracerProvider tracerProvider =
+        SdkTracerProvider.builder()
+            .addSpanProcessor(SimpleSpanProcessor.create(spanExporter))
+            .build();
+    SdkMeterProvider meterProvider =
+        SdkMeterProvider.builder().registerMetricReader(metricReader).build();
+    OpenTelemetry openTelemetry =
+        OpenTelemetrySdk.builder()
+            .setTracerProvider(tracerProvider)
+            .setMeterProvider(meterProvider)
+            .build();
+
+    List<SpanContext> attemptLogContexts = new CopyOnWriteArrayList<>();
+    List<SpanContext> operationLogContexts = new CopyOnWriteArrayList<>();
+
+    ApiTracerFactory captureLoggingFactory =
+        new BaseApiTracerFactory() {
+          @Override
+          public ApiTracer newTracer(ApiTracer parent, ApiTracerContext context) {
+            return new BaseApiTracer() {
+              @Override
+              public void attemptFailedDuration(Throwable error, Duration delay) {
+                attemptLogContexts.add(Span.current().getSpanContext());
+              }
+
+              @Override
+              public void attemptFailedRetriesExhausted(Throwable error) {
+                attemptLogContexts.add(Span.current().getSpanContext());
+              }
+
+              @Override
+              public void operationFailed(Throwable error) {
+                operationLogContexts.add(Span.current().getSpanContext());
+              }
+            };
+          }
+        };
+
+    // Exact nested structure from ClientContext when user configures Metrics + Tracing
+    // and GOOGLE_SDK_JAVA_LOGGING is enabled:
+    // Composite(Logging, Composite(Metrics, Tracing))
+    ApiTracerFactory nestedFactory =
+        new CompositeTracerFactory(
+            Arrays.asList(
+                captureLoggingFactory,
+                new CompositeTracerFactory(
+                    Arrays.asList(
+                        new OpenTelemetryMetricsFactory(openTelemetry),
+                        new OpenTelemetryTracingFactory(openTelemetry)))));
+
+    ApiTracerContext clientContext =
+        ApiTracerContext.newBuilder()
+            .setLibraryMetadata(
+                LibraryMetadata.newBuilder()
+                    .setArtifactName("gax-test-lib")
+                    .setVersion("1.0.0")
+                    .build())
+            .setServiceName("echo")
+            .setServerAddress("localhost")
+            .setServerPort(7469)
+            .setTransport(ApiTracerContext.Transport.GRPC)
+            .setFullMethodName("google.showcase.v1beta1.Echo/Echo")
+            .build();
+
+    ApiTracerFactory initializedFactory = nestedFactory.withContext(clientContext);
+
+    // Thread A initiates operation and attempt 0
+    ApiTracer tracer = initializedFactory.newTracer(new BaseApiTracer(), clientContext);
+    tracer.attemptStarted(new Object(), 0);
+    assertThat(Span.current().getSpanContext().isValid()).isFalse();
+
+    // Thread B handles attempt 0 failure, retries attempt 1, exhausts retries, and fails operation
+    AtomicBoolean threadBCleanAfterCallbacks = new AtomicBoolean(false);
+    Thread threadB =
+        new Thread(
+            () -> {
+              RuntimeException err = new RuntimeException("transient failure");
+              tracer.attemptFailedDuration(err, Duration.ofMillis(10));
+              boolean cleanAfterAttempt0 = !Span.current().getSpanContext().isValid();
+
+              tracer.attemptStarted(new Object(), 1);
+              tracer.attemptFailedRetriesExhausted(err);
+              boolean cleanAfterAttempt1 = !Span.current().getSpanContext().isValid();
+
+              tracer.operationFailed(err);
+              boolean cleanAfterOperation = !Span.current().getSpanContext().isValid();
+
+              threadBCleanAfterCallbacks.set(
+                  cleanAfterAttempt0 && cleanAfterAttempt1 && cleanAfterOperation);
+            });
+    threadB.start();
+    threadB.join();
+
+    assertThat(threadBCleanAfterCallbacks.get()).isTrue();
+    assertThat(Span.current().getSpanContext().isValid()).isFalse();
+
+    List<SpanData> exportedSpans = spanExporter.getFinishedSpanItems();
+    // 2 attempt spans + 1 operation span
+    assertThat(exportedSpans).hasSize(3);
+    SpanData attempt0Span = exportedSpans.get(0);
+    SpanData attempt1Span = exportedSpans.get(1);
+    SpanData operationSpan = exportedSpans.get(2);
+
+    // L4 attempt logs captured exact T4 attempt spans
+    assertThat(attemptLogContexts).hasSize(2);
+    assertThat(attemptLogContexts.get(0).getSpanId()).isEqualTo(attempt0Span.getSpanId());
+    assertThat(attemptLogContexts.get(0).getTraceId()).isEqualTo(operationSpan.getTraceId());
+    assertThat(attemptLogContexts.get(1).getSpanId()).isEqualTo(attempt1Span.getSpanId());
+
+    // L3 operation log captured exact T3 operation span
+    assertThat(operationLogContexts).hasSize(1);
+    assertThat(operationLogContexts.get(0).getSpanId()).isEqualTo(operationSpan.getSpanId());
+    assertThat(operationLogContexts.get(0).getTraceId()).isEqualTo(operationSpan.getTraceId());
+
+    // M1 metric recorded with sampled exemplar linked to T3 operation span
+    Collection<MetricData> metrics = metricReader.collectAllMetrics();
+    assertThat(metrics).hasSize(1);
+    HistogramPointData point =
+        metrics.iterator().next().getHistogramData().getPoints().iterator().next();
+    assertThat(point.getExemplars()).hasSize(1);
+    DoubleExemplarData exemplar = point.getExemplars().get(0);
+    assertThat(exemplar.getSpanContext().getTraceId()).isEqualTo(operationSpan.getTraceId());
+    assertThat(exemplar.getSpanContext().getSpanId()).isEqualTo(operationSpan.getSpanId());
   }
 }
