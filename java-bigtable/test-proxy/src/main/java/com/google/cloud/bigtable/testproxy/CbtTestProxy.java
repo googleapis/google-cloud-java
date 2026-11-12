@@ -22,8 +22,10 @@ import com.google.api.core.ApiFunction;
 import com.google.api.gax.core.CredentialsProvider;
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.api.gax.core.NoCredentialsProvider;
+import com.google.api.gax.grpc.GrpcCallContext;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.retrying.RetrySettings;
+import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiException;
 import com.google.api.gax.rpc.ServerStream;
 import com.google.auth.oauth2.AccessToken;
@@ -43,6 +45,7 @@ import com.google.cloud.bigtable.data.v2.models.Query;
 import com.google.cloud.bigtable.data.v2.models.ReadModifyWriteRow;
 import com.google.cloud.bigtable.data.v2.models.RowCell;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
+import com.google.cloud.bigtable.data.v2.models.TableId;
 import com.google.cloud.bigtable.data.v2.models.sql.PreparedStatement;
 import com.google.cloud.bigtable.data.v2.models.sql.ResultSet;
 import com.google.cloud.bigtable.data.v2.models.sql.SqlType;
@@ -53,6 +56,7 @@ import com.google.common.base.Preconditions;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.util.Durations;
 import com.google.rpc.Code;
+import io.grpc.Context;
 import io.grpc.ManagedChannelBuilder;
 import io.grpc.Status;
 import io.grpc.StatusException;
@@ -71,12 +75,18 @@ import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
 import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
+import javax.annotation.Nullable;
 
 /** Java implementation of the CBT test proxy. Used to test the Java CBT client. */
 public class CbtTestProxy extends CloudBigtableV2TestProxyImplBase implements Closeable {
@@ -88,12 +98,21 @@ public class CbtTestProxy extends CloudBigtableV2TestProxyImplBase implements Cl
   @AutoValue
   abstract static class CbtClient {
     static CbtClient create(BigtableDataSettings settings, BigtableDataClient dataClient) {
-      return new AutoValue_CbtTestProxy_CbtClient(settings, dataClient);
+      return create(settings, dataClient, Optional.empty());
+    }
+
+    static CbtClient create(
+        BigtableDataSettings settings,
+        BigtableDataClient dataClient,
+        Optional<Duration> perOperationTimeout) {
+      return new AutoValue_CbtTestProxy_CbtClient(settings, dataClient, perOperationTimeout);
     }
 
     abstract BigtableDataSettings settings();
 
     abstract BigtableDataClient dataClient();
+
+    abstract Optional<Duration> perOperationTimeout();
   }
 
   private static final Logger logger = Logger.getLogger(CbtTestProxy.class.getName());
@@ -107,45 +126,30 @@ public class CbtTestProxy extends CloudBigtableV2TestProxyImplBase implements Cl
     return new CbtTestProxy();
   }
 
-  /**
-   * Helper method to override the timeout settings of data APIs. TODO(developer): per-attempt
-   * timeout may also be overridden, which will involve test harness update.
-   *
-   * @param settingsBuilder The Builder object of BigtableDataSettings.
-   * @param newTimeout The value that is used to set the timeout.
-   */
-  private static BigtableDataSettings.Builder overrideTimeoutSetting(
-      Duration newTimeout, BigtableDataSettings.Builder settingsBuilder) {
-
-    updateTimeout(
-        settingsBuilder.stubSettings().bulkMutateRowsSettings().retrySettings(), newTimeout);
-    updateTimeout(settingsBuilder.stubSettings().mutateRowSettings().retrySettings(), newTimeout);
-    updateTimeout(settingsBuilder.stubSettings().readRowSettings().retrySettings(), newTimeout);
-    updateTimeout(settingsBuilder.stubSettings().readRowsSettings().retrySettings(), newTimeout);
-    updateTimeout(
-        settingsBuilder.stubSettings().checkAndMutateRowSettings().retrySettings(), newTimeout);
-    updateTimeout(
-        settingsBuilder.stubSettings().readModifyWriteRowSettings().retrySettings(), newTimeout);
-    updateTimeout(
-        settingsBuilder.stubSettings().sampleRowKeysSettings().retrySettings(), newTimeout);
-    updateTimeout(
-        settingsBuilder.stubSettings().executeQuerySettings().retrySettings(), newTimeout);
-    updateTimeout(
-        settingsBuilder.stubSettings().prepareQuerySettings().retrySettings(), newTimeout);
-
-    return settingsBuilder;
+  private static Optional<Duration> resolveTimeout(
+      @Nullable CbtClient client,
+      boolean hasRequestTimeout,
+      com.google.protobuf.Duration requestTimeout) {
+    if (hasRequestTimeout && Durations.compare(requestTimeout, Durations.ZERO) > 0) {
+      return Optional.of(
+          Duration.ofSeconds(requestTimeout.getSeconds(), requestTimeout.getNanos()));
+    }
+    return client != null ? client.perOperationTimeout() : Optional.empty();
   }
 
-  private static void updateTimeout(RetrySettings.Builder settings, Duration newTimeout) {
-    Duration rpcTimeout = settings.getInitialRpcTimeoutDuration();
-
-    // TODO: this should happen in gax
-    // Clamp the rpcTimeout to the overall timeout
-    if (rpcTimeout != null && rpcTimeout.compareTo(newTimeout) > 0) {
-      settings.setInitialRpcTimeoutDuration(newTimeout).setMaxRpcTimeoutDuration(newTimeout);
+  private static ApiCallContext createCallContextWithTimeout(
+      RetrySettings defaultRetrySettings, Duration timeout) {
+    RetrySettings.Builder builder = defaultRetrySettings.toBuilder();
+    Duration initialRpcTimeout = builder.getInitialRpcTimeoutDuration();
+    if (initialRpcTimeout != null && initialRpcTimeout.compareTo(timeout) > 0) {
+      builder.setInitialRpcTimeoutDuration(timeout);
     }
-
-    settings.setTotalTimeoutDuration(newTimeout);
+    Duration maxRpcTimeout = builder.getMaxRpcTimeoutDuration();
+    if (maxRpcTimeout != null && maxRpcTimeout.compareTo(timeout) > 0) {
+      builder.setMaxRpcTimeoutDuration(timeout);
+    }
+    builder.setTotalTimeoutDuration(timeout);
+    return GrpcCallContext.createDefault().withRetrySettings(builder.build());
   }
 
   /** Helper method to get a client object by its id. */
@@ -187,9 +191,9 @@ public class CbtTestProxy extends CloudBigtableV2TestProxyImplBase implements Cl
             .setInstanceId(request.getInstanceId())
             .setAppProfileId(request.getAppProfileId());
 
-    if (request.hasPerOperationTimeout()) {
-      Duration newTimeout = Duration.ofMillis(Durations.toMillis(request.getPerOperationTimeout()));
-      settingsBuilder = overrideTimeoutSetting(newTimeout, settingsBuilder);
+    Optional<Duration> perOperationTimeout =
+        resolveTimeout(null, request.hasPerOperationTimeout(), request.getPerOperationTimeout());
+    if (perOperationTimeout.isPresent()) {
       logger.info(
           String.format(
               "Total timeout is set to %s for all the methods",
@@ -230,7 +234,7 @@ public class CbtTestProxy extends CloudBigtableV2TestProxyImplBase implements Cl
       }
       BigtableDataSettings settings = settingsBuilder.build();
       BigtableDataClient client = BigtableDataClient.create(settings);
-      CbtClient cbtClient = CbtClient.create(settings, client);
+      CbtClient cbtClient = CbtClient.create(settings, client, perOperationTimeout);
       idClientMap.put(request.getClientId(), cbtClient);
     } catch (IOException e) {
       responseObserver.onError(Status.INTERNAL.withDescription(e.getMessage()).asException());
@@ -288,7 +292,18 @@ public class CbtTestProxy extends CloudBigtableV2TestProxyImplBase implements Cl
     RowMutation mutation = RowMutation.fromProto(request.getRequest());
     try {
       // This response is empty.
-      client.dataClient().mutateRow(mutation);
+      Optional<Duration> timeout =
+          resolveTimeout(
+              client, request.hasPerOperationTimeout(), request.getPerOperationTimeout());
+      if (timeout.isPresent()) {
+        ApiCallContext callContext =
+            createCallContextWithTimeout(
+                client.settings().getStubSettings().mutateRowSettings().getRetrySettings(),
+                timeout.get());
+        client.dataClient().mutateRowCallable().call(mutation, callContext);
+      } else {
+        client.dataClient().mutateRow(mutation);
+      }
     } catch (ApiException e) {
       responseObserver.onNext(MutateRowResult.newBuilder().setStatus(convertStatus(e)).build());
       responseObserver.onCompleted();
@@ -318,7 +333,18 @@ public class CbtTestProxy extends CloudBigtableV2TestProxyImplBase implements Cl
 
     BulkMutation batch = BulkMutation.fromProto(request.getRequest());
     try {
-      client.dataClient().bulkMutateRows(batch);
+      Optional<Duration> timeout =
+          resolveTimeout(
+              client, request.hasPerOperationTimeout(), request.getPerOperationTimeout());
+      if (timeout.isPresent()) {
+        ApiCallContext callContext =
+            createCallContextWithTimeout(
+                client.settings().getStubSettings().bulkMutateRowsSettings().getRetrySettings(),
+                timeout.get());
+        client.dataClient().bulkMutationCallable().call(batch, callContext);
+      } else {
+        client.dataClient().bulkMutateRows(batch);
+      }
     } catch (MutateRowsException e) {
       MutateRowsResult.Builder resultBuilder = MutateRowsResult.newBuilder();
       com.google.rpc.Status topLevelStatus =
@@ -385,10 +411,25 @@ public class CbtTestProxy extends CloudBigtableV2TestProxyImplBase implements Cl
 
     com.google.cloud.bigtable.data.v2.models.Row row;
     try {
-      row =
-          client
-              .dataClient()
-              .readRow(tableId, request.getRowKey(), FILTERS.fromProto(request.getFilter()));
+      Optional<Duration> timeout =
+          resolveTimeout(
+              client, request.hasPerOperationTimeout(), request.getPerOperationTimeout());
+      if (timeout.isPresent()) {
+        Query query =
+            Query.create(TableId.of(tableId))
+                .rowKey(request.getRowKey())
+                .filter(FILTERS.fromProto(request.getFilter()));
+        ApiCallContext callContext =
+            createCallContextWithTimeout(
+                client.settings().getStubSettings().readRowSettings().getRetrySettings(),
+                timeout.get());
+        row = client.dataClient().readRowCallable().call(query, callContext);
+      } else {
+        row =
+            client
+                .dataClient()
+                .readRow(tableId, request.getRowKey(), FILTERS.fromProto(request.getFilter()));
+      }
       if (row != null) {
         RowResult.Builder resultBuilder = convertRowResult(row);
         responseObserver.onNext(
@@ -438,7 +479,18 @@ public class CbtTestProxy extends CloudBigtableV2TestProxyImplBase implements Cl
     ServerStream<com.google.cloud.bigtable.data.v2.models.Row> rows;
     Query query = Query.fromProto(request.getRequest());
     try {
-      rows = client.dataClient().readRows(query);
+      Optional<Duration> timeout =
+          resolveTimeout(
+              client, request.hasPerOperationTimeout(), request.getPerOperationTimeout());
+      if (timeout.isPresent()) {
+        ApiCallContext callContext =
+            createCallContextWithTimeout(
+                client.settings().getStubSettings().readRowsSettings().getRetrySettings(),
+                timeout.get());
+        rows = client.dataClient().readRowsCallable().call(query, callContext);
+      } else {
+        rows = client.dataClient().readRows(query);
+      }
       int cancelAfterRows = request.getCancelAfterRows();
       RowsResult.Builder resultBuilder = convertRowsResult(rows, cancelAfterRows);
       responseObserver.onNext(
@@ -560,7 +612,18 @@ public class CbtTestProxy extends CloudBigtableV2TestProxyImplBase implements Cl
 
     List<KeyOffset> keyOffsets;
     try {
-      keyOffsets = client.dataClient().sampleRowKeys(tableId);
+      Optional<Duration> timeout =
+          resolveTimeout(
+              client, request.hasPerOperationTimeout(), request.getPerOperationTimeout());
+      if (timeout.isPresent()) {
+        ApiCallContext callContext =
+            createCallContextWithTimeout(
+                client.settings().getStubSettings().sampleRowKeysSettings().getRetrySettings(),
+                timeout.get());
+        keyOffsets = client.dataClient().sampleRowKeysCallable().call(tableId, callContext);
+      } else {
+        keyOffsets = client.dataClient().sampleRowKeys(tableId);
+      }
     } catch (ApiException e) {
       responseObserver.onNext(SampleRowKeysResult.newBuilder().setStatus(convertStatus(e)).build());
       responseObserver.onCompleted();
@@ -599,7 +662,18 @@ public class CbtTestProxy extends CloudBigtableV2TestProxyImplBase implements Cl
     ConditionalRowMutation mutation = ConditionalRowMutation.fromProto(request.getRequest());
     Boolean matched;
     try {
-      matched = client.dataClient().checkAndMutateRow(mutation);
+      Optional<Duration> timeout =
+          resolveTimeout(
+              client, request.hasPerOperationTimeout(), request.getPerOperationTimeout());
+      if (timeout.isPresent()) {
+        ApiCallContext callContext =
+            createCallContextWithTimeout(
+                client.settings().getStubSettings().checkAndMutateRowSettings().getRetrySettings(),
+                timeout.get());
+        matched = client.dataClient().checkAndMutateRowCallable().call(mutation, callContext);
+      } else {
+        matched = client.dataClient().checkAndMutateRow(mutation);
+      }
     } catch (ApiException e) {
       responseObserver.onNext(
           CheckAndMutateRowResult.newBuilder().setStatus(convertStatus(e)).build());
@@ -634,7 +708,18 @@ public class CbtTestProxy extends CloudBigtableV2TestProxyImplBase implements Cl
     com.google.cloud.bigtable.data.v2.models.Row row;
     ReadModifyWriteRow mutation = ReadModifyWriteRow.fromProto(request.getRequest());
     try {
-      row = client.dataClient().readModifyWriteRow(mutation);
+      Optional<Duration> timeout =
+          resolveTimeout(
+              client, request.hasPerOperationTimeout(), request.getPerOperationTimeout());
+      if (timeout.isPresent()) {
+        ApiCallContext callContext =
+            createCallContextWithTimeout(
+                client.settings().getStubSettings().readModifyWriteRowSettings().getRetrySettings(),
+                timeout.get());
+        row = client.dataClient().readModifyWriteRowCallable().call(mutation, callContext);
+      } else {
+        row = client.dataClient().readModifyWriteRow(mutation);
+      }
       if (row != null) {
         RowResult.Builder resultBuilder = convertRowResult(row);
         responseObserver.onNext(
@@ -684,7 +769,27 @@ public class CbtTestProxy extends CloudBigtableV2TestProxyImplBase implements Cl
       return;
     }
     ResultSet resultSet = null;
+    Context.CancellableContext cancellableContext = null;
+    Context previousContext = null;
     try {
+      Optional<Duration> timeout =
+          resolveTimeout(
+              client, request.hasPerOperationTimeout(), request.getPerOperationTimeout());
+      if (timeout.isPresent()) {
+        Thread callerThread = Thread.currentThread();
+        cancellableContext =
+            Context.current()
+                .withDeadlineAfter(
+                    timeout.get().toNanos(), TimeUnit.NANOSECONDS, deadlineScheduler);
+        cancellableContext.addListener(
+            context -> {
+              if (context.cancellationCause() instanceof TimeoutException) {
+                callerThread.interrupt();
+              }
+            },
+            Runnable::run);
+        previousContext = cancellableContext.attach();
+      }
       Map<String, SqlType<?>> paramTypes = new HashMap<>();
       for (Map.Entry<String, Value> entry : request.getRequest().getParamsMap().entrySet()) {
         paramTypes.put(entry.getKey(), SqlType.fromProto(entry.getValue().getType()));
@@ -699,6 +804,20 @@ public class CbtTestProxy extends CloudBigtableV2TestProxyImplBase implements Cl
       responseObserver.onNext(
           new ResultSetSerializer(request.getProtoDescriptors()).toExecuteQueryResult(resultSet));
     } catch (InterruptedException e) {
+      if (cancellableContext != null
+          && cancellableContext.cancellationCause() instanceof TimeoutException) {
+        Thread.interrupted();
+        responseObserver.onNext(
+            ExecuteQueryResult.newBuilder()
+                .setStatus(
+                    com.google.rpc.Status.newBuilder()
+                        .setCode(Code.DEADLINE_EXCEEDED.getNumber())
+                        .setMessage(cancellableContext.cancellationCause().getMessage())
+                        .build())
+                .build());
+        responseObserver.onCompleted();
+        return;
+      }
       responseObserver.onError(e);
       return;
     } catch (ExecutionException e) {
@@ -714,6 +833,20 @@ public class CbtTestProxy extends CloudBigtableV2TestProxyImplBase implements Cl
       responseObserver.onCompleted();
       return;
     } catch (RuntimeException e) {
+      if (cancellableContext != null
+          && cancellableContext.cancellationCause() instanceof TimeoutException) {
+        Thread.interrupted();
+        responseObserver.onNext(
+            ExecuteQueryResult.newBuilder()
+                .setStatus(
+                    com.google.rpc.Status.newBuilder()
+                        .setCode(Code.DEADLINE_EXCEEDED.getNumber())
+                        .setMessage(cancellableContext.cancellationCause().getMessage())
+                        .build())
+                .build());
+        responseObserver.onCompleted();
+        return;
+      }
       // If client encounters problem, don't return any results.
       responseObserver.onNext(
           ExecuteQueryResult.newBuilder()
@@ -729,6 +862,13 @@ public class CbtTestProxy extends CloudBigtableV2TestProxyImplBase implements Cl
       if (resultSet != null) {
         resultSet.close();
       }
+      if (previousContext != null) {
+        cancellableContext.detach(previousContext);
+      }
+      if (cancellableContext != null) {
+        cancellableContext.close();
+      }
+      Thread.interrupted();
     }
     responseObserver.onCompleted();
   }
@@ -741,6 +881,7 @@ public class CbtTestProxy extends CloudBigtableV2TestProxyImplBase implements Cl
       entry.getValue().dataClient().close();
       it.remove();
     }
+    deadlineScheduler.shutdownNow();
   }
 
   private static String extractTableIdFromTableName(String fullTableName)
@@ -823,6 +964,9 @@ public class CbtTestProxy extends CloudBigtableV2TestProxyImplBase implements Cl
   }
 
   @VisibleForTesting final ConcurrentHashMap<String, CbtClient> idClientMap;
+
+  private final ScheduledExecutorService deadlineScheduler =
+      Executors.newSingleThreadScheduledExecutor();
 
   private static final Pattern tablePattern =
       Pattern.compile("projects/([^/]+)/instances/([^/]+)/tables/([^/]+)");

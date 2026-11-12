@@ -146,8 +146,7 @@ class MutateRowsAttemptCallable implements Callable<MutateRowsAttemptResult> {
     this.callContext = Preconditions.checkNotNull(callContext, "callContext");
     this.retryableCodes = Preconditions.checkNotNull(retryableCodes, "retryableCodes");
     this.retryAlgorithm = retryAlgorithm;
-    // TODO: pass in the callContext so that the retry setting can be overridden per call
-    this.attemptSettings = retryAlgorithm.createFirstAttempt(null);
+    this.attemptSettings = retryAlgorithm.createFirstAttempt(callContext);
 
     permanentFailures = Lists.newArrayList();
   }

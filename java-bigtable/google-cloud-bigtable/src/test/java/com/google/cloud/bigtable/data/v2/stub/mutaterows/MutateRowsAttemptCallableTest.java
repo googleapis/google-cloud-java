@@ -107,6 +107,7 @@ public class MutateRowsAttemptCallableTest {
     assertThat(result.getIsRetryable()).isFalse();
     // innerCallable received the request
     assertThat(innerCallable.lastRequest).isEqualTo(request);
+    Mockito.verify(mockRetryAlgorithm).createFirstAttempt(callContext);
   }
 
   @Test
