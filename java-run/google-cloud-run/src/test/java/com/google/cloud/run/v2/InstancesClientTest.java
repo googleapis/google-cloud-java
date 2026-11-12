@@ -28,10 +28,20 @@ import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.common.collect.Lists;
+import com.google.iam.v1.AuditConfig;
+import com.google.iam.v1.Binding;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.GetPolicyOptions;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Any;
+import com.google.protobuf.ByteString;
 import com.google.protobuf.Duration;
+import com.google.protobuf.FieldMask;
 import com.google.protobuf.Timestamp;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
@@ -113,6 +123,7 @@ public class InstancesClientTest {
             .setVpcAccess(VpcAccess.newBuilder().build())
             .setServiceAccount("serviceAccount1079137720")
             .addAllContainers(new ArrayList<Container>())
+            .setSandboxes(SandboxConfiguration.newBuilder().build())
             .addAllVolumes(new ArrayList<Volume>())
             .setEncryptionKey("encryptionKey-36224036")
             .setEncryptionKeyRevocationAction(EncryptionKeyRevocationAction.forNumber(0))
@@ -121,7 +132,9 @@ public class InstancesClientTest {
             .setGpuZonalRedundancyDisabled(true)
             .setIngress(IngressTraffic.forNumber(0))
             .setInvokerIamDisabled(true)
+            .setDefaultUriDisabled(true)
             .setIapEnabled(true)
+            .setSshEnabled(true)
             .setObservedGeneration(900833007)
             .setLogUri("logUri-1097354360")
             .setTerminalCondition(Condition.newBuilder().build())
@@ -198,6 +211,7 @@ public class InstancesClientTest {
             .setVpcAccess(VpcAccess.newBuilder().build())
             .setServiceAccount("serviceAccount1079137720")
             .addAllContainers(new ArrayList<Container>())
+            .setSandboxes(SandboxConfiguration.newBuilder().build())
             .addAllVolumes(new ArrayList<Volume>())
             .setEncryptionKey("encryptionKey-36224036")
             .setEncryptionKeyRevocationAction(EncryptionKeyRevocationAction.forNumber(0))
@@ -206,7 +220,9 @@ public class InstancesClientTest {
             .setGpuZonalRedundancyDisabled(true)
             .setIngress(IngressTraffic.forNumber(0))
             .setInvokerIamDisabled(true)
+            .setDefaultUriDisabled(true)
             .setIapEnabled(true)
+            .setSshEnabled(true)
             .setObservedGeneration(900833007)
             .setLogUri("logUri-1097354360")
             .setTerminalCondition(Condition.newBuilder().build())
@@ -261,6 +277,94 @@ public class InstancesClientTest {
   }
 
   @Test
+  public void updateInstanceTest() throws Exception {
+    Instance expectedResponse =
+        Instance.newBuilder()
+            .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+            .setDescription("description-1724546052")
+            .setUid("uid115792")
+            .setGeneration(305703192)
+            .putAllLabels(new HashMap<String, String>())
+            .putAllAnnotations(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDeleteTime(Timestamp.newBuilder().build())
+            .setExpireTime(Timestamp.newBuilder().build())
+            .setCreator("creator1028554796")
+            .setLastModifier("lastModifier1959003021")
+            .setClient("client-1357712437")
+            .setClientVersion("clientVersion771880589")
+            .setLaunchStage(LaunchStage.forNumber(0))
+            .setBinaryAuthorization(BinaryAuthorization.newBuilder().build())
+            .setVpcAccess(VpcAccess.newBuilder().build())
+            .setServiceAccount("serviceAccount1079137720")
+            .addAllContainers(new ArrayList<Container>())
+            .setSandboxes(SandboxConfiguration.newBuilder().build())
+            .addAllVolumes(new ArrayList<Volume>())
+            .setEncryptionKey("encryptionKey-36224036")
+            .setEncryptionKeyRevocationAction(EncryptionKeyRevocationAction.forNumber(0))
+            .setEncryptionKeyShutdownDuration(Duration.newBuilder().build())
+            .setNodeSelector(NodeSelector.newBuilder().build())
+            .setGpuZonalRedundancyDisabled(true)
+            .setIngress(IngressTraffic.forNumber(0))
+            .setInvokerIamDisabled(true)
+            .setDefaultUriDisabled(true)
+            .setIapEnabled(true)
+            .setSshEnabled(true)
+            .setObservedGeneration(900833007)
+            .setLogUri("logUri-1097354360")
+            .setTerminalCondition(Condition.newBuilder().build())
+            .addAllConditions(new ArrayList<Condition>())
+            .addAllContainerStatuses(new ArrayList<ContainerStatus>())
+            .setSatisfiesPzs(true)
+            .addAllUrls(new ArrayList<String>())
+            .setReconciling(true)
+            .setEtag("etag3123477")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateInstanceTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockInstances.addResponse(resultOperation);
+
+    Instance instance = Instance.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    Instance actualResponse = client.updateInstanceAsync(instance, updateMask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockInstances.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateInstanceRequest actualRequest = ((UpdateInstanceRequest) actualRequests.get(0));
+
+    Assert.assertEquals(instance, actualRequest.getInstance());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateInstanceExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockInstances.addException(exception);
+
+    try {
+      Instance instance = Instance.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateInstanceAsync(instance, updateMask).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
   public void deleteInstanceTest() throws Exception {
     Instance expectedResponse =
         Instance.newBuilder()
@@ -283,6 +387,7 @@ public class InstancesClientTest {
             .setVpcAccess(VpcAccess.newBuilder().build())
             .setServiceAccount("serviceAccount1079137720")
             .addAllContainers(new ArrayList<Container>())
+            .setSandboxes(SandboxConfiguration.newBuilder().build())
             .addAllVolumes(new ArrayList<Volume>())
             .setEncryptionKey("encryptionKey-36224036")
             .setEncryptionKeyRevocationAction(EncryptionKeyRevocationAction.forNumber(0))
@@ -291,7 +396,9 @@ public class InstancesClientTest {
             .setGpuZonalRedundancyDisabled(true)
             .setIngress(IngressTraffic.forNumber(0))
             .setInvokerIamDisabled(true)
+            .setDefaultUriDisabled(true)
             .setIapEnabled(true)
+            .setSshEnabled(true)
             .setObservedGeneration(900833007)
             .setLogUri("logUri-1097354360")
             .setTerminalCondition(Condition.newBuilder().build())
@@ -365,6 +472,7 @@ public class InstancesClientTest {
             .setVpcAccess(VpcAccess.newBuilder().build())
             .setServiceAccount("serviceAccount1079137720")
             .addAllContainers(new ArrayList<Container>())
+            .setSandboxes(SandboxConfiguration.newBuilder().build())
             .addAllVolumes(new ArrayList<Volume>())
             .setEncryptionKey("encryptionKey-36224036")
             .setEncryptionKeyRevocationAction(EncryptionKeyRevocationAction.forNumber(0))
@@ -373,7 +481,9 @@ public class InstancesClientTest {
             .setGpuZonalRedundancyDisabled(true)
             .setIngress(IngressTraffic.forNumber(0))
             .setInvokerIamDisabled(true)
+            .setDefaultUriDisabled(true)
             .setIapEnabled(true)
+            .setSshEnabled(true)
             .setObservedGeneration(900833007)
             .setLogUri("logUri-1097354360")
             .setTerminalCondition(Condition.newBuilder().build())
@@ -447,6 +557,7 @@ public class InstancesClientTest {
             .setVpcAccess(VpcAccess.newBuilder().build())
             .setServiceAccount("serviceAccount1079137720")
             .addAllContainers(new ArrayList<Container>())
+            .setSandboxes(SandboxConfiguration.newBuilder().build())
             .addAllVolumes(new ArrayList<Volume>())
             .setEncryptionKey("encryptionKey-36224036")
             .setEncryptionKeyRevocationAction(EncryptionKeyRevocationAction.forNumber(0))
@@ -455,7 +566,9 @@ public class InstancesClientTest {
             .setGpuZonalRedundancyDisabled(true)
             .setIngress(IngressTraffic.forNumber(0))
             .setInvokerIamDisabled(true)
+            .setDefaultUriDisabled(true)
             .setIapEnabled(true)
+            .setSshEnabled(true)
             .setObservedGeneration(900833007)
             .setLogUri("logUri-1097354360")
             .setTerminalCondition(Condition.newBuilder().build())
@@ -521,6 +634,7 @@ public class InstancesClientTest {
             .setVpcAccess(VpcAccess.newBuilder().build())
             .setServiceAccount("serviceAccount1079137720")
             .addAllContainers(new ArrayList<Container>())
+            .setSandboxes(SandboxConfiguration.newBuilder().build())
             .addAllVolumes(new ArrayList<Volume>())
             .setEncryptionKey("encryptionKey-36224036")
             .setEncryptionKeyRevocationAction(EncryptionKeyRevocationAction.forNumber(0))
@@ -529,7 +643,9 @@ public class InstancesClientTest {
             .setGpuZonalRedundancyDisabled(true)
             .setIngress(IngressTraffic.forNumber(0))
             .setInvokerIamDisabled(true)
+            .setDefaultUriDisabled(true)
             .setIapEnabled(true)
+            .setSshEnabled(true)
             .setObservedGeneration(900833007)
             .setLogUri("logUri-1097354360")
             .setTerminalCondition(Condition.newBuilder().build())
@@ -683,6 +799,7 @@ public class InstancesClientTest {
             .setVpcAccess(VpcAccess.newBuilder().build())
             .setServiceAccount("serviceAccount1079137720")
             .addAllContainers(new ArrayList<Container>())
+            .setSandboxes(SandboxConfiguration.newBuilder().build())
             .addAllVolumes(new ArrayList<Volume>())
             .setEncryptionKey("encryptionKey-36224036")
             .setEncryptionKeyRevocationAction(EncryptionKeyRevocationAction.forNumber(0))
@@ -691,7 +808,9 @@ public class InstancesClientTest {
             .setGpuZonalRedundancyDisabled(true)
             .setIngress(IngressTraffic.forNumber(0))
             .setInvokerIamDisabled(true)
+            .setDefaultUriDisabled(true)
             .setIapEnabled(true)
+            .setSshEnabled(true)
             .setObservedGeneration(900833007)
             .setLogUri("logUri-1097354360")
             .setTerminalCondition(Condition.newBuilder().build())
@@ -765,6 +884,7 @@ public class InstancesClientTest {
             .setVpcAccess(VpcAccess.newBuilder().build())
             .setServiceAccount("serviceAccount1079137720")
             .addAllContainers(new ArrayList<Container>())
+            .setSandboxes(SandboxConfiguration.newBuilder().build())
             .addAllVolumes(new ArrayList<Volume>())
             .setEncryptionKey("encryptionKey-36224036")
             .setEncryptionKeyRevocationAction(EncryptionKeyRevocationAction.forNumber(0))
@@ -773,7 +893,9 @@ public class InstancesClientTest {
             .setGpuZonalRedundancyDisabled(true)
             .setIngress(IngressTraffic.forNumber(0))
             .setInvokerIamDisabled(true)
+            .setDefaultUriDisabled(true)
             .setIapEnabled(true)
+            .setSshEnabled(true)
             .setObservedGeneration(900833007)
             .setLogUri("logUri-1097354360")
             .setTerminalCondition(Condition.newBuilder().build())
@@ -847,6 +969,7 @@ public class InstancesClientTest {
             .setVpcAccess(VpcAccess.newBuilder().build())
             .setServiceAccount("serviceAccount1079137720")
             .addAllContainers(new ArrayList<Container>())
+            .setSandboxes(SandboxConfiguration.newBuilder().build())
             .addAllVolumes(new ArrayList<Volume>())
             .setEncryptionKey("encryptionKey-36224036")
             .setEncryptionKeyRevocationAction(EncryptionKeyRevocationAction.forNumber(0))
@@ -855,7 +978,9 @@ public class InstancesClientTest {
             .setGpuZonalRedundancyDisabled(true)
             .setIngress(IngressTraffic.forNumber(0))
             .setInvokerIamDisabled(true)
+            .setDefaultUriDisabled(true)
             .setIapEnabled(true)
+            .setSshEnabled(true)
             .setObservedGeneration(900833007)
             .setLogUri("logUri-1097354360")
             .setTerminalCondition(Condition.newBuilder().build())
@@ -929,6 +1054,7 @@ public class InstancesClientTest {
             .setVpcAccess(VpcAccess.newBuilder().build())
             .setServiceAccount("serviceAccount1079137720")
             .addAllContainers(new ArrayList<Container>())
+            .setSandboxes(SandboxConfiguration.newBuilder().build())
             .addAllVolumes(new ArrayList<Volume>())
             .setEncryptionKey("encryptionKey-36224036")
             .setEncryptionKeyRevocationAction(EncryptionKeyRevocationAction.forNumber(0))
@@ -937,7 +1063,9 @@ public class InstancesClientTest {
             .setGpuZonalRedundancyDisabled(true)
             .setIngress(IngressTraffic.forNumber(0))
             .setInvokerIamDisabled(true)
+            .setDefaultUriDisabled(true)
             .setIapEnabled(true)
+            .setSshEnabled(true)
             .setObservedGeneration(900833007)
             .setLogUri("logUri-1097354360")
             .setTerminalCondition(Condition.newBuilder().build())
@@ -985,6 +1113,154 @@ public class InstancesClientTest {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
       InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
       Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void getIamPolicyTest() throws Exception {
+    Policy expectedResponse =
+        Policy.newBuilder()
+            .setVersion(351608024)
+            .addAllBindings(new ArrayList<Binding>())
+            .addAllAuditConfigs(new ArrayList<AuditConfig>())
+            .setEtag(ByteString.EMPTY)
+            .build();
+    mockInstances.addResponse(expectedResponse);
+
+    GetIamPolicyRequest request =
+        GetIamPolicyRequest.newBuilder()
+            .setResource(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+            .setOptions(GetPolicyOptions.newBuilder().build())
+            .build();
+
+    Policy actualResponse = client.getIamPolicy(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockInstances.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetIamPolicyRequest actualRequest = ((GetIamPolicyRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getResource(), actualRequest.getResource());
+    Assert.assertEquals(request.getOptions(), actualRequest.getOptions());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getIamPolicyExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockInstances.addException(exception);
+
+    try {
+      GetIamPolicyRequest request =
+          GetIamPolicyRequest.newBuilder()
+              .setResource(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+              .setOptions(GetPolicyOptions.newBuilder().build())
+              .build();
+      client.getIamPolicy(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void setIamPolicyTest() throws Exception {
+    Policy expectedResponse =
+        Policy.newBuilder()
+            .setVersion(351608024)
+            .addAllBindings(new ArrayList<Binding>())
+            .addAllAuditConfigs(new ArrayList<AuditConfig>())
+            .setEtag(ByteString.EMPTY)
+            .build();
+    mockInstances.addResponse(expectedResponse);
+
+    SetIamPolicyRequest request =
+        SetIamPolicyRequest.newBuilder()
+            .setResource(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+            .setPolicy(Policy.newBuilder().build())
+            .setUpdateMask(FieldMask.newBuilder().build())
+            .build();
+
+    Policy actualResponse = client.setIamPolicy(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockInstances.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    SetIamPolicyRequest actualRequest = ((SetIamPolicyRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getResource(), actualRequest.getResource());
+    Assert.assertEquals(request.getPolicy(), actualRequest.getPolicy());
+    Assert.assertEquals(request.getUpdateMask(), actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void setIamPolicyExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockInstances.addException(exception);
+
+    try {
+      SetIamPolicyRequest request =
+          SetIamPolicyRequest.newBuilder()
+              .setResource(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+              .setPolicy(Policy.newBuilder().build())
+              .setUpdateMask(FieldMask.newBuilder().build())
+              .build();
+      client.setIamPolicy(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void testIamPermissionsTest() throws Exception {
+    TestIamPermissionsResponse expectedResponse =
+        TestIamPermissionsResponse.newBuilder().addAllPermissions(new ArrayList<String>()).build();
+    mockInstances.addResponse(expectedResponse);
+
+    TestIamPermissionsRequest request =
+        TestIamPermissionsRequest.newBuilder()
+            .setResource(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+            .addAllPermissions(new ArrayList<String>())
+            .build();
+
+    TestIamPermissionsResponse actualResponse = client.testIamPermissions(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockInstances.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    TestIamPermissionsRequest actualRequest = ((TestIamPermissionsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getResource(), actualRequest.getResource());
+    Assert.assertEquals(request.getPermissionsList(), actualRequest.getPermissionsList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void testIamPermissionsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockInstances.addException(exception);
+
+    try {
+      TestIamPermissionsRequest request =
+          TestIamPermissionsRequest.newBuilder()
+              .setResource(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+              .addAllPermissions(new ArrayList<String>())
+              .build();
+      client.testIamPermissions(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
     }
   }
 }

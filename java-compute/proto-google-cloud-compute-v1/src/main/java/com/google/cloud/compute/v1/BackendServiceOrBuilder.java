@@ -682,6 +682,56 @@ public interface BackendServiceOrBuilder
    *
    *
    * <pre>
+   * Dynamic forwarding configuration. This field is used to configure the
+   * backend service with dynamic forwarding feature which together with Service
+   * Extension allows customized and complex routing logic.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.BackendServiceDynamicForwarding dynamic_forwarding = 719613;
+   * </code>
+   *
+   * @return Whether the dynamicForwarding field is set.
+   */
+  boolean hasDynamicForwarding();
+
+  /**
+   *
+   *
+   * <pre>
+   * Dynamic forwarding configuration. This field is used to configure the
+   * backend service with dynamic forwarding feature which together with Service
+   * Extension allows customized and complex routing logic.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.BackendServiceDynamicForwarding dynamic_forwarding = 719613;
+   * </code>
+   *
+   * @return The dynamicForwarding.
+   */
+  com.google.cloud.compute.v1.BackendServiceDynamicForwarding getDynamicForwarding();
+
+  /**
+   *
+   *
+   * <pre>
+   * Dynamic forwarding configuration. This field is used to configure the
+   * backend service with dynamic forwarding feature which together with Service
+   * Extension allows customized and complex routing logic.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.BackendServiceDynamicForwarding dynamic_forwarding = 719613;
+   * </code>
+   */
+  com.google.cloud.compute.v1.BackendServiceDynamicForwardingOrBuilder
+      getDynamicForwardingOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * [Output Only] The resource URL for the edge security policy associated with
    * this backend service.
    * </pre>

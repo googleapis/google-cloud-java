@@ -347,12 +347,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
 
     return bigtableClientContext
         .getSessionShim()
-        .decorateReadRow(classic, rowAdapter, shimSettings)
-        .withDefaultCallContext(
-            bigtableClientContext
-                .getClientContext()
-                .getDefaultCallContext()
-                .withRetrySettings(retrySettings));
+        .decorateReadRow(classic, rowAdapter, shimSettings);
   }
 
   private <ReqT, RowT> ServerStreamingCallable<ReadRowsRequest, RowT> createReadRowsBaseCallable(
@@ -678,12 +673,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
 
     return bigtableClientContext
         .getSessionShim()
-        .decorateMutateRow(classic, perOpSettings.mutateRowSettings)
-        .withDefaultCallContext(
-            bigtableClientContext
-                .getClientContext()
-                .getDefaultCallContext()
-                .withRetrySettings(perOpSettings.mutateRowSettings.getRetrySettings()));
+        .decorateMutateRow(classic, perOpSettings.mutateRowSettings);
   }
 
   /**
@@ -940,12 +930,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
 
     return bigtableClientContext
         .getSessionShim()
-        .decorateCheckAndMutateRow(classic, perOpSettings.checkAndMutateRowSettings)
-        .withDefaultCallContext(
-            bigtableClientContext
-                .getClientContext()
-                .getDefaultCallContext()
-                .withRetrySettings(perOpSettings.checkAndMutateRowSettings.getRetrySettings()));
+        .decorateCheckAndMutateRow(classic, perOpSettings.checkAndMutateRowSettings);
   }
 
   /**
@@ -973,12 +958,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
 
     return bigtableClientContext
         .getSessionShim()
-        .decorateReadModifyWriteRow(classic, rowAdapter, perOpSettings.readModifyWriteRowSettings)
-        .withDefaultCallContext(
-            bigtableClientContext
-                .getClientContext()
-                .getDefaultCallContext()
-                .withRetrySettings(perOpSettings.readModifyWriteRowSettings.getRetrySettings()));
+        .decorateReadModifyWriteRow(classic, rowAdapter, perOpSettings.readModifyWriteRowSettings);
   }
 
   /**

@@ -134,4 +134,24 @@ public interface UpdateServiceRequestOrBuilder
    * @return The allowMissing.
    */
   boolean getAllowMissing();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If set to true, a new revision will be created from the template
+   * even if the system doesn't detect any changes from the previously deployed
+   * revision.
+   *
+   * This may be useful for cases where the underlying resources need to be
+   * recreated or reinitialized. For example if the image is specified by label,
+   * but the underlying image digest has changed) or if the container performs
+   * deployment initialization work that needs to be performed again.
+   * </pre>
+   *
+   * <code>bool force_new_revision = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The forceNewRevision.
+   */
+  boolean getForceNewRevision();
 }

@@ -34,6 +34,7 @@ import com.google.bigtable.v2.OpenFakeSessionRequest.Action;
 import com.google.bigtable.v2.OpenFakeSessionRequest.ActionList;
 import com.google.bigtable.v2.OpenFakeSessionRequest.StreamError;
 import com.google.bigtable.v2.OpenSessionRequest;
+import com.google.bigtable.v2.SessionClientConfiguration.SessionPoolConfiguration;
 import com.google.bigtable.v2.SessionFakeScriptedRequest;
 import com.google.bigtable.v2.SessionFakeScriptedResponse;
 import com.google.bigtable.v2.SessionRefreshConfig;
@@ -1366,6 +1367,85 @@ public class SessionPoolImplTest {
     }
 
     assertPoolServesVRpc(sessionPool, "after an interrupted caller (pool must remain healthy)");
+  }
+
+  @Test
+  @SuppressWarnings({"unchecked", "GuardedBy"})
+  void configUpdateToEmptyClosesSessionsAndScalesBackUpWhenEnabled() throws Exception {
+    ArgumentCaptor<ClientConfigurationManager.ConfigListener<SessionPoolConfiguration>>
+        listenerCaptor = ArgumentCaptor.forClass(ClientConfigurationManager.ConfigListener.class);
+    verify(configManager).addListener(any(), listenerCaptor.capture());
+    ClientConfigurationManager.ConfigListener<SessionPoolConfiguration> configListener =
+        listenerCaptor.getValue();
+
+    sessionPool.start(OpenFakeSessionRequest.getDefaultInstance(), new Metadata());
+    assertPoolServesVRpc(sessionPool, "initial started pool");
+    waitForOpenRequestCount(5, Duration.ofSeconds(5));
+    assertThat(sessionPool.hasSession()).isTrue();
+
+    // Queue a pending vRPC while no ready sessions are available, then update config to empty and
+    // verify the pending vRPC is rejected immediately instead of hanging until deadline.
+    ReentrantLock poolLock = extractPoolLock(sessionPool);
+    UnaryResponseFuture<SessionFakeScriptedResponse> pendingFuture = new UnaryResponseFuture<>();
+    poolLock.lock();
+    try {
+      for (SessionHandle handle : new ArrayList<>(sessionPool.sessions.getAllSessions())) {
+        handle.onSessionClosing();
+      }
+      VRpc<SessionFakeScriptedRequest, SessionFakeScriptedResponse> queuedRpc =
+          sessionPool.newCall(FakeDescriptor.SCRIPTED);
+      queuedRpc.start(
+          SessionFakeScriptedRequest.newBuilder().setTag(0).build(),
+          VRpcCallContext.create(Deadline.after(1, TimeUnit.MINUTES), true, vrpcTracer),
+          pendingFuture);
+      assertThat(pendingFuture.isDone()).isFalse();
+    } finally {
+      poolLock.unlock();
+    }
+
+    // Update config to empty (session_load == 0 clears session_configuration).
+    configListener.onChange(SessionPoolConfiguration.getDefaultInstance());
+    assertThat(sessionPool.hasSession()).isFalse();
+    ExecutionException pendingError =
+        assertThrows(ExecutionException.class, () -> pendingFuture.get(5, TimeUnit.SECONDS));
+    assertThat(pendingError).hasCauseThat().isInstanceOf(VRpcException.class);
+    VRpcException vrpcError = (VRpcException) pendingError.getCause();
+    assertThat(vrpcError.getResult().getRejected()).isTrue();
+    assertThat(vrpcError.getStatus().getCode()).isEqualTo(Status.Code.UNAVAILABLE);
+
+    // Wait for all sessions to finish closing.
+    long deadline = System.currentTimeMillis() + 5000;
+    while (System.currentTimeMillis() < deadline
+        && !sessionPool.sessions.getAllSessions().isEmpty()) {
+      Thread.sleep(10);
+    }
+    assertThat(sessionPool.sessions.getAllSessions()).isEmpty();
+    assertThat(sessionPool.sessions.getStats().getExpectedCapacity()).isEqualTo(0);
+
+    // Starting a new call while config is disabled must also fail immediately without queueing.
+    UnaryResponseFuture<SessionFakeScriptedResponse> disabledCallFuture =
+        new UnaryResponseFuture<>();
+    VRpc<SessionFakeScriptedRequest, SessionFakeScriptedResponse> disabledRpc =
+        sessionPool.newCall(FakeDescriptor.SCRIPTED);
+    disabledRpc.start(
+        SessionFakeScriptedRequest.newBuilder().setTag(0).build(),
+        VRpcCallContext.create(Deadline.after(1, TimeUnit.MINUTES), true, vrpcTracer),
+        disabledCallFuture);
+    ExecutionException disabledCallError =
+        assertThrows(ExecutionException.class, () -> disabledCallFuture.get(5, TimeUnit.SECONDS));
+    assertThat(disabledCallError).hasCauseThat().isInstanceOf(VRpcException.class);
+    assertThat(((VRpcException) disabledCallError.getCause()).getResult().getRejected()).isTrue();
+
+    // Re-enable SessionPoolConfiguration and verify pool scales back up.
+    SessionPoolConfiguration enabledConfig =
+        ClientConfigurationManager.loadDefault()
+            .getSessionConfiguration()
+            .getSessionPoolConfiguration();
+    configListener.onChange(enabledConfig);
+
+    waitForOpenRequestCount(10, Duration.ofSeconds(5));
+    assertPoolServesVRpc(sessionPool, "after re-enabling session pool configuration");
+    assertThat(sessionPool.hasSession()).isTrue();
   }
 
   private void waitForOpenRequestCount(int minCount, Duration timeout) throws InterruptedException {

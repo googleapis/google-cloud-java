@@ -85,6 +85,7 @@ public final class LineItem extends com.google.protobuf.GeneratedMessage
     customVastExtension_ = "";
     creativeTargetings_ = java.util.Collections.emptyList();
     allowedFormats_ = emptyIntList();
+    allocationDeliveryProfile_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -4289,6 +4290,81 @@ public final class LineItem extends com.google.protobuf.GeneratedMessage
 
   private int allowedFormatsMemoizedSerializedSize;
 
+  public static final int ALLOCATION_DELIVERY_PROFILE_FIELD_NUMBER = 131;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object allocationDeliveryProfile_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The allocation delivery profile for the line item.
+   * </pre>
+   *
+   * <code>
+   * optional string allocation_delivery_profile = 131 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return Whether the allocationDeliveryProfile field is set.
+   */
+  @java.lang.Override
+  public boolean hasAllocationDeliveryProfile() {
+    return ((bitField1_ & 0x00200000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The allocation delivery profile for the line item.
+   * </pre>
+   *
+   * <code>
+   * optional string allocation_delivery_profile = 131 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The allocationDeliveryProfile.
+   */
+  @java.lang.Override
+  public java.lang.String getAllocationDeliveryProfile() {
+    java.lang.Object ref = allocationDeliveryProfile_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      allocationDeliveryProfile_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The allocation delivery profile for the line item.
+   * </pre>
+   *
+   * <code>
+   * optional string allocation_delivery_profile = 131 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for allocationDeliveryProfile.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getAllocationDeliveryProfileBytes() {
+    java.lang.Object ref = allocationDeliveryProfile_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      allocationDeliveryProfile_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -4497,6 +4573,9 @@ public final class LineItem extends com.google.protobuf.GeneratedMessage
     }
     for (int i = 0; i < allowedFormats_.size(); i++) {
       output.writeEnumNoTag(allowedFormats_.getInt(i));
+    }
+    if (((bitField1_ & 0x00200000) != 0)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 131, allocationDeliveryProfile_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -4728,6 +4807,10 @@ public final class LineItem extends com.google.protobuf.GeneratedMessage
         size += com.google.protobuf.CodedOutputStream.computeUInt32SizeNoTag(dataSize);
       }
       allowedFormatsMemoizedSerializedSize = dataSize;
+    }
+    if (((bitField1_ & 0x00200000) != 0)) {
+      size +=
+          com.google.protobuf.GeneratedMessage.computeStringSize(131, allocationDeliveryProfile_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -4978,6 +5061,11 @@ public final class LineItem extends com.google.protobuf.GeneratedMessage
     }
     if (!getCreativeTargetingsList().equals(other.getCreativeTargetingsList())) return false;
     if (!allowedFormats_.equals(other.allowedFormats_)) return false;
+    if (hasAllocationDeliveryProfile() != other.hasAllocationDeliveryProfile()) return false;
+    if (hasAllocationDeliveryProfile()) {
+      if (!getAllocationDeliveryProfile().equals(other.getAllocationDeliveryProfile()))
+        return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -5246,6 +5334,10 @@ public final class LineItem extends com.google.protobuf.GeneratedMessage
     if (getAllowedFormatsCount() > 0) {
       hash = (37 * hash) + ALLOWED_FORMATS_FIELD_NUMBER;
       hash = (53 * hash) + allowedFormats_.hashCode();
+    }
+    if (hasAllocationDeliveryProfile()) {
+      hash = (37 * hash) + ALLOCATION_DELIVERY_PROFILE_FIELD_NUMBER;
+      hash = (53 * hash) + getAllocationDeliveryProfile().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -5599,6 +5691,7 @@ public final class LineItem extends com.google.protobuf.GeneratedMessage
       }
       bitField1_ = (bitField1_ & ~0x20000000);
       allowedFormats_ = emptyIntList();
+      allocationDeliveryProfile_ = "";
       return this;
     }
 
@@ -5948,6 +6041,10 @@ public final class LineItem extends com.google.protobuf.GeneratedMessage
       if (((from_bitField1_ & 0x40000000) != 0)) {
         allowedFormats_.makeImmutable();
         result.allowedFormats_ = allowedFormats_;
+      }
+      if (((from_bitField1_ & 0x80000000) != 0)) {
+        result.allocationDeliveryProfile_ = allocationDeliveryProfile_;
+        to_bitField1_ |= 0x00200000;
       }
       result.bitField0_ |= to_bitField0_;
       result.bitField1_ |= to_bitField1_;
@@ -6353,6 +6450,11 @@ public final class LineItem extends com.google.protobuf.GeneratedMessage
           ensureAllowedFormatsIsMutable();
           allowedFormats_.addAll(other.allowedFormats_);
         }
+        onChanged();
+      }
+      if (other.hasAllocationDeliveryProfile()) {
+        allocationDeliveryProfile_ = other.allocationDeliveryProfile_;
+        bitField1_ |= 0x80000000;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -6836,6 +6938,12 @@ public final class LineItem extends com.google.protobuf.GeneratedMessage
                 input.popLimit(limit);
                 break;
               } // case 898
+            case 1050:
+              {
+                allocationDeliveryProfile_ = input.readStringRequireUtf8();
+                bitField1_ |= 0x80000000;
+                break;
+              } // case 1050
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -18878,6 +18986,144 @@ public final class LineItem extends com.google.protobuf.GeneratedMessage
       for (int value : values) {
         allowedFormats_.addInt(value);
       }
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object allocationDeliveryProfile_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The allocation delivery profile for the line item.
+     * </pre>
+     *
+     * <code>
+     * optional string allocation_delivery_profile = 131 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return Whether the allocationDeliveryProfile field is set.
+     */
+    public boolean hasAllocationDeliveryProfile() {
+      return ((bitField1_ & 0x80000000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The allocation delivery profile for the line item.
+     * </pre>
+     *
+     * <code>
+     * optional string allocation_delivery_profile = 131 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The allocationDeliveryProfile.
+     */
+    public java.lang.String getAllocationDeliveryProfile() {
+      java.lang.Object ref = allocationDeliveryProfile_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        allocationDeliveryProfile_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The allocation delivery profile for the line item.
+     * </pre>
+     *
+     * <code>
+     * optional string allocation_delivery_profile = 131 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for allocationDeliveryProfile.
+     */
+    public com.google.protobuf.ByteString getAllocationDeliveryProfileBytes() {
+      java.lang.Object ref = allocationDeliveryProfile_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        allocationDeliveryProfile_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The allocation delivery profile for the line item.
+     * </pre>
+     *
+     * <code>
+     * optional string allocation_delivery_profile = 131 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The allocationDeliveryProfile to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAllocationDeliveryProfile(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      allocationDeliveryProfile_ = value;
+      bitField1_ |= 0x80000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The allocation delivery profile for the line item.
+     * </pre>
+     *
+     * <code>
+     * optional string allocation_delivery_profile = 131 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAllocationDeliveryProfile() {
+      allocationDeliveryProfile_ = getDefaultInstance().getAllocationDeliveryProfile();
+      bitField1_ = (bitField1_ & ~0x80000000);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The allocation delivery profile for the line item.
+     * </pre>
+     *
+     * <code>
+     * optional string allocation_delivery_profile = 131 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes for allocationDeliveryProfile to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAllocationDeliveryProfileBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      allocationDeliveryProfile_ = value;
+      bitField1_ |= 0x80000000;
       onChanged();
       return this;
     }

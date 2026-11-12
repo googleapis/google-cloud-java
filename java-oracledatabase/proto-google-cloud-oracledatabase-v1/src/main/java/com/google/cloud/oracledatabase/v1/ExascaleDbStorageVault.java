@@ -154,12 +154,14 @@ public final class ExascaleDbStorageVault extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. The display name for the ExascaleDbStorageVault. The name does
-   * not have to be unique within your project. The name must be 1-255
+   * Required. Immutable. The display name for the ExascaleDbStorageVault. The
+   * name does not have to be unique within your project. The name must be 1-255
    * characters long and can only contain alphanumeric characters.
    * </pre>
    *
-   * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string display_name = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The displayName.
    */
@@ -180,12 +182,14 @@ public final class ExascaleDbStorageVault extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. The display name for the ExascaleDbStorageVault. The name does
-   * not have to be unique within your project. The name must be 1-255
+   * Required. Immutable. The display name for the ExascaleDbStorageVault. The
+   * name does not have to be unique within your project. The name must be 1-255
    * characters long and can only contain alphanumeric characters.
    * </pre>
    *
-   * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string display_name = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The bytes for displayName.
    */
@@ -211,12 +215,14 @@ public final class ExascaleDbStorageVault extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Optional. The GCP Oracle zone where Oracle ExascaleDbStorageVault is
-   * hosted. Example: us-east4-b-r2. If not specified, the system will pick a
-   * zone based on availability.
+   * Optional. Immutable. The GCP Oracle zone where Oracle
+   * ExascaleDbStorageVault is hosted. Example: us-east4-b-r2. If not specified,
+   * the system will pick a zone based on availability.
    * </pre>
    *
-   * <code>string gcp_oracle_zone = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string gcp_oracle_zone = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The gcpOracleZone.
    */
@@ -237,12 +243,14 @@ public final class ExascaleDbStorageVault extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Optional. The GCP Oracle zone where Oracle ExascaleDbStorageVault is
-   * hosted. Example: us-east4-b-r2. If not specified, the system will pick a
-   * zone based on availability.
+   * Optional. Immutable. The GCP Oracle zone where Oracle
+   * ExascaleDbStorageVault is hosted. Example: us-east4-b-r2. If not specified,
+   * the system will pick a zone based on availability.
    * </pre>
    *
-   * <code>string gcp_oracle_zone = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string gcp_oracle_zone = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The bytes for gcpOracleZone.
    */
@@ -266,11 +274,11 @@ public final class ExascaleDbStorageVault extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. The properties of the ExascaleDbStorageVault.
+   * Required. Immutable. The properties of the ExascaleDbStorageVault.
    * </pre>
    *
    * <code>
-   * .google.cloud.oracledatabase.v1.ExascaleDbStorageVaultProperties properties = 4 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.oracledatabase.v1.ExascaleDbStorageVaultProperties properties = 4 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
    * @return Whether the properties field is set.
@@ -284,11 +292,11 @@ public final class ExascaleDbStorageVault extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. The properties of the ExascaleDbStorageVault.
+   * Required. Immutable. The properties of the ExascaleDbStorageVault.
    * </pre>
    *
    * <code>
-   * .google.cloud.oracledatabase.v1.ExascaleDbStorageVaultProperties properties = 4 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.oracledatabase.v1.ExascaleDbStorageVaultProperties properties = 4 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
    * @return The properties.
@@ -304,11 +312,11 @@ public final class ExascaleDbStorageVault extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. The properties of the ExascaleDbStorageVault.
+   * Required. Immutable. The properties of the ExascaleDbStorageVault.
    * </pre>
    *
    * <code>
-   * .google.cloud.oracledatabase.v1.ExascaleDbStorageVaultProperties properties = 4 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.oracledatabase.v1.ExascaleDbStorageVaultProperties properties = 4 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    */
   @java.lang.Override
@@ -542,14 +550,14 @@ public final class ExascaleDbStorageVault extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Optional. The Exadata Infrastructure resource on which
+   * Optional. Immutable. The Exadata Infrastructure resource on which
    * ExascaleDbStorageVault
    * resource is created, in the following format:
    * projects/{project}/locations/{region}/cloudExadataInfrastuctures/{cloud_extradata_infrastructure}
    * </pre>
    *
    * <code>
-   * string exadata_infrastructure = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * string exadata_infrastructure = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The exadataInfrastructure.
@@ -571,14 +579,14 @@ public final class ExascaleDbStorageVault extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Optional. The Exadata Infrastructure resource on which
+   * Optional. Immutable. The Exadata Infrastructure resource on which
    * ExascaleDbStorageVault
    * resource is created, in the following format:
    * projects/{project}/locations/{region}/cloudExadataInfrastuctures/{cloud_extradata_infrastructure}
    * </pre>
    *
    * <code>
-   * string exadata_infrastructure = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * string exadata_infrastructure = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The bytes for exadataInfrastructure.
@@ -1267,12 +1275,14 @@ public final class ExascaleDbStorageVault extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The display name for the ExascaleDbStorageVault. The name does
-     * not have to be unique within your project. The name must be 1-255
+     * Required. Immutable. The display name for the ExascaleDbStorageVault. The
+     * name does not have to be unique within your project. The name must be 1-255
      * characters long and can only contain alphanumeric characters.
      * </pre>
      *
-     * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string display_name = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return The displayName.
      */
@@ -1292,12 +1302,14 @@ public final class ExascaleDbStorageVault extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The display name for the ExascaleDbStorageVault. The name does
-     * not have to be unique within your project. The name must be 1-255
+     * Required. Immutable. The display name for the ExascaleDbStorageVault. The
+     * name does not have to be unique within your project. The name must be 1-255
      * characters long and can only contain alphanumeric characters.
      * </pre>
      *
-     * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string display_name = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return The bytes for displayName.
      */
@@ -1317,12 +1329,14 @@ public final class ExascaleDbStorageVault extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The display name for the ExascaleDbStorageVault. The name does
-     * not have to be unique within your project. The name must be 1-255
+     * Required. Immutable. The display name for the ExascaleDbStorageVault. The
+     * name does not have to be unique within your project. The name must be 1-255
      * characters long and can only contain alphanumeric characters.
      * </pre>
      *
-     * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string display_name = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @param value The displayName to set.
      * @return This builder for chaining.
@@ -1341,12 +1355,14 @@ public final class ExascaleDbStorageVault extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The display name for the ExascaleDbStorageVault. The name does
-     * not have to be unique within your project. The name must be 1-255
+     * Required. Immutable. The display name for the ExascaleDbStorageVault. The
+     * name does not have to be unique within your project. The name must be 1-255
      * characters long and can only contain alphanumeric characters.
      * </pre>
      *
-     * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string display_name = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -1361,12 +1377,14 @@ public final class ExascaleDbStorageVault extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The display name for the ExascaleDbStorageVault. The name does
-     * not have to be unique within your project. The name must be 1-255
+     * Required. Immutable. The display name for the ExascaleDbStorageVault. The
+     * name does not have to be unique within your project. The name must be 1-255
      * characters long and can only contain alphanumeric characters.
      * </pre>
      *
-     * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string display_name = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @param value The bytes for displayName to set.
      * @return This builder for chaining.
@@ -1388,12 +1406,14 @@ public final class ExascaleDbStorageVault extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. The GCP Oracle zone where Oracle ExascaleDbStorageVault is
-     * hosted. Example: us-east4-b-r2. If not specified, the system will pick a
-     * zone based on availability.
+     * Optional. Immutable. The GCP Oracle zone where Oracle
+     * ExascaleDbStorageVault is hosted. Example: us-east4-b-r2. If not specified,
+     * the system will pick a zone based on availability.
      * </pre>
      *
-     * <code>string gcp_oracle_zone = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string gcp_oracle_zone = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return The gcpOracleZone.
      */
@@ -1413,12 +1433,14 @@ public final class ExascaleDbStorageVault extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. The GCP Oracle zone where Oracle ExascaleDbStorageVault is
-     * hosted. Example: us-east4-b-r2. If not specified, the system will pick a
-     * zone based on availability.
+     * Optional. Immutable. The GCP Oracle zone where Oracle
+     * ExascaleDbStorageVault is hosted. Example: us-east4-b-r2. If not specified,
+     * the system will pick a zone based on availability.
      * </pre>
      *
-     * <code>string gcp_oracle_zone = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string gcp_oracle_zone = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return The bytes for gcpOracleZone.
      */
@@ -1438,12 +1460,14 @@ public final class ExascaleDbStorageVault extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. The GCP Oracle zone where Oracle ExascaleDbStorageVault is
-     * hosted. Example: us-east4-b-r2. If not specified, the system will pick a
-     * zone based on availability.
+     * Optional. Immutable. The GCP Oracle zone where Oracle
+     * ExascaleDbStorageVault is hosted. Example: us-east4-b-r2. If not specified,
+     * the system will pick a zone based on availability.
      * </pre>
      *
-     * <code>string gcp_oracle_zone = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string gcp_oracle_zone = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @param value The gcpOracleZone to set.
      * @return This builder for chaining.
@@ -1462,12 +1486,14 @@ public final class ExascaleDbStorageVault extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. The GCP Oracle zone where Oracle ExascaleDbStorageVault is
-     * hosted. Example: us-east4-b-r2. If not specified, the system will pick a
-     * zone based on availability.
+     * Optional. Immutable. The GCP Oracle zone where Oracle
+     * ExascaleDbStorageVault is hosted. Example: us-east4-b-r2. If not specified,
+     * the system will pick a zone based on availability.
      * </pre>
      *
-     * <code>string gcp_oracle_zone = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string gcp_oracle_zone = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -1482,12 +1508,14 @@ public final class ExascaleDbStorageVault extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. The GCP Oracle zone where Oracle ExascaleDbStorageVault is
-     * hosted. Example: us-east4-b-r2. If not specified, the system will pick a
-     * zone based on availability.
+     * Optional. Immutable. The GCP Oracle zone where Oracle
+     * ExascaleDbStorageVault is hosted. Example: us-east4-b-r2. If not specified,
+     * the system will pick a zone based on availability.
      * </pre>
      *
-     * <code>string gcp_oracle_zone = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string gcp_oracle_zone = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @param value The bytes for gcpOracleZone to set.
      * @return This builder for chaining.
@@ -1514,11 +1542,11 @@ public final class ExascaleDbStorageVault extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The properties of the ExascaleDbStorageVault.
+     * Required. Immutable. The properties of the ExascaleDbStorageVault.
      * </pre>
      *
      * <code>
-     * .google.cloud.oracledatabase.v1.ExascaleDbStorageVaultProperties properties = 4 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.oracledatabase.v1.ExascaleDbStorageVaultProperties properties = 4 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @return Whether the properties field is set.
@@ -1531,11 +1559,11 @@ public final class ExascaleDbStorageVault extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The properties of the ExascaleDbStorageVault.
+     * Required. Immutable. The properties of the ExascaleDbStorageVault.
      * </pre>
      *
      * <code>
-     * .google.cloud.oracledatabase.v1.ExascaleDbStorageVaultProperties properties = 4 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.oracledatabase.v1.ExascaleDbStorageVaultProperties properties = 4 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @return The properties.
@@ -1555,11 +1583,11 @@ public final class ExascaleDbStorageVault extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The properties of the ExascaleDbStorageVault.
+     * Required. Immutable. The properties of the ExascaleDbStorageVault.
      * </pre>
      *
      * <code>
-     * .google.cloud.oracledatabase.v1.ExascaleDbStorageVaultProperties properties = 4 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.oracledatabase.v1.ExascaleDbStorageVaultProperties properties = 4 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     public Builder setProperties(
@@ -1581,11 +1609,11 @@ public final class ExascaleDbStorageVault extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The properties of the ExascaleDbStorageVault.
+     * Required. Immutable. The properties of the ExascaleDbStorageVault.
      * </pre>
      *
      * <code>
-     * .google.cloud.oracledatabase.v1.ExascaleDbStorageVaultProperties properties = 4 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.oracledatabase.v1.ExascaleDbStorageVaultProperties properties = 4 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     public Builder setProperties(
@@ -1605,11 +1633,11 @@ public final class ExascaleDbStorageVault extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The properties of the ExascaleDbStorageVault.
+     * Required. Immutable. The properties of the ExascaleDbStorageVault.
      * </pre>
      *
      * <code>
-     * .google.cloud.oracledatabase.v1.ExascaleDbStorageVaultProperties properties = 4 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.oracledatabase.v1.ExascaleDbStorageVaultProperties properties = 4 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     public Builder mergeProperties(
@@ -1638,11 +1666,11 @@ public final class ExascaleDbStorageVault extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The properties of the ExascaleDbStorageVault.
+     * Required. Immutable. The properties of the ExascaleDbStorageVault.
      * </pre>
      *
      * <code>
-     * .google.cloud.oracledatabase.v1.ExascaleDbStorageVaultProperties properties = 4 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.oracledatabase.v1.ExascaleDbStorageVaultProperties properties = 4 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     public Builder clearProperties() {
@@ -1660,11 +1688,11 @@ public final class ExascaleDbStorageVault extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The properties of the ExascaleDbStorageVault.
+     * Required. Immutable. The properties of the ExascaleDbStorageVault.
      * </pre>
      *
      * <code>
-     * .google.cloud.oracledatabase.v1.ExascaleDbStorageVaultProperties properties = 4 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.oracledatabase.v1.ExascaleDbStorageVaultProperties properties = 4 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     public com.google.cloud.oracledatabase.v1.ExascaleDbStorageVaultProperties.Builder
@@ -1678,11 +1706,11 @@ public final class ExascaleDbStorageVault extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The properties of the ExascaleDbStorageVault.
+     * Required. Immutable. The properties of the ExascaleDbStorageVault.
      * </pre>
      *
      * <code>
-     * .google.cloud.oracledatabase.v1.ExascaleDbStorageVaultProperties properties = 4 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.oracledatabase.v1.ExascaleDbStorageVaultProperties properties = 4 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     public com.google.cloud.oracledatabase.v1.ExascaleDbStorageVaultPropertiesOrBuilder
@@ -1701,11 +1729,11 @@ public final class ExascaleDbStorageVault extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The properties of the ExascaleDbStorageVault.
+     * Required. Immutable. The properties of the ExascaleDbStorageVault.
      * </pre>
      *
      * <code>
-     * .google.cloud.oracledatabase.v1.ExascaleDbStorageVaultProperties properties = 4 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.oracledatabase.v1.ExascaleDbStorageVaultProperties properties = 4 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilder<
@@ -2231,14 +2259,14 @@ public final class ExascaleDbStorageVault extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. The Exadata Infrastructure resource on which
+     * Optional. Immutable. The Exadata Infrastructure resource on which
      * ExascaleDbStorageVault
      * resource is created, in the following format:
      * projects/{project}/locations/{region}/cloudExadataInfrastuctures/{cloud_extradata_infrastructure}
      * </pre>
      *
      * <code>
-     * string exadata_infrastructure = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * string exadata_infrastructure = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return The exadataInfrastructure.
@@ -2259,14 +2287,14 @@ public final class ExascaleDbStorageVault extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. The Exadata Infrastructure resource on which
+     * Optional. Immutable. The Exadata Infrastructure resource on which
      * ExascaleDbStorageVault
      * resource is created, in the following format:
      * projects/{project}/locations/{region}/cloudExadataInfrastuctures/{cloud_extradata_infrastructure}
      * </pre>
      *
      * <code>
-     * string exadata_infrastructure = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * string exadata_infrastructure = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return The bytes for exadataInfrastructure.
@@ -2287,14 +2315,14 @@ public final class ExascaleDbStorageVault extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. The Exadata Infrastructure resource on which
+     * Optional. Immutable. The Exadata Infrastructure resource on which
      * ExascaleDbStorageVault
      * resource is created, in the following format:
      * projects/{project}/locations/{region}/cloudExadataInfrastuctures/{cloud_extradata_infrastructure}
      * </pre>
      *
      * <code>
-     * string exadata_infrastructure = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * string exadata_infrastructure = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @param value The exadataInfrastructure to set.
@@ -2314,14 +2342,14 @@ public final class ExascaleDbStorageVault extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. The Exadata Infrastructure resource on which
+     * Optional. Immutable. The Exadata Infrastructure resource on which
      * ExascaleDbStorageVault
      * resource is created, in the following format:
      * projects/{project}/locations/{region}/cloudExadataInfrastuctures/{cloud_extradata_infrastructure}
      * </pre>
      *
      * <code>
-     * string exadata_infrastructure = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * string exadata_infrastructure = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return This builder for chaining.
@@ -2337,14 +2365,14 @@ public final class ExascaleDbStorageVault extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. The Exadata Infrastructure resource on which
+     * Optional. Immutable. The Exadata Infrastructure resource on which
      * ExascaleDbStorageVault
      * resource is created, in the following format:
      * projects/{project}/locations/{region}/cloudExadataInfrastuctures/{cloud_extradata_infrastructure}
      * </pre>
      *
      * <code>
-     * string exadata_infrastructure = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * string exadata_infrastructure = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @param value The bytes for exadataInfrastructure to set.

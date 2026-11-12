@@ -30,6 +30,122 @@ public interface MachineImageParamsOrBuilder
    *
    *
    * <pre>
+   * Input only. Specifies the list of disk device names that must be excluded from the
+   * new machine image.
+   * </pre>
+   *
+   * <code>repeated string excluded_disks = 301656001;</code>
+   *
+   * @return A list containing the excludedDisks.
+   */
+  java.util.List<java.lang.String> getExcludedDisksList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Input only. Specifies the list of disk device names that must be excluded from the
+   * new machine image.
+   * </pre>
+   *
+   * <code>repeated string excluded_disks = 301656001;</code>
+   *
+   * @return The count of excludedDisks.
+   */
+  int getExcludedDisksCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Input only. Specifies the list of disk device names that must be excluded from the
+   * new machine image.
+   * </pre>
+   *
+   * <code>repeated string excluded_disks = 301656001;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The excludedDisks at the given index.
+   */
+  java.lang.String getExcludedDisks(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Input only. Specifies the list of disk device names that must be excluded from the
+   * new machine image.
+   * </pre>
+   *
+   * <code>repeated string excluded_disks = 301656001;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the excludedDisks at the given index.
+   */
+  com.google.protobuf.ByteString getExcludedDisksBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Input only. Specifies the list of disk device names that must be included with the
+   * new machine image.
+   * </pre>
+   *
+   * <code>repeated string included_disks = 139709747;</code>
+   *
+   * @return A list containing the includedDisks.
+   */
+  java.util.List<java.lang.String> getIncludedDisksList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Input only. Specifies the list of disk device names that must be included with the
+   * new machine image.
+   * </pre>
+   *
+   * <code>repeated string included_disks = 139709747;</code>
+   *
+   * @return The count of includedDisks.
+   */
+  int getIncludedDisksCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Input only. Specifies the list of disk device names that must be included with the
+   * new machine image.
+   * </pre>
+   *
+   * <code>repeated string included_disks = 139709747;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The includedDisks at the given index.
+   */
+  java.lang.String getIncludedDisks(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Input only. Specifies the list of disk device names that must be included with the
+   * new machine image.
+   * </pre>
+   *
+   * <code>repeated string included_disks = 139709747;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the includedDisks at the given index.
+   */
+  com.google.protobuf.ByteString getIncludedDisksBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * Input only. Resource manager tags to be bound to the machine image. Tag keys and values
    * have the same definition as resource
    * manager tags. Keys and values can be either in numeric format,

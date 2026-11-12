@@ -614,6 +614,54 @@ public interface SchedulingOrBuilder
    *
    *
    * <pre>
+   * Protection tier for the workload which specifies the workload
+   * expectations in the event of infrastructure failures at data center
+   * (e.g. power and/or cooling failures).
+   * Check the ProtectionTier enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string protection_tier = 503959432;</code>
+   *
+   * @return Whether the protectionTier field is set.
+   */
+  boolean hasProtectionTier();
+
+  /**
+   *
+   *
+   * <pre>
+   * Protection tier for the workload which specifies the workload
+   * expectations in the event of infrastructure failures at data center
+   * (e.g. power and/or cooling failures).
+   * Check the ProtectionTier enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string protection_tier = 503959432;</code>
+   *
+   * @return The protectionTier.
+   */
+  java.lang.String getProtectionTier();
+
+  /**
+   *
+   *
+   * <pre>
+   * Protection tier for the workload which specifies the workload
+   * expectations in the event of infrastructure failures at data center
+   * (e.g. power and/or cooling failures).
+   * Check the ProtectionTier enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string protection_tier = 503959432;</code>
+   *
+   * @return The bytes for protectionTier.
+   */
+  com.google.protobuf.ByteString getProtectionTierBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Specifies the provisioning model of the instance.
    * Check the ProvisioningModel enum for the list of possible values.
    * </pre>

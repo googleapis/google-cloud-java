@@ -74,6 +74,7 @@ public final class SlurmNodeSet extends com.google.protobuf.GeneratedMessage
             com.google.cloud.hypercomputecluster.v1beta.SlurmNodeSet.Builder.class);
   }
 
+  private int bitField0_;
   private int typeCase_ = 0;
 
   @SuppressWarnings("serial")
@@ -197,10 +198,10 @@ public final class SlurmNodeSet extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. Identifier for the nodeset, which allows it to be referenced by
-   * partitions. Must conform to
-   * [RFC-1034](https://datatracker.ietf.org/doc/html/rfc1034) (lower-case,
-   * alphanumeric, and at most 63 characters).
+   * Required. The ID for the nodeset, which allows it to be referenced by
+   * cluster partitions. The nodeset ID must start with a lowercase letter
+   * (`a`-`z`), use only lowercase letters or numbers, and contain up to 15
+   * characters. For example, specify `nodeset001`.
    * </pre>
    *
    * <code>string id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -224,10 +225,10 @@ public final class SlurmNodeSet extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. Identifier for the nodeset, which allows it to be referenced by
-   * partitions. Must conform to
-   * [RFC-1034](https://datatracker.ietf.org/doc/html/rfc1034) (lower-case,
-   * alphanumeric, and at most 63 characters).
+   * Required. The ID for the nodeset, which allows it to be referenced by
+   * cluster partitions. The nodeset ID must start with a lowercase letter
+   * (`a`-`z`), use only lowercase letters or numbers, and contain up to 15
+   * characters. For example, specify `nodeset001`.
    * </pre>
    *
    * <code>string id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -256,12 +257,12 @@ public final class SlurmNodeSet extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. ID of the compute resource on which this nodeset will run. Must
+   * Required. The ID of the compute resource on which this nodeset runs. Must
    * match a key in the cluster's
-   * [compute_resources](Cluster.compute_resources).
+   * [compute_resources][google.cloud.hypercomputecluster.v1beta.Cluster.compute_resources].
    * </pre>
    *
-   * <code>string compute_id = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string compute_id = 16 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The computeId.
    */
@@ -282,12 +283,12 @@ public final class SlurmNodeSet extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. ID of the compute resource on which this nodeset will run. Must
+   * Required. The ID of the compute resource on which this nodeset runs. Must
    * match a key in the cluster's
-   * [compute_resources](Cluster.compute_resources).
+   * [compute_resources][google.cloud.hypercomputecluster.v1beta.Cluster.compute_resources].
    * </pre>
    *
-   * <code>string compute_id = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string compute_id = 16 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for computeId.
    */
@@ -447,6 +448,67 @@ public final class SlurmNodeSet extends com.google.protobuf.GeneratedMessage
     return maxDynamicNodeCount_;
   }
 
+  public static final int RESOURCE_POLICY_CONFIG_FIELD_NUMBER = 19;
+  private com.google.cloud.hypercomputecluster.v1beta.ResourcePolicyConfig resourcePolicyConfig_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Resource policy configuration for the nodeset.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.hypercomputecluster.v1beta.ResourcePolicyConfig resource_policy_config = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the resourcePolicyConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasResourcePolicyConfig() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Resource policy configuration for the nodeset.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.hypercomputecluster.v1beta.ResourcePolicyConfig resource_policy_config = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The resourcePolicyConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.hypercomputecluster.v1beta.ResourcePolicyConfig
+      getResourcePolicyConfig() {
+    return resourcePolicyConfig_ == null
+        ? com.google.cloud.hypercomputecluster.v1beta.ResourcePolicyConfig.getDefaultInstance()
+        : resourcePolicyConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Resource policy configuration for the nodeset.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.hypercomputecluster.v1beta.ResourcePolicyConfig resource_policy_config = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.hypercomputecluster.v1beta.ResourcePolicyConfigOrBuilder
+      getResourcePolicyConfigOrBuilder() {
+    return resourcePolicyConfig_ == null
+        ? com.google.cloud.hypercomputecluster.v1beta.ResourcePolicyConfig.getDefaultInstance()
+        : resourcePolicyConfig_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -480,6 +542,9 @@ public final class SlurmNodeSet extends com.google.protobuf.GeneratedMessage
       output.writeMessage(
           17, (com.google.cloud.hypercomputecluster.v1beta.ComputeInstanceSlurmNodeSet) type_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(19, getResourcePolicyConfig());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -509,6 +574,10 @@ public final class SlurmNodeSet extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               17, (com.google.cloud.hypercomputecluster.v1beta.ComputeInstanceSlurmNodeSet) type_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(19, getResourcePolicyConfig());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -530,6 +599,10 @@ public final class SlurmNodeSet extends com.google.protobuf.GeneratedMessage
     if (!getStorageConfigsList().equals(other.getStorageConfigsList())) return false;
     if (getStaticNodeCount() != other.getStaticNodeCount()) return false;
     if (getMaxDynamicNodeCount() != other.getMaxDynamicNodeCount()) return false;
+    if (hasResourcePolicyConfig() != other.hasResourcePolicyConfig()) return false;
+    if (hasResourcePolicyConfig()) {
+      if (!getResourcePolicyConfig().equals(other.getResourcePolicyConfig())) return false;
+    }
     if (!getTypeCase().equals(other.getTypeCase())) return false;
     switch (typeCase_) {
       case 17:
@@ -561,6 +634,10 @@ public final class SlurmNodeSet extends com.google.protobuf.GeneratedMessage
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getStaticNodeCount());
     hash = (37 * hash) + MAX_DYNAMIC_NODE_COUNT_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getMaxDynamicNodeCount());
+    if (hasResourcePolicyConfig()) {
+      hash = (37 * hash) + RESOURCE_POLICY_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getResourcePolicyConfig().hashCode();
+    }
     switch (typeCase_) {
       case 17:
         hash = (37 * hash) + COMPUTE_INSTANCE_FIELD_NUMBER;
@@ -702,10 +779,20 @@ public final class SlurmNodeSet extends com.google.protobuf.GeneratedMessage
     }
 
     // Construct using com.google.cloud.hypercomputecluster.v1beta.SlurmNodeSet.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        internalGetStorageConfigsFieldBuilder();
+        internalGetResourcePolicyConfigFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -726,6 +813,11 @@ public final class SlurmNodeSet extends com.google.protobuf.GeneratedMessage
       bitField0_ = (bitField0_ & ~0x00000008);
       staticNodeCount_ = 0L;
       maxDynamicNodeCount_ = 0L;
+      resourcePolicyConfig_ = null;
+      if (resourcePolicyConfigBuilder_ != null) {
+        resourcePolicyConfigBuilder_.dispose();
+        resourcePolicyConfigBuilder_ = null;
+      }
       typeCase_ = 0;
       type_ = null;
       return this;
@@ -791,6 +883,15 @@ public final class SlurmNodeSet extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.maxDynamicNodeCount_ = maxDynamicNodeCount_;
       }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.resourcePolicyConfig_ =
+            resourcePolicyConfigBuilder_ == null
+                ? resourcePolicyConfig_
+                : resourcePolicyConfigBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     private void buildPartialOneofs(
@@ -857,6 +958,9 @@ public final class SlurmNodeSet extends com.google.protobuf.GeneratedMessage
       }
       if (other.getMaxDynamicNodeCount() != 0L) {
         setMaxDynamicNodeCount(other.getMaxDynamicNodeCount());
+      }
+      if (other.hasResourcePolicyConfig()) {
+        mergeResourcePolicyConfig(other.getResourcePolicyConfig());
       }
       switch (other.getTypeCase()) {
         case COMPUTE_INSTANCE:
@@ -940,6 +1044,13 @@ public final class SlurmNodeSet extends com.google.protobuf.GeneratedMessage
                 typeCase_ = 17;
                 break;
               } // case 138
+            case 154:
+              {
+                input.readMessage(
+                    internalGetResourcePolicyConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 154
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1238,10 +1349,10 @@ public final class SlurmNodeSet extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Identifier for the nodeset, which allows it to be referenced by
-     * partitions. Must conform to
-     * [RFC-1034](https://datatracker.ietf.org/doc/html/rfc1034) (lower-case,
-     * alphanumeric, and at most 63 characters).
+     * Required. The ID for the nodeset, which allows it to be referenced by
+     * cluster partitions. The nodeset ID must start with a lowercase letter
+     * (`a`-`z`), use only lowercase letters or numbers, and contain up to 15
+     * characters. For example, specify `nodeset001`.
      * </pre>
      *
      * <code>string id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1264,10 +1375,10 @@ public final class SlurmNodeSet extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Identifier for the nodeset, which allows it to be referenced by
-     * partitions. Must conform to
-     * [RFC-1034](https://datatracker.ietf.org/doc/html/rfc1034) (lower-case,
-     * alphanumeric, and at most 63 characters).
+     * Required. The ID for the nodeset, which allows it to be referenced by
+     * cluster partitions. The nodeset ID must start with a lowercase letter
+     * (`a`-`z`), use only lowercase letters or numbers, and contain up to 15
+     * characters. For example, specify `nodeset001`.
      * </pre>
      *
      * <code>string id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1290,10 +1401,10 @@ public final class SlurmNodeSet extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Identifier for the nodeset, which allows it to be referenced by
-     * partitions. Must conform to
-     * [RFC-1034](https://datatracker.ietf.org/doc/html/rfc1034) (lower-case,
-     * alphanumeric, and at most 63 characters).
+     * Required. The ID for the nodeset, which allows it to be referenced by
+     * cluster partitions. The nodeset ID must start with a lowercase letter
+     * (`a`-`z`), use only lowercase letters or numbers, and contain up to 15
+     * characters. For example, specify `nodeset001`.
      * </pre>
      *
      * <code>string id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1315,10 +1426,10 @@ public final class SlurmNodeSet extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Identifier for the nodeset, which allows it to be referenced by
-     * partitions. Must conform to
-     * [RFC-1034](https://datatracker.ietf.org/doc/html/rfc1034) (lower-case,
-     * alphanumeric, and at most 63 characters).
+     * Required. The ID for the nodeset, which allows it to be referenced by
+     * cluster partitions. The nodeset ID must start with a lowercase letter
+     * (`a`-`z`), use only lowercase letters or numbers, and contain up to 15
+     * characters. For example, specify `nodeset001`.
      * </pre>
      *
      * <code>string id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1336,10 +1447,10 @@ public final class SlurmNodeSet extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Identifier for the nodeset, which allows it to be referenced by
-     * partitions. Must conform to
-     * [RFC-1034](https://datatracker.ietf.org/doc/html/rfc1034) (lower-case,
-     * alphanumeric, and at most 63 characters).
+     * Required. The ID for the nodeset, which allows it to be referenced by
+     * cluster partitions. The nodeset ID must start with a lowercase letter
+     * (`a`-`z`), use only lowercase letters or numbers, and contain up to 15
+     * characters. For example, specify `nodeset001`.
      * </pre>
      *
      * <code>string id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1364,12 +1475,12 @@ public final class SlurmNodeSet extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. ID of the compute resource on which this nodeset will run. Must
+     * Required. The ID of the compute resource on which this nodeset runs. Must
      * match a key in the cluster's
-     * [compute_resources](Cluster.compute_resources).
+     * [compute_resources][google.cloud.hypercomputecluster.v1beta.Cluster.compute_resources].
      * </pre>
      *
-     * <code>string compute_id = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string compute_id = 16 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The computeId.
      */
@@ -1389,12 +1500,12 @@ public final class SlurmNodeSet extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. ID of the compute resource on which this nodeset will run. Must
+     * Required. The ID of the compute resource on which this nodeset runs. Must
      * match a key in the cluster's
-     * [compute_resources](Cluster.compute_resources).
+     * [compute_resources][google.cloud.hypercomputecluster.v1beta.Cluster.compute_resources].
      * </pre>
      *
-     * <code>string compute_id = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string compute_id = 16 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for computeId.
      */
@@ -1414,12 +1525,12 @@ public final class SlurmNodeSet extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. ID of the compute resource on which this nodeset will run. Must
+     * Required. The ID of the compute resource on which this nodeset runs. Must
      * match a key in the cluster's
-     * [compute_resources](Cluster.compute_resources).
+     * [compute_resources][google.cloud.hypercomputecluster.v1beta.Cluster.compute_resources].
      * </pre>
      *
-     * <code>string compute_id = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string compute_id = 16 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The computeId to set.
      * @return This builder for chaining.
@@ -1438,12 +1549,12 @@ public final class SlurmNodeSet extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. ID of the compute resource on which this nodeset will run. Must
+     * Required. The ID of the compute resource on which this nodeset runs. Must
      * match a key in the cluster's
-     * [compute_resources](Cluster.compute_resources).
+     * [compute_resources][google.cloud.hypercomputecluster.v1beta.Cluster.compute_resources].
      * </pre>
      *
-     * <code>string compute_id = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string compute_id = 16 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -1458,12 +1569,12 @@ public final class SlurmNodeSet extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. ID of the compute resource on which this nodeset will run. Must
+     * Required. The ID of the compute resource on which this nodeset runs. Must
      * match a key in the cluster's
-     * [compute_resources](Cluster.compute_resources).
+     * [compute_resources][google.cloud.hypercomputecluster.v1beta.Cluster.compute_resources].
      * </pre>
      *
-     * <code>string compute_id = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string compute_id = 16 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for computeId to set.
      * @return This builder for chaining.
@@ -2066,6 +2177,226 @@ public final class SlurmNodeSet extends com.google.protobuf.GeneratedMessage
       maxDynamicNodeCount_ = 0L;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.hypercomputecluster.v1beta.ResourcePolicyConfig resourcePolicyConfig_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.hypercomputecluster.v1beta.ResourcePolicyConfig,
+            com.google.cloud.hypercomputecluster.v1beta.ResourcePolicyConfig.Builder,
+            com.google.cloud.hypercomputecluster.v1beta.ResourcePolicyConfigOrBuilder>
+        resourcePolicyConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Resource policy configuration for the nodeset.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.hypercomputecluster.v1beta.ResourcePolicyConfig resource_policy_config = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the resourcePolicyConfig field is set.
+     */
+    public boolean hasResourcePolicyConfig() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Resource policy configuration for the nodeset.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.hypercomputecluster.v1beta.ResourcePolicyConfig resource_policy_config = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The resourcePolicyConfig.
+     */
+    public com.google.cloud.hypercomputecluster.v1beta.ResourcePolicyConfig
+        getResourcePolicyConfig() {
+      if (resourcePolicyConfigBuilder_ == null) {
+        return resourcePolicyConfig_ == null
+            ? com.google.cloud.hypercomputecluster.v1beta.ResourcePolicyConfig.getDefaultInstance()
+            : resourcePolicyConfig_;
+      } else {
+        return resourcePolicyConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Resource policy configuration for the nodeset.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.hypercomputecluster.v1beta.ResourcePolicyConfig resource_policy_config = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setResourcePolicyConfig(
+        com.google.cloud.hypercomputecluster.v1beta.ResourcePolicyConfig value) {
+      if (resourcePolicyConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        resourcePolicyConfig_ = value;
+      } else {
+        resourcePolicyConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Resource policy configuration for the nodeset.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.hypercomputecluster.v1beta.ResourcePolicyConfig resource_policy_config = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setResourcePolicyConfig(
+        com.google.cloud.hypercomputecluster.v1beta.ResourcePolicyConfig.Builder builderForValue) {
+      if (resourcePolicyConfigBuilder_ == null) {
+        resourcePolicyConfig_ = builderForValue.build();
+      } else {
+        resourcePolicyConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Resource policy configuration for the nodeset.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.hypercomputecluster.v1beta.ResourcePolicyConfig resource_policy_config = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeResourcePolicyConfig(
+        com.google.cloud.hypercomputecluster.v1beta.ResourcePolicyConfig value) {
+      if (resourcePolicyConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000040) != 0)
+            && resourcePolicyConfig_ != null
+            && resourcePolicyConfig_
+                != com.google.cloud.hypercomputecluster.v1beta.ResourcePolicyConfig
+                    .getDefaultInstance()) {
+          getResourcePolicyConfigBuilder().mergeFrom(value);
+        } else {
+          resourcePolicyConfig_ = value;
+        }
+      } else {
+        resourcePolicyConfigBuilder_.mergeFrom(value);
+      }
+      if (resourcePolicyConfig_ != null) {
+        bitField0_ |= 0x00000040;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Resource policy configuration for the nodeset.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.hypercomputecluster.v1beta.ResourcePolicyConfig resource_policy_config = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearResourcePolicyConfig() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      resourcePolicyConfig_ = null;
+      if (resourcePolicyConfigBuilder_ != null) {
+        resourcePolicyConfigBuilder_.dispose();
+        resourcePolicyConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Resource policy configuration for the nodeset.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.hypercomputecluster.v1beta.ResourcePolicyConfig resource_policy_config = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.hypercomputecluster.v1beta.ResourcePolicyConfig.Builder
+        getResourcePolicyConfigBuilder() {
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return internalGetResourcePolicyConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Resource policy configuration for the nodeset.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.hypercomputecluster.v1beta.ResourcePolicyConfig resource_policy_config = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.hypercomputecluster.v1beta.ResourcePolicyConfigOrBuilder
+        getResourcePolicyConfigOrBuilder() {
+      if (resourcePolicyConfigBuilder_ != null) {
+        return resourcePolicyConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return resourcePolicyConfig_ == null
+            ? com.google.cloud.hypercomputecluster.v1beta.ResourcePolicyConfig.getDefaultInstance()
+            : resourcePolicyConfig_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Resource policy configuration for the nodeset.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.hypercomputecluster.v1beta.ResourcePolicyConfig resource_policy_config = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.hypercomputecluster.v1beta.ResourcePolicyConfig,
+            com.google.cloud.hypercomputecluster.v1beta.ResourcePolicyConfig.Builder,
+            com.google.cloud.hypercomputecluster.v1beta.ResourcePolicyConfigOrBuilder>
+        internalGetResourcePolicyConfigFieldBuilder() {
+      if (resourcePolicyConfigBuilder_ == null) {
+        resourcePolicyConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.hypercomputecluster.v1beta.ResourcePolicyConfig,
+                com.google.cloud.hypercomputecluster.v1beta.ResourcePolicyConfig.Builder,
+                com.google.cloud.hypercomputecluster.v1beta.ResourcePolicyConfigOrBuilder>(
+                getResourcePolicyConfig(), getParentForChildren(), isClean());
+        resourcePolicyConfig_ = null;
+      }
+      return resourcePolicyConfigBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.hypercomputecluster.v1beta.SlurmNodeSet)

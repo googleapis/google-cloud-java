@@ -515,9 +515,10 @@ public class ClientConfigurationManager implements AutoCloseable {
 
   private void setClientConfiguration(ClientConfiguration result) {
     ClientConfiguration old;
+    ClientConfiguration normalized = normalizeConfig(result);
     synchronized (this) {
       old = this.clientConfiguration;
-      clientConfiguration = normalizeConfig(result);
+      clientConfiguration = normalized;
       if (clientConfiguration.hasPollingConfiguration()) {
         this.validUntil =
             Instant.now()
@@ -529,8 +530,8 @@ public class ClientConfigurationManager implements AutoCloseable {
       }
     }
 
-    maybeLogConfigChange(old, result);
-    notifyListeners(old, result);
+    maybeLogConfigChange(old, normalized);
+    notifyListeners(old, normalized);
   }
 
   private void maybeLogConfigChange(ClientConfiguration oldCfg, ClientConfiguration newCfg) {

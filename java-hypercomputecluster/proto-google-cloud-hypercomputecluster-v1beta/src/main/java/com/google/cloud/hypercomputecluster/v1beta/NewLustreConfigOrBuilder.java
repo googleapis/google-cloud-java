@@ -139,4 +139,22 @@ public interface NewLustreConfigOrBuilder
    * @return The capacityGb.
    */
   long getCapacityGb();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. Throughput of the instance in MB/s/TiB. Valid values
+   * are 125, 250, 500, 1000. See [Performance tiers and maximum storage
+   * capacities](https://cloud.google.com/managed-lustre/docs/create-instance#performance-tiers)
+   * for more information.
+   * </pre>
+   *
+   * <code>
+   * int64 per_unit_storage_throughput = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The perUnitStorageThroughput.
+   */
+  long getPerUnitStorageThroughput();
 }
