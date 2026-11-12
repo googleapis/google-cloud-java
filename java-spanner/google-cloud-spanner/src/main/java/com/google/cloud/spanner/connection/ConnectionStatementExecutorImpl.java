@@ -654,7 +654,7 @@ class ConnectionStatementExecutorImpl implements ConnectionStatementExecutor {
             : getConnection().getDefaultIsolationLevel();
     return resultSet(
         "transaction_isolation",
-        formatIsolationLevel(getEffectiveIsolationLevel(isolationLevel)),
+        getEffectiveIsolationLevel(isolationLevel),
         SHOW_TRANSACTION_ISOLATION_LEVEL);
   }
 
@@ -662,28 +662,23 @@ class ConnectionStatementExecutorImpl implements ConnectionStatementExecutor {
   public StatementResult statementShowDefaultTransactionIsolation() {
     return resultSet(
         "default_transaction_isolation",
-        formatIsolationLevel(
-            getEffectiveIsolationLevel(getConnection().getDefaultIsolationLevel())),
+        getEffectiveIsolationLevel(getConnection().getDefaultIsolationLevel()),
         SHOW_DEFAULT_TRANSACTION_ISOLATION);
   }
 
-  /** Resolves an unspecified isolation level to the database default. */
-  private TransactionOptions.IsolationLevel getEffectiveIsolationLevel(
-      TransactionOptions.IsolationLevel isolationLevel) {
+  /** Resolves an unspecified isolation level to the database default and formats it. */
+  private String getEffectiveIsolationLevel(TransactionOptions.IsolationLevel isolationLevel) {
     TransactionOptions.IsolationLevel configuredIsolationLevel =
         isolationLevel == TransactionOptions.IsolationLevel.ISOLATION_LEVEL_UNSPECIFIED
             ? getConnection().getDatabaseClient().getDatabaseDefaultIsolationLevel()
             : isolationLevel;
     switch (configuredIsolationLevel) {
       case ISOLATION_LEVEL_UNSPECIFIED:
-        return TransactionOptions.IsolationLevel.SERIALIZABLE;
+        return formatIsolationLevel(TransactionOptions.IsolationLevel.SERIALIZABLE);
       case UNRECOGNIZED:
-        throw SpannerExceptionFactory.newSpannerException(
-            ErrorCode.FAILED_PRECONDITION,
-            "The default isolation level of the database is not supported by this version of the"
-                + " client.");
+        return getConnection().getDatabaseClient().getDatabaseDefaultIsolationLevelValue();
       default:
-        return configuredIsolationLevel;
+        return formatIsolationLevel(configuredIsolationLevel);
     }
   }
 

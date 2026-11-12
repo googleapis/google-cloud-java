@@ -3279,6 +3279,7 @@ public class DatabaseClientImplTest {
         spanner.getDatabaseClient(DatabaseId.of(TEST_PROJECT, TEST_INSTANCE, TEST_DATABASE));
     assertEquals(
         IsolationLevel.ISOLATION_LEVEL_UNSPECIFIED, client.getDatabaseDefaultIsolationLevel());
+    assertNull(client.getDatabaseDefaultIsolationLevelValue());
   }
 
   @Test
@@ -3290,6 +3291,21 @@ public class DatabaseClientImplTest {
           spanner.getDatabaseClient(DatabaseId.of(TEST_PROJECT, TEST_INSTANCE, TEST_DATABASE));
       assertEquals(Dialect.POSTGRESQL, client.getDialect());
       assertEquals(IsolationLevel.REPEATABLE_READ, client.getDatabaseDefaultIsolationLevel());
+    } finally {
+      mockSpanner.putStatementResult(
+          StatementResult.detectDialectResult(Dialect.GOOGLE_STANDARD_SQL));
+    }
+  }
+
+  @Test
+  public void testGetDatabaseDefaultIsolationLevelUnrecognized() {
+    mockSpanner.putStatementResult(
+        StatementResult.detectDialectResult(Dialect.POSTGRESQL, "read committed"));
+    try {
+      DatabaseClient client =
+          spanner.getDatabaseClient(DatabaseId.of(TEST_PROJECT, TEST_INSTANCE, TEST_DATABASE));
+      assertEquals(IsolationLevel.UNRECOGNIZED, client.getDatabaseDefaultIsolationLevel());
+      assertEquals("read committed", client.getDatabaseDefaultIsolationLevelValue());
     } finally {
       mockSpanner.putStatementResult(
           StatementResult.detectDialectResult(Dialect.GOOGLE_STANDARD_SQL));

@@ -24,7 +24,6 @@ import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertThrows;
 import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.any;
 import static org.mockito.Mockito.atLeastOnce;
@@ -36,9 +35,7 @@ import static org.mockito.Mockito.when;
 import com.google.cloud.Timestamp;
 import com.google.cloud.spanner.DatabaseClient;
 import com.google.cloud.spanner.Dialect;
-import com.google.cloud.spanner.ErrorCode;
 import com.google.cloud.spanner.ResultSet;
-import com.google.cloud.spanner.SpannerException;
 import com.google.cloud.spanner.TimestampBound;
 import com.google.cloud.spanner.connection.PgTransactionMode.AccessMode;
 import com.google.cloud.spanner.connection.PgTransactionMode.IsolationLevel;
@@ -322,12 +319,10 @@ public class ConnectionStatementExecutorTest {
   public void testStatementShowIsolationLevelWithUnrecognizedDatabaseDefault() {
     when(connection.getDefaultIsolationLevel()).thenReturn(ISOLATION_LEVEL_UNSPECIFIED);
     mockDatabaseDefaultIsolationLevel(UNRECOGNIZED);
-    SpannerException exception =
-        assertThrows(SpannerException.class, subject::statementShowTransactionIsolationLevel);
-    assertEquals(ErrorCode.FAILED_PRECONDITION, exception.getErrorCode());
-    exception =
-        assertThrows(SpannerException.class, subject::statementShowDefaultTransactionIsolation);
-    assertEquals(ErrorCode.FAILED_PRECONDITION, exception.getErrorCode());
+    when(connection.getDatabaseClient().getDatabaseDefaultIsolationLevelValue())
+        .thenReturn("read committed");
+    assertEquals("read committed", value(subject.statementShowTransactionIsolationLevel()));
+    assertEquals("read committed", value(subject.statementShowDefaultTransactionIsolation()));
   }
 
   private void mockDatabaseDefaultIsolationLevel(TransactionOptions.IsolationLevel isolationLevel) {
