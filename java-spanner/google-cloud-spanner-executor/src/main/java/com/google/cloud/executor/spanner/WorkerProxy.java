@@ -99,10 +99,7 @@ public class WorkerProxy {
               + OPTION_ACCESS_TOKEN_FILE);
     }
     if (hasAccessTokenFile) {
-      AccessTokenFileCredentials credentials =
-          new AccessTokenFileCredentials(new File(accessTokenFile));
-      credentials.refresh();
-      return credentials;
+      return new AccessTokenFileCredentials(new File(accessTokenFile));
     }
     if (!hasServiceKeyFile) {
       return null;

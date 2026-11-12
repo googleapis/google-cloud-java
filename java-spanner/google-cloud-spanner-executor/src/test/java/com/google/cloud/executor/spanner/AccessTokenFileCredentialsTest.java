@@ -169,12 +169,12 @@ public class AccessTokenFileCredentialsTest {
     Assert.assertNull(WorkerProxy.getCredentialsFromFlags());
     WorkerProxy.serviceKeyFile = "";
 
-    File tokenFile = tempFolder.newFile("access_token");
-    FileUtils.writeStringToFile(tokenFile, "proxy-token\n", StandardCharsets.UTF_8);
+    File tokenFile = new File(tempFolder.getRoot(), "lazy_access_token");
     WorkerProxy.accessTokenFile = tokenFile.getPath();
 
     Credentials credentials = WorkerProxy.getCredentialsFromFlags();
     Assert.assertNotNull(credentials);
+    FileUtils.writeStringToFile(tokenFile, "proxy-token\n", StandardCharsets.UTF_8);
     Assert.assertEquals(
         Collections.singletonList("Bearer proxy-token"),
         credentials.getRequestMetadata(null).get("Authorization"));
