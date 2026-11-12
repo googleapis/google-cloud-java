@@ -14,6 +14,7 @@ The 'Context' value indicates whether the property can only be set when a connec
 | autoconfigemulator | Automatically configure the connection to try to connect to the Cloud Spanner emulator (true/false). The instance and database in the connection string will automatically be created if these do not yet exist on the emulator. Add dialect=postgresql to the connection string to make sure that the database that is created uses the PostgreSQL dialect. | false | true, false | STARTUP |
 | autopartitionmode | Execute all queries on this connection as partitioned queries. Executing a query that cannot be partitioned will fail. Executing a query in a read/write transaction will also fail. | false | true, false | USER |
 | batch_dml_update_count | The update count that is returned for DML statements that are executed in an explicit DML batch. The default is -1 | -1 |  | USER |
+| cacertificate | Specifies the file path to the server root CA certificate for SSL/TLS validation. |  |  | STARTUP |
 | channelprovider | The name of the channel provider class. The name must reference an implementation of ExternalChannelProvider. If this property is not set, the connection will use the default grpc channel provider. |  |  | STARTUP |
 | clientcertificate | Specifies the file path to the client certificate required for establishing an mTLS connection. |  |  | STARTUP |
 | clientkey | Specifies the file path to the client private key required for establishing an mTLS connection. |  |  | STARTUP |

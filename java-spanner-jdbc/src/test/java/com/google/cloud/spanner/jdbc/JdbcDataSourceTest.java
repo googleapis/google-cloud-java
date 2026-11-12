@@ -17,10 +17,18 @@
 package com.google.cloud.spanner.jdbc;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertThrows;
 
 import com.google.cloud.spanner.connection.AbstractMockServerTest;
+import com.google.rpc.Code;
+import java.io.File;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.Objects;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -59,5 +67,47 @@ public class JdbcDataSourceTest extends AbstractMockServerTest {
         assertEquals(autoCommit, connection.getAutoCommit());
       }
     }
+  }
+
+  @Test
+  public void testPropertiesPrecedence() throws SQLException {
+    JdbcDataSource dataSource = new JdbcDataSource();
+    dataSource.setUrl(getBaseUrl() + ";autocommit=false");
+    dataSource.setAutocommit(true);
+    try (Connection connection = dataSource.getConnection()) {
+      assertFalse(connection.getAutoCommit());
+    }
+  }
+
+  @Test
+  public void testCredentialsWithSemicolons() throws Exception {
+    File tempKeyFile = File.createTempFile("key;with=semicolons", ".json");
+    try {
+      Files.copy(
+          Paths.get(
+              Objects.requireNonNull(JdbcDriverTest.class.getResource("test-key.json")).toURI()),
+          tempKeyFile.toPath(),
+          StandardCopyOption.REPLACE_EXISTING);
+
+      JdbcDataSource dataSource = new JdbcDataSource();
+      dataSource.setUrl(getBaseUrl());
+      dataSource.setCredentials(tempKeyFile.getAbsolutePath());
+      try (Connection connection = dataSource.getConnection()) {
+        JdbcConnection jdbcConnection = connection.unwrap(JdbcConnection.class);
+        assertEquals(
+            tempKeyFile.getAbsolutePath(),
+            jdbcConnection.getConnectionOptions().getCredentialsUrl());
+      }
+    } finally {
+      Files.deleteIfExists(tempKeyFile.toPath());
+    }
+  }
+
+  @Test
+  public void testInvalidPropertyThrowsSQLException() {
+    JdbcDataSource dataSource = new JdbcDataSource();
+    dataSource.setUrl(getBaseUrl() + ";unknownProperty=value");
+    SQLException sqlException = assertThrows(SQLException.class, dataSource::getConnection);
+    assertEquals(Code.INVALID_ARGUMENT_VALUE, sqlException.getErrorCode());
   }
 }
