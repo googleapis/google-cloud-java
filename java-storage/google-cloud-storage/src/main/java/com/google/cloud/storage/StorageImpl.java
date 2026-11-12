@@ -1774,26 +1774,12 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage, 
 
   private boolean runBoolean(
       String operationName, ResultRetryAlgorithm<?> algorithm, Callable<Boolean> c) {
-    StorageException notFound = new StorageException(404, "Not Found");
-    try {
-      return Boolean.TRUE.equals(
-          retrier.run(
-              nonRetryingOnNotFound(algorithm, notFound),
-              () -> {
-                if (!Boolean.TRUE.equals(c.call())) {
-                  throw notFound;
-                }
-                return Boolean.TRUE;
-              },
-              Decoder.identity(),
-              StorageClientMetrics.createContext(
-                  getOptions().getStorageClientMetrics(), operationName)));
-    } catch (StorageException e) {
-      if (e == notFound) {
-        return false;
-      }
-      throw e;
-    }
+    return Boolean.TRUE.equals(
+        runNullable(
+            operationName,
+            algorithm,
+            () -> Boolean.TRUE.equals(c.call()) ? Boolean.TRUE : null,
+            Decoder.identity()));
   }
 
   private static ResultRetryAlgorithm<?> nonRetryingOnNotFound(
