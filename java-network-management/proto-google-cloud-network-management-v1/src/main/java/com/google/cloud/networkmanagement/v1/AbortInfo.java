@@ -1328,6 +1328,10 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * URI of the resource that caused the abort.
+   * Format:
+   * * `projects/{project_id}/global/networks/{network_id}` (VPC network)
+   * * `projects/{project_id}/zones/{zone}/instances/{instance_id}` (VM
+   * instance)
    * </pre>
    *
    * <code>string resource_uri = 2;</code>
@@ -1352,6 +1356,10 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * URI of the resource that caused the abort.
+   * Format:
+   * * `projects/{project_id}/global/networks/{network_id}` (VPC network)
+   * * `projects/{project_id}/zones/{zone}/instances/{instance_id}` (VM
+   * instance)
    * </pre>
    *
    * <code>string resource_uri = 2;</code>
@@ -1998,6 +2006,10 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * URI of the resource that caused the abort.
+     * Format:
+     * * `projects/{project_id}/global/networks/{network_id}` (VPC network)
+     * * `projects/{project_id}/zones/{zone}/instances/{instance_id}` (VM
+     * instance)
      * </pre>
      *
      * <code>string resource_uri = 2;</code>
@@ -2021,6 +2033,10 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * URI of the resource that caused the abort.
+     * Format:
+     * * `projects/{project_id}/global/networks/{network_id}` (VPC network)
+     * * `projects/{project_id}/zones/{zone}/instances/{instance_id}` (VM
+     * instance)
      * </pre>
      *
      * <code>string resource_uri = 2;</code>
@@ -2044,6 +2060,10 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * URI of the resource that caused the abort.
+     * Format:
+     * * `projects/{project_id}/global/networks/{network_id}` (VPC network)
+     * * `projects/{project_id}/zones/{zone}/instances/{instance_id}` (VM
+     * instance)
      * </pre>
      *
      * <code>string resource_uri = 2;</code>
@@ -2066,6 +2086,10 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * URI of the resource that caused the abort.
+     * Format:
+     * * `projects/{project_id}/global/networks/{network_id}` (VPC network)
+     * * `projects/{project_id}/zones/{zone}/instances/{instance_id}` (VM
+     * instance)
      * </pre>
      *
      * <code>string resource_uri = 2;</code>
@@ -2084,6 +2108,10 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * URI of the resource that caused the abort.
+     * Format:
+     * * `projects/{project_id}/global/networks/{network_id}` (VPC network)
+     * * `projects/{project_id}/zones/{zone}/instances/{instance_id}` (VM
+     * instance)
      * </pre>
      *
      * <code>string resource_uri = 2;</code>

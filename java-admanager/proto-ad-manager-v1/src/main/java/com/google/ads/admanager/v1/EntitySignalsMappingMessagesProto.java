@@ -53,27 +53,38 @@ public final class EntitySignalsMappingMessagesProto extends com.google.protobuf
 
   static {
     java.lang.String[] descriptorData = {
-      "\n=google/ads/admanager/v1/entity_signals"
-          + "_mapping_messages.proto\022\027google.ads.adma"
-          + "nager.v1\032\037google/api/field_behavior.prot"
-          + "o\032\031google/api/resource.proto\"\263\003\n\024EntityS"
-          + "ignalsMapping\022\035\n\023audience_segment_id\030\003 \001"
-          + "(\003H\000\022\033\n\021content_bundle_id\030\004 \001(\003H\000\022#\n\031cus"
-          + "tom_targeting_value_id\030\005 \001(\003H\000\022\022\n\004name\030\001"
-          + " \001(\tB\004\342A\001\010\022.\n\031entity_signals_mapping_id\030"
-          + "\002 \001(\003B\006\030\001\342A\001\003H\001\210\001\001\022#\n\025taxonomy_category_"
-          + "ids\030\006 \003(\003B\004\342A\001\001:\250\001\352A\244\001\n-admanager.google"
-          + "apis.com/EntitySignalsMapping\022Fnetworks/"
-          + "{network_code}/entitySignalsMappings/{en"
-          + "tity_signals_mapping}*\025entitySignalsMapp"
-          + "ings2\024entitySignalsMappingB\010\n\006entityB\034\n\032"
-          + "_entity_signals_mapping_idB\325\001\n\033com.googl"
-          + "e.ads.admanager.v1B!EntitySignalsMapping"
-          + "MessagesProtoP\001Z@google.golang.org/genpr"
-          + "oto/googleapis/ads/admanager/v1;admanage"
-          + "r\252\002\027Google.Ads.AdManager.V1\312\002\027Google\\Ads"
-          + "\\AdManager\\V1\352\002\032Google::Ads::AdManager::"
-          + "V1b\006proto3"
+      "\n"
+          + "=google/ads/admanager/v1/entity_signals_mapping_messages.proto\022\027google.ads.adma"
+          + "nager.v1\032\037google/api/field_behavior.proto\032\031google/api/resource.proto\"\211\006\n"
+          + "\024EntitySignalsMapping\022!\n"
+          + "\023audience_segment_id\030\003 \001(\003B\002\030\001H\000\022\037\n"
+          + "\021content_bundle_id\030\004 \001(\003B\002\030\001H\000\022\'\n"
+          + "\031custom_targeting_value_id\030\005 \001(\003B\002\030\001H\000\022I\n"
+          + "\020audience_segment\030\n"
+          + " \001(\tB-\372A*\n"
+          + "(admanager.googleapis.com/AudienceSegmentH\001\022E\n"
+          + "\016content_bundle\030\013 \001(\tB+\372A(\n"
+          + "&admanager.googleapis.com/ContentBundleH\001\022T\n"
+          + "\026custom_targeting_value\030\014 \001(\tB2\372A/\n"
+          + "-admanager.googleapis.com/CustomTargetingValueH\001\022\022\n"
+          + "\004name\030\001 \001(\tB\004\342A\001\010\022.\n"
+          + "\031entity_signals_mapping_id\030\002"
+          + " \001(\003B\006\030\001\342A\001\003H\002\210\001\001\022%\n"
+          + "\025taxonomy_category_ids\030\006 \003(\003B\006\030\001\342A\001\001\022O\n"
+          + "\023taxonomy_categories\030\r"
+          + " \003(\tB2\342A\001\001\372A+\n"
+          + ")admanager.googleapis.com/TaxonomyCategory:\250\001\352A\244\001\n"
+          + "-admanager.googleapis.com/EntitySignalsMapping\022Fne"
+          + "tworks/{network_code}/entitySignalsMappi"
+          + "ngs/{entity_signals_mapping}*\025entitySignalsMappings2\024entitySignalsMappingB\010\n"
+          + "\006entityB\r\n"
+          + "\013entity_nameB\034\n"
+          + "\032_entity_signals_mapping_idB\325\001\n"
+          + "\033com.google.ads.admanager.v1B!EntitySignalsMappingMessagesProtoP\001Z@g"
+          + "oogle.golang.org/genproto/googleapis/ads"
+          + "/admanager/v1;admanager\252\002\027Google.Ads.AdM"
+          + "anager.V1\312\002\027Google\\Ads\\AdManager\\V1\352\002\032Go"
+          + "ogle::Ads::AdManager::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -91,10 +102,15 @@ public final class EntitySignalsMappingMessagesProto extends com.google.protobuf
               "AudienceSegmentId",
               "ContentBundleId",
               "CustomTargetingValueId",
+              "AudienceSegment",
+              "ContentBundle",
+              "CustomTargetingValue",
               "Name",
               "EntitySignalsMappingId",
               "TaxonomyCategoryIds",
+              "TaxonomyCategories",
               "Entity",
+              "EntityName",
             });
     descriptor.resolveAllFeaturesImmutable();
     com.google.api.FieldBehaviorProto.getDescriptor();
@@ -103,6 +119,7 @@ public final class EntitySignalsMappingMessagesProto extends com.google.protobuf
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     registry.add(com.google.api.ResourceProto.resource);
+    registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
   }

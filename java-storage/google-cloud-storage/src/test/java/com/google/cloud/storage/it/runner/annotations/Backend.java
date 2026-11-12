@@ -20,6 +20,8 @@ package com.google.cloud.storage.it.runner.annotations;
 public enum Backend {
   /** Use the "Production" GCS endpoints */
   PROD,
+  /** Use the GCS Pre-prod (Staging) endpoints */
+  PREPROD,
   /** Use the test bench as a backend */
   TEST_BENCH
 }

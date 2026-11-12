@@ -46,10 +46,6 @@
       <groupId>com.google.shopping.api.grpc</groupId>
       <artifactId>proto-google-shopping-merchant-issue-resolution-v1</artifactId>
     </dependency>
-    <dependency>
-      <groupId>com.google.shopping.api.grpc</groupId>
-      <artifactId>proto-google-shopping-merchant-issue-resolution-v1beta</artifactId>
-    </dependency>
     <!-- {x-generated-proto-dependencies-end} -->
     <dependency>
       <groupId>com.google.guava</groupId>
@@ -86,11 +82,6 @@
     <dependency>
       <groupId>com.google.shopping.api.grpc</groupId>
       <artifactId>grpc-google-shopping-merchant-issue-resolution-v1</artifactId>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>com.google.shopping.api.grpc</groupId>
-      <artifactId>grpc-google-shopping-merchant-issue-resolution-v1beta</artifactId>
       <scope>test</scope>
     </dependency>
     <!-- {x-generated-grpc-dependencies-end} -->

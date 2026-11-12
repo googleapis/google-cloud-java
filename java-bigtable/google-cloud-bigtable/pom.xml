@@ -39,9 +39,8 @@
     <bigtable.directpath-data-endpoint/>
     <bigtable.directpath-jwt-audience/>
     <bigtable.directpath-admin-endpoint/>
-    <bigtable.session-project/>
-    <bigtable.session-instance/>
-    <bigtable.session-table/>
+    <bigtable.internal.client-config-override-use-default>false</bigtable.internal.client-config-override-use-default>
+    <bigtable.internal.client-config-override/>
 
     <!-- Number of JVMs used to run the integration tests concurrently. The ITs are almost entirely
      RPC bound, so this can be raised well above the core count. Override on the commandline via
@@ -583,42 +582,10 @@
 
     <profile>
       <id>bigtable-session-it</id>
-      <build>
-        <plugins>
-          <plugin>
-            <artifactId>maven-failsafe-plugin</artifactId>
-            <executions>
-              <execution>
-                <id>session-it</id>
-                <goals>
-                  <goal>integration-test</goal>
-                  <goal>verify</goal>
-                </goals>
-                <configuration>
-                  <skip>false</skip>
-                  <systemPropertyVariables>
-                    <bigtable.env>cloud</bigtable.env>
-                    <bigtable.project>${bigtable.session-project}</bigtable.project>
-                    <bigtable.instance>${bigtable.session-instance}</bigtable.instance>
-                    <bigtable.table>${bigtable.session-table}</bigtable.table>
-                    <bigtable.data-endpoint>${bigtable.cfe-data-endpoint}</bigtable.data-endpoint>
-                    <bigtable.admin-endpoint>${bigtable.cfe-admin-endpoint}</bigtable.admin-endpoint>
-                    <bigtable.data-jwt-audience>${bigtable.cfe-jwt-audience}</bigtable.data-jwt-audience>
-                    <bigtable.enable-grpc-logs>${bigtable.enable-grpc-logs}</bigtable.enable-grpc-logs>
-                    <bigtable.grpc-log-dir>${project.build.directory}/test-grpc-logs/session-it</bigtable.grpc-log-dir>
-                    <bigtable.internal.client-config-override>session_configuration { session_diversion_configuration { global_diversion { session_load: 1.0 } } }</bigtable.internal.client-config-override>
-                  </systemPropertyVariables>
-                  <includes>
-                    <include>com.google.cloud.bigtable.data.v2.it.SessionIT</include>
-                  </includes>
-                  <summaryFile>${project.build.directory}/failsafe-reports/failsafe-summary-session-it.xml</summaryFile>
-                  <reportsDirectory>${project.build.directory}/failsafe-reports/session-it</reportsDirectory>
-                </configuration>
-              </execution>
-            </executions>
-          </plugin>
-        </plugins>
-      </build>
+      <properties>
+        <bigtable.internal.client-config-override-use-default>true</bigtable.internal.client-config-override-use-default>
+        <bigtable.internal.client-config-override>session_configuration { session_diversion_configuration { global_diversion { session_load: 1.0 } } }</bigtable.internal.client-config-override>
+      </properties>
     </profile>
 
     <profile>
@@ -688,7 +655,7 @@
                     <bigtable.connection-mode>REQUIRE_CFE</bigtable.connection-mode>
                   </systemPropertyVariables>
                   <includes>
-                    <include>com.google.cloud.bigtable.**.it.*IT</include>
+                    <include>com.google.cloud.bigtable.data.v2.it.*IT</include>
                   </includes>
                   <summaryFile>${project.build.directory}/failsafe-reports/failsafe-summary-cfe-it.xml</summaryFile>
                   <reportsDirectory>${project.build.directory}/failsafe-reports/cfe-it</reportsDirectory>
@@ -826,6 +793,8 @@
           <trimStackTrace>false</trimStackTrace>
           <systemPropertyVariables>
             <java.util.logging.config.file>${java-log-config}</java.util.logging.config.file>
+            <bigtable.internal.client-config-override-use-default>${bigtable.internal.client-config-override-use-default}</bigtable.internal.client-config-override-use-default>
+            <bigtable.internal.client-config-override>${bigtable.internal.client-config-override}</bigtable.internal.client-config-override>
           </systemPropertyVariables>
         </configuration>
       </plugin>

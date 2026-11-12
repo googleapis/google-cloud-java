@@ -172,6 +172,7 @@ public class GlobalPublicDelegatedPrefixesClientTest {
             .setParentPrefix("parentPrefix975306716")
             .addAllPublicDelegatedSubPrefixs(
                 new ArrayList<PublicDelegatedPrefixPublicDelegatedSubPrefix>())
+            .setPurpose("purpose-220463842")
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setStatus("status-892481550")

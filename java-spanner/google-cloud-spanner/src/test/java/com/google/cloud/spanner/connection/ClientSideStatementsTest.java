@@ -107,6 +107,9 @@ public class ClientSideStatementsTest extends AbstractSqlScriptTest {
           parser
               .parse(Statement.of("ABORT TRANSACTION and no chain"))
               .getClientSideStatementType());
+      assertEquals(
+          ClientSideStatementType.SHOW_TRANSACTION_ISOLATION_LEVEL,
+          parser.parse(Statement.of("show transaction_isolation")).getClientSideStatementType());
     }
 
     for (ClientSideStatementImpl statement : parser.getClientSideStatements()) {

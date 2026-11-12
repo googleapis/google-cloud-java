@@ -73,21 +73,21 @@ public class ClientTest {
   @BeforeEach
   void setUp() throws IOException {
     ClientConfiguration.Builder builder = ClientConfigurationManager.loadDefault().toBuilder();
-    builder.setSessionConfiguration(
-        SessionClientConfiguration.newBuilder()
-            .setSessionDiversionConfiguration(
-                SessionDiversionConfiguration.newBuilder()
-                    .setGlobalDiversion(
-                        SessionScopeDiversionConfiguration.newBuilder().setSessionLoad(1)))
-            .setSessionPoolConfiguration(
-                SessionClientConfiguration.SessionPoolConfiguration.newBuilder()
-                    .setNewSessionCreationBudget(10)
-                    .setNewSessionCreationPenalty(Durations.fromMinutes(1))
-                    .setHeadroom(0.5f)
-                    .setMinSessionCount(5)
-                    .setMaxSessionCount(20)
-                    .setNewSessionQueueLength(10)
-                    .setConsecutiveSessionFailureThreshold(10)));
+    builder
+        .getSessionConfigurationBuilder()
+        .setSessionDiversionConfiguration(
+            SessionDiversionConfiguration.newBuilder()
+                .setGlobalDiversion(
+                    SessionScopeDiversionConfiguration.newBuilder().setSessionLoad(1)))
+        .setSessionPoolConfiguration(
+            SessionClientConfiguration.SessionPoolConfiguration.newBuilder()
+                .setNewSessionCreationBudget(10)
+                .setNewSessionCreationPenalty(Durations.fromMinutes(1))
+                .setHeadroom(0.5f)
+                .setMinSessionCount(5)
+                .setMaxSessionCount(20)
+                .setNewSessionQueueLength(10)
+                .setConsecutiveSessionFailureThreshold(10));
     defaultConfig = builder.build();
 
     executor = Executors.newScheduledThreadPool(4);

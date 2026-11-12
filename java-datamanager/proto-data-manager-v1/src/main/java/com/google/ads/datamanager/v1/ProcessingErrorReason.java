@@ -497,6 +497,57 @@ public enum ProcessingErrorReason implements com.google.protobuf.ProtocolMessage
    * <code>PROCESSING_ERROR_REASON_EXTERNAL_ATTRIBUTION_DATA_MISSING = 44;</code>
    */
   PROCESSING_ERROR_REASON_EXTERNAL_ATTRIBUTION_DATA_MISSING(44),
+  /**
+   *
+   *
+   * <pre>
+   * The destination was created too recently. Try again in a few hours.
+   * </pre>
+   *
+   * <code>PROCESSING_ERROR_REASON_DESTINATION_TOO_RECENTLY_CREATED = 45;</code>
+   */
+  PROCESSING_ERROR_REASON_DESTINATION_TOO_RECENTLY_CREATED(45),
+  /**
+   *
+   *
+   * <pre>
+   * The matched click is older than the conversion action's configured
+   * click-through conversion lookback window (or the 90-day click TTL).
+   * </pre>
+   *
+   * <code>PROCESSING_ERROR_REASON_EXPIRED_CLICK = 46;</code>
+   */
+  PROCESSING_ERROR_REASON_EXPIRED_CLICK(46),
+  /**
+   *
+   *
+   * <pre>
+   * The call is still being processed.
+   * </pre>
+   *
+   * <code>PROCESSING_ERROR_REASON_TOO_RECENT_CALL = 47;</code>
+   */
+  PROCESSING_ERROR_REASON_TOO_RECENT_CALL(47),
+  /**
+   *
+   *
+   * <pre>
+   * The call is too old for this conversion to be imported.
+   * </pre>
+   *
+   * <code>PROCESSING_ERROR_REASON_EXPIRED_CALL = 48;</code>
+   */
+  PROCESSING_ERROR_REASON_EXPIRED_CALL(48),
+  /**
+   *
+   *
+   * <pre>
+   * The call was not found.
+   * </pre>
+   *
+   * <code>PROCESSING_ERROR_REASON_INVALID_CALL = 49;</code>
+   */
+  PROCESSING_ERROR_REASON_INVALID_CALL(49),
   UNRECOGNIZED(-1),
   ;
 
@@ -1022,6 +1073,62 @@ public enum ProcessingErrorReason implements com.google.protobuf.ProtocolMessage
    */
   public static final int PROCESSING_ERROR_REASON_EXTERNAL_ATTRIBUTION_DATA_MISSING_VALUE = 44;
 
+  /**
+   *
+   *
+   * <pre>
+   * The destination was created too recently. Try again in a few hours.
+   * </pre>
+   *
+   * <code>PROCESSING_ERROR_REASON_DESTINATION_TOO_RECENTLY_CREATED = 45;</code>
+   */
+  public static final int PROCESSING_ERROR_REASON_DESTINATION_TOO_RECENTLY_CREATED_VALUE = 45;
+
+  /**
+   *
+   *
+   * <pre>
+   * The matched click is older than the conversion action's configured
+   * click-through conversion lookback window (or the 90-day click TTL).
+   * </pre>
+   *
+   * <code>PROCESSING_ERROR_REASON_EXPIRED_CLICK = 46;</code>
+   */
+  public static final int PROCESSING_ERROR_REASON_EXPIRED_CLICK_VALUE = 46;
+
+  /**
+   *
+   *
+   * <pre>
+   * The call is still being processed.
+   * </pre>
+   *
+   * <code>PROCESSING_ERROR_REASON_TOO_RECENT_CALL = 47;</code>
+   */
+  public static final int PROCESSING_ERROR_REASON_TOO_RECENT_CALL_VALUE = 47;
+
+  /**
+   *
+   *
+   * <pre>
+   * The call is too old for this conversion to be imported.
+   * </pre>
+   *
+   * <code>PROCESSING_ERROR_REASON_EXPIRED_CALL = 48;</code>
+   */
+  public static final int PROCESSING_ERROR_REASON_EXPIRED_CALL_VALUE = 48;
+
+  /**
+   *
+   *
+   * <pre>
+   * The call was not found.
+   * </pre>
+   *
+   * <code>PROCESSING_ERROR_REASON_INVALID_CALL = 49;</code>
+   */
+  public static final int PROCESSING_ERROR_REASON_INVALID_CALL_VALUE = 49;
+
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
       throw new java.lang.IllegalArgumentException(
@@ -1136,6 +1243,16 @@ public enum ProcessingErrorReason implements com.google.protobuf.ProtocolMessage
         return PROCESSING_ERROR_REASON_CLICK_NOT_FOUND;
       case 44:
         return PROCESSING_ERROR_REASON_EXTERNAL_ATTRIBUTION_DATA_MISSING;
+      case 45:
+        return PROCESSING_ERROR_REASON_DESTINATION_TOO_RECENTLY_CREATED;
+      case 46:
+        return PROCESSING_ERROR_REASON_EXPIRED_CLICK;
+      case 47:
+        return PROCESSING_ERROR_REASON_TOO_RECENT_CALL;
+      case 48:
+        return PROCESSING_ERROR_REASON_EXPIRED_CALL;
+      case 49:
+        return PROCESSING_ERROR_REASON_INVALID_CALL;
       default:
         return null;
     }

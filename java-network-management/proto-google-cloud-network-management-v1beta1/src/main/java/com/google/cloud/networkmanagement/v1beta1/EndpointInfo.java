@@ -284,6 +284,7 @@ public final class EndpointInfo extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * URI of the network where this packet originates from.
+   * Format: `projects/{project_id}/global/networks/{network_id}`
    * </pre>
    *
    * <code>string source_network_uri = 6;</code>
@@ -308,6 +309,7 @@ public final class EndpointInfo extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * URI of the network where this packet originates from.
+   * Format: `projects/{project_id}/global/networks/{network_id}`
    * </pre>
    *
    * <code>string source_network_uri = 6;</code>
@@ -337,6 +339,7 @@ public final class EndpointInfo extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * URI of the network where this packet is sent to.
+   * Format: `projects/{project_id}/global/networks/{network_id}`
    * </pre>
    *
    * <code>string destination_network_uri = 7;</code>
@@ -361,6 +364,7 @@ public final class EndpointInfo extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * URI of the network where this packet is sent to.
+   * Format: `projects/{project_id}/global/networks/{network_id}`
    * </pre>
    *
    * <code>string destination_network_uri = 7;</code>
@@ -1362,6 +1366,7 @@ public final class EndpointInfo extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * URI of the network where this packet originates from.
+     * Format: `projects/{project_id}/global/networks/{network_id}`
      * </pre>
      *
      * <code>string source_network_uri = 6;</code>
@@ -1385,6 +1390,7 @@ public final class EndpointInfo extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * URI of the network where this packet originates from.
+     * Format: `projects/{project_id}/global/networks/{network_id}`
      * </pre>
      *
      * <code>string source_network_uri = 6;</code>
@@ -1408,6 +1414,7 @@ public final class EndpointInfo extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * URI of the network where this packet originates from.
+     * Format: `projects/{project_id}/global/networks/{network_id}`
      * </pre>
      *
      * <code>string source_network_uri = 6;</code>
@@ -1430,6 +1437,7 @@ public final class EndpointInfo extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * URI of the network where this packet originates from.
+     * Format: `projects/{project_id}/global/networks/{network_id}`
      * </pre>
      *
      * <code>string source_network_uri = 6;</code>
@@ -1448,6 +1456,7 @@ public final class EndpointInfo extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * URI of the network where this packet originates from.
+     * Format: `projects/{project_id}/global/networks/{network_id}`
      * </pre>
      *
      * <code>string source_network_uri = 6;</code>
@@ -1473,6 +1482,7 @@ public final class EndpointInfo extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * URI of the network where this packet is sent to.
+     * Format: `projects/{project_id}/global/networks/{network_id}`
      * </pre>
      *
      * <code>string destination_network_uri = 7;</code>
@@ -1496,6 +1506,7 @@ public final class EndpointInfo extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * URI of the network where this packet is sent to.
+     * Format: `projects/{project_id}/global/networks/{network_id}`
      * </pre>
      *
      * <code>string destination_network_uri = 7;</code>
@@ -1519,6 +1530,7 @@ public final class EndpointInfo extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * URI of the network where this packet is sent to.
+     * Format: `projects/{project_id}/global/networks/{network_id}`
      * </pre>
      *
      * <code>string destination_network_uri = 7;</code>
@@ -1541,6 +1553,7 @@ public final class EndpointInfo extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * URI of the network where this packet is sent to.
+     * Format: `projects/{project_id}/global/networks/{network_id}`
      * </pre>
      *
      * <code>string destination_network_uri = 7;</code>
@@ -1559,6 +1572,7 @@ public final class EndpointInfo extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * URI of the network where this packet is sent to.
+     * Format: `projects/{project_id}/global/networks/{network_id}`
      * </pre>
      *
      * <code>string destination_network_uri = 7;</code>
