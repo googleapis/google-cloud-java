@@ -105,6 +105,7 @@ public class TasksClientTest {
             .setExecution(
                 ExecutionName.of("[PROJECT]", "[LOCATION]", "[JOB]", "[EXECUTION]").toString())
             .addAllContainers(new ArrayList<Container>())
+            .setSandboxes(SandboxConfiguration.newBuilder().build())
             .addAllVolumes(new ArrayList<Volume>())
             .setMaxRetries(1129288043)
             .setTimeout(Duration.newBuilder().build())
@@ -122,6 +123,7 @@ public class TasksClientTest {
             .setSatisfiesPzs(true)
             .setNodeSelector(NodeSelector.newBuilder().build())
             .setGpuZonalRedundancyDisabled(true)
+            .setWorkloadIdentityConfig(WorkloadIdentityConfig.newBuilder().build())
             .setEtag("etag3123477")
             .build();
     mockTasks.addResponse(expectedResponse);
@@ -177,6 +179,7 @@ public class TasksClientTest {
             .setExecution(
                 ExecutionName.of("[PROJECT]", "[LOCATION]", "[JOB]", "[EXECUTION]").toString())
             .addAllContainers(new ArrayList<Container>())
+            .setSandboxes(SandboxConfiguration.newBuilder().build())
             .addAllVolumes(new ArrayList<Volume>())
             .setMaxRetries(1129288043)
             .setTimeout(Duration.newBuilder().build())
@@ -194,6 +197,7 @@ public class TasksClientTest {
             .setSatisfiesPzs(true)
             .setNodeSelector(NodeSelector.newBuilder().build())
             .setGpuZonalRedundancyDisabled(true)
+            .setWorkloadIdentityConfig(WorkloadIdentityConfig.newBuilder().build())
             .setEtag("etag3123477")
             .build();
     mockTasks.addResponse(expectedResponse);

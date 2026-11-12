@@ -26,7 +26,7 @@ package com.google.maps.routeoptimization.v1;
  * <pre>
  * Aggregated metrics for
  * [ShipmentRoute][google.maps.routeoptimization.v1.ShipmentRoute] (resp. for
- * [OptimizeToursResponse][google.maps.routeoptimization.v1.OptimizeToursResponse]
+ * [OptimizeToursResponse][google.maps.routeoptimization.v1.OptimizeToursResponse])
  * over all
  * [Transition][google.maps.routeoptimization.v1.ShipmentRoute.Transition]
  * and/or [Visit][google.maps.routeoptimization.v1.ShipmentRoute.Visit] (resp.
@@ -115,7 +115,10 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Number of mandatory shipments performed.
+   * Number of high priority shipments performed. High priority shipments are
+   * those with an unset
+   * [Shipment.penalty_cost][google.maps.routeoptimization.v1.Shipment.penalty_cost]
+   * field.
    *
    * Experimental: This field's behavior or existence may change in future.
    * </pre>
@@ -133,7 +136,10 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Number of mandatory shipments performed.
+   * Number of high priority shipments performed. High priority shipments are
+   * those with an unset
+   * [Shipment.penalty_cost][google.maps.routeoptimization.v1.Shipment.penalty_cost]
+   * field.
    *
    * Experimental: This field's behavior or existence may change in future.
    * </pre>
@@ -1021,7 +1027,7 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
    * <pre>
    * Aggregated metrics for
    * [ShipmentRoute][google.maps.routeoptimization.v1.ShipmentRoute] (resp. for
-   * [OptimizeToursResponse][google.maps.routeoptimization.v1.OptimizeToursResponse]
+   * [OptimizeToursResponse][google.maps.routeoptimization.v1.OptimizeToursResponse])
    * over all
    * [Transition][google.maps.routeoptimization.v1.ShipmentRoute.Transition]
    * and/or [Visit][google.maps.routeoptimization.v1.ShipmentRoute.Visit] (resp.
@@ -1455,7 +1461,10 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Number of mandatory shipments performed.
+     * Number of high priority shipments performed. High priority shipments are
+     * those with an unset
+     * [Shipment.penalty_cost][google.maps.routeoptimization.v1.Shipment.penalty_cost]
+     * field.
      *
      * Experimental: This field's behavior or existence may change in future.
      * </pre>
@@ -1473,7 +1482,10 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Number of mandatory shipments performed.
+     * Number of high priority shipments performed. High priority shipments are
+     * those with an unset
+     * [Shipment.penalty_cost][google.maps.routeoptimization.v1.Shipment.penalty_cost]
+     * field.
      *
      * Experimental: This field's behavior or existence may change in future.
      * </pre>
@@ -1491,7 +1503,10 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Number of mandatory shipments performed.
+     * Number of high priority shipments performed. High priority shipments are
+     * those with an unset
+     * [Shipment.penalty_cost][google.maps.routeoptimization.v1.Shipment.penalty_cost]
+     * field.
      *
      * Experimental: This field's behavior or existence may change in future.
      * </pre>
@@ -1513,7 +1528,10 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Number of mandatory shipments performed.
+     * Number of high priority shipments performed. High priority shipments are
+     * those with an unset
+     * [Shipment.penalty_cost][google.maps.routeoptimization.v1.Shipment.penalty_cost]
+     * field.
      *
      * Experimental: This field's behavior or existence may change in future.
      * </pre>

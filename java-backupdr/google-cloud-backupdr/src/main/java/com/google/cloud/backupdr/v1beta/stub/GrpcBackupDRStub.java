@@ -33,6 +33,10 @@ import static com.google.cloud.backupdr.v1beta.BackupDRClient.ListDataSourceRefe
 import static com.google.cloud.backupdr.v1beta.BackupDRClient.ListDataSourcesPagedResponse;
 import static com.google.cloud.backupdr.v1beta.BackupDRClient.ListLocationsPagedResponse;
 import static com.google.cloud.backupdr.v1beta.BackupDRClient.ListManagementServersPagedResponse;
+import static com.google.cloud.backupdr.v1beta.BackupDRClient.ListRestoreTemplateExecutionsPagedResponse;
+import static com.google.cloud.backupdr.v1beta.BackupDRClient.ListRestoreTemplatesPagedResponse;
+import static com.google.cloud.backupdr.v1beta.BackupDRClient.ListRestoreVerificationPlanAssociationsPagedResponse;
+import static com.google.cloud.backupdr.v1beta.BackupDRClient.ListRestoreVerificationPlansPagedResponse;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -57,6 +61,9 @@ import com.google.cloud.backupdr.v1beta.CreateBackupPlanAssociationRequest;
 import com.google.cloud.backupdr.v1beta.CreateBackupPlanRequest;
 import com.google.cloud.backupdr.v1beta.CreateBackupVaultRequest;
 import com.google.cloud.backupdr.v1beta.CreateManagementServerRequest;
+import com.google.cloud.backupdr.v1beta.CreateRestoreTemplateRequest;
+import com.google.cloud.backupdr.v1beta.CreateRestoreVerificationPlanAssociationRequest;
+import com.google.cloud.backupdr.v1beta.CreateRestoreVerificationPlanRequest;
 import com.google.cloud.backupdr.v1beta.DataSource;
 import com.google.cloud.backupdr.v1beta.DataSourceReference;
 import com.google.cloud.backupdr.v1beta.DeleteAutoProtectionPolicyRequest;
@@ -65,6 +72,9 @@ import com.google.cloud.backupdr.v1beta.DeleteBackupPlanRequest;
 import com.google.cloud.backupdr.v1beta.DeleteBackupRequest;
 import com.google.cloud.backupdr.v1beta.DeleteBackupVaultRequest;
 import com.google.cloud.backupdr.v1beta.DeleteManagementServerRequest;
+import com.google.cloud.backupdr.v1beta.DeleteRestoreTemplateRequest;
+import com.google.cloud.backupdr.v1beta.DeleteRestoreVerificationPlanAssociationRequest;
+import com.google.cloud.backupdr.v1beta.DeleteRestoreVerificationPlanRequest;
 import com.google.cloud.backupdr.v1beta.FetchBackupPlanAssociationsForResourceTypeRequest;
 import com.google.cloud.backupdr.v1beta.FetchBackupPlanAssociationsForResourceTypeResponse;
 import com.google.cloud.backupdr.v1beta.FetchBackupsForResourceTypeRequest;
@@ -84,6 +94,10 @@ import com.google.cloud.backupdr.v1beta.GetBindingMatchingResourceRequest;
 import com.google.cloud.backupdr.v1beta.GetDataSourceReferenceRequest;
 import com.google.cloud.backupdr.v1beta.GetDataSourceRequest;
 import com.google.cloud.backupdr.v1beta.GetManagementServerRequest;
+import com.google.cloud.backupdr.v1beta.GetRestoreTemplateExecutionRequest;
+import com.google.cloud.backupdr.v1beta.GetRestoreTemplateRequest;
+import com.google.cloud.backupdr.v1beta.GetRestoreVerificationPlanAssociationRequest;
+import com.google.cloud.backupdr.v1beta.GetRestoreVerificationPlanRequest;
 import com.google.cloud.backupdr.v1beta.InitializeServiceRequest;
 import com.google.cloud.backupdr.v1beta.InitializeServiceResponse;
 import com.google.cloud.backupdr.v1beta.InitiateDeleteAutoProtectionPolicyBindingRequest;
@@ -111,17 +125,35 @@ import com.google.cloud.backupdr.v1beta.ListDataSourcesRequest;
 import com.google.cloud.backupdr.v1beta.ListDataSourcesResponse;
 import com.google.cloud.backupdr.v1beta.ListManagementServersRequest;
 import com.google.cloud.backupdr.v1beta.ListManagementServersResponse;
+import com.google.cloud.backupdr.v1beta.ListRestoreTemplateExecutionsRequest;
+import com.google.cloud.backupdr.v1beta.ListRestoreTemplateExecutionsResponse;
+import com.google.cloud.backupdr.v1beta.ListRestoreTemplatesRequest;
+import com.google.cloud.backupdr.v1beta.ListRestoreTemplatesResponse;
+import com.google.cloud.backupdr.v1beta.ListRestoreVerificationPlanAssociationsRequest;
+import com.google.cloud.backupdr.v1beta.ListRestoreVerificationPlanAssociationsResponse;
+import com.google.cloud.backupdr.v1beta.ListRestoreVerificationPlansRequest;
+import com.google.cloud.backupdr.v1beta.ListRestoreVerificationPlansResponse;
 import com.google.cloud.backupdr.v1beta.ManagementServer;
 import com.google.cloud.backupdr.v1beta.OperationMetadata;
 import com.google.cloud.backupdr.v1beta.RestoreBackupRequest;
 import com.google.cloud.backupdr.v1beta.RestoreBackupResponse;
+import com.google.cloud.backupdr.v1beta.RestoreTemplate;
+import com.google.cloud.backupdr.v1beta.RestoreTemplateExecution;
+import com.google.cloud.backupdr.v1beta.RestoreVerificationPlan;
+import com.google.cloud.backupdr.v1beta.RestoreVerificationPlanAssociation;
+import com.google.cloud.backupdr.v1beta.RunRestoreTemplateRequest;
+import com.google.cloud.backupdr.v1beta.RunRestoreTemplateResponse;
 import com.google.cloud.backupdr.v1beta.TriggerBackupRequest;
+import com.google.cloud.backupdr.v1beta.TriggerRestoreCleanupRequest;
+import com.google.cloud.backupdr.v1beta.TriggerRestoreVerificationRequest;
+import com.google.cloud.backupdr.v1beta.TriggerRestoreVerificationResponse;
 import com.google.cloud.backupdr.v1beta.UpdateAutoProtectionPolicyRequest;
 import com.google.cloud.backupdr.v1beta.UpdateBackupPlanAssociationRequest;
 import com.google.cloud.backupdr.v1beta.UpdateBackupPlanRequest;
 import com.google.cloud.backupdr.v1beta.UpdateBackupRequest;
 import com.google.cloud.backupdr.v1beta.UpdateBackupVaultRequest;
 import com.google.cloud.backupdr.v1beta.UpdateDataSourceRequest;
+import com.google.cloud.backupdr.v1beta.UpdateRestoreTemplateRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -192,6 +224,241 @@ public class GrpcBackupDRStub extends BackupDRStub {
               .setFullMethodName("google.cloud.backupdr.v1beta.BackupDR/DeleteManagementServer")
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteManagementServerRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<CreateRestoreTemplateRequest, Operation>
+      createRestoreTemplateMethodDescriptor =
+          MethodDescriptor.<CreateRestoreTemplateRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.backupdr.v1beta.BackupDR/CreateRestoreTemplate")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateRestoreTemplateRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<GetRestoreTemplateRequest, RestoreTemplate>
+      getRestoreTemplateMethodDescriptor =
+          MethodDescriptor.<GetRestoreTemplateRequest, RestoreTemplate>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.backupdr.v1beta.BackupDR/GetRestoreTemplate")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetRestoreTemplateRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(RestoreTemplate.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<ListRestoreTemplatesRequest, ListRestoreTemplatesResponse>
+      listRestoreTemplatesMethodDescriptor =
+          MethodDescriptor.<ListRestoreTemplatesRequest, ListRestoreTemplatesResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.backupdr.v1beta.BackupDR/ListRestoreTemplates")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListRestoreTemplatesRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListRestoreTemplatesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<UpdateRestoreTemplateRequest, Operation>
+      updateRestoreTemplateMethodDescriptor =
+          MethodDescriptor.<UpdateRestoreTemplateRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.backupdr.v1beta.BackupDR/UpdateRestoreTemplate")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateRestoreTemplateRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<DeleteRestoreTemplateRequest, Operation>
+      deleteRestoreTemplateMethodDescriptor =
+          MethodDescriptor.<DeleteRestoreTemplateRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.backupdr.v1beta.BackupDR/DeleteRestoreTemplate")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteRestoreTemplateRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<RunRestoreTemplateRequest, Operation>
+      runRestoreTemplateMethodDescriptor =
+          MethodDescriptor.<RunRestoreTemplateRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.backupdr.v1beta.BackupDR/RunRestoreTemplate")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(RunRestoreTemplateRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<
+          GetRestoreTemplateExecutionRequest, RestoreTemplateExecution>
+      getRestoreTemplateExecutionMethodDescriptor =
+          MethodDescriptor
+              .<GetRestoreTemplateExecutionRequest, RestoreTemplateExecution>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.backupdr.v1beta.BackupDR/GetRestoreTemplateExecution")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetRestoreTemplateExecutionRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(RestoreTemplateExecution.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<
+          ListRestoreTemplateExecutionsRequest, ListRestoreTemplateExecutionsResponse>
+      listRestoreTemplateExecutionsMethodDescriptor =
+          MethodDescriptor
+              .<ListRestoreTemplateExecutionsRequest, ListRestoreTemplateExecutionsResponse>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.backupdr.v1beta.BackupDR/ListRestoreTemplateExecutions")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListRestoreTemplateExecutionsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListRestoreTemplateExecutionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<TriggerRestoreCleanupRequest, Operation>
+      triggerRestoreCleanupMethodDescriptor =
+          MethodDescriptor.<TriggerRestoreCleanupRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.backupdr.v1beta.BackupDR/TriggerRestoreCleanup")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(TriggerRestoreCleanupRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<CreateRestoreVerificationPlanRequest, Operation>
+      createRestoreVerificationPlanMethodDescriptor =
+          MethodDescriptor.<CreateRestoreVerificationPlanRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.backupdr.v1beta.BackupDR/CreateRestoreVerificationPlan")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateRestoreVerificationPlanRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<CreateRestoreVerificationPlanAssociationRequest, Operation>
+      createRestoreVerificationPlanAssociationMethodDescriptor =
+          MethodDescriptor.<CreateRestoreVerificationPlanAssociationRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.backupdr.v1beta.BackupDR/CreateRestoreVerificationPlanAssociation")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      CreateRestoreVerificationPlanAssociationRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<
+          GetRestoreVerificationPlanAssociationRequest, RestoreVerificationPlanAssociation>
+      getRestoreVerificationPlanAssociationMethodDescriptor =
+          MethodDescriptor
+              .<GetRestoreVerificationPlanAssociationRequest, RestoreVerificationPlanAssociation>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.backupdr.v1beta.BackupDR/GetRestoreVerificationPlanAssociation")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      GetRestoreVerificationPlanAssociationRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(RestoreVerificationPlanAssociation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<
+          ListRestoreVerificationPlanAssociationsRequest,
+          ListRestoreVerificationPlanAssociationsResponse>
+      listRestoreVerificationPlanAssociationsMethodDescriptor =
+          MethodDescriptor
+              .<ListRestoreVerificationPlanAssociationsRequest,
+                  ListRestoreVerificationPlanAssociationsResponse>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.backupdr.v1beta.BackupDR/ListRestoreVerificationPlanAssociations")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      ListRestoreVerificationPlanAssociationsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(
+                      ListRestoreVerificationPlanAssociationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<DeleteRestoreVerificationPlanAssociationRequest, Operation>
+      deleteRestoreVerificationPlanAssociationMethodDescriptor =
+          MethodDescriptor.<DeleteRestoreVerificationPlanAssociationRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.backupdr.v1beta.BackupDR/DeleteRestoreVerificationPlanAssociation")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      DeleteRestoreVerificationPlanAssociationRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<TriggerRestoreVerificationRequest, Operation>
+      triggerRestoreVerificationMethodDescriptor =
+          MethodDescriptor.<TriggerRestoreVerificationRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.backupdr.v1beta.BackupDR/TriggerRestoreVerification")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(TriggerRestoreVerificationRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<GetRestoreVerificationPlanRequest, RestoreVerificationPlan>
+      getRestoreVerificationPlanMethodDescriptor =
+          MethodDescriptor.<GetRestoreVerificationPlanRequest, RestoreVerificationPlan>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.backupdr.v1beta.BackupDR/GetRestoreVerificationPlan")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetRestoreVerificationPlanRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(RestoreVerificationPlan.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<
+          ListRestoreVerificationPlansRequest, ListRestoreVerificationPlansResponse>
+      listRestoreVerificationPlansMethodDescriptor =
+          MethodDescriptor
+              .<ListRestoreVerificationPlansRequest, ListRestoreVerificationPlansResponse>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.backupdr.v1beta.BackupDR/ListRestoreVerificationPlans")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListRestoreVerificationPlansRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListRestoreVerificationPlansResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<DeleteRestoreVerificationPlanRequest, Operation>
+      deleteRestoreVerificationPlanMethodDescriptor =
+          MethodDescriptor.<DeleteRestoreVerificationPlanRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.backupdr.v1beta.BackupDR/DeleteRestoreVerificationPlan")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteRestoreVerificationPlanRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .setSampledToLocalTracing(true)
               .build();
@@ -827,6 +1094,86 @@ public class GrpcBackupDRStub extends BackupDRStub {
       deleteManagementServerCallable;
   private final OperationCallable<DeleteManagementServerRequest, Empty, OperationMetadata>
       deleteManagementServerOperationCallable;
+  private final UnaryCallable<CreateRestoreTemplateRequest, Operation>
+      createRestoreTemplateCallable;
+  private final OperationCallable<CreateRestoreTemplateRequest, RestoreTemplate, OperationMetadata>
+      createRestoreTemplateOperationCallable;
+  private final UnaryCallable<GetRestoreTemplateRequest, RestoreTemplate>
+      getRestoreTemplateCallable;
+  private final UnaryCallable<ListRestoreTemplatesRequest, ListRestoreTemplatesResponse>
+      listRestoreTemplatesCallable;
+  private final UnaryCallable<ListRestoreTemplatesRequest, ListRestoreTemplatesPagedResponse>
+      listRestoreTemplatesPagedCallable;
+  private final UnaryCallable<UpdateRestoreTemplateRequest, Operation>
+      updateRestoreTemplateCallable;
+  private final OperationCallable<UpdateRestoreTemplateRequest, RestoreTemplate, OperationMetadata>
+      updateRestoreTemplateOperationCallable;
+  private final UnaryCallable<DeleteRestoreTemplateRequest, Operation>
+      deleteRestoreTemplateCallable;
+  private final OperationCallable<DeleteRestoreTemplateRequest, Empty, OperationMetadata>
+      deleteRestoreTemplateOperationCallable;
+  private final UnaryCallable<RunRestoreTemplateRequest, Operation> runRestoreTemplateCallable;
+  private final OperationCallable<
+          RunRestoreTemplateRequest, RunRestoreTemplateResponse, OperationMetadata>
+      runRestoreTemplateOperationCallable;
+  private final UnaryCallable<GetRestoreTemplateExecutionRequest, RestoreTemplateExecution>
+      getRestoreTemplateExecutionCallable;
+  private final UnaryCallable<
+          ListRestoreTemplateExecutionsRequest, ListRestoreTemplateExecutionsResponse>
+      listRestoreTemplateExecutionsCallable;
+  private final UnaryCallable<
+          ListRestoreTemplateExecutionsRequest, ListRestoreTemplateExecutionsPagedResponse>
+      listRestoreTemplateExecutionsPagedCallable;
+  private final UnaryCallable<TriggerRestoreCleanupRequest, Operation>
+      triggerRestoreCleanupCallable;
+  private final OperationCallable<
+          TriggerRestoreCleanupRequest, RestoreTemplateExecution, OperationMetadata>
+      triggerRestoreCleanupOperationCallable;
+  private final UnaryCallable<CreateRestoreVerificationPlanRequest, Operation>
+      createRestoreVerificationPlanCallable;
+  private final OperationCallable<
+          CreateRestoreVerificationPlanRequest, RestoreVerificationPlan, OperationMetadata>
+      createRestoreVerificationPlanOperationCallable;
+  private final UnaryCallable<CreateRestoreVerificationPlanAssociationRequest, Operation>
+      createRestoreVerificationPlanAssociationCallable;
+  private final OperationCallable<
+          CreateRestoreVerificationPlanAssociationRequest,
+          RestoreVerificationPlanAssociation,
+          OperationMetadata>
+      createRestoreVerificationPlanAssociationOperationCallable;
+  private final UnaryCallable<
+          GetRestoreVerificationPlanAssociationRequest, RestoreVerificationPlanAssociation>
+      getRestoreVerificationPlanAssociationCallable;
+  private final UnaryCallable<
+          ListRestoreVerificationPlanAssociationsRequest,
+          ListRestoreVerificationPlanAssociationsResponse>
+      listRestoreVerificationPlanAssociationsCallable;
+  private final UnaryCallable<
+          ListRestoreVerificationPlanAssociationsRequest,
+          ListRestoreVerificationPlanAssociationsPagedResponse>
+      listRestoreVerificationPlanAssociationsPagedCallable;
+  private final UnaryCallable<DeleteRestoreVerificationPlanAssociationRequest, Operation>
+      deleteRestoreVerificationPlanAssociationCallable;
+  private final OperationCallable<
+          DeleteRestoreVerificationPlanAssociationRequest, Empty, OperationMetadata>
+      deleteRestoreVerificationPlanAssociationOperationCallable;
+  private final UnaryCallable<TriggerRestoreVerificationRequest, Operation>
+      triggerRestoreVerificationCallable;
+  private final OperationCallable<
+          TriggerRestoreVerificationRequest, TriggerRestoreVerificationResponse, OperationMetadata>
+      triggerRestoreVerificationOperationCallable;
+  private final UnaryCallable<GetRestoreVerificationPlanRequest, RestoreVerificationPlan>
+      getRestoreVerificationPlanCallable;
+  private final UnaryCallable<
+          ListRestoreVerificationPlansRequest, ListRestoreVerificationPlansResponse>
+      listRestoreVerificationPlansCallable;
+  private final UnaryCallable<
+          ListRestoreVerificationPlansRequest, ListRestoreVerificationPlansPagedResponse>
+      listRestoreVerificationPlansPagedCallable;
+  private final UnaryCallable<DeleteRestoreVerificationPlanRequest, Operation>
+      deleteRestoreVerificationPlanCallable;
+  private final OperationCallable<DeleteRestoreVerificationPlanRequest, Empty, OperationMetadata>
+      deleteRestoreVerificationPlanOperationCallable;
   private final UnaryCallable<CreateBackupVaultRequest, Operation> createBackupVaultCallable;
   private final OperationCallable<CreateBackupVaultRequest, BackupVault, OperationMetadata>
       createBackupVaultOperationCallable;
@@ -1087,6 +1434,238 @@ public class GrpcBackupDRStub extends BackupDRStub {
         deleteManagementServerTransportSettings =
             GrpcCallSettings.<DeleteManagementServerRequest, Operation>newBuilder()
                 .setMethodDescriptor(deleteManagementServerMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    GrpcCallSettings<CreateRestoreTemplateRequest, Operation>
+        createRestoreTemplateTransportSettings =
+            GrpcCallSettings.<CreateRestoreTemplateRequest, Operation>newBuilder()
+                .setMethodDescriptor(createRestoreTemplateMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    GrpcCallSettings<GetRestoreTemplateRequest, RestoreTemplate>
+        getRestoreTemplateTransportSettings =
+            GrpcCallSettings.<GetRestoreTemplateRequest, RestoreTemplate>newBuilder()
+                .setMethodDescriptor(getRestoreTemplateMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    GrpcCallSettings<ListRestoreTemplatesRequest, ListRestoreTemplatesResponse>
+        listRestoreTemplatesTransportSettings =
+            GrpcCallSettings.<ListRestoreTemplatesRequest, ListRestoreTemplatesResponse>newBuilder()
+                .setMethodDescriptor(listRestoreTemplatesMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    GrpcCallSettings<UpdateRestoreTemplateRequest, Operation>
+        updateRestoreTemplateTransportSettings =
+            GrpcCallSettings.<UpdateRestoreTemplateRequest, Operation>newBuilder()
+                .setMethodDescriptor(updateRestoreTemplateMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "restore_template.name",
+                          String.valueOf(request.getRestoreTemplate().getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<DeleteRestoreTemplateRequest, Operation>
+        deleteRestoreTemplateTransportSettings =
+            GrpcCallSettings.<DeleteRestoreTemplateRequest, Operation>newBuilder()
+                .setMethodDescriptor(deleteRestoreTemplateMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    GrpcCallSettings<RunRestoreTemplateRequest, Operation> runRestoreTemplateTransportSettings =
+        GrpcCallSettings.<RunRestoreTemplateRequest, Operation>newBuilder()
+            .setMethodDescriptor(runRestoreTemplateMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    GrpcCallSettings<GetRestoreTemplateExecutionRequest, RestoreTemplateExecution>
+        getRestoreTemplateExecutionTransportSettings =
+            GrpcCallSettings
+                .<GetRestoreTemplateExecutionRequest, RestoreTemplateExecution>newBuilder()
+                .setMethodDescriptor(getRestoreTemplateExecutionMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    GrpcCallSettings<ListRestoreTemplateExecutionsRequest, ListRestoreTemplateExecutionsResponse>
+        listRestoreTemplateExecutionsTransportSettings =
+            GrpcCallSettings
+                .<ListRestoreTemplateExecutionsRequest, ListRestoreTemplateExecutionsResponse>
+                    newBuilder()
+                .setMethodDescriptor(listRestoreTemplateExecutionsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    GrpcCallSettings<TriggerRestoreCleanupRequest, Operation>
+        triggerRestoreCleanupTransportSettings =
+            GrpcCallSettings.<TriggerRestoreCleanupRequest, Operation>newBuilder()
+                .setMethodDescriptor(triggerRestoreCleanupMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    GrpcCallSettings<CreateRestoreVerificationPlanRequest, Operation>
+        createRestoreVerificationPlanTransportSettings =
+            GrpcCallSettings.<CreateRestoreVerificationPlanRequest, Operation>newBuilder()
+                .setMethodDescriptor(createRestoreVerificationPlanMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    GrpcCallSettings<CreateRestoreVerificationPlanAssociationRequest, Operation>
+        createRestoreVerificationPlanAssociationTransportSettings =
+            GrpcCallSettings
+                .<CreateRestoreVerificationPlanAssociationRequest, Operation>newBuilder()
+                .setMethodDescriptor(createRestoreVerificationPlanAssociationMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    GrpcCallSettings<
+            GetRestoreVerificationPlanAssociationRequest, RestoreVerificationPlanAssociation>
+        getRestoreVerificationPlanAssociationTransportSettings =
+            GrpcCallSettings
+                .<GetRestoreVerificationPlanAssociationRequest, RestoreVerificationPlanAssociation>
+                    newBuilder()
+                .setMethodDescriptor(getRestoreVerificationPlanAssociationMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    GrpcCallSettings<
+            ListRestoreVerificationPlanAssociationsRequest,
+            ListRestoreVerificationPlanAssociationsResponse>
+        listRestoreVerificationPlanAssociationsTransportSettings =
+            GrpcCallSettings
+                .<ListRestoreVerificationPlanAssociationsRequest,
+                    ListRestoreVerificationPlanAssociationsResponse>
+                    newBuilder()
+                .setMethodDescriptor(listRestoreVerificationPlanAssociationsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    GrpcCallSettings<DeleteRestoreVerificationPlanAssociationRequest, Operation>
+        deleteRestoreVerificationPlanAssociationTransportSettings =
+            GrpcCallSettings
+                .<DeleteRestoreVerificationPlanAssociationRequest, Operation>newBuilder()
+                .setMethodDescriptor(deleteRestoreVerificationPlanAssociationMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    GrpcCallSettings<TriggerRestoreVerificationRequest, Operation>
+        triggerRestoreVerificationTransportSettings =
+            GrpcCallSettings.<TriggerRestoreVerificationRequest, Operation>newBuilder()
+                .setMethodDescriptor(triggerRestoreVerificationMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    GrpcCallSettings<GetRestoreVerificationPlanRequest, RestoreVerificationPlan>
+        getRestoreVerificationPlanTransportSettings =
+            GrpcCallSettings
+                .<GetRestoreVerificationPlanRequest, RestoreVerificationPlan>newBuilder()
+                .setMethodDescriptor(getRestoreVerificationPlanMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    GrpcCallSettings<ListRestoreVerificationPlansRequest, ListRestoreVerificationPlansResponse>
+        listRestoreVerificationPlansTransportSettings =
+            GrpcCallSettings
+                .<ListRestoreVerificationPlansRequest, ListRestoreVerificationPlansResponse>
+                    newBuilder()
+                .setMethodDescriptor(listRestoreVerificationPlansMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    GrpcCallSettings<DeleteRestoreVerificationPlanRequest, Operation>
+        deleteRestoreVerificationPlanTransportSettings =
+            GrpcCallSettings.<DeleteRestoreVerificationPlanRequest, Operation>newBuilder()
+                .setMethodDescriptor(deleteRestoreVerificationPlanMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
                       RequestParamsBuilder builder = RequestParamsBuilder.create();
@@ -1739,6 +2318,176 @@ public class GrpcBackupDRStub extends BackupDRStub {
             settings.deleteManagementServerOperationSettings(),
             clientContext,
             operationsStub);
+    this.createRestoreTemplateCallable =
+        callableFactory.createUnaryCallable(
+            createRestoreTemplateTransportSettings,
+            settings.createRestoreTemplateSettings(),
+            clientContext);
+    this.createRestoreTemplateOperationCallable =
+        callableFactory.createOperationCallable(
+            createRestoreTemplateTransportSettings,
+            settings.createRestoreTemplateOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.getRestoreTemplateCallable =
+        callableFactory.createUnaryCallable(
+            getRestoreTemplateTransportSettings,
+            settings.getRestoreTemplateSettings(),
+            clientContext);
+    this.listRestoreTemplatesCallable =
+        callableFactory.createUnaryCallable(
+            listRestoreTemplatesTransportSettings,
+            settings.listRestoreTemplatesSettings(),
+            clientContext);
+    this.listRestoreTemplatesPagedCallable =
+        callableFactory.createPagedCallable(
+            listRestoreTemplatesTransportSettings,
+            settings.listRestoreTemplatesSettings(),
+            clientContext);
+    this.updateRestoreTemplateCallable =
+        callableFactory.createUnaryCallable(
+            updateRestoreTemplateTransportSettings,
+            settings.updateRestoreTemplateSettings(),
+            clientContext);
+    this.updateRestoreTemplateOperationCallable =
+        callableFactory.createOperationCallable(
+            updateRestoreTemplateTransportSettings,
+            settings.updateRestoreTemplateOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.deleteRestoreTemplateCallable =
+        callableFactory.createUnaryCallable(
+            deleteRestoreTemplateTransportSettings,
+            settings.deleteRestoreTemplateSettings(),
+            clientContext);
+    this.deleteRestoreTemplateOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteRestoreTemplateTransportSettings,
+            settings.deleteRestoreTemplateOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.runRestoreTemplateCallable =
+        callableFactory.createUnaryCallable(
+            runRestoreTemplateTransportSettings,
+            settings.runRestoreTemplateSettings(),
+            clientContext);
+    this.runRestoreTemplateOperationCallable =
+        callableFactory.createOperationCallable(
+            runRestoreTemplateTransportSettings,
+            settings.runRestoreTemplateOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.getRestoreTemplateExecutionCallable =
+        callableFactory.createUnaryCallable(
+            getRestoreTemplateExecutionTransportSettings,
+            settings.getRestoreTemplateExecutionSettings(),
+            clientContext);
+    this.listRestoreTemplateExecutionsCallable =
+        callableFactory.createUnaryCallable(
+            listRestoreTemplateExecutionsTransportSettings,
+            settings.listRestoreTemplateExecutionsSettings(),
+            clientContext);
+    this.listRestoreTemplateExecutionsPagedCallable =
+        callableFactory.createPagedCallable(
+            listRestoreTemplateExecutionsTransportSettings,
+            settings.listRestoreTemplateExecutionsSettings(),
+            clientContext);
+    this.triggerRestoreCleanupCallable =
+        callableFactory.createUnaryCallable(
+            triggerRestoreCleanupTransportSettings,
+            settings.triggerRestoreCleanupSettings(),
+            clientContext);
+    this.triggerRestoreCleanupOperationCallable =
+        callableFactory.createOperationCallable(
+            triggerRestoreCleanupTransportSettings,
+            settings.triggerRestoreCleanupOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.createRestoreVerificationPlanCallable =
+        callableFactory.createUnaryCallable(
+            createRestoreVerificationPlanTransportSettings,
+            settings.createRestoreVerificationPlanSettings(),
+            clientContext);
+    this.createRestoreVerificationPlanOperationCallable =
+        callableFactory.createOperationCallable(
+            createRestoreVerificationPlanTransportSettings,
+            settings.createRestoreVerificationPlanOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.createRestoreVerificationPlanAssociationCallable =
+        callableFactory.createUnaryCallable(
+            createRestoreVerificationPlanAssociationTransportSettings,
+            settings.createRestoreVerificationPlanAssociationSettings(),
+            clientContext);
+    this.createRestoreVerificationPlanAssociationOperationCallable =
+        callableFactory.createOperationCallable(
+            createRestoreVerificationPlanAssociationTransportSettings,
+            settings.createRestoreVerificationPlanAssociationOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.getRestoreVerificationPlanAssociationCallable =
+        callableFactory.createUnaryCallable(
+            getRestoreVerificationPlanAssociationTransportSettings,
+            settings.getRestoreVerificationPlanAssociationSettings(),
+            clientContext);
+    this.listRestoreVerificationPlanAssociationsCallable =
+        callableFactory.createUnaryCallable(
+            listRestoreVerificationPlanAssociationsTransportSettings,
+            settings.listRestoreVerificationPlanAssociationsSettings(),
+            clientContext);
+    this.listRestoreVerificationPlanAssociationsPagedCallable =
+        callableFactory.createPagedCallable(
+            listRestoreVerificationPlanAssociationsTransportSettings,
+            settings.listRestoreVerificationPlanAssociationsSettings(),
+            clientContext);
+    this.deleteRestoreVerificationPlanAssociationCallable =
+        callableFactory.createUnaryCallable(
+            deleteRestoreVerificationPlanAssociationTransportSettings,
+            settings.deleteRestoreVerificationPlanAssociationSettings(),
+            clientContext);
+    this.deleteRestoreVerificationPlanAssociationOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteRestoreVerificationPlanAssociationTransportSettings,
+            settings.deleteRestoreVerificationPlanAssociationOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.triggerRestoreVerificationCallable =
+        callableFactory.createUnaryCallable(
+            triggerRestoreVerificationTransportSettings,
+            settings.triggerRestoreVerificationSettings(),
+            clientContext);
+    this.triggerRestoreVerificationOperationCallable =
+        callableFactory.createOperationCallable(
+            triggerRestoreVerificationTransportSettings,
+            settings.triggerRestoreVerificationOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.getRestoreVerificationPlanCallable =
+        callableFactory.createUnaryCallable(
+            getRestoreVerificationPlanTransportSettings,
+            settings.getRestoreVerificationPlanSettings(),
+            clientContext);
+    this.listRestoreVerificationPlansCallable =
+        callableFactory.createUnaryCallable(
+            listRestoreVerificationPlansTransportSettings,
+            settings.listRestoreVerificationPlansSettings(),
+            clientContext);
+    this.listRestoreVerificationPlansPagedCallable =
+        callableFactory.createPagedCallable(
+            listRestoreVerificationPlansTransportSettings,
+            settings.listRestoreVerificationPlansSettings(),
+            clientContext);
+    this.deleteRestoreVerificationPlanCallable =
+        callableFactory.createUnaryCallable(
+            deleteRestoreVerificationPlanTransportSettings,
+            settings.deleteRestoreVerificationPlanSettings(),
+            clientContext);
+    this.deleteRestoreVerificationPlanOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteRestoreVerificationPlanTransportSettings,
+            settings.deleteRestoreVerificationPlanOperationSettings(),
+            clientContext,
+            operationsStub);
     this.createBackupVaultCallable =
         callableFactory.createUnaryCallable(
             createBackupVaultTransportSettings,
@@ -2185,6 +2934,206 @@ public class GrpcBackupDRStub extends BackupDRStub {
   public OperationCallable<DeleteManagementServerRequest, Empty, OperationMetadata>
       deleteManagementServerOperationCallable() {
     return deleteManagementServerOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateRestoreTemplateRequest, Operation> createRestoreTemplateCallable() {
+    return createRestoreTemplateCallable;
+  }
+
+  @Override
+  public OperationCallable<CreateRestoreTemplateRequest, RestoreTemplate, OperationMetadata>
+      createRestoreTemplateOperationCallable() {
+    return createRestoreTemplateOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetRestoreTemplateRequest, RestoreTemplate> getRestoreTemplateCallable() {
+    return getRestoreTemplateCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListRestoreTemplatesRequest, ListRestoreTemplatesResponse>
+      listRestoreTemplatesCallable() {
+    return listRestoreTemplatesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListRestoreTemplatesRequest, ListRestoreTemplatesPagedResponse>
+      listRestoreTemplatesPagedCallable() {
+    return listRestoreTemplatesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateRestoreTemplateRequest, Operation> updateRestoreTemplateCallable() {
+    return updateRestoreTemplateCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateRestoreTemplateRequest, RestoreTemplate, OperationMetadata>
+      updateRestoreTemplateOperationCallable() {
+    return updateRestoreTemplateOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteRestoreTemplateRequest, Operation> deleteRestoreTemplateCallable() {
+    return deleteRestoreTemplateCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteRestoreTemplateRequest, Empty, OperationMetadata>
+      deleteRestoreTemplateOperationCallable() {
+    return deleteRestoreTemplateOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<RunRestoreTemplateRequest, Operation> runRestoreTemplateCallable() {
+    return runRestoreTemplateCallable;
+  }
+
+  @Override
+  public OperationCallable<RunRestoreTemplateRequest, RunRestoreTemplateResponse, OperationMetadata>
+      runRestoreTemplateOperationCallable() {
+    return runRestoreTemplateOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetRestoreTemplateExecutionRequest, RestoreTemplateExecution>
+      getRestoreTemplateExecutionCallable() {
+    return getRestoreTemplateExecutionCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListRestoreTemplateExecutionsRequest, ListRestoreTemplateExecutionsResponse>
+      listRestoreTemplateExecutionsCallable() {
+    return listRestoreTemplateExecutionsCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          ListRestoreTemplateExecutionsRequest, ListRestoreTemplateExecutionsPagedResponse>
+      listRestoreTemplateExecutionsPagedCallable() {
+    return listRestoreTemplateExecutionsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<TriggerRestoreCleanupRequest, Operation> triggerRestoreCleanupCallable() {
+    return triggerRestoreCleanupCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          TriggerRestoreCleanupRequest, RestoreTemplateExecution, OperationMetadata>
+      triggerRestoreCleanupOperationCallable() {
+    return triggerRestoreCleanupOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateRestoreVerificationPlanRequest, Operation>
+      createRestoreVerificationPlanCallable() {
+    return createRestoreVerificationPlanCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          CreateRestoreVerificationPlanRequest, RestoreVerificationPlan, OperationMetadata>
+      createRestoreVerificationPlanOperationCallable() {
+    return createRestoreVerificationPlanOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateRestoreVerificationPlanAssociationRequest, Operation>
+      createRestoreVerificationPlanAssociationCallable() {
+    return createRestoreVerificationPlanAssociationCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          CreateRestoreVerificationPlanAssociationRequest,
+          RestoreVerificationPlanAssociation,
+          OperationMetadata>
+      createRestoreVerificationPlanAssociationOperationCallable() {
+    return createRestoreVerificationPlanAssociationOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          GetRestoreVerificationPlanAssociationRequest, RestoreVerificationPlanAssociation>
+      getRestoreVerificationPlanAssociationCallable() {
+    return getRestoreVerificationPlanAssociationCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          ListRestoreVerificationPlanAssociationsRequest,
+          ListRestoreVerificationPlanAssociationsResponse>
+      listRestoreVerificationPlanAssociationsCallable() {
+    return listRestoreVerificationPlanAssociationsCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          ListRestoreVerificationPlanAssociationsRequest,
+          ListRestoreVerificationPlanAssociationsPagedResponse>
+      listRestoreVerificationPlanAssociationsPagedCallable() {
+    return listRestoreVerificationPlanAssociationsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteRestoreVerificationPlanAssociationRequest, Operation>
+      deleteRestoreVerificationPlanAssociationCallable() {
+    return deleteRestoreVerificationPlanAssociationCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          DeleteRestoreVerificationPlanAssociationRequest, Empty, OperationMetadata>
+      deleteRestoreVerificationPlanAssociationOperationCallable() {
+    return deleteRestoreVerificationPlanAssociationOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<TriggerRestoreVerificationRequest, Operation>
+      triggerRestoreVerificationCallable() {
+    return triggerRestoreVerificationCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          TriggerRestoreVerificationRequest, TriggerRestoreVerificationResponse, OperationMetadata>
+      triggerRestoreVerificationOperationCallable() {
+    return triggerRestoreVerificationOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetRestoreVerificationPlanRequest, RestoreVerificationPlan>
+      getRestoreVerificationPlanCallable() {
+    return getRestoreVerificationPlanCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListRestoreVerificationPlansRequest, ListRestoreVerificationPlansResponse>
+      listRestoreVerificationPlansCallable() {
+    return listRestoreVerificationPlansCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          ListRestoreVerificationPlansRequest, ListRestoreVerificationPlansPagedResponse>
+      listRestoreVerificationPlansPagedCallable() {
+    return listRestoreVerificationPlansPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteRestoreVerificationPlanRequest, Operation>
+      deleteRestoreVerificationPlanCallable() {
+    return deleteRestoreVerificationPlanCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteRestoreVerificationPlanRequest, Empty, OperationMetadata>
+      deleteRestoreVerificationPlanOperationCallable() {
+    return deleteRestoreVerificationPlanOperationCallable;
   }
 
   @Override

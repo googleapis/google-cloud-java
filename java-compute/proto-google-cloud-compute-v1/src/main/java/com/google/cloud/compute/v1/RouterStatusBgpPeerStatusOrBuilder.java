@@ -103,6 +103,32 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    *
    *
    * <pre>
+   * Output only. [Output Only] Indicates whether the BGP peer is in a depreferenced state.
+   * </pre>
+   *
+   * <code>optional bool depreferenced = 182429640;</code>
+   *
+   * @return Whether the depreferenced field is set.
+   */
+  boolean hasDepreferenced();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] Indicates whether the BGP peer is in a depreferenced state.
+   * </pre>
+   *
+   * <code>optional bool depreferenced = 182429640;</code>
+   *
+   * @return The depreferenced.
+   */
+  boolean getDepreferenced();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. Enable IPv4 traffic over BGP Peer.
    * It is enabled by default if the peerIpAddress is version 4.
    * </pre>

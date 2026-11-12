@@ -26,6 +26,7 @@ import static java.util.concurrent.Executors.callable;
 import com.google.api.client.util.Data;
 import com.google.api.core.ApiFuture;
 import com.google.api.gax.paging.Page;
+import com.google.api.gax.retrying.BasicResultRetryAlgorithm;
 import com.google.api.gax.retrying.ResultRetryAlgorithm;
 import com.google.api.services.storage.model.BucketAccessControl;
 import com.google.api.services.storage.model.ObjectAccessControl;
@@ -232,68 +233,8 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage, 
   @Override
   public Blob createFrom(BlobInfo blobInfo, Path path, int bufferSize, BlobWriteOption... options)
       throws IOException {
-    if (Files.isDirectory(path)) {
-      throw new StorageException(0, path + " is a directory");
-    }
-    long size = Files.size(path);
-    if (size == 0L) {
-      return create(blobInfo, null, options);
-    }
-    StorageMetricsContext multiContext =
-        StorageClientMetrics.createMultiStepContext(
-            getOptions().getStorageClientMetrics(), "WriteObject");
-    Throwable error = null;
-    try {
-      Opts<ObjectTargetOpt> opts = Opts.unwrap(options).resolveFrom(blobInfo);
-      final Map<StorageRpc.Option, ?> optionsMap = opts.getRpcOptions();
-      BlobInfo.Builder builder = blobInfo.toBuilder().setMd5(null).setCrc32c(null);
-      BlobInfo updated = opts.blobInfoMapper().apply(builder).build();
-      StorageObject encode = codecs.blobInfo().encode(updated);
-
-      Supplier<String> uploadIdSupplier =
-          ResumableMedia.startUploadForBlobInfo(
-              getOptions(),
-              updated,
-              optionsMap,
-              retrier.withAlg(
-                  retryAlgorithmManager.getForResumableUploadSessionCreate(optionsMap),
-                  multiContext));
-      JsonResumableWrite jsonResumableWrite =
-          JsonResumableWrite.of(
-              encode,
-              optionsMap,
-              uploadIdSupplier.get(),
-              0,
-              opts.getHasher(),
-              opts.getHasher().initialValue());
-
-      JsonResumableSession session =
-          ResumableSession.json(
-              HttpClientContext.from(storageRpc),
-              retrier.withAlg(retryAlgorithmManager.idempotent(), multiContext),
-              jsonResumableWrite);
-      HttpContentRange contentRange = HttpContentRange.of(ByteRangeSpec.explicit(0L, size), size);
-      ResumableOperationResult<StorageObject> put =
-          session.put(RewindableContent.of(path), contentRange);
-      if (multiContext != null) {
-        multiContext.setRequestBytes(size);
-      }
-      // all exception translation is taken care of down in the JsonResumableSession
-      StorageObject object = put.getObject();
-      if (object == null) {
-        // if by some odd chance the put didn't get the StorageObject, query for it
-        ResumableOperationResult<@Nullable StorageObject> query = session.query();
-        object = query.getObject();
-      }
-      return codecs.blobInfo().decode(object).asBlob(this);
-    } catch (Throwable t) {
-      error = t;
-      throw t;
-    } finally {
-      if (multiContext != null) {
-        multiContext.recordOperation(getOptions().getStorageClientMetrics(), error);
-      }
-    }
+    Opts<ObjectTargetOpt> opts = Opts.unwrap(options).resolveFrom(blobInfo);
+    return internalCreateFrom(path, blobInfo, opts).asBlob(this);
   }
 
   @Override
@@ -372,7 +313,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage, 
 
     ResultRetryAlgorithm<?> algorithm = retryAlgorithmManager.getForObjectsRestore(obj, optionsMap);
 
-    return run(
+    return runNullable(
         "RestoreObject",
         algorithm,
         () -> storageRpc.restore(obj, optionsMap),
@@ -402,7 +343,12 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage, 
 
     @Override
     public Page<Bucket> getNextPage() {
-      return listBuckets(serviceOptions, requestOptions, retrier);
+      return listBuckets(
+          serviceOptions,
+          requestOptions,
+          retrier,
+          StorageClientMetrics.createMultiStepContext(
+              serviceOptions.getStorageClientMetrics(), "ListBuckets"));
     }
   }
 
@@ -429,7 +375,13 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage, 
 
     @Override
     public Page<Blob> getNextPage() {
-      return listBlobs(bucket, serviceOptions, requestOptions, retrier);
+      return listBlobs(
+          bucket,
+          serviceOptions,
+          requestOptions,
+          retrier,
+          StorageClientMetrics.createMultiStepContext(
+              serviceOptions.getStorageClientMetrics(), "ListObjects"));
     }
   }
 
@@ -454,26 +406,42 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage, 
 
     @Override
     public Page<HmacKeyMetadata> getNextPage() {
-      return listHmacKeys(serviceOptions, retryAlgorithmManager, options, retrier);
+      return listHmacKeys(
+          serviceOptions,
+          retryAlgorithmManager,
+          options,
+          retrier,
+          StorageClientMetrics.createMultiStepContext(
+              serviceOptions.getStorageClientMetrics(), "ListHMACKeys"));
     }
   }
 
   @Override
   public Page<Bucket> list(BucketListOption... options) {
     ImmutableMap<StorageRpc.Option, ?> optionsMap = Opts.unwrap(options).getRpcOptions();
-    return listBuckets(getOptions(), optionsMap, retrier);
+    return listBuckets(
+        getOptions(),
+        optionsMap,
+        retrier,
+        StorageClientMetrics.createContext(getOptions().getStorageClientMetrics(), "ListBuckets"));
   }
 
   @Override
   public Page<Blob> list(final String bucket, BlobListOption... options) {
     ImmutableMap<StorageRpc.Option, ?> optionsMap = Opts.unwrap(options).getRpcOptions();
-    return listBlobs(bucket, getOptions(), optionsMap, retrier);
+    return listBlobs(
+        bucket,
+        getOptions(),
+        optionsMap,
+        retrier,
+        StorageClientMetrics.createContext(getOptions().getStorageClientMetrics(), "ListObjects"));
   }
 
   private static Page<Bucket> listBuckets(
       final HttpStorageOptions serviceOptions,
       final Map<StorageRpc.Option, ?> optionsMap,
-      Retrier retrier) {
+      Retrier retrier,
+      @Nullable StorageMetricsContext metricsContext) {
     ResultRetryAlgorithm<?> algorithm =
         serviceOptions.getRetryAlgorithmManager().getForBucketsList(optionsMap);
     return retrier.run(
@@ -494,15 +462,15 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage, 
           return new PageImpl<>(
               new BucketPageFetcher(serviceOptions, cursor, optionsMap, retrier), cursor, buckets);
         },
-        StorageClientMetrics.createContext(
-            serviceOptions.getStorageClientMetrics(), "ListBuckets"));
+        metricsContext);
   }
 
   private static Page<Blob> listBlobs(
       final String bucket,
       final HttpStorageOptions serviceOptions,
       final Map<StorageRpc.Option, ?> optionsMap,
-      Retrier retrier) {
+      Retrier retrier,
+      @Nullable StorageMetricsContext metricsContext) {
     ResultRetryAlgorithm<?> algorithm =
         serviceOptions.getRetryAlgorithmManager().getForObjectsList(bucket, optionsMap);
     return retrier.run(
@@ -524,8 +492,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage, 
               cursor,
               blobs);
         },
-        StorageClientMetrics.createContext(
-            serviceOptions.getStorageClientMetrics(), "ListObjects"));
+        metricsContext);
   }
 
   @Override
@@ -534,7 +501,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage, 
         Opts.unwrap(options).resolveFrom(bucketInfo).getRpcOptions();
     ImmutableSet<NamedField> modifiedFields = bucketInfo.getModifiedFields();
     if (modifiedFields.isEmpty()) {
-      return internalBucketGet(bucketInfo.getName(), optionsMap);
+      return internalBucketGet(bucketInfo.getName(), optionsMap, "UpdateBucket");
     } else {
       com.google.api.services.storage.model.Bucket tmp = codecs.bucketInfo().encode(bucketInfo);
       com.google.api.services.storage.model.Bucket bucketPb =
@@ -591,7 +558,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage, 
     BlobInfo updated = opts.blobInfoMapper().apply(builder).build();
     boolean unmodifiedAfterOpts = updated.getModifiedFields().isEmpty();
     if (unmodifiedBeforeOpts && unmodifiedAfterOpts) {
-      return internalGetBlob(blobInfo.getBlobId(), optionsMap);
+      return internalGetBlob(blobInfo.getBlobId(), optionsMap, "UpdateObject");
     } else {
       StorageObject tmp = codecs.blobInfo().encode(updated);
       StorageObject pb = new StorageObject();
@@ -674,11 +641,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage, 
     ImmutableMap<StorageRpc.Option, ?> optionsMap = Opts.unwrap(options).getRpcOptions();
     ResultRetryAlgorithm<?> algorithm =
         retryAlgorithmManager.getForBucketsDelete(bucketPb, optionsMap);
-    return run(
-        "DeleteBucket",
-        algorithm,
-        () -> storageRpc.delete(bucketPb, optionsMap),
-        Decoder.identity());
+    return runBoolean("DeleteBucket", algorithm, () -> storageRpc.delete(bucketPb, optionsMap));
   }
 
   @Override
@@ -693,11 +656,8 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage, 
         Opts.unwrap(options).resolveFrom(blob).getRpcOptions();
     ResultRetryAlgorithm<?> algorithm =
         retryAlgorithmManager.getForObjectsDelete(storageObject, optionsMap);
-    return run(
-        "DeleteObject",
-        algorithm,
-        () -> storageRpc.delete(storageObject, optionsMap),
-        Decoder.identity());
+    return runBoolean(
+        "DeleteObject", algorithm, () -> storageRpc.delete(storageObject, optionsMap));
   }
 
   @Override
@@ -774,10 +734,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage, 
             }
             return writer;
           },
-          multiContext != null
-              ? multiContext
-              : StorageClientMetrics.createContext(
-                  getOptions().getStorageClientMetrics(), "RewriteObject"));
+          multiContext);
     } catch (Throwable t) {
       if (multiContext != null) {
         multiContext.recordOperation(getOptions().getStorageClientMetrics(), t);
@@ -1420,7 +1377,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage, 
     String pb = codecs.entity().encode(entity);
     ImmutableMap<StorageRpc.Option, ?> optionsMap = Opts.unwrap(options).getRpcOptions();
     ResultRetryAlgorithm<?> algorithm = retryAlgorithmManager.getForBucketAclGet(pb, optionsMap);
-    return run(
+    return runNullable(
         "GetBucketACL",
         algorithm,
         () -> storageRpc.getAcl(bucket, pb, optionsMap),
@@ -1438,11 +1395,8 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage, 
     final String pb = codecs.entity().encode(entity);
     ImmutableMap<StorageRpc.Option, ?> optionsMap = Opts.unwrap(options).getRpcOptions();
     ResultRetryAlgorithm<?> algorithm = retryAlgorithmManager.getForBucketAclDelete(pb, optionsMap);
-    return run(
-        "DeleteBucketACL",
-        algorithm,
-        () -> storageRpc.deleteAcl(bucket, pb, optionsMap),
-        Decoder.identity());
+    return runBoolean(
+        "DeleteBucketACL", algorithm, () -> storageRpc.deleteAcl(bucket, pb, optionsMap));
   }
 
   @Override
@@ -1512,7 +1466,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage, 
   public Acl getDefaultAcl(final String bucket, final Entity entity) {
     String pb = codecs.entity().encode(entity);
     ResultRetryAlgorithm<?> algorithm = retryAlgorithmManager.getForDefaultObjectAclGet(pb);
-    return run(
+    return runNullable(
         "GetDefaultObjectACL",
         algorithm,
         () -> storageRpc.getDefaultAcl(bucket, pb),
@@ -1523,11 +1477,8 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage, 
   public boolean deleteDefaultAcl(final String bucket, final Entity entity) {
     String pb = codecs.entity().encode(entity);
     ResultRetryAlgorithm<?> algorithm = retryAlgorithmManager.getForDefaultObjectAclDelete(pb);
-    return run(
-        "DeleteDefaultObjectACL",
-        algorithm,
-        () -> storageRpc.deleteDefaultAcl(bucket, pb),
-        Decoder.identity());
+    return runBoolean(
+        "DeleteDefaultObjectACL", algorithm, () -> storageRpc.deleteDefaultAcl(bucket, pb));
   }
 
   @Override
@@ -1575,7 +1526,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage, 
     String pb = codecs.entity().encode(entity);
     ResultRetryAlgorithm<?> algorithm =
         retryAlgorithmManager.getForObjectAclGet(bucket, name, generation, pb);
-    return run(
+    return runNullable(
         "GetObjectACL",
         algorithm,
         () -> storageRpc.getAcl(bucket, name, generation, pb),
@@ -1590,11 +1541,8 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage, 
     String pb = codecs.entity().encode(entity);
     ResultRetryAlgorithm<?> algorithm =
         retryAlgorithmManager.getForObjectAclDelete(bucket, name, generation, pb);
-    return run(
-        "DeleteObjectACL",
-        algorithm,
-        () -> storageRpc.deleteAcl(bucket, name, generation, pb),
-        Decoder.identity());
+    return runBoolean(
+        "DeleteObjectACL", algorithm, () -> storageRpc.deleteAcl(bucket, name, generation, pb));
   }
 
   @Override
@@ -1658,7 +1606,12 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage, 
   @Override
   public Page<HmacKeyMetadata> listHmacKeys(ListHmacKeysOption... options) {
     ImmutableMap<StorageRpc.Option, ?> optionsMap = Opts.unwrap(options).getRpcOptions();
-    return listHmacKeys(getOptions(), retryAlgorithmManager, optionsMap, retrier);
+    return listHmacKeys(
+        getOptions(),
+        retryAlgorithmManager,
+        optionsMap,
+        retrier,
+        StorageClientMetrics.createContext(getOptions().getStorageClientMetrics(), "ListHMACKeys"));
   }
 
   @Override
@@ -1721,7 +1674,8 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage, 
       final HttpStorageOptions serviceOptions,
       final HttpRetryAlgorithmManager retryAlgorithmManager,
       final Map<StorageRpc.Option, ?> options,
-      Retrier retrier) {
+      Retrier retrier,
+      @Nullable StorageMetricsContext metricsContext) {
     ResultRetryAlgorithm<?> algorithm = retryAlgorithmManager.getForHmacKeyList(options);
     return retrier.run(
         algorithm,
@@ -1738,8 +1692,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage, 
               cursor,
               metadata);
         },
-        StorageClientMetrics.createContext(
-            serviceOptions.getStorageClientMetrics(), "ListHMACKeys"));
+        metricsContext);
   }
 
   @Override
@@ -1824,6 +1777,67 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage, 
         StorageClientMetrics.createContext(getOptions().getStorageClientMetrics(), operationName));
   }
 
+  private <T, U> U runNullable(
+      String operationName, ResultRetryAlgorithm<?> algorithm, Callable<T> c, Decoder<T, U> f) {
+    StorageException notFound = new StorageException(404, "Not Found");
+    try {
+      return retrier.run(
+          nonRetryingOnNotFound(algorithm, notFound),
+          () -> {
+            T result = c.call();
+            if (result == null) {
+              throw notFound;
+            }
+            return result;
+          },
+          f,
+          StorageClientMetrics.createContext(
+              getOptions().getStorageClientMetrics(), operationName));
+    } catch (StorageException e) {
+      if (e == notFound) {
+        return null;
+      }
+      throw e;
+    }
+  }
+
+  private boolean runBoolean(
+      String operationName, ResultRetryAlgorithm<?> algorithm, Callable<Boolean> c) {
+    StorageException notFound = new StorageException(404, "Not Found");
+    try {
+      return Boolean.TRUE.equals(
+          retrier.run(
+              nonRetryingOnNotFound(algorithm, notFound),
+              () -> {
+                if (!Boolean.TRUE.equals(c.call())) {
+                  throw notFound;
+                }
+                return Boolean.TRUE;
+              },
+              Decoder.identity(),
+              StorageClientMetrics.createContext(
+                  getOptions().getStorageClientMetrics(), operationName)));
+    } catch (StorageException e) {
+      if (e == notFound) {
+        return false;
+      }
+      throw e;
+    }
+  }
+
+  private static ResultRetryAlgorithm<?> nonRetryingOnNotFound(
+      ResultRetryAlgorithm<?> delegate, StorageException notFound) {
+    return new BasicResultRetryAlgorithm<Object>() {
+      @Override
+      public boolean shouldRetry(Throwable previousThrowable, Object previousResponse) {
+        if (previousThrowable == notFound) {
+          return false;
+        }
+        return delegate.shouldRetry(previousThrowable, null);
+      }
+    };
+  }
+
   @Override
   public Notification createNotification(
       final String bucket, final NotificationInfo notificationInfo) {
@@ -1842,7 +1856,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage, 
   public Notification getNotification(final String bucket, final String notificationId) {
     ResultRetryAlgorithm<?> algorithm =
         retryAlgorithmManager.getForNotificationGet(bucket, notificationId);
-    return run(
+    return runNullable(
         "GetNotification",
         algorithm,
         () -> storageRpc.getNotification(bucket, notificationId),
@@ -1868,11 +1882,10 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage, 
   public boolean deleteNotification(final String bucket, final String notificationId) {
     ResultRetryAlgorithm<?> algorithm =
         retryAlgorithmManager.getForNotificationDelete(bucket, notificationId);
-    return run(
+    return runBoolean(
         "DeleteNotification",
         algorithm,
-        () -> storageRpc.deleteNotification(bucket, notificationId),
-        Decoder.identity());
+        () -> storageRpc.deleteNotification(bucket, notificationId));
   }
 
   @Override
@@ -1881,11 +1894,16 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage, 
   }
 
   private Blob internalGetBlob(BlobId blob, Map<StorageRpc.Option, ?> optionsMap) {
+    return internalGetBlob(blob, optionsMap, "GetObject");
+  }
+
+  private Blob internalGetBlob(
+      BlobId blob, Map<StorageRpc.Option, ?> optionsMap, String operationName) {
     StorageObject storedObject = codecs.blobId().encode(blob);
     ResultRetryAlgorithm<?> algorithm =
         retryAlgorithmManager.getForObjectsGet(storedObject, optionsMap);
-    return run(
-        "GetObject",
+    return runNullable(
+        operationName,
         algorithm,
         () -> storageRpc.get(storedObject, optionsMap),
         (x) -> {
@@ -1895,12 +1913,17 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage, 
   }
 
   private Bucket internalBucketGet(String bucket, Map<StorageRpc.Option, ?> optionsMap) {
+    return internalBucketGet(bucket, optionsMap, "GetBucket");
+  }
+
+  private Bucket internalBucketGet(
+      String bucket, Map<StorageRpc.Option, ?> optionsMap, String operationName) {
     com.google.api.services.storage.model.Bucket bucketPb =
         codecs.bucketInfo().encode(BucketInfo.of(bucket));
     ResultRetryAlgorithm<?> algorithm =
         retryAlgorithmManager.getForBucketsGet(bucketPb, optionsMap);
-    return run(
-        "GetBucket",
+    return runNullable(
+        operationName,
         algorithm,
         () -> storageRpc.get(bucketPb, optionsMap),
         (b) -> Conversions.json().bucketInfo().decode(b).asBucket(this));
@@ -2057,8 +2080,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage, 
     ImmutableMap<StorageRpc.Option, ?> optionsMap = opts.getRpcOptions();
     ResultRetryAlgorithm<?> algorithm =
         retryAlgorithmManager.getForObjectsDelete(storageObject, optionsMap);
-    return run(
-        "DeleteObject",
+    return retrier.run(
         algorithm,
         () -> {
           boolean deleted = storageRpc.delete(storageObject, optionsMap);
@@ -2077,8 +2099,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage, 
     ImmutableMap<StorageRpc.Option, ?> optionsMap = opts.getRpcOptions();
     ResultRetryAlgorithm<?> algorithm =
         retryAlgorithmManager.getForObjectsGet(storedObject, optionsMap);
-    return run(
-        "GetObject",
+    return retrier.run(
         algorithm,
         () -> {
           StorageObject storageObject = storageRpc.get(storedObject, optionsMap);

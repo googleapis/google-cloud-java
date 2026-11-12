@@ -30,12 +30,14 @@ public interface AutoProtectionPolicyOrBuilder
    *
    *
    * <pre>
-   * Identifier. The resource name of the AutoprotectionPolicy.
+   * Output only. Identifier. The resource name of the AutoprotectionPolicy.
    * Format:
    * `projects/{project}/locations/{location}/autoProtectionPolicies/{auto_protection_policy}`
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IDENTIFIER];
+   * </code>
    *
    * @return The name.
    */
@@ -45,12 +47,14 @@ public interface AutoProtectionPolicyOrBuilder
    *
    *
    * <pre>
-   * Identifier. The resource name of the AutoprotectionPolicy.
+   * Output only. Identifier. The resource name of the AutoprotectionPolicy.
    * Format:
    * `projects/{project}/locations/{location}/autoProtectionPolicies/{auto_protection_policy}`
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IDENTIFIER];
+   * </code>
    *
    * @return The bytes for name.
    */
@@ -60,7 +64,8 @@ public interface AutoProtectionPolicyOrBuilder
    *
    *
    * <pre>
-   * Optional. A description of the policy.
+   * Optional. A description of the policy. The description must be at most 2048
+   * characters.
    * </pre>
    *
    * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -73,7 +78,8 @@ public interface AutoProtectionPolicyOrBuilder
    *
    *
    * <pre>
-   * Optional. A description of the policy.
+   * Optional. A description of the policy. The description must be at most 2048
+   * characters.
    * </pre>
    *
    * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>

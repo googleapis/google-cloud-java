@@ -616,6 +616,90 @@ public interface EngineOrBuilder
    *
    *
    * <pre>
+   * Optional. Configurations for the Knowledge Graph. Only applicable if
+   * [solution_type][google.cloud.discoveryengine.v1.Engine.solution_type] is
+   * [SOLUTION_TYPE_SEARCH][google.cloud.discoveryengine.v1.SolutionType.SOLUTION_TYPE_SEARCH].
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.Engine.KnowledgeGraphConfig knowledge_graph_config = 23 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the knowledgeGraphConfig field is set.
+   */
+  boolean hasKnowledgeGraphConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configurations for the Knowledge Graph. Only applicable if
+   * [solution_type][google.cloud.discoveryengine.v1.Engine.solution_type] is
+   * [SOLUTION_TYPE_SEARCH][google.cloud.discoveryengine.v1.SolutionType.SOLUTION_TYPE_SEARCH].
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.Engine.KnowledgeGraphConfig knowledge_graph_config = 23 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The knowledgeGraphConfig.
+   */
+  com.google.cloud.discoveryengine.v1.Engine.KnowledgeGraphConfig getKnowledgeGraphConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configurations for the Knowledge Graph. Only applicable if
+   * [solution_type][google.cloud.discoveryengine.v1.Engine.solution_type] is
+   * [SOLUTION_TYPE_SEARCH][google.cloud.discoveryengine.v1.SolutionType.SOLUTION_TYPE_SEARCH].
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.Engine.KnowledgeGraphConfig knowledge_graph_config = 23 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.discoveryengine.v1.Engine.KnowledgeGraphConfigOrBuilder
+      getKnowledgeGraphConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. This the application type which this engine resource
+   * represents. NOTE: this is a new concept independ of existing industry
+   * vertical or solution type.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.Engine.AppType app_type = 24 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for appType.
+   */
+  int getAppTypeValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. This the application type which this engine resource
+   * represents. NOTE: this is a new concept independ of existing industry
+   * vertical or solution type.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.Engine.AppType app_type = 24 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The appType.
+   */
+  com.google.cloud.discoveryengine.v1.Engine.AppType getAppType();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. Whether to disable analytics for searches performed on this
    * engine.
    * </pre>
@@ -625,6 +709,1032 @@ public interface EngineOrBuilder
    * @return The disableAnalytics.
    */
   boolean getDisableAnalytics();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Non-empty default. Session config for the engine.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.SessionConfig session_config = 29 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+   * </code>
+   *
+   * @return Whether the sessionConfig field is set.
+   */
+  boolean hasSessionConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Non-empty default. Session config for the engine.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.SessionConfig session_config = 29 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+   * </code>
+   *
+   * @return The sessionConfig.
+   */
+  com.google.cloud.discoveryengine.v1.SessionConfig getSessionConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Non-empty default. Session config for the engine.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.SessionConfig session_config = 29 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+   * </code>
+   */
+  com.google.cloud.discoveryengine.v1.SessionConfigOrBuilder getSessionConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Feature config for the engine to opt in or opt out of features.
+   * Supported keys:
+   *
+   * * `*`: all features, if it's present, all other feature state settings are
+   * ignored.
+   * * `agent-gallery`
+   * * `no-code-agent-builder`
+   * * `prompt-gallery`
+   * * `model-selector`
+   * * `notebook-lm`
+   * * `people-search`
+   * * `people-search-org-chart`
+   * * `bi-directional-audio`
+   * * `speech-to-text`
+   * * `feedback`
+   * * `session-sharing`
+   * * `personalization-memory`
+   * * `personalization-suggested-highlights`
+   * * `mobile-app-access`
+   * * `disable-agent-sharing`
+   * * `disable-image-generation`
+   * * `disable-video-generation`
+   * * `disable-onedrive-upload`
+   * * `disable-talk-to-content`
+   * * `disable-google-drive-upload`
+   * * `disable-welcome-emails`
+   * * `disable-canvas`
+   * * `canvas-workspace`
+   * * `canvas-app-builder`
+   * * `skills`
+   * * `skill-sharing`
+   * * `skill-sharing-without-admin-approval`
+   * * `disable-projects`
+   * * `sobi`
+   * * `enable-end-user-sharing-with-groups`
+   * * `single-agent-orchestration`
+   * * `multi-agent-orchestration`
+   * * `cross-product-intelligence`
+   * * `workflow-agents`
+   * * `in-app-notifications`
+   * * `code-extraction`
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.discoveryengine.v1.Engine.FeatureState&gt; features = 30 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getFeaturesCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Feature config for the engine to opt in or opt out of features.
+   * Supported keys:
+   *
+   * * `*`: all features, if it's present, all other feature state settings are
+   * ignored.
+   * * `agent-gallery`
+   * * `no-code-agent-builder`
+   * * `prompt-gallery`
+   * * `model-selector`
+   * * `notebook-lm`
+   * * `people-search`
+   * * `people-search-org-chart`
+   * * `bi-directional-audio`
+   * * `speech-to-text`
+   * * `feedback`
+   * * `session-sharing`
+   * * `personalization-memory`
+   * * `personalization-suggested-highlights`
+   * * `mobile-app-access`
+   * * `disable-agent-sharing`
+   * * `disable-image-generation`
+   * * `disable-video-generation`
+   * * `disable-onedrive-upload`
+   * * `disable-talk-to-content`
+   * * `disable-google-drive-upload`
+   * * `disable-welcome-emails`
+   * * `disable-canvas`
+   * * `canvas-workspace`
+   * * `canvas-app-builder`
+   * * `skills`
+   * * `skill-sharing`
+   * * `skill-sharing-without-admin-approval`
+   * * `disable-projects`
+   * * `sobi`
+   * * `enable-end-user-sharing-with-groups`
+   * * `single-agent-orchestration`
+   * * `multi-agent-orchestration`
+   * * `cross-product-intelligence`
+   * * `workflow-agents`
+   * * `in-app-notifications`
+   * * `code-extraction`
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.discoveryengine.v1.Engine.FeatureState&gt; features = 30 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  boolean containsFeatures(java.lang.String key);
+
+  /** Use {@link #getFeaturesMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, com.google.cloud.discoveryengine.v1.Engine.FeatureState>
+      getFeatures();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Feature config for the engine to opt in or opt out of features.
+   * Supported keys:
+   *
+   * * `*`: all features, if it's present, all other feature state settings are
+   * ignored.
+   * * `agent-gallery`
+   * * `no-code-agent-builder`
+   * * `prompt-gallery`
+   * * `model-selector`
+   * * `notebook-lm`
+   * * `people-search`
+   * * `people-search-org-chart`
+   * * `bi-directional-audio`
+   * * `speech-to-text`
+   * * `feedback`
+   * * `session-sharing`
+   * * `personalization-memory`
+   * * `personalization-suggested-highlights`
+   * * `mobile-app-access`
+   * * `disable-agent-sharing`
+   * * `disable-image-generation`
+   * * `disable-video-generation`
+   * * `disable-onedrive-upload`
+   * * `disable-talk-to-content`
+   * * `disable-google-drive-upload`
+   * * `disable-welcome-emails`
+   * * `disable-canvas`
+   * * `canvas-workspace`
+   * * `canvas-app-builder`
+   * * `skills`
+   * * `skill-sharing`
+   * * `skill-sharing-without-admin-approval`
+   * * `disable-projects`
+   * * `sobi`
+   * * `enable-end-user-sharing-with-groups`
+   * * `single-agent-orchestration`
+   * * `multi-agent-orchestration`
+   * * `cross-product-intelligence`
+   * * `workflow-agents`
+   * * `in-app-notifications`
+   * * `code-extraction`
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.discoveryengine.v1.Engine.FeatureState&gt; features = 30 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.Map<java.lang.String, com.google.cloud.discoveryengine.v1.Engine.FeatureState>
+      getFeaturesMap();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Feature config for the engine to opt in or opt out of features.
+   * Supported keys:
+   *
+   * * `*`: all features, if it's present, all other feature state settings are
+   * ignored.
+   * * `agent-gallery`
+   * * `no-code-agent-builder`
+   * * `prompt-gallery`
+   * * `model-selector`
+   * * `notebook-lm`
+   * * `people-search`
+   * * `people-search-org-chart`
+   * * `bi-directional-audio`
+   * * `speech-to-text`
+   * * `feedback`
+   * * `session-sharing`
+   * * `personalization-memory`
+   * * `personalization-suggested-highlights`
+   * * `mobile-app-access`
+   * * `disable-agent-sharing`
+   * * `disable-image-generation`
+   * * `disable-video-generation`
+   * * `disable-onedrive-upload`
+   * * `disable-talk-to-content`
+   * * `disable-google-drive-upload`
+   * * `disable-welcome-emails`
+   * * `disable-canvas`
+   * * `canvas-workspace`
+   * * `canvas-app-builder`
+   * * `skills`
+   * * `skill-sharing`
+   * * `skill-sharing-without-admin-approval`
+   * * `disable-projects`
+   * * `sobi`
+   * * `enable-end-user-sharing-with-groups`
+   * * `single-agent-orchestration`
+   * * `multi-agent-orchestration`
+   * * `cross-product-intelligence`
+   * * `workflow-agents`
+   * * `in-app-notifications`
+   * * `code-extraction`
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.discoveryengine.v1.Engine.FeatureState&gt; features = 30 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  /* nullable */
+  com.google.cloud.discoveryengine.v1.Engine.FeatureState getFeaturesOrDefault(
+      java.lang.String key,
+      /* nullable */
+      com.google.cloud.discoveryengine.v1.Engine.FeatureState defaultValue);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Feature config for the engine to opt in or opt out of features.
+   * Supported keys:
+   *
+   * * `*`: all features, if it's present, all other feature state settings are
+   * ignored.
+   * * `agent-gallery`
+   * * `no-code-agent-builder`
+   * * `prompt-gallery`
+   * * `model-selector`
+   * * `notebook-lm`
+   * * `people-search`
+   * * `people-search-org-chart`
+   * * `bi-directional-audio`
+   * * `speech-to-text`
+   * * `feedback`
+   * * `session-sharing`
+   * * `personalization-memory`
+   * * `personalization-suggested-highlights`
+   * * `mobile-app-access`
+   * * `disable-agent-sharing`
+   * * `disable-image-generation`
+   * * `disable-video-generation`
+   * * `disable-onedrive-upload`
+   * * `disable-talk-to-content`
+   * * `disable-google-drive-upload`
+   * * `disable-welcome-emails`
+   * * `disable-canvas`
+   * * `canvas-workspace`
+   * * `canvas-app-builder`
+   * * `skills`
+   * * `skill-sharing`
+   * * `skill-sharing-without-admin-approval`
+   * * `disable-projects`
+   * * `sobi`
+   * * `enable-end-user-sharing-with-groups`
+   * * `single-agent-orchestration`
+   * * `multi-agent-orchestration`
+   * * `cross-product-intelligence`
+   * * `workflow-agents`
+   * * `in-app-notifications`
+   * * `code-extraction`
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.discoveryengine.v1.Engine.FeatureState&gt; features = 30 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.discoveryengine.v1.Engine.FeatureState getFeaturesOrThrow(java.lang.String key);
+
+  /** Use {@link #getFeaturesValueMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.Integer> getFeaturesValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Feature config for the engine to opt in or opt out of features.
+   * Supported keys:
+   *
+   * * `*`: all features, if it's present, all other feature state settings are
+   * ignored.
+   * * `agent-gallery`
+   * * `no-code-agent-builder`
+   * * `prompt-gallery`
+   * * `model-selector`
+   * * `notebook-lm`
+   * * `people-search`
+   * * `people-search-org-chart`
+   * * `bi-directional-audio`
+   * * `speech-to-text`
+   * * `feedback`
+   * * `session-sharing`
+   * * `personalization-memory`
+   * * `personalization-suggested-highlights`
+   * * `mobile-app-access`
+   * * `disable-agent-sharing`
+   * * `disable-image-generation`
+   * * `disable-video-generation`
+   * * `disable-onedrive-upload`
+   * * `disable-talk-to-content`
+   * * `disable-google-drive-upload`
+   * * `disable-welcome-emails`
+   * * `disable-canvas`
+   * * `canvas-workspace`
+   * * `canvas-app-builder`
+   * * `skills`
+   * * `skill-sharing`
+   * * `skill-sharing-without-admin-approval`
+   * * `disable-projects`
+   * * `sobi`
+   * * `enable-end-user-sharing-with-groups`
+   * * `single-agent-orchestration`
+   * * `multi-agent-orchestration`
+   * * `cross-product-intelligence`
+   * * `workflow-agents`
+   * * `in-app-notifications`
+   * * `code-extraction`
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.discoveryengine.v1.Engine.FeatureState&gt; features = 30 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.Map<java.lang.String, java.lang.Integer> getFeaturesValueMap();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Feature config for the engine to opt in or opt out of features.
+   * Supported keys:
+   *
+   * * `*`: all features, if it's present, all other feature state settings are
+   * ignored.
+   * * `agent-gallery`
+   * * `no-code-agent-builder`
+   * * `prompt-gallery`
+   * * `model-selector`
+   * * `notebook-lm`
+   * * `people-search`
+   * * `people-search-org-chart`
+   * * `bi-directional-audio`
+   * * `speech-to-text`
+   * * `feedback`
+   * * `session-sharing`
+   * * `personalization-memory`
+   * * `personalization-suggested-highlights`
+   * * `mobile-app-access`
+   * * `disable-agent-sharing`
+   * * `disable-image-generation`
+   * * `disable-video-generation`
+   * * `disable-onedrive-upload`
+   * * `disable-talk-to-content`
+   * * `disable-google-drive-upload`
+   * * `disable-welcome-emails`
+   * * `disable-canvas`
+   * * `canvas-workspace`
+   * * `canvas-app-builder`
+   * * `skills`
+   * * `skill-sharing`
+   * * `skill-sharing-without-admin-approval`
+   * * `disable-projects`
+   * * `sobi`
+   * * `enable-end-user-sharing-with-groups`
+   * * `single-agent-orchestration`
+   * * `multi-agent-orchestration`
+   * * `cross-product-intelligence`
+   * * `workflow-agents`
+   * * `in-app-notifications`
+   * * `code-extraction`
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.discoveryengine.v1.Engine.FeatureState&gt; features = 30 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getFeaturesValueOrDefault(java.lang.String key, int defaultValue);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Feature config for the engine to opt in or opt out of features.
+   * Supported keys:
+   *
+   * * `*`: all features, if it's present, all other feature state settings are
+   * ignored.
+   * * `agent-gallery`
+   * * `no-code-agent-builder`
+   * * `prompt-gallery`
+   * * `model-selector`
+   * * `notebook-lm`
+   * * `people-search`
+   * * `people-search-org-chart`
+   * * `bi-directional-audio`
+   * * `speech-to-text`
+   * * `feedback`
+   * * `session-sharing`
+   * * `personalization-memory`
+   * * `personalization-suggested-highlights`
+   * * `mobile-app-access`
+   * * `disable-agent-sharing`
+   * * `disable-image-generation`
+   * * `disable-video-generation`
+   * * `disable-onedrive-upload`
+   * * `disable-talk-to-content`
+   * * `disable-google-drive-upload`
+   * * `disable-welcome-emails`
+   * * `disable-canvas`
+   * * `canvas-workspace`
+   * * `canvas-app-builder`
+   * * `skills`
+   * * `skill-sharing`
+   * * `skill-sharing-without-admin-approval`
+   * * `disable-projects`
+   * * `sobi`
+   * * `enable-end-user-sharing-with-groups`
+   * * `single-agent-orchestration`
+   * * `multi-agent-orchestration`
+   * * `cross-product-intelligence`
+   * * `workflow-agents`
+   * * `in-app-notifications`
+   * * `code-extraction`
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.discoveryengine.v1.Engine.FeatureState&gt; features = 30 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getFeaturesValueOrThrow(java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. CMEK-related information for the Engine.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.CmekConfig cmek_config = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the cmekConfig field is set.
+   */
+  boolean hasCmekConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. CMEK-related information for the Engine.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.CmekConfig cmek_config = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The cmekConfig.
+   */
+  com.google.cloud.discoveryengine.v1.CmekConfig getCmekConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. CMEK-related information for the Engine.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.CmekConfig cmek_config = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.discoveryengine.v1.CmekConfigOrBuilder getCmekConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for configurable billing approach.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.Engine.ConfigurableBillingApproach configurable_billing_approach = 36 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for configurableBillingApproach.
+   */
+  int getConfigurableBillingApproachValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for configurable billing approach.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.Engine.ConfigurableBillingApproach configurable_billing_approach = 36 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The configurableBillingApproach.
+   */
+  com.google.cloud.discoveryengine.v1.Engine.ConfigurableBillingApproach
+      getConfigurableBillingApproach();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Maps a model name to its specific configuration for this engine.
+   * This allows admin users to turn on/off individual models. This only stores
+   * models whose states are overridden by the admin.
+   *
+   * When the state is unspecified, or model_configs is empty for this
+   * model, the system will decide if this model should be available or not
+   * based on the default configuration. For example, a preview model
+   * should be disabled by default if the admin has not chosen to enable it.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.discoveryengine.v1.Engine.ModelState&gt; model_configs = 37 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getModelConfigsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Maps a model name to its specific configuration for this engine.
+   * This allows admin users to turn on/off individual models. This only stores
+   * models whose states are overridden by the admin.
+   *
+   * When the state is unspecified, or model_configs is empty for this
+   * model, the system will decide if this model should be available or not
+   * based on the default configuration. For example, a preview model
+   * should be disabled by default if the admin has not chosen to enable it.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.discoveryengine.v1.Engine.ModelState&gt; model_configs = 37 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  boolean containsModelConfigs(java.lang.String key);
+
+  /** Use {@link #getModelConfigsMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, com.google.cloud.discoveryengine.v1.Engine.ModelState>
+      getModelConfigs();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Maps a model name to its specific configuration for this engine.
+   * This allows admin users to turn on/off individual models. This only stores
+   * models whose states are overridden by the admin.
+   *
+   * When the state is unspecified, or model_configs is empty for this
+   * model, the system will decide if this model should be available or not
+   * based on the default configuration. For example, a preview model
+   * should be disabled by default if the admin has not chosen to enable it.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.discoveryengine.v1.Engine.ModelState&gt; model_configs = 37 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.Map<java.lang.String, com.google.cloud.discoveryengine.v1.Engine.ModelState>
+      getModelConfigsMap();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Maps a model name to its specific configuration for this engine.
+   * This allows admin users to turn on/off individual models. This only stores
+   * models whose states are overridden by the admin.
+   *
+   * When the state is unspecified, or model_configs is empty for this
+   * model, the system will decide if this model should be available or not
+   * based on the default configuration. For example, a preview model
+   * should be disabled by default if the admin has not chosen to enable it.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.discoveryengine.v1.Engine.ModelState&gt; model_configs = 37 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  /* nullable */
+  com.google.cloud.discoveryengine.v1.Engine.ModelState getModelConfigsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      com.google.cloud.discoveryengine.v1.Engine.ModelState defaultValue);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Maps a model name to its specific configuration for this engine.
+   * This allows admin users to turn on/off individual models. This only stores
+   * models whose states are overridden by the admin.
+   *
+   * When the state is unspecified, or model_configs is empty for this
+   * model, the system will decide if this model should be available or not
+   * based on the default configuration. For example, a preview model
+   * should be disabled by default if the admin has not chosen to enable it.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.discoveryengine.v1.Engine.ModelState&gt; model_configs = 37 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.discoveryengine.v1.Engine.ModelState getModelConfigsOrThrow(
+      java.lang.String key);
+
+  /** Use {@link #getModelConfigsValueMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.Integer> getModelConfigsValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Maps a model name to its specific configuration for this engine.
+   * This allows admin users to turn on/off individual models. This only stores
+   * models whose states are overridden by the admin.
+   *
+   * When the state is unspecified, or model_configs is empty for this
+   * model, the system will decide if this model should be available or not
+   * based on the default configuration. For example, a preview model
+   * should be disabled by default if the admin has not chosen to enable it.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.discoveryengine.v1.Engine.ModelState&gt; model_configs = 37 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.Map<java.lang.String, java.lang.Integer> getModelConfigsValueMap();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Maps a model name to its specific configuration for this engine.
+   * This allows admin users to turn on/off individual models. This only stores
+   * models whose states are overridden by the admin.
+   *
+   * When the state is unspecified, or model_configs is empty for this
+   * model, the system will decide if this model should be available or not
+   * based on the default configuration. For example, a preview model
+   * should be disabled by default if the admin has not chosen to enable it.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.discoveryengine.v1.Engine.ModelState&gt; model_configs = 37 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getModelConfigsValueOrDefault(java.lang.String key, int defaultValue);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Maps a model name to its specific configuration for this engine.
+   * This allows admin users to turn on/off individual models. This only stores
+   * models whose states are overridden by the admin.
+   *
+   * When the state is unspecified, or model_configs is empty for this
+   * model, the system will decide if this model should be available or not
+   * based on the default configuration. For example, a preview model
+   * should be disabled by default if the admin has not chosen to enable it.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.discoveryengine.v1.Engine.ModelState&gt; model_configs = 37 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getModelConfigsValueOrThrow(java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Observability config for the engine.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.ObservabilityConfig observability_config = 39 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the observabilityConfig field is set.
+   */
+  boolean hasObservabilityConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Observability config for the engine.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.ObservabilityConfig observability_config = 39 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The observabilityConfig.
+   */
+  com.google.cloud.discoveryengine.v1.ObservabilityConfig getObservabilityConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Observability config for the engine.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.ObservabilityConfig observability_config = 39 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.discoveryengine.v1.ObservabilityConfigOrBuilder
+      getObservabilityConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Maps a connector ID (e.g., "hybrid-github", "shopify") to
+   * tenant-specific information required for that connector. The structure of
+   * the tenant information string is connector-dependent.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; connector_tenant_info = 42 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getConnectorTenantInfoCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Maps a connector ID (e.g., "hybrid-github", "shopify") to
+   * tenant-specific information required for that connector. The structure of
+   * the tenant information string is connector-dependent.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; connector_tenant_info = 42 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  boolean containsConnectorTenantInfo(java.lang.String key);
+
+  /** Use {@link #getConnectorTenantInfoMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.String> getConnectorTenantInfo();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Maps a connector ID (e.g., "hybrid-github", "shopify") to
+   * tenant-specific information required for that connector. The structure of
+   * the tenant information string is connector-dependent.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; connector_tenant_info = 42 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.Map<java.lang.String, java.lang.String> getConnectorTenantInfoMap();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Maps a connector ID (e.g., "hybrid-github", "shopify") to
+   * tenant-specific information required for that connector. The structure of
+   * the tenant information string is connector-dependent.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; connector_tenant_info = 42 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  /* nullable */
+  java.lang.String getConnectorTenantInfoOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Maps a connector ID (e.g., "hybrid-github", "shopify") to
+   * tenant-specific information required for that connector. The structure of
+   * the tenant information string is connector-dependent.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; connector_tenant_info = 42 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.lang.String getConnectorTenantInfoOrThrow(java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The agent gateway setting for the engine.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.AgentGatewaySetting agent_gateway_setting = 43 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the agentGatewaySetting field is set.
+   */
+  boolean hasAgentGatewaySetting();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The agent gateway setting for the engine.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.AgentGatewaySetting agent_gateway_setting = 43 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The agentGatewaySetting.
+   */
+  com.google.cloud.discoveryengine.v1.AgentGatewaySetting getAgentGatewaySetting();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The agent gateway setting for the engine.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.AgentGatewaySetting agent_gateway_setting = 43 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.discoveryengine.v1.AgentGatewaySettingOrBuilder
+      getAgentGatewaySettingOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The visibility of marketplace agents in the agent gallery.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.Engine.MarketplaceAgentVisibility marketplace_agent_visibility = 44 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for marketplaceAgentVisibility.
+   */
+  int getMarketplaceAgentVisibilityValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The visibility of marketplace agents in the agent gallery.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.Engine.MarketplaceAgentVisibility marketplace_agent_visibility = 44 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The marketplaceAgentVisibility.
+   */
+  com.google.cloud.discoveryengine.v1.Engine.MarketplaceAgentVisibility
+      getMarketplaceAgentVisibility();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The emails of the procurement contacts.
+   * </pre>
+   *
+   * <code>
+   * repeated string procurement_contact_emails = 45 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return A list containing the procurementContactEmails.
+   */
+  java.util.List<java.lang.String> getProcurementContactEmailsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The emails of the procurement contacts.
+   * </pre>
+   *
+   * <code>
+   * repeated string procurement_contact_emails = 45 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The count of procurementContactEmails.
+   */
+  int getProcurementContactEmailsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The emails of the procurement contacts.
+   * </pre>
+   *
+   * <code>
+   * repeated string procurement_contact_emails = 45 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The procurementContactEmails at the given index.
+   */
+  java.lang.String getProcurementContactEmails(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The emails of the procurement contacts.
+   * </pre>
+   *
+   * <code>
+   * repeated string procurement_contact_emails = 45 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the procurementContactEmails at the given index.
+   */
+  com.google.protobuf.ByteString getProcurementContactEmailsBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The Agent registry containing the agents, MCP servers and
+   * tools associated with this engine. Derived server-side from the linked
+   * Agent Gateway's registry.
+   * </pre>
+   *
+   * <code>string associated_agent_registry = 50 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The associatedAgentRegistry.
+   */
+  java.lang.String getAssociatedAgentRegistry();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The Agent registry containing the agents, MCP servers and
+   * tools associated with this engine. Derived server-side from the linked
+   * Agent Gateway's registry.
+   * </pre>
+   *
+   * <code>string associated_agent_registry = 50 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The bytes for associatedAgentRegistry.
+   */
+  com.google.protobuf.ByteString getAssociatedAgentRegistryBytes();
 
   com.google.cloud.discoveryengine.v1.Engine.EngineConfigCase getEngineConfigCase();
 

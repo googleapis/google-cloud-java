@@ -669,6 +669,28 @@ public class BigQueryJsonResultSetTest {
   }
 
   @Test
+  public void testInt64Timestamps() throws SQLException {
+    Field rangeField =
+        Field.newBuilder("rangeTs", StandardSQLTypeName.RANGE)
+            .setRangeElementType(FieldElementType.newBuilder().setType("TIMESTAMP").build())
+            .build();
+    FieldList fields = FieldList.of(Field.of("ts", StandardSQLTypeName.TIMESTAMP), rangeField);
+    FieldValueList row =
+        FieldValueList.of(
+            ImmutableList.of(
+                FieldValue.of(Attribute.PRIMITIVE, "253402300799999999", true),
+                FieldValue.of(Attribute.RANGE, Range.of("[-1, 253402300799999999)"), true)),
+            fields);
+    BigQueryJsonResultSet rs = createJsonResultSet(fields, row, false);
+    assertThat(rs.next()).isTrue();
+    assertThat(rs.getString("ts")).isEqualTo("9999-12-31 23:59:59.999999");
+    assertThat(rs.getTimestamp("ts").toInstant())
+        .isEqualTo(Instant.parse("9999-12-31T23:59:59.999999Z"));
+    assertThat(rs.getString("rangeTs"))
+        .isEqualTo("[1969-12-31 23:59:59.999999, 9999-12-31 23:59:59.999999)");
+  }
+
+  @Test
   public void testRangeTimestampPicosDisabled() throws SQLException {
     Field rangeField =
         Field.newBuilder("rangeTs", StandardSQLTypeName.RANGE)
@@ -681,7 +703,7 @@ public class BigQueryJsonResultSetTest {
     BigQueryJsonResultSet rs = createJsonResultSet(fields, row, false);
     assertThat(rs.next()).isTrue();
     assertThat(rs.getString("rangeTs"))
-        .isEqualTo("[1680174859.123456789123, 1680174860.123456789123)");
+        .isEqualTo("[2023-03-30 11:14:19.123456, 2023-03-30 11:14:20.123456)");
   }
 
   @Test
@@ -808,8 +830,8 @@ public class BigQueryJsonResultSetTest {
                   .build(),
               Field.of("ts_struct", StandardSQLTypeName.STRUCT, FieldList.of(tsSubField)),
               Field.of("dt_struct", StandardSQLTypeName.STRUCT, FieldList.of(dtSubField)));
-      FieldValue tsVal = FieldValue.of(Attribute.PRIMITIVE, "1735734896.123000");
-      FieldValue dtVal = FieldValue.of(Attribute.PRIMITIVE, "2025-01-01 12:34:56.123000");
+      FieldValue tsVal = FieldValue.of(Attribute.PRIMITIVE, "1741487696.123000");
+      FieldValue dtVal = FieldValue.of(Attribute.PRIMITIVE, "2025-03-09 02:34:56.123000");
       FieldValueList row =
           FieldValueList.of(
               ImmutableList.of(
@@ -827,20 +849,25 @@ public class BigQueryJsonResultSetTest {
       BigQueryJsonResultSet rs = createJsonResultSet(fields, row, false);
       assertThat(rs.next()).isTrue();
 
-      assertThat(rs.getString("ts")).isEqualTo("2025-01-01 12:34:56.123000");
-      assertThat(rs.getObject("ts", String.class)).isEqualTo("2025-01-01 12:34:56.123000");
-      assertThat(rs.getString("dt")).isEqualTo("2025-01-01 12:34:56.123000");
-      assertThat(rs.getString("ts_array")).isEqualTo("[2025-01-01 12:34:56.123]");
-      assertThat(rs.getString("dt_array")).isEqualTo("[2025-01-01 12:34:56.123]");
-      assertThat(rs.getString("ts_struct")).isEqualTo("{\"ts\":\"2025-01-01 12:34:56.123\"}");
-      assertThat(rs.getString("dt_struct")).isEqualTo("{\"dt\":\"2025-01-01 12:34:56.123\"}");
+      assertThat(rs.getString("ts")).isEqualTo("2025-03-09 02:34:56.123000");
+      assertThat(rs.getObject("ts", String.class)).isEqualTo("2025-03-09 02:34:56.123000");
+      assertThat(rs.getString("dt")).isEqualTo("2025-03-09 02:34:56.123000");
+      assertThat(rs.getDate("dt").toLocalDate()).isEqualTo(LocalDate.of(2025, 3, 9));
+      assertThat(rs.getObject("dt", Date.class).toLocalDate()).isEqualTo(LocalDate.of(2025, 3, 9));
+      assertThat(rs.getTime("dt").toLocalTime()).isEqualTo(LocalTime.of(2, 34, 56));
+      assertThat(rs.getObject("dt", Time.class).toLocalTime()).isEqualTo(LocalTime.of(2, 34, 56));
+      assertThat(rs.getString("ts_array")).isEqualTo("[2025-03-09 02:34:56.123]");
+      assertThat(rs.getString("dt_array")).isEqualTo("[2025-03-09 02:34:56.123]");
+      assertThat(rs.getString("ts_struct")).isEqualTo("{\"ts\":\"2025-03-09 02:34:56.123\"}");
+      assertThat(rs.getString("dt_struct")).isEqualTo("{\"dt\":\"2025-03-09 02:34:56.123\"}");
 
       try (ResultSet tsArrayRs = rs.getArray("ts_array").getResultSet();
           ResultSet dtArrayRs = rs.getArray("dt_array").getResultSet()) {
         assertThat(tsArrayRs.next()).isTrue();
-        assertThat(tsArrayRs.getString(2)).isEqualTo("2025-01-01 12:34:56.123000");
+        assertThat(tsArrayRs.getString(2)).isEqualTo("2025-03-09 02:34:56.123000");
         assertThat(dtArrayRs.next()).isTrue();
-        assertThat(dtArrayRs.getString(2)).isEqualTo("2025-01-01 12:34:56.123000");
+        assertThat(dtArrayRs.getString(2)).isEqualTo("2025-03-09 02:34:56.123000");
+        assertThat(dtArrayRs.getTime(2).toLocalTime()).isEqualTo(LocalTime.of(2, 34, 56));
       }
     } finally {
       TimeZone.setDefault(originalDefault);

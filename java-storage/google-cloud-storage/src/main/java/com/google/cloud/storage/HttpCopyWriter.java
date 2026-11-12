@@ -41,7 +41,12 @@ public class HttpCopyWriter extends CopyWriter {
 
   HttpCopyWriter(
       HttpStorageOptions serviceOptions, RewriteResponse rewriteResponse, Retrier retrier) {
-    this(serviceOptions, rewriteResponse, retrier, null);
+    this(
+        serviceOptions,
+        rewriteResponse,
+        retrier,
+        StorageClientMetrics.createMultiStepContext(
+            serviceOptions.getStorageClientMetrics(), "RewriteObject"));
   }
 
   HttpCopyWriter(
@@ -95,17 +100,12 @@ public class HttpCopyWriter extends CopyWriter {
     try {
       if (!isDone()) {
         RewriteRequest rewriteRequest = rewriteResponse.rewriteRequest;
-        StorageMetricsContext chunkContext =
-            metricsContext != null
-                ? metricsContext
-                : StorageClientMetrics.createContext(
-                    serviceOptions.getStorageClientMetrics(), "RewriteObject");
         RewriteResponse resp =
             retrier.run(
                 serviceOptions.getRetryAlgorithmManager().getForObjectsRewrite(rewriteRequest),
                 () -> storageRpc.continueRewrite(rewriteResponse),
                 Decoder.identity(),
-                chunkContext);
+                metricsContext);
         if (resp != null) {
           this.rewriteResponse = resp;
         }
@@ -269,8 +269,16 @@ public class HttpCopyWriter extends CopyWriter {
               totalBytesCopied);
       HttpRetrier httpRetrier =
           new HttpRetrier(
-              new DefaultRetrier(UnaryOperator.identity(), serviceOptions.asRetryDependencies()));
-      return new HttpCopyWriter(serviceOptions, rewriteResponse, httpRetrier);
+              new DefaultRetrier(
+                  UnaryOperator.identity(),
+                  serviceOptions.asRetryDependencies(),
+                  serviceOptions.getStorageClientMetrics()));
+      return new HttpCopyWriter(
+          serviceOptions,
+          rewriteResponse,
+          httpRetrier,
+          StorageClientMetrics.createMultiStepContext(
+              serviceOptions.getStorageClientMetrics(), "RewriteObject"));
     }
 
     @Override

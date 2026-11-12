@@ -44,7 +44,10 @@ public interface AggregatedMetricsOrBuilder
    *
    *
    * <pre>
-   * Number of mandatory shipments performed.
+   * Number of high priority shipments performed. High priority shipments are
+   * those with an unset
+   * [Shipment.penalty_cost][google.maps.routeoptimization.v1.Shipment.penalty_cost]
+   * field.
    *
    * Experimental: This field's behavior or existence may change in future.
    * </pre>
@@ -59,7 +62,10 @@ public interface AggregatedMetricsOrBuilder
    *
    *
    * <pre>
-   * Number of mandatory shipments performed.
+   * Number of high priority shipments performed. High priority shipments are
+   * those with an unset
+   * [Shipment.penalty_cost][google.maps.routeoptimization.v1.Shipment.penalty_cost]
+   * field.
    *
    * Experimental: This field's behavior or existence may change in future.
    * </pre>

@@ -161,6 +161,7 @@ public class SpanTest {
 
   @AfterClass
   public static void stopServer() throws InterruptedException {
+    SpannerOptions.resetActiveTracingFramework();
     if (server != null) {
       server.shutdown();
       server.awaitTermination();

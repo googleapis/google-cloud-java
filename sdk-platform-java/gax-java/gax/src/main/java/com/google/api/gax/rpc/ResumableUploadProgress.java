@@ -55,6 +55,12 @@ public abstract class ResumableUploadProgress {
    */
   public abstract @Nullable String getUploadUrl();
 
+  /**
+   * Returns the effective chunk size in bytes aligned to the server's chunk granularity, or {@code
+   * null} if session initiation or the initial resume status query is pending.
+   */
+  public abstract @Nullable Integer getEffectiveChunkSize();
+
   /** Returns the number of bytes confirmed as uploaded to the server so far. */
   public abstract long getBytesUploaded();
 
@@ -65,8 +71,8 @@ public abstract class ResumableUploadProgress {
    *   <li>{@code "STARTING"}: Session initiation is in progress (acquiring upload session URL).
    *   <li>{@code "STARTED"}: The session initiation completed successfully.
    *   <li>{@code "UPLOADING"}: Transmitting chunk payloads to the server.
-   *   <li>{@code "RECOVERING"}: A recoverable error occurred; querying server status and
-   *       resynchronizing offset.
+   *   <li>{@code "RECOVERING"}: Querying server status and resynchronizing offset (after a
+   *       recoverable error or when resuming an existing session).
    *   <li>{@code "OFFSET_RECEIVED"}: The server query status succeeded and the committed offset was
    *       received.
    *   <li>{@code "FINALIZED"}: The upload was successfully finalized by the server.
@@ -86,6 +92,8 @@ public abstract class ResumableUploadProgress {
   @AutoValue.Builder
   abstract static class Builder {
     abstract Builder setUploadUrl(@Nullable String uploadUrl);
+
+    abstract Builder setEffectiveChunkSize(@Nullable Integer effectiveChunkSize);
 
     abstract Builder setBytesUploaded(long bytesUploaded);
 

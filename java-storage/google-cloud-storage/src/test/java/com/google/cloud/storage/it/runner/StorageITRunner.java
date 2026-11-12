@@ -19,6 +19,7 @@ package com.google.cloud.storage.it.runner;
 import com.google.cloud.storage.it.runner.annotations.Backend;
 import com.google.cloud.storage.it.runner.annotations.CrossRun;
 import com.google.cloud.storage.it.runner.annotations.CrossRun.AllowClassRule;
+import com.google.cloud.storage.it.runner.annotations.LocationType;
 import com.google.cloud.storage.it.runner.annotations.ParallelFriendly;
 import com.google.cloud.storage.it.runner.annotations.Parameterized;
 import com.google.cloud.storage.it.runner.annotations.Parameterized.Parameter;
@@ -166,7 +167,10 @@ public final class StorageITRunner extends Suite {
                   .flatMap(
                       b ->
                           ImmutableSet.copyOf(crossRun.transports()).stream()
-                              .map(t -> CrossRunIntersection.of(b, t)))
+                              .flatMap(
+                                  t ->
+                                      ImmutableSet.copyOf(crossRun.locations()).stream()
+                                          .map(l -> CrossRunIntersection.of(b, t, l))))
                   .flatMap(
                       c -> {
                         TestInitializer ti = registry.newTestInitializerForCell(c);
@@ -187,23 +191,33 @@ public final class StorageITRunner extends Suite {
                   .collect(ImmutableList.toImmutableList()));
     } else {
       Backend backend = singleBackend.value();
-      CrossRunIntersection crossRunIntersection = CrossRunIntersection.of(backend, null);
-      TestInitializer ti = registry.newTestInitializerForCell(crossRunIntersection);
-      if (parameters != null) {
-        return SneakyException.unwrap(
-            () ->
-                parameters.stream()
-                    .map(
-                        param ->
-                            StorageITLeafRunner.unsafeOf(
-                                testClass,
-                                crossRunIntersection,
-                                fmtParam(param),
-                                ti.andThen(setFieldTo(testClass, param))))
-                    .collect(ImmutableList.toImmutableList()));
-      } else {
-        return ImmutableList.of(StorageITLeafRunner.of(testClass, crossRunIntersection, null, ti));
-      }
+      boolean isDefault =
+          singleBackend.locations().length == 1
+              && singleBackend.locations()[0] == LocationType.REGIONAL_STANDARD;
+
+      return SneakyException.unwrap(
+          () ->
+              ImmutableSet.copyOf(singleBackend.locations()).stream()
+                  .map(l -> CrossRunIntersection.of(backend, null, l))
+                  .flatMap(
+                      c -> {
+                        TestInitializer ti = registry.newTestInitializerForCell(c);
+                        if (parameters != null) {
+                          return parameters.stream()
+                              .map(
+                                  param ->
+                                      StorageITLeafRunner.unsafeOf(
+                                          testClass,
+                                          c,
+                                          isDefault ? fmtParam(param) : fmtParam(c, param),
+                                          ti.andThen(setFieldTo(testClass, param))));
+                        } else {
+                          return Stream.of(
+                              StorageITLeafRunner.unsafeOf(
+                                  testClass, c, isDefault ? null : c.fmtSuiteName(), ti));
+                        }
+                      })
+                  .collect(ImmutableList.toImmutableList()));
     }
   }
 

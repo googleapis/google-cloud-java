@@ -149,6 +149,17 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
      * <code>REJECTED = 174130302;</code>
      */
     REJECTED(174130302),
+    /**
+     *
+     *
+     * <pre>
+     * There is no traffic flowing in this state, only the address is
+     * reserved.
+     * </pre>
+     *
+     * <code>RESERVED = 432241448;</code>
+     */
+    RESERVED(432241448),
     /** <code>STATUS_UNSPECIFIED = 42133066;</code> */
     STATUS_UNSPECIFIED(42133066),
     UNRECOGNIZED(-1),
@@ -231,6 +242,18 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
      */
     public static final int REJECTED_VALUE = 174130302;
 
+    /**
+     *
+     *
+     * <pre>
+     * There is no traffic flowing in this state, only the address is
+     * reserved.
+     * </pre>
+     *
+     * <code>RESERVED = 432241448;</code>
+     */
+    public static final int RESERVED_VALUE = 432241448;
+
     /** <code>STATUS_UNSPECIFIED = 42133066;</code> */
     public static final int STATUS_UNSPECIFIED_VALUE = 42133066;
 
@@ -270,6 +293,8 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
           return PENDING;
         case 174130302:
           return REJECTED;
+        case 432241448:
+          return RESERVED;
         case 42133066:
           return STATUS_UNSPECIFIED;
         default:

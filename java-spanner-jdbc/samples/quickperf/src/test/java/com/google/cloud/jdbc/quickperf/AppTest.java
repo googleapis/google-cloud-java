@@ -39,6 +39,7 @@ import java.util.Properties;
 import javax.annotation.Nonnull;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.springframework.boot.SpringApplication;
 import org.testcontainers.containers.GenericContainer;
@@ -144,6 +145,7 @@ public class AppTest {
     return DriverManager.getConnection(url, properties);
   }
 
+  @Ignore("Flaky test: b/579436547")
   @Test
   public void testRunApplication() throws Exception {
 

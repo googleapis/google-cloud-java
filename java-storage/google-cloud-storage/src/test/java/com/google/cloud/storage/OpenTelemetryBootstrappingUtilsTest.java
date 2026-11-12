@@ -25,6 +25,7 @@ import com.google.cloud.storage.OpenTelemetryBootstrappingUtils.ChannelConfigura
 import io.grpc.ManagedChannelBuilder;
 import io.opentelemetry.api.common.Attributes;
 import io.opentelemetry.sdk.metrics.SdkMeterProvider;
+import io.opentelemetry.sdk.metrics.SdkMeterProviderBuilder;
 import java.time.Duration;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
@@ -117,10 +118,8 @@ public final class OpenTelemetryBootstrappingUtilsTest {
 
   @Test
   public void registerClientViews_doesNotThrow() {
-    io.opentelemetry.sdk.metrics.SdkMeterProviderBuilder builder =
-        io.opentelemetry.sdk.metrics.SdkMeterProvider.builder();
-    io.opentelemetry.sdk.metrics.SdkMeterProviderBuilder returned =
-        OpenTelemetryBootstrappingUtils.registerClientViews(builder);
+    SdkMeterProviderBuilder builder = SdkMeterProvider.builder();
+    SdkMeterProviderBuilder returned = OpenTelemetryBootstrappingUtils.registerClientViews(builder);
     assertThat(returned).isSameInstanceAs(builder);
   }
 
@@ -234,6 +233,8 @@ public final class OpenTelemetryBootstrappingUtilsTest {
     assertThat(OpenTelemetryBootstrappingUtils.extractServerAddress("http://[::1]:8080"))
         .isEqualTo("::1");
     assertThat(OpenTelemetryBootstrappingUtils.extractServerAddress("[::1]")).isEqualTo("::1");
+    assertThat(OpenTelemetryBootstrappingUtils.extractServerAddress("http://host:invalid"))
+        .isNull();
     assertThat(OpenTelemetryBootstrappingUtils.extractServerAddress(null)).isNull();
     assertThat(OpenTelemetryBootstrappingUtils.extractServerAddress("   ")).isNull();
   }
@@ -257,6 +258,24 @@ public final class OpenTelemetryBootstrappingUtilsTest {
         .isEqualTo("[::1]:8080");
     assertThat(OpenTelemetryBootstrappingUtils.formatStorageEndpoint("[::1]"))
         .isEqualTo("[::1]:443");
+    assertThat(OpenTelemetryBootstrappingUtils.formatStorageEndpoint("http://host:invalid"))
+        .isEqualTo("storage.googleapis.com:443");
+  }
+
+  @Test
+  public void getCloudMonitoringEndpoint_extractsPortFromIpv4AndIpv6Endpoints() {
+    assertThat(
+            OpenTelemetryBootstrappingUtils.getCloudMonitoringEndpoint(
+                "storage.googleapis.com:443", "googleapis.com"))
+        .isEqualTo("monitoring.googleapis.com:443");
+    assertThat(
+            OpenTelemetryBootstrappingUtils.getCloudMonitoringEndpoint(
+                "[::1]:8080", "googleapis.com"))
+        .isEqualTo("monitoring.googleapis.com:8080");
+    assertThat(
+            OpenTelemetryBootstrappingUtils.getCloudMonitoringEndpoint(
+                "storage.my-universe.com:8443", "my-universe.com"))
+        .isEqualTo("monitoring.my-universe.com:8443");
   }
 
   @Test
@@ -277,7 +296,10 @@ public final class OpenTelemetryBootstrappingUtilsTest {
       assertThat(provider.toString()).contains("cloud.account.id=\"detected-project\"");
       assertThat(provider.toString()).contains("api=\"json\"");
     }
+  }
 
+  @Test
+  public void createDefaultClientMeterProvider_fallsBackToConfiguredProjectId() {
     try (SdkMeterProvider fallbackProvider =
         OpenTelemetryBootstrappingUtils.createDefaultClientMeterProvider(
             "https://storage.googleapis.com",
@@ -290,7 +312,10 @@ public final class OpenTelemetryBootstrappingUtilsTest {
       assertThat(fallbackProvider.toString()).contains("project_id=\"configured-project\"");
       assertThat(fallbackProvider.toString()).contains("api=\"grpc\"");
     }
+  }
 
+  @Test
+  public void createDefaultClientMeterProvider_returnsNullWhenProjectIdCannotBeDetermined() {
     SdkMeterProvider nullProvider =
         OpenTelemetryBootstrappingUtils.createDefaultClientMeterProvider(
             "https://storage.googleapis.com",

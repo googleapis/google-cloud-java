@@ -18,8 +18,9 @@ package com.google.cloud.storage;
 
 import static java.util.Objects.requireNonNull;
 
+import com.google.api.core.ApiClock;
+import com.google.api.core.NanoClock;
 import com.google.api.gax.grpc.GrpcCallContext;
-import com.google.api.gax.rpc.ApiCallContext;
 import com.google.common.collect.ImmutableSet;
 import io.grpc.CallOptions;
 import io.opentelemetry.api.common.AttributeKey;
@@ -27,23 +28,24 @@ import io.opentelemetry.api.common.Attributes;
 import io.opentelemetry.api.common.AttributesBuilder;
 import io.opentelemetry.context.Context;
 import io.opentelemetry.context.Scope;
-import java.util.Map;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLong;
-import org.checkerframework.checker.nullness.qual.Nullable;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * Package-private holder for operation metric state across asynchronous and thread-hopping
  * boundaries.
  */
+@NullMarked
 final class StorageMetricsContext {
 
   static final CallOptions.Key<StorageMetricsContext> GRPC_CALL_OPTIONS_KEY =
       CallOptions.Key.create("storage-metrics-context");
-  static final ApiCallContext.Key<StorageMetricsContext> API_CALL_CONTEXT_KEY =
-      ApiCallContext.Key.create("storage-metrics-context");
-  static final String HTTP_REQUEST_PROPERTY_KEY = "com.google.cloud.storage.StorageMetricsContext";
+
+  private static final long HTTP_STATUS_OK = 200L;
+  static final long HTTP_STATUS_UNSET = 0L;
 
   private static final ImmutableSet<AttributeKey<?>> BODY_SIZE_EXCLUDED_KEYS =
       ImmutableSet.of(
@@ -56,49 +58,45 @@ final class StorageMetricsContext {
           StorageClientMetrics.KEY_GCP_CLIENT_METHOD,
           StorageClientMetrics.KEY_RPC_METHOD);
 
+  @Nullable private final StorageClientMetrics metrics;
   private final String operationName;
+  private final ApiClock clock;
   private final long startTimeNanos;
   private final Context otelContext;
-  private final AtomicInteger attemptCount;
-  private final AtomicLong requestBytes;
-  private final AtomicLong responseBytes;
   private final Attributes baseAttributes;
   private final boolean recordOperationOnRetrierExit;
-  private final AtomicBoolean operationRecorded;
+  private final AtomicBoolean operationRecorded = new AtomicBoolean(false);
+  private final AtomicInteger attemptCount = new AtomicInteger(0);
+  private final AtomicLong requestBytes = new AtomicLong(0L);
+  private final AtomicLong responseBytes = new AtomicLong(0L);
 
   private StorageMetricsContext(
+      @Nullable StorageClientMetrics metrics,
       String operationName,
       Attributes baseAttributes,
+      ApiClock clock,
       long startTimeNanos,
       Context otelContext,
-      boolean recordOperationOnRetrierExit,
-      AtomicBoolean operationRecorded,
-      AtomicInteger attemptCount,
-      AtomicLong requestBytes,
-      AtomicLong responseBytes) {
+      boolean recordOperationOnRetrierExit) {
+    this.metrics = metrics;
     this.operationName = requireNonNull(operationName, "operationName cannot be null");
     this.baseAttributes = requireNonNull(baseAttributes, "baseAttributes cannot be null");
-    this.otelContext = requireNonNull(otelContext, "otelContext cannot be null");
+    this.clock = requireNonNull(clock, "clock cannot be null");
     this.startTimeNanos = startTimeNanos;
+    this.otelContext = requireNonNull(otelContext, "otelContext cannot be null");
     this.recordOperationOnRetrierExit = recordOperationOnRetrierExit;
-    this.operationRecorded = requireNonNull(operationRecorded, "operationRecorded cannot be null");
-    this.attemptCount = requireNonNull(attemptCount, "attemptCount cannot be null");
-    this.requestBytes = requireNonNull(requestBytes, "requestBytes cannot be null");
-    this.responseBytes = requireNonNull(responseBytes, "responseBytes cannot be null");
   }
 
   static StorageMetricsContext create(
       String operationName, Attributes baseAttributes, long startTimeNanos) {
     return new StorageMetricsContext(
+        null,
         operationName,
         baseAttributes,
+        NanoClock.getDefaultClock(),
         startTimeNanos,
         Context.current(),
-        true,
-        new AtomicBoolean(false),
-        new AtomicInteger(0),
-        new AtomicLong(0L),
-        new AtomicLong(0L));
+        true);
   }
 
   static StorageMetricsContext create(String operationName) {
@@ -111,16 +109,37 @@ final class StorageMetricsContext {
 
   static StorageMetricsContext create(
       String operationName, Attributes baseAttributes, Context otelContext) {
+    return create(null, operationName, baseAttributes, otelContext, NanoClock.getDefaultClock());
+  }
+
+  static StorageMetricsContext create(
+      String operationName, Attributes baseAttributes, Context otelContext, ApiClock clock) {
+    return create(null, operationName, baseAttributes, otelContext, clock);
+  }
+
+  static StorageMetricsContext create(
+      @Nullable StorageClientMetrics metrics, String operationName, Attributes baseAttributes) {
+    return create(
+        metrics, operationName, baseAttributes, Context.current(), NanoClock.getDefaultClock());
+  }
+
+  static StorageMetricsContext create(
+      @Nullable StorageClientMetrics metrics,
+      String operationName,
+      Attributes baseAttributes,
+      ApiClock clock) {
+    return create(metrics, operationName, baseAttributes, Context.current(), clock);
+  }
+
+  static StorageMetricsContext create(
+      @Nullable StorageClientMetrics metrics,
+      String operationName,
+      Attributes baseAttributes,
+      Context otelContext,
+      ApiClock clock) {
+    requireNonNull(clock, "clock cannot be null");
     return new StorageMetricsContext(
-        operationName,
-        baseAttributes,
-        System.nanoTime(),
-        otelContext,
-        true,
-        new AtomicBoolean(false),
-        new AtomicInteger(0),
-        new AtomicLong(0L),
-        new AtomicLong(0L));
+        metrics, operationName, baseAttributes, clock, clock.nanoTime(), otelContext, true);
   }
 
   static StorageMetricsContext createForMultiStep(String operationName) {
@@ -133,20 +152,46 @@ final class StorageMetricsContext {
 
   static StorageMetricsContext createForMultiStep(
       String operationName, Attributes baseAttributes, Context otelContext) {
+    return createForMultiStep(
+        null, operationName, baseAttributes, otelContext, NanoClock.getDefaultClock());
+  }
+
+  static StorageMetricsContext createForMultiStep(
+      String operationName, Attributes baseAttributes, Context otelContext, ApiClock clock) {
+    return createForMultiStep(null, operationName, baseAttributes, otelContext, clock);
+  }
+
+  static StorageMetricsContext createForMultiStep(
+      @Nullable StorageClientMetrics metrics, String operationName, Attributes baseAttributes) {
+    return createForMultiStep(
+        metrics, operationName, baseAttributes, Context.current(), NanoClock.getDefaultClock());
+  }
+
+  static StorageMetricsContext createForMultiStep(
+      @Nullable StorageClientMetrics metrics,
+      String operationName,
+      Attributes baseAttributes,
+      ApiClock clock) {
+    return createForMultiStep(metrics, operationName, baseAttributes, Context.current(), clock);
+  }
+
+  static StorageMetricsContext createForMultiStep(
+      @Nullable StorageClientMetrics metrics,
+      String operationName,
+      Attributes baseAttributes,
+      Context otelContext,
+      ApiClock clock) {
+    requireNonNull(clock, "clock cannot be null");
     return new StorageMetricsContext(
-        operationName,
-        baseAttributes,
-        System.nanoTime(),
-        otelContext,
-        false,
-        new AtomicBoolean(false),
-        new AtomicInteger(0),
-        new AtomicLong(0L),
-        new AtomicLong(0L));
+        metrics, operationName, baseAttributes, clock, clock.nanoTime(), otelContext, false);
   }
 
   boolean shouldRecordOperationOnRetrierExit() {
     return recordOperationOnRetrierExit;
+  }
+
+  void recordOperation(@Nullable Throwable terminalThrowable) {
+    recordOperation(this.metrics, terminalThrowable);
   }
 
   void recordOperation(
@@ -161,23 +206,11 @@ final class StorageMetricsContext {
         clientMethod = operationName;
       }
 
-      AttributesBuilder opAttrBuilder = Attributes.builder();
-      opAttrBuilder.putAll(metrics.getClientAttributes());
-      baseAttributes.forEach(
-          (key, val) -> {
-            if (!key.equals(StorageClientMetrics.KEY_RPC_METHOD)
-                && !key.equals(StorageClientMetrics.KEY_NETWORK_PATH)
-                && !key.equals(StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE)
-                && !key.equals(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE)) {
-              @SuppressWarnings("unchecked")
-              AttributeKey<Object> objKey = (AttributeKey<Object>) key;
-              opAttrBuilder.put(objKey, val);
-            }
-          });
-      opAttrBuilder.put(StorageClientMetrics.KEY_GCP_STORAGE_OPERATION, operationName);
-      opAttrBuilder.put(StorageClientMetrics.KEY_GCP_CLIENT_METHOD, clientMethod);
-      opAttrBuilder.put(StorageClientMetrics.KEY_ERROR_TYPE, terminalErrorType);
-      Attributes operationAttributes = opAttrBuilder.build();
+      Attributes operationAttributes =
+          buildAttemptBaseAttributes(metrics).toBuilder()
+              .put(StorageClientMetrics.KEY_GCP_CLIENT_METHOD, clientMethod)
+              .put(StorageClientMetrics.KEY_ERROR_TYPE, terminalErrorType)
+              .build();
 
       if (metrics.getOperations() != null) {
         metrics.getOperations().add(1, operationAttributes);
@@ -237,6 +270,10 @@ final class StorageMetricsContext {
     return bodyAttrBuilder.build();
   }
 
+  void recordAttemptSuccess() {
+    recordAttemptSuccess(this.metrics);
+  }
+
   void recordAttemptSuccess(@Nullable StorageClientMetrics metrics) {
     if (metrics == null || metrics.getAttempts() == null) {
       return;
@@ -247,28 +284,13 @@ final class StorageMetricsContext {
           attemptBase.toBuilder()
               .put(StorageClientMetrics.KEY_ERROR_TYPE, StorageErrorTypeMapper.STATUS_OK)
               .put(StorageClientMetrics.KEY_NETWORK_PATH, resolveNetworkPath());
-      String rpcSystemName = baseAttributes.get(StorageClientMetrics.KEY_RPC_SYSTEM_NAME);
-      if ("grpc".equals(rpcSystemName)) {
-        String rpcCode = baseAttributes.get(StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE);
-        builder.put(
-            StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE, rpcCode != null ? rpcCode : "OK");
-        builder.put(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE, "");
-      } else if ("http".equals(rpcSystemName)) {
-        String httpCode = baseAttributes.get(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE);
-        builder.put(
-            StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE,
-            httpCode != null ? httpCode : "200");
-        builder.put(StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE, "");
-      } else {
-        String rpcCode = baseAttributes.get(StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE);
-        String httpCode = baseAttributes.get(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE);
-        builder.put(
-            StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE, rpcCode != null ? rpcCode : "");
-        builder.put(
-            StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE, httpCode != null ? httpCode : "");
-      }
+      putAttemptStatusCodes(builder, null, StorageErrorTypeMapper.STATUS_OK, HTTP_STATUS_OK);
       metrics.getAttempts().add(1, builder.build());
     }
+  }
+
+  void recordAttemptFailure(Throwable e) {
+    recordAttemptFailure(this.metrics, e);
   }
 
   void recordAttemptFailure(@Nullable StorageClientMetrics metrics, Throwable e) {
@@ -292,29 +314,7 @@ final class StorageMetricsContext {
             attemptBase.toBuilder()
                 .put(StorageClientMetrics.KEY_ERROR_TYPE, errorType)
                 .put(StorageClientMetrics.KEY_NETWORK_PATH, networkPath);
-        String rpcSystemName = baseAttributes.get(StorageClientMetrics.KEY_RPC_SYSTEM_NAME);
-        if ("grpc".equals(rpcSystemName)) {
-          String rpcStatus = extractRpcStatusCode(e);
-          builder.put(
-              StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE,
-              rpcStatus != null ? rpcStatus : "");
-          builder.put(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE, "");
-        } else if ("http".equals(rpcSystemName)) {
-          String httpStatus = extractHttpStatusCode(e);
-          builder.put(
-              StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE,
-              httpStatus != null ? httpStatus : "");
-          builder.put(StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE, "");
-        } else {
-          String rpcStatus = extractRpcStatusCode(e);
-          String httpStatus = extractHttpStatusCode(e);
-          builder.put(
-              StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE,
-              rpcStatus != null ? rpcStatus : "");
-          builder.put(
-              StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE,
-              httpStatus != null ? httpStatus : "");
-        }
+        putAttemptStatusCodes(builder, e, StorageErrorTypeMapper.STATUS_UNKNOWN, HTTP_STATUS_UNSET);
         metrics.getAttempts().add(1, builder.build());
       }
     }
@@ -349,7 +349,7 @@ final class StorageMetricsContext {
       @Nullable StorageClientMetrics metrics,
       double durationSeconds,
       String httpMethod,
-      String statusCode,
+      long statusCode,
       String urlTemplate,
       @Nullable String serverAddress,
       String errorType) {
@@ -399,12 +399,49 @@ final class StorageMetricsContext {
     metrics.getTtfb().record(ttfbSeconds, attributes, contextToUse);
   }
 
+  /**
+   * Populates both {@code rpc.response.status_code} and {@code http.response.status_code} on
+   * attempt metrics so every {@code gcp.storage.client.attempts} data point emits a consistent set
+   * of attribute keys for {@code GoogleCloudMetricExporter} ({@code SEND_ONCE}). Uses {@code 0L}
+   * ({@link #HTTP_STATUS_UNSET}) when no HTTP response was received or for gRPC attempts, matching
+   * the Go SDK's {@code attribute.Int64("http.response.status_code", 0)} convention.
+   */
+  private void putAttemptStatusCodes(
+      AttributesBuilder builder,
+      @Nullable Throwable error,
+      String defaultGrpcStatus,
+      long defaultHttpStatus) {
+    String rpcSystemName = baseAttributes.get(StorageClientMetrics.KEY_RPC_SYSTEM_NAME);
+    if ("grpc".equals(rpcSystemName)) {
+      String rpcStatus = extractRpcStatusCode(error);
+      builder.put(
+          StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE,
+          rpcStatus != null ? rpcStatus : defaultGrpcStatus);
+      builder.put(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE, HTTP_STATUS_UNSET);
+    } else if ("http".equals(rpcSystemName)) {
+      Long httpStatus = extractHttpStatusCode(error);
+      builder.put(
+          StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE,
+          httpStatus != null ? httpStatus : defaultHttpStatus);
+      builder.put(StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE, "");
+    } else {
+      String rpcStatus = extractRpcStatusCode(error);
+      Long httpStatus = extractHttpStatusCode(error);
+      builder.put(
+          StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE, rpcStatus != null ? rpcStatus : "");
+      builder.put(
+          StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE,
+          httpStatus != null ? httpStatus : HTTP_STATUS_UNSET);
+    }
+  }
+
   private Attributes buildAttemptBaseAttributes(StorageClientMetrics metrics) {
     AttributesBuilder baseBuilder = Attributes.builder();
     baseBuilder.putAll(metrics.getClientAttributes());
     baseAttributes.forEach(
         (key, val) -> {
           if (!key.equals(StorageClientMetrics.KEY_RPC_METHOD)
+              && !key.equals(StorageClientMetrics.KEY_GCP_CLIENT_METHOD)
               && !key.equals(StorageClientMetrics.KEY_NETWORK_PATH)
               && !key.equals(StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE)
               && !key.equals(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE)) {
@@ -425,51 +462,14 @@ final class StorageMetricsContext {
     return StorageClientMetrics.NETWORK_PATH_CLOUDPATH;
   }
 
-  @Nullable
-  private String extractRpcStatusCode(Throwable e) {
+  private @Nullable String extractRpcStatusCode(@Nullable Throwable e) {
     String fromContext = baseAttributes.get(StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE);
-    if (fromContext != null) {
-      return fromContext;
-    }
-    Throwable curr = e;
-    while (curr != null) {
-      if (curr instanceof io.grpc.StatusRuntimeException) {
-        return ((io.grpc.StatusRuntimeException) curr).getStatus().getCode().name();
-      }
-      if (curr instanceof io.grpc.StatusException) {
-        return ((io.grpc.StatusException) curr).getStatus().getCode().name();
-      }
-      if (curr instanceof com.google.api.gax.rpc.ApiException) {
-        return ((com.google.api.gax.rpc.ApiException) curr).getStatusCode().getCode().name();
-      }
-      curr = curr.getCause();
-    }
-    return null;
+    return fromContext != null ? fromContext : StorageErrorTypeMapper.extractRpcStatusCode(e);
   }
 
-  @Nullable
-  private String extractHttpStatusCode(Throwable e) {
-    String fromContext = baseAttributes.get(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE);
-    if (fromContext != null) {
-      return fromContext;
-    }
-    Throwable curr = e;
-    while (curr != null) {
-      if (curr instanceof StorageException) {
-        int code = ((StorageException) curr).getCode();
-        if (code > 0) {
-          return Integer.toString(code);
-        }
-      }
-      if (curr instanceof com.google.api.client.http.HttpResponseException) {
-        int code = ((com.google.api.client.http.HttpResponseException) curr).getStatusCode();
-        if (code > 0) {
-          return Integer.toString(code);
-        }
-      }
-      curr = curr.getCause();
-    }
-    return null;
+  private @Nullable Long extractHttpStatusCode(@Nullable Throwable e) {
+    Long fromContext = baseAttributes.get(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE);
+    return fromContext != null ? fromContext : StorageErrorTypeMapper.extractHttpStatusCode(e);
   }
 
   static @Nullable StorageMetricsContext from(@Nullable CallOptions callOptions) {
@@ -477,32 +477,7 @@ final class StorageMetricsContext {
   }
 
   static @Nullable StorageMetricsContext from(@Nullable GrpcCallContext context) {
-    if (context == null) {
-      return null;
-    }
-    StorageMetricsContext result = context.getOption(API_CALL_CONTEXT_KEY);
-    if (result != null) {
-      return result;
-    }
-    return from(context.getCallOptions());
-  }
-
-  static @Nullable StorageMetricsContext from(@Nullable ApiCallContext context) {
-    if (context == null) {
-      return null;
-    }
-    if (context instanceof GrpcCallContext) {
-      return from((GrpcCallContext) context);
-    }
-    return context.getOption(API_CALL_CONTEXT_KEY);
-  }
-
-  static @Nullable StorageMetricsContext from(@Nullable Map<String, Object> properties) {
-    if (properties == null) {
-      return null;
-    }
-    Object obj = properties.get(HTTP_REQUEST_PROPERTY_KEY);
-    return (obj instanceof StorageMetricsContext) ? (StorageMetricsContext) obj : null;
+    return context != null ? from(context.getCallOptions()) : null;
   }
 
   CallOptions attach(@Nullable CallOptions callOptions) {
@@ -512,26 +487,7 @@ final class StorageMetricsContext {
 
   GrpcCallContext attach(@Nullable GrpcCallContext context) {
     GrpcCallContext callContext = context != null ? context : GrpcCallContext.createDefault();
-    return callContext
-        .withCallOptions(attach(callContext.getCallOptions()))
-        .withOption(API_CALL_CONTEXT_KEY, this);
-  }
-
-  ApiCallContext attach(@Nullable ApiCallContext context) {
-    if (context == null) {
-      return null;
-    }
-    if (context instanceof GrpcCallContext) {
-      return attach((GrpcCallContext) context);
-    }
-    return context.withOption(API_CALL_CONTEXT_KEY, this);
-  }
-
-  Map<String, Object> attach(@Nullable Map<String, Object> properties) {
-    if (properties != null) {
-      properties.put(HTTP_REQUEST_PROPERTY_KEY, this);
-    }
-    return properties;
+    return callContext.withCallOptions(attach(callContext.getCallOptions()));
   }
 
   int incrementAttempts() {
@@ -566,6 +522,10 @@ final class StorageMetricsContext {
     return responseBytes.get();
   }
 
+  @Nullable StorageClientMetrics getMetrics() {
+    return metrics;
+  }
+
   String getOperationName() {
     return operationName;
   }
@@ -579,7 +539,7 @@ final class StorageMetricsContext {
   }
 
   double getElapsedSeconds() {
-    return getElapsedSeconds(System.nanoTime());
+    return getElapsedSeconds(clock.nanoTime());
   }
 
   double getElapsedSeconds(long currentTimeNanos) {
@@ -588,9 +548,5 @@ final class StorageMetricsContext {
 
   Attributes getBaseAttributes() {
     return baseAttributes;
-  }
-
-  AttributesBuilder attributesBuilder() {
-    return Attributes.builder().putAll(baseAttributes);
   }
 }

@@ -138,6 +138,52 @@ public interface AgentOrBuilder
    *
    *
    * <pre>
+   * Optional. The remote [A2A](https://github.com/a2aproject/A2A) agent to be
+   * used for the agent execution.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.Agent.RemoteA2aAgent remote_a2a_agent = 41 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the remoteA2aAgent field is set.
+   */
+  boolean hasRemoteA2AAgent();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The remote [A2A](https://github.com/a2aproject/A2A) agent to be
+   * used for the agent execution.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.Agent.RemoteA2aAgent remote_a2a_agent = 41 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The remoteA2aAgent.
+   */
+  com.google.cloud.ces.v1beta.Agent.RemoteA2aAgent getRemoteA2AAgent();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The remote [A2A](https://github.com/a2aproject/A2A) agent to be
+   * used for the agent execution.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.Agent.RemoteA2aAgent remote_a2a_agent = 41 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.ces.v1beta.Agent.RemoteA2aAgentOrBuilder getRemoteA2AAgentOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Identifier. The unique identifier of the agent.
    * Format: `projects/{project}/locations/{location}/apps/{app}/agents/{agent}`
    * </pre>

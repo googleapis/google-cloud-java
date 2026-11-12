@@ -366,12 +366,12 @@ public final class OdbNetwork extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. The name of the VPC network in the following format:
+   * Required. Immutable. The name of the VPC network in the following format:
    * projects/{project}/global/networks/{network}
    * </pre>
    *
    * <code>
-   * string network = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * string network = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The network.
@@ -393,12 +393,12 @@ public final class OdbNetwork extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. The name of the VPC network in the following format:
+   * Required. Immutable. The name of the VPC network in the following format:
    * projects/{project}/global/networks/{network}
    * </pre>
    *
    * <code>
-   * string network = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * string network = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The bytes for network.
@@ -682,12 +682,14 @@ public final class OdbNetwork extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The GCP Oracle zone where OdbNetwork is hosted.
+   * Optional. Immutable. The GCP Oracle zone where OdbNetwork is hosted.
    * Example: us-east4-b-r2.
    * If not specified, the system will pick a zone based on availability.
    * </pre>
    *
-   * <code>string gcp_oracle_zone = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string gcp_oracle_zone = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The gcpOracleZone.
    */
@@ -708,12 +710,14 @@ public final class OdbNetwork extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The GCP Oracle zone where OdbNetwork is hosted.
+   * Optional. Immutable. The GCP Oracle zone where OdbNetwork is hosted.
    * Example: us-east4-b-r2.
    * If not specified, the system will pick a zone based on availability.
    * </pre>
    *
-   * <code>string gcp_oracle_zone = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string gcp_oracle_zone = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The bytes for gcpOracleZone.
    */
@@ -728,6 +732,108 @@ public final class OdbNetwork extends com.google.protobuf.GeneratedMessage
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int SERVICE_CONNECTIVITY_CONFIG_FIELD_NUMBER = 8;
+  private com.google.cloud.oracledatabase.v1.ServiceConnectivityConfig serviceConnectivityConfig_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration to enable the service (Oracledatabase&#64;Google Cloud)
+   * to establish connectivity to the database.
+   *
+   * This should be specified if you intend to associate this OdbNetwork with a
+   * DatabaseConnection resource to `ExecuteSQL` on the database, or to create a
+   * ServiceIntegration with the Database.
+   *
+   * Please don't specify it otherwise to avoid complicating the network setup.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.oracledatabase.v1.ServiceConnectivityConfig service_connectivity_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the serviceConnectivityConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasServiceConnectivityConfig() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration to enable the service (Oracledatabase&#64;Google Cloud)
+   * to establish connectivity to the database.
+   *
+   * This should be specified if you intend to associate this OdbNetwork with a
+   * DatabaseConnection resource to `ExecuteSQL` on the database, or to create a
+   * ServiceIntegration with the Database.
+   *
+   * Please don't specify it otherwise to avoid complicating the network setup.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.oracledatabase.v1.ServiceConnectivityConfig service_connectivity_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The serviceConnectivityConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.oracledatabase.v1.ServiceConnectivityConfig
+      getServiceConnectivityConfig() {
+    return serviceConnectivityConfig_ == null
+        ? com.google.cloud.oracledatabase.v1.ServiceConnectivityConfig.getDefaultInstance()
+        : serviceConnectivityConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration to enable the service (Oracledatabase&#64;Google Cloud)
+   * to establish connectivity to the database.
+   *
+   * This should be specified if you intend to associate this OdbNetwork with a
+   * DatabaseConnection resource to `ExecuteSQL` on the database, or to create a
+   * ServiceIntegration with the Database.
+   *
+   * Please don't specify it otherwise to avoid complicating the network setup.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.oracledatabase.v1.ServiceConnectivityConfig service_connectivity_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.oracledatabase.v1.ServiceConnectivityConfigOrBuilder
+      getServiceConnectivityConfigOrBuilder() {
+    return serviceConnectivityConfig_ == null
+        ? com.google.cloud.oracledatabase.v1.ServiceConnectivityConfig.getDefaultInstance()
+        : serviceConnectivityConfig_;
+  }
+
+  public static final int RECONCILING_FIELD_NUMBER = 9;
+  private boolean reconciling_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Indicates whether the OdbNetwork is currently reconciling
+   * changes.
+   * </pre>
+   *
+   * <code>bool reconciling = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The reconciling.
+   */
+  @java.lang.Override
+  public boolean getReconciling() {
+    return reconciling_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -764,6 +870,12 @@ public final class OdbNetwork extends com.google.protobuf.GeneratedMessage
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(gcpOracleZone_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 7, gcpOracleZone_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(8, getServiceConnectivityConfig());
+    }
+    if (reconciling_ != false) {
+      output.writeBool(9, reconciling_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -803,6 +915,14 @@ public final class OdbNetwork extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(gcpOracleZone_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(7, gcpOracleZone_);
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              8, getServiceConnectivityConfig());
+    }
+    if (reconciling_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(9, reconciling_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -829,6 +949,12 @@ public final class OdbNetwork extends com.google.protobuf.GeneratedMessage
     if (state_ != other.state_) return false;
     if (!getEntitlementId().equals(other.getEntitlementId())) return false;
     if (!getGcpOracleZone().equals(other.getGcpOracleZone())) return false;
+    if (hasServiceConnectivityConfig() != other.hasServiceConnectivityConfig()) return false;
+    if (hasServiceConnectivityConfig()) {
+      if (!getServiceConnectivityConfig().equals(other.getServiceConnectivityConfig()))
+        return false;
+    }
+    if (getReconciling() != other.getReconciling()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -858,6 +984,12 @@ public final class OdbNetwork extends com.google.protobuf.GeneratedMessage
     hash = (53 * hash) + getEntitlementId().hashCode();
     hash = (37 * hash) + GCP_ORACLE_ZONE_FIELD_NUMBER;
     hash = (53 * hash) + getGcpOracleZone().hashCode();
+    if (hasServiceConnectivityConfig()) {
+      hash = (37 * hash) + SERVICE_CONNECTIVITY_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getServiceConnectivityConfig().hashCode();
+    }
+    hash = (37 * hash) + RECONCILING_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getReconciling());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1022,6 +1154,7 @@ public final class OdbNetwork extends com.google.protobuf.GeneratedMessage
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
         internalGetCreateTimeFieldBuilder();
+        internalGetServiceConnectivityConfigFieldBuilder();
       }
     }
 
@@ -1040,6 +1173,12 @@ public final class OdbNetwork extends com.google.protobuf.GeneratedMessage
       state_ = 0;
       entitlementId_ = "";
       gcpOracleZone_ = "";
+      serviceConnectivityConfig_ = null;
+      if (serviceConnectivityConfigBuilder_ != null) {
+        serviceConnectivityConfigBuilder_.dispose();
+        serviceConnectivityConfigBuilder_ = null;
+      }
+      reconciling_ = false;
       return this;
     }
 
@@ -1100,6 +1239,16 @@ public final class OdbNetwork extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x00000040) != 0)) {
         result.gcpOracleZone_ = gcpOracleZone_;
       }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.serviceConnectivityConfig_ =
+            serviceConnectivityConfigBuilder_ == null
+                ? serviceConnectivityConfig_
+                : serviceConnectivityConfigBuilder_.build();
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.reconciling_ = reconciling_;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -1142,6 +1291,12 @@ public final class OdbNetwork extends com.google.protobuf.GeneratedMessage
         gcpOracleZone_ = other.gcpOracleZone_;
         bitField0_ |= 0x00000040;
         onChanged();
+      }
+      if (other.hasServiceConnectivityConfig()) {
+        mergeServiceConnectivityConfig(other.getServiceConnectivityConfig());
+      }
+      if (other.getReconciling() != false) {
+        setReconciling(other.getReconciling());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1218,6 +1373,20 @@ public final class OdbNetwork extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000040;
                 break;
               } // case 58
+            case 66:
+              {
+                input.readMessage(
+                    internalGetServiceConnectivityConfigFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 66
+            case 72:
+              {
+                reconciling_ = input.readBool();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 72
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1359,12 +1528,12 @@ public final class OdbNetwork extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The name of the VPC network in the following format:
+     * Required. Immutable. The name of the VPC network in the following format:
      * projects/{project}/global/networks/{network}
      * </pre>
      *
      * <code>
-     * string network = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * string network = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return The network.
@@ -1385,12 +1554,12 @@ public final class OdbNetwork extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The name of the VPC network in the following format:
+     * Required. Immutable. The name of the VPC network in the following format:
      * projects/{project}/global/networks/{network}
      * </pre>
      *
      * <code>
-     * string network = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * string network = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return The bytes for network.
@@ -1411,12 +1580,12 @@ public final class OdbNetwork extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The name of the VPC network in the following format:
+     * Required. Immutable. The name of the VPC network in the following format:
      * projects/{project}/global/networks/{network}
      * </pre>
      *
      * <code>
-     * string network = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * string network = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @param value The network to set.
@@ -1436,12 +1605,12 @@ public final class OdbNetwork extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The name of the VPC network in the following format:
+     * Required. Immutable. The name of the VPC network in the following format:
      * projects/{project}/global/networks/{network}
      * </pre>
      *
      * <code>
-     * string network = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * string network = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return This builder for chaining.
@@ -1457,12 +1626,12 @@ public final class OdbNetwork extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The name of the VPC network in the following format:
+     * Required. Immutable. The name of the VPC network in the following format:
      * projects/{project}/global/networks/{network}
      * </pre>
      *
      * <code>
-     * string network = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * string network = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @param value The bytes for network to set.
@@ -2092,12 +2261,14 @@ public final class OdbNetwork extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The GCP Oracle zone where OdbNetwork is hosted.
+     * Optional. Immutable. The GCP Oracle zone where OdbNetwork is hosted.
      * Example: us-east4-b-r2.
      * If not specified, the system will pick a zone based on availability.
      * </pre>
      *
-     * <code>string gcp_oracle_zone = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string gcp_oracle_zone = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return The gcpOracleZone.
      */
@@ -2117,12 +2288,14 @@ public final class OdbNetwork extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The GCP Oracle zone where OdbNetwork is hosted.
+     * Optional. Immutable. The GCP Oracle zone where OdbNetwork is hosted.
      * Example: us-east4-b-r2.
      * If not specified, the system will pick a zone based on availability.
      * </pre>
      *
-     * <code>string gcp_oracle_zone = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string gcp_oracle_zone = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return The bytes for gcpOracleZone.
      */
@@ -2142,12 +2315,14 @@ public final class OdbNetwork extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The GCP Oracle zone where OdbNetwork is hosted.
+     * Optional. Immutable. The GCP Oracle zone where OdbNetwork is hosted.
      * Example: us-east4-b-r2.
      * If not specified, the system will pick a zone based on availability.
      * </pre>
      *
-     * <code>string gcp_oracle_zone = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string gcp_oracle_zone = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @param value The gcpOracleZone to set.
      * @return This builder for chaining.
@@ -2166,12 +2341,14 @@ public final class OdbNetwork extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The GCP Oracle zone where OdbNetwork is hosted.
+     * Optional. Immutable. The GCP Oracle zone where OdbNetwork is hosted.
      * Example: us-east4-b-r2.
      * If not specified, the system will pick a zone based on availability.
      * </pre>
      *
-     * <code>string gcp_oracle_zone = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string gcp_oracle_zone = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -2186,12 +2363,14 @@ public final class OdbNetwork extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The GCP Oracle zone where OdbNetwork is hosted.
+     * Optional. Immutable. The GCP Oracle zone where OdbNetwork is hosted.
      * Example: us-east4-b-r2.
      * If not specified, the system will pick a zone based on availability.
      * </pre>
      *
-     * <code>string gcp_oracle_zone = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string gcp_oracle_zone = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @param value The bytes for gcpOracleZone to set.
      * @return This builder for chaining.
@@ -2203,6 +2382,348 @@ public final class OdbNetwork extends com.google.protobuf.GeneratedMessage
       checkByteStringIsUtf8(value);
       gcpOracleZone_ = value;
       bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    private com.google.cloud.oracledatabase.v1.ServiceConnectivityConfig serviceConnectivityConfig_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.oracledatabase.v1.ServiceConnectivityConfig,
+            com.google.cloud.oracledatabase.v1.ServiceConnectivityConfig.Builder,
+            com.google.cloud.oracledatabase.v1.ServiceConnectivityConfigOrBuilder>
+        serviceConnectivityConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration to enable the service (Oracledatabase&#64;Google Cloud)
+     * to establish connectivity to the database.
+     *
+     * This should be specified if you intend to associate this OdbNetwork with a
+     * DatabaseConnection resource to `ExecuteSQL` on the database, or to create a
+     * ServiceIntegration with the Database.
+     *
+     * Please don't specify it otherwise to avoid complicating the network setup.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.oracledatabase.v1.ServiceConnectivityConfig service_connectivity_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the serviceConnectivityConfig field is set.
+     */
+    public boolean hasServiceConnectivityConfig() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration to enable the service (Oracledatabase&#64;Google Cloud)
+     * to establish connectivity to the database.
+     *
+     * This should be specified if you intend to associate this OdbNetwork with a
+     * DatabaseConnection resource to `ExecuteSQL` on the database, or to create a
+     * ServiceIntegration with the Database.
+     *
+     * Please don't specify it otherwise to avoid complicating the network setup.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.oracledatabase.v1.ServiceConnectivityConfig service_connectivity_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The serviceConnectivityConfig.
+     */
+    public com.google.cloud.oracledatabase.v1.ServiceConnectivityConfig
+        getServiceConnectivityConfig() {
+      if (serviceConnectivityConfigBuilder_ == null) {
+        return serviceConnectivityConfig_ == null
+            ? com.google.cloud.oracledatabase.v1.ServiceConnectivityConfig.getDefaultInstance()
+            : serviceConnectivityConfig_;
+      } else {
+        return serviceConnectivityConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration to enable the service (Oracledatabase&#64;Google Cloud)
+     * to establish connectivity to the database.
+     *
+     * This should be specified if you intend to associate this OdbNetwork with a
+     * DatabaseConnection resource to `ExecuteSQL` on the database, or to create a
+     * ServiceIntegration with the Database.
+     *
+     * Please don't specify it otherwise to avoid complicating the network setup.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.oracledatabase.v1.ServiceConnectivityConfig service_connectivity_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setServiceConnectivityConfig(
+        com.google.cloud.oracledatabase.v1.ServiceConnectivityConfig value) {
+      if (serviceConnectivityConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        serviceConnectivityConfig_ = value;
+      } else {
+        serviceConnectivityConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration to enable the service (Oracledatabase&#64;Google Cloud)
+     * to establish connectivity to the database.
+     *
+     * This should be specified if you intend to associate this OdbNetwork with a
+     * DatabaseConnection resource to `ExecuteSQL` on the database, or to create a
+     * ServiceIntegration with the Database.
+     *
+     * Please don't specify it otherwise to avoid complicating the network setup.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.oracledatabase.v1.ServiceConnectivityConfig service_connectivity_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setServiceConnectivityConfig(
+        com.google.cloud.oracledatabase.v1.ServiceConnectivityConfig.Builder builderForValue) {
+      if (serviceConnectivityConfigBuilder_ == null) {
+        serviceConnectivityConfig_ = builderForValue.build();
+      } else {
+        serviceConnectivityConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration to enable the service (Oracledatabase&#64;Google Cloud)
+     * to establish connectivity to the database.
+     *
+     * This should be specified if you intend to associate this OdbNetwork with a
+     * DatabaseConnection resource to `ExecuteSQL` on the database, or to create a
+     * ServiceIntegration with the Database.
+     *
+     * Please don't specify it otherwise to avoid complicating the network setup.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.oracledatabase.v1.ServiceConnectivityConfig service_connectivity_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeServiceConnectivityConfig(
+        com.google.cloud.oracledatabase.v1.ServiceConnectivityConfig value) {
+      if (serviceConnectivityConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000080) != 0)
+            && serviceConnectivityConfig_ != null
+            && serviceConnectivityConfig_
+                != com.google.cloud.oracledatabase.v1.ServiceConnectivityConfig
+                    .getDefaultInstance()) {
+          getServiceConnectivityConfigBuilder().mergeFrom(value);
+        } else {
+          serviceConnectivityConfig_ = value;
+        }
+      } else {
+        serviceConnectivityConfigBuilder_.mergeFrom(value);
+      }
+      if (serviceConnectivityConfig_ != null) {
+        bitField0_ |= 0x00000080;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration to enable the service (Oracledatabase&#64;Google Cloud)
+     * to establish connectivity to the database.
+     *
+     * This should be specified if you intend to associate this OdbNetwork with a
+     * DatabaseConnection resource to `ExecuteSQL` on the database, or to create a
+     * ServiceIntegration with the Database.
+     *
+     * Please don't specify it otherwise to avoid complicating the network setup.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.oracledatabase.v1.ServiceConnectivityConfig service_connectivity_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearServiceConnectivityConfig() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      serviceConnectivityConfig_ = null;
+      if (serviceConnectivityConfigBuilder_ != null) {
+        serviceConnectivityConfigBuilder_.dispose();
+        serviceConnectivityConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration to enable the service (Oracledatabase&#64;Google Cloud)
+     * to establish connectivity to the database.
+     *
+     * This should be specified if you intend to associate this OdbNetwork with a
+     * DatabaseConnection resource to `ExecuteSQL` on the database, or to create a
+     * ServiceIntegration with the Database.
+     *
+     * Please don't specify it otherwise to avoid complicating the network setup.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.oracledatabase.v1.ServiceConnectivityConfig service_connectivity_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.oracledatabase.v1.ServiceConnectivityConfig.Builder
+        getServiceConnectivityConfigBuilder() {
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return internalGetServiceConnectivityConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration to enable the service (Oracledatabase&#64;Google Cloud)
+     * to establish connectivity to the database.
+     *
+     * This should be specified if you intend to associate this OdbNetwork with a
+     * DatabaseConnection resource to `ExecuteSQL` on the database, or to create a
+     * ServiceIntegration with the Database.
+     *
+     * Please don't specify it otherwise to avoid complicating the network setup.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.oracledatabase.v1.ServiceConnectivityConfig service_connectivity_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.oracledatabase.v1.ServiceConnectivityConfigOrBuilder
+        getServiceConnectivityConfigOrBuilder() {
+      if (serviceConnectivityConfigBuilder_ != null) {
+        return serviceConnectivityConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return serviceConnectivityConfig_ == null
+            ? com.google.cloud.oracledatabase.v1.ServiceConnectivityConfig.getDefaultInstance()
+            : serviceConnectivityConfig_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration to enable the service (Oracledatabase&#64;Google Cloud)
+     * to establish connectivity to the database.
+     *
+     * This should be specified if you intend to associate this OdbNetwork with a
+     * DatabaseConnection resource to `ExecuteSQL` on the database, or to create a
+     * ServiceIntegration with the Database.
+     *
+     * Please don't specify it otherwise to avoid complicating the network setup.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.oracledatabase.v1.ServiceConnectivityConfig service_connectivity_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.oracledatabase.v1.ServiceConnectivityConfig,
+            com.google.cloud.oracledatabase.v1.ServiceConnectivityConfig.Builder,
+            com.google.cloud.oracledatabase.v1.ServiceConnectivityConfigOrBuilder>
+        internalGetServiceConnectivityConfigFieldBuilder() {
+      if (serviceConnectivityConfigBuilder_ == null) {
+        serviceConnectivityConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.oracledatabase.v1.ServiceConnectivityConfig,
+                com.google.cloud.oracledatabase.v1.ServiceConnectivityConfig.Builder,
+                com.google.cloud.oracledatabase.v1.ServiceConnectivityConfigOrBuilder>(
+                getServiceConnectivityConfig(), getParentForChildren(), isClean());
+        serviceConnectivityConfig_ = null;
+      }
+      return serviceConnectivityConfigBuilder_;
+    }
+
+    private boolean reconciling_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Indicates whether the OdbNetwork is currently reconciling
+     * changes.
+     * </pre>
+     *
+     * <code>bool reconciling = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The reconciling.
+     */
+    @java.lang.Override
+    public boolean getReconciling() {
+      return reconciling_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Indicates whether the OdbNetwork is currently reconciling
+     * changes.
+     * </pre>
+     *
+     * <code>bool reconciling = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The reconciling to set.
+     * @return This builder for chaining.
+     */
+    public Builder setReconciling(boolean value) {
+
+      reconciling_ = value;
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Indicates whether the OdbNetwork is currently reconciling
+     * changes.
+     * </pre>
+     *
+     * <code>bool reconciling = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearReconciling() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      reconciling_ = false;
       onChanged();
       return this;
     }

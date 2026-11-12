@@ -5,13 +5,43 @@
   "protoPackage": "google.cloud.discoveryengine.v1",
   "libraryPackage": "com.google.cloud.discoveryengine.v1",
   "services": {
+    "AclConfigService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "AclConfigServiceClient",
+          "rpcs": {
+            "GetAclConfig": {
+              "methods": ["getAclConfig", "getAclConfig", "getAclConfig", "getAclConfigCallable"]
+            },
+            "UpdateAclConfig": {
+              "methods": ["updateAclConfig", "updateAclConfigCallable"]
+            }
+          }
+        }
+      }
+    },
     "AssistantService": {
       "clients": {
         "grpc": {
           "libraryClient": "AssistantServiceClient",
           "rpcs": {
+            "CreateAssistant": {
+              "methods": ["createAssistant", "createAssistantCallable"]
+            },
+            "DeleteAssistant": {
+              "methods": ["deleteAssistant", "deleteAssistant", "deleteAssistant", "deleteAssistantCallable"]
+            },
+            "GetAssistant": {
+              "methods": ["getAssistant", "getAssistant", "getAssistant", "getAssistantCallable"]
+            },
+            "ListAssistants": {
+              "methods": ["listAssistants", "listAssistants", "listAssistants", "listAssistantsPagedCallable", "listAssistantsCallable"]
+            },
             "StreamAssist": {
               "methods": ["streamAssistCallable"]
+            },
+            "UpdateAssistant": {
+              "methods": ["updateAssistant", "updateAssistant", "updateAssistantCallable"]
             }
           }
         }
@@ -38,11 +68,32 @@
         }
       }
     },
+    "CollectionService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "CollectionServiceClient",
+          "rpcs": {
+            "DeleteCollection": {
+              "methods": ["deleteCollectionAsync", "deleteCollectionAsync", "deleteCollectionAsync", "deleteCollectionOperationCallable", "deleteCollectionCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicy", "getIamPolicy", "getIamPolicyCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicy", "setIamPolicy", "setIamPolicyCallable"]
+            }
+          }
+        }
+      }
+    },
     "CompletionService": {
       "clients": {
         "grpc": {
           "libraryClient": "CompletionServiceClient",
           "rpcs": {
+            "AdvancedCompleteQuery": {
+              "methods": ["advancedCompleteQuery", "advancedCompleteQueryCallable"]
+            },
             "CompleteQuery": {
               "methods": ["completeQuery", "completeQueryCallable"]
             },
@@ -137,6 +188,24 @@
         }
       }
     },
+    "DataConnectorService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "DataConnectorServiceClient",
+          "rpcs": {
+            "GetDataConnector": {
+              "methods": ["getDataConnector", "getDataConnector", "getDataConnector", "getDataConnectorCallable"]
+            },
+            "SetUpDataConnector": {
+              "methods": ["setUpDataConnectorAsync", "setUpDataConnectorAsync", "setUpDataConnectorAsync", "setUpDataConnectorOperationCallable", "setUpDataConnectorCallable"]
+            },
+            "UpdateDataConnector": {
+              "methods": ["updateDataConnector", "updateDataConnector", "updateDataConnectorCallable"]
+            }
+          }
+        }
+      }
+    },
     "DataStoreService": {
       "clients": {
         "grpc": {
@@ -151,8 +220,14 @@
             "GetDataStore": {
               "methods": ["getDataStore", "getDataStore", "getDataStore", "getDataStoreCallable"]
             },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicy", "getIamPolicy", "getIamPolicyCallable"]
+            },
             "ListDataStores": {
               "methods": ["listDataStores", "listDataStores", "listDataStores", "listDataStoresPagedCallable", "listDataStoresCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicy", "setIamPolicy", "setIamPolicyCallable"]
             },
             "UpdateDataStore": {
               "methods": ["updateDataStore", "updateDataStore", "updateDataStoreCallable"]
@@ -208,8 +283,14 @@
             "GetEngine": {
               "methods": ["getEngine", "getEngine", "getEngine", "getEngineCallable"]
             },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicy", "getIamPolicy", "getIamPolicyCallable"]
+            },
             "ListEngines": {
               "methods": ["listEngines", "listEngines", "listEngines", "listEnginesPagedCallable", "listEnginesCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicy", "setIamPolicy", "setIamPolicyCallable"]
             },
             "UpdateEngine": {
               "methods": ["updateEngine", "updateEngine", "updateEngineCallable"]
@@ -261,6 +342,33 @@
             },
             "PurgeIdentityMappings": {
               "methods": ["purgeIdentityMappingsAsync", "purgeIdentityMappingsOperationCallable", "purgeIdentityMappingsCallable"]
+            }
+          }
+        }
+      }
+    },
+    "LicenseConfigService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "LicenseConfigServiceClient",
+          "rpcs": {
+            "CreateLicenseConfig": {
+              "methods": ["createLicenseConfig", "createLicenseConfig", "createLicenseConfig", "createLicenseConfigCallable"]
+            },
+            "DistributeLicenseConfig": {
+              "methods": ["distributeLicenseConfig", "distributeLicenseConfig", "distributeLicenseConfig", "distributeLicenseConfigCallable"]
+            },
+            "GetLicenseConfig": {
+              "methods": ["getLicenseConfig", "getLicenseConfig", "getLicenseConfig", "getLicenseConfigCallable"]
+            },
+            "ListLicenseConfigs": {
+              "methods": ["listLicenseConfigs", "listLicenseConfigs", "listLicenseConfigs", "listLicenseConfigsPagedCallable", "listLicenseConfigsCallable"]
+            },
+            "RetractLicenseConfig": {
+              "methods": ["retractLicenseConfig", "retractLicenseConfig", "retractLicenseConfig", "retractLicenseConfig", "retractLicenseConfig", "retractLicenseConfigCallable"]
+            },
+            "UpdateLicenseConfig": {
+              "methods": ["updateLicenseConfig", "updateLicenseConfig", "updateLicenseConfigCallable"]
             }
           }
         }
@@ -361,6 +469,18 @@
         "grpc": {
           "libraryClient": "ServingConfigServiceClient",
           "rpcs": {
+            "CreateServingConfig": {
+              "methods": ["createServingConfig", "createServingConfig", "createServingConfig", "createServingConfig", "createServingConfigCallable"]
+            },
+            "DeleteServingConfig": {
+              "methods": ["deleteServingConfig", "deleteServingConfig", "deleteServingConfig", "deleteServingConfigCallable"]
+            },
+            "GetServingConfig": {
+              "methods": ["getServingConfig", "getServingConfig", "getServingConfig", "getServingConfigCallable"]
+            },
+            "ListServingConfigs": {
+              "methods": ["listServingConfigs", "listServingConfigs", "listServingConfigs", "listServingConfigs", "listServingConfigsPagedCallable", "listServingConfigsCallable"]
+            },
             "UpdateServingConfig": {
               "methods": ["updateServingConfig", "updateServingConfig", "updateServingConfigCallable"]
             }
@@ -475,8 +595,41 @@
             "BatchUpdateUserLicenses": {
               "methods": ["batchUpdateUserLicensesAsync", "batchUpdateUserLicensesOperationCallable", "batchUpdateUserLicensesCallable"]
             },
+            "ListLicenseConfigsUsageStats": {
+              "methods": ["listLicenseConfigsUsageStats", "listLicenseConfigsUsageStats", "listLicenseConfigsUsageStats", "listLicenseConfigsUsageStatsCallable"]
+            },
             "ListUserLicenses": {
               "methods": ["listUserLicenses", "listUserLicenses", "listUserLicenses", "listUserLicensesPagedCallable", "listUserLicensesCallable"]
+            }
+          }
+        }
+      }
+    },
+    "UserStoreService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "UserStoreServiceClient",
+          "rpcs": {
+            "GetUserStore": {
+              "methods": ["getUserStore", "getUserStore", "getUserStore", "getUserStoreCallable"]
+            },
+            "UpdateUserStore": {
+              "methods": ["updateUserStore", "updateUserStore", "updateUserStoreCallable"]
+            }
+          }
+        }
+      }
+    },
+    "WidgetConfigService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "WidgetConfigServiceClient",
+          "rpcs": {
+            "GetWidgetConfig": {
+              "methods": ["getWidgetConfig", "getWidgetConfig", "getWidgetConfig", "getWidgetConfigCallable"]
+            },
+            "UpdateWidgetConfig": {
+              "methods": ["updateWidgetConfig", "updateWidgetConfig", "updateWidgetConfigCallable"]
             }
           }
         }
