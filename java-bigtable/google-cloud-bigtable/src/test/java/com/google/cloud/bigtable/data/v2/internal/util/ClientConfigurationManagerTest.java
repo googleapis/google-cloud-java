@@ -17,6 +17,7 @@ package com.google.cloud.bigtable.data.v2.internal.util;
 
 import static com.google.common.truth.Truth.assertThat;
 import static com.google.common.truth.extensions.proto.ProtoTruth.assertThat;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyLong;
 import static org.mockito.ArgumentMatchers.eq;
@@ -37,12 +38,14 @@ import com.google.bigtable.v2.SessionClientConfiguration.SessionPoolConfiguratio
 import com.google.bigtable.v2.SessionDiversionConfiguration;
 import com.google.bigtable.v2.SessionDiversionConfiguration.PerScopeDiversion;
 import com.google.bigtable.v2.SessionScopeDiversionConfiguration;
+import com.google.bigtable.v2.TelemetryConfiguration;
 import com.google.cloud.bigtable.data.v2.FakeServiceBuilder;
 import com.google.cloud.bigtable.data.v2.internal.api.ChannelProviders;
 import com.google.cloud.bigtable.data.v2.internal.api.ChannelProviders.ForwardingChannelProvider;
 import com.google.cloud.bigtable.data.v2.internal.api.InstanceName;
 import com.google.cloud.bigtable.data.v2.internal.csm.NoopMetrics;
 import com.google.cloud.bigtable.data.v2.internal.csm.attributes.ClientInfo;
+import com.google.cloud.bigtable.data.v2.internal.csm.tracers.DebugTagTracer;
 import com.google.cloud.bigtable.data.v2.internal.util.ClientConfigurationManager.ConfigListener;
 import com.google.common.collect.Iterables;
 import com.google.protobuf.TextFormat;
@@ -64,6 +67,11 @@ import io.grpc.ServerInterceptor;
 import io.grpc.Status;
 import io.grpc.stub.StreamObserver;
 import java.io.IOException;
+import java.time.Clock;
+import java.time.Duration;
+import java.time.Instant;
+import java.time.ZoneId;
+import java.time.ZoneOffset;
 import java.util.List;
 import java.util.Properties;
 import java.util.concurrent.CopyOnWriteArrayList;
@@ -75,6 +83,11 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.logging.Handler;
+import java.util.logging.Level;
+import java.util.logging.LogRecord;
+import java.util.logging.Logger;
+import java.util.stream.Collectors;
 import javax.annotation.Nullable;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -816,12 +829,219 @@ class ClientConfigurationManagerTest {
     }
   }
 
+  @Test
+  void expiredConfigFallsBackToDefaultWithoutRetryAmplificationAndLogsFailure() throws Exception {
+    manager.close();
+
+    // Server returns session_load = 0.25, validity_duration = 15m, polling_interval = 5m,
+    // max_rpc_retry_count = 0 (matching healthy production server responses).
+    ClientConfiguration.Builder serverCfgBuilder = service.config.get().toBuilder();
+    serverCfgBuilder
+        .getPollingConfigurationBuilder()
+        .setPollingInterval(Durations.fromMinutes(5))
+        .setValidityDuration(Durations.fromMinutes(15))
+        .setMaxRpcRetryCount(0);
+    service.config.set(serverCfgBuilder.build());
+
+    MutableClock clock = new MutableClock(Instant.parse("2026-11-09T00:00:00Z"));
+    AtomicInteger channelBuilds = new AtomicInteger();
+    ChannelProviders.ChannelProvider countingChannelProvider =
+        new ForwardingChannelProvider(channelProvider) {
+          @Override
+          public ManagedChannelBuilder<?> newChannelBuilder() {
+            channelBuilds.incrementAndGet();
+            return super.newChannelBuilder();
+          }
+        };
+
+    AtomicReference<Runnable> latestScheduledPoll = new AtomicReference<>();
+    ScheduledExecutorService pollCapturingExecutor = Mockito.mock(ScheduledExecutorService.class);
+    lenient()
+        .when(pollCapturingExecutor.schedule(any(Runnable.class), anyLong(), any(TimeUnit.class)))
+        .thenAnswer(
+            invocation -> {
+              long delayMs =
+                  invocation
+                      .getArgument(2, TimeUnit.class)
+                      .toMillis(invocation.getArgument(1, Long.class));
+              Runnable task = invocation.getArgument(0, Runnable.class);
+              if (delayMs < POLL_VS_RETRY_THRESHOLD_MS) {
+                task.run();
+              } else {
+                latestScheduledPoll.set(task);
+              }
+              return Mockito.mock(ScheduledFuture.class);
+            });
+
+    DebugTagTracer mockDebugTracer = Mockito.mock(DebugTagTracer.class);
+    CapturingLogHandler logHandler = new CapturingLogHandler();
+    Logger managerLogger = Logger.getLogger(ClientConfigurationManager.class.getName());
+    managerLogger.addHandler(logHandler);
+
+    try (ClientConfigurationManager localManager =
+        new ClientConfigurationManager(
+            new Properties(),
+            FEATURE_FLAGS,
+            CLIENT_INFO,
+            countingChannelProvider,
+            mockDebugTracer,
+            pollCapturingExecutor,
+            clock)) {
+      // 1. Initial poll succeeds: 1 channel created in ctor, 1 RPC attempt.
+      localManager.start().get();
+      assertThat(channelBuilds.get()).isEqualTo(1);
+      assertThat(service.requestCount.get()).isEqualTo(1);
+      assertThat(localManager.getClientConfiguration().hasSessionConfiguration()).isTrue();
+
+      AtomicInteger sessionConfigChanges = new AtomicInteger();
+      AtomicReference<SessionClientConfiguration> latestSessionCfg = new AtomicReference<>();
+      localManager.addListener(
+          ClientConfiguration::getSessionConfiguration,
+          cfg -> {
+            sessionConfigChanges.incrementAndGet();
+            latestSessionCfg.set(cfg);
+          });
+
+      // 2. Server starts failing with Status.INTERNAL ("http2 exception").
+      service.failureStatus.set(Status.INTERNAL.withDescription("http2 exception"));
+
+      // Advance +5m (still within 15m validity_duration): single attempt, no channel rebuild,
+      // session config stays active, and warning is logged with the failure cause.
+      clock.advance(Duration.ofMinutes(5));
+      latestScheduledPoll.get().run();
+      outstandingRpcCounter.waitUntilRpcsDone();
+
+      assertThat(service.requestCount.get()).isEqualTo(2);
+      assertThat(channelBuilds.get()).isEqualTo(1);
+      assertThat(localManager.getClientConfiguration().hasSessionConfiguration()).isTrue();
+      assertThat(sessionConfigChanges.get()).isEqualTo(0);
+      assertThat(logHandler.warningThrowables()).hasSize(1);
+      assertThat(logHandler.warningThrowables().get(0))
+          .hasMessageThat()
+          .contains("INTERNAL: http2 exception");
+
+      // 3. Advance another +11m (+16m total, past 15m validity_duration):
+      // Falls back to defaultConfig (session_load = 0 kill switch), notifies listener, logs
+      // warning, and MUST NOT inherit defaultConfig's startup max_rpc_retry_count = 5.
+      clock.advance(Duration.ofMinutes(11));
+      latestScheduledPoll.get().run();
+      outstandingRpcCounter.waitUntilRpcsDone();
+
+      assertThat(localManager.getClientConfiguration().hasSessionConfiguration()).isFalse();
+      assertThat(sessionConfigChanges.get()).isEqualTo(1);
+      assertThat(latestSessionCfg.get()).isEqualToDefaultInstance();
+      assertThat(service.requestCount.get()).isEqualTo(3);
+      assertThat(channelBuilds.get()).isEqualTo(1);
+      assertThat(logHandler.warningThrowables()).hasSize(2);
+      assertThat(logHandler.warningThrowables().get(1))
+          .hasMessageThat()
+          .contains("INTERNAL: http2 exception");
+
+      // 4. Subsequent background poll (+5m later while still on defaultConfig) also makes only 1
+      // attempt and 0 channel rebuilds.
+      clock.advance(Duration.ofMinutes(5));
+      latestScheduledPoll.get().run();
+      outstandingRpcCounter.waitUntilRpcsDone();
+
+      assertThat(service.requestCount.get()).isEqualTo(4);
+      assertThat(channelBuilds.get()).isEqualTo(1);
+      assertThat(logHandler.warningThrowables()).hasSize(3);
+      verify(mockDebugTracer, times(3))
+          .record(TelemetryConfiguration.Level.ERROR, "client_config_fetch_failed");
+
+      // 5. Server recovers: next background poll restores session config.
+      service.failureStatus.set(null);
+      clock.advance(Duration.ofMinutes(5));
+      latestScheduledPoll.get().run();
+      outstandingRpcCounter.waitUntilRpcsDone();
+
+      assertThat(service.requestCount.get()).isEqualTo(5);
+      assertThat(localManager.getClientConfiguration().hasSessionConfiguration()).isTrue();
+      assertThat(sessionConfigChanges.get()).isEqualTo(2);
+    } finally {
+      managerLogger.removeHandler(logHandler);
+    }
+  }
+
+  @Test
+  void failedInitialFetchDoesNotAmplifySubsequentBackgroundPollRetries() throws Exception {
+    manager.close();
+
+    service.failureStatus.set(Status.UNAVAILABLE.withDescription("backend unavailable"));
+
+    AtomicInteger channelBuilds = new AtomicInteger();
+    ChannelProviders.ChannelProvider countingChannelProvider =
+        new ForwardingChannelProvider(channelProvider) {
+          @Override
+          public ManagedChannelBuilder<?> newChannelBuilder() {
+            channelBuilds.incrementAndGet();
+            return super.newChannelBuilder();
+          }
+        };
+
+    AtomicReference<Runnable> latestScheduledPoll = new AtomicReference<>();
+    ScheduledExecutorService pollCapturingExecutor = Mockito.mock(ScheduledExecutorService.class);
+    lenient()
+        .when(pollCapturingExecutor.schedule(any(Runnable.class), anyLong(), any(TimeUnit.class)))
+        .thenAnswer(
+            invocation -> {
+              long delayMs =
+                  invocation
+                      .getArgument(2, TimeUnit.class)
+                      .toMillis(invocation.getArgument(1, Long.class));
+              Runnable task = invocation.getArgument(0, Runnable.class);
+              if (delayMs < POLL_VS_RETRY_THRESHOLD_MS) {
+                task.run();
+              } else {
+                latestScheduledPoll.set(task);
+              }
+              return Mockito.mock(ScheduledFuture.class);
+            });
+
+    CapturingLogHandler logHandler = new CapturingLogHandler();
+    Logger managerLogger = Logger.getLogger(ClientConfigurationManager.class.getName());
+    managerLogger.addHandler(logHandler);
+
+    try (ClientConfigurationManager localManager =
+        new ClientConfigurationManager(
+            FEATURE_FLAGS,
+            CLIENT_INFO,
+            countingChannelProvider,
+            noopDebugTracer,
+            pollCapturingExecutor)) {
+      // Initial start() uses defaultConfig's startup max_rpc_retry_count = 5 (6 attempts total,
+      // 1 initial channel + 5 replaceChannel() rebuilds).
+      ExecutionException startFailure =
+          assertThrows(ExecutionException.class, () -> localManager.start().get());
+      assertThat(startFailure).hasCauseThat().hasMessageThat().contains("UNAVAILABLE");
+      assertThat(service.requestCount.get()).isEqualTo(6);
+      assertThat(channelBuilds.get()).isEqualTo(6);
+      int warningsAfterStart = logHandler.warningThrowables().size();
+      assertThat(warningsAfterStart).isEqualTo(1);
+
+      // Next scheduled background poll must NOT inherit startup max_rpc_retry_count = 5:
+      // makes 1 attempt, 0 channel rebuilds, and logs a warning with the failure cause.
+      latestScheduledPoll.get().run();
+      outstandingRpcCounter.waitUntilRpcsDone();
+
+      assertThat(service.requestCount.get()).isEqualTo(7);
+      assertThat(channelBuilds.get()).isEqualTo(6);
+      assertThat(logHandler.warningThrowables()).hasSize(warningsAfterStart + 1);
+      assertThat(logHandler.warningThrowables().get(warningsAfterStart))
+          .hasMessageThat()
+          .contains("UNAVAILABLE: backend unavailable");
+    } finally {
+      managerLogger.removeHandler(logHandler);
+    }
+  }
+
   static class FakeConfigService extends BigtableGrpc.BigtableImplBase {
     private final AtomicReference<ClientConfiguration> config = new AtomicReference<>();
 
     // Number of leading requests to answer with a clean (OK) close that delivers no message,
     // simulating the server closing the stream without ever returning a configuration.
     private final AtomicInteger emptyResponses = new AtomicInteger(0);
+    private final AtomicReference<Status> failureStatus = new AtomicReference<>();
     private final AtomicInteger requestCount = new AtomicInteger(0);
 
     public FakeConfigService() throws IOException {
@@ -846,6 +1066,11 @@ class ClientConfigurationManagerTest {
         GetClientConfigurationRequest request,
         StreamObserver<ClientConfiguration> responseObserver) {
       requestCount.incrementAndGet();
+      Status statusToFailWith = failureStatus.get();
+      if (statusToFailWith != null) {
+        responseObserver.onError(statusToFailWith.asRuntimeException());
+        return;
+      }
       if (emptyResponses.getAndDecrement() > 0) {
         // Close cleanly without sending a message.
         responseObserver.onCompleted();
@@ -854,6 +1079,57 @@ class ClientConfigurationManagerTest {
       responseObserver.onNext(config.get());
       responseObserver.onCompleted();
     }
+  }
+
+  private static final class MutableClock extends Clock {
+    private final AtomicReference<Instant> now;
+    private final ZoneId zone;
+
+    MutableClock(Instant initial) {
+      this.now = new AtomicReference<>(initial);
+      this.zone = ZoneOffset.UTC;
+    }
+
+    void advance(Duration duration) {
+      now.updateAndGet(current -> current.plus(duration));
+    }
+
+    @Override
+    public ZoneId getZone() {
+      return zone;
+    }
+
+    @Override
+    public Clock withZone(ZoneId zone) {
+      return this;
+    }
+
+    @Override
+    public Instant instant() {
+      return now.get();
+    }
+  }
+
+  private static final class CapturingLogHandler extends Handler {
+    private final List<LogRecord> records = new CopyOnWriteArrayList<>();
+
+    List<Throwable> warningThrowables() {
+      return records.stream()
+          .filter(r -> r.getLevel().intValue() >= Level.WARNING.intValue() && r.getThrown() != null)
+          .map(LogRecord::getThrown)
+          .collect(Collectors.toList());
+    }
+
+    @Override
+    public void publish(LogRecord record) {
+      records.add(record);
+    }
+
+    @Override
+    public void flush() {}
+
+    @Override
+    public void close() {}
   }
 
   /**

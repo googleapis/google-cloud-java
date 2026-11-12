@@ -47,6 +47,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.Reader;
 import java.nio.charset.StandardCharsets;
+import java.time.Clock;
 import java.time.Duration;
 import java.time.Instant;
 import java.util.ArrayList;
@@ -164,6 +165,7 @@ public class ClientConfigurationManager implements AutoCloseable {
 
   private final DebugTagTracer debugTagTracer;
   private final ScheduledExecutorService executor;
+  private final Clock clock;
 
   private final ClientConfiguration defaultConfig;
   private final Optional<ClientConfiguration> overrideConfig;
@@ -174,6 +176,9 @@ public class ClientConfigurationManager implements AutoCloseable {
   @GuardedBy("this")
   @Nonnull
   private ClientConfiguration clientConfiguration;
+
+  @GuardedBy("this")
+  private boolean usingDefaultConfig;
 
   @GuardedBy("this")
   @Nonnull
@@ -207,6 +212,19 @@ public class ClientConfigurationManager implements AutoCloseable {
       DebugTagTracer tracer,
       ScheduledExecutorService executor)
       throws IOException {
+    this(sysProps, featureFlags, clientInfo, channelProvider, tracer, executor, Clock.systemUTC());
+  }
+
+  ClientConfigurationManager(
+      Properties sysProps,
+      FeatureFlags featureFlags,
+      ClientInfo clientInfo,
+      ChannelProvider channelProvider,
+      DebugTagTracer tracer,
+      ScheduledExecutorService executor,
+      Clock clock)
+      throws IOException {
+    this.clock = Preconditions.checkNotNull(clock, "clock");
     this.defaultConfig = loadDefault();
     boolean overrideUseDefault =
         Boolean.parseBoolean(sysProps.getProperty(OVERRIDE_USE_DEFAULT_SYS_PROP_KEY));
@@ -242,6 +260,7 @@ public class ClientConfigurationManager implements AutoCloseable {
     }
     featureFlags = channelProvider.updateFeatureFlags(featureFlags);
     this.clientConfiguration = normalizeConfig(overrideConfig.orElse(defaultConfig));
+    this.usingDefaultConfig = !overrideConfig.isPresent();
 
     this.metadata =
         Util.composeMetadata(
@@ -285,7 +304,7 @@ public class ClientConfigurationManager implements AutoCloseable {
       logger.log(Level.CONFIG, "Using local override config: {0}", cfg);
       return CompletableFuture.completedFuture(cfg);
     }
-    CompletableFuture<ClientConfiguration> f = startPolling();
+    CompletableFuture<ClientConfiguration> f = startPolling(/* isInitialPoll= */ true);
     @SuppressWarnings("UnusedVariable")
     CompletableFuture<ClientConfiguration> ignored =
         f.whenComplete(
@@ -329,14 +348,14 @@ public class ClientConfigurationManager implements AutoCloseable {
     return entry;
   }
 
-  private CompletableFuture<ClientConfiguration> startPolling() {
+  private CompletableFuture<ClientConfiguration> startPolling(boolean isInitialPoll) {
     CompletableFuture<ClientConfiguration> result = new CompletableFuture<>();
-    sendRequestWithRetries(0, result);
+    sendRequestWithRetries(0, isInitialPoll, result);
     return result;
   }
 
   private void sendRequestWithRetries(
-      int attemptCount, CompletableFuture<ClientConfiguration> finalResult) {
+      int attemptCount, boolean isInitialPoll, CompletableFuture<ClientConfiguration> finalResult) {
     // Nothing after the synchronized block below may run while holding this monitor, because both
     // completing finalResult and registering the continuation can run alien code inline on the
     // current thread: completing the future runs whatever the caller of start() chained onto it,
@@ -373,7 +392,7 @@ public class ClientConfigurationManager implements AutoCloseable {
               }
 
               // Handle failure and retry if necessary
-              if (handleFailedFetch(throwable, attemptCount)) {
+              if (handleFailedFetch(throwable, attemptCount, isInitialPoll)) {
                 debugTagTracer.record(
                     TelemetryConfiguration.Level.ERROR, "client_config_fetch_failed");
                 replaceChannel();
@@ -381,10 +400,14 @@ public class ClientConfigurationManager implements AutoCloseable {
                 @SuppressWarnings("UnusedVariable")
                 ScheduledFuture<?> ignored2 =
                     executor.schedule(
-                        () -> sendRequestWithRetries(attemptCount + 1, finalResult),
+                        () -> sendRequestWithRetries(attemptCount + 1, isInitialPoll, finalResult),
                         delay,
                         TimeUnit.MILLISECONDS);
               } else {
+                if (!isInitialPoll) {
+                  debugTagTracer.record(
+                      TelemetryConfiguration.Level.ERROR, "client_config_fetch_failed");
+                }
                 scheduleNextPoll();
                 finalResult.completeExceptionally(throwable);
               }
@@ -507,21 +530,28 @@ public class ClientConfigurationManager implements AutoCloseable {
         executor.schedule(
             () -> {
               @SuppressWarnings("UnusedVariable")
-              CompletableFuture<ClientConfiguration> ignored = startPolling();
+              CompletableFuture<ClientConfiguration> ignored =
+                  startPolling(/* isInitialPoll= */ false);
             },
             delayMs,
             TimeUnit.MILLISECONDS);
   }
 
   private void setClientConfiguration(ClientConfiguration result) {
+    setClientConfiguration(result, /* isDefault= */ false);
+  }
+
+  private void setClientConfiguration(ClientConfiguration result, boolean isDefault) {
     ClientConfiguration old;
     ClientConfiguration normalized = normalizeConfig(result);
     synchronized (this) {
       old = this.clientConfiguration;
+      this.usingDefaultConfig = isDefault;
       clientConfiguration = normalized;
       if (clientConfiguration.hasPollingConfiguration()) {
         this.validUntil =
-            Instant.now()
+            clock
+                .instant()
                 .plus(
                     toJavaDuration(
                         clientConfiguration.getPollingConfiguration().getValidityDuration()));
@@ -569,19 +599,26 @@ public class ClientConfigurationManager implements AutoCloseable {
     }
   }
 
-  private boolean handleFailedFetch(Throwable throwable, int attempt) {
+  private boolean handleFailedFetch(Throwable throwable, int attempt, boolean isInitialPoll) {
     boolean shouldReset = false;
     synchronized (this) {
-      if (validUntil.isBefore(Instant.now())) {
+      if (validUntil.isBefore(clock.instant())) {
         shouldReset = true;
       }
     }
     if (shouldReset) {
-      setClientConfiguration(defaultConfig);
+      logger.log(
+          Level.WARNING,
+          "Client config validity expired after failed poll; falling back to default config",
+          throwable);
+      setClientConfiguration(defaultConfig, /* isDefault= */ true);
     }
 
     // Figure out if we should retry
     if (!(throwable instanceof StatusRuntimeException)) {
+      if (!isInitialPoll && !shouldReset) {
+        logger.log(Level.WARNING, "Failed to refresh client config", throwable);
+      }
       return false;
     }
     Code statusCode = Status.fromThrowable(throwable).getCode();
@@ -589,23 +626,44 @@ public class ClientConfigurationManager implements AutoCloseable {
     switch (statusCode) {
       case PERMISSION_DENIED:
       case UNAUTHENTICATED:
-        logger.warning("instance.ping permission is required");
+        logger.log(Level.WARNING, "instance.ping permission is required", throwable);
         return false;
       case NOT_FOUND:
       case INVALID_ARGUMENT:
+        if (!isInitialPoll && !shouldReset) {
+          logger.log(Level.WARNING, "Failed to refresh client config", throwable);
+        }
         return false;
       default:
         boolean isClosing;
         int maxRpcRetryCount;
         synchronized (this) {
           isClosing = closing;
-          maxRpcRetryCount =
-              getClientConfiguration().getPollingConfiguration().getMaxRpcRetryCount();
+          // defaultConfig's max_rpc_retry_count (5) is the startup retry budget for the blocking
+          // initial start() call. Background polls must not inherit it (either after falling back
+          // to defaultConfig on validUntil expiry or after a failed initial fetch), which would
+          // otherwise execute 6 attempts and 5 channel rebuilds per poll interval.
+          if (!isInitialPoll && usingDefaultConfig) {
+            maxRpcRetryCount = 0;
+          } else {
+            maxRpcRetryCount = clientConfiguration.getPollingConfiguration().getMaxRpcRetryCount();
+          }
         }
         if (isClosing) {
           return false;
         }
-        return attempt < maxRpcRetryCount;
+        boolean willRetry = attempt < maxRpcRetryCount;
+        if (willRetry) {
+          if (logger.isLoggable(Level.FINE)) {
+            logger.log(
+                Level.FINE,
+                "Failed to fetch client config (attempt " + (attempt + 1) + "), retrying",
+                throwable);
+          }
+        } else if (!isInitialPoll && !shouldReset) {
+          logger.log(Level.WARNING, "Failed to refresh client config", throwable);
+        }
+        return willRetry;
     }
   }
 
