@@ -130,7 +130,11 @@ public class TransactionMockServerTest extends AbstractMockServerTest {
             .createStatement()
             .execute(
                 "begin transaction isolation level " + isolationLevel.toString().replace("_", " "));
+        assertEquals(
+            IsolationLevelConverter.convertToJdbc(isolationLevel),
+            connection.getTransactionIsolation());
         runTestTransaction(connection, isolationLevel);
+        assertEquals(Connection.TRANSACTION_SERIALIZABLE, connection.getTransactionIsolation());
       }
     }
   }
