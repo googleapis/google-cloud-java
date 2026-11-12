@@ -328,12 +328,6 @@ public class ConnectionTest {
             "descriptor".getBytes(StandardCharsets.UTF_8),
             connection::setProtoDescriptors,
             connection::getProtoDescriptors);
-        assertResetProperty(
-            connection,
-            null,
-            "filename",
-            connection::setProtoDescriptorsFilePath,
-            connection::getProtoDescriptorsFilePath);
 
         // Test the AutocommitDmlMode property that is only supported in auto-commit mode.
         connection.rollback();

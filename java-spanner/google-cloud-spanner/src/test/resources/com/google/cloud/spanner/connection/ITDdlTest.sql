@@ -189,18 +189,20 @@ START BATCH DDL;
 ABORT BATCH;
 
 NEW_CONNECTION;
--- Set proto descriptors using relative path to the descriptors.pb file. This gets applied for next DDL statement
+-- Setting proto descriptors via file path is not supported and should throw an exception
+@EXPECT EXCEPTION INVALID_ARGUMENT
 SET PROTO_DESCRIPTORS_FILE_PATH = 'src/test/resources/com/google/cloud/spanner/descriptors.pb';
--- Check if Proto descriptors is set
-@EXPECT RESULT_SET 'PROTO_DESCRIPTORS_FILE_PATH'
+
+@EXPECT EXCEPTION INVALID_ARGUMENT
 SHOW VARIABLE PROTO_DESCRIPTORS_FILE_PATH;
+
+-- Set proto descriptors using base64 string. This gets applied for next DDL statement
+SET PROTO_DESCRIPTORS = 'CvYCCgxzaW5nZXIucHJvdG8SFmV4YW1wbGVzLnNwYW5uZXIubXVzaWMi6gEKClNpbmdlckluZm8SIAoJc2luZ2VyX2lkGAEgASgDSABSCHNpbmdlcklkiAEBEiIKCmJpcnRoX2RhdGUYAiABKAlIAVIJYmlydGhEYXRliAEBEiUKC25hdGlvbmFsaXR5GAMgASgJSAJSC25hdGlvbmFsaXR5iAEBEjgKBWdlbnJlGAQgASgOMh0uZXhhbXBsZXMuc3Bhbm5lci5tdXNpYy5HZW5yZUgDUgVnZW5yZYgBAUIMCgpfc2luZ2VyX2lkQg0KC19iaXJ0aF9kYXRlQg4KDF9uYXRpb25hbGl0eUIICgZfZ2VucmUqLgoFR2VucmUSBwoDUE9QEAASCAoESkFaWhABEggKBEZPTEsQAhIICgRST0NLEANCKQoYY29tLmdvb2dsZS5jbG91ZC5zcGFubmVyQgtTaW5nZXJQcm90b1AAYgZwcm90bzM=';
 
 CREATE PROTO BUNDLE (examples.spanner.music.Genre);
 -- Check if Proto descriptors is reset to null
 @EXPECT RESULT_SET 'PROTO_DESCRIPTORS',null
 SHOW VARIABLE PROTO_DESCRIPTORS;
-@EXPECT RESULT_SET 'PROTO_DESCRIPTORS_FILE_PATH',null
-SHOW VARIABLE PROTO_DESCRIPTORS_FILE_PATH;
 
 -- Set Proto Descriptor as base64 string. This gets applied to all statements in next DDL batch
 SET PROTO_DESCRIPTORS = 'CvYCCgxzaW5nZXIucHJvdG8SFmV4YW1wbGVzLnNwYW5uZXIubXVzaWMi6gEKClNpbmdlckluZm8SIAoJc2luZ2VyX2lkGAEgASgDSABSCHNpbmdlcklkiAEBEiIKCmJpcnRoX2RhdGUYAiABKAlIAVIJYmlydGhEYXRliAEBEiUKC25hdGlvbmFsaXR5GAMgASgJSAJSC25hdGlvbmFsaXR5iAEBEjgKBWdlbnJlGAQgASgOMh0uZXhhbXBsZXMuc3Bhbm5lci5tdXNpYy5HZW5yZUgDUgVnZW5yZYgBAUIMCgpfc2luZ2VyX2lkQg0KC19iaXJ0aF9kYXRlQg4KDF9uYXRpb25hbGl0eUIICgZfZ2VucmUqLgoFR2VucmUSBwoDUE9QEAASCAoESkFaWhABEggKBEZPTEsQAhIICgRST0NLEANCKQoYY29tLmdvb2dsZS5jbG91ZC5zcGFubmVyQgtTaW5nZXJQcm90b1AAYgZwcm90bzM=';

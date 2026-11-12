@@ -52,7 +52,6 @@ import static com.google.cloud.spanner.connection.ConnectionProperties.TRANSACTI
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.gax.core.GaxProperties;
-import com.google.cloud.ByteArray;
 import com.google.cloud.Timestamp;
 import com.google.cloud.spanner.AsyncResultSet;
 import com.google.cloud.spanner.BatchClient;
@@ -105,9 +104,6 @@ import io.opentelemetry.api.common.Attributes;
 import io.opentelemetry.api.common.AttributesBuilder;
 import io.opentelemetry.api.trace.Span;
 import io.opentelemetry.api.trace.Tracer;
-import java.io.File;
-import java.io.InputStream;
-import java.nio.file.Files;
 import java.time.Duration;
 import java.time.Instant;
 import java.util.ArrayList;
@@ -303,7 +299,6 @@ class ConnectionImpl implements Connection {
   private RequestOptions.ClientContext clientContext;
   private boolean excludeTxnFromChangeStreams;
   private byte[] protoDescriptors;
-  private String protoDescriptorsFilePath;
 
   /** Create a connection and register it in the SpannerPool. */
   ConnectionImpl(ConnectionOptions options) {
@@ -537,7 +532,6 @@ class ConnectionImpl implements Connection {
     this.connectionState.resetValue(DIRECTED_READ, context, inTransaction);
     this.connectionState.resetValue(SAVEPOINT_SUPPORT, context, inTransaction);
     this.protoDescriptors = null;
-    this.protoDescriptorsFilePath = null;
     this.clientContext = null;
 
     if (!isTransactionStarted()) {
@@ -1025,22 +1019,6 @@ class ConnectionImpl implements Connection {
   @Override
   public byte[] getProtoDescriptors() {
     ConnectionPreconditions.checkState(!isClosed(), CLOSED_ERROR_MSG);
-    if (this.protoDescriptors == null && this.protoDescriptorsFilePath != null) {
-      // Read from file if filepath is valid
-      try {
-        File protoDescriptorsFile = new File(this.protoDescriptorsFilePath);
-        if (!protoDescriptorsFile.isFile()) {
-          throw SpannerExceptionFactory.newSpannerException(
-              ErrorCode.INVALID_ARGUMENT,
-              String.format(
-                  "File %s is not a valid proto descriptors file", this.protoDescriptorsFilePath));
-        }
-        InputStream pdStream = Files.newInputStream(protoDescriptorsFile.toPath());
-        this.protoDescriptors = ByteArray.copyFrom(pdStream).toByteArray();
-      } catch (Exception exception) {
-        throw SpannerExceptionFactory.newSpannerException(exception);
-      }
-    }
     return this.protoDescriptors;
   }
 
@@ -1051,21 +1029,6 @@ class ConnectionImpl implements Connection {
     ConnectionPreconditions.checkState(
         !isBatchActive(), "Proto descriptors cannot be set when a batch is active");
     this.protoDescriptors = protoDescriptors;
-    this.protoDescriptorsFilePath = null;
-  }
-
-  void setProtoDescriptorsFilePath(@Nonnull String protoDescriptorsFilePath) {
-    Preconditions.checkNotNull(protoDescriptorsFilePath);
-    ConnectionPreconditions.checkState(!isClosed(), CLOSED_ERROR_MSG);
-    ConnectionPreconditions.checkState(
-        !isBatchActive(), "Proto descriptors file path cannot be set when a batch is active");
-    this.protoDescriptorsFilePath = protoDescriptorsFilePath;
-    this.protoDescriptors = null;
-  }
-
-  String getProtoDescriptorsFilePath() {
-    ConnectionPreconditions.checkState(!isClosed(), CLOSED_ERROR_MSG);
-    return this.protoDescriptorsFilePath;
   }
 
   /**
@@ -2439,7 +2402,6 @@ class ConnectionImpl implements Connection {
     ApiFuture<Void> result = getOrStartDdlUnitOfWork(ddl).executeDdlAsync(callType, ddl);
     // reset proto descriptors after executing a DDL statement
     this.protoDescriptors = null;
-    this.protoDescriptorsFilePath = null;
     return result;
   }
 
@@ -2551,7 +2513,6 @@ class ConnectionImpl implements Connection {
       if (isDdlBatchActive()) {
         // reset proto descriptors after executing a DDL batch
         this.protoDescriptors = null;
-        this.protoDescriptorsFilePath = null;
       }
       this.batchMode = BatchMode.NONE;
       setDefaultTransactionOptions(getDefaultIsolationLevel());
