@@ -1950,6 +1950,9 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage, 
             getOptions().getStorageClientMetrics(), "WriteObject");
     Throwable error = null;
     try {
+      if (multiContext != null) {
+        multiContext.setRequestBytes(size);
+      }
       final Map<StorageRpc.Option, ?> optionsMap = opts.getRpcOptions();
       BlobInfo.Builder builder = info.toBuilder().setMd5(null).setCrc32c(null);
       BlobInfo updated = opts.blobInfoMapper().apply(builder).build();
@@ -1980,9 +1983,6 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage, 
       HttpContentRange contentRange = HttpContentRange.of(ByteRangeSpec.explicit(0L, size), size);
       ResumableOperationResult<StorageObject> put =
           session.put(RewindableContent.of(path), contentRange);
-      if (multiContext != null) {
-        multiContext.setRequestBytes(size);
-      }
       // all exception translation is taken care of down in the JsonResumableSession
       StorageObject object = put.getObject();
       if (object == null) {
@@ -2012,6 +2012,9 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage, 
       ByteBuffer buf,
       @Nullable StorageMetricsContext metricsContext) {
     int totalBytes = buf.remaining();
+    if (metricsContext != null) {
+      metricsContext.setRequestBytes(totalBytes);
+    }
     BlobInfo.Builder builder =
         opts.blobInfoMapper().apply(info.toBuilder().clearMd5().clearCrc32c());
     @Nullable Crc32cLengthKnown hash = opts.getHasher().hash(buf.duplicate());
@@ -2029,12 +2032,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage, 
         algorithm,
         () -> {
           content.rewindTo(0);
-          StorageObject created =
-              storageRpc.create(encoded, new RewindableContentInputStream(content), optionsMap);
-          if (metricsContext != null) {
-            metricsContext.setRequestBytes(totalBytes);
-          }
-          return created;
+          return storageRpc.create(encoded, new RewindableContentInputStream(content), optionsMap);
         },
         Conversions.json().blobInfo(),
         metricsContext);

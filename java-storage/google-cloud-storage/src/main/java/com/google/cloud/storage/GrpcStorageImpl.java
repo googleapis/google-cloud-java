@@ -333,6 +333,9 @@ final class GrpcStorageImpl extends BaseService<StorageOptions>
     Throwable error = null;
     try {
       long size = Files.size(path);
+      if (multiContext != null) {
+        multiContext.setRequestBytes(size);
+      }
       GrpcCallContext grpcCallContext =
           opts.grpcMetadataMapper().apply(GrpcCallContext.createDefault());
       GrpcCallContext callContextWithMetrics =
@@ -360,9 +363,6 @@ final class GrpcStorageImpl extends BaseService<StorageOptions>
       try {
         GrpcResumableSession got = session2.get();
         ResumableOperationResult<@Nullable Object> put = got.put(RewindableContent.of(path));
-        if (multiContext != null) {
-          multiContext.setRequestBytes(size);
-        }
         Object object = put.getObject();
         if (object == null) {
           // if by some odd chance the put didn't get the Object, query for it
@@ -1022,6 +1022,9 @@ final class GrpcStorageImpl extends BaseService<StorageOptions>
     WriteObjectRequest req = getWriteObjectRequest(blobInfo, optsWithDefaults);
     Hasher hasher = opts.getHasher();
     int totalBytes = buf.remaining();
+    if (metricsContext != null) {
+      metricsContext.setRequestBytes(totalBytes);
+    }
     GrpcCallContext merge = Utils.merge(grpcCallContext, Retrying.newCallContext(metricsContext));
     RewindableContent content = RewindableContent.of(buf);
     return retrier.run(
@@ -1041,9 +1044,6 @@ final class GrpcStorageImpl extends BaseService<StorageOptions>
 
           try (UnbufferedWritableByteChannel c = session.open()) {
             content.writeTo(c);
-          }
-          if (metricsContext != null) {
-            metricsContext.setRequestBytes(totalBytes);
           }
           return session.getResult();
         },

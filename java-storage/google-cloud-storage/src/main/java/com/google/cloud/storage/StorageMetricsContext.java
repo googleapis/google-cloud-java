@@ -21,7 +21,6 @@ import static java.util.Objects.requireNonNull;
 import com.google.api.core.ApiClock;
 import com.google.api.core.NanoClock;
 import com.google.api.gax.grpc.GrpcCallContext;
-import com.google.common.collect.ImmutableSet;
 import io.grpc.CallOptions;
 import io.opentelemetry.api.common.AttributeKey;
 import io.opentelemetry.api.common.Attributes;
@@ -46,17 +45,6 @@ final class StorageMetricsContext {
 
   private static final long HTTP_STATUS_OK = 200L;
   static final long HTTP_STATUS_UNSET = 0L;
-
-  private static final ImmutableSet<AttributeKey<?>> BODY_SIZE_EXCLUDED_KEYS =
-      ImmutableSet.of(
-          StorageClientMetrics.KEY_NETWORK_PATH,
-          StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE,
-          StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE,
-          StorageClientMetrics.KEY_HTTP_REQUEST_METHOD,
-          StorageClientMetrics.KEY_URL_TEMPLATE,
-          StorageClientMetrics.KEY_ERROR_TYPE,
-          StorageClientMetrics.KEY_GCP_CLIENT_METHOD,
-          StorageClientMetrics.KEY_RPC_METHOD);
 
   @Nullable private final StorageClientMetrics metrics;
   private final String operationName;
@@ -207,9 +195,12 @@ final class StorageMetricsContext {
         clientMethod = operationName;
       }
 
-      Attributes operationAttributes =
+      Attributes bodySizeAttributes =
           buildAttemptBaseAttributes(metrics).toBuilder()
               .put(StorageClientMetrics.KEY_GCP_CLIENT_METHOD, clientMethod)
+              .build();
+      Attributes operationAttributes =
+          bodySizeAttributes.toBuilder()
               .put(StorageClientMetrics.KEY_ERROR_TYPE, terminalErrorType)
               .build();
 
@@ -229,33 +220,18 @@ final class StorageMetricsContext {
         metrics.getGcpClientRequestDuration().record(getElapsedSeconds(), durationAttributes);
       }
 
-      recordRequestBodySize(metrics);
+      recordRequestBodySize(metrics, bodySizeAttributes);
     }
   }
 
-  private void recordRequestBodySize(@Nullable StorageClientMetrics metrics) {
-    if (metrics == null || metrics.getRequestBodySize() == null) {
+  private void recordRequestBodySize(StorageClientMetrics metrics, Attributes bodySizeAttributes) {
+    if (metrics.getRequestBodySize() == null) {
       return;
     }
     long reqBytes = requestBytes.get();
-    if ("WriteObject".equals(operationName) && reqBytes > 0) {
-      metrics.getRequestBodySize().record(reqBytes, buildBodySizeAttributes(metrics), otelContext);
+    if ("WriteObject".equals(operationName) && reqBytes >= 0) {
+      metrics.getRequestBodySize().record(reqBytes, bodySizeAttributes, otelContext);
     }
-  }
-
-  private Attributes buildBodySizeAttributes(StorageClientMetrics metrics) {
-    AttributesBuilder bodyAttrBuilder = Attributes.builder();
-    bodyAttrBuilder.putAll(metrics.getClientAttributes());
-    baseAttributes.forEach(
-        (key, val) -> {
-          if (!BODY_SIZE_EXCLUDED_KEYS.contains(key)) {
-            @SuppressWarnings("unchecked")
-            AttributeKey<Object> objKey = (AttributeKey<Object>) key;
-            bodyAttrBuilder.put(objKey, val);
-          }
-        });
-    bodyAttrBuilder.put(StorageClientMetrics.KEY_GCP_STORAGE_OPERATION, operationName);
-    return bodyAttrBuilder.build();
   }
 
   void recordAttemptSuccess() {
@@ -383,7 +359,11 @@ final class StorageMetricsContext {
               && !key.equals(StorageClientMetrics.KEY_GCP_CLIENT_METHOD)
               && !key.equals(StorageClientMetrics.KEY_NETWORK_PATH)
               && !key.equals(StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE)
-              && !key.equals(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE)) {
+              && !key.equals(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE)
+              && !key.equals(StorageClientMetrics.KEY_HTTP_REQUEST_METHOD)
+              && !key.equals(StorageClientMetrics.KEY_URL_TEMPLATE)
+              && !key.equals(StorageClientMetrics.KEY_ERROR_TYPE)
+              && !key.equals(StorageClientMetrics.KEY_SERVER_PORT)) {
             @SuppressWarnings("unchecked")
             AttributeKey<Object> objKey = (AttributeKey<Object>) key;
             baseBuilder.put(objKey, val);
