@@ -65,6 +65,7 @@ import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.google.common.io.BaseEncoding;
+import com.google.common.io.CountingInputStream;
 import com.google.common.io.CountingOutputStream;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -204,12 +205,24 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage, 
     StorageObject blobPb = codecs.blobInfo().encode(updated);
     InputStream inputStreamParam =
         firstNonNull(content, new ByteArrayInputStream(EMPTY_BYTE_ARRAY));
+    StorageMetricsContext metricsContext =
+        StorageClientMetrics.createContext(getOptions().getStorageClientMetrics(), "WriteObject");
     // retries are not safe when the input is an InputStream, so we can't retry.
-    return run(
-        "WriteObject",
+    return retrier.run(
         Retrying.neverRetry(),
-        () -> storageRpc.create(blobPb, inputStreamParam, optionsMap),
-        (x) -> Conversions.json().blobInfo().decode(x).asBlob(this));
+        () -> {
+          if (metricsContext == null) {
+            return storageRpc.create(blobPb, inputStreamParam, optionsMap);
+          }
+          CountingInputStream countingStream = new CountingInputStream(inputStreamParam);
+          try {
+            return storageRpc.create(blobPb, countingStream, optionsMap);
+          } finally {
+            metricsContext.setRequestBytes(countingStream.getCount());
+          }
+        },
+        (x) -> Conversions.json().blobInfo().decode(x).asBlob(this),
+        metricsContext);
   }
 
   @Override
@@ -1944,6 +1957,9 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage, 
             getOptions().getStorageClientMetrics(), "WriteObject");
     Throwable error = null;
     try {
+      if (multiContext != null) {
+        multiContext.setRequestBytes(size);
+      }
       final Map<StorageRpc.Option, ?> optionsMap = opts.getRpcOptions();
       BlobInfo.Builder builder = info.toBuilder().setMd5(null).setCrc32c(null);
       BlobInfo updated = opts.blobInfoMapper().apply(builder).build();
@@ -2002,6 +2018,10 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage, 
       Opts<ObjectTargetOpt> opts,
       ByteBuffer buf,
       @Nullable StorageMetricsContext metricsContext) {
+    int totalBytes = buf.remaining();
+    if (metricsContext != null) {
+      metricsContext.setRequestBytes(totalBytes);
+    }
     BlobInfo.Builder builder =
         opts.blobInfoMapper().apply(info.toBuilder().clearMd5().clearCrc32c());
     @Nullable Crc32cLengthKnown hash = opts.getHasher().hash(buf.duplicate());

@@ -140,6 +140,9 @@ abstract class BaseStorageWriteChannel<T> implements StorageWriteChannel {
           return 0;
         }
         int write = tmp.write(src);
+        if (write > 0 && metricsContext != null) {
+          metricsContext.addRequestBytes(write);
+        }
         return write;
       } catch (StorageException e) {
         lastOperationError = e;

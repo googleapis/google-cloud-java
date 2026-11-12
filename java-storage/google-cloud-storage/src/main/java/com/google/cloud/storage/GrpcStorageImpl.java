@@ -78,6 +78,7 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Streams;
 import com.google.common.io.ByteStreams;
+import com.google.common.io.CountingInputStream;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.SetIamPolicyRequest;
@@ -290,8 +291,13 @@ final class GrpcStorageImpl extends BaseService<StorageOptions>
                   .setRequest(req)
                   .build();
 
+          CountingInputStream countingStream = new CountingInputStream(inputStreamParam);
           try (UnbufferedWritableByteChannel c = session.open()) {
-            ByteStreams.copy(Channels.newChannel(inputStreamParam), c);
+            ByteStreams.copy(Channels.newChannel(countingStream), c);
+          } finally {
+            if (metricsContext != null) {
+              metricsContext.setRequestBytes(countingStream.getCount());
+            }
           }
           ApiFuture<WriteObjectResponse> responseApiFuture = session.getResult();
           return this.getBlob(responseApiFuture);
@@ -326,6 +332,10 @@ final class GrpcStorageImpl extends BaseService<StorageOptions>
             getOptions().getStorageClientMetrics(), "WriteObject");
     Throwable error = null;
     try {
+      long size = Files.size(path);
+      if (multiContext != null) {
+        multiContext.setRequestBytes(size);
+      }
       GrpcCallContext grpcCallContext =
           opts.grpcMetadataMapper().apply(GrpcCallContext.createDefault());
       GrpcCallContext callContextWithMetrics =
@@ -416,12 +426,17 @@ final class GrpcStorageImpl extends BaseService<StorageOptions>
               .build();
 
       // Specifically not in the try-with, so we don't close the provided stream
-      ReadableByteChannel src =
-          Channels.newChannel(firstNonNull(in, new ByteArrayInputStream(ZERO_BYTES)));
+      CountingInputStream countingStream =
+          new CountingInputStream(firstNonNull(in, new ByteArrayInputStream(ZERO_BYTES)));
+      ReadableByteChannel src = Channels.newChannel(countingStream);
       try (BufferedWritableByteChannel dst = session.open()) {
         ByteStreams.copy(src, dst);
       } catch (Exception e) {
         throw StorageException.coalesce(e);
+      } finally {
+        if (multiContext != null) {
+          multiContext.setRequestBytes(countingStream.getCount());
+        }
       }
       return getBlob(session.getResult());
     } catch (Throwable t) {
@@ -1006,6 +1021,10 @@ final class GrpcStorageImpl extends BaseService<StorageOptions>
         optsWithDefaults.grpcMetadataMapper().apply(GrpcCallContext.createDefault());
     WriteObjectRequest req = getWriteObjectRequest(blobInfo, optsWithDefaults);
     Hasher hasher = opts.getHasher();
+    int totalBytes = buf.remaining();
+    if (metricsContext != null) {
+      metricsContext.setRequestBytes(totalBytes);
+    }
     GrpcCallContext merge = Utils.merge(grpcCallContext, Retrying.newCallContext(metricsContext));
     RewindableContent content = RewindableContent.of(buf);
     return retrier.run(
