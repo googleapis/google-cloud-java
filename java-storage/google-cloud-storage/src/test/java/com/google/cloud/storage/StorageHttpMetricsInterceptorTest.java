@@ -119,37 +119,35 @@ public final class StorageHttpMetricsInterceptorTest {
             StorageHttpMetricsInterceptor.extractUrlTemplate(
                 new GenericUrl(
                     "https://storage.googleapis.com/storage/v1/b/my-b/o/my-obj/acl/allUsers")))
-        .isEqualTo("/storage/v1/b/{bucket}/o/{object}/acl/{entity}");
+        .isEqualTo("/storage/v1/b/{bucket}/o/{object}/acl");
     assertThat(
             StorageHttpMetricsInterceptor.extractUrlTemplate(
                 new GenericUrl(
                     "https://storage.googleapis.com/storage/v1/b/b1/o/o1/copyTo/b/b2/o/o2")))
-        .isEqualTo(
-            "/storage/v1/b/{bucket}/o/{object}/copyTo/b/{destinationBucket}/o/{destinationObject}");
+        .isEqualTo("/storage/v1/b/{bucket}/o/{object}/copyTo/b/{bucket}/o/{object}");
     assertThat(
             StorageHttpMetricsInterceptor.extractUrlTemplate(
                 new GenericUrl(
                     "https://storage.googleapis.com/storage/v1/b/b1/o/o1/rewriteTo/b/b2/o/o2")))
-        .isEqualTo(
-            "/storage/v1/b/{bucket}/o/{object}/rewriteTo/b/{destinationBucket}/o/{destinationObject}");
+        .isEqualTo("/storage/v1/b/{bucket}/o/{object}/rewriteTo/b/{bucket}/o/{object}");
     assertThat(
             StorageHttpMetricsInterceptor.extractUrlTemplate(
                 new GenericUrl("https://storage.googleapis.com/storage/v1/b/b1/o/o1/moveTo/o/o2")))
-        .isEqualTo("/storage/v1/b/{bucket}/o/{object}/moveTo/o/{destinationObject}");
+        .isEqualTo("/storage/v1/b/{bucket}/o/{object}/moveTo/o/{object}");
     assertThat(
             StorageHttpMetricsInterceptor.extractUrlTemplate(
                 new GenericUrl("https://storage.googleapis.com/storage/v1/b/b1/acl/allUsers")))
-        .isEqualTo("/storage/v1/b/{bucket}/acl/{entity}");
+        .isEqualTo("/storage/v1/b/{bucket}/acl");
     assertThat(
             StorageHttpMetricsInterceptor.extractUrlTemplate(
                 new GenericUrl(
                     "https://storage.googleapis.com/storage/v1/b/b1/defaultObjectAcl/allUsers")))
-        .isEqualTo("/storage/v1/b/{bucket}/defaultObjectAcl/{entity}");
+        .isEqualTo("/storage/v1/b/{bucket}/defaultObjectAcl");
     assertThat(
             StorageHttpMetricsInterceptor.extractUrlTemplate(
                 new GenericUrl(
                     "https://storage.googleapis.com/storage/v1/b/b1/notifications/notif1")))
-        .isEqualTo("/storage/v1/b/{bucket}/notifications/{notification}");
+        .isEqualTo("/storage/v1/b/{bucket}/notifications");
     assertThat(
             StorageHttpMetricsInterceptor.extractUrlTemplate(
                 new GenericUrl("https://storage.googleapis.com/storage/v1/b/b1/iam")))
@@ -163,7 +161,7 @@ public final class StorageHttpMetricsInterceptorTest {
             StorageHttpMetricsInterceptor.extractUrlTemplate(
                 new GenericUrl(
                     "https://storage.googleapis.com/storage/v1/projects/my-p/hmacKeys/key1")))
-        .isEqualTo("/storage/v1/projects/{project}/hmacKeys/{accessId}");
+        .isEqualTo("/storage/v1/projects/{project}/hmacKeys/{access_id}");
     assertThat(
             StorageHttpMetricsInterceptor.extractUrlTemplate(
                 new GenericUrl(
@@ -176,6 +174,10 @@ public final class StorageHttpMetricsInterceptorTest {
     assertThat(
             StorageHttpMetricsInterceptor.extractUrlTemplate(
                 new GenericUrl("https://storage.googleapis.com/my-b/my-obj")))
+        .isEqualTo("/{bucket}/{object}");
+    assertThat(
+            StorageHttpMetricsInterceptor.extractUrlTemplate(
+                new GenericUrl("https://storage.googleapis.com/my-b/my-obj?upload_id=xyz")))
         .isEqualTo("/{bucket}/{object}");
     assertThat(
             StorageHttpMetricsInterceptor.extractUrlTemplate(
@@ -404,6 +406,174 @@ public final class StorageHttpMetricsInterceptorTest {
     assertThat(attrs.get(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE)).isEqualTo(0L);
     assertThat(attrs.get(StorageClientMetrics.KEY_SERVER_ADDRESS))
         .isEqualTo("storage.googleapis.com");
+
+    MetricData ttfbData =
+        metricData.stream()
+            .filter(m -> m.getName().equals(StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_TTFB))
+            .findFirst()
+            .orElse(null);
+    assertThat(ttfbData).isNull();
+  }
+
+  @Test
+  public void initialize_ioExceptionThenRetrySucceeds_recordsTwoPoints() throws IOException {
+    StorageClientMetrics metrics = StorageClientMetrics.create(meterProvider, true, false);
+    AtomicBoolean firstAttempt = new AtomicBoolean(true);
+    HttpRequestInitializer retryDelegate =
+        request -> request.setIOExceptionHandler((req, supportsRetry) -> true);
+    StorageHttpMetricsInterceptor interceptor =
+        new StorageHttpMetricsInterceptor(
+            retryDelegate, metrics, clock, "https://storage.googleapis.com");
+
+    HttpTransport transport =
+        new MockHttpTransport() {
+          @Override
+          public LowLevelHttpRequest buildRequest(String method, String url) {
+            return new MockLowLevelHttpRequest() {
+              @Override
+              public LowLevelHttpResponse execute() throws IOException {
+                if (firstAttempt.compareAndSet(true, false)) {
+                  clock.advanceNanos(100_000_000L);
+                  throw new IOException("Connection reset by peer");
+                }
+                clock.advanceNanos(200_000_000L);
+                MockLowLevelHttpResponse response = new MockLowLevelHttpResponse();
+                response.setStatusCode(200);
+                return response;
+              }
+            };
+          }
+        };
+
+    HttpRequest req =
+        transport
+            .createRequestFactory(interceptor)
+            .buildGetRequest(new GenericUrl("https://storage.googleapis.com/storage/v1/b/my-b"));
+    req.execute();
+
+    Collection<MetricData> metricData = reader.collectAllMetrics();
+    MetricData durationData =
+        metricData.stream()
+            .filter(
+                m -> m.getName().equals(StorageClientMetrics.METRIC_HTTP_CLIENT_REQUEST_DURATION))
+            .findFirst()
+            .orElse(null);
+
+    assertThat(durationData).isNotNull();
+    Collection<HistogramPointData> points = durationData.getHistogramData().getPoints();
+    assertThat(points).hasSize(2);
+
+    HistogramPointData errorPoint =
+        points.stream()
+            .filter(
+                p ->
+                    Long.valueOf(0L)
+                        .equals(
+                            p.getAttributes()
+                                .get(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE)))
+            .findFirst()
+            .orElse(null);
+    assertThat(errorPoint).isNotNull();
+    assertThat(errorPoint.getSum()).isWithin(1e-6).of(0.10);
+    assertThat(errorPoint.getAttributes().get(StorageClientMetrics.KEY_ERROR_TYPE))
+        .isEqualTo(StorageErrorTypeMapper.STATUS_CONNECTION_ERROR);
+
+    HistogramPointData okPoint =
+        points.stream()
+            .filter(
+                p ->
+                    Long.valueOf(200L)
+                        .equals(
+                            p.getAttributes()
+                                .get(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE)))
+            .findFirst()
+            .orElse(null);
+    assertThat(okPoint).isNotNull();
+    assertThat(okPoint.getSum()).isWithin(1e-6).of(0.20);
+    assertThat(okPoint.getAttributes().get(StorageClientMetrics.KEY_ERROR_TYPE))
+        .isEqualTo(StorageErrorTypeMapper.STATUS_OK);
+  }
+
+  @Test
+  public void initialize_401RefreshRetryThen200_recordsBothAttempts() throws IOException {
+    StorageClientMetrics metrics = StorageClientMetrics.create(meterProvider, true, false);
+    AtomicBoolean firstAttempt = new AtomicBoolean(true);
+    HttpRequestInitializer refreshDelegate =
+        request ->
+            request.setUnsuccessfulResponseHandler(
+                (req, response, supportsRetry) -> response.getStatusCode() == 401);
+    StorageHttpMetricsInterceptor interceptor =
+        new StorageHttpMetricsInterceptor(
+            refreshDelegate, metrics, clock, "https://storage.googleapis.com");
+
+    HttpTransport transport =
+        new MockHttpTransport() {
+          @Override
+          public LowLevelHttpRequest buildRequest(String method, String url) {
+            return new MockLowLevelHttpRequest() {
+              @Override
+              public LowLevelHttpResponse execute() {
+                MockLowLevelHttpResponse response = new MockLowLevelHttpResponse();
+                if (firstAttempt.compareAndSet(true, false)) {
+                  clock.advanceNanos(90_000_000L);
+                  response.setStatusCode(401);
+                } else {
+                  clock.advanceNanos(180_000_000L);
+                  response.setStatusCode(200);
+                }
+                return response;
+              }
+            };
+          }
+        };
+
+    HttpRequest req =
+        transport
+            .createRequestFactory(interceptor)
+            .buildGetRequest(new GenericUrl("https://storage.googleapis.com/storage/v1/b/my-b"));
+    req.execute();
+
+    Collection<MetricData> metricData = reader.collectAllMetrics();
+    MetricData durationData =
+        metricData.stream()
+            .filter(
+                m -> m.getName().equals(StorageClientMetrics.METRIC_HTTP_CLIENT_REQUEST_DURATION))
+            .findFirst()
+            .orElse(null);
+
+    assertThat(durationData).isNotNull();
+    Collection<HistogramPointData> points = durationData.getHistogramData().getPoints();
+    assertThat(points).hasSize(2);
+
+    HistogramPointData unauthorizedPoint =
+        points.stream()
+            .filter(
+                p ->
+                    Long.valueOf(401L)
+                        .equals(
+                            p.getAttributes()
+                                .get(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE)))
+            .findFirst()
+            .orElse(null);
+    assertThat(unauthorizedPoint).isNotNull();
+    assertThat(unauthorizedPoint.getSum()).isWithin(1e-6).of(0.09);
+    assertThat(unauthorizedPoint.getAttributes().get(StorageClientMetrics.KEY_ERROR_TYPE))
+        .isEqualTo("UNAUTHENTICATED");
+
+    HistogramPointData okPoint =
+        points.stream()
+            .filter(
+                p ->
+                    Long.valueOf(200L)
+                        .equals(
+                            p.getAttributes()
+                                .get(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE)))
+            .findFirst()
+            .orElse(null);
+    assertThat(okPoint).isNotNull();
+    assertThat(okPoint.getSum()).isWithin(1e-6).of(0.18);
+    assertThat(okPoint.getAttributes().get(StorageClientMetrics.KEY_ERROR_TYPE))
+        .isEqualTo(StorageErrorTypeMapper.STATUS_OK);
   }
 
   @Test
@@ -458,7 +628,7 @@ public final class StorageHttpMetricsInterceptorTest {
           public LowLevelHttpRequest buildRequest(String method, String url) {
             return new MockLowLevelHttpRequest() {
               @Override
-              public LowLevelHttpResponse execute() throws IOException {
+              public LowLevelHttpResponse execute() {
                 clock.advanceNanos(250_000_000L); // 0.25s network duration
                 return lowLevelResponse;
               }
@@ -496,16 +666,13 @@ public final class StorageHttpMetricsInterceptorTest {
   }
 
   @Test
-  public void initialize_mediaDownloadNon2xxResponse_doesNotRecordTtfb() throws IOException {
+  public void initialize_mediaDownloadNon2xxResponse_recordsTtfb() throws IOException {
     StorageClientMetrics metrics = StorageClientMetrics.create(meterProvider, true, false);
     StorageHttpMetricsInterceptor interceptor =
         new StorageHttpMetricsInterceptor(null, metrics, clock, "https://storage.googleapis.com");
 
     for (int statusCode : new int[] {304, 404}) {
-      MockLowLevelHttpResponse lowLevelResponse = new MockLowLevelHttpResponse();
-      lowLevelResponse.setStatusCode(statusCode);
-      HttpTransport transport =
-          new MockHttpTransport.Builder().setLowLevelHttpResponse(lowLevelResponse).build();
+      HttpTransport transport = createAdvancingTransport(statusCode, 100_000_000L);
 
       HttpRequest request =
           transport
@@ -523,7 +690,10 @@ public final class StorageHttpMetricsInterceptorTest {
             .filter(m -> m.getName().equals(StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_TTFB))
             .findFirst()
             .orElse(null);
-    assertThat(ttfbData).isNull();
+    assertThat(ttfbData).isNotNull();
+    HistogramPointData ttfbPoint = ttfbData.getHistogramData().getPoints().iterator().next();
+    assertThat(ttfbPoint.getCount()).isEqualTo(2L);
+    assertThat(ttfbPoint.getSum()).isWithin(1e-6).of(0.20);
   }
 
   @Test

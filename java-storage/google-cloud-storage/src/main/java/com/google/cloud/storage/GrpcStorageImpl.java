@@ -335,10 +335,12 @@ final class GrpcStorageImpl extends BaseService<StorageOptions>
       long size = Files.size(path);
       GrpcCallContext grpcCallContext =
           opts.grpcMetadataMapper().apply(GrpcCallContext.createDefault());
+      GrpcCallContext callContextWithMetrics =
+          multiContext != null ? multiContext.attach(grpcCallContext) : grpcCallContext;
       WriteObjectRequest req = getWriteObjectRequest(info, opts);
 
       ClientStreamingCallable<WriteObjectRequest, WriteObjectResponse> write =
-          storageClient.writeObjectCallable().withDefaultCallContext(grpcCallContext);
+          storageClient.writeObjectCallable().withDefaultCallContext(callContextWithMetrics);
 
       ApiFuture<ResumableWrite> start =
           startResumableWrite(grpcCallContext, req, opts, multiContext);
@@ -349,7 +351,9 @@ final class GrpcStorageImpl extends BaseService<StorageOptions>
                   ResumableSession.grpc(
                       retrier.withAlg(retryAlgorithmManager.idempotent(), multiContext),
                       write,
-                      storageClient.queryWriteStatusCallable(),
+                      storageClient
+                          .queryWriteStatusCallable()
+                          .withDefaultCallContext(callContextWithMetrics),
                       rw,
                       opts.getHasher()),
               MoreExecutors.directExecutor());
@@ -399,6 +403,8 @@ final class GrpcStorageImpl extends BaseService<StorageOptions>
       Opts<ObjectTargetOpt> opts = Opts.unwrap(options).resolveFrom(blobInfo).prepend(defaultOpts);
       GrpcCallContext grpcCallContext =
           opts.grpcMetadataMapper().apply(GrpcCallContext.createDefault());
+      GrpcCallContext callContextWithMetrics =
+          multiContext != null ? multiContext.attach(grpcCallContext) : grpcCallContext;
       WriteObjectRequest req = getWriteObjectRequest(blobInfo, opts);
 
       ApiFuture<ResumableWrite> start =
@@ -408,7 +414,9 @@ final class GrpcStorageImpl extends BaseService<StorageOptions>
           ResumableMedia.gapic()
               .write()
               .byteChannel(
-                  storageClient.writeObjectCallable().withDefaultCallContext(grpcCallContext))
+                  storageClient
+                      .writeObjectCallable()
+                      .withDefaultCallContext(callContextWithMetrics))
               .setHasher(opts.getHasher())
               .setByteStringStrategy(ByteStringStrategy.noCopy())
               .resumable()
@@ -821,12 +829,7 @@ final class GrpcStorageImpl extends BaseService<StorageOptions>
     StorageMetricsContext multiContext =
         StorageClientMetrics.createMultiStepContext(
             getOptions().getStorageClientMetrics(), "RewriteObject");
-    StorageMetricsContext initialContext =
-        multiContext != null
-            ? multiContext
-            : StorageClientMetrics.createContext(
-                getOptions().getStorageClientMetrics(), "RewriteObject");
-    GrpcCallContext retryContext = Retrying.newCallContext(initialContext);
+    GrpcCallContext retryContext = Retrying.newCallContext(multiContext);
     RetrierWithAlg retrierWithAlg =
         retrier.withAlg(retryAlgorithmManager.idempotent(), multiContext);
     try {
@@ -841,7 +844,7 @@ final class GrpcStorageImpl extends BaseService<StorageOptions>
             }
             return writer;
           },
-          initialContext);
+          multiContext);
     } catch (Throwable t) {
       if (multiContext != null) {
         multiContext.recordOperation(getOptions().getStorageClientMetrics(), t);
@@ -899,10 +902,7 @@ final class GrpcStorageImpl extends BaseService<StorageOptions>
     StorageMetricsContext metricsContext =
         StorageClientMetrics.createMultiStepContext(
             getOptions().getStorageClientMetrics(), "ReadObject");
-    GrpcCallContext subAttemptContext =
-        metricsContext != null
-            ? Retrying.newCallContext(metricsContext)
-            : Retrying.newCallContext();
+    GrpcCallContext subAttemptContext = Retrying.newCallContext(metricsContext);
     GrpcCallContext grpcCallContext = opts.grpcMetadataMapper().apply(subAttemptContext);
 
     return new GrpcBlobReadChannel(
@@ -992,8 +992,10 @@ final class GrpcStorageImpl extends BaseService<StorageOptions>
     }
     //  3. wrap the result in another future container before constructing the BlobWriteChannel
     ApiFuture<ResumableWrite> wrapped = ApiFutures.immediateFuture(resumableWrite);
+    GrpcCallContext callContextWithMetrics =
+        multiContext != null ? multiContext.attach(grpcCallContext) : grpcCallContext;
     return new GrpcBlobWriteChannel(
-        storageClient.writeObjectCallable().withDefaultCallContext(grpcCallContext),
+        storageClient.writeObjectCallable().withDefaultCallContext(callContextWithMetrics),
         retrier.withAlg(retryAlgorithmManager.idempotent(), multiContext),
         () -> wrapped,
         hasher,
@@ -2240,10 +2242,7 @@ final class GrpcStorageImpl extends BaseService<StorageOptions>
 
     Opts<ObjectSourceOpt> opts = Opts.unwrap(options).resolveFrom(blob).prepend(defaultOpts);
     ReadObjectRequest readObjectRequest = getReadObjectRequest(blob, opts);
-    GrpcCallContext subAttemptContext =
-        metricsContext != null
-            ? Retrying.newCallContext(metricsContext)
-            : Retrying.newCallContext();
+    GrpcCallContext subAttemptContext = Retrying.newCallContext(metricsContext);
     GrpcCallContext grpcCallContext = opts.grpcMetadataMapper().apply(subAttemptContext);
     return ResumableMedia.gapic()
         .read()
@@ -2268,12 +2267,7 @@ final class GrpcStorageImpl extends BaseService<StorageOptions>
       WriteObjectRequest req,
       Opts<ObjectTargetOpt> opts,
       @Nullable StorageMetricsContext metricsContext) {
-    GrpcCallContext merge =
-        Utils.merge(
-            grpcCallContext,
-            metricsContext != null
-                ? Retrying.newCallContext(metricsContext)
-                : Retrying.newCallContext());
+    GrpcCallContext merge = Utils.merge(grpcCallContext, Retrying.newCallContext(metricsContext));
     return ResumableMedia.gapic()
         .write()
         .resumableWrite(
@@ -2330,17 +2324,12 @@ final class GrpcStorageImpl extends BaseService<StorageOptions>
             .setName(bucketNameCodec.encode(bucketName))
             .build();
 
-    StorageMetricsContext activeContext =
-        metricsContext != null
-            ? metricsContext
-            : StorageClientMetrics.createContext(
-                getOptions().getStorageClientMetrics(), "GetBucket");
-    GrpcCallContext merge = Utils.merge(grpcCallContext, Retrying.newCallContext(activeContext));
+    GrpcCallContext merge = Utils.merge(grpcCallContext, Retrying.newCallContext(metricsContext));
     return retrier.run(
         retryAlgorithmManager.getFor(req),
         () -> storageClient.getBucketCallable().call(req, merge),
         Decoder.identity(),
-        activeContext);
+        metricsContext);
   }
 
   private com.google.storage.v2.Bucket getBucketWithAcls(
@@ -2357,33 +2346,23 @@ final class GrpcStorageImpl extends BaseService<StorageOptions>
             .setName(bucketNameCodec.encode(bucketName))
             .build();
 
-    StorageMetricsContext activeContext =
-        metricsContext != null
-            ? metricsContext
-            : StorageClientMetrics.createContext(
-                getOptions().getStorageClientMetrics(), "GetBucket");
-    GrpcCallContext merge = Utils.merge(grpcCallContext, Retrying.newCallContext(activeContext));
+    GrpcCallContext merge = Utils.merge(grpcCallContext, Retrying.newCallContext(metricsContext));
     return retrier.run(
         retryAlgorithmManager.getFor(req),
         () -> storageClient.getBucketCallable().call(req, merge),
         Decoder.identity(),
-        activeContext);
+        metricsContext);
   }
 
   private com.google.storage.v2.Bucket updateBucket(
       UpdateBucketRequest req, @Nullable StorageMetricsContext metricsContext) {
     GrpcCallContext grpcCallContext = GrpcCallContext.createDefault();
-    StorageMetricsContext activeContext =
-        metricsContext != null
-            ? metricsContext
-            : StorageClientMetrics.createContext(
-                getOptions().getStorageClientMetrics(), "UpdateBucket");
-    GrpcCallContext merge = Utils.merge(grpcCallContext, Retrying.newCallContext(activeContext));
+    GrpcCallContext merge = Utils.merge(grpcCallContext, Retrying.newCallContext(metricsContext));
     return retrier.run(
         retryAlgorithmManager.getFor(req),
         () -> storageClient.updateBucketCallable().call(req, merge),
         Decoder.identity(),
-        activeContext);
+        metricsContext);
   }
 
   private static UpdateBucketRequest createUpdateDefaultAclRequest(
@@ -2432,17 +2411,12 @@ final class GrpcStorageImpl extends BaseService<StorageOptions>
             .setObject(obj.getName())
             .build();
 
-    StorageMetricsContext activeContext =
-        metricsContext != null
-            ? metricsContext
-            : StorageClientMetrics.createContext(
-                getOptions().getStorageClientMetrics(), "GetObject");
-    GrpcCallContext merge = Utils.merge(grpcCallContext, Retrying.newCallContext(activeContext));
+    GrpcCallContext merge = Utils.merge(grpcCallContext, Retrying.newCallContext(metricsContext));
     return retrier.run(
         retryAlgorithmManager.getFor(req),
         () -> storageClient.getObjectCallable().call(req, merge),
         Decoder.identity(),
-        activeContext);
+        metricsContext);
   }
 
   private static UpdateObjectRequest createUpdateObjectAclRequest(
@@ -2466,17 +2440,12 @@ final class GrpcStorageImpl extends BaseService<StorageOptions>
   private Object updateObject(
       UpdateObjectRequest req, @Nullable StorageMetricsContext metricsContext) {
     GrpcCallContext grpcCallContext = GrpcCallContext.createDefault();
-    StorageMetricsContext activeContext =
-        metricsContext != null
-            ? metricsContext
-            : StorageClientMetrics.createContext(
-                getOptions().getStorageClientMetrics(), "UpdateObject");
-    GrpcCallContext merge = Utils.merge(grpcCallContext, Retrying.newCallContext(activeContext));
+    GrpcCallContext merge = Utils.merge(grpcCallContext, Retrying.newCallContext(metricsContext));
     return retrier.run(
         retryAlgorithmManager.getFor(req),
         () -> storageClient.updateObjectCallable().call(req, merge),
         Decoder.identity(),
-        activeContext);
+        metricsContext);
   }
 
   @NonNull

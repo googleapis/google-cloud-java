@@ -16,6 +16,8 @@
 
 package com.google.cloud.storage;
 
+import static java.util.Objects.requireNonNull;
+
 import com.google.api.core.ApiClock;
 import io.grpc.Attributes;
 import io.grpc.CallOptions;
@@ -33,6 +35,7 @@ import java.net.InetAddress;
 import java.net.InetSocketAddress;
 import java.net.SocketAddress;
 import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicLong;
 import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
 
@@ -43,51 +46,40 @@ import org.jspecify.annotations.Nullable;
 @NullMarked
 final class StorageGrpcMetricsInterceptor implements ClientInterceptor {
 
-  @Nullable private final StorageClientMetrics metrics;
+  private final StorageClientMetrics metrics;
   private final ApiClock clock;
-  @Nullable private final String defaultServerAddress;
 
-  StorageGrpcMetricsInterceptor(
-      @Nullable StorageClientMetrics metrics, ApiClock clock, @Nullable String defaultEndpoint) {
-    this.metrics = metrics;
-    this.clock = clock;
-    this.defaultServerAddress =
-        OpenTelemetryBootstrappingUtils.extractServerAddress(defaultEndpoint);
+  StorageGrpcMetricsInterceptor(StorageClientMetrics metrics, ApiClock clock) {
+    this.metrics = requireNonNull(metrics, "metrics cannot be null");
+    this.clock = requireNonNull(clock, "clock cannot be null");
   }
 
   @Override
   public <ReqT, RespT> ClientCall<ReqT, RespT> interceptCall(
       MethodDescriptor<ReqT, RespT> method, CallOptions callOptions, Channel next) {
-    if (metrics == null) {
-      return next.newCall(method, callOptions);
-    }
-
-    String fullMethodName = method.getFullMethodName();
-    String rpcMethod =
-        fullMethodName != null && !fullMethodName.isEmpty() ? fullMethodName : "UNKNOWN";
-    String bareMethod = method.getBareMethodName();
-    boolean isReadMethod = "ReadObject".equals(bareMethod) || "BidiReadObject".equals(bareMethod);
     boolean recordDuration = metrics.getRpcClientCallDuration() != null;
-    boolean recordTtfb = isReadMethod && metrics.getTtfb() != null;
+    boolean recordTtfb = metrics.getTtfb() != null;
     if (!recordDuration && !recordTtfb) {
       return next.newCall(method, callOptions);
     }
 
-    String resolvedServerAddress =
-        defaultServerAddress != null
-            ? defaultServerAddress
-            : OpenTelemetryBootstrappingUtils.extractServerAddress(next.authority());
-    final String serverAddress = resolvedServerAddress != null ? resolvedServerAddress : "";
-
+    String rpcMethod = method.getFullMethodName();
     StorageMetricsContext metricsCtx = StorageMetricsContext.from(callOptions);
     Context otelContext = metricsCtx != null ? metricsCtx.getOtelContext() : Context.current();
+    String operationName =
+        metricsCtx != null
+            ? metricsCtx.getOperationName()
+            : defaultOperationName(method.getBareMethodName());
 
     return new SimpleForwardingClientCall<ReqT, RespT>(next.newCall(method, callOptions)) {
+      private final AtomicBoolean ttfbRecorded = new AtomicBoolean(false);
+      private final AtomicLong sendTimeNanos = new AtomicLong();
+
       @Override
       public void start(Listener<RespT> responseListener, Metadata headers) {
         long startTimeNanos = clock.nanoTime();
+        sendTimeNanos.set(startTimeNanos);
         AtomicBoolean callRecorded = new AtomicBoolean(false);
-        AtomicBoolean ttfbRecorded = new AtomicBoolean(false);
 
         super.start(
             new SimpleForwardingClientCallListener<RespT>(responseListener) {
@@ -97,16 +89,10 @@ final class StorageGrpcMetricsInterceptor implements ClientInterceptor {
                 // responses for 0-byte objects) marks Time To First Byte (TTFB).
                 if (recordTtfb && ttfbRecorded.compareAndSet(false, true)) {
                   double ttfbSeconds =
-                      Math.max(0.0, (clock.nanoTime() - startTimeNanos) / 1_000_000_000.0);
+                      Math.max(0.0, (clock.nanoTime() - sendTimeNanos.get()) / 1_000_000_000.0);
                   String networkPath = detectNetworkPath(getAttributes());
-                  StorageMetricsContext.recordTtfb(
-                      metrics,
-                      metricsCtx,
-                      otelContext,
-                      ttfbSeconds,
-                      "grpc",
-                      networkPath,
-                      serverAddress);
+                  metrics.recordTtfb(
+                      otelContext, operationName, ttfbSeconds, "grpc", networkPath, null);
                 }
                 super.onMessage(message);
               }
@@ -118,20 +104,21 @@ final class StorageGrpcMetricsInterceptor implements ClientInterceptor {
                     double durationSeconds =
                         Math.max(0.0, (clock.nanoTime() - startTimeNanos) / 1_000_000_000.0);
                     String networkPath = detectNetworkPath(getAttributes());
+                    if (metricsCtx != null) {
+                      metricsCtx.setNetworkPath(networkPath);
+                    }
                     String statusCode =
                         status != null && status.getCode() != null
                             ? status.getCode().name()
                             : StorageErrorTypeMapper.STATUS_UNKNOWN;
                     String errorType = StorageErrorTypeMapper.mapGrpcStatus(status);
 
-                    StorageMetricsContext.recordRpcCallDuration(
-                        metrics,
+                    metrics.recordRpcCallDuration(
                         otelContext,
                         durationSeconds,
                         rpcMethod,
                         statusCode,
                         networkPath,
-                        serverAddress,
                         errorType);
                   }
                 } finally {
@@ -141,7 +128,25 @@ final class StorageGrpcMetricsInterceptor implements ClientInterceptor {
             },
             headers);
       }
+
+      @Override
+      public void sendMessage(ReqT message) {
+        if (!ttfbRecorded.get()) {
+          sendTimeNanos.set(clock.nanoTime());
+        }
+        super.sendMessage(message);
+      }
     };
+  }
+
+  private static String defaultOperationName(@Nullable String bareMethod) {
+    if ("BidiReadObject".equals(bareMethod)) {
+      return "ReadObject";
+    }
+    if ("BidiWriteObject".equals(bareMethod)) {
+      return "WriteObject";
+    }
+    return bareMethod != null && !bareMethod.isEmpty() ? bareMethod : "UNKNOWN";
   }
 
   static String detectNetworkPath(@Nullable Attributes callAttributes) {
@@ -171,7 +176,7 @@ final class StorageGrpcMetricsInterceptor implements ClientInterceptor {
           && b[2] == 0x48
           && b[3] == 0x60
           && b[4] == (byte) 0x80
-          && (b[5] & 0xFC) == 0x40;
+          && (b[5] & 0xC0) == 0x40;
     }
     return false;
   }

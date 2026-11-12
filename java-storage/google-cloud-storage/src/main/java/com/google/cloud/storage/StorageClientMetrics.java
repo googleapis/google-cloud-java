@@ -26,6 +26,7 @@ import io.opentelemetry.api.metrics.LongHistogram;
 import io.opentelemetry.api.metrics.LongUpDownCounter;
 import io.opentelemetry.api.metrics.Meter;
 import io.opentelemetry.api.metrics.MeterProvider;
+import io.opentelemetry.context.Context;
 import io.opentelemetry.sdk.metrics.SdkMeterProvider;
 import java.util.logging.Logger;
 import org.checkerframework.checker.nullness.qual.Nullable;
@@ -171,10 +172,12 @@ final class StorageClientMetrics implements AutoCloseable {
             .put(KEY_GCP_CLIENT_VERSION, StorageOptions.version())
             .put(KEY_GCP_CLIENT_ARTIFACT, ARTIFACT_STORAGE)
             .build();
+    Attributes baseAttributes =
+        clientAttributes.toBuilder().put(KEY_SERVER_ADDRESS, "storage.googleapis.com").build();
     return new StorageClientMetrics(
         meter,
         clientAttributes,
-        clientAttributes,
+        baseAttributes,
         ownedMeterProvider,
         enableOtelMetrics,
         enableOtelDebugMetrics);
@@ -446,6 +449,48 @@ final class StorageClientMetrics implements AutoCloseable {
 
   StorageMetricsContext createMultiStepContext(String operationName) {
     return StorageMetricsContext.createForMultiStep(this, operationName, baseAttributes);
+  }
+
+  void recordRpcCallDuration(
+      Context otelContext,
+      double durationSeconds,
+      String rpcMethod,
+      String statusCode,
+      String networkPath,
+      String errorType) {
+    if (rpcClientCallDuration == null) {
+      return;
+    }
+    Attributes attributes =
+        baseAttributes.toBuilder()
+            .put(KEY_RPC_SYSTEM_NAME, "grpc")
+            .put(KEY_RPC_METHOD, rpcMethod)
+            .put(KEY_RPC_RESPONSE_STATUS_CODE, statusCode)
+            .put(KEY_NETWORK_PATH, networkPath)
+            .put(KEY_ERROR_TYPE, errorType)
+            .build();
+    rpcClientCallDuration.record(durationSeconds, attributes, otelContext);
+  }
+
+  void recordTtfb(
+      Context otelContext,
+      String operationName,
+      double ttfbSeconds,
+      String rpcSystemName,
+      String networkPath,
+      @Nullable String serverAddress) {
+    if (ttfb == null) {
+      return;
+    }
+    AttributesBuilder builder =
+        baseAttributes.toBuilder()
+            .put(KEY_RPC_SYSTEM_NAME, rpcSystemName)
+            .put(KEY_GCP_STORAGE_OPERATION, operationName)
+            .put(KEY_NETWORK_PATH, networkPath);
+    if (serverAddress != null) {
+      builder.put(KEY_SERVER_ADDRESS, serverAddress);
+    }
+    ttfb.record(ttfbSeconds, builder.build(), otelContext);
   }
 
   @Nullable

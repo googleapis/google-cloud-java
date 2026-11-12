@@ -69,6 +69,7 @@ final class StorageMetricsContext {
   private final AtomicInteger attemptCount = new AtomicInteger(0);
   private final AtomicLong requestBytes = new AtomicLong(0L);
   private final AtomicLong responseBytes = new AtomicLong(0L);
+  @Nullable private volatile String networkPath;
 
   private StorageMetricsContext(
       @Nullable StorageClientMetrics metrics,
@@ -307,29 +308,8 @@ final class StorageMetricsContext {
     }
   }
 
-  static void recordRpcCallDuration(
-      @Nullable StorageClientMetrics metrics,
-      Context otelContext,
-      double durationSeconds,
-      String rpcMethod,
-      String statusCode,
-      String networkPath,
-      String serverAddress,
-      String errorType) {
-    if (metrics == null || metrics.getRpcClientCallDuration() == null) {
-      return;
-    }
-    Attributes attributes =
-        metrics
-            .clientAttributesBuilder()
-            .put(StorageClientMetrics.KEY_RPC_SYSTEM_NAME, "grpc")
-            .put(StorageClientMetrics.KEY_RPC_METHOD, rpcMethod)
-            .put(StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE, statusCode)
-            .put(StorageClientMetrics.KEY_NETWORK_PATH, networkPath)
-            .put(StorageClientMetrics.KEY_SERVER_ADDRESS, serverAddress)
-            .put(StorageClientMetrics.KEY_ERROR_TYPE, errorType)
-            .build();
-    metrics.getRpcClientCallDuration().record(durationSeconds, attributes, otelContext);
+  void setNetworkPath(String networkPath) {
+    this.networkPath = networkPath;
   }
 
   static void recordHttpRequestDuration(
@@ -356,34 +336,6 @@ final class StorageMetricsContext {
             .put(StorageClientMetrics.KEY_ERROR_TYPE, errorType)
             .build();
     metrics.getHttpClientRequestDuration().record(durationSeconds, attributes, Context.current());
-  }
-
-  static void recordTtfb(
-      @Nullable StorageClientMetrics metrics,
-      @Nullable StorageMetricsContext metricsContext,
-      Context otelContext,
-      double ttfbSeconds,
-      String rpcSystemName,
-      String networkPath,
-      @Nullable String serverAddress) {
-    if (metrics == null || metrics.getTtfb() == null) {
-      return;
-    }
-    Context contextToUse = metricsContext != null ? metricsContext.getOtelContext() : otelContext;
-    String operationName =
-        metricsContext != null && metricsContext.getOperationName() != null
-            ? metricsContext.getOperationName()
-            : "ReadObject";
-    Attributes attributes =
-        metrics
-            .clientAttributesBuilder()
-            .put(StorageClientMetrics.KEY_RPC_SYSTEM_NAME, rpcSystemName)
-            .put(StorageClientMetrics.KEY_GCP_STORAGE_OPERATION, operationName)
-            .put(StorageClientMetrics.KEY_NETWORK_PATH, networkPath)
-            .put(
-                StorageClientMetrics.KEY_SERVER_ADDRESS, serverAddress != null ? serverAddress : "")
-            .build();
-    metrics.getTtfb().record(ttfbSeconds, attributes, contextToUse);
   }
 
   /**
@@ -442,6 +394,10 @@ final class StorageMetricsContext {
   }
 
   private String resolveNetworkPath() {
+    String detected = this.networkPath;
+    if (detected != null && !detected.isEmpty()) {
+      return detected;
+    }
     String path = baseAttributes.get(StorageClientMetrics.KEY_NETWORK_PATH);
     if (path != null && !path.isEmpty()) {
       return path;
