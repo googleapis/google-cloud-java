@@ -16,11 +16,13 @@
 package com.google.cloud.bigtable.data.v2.stub.readrows;
 
 import static com.google.common.truth.Truth.assertThat;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.SettableApiFuture;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ResponseObserver;
+import com.google.api.gax.rpc.ServerStream;
 import com.google.api.gax.rpc.StreamController;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.bigtable.data.v2.models.Query;
@@ -33,6 +35,13 @@ import com.google.common.collect.ImmutableList;
 import com.google.protobuf.ByteString;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.CancellationException;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+import java.util.concurrent.TimeUnit;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -132,14 +141,14 @@ public class MaybePointReadCallableTest {
   }
 
   @Test
-  public void observerCancel_cancelsFutureAndSuppressesError() {
+  public void observerCancel_cancelsFutureAndPropagatesCancellation() {
     Query query = Query.create(TABLE_ID).rowKey("a");
 
     callable.call(query, observer, null);
     observer.controller.cancel();
 
     assertThat(pointReader.response.isCancelled()).isTrue();
-    assertThat(observer.error).isNull();
+    assertThat(observer.error).isInstanceOf(CancellationException.class);
     assertThat(observer.completed).isFalse();
   }
 
@@ -151,7 +160,8 @@ public class MaybePointReadCallableTest {
     callable.call(query, observer, null);
 
     assertThat(pointReader.response.isCancelled()).isTrue();
-    assertThat(observer.error).isNull();
+    assertThat(observer.error).isInstanceOf(CancellationException.class);
+    assertThat(observer.completed).isFalse();
   }
 
   @Test
@@ -168,14 +178,135 @@ public class MaybePointReadCallableTest {
   }
 
   @Test
-  public void futureCallThrowsAfterCancel_suppressesError() {
+  public void futureCallThrowsAfterCancel_propagatesCancellation() {
     Query query = Query.create(TABLE_ID).rowKey("a");
     pointReader.syncFailure = new RuntimeException("sync boom");
     pointReader.onCall = () -> observer.controller.cancel();
 
     callable.call(query, observer, null);
 
-    assertThat(observer.error).isNull();
+    assertThat(observer.error).isInstanceOf(CancellationException.class);
+    assertThat(observer.completed).isFalse();
+  }
+
+  @Test
+  public void cancelInsideOnResponse_deliversCancellationAndNotOnComplete() {
+    Query query = Query.create(TABLE_ID).rowKey("a");
+    RecordingObserver cancellingObserver =
+        new RecordingObserver() {
+          @Override
+          public void onResponse(Row response) {
+            super.onResponse(response);
+            controller.cancel();
+          }
+        };
+
+    callable.call(query, cancellingObserver, null);
+    pointReader.response.set(ROW_A);
+
+    assertThat(cancellingObserver.responses).containsExactly(ROW_A);
+    assertThat(cancellingObserver.completed).isFalse();
+    assertThat(cancellingObserver.error).isInstanceOf(CancellationException.class);
+  }
+
+  @Test
+  public void serverStreamCancel_unblocksBlockedHasNext() throws Exception {
+    Query query = Query.create(TABLE_ID).rowKey("a");
+    ServerStream<Row> stream = callable.call(query);
+
+    ExecutorService executor = Executors.newSingleThreadExecutor();
+    try {
+      CountDownLatch entered = new CountDownLatch(1);
+      Future<Boolean> hasNextFuture =
+          executor.submit(
+              () -> {
+                entered.countDown();
+                return stream.iterator().hasNext();
+              });
+      assertThat(entered.await(5, TimeUnit.SECONDS)).isTrue();
+      Thread.sleep(20);
+
+      stream.cancel();
+
+      ExecutionException thrown =
+          assertThrows(ExecutionException.class, () -> hasNextFuture.get(5, TimeUnit.SECONDS));
+      assertThat(thrown.getCause()).isInstanceOf(CancellationException.class);
+    } finally {
+      executor.shutdownNow();
+    }
+  }
+
+  @Test
+  public void manualFlowControl_gatesDeliveryUntilRequested() {
+    Query query = Query.create(TABLE_ID).rowKey("a");
+    RecordingObserver manualObserver =
+        new RecordingObserver() {
+          @Override
+          public void onStart(StreamController controller) {
+            super.onStart(controller);
+            controller.disableAutoInboundFlowControl();
+          }
+        };
+
+    callable.call(query, manualObserver, null);
+    pointReader.response.set(ROW_A);
+
+    // Demand is 0, so row must not be delivered yet
+    assertThat(manualObserver.responses).isEmpty();
+    assertThat(manualObserver.completed).isFalse();
+    assertThat(manualObserver.error).isNull();
+
+    manualObserver.controller.request(1);
+
+    assertThat(manualObserver.responses).containsExactly(ROW_A);
+    assertThat(manualObserver.completed).isTrue();
+    assertThat(manualObserver.error).isNull();
+  }
+
+  @Test
+  public void manualFlowControl_cancelBeforeRequestDeliversCancellationWithoutRow() {
+    Query query = Query.create(TABLE_ID).rowKey("a");
+    RecordingObserver manualObserver =
+        new RecordingObserver() {
+          @Override
+          public void onStart(StreamController controller) {
+            super.onStart(controller);
+            controller.disableAutoInboundFlowControl();
+          }
+        };
+
+    callable.call(query, manualObserver, null);
+    pointReader.response.set(ROW_A);
+
+    manualObserver.controller.cancel();
+
+    assertThat(manualObserver.responses).isEmpty();
+    assertThat(manualObserver.completed).isFalse();
+    assertThat(manualObserver.error).isInstanceOf(CancellationException.class);
+  }
+
+  @Test
+  public void flowControlPreconditions_enforced() {
+    Query query = Query.create(TABLE_ID).rowKey("a");
+    callable.call(query, observer, null);
+
+    // Cannot disable auto flow control after onStart has finished
+    assertThrows(
+        IllegalStateException.class, () -> observer.controller.disableAutoInboundFlowControl());
+    // Cannot call request(int) while auto flow control is enabled
+    assertThrows(IllegalStateException.class, () -> observer.controller.request(1));
+
+    RecordingObserver manualObserver =
+        new RecordingObserver() {
+          @Override
+          public void onStart(StreamController controller) {
+            super.onStart(controller);
+            controller.disableAutoInboundFlowControl();
+          }
+        };
+    callable.call(query, manualObserver, null);
+    assertThrows(IllegalArgumentException.class, () -> manualObserver.controller.request(0));
+    assertThrows(IllegalArgumentException.class, () -> manualObserver.controller.request(-1));
   }
 
   private static class FakePointReader extends UnaryCallable<Query, Row> {

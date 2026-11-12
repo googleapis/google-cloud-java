@@ -19,13 +19,16 @@ import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutureCallback;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.InternalApi;
+import com.google.api.core.SettableApiFuture;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ResponseObserver;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.StreamController;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.bigtable.data.v2.models.Query;
+import com.google.common.base.Preconditions;
 import com.google.common.util.concurrent.MoreExecutors;
+import java.util.concurrent.CancellationException;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -52,7 +55,12 @@ public class MaybePointReadCallable<RowT> extends ServerStreamingCallable<Query,
       return;
     }
 
+    // TODO: move StreamController and callback state to an inner class so hasStarted and
+    // autoFlowControl can be plain booleans instead of AtomicBooleans.
+    AtomicBoolean hasStarted = new AtomicBoolean();
+    AtomicBoolean autoFlowControl = new AtomicBoolean(true);
     AtomicBoolean cancelled = new AtomicBoolean();
+    SettableApiFuture<Void> demand = SettableApiFuture.create();
     AtomicReference<ApiFuture<RowT>> futureRef = new AtomicReference<>();
 
     responseObserver.onStart(
@@ -60,6 +68,7 @@ public class MaybePointReadCallable<RowT> extends ServerStreamingCallable<Query,
           @Override
           public void cancel() {
             cancelled.set(true);
+            demand.cancel(false);
             ApiFuture<RowT> f = futureRef.get();
             if (f != null) {
               f.cancel(false);
@@ -67,19 +76,42 @@ public class MaybePointReadCallable<RowT> extends ServerStreamingCallable<Query,
           }
 
           @Override
-          public void disableAutoInboundFlowControl() {}
+          public void disableAutoInboundFlowControl() {
+            Preconditions.checkState(
+                !hasStarted.get(),
+                "Can't disable automatic flow control after the stream has started.");
+            autoFlowControl.set(false);
+          }
 
           @Override
-          public void request(int count) {}
+          public void request(int count) {
+            Preconditions.checkState(!autoFlowControl.get(), "Automatic flow control is enabled.");
+            Preconditions.checkArgument(count > 0, "Count must be > 0");
+            demand.set(null);
+          }
         });
 
+    hasStarted.set(true);
+    if (autoFlowControl.get()) {
+      demand.set(null);
+    }
+
+    // Start the underlying RPC eagerly on the caller thread (rather than waiting for demand) to:
+    // 1. Preserve the caller thread's ambient io.grpc.Context (deadlines, trace spans).
+    // 2. Match GAX/gRPC inbound flow-control semantics, where the request is sent immediately,
+    //    RPC errors surface even when demand is 0, and request(n) only gates inbound row delivery.
+    // Chaining via transformAsync also lets future.cancel(false) propagate cancellation to both the
+    // in-flight RPC future and the demand future.
     ApiFuture<RowT> future;
     try {
-      future = pointReader.futureCall(request, context);
+      future =
+          ApiFutures.transformAsync(
+              pointReader.futureCall(request, context),
+              row -> ApiFutures.transform(demand, unused -> row, MoreExecutors.directExecutor()),
+              MoreExecutors.directExecutor());
     } catch (Throwable t) {
-      if (!cancelled.get()) {
-        responseObserver.onError(t);
-      }
+      responseObserver.onError(
+          cancelled.get() ? new CancellationException("User cancelled stream") : t);
       return;
     }
     futureRef.set(future);
@@ -92,14 +124,15 @@ public class MaybePointReadCallable<RowT> extends ServerStreamingCallable<Query,
         new ApiFutureCallback<RowT>() {
           @Override
           public void onSuccess(RowT row) {
-            if (cancelled.get()) {
-              return;
-            }
             if (row != null) {
               try {
                 responseObserver.onResponse(row);
               } catch (Throwable t) {
                 responseObserver.onError(t);
+                return;
+              }
+              if (cancelled.get()) {
+                responseObserver.onError(new CancellationException("User cancelled stream"));
                 return;
               }
             }
@@ -108,9 +141,6 @@ public class MaybePointReadCallable<RowT> extends ServerStreamingCallable<Query,
 
           @Override
           public void onFailure(Throwable t) {
-            if (cancelled.get()) {
-              return;
-            }
             responseObserver.onError(t);
           }
         },
