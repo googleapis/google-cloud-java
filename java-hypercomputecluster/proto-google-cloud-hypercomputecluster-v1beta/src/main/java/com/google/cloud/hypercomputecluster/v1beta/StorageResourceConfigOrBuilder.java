@@ -306,5 +306,51 @@ public interface StorageResourceConfigOrBuilder
   com.google.cloud.hypercomputecluster.v1beta.ExistingLustreConfigOrBuilder
       getExistingLustreOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. If set, indicates that an existing NFS share should
+   * be imported.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.hypercomputecluster.v1beta.ExistingNfsConfig existing_nfs = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return Whether the existingNfs field is set.
+   */
+  boolean hasExistingNfs();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. If set, indicates that an existing NFS share should
+   * be imported.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.hypercomputecluster.v1beta.ExistingNfsConfig existing_nfs = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The existingNfs.
+   */
+  com.google.cloud.hypercomputecluster.v1beta.ExistingNfsConfig getExistingNfs();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. If set, indicates that an existing NFS share should
+   * be imported.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.hypercomputecluster.v1beta.ExistingNfsConfig existing_nfs = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   */
+  com.google.cloud.hypercomputecluster.v1beta.ExistingNfsConfigOrBuilder getExistingNfsOrBuilder();
+
   com.google.cloud.hypercomputecluster.v1beta.StorageResourceConfig.ConfigCase getConfigCase();
 }

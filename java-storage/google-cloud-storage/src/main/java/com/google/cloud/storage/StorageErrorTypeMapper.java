@@ -35,10 +35,12 @@ import javax.net.ssl.SSLException;
 import org.checkerframework.checker.nullness.qual.Nullable;
 
 /**
- * Centralized package-private utility mapping exceptions and status codes to the standard HLD
- * uppercase canonical error strings.
+ * Centralized package-private utility that maps exceptions and status codes to canonical uppercase
+ * error type strings for client metrics.
  */
 final class StorageErrorTypeMapper {
+
+  private static final int MAX_CAUSE_DEPTH = 20;
 
   static final String STATUS_OK = "OK";
   static final String STATUS_CANCELLED = "CANCELLED";
@@ -65,12 +67,16 @@ final class StorageErrorTypeMapper {
   static final String STATUS_CHECKSUM_MISMATCH = "CHECKSUM_MISMATCH";
 
   static String mapGrpcStatus(@Nullable Status status) {
-    if (status == null) {
+    return mapGrpcStatus(status, 0);
+  }
+
+  private static String mapGrpcStatus(@Nullable Status status, int depth) {
+    if (status == null || depth >= MAX_CAUSE_DEPTH) {
       return STATUS_UNKNOWN;
     }
     Throwable cause = status.getCause();
-    if (cause != null && hasSpecificClientCause(cause, /* includeAuth= */ true)) {
-      String mappedCause = mapKnownCause(null, cause);
+    if (cause != null && hasSpecificClientCause(cause, /* includeAuth= */ true, depth + 1)) {
+      String mappedCause = mapKnownCause(null, cause, depth + 1);
       if (mappedCause != null) {
         return mappedCause;
       }
@@ -82,13 +88,6 @@ final class StorageErrorTypeMapper {
       return STATUS_UNKNOWN;
     }
     return status.getCode().name();
-  }
-
-  private static String mapGaxStatusCode(StatusCode.@Nullable Code code) {
-    if (code == null || code == StatusCode.Code.UNKNOWN) {
-      return STATUS_UNKNOWN;
-    }
-    return code.name();
   }
 
   static String mapHttpResponseCode(int statusCode) {
@@ -134,14 +133,88 @@ final class StorageErrorTypeMapper {
   }
 
   static String mapThrowable(@Nullable Throwable t) {
+    return mapThrowable(t, 0);
+  }
+
+  static @Nullable String extractRpcStatusCode(@Nullable Throwable t) {
+    Throwable curr = t;
+    int depth = 0;
+    while (curr != null && depth < MAX_CAUSE_DEPTH) {
+      if (curr instanceof StatusRuntimeException) {
+        Status status = ((StatusRuntimeException) curr).getStatus();
+        if (status != null && status.getCode() != null) {
+          return status.getCode().name();
+        }
+      }
+      if (curr instanceof StatusException) {
+        Status status = ((StatusException) curr).getStatus();
+        if (status != null && status.getCode() != null) {
+          return status.getCode().name();
+        }
+      }
+      if (curr instanceof ApiException) {
+        StatusCode statusCode = ((ApiException) curr).getStatusCode();
+        if (statusCode != null && statusCode.getCode() != null) {
+          return statusCode.getCode().name();
+        }
+      }
+      Throwable next = curr.getCause();
+      if (next == curr) {
+        break;
+      }
+      curr = next;
+      depth++;
+    }
+    return null;
+  }
+
+  /**
+   * Extracts a positive HTTP response status code as a {@link Long} from the causal chain of {@code
+   * t} (inspecting {@link StorageException} and {@link HttpResponseException}), bounded by {@link
+   * #MAX_CAUSE_DEPTH}, or returns {@code null} if no positive HTTP status code is found.
+   */
+  static @Nullable Long extractHttpStatusCode(@Nullable Throwable t) {
+    Throwable curr = t;
+    int depth = 0;
+    while (curr != null && depth < MAX_CAUSE_DEPTH) {
+      if (curr instanceof StorageException) {
+        int code = ((StorageException) curr).getCode();
+        if (code > 0) {
+          return (long) code;
+        }
+      }
+      if (curr instanceof HttpResponseException) {
+        int code = ((HttpResponseException) curr).getStatusCode();
+        if (code > 0) {
+          return (long) code;
+        }
+      }
+      Throwable next = curr.getCause();
+      if (next == curr) {
+        break;
+      }
+      curr = next;
+      depth++;
+    }
+    return null;
+  }
+
+  private static String mapThrowable(@Nullable Throwable t, int depth) {
     if (t == null) {
       return STATUS_OK;
+    }
+    if (depth >= MAX_CAUSE_DEPTH) {
+      return STATUS_UNKNOWN;
     }
 
     while ((t instanceof ExecutionException || t instanceof CompletionException)
         && t.getCause() != null
         && t.getCause() != t) {
       t = t.getCause();
+      depth++;
+      if (depth >= MAX_CAUSE_DEPTH) {
+        return STATUS_UNKNOWN;
+      }
     }
 
     if (isChecksumMismatch(t)) {
@@ -153,19 +226,11 @@ final class StorageErrorTypeMapper {
     }
 
     if (t instanceof StatusRuntimeException) {
-      String mappedCause = mapSpecificClientCause(t, /* includeAuth= */ true);
-      if (mappedCause != null) {
-        return mappedCause;
-      }
-      return mapGrpcStatus(((StatusRuntimeException) t).getStatus());
+      return mapGrpcStatus(((StatusRuntimeException) t).getStatus(), depth + 1);
     }
 
     if (t instanceof StatusException) {
-      String mappedCause = mapSpecificClientCause(t, /* includeAuth= */ true);
-      if (mappedCause != null) {
-        return mappedCause;
-      }
-      return mapGrpcStatus(((StatusException) t).getStatus());
+      return mapGrpcStatus(((StatusException) t).getStatus(), depth + 1);
     }
 
     if (t instanceof WatchdogTimeoutException
@@ -175,7 +240,7 @@ final class StorageErrorTypeMapper {
     }
 
     if (t instanceof ApiException) {
-      String mappedCause = mapSpecificClientCause(t, /* includeAuth= */ true);
+      String mappedCause = mapSpecificClientCause(t, /* includeAuth= */ true, depth + 1);
       if (mappedCause != null) {
         return mappedCause;
       }
@@ -188,7 +253,7 @@ final class StorageErrorTypeMapper {
     }
 
     if (t instanceof HttpResponseException) {
-      String mappedCause = mapSpecificClientCause(t, /* includeAuth= */ true);
+      String mappedCause = mapSpecificClientCause(t, /* includeAuth= */ true, depth + 1);
       if (mappedCause != null) {
         return mappedCause;
       }
@@ -197,7 +262,7 @@ final class StorageErrorTypeMapper {
 
     if (t instanceof StorageException) {
       StorageException se = (StorageException) t;
-      String mappedCause = mapKnownCause(se, se.getCause());
+      String mappedCause = mapKnownCause(se, se.getCause(), depth + 1);
       if (mappedCause != null) {
         return mappedCause;
       }
@@ -207,7 +272,7 @@ final class StorageErrorTypeMapper {
     }
 
     if (isAuthException(t)) {
-      String mappedCause = mapSpecificClientCause(t, /* includeAuth= */ false);
+      String mappedCause = mapSpecificClientCause(t, /* includeAuth= */ false, depth + 1);
       if (mappedCause != null) {
         return mappedCause;
       }
@@ -223,14 +288,14 @@ final class StorageErrorTypeMapper {
     }
 
     if (t instanceof IOException) {
-      String mappedCause = mapSpecificClientCause(t, /* includeAuth= */ true);
+      String mappedCause = mapSpecificClientCause(t, /* includeAuth= */ true, depth + 1);
       if (mappedCause != null) {
         return mappedCause;
       }
       return STATUS_CONNECTION_ERROR;
     }
 
-    String causeMapping = mapKnownCause(t, t.getCause());
+    String causeMapping = mapKnownCause(t, t.getCause(), depth + 1);
     if (causeMapping != null) {
       return causeMapping;
     }
@@ -238,18 +303,32 @@ final class StorageErrorTypeMapper {
     return STATUS_UNKNOWN;
   }
 
-  private static @Nullable String mapSpecificClientCause(Throwable t, boolean includeAuth) {
+  private static String mapGaxStatusCode(StatusCode.@Nullable Code code) {
+    if (code == null || code == StatusCode.Code.UNKNOWN) {
+      return STATUS_UNKNOWN;
+    }
+    return code.name();
+  }
+
+  private static @Nullable String mapSpecificClientCause(
+      Throwable t, boolean includeAuth, int depth) {
+    if (depth >= MAX_CAUSE_DEPTH) {
+      return null;
+    }
     Throwable cause = t.getCause();
-    if (cause != null && cause != t && hasSpecificClientCause(cause, includeAuth)) {
-      return mapKnownCause(t, cause);
+    if (cause != null && cause != t && hasSpecificClientCause(cause, includeAuth, depth)) {
+      return mapKnownCause(t, cause, depth);
     }
     return null;
   }
 
   private static @Nullable String mapKnownCause(
-      @Nullable Throwable parent, @Nullable Throwable cause) {
+      @Nullable Throwable parent, @Nullable Throwable cause, int depth) {
+    if (depth >= MAX_CAUSE_DEPTH) {
+      return null;
+    }
     if (cause != null && cause != parent) {
-      String mappedCause = mapThrowable(cause);
+      String mappedCause = mapThrowable(cause, depth);
       if (!STATUS_UNKNOWN.equals(mappedCause)) {
         return mappedCause;
       }
@@ -257,9 +336,11 @@ final class StorageErrorTypeMapper {
     return null;
   }
 
-  private static boolean hasSpecificClientCause(@Nullable Throwable t, boolean includeAuth) {
+  private static boolean hasSpecificClientCause(
+      @Nullable Throwable t, boolean includeAuth, int depth) {
     Throwable current = t;
-    while (current != null) {
+    int currentDepth = depth;
+    while (current != null && currentDepth < MAX_CAUSE_DEPTH) {
       if (current instanceof WatchdogTimeoutException
           || current instanceof TimeoutException
           || current instanceof CancellationException
@@ -275,6 +356,7 @@ final class StorageErrorTypeMapper {
         break;
       }
       current = next;
+      currentDepth++;
     }
     return false;
   }

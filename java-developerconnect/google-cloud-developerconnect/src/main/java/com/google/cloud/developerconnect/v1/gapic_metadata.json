@@ -10,6 +10,12 @@
         "grpc": {
           "libraryClient": "DeveloperConnectClient",
           "rpcs": {
+            "AddGitRepositoryLinkPullRequestComment": {
+              "methods": ["addGitRepositoryLinkPullRequestComment", "addGitRepositoryLinkPullRequestComment", "addGitRepositoryLinkPullRequestComment", "addGitRepositoryLinkPullRequestCommentCallable"]
+            },
+            "AddGitRepositoryLinkPullRequestReviewComment": {
+              "methods": ["addGitRepositoryLinkPullRequestReviewComment", "addGitRepositoryLinkPullRequestReviewComment", "addGitRepositoryLinkPullRequestReviewComment", "addGitRepositoryLinkPullRequestReviewCommentCallable"]
+            },
             "CreateAccountConnector": {
               "methods": ["createAccountConnectorAsync", "createAccountConnectorAsync", "createAccountConnectorAsync", "createAccountConnectorOperationCallable", "createAccountConnectorCallable"]
             },
@@ -34,6 +40,9 @@
             "DeleteUser": {
               "methods": ["deleteUserAsync", "deleteUserAsync", "deleteUserAsync", "deleteUserOperationCallable", "deleteUserCallable"]
             },
+            "DiffGitRepositoryLinkCommit": {
+              "methods": ["diffGitRepositoryLinkCommit", "diffGitRepositoryLinkCommit", "diffGitRepositoryLinkCommit", "diffGitRepositoryLinkCommitCallable"]
+            },
             "FetchAccessToken": {
               "methods": ["fetchAccessToken", "fetchAccessToken", "fetchAccessToken", "fetchAccessTokenCallable"]
             },
@@ -42,6 +51,21 @@
             },
             "FetchGitRefs": {
               "methods": ["fetchGitRefs", "fetchGitRefs", "fetchGitRefs", "fetchGitRefsPagedCallable", "fetchGitRefsCallable"]
+            },
+            "FetchGitRepositoryLinkCommit": {
+              "methods": ["fetchGitRepositoryLinkCommit", "fetchGitRepositoryLinkCommit", "fetchGitRepositoryLinkCommit", "fetchGitRepositoryLinkCommitCallable"]
+            },
+            "FetchGitRepositoryLinkCommitList": {
+              "methods": ["fetchGitRepositoryLinkCommitList", "fetchGitRepositoryLinkCommitList", "fetchGitRepositoryLinkCommitList", "fetchGitRepositoryLinkCommitListPagedCallable", "fetchGitRepositoryLinkCommitListCallable"]
+            },
+            "FetchGitRepositoryLinkFileBlame": {
+              "methods": ["fetchGitRepositoryLinkFileBlame", "fetchGitRepositoryLinkFileBlame", "fetchGitRepositoryLinkFileBlame", "fetchGitRepositoryLinkFileBlameCallable"]
+            },
+            "FetchGitRepositoryLinkPullRequest": {
+              "methods": ["fetchGitRepositoryLinkPullRequest", "fetchGitRepositoryLinkPullRequest", "fetchGitRepositoryLinkPullRequest", "fetchGitRepositoryLinkPullRequestCallable"]
+            },
+            "FetchGitRepositoryLinkPullRequestList": {
+              "methods": ["fetchGitRepositoryLinkPullRequestList", "fetchGitRepositoryLinkPullRequestList", "fetchGitRepositoryLinkPullRequestList", "fetchGitRepositoryLinkPullRequestListPagedCallable", "fetchGitRepositoryLinkPullRequestListCallable"]
             },
             "FetchLinkableGitRepositories": {
               "methods": ["fetchLinkableGitRepositories", "fetchLinkableGitRepositories", "fetchLinkableGitRepositories", "fetchLinkableGitRepositoriesPagedCallable", "fetchLinkableGitRepositoriesCallable"]
@@ -84,6 +108,12 @@
             },
             "ListUsers": {
               "methods": ["listUsers", "listUsers", "listUsers", "listUsersPagedCallable", "listUsersCallable"]
+            },
+            "ModifyGitRepositoryLinkPullRequest": {
+              "methods": ["modifyGitRepositoryLinkPullRequest", "modifyGitRepositoryLinkPullRequest", "modifyGitRepositoryLinkPullRequest", "modifyGitRepositoryLinkPullRequestCallable"]
+            },
+            "OpenGitRepositoryLinkPullRequest": {
+              "methods": ["openGitRepositoryLinkPullRequest", "openGitRepositoryLinkPullRequest", "openGitRepositoryLinkPullRequest", "openGitRepositoryLinkPullRequestCallable"]
             },
             "StartOAuth": {
               "methods": ["startOAuth", "startOAuth", "startOAuth", "startOAuthCallable"]

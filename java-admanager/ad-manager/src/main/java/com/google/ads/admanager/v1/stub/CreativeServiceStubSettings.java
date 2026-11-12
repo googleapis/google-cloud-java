@@ -20,12 +20,18 @@ import static com.google.ads.admanager.v1.CreativeServiceClient.ListCreativesPag
 
 import com.google.ads.admanager.v1.BatchActivateCreativesRequest;
 import com.google.ads.admanager.v1.BatchActivateCreativesResponse;
+import com.google.ads.admanager.v1.BatchCreateCreativesRequest;
+import com.google.ads.admanager.v1.BatchCreateCreativesResponse;
 import com.google.ads.admanager.v1.BatchDeactivateCreativesRequest;
 import com.google.ads.admanager.v1.BatchDeactivateCreativesResponse;
+import com.google.ads.admanager.v1.BatchUpdateCreativesRequest;
+import com.google.ads.admanager.v1.BatchUpdateCreativesResponse;
+import com.google.ads.admanager.v1.CreateCreativeRequest;
 import com.google.ads.admanager.v1.Creative;
 import com.google.ads.admanager.v1.GetCreativeRequest;
 import com.google.ads.admanager.v1.ListCreativesRequest;
 import com.google.ads.admanager.v1.ListCreativesResponse;
+import com.google.ads.admanager.v1.UpdateCreativeRequest;
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ObsoleteApi;
@@ -124,6 +130,12 @@ public class CreativeServiceStubSettings extends StubSettings<CreativeServiceStu
   private final PagedCallSettings<
           ListCreativesRequest, ListCreativesResponse, ListCreativesPagedResponse>
       listCreativesSettings;
+  private final UnaryCallSettings<CreateCreativeRequest, Creative> createCreativeSettings;
+  private final UnaryCallSettings<UpdateCreativeRequest, Creative> updateCreativeSettings;
+  private final UnaryCallSettings<BatchCreateCreativesRequest, BatchCreateCreativesResponse>
+      batchCreateCreativesSettings;
+  private final UnaryCallSettings<BatchUpdateCreativesRequest, BatchUpdateCreativesResponse>
+      batchUpdateCreativesSettings;
   private final UnaryCallSettings<BatchActivateCreativesRequest, BatchActivateCreativesResponse>
       batchActivateCreativesSettings;
   private final UnaryCallSettings<BatchDeactivateCreativesRequest, BatchDeactivateCreativesResponse>
@@ -189,6 +201,28 @@ public class CreativeServiceStubSettings extends StubSettings<CreativeServiceStu
   public PagedCallSettings<ListCreativesRequest, ListCreativesResponse, ListCreativesPagedResponse>
       listCreativesSettings() {
     return listCreativesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createCreative. */
+  public UnaryCallSettings<CreateCreativeRequest, Creative> createCreativeSettings() {
+    return createCreativeSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateCreative. */
+  public UnaryCallSettings<UpdateCreativeRequest, Creative> updateCreativeSettings() {
+    return updateCreativeSettings;
+  }
+
+  /** Returns the object with the settings used for calls to batchCreateCreatives. */
+  public UnaryCallSettings<BatchCreateCreativesRequest, BatchCreateCreativesResponse>
+      batchCreateCreativesSettings() {
+    return batchCreateCreativesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to batchUpdateCreatives. */
+  public UnaryCallSettings<BatchUpdateCreativesRequest, BatchUpdateCreativesResponse>
+      batchUpdateCreativesSettings() {
+    return batchUpdateCreativesSettings;
   }
 
   /** Returns the object with the settings used for calls to batchActivateCreatives. */
@@ -287,6 +321,10 @@ public class CreativeServiceStubSettings extends StubSettings<CreativeServiceStu
 
     getCreativeSettings = settingsBuilder.getCreativeSettings().build();
     listCreativesSettings = settingsBuilder.listCreativesSettings().build();
+    createCreativeSettings = settingsBuilder.createCreativeSettings().build();
+    updateCreativeSettings = settingsBuilder.updateCreativeSettings().build();
+    batchCreateCreativesSettings = settingsBuilder.batchCreateCreativesSettings().build();
+    batchUpdateCreativesSettings = settingsBuilder.batchUpdateCreativesSettings().build();
     batchActivateCreativesSettings = settingsBuilder.batchActivateCreativesSettings().build();
     batchDeactivateCreativesSettings = settingsBuilder.batchDeactivateCreativesSettings().build();
   }
@@ -307,6 +345,14 @@ public class CreativeServiceStubSettings extends StubSettings<CreativeServiceStu
     private final PagedCallSettings.Builder<
             ListCreativesRequest, ListCreativesResponse, ListCreativesPagedResponse>
         listCreativesSettings;
+    private final UnaryCallSettings.Builder<CreateCreativeRequest, Creative> createCreativeSettings;
+    private final UnaryCallSettings.Builder<UpdateCreativeRequest, Creative> updateCreativeSettings;
+    private final UnaryCallSettings.Builder<
+            BatchCreateCreativesRequest, BatchCreateCreativesResponse>
+        batchCreateCreativesSettings;
+    private final UnaryCallSettings.Builder<
+            BatchUpdateCreativesRequest, BatchUpdateCreativesResponse>
+        batchUpdateCreativesSettings;
     private final UnaryCallSettings.Builder<
             BatchActivateCreativesRequest, BatchActivateCreativesResponse>
         batchActivateCreativesSettings;
@@ -342,6 +388,10 @@ public class CreativeServiceStubSettings extends StubSettings<CreativeServiceStu
 
       getCreativeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listCreativesSettings = PagedCallSettings.newBuilder(LIST_CREATIVES_PAGE_STR_FACT);
+      createCreativeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateCreativeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      batchCreateCreativesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      batchUpdateCreativesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       batchActivateCreativesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       batchDeactivateCreativesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -349,6 +399,10 @@ public class CreativeServiceStubSettings extends StubSettings<CreativeServiceStu
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               getCreativeSettings,
               listCreativesSettings,
+              createCreativeSettings,
+              updateCreativeSettings,
+              batchCreateCreativesSettings,
+              batchUpdateCreativesSettings,
               batchActivateCreativesSettings,
               batchDeactivateCreativesSettings);
       initDefaults(this);
@@ -359,6 +413,10 @@ public class CreativeServiceStubSettings extends StubSettings<CreativeServiceStu
 
       getCreativeSettings = settings.getCreativeSettings.toBuilder();
       listCreativesSettings = settings.listCreativesSettings.toBuilder();
+      createCreativeSettings = settings.createCreativeSettings.toBuilder();
+      updateCreativeSettings = settings.updateCreativeSettings.toBuilder();
+      batchCreateCreativesSettings = settings.batchCreateCreativesSettings.toBuilder();
+      batchUpdateCreativesSettings = settings.batchUpdateCreativesSettings.toBuilder();
       batchActivateCreativesSettings = settings.batchActivateCreativesSettings.toBuilder();
       batchDeactivateCreativesSettings = settings.batchDeactivateCreativesSettings.toBuilder();
 
@@ -366,6 +424,10 @@ public class CreativeServiceStubSettings extends StubSettings<CreativeServiceStu
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               getCreativeSettings,
               listCreativesSettings,
+              createCreativeSettings,
+              updateCreativeSettings,
+              batchCreateCreativesSettings,
+              batchUpdateCreativesSettings,
               batchActivateCreativesSettings,
               batchDeactivateCreativesSettings);
     }
@@ -390,6 +452,26 @@ public class CreativeServiceStubSettings extends StubSettings<CreativeServiceStu
 
       builder
           .listCreativesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .createCreativeSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .updateCreativeSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .batchCreateCreativesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .batchUpdateCreativesSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -431,6 +513,28 @@ public class CreativeServiceStubSettings extends StubSettings<CreativeServiceStu
             ListCreativesRequest, ListCreativesResponse, ListCreativesPagedResponse>
         listCreativesSettings() {
       return listCreativesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createCreative. */
+    public UnaryCallSettings.Builder<CreateCreativeRequest, Creative> createCreativeSettings() {
+      return createCreativeSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateCreative. */
+    public UnaryCallSettings.Builder<UpdateCreativeRequest, Creative> updateCreativeSettings() {
+      return updateCreativeSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchCreateCreatives. */
+    public UnaryCallSettings.Builder<BatchCreateCreativesRequest, BatchCreateCreativesResponse>
+        batchCreateCreativesSettings() {
+      return batchCreateCreativesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchUpdateCreatives. */
+    public UnaryCallSettings.Builder<BatchUpdateCreativesRequest, BatchUpdateCreativesResponse>
+        batchUpdateCreativesSettings() {
+      return batchUpdateCreativesSettings;
     }
 
     /** Returns the builder for the settings used for calls to batchActivateCreatives. */

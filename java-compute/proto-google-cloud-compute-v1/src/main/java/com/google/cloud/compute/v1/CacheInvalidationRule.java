@@ -51,7 +51,9 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
   }
 
   private CacheInvalidationRule() {
+    backendService_ = "";
     cacheTags_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    contentType_ = "";
     host_ = "";
     path_ = "";
   }
@@ -72,6 +74,90 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
   }
 
   private int bitField0_;
+  public static final int BACKEND_SERVICE_FIELD_NUMBER = 306946058;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object backendService_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * If set, this invalidation rule will only apply to requests routed to the
+   * given backend service or backend bucket.
+   * For example, for a backend bucket `bb1` in the same scope as the URL map,
+   * the path would be `projects/my-project/global/backendBuckets/bb1`; and
+   * for a backend service `bs1` in the same scope as the URL map, the path
+   * would be `projects/my-project/global/backendServices/bs1`.
+   * </pre>
+   *
+   * <code>optional string backend_service = 306946058;</code>
+   *
+   * @return Whether the backendService field is set.
+   */
+  @java.lang.Override
+  public boolean hasBackendService() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * If set, this invalidation rule will only apply to requests routed to the
+   * given backend service or backend bucket.
+   * For example, for a backend bucket `bb1` in the same scope as the URL map,
+   * the path would be `projects/my-project/global/backendBuckets/bb1`; and
+   * for a backend service `bs1` in the same scope as the URL map, the path
+   * would be `projects/my-project/global/backendServices/bs1`.
+   * </pre>
+   *
+   * <code>optional string backend_service = 306946058;</code>
+   *
+   * @return The backendService.
+   */
+  @java.lang.Override
+  public java.lang.String getBackendService() {
+    java.lang.Object ref = backendService_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      backendService_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * If set, this invalidation rule will only apply to requests routed to the
+   * given backend service or backend bucket.
+   * For example, for a backend bucket `bb1` in the same scope as the URL map,
+   * the path would be `projects/my-project/global/backendBuckets/bb1`; and
+   * for a backend service `bs1` in the same scope as the URL map, the path
+   * would be `projects/my-project/global/backendServices/bs1`.
+   * </pre>
+   *
+   * <code>optional string backend_service = 306946058;</code>
+   *
+   * @return The bytes for backendService.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getBackendServiceBytes() {
+    java.lang.Object ref = backendService_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      backendService_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int CACHE_TAGS_FIELD_NUMBER = 29073078;
 
   @SuppressWarnings("serial")
@@ -184,6 +270,81 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
     return cacheTags_.getByteString(index);
   }
 
+  public static final int CONTENT_TYPE_FIELD_NUMBER = 294975296;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object contentType_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * If set, this invalidation rule will only apply to responses with the given
+   * content-type. Parameters are not allowed and are ignored from the response
+   * when matching. Wildcards are not allowed.
+   * </pre>
+   *
+   * <code>optional string content_type = 294975296;</code>
+   *
+   * @return Whether the contentType field is set.
+   */
+  @java.lang.Override
+  public boolean hasContentType() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * If set, this invalidation rule will only apply to responses with the given
+   * content-type. Parameters are not allowed and are ignored from the response
+   * when matching. Wildcards are not allowed.
+   * </pre>
+   *
+   * <code>optional string content_type = 294975296;</code>
+   *
+   * @return The contentType.
+   */
+  @java.lang.Override
+  public java.lang.String getContentType() {
+    java.lang.Object ref = contentType_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      contentType_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * If set, this invalidation rule will only apply to responses with the given
+   * content-type. Parameters are not allowed and are ignored from the response
+   * when matching. Wildcards are not allowed.
+   * </pre>
+   *
+   * <code>optional string content_type = 294975296;</code>
+   *
+   * @return The bytes for contentType.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getContentTypeBytes() {
+    java.lang.Object ref = contentType_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      contentType_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int HOST_FIELD_NUMBER = 3208616;
 
   @SuppressWarnings("serial")
@@ -194,7 +355,9 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * If set, this invalidation rule will only apply to requests with a Host
-   * header matching host.
+   * header matching host. This field also accepts wildcards (*) to replace the
+   * leftmost (or first) label of a hostname. For example, *.example.com will
+   * match www.example.com, but not sub1.dev.example.com.
    * </pre>
    *
    * <code>optional string host = 3208616;</code>
@@ -203,7 +366,7 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public boolean hasHost() {
-    return ((bitField0_ & 0x00000001) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
 
   /**
@@ -211,7 +374,9 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * If set, this invalidation rule will only apply to requests with a Host
-   * header matching host.
+   * header matching host. This field also accepts wildcards (*) to replace the
+   * leftmost (or first) label of a hostname. For example, *.example.com will
+   * match www.example.com, but not sub1.dev.example.com.
    * </pre>
    *
    * <code>optional string host = 3208616;</code>
@@ -236,7 +401,9 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * If set, this invalidation rule will only apply to requests with a Host
-   * header matching host.
+   * header matching host. This field also accepts wildcards (*) to replace the
+   * leftmost (or first) label of a hostname. For example, *.example.com will
+   * match www.example.com, but not sub1.dev.example.com.
    * </pre>
    *
    * <code>optional string host = 3208616;</code>
@@ -256,6 +423,43 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
     }
   }
 
+  public static final int HTTP_STATUS_FIELD_NUMBER = 468949897;
+  private int httpStatus_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * If set, this invalidation rule will only apply to responses with the
+   * given HTTP status. Valid range is 200-599.
+   * </pre>
+   *
+   * <code>optional int32 http_status = 468949897;</code>
+   *
+   * @return Whether the httpStatus field is set.
+   */
+  @java.lang.Override
+  public boolean hasHttpStatus() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * If set, this invalidation rule will only apply to responses with the
+   * given HTTP status. Valid range is 200-599.
+   * </pre>
+   *
+   * <code>optional int32 http_status = 468949897;</code>
+   *
+   * @return The httpStatus.
+   */
+  @java.lang.Override
+  public int getHttpStatus() {
+    return httpStatus_;
+  }
+
   public static final int PATH_FIELD_NUMBER = 3433509;
 
   @SuppressWarnings("serial")
@@ -268,7 +472,7 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public boolean hasPath() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000010) != 0);
   }
 
   /**
@@ -321,14 +525,23 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 3208616, host_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 3433509, path_);
     }
     for (int i = 0; i < cacheTags_.size(); i++) {
       com.google.protobuf.GeneratedMessage.writeString(output, 29073078, cacheTags_.getRaw(i));
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 294975296, contentType_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 306946058, backendService_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeInt32(468949897, httpStatus_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -339,10 +552,10 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
     if (size != -1) return size;
 
     size = 0;
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(3208616, host_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(3433509, path_);
     }
     {
@@ -352,6 +565,15 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
       }
       size += dataSize;
       size += 4 * getCacheTagsList().size();
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(294975296, contentType_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(306946058, backendService_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(468949897, httpStatus_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -369,10 +591,22 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
     com.google.cloud.compute.v1.CacheInvalidationRule other =
         (com.google.cloud.compute.v1.CacheInvalidationRule) obj;
 
+    if (hasBackendService() != other.hasBackendService()) return false;
+    if (hasBackendService()) {
+      if (!getBackendService().equals(other.getBackendService())) return false;
+    }
     if (!getCacheTagsList().equals(other.getCacheTagsList())) return false;
+    if (hasContentType() != other.hasContentType()) return false;
+    if (hasContentType()) {
+      if (!getContentType().equals(other.getContentType())) return false;
+    }
     if (hasHost() != other.hasHost()) return false;
     if (hasHost()) {
       if (!getHost().equals(other.getHost())) return false;
+    }
+    if (hasHttpStatus() != other.hasHttpStatus()) return false;
+    if (hasHttpStatus()) {
+      if (getHttpStatus() != other.getHttpStatus()) return false;
     }
     if (hasPath() != other.hasPath()) return false;
     if (hasPath()) {
@@ -389,13 +623,25 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    if (hasBackendService()) {
+      hash = (37 * hash) + BACKEND_SERVICE_FIELD_NUMBER;
+      hash = (53 * hash) + getBackendService().hashCode();
+    }
     if (getCacheTagsCount() > 0) {
       hash = (37 * hash) + CACHE_TAGS_FIELD_NUMBER;
       hash = (53 * hash) + getCacheTagsList().hashCode();
     }
+    if (hasContentType()) {
+      hash = (37 * hash) + CONTENT_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getContentType().hashCode();
+    }
     if (hasHost()) {
       hash = (37 * hash) + HOST_FIELD_NUMBER;
       hash = (53 * hash) + getHost().hashCode();
+    }
+    if (hasHttpStatus()) {
+      hash = (37 * hash) + HTTP_STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + getHttpStatus();
     }
     if (hasPath()) {
       hash = (37 * hash) + PATH_FIELD_NUMBER;
@@ -540,8 +786,11 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
+      backendService_ = "";
       cacheTags_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      contentType_ = "";
       host_ = "";
+      httpStatus_ = 0;
       path_ = "";
       return this;
     }
@@ -579,18 +828,30 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
 
     private void buildPartial0(com.google.cloud.compute.v1.CacheInvalidationRule result) {
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.backendService_ = backendService_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
         cacheTags_.makeImmutable();
         result.cacheTags_ = cacheTags_;
       }
-      int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.host_ = host_;
-        to_bitField0_ |= 0x00000001;
-      }
       if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.path_ = path_;
+        result.contentType_ = contentType_;
         to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.host_ = host_;
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.httpStatus_ = httpStatus_;
+        to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.path_ = path_;
+        to_bitField0_ |= 0x00000010;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -608,24 +869,37 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
     public Builder mergeFrom(com.google.cloud.compute.v1.CacheInvalidationRule other) {
       if (other == com.google.cloud.compute.v1.CacheInvalidationRule.getDefaultInstance())
         return this;
+      if (other.hasBackendService()) {
+        backendService_ = other.backendService_;
+        bitField0_ |= 0x00000001;
+        onChanged();
+      }
       if (!other.cacheTags_.isEmpty()) {
         if (cacheTags_.isEmpty()) {
           cacheTags_ = other.cacheTags_;
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000002;
         } else {
           ensureCacheTagsIsMutable();
           cacheTags_.addAll(other.cacheTags_);
         }
         onChanged();
       }
+      if (other.hasContentType()) {
+        contentType_ = other.contentType_;
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
       if (other.hasHost()) {
         host_ = other.host_;
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000008;
         onChanged();
+      }
+      if (other.hasHttpStatus()) {
+        setHttpStatus(other.getHttpStatus());
       }
       if (other.hasPath()) {
         path_ = other.path_;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -657,13 +931,13 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
             case 25668930:
               {
                 host_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 25668930
             case 27468074:
               {
                 path_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 27468074
             case 232584626:
@@ -673,6 +947,24 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
                 cacheTags_.add(s);
                 break;
               } // case 232584626
+            case -1935164926:
+              {
+                contentType_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case -1935164926
+            case -1839398830:
+              {
+                backendService_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case -1839398830
+            case -543368120:
+              {
+                httpStatus_ = input.readInt32();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case -543368120
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -692,6 +984,162 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
 
     private int bitField0_;
 
+    private java.lang.Object backendService_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * If set, this invalidation rule will only apply to requests routed to the
+     * given backend service or backend bucket.
+     * For example, for a backend bucket `bb1` in the same scope as the URL map,
+     * the path would be `projects/my-project/global/backendBuckets/bb1`; and
+     * for a backend service `bs1` in the same scope as the URL map, the path
+     * would be `projects/my-project/global/backendServices/bs1`.
+     * </pre>
+     *
+     * <code>optional string backend_service = 306946058;</code>
+     *
+     * @return Whether the backendService field is set.
+     */
+    public boolean hasBackendService() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * If set, this invalidation rule will only apply to requests routed to the
+     * given backend service or backend bucket.
+     * For example, for a backend bucket `bb1` in the same scope as the URL map,
+     * the path would be `projects/my-project/global/backendBuckets/bb1`; and
+     * for a backend service `bs1` in the same scope as the URL map, the path
+     * would be `projects/my-project/global/backendServices/bs1`.
+     * </pre>
+     *
+     * <code>optional string backend_service = 306946058;</code>
+     *
+     * @return The backendService.
+     */
+    public java.lang.String getBackendService() {
+      java.lang.Object ref = backendService_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        backendService_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * If set, this invalidation rule will only apply to requests routed to the
+     * given backend service or backend bucket.
+     * For example, for a backend bucket `bb1` in the same scope as the URL map,
+     * the path would be `projects/my-project/global/backendBuckets/bb1`; and
+     * for a backend service `bs1` in the same scope as the URL map, the path
+     * would be `projects/my-project/global/backendServices/bs1`.
+     * </pre>
+     *
+     * <code>optional string backend_service = 306946058;</code>
+     *
+     * @return The bytes for backendService.
+     */
+    public com.google.protobuf.ByteString getBackendServiceBytes() {
+      java.lang.Object ref = backendService_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        backendService_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * If set, this invalidation rule will only apply to requests routed to the
+     * given backend service or backend bucket.
+     * For example, for a backend bucket `bb1` in the same scope as the URL map,
+     * the path would be `projects/my-project/global/backendBuckets/bb1`; and
+     * for a backend service `bs1` in the same scope as the URL map, the path
+     * would be `projects/my-project/global/backendServices/bs1`.
+     * </pre>
+     *
+     * <code>optional string backend_service = 306946058;</code>
+     *
+     * @param value The backendService to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBackendService(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      backendService_ = value;
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * If set, this invalidation rule will only apply to requests routed to the
+     * given backend service or backend bucket.
+     * For example, for a backend bucket `bb1` in the same scope as the URL map,
+     * the path would be `projects/my-project/global/backendBuckets/bb1`; and
+     * for a backend service `bs1` in the same scope as the URL map, the path
+     * would be `projects/my-project/global/backendServices/bs1`.
+     * </pre>
+     *
+     * <code>optional string backend_service = 306946058;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearBackendService() {
+      backendService_ = getDefaultInstance().getBackendService();
+      bitField0_ = (bitField0_ & ~0x00000001);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * If set, this invalidation rule will only apply to requests routed to the
+     * given backend service or backend bucket.
+     * For example, for a backend bucket `bb1` in the same scope as the URL map,
+     * the path would be `projects/my-project/global/backendBuckets/bb1`; and
+     * for a backend service `bs1` in the same scope as the URL map, the path
+     * would be `projects/my-project/global/backendServices/bs1`.
+     * </pre>
+     *
+     * <code>optional string backend_service = 306946058;</code>
+     *
+     * @param value The bytes for backendService to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBackendServiceBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      backendService_ = value;
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
     private com.google.protobuf.LazyStringArrayList cacheTags_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
 
@@ -699,7 +1147,7 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
       if (!cacheTags_.isModifiable()) {
         cacheTags_ = new com.google.protobuf.LazyStringArrayList(cacheTags_);
       }
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
     }
 
     /**
@@ -839,7 +1287,7 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
       }
       ensureCacheTagsIsMutable();
       cacheTags_.set(index, value);
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -873,7 +1321,7 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
       }
       ensureCacheTagsIsMutable();
       cacheTags_.add(value);
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -904,7 +1352,7 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
     public Builder addAllCacheTags(java.lang.Iterable<java.lang.String> values) {
       ensureCacheTagsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, cacheTags_);
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -933,7 +1381,7 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
      */
     public Builder clearCacheTags() {
       cacheTags_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       ;
       onChanged();
       return this;
@@ -969,7 +1417,145 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
       checkByteStringIsUtf8(value);
       ensureCacheTagsIsMutable();
       cacheTags_.add(value);
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object contentType_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * If set, this invalidation rule will only apply to responses with the given
+     * content-type. Parameters are not allowed and are ignored from the response
+     * when matching. Wildcards are not allowed.
+     * </pre>
+     *
+     * <code>optional string content_type = 294975296;</code>
+     *
+     * @return Whether the contentType field is set.
+     */
+    public boolean hasContentType() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * If set, this invalidation rule will only apply to responses with the given
+     * content-type. Parameters are not allowed and are ignored from the response
+     * when matching. Wildcards are not allowed.
+     * </pre>
+     *
+     * <code>optional string content_type = 294975296;</code>
+     *
+     * @return The contentType.
+     */
+    public java.lang.String getContentType() {
+      java.lang.Object ref = contentType_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        contentType_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * If set, this invalidation rule will only apply to responses with the given
+     * content-type. Parameters are not allowed and are ignored from the response
+     * when matching. Wildcards are not allowed.
+     * </pre>
+     *
+     * <code>optional string content_type = 294975296;</code>
+     *
+     * @return The bytes for contentType.
+     */
+    public com.google.protobuf.ByteString getContentTypeBytes() {
+      java.lang.Object ref = contentType_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        contentType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * If set, this invalidation rule will only apply to responses with the given
+     * content-type. Parameters are not allowed and are ignored from the response
+     * when matching. Wildcards are not allowed.
+     * </pre>
+     *
+     * <code>optional string content_type = 294975296;</code>
+     *
+     * @param value The contentType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setContentType(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      contentType_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * If set, this invalidation rule will only apply to responses with the given
+     * content-type. Parameters are not allowed and are ignored from the response
+     * when matching. Wildcards are not allowed.
+     * </pre>
+     *
+     * <code>optional string content_type = 294975296;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearContentType() {
+      contentType_ = getDefaultInstance().getContentType();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * If set, this invalidation rule will only apply to responses with the given
+     * content-type. Parameters are not allowed and are ignored from the response
+     * when matching. Wildcards are not allowed.
+     * </pre>
+     *
+     * <code>optional string content_type = 294975296;</code>
+     *
+     * @param value The bytes for contentType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setContentTypeBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      contentType_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -981,7 +1567,9 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * If set, this invalidation rule will only apply to requests with a Host
-     * header matching host.
+     * header matching host. This field also accepts wildcards (*) to replace the
+     * leftmost (or first) label of a hostname. For example, *.example.com will
+     * match www.example.com, but not sub1.dev.example.com.
      * </pre>
      *
      * <code>optional string host = 3208616;</code>
@@ -989,7 +1577,7 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
      * @return Whether the host field is set.
      */
     public boolean hasHost() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
 
     /**
@@ -997,7 +1585,9 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * If set, this invalidation rule will only apply to requests with a Host
-     * header matching host.
+     * header matching host. This field also accepts wildcards (*) to replace the
+     * leftmost (or first) label of a hostname. For example, *.example.com will
+     * match www.example.com, but not sub1.dev.example.com.
      * </pre>
      *
      * <code>optional string host = 3208616;</code>
@@ -1021,7 +1611,9 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * If set, this invalidation rule will only apply to requests with a Host
-     * header matching host.
+     * header matching host. This field also accepts wildcards (*) to replace the
+     * leftmost (or first) label of a hostname. For example, *.example.com will
+     * match www.example.com, but not sub1.dev.example.com.
      * </pre>
      *
      * <code>optional string host = 3208616;</code>
@@ -1045,7 +1637,9 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * If set, this invalidation rule will only apply to requests with a Host
-     * header matching host.
+     * header matching host. This field also accepts wildcards (*) to replace the
+     * leftmost (or first) label of a hostname. For example, *.example.com will
+     * match www.example.com, but not sub1.dev.example.com.
      * </pre>
      *
      * <code>optional string host = 3208616;</code>
@@ -1058,7 +1652,7 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       host_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1068,7 +1662,9 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * If set, this invalidation rule will only apply to requests with a Host
-     * header matching host.
+     * header matching host. This field also accepts wildcards (*) to replace the
+     * leftmost (or first) label of a hostname. For example, *.example.com will
+     * match www.example.com, but not sub1.dev.example.com.
      * </pre>
      *
      * <code>optional string host = 3208616;</code>
@@ -1077,7 +1673,7 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
      */
     public Builder clearHost() {
       host_ = getDefaultInstance().getHost();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1087,7 +1683,9 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * If set, this invalidation rule will only apply to requests with a Host
-     * header matching host.
+     * header matching host. This field also accepts wildcards (*) to replace the
+     * leftmost (or first) label of a hostname. For example, *.example.com will
+     * match www.example.com, but not sub1.dev.example.com.
      * </pre>
      *
      * <code>optional string host = 3208616;</code>
@@ -1101,7 +1699,83 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
       }
       checkByteStringIsUtf8(value);
       host_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    private int httpStatus_;
+
+    /**
+     *
+     *
+     * <pre>
+     * If set, this invalidation rule will only apply to responses with the
+     * given HTTP status. Valid range is 200-599.
+     * </pre>
+     *
+     * <code>optional int32 http_status = 468949897;</code>
+     *
+     * @return Whether the httpStatus field is set.
+     */
+    @java.lang.Override
+    public boolean hasHttpStatus() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * If set, this invalidation rule will only apply to responses with the
+     * given HTTP status. Valid range is 200-599.
+     * </pre>
+     *
+     * <code>optional int32 http_status = 468949897;</code>
+     *
+     * @return The httpStatus.
+     */
+    @java.lang.Override
+    public int getHttpStatus() {
+      return httpStatus_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * If set, this invalidation rule will only apply to responses with the
+     * given HTTP status. Valid range is 200-599.
+     * </pre>
+     *
+     * <code>optional int32 http_status = 468949897;</code>
+     *
+     * @param value The httpStatus to set.
+     * @return This builder for chaining.
+     */
+    public Builder setHttpStatus(int value) {
+
+      httpStatus_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * If set, this invalidation rule will only apply to responses with the
+     * given HTTP status. Valid range is 200-599.
+     * </pre>
+     *
+     * <code>optional int32 http_status = 468949897;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearHttpStatus() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      httpStatus_ = 0;
       onChanged();
       return this;
     }
@@ -1114,7 +1788,7 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
      * @return Whether the path field is set.
      */
     public boolean hasPath() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
 
     /**
@@ -1162,7 +1836,7 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       path_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1174,7 +1848,7 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
      */
     public Builder clearPath() {
       path_ = getDefaultInstance().getPath();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -1191,7 +1865,7 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
       }
       checkByteStringIsUtf8(value);
       path_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }

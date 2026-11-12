@@ -1031,7 +1031,7 @@ public interface AutonomousDatabasePropertiesOrBuilder
    *
    * @deprecated
    *     google.cloud.oracledatabase.v1.AutonomousDatabaseProperties.is_local_data_guard_enabled is
-   *     deprecated. See google/cloud/oracledatabase/v1/autonomous_database.proto;l=781
+   *     deprecated. See google/cloud/oracledatabase/v1/autonomous_database.proto;l=786
    * @return The isLocalDataGuardEnabled.
    */
   @java.lang.Deprecated
@@ -1053,7 +1053,7 @@ public interface AutonomousDatabasePropertiesOrBuilder
    *
    * @deprecated
    *     google.cloud.oracledatabase.v1.AutonomousDatabaseProperties.local_adg_auto_failover_max_data_loss_limit
-   *     is deprecated. See google/cloud/oracledatabase/v1/autonomous_database.proto;l=788
+   *     is deprecated. See google/cloud/oracledatabase/v1/autonomous_database.proto;l=793
    * @return The localAdgAutoFailoverMaxDataLossLimit.
    */
   @java.lang.Deprecated

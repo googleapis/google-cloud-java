@@ -35,8 +35,14 @@ import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.ces.v1beta.BidiSessionClientMessage;
 import com.google.cloud.ces.v1beta.BidiSessionServerMessage;
+import com.google.cloud.ces.v1beta.CancelAssistantTurnRequest;
+import com.google.cloud.ces.v1beta.CancelAssistantTurnResponse;
+import com.google.cloud.ces.v1beta.GenerateOnboardingSuggestionsRequest;
+import com.google.cloud.ces.v1beta.GenerateOnboardingSuggestionsResponse;
 import com.google.cloud.ces.v1beta.RunSessionRequest;
 import com.google.cloud.ces.v1beta.RunSessionResponse;
+import com.google.cloud.ces.v1beta.StreamChatAiAssistantRequest;
+import com.google.cloud.ces.v1beta.StreamChatAiAssistantResponse;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -139,6 +145,124 @@ public class HttpJsonSessionServiceStub extends SessionServiceStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<
+          StreamChatAiAssistantRequest, StreamChatAiAssistantResponse>
+      streamChatAiAssistantMethodDescriptor =
+          ApiMethodDescriptor
+              .<StreamChatAiAssistantRequest, StreamChatAiAssistantResponse>newBuilder()
+              .setFullMethodName("google.cloud.ces.v1beta.SessionService/StreamChatAiAssistant")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.SERVER_STREAMING)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<StreamChatAiAssistantRequest>newBuilder()
+                      .setPath(
+                          "/v1beta/{name=projects/*/locations/*/apps/*/assistantSessions/*}:streamChatAiAssistant",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<StreamChatAiAssistantRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<StreamChatAiAssistantRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<StreamChatAiAssistantResponse>newBuilder()
+                      .setDefaultInstance(StreamChatAiAssistantResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<CancelAssistantTurnRequest, CancelAssistantTurnResponse>
+      cancelAssistantTurnMethodDescriptor =
+          ApiMethodDescriptor.<CancelAssistantTurnRequest, CancelAssistantTurnResponse>newBuilder()
+              .setFullMethodName("google.cloud.ces.v1beta.SessionService/CancelAssistantTurn")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CancelAssistantTurnRequest>newBuilder()
+                      .setPath(
+                          "/v1beta/{name=projects/*/locations/*/apps/*/assistantSessions/*}:cancelAssistantTurn",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CancelAssistantTurnRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CancelAssistantTurnRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<CancelAssistantTurnResponse>newBuilder()
+                      .setDefaultInstance(CancelAssistantTurnResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          GenerateOnboardingSuggestionsRequest, GenerateOnboardingSuggestionsResponse>
+      generateOnboardingSuggestionsMethodDescriptor =
+          ApiMethodDescriptor
+              .<GenerateOnboardingSuggestionsRequest, GenerateOnboardingSuggestionsResponse>
+                  newBuilder()
+              .setFullMethodName(
+                  "google.cloud.ces.v1beta.SessionService/GenerateOnboardingSuggestions")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GenerateOnboardingSuggestionsRequest>newBuilder()
+                      .setPath(
+                          "/v1beta/{name=projects/*/locations/*/apps/*}:generateOnboardingSuggestions",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GenerateOnboardingSuggestionsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GenerateOnboardingSuggestionsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<GenerateOnboardingSuggestionsResponse>newBuilder()
+                      .setDefaultInstance(
+                          GenerateOnboardingSuggestionsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           ApiMethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -210,6 +334,13 @@ public class HttpJsonSessionServiceStub extends SessionServiceStub {
   private final UnaryCallable<RunSessionRequest, RunSessionResponse> runSessionCallable;
   private final ServerStreamingCallable<RunSessionRequest, RunSessionResponse>
       streamRunSessionCallable;
+  private final ServerStreamingCallable<StreamChatAiAssistantRequest, StreamChatAiAssistantResponse>
+      streamChatAiAssistantCallable;
+  private final UnaryCallable<CancelAssistantTurnRequest, CancelAssistantTurnResponse>
+      cancelAssistantTurnCallable;
+  private final UnaryCallable<
+          GenerateOnboardingSuggestionsRequest, GenerateOnboardingSuggestionsResponse>
+      generateOnboardingSuggestionsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -279,6 +410,49 @@ public class HttpJsonSessionServiceStub extends SessionServiceStub {
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<StreamChatAiAssistantRequest, StreamChatAiAssistantResponse>
+        streamChatAiAssistantTransportSettings =
+            HttpJsonCallSettings
+                .<StreamChatAiAssistantRequest, StreamChatAiAssistantResponse>newBuilder()
+                .setMethodDescriptor(streamChatAiAssistantMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    HttpJsonCallSettings<CancelAssistantTurnRequest, CancelAssistantTurnResponse>
+        cancelAssistantTurnTransportSettings =
+            HttpJsonCallSettings
+                .<CancelAssistantTurnRequest, CancelAssistantTurnResponse>newBuilder()
+                .setMethodDescriptor(cancelAssistantTurnMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<
+            GenerateOnboardingSuggestionsRequest, GenerateOnboardingSuggestionsResponse>
+        generateOnboardingSuggestionsTransportSettings =
+            HttpJsonCallSettings
+                .<GenerateOnboardingSuggestionsRequest, GenerateOnboardingSuggestionsResponse>
+                    newBuilder()
+                .setMethodDescriptor(generateOnboardingSuggestionsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
             HttpJsonCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -309,6 +483,21 @@ public class HttpJsonSessionServiceStub extends SessionServiceStub {
     this.streamRunSessionCallable =
         callableFactory.createServerStreamingCallable(
             streamRunSessionTransportSettings, settings.streamRunSessionSettings(), clientContext);
+    this.streamChatAiAssistantCallable =
+        callableFactory.createServerStreamingCallable(
+            streamChatAiAssistantTransportSettings,
+            settings.streamChatAiAssistantSettings(),
+            clientContext);
+    this.cancelAssistantTurnCallable =
+        callableFactory.createUnaryCallable(
+            cancelAssistantTurnTransportSettings,
+            settings.cancelAssistantTurnSettings(),
+            clientContext);
+    this.generateOnboardingSuggestionsCallable =
+        callableFactory.createUnaryCallable(
+            generateOnboardingSuggestionsTransportSettings,
+            settings.generateOnboardingSuggestionsSettings(),
+            clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -328,6 +517,9 @@ public class HttpJsonSessionServiceStub extends SessionServiceStub {
     List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
     methodDescriptors.add(runSessionMethodDescriptor);
     methodDescriptors.add(streamRunSessionMethodDescriptor);
+    methodDescriptors.add(streamChatAiAssistantMethodDescriptor);
+    methodDescriptors.add(cancelAssistantTurnMethodDescriptor);
+    methodDescriptors.add(generateOnboardingSuggestionsMethodDescriptor);
     methodDescriptors.add(listLocationsMethodDescriptor);
     methodDescriptors.add(getLocationMethodDescriptor);
     return methodDescriptors;
@@ -341,6 +533,24 @@ public class HttpJsonSessionServiceStub extends SessionServiceStub {
   @Override
   public ServerStreamingCallable<RunSessionRequest, RunSessionResponse> streamRunSessionCallable() {
     return streamRunSessionCallable;
+  }
+
+  @Override
+  public ServerStreamingCallable<StreamChatAiAssistantRequest, StreamChatAiAssistantResponse>
+      streamChatAiAssistantCallable() {
+    return streamChatAiAssistantCallable;
+  }
+
+  @Override
+  public UnaryCallable<CancelAssistantTurnRequest, CancelAssistantTurnResponse>
+      cancelAssistantTurnCallable() {
+    return cancelAssistantTurnCallable;
+  }
+
+  @Override
+  public UnaryCallable<GenerateOnboardingSuggestionsRequest, GenerateOnboardingSuggestionsResponse>
+      generateOnboardingSuggestionsCallable() {
+    return generateOnboardingSuggestionsCallable;
   }
 
   @Override

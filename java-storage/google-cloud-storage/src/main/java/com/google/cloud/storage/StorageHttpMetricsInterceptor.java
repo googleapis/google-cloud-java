@@ -92,7 +92,7 @@ final class StorageHttpMetricsInterceptor implements HttpRequestInitializer {
                 statusCode >= 400
                     ? StorageErrorTypeMapper.mapHttpResponseCode(statusCode)
                     : StorageErrorTypeMapper.STATUS_OK;
-            recordDuration(request, startTimeNanos.get(), String.valueOf(statusCode), errorType);
+            recordDuration(request, startTimeNanos.get(), (long) statusCode, errorType);
           }
         });
 
@@ -103,7 +103,10 @@ final class StorageHttpMetricsInterceptor implements HttpRequestInitializer {
         (req, supportsRetry) -> {
           if (recorded.compareAndSet(false, true)) {
             recordDuration(
-                req, startTimeNanos.get(), "0", StorageErrorTypeMapper.STATUS_CONNECTION_ERROR);
+                req,
+                startTimeNanos.get(),
+                StorageMetricsContext.HTTP_STATUS_UNSET,
+                StorageErrorTypeMapper.STATUS_CONNECTION_ERROR);
           }
           return existingIoHandler != null
               && existingIoHandler.handleIOException(req, supportsRetry);
@@ -111,7 +114,7 @@ final class StorageHttpMetricsInterceptor implements HttpRequestInitializer {
   }
 
   private void recordDuration(
-      HttpRequest request, long startNanos, String statusCode, String errorType) {
+      HttpRequest request, long startNanos, long statusCode, String errorType) {
     if (metrics == null) {
       return;
     }

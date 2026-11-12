@@ -88,8 +88,8 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Unspecified thinking mode, agent will use THINKING mode by default except
-     * for BigQuery user defaulting to FAST mode by default.
+     * The default value. For BigQuery and Looker data sources, the agent uses
+     * FAST. For all other data sources, the agent uses THINKING.
      * </pre>
      *
      * <code>THINKING_MODE_UNSPECIFIED = 0;</code>
@@ -132,8 +132,8 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Unspecified thinking mode, agent will use THINKING mode by default except
-     * for BigQuery user defaulting to FAST mode by default.
+     * The default value. For BigQuery and Looker data sources, the agent uses
+     * FAST. For all other data sources, the agent uses THINKING.
      * </pre>
      *
      * <code>THINKING_MODE_UNSPECIFIED = 0;</code>
@@ -850,7 +850,7 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.geminidataanalytics.v1beta.ChatRequest.project is deprecated. See
-   *     google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=398
+   *     google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=404
    * @return The project.
    */
   @java.lang.Override
@@ -880,7 +880,7 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.geminidataanalytics.v1beta.ChatRequest.project is deprecated. See
-   *     google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=398
+   *     google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=404
    * @return The bytes for project.
    */
   @java.lang.Override
@@ -3278,7 +3278,7 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.geminidataanalytics.v1beta.ChatRequest.project is deprecated. See
-     *     google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=398
+     *     google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=404
      * @return The project.
      */
     @java.lang.Deprecated
@@ -3307,7 +3307,7 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.geminidataanalytics.v1beta.ChatRequest.project is deprecated. See
-     *     google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=398
+     *     google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=404
      * @return The bytes for project.
      */
     @java.lang.Deprecated
@@ -3336,7 +3336,7 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.geminidataanalytics.v1beta.ChatRequest.project is deprecated. See
-     *     google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=398
+     *     google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=404
      * @param value The project to set.
      * @return This builder for chaining.
      */
@@ -3364,7 +3364,7 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.geminidataanalytics.v1beta.ChatRequest.project is deprecated. See
-     *     google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=398
+     *     google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=404
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -3388,7 +3388,7 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.geminidataanalytics.v1beta.ChatRequest.project is deprecated. See
-     *     google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=398
+     *     google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=404
      * @param value The bytes for project to set.
      * @return This builder for chaining.
      */

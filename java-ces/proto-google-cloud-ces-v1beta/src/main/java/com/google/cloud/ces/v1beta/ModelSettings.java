@@ -53,6 +53,7 @@ public final class ModelSettings extends com.google.protobuf.GeneratedMessage
 
   private ModelSettings() {
     model_ = "";
+    thinkingLevel_ = 0;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -68,6 +69,221 @@ public final class ModelSettings extends com.google.protobuf.GeneratedMessage
         .ensureFieldAccessorsInitialized(
             com.google.cloud.ces.v1beta.ModelSettings.class,
             com.google.cloud.ces.v1beta.ModelSettings.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Thinking level configuration for the model.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.ces.v1beta.ModelSettings.ThinkingLevel}
+   */
+  public enum ThinkingLevel implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Thinking level is unspecified.
+     * </pre>
+     *
+     * <code>THINKING_LEVEL_UNSPECIFIED = 0;</code>
+     */
+    THINKING_LEVEL_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Default thinking level.
+     * </pre>
+     *
+     * <code>DEFAULT = 1;</code>
+     */
+    DEFAULT(1),
+    /**
+     *
+     *
+     * <pre>
+     * Low thinking level.
+     * </pre>
+     *
+     * <code>LOW = 2;</code>
+     */
+    LOW(2),
+    /**
+     *
+     *
+     * <pre>
+     * Medium thinking level.
+     * </pre>
+     *
+     * <code>MEDIUM = 3;</code>
+     */
+    MEDIUM(3),
+    /**
+     *
+     *
+     * <pre>
+     * High thinking level.
+     * </pre>
+     *
+     * <code>HIGH = 4;</code>
+     */
+    HIGH(4),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 6,
+          /* suffix= */ "",
+          "ThinkingLevel");
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Thinking level is unspecified.
+     * </pre>
+     *
+     * <code>THINKING_LEVEL_UNSPECIFIED = 0;</code>
+     */
+    public static final int THINKING_LEVEL_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Default thinking level.
+     * </pre>
+     *
+     * <code>DEFAULT = 1;</code>
+     */
+    public static final int DEFAULT_VALUE = 1;
+
+    /**
+     *
+     *
+     * <pre>
+     * Low thinking level.
+     * </pre>
+     *
+     * <code>LOW = 2;</code>
+     */
+    public static final int LOW_VALUE = 2;
+
+    /**
+     *
+     *
+     * <pre>
+     * Medium thinking level.
+     * </pre>
+     *
+     * <code>MEDIUM = 3;</code>
+     */
+    public static final int MEDIUM_VALUE = 3;
+
+    /**
+     *
+     *
+     * <pre>
+     * High thinking level.
+     * </pre>
+     *
+     * <code>HIGH = 4;</code>
+     */
+    public static final int HIGH_VALUE = 4;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static ThinkingLevel valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static ThinkingLevel forNumber(int value) {
+      switch (value) {
+        case 0:
+          return THINKING_LEVEL_UNSPECIFIED;
+        case 1:
+          return DEFAULT;
+        case 2:
+          return LOW;
+        case 3:
+          return MEDIUM;
+        case 4:
+          return HIGH;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<ThinkingLevel> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<ThinkingLevel> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<ThinkingLevel>() {
+          public ThinkingLevel findValueByNumber(int number) {
+            return ThinkingLevel.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.ces.v1beta.ModelSettings.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final ThinkingLevel[] VALUES = values();
+
+    public static ThinkingLevel valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private ThinkingLevel(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.ces.v1beta.ModelSettings.ThinkingLevel)
   }
 
   private int bitField0_;
@@ -167,6 +383,49 @@ public final class ModelSettings extends com.google.protobuf.GeneratedMessage
     return temperature_;
   }
 
+  public static final int THINKING_LEVEL_FIELD_NUMBER = 5;
+  private int thinkingLevel_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The thinking level of the model.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.ModelSettings.ThinkingLevel thinking_level = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for thinkingLevel.
+   */
+  @java.lang.Override
+  public int getThinkingLevelValue() {
+    return thinkingLevel_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The thinking level of the model.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.ModelSettings.ThinkingLevel thinking_level = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The thinkingLevel.
+   */
+  @java.lang.Override
+  public com.google.cloud.ces.v1beta.ModelSettings.ThinkingLevel getThinkingLevel() {
+    com.google.cloud.ces.v1beta.ModelSettings.ThinkingLevel result =
+        com.google.cloud.ces.v1beta.ModelSettings.ThinkingLevel.forNumber(thinkingLevel_);
+    return result == null
+        ? com.google.cloud.ces.v1beta.ModelSettings.ThinkingLevel.UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -187,6 +446,11 @@ public final class ModelSettings extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeDouble(2, temperature_);
     }
+    if (thinkingLevel_
+        != com.google.cloud.ces.v1beta.ModelSettings.ThinkingLevel.THINKING_LEVEL_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(5, thinkingLevel_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -201,6 +465,11 @@ public final class ModelSettings extends com.google.protobuf.GeneratedMessage
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeDoubleSize(2, temperature_);
+    }
+    if (thinkingLevel_
+        != com.google.cloud.ces.v1beta.ModelSettings.ThinkingLevel.THINKING_LEVEL_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(5, thinkingLevel_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -224,6 +493,7 @@ public final class ModelSettings extends com.google.protobuf.GeneratedMessage
       if (java.lang.Double.doubleToLongBits(getTemperature())
           != java.lang.Double.doubleToLongBits(other.getTemperature())) return false;
     }
+    if (thinkingLevel_ != other.thinkingLevel_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -244,6 +514,8 @@ public final class ModelSettings extends com.google.protobuf.GeneratedMessage
               + com.google.protobuf.Internal.hashLong(
                   java.lang.Double.doubleToLongBits(getTemperature()));
     }
+    hash = (37 * hash) + THINKING_LEVEL_FIELD_NUMBER;
+    hash = (53 * hash) + thinkingLevel_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -386,6 +658,7 @@ public final class ModelSettings extends com.google.protobuf.GeneratedMessage
       bitField0_ = 0;
       model_ = "";
       temperature_ = 0D;
+      thinkingLevel_ = 0;
       return this;
     }
 
@@ -430,6 +703,9 @@ public final class ModelSettings extends com.google.protobuf.GeneratedMessage
         result.temperature_ = temperature_;
         to_bitField0_ |= 0x00000001;
       }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.thinkingLevel_ = thinkingLevel_;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -452,6 +728,9 @@ public final class ModelSettings extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasTemperature()) {
         setTemperature(other.getTemperature());
+      }
+      if (other.thinkingLevel_ != 0) {
+        setThinkingLevelValue(other.getThinkingLevelValue());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -491,6 +770,12 @@ public final class ModelSettings extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000002;
                 break;
               } // case 17
+            case 40:
+              {
+                thinkingLevel_ = input.readEnum();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 40
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -706,6 +991,113 @@ public final class ModelSettings extends com.google.protobuf.GeneratedMessage
     public Builder clearTemperature() {
       bitField0_ = (bitField0_ & ~0x00000002);
       temperature_ = 0D;
+      onChanged();
+      return this;
+    }
+
+    private int thinkingLevel_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The thinking level of the model.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.ModelSettings.ThinkingLevel thinking_level = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for thinkingLevel.
+     */
+    @java.lang.Override
+    public int getThinkingLevelValue() {
+      return thinkingLevel_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The thinking level of the model.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.ModelSettings.ThinkingLevel thinking_level = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for thinkingLevel to set.
+     * @return This builder for chaining.
+     */
+    public Builder setThinkingLevelValue(int value) {
+      thinkingLevel_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The thinking level of the model.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.ModelSettings.ThinkingLevel thinking_level = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The thinkingLevel.
+     */
+    @java.lang.Override
+    public com.google.cloud.ces.v1beta.ModelSettings.ThinkingLevel getThinkingLevel() {
+      com.google.cloud.ces.v1beta.ModelSettings.ThinkingLevel result =
+          com.google.cloud.ces.v1beta.ModelSettings.ThinkingLevel.forNumber(thinkingLevel_);
+      return result == null
+          ? com.google.cloud.ces.v1beta.ModelSettings.ThinkingLevel.UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The thinking level of the model.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.ModelSettings.ThinkingLevel thinking_level = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The thinkingLevel to set.
+     * @return This builder for chaining.
+     */
+    public Builder setThinkingLevel(com.google.cloud.ces.v1beta.ModelSettings.ThinkingLevel value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000004;
+      thinkingLevel_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The thinking level of the model.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.ModelSettings.ThinkingLevel thinking_level = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearThinkingLevel() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      thinkingLevel_ = 0;
       onChanged();
       return this;
     }

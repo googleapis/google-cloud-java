@@ -652,15 +652,54 @@ class ConnectionStatementExecutorImpl implements ConnectionStatementExecutor {
         getConnection().isInTransaction()
             ? getConnection().getTransactionIsolationLevel()
             : getConnection().getDefaultIsolationLevel();
-    return resultSet("transaction_isolation", isolationLevel, SHOW_TRANSACTION_ISOLATION_LEVEL);
+    return resultSet(
+        "transaction_isolation",
+        formatIsolationLevel(getEffectiveIsolationLevel(isolationLevel)),
+        SHOW_TRANSACTION_ISOLATION_LEVEL);
   }
 
   @Override
   public StatementResult statementShowDefaultTransactionIsolation() {
     return resultSet(
         "default_transaction_isolation",
-        getConnection().getDefaultIsolationLevel(),
+        formatIsolationLevel(
+            getEffectiveIsolationLevel(getConnection().getDefaultIsolationLevel())),
         SHOW_DEFAULT_TRANSACTION_ISOLATION);
+  }
+
+  /** Resolves an unspecified isolation level to the database default. */
+  private TransactionOptions.IsolationLevel getEffectiveIsolationLevel(
+      TransactionOptions.IsolationLevel isolationLevel) {
+    TransactionOptions.IsolationLevel configuredIsolationLevel =
+        isolationLevel == TransactionOptions.IsolationLevel.ISOLATION_LEVEL_UNSPECIFIED
+            ? getConnection().getDatabaseClient().getDatabaseDefaultIsolationLevel()
+            : isolationLevel;
+    switch (configuredIsolationLevel) {
+      case ISOLATION_LEVEL_UNSPECIFIED:
+        return TransactionOptions.IsolationLevel.SERIALIZABLE;
+      case UNRECOGNIZED:
+        throw SpannerExceptionFactory.newSpannerException(
+            ErrorCode.FAILED_PRECONDITION,
+            "The default isolation level of the database is not supported by this version of the"
+                + " client.");
+      default:
+        return configuredIsolationLevel;
+    }
+  }
+
+  private String formatIsolationLevel(TransactionOptions.IsolationLevel isolationLevel) {
+    if (getConnection().getDialect() != Dialect.POSTGRESQL) {
+      return isolationLevel.name();
+    }
+    switch (isolationLevel) {
+      case SERIALIZABLE:
+        return "serializable";
+      case REPEATABLE_READ:
+        return "repeatable read";
+      default:
+        throw SpannerExceptionFactory.newSpannerException(
+            ErrorCode.INVALID_ARGUMENT, "Unknown isolation level: " + isolationLevel);
+    }
   }
 
   @Override

@@ -108,6 +108,21 @@ public final class ImportAppRequest extends com.google.protobuf.GeneratedMessage
      */
     com.google.cloud.ces.v1beta.ImportAppRequest.ImportOptions.ConflictResolutionStrategy
         getConflictResolutionStrategy();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Flag for dry-running the import process.
+     * If set to true, the import process will only perform validations and will
+     * not make any changes to the existing app or create a new one.
+     * </pre>
+     *
+     * <code>bool validate_only = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The validateOnly.
+     */
+    boolean getValidateOnly();
   }
 
   /**
@@ -410,6 +425,27 @@ public final class ImportAppRequest extends com.google.protobuf.GeneratedMessage
           : result;
     }
 
+    public static final int VALIDATE_ONLY_FIELD_NUMBER = 2;
+    private boolean validateOnly_ = false;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Flag for dry-running the import process.
+     * If set to true, the import process will only perform validations and will
+     * not make any changes to the existing app or create a new one.
+     * </pre>
+     *
+     * <code>bool validate_only = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The validateOnly.
+     */
+    @java.lang.Override
+    public boolean getValidateOnly() {
+      return validateOnly_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -430,6 +466,9 @@ public final class ImportAppRequest extends com.google.protobuf.GeneratedMessage
               .getNumber()) {
         output.writeEnum(1, conflictResolutionStrategy_);
       }
+      if (validateOnly_ != false) {
+        output.writeBool(2, validateOnly_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -445,6 +484,9 @@ public final class ImportAppRequest extends com.google.protobuf.GeneratedMessage
               .getNumber()) {
         size +=
             com.google.protobuf.CodedOutputStream.computeEnumSize(1, conflictResolutionStrategy_);
+      }
+      if (validateOnly_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(2, validateOnly_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -463,6 +505,7 @@ public final class ImportAppRequest extends com.google.protobuf.GeneratedMessage
           (com.google.cloud.ces.v1beta.ImportAppRequest.ImportOptions) obj;
 
       if (conflictResolutionStrategy_ != other.conflictResolutionStrategy_) return false;
+      if (getValidateOnly() != other.getValidateOnly()) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -476,6 +519,8 @@ public final class ImportAppRequest extends com.google.protobuf.GeneratedMessage
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + CONFLICT_RESOLUTION_STRATEGY_FIELD_NUMBER;
       hash = (53 * hash) + conflictResolutionStrategy_;
+      hash = (37 * hash) + VALIDATE_ONLY_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getValidateOnly());
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -620,6 +665,7 @@ public final class ImportAppRequest extends com.google.protobuf.GeneratedMessage
         super.clear();
         bitField0_ = 0;
         conflictResolutionStrategy_ = 0;
+        validateOnly_ = false;
         return this;
       }
 
@@ -661,6 +707,9 @@ public final class ImportAppRequest extends com.google.protobuf.GeneratedMessage
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.conflictResolutionStrategy_ = conflictResolutionStrategy_;
         }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.validateOnly_ = validateOnly_;
+        }
       }
 
       @java.lang.Override
@@ -679,6 +728,9 @@ public final class ImportAppRequest extends com.google.protobuf.GeneratedMessage
           return this;
         if (other.conflictResolutionStrategy_ != 0) {
           setConflictResolutionStrategyValue(other.getConflictResolutionStrategyValue());
+        }
+        if (other.getValidateOnly() != false) {
+          setValidateOnly(other.getValidateOnly());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -712,6 +764,12 @@ public final class ImportAppRequest extends com.google.protobuf.GeneratedMessage
                   bitField0_ |= 0x00000001;
                   break;
                 } // case 8
+              case 16:
+                {
+                  validateOnly_ = input.readBool();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 16
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -844,6 +902,68 @@ public final class ImportAppRequest extends com.google.protobuf.GeneratedMessage
         return this;
       }
 
+      private boolean validateOnly_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Flag for dry-running the import process.
+       * If set to true, the import process will only perform validations and will
+       * not make any changes to the existing app or create a new one.
+       * </pre>
+       *
+       * <code>bool validate_only = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The validateOnly.
+       */
+      @java.lang.Override
+      public boolean getValidateOnly() {
+        return validateOnly_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Flag for dry-running the import process.
+       * If set to true, the import process will only perform validations and will
+       * not make any changes to the existing app or create a new one.
+       * </pre>
+       *
+       * <code>bool validate_only = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The validateOnly to set.
+       * @return This builder for chaining.
+       */
+      public Builder setValidateOnly(boolean value) {
+
+        validateOnly_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Flag for dry-running the import process.
+       * If set to true, the import process will only perform validations and will
+       * not make any changes to the existing app or create a new one.
+       * </pre>
+       *
+       * <code>bool validate_only = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearValidateOnly() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        validateOnly_ = false;
+        onChanged();
+        return this;
+      }
+
       // @@protoc_insertion_point(builder_scope:google.cloud.ces.v1beta.ImportAppRequest.ImportOptions)
     }
 
@@ -946,6 +1066,56 @@ public final class ImportAppRequest extends com.google.protobuf.GeneratedMessage
 
   public AppCase getAppCase() {
     return AppCase.forNumber(appCase_);
+  }
+
+  private int jsonPatchCase_ = 0;
+
+  @SuppressWarnings("serial")
+  private java.lang.Object jsonPatch_;
+
+  public enum JsonPatchCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    JSON_PATCH_CONTENT(9),
+    JSON_PATCH_GCS_URI(10),
+    JSONPATCH_NOT_SET(0);
+    private final int value;
+
+    private JsonPatchCase(int value) {
+      this.value = value;
+    }
+
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static JsonPatchCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static JsonPatchCase forNumber(int value) {
+      switch (value) {
+        case 9:
+          return JSON_PATCH_CONTENT;
+        case 10:
+          return JSON_PATCH_GCS_URI;
+        case 0:
+          return JSONPATCH_NOT_SET;
+        default:
+          return null;
+      }
+    }
+
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public JsonPatchCase getJsonPatchCase() {
+    return JsonPatchCase.forNumber(jsonPatchCase_);
   }
 
   public static final int GCS_URI_FIELD_NUMBER = 4;
@@ -1064,6 +1234,155 @@ public final class ImportAppRequest extends com.google.protobuf.GeneratedMessage
       return (com.google.protobuf.ByteString) app_;
     }
     return com.google.protobuf.ByteString.EMPTY;
+  }
+
+  public static final int JSON_PATCH_CONTENT_FIELD_NUMBER = 9;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Patch content as a JSON string.
+   * </pre>
+   *
+   * <code>string json_patch_content = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the jsonPatchContent field is set.
+   */
+  public boolean hasJsonPatchContent() {
+    return jsonPatchCase_ == 9;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Patch content as a JSON string.
+   * </pre>
+   *
+   * <code>string json_patch_content = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The jsonPatchContent.
+   */
+  public java.lang.String getJsonPatchContent() {
+    java.lang.Object ref = "";
+    if (jsonPatchCase_ == 9) {
+      ref = jsonPatch_;
+    }
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      if (jsonPatchCase_ == 9) {
+        jsonPatch_ = s;
+      }
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Patch content as a JSON string.
+   * </pre>
+   *
+   * <code>string json_patch_content = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for jsonPatchContent.
+   */
+  public com.google.protobuf.ByteString getJsonPatchContentBytes() {
+    java.lang.Object ref = "";
+    if (jsonPatchCase_ == 9) {
+      ref = jsonPatch_;
+    }
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      if (jsonPatchCase_ == 9) {
+        jsonPatch_ = b;
+      }
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int JSON_PATCH_GCS_URI_FIELD_NUMBER = 10;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A Cloud Storage URI pointing to a JSON file containing the
+   * patches.
+   * </pre>
+   *
+   * <code>string json_patch_gcs_uri = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the jsonPatchGcsUri field is set.
+   */
+  public boolean hasJsonPatchGcsUri() {
+    return jsonPatchCase_ == 10;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A Cloud Storage URI pointing to a JSON file containing the
+   * patches.
+   * </pre>
+   *
+   * <code>string json_patch_gcs_uri = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The jsonPatchGcsUri.
+   */
+  public java.lang.String getJsonPatchGcsUri() {
+    java.lang.Object ref = "";
+    if (jsonPatchCase_ == 10) {
+      ref = jsonPatch_;
+    }
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      if (jsonPatchCase_ == 10) {
+        jsonPatch_ = s;
+      }
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A Cloud Storage URI pointing to a JSON file containing the
+   * patches.
+   * </pre>
+   *
+   * <code>string json_patch_gcs_uri = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for jsonPatchGcsUri.
+   */
+  public com.google.protobuf.ByteString getJsonPatchGcsUriBytes() {
+    java.lang.Object ref = "";
+    if (jsonPatchCase_ == 10) {
+      ref = jsonPatch_;
+    }
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      if (jsonPatchCase_ == 10) {
+        jsonPatch_ = b;
+      }
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
@@ -1368,6 +1687,12 @@ public final class ImportAppRequest extends com.google.protobuf.GeneratedMessage
     if (ignoreAppLock_ != false) {
       output.writeBool(7, ignoreAppLock_);
     }
+    if (jsonPatchCase_ == 9) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 9, jsonPatch_);
+    }
+    if (jsonPatchCase_ == 10) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 10, jsonPatch_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1399,6 +1724,12 @@ public final class ImportAppRequest extends com.google.protobuf.GeneratedMessage
     }
     if (ignoreAppLock_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(7, ignoreAppLock_);
+    }
+    if (jsonPatchCase_ == 9) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(9, jsonPatch_);
+    }
+    if (jsonPatchCase_ == 10) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(10, jsonPatch_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -1435,6 +1766,17 @@ public final class ImportAppRequest extends com.google.protobuf.GeneratedMessage
       case 0:
       default:
     }
+    if (!getJsonPatchCase().equals(other.getJsonPatchCase())) return false;
+    switch (jsonPatchCase_) {
+      case 9:
+        if (!getJsonPatchContent().equals(other.getJsonPatchContent())) return false;
+        break;
+      case 10:
+        if (!getJsonPatchGcsUri().equals(other.getJsonPatchGcsUri())) return false;
+        break;
+      case 0:
+      default:
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1466,6 +1808,18 @@ public final class ImportAppRequest extends com.google.protobuf.GeneratedMessage
       case 5:
         hash = (37 * hash) + APP_CONTENT_FIELD_NUMBER;
         hash = (53 * hash) + getAppContent().hashCode();
+        break;
+      case 0:
+      default:
+    }
+    switch (jsonPatchCase_) {
+      case 9:
+        hash = (37 * hash) + JSON_PATCH_CONTENT_FIELD_NUMBER;
+        hash = (53 * hash) + getJsonPatchContent().hashCode();
+        break;
+      case 10:
+        hash = (37 * hash) + JSON_PATCH_GCS_URI_FIELD_NUMBER;
+        hash = (53 * hash) + getJsonPatchGcsUri().hashCode();
         break;
       case 0:
       default:
@@ -1631,6 +1985,8 @@ public final class ImportAppRequest extends com.google.protobuf.GeneratedMessage
       ignoreAppLock_ = false;
       appCase_ = 0;
       app_ = null;
+      jsonPatchCase_ = 0;
+      jsonPatch_ = null;
       return this;
     }
 
@@ -1668,22 +2024,22 @@ public final class ImportAppRequest extends com.google.protobuf.GeneratedMessage
 
     private void buildPartial0(com.google.cloud.ces.v1beta.ImportAppRequest result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000004) != 0)) {
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.parent_ = parent_;
       }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.displayName_ = displayName_;
       }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.appId_ = appId_;
       }
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.importOptions_ =
             importOptionsBuilder_ == null ? importOptions_ : importOptionsBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.ignoreAppLock_ = ignoreAppLock_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -1692,6 +2048,8 @@ public final class ImportAppRequest extends com.google.protobuf.GeneratedMessage
     private void buildPartialOneofs(com.google.cloud.ces.v1beta.ImportAppRequest result) {
       result.appCase_ = appCase_;
       result.app_ = this.app_;
+      result.jsonPatchCase_ = jsonPatchCase_;
+      result.jsonPatch_ = this.jsonPatch_;
     }
 
     @java.lang.Override
@@ -1708,17 +2066,17 @@ public final class ImportAppRequest extends com.google.protobuf.GeneratedMessage
       if (other == com.google.cloud.ces.v1beta.ImportAppRequest.getDefaultInstance()) return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (!other.getAppId().isEmpty()) {
         appId_ = other.appId_;
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (other.hasImportOptions()) {
@@ -1741,6 +2099,26 @@ public final class ImportAppRequest extends com.google.protobuf.GeneratedMessage
             break;
           }
         case APP_NOT_SET:
+          {
+            break;
+          }
+      }
+      switch (other.getJsonPatchCase()) {
+        case JSON_PATCH_CONTENT:
+          {
+            jsonPatchCase_ = 9;
+            jsonPatch_ = other.jsonPatch_;
+            onChanged();
+            break;
+          }
+        case JSON_PATCH_GCS_URI:
+          {
+            jsonPatchCase_ = 10;
+            jsonPatch_ = other.jsonPatch_;
+            onChanged();
+            break;
+          }
+        case JSONPATCH_NOT_SET:
           {
             break;
           }
@@ -1774,19 +2152,19 @@ public final class ImportAppRequest extends com.google.protobuf.GeneratedMessage
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 10
             case 18:
               {
                 displayName_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 18
             case 26:
               {
                 appId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 26
             case 34:
@@ -1806,15 +2184,29 @@ public final class ImportAppRequest extends com.google.protobuf.GeneratedMessage
               {
                 input.readMessage(
                     internalGetImportOptionsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 50
             case 56:
               {
                 ignoreAppLock_ = input.readBool();
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 56
+            case 74:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                jsonPatchCase_ = 9;
+                jsonPatch_ = s;
+                break;
+              } // case 74
+            case 82:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                jsonPatchCase_ = 10;
+                jsonPatch_ = s;
+                break;
+              } // case 82
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1842,6 +2234,20 @@ public final class ImportAppRequest extends com.google.protobuf.GeneratedMessage
     public Builder clearApp() {
       appCase_ = 0;
       app_ = null;
+      onChanged();
+      return this;
+    }
+
+    private int jsonPatchCase_ = 0;
+    private java.lang.Object jsonPatch_;
+
+    public JsonPatchCase getJsonPatchCase() {
+      return JsonPatchCase.forNumber(jsonPatchCase_);
+    }
+
+    public Builder clearJsonPatch() {
+      jsonPatchCase_ = 0;
+      jsonPatch_ = null;
       onChanged();
       return this;
     }
@@ -2078,6 +2484,290 @@ public final class ImportAppRequest extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Patch content as a JSON string.
+     * </pre>
+     *
+     * <code>string json_patch_content = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the jsonPatchContent field is set.
+     */
+    @java.lang.Override
+    public boolean hasJsonPatchContent() {
+      return jsonPatchCase_ == 9;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Patch content as a JSON string.
+     * </pre>
+     *
+     * <code>string json_patch_content = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The jsonPatchContent.
+     */
+    @java.lang.Override
+    public java.lang.String getJsonPatchContent() {
+      java.lang.Object ref = "";
+      if (jsonPatchCase_ == 9) {
+        ref = jsonPatch_;
+      }
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (jsonPatchCase_ == 9) {
+          jsonPatch_ = s;
+        }
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Patch content as a JSON string.
+     * </pre>
+     *
+     * <code>string json_patch_content = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for jsonPatchContent.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getJsonPatchContentBytes() {
+      java.lang.Object ref = "";
+      if (jsonPatchCase_ == 9) {
+        ref = jsonPatch_;
+      }
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        if (jsonPatchCase_ == 9) {
+          jsonPatch_ = b;
+        }
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Patch content as a JSON string.
+     * </pre>
+     *
+     * <code>string json_patch_content = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The jsonPatchContent to set.
+     * @return This builder for chaining.
+     */
+    public Builder setJsonPatchContent(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      jsonPatchCase_ = 9;
+      jsonPatch_ = value;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Patch content as a JSON string.
+     * </pre>
+     *
+     * <code>string json_patch_content = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearJsonPatchContent() {
+      if (jsonPatchCase_ == 9) {
+        jsonPatchCase_ = 0;
+        jsonPatch_ = null;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Patch content as a JSON string.
+     * </pre>
+     *
+     * <code>string json_patch_content = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for jsonPatchContent to set.
+     * @return This builder for chaining.
+     */
+    public Builder setJsonPatchContentBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      jsonPatchCase_ = 9;
+      jsonPatch_ = value;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Cloud Storage URI pointing to a JSON file containing the
+     * patches.
+     * </pre>
+     *
+     * <code>string json_patch_gcs_uri = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the jsonPatchGcsUri field is set.
+     */
+    @java.lang.Override
+    public boolean hasJsonPatchGcsUri() {
+      return jsonPatchCase_ == 10;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Cloud Storage URI pointing to a JSON file containing the
+     * patches.
+     * </pre>
+     *
+     * <code>string json_patch_gcs_uri = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The jsonPatchGcsUri.
+     */
+    @java.lang.Override
+    public java.lang.String getJsonPatchGcsUri() {
+      java.lang.Object ref = "";
+      if (jsonPatchCase_ == 10) {
+        ref = jsonPatch_;
+      }
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (jsonPatchCase_ == 10) {
+          jsonPatch_ = s;
+        }
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Cloud Storage URI pointing to a JSON file containing the
+     * patches.
+     * </pre>
+     *
+     * <code>string json_patch_gcs_uri = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for jsonPatchGcsUri.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getJsonPatchGcsUriBytes() {
+      java.lang.Object ref = "";
+      if (jsonPatchCase_ == 10) {
+        ref = jsonPatch_;
+      }
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        if (jsonPatchCase_ == 10) {
+          jsonPatch_ = b;
+        }
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Cloud Storage URI pointing to a JSON file containing the
+     * patches.
+     * </pre>
+     *
+     * <code>string json_patch_gcs_uri = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The jsonPatchGcsUri to set.
+     * @return This builder for chaining.
+     */
+    public Builder setJsonPatchGcsUri(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      jsonPatchCase_ = 10;
+      jsonPatch_ = value;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Cloud Storage URI pointing to a JSON file containing the
+     * patches.
+     * </pre>
+     *
+     * <code>string json_patch_gcs_uri = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearJsonPatchGcsUri() {
+      if (jsonPatchCase_ == 10) {
+        jsonPatchCase_ = 0;
+        jsonPatch_ = null;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Cloud Storage URI pointing to a JSON file containing the
+     * patches.
+     * </pre>
+     *
+     * <code>string json_patch_gcs_uri = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for jsonPatchGcsUri to set.
+     * @return This builder for chaining.
+     */
+    public Builder setJsonPatchGcsUriBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      jsonPatchCase_ = 10;
+      jsonPatch_ = value;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object parent_ = "";
 
     /**
@@ -2149,7 +2839,7 @@ public final class ImportAppRequest extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       parent_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2169,7 +2859,7 @@ public final class ImportAppRequest extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearParent() {
       parent_ = getDefaultInstance().getParent();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -2194,7 +2884,7 @@ public final class ImportAppRequest extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       parent_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2282,7 +2972,7 @@ public final class ImportAppRequest extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       displayName_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2306,7 +2996,7 @@ public final class ImportAppRequest extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearDisplayName() {
       displayName_ = getDefaultInstance().getDisplayName();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -2335,7 +3025,7 @@ public final class ImportAppRequest extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       displayName_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2423,7 +3113,7 @@ public final class ImportAppRequest extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       appId_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2447,7 +3137,7 @@ public final class ImportAppRequest extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearAppId() {
       appId_ = getDefaultInstance().getAppId();
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -2476,7 +3166,7 @@ public final class ImportAppRequest extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       appId_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2502,7 +3192,7 @@ public final class ImportAppRequest extends com.google.protobuf.GeneratedMessage
      * @return Whether the importOptions field is set.
      */
     public boolean hasImportOptions() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
 
     /**
@@ -2549,7 +3239,7 @@ public final class ImportAppRequest extends com.google.protobuf.GeneratedMessage
       } else {
         importOptionsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2572,7 +3262,7 @@ public final class ImportAppRequest extends com.google.protobuf.GeneratedMessage
       } else {
         importOptionsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2591,7 +3281,7 @@ public final class ImportAppRequest extends com.google.protobuf.GeneratedMessage
     public Builder mergeImportOptions(
         com.google.cloud.ces.v1beta.ImportAppRequest.ImportOptions value) {
       if (importOptionsBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)
+        if (((bitField0_ & 0x00000080) != 0)
             && importOptions_ != null
             && importOptions_
                 != com.google.cloud.ces.v1beta.ImportAppRequest.ImportOptions
@@ -2604,7 +3294,7 @@ public final class ImportAppRequest extends com.google.protobuf.GeneratedMessage
         importOptionsBuilder_.mergeFrom(value);
       }
       if (importOptions_ != null) {
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       return this;
@@ -2622,7 +3312,7 @@ public final class ImportAppRequest extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearImportOptions() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000080);
       importOptions_ = null;
       if (importOptionsBuilder_ != null) {
         importOptionsBuilder_.dispose();
@@ -2645,7 +3335,7 @@ public final class ImportAppRequest extends com.google.protobuf.GeneratedMessage
      */
     public com.google.cloud.ces.v1beta.ImportAppRequest.ImportOptions.Builder
         getImportOptionsBuilder() {
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000080;
       onChanged();
       return internalGetImportOptionsFieldBuilder().getBuilder();
     }
@@ -2735,7 +3425,7 @@ public final class ImportAppRequest extends com.google.protobuf.GeneratedMessage
     public Builder setIgnoreAppLock(boolean value) {
 
       ignoreAppLock_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2753,7 +3443,7 @@ public final class ImportAppRequest extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearIgnoreAppLock() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000100);
       ignoreAppLock_ = false;
       onChanged();
       return this;

@@ -455,4 +455,28 @@ public interface LoggingSettingsOrBuilder
    * </code>
    */
   com.google.cloud.ces.v1beta.MetricAnalysisSettingsOrBuilder getMetricAnalysisSettingsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Whether the app has to say what may be recorded before anything
+   * is kept.
+   *
+   * When true, a session starts with recording off and stays off until the
+   * client sends
+   * [SessionInput.recording_control][google.cloud.ces.v1main.SessionInput.recording_control],
+   * which then decides every turn from that point on. This covers audio
+   * recording as well as conversation history, BigQuery export and Cloud
+   * Logging.
+   *
+   * When `false`, the default, the settings above decide on their own and the
+   * client does not have to send anything.
+   * </pre>
+   *
+   * <code>bool required_recording_consent = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The requiredRecordingConsent.
+   */
+  boolean getRequiredRecordingConsent();
 }

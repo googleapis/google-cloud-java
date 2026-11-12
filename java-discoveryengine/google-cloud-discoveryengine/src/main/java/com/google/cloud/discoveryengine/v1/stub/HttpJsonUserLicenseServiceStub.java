@@ -37,6 +37,8 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.discoveryengine.v1.BatchUpdateUserLicensesMetadata;
 import com.google.cloud.discoveryengine.v1.BatchUpdateUserLicensesRequest;
 import com.google.cloud.discoveryengine.v1.BatchUpdateUserLicensesResponse;
+import com.google.cloud.discoveryengine.v1.ListLicenseConfigsUsageStatsRequest;
+import com.google.cloud.discoveryengine.v1.ListLicenseConfigsUsageStatsResponse;
 import com.google.cloud.discoveryengine.v1.ListUserLicensesRequest;
 import com.google.cloud.discoveryengine.v1.ListUserLicensesResponse;
 import com.google.common.collect.ImmutableMap;
@@ -90,6 +92,7 @@ public class HttpJsonUserLicenseServiceStub extends UserLicenseServiceStub {
                             ProtoRestSerializer<ListUserLicensesRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
@@ -100,6 +103,44 @@ public class HttpJsonUserLicenseServiceStub extends UserLicenseServiceStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<ListUserLicensesResponse>newBuilder()
                       .setDefaultInstance(ListUserLicensesResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          ListLicenseConfigsUsageStatsRequest, ListLicenseConfigsUsageStatsResponse>
+      listLicenseConfigsUsageStatsMethodDescriptor =
+          ApiMethodDescriptor
+              .<ListLicenseConfigsUsageStatsRequest, ListLicenseConfigsUsageStatsResponse>
+                  newBuilder()
+              .setFullMethodName(
+                  "google.cloud.discoveryengine.v1.UserLicenseService/ListLicenseConfigsUsageStats")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListLicenseConfigsUsageStatsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*/userStores/*}/licenseConfigsUsageStats",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListLicenseConfigsUsageStatsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListLicenseConfigsUsageStatsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListLicenseConfigsUsageStatsResponse>newBuilder()
+                      .setDefaultInstance(ListLicenseConfigsUsageStatsResponse.getDefaultInstance())
                       .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
@@ -149,6 +190,9 @@ public class HttpJsonUserLicenseServiceStub extends UserLicenseServiceStub {
       listUserLicensesCallable;
   private final UnaryCallable<ListUserLicensesRequest, ListUserLicensesPagedResponse>
       listUserLicensesPagedCallable;
+  private final UnaryCallable<
+          ListLicenseConfigsUsageStatsRequest, ListLicenseConfigsUsageStatsResponse>
+      listLicenseConfigsUsageStatsCallable;
   private final UnaryCallable<BatchUpdateUserLicensesRequest, Operation>
       batchUpdateUserLicensesCallable;
   private final OperationCallable<
@@ -265,6 +309,11 @@ public class HttpJsonUserLicenseServiceStub extends UserLicenseServiceStub {
                             HttpRule.newBuilder()
                                 .setGet(
                                     "/v1/{name=projects/*/locations/*/collections/*/dataStores/*/siteSearchEngine/targetSites/operations/*}")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet(
+                                    "/v1/{name=projects/*/locations/*/collections/*/engines/*/assistants/*/agents/*/operations/*}")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
@@ -397,6 +446,21 @@ public class HttpJsonUserLicenseServiceStub extends UserLicenseServiceStub {
                     })
                 .setResourceNameExtractor(request -> request.getParent())
                 .build();
+    HttpJsonCallSettings<ListLicenseConfigsUsageStatsRequest, ListLicenseConfigsUsageStatsResponse>
+        listLicenseConfigsUsageStatsTransportSettings =
+            HttpJsonCallSettings
+                .<ListLicenseConfigsUsageStatsRequest, ListLicenseConfigsUsageStatsResponse>
+                    newBuilder()
+                .setMethodDescriptor(listLicenseConfigsUsageStatsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
     HttpJsonCallSettings<BatchUpdateUserLicensesRequest, Operation>
         batchUpdateUserLicensesTransportSettings =
             HttpJsonCallSettings.<BatchUpdateUserLicensesRequest, Operation>newBuilder()
@@ -417,6 +481,11 @@ public class HttpJsonUserLicenseServiceStub extends UserLicenseServiceStub {
     this.listUserLicensesPagedCallable =
         callableFactory.createPagedCallable(
             listUserLicensesTransportSettings, settings.listUserLicensesSettings(), clientContext);
+    this.listLicenseConfigsUsageStatsCallable =
+        callableFactory.createUnaryCallable(
+            listLicenseConfigsUsageStatsTransportSettings,
+            settings.listLicenseConfigsUsageStatsSettings(),
+            clientContext);
     this.batchUpdateUserLicensesCallable =
         callableFactory.createUnaryCallable(
             batchUpdateUserLicensesTransportSettings,
@@ -437,6 +506,7 @@ public class HttpJsonUserLicenseServiceStub extends UserLicenseServiceStub {
   public static List<ApiMethodDescriptor> getMethodDescriptors() {
     List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
     methodDescriptors.add(listUserLicensesMethodDescriptor);
+    methodDescriptors.add(listLicenseConfigsUsageStatsMethodDescriptor);
     methodDescriptors.add(batchUpdateUserLicensesMethodDescriptor);
     return methodDescriptors;
   }
@@ -455,6 +525,12 @@ public class HttpJsonUserLicenseServiceStub extends UserLicenseServiceStub {
   public UnaryCallable<ListUserLicensesRequest, ListUserLicensesPagedResponse>
       listUserLicensesPagedCallable() {
     return listUserLicensesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListLicenseConfigsUsageStatsRequest, ListLicenseConfigsUsageStatsResponse>
+      listLicenseConfigsUsageStatsCallable() {
+    return listLicenseConfigsUsageStatsCallable;
   }
 
   @Override

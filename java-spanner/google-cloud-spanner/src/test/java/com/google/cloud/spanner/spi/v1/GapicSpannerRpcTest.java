@@ -75,24 +75,30 @@ import com.google.cloud.spanner.spi.v1.GapicSpannerRpc.AdminRequestsLimitExceede
 import com.google.cloud.spanner.spi.v1.SpannerRpc.Option;
 import com.google.common.collect.ImmutableList;
 import com.google.common.util.concurrent.Futures;
+import com.google.protobuf.ByteString;
 import com.google.protobuf.ListValue;
 import com.google.rpc.ErrorInfo;
 import com.google.spanner.admin.database.v1.DatabaseAdminGrpc;
 import com.google.spanner.admin.database.v1.ListDatabaseRolesRequest;
+import com.google.spanner.v1.BeginTransactionRequest;
 import com.google.spanner.v1.CommitRequest;
 import com.google.spanner.v1.CreateSessionRequest;
 import com.google.spanner.v1.ExecuteSqlRequest;
 import com.google.spanner.v1.GetSessionRequest;
+import com.google.spanner.v1.PartialResultSet;
 import com.google.spanner.v1.ReadRequest;
 import com.google.spanner.v1.ResultSetMetadata;
 import com.google.spanner.v1.Session;
 import com.google.spanner.v1.SpannerGrpc;
 import com.google.spanner.v1.StructType;
 import com.google.spanner.v1.StructType.Field;
+import com.google.spanner.v1.TransactionOptions;
+import com.google.spanner.v1.TransactionSelector;
 import com.google.spanner.v1.TypeCode;
 import io.grpc.CallOptions;
 import io.grpc.Context;
 import io.grpc.Contexts;
+import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import io.grpc.Metadata;
 import io.grpc.Metadata.Key;
@@ -141,6 +147,7 @@ import java.util.concurrent.Future;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.function.BooleanSupplier;
 import javax.annotation.Nullable;
 import org.junit.After;
@@ -315,6 +322,7 @@ public class GapicSpannerRpcTest {
 
   @After
   public void reset() throws InterruptedException {
+    SpannerOptionsHelper.resetActiveTracingFramework();
     if (mockSpanner != null) {
       mockSpanner.reset();
     }
@@ -2203,6 +2211,154 @@ public class GapicSpannerRpcTest {
       GapicSpannerRpc rpc = new GapicSpannerRpc(options, true);
       rpc.shutdown();
       assertTrue(factoryCalled.get());
+    } finally {
+      SpannerOptions.useDefaultEnvironment();
+    }
+  }
+
+  @Test
+  public void testPartitionedDmlUsesDefaultChannelWithoutEnteringKeyAwareChannel()
+      throws Exception {
+    AtomicInteger keyAwareRoutedCalls = new AtomicInteger();
+    ChannelEndpointCacheFactory factory =
+        baseProvider -> {
+          GrpcChannelEndpointCache delegateCache = new GrpcChannelEndpointCache(baseProvider);
+          ChannelEndpoint delegateDefault = delegateCache.defaultChannel();
+          ChannelEndpoint countingDefault =
+              new ChannelEndpoint() {
+                @Override
+                public String getAddress() {
+                  return delegateDefault.getAddress();
+                }
+
+                @Override
+                public boolean isHealthy() {
+                  return delegateDefault.isHealthy();
+                }
+
+                @Override
+                public boolean isTransientFailure() {
+                  return delegateDefault.isTransientFailure();
+                }
+
+                @Override
+                public ManagedChannel getChannel() {
+                  return delegateDefault.getChannel();
+                }
+
+                @Override
+                public void incrementActiveRequests() {
+                  keyAwareRoutedCalls.incrementAndGet();
+                  delegateDefault.incrementActiveRequests();
+                }
+
+                @Override
+                public void decrementActiveRequests() {
+                  delegateDefault.decrementActiveRequests();
+                }
+
+                @Override
+                public int getActiveRequestCount() {
+                  return delegateDefault.getActiveRequestCount();
+                }
+              };
+          return new ChannelEndpointCache() {
+            @Override
+            public ChannelEndpoint defaultChannel() {
+              return countingDefault;
+            }
+
+            @Override
+            public ChannelEndpoint get(String addr) {
+              return addr.equals(countingDefault.getAddress())
+                  ? countingDefault
+                  : delegateCache.get(addr);
+            }
+
+            @Override
+            @Nullable
+            public ChannelEndpoint getIfPresent(String addr) {
+              return addr.equals(countingDefault.getAddress())
+                  ? countingDefault
+                  : delegateCache.getIfPresent(addr);
+            }
+
+            @Override
+            public void evict(String addr) {
+              delegateCache.evict(addr);
+            }
+
+            @Override
+            public void shutdown() {
+              delegateCache.shutdown();
+            }
+          };
+        };
+
+    try {
+      SpannerOptions.useEnvironment(
+          new SpannerOptions.SpannerEnvironment() {
+            @Override
+            public boolean isEnableLocationApi() {
+              return true;
+            }
+          });
+      SpannerOptions options =
+          createSpannerOptions().toBuilder().setChannelEndpointCacheFactory(factory).build();
+      try (Spanner testSpanner = options.getService()) {
+        DatabaseClient client = testSpanner.getDatabaseClient(DatabaseId.of("[PROJECT]", "i", "d"));
+        try (ResultSet rs = client.singleUse().executeQuery(SELECT1AND2)) {
+          while (rs.next()) {}
+        }
+        assertThat(keyAwareRoutedCalls.get()).isGreaterThan(0);
+
+        mockSpanner.clearRequests();
+        keyAwareRoutedCalls.set(0);
+
+        // End-to-end Partitioned DML: BeginTransaction goes through spannerStub (1 call), while
+        // ExecuteStreamingSql goes through partitionedDmlStub directly on the default channel (0
+        // KeyAwareClientCall entries).
+        long updateCount = client.executePartitionedUpdate(UPDATE_FOO_STATEMENT);
+        assertEquals(1L, updateCount);
+        assertEquals(1, keyAwareRoutedCalls.get());
+        List<ExecuteSqlRequest> pdmlStreamingRequests =
+            mockSpanner.getRequestsOfType(ExecuteSqlRequest.class);
+        assertEquals(1, pdmlStreamingRequests.size());
+        assertFalse(pdmlStreamingRequests.get(0).hasRoutingHint());
+
+        // Direct unary and streaming Partitioned DML RPCs must never enter KeyAwareChannel at all.
+        GapicSpannerRpc rpc = getRpc(testSpanner);
+        String sessionName =
+            mockSpanner.getRequestsOfType(BeginTransactionRequest.class).get(0).getSession();
+        BeginTransactionRequest beginPdmlRequest =
+            BeginTransactionRequest.newBuilder()
+                .setSession(sessionName)
+                .setOptions(
+                    TransactionOptions.newBuilder()
+                        .setPartitionedDml(TransactionOptions.PartitionedDml.getDefaultInstance()))
+                .build();
+        ByteString unaryTxId = rpc.beginTransaction(beginPdmlRequest, optionsMap, true).getId();
+        ByteString streamingTxId = rpc.beginTransaction(beginPdmlRequest, optionsMap, true).getId();
+        keyAwareRoutedCalls.set(0);
+        rpc.executePartitionedDml(
+            ExecuteSqlRequest.newBuilder()
+                .setSession(sessionName)
+                .setSql(UPDATE_FOO_STATEMENT.getSql())
+                .setTransaction(TransactionSelector.newBuilder().setId(unaryTxId))
+                .build(),
+            optionsMap);
+        for (PartialResultSet ignored :
+            rpc.executeStreamingPartitionedDml(
+                ExecuteSqlRequest.newBuilder()
+                    .setSession(sessionName)
+                    .setSql(UPDATE_FOO_STATEMENT.getSql())
+                    .setTransaction(TransactionSelector.newBuilder().setId(streamingTxId))
+                    .build(),
+                optionsMap,
+                rpc.getRequestIdCreator().nextRequestId(0),
+                Duration.ofSeconds(10))) {}
+        assertEquals(0, keyAwareRoutedCalls.get());
+      }
     } finally {
       SpannerOptions.useDefaultEnvironment();
     }

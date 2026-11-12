@@ -66,7 +66,7 @@ public final class ToolProto extends com.google.protobuf.GeneratedFile {
           + "oto\032-google/cloud/ces/v1beta/python_function.proto\032)google/cloud/ces/v1beta/syst"
           + "em_tool.proto\032)google/cloud/ces/v1beta/w"
           + "idget_tool.proto\032\036google/protobuf/durati"
-          + "on.proto\032\037google/protobuf/timestamp.proto\"\336\n\n"
+          + "on.proto\032\037google/protobuf/timestamp.proto\"\367\n\n"
           + "\004Tool\022H\n"
           + "\017client_function\030\002 \001(\0132\'.go"
           + "ogle.cloud.ces.v1beta.ClientFunctionB\004\342A\001\001H\000\022C\n\r"
@@ -105,12 +105,13 @@ public final class ToolProto extends com.google.protobuf.GeneratedFile {
           + "\004etag\030\016 \001(\t\022\037\n"
           + "\021generated_summary\030\017 \001(\tB\004\342A\001\003\022G\n"
           + "\020tool_fake_config\030\024"
-          + " \001(\0132\'.google.cloud.ces.v1beta.ToolFakeConfigB\004\342A\001\001:j\352Ag\n"
-          + "\027ces.googleapis.com/Tool\022?projects/{project}/locations/{l"
-          + "ocation}/apps/{app}/tools/{tool}*\005tools2\004toolB\013\n"
+          + " \001(\0132\'.google.cloud.ces.v1beta.ToolFakeConfigB\004\342A\001\001\022\027\n"
+          + "\tread_only\030\035 \001(\010B\004\342A\001\003:j\352Ag\n"
+          + "\027ces.googleapis.com/Tool\022?projec"
+          + "ts/{project}/locations/{location}/apps/{app}/tools/{tool}*\005tools2\004toolB\013\n"
           + "\ttool_typeBY\n"
-          + "\033com.google.cloud.ces.v1betaB\tToolProtoP\001Z-cloud.google.com"
-          + "/go/ces/apiv1beta/cespb;cespbb\006proto3"
+          + "\033com.google.cloud.ces.v1betaB\tToolProtoP\001Z-cloud.google.com/go/ces/apiv1be"
+          + "ta/cespb;cespbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -161,6 +162,7 @@ public final class ToolProto extends com.google.protobuf.GeneratedFile {
               "Etag",
               "GeneratedSummary",
               "ToolFakeConfig",
+              "ReadOnly",
               "ToolType",
             });
     descriptor.resolveAllFeaturesImmutable();

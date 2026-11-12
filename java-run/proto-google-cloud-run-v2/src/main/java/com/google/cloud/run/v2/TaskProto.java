@@ -83,9 +83,10 @@ public final class TaskProto extends com.google.protobuf.GeneratedFile {
           + "oto\032\027google/api/client.proto\032\037google/api"
           + "/field_behavior.proto\032\031google/api/resour"
           + "ce.proto\032#google/cloud/run/v2/condition.proto\032!google/cloud/run/v2/k8s.min.proto"
-          + "\032)google/cloud/run/v2/vendor_settings.pr"
-          + "oto\032\036google/protobuf/duration.proto\032\037goo"
-          + "gle/protobuf/timestamp.proto\032\027google/rpc/status.proto\"@\n"
+          + "\032!google/cloud/run/v2/sandbox.proto\032)goo"
+          + "gle/cloud/run/v2/vendor_settings.proto\032\036"
+          + "google/protobuf/duration.proto\032\037google/p"
+          + "rotobuf/timestamp.proto\032\027google/rpc/status.proto\"@\n"
           + "\016GetTaskRequest\022.\n"
           + "\004name\030\001 \001(\tB \342A\001\002\372A\031\n"
           + "\027run.googleapis.com/Task\"\201\001\n"
@@ -97,7 +98,7 @@ public final class TaskProto extends com.google.protobuf.GeneratedFile {
           + "\014show_deleted\030\004 \001(\010\"V\n"
           + "\021ListTasksResponse\022(\n"
           + "\005tasks\030\001 \003(\0132\031.google.cloud.run.v2.Task\022\027\n"
-          + "\017next_page_token\030\002 \001(\t\"\346\r\n"
+          + "\017next_page_token\030\002 \001(\t\"\371\016\n"
           + "\004Task\022\022\n"
           + "\004name\030\001 \001(\tB\004\342A\001\003\022\021\n"
           + "\003uid\030\002 \001(\tB\004\342A\001\003\022\030\n\n"
@@ -124,31 +125,34 @@ public final class TaskProto extends com.google.protobuf.GeneratedFile {
           + "\texecution\030\r"
           + " \001(\tB%\342A\001\003\372A\036\n"
           + "\034run.googleapis.com/Execution\0222\n\n"
-          + "containers\030\016 \003(\0132\036.google.cloud.run.v2.Container\022,\n"
+          + "containers\030\016 \003(\0132\036.google.cloud.run.v2.Container\022<\n"
+          + "\tsandboxes\030( \001(\0132).google.cloud.run.v2.SandboxConfiguration\022,\n"
           + "\007volumes\030\017 \003(\0132\033.google.cloud.run.v2.Volume\022\023\n"
           + "\013max_retries\030\020 \001(\005\022*\n"
           + "\007timeout\030\021 \001(\0132\031.google.protobuf.Duration\022\027\n"
           + "\017service_account\030\022 \001(\t\022H\n"
-          + "\025execution_environment\030\024"
-          + " \001(\0162).google.cloud.run.v2.ExecutionEnvironment\022\031\n"
+          + "\025execution_environment\030\024 \001(\0162).g"
+          + "oogle.cloud.run.v2.ExecutionEnvironment\022\031\n"
           + "\013reconciling\030\025 \001(\010B\004\342A\001\003\0228\n\n"
           + "conditions\030\026"
           + " \003(\0132\036.google.cloud.run.v2.ConditionB\004\342A\001\003\022!\n"
           + "\023observed_generation\030\027 \001(\003B\004\342A\001\003\022\023\n"
           + "\005index\030\030 \001(\005B\004\342A\001\003\022\025\n"
           + "\007retried\030\031 \001(\005B\004\342A\001\003\022I\n"
-          + "\023last_attempt_result\030\032"
-          + " \001(\0132&.google.cloud.run.v2.TaskAttemptResultB\004\342A\001\003\022B\n"
+          + "\023last_attempt_result\030\032 \001(\0132&.googl"
+          + "e.cloud.run.v2.TaskAttemptResultB\004\342A\001\003\022B\n"
           + "\016encryption_key\030\034 \001(\tB*\342A\001\003\372A#\n"
           + "!cloudkms.googleapis.com/CryptoKey\0228\n\n"
           + "vpc_access\030\035"
           + " \001(\0132\036.google.cloud.run.v2.VpcAccessB\004\342A\001\003\022\025\n"
           + "\007log_uri\030  \001(\tB\004\342A\001\003\022\033\n\r"
           + "satisfies_pzs\030! \001(\010B\004\342A\001\003\022>\n\r"
-          + "node_selector\030$"
-          + " \001(\0132!.google.cloud.run.v2.NodeSelectorB\004\342A\001\003\0221\n"
+          + "node_selector\030$ \001(\0132"
+          + "!.google.cloud.run.v2.NodeSelectorB\004\342A\001\003\0221\n"
           + "\035gpu_zonal_redundancy_disabled\030%"
-          + " \001(\010B\005\342A\002\001\003H\000\210\001\001\022\022\n"
+          + " \001(\010B\005\342A\002\001\003H\000\210\001\001\022S\n"
+          + "\030workload_identity_config\030&"
+          + " \001(\0132+.google.cloud.run.v2.WorkloadIdentityConfigB\004\342A\001\001\022\022\n"
           + "\004etag\030c \001(\tB\004\342A\001\003\032-\n"
           + "\013LabelsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
@@ -156,24 +160,25 @@ public final class TaskProto extends com.google.protobuf.GeneratedFile {
           + "\020AnnotationsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001:w\352At\n"
-          + "\027run.googleapis.com/Task\022Vprojects/{proje"
-          + "ct}/locations/{location}/jobs/{job}/executions/{execution}/tasks/{task}R\001\001B \n"
+          + "\027run.googleapis.com/Task\022Vprojects/{project}/locations/{loc"
+          + "ation}/jobs/{job}/executions/{execution}/tasks/{task}R\001\001B \n"
           + "\036_gpu_zonal_redundancy_disabled\"q\n"
           + "\021TaskAttemptResult\022(\n"
           + "\006status\030\001 \001(\0132\022.google.rpc.StatusB\004\342A\001\003\022\027\n"
           + "\texit_code\030\002 \001(\005B\004\342A\001\003\022\031\n"
-          + "\013term_signal\030\003 \001(\005B\004\342A\001\0032\226\003\n"
+          + "\013term_signal\030\003 \001(\005B\004\342A\001\0032\350\003\n"
           + "\005Tasks\022\227\001\n"
-          + "\007GetTask\022#.google.cloud.run.v2.GetTaskReque"
-          + "st\032\031.google.cloud.run.v2.Task\"L\332A\004name\202\323"
-          + "\344\223\002?\022=/v2/{name=projects/*/locations/*/jobs/*/executions/*/tasks/*}\022\252\001\n"
-          + "\tListTasks\022%.google.cloud.run.v2.ListTasksRequest"
-          + "\032&.google.cloud.run.v2.ListTasksResponse"
-          + "\"N\332A\006parent\202\323\344\223\002?\022=/v2/{parent=projects/"
-          + "*/locations/*/jobs/*/executions/*}/tasks"
-          + "\032F\312A\022run.googleapis.com\322A.https://www.googleapis.com/auth/cloud-platformBQ\n"
-          + "\027com.google.cloud.run.v2B\tTaskProtoP\001Z)cloud."
-          + "google.com/go/run/apiv2/runpb;runpbb\006proto3"
+          + "\007GetTask\022#.google.cloud.run.v2.GetTaskRequest\032\031.google.cloud."
+          + "run.v2.Task\"L\332A\004name\202\323\344\223\002?\022=/v2/{name=pr"
+          + "ojects/*/locations/*/jobs/*/executions/*/tasks/*}\022\252\001\n"
+          + "\tListTasks\022%.google.cloud.run.v2.ListTasksRequest\032&.google.cloud.ru"
+          + "n.v2.ListTasksResponse\"N\332A\006parent\202\323\344\223\002?\022"
+          + "=/v2/{parent=projects/*/locations/*/jobs"
+          + "/*/executions/*}/tasks\032\227\001\312A\022run.googleap"
+          + "is.com\322A\177https://www.googleapis.com/auth/cloud-platform,https://www.googleapis.c"
+          + "om/auth/run,https://www.googleapis.com/auth/run.readonlyBQ\n"
+          + "\027com.google.cloud.run.v2B\tTaskProtoP\001Z)cloud.google.com/go/ru"
+          + "n/apiv2/runpb;runpbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -185,6 +190,7 @@ public final class TaskProto extends com.google.protobuf.GeneratedFile {
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.run.v2.ConditionProto.getDescriptor(),
               com.google.cloud.run.v2.K8sMinProto.getDescriptor(),
+              com.google.cloud.run.v2.SandboxProto.getDescriptor(),
               com.google.cloud.run.v2.VendorSettingsProto.getDescriptor(),
               com.google.protobuf.DurationProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
@@ -234,6 +240,7 @@ public final class TaskProto extends com.google.protobuf.GeneratedFile {
               "Job",
               "Execution",
               "Containers",
+              "Sandboxes",
               "Volumes",
               "MaxRetries",
               "Timeout",
@@ -251,6 +258,7 @@ public final class TaskProto extends com.google.protobuf.GeneratedFile {
               "SatisfiesPzs",
               "NodeSelector",
               "GpuZonalRedundancyDisabled",
+              "WorkloadIdentityConfig",
               "Etag",
             });
     internal_static_google_cloud_run_v2_Task_LabelsEntry_descriptor =
@@ -284,6 +292,7 @@ public final class TaskProto extends com.google.protobuf.GeneratedFile {
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.run.v2.ConditionProto.getDescriptor();
     com.google.cloud.run.v2.K8sMinProto.getDescriptor();
+    com.google.cloud.run.v2.SandboxProto.getDescriptor();
     com.google.cloud.run.v2.VendorSettingsProto.getDescriptor();
     com.google.protobuf.DurationProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
