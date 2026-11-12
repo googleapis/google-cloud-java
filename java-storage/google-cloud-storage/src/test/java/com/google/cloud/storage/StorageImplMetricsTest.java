@@ -54,10 +54,15 @@ import com.google.cloud.storage.spi.StorageRpcFactory;
 import com.google.cloud.storage.spi.v1.StorageRpc;
 import com.google.common.collect.ImmutableList;
 import io.opentelemetry.api.common.AttributeKey;
+import io.opentelemetry.sdk.OpenTelemetrySdk;
 import io.opentelemetry.sdk.metrics.SdkMeterProvider;
 import io.opentelemetry.sdk.metrics.data.LongPointData;
 import io.opentelemetry.sdk.metrics.data.MetricData;
 import io.opentelemetry.sdk.testing.exporter.InMemoryMetricReader;
+import io.opentelemetry.sdk.testing.exporter.InMemorySpanExporter;
+import io.opentelemetry.sdk.trace.SdkTracerProvider;
+import io.opentelemetry.sdk.trace.data.SpanData;
+import io.opentelemetry.sdk.trace.export.SimpleSpanProcessor;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
@@ -66,6 +71,7 @@ import java.nio.channels.ReadableByteChannel;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Collection;
+import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mockito;
@@ -649,6 +655,31 @@ public class StorageImplMetricsTest {
     assertMetricErrorType(
         metrics, METRIC_GCP_STORAGE_CLIENT_OPERATIONS, "GetObject", STATUS_OK, 0L);
     assertMetricErrorType(metrics, METRIC_GCP_STORAGE_CLIENT_ATTEMPTS, "GetObject", STATUS_OK, 0L);
+  }
+
+  @Test
+  public void testGetAndDelete404WithMetricsDisabledDoesNotRecordExceptionOnTracingSpan() {
+    InMemorySpanExporter spanExporter = InMemorySpanExporter.create();
+    SdkTracerProvider tracerProvider =
+        SdkTracerProvider.builder()
+            .addSpanProcessor(SimpleSpanProcessor.create(spanExporter))
+            .build();
+    OpenTelemetrySdk otel = OpenTelemetrySdk.builder().setTracerProvider(tracerProvider).build();
+    HttpStorageOptions tracingOptions =
+        options.toBuilder().setEnableOtelMetrics(false).setOpenTelemetry(otel).build();
+    Storage storage = tracingOptions.getService();
+
+    when(storageRpcMock.get(any(StorageObject.class), anyMap())).thenReturn(null);
+    when(storageRpcMock.delete(any(StorageObject.class), anyMap())).thenReturn(false);
+
+    assertThat(storage.get(BLOB_ID)).isNull();
+    assertThat(storage.delete(BLOB_ID)).isFalse();
+
+    List<SpanData> spans = spanExporter.getFinishedSpanItems();
+    assertThat(spans).isNotEmpty();
+    for (SpanData span : spans) {
+      assertThat(span.getEvents()).isEmpty();
+    }
   }
 
   private static void assertMetricErrorType(
