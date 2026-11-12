@@ -16,6 +16,8 @@
 
 package com.google.cloud.storage;
 
+import static java.util.Objects.requireNonNull;
+
 import com.google.api.core.ApiClock;
 import io.grpc.Attributes;
 import io.grpc.CallOptions;
@@ -43,34 +45,22 @@ import org.jspecify.annotations.Nullable;
 @NullMarked
 final class StorageGrpcMetricsInterceptor implements ClientInterceptor {
 
-  @Nullable private final StorageClientMetrics metrics;
+  private final StorageClientMetrics metrics;
   private final ApiClock clock;
-  @Nullable private final String defaultServerAddress;
 
-  StorageGrpcMetricsInterceptor(
-      @Nullable StorageClientMetrics metrics, ApiClock clock, @Nullable String defaultEndpoint) {
-    this.metrics = metrics;
-    this.clock = clock;
-    this.defaultServerAddress =
-        OpenTelemetryBootstrappingUtils.extractServerAddress(defaultEndpoint);
+  StorageGrpcMetricsInterceptor(StorageClientMetrics metrics, ApiClock clock) {
+    this.metrics = requireNonNull(metrics, "metrics cannot be null");
+    this.clock = requireNonNull(clock, "clock cannot be null");
   }
 
   @Override
   public <ReqT, RespT> ClientCall<ReqT, RespT> interceptCall(
       MethodDescriptor<ReqT, RespT> method, CallOptions callOptions, Channel next) {
-    if (metrics == null || metrics.getRpcClientCallDuration() == null) {
+    if (metrics.getRpcClientCallDuration() == null) {
       return next.newCall(method, callOptions);
     }
 
-    String fullMethodName = method.getFullMethodName();
-    String rpcMethod =
-        fullMethodName != null && !fullMethodName.isEmpty() ? fullMethodName : "UNKNOWN";
-    String resolvedServerAddress =
-        defaultServerAddress != null
-            ? defaultServerAddress
-            : OpenTelemetryBootstrappingUtils.extractServerAddress(next.authority());
-    final String serverAddress = resolvedServerAddress != null ? resolvedServerAddress : "";
-
+    String rpcMethod = method.getFullMethodName();
     StorageMetricsContext metricsCtx = StorageMetricsContext.from(callOptions);
     Context otelContext = metricsCtx != null ? metricsCtx.getOtelContext() : Context.current();
 
@@ -85,25 +75,25 @@ final class StorageGrpcMetricsInterceptor implements ClientInterceptor {
               @Override
               public void onClose(@Nullable Status status, @Nullable Metadata trailers) {
                 try {
-                  if (callRecorded.compareAndSet(false, true)
-                      && metrics.getRpcClientCallDuration() != null) {
+                  if (callRecorded.compareAndSet(false, true)) {
                     double durationSeconds =
                         Math.max(0.0, (clock.nanoTime() - startTimeNanos) / 1_000_000_000.0);
                     String networkPath = detectNetworkPath(getAttributes());
+                    if (metricsCtx != null) {
+                      metricsCtx.setNetworkPath(networkPath);
+                    }
                     String statusCode =
                         status != null && status.getCode() != null
                             ? status.getCode().name()
                             : StorageErrorTypeMapper.STATUS_UNKNOWN;
                     String errorType = StorageErrorTypeMapper.mapGrpcStatus(status);
 
-                    StorageMetricsContext.recordRpcCallDuration(
-                        metrics,
+                    metrics.recordRpcCallDuration(
                         otelContext,
                         durationSeconds,
                         rpcMethod,
                         statusCode,
                         networkPath,
-                        serverAddress,
                         errorType);
                   }
                 } finally {
@@ -143,7 +133,7 @@ final class StorageGrpcMetricsInterceptor implements ClientInterceptor {
           && b[2] == 0x48
           && b[3] == 0x60
           && b[4] == (byte) 0x80
-          && (b[5] & 0xFC) == 0x40;
+          && (b[5] & 0xC0) == 0x40;
     }
     return false;
   }
