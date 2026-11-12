@@ -234,6 +234,84 @@ public class StorageImplMetricsTest {
   }
 
   @Test
+  public void testChannelsUnwrapIOExceptionCausingStorageException() throws Exception {
+    InMemoryMetricReader metricReader = InMemoryMetricReader.create();
+    SdkMeterProvider meterProvider =
+        SdkMeterProvider.builder().registerMetricReader(metricReader).build();
+    StorageClientMetrics clientMetrics = StorageClientMetrics.create(meterProvider, true, false);
+
+    // 1. WriteChannel: IOException(new StorageException(503, ...)) during write
+    StorageMetricsContext writeMetricsContext =
+        StorageClientMetrics.createMultiStepContext(clientMetrics, "WriteObject");
+    @SuppressWarnings("unchecked")
+    BufferedWritableByteChannelSession<StorageObject> writeSessionMock =
+        Mockito.mock(BufferedWritableByteChannelSession.class);
+    BufferedWritableByteChannel writeChannelMock = Mockito.mock(BufferedWritableByteChannel.class);
+    when(writeSessionMock.open()).thenReturn(writeChannelMock);
+    when(writeSessionMock.getResult()).thenReturn(SettableApiFuture.create());
+    when(writeChannelMock.isOpen()).thenReturn(true);
+    when(writeChannelMock.write(any(ByteBuffer.class)))
+        .thenThrow(new IOException(new StorageException(503, "Service Unavailable")));
+
+    BaseStorageWriteChannel<StorageObject> writeChannel =
+        new BaseStorageWriteChannel<StorageObject>(
+            Conversions.json().blobInfo(), writeMetricsContext, clientMetrics) {
+          @Override
+          public RestorableState<WriteChannel> capture() {
+            return null;
+          }
+
+          @Override
+          protected LazyWriteChannel<StorageObject> newLazyWriteChannel() {
+            return new LazyWriteChannel<>(() -> writeSessionMock);
+          }
+        };
+
+    assertThrows(IOException.class, () -> writeChannel.write(ByteBuffer.wrap(new byte[] {1, 2})));
+    writeChannel.close();
+
+    // 2. ReadChannel: IOException(new StorageException(404, ...)) during read
+    StorageMetricsContext readMetricsContext =
+        StorageClientMetrics.createMultiStepContext(clientMetrics, "ReadObject");
+    @SuppressWarnings("unchecked")
+    ReadableByteChannelSession<ReadableByteChannel, StorageObject> readSessionMock =
+        Mockito.mock(ReadableByteChannelSession.class);
+    ReadableByteChannel readChannelMock = Mockito.mock(ReadableByteChannel.class);
+    when(readSessionMock.open()).thenReturn(readChannelMock);
+    when(readSessionMock.getResult()).thenReturn(SettableApiFuture.create());
+    when(readChannelMock.isOpen()).thenReturn(true);
+    when(readChannelMock.read(any(ByteBuffer.class)))
+        .thenThrow(new IOException(new StorageException(404, "Not Found")));
+
+    BaseStorageReadChannel<StorageObject> readChannel =
+        new BaseStorageReadChannel<StorageObject>(
+            Conversions.json().blobInfo(), readMetricsContext, clientMetrics) {
+          @Override
+          public RestorableState<ReadChannel> capture() {
+            return null;
+          }
+
+          @Override
+          protected LazyReadChannel<?, StorageObject> newLazyReadChannel() {
+            return new LazyReadChannel<>(() -> readSessionMock);
+          }
+        };
+
+    assertThrows(IOException.class, () -> readChannel.read(ByteBuffer.allocate(16)));
+    readChannel.close();
+
+    Collection<MetricData> metrics = metricReader.collectAllMetrics();
+    assertThat(
+            getCounterValueWithAttr(
+                metrics, METRIC_GCP_STORAGE_CLIENT_OPERATIONS, KEY_ERROR_TYPE, STATUS_UNAVAILABLE))
+        .isEqualTo(1L);
+    assertThat(
+            getCounterValueWithAttr(
+                metrics, METRIC_GCP_STORAGE_CLIENT_OPERATIONS, KEY_ERROR_TYPE, STATUS_NOT_FOUND))
+        .isEqualTo(1L);
+  }
+
+  @Test
   public void testStorageImplPaginationRecordsSingleOperationAcrossPages() {
     InMemoryMetricReader metricReader = InMemoryMetricReader.create();
     SdkMeterProvider meterProvider =
