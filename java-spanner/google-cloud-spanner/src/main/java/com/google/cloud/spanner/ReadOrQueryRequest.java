@@ -26,6 +26,7 @@ import com.google.spanner.v1.DirectedReadOptions;
 import com.google.spanner.v1.ExecuteSqlRequest;
 import com.google.spanner.v1.ReadRequest;
 import com.google.spanner.v1.RequestOptions;
+import com.google.spanner.v1.RequestOptions.ClientContext;
 import com.google.spanner.v1.TransactionSelector;
 import java.util.Map;
 import java.util.Set;
@@ -71,10 +72,11 @@ abstract class ReadOrQueryRequest {
     }
     if (options.hasDirectedReadOptions()) {
       request.setDirectedReadOptions(options.directedReadOptions());
-    } else if (context.defaultDirectedReadOptions != null) {
+    } else if (context.defaultDirectedReadOptions != null && !request.hasDirectedReadOptions()) {
       request.setDirectedReadOptions(context.defaultDirectedReadOptions);
     }
-    request.setRequestOptions(context.buildRequestOptions(options));
+    request.mergeRequestOptions(
+        context.buildRequestOptions(options, request.hasRequestTag(), request.getClientContext()));
     return request;
   }
 
@@ -104,9 +106,17 @@ abstract class ReadOrQueryRequest {
 
   abstract void setDataBoostEnabled(boolean dataBoostEnabled);
 
+  abstract boolean hasDirectedReadOptions();
+
   abstract void setDirectedReadOptions(DirectedReadOptions directedReadOptions);
 
+  abstract boolean hasRequestTag();
+
+  abstract @Nullable ClientContext getClientContext();
+
   abstract void setRequestOptions(RequestOptions requestOptions);
+
+  abstract void mergeRequestOptions(RequestOptions requestOptions);
 
   abstract void setResumeToken(ByteString resumeToken);
 
@@ -184,13 +194,37 @@ abstract class ReadOrQueryRequest {
     }
 
     @Override
+    boolean hasDirectedReadOptions() {
+      return builder.hasDirectedReadOptions();
+    }
+
+    @Override
     void setDirectedReadOptions(DirectedReadOptions directedReadOptions) {
       builder.setDirectedReadOptions(directedReadOptions);
     }
 
     @Override
+    boolean hasRequestTag() {
+      return builder.hasRequestOptions() && !builder.getRequestOptions().getRequestTag().isEmpty();
+    }
+
+    @Override
+    @Nullable ClientContext getClientContext() {
+      return builder.hasRequestOptions() && builder.getRequestOptions().hasClientContext()
+          ? builder.getRequestOptions().getClientContext()
+          : null;
+    }
+
+    @Override
     void setRequestOptions(RequestOptions requestOptions) {
       builder.setRequestOptions(requestOptions);
+    }
+
+    @Override
+    void mergeRequestOptions(RequestOptions requestOptions) {
+      if (!requestOptions.equals(RequestOptions.getDefaultInstance())) {
+        builder.getRequestOptionsBuilder().mergeFrom(requestOptions);
+      }
     }
 
     @Override
@@ -263,13 +297,37 @@ abstract class ReadOrQueryRequest {
     }
 
     @Override
+    boolean hasDirectedReadOptions() {
+      return builder.hasDirectedReadOptions();
+    }
+
+    @Override
     void setDirectedReadOptions(DirectedReadOptions directedReadOptions) {
       builder.setDirectedReadOptions(directedReadOptions);
     }
 
     @Override
+    boolean hasRequestTag() {
+      return builder.hasRequestOptions() && !builder.getRequestOptions().getRequestTag().isEmpty();
+    }
+
+    @Override
+    @Nullable ClientContext getClientContext() {
+      return builder.hasRequestOptions() && builder.getRequestOptions().hasClientContext()
+          ? builder.getRequestOptions().getClientContext()
+          : null;
+    }
+
+    @Override
     void setRequestOptions(RequestOptions requestOptions) {
       builder.setRequestOptions(requestOptions);
+    }
+
+    @Override
+    void mergeRequestOptions(RequestOptions requestOptions) {
+      if (!requestOptions.equals(RequestOptions.getDefaultInstance())) {
+        builder.getRequestOptionsBuilder().mergeFrom(requestOptions);
+      }
     }
 
     @Override
