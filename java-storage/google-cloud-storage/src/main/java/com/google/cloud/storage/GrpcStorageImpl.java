@@ -879,6 +879,7 @@ final class GrpcStorageImpl extends BaseService<StorageOptions>
       throw e;
     } finally {
       if (metricsContext != null) {
+        metricsContext.setResponseBytes(baos.size());
         metricsContext.recordOperation(getOptions().getStorageClientMetrics(), error);
       }
     }
@@ -925,7 +926,7 @@ final class GrpcStorageImpl extends BaseService<StorageOptions>
 
     Throwable error = null;
     try (UnbufferedReadableByteChannel r = session.open();
-        WritableByteChannel w = Files.newByteChannel(path, WRITE_OPS)) {
+        WritableByteChannel w = countBytes(Files.newByteChannel(path, WRITE_OPS), metricsContext)) {
       ByteStreams.copy(r, w);
     } catch (ApiException | IOException e) {
       error = e;
@@ -950,7 +951,7 @@ final class GrpcStorageImpl extends BaseService<StorageOptions>
 
     Throwable error = null;
     try (UnbufferedReadableByteChannel r = session.open();
-        WritableByteChannel w = Channels.newChannel(outputStream)) {
+        WritableByteChannel w = countBytes(Channels.newChannel(outputStream), metricsContext)) {
       ByteStreams.copy(r, w);
     } catch (ApiException | IOException e) {
       error = e;
@@ -1810,10 +1811,24 @@ final class GrpcStorageImpl extends BaseService<StorageOptions>
     opts.bidiReadObjectRequest().apply(b);
     BidiReadObjectRequest req = b.build();
 
-    GrpcCallContext context = opts.grpcMetadataMapper().apply(GrpcCallContext.createDefault());
-    ApiFuture<ObjectReadSession> session = storageDataClient.readSession(req, context);
-
-    return BlobReadSessionAdapter.wrap(session);
+    StorageMetricsContext metricsContext =
+        StorageClientMetrics.createMultiStepContext(
+            getOptions().getStorageClientMetrics(), "ReadObject");
+    GrpcCallContext baseContext =
+        metricsContext != null
+            ? metricsContext.attach(GrpcCallContext.createDefault())
+            : GrpcCallContext.createDefault();
+    GrpcCallContext context = opts.grpcMetadataMapper().apply(baseContext);
+    try {
+      ApiFuture<ObjectReadSession> session = storageDataClient.readSession(req, context);
+      return BlobReadSessionAdapter.wrap(
+          session, metricsContext, getOptions().getStorageClientMetrics());
+    } catch (Throwable t) {
+      if (metricsContext != null) {
+        metricsContext.recordOperation(getOptions().getStorageClientMetrics(), t);
+      }
+      throw t;
+    }
   }
 
   @Override
@@ -2542,5 +2557,32 @@ final class GrpcStorageImpl extends BaseService<StorageOptions>
     return new ZeroCopyServerStreamingCallable<>(
         storageClient.readObjectCallable().withDefaultCallContext(grpcCallContext),
         responseContentLifecycleManager);
+  }
+
+  private static WritableByteChannel countBytes(
+      WritableByteChannel delegate, @Nullable StorageMetricsContext metricsContext) {
+    if (metricsContext == null) {
+      return delegate;
+    }
+    return new WritableByteChannel() {
+      @Override
+      public int write(ByteBuffer src) throws IOException {
+        int written = delegate.write(src);
+        if (written > 0) {
+          metricsContext.addResponseBytes(written);
+        }
+        return written;
+      }
+
+      @Override
+      public boolean isOpen() {
+        return delegate.isOpen();
+      }
+
+      @Override
+      public void close() throws IOException {
+        delegate.close();
+      }
+    };
   }
 }
