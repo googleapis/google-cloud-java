@@ -71,8 +71,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.URI;
 import java.nio.charset.StandardCharsets;
-import java.security.KeyPairGenerator;
-import java.security.PrivateKey;
 import java.sql.SQLException;
 import java.util.Arrays;
 import java.util.Base64;
@@ -98,6 +96,8 @@ public class BigQueryConnectionTest extends BigQueryJdbcLoggingBaseTest {
 
   private static final String DEFAULT_VERSION = "0.0.0";
   private static final String DEFAULT_JDBC_TOKEN_VALUE = "Google-BigQuery-JDBC-Driver";
+  private static final String TPC_UNIVERSE = "apis-tpczero.goog";
+  private static final String DEFAULT_UNIVERSE = "googleapis.com";
   private static final String BASE_URL =
       "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
           + "OAuthType=2;OAuthAccessToken=redacted;ProjectId=project;";
@@ -975,111 +975,135 @@ public class BigQueryConnectionTest extends BigQueryJdbcLoggingBaseTest {
 
   @Test
   public void testReadAndWriteClientsScopeServiceAccountCredentialsForTpc() throws Exception {
-    PrivateKey privateKey = generateTestPrivateKey();
-    String pemKey = toPemPrivateKey(privateKey);
-    String tpcUniverse = "apis-tpczero.goog";
     String url =
-        "jdbc:bigquery://https://bigquery.apis-tpczero.goog/bigquery/v2:443;"
-            + "ProjectId=tpczero-system:bigquery-drivers;"
-            + "OAuthType=0;"
-            + "OAuthServiceAcctEmail=test-sa@tpczero-system.iam.gserviceaccount.com;"
-            + "OAuthPvtKey="
-            + pemKey
-            + ";"
-            + "universeDomain="
-            + tpcUniverse
-            + ";";
+        getUriOAuthServiceAccount()
+            .append("ProjectId", "project")
+            .append("universeDomain", TPC_UNIVERSE)
+            .toString();
 
     try (BigQueryConnection connection = new BigQueryConnection(url)) {
       BigQueryReadClient readClient = connection.getBigQueryReadClient();
-      assertEquals(tpcUniverse, readClient.getSettings().getUniverseDomain());
-      Credentials readCredentials =
-          readClient.getSettings().getCredentialsProvider().getCredentials();
-      assertTrue(readCredentials instanceof ServiceAccountCredentials);
-      ServiceAccountCredentials readSa = (ServiceAccountCredentials) readCredentials;
-      assertFalse(readSa.createScopedRequired());
-      assertTrue(readSa.getUseJwtAccessWithScope());
-      assertEquals(tpcUniverse, readSa.getUniverseDomain());
-
-      JsonObject readJwtPayload =
-          extractBearerJwtPayload(
-              readCredentials,
-              URI.create(
-                  "https://bigquerystorage.apis-tpczero.goog/google.cloud.bigquery.storage.v1.BigQueryRead"));
-      assertFalse(readJwtPayload.has("aud"));
-      assertTrue(readJwtPayload.has("scope"));
-      String readScopes = readJwtPayload.get("scope").getAsString();
-      for (String expectedScope : BigQueryReadSettings.getDefaultServiceScopes()) {
-        assertTrue(readScopes.contains(expectedScope));
-      }
+      assertEquals(TPC_UNIVERSE, readClient.getSettings().getUniverseDomain());
+      assertStorageCredentialsScoped(
+          readClient.getSettings().getCredentialsProvider().getCredentials(),
+          TPC_UNIVERSE,
+          storageUri(TPC_UNIVERSE, "BigQueryRead"),
+          BigQueryReadSettings.getDefaultServiceScopes());
 
       BigQueryWriteClient writeClient = connection.getBigQueryWriteClient();
-      assertEquals(tpcUniverse, writeClient.getSettings().getUniverseDomain());
-      Credentials writeCredentials =
-          writeClient.getSettings().getCredentialsProvider().getCredentials();
-      assertTrue(writeCredentials instanceof ServiceAccountCredentials);
-      ServiceAccountCredentials writeSa = (ServiceAccountCredentials) writeCredentials;
-      assertFalse(writeSa.createScopedRequired());
-      assertTrue(writeSa.getUseJwtAccessWithScope());
+      assertEquals(TPC_UNIVERSE, writeClient.getSettings().getUniverseDomain());
+      assertStorageCredentialsScoped(
+          writeClient.getSettings().getCredentialsProvider().getCredentials(),
+          TPC_UNIVERSE,
+          storageUri(TPC_UNIVERSE, "BigQueryWrite"),
+          BigQueryWriteSettings.getDefaultServiceScopes());
+    }
+  }
 
-      JsonObject writeJwtPayload =
-          extractBearerJwtPayload(
-              writeCredentials,
-              URI.create(
-                  "https://bigquerystorage.apis-tpczero.goog/google.cloud.bigquery.storage.v1.BigQueryWrite"));
-      assertFalse(writeJwtPayload.has("aud"));
-      assertTrue(writeJwtPayload.has("scope"));
-      String writeScopes = writeJwtPayload.get("scope").getAsString();
-      for (String expectedScope : BigQueryWriteSettings.getDefaultServiceScopes()) {
-        assertTrue(writeScopes.contains(expectedScope));
-      }
+  @Test
+  public void testReadAndWriteClientsScopeServiceAccountCredentialsForDefaultUniverse()
+      throws Exception {
+    String url = getUriOAuthServiceAccount().append("ProjectId", "project").toString();
+
+    try (BigQueryConnection connection = new BigQueryConnection(url)) {
+      BigQueryReadClient readClient = connection.getBigQueryReadClient();
+      assertEquals(DEFAULT_UNIVERSE, readClient.getSettings().getUniverseDomain());
+      assertStorageCredentialsScoped(
+          readClient.getSettings().getCredentialsProvider().getCredentials(),
+          DEFAULT_UNIVERSE,
+          storageUri(DEFAULT_UNIVERSE, "BigQueryRead"),
+          BigQueryReadSettings.getDefaultServiceScopes());
+
+      BigQueryWriteClient writeClient = connection.getBigQueryWriteClient();
+      assertEquals(DEFAULT_UNIVERSE, writeClient.getSettings().getUniverseDomain());
+      assertStorageCredentialsScoped(
+          writeClient.getSettings().getCredentialsProvider().getCredentials(),
+          DEFAULT_UNIVERSE,
+          storageUri(DEFAULT_UNIVERSE, "BigQueryWrite"),
+          BigQueryWriteSettings.getDefaultServiceScopes());
+    }
+  }
+
+  @Test
+  public void testReadAndWriteClientsPassThroughNonServiceAccountCredentials() throws Exception {
+    String url = getUriOAuthToken().append("ProjectId", "project").toString();
+
+    try (BigQueryConnection connection = new BigQueryConnection(url)) {
+      Credentials readCredentials =
+          connection
+              .getBigQueryReadClient()
+              .getSettings()
+              .getCredentialsProvider()
+              .getCredentials();
+      Credentials writeCredentials =
+          connection
+              .getBigQueryWriteClient()
+              .getSettings()
+              .getCredentialsProvider()
+              .getCredentials();
+
+      assertFalse(readCredentials instanceof ServiceAccountCredentials);
+      assertSame(connection.credentials, readCredentials);
+      assertSame(connection.credentials, writeCredentials);
+      assertEquals(
+          "Bearer RedactedToken",
+          readCredentials
+              .getRequestMetadata(storageUri(DEFAULT_UNIVERSE, "BigQueryRead"))
+              .get("Authorization")
+              .get(0));
     }
   }
 
   @Test
   public void testScopeStorageCredentialsPreservesExplicitScopes() throws Exception {
-    PrivateKey privateKey = generateTestPrivateKey();
-    ServiceAccountCredentials alreadyScoped =
-        (ServiceAccountCredentials)
-            ServiceAccountCredentials.newBuilder()
-                .setClientEmail("test-sa@project.iam.gserviceaccount.com")
-                .setPrivateKey(privateKey)
-                .setUniverseDomain("apis-tpczero.goog")
-                .build()
-                .createScoped(
-                    Arrays.asList(
-                        "https://www.googleapis.com/auth/bigquery",
-                        "https://www.googleapis.com/auth/drive.readonly"));
+    List<String> explicitScopes =
+        Arrays.asList(
+            "https://www.googleapis.com/auth/bigquery",
+            "https://www.googleapis.com/auth/drive.readonly");
+    Credentials alreadyScoped =
+        ServiceAccountCredentials.newBuilder()
+            .setClientEmail("service@account")
+            .setPrivateKeyString(fake_pkcs8_key)
+            .setUniverseDomain(TPC_UNIVERSE)
+            .build()
+            .createScoped(explicitScopes);
 
     Credentials result =
         BigQueryConnection.scopeStorageCredentials(
             alreadyScoped, BigQueryReadSettings.getDefaultServiceScopes());
-    assertTrue(result instanceof ServiceAccountCredentials);
-    ServiceAccountCredentials scopedSa = (ServiceAccountCredentials) result;
-    assertFalse(scopedSa.createScopedRequired());
-    assertTrue(scopedSa.getUseJwtAccessWithScope());
 
-    JsonObject jwtPayload =
-        extractBearerJwtPayload(
-            scopedSa,
-            URI.create(
-                "https://bigquerystorage.apis-tpczero.goog/google.cloud.bigquery.storage.v1.BigQueryRead"));
+    assertStorageCredentialsScoped(
+        result, TPC_UNIVERSE, storageUri(TPC_UNIVERSE, "BigQueryRead"), explicitScopes);
+  }
+
+  private static URI storageUri(String universeDomain, String service) {
+    return URI.create(
+        "https://bigquerystorage."
+            + universeDomain
+            + "/google.cloud.bigquery.storage.v1."
+            + service);
+  }
+
+  /**
+   * Asserts that {@code credentials} are service account credentials that sign a self-signed JWT
+   * carrying {@code expectedScopes} (and no audience) for the given universe.
+   */
+  private static void assertStorageCredentialsScoped(
+      Credentials credentials, String expectedUniverse, URI uri, List<String> expectedScopes)
+      throws IOException {
+    assertTrue(credentials instanceof ServiceAccountCredentials);
+    ServiceAccountCredentials sa = (ServiceAccountCredentials) credentials;
+    assertFalse(sa.createScopedRequired());
+    assertTrue(sa.getUseJwtAccessWithScope());
+    assertEquals(expectedUniverse, sa.getUniverseDomain());
+
+    JsonObject jwtPayload = extractBearerJwtPayload(credentials, uri);
     assertFalse(jwtPayload.has("aud"));
+    assertTrue(jwtPayload.has("scope"));
     String scopeClaim = jwtPayload.get("scope").getAsString();
-    assertTrue(scopeClaim.contains("https://www.googleapis.com/auth/bigquery"));
-    assertTrue(scopeClaim.contains("https://www.googleapis.com/auth/drive.readonly"));
-  }
-
-  private static PrivateKey generateTestPrivateKey() throws Exception {
-    KeyPairGenerator generator = KeyPairGenerator.getInstance("RSA");
-    generator.initialize(2048);
-    return generator.generateKeyPair().getPrivate();
-  }
-
-  private static String toPemPrivateKey(PrivateKey privateKey) {
-    return "-----BEGIN PRIVATE KEY-----\n"
-        + Base64.getEncoder().encodeToString(privateKey.getEncoded())
-        + "\n-----END PRIVATE KEY-----";
+    for (String expectedScope : expectedScopes) {
+      assertTrue(scopeClaim.contains(expectedScope), "Missing scope: " + expectedScope);
+    }
   }
 
   private static JsonObject extractBearerJwtPayload(Credentials credentials, URI uri)

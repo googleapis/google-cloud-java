@@ -239,9 +239,9 @@ public class ITBigQueryJDBCTest extends ITBase {
         DriverManager.getConnection(String.format(connectionUrl, DEFAULT_CATALOG), withReadApi);
     Statement statement = connection.createStatement();
     int expectedCnt = 5000;
-    String longQuery = String.format("SELECT * FROM UNNEST(GENERATE_ARRAY(1, %s));", expectedCnt);
+    String longQuery = String.format(GENERATE_ARRAY_QUERY, expectedCnt);
     ResultSet arrowResultSet = statement.executeQuery(longQuery);
-    assertTrue(arrowResultSet.getClass().getName().contains("BigQueryArrowResultSet"));
+    assertArrowResultSet(arrowResultSet);
     assertEquals(expectedCnt, resultSetRowCount(arrowResultSet));
     arrowResultSet.close();
     connection.close();
@@ -258,9 +258,9 @@ public class ITBigQueryJDBCTest extends ITBase {
     Connection connection = DriverManager.getConnection(connectionUri);
     Statement statement = connection.createStatement();
     int expectedCnt = 1000;
-    String longQuery = String.format("SELECT * FROM UNNEST(GENERATE_ARRAY(1, %s));", expectedCnt);
+    String longQuery = String.format(GENERATE_ARRAY_QUERY, expectedCnt);
     ResultSet arrowResultSet = statement.executeQuery(longQuery);
-    assertTrue(arrowResultSet.getClass().getName().contains("BigQueryArrowResultSet"));
+    assertArrowResultSet(arrowResultSet);
     assertEquals(expectedCnt, resultSetRowCount(arrowResultSet));
     arrowResultSet.close();
     connection.close();
@@ -276,11 +276,11 @@ public class ITBigQueryJDBCTest extends ITBase {
     Connection connection = DriverManager.getConnection(connectionUri);
     Statement statement = connection.createStatement();
     int expectedCnt = 5000;
-    String longQuery = String.format("SELECT * FROM UNNEST(GENERATE_ARRAY(1, %s));", expectedCnt);
-try (ResultSet jsonResultSet = statement.executeQuery(longQuery)) {
-  assertTrue(jsonResultSet.getClass().getName().contains("BigQueryJsonResultSet"));
-  assertEquals(expectedCnt, resultSetRowCount(jsonResultSet));
-}
+    String longQuery = String.format(GENERATE_ARRAY_QUERY, expectedCnt);
+    try (ResultSet jsonResultSet = statement.executeQuery(longQuery)) {
+      assertTrue(jsonResultSet.getClass().getName().contains("BigQueryJsonResultSet"));
+      assertEquals(expectedCnt, resultSetRowCount(jsonResultSet));
+    }
     connection.close();
   }
 
@@ -1420,7 +1420,7 @@ try (ResultSet jsonResultSet = statement.executeQuery(longQuery)) {
     Statement statement = connection.createStatement();
 
     ResultSet resultSet = statement.executeQuery(selectQuery);
-    assertTrue(resultSet.getClass().getName().contains("BigQueryArrowResultSet"));
+    assertArrowResultSet(resultSet);
     resultSet.next();
     assertEquals("0-0 10 -12:30:0.0", resultSet.getString("intervalField"));
 
@@ -2138,7 +2138,7 @@ try (ResultSet jsonResultSet = statement.executeQuery(longQuery)) {
     Connection connection = DriverManager.getConnection(connection_uri);
     Statement statement = connection.createStatement();
     ResultSet resultSet = statement.executeQuery(selectQuery);
-    assertTrue(resultSet.getClass().getName().contains("BigQueryArrowResultSet"));
+    assertArrowResultSet(resultSet);
     resultSet.next();
     assertEquals("[2024-07-14, 2024-09-23)", resultSet.getString("rangeField"));
     connection.close();
