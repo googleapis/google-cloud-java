@@ -190,6 +190,79 @@ public interface BigQueryTableReferencesOrBuilder
    *
    *
    * <pre>
+   * Optional. Search over BigQuery resources to discover most relevant tables
+   * to the query.
+   *
+   * When set, at least one of `include_project_ids` or
+   * `include_dataset_references` must be populated with non-blank identifiers.
+   * Matches from the two fields are unioned (OR-ed).
+   *
+   * Note: `search_scope` is only supported for standalone conversations
+   * (`ChatRequest.inline_context` or
+   * `ClientManagedResourceContext.inline_context`) and is not supported in
+   * [DataAgent][google.cloud.geminidataanalytics.v1beta.DataAgent].
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.geminidataanalytics.v1beta.SearchScope search_scope = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the searchScope field is set.
+   */
+  boolean hasSearchScope();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Search over BigQuery resources to discover most relevant tables
+   * to the query.
+   *
+   * When set, at least one of `include_project_ids` or
+   * `include_dataset_references` must be populated with non-blank identifiers.
+   * Matches from the two fields are unioned (OR-ed).
+   *
+   * Note: `search_scope` is only supported for standalone conversations
+   * (`ChatRequest.inline_context` or
+   * `ClientManagedResourceContext.inline_context`) and is not supported in
+   * [DataAgent][google.cloud.geminidataanalytics.v1beta.DataAgent].
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.geminidataanalytics.v1beta.SearchScope search_scope = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The searchScope.
+   */
+  com.google.cloud.geminidataanalytics.v1beta.SearchScope getSearchScope();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Search over BigQuery resources to discover most relevant tables
+   * to the query.
+   *
+   * When set, at least one of `include_project_ids` or
+   * `include_dataset_references` must be populated with non-blank identifiers.
+   * Matches from the two fields are unioned (OR-ed).
+   *
+   * Note: `search_scope` is only supported for standalone conversations
+   * (`ChatRequest.inline_context` or
+   * `ClientManagedResourceContext.inline_context`) and is not supported in
+   * [DataAgent][google.cloud.geminidataanalytics.v1beta.DataAgent].
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.geminidataanalytics.v1beta.SearchScope search_scope = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.geminidataanalytics.v1beta.SearchScopeOrBuilder getSearchScopeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. Parameters for retrieving data from Agent Context.
    * </pre>
    *

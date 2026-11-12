@@ -26,9 +26,11 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 import com.google.auth.oauth2.ServiceAccountCredentials;
+import com.google.cloud.spanner.DatabaseClient;
 import com.google.cloud.spanner.Dialect;
 import com.google.cloud.spanner.connection.ConnectionOptions;
 import com.google.cloud.spanner.connection.ConnectionOptionsTest;
+import com.google.spanner.v1.TransactionOptions.IsolationLevel;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DatabaseMetaData;
@@ -66,6 +68,10 @@ public class JdbcDatabaseMetaDataTest {
   public void testTrivialMethods() throws SQLException {
     JdbcConnection connection = mock(JdbcConnection.class);
     when(connection.getDialect()).thenReturn(dialect);
+    DatabaseClient databaseClient = mock(DatabaseClient.class);
+    when(databaseClient.getDatabaseDefaultIsolationLevel())
+        .thenReturn(IsolationLevel.ISOLATION_LEVEL_UNSPECIFIED);
+    when(connection.getDatabaseClient()).thenReturn(databaseClient);
     DatabaseMetaData meta = new JdbcDatabaseMetaData(connection);
     assertTrue(meta.allProceduresAreCallable());
     assertTrue(meta.allTablesAreSelectable());

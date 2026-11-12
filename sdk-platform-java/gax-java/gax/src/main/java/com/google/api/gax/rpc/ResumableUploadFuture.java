@@ -31,21 +31,34 @@ package com.google.api.gax.rpc;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
+import com.google.api.core.InternalExtensionOnly;
 import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
 
 /**
  * A specialized {@link ApiFuture} for tracking and controlling an in-flight resumable upload.
  *
- * <p>The payload {@link java.io.InputStream} supplied when initiating the upload is managed by this
- * future and will be closed automatically upon completion, failure, or cancellation.
+ * <p>The payload {@link java.io.InputStream} supplied when initiating or resuming the upload is
+ * managed by this future and will be closed automatically upon completion, failure, or
+ * cancellation.
  *
  * @param <ResponseT> the type of the final response message returned once the upload completes
  */
 @BetaApi
+@InternalExtensionOnly
 @NullMarked
 public interface ResumableUploadFuture<ResponseT> extends ApiFuture<ResponseT> {
 
-  /** Returns the upload session URL, or {@code null} if session initiation is in progress. */
+  /**
+   * Returns the upload session URL, or {@code null} if session initiation is in progress or did not
+   * complete successfully.
+   */
   @Nullable String getUploadSessionUrl();
+
+  /**
+   * Returns the effective chunk size in bytes aligned to the server's chunk granularity, or {@code
+   * null} if session initiation (or the initial status query when resuming) is in progress or did
+   * not complete successfully.
+   */
+  @Nullable Integer getEffectiveChunkSize();
 }

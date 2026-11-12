@@ -647,6 +647,36 @@ public final class LoggingSettings extends com.google.protobuf.GeneratedMessage
         : metricAnalysisSettings_;
   }
 
+  public static final int REQUIRED_RECORDING_CONSENT_FIELD_NUMBER = 10;
+  private boolean requiredRecordingConsent_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Whether the app has to say what may be recorded before anything
+   * is kept.
+   *
+   * When true, a session starts with recording off and stays off until the
+   * client sends
+   * [SessionInput.recording_control][google.cloud.ces.v1main.SessionInput.recording_control],
+   * which then decides every turn from that point on. This covers audio
+   * recording as well as conversation history, BigQuery export and Cloud
+   * Logging.
+   *
+   * When `false`, the default, the settings above decide on their own and the
+   * client does not have to send anything.
+   * </pre>
+   *
+   * <code>bool required_recording_consent = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The requiredRecordingConsent.
+   */
+  @java.lang.Override
+  public boolean getRequiredRecordingConsent() {
+    return requiredRecordingConsent_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -687,6 +717,9 @@ public final class LoggingSettings extends com.google.protobuf.GeneratedMessage
     }
     if (((bitField0_ & 0x00000010) != 0)) {
       output.writeMessage(9, getUnredactedBigqueryExportSettings());
+    }
+    if (requiredRecordingConsent_ != false) {
+      output.writeBool(10, requiredRecordingConsent_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -735,6 +768,9 @@ public final class LoggingSettings extends com.google.protobuf.GeneratedMessage
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               9, getUnredactedBigqueryExportSettings());
+    }
+    if (requiredRecordingConsent_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(10, requiredRecordingConsent_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -795,6 +831,7 @@ public final class LoggingSettings extends com.google.protobuf.GeneratedMessage
     if (hasMetricAnalysisSettings()) {
       if (!getMetricAnalysisSettings().equals(other.getMetricAnalysisSettings())) return false;
     }
+    if (getRequiredRecordingConsent() != other.getRequiredRecordingConsent()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -842,6 +879,8 @@ public final class LoggingSettings extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + METRIC_ANALYSIS_SETTINGS_FIELD_NUMBER;
       hash = (53 * hash) + getMetricAnalysisSettings().hashCode();
     }
+    hash = (37 * hash) + REQUIRED_RECORDING_CONSENT_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getRequiredRecordingConsent());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1044,6 +1083,7 @@ public final class LoggingSettings extends com.google.protobuf.GeneratedMessage
         metricAnalysisSettingsBuilder_.dispose();
         metricAnalysisSettingsBuilder_ = null;
       }
+      requiredRecordingConsent_ = false;
       return this;
     }
 
@@ -1142,6 +1182,9 @@ public final class LoggingSettings extends com.google.protobuf.GeneratedMessage
                 : metricAnalysisSettingsBuilder_.build();
         to_bitField0_ |= 0x00000100;
       }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.requiredRecordingConsent_ = requiredRecordingConsent_;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -1183,6 +1226,9 @@ public final class LoggingSettings extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasMetricAnalysisSettings()) {
         mergeMetricAnalysisSettings(other.getMetricAnalysisSettings());
+      }
+      if (other.getRequiredRecordingConsent() != false) {
+        setRequiredRecordingConsent(other.getRequiredRecordingConsent());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1279,6 +1325,12 @@ public final class LoggingSettings extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000010;
                 break;
               } // case 74
+            case 80:
+              {
+                requiredRecordingConsent_ = input.readBool();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 80
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3371,6 +3423,95 @@ public final class LoggingSettings extends com.google.protobuf.GeneratedMessage
         metricAnalysisSettings_ = null;
       }
       return metricAnalysisSettingsBuilder_;
+    }
+
+    private boolean requiredRecordingConsent_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether the app has to say what may be recorded before anything
+     * is kept.
+     *
+     * When true, a session starts with recording off and stays off until the
+     * client sends
+     * [SessionInput.recording_control][google.cloud.ces.v1main.SessionInput.recording_control],
+     * which then decides every turn from that point on. This covers audio
+     * recording as well as conversation history, BigQuery export and Cloud
+     * Logging.
+     *
+     * When `false`, the default, the settings above decide on their own and the
+     * client does not have to send anything.
+     * </pre>
+     *
+     * <code>bool required_recording_consent = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The requiredRecordingConsent.
+     */
+    @java.lang.Override
+    public boolean getRequiredRecordingConsent() {
+      return requiredRecordingConsent_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether the app has to say what may be recorded before anything
+     * is kept.
+     *
+     * When true, a session starts with recording off and stays off until the
+     * client sends
+     * [SessionInput.recording_control][google.cloud.ces.v1main.SessionInput.recording_control],
+     * which then decides every turn from that point on. This covers audio
+     * recording as well as conversation history, BigQuery export and Cloud
+     * Logging.
+     *
+     * When `false`, the default, the settings above decide on their own and the
+     * client does not have to send anything.
+     * </pre>
+     *
+     * <code>bool required_recording_consent = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The requiredRecordingConsent to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRequiredRecordingConsent(boolean value) {
+
+      requiredRecordingConsent_ = value;
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether the app has to say what may be recorded before anything
+     * is kept.
+     *
+     * When true, a session starts with recording off and stays off until the
+     * client sends
+     * [SessionInput.recording_control][google.cloud.ces.v1main.SessionInput.recording_control],
+     * which then decides every turn from that point on. This covers audio
+     * recording as well as conversation history, BigQuery export and Cloud
+     * Logging.
+     *
+     * When `false`, the default, the settings above decide on their own and the
+     * client does not have to send anything.
+     * </pre>
+     *
+     * <code>bool required_recording_consent = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRequiredRecordingConsent() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      requiredRecordingConsent_ = false;
+      onChanged();
+      return this;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.ces.v1beta.LoggingSettings)

@@ -429,7 +429,9 @@ public final class ProxyConnectionInfo extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Uri of proxy subnet.
+   * URI of the proxy subnet.
+   * Format:
+   * `projects/{project_id}/regions/{region}/subnetworks/{subnetwork_id}`
    * </pre>
    *
    * <code>string subnet_uri = 10;</code>
@@ -453,7 +455,9 @@ public final class ProxyConnectionInfo extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Uri of proxy subnet.
+   * URI of the proxy subnet.
+   * Format:
+   * `projects/{project_id}/regions/{region}/subnetworks/{subnetwork_id}`
    * </pre>
    *
    * <code>string subnet_uri = 10;</code>
@@ -482,7 +486,8 @@ public final class ProxyConnectionInfo extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * URI of the network where connection is proxied.
+   * URI of the VPC network where connection is proxied.
+   * Format: `projects/{project_id}/global/networks/{network_id}`
    * </pre>
    *
    * <code>string network_uri = 11;</code>
@@ -506,7 +511,8 @@ public final class ProxyConnectionInfo extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * URI of the network where connection is proxied.
+   * URI of the VPC network where connection is proxied.
+   * Format: `projects/{project_id}/global/networks/{network_id}`
    * </pre>
    *
    * <code>string network_uri = 11;</code>
@@ -1863,7 +1869,9 @@ public final class ProxyConnectionInfo extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Uri of proxy subnet.
+     * URI of the proxy subnet.
+     * Format:
+     * `projects/{project_id}/regions/{region}/subnetworks/{subnetwork_id}`
      * </pre>
      *
      * <code>string subnet_uri = 10;</code>
@@ -1886,7 +1894,9 @@ public final class ProxyConnectionInfo extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Uri of proxy subnet.
+     * URI of the proxy subnet.
+     * Format:
+     * `projects/{project_id}/regions/{region}/subnetworks/{subnetwork_id}`
      * </pre>
      *
      * <code>string subnet_uri = 10;</code>
@@ -1909,7 +1919,9 @@ public final class ProxyConnectionInfo extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Uri of proxy subnet.
+     * URI of the proxy subnet.
+     * Format:
+     * `projects/{project_id}/regions/{region}/subnetworks/{subnetwork_id}`
      * </pre>
      *
      * <code>string subnet_uri = 10;</code>
@@ -1931,7 +1943,9 @@ public final class ProxyConnectionInfo extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Uri of proxy subnet.
+     * URI of the proxy subnet.
+     * Format:
+     * `projects/{project_id}/regions/{region}/subnetworks/{subnetwork_id}`
      * </pre>
      *
      * <code>string subnet_uri = 10;</code>
@@ -1949,7 +1963,9 @@ public final class ProxyConnectionInfo extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Uri of proxy subnet.
+     * URI of the proxy subnet.
+     * Format:
+     * `projects/{project_id}/regions/{region}/subnetworks/{subnetwork_id}`
      * </pre>
      *
      * <code>string subnet_uri = 10;</code>
@@ -1974,7 +1990,8 @@ public final class ProxyConnectionInfo extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * URI of the network where connection is proxied.
+     * URI of the VPC network where connection is proxied.
+     * Format: `projects/{project_id}/global/networks/{network_id}`
      * </pre>
      *
      * <code>string network_uri = 11;</code>
@@ -1997,7 +2014,8 @@ public final class ProxyConnectionInfo extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * URI of the network where connection is proxied.
+     * URI of the VPC network where connection is proxied.
+     * Format: `projects/{project_id}/global/networks/{network_id}`
      * </pre>
      *
      * <code>string network_uri = 11;</code>
@@ -2020,7 +2038,8 @@ public final class ProxyConnectionInfo extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * URI of the network where connection is proxied.
+     * URI of the VPC network where connection is proxied.
+     * Format: `projects/{project_id}/global/networks/{network_id}`
      * </pre>
      *
      * <code>string network_uri = 11;</code>
@@ -2042,7 +2061,8 @@ public final class ProxyConnectionInfo extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * URI of the network where connection is proxied.
+     * URI of the VPC network where connection is proxied.
+     * Format: `projects/{project_id}/global/networks/{network_id}`
      * </pre>
      *
      * <code>string network_uri = 11;</code>
@@ -2060,7 +2080,8 @@ public final class ProxyConnectionInfo extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * URI of the network where connection is proxied.
+     * URI of the VPC network where connection is proxied.
+     * Format: `projects/{project_id}/global/networks/{network_id}`
      * </pre>
      *
      * <code>string network_uri = 11;</code>

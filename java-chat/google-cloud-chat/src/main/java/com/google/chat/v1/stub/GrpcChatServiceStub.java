@@ -97,6 +97,8 @@ import com.google.chat.v1.MoveSectionItemResponse;
 import com.google.chat.v1.PositionSectionRequest;
 import com.google.chat.v1.PositionSectionResponse;
 import com.google.chat.v1.Reaction;
+import com.google.chat.v1.ReplaceMessageCardsRequest;
+import com.google.chat.v1.ReplaceMessageCardsResponse;
 import com.google.chat.v1.SearchMessagesRequest;
 import com.google.chat.v1.SearchMessagesResponse;
 import com.google.chat.v1.SearchSpacesRequest;
@@ -706,6 +708,18 @@ public class GrpcChatServiceStub extends ChatServiceStub {
               .setSampledToLocalTracing(true)
               .build();
 
+  private static final MethodDescriptor<ReplaceMessageCardsRequest, ReplaceMessageCardsResponse>
+      replaceMessageCardsMethodDescriptor =
+          MethodDescriptor.<ReplaceMessageCardsRequest, ReplaceMessageCardsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.chat.v1.ChatService/ReplaceMessageCards")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ReplaceMessageCardsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ReplaceMessageCardsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private final UnaryCallable<CreateMessageRequest, Message> createMessageCallable;
   private final UnaryCallable<ListMessagesRequest, ListMessagesResponse> listMessagesCallable;
   private final UnaryCallable<ListMessagesRequest, ListMessagesPagedResponse>
@@ -794,6 +808,8 @@ public class GrpcChatServiceStub extends ChatServiceStub {
       listSectionItemsPagedCallable;
   private final UnaryCallable<MoveSectionItemRequest, MoveSectionItemResponse>
       moveSectionItemCallable;
+  private final UnaryCallable<ReplaceMessageCardsRequest, ReplaceMessageCardsResponse>
+      replaceMessageCardsCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -1368,6 +1384,18 @@ public class GrpcChatServiceStub extends ChatServiceStub {
                     })
                 .setResourceNameExtractor(request -> request.getName())
                 .build();
+    GrpcCallSettings<ReplaceMessageCardsRequest, ReplaceMessageCardsResponse>
+        replaceMessageCardsTransportSettings =
+            GrpcCallSettings.<ReplaceMessageCardsRequest, ReplaceMessageCardsResponse>newBuilder()
+                .setMethodDescriptor(replaceMessageCardsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
 
     this.createMessageCallable =
         callableFactory.createUnaryCallable(
@@ -1583,6 +1611,11 @@ public class GrpcChatServiceStub extends ChatServiceStub {
     this.moveSectionItemCallable =
         callableFactory.createUnaryCallable(
             moveSectionItemTransportSettings, settings.moveSectionItemSettings(), clientContext);
+    this.replaceMessageCardsCallable =
+        callableFactory.createUnaryCallable(
+            replaceMessageCardsTransportSettings,
+            settings.replaceMessageCardsSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -1924,6 +1957,12 @@ public class GrpcChatServiceStub extends ChatServiceStub {
   @Override
   public UnaryCallable<MoveSectionItemRequest, MoveSectionItemResponse> moveSectionItemCallable() {
     return moveSectionItemCallable;
+  }
+
+  @Override
+  public UnaryCallable<ReplaceMessageCardsRequest, ReplaceMessageCardsResponse>
+      replaceMessageCardsCallable() {
+    return replaceMessageCardsCallable;
   }
 
   @Override

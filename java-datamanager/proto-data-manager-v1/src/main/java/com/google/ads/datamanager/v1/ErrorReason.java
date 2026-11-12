@@ -217,7 +217,7 @@ public enum ErrorReason implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Maximum number of user identifiers allowed per audience member is 10.
+   * Maximum number of user identifiers allowed per record is 10.
    * </pre>
    *
    * <code>TOO_MANY_USER_IDENTIFIERS = 18;</code>
@@ -334,6 +334,16 @@ public enum ErrorReason implements com.google.protobuf.ProtocolMessageEnum {
    * <code>INVALID_CONVERSION_ACTION_TYPE = 29;</code>
    */
   INVALID_CONVERSION_ACTION_TYPE(29),
+  /**
+   *
+   *
+   * <pre>
+   * Encryption is not supported for this request.
+   * </pre>
+   *
+   * <code>ENCRYPTION_NOT_SUPPORTED = 132;</code>
+   */
+  ENCRYPTION_NOT_SUPPORTED(132),
   /**
    *
    *
@@ -1298,12 +1308,12 @@ public enum ErrorReason implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * A required prerequisite link (such as a Google Ads link) must exist for
-   * the Google Analytics property to perform this operation.
+   * Deprecated: Error is unused in the Data Manager API.
    * </pre>
    *
-   * <code>REQUIRED_PREREQUISITE_LINK_MISSING = 124;</code>
+   * <code>REQUIRED_PREREQUISITE_LINK_MISSING = 124 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   REQUIRED_PREREQUISITE_LINK_MISSING(124),
   /**
    *
@@ -1343,17 +1353,81 @@ public enum ErrorReason implements com.google.protobuf.ProtocolMessageEnum {
    * <pre>
    * The ad identifier does not belong to the account.
    *
-   * For example, the [`gclid`][google.ads.datamanager.v1.AdIdentifiers.gclid]
+   * For example, the [gclid][google.ads.datamanager.v1.AdIdentifiers.gclid]
    * isn't associated with the
-   * [`operating_account`][google.ads.datamanager.v1.Destination.operating_account]
+   * [operating_account][google.ads.datamanager.v1.Destination.operating_account]
    * and
-   * [`product_destination_id`][google.ads.datamanager.v1.Destination.product_destination_id]
+   * [product_destination_id][google.ads.datamanager.v1.Destination.product_destination_id]
    * of the destination.
    * </pre>
    *
    * <code>INVALID_AD_IDENTIFIER_FOR_ACCOUNT = 128;</code>
    */
   INVALID_AD_IDENTIFIER_FOR_ACCOUNT(128),
+  /**
+   *
+   *
+   * <pre>
+   * The account type is not a supported `client_account_type` for a
+   * [UserListDirectLicense][google.ads.datamanager.v1.UserListDirectLicense].
+   * </pre>
+   *
+   * <code>UNSUPPORTED_ACCOUNT_TYPE_FOR_USER_LIST_DIRECT_LICENSE = 129;</code>
+   */
+  UNSUPPORTED_ACCOUNT_TYPE_FOR_USER_LIST_DIRECT_LICENSE(129),
+  /**
+   *
+   *
+   * <pre>
+   * Duplicate elements in a list in the request.
+   * </pre>
+   *
+   * <code>DUPLICATE_ELEMENTS = 130;</code>
+   */
+  DUPLICATE_ELEMENTS(130),
+  /**
+   *
+   *
+   * <pre>
+   * The baseline location is not supported for generating insights.
+   *
+   * When
+   * [location_auto_detection_enabled][google.ads.datamanager.v1.Baseline.location_auto_detection_enabled]
+   * is set to `true`, this error indicates that the detected majority location
+   * for the audience is not among the supported locations.
+   *
+   * To resolve this, explicitly specify a supported location in
+   * [baseline_location][google.ads.datamanager.v1.Baseline.baseline_location],
+   * or retry once the audience list updates with a supported majority location.
+   * See https://support.google.com/google-ads/answer/11161206 for the list of
+   * supported countries.
+   * </pre>
+   *
+   * <code>UNSUPPORTED_BASELINE_LOCATION = 131;</code>
+   */
+  UNSUPPORTED_BASELINE_LOCATION(131),
+  /**
+   *
+   *
+   * <pre>
+   * The [event_timestamp][google.ads.datamanager.v1.Event.event_timestamp]
+   * cannot be earlier than the
+   * [start_timestamp][google.ads.datamanager.v1.CallInfo.start_timestamp].
+   * </pre>
+   *
+   * <code>CONVERSION_PRECEDES_CALL = 133;</code>
+   */
+  CONVERSION_PRECEDES_CALL(133),
+  /**
+   *
+   *
+   * <pre>
+   * The date is not valid.
+   * </pre>
+   *
+   * <code>INVALID_DATE = 134;</code>
+   */
+  INVALID_DATE(134),
   UNRECOGNIZED(-1),
   ;
 
@@ -1569,7 +1643,7 @@ public enum ErrorReason implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Maximum number of user identifiers allowed per audience member is 10.
+   * Maximum number of user identifiers allowed per record is 10.
    * </pre>
    *
    * <code>TOO_MANY_USER_IDENTIFIERS = 18;</code>
@@ -1697,6 +1771,17 @@ public enum ErrorReason implements com.google.protobuf.ProtocolMessageEnum {
    * <code>INVALID_CONVERSION_ACTION_TYPE = 29;</code>
    */
   public static final int INVALID_CONVERSION_ACTION_TYPE_VALUE = 29;
+
+  /**
+   *
+   *
+   * <pre>
+   * Encryption is not supported for this request.
+   * </pre>
+   *
+   * <code>ENCRYPTION_NOT_SUPPORTED = 132;</code>
+   */
+  public static final int ENCRYPTION_NOT_SUPPORTED_VALUE = 132;
 
   /**
    *
@@ -2756,13 +2841,12 @@ public enum ErrorReason implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * A required prerequisite link (such as a Google Ads link) must exist for
-   * the Google Analytics property to perform this operation.
+   * Deprecated: Error is unused in the Data Manager API.
    * </pre>
    *
-   * <code>REQUIRED_PREREQUISITE_LINK_MISSING = 124;</code>
+   * <code>REQUIRED_PREREQUISITE_LINK_MISSING = 124 [deprecated = true];</code>
    */
-  public static final int REQUIRED_PREREQUISITE_LINK_MISSING_VALUE = 124;
+  @java.lang.Deprecated public static final int REQUIRED_PREREQUISITE_LINK_MISSING_VALUE = 124;
 
   /**
    *
@@ -2805,17 +2889,86 @@ public enum ErrorReason implements com.google.protobuf.ProtocolMessageEnum {
    * <pre>
    * The ad identifier does not belong to the account.
    *
-   * For example, the [`gclid`][google.ads.datamanager.v1.AdIdentifiers.gclid]
+   * For example, the [gclid][google.ads.datamanager.v1.AdIdentifiers.gclid]
    * isn't associated with the
-   * [`operating_account`][google.ads.datamanager.v1.Destination.operating_account]
+   * [operating_account][google.ads.datamanager.v1.Destination.operating_account]
    * and
-   * [`product_destination_id`][google.ads.datamanager.v1.Destination.product_destination_id]
+   * [product_destination_id][google.ads.datamanager.v1.Destination.product_destination_id]
    * of the destination.
    * </pre>
    *
    * <code>INVALID_AD_IDENTIFIER_FOR_ACCOUNT = 128;</code>
    */
   public static final int INVALID_AD_IDENTIFIER_FOR_ACCOUNT_VALUE = 128;
+
+  /**
+   *
+   *
+   * <pre>
+   * The account type is not a supported `client_account_type` for a
+   * [UserListDirectLicense][google.ads.datamanager.v1.UserListDirectLicense].
+   * </pre>
+   *
+   * <code>UNSUPPORTED_ACCOUNT_TYPE_FOR_USER_LIST_DIRECT_LICENSE = 129;</code>
+   */
+  public static final int UNSUPPORTED_ACCOUNT_TYPE_FOR_USER_LIST_DIRECT_LICENSE_VALUE = 129;
+
+  /**
+   *
+   *
+   * <pre>
+   * Duplicate elements in a list in the request.
+   * </pre>
+   *
+   * <code>DUPLICATE_ELEMENTS = 130;</code>
+   */
+  public static final int DUPLICATE_ELEMENTS_VALUE = 130;
+
+  /**
+   *
+   *
+   * <pre>
+   * The baseline location is not supported for generating insights.
+   *
+   * When
+   * [location_auto_detection_enabled][google.ads.datamanager.v1.Baseline.location_auto_detection_enabled]
+   * is set to `true`, this error indicates that the detected majority location
+   * for the audience is not among the supported locations.
+   *
+   * To resolve this, explicitly specify a supported location in
+   * [baseline_location][google.ads.datamanager.v1.Baseline.baseline_location],
+   * or retry once the audience list updates with a supported majority location.
+   * See https://support.google.com/google-ads/answer/11161206 for the list of
+   * supported countries.
+   * </pre>
+   *
+   * <code>UNSUPPORTED_BASELINE_LOCATION = 131;</code>
+   */
+  public static final int UNSUPPORTED_BASELINE_LOCATION_VALUE = 131;
+
+  /**
+   *
+   *
+   * <pre>
+   * The [event_timestamp][google.ads.datamanager.v1.Event.event_timestamp]
+   * cannot be earlier than the
+   * [start_timestamp][google.ads.datamanager.v1.CallInfo.start_timestamp].
+   * </pre>
+   *
+   * <code>CONVERSION_PRECEDES_CALL = 133;</code>
+   */
+  public static final int CONVERSION_PRECEDES_CALL_VALUE = 133;
+
+  /**
+   *
+   *
+   * <pre>
+   * The date is not valid.
+   * </pre>
+   *
+   * <code>INVALID_DATE = 134;</code>
+   */
+  public static final int INVALID_DATE_VALUE = 134;
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -2901,6 +3054,8 @@ public enum ErrorReason implements com.google.protobuf.ProtocolMessageEnum {
         return INVALID_CONVERSION_ACTION_ID;
       case 29:
         return INVALID_CONVERSION_ACTION_TYPE;
+      case 132:
+        return ENCRYPTION_NOT_SUPPORTED;
       case 30:
         return INVALID_CURRENCY_CODE;
       case 31:
@@ -3099,6 +3254,16 @@ public enum ErrorReason implements com.google.protobuf.ProtocolMessageEnum {
         return CONVERSION_ACTION_TOO_RECENTLY_CREATED;
       case 128:
         return INVALID_AD_IDENTIFIER_FOR_ACCOUNT;
+      case 129:
+        return UNSUPPORTED_ACCOUNT_TYPE_FOR_USER_LIST_DIRECT_LICENSE;
+      case 130:
+        return DUPLICATE_ELEMENTS;
+      case 131:
+        return UNSUPPORTED_BASELINE_LOCATION;
+      case 133:
+        return CONVERSION_PRECEDES_CALL;
+      case 134:
+        return INVALID_DATE;
       default:
         return null;
     }

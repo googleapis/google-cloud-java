@@ -18,6 +18,7 @@ package com.google.cloud.dataform.v1beta1.stub;
 
 import static com.google.cloud.dataform.v1beta1.DataformClient.FetchRepositoryHistoryPagedResponse;
 import static com.google.cloud.dataform.v1beta1.DataformClient.FetchWorkspaceBranchesPagedResponse;
+import static com.google.cloud.dataform.v1beta1.DataformClient.FetchWorkspaceHistoryPagedResponse;
 import static com.google.cloud.dataform.v1beta1.DataformClient.ListCompilationResultsPagedResponse;
 import static com.google.cloud.dataform.v1beta1.DataformClient.ListLocationsPagedResponse;
 import static com.google.cloud.dataform.v1beta1.DataformClient.ListReleaseConfigsPagedResponse;
@@ -50,6 +51,7 @@ import com.google.cloud.dataform.v1beta1.CompilationResult;
 import com.google.cloud.dataform.v1beta1.ComputeRepositoryAccessTokenStatusRequest;
 import com.google.cloud.dataform.v1beta1.ComputeRepositoryAccessTokenStatusResponse;
 import com.google.cloud.dataform.v1beta1.Config;
+import com.google.cloud.dataform.v1beta1.CreateCompilationResultMetadata;
 import com.google.cloud.dataform.v1beta1.CreateCompilationResultRequest;
 import com.google.cloud.dataform.v1beta1.CreateFolderRequest;
 import com.google.cloud.dataform.v1beta1.CreateReleaseConfigRequest;
@@ -87,6 +89,8 @@ import com.google.cloud.dataform.v1beta1.FetchRepositoryHistoryRequest;
 import com.google.cloud.dataform.v1beta1.FetchRepositoryHistoryResponse;
 import com.google.cloud.dataform.v1beta1.FetchWorkspaceBranchesRequest;
 import com.google.cloud.dataform.v1beta1.FetchWorkspaceBranchesResponse;
+import com.google.cloud.dataform.v1beta1.FetchWorkspaceHistoryRequest;
+import com.google.cloud.dataform.v1beta1.FetchWorkspaceHistoryResponse;
 import com.google.cloud.dataform.v1beta1.Folder;
 import com.google.cloud.dataform.v1beta1.GetCompilationResultRequest;
 import com.google.cloud.dataform.v1beta1.GetConfigRequest;
@@ -478,6 +482,17 @@ public abstract class DataformStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: fetchGitAheadBehindCallable()");
   }
 
+  public UnaryCallable<FetchWorkspaceHistoryRequest, FetchWorkspaceHistoryPagedResponse>
+      fetchWorkspaceHistoryPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: fetchWorkspaceHistoryPagedCallable()");
+  }
+
+  public UnaryCallable<FetchWorkspaceHistoryRequest, FetchWorkspaceHistoryResponse>
+      fetchWorkspaceHistoryCallable() {
+    throw new UnsupportedOperationException("Not implemented: fetchWorkspaceHistoryCallable()");
+  }
+
   public UnaryCallable<CommitWorkspaceChangesRequest, CommitWorkspaceChangesResponse>
       commitWorkspaceChangesCallable() {
     throw new UnsupportedOperationException("Not implemented: commitWorkspaceChangesCallable()");
@@ -584,6 +599,19 @@ public abstract class DataformStub implements BackgroundResource {
   public UnaryCallable<CreateCompilationResultRequest, CompilationResult>
       createCompilationResultCallable() {
     throw new UnsupportedOperationException("Not implemented: createCompilationResultCallable()");
+  }
+
+  public OperationCallable<
+          CreateCompilationResultRequest, CompilationResult, CreateCompilationResultMetadata>
+      createCompilationResultLongRunningOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: createCompilationResultLongRunningOperationCallable()");
+  }
+
+  public UnaryCallable<CreateCompilationResultRequest, Operation>
+      createCompilationResultLongRunningCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: createCompilationResultLongRunningCallable()");
   }
 
   public UnaryCallable<

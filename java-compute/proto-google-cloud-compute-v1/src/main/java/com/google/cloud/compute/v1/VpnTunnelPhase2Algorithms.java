@@ -78,6 +78,12 @@ public final class VpnTunnelPhase2Algorithms extends com.google.protobuf.Generat
       com.google.protobuf.LazyStringArrayList.emptyList();
 
   /**
+   *
+   *
+   * <pre>
+   * Encryption algorithms for IKE phase 2.
+   * </pre>
+   *
    * <code>repeated string encryption = 97980291;</code>
    *
    * @return A list containing the encryption.
@@ -87,6 +93,12 @@ public final class VpnTunnelPhase2Algorithms extends com.google.protobuf.Generat
   }
 
   /**
+   *
+   *
+   * <pre>
+   * Encryption algorithms for IKE phase 2.
+   * </pre>
+   *
    * <code>repeated string encryption = 97980291;</code>
    *
    * @return The count of encryption.
@@ -96,6 +108,12 @@ public final class VpnTunnelPhase2Algorithms extends com.google.protobuf.Generat
   }
 
   /**
+   *
+   *
+   * <pre>
+   * Encryption algorithms for IKE phase 2.
+   * </pre>
+   *
    * <code>repeated string encryption = 97980291;</code>
    *
    * @param index The index of the element to return.
@@ -106,6 +124,12 @@ public final class VpnTunnelPhase2Algorithms extends com.google.protobuf.Generat
   }
 
   /**
+   *
+   *
+   * <pre>
+   * Encryption algorithms for IKE phase 2.
+   * </pre>
+   *
    * <code>repeated string encryption = 97980291;</code>
    *
    * @param index The index of the value to return.
@@ -122,6 +146,12 @@ public final class VpnTunnelPhase2Algorithms extends com.google.protobuf.Generat
       com.google.protobuf.LazyStringArrayList.emptyList();
 
   /**
+   *
+   *
+   * <pre>
+   * Integrity algorithms for IKE phase 2.
+   * </pre>
+   *
    * <code>repeated string integrity = 492830541;</code>
    *
    * @return A list containing the integrity.
@@ -131,6 +161,12 @@ public final class VpnTunnelPhase2Algorithms extends com.google.protobuf.Generat
   }
 
   /**
+   *
+   *
+   * <pre>
+   * Integrity algorithms for IKE phase 2.
+   * </pre>
+   *
    * <code>repeated string integrity = 492830541;</code>
    *
    * @return The count of integrity.
@@ -140,6 +176,12 @@ public final class VpnTunnelPhase2Algorithms extends com.google.protobuf.Generat
   }
 
   /**
+   *
+   *
+   * <pre>
+   * Integrity algorithms for IKE phase 2.
+   * </pre>
+   *
    * <code>repeated string integrity = 492830541;</code>
    *
    * @param index The index of the element to return.
@@ -150,6 +192,12 @@ public final class VpnTunnelPhase2Algorithms extends com.google.protobuf.Generat
   }
 
   /**
+   *
+   *
+   * <pre>
+   * Integrity algorithms for IKE phase 2.
+   * </pre>
+   *
    * <code>repeated string integrity = 492830541;</code>
    *
    * @param index The index of the value to return.
@@ -166,6 +214,12 @@ public final class VpnTunnelPhase2Algorithms extends com.google.protobuf.Generat
       com.google.protobuf.LazyStringArrayList.emptyList();
 
   /**
+   *
+   *
+   * <pre>
+   * Perfect Forward Secrecy (PFS) groups for IKE phase 2.
+   * </pre>
+   *
    * <code>repeated string pfs = 110909;</code>
    *
    * @return A list containing the pfs.
@@ -175,6 +229,12 @@ public final class VpnTunnelPhase2Algorithms extends com.google.protobuf.Generat
   }
 
   /**
+   *
+   *
+   * <pre>
+   * Perfect Forward Secrecy (PFS) groups for IKE phase 2.
+   * </pre>
+   *
    * <code>repeated string pfs = 110909;</code>
    *
    * @return The count of pfs.
@@ -184,6 +244,12 @@ public final class VpnTunnelPhase2Algorithms extends com.google.protobuf.Generat
   }
 
   /**
+   *
+   *
+   * <pre>
+   * Perfect Forward Secrecy (PFS) groups for IKE phase 2.
+   * </pre>
+   *
    * <code>repeated string pfs = 110909;</code>
    *
    * @param index The index of the element to return.
@@ -194,6 +260,12 @@ public final class VpnTunnelPhase2Algorithms extends com.google.protobuf.Generat
   }
 
   /**
+   *
+   *
+   * <pre>
+   * Perfect Forward Secrecy (PFS) groups for IKE phase 2.
+   * </pre>
+   *
    * <code>repeated string pfs = 110909;</code>
    *
    * @param index The index of the value to return.
@@ -614,6 +686,12 @@ public final class VpnTunnelPhase2Algorithms extends com.google.protobuf.Generat
     }
 
     /**
+     *
+     *
+     * <pre>
+     * Encryption algorithms for IKE phase 2.
+     * </pre>
+     *
      * <code>repeated string encryption = 97980291;</code>
      *
      * @return A list containing the encryption.
@@ -624,6 +702,12 @@ public final class VpnTunnelPhase2Algorithms extends com.google.protobuf.Generat
     }
 
     /**
+     *
+     *
+     * <pre>
+     * Encryption algorithms for IKE phase 2.
+     * </pre>
+     *
      * <code>repeated string encryption = 97980291;</code>
      *
      * @return The count of encryption.
@@ -633,6 +717,12 @@ public final class VpnTunnelPhase2Algorithms extends com.google.protobuf.Generat
     }
 
     /**
+     *
+     *
+     * <pre>
+     * Encryption algorithms for IKE phase 2.
+     * </pre>
+     *
      * <code>repeated string encryption = 97980291;</code>
      *
      * @param index The index of the element to return.
@@ -643,6 +733,12 @@ public final class VpnTunnelPhase2Algorithms extends com.google.protobuf.Generat
     }
 
     /**
+     *
+     *
+     * <pre>
+     * Encryption algorithms for IKE phase 2.
+     * </pre>
+     *
      * <code>repeated string encryption = 97980291;</code>
      *
      * @param index The index of the value to return.
@@ -653,6 +749,12 @@ public final class VpnTunnelPhase2Algorithms extends com.google.protobuf.Generat
     }
 
     /**
+     *
+     *
+     * <pre>
+     * Encryption algorithms for IKE phase 2.
+     * </pre>
+     *
      * <code>repeated string encryption = 97980291;</code>
      *
      * @param index The index to set the value at.
@@ -671,6 +773,12 @@ public final class VpnTunnelPhase2Algorithms extends com.google.protobuf.Generat
     }
 
     /**
+     *
+     *
+     * <pre>
+     * Encryption algorithms for IKE phase 2.
+     * </pre>
+     *
      * <code>repeated string encryption = 97980291;</code>
      *
      * @param value The encryption to add.
@@ -688,6 +796,12 @@ public final class VpnTunnelPhase2Algorithms extends com.google.protobuf.Generat
     }
 
     /**
+     *
+     *
+     * <pre>
+     * Encryption algorithms for IKE phase 2.
+     * </pre>
+     *
      * <code>repeated string encryption = 97980291;</code>
      *
      * @param values The encryption to add.
@@ -702,6 +816,12 @@ public final class VpnTunnelPhase2Algorithms extends com.google.protobuf.Generat
     }
 
     /**
+     *
+     *
+     * <pre>
+     * Encryption algorithms for IKE phase 2.
+     * </pre>
+     *
      * <code>repeated string encryption = 97980291;</code>
      *
      * @return This builder for chaining.
@@ -715,6 +835,12 @@ public final class VpnTunnelPhase2Algorithms extends com.google.protobuf.Generat
     }
 
     /**
+     *
+     *
+     * <pre>
+     * Encryption algorithms for IKE phase 2.
+     * </pre>
+     *
      * <code>repeated string encryption = 97980291;</code>
      *
      * @param value The bytes of the encryption to add.
@@ -743,6 +869,12 @@ public final class VpnTunnelPhase2Algorithms extends com.google.protobuf.Generat
     }
 
     /**
+     *
+     *
+     * <pre>
+     * Integrity algorithms for IKE phase 2.
+     * </pre>
+     *
      * <code>repeated string integrity = 492830541;</code>
      *
      * @return A list containing the integrity.
@@ -753,6 +885,12 @@ public final class VpnTunnelPhase2Algorithms extends com.google.protobuf.Generat
     }
 
     /**
+     *
+     *
+     * <pre>
+     * Integrity algorithms for IKE phase 2.
+     * </pre>
+     *
      * <code>repeated string integrity = 492830541;</code>
      *
      * @return The count of integrity.
@@ -762,6 +900,12 @@ public final class VpnTunnelPhase2Algorithms extends com.google.protobuf.Generat
     }
 
     /**
+     *
+     *
+     * <pre>
+     * Integrity algorithms for IKE phase 2.
+     * </pre>
+     *
      * <code>repeated string integrity = 492830541;</code>
      *
      * @param index The index of the element to return.
@@ -772,6 +916,12 @@ public final class VpnTunnelPhase2Algorithms extends com.google.protobuf.Generat
     }
 
     /**
+     *
+     *
+     * <pre>
+     * Integrity algorithms for IKE phase 2.
+     * </pre>
+     *
      * <code>repeated string integrity = 492830541;</code>
      *
      * @param index The index of the value to return.
@@ -782,6 +932,12 @@ public final class VpnTunnelPhase2Algorithms extends com.google.protobuf.Generat
     }
 
     /**
+     *
+     *
+     * <pre>
+     * Integrity algorithms for IKE phase 2.
+     * </pre>
+     *
      * <code>repeated string integrity = 492830541;</code>
      *
      * @param index The index to set the value at.
@@ -800,6 +956,12 @@ public final class VpnTunnelPhase2Algorithms extends com.google.protobuf.Generat
     }
 
     /**
+     *
+     *
+     * <pre>
+     * Integrity algorithms for IKE phase 2.
+     * </pre>
+     *
      * <code>repeated string integrity = 492830541;</code>
      *
      * @param value The integrity to add.
@@ -817,6 +979,12 @@ public final class VpnTunnelPhase2Algorithms extends com.google.protobuf.Generat
     }
 
     /**
+     *
+     *
+     * <pre>
+     * Integrity algorithms for IKE phase 2.
+     * </pre>
+     *
      * <code>repeated string integrity = 492830541;</code>
      *
      * @param values The integrity to add.
@@ -831,6 +999,12 @@ public final class VpnTunnelPhase2Algorithms extends com.google.protobuf.Generat
     }
 
     /**
+     *
+     *
+     * <pre>
+     * Integrity algorithms for IKE phase 2.
+     * </pre>
+     *
      * <code>repeated string integrity = 492830541;</code>
      *
      * @return This builder for chaining.
@@ -844,6 +1018,12 @@ public final class VpnTunnelPhase2Algorithms extends com.google.protobuf.Generat
     }
 
     /**
+     *
+     *
+     * <pre>
+     * Integrity algorithms for IKE phase 2.
+     * </pre>
+     *
      * <code>repeated string integrity = 492830541;</code>
      *
      * @param value The bytes of the integrity to add.
@@ -872,6 +1052,12 @@ public final class VpnTunnelPhase2Algorithms extends com.google.protobuf.Generat
     }
 
     /**
+     *
+     *
+     * <pre>
+     * Perfect Forward Secrecy (PFS) groups for IKE phase 2.
+     * </pre>
+     *
      * <code>repeated string pfs = 110909;</code>
      *
      * @return A list containing the pfs.
@@ -882,6 +1068,12 @@ public final class VpnTunnelPhase2Algorithms extends com.google.protobuf.Generat
     }
 
     /**
+     *
+     *
+     * <pre>
+     * Perfect Forward Secrecy (PFS) groups for IKE phase 2.
+     * </pre>
+     *
      * <code>repeated string pfs = 110909;</code>
      *
      * @return The count of pfs.
@@ -891,6 +1083,12 @@ public final class VpnTunnelPhase2Algorithms extends com.google.protobuf.Generat
     }
 
     /**
+     *
+     *
+     * <pre>
+     * Perfect Forward Secrecy (PFS) groups for IKE phase 2.
+     * </pre>
+     *
      * <code>repeated string pfs = 110909;</code>
      *
      * @param index The index of the element to return.
@@ -901,6 +1099,12 @@ public final class VpnTunnelPhase2Algorithms extends com.google.protobuf.Generat
     }
 
     /**
+     *
+     *
+     * <pre>
+     * Perfect Forward Secrecy (PFS) groups for IKE phase 2.
+     * </pre>
+     *
      * <code>repeated string pfs = 110909;</code>
      *
      * @param index The index of the value to return.
@@ -911,6 +1115,12 @@ public final class VpnTunnelPhase2Algorithms extends com.google.protobuf.Generat
     }
 
     /**
+     *
+     *
+     * <pre>
+     * Perfect Forward Secrecy (PFS) groups for IKE phase 2.
+     * </pre>
+     *
      * <code>repeated string pfs = 110909;</code>
      *
      * @param index The index to set the value at.
@@ -929,6 +1139,12 @@ public final class VpnTunnelPhase2Algorithms extends com.google.protobuf.Generat
     }
 
     /**
+     *
+     *
+     * <pre>
+     * Perfect Forward Secrecy (PFS) groups for IKE phase 2.
+     * </pre>
+     *
      * <code>repeated string pfs = 110909;</code>
      *
      * @param value The pfs to add.
@@ -946,6 +1162,12 @@ public final class VpnTunnelPhase2Algorithms extends com.google.protobuf.Generat
     }
 
     /**
+     *
+     *
+     * <pre>
+     * Perfect Forward Secrecy (PFS) groups for IKE phase 2.
+     * </pre>
+     *
      * <code>repeated string pfs = 110909;</code>
      *
      * @param values The pfs to add.
@@ -960,6 +1182,12 @@ public final class VpnTunnelPhase2Algorithms extends com.google.protobuf.Generat
     }
 
     /**
+     *
+     *
+     * <pre>
+     * Perfect Forward Secrecy (PFS) groups for IKE phase 2.
+     * </pre>
+     *
      * <code>repeated string pfs = 110909;</code>
      *
      * @return This builder for chaining.
@@ -973,6 +1201,12 @@ public final class VpnTunnelPhase2Algorithms extends com.google.protobuf.Generat
     }
 
     /**
+     *
+     *
+     * <pre>
+     * Perfect Forward Secrecy (PFS) groups for IKE phase 2.
+     * </pre>
+     *
      * <code>repeated string pfs = 110909;</code>
      *
      * @param value The bytes of the pfs to add.

@@ -47,6 +47,7 @@ import com.google.api.gax.rpc.ResumableUploadErrorClassifier.Category;
 import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Optional;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.Future;
 import java.util.concurrent.ScheduledExecutorService;
@@ -68,6 +69,7 @@ final class ResumableUploadChunkCoordinator<ResponseT> {
   private final UnaryCallable<QueryStatusRequest, QueryStatusResponse<ResponseT>>
       queryStatusCallable;
   private final String uploadUrl;
+  private final int chunkSize;
   private final RewindableStreamBuffer buffer;
   private final ApiCallContext callContext;
   private final ExponentialRetryAlgorithm recoveryAlgorithm;
@@ -84,19 +86,21 @@ final class ResumableUploadChunkCoordinator<ResponseT> {
       String uploadUrl,
       InputStream payload,
       int chunkSize,
-      ApiCallContext callContext,
-      ExponentialRetryAlgorithm recoveryAlgorithm,
-      ScheduledExecutorService executor,
+      ClientContext clientContext,
       ResumableUploadProgressTracker progressTracker) {
     this.uploadChunkCallable =
         checkNotNull(uploadChunkCallable, "uploadChunkCallable must not be null");
     this.queryStatusCallable =
         checkNotNull(queryStatusCallable, "queryStatusCallable must not be null");
     this.uploadUrl = checkNotNull(uploadUrl, "uploadUrl must not be null");
+    this.chunkSize = chunkSize;
     checkNotNull(payload, "payload must not be null");
-    this.callContext = checkNotNull(callContext, "callContext must not be null");
-    this.recoveryAlgorithm = checkNotNull(recoveryAlgorithm, "recoveryAlgorithm must not be null");
-    this.executor = checkNotNull(executor, "executor must not be null");
+    checkNotNull(clientContext, "clientContext must not be null");
+    this.callContext = clientContext.getDefaultCallContext();
+    this.recoveryAlgorithm =
+        new ExponentialRetryAlgorithm(
+            ResumableUploadCallableImpl.RETRY_SETTINGS, clientContext.getClock());
+    this.executor = checkNotNull(clientContext.getExecutor(), "executor must not be null");
     this.recoverySettings = recoveryAlgorithm.createFirstAttempt();
     this.progressTracker = checkNotNull(progressTracker, "progressTracker must not be null");
     this.buffer = new RewindableStreamBuffer(payload, chunkSize);
@@ -107,7 +111,26 @@ final class ResumableUploadChunkCoordinator<ResponseT> {
   }
 
   void start() {
-    progressTracker.onStarted(uploadUrl);
+    progressTracker.onStarted(uploadUrl, chunkSize);
+    registerCancellationListener();
+    try {
+      buffer.fill();
+      transmitChunk();
+    } catch (Throwable t) {
+      uploadResultFuture.setException(t);
+    }
+  }
+
+  void resume(QueryStatusResponse<ResponseT> initialQueryResponse) {
+    registerCancellationListener();
+    try {
+      handleQueryResponse(initialQueryResponse);
+    } catch (Throwable t) {
+      uploadResultFuture.setException(t);
+    }
+  }
+
+  private void registerCancellationListener() {
     uploadResultFuture.addListener(
         () -> {
           Future<?> inFlight = inFlightFuture;
@@ -116,12 +139,6 @@ final class ResumableUploadChunkCoordinator<ResponseT> {
           }
         },
         MoreExecutors.directExecutor());
-    try {
-      buffer.fill();
-      transmitChunk();
-    } catch (Throwable t) {
-      uploadResultFuture.setException(t);
-    }
   }
 
   private void transmitChunk() {
@@ -265,7 +282,10 @@ final class ResumableUploadChunkCoordinator<ResponseT> {
       throw new IllegalStateException("Query status response missing X-Goog-Upload-Status header");
     }
     if (queryResponse.getUploadStatus() == ResumableUploadStatus.FINAL) {
-      progressTracker.onFinalized(buffer.getBufferBaseOffset() + buffer.getPayload().length);
+      long finalizedBytes =
+          Optional.ofNullable(queryResponse.getCommittedOffset())
+              .orElse(buffer.getBufferBaseOffset() + buffer.getPayload().length);
+      progressTracker.onFinalized(finalizedBytes);
       uploadResultFuture.set(queryResponse.getResponse());
       return;
     }
@@ -274,7 +294,7 @@ final class ResumableUploadChunkCoordinator<ResponseT> {
       throw new IllegalStateException(
           "Incomplete query status response did not include a committed offset");
     }
-    progressTracker.onOffsetReceived(committedOffset);
+    progressTracker.onOffsetReceived(committedOffset, chunkSize);
     buffer.realignTo(committedOffset);
     transmitChunk();
   }

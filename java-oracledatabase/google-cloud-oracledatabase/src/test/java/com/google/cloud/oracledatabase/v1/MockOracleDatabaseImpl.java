@@ -128,6 +128,28 @@ public class MockOracleDatabaseImpl extends OracleDatabaseImplBase {
   }
 
   @Override
+  public void updateCloudExadataInfrastructure(
+      UpdateCloudExadataInfrastructureRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateCloudExadataInfrastructure,"
+                      + " expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void deleteCloudExadataInfrastructure(
       DeleteCloudExadataInfrastructureRequest request, StreamObserver<Operation> responseObserver) {
     Object response = responses.poll();
@@ -238,6 +260,28 @@ public class MockOracleDatabaseImpl extends OracleDatabaseImplBase {
   }
 
   @Override
+  public void updateCloudVmCluster(
+      UpdateCloudVmClusterRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateCloudVmCluster, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void deleteCloudVmCluster(
       DeleteCloudVmClusterRequest request, StreamObserver<Operation> responseObserver) {
     Object response = responses.poll();
@@ -253,6 +297,98 @@ public class MockOracleDatabaseImpl extends OracleDatabaseImplBase {
               String.format(
                   "Unrecognized response type %s for method DeleteCloudVmCluster, expected %s or"
                       + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void enableCloudVmClusterIdentityConnector(
+      EnableCloudVmClusterIdentityConnectorRequest request,
+      StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method EnableCloudVmClusterIdentityConnector,"
+                      + " expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void disableCloudVmClusterIdentityConnector(
+      DisableCloudVmClusterIdentityConnectorRequest request,
+      StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DisableCloudVmClusterIdentityConnector,"
+                      + " expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void enableExadbVmClusterIdentityConnector(
+      EnableExadbVmClusterIdentityConnectorRequest request,
+      StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method EnableExadbVmClusterIdentityConnector,"
+                      + " expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void disableExadbVmClusterIdentityConnector(
+      DisableExadbVmClusterIdentityConnectorRequest request,
+      StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DisableExadbVmClusterIdentityConnector,"
+                      + " expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -276,6 +412,28 @@ public class MockOracleDatabaseImpl extends OracleDatabaseImplBase {
                   "Unrecognized response type %s for method ListEntitlements, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListEntitlementsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listFlexComponents(
+      ListFlexComponentsRequest request,
+      StreamObserver<ListFlexComponentsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListFlexComponentsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListFlexComponentsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListFlexComponents, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListFlexComponentsResponse.class.getName(),
                   Exception.class.getName())));
     }
   }
@@ -831,6 +989,27 @@ public class MockOracleDatabaseImpl extends OracleDatabaseImplBase {
   }
 
   @Override
+  public void updateOdbNetwork(
+      UpdateOdbNetworkRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateOdbNetwork, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void deleteOdbNetwork(
       DeleteOdbNetworkRequest request, StreamObserver<Operation> responseObserver) {
     Object response = responses.poll();
@@ -915,6 +1094,27 @@ public class MockOracleDatabaseImpl extends OracleDatabaseImplBase {
   }
 
   @Override
+  public void updateOdbSubnet(
+      UpdateOdbSubnetRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateOdbSubnet, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void deleteOdbSubnet(
       DeleteOdbSubnetRequest request, StreamObserver<Operation> responseObserver) {
     Object response = responses.poll();
@@ -929,6 +1129,90 @@ public class MockOracleDatabaseImpl extends OracleDatabaseImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeleteOdbSubnet, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listOdbDnsZones(
+      ListOdbDnsZonesRequest request, StreamObserver<ListOdbDnsZonesResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListOdbDnsZonesResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListOdbDnsZonesResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListOdbDnsZones, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListOdbDnsZonesResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getOdbDnsZone(
+      GetOdbDnsZoneRequest request, StreamObserver<OdbDnsZone> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof OdbDnsZone) {
+      requests.add(request);
+      responseObserver.onNext(((OdbDnsZone) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetOdbDnsZone, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  OdbDnsZone.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createOdbDnsZone(
+      CreateOdbDnsZoneRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateOdbDnsZone, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteOdbDnsZone(
+      DeleteOdbDnsZoneRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteOdbDnsZone, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -1136,6 +1420,28 @@ public class MockOracleDatabaseImpl extends OracleDatabaseImplBase {
   }
 
   @Override
+  public void updateExascaleDbStorageVault(
+      UpdateExascaleDbStorageVaultRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateExascaleDbStorageVault, expected"
+                      + " %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void deleteExascaleDbStorageVault(
       DeleteExascaleDbStorageVaultRequest request, StreamObserver<Operation> responseObserver) {
     Object response = responses.poll();
@@ -1176,6 +1482,29 @@ public class MockOracleDatabaseImpl extends OracleDatabaseImplBase {
                       + " expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListDbSystemInitialStorageSizesResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listDbSystemComputePerformances(
+      ListDbSystemComputePerformancesRequest request,
+      StreamObserver<ListDbSystemComputePerformancesResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListDbSystemComputePerformancesResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListDbSystemComputePerformancesResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListDbSystemComputePerformances,"
+                      + " expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListDbSystemComputePerformancesResponse.class.getName(),
                   Exception.class.getName())));
     }
   }
@@ -1329,6 +1658,27 @@ public class MockOracleDatabaseImpl extends OracleDatabaseImplBase {
   }
 
   @Override
+  public void updateDbSystem(
+      UpdateDbSystemRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateDbSystem, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void deleteDbSystem(
       DeleteDbSystemRequest request, StreamObserver<Operation> responseObserver) {
     Object response = responses.poll();
@@ -1410,6 +1760,28 @@ public class MockOracleDatabaseImpl extends OracleDatabaseImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateGoldengateDeployment, expected %s"
+                      + " or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateGoldengateDeployment(
+      UpdateGoldengateDeploymentRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateGoldengateDeployment, expected %s"
                       + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
@@ -1544,6 +1916,28 @@ public class MockOracleDatabaseImpl extends OracleDatabaseImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateGoldengateConnection, expected %s"
+                      + " or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateGoldengateConnection(
+      UpdateGoldengateConnectionRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateGoldengateConnection, expected %s"
                       + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
@@ -1779,6 +2173,29 @@ public class MockOracleDatabaseImpl extends OracleDatabaseImplBase {
   }
 
   @Override
+  public void updateGoldengateConnectionAssignment(
+      UpdateGoldengateConnectionAssignmentRequest request,
+      StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateGoldengateConnectionAssignment,"
+                      + " expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void deleteGoldengateConnectionAssignment(
       DeleteGoldengateConnectionAssignmentRequest request,
       StreamObserver<Operation> responseObserver) {
@@ -1820,6 +2237,161 @@ public class MockOracleDatabaseImpl extends OracleDatabaseImplBase {
                       + " expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   TestGoldengateConnectionAssignmentResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listDatabaseConnections(
+      ListDatabaseConnectionsRequest request,
+      StreamObserver<ListDatabaseConnectionsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListDatabaseConnectionsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListDatabaseConnectionsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListDatabaseConnections, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListDatabaseConnectionsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getDatabaseConnection(
+      GetDatabaseConnectionRequest request, StreamObserver<DatabaseConnection> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof DatabaseConnection) {
+      requests.add(request);
+      responseObserver.onNext(((DatabaseConnection) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetDatabaseConnection, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  DatabaseConnection.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createDatabaseConnection(
+      CreateDatabaseConnectionRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateDatabaseConnection, expected %s"
+                      + " or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateDatabaseConnection(
+      UpdateDatabaseConnectionRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateDatabaseConnection, expected %s"
+                      + " or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteDatabaseConnection(
+      DeleteDatabaseConnectionRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteDatabaseConnection, expected %s"
+                      + " or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void testDatabaseConnection(
+      TestDatabaseConnectionRequest request,
+      StreamObserver<TestDatabaseConnectionResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof TestDatabaseConnectionResponse) {
+      requests.add(request);
+      responseObserver.onNext(((TestDatabaseConnectionResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method TestDatabaseConnection, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  TestDatabaseConnectionResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void executeSql(
+      ExecuteSqlRequest request, StreamObserver<ExecuteSqlResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ExecuteSqlResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ExecuteSqlResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ExecuteSql, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ExecuteSqlResponse.class.getName(),
                   Exception.class.getName())));
     }
   }

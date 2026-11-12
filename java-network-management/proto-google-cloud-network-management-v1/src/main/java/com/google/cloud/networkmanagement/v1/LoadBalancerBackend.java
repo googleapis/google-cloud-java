@@ -321,7 +321,15 @@ public final class LoadBalancerBackend extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * URI of a Compute Engine instance or network endpoint.
+   * URI of the backend instance or network endpoint.
+   * Format:
+   * * `projects/{project_id}/zones/{zone}/instances/{instance_id}` (instance)
+   * * `projects/{project_id}/zones/{zone}/networkEndpointGroups/{neg_id}`
+   * (zonal NEG)
+   * * `projects/{project_id}/regions/{region}/networkEndpointGroups/{neg_id}`
+   * (regional NEG)
+   * * `projects/{project_id}/global/networkEndpointGroups/{neg_id}` (global
+   * NEG)
    * </pre>
    *
    * <code>string uri = 2;</code>
@@ -345,7 +353,15 @@ public final class LoadBalancerBackend extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * URI of a Compute Engine instance or network endpoint.
+   * URI of the backend instance or network endpoint.
+   * Format:
+   * * `projects/{project_id}/zones/{zone}/instances/{instance_id}` (instance)
+   * * `projects/{project_id}/zones/{zone}/networkEndpointGroups/{neg_id}`
+   * (zonal NEG)
+   * * `projects/{project_id}/regions/{region}/networkEndpointGroups/{neg_id}`
+   * (regional NEG)
+   * * `projects/{project_id}/global/networkEndpointGroups/{neg_id}` (global
+   * NEG)
    * </pre>
    *
    * <code>string uri = 2;</code>
@@ -1107,7 +1123,15 @@ public final class LoadBalancerBackend extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * URI of a Compute Engine instance or network endpoint.
+     * URI of the backend instance or network endpoint.
+     * Format:
+     * * `projects/{project_id}/zones/{zone}/instances/{instance_id}` (instance)
+     * * `projects/{project_id}/zones/{zone}/networkEndpointGroups/{neg_id}`
+     * (zonal NEG)
+     * * `projects/{project_id}/regions/{region}/networkEndpointGroups/{neg_id}`
+     * (regional NEG)
+     * * `projects/{project_id}/global/networkEndpointGroups/{neg_id}` (global
+     * NEG)
      * </pre>
      *
      * <code>string uri = 2;</code>
@@ -1130,7 +1154,15 @@ public final class LoadBalancerBackend extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * URI of a Compute Engine instance or network endpoint.
+     * URI of the backend instance or network endpoint.
+     * Format:
+     * * `projects/{project_id}/zones/{zone}/instances/{instance_id}` (instance)
+     * * `projects/{project_id}/zones/{zone}/networkEndpointGroups/{neg_id}`
+     * (zonal NEG)
+     * * `projects/{project_id}/regions/{region}/networkEndpointGroups/{neg_id}`
+     * (regional NEG)
+     * * `projects/{project_id}/global/networkEndpointGroups/{neg_id}` (global
+     * NEG)
      * </pre>
      *
      * <code>string uri = 2;</code>
@@ -1153,7 +1185,15 @@ public final class LoadBalancerBackend extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * URI of a Compute Engine instance or network endpoint.
+     * URI of the backend instance or network endpoint.
+     * Format:
+     * * `projects/{project_id}/zones/{zone}/instances/{instance_id}` (instance)
+     * * `projects/{project_id}/zones/{zone}/networkEndpointGroups/{neg_id}`
+     * (zonal NEG)
+     * * `projects/{project_id}/regions/{region}/networkEndpointGroups/{neg_id}`
+     * (regional NEG)
+     * * `projects/{project_id}/global/networkEndpointGroups/{neg_id}` (global
+     * NEG)
      * </pre>
      *
      * <code>string uri = 2;</code>
@@ -1175,7 +1215,15 @@ public final class LoadBalancerBackend extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * URI of a Compute Engine instance or network endpoint.
+     * URI of the backend instance or network endpoint.
+     * Format:
+     * * `projects/{project_id}/zones/{zone}/instances/{instance_id}` (instance)
+     * * `projects/{project_id}/zones/{zone}/networkEndpointGroups/{neg_id}`
+     * (zonal NEG)
+     * * `projects/{project_id}/regions/{region}/networkEndpointGroups/{neg_id}`
+     * (regional NEG)
+     * * `projects/{project_id}/global/networkEndpointGroups/{neg_id}` (global
+     * NEG)
      * </pre>
      *
      * <code>string uri = 2;</code>
@@ -1193,7 +1241,15 @@ public final class LoadBalancerBackend extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * URI of a Compute Engine instance or network endpoint.
+     * URI of the backend instance or network endpoint.
+     * Format:
+     * * `projects/{project_id}/zones/{zone}/instances/{instance_id}` (instance)
+     * * `projects/{project_id}/zones/{zone}/networkEndpointGroups/{neg_id}`
+     * (zonal NEG)
+     * * `projects/{project_id}/regions/{region}/networkEndpointGroups/{neg_id}`
+     * (regional NEG)
+     * * `projects/{project_id}/global/networkEndpointGroups/{neg_id}` (global
+     * NEG)
      * </pre>
      *
      * <code>string uri = 2;</code>

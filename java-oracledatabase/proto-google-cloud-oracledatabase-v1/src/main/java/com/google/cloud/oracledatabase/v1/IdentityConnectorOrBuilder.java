@@ -85,4 +85,100 @@ public interface IdentityConnectorOrBuilder
    * @return The connectionState.
    */
   com.google.cloud.oracledatabase.v1.IdentityConnector.ConnectionState getConnectionState();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The resource name of the Workload Identity Pool
+   * configured for identity federation with OCI. This exact pool name can be
+   * used to configure VPC Service Controls (VPC-SC) egress rules.
+   * Format:
+   * `projects/{project}/locations/global/workloadIdentityPools/{workload_identity_pool}`
+   * </pre>
+   *
+   * <code>
+   * string workload_identity_pool = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The workloadIdentityPool.
+   */
+  java.lang.String getWorkloadIdentityPool();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The resource name of the Workload Identity Pool
+   * configured for identity federation with OCI. This exact pool name can be
+   * used to configure VPC Service Controls (VPC-SC) egress rules.
+   * Format:
+   * `projects/{project}/locations/global/workloadIdentityPools/{workload_identity_pool}`
+   * </pre>
+   *
+   * <code>
+   * string workload_identity_pool = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for workloadIdentityPool.
+   */
+  com.google.protobuf.ByteString getWorkloadIdentityPoolBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The unique partner identifier for the Identity Connector,
+   * used to establish secure cross-cloud access between Google Cloud and OCI.
+   * This corresponds directly to the ID of the OracleDbGcpIdentityConnector
+   * resource in Oracle Cloud Infrastructure (OCI).
+   * </pre>
+   *
+   * <code>string identity_connector_id = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The identityConnectorId.
+   */
+  java.lang.String getIdentityConnectorId();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The unique partner identifier for the Identity Connector,
+   * used to establish secure cross-cloud access between Google Cloud and OCI.
+   * This corresponds directly to the ID of the OracleDbGcpIdentityConnector
+   * resource in Oracle Cloud Infrastructure (OCI).
+   * </pre>
+   *
+   * <code>string identity_connector_id = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for identityConnectorId.
+   */
+  com.google.protobuf.ByteString getIdentityConnectorIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Additional information about the current lifecycle state.
+   * </pre>
+   *
+   * <code>string lifecycle_state_details = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The lifecycleStateDetails.
+   */
+  java.lang.String getLifecycleStateDetails();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Additional information about the current lifecycle state.
+   * </pre>
+   *
+   * <code>string lifecycle_state_details = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for lifecycleStateDetails.
+   */
+  com.google.protobuf.ByteString getLifecycleStateDetailsBytes();
 }

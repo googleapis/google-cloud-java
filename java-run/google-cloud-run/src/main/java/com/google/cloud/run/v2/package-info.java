@@ -138,6 +138,25 @@
  * }
  * }</pre>
  *
+ * <p>======================= SourceUploadClient =======================
+ *
+ * <p>Service Description: The Cloud Run Source Upload API allows you to upload source code to
+ * deploy Cloud Run resources.
+ *
+ * <p>Sample for SourceUploadClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (SourceUploadClient sourceUploadClient = SourceUploadClient.create()) {
+ *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+ *   UploadSourceResponse response = sourceUploadClient.uploadSource(parent);
+ * }
+ * }</pre>
+ *
  * <p>======================= TasksClient =======================
  *
  * <p>Service Description: Cloud Run Task Control Plane API.

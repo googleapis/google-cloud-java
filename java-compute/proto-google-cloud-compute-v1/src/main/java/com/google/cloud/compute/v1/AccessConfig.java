@@ -54,6 +54,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessage
 
   private AccessConfig() {
     externalIpv6_ = "";
+    ipCollection_ = "";
     kind_ = "";
     name_ = "";
     natIP_ = "";
@@ -567,6 +568,117 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessage
     return externalIpv6PrefixLength_;
   }
 
+  public static final int IP_COLLECTION_FIELD_NUMBER = 176818358;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object ipCollection_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Reference to the source of external IPv4 addresses,
+   * like a PublicDelegatedPrefix (PDP) for BYOIP.
+   * The PDP must support enhanced IPv4 allocations.
+   *
+   * Use one of the following formats to specify a PDP when allocating an
+   * external IPv4 address using BYOIP.
+   *
+   * -
+   * Full resource URL, as inhttps://www.googleapis.com/compute/v1/projects/projectId/regions/region/publicDelegatedPrefixes/pdp-name
+   * -
+   * Partial URL, as in
+   *
+   *
+   * - projects/projectId/regions/region/publicDelegatedPrefixes/pdp-name
+   * - regions/region/publicDelegatedPrefixes/pdp-name
+   * </pre>
+   *
+   * <code>optional string ip_collection = 176818358;</code>
+   *
+   * @return Whether the ipCollection field is set.
+   */
+  @java.lang.Override
+  public boolean hasIpCollection() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Reference to the source of external IPv4 addresses,
+   * like a PublicDelegatedPrefix (PDP) for BYOIP.
+   * The PDP must support enhanced IPv4 allocations.
+   *
+   * Use one of the following formats to specify a PDP when allocating an
+   * external IPv4 address using BYOIP.
+   *
+   * -
+   * Full resource URL, as inhttps://www.googleapis.com/compute/v1/projects/projectId/regions/region/publicDelegatedPrefixes/pdp-name
+   * -
+   * Partial URL, as in
+   *
+   *
+   * - projects/projectId/regions/region/publicDelegatedPrefixes/pdp-name
+   * - regions/region/publicDelegatedPrefixes/pdp-name
+   * </pre>
+   *
+   * <code>optional string ip_collection = 176818358;</code>
+   *
+   * @return The ipCollection.
+   */
+  @java.lang.Override
+  public java.lang.String getIpCollection() {
+    java.lang.Object ref = ipCollection_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      ipCollection_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Reference to the source of external IPv4 addresses,
+   * like a PublicDelegatedPrefix (PDP) for BYOIP.
+   * The PDP must support enhanced IPv4 allocations.
+   *
+   * Use one of the following formats to specify a PDP when allocating an
+   * external IPv4 address using BYOIP.
+   *
+   * -
+   * Full resource URL, as inhttps://www.googleapis.com/compute/v1/projects/projectId/regions/region/publicDelegatedPrefixes/pdp-name
+   * -
+   * Partial URL, as in
+   *
+   *
+   * - projects/projectId/regions/region/publicDelegatedPrefixes/pdp-name
+   * - regions/region/publicDelegatedPrefixes/pdp-name
+   * </pre>
+   *
+   * <code>optional string ip_collection = 176818358;</code>
+   *
+   * @return The bytes for ipCollection.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getIpCollectionBytes() {
+    java.lang.Object ref = ipCollection_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      ipCollection_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int KIND_FIELD_NUMBER = 3292052;
 
   @SuppressWarnings("serial")
@@ -585,7 +697,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasKind() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00000008) != 0);
   }
 
   /**
@@ -657,7 +769,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasName() {
-    return ((bitField0_ & 0x00000008) != 0);
+    return ((bitField0_ & 0x00000010) != 0);
   }
 
   /**
@@ -737,7 +849,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasNatIP() {
-    return ((bitField0_ & 0x00000010) != 0);
+    return ((bitField0_ & 0x00000020) != 0);
   }
 
   /**
@@ -825,7 +937,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasNetworkTier() {
-    return ((bitField0_ & 0x00000020) != 0);
+    return ((bitField0_ & 0x00000040) != 0);
   }
 
   /**
@@ -915,7 +1027,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasPublicPtrDomainName() {
-    return ((bitField0_ & 0x00000040) != 0);
+    return ((bitField0_ & 0x00000080) != 0);
   }
 
   /**
@@ -991,7 +1103,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasSecurityPolicy() {
-    return ((bitField0_ & 0x00000080) != 0);
+    return ((bitField0_ & 0x00000100) != 0);
   }
 
   /**
@@ -1064,7 +1176,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasSetPublicPtr() {
-    return ((bitField0_ & 0x00000100) != 0);
+    return ((bitField0_ & 0x00000200) != 0);
   }
 
   /**
@@ -1107,7 +1219,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasType() {
-    return ((bitField0_ & 0x00000200) != 0);
+    return ((bitField0_ & 0x00000400) != 0);
   }
 
   /**
@@ -1176,31 +1288,34 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessage
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 3292052, kind_);
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 3373707, name_);
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 3575610, type_);
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 117634556, natIP_);
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 171082513, securityPolicy_);
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 176818358, ipCollection_);
+    }
+    if (((bitField0_ & 0x00000080) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 316599167, publicPtrDomainName_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeInt32(425672143, externalIpv6PrefixLength_);
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 517397843, networkTier_);
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       output.writeBool(523870229, setPublicPtr_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
@@ -1215,22 +1330,25 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessage
     if (size != -1) return size;
 
     size = 0;
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(3292052, kind_);
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(3373707, name_);
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(3575610, type_);
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(117634556, natIP_);
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(171082513, securityPolicy_);
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(176818358, ipCollection_);
+    }
+    if (((bitField0_ & 0x00000080) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessage.computeStringSize(316599167, publicPtrDomainName_);
     }
@@ -1239,10 +1357,10 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.CodedOutputStream.computeInt32Size(
               425672143, externalIpv6PrefixLength_);
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(517397843, networkTier_);
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(523870229, setPublicPtr_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
@@ -1270,6 +1388,10 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessage
     if (hasExternalIpv6PrefixLength() != other.hasExternalIpv6PrefixLength()) return false;
     if (hasExternalIpv6PrefixLength()) {
       if (getExternalIpv6PrefixLength() != other.getExternalIpv6PrefixLength()) return false;
+    }
+    if (hasIpCollection() != other.hasIpCollection()) return false;
+    if (hasIpCollection()) {
+      if (!getIpCollection().equals(other.getIpCollection())) return false;
     }
     if (hasKind() != other.hasKind()) return false;
     if (hasKind()) {
@@ -1321,6 +1443,10 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessage
     if (hasExternalIpv6PrefixLength()) {
       hash = (37 * hash) + EXTERNAL_IPV6_PREFIX_LENGTH_FIELD_NUMBER;
       hash = (53 * hash) + getExternalIpv6PrefixLength();
+    }
+    if (hasIpCollection()) {
+      hash = (37 * hash) + IP_COLLECTION_FIELD_NUMBER;
+      hash = (53 * hash) + getIpCollection().hashCode();
     }
     if (hasKind()) {
       hash = (37 * hash) + KIND_FIELD_NUMBER;
@@ -1497,6 +1623,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessage
       bitField0_ = 0;
       externalIpv6_ = "";
       externalIpv6PrefixLength_ = 0;
+      ipCollection_ = "";
       kind_ = "";
       name_ = "";
       natIP_ = "";
@@ -1551,36 +1678,40 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessage
         to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.kind_ = kind_;
+        result.ipCollection_ = ipCollection_;
         to_bitField0_ |= 0x00000004;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
-        result.name_ = name_;
+        result.kind_ = kind_;
         to_bitField0_ |= 0x00000008;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
-        result.natIP_ = natIP_;
+        result.name_ = name_;
         to_bitField0_ |= 0x00000010;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.networkTier_ = networkTier_;
+        result.natIP_ = natIP_;
         to_bitField0_ |= 0x00000020;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
-        result.publicPtrDomainName_ = publicPtrDomainName_;
+        result.networkTier_ = networkTier_;
         to_bitField0_ |= 0x00000040;
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
-        result.securityPolicy_ = securityPolicy_;
+        result.publicPtrDomainName_ = publicPtrDomainName_;
         to_bitField0_ |= 0x00000080;
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
-        result.setPublicPtr_ = setPublicPtr_;
+        result.securityPolicy_ = securityPolicy_;
         to_bitField0_ |= 0x00000100;
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
-        result.type_ = type_;
+        result.setPublicPtr_ = setPublicPtr_;
         to_bitField0_ |= 0x00000200;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.type_ = type_;
+        to_bitField0_ |= 0x00000400;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1605,34 +1736,39 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessage
       if (other.hasExternalIpv6PrefixLength()) {
         setExternalIpv6PrefixLength(other.getExternalIpv6PrefixLength());
       }
+      if (other.hasIpCollection()) {
+        ipCollection_ = other.ipCollection_;
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
       if (other.hasKind()) {
         kind_ = other.kind_;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.hasName()) {
         name_ = other.name_;
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (other.hasNatIP()) {
         natIP_ = other.natIP_;
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (other.hasNetworkTier()) {
         networkTier_ = other.networkTier_;
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (other.hasPublicPtrDomainName()) {
         publicPtrDomainName_ = other.publicPtrDomainName_;
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       if (other.hasSecurityPolicy()) {
         securityPolicy_ = other.securityPolicy_;
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       if (other.hasSetPublicPtr()) {
@@ -1640,7 +1776,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasType()) {
         type_ = other.type_;
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1672,37 +1808,43 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessage
             case 26336418:
               {
                 kind_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 26336418
             case 26989658:
               {
                 name_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 26989658
             case 28604882:
               {
                 type_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 28604882
             case 941076450:
               {
                 natIP_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 941076450
             case 1368660106:
               {
                 securityPolicy_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 1368660106
+            case 1414546866:
+              {
+                ipCollection_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 1414546866
             case -1762173958:
               {
                 publicPtrDomainName_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case -1762173958
             case -889590152:
@@ -1714,13 +1856,13 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessage
             case -155784550:
               {
                 networkTier_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case -155784550
             case -104005464:
               {
                 setPublicPtr_ = input.readBool();
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case -104005464
             case -33337638:
@@ -1980,6 +2122,216 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
+    private java.lang.Object ipCollection_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Reference to the source of external IPv4 addresses,
+     * like a PublicDelegatedPrefix (PDP) for BYOIP.
+     * The PDP must support enhanced IPv4 allocations.
+     *
+     * Use one of the following formats to specify a PDP when allocating an
+     * external IPv4 address using BYOIP.
+     *
+     * -
+     * Full resource URL, as inhttps://www.googleapis.com/compute/v1/projects/projectId/regions/region/publicDelegatedPrefixes/pdp-name
+     * -
+     * Partial URL, as in
+     *
+     *
+     * - projects/projectId/regions/region/publicDelegatedPrefixes/pdp-name
+     * - regions/region/publicDelegatedPrefixes/pdp-name
+     * </pre>
+     *
+     * <code>optional string ip_collection = 176818358;</code>
+     *
+     * @return Whether the ipCollection field is set.
+     */
+    public boolean hasIpCollection() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Reference to the source of external IPv4 addresses,
+     * like a PublicDelegatedPrefix (PDP) for BYOIP.
+     * The PDP must support enhanced IPv4 allocations.
+     *
+     * Use one of the following formats to specify a PDP when allocating an
+     * external IPv4 address using BYOIP.
+     *
+     * -
+     * Full resource URL, as inhttps://www.googleapis.com/compute/v1/projects/projectId/regions/region/publicDelegatedPrefixes/pdp-name
+     * -
+     * Partial URL, as in
+     *
+     *
+     * - projects/projectId/regions/region/publicDelegatedPrefixes/pdp-name
+     * - regions/region/publicDelegatedPrefixes/pdp-name
+     * </pre>
+     *
+     * <code>optional string ip_collection = 176818358;</code>
+     *
+     * @return The ipCollection.
+     */
+    public java.lang.String getIpCollection() {
+      java.lang.Object ref = ipCollection_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        ipCollection_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Reference to the source of external IPv4 addresses,
+     * like a PublicDelegatedPrefix (PDP) for BYOIP.
+     * The PDP must support enhanced IPv4 allocations.
+     *
+     * Use one of the following formats to specify a PDP when allocating an
+     * external IPv4 address using BYOIP.
+     *
+     * -
+     * Full resource URL, as inhttps://www.googleapis.com/compute/v1/projects/projectId/regions/region/publicDelegatedPrefixes/pdp-name
+     * -
+     * Partial URL, as in
+     *
+     *
+     * - projects/projectId/regions/region/publicDelegatedPrefixes/pdp-name
+     * - regions/region/publicDelegatedPrefixes/pdp-name
+     * </pre>
+     *
+     * <code>optional string ip_collection = 176818358;</code>
+     *
+     * @return The bytes for ipCollection.
+     */
+    public com.google.protobuf.ByteString getIpCollectionBytes() {
+      java.lang.Object ref = ipCollection_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        ipCollection_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Reference to the source of external IPv4 addresses,
+     * like a PublicDelegatedPrefix (PDP) for BYOIP.
+     * The PDP must support enhanced IPv4 allocations.
+     *
+     * Use one of the following formats to specify a PDP when allocating an
+     * external IPv4 address using BYOIP.
+     *
+     * -
+     * Full resource URL, as inhttps://www.googleapis.com/compute/v1/projects/projectId/regions/region/publicDelegatedPrefixes/pdp-name
+     * -
+     * Partial URL, as in
+     *
+     *
+     * - projects/projectId/regions/region/publicDelegatedPrefixes/pdp-name
+     * - regions/region/publicDelegatedPrefixes/pdp-name
+     * </pre>
+     *
+     * <code>optional string ip_collection = 176818358;</code>
+     *
+     * @param value The ipCollection to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIpCollection(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ipCollection_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Reference to the source of external IPv4 addresses,
+     * like a PublicDelegatedPrefix (PDP) for BYOIP.
+     * The PDP must support enhanced IPv4 allocations.
+     *
+     * Use one of the following formats to specify a PDP when allocating an
+     * external IPv4 address using BYOIP.
+     *
+     * -
+     * Full resource URL, as inhttps://www.googleapis.com/compute/v1/projects/projectId/regions/region/publicDelegatedPrefixes/pdp-name
+     * -
+     * Partial URL, as in
+     *
+     *
+     * - projects/projectId/regions/region/publicDelegatedPrefixes/pdp-name
+     * - regions/region/publicDelegatedPrefixes/pdp-name
+     * </pre>
+     *
+     * <code>optional string ip_collection = 176818358;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearIpCollection() {
+      ipCollection_ = getDefaultInstance().getIpCollection();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Reference to the source of external IPv4 addresses,
+     * like a PublicDelegatedPrefix (PDP) for BYOIP.
+     * The PDP must support enhanced IPv4 allocations.
+     *
+     * Use one of the following formats to specify a PDP when allocating an
+     * external IPv4 address using BYOIP.
+     *
+     * -
+     * Full resource URL, as inhttps://www.googleapis.com/compute/v1/projects/projectId/regions/region/publicDelegatedPrefixes/pdp-name
+     * -
+     * Partial URL, as in
+     *
+     *
+     * - projects/projectId/regions/region/publicDelegatedPrefixes/pdp-name
+     * - regions/region/publicDelegatedPrefixes/pdp-name
+     * </pre>
+     *
+     * <code>optional string ip_collection = 176818358;</code>
+     *
+     * @param value The bytes for ipCollection to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIpCollectionBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ipCollection_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object kind_ = "";
 
     /**
@@ -1994,7 +2346,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessage
      * @return Whether the kind field is set.
      */
     public boolean hasKind() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
 
     /**
@@ -2060,7 +2412,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       kind_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2078,7 +2430,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearKind() {
       kind_ = getDefaultInstance().getKind();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -2101,7 +2453,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       kind_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2123,7 +2475,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessage
      * @return Whether the name field is set.
      */
     public boolean hasName() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
 
     /**
@@ -2198,7 +2550,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       name_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2219,7 +2571,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearName() {
       name_ = getDefaultInstance().getName();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -2245,7 +2597,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       name_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2269,7 +2621,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessage
      * @return Whether the natIP field is set.
      */
     public boolean hasNatIP() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
 
     /**
@@ -2350,7 +2702,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       natIP_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2373,7 +2725,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearNatIP() {
       natIP_ = getDefaultInstance().getNatIP();
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -2401,7 +2753,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       natIP_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2429,7 +2781,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessage
      * @return Whether the networkTier field is set.
      */
     public boolean hasNetworkTier() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
 
     /**
@@ -2522,7 +2874,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       networkTier_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2549,7 +2901,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearNetworkTier() {
       networkTier_ = getDefaultInstance().getNetworkTier();
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -2581,7 +2933,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       networkTier_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2603,7 +2955,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessage
      * @return Whether the publicPtrDomainName field is set.
      */
     public boolean hasPublicPtrDomainName() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
 
     /**
@@ -2678,7 +3030,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       publicPtrDomainName_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2699,7 +3051,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearPublicPtrDomainName() {
       publicPtrDomainName_ = getDefaultInstance().getPublicPtrDomainName();
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -2725,7 +3077,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       publicPtrDomainName_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2745,7 +3097,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessage
      * @return Whether the securityPolicy field is set.
      */
     public boolean hasSecurityPolicy() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
 
     /**
@@ -2814,7 +3166,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       securityPolicy_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2833,7 +3185,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearSecurityPolicy() {
       securityPolicy_ = getDefaultInstance().getSecurityPolicy();
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -2857,7 +3209,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       securityPolicy_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2881,7 +3233,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasSetPublicPtr() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
 
     /**
@@ -2923,7 +3275,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessage
     public Builder setSetPublicPtr(boolean value) {
 
       setPublicPtr_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2944,7 +3296,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearSetPublicPtr() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       setPublicPtr_ = false;
       onChanged();
       return this;
@@ -2966,7 +3318,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessage
      * @return Whether the type field is set.
      */
     public boolean hasType() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00000400) != 0);
     }
 
     /**
@@ -3038,7 +3390,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       type_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3058,7 +3410,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearType() {
       type_ = getDefaultInstance().getType();
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -3083,7 +3435,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       type_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }

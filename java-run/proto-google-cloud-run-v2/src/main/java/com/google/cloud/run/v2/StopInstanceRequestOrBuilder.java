@@ -31,9 +31,6 @@ public interface StopInstanceRequestOrBuilder
    *
    * <pre>
    * Required. The name of the Instance to stop.
-   * Format:
-   * `projects/{project}/locations/{location}/instances/{instance}`,
-   * where `{project}` can be project id or number.
    * </pre>
    *
    * <code>
@@ -49,9 +46,6 @@ public interface StopInstanceRequestOrBuilder
    *
    * <pre>
    * Required. The name of the Instance to stop.
-   * Format:
-   * `projects/{project}/locations/{location}/instances/{instance}`,
-   * where `{project}` can be project id or number.
    * </pre>
    *
    * <code>

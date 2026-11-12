@@ -50,7 +50,7 @@ public class LargeReadRowsResumptionStrategy<RowT>
       Logger.getLogger(LargeReadRowsResumptionStrategy.class.getName());
   private final RowAdapter<RowT> rowAdapter;
   private ByteString lastSuccessKey = ByteString.EMPTY;
-  // Number of rows processed excluding Marker row.
+  // Number of rows processed (including skipped large rows, excluding marker rows).
   private long numProcessed;
   private ByteString largeRowKey = ByteString.EMPTY;
   // we modify the original request in the resumption strategy regardless of how many times it has
@@ -93,6 +93,8 @@ public class LargeReadRowsResumptionStrategy<RowT>
     if (rowKeyExtracted != null) {
       LOGGER.warning("skipping large row " + rowKeyExtracted);
       this.largeRowKey = rowKeyExtracted;
+      // Skipped large rows would have been returned if not for system size limits, so they
+      // intentionally count towards the query's row limit.
       numProcessed = numProcessed + 1;
     }
     return throwable;
@@ -116,7 +118,7 @@ public class LargeReadRowsResumptionStrategy<RowT>
    * <p>This returns an updated request excluding all the rows keys & ranges till (including) {@link
    * #lastSuccessKey} & also excludes the last encountered large row key ({@link #largeRowKey}).
    * Also, this implementation takes care to update the row limit of the request to account for all
-   * of the received rows.
+   * of the received rows and skipped large rows.
    */
   @Override
   public ReadRowsRequest getResumeRequest(ReadRowsRequest originalRequest) {

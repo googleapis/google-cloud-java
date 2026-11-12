@@ -32,7 +32,7 @@ public interface AvailabilityForecastOptionsOrBuilder
    * <pre>
    * Optional. When specified, forecast result for the availability line item
    * will also include breakdowns by its targeting in
-   * [AvailabilityForecast.targetingCriteriaBreakdowns][].
+   * [AvailabilityForecast.targetingCriteriaBreakdowns][google.ads.admanager.v1.AvailabilityForecast.targeting_criteria_breakdowns].
    * </pre>
    *
    * <code>
@@ -49,7 +49,7 @@ public interface AvailabilityForecastOptionsOrBuilder
    * <pre>
    * Optional. When specified, forecast result for the availability line item
    * will also include breakdowns by its targeting in
-   * [AvailabilityForecast.targetingCriteriaBreakdowns][].
+   * [AvailabilityForecast.targetingCriteriaBreakdowns][google.ads.admanager.v1.AvailabilityForecast.targeting_criteria_breakdowns].
    * </pre>
    *
    * <code>
@@ -66,7 +66,7 @@ public interface AvailabilityForecastOptionsOrBuilder
    * <pre>
    * Optional. When specified, the forecast result for the availability line
    * item will also include contending line items in
-   * [AvailabilityForecast.contendingLineItems][].
+   * [AvailabilityForecast.contendingLineItems][google.ads.admanager.v1.AvailabilityForecast.contending_line_items].
    * </pre>
    *
    * <code>
@@ -83,7 +83,7 @@ public interface AvailabilityForecastOptionsOrBuilder
    * <pre>
    * Optional. When specified, the forecast result for the availability line
    * item will also include contending line items in
-   * [AvailabilityForecast.contendingLineItems][].
+   * [AvailabilityForecast.contendingLineItems][google.ads.admanager.v1.AvailabilityForecast.contending_line_items].
    * </pre>
    *
    * <code>

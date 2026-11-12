@@ -168,7 +168,7 @@ public enum EncryptionKeyRevocationAction implements com.google.protobuf.Protoco
   }
 
   public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-    return com.google.cloud.run.v2.VendorSettingsProto.getDescriptor().getEnumTypes().get(2);
+    return com.google.cloud.run.v2.VendorSettingsProto.getDescriptor().getEnumTypes().get(3);
   }
 
   private static final EncryptionKeyRevocationAction[] VALUES = values();

@@ -27,13 +27,10 @@ import com.google.common.annotations.VisibleForTesting;
 import com.google.common.util.concurrent.Futures;
 import com.google.common.util.concurrent.ListenableFuture;
 import com.google.spanner.v1.BatchWriteResponse;
+import com.google.spanner.v1.TransactionOptions.IsolationLevel;
 import io.opentelemetry.api.common.Attributes;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.Future;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.TimeoutException;
 import java.util.concurrent.atomic.AtomicInteger;
 import javax.annotation.Nullable;
 
@@ -84,18 +81,24 @@ class DatabaseClientImpl implements DatabaseClient {
     return this.multiplexedSessionDatabaseClient.getDialect();
   }
 
+  @Override
+  public IsolationLevel getDatabaseDefaultIsolationLevel() {
+    return this.multiplexedSessionDatabaseClient.getDatabaseDefaultIsolationLevel();
+  }
+
   private final AbstractLazyInitializer<StatementFactory> statementFactorySupplier =
       new AbstractLazyInitializer<StatementFactory>() {
         @Override
         protected StatementFactory initialize() {
-          try {
-            Dialect dialect = getDialectAsync().get(30, TimeUnit.SECONDS);
-            return new StatementFactory(dialect);
-          } catch (ExecutionException | TimeoutException e) {
-            throw SpannerExceptionFactory.asSpannerException(e);
-          } catch (InterruptedException e) {
-            throw SpannerExceptionFactory.propagateInterrupt(e);
-          }
+          return new StatementFactory(getDialect());
+        }
+
+        @Override
+        protected boolean shouldCacheError(Exception e) {
+          // getDialect() already decides whether to cache or retry dialect errors.
+          // Never cache errors here so that statementFactorySupplier always delegates
+          // the retry/caching lifecycle entirely to getDialect().
+          return false;
         }
       };
 
@@ -296,10 +299,6 @@ class DatabaseClientImpl implements DatabaseClient {
   @Override
   public long executePartitionedUpdate(final Statement stmt, final UpdateOption... options) {
     return multiplexedSessionDatabaseClient.executePartitionedUpdate(stmt, options);
-  }
-
-  private Future<Dialect> getDialectAsync() {
-    return multiplexedSessionDatabaseClient.getDialectAsync();
   }
 
   boolean isValid() {
