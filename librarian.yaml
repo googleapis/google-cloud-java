@@ -1214,6 +1214,9 @@ libraries:
       - path: google/cloud/compute/v1
         java:
           omit_common_resources: true
+    keep:
+      - google-cloud-compute/src/test/java/com/google/cloud/compute/v1/integration/BaseTest.java
+      - google-cloud-compute/src/test/java/com/google/cloud/compute/v1/integration/ITComputeGoldenSignals.java
     java:
       api_description_override: 'delivers virtual machines running in Google''s innovative data centers and worldwide fiber network. Compute Engine''s tooling and workflow support enable scaling from single instances to global, load-balanced cloud computing. Compute Engine''s VMs boot quickly, come with persistent disk storage, deliver consistent performance and are available in many configurations. '
       excluded_poms:
