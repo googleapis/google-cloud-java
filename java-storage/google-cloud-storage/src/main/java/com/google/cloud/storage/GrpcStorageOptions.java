@@ -334,7 +334,27 @@ public final class GrpcStorageOptions extends StorageOptions
           Collections.singletonList(InstantiatingGrpcChannelProvider.HardBoundTokenTypes.ALTS));
     }
 
-    if (!NoopGrpcInterceptorProvider.INSTANCE.equals(grpcInterceptorProvider)) {
+    StorageClientMetrics clientMetrics = getStorageClientMetrics();
+    if (clientMetrics != null) {
+      StorageGrpcMetricsInterceptor metricsInterceptor =
+          new StorageGrpcMetricsInterceptor(clientMetrics, getClock());
+      GrpcInterceptorProvider combinedProvider =
+          grpcInterceptorProvider == null
+                  || NoopGrpcInterceptorProvider.INSTANCE.equals(grpcInterceptorProvider)
+              ? () -> ImmutableList.of(metricsInterceptor)
+              : () -> {
+                List<ClientInterceptor> existing = grpcInterceptorProvider.getInterceptors();
+                if (existing == null || existing.isEmpty()) {
+                  return ImmutableList.of(metricsInterceptor);
+                }
+                return ImmutableList.<ClientInterceptor>builder()
+                    .addAll(existing)
+                    .add(metricsInterceptor)
+                    .build();
+              };
+      channelProviderBuilder.setInterceptorProvider(combinedProvider);
+    } else if (grpcInterceptorProvider != null
+        && !NoopGrpcInterceptorProvider.INSTANCE.equals(grpcInterceptorProvider)) {
       channelProviderBuilder.setInterceptorProvider(grpcInterceptorProvider);
     }
 
