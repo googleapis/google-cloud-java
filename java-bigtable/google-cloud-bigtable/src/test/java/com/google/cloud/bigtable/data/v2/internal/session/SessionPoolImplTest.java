@@ -304,6 +304,7 @@ public class SessionPoolImplTest {
             .setReason(CloseSessionRequest.CloseSessionReason.CLOSE_SESSION_REASON_USER)
             .setDescription("empty pool")
             .build());
+    assertThat(sessionPool.watchdog.isClosed()).isTrue();
     assertThat(sessionPool.awaitTerminated(Duration.ofMillis(100))).isTrue();
   }
 
@@ -330,6 +331,38 @@ public class SessionPoolImplTest {
             .build());
 
     assertThat(sessionPool.awaitTerminated(Duration.ofSeconds(10))).isTrue();
+  }
+
+  @Test
+  void closeStopsWatchdogAfterSessionsDrainWithoutAwaitTerminated()
+      throws InterruptedException, ExecutionException, TimeoutException {
+    // Callers such as TableBase.close() (invoked when an idle table is evicted from the
+    // per-table session cache in compat.Util.createSessionMap) only call sessionPool.close()
+    // and never call awaitTerminated(). Verify that the watchdog is still closed once all
+    // sessions finish draining so the closed pool is not retained by the shared timer.
+    sessionPool.start(OpenFakeSessionRequest.getDefaultInstance(), new Metadata());
+
+    VRpc<SessionFakeScriptedRequest, SessionFakeScriptedResponse> vrpc =
+        sessionPool.newCall(FakeDescriptor.SCRIPTED);
+    UnaryResponseFuture<SessionFakeScriptedResponse> resultFuture = new UnaryResponseFuture<>();
+    vrpc.start(
+        SessionFakeScriptedRequest.getDefaultInstance(),
+        VRpcCallContext.create(Deadline.after(10, TimeUnit.SECONDS), true, vrpcTracer),
+        resultFuture);
+    resultFuture.get(10, TimeUnit.SECONDS);
+    assertThat(sessionPool.watchdog.isClosed()).isFalse();
+
+    sessionPool.close(
+        CloseSessionRequest.newBuilder()
+            .setReason(CloseSessionRequest.CloseSessionReason.CLOSE_SESSION_REASON_USER)
+            .setDescription("evicted table pool")
+            .build());
+
+    long deadlineMs = System.currentTimeMillis() + 10_000;
+    while (!sessionPool.watchdog.isClosed() && System.currentTimeMillis() < deadlineMs) {
+      Thread.sleep(10);
+    }
+    assertThat(sessionPool.watchdog.isClosed()).isTrue();
   }
 
   @Test

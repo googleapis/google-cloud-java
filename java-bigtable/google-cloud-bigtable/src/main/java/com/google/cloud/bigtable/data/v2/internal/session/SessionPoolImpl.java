@@ -134,7 +134,7 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
   @GuardedBy("poolLock")
   private final Deque<PendingVRpc<?, ?>> pendingRpcs = new ArrayDeque<>();
 
-  private final Watchdog watchdog;
+  @VisibleForTesting final Watchdog watchdog;
 
   // Shared by every SessionImpl, PendingVRpc, Watchdog, AFE pruner, and retry-create-session in
   // this pool. One tick thread per Client (owned by Client); O(1) insert / O(1) cancel.
@@ -354,12 +354,15 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
         retryCreateSessionFuture.cancel();
         retryCreateSessionFuture = null;
       }
-      // Watchdog stays alive past close() so it can escalate any session that lingers in
-      // WAIT_SERVER_CLOSE during shutdown. awaitTerminated() takes ownership of closing it.
+      // Watchdog stays alive past close() while sessions drain so it can escalate any session
+      // that lingers in WAIT_SERVER_CLOSE during shutdown. Once all sessions have closed (or
+      // immediately if none exist), the watchdog is closed so callers that only invoke close()
+      // (such as TableBase.close() on cache eviction) don't leak the watchdog timer.
       sessions.close(req);
       // If the pool had no sessions, drainedFuture would never be completed by onSessionClose.
       if (sessions.getAllSessions().isEmpty()) {
         drainedFuture.complete(null);
+        watchdog.close();
       }
     } finally {
       poolLock.unlock();
@@ -640,6 +643,9 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
     poolLock.lock();
     try {
       handle.onSessionClosing();
+      if (poolState == PoolState.CLOSED) {
+        return;
+      }
 
       // If the session received refresh config or pool requires a replacement, keep the current
       // session and request a replacement.
@@ -688,9 +694,10 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
       // If the pool is closed then there is nothing else to do
       // dont need to create a replacement session and pending vRpcs get cleaned up in close()
       if (poolState == PoolState.CLOSED) {
-        // Signal awaitTerminated() once the last session has drained.
+        // Signal awaitTerminated() and stop the watchdog once the last session has drained.
         if (sessions.getAllSessions().isEmpty()) {
           drainedFuture.complete(null);
+          watchdog.close();
         }
         return;
       }
@@ -1207,6 +1214,13 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
           currentTimeout.cancel();
           currentTimeout = null;
         }
+      }
+    }
+
+    @VisibleForTesting
+    boolean isClosed() {
+      synchronized (scheduleLock) {
+        return watchdogClosed;
       }
     }
   }
