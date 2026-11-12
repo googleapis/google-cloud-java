@@ -61,9 +61,9 @@ import java.util.logging.Logger;
 public class Client implements AutoCloseable {
   private static final Logger logger = Logger.getLogger(Client.class.getName());
 
-  // Per-pool drain budget during close. One full watchdog tick (5 min) plus 1 min buffer; if a
-  // pool can't drain in that window, something is genuinely wrong on the server side and we give
-  // up on it so close() returns. The watchdog interval is what makes the worst case finite.
+  // Per-pool drain budget during close. One full session close timeout (5 min) plus 1 min buffer;
+  // if a pool can't drain in that window, something is genuinely wrong on the server side and we
+  // give up on it so close() returns.
   private static final Duration POOL_DRAIN_TIMEOUT = Duration.ofMinutes(6);
 
   public static final String USER_AGENT = "bigtable-java/" + Version.VERSION;
@@ -100,7 +100,7 @@ public class Client implements AutoCloseable {
   // blocked user callback from starving heartbeats, retry delays, or other vRPCs (which all run on
   // backgroundExecutor).
   private final Resource<Executor> userCallbackExecutor;
-  // Hashed-wheel timer for heartbeat / deadline / watchdog / retry scheduling. Built over
+  // Hashed-wheel timer for heartbeat / deadline / close-timeout / retry scheduling. Built over
   // backgroundExecutor (the timer's tick thread dispatches bodies onto it). Single tick thread per
   // Client, shared across every SessionPoolImpl.
   private final BigtableTimer sessionTimer;
@@ -290,14 +290,15 @@ public class Client implements AutoCloseable {
     // CLOSING → graceful CloseSessionRequest → WAIT_SERVER_CLOSE → CLOSED asynchronously.
     toClose.forEach(p -> p.close(closeReq));
 
-    // Phase 2: wait for sessions to drain. The pool's watchdog stays alive during this wait and
-    // escalates anything stuck in WAIT_SERVER_CLOSE longer than its tick interval (5 min). Once
-    // a pool's last session reaches CLOSED, drainedFuture completes and awaitTerminated returns.
+    // Phase 2: wait for sessions to drain. Each closing session arms a per-session closeTimeout
+    // (5 min) when entering WAIT_SERVER_CLOSE to force-close if the server never closes the stream.
+    // Once a pool's last session reaches CLOSED, drainedFuture completes and awaitTerminated
+    // returns.
     //
-    // Shared deadline across all pools: every pool's watchdog started at Phase 1 and ticks in
-    // parallel on the shared sessionTimer, so one watchdog interval is enough for the whole
-    // fleet to escalate. Bounding on a single deadline keeps close() finite even if multiple
-    // pools' force-close paths hang.
+    // Shared deadline across all pools: every closing session's closeTimeout started at Phase 1
+    // on the shared sessionTimer, so one closeTimeout interval is enough for the whole fleet to
+    // escalate. Bounding on a single deadline keeps close() finite even if multiple pools'
+    // force-close paths hang.
     long deadlineNanos = System.nanoTime() + POOL_DRAIN_TIMEOUT.toNanos();
     for (SessionPool<?> pool : toClose) {
       long remainingNanos = deadlineNanos - System.nanoTime();

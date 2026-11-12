@@ -188,8 +188,7 @@ public class SessionPoolImplTest {
             .setReason(CloseSessionRequest.CloseSessionReason.CLOSE_SESSION_REASON_USER)
             .setDescription("close session")
             .build());
-    // Wait for sessions to drain so the watchdog can be closed before testTimer.stop() races
-    // with its self-reschedule loop.
+    // Wait for sessions to drain before stopping the shared timer.
     sessionPool.awaitTerminated(Duration.ofSeconds(10));
     channelPool.close();
     // channel gets shutdown in channelPool.close()
@@ -334,13 +333,57 @@ public class SessionPoolImplTest {
   }
 
   @Test
+  @SuppressWarnings("GuardedBy")
+  void goAwayOnClosedPoolDoesNotCreateReplacementSession() throws Exception {
+    sessionPool.start(OpenFakeSessionRequest.getDefaultInstance(), new Metadata());
+
+    long deadlineNano = System.nanoTime() + TimeUnit.SECONDS.toNanos(5);
+    ReentrantLock poolLock = extractPoolLock(sessionPool);
+    while (System.nanoTime() < deadlineNano) {
+      poolLock.lock();
+      try {
+        if (sessionPool.sessions.getStats().getReadyCount() == 5) {
+          break;
+        }
+      } finally {
+        poolLock.unlock();
+      }
+      Thread.sleep(20);
+    }
+
+    SessionHandle handle;
+    poolLock.lock();
+    try {
+      handle = sessionPool.sessions.getAllSessions().iterator().next();
+    } finally {
+      poolLock.unlock();
+    }
+
+    int openCountBeforeClose = fakeService.getOpenRequestCount().get();
+    sessionPool.close(
+        CloseSessionRequest.newBuilder()
+            .setReason(CloseSessionRequest.CloseSessionReason.CLOSE_SESSION_REASON_USER)
+            .setDescription("closed before goaway")
+            .build());
+
+    java.lang.reflect.Method onSessionGoAway =
+        SessionPoolImpl.class.getDeclaredMethod(
+            "onSessionGoAway", SessionHandle.class, com.google.bigtable.v2.GoAwayResponse.class);
+    onSessionGoAway.setAccessible(true);
+    onSessionGoAway.invoke(
+        sessionPool, handle, com.google.bigtable.v2.GoAwayResponse.getDefaultInstance());
+
+    assertThat(fakeService.getOpenRequestCount().get()).isEqualTo(openCountBeforeClose);
+  }
+
+  @Test
   void closeCancelsInFlightVRpcAndDrains() throws InterruptedException {
     // Park the session-open response in the client interceptor so the vRPC cannot drain to a
     // ready session and sits in pendingRpcs. Then close the pool and verify (a) the queued
     // vRPC's listener gets a CANCELLED onClose with the "SessionPool closed:" description from
     // SessionPoolImpl.close()'s cancellation loop, (b) awaitTerminated returns true (the
     // OPENING session is driven to CLOSED by sessions.close(req), not parked until the
-    // watchdog tick), and (c) no second onClose arrives once the delayed responses finally
+    // closeTimeout tick), and (c) no second onClose arrives once the delayed responses finally
     // flush past the interceptor.
     SessionPool<OpenFakeSessionRequest> testSessionPool = null;
     try (ChannelPool delayedPool =
@@ -833,16 +876,16 @@ public class SessionPoolImplTest {
     @Test
     public void test() throws Exception {
       ArgumentCaptor<Runnable> runnableCaptor = ArgumentCaptor.forClass(Runnable.class);
-      // Filter out watchdog (5 min, exact), AFE prune (10 min, exact), and per-session open-timeout
-      // (OPEN_SESSION_TIMEOUT, exact) ticks. The retry-create-session site computes its delay
-      // against the real wall clock and the fake budget clock, so it can land anywhere from
-      // sub-second to a couple of penalty intervals. Match anything that isn't one of the fixed
-      // cadences.
-      long watchdogMs = Duration.ofMinutes(5).toMillis();
+      // Filter out close-timeout (5 min, exact), AFE prune (10 min, exact), and per-session
+      // open-timeout (OPEN_SESSION_TIMEOUT, exact) ticks. The retry-create-session site computes
+      // its delay against the real wall clock and the fake budget clock, so it can land anywhere
+      // from sub-second to a couple of penalty intervals. Match anything that isn't one of the
+      // fixed cadences.
+      long closeTimeoutMs = SessionImpl.CLOSE_SESSION_TIMEOUT.toMillis();
       long afePruneMs = SessionList.SESSION_LIST_PRUNE_INTERVAL.toMillis();
       long openTimeoutMs = SessionImpl.OPEN_SESSION_TIMEOUT.toMillis();
       LongPredicate isRetrySchedule =
-          d -> d > 0 && d != watchdogMs && d != afePruneMs && d != openTimeoutMs;
+          d -> d > 0 && d != closeTimeoutMs && d != afePruneMs && d != openTimeoutMs;
 
       // start the pool
       sessionPool.start(
@@ -913,7 +956,7 @@ public class SessionPoolImplTest {
     @BeforeEach
     void setUp() throws Exception {
       fakeClock = new FakeClock(Instant.now());
-      // Mock timer so the pool's watchdog / AFE-prune / create-session-retry ticks never fire on
+      // Mock timer so the pool's AFE-prune / create-session-retry ticks never fire on
       // their own -- the budget stays quiescent after the session lifecycle completes, leaving the
       // test thread as the only actor that touches it.
       mockTimer = mock(BigtableTimer.class, Mockito.RETURNS_DEEP_STUBS);
@@ -1019,7 +1062,7 @@ public class SessionPoolImplTest {
     @BeforeEach
     void setUp() {
       fakeClock = new FakeClock(Instant.now());
-      // Mock timer so the pool's watchdog / AFE-prune / create-session-retry ticks never fire on
+      // Mock timer so the pool's AFE-prune / create-session-retry ticks never fire on
       // their own, leaving the test thread as the only actor touching the budget.
       mockTimer = mock(BigtableTimer.class, Mockito.RETURNS_DEEP_STUBS);
 

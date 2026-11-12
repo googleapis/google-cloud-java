@@ -76,8 +76,6 @@ public interface Session {
 
   SessionState getState();
 
-  Instant getLastStateChange();
-
   OpenParams getOpenParams();
 
   boolean isOpenParamsUpdated();
