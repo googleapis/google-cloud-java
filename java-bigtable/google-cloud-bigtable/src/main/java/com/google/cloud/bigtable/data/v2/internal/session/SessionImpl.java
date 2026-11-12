@@ -981,7 +981,7 @@ public class SessionImpl implements Session, VRpcSessionApi {
     if (newState.phase >= SessionState.WAIT_SERVER_CLOSE.phase) {
       cancelHeartbeatTimeout();
     }
-    if (newState != SessionState.WAIT_SERVER_CLOSE) {
+    if (newState.phase > SessionState.WAIT_SERVER_CLOSE.phase) {
       cancelCloseTimeout();
     }
   }
