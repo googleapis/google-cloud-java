@@ -30,10 +30,13 @@ public interface GoldengateOggDeploymentOrBuilder
    *
    *
    * <pre>
-   * Optional. The Goldengate deployment console password in plain text.
+   * Optional. Input only. The Goldengate deployment console password in plain
+   * text.
    * </pre>
    *
-   * <code>string admin_password = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string admin_password = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
    *
    * @return Whether the adminPassword field is set.
    */
@@ -43,10 +46,13 @@ public interface GoldengateOggDeploymentOrBuilder
    *
    *
    * <pre>
-   * Optional. The Goldengate deployment console password in plain text.
+   * Optional. Input only. The Goldengate deployment console password in plain
+   * text.
    * </pre>
    *
-   * <code>string admin_password = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string admin_password = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
    *
    * @return The adminPassword.
    */
@@ -56,10 +62,13 @@ public interface GoldengateOggDeploymentOrBuilder
    *
    *
    * <pre>
-   * Optional. The Goldengate deployment console password in plain text.
+   * Optional. Input only. The Goldengate deployment console password in plain
+   * text.
    * </pre>
    *
-   * <code>string admin_password = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string admin_password = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
    *
    * @return The bytes for adminPassword.
    */

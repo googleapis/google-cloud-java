@@ -614,6 +614,54 @@ public interface SchedulingOrBuilder
    *
    *
    * <pre>
+   * Protection tier for the workload which specifies the workload
+   * expectations in the event of infrastructure failures at data center
+   * (e.g. power and/or cooling failures).
+   * Check the ProtectionTier enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string protection_tier = 503959432;</code>
+   *
+   * @return Whether the protectionTier field is set.
+   */
+  boolean hasProtectionTier();
+
+  /**
+   *
+   *
+   * <pre>
+   * Protection tier for the workload which specifies the workload
+   * expectations in the event of infrastructure failures at data center
+   * (e.g. power and/or cooling failures).
+   * Check the ProtectionTier enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string protection_tier = 503959432;</code>
+   *
+   * @return The protectionTier.
+   */
+  java.lang.String getProtectionTier();
+
+  /**
+   *
+   *
+   * <pre>
+   * Protection tier for the workload which specifies the workload
+   * expectations in the event of infrastructure failures at data center
+   * (e.g. power and/or cooling failures).
+   * Check the ProtectionTier enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string protection_tier = 503959432;</code>
+   *
+   * @return The bytes for protectionTier.
+   */
+  com.google.protobuf.ByteString getProtectionTierBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Specifies the provisioning model of the instance.
    * Check the ProvisioningModel enum for the list of possible values.
    * </pre>
@@ -656,7 +704,10 @@ public interface SchedulingOrBuilder
    *
    *
    * <pre>
-   * Default is false and there will be 120 seconds between GCE ACPI G2 Soft
+   * Defines whether GCE ACPI G2 Soft
+   * Off signal should be skipped during shutdown operation of VM.
+   *
+   * Default is false, meaning there will be 120 seconds between GCE ACPI G2 Soft
    * Off and ACPI G3 Mechanical
    * Off for Standard VMs and 30 seconds for Spot VMs.
    * </pre>
@@ -671,7 +722,10 @@ public interface SchedulingOrBuilder
    *
    *
    * <pre>
-   * Default is false and there will be 120 seconds between GCE ACPI G2 Soft
+   * Defines whether GCE ACPI G2 Soft
+   * Off signal should be skipped during shutdown operation of VM.
+   *
+   * Default is false, meaning there will be 120 seconds between GCE ACPI G2 Soft
    * Off and ACPI G3 Mechanical
    * Off for Standard VMs and 30 seconds for Spot VMs.
    * </pre>

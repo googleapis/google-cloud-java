@@ -128,6 +128,53 @@ public interface HttpRouteActionOrBuilder
    *
    *
    * <pre>
+   * Dynamic compression policy for this URL Map's route. Available only for
+   * Global EXTERNAL_MANAGED load balancer schemes.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.DynamicCompressionPolicy dynamic_compression_policy = 356626987;
+   * </code>
+   *
+   * @return Whether the dynamicCompressionPolicy field is set.
+   */
+  boolean hasDynamicCompressionPolicy();
+
+  /**
+   *
+   *
+   * <pre>
+   * Dynamic compression policy for this URL Map's route. Available only for
+   * Global EXTERNAL_MANAGED load balancer schemes.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.DynamicCompressionPolicy dynamic_compression_policy = 356626987;
+   * </code>
+   *
+   * @return The dynamicCompressionPolicy.
+   */
+  com.google.cloud.compute.v1.DynamicCompressionPolicy getDynamicCompressionPolicy();
+
+  /**
+   *
+   *
+   * <pre>
+   * Dynamic compression policy for this URL Map's route. Available only for
+   * Global EXTERNAL_MANAGED load balancer schemes.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.DynamicCompressionPolicy dynamic_compression_policy = 356626987;
+   * </code>
+   */
+  com.google.cloud.compute.v1.DynamicCompressionPolicyOrBuilder
+      getDynamicCompressionPolicyOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * The specification for fault injection introduced into traffic to test
    * the resiliency of clients to backend service failure. As part of fault
    * injection, when clients send requests to a backend service, delays can be
@@ -199,6 +246,59 @@ public interface HttpRouteActionOrBuilder
    * </code>
    */
   com.google.cloud.compute.v1.HttpFaultInjectionOrBuilder getFaultInjectionPolicyOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Image optimization policy for this URL Map's route. Available only for
+   * Global EXTERNAL_MANAGED load balancer schemes.
+   * Either Cloud CDN must be enabled on the backend service or backend bucket
+   * serving the route, or cache policy must be configured on the same route
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.ImageOptimizationPolicy image_optimization_policy = 86640480;
+   * </code>
+   *
+   * @return Whether the imageOptimizationPolicy field is set.
+   */
+  boolean hasImageOptimizationPolicy();
+
+  /**
+   *
+   *
+   * <pre>
+   * Image optimization policy for this URL Map's route. Available only for
+   * Global EXTERNAL_MANAGED load balancer schemes.
+   * Either Cloud CDN must be enabled on the backend service or backend bucket
+   * serving the route, or cache policy must be configured on the same route
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.ImageOptimizationPolicy image_optimization_policy = 86640480;
+   * </code>
+   *
+   * @return The imageOptimizationPolicy.
+   */
+  com.google.cloud.compute.v1.ImageOptimizationPolicy getImageOptimizationPolicy();
+
+  /**
+   *
+   *
+   * <pre>
+   * Image optimization policy for this URL Map's route. Available only for
+   * Global EXTERNAL_MANAGED load balancer schemes.
+   * Either Cloud CDN must be enabled on the backend service or backend bucket
+   * serving the route, or cache policy must be configured on the same route
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.ImageOptimizationPolicy image_optimization_policy = 86640480;
+   * </code>
+   */
+  com.google.cloud.compute.v1.ImageOptimizationPolicyOrBuilder
+      getImageOptimizationPolicyOrBuilder();
 
   /**
    *

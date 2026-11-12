@@ -81,6 +81,7 @@ import java.util.logging.Logger;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -1842,6 +1843,7 @@ public final class GcpManagedChannelTest {
     executorService.submit(() -> {}).get();
   }
 
+  @Ignore("Flaky test: b/579437259")
   @Test
   public void testUnresponsiveDetection() throws InterruptedException {
     // Watch debug messages.

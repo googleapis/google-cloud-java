@@ -18,6 +18,7 @@ package com.google.cloud.hypercomputecluster.v1beta;
 
 import static com.google.cloud.hypercomputecluster.v1beta.HypercomputeClusterClient.ListClustersPagedResponse;
 import static com.google.cloud.hypercomputecluster.v1beta.HypercomputeClusterClient.ListLocationsPagedResponse;
+import static com.google.cloud.hypercomputecluster.v1beta.HypercomputeClusterClient.ListNodesPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
@@ -170,6 +171,12 @@ public class HypercomputeClusterSettings extends ClientSettings<HypercomputeClus
   public OperationCallSettings<DeleteClusterRequest, Empty, OperationMetadata>
       deleteClusterOperationSettings() {
     return ((HypercomputeClusterStubSettings) getStubSettings()).deleteClusterOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listNodes. */
+  public PagedCallSettings<ListNodesRequest, ListNodesResponse, ListNodesPagedResponse>
+      listNodesSettings() {
+    return ((HypercomputeClusterStubSettings) getStubSettings()).listNodesSettings();
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -338,6 +345,12 @@ public class HypercomputeClusterSettings extends ClientSettings<HypercomputeClus
     public OperationCallSettings.Builder<DeleteClusterRequest, Empty, OperationMetadata>
         deleteClusterOperationSettings() {
       return getStubSettingsBuilder().deleteClusterOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listNodes. */
+    public PagedCallSettings.Builder<ListNodesRequest, ListNodesResponse, ListNodesPagedResponse>
+        listNodesSettings() {
+      return getStubSettingsBuilder().listNodesSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

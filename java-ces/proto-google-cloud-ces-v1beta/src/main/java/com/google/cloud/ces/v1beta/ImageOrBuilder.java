@@ -72,4 +72,30 @@ public interface ImageOrBuilder
    * @return The data.
    */
   com.google.protobuf.ByteString getData();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The alternative text for the image.
+   * </pre>
+   *
+   * <code>string alt_text = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The altText.
+   */
+  java.lang.String getAltText();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The alternative text for the image.
+   * </pre>
+   *
+   * <code>string alt_text = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for altText.
+   */
+  com.google.protobuf.ByteString getAltTextBytes();
 }

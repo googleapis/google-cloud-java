@@ -81,9 +81,6 @@ public final class StopInstanceRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Required. The name of the Instance to stop.
-   * Format:
-   * `projects/{project}/locations/{location}/instances/{instance}`,
-   * where `{project}` can be project id or number.
    * </pre>
    *
    * <code>
@@ -110,9 +107,6 @@ public final class StopInstanceRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Required. The name of the Instance to stop.
-   * Format:
-   * `projects/{project}/locations/{location}/instances/{instance}`,
-   * where `{project}` can be project id or number.
    * </pre>
    *
    * <code>
@@ -571,9 +565,6 @@ public final class StopInstanceRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The name of the Instance to stop.
-     * Format:
-     * `projects/{project}/locations/{location}/instances/{instance}`,
-     * where `{project}` can be project id or number.
      * </pre>
      *
      * <code>
@@ -599,9 +590,6 @@ public final class StopInstanceRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The name of the Instance to stop.
-     * Format:
-     * `projects/{project}/locations/{location}/instances/{instance}`,
-     * where `{project}` can be project id or number.
      * </pre>
      *
      * <code>
@@ -627,9 +615,6 @@ public final class StopInstanceRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The name of the Instance to stop.
-     * Format:
-     * `projects/{project}/locations/{location}/instances/{instance}`,
-     * where `{project}` can be project id or number.
      * </pre>
      *
      * <code>
@@ -654,9 +639,6 @@ public final class StopInstanceRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The name of the Instance to stop.
-     * Format:
-     * `projects/{project}/locations/{location}/instances/{instance}`,
-     * where `{project}` can be project id or number.
      * </pre>
      *
      * <code>
@@ -677,9 +659,6 @@ public final class StopInstanceRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The name of the Instance to stop.
-     * Format:
-     * `projects/{project}/locations/{location}/instances/{instance}`,
-     * where `{project}` can be project id or number.
      * </pre>
      *
      * <code>

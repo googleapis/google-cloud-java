@@ -24,7 +24,14 @@ package com.google.cloud.vectorsearch.v1;
  *
  *
  * <pre>
- * Defines a output fields struct for data in DataObject.
+ * Defines an output fields struct for data in DataObject.
+ *
+ * Output fields are opt-in. A search or query result contains only the data
+ * object name and ID, plus the fields listed here. If this message is unset or
+ * a list is empty, the corresponding part of the data object (`data`,
+ * `vectors` or metadata) is omitted from the result; it is not an indication
+ * that the stored data object is empty. Use `"*"` in a list to return all
+ * fields of that kind.
  * </pre>
  *
  * Protobuf type {@code google.cloud.vectorsearch.v1.OutputFields}
@@ -82,7 +89,8 @@ public final class OutputFields extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The fields from the data fields to include in the output.
+   * Optional. The fields from the data fields to include in the output. Use
+   * `"*"` to include all data fields. If empty, `data` is omitted from results.
    * </pre>
    *
    * <code>repeated string data_fields = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -97,7 +105,8 @@ public final class OutputFields extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The fields from the data fields to include in the output.
+   * Optional. The fields from the data fields to include in the output. Use
+   * `"*"` to include all data fields. If empty, `data` is omitted from results.
    * </pre>
    *
    * <code>repeated string data_fields = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -112,7 +121,8 @@ public final class OutputFields extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The fields from the data fields to include in the output.
+   * Optional. The fields from the data fields to include in the output. Use
+   * `"*"` to include all data fields. If empty, `data` is omitted from results.
    * </pre>
    *
    * <code>repeated string data_fields = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -128,7 +138,8 @@ public final class OutputFields extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The fields from the data fields to include in the output.
+   * Optional. The fields from the data fields to include in the output. Use
+   * `"*"` to include all data fields. If empty, `data` is omitted from results.
    * </pre>
    *
    * <code>repeated string data_fields = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -150,7 +161,9 @@ public final class OutputFields extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The fields from the vector fields to include in the output.
+   * Optional. The fields from the vector fields to include in the output. Use
+   * `"*"` to include all vector fields. If empty, `vectors` is omitted from
+   * results.
    * </pre>
    *
    * <code>repeated string vector_fields = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -165,7 +178,9 @@ public final class OutputFields extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The fields from the vector fields to include in the output.
+   * Optional. The fields from the vector fields to include in the output. Use
+   * `"*"` to include all vector fields. If empty, `vectors` is omitted from
+   * results.
    * </pre>
    *
    * <code>repeated string vector_fields = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -180,7 +195,9 @@ public final class OutputFields extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The fields from the vector fields to include in the output.
+   * Optional. The fields from the vector fields to include in the output. Use
+   * `"*"` to include all vector fields. If empty, `vectors` is omitted from
+   * results.
    * </pre>
    *
    * <code>repeated string vector_fields = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -196,7 +213,9 @@ public final class OutputFields extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The fields from the vector fields to include in the output.
+   * Optional. The fields from the vector fields to include in the output. Use
+   * `"*"` to include all vector fields. If empty, `vectors` is omitted from
+   * results.
    * </pre>
    *
    * <code>repeated string vector_fields = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -218,7 +237,9 @@ public final class OutputFields extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The fields from the DataObject metadata to include in the output.
+   * Optional. The DataObject metadata fields to include in the output:
+   * `create_time`, `update_time` and `etag`. Use `"*"` to include all metadata
+   * fields. If empty, these fields are omitted from results.
    * </pre>
    *
    * <code>repeated string metadata_fields = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -233,7 +254,9 @@ public final class OutputFields extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The fields from the DataObject metadata to include in the output.
+   * Optional. The DataObject metadata fields to include in the output:
+   * `create_time`, `update_time` and `etag`. Use `"*"` to include all metadata
+   * fields. If empty, these fields are omitted from results.
    * </pre>
    *
    * <code>repeated string metadata_fields = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -248,7 +271,9 @@ public final class OutputFields extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The fields from the DataObject metadata to include in the output.
+   * Optional. The DataObject metadata fields to include in the output:
+   * `create_time`, `update_time` and `etag`. Use `"*"` to include all metadata
+   * fields. If empty, these fields are omitted from results.
    * </pre>
    *
    * <code>repeated string metadata_fields = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -264,7 +289,9 @@ public final class OutputFields extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The fields from the DataObject metadata to include in the output.
+   * Optional. The DataObject metadata fields to include in the output:
+   * `create_time`, `update_time` and `etag`. Use `"*"` to include all metadata
+   * fields. If empty, these fields are omitted from results.
    * </pre>
    *
    * <code>repeated string metadata_fields = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -479,7 +506,14 @@ public final class OutputFields extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Defines a output fields struct for data in DataObject.
+   * Defines an output fields struct for data in DataObject.
+   *
+   * Output fields are opt-in. A search or query result contains only the data
+   * object name and ID, plus the fields listed here. If this message is unset or
+   * a list is empty, the corresponding part of the data object (`data`,
+   * `vectors` or metadata) is omitted from the result; it is not an indication
+   * that the stored data object is empty. Use `"*"` in a list to return all
+   * fields of that kind.
    * </pre>
    *
    * Protobuf type {@code google.cloud.vectorsearch.v1.OutputFields}
@@ -689,7 +723,8 @@ public final class OutputFields extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The fields from the data fields to include in the output.
+     * Optional. The fields from the data fields to include in the output. Use
+     * `"*"` to include all data fields. If empty, `data` is omitted from results.
      * </pre>
      *
      * <code>repeated string data_fields = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -705,7 +740,8 @@ public final class OutputFields extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The fields from the data fields to include in the output.
+     * Optional. The fields from the data fields to include in the output. Use
+     * `"*"` to include all data fields. If empty, `data` is omitted from results.
      * </pre>
      *
      * <code>repeated string data_fields = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -720,7 +756,8 @@ public final class OutputFields extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The fields from the data fields to include in the output.
+     * Optional. The fields from the data fields to include in the output. Use
+     * `"*"` to include all data fields. If empty, `data` is omitted from results.
      * </pre>
      *
      * <code>repeated string data_fields = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -736,7 +773,8 @@ public final class OutputFields extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The fields from the data fields to include in the output.
+     * Optional. The fields from the data fields to include in the output. Use
+     * `"*"` to include all data fields. If empty, `data` is omitted from results.
      * </pre>
      *
      * <code>repeated string data_fields = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -752,7 +790,8 @@ public final class OutputFields extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The fields from the data fields to include in the output.
+     * Optional. The fields from the data fields to include in the output. Use
+     * `"*"` to include all data fields. If empty, `data` is omitted from results.
      * </pre>
      *
      * <code>repeated string data_fields = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -776,7 +815,8 @@ public final class OutputFields extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The fields from the data fields to include in the output.
+     * Optional. The fields from the data fields to include in the output. Use
+     * `"*"` to include all data fields. If empty, `data` is omitted from results.
      * </pre>
      *
      * <code>repeated string data_fields = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -799,7 +839,8 @@ public final class OutputFields extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The fields from the data fields to include in the output.
+     * Optional. The fields from the data fields to include in the output. Use
+     * `"*"` to include all data fields. If empty, `data` is omitted from results.
      * </pre>
      *
      * <code>repeated string data_fields = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -819,7 +860,8 @@ public final class OutputFields extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The fields from the data fields to include in the output.
+     * Optional. The fields from the data fields to include in the output. Use
+     * `"*"` to include all data fields. If empty, `data` is omitted from results.
      * </pre>
      *
      * <code>repeated string data_fields = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -838,7 +880,8 @@ public final class OutputFields extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The fields from the data fields to include in the output.
+     * Optional. The fields from the data fields to include in the output. Use
+     * `"*"` to include all data fields. If empty, `data` is omitted from results.
      * </pre>
      *
      * <code>repeated string data_fields = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -872,7 +915,9 @@ public final class OutputFields extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The fields from the vector fields to include in the output.
+     * Optional. The fields from the vector fields to include in the output. Use
+     * `"*"` to include all vector fields. If empty, `vectors` is omitted from
+     * results.
      * </pre>
      *
      * <code>repeated string vector_fields = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -888,7 +933,9 @@ public final class OutputFields extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The fields from the vector fields to include in the output.
+     * Optional. The fields from the vector fields to include in the output. Use
+     * `"*"` to include all vector fields. If empty, `vectors` is omitted from
+     * results.
      * </pre>
      *
      * <code>repeated string vector_fields = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -903,7 +950,9 @@ public final class OutputFields extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The fields from the vector fields to include in the output.
+     * Optional. The fields from the vector fields to include in the output. Use
+     * `"*"` to include all vector fields. If empty, `vectors` is omitted from
+     * results.
      * </pre>
      *
      * <code>repeated string vector_fields = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -919,7 +968,9 @@ public final class OutputFields extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The fields from the vector fields to include in the output.
+     * Optional. The fields from the vector fields to include in the output. Use
+     * `"*"` to include all vector fields. If empty, `vectors` is omitted from
+     * results.
      * </pre>
      *
      * <code>repeated string vector_fields = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -935,7 +986,9 @@ public final class OutputFields extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The fields from the vector fields to include in the output.
+     * Optional. The fields from the vector fields to include in the output. Use
+     * `"*"` to include all vector fields. If empty, `vectors` is omitted from
+     * results.
      * </pre>
      *
      * <code>repeated string vector_fields = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -959,7 +1012,9 @@ public final class OutputFields extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The fields from the vector fields to include in the output.
+     * Optional. The fields from the vector fields to include in the output. Use
+     * `"*"` to include all vector fields. If empty, `vectors` is omitted from
+     * results.
      * </pre>
      *
      * <code>repeated string vector_fields = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -982,7 +1037,9 @@ public final class OutputFields extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The fields from the vector fields to include in the output.
+     * Optional. The fields from the vector fields to include in the output. Use
+     * `"*"` to include all vector fields. If empty, `vectors` is omitted from
+     * results.
      * </pre>
      *
      * <code>repeated string vector_fields = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1002,7 +1059,9 @@ public final class OutputFields extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The fields from the vector fields to include in the output.
+     * Optional. The fields from the vector fields to include in the output. Use
+     * `"*"` to include all vector fields. If empty, `vectors` is omitted from
+     * results.
      * </pre>
      *
      * <code>repeated string vector_fields = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1021,7 +1080,9 @@ public final class OutputFields extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The fields from the vector fields to include in the output.
+     * Optional. The fields from the vector fields to include in the output. Use
+     * `"*"` to include all vector fields. If empty, `vectors` is omitted from
+     * results.
      * </pre>
      *
      * <code>repeated string vector_fields = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1055,7 +1116,9 @@ public final class OutputFields extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The fields from the DataObject metadata to include in the output.
+     * Optional. The DataObject metadata fields to include in the output:
+     * `create_time`, `update_time` and `etag`. Use `"*"` to include all metadata
+     * fields. If empty, these fields are omitted from results.
      * </pre>
      *
      * <code>repeated string metadata_fields = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1071,7 +1134,9 @@ public final class OutputFields extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The fields from the DataObject metadata to include in the output.
+     * Optional. The DataObject metadata fields to include in the output:
+     * `create_time`, `update_time` and `etag`. Use `"*"` to include all metadata
+     * fields. If empty, these fields are omitted from results.
      * </pre>
      *
      * <code>repeated string metadata_fields = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1086,7 +1151,9 @@ public final class OutputFields extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The fields from the DataObject metadata to include in the output.
+     * Optional. The DataObject metadata fields to include in the output:
+     * `create_time`, `update_time` and `etag`. Use `"*"` to include all metadata
+     * fields. If empty, these fields are omitted from results.
      * </pre>
      *
      * <code>repeated string metadata_fields = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1102,7 +1169,9 @@ public final class OutputFields extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The fields from the DataObject metadata to include in the output.
+     * Optional. The DataObject metadata fields to include in the output:
+     * `create_time`, `update_time` and `etag`. Use `"*"` to include all metadata
+     * fields. If empty, these fields are omitted from results.
      * </pre>
      *
      * <code>repeated string metadata_fields = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1118,7 +1187,9 @@ public final class OutputFields extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The fields from the DataObject metadata to include in the output.
+     * Optional. The DataObject metadata fields to include in the output:
+     * `create_time`, `update_time` and `etag`. Use `"*"` to include all metadata
+     * fields. If empty, these fields are omitted from results.
      * </pre>
      *
      * <code>repeated string metadata_fields = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1142,7 +1213,9 @@ public final class OutputFields extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The fields from the DataObject metadata to include in the output.
+     * Optional. The DataObject metadata fields to include in the output:
+     * `create_time`, `update_time` and `etag`. Use `"*"` to include all metadata
+     * fields. If empty, these fields are omitted from results.
      * </pre>
      *
      * <code>repeated string metadata_fields = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1165,7 +1238,9 @@ public final class OutputFields extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The fields from the DataObject metadata to include in the output.
+     * Optional. The DataObject metadata fields to include in the output:
+     * `create_time`, `update_time` and `etag`. Use `"*"` to include all metadata
+     * fields. If empty, these fields are omitted from results.
      * </pre>
      *
      * <code>repeated string metadata_fields = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1185,7 +1260,9 @@ public final class OutputFields extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The fields from the DataObject metadata to include in the output.
+     * Optional. The DataObject metadata fields to include in the output:
+     * `create_time`, `update_time` and `etag`. Use `"*"` to include all metadata
+     * fields. If empty, these fields are omitted from results.
      * </pre>
      *
      * <code>repeated string metadata_fields = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1204,7 +1281,9 @@ public final class OutputFields extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The fields from the DataObject metadata to include in the output.
+     * Optional. The DataObject metadata fields to include in the output:
+     * `create_time`, `update_time` and `etag`. Use `"*"` to include all metadata
+     * fields. If empty, these fields are omitted from results.
      * </pre>
      *
      * <code>repeated string metadata_fields = 3 [(.google.api.field_behavior) = OPTIONAL];</code>

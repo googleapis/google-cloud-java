@@ -195,6 +195,59 @@ public final class OracleDatabaseGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.oracledatabase.v1.UpdateCloudExadataInfrastructureRequest,
+          com.google.longrunning.Operation>
+      getUpdateCloudExadataInfrastructureMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateCloudExadataInfrastructure",
+      requestType =
+          com.google.cloud.oracledatabase.v1.UpdateCloudExadataInfrastructureRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.oracledatabase.v1.UpdateCloudExadataInfrastructureRequest,
+          com.google.longrunning.Operation>
+      getUpdateCloudExadataInfrastructureMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.oracledatabase.v1.UpdateCloudExadataInfrastructureRequest,
+            com.google.longrunning.Operation>
+        getUpdateCloudExadataInfrastructureMethod;
+    if ((getUpdateCloudExadataInfrastructureMethod =
+            OracleDatabaseGrpc.getUpdateCloudExadataInfrastructureMethod)
+        == null) {
+      synchronized (OracleDatabaseGrpc.class) {
+        if ((getUpdateCloudExadataInfrastructureMethod =
+                OracleDatabaseGrpc.getUpdateCloudExadataInfrastructureMethod)
+            == null) {
+          OracleDatabaseGrpc.getUpdateCloudExadataInfrastructureMethod =
+              getUpdateCloudExadataInfrastructureMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.oracledatabase.v1.UpdateCloudExadataInfrastructureRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "UpdateCloudExadataInfrastructure"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.oracledatabase.v1
+                                  .UpdateCloudExadataInfrastructureRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new OracleDatabaseMethodDescriptorSupplier(
+                              "UpdateCloudExadataInfrastructure"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateCloudExadataInfrastructureMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.oracledatabase.v1.DeleteCloudExadataInfrastructureRequest,
           com.google.longrunning.Operation>
       getDeleteCloudExadataInfrastructureMethod;
@@ -450,6 +503,55 @@ public final class OracleDatabaseGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.oracledatabase.v1.UpdateCloudVmClusterRequest,
+          com.google.longrunning.Operation>
+      getUpdateCloudVmClusterMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateCloudVmCluster",
+      requestType = com.google.cloud.oracledatabase.v1.UpdateCloudVmClusterRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.oracledatabase.v1.UpdateCloudVmClusterRequest,
+          com.google.longrunning.Operation>
+      getUpdateCloudVmClusterMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.oracledatabase.v1.UpdateCloudVmClusterRequest,
+            com.google.longrunning.Operation>
+        getUpdateCloudVmClusterMethod;
+    if ((getUpdateCloudVmClusterMethod = OracleDatabaseGrpc.getUpdateCloudVmClusterMethod)
+        == null) {
+      synchronized (OracleDatabaseGrpc.class) {
+        if ((getUpdateCloudVmClusterMethod = OracleDatabaseGrpc.getUpdateCloudVmClusterMethod)
+            == null) {
+          OracleDatabaseGrpc.getUpdateCloudVmClusterMethod =
+              getUpdateCloudVmClusterMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.oracledatabase.v1.UpdateCloudVmClusterRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "UpdateCloudVmCluster"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.oracledatabase.v1.UpdateCloudVmClusterRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new OracleDatabaseMethodDescriptorSupplier("UpdateCloudVmCluster"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateCloudVmClusterMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.oracledatabase.v1.DeleteCloudVmClusterRequest,
           com.google.longrunning.Operation>
       getDeleteCloudVmClusterMethod;
@@ -499,6 +601,230 @@ public final class OracleDatabaseGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.oracledatabase.v1.EnableCloudVmClusterIdentityConnectorRequest,
+          com.google.longrunning.Operation>
+      getEnableCloudVmClusterIdentityConnectorMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "EnableCloudVmClusterIdentityConnector",
+      requestType =
+          com.google.cloud.oracledatabase.v1.EnableCloudVmClusterIdentityConnectorRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.oracledatabase.v1.EnableCloudVmClusterIdentityConnectorRequest,
+          com.google.longrunning.Operation>
+      getEnableCloudVmClusterIdentityConnectorMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.oracledatabase.v1.EnableCloudVmClusterIdentityConnectorRequest,
+            com.google.longrunning.Operation>
+        getEnableCloudVmClusterIdentityConnectorMethod;
+    if ((getEnableCloudVmClusterIdentityConnectorMethod =
+            OracleDatabaseGrpc.getEnableCloudVmClusterIdentityConnectorMethod)
+        == null) {
+      synchronized (OracleDatabaseGrpc.class) {
+        if ((getEnableCloudVmClusterIdentityConnectorMethod =
+                OracleDatabaseGrpc.getEnableCloudVmClusterIdentityConnectorMethod)
+            == null) {
+          OracleDatabaseGrpc.getEnableCloudVmClusterIdentityConnectorMethod =
+              getEnableCloudVmClusterIdentityConnectorMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.oracledatabase.v1
+                              .EnableCloudVmClusterIdentityConnectorRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              SERVICE_NAME, "EnableCloudVmClusterIdentityConnector"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.oracledatabase.v1
+                                  .EnableCloudVmClusterIdentityConnectorRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new OracleDatabaseMethodDescriptorSupplier(
+                              "EnableCloudVmClusterIdentityConnector"))
+                      .build();
+        }
+      }
+    }
+    return getEnableCloudVmClusterIdentityConnectorMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.oracledatabase.v1.DisableCloudVmClusterIdentityConnectorRequest,
+          com.google.longrunning.Operation>
+      getDisableCloudVmClusterIdentityConnectorMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DisableCloudVmClusterIdentityConnector",
+      requestType =
+          com.google.cloud.oracledatabase.v1.DisableCloudVmClusterIdentityConnectorRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.oracledatabase.v1.DisableCloudVmClusterIdentityConnectorRequest,
+          com.google.longrunning.Operation>
+      getDisableCloudVmClusterIdentityConnectorMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.oracledatabase.v1.DisableCloudVmClusterIdentityConnectorRequest,
+            com.google.longrunning.Operation>
+        getDisableCloudVmClusterIdentityConnectorMethod;
+    if ((getDisableCloudVmClusterIdentityConnectorMethod =
+            OracleDatabaseGrpc.getDisableCloudVmClusterIdentityConnectorMethod)
+        == null) {
+      synchronized (OracleDatabaseGrpc.class) {
+        if ((getDisableCloudVmClusterIdentityConnectorMethod =
+                OracleDatabaseGrpc.getDisableCloudVmClusterIdentityConnectorMethod)
+            == null) {
+          OracleDatabaseGrpc.getDisableCloudVmClusterIdentityConnectorMethod =
+              getDisableCloudVmClusterIdentityConnectorMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.oracledatabase.v1
+                              .DisableCloudVmClusterIdentityConnectorRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              SERVICE_NAME, "DisableCloudVmClusterIdentityConnector"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.oracledatabase.v1
+                                  .DisableCloudVmClusterIdentityConnectorRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new OracleDatabaseMethodDescriptorSupplier(
+                              "DisableCloudVmClusterIdentityConnector"))
+                      .build();
+        }
+      }
+    }
+    return getDisableCloudVmClusterIdentityConnectorMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.oracledatabase.v1.EnableExadbVmClusterIdentityConnectorRequest,
+          com.google.longrunning.Operation>
+      getEnableExadbVmClusterIdentityConnectorMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "EnableExadbVmClusterIdentityConnector",
+      requestType =
+          com.google.cloud.oracledatabase.v1.EnableExadbVmClusterIdentityConnectorRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.oracledatabase.v1.EnableExadbVmClusterIdentityConnectorRequest,
+          com.google.longrunning.Operation>
+      getEnableExadbVmClusterIdentityConnectorMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.oracledatabase.v1.EnableExadbVmClusterIdentityConnectorRequest,
+            com.google.longrunning.Operation>
+        getEnableExadbVmClusterIdentityConnectorMethod;
+    if ((getEnableExadbVmClusterIdentityConnectorMethod =
+            OracleDatabaseGrpc.getEnableExadbVmClusterIdentityConnectorMethod)
+        == null) {
+      synchronized (OracleDatabaseGrpc.class) {
+        if ((getEnableExadbVmClusterIdentityConnectorMethod =
+                OracleDatabaseGrpc.getEnableExadbVmClusterIdentityConnectorMethod)
+            == null) {
+          OracleDatabaseGrpc.getEnableExadbVmClusterIdentityConnectorMethod =
+              getEnableExadbVmClusterIdentityConnectorMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.oracledatabase.v1
+                              .EnableExadbVmClusterIdentityConnectorRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              SERVICE_NAME, "EnableExadbVmClusterIdentityConnector"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.oracledatabase.v1
+                                  .EnableExadbVmClusterIdentityConnectorRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new OracleDatabaseMethodDescriptorSupplier(
+                              "EnableExadbVmClusterIdentityConnector"))
+                      .build();
+        }
+      }
+    }
+    return getEnableExadbVmClusterIdentityConnectorMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.oracledatabase.v1.DisableExadbVmClusterIdentityConnectorRequest,
+          com.google.longrunning.Operation>
+      getDisableExadbVmClusterIdentityConnectorMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DisableExadbVmClusterIdentityConnector",
+      requestType =
+          com.google.cloud.oracledatabase.v1.DisableExadbVmClusterIdentityConnectorRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.oracledatabase.v1.DisableExadbVmClusterIdentityConnectorRequest,
+          com.google.longrunning.Operation>
+      getDisableExadbVmClusterIdentityConnectorMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.oracledatabase.v1.DisableExadbVmClusterIdentityConnectorRequest,
+            com.google.longrunning.Operation>
+        getDisableExadbVmClusterIdentityConnectorMethod;
+    if ((getDisableExadbVmClusterIdentityConnectorMethod =
+            OracleDatabaseGrpc.getDisableExadbVmClusterIdentityConnectorMethod)
+        == null) {
+      synchronized (OracleDatabaseGrpc.class) {
+        if ((getDisableExadbVmClusterIdentityConnectorMethod =
+                OracleDatabaseGrpc.getDisableExadbVmClusterIdentityConnectorMethod)
+            == null) {
+          OracleDatabaseGrpc.getDisableExadbVmClusterIdentityConnectorMethod =
+              getDisableExadbVmClusterIdentityConnectorMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.oracledatabase.v1
+                              .DisableExadbVmClusterIdentityConnectorRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              SERVICE_NAME, "DisableExadbVmClusterIdentityConnector"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.oracledatabase.v1
+                                  .DisableExadbVmClusterIdentityConnectorRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new OracleDatabaseMethodDescriptorSupplier(
+                              "DisableExadbVmClusterIdentityConnector"))
+                      .build();
+        }
+      }
+    }
+    return getDisableExadbVmClusterIdentityConnectorMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.oracledatabase.v1.ListEntitlementsRequest,
           com.google.cloud.oracledatabase.v1.ListEntitlementsResponse>
       getListEntitlementsMethod;
@@ -543,6 +869,54 @@ public final class OracleDatabaseGrpc {
       }
     }
     return getListEntitlementsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.oracledatabase.v1.ListFlexComponentsRequest,
+          com.google.cloud.oracledatabase.v1.ListFlexComponentsResponse>
+      getListFlexComponentsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListFlexComponents",
+      requestType = com.google.cloud.oracledatabase.v1.ListFlexComponentsRequest.class,
+      responseType = com.google.cloud.oracledatabase.v1.ListFlexComponentsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.oracledatabase.v1.ListFlexComponentsRequest,
+          com.google.cloud.oracledatabase.v1.ListFlexComponentsResponse>
+      getListFlexComponentsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.oracledatabase.v1.ListFlexComponentsRequest,
+            com.google.cloud.oracledatabase.v1.ListFlexComponentsResponse>
+        getListFlexComponentsMethod;
+    if ((getListFlexComponentsMethod = OracleDatabaseGrpc.getListFlexComponentsMethod) == null) {
+      synchronized (OracleDatabaseGrpc.class) {
+        if ((getListFlexComponentsMethod = OracleDatabaseGrpc.getListFlexComponentsMethod)
+            == null) {
+          OracleDatabaseGrpc.getListFlexComponentsMethod =
+              getListFlexComponentsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.oracledatabase.v1.ListFlexComponentsRequest,
+                          com.google.cloud.oracledatabase.v1.ListFlexComponentsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListFlexComponents"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.oracledatabase.v1.ListFlexComponentsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.oracledatabase.v1.ListFlexComponentsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new OracleDatabaseMethodDescriptorSupplier("ListFlexComponents"))
+                      .build();
+        }
+      }
+    }
+    return getListFlexComponentsMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<
@@ -1798,6 +2172,52 @@ public final class OracleDatabaseGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.oracledatabase.v1.UpdateOdbNetworkRequest,
+          com.google.longrunning.Operation>
+      getUpdateOdbNetworkMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateOdbNetwork",
+      requestType = com.google.cloud.oracledatabase.v1.UpdateOdbNetworkRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.oracledatabase.v1.UpdateOdbNetworkRequest,
+          com.google.longrunning.Operation>
+      getUpdateOdbNetworkMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.oracledatabase.v1.UpdateOdbNetworkRequest,
+            com.google.longrunning.Operation>
+        getUpdateOdbNetworkMethod;
+    if ((getUpdateOdbNetworkMethod = OracleDatabaseGrpc.getUpdateOdbNetworkMethod) == null) {
+      synchronized (OracleDatabaseGrpc.class) {
+        if ((getUpdateOdbNetworkMethod = OracleDatabaseGrpc.getUpdateOdbNetworkMethod) == null) {
+          OracleDatabaseGrpc.getUpdateOdbNetworkMethod =
+              getUpdateOdbNetworkMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.oracledatabase.v1.UpdateOdbNetworkRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateOdbNetwork"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.oracledatabase.v1.UpdateOdbNetworkRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new OracleDatabaseMethodDescriptorSupplier("UpdateOdbNetwork"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateOdbNetworkMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.oracledatabase.v1.DeleteOdbNetworkRequest,
           com.google.longrunning.Operation>
       getDeleteOdbNetworkMethod;
@@ -1983,6 +2403,52 @@ public final class OracleDatabaseGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.oracledatabase.v1.UpdateOdbSubnetRequest,
+          com.google.longrunning.Operation>
+      getUpdateOdbSubnetMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateOdbSubnet",
+      requestType = com.google.cloud.oracledatabase.v1.UpdateOdbSubnetRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.oracledatabase.v1.UpdateOdbSubnetRequest,
+          com.google.longrunning.Operation>
+      getUpdateOdbSubnetMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.oracledatabase.v1.UpdateOdbSubnetRequest,
+            com.google.longrunning.Operation>
+        getUpdateOdbSubnetMethod;
+    if ((getUpdateOdbSubnetMethod = OracleDatabaseGrpc.getUpdateOdbSubnetMethod) == null) {
+      synchronized (OracleDatabaseGrpc.class) {
+        if ((getUpdateOdbSubnetMethod = OracleDatabaseGrpc.getUpdateOdbSubnetMethod) == null) {
+          OracleDatabaseGrpc.getUpdateOdbSubnetMethod =
+              getUpdateOdbSubnetMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.oracledatabase.v1.UpdateOdbSubnetRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateOdbSubnet"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.oracledatabase.v1.UpdateOdbSubnetRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new OracleDatabaseMethodDescriptorSupplier("UpdateOdbSubnet"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateOdbSubnetMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.oracledatabase.v1.DeleteOdbSubnetRequest,
           com.google.longrunning.Operation>
       getDeleteOdbSubnetMethod;
@@ -2026,6 +2492,191 @@ public final class OracleDatabaseGrpc {
       }
     }
     return getDeleteOdbSubnetMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.oracledatabase.v1.ListOdbDnsZonesRequest,
+          com.google.cloud.oracledatabase.v1.ListOdbDnsZonesResponse>
+      getListOdbDnsZonesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListOdbDnsZones",
+      requestType = com.google.cloud.oracledatabase.v1.ListOdbDnsZonesRequest.class,
+      responseType = com.google.cloud.oracledatabase.v1.ListOdbDnsZonesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.oracledatabase.v1.ListOdbDnsZonesRequest,
+          com.google.cloud.oracledatabase.v1.ListOdbDnsZonesResponse>
+      getListOdbDnsZonesMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.oracledatabase.v1.ListOdbDnsZonesRequest,
+            com.google.cloud.oracledatabase.v1.ListOdbDnsZonesResponse>
+        getListOdbDnsZonesMethod;
+    if ((getListOdbDnsZonesMethod = OracleDatabaseGrpc.getListOdbDnsZonesMethod) == null) {
+      synchronized (OracleDatabaseGrpc.class) {
+        if ((getListOdbDnsZonesMethod = OracleDatabaseGrpc.getListOdbDnsZonesMethod) == null) {
+          OracleDatabaseGrpc.getListOdbDnsZonesMethod =
+              getListOdbDnsZonesMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.oracledatabase.v1.ListOdbDnsZonesRequest,
+                          com.google.cloud.oracledatabase.v1.ListOdbDnsZonesResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListOdbDnsZones"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.oracledatabase.v1.ListOdbDnsZonesRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.oracledatabase.v1.ListOdbDnsZonesResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new OracleDatabaseMethodDescriptorSupplier("ListOdbDnsZones"))
+                      .build();
+        }
+      }
+    }
+    return getListOdbDnsZonesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.oracledatabase.v1.GetOdbDnsZoneRequest,
+          com.google.cloud.oracledatabase.v1.OdbDnsZone>
+      getGetOdbDnsZoneMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetOdbDnsZone",
+      requestType = com.google.cloud.oracledatabase.v1.GetOdbDnsZoneRequest.class,
+      responseType = com.google.cloud.oracledatabase.v1.OdbDnsZone.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.oracledatabase.v1.GetOdbDnsZoneRequest,
+          com.google.cloud.oracledatabase.v1.OdbDnsZone>
+      getGetOdbDnsZoneMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.oracledatabase.v1.GetOdbDnsZoneRequest,
+            com.google.cloud.oracledatabase.v1.OdbDnsZone>
+        getGetOdbDnsZoneMethod;
+    if ((getGetOdbDnsZoneMethod = OracleDatabaseGrpc.getGetOdbDnsZoneMethod) == null) {
+      synchronized (OracleDatabaseGrpc.class) {
+        if ((getGetOdbDnsZoneMethod = OracleDatabaseGrpc.getGetOdbDnsZoneMethod) == null) {
+          OracleDatabaseGrpc.getGetOdbDnsZoneMethod =
+              getGetOdbDnsZoneMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.oracledatabase.v1.GetOdbDnsZoneRequest,
+                          com.google.cloud.oracledatabase.v1.OdbDnsZone>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetOdbDnsZone"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.oracledatabase.v1.GetOdbDnsZoneRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.oracledatabase.v1.OdbDnsZone.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new OracleDatabaseMethodDescriptorSupplier("GetOdbDnsZone"))
+                      .build();
+        }
+      }
+    }
+    return getGetOdbDnsZoneMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.oracledatabase.v1.CreateOdbDnsZoneRequest,
+          com.google.longrunning.Operation>
+      getCreateOdbDnsZoneMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateOdbDnsZone",
+      requestType = com.google.cloud.oracledatabase.v1.CreateOdbDnsZoneRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.oracledatabase.v1.CreateOdbDnsZoneRequest,
+          com.google.longrunning.Operation>
+      getCreateOdbDnsZoneMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.oracledatabase.v1.CreateOdbDnsZoneRequest,
+            com.google.longrunning.Operation>
+        getCreateOdbDnsZoneMethod;
+    if ((getCreateOdbDnsZoneMethod = OracleDatabaseGrpc.getCreateOdbDnsZoneMethod) == null) {
+      synchronized (OracleDatabaseGrpc.class) {
+        if ((getCreateOdbDnsZoneMethod = OracleDatabaseGrpc.getCreateOdbDnsZoneMethod) == null) {
+          OracleDatabaseGrpc.getCreateOdbDnsZoneMethod =
+              getCreateOdbDnsZoneMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.oracledatabase.v1.CreateOdbDnsZoneRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateOdbDnsZone"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.oracledatabase.v1.CreateOdbDnsZoneRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new OracleDatabaseMethodDescriptorSupplier("CreateOdbDnsZone"))
+                      .build();
+        }
+      }
+    }
+    return getCreateOdbDnsZoneMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.oracledatabase.v1.DeleteOdbDnsZoneRequest,
+          com.google.longrunning.Operation>
+      getDeleteOdbDnsZoneMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteOdbDnsZone",
+      requestType = com.google.cloud.oracledatabase.v1.DeleteOdbDnsZoneRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.oracledatabase.v1.DeleteOdbDnsZoneRequest,
+          com.google.longrunning.Operation>
+      getDeleteOdbDnsZoneMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.oracledatabase.v1.DeleteOdbDnsZoneRequest,
+            com.google.longrunning.Operation>
+        getDeleteOdbDnsZoneMethod;
+    if ((getDeleteOdbDnsZoneMethod = OracleDatabaseGrpc.getDeleteOdbDnsZoneMethod) == null) {
+      synchronized (OracleDatabaseGrpc.class) {
+        if ((getDeleteOdbDnsZoneMethod = OracleDatabaseGrpc.getDeleteOdbDnsZoneMethod) == null) {
+          OracleDatabaseGrpc.getDeleteOdbDnsZoneMethod =
+              getDeleteOdbDnsZoneMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.oracledatabase.v1.DeleteOdbDnsZoneRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteOdbDnsZone"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.oracledatabase.v1.DeleteOdbDnsZoneRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new OracleDatabaseMethodDescriptorSupplier("DeleteOdbDnsZone"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteOdbDnsZoneMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<
@@ -2482,6 +3133,58 @@ public final class OracleDatabaseGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.oracledatabase.v1.UpdateExascaleDbStorageVaultRequest,
+          com.google.longrunning.Operation>
+      getUpdateExascaleDbStorageVaultMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateExascaleDbStorageVault",
+      requestType = com.google.cloud.oracledatabase.v1.UpdateExascaleDbStorageVaultRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.oracledatabase.v1.UpdateExascaleDbStorageVaultRequest,
+          com.google.longrunning.Operation>
+      getUpdateExascaleDbStorageVaultMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.oracledatabase.v1.UpdateExascaleDbStorageVaultRequest,
+            com.google.longrunning.Operation>
+        getUpdateExascaleDbStorageVaultMethod;
+    if ((getUpdateExascaleDbStorageVaultMethod =
+            OracleDatabaseGrpc.getUpdateExascaleDbStorageVaultMethod)
+        == null) {
+      synchronized (OracleDatabaseGrpc.class) {
+        if ((getUpdateExascaleDbStorageVaultMethod =
+                OracleDatabaseGrpc.getUpdateExascaleDbStorageVaultMethod)
+            == null) {
+          OracleDatabaseGrpc.getUpdateExascaleDbStorageVaultMethod =
+              getUpdateExascaleDbStorageVaultMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.oracledatabase.v1.UpdateExascaleDbStorageVaultRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "UpdateExascaleDbStorageVault"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.oracledatabase.v1.UpdateExascaleDbStorageVaultRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new OracleDatabaseMethodDescriptorSupplier(
+                              "UpdateExascaleDbStorageVault"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateExascaleDbStorageVaultMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.oracledatabase.v1.DeleteExascaleDbStorageVaultRequest,
           com.google.longrunning.Operation>
       getDeleteExascaleDbStorageVaultMethod;
@@ -2586,6 +3289,61 @@ public final class OracleDatabaseGrpc {
       }
     }
     return getListDbSystemInitialStorageSizesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.oracledatabase.v1.ListDbSystemComputePerformancesRequest,
+          com.google.cloud.oracledatabase.v1.ListDbSystemComputePerformancesResponse>
+      getListDbSystemComputePerformancesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListDbSystemComputePerformances",
+      requestType = com.google.cloud.oracledatabase.v1.ListDbSystemComputePerformancesRequest.class,
+      responseType =
+          com.google.cloud.oracledatabase.v1.ListDbSystemComputePerformancesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.oracledatabase.v1.ListDbSystemComputePerformancesRequest,
+          com.google.cloud.oracledatabase.v1.ListDbSystemComputePerformancesResponse>
+      getListDbSystemComputePerformancesMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.oracledatabase.v1.ListDbSystemComputePerformancesRequest,
+            com.google.cloud.oracledatabase.v1.ListDbSystemComputePerformancesResponse>
+        getListDbSystemComputePerformancesMethod;
+    if ((getListDbSystemComputePerformancesMethod =
+            OracleDatabaseGrpc.getListDbSystemComputePerformancesMethod)
+        == null) {
+      synchronized (OracleDatabaseGrpc.class) {
+        if ((getListDbSystemComputePerformancesMethod =
+                OracleDatabaseGrpc.getListDbSystemComputePerformancesMethod)
+            == null) {
+          OracleDatabaseGrpc.getListDbSystemComputePerformancesMethod =
+              getListDbSystemComputePerformancesMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.oracledatabase.v1.ListDbSystemComputePerformancesRequest,
+                          com.google.cloud.oracledatabase.v1
+                              .ListDbSystemComputePerformancesResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListDbSystemComputePerformances"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.oracledatabase.v1
+                                  .ListDbSystemComputePerformancesRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.oracledatabase.v1
+                                  .ListDbSystemComputePerformancesResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new OracleDatabaseMethodDescriptorSupplier(
+                              "ListDbSystemComputePerformances"))
+                      .build();
+        }
+      }
+    }
+    return getListDbSystemComputePerformancesMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<
@@ -2921,6 +3679,52 @@ public final class OracleDatabaseGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.oracledatabase.v1.UpdateDbSystemRequest,
+          com.google.longrunning.Operation>
+      getUpdateDbSystemMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateDbSystem",
+      requestType = com.google.cloud.oracledatabase.v1.UpdateDbSystemRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.oracledatabase.v1.UpdateDbSystemRequest,
+          com.google.longrunning.Operation>
+      getUpdateDbSystemMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.oracledatabase.v1.UpdateDbSystemRequest,
+            com.google.longrunning.Operation>
+        getUpdateDbSystemMethod;
+    if ((getUpdateDbSystemMethod = OracleDatabaseGrpc.getUpdateDbSystemMethod) == null) {
+      synchronized (OracleDatabaseGrpc.class) {
+        if ((getUpdateDbSystemMethod = OracleDatabaseGrpc.getUpdateDbSystemMethod) == null) {
+          OracleDatabaseGrpc.getUpdateDbSystemMethod =
+              getUpdateDbSystemMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.oracledatabase.v1.UpdateDbSystemRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateDbSystem"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.oracledatabase.v1.UpdateDbSystemRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new OracleDatabaseMethodDescriptorSupplier("UpdateDbSystem"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateDbSystemMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.oracledatabase.v1.DeleteDbSystemRequest,
           com.google.longrunning.Operation>
       getDeleteDbSystemMethod;
@@ -3116,6 +3920,57 @@ public final class OracleDatabaseGrpc {
       }
     }
     return getCreateGoldengateDeploymentMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.oracledatabase.v1.UpdateGoldengateDeploymentRequest,
+          com.google.longrunning.Operation>
+      getUpdateGoldengateDeploymentMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateGoldengateDeployment",
+      requestType = com.google.cloud.oracledatabase.v1.UpdateGoldengateDeploymentRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.oracledatabase.v1.UpdateGoldengateDeploymentRequest,
+          com.google.longrunning.Operation>
+      getUpdateGoldengateDeploymentMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.oracledatabase.v1.UpdateGoldengateDeploymentRequest,
+            com.google.longrunning.Operation>
+        getUpdateGoldengateDeploymentMethod;
+    if ((getUpdateGoldengateDeploymentMethod =
+            OracleDatabaseGrpc.getUpdateGoldengateDeploymentMethod)
+        == null) {
+      synchronized (OracleDatabaseGrpc.class) {
+        if ((getUpdateGoldengateDeploymentMethod =
+                OracleDatabaseGrpc.getUpdateGoldengateDeploymentMethod)
+            == null) {
+          OracleDatabaseGrpc.getUpdateGoldengateDeploymentMethod =
+              getUpdateGoldengateDeploymentMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.oracledatabase.v1.UpdateGoldengateDeploymentRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "UpdateGoldengateDeployment"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.oracledatabase.v1.UpdateGoldengateDeploymentRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new OracleDatabaseMethodDescriptorSupplier("UpdateGoldengateDeployment"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateGoldengateDeploymentMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<
@@ -3419,6 +4274,57 @@ public final class OracleDatabaseGrpc {
       }
     }
     return getCreateGoldengateConnectionMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.oracledatabase.v1.UpdateGoldengateConnectionRequest,
+          com.google.longrunning.Operation>
+      getUpdateGoldengateConnectionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateGoldengateConnection",
+      requestType = com.google.cloud.oracledatabase.v1.UpdateGoldengateConnectionRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.oracledatabase.v1.UpdateGoldengateConnectionRequest,
+          com.google.longrunning.Operation>
+      getUpdateGoldengateConnectionMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.oracledatabase.v1.UpdateGoldengateConnectionRequest,
+            com.google.longrunning.Operation>
+        getUpdateGoldengateConnectionMethod;
+    if ((getUpdateGoldengateConnectionMethod =
+            OracleDatabaseGrpc.getUpdateGoldengateConnectionMethod)
+        == null) {
+      synchronized (OracleDatabaseGrpc.class) {
+        if ((getUpdateGoldengateConnectionMethod =
+                OracleDatabaseGrpc.getUpdateGoldengateConnectionMethod)
+            == null) {
+          OracleDatabaseGrpc.getUpdateGoldengateConnectionMethod =
+              getUpdateGoldengateConnectionMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.oracledatabase.v1.UpdateGoldengateConnectionRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "UpdateGoldengateConnection"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.oracledatabase.v1.UpdateGoldengateConnectionRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new OracleDatabaseMethodDescriptorSupplier("UpdateGoldengateConnection"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateGoldengateConnectionMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<
@@ -3962,6 +4868,62 @@ public final class OracleDatabaseGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.oracledatabase.v1.UpdateGoldengateConnectionAssignmentRequest,
+          com.google.longrunning.Operation>
+      getUpdateGoldengateConnectionAssignmentMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateGoldengateConnectionAssignment",
+      requestType =
+          com.google.cloud.oracledatabase.v1.UpdateGoldengateConnectionAssignmentRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.oracledatabase.v1.UpdateGoldengateConnectionAssignmentRequest,
+          com.google.longrunning.Operation>
+      getUpdateGoldengateConnectionAssignmentMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.oracledatabase.v1.UpdateGoldengateConnectionAssignmentRequest,
+            com.google.longrunning.Operation>
+        getUpdateGoldengateConnectionAssignmentMethod;
+    if ((getUpdateGoldengateConnectionAssignmentMethod =
+            OracleDatabaseGrpc.getUpdateGoldengateConnectionAssignmentMethod)
+        == null) {
+      synchronized (OracleDatabaseGrpc.class) {
+        if ((getUpdateGoldengateConnectionAssignmentMethod =
+                OracleDatabaseGrpc.getUpdateGoldengateConnectionAssignmentMethod)
+            == null) {
+          OracleDatabaseGrpc.getUpdateGoldengateConnectionAssignmentMethod =
+              getUpdateGoldengateConnectionAssignmentMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.oracledatabase.v1
+                              .UpdateGoldengateConnectionAssignmentRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              SERVICE_NAME, "UpdateGoldengateConnectionAssignment"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.oracledatabase.v1
+                                  .UpdateGoldengateConnectionAssignmentRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new OracleDatabaseMethodDescriptorSupplier(
+                              "UpdateGoldengateConnectionAssignment"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateGoldengateConnectionAssignmentMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.oracledatabase.v1.DeleteGoldengateConnectionAssignmentRequest,
           com.google.longrunning.Operation>
       getDeleteGoldengateConnectionAssignmentMethod;
@@ -4073,6 +5035,352 @@ public final class OracleDatabaseGrpc {
       }
     }
     return getTestGoldengateConnectionAssignmentMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.oracledatabase.v1.ListDatabaseConnectionsRequest,
+          com.google.cloud.oracledatabase.v1.ListDatabaseConnectionsResponse>
+      getListDatabaseConnectionsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListDatabaseConnections",
+      requestType = com.google.cloud.oracledatabase.v1.ListDatabaseConnectionsRequest.class,
+      responseType = com.google.cloud.oracledatabase.v1.ListDatabaseConnectionsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.oracledatabase.v1.ListDatabaseConnectionsRequest,
+          com.google.cloud.oracledatabase.v1.ListDatabaseConnectionsResponse>
+      getListDatabaseConnectionsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.oracledatabase.v1.ListDatabaseConnectionsRequest,
+            com.google.cloud.oracledatabase.v1.ListDatabaseConnectionsResponse>
+        getListDatabaseConnectionsMethod;
+    if ((getListDatabaseConnectionsMethod = OracleDatabaseGrpc.getListDatabaseConnectionsMethod)
+        == null) {
+      synchronized (OracleDatabaseGrpc.class) {
+        if ((getListDatabaseConnectionsMethod = OracleDatabaseGrpc.getListDatabaseConnectionsMethod)
+            == null) {
+          OracleDatabaseGrpc.getListDatabaseConnectionsMethod =
+              getListDatabaseConnectionsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.oracledatabase.v1.ListDatabaseConnectionsRequest,
+                          com.google.cloud.oracledatabase.v1.ListDatabaseConnectionsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListDatabaseConnections"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.oracledatabase.v1.ListDatabaseConnectionsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.oracledatabase.v1.ListDatabaseConnectionsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new OracleDatabaseMethodDescriptorSupplier("ListDatabaseConnections"))
+                      .build();
+        }
+      }
+    }
+    return getListDatabaseConnectionsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.oracledatabase.v1.GetDatabaseConnectionRequest,
+          com.google.cloud.oracledatabase.v1.DatabaseConnection>
+      getGetDatabaseConnectionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetDatabaseConnection",
+      requestType = com.google.cloud.oracledatabase.v1.GetDatabaseConnectionRequest.class,
+      responseType = com.google.cloud.oracledatabase.v1.DatabaseConnection.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.oracledatabase.v1.GetDatabaseConnectionRequest,
+          com.google.cloud.oracledatabase.v1.DatabaseConnection>
+      getGetDatabaseConnectionMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.oracledatabase.v1.GetDatabaseConnectionRequest,
+            com.google.cloud.oracledatabase.v1.DatabaseConnection>
+        getGetDatabaseConnectionMethod;
+    if ((getGetDatabaseConnectionMethod = OracleDatabaseGrpc.getGetDatabaseConnectionMethod)
+        == null) {
+      synchronized (OracleDatabaseGrpc.class) {
+        if ((getGetDatabaseConnectionMethod = OracleDatabaseGrpc.getGetDatabaseConnectionMethod)
+            == null) {
+          OracleDatabaseGrpc.getGetDatabaseConnectionMethod =
+              getGetDatabaseConnectionMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.oracledatabase.v1.GetDatabaseConnectionRequest,
+                          com.google.cloud.oracledatabase.v1.DatabaseConnection>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "GetDatabaseConnection"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.oracledatabase.v1.GetDatabaseConnectionRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.oracledatabase.v1.DatabaseConnection
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new OracleDatabaseMethodDescriptorSupplier("GetDatabaseConnection"))
+                      .build();
+        }
+      }
+    }
+    return getGetDatabaseConnectionMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.oracledatabase.v1.CreateDatabaseConnectionRequest,
+          com.google.longrunning.Operation>
+      getCreateDatabaseConnectionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateDatabaseConnection",
+      requestType = com.google.cloud.oracledatabase.v1.CreateDatabaseConnectionRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.oracledatabase.v1.CreateDatabaseConnectionRequest,
+          com.google.longrunning.Operation>
+      getCreateDatabaseConnectionMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.oracledatabase.v1.CreateDatabaseConnectionRequest,
+            com.google.longrunning.Operation>
+        getCreateDatabaseConnectionMethod;
+    if ((getCreateDatabaseConnectionMethod = OracleDatabaseGrpc.getCreateDatabaseConnectionMethod)
+        == null) {
+      synchronized (OracleDatabaseGrpc.class) {
+        if ((getCreateDatabaseConnectionMethod =
+                OracleDatabaseGrpc.getCreateDatabaseConnectionMethod)
+            == null) {
+          OracleDatabaseGrpc.getCreateDatabaseConnectionMethod =
+              getCreateDatabaseConnectionMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.oracledatabase.v1.CreateDatabaseConnectionRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "CreateDatabaseConnection"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.oracledatabase.v1.CreateDatabaseConnectionRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new OracleDatabaseMethodDescriptorSupplier("CreateDatabaseConnection"))
+                      .build();
+        }
+      }
+    }
+    return getCreateDatabaseConnectionMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.oracledatabase.v1.UpdateDatabaseConnectionRequest,
+          com.google.longrunning.Operation>
+      getUpdateDatabaseConnectionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateDatabaseConnection",
+      requestType = com.google.cloud.oracledatabase.v1.UpdateDatabaseConnectionRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.oracledatabase.v1.UpdateDatabaseConnectionRequest,
+          com.google.longrunning.Operation>
+      getUpdateDatabaseConnectionMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.oracledatabase.v1.UpdateDatabaseConnectionRequest,
+            com.google.longrunning.Operation>
+        getUpdateDatabaseConnectionMethod;
+    if ((getUpdateDatabaseConnectionMethod = OracleDatabaseGrpc.getUpdateDatabaseConnectionMethod)
+        == null) {
+      synchronized (OracleDatabaseGrpc.class) {
+        if ((getUpdateDatabaseConnectionMethod =
+                OracleDatabaseGrpc.getUpdateDatabaseConnectionMethod)
+            == null) {
+          OracleDatabaseGrpc.getUpdateDatabaseConnectionMethod =
+              getUpdateDatabaseConnectionMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.oracledatabase.v1.UpdateDatabaseConnectionRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "UpdateDatabaseConnection"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.oracledatabase.v1.UpdateDatabaseConnectionRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new OracleDatabaseMethodDescriptorSupplier("UpdateDatabaseConnection"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateDatabaseConnectionMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.oracledatabase.v1.DeleteDatabaseConnectionRequest,
+          com.google.longrunning.Operation>
+      getDeleteDatabaseConnectionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteDatabaseConnection",
+      requestType = com.google.cloud.oracledatabase.v1.DeleteDatabaseConnectionRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.oracledatabase.v1.DeleteDatabaseConnectionRequest,
+          com.google.longrunning.Operation>
+      getDeleteDatabaseConnectionMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.oracledatabase.v1.DeleteDatabaseConnectionRequest,
+            com.google.longrunning.Operation>
+        getDeleteDatabaseConnectionMethod;
+    if ((getDeleteDatabaseConnectionMethod = OracleDatabaseGrpc.getDeleteDatabaseConnectionMethod)
+        == null) {
+      synchronized (OracleDatabaseGrpc.class) {
+        if ((getDeleteDatabaseConnectionMethod =
+                OracleDatabaseGrpc.getDeleteDatabaseConnectionMethod)
+            == null) {
+          OracleDatabaseGrpc.getDeleteDatabaseConnectionMethod =
+              getDeleteDatabaseConnectionMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.oracledatabase.v1.DeleteDatabaseConnectionRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "DeleteDatabaseConnection"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.oracledatabase.v1.DeleteDatabaseConnectionRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new OracleDatabaseMethodDescriptorSupplier("DeleteDatabaseConnection"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteDatabaseConnectionMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.oracledatabase.v1.TestDatabaseConnectionRequest,
+          com.google.cloud.oracledatabase.v1.TestDatabaseConnectionResponse>
+      getTestDatabaseConnectionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "TestDatabaseConnection",
+      requestType = com.google.cloud.oracledatabase.v1.TestDatabaseConnectionRequest.class,
+      responseType = com.google.cloud.oracledatabase.v1.TestDatabaseConnectionResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.oracledatabase.v1.TestDatabaseConnectionRequest,
+          com.google.cloud.oracledatabase.v1.TestDatabaseConnectionResponse>
+      getTestDatabaseConnectionMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.oracledatabase.v1.TestDatabaseConnectionRequest,
+            com.google.cloud.oracledatabase.v1.TestDatabaseConnectionResponse>
+        getTestDatabaseConnectionMethod;
+    if ((getTestDatabaseConnectionMethod = OracleDatabaseGrpc.getTestDatabaseConnectionMethod)
+        == null) {
+      synchronized (OracleDatabaseGrpc.class) {
+        if ((getTestDatabaseConnectionMethod = OracleDatabaseGrpc.getTestDatabaseConnectionMethod)
+            == null) {
+          OracleDatabaseGrpc.getTestDatabaseConnectionMethod =
+              getTestDatabaseConnectionMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.oracledatabase.v1.TestDatabaseConnectionRequest,
+                          com.google.cloud.oracledatabase.v1.TestDatabaseConnectionResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "TestDatabaseConnection"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.oracledatabase.v1.TestDatabaseConnectionRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.oracledatabase.v1.TestDatabaseConnectionResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new OracleDatabaseMethodDescriptorSupplier("TestDatabaseConnection"))
+                      .build();
+        }
+      }
+    }
+    return getTestDatabaseConnectionMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.oracledatabase.v1.ExecuteSqlRequest,
+          com.google.cloud.oracledatabase.v1.ExecuteSqlResponse>
+      getExecuteSqlMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ExecuteSql",
+      requestType = com.google.cloud.oracledatabase.v1.ExecuteSqlRequest.class,
+      responseType = com.google.cloud.oracledatabase.v1.ExecuteSqlResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.oracledatabase.v1.ExecuteSqlRequest,
+          com.google.cloud.oracledatabase.v1.ExecuteSqlResponse>
+      getExecuteSqlMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.oracledatabase.v1.ExecuteSqlRequest,
+            com.google.cloud.oracledatabase.v1.ExecuteSqlResponse>
+        getExecuteSqlMethod;
+    if ((getExecuteSqlMethod = OracleDatabaseGrpc.getExecuteSqlMethod) == null) {
+      synchronized (OracleDatabaseGrpc.class) {
+        if ((getExecuteSqlMethod = OracleDatabaseGrpc.getExecuteSqlMethod) == null) {
+          OracleDatabaseGrpc.getExecuteSqlMethod =
+              getExecuteSqlMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.oracledatabase.v1.ExecuteSqlRequest,
+                          com.google.cloud.oracledatabase.v1.ExecuteSqlResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ExecuteSql"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.oracledatabase.v1.ExecuteSqlRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.oracledatabase.v1.ExecuteSqlResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(new OracleDatabaseMethodDescriptorSupplier("ExecuteSql"))
+                      .build();
+        }
+      }
+    }
+    return getExecuteSqlMethod;
   }
 
   /** Creates a new async stub that supports all call types for the service */
@@ -4187,6 +5495,20 @@ public final class OracleDatabaseGrpc {
      *
      *
      * <pre>
+     * Updates the parameters of a single Exadata Infrastructure.
+     * </pre>
+     */
+    default void updateCloudExadataInfrastructure(
+        com.google.cloud.oracledatabase.v1.UpdateCloudExadataInfrastructureRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateCloudExadataInfrastructureMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a single Exadata Infrastructure.
      * </pre>
      */
@@ -4260,6 +5582,20 @@ public final class OracleDatabaseGrpc {
      *
      *
      * <pre>
+     * Updates the parameters of a single Vm Cluster.
+     * </pre>
+     */
+    default void updateCloudVmCluster(
+        com.google.cloud.oracledatabase.v1.UpdateCloudVmClusterRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateCloudVmClusterMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a single VM Cluster.
      * </pre>
      */
@@ -4268,6 +5604,62 @@ public final class OracleDatabaseGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getDeleteCloudVmClusterMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Enables the Workload Identity Connector for a Cloud VM Cluster.
+     * </pre>
+     */
+    default void enableCloudVmClusterIdentityConnector(
+        com.google.cloud.oracledatabase.v1.EnableCloudVmClusterIdentityConnectorRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getEnableCloudVmClusterIdentityConnectorMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Disables the Workload Identity Connector for a Cloud VM Cluster.
+     * </pre>
+     */
+    default void disableCloudVmClusterIdentityConnector(
+        com.google.cloud.oracledatabase.v1.DisableCloudVmClusterIdentityConnectorRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDisableCloudVmClusterIdentityConnectorMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Enables the Workload Identity Connector for an Exadb VM Cluster.
+     * </pre>
+     */
+    default void enableExadbVmClusterIdentityConnector(
+        com.google.cloud.oracledatabase.v1.EnableExadbVmClusterIdentityConnectorRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getEnableExadbVmClusterIdentityConnectorMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Disables the Workload Identity Connector for an Exadb VM Cluster.
+     * </pre>
+     */
+    default void disableExadbVmClusterIdentityConnector(
+        com.google.cloud.oracledatabase.v1.DisableExadbVmClusterIdentityConnectorRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDisableExadbVmClusterIdentityConnectorMethod(), responseObserver);
     }
 
     /**
@@ -4283,6 +5675,21 @@ public final class OracleDatabaseGrpc {
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getListEntitlementsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Flex Components in a given project and location.
+     * </pre>
+     */
+    default void listFlexComponents(
+        com.google.cloud.oracledatabase.v1.ListFlexComponentsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.oracledatabase.v1.ListFlexComponentsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListFlexComponentsMethod(), responseObserver);
     }
 
     /**
@@ -4664,6 +6071,21 @@ public final class OracleDatabaseGrpc {
      *
      *
      * <pre>
+     * Updates the `labels` and `service_connectivity_config` of a single
+     * OdbNetwork.
+     * </pre>
+     */
+    default void updateOdbNetwork(
+        com.google.cloud.oracledatabase.v1.UpdateOdbNetworkRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateOdbNetworkMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a single ODB Network.
      * </pre>
      */
@@ -4722,6 +6144,20 @@ public final class OracleDatabaseGrpc {
      *
      *
      * <pre>
+     * Updates the `labels` of a single ODB Subnet.
+     * </pre>
+     */
+    default void updateOdbSubnet(
+        com.google.cloud.oracledatabase.v1.UpdateOdbSubnetRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateOdbSubnetMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a single ODB Subnet.
      * </pre>
      */
@@ -4730,6 +6166,64 @@ public final class OracleDatabaseGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getDeleteOdbSubnetMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all the ODB DNS Zones in a given ODB Network.
+     * </pre>
+     */
+    default void listOdbDnsZones(
+        com.google.cloud.oracledatabase.v1.ListOdbDnsZonesRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.oracledatabase.v1.ListOdbDnsZonesResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListOdbDnsZonesMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single ODB DNS Zone.
+     * </pre>
+     */
+    default void getOdbDnsZone(
+        com.google.cloud.oracledatabase.v1.GetOdbDnsZoneRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.oracledatabase.v1.OdbDnsZone>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetOdbDnsZoneMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new ODB DNS Zone in a given ODB Network.
+     * </pre>
+     */
+    default void createOdbDnsZone(
+        com.google.cloud.oracledatabase.v1.CreateOdbDnsZoneRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateOdbDnsZoneMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single ODB DNS Zone.
+     * </pre>
+     */
+    default void deleteOdbDnsZone(
+        com.google.cloud.oracledatabase.v1.DeleteOdbDnsZoneRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteOdbDnsZoneMethod(), responseObserver);
     }
 
     /**
@@ -4870,6 +6364,20 @@ public final class OracleDatabaseGrpc {
      *
      *
      * <pre>
+     * Updates the `labels` of a single ExascaleDbStorageVault.
+     * </pre>
+     */
+    default void updateExascaleDbStorageVault(
+        com.google.cloud.oracledatabase.v1.UpdateExascaleDbStorageVaultRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateExascaleDbStorageVaultMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a single ExascaleDB Storage Vault.
      * </pre>
      */
@@ -4895,6 +6403,23 @@ public final class OracleDatabaseGrpc {
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getListDbSystemInitialStorageSizesMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all the DbSystemComputePerformances for the given project and
+     * location.
+     * </pre>
+     */
+    default void listDbSystemComputePerformances(
+        com.google.cloud.oracledatabase.v1.ListDbSystemComputePerformancesRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.oracledatabase.v1.ListDbSystemComputePerformancesResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListDbSystemComputePerformancesMethod(), responseObserver);
     }
 
     /**
@@ -5005,6 +6530,20 @@ public final class OracleDatabaseGrpc {
      *
      *
      * <pre>
+     * Updates the `labels` of a single DbSystem.
+     * </pre>
+     */
+    default void updateDbSystem(
+        com.google.cloud.oracledatabase.v1.UpdateDbSystemRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateDbSystemMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a single DbSystem.
      * </pre>
      */
@@ -5058,6 +6597,20 @@ public final class OracleDatabaseGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getCreateGoldengateDeploymentMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the `labels` of a single GoldengateDeployment.
+     * </pre>
+     */
+    default void updateGoldengateDeployment(
+        com.google.cloud.oracledatabase.v1.UpdateGoldengateDeploymentRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateGoldengateDeploymentMethod(), responseObserver);
     }
 
     /**
@@ -5145,6 +6698,20 @@ public final class OracleDatabaseGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getCreateGoldengateConnectionMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the `labels` of a single GoldengateConnection.
+     * </pre>
+     */
+    default void updateGoldengateConnection(
+        com.google.cloud.oracledatabase.v1.UpdateGoldengateConnectionRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateGoldengateConnectionMethod(), responseObserver);
     }
 
     /**
@@ -5307,6 +6874,20 @@ public final class OracleDatabaseGrpc {
      *
      *
      * <pre>
+     * Updates the `labels` of a single GoldengateConnectionAssignment.
+     * </pre>
+     */
+    default void updateGoldengateConnectionAssignment(
+        com.google.cloud.oracledatabase.v1.UpdateGoldengateConnectionAssignmentRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateGoldengateConnectionAssignmentMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a single GoldengateConnectionAssignment.
      * </pre>
      */
@@ -5331,6 +6912,109 @@ public final class OracleDatabaseGrpc {
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getTestGoldengateConnectionAssignmentMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists DatabaseConnections in a given project and location.
+     * </pre>
+     */
+    default void listDatabaseConnections(
+        com.google.cloud.oracledatabase.v1.ListDatabaseConnectionsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.oracledatabase.v1.ListDatabaseConnectionsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListDatabaseConnectionsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single DatabaseConnection.
+     * </pre>
+     */
+    default void getDatabaseConnection(
+        com.google.cloud.oracledatabase.v1.GetDatabaseConnectionRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.oracledatabase.v1.DatabaseConnection>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetDatabaseConnectionMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new DatabaseConnection in a given project and location.
+     * </pre>
+     */
+    default void createDatabaseConnection(
+        com.google.cloud.oracledatabase.v1.CreateDatabaseConnectionRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateDatabaseConnectionMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single DatabaseConnection.
+     * </pre>
+     */
+    default void updateDatabaseConnection(
+        com.google.cloud.oracledatabase.v1.UpdateDatabaseConnectionRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateDatabaseConnectionMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single DatabaseConnection.
+     * </pre>
+     */
+    default void deleteDatabaseConnection(
+        com.google.cloud.oracledatabase.v1.DeleteDatabaseConnectionRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteDatabaseConnectionMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Tests connectivity of a DatabaseConnection.
+     * </pre>
+     */
+    default void testDatabaseConnection(
+        com.google.cloud.oracledatabase.v1.TestDatabaseConnectionRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.oracledatabase.v1.TestDatabaseConnectionResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getTestDatabaseConnectionMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Executes a SQL statement on a DatabaseConnection.
+     * </pre>
+     */
+    default void executeSql(
+        com.google.cloud.oracledatabase.v1.ExecuteSqlRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.oracledatabase.v1.ExecuteSqlResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getExecuteSqlMethod(), responseObserver);
     }
   }
 
@@ -5423,6 +7107,22 @@ public final class OracleDatabaseGrpc {
      *
      *
      * <pre>
+     * Updates the parameters of a single Exadata Infrastructure.
+     * </pre>
+     */
+    public void updateCloudExadataInfrastructure(
+        com.google.cloud.oracledatabase.v1.UpdateCloudExadataInfrastructureRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateCloudExadataInfrastructureMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a single Exadata Infrastructure.
      * </pre>
      */
@@ -5507,6 +7207,22 @@ public final class OracleDatabaseGrpc {
      *
      *
      * <pre>
+     * Updates the parameters of a single Vm Cluster.
+     * </pre>
+     */
+    public void updateCloudVmCluster(
+        com.google.cloud.oracledatabase.v1.UpdateCloudVmClusterRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateCloudVmClusterMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a single VM Cluster.
      * </pre>
      */
@@ -5515,6 +7231,70 @@ public final class OracleDatabaseGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteCloudVmClusterMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Enables the Workload Identity Connector for a Cloud VM Cluster.
+     * </pre>
+     */
+    public void enableCloudVmClusterIdentityConnector(
+        com.google.cloud.oracledatabase.v1.EnableCloudVmClusterIdentityConnectorRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getEnableCloudVmClusterIdentityConnectorMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Disables the Workload Identity Connector for a Cloud VM Cluster.
+     * </pre>
+     */
+    public void disableCloudVmClusterIdentityConnector(
+        com.google.cloud.oracledatabase.v1.DisableCloudVmClusterIdentityConnectorRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDisableCloudVmClusterIdentityConnectorMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Enables the Workload Identity Connector for an Exadb VM Cluster.
+     * </pre>
+     */
+    public void enableExadbVmClusterIdentityConnector(
+        com.google.cloud.oracledatabase.v1.EnableExadbVmClusterIdentityConnectorRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getEnableExadbVmClusterIdentityConnectorMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Disables the Workload Identity Connector for an Exadb VM Cluster.
+     * </pre>
+     */
+    public void disableExadbVmClusterIdentityConnector(
+        com.google.cloud.oracledatabase.v1.DisableExadbVmClusterIdentityConnectorRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDisableExadbVmClusterIdentityConnectorMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -5532,6 +7312,23 @@ public final class OracleDatabaseGrpc {
             responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListEntitlementsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Flex Components in a given project and location.
+     * </pre>
+     */
+    public void listFlexComponents(
+        com.google.cloud.oracledatabase.v1.ListFlexComponentsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.oracledatabase.v1.ListFlexComponentsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListFlexComponentsMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -5965,6 +7762,23 @@ public final class OracleDatabaseGrpc {
      *
      *
      * <pre>
+     * Updates the `labels` and `service_connectivity_config` of a single
+     * OdbNetwork.
+     * </pre>
+     */
+    public void updateOdbNetwork(
+        com.google.cloud.oracledatabase.v1.UpdateOdbNetworkRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateOdbNetworkMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a single ODB Network.
      * </pre>
      */
@@ -6031,6 +7845,22 @@ public final class OracleDatabaseGrpc {
      *
      *
      * <pre>
+     * Updates the `labels` of a single ODB Subnet.
+     * </pre>
+     */
+    public void updateOdbSubnet(
+        com.google.cloud.oracledatabase.v1.UpdateOdbSubnetRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateOdbSubnetMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a single ODB Subnet.
      * </pre>
      */
@@ -6039,6 +7869,72 @@ public final class OracleDatabaseGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteOdbSubnetMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all the ODB DNS Zones in a given ODB Network.
+     * </pre>
+     */
+    public void listOdbDnsZones(
+        com.google.cloud.oracledatabase.v1.ListOdbDnsZonesRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.oracledatabase.v1.ListOdbDnsZonesResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListOdbDnsZonesMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single ODB DNS Zone.
+     * </pre>
+     */
+    public void getOdbDnsZone(
+        com.google.cloud.oracledatabase.v1.GetOdbDnsZoneRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.oracledatabase.v1.OdbDnsZone>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetOdbDnsZoneMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new ODB DNS Zone in a given ODB Network.
+     * </pre>
+     */
+    public void createOdbDnsZone(
+        com.google.cloud.oracledatabase.v1.CreateOdbDnsZoneRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateOdbDnsZoneMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single ODB DNS Zone.
+     * </pre>
+     */
+    public void deleteOdbDnsZone(
+        com.google.cloud.oracledatabase.v1.DeleteOdbDnsZoneRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteOdbDnsZoneMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -6199,6 +8095,22 @@ public final class OracleDatabaseGrpc {
      *
      *
      * <pre>
+     * Updates the `labels` of a single ExascaleDbStorageVault.
+     * </pre>
+     */
+    public void updateExascaleDbStorageVault(
+        com.google.cloud.oracledatabase.v1.UpdateExascaleDbStorageVaultRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateExascaleDbStorageVaultMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a single ExascaleDB Storage Vault.
      * </pre>
      */
@@ -6226,6 +8138,25 @@ public final class OracleDatabaseGrpc {
             responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListDbSystemInitialStorageSizesMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all the DbSystemComputePerformances for the given project and
+     * location.
+     * </pre>
+     */
+    public void listDbSystemComputePerformances(
+        com.google.cloud.oracledatabase.v1.ListDbSystemComputePerformancesRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.oracledatabase.v1.ListDbSystemComputePerformancesResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListDbSystemComputePerformancesMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -6352,6 +8283,22 @@ public final class OracleDatabaseGrpc {
      *
      *
      * <pre>
+     * Updates the `labels` of a single DbSystem.
+     * </pre>
+     */
+    public void updateDbSystem(
+        com.google.cloud.oracledatabase.v1.UpdateDbSystemRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateDbSystemMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a single DbSystem.
      * </pre>
      */
@@ -6411,6 +8358,22 @@ public final class OracleDatabaseGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateGoldengateDeploymentMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the `labels` of a single GoldengateDeployment.
+     * </pre>
+     */
+    public void updateGoldengateDeployment(
+        com.google.cloud.oracledatabase.v1.UpdateGoldengateDeploymentRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateGoldengateDeploymentMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -6510,6 +8473,22 @@ public final class OracleDatabaseGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateGoldengateConnectionMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the `labels` of a single GoldengateConnection.
+     * </pre>
+     */
+    public void updateGoldengateConnection(
+        com.google.cloud.oracledatabase.v1.UpdateGoldengateConnectionRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateGoldengateConnectionMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -6694,6 +8673,22 @@ public final class OracleDatabaseGrpc {
      *
      *
      * <pre>
+     * Updates the `labels` of a single GoldengateConnectionAssignment.
+     * </pre>
+     */
+    public void updateGoldengateConnectionAssignment(
+        com.google.cloud.oracledatabase.v1.UpdateGoldengateConnectionAssignmentRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateGoldengateConnectionAssignmentMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a single GoldengateConnectionAssignment.
      * </pre>
      */
@@ -6722,6 +8717,122 @@ public final class OracleDatabaseGrpc {
           getChannel().newCall(getTestGoldengateConnectionAssignmentMethod(), getCallOptions()),
           request,
           responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists DatabaseConnections in a given project and location.
+     * </pre>
+     */
+    public void listDatabaseConnections(
+        com.google.cloud.oracledatabase.v1.ListDatabaseConnectionsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.oracledatabase.v1.ListDatabaseConnectionsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListDatabaseConnectionsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single DatabaseConnection.
+     * </pre>
+     */
+    public void getDatabaseConnection(
+        com.google.cloud.oracledatabase.v1.GetDatabaseConnectionRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.oracledatabase.v1.DatabaseConnection>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetDatabaseConnectionMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new DatabaseConnection in a given project and location.
+     * </pre>
+     */
+    public void createDatabaseConnection(
+        com.google.cloud.oracledatabase.v1.CreateDatabaseConnectionRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateDatabaseConnectionMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single DatabaseConnection.
+     * </pre>
+     */
+    public void updateDatabaseConnection(
+        com.google.cloud.oracledatabase.v1.UpdateDatabaseConnectionRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateDatabaseConnectionMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single DatabaseConnection.
+     * </pre>
+     */
+    public void deleteDatabaseConnection(
+        com.google.cloud.oracledatabase.v1.DeleteDatabaseConnectionRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteDatabaseConnectionMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Tests connectivity of a DatabaseConnection.
+     * </pre>
+     */
+    public void testDatabaseConnection(
+        com.google.cloud.oracledatabase.v1.TestDatabaseConnectionRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.oracledatabase.v1.TestDatabaseConnectionResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getTestDatabaseConnectionMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Executes a SQL statement on a DatabaseConnection.
+     * </pre>
+     */
+    public void executeSql(
+        com.google.cloud.oracledatabase.v1.ExecuteSqlRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.oracledatabase.v1.ExecuteSqlResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getExecuteSqlMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
@@ -6786,6 +8897,20 @@ public final class OracleDatabaseGrpc {
         throws io.grpc.StatusException {
       return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateCloudExadataInfrastructureMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single Exadata Infrastructure.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateCloudExadataInfrastructure(
+        com.google.cloud.oracledatabase.v1.UpdateCloudExadataInfrastructureRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateCloudExadataInfrastructureMethod(), getCallOptions(), request);
     }
 
     /**
@@ -6866,6 +8991,20 @@ public final class OracleDatabaseGrpc {
      *
      *
      * <pre>
+     * Updates the parameters of a single Vm Cluster.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateCloudVmCluster(
+        com.google.cloud.oracledatabase.v1.UpdateCloudVmClusterRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateCloudVmClusterMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a single VM Cluster.
      * </pre>
      */
@@ -6880,6 +9019,74 @@ public final class OracleDatabaseGrpc {
      *
      *
      * <pre>
+     * Enables the Workload Identity Connector for a Cloud VM Cluster.
+     * </pre>
+     */
+    public com.google.longrunning.Operation enableCloudVmClusterIdentityConnector(
+        com.google.cloud.oracledatabase.v1.EnableCloudVmClusterIdentityConnectorRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(),
+          getEnableCloudVmClusterIdentityConnectorMethod(),
+          getCallOptions(),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Disables the Workload Identity Connector for a Cloud VM Cluster.
+     * </pre>
+     */
+    public com.google.longrunning.Operation disableCloudVmClusterIdentityConnector(
+        com.google.cloud.oracledatabase.v1.DisableCloudVmClusterIdentityConnectorRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(),
+          getDisableCloudVmClusterIdentityConnectorMethod(),
+          getCallOptions(),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Enables the Workload Identity Connector for an Exadb VM Cluster.
+     * </pre>
+     */
+    public com.google.longrunning.Operation enableExadbVmClusterIdentityConnector(
+        com.google.cloud.oracledatabase.v1.EnableExadbVmClusterIdentityConnectorRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(),
+          getEnableExadbVmClusterIdentityConnectorMethod(),
+          getCallOptions(),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Disables the Workload Identity Connector for an Exadb VM Cluster.
+     * </pre>
+     */
+    public com.google.longrunning.Operation disableExadbVmClusterIdentityConnector(
+        com.google.cloud.oracledatabase.v1.DisableExadbVmClusterIdentityConnectorRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(),
+          getDisableExadbVmClusterIdentityConnectorMethod(),
+          getCallOptions(),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lists the entitlements in a given project.
      * </pre>
      */
@@ -6888,6 +9095,20 @@ public final class OracleDatabaseGrpc {
         throws io.grpc.StatusException {
       return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListEntitlementsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Flex Components in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.oracledatabase.v1.ListFlexComponentsResponse listFlexComponents(
+        com.google.cloud.oracledatabase.v1.ListFlexComponentsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListFlexComponentsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -7259,6 +9480,21 @@ public final class OracleDatabaseGrpc {
      *
      *
      * <pre>
+     * Updates the `labels` and `service_connectivity_config` of a single
+     * OdbNetwork.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateOdbNetwork(
+        com.google.cloud.oracledatabase.v1.UpdateOdbNetworkRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateOdbNetworkMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a single ODB Network.
      * </pre>
      */
@@ -7315,6 +9551,20 @@ public final class OracleDatabaseGrpc {
      *
      *
      * <pre>
+     * Updates the `labels` of a single ODB Subnet.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateOdbSubnet(
+        com.google.cloud.oracledatabase.v1.UpdateOdbSubnetRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateOdbSubnetMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a single ODB Subnet.
      * </pre>
      */
@@ -7323,6 +9573,62 @@ public final class OracleDatabaseGrpc {
         throws io.grpc.StatusException {
       return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteOdbSubnetMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all the ODB DNS Zones in a given ODB Network.
+     * </pre>
+     */
+    public com.google.cloud.oracledatabase.v1.ListOdbDnsZonesResponse listOdbDnsZones(
+        com.google.cloud.oracledatabase.v1.ListOdbDnsZonesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListOdbDnsZonesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single ODB DNS Zone.
+     * </pre>
+     */
+    public com.google.cloud.oracledatabase.v1.OdbDnsZone getOdbDnsZone(
+        com.google.cloud.oracledatabase.v1.GetOdbDnsZoneRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetOdbDnsZoneMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new ODB DNS Zone in a given ODB Network.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createOdbDnsZone(
+        com.google.cloud.oracledatabase.v1.CreateOdbDnsZoneRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateOdbDnsZoneMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single ODB DNS Zone.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteOdbDnsZone(
+        com.google.cloud.oracledatabase.v1.DeleteOdbDnsZoneRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteOdbDnsZoneMethod(), getCallOptions(), request);
     }
 
     /**
@@ -7459,6 +9765,20 @@ public final class OracleDatabaseGrpc {
      *
      *
      * <pre>
+     * Updates the `labels` of a single ExascaleDbStorageVault.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateExascaleDbStorageVault(
+        com.google.cloud.oracledatabase.v1.UpdateExascaleDbStorageVaultRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateExascaleDbStorageVaultMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a single ExascaleDB Storage Vault.
      * </pre>
      */
@@ -7483,6 +9803,22 @@ public final class OracleDatabaseGrpc {
             throws io.grpc.StatusException {
       return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListDbSystemInitialStorageSizesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all the DbSystemComputePerformances for the given project and
+     * location.
+     * </pre>
+     */
+    public com.google.cloud.oracledatabase.v1.ListDbSystemComputePerformancesResponse
+        listDbSystemComputePerformances(
+            com.google.cloud.oracledatabase.v1.ListDbSystemComputePerformancesRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListDbSystemComputePerformancesMethod(), getCallOptions(), request);
     }
 
     /**
@@ -7588,6 +9924,20 @@ public final class OracleDatabaseGrpc {
      *
      *
      * <pre>
+     * Updates the `labels` of a single DbSystem.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateDbSystem(
+        com.google.cloud.oracledatabase.v1.UpdateDbSystemRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateDbSystemMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a single DbSystem.
      * </pre>
      */
@@ -7639,6 +9989,20 @@ public final class OracleDatabaseGrpc {
         throws io.grpc.StatusException {
       return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateGoldengateDeploymentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the `labels` of a single GoldengateDeployment.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateGoldengateDeployment(
+        com.google.cloud.oracledatabase.v1.UpdateGoldengateDeploymentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateGoldengateDeploymentMethod(), getCallOptions(), request);
     }
 
     /**
@@ -7724,6 +10088,20 @@ public final class OracleDatabaseGrpc {
         throws io.grpc.StatusException {
       return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateGoldengateConnectionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the `labels` of a single GoldengateConnection.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateGoldengateConnection(
+        com.google.cloud.oracledatabase.v1.UpdateGoldengateConnectionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateGoldengateConnectionMethod(), getCallOptions(), request);
     }
 
     /**
@@ -7878,6 +10256,20 @@ public final class OracleDatabaseGrpc {
      *
      *
      * <pre>
+     * Updates the `labels` of a single GoldengateConnectionAssignment.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateGoldengateConnectionAssignment(
+        com.google.cloud.oracledatabase.v1.UpdateGoldengateConnectionAssignmentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateGoldengateConnectionAssignmentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a single GoldengateConnectionAssignment.
      * </pre>
      */
@@ -7901,6 +10293,105 @@ public final class OracleDatabaseGrpc {
             throws io.grpc.StatusException {
       return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getTestGoldengateConnectionAssignmentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists DatabaseConnections in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.oracledatabase.v1.ListDatabaseConnectionsResponse
+        listDatabaseConnections(
+            com.google.cloud.oracledatabase.v1.ListDatabaseConnectionsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListDatabaseConnectionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single DatabaseConnection.
+     * </pre>
+     */
+    public com.google.cloud.oracledatabase.v1.DatabaseConnection getDatabaseConnection(
+        com.google.cloud.oracledatabase.v1.GetDatabaseConnectionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetDatabaseConnectionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new DatabaseConnection in a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createDatabaseConnection(
+        com.google.cloud.oracledatabase.v1.CreateDatabaseConnectionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateDatabaseConnectionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single DatabaseConnection.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateDatabaseConnection(
+        com.google.cloud.oracledatabase.v1.UpdateDatabaseConnectionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateDatabaseConnectionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single DatabaseConnection.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteDatabaseConnection(
+        com.google.cloud.oracledatabase.v1.DeleteDatabaseConnectionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteDatabaseConnectionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Tests connectivity of a DatabaseConnection.
+     * </pre>
+     */
+    public com.google.cloud.oracledatabase.v1.TestDatabaseConnectionResponse testDatabaseConnection(
+        com.google.cloud.oracledatabase.v1.TestDatabaseConnectionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getTestDatabaseConnectionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Executes a SQL statement on a DatabaseConnection.
+     * </pre>
+     */
+    public com.google.cloud.oracledatabase.v1.ExecuteSqlResponse executeSql(
+        com.google.cloud.oracledatabase.v1.ExecuteSqlRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getExecuteSqlMethod(), getCallOptions(), request);
     }
   }
 
@@ -7962,6 +10453,19 @@ public final class OracleDatabaseGrpc {
         com.google.cloud.oracledatabase.v1.CreateCloudExadataInfrastructureRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateCloudExadataInfrastructureMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single Exadata Infrastructure.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateCloudExadataInfrastructure(
+        com.google.cloud.oracledatabase.v1.UpdateCloudExadataInfrastructureRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateCloudExadataInfrastructureMethod(), getCallOptions(), request);
     }
 
     /**
@@ -8037,6 +10541,19 @@ public final class OracleDatabaseGrpc {
      *
      *
      * <pre>
+     * Updates the parameters of a single Vm Cluster.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateCloudVmCluster(
+        com.google.cloud.oracledatabase.v1.UpdateCloudVmClusterRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateCloudVmClusterMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a single VM Cluster.
      * </pre>
      */
@@ -8050,6 +10567,70 @@ public final class OracleDatabaseGrpc {
      *
      *
      * <pre>
+     * Enables the Workload Identity Connector for a Cloud VM Cluster.
+     * </pre>
+     */
+    public com.google.longrunning.Operation enableCloudVmClusterIdentityConnector(
+        com.google.cloud.oracledatabase.v1.EnableCloudVmClusterIdentityConnectorRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(),
+          getEnableCloudVmClusterIdentityConnectorMethod(),
+          getCallOptions(),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Disables the Workload Identity Connector for a Cloud VM Cluster.
+     * </pre>
+     */
+    public com.google.longrunning.Operation disableCloudVmClusterIdentityConnector(
+        com.google.cloud.oracledatabase.v1.DisableCloudVmClusterIdentityConnectorRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(),
+          getDisableCloudVmClusterIdentityConnectorMethod(),
+          getCallOptions(),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Enables the Workload Identity Connector for an Exadb VM Cluster.
+     * </pre>
+     */
+    public com.google.longrunning.Operation enableExadbVmClusterIdentityConnector(
+        com.google.cloud.oracledatabase.v1.EnableExadbVmClusterIdentityConnectorRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(),
+          getEnableExadbVmClusterIdentityConnectorMethod(),
+          getCallOptions(),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Disables the Workload Identity Connector for an Exadb VM Cluster.
+     * </pre>
+     */
+    public com.google.longrunning.Operation disableExadbVmClusterIdentityConnector(
+        com.google.cloud.oracledatabase.v1.DisableExadbVmClusterIdentityConnectorRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(),
+          getDisableExadbVmClusterIdentityConnectorMethod(),
+          getCallOptions(),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lists the entitlements in a given project.
      * </pre>
      */
@@ -8057,6 +10638,19 @@ public final class OracleDatabaseGrpc {
         com.google.cloud.oracledatabase.v1.ListEntitlementsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListEntitlementsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Flex Components in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.oracledatabase.v1.ListFlexComponentsResponse listFlexComponents(
+        com.google.cloud.oracledatabase.v1.ListFlexComponentsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListFlexComponentsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -8403,6 +10997,20 @@ public final class OracleDatabaseGrpc {
      *
      *
      * <pre>
+     * Updates the `labels` and `service_connectivity_config` of a single
+     * OdbNetwork.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateOdbNetwork(
+        com.google.cloud.oracledatabase.v1.UpdateOdbNetworkRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateOdbNetworkMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a single ODB Network.
      * </pre>
      */
@@ -8455,6 +11063,19 @@ public final class OracleDatabaseGrpc {
      *
      *
      * <pre>
+     * Updates the `labels` of a single ODB Subnet.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateOdbSubnet(
+        com.google.cloud.oracledatabase.v1.UpdateOdbSubnetRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateOdbSubnetMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a single ODB Subnet.
      * </pre>
      */
@@ -8462,6 +11083,58 @@ public final class OracleDatabaseGrpc {
         com.google.cloud.oracledatabase.v1.DeleteOdbSubnetRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteOdbSubnetMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all the ODB DNS Zones in a given ODB Network.
+     * </pre>
+     */
+    public com.google.cloud.oracledatabase.v1.ListOdbDnsZonesResponse listOdbDnsZones(
+        com.google.cloud.oracledatabase.v1.ListOdbDnsZonesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListOdbDnsZonesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single ODB DNS Zone.
+     * </pre>
+     */
+    public com.google.cloud.oracledatabase.v1.OdbDnsZone getOdbDnsZone(
+        com.google.cloud.oracledatabase.v1.GetOdbDnsZoneRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetOdbDnsZoneMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new ODB DNS Zone in a given ODB Network.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createOdbDnsZone(
+        com.google.cloud.oracledatabase.v1.CreateOdbDnsZoneRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateOdbDnsZoneMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single ODB DNS Zone.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteOdbDnsZone(
+        com.google.cloud.oracledatabase.v1.DeleteOdbDnsZoneRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteOdbDnsZoneMethod(), getCallOptions(), request);
     }
 
     /**
@@ -8589,6 +11262,19 @@ public final class OracleDatabaseGrpc {
      *
      *
      * <pre>
+     * Updates the `labels` of a single ExascaleDbStorageVault.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateExascaleDbStorageVault(
+        com.google.cloud.oracledatabase.v1.UpdateExascaleDbStorageVaultRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateExascaleDbStorageVaultMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a single ExascaleDB Storage Vault.
      * </pre>
      */
@@ -8611,6 +11297,21 @@ public final class OracleDatabaseGrpc {
             com.google.cloud.oracledatabase.v1.ListDbSystemInitialStorageSizesRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListDbSystemInitialStorageSizesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all the DbSystemComputePerformances for the given project and
+     * location.
+     * </pre>
+     */
+    public com.google.cloud.oracledatabase.v1.ListDbSystemComputePerformancesResponse
+        listDbSystemComputePerformances(
+            com.google.cloud.oracledatabase.v1.ListDbSystemComputePerformancesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListDbSystemComputePerformancesMethod(), getCallOptions(), request);
     }
 
     /**
@@ -8709,6 +11410,19 @@ public final class OracleDatabaseGrpc {
      *
      *
      * <pre>
+     * Updates the `labels` of a single DbSystem.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateDbSystem(
+        com.google.cloud.oracledatabase.v1.UpdateDbSystemRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateDbSystemMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a single DbSystem.
      * </pre>
      */
@@ -8756,6 +11470,19 @@ public final class OracleDatabaseGrpc {
         com.google.cloud.oracledatabase.v1.CreateGoldengateDeploymentRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateGoldengateDeploymentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the `labels` of a single GoldengateDeployment.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateGoldengateDeployment(
+        com.google.cloud.oracledatabase.v1.UpdateGoldengateDeploymentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateGoldengateDeploymentMethod(), getCallOptions(), request);
     }
 
     /**
@@ -8835,6 +11562,19 @@ public final class OracleDatabaseGrpc {
         com.google.cloud.oracledatabase.v1.CreateGoldengateConnectionRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateGoldengateConnectionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the `labels` of a single GoldengateConnection.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateGoldengateConnection(
+        com.google.cloud.oracledatabase.v1.UpdateGoldengateConnectionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateGoldengateConnectionMethod(), getCallOptions(), request);
     }
 
     /**
@@ -8980,6 +11720,19 @@ public final class OracleDatabaseGrpc {
      *
      *
      * <pre>
+     * Updates the `labels` of a single GoldengateConnectionAssignment.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateGoldengateConnectionAssignment(
+        com.google.cloud.oracledatabase.v1.UpdateGoldengateConnectionAssignmentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateGoldengateConnectionAssignmentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a single GoldengateConnectionAssignment.
      * </pre>
      */
@@ -9001,6 +11754,98 @@ public final class OracleDatabaseGrpc {
             com.google.cloud.oracledatabase.v1.TestGoldengateConnectionAssignmentRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getTestGoldengateConnectionAssignmentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists DatabaseConnections in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.oracledatabase.v1.ListDatabaseConnectionsResponse
+        listDatabaseConnections(
+            com.google.cloud.oracledatabase.v1.ListDatabaseConnectionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListDatabaseConnectionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single DatabaseConnection.
+     * </pre>
+     */
+    public com.google.cloud.oracledatabase.v1.DatabaseConnection getDatabaseConnection(
+        com.google.cloud.oracledatabase.v1.GetDatabaseConnectionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetDatabaseConnectionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new DatabaseConnection in a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createDatabaseConnection(
+        com.google.cloud.oracledatabase.v1.CreateDatabaseConnectionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateDatabaseConnectionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single DatabaseConnection.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateDatabaseConnection(
+        com.google.cloud.oracledatabase.v1.UpdateDatabaseConnectionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateDatabaseConnectionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single DatabaseConnection.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteDatabaseConnection(
+        com.google.cloud.oracledatabase.v1.DeleteDatabaseConnectionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteDatabaseConnectionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Tests connectivity of a DatabaseConnection.
+     * </pre>
+     */
+    public com.google.cloud.oracledatabase.v1.TestDatabaseConnectionResponse testDatabaseConnection(
+        com.google.cloud.oracledatabase.v1.TestDatabaseConnectionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getTestDatabaseConnectionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Executes a SQL statement on a DatabaseConnection.
+     * </pre>
+     */
+    public com.google.cloud.oracledatabase.v1.ExecuteSqlResponse executeSql(
+        com.google.cloud.oracledatabase.v1.ExecuteSqlRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getExecuteSqlMethod(), getCallOptions(), request);
     }
   }
 
@@ -9067,6 +11912,21 @@ public final class OracleDatabaseGrpc {
             com.google.cloud.oracledatabase.v1.CreateCloudExadataInfrastructureRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateCloudExadataInfrastructureMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single Exadata Infrastructure.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        updateCloudExadataInfrastructure(
+            com.google.cloud.oracledatabase.v1.UpdateCloudExadataInfrastructureRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateCloudExadataInfrastructureMethod(), getCallOptions()),
           request);
     }
 
@@ -9148,6 +12008,20 @@ public final class OracleDatabaseGrpc {
      *
      *
      * <pre>
+     * Updates the parameters of a single Vm Cluster.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        updateCloudVmCluster(
+            com.google.cloud.oracledatabase.v1.UpdateCloudVmClusterRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateCloudVmClusterMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a single VM Cluster.
      * </pre>
      */
@@ -9162,6 +12036,70 @@ public final class OracleDatabaseGrpc {
      *
      *
      * <pre>
+     * Enables the Workload Identity Connector for a Cloud VM Cluster.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        enableCloudVmClusterIdentityConnector(
+            com.google.cloud.oracledatabase.v1.EnableCloudVmClusterIdentityConnectorRequest
+                request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getEnableCloudVmClusterIdentityConnectorMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Disables the Workload Identity Connector for a Cloud VM Cluster.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        disableCloudVmClusterIdentityConnector(
+            com.google.cloud.oracledatabase.v1.DisableCloudVmClusterIdentityConnectorRequest
+                request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDisableCloudVmClusterIdentityConnectorMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Enables the Workload Identity Connector for an Exadb VM Cluster.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        enableExadbVmClusterIdentityConnector(
+            com.google.cloud.oracledatabase.v1.EnableExadbVmClusterIdentityConnectorRequest
+                request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getEnableExadbVmClusterIdentityConnectorMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Disables the Workload Identity Connector for an Exadb VM Cluster.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        disableExadbVmClusterIdentityConnector(
+            com.google.cloud.oracledatabase.v1.DisableExadbVmClusterIdentityConnectorRequest
+                request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDisableExadbVmClusterIdentityConnectorMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lists the entitlements in a given project.
      * </pre>
      */
@@ -9170,6 +12108,20 @@ public final class OracleDatabaseGrpc {
         listEntitlements(com.google.cloud.oracledatabase.v1.ListEntitlementsRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListEntitlementsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Flex Components in a given project and location.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.oracledatabase.v1.ListFlexComponentsResponse>
+        listFlexComponents(com.google.cloud.oracledatabase.v1.ListFlexComponentsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListFlexComponentsMethod(), getCallOptions()), request);
     }
 
     /**
@@ -9542,6 +12494,20 @@ public final class OracleDatabaseGrpc {
      *
      *
      * <pre>
+     * Updates the `labels` and `service_connectivity_config` of a single
+     * OdbNetwork.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        updateOdbNetwork(com.google.cloud.oracledatabase.v1.UpdateOdbNetworkRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateOdbNetworkMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a single ODB Network.
      * </pre>
      */
@@ -9596,6 +12562,19 @@ public final class OracleDatabaseGrpc {
      *
      *
      * <pre>
+     * Updates the `labels` of a single ODB Subnet.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        updateOdbSubnet(com.google.cloud.oracledatabase.v1.UpdateOdbSubnetRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateOdbSubnetMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a single ODB Subnet.
      * </pre>
      */
@@ -9603,6 +12582,60 @@ public final class OracleDatabaseGrpc {
         deleteOdbSubnet(com.google.cloud.oracledatabase.v1.DeleteOdbSubnetRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteOdbSubnetMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all the ODB DNS Zones in a given ODB Network.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.oracledatabase.v1.ListOdbDnsZonesResponse>
+        listOdbDnsZones(com.google.cloud.oracledatabase.v1.ListOdbDnsZonesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListOdbDnsZonesMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single ODB DNS Zone.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.oracledatabase.v1.OdbDnsZone>
+        getOdbDnsZone(com.google.cloud.oracledatabase.v1.GetOdbDnsZoneRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetOdbDnsZoneMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new ODB DNS Zone in a given ODB Network.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        createOdbDnsZone(com.google.cloud.oracledatabase.v1.CreateOdbDnsZoneRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateOdbDnsZoneMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single ODB DNS Zone.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        deleteOdbDnsZone(com.google.cloud.oracledatabase.v1.DeleteOdbDnsZoneRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteOdbDnsZoneMethod(), getCallOptions()), request);
     }
 
     /**
@@ -9741,6 +12774,20 @@ public final class OracleDatabaseGrpc {
      *
      *
      * <pre>
+     * Updates the `labels` of a single ExascaleDbStorageVault.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        updateExascaleDbStorageVault(
+            com.google.cloud.oracledatabase.v1.UpdateExascaleDbStorageVaultRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateExascaleDbStorageVaultMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a single ExascaleDB Storage Vault.
      * </pre>
      */
@@ -9765,6 +12812,23 @@ public final class OracleDatabaseGrpc {
             com.google.cloud.oracledatabase.v1.ListDbSystemInitialStorageSizesRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListDbSystemInitialStorageSizesMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all the DbSystemComputePerformances for the given project and
+     * location.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.oracledatabase.v1.ListDbSystemComputePerformancesResponse>
+        listDbSystemComputePerformances(
+            com.google.cloud.oracledatabase.v1.ListDbSystemComputePerformancesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListDbSystemComputePerformancesMethod(), getCallOptions()),
           request);
     }
 
@@ -9872,6 +12936,19 @@ public final class OracleDatabaseGrpc {
      *
      *
      * <pre>
+     * Updates the `labels` of a single DbSystem.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        updateDbSystem(com.google.cloud.oracledatabase.v1.UpdateDbSystemRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateDbSystemMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a single DbSystem.
      * </pre>
      */
@@ -9923,6 +13000,20 @@ public final class OracleDatabaseGrpc {
             com.google.cloud.oracledatabase.v1.CreateGoldengateDeploymentRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateGoldengateDeploymentMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the `labels` of a single GoldengateDeployment.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        updateGoldengateDeployment(
+            com.google.cloud.oracledatabase.v1.UpdateGoldengateDeploymentRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateGoldengateDeploymentMethod(), getCallOptions()), request);
     }
 
     /**
@@ -10009,6 +13100,20 @@ public final class OracleDatabaseGrpc {
             com.google.cloud.oracledatabase.v1.CreateGoldengateConnectionRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateGoldengateConnectionMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the `labels` of a single GoldengateConnection.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        updateGoldengateConnection(
+            com.google.cloud.oracledatabase.v1.UpdateGoldengateConnectionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateGoldengateConnectionMethod(), getCallOptions()), request);
     }
 
     /**
@@ -10172,6 +13277,22 @@ public final class OracleDatabaseGrpc {
      *
      *
      * <pre>
+     * Updates the `labels` of a single GoldengateConnectionAssignment.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        updateGoldengateConnectionAssignment(
+            com.google.cloud.oracledatabase.v1.UpdateGoldengateConnectionAssignmentRequest
+                request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateGoldengateConnectionAssignmentMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a single GoldengateConnectionAssignment.
      * </pre>
      */
@@ -10199,88 +13320,215 @@ public final class OracleDatabaseGrpc {
           getChannel().newCall(getTestGoldengateConnectionAssignmentMethod(), getCallOptions()),
           request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists DatabaseConnections in a given project and location.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.oracledatabase.v1.ListDatabaseConnectionsResponse>
+        listDatabaseConnections(
+            com.google.cloud.oracledatabase.v1.ListDatabaseConnectionsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListDatabaseConnectionsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single DatabaseConnection.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.oracledatabase.v1.DatabaseConnection>
+        getDatabaseConnection(
+            com.google.cloud.oracledatabase.v1.GetDatabaseConnectionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetDatabaseConnectionMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new DatabaseConnection in a given project and location.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        createDatabaseConnection(
+            com.google.cloud.oracledatabase.v1.CreateDatabaseConnectionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateDatabaseConnectionMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single DatabaseConnection.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        updateDatabaseConnection(
+            com.google.cloud.oracledatabase.v1.UpdateDatabaseConnectionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateDatabaseConnectionMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single DatabaseConnection.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        deleteDatabaseConnection(
+            com.google.cloud.oracledatabase.v1.DeleteDatabaseConnectionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteDatabaseConnectionMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Tests connectivity of a DatabaseConnection.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.oracledatabase.v1.TestDatabaseConnectionResponse>
+        testDatabaseConnection(
+            com.google.cloud.oracledatabase.v1.TestDatabaseConnectionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getTestDatabaseConnectionMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Executes a SQL statement on a DatabaseConnection.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.oracledatabase.v1.ExecuteSqlResponse>
+        executeSql(com.google.cloud.oracledatabase.v1.ExecuteSqlRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getExecuteSqlMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_CLOUD_EXADATA_INFRASTRUCTURES = 0;
   private static final int METHODID_GET_CLOUD_EXADATA_INFRASTRUCTURE = 1;
   private static final int METHODID_CREATE_CLOUD_EXADATA_INFRASTRUCTURE = 2;
-  private static final int METHODID_DELETE_CLOUD_EXADATA_INFRASTRUCTURE = 3;
-  private static final int METHODID_CONFIGURE_EXASCALE_CLOUD_EXADATA_INFRASTRUCTURE = 4;
-  private static final int METHODID_LIST_CLOUD_VM_CLUSTERS = 5;
-  private static final int METHODID_GET_CLOUD_VM_CLUSTER = 6;
-  private static final int METHODID_CREATE_CLOUD_VM_CLUSTER = 7;
-  private static final int METHODID_DELETE_CLOUD_VM_CLUSTER = 8;
-  private static final int METHODID_LIST_ENTITLEMENTS = 9;
-  private static final int METHODID_LIST_DB_SERVERS = 10;
-  private static final int METHODID_LIST_DB_NODES = 11;
-  private static final int METHODID_LIST_GI_VERSIONS = 12;
-  private static final int METHODID_LIST_MINOR_VERSIONS = 13;
-  private static final int METHODID_LIST_DB_SYSTEM_SHAPES = 14;
-  private static final int METHODID_LIST_AUTONOMOUS_DATABASES = 15;
-  private static final int METHODID_GET_AUTONOMOUS_DATABASE = 16;
-  private static final int METHODID_CREATE_AUTONOMOUS_DATABASE = 17;
-  private static final int METHODID_UPDATE_AUTONOMOUS_DATABASE = 18;
-  private static final int METHODID_DELETE_AUTONOMOUS_DATABASE = 19;
-  private static final int METHODID_RESTORE_AUTONOMOUS_DATABASE = 20;
-  private static final int METHODID_GENERATE_AUTONOMOUS_DATABASE_WALLET = 21;
-  private static final int METHODID_LIST_AUTONOMOUS_DB_VERSIONS = 22;
-  private static final int METHODID_LIST_AUTONOMOUS_DATABASE_CHARACTER_SETS = 23;
-  private static final int METHODID_LIST_AUTONOMOUS_DATABASE_BACKUPS = 24;
-  private static final int METHODID_STOP_AUTONOMOUS_DATABASE = 25;
-  private static final int METHODID_START_AUTONOMOUS_DATABASE = 26;
-  private static final int METHODID_RESTART_AUTONOMOUS_DATABASE = 27;
-  private static final int METHODID_SWITCHOVER_AUTONOMOUS_DATABASE = 28;
-  private static final int METHODID_FAILOVER_AUTONOMOUS_DATABASE = 29;
-  private static final int METHODID_REFRESH_AUTONOMOUS_DATABASE = 30;
-  private static final int METHODID_GET_AUTONOMOUS_DATABASE_REFRESHABLE_CLONES = 31;
-  private static final int METHODID_LIST_ODB_NETWORKS = 32;
-  private static final int METHODID_GET_ODB_NETWORK = 33;
-  private static final int METHODID_CREATE_ODB_NETWORK = 34;
-  private static final int METHODID_DELETE_ODB_NETWORK = 35;
-  private static final int METHODID_LIST_ODB_SUBNETS = 36;
-  private static final int METHODID_GET_ODB_SUBNET = 37;
-  private static final int METHODID_CREATE_ODB_SUBNET = 38;
-  private static final int METHODID_DELETE_ODB_SUBNET = 39;
-  private static final int METHODID_LIST_EXADB_VM_CLUSTERS = 40;
-  private static final int METHODID_GET_EXADB_VM_CLUSTER = 41;
-  private static final int METHODID_CREATE_EXADB_VM_CLUSTER = 42;
-  private static final int METHODID_DELETE_EXADB_VM_CLUSTER = 43;
-  private static final int METHODID_UPDATE_EXADB_VM_CLUSTER = 44;
-  private static final int METHODID_REMOVE_VIRTUAL_MACHINE_EXADB_VM_CLUSTER = 45;
-  private static final int METHODID_LIST_EXASCALE_DB_STORAGE_VAULTS = 46;
-  private static final int METHODID_GET_EXASCALE_DB_STORAGE_VAULT = 47;
-  private static final int METHODID_CREATE_EXASCALE_DB_STORAGE_VAULT = 48;
-  private static final int METHODID_DELETE_EXASCALE_DB_STORAGE_VAULT = 49;
-  private static final int METHODID_LIST_DB_SYSTEM_INITIAL_STORAGE_SIZES = 50;
-  private static final int METHODID_LIST_DATABASES = 51;
-  private static final int METHODID_GET_DATABASE = 52;
-  private static final int METHODID_LIST_PLUGGABLE_DATABASES = 53;
-  private static final int METHODID_GET_PLUGGABLE_DATABASE = 54;
-  private static final int METHODID_LIST_DB_SYSTEMS = 55;
-  private static final int METHODID_GET_DB_SYSTEM = 56;
-  private static final int METHODID_CREATE_DB_SYSTEM = 57;
-  private static final int METHODID_DELETE_DB_SYSTEM = 58;
-  private static final int METHODID_LIST_GOLDENGATE_DEPLOYMENTS = 59;
-  private static final int METHODID_GET_GOLDENGATE_DEPLOYMENT = 60;
-  private static final int METHODID_CREATE_GOLDENGATE_DEPLOYMENT = 61;
-  private static final int METHODID_DELETE_GOLDENGATE_DEPLOYMENT = 62;
-  private static final int METHODID_STOP_GOLDENGATE_DEPLOYMENT = 63;
-  private static final int METHODID_START_GOLDENGATE_DEPLOYMENT = 64;
-  private static final int METHODID_LIST_GOLDENGATE_CONNECTIONS = 65;
-  private static final int METHODID_GET_GOLDENGATE_CONNECTION = 66;
-  private static final int METHODID_CREATE_GOLDENGATE_CONNECTION = 67;
-  private static final int METHODID_DELETE_GOLDENGATE_CONNECTION = 68;
-  private static final int METHODID_LIST_GOLDENGATE_DEPLOYMENT_VERSIONS = 69;
-  private static final int METHODID_LIST_GOLDENGATE_DEPLOYMENT_TYPES = 70;
-  private static final int METHODID_LIST_GOLDENGATE_DEPLOYMENT_ENVIRONMENTS = 71;
-  private static final int METHODID_LIST_GOLDENGATE_CONNECTION_TYPES = 72;
-  private static final int METHODID_LIST_DB_VERSIONS = 73;
-  private static final int METHODID_LIST_DATABASE_CHARACTER_SETS = 74;
-  private static final int METHODID_LIST_GOLDENGATE_CONNECTION_ASSIGNMENTS = 75;
-  private static final int METHODID_GET_GOLDENGATE_CONNECTION_ASSIGNMENT = 76;
-  private static final int METHODID_CREATE_GOLDENGATE_CONNECTION_ASSIGNMENT = 77;
-  private static final int METHODID_DELETE_GOLDENGATE_CONNECTION_ASSIGNMENT = 78;
-  private static final int METHODID_TEST_GOLDENGATE_CONNECTION_ASSIGNMENT = 79;
+  private static final int METHODID_UPDATE_CLOUD_EXADATA_INFRASTRUCTURE = 3;
+  private static final int METHODID_DELETE_CLOUD_EXADATA_INFRASTRUCTURE = 4;
+  private static final int METHODID_CONFIGURE_EXASCALE_CLOUD_EXADATA_INFRASTRUCTURE = 5;
+  private static final int METHODID_LIST_CLOUD_VM_CLUSTERS = 6;
+  private static final int METHODID_GET_CLOUD_VM_CLUSTER = 7;
+  private static final int METHODID_CREATE_CLOUD_VM_CLUSTER = 8;
+  private static final int METHODID_UPDATE_CLOUD_VM_CLUSTER = 9;
+  private static final int METHODID_DELETE_CLOUD_VM_CLUSTER = 10;
+  private static final int METHODID_ENABLE_CLOUD_VM_CLUSTER_IDENTITY_CONNECTOR = 11;
+  private static final int METHODID_DISABLE_CLOUD_VM_CLUSTER_IDENTITY_CONNECTOR = 12;
+  private static final int METHODID_ENABLE_EXADB_VM_CLUSTER_IDENTITY_CONNECTOR = 13;
+  private static final int METHODID_DISABLE_EXADB_VM_CLUSTER_IDENTITY_CONNECTOR = 14;
+  private static final int METHODID_LIST_ENTITLEMENTS = 15;
+  private static final int METHODID_LIST_FLEX_COMPONENTS = 16;
+  private static final int METHODID_LIST_DB_SERVERS = 17;
+  private static final int METHODID_LIST_DB_NODES = 18;
+  private static final int METHODID_LIST_GI_VERSIONS = 19;
+  private static final int METHODID_LIST_MINOR_VERSIONS = 20;
+  private static final int METHODID_LIST_DB_SYSTEM_SHAPES = 21;
+  private static final int METHODID_LIST_AUTONOMOUS_DATABASES = 22;
+  private static final int METHODID_GET_AUTONOMOUS_DATABASE = 23;
+  private static final int METHODID_CREATE_AUTONOMOUS_DATABASE = 24;
+  private static final int METHODID_UPDATE_AUTONOMOUS_DATABASE = 25;
+  private static final int METHODID_DELETE_AUTONOMOUS_DATABASE = 26;
+  private static final int METHODID_RESTORE_AUTONOMOUS_DATABASE = 27;
+  private static final int METHODID_GENERATE_AUTONOMOUS_DATABASE_WALLET = 28;
+  private static final int METHODID_LIST_AUTONOMOUS_DB_VERSIONS = 29;
+  private static final int METHODID_LIST_AUTONOMOUS_DATABASE_CHARACTER_SETS = 30;
+  private static final int METHODID_LIST_AUTONOMOUS_DATABASE_BACKUPS = 31;
+  private static final int METHODID_STOP_AUTONOMOUS_DATABASE = 32;
+  private static final int METHODID_START_AUTONOMOUS_DATABASE = 33;
+  private static final int METHODID_RESTART_AUTONOMOUS_DATABASE = 34;
+  private static final int METHODID_SWITCHOVER_AUTONOMOUS_DATABASE = 35;
+  private static final int METHODID_FAILOVER_AUTONOMOUS_DATABASE = 36;
+  private static final int METHODID_REFRESH_AUTONOMOUS_DATABASE = 37;
+  private static final int METHODID_GET_AUTONOMOUS_DATABASE_REFRESHABLE_CLONES = 38;
+  private static final int METHODID_LIST_ODB_NETWORKS = 39;
+  private static final int METHODID_GET_ODB_NETWORK = 40;
+  private static final int METHODID_CREATE_ODB_NETWORK = 41;
+  private static final int METHODID_UPDATE_ODB_NETWORK = 42;
+  private static final int METHODID_DELETE_ODB_NETWORK = 43;
+  private static final int METHODID_LIST_ODB_SUBNETS = 44;
+  private static final int METHODID_GET_ODB_SUBNET = 45;
+  private static final int METHODID_CREATE_ODB_SUBNET = 46;
+  private static final int METHODID_UPDATE_ODB_SUBNET = 47;
+  private static final int METHODID_DELETE_ODB_SUBNET = 48;
+  private static final int METHODID_LIST_ODB_DNS_ZONES = 49;
+  private static final int METHODID_GET_ODB_DNS_ZONE = 50;
+  private static final int METHODID_CREATE_ODB_DNS_ZONE = 51;
+  private static final int METHODID_DELETE_ODB_DNS_ZONE = 52;
+  private static final int METHODID_LIST_EXADB_VM_CLUSTERS = 53;
+  private static final int METHODID_GET_EXADB_VM_CLUSTER = 54;
+  private static final int METHODID_CREATE_EXADB_VM_CLUSTER = 55;
+  private static final int METHODID_DELETE_EXADB_VM_CLUSTER = 56;
+  private static final int METHODID_UPDATE_EXADB_VM_CLUSTER = 57;
+  private static final int METHODID_REMOVE_VIRTUAL_MACHINE_EXADB_VM_CLUSTER = 58;
+  private static final int METHODID_LIST_EXASCALE_DB_STORAGE_VAULTS = 59;
+  private static final int METHODID_GET_EXASCALE_DB_STORAGE_VAULT = 60;
+  private static final int METHODID_CREATE_EXASCALE_DB_STORAGE_VAULT = 61;
+  private static final int METHODID_UPDATE_EXASCALE_DB_STORAGE_VAULT = 62;
+  private static final int METHODID_DELETE_EXASCALE_DB_STORAGE_VAULT = 63;
+  private static final int METHODID_LIST_DB_SYSTEM_INITIAL_STORAGE_SIZES = 64;
+  private static final int METHODID_LIST_DB_SYSTEM_COMPUTE_PERFORMANCES = 65;
+  private static final int METHODID_LIST_DATABASES = 66;
+  private static final int METHODID_GET_DATABASE = 67;
+  private static final int METHODID_LIST_PLUGGABLE_DATABASES = 68;
+  private static final int METHODID_GET_PLUGGABLE_DATABASE = 69;
+  private static final int METHODID_LIST_DB_SYSTEMS = 70;
+  private static final int METHODID_GET_DB_SYSTEM = 71;
+  private static final int METHODID_CREATE_DB_SYSTEM = 72;
+  private static final int METHODID_UPDATE_DB_SYSTEM = 73;
+  private static final int METHODID_DELETE_DB_SYSTEM = 74;
+  private static final int METHODID_LIST_GOLDENGATE_DEPLOYMENTS = 75;
+  private static final int METHODID_GET_GOLDENGATE_DEPLOYMENT = 76;
+  private static final int METHODID_CREATE_GOLDENGATE_DEPLOYMENT = 77;
+  private static final int METHODID_UPDATE_GOLDENGATE_DEPLOYMENT = 78;
+  private static final int METHODID_DELETE_GOLDENGATE_DEPLOYMENT = 79;
+  private static final int METHODID_STOP_GOLDENGATE_DEPLOYMENT = 80;
+  private static final int METHODID_START_GOLDENGATE_DEPLOYMENT = 81;
+  private static final int METHODID_LIST_GOLDENGATE_CONNECTIONS = 82;
+  private static final int METHODID_GET_GOLDENGATE_CONNECTION = 83;
+  private static final int METHODID_CREATE_GOLDENGATE_CONNECTION = 84;
+  private static final int METHODID_UPDATE_GOLDENGATE_CONNECTION = 85;
+  private static final int METHODID_DELETE_GOLDENGATE_CONNECTION = 86;
+  private static final int METHODID_LIST_GOLDENGATE_DEPLOYMENT_VERSIONS = 87;
+  private static final int METHODID_LIST_GOLDENGATE_DEPLOYMENT_TYPES = 88;
+  private static final int METHODID_LIST_GOLDENGATE_DEPLOYMENT_ENVIRONMENTS = 89;
+  private static final int METHODID_LIST_GOLDENGATE_CONNECTION_TYPES = 90;
+  private static final int METHODID_LIST_DB_VERSIONS = 91;
+  private static final int METHODID_LIST_DATABASE_CHARACTER_SETS = 92;
+  private static final int METHODID_LIST_GOLDENGATE_CONNECTION_ASSIGNMENTS = 93;
+  private static final int METHODID_GET_GOLDENGATE_CONNECTION_ASSIGNMENT = 94;
+  private static final int METHODID_CREATE_GOLDENGATE_CONNECTION_ASSIGNMENT = 95;
+  private static final int METHODID_UPDATE_GOLDENGATE_CONNECTION_ASSIGNMENT = 96;
+  private static final int METHODID_DELETE_GOLDENGATE_CONNECTION_ASSIGNMENT = 97;
+  private static final int METHODID_TEST_GOLDENGATE_CONNECTION_ASSIGNMENT = 98;
+  private static final int METHODID_LIST_DATABASE_CONNECTIONS = 99;
+  private static final int METHODID_GET_DATABASE_CONNECTION = 100;
+  private static final int METHODID_CREATE_DATABASE_CONNECTION = 101;
+  private static final int METHODID_UPDATE_DATABASE_CONNECTION = 102;
+  private static final int METHODID_DELETE_DATABASE_CONNECTION = 103;
+  private static final int METHODID_TEST_DATABASE_CONNECTION = 104;
+  private static final int METHODID_EXECUTE_SQL = 105;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -10318,6 +13566,11 @@ public final class OracleDatabaseGrpc {
               (com.google.cloud.oracledatabase.v1.CreateCloudExadataInfrastructureRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
+        case METHODID_UPDATE_CLOUD_EXADATA_INFRASTRUCTURE:
+          serviceImpl.updateCloudExadataInfrastructure(
+              (com.google.cloud.oracledatabase.v1.UpdateCloudExadataInfrastructureRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
         case METHODID_DELETE_CLOUD_EXADATA_INFRASTRUCTURE:
           serviceImpl.deleteCloudExadataInfrastructure(
               (com.google.cloud.oracledatabase.v1.DeleteCloudExadataInfrastructureRequest) request,
@@ -10348,9 +13601,38 @@ public final class OracleDatabaseGrpc {
               (com.google.cloud.oracledatabase.v1.CreateCloudVmClusterRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
+        case METHODID_UPDATE_CLOUD_VM_CLUSTER:
+          serviceImpl.updateCloudVmCluster(
+              (com.google.cloud.oracledatabase.v1.UpdateCloudVmClusterRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
         case METHODID_DELETE_CLOUD_VM_CLUSTER:
           serviceImpl.deleteCloudVmCluster(
               (com.google.cloud.oracledatabase.v1.DeleteCloudVmClusterRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_ENABLE_CLOUD_VM_CLUSTER_IDENTITY_CONNECTOR:
+          serviceImpl.enableCloudVmClusterIdentityConnector(
+              (com.google.cloud.oracledatabase.v1.EnableCloudVmClusterIdentityConnectorRequest)
+                  request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_DISABLE_CLOUD_VM_CLUSTER_IDENTITY_CONNECTOR:
+          serviceImpl.disableCloudVmClusterIdentityConnector(
+              (com.google.cloud.oracledatabase.v1.DisableCloudVmClusterIdentityConnectorRequest)
+                  request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_ENABLE_EXADB_VM_CLUSTER_IDENTITY_CONNECTOR:
+          serviceImpl.enableExadbVmClusterIdentityConnector(
+              (com.google.cloud.oracledatabase.v1.EnableExadbVmClusterIdentityConnectorRequest)
+                  request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_DISABLE_EXADB_VM_CLUSTER_IDENTITY_CONNECTOR:
+          serviceImpl.disableExadbVmClusterIdentityConnector(
+              (com.google.cloud.oracledatabase.v1.DisableExadbVmClusterIdentityConnectorRequest)
+                  request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         case METHODID_LIST_ENTITLEMENTS:
@@ -10358,6 +13640,13 @@ public final class OracleDatabaseGrpc {
               (com.google.cloud.oracledatabase.v1.ListEntitlementsRequest) request,
               (io.grpc.stub.StreamObserver<
                       com.google.cloud.oracledatabase.v1.ListEntitlementsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_FLEX_COMPONENTS:
+          serviceImpl.listFlexComponents(
+              (com.google.cloud.oracledatabase.v1.ListFlexComponentsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.oracledatabase.v1.ListFlexComponentsResponse>)
                   responseObserver);
           break;
         case METHODID_LIST_DB_SERVERS:
@@ -10513,6 +13802,11 @@ public final class OracleDatabaseGrpc {
               (com.google.cloud.oracledatabase.v1.CreateOdbNetworkRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
+        case METHODID_UPDATE_ODB_NETWORK:
+          serviceImpl.updateOdbNetwork(
+              (com.google.cloud.oracledatabase.v1.UpdateOdbNetworkRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
         case METHODID_DELETE_ODB_NETWORK:
           serviceImpl.deleteOdbNetwork(
               (com.google.cloud.oracledatabase.v1.DeleteOdbNetworkRequest) request,
@@ -10536,9 +13830,37 @@ public final class OracleDatabaseGrpc {
               (com.google.cloud.oracledatabase.v1.CreateOdbSubnetRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
+        case METHODID_UPDATE_ODB_SUBNET:
+          serviceImpl.updateOdbSubnet(
+              (com.google.cloud.oracledatabase.v1.UpdateOdbSubnetRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
         case METHODID_DELETE_ODB_SUBNET:
           serviceImpl.deleteOdbSubnet(
               (com.google.cloud.oracledatabase.v1.DeleteOdbSubnetRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_LIST_ODB_DNS_ZONES:
+          serviceImpl.listOdbDnsZones(
+              (com.google.cloud.oracledatabase.v1.ListOdbDnsZonesRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.oracledatabase.v1.ListOdbDnsZonesResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GET_ODB_DNS_ZONE:
+          serviceImpl.getOdbDnsZone(
+              (com.google.cloud.oracledatabase.v1.GetOdbDnsZoneRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.oracledatabase.v1.OdbDnsZone>)
+                  responseObserver);
+          break;
+        case METHODID_CREATE_ODB_DNS_ZONE:
+          serviceImpl.createOdbDnsZone(
+              (com.google.cloud.oracledatabase.v1.CreateOdbDnsZoneRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_DELETE_ODB_DNS_ZONE:
+          serviceImpl.deleteOdbDnsZone(
+              (com.google.cloud.oracledatabase.v1.DeleteOdbDnsZoneRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         case METHODID_LIST_EXADB_VM_CLUSTERS:
@@ -10594,6 +13916,11 @@ public final class OracleDatabaseGrpc {
               (com.google.cloud.oracledatabase.v1.CreateExascaleDbStorageVaultRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
+        case METHODID_UPDATE_EXASCALE_DB_STORAGE_VAULT:
+          serviceImpl.updateExascaleDbStorageVault(
+              (com.google.cloud.oracledatabase.v1.UpdateExascaleDbStorageVaultRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
         case METHODID_DELETE_EXASCALE_DB_STORAGE_VAULT:
           serviceImpl.deleteExascaleDbStorageVault(
               (com.google.cloud.oracledatabase.v1.DeleteExascaleDbStorageVaultRequest) request,
@@ -10604,6 +13931,13 @@ public final class OracleDatabaseGrpc {
               (com.google.cloud.oracledatabase.v1.ListDbSystemInitialStorageSizesRequest) request,
               (io.grpc.stub.StreamObserver<
                       com.google.cloud.oracledatabase.v1.ListDbSystemInitialStorageSizesResponse>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_DB_SYSTEM_COMPUTE_PERFORMANCES:
+          serviceImpl.listDbSystemComputePerformances(
+              (com.google.cloud.oracledatabase.v1.ListDbSystemComputePerformancesRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.oracledatabase.v1.ListDbSystemComputePerformancesResponse>)
                   responseObserver);
           break;
         case METHODID_LIST_DATABASES:
@@ -10650,6 +13984,11 @@ public final class OracleDatabaseGrpc {
               (com.google.cloud.oracledatabase.v1.CreateDbSystemRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
+        case METHODID_UPDATE_DB_SYSTEM:
+          serviceImpl.updateDbSystem(
+              (com.google.cloud.oracledatabase.v1.UpdateDbSystemRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
         case METHODID_DELETE_DB_SYSTEM:
           serviceImpl.deleteDbSystem(
               (com.google.cloud.oracledatabase.v1.DeleteDbSystemRequest) request,
@@ -10671,6 +14010,11 @@ public final class OracleDatabaseGrpc {
         case METHODID_CREATE_GOLDENGATE_DEPLOYMENT:
           serviceImpl.createGoldengateDeployment(
               (com.google.cloud.oracledatabase.v1.CreateGoldengateDeploymentRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_UPDATE_GOLDENGATE_DEPLOYMENT:
+          serviceImpl.updateGoldengateDeployment(
+              (com.google.cloud.oracledatabase.v1.UpdateGoldengateDeploymentRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         case METHODID_DELETE_GOLDENGATE_DEPLOYMENT:
@@ -10704,6 +14048,11 @@ public final class OracleDatabaseGrpc {
         case METHODID_CREATE_GOLDENGATE_CONNECTION:
           serviceImpl.createGoldengateConnection(
               (com.google.cloud.oracledatabase.v1.CreateGoldengateConnectionRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_UPDATE_GOLDENGATE_CONNECTION:
+          serviceImpl.updateGoldengateConnection(
+              (com.google.cloud.oracledatabase.v1.UpdateGoldengateConnectionRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         case METHODID_DELETE_GOLDENGATE_CONNECTION:
@@ -10777,6 +14126,12 @@ public final class OracleDatabaseGrpc {
                   request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
+        case METHODID_UPDATE_GOLDENGATE_CONNECTION_ASSIGNMENT:
+          serviceImpl.updateGoldengateConnectionAssignment(
+              (com.google.cloud.oracledatabase.v1.UpdateGoldengateConnectionAssignmentRequest)
+                  request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
         case METHODID_DELETE_GOLDENGATE_CONNECTION_ASSIGNMENT:
           serviceImpl.deleteGoldengateConnectionAssignment(
               (com.google.cloud.oracledatabase.v1.DeleteGoldengateConnectionAssignmentRequest)
@@ -10790,6 +14145,47 @@ public final class OracleDatabaseGrpc {
               (io.grpc.stub.StreamObserver<
                       com.google.cloud.oracledatabase.v1
                           .TestGoldengateConnectionAssignmentResponse>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_DATABASE_CONNECTIONS:
+          serviceImpl.listDatabaseConnections(
+              (com.google.cloud.oracledatabase.v1.ListDatabaseConnectionsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.oracledatabase.v1.ListDatabaseConnectionsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GET_DATABASE_CONNECTION:
+          serviceImpl.getDatabaseConnection(
+              (com.google.cloud.oracledatabase.v1.GetDatabaseConnectionRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.oracledatabase.v1.DatabaseConnection>)
+                  responseObserver);
+          break;
+        case METHODID_CREATE_DATABASE_CONNECTION:
+          serviceImpl.createDatabaseConnection(
+              (com.google.cloud.oracledatabase.v1.CreateDatabaseConnectionRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_UPDATE_DATABASE_CONNECTION:
+          serviceImpl.updateDatabaseConnection(
+              (com.google.cloud.oracledatabase.v1.UpdateDatabaseConnectionRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_DELETE_DATABASE_CONNECTION:
+          serviceImpl.deleteDatabaseConnection(
+              (com.google.cloud.oracledatabase.v1.DeleteDatabaseConnectionRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_TEST_DATABASE_CONNECTION:
+          serviceImpl.testDatabaseConnection(
+              (com.google.cloud.oracledatabase.v1.TestDatabaseConnectionRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.oracledatabase.v1.TestDatabaseConnectionResponse>)
+                  responseObserver);
+          break;
+        case METHODID_EXECUTE_SQL:
+          serviceImpl.executeSql(
+              (com.google.cloud.oracledatabase.v1.ExecuteSqlRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.oracledatabase.v1.ExecuteSqlResponse>)
                   responseObserver);
           break;
         default:
@@ -10832,6 +14228,13 @@ public final class OracleDatabaseGrpc {
                     com.google.longrunning.Operation>(
                     service, METHODID_CREATE_CLOUD_EXADATA_INFRASTRUCTURE)))
         .addMethod(
+            getUpdateCloudExadataInfrastructureMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.oracledatabase.v1.UpdateCloudExadataInfrastructureRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_UPDATE_CLOUD_EXADATA_INFRASTRUCTURE)))
+        .addMethod(
             getDeleteCloudExadataInfrastructureMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -10867,11 +14270,47 @@ public final class OracleDatabaseGrpc {
                     com.google.cloud.oracledatabase.v1.CreateCloudVmClusterRequest,
                     com.google.longrunning.Operation>(service, METHODID_CREATE_CLOUD_VM_CLUSTER)))
         .addMethod(
+            getUpdateCloudVmClusterMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.oracledatabase.v1.UpdateCloudVmClusterRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_CLOUD_VM_CLUSTER)))
+        .addMethod(
             getDeleteCloudVmClusterMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
                     com.google.cloud.oracledatabase.v1.DeleteCloudVmClusterRequest,
                     com.google.longrunning.Operation>(service, METHODID_DELETE_CLOUD_VM_CLUSTER)))
+        .addMethod(
+            getEnableCloudVmClusterIdentityConnectorMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.oracledatabase.v1.EnableCloudVmClusterIdentityConnectorRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_ENABLE_CLOUD_VM_CLUSTER_IDENTITY_CONNECTOR)))
+        .addMethod(
+            getDisableCloudVmClusterIdentityConnectorMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.oracledatabase.v1
+                        .DisableCloudVmClusterIdentityConnectorRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_DISABLE_CLOUD_VM_CLUSTER_IDENTITY_CONNECTOR)))
+        .addMethod(
+            getEnableExadbVmClusterIdentityConnectorMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.oracledatabase.v1.EnableExadbVmClusterIdentityConnectorRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_ENABLE_EXADB_VM_CLUSTER_IDENTITY_CONNECTOR)))
+        .addMethod(
+            getDisableExadbVmClusterIdentityConnectorMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.oracledatabase.v1
+                        .DisableExadbVmClusterIdentityConnectorRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_DISABLE_EXADB_VM_CLUSTER_IDENTITY_CONNECTOR)))
         .addMethod(
             getListEntitlementsMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -10879,6 +14318,13 @@ public final class OracleDatabaseGrpc {
                     com.google.cloud.oracledatabase.v1.ListEntitlementsRequest,
                     com.google.cloud.oracledatabase.v1.ListEntitlementsResponse>(
                     service, METHODID_LIST_ENTITLEMENTS)))
+        .addMethod(
+            getListFlexComponentsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.oracledatabase.v1.ListFlexComponentsRequest,
+                    com.google.cloud.oracledatabase.v1.ListFlexComponentsResponse>(
+                    service, METHODID_LIST_FLEX_COMPONENTS)))
         .addMethod(
             getListDbServersMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -11053,6 +14499,12 @@ public final class OracleDatabaseGrpc {
                     com.google.cloud.oracledatabase.v1.CreateOdbNetworkRequest,
                     com.google.longrunning.Operation>(service, METHODID_CREATE_ODB_NETWORK)))
         .addMethod(
+            getUpdateOdbNetworkMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.oracledatabase.v1.UpdateOdbNetworkRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_ODB_NETWORK)))
+        .addMethod(
             getDeleteOdbNetworkMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -11079,11 +14531,43 @@ public final class OracleDatabaseGrpc {
                     com.google.cloud.oracledatabase.v1.CreateOdbSubnetRequest,
                     com.google.longrunning.Operation>(service, METHODID_CREATE_ODB_SUBNET)))
         .addMethod(
+            getUpdateOdbSubnetMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.oracledatabase.v1.UpdateOdbSubnetRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_ODB_SUBNET)))
+        .addMethod(
             getDeleteOdbSubnetMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
                     com.google.cloud.oracledatabase.v1.DeleteOdbSubnetRequest,
                     com.google.longrunning.Operation>(service, METHODID_DELETE_ODB_SUBNET)))
+        .addMethod(
+            getListOdbDnsZonesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.oracledatabase.v1.ListOdbDnsZonesRequest,
+                    com.google.cloud.oracledatabase.v1.ListOdbDnsZonesResponse>(
+                    service, METHODID_LIST_ODB_DNS_ZONES)))
+        .addMethod(
+            getGetOdbDnsZoneMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.oracledatabase.v1.GetOdbDnsZoneRequest,
+                    com.google.cloud.oracledatabase.v1.OdbDnsZone>(
+                    service, METHODID_GET_ODB_DNS_ZONE)))
+        .addMethod(
+            getCreateOdbDnsZoneMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.oracledatabase.v1.CreateOdbDnsZoneRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_ODB_DNS_ZONE)))
+        .addMethod(
+            getDeleteOdbDnsZoneMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.oracledatabase.v1.DeleteOdbDnsZoneRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_ODB_DNS_ZONE)))
         .addMethod(
             getListExadbVmClustersMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -11145,6 +14629,13 @@ public final class OracleDatabaseGrpc {
                     com.google.longrunning.Operation>(
                     service, METHODID_CREATE_EXASCALE_DB_STORAGE_VAULT)))
         .addMethod(
+            getUpdateExascaleDbStorageVaultMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.oracledatabase.v1.UpdateExascaleDbStorageVaultRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_UPDATE_EXASCALE_DB_STORAGE_VAULT)))
+        .addMethod(
             getDeleteExascaleDbStorageVaultMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -11158,6 +14649,13 @@ public final class OracleDatabaseGrpc {
                     com.google.cloud.oracledatabase.v1.ListDbSystemInitialStorageSizesRequest,
                     com.google.cloud.oracledatabase.v1.ListDbSystemInitialStorageSizesResponse>(
                     service, METHODID_LIST_DB_SYSTEM_INITIAL_STORAGE_SIZES)))
+        .addMethod(
+            getListDbSystemComputePerformancesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.oracledatabase.v1.ListDbSystemComputePerformancesRequest,
+                    com.google.cloud.oracledatabase.v1.ListDbSystemComputePerformancesResponse>(
+                    service, METHODID_LIST_DB_SYSTEM_COMPUTE_PERFORMANCES)))
         .addMethod(
             getListDatabasesMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -11205,6 +14703,12 @@ public final class OracleDatabaseGrpc {
                     com.google.cloud.oracledatabase.v1.CreateDbSystemRequest,
                     com.google.longrunning.Operation>(service, METHODID_CREATE_DB_SYSTEM)))
         .addMethod(
+            getUpdateDbSystemMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.oracledatabase.v1.UpdateDbSystemRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_DB_SYSTEM)))
+        .addMethod(
             getDeleteDbSystemMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -11231,6 +14735,13 @@ public final class OracleDatabaseGrpc {
                     com.google.cloud.oracledatabase.v1.CreateGoldengateDeploymentRequest,
                     com.google.longrunning.Operation>(
                     service, METHODID_CREATE_GOLDENGATE_DEPLOYMENT)))
+        .addMethod(
+            getUpdateGoldengateDeploymentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.oracledatabase.v1.UpdateGoldengateDeploymentRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_UPDATE_GOLDENGATE_DEPLOYMENT)))
         .addMethod(
             getDeleteGoldengateDeploymentMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -11273,6 +14784,13 @@ public final class OracleDatabaseGrpc {
                     com.google.cloud.oracledatabase.v1.CreateGoldengateConnectionRequest,
                     com.google.longrunning.Operation>(
                     service, METHODID_CREATE_GOLDENGATE_CONNECTION)))
+        .addMethod(
+            getUpdateGoldengateConnectionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.oracledatabase.v1.UpdateGoldengateConnectionRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_UPDATE_GOLDENGATE_CONNECTION)))
         .addMethod(
             getDeleteGoldengateConnectionMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -11345,6 +14863,13 @@ public final class OracleDatabaseGrpc {
                     com.google.longrunning.Operation>(
                     service, METHODID_CREATE_GOLDENGATE_CONNECTION_ASSIGNMENT)))
         .addMethod(
+            getUpdateGoldengateConnectionAssignmentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.oracledatabase.v1.UpdateGoldengateConnectionAssignmentRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_UPDATE_GOLDENGATE_CONNECTION_ASSIGNMENT)))
+        .addMethod(
             getDeleteGoldengateConnectionAssignmentMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -11358,6 +14883,55 @@ public final class OracleDatabaseGrpc {
                     com.google.cloud.oracledatabase.v1.TestGoldengateConnectionAssignmentRequest,
                     com.google.cloud.oracledatabase.v1.TestGoldengateConnectionAssignmentResponse>(
                     service, METHODID_TEST_GOLDENGATE_CONNECTION_ASSIGNMENT)))
+        .addMethod(
+            getListDatabaseConnectionsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.oracledatabase.v1.ListDatabaseConnectionsRequest,
+                    com.google.cloud.oracledatabase.v1.ListDatabaseConnectionsResponse>(
+                    service, METHODID_LIST_DATABASE_CONNECTIONS)))
+        .addMethod(
+            getGetDatabaseConnectionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.oracledatabase.v1.GetDatabaseConnectionRequest,
+                    com.google.cloud.oracledatabase.v1.DatabaseConnection>(
+                    service, METHODID_GET_DATABASE_CONNECTION)))
+        .addMethod(
+            getCreateDatabaseConnectionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.oracledatabase.v1.CreateDatabaseConnectionRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_CREATE_DATABASE_CONNECTION)))
+        .addMethod(
+            getUpdateDatabaseConnectionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.oracledatabase.v1.UpdateDatabaseConnectionRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_UPDATE_DATABASE_CONNECTION)))
+        .addMethod(
+            getDeleteDatabaseConnectionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.oracledatabase.v1.DeleteDatabaseConnectionRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_DELETE_DATABASE_CONNECTION)))
+        .addMethod(
+            getTestDatabaseConnectionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.oracledatabase.v1.TestDatabaseConnectionRequest,
+                    com.google.cloud.oracledatabase.v1.TestDatabaseConnectionResponse>(
+                    service, METHODID_TEST_DATABASE_CONNECTION)))
+        .addMethod(
+            getExecuteSqlMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.oracledatabase.v1.ExecuteSqlRequest,
+                    com.google.cloud.oracledatabase.v1.ExecuteSqlResponse>(
+                    service, METHODID_EXECUTE_SQL)))
         .build();
   }
 
@@ -11412,13 +14986,20 @@ public final class OracleDatabaseGrpc {
                       .addMethod(getListCloudExadataInfrastructuresMethod())
                       .addMethod(getGetCloudExadataInfrastructureMethod())
                       .addMethod(getCreateCloudExadataInfrastructureMethod())
+                      .addMethod(getUpdateCloudExadataInfrastructureMethod())
                       .addMethod(getDeleteCloudExadataInfrastructureMethod())
                       .addMethod(getConfigureExascaleCloudExadataInfrastructureMethod())
                       .addMethod(getListCloudVmClustersMethod())
                       .addMethod(getGetCloudVmClusterMethod())
                       .addMethod(getCreateCloudVmClusterMethod())
+                      .addMethod(getUpdateCloudVmClusterMethod())
                       .addMethod(getDeleteCloudVmClusterMethod())
+                      .addMethod(getEnableCloudVmClusterIdentityConnectorMethod())
+                      .addMethod(getDisableCloudVmClusterIdentityConnectorMethod())
+                      .addMethod(getEnableExadbVmClusterIdentityConnectorMethod())
+                      .addMethod(getDisableExadbVmClusterIdentityConnectorMethod())
                       .addMethod(getListEntitlementsMethod())
+                      .addMethod(getListFlexComponentsMethod())
                       .addMethod(getListDbServersMethod())
                       .addMethod(getListDbNodesMethod())
                       .addMethod(getListGiVersionsMethod())
@@ -11444,11 +15025,17 @@ public final class OracleDatabaseGrpc {
                       .addMethod(getListOdbNetworksMethod())
                       .addMethod(getGetOdbNetworkMethod())
                       .addMethod(getCreateOdbNetworkMethod())
+                      .addMethod(getUpdateOdbNetworkMethod())
                       .addMethod(getDeleteOdbNetworkMethod())
                       .addMethod(getListOdbSubnetsMethod())
                       .addMethod(getGetOdbSubnetMethod())
                       .addMethod(getCreateOdbSubnetMethod())
+                      .addMethod(getUpdateOdbSubnetMethod())
                       .addMethod(getDeleteOdbSubnetMethod())
+                      .addMethod(getListOdbDnsZonesMethod())
+                      .addMethod(getGetOdbDnsZoneMethod())
+                      .addMethod(getCreateOdbDnsZoneMethod())
+                      .addMethod(getDeleteOdbDnsZoneMethod())
                       .addMethod(getListExadbVmClustersMethod())
                       .addMethod(getGetExadbVmClusterMethod())
                       .addMethod(getCreateExadbVmClusterMethod())
@@ -11458,8 +15045,10 @@ public final class OracleDatabaseGrpc {
                       .addMethod(getListExascaleDbStorageVaultsMethod())
                       .addMethod(getGetExascaleDbStorageVaultMethod())
                       .addMethod(getCreateExascaleDbStorageVaultMethod())
+                      .addMethod(getUpdateExascaleDbStorageVaultMethod())
                       .addMethod(getDeleteExascaleDbStorageVaultMethod())
                       .addMethod(getListDbSystemInitialStorageSizesMethod())
+                      .addMethod(getListDbSystemComputePerformancesMethod())
                       .addMethod(getListDatabasesMethod())
                       .addMethod(getGetDatabaseMethod())
                       .addMethod(getListPluggableDatabasesMethod())
@@ -11467,16 +15056,19 @@ public final class OracleDatabaseGrpc {
                       .addMethod(getListDbSystemsMethod())
                       .addMethod(getGetDbSystemMethod())
                       .addMethod(getCreateDbSystemMethod())
+                      .addMethod(getUpdateDbSystemMethod())
                       .addMethod(getDeleteDbSystemMethod())
                       .addMethod(getListGoldengateDeploymentsMethod())
                       .addMethod(getGetGoldengateDeploymentMethod())
                       .addMethod(getCreateGoldengateDeploymentMethod())
+                      .addMethod(getUpdateGoldengateDeploymentMethod())
                       .addMethod(getDeleteGoldengateDeploymentMethod())
                       .addMethod(getStopGoldengateDeploymentMethod())
                       .addMethod(getStartGoldengateDeploymentMethod())
                       .addMethod(getListGoldengateConnectionsMethod())
                       .addMethod(getGetGoldengateConnectionMethod())
                       .addMethod(getCreateGoldengateConnectionMethod())
+                      .addMethod(getUpdateGoldengateConnectionMethod())
                       .addMethod(getDeleteGoldengateConnectionMethod())
                       .addMethod(getListGoldengateDeploymentVersionsMethod())
                       .addMethod(getListGoldengateDeploymentTypesMethod())
@@ -11487,8 +15079,16 @@ public final class OracleDatabaseGrpc {
                       .addMethod(getListGoldengateConnectionAssignmentsMethod())
                       .addMethod(getGetGoldengateConnectionAssignmentMethod())
                       .addMethod(getCreateGoldengateConnectionAssignmentMethod())
+                      .addMethod(getUpdateGoldengateConnectionAssignmentMethod())
                       .addMethod(getDeleteGoldengateConnectionAssignmentMethod())
                       .addMethod(getTestGoldengateConnectionAssignmentMethod())
+                      .addMethod(getListDatabaseConnectionsMethod())
+                      .addMethod(getGetDatabaseConnectionMethod())
+                      .addMethod(getCreateDatabaseConnectionMethod())
+                      .addMethod(getUpdateDatabaseConnectionMethod())
+                      .addMethod(getDeleteDatabaseConnectionMethod())
+                      .addMethod(getTestDatabaseConnectionMethod())
+                      .addMethod(getExecuteSqlMethod())
                       .build();
         }
       }

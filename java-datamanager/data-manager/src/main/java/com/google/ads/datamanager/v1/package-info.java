@@ -93,6 +93,27 @@
  * }
  * }</pre>
  *
+ * <p>======================= ReportingServiceClient =======================
+ *
+ * <p>Service Description: Service for querying reports.
+ *
+ * <p>Sample for ReportingServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (ReportingServiceClient reportingServiceClient = ReportingServiceClient.create()) {
+ *   String parent = "parent-995424086";
+ *   for (PartnerMatchReportEntry element :
+ *       reportingServiceClient.retrievePartnerMatchReport(parent).iterateAll()) {
+ *     // doThingsWith(element);
+ *   }
+ * }
+ * }</pre>
+ *
  * <p>======================= UserListDirectLicenseServiceClient =======================
  *
  * <p>Service Description: Service for managing user list direct licenses. Delete is not a supported

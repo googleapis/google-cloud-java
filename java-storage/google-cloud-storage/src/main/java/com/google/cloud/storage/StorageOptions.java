@@ -81,7 +81,8 @@ public abstract class StorageOptions extends ServiceOptions<Storage, StorageOpti
   Retrier createRetrier() {
     return new DefaultRetrier(
         OtelStorageDecorator.retryContextDecorator(getOpenTelemetry()),
-        RetryingDependencies.simple(getClock(), getRetrySettings(), getStorageClientMetrics()));
+        RetryingDependencies.simple(getClock(), getRetrySettings()),
+        getStorageClientMetrics());
   }
 
   /**
@@ -262,7 +263,8 @@ public abstract class StorageOptions extends ServiceOptions<Storage, StorageOpti
   private final Duration metricInterval;
   private final boolean customMeterProviderConfigured;
   private final boolean customOpenTelemetryConfigured;
-  @Nullable transient StorageClientMetrics storageClientMetrics;
+  @Nullable private transient StorageClientMetrics storageClientMetrics;
+  private transient boolean storageClientMetricsClosed;
 
   StorageOptions(Builder builder, StorageDefaults serviceDefaults) {
     super(StorageFactory.class, StorageRpcFactory.class, builder, serviceDefaults);
@@ -284,7 +286,8 @@ public abstract class StorageOptions extends ServiceOptions<Storage, StorageOpti
     if (!hasCustomOtelOrMeterProvider && this.metricInterval != null) {
       checkArgument(
           this.metricInterval.compareTo(Duration.ofSeconds(60)) >= 0,
-          "Metric export interval cannot be less than 60 seconds when using Cloud Monitoring exporter");
+          "Metric export interval cannot be less than 60 seconds when using Cloud Monitoring"
+              + " exporter");
     }
   }
 
@@ -308,7 +311,8 @@ public abstract class StorageOptions extends ServiceOptions<Storage, StorageOpti
     in.defaultReadObject();
     if (this.customMeterProviderConfigured || this.meterProvider != null) {
       LOGGER.warning(
-          "Custom MeterProvider is transient and cannot be serialized across workers; falling back to default provider.");
+          "Custom MeterProvider is transient and cannot be serialized across workers; falling back"
+              + " to default provider.");
     }
   }
 
@@ -378,7 +382,7 @@ public abstract class StorageOptions extends ServiceOptions<Storage, StorageOpti
 
   @Nullable
   synchronized StorageClientMetrics getStorageClientMetrics() {
-    if (!isEnableOtelMetrics()) {
+    if (!isEnableOtelMetrics() || storageClientMetricsClosed) {
       return null;
     }
     if (storageClientMetrics == null) {
@@ -388,6 +392,7 @@ public abstract class StorageOptions extends ServiceOptions<Storage, StorageOpti
   }
 
   synchronized void closeStorageClientMetrics() {
+    storageClientMetricsClosed = true;
     if (storageClientMetrics != null) {
       try {
         storageClientMetrics.close();

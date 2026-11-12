@@ -16,22 +16,15 @@
 
 package com.google.cloud.bigquery.jdbc.it.suites;
 
-import com.google.cloud.bigquery.jdbc.it.ITAuthTests;
-import com.google.cloud.bigquery.jdbc.it.ITBigQueryJDBCTest;
-import com.google.cloud.bigquery.jdbc.it.ITJdbcTimestampPicosTest;
 import com.google.cloud.bigquery.jdbc.it.ITNightlyBigQueryTest;
 import com.google.cloud.bigquery.jdbc.it.ITOpenTelemetryTest;
-import com.google.cloud.bigquery.jdbc.it.ITPcntTest;
 import org.junit.platform.suite.api.SelectClasses;
 import org.junit.platform.suite.api.Suite;
 
+/**
+ * Nightly-only integration tests. Run together with {@link ITPresubmitTests}; classes already in
+ * that suite are intentionally not repeated here.
+ */
 @Suite
-@SelectClasses({
-  ITAuthTests.class,
-  ITBigQueryJDBCTest.class,
-  ITJdbcTimestampPicosTest.class,
-  ITNightlyBigQueryTest.class,
-  ITOpenTelemetryTest.class,
-  ITPcntTest.class
-})
+@SelectClasses({ITNightlyBigQueryTest.class, ITOpenTelemetryTest.class})
 public class ITNightlyTests {}

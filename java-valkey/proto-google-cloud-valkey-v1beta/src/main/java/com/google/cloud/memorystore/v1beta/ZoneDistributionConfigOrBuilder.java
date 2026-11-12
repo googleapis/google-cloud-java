@@ -58,6 +58,126 @@ public interface ZoneDistributionConfigOrBuilder
    *
    *
    * <pre>
+   * Optional. Specify the zones of a multi-zone instance where Memorystore
+   * instance allocates resources. This flag isn't applicable for single-zone
+   * instances.
+   * </pre>
+   *
+   * <code>repeated string zones = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return A list containing the zones.
+   */
+  java.util.List<java.lang.String> getZonesList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specify the zones of a multi-zone instance where Memorystore
+   * instance allocates resources. This flag isn't applicable for single-zone
+   * instances.
+   * </pre>
+   *
+   * <code>repeated string zones = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The count of zones.
+   */
+  int getZonesCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specify the zones of a multi-zone instance where Memorystore
+   * instance allocates resources. This flag isn't applicable for single-zone
+   * instances.
+   * </pre>
+   *
+   * <code>repeated string zones = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The zones at the given index.
+   */
+  java.lang.String getZones(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specify the zones of a multi-zone instance where Memorystore
+   * instance allocates resources. This flag isn't applicable for single-zone
+   * instances.
+   * </pre>
+   *
+   * <code>repeated string zones = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the zones at the given index.
+   */
+  com.google.protobuf.ByteString getZonesBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The exact list of zones where the instance currently has
+   * active VMs.
+   * </pre>
+   *
+   * <code>repeated string active_zones = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return A list containing the activeZones.
+   */
+  java.util.List<java.lang.String> getActiveZonesList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The exact list of zones where the instance currently has
+   * active VMs.
+   * </pre>
+   *
+   * <code>repeated string active_zones = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The count of activeZones.
+   */
+  int getActiveZonesCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The exact list of zones where the instance currently has
+   * active VMs.
+   * </pre>
+   *
+   * <code>repeated string active_zones = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The activeZones at the given index.
+   */
+  java.lang.String getActiveZones(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The exact list of zones where the instance currently has
+   * active VMs.
+   * </pre>
+   *
+   * <code>repeated string active_zones = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the activeZones at the given index.
+   */
+  com.google.protobuf.ByteString getActiveZonesBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. Current zone distribution mode. Defaults to MULTI_ZONE.
    * </pre>
    *

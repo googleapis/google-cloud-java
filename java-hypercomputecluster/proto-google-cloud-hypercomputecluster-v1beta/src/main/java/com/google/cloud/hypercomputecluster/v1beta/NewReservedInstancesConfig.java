@@ -54,7 +54,9 @@ public final class NewReservedInstancesConfig extends com.google.protobuf.Genera
     super(builder);
   }
 
-  private NewReservedInstancesConfig() {}
+  private NewReservedInstancesConfig() {
+    networkTags_ = com.google.protobuf.LazyStringArrayList.emptyList();
+  }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.hypercomputecluster.v1beta.HypercomputeClusterProto
@@ -81,6 +83,8 @@ public final class NewReservedInstancesConfig extends com.google.protobuf.Genera
           com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     RESERVATION(1),
+    RESERVATION_BLOCK(7),
+    RESERVATION_SUB_BLOCK(8),
     SOURCE_NOT_SET(0);
     private final int value;
 
@@ -102,6 +106,10 @@ public final class NewReservedInstancesConfig extends com.google.protobuf.Genera
       switch (value) {
         case 1:
           return RESERVATION;
+        case 7:
+          return RESERVATION_BLOCK;
+        case 8:
+          return RESERVATION_SUB_BLOCK;
         case 0:
           return SOURCE_NOT_SET;
         default:
@@ -203,6 +211,256 @@ public final class NewReservedInstancesConfig extends com.google.protobuf.Genera
     }
   }
 
+  public static final int RESERVATION_BLOCK_FIELD_NUMBER = 7;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. Name of the reservation block from which VM
+   * instances should be created, in the format
+   * `projects/{project}/zones/{zone}/reservations/{reservation}/reservationBlocks/{reservation_block}`.
+   * </pre>
+   *
+   * <code>
+   * string reservation_block = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return Whether the reservationBlock field is set.
+   */
+  public boolean hasReservationBlock() {
+    return sourceCase_ == 7;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. Name of the reservation block from which VM
+   * instances should be created, in the format
+   * `projects/{project}/zones/{zone}/reservations/{reservation}/reservationBlocks/{reservation_block}`.
+   * </pre>
+   *
+   * <code>
+   * string reservation_block = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The reservationBlock.
+   */
+  public java.lang.String getReservationBlock() {
+    java.lang.Object ref = "";
+    if (sourceCase_ == 7) {
+      ref = source_;
+    }
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      if (sourceCase_ == 7) {
+        source_ = s;
+      }
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. Name of the reservation block from which VM
+   * instances should be created, in the format
+   * `projects/{project}/zones/{zone}/reservations/{reservation}/reservationBlocks/{reservation_block}`.
+   * </pre>
+   *
+   * <code>
+   * string reservation_block = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for reservationBlock.
+   */
+  public com.google.protobuf.ByteString getReservationBlockBytes() {
+    java.lang.Object ref = "";
+    if (sourceCase_ == 7) {
+      ref = source_;
+    }
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      if (sourceCase_ == 7) {
+        source_ = b;
+      }
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int RESERVATION_SUB_BLOCK_FIELD_NUMBER = 8;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. Name of the reservation sub block from which VM
+   * instances should be created, in the format
+   * `projects/{project}/zones/{zone}/reservations/{reservation}/reservationBlocks/{reservation_block}/reservationSubBlocks/{reservation_sub_block}`.
+   * </pre>
+   *
+   * <code>
+   * string reservation_sub_block = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return Whether the reservationSubBlock field is set.
+   */
+  public boolean hasReservationSubBlock() {
+    return sourceCase_ == 8;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. Name of the reservation sub block from which VM
+   * instances should be created, in the format
+   * `projects/{project}/zones/{zone}/reservations/{reservation}/reservationBlocks/{reservation_block}/reservationSubBlocks/{reservation_sub_block}`.
+   * </pre>
+   *
+   * <code>
+   * string reservation_sub_block = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The reservationSubBlock.
+   */
+  public java.lang.String getReservationSubBlock() {
+    java.lang.Object ref = "";
+    if (sourceCase_ == 8) {
+      ref = source_;
+    }
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      if (sourceCase_ == 8) {
+        source_ = s;
+      }
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. Name of the reservation sub block from which VM
+   * instances should be created, in the format
+   * `projects/{project}/zones/{zone}/reservations/{reservation}/reservationBlocks/{reservation_block}/reservationSubBlocks/{reservation_sub_block}`.
+   * </pre>
+   *
+   * <code>
+   * string reservation_sub_block = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for reservationSubBlock.
+   */
+  public com.google.protobuf.ByteString getReservationSubBlockBytes() {
+    java.lang.Object ref = "";
+    if (sourceCase_ == 8) {
+      ref = source_;
+    }
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      if (sourceCase_ == 8) {
+        source_ = b;
+      }
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int NETWORK_TAGS_FIELD_NUMBER = 9;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList networkTags_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. A list of network tags to attach to the VM instances.
+   * A maximum of 64 network tags are allowed.
+   * </pre>
+   *
+   * <code>
+   * repeated string network_tags = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return A list containing the networkTags.
+   */
+  public com.google.protobuf.ProtocolStringList getNetworkTagsList() {
+    return networkTags_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. A list of network tags to attach to the VM instances.
+   * A maximum of 64 network tags are allowed.
+   * </pre>
+   *
+   * <code>
+   * repeated string network_tags = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The count of networkTags.
+   */
+  public int getNetworkTagsCount() {
+    return networkTags_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. A list of network tags to attach to the VM instances.
+   * A maximum of 64 network tags are allowed.
+   * </pre>
+   *
+   * <code>
+   * repeated string network_tags = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The networkTags at the given index.
+   */
+  public java.lang.String getNetworkTags(int index) {
+    return networkTags_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. A list of network tags to attach to the VM instances.
+   * A maximum of 64 network tags are allowed.
+   * </pre>
+   *
+   * <code>
+   * repeated string network_tags = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the networkTags at the given index.
+   */
+  public com.google.protobuf.ByteString getNetworkTagsBytes(int index) {
+    return networkTags_.getByteString(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -220,6 +478,15 @@ public final class NewReservedInstancesConfig extends com.google.protobuf.Genera
     if (sourceCase_ == 1) {
       com.google.protobuf.GeneratedMessage.writeString(output, 1, source_);
     }
+    if (sourceCase_ == 7) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 7, source_);
+    }
+    if (sourceCase_ == 8) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 8, source_);
+    }
+    for (int i = 0; i < networkTags_.size(); i++) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 9, networkTags_.getRaw(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -231,6 +498,20 @@ public final class NewReservedInstancesConfig extends com.google.protobuf.Genera
     size = 0;
     if (sourceCase_ == 1) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(1, source_);
+    }
+    if (sourceCase_ == 7) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(7, source_);
+    }
+    if (sourceCase_ == 8) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(8, source_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < networkTags_.size(); i++) {
+        dataSize += computeStringSizeNoTag(networkTags_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getNetworkTagsList().size();
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -248,10 +529,17 @@ public final class NewReservedInstancesConfig extends com.google.protobuf.Genera
     com.google.cloud.hypercomputecluster.v1beta.NewReservedInstancesConfig other =
         (com.google.cloud.hypercomputecluster.v1beta.NewReservedInstancesConfig) obj;
 
+    if (!getNetworkTagsList().equals(other.getNetworkTagsList())) return false;
     if (!getSourceCase().equals(other.getSourceCase())) return false;
     switch (sourceCase_) {
       case 1:
         if (!getReservation().equals(other.getReservation())) return false;
+        break;
+      case 7:
+        if (!getReservationBlock().equals(other.getReservationBlock())) return false;
+        break;
+      case 8:
+        if (!getReservationSubBlock().equals(other.getReservationSubBlock())) return false;
         break;
       case 0:
       default:
@@ -267,10 +555,22 @@ public final class NewReservedInstancesConfig extends com.google.protobuf.Genera
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    if (getNetworkTagsCount() > 0) {
+      hash = (37 * hash) + NETWORK_TAGS_FIELD_NUMBER;
+      hash = (53 * hash) + getNetworkTagsList().hashCode();
+    }
     switch (sourceCase_) {
       case 1:
         hash = (37 * hash) + RESERVATION_FIELD_NUMBER;
         hash = (53 * hash) + getReservation().hashCode();
+        break;
+      case 7:
+        hash = (37 * hash) + RESERVATION_BLOCK_FIELD_NUMBER;
+        hash = (53 * hash) + getReservationBlock().hashCode();
+        break;
+      case 8:
+        hash = (37 * hash) + RESERVATION_SUB_BLOCK_FIELD_NUMBER;
+        hash = (53 * hash) + getReservationSubBlock().hashCode();
         break;
       case 0:
       default:
@@ -421,6 +721,7 @@ public final class NewReservedInstancesConfig extends com.google.protobuf.Genera
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
+      networkTags_ = com.google.protobuf.LazyStringArrayList.emptyList();
       sourceCase_ = 0;
       source_ = null;
       return this;
@@ -464,6 +765,10 @@ public final class NewReservedInstancesConfig extends com.google.protobuf.Genera
     private void buildPartial0(
         com.google.cloud.hypercomputecluster.v1beta.NewReservedInstancesConfig result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        networkTags_.makeImmutable();
+        result.networkTags_ = networkTags_;
+      }
     }
 
     private void buildPartialOneofs(
@@ -488,10 +793,34 @@ public final class NewReservedInstancesConfig extends com.google.protobuf.Genera
       if (other
           == com.google.cloud.hypercomputecluster.v1beta.NewReservedInstancesConfig
               .getDefaultInstance()) return this;
+      if (!other.networkTags_.isEmpty()) {
+        if (networkTags_.isEmpty()) {
+          networkTags_ = other.networkTags_;
+          bitField0_ |= 0x00000008;
+        } else {
+          ensureNetworkTagsIsMutable();
+          networkTags_.addAll(other.networkTags_);
+        }
+        onChanged();
+      }
       switch (other.getSourceCase()) {
         case RESERVATION:
           {
             sourceCase_ = 1;
+            source_ = other.source_;
+            onChanged();
+            break;
+          }
+        case RESERVATION_BLOCK:
+          {
+            sourceCase_ = 7;
+            source_ = other.source_;
+            onChanged();
+            break;
+          }
+        case RESERVATION_SUB_BLOCK:
+          {
+            sourceCase_ = 8;
             source_ = other.source_;
             onChanged();
             break;
@@ -534,6 +863,27 @@ public final class NewReservedInstancesConfig extends com.google.protobuf.Genera
                 source_ = s;
                 break;
               } // case 10
+            case 58:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                sourceCase_ = 7;
+                source_ = s;
+                break;
+              } // case 58
+            case 66:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                sourceCase_ = 8;
+                source_ = s;
+                break;
+              } // case 66
+            case 74:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureNetworkTagsIsMutable();
+                networkTags_.add(s);
+                break;
+              } // case 74
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -726,6 +1076,542 @@ public final class NewReservedInstancesConfig extends com.google.protobuf.Genera
       checkByteStringIsUtf8(value);
       sourceCase_ = 1;
       source_ = value;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Name of the reservation block from which VM
+     * instances should be created, in the format
+     * `projects/{project}/zones/{zone}/reservations/{reservation}/reservationBlocks/{reservation_block}`.
+     * </pre>
+     *
+     * <code>
+     * string reservation_block = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return Whether the reservationBlock field is set.
+     */
+    @java.lang.Override
+    public boolean hasReservationBlock() {
+      return sourceCase_ == 7;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Name of the reservation block from which VM
+     * instances should be created, in the format
+     * `projects/{project}/zones/{zone}/reservations/{reservation}/reservationBlocks/{reservation_block}`.
+     * </pre>
+     *
+     * <code>
+     * string reservation_block = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The reservationBlock.
+     */
+    @java.lang.Override
+    public java.lang.String getReservationBlock() {
+      java.lang.Object ref = "";
+      if (sourceCase_ == 7) {
+        ref = source_;
+      }
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (sourceCase_ == 7) {
+          source_ = s;
+        }
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Name of the reservation block from which VM
+     * instances should be created, in the format
+     * `projects/{project}/zones/{zone}/reservations/{reservation}/reservationBlocks/{reservation_block}`.
+     * </pre>
+     *
+     * <code>
+     * string reservation_block = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for reservationBlock.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getReservationBlockBytes() {
+      java.lang.Object ref = "";
+      if (sourceCase_ == 7) {
+        ref = source_;
+      }
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        if (sourceCase_ == 7) {
+          source_ = b;
+        }
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Name of the reservation block from which VM
+     * instances should be created, in the format
+     * `projects/{project}/zones/{zone}/reservations/{reservation}/reservationBlocks/{reservation_block}`.
+     * </pre>
+     *
+     * <code>
+     * string reservation_block = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The reservationBlock to set.
+     * @return This builder for chaining.
+     */
+    public Builder setReservationBlock(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      sourceCase_ = 7;
+      source_ = value;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Name of the reservation block from which VM
+     * instances should be created, in the format
+     * `projects/{project}/zones/{zone}/reservations/{reservation}/reservationBlocks/{reservation_block}`.
+     * </pre>
+     *
+     * <code>
+     * string reservation_block = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearReservationBlock() {
+      if (sourceCase_ == 7) {
+        sourceCase_ = 0;
+        source_ = null;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Name of the reservation block from which VM
+     * instances should be created, in the format
+     * `projects/{project}/zones/{zone}/reservations/{reservation}/reservationBlocks/{reservation_block}`.
+     * </pre>
+     *
+     * <code>
+     * string reservation_block = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes for reservationBlock to set.
+     * @return This builder for chaining.
+     */
+    public Builder setReservationBlockBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      sourceCase_ = 7;
+      source_ = value;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Name of the reservation sub block from which VM
+     * instances should be created, in the format
+     * `projects/{project}/zones/{zone}/reservations/{reservation}/reservationBlocks/{reservation_block}/reservationSubBlocks/{reservation_sub_block}`.
+     * </pre>
+     *
+     * <code>
+     * string reservation_sub_block = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return Whether the reservationSubBlock field is set.
+     */
+    @java.lang.Override
+    public boolean hasReservationSubBlock() {
+      return sourceCase_ == 8;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Name of the reservation sub block from which VM
+     * instances should be created, in the format
+     * `projects/{project}/zones/{zone}/reservations/{reservation}/reservationBlocks/{reservation_block}/reservationSubBlocks/{reservation_sub_block}`.
+     * </pre>
+     *
+     * <code>
+     * string reservation_sub_block = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The reservationSubBlock.
+     */
+    @java.lang.Override
+    public java.lang.String getReservationSubBlock() {
+      java.lang.Object ref = "";
+      if (sourceCase_ == 8) {
+        ref = source_;
+      }
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (sourceCase_ == 8) {
+          source_ = s;
+        }
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Name of the reservation sub block from which VM
+     * instances should be created, in the format
+     * `projects/{project}/zones/{zone}/reservations/{reservation}/reservationBlocks/{reservation_block}/reservationSubBlocks/{reservation_sub_block}`.
+     * </pre>
+     *
+     * <code>
+     * string reservation_sub_block = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for reservationSubBlock.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getReservationSubBlockBytes() {
+      java.lang.Object ref = "";
+      if (sourceCase_ == 8) {
+        ref = source_;
+      }
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        if (sourceCase_ == 8) {
+          source_ = b;
+        }
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Name of the reservation sub block from which VM
+     * instances should be created, in the format
+     * `projects/{project}/zones/{zone}/reservations/{reservation}/reservationBlocks/{reservation_block}/reservationSubBlocks/{reservation_sub_block}`.
+     * </pre>
+     *
+     * <code>
+     * string reservation_sub_block = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The reservationSubBlock to set.
+     * @return This builder for chaining.
+     */
+    public Builder setReservationSubBlock(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      sourceCase_ = 8;
+      source_ = value;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Name of the reservation sub block from which VM
+     * instances should be created, in the format
+     * `projects/{project}/zones/{zone}/reservations/{reservation}/reservationBlocks/{reservation_block}/reservationSubBlocks/{reservation_sub_block}`.
+     * </pre>
+     *
+     * <code>
+     * string reservation_sub_block = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearReservationSubBlock() {
+      if (sourceCase_ == 8) {
+        sourceCase_ = 0;
+        source_ = null;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Name of the reservation sub block from which VM
+     * instances should be created, in the format
+     * `projects/{project}/zones/{zone}/reservations/{reservation}/reservationBlocks/{reservation_block}/reservationSubBlocks/{reservation_sub_block}`.
+     * </pre>
+     *
+     * <code>
+     * string reservation_sub_block = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes for reservationSubBlock to set.
+     * @return This builder for chaining.
+     */
+    public Builder setReservationSubBlockBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      sourceCase_ = 8;
+      source_ = value;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringArrayList networkTags_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureNetworkTagsIsMutable() {
+      if (!networkTags_.isModifiable()) {
+        networkTags_ = new com.google.protobuf.LazyStringArrayList(networkTags_);
+      }
+      bitField0_ |= 0x00000008;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. A list of network tags to attach to the VM instances.
+     * A maximum of 64 network tags are allowed.
+     * </pre>
+     *
+     * <code>
+     * repeated string network_tags = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return A list containing the networkTags.
+     */
+    public com.google.protobuf.ProtocolStringList getNetworkTagsList() {
+      networkTags_.makeImmutable();
+      return networkTags_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. A list of network tags to attach to the VM instances.
+     * A maximum of 64 network tags are allowed.
+     * </pre>
+     *
+     * <code>
+     * repeated string network_tags = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return The count of networkTags.
+     */
+    public int getNetworkTagsCount() {
+      return networkTags_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. A list of network tags to attach to the VM instances.
+     * A maximum of 64 network tags are allowed.
+     * </pre>
+     *
+     * <code>
+     * repeated string network_tags = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The networkTags at the given index.
+     */
+    public java.lang.String getNetworkTags(int index) {
+      return networkTags_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. A list of network tags to attach to the VM instances.
+     * A maximum of 64 network tags are allowed.
+     * </pre>
+     *
+     * <code>
+     * repeated string network_tags = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the networkTags at the given index.
+     */
+    public com.google.protobuf.ByteString getNetworkTagsBytes(int index) {
+      return networkTags_.getByteString(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. A list of network tags to attach to the VM instances.
+     * A maximum of 64 network tags are allowed.
+     * </pre>
+     *
+     * <code>
+     * repeated string network_tags = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The networkTags to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNetworkTags(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureNetworkTagsIsMutable();
+      networkTags_.set(index, value);
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. A list of network tags to attach to the VM instances.
+     * A maximum of 64 network tags are allowed.
+     * </pre>
+     *
+     * <code>
+     * repeated string network_tags = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @param value The networkTags to add.
+     * @return This builder for chaining.
+     */
+    public Builder addNetworkTags(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureNetworkTagsIsMutable();
+      networkTags_.add(value);
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. A list of network tags to attach to the VM instances.
+     * A maximum of 64 network tags are allowed.
+     * </pre>
+     *
+     * <code>
+     * repeated string network_tags = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @param values The networkTags to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllNetworkTags(java.lang.Iterable<java.lang.String> values) {
+      ensureNetworkTagsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, networkTags_);
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. A list of network tags to attach to the VM instances.
+     * A maximum of 64 network tags are allowed.
+     * </pre>
+     *
+     * <code>
+     * repeated string network_tags = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearNetworkTags() {
+      networkTags_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000008);
+      ;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. A list of network tags to attach to the VM instances.
+     * A maximum of 64 network tags are allowed.
+     * </pre>
+     *
+     * <code>
+     * repeated string network_tags = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @param value The bytes of the networkTags to add.
+     * @return This builder for chaining.
+     */
+    public Builder addNetworkTagsBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureNetworkTagsIsMutable();
+      networkTags_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

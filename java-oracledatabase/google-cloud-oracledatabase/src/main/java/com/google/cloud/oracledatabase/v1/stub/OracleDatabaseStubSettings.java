@@ -23,9 +23,11 @@ import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListAutono
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListCloudExadataInfrastructuresPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListCloudVmClustersPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListDatabaseCharacterSetsPagedResponse;
+import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListDatabaseConnectionsPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListDatabasesPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListDbNodesPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListDbServersPagedResponse;
+import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListDbSystemComputePerformancesPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListDbSystemInitialStorageSizesPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListDbSystemShapesPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListDbSystemsPagedResponse;
@@ -33,6 +35,7 @@ import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListDbVers
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListEntitlementsPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListExadbVmClustersPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListExascaleDbStorageVaultsPagedResponse;
+import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListFlexComponentsPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListGiVersionsPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListGoldengateConnectionAssignmentsPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListGoldengateConnectionTypesPagedResponse;
@@ -43,6 +46,7 @@ import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListGolden
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListGoldengateDeploymentsPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListLocationsPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListMinorVersionsPagedResponse;
+import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListOdbDnsZonesPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListOdbNetworksPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListOdbSubnetsPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListPluggableDatabasesPagedResponse;
@@ -93,43 +97,57 @@ import com.google.cloud.oracledatabase.v1.ConfigureExascaleCloudExadataInfrastru
 import com.google.cloud.oracledatabase.v1.CreateAutonomousDatabaseRequest;
 import com.google.cloud.oracledatabase.v1.CreateCloudExadataInfrastructureRequest;
 import com.google.cloud.oracledatabase.v1.CreateCloudVmClusterRequest;
+import com.google.cloud.oracledatabase.v1.CreateDatabaseConnectionRequest;
 import com.google.cloud.oracledatabase.v1.CreateDbSystemRequest;
 import com.google.cloud.oracledatabase.v1.CreateExadbVmClusterRequest;
 import com.google.cloud.oracledatabase.v1.CreateExascaleDbStorageVaultRequest;
 import com.google.cloud.oracledatabase.v1.CreateGoldengateConnectionAssignmentRequest;
 import com.google.cloud.oracledatabase.v1.CreateGoldengateConnectionRequest;
 import com.google.cloud.oracledatabase.v1.CreateGoldengateDeploymentRequest;
+import com.google.cloud.oracledatabase.v1.CreateOdbDnsZoneRequest;
 import com.google.cloud.oracledatabase.v1.CreateOdbNetworkRequest;
 import com.google.cloud.oracledatabase.v1.CreateOdbSubnetRequest;
 import com.google.cloud.oracledatabase.v1.Database;
 import com.google.cloud.oracledatabase.v1.DatabaseCharacterSet;
+import com.google.cloud.oracledatabase.v1.DatabaseConnection;
 import com.google.cloud.oracledatabase.v1.DbNode;
 import com.google.cloud.oracledatabase.v1.DbServer;
 import com.google.cloud.oracledatabase.v1.DbSystem;
+import com.google.cloud.oracledatabase.v1.DbSystemComputePerformance;
 import com.google.cloud.oracledatabase.v1.DbSystemInitialStorageSize;
 import com.google.cloud.oracledatabase.v1.DbSystemShape;
 import com.google.cloud.oracledatabase.v1.DbVersion;
 import com.google.cloud.oracledatabase.v1.DeleteAutonomousDatabaseRequest;
 import com.google.cloud.oracledatabase.v1.DeleteCloudExadataInfrastructureRequest;
 import com.google.cloud.oracledatabase.v1.DeleteCloudVmClusterRequest;
+import com.google.cloud.oracledatabase.v1.DeleteDatabaseConnectionRequest;
 import com.google.cloud.oracledatabase.v1.DeleteDbSystemRequest;
 import com.google.cloud.oracledatabase.v1.DeleteExadbVmClusterRequest;
 import com.google.cloud.oracledatabase.v1.DeleteExascaleDbStorageVaultRequest;
 import com.google.cloud.oracledatabase.v1.DeleteGoldengateConnectionAssignmentRequest;
 import com.google.cloud.oracledatabase.v1.DeleteGoldengateConnectionRequest;
 import com.google.cloud.oracledatabase.v1.DeleteGoldengateDeploymentRequest;
+import com.google.cloud.oracledatabase.v1.DeleteOdbDnsZoneRequest;
 import com.google.cloud.oracledatabase.v1.DeleteOdbNetworkRequest;
 import com.google.cloud.oracledatabase.v1.DeleteOdbSubnetRequest;
+import com.google.cloud.oracledatabase.v1.DisableCloudVmClusterIdentityConnectorRequest;
+import com.google.cloud.oracledatabase.v1.DisableExadbVmClusterIdentityConnectorRequest;
+import com.google.cloud.oracledatabase.v1.EnableCloudVmClusterIdentityConnectorRequest;
+import com.google.cloud.oracledatabase.v1.EnableExadbVmClusterIdentityConnectorRequest;
 import com.google.cloud.oracledatabase.v1.Entitlement;
 import com.google.cloud.oracledatabase.v1.ExadbVmCluster;
 import com.google.cloud.oracledatabase.v1.ExascaleDbStorageVault;
+import com.google.cloud.oracledatabase.v1.ExecuteSqlRequest;
+import com.google.cloud.oracledatabase.v1.ExecuteSqlResponse;
 import com.google.cloud.oracledatabase.v1.FailoverAutonomousDatabaseRequest;
+import com.google.cloud.oracledatabase.v1.FlexComponent;
 import com.google.cloud.oracledatabase.v1.GenerateAutonomousDatabaseWalletRequest;
 import com.google.cloud.oracledatabase.v1.GenerateAutonomousDatabaseWalletResponse;
 import com.google.cloud.oracledatabase.v1.GetAutonomousDatabaseRefreshableClonesRequest;
 import com.google.cloud.oracledatabase.v1.GetAutonomousDatabaseRequest;
 import com.google.cloud.oracledatabase.v1.GetCloudExadataInfrastructureRequest;
 import com.google.cloud.oracledatabase.v1.GetCloudVmClusterRequest;
+import com.google.cloud.oracledatabase.v1.GetDatabaseConnectionRequest;
 import com.google.cloud.oracledatabase.v1.GetDatabaseRequest;
 import com.google.cloud.oracledatabase.v1.GetDbSystemRequest;
 import com.google.cloud.oracledatabase.v1.GetExadbVmClusterRequest;
@@ -137,6 +155,7 @@ import com.google.cloud.oracledatabase.v1.GetExascaleDbStorageVaultRequest;
 import com.google.cloud.oracledatabase.v1.GetGoldengateConnectionAssignmentRequest;
 import com.google.cloud.oracledatabase.v1.GetGoldengateConnectionRequest;
 import com.google.cloud.oracledatabase.v1.GetGoldengateDeploymentRequest;
+import com.google.cloud.oracledatabase.v1.GetOdbDnsZoneRequest;
 import com.google.cloud.oracledatabase.v1.GetOdbNetworkRequest;
 import com.google.cloud.oracledatabase.v1.GetOdbSubnetRequest;
 import com.google.cloud.oracledatabase.v1.GetPluggableDatabaseRequest;
@@ -162,12 +181,16 @@ import com.google.cloud.oracledatabase.v1.ListCloudVmClustersRequest;
 import com.google.cloud.oracledatabase.v1.ListCloudVmClustersResponse;
 import com.google.cloud.oracledatabase.v1.ListDatabaseCharacterSetsRequest;
 import com.google.cloud.oracledatabase.v1.ListDatabaseCharacterSetsResponse;
+import com.google.cloud.oracledatabase.v1.ListDatabaseConnectionsRequest;
+import com.google.cloud.oracledatabase.v1.ListDatabaseConnectionsResponse;
 import com.google.cloud.oracledatabase.v1.ListDatabasesRequest;
 import com.google.cloud.oracledatabase.v1.ListDatabasesResponse;
 import com.google.cloud.oracledatabase.v1.ListDbNodesRequest;
 import com.google.cloud.oracledatabase.v1.ListDbNodesResponse;
 import com.google.cloud.oracledatabase.v1.ListDbServersRequest;
 import com.google.cloud.oracledatabase.v1.ListDbServersResponse;
+import com.google.cloud.oracledatabase.v1.ListDbSystemComputePerformancesRequest;
+import com.google.cloud.oracledatabase.v1.ListDbSystemComputePerformancesResponse;
 import com.google.cloud.oracledatabase.v1.ListDbSystemInitialStorageSizesRequest;
 import com.google.cloud.oracledatabase.v1.ListDbSystemInitialStorageSizesResponse;
 import com.google.cloud.oracledatabase.v1.ListDbSystemShapesRequest;
@@ -182,6 +205,8 @@ import com.google.cloud.oracledatabase.v1.ListExadbVmClustersRequest;
 import com.google.cloud.oracledatabase.v1.ListExadbVmClustersResponse;
 import com.google.cloud.oracledatabase.v1.ListExascaleDbStorageVaultsRequest;
 import com.google.cloud.oracledatabase.v1.ListExascaleDbStorageVaultsResponse;
+import com.google.cloud.oracledatabase.v1.ListFlexComponentsRequest;
+import com.google.cloud.oracledatabase.v1.ListFlexComponentsResponse;
 import com.google.cloud.oracledatabase.v1.ListGiVersionsRequest;
 import com.google.cloud.oracledatabase.v1.ListGiVersionsResponse;
 import com.google.cloud.oracledatabase.v1.ListGoldengateConnectionAssignmentsRequest;
@@ -200,6 +225,8 @@ import com.google.cloud.oracledatabase.v1.ListGoldengateDeploymentsRequest;
 import com.google.cloud.oracledatabase.v1.ListGoldengateDeploymentsResponse;
 import com.google.cloud.oracledatabase.v1.ListMinorVersionsRequest;
 import com.google.cloud.oracledatabase.v1.ListMinorVersionsResponse;
+import com.google.cloud.oracledatabase.v1.ListOdbDnsZonesRequest;
+import com.google.cloud.oracledatabase.v1.ListOdbDnsZonesResponse;
 import com.google.cloud.oracledatabase.v1.ListOdbNetworksRequest;
 import com.google.cloud.oracledatabase.v1.ListOdbNetworksResponse;
 import com.google.cloud.oracledatabase.v1.ListOdbSubnetsRequest;
@@ -207,6 +234,7 @@ import com.google.cloud.oracledatabase.v1.ListOdbSubnetsResponse;
 import com.google.cloud.oracledatabase.v1.ListPluggableDatabasesRequest;
 import com.google.cloud.oracledatabase.v1.ListPluggableDatabasesResponse;
 import com.google.cloud.oracledatabase.v1.MinorVersion;
+import com.google.cloud.oracledatabase.v1.OdbDnsZone;
 import com.google.cloud.oracledatabase.v1.OdbNetwork;
 import com.google.cloud.oracledatabase.v1.OdbSubnet;
 import com.google.cloud.oracledatabase.v1.OperationMetadata;
@@ -220,10 +248,22 @@ import com.google.cloud.oracledatabase.v1.StartGoldengateDeploymentRequest;
 import com.google.cloud.oracledatabase.v1.StopAutonomousDatabaseRequest;
 import com.google.cloud.oracledatabase.v1.StopGoldengateDeploymentRequest;
 import com.google.cloud.oracledatabase.v1.SwitchoverAutonomousDatabaseRequest;
+import com.google.cloud.oracledatabase.v1.TestDatabaseConnectionRequest;
+import com.google.cloud.oracledatabase.v1.TestDatabaseConnectionResponse;
 import com.google.cloud.oracledatabase.v1.TestGoldengateConnectionAssignmentRequest;
 import com.google.cloud.oracledatabase.v1.TestGoldengateConnectionAssignmentResponse;
 import com.google.cloud.oracledatabase.v1.UpdateAutonomousDatabaseRequest;
+import com.google.cloud.oracledatabase.v1.UpdateCloudExadataInfrastructureRequest;
+import com.google.cloud.oracledatabase.v1.UpdateCloudVmClusterRequest;
+import com.google.cloud.oracledatabase.v1.UpdateDatabaseConnectionRequest;
+import com.google.cloud.oracledatabase.v1.UpdateDbSystemRequest;
 import com.google.cloud.oracledatabase.v1.UpdateExadbVmClusterRequest;
+import com.google.cloud.oracledatabase.v1.UpdateExascaleDbStorageVaultRequest;
+import com.google.cloud.oracledatabase.v1.UpdateGoldengateConnectionAssignmentRequest;
+import com.google.cloud.oracledatabase.v1.UpdateGoldengateConnectionRequest;
+import com.google.cloud.oracledatabase.v1.UpdateGoldengateDeploymentRequest;
+import com.google.cloud.oracledatabase.v1.UpdateOdbNetworkRequest;
+import com.google.cloud.oracledatabase.v1.UpdateOdbSubnetRequest;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -334,6 +374,11 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
   private final OperationCallSettings<
           CreateCloudExadataInfrastructureRequest, CloudExadataInfrastructure, OperationMetadata>
       createCloudExadataInfrastructureOperationSettings;
+  private final UnaryCallSettings<UpdateCloudExadataInfrastructureRequest, Operation>
+      updateCloudExadataInfrastructureSettings;
+  private final OperationCallSettings<
+          UpdateCloudExadataInfrastructureRequest, CloudExadataInfrastructure, OperationMetadata>
+      updateCloudExadataInfrastructureOperationSettings;
   private final UnaryCallSettings<DeleteCloudExadataInfrastructureRequest, Operation>
       deleteCloudExadataInfrastructureSettings;
   private final OperationCallSettings<
@@ -356,13 +401,41 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
   private final OperationCallSettings<
           CreateCloudVmClusterRequest, CloudVmCluster, OperationMetadata>
       createCloudVmClusterOperationSettings;
+  private final UnaryCallSettings<UpdateCloudVmClusterRequest, Operation>
+      updateCloudVmClusterSettings;
+  private final OperationCallSettings<
+          UpdateCloudVmClusterRequest, CloudVmCluster, OperationMetadata>
+      updateCloudVmClusterOperationSettings;
   private final UnaryCallSettings<DeleteCloudVmClusterRequest, Operation>
       deleteCloudVmClusterSettings;
   private final OperationCallSettings<DeleteCloudVmClusterRequest, Empty, OperationMetadata>
       deleteCloudVmClusterOperationSettings;
+  private final UnaryCallSettings<EnableCloudVmClusterIdentityConnectorRequest, Operation>
+      enableCloudVmClusterIdentityConnectorSettings;
+  private final OperationCallSettings<
+          EnableCloudVmClusterIdentityConnectorRequest, CloudVmCluster, OperationMetadata>
+      enableCloudVmClusterIdentityConnectorOperationSettings;
+  private final UnaryCallSettings<DisableCloudVmClusterIdentityConnectorRequest, Operation>
+      disableCloudVmClusterIdentityConnectorSettings;
+  private final OperationCallSettings<
+          DisableCloudVmClusterIdentityConnectorRequest, CloudVmCluster, OperationMetadata>
+      disableCloudVmClusterIdentityConnectorOperationSettings;
+  private final UnaryCallSettings<EnableExadbVmClusterIdentityConnectorRequest, Operation>
+      enableExadbVmClusterIdentityConnectorSettings;
+  private final OperationCallSettings<
+          EnableExadbVmClusterIdentityConnectorRequest, ExadbVmCluster, OperationMetadata>
+      enableExadbVmClusterIdentityConnectorOperationSettings;
+  private final UnaryCallSettings<DisableExadbVmClusterIdentityConnectorRequest, Operation>
+      disableExadbVmClusterIdentityConnectorSettings;
+  private final OperationCallSettings<
+          DisableExadbVmClusterIdentityConnectorRequest, ExadbVmCluster, OperationMetadata>
+      disableExadbVmClusterIdentityConnectorOperationSettings;
   private final PagedCallSettings<
           ListEntitlementsRequest, ListEntitlementsResponse, ListEntitlementsPagedResponse>
       listEntitlementsSettings;
+  private final PagedCallSettings<
+          ListFlexComponentsRequest, ListFlexComponentsResponse, ListFlexComponentsPagedResponse>
+      listFlexComponentsSettings;
   private final PagedCallSettings<
           ListDbServersRequest, ListDbServersResponse, ListDbServersPagedResponse>
       listDbServersSettings;
@@ -461,6 +534,9 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
   private final UnaryCallSettings<CreateOdbNetworkRequest, Operation> createOdbNetworkSettings;
   private final OperationCallSettings<CreateOdbNetworkRequest, OdbNetwork, OperationMetadata>
       createOdbNetworkOperationSettings;
+  private final UnaryCallSettings<UpdateOdbNetworkRequest, Operation> updateOdbNetworkSettings;
+  private final OperationCallSettings<UpdateOdbNetworkRequest, OdbNetwork, OperationMetadata>
+      updateOdbNetworkOperationSettings;
   private final UnaryCallSettings<DeleteOdbNetworkRequest, Operation> deleteOdbNetworkSettings;
   private final OperationCallSettings<DeleteOdbNetworkRequest, Empty, OperationMetadata>
       deleteOdbNetworkOperationSettings;
@@ -471,9 +547,22 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
   private final UnaryCallSettings<CreateOdbSubnetRequest, Operation> createOdbSubnetSettings;
   private final OperationCallSettings<CreateOdbSubnetRequest, OdbSubnet, OperationMetadata>
       createOdbSubnetOperationSettings;
+  private final UnaryCallSettings<UpdateOdbSubnetRequest, Operation> updateOdbSubnetSettings;
+  private final OperationCallSettings<UpdateOdbSubnetRequest, OdbSubnet, OperationMetadata>
+      updateOdbSubnetOperationSettings;
   private final UnaryCallSettings<DeleteOdbSubnetRequest, Operation> deleteOdbSubnetSettings;
   private final OperationCallSettings<DeleteOdbSubnetRequest, Empty, OperationMetadata>
       deleteOdbSubnetOperationSettings;
+  private final PagedCallSettings<
+          ListOdbDnsZonesRequest, ListOdbDnsZonesResponse, ListOdbDnsZonesPagedResponse>
+      listOdbDnsZonesSettings;
+  private final UnaryCallSettings<GetOdbDnsZoneRequest, OdbDnsZone> getOdbDnsZoneSettings;
+  private final UnaryCallSettings<CreateOdbDnsZoneRequest, Operation> createOdbDnsZoneSettings;
+  private final OperationCallSettings<CreateOdbDnsZoneRequest, OdbDnsZone, OperationMetadata>
+      createOdbDnsZoneOperationSettings;
+  private final UnaryCallSettings<DeleteOdbDnsZoneRequest, Operation> deleteOdbDnsZoneSettings;
+  private final OperationCallSettings<DeleteOdbDnsZoneRequest, Empty, OperationMetadata>
+      deleteOdbDnsZoneOperationSettings;
   private final PagedCallSettings<
           ListExadbVmClustersRequest, ListExadbVmClustersResponse, ListExadbVmClustersPagedResponse>
       listExadbVmClustersSettings;
@@ -510,6 +599,11 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
   private final OperationCallSettings<
           CreateExascaleDbStorageVaultRequest, ExascaleDbStorageVault, OperationMetadata>
       createExascaleDbStorageVaultOperationSettings;
+  private final UnaryCallSettings<UpdateExascaleDbStorageVaultRequest, Operation>
+      updateExascaleDbStorageVaultSettings;
+  private final OperationCallSettings<
+          UpdateExascaleDbStorageVaultRequest, ExascaleDbStorageVault, OperationMetadata>
+      updateExascaleDbStorageVaultOperationSettings;
   private final UnaryCallSettings<DeleteExascaleDbStorageVaultRequest, Operation>
       deleteExascaleDbStorageVaultSettings;
   private final OperationCallSettings<DeleteExascaleDbStorageVaultRequest, Empty, OperationMetadata>
@@ -519,6 +613,11 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
           ListDbSystemInitialStorageSizesResponse,
           ListDbSystemInitialStorageSizesPagedResponse>
       listDbSystemInitialStorageSizesSettings;
+  private final PagedCallSettings<
+          ListDbSystemComputePerformancesRequest,
+          ListDbSystemComputePerformancesResponse,
+          ListDbSystemComputePerformancesPagedResponse>
+      listDbSystemComputePerformancesSettings;
   private final PagedCallSettings<
           ListDatabasesRequest, ListDatabasesResponse, ListDatabasesPagedResponse>
       listDatabasesSettings;
@@ -537,6 +636,9 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
   private final UnaryCallSettings<CreateDbSystemRequest, Operation> createDbSystemSettings;
   private final OperationCallSettings<CreateDbSystemRequest, DbSystem, OperationMetadata>
       createDbSystemOperationSettings;
+  private final UnaryCallSettings<UpdateDbSystemRequest, Operation> updateDbSystemSettings;
+  private final OperationCallSettings<UpdateDbSystemRequest, DbSystem, OperationMetadata>
+      updateDbSystemOperationSettings;
   private final UnaryCallSettings<DeleteDbSystemRequest, Operation> deleteDbSystemSettings;
   private final OperationCallSettings<DeleteDbSystemRequest, Empty, OperationMetadata>
       deleteDbSystemOperationSettings;
@@ -552,6 +654,11 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
   private final OperationCallSettings<
           CreateGoldengateDeploymentRequest, GoldengateDeployment, OperationMetadata>
       createGoldengateDeploymentOperationSettings;
+  private final UnaryCallSettings<UpdateGoldengateDeploymentRequest, Operation>
+      updateGoldengateDeploymentSettings;
+  private final OperationCallSettings<
+          UpdateGoldengateDeploymentRequest, GoldengateDeployment, OperationMetadata>
+      updateGoldengateDeploymentOperationSettings;
   private final UnaryCallSettings<DeleteGoldengateDeploymentRequest, Operation>
       deleteGoldengateDeploymentSettings;
   private final OperationCallSettings<DeleteGoldengateDeploymentRequest, Empty, OperationMetadata>
@@ -578,6 +685,11 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
   private final OperationCallSettings<
           CreateGoldengateConnectionRequest, GoldengateConnection, OperationMetadata>
       createGoldengateConnectionOperationSettings;
+  private final UnaryCallSettings<UpdateGoldengateConnectionRequest, Operation>
+      updateGoldengateConnectionSettings;
+  private final OperationCallSettings<
+          UpdateGoldengateConnectionRequest, GoldengateConnection, OperationMetadata>
+      updateGoldengateConnectionOperationSettings;
   private final UnaryCallSettings<DeleteGoldengateConnectionRequest, Operation>
       deleteGoldengateConnectionSettings;
   private final OperationCallSettings<DeleteGoldengateConnectionRequest, Empty, OperationMetadata>
@@ -625,6 +737,13 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
           GoldengateConnectionAssignment,
           OperationMetadata>
       createGoldengateConnectionAssignmentOperationSettings;
+  private final UnaryCallSettings<UpdateGoldengateConnectionAssignmentRequest, Operation>
+      updateGoldengateConnectionAssignmentSettings;
+  private final OperationCallSettings<
+          UpdateGoldengateConnectionAssignmentRequest,
+          GoldengateConnectionAssignment,
+          OperationMetadata>
+      updateGoldengateConnectionAssignmentOperationSettings;
   private final UnaryCallSettings<DeleteGoldengateConnectionAssignmentRequest, Operation>
       deleteGoldengateConnectionAssignmentSettings;
   private final OperationCallSettings<
@@ -633,6 +752,30 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
   private final UnaryCallSettings<
           TestGoldengateConnectionAssignmentRequest, TestGoldengateConnectionAssignmentResponse>
       testGoldengateConnectionAssignmentSettings;
+  private final PagedCallSettings<
+          ListDatabaseConnectionsRequest,
+          ListDatabaseConnectionsResponse,
+          ListDatabaseConnectionsPagedResponse>
+      listDatabaseConnectionsSettings;
+  private final UnaryCallSettings<GetDatabaseConnectionRequest, DatabaseConnection>
+      getDatabaseConnectionSettings;
+  private final UnaryCallSettings<CreateDatabaseConnectionRequest, Operation>
+      createDatabaseConnectionSettings;
+  private final OperationCallSettings<
+          CreateDatabaseConnectionRequest, DatabaseConnection, OperationMetadata>
+      createDatabaseConnectionOperationSettings;
+  private final UnaryCallSettings<UpdateDatabaseConnectionRequest, Operation>
+      updateDatabaseConnectionSettings;
+  private final OperationCallSettings<
+          UpdateDatabaseConnectionRequest, DatabaseConnection, OperationMetadata>
+      updateDatabaseConnectionOperationSettings;
+  private final UnaryCallSettings<DeleteDatabaseConnectionRequest, Operation>
+      deleteDatabaseConnectionSettings;
+  private final OperationCallSettings<DeleteDatabaseConnectionRequest, Empty, OperationMetadata>
+      deleteDatabaseConnectionOperationSettings;
+  private final UnaryCallSettings<TestDatabaseConnectionRequest, TestDatabaseConnectionResponse>
+      testDatabaseConnectionSettings;
+  private final UnaryCallSettings<ExecuteSqlRequest, ExecuteSqlResponse> executeSqlSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -758,6 +901,44 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
             @Override
             public Iterable<Entitlement> extractResources(ListEntitlementsResponse payload) {
               return payload.getEntitlementsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListFlexComponentsRequest, ListFlexComponentsResponse, FlexComponent>
+      LIST_FLEX_COMPONENTS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListFlexComponentsRequest, ListFlexComponentsResponse, FlexComponent>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListFlexComponentsRequest injectToken(
+                ListFlexComponentsRequest payload, String token) {
+              return ListFlexComponentsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListFlexComponentsRequest injectPageSize(
+                ListFlexComponentsRequest payload, int pageSize) {
+              return ListFlexComponentsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListFlexComponentsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListFlexComponentsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<FlexComponent> extractResources(ListFlexComponentsResponse payload) {
+              return payload.getFlexComponentsList();
             }
           };
 
@@ -1195,6 +1376,43 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
           };
 
   private static final PagedListDescriptor<
+          ListOdbDnsZonesRequest, ListOdbDnsZonesResponse, OdbDnsZone>
+      LIST_ODB_DNS_ZONES_PAGE_STR_DESC =
+          new PagedListDescriptor<ListOdbDnsZonesRequest, ListOdbDnsZonesResponse, OdbDnsZone>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListOdbDnsZonesRequest injectToken(
+                ListOdbDnsZonesRequest payload, String token) {
+              return ListOdbDnsZonesRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListOdbDnsZonesRequest injectPageSize(
+                ListOdbDnsZonesRequest payload, int pageSize) {
+              return ListOdbDnsZonesRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListOdbDnsZonesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListOdbDnsZonesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<OdbDnsZone> extractResources(ListOdbDnsZonesResponse payload) {
+              return payload.getOdbDnsZonesList();
+            }
+          };
+
+  private static final PagedListDescriptor<
           ListExadbVmClustersRequest, ListExadbVmClustersResponse, ExadbVmCluster>
       LIST_EXADB_VM_CLUSTERS_PAGE_STR_DESC =
           new PagedListDescriptor<
@@ -1323,6 +1541,53 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
             public Iterable<DbSystemInitialStorageSize> extractResources(
                 ListDbSystemInitialStorageSizesResponse payload) {
               return payload.getDbSystemInitialStorageSizesList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListDbSystemComputePerformancesRequest,
+          ListDbSystemComputePerformancesResponse,
+          DbSystemComputePerformance>
+      LIST_DB_SYSTEM_COMPUTE_PERFORMANCES_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListDbSystemComputePerformancesRequest,
+              ListDbSystemComputePerformancesResponse,
+              DbSystemComputePerformance>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListDbSystemComputePerformancesRequest injectToken(
+                ListDbSystemComputePerformancesRequest payload, String token) {
+              return ListDbSystemComputePerformancesRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public ListDbSystemComputePerformancesRequest injectPageSize(
+                ListDbSystemComputePerformancesRequest payload, int pageSize) {
+              return ListDbSystemComputePerformancesRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListDbSystemComputePerformancesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListDbSystemComputePerformancesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<DbSystemComputePerformance> extractResources(
+                ListDbSystemComputePerformancesResponse payload) {
+              return payload.getDbSystemComputePerformancesList();
             }
           };
 
@@ -1840,6 +2105,49 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
             }
           };
 
+  private static final PagedListDescriptor<
+          ListDatabaseConnectionsRequest, ListDatabaseConnectionsResponse, DatabaseConnection>
+      LIST_DATABASE_CONNECTIONS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListDatabaseConnectionsRequest,
+              ListDatabaseConnectionsResponse,
+              DatabaseConnection>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListDatabaseConnectionsRequest injectToken(
+                ListDatabaseConnectionsRequest payload, String token) {
+              return ListDatabaseConnectionsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListDatabaseConnectionsRequest injectPageSize(
+                ListDatabaseConnectionsRequest payload, int pageSize) {
+              return ListDatabaseConnectionsRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListDatabaseConnectionsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListDatabaseConnectionsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<DatabaseConnection> extractResources(
+                ListDatabaseConnectionsResponse payload) {
+              return payload.getDatabaseConnectionsList();
+            }
+          };
+
   private static final PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>
       LIST_LOCATIONS_PAGE_STR_DESC =
           new PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>() {
@@ -1944,6 +2252,27 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
                       PageContext.create(
                           callable, LIST_ENTITLEMENTS_PAGE_STR_DESC, request, context);
               return ListEntitlementsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListFlexComponentsRequest, ListFlexComponentsResponse, ListFlexComponentsPagedResponse>
+      LIST_FLEX_COMPONENTS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListFlexComponentsRequest,
+              ListFlexComponentsResponse,
+              ListFlexComponentsPagedResponse>() {
+            @Override
+            public ApiFuture<ListFlexComponentsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListFlexComponentsRequest, ListFlexComponentsResponse> callable,
+                ListFlexComponentsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListFlexComponentsResponse> futureResponse) {
+              PageContext<ListFlexComponentsRequest, ListFlexComponentsResponse, FlexComponent>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_FLEX_COMPONENTS_PAGE_STR_DESC, request, context);
+              return ListFlexComponentsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -2195,6 +2524,23 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
           };
 
   private static final PagedListResponseFactory<
+          ListOdbDnsZonesRequest, ListOdbDnsZonesResponse, ListOdbDnsZonesPagedResponse>
+      LIST_ODB_DNS_ZONES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListOdbDnsZonesRequest, ListOdbDnsZonesResponse, ListOdbDnsZonesPagedResponse>() {
+            @Override
+            public ApiFuture<ListOdbDnsZonesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListOdbDnsZonesRequest, ListOdbDnsZonesResponse> callable,
+                ListOdbDnsZonesRequest request,
+                ApiCallContext context,
+                ApiFuture<ListOdbDnsZonesResponse> futureResponse) {
+              PageContext<ListOdbDnsZonesRequest, ListOdbDnsZonesResponse, OdbDnsZone> pageContext =
+                  PageContext.create(callable, LIST_ODB_DNS_ZONES_PAGE_STR_DESC, request, context);
+              return ListOdbDnsZonesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
           ListExadbVmClustersRequest, ListExadbVmClustersResponse, ListExadbVmClustersPagedResponse>
       LIST_EXADB_VM_CLUSTERS_PAGE_STR_FACT =
           new PagedListResponseFactory<
@@ -2276,6 +2622,39 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
                           request,
                           context);
               return ListDbSystemInitialStorageSizesPagedResponse.createAsync(
+                  pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListDbSystemComputePerformancesRequest,
+          ListDbSystemComputePerformancesResponse,
+          ListDbSystemComputePerformancesPagedResponse>
+      LIST_DB_SYSTEM_COMPUTE_PERFORMANCES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListDbSystemComputePerformancesRequest,
+              ListDbSystemComputePerformancesResponse,
+              ListDbSystemComputePerformancesPagedResponse>() {
+            @Override
+            public ApiFuture<ListDbSystemComputePerformancesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<
+                        ListDbSystemComputePerformancesRequest,
+                        ListDbSystemComputePerformancesResponse>
+                    callable,
+                ListDbSystemComputePerformancesRequest request,
+                ApiCallContext context,
+                ApiFuture<ListDbSystemComputePerformancesResponse> futureResponse) {
+              PageContext<
+                      ListDbSystemComputePerformancesRequest,
+                      ListDbSystemComputePerformancesResponse,
+                      DbSystemComputePerformance>
+                  pageContext =
+                      PageContext.create(
+                          callable,
+                          LIST_DB_SYSTEM_COMPUTE_PERFORMANCES_PAGE_STR_DESC,
+                          request,
+                          context);
+              return ListDbSystemComputePerformancesPagedResponse.createAsync(
                   pageContext, futureResponse);
             }
           };
@@ -2608,6 +2987,33 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
           };
 
   private static final PagedListResponseFactory<
+          ListDatabaseConnectionsRequest,
+          ListDatabaseConnectionsResponse,
+          ListDatabaseConnectionsPagedResponse>
+      LIST_DATABASE_CONNECTIONS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListDatabaseConnectionsRequest,
+              ListDatabaseConnectionsResponse,
+              ListDatabaseConnectionsPagedResponse>() {
+            @Override
+            public ApiFuture<ListDatabaseConnectionsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListDatabaseConnectionsRequest, ListDatabaseConnectionsResponse>
+                    callable,
+                ListDatabaseConnectionsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListDatabaseConnectionsResponse> futureResponse) {
+              PageContext<
+                      ListDatabaseConnectionsRequest,
+                      ListDatabaseConnectionsResponse,
+                      DatabaseConnection>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_DATABASE_CONNECTIONS_PAGE_STR_DESC, request, context);
+              return ListDatabaseConnectionsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       LIST_LOCATIONS_PAGE_STR_FACT =
           new PagedListResponseFactory<
@@ -2650,6 +3056,19 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
           CreateCloudExadataInfrastructureRequest, CloudExadataInfrastructure, OperationMetadata>
       createCloudExadataInfrastructureOperationSettings() {
     return createCloudExadataInfrastructureOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateCloudExadataInfrastructure. */
+  public UnaryCallSettings<UpdateCloudExadataInfrastructureRequest, Operation>
+      updateCloudExadataInfrastructureSettings() {
+    return updateCloudExadataInfrastructureSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateCloudExadataInfrastructure. */
+  public OperationCallSettings<
+          UpdateCloudExadataInfrastructureRequest, CloudExadataInfrastructure, OperationMetadata>
+      updateCloudExadataInfrastructureOperationSettings() {
+    return updateCloudExadataInfrastructureOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to deleteCloudExadataInfrastructure. */
@@ -2708,6 +3127,17 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
     return createCloudVmClusterOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to updateCloudVmCluster. */
+  public UnaryCallSettings<UpdateCloudVmClusterRequest, Operation> updateCloudVmClusterSettings() {
+    return updateCloudVmClusterSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateCloudVmCluster. */
+  public OperationCallSettings<UpdateCloudVmClusterRequest, CloudVmCluster, OperationMetadata>
+      updateCloudVmClusterOperationSettings() {
+    return updateCloudVmClusterOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to deleteCloudVmCluster. */
   public UnaryCallSettings<DeleteCloudVmClusterRequest, Operation> deleteCloudVmClusterSettings() {
     return deleteCloudVmClusterSettings;
@@ -2719,11 +3149,86 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
     return deleteCloudVmClusterOperationSettings;
   }
 
+  /**
+   * Returns the object with the settings used for calls to enableCloudVmClusterIdentityConnector.
+   */
+  public UnaryCallSettings<EnableCloudVmClusterIdentityConnectorRequest, Operation>
+      enableCloudVmClusterIdentityConnectorSettings() {
+    return enableCloudVmClusterIdentityConnectorSettings;
+  }
+
+  /**
+   * Returns the object with the settings used for calls to enableCloudVmClusterIdentityConnector.
+   */
+  public OperationCallSettings<
+          EnableCloudVmClusterIdentityConnectorRequest, CloudVmCluster, OperationMetadata>
+      enableCloudVmClusterIdentityConnectorOperationSettings() {
+    return enableCloudVmClusterIdentityConnectorOperationSettings;
+  }
+
+  /**
+   * Returns the object with the settings used for calls to disableCloudVmClusterIdentityConnector.
+   */
+  public UnaryCallSettings<DisableCloudVmClusterIdentityConnectorRequest, Operation>
+      disableCloudVmClusterIdentityConnectorSettings() {
+    return disableCloudVmClusterIdentityConnectorSettings;
+  }
+
+  /**
+   * Returns the object with the settings used for calls to disableCloudVmClusterIdentityConnector.
+   */
+  public OperationCallSettings<
+          DisableCloudVmClusterIdentityConnectorRequest, CloudVmCluster, OperationMetadata>
+      disableCloudVmClusterIdentityConnectorOperationSettings() {
+    return disableCloudVmClusterIdentityConnectorOperationSettings;
+  }
+
+  /**
+   * Returns the object with the settings used for calls to enableExadbVmClusterIdentityConnector.
+   */
+  public UnaryCallSettings<EnableExadbVmClusterIdentityConnectorRequest, Operation>
+      enableExadbVmClusterIdentityConnectorSettings() {
+    return enableExadbVmClusterIdentityConnectorSettings;
+  }
+
+  /**
+   * Returns the object with the settings used for calls to enableExadbVmClusterIdentityConnector.
+   */
+  public OperationCallSettings<
+          EnableExadbVmClusterIdentityConnectorRequest, ExadbVmCluster, OperationMetadata>
+      enableExadbVmClusterIdentityConnectorOperationSettings() {
+    return enableExadbVmClusterIdentityConnectorOperationSettings;
+  }
+
+  /**
+   * Returns the object with the settings used for calls to disableExadbVmClusterIdentityConnector.
+   */
+  public UnaryCallSettings<DisableExadbVmClusterIdentityConnectorRequest, Operation>
+      disableExadbVmClusterIdentityConnectorSettings() {
+    return disableExadbVmClusterIdentityConnectorSettings;
+  }
+
+  /**
+   * Returns the object with the settings used for calls to disableExadbVmClusterIdentityConnector.
+   */
+  public OperationCallSettings<
+          DisableExadbVmClusterIdentityConnectorRequest, ExadbVmCluster, OperationMetadata>
+      disableExadbVmClusterIdentityConnectorOperationSettings() {
+    return disableExadbVmClusterIdentityConnectorOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to listEntitlements. */
   public PagedCallSettings<
           ListEntitlementsRequest, ListEntitlementsResponse, ListEntitlementsPagedResponse>
       listEntitlementsSettings() {
     return listEntitlementsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listFlexComponents. */
+  public PagedCallSettings<
+          ListFlexComponentsRequest, ListFlexComponentsResponse, ListFlexComponentsPagedResponse>
+      listFlexComponentsSettings() {
+    return listFlexComponentsSettings;
   }
 
   /** Returns the object with the settings used for calls to listDbServers. */
@@ -2968,6 +3473,17 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
     return createOdbNetworkOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to updateOdbNetwork. */
+  public UnaryCallSettings<UpdateOdbNetworkRequest, Operation> updateOdbNetworkSettings() {
+    return updateOdbNetworkSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateOdbNetwork. */
+  public OperationCallSettings<UpdateOdbNetworkRequest, OdbNetwork, OperationMetadata>
+      updateOdbNetworkOperationSettings() {
+    return updateOdbNetworkOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to deleteOdbNetwork. */
   public UnaryCallSettings<DeleteOdbNetworkRequest, Operation> deleteOdbNetworkSettings() {
     return deleteOdbNetworkSettings;
@@ -3002,6 +3518,17 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
     return createOdbSubnetOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to updateOdbSubnet. */
+  public UnaryCallSettings<UpdateOdbSubnetRequest, Operation> updateOdbSubnetSettings() {
+    return updateOdbSubnetSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateOdbSubnet. */
+  public OperationCallSettings<UpdateOdbSubnetRequest, OdbSubnet, OperationMetadata>
+      updateOdbSubnetOperationSettings() {
+    return updateOdbSubnetOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to deleteOdbSubnet. */
   public UnaryCallSettings<DeleteOdbSubnetRequest, Operation> deleteOdbSubnetSettings() {
     return deleteOdbSubnetSettings;
@@ -3011,6 +3538,40 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
   public OperationCallSettings<DeleteOdbSubnetRequest, Empty, OperationMetadata>
       deleteOdbSubnetOperationSettings() {
     return deleteOdbSubnetOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listOdbDnsZones. */
+  public PagedCallSettings<
+          ListOdbDnsZonesRequest, ListOdbDnsZonesResponse, ListOdbDnsZonesPagedResponse>
+      listOdbDnsZonesSettings() {
+    return listOdbDnsZonesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getOdbDnsZone. */
+  public UnaryCallSettings<GetOdbDnsZoneRequest, OdbDnsZone> getOdbDnsZoneSettings() {
+    return getOdbDnsZoneSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createOdbDnsZone. */
+  public UnaryCallSettings<CreateOdbDnsZoneRequest, Operation> createOdbDnsZoneSettings() {
+    return createOdbDnsZoneSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createOdbDnsZone. */
+  public OperationCallSettings<CreateOdbDnsZoneRequest, OdbDnsZone, OperationMetadata>
+      createOdbDnsZoneOperationSettings() {
+    return createOdbDnsZoneOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteOdbDnsZone. */
+  public UnaryCallSettings<DeleteOdbDnsZoneRequest, Operation> deleteOdbDnsZoneSettings() {
+    return deleteOdbDnsZoneSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteOdbDnsZone. */
+  public OperationCallSettings<DeleteOdbDnsZoneRequest, Empty, OperationMetadata>
+      deleteOdbDnsZoneOperationSettings() {
+    return deleteOdbDnsZoneOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to listExadbVmClusters. */
@@ -3099,6 +3660,19 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
     return createExascaleDbStorageVaultOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to updateExascaleDbStorageVault. */
+  public UnaryCallSettings<UpdateExascaleDbStorageVaultRequest, Operation>
+      updateExascaleDbStorageVaultSettings() {
+    return updateExascaleDbStorageVaultSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateExascaleDbStorageVault. */
+  public OperationCallSettings<
+          UpdateExascaleDbStorageVaultRequest, ExascaleDbStorageVault, OperationMetadata>
+      updateExascaleDbStorageVaultOperationSettings() {
+    return updateExascaleDbStorageVaultOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to deleteExascaleDbStorageVault. */
   public UnaryCallSettings<DeleteExascaleDbStorageVaultRequest, Operation>
       deleteExascaleDbStorageVaultSettings() {
@@ -3118,6 +3692,15 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
           ListDbSystemInitialStorageSizesPagedResponse>
       listDbSystemInitialStorageSizesSettings() {
     return listDbSystemInitialStorageSizesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listDbSystemComputePerformances. */
+  public PagedCallSettings<
+          ListDbSystemComputePerformancesRequest,
+          ListDbSystemComputePerformancesResponse,
+          ListDbSystemComputePerformancesPagedResponse>
+      listDbSystemComputePerformancesSettings() {
+    return listDbSystemComputePerformancesSettings;
   }
 
   /** Returns the object with the settings used for calls to listDatabases. */
@@ -3168,6 +3751,17 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
     return createDbSystemOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to updateDbSystem. */
+  public UnaryCallSettings<UpdateDbSystemRequest, Operation> updateDbSystemSettings() {
+    return updateDbSystemSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateDbSystem. */
+  public OperationCallSettings<UpdateDbSystemRequest, DbSystem, OperationMetadata>
+      updateDbSystemOperationSettings() {
+    return updateDbSystemOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to deleteDbSystem. */
   public UnaryCallSettings<DeleteDbSystemRequest, Operation> deleteDbSystemSettings() {
     return deleteDbSystemSettings;
@@ -3205,6 +3799,19 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
           CreateGoldengateDeploymentRequest, GoldengateDeployment, OperationMetadata>
       createGoldengateDeploymentOperationSettings() {
     return createGoldengateDeploymentOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateGoldengateDeployment. */
+  public UnaryCallSettings<UpdateGoldengateDeploymentRequest, Operation>
+      updateGoldengateDeploymentSettings() {
+    return updateGoldengateDeploymentSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateGoldengateDeployment. */
+  public OperationCallSettings<
+          UpdateGoldengateDeploymentRequest, GoldengateDeployment, OperationMetadata>
+      updateGoldengateDeploymentOperationSettings() {
+    return updateGoldengateDeploymentOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to deleteGoldengateDeployment. */
@@ -3271,6 +3878,19 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
           CreateGoldengateConnectionRequest, GoldengateConnection, OperationMetadata>
       createGoldengateConnectionOperationSettings() {
     return createGoldengateConnectionOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateGoldengateConnection. */
+  public UnaryCallSettings<UpdateGoldengateConnectionRequest, Operation>
+      updateGoldengateConnectionSettings() {
+    return updateGoldengateConnectionSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateGoldengateConnection. */
+  public OperationCallSettings<
+          UpdateGoldengateConnectionRequest, GoldengateConnection, OperationMetadata>
+      updateGoldengateConnectionOperationSettings() {
+    return updateGoldengateConnectionOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to deleteGoldengateConnection. */
@@ -3374,6 +3994,25 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
   }
 
   /**
+   * Returns the object with the settings used for calls to updateGoldengateConnectionAssignment.
+   */
+  public UnaryCallSettings<UpdateGoldengateConnectionAssignmentRequest, Operation>
+      updateGoldengateConnectionAssignmentSettings() {
+    return updateGoldengateConnectionAssignmentSettings;
+  }
+
+  /**
+   * Returns the object with the settings used for calls to updateGoldengateConnectionAssignment.
+   */
+  public OperationCallSettings<
+          UpdateGoldengateConnectionAssignmentRequest,
+          GoldengateConnectionAssignment,
+          OperationMetadata>
+      updateGoldengateConnectionAssignmentOperationSettings() {
+    return updateGoldengateConnectionAssignmentOperationSettings;
+  }
+
+  /**
    * Returns the object with the settings used for calls to deleteGoldengateConnectionAssignment.
    */
   public UnaryCallSettings<DeleteGoldengateConnectionAssignmentRequest, Operation>
@@ -3395,6 +4034,70 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
           TestGoldengateConnectionAssignmentRequest, TestGoldengateConnectionAssignmentResponse>
       testGoldengateConnectionAssignmentSettings() {
     return testGoldengateConnectionAssignmentSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listDatabaseConnections. */
+  public PagedCallSettings<
+          ListDatabaseConnectionsRequest,
+          ListDatabaseConnectionsResponse,
+          ListDatabaseConnectionsPagedResponse>
+      listDatabaseConnectionsSettings() {
+    return listDatabaseConnectionsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getDatabaseConnection. */
+  public UnaryCallSettings<GetDatabaseConnectionRequest, DatabaseConnection>
+      getDatabaseConnectionSettings() {
+    return getDatabaseConnectionSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createDatabaseConnection. */
+  public UnaryCallSettings<CreateDatabaseConnectionRequest, Operation>
+      createDatabaseConnectionSettings() {
+    return createDatabaseConnectionSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createDatabaseConnection. */
+  public OperationCallSettings<
+          CreateDatabaseConnectionRequest, DatabaseConnection, OperationMetadata>
+      createDatabaseConnectionOperationSettings() {
+    return createDatabaseConnectionOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateDatabaseConnection. */
+  public UnaryCallSettings<UpdateDatabaseConnectionRequest, Operation>
+      updateDatabaseConnectionSettings() {
+    return updateDatabaseConnectionSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateDatabaseConnection. */
+  public OperationCallSettings<
+          UpdateDatabaseConnectionRequest, DatabaseConnection, OperationMetadata>
+      updateDatabaseConnectionOperationSettings() {
+    return updateDatabaseConnectionOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteDatabaseConnection. */
+  public UnaryCallSettings<DeleteDatabaseConnectionRequest, Operation>
+      deleteDatabaseConnectionSettings() {
+    return deleteDatabaseConnectionSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteDatabaseConnection. */
+  public OperationCallSettings<DeleteDatabaseConnectionRequest, Empty, OperationMetadata>
+      deleteDatabaseConnectionOperationSettings() {
+    return deleteDatabaseConnectionOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to testDatabaseConnection. */
+  public UnaryCallSettings<TestDatabaseConnectionRequest, TestDatabaseConnectionResponse>
+      testDatabaseConnectionSettings() {
+    return testDatabaseConnectionSettings;
+  }
+
+  /** Returns the object with the settings used for calls to executeSql. */
+  public UnaryCallSettings<ExecuteSqlRequest, ExecuteSqlResponse> executeSqlSettings() {
+    return executeSqlSettings;
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -3527,6 +4230,10 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
         settingsBuilder.createCloudExadataInfrastructureSettings().build();
     createCloudExadataInfrastructureOperationSettings =
         settingsBuilder.createCloudExadataInfrastructureOperationSettings().build();
+    updateCloudExadataInfrastructureSettings =
+        settingsBuilder.updateCloudExadataInfrastructureSettings().build();
+    updateCloudExadataInfrastructureOperationSettings =
+        settingsBuilder.updateCloudExadataInfrastructureOperationSettings().build();
     deleteCloudExadataInfrastructureSettings =
         settingsBuilder.deleteCloudExadataInfrastructureSettings().build();
     deleteCloudExadataInfrastructureOperationSettings =
@@ -3540,10 +4247,30 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
     createCloudVmClusterSettings = settingsBuilder.createCloudVmClusterSettings().build();
     createCloudVmClusterOperationSettings =
         settingsBuilder.createCloudVmClusterOperationSettings().build();
+    updateCloudVmClusterSettings = settingsBuilder.updateCloudVmClusterSettings().build();
+    updateCloudVmClusterOperationSettings =
+        settingsBuilder.updateCloudVmClusterOperationSettings().build();
     deleteCloudVmClusterSettings = settingsBuilder.deleteCloudVmClusterSettings().build();
     deleteCloudVmClusterOperationSettings =
         settingsBuilder.deleteCloudVmClusterOperationSettings().build();
+    enableCloudVmClusterIdentityConnectorSettings =
+        settingsBuilder.enableCloudVmClusterIdentityConnectorSettings().build();
+    enableCloudVmClusterIdentityConnectorOperationSettings =
+        settingsBuilder.enableCloudVmClusterIdentityConnectorOperationSettings().build();
+    disableCloudVmClusterIdentityConnectorSettings =
+        settingsBuilder.disableCloudVmClusterIdentityConnectorSettings().build();
+    disableCloudVmClusterIdentityConnectorOperationSettings =
+        settingsBuilder.disableCloudVmClusterIdentityConnectorOperationSettings().build();
+    enableExadbVmClusterIdentityConnectorSettings =
+        settingsBuilder.enableExadbVmClusterIdentityConnectorSettings().build();
+    enableExadbVmClusterIdentityConnectorOperationSettings =
+        settingsBuilder.enableExadbVmClusterIdentityConnectorOperationSettings().build();
+    disableExadbVmClusterIdentityConnectorSettings =
+        settingsBuilder.disableExadbVmClusterIdentityConnectorSettings().build();
+    disableExadbVmClusterIdentityConnectorOperationSettings =
+        settingsBuilder.disableExadbVmClusterIdentityConnectorOperationSettings().build();
     listEntitlementsSettings = settingsBuilder.listEntitlementsSettings().build();
+    listFlexComponentsSettings = settingsBuilder.listFlexComponentsSettings().build();
     listDbServersSettings = settingsBuilder.listDbServersSettings().build();
     listDbNodesSettings = settingsBuilder.listDbNodesSettings().build();
     listGiVersionsSettings = settingsBuilder.listGiVersionsSettings().build();
@@ -3596,14 +4323,24 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
     getOdbNetworkSettings = settingsBuilder.getOdbNetworkSettings().build();
     createOdbNetworkSettings = settingsBuilder.createOdbNetworkSettings().build();
     createOdbNetworkOperationSettings = settingsBuilder.createOdbNetworkOperationSettings().build();
+    updateOdbNetworkSettings = settingsBuilder.updateOdbNetworkSettings().build();
+    updateOdbNetworkOperationSettings = settingsBuilder.updateOdbNetworkOperationSettings().build();
     deleteOdbNetworkSettings = settingsBuilder.deleteOdbNetworkSettings().build();
     deleteOdbNetworkOperationSettings = settingsBuilder.deleteOdbNetworkOperationSettings().build();
     listOdbSubnetsSettings = settingsBuilder.listOdbSubnetsSettings().build();
     getOdbSubnetSettings = settingsBuilder.getOdbSubnetSettings().build();
     createOdbSubnetSettings = settingsBuilder.createOdbSubnetSettings().build();
     createOdbSubnetOperationSettings = settingsBuilder.createOdbSubnetOperationSettings().build();
+    updateOdbSubnetSettings = settingsBuilder.updateOdbSubnetSettings().build();
+    updateOdbSubnetOperationSettings = settingsBuilder.updateOdbSubnetOperationSettings().build();
     deleteOdbSubnetSettings = settingsBuilder.deleteOdbSubnetSettings().build();
     deleteOdbSubnetOperationSettings = settingsBuilder.deleteOdbSubnetOperationSettings().build();
+    listOdbDnsZonesSettings = settingsBuilder.listOdbDnsZonesSettings().build();
+    getOdbDnsZoneSettings = settingsBuilder.getOdbDnsZoneSettings().build();
+    createOdbDnsZoneSettings = settingsBuilder.createOdbDnsZoneSettings().build();
+    createOdbDnsZoneOperationSettings = settingsBuilder.createOdbDnsZoneOperationSettings().build();
+    deleteOdbDnsZoneSettings = settingsBuilder.deleteOdbDnsZoneSettings().build();
+    deleteOdbDnsZoneOperationSettings = settingsBuilder.deleteOdbDnsZoneOperationSettings().build();
     listExadbVmClustersSettings = settingsBuilder.listExadbVmClustersSettings().build();
     getExadbVmClusterSettings = settingsBuilder.getExadbVmClusterSettings().build();
     createExadbVmClusterSettings = settingsBuilder.createExadbVmClusterSettings().build();
@@ -3626,12 +4363,18 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
         settingsBuilder.createExascaleDbStorageVaultSettings().build();
     createExascaleDbStorageVaultOperationSettings =
         settingsBuilder.createExascaleDbStorageVaultOperationSettings().build();
+    updateExascaleDbStorageVaultSettings =
+        settingsBuilder.updateExascaleDbStorageVaultSettings().build();
+    updateExascaleDbStorageVaultOperationSettings =
+        settingsBuilder.updateExascaleDbStorageVaultOperationSettings().build();
     deleteExascaleDbStorageVaultSettings =
         settingsBuilder.deleteExascaleDbStorageVaultSettings().build();
     deleteExascaleDbStorageVaultOperationSettings =
         settingsBuilder.deleteExascaleDbStorageVaultOperationSettings().build();
     listDbSystemInitialStorageSizesSettings =
         settingsBuilder.listDbSystemInitialStorageSizesSettings().build();
+    listDbSystemComputePerformancesSettings =
+        settingsBuilder.listDbSystemComputePerformancesSettings().build();
     listDatabasesSettings = settingsBuilder.listDatabasesSettings().build();
     getDatabaseSettings = settingsBuilder.getDatabaseSettings().build();
     listPluggableDatabasesSettings = settingsBuilder.listPluggableDatabasesSettings().build();
@@ -3640,6 +4383,8 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
     getDbSystemSettings = settingsBuilder.getDbSystemSettings().build();
     createDbSystemSettings = settingsBuilder.createDbSystemSettings().build();
     createDbSystemOperationSettings = settingsBuilder.createDbSystemOperationSettings().build();
+    updateDbSystemSettings = settingsBuilder.updateDbSystemSettings().build();
+    updateDbSystemOperationSettings = settingsBuilder.updateDbSystemOperationSettings().build();
     deleteDbSystemSettings = settingsBuilder.deleteDbSystemSettings().build();
     deleteDbSystemOperationSettings = settingsBuilder.deleteDbSystemOperationSettings().build();
     listGoldengateDeploymentsSettings = settingsBuilder.listGoldengateDeploymentsSettings().build();
@@ -3648,6 +4393,10 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
         settingsBuilder.createGoldengateDeploymentSettings().build();
     createGoldengateDeploymentOperationSettings =
         settingsBuilder.createGoldengateDeploymentOperationSettings().build();
+    updateGoldengateDeploymentSettings =
+        settingsBuilder.updateGoldengateDeploymentSettings().build();
+    updateGoldengateDeploymentOperationSettings =
+        settingsBuilder.updateGoldengateDeploymentOperationSettings().build();
     deleteGoldengateDeploymentSettings =
         settingsBuilder.deleteGoldengateDeploymentSettings().build();
     deleteGoldengateDeploymentOperationSettings =
@@ -3664,6 +4413,10 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
         settingsBuilder.createGoldengateConnectionSettings().build();
     createGoldengateConnectionOperationSettings =
         settingsBuilder.createGoldengateConnectionOperationSettings().build();
+    updateGoldengateConnectionSettings =
+        settingsBuilder.updateGoldengateConnectionSettings().build();
+    updateGoldengateConnectionOperationSettings =
+        settingsBuilder.updateGoldengateConnectionOperationSettings().build();
     deleteGoldengateConnectionSettings =
         settingsBuilder.deleteGoldengateConnectionSettings().build();
     deleteGoldengateConnectionOperationSettings =
@@ -3686,12 +4439,29 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
         settingsBuilder.createGoldengateConnectionAssignmentSettings().build();
     createGoldengateConnectionAssignmentOperationSettings =
         settingsBuilder.createGoldengateConnectionAssignmentOperationSettings().build();
+    updateGoldengateConnectionAssignmentSettings =
+        settingsBuilder.updateGoldengateConnectionAssignmentSettings().build();
+    updateGoldengateConnectionAssignmentOperationSettings =
+        settingsBuilder.updateGoldengateConnectionAssignmentOperationSettings().build();
     deleteGoldengateConnectionAssignmentSettings =
         settingsBuilder.deleteGoldengateConnectionAssignmentSettings().build();
     deleteGoldengateConnectionAssignmentOperationSettings =
         settingsBuilder.deleteGoldengateConnectionAssignmentOperationSettings().build();
     testGoldengateConnectionAssignmentSettings =
         settingsBuilder.testGoldengateConnectionAssignmentSettings().build();
+    listDatabaseConnectionsSettings = settingsBuilder.listDatabaseConnectionsSettings().build();
+    getDatabaseConnectionSettings = settingsBuilder.getDatabaseConnectionSettings().build();
+    createDatabaseConnectionSettings = settingsBuilder.createDatabaseConnectionSettings().build();
+    createDatabaseConnectionOperationSettings =
+        settingsBuilder.createDatabaseConnectionOperationSettings().build();
+    updateDatabaseConnectionSettings = settingsBuilder.updateDatabaseConnectionSettings().build();
+    updateDatabaseConnectionOperationSettings =
+        settingsBuilder.updateDatabaseConnectionOperationSettings().build();
+    deleteDatabaseConnectionSettings = settingsBuilder.deleteDatabaseConnectionSettings().build();
+    deleteDatabaseConnectionOperationSettings =
+        settingsBuilder.deleteDatabaseConnectionOperationSettings().build();
+    testDatabaseConnectionSettings = settingsBuilder.testDatabaseConnectionSettings().build();
+    executeSqlSettings = settingsBuilder.executeSqlSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
   }
@@ -3721,6 +4491,11 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
     private final OperationCallSettings.Builder<
             CreateCloudExadataInfrastructureRequest, CloudExadataInfrastructure, OperationMetadata>
         createCloudExadataInfrastructureOperationSettings;
+    private final UnaryCallSettings.Builder<UpdateCloudExadataInfrastructureRequest, Operation>
+        updateCloudExadataInfrastructureSettings;
+    private final OperationCallSettings.Builder<
+            UpdateCloudExadataInfrastructureRequest, CloudExadataInfrastructure, OperationMetadata>
+        updateCloudExadataInfrastructureOperationSettings;
     private final UnaryCallSettings.Builder<DeleteCloudExadataInfrastructureRequest, Operation>
         deleteCloudExadataInfrastructureSettings;
     private final OperationCallSettings.Builder<
@@ -3746,14 +4521,44 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
     private final OperationCallSettings.Builder<
             CreateCloudVmClusterRequest, CloudVmCluster, OperationMetadata>
         createCloudVmClusterOperationSettings;
+    private final UnaryCallSettings.Builder<UpdateCloudVmClusterRequest, Operation>
+        updateCloudVmClusterSettings;
+    private final OperationCallSettings.Builder<
+            UpdateCloudVmClusterRequest, CloudVmCluster, OperationMetadata>
+        updateCloudVmClusterOperationSettings;
     private final UnaryCallSettings.Builder<DeleteCloudVmClusterRequest, Operation>
         deleteCloudVmClusterSettings;
     private final OperationCallSettings.Builder<
             DeleteCloudVmClusterRequest, Empty, OperationMetadata>
         deleteCloudVmClusterOperationSettings;
+    private final UnaryCallSettings.Builder<EnableCloudVmClusterIdentityConnectorRequest, Operation>
+        enableCloudVmClusterIdentityConnectorSettings;
+    private final OperationCallSettings.Builder<
+            EnableCloudVmClusterIdentityConnectorRequest, CloudVmCluster, OperationMetadata>
+        enableCloudVmClusterIdentityConnectorOperationSettings;
+    private final UnaryCallSettings.Builder<
+            DisableCloudVmClusterIdentityConnectorRequest, Operation>
+        disableCloudVmClusterIdentityConnectorSettings;
+    private final OperationCallSettings.Builder<
+            DisableCloudVmClusterIdentityConnectorRequest, CloudVmCluster, OperationMetadata>
+        disableCloudVmClusterIdentityConnectorOperationSettings;
+    private final UnaryCallSettings.Builder<EnableExadbVmClusterIdentityConnectorRequest, Operation>
+        enableExadbVmClusterIdentityConnectorSettings;
+    private final OperationCallSettings.Builder<
+            EnableExadbVmClusterIdentityConnectorRequest, ExadbVmCluster, OperationMetadata>
+        enableExadbVmClusterIdentityConnectorOperationSettings;
+    private final UnaryCallSettings.Builder<
+            DisableExadbVmClusterIdentityConnectorRequest, Operation>
+        disableExadbVmClusterIdentityConnectorSettings;
+    private final OperationCallSettings.Builder<
+            DisableExadbVmClusterIdentityConnectorRequest, ExadbVmCluster, OperationMetadata>
+        disableExadbVmClusterIdentityConnectorOperationSettings;
     private final PagedCallSettings.Builder<
             ListEntitlementsRequest, ListEntitlementsResponse, ListEntitlementsPagedResponse>
         listEntitlementsSettings;
+    private final PagedCallSettings.Builder<
+            ListFlexComponentsRequest, ListFlexComponentsResponse, ListFlexComponentsPagedResponse>
+        listFlexComponentsSettings;
     private final PagedCallSettings.Builder<
             ListDbServersRequest, ListDbServersResponse, ListDbServersPagedResponse>
         listDbServersSettings;
@@ -3856,6 +4661,11 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
     private final OperationCallSettings.Builder<
             CreateOdbNetworkRequest, OdbNetwork, OperationMetadata>
         createOdbNetworkOperationSettings;
+    private final UnaryCallSettings.Builder<UpdateOdbNetworkRequest, Operation>
+        updateOdbNetworkSettings;
+    private final OperationCallSettings.Builder<
+            UpdateOdbNetworkRequest, OdbNetwork, OperationMetadata>
+        updateOdbNetworkOperationSettings;
     private final UnaryCallSettings.Builder<DeleteOdbNetworkRequest, Operation>
         deleteOdbNetworkSettings;
     private final OperationCallSettings.Builder<DeleteOdbNetworkRequest, Empty, OperationMetadata>
@@ -3869,10 +4679,28 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
     private final OperationCallSettings.Builder<
             CreateOdbSubnetRequest, OdbSubnet, OperationMetadata>
         createOdbSubnetOperationSettings;
+    private final UnaryCallSettings.Builder<UpdateOdbSubnetRequest, Operation>
+        updateOdbSubnetSettings;
+    private final OperationCallSettings.Builder<
+            UpdateOdbSubnetRequest, OdbSubnet, OperationMetadata>
+        updateOdbSubnetOperationSettings;
     private final UnaryCallSettings.Builder<DeleteOdbSubnetRequest, Operation>
         deleteOdbSubnetSettings;
     private final OperationCallSettings.Builder<DeleteOdbSubnetRequest, Empty, OperationMetadata>
         deleteOdbSubnetOperationSettings;
+    private final PagedCallSettings.Builder<
+            ListOdbDnsZonesRequest, ListOdbDnsZonesResponse, ListOdbDnsZonesPagedResponse>
+        listOdbDnsZonesSettings;
+    private final UnaryCallSettings.Builder<GetOdbDnsZoneRequest, OdbDnsZone> getOdbDnsZoneSettings;
+    private final UnaryCallSettings.Builder<CreateOdbDnsZoneRequest, Operation>
+        createOdbDnsZoneSettings;
+    private final OperationCallSettings.Builder<
+            CreateOdbDnsZoneRequest, OdbDnsZone, OperationMetadata>
+        createOdbDnsZoneOperationSettings;
+    private final UnaryCallSettings.Builder<DeleteOdbDnsZoneRequest, Operation>
+        deleteOdbDnsZoneSettings;
+    private final OperationCallSettings.Builder<DeleteOdbDnsZoneRequest, Empty, OperationMetadata>
+        deleteOdbDnsZoneOperationSettings;
     private final PagedCallSettings.Builder<
             ListExadbVmClustersRequest,
             ListExadbVmClustersResponse,
@@ -3913,6 +4741,11 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
     private final OperationCallSettings.Builder<
             CreateExascaleDbStorageVaultRequest, ExascaleDbStorageVault, OperationMetadata>
         createExascaleDbStorageVaultOperationSettings;
+    private final UnaryCallSettings.Builder<UpdateExascaleDbStorageVaultRequest, Operation>
+        updateExascaleDbStorageVaultSettings;
+    private final OperationCallSettings.Builder<
+            UpdateExascaleDbStorageVaultRequest, ExascaleDbStorageVault, OperationMetadata>
+        updateExascaleDbStorageVaultOperationSettings;
     private final UnaryCallSettings.Builder<DeleteExascaleDbStorageVaultRequest, Operation>
         deleteExascaleDbStorageVaultSettings;
     private final OperationCallSettings.Builder<
@@ -3923,6 +4756,11 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
             ListDbSystemInitialStorageSizesResponse,
             ListDbSystemInitialStorageSizesPagedResponse>
         listDbSystemInitialStorageSizesSettings;
+    private final PagedCallSettings.Builder<
+            ListDbSystemComputePerformancesRequest,
+            ListDbSystemComputePerformancesResponse,
+            ListDbSystemComputePerformancesPagedResponse>
+        listDbSystemComputePerformancesSettings;
     private final PagedCallSettings.Builder<
             ListDatabasesRequest, ListDatabasesResponse, ListDatabasesPagedResponse>
         listDatabasesSettings;
@@ -3942,6 +4780,10 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
         createDbSystemSettings;
     private final OperationCallSettings.Builder<CreateDbSystemRequest, DbSystem, OperationMetadata>
         createDbSystemOperationSettings;
+    private final UnaryCallSettings.Builder<UpdateDbSystemRequest, Operation>
+        updateDbSystemSettings;
+    private final OperationCallSettings.Builder<UpdateDbSystemRequest, DbSystem, OperationMetadata>
+        updateDbSystemOperationSettings;
     private final UnaryCallSettings.Builder<DeleteDbSystemRequest, Operation>
         deleteDbSystemSettings;
     private final OperationCallSettings.Builder<DeleteDbSystemRequest, Empty, OperationMetadata>
@@ -3958,6 +4800,11 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
     private final OperationCallSettings.Builder<
             CreateGoldengateDeploymentRequest, GoldengateDeployment, OperationMetadata>
         createGoldengateDeploymentOperationSettings;
+    private final UnaryCallSettings.Builder<UpdateGoldengateDeploymentRequest, Operation>
+        updateGoldengateDeploymentSettings;
+    private final OperationCallSettings.Builder<
+            UpdateGoldengateDeploymentRequest, GoldengateDeployment, OperationMetadata>
+        updateGoldengateDeploymentOperationSettings;
     private final UnaryCallSettings.Builder<DeleteGoldengateDeploymentRequest, Operation>
         deleteGoldengateDeploymentSettings;
     private final OperationCallSettings.Builder<
@@ -3985,6 +4832,11 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
     private final OperationCallSettings.Builder<
             CreateGoldengateConnectionRequest, GoldengateConnection, OperationMetadata>
         createGoldengateConnectionOperationSettings;
+    private final UnaryCallSettings.Builder<UpdateGoldengateConnectionRequest, Operation>
+        updateGoldengateConnectionSettings;
+    private final OperationCallSettings.Builder<
+            UpdateGoldengateConnectionRequest, GoldengateConnection, OperationMetadata>
+        updateGoldengateConnectionOperationSettings;
     private final UnaryCallSettings.Builder<DeleteGoldengateConnectionRequest, Operation>
         deleteGoldengateConnectionSettings;
     private final OperationCallSettings.Builder<
@@ -4033,6 +4885,13 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
             GoldengateConnectionAssignment,
             OperationMetadata>
         createGoldengateConnectionAssignmentOperationSettings;
+    private final UnaryCallSettings.Builder<UpdateGoldengateConnectionAssignmentRequest, Operation>
+        updateGoldengateConnectionAssignmentSettings;
+    private final OperationCallSettings.Builder<
+            UpdateGoldengateConnectionAssignmentRequest,
+            GoldengateConnectionAssignment,
+            OperationMetadata>
+        updateGoldengateConnectionAssignmentOperationSettings;
     private final UnaryCallSettings.Builder<DeleteGoldengateConnectionAssignmentRequest, Operation>
         deleteGoldengateConnectionAssignmentSettings;
     private final OperationCallSettings.Builder<
@@ -4041,6 +4900,33 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
     private final UnaryCallSettings.Builder<
             TestGoldengateConnectionAssignmentRequest, TestGoldengateConnectionAssignmentResponse>
         testGoldengateConnectionAssignmentSettings;
+    private final PagedCallSettings.Builder<
+            ListDatabaseConnectionsRequest,
+            ListDatabaseConnectionsResponse,
+            ListDatabaseConnectionsPagedResponse>
+        listDatabaseConnectionsSettings;
+    private final UnaryCallSettings.Builder<GetDatabaseConnectionRequest, DatabaseConnection>
+        getDatabaseConnectionSettings;
+    private final UnaryCallSettings.Builder<CreateDatabaseConnectionRequest, Operation>
+        createDatabaseConnectionSettings;
+    private final OperationCallSettings.Builder<
+            CreateDatabaseConnectionRequest, DatabaseConnection, OperationMetadata>
+        createDatabaseConnectionOperationSettings;
+    private final UnaryCallSettings.Builder<UpdateDatabaseConnectionRequest, Operation>
+        updateDatabaseConnectionSettings;
+    private final OperationCallSettings.Builder<
+            UpdateDatabaseConnectionRequest, DatabaseConnection, OperationMetadata>
+        updateDatabaseConnectionOperationSettings;
+    private final UnaryCallSettings.Builder<DeleteDatabaseConnectionRequest, Operation>
+        deleteDatabaseConnectionSettings;
+    private final OperationCallSettings.Builder<
+            DeleteDatabaseConnectionRequest, Empty, OperationMetadata>
+        deleteDatabaseConnectionOperationSettings;
+    private final UnaryCallSettings.Builder<
+            TestDatabaseConnectionRequest, TestDatabaseConnectionResponse>
+        testDatabaseConnectionSettings;
+    private final UnaryCallSettings.Builder<ExecuteSqlRequest, ExecuteSqlResponse>
+        executeSqlSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -4100,6 +4986,8 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
       getCloudExadataInfrastructureSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createCloudExadataInfrastructureSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createCloudExadataInfrastructureOperationSettings = OperationCallSettings.newBuilder();
+      updateCloudExadataInfrastructureSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateCloudExadataInfrastructureOperationSettings = OperationCallSettings.newBuilder();
       deleteCloudExadataInfrastructureSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteCloudExadataInfrastructureOperationSettings = OperationCallSettings.newBuilder();
       configureExascaleCloudExadataInfrastructureSettings =
@@ -4111,9 +4999,24 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
       getCloudVmClusterSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createCloudVmClusterSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createCloudVmClusterOperationSettings = OperationCallSettings.newBuilder();
+      updateCloudVmClusterSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateCloudVmClusterOperationSettings = OperationCallSettings.newBuilder();
       deleteCloudVmClusterSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteCloudVmClusterOperationSettings = OperationCallSettings.newBuilder();
+      enableCloudVmClusterIdentityConnectorSettings =
+          UnaryCallSettings.newUnaryCallSettingsBuilder();
+      enableCloudVmClusterIdentityConnectorOperationSettings = OperationCallSettings.newBuilder();
+      disableCloudVmClusterIdentityConnectorSettings =
+          UnaryCallSettings.newUnaryCallSettingsBuilder();
+      disableCloudVmClusterIdentityConnectorOperationSettings = OperationCallSettings.newBuilder();
+      enableExadbVmClusterIdentityConnectorSettings =
+          UnaryCallSettings.newUnaryCallSettingsBuilder();
+      enableExadbVmClusterIdentityConnectorOperationSettings = OperationCallSettings.newBuilder();
+      disableExadbVmClusterIdentityConnectorSettings =
+          UnaryCallSettings.newUnaryCallSettingsBuilder();
+      disableExadbVmClusterIdentityConnectorOperationSettings = OperationCallSettings.newBuilder();
       listEntitlementsSettings = PagedCallSettings.newBuilder(LIST_ENTITLEMENTS_PAGE_STR_FACT);
+      listFlexComponentsSettings = PagedCallSettings.newBuilder(LIST_FLEX_COMPONENTS_PAGE_STR_FACT);
       listDbServersSettings = PagedCallSettings.newBuilder(LIST_DB_SERVERS_PAGE_STR_FACT);
       listDbNodesSettings = PagedCallSettings.newBuilder(LIST_DB_NODES_PAGE_STR_FACT);
       listGiVersionsSettings = PagedCallSettings.newBuilder(LIST_GI_VERSIONS_PAGE_STR_FACT);
@@ -4156,14 +5059,24 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
       getOdbNetworkSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createOdbNetworkSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createOdbNetworkOperationSettings = OperationCallSettings.newBuilder();
+      updateOdbNetworkSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateOdbNetworkOperationSettings = OperationCallSettings.newBuilder();
       deleteOdbNetworkSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteOdbNetworkOperationSettings = OperationCallSettings.newBuilder();
       listOdbSubnetsSettings = PagedCallSettings.newBuilder(LIST_ODB_SUBNETS_PAGE_STR_FACT);
       getOdbSubnetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createOdbSubnetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createOdbSubnetOperationSettings = OperationCallSettings.newBuilder();
+      updateOdbSubnetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateOdbSubnetOperationSettings = OperationCallSettings.newBuilder();
       deleteOdbSubnetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteOdbSubnetOperationSettings = OperationCallSettings.newBuilder();
+      listOdbDnsZonesSettings = PagedCallSettings.newBuilder(LIST_ODB_DNS_ZONES_PAGE_STR_FACT);
+      getOdbDnsZoneSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createOdbDnsZoneSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createOdbDnsZoneOperationSettings = OperationCallSettings.newBuilder();
+      deleteOdbDnsZoneSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteOdbDnsZoneOperationSettings = OperationCallSettings.newBuilder();
       listExadbVmClustersSettings =
           PagedCallSettings.newBuilder(LIST_EXADB_VM_CLUSTERS_PAGE_STR_FACT);
       getExadbVmClusterSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -4180,10 +5093,14 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
       getExascaleDbStorageVaultSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createExascaleDbStorageVaultSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createExascaleDbStorageVaultOperationSettings = OperationCallSettings.newBuilder();
+      updateExascaleDbStorageVaultSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateExascaleDbStorageVaultOperationSettings = OperationCallSettings.newBuilder();
       deleteExascaleDbStorageVaultSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteExascaleDbStorageVaultOperationSettings = OperationCallSettings.newBuilder();
       listDbSystemInitialStorageSizesSettings =
           PagedCallSettings.newBuilder(LIST_DB_SYSTEM_INITIAL_STORAGE_SIZES_PAGE_STR_FACT);
+      listDbSystemComputePerformancesSettings =
+          PagedCallSettings.newBuilder(LIST_DB_SYSTEM_COMPUTE_PERFORMANCES_PAGE_STR_FACT);
       listDatabasesSettings = PagedCallSettings.newBuilder(LIST_DATABASES_PAGE_STR_FACT);
       getDatabaseSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listPluggableDatabasesSettings =
@@ -4193,6 +5110,8 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
       getDbSystemSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createDbSystemSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createDbSystemOperationSettings = OperationCallSettings.newBuilder();
+      updateDbSystemSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateDbSystemOperationSettings = OperationCallSettings.newBuilder();
       deleteDbSystemSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteDbSystemOperationSettings = OperationCallSettings.newBuilder();
       listGoldengateDeploymentsSettings =
@@ -4200,6 +5119,8 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
       getGoldengateDeploymentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createGoldengateDeploymentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createGoldengateDeploymentOperationSettings = OperationCallSettings.newBuilder();
+      updateGoldengateDeploymentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateGoldengateDeploymentOperationSettings = OperationCallSettings.newBuilder();
       deleteGoldengateDeploymentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteGoldengateDeploymentOperationSettings = OperationCallSettings.newBuilder();
       stopGoldengateDeploymentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -4211,6 +5132,8 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
       getGoldengateConnectionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createGoldengateConnectionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createGoldengateConnectionOperationSettings = OperationCallSettings.newBuilder();
+      updateGoldengateConnectionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateGoldengateConnectionOperationSettings = OperationCallSettings.newBuilder();
       deleteGoldengateConnectionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteGoldengateConnectionOperationSettings = OperationCallSettings.newBuilder();
       listGoldengateDeploymentVersionsSettings =
@@ -4230,10 +5153,24 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
       createGoldengateConnectionAssignmentSettings =
           UnaryCallSettings.newUnaryCallSettingsBuilder();
       createGoldengateConnectionAssignmentOperationSettings = OperationCallSettings.newBuilder();
+      updateGoldengateConnectionAssignmentSettings =
+          UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateGoldengateConnectionAssignmentOperationSettings = OperationCallSettings.newBuilder();
       deleteGoldengateConnectionAssignmentSettings =
           UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteGoldengateConnectionAssignmentOperationSettings = OperationCallSettings.newBuilder();
       testGoldengateConnectionAssignmentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listDatabaseConnectionsSettings =
+          PagedCallSettings.newBuilder(LIST_DATABASE_CONNECTIONS_PAGE_STR_FACT);
+      getDatabaseConnectionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createDatabaseConnectionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createDatabaseConnectionOperationSettings = OperationCallSettings.newBuilder();
+      updateDatabaseConnectionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateDatabaseConnectionOperationSettings = OperationCallSettings.newBuilder();
+      deleteDatabaseConnectionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteDatabaseConnectionOperationSettings = OperationCallSettings.newBuilder();
+      testDatabaseConnectionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      executeSqlSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -4242,13 +5179,20 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
               listCloudExadataInfrastructuresSettings,
               getCloudExadataInfrastructureSettings,
               createCloudExadataInfrastructureSettings,
+              updateCloudExadataInfrastructureSettings,
               deleteCloudExadataInfrastructureSettings,
               configureExascaleCloudExadataInfrastructureSettings,
               listCloudVmClustersSettings,
               getCloudVmClusterSettings,
               createCloudVmClusterSettings,
+              updateCloudVmClusterSettings,
               deleteCloudVmClusterSettings,
+              enableCloudVmClusterIdentityConnectorSettings,
+              disableCloudVmClusterIdentityConnectorSettings,
+              enableExadbVmClusterIdentityConnectorSettings,
+              disableExadbVmClusterIdentityConnectorSettings,
               listEntitlementsSettings,
+              listFlexComponentsSettings,
               listDbServersSettings,
               listDbNodesSettings,
               listGiVersionsSettings,
@@ -4274,11 +5218,17 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
               listOdbNetworksSettings,
               getOdbNetworkSettings,
               createOdbNetworkSettings,
+              updateOdbNetworkSettings,
               deleteOdbNetworkSettings,
               listOdbSubnetsSettings,
               getOdbSubnetSettings,
               createOdbSubnetSettings,
+              updateOdbSubnetSettings,
               deleteOdbSubnetSettings,
+              listOdbDnsZonesSettings,
+              getOdbDnsZoneSettings,
+              createOdbDnsZoneSettings,
+              deleteOdbDnsZoneSettings,
               listExadbVmClustersSettings,
               getExadbVmClusterSettings,
               createExadbVmClusterSettings,
@@ -4288,8 +5238,10 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
               listExascaleDbStorageVaultsSettings,
               getExascaleDbStorageVaultSettings,
               createExascaleDbStorageVaultSettings,
+              updateExascaleDbStorageVaultSettings,
               deleteExascaleDbStorageVaultSettings,
               listDbSystemInitialStorageSizesSettings,
+              listDbSystemComputePerformancesSettings,
               listDatabasesSettings,
               getDatabaseSettings,
               listPluggableDatabasesSettings,
@@ -4297,16 +5249,19 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
               listDbSystemsSettings,
               getDbSystemSettings,
               createDbSystemSettings,
+              updateDbSystemSettings,
               deleteDbSystemSettings,
               listGoldengateDeploymentsSettings,
               getGoldengateDeploymentSettings,
               createGoldengateDeploymentSettings,
+              updateGoldengateDeploymentSettings,
               deleteGoldengateDeploymentSettings,
               stopGoldengateDeploymentSettings,
               startGoldengateDeploymentSettings,
               listGoldengateConnectionsSettings,
               getGoldengateConnectionSettings,
               createGoldengateConnectionSettings,
+              updateGoldengateConnectionSettings,
               deleteGoldengateConnectionSettings,
               listGoldengateDeploymentVersionsSettings,
               listGoldengateDeploymentTypesSettings,
@@ -4317,8 +5272,16 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
               listGoldengateConnectionAssignmentsSettings,
               getGoldengateConnectionAssignmentSettings,
               createGoldengateConnectionAssignmentSettings,
+              updateGoldengateConnectionAssignmentSettings,
               deleteGoldengateConnectionAssignmentSettings,
               testGoldengateConnectionAssignmentSettings,
+              listDatabaseConnectionsSettings,
+              getDatabaseConnectionSettings,
+              createDatabaseConnectionSettings,
+              updateDatabaseConnectionSettings,
+              deleteDatabaseConnectionSettings,
+              testDatabaseConnectionSettings,
+              executeSqlSettings,
               listLocationsSettings,
               getLocationSettings);
       initDefaults(this);
@@ -4335,6 +5298,10 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
           settings.createCloudExadataInfrastructureSettings.toBuilder();
       createCloudExadataInfrastructureOperationSettings =
           settings.createCloudExadataInfrastructureOperationSettings.toBuilder();
+      updateCloudExadataInfrastructureSettings =
+          settings.updateCloudExadataInfrastructureSettings.toBuilder();
+      updateCloudExadataInfrastructureOperationSettings =
+          settings.updateCloudExadataInfrastructureOperationSettings.toBuilder();
       deleteCloudExadataInfrastructureSettings =
           settings.deleteCloudExadataInfrastructureSettings.toBuilder();
       deleteCloudExadataInfrastructureOperationSettings =
@@ -4348,10 +5315,30 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
       createCloudVmClusterSettings = settings.createCloudVmClusterSettings.toBuilder();
       createCloudVmClusterOperationSettings =
           settings.createCloudVmClusterOperationSettings.toBuilder();
+      updateCloudVmClusterSettings = settings.updateCloudVmClusterSettings.toBuilder();
+      updateCloudVmClusterOperationSettings =
+          settings.updateCloudVmClusterOperationSettings.toBuilder();
       deleteCloudVmClusterSettings = settings.deleteCloudVmClusterSettings.toBuilder();
       deleteCloudVmClusterOperationSettings =
           settings.deleteCloudVmClusterOperationSettings.toBuilder();
+      enableCloudVmClusterIdentityConnectorSettings =
+          settings.enableCloudVmClusterIdentityConnectorSettings.toBuilder();
+      enableCloudVmClusterIdentityConnectorOperationSettings =
+          settings.enableCloudVmClusterIdentityConnectorOperationSettings.toBuilder();
+      disableCloudVmClusterIdentityConnectorSettings =
+          settings.disableCloudVmClusterIdentityConnectorSettings.toBuilder();
+      disableCloudVmClusterIdentityConnectorOperationSettings =
+          settings.disableCloudVmClusterIdentityConnectorOperationSettings.toBuilder();
+      enableExadbVmClusterIdentityConnectorSettings =
+          settings.enableExadbVmClusterIdentityConnectorSettings.toBuilder();
+      enableExadbVmClusterIdentityConnectorOperationSettings =
+          settings.enableExadbVmClusterIdentityConnectorOperationSettings.toBuilder();
+      disableExadbVmClusterIdentityConnectorSettings =
+          settings.disableExadbVmClusterIdentityConnectorSettings.toBuilder();
+      disableExadbVmClusterIdentityConnectorOperationSettings =
+          settings.disableExadbVmClusterIdentityConnectorOperationSettings.toBuilder();
       listEntitlementsSettings = settings.listEntitlementsSettings.toBuilder();
+      listFlexComponentsSettings = settings.listFlexComponentsSettings.toBuilder();
       listDbServersSettings = settings.listDbServersSettings.toBuilder();
       listDbNodesSettings = settings.listDbNodesSettings.toBuilder();
       listGiVersionsSettings = settings.listGiVersionsSettings.toBuilder();
@@ -4403,14 +5390,24 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
       getOdbNetworkSettings = settings.getOdbNetworkSettings.toBuilder();
       createOdbNetworkSettings = settings.createOdbNetworkSettings.toBuilder();
       createOdbNetworkOperationSettings = settings.createOdbNetworkOperationSettings.toBuilder();
+      updateOdbNetworkSettings = settings.updateOdbNetworkSettings.toBuilder();
+      updateOdbNetworkOperationSettings = settings.updateOdbNetworkOperationSettings.toBuilder();
       deleteOdbNetworkSettings = settings.deleteOdbNetworkSettings.toBuilder();
       deleteOdbNetworkOperationSettings = settings.deleteOdbNetworkOperationSettings.toBuilder();
       listOdbSubnetsSettings = settings.listOdbSubnetsSettings.toBuilder();
       getOdbSubnetSettings = settings.getOdbSubnetSettings.toBuilder();
       createOdbSubnetSettings = settings.createOdbSubnetSettings.toBuilder();
       createOdbSubnetOperationSettings = settings.createOdbSubnetOperationSettings.toBuilder();
+      updateOdbSubnetSettings = settings.updateOdbSubnetSettings.toBuilder();
+      updateOdbSubnetOperationSettings = settings.updateOdbSubnetOperationSettings.toBuilder();
       deleteOdbSubnetSettings = settings.deleteOdbSubnetSettings.toBuilder();
       deleteOdbSubnetOperationSettings = settings.deleteOdbSubnetOperationSettings.toBuilder();
+      listOdbDnsZonesSettings = settings.listOdbDnsZonesSettings.toBuilder();
+      getOdbDnsZoneSettings = settings.getOdbDnsZoneSettings.toBuilder();
+      createOdbDnsZoneSettings = settings.createOdbDnsZoneSettings.toBuilder();
+      createOdbDnsZoneOperationSettings = settings.createOdbDnsZoneOperationSettings.toBuilder();
+      deleteOdbDnsZoneSettings = settings.deleteOdbDnsZoneSettings.toBuilder();
+      deleteOdbDnsZoneOperationSettings = settings.deleteOdbDnsZoneOperationSettings.toBuilder();
       listExadbVmClustersSettings = settings.listExadbVmClustersSettings.toBuilder();
       getExadbVmClusterSettings = settings.getExadbVmClusterSettings.toBuilder();
       createExadbVmClusterSettings = settings.createExadbVmClusterSettings.toBuilder();
@@ -4433,12 +5430,18 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
           settings.createExascaleDbStorageVaultSettings.toBuilder();
       createExascaleDbStorageVaultOperationSettings =
           settings.createExascaleDbStorageVaultOperationSettings.toBuilder();
+      updateExascaleDbStorageVaultSettings =
+          settings.updateExascaleDbStorageVaultSettings.toBuilder();
+      updateExascaleDbStorageVaultOperationSettings =
+          settings.updateExascaleDbStorageVaultOperationSettings.toBuilder();
       deleteExascaleDbStorageVaultSettings =
           settings.deleteExascaleDbStorageVaultSettings.toBuilder();
       deleteExascaleDbStorageVaultOperationSettings =
           settings.deleteExascaleDbStorageVaultOperationSettings.toBuilder();
       listDbSystemInitialStorageSizesSettings =
           settings.listDbSystemInitialStorageSizesSettings.toBuilder();
+      listDbSystemComputePerformancesSettings =
+          settings.listDbSystemComputePerformancesSettings.toBuilder();
       listDatabasesSettings = settings.listDatabasesSettings.toBuilder();
       getDatabaseSettings = settings.getDatabaseSettings.toBuilder();
       listPluggableDatabasesSettings = settings.listPluggableDatabasesSettings.toBuilder();
@@ -4447,6 +5450,8 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
       getDbSystemSettings = settings.getDbSystemSettings.toBuilder();
       createDbSystemSettings = settings.createDbSystemSettings.toBuilder();
       createDbSystemOperationSettings = settings.createDbSystemOperationSettings.toBuilder();
+      updateDbSystemSettings = settings.updateDbSystemSettings.toBuilder();
+      updateDbSystemOperationSettings = settings.updateDbSystemOperationSettings.toBuilder();
       deleteDbSystemSettings = settings.deleteDbSystemSettings.toBuilder();
       deleteDbSystemOperationSettings = settings.deleteDbSystemOperationSettings.toBuilder();
       listGoldengateDeploymentsSettings = settings.listGoldengateDeploymentsSettings.toBuilder();
@@ -4454,6 +5459,9 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
       createGoldengateDeploymentSettings = settings.createGoldengateDeploymentSettings.toBuilder();
       createGoldengateDeploymentOperationSettings =
           settings.createGoldengateDeploymentOperationSettings.toBuilder();
+      updateGoldengateDeploymentSettings = settings.updateGoldengateDeploymentSettings.toBuilder();
+      updateGoldengateDeploymentOperationSettings =
+          settings.updateGoldengateDeploymentOperationSettings.toBuilder();
       deleteGoldengateDeploymentSettings = settings.deleteGoldengateDeploymentSettings.toBuilder();
       deleteGoldengateDeploymentOperationSettings =
           settings.deleteGoldengateDeploymentOperationSettings.toBuilder();
@@ -4468,6 +5476,9 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
       createGoldengateConnectionSettings = settings.createGoldengateConnectionSettings.toBuilder();
       createGoldengateConnectionOperationSettings =
           settings.createGoldengateConnectionOperationSettings.toBuilder();
+      updateGoldengateConnectionSettings = settings.updateGoldengateConnectionSettings.toBuilder();
+      updateGoldengateConnectionOperationSettings =
+          settings.updateGoldengateConnectionOperationSettings.toBuilder();
       deleteGoldengateConnectionSettings = settings.deleteGoldengateConnectionSettings.toBuilder();
       deleteGoldengateConnectionOperationSettings =
           settings.deleteGoldengateConnectionOperationSettings.toBuilder();
@@ -4489,12 +5500,29 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
           settings.createGoldengateConnectionAssignmentSettings.toBuilder();
       createGoldengateConnectionAssignmentOperationSettings =
           settings.createGoldengateConnectionAssignmentOperationSettings.toBuilder();
+      updateGoldengateConnectionAssignmentSettings =
+          settings.updateGoldengateConnectionAssignmentSettings.toBuilder();
+      updateGoldengateConnectionAssignmentOperationSettings =
+          settings.updateGoldengateConnectionAssignmentOperationSettings.toBuilder();
       deleteGoldengateConnectionAssignmentSettings =
           settings.deleteGoldengateConnectionAssignmentSettings.toBuilder();
       deleteGoldengateConnectionAssignmentOperationSettings =
           settings.deleteGoldengateConnectionAssignmentOperationSettings.toBuilder();
       testGoldengateConnectionAssignmentSettings =
           settings.testGoldengateConnectionAssignmentSettings.toBuilder();
+      listDatabaseConnectionsSettings = settings.listDatabaseConnectionsSettings.toBuilder();
+      getDatabaseConnectionSettings = settings.getDatabaseConnectionSettings.toBuilder();
+      createDatabaseConnectionSettings = settings.createDatabaseConnectionSettings.toBuilder();
+      createDatabaseConnectionOperationSettings =
+          settings.createDatabaseConnectionOperationSettings.toBuilder();
+      updateDatabaseConnectionSettings = settings.updateDatabaseConnectionSettings.toBuilder();
+      updateDatabaseConnectionOperationSettings =
+          settings.updateDatabaseConnectionOperationSettings.toBuilder();
+      deleteDatabaseConnectionSettings = settings.deleteDatabaseConnectionSettings.toBuilder();
+      deleteDatabaseConnectionOperationSettings =
+          settings.deleteDatabaseConnectionOperationSettings.toBuilder();
+      testDatabaseConnectionSettings = settings.testDatabaseConnectionSettings.toBuilder();
+      executeSqlSettings = settings.executeSqlSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
 
@@ -4503,13 +5531,20 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
               listCloudExadataInfrastructuresSettings,
               getCloudExadataInfrastructureSettings,
               createCloudExadataInfrastructureSettings,
+              updateCloudExadataInfrastructureSettings,
               deleteCloudExadataInfrastructureSettings,
               configureExascaleCloudExadataInfrastructureSettings,
               listCloudVmClustersSettings,
               getCloudVmClusterSettings,
               createCloudVmClusterSettings,
+              updateCloudVmClusterSettings,
               deleteCloudVmClusterSettings,
+              enableCloudVmClusterIdentityConnectorSettings,
+              disableCloudVmClusterIdentityConnectorSettings,
+              enableExadbVmClusterIdentityConnectorSettings,
+              disableExadbVmClusterIdentityConnectorSettings,
               listEntitlementsSettings,
+              listFlexComponentsSettings,
               listDbServersSettings,
               listDbNodesSettings,
               listGiVersionsSettings,
@@ -4535,11 +5570,17 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
               listOdbNetworksSettings,
               getOdbNetworkSettings,
               createOdbNetworkSettings,
+              updateOdbNetworkSettings,
               deleteOdbNetworkSettings,
               listOdbSubnetsSettings,
               getOdbSubnetSettings,
               createOdbSubnetSettings,
+              updateOdbSubnetSettings,
               deleteOdbSubnetSettings,
+              listOdbDnsZonesSettings,
+              getOdbDnsZoneSettings,
+              createOdbDnsZoneSettings,
+              deleteOdbDnsZoneSettings,
               listExadbVmClustersSettings,
               getExadbVmClusterSettings,
               createExadbVmClusterSettings,
@@ -4549,8 +5590,10 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
               listExascaleDbStorageVaultsSettings,
               getExascaleDbStorageVaultSettings,
               createExascaleDbStorageVaultSettings,
+              updateExascaleDbStorageVaultSettings,
               deleteExascaleDbStorageVaultSettings,
               listDbSystemInitialStorageSizesSettings,
+              listDbSystemComputePerformancesSettings,
               listDatabasesSettings,
               getDatabaseSettings,
               listPluggableDatabasesSettings,
@@ -4558,16 +5601,19 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
               listDbSystemsSettings,
               getDbSystemSettings,
               createDbSystemSettings,
+              updateDbSystemSettings,
               deleteDbSystemSettings,
               listGoldengateDeploymentsSettings,
               getGoldengateDeploymentSettings,
               createGoldengateDeploymentSettings,
+              updateGoldengateDeploymentSettings,
               deleteGoldengateDeploymentSettings,
               stopGoldengateDeploymentSettings,
               startGoldengateDeploymentSettings,
               listGoldengateConnectionsSettings,
               getGoldengateConnectionSettings,
               createGoldengateConnectionSettings,
+              updateGoldengateConnectionSettings,
               deleteGoldengateConnectionSettings,
               listGoldengateDeploymentVersionsSettings,
               listGoldengateDeploymentTypesSettings,
@@ -4578,8 +5624,16 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
               listGoldengateConnectionAssignmentsSettings,
               getGoldengateConnectionAssignmentSettings,
               createGoldengateConnectionAssignmentSettings,
+              updateGoldengateConnectionAssignmentSettings,
               deleteGoldengateConnectionAssignmentSettings,
               testGoldengateConnectionAssignmentSettings,
+              listDatabaseConnectionsSettings,
+              getDatabaseConnectionSettings,
+              createDatabaseConnectionSettings,
+              updateDatabaseConnectionSettings,
+              deleteDatabaseConnectionSettings,
+              testDatabaseConnectionSettings,
+              executeSqlSettings,
               listLocationsSettings,
               getLocationSettings);
     }
@@ -4625,6 +5679,11 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
+          .updateCloudExadataInfrastructureSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
           .deleteCloudExadataInfrastructureSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
@@ -4650,12 +5709,42 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
+          .updateCloudVmClusterSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
           .deleteCloudVmClusterSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
+          .enableCloudVmClusterIdentityConnectorSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .disableCloudVmClusterIdentityConnectorSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .enableExadbVmClusterIdentityConnectorSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .disableExadbVmClusterIdentityConnectorSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
           .listEntitlementsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listFlexComponentsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -4785,6 +5874,11 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
+          .updateOdbNetworkSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
           .deleteOdbNetworkSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
@@ -4805,7 +5899,32 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
+          .updateOdbSubnetSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
           .deleteOdbSubnetSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .listOdbDnsZonesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getOdbDnsZoneSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .createOdbDnsZoneSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .deleteOdbDnsZoneSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
@@ -4855,12 +5974,22 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
+          .updateExascaleDbStorageVaultSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
           .deleteExascaleDbStorageVaultSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .listDbSystemInitialStorageSizesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listDbSystemComputePerformancesSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -4900,6 +6029,11 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
+          .updateDbSystemSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
           .deleteDbSystemSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
@@ -4916,6 +6050,11 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
 
       builder
           .createGoldengateDeploymentSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .updateGoldengateDeploymentSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
@@ -4946,6 +6085,11 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
 
       builder
           .createGoldengateConnectionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .updateGoldengateConnectionSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
@@ -5000,12 +6144,52 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
+          .updateGoldengateConnectionAssignmentSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
           .deleteGoldengateConnectionAssignmentSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .testGoldengateConnectionAssignmentSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .listDatabaseConnectionsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getDatabaseConnectionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .createDatabaseConnectionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .updateDatabaseConnectionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .deleteDatabaseConnectionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .testDatabaseConnectionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .executeSqlSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
@@ -5043,6 +6227,32 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
                       .setRpcTimeoutMultiplier(1.0)
                       .setMaxRpcTimeoutDuration(Duration.ZERO)
                       .setTotalTimeoutDuration(Duration.ofMillis(432000000L))
+                      .build()));
+
+      builder
+          .updateCloudExadataInfrastructureOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdateCloudExadataInfrastructureRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(
+                  CloudExadataInfrastructure.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -5121,6 +6331,30 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
                       .build()));
 
       builder
+          .updateCloudVmClusterOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdateCloudVmClusterRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(CloudVmCluster.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
           .deleteCloudVmClusterOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings
@@ -5142,6 +6376,106 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
                       .setRpcTimeoutMultiplier(1.0)
                       .setMaxRpcTimeoutDuration(Duration.ZERO)
                       .setTotalTimeoutDuration(Duration.ofMillis(432000000L))
+                      .build()));
+
+      builder
+          .enableCloudVmClusterIdentityConnectorOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<EnableCloudVmClusterIdentityConnectorRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(CloudVmCluster.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .disableCloudVmClusterIdentityConnectorOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DisableCloudVmClusterIdentityConnectorRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(CloudVmCluster.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .enableExadbVmClusterIdentityConnectorOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<EnableExadbVmClusterIdentityConnectorRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(ExadbVmCluster.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .disableExadbVmClusterIdentityConnectorOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DisableExadbVmClusterIdentityConnectorRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(ExadbVmCluster.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -5414,6 +6748,30 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
                       .build()));
 
       builder
+          .updateOdbNetworkOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdateOdbNetworkRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(OdbNetwork.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
           .deleteOdbNetworkOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings
@@ -5462,10 +6820,82 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
                       .build()));
 
       builder
+          .updateOdbSubnetOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdateOdbSubnetRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(OdbSubnet.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
           .deleteOdbSubnetOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings
                   .<DeleteOdbSubnetRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .createOdbDnsZoneOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<CreateOdbDnsZoneRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(OdbDnsZone.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .deleteOdbDnsZoneOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteOdbDnsZoneRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
                   .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
                   .build())
@@ -5608,6 +7038,31 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
                       .build()));
 
       builder
+          .updateExascaleDbStorageVaultOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdateExascaleDbStorageVaultRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(ExascaleDbStorageVault.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
           .deleteExascaleDbStorageVaultOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings
@@ -5657,6 +7112,30 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
                       .build()));
 
       builder
+          .updateDbSystemOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdateDbSystemRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(DbSystem.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
           .deleteDbSystemOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings
@@ -5685,6 +7164,31 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
           .setInitialCallSettings(
               UnaryCallSettings
                   .<CreateGoldengateDeploymentRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(GoldengateDeployment.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .updateGoldengateDeploymentOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdateGoldengateDeploymentRequest, OperationSnapshot>
                       newUnaryCallSettingsBuilder()
                   .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
@@ -5805,6 +7309,31 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
                       .build()));
 
       builder
+          .updateGoldengateConnectionOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdateGoldengateConnectionRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(GoldengateConnection.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
           .deleteGoldengateConnectionOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings
@@ -5856,11 +7385,109 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
                       .build()));
 
       builder
+          .updateGoldengateConnectionAssignmentOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdateGoldengateConnectionAssignmentRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(
+                  GoldengateConnectionAssignment.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
           .deleteGoldengateConnectionAssignmentOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings
                   .<DeleteGoldengateConnectionAssignmentRequest, OperationSnapshot>
                       newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .createDatabaseConnectionOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<CreateDatabaseConnectionRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(DatabaseConnection.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .updateDatabaseConnectionOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdateDatabaseConnectionRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(DatabaseConnection.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .deleteDatabaseConnectionOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteDatabaseConnectionRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
                   .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
                   .build())
@@ -5927,6 +7554,19 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
       return createCloudExadataInfrastructureOperationSettings;
     }
 
+    /** Returns the builder for the settings used for calls to updateCloudExadataInfrastructure. */
+    public UnaryCallSettings.Builder<UpdateCloudExadataInfrastructureRequest, Operation>
+        updateCloudExadataInfrastructureSettings() {
+      return updateCloudExadataInfrastructureSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateCloudExadataInfrastructure. */
+    public OperationCallSettings.Builder<
+            UpdateCloudExadataInfrastructureRequest, CloudExadataInfrastructure, OperationMetadata>
+        updateCloudExadataInfrastructureOperationSettings() {
+      return updateCloudExadataInfrastructureOperationSettings;
+    }
+
     /** Returns the builder for the settings used for calls to deleteCloudExadataInfrastructure. */
     public UnaryCallSettings.Builder<DeleteCloudExadataInfrastructureRequest, Operation>
         deleteCloudExadataInfrastructureSettings() {
@@ -5989,6 +7629,19 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
       return createCloudVmClusterOperationSettings;
     }
 
+    /** Returns the builder for the settings used for calls to updateCloudVmCluster. */
+    public UnaryCallSettings.Builder<UpdateCloudVmClusterRequest, Operation>
+        updateCloudVmClusterSettings() {
+      return updateCloudVmClusterSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateCloudVmCluster. */
+    public OperationCallSettings.Builder<
+            UpdateCloudVmClusterRequest, CloudVmCluster, OperationMetadata>
+        updateCloudVmClusterOperationSettings() {
+      return updateCloudVmClusterOperationSettings;
+    }
+
     /** Returns the builder for the settings used for calls to deleteCloudVmCluster. */
     public UnaryCallSettings.Builder<DeleteCloudVmClusterRequest, Operation>
         deleteCloudVmClusterSettings() {
@@ -6001,11 +7654,90 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
       return deleteCloudVmClusterOperationSettings;
     }
 
+    /**
+     * Returns the builder for the settings used for calls to enableCloudVmClusterIdentityConnector.
+     */
+    public UnaryCallSettings.Builder<EnableCloudVmClusterIdentityConnectorRequest, Operation>
+        enableCloudVmClusterIdentityConnectorSettings() {
+      return enableCloudVmClusterIdentityConnectorSettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to enableCloudVmClusterIdentityConnector.
+     */
+    public OperationCallSettings.Builder<
+            EnableCloudVmClusterIdentityConnectorRequest, CloudVmCluster, OperationMetadata>
+        enableCloudVmClusterIdentityConnectorOperationSettings() {
+      return enableCloudVmClusterIdentityConnectorOperationSettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * disableCloudVmClusterIdentityConnector.
+     */
+    public UnaryCallSettings.Builder<DisableCloudVmClusterIdentityConnectorRequest, Operation>
+        disableCloudVmClusterIdentityConnectorSettings() {
+      return disableCloudVmClusterIdentityConnectorSettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * disableCloudVmClusterIdentityConnector.
+     */
+    public OperationCallSettings.Builder<
+            DisableCloudVmClusterIdentityConnectorRequest, CloudVmCluster, OperationMetadata>
+        disableCloudVmClusterIdentityConnectorOperationSettings() {
+      return disableCloudVmClusterIdentityConnectorOperationSettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to enableExadbVmClusterIdentityConnector.
+     */
+    public UnaryCallSettings.Builder<EnableExadbVmClusterIdentityConnectorRequest, Operation>
+        enableExadbVmClusterIdentityConnectorSettings() {
+      return enableExadbVmClusterIdentityConnectorSettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to enableExadbVmClusterIdentityConnector.
+     */
+    public OperationCallSettings.Builder<
+            EnableExadbVmClusterIdentityConnectorRequest, ExadbVmCluster, OperationMetadata>
+        enableExadbVmClusterIdentityConnectorOperationSettings() {
+      return enableExadbVmClusterIdentityConnectorOperationSettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * disableExadbVmClusterIdentityConnector.
+     */
+    public UnaryCallSettings.Builder<DisableExadbVmClusterIdentityConnectorRequest, Operation>
+        disableExadbVmClusterIdentityConnectorSettings() {
+      return disableExadbVmClusterIdentityConnectorSettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * disableExadbVmClusterIdentityConnector.
+     */
+    public OperationCallSettings.Builder<
+            DisableExadbVmClusterIdentityConnectorRequest, ExadbVmCluster, OperationMetadata>
+        disableExadbVmClusterIdentityConnectorOperationSettings() {
+      return disableExadbVmClusterIdentityConnectorOperationSettings;
+    }
+
     /** Returns the builder for the settings used for calls to listEntitlements. */
     public PagedCallSettings.Builder<
             ListEntitlementsRequest, ListEntitlementsResponse, ListEntitlementsPagedResponse>
         listEntitlementsSettings() {
       return listEntitlementsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listFlexComponents. */
+    public PagedCallSettings.Builder<
+            ListFlexComponentsRequest, ListFlexComponentsResponse, ListFlexComponentsPagedResponse>
+        listFlexComponentsSettings() {
+      return listFlexComponentsSettings;
     }
 
     /** Returns the builder for the settings used for calls to listDbServers. */
@@ -6257,6 +7989,18 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
       return createOdbNetworkOperationSettings;
     }
 
+    /** Returns the builder for the settings used for calls to updateOdbNetwork. */
+    public UnaryCallSettings.Builder<UpdateOdbNetworkRequest, Operation>
+        updateOdbNetworkSettings() {
+      return updateOdbNetworkSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateOdbNetwork. */
+    public OperationCallSettings.Builder<UpdateOdbNetworkRequest, OdbNetwork, OperationMetadata>
+        updateOdbNetworkOperationSettings() {
+      return updateOdbNetworkOperationSettings;
+    }
+
     /** Returns the builder for the settings used for calls to deleteOdbNetwork. */
     public UnaryCallSettings.Builder<DeleteOdbNetworkRequest, Operation>
         deleteOdbNetworkSettings() {
@@ -6292,6 +8036,17 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
       return createOdbSubnetOperationSettings;
     }
 
+    /** Returns the builder for the settings used for calls to updateOdbSubnet. */
+    public UnaryCallSettings.Builder<UpdateOdbSubnetRequest, Operation> updateOdbSubnetSettings() {
+      return updateOdbSubnetSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateOdbSubnet. */
+    public OperationCallSettings.Builder<UpdateOdbSubnetRequest, OdbSubnet, OperationMetadata>
+        updateOdbSubnetOperationSettings() {
+      return updateOdbSubnetOperationSettings;
+    }
+
     /** Returns the builder for the settings used for calls to deleteOdbSubnet. */
     public UnaryCallSettings.Builder<DeleteOdbSubnetRequest, Operation> deleteOdbSubnetSettings() {
       return deleteOdbSubnetSettings;
@@ -6301,6 +8056,42 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
     public OperationCallSettings.Builder<DeleteOdbSubnetRequest, Empty, OperationMetadata>
         deleteOdbSubnetOperationSettings() {
       return deleteOdbSubnetOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listOdbDnsZones. */
+    public PagedCallSettings.Builder<
+            ListOdbDnsZonesRequest, ListOdbDnsZonesResponse, ListOdbDnsZonesPagedResponse>
+        listOdbDnsZonesSettings() {
+      return listOdbDnsZonesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getOdbDnsZone. */
+    public UnaryCallSettings.Builder<GetOdbDnsZoneRequest, OdbDnsZone> getOdbDnsZoneSettings() {
+      return getOdbDnsZoneSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createOdbDnsZone. */
+    public UnaryCallSettings.Builder<CreateOdbDnsZoneRequest, Operation>
+        createOdbDnsZoneSettings() {
+      return createOdbDnsZoneSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createOdbDnsZone. */
+    public OperationCallSettings.Builder<CreateOdbDnsZoneRequest, OdbDnsZone, OperationMetadata>
+        createOdbDnsZoneOperationSettings() {
+      return createOdbDnsZoneOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteOdbDnsZone. */
+    public UnaryCallSettings.Builder<DeleteOdbDnsZoneRequest, Operation>
+        deleteOdbDnsZoneSettings() {
+      return deleteOdbDnsZoneSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteOdbDnsZone. */
+    public OperationCallSettings.Builder<DeleteOdbDnsZoneRequest, Empty, OperationMetadata>
+        deleteOdbDnsZoneOperationSettings() {
+      return deleteOdbDnsZoneOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to listExadbVmClusters. */
@@ -6401,6 +8192,19 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
       return createExascaleDbStorageVaultOperationSettings;
     }
 
+    /** Returns the builder for the settings used for calls to updateExascaleDbStorageVault. */
+    public UnaryCallSettings.Builder<UpdateExascaleDbStorageVaultRequest, Operation>
+        updateExascaleDbStorageVaultSettings() {
+      return updateExascaleDbStorageVaultSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateExascaleDbStorageVault. */
+    public OperationCallSettings.Builder<
+            UpdateExascaleDbStorageVaultRequest, ExascaleDbStorageVault, OperationMetadata>
+        updateExascaleDbStorageVaultOperationSettings() {
+      return updateExascaleDbStorageVaultOperationSettings;
+    }
+
     /** Returns the builder for the settings used for calls to deleteExascaleDbStorageVault. */
     public UnaryCallSettings.Builder<DeleteExascaleDbStorageVaultRequest, Operation>
         deleteExascaleDbStorageVaultSettings() {
@@ -6421,6 +8225,15 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
             ListDbSystemInitialStorageSizesPagedResponse>
         listDbSystemInitialStorageSizesSettings() {
       return listDbSystemInitialStorageSizesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listDbSystemComputePerformances. */
+    public PagedCallSettings.Builder<
+            ListDbSystemComputePerformancesRequest,
+            ListDbSystemComputePerformancesResponse,
+            ListDbSystemComputePerformancesPagedResponse>
+        listDbSystemComputePerformancesSettings() {
+      return listDbSystemComputePerformancesSettings;
     }
 
     /** Returns the builder for the settings used for calls to listDatabases. */
@@ -6473,6 +8286,17 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
       return createDbSystemOperationSettings;
     }
 
+    /** Returns the builder for the settings used for calls to updateDbSystem. */
+    public UnaryCallSettings.Builder<UpdateDbSystemRequest, Operation> updateDbSystemSettings() {
+      return updateDbSystemSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateDbSystem. */
+    public OperationCallSettings.Builder<UpdateDbSystemRequest, DbSystem, OperationMetadata>
+        updateDbSystemOperationSettings() {
+      return updateDbSystemOperationSettings;
+    }
+
     /** Returns the builder for the settings used for calls to deleteDbSystem. */
     public UnaryCallSettings.Builder<DeleteDbSystemRequest, Operation> deleteDbSystemSettings() {
       return deleteDbSystemSettings;
@@ -6510,6 +8334,19 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
             CreateGoldengateDeploymentRequest, GoldengateDeployment, OperationMetadata>
         createGoldengateDeploymentOperationSettings() {
       return createGoldengateDeploymentOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateGoldengateDeployment. */
+    public UnaryCallSettings.Builder<UpdateGoldengateDeploymentRequest, Operation>
+        updateGoldengateDeploymentSettings() {
+      return updateGoldengateDeploymentSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateGoldengateDeployment. */
+    public OperationCallSettings.Builder<
+            UpdateGoldengateDeploymentRequest, GoldengateDeployment, OperationMetadata>
+        updateGoldengateDeploymentOperationSettings() {
+      return updateGoldengateDeploymentOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to deleteGoldengateDeployment. */
@@ -6577,6 +8414,19 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
             CreateGoldengateConnectionRequest, GoldengateConnection, OperationMetadata>
         createGoldengateConnectionOperationSettings() {
       return createGoldengateConnectionOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateGoldengateConnection. */
+    public UnaryCallSettings.Builder<UpdateGoldengateConnectionRequest, Operation>
+        updateGoldengateConnectionSettings() {
+      return updateGoldengateConnectionSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateGoldengateConnection. */
+    public OperationCallSettings.Builder<
+            UpdateGoldengateConnectionRequest, GoldengateConnection, OperationMetadata>
+        updateGoldengateConnectionOperationSettings() {
+      return updateGoldengateConnectionOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to deleteGoldengateConnection. */
@@ -6684,6 +8534,25 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
     }
 
     /**
+     * Returns the builder for the settings used for calls to updateGoldengateConnectionAssignment.
+     */
+    public UnaryCallSettings.Builder<UpdateGoldengateConnectionAssignmentRequest, Operation>
+        updateGoldengateConnectionAssignmentSettings() {
+      return updateGoldengateConnectionAssignmentSettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to updateGoldengateConnectionAssignment.
+     */
+    public OperationCallSettings.Builder<
+            UpdateGoldengateConnectionAssignmentRequest,
+            GoldengateConnectionAssignment,
+            OperationMetadata>
+        updateGoldengateConnectionAssignmentOperationSettings() {
+      return updateGoldengateConnectionAssignmentOperationSettings;
+    }
+
+    /**
      * Returns the builder for the settings used for calls to deleteGoldengateConnectionAssignment.
      */
     public UnaryCallSettings.Builder<DeleteGoldengateConnectionAssignmentRequest, Operation>
@@ -6707,6 +8576,70 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
             TestGoldengateConnectionAssignmentRequest, TestGoldengateConnectionAssignmentResponse>
         testGoldengateConnectionAssignmentSettings() {
       return testGoldengateConnectionAssignmentSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listDatabaseConnections. */
+    public PagedCallSettings.Builder<
+            ListDatabaseConnectionsRequest,
+            ListDatabaseConnectionsResponse,
+            ListDatabaseConnectionsPagedResponse>
+        listDatabaseConnectionsSettings() {
+      return listDatabaseConnectionsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getDatabaseConnection. */
+    public UnaryCallSettings.Builder<GetDatabaseConnectionRequest, DatabaseConnection>
+        getDatabaseConnectionSettings() {
+      return getDatabaseConnectionSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createDatabaseConnection. */
+    public UnaryCallSettings.Builder<CreateDatabaseConnectionRequest, Operation>
+        createDatabaseConnectionSettings() {
+      return createDatabaseConnectionSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createDatabaseConnection. */
+    public OperationCallSettings.Builder<
+            CreateDatabaseConnectionRequest, DatabaseConnection, OperationMetadata>
+        createDatabaseConnectionOperationSettings() {
+      return createDatabaseConnectionOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateDatabaseConnection. */
+    public UnaryCallSettings.Builder<UpdateDatabaseConnectionRequest, Operation>
+        updateDatabaseConnectionSettings() {
+      return updateDatabaseConnectionSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateDatabaseConnection. */
+    public OperationCallSettings.Builder<
+            UpdateDatabaseConnectionRequest, DatabaseConnection, OperationMetadata>
+        updateDatabaseConnectionOperationSettings() {
+      return updateDatabaseConnectionOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteDatabaseConnection. */
+    public UnaryCallSettings.Builder<DeleteDatabaseConnectionRequest, Operation>
+        deleteDatabaseConnectionSettings() {
+      return deleteDatabaseConnectionSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteDatabaseConnection. */
+    public OperationCallSettings.Builder<DeleteDatabaseConnectionRequest, Empty, OperationMetadata>
+        deleteDatabaseConnectionOperationSettings() {
+      return deleteDatabaseConnectionOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to testDatabaseConnection. */
+    public UnaryCallSettings.Builder<TestDatabaseConnectionRequest, TestDatabaseConnectionResponse>
+        testDatabaseConnectionSettings() {
+      return testDatabaseConnectionSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to executeSql. */
+    public UnaryCallSettings.Builder<ExecuteSqlRequest, ExecuteSqlResponse> executeSqlSettings() {
+      return executeSqlSettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

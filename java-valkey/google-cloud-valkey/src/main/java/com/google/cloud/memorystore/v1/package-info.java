@@ -32,8 +32,8 @@
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (MemorystoreClient memorystoreClient = MemorystoreClient.create()) {
- *   InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
- *   Instance response = memorystoreClient.getInstance(name);
+ *   AclPolicyName name = AclPolicyName.of("[PROJECT]", "[LOCATION]", "[ACL_POLICY]");
+ *   AclPolicy response = memorystoreClient.getAclPolicy(name);
  * }
  * }</pre>
  */

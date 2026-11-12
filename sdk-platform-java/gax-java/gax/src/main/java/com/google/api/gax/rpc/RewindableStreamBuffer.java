@@ -33,6 +33,7 @@ import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.common.io.ByteStreams;
+import java.io.EOFException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Arrays;
@@ -52,6 +53,7 @@ final class RewindableStreamBuffer {
   private int payloadLength;
   private boolean isFinal;
   private boolean streamExhausted;
+  private boolean hasReadFromStream;
 
   RewindableStreamBuffer(InputStream inputStream, int chunkSize) {
     this.inputStream = checkNotNull(inputStream, "inputStream must not be null");
@@ -70,6 +72,7 @@ final class RewindableStreamBuffer {
    * @throws IOException if reading from the stream fails
    */
   void fill() throws IOException {
+    this.hasReadFromStream = true;
     this.bufferBaseOffset += payloadLength;
     this.payloadLength = ByteStreams.read(inputStream, buffer, 0, chunkSize);
     this.isFinal = (payloadLength < chunkSize);
@@ -81,15 +84,39 @@ final class RewindableStreamBuffer {
   /**
    * Realigns the buffer window to {@code committedOffset}.
    *
-   * <p>Compacts forward within the existing buffer to discard already-committed bytes, and then
-   * tops up the buffer to capacity from the underlying stream.
+   * <p>Before the first {@link #fill()}, skips the underlying stream forward from byte {@code 0} to
+   * {@code committedOffset} and fills the first chunk. Once data has been read, compacts forward
+   * within the existing buffer to discard already-committed bytes and tops up the buffer to
+   * capacity from the underlying stream.
    *
    * @param committedOffset the server's committed byte offset
-   * @throws IllegalStateException if {@code committedOffset} is below the buffer's base offset or
-   *     beyond the current buffer window
-   * @throws IOException if reading from the stream fails
+   * @throws IllegalStateException if {@code committedOffset} is negative, or (once data has been
+   *     read) below the buffer's base offset or beyond the current buffer window
+   * @throws IOException if skipping or reading from the stream fails
    */
   void realignTo(long committedOffset) throws IOException {
+    if (committedOffset < 0) {
+      throw new IllegalStateException(
+          String.format("Server committed offset %d must not be negative", committedOffset));
+    }
+    if (!hasReadFromStream) {
+      try {
+        ByteStreams.skipFully(inputStream, committedOffset);
+      } catch (EOFException e) {
+        EOFException ex =
+            new EOFException(
+                String.format(
+                    "Stream ended before reaching server committed offset %d; ensure the supplied"
+                        + " stream is positioned at byte 0",
+                    committedOffset));
+        ex.initCause(e);
+        throw ex;
+      }
+      this.bufferBaseOffset = committedOffset;
+      this.payloadLength = 0;
+      fill();
+      return;
+    }
     if (committedOffset < bufferBaseOffset) {
       throw new IllegalStateException(
           String.format(

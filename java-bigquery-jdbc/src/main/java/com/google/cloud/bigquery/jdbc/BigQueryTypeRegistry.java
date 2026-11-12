@@ -17,7 +17,6 @@
 package com.google.cloud.bigquery.jdbc;
 
 import com.google.cloud.bigquery.FieldValue;
-import com.google.cloud.bigquery.Range;
 import com.google.cloud.bigquery.StandardSQLTypeName;
 import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import com.google.cloud.bigquery.exception.BigQueryJdbcSqlFeatureNotSupportedException;
@@ -227,26 +226,40 @@ final class BigQueryTypeRegistry {
         Arrays.asList(Date.class, LocalDate.class),
         (val, targetClass, zone) -> {
           // Modern fast-path: Bypass intermediate object creation for JSR-310 targets
-          if (targetClass == LocalDate.class) {
+          if (targetClass == LocalDate.class
+              || targetClass == String.class
+              || targetClass == LocalDateTime.class
+              || isInstantView(targetClass)) {
+            LocalDate localDate;
             if (val instanceof LocalDate) {
-              return val;
+              localDate = (LocalDate) val;
             } else if (val instanceof Date) {
-              return ((Date) val).toLocalDate();
+              localDate = ((Date) val).toLocalDate();
             } else if (val instanceof Timestamp) {
-              return ((Timestamp) val).toLocalDateTime().toLocalDate();
+              localDate = ((Timestamp) val).toLocalDateTime().toLocalDate();
             } else if (val instanceof java.sql.Time) {
               throw new BigQueryJdbcException("Cannot convert to DATE: " + val);
             } else if (val instanceof java.util.Date) {
-              return new Date(((java.util.Date) val).getTime()).toLocalDate();
+              localDate = new Date(((java.util.Date) val).getTime()).toLocalDate();
             } else if (val instanceof LocalDateTime) {
-              return ((LocalDateTime) val).toLocalDate();
+              localDate = ((LocalDateTime) val).toLocalDate();
             } else if (val instanceof Integer) {
-              return LocalDate.ofEpochDay(((Integer) val).longValue());
+              localDate = LocalDate.ofEpochDay(((Integer) val).longValue());
             } else if (val instanceof String) {
-              return LocalDate.parse((String) val);
+              localDate = LocalDate.parse((String) val);
             } else {
               throw new BigQueryJdbcException("Cannot convert to DATE: " + val);
             }
+            if (targetClass == LocalDate.class) {
+              return localDate;
+            }
+            if (targetClass == String.class) {
+              return localDate.toString();
+            }
+            if (targetClass == LocalDateTime.class) {
+              return localDate.atStartOfDay();
+            }
+            return anchorCivil(localDate.atStartOfDay(), targetClass, zone);
           }
 
           // Legacy path: Box values into java.sql.Date
@@ -254,8 +267,8 @@ final class BigQueryTypeRegistry {
           if (val instanceof Date) {
             sqlDate = (Date) val;
           } else if (val instanceof Timestamp) {
-            ZoneId targetZone = zone != null ? zone : ZoneId.systemDefault();
-            LocalDate localDate = ((Timestamp) val).toInstant().atZone(targetZone).toLocalDate();
+            LocalDate localDate =
+                BigQueryTemporalUtility.unboxDateTime((Timestamp) val, zone).toLocalDate();
             sqlDate = BigQueryTemporalUtility.boxDate(localDate, zone);
           } else if (val instanceof java.sql.Time) {
             throw new BigQueryJdbcException("Cannot convert to DATE: " + val);
@@ -285,39 +298,56 @@ final class BigQueryTypeRegistry {
         StandardSQLTypeName.DATETIME,
         Arrays.asList(Timestamp.class, LocalDateTime.class),
         (val, targetClass, zone) -> {
-          // Modern fast-path: Bypass intermediate object creation for JSR-310 targets
-          if (targetClass == LocalDateTime.class) {
-            if (val instanceof LocalDateTime) {
-              return val;
-            } else if (val instanceof Timestamp) {
-              return ((Timestamp) val).toLocalDateTime();
-            } else if (val instanceof java.util.Date) {
-              return new Timestamp(((java.util.Date) val).getTime()).toLocalDateTime();
-            } else if (val instanceof String) {
-              String isoString =
-                  BigQueryTemporalUtility.truncateFractionalSeconds(
-                      ((String) val).replace(' ', 'T'), 9);
-              return LocalDateTime.parse(isoString);
-            } else {
-              throw new BigQueryJdbcException("Cannot convert to DATETIME: " + val);
-            }
+          if (val instanceof Timestamp && targetClass == Timestamp.class && zone == null) {
+            return val;
+          }
+          if (val instanceof java.util.Date
+              && !(val instanceof Timestamp)
+              && targetClass == Timestamp.class
+              && zone == null) {
+            return new Timestamp(((java.util.Date) val).getTime());
           }
 
-          // Legacy path: Box values into java.sql.Timestamp
-          Timestamp ts;
-          if (val instanceof Timestamp) {
-            ts = (Timestamp) val;
+          LocalDateTime localDateTime;
+          if (val instanceof LocalDateTime) {
+            localDateTime = (LocalDateTime) val;
+          } else if (val instanceof Timestamp) {
+            localDateTime = BigQueryTemporalUtility.unboxDateTime((Timestamp) val, zone);
           } else if (val instanceof java.util.Date) {
-            ts = new Timestamp(((java.util.Date) val).getTime());
-          } else if (val instanceof LocalDateTime) {
-            ts = BigQueryTemporalUtility.boxDateTime((LocalDateTime) val, zone);
+            localDateTime =
+                BigQueryTemporalUtility.unboxDateTime(
+                    new Timestamp(((java.util.Date) val).getTime()), zone);
           } else if (val instanceof String) {
-            ts = BigQueryTemporalUtility.boxDateTime((String) val, zone);
+            String isoString =
+                BigQueryTemporalUtility.truncateFractionalSeconds(
+                    ((String) val).replace(' ', 'T'), 9);
+            localDateTime = LocalDateTime.parse(isoString);
           } else {
             throw new BigQueryJdbcException("Cannot convert to DATETIME: " + val);
           }
 
-          return ts;
+          if (targetClass == LocalDateTime.class) {
+            return localDateTime;
+          }
+          if (targetClass == String.class) {
+            return TIMESTAMP_FORMATTER.format(localDateTime);
+          }
+          if (targetClass == LocalDate.class) {
+            return localDateTime.toLocalDate();
+          }
+          if (targetClass == LocalTime.class) {
+            return localDateTime.toLocalTime();
+          }
+          if (targetClass == Date.class) {
+            return BigQueryTemporalUtility.boxDate(localDateTime.toLocalDate(), zone);
+          }
+          if (targetClass == Time.class) {
+            return BigQueryTemporalUtility.boxTime(localDateTime.toLocalTime(), zone);
+          }
+          if (isInstantView(targetClass)) {
+            return anchorCivil(localDateTime, targetClass, zone);
+          }
+          return BigQueryTemporalUtility.boxDateTime(localDateTime, zone);
         });
   }
 
@@ -329,10 +359,13 @@ final class BigQueryTypeRegistry {
         Arrays.asList(Timestamp.class, OffsetDateTime.class, Instant.class, ZonedDateTime.class),
         (val, targetClass, zone) -> {
           // Modern fast-path: Bypass intermediate object creation for JSR-310 targets
-          if (targetClass == Instant.class
-              || targetClass == OffsetDateTime.class
-              || targetClass == ZonedDateTime.class
-              || targetClass == String.class) {
+          if (isInstantView(targetClass)
+              || targetClass == String.class
+              || targetClass == LocalDateTime.class
+              || targetClass == LocalDate.class
+              || targetClass == LocalTime.class
+              || targetClass == Date.class
+              || targetClass == Time.class) {
             Instant instant;
             if (val instanceof Instant) {
               instant = (Instant) val;
@@ -354,18 +387,27 @@ final class BigQueryTypeRegistry {
               throw new BigQueryJdbcException("Cannot convert to TIMESTAMP: " + val);
             }
 
-            if (targetClass == Instant.class) {
-              return instant;
-            }
-            if (targetClass == OffsetDateTime.class) {
-              return instant.atOffset(ZoneOffset.UTC);
-            }
-            if (targetClass == ZonedDateTime.class) {
-              return instant.atZone(ZoneOffset.UTC);
+            if (isInstantView(targetClass)) {
+              return renderInstant(instant, targetClass);
             }
             if (targetClass == String.class) {
               return TIMESTAMP_FORMATTER.format(instant.atOffset(ZoneOffset.UTC));
             }
+            // java.time, not Timestamp.toLocalDateTime(), which shifts dates before 1582.
+            ZonedDateTime local = instant.atZone(zone != null ? zone : ZoneId.systemDefault());
+            if (targetClass == LocalDateTime.class) {
+              return local.toLocalDateTime();
+            }
+            if (targetClass == LocalDate.class) {
+              return local.toLocalDate();
+            }
+            if (targetClass == LocalTime.class) {
+              return local.toLocalTime();
+            }
+            if (targetClass == Date.class) {
+              return BigQueryTemporalUtility.boxDate(local.toLocalDate(), zone);
+            }
+            return BigQueryTemporalUtility.boxTime(local.toLocalTime(), zone);
           }
 
           // Legacy path: Box values into java.sql.Timestamp
@@ -434,8 +476,8 @@ final class BigQueryTypeRegistry {
           Time sqlTime;
           if (val instanceof Time) sqlTime = (Time) val;
           else if (val instanceof Timestamp) {
-            ZoneId targetZone = zone != null ? zone : ZoneId.systemDefault();
-            LocalTime localTime = ((Timestamp) val).toInstant().atZone(targetZone).toLocalTime();
+            LocalTime localTime =
+                BigQueryTemporalUtility.unboxDateTime((Timestamp) val, zone).toLocalTime();
             sqlTime = BigQueryTemporalUtility.boxTime(localTime, zone);
           } else if (val instanceof Date) {
             throw new BigQueryJdbcException("Cannot convert to TIME: " + val);
@@ -612,17 +654,7 @@ final class BigQueryTypeRegistry {
         String.class,
         StandardSQLTypeName.RANGE,
         Arrays.asList(String.class),
-        (val, targetClass, zone) -> {
-          if (val == null) return null;
-          if (val instanceof Range) {
-            Range range = (Range) val;
-            String start =
-                range.getStart().isNull() ? "UNBOUNDED" : range.getStart().getStringValue();
-            String end = range.getEnd().isNull() ? "UNBOUNDED" : range.getEnd().getStringValue();
-            return String.format("[%s, %s)", start, end);
-          }
-          return String.valueOf(val);
-        });
+        (val, targetClass, zone) -> val == null ? null : String.valueOf(val));
   }
 
   private static void register(TypeDescriptor<?> descriptor) {
@@ -637,6 +669,27 @@ final class BigQueryTypeRegistry {
     for (Class<?> clazz : descriptor.getSupportedJavaTypes()) {
       DESCRIPTORS_BY_CLASS.putIfAbsent(clazz, descriptor);
     }
+  }
+
+  private static boolean isInstantView(Class<?> targetClass) {
+    return targetClass == Instant.class
+        || targetClass == OffsetDateTime.class
+        || targetClass == ZonedDateTime.class;
+  }
+
+  private static Object renderInstant(Instant instant, Class<?> targetClass) {
+    if (targetClass == OffsetDateTime.class) {
+      return instant.atOffset(ZoneOffset.UTC);
+    }
+    if (targetClass == ZonedDateTime.class) {
+      return instant.atZone(ZoneOffset.UTC);
+    }
+    return instant;
+  }
+
+  private static Object anchorCivil(LocalDateTime civil, Class<?> targetClass, ZoneId zone) {
+    ZoneId targetZone = zone != null ? zone : ZoneId.systemDefault();
+    return renderInstant(civil.atZone(targetZone).toInstant(), targetClass);
   }
 
   private BigQueryTypeRegistry() {}
@@ -775,7 +828,7 @@ final class BigQueryTypeRegistry {
       if (fv.isNull()) {
         return null;
       }
-      input = fv.getValue();
+      input = unwrap(fv, bqType);
     }
     int ordinal = bqType.ordinal();
     if (ordinal >= DESCRIPTORS_BY_ORDINAL.length || DESCRIPTORS_BY_ORDINAL[ordinal] == null) {
@@ -806,7 +859,7 @@ final class BigQueryTypeRegistry {
       if (fv.isNull()) {
         return null;
       }
-      input = fv.getValue();
+      input = unwrap(fv, bqType);
     }
     int ordinal = bqType.ordinal();
     if (ordinal >= DESCRIPTORS_BY_ORDINAL.length || DESCRIPTORS_BY_ORDINAL[ordinal] == null) {
@@ -830,6 +883,37 @@ final class BigQueryTypeRegistry {
               input, bqType, targetClass.getName()),
           e);
     }
+  }
+
+  /**
+   * Formats a raw civil temporal value ({@code DATE}, {@code TIME}, or {@code DATETIME}) as a
+   * string for complex types ({@code ARRAY} and {@code STRUCT}) without boxing through {@code
+   * java.sql} types.
+   */
+  static String formatCivilTemporalElement(StandardSQLTypeName type, Object rawValue)
+      throws BigQueryJdbcException {
+    if (type == StandardSQLTypeName.DATETIME) {
+      LocalDateTime ldt =
+          convert(rawValue, StandardSQLTypeName.DATETIME, LocalDateTime.class, null);
+      return ldt == null
+          ? null
+          : BigQueryTemporalUtility.UTC_TIMESTAMP_TO_STRING_FORMATTER.format(ldt);
+    }
+    return convert(rawValue, type, String.class, null);
+  }
+
+  /** Returns int64-encoded TIMESTAMP values as epoch micros, as the Arrow path delivers them. */
+  private static Object unwrap(FieldValue fv, StandardSQLTypeName bqType)
+      throws BigQueryJdbcException {
+    if (bqType == StandardSQLTypeName.TIMESTAMP
+        && Boolean.TRUE.equals(fv.getUseInt64Timestamps())) {
+      try {
+        return Long.valueOf(fv.getStringValue());
+      } catch (NumberFormatException e) {
+        throw new BigQueryJdbcException("Invalid int64 TIMESTAMP value: " + fv.getValue(), e);
+      }
+    }
+    return fv.getValue();
   }
 
   private static TypeDescriptor<?> getDescriptorForClass(Class<?> clazz) {

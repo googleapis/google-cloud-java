@@ -93,6 +93,7 @@ public interface GkePodInfoOrBuilder
    *
    * <pre>
    * URI of the network containing the GKE Pod.
+   * Format: `projects/{project_id}/global/networks/{network_id}`
    * </pre>
    *
    * <code>string network_uri = 3;</code>
@@ -106,6 +107,7 @@ public interface GkePodInfoOrBuilder
    *
    * <pre>
    * URI of the network containing the GKE Pod.
+   * Format: `projects/{project_id}/global/networks/{network_id}`
    * </pre>
    *
    * <code>string network_uri = 3;</code>

@@ -61,6 +61,20 @@ public final class RemoteAgentTool extends com.google.protobuf.GeneratedMessage
         .internal_static_google_cloud_ces_v1beta_RemoteAgentTool_descriptor;
   }
 
+  @SuppressWarnings({"rawtypes"})
+  @java.lang.Override
+  protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+      int number) {
+    switch (number) {
+      case 6:
+        return internalGetInputVariableMapping();
+      case 7:
+        return internalGetOutputVariableMapping();
+      default:
+        throw new RuntimeException("Invalid map field number: " + number);
+    }
+  }
+
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internalGetFieldAccessorTable() {
@@ -237,6 +251,333 @@ public final class RemoteAgentTool extends com.google.protobuf.GeneratedMessage
         : agentCard_;
   }
 
+  public static final int API_AUTHENTICATION_FIELD_NUMBER = 4;
+  private com.google.cloud.ces.v1beta.ApiAuthentication apiAuthentication_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Authentication configuration for calling the remote agent.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.ApiAuthentication api_authentication = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the apiAuthentication field is set.
+   */
+  @java.lang.Override
+  public boolean hasApiAuthentication() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Authentication configuration for calling the remote agent.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.ApiAuthentication api_authentication = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The apiAuthentication.
+   */
+  @java.lang.Override
+  public com.google.cloud.ces.v1beta.ApiAuthentication getApiAuthentication() {
+    return apiAuthentication_ == null
+        ? com.google.cloud.ces.v1beta.ApiAuthentication.getDefaultInstance()
+        : apiAuthentication_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Authentication configuration for calling the remote agent.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.ApiAuthentication api_authentication = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.ces.v1beta.ApiAuthenticationOrBuilder getApiAuthenticationOrBuilder() {
+    return apiAuthentication_ == null
+        ? com.google.cloud.ces.v1beta.ApiAuthentication.getDefaultInstance()
+        : apiAuthentication_;
+  }
+
+  public static final int STATEFUL_AGENT_FIELD_NUMBER = 5;
+  private boolean statefulAgent_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. When enabled, the interaction between the CXAS app and the remote
+   * agent will share the same context. If the remote agent returns a
+   * context_id, it will be persisted for the entirety of the session for this
+   * remote agent tool.
+   * </pre>
+   *
+   * <code>bool stateful_agent = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The statefulAgent.
+   */
+  @java.lang.Override
+  public boolean getStatefulAgent() {
+    return statefulAgent_;
+  }
+
+  public static final int INPUT_VARIABLE_MAPPING_FIELD_NUMBER = 6;
+
+  private static final class InputVariableMappingDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+            com.google.cloud.ces.v1beta.AgentCardProto
+                .internal_static_google_cloud_ces_v1beta_RemoteAgentTool_InputVariableMappingEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "");
+  }
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> inputVariableMapping_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetInputVariableMapping() {
+    if (inputVariableMapping_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(
+          InputVariableMappingDefaultEntryHolder.defaultEntry);
+    }
+    return inputVariableMapping_;
+  }
+
+  public int getInputVariableMappingCount() {
+    return internalGetInputVariableMapping().getMap().size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Mapping of input variable names of remote agent to GECX variable
+   * names.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; input_variable_mapping = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public boolean containsInputVariableMapping(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    return internalGetInputVariableMapping().getMap().containsKey(key);
+  }
+
+  /** Use {@link #getInputVariableMappingMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, java.lang.String> getInputVariableMapping() {
+    return getInputVariableMappingMap();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Mapping of input variable names of remote agent to GECX variable
+   * names.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; input_variable_mapping = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, java.lang.String> getInputVariableMappingMap() {
+    return internalGetInputVariableMapping().getMap();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Mapping of input variable names of remote agent to GECX variable
+   * names.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; input_variable_mapping = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public /* nullable */ java.lang.String getInputVariableMappingOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map =
+        internalGetInputVariableMapping().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Mapping of input variable names of remote agent to GECX variable
+   * names.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; input_variable_mapping = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.lang.String getInputVariableMappingOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map =
+        internalGetInputVariableMapping().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
+  public static final int OUTPUT_VARIABLE_MAPPING_FIELD_NUMBER = 7;
+
+  private static final class OutputVariableMappingDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+            com.google.cloud.ces.v1beta.AgentCardProto
+                .internal_static_google_cloud_ces_v1beta_RemoteAgentTool_OutputVariableMappingEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "");
+  }
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> outputVariableMapping_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetOutputVariableMapping() {
+    if (outputVariableMapping_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(
+          OutputVariableMappingDefaultEntryHolder.defaultEntry);
+    }
+    return outputVariableMapping_;
+  }
+
+  public int getOutputVariableMappingCount() {
+    return internalGetOutputVariableMapping().getMap().size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Mapping of output variable names of remote agent to GECX variable
+   * names.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; output_variable_mapping = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public boolean containsOutputVariableMapping(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    return internalGetOutputVariableMapping().getMap().containsKey(key);
+  }
+
+  /** Use {@link #getOutputVariableMappingMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, java.lang.String> getOutputVariableMapping() {
+    return getOutputVariableMappingMap();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Mapping of output variable names of remote agent to GECX variable
+   * names.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; output_variable_mapping = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, java.lang.String> getOutputVariableMappingMap() {
+    return internalGetOutputVariableMapping().getMap();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Mapping of output variable names of remote agent to GECX variable
+   * names.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; output_variable_mapping = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public /* nullable */ java.lang.String getOutputVariableMappingOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map =
+        internalGetOutputVariableMapping().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Mapping of output variable names of remote agent to GECX variable
+   * names.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; output_variable_mapping = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.lang.String getOutputVariableMappingOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map =
+        internalGetOutputVariableMapping().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -260,6 +601,22 @@ public final class RemoteAgentTool extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(3, getAgentCard());
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(4, getApiAuthentication());
+    }
+    if (statefulAgent_ != false) {
+      output.writeBool(5, statefulAgent_);
+    }
+    com.google.protobuf.GeneratedMessage.serializeStringMapTo(
+        output,
+        internalGetInputVariableMapping(),
+        InputVariableMappingDefaultEntryHolder.defaultEntry,
+        6);
+    com.google.protobuf.GeneratedMessage.serializeStringMapTo(
+        output,
+        internalGetOutputVariableMapping(),
+        OutputVariableMappingDefaultEntryHolder.defaultEntry,
+        7);
     getUnknownFields().writeTo(output);
   }
 
@@ -277,6 +634,32 @@ public final class RemoteAgentTool extends com.google.protobuf.GeneratedMessage
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getAgentCard());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getApiAuthentication());
+    }
+    if (statefulAgent_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(5, statefulAgent_);
+    }
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+        internalGetInputVariableMapping().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> inputVariableMapping__ =
+          InputVariableMappingDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, inputVariableMapping__);
+    }
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+        internalGetOutputVariableMapping().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> outputVariableMapping__ =
+          OutputVariableMappingDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, outputVariableMapping__);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -300,6 +683,15 @@ public final class RemoteAgentTool extends com.google.protobuf.GeneratedMessage
     if (hasAgentCard()) {
       if (!getAgentCard().equals(other.getAgentCard())) return false;
     }
+    if (hasApiAuthentication() != other.hasApiAuthentication()) return false;
+    if (hasApiAuthentication()) {
+      if (!getApiAuthentication().equals(other.getApiAuthentication())) return false;
+    }
+    if (getStatefulAgent() != other.getStatefulAgent()) return false;
+    if (!internalGetInputVariableMapping().equals(other.internalGetInputVariableMapping()))
+      return false;
+    if (!internalGetOutputVariableMapping().equals(other.internalGetOutputVariableMapping()))
+      return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -318,6 +710,20 @@ public final class RemoteAgentTool extends com.google.protobuf.GeneratedMessage
     if (hasAgentCard()) {
       hash = (37 * hash) + AGENT_CARD_FIELD_NUMBER;
       hash = (53 * hash) + getAgentCard().hashCode();
+    }
+    if (hasApiAuthentication()) {
+      hash = (37 * hash) + API_AUTHENTICATION_FIELD_NUMBER;
+      hash = (53 * hash) + getApiAuthentication().hashCode();
+    }
+    hash = (37 * hash) + STATEFUL_AGENT_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getStatefulAgent());
+    if (!internalGetInputVariableMapping().getMap().isEmpty()) {
+      hash = (37 * hash) + INPUT_VARIABLE_MAPPING_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetInputVariableMapping().hashCode();
+    }
+    if (!internalGetOutputVariableMapping().getMap().isEmpty()) {
+      hash = (37 * hash) + OUTPUT_VARIABLE_MAPPING_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetOutputVariableMapping().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -438,6 +844,32 @@ public final class RemoteAgentTool extends com.google.protobuf.GeneratedMessage
           .internal_static_google_cloud_ces_v1beta_RemoteAgentTool_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+        int number) {
+      switch (number) {
+        case 6:
+          return internalGetInputVariableMapping();
+        case 7:
+          return internalGetOutputVariableMapping();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMutableMapFieldReflection(
+        int number) {
+      switch (number) {
+        case 6:
+          return internalGetMutableInputVariableMapping();
+        case 7:
+          return internalGetMutableOutputVariableMapping();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -461,6 +893,7 @@ public final class RemoteAgentTool extends com.google.protobuf.GeneratedMessage
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
         internalGetAgentCardFieldBuilder();
+        internalGetApiAuthenticationFieldBuilder();
       }
     }
 
@@ -475,6 +908,14 @@ public final class RemoteAgentTool extends com.google.protobuf.GeneratedMessage
         agentCardBuilder_.dispose();
         agentCardBuilder_ = null;
       }
+      apiAuthentication_ = null;
+      if (apiAuthenticationBuilder_ != null) {
+        apiAuthenticationBuilder_.dispose();
+        apiAuthenticationBuilder_ = null;
+      }
+      statefulAgent_ = false;
+      internalGetMutableInputVariableMapping().clear();
+      internalGetMutableOutputVariableMapping().clear();
       return this;
     }
 
@@ -522,6 +963,24 @@ public final class RemoteAgentTool extends com.google.protobuf.GeneratedMessage
         result.agentCard_ = agentCardBuilder_ == null ? agentCard_ : agentCardBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.apiAuthentication_ =
+            apiAuthenticationBuilder_ == null
+                ? apiAuthentication_
+                : apiAuthenticationBuilder_.build();
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.statefulAgent_ = statefulAgent_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.inputVariableMapping_ = internalGetInputVariableMapping();
+        result.inputVariableMapping_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.outputVariableMapping_ = internalGetOutputVariableMapping();
+        result.outputVariableMapping_.makeImmutable();
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -550,6 +1009,16 @@ public final class RemoteAgentTool extends com.google.protobuf.GeneratedMessage
       if (other.hasAgentCard()) {
         mergeAgentCard(other.getAgentCard());
       }
+      if (other.hasApiAuthentication()) {
+        mergeApiAuthentication(other.getApiAuthentication());
+      }
+      if (other.getStatefulAgent() != false) {
+        setStatefulAgent(other.getStatefulAgent());
+      }
+      internalGetMutableInputVariableMapping().mergeFrom(other.internalGetInputVariableMapping());
+      bitField0_ |= 0x00000020;
+      internalGetMutableOutputVariableMapping().mergeFrom(other.internalGetOutputVariableMapping());
+      bitField0_ |= 0x00000040;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -595,6 +1064,45 @@ public final class RemoteAgentTool extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000004;
                 break;
               } // case 26
+            case 34:
+              {
+                input.readMessage(
+                    internalGetApiAuthenticationFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 34
+            case 40:
+              {
+                statefulAgent_ = input.readBool();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 40
+            case 50:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+                    inputVariableMapping__ =
+                        input.readMessage(
+                            InputVariableMappingDefaultEntryHolder.defaultEntry.getParserForType(),
+                            extensionRegistry);
+                internalGetMutableInputVariableMapping()
+                    .getMutableMap()
+                    .put(inputVariableMapping__.getKey(), inputVariableMapping__.getValue());
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 50
+            case 58:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+                    outputVariableMapping__ =
+                        input.readMessage(
+                            OutputVariableMappingDefaultEntryHolder.defaultEntry.getParserForType(),
+                            extensionRegistry);
+                internalGetMutableOutputVariableMapping()
+                    .getMutableMap()
+                    .put(outputVariableMapping__.getKey(), outputVariableMapping__.getValue());
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 58
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1046,6 +1554,685 @@ public final class RemoteAgentTool extends com.google.protobuf.GeneratedMessage
         agentCard_ = null;
       }
       return agentCardBuilder_;
+    }
+
+    private com.google.cloud.ces.v1beta.ApiAuthentication apiAuthentication_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.ces.v1beta.ApiAuthentication,
+            com.google.cloud.ces.v1beta.ApiAuthentication.Builder,
+            com.google.cloud.ces.v1beta.ApiAuthenticationOrBuilder>
+        apiAuthenticationBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Authentication configuration for calling the remote agent.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.ApiAuthentication api_authentication = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the apiAuthentication field is set.
+     */
+    public boolean hasApiAuthentication() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Authentication configuration for calling the remote agent.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.ApiAuthentication api_authentication = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The apiAuthentication.
+     */
+    public com.google.cloud.ces.v1beta.ApiAuthentication getApiAuthentication() {
+      if (apiAuthenticationBuilder_ == null) {
+        return apiAuthentication_ == null
+            ? com.google.cloud.ces.v1beta.ApiAuthentication.getDefaultInstance()
+            : apiAuthentication_;
+      } else {
+        return apiAuthenticationBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Authentication configuration for calling the remote agent.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.ApiAuthentication api_authentication = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setApiAuthentication(com.google.cloud.ces.v1beta.ApiAuthentication value) {
+      if (apiAuthenticationBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        apiAuthentication_ = value;
+      } else {
+        apiAuthenticationBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Authentication configuration for calling the remote agent.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.ApiAuthentication api_authentication = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setApiAuthentication(
+        com.google.cloud.ces.v1beta.ApiAuthentication.Builder builderForValue) {
+      if (apiAuthenticationBuilder_ == null) {
+        apiAuthentication_ = builderForValue.build();
+      } else {
+        apiAuthenticationBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Authentication configuration for calling the remote agent.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.ApiAuthentication api_authentication = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeApiAuthentication(com.google.cloud.ces.v1beta.ApiAuthentication value) {
+      if (apiAuthenticationBuilder_ == null) {
+        if (((bitField0_ & 0x00000008) != 0)
+            && apiAuthentication_ != null
+            && apiAuthentication_
+                != com.google.cloud.ces.v1beta.ApiAuthentication.getDefaultInstance()) {
+          getApiAuthenticationBuilder().mergeFrom(value);
+        } else {
+          apiAuthentication_ = value;
+        }
+      } else {
+        apiAuthenticationBuilder_.mergeFrom(value);
+      }
+      if (apiAuthentication_ != null) {
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Authentication configuration for calling the remote agent.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.ApiAuthentication api_authentication = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearApiAuthentication() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      apiAuthentication_ = null;
+      if (apiAuthenticationBuilder_ != null) {
+        apiAuthenticationBuilder_.dispose();
+        apiAuthenticationBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Authentication configuration for calling the remote agent.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.ApiAuthentication api_authentication = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.ces.v1beta.ApiAuthentication.Builder getApiAuthenticationBuilder() {
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return internalGetApiAuthenticationFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Authentication configuration for calling the remote agent.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.ApiAuthentication api_authentication = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.ces.v1beta.ApiAuthenticationOrBuilder getApiAuthenticationOrBuilder() {
+      if (apiAuthenticationBuilder_ != null) {
+        return apiAuthenticationBuilder_.getMessageOrBuilder();
+      } else {
+        return apiAuthentication_ == null
+            ? com.google.cloud.ces.v1beta.ApiAuthentication.getDefaultInstance()
+            : apiAuthentication_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Authentication configuration for calling the remote agent.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.ApiAuthentication api_authentication = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.ces.v1beta.ApiAuthentication,
+            com.google.cloud.ces.v1beta.ApiAuthentication.Builder,
+            com.google.cloud.ces.v1beta.ApiAuthenticationOrBuilder>
+        internalGetApiAuthenticationFieldBuilder() {
+      if (apiAuthenticationBuilder_ == null) {
+        apiAuthenticationBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.ces.v1beta.ApiAuthentication,
+                com.google.cloud.ces.v1beta.ApiAuthentication.Builder,
+                com.google.cloud.ces.v1beta.ApiAuthenticationOrBuilder>(
+                getApiAuthentication(), getParentForChildren(), isClean());
+        apiAuthentication_ = null;
+      }
+      return apiAuthenticationBuilder_;
+    }
+
+    private boolean statefulAgent_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. When enabled, the interaction between the CXAS app and the remote
+     * agent will share the same context. If the remote agent returns a
+     * context_id, it will be persisted for the entirety of the session for this
+     * remote agent tool.
+     * </pre>
+     *
+     * <code>bool stateful_agent = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The statefulAgent.
+     */
+    @java.lang.Override
+    public boolean getStatefulAgent() {
+      return statefulAgent_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. When enabled, the interaction between the CXAS app and the remote
+     * agent will share the same context. If the remote agent returns a
+     * context_id, it will be persisted for the entirety of the session for this
+     * remote agent tool.
+     * </pre>
+     *
+     * <code>bool stateful_agent = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The statefulAgent to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStatefulAgent(boolean value) {
+
+      statefulAgent_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. When enabled, the interaction between the CXAS app and the remote
+     * agent will share the same context. If the remote agent returns a
+     * context_id, it will be persisted for the entirety of the session for this
+     * remote agent tool.
+     * </pre>
+     *
+     * <code>bool stateful_agent = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearStatefulAgent() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      statefulAgent_ = false;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> inputVariableMapping_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetInputVariableMapping() {
+      if (inputVariableMapping_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            InputVariableMappingDefaultEntryHolder.defaultEntry);
+      }
+      return inputVariableMapping_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetMutableInputVariableMapping() {
+      if (inputVariableMapping_ == null) {
+        inputVariableMapping_ =
+            com.google.protobuf.MapField.newMapField(
+                InputVariableMappingDefaultEntryHolder.defaultEntry);
+      }
+      if (!inputVariableMapping_.isMutable()) {
+        inputVariableMapping_ = inputVariableMapping_.copy();
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return inputVariableMapping_;
+    }
+
+    public int getInputVariableMappingCount() {
+      return internalGetInputVariableMapping().getMap().size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Mapping of input variable names of remote agent to GECX variable
+     * names.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; input_variable_mapping = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public boolean containsInputVariableMapping(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetInputVariableMapping().getMap().containsKey(key);
+    }
+
+    /** Use {@link #getInputVariableMappingMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getInputVariableMapping() {
+      return getInputVariableMappingMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Mapping of input variable names of remote agent to GECX variable
+     * names.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; input_variable_mapping = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.String> getInputVariableMappingMap() {
+      return internalGetInputVariableMapping().getMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Mapping of input variable names of remote agent to GECX variable
+     * names.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; input_variable_mapping = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public /* nullable */ java.lang.String getInputVariableMappingOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetInputVariableMapping().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Mapping of input variable names of remote agent to GECX variable
+     * names.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; input_variable_mapping = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.lang.String getInputVariableMappingOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetInputVariableMapping().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearInputVariableMapping() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      internalGetMutableInputVariableMapping().getMutableMap().clear();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Mapping of input variable names of remote agent to GECX variable
+     * names.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; input_variable_mapping = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeInputVariableMapping(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      internalGetMutableInputVariableMapping().getMutableMap().remove(key);
+      return this;
+    }
+
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getMutableInputVariableMapping() {
+      bitField0_ |= 0x00000020;
+      return internalGetMutableInputVariableMapping().getMutableMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Mapping of input variable names of remote agent to GECX variable
+     * names.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; input_variable_mapping = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder putInputVariableMapping(java.lang.String key, java.lang.String value) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      if (value == null) {
+        throw new NullPointerException("map value");
+      }
+      internalGetMutableInputVariableMapping().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000020;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Mapping of input variable names of remote agent to GECX variable
+     * names.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; input_variable_mapping = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder putAllInputVariableMapping(
+        java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableInputVariableMapping().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000020;
+      return this;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> outputVariableMapping_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetOutputVariableMapping() {
+      if (outputVariableMapping_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            OutputVariableMappingDefaultEntryHolder.defaultEntry);
+      }
+      return outputVariableMapping_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetMutableOutputVariableMapping() {
+      if (outputVariableMapping_ == null) {
+        outputVariableMapping_ =
+            com.google.protobuf.MapField.newMapField(
+                OutputVariableMappingDefaultEntryHolder.defaultEntry);
+      }
+      if (!outputVariableMapping_.isMutable()) {
+        outputVariableMapping_ = outputVariableMapping_.copy();
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return outputVariableMapping_;
+    }
+
+    public int getOutputVariableMappingCount() {
+      return internalGetOutputVariableMapping().getMap().size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Mapping of output variable names of remote agent to GECX variable
+     * names.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; output_variable_mapping = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public boolean containsOutputVariableMapping(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetOutputVariableMapping().getMap().containsKey(key);
+    }
+
+    /** Use {@link #getOutputVariableMappingMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getOutputVariableMapping() {
+      return getOutputVariableMappingMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Mapping of output variable names of remote agent to GECX variable
+     * names.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; output_variable_mapping = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.String> getOutputVariableMappingMap() {
+      return internalGetOutputVariableMapping().getMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Mapping of output variable names of remote agent to GECX variable
+     * names.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; output_variable_mapping = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public /* nullable */ java.lang.String getOutputVariableMappingOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetOutputVariableMapping().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Mapping of output variable names of remote agent to GECX variable
+     * names.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; output_variable_mapping = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.lang.String getOutputVariableMappingOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetOutputVariableMapping().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearOutputVariableMapping() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      internalGetMutableOutputVariableMapping().getMutableMap().clear();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Mapping of output variable names of remote agent to GECX variable
+     * names.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; output_variable_mapping = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeOutputVariableMapping(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      internalGetMutableOutputVariableMapping().getMutableMap().remove(key);
+      return this;
+    }
+
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getMutableOutputVariableMapping() {
+      bitField0_ |= 0x00000040;
+      return internalGetMutableOutputVariableMapping().getMutableMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Mapping of output variable names of remote agent to GECX variable
+     * names.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; output_variable_mapping = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder putOutputVariableMapping(java.lang.String key, java.lang.String value) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      if (value == null) {
+        throw new NullPointerException("map value");
+      }
+      internalGetMutableOutputVariableMapping().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000040;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Mapping of output variable names of remote agent to GECX variable
+     * names.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; output_variable_mapping = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder putAllOutputVariableMapping(
+        java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableOutputVariableMapping().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000040;
+      return this;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.ces.v1beta.RemoteAgentTool)

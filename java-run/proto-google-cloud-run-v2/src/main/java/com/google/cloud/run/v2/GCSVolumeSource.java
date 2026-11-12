@@ -24,8 +24,8 @@ package com.google.cloud.run.v2;
  *
  *
  * <pre>
- * Represents a volume backed by a Cloud Storage bucket using Cloud Storage
- * FUSE.
+ * Represents a volume backed by a Cloud Storage bucket (mounted via Cloud
+ * Storage FUSE or as a block device disk).
  * </pre>
  *
  * Protobuf type {@code google.cloud.run.v2.GCSVolumeSource}
@@ -404,8 +404,8 @@ public final class GCSVolumeSource extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Represents a volume backed by a Cloud Storage bucket using Cloud Storage
-   * FUSE.
+   * Represents a volume backed by a Cloud Storage bucket (mounted via Cloud
+   * Storage FUSE or as a block device disk).
    * </pre>
    *
    * Protobuf type {@code google.cloud.run.v2.GCSVolumeSource}

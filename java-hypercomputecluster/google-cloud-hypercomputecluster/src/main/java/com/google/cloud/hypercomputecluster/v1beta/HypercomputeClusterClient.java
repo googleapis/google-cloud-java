@@ -174,8 +174,30 @@ import org.jspecify.annotations.Nullable;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> ListNodes</td>
+ *      <td><p> Lists Nodes in a given cluster.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listNodes(ListNodesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listNodes(ClusterName parent)
+ *           <li><p> listNodes(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listNodesPagedCallable()
+ *           <li><p> listNodesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> ListLocations</td>
- *      <td><p> Lists information about the supported locations for this service.</td>
+ *      <td><p> Lists information about the supported locations for this service.
+ * <p> This method lists locations based on the resource scope provided inthe [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field: &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If `name` follows the format`projects/{project}`, the method lists locations visible to thatspecific project. This includes public, private, or otherproject-specific locations enabled for the project.
+ * <p> For gRPC and client library implementations, the resource name ispassed as the `name` field. For direct service calls, the resourcename isincorporated into the request path based on the specific serviceimplementation and version.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -643,9 +665,9 @@ public class HypercomputeClusterClient implements BackgroundResource {
    * @param parent Required. Parent location in which the cluster should be created, in the format
    *     `projects/{project}/locations/{location}`.
    * @param cluster Required. Cluster to create.
-   * @param clusterId Required. ID of the cluster to create. Must conform to
-   *     [RFC-1034](https://datatracker.ietf.org/doc/html/rfc1034) (lower-case, alphanumeric, and at
-   *     most 63 characters).
+   * @param clusterId Required. The ID of the cluster to create. The cluster ID must start with a
+   *     lowercase letter (`a`-`z`), use only lowercase letters or numbers, and contain up to 10
+   *     characters. For example, specify `cluster001`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Cluster, OperationMetadata> createClusterAsync(
@@ -683,9 +705,9 @@ public class HypercomputeClusterClient implements BackgroundResource {
    * @param parent Required. Parent location in which the cluster should be created, in the format
    *     `projects/{project}/locations/{location}`.
    * @param cluster Required. Cluster to create.
-   * @param clusterId Required. ID of the cluster to create. Must conform to
-   *     [RFC-1034](https://datatracker.ietf.org/doc/html/rfc1034) (lower-case, alphanumeric, and at
-   *     most 63 characters).
+   * @param clusterId Required. The ID of the cluster to create. The cluster ID must start with a
+   *     lowercase letter (`a`-`z`), use only lowercase letters or numbers, and contain up to 10
+   *     characters. For example, specify `cluster001`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Cluster, OperationMetadata> createClusterAsync(
@@ -1065,7 +1087,186 @@ public class HypercomputeClusterClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Lists Nodes in a given cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HypercomputeClusterClient hypercomputeClusterClient = HypercomputeClusterClient.create()) {
+   *   ClusterName parent = ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]");
+   *   for (Node element : hypercomputeClusterClient.listNodes(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Parent cluster of the nodes to list, in the format
+   *     `projects/{project}/locations/{location}/clusters/{cluster}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListNodesPagedResponse listNodes(@Nullable ClusterName parent) {
+    ListNodesRequest request =
+        ListNodesRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
+    return listNodes(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists Nodes in a given cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HypercomputeClusterClient hypercomputeClusterClient = HypercomputeClusterClient.create()) {
+   *   String parent = ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]").toString();
+   *   for (Node element : hypercomputeClusterClient.listNodes(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Parent cluster of the nodes to list, in the format
+   *     `projects/{project}/locations/{location}/clusters/{cluster}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListNodesPagedResponse listNodes(String parent) {
+    ListNodesRequest request = ListNodesRequest.newBuilder().setParent(parent).build();
+    return listNodes(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists Nodes in a given cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HypercomputeClusterClient hypercomputeClusterClient = HypercomputeClusterClient.create()) {
+   *   ListNodesRequest request =
+   *       ListNodesRequest.newBuilder()
+   *           .setParent(ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   for (Node element : hypercomputeClusterClient.listNodes(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListNodesPagedResponse listNodes(ListNodesRequest request) {
+    return listNodesPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists Nodes in a given cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HypercomputeClusterClient hypercomputeClusterClient = HypercomputeClusterClient.create()) {
+   *   ListNodesRequest request =
+   *       ListNodesRequest.newBuilder()
+   *           .setParent(ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   ApiFuture<Node> future =
+   *       hypercomputeClusterClient.listNodesPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Node element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListNodesRequest, ListNodesPagedResponse> listNodesPagedCallable() {
+    return stub.listNodesPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists Nodes in a given cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HypercomputeClusterClient hypercomputeClusterClient = HypercomputeClusterClient.create()) {
+   *   ListNodesRequest request =
+   *       ListNodesRequest.newBuilder()
+   *           .setParent(ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   while (true) {
+   *     ListNodesResponse response = hypercomputeClusterClient.listNodesCallable().call(request);
+   *     for (Node element : response.getNodesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListNodesRequest, ListNodesResponse> listNodesCallable() {
+    return stub.listNodesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Lists information about the supported locations for this service.
+   *
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
    *
    * <p>Sample code:
    *
@@ -1100,6 +1301,18 @@ public class HypercomputeClusterClient implements BackgroundResource {
   /**
    * Lists information about the supported locations for this service.
    *
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -1133,6 +1346,18 @@ public class HypercomputeClusterClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists information about the supported locations for this service.
+   *
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
    *
    * <p>Sample code:
    *
@@ -1323,6 +1548,71 @@ public class HypercomputeClusterClient implements BackgroundResource {
     protected ListClustersFixedSizeCollection createCollection(
         @Nullable List<ListClustersPage> pages, int collectionSize) {
       return new ListClustersFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListNodesPagedResponse
+      extends AbstractPagedListResponse<
+          ListNodesRequest, ListNodesResponse, Node, ListNodesPage, ListNodesFixedSizeCollection> {
+
+    public static ApiFuture<ListNodesPagedResponse> createAsync(
+        PageContext<ListNodesRequest, ListNodesResponse, Node> context,
+        ApiFuture<ListNodesResponse> futureResponse) {
+      ApiFuture<ListNodesPage> futurePage =
+          ListNodesPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage, input -> new ListNodesPagedResponse(input), MoreExecutors.directExecutor());
+    }
+
+    private ListNodesPagedResponse(ListNodesPage page) {
+      super(page, ListNodesFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListNodesPage
+      extends AbstractPage<ListNodesRequest, ListNodesResponse, Node, ListNodesPage> {
+
+    private ListNodesPage(
+        @Nullable PageContext<ListNodesRequest, ListNodesResponse, Node> context,
+        @Nullable ListNodesResponse response) {
+      super(context, response);
+    }
+
+    private static ListNodesPage createEmptyPage() {
+      return new ListNodesPage(null, null);
+    }
+
+    @Override
+    protected ListNodesPage createPage(
+        @Nullable PageContext<ListNodesRequest, ListNodesResponse, Node> context,
+        @Nullable ListNodesResponse response) {
+      return new ListNodesPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListNodesPage> createPageAsync(
+        @Nullable PageContext<ListNodesRequest, ListNodesResponse, Node> context,
+        ApiFuture<ListNodesResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListNodesFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListNodesRequest, ListNodesResponse, Node, ListNodesPage, ListNodesFixedSizeCollection> {
+
+    private ListNodesFixedSizeCollection(@Nullable List<ListNodesPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListNodesFixedSizeCollection createEmptyCollection() {
+      return new ListNodesFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListNodesFixedSizeCollection createCollection(
+        @Nullable List<ListNodesPage> pages, int collectionSize) {
+      return new ListNodesFixedSizeCollection(pages, collectionSize);
     }
   }
 

@@ -1643,8 +1643,8 @@ public class SecretManagerServiceClientHttpJsonTest {
     mockService.addResponse(expectedResponse);
 
     SecretName parent = SecretName.ofProjectSecretName("[PROJECT]", "[SECRET]");
-    EnableManagedRotationRequest.CloudSQLSingleUserCredentials cloudSqlSingleUserCredentials =
-        EnableManagedRotationRequest.CloudSQLSingleUserCredentials.newBuilder().build();
+    CloudSqlSingleUserCredentials cloudSqlSingleUserCredentials =
+        CloudSqlSingleUserCredentials.newBuilder().build();
 
     SecretVersion actualResponse =
         client.enableManagedRotation(parent, cloudSqlSingleUserCredentials);
@@ -1674,8 +1674,8 @@ public class SecretManagerServiceClientHttpJsonTest {
 
     try {
       SecretName parent = SecretName.ofProjectSecretName("[PROJECT]", "[SECRET]");
-      EnableManagedRotationRequest.CloudSQLSingleUserCredentials cloudSqlSingleUserCredentials =
-          EnableManagedRotationRequest.CloudSQLSingleUserCredentials.newBuilder().build();
+      CloudSqlSingleUserCredentials cloudSqlSingleUserCredentials =
+          CloudSqlSingleUserCredentials.newBuilder().build();
       client.enableManagedRotation(parent, cloudSqlSingleUserCredentials);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -1702,8 +1702,8 @@ public class SecretManagerServiceClientHttpJsonTest {
     mockService.addResponse(expectedResponse);
 
     String parent = "projects/project-3502/secrets/secret-3502";
-    EnableManagedRotationRequest.CloudSQLSingleUserCredentials cloudSqlSingleUserCredentials =
-        EnableManagedRotationRequest.CloudSQLSingleUserCredentials.newBuilder().build();
+    CloudSqlSingleUserCredentials cloudSqlSingleUserCredentials =
+        CloudSqlSingleUserCredentials.newBuilder().build();
 
     SecretVersion actualResponse =
         client.enableManagedRotation(parent, cloudSqlSingleUserCredentials);
@@ -1733,8 +1733,8 @@ public class SecretManagerServiceClientHttpJsonTest {
 
     try {
       String parent = "projects/project-3502/secrets/secret-3502";
-      EnableManagedRotationRequest.CloudSQLSingleUserCredentials cloudSqlSingleUserCredentials =
-          EnableManagedRotationRequest.CloudSQLSingleUserCredentials.newBuilder().build();
+      CloudSqlSingleUserCredentials cloudSqlSingleUserCredentials =
+          CloudSqlSingleUserCredentials.newBuilder().build();
       client.enableManagedRotation(parent, cloudSqlSingleUserCredentials);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {

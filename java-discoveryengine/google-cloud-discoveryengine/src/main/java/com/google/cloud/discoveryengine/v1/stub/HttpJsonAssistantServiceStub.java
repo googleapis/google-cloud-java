@@ -16,6 +16,8 @@
 
 package com.google.cloud.discoveryengine.v1.stub;
 
+import static com.google.cloud.discoveryengine.v1.AssistantServiceClient.ListAssistantsPagedResponse;
+
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
@@ -28,8 +30,17 @@ import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.ServerStreamingCallable;
+import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.discoveryengine.v1.Assistant;
+import com.google.cloud.discoveryengine.v1.CreateAssistantRequest;
+import com.google.cloud.discoveryengine.v1.DeleteAssistantRequest;
+import com.google.cloud.discoveryengine.v1.GetAssistantRequest;
+import com.google.cloud.discoveryengine.v1.ListAssistantsRequest;
+import com.google.cloud.discoveryengine.v1.ListAssistantsResponse;
 import com.google.cloud.discoveryengine.v1.StreamAssistRequest;
 import com.google.cloud.discoveryengine.v1.StreamAssistResponse;
+import com.google.cloud.discoveryengine.v1.UpdateAssistantRequest;
+import com.google.protobuf.Empty;
 import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -88,8 +99,197 @@ public class HttpJsonAssistantServiceStub extends AssistantServiceStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<CreateAssistantRequest, Assistant>
+      createAssistantMethodDescriptor =
+          ApiMethodDescriptor.<CreateAssistantRequest, Assistant>newBuilder()
+              .setFullMethodName("google.cloud.discoveryengine.v1.AssistantService/CreateAssistant")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CreateAssistantRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*/collections/*/engines/*}/assistants",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateAssistantRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateAssistantRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields, "assistantId", request.getAssistantId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("assistant", request.getAssistant(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Assistant>newBuilder()
+                      .setDefaultInstance(Assistant.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteAssistantRequest, Empty>
+      deleteAssistantMethodDescriptor =
+          ApiMethodDescriptor.<DeleteAssistantRequest, Empty>newBuilder()
+              .setFullMethodName("google.cloud.discoveryengine.v1.AssistantService/DeleteAssistant")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteAssistantRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/collections/*/engines/*/assistants/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteAssistantRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteAssistantRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Empty>newBuilder()
+                      .setDefaultInstance(Empty.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<UpdateAssistantRequest, Assistant>
+      updateAssistantMethodDescriptor =
+          ApiMethodDescriptor.<UpdateAssistantRequest, Assistant>newBuilder()
+              .setFullMethodName("google.cloud.discoveryengine.v1.AssistantService/UpdateAssistant")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateAssistantRequest>newBuilder()
+                      .setPath(
+                          "/v1/{assistant.name=projects/*/locations/*/collections/*/engines/*/assistants/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateAssistantRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "assistant.name", request.getAssistant().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateAssistantRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("assistant", request.getAssistant(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Assistant>newBuilder()
+                      .setDefaultInstance(Assistant.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetAssistantRequest, Assistant>
+      getAssistantMethodDescriptor =
+          ApiMethodDescriptor.<GetAssistantRequest, Assistant>newBuilder()
+              .setFullMethodName("google.cloud.discoveryengine.v1.AssistantService/GetAssistant")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetAssistantRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/collections/*/engines/*/assistants/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetAssistantRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetAssistantRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Assistant>newBuilder()
+                      .setDefaultInstance(Assistant.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<ListAssistantsRequest, ListAssistantsResponse>
+      listAssistantsMethodDescriptor =
+          ApiMethodDescriptor.<ListAssistantsRequest, ListAssistantsResponse>newBuilder()
+              .setFullMethodName("google.cloud.discoveryengine.v1.AssistantService/ListAssistants")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListAssistantsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*/collections/*/engines/*}/assistants",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListAssistantsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListAssistantsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListAssistantsResponse>newBuilder()
+                      .setDefaultInstance(ListAssistantsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private final ServerStreamingCallable<StreamAssistRequest, StreamAssistResponse>
       streamAssistCallable;
+  private final UnaryCallable<CreateAssistantRequest, Assistant> createAssistantCallable;
+  private final UnaryCallable<DeleteAssistantRequest, Empty> deleteAssistantCallable;
+  private final UnaryCallable<UpdateAssistantRequest, Assistant> updateAssistantCallable;
+  private final UnaryCallable<GetAssistantRequest, Assistant> getAssistantCallable;
+  private final UnaryCallable<ListAssistantsRequest, ListAssistantsResponse> listAssistantsCallable;
+  private final UnaryCallable<ListAssistantsRequest, ListAssistantsPagedResponse>
+      listAssistantsPagedCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
@@ -145,10 +345,88 @@ public class HttpJsonAssistantServiceStub extends AssistantServiceStub {
                 })
             .setResourceNameExtractor(request -> request.getName())
             .build();
+    HttpJsonCallSettings<CreateAssistantRequest, Assistant> createAssistantTransportSettings =
+        HttpJsonCallSettings.<CreateAssistantRequest, Assistant>newBuilder()
+            .setMethodDescriptor(createAssistantMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getParent())
+            .build();
+    HttpJsonCallSettings<DeleteAssistantRequest, Empty> deleteAssistantTransportSettings =
+        HttpJsonCallSettings.<DeleteAssistantRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteAssistantMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    HttpJsonCallSettings<UpdateAssistantRequest, Assistant> updateAssistantTransportSettings =
+        HttpJsonCallSettings.<UpdateAssistantRequest, Assistant>newBuilder()
+            .setMethodDescriptor(updateAssistantMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("assistant.name", String.valueOf(request.getAssistant().getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<GetAssistantRequest, Assistant> getAssistantTransportSettings =
+        HttpJsonCallSettings.<GetAssistantRequest, Assistant>newBuilder()
+            .setMethodDescriptor(getAssistantMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    HttpJsonCallSettings<ListAssistantsRequest, ListAssistantsResponse>
+        listAssistantsTransportSettings =
+            HttpJsonCallSettings.<ListAssistantsRequest, ListAssistantsResponse>newBuilder()
+                .setMethodDescriptor(listAssistantsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
 
     this.streamAssistCallable =
         callableFactory.createServerStreamingCallable(
             streamAssistTransportSettings, settings.streamAssistSettings(), clientContext);
+    this.createAssistantCallable =
+        callableFactory.createUnaryCallable(
+            createAssistantTransportSettings, settings.createAssistantSettings(), clientContext);
+    this.deleteAssistantCallable =
+        callableFactory.createUnaryCallable(
+            deleteAssistantTransportSettings, settings.deleteAssistantSettings(), clientContext);
+    this.updateAssistantCallable =
+        callableFactory.createUnaryCallable(
+            updateAssistantTransportSettings, settings.updateAssistantSettings(), clientContext);
+    this.getAssistantCallable =
+        callableFactory.createUnaryCallable(
+            getAssistantTransportSettings, settings.getAssistantSettings(), clientContext);
+    this.listAssistantsCallable =
+        callableFactory.createUnaryCallable(
+            listAssistantsTransportSettings, settings.listAssistantsSettings(), clientContext);
+    this.listAssistantsPagedCallable =
+        callableFactory.createPagedCallable(
+            listAssistantsTransportSettings, settings.listAssistantsSettings(), clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -158,12 +436,48 @@ public class HttpJsonAssistantServiceStub extends AssistantServiceStub {
   public static List<ApiMethodDescriptor> getMethodDescriptors() {
     List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
     methodDescriptors.add(streamAssistMethodDescriptor);
+    methodDescriptors.add(createAssistantMethodDescriptor);
+    methodDescriptors.add(deleteAssistantMethodDescriptor);
+    methodDescriptors.add(updateAssistantMethodDescriptor);
+    methodDescriptors.add(getAssistantMethodDescriptor);
+    methodDescriptors.add(listAssistantsMethodDescriptor);
     return methodDescriptors;
   }
 
   @Override
   public ServerStreamingCallable<StreamAssistRequest, StreamAssistResponse> streamAssistCallable() {
     return streamAssistCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateAssistantRequest, Assistant> createAssistantCallable() {
+    return createAssistantCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteAssistantRequest, Empty> deleteAssistantCallable() {
+    return deleteAssistantCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateAssistantRequest, Assistant> updateAssistantCallable() {
+    return updateAssistantCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetAssistantRequest, Assistant> getAssistantCallable() {
+    return getAssistantCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAssistantsRequest, ListAssistantsResponse> listAssistantsCallable() {
+    return listAssistantsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAssistantsRequest, ListAssistantsPagedResponse>
+      listAssistantsPagedCallable() {
+    return listAssistantsPagedCallable;
   }
 
   @Override
