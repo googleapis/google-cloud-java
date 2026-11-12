@@ -472,6 +472,27 @@ final class StorageClientMetrics implements AutoCloseable {
     rpcClientCallDuration.record(durationSeconds, attributes, otelContext);
   }
 
+  void recordTtfb(
+      Context otelContext,
+      String operationName,
+      double ttfbSeconds,
+      String rpcSystemName,
+      String networkPath,
+      @Nullable String serverAddress) {
+    if (ttfb == null) {
+      return;
+    }
+    AttributesBuilder builder =
+        baseAttributes.toBuilder()
+            .put(KEY_RPC_SYSTEM_NAME, rpcSystemName)
+            .put(KEY_GCP_STORAGE_OPERATION, operationName)
+            .put(KEY_NETWORK_PATH, networkPath);
+    if (serverAddress != null) {
+      builder.put(KEY_SERVER_ADDRESS, serverAddress);
+    }
+    ttfb.record(ttfbSeconds, builder.build(), otelContext);
+  }
+
   @Nullable
   static StorageMetricsContext createContext(
       @Nullable StorageClientMetrics metrics, String operationName) {

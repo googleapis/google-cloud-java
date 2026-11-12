@@ -25,6 +25,7 @@ import com.google.api.client.http.HttpResponseInterceptor;
 import com.google.api.client.http.HttpUnsuccessfulResponseHandler;
 import com.google.api.core.ApiClock;
 import com.google.common.collect.ImmutableSet;
+import io.opentelemetry.context.Context;
 import java.io.IOException;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicLong;
@@ -68,7 +69,12 @@ final class StorageHttpMetricsInterceptor implements HttpRequestInitializer {
     if (delegate != null) {
       delegate.initialize(request);
     }
-    if (metrics == null || metrics.getHttpClientRequestDuration() == null) {
+    if (metrics == null) {
+      return;
+    }
+    boolean recordDuration = metrics.getHttpClientRequestDuration() != null;
+    boolean recordTtfb = metrics.getTtfb() != null;
+    if (!recordDuration && !recordTtfb) {
       return;
     }
 
@@ -97,11 +103,17 @@ final class StorageHttpMetricsInterceptor implements HttpRequestInitializer {
                 existingUnsuccessfulHandler.handleResponse(req, response, supportsRetry);
             if (handled && recorded.compareAndSet(false, true)) {
               int statusCode = response.getStatusCode();
-              String errorType =
-                  statusCode >= 400
-                      ? StorageErrorTypeMapper.mapHttpResponseCode(statusCode)
-                      : StorageErrorTypeMapper.STATUS_OK;
-              recordDuration(req, startTimeNanos.get(), (long) statusCode, errorType);
+              long startNanos = startTimeNanos.get();
+              if (recordDuration) {
+                String errorType =
+                    statusCode >= 400
+                        ? StorageErrorTypeMapper.mapHttpResponseCode(statusCode)
+                        : StorageErrorTypeMapper.STATUS_OK;
+                recordDuration(req, startNanos, (long) statusCode, errorType);
+              }
+              if (recordTtfb && isMediaDownloadRequest(req)) {
+                recordTtfb(req, startNanos);
+              }
             }
             return handled;
           });
@@ -114,29 +126,55 @@ final class StorageHttpMetricsInterceptor implements HttpRequestInitializer {
           }
           if (recorded.compareAndSet(false, true)) {
             int statusCode = response.getStatusCode();
-            String errorType =
-                statusCode >= 400
-                    ? StorageErrorTypeMapper.mapHttpResponseCode(statusCode)
-                    : StorageErrorTypeMapper.STATUS_OK;
-            recordDuration(request, startTimeNanos.get(), (long) statusCode, errorType);
+            long startNanos = startTimeNanos.get();
+            if (recordDuration) {
+              String errorType =
+                  statusCode >= 400
+                      ? StorageErrorTypeMapper.mapHttpResponseCode(statusCode)
+                      : StorageErrorTypeMapper.STATUS_OK;
+              recordDuration(request, startNanos, (long) statusCode, errorType);
+            }
+            // Evaluate isMediaDownloadRequest(request) at response time rather than in
+            // initialize(HttpRequest), because callers such as MediaHttpDownloader may append
+            // query parameters (e.g. alt=media) to request.getUrl() after buildGetRequest().
+            if (recordTtfb && isMediaDownloadRequest(request)) {
+              recordTtfb(request, startNanos);
+            }
           }
         });
 
-    // HttpIOExceptionHandler does not receive the thrown IOException instance from
-    // google-http-client, so transport-level IOExceptions default to STATUS_CONNECTION_ERROR here
-    // (specific subtypes like TIMEOUT, DNS_FAILURE, and TLS_FAILURE are mapped in Retrying).
-    request.setIOExceptionHandler(
-        (req, supportsRetry) -> {
-          if (recorded.compareAndSet(false, true)) {
-            recordDuration(
-                req,
-                startTimeNanos.get(),
-                StorageMetricsContext.HTTP_STATUS_UNSET,
-                StorageErrorTypeMapper.STATUS_CONNECTION_ERROR);
-          }
-          return existingIoHandler != null
-              && existingIoHandler.handleIOException(req, supportsRetry);
-        });
+    if (recordDuration) {
+      // HttpIOExceptionHandler does not receive the thrown IOException instance from
+      // google-http-client, so transport-level IOExceptions default to STATUS_CONNECTION_ERROR here
+      // (specific subtypes like TIMEOUT, DNS_FAILURE, and TLS_FAILURE are mapped in Retrying).
+      request.setIOExceptionHandler(
+          (req, supportsRetry) -> {
+            if (recorded.compareAndSet(false, true)) {
+              recordDuration(
+                  req,
+                  startTimeNanos.get(),
+                  StorageMetricsContext.HTTP_STATUS_UNSET,
+                  StorageErrorTypeMapper.STATUS_CONNECTION_ERROR);
+            }
+            return existingIoHandler != null
+                && existingIoHandler.handleIOException(req, supportsRetry);
+          });
+    }
+  }
+
+  private void recordTtfb(HttpRequest request, long startNanos) {
+    if (metrics == null) {
+      return;
+    }
+    double ttfbSeconds = Math.max(0.0, (clock.nanoTime() - startNanos) / 1_000_000_000.0);
+    String serverAddress = resolveServerAddress(request.getUrl(), defaultServerAddress);
+    metrics.recordTtfb(
+        Context.current(),
+        "ReadObject",
+        ttfbSeconds,
+        "http",
+        StorageClientMetrics.NETWORK_PATH_CLOUDPATH,
+        serverAddress != null ? serverAddress : "");
   }
 
   private void recordDuration(
@@ -256,5 +294,18 @@ final class StorageHttpMetricsInterceptor implements HttpRequestInitializer {
       return "/storage/v1/b/{bucket}/o/{object}/" + action;
     }
     return "/storage/v1/b/{bucket}/o/{object}";
+  }
+
+  static boolean isMediaDownloadRequest(@Nullable HttpRequest request) {
+    if (request == null) {
+      return false;
+    }
+    if (!"GET".equalsIgnoreCase(request.getRequestMethod()) || request.getUrl() == null) {
+      return false;
+    }
+    GenericUrl url = request.getUrl();
+    String path = url.getRawPath();
+    return (path != null && path.startsWith("/download/storage/v1/"))
+        || "media".equals(url.getFirst("alt"));
   }
 }

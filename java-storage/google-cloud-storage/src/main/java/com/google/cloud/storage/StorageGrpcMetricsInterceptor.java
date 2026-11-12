@@ -35,6 +35,7 @@ import java.net.InetAddress;
 import java.net.InetSocketAddress;
 import java.net.SocketAddress;
 import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicLong;
 import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
 
@@ -56,26 +57,50 @@ final class StorageGrpcMetricsInterceptor implements ClientInterceptor {
   @Override
   public <ReqT, RespT> ClientCall<ReqT, RespT> interceptCall(
       MethodDescriptor<ReqT, RespT> method, CallOptions callOptions, Channel next) {
-    if (metrics.getRpcClientCallDuration() == null) {
+    boolean recordDuration = metrics.getRpcClientCallDuration() != null;
+    boolean recordTtfb = metrics.getTtfb() != null;
+    if (!recordDuration && !recordTtfb) {
       return next.newCall(method, callOptions);
     }
 
     String rpcMethod = method.getFullMethodName();
     StorageMetricsContext metricsCtx = StorageMetricsContext.from(callOptions);
     Context otelContext = metricsCtx != null ? metricsCtx.getOtelContext() : Context.current();
+    String operationName =
+        metricsCtx != null
+            ? metricsCtx.getOperationName()
+            : defaultOperationName(method.getBareMethodName());
 
     return new SimpleForwardingClientCall<ReqT, RespT>(next.newCall(method, callOptions)) {
+      private final AtomicBoolean ttfbRecorded = new AtomicBoolean(false);
+      private final AtomicLong sendTimeNanos = new AtomicLong();
+
       @Override
       public void start(Listener<RespT> responseListener, Metadata headers) {
         long startTimeNanos = clock.nanoTime();
+        sendTimeNanos.set(startTimeNanos);
         AtomicBoolean callRecorded = new AtomicBoolean(false);
 
         super.start(
             new SimpleForwardingClientCallListener<RespT>(responseListener) {
               @Override
+              public void onMessage(@Nullable RespT message) {
+                // The first response message from the server (including metadata-only
+                // responses for 0-byte objects) marks Time To First Byte (TTFB).
+                if (recordTtfb && ttfbRecorded.compareAndSet(false, true)) {
+                  double ttfbSeconds =
+                      Math.max(0.0, (clock.nanoTime() - sendTimeNanos.get()) / 1_000_000_000.0);
+                  String networkPath = detectNetworkPath(getAttributes());
+                  metrics.recordTtfb(
+                      otelContext, operationName, ttfbSeconds, "grpc", networkPath, null);
+                }
+                super.onMessage(message);
+              }
+
+              @Override
               public void onClose(@Nullable Status status, @Nullable Metadata trailers) {
                 try {
-                  if (callRecorded.compareAndSet(false, true)) {
+                  if (recordDuration && callRecorded.compareAndSet(false, true)) {
                     double durationSeconds =
                         Math.max(0.0, (clock.nanoTime() - startTimeNanos) / 1_000_000_000.0);
                     String networkPath = detectNetworkPath(getAttributes());
@@ -103,7 +128,25 @@ final class StorageGrpcMetricsInterceptor implements ClientInterceptor {
             },
             headers);
       }
+
+      @Override
+      public void sendMessage(ReqT message) {
+        if (!ttfbRecorded.get()) {
+          sendTimeNanos.set(clock.nanoTime());
+        }
+        super.sendMessage(message);
+      }
     };
+  }
+
+  private static String defaultOperationName(@Nullable String bareMethod) {
+    if ("BidiReadObject".equals(bareMethod)) {
+      return "ReadObject";
+    }
+    if ("BidiWriteObject".equals(bareMethod)) {
+      return "WriteObject";
+    }
+    return bareMethod != null && !bareMethod.isEmpty() ? bareMethod : "UNKNOWN";
   }
 
   static String detectNetworkPath(@Nullable Attributes callAttributes) {
