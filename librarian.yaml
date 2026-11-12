@@ -360,7 +360,6 @@ libraries:
       - path: google/cloud/asset/v1p2beta1
       - path: google/cloud/asset/v1p1beta1
     keep:
-      - google-cloud-asset/src/test/java/com/google/cloud/asset/it/ITSystemTest.java
       - proto-google-cloud-asset-v1/src/main/java/com/google/cloud/asset/v1/ProjectName.java
     java:
       api_description_override: provides inventory services based on a time series database. This database keeps a five week history of Google Cloud asset metadata. The Cloud Asset Inventory export service allows you to export all asset metadata at a certain timestamp or export event change history during a timeframe.
@@ -1215,12 +1214,6 @@ libraries:
       - path: google/cloud/compute/v1
         java:
           omit_common_resources: true
-    keep:
-      - google-cloud-compute/src/test/java/com/google/cloud/compute/v1/integration/BaseTest.java
-      - google-cloud-compute/src/test/java/com/google/cloud/compute/v1/integration/ITComputeGoldenSignals.java
-      - google-cloud-compute/src/test/java/com/google/cloud/compute/v1/integration/ITPaginationTest.java
-      - google-cloud-compute/src/test/java/com/google/cloud/compute/v1/integration/README.md
-      - google-cloud-compute/src/test/java/com/google/cloud/compute/v1/integration/Util.java
     java:
       api_description_override: 'delivers virtual machines running in Google''s innovative data centers and worldwide fiber network. Compute Engine''s tooling and workflow support enable scaling from single instances to global, load-balanced cloud computing. Compute Engine''s VMs boot quickly, come with persistent disk storage, deliver consistent performance and are available in many configurations. '
       excluded_poms:
@@ -1292,7 +1285,6 @@ libraries:
       - path: google/container/v1beta1
     keep:
       - google-cloud-container/src/main/java/com/google/cloud/container/v1/SampleApp.java
-      - google-cloud-container/src/test/java/com/google/cloud/container/v1/it/Util.java
     java:
       api_description_override: is an enterprise-grade platform for containerized applications, including stateful and stateless, AI and ML, Linux and Windows, complex and simple web apps, API, and backend services. Leverage industry-first features like four-way auto-scaling and no-stress management. Optimize GPU and TPU provisioning, use integrated developer tools, and get multi-cluster support from SREs.
       codeowner_team: '@googleapis/cloud-sdk-java-team'
@@ -1581,7 +1573,6 @@ libraries:
           additional_protos:
             - path: google/cloud/location/locations.proto
     keep:
-      - google-cloud-dialogflow/src/test/java/com/google/cloud/dialogflow/v2/ContextManagementSmokeTest.java
       - proto-google-cloud-dialogflow-v2/src/main/java/com/google/cloud/dialogflow/v2/ConversationModelName.java
       - proto-google-cloud-dialogflow-v2/src/main/java/com/google/cloud/dialogflow/v2/ProjectAgentName.java
       - proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/ConversationModelName.java
@@ -1807,7 +1798,6 @@ libraries:
           grpc_artifact_id_override: grpc-google-cloud-error-reporting-v1beta1
           proto_artifact_id_override: proto-google-cloud-error-reporting-v1beta1
     keep:
-      - google-cloud-errorreporting/src/test/java/com/google/devtools/clouderrorreporting/v1beta1/ITSystemTest.java
       - proto-google-cloud-error-reporting-v1beta1/src/main/java/com/google/devtools/clouderrorreporting/v1beta1/GroupName.java
     postprocess:
       replace_regex:
@@ -2440,7 +2430,6 @@ libraries:
             - path: google/cloud/location/locations.proto
             - path: google/iam/v1/iam_policy.proto
     keep:
-      - google-cloud-kms/src/test/java/com/google/cloud/kms/it/ITKmsTest.java
       - proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/CryptoKeyPathName.java
       - proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/KeyName.java
       - proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/KeyNames.java
@@ -3191,8 +3180,6 @@ libraries:
     version: 3.103.0
     apis:
       - path: google/monitoring/v3
-    keep:
-      - google-cloud-monitoring/src/test/java/com/google/cloud/monitoring/v3/ITVPCServiceControlTest.java
     postprocess:
       replace:
         - path: google-cloud-monitoring/src/main/java/com/google/cloud/monitoring/v3/AlertPolicyServiceClient.java
@@ -5663,11 +5650,6 @@ libraries:
             - path: google/cloud/location/locations.proto
       - path: google/cloud/speech/v1
       - path: google/cloud/speech/v1p1beta1
-    keep:
-      - google-cloud-speech/src/test/java/com/google/cloud/speech/v1/SpeechSmokeTest.java
-      - google-cloud-speech/src/test/java/com/google/cloud/speech/v1p1beta1/SpeechSmokeTest.java
-      - google-cloud-speech/src/test/resources/META-INF/native-image/com.google.cloud/google-cloud-speech/resource-config.json
-      - google-cloud-speech/src/test/resources/hello.flac
     java:
       api_description_override: enables easy integration of Google speech recognition technologies into developer applications. Send audio and receive a text transcription from the Speech-to-Text API service.
       released_version: 4.97.0
@@ -5789,7 +5771,6 @@ libraries:
           additional_protos:
             - path: google/cloud/location/locations.proto
     keep:
-      - google-cloud-tasks/src/test/java/com/google/cloud/tasks/v2beta3/CloudTasksSmokeTest.java
       - proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/ProjectName.java
       - proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/ProjectName.java
       - proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/ProjectName.java
@@ -5906,9 +5887,6 @@ libraries:
     apis:
       - path: google/cloud/texttospeech/v1
       - path: google/cloud/texttospeech/v1beta1
-    keep:
-      - google-cloud-texttospeech/src/test/java/com/google/cloud/texttospeech/v1/TextToSpeechSmokeTest.java
-      - google-cloud-texttospeech/src/test/java/com/google/cloud/texttospeech/v1beta1/TextToSpeechSmokeTest.java
     java:
       api_description_override: enables easy integration of Google text recognition technologies into developer applications. Send text and receive synthesized audio output from the Cloud Text-to-Speech API service.
       released_version: 2.103.0
@@ -5940,9 +5918,6 @@ libraries:
     apis:
       - path: google/devtools/cloudtrace/v2
       - path: google/devtools/cloudtrace/v1
-    keep:
-      - google-cloud-trace/src/test/java/com/google/cloud/trace/v1/VPCServiceControlTest.java
-      - google-cloud-trace/src/test/java/com/google/cloud/trace/v2/VPCServiceControlTest.java
     java:
       api_description_override: is a distributed tracing system that collects latency data from your applications and displays it in the Google Cloud Platform Console. You can track how requests propagate through your application and receive detailed near real-time performance insights.
       released_version: 2.102.0
@@ -6052,14 +6027,6 @@ libraries:
       - path: google/cloud/vision/v1p2beta1
       - path: google/cloud/vision/v1p1beta1
     keep:
-      - google-cloud-vision/src/test/java/com/google/cloud/vision/it/ITSystemTest.java
-      - google-cloud-vision/src/test/resources/city.jpg
-      - google-cloud-vision/src/test/resources/face_no_surprise.jpg
-      - google-cloud-vision/src/test/resources/landmark.jpg
-      - google-cloud-vision/src/test/resources/logos.png
-      - google-cloud-vision/src/test/resources/puppies.jpg
-      - google-cloud-vision/src/test/resources/text.jpg
-      - google-cloud-vision/src/test/resources/wakeupcat.jpg
       - proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/ImageName.java
     java:
       api_description_override: allows developers to easily integrate vision detection features within applications, including image labeling, face and landmark detection, optical character recognition (OCR), and tagging of explicit content.
@@ -6137,9 +6104,6 @@ libraries:
       - path: google/cloud/websecurityscanner/v1
       - path: google/cloud/websecurityscanner/v1beta
       - path: google/cloud/websecurityscanner/v1alpha
-    keep:
-      - google-cloud-websecurityscanner/src/test/java/com/google/cloud/websecurityscanner/it/v1beta/VPCServiceControlNegativeTest.java
-      - google-cloud-websecurityscanner/src/test/java/com/google/cloud/websecurityscanner/it/v1beta/VPCServiceControlPositiveTest.java
     java:
       api_description_override: identifies security vulnerabilities in your App Engine, Compute Engine, and Google Kubernetes Engine web applications. It crawls your application, following all links within the scope of your starting URLs, and attempts to exercise as many user inputs and event handlers as possible.
       released_version: 2.102.0
