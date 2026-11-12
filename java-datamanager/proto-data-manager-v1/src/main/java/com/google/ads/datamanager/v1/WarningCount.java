@@ -53,6 +53,7 @@ public final class WarningCount extends com.google.protobuf.GeneratedMessage
 
   private WarningCount() {
     reason_ = 0;
+    recordIndices_ = emptyIntList();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -128,6 +129,63 @@ public final class WarningCount extends com.google.protobuf.GeneratedMessage
         : result;
   }
 
+  public static final int RECORD_INDICES_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.Internal.IntList recordIndices_ = emptyIntList();
+
+  /**
+   *
+   *
+   * <pre>
+   * The 0-based indices of the records in the original request that had this
+   * warning reason.
+   * </pre>
+   *
+   * <code>repeated int32 record_indices = 3;</code>
+   *
+   * @return A list containing the recordIndices.
+   */
+  @java.lang.Override
+  public java.util.List<java.lang.Integer> getRecordIndicesList() {
+    return recordIndices_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The 0-based indices of the records in the original request that had this
+   * warning reason.
+   * </pre>
+   *
+   * <code>repeated int32 record_indices = 3;</code>
+   *
+   * @return The count of recordIndices.
+   */
+  public int getRecordIndicesCount() {
+    return recordIndices_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The 0-based indices of the records in the original request that had this
+   * warning reason.
+   * </pre>
+   *
+   * <code>repeated int32 record_indices = 3;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The recordIndices at the given index.
+   */
+  public int getRecordIndices(int index) {
+    return recordIndices_.getInt(index);
+  }
+
+  private int recordIndicesMemoizedSerializedSize = -1;
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -142,6 +200,7 @@ public final class WarningCount extends com.google.protobuf.GeneratedMessage
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    getSerializedSize();
     if (recordCount_ != 0L) {
       output.writeInt64(1, recordCount_);
     }
@@ -150,6 +209,13 @@ public final class WarningCount extends com.google.protobuf.GeneratedMessage
             .PROCESSING_WARNING_REASON_UNSPECIFIED
             .getNumber()) {
       output.writeEnum(2, reason_);
+    }
+    if (getRecordIndicesList().size() > 0) {
+      output.writeUInt32NoTag(26);
+      output.writeUInt32NoTag(recordIndicesMemoizedSerializedSize);
+    }
+    for (int i = 0; i < recordIndices_.size(); i++) {
+      output.writeInt32NoTag(recordIndices_.getInt(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -169,6 +235,19 @@ public final class WarningCount extends com.google.protobuf.GeneratedMessage
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, reason_);
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < recordIndices_.size(); i++) {
+        dataSize +=
+            com.google.protobuf.CodedOutputStream.computeInt32SizeNoTag(recordIndices_.getInt(i));
+      }
+      size += dataSize;
+      if (!getRecordIndicesList().isEmpty()) {
+        size += 1;
+        size += com.google.protobuf.CodedOutputStream.computeInt32SizeNoTag(dataSize);
+      }
+      recordIndicesMemoizedSerializedSize = dataSize;
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -187,6 +266,7 @@ public final class WarningCount extends com.google.protobuf.GeneratedMessage
 
     if (getRecordCount() != other.getRecordCount()) return false;
     if (reason_ != other.reason_) return false;
+    if (!getRecordIndicesList().equals(other.getRecordIndicesList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -202,6 +282,10 @@ public final class WarningCount extends com.google.protobuf.GeneratedMessage
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getRecordCount());
     hash = (37 * hash) + REASON_FIELD_NUMBER;
     hash = (53 * hash) + reason_;
+    if (getRecordIndicesCount() > 0) {
+      hash = (37 * hash) + RECORD_INDICES_FIELD_NUMBER;
+      hash = (53 * hash) + getRecordIndicesList().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -344,6 +428,7 @@ public final class WarningCount extends com.google.protobuf.GeneratedMessage
       bitField0_ = 0;
       recordCount_ = 0L;
       reason_ = 0;
+      recordIndices_ = emptyIntList();
       return this;
     }
 
@@ -386,6 +471,10 @@ public final class WarningCount extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.reason_ = reason_;
       }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        recordIndices_.makeImmutable();
+        result.recordIndices_ = recordIndices_;
+      }
     }
 
     @java.lang.Override
@@ -405,6 +494,17 @@ public final class WarningCount extends com.google.protobuf.GeneratedMessage
       }
       if (other.reason_ != 0) {
         setReasonValue(other.getReasonValue());
+      }
+      if (!other.recordIndices_.isEmpty()) {
+        if (recordIndices_.isEmpty()) {
+          recordIndices_ = other.recordIndices_;
+          recordIndices_.makeImmutable();
+          bitField0_ |= 0x00000004;
+        } else {
+          ensureRecordIndicesIsMutable();
+          recordIndices_.addAll(other.recordIndices_);
+        }
+        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -444,6 +544,24 @@ public final class WarningCount extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000002;
                 break;
               } // case 16
+            case 24:
+              {
+                int v = input.readInt32();
+                ensureRecordIndicesIsMutable();
+                recordIndices_.addInt(v);
+                break;
+              } // case 24
+            case 26:
+              {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureRecordIndicesIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  recordIndices_.addInt(input.readInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 26
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -612,6 +730,150 @@ public final class WarningCount extends com.google.protobuf.GeneratedMessage
     public Builder clearReason() {
       bitField0_ = (bitField0_ & ~0x00000002);
       reason_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.Internal.IntList recordIndices_ = emptyIntList();
+
+    private void ensureRecordIndicesIsMutable() {
+      if (!recordIndices_.isModifiable()) {
+        recordIndices_ = makeMutableCopy(recordIndices_);
+      }
+      bitField0_ |= 0x00000004;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The 0-based indices of the records in the original request that had this
+     * warning reason.
+     * </pre>
+     *
+     * <code>repeated int32 record_indices = 3;</code>
+     *
+     * @return A list containing the recordIndices.
+     */
+    public java.util.List<java.lang.Integer> getRecordIndicesList() {
+      recordIndices_.makeImmutable();
+      return recordIndices_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The 0-based indices of the records in the original request that had this
+     * warning reason.
+     * </pre>
+     *
+     * <code>repeated int32 record_indices = 3;</code>
+     *
+     * @return The count of recordIndices.
+     */
+    public int getRecordIndicesCount() {
+      return recordIndices_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The 0-based indices of the records in the original request that had this
+     * warning reason.
+     * </pre>
+     *
+     * <code>repeated int32 record_indices = 3;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The recordIndices at the given index.
+     */
+    public int getRecordIndices(int index) {
+      return recordIndices_.getInt(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The 0-based indices of the records in the original request that had this
+     * warning reason.
+     * </pre>
+     *
+     * <code>repeated int32 record_indices = 3;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The recordIndices to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRecordIndices(int index, int value) {
+
+      ensureRecordIndicesIsMutable();
+      recordIndices_.setInt(index, value);
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The 0-based indices of the records in the original request that had this
+     * warning reason.
+     * </pre>
+     *
+     * <code>repeated int32 record_indices = 3;</code>
+     *
+     * @param value The recordIndices to add.
+     * @return This builder for chaining.
+     */
+    public Builder addRecordIndices(int value) {
+
+      ensureRecordIndicesIsMutable();
+      recordIndices_.addInt(value);
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The 0-based indices of the records in the original request that had this
+     * warning reason.
+     * </pre>
+     *
+     * <code>repeated int32 record_indices = 3;</code>
+     *
+     * @param values The recordIndices to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllRecordIndices(java.lang.Iterable<? extends java.lang.Integer> values) {
+      ensureRecordIndicesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, recordIndices_);
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The 0-based indices of the records in the original request that had this
+     * warning reason.
+     * </pre>
+     *
+     * <code>repeated int32 record_indices = 3;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRecordIndices() {
+      recordIndices_ = emptyIntList();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }

@@ -84,6 +84,43 @@ public interface UrlMapValidationResultOrBuilder
    */
   boolean getLoadSucceeded();
 
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Summary of quota usage for given UrlMap.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.UrlMapQuotaUsage quota_usage = 238511386;</code>
+   *
+   * @return Whether the quotaUsage field is set.
+   */
+  boolean hasQuotaUsage();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Summary of quota usage for given UrlMap.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.UrlMapQuotaUsage quota_usage = 238511386;</code>
+   *
+   * @return The quotaUsage.
+   */
+  com.google.cloud.compute.v1.UrlMapQuotaUsage getQuotaUsage();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Summary of quota usage for given UrlMap.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.UrlMapQuotaUsage quota_usage = 238511386;</code>
+   */
+  com.google.cloud.compute.v1.UrlMapQuotaUsageOrBuilder getQuotaUsageOrBuilder();
+
   /** <code>repeated .google.cloud.compute.v1.TestFailure test_failures = 505934134;</code> */
   java.util.List<com.google.cloud.compute.v1.TestFailure> getTestFailuresList();
 

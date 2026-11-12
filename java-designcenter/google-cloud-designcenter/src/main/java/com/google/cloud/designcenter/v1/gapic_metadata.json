@@ -1,0 +1,273 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.designcenter.v1",
+  "libraryPackage": "com.google.cloud.designcenter.v1",
+  "services": {
+    "DesignCenter": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "DesignCenterClient",
+          "rpcs": {
+            "CommitApplicationTemplate": {
+              "methods": ["commitApplicationTemplate", "commitApplicationTemplate", "commitApplicationTemplate", "commitApplicationTemplateCallable"]
+            },
+            "CreateApplication": {
+              "methods": ["createApplication", "createApplication", "createApplication", "createApplicationCallable"]
+            },
+            "CreateApplicationTemplate": {
+              "methods": ["createApplicationTemplate", "createApplicationTemplate", "createApplicationTemplate", "createApplicationTemplateCallable"]
+            },
+            "CreateCatalog": {
+              "methods": ["createCatalog", "createCatalog", "createCatalog", "createCatalogCallable"]
+            },
+            "CreateCatalogTemplate": {
+              "methods": ["createCatalogTemplate", "createCatalogTemplate", "createCatalogTemplate", "createCatalogTemplateCallable"]
+            },
+            "CreateCatalogTemplateRevision": {
+              "methods": ["createCatalogTemplateRevisionAsync", "createCatalogTemplateRevisionAsync", "createCatalogTemplateRevisionAsync", "createCatalogTemplateRevisionOperationCallable", "createCatalogTemplateRevisionCallable"]
+            },
+            "CreateComponent": {
+              "methods": ["createComponent", "createComponent", "createComponent", "createComponentCallable"]
+            },
+            "CreateConnection": {
+              "methods": ["createConnection", "createConnection", "createConnection", "createConnectionCallable"]
+            },
+            "CreatePolicy": {
+              "methods": ["createPolicy", "createPolicy", "createPolicy", "createPolicyCallable"]
+            },
+            "CreateShare": {
+              "methods": ["createShareAsync", "createShareAsync", "createShareAsync", "createShareOperationCallable", "createShareCallable"]
+            },
+            "CreateSpace": {
+              "methods": ["createSpace", "createSpace", "createSpace", "createSpaceCallable"]
+            },
+            "DeleteApplication": {
+              "methods": ["deleteApplicationAsync", "deleteApplicationAsync", "deleteApplicationAsync", "deleteApplicationOperationCallable", "deleteApplicationCallable"]
+            },
+            "DeleteApplicationTemplate": {
+              "methods": ["deleteApplicationTemplate", "deleteApplicationTemplate", "deleteApplicationTemplate", "deleteApplicationTemplateCallable"]
+            },
+            "DeleteApplicationTemplateRevision": {
+              "methods": ["deleteApplicationTemplateRevision", "deleteApplicationTemplateRevision", "deleteApplicationTemplateRevision", "deleteApplicationTemplateRevisionCallable"]
+            },
+            "DeleteCatalog": {
+              "methods": ["deleteCatalogAsync", "deleteCatalogAsync", "deleteCatalogAsync", "deleteCatalogOperationCallable", "deleteCatalogCallable"]
+            },
+            "DeleteCatalogTemplate": {
+              "methods": ["deleteCatalogTemplateAsync", "deleteCatalogTemplateAsync", "deleteCatalogTemplateAsync", "deleteCatalogTemplateOperationCallable", "deleteCatalogTemplateCallable"]
+            },
+            "DeleteCatalogTemplateRevision": {
+              "methods": ["deleteCatalogTemplateRevisionAsync", "deleteCatalogTemplateRevisionAsync", "deleteCatalogTemplateRevisionAsync", "deleteCatalogTemplateRevisionOperationCallable", "deleteCatalogTemplateRevisionCallable"]
+            },
+            "DeleteComponent": {
+              "methods": ["deleteComponent", "deleteComponent", "deleteComponent", "deleteComponentCallable"]
+            },
+            "DeleteConnection": {
+              "methods": ["deleteConnection", "deleteConnection", "deleteConnection", "deleteConnectionCallable"]
+            },
+            "DeletePolicy": {
+              "methods": ["deletePolicy", "deletePolicy", "deletePolicy", "deletePolicyCallable"]
+            },
+            "DeleteShare": {
+              "methods": ["deleteShareAsync", "deleteShareAsync", "deleteShareAsync", "deleteShareOperationCallable", "deleteShareCallable"]
+            },
+            "DeleteSpace": {
+              "methods": ["deleteSpace", "deleteSpace", "deleteSpace", "deleteSpaceCallable"]
+            },
+            "DeployApplication": {
+              "methods": ["deployApplicationAsync", "deployApplicationAsync", "deployApplicationAsync", "deployApplicationOperationCallable", "deployApplicationCallable"]
+            },
+            "ExportApplicationIaC": {
+              "methods": ["exportApplicationIaCAsync", "exportApplicationIaCAsync", "exportApplicationIaCAsync", "exportApplicationIaCOperationCallable", "exportApplicationIaCCallable"]
+            },
+            "ExportApplicationTemplateIaC": {
+              "methods": ["exportApplicationTemplateIaCAsync", "exportApplicationTemplateIaCAsync", "exportApplicationTemplateIaCAsync", "exportApplicationTemplateIaCOperationCallable", "exportApplicationTemplateIaCCallable"]
+            },
+            "ExportApplicationTemplateRevisionIaC": {
+              "methods": ["exportApplicationTemplateRevisionIaCAsync", "exportApplicationTemplateRevisionIaCAsync", "exportApplicationTemplateRevisionIaCAsync", "exportApplicationTemplateRevisionIaCOperationCallable", "exportApplicationTemplateRevisionIaCCallable"]
+            },
+            "FetchApplicationAssessmentReport": {
+              "methods": ["fetchApplicationAssessmentReport", "fetchApplicationAssessmentReport", "fetchApplicationAssessmentReport", "fetchApplicationAssessmentReportCallable"]
+            },
+            "FetchFrameworks": {
+              "methods": ["fetchFrameworks", "fetchFrameworks", "fetchFrameworksPagedCallable", "fetchFrameworksCallable"]
+            },
+            "GenerateApplicationAssessmentReport": {
+              "methods": ["generateApplicationAssessmentReportAsync", "generateApplicationAssessmentReportAsync", "generateApplicationAssessmentReportAsync", "generateApplicationAssessmentReportOperationCallable", "generateApplicationAssessmentReportCallable"]
+            },
+            "GenerateApplicationIaC": {
+              "methods": ["generateApplicationIaC", "generateApplicationIaC", "generateApplicationIaC", "generateApplicationIaCCallable"]
+            },
+            "GenerateApplicationTemplateAssessmentReport": {
+              "methods": ["generateApplicationTemplateAssessmentReportAsync", "generateApplicationTemplateAssessmentReportAsync", "generateApplicationTemplateAssessmentReportAsync", "generateApplicationTemplateAssessmentReportOperationCallable", "generateApplicationTemplateAssessmentReportCallable"]
+            },
+            "GenerateApplicationTemplateIaC": {
+              "methods": ["generateApplicationTemplateIaC", "generateApplicationTemplateIaC", "generateApplicationTemplateIaC", "generateApplicationTemplateIaCCallable"]
+            },
+            "GenerateApplicationTemplateRevisionIaC": {
+              "methods": ["generateApplicationTemplateRevisionIaC", "generateApplicationTemplateRevisionIaC", "generateApplicationTemplateRevisionIaC", "generateApplicationTemplateRevisionIaCCallable"]
+            },
+            "GenerateAssessmentReport": {
+              "methods": ["generateAssessmentReportAsync", "generateAssessmentReportAsync", "generateAssessmentReportAsync", "generateAssessmentReportOperationCallable", "generateAssessmentReportCallable"]
+            },
+            "GenerateTerraformPlanAssessmentReport": {
+              "methods": ["generateTerraformPlanAssessmentReportAsync", "generateTerraformPlanAssessmentReportAsync", "generateTerraformPlanAssessmentReportAsync", "generateTerraformPlanAssessmentReportOperationCallable", "generateTerraformPlanAssessmentReportCallable"]
+            },
+            "GetApplication": {
+              "methods": ["getApplication", "getApplication", "getApplication", "getApplicationCallable"]
+            },
+            "GetApplicationTemplate": {
+              "methods": ["getApplicationTemplate", "getApplicationTemplate", "getApplicationTemplate", "getApplicationTemplateCallable"]
+            },
+            "GetApplicationTemplateRevision": {
+              "methods": ["getApplicationTemplateRevision", "getApplicationTemplateRevision", "getApplicationTemplateRevision", "getApplicationTemplateRevisionCallable"]
+            },
+            "GetApplicationTemplateSystemRevision": {
+              "methods": ["getApplicationTemplateSystemRevision", "getApplicationTemplateSystemRevision", "getApplicationTemplateSystemRevision", "getApplicationTemplateSystemRevisionCallable"]
+            },
+            "GetCatalog": {
+              "methods": ["getCatalog", "getCatalog", "getCatalog", "getCatalogCallable"]
+            },
+            "GetCatalogTemplate": {
+              "methods": ["getCatalogTemplate", "getCatalogTemplate", "getCatalogTemplate", "getCatalogTemplateCallable"]
+            },
+            "GetCatalogTemplateRevision": {
+              "methods": ["getCatalogTemplateRevision", "getCatalogTemplateRevision", "getCatalogTemplateRevision", "getCatalogTemplateRevisionCallable"]
+            },
+            "GetComponent": {
+              "methods": ["getComponent", "getComponent", "getComponent", "getComponentCallable"]
+            },
+            "GetConnection": {
+              "methods": ["getConnection", "getConnection", "getConnection", "getConnectionCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "GetPolicy": {
+              "methods": ["getPolicy", "getPolicy", "getPolicy", "getPolicyCallable"]
+            },
+            "GetShare": {
+              "methods": ["getShare", "getShare", "getShare", "getShareCallable"]
+            },
+            "GetSharedTemplate": {
+              "methods": ["getSharedTemplate", "getSharedTemplate", "getSharedTemplate", "getSharedTemplateCallable"]
+            },
+            "GetSharedTemplateRevision": {
+              "methods": ["getSharedTemplateRevision", "getSharedTemplateRevision", "getSharedTemplateRevision", "getSharedTemplateRevisionCallable"]
+            },
+            "GetSpace": {
+              "methods": ["getSpace", "getSpace", "getSpace", "getSpaceCallable"]
+            },
+            "ImportApplicationIaC": {
+              "methods": ["importApplicationIaC", "importApplicationIaC", "importApplicationIaC", "importApplicationIaCCallable"]
+            },
+            "ImportApplicationTemplate": {
+              "methods": ["importApplicationTemplate", "importApplicationTemplate", "importApplicationTemplate", "importApplicationTemplate", "importApplicationTemplate", "importApplicationTemplateCallable"]
+            },
+            "ImportApplicationTemplateIaC": {
+              "methods": ["importApplicationTemplateIaC", "importApplicationTemplateIaC", "importApplicationTemplateIaC", "importApplicationTemplateIaCCallable"]
+            },
+            "IngestApplicationTemplateIaC": {
+              "methods": ["ingestApplicationTemplateIaCAsync", "ingestApplicationTemplateIaCAsync", "ingestApplicationTemplateIaCAsync", "ingestApplicationTemplateIaCOperationCallable", "ingestApplicationTemplateIaCCallable"]
+            },
+            "ListApplicationTemplateRevisions": {
+              "methods": ["listApplicationTemplateRevisions", "listApplicationTemplateRevisions", "listApplicationTemplateRevisions", "listApplicationTemplateRevisionsPagedCallable", "listApplicationTemplateRevisionsCallable"]
+            },
+            "ListApplicationTemplateSystemRevisions": {
+              "methods": ["listApplicationTemplateSystemRevisions", "listApplicationTemplateSystemRevisions", "listApplicationTemplateSystemRevisions", "listApplicationTemplateSystemRevisionsPagedCallable", "listApplicationTemplateSystemRevisionsCallable"]
+            },
+            "ListApplicationTemplates": {
+              "methods": ["listApplicationTemplates", "listApplicationTemplates", "listApplicationTemplates", "listApplicationTemplatesPagedCallable", "listApplicationTemplatesCallable"]
+            },
+            "ListApplications": {
+              "methods": ["listApplications", "listApplications", "listApplications", "listApplicationsPagedCallable", "listApplicationsCallable"]
+            },
+            "ListCatalogTemplateRevisions": {
+              "methods": ["listCatalogTemplateRevisions", "listCatalogTemplateRevisions", "listCatalogTemplateRevisions", "listCatalogTemplateRevisionsPagedCallable", "listCatalogTemplateRevisionsCallable"]
+            },
+            "ListCatalogTemplates": {
+              "methods": ["listCatalogTemplates", "listCatalogTemplates", "listCatalogTemplates", "listCatalogTemplatesPagedCallable", "listCatalogTemplatesCallable"]
+            },
+            "ListCatalogs": {
+              "methods": ["listCatalogs", "listCatalogs", "listCatalogs", "listCatalogsPagedCallable", "listCatalogsCallable"]
+            },
+            "ListComponents": {
+              "methods": ["listComponents", "listComponents", "listComponents", "listComponentsPagedCallable", "listComponentsCallable"]
+            },
+            "ListConnections": {
+              "methods": ["listConnections", "listConnections", "listConnections", "listConnectionsPagedCallable", "listConnectionsCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "ListPolicies": {
+              "methods": ["listPolicies", "listPolicies", "listPolicies", "listPoliciesPagedCallable", "listPoliciesCallable"]
+            },
+            "ListSharedTemplateRevisions": {
+              "methods": ["listSharedTemplateRevisions", "listSharedTemplateRevisions", "listSharedTemplateRevisions", "listSharedTemplateRevisionsPagedCallable", "listSharedTemplateRevisionsCallable"]
+            },
+            "ListSharedTemplates": {
+              "methods": ["listSharedTemplates", "listSharedTemplates", "listSharedTemplates", "listSharedTemplatesPagedCallable", "listSharedTemplatesCallable"]
+            },
+            "ListShares": {
+              "methods": ["listShares", "listShares", "listShares", "listSharesPagedCallable", "listSharesCallable"]
+            },
+            "ListSpaces": {
+              "methods": ["listSpaces", "listSpaces", "listSpaces", "listSpacesPagedCallable", "listSpacesCallable"]
+            },
+            "PreviewApplication": {
+              "methods": ["previewApplicationAsync", "previewApplicationAsync", "previewApplicationAsync", "previewApplicationOperationCallable", "previewApplicationCallable"]
+            },
+            "RecommendIAMRoles": {
+              "methods": ["recommendIAMRolesAsync", "recommendIAMRolesAsync", "recommendIAMRolesAsync", "recommendIAMRolesOperationCallable", "recommendIAMRolesCallable"]
+            },
+            "RegisterAppHubApplicationResources": {
+              "methods": ["registerAppHubApplicationResourcesAsync", "registerAppHubApplicationResourcesAsync", "registerAppHubApplicationResourcesAsync", "registerAppHubApplicationResourcesOperationCallable", "registerAppHubApplicationResourcesCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "SnapshotApplicationTemplate": {
+              "methods": ["snapshotApplicationTemplateAsync", "snapshotApplicationTemplateAsync", "snapshotApplicationTemplateAsync", "snapshotApplicationTemplateOperationCallable", "snapshotApplicationTemplateCallable"]
+            },
+            "SyncShare": {
+              "methods": ["syncShareAsync", "syncShareAsync", "syncShareAsync", "syncShareOperationCallable", "syncShareCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "UpdateApplication": {
+              "methods": ["updateApplication", "updateApplication", "updateApplicationCallable"]
+            },
+            "UpdateApplicationTemplate": {
+              "methods": ["updateApplicationTemplate", "updateApplicationTemplate", "updateApplicationTemplateCallable"]
+            },
+            "UpdateCatalog": {
+              "methods": ["updateCatalog", "updateCatalog", "updateCatalogCallable"]
+            },
+            "UpdateCatalogTemplate": {
+              "methods": ["updateCatalogTemplate", "updateCatalogTemplate", "updateCatalogTemplateCallable"]
+            },
+            "UpdateComponent": {
+              "methods": ["updateComponent", "updateComponent", "updateComponentCallable"]
+            },
+            "UpdateConnection": {
+              "methods": ["updateConnection", "updateConnection", "updateConnectionCallable"]
+            },
+            "UpdatePolicy": {
+              "methods": ["updatePolicy", "updatePolicy", "updatePolicyCallable"]
+            },
+            "UpdateSpace": {
+              "methods": ["updateSpace", "updateSpace", "updateSpaceCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

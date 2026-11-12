@@ -165,6 +165,9 @@ final class AsyncTransactionManagerImpl
               txnState = TransactionState.ABORTED;
             } else {
               txnState = TransactionState.COMMIT_FAILED;
+              if (TransactionRunnerImpl.shouldRollbackOnCommitFailure(t)) {
+                TransactionRunnerImpl.rollbackBestEffort(txn, t);
+              }
               if (span != null) {
                 span.setStatus(t);
                 span.end();

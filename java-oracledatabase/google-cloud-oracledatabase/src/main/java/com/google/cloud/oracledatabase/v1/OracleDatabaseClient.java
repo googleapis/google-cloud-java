@@ -138,6 +138,25 @@ import org.jspecify.annotations.Nullable;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> UpdateCloudExadataInfrastructure</td>
+ *      <td><p> Updates the parameters of a single Exadata Infrastructure.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateCloudExadataInfrastructureAsync(UpdateCloudExadataInfrastructureRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> updateCloudExadataInfrastructureAsync(CloudExadataInfrastructure cloudExadataInfrastructure, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateCloudExadataInfrastructureOperationCallable()
+ *           <li><p> updateCloudExadataInfrastructureCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> DeleteCloudExadataInfrastructure</td>
  *      <td><p> Deletes a single Exadata Infrastructure.</td>
  *      <td>
@@ -237,6 +256,25 @@ import org.jspecify.annotations.Nullable;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> UpdateCloudVmCluster</td>
+ *      <td><p> Updates the parameters of a single Vm Cluster.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateCloudVmClusterAsync(UpdateCloudVmClusterRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> updateCloudVmClusterAsync(CloudVmCluster cloudVmCluster, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateCloudVmClusterOperationCallable()
+ *           <li><p> updateCloudVmClusterCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> DeleteCloudVmCluster</td>
  *      <td><p> Deletes a single VM Cluster.</td>
  *      <td>
@@ -257,6 +295,86 @@ import org.jspecify.annotations.Nullable;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> EnableCloudVmClusterIdentityConnector</td>
+ *      <td><p> Enables the Workload Identity Connector for a Cloud VM Cluster.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> enableCloudVmClusterIdentityConnectorAsync(EnableCloudVmClusterIdentityConnectorRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> enableCloudVmClusterIdentityConnectorAsync(CloudVmClusterName name)
+ *           <li><p> enableCloudVmClusterIdentityConnectorAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> enableCloudVmClusterIdentityConnectorOperationCallable()
+ *           <li><p> enableCloudVmClusterIdentityConnectorCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DisableCloudVmClusterIdentityConnector</td>
+ *      <td><p> Disables the Workload Identity Connector for a Cloud VM Cluster.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> disableCloudVmClusterIdentityConnectorAsync(DisableCloudVmClusterIdentityConnectorRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> disableCloudVmClusterIdentityConnectorAsync(CloudVmClusterName name)
+ *           <li><p> disableCloudVmClusterIdentityConnectorAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> disableCloudVmClusterIdentityConnectorOperationCallable()
+ *           <li><p> disableCloudVmClusterIdentityConnectorCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> EnableExadbVmClusterIdentityConnector</td>
+ *      <td><p> Enables the Workload Identity Connector for an Exadb VM Cluster.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> enableExadbVmClusterIdentityConnectorAsync(EnableExadbVmClusterIdentityConnectorRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> enableExadbVmClusterIdentityConnectorAsync(ExadbVmClusterName name)
+ *           <li><p> enableExadbVmClusterIdentityConnectorAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> enableExadbVmClusterIdentityConnectorOperationCallable()
+ *           <li><p> enableExadbVmClusterIdentityConnectorCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DisableExadbVmClusterIdentityConnector</td>
+ *      <td><p> Disables the Workload Identity Connector for an Exadb VM Cluster.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> disableExadbVmClusterIdentityConnectorAsync(DisableExadbVmClusterIdentityConnectorRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> disableExadbVmClusterIdentityConnectorAsync(ExadbVmClusterName name)
+ *           <li><p> disableExadbVmClusterIdentityConnectorAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> disableExadbVmClusterIdentityConnectorOperationCallable()
+ *           <li><p> disableExadbVmClusterIdentityConnectorCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> ListEntitlements</td>
  *      <td><p> Lists the entitlements in a given project.</td>
  *      <td>
@@ -273,6 +391,26 @@ import org.jspecify.annotations.Nullable;
  *      <ul>
  *           <li><p> listEntitlementsPagedCallable()
  *           <li><p> listEntitlementsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListFlexComponents</td>
+ *      <td><p> Lists Flex Components in a given project and location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listFlexComponents(ListFlexComponentsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listFlexComponents(LocationName parent)
+ *           <li><p> listFlexComponents(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listFlexComponentsPagedCallable()
+ *           <li><p> listFlexComponentsCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -777,6 +915,25 @@ import org.jspecify.annotations.Nullable;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> UpdateOdbNetwork</td>
+ *      <td><p> Updates the `labels` and `service_connectivity_config` of a single OdbNetwork.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateOdbNetworkAsync(UpdateOdbNetworkRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> updateOdbNetworkAsync(OdbNetwork odbNetwork, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateOdbNetworkOperationCallable()
+ *           <li><p> updateOdbNetworkCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> DeleteOdbNetwork</td>
  *      <td><p> Deletes a single ODB Network.</td>
  *      <td>
@@ -856,6 +1013,25 @@ import org.jspecify.annotations.Nullable;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> UpdateOdbSubnet</td>
+ *      <td><p> Updates the `labels` of a single ODB Subnet.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateOdbSubnetAsync(UpdateOdbSubnetRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> updateOdbSubnetAsync(OdbSubnet odbSubnet, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateOdbSubnetOperationCallable()
+ *           <li><p> updateOdbSubnetCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> DeleteOdbSubnet</td>
  *      <td><p> Deletes a single ODB Subnet.</td>
  *      <td>
@@ -872,6 +1048,85 @@ import org.jspecify.annotations.Nullable;
  *      <ul>
  *           <li><p> deleteOdbSubnetOperationCallable()
  *           <li><p> deleteOdbSubnetCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListOdbDnsZones</td>
+ *      <td><p> Lists all the ODB DNS Zones in a given ODB Network.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listOdbDnsZones(ListOdbDnsZonesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listOdbDnsZones(OdbNetworkName parent)
+ *           <li><p> listOdbDnsZones(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listOdbDnsZonesPagedCallable()
+ *           <li><p> listOdbDnsZonesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetOdbDnsZone</td>
+ *      <td><p> Gets details of a single ODB DNS Zone.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getOdbDnsZone(GetOdbDnsZoneRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getOdbDnsZone(OdbDnsZoneName name)
+ *           <li><p> getOdbDnsZone(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getOdbDnsZoneCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateOdbDnsZone</td>
+ *      <td><p> Creates a new ODB DNS Zone in a given ODB Network.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createOdbDnsZoneAsync(CreateOdbDnsZoneRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> createOdbDnsZoneAsync(OdbNetworkName parent, OdbDnsZone odbDnsZone, String odbDnsZoneId)
+ *           <li><p> createOdbDnsZoneAsync(String parent, OdbDnsZone odbDnsZone, String odbDnsZoneId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createOdbDnsZoneOperationCallable()
+ *           <li><p> createOdbDnsZoneCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteOdbDnsZone</td>
+ *      <td><p> Deletes a single ODB DNS Zone.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteOdbDnsZoneAsync(DeleteOdbDnsZoneRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> deleteOdbDnsZoneAsync(OdbDnsZoneName name)
+ *           <li><p> deleteOdbDnsZoneAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteOdbDnsZoneOperationCallable()
+ *           <li><p> deleteOdbDnsZoneCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -1053,6 +1308,25 @@ import org.jspecify.annotations.Nullable;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> UpdateExascaleDbStorageVault</td>
+ *      <td><p> Updates the `labels` of a single ExascaleDbStorageVault.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateExascaleDbStorageVaultAsync(UpdateExascaleDbStorageVaultRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> updateExascaleDbStorageVaultAsync(ExascaleDbStorageVault exascaleDbStorageVault, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateExascaleDbStorageVaultOperationCallable()
+ *           <li><p> updateExascaleDbStorageVaultCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> DeleteExascaleDbStorageVault</td>
  *      <td><p> Deletes a single ExascaleDB Storage Vault.</td>
  *      <td>
@@ -1089,6 +1363,26 @@ import org.jspecify.annotations.Nullable;
  *      <ul>
  *           <li><p> listDbSystemInitialStorageSizesPagedCallable()
  *           <li><p> listDbSystemInitialStorageSizesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListDbSystemComputePerformances</td>
+ *      <td><p> Lists all the DbSystemComputePerformances for the given project and location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listDbSystemComputePerformances(ListDbSystemComputePerformancesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listDbSystemComputePerformances(LocationName parent)
+ *           <li><p> listDbSystemComputePerformances(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listDbSystemComputePerformancesPagedCallable()
+ *           <li><p> listDbSystemComputePerformancesCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -1230,6 +1524,25 @@ import org.jspecify.annotations.Nullable;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> UpdateDbSystem</td>
+ *      <td><p> Updates the `labels` of a single DbSystem.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateDbSystemAsync(UpdateDbSystemRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> updateDbSystemAsync(DbSystem dbSystem, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateDbSystemOperationCallable()
+ *           <li><p> updateDbSystemCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> DeleteDbSystem</td>
  *      <td><p> Deletes a single DbSystem.</td>
  *      <td>
@@ -1305,6 +1618,25 @@ import org.jspecify.annotations.Nullable;
  *      <ul>
  *           <li><p> createGoldengateDeploymentOperationCallable()
  *           <li><p> createGoldengateDeploymentCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateGoldengateDeployment</td>
+ *      <td><p> Updates the `labels` of a single GoldengateDeployment.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateGoldengateDeploymentAsync(UpdateGoldengateDeploymentRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> updateGoldengateDeploymentAsync(GoldengateDeployment goldengateDeployment, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateGoldengateDeploymentOperationCallable()
+ *           <li><p> updateGoldengateDeploymentCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -1424,6 +1756,25 @@ import org.jspecify.annotations.Nullable;
  *      <ul>
  *           <li><p> createGoldengateConnectionOperationCallable()
  *           <li><p> createGoldengateConnectionCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateGoldengateConnection</td>
+ *      <td><p> Updates the `labels` of a single GoldengateConnection.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateGoldengateConnectionAsync(UpdateGoldengateConnectionRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> updateGoldengateConnectionAsync(GoldengateConnection goldengateConnection, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateGoldengateConnectionOperationCallable()
+ *           <li><p> updateGoldengateConnectionCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -1627,6 +1978,25 @@ import org.jspecify.annotations.Nullable;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> UpdateGoldengateConnectionAssignment</td>
+ *      <td><p> Updates the `labels` of a single GoldengateConnectionAssignment.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateGoldengateConnectionAssignmentAsync(UpdateGoldengateConnectionAssignmentRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> updateGoldengateConnectionAssignmentAsync(GoldengateConnectionAssignment goldengateConnectionAssignment, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateGoldengateConnectionAssignmentOperationCallable()
+ *           <li><p> updateGoldengateConnectionAssignmentCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> DeleteGoldengateConnectionAssignment</td>
  *      <td><p> Deletes a single GoldengateConnectionAssignment.</td>
  *      <td>
@@ -1662,6 +2032,142 @@ import org.jspecify.annotations.Nullable;
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
  *           <li><p> testGoldengateConnectionAssignmentCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListDatabaseConnections</td>
+ *      <td><p> Lists DatabaseConnections in a given project and location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listDatabaseConnections(ListDatabaseConnectionsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listDatabaseConnections(LocationName parent)
+ *           <li><p> listDatabaseConnections(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listDatabaseConnectionsPagedCallable()
+ *           <li><p> listDatabaseConnectionsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetDatabaseConnection</td>
+ *      <td><p> Gets details of a single DatabaseConnection.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getDatabaseConnection(GetDatabaseConnectionRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getDatabaseConnection(DatabaseConnectionName name)
+ *           <li><p> getDatabaseConnection(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getDatabaseConnectionCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateDatabaseConnection</td>
+ *      <td><p> Creates a new DatabaseConnection in a given project and location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createDatabaseConnectionAsync(CreateDatabaseConnectionRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> createDatabaseConnectionAsync(LocationName parent, DatabaseConnection databaseConnection, String databaseConnectionId)
+ *           <li><p> createDatabaseConnectionAsync(String parent, DatabaseConnection databaseConnection, String databaseConnectionId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createDatabaseConnectionOperationCallable()
+ *           <li><p> createDatabaseConnectionCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateDatabaseConnection</td>
+ *      <td><p> Updates the parameters of a single DatabaseConnection.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateDatabaseConnectionAsync(UpdateDatabaseConnectionRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> updateDatabaseConnectionAsync(DatabaseConnection databaseConnection, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateDatabaseConnectionOperationCallable()
+ *           <li><p> updateDatabaseConnectionCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteDatabaseConnection</td>
+ *      <td><p> Deletes a single DatabaseConnection.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteDatabaseConnectionAsync(DeleteDatabaseConnectionRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> deleteDatabaseConnectionAsync(DatabaseConnectionName name)
+ *           <li><p> deleteDatabaseConnectionAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteDatabaseConnectionOperationCallable()
+ *           <li><p> deleteDatabaseConnectionCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> TestDatabaseConnection</td>
+ *      <td><p> Tests connectivity of a DatabaseConnection.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> testDatabaseConnection(TestDatabaseConnectionRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> testDatabaseConnection(DatabaseConnectionName name)
+ *           <li><p> testDatabaseConnection(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> testDatabaseConnectionCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ExecuteSql</td>
+ *      <td><p> Executes a SQL statement on a DatabaseConnection.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> executeSql(ExecuteSqlRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> executeSql(DatabaseConnectionName name, String sqlStatement)
+ *           <li><p> executeSql(String name, String sqlStatement)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> executeSqlCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -2333,6 +2839,151 @@ public class OracleDatabaseClient implements BackgroundResource {
   public final UnaryCallable<CreateCloudExadataInfrastructureRequest, Operation>
       createCloudExadataInfrastructureCallable() {
     return stub.createCloudExadataInfrastructureCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the parameters of a single Exadata Infrastructure.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   CloudExadataInfrastructure cloudExadataInfrastructure =
+   *       CloudExadataInfrastructure.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   CloudExadataInfrastructure response =
+   *       oracleDatabaseClient
+   *           .updateCloudExadataInfrastructureAsync(cloudExadataInfrastructure, updateMask)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param cloudExadataInfrastructure Required. The resource being updated. Note only `labels` can
+   *     be updated. The provided `labels` will completely replace the existing labels. Any existing
+   *     label keys that are not included in the update request will be deleted. Not providing
+   *     `labels` and `update_mask` will not update the labels. To clear all labels, specify
+   *     `labels` in the `update_mask` and omit or leave the `labels` field empty in the update
+   *     request.
+   * @param updateMask Optional. Field mask is used to specify the fields to be overwritten in the
+   *     Exadata resource by the update. The fields specified in the `update_mask` are relative to
+   *     the resource, not the full request. A field will be overwritten if it is in the mask. If
+   *     the user does not provide a mask then the service treats this as an implied field mask
+   *     equivalent to all fields that are populated (have a non-empty value). To clear or unset a
+   *     field, the field must be explicitly specified in the `update_mask`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<CloudExadataInfrastructure, OperationMetadata>
+      updateCloudExadataInfrastructureAsync(
+          CloudExadataInfrastructure cloudExadataInfrastructure, FieldMask updateMask) {
+    UpdateCloudExadataInfrastructureRequest request =
+        UpdateCloudExadataInfrastructureRequest.newBuilder()
+            .setCloudExadataInfrastructure(cloudExadataInfrastructure)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateCloudExadataInfrastructureAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the parameters of a single Exadata Infrastructure.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   UpdateCloudExadataInfrastructureRequest request =
+   *       UpdateCloudExadataInfrastructureRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setCloudExadataInfrastructure(CloudExadataInfrastructure.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   CloudExadataInfrastructure response =
+   *       oracleDatabaseClient.updateCloudExadataInfrastructureAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<CloudExadataInfrastructure, OperationMetadata>
+      updateCloudExadataInfrastructureAsync(UpdateCloudExadataInfrastructureRequest request) {
+    return updateCloudExadataInfrastructureOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the parameters of a single Exadata Infrastructure.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   UpdateCloudExadataInfrastructureRequest request =
+   *       UpdateCloudExadataInfrastructureRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setCloudExadataInfrastructure(CloudExadataInfrastructure.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<CloudExadataInfrastructure, OperationMetadata> future =
+   *       oracleDatabaseClient
+   *           .updateCloudExadataInfrastructureOperationCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   CloudExadataInfrastructure response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          UpdateCloudExadataInfrastructureRequest, CloudExadataInfrastructure, OperationMetadata>
+      updateCloudExadataInfrastructureOperationCallable() {
+    return stub.updateCloudExadataInfrastructureOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the parameters of a single Exadata Infrastructure.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   UpdateCloudExadataInfrastructureRequest request =
+   *       UpdateCloudExadataInfrastructureRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setCloudExadataInfrastructure(CloudExadataInfrastructure.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       oracleDatabaseClient.updateCloudExadataInfrastructureCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateCloudExadataInfrastructureRequest, Operation>
+      updateCloudExadataInfrastructureCallable() {
+    return stub.updateCloudExadataInfrastructureCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -3169,6 +3820,141 @@ public class OracleDatabaseClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Updates the parameters of a single Vm Cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   CloudVmCluster cloudVmCluster = CloudVmCluster.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   CloudVmCluster response =
+   *       oracleDatabaseClient.updateCloudVmClusterAsync(cloudVmCluster, updateMask).get();
+   * }
+   * }</pre>
+   *
+   * @param cloudVmCluster Required. The resource being updated. Note only `labels` can be updated.
+   *     The provided `labels` will completely replace the existing labels. Any existing label keys
+   *     that are not included in the update request will be deleted. Not providing `labels` and
+   *     `update_mask` will not update the labels. To clear all labels, specify `labels` in the
+   *     `update_mask` and omit or leave the `labels` field empty in the update request.
+   * @param updateMask Optional. A mask specifying which fields in the VM Cluster should be updated.
+   *     A field specified in the mask is overwritten. If a mask isn't provided, the service treats
+   *     this as an implied field mask equivalent to all fields that are populated (have a non-empty
+   *     value). To clear or unset a field, the field must be explicitly specified in the
+   *     `update_mask`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<CloudVmCluster, OperationMetadata> updateCloudVmClusterAsync(
+      CloudVmCluster cloudVmCluster, FieldMask updateMask) {
+    UpdateCloudVmClusterRequest request =
+        UpdateCloudVmClusterRequest.newBuilder()
+            .setCloudVmCluster(cloudVmCluster)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateCloudVmClusterAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the parameters of a single Vm Cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   UpdateCloudVmClusterRequest request =
+   *       UpdateCloudVmClusterRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setCloudVmCluster(CloudVmCluster.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   CloudVmCluster response = oracleDatabaseClient.updateCloudVmClusterAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<CloudVmCluster, OperationMetadata> updateCloudVmClusterAsync(
+      UpdateCloudVmClusterRequest request) {
+    return updateCloudVmClusterOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the parameters of a single Vm Cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   UpdateCloudVmClusterRequest request =
+   *       UpdateCloudVmClusterRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setCloudVmCluster(CloudVmCluster.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<CloudVmCluster, OperationMetadata> future =
+   *       oracleDatabaseClient.updateCloudVmClusterOperationCallable().futureCall(request);
+   *   // Do something.
+   *   CloudVmCluster response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<UpdateCloudVmClusterRequest, CloudVmCluster, OperationMetadata>
+      updateCloudVmClusterOperationCallable() {
+    return stub.updateCloudVmClusterOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the parameters of a single Vm Cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   UpdateCloudVmClusterRequest request =
+   *       UpdateCloudVmClusterRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setCloudVmCluster(CloudVmCluster.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       oracleDatabaseClient.updateCloudVmClusterCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateCloudVmClusterRequest, Operation>
+      updateCloudVmClusterCallable() {
+    return stub.updateCloudVmClusterCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Deletes a single VM Cluster.
    *
    * <p>Sample code:
@@ -3322,6 +4108,642 @@ public class OracleDatabaseClient implements BackgroundResource {
   public final UnaryCallable<DeleteCloudVmClusterRequest, Operation>
       deleteCloudVmClusterCallable() {
     return stub.deleteCloudVmClusterCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Enables the Workload Identity Connector for a Cloud VM Cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   CloudVmClusterName name =
+   *       CloudVmClusterName.of("[PROJECT]", "[LOCATION]", "[CLOUD_VM_CLUSTER]");
+   *   CloudVmCluster response =
+   *       oracleDatabaseClient.enableCloudVmClusterIdentityConnectorAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the Cloud VM Cluster in the following format:
+   *     projects/{project}/locations/{location}/cloudVmClusters/{cloud_vm_cluster}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<CloudVmCluster, OperationMetadata>
+      enableCloudVmClusterIdentityConnectorAsync(@Nullable CloudVmClusterName name) {
+    EnableCloudVmClusterIdentityConnectorRequest request =
+        EnableCloudVmClusterIdentityConnectorRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return enableCloudVmClusterIdentityConnectorAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Enables the Workload Identity Connector for a Cloud VM Cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   String name =
+   *       CloudVmClusterName.of("[PROJECT]", "[LOCATION]", "[CLOUD_VM_CLUSTER]").toString();
+   *   CloudVmCluster response =
+   *       oracleDatabaseClient.enableCloudVmClusterIdentityConnectorAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the Cloud VM Cluster in the following format:
+   *     projects/{project}/locations/{location}/cloudVmClusters/{cloud_vm_cluster}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<CloudVmCluster, OperationMetadata>
+      enableCloudVmClusterIdentityConnectorAsync(String name) {
+    EnableCloudVmClusterIdentityConnectorRequest request =
+        EnableCloudVmClusterIdentityConnectorRequest.newBuilder().setName(name).build();
+    return enableCloudVmClusterIdentityConnectorAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Enables the Workload Identity Connector for a Cloud VM Cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   EnableCloudVmClusterIdentityConnectorRequest request =
+   *       EnableCloudVmClusterIdentityConnectorRequest.newBuilder()
+   *           .setName(
+   *               CloudVmClusterName.of("[PROJECT]", "[LOCATION]", "[CLOUD_VM_CLUSTER]").toString())
+   *           .build();
+   *   CloudVmCluster response =
+   *       oracleDatabaseClient.enableCloudVmClusterIdentityConnectorAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<CloudVmCluster, OperationMetadata>
+      enableCloudVmClusterIdentityConnectorAsync(
+          EnableCloudVmClusterIdentityConnectorRequest request) {
+    return enableCloudVmClusterIdentityConnectorOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Enables the Workload Identity Connector for a Cloud VM Cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   EnableCloudVmClusterIdentityConnectorRequest request =
+   *       EnableCloudVmClusterIdentityConnectorRequest.newBuilder()
+   *           .setName(
+   *               CloudVmClusterName.of("[PROJECT]", "[LOCATION]", "[CLOUD_VM_CLUSTER]").toString())
+   *           .build();
+   *   OperationFuture<CloudVmCluster, OperationMetadata> future =
+   *       oracleDatabaseClient
+   *           .enableCloudVmClusterIdentityConnectorOperationCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   CloudVmCluster response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          EnableCloudVmClusterIdentityConnectorRequest, CloudVmCluster, OperationMetadata>
+      enableCloudVmClusterIdentityConnectorOperationCallable() {
+    return stub.enableCloudVmClusterIdentityConnectorOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Enables the Workload Identity Connector for a Cloud VM Cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   EnableCloudVmClusterIdentityConnectorRequest request =
+   *       EnableCloudVmClusterIdentityConnectorRequest.newBuilder()
+   *           .setName(
+   *               CloudVmClusterName.of("[PROJECT]", "[LOCATION]", "[CLOUD_VM_CLUSTER]").toString())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       oracleDatabaseClient.enableCloudVmClusterIdentityConnectorCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<EnableCloudVmClusterIdentityConnectorRequest, Operation>
+      enableCloudVmClusterIdentityConnectorCallable() {
+    return stub.enableCloudVmClusterIdentityConnectorCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Disables the Workload Identity Connector for a Cloud VM Cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   CloudVmClusterName name =
+   *       CloudVmClusterName.of("[PROJECT]", "[LOCATION]", "[CLOUD_VM_CLUSTER]");
+   *   CloudVmCluster response =
+   *       oracleDatabaseClient.disableCloudVmClusterIdentityConnectorAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the Cloud VM Cluster in the following format:
+   *     projects/{project}/locations/{location}/cloudVmClusters/{cloud_vm_cluster}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<CloudVmCluster, OperationMetadata>
+      disableCloudVmClusterIdentityConnectorAsync(@Nullable CloudVmClusterName name) {
+    DisableCloudVmClusterIdentityConnectorRequest request =
+        DisableCloudVmClusterIdentityConnectorRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return disableCloudVmClusterIdentityConnectorAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Disables the Workload Identity Connector for a Cloud VM Cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   String name =
+   *       CloudVmClusterName.of("[PROJECT]", "[LOCATION]", "[CLOUD_VM_CLUSTER]").toString();
+   *   CloudVmCluster response =
+   *       oracleDatabaseClient.disableCloudVmClusterIdentityConnectorAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the Cloud VM Cluster in the following format:
+   *     projects/{project}/locations/{location}/cloudVmClusters/{cloud_vm_cluster}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<CloudVmCluster, OperationMetadata>
+      disableCloudVmClusterIdentityConnectorAsync(String name) {
+    DisableCloudVmClusterIdentityConnectorRequest request =
+        DisableCloudVmClusterIdentityConnectorRequest.newBuilder().setName(name).build();
+    return disableCloudVmClusterIdentityConnectorAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Disables the Workload Identity Connector for a Cloud VM Cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   DisableCloudVmClusterIdentityConnectorRequest request =
+   *       DisableCloudVmClusterIdentityConnectorRequest.newBuilder()
+   *           .setName(
+   *               CloudVmClusterName.of("[PROJECT]", "[LOCATION]", "[CLOUD_VM_CLUSTER]").toString())
+   *           .build();
+   *   CloudVmCluster response =
+   *       oracleDatabaseClient.disableCloudVmClusterIdentityConnectorAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<CloudVmCluster, OperationMetadata>
+      disableCloudVmClusterIdentityConnectorAsync(
+          DisableCloudVmClusterIdentityConnectorRequest request) {
+    return disableCloudVmClusterIdentityConnectorOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Disables the Workload Identity Connector for a Cloud VM Cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   DisableCloudVmClusterIdentityConnectorRequest request =
+   *       DisableCloudVmClusterIdentityConnectorRequest.newBuilder()
+   *           .setName(
+   *               CloudVmClusterName.of("[PROJECT]", "[LOCATION]", "[CLOUD_VM_CLUSTER]").toString())
+   *           .build();
+   *   OperationFuture<CloudVmCluster, OperationMetadata> future =
+   *       oracleDatabaseClient
+   *           .disableCloudVmClusterIdentityConnectorOperationCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   CloudVmCluster response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          DisableCloudVmClusterIdentityConnectorRequest, CloudVmCluster, OperationMetadata>
+      disableCloudVmClusterIdentityConnectorOperationCallable() {
+    return stub.disableCloudVmClusterIdentityConnectorOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Disables the Workload Identity Connector for a Cloud VM Cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   DisableCloudVmClusterIdentityConnectorRequest request =
+   *       DisableCloudVmClusterIdentityConnectorRequest.newBuilder()
+   *           .setName(
+   *               CloudVmClusterName.of("[PROJECT]", "[LOCATION]", "[CLOUD_VM_CLUSTER]").toString())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       oracleDatabaseClient.disableCloudVmClusterIdentityConnectorCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DisableCloudVmClusterIdentityConnectorRequest, Operation>
+      disableCloudVmClusterIdentityConnectorCallable() {
+    return stub.disableCloudVmClusterIdentityConnectorCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Enables the Workload Identity Connector for an Exadb VM Cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   ExadbVmClusterName name =
+   *       ExadbVmClusterName.of("[PROJECT]", "[LOCATION]", "[EXADB_VM_CLUSTER]");
+   *   ExadbVmCluster response =
+   *       oracleDatabaseClient.enableExadbVmClusterIdentityConnectorAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the Exadb VM Cluster in the following format:
+   *     projects/{project}/locations/{location}/exadbVmClusters/{exadb_vm_cluster}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ExadbVmCluster, OperationMetadata>
+      enableExadbVmClusterIdentityConnectorAsync(@Nullable ExadbVmClusterName name) {
+    EnableExadbVmClusterIdentityConnectorRequest request =
+        EnableExadbVmClusterIdentityConnectorRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return enableExadbVmClusterIdentityConnectorAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Enables the Workload Identity Connector for an Exadb VM Cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   String name =
+   *       ExadbVmClusterName.of("[PROJECT]", "[LOCATION]", "[EXADB_VM_CLUSTER]").toString();
+   *   ExadbVmCluster response =
+   *       oracleDatabaseClient.enableExadbVmClusterIdentityConnectorAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the Exadb VM Cluster in the following format:
+   *     projects/{project}/locations/{location}/exadbVmClusters/{exadb_vm_cluster}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ExadbVmCluster, OperationMetadata>
+      enableExadbVmClusterIdentityConnectorAsync(String name) {
+    EnableExadbVmClusterIdentityConnectorRequest request =
+        EnableExadbVmClusterIdentityConnectorRequest.newBuilder().setName(name).build();
+    return enableExadbVmClusterIdentityConnectorAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Enables the Workload Identity Connector for an Exadb VM Cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   EnableExadbVmClusterIdentityConnectorRequest request =
+   *       EnableExadbVmClusterIdentityConnectorRequest.newBuilder()
+   *           .setName(
+   *               ExadbVmClusterName.of("[PROJECT]", "[LOCATION]", "[EXADB_VM_CLUSTER]").toString())
+   *           .build();
+   *   ExadbVmCluster response =
+   *       oracleDatabaseClient.enableExadbVmClusterIdentityConnectorAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ExadbVmCluster, OperationMetadata>
+      enableExadbVmClusterIdentityConnectorAsync(
+          EnableExadbVmClusterIdentityConnectorRequest request) {
+    return enableExadbVmClusterIdentityConnectorOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Enables the Workload Identity Connector for an Exadb VM Cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   EnableExadbVmClusterIdentityConnectorRequest request =
+   *       EnableExadbVmClusterIdentityConnectorRequest.newBuilder()
+   *           .setName(
+   *               ExadbVmClusterName.of("[PROJECT]", "[LOCATION]", "[EXADB_VM_CLUSTER]").toString())
+   *           .build();
+   *   OperationFuture<ExadbVmCluster, OperationMetadata> future =
+   *       oracleDatabaseClient
+   *           .enableExadbVmClusterIdentityConnectorOperationCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   ExadbVmCluster response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          EnableExadbVmClusterIdentityConnectorRequest, ExadbVmCluster, OperationMetadata>
+      enableExadbVmClusterIdentityConnectorOperationCallable() {
+    return stub.enableExadbVmClusterIdentityConnectorOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Enables the Workload Identity Connector for an Exadb VM Cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   EnableExadbVmClusterIdentityConnectorRequest request =
+   *       EnableExadbVmClusterIdentityConnectorRequest.newBuilder()
+   *           .setName(
+   *               ExadbVmClusterName.of("[PROJECT]", "[LOCATION]", "[EXADB_VM_CLUSTER]").toString())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       oracleDatabaseClient.enableExadbVmClusterIdentityConnectorCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<EnableExadbVmClusterIdentityConnectorRequest, Operation>
+      enableExadbVmClusterIdentityConnectorCallable() {
+    return stub.enableExadbVmClusterIdentityConnectorCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Disables the Workload Identity Connector for an Exadb VM Cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   ExadbVmClusterName name =
+   *       ExadbVmClusterName.of("[PROJECT]", "[LOCATION]", "[EXADB_VM_CLUSTER]");
+   *   ExadbVmCluster response =
+   *       oracleDatabaseClient.disableExadbVmClusterIdentityConnectorAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the Exadb VM Cluster in the following format:
+   *     projects/{project}/locations/{location}/exadbVmClusters/{exadb_vm_cluster}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ExadbVmCluster, OperationMetadata>
+      disableExadbVmClusterIdentityConnectorAsync(@Nullable ExadbVmClusterName name) {
+    DisableExadbVmClusterIdentityConnectorRequest request =
+        DisableExadbVmClusterIdentityConnectorRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return disableExadbVmClusterIdentityConnectorAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Disables the Workload Identity Connector for an Exadb VM Cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   String name =
+   *       ExadbVmClusterName.of("[PROJECT]", "[LOCATION]", "[EXADB_VM_CLUSTER]").toString();
+   *   ExadbVmCluster response =
+   *       oracleDatabaseClient.disableExadbVmClusterIdentityConnectorAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the Exadb VM Cluster in the following format:
+   *     projects/{project}/locations/{location}/exadbVmClusters/{exadb_vm_cluster}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ExadbVmCluster, OperationMetadata>
+      disableExadbVmClusterIdentityConnectorAsync(String name) {
+    DisableExadbVmClusterIdentityConnectorRequest request =
+        DisableExadbVmClusterIdentityConnectorRequest.newBuilder().setName(name).build();
+    return disableExadbVmClusterIdentityConnectorAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Disables the Workload Identity Connector for an Exadb VM Cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   DisableExadbVmClusterIdentityConnectorRequest request =
+   *       DisableExadbVmClusterIdentityConnectorRequest.newBuilder()
+   *           .setName(
+   *               ExadbVmClusterName.of("[PROJECT]", "[LOCATION]", "[EXADB_VM_CLUSTER]").toString())
+   *           .build();
+   *   ExadbVmCluster response =
+   *       oracleDatabaseClient.disableExadbVmClusterIdentityConnectorAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ExadbVmCluster, OperationMetadata>
+      disableExadbVmClusterIdentityConnectorAsync(
+          DisableExadbVmClusterIdentityConnectorRequest request) {
+    return disableExadbVmClusterIdentityConnectorOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Disables the Workload Identity Connector for an Exadb VM Cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   DisableExadbVmClusterIdentityConnectorRequest request =
+   *       DisableExadbVmClusterIdentityConnectorRequest.newBuilder()
+   *           .setName(
+   *               ExadbVmClusterName.of("[PROJECT]", "[LOCATION]", "[EXADB_VM_CLUSTER]").toString())
+   *           .build();
+   *   OperationFuture<ExadbVmCluster, OperationMetadata> future =
+   *       oracleDatabaseClient
+   *           .disableExadbVmClusterIdentityConnectorOperationCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   ExadbVmCluster response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          DisableExadbVmClusterIdentityConnectorRequest, ExadbVmCluster, OperationMetadata>
+      disableExadbVmClusterIdentityConnectorOperationCallable() {
+    return stub.disableExadbVmClusterIdentityConnectorOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Disables the Workload Identity Connector for an Exadb VM Cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   DisableExadbVmClusterIdentityConnectorRequest request =
+   *       DisableExadbVmClusterIdentityConnectorRequest.newBuilder()
+   *           .setName(
+   *               ExadbVmClusterName.of("[PROJECT]", "[LOCATION]", "[EXADB_VM_CLUSTER]").toString())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       oracleDatabaseClient.disableExadbVmClusterIdentityConnectorCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DisableExadbVmClusterIdentityConnectorRequest, Operation>
+      disableExadbVmClusterIdentityConnectorCallable() {
+    return stub.disableExadbVmClusterIdentityConnectorCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -3489,6 +4911,177 @@ public class OracleDatabaseClient implements BackgroundResource {
   public final UnaryCallable<ListEntitlementsRequest, ListEntitlementsResponse>
       listEntitlementsCallable() {
     return stub.listEntitlementsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists Flex Components in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   for (FlexComponent element : oracleDatabaseClient.listFlexComponents(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Parent value for ListFlexComponentsRequest Format:
+   *     projects/{project}/locations/{location}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListFlexComponentsPagedResponse listFlexComponents(@Nullable LocationName parent) {
+    ListFlexComponentsRequest request =
+        ListFlexComponentsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listFlexComponents(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists Flex Components in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   for (FlexComponent element : oracleDatabaseClient.listFlexComponents(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Parent value for ListFlexComponentsRequest Format:
+   *     projects/{project}/locations/{location}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListFlexComponentsPagedResponse listFlexComponents(String parent) {
+    ListFlexComponentsRequest request =
+        ListFlexComponentsRequest.newBuilder().setParent(parent).build();
+    return listFlexComponents(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists Flex Components in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   ListFlexComponentsRequest request =
+   *       ListFlexComponentsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   for (FlexComponent element : oracleDatabaseClient.listFlexComponents(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListFlexComponentsPagedResponse listFlexComponents(
+      ListFlexComponentsRequest request) {
+    return listFlexComponentsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists Flex Components in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   ListFlexComponentsRequest request =
+   *       ListFlexComponentsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   ApiFuture<FlexComponent> future =
+   *       oracleDatabaseClient.listFlexComponentsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (FlexComponent element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListFlexComponentsRequest, ListFlexComponentsPagedResponse>
+      listFlexComponentsPagedCallable() {
+    return stub.listFlexComponentsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists Flex Components in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   ListFlexComponentsRequest request =
+   *       ListFlexComponentsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   while (true) {
+   *     ListFlexComponentsResponse response =
+   *         oracleDatabaseClient.listFlexComponentsCallable().call(request);
+   *     for (FlexComponent element : response.getFlexComponentsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListFlexComponentsRequest, ListFlexComponentsResponse>
+      listFlexComponentsCallable() {
+    return stub.listFlexComponentsCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -4895,11 +6488,16 @@ public class OracleDatabaseClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param autonomousDatabase Required. The resource being updated
+   * @param autonomousDatabase Required. The Autonomous Database resource being updated. For
+   *     `labels`, the provided map completely replaces existing labels; any existing keys not
+   *     included will be deleted. To clear all labels, specify `labels` in the `update_mask` and
+   *     omit or leave the `labels` field empty in the update request.
    * @param updateMask Optional. Field mask is used to specify the fields to be overwritten in the
-   *     Exadata resource by the update. The fields specified in the update_mask are relative to the
-   *     resource, not the full request. A field will be overwritten if it is in the mask. If the
-   *     user does not provide a mask then all fields will be overwritten.
+   *     Exadata resource by the update. The fields specified in the `update_mask` are relative to
+   *     the resource, not the full request. A field will be overwritten if it is in the mask. If
+   *     the user does not provide a mask then the service treats this as an implied field mask
+   *     equivalent to all fields that are populated (have a non-empty value). To clear or unset a
+   *     field, the field must be explicitly specified in the `update_mask`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<AutonomousDatabase, OperationMetadata> updateAutonomousDatabaseAsync(
@@ -7797,6 +9395,141 @@ public class OracleDatabaseClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Updates the `labels` and `service_connectivity_config` of a single OdbNetwork.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   OdbNetwork odbNetwork = OdbNetwork.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   OdbNetwork response =
+   *       oracleDatabaseClient.updateOdbNetworkAsync(odbNetwork, updateMask).get();
+   * }
+   * }</pre>
+   *
+   * @param odbNetwork Required. The resource being updated. Note only `labels` and
+   *     `service_connectivity_config` can be updated. The provided labels will completely replace
+   *     the existing labels. Any existing label keys that are not included in the update request
+   *     will be deleted. Not providing labels and update_mask will not update the labels. To clear
+   *     all labels, specify `labels` in the `update_mask` and omit or leave the `labels` field
+   *     empty in the update request.
+   * @param updateMask Optional. A mask specifying which fields in the OdbNetwork should be updated.
+   *     A field specified in the mask is updated. If a mask isn't provided, the service treats this
+   *     as an implied field mask equivalent to all fields that are populated (have a non-empty
+   *     value). To clear or unset a field, the field must be explicitly specified in the
+   *     `update_mask`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<OdbNetwork, OperationMetadata> updateOdbNetworkAsync(
+      OdbNetwork odbNetwork, FieldMask updateMask) {
+    UpdateOdbNetworkRequest request =
+        UpdateOdbNetworkRequest.newBuilder()
+            .setOdbNetwork(odbNetwork)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateOdbNetworkAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the `labels` and `service_connectivity_config` of a single OdbNetwork.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   UpdateOdbNetworkRequest request =
+   *       UpdateOdbNetworkRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setOdbNetwork(OdbNetwork.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OdbNetwork response = oracleDatabaseClient.updateOdbNetworkAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<OdbNetwork, OperationMetadata> updateOdbNetworkAsync(
+      UpdateOdbNetworkRequest request) {
+    return updateOdbNetworkOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the `labels` and `service_connectivity_config` of a single OdbNetwork.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   UpdateOdbNetworkRequest request =
+   *       UpdateOdbNetworkRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setOdbNetwork(OdbNetwork.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<OdbNetwork, OperationMetadata> future =
+   *       oracleDatabaseClient.updateOdbNetworkOperationCallable().futureCall(request);
+   *   // Do something.
+   *   OdbNetwork response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<UpdateOdbNetworkRequest, OdbNetwork, OperationMetadata>
+      updateOdbNetworkOperationCallable() {
+    return stub.updateOdbNetworkOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the `labels` and `service_connectivity_config` of a single OdbNetwork.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   UpdateOdbNetworkRequest request =
+   *       UpdateOdbNetworkRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setOdbNetwork(OdbNetwork.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       oracleDatabaseClient.updateOdbNetworkCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateOdbNetworkRequest, Operation> updateOdbNetworkCallable() {
+    return stub.updateOdbNetworkCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Deletes a single ODB Network.
    *
    * <p>Sample code:
@@ -8405,6 +10138,139 @@ public class OracleDatabaseClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Updates the `labels` of a single ODB Subnet.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   OdbSubnet odbSubnet = OdbSubnet.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   OdbSubnet response = oracleDatabaseClient.updateOdbSubnetAsync(odbSubnet, updateMask).get();
+   * }
+   * }</pre>
+   *
+   * @param odbSubnet Required. The resource being updated. Note only labels can be updated. The
+   *     provided labels will completely replace the existing labels. Any existing label keys that
+   *     are not included in the update request will be deleted. Not providing labels and
+   *     update_mask will not update the labels. To clear all labels, specify `labels` in the
+   *     `update_mask` and omit or leave the `labels` field empty in the update request.
+   * @param updateMask Optional. A mask specifying which fields in the OdbSubnet should be updated.
+   *     A field specified in the mask is updated. If a mask isn't provided, the service treats this
+   *     as an implied field mask equivalent to all fields that are populated (have a non-empty
+   *     value). To clear or unset a field, the field must be explicitly specified in the
+   *     `update_mask`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<OdbSubnet, OperationMetadata> updateOdbSubnetAsync(
+      OdbSubnet odbSubnet, FieldMask updateMask) {
+    UpdateOdbSubnetRequest request =
+        UpdateOdbSubnetRequest.newBuilder()
+            .setOdbSubnet(odbSubnet)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateOdbSubnetAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the `labels` of a single ODB Subnet.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   UpdateOdbSubnetRequest request =
+   *       UpdateOdbSubnetRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setOdbSubnet(OdbSubnet.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OdbSubnet response = oracleDatabaseClient.updateOdbSubnetAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<OdbSubnet, OperationMetadata> updateOdbSubnetAsync(
+      UpdateOdbSubnetRequest request) {
+    return updateOdbSubnetOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the `labels` of a single ODB Subnet.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   UpdateOdbSubnetRequest request =
+   *       UpdateOdbSubnetRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setOdbSubnet(OdbSubnet.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<OdbSubnet, OperationMetadata> future =
+   *       oracleDatabaseClient.updateOdbSubnetOperationCallable().futureCall(request);
+   *   // Do something.
+   *   OdbSubnet response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<UpdateOdbSubnetRequest, OdbSubnet, OperationMetadata>
+      updateOdbSubnetOperationCallable() {
+    return stub.updateOdbSubnetOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the `labels` of a single ODB Subnet.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   UpdateOdbSubnetRequest request =
+   *       UpdateOdbSubnetRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setOdbSubnet(OdbSubnet.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       oracleDatabaseClient.updateOdbSubnetCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateOdbSubnetRequest, Operation> updateOdbSubnetCallable() {
+    return stub.updateOdbSubnetCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Deletes a single ODB Subnet.
    *
    * <p>Sample code:
@@ -8554,6 +10420,625 @@ public class OracleDatabaseClient implements BackgroundResource {
    */
   public final UnaryCallable<DeleteOdbSubnetRequest, Operation> deleteOdbSubnetCallable() {
     return stub.deleteOdbSubnetCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all the ODB DNS Zones in a given ODB Network.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   OdbNetworkName parent = OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]");
+   *   for (OdbDnsZone element : oracleDatabaseClient.listOdbDnsZones(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent value for the OdbDnsZone in the following format:
+   *     projects/{project}/locations/{location}/odbNetworks/{odb_network}.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListOdbDnsZonesPagedResponse listOdbDnsZones(@Nullable OdbNetworkName parent) {
+    ListOdbDnsZonesRequest request =
+        ListOdbDnsZonesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listOdbDnsZones(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all the ODB DNS Zones in a given ODB Network.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   String parent = OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]").toString();
+   *   for (OdbDnsZone element : oracleDatabaseClient.listOdbDnsZones(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent value for the OdbDnsZone in the following format:
+   *     projects/{project}/locations/{location}/odbNetworks/{odb_network}.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListOdbDnsZonesPagedResponse listOdbDnsZones(String parent) {
+    ListOdbDnsZonesRequest request = ListOdbDnsZonesRequest.newBuilder().setParent(parent).build();
+    return listOdbDnsZones(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all the ODB DNS Zones in a given ODB Network.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   ListOdbDnsZonesRequest request =
+   *       ListOdbDnsZonesRequest.newBuilder()
+   *           .setParent(OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   for (OdbDnsZone element : oracleDatabaseClient.listOdbDnsZones(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListOdbDnsZonesPagedResponse listOdbDnsZones(ListOdbDnsZonesRequest request) {
+    return listOdbDnsZonesPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all the ODB DNS Zones in a given ODB Network.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   ListOdbDnsZonesRequest request =
+   *       ListOdbDnsZonesRequest.newBuilder()
+   *           .setParent(OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   ApiFuture<OdbDnsZone> future =
+   *       oracleDatabaseClient.listOdbDnsZonesPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (OdbDnsZone element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListOdbDnsZonesRequest, ListOdbDnsZonesPagedResponse>
+      listOdbDnsZonesPagedCallable() {
+    return stub.listOdbDnsZonesPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all the ODB DNS Zones in a given ODB Network.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   ListOdbDnsZonesRequest request =
+   *       ListOdbDnsZonesRequest.newBuilder()
+   *           .setParent(OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   while (true) {
+   *     ListOdbDnsZonesResponse response =
+   *         oracleDatabaseClient.listOdbDnsZonesCallable().call(request);
+   *     for (OdbDnsZone element : response.getOdbDnsZonesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListOdbDnsZonesRequest, ListOdbDnsZonesResponse>
+      listOdbDnsZonesCallable() {
+    return stub.listOdbDnsZonesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single ODB DNS Zone.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   OdbDnsZoneName name =
+   *       OdbDnsZoneName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_DNS_ZONE]");
+   *   OdbDnsZone response = oracleDatabaseClient.getOdbDnsZone(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the OdbDnsZone in the following format:
+   *     projects/{project}/locations/{location}/odbNetworks/{odb_network}/odbDnsZones/{odb_dns_zone}.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OdbDnsZone getOdbDnsZone(@Nullable OdbDnsZoneName name) {
+    GetOdbDnsZoneRequest request =
+        GetOdbDnsZoneRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getOdbDnsZone(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single ODB DNS Zone.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   String name =
+   *       OdbDnsZoneName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_DNS_ZONE]")
+   *           .toString();
+   *   OdbDnsZone response = oracleDatabaseClient.getOdbDnsZone(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the OdbDnsZone in the following format:
+   *     projects/{project}/locations/{location}/odbNetworks/{odb_network}/odbDnsZones/{odb_dns_zone}.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OdbDnsZone getOdbDnsZone(String name) {
+    GetOdbDnsZoneRequest request = GetOdbDnsZoneRequest.newBuilder().setName(name).build();
+    return getOdbDnsZone(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single ODB DNS Zone.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   GetOdbDnsZoneRequest request =
+   *       GetOdbDnsZoneRequest.newBuilder()
+   *           .setName(
+   *               OdbDnsZoneName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_DNS_ZONE]")
+   *                   .toString())
+   *           .build();
+   *   OdbDnsZone response = oracleDatabaseClient.getOdbDnsZone(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OdbDnsZone getOdbDnsZone(GetOdbDnsZoneRequest request) {
+    return getOdbDnsZoneCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single ODB DNS Zone.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   GetOdbDnsZoneRequest request =
+   *       GetOdbDnsZoneRequest.newBuilder()
+   *           .setName(
+   *               OdbDnsZoneName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_DNS_ZONE]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<OdbDnsZone> future =
+   *       oracleDatabaseClient.getOdbDnsZoneCallable().futureCall(request);
+   *   // Do something.
+   *   OdbDnsZone response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetOdbDnsZoneRequest, OdbDnsZone> getOdbDnsZoneCallable() {
+    return stub.getOdbDnsZoneCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new ODB DNS Zone in a given ODB Network.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   OdbNetworkName parent = OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]");
+   *   OdbDnsZone odbDnsZone = OdbDnsZone.newBuilder().build();
+   *   String odbDnsZoneId = "odbDnsZoneId1807291843";
+   *   OdbDnsZone response =
+   *       oracleDatabaseClient.createOdbDnsZoneAsync(parent, odbDnsZone, odbDnsZoneId).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent value for the OdbDnsZone in the following format:
+   *     projects/{project}/locations/{location}/odbNetworks/{odb_network}.
+   * @param odbDnsZone Required. Details of the OdbDnsZone instance to create.
+   * @param odbDnsZoneId Required. The ID of the OdbDnsZone to create. This value is restricted to
+   *     (^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$) and must be a maximum of 63 characters in length. The
+   *     value must start with a letter and end with a letter or a number.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<OdbDnsZone, OperationMetadata> createOdbDnsZoneAsync(
+      @Nullable OdbNetworkName parent, OdbDnsZone odbDnsZone, String odbDnsZoneId) {
+    CreateOdbDnsZoneRequest request =
+        CreateOdbDnsZoneRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setOdbDnsZone(odbDnsZone)
+            .setOdbDnsZoneId(odbDnsZoneId)
+            .build();
+    return createOdbDnsZoneAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new ODB DNS Zone in a given ODB Network.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   String parent = OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]").toString();
+   *   OdbDnsZone odbDnsZone = OdbDnsZone.newBuilder().build();
+   *   String odbDnsZoneId = "odbDnsZoneId1807291843";
+   *   OdbDnsZone response =
+   *       oracleDatabaseClient.createOdbDnsZoneAsync(parent, odbDnsZone, odbDnsZoneId).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent value for the OdbDnsZone in the following format:
+   *     projects/{project}/locations/{location}/odbNetworks/{odb_network}.
+   * @param odbDnsZone Required. Details of the OdbDnsZone instance to create.
+   * @param odbDnsZoneId Required. The ID of the OdbDnsZone to create. This value is restricted to
+   *     (^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$) and must be a maximum of 63 characters in length. The
+   *     value must start with a letter and end with a letter or a number.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<OdbDnsZone, OperationMetadata> createOdbDnsZoneAsync(
+      String parent, OdbDnsZone odbDnsZone, String odbDnsZoneId) {
+    CreateOdbDnsZoneRequest request =
+        CreateOdbDnsZoneRequest.newBuilder()
+            .setParent(parent)
+            .setOdbDnsZone(odbDnsZone)
+            .setOdbDnsZoneId(odbDnsZoneId)
+            .build();
+    return createOdbDnsZoneAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new ODB DNS Zone in a given ODB Network.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   CreateOdbDnsZoneRequest request =
+   *       CreateOdbDnsZoneRequest.newBuilder()
+   *           .setParent(OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]").toString())
+   *           .setOdbDnsZoneId("odbDnsZoneId1807291843")
+   *           .setOdbDnsZone(OdbDnsZone.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OdbDnsZone response = oracleDatabaseClient.createOdbDnsZoneAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<OdbDnsZone, OperationMetadata> createOdbDnsZoneAsync(
+      CreateOdbDnsZoneRequest request) {
+    return createOdbDnsZoneOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new ODB DNS Zone in a given ODB Network.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   CreateOdbDnsZoneRequest request =
+   *       CreateOdbDnsZoneRequest.newBuilder()
+   *           .setParent(OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]").toString())
+   *           .setOdbDnsZoneId("odbDnsZoneId1807291843")
+   *           .setOdbDnsZone(OdbDnsZone.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<OdbDnsZone, OperationMetadata> future =
+   *       oracleDatabaseClient.createOdbDnsZoneOperationCallable().futureCall(request);
+   *   // Do something.
+   *   OdbDnsZone response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<CreateOdbDnsZoneRequest, OdbDnsZone, OperationMetadata>
+      createOdbDnsZoneOperationCallable() {
+    return stub.createOdbDnsZoneOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new ODB DNS Zone in a given ODB Network.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   CreateOdbDnsZoneRequest request =
+   *       CreateOdbDnsZoneRequest.newBuilder()
+   *           .setParent(OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]").toString())
+   *           .setOdbDnsZoneId("odbDnsZoneId1807291843")
+   *           .setOdbDnsZone(OdbDnsZone.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       oracleDatabaseClient.createOdbDnsZoneCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateOdbDnsZoneRequest, Operation> createOdbDnsZoneCallable() {
+    return stub.createOdbDnsZoneCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single ODB DNS Zone.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   OdbDnsZoneName name =
+   *       OdbDnsZoneName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_DNS_ZONE]");
+   *   oracleDatabaseClient.deleteOdbDnsZoneAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the resource in the following format:
+   *     projects/{project}/locations/{location}/odbNetworks/{odb_network}/odbDnsZones/{odb_dns_zone}.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteOdbDnsZoneAsync(
+      @Nullable OdbDnsZoneName name) {
+    DeleteOdbDnsZoneRequest request =
+        DeleteOdbDnsZoneRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return deleteOdbDnsZoneAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single ODB DNS Zone.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   String name =
+   *       OdbDnsZoneName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_DNS_ZONE]")
+   *           .toString();
+   *   oracleDatabaseClient.deleteOdbDnsZoneAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the resource in the following format:
+   *     projects/{project}/locations/{location}/odbNetworks/{odb_network}/odbDnsZones/{odb_dns_zone}.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteOdbDnsZoneAsync(String name) {
+    DeleteOdbDnsZoneRequest request = DeleteOdbDnsZoneRequest.newBuilder().setName(name).build();
+    return deleteOdbDnsZoneAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single ODB DNS Zone.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   DeleteOdbDnsZoneRequest request =
+   *       DeleteOdbDnsZoneRequest.newBuilder()
+   *           .setName(
+   *               OdbDnsZoneName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_DNS_ZONE]")
+   *                   .toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   oracleDatabaseClient.deleteOdbDnsZoneAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteOdbDnsZoneAsync(
+      DeleteOdbDnsZoneRequest request) {
+    return deleteOdbDnsZoneOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single ODB DNS Zone.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   DeleteOdbDnsZoneRequest request =
+   *       DeleteOdbDnsZoneRequest.newBuilder()
+   *           .setName(
+   *               OdbDnsZoneName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_DNS_ZONE]")
+   *                   .toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Empty, OperationMetadata> future =
+   *       oracleDatabaseClient.deleteOdbDnsZoneOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeleteOdbDnsZoneRequest, Empty, OperationMetadata>
+      deleteOdbDnsZoneOperationCallable() {
+    return stub.deleteOdbDnsZoneOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single ODB DNS Zone.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   DeleteOdbDnsZoneRequest request =
+   *       DeleteOdbDnsZoneRequest.newBuilder()
+   *           .setName(
+   *               OdbDnsZoneName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_DNS_ZONE]")
+   *                   .toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       oracleDatabaseClient.deleteOdbDnsZoneCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteOdbDnsZoneRequest, Operation> deleteOdbDnsZoneCallable() {
+    return stub.deleteOdbDnsZoneCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -9203,10 +11688,16 @@ public class OracleDatabaseClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param exadbVmCluster Required. The resource being updated.
+   * @param exadbVmCluster Required. The ExadbVmCluster resource being updated. Mutable fields that
+   *     can be updated include `labels` and `properties.node_count`. For `labels`, the provided map
+   *     completely replaces existing labels; any existing keys not included will be deleted. To
+   *     clear all labels, specify `labels` in the `update_mask` and omit or leave the `labels`
+   *     field empty in the update request.
    * @param updateMask Optional. A mask specifying which fields in th VM Cluster should be updated.
-   *     A field specified in the mask is overwritten. If a mask isn't provided then all the fields
-   *     in the VM Cluster are overwritten.
+   *     A field specified in the mask is overwritten. If a mask isn't provided then the service
+   *     treats this as an implied field mask equivalent to all fields that are populated (have a
+   *     non-empty value). To clear or unset a field, the field must be explicitly specified in the
+   *     `update_mask`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<ExadbVmCluster, OperationMetadata> updateExadbVmClusterAsync(
@@ -9988,6 +12479,146 @@ public class OracleDatabaseClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Updates the `labels` of a single ExascaleDbStorageVault.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   ExascaleDbStorageVault exascaleDbStorageVault = ExascaleDbStorageVault.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   ExascaleDbStorageVault response =
+   *       oracleDatabaseClient
+   *           .updateExascaleDbStorageVaultAsync(exascaleDbStorageVault, updateMask)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param exascaleDbStorageVault Required. The resource being updated. Note only labels can be
+   *     updated. The provided labels will completely replace the existing labels. Any existing
+   *     label keys that are not included in the update request will be deleted. Not providing
+   *     labels and update_mask will not update the labels. To clear all labels, specify `labels` in
+   *     the `update_mask` and omit or leave the `labels` field empty in the update request.
+   * @param updateMask Optional. A mask specifying which fields in the ExascaleDbStorageVault should
+   *     be updated. A field specified in the mask is updated. If a mask isn't provided, the service
+   *     treats this as an implied field mask equivalent to all fields that are populated (have a
+   *     non-empty value). To clear or unset a field, the field must be explicitly specified in the
+   *     `update_mask`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ExascaleDbStorageVault, OperationMetadata>
+      updateExascaleDbStorageVaultAsync(
+          ExascaleDbStorageVault exascaleDbStorageVault, FieldMask updateMask) {
+    UpdateExascaleDbStorageVaultRequest request =
+        UpdateExascaleDbStorageVaultRequest.newBuilder()
+            .setExascaleDbStorageVault(exascaleDbStorageVault)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateExascaleDbStorageVaultAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the `labels` of a single ExascaleDbStorageVault.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   UpdateExascaleDbStorageVaultRequest request =
+   *       UpdateExascaleDbStorageVaultRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setExascaleDbStorageVault(ExascaleDbStorageVault.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ExascaleDbStorageVault response =
+   *       oracleDatabaseClient.updateExascaleDbStorageVaultAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ExascaleDbStorageVault, OperationMetadata>
+      updateExascaleDbStorageVaultAsync(UpdateExascaleDbStorageVaultRequest request) {
+    return updateExascaleDbStorageVaultOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the `labels` of a single ExascaleDbStorageVault.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   UpdateExascaleDbStorageVaultRequest request =
+   *       UpdateExascaleDbStorageVaultRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setExascaleDbStorageVault(ExascaleDbStorageVault.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<ExascaleDbStorageVault, OperationMetadata> future =
+   *       oracleDatabaseClient.updateExascaleDbStorageVaultOperationCallable().futureCall(request);
+   *   // Do something.
+   *   ExascaleDbStorageVault response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          UpdateExascaleDbStorageVaultRequest, ExascaleDbStorageVault, OperationMetadata>
+      updateExascaleDbStorageVaultOperationCallable() {
+    return stub.updateExascaleDbStorageVaultOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the `labels` of a single ExascaleDbStorageVault.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   UpdateExascaleDbStorageVaultRequest request =
+   *       UpdateExascaleDbStorageVaultRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setExascaleDbStorageVault(ExascaleDbStorageVault.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       oracleDatabaseClient.updateExascaleDbStorageVaultCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateExascaleDbStorageVaultRequest, Operation>
+      updateExascaleDbStorageVaultCallable() {
+    return stub.updateExascaleDbStorageVaultCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Deletes a single ExascaleDB Storage Vault.
    *
    * <p>Sample code:
@@ -10321,6 +12952,184 @@ public class OracleDatabaseClient implements BackgroundResource {
           ListDbSystemInitialStorageSizesRequest, ListDbSystemInitialStorageSizesResponse>
       listDbSystemInitialStorageSizesCallable() {
     return stub.listDbSystemInitialStorageSizesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all the DbSystemComputePerformances for the given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   for (DbSystemComputePerformance element :
+   *       oracleDatabaseClient.listDbSystemComputePerformances(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Parent value for ListDbSystemComputePerformancesRequest Format:
+   *     projects/{project}/locations/{location}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListDbSystemComputePerformancesPagedResponse listDbSystemComputePerformances(
+      @Nullable LocationName parent) {
+    ListDbSystemComputePerformancesRequest request =
+        ListDbSystemComputePerformancesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listDbSystemComputePerformances(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all the DbSystemComputePerformances for the given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   for (DbSystemComputePerformance element :
+   *       oracleDatabaseClient.listDbSystemComputePerformances(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Parent value for ListDbSystemComputePerformancesRequest Format:
+   *     projects/{project}/locations/{location}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListDbSystemComputePerformancesPagedResponse listDbSystemComputePerformances(
+      String parent) {
+    ListDbSystemComputePerformancesRequest request =
+        ListDbSystemComputePerformancesRequest.newBuilder().setParent(parent).build();
+    return listDbSystemComputePerformances(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all the DbSystemComputePerformances for the given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   ListDbSystemComputePerformancesRequest request =
+   *       ListDbSystemComputePerformancesRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   for (DbSystemComputePerformance element :
+   *       oracleDatabaseClient.listDbSystemComputePerformances(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListDbSystemComputePerformancesPagedResponse listDbSystemComputePerformances(
+      ListDbSystemComputePerformancesRequest request) {
+    return listDbSystemComputePerformancesPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all the DbSystemComputePerformances for the given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   ListDbSystemComputePerformancesRequest request =
+   *       ListDbSystemComputePerformancesRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   ApiFuture<DbSystemComputePerformance> future =
+   *       oracleDatabaseClient.listDbSystemComputePerformancesPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (DbSystemComputePerformance element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          ListDbSystemComputePerformancesRequest, ListDbSystemComputePerformancesPagedResponse>
+      listDbSystemComputePerformancesPagedCallable() {
+    return stub.listDbSystemComputePerformancesPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all the DbSystemComputePerformances for the given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   ListDbSystemComputePerformancesRequest request =
+   *       ListDbSystemComputePerformancesRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   while (true) {
+   *     ListDbSystemComputePerformancesResponse response =
+   *         oracleDatabaseClient.listDbSystemComputePerformancesCallable().call(request);
+   *     for (DbSystemComputePerformance element : response.getDbSystemComputePerformancesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          ListDbSystemComputePerformancesRequest, ListDbSystemComputePerformancesResponse>
+      listDbSystemComputePerformancesCallable() {
+    return stub.listDbSystemComputePerformancesCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -11353,6 +14162,136 @@ public class OracleDatabaseClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Updates the `labels` of a single DbSystem.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   DbSystem dbSystem = DbSystem.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   DbSystem response = oracleDatabaseClient.updateDbSystemAsync(dbSystem, updateMask).get();
+   * }
+   * }</pre>
+   *
+   * @param dbSystem Required. The resource being updated. Note only labels can be updated. The
+   *     provided labels will completely replace the existing labels. Any existing label keys that
+   *     are not included in the update request will be deleted. Not providing labels and
+   *     update_mask will not update the labels. To clear all labels, specify `labels` in the
+   *     `update_mask` and omit or leave the `labels` field empty in the update request. To clear or
+   *     unset a field, the field must be explicitly specified in the `update_mask`.
+   * @param updateMask Optional. A mask specifying which fields in the DbSystem should be updated. A
+   *     field specified in the mask is updated. If a mask isn't provided, the service treats this
+   *     as an implied field mask equivalent to all fields that are populated (have a non-empty
+   *     value).
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<DbSystem, OperationMetadata> updateDbSystemAsync(
+      DbSystem dbSystem, FieldMask updateMask) {
+    UpdateDbSystemRequest request =
+        UpdateDbSystemRequest.newBuilder().setDbSystem(dbSystem).setUpdateMask(updateMask).build();
+    return updateDbSystemAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the `labels` of a single DbSystem.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   UpdateDbSystemRequest request =
+   *       UpdateDbSystemRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setDbSystem(DbSystem.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   DbSystem response = oracleDatabaseClient.updateDbSystemAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<DbSystem, OperationMetadata> updateDbSystemAsync(
+      UpdateDbSystemRequest request) {
+    return updateDbSystemOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the `labels` of a single DbSystem.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   UpdateDbSystemRequest request =
+   *       UpdateDbSystemRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setDbSystem(DbSystem.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<DbSystem, OperationMetadata> future =
+   *       oracleDatabaseClient.updateDbSystemOperationCallable().futureCall(request);
+   *   // Do something.
+   *   DbSystem response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<UpdateDbSystemRequest, DbSystem, OperationMetadata>
+      updateDbSystemOperationCallable() {
+    return stub.updateDbSystemOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the `labels` of a single DbSystem.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   UpdateDbSystemRequest request =
+   *       UpdateDbSystemRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setDbSystem(DbSystem.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       oracleDatabaseClient.updateDbSystemCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateDbSystemRequest, Operation> updateDbSystemCallable() {
+    return stub.updateDbSystemCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Deletes a single DbSystem.
    *
    * <p>Sample code:
@@ -11983,6 +14922,146 @@ public class OracleDatabaseClient implements BackgroundResource {
   public final UnaryCallable<CreateGoldengateDeploymentRequest, Operation>
       createGoldengateDeploymentCallable() {
     return stub.createGoldengateDeploymentCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the `labels` of a single GoldengateDeployment.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   GoldengateDeployment goldengateDeployment = GoldengateDeployment.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   GoldengateDeployment response =
+   *       oracleDatabaseClient
+   *           .updateGoldengateDeploymentAsync(goldengateDeployment, updateMask)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param goldengateDeployment Required. The resource being updated. Note only labels can be
+   *     updated. The provided labels will completely replace the existing labels. Any existing
+   *     label keys that are not included in the update request will be deleted. Not providing
+   *     labels and update_mask will not update the labels. To clear all labels, specify `labels` in
+   *     the `update_mask` and omit or leave the `labels` field empty in the update request.
+   * @param updateMask Optional. A mask specifying which fields in the GoldengateDeployment should
+   *     be updated. A field specified in the mask is updated. If a mask isn't provided, the service
+   *     treats this as an implied field mask equivalent to all fields that are populated (have a
+   *     non-empty value). To clear or unset a field, the field must be explicitly specified in the
+   *     `update_mask`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<GoldengateDeployment, OperationMetadata>
+      updateGoldengateDeploymentAsync(
+          GoldengateDeployment goldengateDeployment, FieldMask updateMask) {
+    UpdateGoldengateDeploymentRequest request =
+        UpdateGoldengateDeploymentRequest.newBuilder()
+            .setGoldengateDeployment(goldengateDeployment)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateGoldengateDeploymentAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the `labels` of a single GoldengateDeployment.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   UpdateGoldengateDeploymentRequest request =
+   *       UpdateGoldengateDeploymentRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setGoldengateDeployment(GoldengateDeployment.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   GoldengateDeployment response =
+   *       oracleDatabaseClient.updateGoldengateDeploymentAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<GoldengateDeployment, OperationMetadata>
+      updateGoldengateDeploymentAsync(UpdateGoldengateDeploymentRequest request) {
+    return updateGoldengateDeploymentOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the `labels` of a single GoldengateDeployment.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   UpdateGoldengateDeploymentRequest request =
+   *       UpdateGoldengateDeploymentRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setGoldengateDeployment(GoldengateDeployment.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<GoldengateDeployment, OperationMetadata> future =
+   *       oracleDatabaseClient.updateGoldengateDeploymentOperationCallable().futureCall(request);
+   *   // Do something.
+   *   GoldengateDeployment response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          UpdateGoldengateDeploymentRequest, GoldengateDeployment, OperationMetadata>
+      updateGoldengateDeploymentOperationCallable() {
+    return stub.updateGoldengateDeploymentOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the `labels` of a single GoldengateDeployment.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   UpdateGoldengateDeploymentRequest request =
+   *       UpdateGoldengateDeploymentRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setGoldengateDeployment(GoldengateDeployment.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       oracleDatabaseClient.updateGoldengateDeploymentCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateGoldengateDeploymentRequest, Operation>
+      updateGoldengateDeploymentCallable() {
+    return stub.updateGoldengateDeploymentCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -12951,6 +16030,146 @@ public class OracleDatabaseClient implements BackgroundResource {
   public final UnaryCallable<CreateGoldengateConnectionRequest, Operation>
       createGoldengateConnectionCallable() {
     return stub.createGoldengateConnectionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the `labels` of a single GoldengateConnection.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   GoldengateConnection goldengateConnection = GoldengateConnection.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   GoldengateConnection response =
+   *       oracleDatabaseClient
+   *           .updateGoldengateConnectionAsync(goldengateConnection, updateMask)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param goldengateConnection Required. The resource being updated. Note only labels can be
+   *     updated. The provided labels will completely replace the existing labels. Any existing
+   *     label keys that are not included in the update request will be deleted. Not providing
+   *     labels and update_mask will not update the labels. To clear all labels, specify `labels` in
+   *     the `update_mask` and omit or leave the `labels` field empty in the update request.
+   * @param updateMask Optional. A mask specifying which fields in the GoldengateConnection should
+   *     be updated. A field specified in the mask is updated. If a mask isn't provided, the service
+   *     treats this as an implied field mask equivalent to all fields that are populated (have a
+   *     non-empty value). To clear or unset a field, the field must be explicitly specified in the
+   *     `update_mask`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<GoldengateConnection, OperationMetadata>
+      updateGoldengateConnectionAsync(
+          GoldengateConnection goldengateConnection, FieldMask updateMask) {
+    UpdateGoldengateConnectionRequest request =
+        UpdateGoldengateConnectionRequest.newBuilder()
+            .setGoldengateConnection(goldengateConnection)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateGoldengateConnectionAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the `labels` of a single GoldengateConnection.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   UpdateGoldengateConnectionRequest request =
+   *       UpdateGoldengateConnectionRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setGoldengateConnection(GoldengateConnection.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   GoldengateConnection response =
+   *       oracleDatabaseClient.updateGoldengateConnectionAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<GoldengateConnection, OperationMetadata>
+      updateGoldengateConnectionAsync(UpdateGoldengateConnectionRequest request) {
+    return updateGoldengateConnectionOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the `labels` of a single GoldengateConnection.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   UpdateGoldengateConnectionRequest request =
+   *       UpdateGoldengateConnectionRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setGoldengateConnection(GoldengateConnection.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<GoldengateConnection, OperationMetadata> future =
+   *       oracleDatabaseClient.updateGoldengateConnectionOperationCallable().futureCall(request);
+   *   // Do something.
+   *   GoldengateConnection response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          UpdateGoldengateConnectionRequest, GoldengateConnection, OperationMetadata>
+      updateGoldengateConnectionOperationCallable() {
+    return stub.updateGoldengateConnectionOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the `labels` of a single GoldengateConnection.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   UpdateGoldengateConnectionRequest request =
+   *       UpdateGoldengateConnectionRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setGoldengateConnection(GoldengateConnection.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       oracleDatabaseClient.updateGoldengateConnectionCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateGoldengateConnectionRequest, Operation>
+      updateGoldengateConnectionCallable() {
+    return stub.updateGoldengateConnectionCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -14688,6 +17907,156 @@ public class OracleDatabaseClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Updates the `labels` of a single GoldengateConnectionAssignment.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   GoldengateConnectionAssignment goldengateConnectionAssignment =
+   *       GoldengateConnectionAssignment.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   GoldengateConnectionAssignment response =
+   *       oracleDatabaseClient
+   *           .updateGoldengateConnectionAssignmentAsync(goldengateConnectionAssignment, updateMask)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param goldengateConnectionAssignment Required. The resource being updated. Note only labels
+   *     can be updated. The provided labels will completely replace the existing labels. Any
+   *     existing label keys that are not included in the update request will be deleted. Not
+   *     providing labels and update_mask will not update the labels. To clear all labels, specify
+   *     `labels` in the `update_mask` and omit or leave the `labels` field empty in the update
+   *     request.
+   * @param updateMask Optional. A mask specifying which fields in the
+   *     GoldengateConnectionAssignment should be updated. A field specified in the mask is updated.
+   *     If a mask isn't provided, the service treats this as an implied field mask equivalent to
+   *     all fields that are populated (have a non-empty value). To clear or unset a field, the
+   *     field must be explicitly specified in the `update_mask`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<GoldengateConnectionAssignment, OperationMetadata>
+      updateGoldengateConnectionAssignmentAsync(
+          GoldengateConnectionAssignment goldengateConnectionAssignment, FieldMask updateMask) {
+    UpdateGoldengateConnectionAssignmentRequest request =
+        UpdateGoldengateConnectionAssignmentRequest.newBuilder()
+            .setGoldengateConnectionAssignment(goldengateConnectionAssignment)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateGoldengateConnectionAssignmentAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the `labels` of a single GoldengateConnectionAssignment.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   UpdateGoldengateConnectionAssignmentRequest request =
+   *       UpdateGoldengateConnectionAssignmentRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setGoldengateConnectionAssignment(
+   *               GoldengateConnectionAssignment.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   GoldengateConnectionAssignment response =
+   *       oracleDatabaseClient.updateGoldengateConnectionAssignmentAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<GoldengateConnectionAssignment, OperationMetadata>
+      updateGoldengateConnectionAssignmentAsync(
+          UpdateGoldengateConnectionAssignmentRequest request) {
+    return updateGoldengateConnectionAssignmentOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the `labels` of a single GoldengateConnectionAssignment.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   UpdateGoldengateConnectionAssignmentRequest request =
+   *       UpdateGoldengateConnectionAssignmentRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setGoldengateConnectionAssignment(
+   *               GoldengateConnectionAssignment.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<GoldengateConnectionAssignment, OperationMetadata> future =
+   *       oracleDatabaseClient
+   *           .updateGoldengateConnectionAssignmentOperationCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   GoldengateConnectionAssignment response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          UpdateGoldengateConnectionAssignmentRequest,
+          GoldengateConnectionAssignment,
+          OperationMetadata>
+      updateGoldengateConnectionAssignmentOperationCallable() {
+    return stub.updateGoldengateConnectionAssignmentOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the `labels` of a single GoldengateConnectionAssignment.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   UpdateGoldengateConnectionAssignmentRequest request =
+   *       UpdateGoldengateConnectionAssignmentRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setGoldengateConnectionAssignment(
+   *               GoldengateConnectionAssignment.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       oracleDatabaseClient.updateGoldengateConnectionAssignmentCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateGoldengateConnectionAssignmentRequest, Operation>
+      updateGoldengateConnectionAssignmentCallable() {
+    return stub.updateGoldengateConnectionAssignmentCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Deletes a single GoldengateConnectionAssignment.
    *
    * <p>Sample code:
@@ -14984,6 +18353,1032 @@ public class OracleDatabaseClient implements BackgroundResource {
           TestGoldengateConnectionAssignmentRequest, TestGoldengateConnectionAssignmentResponse>
       testGoldengateConnectionAssignmentCallable() {
     return stub.testGoldengateConnectionAssignmentCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists DatabaseConnections in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   for (DatabaseConnection element :
+   *       oracleDatabaseClient.listDatabaseConnections(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent value for the DatabaseConnection in the following format:
+   *     projects/{project}/locations/{location}.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListDatabaseConnectionsPagedResponse listDatabaseConnections(
+      @Nullable LocationName parent) {
+    ListDatabaseConnectionsRequest request =
+        ListDatabaseConnectionsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listDatabaseConnections(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists DatabaseConnections in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   for (DatabaseConnection element :
+   *       oracleDatabaseClient.listDatabaseConnections(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent value for the DatabaseConnection in the following format:
+   *     projects/{project}/locations/{location}.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListDatabaseConnectionsPagedResponse listDatabaseConnections(String parent) {
+    ListDatabaseConnectionsRequest request =
+        ListDatabaseConnectionsRequest.newBuilder().setParent(parent).build();
+    return listDatabaseConnections(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists DatabaseConnections in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   ListDatabaseConnectionsRequest request =
+   *       ListDatabaseConnectionsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   for (DatabaseConnection element :
+   *       oracleDatabaseClient.listDatabaseConnections(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListDatabaseConnectionsPagedResponse listDatabaseConnections(
+      ListDatabaseConnectionsRequest request) {
+    return listDatabaseConnectionsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists DatabaseConnections in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   ListDatabaseConnectionsRequest request =
+   *       ListDatabaseConnectionsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   ApiFuture<DatabaseConnection> future =
+   *       oracleDatabaseClient.listDatabaseConnectionsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (DatabaseConnection element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListDatabaseConnectionsRequest, ListDatabaseConnectionsPagedResponse>
+      listDatabaseConnectionsPagedCallable() {
+    return stub.listDatabaseConnectionsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists DatabaseConnections in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   ListDatabaseConnectionsRequest request =
+   *       ListDatabaseConnectionsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   while (true) {
+   *     ListDatabaseConnectionsResponse response =
+   *         oracleDatabaseClient.listDatabaseConnectionsCallable().call(request);
+   *     for (DatabaseConnection element : response.getDatabaseConnectionsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListDatabaseConnectionsRequest, ListDatabaseConnectionsResponse>
+      listDatabaseConnectionsCallable() {
+    return stub.listDatabaseConnectionsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single DatabaseConnection.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   DatabaseConnectionName name =
+   *       DatabaseConnectionName.of("[PROJECT]", "[LOCATION]", "[DATABASE_CONNECTION]");
+   *   DatabaseConnection response = oracleDatabaseClient.getDatabaseConnection(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the DatabaseConnection in the following format:
+   *     projects/{project}/locations/{location}/databaseConnections/{database_connection}.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DatabaseConnection getDatabaseConnection(@Nullable DatabaseConnectionName name) {
+    GetDatabaseConnectionRequest request =
+        GetDatabaseConnectionRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getDatabaseConnection(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single DatabaseConnection.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   String name =
+   *       DatabaseConnectionName.of("[PROJECT]", "[LOCATION]", "[DATABASE_CONNECTION]").toString();
+   *   DatabaseConnection response = oracleDatabaseClient.getDatabaseConnection(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the DatabaseConnection in the following format:
+   *     projects/{project}/locations/{location}/databaseConnections/{database_connection}.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DatabaseConnection getDatabaseConnection(String name) {
+    GetDatabaseConnectionRequest request =
+        GetDatabaseConnectionRequest.newBuilder().setName(name).build();
+    return getDatabaseConnection(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single DatabaseConnection.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   GetDatabaseConnectionRequest request =
+   *       GetDatabaseConnectionRequest.newBuilder()
+   *           .setName(
+   *               DatabaseConnectionName.of("[PROJECT]", "[LOCATION]", "[DATABASE_CONNECTION]")
+   *                   .toString())
+   *           .build();
+   *   DatabaseConnection response = oracleDatabaseClient.getDatabaseConnection(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DatabaseConnection getDatabaseConnection(GetDatabaseConnectionRequest request) {
+    return getDatabaseConnectionCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single DatabaseConnection.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   GetDatabaseConnectionRequest request =
+   *       GetDatabaseConnectionRequest.newBuilder()
+   *           .setName(
+   *               DatabaseConnectionName.of("[PROJECT]", "[LOCATION]", "[DATABASE_CONNECTION]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<DatabaseConnection> future =
+   *       oracleDatabaseClient.getDatabaseConnectionCallable().futureCall(request);
+   *   // Do something.
+   *   DatabaseConnection response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetDatabaseConnectionRequest, DatabaseConnection>
+      getDatabaseConnectionCallable() {
+    return stub.getDatabaseConnectionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new DatabaseConnection in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   DatabaseConnection databaseConnection = DatabaseConnection.newBuilder().build();
+   *   String databaseConnectionId = "databaseConnectionId2113359284";
+   *   DatabaseConnection response =
+   *       oracleDatabaseClient
+   *           .createDatabaseConnectionAsync(parent, databaseConnection, databaseConnectionId)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent value for the DatabaseConnection in the following format:
+   *     projects/{project}/locations/{location}.
+   * @param databaseConnection Required. Details of the DatabaseConnection instance to create.
+   * @param databaseConnectionId Required. The ID of the DatabaseConnection to create. This value is
+   *     restricted to (^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$) and must be a maximum of 63 characters in
+   *     length. The value must start with a letter and end with a letter or a number.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<DatabaseConnection, OperationMetadata> createDatabaseConnectionAsync(
+      @Nullable LocationName parent,
+      DatabaseConnection databaseConnection,
+      String databaseConnectionId) {
+    CreateDatabaseConnectionRequest request =
+        CreateDatabaseConnectionRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setDatabaseConnection(databaseConnection)
+            .setDatabaseConnectionId(databaseConnectionId)
+            .build();
+    return createDatabaseConnectionAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new DatabaseConnection in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   DatabaseConnection databaseConnection = DatabaseConnection.newBuilder().build();
+   *   String databaseConnectionId = "databaseConnectionId2113359284";
+   *   DatabaseConnection response =
+   *       oracleDatabaseClient
+   *           .createDatabaseConnectionAsync(parent, databaseConnection, databaseConnectionId)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent value for the DatabaseConnection in the following format:
+   *     projects/{project}/locations/{location}.
+   * @param databaseConnection Required. Details of the DatabaseConnection instance to create.
+   * @param databaseConnectionId Required. The ID of the DatabaseConnection to create. This value is
+   *     restricted to (^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$) and must be a maximum of 63 characters in
+   *     length. The value must start with a letter and end with a letter or a number.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<DatabaseConnection, OperationMetadata> createDatabaseConnectionAsync(
+      String parent, DatabaseConnection databaseConnection, String databaseConnectionId) {
+    CreateDatabaseConnectionRequest request =
+        CreateDatabaseConnectionRequest.newBuilder()
+            .setParent(parent)
+            .setDatabaseConnection(databaseConnection)
+            .setDatabaseConnectionId(databaseConnectionId)
+            .build();
+    return createDatabaseConnectionAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new DatabaseConnection in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   CreateDatabaseConnectionRequest request =
+   *       CreateDatabaseConnectionRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setDatabaseConnectionId("databaseConnectionId2113359284")
+   *           .setDatabaseConnection(DatabaseConnection.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   DatabaseConnection response =
+   *       oracleDatabaseClient.createDatabaseConnectionAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<DatabaseConnection, OperationMetadata> createDatabaseConnectionAsync(
+      CreateDatabaseConnectionRequest request) {
+    return createDatabaseConnectionOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new DatabaseConnection in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   CreateDatabaseConnectionRequest request =
+   *       CreateDatabaseConnectionRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setDatabaseConnectionId("databaseConnectionId2113359284")
+   *           .setDatabaseConnection(DatabaseConnection.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<DatabaseConnection, OperationMetadata> future =
+   *       oracleDatabaseClient.createDatabaseConnectionOperationCallable().futureCall(request);
+   *   // Do something.
+   *   DatabaseConnection response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          CreateDatabaseConnectionRequest, DatabaseConnection, OperationMetadata>
+      createDatabaseConnectionOperationCallable() {
+    return stub.createDatabaseConnectionOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new DatabaseConnection in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   CreateDatabaseConnectionRequest request =
+   *       CreateDatabaseConnectionRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setDatabaseConnectionId("databaseConnectionId2113359284")
+   *           .setDatabaseConnection(DatabaseConnection.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       oracleDatabaseClient.createDatabaseConnectionCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateDatabaseConnectionRequest, Operation>
+      createDatabaseConnectionCallable() {
+    return stub.createDatabaseConnectionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the parameters of a single DatabaseConnection.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   DatabaseConnection databaseConnection = DatabaseConnection.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   DatabaseConnection response =
+   *       oracleDatabaseClient.updateDatabaseConnectionAsync(databaseConnection, updateMask).get();
+   * }
+   * }</pre>
+   *
+   * @param databaseConnection Required. The resource being updated.
+   * @param updateMask Optional. A mask specifying which fields in the DatabaseConnection should be
+   *     updated. A field specified in the mask is overwritten. If a mask isn't provided then all
+   *     the fields in the DatabaseConnection are overwritten.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<DatabaseConnection, OperationMetadata> updateDatabaseConnectionAsync(
+      DatabaseConnection databaseConnection, FieldMask updateMask) {
+    UpdateDatabaseConnectionRequest request =
+        UpdateDatabaseConnectionRequest.newBuilder()
+            .setDatabaseConnection(databaseConnection)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateDatabaseConnectionAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the parameters of a single DatabaseConnection.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   UpdateDatabaseConnectionRequest request =
+   *       UpdateDatabaseConnectionRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setDatabaseConnection(DatabaseConnection.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   DatabaseConnection response =
+   *       oracleDatabaseClient.updateDatabaseConnectionAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<DatabaseConnection, OperationMetadata> updateDatabaseConnectionAsync(
+      UpdateDatabaseConnectionRequest request) {
+    return updateDatabaseConnectionOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the parameters of a single DatabaseConnection.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   UpdateDatabaseConnectionRequest request =
+   *       UpdateDatabaseConnectionRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setDatabaseConnection(DatabaseConnection.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<DatabaseConnection, OperationMetadata> future =
+   *       oracleDatabaseClient.updateDatabaseConnectionOperationCallable().futureCall(request);
+   *   // Do something.
+   *   DatabaseConnection response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          UpdateDatabaseConnectionRequest, DatabaseConnection, OperationMetadata>
+      updateDatabaseConnectionOperationCallable() {
+    return stub.updateDatabaseConnectionOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the parameters of a single DatabaseConnection.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   UpdateDatabaseConnectionRequest request =
+   *       UpdateDatabaseConnectionRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setDatabaseConnection(DatabaseConnection.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       oracleDatabaseClient.updateDatabaseConnectionCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateDatabaseConnectionRequest, Operation>
+      updateDatabaseConnectionCallable() {
+    return stub.updateDatabaseConnectionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single DatabaseConnection.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   DatabaseConnectionName name =
+   *       DatabaseConnectionName.of("[PROJECT]", "[LOCATION]", "[DATABASE_CONNECTION]");
+   *   oracleDatabaseClient.deleteDatabaseConnectionAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the resource in the following format:
+   *     projects/{project}/locations/{location}/databaseConnections/{database_connection}.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteDatabaseConnectionAsync(
+      @Nullable DatabaseConnectionName name) {
+    DeleteDatabaseConnectionRequest request =
+        DeleteDatabaseConnectionRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return deleteDatabaseConnectionAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single DatabaseConnection.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   String name =
+   *       DatabaseConnectionName.of("[PROJECT]", "[LOCATION]", "[DATABASE_CONNECTION]").toString();
+   *   oracleDatabaseClient.deleteDatabaseConnectionAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the resource in the following format:
+   *     projects/{project}/locations/{location}/databaseConnections/{database_connection}.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteDatabaseConnectionAsync(
+      String name) {
+    DeleteDatabaseConnectionRequest request =
+        DeleteDatabaseConnectionRequest.newBuilder().setName(name).build();
+    return deleteDatabaseConnectionAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single DatabaseConnection.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   DeleteDatabaseConnectionRequest request =
+   *       DeleteDatabaseConnectionRequest.newBuilder()
+   *           .setName(
+   *               DatabaseConnectionName.of("[PROJECT]", "[LOCATION]", "[DATABASE_CONNECTION]")
+   *                   .toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   oracleDatabaseClient.deleteDatabaseConnectionAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteDatabaseConnectionAsync(
+      DeleteDatabaseConnectionRequest request) {
+    return deleteDatabaseConnectionOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single DatabaseConnection.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   DeleteDatabaseConnectionRequest request =
+   *       DeleteDatabaseConnectionRequest.newBuilder()
+   *           .setName(
+   *               DatabaseConnectionName.of("[PROJECT]", "[LOCATION]", "[DATABASE_CONNECTION]")
+   *                   .toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Empty, OperationMetadata> future =
+   *       oracleDatabaseClient.deleteDatabaseConnectionOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeleteDatabaseConnectionRequest, Empty, OperationMetadata>
+      deleteDatabaseConnectionOperationCallable() {
+    return stub.deleteDatabaseConnectionOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single DatabaseConnection.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   DeleteDatabaseConnectionRequest request =
+   *       DeleteDatabaseConnectionRequest.newBuilder()
+   *           .setName(
+   *               DatabaseConnectionName.of("[PROJECT]", "[LOCATION]", "[DATABASE_CONNECTION]")
+   *                   .toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       oracleDatabaseClient.deleteDatabaseConnectionCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteDatabaseConnectionRequest, Operation>
+      deleteDatabaseConnectionCallable() {
+    return stub.deleteDatabaseConnectionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Tests connectivity of a DatabaseConnection.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   DatabaseConnectionName name =
+   *       DatabaseConnectionName.of("[PROJECT]", "[LOCATION]", "[DATABASE_CONNECTION]");
+   *   TestDatabaseConnectionResponse response = oracleDatabaseClient.testDatabaseConnection(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the DatabaseConnection to test. Format:
+   *     projects/{project}/locations/{location}/databaseConnections/{database_connection}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final TestDatabaseConnectionResponse testDatabaseConnection(
+      @Nullable DatabaseConnectionName name) {
+    TestDatabaseConnectionRequest request =
+        TestDatabaseConnectionRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return testDatabaseConnection(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Tests connectivity of a DatabaseConnection.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   String name =
+   *       DatabaseConnectionName.of("[PROJECT]", "[LOCATION]", "[DATABASE_CONNECTION]").toString();
+   *   TestDatabaseConnectionResponse response = oracleDatabaseClient.testDatabaseConnection(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the DatabaseConnection to test. Format:
+   *     projects/{project}/locations/{location}/databaseConnections/{database_connection}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final TestDatabaseConnectionResponse testDatabaseConnection(String name) {
+    TestDatabaseConnectionRequest request =
+        TestDatabaseConnectionRequest.newBuilder().setName(name).build();
+    return testDatabaseConnection(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Tests connectivity of a DatabaseConnection.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   TestDatabaseConnectionRequest request =
+   *       TestDatabaseConnectionRequest.newBuilder()
+   *           .setName(
+   *               DatabaseConnectionName.of("[PROJECT]", "[LOCATION]", "[DATABASE_CONNECTION]")
+   *                   .toString())
+   *           .build();
+   *   TestDatabaseConnectionResponse response =
+   *       oracleDatabaseClient.testDatabaseConnection(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final TestDatabaseConnectionResponse testDatabaseConnection(
+      TestDatabaseConnectionRequest request) {
+    return testDatabaseConnectionCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Tests connectivity of a DatabaseConnection.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   TestDatabaseConnectionRequest request =
+   *       TestDatabaseConnectionRequest.newBuilder()
+   *           .setName(
+   *               DatabaseConnectionName.of("[PROJECT]", "[LOCATION]", "[DATABASE_CONNECTION]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<TestDatabaseConnectionResponse> future =
+   *       oracleDatabaseClient.testDatabaseConnectionCallable().futureCall(request);
+   *   // Do something.
+   *   TestDatabaseConnectionResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<TestDatabaseConnectionRequest, TestDatabaseConnectionResponse>
+      testDatabaseConnectionCallable() {
+    return stub.testDatabaseConnectionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Executes a SQL statement on a DatabaseConnection.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   DatabaseConnectionName name =
+   *       DatabaseConnectionName.of("[PROJECT]", "[LOCATION]", "[DATABASE_CONNECTION]");
+   *   String sqlStatement = "sqlStatement937767745";
+   *   ExecuteSqlResponse response = oracleDatabaseClient.executeSql(name, sqlStatement);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the DatabaseConnection in the following format:
+   *     projects/{project}/locations/{location}/databaseConnections/{database_connection}.
+   * @param sqlStatement Required. The SQL statement to execute.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ExecuteSqlResponse executeSql(
+      @Nullable DatabaseConnectionName name, String sqlStatement) {
+    ExecuteSqlRequest request =
+        ExecuteSqlRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setSqlStatement(sqlStatement)
+            .build();
+    return executeSql(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Executes a SQL statement on a DatabaseConnection.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   String name =
+   *       DatabaseConnectionName.of("[PROJECT]", "[LOCATION]", "[DATABASE_CONNECTION]").toString();
+   *   String sqlStatement = "sqlStatement937767745";
+   *   ExecuteSqlResponse response = oracleDatabaseClient.executeSql(name, sqlStatement);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the DatabaseConnection in the following format:
+   *     projects/{project}/locations/{location}/databaseConnections/{database_connection}.
+   * @param sqlStatement Required. The SQL statement to execute.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ExecuteSqlResponse executeSql(String name, String sqlStatement) {
+    ExecuteSqlRequest request =
+        ExecuteSqlRequest.newBuilder().setName(name).setSqlStatement(sqlStatement).build();
+    return executeSql(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Executes a SQL statement on a DatabaseConnection.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   ExecuteSqlRequest request =
+   *       ExecuteSqlRequest.newBuilder()
+   *           .setName(
+   *               DatabaseConnectionName.of("[PROJECT]", "[LOCATION]", "[DATABASE_CONNECTION]")
+   *                   .toString())
+   *           .setSqlStatement("sqlStatement937767745")
+   *           .addAllParams(new ArrayList<SqlParameter>())
+   *           .build();
+   *   ExecuteSqlResponse response = oracleDatabaseClient.executeSql(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ExecuteSqlResponse executeSql(ExecuteSqlRequest request) {
+    return executeSqlCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Executes a SQL statement on a DatabaseConnection.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   ExecuteSqlRequest request =
+   *       ExecuteSqlRequest.newBuilder()
+   *           .setName(
+   *               DatabaseConnectionName.of("[PROJECT]", "[LOCATION]", "[DATABASE_CONNECTION]")
+   *                   .toString())
+   *           .setSqlStatement("sqlStatement937767745")
+   *           .addAllParams(new ArrayList<SqlParameter>())
+   *           .build();
+   *   ApiFuture<ExecuteSqlResponse> future =
+   *       oracleDatabaseClient.executeSqlCallable().futureCall(request);
+   *   // Do something.
+   *   ExecuteSqlResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ExecuteSqlRequest, ExecuteSqlResponse> executeSqlCallable() {
+    return stub.executeSqlCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -15471,6 +19866,89 @@ public class OracleDatabaseClient implements BackgroundResource {
     protected ListEntitlementsFixedSizeCollection createCollection(
         @Nullable List<ListEntitlementsPage> pages, int collectionSize) {
       return new ListEntitlementsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListFlexComponentsPagedResponse
+      extends AbstractPagedListResponse<
+          ListFlexComponentsRequest,
+          ListFlexComponentsResponse,
+          FlexComponent,
+          ListFlexComponentsPage,
+          ListFlexComponentsFixedSizeCollection> {
+
+    public static ApiFuture<ListFlexComponentsPagedResponse> createAsync(
+        PageContext<ListFlexComponentsRequest, ListFlexComponentsResponse, FlexComponent> context,
+        ApiFuture<ListFlexComponentsResponse> futureResponse) {
+      ApiFuture<ListFlexComponentsPage> futurePage =
+          ListFlexComponentsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListFlexComponentsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListFlexComponentsPagedResponse(ListFlexComponentsPage page) {
+      super(page, ListFlexComponentsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListFlexComponentsPage
+      extends AbstractPage<
+          ListFlexComponentsRequest,
+          ListFlexComponentsResponse,
+          FlexComponent,
+          ListFlexComponentsPage> {
+
+    private ListFlexComponentsPage(
+        @Nullable PageContext<ListFlexComponentsRequest, ListFlexComponentsResponse, FlexComponent>
+            context,
+        @Nullable ListFlexComponentsResponse response) {
+      super(context, response);
+    }
+
+    private static ListFlexComponentsPage createEmptyPage() {
+      return new ListFlexComponentsPage(null, null);
+    }
+
+    @Override
+    protected ListFlexComponentsPage createPage(
+        @Nullable PageContext<ListFlexComponentsRequest, ListFlexComponentsResponse, FlexComponent>
+            context,
+        @Nullable ListFlexComponentsResponse response) {
+      return new ListFlexComponentsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListFlexComponentsPage> createPageAsync(
+        @Nullable PageContext<ListFlexComponentsRequest, ListFlexComponentsResponse, FlexComponent>
+            context,
+        ApiFuture<ListFlexComponentsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListFlexComponentsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListFlexComponentsRequest,
+          ListFlexComponentsResponse,
+          FlexComponent,
+          ListFlexComponentsPage,
+          ListFlexComponentsFixedSizeCollection> {
+
+    private ListFlexComponentsFixedSizeCollection(
+        @Nullable List<ListFlexComponentsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListFlexComponentsFixedSizeCollection createEmptyCollection() {
+      return new ListFlexComponentsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListFlexComponentsFixedSizeCollection createCollection(
+        @Nullable List<ListFlexComponentsPage> pages, int collectionSize) {
+      return new ListFlexComponentsFixedSizeCollection(pages, collectionSize);
     }
   }
 
@@ -16413,6 +20891,83 @@ public class OracleDatabaseClient implements BackgroundResource {
     }
   }
 
+  public static class ListOdbDnsZonesPagedResponse
+      extends AbstractPagedListResponse<
+          ListOdbDnsZonesRequest,
+          ListOdbDnsZonesResponse,
+          OdbDnsZone,
+          ListOdbDnsZonesPage,
+          ListOdbDnsZonesFixedSizeCollection> {
+
+    public static ApiFuture<ListOdbDnsZonesPagedResponse> createAsync(
+        PageContext<ListOdbDnsZonesRequest, ListOdbDnsZonesResponse, OdbDnsZone> context,
+        ApiFuture<ListOdbDnsZonesResponse> futureResponse) {
+      ApiFuture<ListOdbDnsZonesPage> futurePage =
+          ListOdbDnsZonesPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListOdbDnsZonesPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListOdbDnsZonesPagedResponse(ListOdbDnsZonesPage page) {
+      super(page, ListOdbDnsZonesFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListOdbDnsZonesPage
+      extends AbstractPage<
+          ListOdbDnsZonesRequest, ListOdbDnsZonesResponse, OdbDnsZone, ListOdbDnsZonesPage> {
+
+    private ListOdbDnsZonesPage(
+        @Nullable PageContext<ListOdbDnsZonesRequest, ListOdbDnsZonesResponse, OdbDnsZone> context,
+        @Nullable ListOdbDnsZonesResponse response) {
+      super(context, response);
+    }
+
+    private static ListOdbDnsZonesPage createEmptyPage() {
+      return new ListOdbDnsZonesPage(null, null);
+    }
+
+    @Override
+    protected ListOdbDnsZonesPage createPage(
+        @Nullable PageContext<ListOdbDnsZonesRequest, ListOdbDnsZonesResponse, OdbDnsZone> context,
+        @Nullable ListOdbDnsZonesResponse response) {
+      return new ListOdbDnsZonesPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListOdbDnsZonesPage> createPageAsync(
+        @Nullable PageContext<ListOdbDnsZonesRequest, ListOdbDnsZonesResponse, OdbDnsZone> context,
+        ApiFuture<ListOdbDnsZonesResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListOdbDnsZonesFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListOdbDnsZonesRequest,
+          ListOdbDnsZonesResponse,
+          OdbDnsZone,
+          ListOdbDnsZonesPage,
+          ListOdbDnsZonesFixedSizeCollection> {
+
+    private ListOdbDnsZonesFixedSizeCollection(
+        @Nullable List<ListOdbDnsZonesPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListOdbDnsZonesFixedSizeCollection createEmptyCollection() {
+      return new ListOdbDnsZonesFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListOdbDnsZonesFixedSizeCollection createCollection(
+        @Nullable List<ListOdbDnsZonesPage> pages, int collectionSize) {
+      return new ListOdbDnsZonesFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
   public static class ListExadbVmClustersPagedResponse
       extends AbstractPagedListResponse<
           ListExadbVmClustersRequest,
@@ -16697,6 +21252,106 @@ public class OracleDatabaseClient implements BackgroundResource {
     protected ListDbSystemInitialStorageSizesFixedSizeCollection createCollection(
         @Nullable List<ListDbSystemInitialStorageSizesPage> pages, int collectionSize) {
       return new ListDbSystemInitialStorageSizesFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListDbSystemComputePerformancesPagedResponse
+      extends AbstractPagedListResponse<
+          ListDbSystemComputePerformancesRequest,
+          ListDbSystemComputePerformancesResponse,
+          DbSystemComputePerformance,
+          ListDbSystemComputePerformancesPage,
+          ListDbSystemComputePerformancesFixedSizeCollection> {
+
+    public static ApiFuture<ListDbSystemComputePerformancesPagedResponse> createAsync(
+        PageContext<
+                ListDbSystemComputePerformancesRequest,
+                ListDbSystemComputePerformancesResponse,
+                DbSystemComputePerformance>
+            context,
+        ApiFuture<ListDbSystemComputePerformancesResponse> futureResponse) {
+      ApiFuture<ListDbSystemComputePerformancesPage> futurePage =
+          ListDbSystemComputePerformancesPage.createEmptyPage()
+              .createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListDbSystemComputePerformancesPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListDbSystemComputePerformancesPagedResponse(ListDbSystemComputePerformancesPage page) {
+      super(page, ListDbSystemComputePerformancesFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListDbSystemComputePerformancesPage
+      extends AbstractPage<
+          ListDbSystemComputePerformancesRequest,
+          ListDbSystemComputePerformancesResponse,
+          DbSystemComputePerformance,
+          ListDbSystemComputePerformancesPage> {
+
+    private ListDbSystemComputePerformancesPage(
+        @Nullable
+            PageContext<
+                ListDbSystemComputePerformancesRequest,
+                ListDbSystemComputePerformancesResponse,
+                DbSystemComputePerformance>
+            context,
+        @Nullable ListDbSystemComputePerformancesResponse response) {
+      super(context, response);
+    }
+
+    private static ListDbSystemComputePerformancesPage createEmptyPage() {
+      return new ListDbSystemComputePerformancesPage(null, null);
+    }
+
+    @Override
+    protected ListDbSystemComputePerformancesPage createPage(
+        @Nullable
+            PageContext<
+                ListDbSystemComputePerformancesRequest,
+                ListDbSystemComputePerformancesResponse,
+                DbSystemComputePerformance>
+            context,
+        @Nullable ListDbSystemComputePerformancesResponse response) {
+      return new ListDbSystemComputePerformancesPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListDbSystemComputePerformancesPage> createPageAsync(
+        @Nullable
+            PageContext<
+                ListDbSystemComputePerformancesRequest,
+                ListDbSystemComputePerformancesResponse,
+                DbSystemComputePerformance>
+            context,
+        ApiFuture<ListDbSystemComputePerformancesResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListDbSystemComputePerformancesFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListDbSystemComputePerformancesRequest,
+          ListDbSystemComputePerformancesResponse,
+          DbSystemComputePerformance,
+          ListDbSystemComputePerformancesPage,
+          ListDbSystemComputePerformancesFixedSizeCollection> {
+
+    private ListDbSystemComputePerformancesFixedSizeCollection(
+        @Nullable List<ListDbSystemComputePerformancesPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListDbSystemComputePerformancesFixedSizeCollection createEmptyCollection() {
+      return new ListDbSystemComputePerformancesFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListDbSystemComputePerformancesFixedSizeCollection createCollection(
+        @Nullable List<ListDbSystemComputePerformancesPage> pages, int collectionSize) {
+      return new ListDbSystemComputePerformancesFixedSizeCollection(pages, collectionSize);
     }
   }
 
@@ -17819,6 +22474,97 @@ public class OracleDatabaseClient implements BackgroundResource {
     protected ListGoldengateConnectionAssignmentsFixedSizeCollection createCollection(
         @Nullable List<ListGoldengateConnectionAssignmentsPage> pages, int collectionSize) {
       return new ListGoldengateConnectionAssignmentsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListDatabaseConnectionsPagedResponse
+      extends AbstractPagedListResponse<
+          ListDatabaseConnectionsRequest,
+          ListDatabaseConnectionsResponse,
+          DatabaseConnection,
+          ListDatabaseConnectionsPage,
+          ListDatabaseConnectionsFixedSizeCollection> {
+
+    public static ApiFuture<ListDatabaseConnectionsPagedResponse> createAsync(
+        PageContext<
+                ListDatabaseConnectionsRequest, ListDatabaseConnectionsResponse, DatabaseConnection>
+            context,
+        ApiFuture<ListDatabaseConnectionsResponse> futureResponse) {
+      ApiFuture<ListDatabaseConnectionsPage> futurePage =
+          ListDatabaseConnectionsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListDatabaseConnectionsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListDatabaseConnectionsPagedResponse(ListDatabaseConnectionsPage page) {
+      super(page, ListDatabaseConnectionsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListDatabaseConnectionsPage
+      extends AbstractPage<
+          ListDatabaseConnectionsRequest,
+          ListDatabaseConnectionsResponse,
+          DatabaseConnection,
+          ListDatabaseConnectionsPage> {
+
+    private ListDatabaseConnectionsPage(
+        @Nullable
+            PageContext<
+                ListDatabaseConnectionsRequest, ListDatabaseConnectionsResponse, DatabaseConnection>
+            context,
+        @Nullable ListDatabaseConnectionsResponse response) {
+      super(context, response);
+    }
+
+    private static ListDatabaseConnectionsPage createEmptyPage() {
+      return new ListDatabaseConnectionsPage(null, null);
+    }
+
+    @Override
+    protected ListDatabaseConnectionsPage createPage(
+        @Nullable
+            PageContext<
+                ListDatabaseConnectionsRequest, ListDatabaseConnectionsResponse, DatabaseConnection>
+            context,
+        @Nullable ListDatabaseConnectionsResponse response) {
+      return new ListDatabaseConnectionsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListDatabaseConnectionsPage> createPageAsync(
+        @Nullable
+            PageContext<
+                ListDatabaseConnectionsRequest, ListDatabaseConnectionsResponse, DatabaseConnection>
+            context,
+        ApiFuture<ListDatabaseConnectionsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListDatabaseConnectionsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListDatabaseConnectionsRequest,
+          ListDatabaseConnectionsResponse,
+          DatabaseConnection,
+          ListDatabaseConnectionsPage,
+          ListDatabaseConnectionsFixedSizeCollection> {
+
+    private ListDatabaseConnectionsFixedSizeCollection(
+        @Nullable List<ListDatabaseConnectionsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListDatabaseConnectionsFixedSizeCollection createEmptyCollection() {
+      return new ListDatabaseConnectionsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListDatabaseConnectionsFixedSizeCollection createCollection(
+        @Nullable List<ListDatabaseConnectionsPage> pages, int collectionSize) {
+      return new ListDatabaseConnectionsFixedSizeCollection(pages, collectionSize);
     }
   }
 

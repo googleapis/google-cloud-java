@@ -411,6 +411,11 @@ public class AgentServiceSettings extends ClientSettings<AgentServiceSettings> {
     return ((AgentServiceStubSettings) getStubSettings()).createAppVersionSettings();
   }
 
+  /** Returns the object with the settings used for calls to updateAppVersion. */
+  public UnaryCallSettings<UpdateAppVersionRequest, AppVersion> updateAppVersionSettings() {
+    return ((AgentServiceStubSettings) getStubSettings()).updateAppVersionSettings();
+  }
+
   /** Returns the object with the settings used for calls to deleteAppVersion. */
   public UnaryCallSettings<DeleteAppVersionRequest, Empty> deleteAppVersionSettings() {
     return ((AgentServiceStubSettings) getStubSettings()).deleteAppVersionSettings();
@@ -859,6 +864,12 @@ public class AgentServiceSettings extends ClientSettings<AgentServiceSettings> {
     public UnaryCallSettings.Builder<CreateAppVersionRequest, AppVersion>
         createAppVersionSettings() {
       return getStubSettingsBuilder().createAppVersionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateAppVersion. */
+    public UnaryCallSettings.Builder<UpdateAppVersionRequest, AppVersion>
+        updateAppVersionSettings() {
+      return getStubSettingsBuilder().updateAppVersionSettings();
     }
 
     /** Returns the builder for the settings used for calls to deleteAppVersion. */

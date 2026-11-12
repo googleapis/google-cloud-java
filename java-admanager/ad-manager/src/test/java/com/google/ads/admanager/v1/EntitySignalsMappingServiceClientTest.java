@@ -86,6 +86,7 @@ public class EntitySignalsMappingServiceClientTest {
                     .toString())
             .setEntitySignalsMappingId(-350688772)
             .addAllTaxonomyCategoryIds(new ArrayList<Long>())
+            .addAllTaxonomyCategories(new ArrayList<String>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -136,6 +137,7 @@ public class EntitySignalsMappingServiceClientTest {
                     .toString())
             .setEntitySignalsMappingId(-350688772)
             .addAllTaxonomyCategoryIds(new ArrayList<Long>())
+            .addAllTaxonomyCategories(new ArrayList<String>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -286,6 +288,7 @@ public class EntitySignalsMappingServiceClientTest {
                     .toString())
             .setEntitySignalsMappingId(-350688772)
             .addAllTaxonomyCategoryIds(new ArrayList<Long>())
+            .addAllTaxonomyCategories(new ArrayList<String>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -337,6 +340,7 @@ public class EntitySignalsMappingServiceClientTest {
                     .toString())
             .setEntitySignalsMappingId(-350688772)
             .addAllTaxonomyCategoryIds(new ArrayList<Long>())
+            .addAllTaxonomyCategories(new ArrayList<String>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -388,6 +392,7 @@ public class EntitySignalsMappingServiceClientTest {
                     .toString())
             .setEntitySignalsMappingId(-350688772)
             .addAllTaxonomyCategoryIds(new ArrayList<Long>())
+            .addAllTaxonomyCategories(new ArrayList<String>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -398,6 +403,7 @@ public class EntitySignalsMappingServiceClientTest {
                     .toString())
             .setEntitySignalsMappingId(-350688772)
             .addAllTaxonomyCategoryIds(new ArrayList<Long>())
+            .addAllTaxonomyCategories(new ArrayList<String>())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -435,6 +441,7 @@ public class EntitySignalsMappingServiceClientTest {
                       .toString())
               .setEntitySignalsMappingId(-350688772)
               .addAllTaxonomyCategoryIds(new ArrayList<Long>())
+              .addAllTaxonomyCategories(new ArrayList<String>())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateEntitySignalsMapping(entitySignalsMapping, updateMask);

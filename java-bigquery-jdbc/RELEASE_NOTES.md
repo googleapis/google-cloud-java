@@ -4,7 +4,25 @@ All notable customer-facing changes to the Google Cloud BigQuery JDBC driver (`g
 
 ---
 
-## 1.7.0 (Unreleased)
+## 1.7.0
+
+### Important
+* **Client-side usage telemetry (opt-out):** Starting in version 1.7.0, the driver collects anonymous client-side usage and diagnostic telemetry by default to help improve driver reliability.
+  * **No identifiable information collected:** Telemetry **never** collects personally identifiable information (PII), credentials, project IDs, SQL query text, query parameter values, dataset or table names, database schema information, or query result data.
+  * **What is collected:** Anonymous environment metadata (driver version, JVM major version, OS platform/version, and a locally generated anonymous correlation ID), connection outcome and authentication method type, high-level operation categories (such as `SELECT`, `INSERT`, `CREATE TABLE`), execution substrate used (REST vs. Storage APIs), latency distributions, feature usage counters, and internal error codes. Collection runs asynchronously in the background and fails silently if network access is restricted.
+  * **How to disable telemetry:** You can opt out and disable telemetry for the entire JVM lifecycle using any of the following methods:
+    * **Connection string property:** Append `EnableDiagnosticTelemetry=0;` (or `EnableDiagnosticTelemetry=false;`) to your JDBC URL:
+      ```text
+      jdbc:bigquery://https://bigquery.googleapis.com:443;ProjectId=<PROJECT_ID>;OAuthType=<AUTH_TYPE>;EnableDiagnosticTelemetry=0;
+      ```
+    * **Environment variable:**
+      ```bash
+      export BIGQUERY_JDBC_TELEMETRY_ENABLED=false
+      ```
+    * **JVM system property:**
+      ```bash
+      -DBIGQUERY_JDBC_TELEMETRY_ENABLED=false
+      ```
 
 ### Breaking changes
 * Public JDBC methods (`execute*`, `next`, `commit`, `rollback`, `close`, and getters) now consistently throw checked `SQLException` instead of unchecked `RuntimeException` or `IllegalStateException` to comply with the JDBC specification.
@@ -13,7 +31,6 @@ All notable customer-facing changes to the Google Cloud BigQuery JDBC driver (`g
 ### Features
 * Enabled Post-Quantum Cryptography (PQC) TLS cipher suites (`X25519MLKEM768` and `MLKEM1024`) by default across direct and proxied connections.
 * Exposed `QueryStatistics` on `BigQueryResultSet` for fast-path (jobless) queries.
-* Added opt-in Clearcut client telemetry support for driver usage and diagnostics.
 
 ### Bugs
 * Preserved exact UTC instants when binding `Timestamp`, `Instant`, `OffsetDateTime`, and `ZonedDateTime` parameters (including `Calendar` overloads), and bound `LocalDateTime` as `STRING` for compatibility with `DATETIME` columns.
@@ -24,8 +41,6 @@ All notable customer-facing changes to the Google Cloud BigQuery JDBC driver (`g
 * Stopped background producer threads, cancelled active gRPC streams, and released Arrow buffer memory immediately when `ResultSet.close()` is called.
 * Fixed memory leaks in `ResultSet` GC finalizer queues and per-connection logger registrations during long-running sessions.
 * Preserved default BigQuery SDK HTTP connect and read timeouts when custom timeout properties are not specified.
-
-### Performance
 * Capped the Storage Read API Arrow batch queue at 32 batches per `ResultSet` to bound heap memory usage on large result sets.
 
 ---

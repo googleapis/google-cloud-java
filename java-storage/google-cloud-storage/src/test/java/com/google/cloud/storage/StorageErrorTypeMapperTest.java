@@ -667,10 +667,76 @@ public final class StorageErrorTypeMapperTest {
         .isEqualTo("UNKNOWN");
   }
 
+  @Test(timeout = 5000L)
+  public void mapThrowable_andMapGrpcStatus_cyclicCauseChainTerminates() {
+    RuntimeException exA = new RuntimeException("A");
+    RuntimeException exB = new RuntimeException("B", exA);
+    exA.initCause(exB);
+
+    assertThat(StorageErrorTypeMapper.mapThrowable(exA)).isEqualTo("UNKNOWN");
+    assertThat(StorageErrorTypeMapper.mapGrpcStatus(Status.UNKNOWN.withCause(exA)))
+        .isEqualTo("UNKNOWN");
+
+    ExecutionException eeA = new ExecutionException("A") {};
+    CompletionException ceB = new CompletionException("B", eeA);
+    eeA.initCause(ceB);
+
+    assertThat(StorageErrorTypeMapper.mapThrowable(eeA)).isEqualTo("UNKNOWN");
+    assertThat(StorageErrorTypeMapper.mapGrpcStatus(Status.UNKNOWN.withCause(eeA)))
+        .isEqualTo("UNKNOWN");
+  }
+
   @Test
   public void mapThrowable_unknownFallback() {
     assertThat(StorageErrorTypeMapper.mapThrowable(new IllegalStateException("unexpected state")))
         .isEqualTo("UNKNOWN");
+  }
+
+  @Test
+  public void extractRpcStatusCode_extractsAndBoundsDepth() {
+    assertThat(StorageErrorTypeMapper.extractRpcStatusCode(null)).isNull();
+    assertThat(StorageErrorTypeMapper.extractRpcStatusCode(new RuntimeException("no rpc")))
+        .isNull();
+    assertThat(StorageErrorTypeMapper.extractRpcStatusCode(Status.NOT_FOUND.asRuntimeException()))
+        .isEqualTo("NOT_FOUND");
+    assertThat(StorageErrorTypeMapper.extractRpcStatusCode(Status.PERMISSION_DENIED.asException()))
+        .isEqualTo("PERMISSION_DENIED");
+
+    ApiException apiEx =
+        new ApiException(
+            new StatusRuntimeException(Status.ALREADY_EXISTS),
+            GrpcStatusCode.of(Status.Code.ALREADY_EXISTS),
+            /* retryable= */ false);
+    assertThat(StorageErrorTypeMapper.extractRpcStatusCode(new RuntimeException(apiEx)))
+        .isEqualTo("ALREADY_EXISTS");
+
+    Throwable deep = Status.UNAVAILABLE.asRuntimeException();
+    for (int i = 0; i < 25; i++) {
+      deep = new RuntimeException("wrap " + i, deep);
+    }
+    assertThat(StorageErrorTypeMapper.extractRpcStatusCode(deep)).isNull();
+  }
+
+  @Test
+  public void extractHttpStatusCode_extractsAndBoundsDepth() {
+    assertThat(StorageErrorTypeMapper.extractHttpStatusCode(null)).isNull();
+    assertThat(StorageErrorTypeMapper.extractHttpStatusCode(new RuntimeException("no http")))
+        .isNull();
+    assertThat(StorageErrorTypeMapper.extractHttpStatusCode(new StorageException(0, "No status")))
+        .isNull();
+    assertThat(StorageErrorTypeMapper.extractHttpStatusCode(new StorageException(404, "Not Found")))
+        .isEqualTo(404L);
+
+    HttpResponseException hre =
+        new HttpResponseException.Builder(429, "Too Many Requests", new HttpHeaders()).build();
+    assertThat(StorageErrorTypeMapper.extractHttpStatusCode(new RuntimeException(hre)))
+        .isEqualTo(429L);
+
+    Throwable deep = new StorageException(503, "Service Unavailable");
+    for (int i = 0; i < 25; i++) {
+      deep = new RuntimeException("wrap " + i, deep);
+    }
+    assertThat(StorageErrorTypeMapper.extractHttpStatusCode(deep)).isNull();
   }
 
   private static WatchdogTimeoutException createWatchdogTimeoutException() throws Exception {

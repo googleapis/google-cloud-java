@@ -127,7 +127,11 @@ final class BlobReadChannelV2 extends BaseStorageReadChannel<StorageObject> {
     public ReadChannel restore() {
       BlobReadChannelV2 channel =
           new BlobReadChannelV2(
-              request.getObject(), request.getOptions(), BlobReadChannelContext.from(options));
+              request.getObject(),
+              request.getOptions(),
+              BlobReadChannelContext.from(options),
+              StorageClientMetrics.createMultiStepContext(
+                  options.getStorageClientMetrics(), "ReadObject"));
       channel.setByteRangeSpec(request.getByteRangeSpec());
       if (chunkSize != null) {
         channel.setChunkSize(chunkSize);

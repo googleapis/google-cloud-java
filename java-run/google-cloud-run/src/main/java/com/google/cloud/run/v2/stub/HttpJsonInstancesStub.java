@@ -43,7 +43,13 @@ import com.google.cloud.run.v2.ListInstancesRequest;
 import com.google.cloud.run.v2.ListInstancesResponse;
 import com.google.cloud.run.v2.StartInstanceRequest;
 import com.google.cloud.run.v2.StopInstanceRequest;
+import com.google.cloud.run.v2.UpdateInstanceRequest;
 import com.google.common.collect.ImmutableMap;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
@@ -107,6 +113,52 @@ public class HttpJsonInstancesStub extends InstancesStub {
                       .build())
               .setOperationSnapshotFactory(
                   (CreateInstanceRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<UpdateInstanceRequest, Operation>
+      updateInstanceMethodDescriptor =
+          ApiMethodDescriptor.<UpdateInstanceRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.run.v2.Instances/UpdateInstance")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateInstanceRequest>newBuilder()
+                      .setPath(
+                          "/v2/{instance.name=projects/*/locations/*/instances/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateInstanceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "instance.name", request.getInstance().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateInstanceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields, "allowMissing", request.getAllowMissing());
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(
+                                fields, "validateOnly", request.getValidateOnly());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("instance", request.getInstance(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (UpdateInstanceRequest request, Operation response) ->
                       HttpJsonOperationSnapshot.create(response))
               .build();
 
@@ -302,9 +354,121 @@ public class HttpJsonInstancesStub extends InstancesStub {
                       HttpJsonOperationSnapshot.create(response))
               .build();
 
+  private static final ApiMethodDescriptor<GetIamPolicyRequest, Policy>
+      getIamPolicyMethodDescriptor =
+          ApiMethodDescriptor.<GetIamPolicyRequest, Policy>newBuilder()
+              .setFullMethodName("google.cloud.run.v2.Instances/GetIamPolicy")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetIamPolicyRequest>newBuilder()
+                      .setPath(
+                          "/v2/{resource=projects/*/locations/*/instances/*}:getIamPolicy",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetIamPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "resource", request.getResource());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetIamPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "options", request.getOptions());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Policy>newBuilder()
+                      .setDefaultInstance(Policy.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<SetIamPolicyRequest, Policy>
+      setIamPolicyMethodDescriptor =
+          ApiMethodDescriptor.<SetIamPolicyRequest, Policy>newBuilder()
+              .setFullMethodName("google.cloud.run.v2.Instances/SetIamPolicy")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<SetIamPolicyRequest>newBuilder()
+                      .setPath(
+                          "/v2/{resource=projects/*/locations/*/instances/*}:setIamPolicy",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<SetIamPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "resource", request.getResource());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<SetIamPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearResource().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Policy>newBuilder()
+                      .setDefaultInstance(Policy.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsMethodDescriptor =
+          ApiMethodDescriptor.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
+              .setFullMethodName("google.cloud.run.v2.Instances/TestIamPermissions")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<TestIamPermissionsRequest>newBuilder()
+                      .setPath(
+                          "/v2/{resource=projects/*/locations/*/instances/*}:testIamPermissions",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<TestIamPermissionsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "resource", request.getResource());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<TestIamPermissionsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearResource().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<TestIamPermissionsResponse>newBuilder()
+                      .setDefaultInstance(TestIamPermissionsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private final UnaryCallable<CreateInstanceRequest, Operation> createInstanceCallable;
   private final OperationCallable<CreateInstanceRequest, Instance, Instance>
       createInstanceOperationCallable;
+  private final UnaryCallable<UpdateInstanceRequest, Operation> updateInstanceCallable;
+  private final OperationCallable<UpdateInstanceRequest, Instance, Instance>
+      updateInstanceOperationCallable;
   private final UnaryCallable<DeleteInstanceRequest, Operation> deleteInstanceCallable;
   private final OperationCallable<DeleteInstanceRequest, Instance, Instance>
       deleteInstanceOperationCallable;
@@ -318,6 +482,10 @@ public class HttpJsonInstancesStub extends InstancesStub {
   private final UnaryCallable<StartInstanceRequest, Operation> startInstanceCallable;
   private final OperationCallable<StartInstanceRequest, Instance, Instance>
       startInstanceOperationCallable;
+  private final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable;
+  private final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable;
+  private final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonOperationsStub httpJsonOperationsStub;
@@ -325,6 +493,8 @@ public class HttpJsonInstancesStub extends InstancesStub {
 
   private static final PathTemplate CREATE_INSTANCE_0_PATH_TEMPLATE =
       PathTemplate.create("projects/*/locations/{location=*}");
+  private static final PathTemplate UPDATE_INSTANCE_0_PATH_TEMPLATE =
+      PathTemplate.create("projects/*/locations/{location=*}/**");
   private static final PathTemplate DELETE_INSTANCE_0_PATH_TEMPLATE =
       PathTemplate.create("projects/*/locations/{location=*}/**");
   private static final PathTemplate GET_INSTANCE_0_PATH_TEMPLATE =
@@ -409,6 +579,22 @@ public class HttpJsonInstancesStub extends InstancesStub {
                 })
             .setResourceNameExtractor(request -> request.getParent())
             .build();
+    HttpJsonCallSettings<UpdateInstanceRequest, Operation> updateInstanceTransportSettings =
+        HttpJsonCallSettings.<UpdateInstanceRequest, Operation>newBuilder()
+            .setMethodDescriptor(updateInstanceMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  if (request.getInstance() != null) {
+                    builder.add(
+                        request.getInstance().getName(),
+                        "location",
+                        UPDATE_INSTANCE_0_PATH_TEMPLATE);
+                  }
+                  return builder.build();
+                })
+            .build();
     HttpJsonCallSettings<DeleteInstanceRequest, Operation> deleteInstanceTransportSettings =
         HttpJsonCallSettings.<DeleteInstanceRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteInstanceMethodDescriptor)
@@ -470,6 +656,43 @@ public class HttpJsonInstancesStub extends InstancesStub {
                 })
             .setResourceNameExtractor(request -> request.getName())
             .build();
+    HttpJsonCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
+        HttpJsonCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
+            .setMethodDescriptor(getIamPolicyMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getResource())
+            .build();
+    HttpJsonCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
+        HttpJsonCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
+            .setMethodDescriptor(setIamPolicyMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getResource())
+            .build();
+    HttpJsonCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
+        testIamPermissionsTransportSettings =
+            HttpJsonCallSettings.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
+                .setMethodDescriptor(testIamPermissionsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("resource", String.valueOf(request.getResource()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getResource())
+                .build();
 
     this.createInstanceCallable =
         callableFactory.createUnaryCallable(
@@ -478,6 +701,15 @@ public class HttpJsonInstancesStub extends InstancesStub {
         callableFactory.createOperationCallable(
             createInstanceTransportSettings,
             settings.createInstanceOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.updateInstanceCallable =
+        callableFactory.createUnaryCallable(
+            updateInstanceTransportSettings, settings.updateInstanceSettings(), clientContext);
+    this.updateInstanceOperationCallable =
+        callableFactory.createOperationCallable(
+            updateInstanceTransportSettings,
+            settings.updateInstanceOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
     this.deleteInstanceCallable =
@@ -516,6 +748,17 @@ public class HttpJsonInstancesStub extends InstancesStub {
             settings.startInstanceOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.getIamPolicyCallable =
+        callableFactory.createUnaryCallable(
+            getIamPolicyTransportSettings, settings.getIamPolicySettings(), clientContext);
+    this.setIamPolicyCallable =
+        callableFactory.createUnaryCallable(
+            setIamPolicyTransportSettings, settings.setIamPolicySettings(), clientContext);
+    this.testIamPermissionsCallable =
+        callableFactory.createUnaryCallable(
+            testIamPermissionsTransportSettings,
+            settings.testIamPermissionsSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -525,11 +768,15 @@ public class HttpJsonInstancesStub extends InstancesStub {
   public static List<ApiMethodDescriptor> getMethodDescriptors() {
     List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
     methodDescriptors.add(createInstanceMethodDescriptor);
+    methodDescriptors.add(updateInstanceMethodDescriptor);
     methodDescriptors.add(deleteInstanceMethodDescriptor);
     methodDescriptors.add(getInstanceMethodDescriptor);
     methodDescriptors.add(listInstancesMethodDescriptor);
     methodDescriptors.add(stopInstanceMethodDescriptor);
     methodDescriptors.add(startInstanceMethodDescriptor);
+    methodDescriptors.add(getIamPolicyMethodDescriptor);
+    methodDescriptors.add(setIamPolicyMethodDescriptor);
+    methodDescriptors.add(testIamPermissionsMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -546,6 +793,17 @@ public class HttpJsonInstancesStub extends InstancesStub {
   public OperationCallable<CreateInstanceRequest, Instance, Instance>
       createInstanceOperationCallable() {
     return createInstanceOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateInstanceRequest, Operation> updateInstanceCallable() {
+    return updateInstanceCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateInstanceRequest, Instance, Instance>
+      updateInstanceOperationCallable() {
+    return updateInstanceOperationCallable;
   }
 
   @Override
@@ -595,6 +853,22 @@ public class HttpJsonInstancesStub extends InstancesStub {
   public OperationCallable<StartInstanceRequest, Instance, Instance>
       startInstanceOperationCallable() {
     return startInstanceOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
+    return getIamPolicyCallable;
+  }
+
+  @Override
+  public UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
+    return setIamPolicyCallable;
+  }
+
+  @Override
+  public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsCallable() {
+    return testIamPermissionsCallable;
   }
 
   @Override

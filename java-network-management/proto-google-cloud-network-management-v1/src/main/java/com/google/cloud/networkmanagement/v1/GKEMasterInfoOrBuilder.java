@@ -30,7 +30,12 @@ public interface GKEMasterInfoOrBuilder
    *
    *
    * <pre>
-   * URI of a GKE cluster.
+   * URI of the GKE cluster.
+   * Format:
+   * * `projects/{project_id}/locations/{location}/clusters/{cluster_id}`
+   * (regional cluster)
+   * * `projects/{project_id}/zones/{zone}/clusters/{cluster_id}` (zonal
+   * cluster)
    * </pre>
    *
    * <code>string cluster_uri = 2;</code>
@@ -43,7 +48,12 @@ public interface GKEMasterInfoOrBuilder
    *
    *
    * <pre>
-   * URI of a GKE cluster.
+   * URI of the GKE cluster.
+   * Format:
+   * * `projects/{project_id}/locations/{location}/clusters/{cluster_id}`
+   * (regional cluster)
+   * * `projects/{project_id}/zones/{zone}/clusters/{cluster_id}` (zonal
+   * cluster)
    * </pre>
    *
    * <code>string cluster_uri = 2;</code>
@@ -56,7 +66,8 @@ public interface GKEMasterInfoOrBuilder
    *
    *
    * <pre>
-   * URI of a GKE cluster network.
+   * URI of the GKE cluster network.
+   * Format: `projects/{project_id}/global/networks/{network_id}`
    * </pre>
    *
    * <code>string cluster_network_uri = 4;</code>
@@ -69,7 +80,8 @@ public interface GKEMasterInfoOrBuilder
    *
    *
    * <pre>
-   * URI of a GKE cluster network.
+   * URI of the GKE cluster network.
+   * Format: `projects/{project_id}/global/networks/{network_id}`
    * </pre>
    *
    * <code>string cluster_network_uri = 4;</code>

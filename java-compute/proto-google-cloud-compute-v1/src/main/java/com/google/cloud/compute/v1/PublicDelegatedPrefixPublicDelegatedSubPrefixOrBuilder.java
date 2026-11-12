@@ -361,6 +361,51 @@ public interface PublicDelegatedPrefixPublicDelegatedSubPrefixOrBuilder
    *
    *
    * <pre>
+   * Output only. [Output Only] The purpose of the sub public delegated prefix. Inherited
+   * from parent prefix.
+   * Check the Purpose enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string purpose = 316407070;</code>
+   *
+   * @return Whether the purpose field is set.
+   */
+  boolean hasPurpose();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] The purpose of the sub public delegated prefix. Inherited
+   * from parent prefix.
+   * Check the Purpose enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string purpose = 316407070;</code>
+   *
+   * @return The purpose.
+   */
+  java.lang.String getPurpose();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] The purpose of the sub public delegated prefix. Inherited
+   * from parent prefix.
+   * Check the Purpose enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string purpose = 316407070;</code>
+   *
+   * @return The bytes for purpose.
+   */
+  com.google.protobuf.ByteString getPurposeBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. [Output Only] The region of the sub public delegated prefix if it is
    * regional. If absent, the sub prefix is global.
    * </pre>

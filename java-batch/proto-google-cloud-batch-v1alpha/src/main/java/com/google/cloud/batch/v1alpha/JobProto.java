@@ -285,7 +285,7 @@ public final class JobProto extends com.google.protobuf.GeneratedFile {
           + "\004Type\022\024\n"
           + "\020TYPE_UNSPECIFIED\020\000\022\025\n"
           + "\021JOB_STATE_CHANGED\020\001\022\026\n"
-          + "\022TASK_STATE_CHANGED\020\002\"\303\027\n"
+          + "\022TASK_STATE_CHANGED\020\002\"\340\030\n"
           + "\020AllocationPolicy\022M\n"
           + "\010location\030\001 \001(\0132;.google.c"
           + "loud.batch.v1alpha.AllocationPolicy.LocationPolicy\022Q\n"
@@ -374,10 +374,14 @@ public final class JobProto extends com.google.protobuf.GeneratedFile {
           + "\027InstanceSelectionsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022M\n"
           + "\005value\030\002 \001(\0132>.google.cloud.b"
-          + "atch.v1alpha.AllocationPolicy.InstanceSelection:\0028\001\032R\n"
+          + "atch.v1alpha.AllocationPolicy.InstanceSelection:\0028\001\032\356\001\n"
           + "\021InstanceSelection\022\033\n\r"
           + "machine_types\030\001 \003(\tB\004\342A\001\002\022\027\n"
-          + "\004rank\030\002 \001(\005B\004\342A\001\001H\000\210\001\001B\007\n"
+          + "\004rank\030\002 \001(\005B\004\342A\001\001H\000\210\001\001\022N\n"
+          + "\005disks\030\003 \003(\01329.google.cloud.ba"
+          + "tch.v1alpha.AllocationPolicy.AttachedDiskB\004\342A\001\001\022J\n"
+          + "\tboot_disk\030\004 \001(\01321.google.clou"
+          + "d.batch.v1alpha.AllocationPolicy.DiskB\004\342A\001\001B\007\n"
           + "\005_rank\032-\n"
           + "\013LabelsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
@@ -416,15 +420,15 @@ public final class JobProto extends com.google.protobuf.GeneratedFile {
           + "\035SCHEDULING_POLICY_UNSPECIFIED\020\000\022\027\n"
           + "\023AS_SOON_AS_POSSIBLE\020\001\022\014\n"
           + "\010IN_ORDER\020\002:o\352Al\n"
-          + "\036batch.googleapis.com/TaskGroup\022J"
-          + "projects/{project}/locations/{location}/jobs/{job}/taskGroups/{task_group}\"/\n"
+          + "\036batch.googleapis.com/TaskGroup\022Jpro"
+          + "jects/{project}/locations/{location}/jobs/{job}/taskGroups/{task_group}\"/\n"
           + "\016ServiceAccount\022\r\n"
           + "\005email\030\001 \001(\t\022\016\n"
           + "\006scopes\030\002 \003(\tB\302\001\n"
-          + "\036com.google.cloud.batch.v1alphaB\010JobProtoP\001Z4cloud.google.com/go/batch/ap"
-          + "iv1alpha/batchpb;batchpb\242\002\003GCB\252\002\032Google."
-          + "Cloud.Batch.V1Alpha\312\002\032Google\\Cloud\\Batch"
-          + "\\V1alpha\352\002\035Google::Cloud::Batch::V1alphab\006proto3"
+          + "\036com.google.cloud.batch.v1alphaB\010JobProtoP\001Z4cloud.google.com/go/batch/apiv1"
+          + "alpha/batchpb;batchpb\242\002\003GCB\252\002\032Google.Clo"
+          + "ud.Batch.V1Alpha\312\002\032Google\\Cloud\\Batch\\V1"
+          + "alpha\352\002\035Google::Cloud::Batch::V1alphab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -687,7 +691,7 @@ public final class JobProto extends com.google.protobuf.GeneratedFile {
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_batch_v1alpha_AllocationPolicy_InstanceSelection_descriptor,
             new java.lang.String[] {
-              "MachineTypes", "Rank",
+              "MachineTypes", "Rank", "Disks", "BootDisk",
             });
     internal_static_google_cloud_batch_v1alpha_AllocationPolicy_LabelsEntry_descriptor =
         internal_static_google_cloud_batch_v1alpha_AllocationPolicy_descriptor.getNestedType(11);

@@ -16,8 +16,16 @@
 
 package com.google.cloud.storage;
 
+import static com.google.cloud.storage.StorageClientMetrics.KEY_ERROR_TYPE;
+import static com.google.cloud.storage.StorageClientMetrics.KEY_GCP_STORAGE_OPERATION;
+import static com.google.cloud.storage.StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_ATTEMPTS;
+import static com.google.cloud.storage.StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_ERRORS;
+import static com.google.cloud.storage.StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_OPERATIONS;
+import static com.google.cloud.storage.StorageErrorTypeMapper.STATUS_OK;
+import static com.google.cloud.storage.StorageErrorTypeMapper.STATUS_UNAVAILABLE;
+import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertThrows;
 import static org.junit.Assert.assertTrue;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.times;
@@ -32,6 +40,12 @@ import com.google.cloud.storage.spi.v1.StorageRpc;
 import com.google.cloud.storage.spi.v1.StorageRpc.RewriteRequest;
 import com.google.cloud.storage.spi.v1.StorageRpc.RewriteResponse;
 import com.google.common.collect.ImmutableMap;
+import io.opentelemetry.api.common.AttributeKey;
+import io.opentelemetry.sdk.metrics.SdkMeterProvider;
+import io.opentelemetry.sdk.metrics.data.LongPointData;
+import io.opentelemetry.sdk.metrics.data.MetricData;
+import io.opentelemetry.sdk.testing.exporter.InMemoryMetricReader;
+import java.util.Collection;
 import java.util.Map;
 import org.junit.Before;
 import org.junit.Test;
@@ -218,7 +232,7 @@ public class CopyWriterTest {
     HttpStorageOptions metricsOptions =
         options.toBuilder()
             .setEnableOtelMetrics(true)
-            .setMeterProvider(io.opentelemetry.sdk.metrics.SdkMeterProvider.builder().build())
+            .setMeterProvider(SdkMeterProvider.builder().build())
             .build();
     Retrier retrierMock = Mockito.mock(Retrier.class);
     copyWriter = new HttpCopyWriter(metricsOptions, RESPONSE_WITH_OBJECT, retrierMock);
@@ -227,7 +241,119 @@ public class CopyWriterTest {
         ArgumentCaptor.forClass(StorageMetricsContext.class);
     verify(retrierMock).run(any(), any(), any(), captor.capture());
     StorageMetricsContext context = captor.getValue();
-    assertNotNull(context);
-    assertEquals("RewriteObject", context.getOperationName());
+    assertThat(context).isNotNull();
+    assertThat(context.getOperationName()).isEqualTo("RewriteObject");
+    assertThat(context.shouldRecordOperationOnRetrierExit()).isFalse();
+  }
+
+  @Test
+  public void testMultiChunkCopyRecordsSingleOperationAndMultipleAttempts() {
+    InMemoryMetricReader metricReader = InMemoryMetricReader.create();
+    SdkMeterProvider meterProvider =
+        SdkMeterProvider.builder().registerMetricReader(metricReader).build();
+    HttpStorageOptions metricsOptions =
+        options.toBuilder().setEnableOtelMetrics(true).setMeterProvider(meterProvider).build();
+    when(storageRpcMock.continueRewrite(RESPONSE_WITH_OBJECT))
+        .thenReturn(RESPONSE_WITH_OBJECT, RESPONSE_WITH_OBJECT_DONE);
+
+    copyWriter =
+        new HttpCopyWriter(metricsOptions, RESPONSE_WITH_OBJECT, metricsOptions.createRetrier());
+    Blob copied = copyWriter.getResult();
+    assertThat(copied.asBlobInfo()).isEqualTo(RESULT_INFO);
+
+    Collection<MetricData> metrics = metricReader.collectAllMetrics();
+    assertThat(
+            getCounterValueWithAttr(
+                metrics,
+                METRIC_GCP_STORAGE_CLIENT_OPERATIONS,
+                KEY_GCP_STORAGE_OPERATION,
+                "RewriteObject"))
+        .isEqualTo(1L);
+    assertThat(
+            getCounterValueWithAttr(
+                metrics, METRIC_GCP_STORAGE_CLIENT_OPERATIONS, KEY_ERROR_TYPE, STATUS_OK))
+        .isEqualTo(1L);
+    assertThat(
+            getCounterValueWithAttr(
+                metrics,
+                METRIC_GCP_STORAGE_CLIENT_ATTEMPTS,
+                KEY_GCP_STORAGE_OPERATION,
+                "RewriteObject"))
+        .isEqualTo(2L);
+  }
+
+  @Test
+  public void testRestoredCopyWriterRecordsMultiStepMetrics() {
+    InMemoryMetricReader metricReader = InMemoryMetricReader.create();
+    SdkMeterProvider meterProvider =
+        SdkMeterProvider.builder().registerMetricReader(metricReader).build();
+    HttpStorageOptions metricsOptions =
+        options.toBuilder().setEnableOtelMetrics(true).setMeterProvider(meterProvider).build();
+    when(storageRpcMock.continueRewrite(RESPONSE_WITH_OBJECT))
+        .thenReturn(RESPONSE_WITH_OBJECT, RESPONSE_WITH_OBJECT_DONE);
+
+    copyWriter =
+        new HttpCopyWriter(metricsOptions, RESPONSE_WITH_OBJECT, metricsOptions.createRetrier());
+    RestorableState<CopyWriter> captured = copyWriter.capture();
+    CopyWriter restored = captured.restore();
+    Blob copied = restored.getResult();
+    assertThat(copied.asBlobInfo()).isEqualTo(RESULT_INFO);
+
+    Collection<MetricData> metrics = metricReader.collectAllMetrics();
+    assertThat(
+            getCounterValueWithAttr(
+                metrics,
+                METRIC_GCP_STORAGE_CLIENT_OPERATIONS,
+                KEY_GCP_STORAGE_OPERATION,
+                "RewriteObject"))
+        .isEqualTo(1L);
+    assertThat(
+            getCounterValueWithAttr(
+                metrics,
+                METRIC_GCP_STORAGE_CLIENT_ATTEMPTS,
+                KEY_GCP_STORAGE_OPERATION,
+                "RewriteObject"))
+        .isEqualTo(2L);
+  }
+
+  @Test
+  public void testCopyChunkFailureRecordsErrorOperation() {
+    InMemoryMetricReader metricReader = InMemoryMetricReader.create();
+    SdkMeterProvider meterProvider =
+        SdkMeterProvider.builder().registerMetricReader(metricReader).build();
+    HttpStorageOptions metricsOptions =
+        options.toBuilder().setEnableOtelMetrics(true).setMeterProvider(meterProvider).build();
+    when(storageRpcMock.continueRewrite(RESPONSE_WITH_OBJECT))
+        .thenThrow(new StorageException(503, "Service Unavailable"));
+
+    copyWriter =
+        new HttpCopyWriter(metricsOptions, RESPONSE_WITH_OBJECT, metricsOptions.createRetrier());
+    assertThrows(StorageException.class, () -> copyWriter.copyChunk());
+
+    Collection<MetricData> metrics = metricReader.collectAllMetrics();
+    assertThat(
+            getCounterValueWithAttr(
+                metrics, METRIC_GCP_STORAGE_CLIENT_OPERATIONS, KEY_ERROR_TYPE, STATUS_UNAVAILABLE))
+        .isEqualTo(1L);
+    assertThat(
+            getCounterValueWithAttr(
+                metrics, METRIC_GCP_STORAGE_CLIENT_ERRORS, KEY_ERROR_TYPE, STATUS_UNAVAILABLE))
+        .isEqualTo(1L);
+  }
+
+  private static long getCounterValueWithAttr(
+      Collection<MetricData> metrics,
+      String metricName,
+      AttributeKey<String> key,
+      String expectedValue) {
+    for (MetricData md : metrics) {
+      if (md.getName().equals(metricName) || md.getName().equals(metricName.replace(".", "/"))) {
+        return md.getLongSumData().getPoints().stream()
+            .filter(p -> expectedValue.equals(p.getAttributes().get(key)))
+            .mapToLong(LongPointData::getValue)
+            .sum();
+      }
+    }
+    return 0L;
   }
 }

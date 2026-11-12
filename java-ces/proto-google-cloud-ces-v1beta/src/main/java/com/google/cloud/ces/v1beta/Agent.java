@@ -2915,6 +2915,759 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public interface RemoteA2aAgentOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.ces.v1beta.Agent.RemoteA2aAgent)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The A2A connection configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.RemoteA2aConfig a2a_config = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return Whether the a2aConfig field is set.
+     */
+    boolean hasA2AConfig();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The A2A connection configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.RemoteA2aConfig a2a_config = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The a2aConfig.
+     */
+    com.google.cloud.ces.v1beta.RemoteA2aConfig getA2AConfig();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The A2A connection configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.RemoteA2aConfig a2a_config = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    com.google.cloud.ces.v1beta.RemoteA2aConfigOrBuilder getA2AConfigOrBuilder();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The agent which will transfer execution to a remote
+   * [A2A](https://github.com/a2aproject/A2A) agent.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.ces.v1beta.Agent.RemoteA2aAgent}
+   */
+  public static final class RemoteA2aAgent extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.ces.v1beta.Agent.RemoteA2aAgent)
+      RemoteA2aAgentOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 6,
+          /* suffix= */ "",
+          "RemoteA2aAgent");
+    }
+
+    // Use RemoteA2aAgent.newBuilder() to construct.
+    private RemoteA2aAgent(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private RemoteA2aAgent() {}
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.ces.v1beta.AgentProto
+          .internal_static_google_cloud_ces_v1beta_Agent_RemoteA2aAgent_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.ces.v1beta.AgentProto
+          .internal_static_google_cloud_ces_v1beta_Agent_RemoteA2aAgent_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.ces.v1beta.Agent.RemoteA2aAgent.class,
+              com.google.cloud.ces.v1beta.Agent.RemoteA2aAgent.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int A2A_CONFIG_FIELD_NUMBER = 1;
+    private com.google.cloud.ces.v1beta.RemoteA2aConfig a2AConfig_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The A2A connection configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.RemoteA2aConfig a2a_config = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return Whether the a2aConfig field is set.
+     */
+    @java.lang.Override
+    public boolean hasA2AConfig() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The A2A connection configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.RemoteA2aConfig a2a_config = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The a2aConfig.
+     */
+    @java.lang.Override
+    public com.google.cloud.ces.v1beta.RemoteA2aConfig getA2AConfig() {
+      return a2AConfig_ == null
+          ? com.google.cloud.ces.v1beta.RemoteA2aConfig.getDefaultInstance()
+          : a2AConfig_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The A2A connection configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.RemoteA2aConfig a2a_config = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.ces.v1beta.RemoteA2aConfigOrBuilder getA2AConfigOrBuilder() {
+      return a2AConfig_ == null
+          ? com.google.cloud.ces.v1beta.RemoteA2aConfig.getDefaultInstance()
+          : a2AConfig_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(1, getA2AConfig());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getA2AConfig());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.ces.v1beta.Agent.RemoteA2aAgent)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.ces.v1beta.Agent.RemoteA2aAgent other =
+          (com.google.cloud.ces.v1beta.Agent.RemoteA2aAgent) obj;
+
+      if (hasA2AConfig() != other.hasA2AConfig()) return false;
+      if (hasA2AConfig()) {
+        if (!getA2AConfig().equals(other.getA2AConfig())) return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasA2AConfig()) {
+        hash = (37 * hash) + A2A_CONFIG_FIELD_NUMBER;
+        hash = (53 * hash) + getA2AConfig().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.ces.v1beta.Agent.RemoteA2aAgent parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.ces.v1beta.Agent.RemoteA2aAgent parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.ces.v1beta.Agent.RemoteA2aAgent parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.ces.v1beta.Agent.RemoteA2aAgent parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.ces.v1beta.Agent.RemoteA2aAgent parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.ces.v1beta.Agent.RemoteA2aAgent parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.ces.v1beta.Agent.RemoteA2aAgent parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.ces.v1beta.Agent.RemoteA2aAgent parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.ces.v1beta.Agent.RemoteA2aAgent parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.ces.v1beta.Agent.RemoteA2aAgent parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.ces.v1beta.Agent.RemoteA2aAgent parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.ces.v1beta.Agent.RemoteA2aAgent parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(com.google.cloud.ces.v1beta.Agent.RemoteA2aAgent prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The agent which will transfer execution to a remote
+     * [A2A](https://github.com/a2aproject/A2A) agent.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.ces.v1beta.Agent.RemoteA2aAgent}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.ces.v1beta.Agent.RemoteA2aAgent)
+        com.google.cloud.ces.v1beta.Agent.RemoteA2aAgentOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.ces.v1beta.AgentProto
+            .internal_static_google_cloud_ces_v1beta_Agent_RemoteA2aAgent_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.ces.v1beta.AgentProto
+            .internal_static_google_cloud_ces_v1beta_Agent_RemoteA2aAgent_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.ces.v1beta.Agent.RemoteA2aAgent.class,
+                com.google.cloud.ces.v1beta.Agent.RemoteA2aAgent.Builder.class);
+      }
+
+      // Construct using com.google.cloud.ces.v1beta.Agent.RemoteA2aAgent.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+          internalGetA2AConfigFieldBuilder();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        a2AConfig_ = null;
+        if (a2AConfigBuilder_ != null) {
+          a2AConfigBuilder_.dispose();
+          a2AConfigBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.ces.v1beta.AgentProto
+            .internal_static_google_cloud_ces_v1beta_Agent_RemoteA2aAgent_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.ces.v1beta.Agent.RemoteA2aAgent getDefaultInstanceForType() {
+        return com.google.cloud.ces.v1beta.Agent.RemoteA2aAgent.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.ces.v1beta.Agent.RemoteA2aAgent build() {
+        com.google.cloud.ces.v1beta.Agent.RemoteA2aAgent result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.ces.v1beta.Agent.RemoteA2aAgent buildPartial() {
+        com.google.cloud.ces.v1beta.Agent.RemoteA2aAgent result =
+            new com.google.cloud.ces.v1beta.Agent.RemoteA2aAgent(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.google.cloud.ces.v1beta.Agent.RemoteA2aAgent result) {
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.a2AConfig_ = a2AConfigBuilder_ == null ? a2AConfig_ : a2AConfigBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.ces.v1beta.Agent.RemoteA2aAgent) {
+          return mergeFrom((com.google.cloud.ces.v1beta.Agent.RemoteA2aAgent) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.ces.v1beta.Agent.RemoteA2aAgent other) {
+        if (other == com.google.cloud.ces.v1beta.Agent.RemoteA2aAgent.getDefaultInstance())
+          return this;
+        if (other.hasA2AConfig()) {
+          mergeA2AConfig(other.getA2AConfig());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  input.readMessage(
+                      internalGetA2AConfigFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.cloud.ces.v1beta.RemoteA2aConfig a2AConfig_;
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.cloud.ces.v1beta.RemoteA2aConfig,
+              com.google.cloud.ces.v1beta.RemoteA2aConfig.Builder,
+              com.google.cloud.ces.v1beta.RemoteA2aConfigOrBuilder>
+          a2AConfigBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The A2A connection configuration.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.ces.v1beta.RemoteA2aConfig a2a_config = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return Whether the a2aConfig field is set.
+       */
+      public boolean hasA2AConfig() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The A2A connection configuration.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.ces.v1beta.RemoteA2aConfig a2a_config = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return The a2aConfig.
+       */
+      public com.google.cloud.ces.v1beta.RemoteA2aConfig getA2AConfig() {
+        if (a2AConfigBuilder_ == null) {
+          return a2AConfig_ == null
+              ? com.google.cloud.ces.v1beta.RemoteA2aConfig.getDefaultInstance()
+              : a2AConfig_;
+        } else {
+          return a2AConfigBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The A2A connection configuration.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.ces.v1beta.RemoteA2aConfig a2a_config = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder setA2AConfig(com.google.cloud.ces.v1beta.RemoteA2aConfig value) {
+        if (a2AConfigBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          a2AConfig_ = value;
+        } else {
+          a2AConfigBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The A2A connection configuration.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.ces.v1beta.RemoteA2aConfig a2a_config = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder setA2AConfig(
+          com.google.cloud.ces.v1beta.RemoteA2aConfig.Builder builderForValue) {
+        if (a2AConfigBuilder_ == null) {
+          a2AConfig_ = builderForValue.build();
+        } else {
+          a2AConfigBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The A2A connection configuration.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.ces.v1beta.RemoteA2aConfig a2a_config = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder mergeA2AConfig(com.google.cloud.ces.v1beta.RemoteA2aConfig value) {
+        if (a2AConfigBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)
+              && a2AConfig_ != null
+              && a2AConfig_ != com.google.cloud.ces.v1beta.RemoteA2aConfig.getDefaultInstance()) {
+            getA2AConfigBuilder().mergeFrom(value);
+          } else {
+            a2AConfig_ = value;
+          }
+        } else {
+          a2AConfigBuilder_.mergeFrom(value);
+        }
+        if (a2AConfig_ != null) {
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The A2A connection configuration.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.ces.v1beta.RemoteA2aConfig a2a_config = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder clearA2AConfig() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        a2AConfig_ = null;
+        if (a2AConfigBuilder_ != null) {
+          a2AConfigBuilder_.dispose();
+          a2AConfigBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The A2A connection configuration.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.ces.v1beta.RemoteA2aConfig a2a_config = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public com.google.cloud.ces.v1beta.RemoteA2aConfig.Builder getA2AConfigBuilder() {
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return internalGetA2AConfigFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The A2A connection configuration.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.ces.v1beta.RemoteA2aConfig a2a_config = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public com.google.cloud.ces.v1beta.RemoteA2aConfigOrBuilder getA2AConfigOrBuilder() {
+        if (a2AConfigBuilder_ != null) {
+          return a2AConfigBuilder_.getMessageOrBuilder();
+        } else {
+          return a2AConfig_ == null
+              ? com.google.cloud.ces.v1beta.RemoteA2aConfig.getDefaultInstance()
+              : a2AConfig_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The A2A connection configuration.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.ces.v1beta.RemoteA2aConfig a2a_config = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.cloud.ces.v1beta.RemoteA2aConfig,
+              com.google.cloud.ces.v1beta.RemoteA2aConfig.Builder,
+              com.google.cloud.ces.v1beta.RemoteA2aConfigOrBuilder>
+          internalGetA2AConfigFieldBuilder() {
+        if (a2AConfigBuilder_ == null) {
+          a2AConfigBuilder_ =
+              new com.google.protobuf.SingleFieldBuilder<
+                  com.google.cloud.ces.v1beta.RemoteA2aConfig,
+                  com.google.cloud.ces.v1beta.RemoteA2aConfig.Builder,
+                  com.google.cloud.ces.v1beta.RemoteA2aConfigOrBuilder>(
+                  getA2AConfig(), getParentForChildren(), isClean());
+          a2AConfig_ = null;
+        }
+        return a2AConfigBuilder_;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.ces.v1beta.Agent.RemoteA2aAgent)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.ces.v1beta.Agent.RemoteA2aAgent)
+    private static final com.google.cloud.ces.v1beta.Agent.RemoteA2aAgent DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.ces.v1beta.Agent.RemoteA2aAgent();
+    }
+
+    public static com.google.cloud.ces.v1beta.Agent.RemoteA2aAgent getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<RemoteA2aAgent> PARSER =
+        new com.google.protobuf.AbstractParser<RemoteA2aAgent>() {
+          @java.lang.Override
+          public RemoteA2aAgent parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<RemoteA2aAgent> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<RemoteA2aAgent> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.ces.v1beta.Agent.RemoteA2aAgent getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   public interface AgentToolsetOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.ces.v1beta.Agent.AgentToolset)
@@ -3914,6 +4667,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     LLM_AGENT(26),
     REMOTE_DIALOGFLOW_AGENT(27),
+    REMOTE_A2A_AGENT(41),
     AGENTTYPE_NOT_SET(0);
     private final int value;
 
@@ -3937,6 +4691,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
           return LLM_AGENT;
         case 27:
           return REMOTE_DIALOGFLOW_AGENT;
+        case 41:
+          return REMOTE_A2A_AGENT;
         case 0:
           return AGENTTYPE_NOT_SET;
         default:
@@ -4093,6 +4849,69 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
       return (com.google.cloud.ces.v1beta.Agent.RemoteDialogflowAgent) agentType_;
     }
     return com.google.cloud.ces.v1beta.Agent.RemoteDialogflowAgent.getDefaultInstance();
+  }
+
+  public static final int REMOTE_A2A_AGENT_FIELD_NUMBER = 41;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The remote [A2A](https://github.com/a2aproject/A2A) agent to be
+   * used for the agent execution.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.Agent.RemoteA2aAgent remote_a2a_agent = 41 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the remoteA2aAgent field is set.
+   */
+  @java.lang.Override
+  public boolean hasRemoteA2AAgent() {
+    return agentTypeCase_ == 41;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The remote [A2A](https://github.com/a2aproject/A2A) agent to be
+   * used for the agent execution.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.Agent.RemoteA2aAgent remote_a2a_agent = 41 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The remoteA2aAgent.
+   */
+  @java.lang.Override
+  public com.google.cloud.ces.v1beta.Agent.RemoteA2aAgent getRemoteA2AAgent() {
+    if (agentTypeCase_ == 41) {
+      return (com.google.cloud.ces.v1beta.Agent.RemoteA2aAgent) agentType_;
+    }
+    return com.google.cloud.ces.v1beta.Agent.RemoteA2aAgent.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The remote [A2A](https://github.com/a2aproject/A2A) agent to be
+   * used for the agent execution.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.Agent.RemoteA2aAgent remote_a2a_agent = 41 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.ces.v1beta.Agent.RemoteA2aAgentOrBuilder getRemoteA2AAgentOrBuilder() {
+    if (agentTypeCase_ == 41) {
+      return (com.google.cloud.ces.v1beta.Agent.RemoteA2aAgent) agentType_;
+    }
+    return com.google.cloud.ces.v1beta.Agent.RemoteA2aAgent.getDefaultInstance();
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
@@ -5790,6 +6609,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
     for (int i = 0; i < validationErrors_.size(); i++) {
       com.google.protobuf.GeneratedMessage.writeString(output, 32, validationErrors_.getRaw(i));
     }
+    if (agentTypeCase_ == 41) {
+      output.writeMessage(41, (com.google.cloud.ces.v1beta.Agent.RemoteA2aAgent) agentType_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -5900,6 +6722,11 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
       size += dataSize;
       size += 2 * getValidationErrorsList().size();
     }
+    if (agentTypeCase_ == 41) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              41, (com.google.cloud.ces.v1beta.Agent.RemoteA2aAgent) agentType_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -5952,6 +6779,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
         break;
       case 27:
         if (!getRemoteDialogflowAgent().equals(other.getRemoteDialogflowAgent())) return false;
+        break;
+      case 41:
+        if (!getRemoteA2AAgent().equals(other.getRemoteA2AAgent())) return false;
         break;
       case 0:
       default:
@@ -6047,6 +6877,10 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
       case 27:
         hash = (37 * hash) + REMOTE_DIALOGFLOW_AGENT_FIELD_NUMBER;
         hash = (53 * hash) + getRemoteDialogflowAgent().hashCode();
+        break;
+      case 41:
+        hash = (37 * hash) + REMOTE_A2A_AGENT_FIELD_NUMBER;
+        hash = (53 * hash) + getRemoteA2AAgent().hashCode();
         break;
       case 0:
       default:
@@ -6216,6 +7050,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
       if (remoteDialogflowAgentBuilder_ != null) {
         remoteDialogflowAgentBuilder_.clear();
       }
+      if (remoteA2AAgentBuilder_ != null) {
+        remoteA2AAgentBuilder_.clear();
+      }
       name_ = "";
       displayName_ = "";
       description_ = "";
@@ -6233,42 +7070,42 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
         beforeAgentCallbacks_ = null;
         beforeAgentCallbacksBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       if (afterAgentCallbacksBuilder_ == null) {
         afterAgentCallbacks_ = java.util.Collections.emptyList();
       } else {
         afterAgentCallbacks_ = null;
         afterAgentCallbacksBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       if (beforeModelCallbacksBuilder_ == null) {
         beforeModelCallbacks_ = java.util.Collections.emptyList();
       } else {
         beforeModelCallbacks_ = null;
         beforeModelCallbacksBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       if (afterModelCallbacksBuilder_ == null) {
         afterModelCallbacks_ = java.util.Collections.emptyList();
       } else {
         afterModelCallbacks_ = null;
         afterModelCallbacksBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       if (beforeToolCallbacksBuilder_ == null) {
         beforeToolCallbacks_ = java.util.Collections.emptyList();
       } else {
         beforeToolCallbacks_ = null;
         beforeToolCallbacksBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       if (afterToolCallbacksBuilder_ == null) {
         afterToolCallbacks_ = java.util.Collections.emptyList();
       } else {
         afterToolCallbacks_ = null;
         afterToolCallbacksBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       createTime_ = null;
       if (createTimeBuilder_ != null) {
         createTimeBuilder_.dispose();
@@ -6287,7 +7124,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
         toolsets_ = null;
         toolsetsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00080000);
+      bitField0_ = (bitField0_ & ~0x00100000);
       generatedSummary_ = "";
       if (transferRulesBuilder_ == null) {
         transferRules_ = java.util.Collections.emptyList();
@@ -6295,7 +7132,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
         transferRules_ = null;
         transferRulesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00200000);
+      bitField0_ = (bitField0_ & ~0x00400000);
       validationErrors_ = com.google.protobuf.LazyStringArrayList.emptyList();
       agentTypeCase_ = 0;
       agentType_ = null;
@@ -6336,72 +7173,72 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
 
     private void buildPartialRepeatedFields(com.google.cloud.ces.v1beta.Agent result) {
       if (beforeAgentCallbacksBuilder_ == null) {
-        if (((bitField0_ & 0x00000200) != 0)) {
+        if (((bitField0_ & 0x00000400) != 0)) {
           beforeAgentCallbacks_ = java.util.Collections.unmodifiableList(beforeAgentCallbacks_);
-          bitField0_ = (bitField0_ & ~0x00000200);
+          bitField0_ = (bitField0_ & ~0x00000400);
         }
         result.beforeAgentCallbacks_ = beforeAgentCallbacks_;
       } else {
         result.beforeAgentCallbacks_ = beforeAgentCallbacksBuilder_.build();
       }
       if (afterAgentCallbacksBuilder_ == null) {
-        if (((bitField0_ & 0x00000400) != 0)) {
+        if (((bitField0_ & 0x00000800) != 0)) {
           afterAgentCallbacks_ = java.util.Collections.unmodifiableList(afterAgentCallbacks_);
-          bitField0_ = (bitField0_ & ~0x00000400);
+          bitField0_ = (bitField0_ & ~0x00000800);
         }
         result.afterAgentCallbacks_ = afterAgentCallbacks_;
       } else {
         result.afterAgentCallbacks_ = afterAgentCallbacksBuilder_.build();
       }
       if (beforeModelCallbacksBuilder_ == null) {
-        if (((bitField0_ & 0x00000800) != 0)) {
+        if (((bitField0_ & 0x00001000) != 0)) {
           beforeModelCallbacks_ = java.util.Collections.unmodifiableList(beforeModelCallbacks_);
-          bitField0_ = (bitField0_ & ~0x00000800);
+          bitField0_ = (bitField0_ & ~0x00001000);
         }
         result.beforeModelCallbacks_ = beforeModelCallbacks_;
       } else {
         result.beforeModelCallbacks_ = beforeModelCallbacksBuilder_.build();
       }
       if (afterModelCallbacksBuilder_ == null) {
-        if (((bitField0_ & 0x00001000) != 0)) {
+        if (((bitField0_ & 0x00002000) != 0)) {
           afterModelCallbacks_ = java.util.Collections.unmodifiableList(afterModelCallbacks_);
-          bitField0_ = (bitField0_ & ~0x00001000);
+          bitField0_ = (bitField0_ & ~0x00002000);
         }
         result.afterModelCallbacks_ = afterModelCallbacks_;
       } else {
         result.afterModelCallbacks_ = afterModelCallbacksBuilder_.build();
       }
       if (beforeToolCallbacksBuilder_ == null) {
-        if (((bitField0_ & 0x00002000) != 0)) {
+        if (((bitField0_ & 0x00004000) != 0)) {
           beforeToolCallbacks_ = java.util.Collections.unmodifiableList(beforeToolCallbacks_);
-          bitField0_ = (bitField0_ & ~0x00002000);
+          bitField0_ = (bitField0_ & ~0x00004000);
         }
         result.beforeToolCallbacks_ = beforeToolCallbacks_;
       } else {
         result.beforeToolCallbacks_ = beforeToolCallbacksBuilder_.build();
       }
       if (afterToolCallbacksBuilder_ == null) {
-        if (((bitField0_ & 0x00004000) != 0)) {
+        if (((bitField0_ & 0x00008000) != 0)) {
           afterToolCallbacks_ = java.util.Collections.unmodifiableList(afterToolCallbacks_);
-          bitField0_ = (bitField0_ & ~0x00004000);
+          bitField0_ = (bitField0_ & ~0x00008000);
         }
         result.afterToolCallbacks_ = afterToolCallbacks_;
       } else {
         result.afterToolCallbacks_ = afterToolCallbacksBuilder_.build();
       }
       if (toolsetsBuilder_ == null) {
-        if (((bitField0_ & 0x00080000) != 0)) {
+        if (((bitField0_ & 0x00100000) != 0)) {
           toolsets_ = java.util.Collections.unmodifiableList(toolsets_);
-          bitField0_ = (bitField0_ & ~0x00080000);
+          bitField0_ = (bitField0_ & ~0x00100000);
         }
         result.toolsets_ = toolsets_;
       } else {
         result.toolsets_ = toolsetsBuilder_.build();
       }
       if (transferRulesBuilder_ == null) {
-        if (((bitField0_ & 0x00200000) != 0)) {
+        if (((bitField0_ & 0x00400000) != 0)) {
           transferRules_ = java.util.Collections.unmodifiableList(transferRules_);
-          bitField0_ = (bitField0_ & ~0x00200000);
+          bitField0_ = (bitField0_ & ~0x00400000);
         }
         result.transferRules_ = transferRules_;
       } else {
@@ -6411,51 +7248,51 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
 
     private void buildPartial0(com.google.cloud.ces.v1beta.Agent result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000004) != 0)) {
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.name_ = name_;
       }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.displayName_ = displayName_;
       }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.description_ = description_;
       }
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.modelSettings_ =
             modelSettingsBuilder_ == null ? modelSettings_ : modelSettingsBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.instruction_ = instruction_;
       }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         tools_.makeImmutable();
         result.tools_ = tools_;
       }
-      if (((from_bitField0_ & 0x00000100) != 0)) {
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         childAgents_.makeImmutable();
         result.childAgents_ = childAgents_;
       }
-      if (((from_bitField0_ & 0x00008000) != 0)) {
+      if (((from_bitField0_ & 0x00010000) != 0)) {
         result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00010000) != 0)) {
+      if (((from_bitField0_ & 0x00020000) != 0)) {
         result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
-      if (((from_bitField0_ & 0x00020000) != 0)) {
+      if (((from_bitField0_ & 0x00040000) != 0)) {
         guardrails_.makeImmutable();
         result.guardrails_ = guardrails_;
       }
-      if (((from_bitField0_ & 0x00040000) != 0)) {
+      if (((from_bitField0_ & 0x00080000) != 0)) {
         result.etag_ = etag_;
       }
-      if (((from_bitField0_ & 0x00100000) != 0)) {
+      if (((from_bitField0_ & 0x00200000) != 0)) {
         result.generatedSummary_ = generatedSummary_;
       }
-      if (((from_bitField0_ & 0x00400000) != 0)) {
+      if (((from_bitField0_ & 0x00800000) != 0)) {
         validationErrors_.makeImmutable();
         result.validationErrors_ = validationErrors_;
       }
@@ -6470,6 +7307,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
       }
       if (agentTypeCase_ == 27 && remoteDialogflowAgentBuilder_ != null) {
         result.agentType_ = remoteDialogflowAgentBuilder_.build();
+      }
+      if (agentTypeCase_ == 41 && remoteA2AAgentBuilder_ != null) {
+        result.agentType_ = remoteA2AAgentBuilder_.build();
       }
     }
 
@@ -6487,17 +7327,17 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
       if (other == com.google.cloud.ces.v1beta.Agent.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (other.hasModelSettings()) {
@@ -6505,13 +7345,13 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
       }
       if (!other.getInstruction().isEmpty()) {
         instruction_ = other.instruction_;
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       if (!other.tools_.isEmpty()) {
         if (tools_.isEmpty()) {
           tools_ = other.tools_;
-          bitField0_ |= 0x00000080;
+          bitField0_ |= 0x00000100;
         } else {
           ensureToolsIsMutable();
           tools_.addAll(other.tools_);
@@ -6521,7 +7361,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
       if (!other.childAgents_.isEmpty()) {
         if (childAgents_.isEmpty()) {
           childAgents_ = other.childAgents_;
-          bitField0_ |= 0x00000100;
+          bitField0_ |= 0x00000200;
         } else {
           ensureChildAgentsIsMutable();
           childAgents_.addAll(other.childAgents_);
@@ -6532,7 +7372,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
         if (!other.beforeAgentCallbacks_.isEmpty()) {
           if (beforeAgentCallbacks_.isEmpty()) {
             beforeAgentCallbacks_ = other.beforeAgentCallbacks_;
-            bitField0_ = (bitField0_ & ~0x00000200);
+            bitField0_ = (bitField0_ & ~0x00000400);
           } else {
             ensureBeforeAgentCallbacksIsMutable();
             beforeAgentCallbacks_.addAll(other.beforeAgentCallbacks_);
@@ -6545,7 +7385,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
             beforeAgentCallbacksBuilder_.dispose();
             beforeAgentCallbacksBuilder_ = null;
             beforeAgentCallbacks_ = other.beforeAgentCallbacks_;
-            bitField0_ = (bitField0_ & ~0x00000200);
+            bitField0_ = (bitField0_ & ~0x00000400);
             beforeAgentCallbacksBuilder_ =
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
                     ? internalGetBeforeAgentCallbacksFieldBuilder()
@@ -6559,7 +7399,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
         if (!other.afterAgentCallbacks_.isEmpty()) {
           if (afterAgentCallbacks_.isEmpty()) {
             afterAgentCallbacks_ = other.afterAgentCallbacks_;
-            bitField0_ = (bitField0_ & ~0x00000400);
+            bitField0_ = (bitField0_ & ~0x00000800);
           } else {
             ensureAfterAgentCallbacksIsMutable();
             afterAgentCallbacks_.addAll(other.afterAgentCallbacks_);
@@ -6572,7 +7412,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
             afterAgentCallbacksBuilder_.dispose();
             afterAgentCallbacksBuilder_ = null;
             afterAgentCallbacks_ = other.afterAgentCallbacks_;
-            bitField0_ = (bitField0_ & ~0x00000400);
+            bitField0_ = (bitField0_ & ~0x00000800);
             afterAgentCallbacksBuilder_ =
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
                     ? internalGetAfterAgentCallbacksFieldBuilder()
@@ -6586,7 +7426,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
         if (!other.beforeModelCallbacks_.isEmpty()) {
           if (beforeModelCallbacks_.isEmpty()) {
             beforeModelCallbacks_ = other.beforeModelCallbacks_;
-            bitField0_ = (bitField0_ & ~0x00000800);
+            bitField0_ = (bitField0_ & ~0x00001000);
           } else {
             ensureBeforeModelCallbacksIsMutable();
             beforeModelCallbacks_.addAll(other.beforeModelCallbacks_);
@@ -6599,7 +7439,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
             beforeModelCallbacksBuilder_.dispose();
             beforeModelCallbacksBuilder_ = null;
             beforeModelCallbacks_ = other.beforeModelCallbacks_;
-            bitField0_ = (bitField0_ & ~0x00000800);
+            bitField0_ = (bitField0_ & ~0x00001000);
             beforeModelCallbacksBuilder_ =
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
                     ? internalGetBeforeModelCallbacksFieldBuilder()
@@ -6613,7 +7453,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
         if (!other.afterModelCallbacks_.isEmpty()) {
           if (afterModelCallbacks_.isEmpty()) {
             afterModelCallbacks_ = other.afterModelCallbacks_;
-            bitField0_ = (bitField0_ & ~0x00001000);
+            bitField0_ = (bitField0_ & ~0x00002000);
           } else {
             ensureAfterModelCallbacksIsMutable();
             afterModelCallbacks_.addAll(other.afterModelCallbacks_);
@@ -6626,7 +7466,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
             afterModelCallbacksBuilder_.dispose();
             afterModelCallbacksBuilder_ = null;
             afterModelCallbacks_ = other.afterModelCallbacks_;
-            bitField0_ = (bitField0_ & ~0x00001000);
+            bitField0_ = (bitField0_ & ~0x00002000);
             afterModelCallbacksBuilder_ =
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
                     ? internalGetAfterModelCallbacksFieldBuilder()
@@ -6640,7 +7480,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
         if (!other.beforeToolCallbacks_.isEmpty()) {
           if (beforeToolCallbacks_.isEmpty()) {
             beforeToolCallbacks_ = other.beforeToolCallbacks_;
-            bitField0_ = (bitField0_ & ~0x00002000);
+            bitField0_ = (bitField0_ & ~0x00004000);
           } else {
             ensureBeforeToolCallbacksIsMutable();
             beforeToolCallbacks_.addAll(other.beforeToolCallbacks_);
@@ -6653,7 +7493,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
             beforeToolCallbacksBuilder_.dispose();
             beforeToolCallbacksBuilder_ = null;
             beforeToolCallbacks_ = other.beforeToolCallbacks_;
-            bitField0_ = (bitField0_ & ~0x00002000);
+            bitField0_ = (bitField0_ & ~0x00004000);
             beforeToolCallbacksBuilder_ =
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
                     ? internalGetBeforeToolCallbacksFieldBuilder()
@@ -6667,7 +7507,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
         if (!other.afterToolCallbacks_.isEmpty()) {
           if (afterToolCallbacks_.isEmpty()) {
             afterToolCallbacks_ = other.afterToolCallbacks_;
-            bitField0_ = (bitField0_ & ~0x00004000);
+            bitField0_ = (bitField0_ & ~0x00008000);
           } else {
             ensureAfterToolCallbacksIsMutable();
             afterToolCallbacks_.addAll(other.afterToolCallbacks_);
@@ -6680,7 +7520,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
             afterToolCallbacksBuilder_.dispose();
             afterToolCallbacksBuilder_ = null;
             afterToolCallbacks_ = other.afterToolCallbacks_;
-            bitField0_ = (bitField0_ & ~0x00004000);
+            bitField0_ = (bitField0_ & ~0x00008000);
             afterToolCallbacksBuilder_ =
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
                     ? internalGetAfterToolCallbacksFieldBuilder()
@@ -6699,7 +7539,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
       if (!other.guardrails_.isEmpty()) {
         if (guardrails_.isEmpty()) {
           guardrails_ = other.guardrails_;
-          bitField0_ |= 0x00020000;
+          bitField0_ |= 0x00040000;
         } else {
           ensureGuardrailsIsMutable();
           guardrails_.addAll(other.guardrails_);
@@ -6708,14 +7548,14 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
       }
       if (!other.getEtag().isEmpty()) {
         etag_ = other.etag_;
-        bitField0_ |= 0x00040000;
+        bitField0_ |= 0x00080000;
         onChanged();
       }
       if (toolsetsBuilder_ == null) {
         if (!other.toolsets_.isEmpty()) {
           if (toolsets_.isEmpty()) {
             toolsets_ = other.toolsets_;
-            bitField0_ = (bitField0_ & ~0x00080000);
+            bitField0_ = (bitField0_ & ~0x00100000);
           } else {
             ensureToolsetsIsMutable();
             toolsets_.addAll(other.toolsets_);
@@ -6728,7 +7568,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
             toolsetsBuilder_.dispose();
             toolsetsBuilder_ = null;
             toolsets_ = other.toolsets_;
-            bitField0_ = (bitField0_ & ~0x00080000);
+            bitField0_ = (bitField0_ & ~0x00100000);
             toolsetsBuilder_ =
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
                     ? internalGetToolsetsFieldBuilder()
@@ -6740,14 +7580,14 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
       }
       if (!other.getGeneratedSummary().isEmpty()) {
         generatedSummary_ = other.generatedSummary_;
-        bitField0_ |= 0x00100000;
+        bitField0_ |= 0x00200000;
         onChanged();
       }
       if (transferRulesBuilder_ == null) {
         if (!other.transferRules_.isEmpty()) {
           if (transferRules_.isEmpty()) {
             transferRules_ = other.transferRules_;
-            bitField0_ = (bitField0_ & ~0x00200000);
+            bitField0_ = (bitField0_ & ~0x00400000);
           } else {
             ensureTransferRulesIsMutable();
             transferRules_.addAll(other.transferRules_);
@@ -6760,7 +7600,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
             transferRulesBuilder_.dispose();
             transferRulesBuilder_ = null;
             transferRules_ = other.transferRules_;
-            bitField0_ = (bitField0_ & ~0x00200000);
+            bitField0_ = (bitField0_ & ~0x00400000);
             transferRulesBuilder_ =
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
                     ? internalGetTransferRulesFieldBuilder()
@@ -6773,7 +7613,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
       if (!other.validationErrors_.isEmpty()) {
         if (validationErrors_.isEmpty()) {
           validationErrors_ = other.validationErrors_;
-          bitField0_ |= 0x00400000;
+          bitField0_ |= 0x00800000;
         } else {
           ensureValidationErrorsIsMutable();
           validationErrors_.addAll(other.validationErrors_);
@@ -6789,6 +7629,11 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
         case REMOTE_DIALOGFLOW_AGENT:
           {
             mergeRemoteDialogflowAgent(other.getRemoteDialogflowAgent());
+            break;
+          }
+        case REMOTE_A2A_AGENT:
+          {
+            mergeRemoteA2AAgent(other.getRemoteA2AAgent());
             break;
           }
         case AGENTTYPE_NOT_SET:
@@ -6825,32 +7670,32 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 10
             case 18:
               {
                 displayName_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 18
             case 26:
               {
                 description_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(
                     internalGetModelSettingsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 34
             case 50:
               {
                 instruction_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 50
             case 58:
@@ -6871,14 +7716,14 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
               {
                 input.readMessage(
                     internalGetCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00008000;
+                bitField0_ |= 0x00010000;
                 break;
               } // case 122
             case 130:
               {
                 input.readMessage(
                     internalGetUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00010000;
+                bitField0_ |= 0x00020000;
                 break;
               } // case 130
             case 138:
@@ -6969,7 +7814,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
             case 194:
               {
                 etag_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00040000;
+                bitField0_ |= 0x00080000;
                 break;
               } // case 194
             case 210:
@@ -7002,7 +7847,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
             case 234:
               {
                 generatedSummary_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00100000;
+                bitField0_ |= 0x00200000;
                 break;
               } // case 234
             case 242:
@@ -7025,6 +7870,13 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
                 validationErrors_.add(s);
                 break;
               } // case 258
+            case 330:
+              {
+                input.readMessage(
+                    internalGetRemoteA2AAgentFieldBuilder().getBuilder(), extensionRegistry);
+                agentTypeCase_ = 41;
+                break;
+              } // case 330
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -7597,6 +8449,252 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
       return remoteDialogflowAgentBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.ces.v1beta.Agent.RemoteA2aAgent,
+            com.google.cloud.ces.v1beta.Agent.RemoteA2aAgent.Builder,
+            com.google.cloud.ces.v1beta.Agent.RemoteA2aAgentOrBuilder>
+        remoteA2AAgentBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The remote [A2A](https://github.com/a2aproject/A2A) agent to be
+     * used for the agent execution.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.Agent.RemoteA2aAgent remote_a2a_agent = 41 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the remoteA2aAgent field is set.
+     */
+    @java.lang.Override
+    public boolean hasRemoteA2AAgent() {
+      return agentTypeCase_ == 41;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The remote [A2A](https://github.com/a2aproject/A2A) agent to be
+     * used for the agent execution.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.Agent.RemoteA2aAgent remote_a2a_agent = 41 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The remoteA2aAgent.
+     */
+    @java.lang.Override
+    public com.google.cloud.ces.v1beta.Agent.RemoteA2aAgent getRemoteA2AAgent() {
+      if (remoteA2AAgentBuilder_ == null) {
+        if (agentTypeCase_ == 41) {
+          return (com.google.cloud.ces.v1beta.Agent.RemoteA2aAgent) agentType_;
+        }
+        return com.google.cloud.ces.v1beta.Agent.RemoteA2aAgent.getDefaultInstance();
+      } else {
+        if (agentTypeCase_ == 41) {
+          return remoteA2AAgentBuilder_.getMessage();
+        }
+        return com.google.cloud.ces.v1beta.Agent.RemoteA2aAgent.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The remote [A2A](https://github.com/a2aproject/A2A) agent to be
+     * used for the agent execution.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.Agent.RemoteA2aAgent remote_a2a_agent = 41 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setRemoteA2AAgent(com.google.cloud.ces.v1beta.Agent.RemoteA2aAgent value) {
+      if (remoteA2AAgentBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        agentType_ = value;
+        onChanged();
+      } else {
+        remoteA2AAgentBuilder_.setMessage(value);
+      }
+      agentTypeCase_ = 41;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The remote [A2A](https://github.com/a2aproject/A2A) agent to be
+     * used for the agent execution.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.Agent.RemoteA2aAgent remote_a2a_agent = 41 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setRemoteA2AAgent(
+        com.google.cloud.ces.v1beta.Agent.RemoteA2aAgent.Builder builderForValue) {
+      if (remoteA2AAgentBuilder_ == null) {
+        agentType_ = builderForValue.build();
+        onChanged();
+      } else {
+        remoteA2AAgentBuilder_.setMessage(builderForValue.build());
+      }
+      agentTypeCase_ = 41;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The remote [A2A](https://github.com/a2aproject/A2A) agent to be
+     * used for the agent execution.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.Agent.RemoteA2aAgent remote_a2a_agent = 41 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeRemoteA2AAgent(com.google.cloud.ces.v1beta.Agent.RemoteA2aAgent value) {
+      if (remoteA2AAgentBuilder_ == null) {
+        if (agentTypeCase_ == 41
+            && agentType_
+                != com.google.cloud.ces.v1beta.Agent.RemoteA2aAgent.getDefaultInstance()) {
+          agentType_ =
+              com.google.cloud.ces.v1beta.Agent.RemoteA2aAgent.newBuilder(
+                      (com.google.cloud.ces.v1beta.Agent.RemoteA2aAgent) agentType_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          agentType_ = value;
+        }
+        onChanged();
+      } else {
+        if (agentTypeCase_ == 41) {
+          remoteA2AAgentBuilder_.mergeFrom(value);
+        } else {
+          remoteA2AAgentBuilder_.setMessage(value);
+        }
+      }
+      agentTypeCase_ = 41;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The remote [A2A](https://github.com/a2aproject/A2A) agent to be
+     * used for the agent execution.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.Agent.RemoteA2aAgent remote_a2a_agent = 41 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearRemoteA2AAgent() {
+      if (remoteA2AAgentBuilder_ == null) {
+        if (agentTypeCase_ == 41) {
+          agentTypeCase_ = 0;
+          agentType_ = null;
+          onChanged();
+        }
+      } else {
+        if (agentTypeCase_ == 41) {
+          agentTypeCase_ = 0;
+          agentType_ = null;
+        }
+        remoteA2AAgentBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The remote [A2A](https://github.com/a2aproject/A2A) agent to be
+     * used for the agent execution.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.Agent.RemoteA2aAgent remote_a2a_agent = 41 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.ces.v1beta.Agent.RemoteA2aAgent.Builder getRemoteA2AAgentBuilder() {
+      return internalGetRemoteA2AAgentFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The remote [A2A](https://github.com/a2aproject/A2A) agent to be
+     * used for the agent execution.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.Agent.RemoteA2aAgent remote_a2a_agent = 41 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.ces.v1beta.Agent.RemoteA2aAgentOrBuilder getRemoteA2AAgentOrBuilder() {
+      if ((agentTypeCase_ == 41) && (remoteA2AAgentBuilder_ != null)) {
+        return remoteA2AAgentBuilder_.getMessageOrBuilder();
+      } else {
+        if (agentTypeCase_ == 41) {
+          return (com.google.cloud.ces.v1beta.Agent.RemoteA2aAgent) agentType_;
+        }
+        return com.google.cloud.ces.v1beta.Agent.RemoteA2aAgent.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The remote [A2A](https://github.com/a2aproject/A2A) agent to be
+     * used for the agent execution.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.Agent.RemoteA2aAgent remote_a2a_agent = 41 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.ces.v1beta.Agent.RemoteA2aAgent,
+            com.google.cloud.ces.v1beta.Agent.RemoteA2aAgent.Builder,
+            com.google.cloud.ces.v1beta.Agent.RemoteA2aAgentOrBuilder>
+        internalGetRemoteA2AAgentFieldBuilder() {
+      if (remoteA2AAgentBuilder_ == null) {
+        if (!(agentTypeCase_ == 41)) {
+          agentType_ = com.google.cloud.ces.v1beta.Agent.RemoteA2aAgent.getDefaultInstance();
+        }
+        remoteA2AAgentBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.ces.v1beta.Agent.RemoteA2aAgent,
+                com.google.cloud.ces.v1beta.Agent.RemoteA2aAgent.Builder,
+                com.google.cloud.ces.v1beta.Agent.RemoteA2aAgentOrBuilder>(
+                (com.google.cloud.ces.v1beta.Agent.RemoteA2aAgent) agentType_,
+                getParentForChildren(),
+                isClean());
+        agentType_ = null;
+      }
+      agentTypeCase_ = 41;
+      onChanged();
+      return remoteA2AAgentBuilder_;
+    }
+
     private java.lang.Object name_ = "";
 
     /**
@@ -7665,7 +8763,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       name_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -7684,7 +8782,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearName() {
       name_ = getDefaultInstance().getName();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -7708,7 +8806,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       name_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -7778,7 +8876,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       displayName_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -7796,7 +8894,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearDisplayName() {
       displayName_ = getDefaultInstance().getDisplayName();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -7819,7 +8917,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       displayName_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -7889,7 +8987,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       description_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -7907,7 +9005,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearDescription() {
       description_ = getDefaultInstance().getDescription();
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -7930,7 +9028,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       description_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -7956,7 +9054,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
      * @return Whether the modelSettings field is set.
      */
     public boolean hasModelSettings() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
 
     /**
@@ -8002,7 +9100,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
       } else {
         modelSettingsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -8025,7 +9123,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
       } else {
         modelSettingsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -8043,7 +9141,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeModelSettings(com.google.cloud.ces.v1beta.ModelSettings value) {
       if (modelSettingsBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)
+        if (((bitField0_ & 0x00000040) != 0)
             && modelSettings_ != null
             && modelSettings_ != com.google.cloud.ces.v1beta.ModelSettings.getDefaultInstance()) {
           getModelSettingsBuilder().mergeFrom(value);
@@ -8054,7 +9152,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
         modelSettingsBuilder_.mergeFrom(value);
       }
       if (modelSettings_ != null) {
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       return this;
@@ -8072,7 +9170,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearModelSettings() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       modelSettings_ = null;
       if (modelSettingsBuilder_ != null) {
         modelSettingsBuilder_.dispose();
@@ -8094,7 +9192,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.cloud.ces.v1beta.ModelSettings.Builder getModelSettingsBuilder() {
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return internalGetModelSettingsFieldBuilder().getBuilder();
     }
@@ -8213,7 +9311,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       instruction_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -8231,7 +9329,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearInstruction() {
       instruction_ = getDefaultInstance().getInstruction();
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -8254,7 +9352,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       instruction_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -8266,7 +9364,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
       if (!tools_.isModifiable()) {
         tools_ = new com.google.protobuf.LazyStringArrayList(tools_);
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
     }
 
     /**
@@ -8366,7 +9464,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
       }
       ensureToolsIsMutable();
       tools_.set(index, value);
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -8392,7 +9490,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
       }
       ensureToolsIsMutable();
       tools_.add(value);
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -8415,7 +9513,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
     public Builder addAllTools(java.lang.Iterable<java.lang.String> values) {
       ensureToolsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, tools_);
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -8436,7 +9534,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearTools() {
       tools_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       ;
       onChanged();
       return this;
@@ -8464,7 +9562,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
       checkByteStringIsUtf8(value);
       ensureToolsIsMutable();
       tools_.add(value);
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -8476,7 +9574,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
       if (!childAgents_.isModifiable()) {
         childAgents_ = new com.google.protobuf.LazyStringArrayList(childAgents_);
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
     }
 
     /**
@@ -8576,7 +9674,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
       }
       ensureChildAgentsIsMutable();
       childAgents_.set(index, value);
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -8602,7 +9700,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
       }
       ensureChildAgentsIsMutable();
       childAgents_.add(value);
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -8625,7 +9723,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
     public Builder addAllChildAgents(java.lang.Iterable<java.lang.String> values) {
       ensureChildAgentsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, childAgents_);
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -8646,7 +9744,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearChildAgents() {
       childAgents_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       ;
       onChanged();
       return this;
@@ -8674,7 +9772,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
       checkByteStringIsUtf8(value);
       ensureChildAgentsIsMutable();
       childAgents_.add(value);
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -8683,10 +9781,10 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
         java.util.Collections.emptyList();
 
     private void ensureBeforeAgentCallbacksIsMutable() {
-      if (!((bitField0_ & 0x00000200) != 0)) {
+      if (!((bitField0_ & 0x00000400) != 0)) {
         beforeAgentCallbacks_ =
             new java.util.ArrayList<com.google.cloud.ces.v1beta.Callback>(beforeAgentCallbacks_);
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
       }
     }
 
@@ -8967,7 +10065,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
     public Builder clearBeforeAgentCallbacks() {
       if (beforeAgentCallbacksBuilder_ == null) {
         beforeAgentCallbacks_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000200);
+        bitField0_ = (bitField0_ & ~0x00000400);
         onChanged();
       } else {
         beforeAgentCallbacksBuilder_.clear();
@@ -9133,7 +10231,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
                 com.google.cloud.ces.v1beta.Callback.Builder,
                 com.google.cloud.ces.v1beta.CallbackOrBuilder>(
                 beforeAgentCallbacks_,
-                ((bitField0_ & 0x00000200) != 0),
+                ((bitField0_ & 0x00000400) != 0),
                 getParentForChildren(),
                 isClean());
         beforeAgentCallbacks_ = null;
@@ -9145,10 +10243,10 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
         java.util.Collections.emptyList();
 
     private void ensureAfterAgentCallbacksIsMutable() {
-      if (!((bitField0_ & 0x00000400) != 0)) {
+      if (!((bitField0_ & 0x00000800) != 0)) {
         afterAgentCallbacks_ =
             new java.util.ArrayList<com.google.cloud.ces.v1beta.Callback>(afterAgentCallbacks_);
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
       }
     }
 
@@ -9429,7 +10527,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
     public Builder clearAfterAgentCallbacks() {
       if (afterAgentCallbacksBuilder_ == null) {
         afterAgentCallbacks_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000400);
+        bitField0_ = (bitField0_ & ~0x00000800);
         onChanged();
       } else {
         afterAgentCallbacksBuilder_.clear();
@@ -9595,7 +10693,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
                 com.google.cloud.ces.v1beta.Callback.Builder,
                 com.google.cloud.ces.v1beta.CallbackOrBuilder>(
                 afterAgentCallbacks_,
-                ((bitField0_ & 0x00000400) != 0),
+                ((bitField0_ & 0x00000800) != 0),
                 getParentForChildren(),
                 isClean());
         afterAgentCallbacks_ = null;
@@ -9607,10 +10705,10 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
         java.util.Collections.emptyList();
 
     private void ensureBeforeModelCallbacksIsMutable() {
-      if (!((bitField0_ & 0x00000800) != 0)) {
+      if (!((bitField0_ & 0x00001000) != 0)) {
         beforeModelCallbacks_ =
             new java.util.ArrayList<com.google.cloud.ces.v1beta.Callback>(beforeModelCallbacks_);
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00001000;
       }
     }
 
@@ -9902,7 +11000,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
     public Builder clearBeforeModelCallbacks() {
       if (beforeModelCallbacksBuilder_ == null) {
         beforeModelCallbacks_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000800);
+        bitField0_ = (bitField0_ & ~0x00001000);
         onChanged();
       } else {
         beforeModelCallbacksBuilder_.clear();
@@ -10075,7 +11173,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
                 com.google.cloud.ces.v1beta.Callback.Builder,
                 com.google.cloud.ces.v1beta.CallbackOrBuilder>(
                 beforeModelCallbacks_,
-                ((bitField0_ & 0x00000800) != 0),
+                ((bitField0_ & 0x00001000) != 0),
                 getParentForChildren(),
                 isClean());
         beforeModelCallbacks_ = null;
@@ -10087,10 +11185,10 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
         java.util.Collections.emptyList();
 
     private void ensureAfterModelCallbacksIsMutable() {
-      if (!((bitField0_ & 0x00001000) != 0)) {
+      if (!((bitField0_ & 0x00002000) != 0)) {
         afterModelCallbacks_ =
             new java.util.ArrayList<com.google.cloud.ces.v1beta.Callback>(afterModelCallbacks_);
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00002000;
       }
     }
 
@@ -10382,7 +11480,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
     public Builder clearAfterModelCallbacks() {
       if (afterModelCallbacksBuilder_ == null) {
         afterModelCallbacks_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00001000);
+        bitField0_ = (bitField0_ & ~0x00002000);
         onChanged();
       } else {
         afterModelCallbacksBuilder_.clear();
@@ -10555,7 +11653,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
                 com.google.cloud.ces.v1beta.Callback.Builder,
                 com.google.cloud.ces.v1beta.CallbackOrBuilder>(
                 afterModelCallbacks_,
-                ((bitField0_ & 0x00001000) != 0),
+                ((bitField0_ & 0x00002000) != 0),
                 getParentForChildren(),
                 isClean());
         afterModelCallbacks_ = null;
@@ -10567,10 +11665,10 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
         java.util.Collections.emptyList();
 
     private void ensureBeforeToolCallbacksIsMutable() {
-      if (!((bitField0_ & 0x00002000) != 0)) {
+      if (!((bitField0_ & 0x00004000) != 0)) {
         beforeToolCallbacks_ =
             new java.util.ArrayList<com.google.cloud.ces.v1beta.Callback>(beforeToolCallbacks_);
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00004000;
       }
     }
 
@@ -10862,7 +11960,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
     public Builder clearBeforeToolCallbacks() {
       if (beforeToolCallbacksBuilder_ == null) {
         beforeToolCallbacks_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00002000);
+        bitField0_ = (bitField0_ & ~0x00004000);
         onChanged();
       } else {
         beforeToolCallbacksBuilder_.clear();
@@ -11035,7 +12133,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
                 com.google.cloud.ces.v1beta.Callback.Builder,
                 com.google.cloud.ces.v1beta.CallbackOrBuilder>(
                 beforeToolCallbacks_,
-                ((bitField0_ & 0x00002000) != 0),
+                ((bitField0_ & 0x00004000) != 0),
                 getParentForChildren(),
                 isClean());
         beforeToolCallbacks_ = null;
@@ -11047,10 +12145,10 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
         java.util.Collections.emptyList();
 
     private void ensureAfterToolCallbacksIsMutable() {
-      if (!((bitField0_ & 0x00004000) != 0)) {
+      if (!((bitField0_ & 0x00008000) != 0)) {
         afterToolCallbacks_ =
             new java.util.ArrayList<com.google.cloud.ces.v1beta.Callback>(afterToolCallbacks_);
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00008000;
       }
     }
 
@@ -11342,7 +12440,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
     public Builder clearAfterToolCallbacks() {
       if (afterToolCallbacksBuilder_ == null) {
         afterToolCallbacks_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00004000);
+        bitField0_ = (bitField0_ & ~0x00008000);
         onChanged();
       } else {
         afterToolCallbacksBuilder_.clear();
@@ -11514,7 +12612,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
                 com.google.cloud.ces.v1beta.Callback.Builder,
                 com.google.cloud.ces.v1beta.CallbackOrBuilder>(
                 afterToolCallbacks_,
-                ((bitField0_ & 0x00004000) != 0),
+                ((bitField0_ & 0x00008000) != 0),
                 getParentForChildren(),
                 isClean());
         afterToolCallbacks_ = null;
@@ -11543,7 +12641,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return ((bitField0_ & 0x00008000) != 0);
+      return ((bitField0_ & 0x00010000) != 0);
     }
 
     /**
@@ -11589,7 +12687,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
       } else {
         createTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -11611,7 +12709,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -11629,7 +12727,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00008000) != 0)
+        if (((bitField0_ & 0x00010000) != 0)
             && createTime_ != null
             && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getCreateTimeBuilder().mergeFrom(value);
@@ -11640,7 +12738,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
         createTimeBuilder_.mergeFrom(value);
       }
       if (createTime_ != null) {
-        bitField0_ |= 0x00008000;
+        bitField0_ |= 0x00010000;
         onChanged();
       }
       return this;
@@ -11658,7 +12756,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearCreateTime() {
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       createTime_ = null;
       if (createTimeBuilder_ != null) {
         createTimeBuilder_.dispose();
@@ -11680,7 +12778,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return internalGetCreateTimeFieldBuilder().getBuilder();
     }
@@ -11755,7 +12853,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return ((bitField0_ & 0x00010000) != 0);
+      return ((bitField0_ & 0x00020000) != 0);
     }
 
     /**
@@ -11801,7 +12899,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -11823,7 +12921,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -11841,7 +12939,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00010000) != 0)
+        if (((bitField0_ & 0x00020000) != 0)
             && updateTime_ != null
             && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getUpdateTimeBuilder().mergeFrom(value);
@@ -11852,7 +12950,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
         updateTimeBuilder_.mergeFrom(value);
       }
       if (updateTime_ != null) {
-        bitField0_ |= 0x00010000;
+        bitField0_ |= 0x00020000;
         onChanged();
       }
       return this;
@@ -11870,7 +12968,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearUpdateTime() {
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       updateTime_ = null;
       if (updateTimeBuilder_ != null) {
         updateTimeBuilder_.dispose();
@@ -11892,7 +12990,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return internalGetUpdateTimeFieldBuilder().getBuilder();
     }
@@ -11953,7 +13051,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
       if (!guardrails_.isModifiable()) {
         guardrails_ = new com.google.protobuf.LazyStringArrayList(guardrails_);
       }
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
     }
 
     /**
@@ -12058,7 +13156,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
       }
       ensureGuardrailsIsMutable();
       guardrails_.set(index, value);
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -12085,7 +13183,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
       }
       ensureGuardrailsIsMutable();
       guardrails_.add(value);
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -12109,7 +13207,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
     public Builder addAllGuardrails(java.lang.Iterable<java.lang.String> values) {
       ensureGuardrailsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, guardrails_);
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -12131,7 +13229,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearGuardrails() {
       guardrails_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00020000);
+      bitField0_ = (bitField0_ & ~0x00040000);
       ;
       onChanged();
       return this;
@@ -12160,7 +13258,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
       checkByteStringIsUtf8(value);
       ensureGuardrailsIsMutable();
       guardrails_.add(value);
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -12236,7 +13334,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       etag_ = value;
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -12256,7 +13354,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearEtag() {
       etag_ = getDefaultInstance().getEtag();
-      bitField0_ = (bitField0_ & ~0x00040000);
+      bitField0_ = (bitField0_ & ~0x00080000);
       onChanged();
       return this;
     }
@@ -12281,7 +13379,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       etag_ = value;
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -12290,10 +13388,10 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
         java.util.Collections.emptyList();
 
     private void ensureToolsetsIsMutable() {
-      if (!((bitField0_ & 0x00080000) != 0)) {
+      if (!((bitField0_ & 0x00100000) != 0)) {
         toolsets_ =
             new java.util.ArrayList<com.google.cloud.ces.v1beta.Agent.AgentToolset>(toolsets_);
-        bitField0_ |= 0x00080000;
+        bitField0_ |= 0x00100000;
       }
     }
 
@@ -12541,7 +13639,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
     public Builder clearToolsets() {
       if (toolsetsBuilder_ == null) {
         toolsets_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00080000);
+        bitField0_ = (bitField0_ & ~0x00100000);
         onChanged();
       } else {
         toolsetsBuilder_.clear();
@@ -12684,7 +13782,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
                 com.google.cloud.ces.v1beta.Agent.AgentToolset,
                 com.google.cloud.ces.v1beta.Agent.AgentToolset.Builder,
                 com.google.cloud.ces.v1beta.Agent.AgentToolsetOrBuilder>(
-                toolsets_, ((bitField0_ & 0x00080000) != 0), getParentForChildren(), isClean());
+                toolsets_, ((bitField0_ & 0x00100000) != 0), getParentForChildren(), isClean());
         toolsets_ = null;
       }
       return toolsetsBuilder_;
@@ -12758,7 +13856,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       generatedSummary_ = value;
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -12777,7 +13875,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearGeneratedSummary() {
       generatedSummary_ = getDefaultInstance().getGeneratedSummary();
-      bitField0_ = (bitField0_ & ~0x00100000);
+      bitField0_ = (bitField0_ & ~0x00200000);
       onChanged();
       return this;
     }
@@ -12801,7 +13899,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       generatedSummary_ = value;
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -12810,10 +13908,10 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
         java.util.Collections.emptyList();
 
     private void ensureTransferRulesIsMutable() {
-      if (!((bitField0_ & 0x00200000) != 0)) {
+      if (!((bitField0_ & 0x00400000) != 0)) {
         transferRules_ =
             new java.util.ArrayList<com.google.cloud.ces.v1beta.TransferRule>(transferRules_);
-        bitField0_ |= 0x00200000;
+        bitField0_ |= 0x00400000;
       }
     }
 
@@ -13072,7 +14170,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
     public Builder clearTransferRules() {
       if (transferRulesBuilder_ == null) {
         transferRules_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00200000);
+        bitField0_ = (bitField0_ & ~0x00400000);
         onChanged();
       } else {
         transferRulesBuilder_.clear();
@@ -13223,7 +14321,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
                 com.google.cloud.ces.v1beta.TransferRule.Builder,
                 com.google.cloud.ces.v1beta.TransferRuleOrBuilder>(
                 transferRules_,
-                ((bitField0_ & 0x00200000) != 0),
+                ((bitField0_ & 0x00400000) != 0),
                 getParentForChildren(),
                 isClean());
         transferRules_ = null;
@@ -13238,7 +14336,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
       if (!validationErrors_.isModifiable()) {
         validationErrors_ = new com.google.protobuf.LazyStringArrayList(validationErrors_);
       }
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x00800000;
     }
 
     /**
@@ -13333,7 +14431,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
       }
       ensureValidationErrorsIsMutable();
       validationErrors_.set(index, value);
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -13358,7 +14456,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
       }
       ensureValidationErrorsIsMutable();
       validationErrors_.add(value);
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -13380,7 +14478,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
     public Builder addAllValidationErrors(java.lang.Iterable<java.lang.String> values) {
       ensureValidationErrorsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, validationErrors_);
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -13400,7 +14498,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearValidationErrors() {
       validationErrors_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00400000);
+      bitField0_ = (bitField0_ & ~0x00800000);
       ;
       onChanged();
       return this;
@@ -13427,7 +14525,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessage
       checkByteStringIsUtf8(value);
       ensureValidationErrorsIsMutable();
       validationErrors_.add(value);
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return this;
     }
