@@ -898,6 +898,7 @@ public class SessionImplTest {
 
   @Test
   void sessionCloseTimeoutForcesClose() throws Exception {
+    FakeClock clock = new FakeClock(Instant.now());
     CapturingBigtableTimer capturing = new CapturingBigtableTimer(timer);
     SessionStream underlying = sessionFactory.createNew();
     // Drop CloseSession and halfClose so the server never closes the stream and the session stays
@@ -915,7 +916,8 @@ public class SessionImplTest {
           @Override
           public void halfClose() {}
         };
-    SessionImpl session = new SessionImpl(metrics, poolInfo, 0, hangingCloseStream, capturing);
+    SessionImpl session =
+        new SessionImpl(metrics, clock, poolInfo, 0, hangingCloseStream, capturing);
 
     FakeSessionListener sessionListener = new FakeSessionListener();
     session.start(
@@ -947,12 +949,15 @@ public class SessionImplTest {
         .that(capturing.tasks)
         .hasSize(1);
 
+    clock.increment(SessionImpl.CLOSE_SESSION_TIMEOUT);
+
     // Fire the close-timeout tick on its executor (sessionSyncContext).
     capturing.executors.get(0).execute(capturing.tasks.get(0));
 
     Status status = sessionListener.popUntil(Status.class);
     assertThat(status.getCode()).isEqualTo(Status.Code.UNAVAILABLE);
     assertThat(status.getDescription()).contains("awaiting close for too long");
+    assertThat(status.getDescription()).contains("PT5M ago");
     assertThat(sessionListener.getLastPrevState())
         .isEqualTo(Session.SessionState.WAIT_SERVER_CLOSE);
     assertThat(session.getState()).isEqualTo(Session.SessionState.CLOSED);

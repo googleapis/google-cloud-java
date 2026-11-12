@@ -509,11 +509,6 @@ class SessionListTest {
     }
 
     @Override
-    public Instant getLastStateChange() {
-      throw new UnsupportedOperationException();
-    }
-
-    @Override
     public OpenParams getOpenParams() {
       throw new UnsupportedOperationException();
     }

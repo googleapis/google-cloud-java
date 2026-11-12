@@ -113,8 +113,6 @@ public class SessionImpl implements Session, VRpcSessionApi {
 
   private volatile SessionState state = SessionState.NEW;
 
-  private volatile Instant lastStateChangedAt;
-
   // All fields below are owned by sessionSyncContext: every writer runs inside a
   // sessionSyncContext task, and the in-class readers do too (handlers, scheduled heartbeat
   // tick). They lost their volatile / lock guards when synchronized(lock) was removed;
@@ -124,6 +122,8 @@ public class SessionImpl implements Session, VRpcSessionApi {
   // either run on sessionSyncContext themselves (e.g. via a Session.Listener callback, which is
   // dispatched from inside the context) or accept a possibly-stale snapshot. There are no
   // off-context production readers today.
+  private Instant lastStateChangedAt;
+
   private Listener sessionListener;
 
   private OpenParams openParams;
@@ -262,11 +262,6 @@ public class SessionImpl implements Session, VRpcSessionApi {
   @Override
   public SessionState getState() {
     return state;
-  }
-
-  @Override
-  public Instant getLastStateChange() {
-    return lastStateChangedAt;
   }
 
   @Override
