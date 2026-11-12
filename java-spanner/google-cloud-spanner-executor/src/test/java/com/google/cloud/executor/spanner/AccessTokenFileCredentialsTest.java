@@ -109,31 +109,16 @@ public class AccessTokenFileCredentialsTest {
   public void refresh_throwsIOExceptionForInvalidTokenFiles() throws IOException {
     File missingFile = new File(tempFolder.getRoot(), "does_not_exist");
     AccessTokenFileCredentials missingCredentials = new AccessTokenFileCredentials(missingFile);
-    try {
-      missingCredentials.refresh();
-      Assert.fail("Expected IOException for missing token file");
-    } catch (IOException expected) {
-      // Expected.
-    }
+    Assert.assertThrows(IOException.class, missingCredentials::refresh);
 
     File directory = tempFolder.newFolder("token_dir");
     AccessTokenFileCredentials dirCredentials = new AccessTokenFileCredentials(directory);
-    try {
-      dirCredentials.refresh();
-      Assert.fail("Expected IOException for directory token path");
-    } catch (IOException expected) {
-      // Expected.
-    }
+    Assert.assertThrows(IOException.class, dirCredentials::refresh);
 
     File emptyFile = tempFolder.newFile("empty_token");
     FileUtils.writeStringToFile(emptyFile, "   \n", StandardCharsets.UTF_8);
     AccessTokenFileCredentials emptyCredentials = new AccessTokenFileCredentials(emptyFile);
-    try {
-      emptyCredentials.refresh();
-      Assert.fail("Expected IOException for empty token file");
-    } catch (IOException expected) {
-      // Expected.
-    }
+    Assert.assertThrows(IOException.class, emptyCredentials::refresh);
   }
 
   @Test
@@ -149,16 +134,14 @@ public class AccessTokenFileCredentialsTest {
     Assert.assertEquals(
         "/files/auth/access_token", parsed.getOptionValue(WorkerProxy.OPTION_ACCESS_TOKEN_FILE));
 
-    try {
-      WorkerProxy.buildOptions(
-          new String[] {
-            "--service_key_file", "/files/key.json",
-            "--access_token_file", "/files/auth/access_token"
-          });
-      Assert.fail("Expected IllegalArgumentException when both credential flags are provided");
-    } catch (IllegalArgumentException expected) {
-      // Expected.
-    }
+    Assert.assertThrows(
+        IllegalArgumentException.class,
+        () ->
+            WorkerProxy.buildOptions(
+                new String[] {
+                  "--service_key_file", "/files/key.json",
+                  "--access_token_file", "/files/auth/access_token"
+                }));
   }
 
   @Test
@@ -180,11 +163,6 @@ public class AccessTokenFileCredentialsTest {
         credentials.getRequestMetadata(null).get("Authorization"));
 
     WorkerProxy.serviceKeyFile = "/files/key.json";
-    try {
-      WorkerProxy.getCredentialsFromFlags();
-      Assert.fail("Expected IllegalArgumentException when both credential fields are non-empty");
-    } catch (IllegalArgumentException expected) {
-      // Expected.
-    }
+    Assert.assertThrows(IllegalArgumentException.class, WorkerProxy::getCredentialsFromFlags);
   }
 }
