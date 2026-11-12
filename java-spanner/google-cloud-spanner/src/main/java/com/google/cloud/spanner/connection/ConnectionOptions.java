@@ -90,7 +90,6 @@ import com.google.cloud.spanner.Spanner;
 import com.google.cloud.spanner.SpannerException;
 import com.google.cloud.spanner.SpannerExceptionFactory;
 import com.google.cloud.spanner.SpannerOptions;
-import com.google.cloud.spanner.connection.ClientSideStatementValueConverters.GrpcInterceptorProviderConverter;
 import com.google.cloud.spanner.connection.StatementExecutor.StatementExecutorType;
 import com.google.cloud.spanner.omni.SpannerOmniCredentials;
 import com.google.common.annotations.VisibleForTesting;
@@ -337,6 +336,9 @@ public class ConnectionOptions {
   public static final String ENABLE_GRPC_INTERCEPTOR_PROVIDER_SYSTEM_PROPERTY =
       "ENABLE_GRPC_INTERCEPTOR_PROVIDER";
 
+  /** Name of the 'grpc_interceptor_provider' connection property. */
+  public static final String GRPC_INTERCEPTOR_PROVIDER_PROPERTY_NAME = "grpc_interceptor_provider";
+
   /** Custom user agent string is only for other Google libraries. */
   static final String USER_AGENT_PROPERTY_NAME = "userAgent";
 
@@ -395,7 +397,7 @@ public class ConnectionOptions {
       "%s can only be used if the system property %s has been set to true. "
           + "Start the application with the JVM command line option -D%s=true";
 
-  private static String generateGuardedConnectionPropertyError(
+  static String generateGuardedConnectionPropertyError(
       String systemPropertyName, String connectionPropertyName) {
     return String.format(
         GUARDED_CONNECTION_PROPERTY_ERROR_MESSAGE,
@@ -711,6 +713,7 @@ public class ConnectionOptions {
   private final String instanceId;
   private final String databaseName;
   private final Credentials credentials;
+  private final CredentialsProvider credentialsProvider;
   private final StatementExecutorType statementExecutorType;
   private final SessionPoolOptions sessionPoolOptions;
 
@@ -759,9 +762,7 @@ public class ConnectionOptions {
         ENABLE_ENCODED_CREDENTIALS_SYSTEM_PROPERTY,
         ENCODED_CREDENTIALS_PROPERTY_NAME);
     checkGuardedProperty(
-        getInitialConnectionPropertyValue(CREDENTIALS_PROVIDER) == null
-            ? null
-            : getInitialConnectionPropertyValue(CREDENTIALS_PROVIDER).getClass().getName(),
+        getInitialConnectionPropertyValue(CREDENTIALS_PROVIDER),
         ENABLE_CREDENTIALS_PROVIDER_SYSTEM_PROPERTY,
         CREDENTIALS_PROVIDER_PROPERTY_NAME);
     checkGuardedProperty(
@@ -771,7 +772,7 @@ public class ConnectionOptions {
     checkGuardedProperty(
         getInitialConnectionPropertyValue(GRPC_INTERCEPTOR_PROVIDER),
         ENABLE_GRPC_INTERCEPTOR_PROVIDER_SYSTEM_PROPERTY,
-        GRPC_INTERCEPTOR_PROVIDER.getName());
+        GRPC_INTERCEPTOR_PROVIDER_PROPERTY_NAME);
     // Check that at most one of credentials location, encoded credentials, credentials provider and
     // OUAuth token has been specified in the connection URI.
     Preconditions.checkArgument(
@@ -800,13 +801,21 @@ public class ConnectionOptions {
         SpannerOptions.getDefaultSpannerOmniCredentialsFromSysEnv();
     String username = getInitialConnectionPropertyValue(ConnectionProperties.USERNAME);
     String password = getInitialConnectionPropertyValue(ConnectionProperties.PASSWORD);
+    String credentialsProviderName = getInitialConnectionPropertyValue(CREDENTIALS_PROVIDER);
+    if (credentialsProviderName != null) {
+      this.credentialsProvider =
+          ClientSideStatementValueConverters.CredentialsProviderConverter.INSTANCE.convert(
+              credentialsProviderName);
+    } else {
+      this.credentialsProvider = null;
+    }
     // Using credentials on a plain text connection is not allowed, so if the user has not specified
     // any credentials and is using a plain text connection, we should not try to get the
     // credentials from the environment, but default to NoCredentials.
     if (this.fixedCredentials == null
         && getInitialConnectionPropertyValue(CREDENTIALS_URL) == null
         && getInitialConnectionPropertyValue(ENCODED_CREDENTIALS) == null
-        && getInitialConnectionPropertyValue(CREDENTIALS_PROVIDER) == null
+        && this.credentialsProvider == null
         && getInitialConnectionPropertyValue(OAUTH_TOKEN) == null
         && Strings.isNullOrEmpty(getInitialConnectionPropertyValue(ConnectionProperties.USERNAME))
         && usePlainText) {
@@ -831,9 +840,9 @@ public class ConnectionOptions {
       } else {
         this.credentials = NoCredentials.getInstance();
       }
-    } else if (getInitialConnectionPropertyValue(CREDENTIALS_PROVIDER) != null) {
+    } else if (this.credentialsProvider != null) {
       try {
-        this.credentials = getInitialConnectionPropertyValue(CREDENTIALS_PROVIDER).getCredentials();
+        this.credentials = this.credentialsProvider.getCredentials();
       } catch (IOException exception) {
         throw SpannerExceptionFactory.newSpannerException(
             ErrorCode.INVALID_ARGUMENT,
@@ -1057,7 +1066,7 @@ public class ConnectionOptions {
   }
 
   CredentialsProvider getCredentialsProvider() {
-    return getInitialConnectionPropertyValue(CREDENTIALS_PROVIDER);
+    return this.credentialsProvider;
   }
 
   /**
@@ -1155,14 +1164,18 @@ public class ConnectionOptions {
     try {
       URL url = new URL(MoreObjects.firstNonNull(host, DEFAULT_HOST));
       ExternalChannelProvider provider =
-          ExternalChannelProvider.class.cast(Class.forName(channelProvider).newInstance());
-      return provider.getChannelProvider(url.getHost(), url.getPort());
-    } catch (Exception e) {
+          ClientSideStatementValueConverters.ExternalChannelProviderConverter.INSTANCE.convert(
+              channelProvider);
+      return provider == null ? null : provider.getChannelProvider(url.getHost(), url.getPort());
+    } catch (SpannerException exception) {
+      throw exception;
+    } catch (Exception exception) {
       throw SpannerExceptionFactory.newSpannerException(
           ErrorCode.INVALID_ARGUMENT,
           String.format(
               "%s : Failed to create channel with external provider: %s",
-              e.toString(), channelProvider));
+              exception.toString(), channelProvider),
+          exception);
     }
   }
 
@@ -1176,7 +1189,8 @@ public class ConnectionOptions {
     if (interceptorProvider == null) {
       return null;
     }
-    return GrpcInterceptorProviderConverter.INSTANCE.convert(interceptorProvider);
+    return ClientSideStatementValueConverters.GrpcInterceptorProviderConverter.INSTANCE.convert(
+        interceptorProvider);
   }
 
   /**

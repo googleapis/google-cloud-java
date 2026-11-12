@@ -99,6 +99,7 @@ import static com.google.cloud.spanner.connection.ConnectionOptions.ENABLE_GRPC_
 import static com.google.cloud.spanner.connection.ConnectionOptions.ENABLE_GRPC_INTERCEPTOR_PROVIDER_SYSTEM_PROPERTY;
 import static com.google.cloud.spanner.connection.ConnectionOptions.ENCODED_CREDENTIALS_PROPERTY_NAME;
 import static com.google.cloud.spanner.connection.ConnectionOptions.ENDPOINT_PROPERTY_NAME;
+import static com.google.cloud.spanner.connection.ConnectionOptions.GRPC_INTERCEPTOR_PROVIDER_PROPERTY_NAME;
 import static com.google.cloud.spanner.connection.ConnectionOptions.GRPC_KEEPALIVE_TIMEOUT_PROPERTY_NAME;
 import static com.google.cloud.spanner.connection.ConnectionOptions.GRPC_KEEPALIVE_TIME_PROPERTY_NAME;
 import static com.google.cloud.spanner.connection.ConnectionOptions.IS_EXPERIMENTAL_HOST_PROPERTY_NAME;
@@ -126,7 +127,6 @@ import static com.google.cloud.spanner.connection.ConnectionOptions.USE_VIRTUAL_
 import static com.google.cloud.spanner.connection.ConnectionProperty.castProperty;
 
 import com.google.api.core.ObsoleteApi;
-import com.google.api.gax.core.CredentialsProvider;
 import com.google.api.gax.grpc.GrpcInterceptorProvider;
 import com.google.cloud.spanner.Dialect;
 import com.google.cloud.spanner.DmlBatchUpdateCountVerificationFailedException;
@@ -136,7 +136,6 @@ import com.google.cloud.spanner.TimestampBound;
 import com.google.cloud.spanner.connection.ClientSideStatementValueConverters.AutocommitDmlModeConverter;
 import com.google.cloud.spanner.connection.ClientSideStatementValueConverters.BooleanConverter;
 import com.google.cloud.spanner.connection.ClientSideStatementValueConverters.ConnectionStateTypeConverter;
-import com.google.cloud.spanner.connection.ClientSideStatementValueConverters.CredentialsProviderConverter;
 import com.google.cloud.spanner.connection.ClientSideStatementValueConverters.DdlInTransactionModeConverter;
 import com.google.cloud.spanner.connection.ClientSideStatementValueConverters.DialectConverter;
 import com.google.cloud.spanner.connection.ClientSideStatementValueConverters.DurationConverter;
@@ -372,17 +371,17 @@ public class ConnectionProperties {
           DEFAULT_OAUTH_TOKEN,
           StringValueConverter.INSTANCE,
           Context.STARTUP);
-  static final ConnectionProperty<CredentialsProvider> CREDENTIALS_PROVIDER =
+  static final ConnectionProperty<String> CREDENTIALS_PROVIDER =
       create(
           CREDENTIALS_PROVIDER_PROPERTY_NAME,
           "The class name of the com.google.api.gax.core.CredentialsProvider implementation that"
               + " should be used to obtain credentials for connections.",
           null,
-          CredentialsProviderConverter.INSTANCE,
+          StringValueConverter.INSTANCE,
           Context.STARTUP);
   static final ConnectionProperty<String> GRPC_INTERCEPTOR_PROVIDER =
       create(
-          "grpc_interceptor_provider",
+          GRPC_INTERCEPTOR_PROVIDER_PROPERTY_NAME,
           "The class name of a "
               + GrpcInterceptorProvider.class.getName()
               + " implementation that should be used to provide interceptors for the underlying"
