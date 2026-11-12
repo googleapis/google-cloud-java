@@ -953,7 +953,6 @@ public final class StorageMetricsContextTest {
         Attributes.builder()
             .put(StorageClientMetrics.KEY_RPC_SYSTEM_NAME, "grpc")
             .put(StorageClientMetrics.KEY_SERVER_ADDRESS, "storage.googleapis.com")
-            .put(StorageClientMetrics.KEY_SERVER_PORT, 443L)
             .put(
                 StorageClientMetrics.KEY_NETWORK_PATH, StorageClientMetrics.NETWORK_PATH_DIRECTPATH)
             .put(StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE, "OK")
@@ -977,14 +976,14 @@ public final class StorageMetricsContextTest {
     assertThat(attrs.get(StorageClientMetrics.KEY_RPC_SYSTEM_NAME)).isEqualTo("grpc");
     assertThat(attrs.get(StorageClientMetrics.KEY_SERVER_ADDRESS))
         .isEqualTo("storage.googleapis.com");
-    assertThat(attrs.get(StorageClientMetrics.KEY_SERVER_PORT)).isEqualTo(443L);
+    assertThat(attrs.get(StorageClientMetrics.KEY_SERVER_PORT)).isNull();
     assertThat(attrs.get(StorageClientMetrics.KEY_GCP_CLIENT_SERVICE)).isEqualTo("storage");
     assertThat(attrs.get(StorageClientMetrics.KEY_NETWORK_PATH)).isNull();
     assertThat(attrs.get(StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE)).isNull();
     assertThat(attrs.get(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE)).isNull();
     assertThat(attrs.get(StorageClientMetrics.KEY_ERROR_TYPE)).isNull();
     assertThat(attrs.get(StorageClientMetrics.KEY_RPC_METHOD)).isNull();
-    assertThat(attrs.get(StorageClientMetrics.KEY_GCP_CLIENT_METHOD)).isNull();
+    assertThat(attrs.get(StorageClientMetrics.KEY_GCP_CLIENT_METHOD)).isEqualTo("Storage.writer");
   }
 
   @Test
@@ -997,7 +996,6 @@ public final class StorageMetricsContextTest {
         Attributes.builder()
             .put(StorageClientMetrics.KEY_RPC_SYSTEM_NAME, "http")
             .put(StorageClientMetrics.KEY_SERVER_ADDRESS, "storage.googleapis.com")
-            .put(StorageClientMetrics.KEY_SERVER_PORT, 443L)
             .put(StorageClientMetrics.KEY_HTTP_REQUEST_METHOD, "POST")
             .put(StorageClientMetrics.KEY_URL_TEMPLATE, "/upload/storage/v1/b/{bucket}/o")
             .put(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE, 200L)
@@ -1022,7 +1020,9 @@ public final class StorageMetricsContextTest {
     assertThat(recordedAttrs.get(StorageClientMetrics.KEY_RPC_SYSTEM_NAME)).isEqualTo("http");
     assertThat(recordedAttrs.get(StorageClientMetrics.KEY_SERVER_ADDRESS))
         .isEqualTo("storage.googleapis.com");
-    assertThat(recordedAttrs.get(StorageClientMetrics.KEY_SERVER_PORT)).isEqualTo(443L);
+    assertThat(recordedAttrs.get(StorageClientMetrics.KEY_GCP_CLIENT_METHOD))
+        .isEqualTo("Storage.create");
+    assertThat(recordedAttrs.get(StorageClientMetrics.KEY_SERVER_PORT)).isNull();
     assertThat(recordedAttrs.get(StorageClientMetrics.KEY_HTTP_REQUEST_METHOD)).isNull();
     assertThat(recordedAttrs.get(StorageClientMetrics.KEY_URL_TEMPLATE)).isNull();
     assertThat(recordedAttrs.get(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE)).isNull();
@@ -1030,11 +1030,10 @@ public final class StorageMetricsContextTest {
     assertThat(recordedAttrs.get(StorageClientMetrics.KEY_NETWORK_PATH)).isNull();
     assertThat(recordedAttrs.get(StorageClientMetrics.KEY_ERROR_TYPE)).isNull();
     assertThat(recordedAttrs.get(StorageClientMetrics.KEY_RPC_METHOD)).isNull();
-    assertThat(recordedAttrs.get(StorageClientMetrics.KEY_GCP_CLIENT_METHOD)).isNull();
   }
 
   @Test
-  public void recordOperation_doesNotRecordRequestBodySize_whenBytesIsZero() {
+  public void recordOperation_recordsRequestBodySize_whenBytesIsZero() {
     InMemoryMetricReader reader = InMemoryMetricReader.create();
     SdkMeterProvider provider = SdkMeterProvider.builder().registerMetricReader(reader).build();
     StorageClientMetrics metrics = StorageClientMetrics.create(provider, true, false);
@@ -1044,9 +1043,11 @@ public final class StorageMetricsContextTest {
     context.recordOperation(metrics, null);
 
     Collection<MetricData> collected = reader.collectAllMetrics();
-    assertThat(
-            findMetric(collected, StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_REQUEST_BODY_SIZE))
-        .isNull();
+    HistogramPointData point =
+        getSingleHistogramPoint(
+            collected, StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_REQUEST_BODY_SIZE);
+    assertThat(point.getCount()).isEqualTo(1L);
+    assertThat(point.getSum()).isEqualTo(0.0);
   }
 
   @Test
@@ -1089,7 +1090,7 @@ public final class StorageMetricsContextTest {
   }
 
   @Test
-  public void baseStorageWriteChannel_doesNotRecordRequestBodySize_whenZeroBytesWritten()
+  public void baseStorageWriteChannel_recordsRequestBodySize_whenZeroBytesWritten()
       throws IOException {
     InMemoryMetricReader reader = InMemoryMetricReader.create();
     SdkMeterProvider provider = SdkMeterProvider.builder().registerMetricReader(reader).build();
@@ -1100,9 +1101,11 @@ public final class StorageMetricsContextTest {
     channel.close();
 
     Collection<MetricData> collected = reader.collectAllMetrics();
-    assertThat(
-            findMetric(collected, StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_REQUEST_BODY_SIZE))
-        .isNull();
+    HistogramPointData bodyPoint =
+        getSingleHistogramPoint(
+            collected, StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_REQUEST_BODY_SIZE);
+    assertThat(bodyPoint.getCount()).isEqualTo(1L);
+    assertThat(bodyPoint.getSum()).isEqualTo(0.0);
     LongPointData opPoint =
         getSinglePoint(collected, StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_OPERATIONS);
     assertThat(opPoint.getValue()).isEqualTo(1L);
@@ -1306,7 +1309,9 @@ public final class StorageMetricsContextTest {
         HistogramPointData bodyPoint =
             getSingleHistogramPoint(
                 collected, StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_REQUEST_BODY_SIZE);
-        assertThat(bodyPoint.getCount()).isEqualTo(5L);
+        // 5 successful WriteObject ops (1600 B total) + 1 failed internalCreateFrom(missingPath) (0
+        // B)
+        assertThat(bodyPoint.getCount()).isEqualTo(6L);
         assertThat(bodyPoint.getSum()).isEqualTo(1600.0);
 
         MetricData opsMetric =
@@ -1394,7 +1399,6 @@ public final class StorageMetricsContextTest {
         Attributes.builder()
             .put(StorageClientMetrics.KEY_RPC_SYSTEM_NAME, "grpc")
             .put(StorageClientMetrics.KEY_SERVER_ADDRESS, "storage.googleapis.com")
-            .put(StorageClientMetrics.KEY_SERVER_PORT, 443L)
             .put(
                 StorageClientMetrics.KEY_NETWORK_PATH, StorageClientMetrics.NETWORK_PATH_DIRECTPATH)
             .put(StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE, "OK")
@@ -1419,18 +1423,18 @@ public final class StorageMetricsContextTest {
     assertThat(attrs.get(StorageClientMetrics.KEY_RPC_SYSTEM_NAME)).isEqualTo("grpc");
     assertThat(attrs.get(StorageClientMetrics.KEY_SERVER_ADDRESS))
         .isEqualTo("storage.googleapis.com");
-    assertThat(attrs.get(StorageClientMetrics.KEY_SERVER_PORT)).isEqualTo(443L);
+    assertThat(attrs.get(StorageClientMetrics.KEY_SERVER_PORT)).isNull();
     assertThat(attrs.get(StorageClientMetrics.KEY_GCP_CLIENT_SERVICE)).isEqualTo("storage");
     assertThat(attrs.get(StorageClientMetrics.KEY_NETWORK_PATH)).isNull();
     assertThat(attrs.get(StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE)).isNull();
     assertThat(attrs.get(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE)).isNull();
     assertThat(attrs.get(StorageClientMetrics.KEY_ERROR_TYPE)).isNull();
     assertThat(attrs.get(StorageClientMetrics.KEY_RPC_METHOD)).isNull();
-    assertThat(attrs.get(StorageClientMetrics.KEY_GCP_CLIENT_METHOD)).isNull();
+    assertThat(attrs.get(StorageClientMetrics.KEY_GCP_CLIENT_METHOD)).isEqualTo("Storage.reader");
   }
 
   @Test
-  public void recordOperation_doesNotRecordResponseBodySize_whenBytesIsZero() {
+  public void recordOperation_recordsResponseBodySize_whenBytesIsZero() {
     InMemoryMetricReader reader = InMemoryMetricReader.create();
     SdkMeterProvider provider = SdkMeterProvider.builder().registerMetricReader(reader).build();
     StorageClientMetrics metrics = StorageClientMetrics.create(provider, true, false);
@@ -1440,10 +1444,12 @@ public final class StorageMetricsContextTest {
     context.recordOperation(metrics, null);
 
     Collection<MetricData> collected = reader.collectAllMetrics();
-    MetricData bodySizeData =
-        findMetric(collected, StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_RESPONSE_BODY_SIZE);
+    HistogramPointData point =
+        getSingleHistogramPoint(
+            collected, StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_RESPONSE_BODY_SIZE);
 
-    assertThat(bodySizeData).isNull();
+    assertThat(point.getCount()).isEqualTo(1L);
+    assertThat(point.getSum()).isEqualTo(0.0);
   }
 
   @Test
@@ -1518,7 +1524,7 @@ public final class StorageMetricsContextTest {
   }
 
   @Test
-  public void baseStorageReadChannel_doesNotRecordResponseBodySize_whenClosedWithoutReading() {
+  public void baseStorageReadChannel_recordsResponseBodySize_whenClosedWithoutReading() {
     InMemoryMetricReader reader = InMemoryMetricReader.create();
     SdkMeterProvider provider = SdkMeterProvider.builder().registerMetricReader(reader).build();
     StorageClientMetrics metrics = StorageClientMetrics.create(provider, true, false);
@@ -1530,10 +1536,11 @@ public final class StorageMetricsContextTest {
     }
 
     Collection<MetricData> collected = reader.collectAllMetrics();
-    assertThat(
-            findMetric(
-                collected, StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_RESPONSE_BODY_SIZE))
-        .isNull();
+    HistogramPointData point =
+        getSingleHistogramPoint(
+            collected, StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_RESPONSE_BODY_SIZE);
+    assertThat(point.getCount()).isEqualTo(1L);
+    assertThat(point.getSum()).isEqualTo(0.0);
     assertThat(findMetric(collected, StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_OPERATIONS))
         .isNotNull();
   }
@@ -1749,7 +1756,7 @@ public final class StorageMetricsContextTest {
   }
 
   @Test
-  public void blobReadSessionAdapter_doesNotRecordResponseBodySize_whenOpenFails() {
+  public void blobReadSessionAdapter_recordsZeroResponseBodySize_whenOpenFails() {
     InMemoryMetricReader reader = InMemoryMetricReader.create();
     SdkMeterProvider provider = SdkMeterProvider.builder().registerMetricReader(reader).build();
     StorageClientMetrics metrics = StorageClientMetrics.create(provider, true, false);
@@ -1762,10 +1769,11 @@ public final class StorageMetricsContextTest {
     assertThrows(ExecutionException.class, wrapped::get);
 
     Collection<MetricData> collected = reader.collectAllMetrics();
-    assertThat(
-            findMetric(
-                collected, StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_RESPONSE_BODY_SIZE))
-        .isNull();
+    HistogramPointData point =
+        getSingleHistogramPoint(
+            collected, StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_RESPONSE_BODY_SIZE);
+    assertThat(point.getCount()).isEqualTo(1L);
+    assertThat(point.getSum()).isEqualTo(0.0);
     LongPointData opPoint =
         getSinglePoint(collected, StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_OPERATIONS);
     assertThat(opPoint.getAttributes().get(StorageClientMetrics.KEY_ERROR_TYPE))
@@ -1773,7 +1781,7 @@ public final class StorageMetricsContextTest {
   }
 
   @Test
-  public void grpcStorageImpl_readAllBytes_recordsResponseBodySizeAndSuppressesOnMidStreamError()
+  public void grpcStorageImpl_readAllBytes_recordsResponseBodySizeAndZeroOnMidStreamError()
       throws Exception {
     byte[] payload = "0123456789abcdefghij01234".getBytes(StandardCharsets.UTF_8);
     ChecksummedTestContent chunk1 = ChecksummedTestContent.of(payload, 0, 10);
@@ -1845,11 +1853,12 @@ public final class StorageMetricsContextTest {
       assertThat(point.getSum()).isEqualTo((double) payload.length);
 
       assertThrows(StorageException.class, () -> failStorage.readAllBytes(BlobId.of("b", "fail")));
-      assertThat(
-              findMetric(
-                  failReader.collectAllMetrics(),
-                  StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_RESPONSE_BODY_SIZE))
-          .isNull();
+      HistogramPointData failPoint =
+          getSingleHistogramPoint(
+              failReader.collectAllMetrics(),
+              StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_RESPONSE_BODY_SIZE);
+      assertThat(failPoint.getCount()).isEqualTo(1L);
+      assertThat(failPoint.getSum()).isEqualTo(0.0);
     }
   }
 

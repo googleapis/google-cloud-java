@@ -129,7 +129,7 @@ final class BlobReadSessionAdapter implements BlobReadSession {
       public int read(ByteBuffer dst) throws IOException {
         try {
           int read = delegate.read(dst);
-          if (read > 0 && metricsContext != null) {
+          if (read > 0) {
             metricsContext.addResponseBytes(read);
           }
           return read;
@@ -184,7 +184,7 @@ final class BlobReadSessionAdapter implements BlobReadSession {
       public int read(ByteBuffer dst) throws IOException {
         try {
           int read = delegate.read(dst);
-          if (read > 0 && metricsContext != null) {
+          if (read > 0) {
             metricsContext.addResponseBytes(read);
           }
           return read;
@@ -198,7 +198,7 @@ final class BlobReadSessionAdapter implements BlobReadSession {
       public long read(ByteBuffer[] dsts, int offset, int length) throws IOException {
         try {
           long read = delegate.read(dsts, offset, length);
-          if (read > 0 && metricsContext != null) {
+          if (read > 0) {
             metricsContext.addResponseBytes(read);
           }
           return read;
@@ -212,7 +212,7 @@ final class BlobReadSessionAdapter implements BlobReadSession {
       public long read(ByteBuffer[] dsts) throws IOException {
         try {
           long read = delegate.read(dsts);
-          if (read > 0 && metricsContext != null) {
+          if (read > 0) {
             metricsContext.addResponseBytes(read);
           }
           return read;

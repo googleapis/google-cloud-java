@@ -337,7 +337,7 @@ public final class GrpcStorageOptions extends StorageOptions
     StorageClientMetrics clientMetrics = getStorageClientMetrics();
     if (clientMetrics != null) {
       StorageGrpcMetricsInterceptor metricsInterceptor =
-          new StorageGrpcMetricsInterceptor(clientMetrics, getClock(), endpoint);
+          new StorageGrpcMetricsInterceptor(clientMetrics, getClock());
       GrpcInterceptorProvider combinedProvider =
           grpcInterceptorProvider == null
                   || NoopGrpcInterceptorProvider.INSTANCE.equals(grpcInterceptorProvider)

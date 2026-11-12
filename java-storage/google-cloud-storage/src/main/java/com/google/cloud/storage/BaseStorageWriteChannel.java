@@ -111,7 +111,7 @@ abstract class BaseStorageWriteChannel<T> implements StorageWriteChannel {
         StorageException.wrapIOException(internalGetLazyChannel().getChannel()::close);
       }
     } catch (Throwable t) {
-      error = t;
+      error = unwrapStorageException(t);
       throw t;
     } finally {
       open = false;
@@ -148,16 +148,22 @@ abstract class BaseStorageWriteChannel<T> implements StorageWriteChannel {
         lastOperationError = e;
         throw new IOException(e);
       } catch (IOException e) {
-        lastOperationError = e;
+        lastOperationError = unwrapStorageException(e);
         throw e;
       } catch (Exception e) {
-        Throwable coalesced = StorageException.coalesce(e);
+        Throwable coalesced = unwrapStorageException(StorageException.coalesce(e));
         lastOperationError = coalesced;
         throw new IOException(coalesced);
       }
     } finally {
       lock.unlock();
     }
+  }
+
+  private static Throwable unwrapStorageException(Throwable t) {
+    return (t instanceof IOException && t.getCause() instanceof StorageException)
+        ? t.getCause()
+        : t;
   }
 
   @Override
