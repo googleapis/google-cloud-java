@@ -577,6 +577,11 @@ public final class GrpcStorageOptions extends StorageOptions
      * Option for whether this client should attempt to use DirectPath over Interconnect (on-premise
      * xDS name resolution).
      *
+     * <p>Credentials are required, as for standard DirectPath; a client built with {@link
+     * NoCredentials} uses CloudPath instead. Connections negotiate TLS rather than ALTS, which is
+     * unavailable outside Google Cloud. Application Default Credentials must also be available,
+     * because the name resolver uses them for its connection to the control plane.
+     *
      * <p>This can also be enabled or disabled via the {@code
      * GOOGLE_CLOUD_ENABLE_DIRECT_PATH_XDS_OVER_INTERCONNECT} environment variable ({@code "true"}
      * or {@code "false"}), which takes precedence over this builder option.

@@ -1117,18 +1117,6 @@ class InstantiatingGrpcChannelProviderTest extends AbstractMtlsTransportChannelT
   private static final String INTERCONNECT_CREDENTIALS_REQUIRED_MESSAGE =
       "DirectPath over Interconnect is misconfigured. Credentials are required; without them the"
           + " channel falls back to CloudPath.";
-  private static final String INTERCONNECT_DIRECT_PATH_NOT_ENABLED_MESSAGE =
-      "DirectPath over Interconnect is misconfigured. The attemptDirectPathXdsOverInterconnect"
-          + " option was set, but DirectPath is not enabled for this client. Please set the"
-          + " attemptDirectPath option as well, and make sure "
-          + InstantiatingGrpcChannelProvider.DIRECT_PATH_ENV_DISABLE_DIRECT_PATH
-          + " is not set to true.";
-  private static final String INTERCONNECT_ENV_VAR_DIRECT_PATH_NOT_ENABLED_MESSAGE =
-      "Env var "
-          + InstantiatingGrpcChannelProvider.DIRECT_PATH_ENV_ENABLE_XDS_OVER_INTERCONNECT
-          + " was found and set to TRUE, but DirectPath was not enabled for this client. If this is"
-          + " intended for this client, please note that this is a misconfiguration and set the"
-          + " attemptDirectPath option as well.";
 
   /**
    * Builds the provider's transport channel and returns the misconfiguration log records, at every
@@ -1169,6 +1157,14 @@ class InstantiatingGrpcChannelProviderTest extends AbstractMtlsTransportChannelT
     return envProvider;
   }
 
+  private static EnvironmentProvider envProviderWithInterconnectEnvVar() {
+    EnvironmentProvider envProvider = envProviderWithDirectPathEnabled();
+    when(envProvider.getenv(
+            InstantiatingGrpcChannelProvider.DIRECT_PATH_ENV_ENABLE_XDS_OVER_INTERCONNECT))
+        .thenReturn("true");
+    return envProvider;
+  }
+
   @Test
   void logDirectPathMisconfig_interconnectWithoutCredentials_warnsCredentialsRequired()
       throws Exception {
@@ -1179,8 +1175,7 @@ class InstantiatingGrpcChannelProviderTest extends AbstractMtlsTransportChannelT
                 .setAttemptDirectPathXdsOverInterconnect(true)
                 .setEnvProvider(envProviderWithDirectPathEnabled()));
 
-    // Interconnect runs off GCE, so its misconfigurations are warnings there, unlike standard
-    // DirectPath's.
+    // Interconnect runs off GCE, where the other messages are FINE; this one is always a warning.
     assertThat(logHandler.levelsOf(INTERCONNECT_CREDENTIALS_REQUIRED_MESSAGE))
         .containsExactly(Level.WARNING);
     // The standard DirectPath message would wrongly ask for ComputeEngineCredentials.
@@ -1192,94 +1187,29 @@ class InstantiatingGrpcChannelProviderTest extends AbstractMtlsTransportChannelT
   }
 
   @Test
-  void logDirectPathMisconfig_interconnectWithoutAttemptDirectPath_warns() throws Exception {
-    FakeLogHandler logHandler =
-        logDirectPathMisconfigOffGce(
-            createChannelProviderBuilderForDirectPathLogTests()
-                .setAttemptDirectPathXdsOverInterconnect(true)
-                .setEnvProvider(envProviderWithDirectPathEnabled()));
-
-    assertThat(logHandler.levelsOf(INTERCONNECT_DIRECT_PATH_NOT_ENABLED_MESSAGE))
-        .containsExactly(Level.WARNING);
-  }
-
-  @Test
-  void logDirectPathMisconfig_interconnectEnvVarWithoutAttemptDirectPath_logsAtFine()
-      throws Exception {
-    // The environment variable is process-wide, so a client that never enabled DirectPath
-    // inherits it from the client it was meant for; as with GOOGLE_CLOUD_ENABLE_DIRECT_PATH_XDS,
-    // that is only a warning on GCE.
-    FakeLogHandler logHandler =
-        logDirectPathMisconfigOffGce(
-            createChannelProviderBuilderForDirectPathLogTests()
-                .setEnvProvider(envProviderWithInterconnectEnvVar()));
-
-    assertThat(logHandler.levelsOf(INTERCONNECT_ENV_VAR_DIRECT_PATH_NOT_ENABLED_MESSAGE))
-        .containsExactly(Level.FINE);
-    assertThat(logHandler.getAllMessages())
-        .doesNotContain(INTERCONNECT_DIRECT_PATH_NOT_ENABLED_MESSAGE);
-  }
-
-  @Test
-  void logDirectPathMisconfig_interconnectEnvVarWithoutAttemptDirectPath_onGce_warns()
-      throws Exception {
-    FakeLogHandler logHandler =
-        logDirectPathMisconfigOnGce(
-            createChannelProviderBuilderForDirectPathLogTests()
-                .setEnvProvider(envProviderWithInterconnectEnvVar()));
-
-    assertThat(logHandler.levelsOf(INTERCONNECT_ENV_VAR_DIRECT_PATH_NOT_ENABLED_MESSAGE))
-        .containsExactly(Level.WARNING);
-  }
-
-  @Test
-  void logDirectPathMisconfig_interconnectEnvVarAndBuilderOption_warnsForBuilderOption()
-      throws Exception {
-    // The builder option is this client's own request, so it takes precedence over the message
-    // for the inherited environment variable.
-    FakeLogHandler logHandler =
-        logDirectPathMisconfigOffGce(
-            createChannelProviderBuilderForDirectPathLogTests()
-                .setAttemptDirectPathXdsOverInterconnect(true)
-                .setEnvProvider(envProviderWithInterconnectEnvVar()));
-
-    assertThat(logHandler.levelsOf(INTERCONNECT_DIRECT_PATH_NOT_ENABLED_MESSAGE))
-        .containsExactly(Level.WARNING);
-    assertThat(logHandler.getAllMessages())
-        .doesNotContain(INTERCONNECT_ENV_VAR_DIRECT_PATH_NOT_ENABLED_MESSAGE);
-  }
-
-  @Test
-  void logDirectPathMisconfig_interconnectEnvVarOnDirectPathClient_logsAtFine() throws Exception {
-    // A client that enabled DirectPath but has no credentials, in a process that set the
-    // Interconnect environment variable for another client: the inherited variable does not turn
-    // its misconfiguration into a warning off GCE.
+  void logDirectPathMisconfig_interconnectWithCredentials_logsNothing() throws Exception {
     FakeLogHandler logHandler =
         logDirectPathMisconfigOffGce(
             createChannelProviderBuilderForDirectPathLogTests()
                 .setAttemptDirectPath(true)
-                .setEnvProvider(envProviderWithInterconnectEnvVar()));
+                .setAttemptDirectPathXdsOverInterconnect(true)
+                .setCredentials(mock(Credentials.class, withSettings().withoutAnnotations()))
+                .setEnvProvider(envProviderWithDirectPathEnabled()));
 
-    assertThat(logHandler.levelsOf(INTERCONNECT_CREDENTIALS_REQUIRED_MESSAGE))
-        .containsExactly(Level.FINE);
-  }
-
-  private static EnvironmentProvider envProviderWithInterconnectEnvVar() {
-    EnvironmentProvider envProvider = envProviderWithDirectPathEnabled();
-    when(envProvider.getenv(
-            InstantiatingGrpcChannelProvider.DIRECT_PATH_ENV_ENABLE_XDS_OVER_INTERCONNECT))
-        .thenReturn("true");
-    return envProvider;
+    // Off GCE is where Interconnect runs, so neither the credentials message nor the "only
+    // available in a GCE environment" message applies.
+    assertThat(logHandler.getAllMessages()).isEmpty();
   }
 
   @Test
-  void logDirectPathMisconfig_interconnectWithDirectPathKillSwitch_warns() throws Exception {
+  void logDirectPathMisconfig_interconnectWithDirectPathKillSwitch_keepsLevel() throws Exception {
     EnvironmentProvider envProvider =
         mock(EnvironmentProvider.class, withSettings().withoutAnnotations());
     when(envProvider.getenv(InstantiatingGrpcChannelProvider.DIRECT_PATH_ENV_DISABLE_DIRECT_PATH))
         .thenReturn("true");
 
-    // Storage, Bigtable and Spanner also set the xDS option alongside attemptDirectPath.
+    // GrpcStorageOptions sets the xDS option alongside attemptDirectPath, so with the kill switch
+    // set, the xDS message is what a Storage client logs. Interconnect does not raise its level.
     FakeLogHandler logHandler =
         logDirectPathMisconfigOffGce(
             createChannelProviderBuilderForDirectPathLogTests()
@@ -1288,20 +1218,36 @@ class InstantiatingGrpcChannelProviderTest extends AbstractMtlsTransportChannelT
                 .setAttemptDirectPathXdsOverInterconnect(true)
                 .setEnvProvider(envProvider));
 
-    // The kill switch disables DirectPath as a whole; the message names it as a possible cause.
-    assertThat(logHandler.levelsOf(INTERCONNECT_DIRECT_PATH_NOT_ENABLED_MESSAGE))
-        .containsExactly(Level.WARNING);
-    // The xDS message would wrongly report that attemptDirectPath was not set.
-    assertThat(logHandler.getAllMessages())
-        .doesNotContain(
-            "DirectPath is misconfigured. The DirectPath XDS option was set, but the"
-                + " attemptDirectPath option was not. Please set both the attemptDirectPath and"
-                + " attemptDirectPathXds options.");
+    assertThat(
+            logHandler.levelsOf(
+                "DirectPath is misconfigured. The DirectPath XDS option was set, but the"
+                    + " attemptDirectPath option was not. Please set both the attemptDirectPath and"
+                    + " attemptDirectPathXds options."))
+        .containsExactly(Level.FINE);
+  }
+
+  @Test
+  void logDirectPathMisconfig_interconnectEnvVarWithoutAttemptDirectPath_logsNothing()
+      throws Exception {
+    // The environment variable is process-wide, so every client in an application that enables
+    // Interconnect for one of them sees it. A client that did not enable DirectPath is not
+    // misconfigured and stays silent, on GCE and off.
+    FakeLogHandler offGce =
+        logDirectPathMisconfigOffGce(
+            createChannelProviderBuilderForDirectPathLogTests()
+                .setEnvProvider(envProviderWithInterconnectEnvVar()));
+    FakeLogHandler onGce =
+        logDirectPathMisconfigOnGce(
+            createChannelProviderBuilderForDirectPathLogTests()
+                .setEnvProvider(envProviderWithInterconnectEnvVar()));
+
+    assertThat(offGce.getAllMessages()).isEmpty();
+    assertThat(onGce.getAllMessages()).isEmpty();
   }
 
   @Test
   void logDirectPathMisconfig_offGceWithoutInterconnect_logsAtFine() throws Exception {
-    // Standard DirectPath keeps its off-GCE level; only Interconnect misconfigurations warn.
+    // Standard DirectPath keeps its off-GCE level; only the Interconnect credentials message warns.
     FakeLogHandler logHandler =
         logDirectPathMisconfigOffGce(
             createChannelProviderBuilderForDirectPathLogTests()
@@ -2341,6 +2287,19 @@ class InstantiatingGrpcChannelProviderTest extends AbstractMtlsTransportChannelT
     verify(credentials)
         .getRequestMetadata(
             any(URI.class), any(Executor.class), any(RequestMetadataCallback.class));
+  }
+
+  @Test
+  void createDirectPathChannelCredentials_interconnectWithoutCredentials_throws() {
+    // createChannelBuilder() never gets here (canUseDirectPath() is false without credentials);
+    // the precondition documents the contract for direct callers.
+    InstantiatingGrpcChannelProvider provider =
+        interconnectProvider(/* credentials= */ null, /* interconnectEnvValue= */ null);
+
+    NullPointerException e =
+        assertThrows(NullPointerException.class, provider::createDirectPathChannelCredentials);
+
+    assertThat(e).hasMessageThat().isEqualTo("DirectPath over Interconnect requires credentials");
   }
 
   @Test
