@@ -1712,6 +1712,7 @@ public class EvaluationServiceClientHttpJsonTest {
             .setEvaluationMetricsThresholds(EvaluationMetricsThresholds.newBuilder().build())
             .setConfig(EvaluationConfig.newBuilder().build())
             .setGoldenRunMethod(GoldenRunMethod.forNumber(0))
+            .setRootSpan(Span.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1781,6 +1782,7 @@ public class EvaluationServiceClientHttpJsonTest {
             .setEvaluationMetricsThresholds(EvaluationMetricsThresholds.newBuilder().build())
             .setConfig(EvaluationConfig.newBuilder().build())
             .setGoldenRunMethod(GoldenRunMethod.forNumber(0))
+            .setRootSpan(Span.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 

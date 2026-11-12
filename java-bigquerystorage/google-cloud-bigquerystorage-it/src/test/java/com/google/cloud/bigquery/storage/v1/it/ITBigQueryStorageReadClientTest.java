@@ -976,6 +976,7 @@ class ITBigQueryStorageReadClientTest {
     }
   }
 
+  @Disabled("Flaky test: b/579436616")
   @Test
   void testSimpleReadAndResume() throws IOException {
     String table =
@@ -1756,6 +1757,7 @@ class ITBigQueryStorageReadClientTest {
     localClient.close();
   }
 
+  @Disabled("Flaky test: b/579437334")
   @Test
   void testUniverseDomainWithMatchingDomain() throws IOException {
     // Test a valid domain using the default credentials and Google default universe domain.

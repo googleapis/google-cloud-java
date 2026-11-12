@@ -81,7 +81,9 @@ public final class ForecastBreakdownTarget extends com.google.protobuf.Generated
    *
    * <pre>
    * An optional name for this breakdown target, to be populated in the
-   * corresponding [ForecastBreakdownEntry.displayName][] field.
+   * corresponding
+   * [ForecastBreakdownEntry.displayName][google.ads.admanager.v1.ForecastBreakdownEntry.display_name]
+   * field.
    * </pre>
    *
    * <code>optional string display_name = 1;</code>
@@ -98,7 +100,9 @@ public final class ForecastBreakdownTarget extends com.google.protobuf.Generated
    *
    * <pre>
    * An optional name for this breakdown target, to be populated in the
-   * corresponding [ForecastBreakdownEntry.displayName][] field.
+   * corresponding
+   * [ForecastBreakdownEntry.displayName][google.ads.admanager.v1.ForecastBreakdownEntry.display_name]
+   * field.
    * </pre>
    *
    * <code>optional string display_name = 1;</code>
@@ -123,7 +127,9 @@ public final class ForecastBreakdownTarget extends com.google.protobuf.Generated
    *
    * <pre>
    * An optional name for this breakdown target, to be populated in the
-   * corresponding [ForecastBreakdownEntry.displayName][] field.
+   * corresponding
+   * [ForecastBreakdownEntry.displayName][google.ads.admanager.v1.ForecastBreakdownEntry.display_name]
+   * field.
    * </pre>
    *
    * <code>optional string display_name = 1;</code>
@@ -660,7 +666,9 @@ public final class ForecastBreakdownTarget extends com.google.protobuf.Generated
      *
      * <pre>
      * An optional name for this breakdown target, to be populated in the
-     * corresponding [ForecastBreakdownEntry.displayName][] field.
+     * corresponding
+     * [ForecastBreakdownEntry.displayName][google.ads.admanager.v1.ForecastBreakdownEntry.display_name]
+     * field.
      * </pre>
      *
      * <code>optional string display_name = 1;</code>
@@ -676,7 +684,9 @@ public final class ForecastBreakdownTarget extends com.google.protobuf.Generated
      *
      * <pre>
      * An optional name for this breakdown target, to be populated in the
-     * corresponding [ForecastBreakdownEntry.displayName][] field.
+     * corresponding
+     * [ForecastBreakdownEntry.displayName][google.ads.admanager.v1.ForecastBreakdownEntry.display_name]
+     * field.
      * </pre>
      *
      * <code>optional string display_name = 1;</code>
@@ -700,7 +710,9 @@ public final class ForecastBreakdownTarget extends com.google.protobuf.Generated
      *
      * <pre>
      * An optional name for this breakdown target, to be populated in the
-     * corresponding [ForecastBreakdownEntry.displayName][] field.
+     * corresponding
+     * [ForecastBreakdownEntry.displayName][google.ads.admanager.v1.ForecastBreakdownEntry.display_name]
+     * field.
      * </pre>
      *
      * <code>optional string display_name = 1;</code>
@@ -724,7 +736,9 @@ public final class ForecastBreakdownTarget extends com.google.protobuf.Generated
      *
      * <pre>
      * An optional name for this breakdown target, to be populated in the
-     * corresponding [ForecastBreakdownEntry.displayName][] field.
+     * corresponding
+     * [ForecastBreakdownEntry.displayName][google.ads.admanager.v1.ForecastBreakdownEntry.display_name]
+     * field.
      * </pre>
      *
      * <code>optional string display_name = 1;</code>
@@ -747,7 +761,9 @@ public final class ForecastBreakdownTarget extends com.google.protobuf.Generated
      *
      * <pre>
      * An optional name for this breakdown target, to be populated in the
-     * corresponding [ForecastBreakdownEntry.displayName][] field.
+     * corresponding
+     * [ForecastBreakdownEntry.displayName][google.ads.admanager.v1.ForecastBreakdownEntry.display_name]
+     * field.
      * </pre>
      *
      * <code>optional string display_name = 1;</code>
@@ -766,7 +782,9 @@ public final class ForecastBreakdownTarget extends com.google.protobuf.Generated
      *
      * <pre>
      * An optional name for this breakdown target, to be populated in the
-     * corresponding [ForecastBreakdownEntry.displayName][] field.
+     * corresponding
+     * [ForecastBreakdownEntry.displayName][google.ads.admanager.v1.ForecastBreakdownEntry.display_name]
+     * field.
      * </pre>
      *
      * <code>optional string display_name = 1;</code>

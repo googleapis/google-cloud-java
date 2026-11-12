@@ -23,9 +23,11 @@ import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListAutono
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListCloudExadataInfrastructuresPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListCloudVmClustersPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListDatabaseCharacterSetsPagedResponse;
+import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListDatabaseConnectionsPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListDatabasesPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListDbNodesPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListDbServersPagedResponse;
+import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListDbSystemComputePerformancesPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListDbSystemInitialStorageSizesPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListDbSystemShapesPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListDbSystemsPagedResponse;
@@ -33,6 +35,7 @@ import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListDbVers
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListEntitlementsPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListExadbVmClustersPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListExascaleDbStorageVaultsPagedResponse;
+import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListFlexComponentsPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListGiVersionsPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListGoldengateConnectionAssignmentsPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListGoldengateConnectionTypesPagedResponse;
@@ -43,6 +46,7 @@ import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListGolden
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListGoldengateDeploymentsPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListLocationsPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListMinorVersionsPagedResponse;
+import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListOdbDnsZonesPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListOdbNetworksPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListOdbSubnetsPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListPluggableDatabasesPagedResponse;
@@ -67,29 +71,40 @@ import com.google.cloud.oracledatabase.v1.ConfigureExascaleCloudExadataInfrastru
 import com.google.cloud.oracledatabase.v1.CreateAutonomousDatabaseRequest;
 import com.google.cloud.oracledatabase.v1.CreateCloudExadataInfrastructureRequest;
 import com.google.cloud.oracledatabase.v1.CreateCloudVmClusterRequest;
+import com.google.cloud.oracledatabase.v1.CreateDatabaseConnectionRequest;
 import com.google.cloud.oracledatabase.v1.CreateDbSystemRequest;
 import com.google.cloud.oracledatabase.v1.CreateExadbVmClusterRequest;
 import com.google.cloud.oracledatabase.v1.CreateExascaleDbStorageVaultRequest;
 import com.google.cloud.oracledatabase.v1.CreateGoldengateConnectionAssignmentRequest;
 import com.google.cloud.oracledatabase.v1.CreateGoldengateConnectionRequest;
 import com.google.cloud.oracledatabase.v1.CreateGoldengateDeploymentRequest;
+import com.google.cloud.oracledatabase.v1.CreateOdbDnsZoneRequest;
 import com.google.cloud.oracledatabase.v1.CreateOdbNetworkRequest;
 import com.google.cloud.oracledatabase.v1.CreateOdbSubnetRequest;
 import com.google.cloud.oracledatabase.v1.Database;
+import com.google.cloud.oracledatabase.v1.DatabaseConnection;
 import com.google.cloud.oracledatabase.v1.DbSystem;
 import com.google.cloud.oracledatabase.v1.DeleteAutonomousDatabaseRequest;
 import com.google.cloud.oracledatabase.v1.DeleteCloudExadataInfrastructureRequest;
 import com.google.cloud.oracledatabase.v1.DeleteCloudVmClusterRequest;
+import com.google.cloud.oracledatabase.v1.DeleteDatabaseConnectionRequest;
 import com.google.cloud.oracledatabase.v1.DeleteDbSystemRequest;
 import com.google.cloud.oracledatabase.v1.DeleteExadbVmClusterRequest;
 import com.google.cloud.oracledatabase.v1.DeleteExascaleDbStorageVaultRequest;
 import com.google.cloud.oracledatabase.v1.DeleteGoldengateConnectionAssignmentRequest;
 import com.google.cloud.oracledatabase.v1.DeleteGoldengateConnectionRequest;
 import com.google.cloud.oracledatabase.v1.DeleteGoldengateDeploymentRequest;
+import com.google.cloud.oracledatabase.v1.DeleteOdbDnsZoneRequest;
 import com.google.cloud.oracledatabase.v1.DeleteOdbNetworkRequest;
 import com.google.cloud.oracledatabase.v1.DeleteOdbSubnetRequest;
+import com.google.cloud.oracledatabase.v1.DisableCloudVmClusterIdentityConnectorRequest;
+import com.google.cloud.oracledatabase.v1.DisableExadbVmClusterIdentityConnectorRequest;
+import com.google.cloud.oracledatabase.v1.EnableCloudVmClusterIdentityConnectorRequest;
+import com.google.cloud.oracledatabase.v1.EnableExadbVmClusterIdentityConnectorRequest;
 import com.google.cloud.oracledatabase.v1.ExadbVmCluster;
 import com.google.cloud.oracledatabase.v1.ExascaleDbStorageVault;
+import com.google.cloud.oracledatabase.v1.ExecuteSqlRequest;
+import com.google.cloud.oracledatabase.v1.ExecuteSqlResponse;
 import com.google.cloud.oracledatabase.v1.FailoverAutonomousDatabaseRequest;
 import com.google.cloud.oracledatabase.v1.GenerateAutonomousDatabaseWalletRequest;
 import com.google.cloud.oracledatabase.v1.GenerateAutonomousDatabaseWalletResponse;
@@ -97,6 +112,7 @@ import com.google.cloud.oracledatabase.v1.GetAutonomousDatabaseRefreshableClones
 import com.google.cloud.oracledatabase.v1.GetAutonomousDatabaseRequest;
 import com.google.cloud.oracledatabase.v1.GetCloudExadataInfrastructureRequest;
 import com.google.cloud.oracledatabase.v1.GetCloudVmClusterRequest;
+import com.google.cloud.oracledatabase.v1.GetDatabaseConnectionRequest;
 import com.google.cloud.oracledatabase.v1.GetDatabaseRequest;
 import com.google.cloud.oracledatabase.v1.GetDbSystemRequest;
 import com.google.cloud.oracledatabase.v1.GetExadbVmClusterRequest;
@@ -104,6 +120,7 @@ import com.google.cloud.oracledatabase.v1.GetExascaleDbStorageVaultRequest;
 import com.google.cloud.oracledatabase.v1.GetGoldengateConnectionAssignmentRequest;
 import com.google.cloud.oracledatabase.v1.GetGoldengateConnectionRequest;
 import com.google.cloud.oracledatabase.v1.GetGoldengateDeploymentRequest;
+import com.google.cloud.oracledatabase.v1.GetOdbDnsZoneRequest;
 import com.google.cloud.oracledatabase.v1.GetOdbNetworkRequest;
 import com.google.cloud.oracledatabase.v1.GetOdbSubnetRequest;
 import com.google.cloud.oracledatabase.v1.GetPluggableDatabaseRequest;
@@ -124,12 +141,16 @@ import com.google.cloud.oracledatabase.v1.ListCloudVmClustersRequest;
 import com.google.cloud.oracledatabase.v1.ListCloudVmClustersResponse;
 import com.google.cloud.oracledatabase.v1.ListDatabaseCharacterSetsRequest;
 import com.google.cloud.oracledatabase.v1.ListDatabaseCharacterSetsResponse;
+import com.google.cloud.oracledatabase.v1.ListDatabaseConnectionsRequest;
+import com.google.cloud.oracledatabase.v1.ListDatabaseConnectionsResponse;
 import com.google.cloud.oracledatabase.v1.ListDatabasesRequest;
 import com.google.cloud.oracledatabase.v1.ListDatabasesResponse;
 import com.google.cloud.oracledatabase.v1.ListDbNodesRequest;
 import com.google.cloud.oracledatabase.v1.ListDbNodesResponse;
 import com.google.cloud.oracledatabase.v1.ListDbServersRequest;
 import com.google.cloud.oracledatabase.v1.ListDbServersResponse;
+import com.google.cloud.oracledatabase.v1.ListDbSystemComputePerformancesRequest;
+import com.google.cloud.oracledatabase.v1.ListDbSystemComputePerformancesResponse;
 import com.google.cloud.oracledatabase.v1.ListDbSystemInitialStorageSizesRequest;
 import com.google.cloud.oracledatabase.v1.ListDbSystemInitialStorageSizesResponse;
 import com.google.cloud.oracledatabase.v1.ListDbSystemShapesRequest;
@@ -144,6 +165,8 @@ import com.google.cloud.oracledatabase.v1.ListExadbVmClustersRequest;
 import com.google.cloud.oracledatabase.v1.ListExadbVmClustersResponse;
 import com.google.cloud.oracledatabase.v1.ListExascaleDbStorageVaultsRequest;
 import com.google.cloud.oracledatabase.v1.ListExascaleDbStorageVaultsResponse;
+import com.google.cloud.oracledatabase.v1.ListFlexComponentsRequest;
+import com.google.cloud.oracledatabase.v1.ListFlexComponentsResponse;
 import com.google.cloud.oracledatabase.v1.ListGiVersionsRequest;
 import com.google.cloud.oracledatabase.v1.ListGiVersionsResponse;
 import com.google.cloud.oracledatabase.v1.ListGoldengateConnectionAssignmentsRequest;
@@ -162,12 +185,15 @@ import com.google.cloud.oracledatabase.v1.ListGoldengateDeploymentsRequest;
 import com.google.cloud.oracledatabase.v1.ListGoldengateDeploymentsResponse;
 import com.google.cloud.oracledatabase.v1.ListMinorVersionsRequest;
 import com.google.cloud.oracledatabase.v1.ListMinorVersionsResponse;
+import com.google.cloud.oracledatabase.v1.ListOdbDnsZonesRequest;
+import com.google.cloud.oracledatabase.v1.ListOdbDnsZonesResponse;
 import com.google.cloud.oracledatabase.v1.ListOdbNetworksRequest;
 import com.google.cloud.oracledatabase.v1.ListOdbNetworksResponse;
 import com.google.cloud.oracledatabase.v1.ListOdbSubnetsRequest;
 import com.google.cloud.oracledatabase.v1.ListOdbSubnetsResponse;
 import com.google.cloud.oracledatabase.v1.ListPluggableDatabasesRequest;
 import com.google.cloud.oracledatabase.v1.ListPluggableDatabasesResponse;
+import com.google.cloud.oracledatabase.v1.OdbDnsZone;
 import com.google.cloud.oracledatabase.v1.OdbNetwork;
 import com.google.cloud.oracledatabase.v1.OdbSubnet;
 import com.google.cloud.oracledatabase.v1.OperationMetadata;
@@ -181,10 +207,22 @@ import com.google.cloud.oracledatabase.v1.StartGoldengateDeploymentRequest;
 import com.google.cloud.oracledatabase.v1.StopAutonomousDatabaseRequest;
 import com.google.cloud.oracledatabase.v1.StopGoldengateDeploymentRequest;
 import com.google.cloud.oracledatabase.v1.SwitchoverAutonomousDatabaseRequest;
+import com.google.cloud.oracledatabase.v1.TestDatabaseConnectionRequest;
+import com.google.cloud.oracledatabase.v1.TestDatabaseConnectionResponse;
 import com.google.cloud.oracledatabase.v1.TestGoldengateConnectionAssignmentRequest;
 import com.google.cloud.oracledatabase.v1.TestGoldengateConnectionAssignmentResponse;
 import com.google.cloud.oracledatabase.v1.UpdateAutonomousDatabaseRequest;
+import com.google.cloud.oracledatabase.v1.UpdateCloudExadataInfrastructureRequest;
+import com.google.cloud.oracledatabase.v1.UpdateCloudVmClusterRequest;
+import com.google.cloud.oracledatabase.v1.UpdateDatabaseConnectionRequest;
+import com.google.cloud.oracledatabase.v1.UpdateDbSystemRequest;
 import com.google.cloud.oracledatabase.v1.UpdateExadbVmClusterRequest;
+import com.google.cloud.oracledatabase.v1.UpdateExascaleDbStorageVaultRequest;
+import com.google.cloud.oracledatabase.v1.UpdateGoldengateConnectionAssignmentRequest;
+import com.google.cloud.oracledatabase.v1.UpdateGoldengateConnectionRequest;
+import com.google.cloud.oracledatabase.v1.UpdateGoldengateDeploymentRequest;
+import com.google.cloud.oracledatabase.v1.UpdateOdbNetworkRequest;
+import com.google.cloud.oracledatabase.v1.UpdateOdbSubnetRequest;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
@@ -246,6 +284,19 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(
                       CreateCloudExadataInfrastructureRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<UpdateCloudExadataInfrastructureRequest, Operation>
+      updateCloudExadataInfrastructureMethodDescriptor =
+          MethodDescriptor.<UpdateCloudExadataInfrastructureRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.oracledatabase.v1.OracleDatabase/UpdateCloudExadataInfrastructure")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      UpdateCloudExadataInfrastructureRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .setSampledToLocalTracing(true)
               .build();
@@ -314,6 +365,18 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
               .setSampledToLocalTracing(true)
               .build();
 
+  private static final MethodDescriptor<UpdateCloudVmClusterRequest, Operation>
+      updateCloudVmClusterMethodDescriptor =
+          MethodDescriptor.<UpdateCloudVmClusterRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.oracledatabase.v1.OracleDatabase/UpdateCloudVmCluster")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateCloudVmClusterRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private static final MethodDescriptor<DeleteCloudVmClusterRequest, Operation>
       deleteCloudVmClusterMethodDescriptor =
           MethodDescriptor.<DeleteCloudVmClusterRequest, Operation>newBuilder()
@@ -322,6 +385,58 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
                   "google.cloud.oracledatabase.v1.OracleDatabase/DeleteCloudVmCluster")
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteCloudVmClusterRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<EnableCloudVmClusterIdentityConnectorRequest, Operation>
+      enableCloudVmClusterIdentityConnectorMethodDescriptor =
+          MethodDescriptor.<EnableCloudVmClusterIdentityConnectorRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.oracledatabase.v1.OracleDatabase/EnableCloudVmClusterIdentityConnector")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      EnableCloudVmClusterIdentityConnectorRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<DisableCloudVmClusterIdentityConnectorRequest, Operation>
+      disableCloudVmClusterIdentityConnectorMethodDescriptor =
+          MethodDescriptor.<DisableCloudVmClusterIdentityConnectorRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.oracledatabase.v1.OracleDatabase/DisableCloudVmClusterIdentityConnector")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      DisableCloudVmClusterIdentityConnectorRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<EnableExadbVmClusterIdentityConnectorRequest, Operation>
+      enableExadbVmClusterIdentityConnectorMethodDescriptor =
+          MethodDescriptor.<EnableExadbVmClusterIdentityConnectorRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.oracledatabase.v1.OracleDatabase/EnableExadbVmClusterIdentityConnector")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      EnableExadbVmClusterIdentityConnectorRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<DisableExadbVmClusterIdentityConnectorRequest, Operation>
+      disableExadbVmClusterIdentityConnectorMethodDescriptor =
+          MethodDescriptor.<DisableExadbVmClusterIdentityConnectorRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.oracledatabase.v1.OracleDatabase/DisableExadbVmClusterIdentityConnector")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      DisableExadbVmClusterIdentityConnectorRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .setSampledToLocalTracing(true)
               .build();
@@ -335,6 +450,18 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
                   ProtoUtils.marshaller(ListEntitlementsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListEntitlementsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<ListFlexComponentsRequest, ListFlexComponentsResponse>
+      listFlexComponentsMethodDescriptor =
+          MethodDescriptor.<ListFlexComponentsRequest, ListFlexComponentsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.oracledatabase.v1.OracleDatabase/ListFlexComponents")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListFlexComponentsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListFlexComponentsResponse.getDefaultInstance()))
               .setSampledToLocalTracing(true)
               .build();
 
@@ -663,6 +790,17 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
               .setSampledToLocalTracing(true)
               .build();
 
+  private static final MethodDescriptor<UpdateOdbNetworkRequest, Operation>
+      updateOdbNetworkMethodDescriptor =
+          MethodDescriptor.<UpdateOdbNetworkRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.oracledatabase.v1.OracleDatabase/UpdateOdbNetwork")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateOdbNetworkRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private static final MethodDescriptor<DeleteOdbNetworkRequest, Operation>
       deleteOdbNetworkMethodDescriptor =
           MethodDescriptor.<DeleteOdbNetworkRequest, Operation>newBuilder()
@@ -707,6 +845,17 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
               .setSampledToLocalTracing(true)
               .build();
 
+  private static final MethodDescriptor<UpdateOdbSubnetRequest, Operation>
+      updateOdbSubnetMethodDescriptor =
+          MethodDescriptor.<UpdateOdbSubnetRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.oracledatabase.v1.OracleDatabase/UpdateOdbSubnet")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateOdbSubnetRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private static final MethodDescriptor<DeleteOdbSubnetRequest, Operation>
       deleteOdbSubnetMethodDescriptor =
           MethodDescriptor.<DeleteOdbSubnetRequest, Operation>newBuilder()
@@ -714,6 +863,51 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
               .setFullMethodName("google.cloud.oracledatabase.v1.OracleDatabase/DeleteOdbSubnet")
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteOdbSubnetRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<ListOdbDnsZonesRequest, ListOdbDnsZonesResponse>
+      listOdbDnsZonesMethodDescriptor =
+          MethodDescriptor.<ListOdbDnsZonesRequest, ListOdbDnsZonesResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.oracledatabase.v1.OracleDatabase/ListOdbDnsZones")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListOdbDnsZonesRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListOdbDnsZonesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<GetOdbDnsZoneRequest, OdbDnsZone>
+      getOdbDnsZoneMethodDescriptor =
+          MethodDescriptor.<GetOdbDnsZoneRequest, OdbDnsZone>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.oracledatabase.v1.OracleDatabase/GetOdbDnsZone")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetOdbDnsZoneRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(OdbDnsZone.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<CreateOdbDnsZoneRequest, Operation>
+      createOdbDnsZoneMethodDescriptor =
+          MethodDescriptor.<CreateOdbDnsZoneRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.oracledatabase.v1.OracleDatabase/CreateOdbDnsZone")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateOdbDnsZoneRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<DeleteOdbDnsZoneRequest, Operation>
+      deleteOdbDnsZoneMethodDescriptor =
+          MethodDescriptor.<DeleteOdbDnsZoneRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.oracledatabase.v1.OracleDatabase/DeleteOdbDnsZone")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteOdbDnsZoneRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .setSampledToLocalTracing(true)
               .build();
@@ -831,6 +1025,18 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
               .setSampledToLocalTracing(true)
               .build();
 
+  private static final MethodDescriptor<UpdateExascaleDbStorageVaultRequest, Operation>
+      updateExascaleDbStorageVaultMethodDescriptor =
+          MethodDescriptor.<UpdateExascaleDbStorageVaultRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.oracledatabase.v1.OracleDatabase/UpdateExascaleDbStorageVault")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateExascaleDbStorageVaultRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private static final MethodDescriptor<DeleteExascaleDbStorageVaultRequest, Operation>
       deleteExascaleDbStorageVaultMethodDescriptor =
           MethodDescriptor.<DeleteExascaleDbStorageVaultRequest, Operation>newBuilder()
@@ -858,6 +1064,24 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(
                       ListDbSystemInitialStorageSizesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<
+          ListDbSystemComputePerformancesRequest, ListDbSystemComputePerformancesResponse>
+      listDbSystemComputePerformancesMethodDescriptor =
+          MethodDescriptor
+              .<ListDbSystemComputePerformancesRequest, ListDbSystemComputePerformancesResponse>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.oracledatabase.v1.OracleDatabase/ListDbSystemComputePerformances")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      ListDbSystemComputePerformancesRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(
+                      ListDbSystemComputePerformancesResponse.getDefaultInstance()))
               .setSampledToLocalTracing(true)
               .build();
 
@@ -941,6 +1165,17 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
               .setSampledToLocalTracing(true)
               .build();
 
+  private static final MethodDescriptor<UpdateDbSystemRequest, Operation>
+      updateDbSystemMethodDescriptor =
+          MethodDescriptor.<UpdateDbSystemRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.oracledatabase.v1.OracleDatabase/UpdateDbSystem")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateDbSystemRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private static final MethodDescriptor<DeleteDbSystemRequest, Operation>
       deleteDbSystemMethodDescriptor =
           MethodDescriptor.<DeleteDbSystemRequest, Operation>newBuilder()
@@ -988,6 +1223,18 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
                   "google.cloud.oracledatabase.v1.OracleDatabase/CreateGoldengateDeployment")
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateGoldengateDeploymentRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<UpdateGoldengateDeploymentRequest, Operation>
+      updateGoldengateDeploymentMethodDescriptor =
+          MethodDescriptor.<UpdateGoldengateDeploymentRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.oracledatabase.v1.OracleDatabase/UpdateGoldengateDeployment")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateGoldengateDeploymentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .setSampledToLocalTracing(true)
               .build();
@@ -1064,6 +1311,18 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
                   "google.cloud.oracledatabase.v1.OracleDatabase/CreateGoldengateConnection")
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateGoldengateConnectionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<UpdateGoldengateConnectionRequest, Operation>
+      updateGoldengateConnectionMethodDescriptor =
+          MethodDescriptor.<UpdateGoldengateConnectionRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.oracledatabase.v1.OracleDatabase/UpdateGoldengateConnection")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateGoldengateConnectionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .setSampledToLocalTracing(true)
               .build();
@@ -1225,6 +1484,19 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
               .setSampledToLocalTracing(true)
               .build();
 
+  private static final MethodDescriptor<UpdateGoldengateConnectionAssignmentRequest, Operation>
+      updateGoldengateConnectionAssignmentMethodDescriptor =
+          MethodDescriptor.<UpdateGoldengateConnectionAssignmentRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.oracledatabase.v1.OracleDatabase/UpdateGoldengateConnectionAssignment")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      UpdateGoldengateConnectionAssignmentRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private static final MethodDescriptor<DeleteGoldengateConnectionAssignmentRequest, Operation>
       deleteGoldengateConnectionAssignmentMethodDescriptor =
           MethodDescriptor.<DeleteGoldengateConnectionAssignmentRequest, Operation>newBuilder()
@@ -1254,6 +1526,94 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(
                       TestGoldengateConnectionAssignmentResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<
+          ListDatabaseConnectionsRequest, ListDatabaseConnectionsResponse>
+      listDatabaseConnectionsMethodDescriptor =
+          MethodDescriptor
+              .<ListDatabaseConnectionsRequest, ListDatabaseConnectionsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.oracledatabase.v1.OracleDatabase/ListDatabaseConnections")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListDatabaseConnectionsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListDatabaseConnectionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<GetDatabaseConnectionRequest, DatabaseConnection>
+      getDatabaseConnectionMethodDescriptor =
+          MethodDescriptor.<GetDatabaseConnectionRequest, DatabaseConnection>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.oracledatabase.v1.OracleDatabase/GetDatabaseConnection")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetDatabaseConnectionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(DatabaseConnection.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<CreateDatabaseConnectionRequest, Operation>
+      createDatabaseConnectionMethodDescriptor =
+          MethodDescriptor.<CreateDatabaseConnectionRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.oracledatabase.v1.OracleDatabase/CreateDatabaseConnection")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateDatabaseConnectionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<UpdateDatabaseConnectionRequest, Operation>
+      updateDatabaseConnectionMethodDescriptor =
+          MethodDescriptor.<UpdateDatabaseConnectionRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.oracledatabase.v1.OracleDatabase/UpdateDatabaseConnection")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateDatabaseConnectionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<DeleteDatabaseConnectionRequest, Operation>
+      deleteDatabaseConnectionMethodDescriptor =
+          MethodDescriptor.<DeleteDatabaseConnectionRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.oracledatabase.v1.OracleDatabase/DeleteDatabaseConnection")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteDatabaseConnectionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<
+          TestDatabaseConnectionRequest, TestDatabaseConnectionResponse>
+      testDatabaseConnectionMethodDescriptor =
+          MethodDescriptor
+              .<TestDatabaseConnectionRequest, TestDatabaseConnectionResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.oracledatabase.v1.OracleDatabase/TestDatabaseConnection")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(TestDatabaseConnectionRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(TestDatabaseConnectionResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<ExecuteSqlRequest, ExecuteSqlResponse>
+      executeSqlMethodDescriptor =
+          MethodDescriptor.<ExecuteSqlRequest, ExecuteSqlResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.oracledatabase.v1.OracleDatabase/ExecuteSql")
+              .setRequestMarshaller(ProtoUtils.marshaller(ExecuteSqlRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(ExecuteSqlResponse.getDefaultInstance()))
               .setSampledToLocalTracing(true)
               .build();
 
@@ -1291,6 +1651,11 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
   private final OperationCallable<
           CreateCloudExadataInfrastructureRequest, CloudExadataInfrastructure, OperationMetadata>
       createCloudExadataInfrastructureOperationCallable;
+  private final UnaryCallable<UpdateCloudExadataInfrastructureRequest, Operation>
+      updateCloudExadataInfrastructureCallable;
+  private final OperationCallable<
+          UpdateCloudExadataInfrastructureRequest, CloudExadataInfrastructure, OperationMetadata>
+      updateCloudExadataInfrastructureOperationCallable;
   private final UnaryCallable<DeleteCloudExadataInfrastructureRequest, Operation>
       deleteCloudExadataInfrastructureCallable;
   private final OperationCallable<DeleteCloudExadataInfrastructureRequest, Empty, OperationMetadata>
@@ -1310,13 +1675,40 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
   private final UnaryCallable<CreateCloudVmClusterRequest, Operation> createCloudVmClusterCallable;
   private final OperationCallable<CreateCloudVmClusterRequest, CloudVmCluster, OperationMetadata>
       createCloudVmClusterOperationCallable;
+  private final UnaryCallable<UpdateCloudVmClusterRequest, Operation> updateCloudVmClusterCallable;
+  private final OperationCallable<UpdateCloudVmClusterRequest, CloudVmCluster, OperationMetadata>
+      updateCloudVmClusterOperationCallable;
   private final UnaryCallable<DeleteCloudVmClusterRequest, Operation> deleteCloudVmClusterCallable;
   private final OperationCallable<DeleteCloudVmClusterRequest, Empty, OperationMetadata>
       deleteCloudVmClusterOperationCallable;
+  private final UnaryCallable<EnableCloudVmClusterIdentityConnectorRequest, Operation>
+      enableCloudVmClusterIdentityConnectorCallable;
+  private final OperationCallable<
+          EnableCloudVmClusterIdentityConnectorRequest, CloudVmCluster, OperationMetadata>
+      enableCloudVmClusterIdentityConnectorOperationCallable;
+  private final UnaryCallable<DisableCloudVmClusterIdentityConnectorRequest, Operation>
+      disableCloudVmClusterIdentityConnectorCallable;
+  private final OperationCallable<
+          DisableCloudVmClusterIdentityConnectorRequest, CloudVmCluster, OperationMetadata>
+      disableCloudVmClusterIdentityConnectorOperationCallable;
+  private final UnaryCallable<EnableExadbVmClusterIdentityConnectorRequest, Operation>
+      enableExadbVmClusterIdentityConnectorCallable;
+  private final OperationCallable<
+          EnableExadbVmClusterIdentityConnectorRequest, ExadbVmCluster, OperationMetadata>
+      enableExadbVmClusterIdentityConnectorOperationCallable;
+  private final UnaryCallable<DisableExadbVmClusterIdentityConnectorRequest, Operation>
+      disableExadbVmClusterIdentityConnectorCallable;
+  private final OperationCallable<
+          DisableExadbVmClusterIdentityConnectorRequest, ExadbVmCluster, OperationMetadata>
+      disableExadbVmClusterIdentityConnectorOperationCallable;
   private final UnaryCallable<ListEntitlementsRequest, ListEntitlementsResponse>
       listEntitlementsCallable;
   private final UnaryCallable<ListEntitlementsRequest, ListEntitlementsPagedResponse>
       listEntitlementsPagedCallable;
+  private final UnaryCallable<ListFlexComponentsRequest, ListFlexComponentsResponse>
+      listFlexComponentsCallable;
+  private final UnaryCallable<ListFlexComponentsRequest, ListFlexComponentsPagedResponse>
+      listFlexComponentsPagedCallable;
   private final UnaryCallable<ListDbServersRequest, ListDbServersResponse> listDbServersCallable;
   private final UnaryCallable<ListDbServersRequest, ListDbServersPagedResponse>
       listDbServersPagedCallable;
@@ -1421,6 +1813,9 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
   private final UnaryCallable<CreateOdbNetworkRequest, Operation> createOdbNetworkCallable;
   private final OperationCallable<CreateOdbNetworkRequest, OdbNetwork, OperationMetadata>
       createOdbNetworkOperationCallable;
+  private final UnaryCallable<UpdateOdbNetworkRequest, Operation> updateOdbNetworkCallable;
+  private final OperationCallable<UpdateOdbNetworkRequest, OdbNetwork, OperationMetadata>
+      updateOdbNetworkOperationCallable;
   private final UnaryCallable<DeleteOdbNetworkRequest, Operation> deleteOdbNetworkCallable;
   private final OperationCallable<DeleteOdbNetworkRequest, Empty, OperationMetadata>
       deleteOdbNetworkOperationCallable;
@@ -1431,9 +1826,23 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
   private final UnaryCallable<CreateOdbSubnetRequest, Operation> createOdbSubnetCallable;
   private final OperationCallable<CreateOdbSubnetRequest, OdbSubnet, OperationMetadata>
       createOdbSubnetOperationCallable;
+  private final UnaryCallable<UpdateOdbSubnetRequest, Operation> updateOdbSubnetCallable;
+  private final OperationCallable<UpdateOdbSubnetRequest, OdbSubnet, OperationMetadata>
+      updateOdbSubnetOperationCallable;
   private final UnaryCallable<DeleteOdbSubnetRequest, Operation> deleteOdbSubnetCallable;
   private final OperationCallable<DeleteOdbSubnetRequest, Empty, OperationMetadata>
       deleteOdbSubnetOperationCallable;
+  private final UnaryCallable<ListOdbDnsZonesRequest, ListOdbDnsZonesResponse>
+      listOdbDnsZonesCallable;
+  private final UnaryCallable<ListOdbDnsZonesRequest, ListOdbDnsZonesPagedResponse>
+      listOdbDnsZonesPagedCallable;
+  private final UnaryCallable<GetOdbDnsZoneRequest, OdbDnsZone> getOdbDnsZoneCallable;
+  private final UnaryCallable<CreateOdbDnsZoneRequest, Operation> createOdbDnsZoneCallable;
+  private final OperationCallable<CreateOdbDnsZoneRequest, OdbDnsZone, OperationMetadata>
+      createOdbDnsZoneOperationCallable;
+  private final UnaryCallable<DeleteOdbDnsZoneRequest, Operation> deleteOdbDnsZoneCallable;
+  private final OperationCallable<DeleteOdbDnsZoneRequest, Empty, OperationMetadata>
+      deleteOdbDnsZoneOperationCallable;
   private final UnaryCallable<ListExadbVmClustersRequest, ListExadbVmClustersResponse>
       listExadbVmClustersCallable;
   private final UnaryCallable<ListExadbVmClustersRequest, ListExadbVmClustersPagedResponse>
@@ -1466,6 +1875,11 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
   private final OperationCallable<
           CreateExascaleDbStorageVaultRequest, ExascaleDbStorageVault, OperationMetadata>
       createExascaleDbStorageVaultOperationCallable;
+  private final UnaryCallable<UpdateExascaleDbStorageVaultRequest, Operation>
+      updateExascaleDbStorageVaultCallable;
+  private final OperationCallable<
+          UpdateExascaleDbStorageVaultRequest, ExascaleDbStorageVault, OperationMetadata>
+      updateExascaleDbStorageVaultOperationCallable;
   private final UnaryCallable<DeleteExascaleDbStorageVaultRequest, Operation>
       deleteExascaleDbStorageVaultCallable;
   private final OperationCallable<DeleteExascaleDbStorageVaultRequest, Empty, OperationMetadata>
@@ -1476,6 +1890,12 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
   private final UnaryCallable<
           ListDbSystemInitialStorageSizesRequest, ListDbSystemInitialStorageSizesPagedResponse>
       listDbSystemInitialStorageSizesPagedCallable;
+  private final UnaryCallable<
+          ListDbSystemComputePerformancesRequest, ListDbSystemComputePerformancesResponse>
+      listDbSystemComputePerformancesCallable;
+  private final UnaryCallable<
+          ListDbSystemComputePerformancesRequest, ListDbSystemComputePerformancesPagedResponse>
+      listDbSystemComputePerformancesPagedCallable;
   private final UnaryCallable<ListDatabasesRequest, ListDatabasesResponse> listDatabasesCallable;
   private final UnaryCallable<ListDatabasesRequest, ListDatabasesPagedResponse>
       listDatabasesPagedCallable;
@@ -1493,6 +1913,9 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
   private final UnaryCallable<CreateDbSystemRequest, Operation> createDbSystemCallable;
   private final OperationCallable<CreateDbSystemRequest, DbSystem, OperationMetadata>
       createDbSystemOperationCallable;
+  private final UnaryCallable<UpdateDbSystemRequest, Operation> updateDbSystemCallable;
+  private final OperationCallable<UpdateDbSystemRequest, DbSystem, OperationMetadata>
+      updateDbSystemOperationCallable;
   private final UnaryCallable<DeleteDbSystemRequest, Operation> deleteDbSystemCallable;
   private final OperationCallable<DeleteDbSystemRequest, Empty, OperationMetadata>
       deleteDbSystemOperationCallable;
@@ -1508,6 +1931,11 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
   private final OperationCallable<
           CreateGoldengateDeploymentRequest, GoldengateDeployment, OperationMetadata>
       createGoldengateDeploymentOperationCallable;
+  private final UnaryCallable<UpdateGoldengateDeploymentRequest, Operation>
+      updateGoldengateDeploymentCallable;
+  private final OperationCallable<
+          UpdateGoldengateDeploymentRequest, GoldengateDeployment, OperationMetadata>
+      updateGoldengateDeploymentOperationCallable;
   private final UnaryCallable<DeleteGoldengateDeploymentRequest, Operation>
       deleteGoldengateDeploymentCallable;
   private final OperationCallable<DeleteGoldengateDeploymentRequest, Empty, OperationMetadata>
@@ -1534,6 +1962,11 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
   private final OperationCallable<
           CreateGoldengateConnectionRequest, GoldengateConnection, OperationMetadata>
       createGoldengateConnectionOperationCallable;
+  private final UnaryCallable<UpdateGoldengateConnectionRequest, Operation>
+      updateGoldengateConnectionCallable;
+  private final OperationCallable<
+          UpdateGoldengateConnectionRequest, GoldengateConnection, OperationMetadata>
+      updateGoldengateConnectionOperationCallable;
   private final UnaryCallable<DeleteGoldengateConnectionRequest, Operation>
       deleteGoldengateConnectionCallable;
   private final OperationCallable<DeleteGoldengateConnectionRequest, Empty, OperationMetadata>
@@ -1588,6 +2021,13 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
           GoldengateConnectionAssignment,
           OperationMetadata>
       createGoldengateConnectionAssignmentOperationCallable;
+  private final UnaryCallable<UpdateGoldengateConnectionAssignmentRequest, Operation>
+      updateGoldengateConnectionAssignmentCallable;
+  private final OperationCallable<
+          UpdateGoldengateConnectionAssignmentRequest,
+          GoldengateConnectionAssignment,
+          OperationMetadata>
+      updateGoldengateConnectionAssignmentOperationCallable;
   private final UnaryCallable<DeleteGoldengateConnectionAssignmentRequest, Operation>
       deleteGoldengateConnectionAssignmentCallable;
   private final OperationCallable<
@@ -1596,6 +2036,29 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
   private final UnaryCallable<
           TestGoldengateConnectionAssignmentRequest, TestGoldengateConnectionAssignmentResponse>
       testGoldengateConnectionAssignmentCallable;
+  private final UnaryCallable<ListDatabaseConnectionsRequest, ListDatabaseConnectionsResponse>
+      listDatabaseConnectionsCallable;
+  private final UnaryCallable<ListDatabaseConnectionsRequest, ListDatabaseConnectionsPagedResponse>
+      listDatabaseConnectionsPagedCallable;
+  private final UnaryCallable<GetDatabaseConnectionRequest, DatabaseConnection>
+      getDatabaseConnectionCallable;
+  private final UnaryCallable<CreateDatabaseConnectionRequest, Operation>
+      createDatabaseConnectionCallable;
+  private final OperationCallable<
+          CreateDatabaseConnectionRequest, DatabaseConnection, OperationMetadata>
+      createDatabaseConnectionOperationCallable;
+  private final UnaryCallable<UpdateDatabaseConnectionRequest, Operation>
+      updateDatabaseConnectionCallable;
+  private final OperationCallable<
+          UpdateDatabaseConnectionRequest, DatabaseConnection, OperationMetadata>
+      updateDatabaseConnectionOperationCallable;
+  private final UnaryCallable<DeleteDatabaseConnectionRequest, Operation>
+      deleteDatabaseConnectionCallable;
+  private final OperationCallable<DeleteDatabaseConnectionRequest, Empty, OperationMetadata>
+      deleteDatabaseConnectionOperationCallable;
+  private final UnaryCallable<TestDatabaseConnectionRequest, TestDatabaseConnectionResponse>
+      testDatabaseConnectionCallable;
+  private final UnaryCallable<ExecuteSqlRequest, ExecuteSqlResponse> executeSqlCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -1685,6 +2148,19 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
                     })
                 .setResourceNameExtractor(request -> request.getParent())
                 .build();
+    GrpcCallSettings<UpdateCloudExadataInfrastructureRequest, Operation>
+        updateCloudExadataInfrastructureTransportSettings =
+            GrpcCallSettings.<UpdateCloudExadataInfrastructureRequest, Operation>newBuilder()
+                .setMethodDescriptor(updateCloudExadataInfrastructureMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "cloud_exadata_infrastructure.name",
+                          String.valueOf(request.getCloudExadataInfrastructure().getName()));
+                      return builder.build();
+                    })
+                .build();
     GrpcCallSettings<DeleteCloudExadataInfrastructureRequest, Operation>
         deleteCloudExadataInfrastructureTransportSettings =
             GrpcCallSettings.<DeleteCloudExadataInfrastructureRequest, Operation>newBuilder()
@@ -1744,6 +2220,18 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
                 })
             .setResourceNameExtractor(request -> request.getParent())
             .build();
+    GrpcCallSettings<UpdateCloudVmClusterRequest, Operation> updateCloudVmClusterTransportSettings =
+        GrpcCallSettings.<UpdateCloudVmClusterRequest, Operation>newBuilder()
+            .setMethodDescriptor(updateCloudVmClusterMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
+                      "cloud_vm_cluster.name",
+                      String.valueOf(request.getCloudVmCluster().getName()));
+                  return builder.build();
+                })
+            .build();
     GrpcCallSettings<DeleteCloudVmClusterRequest, Operation> deleteCloudVmClusterTransportSettings =
         GrpcCallSettings.<DeleteCloudVmClusterRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteCloudVmClusterMethodDescriptor)
@@ -1755,10 +2243,70 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
                 })
             .setResourceNameExtractor(request -> request.getName())
             .build();
+    GrpcCallSettings<EnableCloudVmClusterIdentityConnectorRequest, Operation>
+        enableCloudVmClusterIdentityConnectorTransportSettings =
+            GrpcCallSettings.<EnableCloudVmClusterIdentityConnectorRequest, Operation>newBuilder()
+                .setMethodDescriptor(enableCloudVmClusterIdentityConnectorMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    GrpcCallSettings<DisableCloudVmClusterIdentityConnectorRequest, Operation>
+        disableCloudVmClusterIdentityConnectorTransportSettings =
+            GrpcCallSettings.<DisableCloudVmClusterIdentityConnectorRequest, Operation>newBuilder()
+                .setMethodDescriptor(disableCloudVmClusterIdentityConnectorMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    GrpcCallSettings<EnableExadbVmClusterIdentityConnectorRequest, Operation>
+        enableExadbVmClusterIdentityConnectorTransportSettings =
+            GrpcCallSettings.<EnableExadbVmClusterIdentityConnectorRequest, Operation>newBuilder()
+                .setMethodDescriptor(enableExadbVmClusterIdentityConnectorMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    GrpcCallSettings<DisableExadbVmClusterIdentityConnectorRequest, Operation>
+        disableExadbVmClusterIdentityConnectorTransportSettings =
+            GrpcCallSettings.<DisableExadbVmClusterIdentityConnectorRequest, Operation>newBuilder()
+                .setMethodDescriptor(disableExadbVmClusterIdentityConnectorMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
     GrpcCallSettings<ListEntitlementsRequest, ListEntitlementsResponse>
         listEntitlementsTransportSettings =
             GrpcCallSettings.<ListEntitlementsRequest, ListEntitlementsResponse>newBuilder()
                 .setMethodDescriptor(listEntitlementsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    GrpcCallSettings<ListFlexComponentsRequest, ListFlexComponentsResponse>
+        listFlexComponentsTransportSettings =
+            GrpcCallSettings.<ListFlexComponentsRequest, ListFlexComponentsResponse>newBuilder()
+                .setMethodDescriptor(listFlexComponentsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
                       RequestParamsBuilder builder = RequestParamsBuilder.create();
@@ -2079,6 +2627,17 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
                 })
             .setResourceNameExtractor(request -> request.getParent())
             .build();
+    GrpcCallSettings<UpdateOdbNetworkRequest, Operation> updateOdbNetworkTransportSettings =
+        GrpcCallSettings.<UpdateOdbNetworkRequest, Operation>newBuilder()
+            .setMethodDescriptor(updateOdbNetworkMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
+                      "odb_network.name", String.valueOf(request.getOdbNetwork().getName()));
+                  return builder.build();
+                })
+            .build();
     GrpcCallSettings<DeleteOdbNetworkRequest, Operation> deleteOdbNetworkTransportSettings =
         GrpcCallSettings.<DeleteOdbNetworkRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteOdbNetworkMethodDescriptor)
@@ -2124,9 +2683,64 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
                 })
             .setResourceNameExtractor(request -> request.getParent())
             .build();
+    GrpcCallSettings<UpdateOdbSubnetRequest, Operation> updateOdbSubnetTransportSettings =
+        GrpcCallSettings.<UpdateOdbSubnetRequest, Operation>newBuilder()
+            .setMethodDescriptor(updateOdbSubnetMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("odb_subnet.name", String.valueOf(request.getOdbSubnet().getName()));
+                  return builder.build();
+                })
+            .build();
     GrpcCallSettings<DeleteOdbSubnetRequest, Operation> deleteOdbSubnetTransportSettings =
         GrpcCallSettings.<DeleteOdbSubnetRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteOdbSubnetMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    GrpcCallSettings<ListOdbDnsZonesRequest, ListOdbDnsZonesResponse>
+        listOdbDnsZonesTransportSettings =
+            GrpcCallSettings.<ListOdbDnsZonesRequest, ListOdbDnsZonesResponse>newBuilder()
+                .setMethodDescriptor(listOdbDnsZonesMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    GrpcCallSettings<GetOdbDnsZoneRequest, OdbDnsZone> getOdbDnsZoneTransportSettings =
+        GrpcCallSettings.<GetOdbDnsZoneRequest, OdbDnsZone>newBuilder()
+            .setMethodDescriptor(getOdbDnsZoneMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    GrpcCallSettings<CreateOdbDnsZoneRequest, Operation> createOdbDnsZoneTransportSettings =
+        GrpcCallSettings.<CreateOdbDnsZoneRequest, Operation>newBuilder()
+            .setMethodDescriptor(createOdbDnsZoneMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getParent())
+            .build();
+    GrpcCallSettings<DeleteOdbDnsZoneRequest, Operation> deleteOdbDnsZoneTransportSettings =
+        GrpcCallSettings.<DeleteOdbDnsZoneRequest, Operation>newBuilder()
+            .setMethodDescriptor(deleteOdbDnsZoneMethodDescriptor)
             .setParamsExtractor(
                 request -> {
                   RequestParamsBuilder builder = RequestParamsBuilder.create();
@@ -2242,6 +2856,19 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
                     })
                 .setResourceNameExtractor(request -> request.getParent())
                 .build();
+    GrpcCallSettings<UpdateExascaleDbStorageVaultRequest, Operation>
+        updateExascaleDbStorageVaultTransportSettings =
+            GrpcCallSettings.<UpdateExascaleDbStorageVaultRequest, Operation>newBuilder()
+                .setMethodDescriptor(updateExascaleDbStorageVaultMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "exascale_db_storage_vault.name",
+                          String.valueOf(request.getExascaleDbStorageVault().getName()));
+                      return builder.build();
+                    })
+                .build();
     GrpcCallSettings<DeleteExascaleDbStorageVaultRequest, Operation>
         deleteExascaleDbStorageVaultTransportSettings =
             GrpcCallSettings.<DeleteExascaleDbStorageVaultRequest, Operation>newBuilder()
@@ -2261,6 +2888,21 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
                 .<ListDbSystemInitialStorageSizesRequest, ListDbSystemInitialStorageSizesResponse>
                     newBuilder()
                 .setMethodDescriptor(listDbSystemInitialStorageSizesMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    GrpcCallSettings<
+            ListDbSystemComputePerformancesRequest, ListDbSystemComputePerformancesResponse>
+        listDbSystemComputePerformancesTransportSettings =
+            GrpcCallSettings
+                .<ListDbSystemComputePerformancesRequest, ListDbSystemComputePerformancesResponse>
+                    newBuilder()
+                .setMethodDescriptor(listDbSystemComputePerformancesMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
                       RequestParamsBuilder builder = RequestParamsBuilder.create();
@@ -2349,6 +2991,16 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
                 })
             .setResourceNameExtractor(request -> request.getParent())
             .build();
+    GrpcCallSettings<UpdateDbSystemRequest, Operation> updateDbSystemTransportSettings =
+        GrpcCallSettings.<UpdateDbSystemRequest, Operation>newBuilder()
+            .setMethodDescriptor(updateDbSystemMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("db_system.name", String.valueOf(request.getDbSystem().getName()));
+                  return builder.build();
+                })
+            .build();
     GrpcCallSettings<DeleteDbSystemRequest, Operation> deleteDbSystemTransportSettings =
         GrpcCallSettings.<DeleteDbSystemRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteDbSystemMethodDescriptor)
@@ -2396,6 +3048,19 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
                       return builder.build();
                     })
                 .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    GrpcCallSettings<UpdateGoldengateDeploymentRequest, Operation>
+        updateGoldengateDeploymentTransportSettings =
+            GrpcCallSettings.<UpdateGoldengateDeploymentRequest, Operation>newBuilder()
+                .setMethodDescriptor(updateGoldengateDeploymentMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "goldengate_deployment.name",
+                          String.valueOf(request.getGoldengateDeployment().getName()));
+                      return builder.build();
+                    })
                 .build();
     GrpcCallSettings<DeleteGoldengateDeploymentRequest, Operation>
         deleteGoldengateDeploymentTransportSettings =
@@ -2469,6 +3134,19 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
                       return builder.build();
                     })
                 .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    GrpcCallSettings<UpdateGoldengateConnectionRequest, Operation>
+        updateGoldengateConnectionTransportSettings =
+            GrpcCallSettings.<UpdateGoldengateConnectionRequest, Operation>newBuilder()
+                .setMethodDescriptor(updateGoldengateConnectionMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "goldengate_connection.name",
+                          String.valueOf(request.getGoldengateConnection().getName()));
+                      return builder.build();
+                    })
                 .build();
     GrpcCallSettings<DeleteGoldengateConnectionRequest, Operation>
         deleteGoldengateConnectionTransportSettings =
@@ -2609,6 +3287,19 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
                     })
                 .setResourceNameExtractor(request -> request.getParent())
                 .build();
+    GrpcCallSettings<UpdateGoldengateConnectionAssignmentRequest, Operation>
+        updateGoldengateConnectionAssignmentTransportSettings =
+            GrpcCallSettings.<UpdateGoldengateConnectionAssignmentRequest, Operation>newBuilder()
+                .setMethodDescriptor(updateGoldengateConnectionAssignmentMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "goldengate_connection_assignment.name",
+                          String.valueOf(request.getGoldengateConnectionAssignment().getName()));
+                      return builder.build();
+                    })
+                .build();
     GrpcCallSettings<DeleteGoldengateConnectionAssignmentRequest, Operation>
         deleteGoldengateConnectionAssignmentTransportSettings =
             GrpcCallSettings.<DeleteGoldengateConnectionAssignmentRequest, Operation>newBuilder()
@@ -2637,6 +3328,92 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
                     })
                 .setResourceNameExtractor(request -> request.getName())
                 .build();
+    GrpcCallSettings<ListDatabaseConnectionsRequest, ListDatabaseConnectionsResponse>
+        listDatabaseConnectionsTransportSettings =
+            GrpcCallSettings
+                .<ListDatabaseConnectionsRequest, ListDatabaseConnectionsResponse>newBuilder()
+                .setMethodDescriptor(listDatabaseConnectionsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    GrpcCallSettings<GetDatabaseConnectionRequest, DatabaseConnection>
+        getDatabaseConnectionTransportSettings =
+            GrpcCallSettings.<GetDatabaseConnectionRequest, DatabaseConnection>newBuilder()
+                .setMethodDescriptor(getDatabaseConnectionMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    GrpcCallSettings<CreateDatabaseConnectionRequest, Operation>
+        createDatabaseConnectionTransportSettings =
+            GrpcCallSettings.<CreateDatabaseConnectionRequest, Operation>newBuilder()
+                .setMethodDescriptor(createDatabaseConnectionMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    GrpcCallSettings<UpdateDatabaseConnectionRequest, Operation>
+        updateDatabaseConnectionTransportSettings =
+            GrpcCallSettings.<UpdateDatabaseConnectionRequest, Operation>newBuilder()
+                .setMethodDescriptor(updateDatabaseConnectionMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "database_connection.name",
+                          String.valueOf(request.getDatabaseConnection().getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<DeleteDatabaseConnectionRequest, Operation>
+        deleteDatabaseConnectionTransportSettings =
+            GrpcCallSettings.<DeleteDatabaseConnectionRequest, Operation>newBuilder()
+                .setMethodDescriptor(deleteDatabaseConnectionMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    GrpcCallSettings<TestDatabaseConnectionRequest, TestDatabaseConnectionResponse>
+        testDatabaseConnectionTransportSettings =
+            GrpcCallSettings
+                .<TestDatabaseConnectionRequest, TestDatabaseConnectionResponse>newBuilder()
+                .setMethodDescriptor(testDatabaseConnectionMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    GrpcCallSettings<ExecuteSqlRequest, ExecuteSqlResponse> executeSqlTransportSettings =
+        GrpcCallSettings.<ExecuteSqlRequest, ExecuteSqlResponse>newBuilder()
+            .setMethodDescriptor(executeSqlMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
             .setMethodDescriptor(listLocationsMethodDescriptor)
@@ -2682,6 +3459,17 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
         callableFactory.createOperationCallable(
             createCloudExadataInfrastructureTransportSettings,
             settings.createCloudExadataInfrastructureOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.updateCloudExadataInfrastructureCallable =
+        callableFactory.createUnaryCallable(
+            updateCloudExadataInfrastructureTransportSettings,
+            settings.updateCloudExadataInfrastructureSettings(),
+            clientContext);
+    this.updateCloudExadataInfrastructureOperationCallable =
+        callableFactory.createOperationCallable(
+            updateCloudExadataInfrastructureTransportSettings,
+            settings.updateCloudExadataInfrastructureOperationSettings(),
             clientContext,
             operationsStub);
     this.deleteCloudExadataInfrastructureCallable =
@@ -2732,6 +3520,17 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
             settings.createCloudVmClusterOperationSettings(),
             clientContext,
             operationsStub);
+    this.updateCloudVmClusterCallable =
+        callableFactory.createUnaryCallable(
+            updateCloudVmClusterTransportSettings,
+            settings.updateCloudVmClusterSettings(),
+            clientContext);
+    this.updateCloudVmClusterOperationCallable =
+        callableFactory.createOperationCallable(
+            updateCloudVmClusterTransportSettings,
+            settings.updateCloudVmClusterOperationSettings(),
+            clientContext,
+            operationsStub);
     this.deleteCloudVmClusterCallable =
         callableFactory.createUnaryCallable(
             deleteCloudVmClusterTransportSettings,
@@ -2743,12 +3542,66 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
             settings.deleteCloudVmClusterOperationSettings(),
             clientContext,
             operationsStub);
+    this.enableCloudVmClusterIdentityConnectorCallable =
+        callableFactory.createUnaryCallable(
+            enableCloudVmClusterIdentityConnectorTransportSettings,
+            settings.enableCloudVmClusterIdentityConnectorSettings(),
+            clientContext);
+    this.enableCloudVmClusterIdentityConnectorOperationCallable =
+        callableFactory.createOperationCallable(
+            enableCloudVmClusterIdentityConnectorTransportSettings,
+            settings.enableCloudVmClusterIdentityConnectorOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.disableCloudVmClusterIdentityConnectorCallable =
+        callableFactory.createUnaryCallable(
+            disableCloudVmClusterIdentityConnectorTransportSettings,
+            settings.disableCloudVmClusterIdentityConnectorSettings(),
+            clientContext);
+    this.disableCloudVmClusterIdentityConnectorOperationCallable =
+        callableFactory.createOperationCallable(
+            disableCloudVmClusterIdentityConnectorTransportSettings,
+            settings.disableCloudVmClusterIdentityConnectorOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.enableExadbVmClusterIdentityConnectorCallable =
+        callableFactory.createUnaryCallable(
+            enableExadbVmClusterIdentityConnectorTransportSettings,
+            settings.enableExadbVmClusterIdentityConnectorSettings(),
+            clientContext);
+    this.enableExadbVmClusterIdentityConnectorOperationCallable =
+        callableFactory.createOperationCallable(
+            enableExadbVmClusterIdentityConnectorTransportSettings,
+            settings.enableExadbVmClusterIdentityConnectorOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.disableExadbVmClusterIdentityConnectorCallable =
+        callableFactory.createUnaryCallable(
+            disableExadbVmClusterIdentityConnectorTransportSettings,
+            settings.disableExadbVmClusterIdentityConnectorSettings(),
+            clientContext);
+    this.disableExadbVmClusterIdentityConnectorOperationCallable =
+        callableFactory.createOperationCallable(
+            disableExadbVmClusterIdentityConnectorTransportSettings,
+            settings.disableExadbVmClusterIdentityConnectorOperationSettings(),
+            clientContext,
+            operationsStub);
     this.listEntitlementsCallable =
         callableFactory.createUnaryCallable(
             listEntitlementsTransportSettings, settings.listEntitlementsSettings(), clientContext);
     this.listEntitlementsPagedCallable =
         callableFactory.createPagedCallable(
             listEntitlementsTransportSettings, settings.listEntitlementsSettings(), clientContext);
+    this.listFlexComponentsCallable =
+        callableFactory.createUnaryCallable(
+            listFlexComponentsTransportSettings,
+            settings.listFlexComponentsSettings(),
+            clientContext);
+    this.listFlexComponentsPagedCallable =
+        callableFactory.createPagedCallable(
+            listFlexComponentsTransportSettings,
+            settings.listFlexComponentsSettings(),
+            clientContext);
     this.listDbServersCallable =
         callableFactory.createUnaryCallable(
             listDbServersTransportSettings, settings.listDbServersSettings(), clientContext);
@@ -2970,6 +3823,15 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
             settings.createOdbNetworkOperationSettings(),
             clientContext,
             operationsStub);
+    this.updateOdbNetworkCallable =
+        callableFactory.createUnaryCallable(
+            updateOdbNetworkTransportSettings, settings.updateOdbNetworkSettings(), clientContext);
+    this.updateOdbNetworkOperationCallable =
+        callableFactory.createOperationCallable(
+            updateOdbNetworkTransportSettings,
+            settings.updateOdbNetworkOperationSettings(),
+            clientContext,
+            operationsStub);
     this.deleteOdbNetworkCallable =
         callableFactory.createUnaryCallable(
             deleteOdbNetworkTransportSettings, settings.deleteOdbNetworkSettings(), clientContext);
@@ -2997,6 +3859,15 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
             settings.createOdbSubnetOperationSettings(),
             clientContext,
             operationsStub);
+    this.updateOdbSubnetCallable =
+        callableFactory.createUnaryCallable(
+            updateOdbSubnetTransportSettings, settings.updateOdbSubnetSettings(), clientContext);
+    this.updateOdbSubnetOperationCallable =
+        callableFactory.createOperationCallable(
+            updateOdbSubnetTransportSettings,
+            settings.updateOdbSubnetOperationSettings(),
+            clientContext,
+            operationsStub);
     this.deleteOdbSubnetCallable =
         callableFactory.createUnaryCallable(
             deleteOdbSubnetTransportSettings, settings.deleteOdbSubnetSettings(), clientContext);
@@ -3004,6 +3875,33 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
         callableFactory.createOperationCallable(
             deleteOdbSubnetTransportSettings,
             settings.deleteOdbSubnetOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.listOdbDnsZonesCallable =
+        callableFactory.createUnaryCallable(
+            listOdbDnsZonesTransportSettings, settings.listOdbDnsZonesSettings(), clientContext);
+    this.listOdbDnsZonesPagedCallable =
+        callableFactory.createPagedCallable(
+            listOdbDnsZonesTransportSettings, settings.listOdbDnsZonesSettings(), clientContext);
+    this.getOdbDnsZoneCallable =
+        callableFactory.createUnaryCallable(
+            getOdbDnsZoneTransportSettings, settings.getOdbDnsZoneSettings(), clientContext);
+    this.createOdbDnsZoneCallable =
+        callableFactory.createUnaryCallable(
+            createOdbDnsZoneTransportSettings, settings.createOdbDnsZoneSettings(), clientContext);
+    this.createOdbDnsZoneOperationCallable =
+        callableFactory.createOperationCallable(
+            createOdbDnsZoneTransportSettings,
+            settings.createOdbDnsZoneOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.deleteOdbDnsZoneCallable =
+        callableFactory.createUnaryCallable(
+            deleteOdbDnsZoneTransportSettings, settings.deleteOdbDnsZoneSettings(), clientContext);
+    this.deleteOdbDnsZoneOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteOdbDnsZoneTransportSettings,
+            settings.deleteOdbDnsZoneOperationSettings(),
             clientContext,
             operationsStub);
     this.listExadbVmClustersCallable =
@@ -3091,6 +3989,17 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
             settings.createExascaleDbStorageVaultOperationSettings(),
             clientContext,
             operationsStub);
+    this.updateExascaleDbStorageVaultCallable =
+        callableFactory.createUnaryCallable(
+            updateExascaleDbStorageVaultTransportSettings,
+            settings.updateExascaleDbStorageVaultSettings(),
+            clientContext);
+    this.updateExascaleDbStorageVaultOperationCallable =
+        callableFactory.createOperationCallable(
+            updateExascaleDbStorageVaultTransportSettings,
+            settings.updateExascaleDbStorageVaultOperationSettings(),
+            clientContext,
+            operationsStub);
     this.deleteExascaleDbStorageVaultCallable =
         callableFactory.createUnaryCallable(
             deleteExascaleDbStorageVaultTransportSettings,
@@ -3111,6 +4020,16 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
         callableFactory.createPagedCallable(
             listDbSystemInitialStorageSizesTransportSettings,
             settings.listDbSystemInitialStorageSizesSettings(),
+            clientContext);
+    this.listDbSystemComputePerformancesCallable =
+        callableFactory.createUnaryCallable(
+            listDbSystemComputePerformancesTransportSettings,
+            settings.listDbSystemComputePerformancesSettings(),
+            clientContext);
+    this.listDbSystemComputePerformancesPagedCallable =
+        callableFactory.createPagedCallable(
+            listDbSystemComputePerformancesTransportSettings,
+            settings.listDbSystemComputePerformancesSettings(),
             clientContext);
     this.listDatabasesCallable =
         callableFactory.createUnaryCallable(
@@ -3154,6 +4073,15 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
             settings.createDbSystemOperationSettings(),
             clientContext,
             operationsStub);
+    this.updateDbSystemCallable =
+        callableFactory.createUnaryCallable(
+            updateDbSystemTransportSettings, settings.updateDbSystemSettings(), clientContext);
+    this.updateDbSystemOperationCallable =
+        callableFactory.createOperationCallable(
+            updateDbSystemTransportSettings,
+            settings.updateDbSystemOperationSettings(),
+            clientContext,
+            operationsStub);
     this.deleteDbSystemCallable =
         callableFactory.createUnaryCallable(
             deleteDbSystemTransportSettings, settings.deleteDbSystemSettings(), clientContext);
@@ -3187,6 +4115,17 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
         callableFactory.createOperationCallable(
             createGoldengateDeploymentTransportSettings,
             settings.createGoldengateDeploymentOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.updateGoldengateDeploymentCallable =
+        callableFactory.createUnaryCallable(
+            updateGoldengateDeploymentTransportSettings,
+            settings.updateGoldengateDeploymentSettings(),
+            clientContext);
+    this.updateGoldengateDeploymentOperationCallable =
+        callableFactory.createOperationCallable(
+            updateGoldengateDeploymentTransportSettings,
+            settings.updateGoldengateDeploymentOperationSettings(),
             clientContext,
             operationsStub);
     this.deleteGoldengateDeploymentCallable =
@@ -3246,6 +4185,17 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
         callableFactory.createOperationCallable(
             createGoldengateConnectionTransportSettings,
             settings.createGoldengateConnectionOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.updateGoldengateConnectionCallable =
+        callableFactory.createUnaryCallable(
+            updateGoldengateConnectionTransportSettings,
+            settings.updateGoldengateConnectionSettings(),
+            clientContext);
+    this.updateGoldengateConnectionOperationCallable =
+        callableFactory.createOperationCallable(
+            updateGoldengateConnectionTransportSettings,
+            settings.updateGoldengateConnectionOperationSettings(),
             clientContext,
             operationsStub);
     this.deleteGoldengateConnectionCallable =
@@ -3341,6 +4291,17 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
             settings.createGoldengateConnectionAssignmentOperationSettings(),
             clientContext,
             operationsStub);
+    this.updateGoldengateConnectionAssignmentCallable =
+        callableFactory.createUnaryCallable(
+            updateGoldengateConnectionAssignmentTransportSettings,
+            settings.updateGoldengateConnectionAssignmentSettings(),
+            clientContext);
+    this.updateGoldengateConnectionAssignmentOperationCallable =
+        callableFactory.createOperationCallable(
+            updateGoldengateConnectionAssignmentTransportSettings,
+            settings.updateGoldengateConnectionAssignmentOperationSettings(),
+            clientContext,
+            operationsStub);
     this.deleteGoldengateConnectionAssignmentCallable =
         callableFactory.createUnaryCallable(
             deleteGoldengateConnectionAssignmentTransportSettings,
@@ -3357,6 +4318,62 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
             testGoldengateConnectionAssignmentTransportSettings,
             settings.testGoldengateConnectionAssignmentSettings(),
             clientContext);
+    this.listDatabaseConnectionsCallable =
+        callableFactory.createUnaryCallable(
+            listDatabaseConnectionsTransportSettings,
+            settings.listDatabaseConnectionsSettings(),
+            clientContext);
+    this.listDatabaseConnectionsPagedCallable =
+        callableFactory.createPagedCallable(
+            listDatabaseConnectionsTransportSettings,
+            settings.listDatabaseConnectionsSettings(),
+            clientContext);
+    this.getDatabaseConnectionCallable =
+        callableFactory.createUnaryCallable(
+            getDatabaseConnectionTransportSettings,
+            settings.getDatabaseConnectionSettings(),
+            clientContext);
+    this.createDatabaseConnectionCallable =
+        callableFactory.createUnaryCallable(
+            createDatabaseConnectionTransportSettings,
+            settings.createDatabaseConnectionSettings(),
+            clientContext);
+    this.createDatabaseConnectionOperationCallable =
+        callableFactory.createOperationCallable(
+            createDatabaseConnectionTransportSettings,
+            settings.createDatabaseConnectionOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.updateDatabaseConnectionCallable =
+        callableFactory.createUnaryCallable(
+            updateDatabaseConnectionTransportSettings,
+            settings.updateDatabaseConnectionSettings(),
+            clientContext);
+    this.updateDatabaseConnectionOperationCallable =
+        callableFactory.createOperationCallable(
+            updateDatabaseConnectionTransportSettings,
+            settings.updateDatabaseConnectionOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.deleteDatabaseConnectionCallable =
+        callableFactory.createUnaryCallable(
+            deleteDatabaseConnectionTransportSettings,
+            settings.deleteDatabaseConnectionSettings(),
+            clientContext);
+    this.deleteDatabaseConnectionOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteDatabaseConnectionTransportSettings,
+            settings.deleteDatabaseConnectionOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.testDatabaseConnectionCallable =
+        callableFactory.createUnaryCallable(
+            testDatabaseConnectionTransportSettings,
+            settings.testDatabaseConnectionSettings(),
+            clientContext);
+    this.executeSqlCallable =
+        callableFactory.createUnaryCallable(
+            executeSqlTransportSettings, settings.executeSqlSettings(), clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -3406,6 +4423,19 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
           CreateCloudExadataInfrastructureRequest, CloudExadataInfrastructure, OperationMetadata>
       createCloudExadataInfrastructureOperationCallable() {
     return createCloudExadataInfrastructureOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateCloudExadataInfrastructureRequest, Operation>
+      updateCloudExadataInfrastructureCallable() {
+    return updateCloudExadataInfrastructureCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          UpdateCloudExadataInfrastructureRequest, CloudExadataInfrastructure, OperationMetadata>
+      updateCloudExadataInfrastructureOperationCallable() {
+    return updateCloudExadataInfrastructureOperationCallable;
   }
 
   @Override
@@ -3464,6 +4494,17 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
   }
 
   @Override
+  public UnaryCallable<UpdateCloudVmClusterRequest, Operation> updateCloudVmClusterCallable() {
+    return updateCloudVmClusterCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateCloudVmClusterRequest, CloudVmCluster, OperationMetadata>
+      updateCloudVmClusterOperationCallable() {
+    return updateCloudVmClusterOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<DeleteCloudVmClusterRequest, Operation> deleteCloudVmClusterCallable() {
     return deleteCloudVmClusterCallable;
   }
@@ -3472,6 +4513,58 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
   public OperationCallable<DeleteCloudVmClusterRequest, Empty, OperationMetadata>
       deleteCloudVmClusterOperationCallable() {
     return deleteCloudVmClusterOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<EnableCloudVmClusterIdentityConnectorRequest, Operation>
+      enableCloudVmClusterIdentityConnectorCallable() {
+    return enableCloudVmClusterIdentityConnectorCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          EnableCloudVmClusterIdentityConnectorRequest, CloudVmCluster, OperationMetadata>
+      enableCloudVmClusterIdentityConnectorOperationCallable() {
+    return enableCloudVmClusterIdentityConnectorOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DisableCloudVmClusterIdentityConnectorRequest, Operation>
+      disableCloudVmClusterIdentityConnectorCallable() {
+    return disableCloudVmClusterIdentityConnectorCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          DisableCloudVmClusterIdentityConnectorRequest, CloudVmCluster, OperationMetadata>
+      disableCloudVmClusterIdentityConnectorOperationCallable() {
+    return disableCloudVmClusterIdentityConnectorOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<EnableExadbVmClusterIdentityConnectorRequest, Operation>
+      enableExadbVmClusterIdentityConnectorCallable() {
+    return enableExadbVmClusterIdentityConnectorCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          EnableExadbVmClusterIdentityConnectorRequest, ExadbVmCluster, OperationMetadata>
+      enableExadbVmClusterIdentityConnectorOperationCallable() {
+    return enableExadbVmClusterIdentityConnectorOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DisableExadbVmClusterIdentityConnectorRequest, Operation>
+      disableExadbVmClusterIdentityConnectorCallable() {
+    return disableExadbVmClusterIdentityConnectorCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          DisableExadbVmClusterIdentityConnectorRequest, ExadbVmCluster, OperationMetadata>
+      disableExadbVmClusterIdentityConnectorOperationCallable() {
+    return disableExadbVmClusterIdentityConnectorOperationCallable;
   }
 
   @Override
@@ -3484,6 +4577,18 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
   public UnaryCallable<ListEntitlementsRequest, ListEntitlementsPagedResponse>
       listEntitlementsPagedCallable() {
     return listEntitlementsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListFlexComponentsRequest, ListFlexComponentsResponse>
+      listFlexComponentsCallable() {
+    return listFlexComponentsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListFlexComponentsRequest, ListFlexComponentsPagedResponse>
+      listFlexComponentsPagedCallable() {
+    return listFlexComponentsPagedCallable;
   }
 
   @Override
@@ -3762,6 +4867,17 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
   }
 
   @Override
+  public UnaryCallable<UpdateOdbNetworkRequest, Operation> updateOdbNetworkCallable() {
+    return updateOdbNetworkCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateOdbNetworkRequest, OdbNetwork, OperationMetadata>
+      updateOdbNetworkOperationCallable() {
+    return updateOdbNetworkOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<DeleteOdbNetworkRequest, Operation> deleteOdbNetworkCallable() {
     return deleteOdbNetworkCallable;
   }
@@ -3800,6 +4916,17 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
   }
 
   @Override
+  public UnaryCallable<UpdateOdbSubnetRequest, Operation> updateOdbSubnetCallable() {
+    return updateOdbSubnetCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateOdbSubnetRequest, OdbSubnet, OperationMetadata>
+      updateOdbSubnetOperationCallable() {
+    return updateOdbSubnetOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<DeleteOdbSubnetRequest, Operation> deleteOdbSubnetCallable() {
     return deleteOdbSubnetCallable;
   }
@@ -3808,6 +4935,44 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
   public OperationCallable<DeleteOdbSubnetRequest, Empty, OperationMetadata>
       deleteOdbSubnetOperationCallable() {
     return deleteOdbSubnetOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListOdbDnsZonesRequest, ListOdbDnsZonesResponse> listOdbDnsZonesCallable() {
+    return listOdbDnsZonesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListOdbDnsZonesRequest, ListOdbDnsZonesPagedResponse>
+      listOdbDnsZonesPagedCallable() {
+    return listOdbDnsZonesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetOdbDnsZoneRequest, OdbDnsZone> getOdbDnsZoneCallable() {
+    return getOdbDnsZoneCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateOdbDnsZoneRequest, Operation> createOdbDnsZoneCallable() {
+    return createOdbDnsZoneCallable;
+  }
+
+  @Override
+  public OperationCallable<CreateOdbDnsZoneRequest, OdbDnsZone, OperationMetadata>
+      createOdbDnsZoneOperationCallable() {
+    return createOdbDnsZoneOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteOdbDnsZoneRequest, Operation> deleteOdbDnsZoneCallable() {
+    return deleteOdbDnsZoneCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteOdbDnsZoneRequest, Empty, OperationMetadata>
+      deleteOdbDnsZoneOperationCallable() {
+    return deleteOdbDnsZoneOperationCallable;
   }
 
   @Override
@@ -3905,6 +5070,19 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
   }
 
   @Override
+  public UnaryCallable<UpdateExascaleDbStorageVaultRequest, Operation>
+      updateExascaleDbStorageVaultCallable() {
+    return updateExascaleDbStorageVaultCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          UpdateExascaleDbStorageVaultRequest, ExascaleDbStorageVault, OperationMetadata>
+      updateExascaleDbStorageVaultOperationCallable() {
+    return updateExascaleDbStorageVaultOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<DeleteExascaleDbStorageVaultRequest, Operation>
       deleteExascaleDbStorageVaultCallable() {
     return deleteExascaleDbStorageVaultCallable;
@@ -3928,6 +5106,20 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
           ListDbSystemInitialStorageSizesRequest, ListDbSystemInitialStorageSizesPagedResponse>
       listDbSystemInitialStorageSizesPagedCallable() {
     return listDbSystemInitialStorageSizesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          ListDbSystemComputePerformancesRequest, ListDbSystemComputePerformancesResponse>
+      listDbSystemComputePerformancesCallable() {
+    return listDbSystemComputePerformancesCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          ListDbSystemComputePerformancesRequest, ListDbSystemComputePerformancesPagedResponse>
+      listDbSystemComputePerformancesPagedCallable() {
+    return listDbSystemComputePerformancesPagedCallable;
   }
 
   @Override
@@ -3992,6 +5184,17 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
   }
 
   @Override
+  public UnaryCallable<UpdateDbSystemRequest, Operation> updateDbSystemCallable() {
+    return updateDbSystemCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateDbSystemRequest, DbSystem, OperationMetadata>
+      updateDbSystemOperationCallable() {
+    return updateDbSystemOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<DeleteDbSystemRequest, Operation> deleteDbSystemCallable() {
     return deleteDbSystemCallable;
   }
@@ -4031,6 +5234,19 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
           CreateGoldengateDeploymentRequest, GoldengateDeployment, OperationMetadata>
       createGoldengateDeploymentOperationCallable() {
     return createGoldengateDeploymentOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateGoldengateDeploymentRequest, Operation>
+      updateGoldengateDeploymentCallable() {
+    return updateGoldengateDeploymentCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          UpdateGoldengateDeploymentRequest, GoldengateDeployment, OperationMetadata>
+      updateGoldengateDeploymentOperationCallable() {
+    return updateGoldengateDeploymentOperationCallable;
   }
 
   @Override
@@ -4099,6 +5315,19 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
           CreateGoldengateConnectionRequest, GoldengateConnection, OperationMetadata>
       createGoldengateConnectionOperationCallable() {
     return createGoldengateConnectionOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateGoldengateConnectionRequest, Operation>
+      updateGoldengateConnectionCallable() {
+    return updateGoldengateConnectionCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          UpdateGoldengateConnectionRequest, GoldengateConnection, OperationMetadata>
+      updateGoldengateConnectionOperationCallable() {
+    return updateGoldengateConnectionOperationCallable;
   }
 
   @Override
@@ -4228,6 +5457,21 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
   }
 
   @Override
+  public UnaryCallable<UpdateGoldengateConnectionAssignmentRequest, Operation>
+      updateGoldengateConnectionAssignmentCallable() {
+    return updateGoldengateConnectionAssignmentCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          UpdateGoldengateConnectionAssignmentRequest,
+          GoldengateConnectionAssignment,
+          OperationMetadata>
+      updateGoldengateConnectionAssignmentOperationCallable() {
+    return updateGoldengateConnectionAssignmentOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<DeleteGoldengateConnectionAssignmentRequest, Operation>
       deleteGoldengateConnectionAssignmentCallable() {
     return deleteGoldengateConnectionAssignmentCallable;
@@ -4244,6 +5488,71 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
           TestGoldengateConnectionAssignmentRequest, TestGoldengateConnectionAssignmentResponse>
       testGoldengateConnectionAssignmentCallable() {
     return testGoldengateConnectionAssignmentCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListDatabaseConnectionsRequest, ListDatabaseConnectionsResponse>
+      listDatabaseConnectionsCallable() {
+    return listDatabaseConnectionsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListDatabaseConnectionsRequest, ListDatabaseConnectionsPagedResponse>
+      listDatabaseConnectionsPagedCallable() {
+    return listDatabaseConnectionsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetDatabaseConnectionRequest, DatabaseConnection>
+      getDatabaseConnectionCallable() {
+    return getDatabaseConnectionCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateDatabaseConnectionRequest, Operation>
+      createDatabaseConnectionCallable() {
+    return createDatabaseConnectionCallable;
+  }
+
+  @Override
+  public OperationCallable<CreateDatabaseConnectionRequest, DatabaseConnection, OperationMetadata>
+      createDatabaseConnectionOperationCallable() {
+    return createDatabaseConnectionOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateDatabaseConnectionRequest, Operation>
+      updateDatabaseConnectionCallable() {
+    return updateDatabaseConnectionCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateDatabaseConnectionRequest, DatabaseConnection, OperationMetadata>
+      updateDatabaseConnectionOperationCallable() {
+    return updateDatabaseConnectionOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteDatabaseConnectionRequest, Operation>
+      deleteDatabaseConnectionCallable() {
+    return deleteDatabaseConnectionCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteDatabaseConnectionRequest, Empty, OperationMetadata>
+      deleteDatabaseConnectionOperationCallable() {
+    return deleteDatabaseConnectionOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<TestDatabaseConnectionRequest, TestDatabaseConnectionResponse>
+      testDatabaseConnectionCallable() {
+    return testDatabaseConnectionCallable;
+  }
+
+  @Override
+  public UnaryCallable<ExecuteSqlRequest, ExecuteSqlResponse> executeSqlCallable() {
+    return executeSqlCallable;
   }
 
   @Override

@@ -68,6 +68,7 @@ public final class RevisionScaling extends com.google.protobuf.GeneratedMessage
             com.google.cloud.run.v2.RevisionScaling.Builder.class);
   }
 
+  private int bitField0_;
   public static final int MIN_INSTANCE_COUNT_FIELD_NUMBER = 1;
   private int minInstanceCount_ = 0;
 
@@ -110,6 +111,90 @@ public final class RevisionScaling extends com.google.protobuf.GeneratedMessage
     return maxInstanceCount_;
   }
 
+  public static final int CPU_UTILIZATION_FIELD_NUMBER = 4;
+  private float cpuUtilization_ = 0F;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Determines a threshold for CPU utilization before scaling begins.
+   * Accepted values are between `0.1` and `0.90` (inclusive) or `0.0` to
+   * disable CPU utilization as threshold for scaling. CPU and concurrency
+   * scaling cannot both be disabled.
+   * </pre>
+   *
+   * <code>optional float cpu_utilization = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the cpuUtilization field is set.
+   */
+  @java.lang.Override
+  public boolean hasCpuUtilization() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Determines a threshold for CPU utilization before scaling begins.
+   * Accepted values are between `0.1` and `0.90` (inclusive) or `0.0` to
+   * disable CPU utilization as threshold for scaling. CPU and concurrency
+   * scaling cannot both be disabled.
+   * </pre>
+   *
+   * <code>optional float cpu_utilization = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The cpuUtilization.
+   */
+  @java.lang.Override
+  public float getCpuUtilization() {
+    return cpuUtilization_;
+  }
+
+  public static final int CONCURRENCY_UTILIZATION_FIELD_NUMBER = 5;
+  private float concurrencyUtilization_ = 0F;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Determines a threshold for concurrency utilization before scaling
+   * begins. Accepted values are between `0.1` and `0.95` (inclusive) or `0.0`
+   * to disable concurrency utilization as threshold for scaling. CPU and
+   * concurrency scaling cannot both be disabled.
+   * </pre>
+   *
+   * <code>optional float concurrency_utilization = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the concurrencyUtilization field is set.
+   */
+  @java.lang.Override
+  public boolean hasConcurrencyUtilization() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Determines a threshold for concurrency utilization before scaling
+   * begins. Accepted values are between `0.1` and `0.95` (inclusive) or `0.0`
+   * to disable concurrency utilization as threshold for scaling. CPU and
+   * concurrency scaling cannot both be disabled.
+   * </pre>
+   *
+   * <code>optional float concurrency_utilization = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The concurrencyUtilization.
+   */
+  @java.lang.Override
+  public float getConcurrencyUtilization() {
+    return concurrencyUtilization_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -130,6 +215,12 @@ public final class RevisionScaling extends com.google.protobuf.GeneratedMessage
     if (maxInstanceCount_ != 0) {
       output.writeInt32(2, maxInstanceCount_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeFloat(4, cpuUtilization_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeFloat(5, concurrencyUtilization_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -144,6 +235,12 @@ public final class RevisionScaling extends com.google.protobuf.GeneratedMessage
     }
     if (maxInstanceCount_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, maxInstanceCount_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeFloatSize(4, cpuUtilization_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeFloatSize(5, concurrencyUtilization_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -162,6 +259,16 @@ public final class RevisionScaling extends com.google.protobuf.GeneratedMessage
 
     if (getMinInstanceCount() != other.getMinInstanceCount()) return false;
     if (getMaxInstanceCount() != other.getMaxInstanceCount()) return false;
+    if (hasCpuUtilization() != other.hasCpuUtilization()) return false;
+    if (hasCpuUtilization()) {
+      if (java.lang.Float.floatToIntBits(getCpuUtilization())
+          != java.lang.Float.floatToIntBits(other.getCpuUtilization())) return false;
+    }
+    if (hasConcurrencyUtilization() != other.hasConcurrencyUtilization()) return false;
+    if (hasConcurrencyUtilization()) {
+      if (java.lang.Float.floatToIntBits(getConcurrencyUtilization())
+          != java.lang.Float.floatToIntBits(other.getConcurrencyUtilization())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -177,6 +284,14 @@ public final class RevisionScaling extends com.google.protobuf.GeneratedMessage
     hash = (53 * hash) + getMinInstanceCount();
     hash = (37 * hash) + MAX_INSTANCE_COUNT_FIELD_NUMBER;
     hash = (53 * hash) + getMaxInstanceCount();
+    if (hasCpuUtilization()) {
+      hash = (37 * hash) + CPU_UTILIZATION_FIELD_NUMBER;
+      hash = (53 * hash) + java.lang.Float.floatToIntBits(getCpuUtilization());
+    }
+    if (hasConcurrencyUtilization()) {
+      hash = (37 * hash) + CONCURRENCY_UTILIZATION_FIELD_NUMBER;
+      hash = (53 * hash) + java.lang.Float.floatToIntBits(getConcurrencyUtilization());
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -319,6 +434,8 @@ public final class RevisionScaling extends com.google.protobuf.GeneratedMessage
       bitField0_ = 0;
       minInstanceCount_ = 0;
       maxInstanceCount_ = 0;
+      cpuUtilization_ = 0F;
+      concurrencyUtilization_ = 0F;
       return this;
     }
 
@@ -361,6 +478,16 @@ public final class RevisionScaling extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.maxInstanceCount_ = maxInstanceCount_;
       }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.cpuUtilization_ = cpuUtilization_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.concurrencyUtilization_ = concurrencyUtilization_;
+        to_bitField0_ |= 0x00000002;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -380,6 +507,12 @@ public final class RevisionScaling extends com.google.protobuf.GeneratedMessage
       }
       if (other.getMaxInstanceCount() != 0) {
         setMaxInstanceCount(other.getMaxInstanceCount());
+      }
+      if (other.hasCpuUtilization()) {
+        setCpuUtilization(other.getCpuUtilization());
+      }
+      if (other.hasConcurrencyUtilization()) {
+        setConcurrencyUtilization(other.getConcurrencyUtilization());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -419,6 +552,18 @@ public final class RevisionScaling extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000002;
                 break;
               } // case 16
+            case 37:
+              {
+                cpuUtilization_ = input.readFloat();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 37
+            case 45:
+              {
+                concurrencyUtilization_ = input.readFloat();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 45
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -558,6 +703,178 @@ public final class RevisionScaling extends com.google.protobuf.GeneratedMessage
     public Builder clearMaxInstanceCount() {
       bitField0_ = (bitField0_ & ~0x00000002);
       maxInstanceCount_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private float cpuUtilization_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Determines a threshold for CPU utilization before scaling begins.
+     * Accepted values are between `0.1` and `0.90` (inclusive) or `0.0` to
+     * disable CPU utilization as threshold for scaling. CPU and concurrency
+     * scaling cannot both be disabled.
+     * </pre>
+     *
+     * <code>optional float cpu_utilization = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the cpuUtilization field is set.
+     */
+    @java.lang.Override
+    public boolean hasCpuUtilization() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Determines a threshold for CPU utilization before scaling begins.
+     * Accepted values are between `0.1` and `0.90` (inclusive) or `0.0` to
+     * disable CPU utilization as threshold for scaling. CPU and concurrency
+     * scaling cannot both be disabled.
+     * </pre>
+     *
+     * <code>optional float cpu_utilization = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The cpuUtilization.
+     */
+    @java.lang.Override
+    public float getCpuUtilization() {
+      return cpuUtilization_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Determines a threshold for CPU utilization before scaling begins.
+     * Accepted values are between `0.1` and `0.90` (inclusive) or `0.0` to
+     * disable CPU utilization as threshold for scaling. CPU and concurrency
+     * scaling cannot both be disabled.
+     * </pre>
+     *
+     * <code>optional float cpu_utilization = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The cpuUtilization to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCpuUtilization(float value) {
+
+      cpuUtilization_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Determines a threshold for CPU utilization before scaling begins.
+     * Accepted values are between `0.1` and `0.90` (inclusive) or `0.0` to
+     * disable CPU utilization as threshold for scaling. CPU and concurrency
+     * scaling cannot both be disabled.
+     * </pre>
+     *
+     * <code>optional float cpu_utilization = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearCpuUtilization() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      cpuUtilization_ = 0F;
+      onChanged();
+      return this;
+    }
+
+    private float concurrencyUtilization_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Determines a threshold for concurrency utilization before scaling
+     * begins. Accepted values are between `0.1` and `0.95` (inclusive) or `0.0`
+     * to disable concurrency utilization as threshold for scaling. CPU and
+     * concurrency scaling cannot both be disabled.
+     * </pre>
+     *
+     * <code>optional float concurrency_utilization = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the concurrencyUtilization field is set.
+     */
+    @java.lang.Override
+    public boolean hasConcurrencyUtilization() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Determines a threshold for concurrency utilization before scaling
+     * begins. Accepted values are between `0.1` and `0.95` (inclusive) or `0.0`
+     * to disable concurrency utilization as threshold for scaling. CPU and
+     * concurrency scaling cannot both be disabled.
+     * </pre>
+     *
+     * <code>optional float concurrency_utilization = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The concurrencyUtilization.
+     */
+    @java.lang.Override
+    public float getConcurrencyUtilization() {
+      return concurrencyUtilization_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Determines a threshold for concurrency utilization before scaling
+     * begins. Accepted values are between `0.1` and `0.95` (inclusive) or `0.0`
+     * to disable concurrency utilization as threshold for scaling. CPU and
+     * concurrency scaling cannot both be disabled.
+     * </pre>
+     *
+     * <code>optional float concurrency_utilization = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The concurrencyUtilization to set.
+     * @return This builder for chaining.
+     */
+    public Builder setConcurrencyUtilization(float value) {
+
+      concurrencyUtilization_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Determines a threshold for concurrency utilization before scaling
+     * begins. Accepted values are between `0.1` and `0.95` (inclusive) or `0.0`
+     * to disable concurrency utilization as threshold for scaling. CPU and
+     * concurrency scaling cannot both be disabled.
+     * </pre>
+     *
+     * <code>optional float concurrency_utilization = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearConcurrencyUtilization() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      concurrencyUtilization_ = 0F;
       onChanged();
       return this;
     }

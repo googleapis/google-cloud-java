@@ -45,6 +45,7 @@ import com.google.auth.oauth2.IdentityPoolCredentialSource.CertificateConfig;
 import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.IOException;
+import java.io.ObjectStreamClass;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
@@ -439,5 +440,13 @@ class CertificateIdentityPoolSubjectTokenSupplierTest {
         CertificateIdentityPoolSubjectTokenSupplier.readTrustChain(emptyFilePath);
     assertNotNull(certs);
     assertTrue(certs.isEmpty());
+  }
+
+  @Test
+  void serialVersionUID_matchesReleasedVersions() {
+    assertEquals(
+        -7726329500407809830L,
+        ObjectStreamClass.lookup(CertificateIdentityPoolSubjectTokenSupplier.class)
+            .getSerialVersionUID());
   }
 }

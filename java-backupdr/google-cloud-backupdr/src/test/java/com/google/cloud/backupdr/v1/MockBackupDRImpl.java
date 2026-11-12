@@ -859,4 +859,657 @@ public class MockBackupDRImpl extends BackupDRImplBase {
                   Exception.class.getName())));
     }
   }
+
+  @Override
+  public void createAutoProtectionPolicy(
+      CreateAutoProtectionPolicyRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateAutoProtectionPolicy, expected %s"
+                      + " or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listAutoProtectionPolicies(
+      ListAutoProtectionPoliciesRequest request,
+      StreamObserver<ListAutoProtectionPoliciesResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListAutoProtectionPoliciesResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListAutoProtectionPoliciesResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListAutoProtectionPolicies, expected %s"
+                      + " or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListAutoProtectionPoliciesResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getAutoProtectionPolicy(
+      GetAutoProtectionPolicyRequest request,
+      StreamObserver<AutoProtectionPolicy> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof AutoProtectionPolicy) {
+      requests.add(request);
+      responseObserver.onNext(((AutoProtectionPolicy) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetAutoProtectionPolicy, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  AutoProtectionPolicy.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateAutoProtectionPolicy(
+      UpdateAutoProtectionPolicyRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateAutoProtectionPolicy, expected %s"
+                      + " or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteAutoProtectionPolicy(
+      DeleteAutoProtectionPolicyRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteAutoProtectionPolicy, expected %s"
+                      + " or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createAutoProtectionPolicyBinding(
+      CreateAutoProtectionPolicyBindingRequest request,
+      StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateAutoProtectionPolicyBinding,"
+                      + " expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getAutoProtectionPolicyBinding(
+      GetAutoProtectionPolicyBindingRequest request,
+      StreamObserver<AutoProtectionPolicyBinding> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof AutoProtectionPolicyBinding) {
+      requests.add(request);
+      responseObserver.onNext(((AutoProtectionPolicyBinding) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetAutoProtectionPolicyBinding,"
+                      + " expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  AutoProtectionPolicyBinding.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listAutoProtectionPolicyBindings(
+      ListAutoProtectionPolicyBindingsRequest request,
+      StreamObserver<ListAutoProtectionPolicyBindingsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListAutoProtectionPolicyBindingsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListAutoProtectionPolicyBindingsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListAutoProtectionPolicyBindings,"
+                      + " expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListAutoProtectionPolicyBindingsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listAppliedAutoProtectionPolicies(
+      ListAppliedAutoProtectionPoliciesRequest request,
+      StreamObserver<ListAppliedAutoProtectionPoliciesResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListAppliedAutoProtectionPoliciesResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListAppliedAutoProtectionPoliciesResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListAppliedAutoProtectionPolicies,"
+                      + " expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListAppliedAutoProtectionPoliciesResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void initiateDeleteAutoProtectionPolicyBinding(
+      InitiateDeleteAutoProtectionPolicyBindingRequest request,
+      StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method"
+                      + " InitiateDeleteAutoProtectionPolicyBinding, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listBindingMatchingResources(
+      ListBindingMatchingResourcesRequest request,
+      StreamObserver<ListBindingMatchingResourcesResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListBindingMatchingResourcesResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListBindingMatchingResourcesResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListBindingMatchingResources, expected"
+                      + " %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListBindingMatchingResourcesResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createRestoreTemplate(
+      CreateRestoreTemplateRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateRestoreTemplate, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getRestoreTemplate(
+      GetRestoreTemplateRequest request, StreamObserver<RestoreTemplate> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof RestoreTemplate) {
+      requests.add(request);
+      responseObserver.onNext(((RestoreTemplate) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetRestoreTemplate, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  RestoreTemplate.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listRestoreTemplates(
+      ListRestoreTemplatesRequest request,
+      StreamObserver<ListRestoreTemplatesResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListRestoreTemplatesResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListRestoreTemplatesResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListRestoreTemplates, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListRestoreTemplatesResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateRestoreTemplate(
+      UpdateRestoreTemplateRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateRestoreTemplate, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteRestoreTemplate(
+      DeleteRestoreTemplateRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteRestoreTemplate, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void runRestoreTemplate(
+      RunRestoreTemplateRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method RunRestoreTemplate, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getRestoreTemplateExecution(
+      GetRestoreTemplateExecutionRequest request,
+      StreamObserver<RestoreTemplateExecution> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof RestoreTemplateExecution) {
+      requests.add(request);
+      responseObserver.onNext(((RestoreTemplateExecution) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetRestoreTemplateExecution, expected"
+                      + " %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  RestoreTemplateExecution.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listRestoreTemplateExecutions(
+      ListRestoreTemplateExecutionsRequest request,
+      StreamObserver<ListRestoreTemplateExecutionsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListRestoreTemplateExecutionsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListRestoreTemplateExecutionsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListRestoreTemplateExecutions, expected"
+                      + " %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListRestoreTemplateExecutionsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void triggerRestoreCleanup(
+      TriggerRestoreCleanupRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method TriggerRestoreCleanup, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createRestoreVerificationPlan(
+      CreateRestoreVerificationPlanRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateRestoreVerificationPlan, expected"
+                      + " %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createRestoreVerificationPlanAssociation(
+      CreateRestoreVerificationPlanAssociationRequest request,
+      StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method"
+                      + " CreateRestoreVerificationPlanAssociation, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getRestoreVerificationPlanAssociation(
+      GetRestoreVerificationPlanAssociationRequest request,
+      StreamObserver<RestoreVerificationPlanAssociation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof RestoreVerificationPlanAssociation) {
+      requests.add(request);
+      responseObserver.onNext(((RestoreVerificationPlanAssociation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetRestoreVerificationPlanAssociation,"
+                      + " expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  RestoreVerificationPlanAssociation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listRestoreVerificationPlanAssociations(
+      ListRestoreVerificationPlanAssociationsRequest request,
+      StreamObserver<ListRestoreVerificationPlanAssociationsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListRestoreVerificationPlanAssociationsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListRestoreVerificationPlanAssociationsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method"
+                      + " ListRestoreVerificationPlanAssociations, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListRestoreVerificationPlanAssociationsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteRestoreVerificationPlanAssociation(
+      DeleteRestoreVerificationPlanAssociationRequest request,
+      StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method"
+                      + " DeleteRestoreVerificationPlanAssociation, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void triggerRestoreVerification(
+      TriggerRestoreVerificationRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method TriggerRestoreVerification, expected %s"
+                      + " or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getRestoreVerificationPlan(
+      GetRestoreVerificationPlanRequest request,
+      StreamObserver<RestoreVerificationPlan> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof RestoreVerificationPlan) {
+      requests.add(request);
+      responseObserver.onNext(((RestoreVerificationPlan) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetRestoreVerificationPlan, expected %s"
+                      + " or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  RestoreVerificationPlan.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listRestoreVerificationPlans(
+      ListRestoreVerificationPlansRequest request,
+      StreamObserver<ListRestoreVerificationPlansResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListRestoreVerificationPlansResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListRestoreVerificationPlansResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListRestoreVerificationPlans, expected"
+                      + " %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListRestoreVerificationPlansResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteRestoreVerificationPlan(
+      DeleteRestoreVerificationPlanRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteRestoreVerificationPlan, expected"
+                      + " %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
 }

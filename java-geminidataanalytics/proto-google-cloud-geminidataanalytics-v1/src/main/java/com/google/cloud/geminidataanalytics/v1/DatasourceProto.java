@@ -53,6 +53,14 @@ public final class DatasourceProto extends com.google.protobuf.GeneratedFile {
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_geminidataanalytics_v1_BigQueryTableReference_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_geminidataanalytics_v1_BigQueryDatasetReference_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_geminidataanalytics_v1_BigQueryDatasetReference_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_geminidataanalytics_v1_SearchScope_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_geminidataanalytics_v1_SearchScope_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_geminidataanalytics_v1_StudioDatasourceReferences_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_geminidataanalytics_v1_StudioDatasourceReferences_fieldAccessorTable;
@@ -111,35 +119,44 @@ public final class DatasourceProto extends com.google.protobuf.GeneratedFile {
           + ".cloud.geminidataanalytics.v1.StudioDatasourceReferencesH\000\022N\n"
           + "\006looker\030\003 \001(\0132<.goo"
           + "gle.cloud.geminidataanalytics.v1.LookerExploreReferencesH\000B\014\n\n"
-          + "references\"\344\001\n"
+          + "references\"\262\002\n"
           + "\027BigQueryTableReferences\022[\n"
           + "\020table_references\030\001"
           + " \003(\0132;.google.cloud.geminidataanalytics.v1.BigQueryTableReferenceB\004\342A\001\001\022l\n"
           + "\031property_graph_references\030\002 \003(\0132C.google.cl"
-          + "oud.geminidataanalytics.v1.BigQueryPropertyGraphReferenceB\004\342A\001\001\"\247\001\n"
+          + "oud.geminidataanalytics.v1.BigQueryPropertyGraphReferenceB\004\342A\001\001\022L\n"
+          + "\014search_scope\030\003"
+          + " \001(\01320.google.cloud.geminidataanalytics.v1.SearchScopeB\004\342A\001\001\"\247\001\n"
           + "\026BigQueryTableReference\022\030\n\n"
           + "project_id\030\001 \001(\tB\004\342A\001\002\022\030\n\n"
           + "dataset_id\030\003 \001(\tB\004\342A\001\002\022\026\n"
           + "\010table_id\030\004 \001(\tB\004\342A\001\002\022A\n"
           + "\006schema\030\006"
-          + " \001(\0132+.google.cloud.geminidataanalytics.v1.SchemaB\004\342A\001\001\"}\n"
+          + " \001(\0132+.google.cloud.geminidataanalytics.v1.SchemaB\004\342A\001\001\"N\n"
+          + "\030BigQueryDatasetReference\022\030\n\n"
+          + "project_id\030\001 \001(\tB\004\342A\001\002\022\030\n\n"
+          + "dataset_id\030\002 \001(\tB\004\342A\001\002\"\231\001\n"
+          + "\013SearchScope\022!\n"
+          + "\023include_project_ids\030\001 \003(\tB\004\342A\001\001\022g\n"
+          + "\032include_dataset_references\030\002 \003(\0132="
+          + ".google.cloud.geminidataanalytics.v1.BigQueryDatasetReferenceB\004\342A\001\001\"}\n"
           + "\032StudioDatasourceReferences\022_\n"
-          + "\021studio_references\030\002 \003(\0132>.google.cloud.geminidataanal"
-          + "ytics.v1.StudioDatasourceReferenceB\004\342A\001\001\"8\n"
+          + "\021studio_references\030\002"
+          + " \003(\0132>.google.cloud.geminidataanalytics.v1.StudioDatasourceReferenceB\004\342A\001\001\"8\n"
           + "\031StudioDatasourceReference\022\033\n\r"
           + "datasource_id\030\001 \001(\tB\004\342A\001\002\"x\n"
           + "\027LookerExploreReferences\022]\n"
-          + "\022explore_references\030\001 \003(\0132;.goog"
-          + "le.cloud.geminidataanalytics.v1.LookerExploreReferenceB\004\342A\001\002\"\241\002\n"
+          + "\022explore_references\030\001 \003(\0132;.google.clo"
+          + "ud.geminidataanalytics.v1.LookerExploreReferenceB\004\342A\001\002\"\241\002\n"
           + "\026LookerExploreReference\022\035\n"
           + "\023looker_instance_uri\030\t \001(\tH\000\022f\n"
           + "\034private_looker_instance_info\030\n"
-          + " \001(\0132>.g"
-          + "oogle.cloud.geminidataanalytics.v1.PrivateLookerInstanceInfoH\000\022\032\n"
+          + " \001(\0132>.google."
+          + "cloud.geminidataanalytics.v1.PrivateLookerInstanceInfoH\000\022\032\n"
           + "\014lookml_model\030\004 \001(\tB\004\342A\001\002\022\025\n"
           + "\007explore\030\005 \001(\tB\004\342A\001\002\022A\n"
-          + "\006schema\030\010"
-          + " \001(\0132+.google.cloud.geminidataanalytics.v1.SchemaB\004\342A\001\001B\n\n"
+          + "\006schema\030\010 "
+          + "\001(\0132+.google.cloud.geminidataanalytics.v1.SchemaB\004\342A\001\001B\n\n"
           + "\010instance\"u\n"
           + "\036BigQueryPropertyGraphReference\022\030\n\n"
           + "project_id\030\001 \001(\tB\004\342A\001\002\022\030\n\n"
@@ -149,27 +166,27 @@ public final class DatasourceProto extends com.google.protobuf.GeneratedFile {
           + "\022looker_instance_id\030\001 \001(\t\022\036\n"
           + "\026service_directory_name\030\002 \001(\t\"\346\003\n\n"
           + "Datasource\022_\n"
-          + "\030bigquery_table_reference\030\001"
-          + " \001(\0132;.google.cloud.geminidataanalytics.v1.BigQueryTableReferenceH\000\022\036\n"
+          + "\030bigquery_table_reference\030\001 "
+          + "\001(\0132;.google.cloud.geminidataanalytics.v1.BigQueryTableReferenceH\000\022\036\n"
           + "\024studio_datasource_id\030\002 \001(\tH\000\022_\n"
-          + "\030looker_explore_reference\030\004 \001(\0132;.google.cloud.gemini"
-          + "dataanalytics.v1.LookerExploreReferenceH\000\022p\n"
-          + "!bigquery_property_graph_reference\030\020"
-          + " \001(\0132C.google.cloud.geminidataanalytics.v1.BigQueryPropertyGraphReferenceH\000\022A\n"
+          + "\030looker_explore_reference\030\004"
+          + " \001(\0132;.google.cloud.geminidataanalytics.v1.LookerExploreReferenceH\000\022p\n"
+          + "!bigquery_property_graph_reference\030\020 \001(\0132C"
+          + ".google.cloud.geminidataanalytics.v1.BigQueryPropertyGraphReferenceH\000\022A\n"
           + "\006schema\030\007"
           + " \001(\0132+.google.cloud.geminidataanalytics.v1.SchemaB\004\342A\001\001\0224\n\r"
           + "struct_schema\030\n"
           + " \001(\0132\027.google.protobuf.StructB\004\342A\001\001B\013\n"
           + "\treference\"\365\001\n"
           + "\006Schema\022@\n"
-          + "\006fields\030\001 \003(\0132*.g"
-          + "oogle.cloud.geminidataanalytics.v1.FieldB\004\342A\001\001\022\031\n"
+          + "\006fields\030\001 \003(\0132*.google."
+          + "cloud.geminidataanalytics.v1.FieldB\004\342A\001\001\022\031\n"
           + "\013description\030\002 \001(\tB\004\342A\001\001\022\026\n"
           + "\010synonyms\030\003 \003(\tB\004\342A\001\001\022\022\n"
           + "\004tags\030\004 \003(\tB\004\342A\001\001\022\032\n"
           + "\014display_name\030\005 \001(\tB\004\342A\001\001\022F\n"
-          + "\007filters\030\006 \003"
-          + "(\0132/.google.cloud.geminidataanalytics.v1.DataFilterB\004\342A\001\001\"\237\002\n"
+          + "\007filters\030\006 \003(\0132/.g"
+          + "oogle.cloud.geminidataanalytics.v1.DataFilterB\004\342A\001\001\"\237\002\n"
           + "\005Field\022\022\n"
           + "\004name\030\001 \001(\tB\004\342A\001\001\022\022\n"
           + "\004type\030\002 \001(\tB\004\342A\001\001\022\031\n"
@@ -178,8 +195,8 @@ public final class DatasourceProto extends com.google.protobuf.GeneratedFile {
           + "\010synonyms\030\006 \003(\tB\004\342A\001\001\022\022\n"
           + "\004tags\030\007 \003(\tB\004\342A\001\001\022\032\n"
           + "\014display_name\030\010 \001(\tB\004\342A\001\001\022C\n"
-          + "\tsubfields\030\t"
-          + " \003(\0132*.google.cloud.geminidataanalytics.v1.FieldB\004\342A\001\001\022\026\n"
+          + "\tsubfields\030\t \003(\0132"
+          + "*.google.cloud.geminidataanalytics.v1.FieldB\004\342A\001\001\022\026\n"
           + "\010category\030\n"
           + " \001(\tB\004\342A\001\001\022\032\n"
           + "\014value_format\030\013 \001(\tB\004\342A\001\001\"\177\n\n"
@@ -191,11 +208,11 @@ public final class DatasourceProto extends com.google.protobuf.GeneratedFile {
           + "\016DataFilterType\022 \n"
           + "\034DATA_FILTER_TYPE_UNSPECIFIED\020\000\022\021\n\r"
           + "ALWAYS_FILTER\020\001B\214\002\n"
-          + "\'com.google.cloud.geminidataanalytics.v1B\017Datasou"
-          + "rceProtoP\001ZYcloud.google.com/go/geminidataanalytics/apiv1/geminidataanalyticspb;"
-          + "geminidataanalyticspb\252\002#Google.Cloud.Gem"
-          + "iniDataAnalytics.V1\312\002#Google\\Cloud\\Gemin"
-          + "iDataAnalytics\\V1\352\002&Google::Cloud::GeminiDataAnalytics::V1b\006proto3"
+          + "\'com.google.cloud.geminidataanalytics.v1B\017DatasourcePro"
+          + "toP\001ZYcloud.google.com/go/geminidataanalytics/apiv1/geminidataanalyticspb;gemini"
+          + "dataanalyticspb\252\002#Google.Cloud.GeminiDat"
+          + "aAnalytics.V1\312\002#Google\\Cloud\\GeminiDataA"
+          + "nalytics\\V1\352\002&Google::Cloud::GeminiDataAnalytics::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -218,7 +235,7 @@ public final class DatasourceProto extends com.google.protobuf.GeneratedFile {
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_geminidataanalytics_v1_BigQueryTableReferences_descriptor,
             new java.lang.String[] {
-              "TableReferences", "PropertyGraphReferences",
+              "TableReferences", "PropertyGraphReferences", "SearchScope",
             });
     internal_static_google_cloud_geminidataanalytics_v1_BigQueryTableReference_descriptor =
         getDescriptor().getMessageType(2);
@@ -228,8 +245,24 @@ public final class DatasourceProto extends com.google.protobuf.GeneratedFile {
             new java.lang.String[] {
               "ProjectId", "DatasetId", "TableId", "Schema",
             });
-    internal_static_google_cloud_geminidataanalytics_v1_StudioDatasourceReferences_descriptor =
+    internal_static_google_cloud_geminidataanalytics_v1_BigQueryDatasetReference_descriptor =
         getDescriptor().getMessageType(3);
+    internal_static_google_cloud_geminidataanalytics_v1_BigQueryDatasetReference_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_geminidataanalytics_v1_BigQueryDatasetReference_descriptor,
+            new java.lang.String[] {
+              "ProjectId", "DatasetId",
+            });
+    internal_static_google_cloud_geminidataanalytics_v1_SearchScope_descriptor =
+        getDescriptor().getMessageType(4);
+    internal_static_google_cloud_geminidataanalytics_v1_SearchScope_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_geminidataanalytics_v1_SearchScope_descriptor,
+            new java.lang.String[] {
+              "IncludeProjectIds", "IncludeDatasetReferences",
+            });
+    internal_static_google_cloud_geminidataanalytics_v1_StudioDatasourceReferences_descriptor =
+        getDescriptor().getMessageType(5);
     internal_static_google_cloud_geminidataanalytics_v1_StudioDatasourceReferences_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_geminidataanalytics_v1_StudioDatasourceReferences_descriptor,
@@ -237,7 +270,7 @@ public final class DatasourceProto extends com.google.protobuf.GeneratedFile {
               "StudioReferences",
             });
     internal_static_google_cloud_geminidataanalytics_v1_StudioDatasourceReference_descriptor =
-        getDescriptor().getMessageType(4);
+        getDescriptor().getMessageType(6);
     internal_static_google_cloud_geminidataanalytics_v1_StudioDatasourceReference_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_geminidataanalytics_v1_StudioDatasourceReference_descriptor,
@@ -245,7 +278,7 @@ public final class DatasourceProto extends com.google.protobuf.GeneratedFile {
               "DatasourceId",
             });
     internal_static_google_cloud_geminidataanalytics_v1_LookerExploreReferences_descriptor =
-        getDescriptor().getMessageType(5);
+        getDescriptor().getMessageType(7);
     internal_static_google_cloud_geminidataanalytics_v1_LookerExploreReferences_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_geminidataanalytics_v1_LookerExploreReferences_descriptor,
@@ -253,7 +286,7 @@ public final class DatasourceProto extends com.google.protobuf.GeneratedFile {
               "ExploreReferences",
             });
     internal_static_google_cloud_geminidataanalytics_v1_LookerExploreReference_descriptor =
-        getDescriptor().getMessageType(6);
+        getDescriptor().getMessageType(8);
     internal_static_google_cloud_geminidataanalytics_v1_LookerExploreReference_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_geminidataanalytics_v1_LookerExploreReference_descriptor,
@@ -266,7 +299,7 @@ public final class DatasourceProto extends com.google.protobuf.GeneratedFile {
               "Instance",
             });
     internal_static_google_cloud_geminidataanalytics_v1_BigQueryPropertyGraphReference_descriptor =
-        getDescriptor().getMessageType(7);
+        getDescriptor().getMessageType(9);
     internal_static_google_cloud_geminidataanalytics_v1_BigQueryPropertyGraphReference_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_geminidataanalytics_v1_BigQueryPropertyGraphReference_descriptor,
@@ -274,7 +307,7 @@ public final class DatasourceProto extends com.google.protobuf.GeneratedFile {
               "ProjectId", "DatasetId", "PropertyGraphId",
             });
     internal_static_google_cloud_geminidataanalytics_v1_PrivateLookerInstanceInfo_descriptor =
-        getDescriptor().getMessageType(8);
+        getDescriptor().getMessageType(10);
     internal_static_google_cloud_geminidataanalytics_v1_PrivateLookerInstanceInfo_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_geminidataanalytics_v1_PrivateLookerInstanceInfo_descriptor,
@@ -282,7 +315,7 @@ public final class DatasourceProto extends com.google.protobuf.GeneratedFile {
               "LookerInstanceId", "ServiceDirectoryName",
             });
     internal_static_google_cloud_geminidataanalytics_v1_Datasource_descriptor =
-        getDescriptor().getMessageType(9);
+        getDescriptor().getMessageType(11);
     internal_static_google_cloud_geminidataanalytics_v1_Datasource_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_geminidataanalytics_v1_Datasource_descriptor,
@@ -296,7 +329,7 @@ public final class DatasourceProto extends com.google.protobuf.GeneratedFile {
               "Reference",
             });
     internal_static_google_cloud_geminidataanalytics_v1_Schema_descriptor =
-        getDescriptor().getMessageType(10);
+        getDescriptor().getMessageType(12);
     internal_static_google_cloud_geminidataanalytics_v1_Schema_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_geminidataanalytics_v1_Schema_descriptor,
@@ -304,7 +337,7 @@ public final class DatasourceProto extends com.google.protobuf.GeneratedFile {
               "Fields", "Description", "Synonyms", "Tags", "DisplayName", "Filters",
             });
     internal_static_google_cloud_geminidataanalytics_v1_Field_descriptor =
-        getDescriptor().getMessageType(11);
+        getDescriptor().getMessageType(13);
     internal_static_google_cloud_geminidataanalytics_v1_Field_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_geminidataanalytics_v1_Field_descriptor,
@@ -321,7 +354,7 @@ public final class DatasourceProto extends com.google.protobuf.GeneratedFile {
               "ValueFormat",
             });
     internal_static_google_cloud_geminidataanalytics_v1_DataFilter_descriptor =
-        getDescriptor().getMessageType(12);
+        getDescriptor().getMessageType(14);
     internal_static_google_cloud_geminidataanalytics_v1_DataFilter_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_geminidataanalytics_v1_DataFilter_descriptor,

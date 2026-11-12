@@ -473,7 +473,7 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
      * <code>string runtime = 1 [deprecated = true];</code>
      *
      * @deprecated google.cloud.run.v2.SubmitBuildRequest.BuildpacksBuild.runtime is deprecated. See
-     *     google/cloud/run/v2/build.proto;l=57
+     *     google/cloud/run/v2/build.proto;l=58
      * @return The runtime.
      */
     @java.lang.Deprecated
@@ -489,7 +489,7 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
      * <code>string runtime = 1 [deprecated = true];</code>
      *
      * @deprecated google.cloud.run.v2.SubmitBuildRequest.BuildpacksBuild.runtime is deprecated. See
-     *     google/cloud/run/v2/build.proto;l=57
+     *     google/cloud/run/v2/build.proto;l=58
      * @return The bytes for runtime.
      */
     @java.lang.Deprecated
@@ -782,7 +782,7 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
      * <code>string runtime = 1 [deprecated = true];</code>
      *
      * @deprecated google.cloud.run.v2.SubmitBuildRequest.BuildpacksBuild.runtime is deprecated. See
-     *     google/cloud/run/v2/build.proto;l=57
+     *     google/cloud/run/v2/build.proto;l=58
      * @return The runtime.
      */
     @java.lang.Override
@@ -809,7 +809,7 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
      * <code>string runtime = 1 [deprecated = true];</code>
      *
      * @deprecated google.cloud.run.v2.SubmitBuildRequest.BuildpacksBuild.runtime is deprecated. See
-     *     google/cloud/run/v2/build.proto;l=57
+     *     google/cloud/run/v2/build.proto;l=58
      * @return The bytes for runtime.
      */
     @java.lang.Override
@@ -1700,7 +1700,7 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
        * <code>string runtime = 1 [deprecated = true];</code>
        *
        * @deprecated google.cloud.run.v2.SubmitBuildRequest.BuildpacksBuild.runtime is deprecated.
-       *     See google/cloud/run/v2/build.proto;l=57
+       *     See google/cloud/run/v2/build.proto;l=58
        * @return The runtime.
        */
       @java.lang.Deprecated
@@ -1726,7 +1726,7 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
        * <code>string runtime = 1 [deprecated = true];</code>
        *
        * @deprecated google.cloud.run.v2.SubmitBuildRequest.BuildpacksBuild.runtime is deprecated.
-       *     See google/cloud/run/v2/build.proto;l=57
+       *     See google/cloud/run/v2/build.proto;l=58
        * @return The bytes for runtime.
        */
       @java.lang.Deprecated
@@ -1752,7 +1752,7 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
        * <code>string runtime = 1 [deprecated = true];</code>
        *
        * @deprecated google.cloud.run.v2.SubmitBuildRequest.BuildpacksBuild.runtime is deprecated.
-       *     See google/cloud/run/v2/build.proto;l=57
+       *     See google/cloud/run/v2/build.proto;l=58
        * @param value The runtime to set.
        * @return This builder for chaining.
        */
@@ -1777,7 +1777,7 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
        * <code>string runtime = 1 [deprecated = true];</code>
        *
        * @deprecated google.cloud.run.v2.SubmitBuildRequest.BuildpacksBuild.runtime is deprecated.
-       *     See google/cloud/run/v2/build.proto;l=57
+       *     See google/cloud/run/v2/build.proto;l=58
        * @return This builder for chaining.
        */
       @java.lang.Deprecated
@@ -1798,7 +1798,7 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
        * <code>string runtime = 1 [deprecated = true];</code>
        *
        * @deprecated google.cloud.run.v2.SubmitBuildRequest.BuildpacksBuild.runtime is deprecated.
-       *     See google/cloud/run/v2/build.proto;l=57
+       *     See google/cloud/run/v2/build.proto;l=58
        * @param value The bytes for runtime to set.
        * @return This builder for chaining.
        */
@@ -3044,8 +3044,8 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Optional. Name of the Cloud Build Custom Worker Pool that should be used to
-   * build the function. The format of this field is
+   * Optional. Name of the Cloud Build private pool that should be used to build
+   * the function. The format of this field is
    * `projects/{project}/locations/{region}/workerPools/{workerPool}` where
    * `{project}` and `{region}` are the project id and region respectively where
    * the worker pool is defined and `{workerPool}` is the short name of the
@@ -3075,8 +3075,8 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Optional. Name of the Cloud Build Custom Worker Pool that should be used to
-   * build the function. The format of this field is
+   * Optional. Name of the Cloud Build private pool that should be used to build
+   * the function. The format of this field is
    * `projects/{project}/locations/{region}/workerPools/{workerPool}` where
    * `{project}` and `{region}` are the project id and region respectively where
    * the worker pool is defined and `{workerPool}` is the short name of the
@@ -5014,8 +5014,8 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. Name of the Cloud Build Custom Worker Pool that should be used to
-     * build the function. The format of this field is
+     * Optional. Name of the Cloud Build private pool that should be used to build
+     * the function. The format of this field is
      * `projects/{project}/locations/{region}/workerPools/{workerPool}` where
      * `{project}` and `{region}` are the project id and region respectively where
      * the worker pool is defined and `{workerPool}` is the short name of the
@@ -5044,8 +5044,8 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. Name of the Cloud Build Custom Worker Pool that should be used to
-     * build the function. The format of this field is
+     * Optional. Name of the Cloud Build private pool that should be used to build
+     * the function. The format of this field is
      * `projects/{project}/locations/{region}/workerPools/{workerPool}` where
      * `{project}` and `{region}` are the project id and region respectively where
      * the worker pool is defined and `{workerPool}` is the short name of the
@@ -5074,8 +5074,8 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. Name of the Cloud Build Custom Worker Pool that should be used to
-     * build the function. The format of this field is
+     * Optional. Name of the Cloud Build private pool that should be used to build
+     * the function. The format of this field is
      * `projects/{project}/locations/{region}/workerPools/{workerPool}` where
      * `{project}` and `{region}` are the project id and region respectively where
      * the worker pool is defined and `{workerPool}` is the short name of the
@@ -5103,8 +5103,8 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. Name of the Cloud Build Custom Worker Pool that should be used to
-     * build the function. The format of this field is
+     * Optional. Name of the Cloud Build private pool that should be used to build
+     * the function. The format of this field is
      * `projects/{project}/locations/{region}/workerPools/{workerPool}` where
      * `{project}` and `{region}` are the project id and region respectively where
      * the worker pool is defined and `{workerPool}` is the short name of the
@@ -5128,8 +5128,8 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. Name of the Cloud Build Custom Worker Pool that should be used to
-     * build the function. The format of this field is
+     * Optional. Name of the Cloud Build private pool that should be used to build
+     * the function. The format of this field is
      * `projects/{project}/locations/{region}/workerPools/{workerPool}` where
      * `{project}` and `{region}` are the project id and region respectively where
      * the worker pool is defined and `{workerPool}` is the short name of the

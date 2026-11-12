@@ -114,12 +114,14 @@ public interface DatabaseOrBuilder
    *
    *
    * <pre>
-   * Optional. The password for the default ADMIN user.
+   * Optional. Input only. The password for the default ADMIN user.
    * Note: Only one of `admin_password_secret_version` or `admin_password` can
    * be populated.
    * </pre>
    *
-   * <code>string admin_password = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string admin_password = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
    *
    * @return The adminPassword.
    */
@@ -129,12 +131,14 @@ public interface DatabaseOrBuilder
    *
    *
    * <pre>
-   * Optional. The password for the default ADMIN user.
+   * Optional. Input only. The password for the default ADMIN user.
    * Note: Only one of `admin_password_secret_version` or `admin_password` can
    * be populated.
    * </pre>
    *
-   * <code>string admin_password = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string admin_password = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
    *
    * @return The bytes for adminPassword.
    */
@@ -144,14 +148,14 @@ public interface DatabaseOrBuilder
    *
    *
    * <pre>
-   * Optional. The resource name of a secret version in Secret Manager which
-   * contains the database admin user's password. Format:
+   * Optional. Input only. The resource name of a secret version in Secret
+   * Manager which contains the database admin user's password. Format:
    * projects/{project}/secrets/{secret}/versions/{version}. Note: Only one of
    * `admin_password_secret_version` or `admin_password` can be populated.
    * </pre>
    *
    * <code>
-   * string admin_password_secret_version = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * string admin_password_secret_version = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The adminPasswordSecretVersion.
@@ -162,14 +166,14 @@ public interface DatabaseOrBuilder
    *
    *
    * <pre>
-   * Optional. The resource name of a secret version in Secret Manager which
-   * contains the database admin user's password. Format:
+   * Optional. Input only. The resource name of a secret version in Secret
+   * Manager which contains the database admin user's password. Format:
    * projects/{project}/secrets/{secret}/versions/{version}. Note: Only one of
    * `admin_password_secret_version` or `admin_password` can be populated.
    * </pre>
    *
    * <code>
-   * string admin_password_secret_version = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * string admin_password_secret_version = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The bytes for adminPasswordSecretVersion.
@@ -180,12 +184,14 @@ public interface DatabaseOrBuilder
    *
    *
    * <pre>
-   * Optional. The TDE wallet password for the database.
+   * Optional. Input only. The TDE wallet password for the database.
    * Note: Only one of `tde_wallet_password_secret_version` or
    * `tde_wallet_password` can be populated.
    * </pre>
    *
-   * <code>string tde_wallet_password = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string tde_wallet_password = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
    *
    * @return The tdeWalletPassword.
    */
@@ -195,12 +201,14 @@ public interface DatabaseOrBuilder
    *
    *
    * <pre>
-   * Optional. The TDE wallet password for the database.
+   * Optional. Input only. The TDE wallet password for the database.
    * Note: Only one of `tde_wallet_password_secret_version` or
    * `tde_wallet_password` can be populated.
    * </pre>
    *
-   * <code>string tde_wallet_password = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string tde_wallet_password = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
    *
    * @return The bytes for tdeWalletPassword.
    */
@@ -210,15 +218,15 @@ public interface DatabaseOrBuilder
    *
    *
    * <pre>
-   * Optional. The resource name of a secret version in Secret Manager which
-   * contains the TDE wallet password for the database. Format:
+   * Optional. Input only. The resource name of a secret version in Secret
+   * Manager which contains the TDE wallet password for the database. Format:
    * projects/{project}/secrets/{secret}/versions/{version}. Note: Only one of
    * `tde_wallet_password_secret_version` or `tde_wallet_password` can be
    * populated.
    * </pre>
    *
    * <code>
-   * string tde_wallet_password_secret_version = 18 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * string tde_wallet_password_secret_version = 18 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The tdeWalletPasswordSecretVersion.
@@ -229,15 +237,15 @@ public interface DatabaseOrBuilder
    *
    *
    * <pre>
-   * Optional. The resource name of a secret version in Secret Manager which
-   * contains the TDE wallet password for the database. Format:
+   * Optional. Input only. The resource name of a secret version in Secret
+   * Manager which contains the TDE wallet password for the database. Format:
    * projects/{project}/secrets/{secret}/versions/{version}. Note: Only one of
    * `tde_wallet_password_secret_version` or `tde_wallet_password` can be
    * populated.
    * </pre>
    *
    * <code>
-   * string tde_wallet_password_secret_version = 18 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * string tde_wallet_password_secret_version = 18 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The bytes for tdeWalletPasswordSecretVersion.

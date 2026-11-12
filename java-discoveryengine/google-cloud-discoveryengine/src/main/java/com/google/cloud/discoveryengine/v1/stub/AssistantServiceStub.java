@@ -16,10 +16,21 @@
 
 package com.google.cloud.discoveryengine.v1.stub;
 
+import static com.google.cloud.discoveryengine.v1.AssistantServiceClient.ListAssistantsPagedResponse;
+
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.ServerStreamingCallable;
+import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.discoveryengine.v1.Assistant;
+import com.google.cloud.discoveryengine.v1.CreateAssistantRequest;
+import com.google.cloud.discoveryengine.v1.DeleteAssistantRequest;
+import com.google.cloud.discoveryengine.v1.GetAssistantRequest;
+import com.google.cloud.discoveryengine.v1.ListAssistantsRequest;
+import com.google.cloud.discoveryengine.v1.ListAssistantsResponse;
 import com.google.cloud.discoveryengine.v1.StreamAssistRequest;
 import com.google.cloud.discoveryengine.v1.StreamAssistResponse;
+import com.google.cloud.discoveryengine.v1.UpdateAssistantRequest;
+import com.google.protobuf.Empty;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
 
@@ -35,6 +46,31 @@ public abstract class AssistantServiceStub implements BackgroundResource {
 
   public ServerStreamingCallable<StreamAssistRequest, StreamAssistResponse> streamAssistCallable() {
     throw new UnsupportedOperationException("Not implemented: streamAssistCallable()");
+  }
+
+  public UnaryCallable<CreateAssistantRequest, Assistant> createAssistantCallable() {
+    throw new UnsupportedOperationException("Not implemented: createAssistantCallable()");
+  }
+
+  public UnaryCallable<DeleteAssistantRequest, Empty> deleteAssistantCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteAssistantCallable()");
+  }
+
+  public UnaryCallable<UpdateAssistantRequest, Assistant> updateAssistantCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateAssistantCallable()");
+  }
+
+  public UnaryCallable<GetAssistantRequest, Assistant> getAssistantCallable() {
+    throw new UnsupportedOperationException("Not implemented: getAssistantCallable()");
+  }
+
+  public UnaryCallable<ListAssistantsRequest, ListAssistantsPagedResponse>
+      listAssistantsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listAssistantsPagedCallable()");
+  }
+
+  public UnaryCallable<ListAssistantsRequest, ListAssistantsResponse> listAssistantsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listAssistantsCallable()");
   }
 
   @Override

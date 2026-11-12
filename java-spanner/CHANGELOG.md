@@ -1,5 +1,75 @@
 # Changelog
 
+## [6.126.0](https://github.com/googleapis/google-cloud-java/compare/9ca7e9ebf04...405578f4e9a) (2026-11-03)
+
+### Bug Fixes
+
+* Cancel queries promptly on close and synchronize error handling ([#14887](https://github.com/googleapis/google-cloud-java/pull/14887)) ([323a8f](https://github.com/googleapis/google-cloud-java/commit/323a8f72ae35953022baf146f10c706441c9a9a8))
+* Trigger best-effort rollback on indeterminate commit failures ([#14831](https://github.com/googleapis/google-cloud-java/pull/14831)) ([b9d1b9](https://github.com/googleapis/google-cloud-java/commit/b9d1b95cfefa4b322811e85585d7693363355359))
+* Synchronize stream lifecycle and retry buffering in ResumableStreamIterator ([#14770](https://github.com/googleapis/google-cloud-java/pull/14770)) ([4edefc](https://github.com/googleapis/google-cloud-java/commit/4edefc527a742a9d61ba3c78acf4cf8c9f227ce8))
+* Attach routing hints to read-write transaction requests ([#14786](https://github.com/googleapis/google-cloud-java/pull/14786)) ([54e058](https://github.com/googleapis/google-cloud-java/commit/54e0585f4bd423f6acff3713f8ff9e1ddff5ad59))
+* Do not cache retryable errors in AbstractLazyInitializer ([#14752](https://github.com/googleapis/google-cloud-java/pull/14752)) ([6a9ac7](https://github.com/googleapis/google-cloud-java/commit/6a9ac76d47b8e4c26fef3996d9a25dd72b3ea882))
+
+## [6.125.0](https://github.com/googleapis/google-cloud-java/compare/976d5888de5...9ca7e9ebf04) (2026-10-23)
+
+### Features
+
+* Add option to create GcpFallbackChannel per channel instead of per pool ([#14501](https://github.com/googleapis/google-cloud-java/pull/14501)) ([74f759](https://github.com/googleapis/google-cloud-java/commit/74f7591082cfadd8a82a5c24708d05758c1e07b8))
+
+### Bug Fixes
+
+* Prevent stream leaks and race conditions on result set close ([#14665](https://github.com/googleapis/google-cloud-java/pull/14665)) ([013b49](https://github.com/googleapis/google-cloud-java/commit/013b49bbcfee830ff31d46a1018ff7e5c99a5fd6))
+* Increase max inbound message size from 256MB to 300MB ([#14551](https://github.com/googleapis/google-cloud-java/pull/14551)) ([70c743](https://github.com/googleapis/google-cloud-java/commit/70c7439de5a3ae401b8d5833abd06de32c8f7a0a))
+* Support autoscaling config, edition, and positive capacity in cloud instance actions ([#14574](https://github.com/googleapis/google-cloud-java/pull/14574)) ([004f0f](https://github.com/googleapis/google-cloud-java/commit/004f0fd86aef7f187c09e18d93fcf1ed0aa49fd7))
+
+## [6.124.0](https://github.com/googleapis/google-cloud-java/compare/76cd7d96cba...976d5888de5) (2026-09-30)
+
+* No change
+
+## [6.123.0](https://github.com/googleapis/google-cloud-java/compare/0b2991e56b4...76cd7d96cba) (2026-09-23)
+
+### Features
+
+* Support dynamic TLS certificate and key rotation for Spanner Omni ([#14456](https://github.com/googleapis/google-cloud-java/pull/14456)) ([ffc745](https://github.com/googleapis/google-cloud-java/commit/ffc745c9afc1a4c2ac71cb12db5f41837ef82a16))
+
+### Bug Fixes
+
+* Honor maxAttempts and totalTimeout in streaming resume loop ([#14370](https://github.com/googleapis/google-cloud-java/pull/14370)) ([305f47](https://github.com/googleapis/google-cloud-java/commit/305f47db2a89f8a5b4a9409687528f0ae6588579))
+* Only set snapshot isolation read timestamp for SI or optimistic txns in CloudClientExecutor ([#14346](https://github.com/googleapis/google-cloud-java/pull/14346)) ([54c0d0](https://github.com/googleapis/google-cloud-java/commit/54c0d0f843d7bf74bedc69e554b80ce0b8dde4ef))
+* Prevent statement cancellation race in AbstractBaseUnitOfWork ([#14283](https://github.com/googleapis/google-cloud-java/pull/14283)) ([d9a8ee](https://github.com/googleapis/google-cloud-java/commit/d9a8eefc7b564330248d31bf0d40b060aee6da11))
+
+### Performance Improvements
+
+* Stop re-parsing the request id on every RPC ([#14353](https://github.com/googleapis/google-cloud-java/pull/14353)) ([46108f](https://github.com/googleapis/google-cloud-java/commit/46108f4945cba74ae417ebae7da9eece64e30746))
+
+## [6.122.0](https://github.com/googleapis/google-cloud-java/compare/8cbbb563543...0b2991e56b4) (2026-09-04)
+
+### Features
+
+* Add client-level CallContextConfigurator to SpannerOptions ([#14256](https://github.com/googleapis/google-cloud-java/pull/14256)) ([eef74d](https://github.com/googleapis/google-cloud-java/commit/eef74d291f0ca7e90115ca6bebca463363df4970))
+* Prime scaled-up dynamic channel pool channels with SELECT 1 ([#14254](https://github.com/googleapis/google-cloud-java/pull/14254)) ([4d2664](https://github.com/googleapis/google-cloud-java/commit/4d26645014ce053ad6f0b48b9c4ecb87ece024c5))
+
+### Bug Fixes
+
+* Prioritize leader replica for read-write transactions in location-aware routing ([#14195](https://github.com/googleapis/google-cloud-java/pull/14195)) ([6383f8](https://github.com/googleapis/google-cloud-java/commit/6383f815968cda69d0186651cffc685bb754449a))
+* Route ExecuteBatchDml through transaction affinity endpoint ([#14192](https://github.com/googleapis/google-cloud-java/pull/14192)) ([5e9e3c](https://github.com/googleapis/google-cloud-java/commit/5e9e3cd03eadc280456b38ac127ba1f58b715616))
+
+## [6.121.0](https://github.com/googleapis/google-cloud-java/compare/c2ce8c17fda...8cbbb563543) (2026-08-24)
+
+### Features
+
+* Support user-provided OpenTelemetry for client metrics export ([#13741](https://github.com/googleapis/google-cloud-java/pull/13741)) ([da74de](https://github.com/googleapis/google-cloud-java/commit/da74dee5ceb34b5255a0583acbca96d085e65404))
+
+### Bug Fixes
+
+* Add closeAsync to ReadContext and make transaction closing non-blocking ([#14076](https://github.com/googleapis/google-cloud-java/pull/14076)) ([671f89](https://github.com/googleapis/google-cloud-java/commit/671f892fd970705b59810c188f378cc319c800b3))
+* Scope server-timing metrics per call and guard interceptor lifecycle callbacks ([#14053](https://github.com/googleapis/google-cloud-java/pull/14053)) ([f35c57](https://github.com/googleapis/google-cloud-java/commit/f35c5709e6d54daa831bade13cd1a1a103aef9b4))
+
+### Performance Improvements
+
+* Cache positional to named param conversion ([#14034](https://github.com/googleapis/google-cloud-java/pull/14034)) ([30e031](https://github.com/googleapis/google-cloud-java/commit/30e031b2896b686486002167e6676b8363bd849b))
+* Cache commonly used query parameter names ([#14036](https://github.com/googleapis/google-cloud-java/pull/14036)) ([1eb6aa](https://github.com/googleapis/google-cloud-java/commit/1eb6aa3931cc97d8a7d6226ca49cf7bada4a6463))
+
 ## [6.120.0](https://github.com/googleapis/google-cloud-java/compare/73c9a0342f9...c2ce8c17fda) (2026-07-30)
 
 ### Bug Fixes

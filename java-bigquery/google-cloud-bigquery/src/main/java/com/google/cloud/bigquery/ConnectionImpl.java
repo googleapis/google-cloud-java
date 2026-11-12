@@ -1335,7 +1335,7 @@ class ConnectionImpl implements Connection {
     if (connectionSettings.getMaxResults() != null) {
       content.setMaxResults(connectionSettings.getMaxResults());
     }
-    if (queryParameters != null) {
+    if (queryParameters != null && !queryParameters.isEmpty()) {
       // content.setQueryParameters(queryParameters);
       if (queryParameters.get(0).getName() == null) {
         // If query parameter name is unset, then assume mode is positional
@@ -1379,7 +1379,7 @@ class ConnectionImpl implements Connection {
         new com.google.api.services.bigquery.model.JobConfiguration();
     JobConfigurationQuery queryConfigurationPb = new JobConfigurationQuery();
     queryConfigurationPb.setQuery(sql);
-    if (queryParameters != null) {
+    if (queryParameters != null && !queryParameters.isEmpty()) {
       if (queryParameters.get(0).getName() == null) {
         // If query parameter name is unset, then assume mode is positional
         queryConfigurationPb.setParameterMode("POSITIONAL");

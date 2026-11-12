@@ -64,6 +64,7 @@ public final class AdIdentifiers extends com.google.protobuf.GeneratedMessage
     encryptedUserIds_ = java.util.Collections.emptyList();
     ppid_ = "";
     visitorPpid_ = "";
+    leadId_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -771,6 +772,59 @@ public final class AdIdentifiers extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public static final int LEAD_ID_FIELD_NUMBER = 13;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object leadId_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Google generated ID issued when user submits a lead form.
+   * </pre>
+   *
+   * <code>string lead_id = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The leadId.
+   */
+  @java.lang.Override
+  public java.lang.String getLeadId() {
+    java.lang.Object ref = leadId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      leadId_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Google generated ID issued when user submits a lead form.
+   * </pre>
+   *
+   * <code>string lead_id = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for leadId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getLeadIdBytes() {
+    java.lang.Object ref = leadId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      leadId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -821,6 +875,9 @@ public final class AdIdentifiers extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(visitorPpid_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 12, visitorPpid_);
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(leadId_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 13, leadId_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -868,6 +925,9 @@ public final class AdIdentifiers extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(visitorPpid_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(12, visitorPpid_);
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(leadId_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(13, leadId_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -899,6 +959,7 @@ public final class AdIdentifiers extends com.google.protobuf.GeneratedMessage
     if (!getEncryptedUserIdsList().equals(other.getEncryptedUserIdsList())) return false;
     if (!getPpid().equals(other.getPpid())) return false;
     if (!getVisitorPpid().equals(other.getVisitorPpid())) return false;
+    if (!getLeadId().equals(other.getLeadId())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -938,6 +999,8 @@ public final class AdIdentifiers extends com.google.protobuf.GeneratedMessage
     hash = (53 * hash) + getPpid().hashCode();
     hash = (37 * hash) + VISITOR_PPID_FIELD_NUMBER;
     hash = (53 * hash) + getVisitorPpid().hashCode();
+    hash = (37 * hash) + LEAD_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getLeadId().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1111,6 +1174,7 @@ public final class AdIdentifiers extends com.google.protobuf.GeneratedMessage
       bitField0_ = (bitField0_ & ~0x00000200);
       ppid_ = "";
       visitorPpid_ = "";
+      leadId_ = "";
       return this;
     }
 
@@ -1197,6 +1261,9 @@ public final class AdIdentifiers extends com.google.protobuf.GeneratedMessage
       }
       if (((from_bitField0_ & 0x00000800) != 0)) {
         result.visitorPpid_ = visitorPpid_;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.leadId_ = leadId_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1291,6 +1358,11 @@ public final class AdIdentifiers extends com.google.protobuf.GeneratedMessage
       if (!other.getVisitorPpid().isEmpty()) {
         visitorPpid_ = other.visitorPpid_;
         bitField0_ |= 0x00000800;
+        onChanged();
+      }
+      if (!other.getLeadId().isEmpty()) {
+        leadId_ = other.leadId_;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1399,6 +1471,12 @@ public final class AdIdentifiers extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000800;
                 break;
               } // case 98
+            case 106:
+              {
+                leadId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 106
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3185,6 +3263,117 @@ public final class AdIdentifiers extends com.google.protobuf.GeneratedMessage
       checkByteStringIsUtf8(value);
       visitorPpid_ = value;
       bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object leadId_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Google generated ID issued when user submits a lead form.
+     * </pre>
+     *
+     * <code>string lead_id = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The leadId.
+     */
+    public java.lang.String getLeadId() {
+      java.lang.Object ref = leadId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        leadId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Google generated ID issued when user submits a lead form.
+     * </pre>
+     *
+     * <code>string lead_id = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for leadId.
+     */
+    public com.google.protobuf.ByteString getLeadIdBytes() {
+      java.lang.Object ref = leadId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        leadId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Google generated ID issued when user submits a lead form.
+     * </pre>
+     *
+     * <code>string lead_id = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The leadId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLeadId(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      leadId_ = value;
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Google generated ID issued when user submits a lead form.
+     * </pre>
+     *
+     * <code>string lead_id = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearLeadId() {
+      leadId_ = getDefaultInstance().getLeadId();
+      bitField0_ = (bitField0_ & ~0x00001000);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Google generated ID issued when user submits a lead form.
+     * </pre>
+     *
+     * <code>string lead_id = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for leadId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLeadIdBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      leadId_ = value;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }

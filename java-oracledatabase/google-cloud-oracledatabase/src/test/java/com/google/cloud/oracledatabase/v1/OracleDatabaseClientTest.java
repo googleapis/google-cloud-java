@@ -23,9 +23,11 @@ import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListAutono
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListCloudExadataInfrastructuresPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListCloudVmClustersPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListDatabaseCharacterSetsPagedResponse;
+import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListDatabaseConnectionsPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListDatabasesPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListDbNodesPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListDbServersPagedResponse;
+import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListDbSystemComputePerformancesPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListDbSystemInitialStorageSizesPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListDbSystemShapesPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListDbSystemsPagedResponse;
@@ -33,6 +35,7 @@ import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListDbVers
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListEntitlementsPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListExadbVmClustersPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListExascaleDbStorageVaultsPagedResponse;
+import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListFlexComponentsPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListGiVersionsPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListGoldengateConnectionAssignmentsPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListGoldengateConnectionTypesPagedResponse;
@@ -43,6 +46,7 @@ import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListGolden
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListGoldengateDeploymentsPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListLocationsPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListMinorVersionsPagedResponse;
+import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListOdbDnsZonesPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListOdbNetworksPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListOdbSubnetsPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListPluggableDatabasesPagedResponse;
@@ -463,6 +467,68 @@ public class OracleDatabaseClientTest {
   }
 
   @Test
+  public void updateCloudExadataInfrastructureTest() throws Exception {
+    CloudExadataInfrastructure expectedResponse =
+        CloudExadataInfrastructure.newBuilder()
+            .setName(
+                CloudExadataInfrastructureName.of(
+                        "[PROJECT]", "[LOCATION]", "[CLOUD_EXADATA_INFRASTRUCTURE]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setGcpOracleZone("gcpOracleZone217860222")
+            .setEntitlementId("entitlementId-1302274264")
+            .setProperties(CloudExadataInfrastructureProperties.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateCloudExadataInfrastructureTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockOracleDatabase.addResponse(resultOperation);
+
+    CloudExadataInfrastructure cloudExadataInfrastructure =
+        CloudExadataInfrastructure.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    CloudExadataInfrastructure actualResponse =
+        client.updateCloudExadataInfrastructureAsync(cloudExadataInfrastructure, updateMask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateCloudExadataInfrastructureRequest actualRequest =
+        ((UpdateCloudExadataInfrastructureRequest) actualRequests.get(0));
+
+    Assert.assertEquals(cloudExadataInfrastructure, actualRequest.getCloudExadataInfrastructure());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateCloudExadataInfrastructureExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
+
+    try {
+      CloudExadataInfrastructure cloudExadataInfrastructure =
+          CloudExadataInfrastructure.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateCloudExadataInfrastructureAsync(cloudExadataInfrastructure, updateMask).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
   public void deleteCloudExadataInfrastructureTest() throws Exception {
     Empty expectedResponse = Empty.newBuilder().build();
     Operation resultOperation =
@@ -789,11 +855,15 @@ public class OracleDatabaseClientTest {
             .setBackupOdbSubnet(
                 OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
                     .toString())
+            .setOdbDnsZone(
+                OdbDnsZoneName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_DNS_ZONE]")
+                    .toString())
             .setIdentityConnector(IdentityConnector.newBuilder().build())
             .setExascaleDbStorageVault(
                 ExascaleDbStorageVaultName.of(
                         "[PROJECT]", "[LOCATION]", "[EXASCALE_DB_STORAGE_VAULT]")
                     .toString())
+            .setIdentityConnectorDisabled(true)
             .build();
     mockOracleDatabase.addResponse(expectedResponse);
 
@@ -854,11 +924,15 @@ public class OracleDatabaseClientTest {
             .setBackupOdbSubnet(
                 OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
                     .toString())
+            .setOdbDnsZone(
+                OdbDnsZoneName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_DNS_ZONE]")
+                    .toString())
             .setIdentityConnector(IdentityConnector.newBuilder().build())
             .setExascaleDbStorageVault(
                 ExascaleDbStorageVaultName.of(
                         "[PROJECT]", "[LOCATION]", "[EXASCALE_DB_STORAGE_VAULT]")
                     .toString())
+            .setIdentityConnectorDisabled(true)
             .build();
     mockOracleDatabase.addResponse(expectedResponse);
 
@@ -917,11 +991,15 @@ public class OracleDatabaseClientTest {
             .setBackupOdbSubnet(
                 OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
                     .toString())
+            .setOdbDnsZone(
+                OdbDnsZoneName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_DNS_ZONE]")
+                    .toString())
             .setIdentityConnector(IdentityConnector.newBuilder().build())
             .setExascaleDbStorageVault(
                 ExascaleDbStorageVaultName.of(
                         "[PROJECT]", "[LOCATION]", "[EXASCALE_DB_STORAGE_VAULT]")
                     .toString())
+            .setIdentityConnectorDisabled(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -996,11 +1074,15 @@ public class OracleDatabaseClientTest {
             .setBackupOdbSubnet(
                 OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
                     .toString())
+            .setOdbDnsZone(
+                OdbDnsZoneName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_DNS_ZONE]")
+                    .toString())
             .setIdentityConnector(IdentityConnector.newBuilder().build())
             .setExascaleDbStorageVault(
                 ExascaleDbStorageVaultName.of(
                         "[PROJECT]", "[LOCATION]", "[EXASCALE_DB_STORAGE_VAULT]")
                     .toString())
+            .setIdentityConnectorDisabled(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1042,6 +1124,86 @@ public class OracleDatabaseClientTest {
       CloudVmCluster cloudVmCluster = CloudVmCluster.newBuilder().build();
       String cloudVmClusterId = "cloudVmClusterId-1217103287";
       client.createCloudVmClusterAsync(parent, cloudVmCluster, cloudVmClusterId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void updateCloudVmClusterTest() throws Exception {
+    CloudVmCluster expectedResponse =
+        CloudVmCluster.newBuilder()
+            .setName(
+                CloudVmClusterName.of("[PROJECT]", "[LOCATION]", "[CLOUD_VM_CLUSTER]").toString())
+            .setExadataInfrastructure(
+                CloudExadataInfrastructureName.of(
+                        "[PROJECT]", "[LOCATION]", "[CLOUD_EXADATA_INFRASTRUCTURE]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setProperties(CloudVmClusterProperties.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setCidr("cidr3053428")
+            .setBackupSubnetCidr("backupSubnetCidr1087692755")
+            .setNetwork("network1843485230")
+            .setGcpOracleZone("gcpOracleZone217860222")
+            .setOdbNetwork(OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]").toString())
+            .setOdbSubnet(
+                OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
+                    .toString())
+            .setBackupOdbSubnet(
+                OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
+                    .toString())
+            .setOdbDnsZone(
+                OdbDnsZoneName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_DNS_ZONE]")
+                    .toString())
+            .setIdentityConnector(IdentityConnector.newBuilder().build())
+            .setExascaleDbStorageVault(
+                ExascaleDbStorageVaultName.of(
+                        "[PROJECT]", "[LOCATION]", "[EXASCALE_DB_STORAGE_VAULT]")
+                    .toString())
+            .setIdentityConnectorDisabled(true)
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateCloudVmClusterTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockOracleDatabase.addResponse(resultOperation);
+
+    CloudVmCluster cloudVmCluster = CloudVmCluster.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    CloudVmCluster actualResponse =
+        client.updateCloudVmClusterAsync(cloudVmCluster, updateMask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateCloudVmClusterRequest actualRequest =
+        ((UpdateCloudVmClusterRequest) actualRequests.get(0));
+
+    Assert.assertEquals(cloudVmCluster, actualRequest.getCloudVmCluster());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateCloudVmClusterExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
+
+    try {
+      CloudVmCluster cloudVmCluster = CloudVmCluster.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateCloudVmClusterAsync(cloudVmCluster, updateMask).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
@@ -1139,6 +1301,570 @@ public class OracleDatabaseClientTest {
   }
 
   @Test
+  public void enableCloudVmClusterIdentityConnectorTest() throws Exception {
+    CloudVmCluster expectedResponse =
+        CloudVmCluster.newBuilder()
+            .setName(
+                CloudVmClusterName.of("[PROJECT]", "[LOCATION]", "[CLOUD_VM_CLUSTER]").toString())
+            .setExadataInfrastructure(
+                CloudExadataInfrastructureName.of(
+                        "[PROJECT]", "[LOCATION]", "[CLOUD_EXADATA_INFRASTRUCTURE]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setProperties(CloudVmClusterProperties.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setCidr("cidr3053428")
+            .setBackupSubnetCidr("backupSubnetCidr1087692755")
+            .setNetwork("network1843485230")
+            .setGcpOracleZone("gcpOracleZone217860222")
+            .setOdbNetwork(OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]").toString())
+            .setOdbSubnet(
+                OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
+                    .toString())
+            .setBackupOdbSubnet(
+                OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
+                    .toString())
+            .setOdbDnsZone(
+                OdbDnsZoneName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_DNS_ZONE]")
+                    .toString())
+            .setIdentityConnector(IdentityConnector.newBuilder().build())
+            .setExascaleDbStorageVault(
+                ExascaleDbStorageVaultName.of(
+                        "[PROJECT]", "[LOCATION]", "[EXASCALE_DB_STORAGE_VAULT]")
+                    .toString())
+            .setIdentityConnectorDisabled(true)
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("enableCloudVmClusterIdentityConnectorTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockOracleDatabase.addResponse(resultOperation);
+
+    CloudVmClusterName name =
+        CloudVmClusterName.of("[PROJECT]", "[LOCATION]", "[CLOUD_VM_CLUSTER]");
+
+    CloudVmCluster actualResponse = client.enableCloudVmClusterIdentityConnectorAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    EnableCloudVmClusterIdentityConnectorRequest actualRequest =
+        ((EnableCloudVmClusterIdentityConnectorRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void enableCloudVmClusterIdentityConnectorExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
+
+    try {
+      CloudVmClusterName name =
+          CloudVmClusterName.of("[PROJECT]", "[LOCATION]", "[CLOUD_VM_CLUSTER]");
+      client.enableCloudVmClusterIdentityConnectorAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void enableCloudVmClusterIdentityConnectorTest2() throws Exception {
+    CloudVmCluster expectedResponse =
+        CloudVmCluster.newBuilder()
+            .setName(
+                CloudVmClusterName.of("[PROJECT]", "[LOCATION]", "[CLOUD_VM_CLUSTER]").toString())
+            .setExadataInfrastructure(
+                CloudExadataInfrastructureName.of(
+                        "[PROJECT]", "[LOCATION]", "[CLOUD_EXADATA_INFRASTRUCTURE]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setProperties(CloudVmClusterProperties.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setCidr("cidr3053428")
+            .setBackupSubnetCidr("backupSubnetCidr1087692755")
+            .setNetwork("network1843485230")
+            .setGcpOracleZone("gcpOracleZone217860222")
+            .setOdbNetwork(OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]").toString())
+            .setOdbSubnet(
+                OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
+                    .toString())
+            .setBackupOdbSubnet(
+                OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
+                    .toString())
+            .setOdbDnsZone(
+                OdbDnsZoneName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_DNS_ZONE]")
+                    .toString())
+            .setIdentityConnector(IdentityConnector.newBuilder().build())
+            .setExascaleDbStorageVault(
+                ExascaleDbStorageVaultName.of(
+                        "[PROJECT]", "[LOCATION]", "[EXASCALE_DB_STORAGE_VAULT]")
+                    .toString())
+            .setIdentityConnectorDisabled(true)
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("enableCloudVmClusterIdentityConnectorTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockOracleDatabase.addResponse(resultOperation);
+
+    String name = "name3373707";
+
+    CloudVmCluster actualResponse = client.enableCloudVmClusterIdentityConnectorAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    EnableCloudVmClusterIdentityConnectorRequest actualRequest =
+        ((EnableCloudVmClusterIdentityConnectorRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void enableCloudVmClusterIdentityConnectorExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.enableCloudVmClusterIdentityConnectorAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void disableCloudVmClusterIdentityConnectorTest() throws Exception {
+    CloudVmCluster expectedResponse =
+        CloudVmCluster.newBuilder()
+            .setName(
+                CloudVmClusterName.of("[PROJECT]", "[LOCATION]", "[CLOUD_VM_CLUSTER]").toString())
+            .setExadataInfrastructure(
+                CloudExadataInfrastructureName.of(
+                        "[PROJECT]", "[LOCATION]", "[CLOUD_EXADATA_INFRASTRUCTURE]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setProperties(CloudVmClusterProperties.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setCidr("cidr3053428")
+            .setBackupSubnetCidr("backupSubnetCidr1087692755")
+            .setNetwork("network1843485230")
+            .setGcpOracleZone("gcpOracleZone217860222")
+            .setOdbNetwork(OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]").toString())
+            .setOdbSubnet(
+                OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
+                    .toString())
+            .setBackupOdbSubnet(
+                OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
+                    .toString())
+            .setOdbDnsZone(
+                OdbDnsZoneName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_DNS_ZONE]")
+                    .toString())
+            .setIdentityConnector(IdentityConnector.newBuilder().build())
+            .setExascaleDbStorageVault(
+                ExascaleDbStorageVaultName.of(
+                        "[PROJECT]", "[LOCATION]", "[EXASCALE_DB_STORAGE_VAULT]")
+                    .toString())
+            .setIdentityConnectorDisabled(true)
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("disableCloudVmClusterIdentityConnectorTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockOracleDatabase.addResponse(resultOperation);
+
+    CloudVmClusterName name =
+        CloudVmClusterName.of("[PROJECT]", "[LOCATION]", "[CLOUD_VM_CLUSTER]");
+
+    CloudVmCluster actualResponse = client.disableCloudVmClusterIdentityConnectorAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DisableCloudVmClusterIdentityConnectorRequest actualRequest =
+        ((DisableCloudVmClusterIdentityConnectorRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void disableCloudVmClusterIdentityConnectorExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
+
+    try {
+      CloudVmClusterName name =
+          CloudVmClusterName.of("[PROJECT]", "[LOCATION]", "[CLOUD_VM_CLUSTER]");
+      client.disableCloudVmClusterIdentityConnectorAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void disableCloudVmClusterIdentityConnectorTest2() throws Exception {
+    CloudVmCluster expectedResponse =
+        CloudVmCluster.newBuilder()
+            .setName(
+                CloudVmClusterName.of("[PROJECT]", "[LOCATION]", "[CLOUD_VM_CLUSTER]").toString())
+            .setExadataInfrastructure(
+                CloudExadataInfrastructureName.of(
+                        "[PROJECT]", "[LOCATION]", "[CLOUD_EXADATA_INFRASTRUCTURE]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setProperties(CloudVmClusterProperties.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setCidr("cidr3053428")
+            .setBackupSubnetCidr("backupSubnetCidr1087692755")
+            .setNetwork("network1843485230")
+            .setGcpOracleZone("gcpOracleZone217860222")
+            .setOdbNetwork(OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]").toString())
+            .setOdbSubnet(
+                OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
+                    .toString())
+            .setBackupOdbSubnet(
+                OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
+                    .toString())
+            .setOdbDnsZone(
+                OdbDnsZoneName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_DNS_ZONE]")
+                    .toString())
+            .setIdentityConnector(IdentityConnector.newBuilder().build())
+            .setExascaleDbStorageVault(
+                ExascaleDbStorageVaultName.of(
+                        "[PROJECT]", "[LOCATION]", "[EXASCALE_DB_STORAGE_VAULT]")
+                    .toString())
+            .setIdentityConnectorDisabled(true)
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("disableCloudVmClusterIdentityConnectorTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockOracleDatabase.addResponse(resultOperation);
+
+    String name = "name3373707";
+
+    CloudVmCluster actualResponse = client.disableCloudVmClusterIdentityConnectorAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DisableCloudVmClusterIdentityConnectorRequest actualRequest =
+        ((DisableCloudVmClusterIdentityConnectorRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void disableCloudVmClusterIdentityConnectorExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.disableCloudVmClusterIdentityConnectorAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void enableExadbVmClusterIdentityConnectorTest() throws Exception {
+    ExadbVmCluster expectedResponse =
+        ExadbVmCluster.newBuilder()
+            .setName(
+                ExadbVmClusterName.of("[PROJECT]", "[LOCATION]", "[EXADB_VM_CLUSTER]").toString())
+            .setProperties(ExadbVmClusterProperties.newBuilder().build())
+            .setGcpOracleZone("gcpOracleZone217860222")
+            .putAllLabels(new HashMap<String, String>())
+            .setOdbNetwork(OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]").toString())
+            .setOdbSubnet(
+                OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
+                    .toString())
+            .setBackupOdbSubnet(
+                OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setEntitlementId("entitlementId-1302274264")
+            .setIdentityConnector(IdentityConnector.newBuilder().build())
+            .setIdentityConnectorDisabled(true)
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("enableExadbVmClusterIdentityConnectorTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockOracleDatabase.addResponse(resultOperation);
+
+    ExadbVmClusterName name =
+        ExadbVmClusterName.of("[PROJECT]", "[LOCATION]", "[EXADB_VM_CLUSTER]");
+
+    ExadbVmCluster actualResponse = client.enableExadbVmClusterIdentityConnectorAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    EnableExadbVmClusterIdentityConnectorRequest actualRequest =
+        ((EnableExadbVmClusterIdentityConnectorRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void enableExadbVmClusterIdentityConnectorExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
+
+    try {
+      ExadbVmClusterName name =
+          ExadbVmClusterName.of("[PROJECT]", "[LOCATION]", "[EXADB_VM_CLUSTER]");
+      client.enableExadbVmClusterIdentityConnectorAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void enableExadbVmClusterIdentityConnectorTest2() throws Exception {
+    ExadbVmCluster expectedResponse =
+        ExadbVmCluster.newBuilder()
+            .setName(
+                ExadbVmClusterName.of("[PROJECT]", "[LOCATION]", "[EXADB_VM_CLUSTER]").toString())
+            .setProperties(ExadbVmClusterProperties.newBuilder().build())
+            .setGcpOracleZone("gcpOracleZone217860222")
+            .putAllLabels(new HashMap<String, String>())
+            .setOdbNetwork(OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]").toString())
+            .setOdbSubnet(
+                OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
+                    .toString())
+            .setBackupOdbSubnet(
+                OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setEntitlementId("entitlementId-1302274264")
+            .setIdentityConnector(IdentityConnector.newBuilder().build())
+            .setIdentityConnectorDisabled(true)
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("enableExadbVmClusterIdentityConnectorTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockOracleDatabase.addResponse(resultOperation);
+
+    String name = "name3373707";
+
+    ExadbVmCluster actualResponse = client.enableExadbVmClusterIdentityConnectorAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    EnableExadbVmClusterIdentityConnectorRequest actualRequest =
+        ((EnableExadbVmClusterIdentityConnectorRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void enableExadbVmClusterIdentityConnectorExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.enableExadbVmClusterIdentityConnectorAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void disableExadbVmClusterIdentityConnectorTest() throws Exception {
+    ExadbVmCluster expectedResponse =
+        ExadbVmCluster.newBuilder()
+            .setName(
+                ExadbVmClusterName.of("[PROJECT]", "[LOCATION]", "[EXADB_VM_CLUSTER]").toString())
+            .setProperties(ExadbVmClusterProperties.newBuilder().build())
+            .setGcpOracleZone("gcpOracleZone217860222")
+            .putAllLabels(new HashMap<String, String>())
+            .setOdbNetwork(OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]").toString())
+            .setOdbSubnet(
+                OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
+                    .toString())
+            .setBackupOdbSubnet(
+                OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setEntitlementId("entitlementId-1302274264")
+            .setIdentityConnector(IdentityConnector.newBuilder().build())
+            .setIdentityConnectorDisabled(true)
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("disableExadbVmClusterIdentityConnectorTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockOracleDatabase.addResponse(resultOperation);
+
+    ExadbVmClusterName name =
+        ExadbVmClusterName.of("[PROJECT]", "[LOCATION]", "[EXADB_VM_CLUSTER]");
+
+    ExadbVmCluster actualResponse = client.disableExadbVmClusterIdentityConnectorAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DisableExadbVmClusterIdentityConnectorRequest actualRequest =
+        ((DisableExadbVmClusterIdentityConnectorRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void disableExadbVmClusterIdentityConnectorExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
+
+    try {
+      ExadbVmClusterName name =
+          ExadbVmClusterName.of("[PROJECT]", "[LOCATION]", "[EXADB_VM_CLUSTER]");
+      client.disableExadbVmClusterIdentityConnectorAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void disableExadbVmClusterIdentityConnectorTest2() throws Exception {
+    ExadbVmCluster expectedResponse =
+        ExadbVmCluster.newBuilder()
+            .setName(
+                ExadbVmClusterName.of("[PROJECT]", "[LOCATION]", "[EXADB_VM_CLUSTER]").toString())
+            .setProperties(ExadbVmClusterProperties.newBuilder().build())
+            .setGcpOracleZone("gcpOracleZone217860222")
+            .putAllLabels(new HashMap<String, String>())
+            .setOdbNetwork(OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]").toString())
+            .setOdbSubnet(
+                OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
+                    .toString())
+            .setBackupOdbSubnet(
+                OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setEntitlementId("entitlementId-1302274264")
+            .setIdentityConnector(IdentityConnector.newBuilder().build())
+            .setIdentityConnectorDisabled(true)
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("disableExadbVmClusterIdentityConnectorTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockOracleDatabase.addResponse(resultOperation);
+
+    String name = "name3373707";
+
+    ExadbVmCluster actualResponse = client.disableExadbVmClusterIdentityConnectorAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DisableExadbVmClusterIdentityConnectorRequest actualRequest =
+        ((DisableExadbVmClusterIdentityConnectorRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void disableExadbVmClusterIdentityConnectorExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.disableExadbVmClusterIdentityConnectorAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
   public void listEntitlementsTest() throws Exception {
     Entitlement responsesElement = Entitlement.newBuilder().build();
     ListEntitlementsResponse expectedResponse =
@@ -1220,6 +1946,94 @@ public class OracleDatabaseClientTest {
     try {
       String parent = "parent-995424086";
       client.listEntitlements(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listFlexComponentsTest() throws Exception {
+    FlexComponent responsesElement = FlexComponent.newBuilder().build();
+    ListFlexComponentsResponse expectedResponse =
+        ListFlexComponentsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllFlexComponents(Arrays.asList(responsesElement))
+            .build();
+    mockOracleDatabase.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListFlexComponentsPagedResponse pagedListResponse = client.listFlexComponents(parent);
+
+    List<FlexComponent> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getFlexComponentsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListFlexComponentsRequest actualRequest = ((ListFlexComponentsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listFlexComponentsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listFlexComponents(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listFlexComponentsTest2() throws Exception {
+    FlexComponent responsesElement = FlexComponent.newBuilder().build();
+    ListFlexComponentsResponse expectedResponse =
+        ListFlexComponentsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllFlexComponents(Arrays.asList(responsesElement))
+            .build();
+    mockOracleDatabase.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListFlexComponentsPagedResponse pagedListResponse = client.listFlexComponents(parent);
+
+    List<FlexComponent> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getFlexComponentsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListFlexComponentsRequest actualRequest = ((ListFlexComponentsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listFlexComponentsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listFlexComponents(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
@@ -4066,6 +4880,8 @@ public class OracleDatabaseClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setEntitlementId("entitlementId-1302274264")
             .setGcpOracleZone("gcpOracleZone217860222")
+            .setServiceConnectivityConfig(ServiceConnectivityConfig.newBuilder().build())
+            .setReconciling(true)
             .build();
     mockOracleDatabase.addResponse(expectedResponse);
 
@@ -4109,6 +4925,8 @@ public class OracleDatabaseClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setEntitlementId("entitlementId-1302274264")
             .setGcpOracleZone("gcpOracleZone217860222")
+            .setServiceConnectivityConfig(ServiceConnectivityConfig.newBuilder().build())
+            .setReconciling(true)
             .build();
     mockOracleDatabase.addResponse(expectedResponse);
 
@@ -4152,6 +4970,8 @@ public class OracleDatabaseClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setEntitlementId("entitlementId-1302274264")
             .setGcpOracleZone("gcpOracleZone217860222")
+            .setServiceConnectivityConfig(ServiceConnectivityConfig.newBuilder().build())
+            .setReconciling(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -4210,6 +5030,8 @@ public class OracleDatabaseClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setEntitlementId("entitlementId-1302274264")
             .setGcpOracleZone("gcpOracleZone217860222")
+            .setServiceConnectivityConfig(ServiceConnectivityConfig.newBuilder().build())
+            .setReconciling(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -4250,6 +5072,62 @@ public class OracleDatabaseClientTest {
       OdbNetwork odbNetwork = OdbNetwork.newBuilder().build();
       String odbNetworkId = "odbNetworkId-169900740";
       client.createOdbNetworkAsync(parent, odbNetwork, odbNetworkId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void updateOdbNetworkTest() throws Exception {
+    OdbNetwork expectedResponse =
+        OdbNetwork.newBuilder()
+            .setName(OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]").toString())
+            .setNetwork("network1843485230")
+            .putAllLabels(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setEntitlementId("entitlementId-1302274264")
+            .setGcpOracleZone("gcpOracleZone217860222")
+            .setServiceConnectivityConfig(ServiceConnectivityConfig.newBuilder().build())
+            .setReconciling(true)
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateOdbNetworkTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockOracleDatabase.addResponse(resultOperation);
+
+    OdbNetwork odbNetwork = OdbNetwork.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    OdbNetwork actualResponse = client.updateOdbNetworkAsync(odbNetwork, updateMask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateOdbNetworkRequest actualRequest = ((UpdateOdbNetworkRequest) actualRequests.get(0));
+
+    Assert.assertEquals(odbNetwork, actualRequest.getOdbNetwork());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateOdbNetworkExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
+
+    try {
+      OdbNetwork odbNetwork = OdbNetwork.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateOdbNetworkAsync(odbNetwork, updateMask).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
@@ -4633,6 +5511,60 @@ public class OracleDatabaseClientTest {
   }
 
   @Test
+  public void updateOdbSubnetTest() throws Exception {
+    OdbSubnet expectedResponse =
+        OdbSubnet.newBuilder()
+            .setName(
+                OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
+                    .toString())
+            .setCidrRange("cidrRange1660631593")
+            .putAllLabels(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateOdbSubnetTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockOracleDatabase.addResponse(resultOperation);
+
+    OdbSubnet odbSubnet = OdbSubnet.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    OdbSubnet actualResponse = client.updateOdbSubnetAsync(odbSubnet, updateMask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateOdbSubnetRequest actualRequest = ((UpdateOdbSubnetRequest) actualRequests.get(0));
+
+    Assert.assertEquals(odbSubnet, actualRequest.getOdbSubnet());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateOdbSubnetExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
+
+    try {
+      OdbSubnet odbSubnet = OdbSubnet.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateOdbSubnetAsync(odbSubnet, updateMask).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
   public void deleteOdbSubnetTest() throws Exception {
     Empty expectedResponse = Empty.newBuilder().build();
     Operation resultOperation =
@@ -4710,6 +5642,384 @@ public class OracleDatabaseClientTest {
     try {
       String name = "name3373707";
       client.deleteOdbSubnetAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void listOdbDnsZonesTest() throws Exception {
+    OdbDnsZone responsesElement = OdbDnsZone.newBuilder().build();
+    ListOdbDnsZonesResponse expectedResponse =
+        ListOdbDnsZonesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllOdbDnsZones(Arrays.asList(responsesElement))
+            .build();
+    mockOracleDatabase.addResponse(expectedResponse);
+
+    OdbNetworkName parent = OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]");
+
+    ListOdbDnsZonesPagedResponse pagedListResponse = client.listOdbDnsZones(parent);
+
+    List<OdbDnsZone> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getOdbDnsZonesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListOdbDnsZonesRequest actualRequest = ((ListOdbDnsZonesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listOdbDnsZonesExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
+
+    try {
+      OdbNetworkName parent = OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]");
+      client.listOdbDnsZones(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listOdbDnsZonesTest2() throws Exception {
+    OdbDnsZone responsesElement = OdbDnsZone.newBuilder().build();
+    ListOdbDnsZonesResponse expectedResponse =
+        ListOdbDnsZonesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllOdbDnsZones(Arrays.asList(responsesElement))
+            .build();
+    mockOracleDatabase.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListOdbDnsZonesPagedResponse pagedListResponse = client.listOdbDnsZones(parent);
+
+    List<OdbDnsZone> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getOdbDnsZonesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListOdbDnsZonesRequest actualRequest = ((ListOdbDnsZonesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listOdbDnsZonesExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listOdbDnsZones(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getOdbDnsZoneTest() throws Exception {
+    OdbDnsZone expectedResponse =
+        OdbDnsZone.newBuilder()
+            .setName(
+                OdbDnsZoneName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_DNS_ZONE]")
+                    .toString())
+            .setDomain("domain-1326197564")
+            .putAllLabels(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .build();
+    mockOracleDatabase.addResponse(expectedResponse);
+
+    OdbDnsZoneName name =
+        OdbDnsZoneName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_DNS_ZONE]");
+
+    OdbDnsZone actualResponse = client.getOdbDnsZone(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetOdbDnsZoneRequest actualRequest = ((GetOdbDnsZoneRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getOdbDnsZoneExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
+
+    try {
+      OdbDnsZoneName name =
+          OdbDnsZoneName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_DNS_ZONE]");
+      client.getOdbDnsZone(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getOdbDnsZoneTest2() throws Exception {
+    OdbDnsZone expectedResponse =
+        OdbDnsZone.newBuilder()
+            .setName(
+                OdbDnsZoneName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_DNS_ZONE]")
+                    .toString())
+            .setDomain("domain-1326197564")
+            .putAllLabels(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .build();
+    mockOracleDatabase.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    OdbDnsZone actualResponse = client.getOdbDnsZone(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetOdbDnsZoneRequest actualRequest = ((GetOdbDnsZoneRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getOdbDnsZoneExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getOdbDnsZone(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createOdbDnsZoneTest() throws Exception {
+    OdbDnsZone expectedResponse =
+        OdbDnsZone.newBuilder()
+            .setName(
+                OdbDnsZoneName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_DNS_ZONE]")
+                    .toString())
+            .setDomain("domain-1326197564")
+            .putAllLabels(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createOdbDnsZoneTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockOracleDatabase.addResponse(resultOperation);
+
+    OdbNetworkName parent = OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]");
+    OdbDnsZone odbDnsZone = OdbDnsZone.newBuilder().build();
+    String odbDnsZoneId = "odbDnsZoneId1807291843";
+
+    OdbDnsZone actualResponse =
+        client.createOdbDnsZoneAsync(parent, odbDnsZone, odbDnsZoneId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateOdbDnsZoneRequest actualRequest = ((CreateOdbDnsZoneRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(odbDnsZone, actualRequest.getOdbDnsZone());
+    Assert.assertEquals(odbDnsZoneId, actualRequest.getOdbDnsZoneId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createOdbDnsZoneExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
+
+    try {
+      OdbNetworkName parent = OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]");
+      OdbDnsZone odbDnsZone = OdbDnsZone.newBuilder().build();
+      String odbDnsZoneId = "odbDnsZoneId1807291843";
+      client.createOdbDnsZoneAsync(parent, odbDnsZone, odbDnsZoneId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void createOdbDnsZoneTest2() throws Exception {
+    OdbDnsZone expectedResponse =
+        OdbDnsZone.newBuilder()
+            .setName(
+                OdbDnsZoneName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_DNS_ZONE]")
+                    .toString())
+            .setDomain("domain-1326197564")
+            .putAllLabels(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createOdbDnsZoneTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockOracleDatabase.addResponse(resultOperation);
+
+    String parent = "parent-995424086";
+    OdbDnsZone odbDnsZone = OdbDnsZone.newBuilder().build();
+    String odbDnsZoneId = "odbDnsZoneId1807291843";
+
+    OdbDnsZone actualResponse =
+        client.createOdbDnsZoneAsync(parent, odbDnsZone, odbDnsZoneId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateOdbDnsZoneRequest actualRequest = ((CreateOdbDnsZoneRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(odbDnsZone, actualRequest.getOdbDnsZone());
+    Assert.assertEquals(odbDnsZoneId, actualRequest.getOdbDnsZoneId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createOdbDnsZoneExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      OdbDnsZone odbDnsZone = OdbDnsZone.newBuilder().build();
+      String odbDnsZoneId = "odbDnsZoneId1807291843";
+      client.createOdbDnsZoneAsync(parent, odbDnsZone, odbDnsZoneId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteOdbDnsZoneTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteOdbDnsZoneTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockOracleDatabase.addResponse(resultOperation);
+
+    OdbDnsZoneName name =
+        OdbDnsZoneName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_DNS_ZONE]");
+
+    client.deleteOdbDnsZoneAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteOdbDnsZoneRequest actualRequest = ((DeleteOdbDnsZoneRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteOdbDnsZoneExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
+
+    try {
+      OdbDnsZoneName name =
+          OdbDnsZoneName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_DNS_ZONE]");
+      client.deleteOdbDnsZoneAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteOdbDnsZoneTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteOdbDnsZoneTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockOracleDatabase.addResponse(resultOperation);
+
+    String name = "name3373707";
+
+    client.deleteOdbDnsZoneAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteOdbDnsZoneRequest actualRequest = ((DeleteOdbDnsZoneRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteOdbDnsZoneExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteOdbDnsZoneAsync(name).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
@@ -4826,6 +6136,7 @@ public class OracleDatabaseClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setEntitlementId("entitlementId-1302274264")
             .setIdentityConnector(IdentityConnector.newBuilder().build())
+            .setIdentityConnectorDisabled(true)
             .build();
     mockOracleDatabase.addResponse(expectedResponse);
 
@@ -4881,6 +6192,7 @@ public class OracleDatabaseClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setEntitlementId("entitlementId-1302274264")
             .setIdentityConnector(IdentityConnector.newBuilder().build())
+            .setIdentityConnectorDisabled(true)
             .build();
     mockOracleDatabase.addResponse(expectedResponse);
 
@@ -4934,6 +6246,7 @@ public class OracleDatabaseClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setEntitlementId("entitlementId-1302274264")
             .setIdentityConnector(IdentityConnector.newBuilder().build())
+            .setIdentityConnectorDisabled(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -5003,6 +6316,7 @@ public class OracleDatabaseClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setEntitlementId("entitlementId-1302274264")
             .setIdentityConnector(IdentityConnector.newBuilder().build())
+            .setIdentityConnectorDisabled(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -5160,6 +6474,7 @@ public class OracleDatabaseClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setEntitlementId("entitlementId-1302274264")
             .setIdentityConnector(IdentityConnector.newBuilder().build())
+            .setIdentityConnectorDisabled(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -5226,6 +6541,7 @@ public class OracleDatabaseClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setEntitlementId("entitlementId-1302274264")
             .setIdentityConnector(IdentityConnector.newBuilder().build())
+            .setIdentityConnectorDisabled(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -5294,6 +6610,7 @@ public class OracleDatabaseClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setEntitlementId("entitlementId-1302274264")
             .setIdentityConnector(IdentityConnector.newBuilder().build())
+            .setIdentityConnectorDisabled(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -5685,6 +7002,70 @@ public class OracleDatabaseClientTest {
   }
 
   @Test
+  public void updateExascaleDbStorageVaultTest() throws Exception {
+    ExascaleDbStorageVault expectedResponse =
+        ExascaleDbStorageVault.newBuilder()
+            .setName(
+                ExascaleDbStorageVaultName.of(
+                        "[PROJECT]", "[LOCATION]", "[EXASCALE_DB_STORAGE_VAULT]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setGcpOracleZone("gcpOracleZone217860222")
+            .setProperties(ExascaleDbStorageVaultProperties.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setEntitlementId("entitlementId-1302274264")
+            .putAllLabels(new HashMap<String, String>())
+            .setExadataInfrastructure(
+                CloudExadataInfrastructureName.of(
+                        "[PROJECT]", "[LOCATION]", "[CLOUD_EXADATA_INFRASTRUCTURE]")
+                    .toString())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateExascaleDbStorageVaultTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockOracleDatabase.addResponse(resultOperation);
+
+    ExascaleDbStorageVault exascaleDbStorageVault = ExascaleDbStorageVault.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    ExascaleDbStorageVault actualResponse =
+        client.updateExascaleDbStorageVaultAsync(exascaleDbStorageVault, updateMask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateExascaleDbStorageVaultRequest actualRequest =
+        ((UpdateExascaleDbStorageVaultRequest) actualRequests.get(0));
+
+    Assert.assertEquals(exascaleDbStorageVault, actualRequest.getExascaleDbStorageVault());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateExascaleDbStorageVaultExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
+
+    try {
+      ExascaleDbStorageVault exascaleDbStorageVault = ExascaleDbStorageVault.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateExascaleDbStorageVaultAsync(exascaleDbStorageVault, updateMask).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
   public void deleteExascaleDbStorageVaultTest() throws Exception {
     Empty expectedResponse = Empty.newBuilder().build();
     Operation resultOperation =
@@ -5860,6 +7241,100 @@ public class OracleDatabaseClientTest {
     try {
       String parent = "parent-995424086";
       client.listDbSystemInitialStorageSizes(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listDbSystemComputePerformancesTest() throws Exception {
+    DbSystemComputePerformance responsesElement = DbSystemComputePerformance.newBuilder().build();
+    ListDbSystemComputePerformancesResponse expectedResponse =
+        ListDbSystemComputePerformancesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllDbSystemComputePerformances(Arrays.asList(responsesElement))
+            .build();
+    mockOracleDatabase.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListDbSystemComputePerformancesPagedResponse pagedListResponse =
+        client.listDbSystemComputePerformances(parent);
+
+    List<DbSystemComputePerformance> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(
+        expectedResponse.getDbSystemComputePerformancesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListDbSystemComputePerformancesRequest actualRequest =
+        ((ListDbSystemComputePerformancesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listDbSystemComputePerformancesExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listDbSystemComputePerformances(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listDbSystemComputePerformancesTest2() throws Exception {
+    DbSystemComputePerformance responsesElement = DbSystemComputePerformance.newBuilder().build();
+    ListDbSystemComputePerformancesResponse expectedResponse =
+        ListDbSystemComputePerformancesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllDbSystemComputePerformances(Arrays.asList(responsesElement))
+            .build();
+    mockOracleDatabase.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListDbSystemComputePerformancesPagedResponse pagedListResponse =
+        client.listDbSystemComputePerformances(parent);
+
+    List<DbSystemComputePerformance> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(
+        expectedResponse.getDbSystemComputePerformancesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListDbSystemComputePerformancesRequest actualRequest =
+        ((ListDbSystemComputePerformancesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listDbSystemComputePerformancesExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listDbSystemComputePerformances(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
@@ -6555,6 +8030,66 @@ public class OracleDatabaseClientTest {
   }
 
   @Test
+  public void updateDbSystemTest() throws Exception {
+    DbSystem expectedResponse =
+        DbSystem.newBuilder()
+            .setName(DbSystemName.of("[PROJECT]", "[LOCATION]", "[DB_SYSTEM]").toString())
+            .setProperties(DbSystemProperties.newBuilder().build())
+            .setGcpOracleZone("gcpOracleZone217860222")
+            .putAllLabels(new HashMap<String, String>())
+            .setOdbNetwork(OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]").toString())
+            .setOdbSubnet(
+                OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
+                    .toString())
+            .setEntitlementId("entitlementId-1302274264")
+            .setDisplayName("displayName1714148973")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setOciUrl("ociUrl-1022489574")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateDbSystemTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockOracleDatabase.addResponse(resultOperation);
+
+    DbSystem dbSystem = DbSystem.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    DbSystem actualResponse = client.updateDbSystemAsync(dbSystem, updateMask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateDbSystemRequest actualRequest = ((UpdateDbSystemRequest) actualRequests.get(0));
+
+    Assert.assertEquals(dbSystem, actualRequest.getDbSystem());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateDbSystemExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
+
+    try {
+      DbSystem dbSystem = DbSystem.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateDbSystemAsync(dbSystem, updateMask).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
   public void deleteDbSystemTest() throws Exception {
     Empty expectedResponse = Empty.newBuilder().build();
     Operation resultOperation =
@@ -6970,6 +8505,70 @@ public class OracleDatabaseClientTest {
       client
           .createGoldengateDeploymentAsync(parent, goldengateDeployment, goldengateDeploymentId)
           .get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void updateGoldengateDeploymentTest() throws Exception {
+    GoldengateDeployment expectedResponse =
+        GoldengateDeployment.newBuilder()
+            .setName(
+                GoldengateDeploymentName.of("[PROJECT]", "[LOCATION]", "[GOLDENGATE_DEPLOYMENT]")
+                    .toString())
+            .setProperties(GoldengateDeploymentProperties.newBuilder().build())
+            .setGcpOracleZone("gcpOracleZone217860222")
+            .putAllLabels(new HashMap<String, String>())
+            .setOdbNetwork(OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]").toString())
+            .setOdbSubnet(
+                OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
+                    .toString())
+            .setEntitlementId("entitlementId-1302274264")
+            .setDisplayName("displayName1714148973")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setOciUrl("ociUrl-1022489574")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateGoldengateDeploymentTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockOracleDatabase.addResponse(resultOperation);
+
+    GoldengateDeployment goldengateDeployment = GoldengateDeployment.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    GoldengateDeployment actualResponse =
+        client.updateGoldengateDeploymentAsync(goldengateDeployment, updateMask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateGoldengateDeploymentRequest actualRequest =
+        ((UpdateGoldengateDeploymentRequest) actualRequests.get(0));
+
+    Assert.assertEquals(goldengateDeployment, actualRequest.getGoldengateDeployment());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateGoldengateDeploymentExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
+
+    try {
+      GoldengateDeployment goldengateDeployment = GoldengateDeployment.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateGoldengateDeploymentAsync(goldengateDeployment, updateMask).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
@@ -7638,6 +9237,69 @@ public class OracleDatabaseClientTest {
       client
           .createGoldengateConnectionAsync(parent, goldengateConnection, goldengateConnectionId)
           .get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void updateGoldengateConnectionTest() throws Exception {
+    GoldengateConnection expectedResponse =
+        GoldengateConnection.newBuilder()
+            .setName(
+                GoldengateConnectionName.of("[PROJECT]", "[LOCATION]", "[GOLDENGATE_CONNECTION]")
+                    .toString())
+            .setProperties(GoldengateConnectionProperties.newBuilder().build())
+            .setGcpOracleZone("gcpOracleZone217860222")
+            .putAllLabels(new HashMap<String, String>())
+            .setOdbNetwork(OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]").toString())
+            .setOdbSubnet(
+                OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
+                    .toString())
+            .setEntitlementId("entitlementId-1302274264")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setOciUrl("ociUrl-1022489574")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateGoldengateConnectionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockOracleDatabase.addResponse(resultOperation);
+
+    GoldengateConnection goldengateConnection = GoldengateConnection.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    GoldengateConnection actualResponse =
+        client.updateGoldengateConnectionAsync(goldengateConnection, updateMask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateGoldengateConnectionRequest actualRequest =
+        ((UpdateGoldengateConnectionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(goldengateConnection, actualRequest.getGoldengateConnection());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateGoldengateConnectionExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
+
+    try {
+      GoldengateConnection goldengateConnection = GoldengateConnection.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateGoldengateConnectionAsync(goldengateConnection, updateMask).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
@@ -8637,6 +10299,72 @@ public class OracleDatabaseClientTest {
   }
 
   @Test
+  public void updateGoldengateConnectionAssignmentTest() throws Exception {
+    GoldengateConnectionAssignment expectedResponse =
+        GoldengateConnectionAssignment.newBuilder()
+            .setName(
+                GoldengateConnectionAssignmentName.of(
+                        "[PROJECT]", "[LOCATION]", "[GOLDENGATE_CONNECTION_ASSIGNMENT]")
+                    .toString())
+            .setProperties(GoldengateConnectionAssignmentProperties.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setDisplayName("displayName1714148973")
+            .setEntitlementId("entitlementId-1302274264")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateGoldengateConnectionAssignmentTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockOracleDatabase.addResponse(resultOperation);
+
+    GoldengateConnectionAssignment goldengateConnectionAssignment =
+        GoldengateConnectionAssignment.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    GoldengateConnectionAssignment actualResponse =
+        client
+            .updateGoldengateConnectionAssignmentAsync(goldengateConnectionAssignment, updateMask)
+            .get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateGoldengateConnectionAssignmentRequest actualRequest =
+        ((UpdateGoldengateConnectionAssignmentRequest) actualRequests.get(0));
+
+    Assert.assertEquals(
+        goldengateConnectionAssignment, actualRequest.getGoldengateConnectionAssignment());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateGoldengateConnectionAssignmentExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
+
+    try {
+      GoldengateConnectionAssignment goldengateConnectionAssignment =
+          GoldengateConnectionAssignment.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client
+          .updateGoldengateConnectionAssignmentAsync(goldengateConnectionAssignment, updateMask)
+          .get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
   public void deleteGoldengateConnectionAssignmentTest() throws Exception {
     Empty expectedResponse = Empty.newBuilder().build();
     Operation resultOperation =
@@ -8806,6 +10534,645 @@ public class OracleDatabaseClientTest {
     try {
       String name = "name3373707";
       client.testGoldengateConnectionAssignment(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listDatabaseConnectionsTest() throws Exception {
+    DatabaseConnection responsesElement = DatabaseConnection.newBuilder().build();
+    ListDatabaseConnectionsResponse expectedResponse =
+        ListDatabaseConnectionsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllDatabaseConnections(Arrays.asList(responsesElement))
+            .build();
+    mockOracleDatabase.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListDatabaseConnectionsPagedResponse pagedListResponse = client.listDatabaseConnections(parent);
+
+    List<DatabaseConnection> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getDatabaseConnectionsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListDatabaseConnectionsRequest actualRequest =
+        ((ListDatabaseConnectionsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listDatabaseConnectionsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listDatabaseConnections(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listDatabaseConnectionsTest2() throws Exception {
+    DatabaseConnection responsesElement = DatabaseConnection.newBuilder().build();
+    ListDatabaseConnectionsResponse expectedResponse =
+        ListDatabaseConnectionsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllDatabaseConnections(Arrays.asList(responsesElement))
+            .build();
+    mockOracleDatabase.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListDatabaseConnectionsPagedResponse pagedListResponse = client.listDatabaseConnections(parent);
+
+    List<DatabaseConnection> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getDatabaseConnectionsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListDatabaseConnectionsRequest actualRequest =
+        ((ListDatabaseConnectionsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listDatabaseConnectionsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listDatabaseConnections(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getDatabaseConnectionTest() throws Exception {
+    DatabaseConnection expectedResponse =
+        DatabaseConnection.newBuilder()
+            .setName(
+                DatabaseConnectionName.of("[PROJECT]", "[LOCATION]", "[DATABASE_CONNECTION]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setUsername("username-265713450")
+            .setPasswordSecretVersion("passwordSecretVersion1204439341")
+            .setConnectionString("connectionString869248143")
+            .putAllLabels(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setLifecycleDetails("lifecycleDetails932271992")
+            .build();
+    mockOracleDatabase.addResponse(expectedResponse);
+
+    DatabaseConnectionName name =
+        DatabaseConnectionName.of("[PROJECT]", "[LOCATION]", "[DATABASE_CONNECTION]");
+
+    DatabaseConnection actualResponse = client.getDatabaseConnection(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetDatabaseConnectionRequest actualRequest =
+        ((GetDatabaseConnectionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getDatabaseConnectionExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
+
+    try {
+      DatabaseConnectionName name =
+          DatabaseConnectionName.of("[PROJECT]", "[LOCATION]", "[DATABASE_CONNECTION]");
+      client.getDatabaseConnection(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getDatabaseConnectionTest2() throws Exception {
+    DatabaseConnection expectedResponse =
+        DatabaseConnection.newBuilder()
+            .setName(
+                DatabaseConnectionName.of("[PROJECT]", "[LOCATION]", "[DATABASE_CONNECTION]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setUsername("username-265713450")
+            .setPasswordSecretVersion("passwordSecretVersion1204439341")
+            .setConnectionString("connectionString869248143")
+            .putAllLabels(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setLifecycleDetails("lifecycleDetails932271992")
+            .build();
+    mockOracleDatabase.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    DatabaseConnection actualResponse = client.getDatabaseConnection(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetDatabaseConnectionRequest actualRequest =
+        ((GetDatabaseConnectionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getDatabaseConnectionExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getDatabaseConnection(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createDatabaseConnectionTest() throws Exception {
+    DatabaseConnection expectedResponse =
+        DatabaseConnection.newBuilder()
+            .setName(
+                DatabaseConnectionName.of("[PROJECT]", "[LOCATION]", "[DATABASE_CONNECTION]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setUsername("username-265713450")
+            .setPasswordSecretVersion("passwordSecretVersion1204439341")
+            .setConnectionString("connectionString869248143")
+            .putAllLabels(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setLifecycleDetails("lifecycleDetails932271992")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createDatabaseConnectionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockOracleDatabase.addResponse(resultOperation);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    DatabaseConnection databaseConnection = DatabaseConnection.newBuilder().build();
+    String databaseConnectionId = "databaseConnectionId2113359284";
+
+    DatabaseConnection actualResponse =
+        client
+            .createDatabaseConnectionAsync(parent, databaseConnection, databaseConnectionId)
+            .get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateDatabaseConnectionRequest actualRequest =
+        ((CreateDatabaseConnectionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(databaseConnection, actualRequest.getDatabaseConnection());
+    Assert.assertEquals(databaseConnectionId, actualRequest.getDatabaseConnectionId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createDatabaseConnectionExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      DatabaseConnection databaseConnection = DatabaseConnection.newBuilder().build();
+      String databaseConnectionId = "databaseConnectionId2113359284";
+      client.createDatabaseConnectionAsync(parent, databaseConnection, databaseConnectionId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void createDatabaseConnectionTest2() throws Exception {
+    DatabaseConnection expectedResponse =
+        DatabaseConnection.newBuilder()
+            .setName(
+                DatabaseConnectionName.of("[PROJECT]", "[LOCATION]", "[DATABASE_CONNECTION]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setUsername("username-265713450")
+            .setPasswordSecretVersion("passwordSecretVersion1204439341")
+            .setConnectionString("connectionString869248143")
+            .putAllLabels(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setLifecycleDetails("lifecycleDetails932271992")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createDatabaseConnectionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockOracleDatabase.addResponse(resultOperation);
+
+    String parent = "parent-995424086";
+    DatabaseConnection databaseConnection = DatabaseConnection.newBuilder().build();
+    String databaseConnectionId = "databaseConnectionId2113359284";
+
+    DatabaseConnection actualResponse =
+        client
+            .createDatabaseConnectionAsync(parent, databaseConnection, databaseConnectionId)
+            .get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateDatabaseConnectionRequest actualRequest =
+        ((CreateDatabaseConnectionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(databaseConnection, actualRequest.getDatabaseConnection());
+    Assert.assertEquals(databaseConnectionId, actualRequest.getDatabaseConnectionId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createDatabaseConnectionExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      DatabaseConnection databaseConnection = DatabaseConnection.newBuilder().build();
+      String databaseConnectionId = "databaseConnectionId2113359284";
+      client.createDatabaseConnectionAsync(parent, databaseConnection, databaseConnectionId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void updateDatabaseConnectionTest() throws Exception {
+    DatabaseConnection expectedResponse =
+        DatabaseConnection.newBuilder()
+            .setName(
+                DatabaseConnectionName.of("[PROJECT]", "[LOCATION]", "[DATABASE_CONNECTION]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setUsername("username-265713450")
+            .setPasswordSecretVersion("passwordSecretVersion1204439341")
+            .setConnectionString("connectionString869248143")
+            .putAllLabels(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setLifecycleDetails("lifecycleDetails932271992")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateDatabaseConnectionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockOracleDatabase.addResponse(resultOperation);
+
+    DatabaseConnection databaseConnection = DatabaseConnection.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    DatabaseConnection actualResponse =
+        client.updateDatabaseConnectionAsync(databaseConnection, updateMask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateDatabaseConnectionRequest actualRequest =
+        ((UpdateDatabaseConnectionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(databaseConnection, actualRequest.getDatabaseConnection());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateDatabaseConnectionExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
+
+    try {
+      DatabaseConnection databaseConnection = DatabaseConnection.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateDatabaseConnectionAsync(databaseConnection, updateMask).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteDatabaseConnectionTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteDatabaseConnectionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockOracleDatabase.addResponse(resultOperation);
+
+    DatabaseConnectionName name =
+        DatabaseConnectionName.of("[PROJECT]", "[LOCATION]", "[DATABASE_CONNECTION]");
+
+    client.deleteDatabaseConnectionAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteDatabaseConnectionRequest actualRequest =
+        ((DeleteDatabaseConnectionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteDatabaseConnectionExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
+
+    try {
+      DatabaseConnectionName name =
+          DatabaseConnectionName.of("[PROJECT]", "[LOCATION]", "[DATABASE_CONNECTION]");
+      client.deleteDatabaseConnectionAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteDatabaseConnectionTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteDatabaseConnectionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockOracleDatabase.addResponse(resultOperation);
+
+    String name = "name3373707";
+
+    client.deleteDatabaseConnectionAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteDatabaseConnectionRequest actualRequest =
+        ((DeleteDatabaseConnectionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteDatabaseConnectionExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteDatabaseConnectionAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void testDatabaseConnectionTest() throws Exception {
+    TestDatabaseConnectionResponse expectedResponse =
+        TestDatabaseConnectionResponse.newBuilder()
+            .setSuccess(true)
+            .setErrorMessage("errorMessage1203236063")
+            .build();
+    mockOracleDatabase.addResponse(expectedResponse);
+
+    DatabaseConnectionName name =
+        DatabaseConnectionName.of("[PROJECT]", "[LOCATION]", "[DATABASE_CONNECTION]");
+
+    TestDatabaseConnectionResponse actualResponse = client.testDatabaseConnection(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    TestDatabaseConnectionRequest actualRequest =
+        ((TestDatabaseConnectionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void testDatabaseConnectionExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
+
+    try {
+      DatabaseConnectionName name =
+          DatabaseConnectionName.of("[PROJECT]", "[LOCATION]", "[DATABASE_CONNECTION]");
+      client.testDatabaseConnection(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void testDatabaseConnectionTest2() throws Exception {
+    TestDatabaseConnectionResponse expectedResponse =
+        TestDatabaseConnectionResponse.newBuilder()
+            .setSuccess(true)
+            .setErrorMessage("errorMessage1203236063")
+            .build();
+    mockOracleDatabase.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    TestDatabaseConnectionResponse actualResponse = client.testDatabaseConnection(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    TestDatabaseConnectionRequest actualRequest =
+        ((TestDatabaseConnectionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void testDatabaseConnectionExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.testDatabaseConnection(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void executeSqlTest() throws Exception {
+    ExecuteSqlResponse expectedResponse =
+        ExecuteSqlResponse.newBuilder()
+            .addAllSqlResults(new ArrayList<SqlResult>())
+            .setMetadata(ExecuteSqlMetadata.newBuilder().build())
+            .build();
+    mockOracleDatabase.addResponse(expectedResponse);
+
+    DatabaseConnectionName name =
+        DatabaseConnectionName.of("[PROJECT]", "[LOCATION]", "[DATABASE_CONNECTION]");
+    String sqlStatement = "sqlStatement937767745";
+
+    ExecuteSqlResponse actualResponse = client.executeSql(name, sqlStatement);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ExecuteSqlRequest actualRequest = ((ExecuteSqlRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertEquals(sqlStatement, actualRequest.getSqlStatement());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void executeSqlExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
+
+    try {
+      DatabaseConnectionName name =
+          DatabaseConnectionName.of("[PROJECT]", "[LOCATION]", "[DATABASE_CONNECTION]");
+      String sqlStatement = "sqlStatement937767745";
+      client.executeSql(name, sqlStatement);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void executeSqlTest2() throws Exception {
+    ExecuteSqlResponse expectedResponse =
+        ExecuteSqlResponse.newBuilder()
+            .addAllSqlResults(new ArrayList<SqlResult>())
+            .setMetadata(ExecuteSqlMetadata.newBuilder().build())
+            .build();
+    mockOracleDatabase.addResponse(expectedResponse);
+
+    String name = "name3373707";
+    String sqlStatement = "sqlStatement937767745";
+
+    ExecuteSqlResponse actualResponse = client.executeSql(name, sqlStatement);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ExecuteSqlRequest actualRequest = ((ExecuteSqlRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertEquals(sqlStatement, actualRequest.getSqlStatement());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void executeSqlExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
+
+    try {
+      String name = "name3373707";
+      String sqlStatement = "sqlStatement937767745";
+      client.executeSql(name, sqlStatement);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

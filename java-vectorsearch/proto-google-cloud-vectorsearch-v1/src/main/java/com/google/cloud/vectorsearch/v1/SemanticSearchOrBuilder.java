@@ -169,8 +169,34 @@ public interface SemanticSearchOrBuilder
    *
    *
    * <pre>
-   * Optional. A JSON filter expression, e.g. {"genre": {"$eq": "sci-fi"}},
-   * represented as a google.protobuf.Struct.
+   * Optional. A JSON filter expression, e.g. `{"genre": {"$eq": "sci-fi"}}`,
+   * represented as a `google.protobuf.Struct`.
+   *
+   * An empty filter (`{}`) matches all data objects. Otherwise, each JSON
+   * object in the filter must have exactly one key: either a field name mapped
+   * to one operator (`{"price": {"$lt": 100}}`), or a logical operator: `$and`
+   * or `$or` with a list of filters, or `$not` with one filter. Field
+   * operators and their values: `$eq` and `$ne` take a string, number or bool;
+   * `$lt`, `$lte`, `$gt` and `$gte` take a number; `$in`, `$nin` and `$all`
+   * take a list of strings; `$exists` takes a bool. Several keys in one object
+   * (implicit AND) and implicit equality (`{"genre": "sci-fi"}`) are rejected;
+   * use `$and` and `$eq` instead.
+   *
+   * Logical operators can be nested at most 2 levels deep, e.g.
+   * `{"$and": [{"$or": [{"a": {"$eq": 1}}, {"b": {"$eq": 2}}]}]}`. Deeper
+   * filters are rejected with `INVALID_ARGUMENT`.
+   *
+   * Which filters are accepted depends on how the search is served. If it is
+   * served by an approximate nearest neighbor (ANN) index (by default when a
+   * ready index exists on `search_field`, or when one is selected via
+   * `search_hint.index_hint`), every filtered field must be listed in
+   * `Index.filter_fields` at index creation, `$or` and `$all` are accepted
+   * only at the top level of the filter, and `$not` and `$exists` are not
+   * supported. Not every unsupported filter is rejected: most produce
+   * `INVALID_ARGUMENT`, but some are silently ignored, so do not rely on the
+   * error. If no ready index exists on `search_field`, or if
+   * `search_hint.knn_hint` is set, the search is served by K-Nearest Neighbor
+   * (KNN) search, which has none of these filter restrictions.
    * </pre>
    *
    * <code>.google.protobuf.Struct filter = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -183,8 +209,34 @@ public interface SemanticSearchOrBuilder
    *
    *
    * <pre>
-   * Optional. A JSON filter expression, e.g. {"genre": {"$eq": "sci-fi"}},
-   * represented as a google.protobuf.Struct.
+   * Optional. A JSON filter expression, e.g. `{"genre": {"$eq": "sci-fi"}}`,
+   * represented as a `google.protobuf.Struct`.
+   *
+   * An empty filter (`{}`) matches all data objects. Otherwise, each JSON
+   * object in the filter must have exactly one key: either a field name mapped
+   * to one operator (`{"price": {"$lt": 100}}`), or a logical operator: `$and`
+   * or `$or` with a list of filters, or `$not` with one filter. Field
+   * operators and their values: `$eq` and `$ne` take a string, number or bool;
+   * `$lt`, `$lte`, `$gt` and `$gte` take a number; `$in`, `$nin` and `$all`
+   * take a list of strings; `$exists` takes a bool. Several keys in one object
+   * (implicit AND) and implicit equality (`{"genre": "sci-fi"}`) are rejected;
+   * use `$and` and `$eq` instead.
+   *
+   * Logical operators can be nested at most 2 levels deep, e.g.
+   * `{"$and": [{"$or": [{"a": {"$eq": 1}}, {"b": {"$eq": 2}}]}]}`. Deeper
+   * filters are rejected with `INVALID_ARGUMENT`.
+   *
+   * Which filters are accepted depends on how the search is served. If it is
+   * served by an approximate nearest neighbor (ANN) index (by default when a
+   * ready index exists on `search_field`, or when one is selected via
+   * `search_hint.index_hint`), every filtered field must be listed in
+   * `Index.filter_fields` at index creation, `$or` and `$all` are accepted
+   * only at the top level of the filter, and `$not` and `$exists` are not
+   * supported. Not every unsupported filter is rejected: most produce
+   * `INVALID_ARGUMENT`, but some are silently ignored, so do not rely on the
+   * error. If no ready index exists on `search_field`, or if
+   * `search_hint.knn_hint` is set, the search is served by K-Nearest Neighbor
+   * (KNN) search, which has none of these filter restrictions.
    * </pre>
    *
    * <code>.google.protobuf.Struct filter = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -197,8 +249,34 @@ public interface SemanticSearchOrBuilder
    *
    *
    * <pre>
-   * Optional. A JSON filter expression, e.g. {"genre": {"$eq": "sci-fi"}},
-   * represented as a google.protobuf.Struct.
+   * Optional. A JSON filter expression, e.g. `{"genre": {"$eq": "sci-fi"}}`,
+   * represented as a `google.protobuf.Struct`.
+   *
+   * An empty filter (`{}`) matches all data objects. Otherwise, each JSON
+   * object in the filter must have exactly one key: either a field name mapped
+   * to one operator (`{"price": {"$lt": 100}}`), or a logical operator: `$and`
+   * or `$or` with a list of filters, or `$not` with one filter. Field
+   * operators and their values: `$eq` and `$ne` take a string, number or bool;
+   * `$lt`, `$lte`, `$gt` and `$gte` take a number; `$in`, `$nin` and `$all`
+   * take a list of strings; `$exists` takes a bool. Several keys in one object
+   * (implicit AND) and implicit equality (`{"genre": "sci-fi"}`) are rejected;
+   * use `$and` and `$eq` instead.
+   *
+   * Logical operators can be nested at most 2 levels deep, e.g.
+   * `{"$and": [{"$or": [{"a": {"$eq": 1}}, {"b": {"$eq": 2}}]}]}`. Deeper
+   * filters are rejected with `INVALID_ARGUMENT`.
+   *
+   * Which filters are accepted depends on how the search is served. If it is
+   * served by an approximate nearest neighbor (ANN) index (by default when a
+   * ready index exists on `search_field`, or when one is selected via
+   * `search_hint.index_hint`), every filtered field must be listed in
+   * `Index.filter_fields` at index creation, `$or` and `$all` are accepted
+   * only at the top level of the filter, and `$not` and `$exists` are not
+   * supported. Not every unsupported filter is rejected: most produce
+   * `INVALID_ARGUMENT`, but some are silently ignored, so do not rely on the
+   * error. If no ready index exists on `search_field`, or if
+   * `search_hint.knn_hint` is set, the search is served by K-Nearest Neighbor
+   * (KNN) search, which has none of these filter restrictions.
    * </pre>
    *
    * <code>.google.protobuf.Struct filter = 6 [(.google.api.field_behavior) = OPTIONAL];</code>

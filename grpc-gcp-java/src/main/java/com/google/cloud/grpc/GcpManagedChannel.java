@@ -261,6 +261,8 @@ public class GcpManagedChannel extends ManagedChannel {
   private static final ScheduledThreadPoolExecutor SHARED_BACKGROUND_SERVICE =
       createSharedBackgroundService();
 
+  @Nullable private final BuiltInMetrics builtInMetrics;
+
   private ScheduledFuture<?> cleanupTask;
   private ScheduledFuture<?> scaleDownTask;
   private ScheduledFuture<?> logMetricsTask;
@@ -441,12 +443,63 @@ public class GcpManagedChannel extends ManagedChannel {
       unresponsiveDropCount = 0;
     }
     initChannels();
+    this.builtInMetrics = initBuiltInMetrics(options, isDynamicScalingEnabled);
     GcpChannelPoolOptions channelPoolOptions = options.getChannelPoolOptions();
     if (channelPoolOptions != null) {
       affinityKeyLifetime = channelPoolOptions.getAffinityKeyLifetime();
       initCleanupTask(channelPoolOptions.getCleanupInterval());
       initScaleDownChecker(channelPoolOptions.getScaleDownInterval());
     }
+    if (this.builtInMetrics != null) {
+      this.builtInMetrics.reader.add(this);
+    }
+  }
+
+  private static class BuiltInMetrics {
+    final GcpChannelPoolBuiltInMetrics reader;
+    final Attributes activeAttributes;
+    final Attributes drainingAttributes;
+
+    BuiltInMetrics(
+        GcpChannelPoolBuiltInMetrics reader,
+        Attributes activeAttributes,
+        Attributes drainingAttributes) {
+      this.reader = reader;
+      this.activeAttributes = activeAttributes;
+      this.drainingAttributes = drainingAttributes;
+    }
+  }
+
+  @Nullable
+  private static BuiltInMetrics initBuiltInMetrics(
+      GcpManagedChannelOptions options, boolean isDynamicScalingEnabled) {
+    GcpMetricsOptions metricsOptions = options.getMetricsOptions();
+    Meter builtInMeter = metricsOptions == null ? null : metricsOptions.getBuiltInMetricsMeter();
+    if (builtInMeter == null) {
+      return null;
+    }
+    AttributesBuilder countAttributes =
+        metricsOptions.getBuiltInMetricsAttributes().toBuilder()
+            .put(
+                GcpMetricsConstants.POOL_MODE_LABEL,
+                isDynamicScalingEnabled
+                    ? GcpMetricsConstants.POOL_MODE_DYNAMIC
+                    : GcpMetricsConstants.POOL_MODE_STATIC);
+    String poolIndex = metricsOptions.getBuiltInMetricsPoolIndex();
+    if (poolIndex != null) {
+      countAttributes.put(GcpMetricsConstants.POOL_INDEX_LABEL, poolIndex);
+    }
+    Attributes poolAttributes = countAttributes.build();
+    Attributes activeAttributes =
+        poolAttributes.toBuilder()
+            .put(GcpMetricsConstants.STATE_LABEL, GcpMetricsConstants.STATE_ACTIVE)
+            .build();
+    Attributes drainingAttributes =
+        poolAttributes.toBuilder()
+            .put(GcpMetricsConstants.STATE_LABEL, GcpMetricsConstants.STATE_DRAINING)
+            .build();
+    return new BuiltInMetrics(
+        GcpChannelPoolBuiltInMetrics.forMeter(builtInMeter), activeAttributes, drainingAttributes);
   }
 
   /**
@@ -1157,6 +1210,16 @@ public class GcpManagedChannel extends ManagedChannel {
         GcpMetricsConstants.COUNT,
         this,
         GcpManagedChannel::reportScaleUpPrimeFailures);
+  }
+
+  /**
+   * Adds this pool's active and draining channel counts to {@code totals}, keyed by the built-in
+   * metric attributes. Channels that are still being primed are in neither list and are not
+   * counted.
+   */
+  void addBuiltInChannelCounts(Map<Attributes, Long> totals) {
+    totals.merge(builtInMetrics.activeAttributes, (long) channelRefs.size(), Long::sum);
+    totals.merge(builtInMetrics.drainingAttributes, (long) removedChannelRefs.size(), Long::sum);
   }
 
   private void setupOtelCommonAttributes(GcpMetricsOptions metricsOptions) {
@@ -2676,8 +2739,11 @@ public class GcpManagedChannel extends ManagedChannel {
     return key;
   }
 
-  private synchronized List<GcpChannelPrimeController.PendingPrime> cancelBackgroundTasks() {
+  private synchronized List<GcpChannelPrimeController.PendingPrime> cleanupOnShutdown() {
     shuttingDown = true;
+    if (builtInMetrics != null) {
+      builtInMetrics.reader.remove(this);
+    }
     scaleUpSignalPending.set(false);
     if (cleanupTask != null) {
       cleanupTask.cancel(false);
@@ -2701,7 +2767,7 @@ public class GcpManagedChannel extends ManagedChannel {
   @Override
   public ManagedChannel shutdownNow() {
     logger.finer(log("Shutdown now started."));
-    List<GcpChannelPrimeController.PendingPrime> primesToCancel = cancelBackgroundTasks();
+    List<GcpChannelPrimeController.PendingPrime> primesToCancel = cleanupOnShutdown();
     if (channelPrimeController != null) {
       channelPrimeController.cancel(primesToCancel, true);
     }
@@ -2726,7 +2792,7 @@ public class GcpManagedChannel extends ManagedChannel {
   @Override
   public ManagedChannel shutdown() {
     logger.finer(log("Shutdown started."));
-    List<GcpChannelPrimeController.PendingPrime> primesToCancel = cancelBackgroundTasks();
+    List<GcpChannelPrimeController.PendingPrime> primesToCancel = cleanupOnShutdown();
     if (channelPrimeController != null) {
       channelPrimeController.cancel(primesToCancel, false);
     }

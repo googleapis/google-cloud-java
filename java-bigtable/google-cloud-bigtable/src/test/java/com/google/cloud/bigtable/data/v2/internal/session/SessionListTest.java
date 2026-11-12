@@ -287,6 +287,56 @@ class SessionListTest {
   }
 
   @Test
+  void testStartingClosingRaceWithSessionStarted() {
+    SessionList list = new SessionList();
+    PoolStats stats = list.getStats();
+
+    fakeSession.state = SessionState.STARTING;
+    SessionHandle handle = list.newHandle(fakeSession);
+
+    handle.onSessionClosing();
+    assertThat(stats.getExpectedCapacity()).isEqualTo(0);
+    assertThat(stats.getStartingCount()).isEqualTo(1);
+
+    // If onSessionStarted arrives after onSessionClosing, it must not mark the session ready.
+    fakeSession.state = SessionState.READY;
+    handle.onSessionStarted();
+
+    assertThat(list.getAfesWithReadySessions()).isEmpty();
+    assertThat(stats.getStartingCount()).isEqualTo(0);
+    assertThat(stats.getReadyCount()).isEqualTo(0);
+    assertThat(stats.getExpectedCapacity()).isEqualTo(0);
+
+    fakeSession.state = SessionState.CLOSED;
+    handle.onSessionClosed(SessionState.WAIT_SERVER_CLOSE);
+    assertThat(list.getAllSessions()).isEmpty();
+  }
+
+  @Test
+  void testInUseClosingRaceWithVRpcFinishBeforeSessionStateUpdates() {
+    SessionList list = new SessionList();
+    PoolStats stats = list.getStats();
+
+    fakeSession.state = SessionState.STARTING;
+    SessionHandle handle = list.newHandle(fakeSession);
+
+    fakeSession.state = SessionState.READY;
+    handle.onSessionStarted();
+
+    handle = list.checkoutSession(list.getAfesWithReadySessions().get(0)).get();
+
+    // Pool initiates close (onSessionClosing), but SessionImpl.close() has not yet transitioned
+    // session.getState() out of READY on sessionSyncContext when onVRpcFinish runs.
+    handle.onSessionClosing();
+    handle.onVRpcFinish(FAKE_VRPC_E2E_LATENCY, OK_RESULT);
+
+    assertThat(list.getAfesWithReadySessions()).isEmpty();
+    assertThat(stats.getReadyCount()).isEqualTo(0);
+    assertThat(stats.getInUseCount()).isEqualTo(0);
+    assertThat(stats.getExpectedCapacity()).isEqualTo(0);
+  }
+
+  @Test
   void testStartingToClosed() {
     SessionList list = new SessionList();
     PoolStats stats = list.getStats();

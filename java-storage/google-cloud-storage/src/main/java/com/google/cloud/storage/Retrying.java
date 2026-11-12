@@ -99,12 +99,10 @@ final class Retrying {
 
     <Response, Model> Model run(Callable<Response> c, Decoder<Response, Model> d);
 
-    default <Response, Model> Model run(
+    <Response, Model> Model run(
         Callable<Response> c,
         Decoder<Response, Model> d,
-        @Nullable StorageMetricsContext metricsContext) {
-      return run(neverRetry(), c, d, metricsContext);
-    }
+        @Nullable StorageMetricsContext metricsContext);
 
     static RetrierWithAlg attemptOnce() {
       return AttemptOnceRetrier.INSTANCE_WITH_ALG;
@@ -121,7 +119,11 @@ final class Retrying {
         Callable<Response> c,
         Decoder<Response, Model> d,
         @Nullable StorageMetricsContext metricsContext) {
-      try {
+      try (Scope ignore =
+          metricsContext != null ? metricsContext.getOtelContext().makeCurrent() : null) {
+        if (metricsContext != null) {
+          metricsContext.incrementAttempts();
+        }
         Response call = c.call();
         return call == null ? null : d.decode(call);
       } catch (Exception iae) {
@@ -185,10 +187,6 @@ final class Retrying {
       this.boundMetricsContext = boundMetricsContext;
     }
 
-    private DefaultRetrierWithAlg(Retrier retrier, ResultRetryAlgorithm<?> alg) {
-      this(retrier, alg, null);
-    }
-
     @Override
     public <Response, Model> Model run(Callable<Response> c, Decoder<Response, Model> d) {
       return retrier.run(alg, c, d, boundMetricsContext);
@@ -224,7 +222,7 @@ final class Retrying {
     @Nullable private final StorageClientMetrics metrics;
 
     DefaultRetrier(UnaryOperator<RetryContext> decorator, RetryingDependencies deps) {
-      this(decorator, deps, deps != null ? deps.getStorageClientMetrics() : null);
+      this(decorator, deps, null);
     }
 
     DefaultRetrier(
@@ -233,8 +231,7 @@ final class Retrying {
         @Nullable StorageClientMetrics metrics) {
       this.decorator = decorator;
       this.deps = deps;
-      this.metrics =
-          metrics != null ? metrics : (deps != null ? deps.getStorageClientMetrics() : null);
+      this.metrics = metrics;
     }
 
     @Override
@@ -243,8 +240,8 @@ final class Retrying {
         Callable<Response> c,
         Decoder<Response, Model> d,
         @Nullable StorageMetricsContext metricsContext) {
-      Scope scope = metricsContext != null ? metricsContext.getOtelContext().makeCurrent() : null;
-      try {
+      try (Scope ignore =
+          metricsContext != null ? metricsContext.getOtelContext().makeCurrent() : null) {
         RetryContext ctx =
             decorator.apply(
                 RetryContext.of(
@@ -264,10 +261,11 @@ final class Retrying {
             }
             try {
               Response result = c.call();
+              Model decoded = result == null ? null : d.decode(result);
               if (metricsContext != null) {
                 metricsContext.recordAttemptSuccess(metrics);
               }
-              return result == null ? null : d.decode(result);
+              return decoded;
             } catch (StorageException se) {
               if (metricsContext != null) {
                 metricsContext.recordAttemptFailure(metrics, se);
@@ -303,10 +301,6 @@ final class Retrying {
           if (metricsContext != null && metricsContext.shouldRecordOperationOnRetrierExit()) {
             metricsContext.recordOperation(metrics, terminalThrowable);
           }
-        }
-      } finally {
-        if (scope != null) {
-          scope.close();
         }
       }
     }
@@ -382,37 +376,23 @@ final class Retrying {
 
     ApiClock getClock();
 
-    default @Nullable StorageClientMetrics getStorageClientMetrics() {
-      return null;
-    }
-
     static RetryingDependencies attemptOnce() {
       return RetryingDependencies.simple(
           NanoClock.getDefaultClock(), RetrySettings.newBuilder().setMaxAttempts(1).build());
     }
 
     static RetryingDependencies simple(ApiClock clock, RetrySettings retrySettings) {
-      return new SimpleRetryingDependencies(clock, retrySettings, null);
-    }
-
-    static RetryingDependencies simple(
-        ApiClock clock, RetrySettings retrySettings, @Nullable StorageClientMetrics metrics) {
-      return new SimpleRetryingDependencies(clock, retrySettings, metrics);
+      return new SimpleRetryingDependencies(clock, retrySettings);
     }
   }
 
   private static final class SimpleRetryingDependencies implements RetryingDependencies {
     private final ApiClock clock;
     private final RetrySettings retrySettings;
-    @Nullable private final StorageClientMetrics storageClientMetrics;
 
-    private SimpleRetryingDependencies(
-        ApiClock clock,
-        RetrySettings retrySettings,
-        @Nullable StorageClientMetrics storageClientMetrics) {
+    private SimpleRetryingDependencies(ApiClock clock, RetrySettings retrySettings) {
       this.retrySettings = retrySettings;
       this.clock = clock;
-      this.storageClientMetrics = storageClientMetrics;
     }
 
     @Override
@@ -426,16 +406,10 @@ final class Retrying {
     }
 
     @Override
-    public @Nullable StorageClientMetrics getStorageClientMetrics() {
-      return storageClientMetrics;
-    }
-
-    @Override
     public String toString() {
       return MoreObjects.toStringHelper(this)
           .add("clock", clock)
           .add("retrySettings", retrySettings)
-          .add("storageClientMetrics", storageClientMetrics)
           .toString();
     }
   }

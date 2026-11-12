@@ -84,7 +84,11 @@ public class ITEndToEndTracingTest {
 
   @AfterClass
   public static void teardown() {
-    ConnectionOptions.closeSpanner();
+    try {
+      ConnectionOptions.closeSpanner();
+    } finally {
+      SpannerOptionsHelper.resetActiveTracingFramework();
+    }
   }
 
   private void assertTrace(String traceId) throws IOException, InterruptedException {

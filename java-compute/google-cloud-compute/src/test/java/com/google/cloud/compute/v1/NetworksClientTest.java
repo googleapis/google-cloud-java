@@ -321,6 +321,7 @@ public class NetworksClientTest {
     Network expectedResponse =
         Network.newBuilder()
             .setIPv4Range("iPv4Range100411000")
+            .addAllAdditionalTags(new ArrayList<String>())
             .setAutoCreateSubnetworks(true)
             .setCreationTimestamp("creationTimestamp-370203401")
             .setDescription("description-1724546052")

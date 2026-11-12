@@ -28,9 +28,13 @@ import com.google.api.gax.paging.AbstractPagedListResponse;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.api.resourcenames.ResourceName;
 import com.google.cloud.discoveryengine.v1.stub.EngineServiceStub;
 import com.google.cloud.discoveryengine.v1.stub.EngineServiceStubSettings;
 import com.google.common.util.concurrent.MoreExecutors;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
@@ -74,7 +78,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> CreateEngine</td>
- *      <td><p> Creates a [Engine][google.cloud.discoveryengine.v1.Engine].</td>
+ *      <td><p> Creates an [Engine][google.cloud.discoveryengine.v1.Engine].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -94,7 +98,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> DeleteEngine</td>
- *      <td><p> Deletes a [Engine][google.cloud.discoveryengine.v1.Engine].</td>
+ *      <td><p> Deletes an [Engine][google.cloud.discoveryengine.v1.Engine].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -132,7 +136,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> GetEngine</td>
- *      <td><p> Gets a [Engine][google.cloud.discoveryengine.v1.Engine].</td>
+ *      <td><p> Gets an [Engine][google.cloud.discoveryengine.v1.Engine].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -166,6 +170,45 @@ import org.jspecify.annotations.Nullable;
  *      <ul>
  *           <li><p> listEnginesPagedCallable()
  *           <li><p> listEnginesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetIamPolicy</td>
+ *      <td><p> Gets the IAM access control policy for an [Engine][google.cloud.discoveryengine.v1.Engine]. A `NOT_FOUND` error is returned if the resource does not exist. An empty policy is returned if the resource exists but does not have a policy set on it.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getIamPolicy(GetIamPolicyRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getIamPolicy(ResourceName resource)
+ *           <li><p> getIamPolicy(String resource)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getIamPolicyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> SetIamPolicy</td>
+ *      <td><p> Sets the IAM access control policy for an [Engine][google.cloud.discoveryengine.v1.Engine]. A `NOT_FOUND` error is returned if the resource does not exist.
+ * <p>  &#42;&#42;Important:&#42;&#42; When setting a policy directly on an Engine resource, the only recommended roles in the bindings are: `roles/discoveryengine.admin`, `roles/discoveryengine.agentspaceAdmin`, `roles/discoveryengine.user`, `roles/discoveryengine.agentspaceUser`, `roles/discoveryengine.viewer`, `roles/discoveryengine.agentspaceViewer`. Attempting to grant any other role will result in a warning in logging.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> setIamPolicy(SetIamPolicyRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> setIamPolicy(ResourceName resource, Policy policy)
+ *           <li><p> setIamPolicy(String resource, Policy policy)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> setIamPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -302,7 +345,7 @@ public class EngineServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a [Engine][google.cloud.discoveryengine.v1.Engine].
+   * Creates an [Engine][google.cloud.discoveryengine.v1.Engine].
    *
    * <p>Sample code:
    *
@@ -343,7 +386,7 @@ public class EngineServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a [Engine][google.cloud.discoveryengine.v1.Engine].
+   * Creates an [Engine][google.cloud.discoveryengine.v1.Engine].
    *
    * <p>Sample code:
    *
@@ -384,7 +427,7 @@ public class EngineServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a [Engine][google.cloud.discoveryengine.v1.Engine].
+   * Creates an [Engine][google.cloud.discoveryengine.v1.Engine].
    *
    * <p>Sample code:
    *
@@ -415,7 +458,7 @@ public class EngineServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a [Engine][google.cloud.discoveryengine.v1.Engine].
+   * Creates an [Engine][google.cloud.discoveryengine.v1.Engine].
    *
    * <p>Sample code:
    *
@@ -446,7 +489,7 @@ public class EngineServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a [Engine][google.cloud.discoveryengine.v1.Engine].
+   * Creates an [Engine][google.cloud.discoveryengine.v1.Engine].
    *
    * <p>Sample code:
    *
@@ -475,7 +518,7 @@ public class EngineServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a [Engine][google.cloud.discoveryengine.v1.Engine].
+   * Deletes an [Engine][google.cloud.discoveryengine.v1.Engine].
    *
    * <p>Sample code:
    *
@@ -510,7 +553,7 @@ public class EngineServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a [Engine][google.cloud.discoveryengine.v1.Engine].
+   * Deletes an [Engine][google.cloud.discoveryengine.v1.Engine].
    *
    * <p>Sample code:
    *
@@ -543,7 +586,7 @@ public class EngineServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a [Engine][google.cloud.discoveryengine.v1.Engine].
+   * Deletes an [Engine][google.cloud.discoveryengine.v1.Engine].
    *
    * <p>Sample code:
    *
@@ -573,7 +616,7 @@ public class EngineServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a [Engine][google.cloud.discoveryengine.v1.Engine].
+   * Deletes an [Engine][google.cloud.discoveryengine.v1.Engine].
    *
    * <p>Sample code:
    *
@@ -603,7 +646,7 @@ public class EngineServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a [Engine][google.cloud.discoveryengine.v1.Engine].
+   * Deletes an [Engine][google.cloud.discoveryengine.v1.Engine].
    *
    * <p>Sample code:
    *
@@ -724,7 +767,7 @@ public class EngineServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets a [Engine][google.cloud.discoveryengine.v1.Engine].
+   * Gets an [Engine][google.cloud.discoveryengine.v1.Engine].
    *
    * <p>Sample code:
    *
@@ -753,7 +796,7 @@ public class EngineServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets a [Engine][google.cloud.discoveryengine.v1.Engine].
+   * Gets an [Engine][google.cloud.discoveryengine.v1.Engine].
    *
    * <p>Sample code:
    *
@@ -781,7 +824,7 @@ public class EngineServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets a [Engine][google.cloud.discoveryengine.v1.Engine].
+   * Gets an [Engine][google.cloud.discoveryengine.v1.Engine].
    *
    * <p>Sample code:
    *
@@ -810,7 +853,7 @@ public class EngineServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets a [Engine][google.cloud.discoveryengine.v1.Engine].
+   * Gets an [Engine][google.cloud.discoveryengine.v1.Engine].
    *
    * <p>Sample code:
    *
@@ -1000,6 +1043,290 @@ public class EngineServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<ListEnginesRequest, ListEnginesResponse> listEnginesCallable() {
     return stub.listEnginesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the IAM access control policy for an [Engine][google.cloud.discoveryengine.v1.Engine]. A
+   * `NOT_FOUND` error is returned if the resource does not exist. An empty policy is returned if
+   * the resource exists but does not have a policy set on it.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EngineServiceClient engineServiceClient = EngineServiceClient.create()) {
+   *   ResourceName resource = EngineName.of("[PROJECT]", "[LOCATION]", "[COLLECTION]", "[ENGINE]");
+   *   Policy response = engineServiceClient.getIamPolicy(resource);
+   * }
+   * }</pre>
+   *
+   * @param resource REQUIRED: The resource for which the policy is being requested. See the
+   *     operation documentation for the appropriate value for this field.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Policy getIamPolicy(@Nullable ResourceName resource) {
+    GetIamPolicyRequest request =
+        GetIamPolicyRequest.newBuilder()
+            .setResource(resource == null ? null : resource.toString())
+            .build();
+    return getIamPolicy(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the IAM access control policy for an [Engine][google.cloud.discoveryengine.v1.Engine]. A
+   * `NOT_FOUND` error is returned if the resource does not exist. An empty policy is returned if
+   * the resource exists but does not have a policy set on it.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EngineServiceClient engineServiceClient = EngineServiceClient.create()) {
+   *   String resource = AclConfigName.of("[PROJECT]", "[LOCATION]").toString();
+   *   Policy response = engineServiceClient.getIamPolicy(resource);
+   * }
+   * }</pre>
+   *
+   * @param resource REQUIRED: The resource for which the policy is being requested. See the
+   *     operation documentation for the appropriate value for this field.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Policy getIamPolicy(String resource) {
+    GetIamPolicyRequest request = GetIamPolicyRequest.newBuilder().setResource(resource).build();
+    return getIamPolicy(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the IAM access control policy for an [Engine][google.cloud.discoveryengine.v1.Engine]. A
+   * `NOT_FOUND` error is returned if the resource does not exist. An empty policy is returned if
+   * the resource exists but does not have a policy set on it.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EngineServiceClient engineServiceClient = EngineServiceClient.create()) {
+   *   GetIamPolicyRequest request =
+   *       GetIamPolicyRequest.newBuilder()
+   *           .setResource(
+   *               EngineName.of("[PROJECT]", "[LOCATION]", "[COLLECTION]", "[ENGINE]").toString())
+   *           .setOptions(GetPolicyOptions.newBuilder().build())
+   *           .build();
+   *   Policy response = engineServiceClient.getIamPolicy(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Policy getIamPolicy(GetIamPolicyRequest request) {
+    return getIamPolicyCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the IAM access control policy for an [Engine][google.cloud.discoveryengine.v1.Engine]. A
+   * `NOT_FOUND` error is returned if the resource does not exist. An empty policy is returned if
+   * the resource exists but does not have a policy set on it.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EngineServiceClient engineServiceClient = EngineServiceClient.create()) {
+   *   GetIamPolicyRequest request =
+   *       GetIamPolicyRequest.newBuilder()
+   *           .setResource(
+   *               EngineName.of("[PROJECT]", "[LOCATION]", "[COLLECTION]", "[ENGINE]").toString())
+   *           .setOptions(GetPolicyOptions.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Policy> future = engineServiceClient.getIamPolicyCallable().futureCall(request);
+   *   // Do something.
+   *   Policy response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
+    return stub.getIamPolicyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets the IAM access control policy for an [Engine][google.cloud.discoveryengine.v1.Engine]. A
+   * `NOT_FOUND` error is returned if the resource does not exist.
+   *
+   * <p>&#42;&#42;Important:&#42;&#42; When setting a policy directly on an Engine resource, the
+   * only recommended roles in the bindings are: `roles/discoveryengine.admin`,
+   * `roles/discoveryengine.agentspaceAdmin`, `roles/discoveryengine.user`,
+   * `roles/discoveryengine.agentspaceUser`, `roles/discoveryengine.viewer`,
+   * `roles/discoveryengine.agentspaceViewer`. Attempting to grant any other role will result in a
+   * warning in logging.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EngineServiceClient engineServiceClient = EngineServiceClient.create()) {
+   *   ResourceName resource = EngineName.of("[PROJECT]", "[LOCATION]", "[COLLECTION]", "[ENGINE]");
+   *   Policy policy = Policy.newBuilder().build();
+   *   Policy response = engineServiceClient.setIamPolicy(resource, policy);
+   * }
+   * }</pre>
+   *
+   * @param resource REQUIRED: The resource for which the policy is being specified. See the
+   *     operation documentation for the appropriate value for this field.
+   * @param policy REQUIRED: The complete policy to be applied to the `resource`. The size of the
+   *     policy is limited to a few 10s of KB. An empty policy is a valid policy but certain Cloud
+   *     Platform services (such as Projects) might reject them.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Policy setIamPolicy(@Nullable ResourceName resource, Policy policy) {
+    SetIamPolicyRequest request =
+        SetIamPolicyRequest.newBuilder()
+            .setResource(resource == null ? null : resource.toString())
+            .setPolicy(policy)
+            .build();
+    return setIamPolicy(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets the IAM access control policy for an [Engine][google.cloud.discoveryengine.v1.Engine]. A
+   * `NOT_FOUND` error is returned if the resource does not exist.
+   *
+   * <p>&#42;&#42;Important:&#42;&#42; When setting a policy directly on an Engine resource, the
+   * only recommended roles in the bindings are: `roles/discoveryengine.admin`,
+   * `roles/discoveryengine.agentspaceAdmin`, `roles/discoveryengine.user`,
+   * `roles/discoveryengine.agentspaceUser`, `roles/discoveryengine.viewer`,
+   * `roles/discoveryengine.agentspaceViewer`. Attempting to grant any other role will result in a
+   * warning in logging.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EngineServiceClient engineServiceClient = EngineServiceClient.create()) {
+   *   String resource = AclConfigName.of("[PROJECT]", "[LOCATION]").toString();
+   *   Policy policy = Policy.newBuilder().build();
+   *   Policy response = engineServiceClient.setIamPolicy(resource, policy);
+   * }
+   * }</pre>
+   *
+   * @param resource REQUIRED: The resource for which the policy is being specified. See the
+   *     operation documentation for the appropriate value for this field.
+   * @param policy REQUIRED: The complete policy to be applied to the `resource`. The size of the
+   *     policy is limited to a few 10s of KB. An empty policy is a valid policy but certain Cloud
+   *     Platform services (such as Projects) might reject them.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Policy setIamPolicy(String resource, Policy policy) {
+    SetIamPolicyRequest request =
+        SetIamPolicyRequest.newBuilder().setResource(resource).setPolicy(policy).build();
+    return setIamPolicy(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets the IAM access control policy for an [Engine][google.cloud.discoveryengine.v1.Engine]. A
+   * `NOT_FOUND` error is returned if the resource does not exist.
+   *
+   * <p>&#42;&#42;Important:&#42;&#42; When setting a policy directly on an Engine resource, the
+   * only recommended roles in the bindings are: `roles/discoveryengine.admin`,
+   * `roles/discoveryengine.agentspaceAdmin`, `roles/discoveryengine.user`,
+   * `roles/discoveryengine.agentspaceUser`, `roles/discoveryengine.viewer`,
+   * `roles/discoveryengine.agentspaceViewer`. Attempting to grant any other role will result in a
+   * warning in logging.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EngineServiceClient engineServiceClient = EngineServiceClient.create()) {
+   *   SetIamPolicyRequest request =
+   *       SetIamPolicyRequest.newBuilder()
+   *           .setResource(
+   *               EngineName.of("[PROJECT]", "[LOCATION]", "[COLLECTION]", "[ENGINE]").toString())
+   *           .setPolicy(Policy.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   Policy response = engineServiceClient.setIamPolicy(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Policy setIamPolicy(SetIamPolicyRequest request) {
+    return setIamPolicyCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets the IAM access control policy for an [Engine][google.cloud.discoveryengine.v1.Engine]. A
+   * `NOT_FOUND` error is returned if the resource does not exist.
+   *
+   * <p>&#42;&#42;Important:&#42;&#42; When setting a policy directly on an Engine resource, the
+   * only recommended roles in the bindings are: `roles/discoveryengine.admin`,
+   * `roles/discoveryengine.agentspaceAdmin`, `roles/discoveryengine.user`,
+   * `roles/discoveryengine.agentspaceUser`, `roles/discoveryengine.viewer`,
+   * `roles/discoveryengine.agentspaceViewer`. Attempting to grant any other role will result in a
+   * warning in logging.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EngineServiceClient engineServiceClient = EngineServiceClient.create()) {
+   *   SetIamPolicyRequest request =
+   *       SetIamPolicyRequest.newBuilder()
+   *           .setResource(
+   *               EngineName.of("[PROJECT]", "[LOCATION]", "[COLLECTION]", "[ENGINE]").toString())
+   *           .setPolicy(Policy.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Policy> future = engineServiceClient.setIamPolicyCallable().futureCall(request);
+   *   // Do something.
+   *   Policy response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
+    return stub.setIamPolicyCallable();
   }
 
   @Override

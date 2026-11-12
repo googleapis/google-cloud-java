@@ -327,6 +327,10 @@ final class KeyAwareChannel extends ManagedChannel {
     return authority;
   }
 
+  ManagedChannel defaultChannel() {
+    return defaultChannel;
+  }
+
   @Override
   public <RequestT, ResponseT> ClientCall<RequestT, ResponseT> newCall(
       MethodDescriptor<RequestT, ResponseT> methodDescriptor, CallOptions callOptions) {
@@ -831,9 +835,11 @@ final class KeyAwareChannel extends ManagedChannel {
             databaseScope = databaseId;
           }
           if (finder != null && reqBuilder.hasMutationKey()) {
-            endpoint = finder.findServer(reqBuilder, excludedEndpoints);
+            endpoint = finder.findServerAndFillRoutingHint(reqBuilder, excludedEndpoints);
           }
-          if (reqBuilder.hasOptions() && reqBuilder.getOptions().hasReadOnly()) {
+          if (reqBuilder.hasOptions()
+              && (reqBuilder.getOptions().hasReadOnly()
+                  || reqBuilder.getOptions().hasPartitionedDml())) {
             shouldRecordTransactionAffinity = false;
           } else {
             shouldRecordTransactionAffinity = true;
@@ -850,7 +856,7 @@ final class KeyAwareChannel extends ManagedChannel {
           CommitRequest.Builder reqBuilder = null;
           if (finder != null && request.getMutationsCount() > 0) {
             reqBuilder = request.toBuilder();
-            endpoint = finder.fillRoutingHint(reqBuilder, excludedEndpoints);
+            endpoint = finder.findServerAndFillRoutingHint(reqBuilder, excludedEndpoints);
             request = reqBuilder.build();
           }
           if (!request.getTransactionId().isEmpty()) {
@@ -1134,7 +1140,8 @@ final class KeyAwareChannel extends ManagedChannel {
 
     private void maybeTrackReadWriteBegin(TransactionSelector selector) {
       if (selector.getSelectorCase() == TransactionSelector.SelectorCase.BEGIN
-          && !selector.getBegin().hasReadOnly()) {
+          && !selector.getBegin().hasReadOnly()
+          && !selector.getBegin().hasPartitionedDml()) {
         shouldRecordTransactionAffinity = true;
         allowDefaultAffinity = true;
       }
@@ -1162,8 +1169,13 @@ final class KeyAwareChannel extends ManagedChannel {
         // by this request's routing hint without leader bias, as read-only transaction IDs can run
         // on any suitable replica.
         boolean routePreferLeader = transactionId.isEmpty() && preferLeader;
-        endpoint = finder.findServer(reqBuilder, routePreferLeader, excludedEndpoints);
+        endpoint =
+            finder.findServerAndFillRoutingHint(reqBuilder, routePreferLeader, excludedEndpoints);
         preferLeader = routePreferLeader;
+      } else if (finder != null) {
+        // Pinned to the read-write transaction's endpoint, but still send a routing hint so the
+        // server can use the fastpath and return key recipes for this statement.
+        finder.fillRoutingHint(reqBuilder, preferLeader, excludedEndpoints);
       }
       return new RoutingDecision(
           finder, endpoint, databaseId, operationUid(reqBuilder.getRoutingHint()), preferLeader);
@@ -1184,8 +1196,13 @@ final class KeyAwareChannel extends ManagedChannel {
         // by this request's routing hint without leader bias, as read-only transaction IDs can run
         // on any suitable replica.
         boolean routePreferLeader = transactionId.isEmpty() && preferLeader;
-        endpoint = finder.findServer(reqBuilder, routePreferLeader, excludedEndpoints);
+        endpoint =
+            finder.findServerAndFillRoutingHint(reqBuilder, routePreferLeader, excludedEndpoints);
         preferLeader = routePreferLeader;
+      } else if (finder != null) {
+        // Pinned to the read-write transaction's endpoint, but still send a routing hint so the
+        // server can use the fastpath and return key recipes for this statement.
+        finder.fillRoutingHint(reqBuilder, preferLeader, excludedEndpoints);
       }
       return new RoutingDecision(
           finder, endpoint, databaseId, operationUid(reqBuilder.getRoutingHint()), preferLeader);
