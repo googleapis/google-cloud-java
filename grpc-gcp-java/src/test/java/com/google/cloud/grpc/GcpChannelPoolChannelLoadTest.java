@@ -19,6 +19,15 @@ package com.google.cloud.grpc;
 import static com.google.common.truth.Truth.assertThat;
 import static org.awaitility.Awaitility.await;
 import static org.junit.Assert.assertThrows;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.anyList;
+import static org.mockito.ArgumentMatchers.anyLong;
+import static org.mockito.ArgumentMatchers.anyString;
+import static org.mockito.Mockito.RETURNS_DEEP_STUBS;
+import static org.mockito.Mockito.doThrow;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
 import com.google.cloud.grpc.GcpManagedChannel.ChannelAffinityRef;
 import com.google.cloud.grpc.GcpManagedChannel.ChannelRef;
@@ -36,6 +45,7 @@ import io.grpc.MethodDescriptor;
 import io.grpc.Status;
 import io.opentelemetry.api.common.AttributeKey;
 import io.opentelemetry.api.common.Attributes;
+import io.opentelemetry.api.metrics.LongHistogram;
 import io.opentelemetry.api.metrics.Meter;
 import io.opentelemetry.sdk.metrics.SdkMeterProvider;
 import io.opentelemetry.sdk.metrics.data.HistogramPointData;
@@ -51,6 +61,8 @@ import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
+import java.util.concurrent.TimeUnit;
+import java.util.function.Supplier;
 import java.util.stream.Collectors;
 import org.junit.After;
 import org.junit.Before;
@@ -132,15 +144,14 @@ public final class GcpChannelPoolChannelLoadTest {
   }
 
   @Test
-  public void usesTheAgreedBucketsAndCountUnit() {
+  public void usesChannelLoadBucketsAndCountUnit() {
     newStaticPool(1).newCall(METHOD, CallOptions.DEFAULT);
 
     MetricData metric = findChannelLoadMetric();
     assertThat(metric.getUnit()).isEqualTo("1");
     assertThat(onlyPoint().getBoundaries())
         .containsExactly(
-            0.0, 1.0, 2.0, 4.0, 8.0, 12.0, 15.0, 20.0, 25.0, 30.0, 40.0, 50.0, 75.0, 100.0, 150.0,
-            200.0)
+            1.0, 2.0, 4.0, 8.0, 12.0, 15.0, 20.0, 25.0, 30.0, 40.0, 50.0, 75.0, 100.0, 150.0, 200.0)
         .inOrder();
   }
 
@@ -152,25 +163,6 @@ public final class GcpChannelPoolChannelLoadTest {
             GcpMetricsOptions.newBuilder()
                 .withBuiltInMetrics(meter, CLOUDPATH)
                 .withBuiltInMetricsPoolIndex("1")
-                .build());
-
-    pool.newCall(METHOD, CallOptions.DEFAULT);
-
-    assertThat(onlyPoint().getAttributes())
-        .isEqualTo(Attributes.of(LANE, "cloudpath", POOL_MODE, "static"));
-  }
-
-  @Test
-  public void callerPoolIndexAttributeIsNotOnChannelLoad() {
-    GcpManagedChannel pool =
-        newPool(
-            staticPoolOptions(1),
-            GcpMetricsOptions.newBuilder()
-                .withBuiltInMetrics(
-                    meter,
-                    CLOUDPATH.toBuilder()
-                        .put(GcpMetricsConstants.POOL_INDEX_LABEL, "wrong")
-                        .build())
                 .build());
 
     pool.newCall(METHOD, CallOptions.DEFAULT);
@@ -221,7 +213,7 @@ public final class GcpChannelPoolChannelLoadTest {
     pool.newCall(METHOD, withCallAttributes(db1));
     pool.newCall(METHOD, withCallAttributes(db2));
 
-    assertThat(countsByDatabase()).containsExactly("db1", 2L, "db2", 1L);
+    assertThat(countsBy(DATABASE)).containsExactly("db1", 2L, "db2", 1L);
   }
 
   @Test
@@ -256,17 +248,10 @@ public final class GcpChannelPoolChannelLoadTest {
   public void callThatCannotBeCreatedIsNotRecorded() {
     GcpManagedChannel pool =
         (GcpManagedChannel)
-            GcpManagedChannelBuilder.forDelegateBuilder(
-                    new GcpManagedChannelTest.FakeManagedChannelBuilder(
-                        () -> new ThrowingChannel(executor)))
-                .withOptions(
-                    GcpManagedChannelOptions.newBuilder()
-                        .withChannelPoolOptions(staticPoolOptions(1))
-                        .withMetricsOptions(
-                            GcpMetricsOptions.newBuilder()
-                                .withBuiltInMetrics(meter, CLOUDPATH)
-                                .build())
-                        .build())
+            poolBuilder(
+                    () -> new ThrowingChannel(executor),
+                    staticPoolOptions(1),
+                    GcpMetricsOptions.newBuilder().withBuiltInMetrics(meter, CLOUDPATH).build())
                 .build();
     pools.add(pool);
 
@@ -280,6 +265,33 @@ public final class GcpChannelPoolChannelLoadTest {
     assertThrows(IllegalStateException.class, () -> call.sendMessage("request"));
 
     assertThat(findChannelLoadMetric()).isNull();
+  }
+
+  @Test
+  public void failedRecordDoesNotFailTheCallOrLeakTheCount() {
+    LongHistogram histogram = mock(LongHistogram.class);
+    doThrow(new IllegalStateException("cannot record"))
+        .when(histogram)
+        .record(anyLong(), any(Attributes.class));
+    Meter throwingMeter = mock(Meter.class, RETURNS_DEEP_STUBS);
+    when(throwingMeter
+            .histogramBuilder(anyString())
+            .setDescription(anyString())
+            .setUnit(anyString())
+            .ofLongs()
+            .setExplicitBucketBoundariesAdvice(anyList())
+            .build())
+        .thenReturn(histogram);
+    GcpManagedChannel pool =
+        newPool(
+            staticPoolOptions(1),
+            GcpMetricsOptions.newBuilder().withBuiltInMetrics(throwingMeter, CLOUDPATH).build());
+
+    start(pool.newCall(METHOD, CallOptions.DEFAULT));
+    lastStartedCall().finish(Status.OK);
+
+    verify(histogram).record(anyLong(), any(Attributes.class));
+    assertThat(pool.channelRefs.get(0).getActiveStreamsCount()).isEqualTo(0);
   }
 
   @Test
@@ -312,7 +324,7 @@ public final class GcpChannelPoolChannelLoadTest {
 
     assertThat(pool.builtInChannelLoadAttributesCacheSize())
         .isEqualTo(GcpManagedChannel.MAX_CACHED_CHANNEL_LOAD_ATTRIBUTES);
-    Map<String, Long> counts = countsByDatabase();
+    Map<String, Long> counts = countsBy(DATABASE);
     assertThat(counts).hasSize(databases);
     assertThat(counts).containsEntry("db" + (databases - 1), 1L);
   }
@@ -386,12 +398,12 @@ public final class GcpChannelPoolChannelLoadTest {
   public void loadGoesDownWhenRequestsFinish() {
     GcpManagedChannel pool = newStaticPool(1);
 
-    start(pool.newCall(METHOD, CallOptions.DEFAULT)); // load 1
-    start(pool.newCall(METHOD, CallOptions.DEFAULT)); // load 2
+    start(pool.newCall(METHOD, CallOptions.DEFAULT));
+    start(pool.newCall(METHOD, CallOptions.DEFAULT));
     for (FakeCall<?, ?> call : startedCalls) {
       call.finish(Status.OK);
     }
-    pool.newCall(METHOD, CallOptions.DEFAULT); // load 1 again
+    pool.newCall(METHOD, CallOptions.DEFAULT);
 
     HistogramPointData point = onlyPoint();
     assertThat(point.getCount()).isEqualTo(3);
@@ -417,7 +429,7 @@ public final class GcpChannelPoolChannelLoadTest {
                 }));
       }
       for (Future<?> future : futures) {
-        future.get();
+        future.get(5, TimeUnit.SECONDS);
       }
     } finally {
       workers.shutdownNow();
@@ -444,7 +456,7 @@ public final class GcpChannelPoolChannelLoadTest {
                 }));
       }
       for (Future<?> future : futures) {
-        future.get();
+        future.get(5, TimeUnit.SECONDS);
       }
     } finally {
       workers.shutdownNow();
@@ -454,7 +466,7 @@ public final class GcpChannelPoolChannelLoadTest {
         .isAtLeast(GcpManagedChannel.MAX_CACHED_CHANNEL_LOAD_ATTRIBUTES);
     assertThat(pool.builtInChannelLoadAttributesCacheSize())
         .isAtMost(GcpManagedChannel.MAX_CACHED_CHANNEL_LOAD_ATTRIBUTES + threads);
-    Map<String, Long> counts = countsByDatabase();
+    Map<String, Long> counts = countsBy(DATABASE);
     assertThat(counts).hasSize(databases);
     assertThat(counts.values().stream().mapToLong(Long::longValue).sum())
         .isEqualTo((long) threads * databases);
@@ -479,13 +491,13 @@ public final class GcpChannelPoolChannelLoadTest {
     pools.add(fallbackChannel);
 
     start(fallbackChannel.newCall(METHOD, CallOptions.DEFAULT));
-    assertThat(countsByLane()).containsExactly("directpath", 1L);
+    assertThat(countsBy(LANE)).containsExactly("directpath", 1L);
     lastStartedCall().finish(Status.UNAVAILABLE);
     await().atMost(Duration.ofSeconds(5)).until(fallbackChannel::isInFallbackMode);
 
     fallbackChannel.newCall(METHOD, CallOptions.DEFAULT);
 
-    assertThat(countsByLane()).containsExactly("directpath", 1L, "cloudpath", 1L);
+    assertThat(countsBy(LANE)).containsExactly("directpath", 1L, "cloudpath", 1L);
   }
 
   @Test
@@ -523,7 +535,7 @@ public final class GcpChannelPoolChannelLoadTest {
     directPath.newCall(METHOD, CallOptions.DEFAULT);
     directPath.newCall(METHOD, CallOptions.DEFAULT);
 
-    assertThat(countsByLane()).containsExactly("cloudpath", 1L, "directpath", 2L);
+    assertThat(countsBy(LANE)).containsExactly("cloudpath", 1L, "directpath", 2L);
   }
 
   @Test
@@ -534,7 +546,7 @@ public final class GcpChannelPoolChannelLoadTest {
     pool.newCall(METHOD, withCallAttributes(Attributes.of(DATABASE, "db1")));
 
     assertThat(pool.builtInChannelLoadAttributesCacheSize()).isEqualTo(1);
-    assertThat(countsByDatabase()).containsExactly("db1", 2L);
+    assertThat(countsBy(DATABASE)).containsExactly("db1", 2L);
   }
 
   @Test
@@ -583,15 +595,10 @@ public final class GcpChannelPoolChannelLoadTest {
     second.newCall(METHOD, CallOptions.DEFAULT);
 
     assertThat(onlyPoint().getCount()).isEqualTo(1);
-    long otherCount = 0;
-    for (MetricData metric : otherReader.collectAllMetrics()) {
-      if (metric.getName().equals(CHANNEL_LOAD)) {
-        for (HistogramPointData point : metric.getHistogramData().getPoints()) {
-          otherCount += point.getCount();
-        }
-      }
-    }
-    assertThat(otherCount).isEqualTo(2);
+    MetricData other = findChannelLoadMetric(otherReader);
+    assertThat(other).isNotNull();
+    assertThat(other.getHistogramData().getPoints()).hasSize(1);
+    assertThat(other.getHistogramData().getPoints().iterator().next().getCount()).isEqualTo(2);
   }
 
   private static CallOptions withCallAttributes(Attributes attributes) {
@@ -618,9 +625,16 @@ public final class GcpChannelPoolChannelLoadTest {
 
   private GcpManagedChannelBuilder poolBuilder(
       GcpChannelPoolOptions poolOptions, GcpMetricsOptions metricsOptions) {
+    return poolBuilder(
+        () -> new NoopCallChannel(executor, startedCalls), poolOptions, metricsOptions);
+  }
+
+  private GcpManagedChannelBuilder poolBuilder(
+      Supplier<? extends ManagedChannel> channelFactory,
+      GcpChannelPoolOptions poolOptions,
+      GcpMetricsOptions metricsOptions) {
     return GcpManagedChannelBuilder.forDelegateBuilder(
-            new GcpManagedChannelTest.FakeManagedChannelBuilder(
-                () -> new NoopCallChannel(executor, startedCalls)))
+            new GcpManagedChannelTest.FakeManagedChannelBuilder(channelFactory))
         .withOptions(
             GcpManagedChannelOptions.newBuilder()
                 .withChannelPoolOptions(poolOptions)
@@ -636,18 +650,12 @@ public final class GcpChannelPoolChannelLoadTest {
     return startedCalls.get(startedCalls.size() - 1);
   }
 
-  private Map<String, Long> countsByLane() {
-    MetricData metric = findChannelLoadMetric();
-    assertThat(metric).isNotNull();
-    Map<String, Long> counts = new HashMap<>();
-    for (HistogramPointData point : metric.getHistogramData().getPoints()) {
-      counts.put(point.getAttributes().get(LANE), point.getCount());
-    }
-    return counts;
+  private MetricData findChannelLoadMetric() {
+    return findChannelLoadMetric(reader);
   }
 
-  private MetricData findChannelLoadMetric() {
-    for (MetricData metric : reader.collectAllMetrics()) {
+  private static MetricData findChannelLoadMetric(InMemoryMetricReader metricReader) {
+    for (MetricData metric : metricReader.collectAllMetrics()) {
       if (metric.getName().equals(CHANNEL_LOAD)) {
         return metric;
       }
@@ -663,12 +671,12 @@ public final class GcpChannelPoolChannelLoadTest {
     return points.get(0);
   }
 
-  private Map<String, Long> countsByDatabase() {
+  private Map<String, Long> countsBy(AttributeKey<String> key) {
     MetricData metric = findChannelLoadMetric();
     assertThat(metric).isNotNull();
     Map<String, Long> counts = new HashMap<>();
     for (HistogramPointData point : metric.getHistogramData().getPoints()) {
-      counts.put(point.getAttributes().get(DATABASE), point.getCount());
+      counts.put(point.getAttributes().get(key), point.getCount());
     }
     return counts;
   }

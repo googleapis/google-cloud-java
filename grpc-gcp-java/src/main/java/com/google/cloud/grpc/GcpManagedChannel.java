@@ -49,7 +49,6 @@ import io.opencensus.metrics.LabelKey;
 import io.opencensus.metrics.LabelValue;
 import io.opencensus.metrics.MetricOptions;
 import io.opencensus.metrics.MetricRegistry;
-import io.opentelemetry.api.common.AttributeKey;
 import io.opentelemetry.api.common.Attributes;
 import io.opentelemetry.api.common.AttributesBuilder;
 import io.opentelemetry.api.metrics.LongHistogram;
@@ -128,19 +127,15 @@ public class GcpManagedChannel extends ManagedChannel {
    * this call, for example the database that the call is for. The pool's own attributes take
    * precedence over attributes with the same key.
    *
-   * <p>The pool caches the combined attributes for up to {@link
-   * #MAX_CACHED_CHANNEL_LOAD_ATTRIBUTES} different attribute sets, matched by their content. Calls
-   * with attribute sets beyond that limit are still recorded, but the combined attributes are built
-   * for each call.
+   * <p>The pool caches the combined attributes for up to 100 different attribute sets, matched by
+   * their content. Calls with attribute sets beyond that limit are still recorded, but the combined
+   * attributes are built for each call.
    */
   @InternalApi("For use by Google Cloud client libraries only")
   public static final CallOptions.Key<Attributes> BUILT_IN_METRICS_ATTRIBUTES_KEY =
       CallOptions.Key.create("GcpBuiltInMetricsAttributes");
 
   @VisibleForTesting static final int MAX_CACHED_CHANNEL_LOAD_ATTRIBUTES = 100;
-
-  private static final AttributeKey<String> POOL_INDEX_ATTRIBUTE_KEY =
-      AttributeKey.stringKey(GcpMetricsConstants.POOL_INDEX_LABEL);
 
   /**
    * Opaque caller-owned channel reference for transaction-lifetime stickiness.
@@ -499,10 +494,10 @@ public class GcpManagedChannel extends ManagedChannel {
     }
 
     void recordChannelLoad(int load, CallOptions callOptions) {
-      channelLoad.record(load, channelLoadAttributes(callOptions));
+      channelLoad.record(load, attributesFor(callOptions));
     }
 
-    private Attributes channelLoadAttributes(CallOptions callOptions) {
+    private Attributes attributesFor(CallOptions callOptions) {
       Attributes callAttributes = callOptions.getOption(BUILT_IN_METRICS_ATTRIBUTES_KEY);
       if (callAttributes == null || callAttributes.isEmpty()) {
         return channelLoadAttributes;
@@ -549,15 +544,12 @@ public class GcpManagedChannel extends ManagedChannel {
         poolAttributes.toBuilder()
             .put(GcpMetricsConstants.STATE_LABEL, GcpMetricsConstants.STATE_DRAINING)
             .build();
-    // A pool index would leave a frozen series behind for every closed pool.
-    Attributes channelLoadAttributes =
-        modeAttributes.toBuilder().remove(POOL_INDEX_ATTRIBUTE_KEY).build();
     LongHistogram channelLoad =
         builtInMeter
             .histogramBuilder(GcpMetricsConstants.METRIC_CHANNEL_POOL_CHANNEL_LOAD)
             .setDescription(
-                "The number of requests in flight on the channel that a request starts on,"
-                    + " including that request.")
+                "The number of calls in flight on the channel that a call starts on,"
+                    + " including that call.")
             .setUnit(GcpMetricsConstants.COUNT)
             .ofLongs()
             .setExplicitBucketBoundariesAdvice(GcpMetricsConstants.CHANNEL_LOAD_BUCKETS)
@@ -567,7 +559,7 @@ public class GcpManagedChannel extends ManagedChannel {
         activeAttributes,
         drainingAttributes,
         channelLoad,
-        channelLoadAttributes);
+        modeAttributes);
   }
 
   /**
@@ -1296,8 +1288,13 @@ public class GcpManagedChannel extends ManagedChannel {
   }
 
   void recordBuiltInChannelLoad(int load, CallOptions callOptions) {
-    if (builtInMetrics != null) {
+    if (builtInMetrics == null) {
+      return;
+    }
+    try {
       builtInMetrics.recordChannelLoad(load, callOptions);
+    } catch (RuntimeException e) {
+      logger.log(Level.FINE, "Failed to record channel_load.", e);
     }
   }
 
