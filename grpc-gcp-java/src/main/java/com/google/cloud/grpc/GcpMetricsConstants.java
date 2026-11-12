@@ -16,6 +16,10 @@
 
 package com.google.cloud.grpc;
 
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
 class GcpMetricsConstants {
   public static String POOL_INDEX_LABEL = "pool_index";
   public static String POOL_INDEX_DESC = "gRPC GCP channel pool index.";
@@ -82,6 +86,11 @@ class GcpMetricsConstants {
   // Channel pool metrics reported to the built-in metrics pipeline of a Google Cloud client
   // library. See GcpMetricsOptions.Builder#withBuiltInMetrics.
   static final String METRIC_CHANNEL_POOL_CHANNEL_COUNT = "channel_pool.channel_count";
+  static final String METRIC_CHANNEL_POOL_CHANNEL_LOAD = "channel_pool.channel_load";
+  static final List<Long> CHANNEL_LOAD_BUCKETS =
+      Collections.unmodifiableList(
+          Arrays.asList(
+              1L, 2L, 3L, 5L, 8L, 12L, 16L, 20L, 25L, 30L, 40L, 50L, 75L, 100L, 150L, 200L));
   static final String POOL_MODE_LABEL = "pool_mode";
   static final String POOL_MODE_STATIC = "static";
   static final String POOL_MODE_DYNAMIC = "dynamic";
