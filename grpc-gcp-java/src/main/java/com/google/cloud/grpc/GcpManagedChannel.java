@@ -20,6 +20,7 @@ import static java.util.concurrent.TimeUnit.MILLISECONDS;
 import static java.util.concurrent.TimeUnit.NANOSECONDS;
 import static java.util.concurrent.TimeUnit.SECONDS;
 
+import com.google.api.core.InternalApi;
 import com.google.cloud.grpc.GcpManagedChannelOptions.GcpChannelPoolOptions;
 import com.google.cloud.grpc.GcpManagedChannelOptions.GcpMetricsOptions;
 import com.google.cloud.grpc.GcpManagedChannelOptions.GcpResiliencyOptions;
@@ -50,6 +51,7 @@ import io.opencensus.metrics.MetricOptions;
 import io.opencensus.metrics.MetricRegistry;
 import io.opentelemetry.api.common.Attributes;
 import io.opentelemetry.api.common.AttributesBuilder;
+import io.opentelemetry.api.metrics.LongHistogram;
 import io.opentelemetry.api.metrics.Meter;
 import java.time.Duration;
 import java.util.ArrayList;
@@ -119,6 +121,21 @@ public class GcpManagedChannel extends ManagedChannel {
   /** CallOptions key for sticky channel routing without affinity-key map state. */
   public static final CallOptions.Key<ChannelAffinityRef> CHANNEL_AFFINITY_REF_KEY =
       CallOptions.Key.create("GcpChannelAffinityRef");
+
+  /**
+   * CallOptions key for attributes that are added to the built-in {@code channel_load} metric of
+   * this call, for example the database that the call is for. The pool's own attributes take
+   * precedence over attributes with the same key.
+   *
+   * <p>The pool caches the combined attributes for up to 100 different attribute sets, matched by
+   * their content. Calls with attribute sets beyond that limit are still recorded, but the combined
+   * attributes are built for each call.
+   */
+  @InternalApi("For use by Google Cloud client libraries only")
+  public static final CallOptions.Key<Attributes> BUILT_IN_METRICS_ATTRIBUTES_KEY =
+      CallOptions.Key.create("GcpBuiltInMetricsAttributes");
+
+  @VisibleForTesting static final int MAX_CACHED_CHANNEL_LOAD_ATTRIBUTES = 100;
 
   /**
    * Opaque caller-owned channel reference for transaction-lifetime stickiness.
@@ -459,14 +476,41 @@ public class GcpManagedChannel extends ManagedChannel {
     final GcpChannelPoolBuiltInMetrics reader;
     final Attributes activeAttributes;
     final Attributes drainingAttributes;
+    final LongHistogram channelLoad;
+    final Attributes channelLoadAttributes;
+    final Map<Attributes, Attributes> channelLoadAttributesCache = new ConcurrentHashMap<>();
 
     BuiltInMetrics(
         GcpChannelPoolBuiltInMetrics reader,
         Attributes activeAttributes,
-        Attributes drainingAttributes) {
+        Attributes drainingAttributes,
+        LongHistogram channelLoad,
+        Attributes channelLoadAttributes) {
       this.reader = reader;
       this.activeAttributes = activeAttributes;
       this.drainingAttributes = drainingAttributes;
+      this.channelLoad = channelLoad;
+      this.channelLoadAttributes = channelLoadAttributes;
+    }
+
+    void recordChannelLoad(int load, CallOptions callOptions) {
+      channelLoad.record(load, attributesFor(callOptions));
+    }
+
+    private Attributes attributesFor(CallOptions callOptions) {
+      Attributes callAttributes = callOptions.getOption(BUILT_IN_METRICS_ATTRIBUTES_KEY);
+      if (callAttributes == null || callAttributes.isEmpty()) {
+        return channelLoadAttributes;
+      }
+      Attributes combined = channelLoadAttributesCache.get(callAttributes);
+      if (combined != null) {
+        return combined;
+      }
+      combined = callAttributes.toBuilder().putAll(channelLoadAttributes).build();
+      if (channelLoadAttributesCache.size() < MAX_CACHED_CHANNEL_LOAD_ATTRIBUTES) {
+        channelLoadAttributesCache.putIfAbsent(callAttributes, combined);
+      }
+      return combined;
     }
   }
 
@@ -478,13 +522,15 @@ public class GcpManagedChannel extends ManagedChannel {
     if (builtInMeter == null) {
       return null;
     }
-    AttributesBuilder countAttributes =
+    Attributes modeAttributes =
         metricsOptions.getBuiltInMetricsAttributes().toBuilder()
             .put(
                 GcpMetricsConstants.POOL_MODE_LABEL,
                 isDynamicScalingEnabled
                     ? GcpMetricsConstants.POOL_MODE_DYNAMIC
-                    : GcpMetricsConstants.POOL_MODE_STATIC);
+                    : GcpMetricsConstants.POOL_MODE_STATIC)
+            .build();
+    AttributesBuilder countAttributes = modeAttributes.toBuilder();
     String poolIndex = metricsOptions.getBuiltInMetricsPoolIndex();
     if (poolIndex != null) {
       countAttributes.put(GcpMetricsConstants.POOL_INDEX_LABEL, poolIndex);
@@ -498,8 +544,22 @@ public class GcpManagedChannel extends ManagedChannel {
         poolAttributes.toBuilder()
             .put(GcpMetricsConstants.STATE_LABEL, GcpMetricsConstants.STATE_DRAINING)
             .build();
+    LongHistogram channelLoad =
+        builtInMeter
+            .histogramBuilder(GcpMetricsConstants.METRIC_CHANNEL_POOL_CHANNEL_LOAD)
+            .setDescription(
+                "The number of calls in flight on the channel that a call starts on,"
+                    + " including that call.")
+            .setUnit(GcpMetricsConstants.COUNT)
+            .ofLongs()
+            .setExplicitBucketBoundariesAdvice(GcpMetricsConstants.CHANNEL_LOAD_BUCKETS)
+            .build();
     return new BuiltInMetrics(
-        GcpChannelPoolBuiltInMetrics.forMeter(builtInMeter), activeAttributes, drainingAttributes);
+        GcpChannelPoolBuiltInMetrics.forMeter(builtInMeter),
+        activeAttributes,
+        drainingAttributes,
+        channelLoad,
+        modeAttributes);
   }
 
   /**
@@ -1220,6 +1280,22 @@ public class GcpManagedChannel extends ManagedChannel {
   void addBuiltInChannelCounts(Map<Attributes, Long> totals) {
     totals.merge(builtInMetrics.activeAttributes, (long) channelRefs.size(), Long::sum);
     totals.merge(builtInMetrics.drainingAttributes, (long) removedChannelRefs.size(), Long::sum);
+  }
+
+  @VisibleForTesting
+  int builtInChannelLoadAttributesCacheSize() {
+    return builtInMetrics == null ? 0 : builtInMetrics.channelLoadAttributesCache.size();
+  }
+
+  void recordBuiltInChannelLoad(int load, CallOptions callOptions) {
+    if (builtInMetrics == null) {
+      return;
+    }
+    try {
+      builtInMetrics.recordChannelLoad(load, callOptions);
+    } catch (Throwable t) {
+      logger.log(Level.FINE, "Failed to record channel_load.", t);
+    }
   }
 
   private void setupOtelCommonAttributes(GcpMetricsOptions metricsOptions) {
@@ -3188,13 +3264,14 @@ public class GcpManagedChannel extends ManagedChannel {
       affinityCount.set(0);
     }
 
-    protected void activeStreamsCountIncr() {
+    protected int activeStreamsCountIncr() {
       lastActivityNanos = nanoClock.get();
       int actStreams = activeStreamsCount.incrementAndGet();
       maxActiveStreams.accumulateAndGet(actStreams, Math::max);
       int totalActStreams = totalActiveStreams.incrementAndGet();
       maxTotalActiveStreams.accumulateAndGet(totalActStreams, Math::max);
       maybeSignalScaleUp(this);
+      return actStreams;
     }
 
     protected void activeStreamsCountDecr(long startNanos, Status status, boolean fromClientSide) {
