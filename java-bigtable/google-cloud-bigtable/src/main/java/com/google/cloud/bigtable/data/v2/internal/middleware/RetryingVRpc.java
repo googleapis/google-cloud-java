@@ -304,6 +304,8 @@ public class RetryingVRpc<ReqT, RespT> implements VRpc<ReqT, RespT> {
       // a 0s delay (e.g. after GOAWAY) to request an immediate retry on another session.
       if (result.getRetryInfo() != null && result.getRetryInfo().hasRetryDelay()) {
         Duration retryDelay = result.getRetryInfo().getRetryDelay();
+        // A negative retry_delay should never happen in practice, but guard against it so it
+        // cannot invert the remaining-deadline check below.
         if (Durations.compare(retryDelay, Durations.ZERO) < 0) {
           return false;
         }
