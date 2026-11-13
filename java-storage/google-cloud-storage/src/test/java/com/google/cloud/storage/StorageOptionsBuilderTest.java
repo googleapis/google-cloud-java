@@ -19,10 +19,17 @@ package com.google.cloud.storage;
 import static com.google.cloud.storage.TestUtils.assertAll;
 import static com.google.common.truth.Truth.assertThat;
 
+import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.retrying.ResultRetryAlgorithm;
+import com.google.api.gax.rpc.TransportChannelProvider;
+import com.google.auth.Credentials;
+import com.google.auth.oauth2.AccessToken;
+import com.google.auth.oauth2.GoogleCredentials;
+import com.google.cloud.NoCredentials;
 import com.google.cloud.storage.ParallelCompositeUploadBlobWriteSessionConfig.BufferAllocationStrategy;
 import com.google.cloud.storage.ParallelCompositeUploadBlobWriteSessionConfig.ExecutorSupplier;
 import com.google.cloud.storage.ParallelCompositeUploadBlobWriteSessionConfig.PartNamingStrategy;
+import com.google.storage.v2.StorageSettings;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -71,10 +78,10 @@ public final class StorageOptionsBuilderTest {
 
   @Test
   public void grpc_attemptDirectPathXdsOverInterconnect() throws Exception {
-    com.google.auth.Credentials mockCreds = com.google.cloud.NoCredentials.getInstance();
+    Credentials credentials = GoogleCredentials.create(new AccessToken("token", null));
     GrpcStorageOptions options =
         GrpcStorageOptions.grpc()
-            .setCredentials(mockCreds)
+            .setCredentials(credentials)
             .setAttemptDirectPathXdsOverInterconnect(true)
             .build();
 
@@ -83,13 +90,16 @@ public final class StorageOptionsBuilderTest {
         () -> assertThat(rebuilt).isEqualTo(options),
         () -> assertThat(rebuilt.hashCode()).isEqualTo(options.hashCode()));
 
-    com.google.storage.v2.StorageSettings settings = options.getStorageSettings();
+    StorageSettings settings = options.getStorageSettings();
     assertThat(settings.getEndpoint()).isEqualTo("storage.googleapis.com:443");
 
-    com.google.api.gax.rpc.TransportChannelProvider tcp = settings.getTransportChannelProvider();
-    assertThat(tcp).isInstanceOf(com.google.api.gax.grpc.InstantiatingGrpcChannelProvider.class);
-    com.google.api.gax.grpc.InstantiatingGrpcChannelProvider provider =
-        (com.google.api.gax.grpc.InstantiatingGrpcChannelProvider) tcp;
+    TransportChannelProvider tcp = settings.getTransportChannelProvider();
+    assertThat(tcp).isInstanceOf(InstantiatingGrpcChannelProvider.class);
+    // ClientContext attaches the settings' credentials to the channel provider when the client is
+    // created; DirectPath over Interconnect requires them.
+    InstantiatingGrpcChannelProvider provider =
+        (InstantiatingGrpcChannelProvider)
+            tcp.withCredentials(settings.getCredentialsProvider().getCredentials());
 
     assertThat(provider.getEndpoint()).isEqualTo("storage.googleapis.com:443");
     assertThat(provider.isDirectPathXdsEnabled()).isTrue();
@@ -101,19 +111,41 @@ public final class StorageOptionsBuilderTest {
   }
 
   @Test
+  public void grpc_attemptDirectPathXdsOverInterconnect_noCredentials_fallsBackToCloudPath()
+      throws Exception {
+    GrpcStorageOptions options =
+        GrpcStorageOptions.grpc()
+            .setCredentials(NoCredentials.getInstance())
+            .setAttemptDirectPathXdsOverInterconnect(true)
+            .build();
+    StorageSettings settings = options.getStorageSettings();
+
+    // NoCredentials resolves to no credentials, so ClientContext leaves the channel provider
+    // without any, and the channel uses CloudPath.
+    assertThat(settings.getCredentialsProvider().getCredentials()).isNull();
+    InstantiatingGrpcChannelProvider provider =
+        (InstantiatingGrpcChannelProvider) settings.getTransportChannelProvider();
+    assertThat(provider.isDirectPathXdsEnabled()).isTrue();
+    assertThat(provider.canUseDirectPath()).isFalse();
+  }
+
+  @Test
   public void grpc_fallbackFromDirectPathXdsOverInterconnect_nonGduUniverse() throws Exception {
+    // Valid credentials, so only the non-GDU endpoint keeps the channel off DirectPath.
+    Credentials credentials = GoogleCredentials.create(new AccessToken("token", null));
     GrpcStorageOptions options =
         GrpcStorageOptions.grpc()
             .setHost("https://storage.my-universe.com")
             .setAttemptDirectPathXdsOverInterconnect(true)
-            .setCredentials(com.google.cloud.NoCredentials.getInstance())
+            .setCredentials(credentials)
             .build();
-    com.google.storage.v2.StorageSettings settings = options.getStorageSettings();
+    StorageSettings settings = options.getStorageSettings();
     assertThat(settings.getEndpoint()).isEqualTo("storage.my-universe.com:443");
 
-    com.google.api.gax.grpc.InstantiatingGrpcChannelProvider provider =
-        (com.google.api.gax.grpc.InstantiatingGrpcChannelProvider)
-            settings.getTransportChannelProvider();
+    TransportChannelProvider tcp = settings.getTransportChannelProvider();
+    InstantiatingGrpcChannelProvider provider =
+        (InstantiatingGrpcChannelProvider)
+            tcp.withCredentials(settings.getCredentialsProvider().getCredentials());
     assertThat(provider.getEndpoint()).isEqualTo("storage.my-universe.com:443");
     assertThat(provider.isDirectPathXdsEnabled()).isTrue();
     assertThat(provider.canUseDirectPath()).isFalse();
