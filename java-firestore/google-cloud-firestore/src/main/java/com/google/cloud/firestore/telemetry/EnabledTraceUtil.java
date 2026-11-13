@@ -59,7 +59,7 @@ public class EnabledTraceUtil implements TraceUtil {
     this.firestoreOptions = firestoreOptions;
     this.openTelemetry = openTelemetry;
     Package pkg = this.getClass().getPackage();
-    if (pkg != null) {
+    if (pkg != null && pkg.getImplementationVersion() != null) {
       // TODO(tracing): OpenTelemetry is currently missing the API for adding scope attributes in
       //  Java. We should add `gcp.client.service` as scope attributes once
       //  https://github.com/open-telemetry/opentelemetry-java/issues/4695 is resolved.
