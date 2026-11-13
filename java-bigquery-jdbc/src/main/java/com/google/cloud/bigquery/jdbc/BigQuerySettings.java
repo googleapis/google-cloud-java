@@ -44,6 +44,7 @@ class BigQuerySettings {
 
   private final boolean enableSession;
   private final boolean enableTimestampPicos;
+  private final boolean enableQueryResultsArrowFormat;
 
   private final ConnectionProperty sessionInfoConnectionProperty;
 
@@ -122,6 +123,7 @@ class BigQuerySettings {
     this.defaultDataset = builder.defaultDataset;
     this.enableSession = builder.enableSession;
     this.enableTimestampPicos = builder.enableTimestampPicos;
+    this.enableQueryResultsArrowFormat = builder.enableQueryResultsArrowFormat;
     this.unsupportedHTAPIFallback = builder.unsupportedHTAPIFallback;
     this.sessionInfoConnectionProperty = builder.sessionInfoConnectionProperty;
     this.useWriteAPI = builder.useWriteAPI;
@@ -180,6 +182,15 @@ class BigQuerySettings {
    */
   boolean isEnableTimestampPicos() {
     return enableTimestampPicos;
+  }
+
+  /**
+   * Returns whether query results should be requested in Arrow format.
+   *
+   * @return true if Arrow format is enabled, false otherwise.
+   */
+  boolean isEnableQueryResultsArrowFormat() {
+    return enableQueryResultsArrowFormat;
   }
 
   /**
@@ -387,6 +398,9 @@ class BigQuerySettings {
         + "useReadAPI="
         + useReadAPI
         + ", "
+        + "enableQueryResultsArrowFormat="
+        + enableQueryResultsArrowFormat
+        + ", "
         + "kmsKeyName="
         + kmsKeyName
         + ", "
@@ -488,6 +502,7 @@ class BigQuerySettings {
     private int highThroughputActivationRatio;
     private boolean enableSession;
     private boolean enableTimestampPicos;
+    private boolean enableQueryResultsArrowFormat;
     private boolean unsupportedHTAPIFallback;
     private ConnectionProperty sessionInfoConnectionProperty;
     private boolean useQueryCache;
@@ -529,6 +544,7 @@ class BigQuerySettings {
       this.highThroughputActivationRatio = querySettings.getHighThroughputActivationRatio();
       this.enableSession = querySettings.isEnableSession();
       this.enableTimestampPicos = querySettings.isEnableTimestampPicos();
+      this.enableQueryResultsArrowFormat = querySettings.isEnableQueryResultsArrowFormat();
       this.unsupportedHTAPIFallback = querySettings.isUnsupportedHTAPIFallback();
       this.sessionInfoConnectionProperty = querySettings.getSessionInfoConnectionProperty();
       this.useQueryCache = querySettings.getUseQueryCache();
@@ -627,6 +643,15 @@ class BigQuerySettings {
      */
     Builder setEnableTimestampPicos(boolean enableTimestampPicos) {
       this.enableTimestampPicos = enableTimestampPicos;
+      return this;
+    }
+
+    /**
+     * Setting true requests query results in Arrow format when the driver supports it for the
+     * query. Disabled by default.
+     */
+    Builder setEnableQueryResultsArrowFormat(boolean enableQueryResultsArrowFormat) {
+      this.enableQueryResultsArrowFormat = enableQueryResultsArrowFormat;
       return this;
     }
 

@@ -934,6 +934,21 @@ public class BigQueryConnectionTest extends BigQueryJdbcLoggingBaseTest {
   }
 
   @Test
+  public void testEnableQueryResultsArrowFormatDefault() throws Exception {
+    try (BigQueryConnection connection = new BigQueryConnection(BASE_URL)) {
+      assertFalse(connection.isEnableQueryResultsArrowFormat());
+    }
+  }
+
+  @Test
+  public void testEnableQueryResultsArrowFormatConfigured() throws Exception {
+    String url = BASE_URL + "EnableQueryResultsArrowFormat=1;";
+    try (BigQueryConnection connection = new BigQueryConnection(url)) {
+      assertTrue(connection.isEnableQueryResultsArrowFormat());
+    }
+  }
+
+  @Test
   public void testSessionIdIsMatchedRegardlessOfCase() throws Exception {
     String url = BASE_URL + ";QueryProperties=Session_Id=abc123";
     try (BigQueryConnection connection = new BigQueryConnection(url)) {

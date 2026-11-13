@@ -233,6 +233,8 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     querySettings.setWriteAPIActivationRowCount(this.connection.getWriteAPIActivationRowCount());
     querySettings.setWriteAPIAppendRowCount(this.connection.getWriteAPIAppendRowCount());
     querySettings.setEnableTimestampPicos(this.connection.isEnableTimestampPicos());
+    querySettings.setEnableQueryResultsArrowFormat(
+        this.connection.isEnableQueryResultsArrowFormat());
 
     return querySettings.build();
   }

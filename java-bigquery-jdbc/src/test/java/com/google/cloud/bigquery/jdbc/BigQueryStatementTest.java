@@ -1285,6 +1285,13 @@ public class BigQueryStatementTest {
   }
 
   @Test
+  public void testEnableQueryResultsArrowFormatPropagation() throws SQLException {
+    doReturn(true).when(bigQueryConnection).isEnableQueryResultsArrowFormat();
+    BigQueryStatement statement = new BigQueryStatement(bigQueryConnection);
+    assertTrue(statement.querySettings.isEnableQueryResultsArrowFormat());
+  }
+
+  @Test
   public void testJoblessQueryPopulatesQueryStatistics() throws Exception {
     doReturn(true).when(bigQueryConnection).getUseStatelessQueryMode();
     BigQueryStatement joblessStatement = new BigQueryStatement(bigQueryConnection);
