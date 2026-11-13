@@ -415,6 +415,67 @@ class ITResumableUpload {
         .inOrder();
   }
 
+  @Test
+  void testStallControlGracePeriod(@TempDir Path tempDir) throws Exception {
+    // 850KB payload = three 256KB non-final chunks + one 82KB final chunk. Chunks at or after
+    // 256KB sleep for 300ms on the server (slower than 10.0 MiB/s), starting the stall clock on
+    // chunk 2 and checking it on chunk 3 (~300ms elapsed <= 2s stallTimeout), so the upload
+    // completes within the grace period.
+    ApiCallContext callContext = stallInjectionContext(300, SHOWCASE_CHUNK_SIZE);
+
+    int totalBytes = 850 * 1024;
+    Path file = createTempFile(tempDir, "it-stall-grace.txt", totalBytes);
+    UploadMediaRequest request =
+        UploadMediaRequest.newBuilder().setName("it-stall-grace.txt").build();
+    ResumableUploadOptions options =
+        ResumableUploadOptions.newBuilder()
+            .setChunkSize(SHOWCASE_CHUNK_SIZE)
+            .setTransferStallMinimumRate(10.0)
+            .setTransferStallTimeout(Duration.ofSeconds(2))
+            .build();
+
+    ResumableUploadFuture<UploadMediaResponse> future =
+        client
+            .uploadMediaCallable()
+            .futureCall(request, () -> Files.newInputStream(file), callContext, options);
+    UploadMediaResponse response = future.get(15, TimeUnit.SECONDS);
+
+    assertThat(response.getName()).isEqualTo("it-stall-grace.txt");
+    assertThat(response.getSize()).isEqualTo(totalBytes);
+  }
+
+  @Test
+  void testStallControlTimeout(@TempDir Path tempDir) throws Exception {
+    // 512KB payload = two 256KB chunks. With minimumRate = 10.0 MiB/s (25ms expected per 256KB
+    // chunk) and stallTimeout = 1s, chunk 2's local deadline and per-attempt timeout are ~1025ms,
+    // which fires before the 1500ms server delay finishes and aborts the upload with "Resumable
+    // upload stalled".
+    ApiCallContext callContext = stallInjectionContext(1500, SHOWCASE_CHUNK_SIZE);
+
+    int totalBytes = 512 * 1024;
+    Path file = createTempFile(tempDir, "it-stall-timeout.txt", totalBytes);
+    UploadMediaRequest request =
+        UploadMediaRequest.newBuilder().setName("it-stall-timeout.txt").build();
+    ResumableUploadOptions options =
+        ResumableUploadOptions.newBuilder()
+            .setChunkSize(SHOWCASE_CHUNK_SIZE)
+            .setTransferStallMinimumRate(10.0)
+            .setTransferStallTimeout(Duration.ofSeconds(1))
+            .build();
+
+    ResumableUploadFuture<UploadMediaResponse> future =
+        client
+            .uploadMediaCallable()
+            .futureCall(request, () -> Files.newInputStream(file), callContext, options);
+
+    ExecutionException exception =
+        assertThrows(ExecutionException.class, () -> future.get(15, TimeUnit.SECONDS));
+    assertThat(exception.getCause()).isInstanceOf(DeadlineExceededException.class);
+    DeadlineExceededException cause = (DeadlineExceededException) exception.getCause();
+    assertThat(cause.getStatusCode().getCode()).isEqualTo(StatusCode.Code.DEADLINE_EXCEEDED);
+    assertThat(cause.getMessage()).contains("Resumable upload stalled");
+  }
+
   private static Path createTempFile(Path dir, String fileName, byte[] data) throws IOException {
     Path path = dir.resolve(fileName);
     Files.write(path, data);
@@ -446,6 +507,17 @@ class ITResumableUpload {
             ImmutableList.of("non_fatal_error_on_chunk_upload"),
             "X-Goog-Test-Scenario-Config",
             ImmutableList.of(config));
+    return HttpJsonCallContext.createDefault().withExtraHeaders(extraHeaders);
+  }
+
+  /**
+   * Returns a call context that makes Showcase delay each chunk upload at or after {@code
+   * afterOffset} by {@code delayMs} milliseconds.
+   */
+  private static ApiCallContext stallInjectionContext(int delayMs, long afterOffset) {
+    String config = String.format("{\"delay_ms\":%d,\"after_offset\":%d}", delayMs, afterOffset);
+    Map<String, List<String>> extraHeaders =
+        ImmutableMap.of("X-Goog-Test-Scenario-Config", ImmutableList.of(config));
     return HttpJsonCallContext.createDefault().withExtraHeaders(extraHeaders);
   }
 }
