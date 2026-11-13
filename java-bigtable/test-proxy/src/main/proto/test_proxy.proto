@@ -81,8 +81,10 @@ message CreateClientRequest {
   string app_profile_id = 5;
 
   // If provided, a custom timeout will be set for each API call conducted by
-  // the created client. Otherwise, the default timeout from the client library
-  // will be used. Note that the override applies to all the methods.
+  // the created client, unless overridden by per_operation_timeout on an
+  // individual operation request. Otherwise, the default timeout from the
+  // client library will be used. Note that the override applies to all the
+  // methods.
   google.protobuf.Duration per_operation_timeout = 6;
 
   // Optional config that dictates how the optional features should be enabled
@@ -137,6 +139,11 @@ message ReadRowRequest {
 
   // The row filter to be applied to the target row.
   google.bigtable.v2.RowFilter filter = 3;
+
+  // Optional per-operation timeout override. When set and positive, supersedes
+  // CreateClientRequest.per_operation_timeout and the client library default
+  // timeout for this call.
+  google.protobuf.Duration per_operation_timeout = 5;
 }
 
 // Response from test proxy service for ReadRowRequest or
@@ -160,6 +167,11 @@ message ReadRowsRequest {
   // The streaming read can be canceled before all items are seen.
   // Has no effect if non-positive.
   int32 cancel_after_rows = 3;
+
+  // Optional per-operation timeout override. When set and positive, supersedes
+  // CreateClientRequest.per_operation_timeout and the client library default
+  // timeout for this call.
+  google.protobuf.Duration per_operation_timeout = 4;
 }
 
 // Response from test proxy service for ReadRowsRequest.
@@ -178,6 +190,11 @@ message MutateRowRequest {
 
   // The raw request to the Bigtable server.
   google.bigtable.v2.MutateRowRequest request = 2;
+
+  // Optional per-operation timeout override. When set and positive, supersedes
+  // CreateClientRequest.per_operation_timeout and the client library default
+  // timeout for this call.
+  google.protobuf.Duration per_operation_timeout = 3;
 }
 
 // Response from test proxy service for MutateRowRequest.
@@ -193,6 +210,11 @@ message MutateRowsRequest {
 
   // The raw request to the Bigtable server.
   google.bigtable.v2.MutateRowsRequest request = 2;
+
+  // Optional per-operation timeout override. When set and positive, supersedes
+  // CreateClientRequest.per_operation_timeout and the client library default
+  // timeout for this call.
+  google.protobuf.Duration per_operation_timeout = 3;
 }
 
 // Response from test proxy service for MutateRowsRequest.
@@ -212,6 +234,11 @@ message CheckAndMutateRowRequest {
 
   // The raw request to the Bigtable server.
   google.bigtable.v2.CheckAndMutateRowRequest request = 2;
+
+  // Optional per-operation timeout override. When set and positive, supersedes
+  // CreateClientRequest.per_operation_timeout and the client library default
+  // timeout for this call.
+  google.protobuf.Duration per_operation_timeout = 3;
 }
 
 // Response from test proxy service for CheckAndMutateRowRequest.
@@ -230,6 +257,11 @@ message SampleRowKeysRequest {
 
   // The raw request to the Bigtable server.
   google.bigtable.v2.SampleRowKeysRequest request = 2;
+
+  // Optional per-operation timeout override. When set and positive, supersedes
+  // CreateClientRequest.per_operation_timeout and the client library default
+  // timeout for this call.
+  google.protobuf.Duration per_operation_timeout = 3;
 }
 
 // Response from test proxy service for SampleRowKeysRequest.
@@ -248,6 +280,11 @@ message ReadModifyWriteRowRequest {
 
   // The raw request to the Bigtable server.
   google.bigtable.v2.ReadModifyWriteRowRequest request = 2;
+
+  // Optional per-operation timeout override. When set and positive, supersedes
+  // CreateClientRequest.per_operation_timeout and the client library default
+  // timeout for this call.
+  google.protobuf.Duration per_operation_timeout = 3;
 }
 
 // Request to test proxy service to execute a query.
@@ -260,6 +297,11 @@ message ExecuteQueryRequest {
 
   // The file descriptor set for the query.
   google.protobuf.FileDescriptorSet proto_descriptors = 3;
+
+  // Optional per-operation timeout override. When set and positive, supersedes
+  // CreateClientRequest.per_operation_timeout and the client library default
+  // timeout for this call.
+  google.protobuf.Duration per_operation_timeout = 4;
 }
 
 // Response from test proxy service for ExecuteQueryRequest.
