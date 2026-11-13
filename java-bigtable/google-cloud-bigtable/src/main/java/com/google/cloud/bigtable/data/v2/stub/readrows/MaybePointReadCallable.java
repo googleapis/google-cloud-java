@@ -110,10 +110,7 @@ public class MaybePointReadCallable<RowT> extends ServerStreamingCallable<Query,
       future =
           ApiFutures.transformAsync(
               pointReader.futureCall(request, context),
-              row ->
-                  row == null
-                      ? ApiFutures.immediateFuture(null)
-                      : ApiFutures.transform(demand, unused -> row, MoreExecutors.directExecutor()),
+              row -> waitForDemand(row, demand),
               MoreExecutors.directExecutor());
     } catch (Throwable t) {
       responseObserver.onError(MoreObjects.firstNonNull(cancellation.get(), t));
@@ -156,5 +153,13 @@ public class MaybePointReadCallable<RowT> extends ServerStreamingCallable<Query,
           }
         },
         MoreExecutors.directExecutor());
+  }
+
+  private static <RowT> ApiFuture<RowT> waitForDemand(RowT row, ApiFuture<Void> demand) {
+    if (row == null) {
+      return ApiFutures.immediateFuture(null);
+    }
+    // Wait for demand to complete, then forward the row.
+    return ApiFutures.transform(demand, unused -> row, MoreExecutors.directExecutor());
   }
 }
