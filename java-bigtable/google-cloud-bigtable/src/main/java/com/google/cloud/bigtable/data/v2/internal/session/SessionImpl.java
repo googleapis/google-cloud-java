@@ -405,6 +405,10 @@ public class SessionImpl implements Session, VRpcSessionApi {
           closeReason = req;
           updateState(SessionState.CLOSING);
 
+          // If a vRPC is still in flight on the wire (even if cancelled locally via cancelRpc),
+          // wait in CLOSING for the server's vRPC response before sending CloseSessionRequest:
+          // the protocol has no wire cancel-vRPC message yet, and sending CloseSessionRequest while
+          // the server still has an active vRPC logs a server-side blackholed-response error.
           if (currentRpc == null) {
             startGracefulClose();
           }
@@ -493,6 +497,17 @@ public class SessionImpl implements Session, VRpcSessionApi {
   public void cancelRpc(long rpcId, @Nullable String message, @Nullable Throwable cause) {
     sessionSyncContext.execute(
         () -> {
+          // The Session V3 protocol does not yet have a wire cancel-vRPC message, so the server
+          // continues executing the vRPC until it finishes or hits the server-enforced
+          // VirtualRpcRequest.deadline. We record currentCancel here while keeping currentRpc set
+          // until handleVRpcResponse / handleVRpcErrorResponse arrives so that:
+          //   1. A READY session is not returned to the pool while the server still has an active
+          //      vRPC on it (which would violate the single-in-flight-vRPC limit on the next call).
+          //   2. A CLOSING session waits for the server to finish the vRPC before sending
+          //      CloseSessionRequest (sending CloseSessionRequest while a vRPC is still active on
+          //      the server is treated as a blackholed-response error by the server).
+          // Note: the caller's operation future is already completed immediately by
+          // RetryingVRpc.cancel().
           if (currentRpc != null && rpcId == currentRpc.rpcId) {
             currentCancel =
                 VRpcResult.createRejectedError(
@@ -556,6 +571,15 @@ public class SessionImpl implements Session, VRpcSessionApi {
   // Runs on sessionSyncContext (dispatched from the wheel-timer tick body). If the session is
   // still in WAIT_SERVER_CLOSE, the server never closed the stream after CloseSessionRequest;
   // force-close so the session reaches CLOSED.
+  //
+  // Why this only covers WAIT_SERVER_CLOSE and not CLOSING:
+  //   - A session only stays in CLOSING while currentRpc != null (an active vRPC is on the wire).
+  //   - Server invariant: the server only sends HeartbeatResponse while a vRPC is actively
+  //     running on the server, and enforces VirtualRpcRequest.deadline on every vRPC.
+  //   - Therefore, CLOSING is already bounded by checkHeartbeat() (if the server dies/stalls) and
+  //     the server-enforced vRPC deadline (if the server is alive and sending heartbeats).
+  //   - Once the vRPC finishes and the session enters WAIT_SERVER_CLOSE, no vRPC is active so
+  //     server heartbeats stop, and closeTimeout takes over to bound waiting for stream closure.
   private void checkCloseTimeout() {
     sessionSyncContext.throwIfNotInThisSynchronizationContext();
     if (state != SessionState.WAIT_SERVER_CLOSE) {
