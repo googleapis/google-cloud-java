@@ -568,7 +568,7 @@ public class RetryingVRpcTest {
     UnaryResponseFuture<SessionFakeScriptedResponse> f = new UnaryResponseFuture<>();
     retrying.start(
         SessionFakeScriptedRequest.getDefaultInstance(),
-        VRpc.VRpcCallContext.create(Deadline.after(0, TimeUnit.MILLISECONDS), true, tracer),
+        VRpc.VRpcCallContext.create(Deadline.after(1, TimeUnit.HOURS), true, tracer),
         f);
 
     ExecutionException executionException = assertThrows(ExecutionException.class, f::get);
