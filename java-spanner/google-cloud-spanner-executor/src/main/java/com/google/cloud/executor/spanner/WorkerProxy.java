@@ -42,6 +42,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.annotation.Nullable;
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.CommandLineParser;
 import org.apache.commons.cli.DefaultParser;
@@ -56,11 +57,13 @@ import org.apache.commons.io.FileUtils;
 public class WorkerProxy {
 
   private static final Logger LOGGER = Logger.getLogger(WorkerProxy.class.getName());
+  private static final HttpTransportFactory HTTP_TRANSPORT_FACTORY = NetHttpTransport::new;
 
-  private static final String OPTION_SPANNER_PORT = "spanner_port";
-  private static final String OPTION_PROXY_PORT = "proxy_port";
-  private static final String OPTION_CERTIFICATE = "cert";
-  private static final String OPTION_SERVICE_KEY_FILE = "service_key_file";
+  static final String OPTION_SPANNER_PORT = "spanner_port";
+  static final String OPTION_PROXY_PORT = "proxy_port";
+  static final String OPTION_CERTIFICATE = "cert";
+  static final String OPTION_SERVICE_KEY_FILE = "service_key_file";
+  static final String OPTION_ACCESS_TOKEN_FILE = "access_token_file";
   private static final String OPTION_USE_PLAIN_TEXT_CHANNEL = "use_plain_text_channel";
   private static final String OPTION_ENABLE_GRPC_FAULT_INJECTOR = "enable_grpc_fault_injector";
   private static final String OPTION_MULTIPLEXED_SESSION_OPERATIONS_RATIO =
@@ -70,6 +73,7 @@ public class WorkerProxy {
   public static int proxyPort = 0;
   public static String cert = "";
   public static String serviceKeyFile = "";
+  public static String accessTokenFile = "";
   public static double multiplexedSessionOperationsRatio = 1.0;
   public static boolean usePlainTextChannel = false;
   public static boolean enableGrpcFaultInjector = false;
@@ -83,25 +87,41 @@ public class WorkerProxy {
   private static final int MIN_PORT = 0, MAX_PORT = 65535;
   private static final double MIN_RATIO = 0.0, MAX_RATIO = 1.0, TRACE_SAMPLING_RATE = 0.01;
 
+  @Nullable
+  static Credentials getCredentialsFromFlags() throws IOException {
+    boolean hasAccessTokenFile = accessTokenFile != null && !accessTokenFile.isEmpty();
+    boolean hasServiceKeyFile = serviceKeyFile != null && !serviceKeyFile.isEmpty();
+    if (hasAccessTokenFile && hasServiceKeyFile) {
+      throw new IllegalArgumentException(
+          "Cannot specify both --"
+              + OPTION_SERVICE_KEY_FILE
+              + " and --"
+              + OPTION_ACCESS_TOKEN_FILE);
+    }
+    if (hasAccessTokenFile) {
+      return new AccessTokenFileCredentials(new File(accessTokenFile));
+    }
+    if (!hasServiceKeyFile) {
+      return null;
+    }
+    File keyFile = new File(serviceKeyFile);
+    if (!keyFile.exists() || keyFile.isDirectory()) {
+      return null;
+    }
+    return ServiceAccountCredentials.fromStream(
+        new ByteArrayInputStream(FileUtils.readFileToByteArray(keyFile)), HTTP_TRANSPORT_FACTORY);
+  }
+
   public static OpenTelemetrySdk setupOpenTelemetrySdk() throws Exception {
-    if (serviceKeyFile == null
-        || serviceKeyFile.isEmpty()
-        || !new File(serviceKeyFile).exists()
-        || new File(serviceKeyFile).isDirectory()) {
+    Credentials credentials = getCredentialsFromFlags();
+    if (credentials == null) {
       LOGGER.log(
           Level.WARNING,
-          "serviceKeyFile is empty or invalid; starting without OpenTelemetry trace export: "
-              + serviceKeyFile);
+          "Credentials are empty or invalid; starting without OpenTelemetry trace export.");
       return OpenTelemetrySdk.builder()
           .setPropagators(ContextPropagators.create(W3CTraceContextPropagator.getInstance()))
           .build();
     }
-    // Read credentials from the serviceKeyFile.
-    HttpTransportFactory HTTP_TRANSPORT_FACTORY = NetHttpTransport::new;
-    Credentials credentials =
-        ServiceAccountCredentials.fromStream(
-            new ByteArrayInputStream(FileUtils.readFileToByteArray(new File(serviceKeyFile))),
-            HTTP_TRANSPORT_FACTORY);
 
     // OpenTelemetry configuration.
     SpanExporter spanExporter =
@@ -157,9 +177,14 @@ public class WorkerProxy {
           "Certificate need to be assigned in order to start worker proxy.");
     }
     cert = commandLine.getOptionValue(OPTION_CERTIFICATE);
-    if (commandLine.hasOption(OPTION_SERVICE_KEY_FILE)) {
-      serviceKeyFile = commandLine.getOptionValue(OPTION_SERVICE_KEY_FILE);
-    }
+    serviceKeyFile =
+        commandLine.hasOption(OPTION_SERVICE_KEY_FILE)
+            ? commandLine.getOptionValue(OPTION_SERVICE_KEY_FILE)
+            : "";
+    accessTokenFile =
+        commandLine.hasOption(OPTION_ACCESS_TOKEN_FILE)
+            ? commandLine.getOptionValue(OPTION_ACCESS_TOKEN_FILE)
+            : "";
 
     usePlainTextChannel = commandLine.hasOption(OPTION_USE_PLAIN_TEXT_CHANNEL);
     enableGrpcFaultInjector = commandLine.hasOption(OPTION_ENABLE_GRPC_FAULT_INJECTOR);
@@ -210,7 +235,7 @@ public class WorkerProxy {
     server.awaitTermination();
   }
 
-  private static CommandLine buildOptions(String[] args) {
+  static CommandLine buildOptions(String[] args) {
     Options options = new Options();
 
     options.addOption(
@@ -220,6 +245,11 @@ public class WorkerProxy {
         null, OPTION_CERTIFICATE, true, "Certificate used to connect to Spanner GFE.");
     options.addOption(
         null, OPTION_SERVICE_KEY_FILE, true, "Service key file used to set authentication.");
+    options.addOption(
+        null,
+        OPTION_ACCESS_TOKEN_FILE,
+        true,
+        "File containing an OAuth2 access token used to set authentication.");
     options.addOption(
         null,
         OPTION_USE_PLAIN_TEXT_CHANNEL,
@@ -238,7 +268,15 @@ public class WorkerProxy {
 
     CommandLineParser parser = new DefaultParser();
     try {
-      return parser.parse(options, args);
+      CommandLine parsed = parser.parse(options, args);
+      if (parsed.hasOption(OPTION_SERVICE_KEY_FILE) && parsed.hasOption(OPTION_ACCESS_TOKEN_FILE)) {
+        throw new IllegalArgumentException(
+            "Cannot specify both --"
+                + OPTION_SERVICE_KEY_FILE
+                + " and --"
+                + OPTION_ACCESS_TOKEN_FILE);
+      }
+      return parsed;
     } catch (ParseException e) {
       throw new IllegalArgumentException(e.getMessage());
     }
