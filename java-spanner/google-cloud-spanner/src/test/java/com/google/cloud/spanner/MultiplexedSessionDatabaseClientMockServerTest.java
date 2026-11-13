@@ -42,6 +42,7 @@ import com.google.cloud.spanner.MockSpannerServiceImpl.StatementResult;
 import com.google.cloud.spanner.Options.RpcPriority;
 import com.google.cloud.spanner.TransactionRunnerImpl.TransactionContextImpl;
 import com.google.cloud.spanner.connection.RandomResultSetGenerator;
+import com.google.common.base.Stopwatch;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import com.google.common.util.concurrent.MoreExecutors;
@@ -54,6 +55,7 @@ import java.time.Duration;
 import java.util.*;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.stream.Collectors;
@@ -148,6 +150,91 @@ public class MultiplexedSessionDatabaseClientMockServerTest extends AbstractMock
     assertEquals(1, requests.size());
 
     testSpanner.close();
+  }
+
+  @Test
+  public void testCloseUnblocksWaitingTransaction() throws Exception {
+    mockSpanner.freeze();
+
+    Spanner testSpanner =
+        SpannerOptions.newBuilder()
+            .setProjectId("test-project")
+            .setChannelProvider(channelProvider)
+            .setCredentials(NoCredentials.getInstance())
+            .build()
+            .getService();
+    try {
+      DatabaseClient client = testSpanner.getDatabaseClient(DatabaseId.of("p", "i", "d"));
+
+      // Wait until the initial CreateSession request is in flight and frozen on the server.
+      mockSpanner.waitForRequestsToContain(CreateSessionRequest.class, 5000);
+
+      // Start a query that blocks waiting for the session to be created.
+      try (ReadContext readContext = client.singleUse();
+          ResultSet resultSet = readContext.executeQuery(STATEMENT)) {
+        // Close the client while the transaction is waiting for session creation.
+        testSpanner.close();
+
+        // The transaction must immediately fail with FAILED_PRECONDITION (client closed),
+        // rather than hanging indefinitely waiting for mockSpanner to unfreeze.
+        SpannerException exception = assertThrows(SpannerException.class, resultSet::next);
+        assertEquals(ErrorCode.FAILED_PRECONDITION, exception.getErrorCode());
+        assertTrue(exception.getMessage().contains("This client has been closed"));
+      }
+    } finally {
+      mockSpanner.unfreeze();
+      if (!testSpanner.isClosed()) {
+        testSpanner.close();
+      }
+    }
+  }
+
+  @Test
+  public void testCloseUnblocksTransactionWaitingOnRetry() throws Exception {
+    // Attempt 1 fails immediately with DEADLINE_EXCEEDED, and freezeAfter(1) atomically freezes
+    // the mock server as soon as the retry CreateSessionRequest (attempt 2) arrives.
+    mockSpanner.setCreateSessionExecutionTime(
+        SimulatedExecutionTime.ofException(Status.DEADLINE_EXCEEDED.asRuntimeException()));
+    mockSpanner.freezeAfter(1);
+
+    Spanner testSpanner =
+        SpannerOptions.newBuilder()
+            .setProjectId("test-project")
+            .setChannelProvider(channelProvider)
+            .setCredentials(NoCredentials.getInstance())
+            .build()
+            .getService();
+    try {
+      DatabaseClient client = testSpanner.getDatabaseClient(DatabaseId.of("p", "i", "d"));
+
+      // Wait until attempt 1 has failed and attempt 2 has reached the mock server and frozen.
+      Stopwatch watch = Stopwatch.createStarted();
+      while (mockSpanner.countRequestsOfType(CreateSessionRequest.class) < 2) {
+        if (watch.elapsed(TimeUnit.MILLISECONDS) > 5000) {
+          throw new TimeoutException(
+              "Timed out waiting for retry CreateSessionRequest to reach mock server");
+        }
+        Thread.sleep(1L);
+      }
+
+      // Start a query that binds to the pending retry future (attempt 2).
+      try (ReadContext readContext = client.singleUse();
+          ResultSet resultSet = readContext.executeQuery(STATEMENT)) {
+        // Close the client while the query is waiting for attempt 2.
+        testSpanner.close();
+
+        // The transaction must immediately fail with FAILED_PRECONDITION (client closed),
+        // instead of hanging while attempt 2 is frozen.
+        SpannerException exception = assertThrows(SpannerException.class, resultSet::next);
+        assertEquals(ErrorCode.FAILED_PRECONDITION, exception.getErrorCode());
+        assertTrue(exception.getMessage().contains("This client has been closed"));
+      }
+    } finally {
+      mockSpanner.unfreeze();
+      if (!testSpanner.isClosed()) {
+        testSpanner.close();
+      }
+    }
   }
 
   @Test
