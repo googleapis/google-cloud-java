@@ -18,8 +18,10 @@ package com.google.cloud.bigtable.data.v2.internal.channels;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyLong;
 import static org.mockito.ArgumentMatchers.eq;
+import static org.mockito.Mockito.doAnswer;
 import static org.mockito.Mockito.doThrow;
 import static org.mockito.Mockito.lenient;
+import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
@@ -32,6 +34,8 @@ import com.google.bigtable.v2.SessionResponse;
 import com.google.cloud.bigtable.data.v2.internal.channels.SessionStream.Listener;
 import com.google.cloud.bigtable.data.v2.internal.csm.Metrics;
 import com.google.cloud.bigtable.data.v2.internal.csm.NoopMetrics;
+import com.google.cloud.bigtable.data.v2.internal.csm.tracers.PoolFallbackListener;
+import com.google.cloud.bigtable.data.v2.internal.csm.tracers.PoolFallbackListener.ChannelFallbackReason;
 import io.grpc.CallOptions;
 import io.grpc.Metadata;
 import io.grpc.MethodDescriptor;
@@ -42,6 +46,7 @@ import java.util.Map;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicReference;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -361,5 +366,109 @@ class FallbackChannelPoolTest {
 
     checkTask.run();
     verify(exec, times(3)).schedule(any(Runnable.class), anyLong(), any(TimeUnit.class));
+  }
+
+  @Test
+  void testPreEstablishmentForceCloseCountsAsFailure() {
+    PoolFallbackListener fallbackListener = mock(PoolFallbackListener.class);
+    pool = new FallbackChannelPool(config, fallbackListener, exec);
+    pool.start();
+
+    SessionStream stream = pool.newStream(methodDescriptor, CallOptions.DEFAULT);
+    stream.start(listener, new Metadata());
+
+    verify(primaryStream).start(listenerCaptor.capture(), any());
+    Listener primaryListener = listenerCaptor.getValue();
+
+    // Force close before onBeforeSessionStart (e.g. SessionImpl.checkOpenTimeout()).
+    stream.forceClose("session open timeout", null);
+    verify(primaryStream).forceClose("session open timeout", null);
+    primaryListener.onClose(Status.CANCELLED, new Metadata());
+
+    checkTask.run();
+
+    verify(fallbackListener).onFallback("Primary", "Fallback", ChannelFallbackReason.ERROR_RATE);
+    pool.newStream(methodDescriptor, CallOptions.DEFAULT);
+    verify(secondary).newStream(any(), any());
+  }
+
+  @Test
+  void testStartExceptionFollowedByForceCloseDoesNotDoubleCount() {
+    pool.start();
+
+    // 2 successful sessions on primary
+    openSessionSuccessfully(primaryStream);
+    openSessionSuccessfully(primaryStream);
+
+    // 3rd session throws on start(), followed by forceClose() and onClose(CANCELLED)
+    AtomicReference<Listener> failingListener = new AtomicReference<>();
+    doAnswer(
+            invocation -> {
+              failingListener.set(invocation.getArgument(0));
+              throw new RuntimeException("boom");
+            })
+        .when(primaryStream)
+        .start(any(), any());
+
+    SessionStream failingStream = pool.newStream(methodDescriptor, CallOptions.DEFAULT);
+    try {
+      failingStream.start(listener, new Metadata());
+    } catch (RuntimeException e) {
+      // expected
+    }
+    failingStream.forceClose("Session aborted due to uncaught exception", null);
+    failingListener.get().onClose(Status.CANCELLED, new Metadata());
+
+    // 2 successes, 1 failure (not 2). Error rate is 1/3 < 0.5, so should NOT fallback.
+    checkTask.run();
+
+    pool.newStream(methodDescriptor, CallOptions.DEFAULT);
+    verify(secondary, never()).newStream(any(), any());
+  }
+
+  @Test
+  void testConcurrentCloseDuringCheckRatesDoesNotReschedule() {
+    PoolFallbackListener fallbackListener =
+        (from, to, reason) -> {
+          // Simulate close() occurring while checkRatesAndReschedule() is in flight before
+          // scheduleCheckRates().
+          pool.close();
+        };
+    pool = new FallbackChannelPool(config, fallbackListener, exec);
+    pool.start();
+    verify(exec, times(1)).schedule(any(Runnable.class), anyLong(), any(TimeUnit.class));
+
+    openSessionWithError(primaryStream, Status.UNAVAILABLE);
+
+    checkTask.run();
+
+    // Verify schedule() was NOT called a second time after pool.close()
+    verify(exec, times(1)).schedule(any(Runnable.class), anyLong(), any(TimeUnit.class));
+  }
+
+  @Test
+  void testCloseIsIdempotentAndSuppressesPostCloseCallbacks() {
+    PoolFallbackListener fallbackListener = mock(PoolFallbackListener.class);
+    pool = new FallbackChannelPool(config, fallbackListener, exec);
+    pool.start();
+
+    Listener inFlightListener = openSessionGetListener(primaryStream);
+
+    pool.close();
+    pool.close();
+
+    // Verify close() is idempotent
+    verify(primary, times(1)).close();
+    verify(secondary, times(1)).close();
+    verify(future, times(1)).cancel(false);
+
+    // Post-close stream failure, checkTask execution, start(), and updateConfig() should be no-ops
+    inFlightListener.onClose(Status.UNAVAILABLE, new Metadata());
+    checkTask.run();
+    pool.start();
+    pool.updateConfig(config.toBuilder().setEnabled(false).build());
+
+    verify(fallbackListener, never()).onFallback(any(), any(), any());
+    verify(exec, times(1)).schedule(any(Runnable.class), anyLong(), any(TimeUnit.class));
   }
 }
