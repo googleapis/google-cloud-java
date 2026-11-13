@@ -68,6 +68,7 @@ public class BuiltInMetricsConstant {
   static final String EEF_FALLBACK_COUNT_NAME = "eef.fallback_count";
   static final String EEF_CALL_STATUS_NAME = "eef.call_status";
   static final String CHANNEL_COUNT_NAME = "channel_pool.channel_count";
+  static final String CHANNEL_LOAD_NAME = "channel_pool.channel_load";
 
   public static final Set<String> SPANNER_METRICS =
       ImmutableSet.of(
@@ -153,15 +154,24 @@ public class BuiltInMetricsConstant {
   static final Set<String> GRPC_GCP_CHANNEL_COUNT_ATTRIBUTES =
       ImmutableSet.of("pool_mode", "state", LANE_KEY.getKey(), "pool_index");
 
+  static final Set<String> GRPC_GCP_CHANNEL_LOAD_ATTRIBUTES =
+      ImmutableSet.of("pool_mode", LANE_KEY.getKey());
+
   static final Map<String, Set<String>> GRPC_GCP_METRIC_ADDITIONAL_ATTRIBUTES =
       ImmutableMap.<String, Set<String>>builder()
           .put(EEF_FALLBACK_COUNT_NAME, GRPC_GCP_EEF_FALLBACK_COUNT_ATTRIBUTES)
           .put(EEF_CALL_STATUS_NAME, GRPC_GCP_EEF_CALL_STATUS_ATTRIBUTES)
           .put(CHANNEL_COUNT_NAME, GRPC_GCP_CHANNEL_COUNT_ATTRIBUTES)
+          .put(CHANNEL_LOAD_NAME, GRPC_GCP_CHANNEL_LOAD_ATTRIBUTES)
           .build();
 
+  // The default aggregation of a histogram uses the bucket boundaries that grpc-gcp sets.
+  static final Map<String, Aggregation> GRPC_GCP_METRIC_AGGREGATIONS =
+      ImmutableMap.of(CHANNEL_LOAD_NAME, Aggregation.defaultAggregation());
+
   static final Collection<String> GRPC_GCP_METRICS_TO_ENABLE =
-      ImmutableList.of(EEF_FALLBACK_COUNT_NAME, EEF_CALL_STATUS_NAME, CHANNEL_COUNT_NAME);
+      ImmutableList.of(
+          EEF_FALLBACK_COUNT_NAME, EEF_CALL_STATUS_NAME, CHANNEL_COUNT_NAME, CHANNEL_LOAD_NAME);
 
   public static final String SPANNER_RESOURCE_TYPE = "spanner_instance_client";
   public static final String UNDEFINED_PROJECT_ID = "undefined-project";
@@ -366,7 +376,7 @@ public class BuiltInMetricsConstant {
       View view =
           View.builder()
               .setName(BuiltInMetricsConstant.METER_NAME + '/' + metric.replace(".", "/"))
-              .setAggregation(Aggregation.sum())
+              .setAggregation(GRPC_GCP_METRIC_AGGREGATIONS.getOrDefault(metric, Aggregation.sum()))
               .setAttributeFilter(attributesFilter)
               .build();
 

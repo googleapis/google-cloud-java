@@ -18,17 +18,23 @@ package com.google.cloud.spanner;
 
 import static com.google.common.truth.Truth.assertThat;
 
+import com.google.api.gax.grpc.GrpcCallContext;
+import com.google.api.gax.rpc.ApiCallContext;
 import com.google.cloud.NoCredentials;
+import com.google.cloud.grpc.GcpManagedChannel;
 import com.google.cloud.grpc.GcpManagedChannelOptions;
 import com.google.cloud.grpc.GcpManagedChannelOptions.GcpMetricsOptions;
+import com.google.cloud.spanner.SpannerOptions.CallContextConfigurator;
 import com.google.cloud.spanner.connection.AbstractMockServerTest;
 import com.google.cloud.spanner.spi.v1.GapicSpannerRpc;
 import io.grpc.ManagedChannelBuilder;
+import io.grpc.MethodDescriptor;
 import io.opentelemetry.api.common.AttributeKey;
 import io.opentelemetry.api.common.Attributes;
 import io.opentelemetry.sdk.OpenTelemetrySdk;
 import io.opentelemetry.sdk.metrics.SdkMeterProvider;
 import io.opentelemetry.sdk.metrics.SdkMeterProviderBuilder;
+import io.opentelemetry.sdk.metrics.data.HistogramPointData;
 import io.opentelemetry.sdk.metrics.data.LongPointData;
 import io.opentelemetry.sdk.metrics.data.MetricData;
 import io.opentelemetry.sdk.testing.exporter.InMemoryMetricReader;
@@ -44,6 +50,8 @@ import org.junit.runners.JUnit4;
 public class ChannelPoolBuiltInMetricsTest extends AbstractMockServerTest {
   private static final String CHANNEL_COUNT =
       BuiltInMetricsConstant.METER_NAME + "/channel_pool/channel_count";
+  private static final String CHANNEL_LOAD =
+      BuiltInMetricsConstant.METER_NAME + "/channel_pool/channel_load";
   private static final AttributeKey<String> POOL_MODE = AttributeKey.stringKey("pool_mode");
   private static final AttributeKey<String> STATE = AttributeKey.stringKey("state");
   private static final AttributeKey<String> POOL_INDEX = AttributeKey.stringKey("pool_index");
@@ -98,6 +106,61 @@ public class ChannelPoolBuiltInMetricsTest extends AbstractMockServerTest {
       executeSelect1(spanner);
 
       assertThat(channelCountPoints()).isEmpty();
+      assertThat(channelLoadPoints()).isEmpty();
+    }
+  }
+
+  @Test
+  public void channelLoadIsReportedWithTheDatabaseOfTheCall() {
+    try (Spanner spanner = createOptions().build().getService()) {
+      executeSelect1(spanner);
+
+      List<HistogramPointData> points = channelLoadPoints();
+      assertThat(points).hasSize(1);
+      HistogramPointData point = points.get(0);
+      assertThat(point.getAttributes().get(BuiltInMetricsConstant.PROJECT_ID_KEY))
+          .isEqualTo("my-project");
+      assertThat(point.getAttributes().get(BuiltInMetricsConstant.INSTANCE_ID_KEY))
+          .isEqualTo("my-instance");
+      assertThat(point.getAttributes().get(BuiltInMetricsConstant.DATABASE_KEY))
+          .isEqualTo("my-database");
+      assertThat(point.getAttributes().get(BuiltInMetricsConstant.LANE_KEY))
+          .isEqualTo(BuiltInMetricsConstant.LANE_CLOUDPATH);
+      assertThat(point.getAttributes().get(POOL_MODE)).isEqualTo("static");
+      assertThat(point.getCount()).isAtLeast(1);
+      assertThat(point.getBoundaries())
+          .containsExactly(
+              1.0, 2.0, 3.0, 5.0, 8.0, 12.0, 16.0, 20.0, 25.0, 30.0, 40.0, 50.0, 75.0, 100.0, 150.0,
+              200.0)
+          .inOrder();
+    }
+  }
+
+  @Test
+  public void applicationCannotChangeTheChannelLoadAttributes() {
+    CallContextConfigurator configurator =
+        new CallContextConfigurator() {
+          @Override
+          public <ReqT, RespT> ApiCallContext configure(
+              ApiCallContext context, ReqT request, MethodDescriptor<ReqT, RespT> method) {
+            GrpcCallContext grpcContext = (GrpcCallContext) context;
+            return grpcContext.withCallOptions(
+                grpcContext
+                    .getCallOptions()
+                    .withOption(
+                        GcpManagedChannel.BUILT_IN_METRICS_ATTRIBUTES_KEY,
+                        Attributes.of(BuiltInMetricsConstant.PROJECT_ID_KEY, "other-project")));
+          }
+        };
+    try (Spanner spanner =
+        createOptions().setCallContextConfigurator(configurator).build().getService()) {
+      executeSelect1(spanner);
+
+      assertThat(
+              channelLoadPoints().stream()
+                  .map(point -> point.getAttributes().get(BuiltInMetricsConstant.PROJECT_ID_KEY))
+                  .collect(Collectors.toList()))
+          .containsExactly("my-project");
     }
   }
 
@@ -159,6 +222,7 @@ public class ChannelPoolBuiltInMetricsTest extends AbstractMockServerTest {
       executeSelect1(spanner);
 
       assertThat(channelCountPoints()).isEmpty();
+      assertThat(channelLoadPoints()).isEmpty();
     }
   }
 
@@ -168,6 +232,7 @@ public class ChannelPoolBuiltInMetricsTest extends AbstractMockServerTest {
       executeSelect1(spanner);
 
       assertThat(channelCountPoints()).isEmpty();
+      assertThat(channelLoadPoints()).isEmpty();
     }
   }
 
@@ -242,6 +307,13 @@ public class ChannelPoolBuiltInMetricsTest extends AbstractMockServerTest {
   private List<LongPointData> activeChannelCountPoints() {
     return channelCountPoints().stream()
         .filter(point -> "active".equals(point.getAttributes().get(STATE)))
+        .collect(Collectors.toList());
+  }
+
+  private List<HistogramPointData> channelLoadPoints() {
+    return builtInReader.collectAllMetrics().stream()
+        .filter(metric -> metric.getName().equals(CHANNEL_LOAD))
+        .flatMap(metric -> metric.getHistogramData().getPoints().stream())
         .collect(Collectors.toList());
   }
 }

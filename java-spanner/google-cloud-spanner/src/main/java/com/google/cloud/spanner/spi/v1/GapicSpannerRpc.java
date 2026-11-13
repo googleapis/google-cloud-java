@@ -2738,6 +2738,15 @@ public class GapicSpannerRpc implements SpannerRpc {
     context =
         context.withCallOptions(
             context.getCallOptions().withOption(REQUEST_ID_CALL_OPTIONS_KEY, requestId));
+    if (builtInChannelPoolMetrics != null) {
+      context =
+          context.withCallOptions(
+              context
+                  .getCallOptions()
+                  .withOption(
+                      GcpManagedChannel.BUILT_IN_METRICS_ATTRIBUTES_KEY,
+                      metadataProvider.newBuiltInMetricsAttributes(resource)));
+    }
     context = context.withExtraHeaders(metadataProvider.newExtraHeaders(resource, projectName));
     if (routeToLeader && leaderAwareRoutingEnabled) {
       context = context.withExtraHeaders(metadataProvider.newRouteToLeaderHeader());
