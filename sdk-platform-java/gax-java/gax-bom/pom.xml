@@ -11,8 +11,8 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-shared-config</artifactId>
-    <version>1.17.0</version>
-    <relativePath/>
+    <version>1.27.0</version><!-- {x-version-update:google-cloud-shared-config:current} -->
+    <relativePath>../../../java-shared-config/java-shared-config/pom.xml</relativePath>
   </parent>
 
   <developers>
@@ -102,7 +102,6 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-checkstyle-plugin</artifactId>
-        <version>3.6.0</version>
         <configuration>
           <skip>true</skip>
         </configuration>
@@ -115,21 +114,6 @@
             <goals>
               <goal>test-jar</goal>
             </goals>
-            <configuration>
-              <skip>true</skip>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-      <!-- This POM-only module inherits a released version of google-cloud-shared-config from Central
-           which does not define the enforce-banned-duplicate-classes execution. Skip it here to prevent
-           "No rules are configured" errors when invoking enforcer:enforce@enforce-banned-duplicate-classes. -->
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-enforcer-plugin</artifactId>
-        <executions>
-          <execution>
-            <id>enforce-banned-duplicate-classes</id>
             <configuration>
               <skip>true</skip>
             </configuration>
