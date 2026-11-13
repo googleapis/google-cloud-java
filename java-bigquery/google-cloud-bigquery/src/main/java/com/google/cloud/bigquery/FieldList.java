@@ -52,7 +52,10 @@ public final class FieldList extends AbstractList<Field> implements Serializable
     this.fields = ImmutableList.copyOf(fields);
     Map<String, Integer> caseInsensitiveMap = new CaseInsensitiveMap();
     int index = 0;
-    for (Field field : fields) {
+    // Iterate this.fields (already materialized) instead of the input Iterable.
+    // Callers may pass a lazy view (e.g. Lists.transform), which would otherwise re-run
+    // and deserialize fields a second time.
+    for (Field field : this.fields) {
       caseInsensitiveMap.put(field.getName(), index);
       index++;
     }
@@ -115,6 +118,11 @@ public final class FieldList extends AbstractList<Field> implements Serializable
    * @param fields the schema fields
    */
   public static FieldList of(Iterable<Field> fields) {
+    // FieldList is immutable, so reuse it directly (e.g., when Schema.fromPb passes
+    // FieldList.fromPb(fields) into Schema.of) instead of rebuilding this.fields and nameIndex.
+    if (fields instanceof FieldList) {
+      return (FieldList) fields;
+    }
     return new FieldList(fields);
   }
 
@@ -123,6 +131,12 @@ public final class FieldList extends AbstractList<Field> implements Serializable
   }
 
   static FieldList fromPb(List<TableFieldSchema> fields) {
-    return FieldList.of(Lists.transform(fields, Field.FROM_PB_FUNCTION));
+    // Eagerly convert each field instead of wrapping in Lists.transform so every field and
+    // nested RECORD subtree is deserialized once with pre-sized storage.
+    ImmutableList.Builder<Field> builder = ImmutableList.builderWithExpectedSize(fields.size());
+    for (TableFieldSchema fieldPb : fields) {
+      builder.add(Field.fromPb(fieldPb));
+    }
+    return new FieldList(builder.build());
   }
 }
