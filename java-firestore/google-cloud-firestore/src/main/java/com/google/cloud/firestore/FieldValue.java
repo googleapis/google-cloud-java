@@ -41,6 +41,11 @@ public abstract class FieldValue {
         }
 
         @Override
+        boolean isIdempotent() {
+          return true;
+        }
+
+        @Override
         String getMethodName() {
           return "FieldValue.serverTimestamp()";
         }
@@ -64,6 +69,11 @@ public abstract class FieldValue {
         @Override
         boolean includeInDocumentTransform() {
           return false;
+        }
+
+        @Override
+        boolean isIdempotent() {
+          return true;
         }
 
         @Override
@@ -93,6 +103,11 @@ public abstract class FieldValue {
     @Override
     boolean includeInDocumentTransform() {
       return true;
+    }
+
+    @Override
+    boolean isIdempotent() {
+      return false;
     }
 
     @Override
@@ -141,6 +156,11 @@ public abstract class FieldValue {
 
     @Override
     boolean includeInDocumentTransform() {
+      return true;
+    }
+
+    @Override
+    boolean isIdempotent() {
       return true;
     }
 
@@ -194,6 +214,11 @@ public abstract class FieldValue {
     }
 
     @Override
+    boolean isIdempotent() {
+      return true;
+    }
+
+    @Override
     String getMethodName() {
       return "FieldValue.maximum()";
     }
@@ -239,6 +264,11 @@ public abstract class FieldValue {
 
     @Override
     boolean includeInDocumentTransform() {
+      return true;
+    }
+
+    @Override
+    boolean isIdempotent() {
       return true;
     }
 
@@ -295,6 +325,11 @@ public abstract class FieldValue {
 
     @Override
     boolean includeInDocumentTransform() {
+      return true;
+    }
+
+    @Override
+    boolean isIdempotent() {
       return true;
     }
 
@@ -490,6 +525,9 @@ public abstract class FieldValue {
 
   /** Whether this FieldTransform should be included in the list of document transforms. */
   abstract boolean includeInDocumentTransform();
+
+  /** Whether this FieldValue operation is idempotent and safe to retry on DEADLINE_EXCEEDED. */
+  abstract boolean isIdempotent();
 
   /** The name of the method that returned this FieldValue instance. */
   abstract String getMethodName();

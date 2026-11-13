@@ -24,15 +24,20 @@ import static java.util.stream.Collectors.toCollection;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.InternalExtensionOnly;
+import com.google.api.gax.grpc.GrpcCallContext;
+import com.google.api.gax.rpc.StatusCode;
+import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.firestore.UserDataConverter.EncodingOptions;
 import com.google.cloud.firestore.encoding.CustomClassMapper;
 import com.google.cloud.firestore.telemetry.TelemetryConstants;
 import com.google.cloud.firestore.telemetry.TraceUtil;
 import com.google.cloud.firestore.telemetry.TraceUtil.Scope;
 import com.google.common.base.Preconditions;
+import com.google.common.collect.ImmutableSet;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.firestore.v1.CommitRequest;
 import com.google.firestore.v1.CommitResponse;
+import com.google.firestore.v1.DocumentTransform.FieldTransform;
 import com.google.firestore.v1.Write;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Timestamp;
@@ -58,13 +63,25 @@ import javax.annotation.Nullable;
  */
 @InternalExtensionOnly
 public abstract class UpdateBuilder<T> {
+  static final Set<StatusCode.Code> IDEMPOTENT_COMMIT_RETRYABLE_CODES =
+      ImmutableSet.of(
+          StatusCode.Code.RESOURCE_EXHAUSTED,
+          StatusCode.Code.UNAVAILABLE,
+          StatusCode.Code.DEADLINE_EXCEEDED);
+
   static final class WriteOperation {
     final Write write;
     final DocumentReference documentReference;
+    final boolean isIdempotent;
 
     WriteOperation(DocumentReference documentReference, Write write) {
+      this(documentReference, write, isIdempotent(write));
+    }
+
+    WriteOperation(DocumentReference documentReference, Write write, boolean isIdempotent) {
       this.documentReference = documentReference;
       this.write = write;
+      this.isIdempotent = isIdempotent;
     }
 
     @Override
@@ -165,7 +182,7 @@ public abstract class UpdateBuilder<T> {
       write.addAllUpdateTransforms(documentTransform.toPb());
     }
 
-    return addWrite(documentReference, write);
+    return addWrite(documentReference, write, documentTransform.isIdempotent());
   }
 
   /**
@@ -289,11 +306,19 @@ public abstract class UpdateBuilder<T> {
       write.setUpdateMask(documentMask.toPb());
     }
 
-    return addWrite(documentReference, write);
+    return addWrite(documentReference, write, documentTransform.isIdempotent());
   }
 
   private T addWrite(DocumentReference documentReference, Write.Builder write) {
-    WriteOperation operation = new WriteOperation(documentReference, write.build());
+    return addWrite(documentReference, write, /* isTransformIdempotent= */ true);
+  }
+
+  private T addWrite(
+      DocumentReference documentReference, Write.Builder write, boolean isTransformIdempotent) {
+    Write builtWrite = write.build();
+    WriteOperation operation =
+        new WriteOperation(
+            documentReference, builtWrite, isTransformIdempotent && isIdempotent(builtWrite));
     int writeIndex;
     synchronized (writes) {
       Preconditions.checkState(
@@ -571,7 +596,7 @@ public abstract class UpdateBuilder<T> {
       write.addAllUpdateTransforms(documentTransform.toPb());
     }
 
-    return addWrite(documentReference, write);
+    return addWrite(documentReference, write, documentTransform.isIdempotent());
   }
 
   /**
@@ -640,8 +665,19 @@ public abstract class UpdateBuilder<T> {
       committed = true;
       CommitRequest request = buildCommitRequest(transactionId);
 
-      ApiFuture<CommitResponse> response =
-          firestore.sendRequest(request, firestore.getClient().commitCallable());
+      UnaryCallable<CommitRequest, CommitResponse> callable =
+          firestore.getClient().commitCallable();
+      if (callable != null
+          && transactionId == null
+          && isIdempotentBatch()
+          && isIdempotentCommit(request)) {
+        callable =
+            callable.withDefaultCallContext(
+                GrpcCallContext.createDefault()
+                    .withRetryableCodes(IDEMPOTENT_COMMIT_RETRYABLE_CODES));
+      }
+
+      ApiFuture<CommitResponse> response = firestore.sendRequest(request, callable);
 
       ApiFuture<List<WriteResult>> returnValue =
           ApiFutures.transform(
@@ -669,6 +705,78 @@ public abstract class UpdateBuilder<T> {
       builder.setTransaction(transactionId);
     }
     return builder.build();
+  }
+
+  boolean isIdempotentBatch() {
+    synchronized (writes) {
+      for (WriteOperation writeOperation : writes) {
+        if (!writeOperation.isIdempotent) {
+          return false;
+        }
+      }
+      return true;
+    }
+  }
+
+  static boolean isIdempotentCommit(CommitRequest request) {
+    if (!request.getTransaction().isEmpty()) {
+      return false;
+    }
+    for (Write write : request.getWritesList()) {
+      if (!isIdempotent(write)) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  static boolean isIdempotent(Write write) {
+    if (write.hasCurrentDocument()) {
+      com.google.firestore.v1.Precondition currentDocument = write.getCurrentDocument();
+      switch (currentDocument.getConditionTypeCase()) {
+        case UPDATE_TIME:
+          return false;
+        case EXISTS:
+          if (!currentDocument.getExists()) {
+            return false;
+          }
+          if (write.getOperationCase() == Write.OperationCase.DELETE) {
+            return false;
+          }
+          break;
+        case CONDITIONTYPE_NOT_SET:
+        default:
+          break;
+      }
+    }
+    for (FieldTransform transform : write.getUpdateTransformsList()) {
+      if (!isIdempotentTransform(transform)) {
+        return false;
+      }
+    }
+    if (write.hasTransform()) {
+      for (FieldTransform transform : write.getTransform().getFieldTransformsList()) {
+        if (!isIdempotentTransform(transform)) {
+          return false;
+        }
+      }
+    }
+    return true;
+  }
+
+  private static boolean isIdempotentTransform(FieldTransform transform) {
+    switch (transform.getTransformTypeCase()) {
+      case SET_TO_SERVER_VALUE:
+      case APPEND_MISSING_ELEMENTS:
+      case REMOVE_ALL_FROM_ARRAY:
+      case MAXIMUM:
+      case MINIMUM:
+        return true;
+      case INCREMENT:
+      case TRANSFORMTYPE_NOT_SET:
+      default:
+        return false;
+    }
   }
 
   /** Checks whether any updates have been queued. */
