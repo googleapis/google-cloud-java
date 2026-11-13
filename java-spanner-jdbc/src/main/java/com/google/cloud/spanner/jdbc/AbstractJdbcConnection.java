@@ -155,7 +155,7 @@ abstract class AbstractJdbcConnection extends AbstractJdbcWrapper
   @Override
   public int getTransactionIsolation() throws SQLException {
     checkClosed();
-    IsolationLevel isolationLevel = spanner.getDefaultIsolationLevel();
+    IsolationLevel isolationLevel = spanner.getTransactionIsolationLevel();
     if (isolationLevel == IsolationLevel.ISOLATION_LEVEL_UNSPECIFIED) {
       return JdbcDatabaseMetaData.getDatabaseDefaultTransactionIsolation(getDatabaseClient());
     }
