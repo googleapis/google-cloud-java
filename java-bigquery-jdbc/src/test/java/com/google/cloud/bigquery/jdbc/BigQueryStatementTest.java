@@ -32,6 +32,7 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.withSettings;
 
+import com.google.api.gax.paging.Page;
 import com.google.api.gax.rpc.ApiException;
 import com.google.api.gax.rpc.ServerStream;
 import com.google.api.gax.rpc.ServerStreamingCallable;
@@ -39,6 +40,7 @@ import com.google.api.gax.rpc.StatusCode;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.Tuple;
 import com.google.cloud.bigquery.BigQuery;
+import com.google.cloud.bigquery.BigQuery.JobListOption;
 import com.google.cloud.bigquery.BigQuery.QueryResultsOption;
 import com.google.cloud.bigquery.BigQuery.TableDataListOption;
 import com.google.cloud.bigquery.BigQueryException;
@@ -55,6 +57,7 @@ import com.google.cloud.bigquery.JobInfo;
 import com.google.cloud.bigquery.JobStatistics;
 import com.google.cloud.bigquery.JobStatistics.QueryStatistics;
 import com.google.cloud.bigquery.JobStatistics.QueryStatistics.StatementType;
+import com.google.cloud.bigquery.JobStatistics.ScriptStatistics;
 import com.google.cloud.bigquery.JobStatistics.SessionInfo;
 import com.google.cloud.bigquery.QueryJobConfiguration;
 import com.google.cloud.bigquery.QueryJobConfiguration.Priority;
@@ -448,6 +451,19 @@ public class BigQueryStatementTest {
     assertEquals(0, bigQueryStatement.getMaxRows());
     bigQueryStatement.setMaxRows(10);
     assertEquals(10, bigQueryStatement.getMaxRows());
+  }
+
+  @Test
+  public void testGetEffectiveTotalRowsIsCappedByMaxRows() throws SQLException {
+    TableResult result = mock(TableResult.class);
+    doReturn(10L).when(result).getTotalRows();
+
+    assertEquals(10, bigQueryStatement.getEffectiveTotalRows(result));
+    // A limit larger than the result must not inflate the total (isLast() relies on it).
+    bigQueryStatement.setMaxRows(1000);
+    assertEquals(10, bigQueryStatement.getEffectiveTotalRows(result));
+    bigQueryStatement.setMaxRows(5);
+    assertEquals(5, bigQueryStatement.getEffectiveTotalRows(result));
   }
 
   @Test
@@ -1721,5 +1737,161 @@ public class BigQueryStatementTest {
       assertNotNull(thrown.getCause());
       assertTrue(thrown.getCause().getCause() instanceof OutOfMemoryError);
     }
+  }
+
+  @Test
+  public void testScriptAppliesMaxResultsPageSizeAndUsesReadApiAcrossChildJobs() throws Exception {
+    BigQueryStatement stmtSpy = createReadApiStatementSpy();
+
+    TableResult parentResult = mockTableResultWithJob("parent-script-job");
+    doReturn(StatementType.SCRIPT).when(parentResult).getStatementType();
+    doReturn(parentResult)
+        .when(bigquery)
+        .queryWithTimeout(any(QueryJobConfiguration.class), any(), any());
+
+    Job childJob1 =
+        createScriptChildJobMock("child-select-1", StatementType.SELECT, 5000L, 1000L, true, null);
+    Job childJob2 =
+        createScriptChildJobMock("child-dml-2", StatementType.INSERT, 0L, 0L, false, 4L);
+    Job childJob3 =
+        createScriptChildJobMock("child-select-3", StatementType.SELECT, 7000L, 1000L, true, null);
+
+    @SuppressWarnings("unchecked")
+    Page<Job> childJobsPage = mock(Page.class);
+    // BigQuery jobs.list returns child jobs in reverse chronological order; handleQueryResult
+    // reverses them into execution order.
+    doReturn(Arrays.asList(childJob3, childJob2, childJob1)).when(childJobsPage).iterateAll();
+    doReturn(childJobsPage)
+        .when(bigquery)
+        .listJobs(eq(JobListOption.parentJobId("parent-script-job")));
+
+    String scriptSql =
+        "SELECT * FROM UNNEST(GENERATE_ARRAY(1, 5000));"
+            + "INSERT INTO t VALUES (1),(2),(3),(4);"
+            + "SELECT * FROM UNNEST(GENERATE_ARRAY(1, 7000));";
+
+    assertTrue(stmtSpy.execute(scriptSql));
+    verify(childJob1).getQueryResults(QueryResultsOption.pageSize(1000L));
+    verify(childJob1, Mockito.never()).getQueryResults();
+    ResultSet rs1 = stmtSpy.getResultSet();
+    assertThat(rs1).isInstanceOf(BigQueryArrowResultSet.class);
+    assertEquals(-1, stmtSpy.getUpdateCount());
+
+    assertFalse(stmtSpy.getMoreResults());
+    verify(childJob2).getQueryResults(QueryResultsOption.pageSize(1000L));
+    verify(childJob2, Mockito.never()).getQueryResults();
+    assertNull(stmtSpy.getResultSet());
+    assertEquals(4, stmtSpy.getUpdateCount());
+
+    assertTrue(stmtSpy.getMoreResults());
+    verify(childJob3).getQueryResults(QueryResultsOption.pageSize(1000L));
+    verify(childJob3, Mockito.never()).getQueryResults();
+    ResultSet rs3 = stmtSpy.getResultSet();
+    assertThat(rs3).isInstanceOf(BigQueryArrowResultSet.class);
+    assertEquals(-1, stmtSpy.getUpdateCount());
+
+    assertFalse(stmtSpy.getMoreResults());
+    assertNull(stmtSpy.getResultSet());
+    assertEquals(-1, stmtSpy.getUpdateCount());
+    verify(stmtSpy, Mockito.times(2)).getReadSession(any(CreateReadSessionRequest.class));
+  }
+
+  @Test
+  public void testScriptUsesJsonForSmallSelectAndReadApiForLargeSelect() throws Exception {
+    BigQueryStatement stmtSpy = createReadApiStatementSpy();
+
+    TableResult parentResult = mockTableResultWithJob("parent-mixed-script-job");
+    doReturn(StatementType.SCRIPT).when(parentResult).getStatementType();
+    doReturn(parentResult)
+        .when(bigquery)
+        .queryWithTimeout(any(QueryJobConfiguration.class), any(), any());
+
+    Job smallChildJob =
+        createScriptChildJobMock("child-small-select", StatementType.SELECT, 10L, 10L, false, null);
+    Job largeChildJob =
+        createScriptChildJobMock(
+            "child-large-select", StatementType.SELECT, 5000L, 1000L, true, null);
+
+    @SuppressWarnings("unchecked")
+    Page<Job> childJobsPage = mock(Page.class);
+    doReturn(Arrays.asList(largeChildJob, smallChildJob)).when(childJobsPage).iterateAll();
+    doReturn(childJobsPage)
+        .when(bigquery)
+        .listJobs(eq(JobListOption.parentJobId("parent-mixed-script-job")));
+
+    assertTrue(stmtSpy.execute("SELECT 1; SELECT * FROM UNNEST(GENERATE_ARRAY(1, 5000));"));
+    verify(smallChildJob).getQueryResults(QueryResultsOption.pageSize(1000L));
+    assertThat(stmtSpy.getResultSet()).isInstanceOf(BigQueryJsonResultSet.class);
+
+    assertTrue(stmtSpy.getMoreResults());
+    verify(largeChildJob).getQueryResults(QueryResultsOption.pageSize(1000L));
+    assertThat(stmtSpy.getResultSet()).isInstanceOf(BigQueryArrowResultSet.class);
+
+    assertFalse(stmtSpy.getMoreResults());
+    verify(stmtSpy, Mockito.times(1)).getReadSession(any(CreateReadSessionRequest.class));
+  }
+
+  @Test
+  public void testHandleQueryResultFromJobCalculatesSqlTypeAndAppliesMaxResults() throws Exception {
+    doReturn(500L).when(bigQueryConnection).getMaxResults();
+    BigQueryStatement stmtSpy = createReadApiStatementSpy();
+
+    Job selectJob =
+        createScriptChildJobMock("job-select", StatementType.SELECT, 2000L, 500L, true, null);
+    assertEquals(
+        BigQueryStatement.SqlType.SELECT, stmtSpy.handleQueryResult("SELECT * FROM t", selectJob));
+    verify(selectJob).getQueryResults(QueryResultsOption.pageSize(500L));
+    assertThat(stmtSpy.getResultSet()).isInstanceOf(BigQueryArrowResultSet.class);
+
+    Job dmlJob = createScriptChildJobMock("job-insert", StatementType.INSERT, 0L, 0L, false, 7L);
+    assertEquals(
+        BigQueryStatement.SqlType.DML,
+        stmtSpy.handleQueryResult("INSERT INTO t VALUES (1)", dmlJob));
+    verify(dmlJob).getQueryResults(QueryResultsOption.pageSize(500L));
+    assertNull(stmtSpy.getResultSet());
+    assertEquals(7, stmtSpy.getUpdateCount());
+  }
+
+  private BigQueryStatement createReadApiStatementSpy() throws SQLException {
+    doReturn(true).when(bigQueryConnection).isEnableHighThroughputAPI();
+    doReturn(100).when(bigQueryConnection).getHighThroughputMinTableSize();
+    doReturn(2).when(bigQueryConnection).getHighThroughputActivationRatio();
+
+    BigQueryStatement stmtSpy = Mockito.spy(new BigQueryStatement(bigQueryConnection));
+    doReturn(storageReadClient).when(stmtSpy).getBigQueryReadClient();
+    doReturn(ReadSession.getDefaultInstance())
+        .when(stmtSpy)
+        .getReadSession(any(CreateReadSessionRequest.class));
+    doReturn(arrowSchema).when(stmtSpy).getArrowSchema(any(ReadSession.class));
+    doReturn(mock(Future.class))
+        .when(stmtSpy)
+        .populateArrowBufferedQueue(
+            any(ReadSession.class), any(BlockingQueue.class), any(BigQueryReadClient.class));
+    doReturn(TABLE_ID).when(stmtSpy).getDestinationTable(any());
+    return stmtSpy;
+  }
+
+  private Job createScriptChildJobMock(
+      String childId,
+      StatementType statementType,
+      long totalRows,
+      long rowsInPage,
+      boolean hasNextPage,
+      Long dmlAffectedRows)
+      throws InterruptedException {
+    TableResult childResult = mockTableResultWithJob(childId);
+    doReturn(Schema.of(fieldList)).when(childResult).getSchema();
+    doReturn(totalRows).when(childResult).getTotalRows();
+    doReturn(rowsInPage).when(childResult).getRowsInPage();
+    doReturn(hasNextPage).when(childResult).hasNextPage();
+    if (dmlAffectedRows != null) {
+      doReturn(dmlAffectedRows).when(childResult).getNumDmlAffectedRows();
+    }
+
+    Job childJob =
+        getJobMock(childResult, QueryJobConfiguration.newBuilder(query).build(), statementType);
+    QueryStatistics stats = childJob.getStatistics();
+    doReturn(mock(ScriptStatistics.class)).when(stats).getScriptStatistics();
+    return childJob;
   }
 }

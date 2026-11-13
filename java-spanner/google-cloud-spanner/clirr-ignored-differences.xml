@@ -1062,6 +1062,11 @@
     <className>com/google/cloud/spanner/connection/Connection</className>
     <method>java.lang.Object getConnectionPropertyValue(com.google.cloud.spanner.connection.ConnectionProperty)</method>
   </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/cloud/spanner/connection/Connection</className>
+    <method>com.google.spanner.v1.TransactionOptions$IsolationLevel getTransactionIsolationLevel()</method>
+  </difference>
   <!-- (Remove since these methods has no usage. CompositeTracer interface is annotated as internal API) -->
   <difference>
     <differenceType>7002</differenceType>

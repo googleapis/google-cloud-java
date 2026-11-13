@@ -32,6 +32,11 @@ import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.run.v2.stub.InstancesStubSettings;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import java.io.IOException;
 import java.util.List;
@@ -128,6 +133,17 @@ public class InstancesSettings extends ClientSettings<InstancesSettings> {
     return ((InstancesStubSettings) getStubSettings()).createInstanceOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to updateInstance. */
+  public UnaryCallSettings<UpdateInstanceRequest, Operation> updateInstanceSettings() {
+    return ((InstancesStubSettings) getStubSettings()).updateInstanceSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateInstance. */
+  public OperationCallSettings<UpdateInstanceRequest, Instance, Instance>
+      updateInstanceOperationSettings() {
+    return ((InstancesStubSettings) getStubSettings()).updateInstanceOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to deleteInstance. */
   public UnaryCallSettings<DeleteInstanceRequest, Operation> deleteInstanceSettings() {
     return ((InstancesStubSettings) getStubSettings()).deleteInstanceSettings();
@@ -170,6 +186,22 @@ public class InstancesSettings extends ClientSettings<InstancesSettings> {
   public OperationCallSettings<StartInstanceRequest, Instance, Instance>
       startInstanceOperationSettings() {
     return ((InstancesStubSettings) getStubSettings()).startInstanceOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getIamPolicy. */
+  public UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings() {
+    return ((InstancesStubSettings) getStubSettings()).getIamPolicySettings();
+  }
+
+  /** Returns the object with the settings used for calls to setIamPolicy. */
+  public UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings() {
+    return ((InstancesStubSettings) getStubSettings()).setIamPolicySettings();
+  }
+
+  /** Returns the object with the settings used for calls to testIamPermissions. */
+  public UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsSettings() {
+    return ((InstancesStubSettings) getStubSettings()).testIamPermissionsSettings();
   }
 
   public static final InstancesSettings create(InstancesStubSettings stub) throws IOException {
@@ -294,6 +326,17 @@ public class InstancesSettings extends ClientSettings<InstancesSettings> {
       return getStubSettingsBuilder().createInstanceOperationSettings();
     }
 
+    /** Returns the builder for the settings used for calls to updateInstance. */
+    public UnaryCallSettings.Builder<UpdateInstanceRequest, Operation> updateInstanceSettings() {
+      return getStubSettingsBuilder().updateInstanceSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateInstance. */
+    public OperationCallSettings.Builder<UpdateInstanceRequest, Instance, Instance>
+        updateInstanceOperationSettings() {
+      return getStubSettingsBuilder().updateInstanceOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to deleteInstance. */
     public UnaryCallSettings.Builder<DeleteInstanceRequest, Operation> deleteInstanceSettings() {
       return getStubSettingsBuilder().deleteInstanceSettings();
@@ -337,6 +380,22 @@ public class InstancesSettings extends ClientSettings<InstancesSettings> {
     public OperationCallSettings.Builder<StartInstanceRequest, Instance, Instance>
         startInstanceOperationSettings() {
       return getStubSettingsBuilder().startInstanceOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getIamPolicy. */
+    public UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings() {
+      return getStubSettingsBuilder().getIamPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setIamPolicy. */
+    public UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings() {
+      return getStubSettingsBuilder().setIamPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to testIamPermissions. */
+    public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
+        testIamPermissionsSettings() {
+      return getStubSettingsBuilder().testIamPermissionsSettings();
     }
 
     @Override

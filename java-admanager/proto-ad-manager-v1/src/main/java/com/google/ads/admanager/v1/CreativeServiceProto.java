@@ -53,6 +53,30 @@ public final class CreativeServiceProto extends com.google.protobuf.GeneratedFil
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_ads_admanager_v1_ListCreativesResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_CreateCreativeRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_CreateCreativeRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_UpdateCreativeRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_UpdateCreativeRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchCreateCreativesRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchCreateCreativesRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchCreateCreativesResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchCreateCreativesResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchUpdateCreativesRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchUpdateCreativesRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchUpdateCreativesResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchUpdateCreativesResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_ads_admanager_v1_BatchActivateCreativesRequest_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_ads_admanager_v1_BatchActivateCreativesRequest_fieldAccessorTable;
@@ -82,7 +106,8 @@ public final class CreativeServiceProto extends com.google.protobuf.GeneratedFil
           + "ce.proto\022\027google.ads.admanager.v1\032/googl"
           + "e/ads/admanager/v1/creative_messages.pro"
           + "to\032\034google/api/annotations.proto\032\027google"
-          + "/api/client.proto\032\037google/api/field_behavior.proto\032\031google/api/resource.proto\"N\n"
+          + "/api/client.proto\032\037google/api/field_behavior.proto\032\031google/api/resource.proto\032"
+          + " google/protobuf/field_mask.proto\"N\n"
           + "\022GetCreativeRequest\0228\n"
           + "\004name\030\001 \001(\tB*\342A\001\002\372A#\n"
           + "!admanager.googleapis.com/Creative\"\306\001\n"
@@ -97,7 +122,31 @@ public final class CreativeServiceProto extends com.google.protobuf.GeneratedFil
           + "\025ListCreativesResponse\0224\n"
           + "\tcreatives\030\001 \003(\0132!.google.ads.admanager.v1.Creative\022\027\n"
           + "\017next_page_token\030\002 \001(\t\022\022\n\n"
-          + "total_size\030\003 \001(\005\"\225\001\n"
+          + "total_size\030\003 \001(\005\"\215\001\n"
+          + "\025CreateCreativeRequest\0229\n"
+          + "\006parent\030\001 \001(\tB)\342A\001\002\372A\"\n"
+          + " admanager.googleapis.com/Network\0229\n"
+          + "\010creative\030\002"
+          + " \001(\0132!.google.ads.admanager.v1.CreativeB\004\342A\001\002\"\211\001\n"
+          + "\025UpdateCreativeRequest\0229\n"
+          + "\010creative\030\001"
+          + " \001(\0132!.google.ads.admanager.v1.CreativeB\004\342A\001\002\0225\n"
+          + "\013update_mask\030\002"
+          + " \001(\0132\032.google.protobuf.FieldMaskB\004\342A\001\001\"\240\001\n"
+          + "\033BatchCreateCreativesRequest\0229\n"
+          + "\006parent\030\001 \001(\tB)\342A\001\002\372A\"\n"
+          + " admanager.googleapis.com/Network\022F\n"
+          + "\010requests\030\002 \003(\0132..google.a"
+          + "ds.admanager.v1.CreateCreativeRequestB\004\342A\001\002\"T\n"
+          + "\034BatchCreateCreativesResponse\0224\n"
+          + "\tcreatives\030\001 \003(\0132!.google.ads.admanager.v1.Creative\"\240\001\n"
+          + "\033BatchUpdateCreativesRequest\0229\n"
+          + "\006parent\030\001 \001(\tB)\342A\001\002\372A\"\n"
+          + " admanager.googleapis.com/Network\022F\n"
+          + "\010requests\030\002 \003(\0132."
+          + ".google.ads.admanager.v1.UpdateCreativeRequestB\004\342A\001\002\"T\n"
+          + "\034BatchUpdateCreativesResponse\0224\n"
+          + "\tcreatives\030\001 \003(\0132!.google.ads.admanager.v1.Creative\"\225\001\n"
           + "\035BatchActivateCreativesRequest\0229\n"
           + "\006parent\030\001 \001(\tB)\342A\001\002\372A\"\n"
           + " admanager.googleapis.com/Network\0229\n"
@@ -109,30 +158,45 @@ public final class CreativeServiceProto extends com.google.protobuf.GeneratedFil
           + " admanager.googleapis.com/Network\0229\n"
           + "\005names\030\002 \003(\tB*\342A\001\002\372A#\n"
           + "!admanager.googleapis.com/Creative\"\"\n"
-          + " BatchDeactivateCreativesResponse2\372\006\n"
+          + " BatchDeactivateCreativesResponse2\206\r\n"
           + "\017CreativeService\022\217\001\n"
-          + "\013GetCreative\022+.google.ads.admanager.v1"
-          + ".GetCreativeRequest\032!.google.ads.admanag"
-          + "er.v1.Creative\"0\332A\004name\202\323\344\223\002#\022!/v1/{name=networks/*/creatives/*}\022\242\001\n\r"
-          + "ListCreatives\022-.google.ads.admanager.v1.ListCreativ"
-          + "esRequest\032..google.ads.admanager.v1.List"
-          + "CreativesResponse\"2\332A\006parent\202\323\344\223\002#\022!/v1/{parent=networks/*}/creatives\022\324\001\n"
-          + "\026BatchActivateCreatives\0226.google.ads.admanager."
-          + "v1.BatchActivateCreativesRequest\0327.google.ads.admanager.v1.BatchActivateCreative"
-          + "sResponse\"I\332A\014parent,names\202\323\344\223\0024\"//v1/{p"
-          + "arent=networks/*}/creatives:batchActivate:\001*\022\334\001\n"
-          + "\030BatchDeactivateCreatives\0228.google.ads.admanager.v1.BatchDeactivateCreat"
-          + "ivesRequest\0329.google.ads.admanager.v1.Ba"
-          + "tchDeactivateCreativesResponse\"K\332A\014paren"
-          + "t,names\202\323\344\223\0026\"1/v1/{parent=networks/*}/c"
-          + "reatives:batchDeactivate:\001*\032z\312A\030admanage"
-          + "r.googleapis.com\322A\\https://www.googleapi"
-          + "s.com/auth/admanager,https://www.googleapis.com/auth/admanager.readonlyB\310\001\n"
-          + "\033com.google.ads.admanager.v1B\024CreativeService"
-          + "ProtoP\001Z@google.golang.org/genproto/goog"
-          + "leapis/ads/admanager/v1;admanager\252\002\027Goog"
-          + "le.Ads.AdManager.V1\312\002\027Google\\Ads\\AdManag"
-          + "er\\V1\352\002\032Google::Ads::AdManager::V1b\006proto3"
+          + "\013GetCreative\022+.google.ads.admanager.v1.GetCreativeRequest\032!.go"
+          + "ogle.ads.admanager.v1.Creative\"0\332A\004name\202"
+          + "\323\344\223\002#\022!/v1/{name=networks/*/creatives/*}\022\242\001\n\r"
+          + "ListCreatives\022-.google.ads.admanager.v1.ListCreativesRequest\032..google.ads.a"
+          + "dmanager.v1.ListCreativesResponse\"2\332A\006pa"
+          + "rent\202\323\344\223\002#\022!/v1/{parent=networks/*}/creatives\022\252\001\n"
+          + "\016CreateCreative\022..google.ads.admanager.v1.CreateCreativeRequest\032!.googl"
+          + "e.ads.admanager.v1.Creative\"E\332A\017parent,c"
+          + "reative\202\323\344\223\002-\"!/v1/{parent=networks/*}/creatives:\010creative\022\270\001\n"
+          + "\016UpdateCreative\022..google.ads.admanager.v1.UpdateCreativeRe"
+          + "quest\032!.google.ads.admanager.v1.Creative"
+          + "\"S\332A\024creative,update_mask\202\323\344\223\00262*/v1/{cr"
+          + "eative.name=networks/*/creatives/*}:\010creative\022\317\001\n"
+          + "\024BatchCreateCreatives\0224.google.ads.admanager.v1.BatchCreateCreativesReq"
+          + "uest\0325.google.ads.admanager.v1.BatchCrea"
+          + "teCreativesResponse\"J\332A\017parent,requests\202"
+          + "\323\344\223\0022\"-/v1/{parent=networks/*}/creatives:batchCreate:\001*\022\317\001\n"
+          + "\024BatchUpdateCreatives\0224.google.ads.admanager.v1.BatchUpdateCr"
+          + "eativesRequest\0325.google.ads.admanager.v1"
+          + ".BatchUpdateCreativesResponse\"J\332A\017parent"
+          + ",requests\202\323\344\223\0022\"-/v1/{parent=networks/*}/creatives:batchUpdate:\001*\022\324\001\n"
+          + "\026BatchActivateCreatives\0226.google.ads.admanager.v1.B"
+          + "atchActivateCreativesRequest\0327.google.ads.admanager.v1.BatchActivateCreativesRes"
+          + "ponse\"I\332A\014parent,names\202\323\344\223\0024\"//v1/{paren"
+          + "t=networks/*}/creatives:batchActivate:\001*\022\334\001\n"
+          + "\030BatchDeactivateCreatives\0228.google.ads.admanager.v1.BatchDeactivateCreatives"
+          + "Request\0329.google.ads.admanager.v1.BatchD"
+          + "eactivateCreativesResponse\"K\332A\014parent,na"
+          + "mes\202\323\344\223\0026\"1/v1/{parent=networks/*}/creat"
+          + "ives:batchDeactivate:\001*\032z\312A\030admanager.go"
+          + "ogleapis.com\322A\\https://www.googleapis.co"
+          + "m/auth/admanager,https://www.googleapis.com/auth/admanager.readonlyB\310\001\n"
+          + "\033com.google.ads.admanager.v1B\024CreativeServiceProt"
+          + "oP\001Z@google.golang.org/genproto/googleap"
+          + "is/ads/admanager/v1;admanager\252\002\027Google.A"
+          + "ds.AdManager.V1\312\002\027Google\\Ads\\AdManager\\V"
+          + "1\352\002\032Google::Ads::AdManager::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -143,6 +207,7 @@ public final class CreativeServiceProto extends com.google.protobuf.GeneratedFil
               com.google.api.ClientProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
+              com.google.protobuf.FieldMaskProto.getDescriptor(),
             });
     internal_static_google_ads_admanager_v1_GetCreativeRequest_descriptor =
         getDescriptor().getMessageType(0);
@@ -168,8 +233,56 @@ public final class CreativeServiceProto extends com.google.protobuf.GeneratedFil
             new java.lang.String[] {
               "Creatives", "NextPageToken", "TotalSize",
             });
-    internal_static_google_ads_admanager_v1_BatchActivateCreativesRequest_descriptor =
+    internal_static_google_ads_admanager_v1_CreateCreativeRequest_descriptor =
         getDescriptor().getMessageType(3);
+    internal_static_google_ads_admanager_v1_CreateCreativeRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_CreateCreativeRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Creative",
+            });
+    internal_static_google_ads_admanager_v1_UpdateCreativeRequest_descriptor =
+        getDescriptor().getMessageType(4);
+    internal_static_google_ads_admanager_v1_UpdateCreativeRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_UpdateCreativeRequest_descriptor,
+            new java.lang.String[] {
+              "Creative", "UpdateMask",
+            });
+    internal_static_google_ads_admanager_v1_BatchCreateCreativesRequest_descriptor =
+        getDescriptor().getMessageType(5);
+    internal_static_google_ads_admanager_v1_BatchCreateCreativesRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchCreateCreativesRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Requests",
+            });
+    internal_static_google_ads_admanager_v1_BatchCreateCreativesResponse_descriptor =
+        getDescriptor().getMessageType(6);
+    internal_static_google_ads_admanager_v1_BatchCreateCreativesResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchCreateCreativesResponse_descriptor,
+            new java.lang.String[] {
+              "Creatives",
+            });
+    internal_static_google_ads_admanager_v1_BatchUpdateCreativesRequest_descriptor =
+        getDescriptor().getMessageType(7);
+    internal_static_google_ads_admanager_v1_BatchUpdateCreativesRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchUpdateCreativesRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Requests",
+            });
+    internal_static_google_ads_admanager_v1_BatchUpdateCreativesResponse_descriptor =
+        getDescriptor().getMessageType(8);
+    internal_static_google_ads_admanager_v1_BatchUpdateCreativesResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchUpdateCreativesResponse_descriptor,
+            new java.lang.String[] {
+              "Creatives",
+            });
+    internal_static_google_ads_admanager_v1_BatchActivateCreativesRequest_descriptor =
+        getDescriptor().getMessageType(9);
     internal_static_google_ads_admanager_v1_BatchActivateCreativesRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_ads_admanager_v1_BatchActivateCreativesRequest_descriptor,
@@ -177,13 +290,13 @@ public final class CreativeServiceProto extends com.google.protobuf.GeneratedFil
               "Parent", "Names",
             });
     internal_static_google_ads_admanager_v1_BatchActivateCreativesResponse_descriptor =
-        getDescriptor().getMessageType(4);
+        getDescriptor().getMessageType(10);
     internal_static_google_ads_admanager_v1_BatchActivateCreativesResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_ads_admanager_v1_BatchActivateCreativesResponse_descriptor,
             new java.lang.String[] {});
     internal_static_google_ads_admanager_v1_BatchDeactivateCreativesRequest_descriptor =
-        getDescriptor().getMessageType(5);
+        getDescriptor().getMessageType(11);
     internal_static_google_ads_admanager_v1_BatchDeactivateCreativesRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_ads_admanager_v1_BatchDeactivateCreativesRequest_descriptor,
@@ -191,7 +304,7 @@ public final class CreativeServiceProto extends com.google.protobuf.GeneratedFil
               "Parent", "Names",
             });
     internal_static_google_ads_admanager_v1_BatchDeactivateCreativesResponse_descriptor =
-        getDescriptor().getMessageType(6);
+        getDescriptor().getMessageType(12);
     internal_static_google_ads_admanager_v1_BatchDeactivateCreativesResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_ads_admanager_v1_BatchDeactivateCreativesResponse_descriptor,
@@ -202,6 +315,7 @@ public final class CreativeServiceProto extends com.google.protobuf.GeneratedFil
     com.google.api.ClientProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
+    com.google.protobuf.FieldMaskProto.getDescriptor();
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.ClientProto.defaultHost);

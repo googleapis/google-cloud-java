@@ -112,6 +112,87 @@ public interface AccessConfigOrBuilder
    *
    *
    * <pre>
+   * Reference to the source of external IPv4 addresses,
+   * like a PublicDelegatedPrefix (PDP) for BYOIP.
+   * The PDP must support enhanced IPv4 allocations.
+   *
+   * Use one of the following formats to specify a PDP when allocating an
+   * external IPv4 address using BYOIP.
+   *
+   * -
+   * Full resource URL, as inhttps://www.googleapis.com/compute/v1/projects/projectId/regions/region/publicDelegatedPrefixes/pdp-name
+   * -
+   * Partial URL, as in
+   *
+   *
+   * - projects/projectId/regions/region/publicDelegatedPrefixes/pdp-name
+   * - regions/region/publicDelegatedPrefixes/pdp-name
+   * </pre>
+   *
+   * <code>optional string ip_collection = 176818358;</code>
+   *
+   * @return Whether the ipCollection field is set.
+   */
+  boolean hasIpCollection();
+
+  /**
+   *
+   *
+   * <pre>
+   * Reference to the source of external IPv4 addresses,
+   * like a PublicDelegatedPrefix (PDP) for BYOIP.
+   * The PDP must support enhanced IPv4 allocations.
+   *
+   * Use one of the following formats to specify a PDP when allocating an
+   * external IPv4 address using BYOIP.
+   *
+   * -
+   * Full resource URL, as inhttps://www.googleapis.com/compute/v1/projects/projectId/regions/region/publicDelegatedPrefixes/pdp-name
+   * -
+   * Partial URL, as in
+   *
+   *
+   * - projects/projectId/regions/region/publicDelegatedPrefixes/pdp-name
+   * - regions/region/publicDelegatedPrefixes/pdp-name
+   * </pre>
+   *
+   * <code>optional string ip_collection = 176818358;</code>
+   *
+   * @return The ipCollection.
+   */
+  java.lang.String getIpCollection();
+
+  /**
+   *
+   *
+   * <pre>
+   * Reference to the source of external IPv4 addresses,
+   * like a PublicDelegatedPrefix (PDP) for BYOIP.
+   * The PDP must support enhanced IPv4 allocations.
+   *
+   * Use one of the following formats to specify a PDP when allocating an
+   * external IPv4 address using BYOIP.
+   *
+   * -
+   * Full resource URL, as inhttps://www.googleapis.com/compute/v1/projects/projectId/regions/region/publicDelegatedPrefixes/pdp-name
+   * -
+   * Partial URL, as in
+   *
+   *
+   * - projects/projectId/regions/region/publicDelegatedPrefixes/pdp-name
+   * - regions/region/publicDelegatedPrefixes/pdp-name
+   * </pre>
+   *
+   * <code>optional string ip_collection = 176818358;</code>
+   *
+   * @return The bytes for ipCollection.
+   */
+  com.google.protobuf.ByteString getIpCollectionBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. [Output Only] Type of the resource. Alwayscompute#accessConfig for access configs.
    * </pre>
    *

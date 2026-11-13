@@ -30,6 +30,49 @@ public interface TargetingOrBuilder
    *
    *
    * <pre>
+   * Optional. Used to target/exclude specific websites.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.InventoryUrlTargeting inventory_url_targeting = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the inventoryUrlTargeting field is set.
+   */
+  boolean hasInventoryUrlTargeting();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Used to target/exclude specific websites.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.InventoryUrlTargeting inventory_url_targeting = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The inventoryUrlTargeting.
+   */
+  com.google.ads.admanager.v1.InventoryUrlTargeting getInventoryUrlTargeting();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Used to target/exclude specific websites.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.InventoryUrlTargeting inventory_url_targeting = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.ads.admanager.v1.InventoryUrlTargetingOrBuilder getInventoryUrlTargetingOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. Used to target/exclude various geo targets.
    * </pre>
    *
@@ -111,6 +154,49 @@ public interface TargetingOrBuilder
    * </code>
    */
   com.google.ads.admanager.v1.TechnologyTargetingOrBuilder getTechnologyTargetingOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Used to target/exclude ad requests for specific ad slot sizes.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.InventorySizeTargeting inventory_size_targeting = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the inventorySizeTargeting field is set.
+   */
+  boolean hasInventorySizeTargeting();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Used to target/exclude ad requests for specific ad slot sizes.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.InventorySizeTargeting inventory_size_targeting = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The inventorySizeTargeting.
+   */
+  com.google.ads.admanager.v1.InventorySizeTargeting getInventorySizeTargeting();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Used to target/exclude ad requests for specific ad slot sizes.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.InventorySizeTargeting inventory_size_targeting = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.ads.admanager.v1.InventorySizeTargetingOrBuilder getInventorySizeTargetingOrBuilder();
 
   /**
    *
@@ -249,6 +335,94 @@ public interface TargetingOrBuilder
    *
    *
    * <pre>
+   * Optional. Used to target a datetime range.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.DateTimeRangeTargeting date_time_range_targeting = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the dateTimeRangeTargeting field is set.
+   */
+  boolean hasDateTimeRangeTargeting();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Used to target a datetime range.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.DateTimeRangeTargeting date_time_range_targeting = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The dateTimeRangeTargeting.
+   */
+  com.google.ads.admanager.v1.DateTimeRangeTargeting getDateTimeRangeTargeting();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Used to target a datetime range.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.DateTimeRangeTargeting date_time_range_targeting = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.ads.admanager.v1.DateTimeRangeTargetingOrBuilder getDateTimeRangeTargetingOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Used to target publisher provided signals.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.PublisherProvidedSignalsTargeting publisher_provided_signals_targeting = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the publisherProvidedSignalsTargeting field is set.
+   */
+  boolean hasPublisherProvidedSignalsTargeting();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Used to target publisher provided signals.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.PublisherProvidedSignalsTargeting publisher_provided_signals_targeting = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The publisherProvidedSignalsTargeting.
+   */
+  com.google.ads.admanager.v1.PublisherProvidedSignalsTargeting
+      getPublisherProvidedSignalsTargeting();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Used to target publisher provided signals.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.PublisherProvidedSignalsTargeting publisher_provided_signals_targeting = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.ads.admanager.v1.PublisherProvidedSignalsTargetingOrBuilder
+      getPublisherProvidedSignalsTargetingOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. Used to target user domains.
    * </pre>
    *
@@ -287,6 +461,49 @@ public interface TargetingOrBuilder
    * </code>
    */
   com.google.ads.admanager.v1.UserDomainTargetingOrBuilder getUserDomainTargetingOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Used to target verticals / content labels
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.ContextualTargeting contextual_targeting = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the contextualTargeting field is set.
+   */
+  boolean hasContextualTargeting();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Used to target verticals / content labels
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.ContextualTargeting contextual_targeting = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The contextualTargeting.
+   */
+  com.google.ads.admanager.v1.ContextualTargeting getContextualTargeting();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Used to target verticals / content labels
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.ContextualTargeting contextual_targeting = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.ads.admanager.v1.ContextualTargetingOrBuilder getContextualTargetingOrBuilder();
 
   /**
    *
@@ -503,4 +720,90 @@ public interface TargetingOrBuilder
    */
   com.google.ads.admanager.v1.MobileApplicationTargetingOrBuilder
       getMobileApplicationTargetingOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Used to target day parts.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.DayPartTargeting day_part_targeting = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the dayPartTargeting field is set.
+   */
+  boolean hasDayPartTargeting();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Used to target day parts.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.DayPartTargeting day_part_targeting = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The dayPartTargeting.
+   */
+  com.google.ads.admanager.v1.DayPartTargeting getDayPartTargeting();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Used to target day parts.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.DayPartTargeting day_part_targeting = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.ads.admanager.v1.DayPartTargetingOrBuilder getDayPartTargetingOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Used to target buyer user lists.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.BuyerUserListTargeting buyer_user_list_targeting = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the buyerUserListTargeting field is set.
+   */
+  boolean hasBuyerUserListTargeting();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Used to target buyer user lists.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.BuyerUserListTargeting buyer_user_list_targeting = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The buyerUserListTargeting.
+   */
+  com.google.ads.admanager.v1.BuyerUserListTargeting getBuyerUserListTargeting();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Used to target buyer user lists.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.BuyerUserListTargeting buyer_user_list_targeting = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.ads.admanager.v1.BuyerUserListTargetingOrBuilder getBuyerUserListTargetingOrBuilder();
 }

@@ -18,6 +18,7 @@ package com.google.cloud.hypercomputecluster.v1beta;
 
 import static com.google.cloud.hypercomputecluster.v1beta.HypercomputeClusterClient.ListClustersPagedResponse;
 import static com.google.cloud.hypercomputecluster.v1beta.HypercomputeClusterClient.ListLocationsPagedResponse;
+import static com.google.cloud.hypercomputecluster.v1beta.HypercomputeClusterClient.ListNodesPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
@@ -196,6 +197,7 @@ public class HypercomputeClusterClientTest {
             .putAllStorageResources(new HashMap<String, StorageResource>())
             .putAllComputeResources(new HashMap<String, ComputeResource>())
             .setOrchestrator(Orchestrator.newBuilder().build())
+            .setUid("uid115792")
             .build();
     mockHypercomputeCluster.addResponse(expectedResponse);
 
@@ -243,6 +245,7 @@ public class HypercomputeClusterClientTest {
             .putAllStorageResources(new HashMap<String, StorageResource>())
             .putAllComputeResources(new HashMap<String, ComputeResource>())
             .setOrchestrator(Orchestrator.newBuilder().build())
+            .setUid("uid115792")
             .build();
     mockHypercomputeCluster.addResponse(expectedResponse);
 
@@ -290,6 +293,7 @@ public class HypercomputeClusterClientTest {
             .putAllStorageResources(new HashMap<String, StorageResource>())
             .putAllComputeResources(new HashMap<String, ComputeResource>())
             .setOrchestrator(Orchestrator.newBuilder().build())
+            .setUid("uid115792")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -351,6 +355,7 @@ public class HypercomputeClusterClientTest {
             .putAllStorageResources(new HashMap<String, StorageResource>())
             .putAllComputeResources(new HashMap<String, ComputeResource>())
             .setOrchestrator(Orchestrator.newBuilder().build())
+            .setUid("uid115792")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -412,6 +417,7 @@ public class HypercomputeClusterClientTest {
             .putAllStorageResources(new HashMap<String, StorageResource>())
             .putAllComputeResources(new HashMap<String, ComputeResource>())
             .setOrchestrator(Orchestrator.newBuilder().build())
+            .setUid("uid115792")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -537,6 +543,94 @@ public class HypercomputeClusterClientTest {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
       InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
       Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void listNodesTest() throws Exception {
+    Node responsesElement = Node.newBuilder().build();
+    ListNodesResponse expectedResponse =
+        ListNodesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllNodes(Arrays.asList(responsesElement))
+            .build();
+    mockHypercomputeCluster.addResponse(expectedResponse);
+
+    ClusterName parent = ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]");
+
+    ListNodesPagedResponse pagedListResponse = client.listNodes(parent);
+
+    List<Node> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getNodesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockHypercomputeCluster.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListNodesRequest actualRequest = ((ListNodesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listNodesExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockHypercomputeCluster.addException(exception);
+
+    try {
+      ClusterName parent = ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]");
+      client.listNodes(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listNodesTest2() throws Exception {
+    Node responsesElement = Node.newBuilder().build();
+    ListNodesResponse expectedResponse =
+        ListNodesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllNodes(Arrays.asList(responsesElement))
+            .build();
+    mockHypercomputeCluster.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListNodesPagedResponse pagedListResponse = client.listNodes(parent);
+
+    List<Node> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getNodesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockHypercomputeCluster.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListNodesRequest actualRequest = ((ListNodesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listNodesExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockHypercomputeCluster.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listNodes(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
     }
   }
 

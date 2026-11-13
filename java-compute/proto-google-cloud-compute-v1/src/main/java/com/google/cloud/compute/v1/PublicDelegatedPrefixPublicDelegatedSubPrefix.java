@@ -60,6 +60,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
     ipv6AccessType_ = "";
     mode_ = "";
     name_ = "";
+    purpose_ = "";
     region_ = "";
     status_ = "";
   }
@@ -501,6 +502,215 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
    *
    *
    * <pre>
+   * Output only. [Output Only] The purpose of the sub public delegated prefix. Inherited
+   * from parent prefix.
+   * </pre>
+   *
+   * Protobuf enum {@code
+   * google.cloud.compute.v1.PublicDelegatedPrefixPublicDelegatedSubPrefix.Purpose}
+   */
+  public enum Purpose implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_PURPOSE = 0;</code>
+     */
+    UNDEFINED_PURPOSE(0),
+    /**
+     *
+     *
+     * <pre>
+     * The global public delegated prefix can only be used by Global External
+     * Application and Proxy Load Balancers to allocate addresses for forwarding
+     * rules. This is the default value.
+     * </pre>
+     *
+     * <code>APPLICATION_AND_PROXY_LOAD_BALANCERS = 480371116;</code>
+     */
+    APPLICATION_AND_PROXY_LOAD_BALANCERS(480371116),
+    /**
+     *
+     *
+     * <pre>
+     * The global public delegated prefix can only be used by Global External
+     * Passthrough Network Load Balancers to allocate Availability Group 0
+     * addresses for forwarding rules.
+     * </pre>
+     *
+     * <code>PASSTHROUGH_LOAD_BALANCER_AVAILABILITY_GROUP0 = 119932186;</code>
+     */
+    PASSTHROUGH_LOAD_BALANCER_AVAILABILITY_GROUP0(119932186),
+    /**
+     *
+     *
+     * <pre>
+     * The global public delegated prefix can only be used by Global External
+     * Passthrough Network Load Balancers to allocate Availability Group 1
+     * addresses for forwarding rules.
+     * </pre>
+     *
+     * <code>PASSTHROUGH_LOAD_BALANCER_AVAILABILITY_GROUP1 = 119932187;</code>
+     */
+    PASSTHROUGH_LOAD_BALANCER_AVAILABILITY_GROUP1(119932187),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 6,
+          /* suffix= */ "",
+          "Purpose");
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_PURPOSE = 0;</code>
+     */
+    public static final int UNDEFINED_PURPOSE_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * The global public delegated prefix can only be used by Global External
+     * Application and Proxy Load Balancers to allocate addresses for forwarding
+     * rules. This is the default value.
+     * </pre>
+     *
+     * <code>APPLICATION_AND_PROXY_LOAD_BALANCERS = 480371116;</code>
+     */
+    public static final int APPLICATION_AND_PROXY_LOAD_BALANCERS_VALUE = 480371116;
+
+    /**
+     *
+     *
+     * <pre>
+     * The global public delegated prefix can only be used by Global External
+     * Passthrough Network Load Balancers to allocate Availability Group 0
+     * addresses for forwarding rules.
+     * </pre>
+     *
+     * <code>PASSTHROUGH_LOAD_BALANCER_AVAILABILITY_GROUP0 = 119932186;</code>
+     */
+    public static final int PASSTHROUGH_LOAD_BALANCER_AVAILABILITY_GROUP0_VALUE = 119932186;
+
+    /**
+     *
+     *
+     * <pre>
+     * The global public delegated prefix can only be used by Global External
+     * Passthrough Network Load Balancers to allocate Availability Group 1
+     * addresses for forwarding rules.
+     * </pre>
+     *
+     * <code>PASSTHROUGH_LOAD_BALANCER_AVAILABILITY_GROUP1 = 119932187;</code>
+     */
+    public static final int PASSTHROUGH_LOAD_BALANCER_AVAILABILITY_GROUP1_VALUE = 119932187;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static Purpose valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static Purpose forNumber(int value) {
+      switch (value) {
+        case 0:
+          return UNDEFINED_PURPOSE;
+        case 480371116:
+          return APPLICATION_AND_PROXY_LOAD_BALANCERS;
+        case 119932186:
+          return PASSTHROUGH_LOAD_BALANCER_AVAILABILITY_GROUP0;
+        case 119932187:
+          return PASSTHROUGH_LOAD_BALANCER_AVAILABILITY_GROUP1;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<Purpose> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<Purpose> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<Purpose>() {
+          public Purpose findValueByNumber(int number) {
+            return Purpose.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.compute.v1.PublicDelegatedPrefixPublicDelegatedSubPrefix
+          .getDescriptor()
+          .getEnumTypes()
+          .get(2);
+    }
+
+    private static final Purpose[] VALUES = values();
+
+    public static Purpose valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private Purpose(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.PublicDelegatedPrefixPublicDelegatedSubPrefix.Purpose)
+  }
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. [Output Only] The status of the sub public delegated prefix.
    * </pre>
    *
@@ -614,7 +824,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
       return com.google.cloud.compute.v1.PublicDelegatedPrefixPublicDelegatedSubPrefix
           .getDescriptor()
           .getEnumTypes()
-          .get(2);
+          .get(3);
     }
 
     private static final Status[] VALUES = values();
@@ -1177,6 +1387,81 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
     }
   }
 
+  public static final int PURPOSE_FIELD_NUMBER = 316407070;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object purpose_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] The purpose of the sub public delegated prefix. Inherited
+   * from parent prefix.
+   * Check the Purpose enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string purpose = 316407070;</code>
+   *
+   * @return Whether the purpose field is set.
+   */
+  @java.lang.Override
+  public boolean hasPurpose() {
+    return ((bitField0_ & 0x00000200) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] The purpose of the sub public delegated prefix. Inherited
+   * from parent prefix.
+   * Check the Purpose enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string purpose = 316407070;</code>
+   *
+   * @return The purpose.
+   */
+  @java.lang.Override
+  public java.lang.String getPurpose() {
+    java.lang.Object ref = purpose_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      purpose_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] The purpose of the sub public delegated prefix. Inherited
+   * from parent prefix.
+   * Check the Purpose enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string purpose = 316407070;</code>
+   *
+   * @return The bytes for purpose.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getPurposeBytes() {
+    java.lang.Object ref = purpose_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      purpose_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int REGION_FIELD_NUMBER = 138946292;
 
   @SuppressWarnings("serial")
@@ -1196,7 +1481,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
    */
   @java.lang.Override
   public boolean hasRegion() {
-    return ((bitField0_ & 0x00000200) != 0);
+    return ((bitField0_ & 0x00000400) != 0);
   }
 
   /**
@@ -1268,7 +1553,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
    */
   @java.lang.Override
   public boolean hasStatus() {
-    return ((bitField0_ & 0x00000400) != 0);
+    return ((bitField0_ & 0x00000800) != 0);
   }
 
   /**
@@ -1350,11 +1635,14 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
     if (((bitField0_ & 0x00000010) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 98117322, ipCidrRange_);
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 138946292, region_);
     }
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 181260274, status_);
+    }
+    if (((bitField0_ & 0x00000200) != 0)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 316407070, purpose_);
     }
     if (((bitField0_ & 0x00000040) != 0)) {
       output.writeBool(352617951, isAddress_);
@@ -1396,11 +1684,14 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
     if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(98117322, ipCidrRange_);
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(138946292, region_);
     }
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(181260274, status_);
+    }
+    if (((bitField0_ & 0x00000200) != 0)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(316407070, purpose_);
     }
     if (((bitField0_ & 0x00000040) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(352617951, isAddress_);
@@ -1468,6 +1759,10 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
     if (hasName()) {
       if (!getName().equals(other.getName())) return false;
     }
+    if (hasPurpose() != other.hasPurpose()) return false;
+    if (hasPurpose()) {
+      if (!getPurpose().equals(other.getPurpose())) return false;
+    }
     if (hasRegion() != other.hasRegion()) return false;
     if (hasRegion()) {
       if (!getRegion().equals(other.getRegion())) return false;
@@ -1523,6 +1818,10 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
     if (hasName()) {
       hash = (37 * hash) + NAME_FIELD_NUMBER;
       hash = (53 * hash) + getName().hashCode();
+    }
+    if (hasPurpose()) {
+      hash = (37 * hash) + PURPOSE_FIELD_NUMBER;
+      hash = (53 * hash) + getPurpose().hashCode();
     }
     if (hasRegion()) {
       hash = (37 * hash) + REGION_FIELD_NUMBER;
@@ -1685,6 +1984,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
       isAddress_ = false;
       mode_ = "";
       name_ = "";
+      purpose_ = "";
       region_ = "";
       status_ = "";
       return this;
@@ -1766,12 +2066,16 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
         to_bitField0_ |= 0x00000100;
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
-        result.region_ = region_;
+        result.purpose_ = purpose_;
         to_bitField0_ |= 0x00000200;
       }
       if (((from_bitField0_ & 0x00000400) != 0)) {
-        result.status_ = status_;
+        result.region_ = region_;
         to_bitField0_ |= 0x00000400;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.status_ = status_;
+        to_bitField0_ |= 0x00000800;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1832,14 +2136,19 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
         bitField0_ |= 0x00000100;
         onChanged();
       }
+      if (other.hasPurpose()) {
+        purpose_ = other.purpose_;
+        bitField0_ |= 0x00000200;
+        onChanged();
+      }
       if (other.hasRegion()) {
         region_ = other.region_;
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       if (other.hasStatus()) {
         status_ = other.status_;
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1901,15 +2210,21 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
             case 1111570338:
               {
                 region_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 1111570338
             case 1450082194:
               {
                 status_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 1450082194
+            case -1763710734:
+              {
+                purpose_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case -1763710734
             case -1474023688:
               {
                 isAddress_ = input.readBool();
@@ -2963,6 +3278,144 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
       return this;
     }
 
+    private java.lang.Object purpose_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] The purpose of the sub public delegated prefix. Inherited
+     * from parent prefix.
+     * Check the Purpose enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string purpose = 316407070;</code>
+     *
+     * @return Whether the purpose field is set.
+     */
+    public boolean hasPurpose() {
+      return ((bitField0_ & 0x00000200) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] The purpose of the sub public delegated prefix. Inherited
+     * from parent prefix.
+     * Check the Purpose enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string purpose = 316407070;</code>
+     *
+     * @return The purpose.
+     */
+    public java.lang.String getPurpose() {
+      java.lang.Object ref = purpose_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        purpose_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] The purpose of the sub public delegated prefix. Inherited
+     * from parent prefix.
+     * Check the Purpose enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string purpose = 316407070;</code>
+     *
+     * @return The bytes for purpose.
+     */
+    public com.google.protobuf.ByteString getPurposeBytes() {
+      java.lang.Object ref = purpose_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        purpose_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] The purpose of the sub public delegated prefix. Inherited
+     * from parent prefix.
+     * Check the Purpose enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string purpose = 316407070;</code>
+     *
+     * @param value The purpose to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPurpose(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      purpose_ = value;
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] The purpose of the sub public delegated prefix. Inherited
+     * from parent prefix.
+     * Check the Purpose enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string purpose = 316407070;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPurpose() {
+      purpose_ = getDefaultInstance().getPurpose();
+      bitField0_ = (bitField0_ & ~0x00000200);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] The purpose of the sub public delegated prefix. Inherited
+     * from parent prefix.
+     * Check the Purpose enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string purpose = 316407070;</code>
+     *
+     * @param value The bytes for purpose to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPurposeBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      purpose_ = value;
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object region_ = "";
 
     /**
@@ -2978,7 +3431,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
      * @return Whether the region field is set.
      */
     public boolean hasRegion() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00000400) != 0);
     }
 
     /**
@@ -3047,7 +3500,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
         throw new NullPointerException();
       }
       region_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3066,7 +3519,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
      */
     public Builder clearRegion() {
       region_ = getDefaultInstance().getRegion();
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -3090,7 +3543,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
       }
       checkByteStringIsUtf8(value);
       region_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3110,7 +3563,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
      * @return Whether the status field is set.
      */
     public boolean hasStatus() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00000800) != 0);
     }
 
     /**
@@ -3179,7 +3632,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
         throw new NullPointerException();
       }
       status_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3198,7 +3651,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
      */
     public Builder clearStatus() {
       status_ = getDefaultInstance().getStatus();
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       onChanged();
       return this;
     }
@@ -3222,7 +3675,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
       }
       checkByteStringIsUtf8(value);
       status_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }

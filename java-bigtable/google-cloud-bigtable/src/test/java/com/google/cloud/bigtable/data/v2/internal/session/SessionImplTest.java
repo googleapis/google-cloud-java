@@ -36,11 +36,14 @@ import com.google.bigtable.v2.OpenSessionResponse;
 import com.google.bigtable.v2.SessionFakeScriptedRequest;
 import com.google.bigtable.v2.SessionFakeScriptedResponse;
 import com.google.bigtable.v2.SessionParametersResponse;
+import com.google.bigtable.v2.SessionRequest;
 import com.google.bigtable.v2.VirtualRpcResponse;
 import com.google.cloud.bigtable.data.v2.internal.api.InstanceName;
 import com.google.cloud.bigtable.data.v2.internal.api.UnaryResponseFuture;
 import com.google.cloud.bigtable.data.v2.internal.api.VRpcException;
 import com.google.cloud.bigtable.data.v2.internal.channels.ChannelPool;
+import com.google.cloud.bigtable.data.v2.internal.channels.ForwardingSessionStream;
+import com.google.cloud.bigtable.data.v2.internal.channels.SessionStream;
 import com.google.cloud.bigtable.data.v2.internal.channels.SingleChannelPool;
 import com.google.cloud.bigtable.data.v2.internal.csm.Metrics;
 import com.google.cloud.bigtable.data.v2.internal.csm.NoopMetrics;
@@ -891,6 +894,107 @@ public class SessionImplTest {
     assertThat(status.getCode()).isEqualTo(Status.Code.UNAVAILABLE);
     assertThat(sessionListener.getLastPrevState()).isEqualTo(Session.SessionState.STARTING);
     assertThat(session.getState()).isEqualTo(Session.SessionState.CLOSED);
+  }
+
+  @Test
+  void sessionCloseTimeoutForcesClose() throws Exception {
+    FakeClock clock = new FakeClock(Instant.now());
+    CapturingBigtableTimer capturing = new CapturingBigtableTimer(timer);
+    SessionStream underlying = sessionFactory.createNew();
+    // Drop CloseSession and halfClose so the server never closes the stream and the session stays
+    // in WAIT_SERVER_CLOSE until the per-session closeTimeout fires.
+    SessionStream hangingCloseStream =
+        new ForwardingSessionStream(underlying) {
+          @Override
+          public void sendMessage(SessionRequest request) {
+            if (request.hasCloseSession()) {
+              return;
+            }
+            super.sendMessage(request);
+          }
+
+          @Override
+          public void halfClose() {}
+        };
+    SessionImpl session =
+        new SessionImpl(metrics, clock, poolInfo, 0, hangingCloseStream, capturing);
+
+    FakeSessionListener sessionListener = new FakeSessionListener();
+    session.start(
+        OpenSessionRequest.newBuilder()
+            .setPayload(OpenFakeSessionRequest.getDefaultInstance().toByteString())
+            .build(),
+        new Metadata(),
+        sessionListener);
+    assertThat(sessionListener.popUntil(OpenSessionResponse.class))
+        .isInstanceOf(OpenSessionResponse.class);
+
+    capturing.tasks.clear();
+    capturing.executors.clear();
+
+    session.close(
+        CloseSessionRequest.newBuilder()
+            .setReason(CloseSessionReason.CLOSE_SESSION_REASON_USER)
+            .setDescription("test close timeout")
+            .build());
+
+    Stopwatch sw = Stopwatch.createStarted();
+    while ((capturing.tasks.isEmpty()
+            || session.getState() != Session.SessionState.WAIT_SERVER_CLOSE)
+        && sw.elapsed(TimeUnit.SECONDS) < 5) {
+      Thread.sleep(10);
+    }
+    assertThat(session.getState()).isEqualTo(Session.SessionState.WAIT_SERVER_CLOSE);
+    assertWithMessage("close-timeout tick should have been armed while WAIT_SERVER_CLOSE")
+        .that(capturing.tasks)
+        .hasSize(1);
+
+    clock.increment(SessionImpl.CLOSE_SESSION_TIMEOUT);
+
+    // Fire the close-timeout tick on its executor (sessionSyncContext).
+    capturing.executors.get(0).execute(capturing.tasks.get(0));
+
+    Status status = sessionListener.popUntil(Status.class);
+    assertThat(status.getCode()).isEqualTo(Status.Code.UNAVAILABLE);
+    assertThat(status.getDescription()).contains("awaiting close for too long");
+    assertThat(status.getDescription()).contains("PT5M ago");
+    assertThat(sessionListener.getLastPrevState())
+        .isEqualTo(Session.SessionState.WAIT_SERVER_CLOSE);
+    assertThat(session.getState()).isEqualTo(Session.SessionState.CLOSED);
+  }
+
+  @Test
+  void sessionNormalCloseCancelsCloseTimeout() throws Exception {
+    CountingBigtableTimer counting = new CountingBigtableTimer(timer);
+    SessionImpl session =
+        new SessionImpl(metrics, poolInfo, 0, sessionFactory.createNew(), counting);
+
+    FakeSessionListener sessionListener = new FakeSessionListener();
+    session.start(
+        OpenSessionRequest.newBuilder()
+            .setPayload(OpenFakeSessionRequest.getDefaultInstance().toByteString())
+            .build(),
+        new Metadata(),
+        sessionListener);
+    assertThat(sessionListener.popUntil(OpenSessionResponse.class))
+        .isInstanceOf(OpenSessionResponse.class);
+
+    counting.scheduleCount.set(0);
+    counting.cancelCount.set(0);
+
+    session.close(
+        CloseSessionRequest.newBuilder()
+            .setReason(CloseSessionReason.CLOSE_SESSION_REASON_USER)
+            .setDescription("normal close")
+            .build());
+    assertThat(sessionListener.popUntil(Status.class)).isOk();
+
+    assertWithMessage("startGracefulClose must arm the close-timeout tick")
+        .that(counting.scheduleCount.get())
+        .isEqualTo(1);
+    assertWithMessage("reaching CLOSED must cancel the close-timeout tick")
+        .that(counting.cancelCount.get())
+        .isEqualTo(1);
   }
 
   // endregion

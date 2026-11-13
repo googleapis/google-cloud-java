@@ -57,10 +57,16 @@ import com.google.cloud.run.v2.ListInstancesRequest;
 import com.google.cloud.run.v2.ListInstancesResponse;
 import com.google.cloud.run.v2.StartInstanceRequest;
 import com.google.cloud.run.v2.StopInstanceRequest;
+import com.google.cloud.run.v2.UpdateInstanceRequest;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import java.io.IOException;
 import java.time.Duration;
@@ -149,11 +155,18 @@ import org.jspecify.annotations.Nullable;
 public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
-      ImmutableList.<String>builder().add("https://www.googleapis.com/auth/cloud-platform").build();
+      ImmutableList.<String>builder()
+          .add("https://www.googleapis.com/auth/cloud-platform")
+          .add("https://www.googleapis.com/auth/run")
+          .add("https://www.googleapis.com/auth/run.readonly")
+          .build();
 
   private final UnaryCallSettings<CreateInstanceRequest, Operation> createInstanceSettings;
   private final OperationCallSettings<CreateInstanceRequest, Instance, Instance>
       createInstanceOperationSettings;
+  private final UnaryCallSettings<UpdateInstanceRequest, Operation> updateInstanceSettings;
+  private final OperationCallSettings<UpdateInstanceRequest, Instance, Instance>
+      updateInstanceOperationSettings;
   private final UnaryCallSettings<DeleteInstanceRequest, Operation> deleteInstanceSettings;
   private final OperationCallSettings<DeleteInstanceRequest, Instance, Instance>
       deleteInstanceOperationSettings;
@@ -167,6 +180,10 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
   private final UnaryCallSettings<StartInstanceRequest, Operation> startInstanceSettings;
   private final OperationCallSettings<StartInstanceRequest, Instance, Instance>
       startInstanceOperationSettings;
+  private final UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings;
+  private final UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings;
+  private final UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsSettings;
 
   private static final PagedListDescriptor<ListInstancesRequest, ListInstancesResponse, Instance>
       LIST_INSTANCES_PAGE_STR_DESC =
@@ -230,6 +247,17 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
     return createInstanceOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to updateInstance. */
+  public UnaryCallSettings<UpdateInstanceRequest, Operation> updateInstanceSettings() {
+    return updateInstanceSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateInstance. */
+  public OperationCallSettings<UpdateInstanceRequest, Instance, Instance>
+      updateInstanceOperationSettings() {
+    return updateInstanceOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to deleteInstance. */
   public UnaryCallSettings<DeleteInstanceRequest, Operation> deleteInstanceSettings() {
     return deleteInstanceSettings;
@@ -272,6 +300,22 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
   public OperationCallSettings<StartInstanceRequest, Instance, Instance>
       startInstanceOperationSettings() {
     return startInstanceOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getIamPolicy. */
+  public UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings() {
+    return getIamPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to setIamPolicy. */
+  public UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings() {
+    return setIamPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to testIamPermissions. */
+  public UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsSettings() {
+    return testIamPermissionsSettings;
   }
 
   public InstancesStub createStub() throws IOException {
@@ -385,6 +429,8 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
 
     createInstanceSettings = settingsBuilder.createInstanceSettings().build();
     createInstanceOperationSettings = settingsBuilder.createInstanceOperationSettings().build();
+    updateInstanceSettings = settingsBuilder.updateInstanceSettings().build();
+    updateInstanceOperationSettings = settingsBuilder.updateInstanceOperationSettings().build();
     deleteInstanceSettings = settingsBuilder.deleteInstanceSettings().build();
     deleteInstanceOperationSettings = settingsBuilder.deleteInstanceOperationSettings().build();
     getInstanceSettings = settingsBuilder.getInstanceSettings().build();
@@ -393,6 +439,9 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
     stopInstanceOperationSettings = settingsBuilder.stopInstanceOperationSettings().build();
     startInstanceSettings = settingsBuilder.startInstanceSettings().build();
     startInstanceOperationSettings = settingsBuilder.startInstanceOperationSettings().build();
+    getIamPolicySettings = settingsBuilder.getIamPolicySettings().build();
+    setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
+    testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
   }
 
   @Override
@@ -411,6 +460,10 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
         createInstanceSettings;
     private final OperationCallSettings.Builder<CreateInstanceRequest, Instance, Instance>
         createInstanceOperationSettings;
+    private final UnaryCallSettings.Builder<UpdateInstanceRequest, Operation>
+        updateInstanceSettings;
+    private final OperationCallSettings.Builder<UpdateInstanceRequest, Instance, Instance>
+        updateInstanceOperationSettings;
     private final UnaryCallSettings.Builder<DeleteInstanceRequest, Operation>
         deleteInstanceSettings;
     private final OperationCallSettings.Builder<DeleteInstanceRequest, Instance, Instance>
@@ -425,6 +478,10 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
     private final UnaryCallSettings.Builder<StartInstanceRequest, Operation> startInstanceSettings;
     private final OperationCallSettings.Builder<StartInstanceRequest, Instance, Instance>
         startInstanceOperationSettings;
+    private final UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings;
+    private final UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings;
+    private final UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
+        testIamPermissionsSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -454,6 +511,8 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
 
       createInstanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createInstanceOperationSettings = OperationCallSettings.newBuilder();
+      updateInstanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateInstanceOperationSettings = OperationCallSettings.newBuilder();
       deleteInstanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteInstanceOperationSettings = OperationCallSettings.newBuilder();
       getInstanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -462,15 +521,22 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
       stopInstanceOperationSettings = OperationCallSettings.newBuilder();
       startInstanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       startInstanceOperationSettings = OperationCallSettings.newBuilder();
+      getIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               createInstanceSettings,
+              updateInstanceSettings,
               deleteInstanceSettings,
               getInstanceSettings,
               listInstancesSettings,
               stopInstanceSettings,
-              startInstanceSettings);
+              startInstanceSettings,
+              getIamPolicySettings,
+              setIamPolicySettings,
+              testIamPermissionsSettings);
       initDefaults(this);
     }
 
@@ -479,6 +545,8 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
 
       createInstanceSettings = settings.createInstanceSettings.toBuilder();
       createInstanceOperationSettings = settings.createInstanceOperationSettings.toBuilder();
+      updateInstanceSettings = settings.updateInstanceSettings.toBuilder();
+      updateInstanceOperationSettings = settings.updateInstanceOperationSettings.toBuilder();
       deleteInstanceSettings = settings.deleteInstanceSettings.toBuilder();
       deleteInstanceOperationSettings = settings.deleteInstanceOperationSettings.toBuilder();
       getInstanceSettings = settings.getInstanceSettings.toBuilder();
@@ -487,15 +555,22 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
       stopInstanceOperationSettings = settings.stopInstanceOperationSettings.toBuilder();
       startInstanceSettings = settings.startInstanceSettings.toBuilder();
       startInstanceOperationSettings = settings.startInstanceOperationSettings.toBuilder();
+      getIamPolicySettings = settings.getIamPolicySettings.toBuilder();
+      setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
+      testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               createInstanceSettings,
+              updateInstanceSettings,
               deleteInstanceSettings,
               getInstanceSettings,
               listInstancesSettings,
               stopInstanceSettings,
-              startInstanceSettings);
+              startInstanceSettings,
+              getIamPolicySettings,
+              setIamPolicySettings,
+              testIamPermissionsSettings);
     }
 
     private static Builder createDefault() {
@@ -529,6 +604,11 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
+          .updateInstanceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
           .deleteInstanceSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
@@ -554,10 +634,49 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
+          .getIamPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .setIamPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .testIamPermissionsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
           .createInstanceOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings
                   .<CreateInstanceRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Instance.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Instance.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .updateInstanceOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdateInstanceRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
                   .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
                   .build())
@@ -678,6 +797,17 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
       return createInstanceOperationSettings;
     }
 
+    /** Returns the builder for the settings used for calls to updateInstance. */
+    public UnaryCallSettings.Builder<UpdateInstanceRequest, Operation> updateInstanceSettings() {
+      return updateInstanceSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateInstance. */
+    public OperationCallSettings.Builder<UpdateInstanceRequest, Instance, Instance>
+        updateInstanceOperationSettings() {
+      return updateInstanceOperationSettings;
+    }
+
     /** Returns the builder for the settings used for calls to deleteInstance. */
     public UnaryCallSettings.Builder<DeleteInstanceRequest, Operation> deleteInstanceSettings() {
       return deleteInstanceSettings;
@@ -721,6 +851,22 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
     public OperationCallSettings.Builder<StartInstanceRequest, Instance, Instance>
         startInstanceOperationSettings() {
       return startInstanceOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getIamPolicy. */
+    public UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings() {
+      return getIamPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to setIamPolicy. */
+    public UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings() {
+      return setIamPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to testIamPermissions. */
+    public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
+        testIamPermissionsSettings() {
+      return testIamPermissionsSettings;
     }
 
     @Override

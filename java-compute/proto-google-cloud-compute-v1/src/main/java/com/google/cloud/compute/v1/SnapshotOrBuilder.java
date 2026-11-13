@@ -1198,7 +1198,8 @@ public interface SnapshotOrBuilder
    *
    *
    * <pre>
-   * Indicates the type of the snapshot.
+   * Indicates the type of the snapshot. Valid values are ARCHIVE
+   * or STANDARD. The default is STANDARD.
    * Check the SnapshotType enum for the list of possible values.
    * </pre>
    *
@@ -1212,7 +1213,8 @@ public interface SnapshotOrBuilder
    *
    *
    * <pre>
-   * Indicates the type of the snapshot.
+   * Indicates the type of the snapshot. Valid values are ARCHIVE
+   * or STANDARD. The default is STANDARD.
    * Check the SnapshotType enum for the list of possible values.
    * </pre>
    *
@@ -1226,7 +1228,8 @@ public interface SnapshotOrBuilder
    *
    *
    * <pre>
-   * Indicates the type of the snapshot.
+   * Indicates the type of the snapshot. Valid values are ARCHIVE
+   * or STANDARD. The default is STANDARD.
    * Check the SnapshotType enum for the list of possible values.
    * </pre>
    *

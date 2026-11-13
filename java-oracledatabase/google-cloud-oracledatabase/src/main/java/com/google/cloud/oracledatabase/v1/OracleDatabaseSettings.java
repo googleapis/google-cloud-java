@@ -23,9 +23,11 @@ import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListAutono
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListCloudExadataInfrastructuresPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListCloudVmClustersPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListDatabaseCharacterSetsPagedResponse;
+import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListDatabaseConnectionsPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListDatabasesPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListDbNodesPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListDbServersPagedResponse;
+import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListDbSystemComputePerformancesPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListDbSystemInitialStorageSizesPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListDbSystemShapesPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListDbSystemsPagedResponse;
@@ -33,6 +35,7 @@ import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListDbVers
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListEntitlementsPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListExadbVmClustersPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListExascaleDbStorageVaultsPagedResponse;
+import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListFlexComponentsPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListGiVersionsPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListGoldengateConnectionAssignmentsPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListGoldengateConnectionTypesPagedResponse;
@@ -186,6 +189,21 @@ public class OracleDatabaseSettings extends ClientSettings<OracleDatabaseSetting
         .createCloudExadataInfrastructureOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to updateCloudExadataInfrastructure. */
+  public UnaryCallSettings<UpdateCloudExadataInfrastructureRequest, Operation>
+      updateCloudExadataInfrastructureSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings())
+        .updateCloudExadataInfrastructureSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateCloudExadataInfrastructure. */
+  public OperationCallSettings<
+          UpdateCloudExadataInfrastructureRequest, CloudExadataInfrastructure, OperationMetadata>
+      updateCloudExadataInfrastructureOperationSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings())
+        .updateCloudExadataInfrastructureOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to deleteCloudExadataInfrastructure. */
   public UnaryCallSettings<DeleteCloudExadataInfrastructureRequest, Operation>
       deleteCloudExadataInfrastructureSettings() {
@@ -246,6 +264,17 @@ public class OracleDatabaseSettings extends ClientSettings<OracleDatabaseSetting
     return ((OracleDatabaseStubSettings) getStubSettings()).createCloudVmClusterOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to updateCloudVmCluster. */
+  public UnaryCallSettings<UpdateCloudVmClusterRequest, Operation> updateCloudVmClusterSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings()).updateCloudVmClusterSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateCloudVmCluster. */
+  public OperationCallSettings<UpdateCloudVmClusterRequest, CloudVmCluster, OperationMetadata>
+      updateCloudVmClusterOperationSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings()).updateCloudVmClusterOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to deleteCloudVmCluster. */
   public UnaryCallSettings<DeleteCloudVmClusterRequest, Operation> deleteCloudVmClusterSettings() {
     return ((OracleDatabaseStubSettings) getStubSettings()).deleteCloudVmClusterSettings();
@@ -257,11 +286,94 @@ public class OracleDatabaseSettings extends ClientSettings<OracleDatabaseSetting
     return ((OracleDatabaseStubSettings) getStubSettings()).deleteCloudVmClusterOperationSettings();
   }
 
+  /**
+   * Returns the object with the settings used for calls to enableCloudVmClusterIdentityConnector.
+   */
+  public UnaryCallSettings<EnableCloudVmClusterIdentityConnectorRequest, Operation>
+      enableCloudVmClusterIdentityConnectorSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings())
+        .enableCloudVmClusterIdentityConnectorSettings();
+  }
+
+  /**
+   * Returns the object with the settings used for calls to enableCloudVmClusterIdentityConnector.
+   */
+  public OperationCallSettings<
+          EnableCloudVmClusterIdentityConnectorRequest, CloudVmCluster, OperationMetadata>
+      enableCloudVmClusterIdentityConnectorOperationSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings())
+        .enableCloudVmClusterIdentityConnectorOperationSettings();
+  }
+
+  /**
+   * Returns the object with the settings used for calls to disableCloudVmClusterIdentityConnector.
+   */
+  public UnaryCallSettings<DisableCloudVmClusterIdentityConnectorRequest, Operation>
+      disableCloudVmClusterIdentityConnectorSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings())
+        .disableCloudVmClusterIdentityConnectorSettings();
+  }
+
+  /**
+   * Returns the object with the settings used for calls to disableCloudVmClusterIdentityConnector.
+   */
+  public OperationCallSettings<
+          DisableCloudVmClusterIdentityConnectorRequest, CloudVmCluster, OperationMetadata>
+      disableCloudVmClusterIdentityConnectorOperationSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings())
+        .disableCloudVmClusterIdentityConnectorOperationSettings();
+  }
+
+  /**
+   * Returns the object with the settings used for calls to enableExadbVmClusterIdentityConnector.
+   */
+  public UnaryCallSettings<EnableExadbVmClusterIdentityConnectorRequest, Operation>
+      enableExadbVmClusterIdentityConnectorSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings())
+        .enableExadbVmClusterIdentityConnectorSettings();
+  }
+
+  /**
+   * Returns the object with the settings used for calls to enableExadbVmClusterIdentityConnector.
+   */
+  public OperationCallSettings<
+          EnableExadbVmClusterIdentityConnectorRequest, ExadbVmCluster, OperationMetadata>
+      enableExadbVmClusterIdentityConnectorOperationSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings())
+        .enableExadbVmClusterIdentityConnectorOperationSettings();
+  }
+
+  /**
+   * Returns the object with the settings used for calls to disableExadbVmClusterIdentityConnector.
+   */
+  public UnaryCallSettings<DisableExadbVmClusterIdentityConnectorRequest, Operation>
+      disableExadbVmClusterIdentityConnectorSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings())
+        .disableExadbVmClusterIdentityConnectorSettings();
+  }
+
+  /**
+   * Returns the object with the settings used for calls to disableExadbVmClusterIdentityConnector.
+   */
+  public OperationCallSettings<
+          DisableExadbVmClusterIdentityConnectorRequest, ExadbVmCluster, OperationMetadata>
+      disableExadbVmClusterIdentityConnectorOperationSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings())
+        .disableExadbVmClusterIdentityConnectorOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to listEntitlements. */
   public PagedCallSettings<
           ListEntitlementsRequest, ListEntitlementsResponse, ListEntitlementsPagedResponse>
       listEntitlementsSettings() {
     return ((OracleDatabaseStubSettings) getStubSettings()).listEntitlementsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listFlexComponents. */
+  public PagedCallSettings<
+          ListFlexComponentsRequest, ListFlexComponentsResponse, ListFlexComponentsPagedResponse>
+      listFlexComponentsSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings()).listFlexComponentsSettings();
   }
 
   /** Returns the object with the settings used for calls to listDbServers. */
@@ -519,6 +631,17 @@ public class OracleDatabaseSettings extends ClientSettings<OracleDatabaseSetting
     return ((OracleDatabaseStubSettings) getStubSettings()).createOdbNetworkOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to updateOdbNetwork. */
+  public UnaryCallSettings<UpdateOdbNetworkRequest, Operation> updateOdbNetworkSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings()).updateOdbNetworkSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateOdbNetwork. */
+  public OperationCallSettings<UpdateOdbNetworkRequest, OdbNetwork, OperationMetadata>
+      updateOdbNetworkOperationSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings()).updateOdbNetworkOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to deleteOdbNetwork. */
   public UnaryCallSettings<DeleteOdbNetworkRequest, Operation> deleteOdbNetworkSettings() {
     return ((OracleDatabaseStubSettings) getStubSettings()).deleteOdbNetworkSettings();
@@ -551,6 +674,17 @@ public class OracleDatabaseSettings extends ClientSettings<OracleDatabaseSetting
   public OperationCallSettings<CreateOdbSubnetRequest, OdbSubnet, OperationMetadata>
       createOdbSubnetOperationSettings() {
     return ((OracleDatabaseStubSettings) getStubSettings()).createOdbSubnetOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateOdbSubnet. */
+  public UnaryCallSettings<UpdateOdbSubnetRequest, Operation> updateOdbSubnetSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings()).updateOdbSubnetSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateOdbSubnet. */
+  public OperationCallSettings<UpdateOdbSubnetRequest, OdbSubnet, OperationMetadata>
+      updateOdbSubnetOperationSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings()).updateOdbSubnetOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to deleteOdbSubnet. */
@@ -687,6 +821,20 @@ public class OracleDatabaseSettings extends ClientSettings<OracleDatabaseSetting
         .createExascaleDbStorageVaultOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to updateExascaleDbStorageVault. */
+  public UnaryCallSettings<UpdateExascaleDbStorageVaultRequest, Operation>
+      updateExascaleDbStorageVaultSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings()).updateExascaleDbStorageVaultSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateExascaleDbStorageVault. */
+  public OperationCallSettings<
+          UpdateExascaleDbStorageVaultRequest, ExascaleDbStorageVault, OperationMetadata>
+      updateExascaleDbStorageVaultOperationSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings())
+        .updateExascaleDbStorageVaultOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to deleteExascaleDbStorageVault. */
   public UnaryCallSettings<DeleteExascaleDbStorageVaultRequest, Operation>
       deleteExascaleDbStorageVaultSettings() {
@@ -708,6 +856,16 @@ public class OracleDatabaseSettings extends ClientSettings<OracleDatabaseSetting
       listDbSystemInitialStorageSizesSettings() {
     return ((OracleDatabaseStubSettings) getStubSettings())
         .listDbSystemInitialStorageSizesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listDbSystemComputePerformances. */
+  public PagedCallSettings<
+          ListDbSystemComputePerformancesRequest,
+          ListDbSystemComputePerformancesResponse,
+          ListDbSystemComputePerformancesPagedResponse>
+      listDbSystemComputePerformancesSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings())
+        .listDbSystemComputePerformancesSettings();
   }
 
   /** Returns the object with the settings used for calls to listDatabases. */
@@ -758,6 +916,17 @@ public class OracleDatabaseSettings extends ClientSettings<OracleDatabaseSetting
     return ((OracleDatabaseStubSettings) getStubSettings()).createDbSystemOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to updateDbSystem. */
+  public UnaryCallSettings<UpdateDbSystemRequest, Operation> updateDbSystemSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings()).updateDbSystemSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateDbSystem. */
+  public OperationCallSettings<UpdateDbSystemRequest, DbSystem, OperationMetadata>
+      updateDbSystemOperationSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings()).updateDbSystemOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to deleteDbSystem. */
   public UnaryCallSettings<DeleteDbSystemRequest, Operation> deleteDbSystemSettings() {
     return ((OracleDatabaseStubSettings) getStubSettings()).deleteDbSystemSettings();
@@ -796,6 +965,20 @@ public class OracleDatabaseSettings extends ClientSettings<OracleDatabaseSetting
       createGoldengateDeploymentOperationSettings() {
     return ((OracleDatabaseStubSettings) getStubSettings())
         .createGoldengateDeploymentOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateGoldengateDeployment. */
+  public UnaryCallSettings<UpdateGoldengateDeploymentRequest, Operation>
+      updateGoldengateDeploymentSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings()).updateGoldengateDeploymentSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateGoldengateDeployment. */
+  public OperationCallSettings<
+          UpdateGoldengateDeploymentRequest, GoldengateDeployment, OperationMetadata>
+      updateGoldengateDeploymentOperationSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings())
+        .updateGoldengateDeploymentOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to deleteGoldengateDeployment. */
@@ -866,6 +1049,20 @@ public class OracleDatabaseSettings extends ClientSettings<OracleDatabaseSetting
       createGoldengateConnectionOperationSettings() {
     return ((OracleDatabaseStubSettings) getStubSettings())
         .createGoldengateConnectionOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateGoldengateConnection. */
+  public UnaryCallSettings<UpdateGoldengateConnectionRequest, Operation>
+      updateGoldengateConnectionSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings()).updateGoldengateConnectionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateGoldengateConnection. */
+  public OperationCallSettings<
+          UpdateGoldengateConnectionRequest, GoldengateConnection, OperationMetadata>
+      updateGoldengateConnectionOperationSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings())
+        .updateGoldengateConnectionOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to deleteGoldengateConnection. */
@@ -976,6 +1173,27 @@ public class OracleDatabaseSettings extends ClientSettings<OracleDatabaseSetting
   }
 
   /**
+   * Returns the object with the settings used for calls to updateGoldengateConnectionAssignment.
+   */
+  public UnaryCallSettings<UpdateGoldengateConnectionAssignmentRequest, Operation>
+      updateGoldengateConnectionAssignmentSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings())
+        .updateGoldengateConnectionAssignmentSettings();
+  }
+
+  /**
+   * Returns the object with the settings used for calls to updateGoldengateConnectionAssignment.
+   */
+  public OperationCallSettings<
+          UpdateGoldengateConnectionAssignmentRequest,
+          GoldengateConnectionAssignment,
+          OperationMetadata>
+      updateGoldengateConnectionAssignmentOperationSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings())
+        .updateGoldengateConnectionAssignmentOperationSettings();
+  }
+
+  /**
    * Returns the object with the settings used for calls to deleteGoldengateConnectionAssignment.
    */
   public UnaryCallSettings<DeleteGoldengateConnectionAssignmentRequest, Operation>
@@ -1000,6 +1218,73 @@ public class OracleDatabaseSettings extends ClientSettings<OracleDatabaseSetting
       testGoldengateConnectionAssignmentSettings() {
     return ((OracleDatabaseStubSettings) getStubSettings())
         .testGoldengateConnectionAssignmentSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listDatabaseConnections. */
+  public PagedCallSettings<
+          ListDatabaseConnectionsRequest,
+          ListDatabaseConnectionsResponse,
+          ListDatabaseConnectionsPagedResponse>
+      listDatabaseConnectionsSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings()).listDatabaseConnectionsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getDatabaseConnection. */
+  public UnaryCallSettings<GetDatabaseConnectionRequest, DatabaseConnection>
+      getDatabaseConnectionSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings()).getDatabaseConnectionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createDatabaseConnection. */
+  public UnaryCallSettings<CreateDatabaseConnectionRequest, Operation>
+      createDatabaseConnectionSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings()).createDatabaseConnectionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createDatabaseConnection. */
+  public OperationCallSettings<
+          CreateDatabaseConnectionRequest, DatabaseConnection, OperationMetadata>
+      createDatabaseConnectionOperationSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings())
+        .createDatabaseConnectionOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateDatabaseConnection. */
+  public UnaryCallSettings<UpdateDatabaseConnectionRequest, Operation>
+      updateDatabaseConnectionSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings()).updateDatabaseConnectionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateDatabaseConnection. */
+  public OperationCallSettings<
+          UpdateDatabaseConnectionRequest, DatabaseConnection, OperationMetadata>
+      updateDatabaseConnectionOperationSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings())
+        .updateDatabaseConnectionOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteDatabaseConnection. */
+  public UnaryCallSettings<DeleteDatabaseConnectionRequest, Operation>
+      deleteDatabaseConnectionSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings()).deleteDatabaseConnectionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteDatabaseConnection. */
+  public OperationCallSettings<DeleteDatabaseConnectionRequest, Empty, OperationMetadata>
+      deleteDatabaseConnectionOperationSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings())
+        .deleteDatabaseConnectionOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to testDatabaseConnection. */
+  public UnaryCallSettings<TestDatabaseConnectionRequest, TestDatabaseConnectionResponse>
+      testDatabaseConnectionSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings()).testDatabaseConnectionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to executeSql. */
+  public UnaryCallSettings<ExecuteSqlRequest, ExecuteSqlResponse> executeSqlSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings()).executeSqlSettings();
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -1154,6 +1439,19 @@ public class OracleDatabaseSettings extends ClientSettings<OracleDatabaseSetting
       return getStubSettingsBuilder().createCloudExadataInfrastructureOperationSettings();
     }
 
+    /** Returns the builder for the settings used for calls to updateCloudExadataInfrastructure. */
+    public UnaryCallSettings.Builder<UpdateCloudExadataInfrastructureRequest, Operation>
+        updateCloudExadataInfrastructureSettings() {
+      return getStubSettingsBuilder().updateCloudExadataInfrastructureSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateCloudExadataInfrastructure. */
+    public OperationCallSettings.Builder<
+            UpdateCloudExadataInfrastructureRequest, CloudExadataInfrastructure, OperationMetadata>
+        updateCloudExadataInfrastructureOperationSettings() {
+      return getStubSettingsBuilder().updateCloudExadataInfrastructureOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to deleteCloudExadataInfrastructure. */
     public UnaryCallSettings.Builder<DeleteCloudExadataInfrastructureRequest, Operation>
         deleteCloudExadataInfrastructureSettings() {
@@ -1217,6 +1515,19 @@ public class OracleDatabaseSettings extends ClientSettings<OracleDatabaseSetting
       return getStubSettingsBuilder().createCloudVmClusterOperationSettings();
     }
 
+    /** Returns the builder for the settings used for calls to updateCloudVmCluster. */
+    public UnaryCallSettings.Builder<UpdateCloudVmClusterRequest, Operation>
+        updateCloudVmClusterSettings() {
+      return getStubSettingsBuilder().updateCloudVmClusterSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateCloudVmCluster. */
+    public OperationCallSettings.Builder<
+            UpdateCloudVmClusterRequest, CloudVmCluster, OperationMetadata>
+        updateCloudVmClusterOperationSettings() {
+      return getStubSettingsBuilder().updateCloudVmClusterOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to deleteCloudVmCluster. */
     public UnaryCallSettings.Builder<DeleteCloudVmClusterRequest, Operation>
         deleteCloudVmClusterSettings() {
@@ -1229,11 +1540,90 @@ public class OracleDatabaseSettings extends ClientSettings<OracleDatabaseSetting
       return getStubSettingsBuilder().deleteCloudVmClusterOperationSettings();
     }
 
+    /**
+     * Returns the builder for the settings used for calls to enableCloudVmClusterIdentityConnector.
+     */
+    public UnaryCallSettings.Builder<EnableCloudVmClusterIdentityConnectorRequest, Operation>
+        enableCloudVmClusterIdentityConnectorSettings() {
+      return getStubSettingsBuilder().enableCloudVmClusterIdentityConnectorSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to enableCloudVmClusterIdentityConnector.
+     */
+    public OperationCallSettings.Builder<
+            EnableCloudVmClusterIdentityConnectorRequest, CloudVmCluster, OperationMetadata>
+        enableCloudVmClusterIdentityConnectorOperationSettings() {
+      return getStubSettingsBuilder().enableCloudVmClusterIdentityConnectorOperationSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * disableCloudVmClusterIdentityConnector.
+     */
+    public UnaryCallSettings.Builder<DisableCloudVmClusterIdentityConnectorRequest, Operation>
+        disableCloudVmClusterIdentityConnectorSettings() {
+      return getStubSettingsBuilder().disableCloudVmClusterIdentityConnectorSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * disableCloudVmClusterIdentityConnector.
+     */
+    public OperationCallSettings.Builder<
+            DisableCloudVmClusterIdentityConnectorRequest, CloudVmCluster, OperationMetadata>
+        disableCloudVmClusterIdentityConnectorOperationSettings() {
+      return getStubSettingsBuilder().disableCloudVmClusterIdentityConnectorOperationSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to enableExadbVmClusterIdentityConnector.
+     */
+    public UnaryCallSettings.Builder<EnableExadbVmClusterIdentityConnectorRequest, Operation>
+        enableExadbVmClusterIdentityConnectorSettings() {
+      return getStubSettingsBuilder().enableExadbVmClusterIdentityConnectorSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to enableExadbVmClusterIdentityConnector.
+     */
+    public OperationCallSettings.Builder<
+            EnableExadbVmClusterIdentityConnectorRequest, ExadbVmCluster, OperationMetadata>
+        enableExadbVmClusterIdentityConnectorOperationSettings() {
+      return getStubSettingsBuilder().enableExadbVmClusterIdentityConnectorOperationSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * disableExadbVmClusterIdentityConnector.
+     */
+    public UnaryCallSettings.Builder<DisableExadbVmClusterIdentityConnectorRequest, Operation>
+        disableExadbVmClusterIdentityConnectorSettings() {
+      return getStubSettingsBuilder().disableExadbVmClusterIdentityConnectorSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * disableExadbVmClusterIdentityConnector.
+     */
+    public OperationCallSettings.Builder<
+            DisableExadbVmClusterIdentityConnectorRequest, ExadbVmCluster, OperationMetadata>
+        disableExadbVmClusterIdentityConnectorOperationSettings() {
+      return getStubSettingsBuilder().disableExadbVmClusterIdentityConnectorOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to listEntitlements. */
     public PagedCallSettings.Builder<
             ListEntitlementsRequest, ListEntitlementsResponse, ListEntitlementsPagedResponse>
         listEntitlementsSettings() {
       return getStubSettingsBuilder().listEntitlementsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listFlexComponents. */
+    public PagedCallSettings.Builder<
+            ListFlexComponentsRequest, ListFlexComponentsResponse, ListFlexComponentsPagedResponse>
+        listFlexComponentsSettings() {
+      return getStubSettingsBuilder().listFlexComponentsSettings();
     }
 
     /** Returns the builder for the settings used for calls to listDbServers. */
@@ -1485,6 +1875,18 @@ public class OracleDatabaseSettings extends ClientSettings<OracleDatabaseSetting
       return getStubSettingsBuilder().createOdbNetworkOperationSettings();
     }
 
+    /** Returns the builder for the settings used for calls to updateOdbNetwork. */
+    public UnaryCallSettings.Builder<UpdateOdbNetworkRequest, Operation>
+        updateOdbNetworkSettings() {
+      return getStubSettingsBuilder().updateOdbNetworkSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateOdbNetwork. */
+    public OperationCallSettings.Builder<UpdateOdbNetworkRequest, OdbNetwork, OperationMetadata>
+        updateOdbNetworkOperationSettings() {
+      return getStubSettingsBuilder().updateOdbNetworkOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to deleteOdbNetwork. */
     public UnaryCallSettings.Builder<DeleteOdbNetworkRequest, Operation>
         deleteOdbNetworkSettings() {
@@ -1518,6 +1920,17 @@ public class OracleDatabaseSettings extends ClientSettings<OracleDatabaseSetting
     public OperationCallSettings.Builder<CreateOdbSubnetRequest, OdbSubnet, OperationMetadata>
         createOdbSubnetOperationSettings() {
       return getStubSettingsBuilder().createOdbSubnetOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateOdbSubnet. */
+    public UnaryCallSettings.Builder<UpdateOdbSubnetRequest, Operation> updateOdbSubnetSettings() {
+      return getStubSettingsBuilder().updateOdbSubnetSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateOdbSubnet. */
+    public OperationCallSettings.Builder<UpdateOdbSubnetRequest, OdbSubnet, OperationMetadata>
+        updateOdbSubnetOperationSettings() {
+      return getStubSettingsBuilder().updateOdbSubnetOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to deleteOdbSubnet. */
@@ -1665,6 +2078,19 @@ public class OracleDatabaseSettings extends ClientSettings<OracleDatabaseSetting
       return getStubSettingsBuilder().createExascaleDbStorageVaultOperationSettings();
     }
 
+    /** Returns the builder for the settings used for calls to updateExascaleDbStorageVault. */
+    public UnaryCallSettings.Builder<UpdateExascaleDbStorageVaultRequest, Operation>
+        updateExascaleDbStorageVaultSettings() {
+      return getStubSettingsBuilder().updateExascaleDbStorageVaultSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateExascaleDbStorageVault. */
+    public OperationCallSettings.Builder<
+            UpdateExascaleDbStorageVaultRequest, ExascaleDbStorageVault, OperationMetadata>
+        updateExascaleDbStorageVaultOperationSettings() {
+      return getStubSettingsBuilder().updateExascaleDbStorageVaultOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to deleteExascaleDbStorageVault. */
     public UnaryCallSettings.Builder<DeleteExascaleDbStorageVaultRequest, Operation>
         deleteExascaleDbStorageVaultSettings() {
@@ -1685,6 +2111,15 @@ public class OracleDatabaseSettings extends ClientSettings<OracleDatabaseSetting
             ListDbSystemInitialStorageSizesPagedResponse>
         listDbSystemInitialStorageSizesSettings() {
       return getStubSettingsBuilder().listDbSystemInitialStorageSizesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listDbSystemComputePerformances. */
+    public PagedCallSettings.Builder<
+            ListDbSystemComputePerformancesRequest,
+            ListDbSystemComputePerformancesResponse,
+            ListDbSystemComputePerformancesPagedResponse>
+        listDbSystemComputePerformancesSettings() {
+      return getStubSettingsBuilder().listDbSystemComputePerformancesSettings();
     }
 
     /** Returns the builder for the settings used for calls to listDatabases. */
@@ -1737,6 +2172,17 @@ public class OracleDatabaseSettings extends ClientSettings<OracleDatabaseSetting
       return getStubSettingsBuilder().createDbSystemOperationSettings();
     }
 
+    /** Returns the builder for the settings used for calls to updateDbSystem. */
+    public UnaryCallSettings.Builder<UpdateDbSystemRequest, Operation> updateDbSystemSettings() {
+      return getStubSettingsBuilder().updateDbSystemSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateDbSystem. */
+    public OperationCallSettings.Builder<UpdateDbSystemRequest, DbSystem, OperationMetadata>
+        updateDbSystemOperationSettings() {
+      return getStubSettingsBuilder().updateDbSystemOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to deleteDbSystem. */
     public UnaryCallSettings.Builder<DeleteDbSystemRequest, Operation> deleteDbSystemSettings() {
       return getStubSettingsBuilder().deleteDbSystemSettings();
@@ -1774,6 +2220,19 @@ public class OracleDatabaseSettings extends ClientSettings<OracleDatabaseSetting
             CreateGoldengateDeploymentRequest, GoldengateDeployment, OperationMetadata>
         createGoldengateDeploymentOperationSettings() {
       return getStubSettingsBuilder().createGoldengateDeploymentOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateGoldengateDeployment. */
+    public UnaryCallSettings.Builder<UpdateGoldengateDeploymentRequest, Operation>
+        updateGoldengateDeploymentSettings() {
+      return getStubSettingsBuilder().updateGoldengateDeploymentSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateGoldengateDeployment. */
+    public OperationCallSettings.Builder<
+            UpdateGoldengateDeploymentRequest, GoldengateDeployment, OperationMetadata>
+        updateGoldengateDeploymentOperationSettings() {
+      return getStubSettingsBuilder().updateGoldengateDeploymentOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to deleteGoldengateDeployment. */
@@ -1841,6 +2300,19 @@ public class OracleDatabaseSettings extends ClientSettings<OracleDatabaseSetting
             CreateGoldengateConnectionRequest, GoldengateConnection, OperationMetadata>
         createGoldengateConnectionOperationSettings() {
       return getStubSettingsBuilder().createGoldengateConnectionOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateGoldengateConnection. */
+    public UnaryCallSettings.Builder<UpdateGoldengateConnectionRequest, Operation>
+        updateGoldengateConnectionSettings() {
+      return getStubSettingsBuilder().updateGoldengateConnectionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateGoldengateConnection. */
+    public OperationCallSettings.Builder<
+            UpdateGoldengateConnectionRequest, GoldengateConnection, OperationMetadata>
+        updateGoldengateConnectionOperationSettings() {
+      return getStubSettingsBuilder().updateGoldengateConnectionOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to deleteGoldengateConnection. */
@@ -1948,6 +2420,25 @@ public class OracleDatabaseSettings extends ClientSettings<OracleDatabaseSetting
     }
 
     /**
+     * Returns the builder for the settings used for calls to updateGoldengateConnectionAssignment.
+     */
+    public UnaryCallSettings.Builder<UpdateGoldengateConnectionAssignmentRequest, Operation>
+        updateGoldengateConnectionAssignmentSettings() {
+      return getStubSettingsBuilder().updateGoldengateConnectionAssignmentSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to updateGoldengateConnectionAssignment.
+     */
+    public OperationCallSettings.Builder<
+            UpdateGoldengateConnectionAssignmentRequest,
+            GoldengateConnectionAssignment,
+            OperationMetadata>
+        updateGoldengateConnectionAssignmentOperationSettings() {
+      return getStubSettingsBuilder().updateGoldengateConnectionAssignmentOperationSettings();
+    }
+
+    /**
      * Returns the builder for the settings used for calls to deleteGoldengateConnectionAssignment.
      */
     public UnaryCallSettings.Builder<DeleteGoldengateConnectionAssignmentRequest, Operation>
@@ -1971,6 +2462,70 @@ public class OracleDatabaseSettings extends ClientSettings<OracleDatabaseSetting
             TestGoldengateConnectionAssignmentRequest, TestGoldengateConnectionAssignmentResponse>
         testGoldengateConnectionAssignmentSettings() {
       return getStubSettingsBuilder().testGoldengateConnectionAssignmentSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listDatabaseConnections. */
+    public PagedCallSettings.Builder<
+            ListDatabaseConnectionsRequest,
+            ListDatabaseConnectionsResponse,
+            ListDatabaseConnectionsPagedResponse>
+        listDatabaseConnectionsSettings() {
+      return getStubSettingsBuilder().listDatabaseConnectionsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getDatabaseConnection. */
+    public UnaryCallSettings.Builder<GetDatabaseConnectionRequest, DatabaseConnection>
+        getDatabaseConnectionSettings() {
+      return getStubSettingsBuilder().getDatabaseConnectionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createDatabaseConnection. */
+    public UnaryCallSettings.Builder<CreateDatabaseConnectionRequest, Operation>
+        createDatabaseConnectionSettings() {
+      return getStubSettingsBuilder().createDatabaseConnectionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createDatabaseConnection. */
+    public OperationCallSettings.Builder<
+            CreateDatabaseConnectionRequest, DatabaseConnection, OperationMetadata>
+        createDatabaseConnectionOperationSettings() {
+      return getStubSettingsBuilder().createDatabaseConnectionOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateDatabaseConnection. */
+    public UnaryCallSettings.Builder<UpdateDatabaseConnectionRequest, Operation>
+        updateDatabaseConnectionSettings() {
+      return getStubSettingsBuilder().updateDatabaseConnectionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateDatabaseConnection. */
+    public OperationCallSettings.Builder<
+            UpdateDatabaseConnectionRequest, DatabaseConnection, OperationMetadata>
+        updateDatabaseConnectionOperationSettings() {
+      return getStubSettingsBuilder().updateDatabaseConnectionOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteDatabaseConnection. */
+    public UnaryCallSettings.Builder<DeleteDatabaseConnectionRequest, Operation>
+        deleteDatabaseConnectionSettings() {
+      return getStubSettingsBuilder().deleteDatabaseConnectionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteDatabaseConnection. */
+    public OperationCallSettings.Builder<DeleteDatabaseConnectionRequest, Empty, OperationMetadata>
+        deleteDatabaseConnectionOperationSettings() {
+      return getStubSettingsBuilder().deleteDatabaseConnectionOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to testDatabaseConnection. */
+    public UnaryCallSettings.Builder<TestDatabaseConnectionRequest, TestDatabaseConnectionResponse>
+        testDatabaseConnectionSettings() {
+      return getStubSettingsBuilder().testDatabaseConnectionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to executeSql. */
+    public UnaryCallSettings.Builder<ExecuteSqlRequest, ExecuteSqlResponse> executeSqlSettings() {
+      return getStubSettingsBuilder().executeSqlSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

@@ -24,8 +24,8 @@ package com.google.cloud.hypercomputecluster.v1beta;
  *
  *
  * <pre>
- * A resource representing a form of persistent storage that is accessible to
- * compute resources in the cluster.
+ * Represents a form of persistent storage that you can mount onto compute
+ * resources in the cluster.
  * </pre>
  *
  * Protobuf type {@code google.cloud.hypercomputecluster.v1beta.StorageResource}
@@ -129,11 +129,13 @@ public final class StorageResource extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Reference to a Filestore instance. Populated if and only if the storage
-   * resource was configured to use Filestore.
+   * Output only. A reference to a Filestore instance. Populated if and only
+   * if the storage resource was configured to use Filestore.
    * </pre>
    *
-   * <code>.google.cloud.hypercomputecluster.v1beta.FilestoreReference filestore = 1;</code>
+   * <code>
+   * .google.cloud.hypercomputecluster.v1beta.FilestoreReference filestore = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the filestore field is set.
    */
@@ -146,11 +148,13 @@ public final class StorageResource extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Reference to a Filestore instance. Populated if and only if the storage
-   * resource was configured to use Filestore.
+   * Output only. A reference to a Filestore instance. Populated if and only
+   * if the storage resource was configured to use Filestore.
    * </pre>
    *
-   * <code>.google.cloud.hypercomputecluster.v1beta.FilestoreReference filestore = 1;</code>
+   * <code>
+   * .google.cloud.hypercomputecluster.v1beta.FilestoreReference filestore = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The filestore.
    */
@@ -166,11 +170,13 @@ public final class StorageResource extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Reference to a Filestore instance. Populated if and only if the storage
-   * resource was configured to use Filestore.
+   * Output only. A reference to a Filestore instance. Populated if and only
+   * if the storage resource was configured to use Filestore.
    * </pre>
    *
-   * <code>.google.cloud.hypercomputecluster.v1beta.FilestoreReference filestore = 1;</code>
+   * <code>
+   * .google.cloud.hypercomputecluster.v1beta.FilestoreReference filestore = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.hypercomputecluster.v1beta.FilestoreReferenceOrBuilder
@@ -187,11 +193,14 @@ public final class StorageResource extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Reference to a Google Cloud Storage bucket. Populated if and only if the
-   * storage resource was configured to use Google Cloud Storage.
+   * Output only. A reference to a Google Cloud Storage bucket. Populated if
+   * and only if the storage resource was configured to use Google Cloud
+   * Storage.
    * </pre>
    *
-   * <code>.google.cloud.hypercomputecluster.v1beta.BucketReference bucket = 2;</code>
+   * <code>
+   * .google.cloud.hypercomputecluster.v1beta.BucketReference bucket = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the bucket field is set.
    */
@@ -204,11 +213,14 @@ public final class StorageResource extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Reference to a Google Cloud Storage bucket. Populated if and only if the
-   * storage resource was configured to use Google Cloud Storage.
+   * Output only. A reference to a Google Cloud Storage bucket. Populated if
+   * and only if the storage resource was configured to use Google Cloud
+   * Storage.
    * </pre>
    *
-   * <code>.google.cloud.hypercomputecluster.v1beta.BucketReference bucket = 2;</code>
+   * <code>
+   * .google.cloud.hypercomputecluster.v1beta.BucketReference bucket = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The bucket.
    */
@@ -224,11 +236,14 @@ public final class StorageResource extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Reference to a Google Cloud Storage bucket. Populated if and only if the
-   * storage resource was configured to use Google Cloud Storage.
+   * Output only. A reference to a Google Cloud Storage bucket. Populated if
+   * and only if the storage resource was configured to use Google Cloud
+   * Storage.
    * </pre>
    *
-   * <code>.google.cloud.hypercomputecluster.v1beta.BucketReference bucket = 2;</code>
+   * <code>
+   * .google.cloud.hypercomputecluster.v1beta.BucketReference bucket = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.hypercomputecluster.v1beta.BucketReferenceOrBuilder getBucketOrBuilder() {
@@ -244,11 +259,13 @@ public final class StorageResource extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Reference to a Managed Lustre instance. Populated if and only if the
-   * storage resource was configured to use Managed Lustre.
+   * Output only. A reference to a Managed Lustre instance. Populated if and
+   * only if the storage resource was configured to use Managed Lustre.
    * </pre>
    *
-   * <code>.google.cloud.hypercomputecluster.v1beta.LustreReference lustre = 3;</code>
+   * <code>
+   * .google.cloud.hypercomputecluster.v1beta.LustreReference lustre = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the lustre field is set.
    */
@@ -261,11 +278,13 @@ public final class StorageResource extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Reference to a Managed Lustre instance. Populated if and only if the
-   * storage resource was configured to use Managed Lustre.
+   * Output only. A reference to a Managed Lustre instance. Populated if and
+   * only if the storage resource was configured to use Managed Lustre.
    * </pre>
    *
-   * <code>.google.cloud.hypercomputecluster.v1beta.LustreReference lustre = 3;</code>
+   * <code>
+   * .google.cloud.hypercomputecluster.v1beta.LustreReference lustre = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The lustre.
    */
@@ -281,11 +300,13 @@ public final class StorageResource extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Reference to a Managed Lustre instance. Populated if and only if the
-   * storage resource was configured to use Managed Lustre.
+   * Output only. A reference to a Managed Lustre instance. Populated if and
+   * only if the storage resource was configured to use Managed Lustre.
    * </pre>
    *
-   * <code>.google.cloud.hypercomputecluster.v1beta.LustreReference lustre = 3;</code>
+   * <code>
+   * .google.cloud.hypercomputecluster.v1beta.LustreReference lustre = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.hypercomputecluster.v1beta.LustreReferenceOrBuilder getLustreOrBuilder() {
@@ -594,8 +615,8 @@ public final class StorageResource extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * A resource representing a form of persistent storage that is accessible to
-   * compute resources in the cluster.
+   * Represents a form of persistent storage that you can mount onto compute
+   * resources in the cluster.
    * </pre>
    *
    * Protobuf type {@code google.cloud.hypercomputecluster.v1beta.StorageResource}
@@ -846,11 +867,13 @@ public final class StorageResource extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Reference to a Filestore instance. Populated if and only if the storage
-     * resource was configured to use Filestore.
+     * Output only. A reference to a Filestore instance. Populated if and only
+     * if the storage resource was configured to use Filestore.
      * </pre>
      *
-     * <code>.google.cloud.hypercomputecluster.v1beta.FilestoreReference filestore = 1;</code>
+     * <code>
+     * .google.cloud.hypercomputecluster.v1beta.FilestoreReference filestore = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return Whether the filestore field is set.
      */
@@ -863,11 +886,13 @@ public final class StorageResource extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Reference to a Filestore instance. Populated if and only if the storage
-     * resource was configured to use Filestore.
+     * Output only. A reference to a Filestore instance. Populated if and only
+     * if the storage resource was configured to use Filestore.
      * </pre>
      *
-     * <code>.google.cloud.hypercomputecluster.v1beta.FilestoreReference filestore = 1;</code>
+     * <code>
+     * .google.cloud.hypercomputecluster.v1beta.FilestoreReference filestore = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The filestore.
      */
@@ -890,11 +915,13 @@ public final class StorageResource extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Reference to a Filestore instance. Populated if and only if the storage
-     * resource was configured to use Filestore.
+     * Output only. A reference to a Filestore instance. Populated if and only
+     * if the storage resource was configured to use Filestore.
      * </pre>
      *
-     * <code>.google.cloud.hypercomputecluster.v1beta.FilestoreReference filestore = 1;</code>
+     * <code>
+     * .google.cloud.hypercomputecluster.v1beta.FilestoreReference filestore = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setFilestore(
         com.google.cloud.hypercomputecluster.v1beta.FilestoreReference value) {
@@ -915,11 +942,13 @@ public final class StorageResource extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Reference to a Filestore instance. Populated if and only if the storage
-     * resource was configured to use Filestore.
+     * Output only. A reference to a Filestore instance. Populated if and only
+     * if the storage resource was configured to use Filestore.
      * </pre>
      *
-     * <code>.google.cloud.hypercomputecluster.v1beta.FilestoreReference filestore = 1;</code>
+     * <code>
+     * .google.cloud.hypercomputecluster.v1beta.FilestoreReference filestore = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setFilestore(
         com.google.cloud.hypercomputecluster.v1beta.FilestoreReference.Builder builderForValue) {
@@ -937,11 +966,13 @@ public final class StorageResource extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Reference to a Filestore instance. Populated if and only if the storage
-     * resource was configured to use Filestore.
+     * Output only. A reference to a Filestore instance. Populated if and only
+     * if the storage resource was configured to use Filestore.
      * </pre>
      *
-     * <code>.google.cloud.hypercomputecluster.v1beta.FilestoreReference filestore = 1;</code>
+     * <code>
+     * .google.cloud.hypercomputecluster.v1beta.FilestoreReference filestore = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder mergeFilestore(
         com.google.cloud.hypercomputecluster.v1beta.FilestoreReference value) {
@@ -974,11 +1005,13 @@ public final class StorageResource extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Reference to a Filestore instance. Populated if and only if the storage
-     * resource was configured to use Filestore.
+     * Output only. A reference to a Filestore instance. Populated if and only
+     * if the storage resource was configured to use Filestore.
      * </pre>
      *
-     * <code>.google.cloud.hypercomputecluster.v1beta.FilestoreReference filestore = 1;</code>
+     * <code>
+     * .google.cloud.hypercomputecluster.v1beta.FilestoreReference filestore = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearFilestore() {
       if (filestoreBuilder_ == null) {
@@ -1001,11 +1034,13 @@ public final class StorageResource extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Reference to a Filestore instance. Populated if and only if the storage
-     * resource was configured to use Filestore.
+     * Output only. A reference to a Filestore instance. Populated if and only
+     * if the storage resource was configured to use Filestore.
      * </pre>
      *
-     * <code>.google.cloud.hypercomputecluster.v1beta.FilestoreReference filestore = 1;</code>
+     * <code>
+     * .google.cloud.hypercomputecluster.v1beta.FilestoreReference filestore = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.hypercomputecluster.v1beta.FilestoreReference.Builder
         getFilestoreBuilder() {
@@ -1016,11 +1051,13 @@ public final class StorageResource extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Reference to a Filestore instance. Populated if and only if the storage
-     * resource was configured to use Filestore.
+     * Output only. A reference to a Filestore instance. Populated if and only
+     * if the storage resource was configured to use Filestore.
      * </pre>
      *
-     * <code>.google.cloud.hypercomputecluster.v1beta.FilestoreReference filestore = 1;</code>
+     * <code>
+     * .google.cloud.hypercomputecluster.v1beta.FilestoreReference filestore = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     @java.lang.Override
     public com.google.cloud.hypercomputecluster.v1beta.FilestoreReferenceOrBuilder
@@ -1039,11 +1076,13 @@ public final class StorageResource extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Reference to a Filestore instance. Populated if and only if the storage
-     * resource was configured to use Filestore.
+     * Output only. A reference to a Filestore instance. Populated if and only
+     * if the storage resource was configured to use Filestore.
      * </pre>
      *
-     * <code>.google.cloud.hypercomputecluster.v1beta.FilestoreReference filestore = 1;</code>
+     * <code>
+     * .google.cloud.hypercomputecluster.v1beta.FilestoreReference filestore = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilder<
             com.google.cloud.hypercomputecluster.v1beta.FilestoreReference,
@@ -1080,11 +1119,14 @@ public final class StorageResource extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Reference to a Google Cloud Storage bucket. Populated if and only if the
-     * storage resource was configured to use Google Cloud Storage.
+     * Output only. A reference to a Google Cloud Storage bucket. Populated if
+     * and only if the storage resource was configured to use Google Cloud
+     * Storage.
      * </pre>
      *
-     * <code>.google.cloud.hypercomputecluster.v1beta.BucketReference bucket = 2;</code>
+     * <code>
+     * .google.cloud.hypercomputecluster.v1beta.BucketReference bucket = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return Whether the bucket field is set.
      */
@@ -1097,11 +1139,14 @@ public final class StorageResource extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Reference to a Google Cloud Storage bucket. Populated if and only if the
-     * storage resource was configured to use Google Cloud Storage.
+     * Output only. A reference to a Google Cloud Storage bucket. Populated if
+     * and only if the storage resource was configured to use Google Cloud
+     * Storage.
      * </pre>
      *
-     * <code>.google.cloud.hypercomputecluster.v1beta.BucketReference bucket = 2;</code>
+     * <code>
+     * .google.cloud.hypercomputecluster.v1beta.BucketReference bucket = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The bucket.
      */
@@ -1124,11 +1169,14 @@ public final class StorageResource extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Reference to a Google Cloud Storage bucket. Populated if and only if the
-     * storage resource was configured to use Google Cloud Storage.
+     * Output only. A reference to a Google Cloud Storage bucket. Populated if
+     * and only if the storage resource was configured to use Google Cloud
+     * Storage.
      * </pre>
      *
-     * <code>.google.cloud.hypercomputecluster.v1beta.BucketReference bucket = 2;</code>
+     * <code>
+     * .google.cloud.hypercomputecluster.v1beta.BucketReference bucket = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setBucket(com.google.cloud.hypercomputecluster.v1beta.BucketReference value) {
       if (bucketBuilder_ == null) {
@@ -1148,11 +1196,14 @@ public final class StorageResource extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Reference to a Google Cloud Storage bucket. Populated if and only if the
-     * storage resource was configured to use Google Cloud Storage.
+     * Output only. A reference to a Google Cloud Storage bucket. Populated if
+     * and only if the storage resource was configured to use Google Cloud
+     * Storage.
      * </pre>
      *
-     * <code>.google.cloud.hypercomputecluster.v1beta.BucketReference bucket = 2;</code>
+     * <code>
+     * .google.cloud.hypercomputecluster.v1beta.BucketReference bucket = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setBucket(
         com.google.cloud.hypercomputecluster.v1beta.BucketReference.Builder builderForValue) {
@@ -1170,11 +1221,14 @@ public final class StorageResource extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Reference to a Google Cloud Storage bucket. Populated if and only if the
-     * storage resource was configured to use Google Cloud Storage.
+     * Output only. A reference to a Google Cloud Storage bucket. Populated if
+     * and only if the storage resource was configured to use Google Cloud
+     * Storage.
      * </pre>
      *
-     * <code>.google.cloud.hypercomputecluster.v1beta.BucketReference bucket = 2;</code>
+     * <code>
+     * .google.cloud.hypercomputecluster.v1beta.BucketReference bucket = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder mergeBucket(com.google.cloud.hypercomputecluster.v1beta.BucketReference value) {
       if (bucketBuilder_ == null) {
@@ -1206,11 +1260,14 @@ public final class StorageResource extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Reference to a Google Cloud Storage bucket. Populated if and only if the
-     * storage resource was configured to use Google Cloud Storage.
+     * Output only. A reference to a Google Cloud Storage bucket. Populated if
+     * and only if the storage resource was configured to use Google Cloud
+     * Storage.
      * </pre>
      *
-     * <code>.google.cloud.hypercomputecluster.v1beta.BucketReference bucket = 2;</code>
+     * <code>
+     * .google.cloud.hypercomputecluster.v1beta.BucketReference bucket = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearBucket() {
       if (bucketBuilder_ == null) {
@@ -1233,11 +1290,14 @@ public final class StorageResource extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Reference to a Google Cloud Storage bucket. Populated if and only if the
-     * storage resource was configured to use Google Cloud Storage.
+     * Output only. A reference to a Google Cloud Storage bucket. Populated if
+     * and only if the storage resource was configured to use Google Cloud
+     * Storage.
      * </pre>
      *
-     * <code>.google.cloud.hypercomputecluster.v1beta.BucketReference bucket = 2;</code>
+     * <code>
+     * .google.cloud.hypercomputecluster.v1beta.BucketReference bucket = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.hypercomputecluster.v1beta.BucketReference.Builder getBucketBuilder() {
       return internalGetBucketFieldBuilder().getBuilder();
@@ -1247,11 +1307,14 @@ public final class StorageResource extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Reference to a Google Cloud Storage bucket. Populated if and only if the
-     * storage resource was configured to use Google Cloud Storage.
+     * Output only. A reference to a Google Cloud Storage bucket. Populated if
+     * and only if the storage resource was configured to use Google Cloud
+     * Storage.
      * </pre>
      *
-     * <code>.google.cloud.hypercomputecluster.v1beta.BucketReference bucket = 2;</code>
+     * <code>
+     * .google.cloud.hypercomputecluster.v1beta.BucketReference bucket = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     @java.lang.Override
     public com.google.cloud.hypercomputecluster.v1beta.BucketReferenceOrBuilder
@@ -1270,11 +1333,14 @@ public final class StorageResource extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Reference to a Google Cloud Storage bucket. Populated if and only if the
-     * storage resource was configured to use Google Cloud Storage.
+     * Output only. A reference to a Google Cloud Storage bucket. Populated if
+     * and only if the storage resource was configured to use Google Cloud
+     * Storage.
      * </pre>
      *
-     * <code>.google.cloud.hypercomputecluster.v1beta.BucketReference bucket = 2;</code>
+     * <code>
+     * .google.cloud.hypercomputecluster.v1beta.BucketReference bucket = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilder<
             com.google.cloud.hypercomputecluster.v1beta.BucketReference,
@@ -1311,11 +1377,13 @@ public final class StorageResource extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Reference to a Managed Lustre instance. Populated if and only if the
-     * storage resource was configured to use Managed Lustre.
+     * Output only. A reference to a Managed Lustre instance. Populated if and
+     * only if the storage resource was configured to use Managed Lustre.
      * </pre>
      *
-     * <code>.google.cloud.hypercomputecluster.v1beta.LustreReference lustre = 3;</code>
+     * <code>
+     * .google.cloud.hypercomputecluster.v1beta.LustreReference lustre = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return Whether the lustre field is set.
      */
@@ -1328,11 +1396,13 @@ public final class StorageResource extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Reference to a Managed Lustre instance. Populated if and only if the
-     * storage resource was configured to use Managed Lustre.
+     * Output only. A reference to a Managed Lustre instance. Populated if and
+     * only if the storage resource was configured to use Managed Lustre.
      * </pre>
      *
-     * <code>.google.cloud.hypercomputecluster.v1beta.LustreReference lustre = 3;</code>
+     * <code>
+     * .google.cloud.hypercomputecluster.v1beta.LustreReference lustre = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The lustre.
      */
@@ -1355,11 +1425,13 @@ public final class StorageResource extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Reference to a Managed Lustre instance. Populated if and only if the
-     * storage resource was configured to use Managed Lustre.
+     * Output only. A reference to a Managed Lustre instance. Populated if and
+     * only if the storage resource was configured to use Managed Lustre.
      * </pre>
      *
-     * <code>.google.cloud.hypercomputecluster.v1beta.LustreReference lustre = 3;</code>
+     * <code>
+     * .google.cloud.hypercomputecluster.v1beta.LustreReference lustre = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setLustre(com.google.cloud.hypercomputecluster.v1beta.LustreReference value) {
       if (lustreBuilder_ == null) {
@@ -1379,11 +1451,13 @@ public final class StorageResource extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Reference to a Managed Lustre instance. Populated if and only if the
-     * storage resource was configured to use Managed Lustre.
+     * Output only. A reference to a Managed Lustre instance. Populated if and
+     * only if the storage resource was configured to use Managed Lustre.
      * </pre>
      *
-     * <code>.google.cloud.hypercomputecluster.v1beta.LustreReference lustre = 3;</code>
+     * <code>
+     * .google.cloud.hypercomputecluster.v1beta.LustreReference lustre = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setLustre(
         com.google.cloud.hypercomputecluster.v1beta.LustreReference.Builder builderForValue) {
@@ -1401,11 +1475,13 @@ public final class StorageResource extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Reference to a Managed Lustre instance. Populated if and only if the
-     * storage resource was configured to use Managed Lustre.
+     * Output only. A reference to a Managed Lustre instance. Populated if and
+     * only if the storage resource was configured to use Managed Lustre.
      * </pre>
      *
-     * <code>.google.cloud.hypercomputecluster.v1beta.LustreReference lustre = 3;</code>
+     * <code>
+     * .google.cloud.hypercomputecluster.v1beta.LustreReference lustre = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder mergeLustre(com.google.cloud.hypercomputecluster.v1beta.LustreReference value) {
       if (lustreBuilder_ == null) {
@@ -1437,11 +1513,13 @@ public final class StorageResource extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Reference to a Managed Lustre instance. Populated if and only if the
-     * storage resource was configured to use Managed Lustre.
+     * Output only. A reference to a Managed Lustre instance. Populated if and
+     * only if the storage resource was configured to use Managed Lustre.
      * </pre>
      *
-     * <code>.google.cloud.hypercomputecluster.v1beta.LustreReference lustre = 3;</code>
+     * <code>
+     * .google.cloud.hypercomputecluster.v1beta.LustreReference lustre = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearLustre() {
       if (lustreBuilder_ == null) {
@@ -1464,11 +1542,13 @@ public final class StorageResource extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Reference to a Managed Lustre instance. Populated if and only if the
-     * storage resource was configured to use Managed Lustre.
+     * Output only. A reference to a Managed Lustre instance. Populated if and
+     * only if the storage resource was configured to use Managed Lustre.
      * </pre>
      *
-     * <code>.google.cloud.hypercomputecluster.v1beta.LustreReference lustre = 3;</code>
+     * <code>
+     * .google.cloud.hypercomputecluster.v1beta.LustreReference lustre = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.hypercomputecluster.v1beta.LustreReference.Builder getLustreBuilder() {
       return internalGetLustreFieldBuilder().getBuilder();
@@ -1478,11 +1558,13 @@ public final class StorageResource extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Reference to a Managed Lustre instance. Populated if and only if the
-     * storage resource was configured to use Managed Lustre.
+     * Output only. A reference to a Managed Lustre instance. Populated if and
+     * only if the storage resource was configured to use Managed Lustre.
      * </pre>
      *
-     * <code>.google.cloud.hypercomputecluster.v1beta.LustreReference lustre = 3;</code>
+     * <code>
+     * .google.cloud.hypercomputecluster.v1beta.LustreReference lustre = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     @java.lang.Override
     public com.google.cloud.hypercomputecluster.v1beta.LustreReferenceOrBuilder
@@ -1501,11 +1583,13 @@ public final class StorageResource extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Reference to a Managed Lustre instance. Populated if and only if the
-     * storage resource was configured to use Managed Lustre.
+     * Output only. A reference to a Managed Lustre instance. Populated if and
+     * only if the storage resource was configured to use Managed Lustre.
      * </pre>
      *
-     * <code>.google.cloud.hypercomputecluster.v1beta.LustreReference lustre = 3;</code>
+     * <code>
+     * .google.cloud.hypercomputecluster.v1beta.LustreReference lustre = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilder<
             com.google.cloud.hypercomputecluster.v1beta.LustreReference,

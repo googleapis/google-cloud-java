@@ -60,11 +60,13 @@ public interface CmekConfigOrBuilder
    *
    *
    * <pre>
-   * KMS key resource name which will be used to encrypt resources
+   * Required. KMS key resource name which will be used to encrypt resources
    * `projects/{project}/locations/{location}/keyRings/{keyRing}/cryptoKeys/{keyId}`.
    * </pre>
    *
-   * <code>string kms_key = 2 [(.google.api.resource_reference) = { ... }</code>
+   * <code>
+   * string kms_key = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The kmsKey.
    */
@@ -74,11 +76,13 @@ public interface CmekConfigOrBuilder
    *
    *
    * <pre>
-   * KMS key resource name which will be used to encrypt resources
+   * Required. KMS key resource name which will be used to encrypt resources
    * `projects/{project}/locations/{location}/keyRings/{keyRing}/cryptoKeys/{keyId}`.
    * </pre>
    *
-   * <code>string kms_key = 2 [(.google.api.resource_reference) = { ... }</code>
+   * <code>
+   * string kms_key = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for kmsKey.
    */

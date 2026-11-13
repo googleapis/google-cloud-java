@@ -211,6 +211,7 @@ class ITBigQueryStorageTest {
     }
   }
 
+  @Disabled("Flaky test: b/579437450")
   @Test
   void testSimpleRead() {
     String table =
@@ -356,6 +357,7 @@ class ITBigQueryStorageTest {
     assertEquals(1, rowCount);
   }
 
+  @Disabled("Flaky test: b/564596647")
   @Test
   void testSimpleReadAndResume() {
     String table =
