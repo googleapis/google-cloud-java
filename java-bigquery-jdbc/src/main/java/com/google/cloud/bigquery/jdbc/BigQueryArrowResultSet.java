@@ -54,6 +54,8 @@ import org.apache.arrow.vector.util.Text;
 
 /** {@link ResultSet} Implementation for Arrow datasource (Using Storage Read APIs) */
 class BigQueryArrowResultSet extends BigQueryBaseResultSet {
+  // Number of rows to return. Iteration stops once this many rows have been returned (this is
+  // also how Statement.setMaxRows is applied).
   private final long totalRows;
   // count of rows read by the current instance of ResultSet
   private long rowCount = 0;
@@ -112,12 +114,8 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
     this.nestedRowIndex = fromIndex - 1;
     this.ownedTask = ownedTask;
     this.enableTimestampPicos = enableTimestampPicos;
-    if (!isNested && arrowSchema != null) {
-      try {
-        this.arrowDeserializer = new ArrowDeserializer(arrowSchema);
-      } catch (IOException ex) {
-        throw new BigQueryJdbcException("IOException during ArrowDeserializer creation", ex);
-      }
+    if (!isNested) {
+      initDeserializerIfNeeded(arrowSchema);
     }
   }
 
@@ -269,48 +267,29 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
       return false;
     } else {
       /* Non nested */
-      if (this.hasReachedEnd || this.isLast()) {
+      if (this.afterLast || this.hasReachedEnd || reachedRowLimit()) {
+        if (!this.afterLast && this.vectorSchemaRoot != null) {
+          // Free the last batch's Arrow buffers as soon as iteration ends, not at close().
+          this.vectorSchemaRoot.clear();
+        }
         this.afterLast = true;
         return false;
       }
-      try {
-        if (this.currentBatchRowIndex == -1
-            || this.currentBatchRowIndex == (this.vectorSchemaRoot.getRowCount() - 1)) {
-          /* Start of iteration or we have exhausted the current batch */
-          // Advance the cursor. Potentially blocking operation.
-          try (Scope scope = makeOriginalContextCurrent()) {
-            BigQueryArrowBatchWrapper batchWrapper = this.buffer.take();
-            checkClosed();
-            if (batchWrapper.getException() != null) {
-              throw backgroundFetchError(batchWrapper.getException());
-            }
-            if (batchWrapper.isLast()) {
-              /* Marks the end of the records */
-              if (this.vectorSchemaRoot != null) {
-                // IMP: To avoid memory leak: clear vectorSchemaRoot as it still holds
-                // the last batch
-                this.vectorSchemaRoot.clear();
-              }
-              this.hasReachedEnd = true;
-              this.rowCount++;
-              return false;
-            }
-            // Valid batch, process it
-            ArrowRecordBatch arrowBatch = batchWrapper.getCurrentArrowBatch();
-            // Populates vectorSchemaRoot
-            this.arrowDeserializer.deserializeArrowBatch(arrowBatch);
-            // Pointing to the first row in this fresh batch
-            this.currentBatchRowIndex = 0;
-            this.rowCount++;
-            return true;
-          }
+      if (hasMoreRowsInCurrentBatch()) {
+        this.currentBatchRowIndex++;
+        this.rowCount++;
+        return true;
+      }
+      // Start of iteration or the current batch is exhausted. Potentially blocking.
+      try (Scope scope = makeOriginalContextCurrent()) {
+        if (!loadNextBatch()) {
+          this.afterLast = true;
+          return false;
         }
-        // There are rows left in the current batch.
-        else if (this.currentBatchRowIndex < this.vectorSchemaRoot.getRowCount()) {
-          this.currentBatchRowIndex++;
-          this.rowCount++;
-          return true;
-        }
+        // Pointing to the first row in this fresh batch
+        this.currentBatchRowIndex = 0;
+        this.rowCount++;
+        return true;
       } catch (SQLException ex) {
         throw new BigQueryJdbcException(
             "Error occurred while advancing the cursor. This could happen when connection is closed while the next method is being called.",
@@ -322,7 +301,66 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
             ex);
       }
     }
-    return false;
+  }
+
+  /** True once totalRows rows (or the row limit) have been returned. */
+  private boolean reachedRowLimit() {
+    return this.rowCount >= this.totalRows;
+  }
+
+  private boolean hasMoreRowsInCurrentBatch() {
+    return this.currentBatchRowIndex >= 0
+        && this.vectorSchemaRoot != null
+        && this.currentBatchRowIndex < this.vectorSchemaRoot.getRowCount() - 1;
+  }
+
+  private void initDeserializerIfNeeded(ArrowSchema arrowSchema) throws SQLException {
+    if (arrowSchema == null || this.arrowDeserializer != null) {
+      return;
+    }
+    try {
+      this.arrowDeserializer = new ArrowDeserializer(arrowSchema);
+    } catch (IOException ex) {
+      throw new BigQueryJdbcException("IOException during ArrowDeserializer creation", ex);
+    }
+  }
+
+  /**
+   * Loads the next batch into the vectors, skipping schema-only messages. Returns false at the end
+   * of the stream.
+   */
+  private boolean loadNextBatch() throws SQLException, InterruptedException {
+    while (true) {
+      BigQueryArrowBatchWrapper batchWrapper = this.buffer.take();
+      checkClosed();
+      if (batchWrapper.getException() != null) {
+        throw backgroundFetchError(batchWrapper.getException());
+      }
+      if (batchWrapper.isLast()) {
+        /* Marks the end of the records */
+        if (this.vectorSchemaRoot != null) {
+          // IMP: To avoid memory leak: clear vectorSchemaRoot as it still holds the last batch
+          this.vectorSchemaRoot.clear();
+        }
+        this.hasReachedEnd = true;
+        return false;
+      }
+      initDeserializerIfNeeded(batchWrapper.getArrowSchema());
+      ArrowRecordBatch arrowBatch = batchWrapper.getCurrentArrowBatch();
+      if (arrowBatch == null) {
+        continue; // schema-only message
+      }
+      if (this.arrowDeserializer == null) {
+        throw new BigQueryJdbcException("Received an Arrow record batch before its schema.");
+      }
+      // Populates vectorSchemaRoot
+      this.arrowDeserializer.deserializeArrowBatch(arrowBatch);
+      if (this.vectorSchemaRoot.getRowCount() == 0) {
+        // Only batches reported as non-empty are queued, so this means corrupt data.
+        throw new BigQueryJdbcException("Received an Arrow record batch with no rows.");
+      }
+      return true;
+    }
   }
 
   @Override
@@ -500,7 +538,8 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
     if (this.isNested) {
       return this.nestedRowIndex < this.fromIndex;
     } else {
-      return this.rowCount == 0;
+      // Per JDBC, false when the result set contains no rows.
+      return !this.afterLast && this.rowCount == 0 && this.totalRows > 0;
     }
   }
 
@@ -529,7 +568,7 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
     if (this.isNested) {
       return !this.afterLast && this.nestedRowIndex == this.toIndexExclusive - 1;
     } else {
-      return !this.afterLast && this.rowCount == this.totalRows;
+      return !this.afterLast && this.rowCount > 0 && this.rowCount == this.totalRows;
     }
   }
 }

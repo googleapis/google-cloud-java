@@ -46,13 +46,13 @@ import com.google.cloud.bigquery.Schema;
 import com.google.cloud.bigquery.TableId;
 import com.google.cloud.bigquery.TableResult;
 import com.google.cloud.bigquery.exception.BigQueryJdbcException;
+import com.google.cloud.bigquery.exception.BigQueryJdbcRuntimeException;
 import com.google.cloud.bigquery.exception.BigQueryJdbcSqlFeatureNotSupportedException;
 import com.google.cloud.bigquery.exception.BigQueryJdbcSqlSyntaxErrorException;
 import com.google.cloud.bigquery.jdbc.telemetry.v1.DriverFeature;
 import com.google.cloud.bigquery.jdbc.telemetry.v1.QueryApiType;
 import com.google.cloud.bigquery.jdbc.telemetry.v1.StatementExecution;
 import com.google.cloud.bigquery.jdbc.telemetry.v1.TelemetryManager;
-import com.google.cloud.bigquery.storage.v1.ArrowRecordBatch;
 import com.google.cloud.bigquery.storage.v1.ArrowSchema;
 import com.google.cloud.bigquery.storage.v1.ArrowSerializationOptions;
 import com.google.cloud.bigquery.storage.v1.BigQueryReadClient;
@@ -1035,9 +1035,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
                                 "Arrow stream reading was interrupted or shut down before completion.");
                           }
 
-                          ArrowRecordBatch currentBatch = response.getArrowRecordBatch();
-                          arrowBatchWrapperBlockingQueue.put(
-                              BigQueryArrowBatchWrapper.of(currentBatch));
+                          enqueueReadRowsResponse(response, arrowBatchWrapperBlockingQueue);
                           rowsRead += response.getRowCount();
                         }
                         if (isWorkerShuttingDown()) {
@@ -1112,6 +1110,34 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
                 });
 
     return executor.submit(arrowStreamProcessor);
+  }
+
+  /**
+   * Queues the rows of one {@link ReadRowsResponse}. Responses without rows (for example schema,
+   * statistics or throttling updates) queue no batch, but a schema they carry is still forwarded. A
+   * response that reports rows but carries no record batch is an error: rows are never silently
+   * dropped.
+   */
+  @VisibleForTesting
+  static void enqueueReadRowsResponse(
+      ReadRowsResponse response, BlockingQueue<BigQueryArrowBatchWrapper> queue)
+      throws InterruptedException {
+    long responseRows = response.getRowCount();
+    ArrowSchema schema = response.hasArrowSchema() ? response.getArrowSchema() : null;
+    boolean hasBatch =
+        response.hasArrowRecordBatch()
+            && !response.getArrowRecordBatch().getSerializedRecordBatch().isEmpty();
+    if (responseRows > 0 && !hasBatch) {
+      throw new BigQueryJdbcRuntimeException(
+          String.format(
+              "Read API response reported %d rows but carried no Arrow record batch.",
+              responseRows));
+    }
+    if (responseRows > 0) {
+      queue.put(BigQueryArrowBatchWrapper.of(response.getArrowRecordBatch(), schema));
+    } else if (schema != null) {
+      queue.put(BigQueryArrowBatchWrapper.of(null, schema));
+    }
   }
 
   /** Executes SQL query using either fast query path or read API */
