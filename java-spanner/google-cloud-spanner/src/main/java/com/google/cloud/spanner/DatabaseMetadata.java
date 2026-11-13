@@ -41,10 +41,15 @@ final class DatabaseMetadata {
               DATABASE_DIALECT_OPTION, DEFAULT_TRANSACTION_ISOLATION_OPTION));
 
   private final String dialect;
+  private final IsolationLevel defaultIsolationLevel;
   private final @Nullable String defaultIsolationLevelValue;
 
-  private DatabaseMetadata(String dialect, @Nullable String defaultIsolationLevelValue) {
+  private DatabaseMetadata(
+      String dialect,
+      IsolationLevel defaultIsolationLevel,
+      @Nullable String defaultIsolationLevelValue) {
     this.dialect = dialect;
+    this.defaultIsolationLevel = defaultIsolationLevel;
     this.defaultIsolationLevelValue = defaultIsolationLevelValue;
   }
 
@@ -54,6 +59,7 @@ final class DatabaseMetadata {
    */
   static DatabaseMetadata fromResultSet(ResultSet resultSet) {
     String dialect = Dialect.GOOGLE_STANDARD_SQL.name();
+    IsolationLevel defaultIsolationLevel = IsolationLevel.ISOLATION_LEVEL_UNSPECIFIED;
     String defaultIsolationLevelValue = null;
     while (resultSet.next()) {
       switch (resultSet.getString(0)) {
@@ -62,12 +68,13 @@ final class DatabaseMetadata {
           break;
         case DEFAULT_TRANSACTION_ISOLATION_OPTION:
           defaultIsolationLevelValue = resultSet.isNull(1) ? null : resultSet.getString(1);
+          defaultIsolationLevel = parseIsolationLevel(defaultIsolationLevelValue);
           break;
         default:
           break;
       }
     }
-    return new DatabaseMetadata(dialect, defaultIsolationLevelValue);
+    return new DatabaseMetadata(dialect, defaultIsolationLevel, defaultIsolationLevelValue);
   }
 
   /**
@@ -95,7 +102,7 @@ final class DatabaseMetadata {
   }
 
   IsolationLevel getDefaultIsolationLevel() {
-    return parseIsolationLevel(defaultIsolationLevelValue);
+    return defaultIsolationLevel;
   }
 
   @Nullable String getDefaultIsolationLevelValue() {

@@ -303,8 +303,10 @@ public class ConnectionStatementExecutorTest {
   public void testStatementShowIsolationLevelUsesDatabaseDefault() {
     when(connection.getDefaultIsolationLevel()).thenReturn(ISOLATION_LEVEL_UNSPECIFIED);
     mockDatabaseDefaultIsolationLevel(REPEATABLE_READ);
-    assertEquals(name(REPEATABLE_READ), value(subject.statementShowTransactionIsolationLevel()));
-    assertEquals(name(REPEATABLE_READ), value(subject.statementShowDefaultTransactionIsolation()));
+    when(connection.getDatabaseClient().getDatabaseDefaultIsolationLevelValue())
+        .thenReturn("repeatable read");
+    assertEquals("repeatable read", value(subject.statementShowTransactionIsolationLevel()));
+    assertEquals("repeatable read", value(subject.statementShowDefaultTransactionIsolation()));
   }
 
   @Test

@@ -668,18 +668,14 @@ class ConnectionStatementExecutorImpl implements ConnectionStatementExecutor {
 
   /** Resolves an unspecified isolation level to the database default and formats it. */
   private String getEffectiveIsolationLevel(TransactionOptions.IsolationLevel isolationLevel) {
-    TransactionOptions.IsolationLevel configuredIsolationLevel =
-        isolationLevel == TransactionOptions.IsolationLevel.ISOLATION_LEVEL_UNSPECIFIED
-            ? getConnection().getDatabaseClient().getDatabaseDefaultIsolationLevel()
-            : isolationLevel;
-    switch (configuredIsolationLevel) {
-      case ISOLATION_LEVEL_UNSPECIFIED:
-        return formatIsolationLevel(TransactionOptions.IsolationLevel.SERIALIZABLE);
-      case UNRECOGNIZED:
-        return getConnection().getDatabaseClient().getDatabaseDefaultIsolationLevelValue();
-      default:
-        return formatIsolationLevel(configuredIsolationLevel);
+    if (isolationLevel != TransactionOptions.IsolationLevel.ISOLATION_LEVEL_UNSPECIFIED) {
+      return formatIsolationLevel(isolationLevel);
     }
+    String databaseDefault =
+        getConnection().getDatabaseClient().getDatabaseDefaultIsolationLevelValue();
+    return databaseDefault == null
+        ? formatIsolationLevel(TransactionOptions.IsolationLevel.SERIALIZABLE)
+        : databaseDefault;
   }
 
   private String formatIsolationLevel(TransactionOptions.IsolationLevel isolationLevel) {
