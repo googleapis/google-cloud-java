@@ -59,6 +59,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessage
   private Cluster() {
     name_ = "";
     description_ = "";
+    uid_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -161,7 +162,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. User-provided description of the cluster.
+   * Optional. A description for your cluster. You can use up to 2,048
+   * characters.
    * </pre>
    *
    * <code>string description = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -185,7 +187,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. User-provided description of the cluster.
+   * Optional. A description for your cluster. You can use up to 2,048
+   * characters.
    * </pre>
    *
    * <code>string description = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -490,7 +493,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Network resources available to the cluster. Must contain at most
+   * Optional. Network resources available to the cluster. Must contain exactly
    * one value. Keys specify the ID of the network resource by which it can be
    * referenced elsewhere, and must conform to
    * [RFC-1034](https://datatracker.ietf.org/doc/html/rfc1034) (lower-case,
@@ -522,7 +525,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Network resources available to the cluster. Must contain at most
+   * Optional. Network resources available to the cluster. Must contain exactly
    * one value. Keys specify the ID of the network resource by which it can be
    * referenced elsewhere, and must conform to
    * [RFC-1034](https://datatracker.ietf.org/doc/html/rfc1034) (lower-case,
@@ -544,7 +547,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Network resources available to the cluster. Must contain at most
+   * Optional. Network resources available to the cluster. Must contain exactly
    * one value. Keys specify the ID of the network resource by which it can be
    * referenced elsewhere, and must conform to
    * [RFC-1034](https://datatracker.ietf.org/doc/html/rfc1034) (lower-case,
@@ -573,7 +576,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Network resources available to the cluster. Must contain at most
+   * Optional. Network resources available to the cluster. Must contain exactly
    * one value. Keys specify the ID of the network resource by which it can be
    * referenced elsewhere, and must conform to
    * [RFC-1034](https://datatracker.ietf.org/doc/html/rfc1034) (lower-case,
@@ -951,6 +954,63 @@ public final class Cluster extends com.google.protobuf.GeneratedMessage
         : orchestrator_;
   }
 
+  public static final int UID_FIELD_NUMBER = 16;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object uid_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The globally unique identifier for this Cluster.
+   * </pre>
+   *
+   * <code>
+   * string uid = 16 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+   * </code>
+   *
+   * @return The uid.
+   */
+  @java.lang.Override
+  public java.lang.String getUid() {
+    java.lang.Object ref = uid_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      uid_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The globally unique identifier for this Cluster.
+   * </pre>
+   *
+   * <code>
+   * string uid = 16 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+   * </code>
+   *
+   * @return The bytes for uid.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getUidBytes() {
+    java.lang.Object ref = uid_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      uid_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -991,6 +1051,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessage
         output, internalGetStorageResources(), StorageResourcesDefaultEntryHolder.defaultEntry, 12);
     com.google.protobuf.GeneratedMessage.serializeStringMapTo(
         output, internalGetComputeResources(), ComputeResourcesDefaultEntryHolder.defaultEntry, 13);
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(uid_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 16, uid_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1067,6 +1130,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessage
                   .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(13, computeResources__);
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(uid_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(16, uid_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1102,6 +1168,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessage
     if (hasOrchestrator()) {
       if (!getOrchestrator().equals(other.getOrchestrator())) return false;
     }
+    if (!getUid().equals(other.getUid())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1147,6 +1214,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + ORCHESTRATOR_FIELD_NUMBER;
       hash = (53 * hash) + getOrchestrator().hashCode();
     }
+    hash = (37 * hash) + UID_FIELD_NUMBER;
+    hash = (53 * hash) + getUid().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1359,6 +1428,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessage
         orchestratorBuilder_.dispose();
         orchestratorBuilder_ = null;
       }
+      uid_ = "";
       return this;
     }
 
@@ -1434,6 +1504,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessage
             orchestratorBuilder_ == null ? orchestrator_ : orchestratorBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.uid_ = uid_;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -1479,6 +1552,11 @@ public final class Cluster extends com.google.protobuf.GeneratedMessage
       bitField0_ |= 0x00000100;
       if (other.hasOrchestrator()) {
         mergeOrchestrator(other.getOrchestrator());
+      }
+      if (!other.getUid().isEmpty()) {
+        uid_ = other.uid_;
+        bitField0_ |= 0x00000400;
+        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1602,6 +1680,12 @@ public final class Cluster extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000100;
                 break;
               } // case 106
+            case 130:
+              {
+                uid_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 130
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1748,7 +1832,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. User-provided description of the cluster.
+     * Optional. A description for your cluster. You can use up to 2,048
+     * characters.
      * </pre>
      *
      * <code>string description = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1771,7 +1856,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. User-provided description of the cluster.
+     * Optional. A description for your cluster. You can use up to 2,048
+     * characters.
      * </pre>
      *
      * <code>string description = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1794,7 +1880,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. User-provided description of the cluster.
+     * Optional. A description for your cluster. You can use up to 2,048
+     * characters.
      * </pre>
      *
      * <code>string description = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1816,7 +1903,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. User-provided description of the cluster.
+     * Optional. A description for your cluster. You can use up to 2,048
+     * characters.
      * </pre>
      *
      * <code>string description = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1834,7 +1922,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. User-provided description of the cluster.
+     * Optional. A description for your cluster. You can use up to 2,048
+     * characters.
      * </pre>
      *
      * <code>string description = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2599,7 +2688,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Network resources available to the cluster. Must contain at most
+     * Optional. Network resources available to the cluster. Must contain exactly
      * one value. Keys specify the ID of the network resource by which it can be
      * referenced elsewhere, and must conform to
      * [RFC-1034](https://datatracker.ietf.org/doc/html/rfc1034) (lower-case,
@@ -2631,7 +2720,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Network resources available to the cluster. Must contain at most
+     * Optional. Network resources available to the cluster. Must contain exactly
      * one value. Keys specify the ID of the network resource by which it can be
      * referenced elsewhere, and must conform to
      * [RFC-1034](https://datatracker.ietf.org/doc/html/rfc1034) (lower-case,
@@ -2653,7 +2742,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Network resources available to the cluster. Must contain at most
+     * Optional. Network resources available to the cluster. Must contain exactly
      * one value. Keys specify the ID of the network resource by which it can be
      * referenced elsewhere, and must conform to
      * [RFC-1034](https://datatracker.ietf.org/doc/html/rfc1034) (lower-case,
@@ -2684,7 +2773,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Network resources available to the cluster. Must contain at most
+     * Optional. Network resources available to the cluster. Must contain exactly
      * one value. Keys specify the ID of the network resource by which it can be
      * referenced elsewhere, and must conform to
      * [RFC-1034](https://datatracker.ietf.org/doc/html/rfc1034) (lower-case,
@@ -2721,7 +2810,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Network resources available to the cluster. Must contain at most
+     * Optional. Network resources available to the cluster. Must contain exactly
      * one value. Keys specify the ID of the network resource by which it can be
      * referenced elsewhere, and must conform to
      * [RFC-1034](https://datatracker.ietf.org/doc/html/rfc1034) (lower-case,
@@ -2753,7 +2842,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Network resources available to the cluster. Must contain at most
+     * Optional. Network resources available to the cluster. Must contain exactly
      * one value. Keys specify the ID of the network resource by which it can be
      * referenced elsewhere, and must conform to
      * [RFC-1034](https://datatracker.ietf.org/doc/html/rfc1034) (lower-case,
@@ -2781,7 +2870,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Network resources available to the cluster. Must contain at most
+     * Optional. Network resources available to the cluster. Must contain exactly
      * one value. Keys specify the ID of the network resource by which it can be
      * referenced elsewhere, and must conform to
      * [RFC-1034](https://datatracker.ietf.org/doc/html/rfc1034) (lower-case,
@@ -2811,7 +2900,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Network resources available to the cluster. Must contain at most
+     * Optional. Network resources available to the cluster. Must contain exactly
      * one value. Keys specify the ID of the network resource by which it can be
      * referenced elsewhere, and must conform to
      * [RFC-1034](https://datatracker.ietf.org/doc/html/rfc1034) (lower-case,
@@ -3667,6 +3756,127 @@ public final class Cluster extends com.google.protobuf.GeneratedMessage
         orchestrator_ = null;
       }
       return orchestratorBuilder_;
+    }
+
+    private java.lang.Object uid_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The globally unique identifier for this Cluster.
+     * </pre>
+     *
+     * <code>
+     * string uid = 16 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+     * </code>
+     *
+     * @return The uid.
+     */
+    public java.lang.String getUid() {
+      java.lang.Object ref = uid_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        uid_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The globally unique identifier for this Cluster.
+     * </pre>
+     *
+     * <code>
+     * string uid = 16 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+     * </code>
+     *
+     * @return The bytes for uid.
+     */
+    public com.google.protobuf.ByteString getUidBytes() {
+      java.lang.Object ref = uid_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        uid_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The globally unique identifier for this Cluster.
+     * </pre>
+     *
+     * <code>
+     * string uid = 16 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+     * </code>
+     *
+     * @param value The uid to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUid(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      uid_ = value;
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The globally unique identifier for this Cluster.
+     * </pre>
+     *
+     * <code>
+     * string uid = 16 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearUid() {
+      uid_ = getDefaultInstance().getUid();
+      bitField0_ = (bitField0_ & ~0x00000400);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The globally unique identifier for this Cluster.
+     * </pre>
+     *
+     * <code>
+     * string uid = 16 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+     * </code>
+     *
+     * @param value The bytes for uid to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUidBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      uid_ = value;
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.hypercomputecluster.v1beta.Cluster)

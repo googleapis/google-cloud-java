@@ -20,12 +20,18 @@ import static com.google.ads.admanager.v1.CreativeServiceClient.ListCreativesPag
 
 import com.google.ads.admanager.v1.BatchActivateCreativesRequest;
 import com.google.ads.admanager.v1.BatchActivateCreativesResponse;
+import com.google.ads.admanager.v1.BatchCreateCreativesRequest;
+import com.google.ads.admanager.v1.BatchCreateCreativesResponse;
 import com.google.ads.admanager.v1.BatchDeactivateCreativesRequest;
 import com.google.ads.admanager.v1.BatchDeactivateCreativesResponse;
+import com.google.ads.admanager.v1.BatchUpdateCreativesRequest;
+import com.google.ads.admanager.v1.BatchUpdateCreativesResponse;
+import com.google.ads.admanager.v1.CreateCreativeRequest;
 import com.google.ads.admanager.v1.Creative;
 import com.google.ads.admanager.v1.GetCreativeRequest;
 import com.google.ads.admanager.v1.ListCreativesRequest;
 import com.google.ads.admanager.v1.ListCreativesResponse;
+import com.google.ads.admanager.v1.UpdateCreativeRequest;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
@@ -132,6 +138,160 @@ public class HttpJsonCreativeServiceStub extends CreativeServiceStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<CreateCreativeRequest, Creative>
+      createCreativeMethodDescriptor =
+          ApiMethodDescriptor.<CreateCreativeRequest, Creative>newBuilder()
+              .setFullMethodName("google.ads.admanager.v1.CreativeService/CreateCreative")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CreateCreativeRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=networks/*}/creatives",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateCreativeRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateCreativeRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("creative", request.getCreative(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Creative>newBuilder()
+                      .setDefaultInstance(Creative.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<UpdateCreativeRequest, Creative>
+      updateCreativeMethodDescriptor =
+          ApiMethodDescriptor.<UpdateCreativeRequest, Creative>newBuilder()
+              .setFullMethodName("google.ads.admanager.v1.CreativeService/UpdateCreative")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateCreativeRequest>newBuilder()
+                      .setPath(
+                          "/v1/{creative.name=networks/*/creatives/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateCreativeRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "creative.name", request.getCreative().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateCreativeRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("creative", request.getCreative(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Creative>newBuilder()
+                      .setDefaultInstance(Creative.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          BatchCreateCreativesRequest, BatchCreateCreativesResponse>
+      batchCreateCreativesMethodDescriptor =
+          ApiMethodDescriptor
+              .<BatchCreateCreativesRequest, BatchCreateCreativesResponse>newBuilder()
+              .setFullMethodName("google.ads.admanager.v1.CreativeService/BatchCreateCreatives")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<BatchCreateCreativesRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=networks/*}/creatives:batchCreate",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<BatchCreateCreativesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<BatchCreateCreativesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<BatchCreateCreativesResponse>newBuilder()
+                      .setDefaultInstance(BatchCreateCreativesResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          BatchUpdateCreativesRequest, BatchUpdateCreativesResponse>
+      batchUpdateCreativesMethodDescriptor =
+          ApiMethodDescriptor
+              .<BatchUpdateCreativesRequest, BatchUpdateCreativesResponse>newBuilder()
+              .setFullMethodName("google.ads.admanager.v1.CreativeService/BatchUpdateCreatives")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<BatchUpdateCreativesRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=networks/*}/creatives:batchUpdate",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<BatchUpdateCreativesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<BatchUpdateCreativesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<BatchUpdateCreativesResponse>newBuilder()
+                      .setDefaultInstance(BatchUpdateCreativesResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<
           BatchActivateCreativesRequest, BatchActivateCreativesResponse>
       batchActivateCreativesMethodDescriptor =
@@ -214,6 +374,12 @@ public class HttpJsonCreativeServiceStub extends CreativeServiceStub {
   private final UnaryCallable<ListCreativesRequest, ListCreativesResponse> listCreativesCallable;
   private final UnaryCallable<ListCreativesRequest, ListCreativesPagedResponse>
       listCreativesPagedCallable;
+  private final UnaryCallable<CreateCreativeRequest, Creative> createCreativeCallable;
+  private final UnaryCallable<UpdateCreativeRequest, Creative> updateCreativeCallable;
+  private final UnaryCallable<BatchCreateCreativesRequest, BatchCreateCreativesResponse>
+      batchCreateCreativesCallable;
+  private final UnaryCallable<BatchUpdateCreativesRequest, BatchUpdateCreativesResponse>
+      batchUpdateCreativesCallable;
   private final UnaryCallable<BatchActivateCreativesRequest, BatchActivateCreativesResponse>
       batchActivateCreativesCallable;
   private final UnaryCallable<BatchDeactivateCreativesRequest, BatchDeactivateCreativesResponse>
@@ -286,6 +452,57 @@ public class HttpJsonCreativeServiceStub extends CreativeServiceStub {
                     })
                 .setResourceNameExtractor(request -> request.getParent())
                 .build();
+    HttpJsonCallSettings<CreateCreativeRequest, Creative> createCreativeTransportSettings =
+        HttpJsonCallSettings.<CreateCreativeRequest, Creative>newBuilder()
+            .setMethodDescriptor(createCreativeMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getParent())
+            .build();
+    HttpJsonCallSettings<UpdateCreativeRequest, Creative> updateCreativeTransportSettings =
+        HttpJsonCallSettings.<UpdateCreativeRequest, Creative>newBuilder()
+            .setMethodDescriptor(updateCreativeMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("creative.name", String.valueOf(request.getCreative().getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<BatchCreateCreativesRequest, BatchCreateCreativesResponse>
+        batchCreateCreativesTransportSettings =
+            HttpJsonCallSettings
+                .<BatchCreateCreativesRequest, BatchCreateCreativesResponse>newBuilder()
+                .setMethodDescriptor(batchCreateCreativesMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    HttpJsonCallSettings<BatchUpdateCreativesRequest, BatchUpdateCreativesResponse>
+        batchUpdateCreativesTransportSettings =
+            HttpJsonCallSettings
+                .<BatchUpdateCreativesRequest, BatchUpdateCreativesResponse>newBuilder()
+                .setMethodDescriptor(batchUpdateCreativesMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
     HttpJsonCallSettings<BatchActivateCreativesRequest, BatchActivateCreativesResponse>
         batchActivateCreativesTransportSettings =
             HttpJsonCallSettings
@@ -324,6 +541,22 @@ public class HttpJsonCreativeServiceStub extends CreativeServiceStub {
     this.listCreativesPagedCallable =
         callableFactory.createPagedCallable(
             listCreativesTransportSettings, settings.listCreativesSettings(), clientContext);
+    this.createCreativeCallable =
+        callableFactory.createUnaryCallable(
+            createCreativeTransportSettings, settings.createCreativeSettings(), clientContext);
+    this.updateCreativeCallable =
+        callableFactory.createUnaryCallable(
+            updateCreativeTransportSettings, settings.updateCreativeSettings(), clientContext);
+    this.batchCreateCreativesCallable =
+        callableFactory.createUnaryCallable(
+            batchCreateCreativesTransportSettings,
+            settings.batchCreateCreativesSettings(),
+            clientContext);
+    this.batchUpdateCreativesCallable =
+        callableFactory.createUnaryCallable(
+            batchUpdateCreativesTransportSettings,
+            settings.batchUpdateCreativesSettings(),
+            clientContext);
     this.batchActivateCreativesCallable =
         callableFactory.createUnaryCallable(
             batchActivateCreativesTransportSettings,
@@ -344,6 +577,10 @@ public class HttpJsonCreativeServiceStub extends CreativeServiceStub {
     List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
     methodDescriptors.add(getCreativeMethodDescriptor);
     methodDescriptors.add(listCreativesMethodDescriptor);
+    methodDescriptors.add(createCreativeMethodDescriptor);
+    methodDescriptors.add(updateCreativeMethodDescriptor);
+    methodDescriptors.add(batchCreateCreativesMethodDescriptor);
+    methodDescriptors.add(batchUpdateCreativesMethodDescriptor);
     methodDescriptors.add(batchActivateCreativesMethodDescriptor);
     methodDescriptors.add(batchDeactivateCreativesMethodDescriptor);
     return methodDescriptors;
@@ -363,6 +600,28 @@ public class HttpJsonCreativeServiceStub extends CreativeServiceStub {
   public UnaryCallable<ListCreativesRequest, ListCreativesPagedResponse>
       listCreativesPagedCallable() {
     return listCreativesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateCreativeRequest, Creative> createCreativeCallable() {
+    return createCreativeCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateCreativeRequest, Creative> updateCreativeCallable() {
+    return updateCreativeCallable;
+  }
+
+  @Override
+  public UnaryCallable<BatchCreateCreativesRequest, BatchCreateCreativesResponse>
+      batchCreateCreativesCallable() {
+    return batchCreateCreativesCallable;
+  }
+
+  @Override
+  public UnaryCallable<BatchUpdateCreativesRequest, BatchUpdateCreativesResponse>
+      batchUpdateCreativesCallable() {
+    return batchUpdateCreativesCallable;
   }
 
   @Override

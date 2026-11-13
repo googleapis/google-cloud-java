@@ -136,6 +136,69 @@ final class StorageErrorTypeMapper {
     return mapThrowable(t, 0);
   }
 
+  static @Nullable String extractRpcStatusCode(@Nullable Throwable t) {
+    Throwable curr = t;
+    int depth = 0;
+    while (curr != null && depth < MAX_CAUSE_DEPTH) {
+      if (curr instanceof StatusRuntimeException) {
+        Status status = ((StatusRuntimeException) curr).getStatus();
+        if (status != null && status.getCode() != null) {
+          return status.getCode().name();
+        }
+      }
+      if (curr instanceof StatusException) {
+        Status status = ((StatusException) curr).getStatus();
+        if (status != null && status.getCode() != null) {
+          return status.getCode().name();
+        }
+      }
+      if (curr instanceof ApiException) {
+        StatusCode statusCode = ((ApiException) curr).getStatusCode();
+        if (statusCode != null && statusCode.getCode() != null) {
+          return statusCode.getCode().name();
+        }
+      }
+      Throwable next = curr.getCause();
+      if (next == curr) {
+        break;
+      }
+      curr = next;
+      depth++;
+    }
+    return null;
+  }
+
+  /**
+   * Extracts a positive HTTP response status code as a {@link Long} from the causal chain of {@code
+   * t} (inspecting {@link StorageException} and {@link HttpResponseException}), bounded by {@link
+   * #MAX_CAUSE_DEPTH}, or returns {@code null} if no positive HTTP status code is found.
+   */
+  static @Nullable Long extractHttpStatusCode(@Nullable Throwable t) {
+    Throwable curr = t;
+    int depth = 0;
+    while (curr != null && depth < MAX_CAUSE_DEPTH) {
+      if (curr instanceof StorageException) {
+        int code = ((StorageException) curr).getCode();
+        if (code > 0) {
+          return (long) code;
+        }
+      }
+      if (curr instanceof HttpResponseException) {
+        int code = ((HttpResponseException) curr).getStatusCode();
+        if (code > 0) {
+          return (long) code;
+        }
+      }
+      Throwable next = curr.getCause();
+      if (next == curr) {
+        break;
+      }
+      curr = next;
+      depth++;
+    }
+    return null;
+  }
+
   private static String mapThrowable(@Nullable Throwable t, int depth) {
     if (t == null) {
       return STATUS_OK;

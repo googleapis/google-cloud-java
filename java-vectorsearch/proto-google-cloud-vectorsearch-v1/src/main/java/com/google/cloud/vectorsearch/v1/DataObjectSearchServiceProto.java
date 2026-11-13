@@ -77,6 +77,26 @@ public final class DataObjectSearchServiceProto extends com.google.protobuf.Gene
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_vectorsearch_v1_TextSearch_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_vectorsearch_v1_StructuredQuery_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_vectorsearch_v1_StructuredQuery_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_vectorsearch_v1_TextQuery_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_vectorsearch_v1_TextQuery_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_vectorsearch_v1_QueryEnhancement_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_vectorsearch_v1_QueryEnhancement_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_vectorsearch_v1_UnaryQuery_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_vectorsearch_v1_UnaryQuery_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_vectorsearch_v1_CombinedQuery_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_vectorsearch_v1_CombinedQuery_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_vectorsearch_v1_SearchDataObjectsRequest_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_vectorsearch_v1_SearchDataObjectsRequest_fieldAccessorTable;
@@ -203,42 +223,84 @@ public final class DataObjectSearchServiceProto extends com.google.protobuf.Gene
           + "\005top_k\030\004 \001(\005B\004\342A\001\001H\000\210\001\001\022C\n"
           + "\013search_hint\030\007"
           + " \001(\0132(.google.cloud.vectorsearch.v1.SearchHintB\004\342A\001\001B\010\n"
-          + "\006_top_k\"\343\001\n\n"
+          + "\006_top_k\"\262\002\n\n"
           + "TextSearch\022\031\n"
           + "\013search_text\030\001 \001(\tB\004\342A\001\001\022\036\n"
           + "\020data_field_names\030\002 \003(\tB\004\342A\001\001\022G\n\r"
           + "output_fields\030\003"
           + " \001(\0132*.google.cloud.vectorsearch.v1.OutputFieldsB\004\342A\001\001\022\030\n"
           + "\005top_k\030\004 \001(\005B\004\342A\001\001H\000\210\001\001\022-\n"
-          + "\006filter\030\005 \001(\0132\027.google.protobuf.StructB\004\342A\001\001B\010\n"
-          + "\006_top_k\"\362\002\n"
+          + "\006filter\030\005 \001(\0132\027.google.protobuf.StructB\004\342A\001\001\022M\n"
+          + "\020structured_query\030\006"
+          + " \001(\0132-.google.cloud.vectorsearch.v1.StructuredQueryB\004\342A\001\001B\010\n"
+          + "\006_top_k\"\372\001\n"
+          + "\017StructuredQuery\022=\n"
+          + "\004text\030\001"
+          + " \001(\0132\'.google.cloud.vectorsearch.v1.TextQueryB\004\342A\001\001H\000\022?\n"
+          + "\005unary\030\002"
+          + " \001(\0132(.google.cloud.vectorsearch.v1.UnaryQueryB\004\342A\001\001H\000\022D\n"
+          + "\007combine\030\003 \001(\0132+.googl"
+          + "e.cloud.vectorsearch.v1.CombinedQueryB\004\342A\001\001H\000\022\023\n"
+          + "\005boost\030\004 \001(\002B\004\342A\001\001B\014\n\n"
+          + "query_type\"\221\002\n"
+          + "\tTextQuery\022\022\n"
+          + "\004text\030\001 \001(\tB\004\342A\001\002\022\024\n"
+          + "\006fields\030\002 \003(\tB\004\342A\001\002\022K\n\n"
+          + "match_type\030\003 \001(\01621.g"
+          + "oogle.cloud.vectorsearch.v1.TextQuery.MatchTypeB\004\342A\001\001\022O\n"
+          + "\021query_enhancement\030\004 \001(\013"
+          + "2..google.cloud.vectorsearch.v1.QueryEnhancementB\004\342A\001\001\"<\n"
+          + "\tMatchType\022\032\n"
+          + "\026MATCH_TYPE_UNSPECIFIED\020\000\022\010\n"
+          + "\004TEXT\020\001\022\t\n"
+          + "\005EXACT\020\002\"F\n"
+          + "\020QueryEnhancement\022\025\n"
+          + "\007enabled\030\001 \001(\010B\004\342A\001\001\022\033\n\r"
+          + "language_code\030\002 \001(\tB\004\342A\001\001\"\310\001\n\n"
+          + "UnaryQuery\022C\n"
+          + "\002op\030\001"
+          + " \001(\01621.google.cloud.vectorsearch.v1.UnaryQuery.OperatorB\004\342A\001\002\022F\n"
+          + "\tsub_query\030\002"
+          + " \001(\0132-.google.cloud.vectorsearch.v1.StructuredQueryB\004\342A\001\002\"-\n"
+          + "\010Operator\022\030\n"
+          + "\024OPERATOR_UNSPECIFIED\020\000\022\007\n"
+          + "\003NOT\020\001\"\330\001\n\r"
+          + "CombinedQuery\022F\n"
+          + "\002op\030\001 \001(\01624.google.cloud.vec"
+          + "torsearch.v1.CombinedQuery.OperatorB\004\342A\001\002\022H\n"
+          + "\013sub_queries\030\002"
+          + " \003(\0132-.google.cloud.vectorsearch.v1.StructuredQueryB\004\342A\001\002\"5\n"
+          + "\010Operator\022\030\n"
+          + "\024OPERATOR_UNSPECIFIED\020\000\022\007\n"
+          + "\003AND\020\001\022\006\n"
+          + "\002OR\020\002\"\362\002\n"
           + "\030SearchDataObjectsRequest\022C\n\r"
-          + "vector_search\030\002 \001(\013"
-          + "2*.google.cloud.vectorsearch.v1.VectorSearchH\000\022G\n"
-          + "\017semantic_search\030\004 \001(\0132,.google"
-          + ".cloud.vectorsearch.v1.SemanticSearchH\000\022E\n"
-          + "\013text_search\030\007"
-          + " \001(\0132(.google.cloud.vectorsearch.v1.TextSearchB\004\342A\001\001H\000\022?\n"
+          + "vector_search\030\002"
+          + " \001(\0132*.google.cloud.vectorsearch.v1.VectorSearchH\000\022G\n"
+          + "\017semantic_search\030\004"
+          + " \001(\0132,.google.cloud.vectorsearch.v1.SemanticSearchH\000\022E\n"
+          + "\013text_search\030\007 \001"
+          + "(\0132(.google.cloud.vectorsearch.v1.TextSearchB\004\342A\001\001H\000\022?\n"
           + "\006parent\030\001 \001(\tB/\342A\001\002\372A(\n"
           + "&vectorsearch.googleapis.com/Collection\022\027\n"
           + "\tpage_size\030\005 \001(\005B\004\342A\001\001\022\030\n\n"
           + "page_token\030\006 \001(\tB\004\342A\001\001B\r\n"
           + "\013search_type\"}\n"
           + "\014SearchResult\022C\n"
-          + "\013data_object\030\001 \001(\0132("
-          + ".google.cloud.vectorsearch.v1.DataObjectB\004\342A\001\003\022\033\n"
+          + "\013data_object\030\001"
+          + " \001(\0132(.google.cloud.vectorsearch.v1.DataObjectB\004\342A\001\003\022\033\n"
           + "\010distance\030\002 \001(\001B\004\342A\001\003H\000\210\001\001B\013\n"
           + "\t_distance\"}\n"
           + "\031SearchDataObjectsResponse\022A\n"
-          + "\007results\030\001"
-          + " \003(\0132*.google.cloud.vectorsearch.v1.SearchResultB\004\342A\001\003\022\035\n"
+          + "\007results\030\001 \003(\0132*.g"
+          + "oogle.cloud.vectorsearch.v1.SearchResultB\004\342A\001\003\022\035\n"
           + "\017next_page_token\030\002 \001(\tB\004\342A\001\003\"\327\001\n"
           + "\033AggregateDataObjectsRequest\022?\n"
           + "\006parent\030\001 \001(\tB/\342A\001\002\372A(\n"
           + "&vectorsearch.googleapis.com/Collection\022-\n"
           + "\006filter\030\002 \001(\0132\027.google.protobuf.StructB\004\342A\001\001\022H\n"
-          + "\taggregate\030\003"
-          + " \001(\0162/.google.cloud.vectorsearch.v1.AggregationMethodB\004\342A\001\002\"X\n"
+          + "\taggregate\030\003 \001(\016"
+          + "2/.google.cloud.vectorsearch.v1.AggregationMethodB\004\342A\001\002\"X\n"
           + "\034AggregateDataObjectsResponse\0228\n"
           + "\021aggregate_results\030\001"
           + " \003(\0132\027.google.protobuf.StructB\004\342A\001\003\"\205\002\n"
@@ -246,30 +308,30 @@ public final class DataObjectSearchServiceProto extends com.google.protobuf.Gene
           + "\006parent\030\001 \001(\tB/\342A\001\002\372A(\n"
           + "&vectorsearch.googleapis.com/Collection\022-\n"
           + "\006filter\030\002 \001(\0132\027.google.protobuf.StructB\004\342A\001\001\022G\n\r"
-          + "output_fields\030\007"
-          + " \001(\0132*.google.cloud.vectorsearch.v1.OutputFieldsB\004\342A\001\001\022\027\n"
+          + "output_fields\030\007 \001(\0132*.google.cl"
+          + "oud.vectorsearch.v1.OutputFieldsB\004\342A\001\001\022\027\n"
           + "\tpage_size\030\005 \001(\005B\004\342A\001\001\022\030\n\n"
           + "page_token\030\006 \001(\tB\004\342A\001\001\"\177\n"
           + "\030QueryDataObjectsResponse\022D\n"
-          + "\014data_objects\030\004 \003(\0132(."
-          + "google.cloud.vectorsearch.v1.DataObjectB\004\342A\001\003\022\035\n"
+          + "\014data_objects\030\004"
+          + " \003(\0132(.google.cloud.vectorsearch.v1.DataObjectB\004\342A\001\003\022\035\n"
           + "\017next_page_token\030\003 \001(\tB\004\342A\001\003\"\274\003\n"
           + "\035BatchSearchDataObjectsRequest\022?\n"
           + "\006parent\030\001 \001(\tB/\342A\001\002\372A(\n"
           + "&vectorsearch.googleapis.com/Collection\022<\n"
           + "\010searches\030\002"
           + " \003(\0132$.google.cloud.vectorsearch.v1.SearchB\004\342A\001\002\022h\n"
-          + "\007combine\030\003 \001(\0132Q.google.cloud.vectorsear"
-          + "ch.v1.BatchSearchDataObjectsRequest.CombineResultsOptionsB\004\342A\001\001\032\261\001\n"
+          + "\007combine\030\003 \001(\0132Q.google.cloud.vectorsearch.v1.BatchSearchD"
+          + "ataObjectsRequest.CombineResultsOptionsB\004\342A\001\001\032\261\001\n"
           + "\025CombineResultsOptions\022:\n"
           + "\006ranker\030\001"
           + " \001(\0132$.google.cloud.vectorsearch.v1.RankerB\004\342A\001\002\022G\n\r"
-          + "output_fields\030\002"
-          + " \001(\0132*.google.cloud.vectorsearch.v1.OutputFieldsB\004\342A\001\001\022\023\n"
+          + "output_fields\030\002 \001(\0132*.goo"
+          + "gle.cloud.vectorsearch.v1.OutputFieldsB\004\342A\001\001\022\023\n"
           + "\005top_k\030\003 \001(\005B\004\342A\001\001\"\254\001\n"
           + "\006Ranker\022A\n"
-          + "\003rrf\030\001 \001(\01322.google.clo"
-          + "ud.vectorsearch.v1.ReciprocalRankFusionH\000\022I\n\r"
+          + "\003rrf\030\001"
+          + " \001(\01322.google.cloud.vectorsearch.v1.ReciprocalRankFusionH\000\022I\n\r"
           + "vertex_ranker\030\002"
           + " \001(\0132*.google.cloud.vectorsearch.v1.VertexRankerB\004\342A\001\001H\001B\010\n"
           + "\006rankerB\n\n"
@@ -277,8 +339,8 @@ public final class DataObjectSearchServiceProto extends com.google.protobuf.Gene
           + "\024ReciprocalRankFusion\022\025\n"
           + "\007weights\030\001 \003(\001B\004\342A\001\002\"\203\002\n"
           + "\014VertexRanker\022U\n"
-          + "\020text_record_spec\030\006 \001(\01329.google.cl"
-          + "oud.vectorsearch.v1.VertexRanker.TextRecordSpecH\000\022\023\n"
+          + "\020text_record_spec\030\006"
+          + " \001(\01329.google.cloud.vectorsearch.v1.VertexRanker.TextRecordSpecH\000\022\023\n"
           + "\005model\030\004 \001(\tB\004\342A\001\002\022\023\n"
           + "\005top_n\030\005 \001(\005B\004\342A\001\002\032c\n"
           + "\016TextRecordSpec\022\023\n"
@@ -287,35 +349,37 @@ public final class DataObjectSearchServiceProto extends com.google.protobuf.Gene
           + "\020content_template\030\003 \001(\tB\004\342A\001\001B\r\n"
           + "\013record_spec\"p\n"
           + "\036BatchSearchDataObjectsResponse\022N\n"
-          + "\007results\030\001 \003(\01327.google.cloud.vector"
-          + "search.v1.SearchDataObjectsResponseB\004\342A\001\003*B\n"
+          + "\007results\030\001 \003(\013"
+          + "27.google.cloud.vectorsearch.v1.SearchDataObjectsResponseB\004\342A\001\003*B\n"
           + "\021AggregationMethod\022\"\n"
           + "\036AGGREGATION_METHOD_UNSPECIFIED\020\000\022\t\n"
-          + "\005COUNT\020\0012\346\007\n"
+          + "\005COUNT\020\0012\313\010\n"
           + "\027DataObjectSearchService\022\325\001\n"
-          + "\021SearchDataObjects\0226.google.cloud.vectorsearch.v1.SearchDat"
-          + "aObjectsRequest\0327.google.cloud.vectorsea"
-          + "rch.v1.SearchDataObjectsResponse\"O\202\323\344\223\002I"
-          + "\"D/v1/{parent=projects/*/locations/*/collections/*}/dataObjects:search:\001*\022\321\001\n"
-          + "\020QueryDataObjects\0225.google.cloud.vectorsear"
-          + "ch.v1.QueryDataObjectsRequest\0326.google.cloud.vectorsearch.v1.QueryDataObjectsRes"
-          + "ponse\"N\202\323\344\223\002H\"C/v1/{parent=projects/*/lo"
-          + "cations/*/collections/*}/dataObjects:query:\001*\022\341\001\n"
-          + "\024AggregateDataObjects\0229.google.cloud.vectorsearch.v1.AggregateDataObjec"
-          + "tsRequest\032:.google.cloud.vectorsearch.v1"
-          + ".AggregateDataObjectsResponse\"R\202\323\344\223\002L\"G/"
-          + "v1/{parent=projects/*/locations/*/collections/*}/dataObjects:aggregate:\001*\022\351\001\n"
-          + "\026BatchSearchDataObjects\022;.google.cloud.vect"
-          + "orsearch.v1.BatchSearchDataObjectsRequest\032<.google.cloud.vectorsearch.v1.BatchSe"
-          + "archDataObjectsResponse\"T\202\323\344\223\002N\"I/v1/{pa"
-          + "rent=projects/*/locations/*/collections/"
-          + "*}/dataObjects:batchSearch:\001*\032O\312A\033vector"
-          + "search.googleapis.com\322A.https://www.googleapis.com/auth/cloud-platformB\350\001\n"
-          + " com.google.cloud.vectorsearch.v1B\034DataObjectS"
-          + "earchServiceProtoP\001ZDcloud.google.com/go/vectorsearch/apiv1/vectorsearchpb;vecto"
-          + "rsearchpb\252\002\034Google.Cloud.VectorSearch.V1"
-          + "\312\002\034Google\\Cloud\\VectorSearch\\V1\352\002\037Google"
-          + "::Cloud::VectorSearch::V1b\006proto3"
+          + "\021SearchDataObjects\0226.google.cloud.vectorsearch.v1.SearchDataObjectsRequest\0327."
+          + "google.cloud.vectorsearch.v1.SearchDataO"
+          + "bjectsResponse\"O\202\323\344\223\002I\"D/v1/{parent=proj"
+          + "ects/*/locations/*/collections/*}/dataObjects:search:\001*\022\321\001\n"
+          + "\020QueryDataObjects\0225.google.cloud.vectorsearch.v1.QueryDataObj"
+          + "ectsRequest\0326.google.cloud.vectorsearch."
+          + "v1.QueryDataObjectsResponse\"N\202\323\344\223\002H\"C/v1"
+          + "/{parent=projects/*/locations/*/collections/*}/dataObjects:query:\001*\022\341\001\n"
+          + "\024AggregateDataObjects\0229.google.cloud.vectorsearch"
+          + ".v1.AggregateDataObjectsRequest\032:.google.cloud.vectorsearch.v1.AggregateDataObje"
+          + "ctsResponse\"R\202\323\344\223\002L\"G/v1/{parent=project"
+          + "s/*/locations/*/collections/*}/dataObjects:aggregate:\001*\022\351\001\n"
+          + "\026BatchSearchDataObjects\022;.google.cloud.vectorsearch.v1.BatchS"
+          + "earchDataObjectsRequest\032<.google.cloud.vectorsearch.v1.BatchSearchDataObjectsRes"
+          + "ponse\"T\202\323\344\223\002N\"I/v1/{parent=projects/*/lo"
+          + "cations/*/collections/*}/dataObjects:bat"
+          + "chSearch:\001*\032\263\001\312A\033vectorsearch.googleapis"
+          + ".com\322A\221\001https://www.googleapis.com/auth/"
+          + "cloud-platform,https://www.googleapis.co"
+          + "m/auth/vectorsearch,https://www.googleapis.com/auth/vectorsearch.readonlyB\350\001\n"
+          + " com.google.cloud.vectorsearch.v1B\034DataObje"
+          + "ctSearchServiceProtoP\001ZDcloud.google.com/go/vectorsearch/apiv1/vectorsearchpb;ve"
+          + "ctorsearchpb\252\002\034Google.Cloud.VectorSearch"
+          + ".V1\312\002\034Google\\Cloud\\VectorSearch\\V1\352\002\037Goo"
+          + "gle::Cloud::VectorSearch::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -413,10 +477,50 @@ public final class DataObjectSearchServiceProto extends com.google.protobuf.Gene
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_vectorsearch_v1_TextSearch_descriptor,
             new java.lang.String[] {
-              "SearchText", "DataFieldNames", "OutputFields", "TopK", "Filter",
+              "SearchText", "DataFieldNames", "OutputFields", "TopK", "Filter", "StructuredQuery",
+            });
+    internal_static_google_cloud_vectorsearch_v1_StructuredQuery_descriptor =
+        getDescriptor().getMessageType(6);
+    internal_static_google_cloud_vectorsearch_v1_StructuredQuery_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_vectorsearch_v1_StructuredQuery_descriptor,
+            new java.lang.String[] {
+              "Text", "Unary", "Combine", "Boost", "QueryType",
+            });
+    internal_static_google_cloud_vectorsearch_v1_TextQuery_descriptor =
+        getDescriptor().getMessageType(7);
+    internal_static_google_cloud_vectorsearch_v1_TextQuery_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_vectorsearch_v1_TextQuery_descriptor,
+            new java.lang.String[] {
+              "Text", "Fields", "MatchType", "QueryEnhancement",
+            });
+    internal_static_google_cloud_vectorsearch_v1_QueryEnhancement_descriptor =
+        getDescriptor().getMessageType(8);
+    internal_static_google_cloud_vectorsearch_v1_QueryEnhancement_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_vectorsearch_v1_QueryEnhancement_descriptor,
+            new java.lang.String[] {
+              "Enabled", "LanguageCode",
+            });
+    internal_static_google_cloud_vectorsearch_v1_UnaryQuery_descriptor =
+        getDescriptor().getMessageType(9);
+    internal_static_google_cloud_vectorsearch_v1_UnaryQuery_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_vectorsearch_v1_UnaryQuery_descriptor,
+            new java.lang.String[] {
+              "Op", "SubQuery",
+            });
+    internal_static_google_cloud_vectorsearch_v1_CombinedQuery_descriptor =
+        getDescriptor().getMessageType(10);
+    internal_static_google_cloud_vectorsearch_v1_CombinedQuery_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_vectorsearch_v1_CombinedQuery_descriptor,
+            new java.lang.String[] {
+              "Op", "SubQueries",
             });
     internal_static_google_cloud_vectorsearch_v1_SearchDataObjectsRequest_descriptor =
-        getDescriptor().getMessageType(6);
+        getDescriptor().getMessageType(11);
     internal_static_google_cloud_vectorsearch_v1_SearchDataObjectsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_vectorsearch_v1_SearchDataObjectsRequest_descriptor,
@@ -430,7 +534,7 @@ public final class DataObjectSearchServiceProto extends com.google.protobuf.Gene
               "SearchType",
             });
     internal_static_google_cloud_vectorsearch_v1_SearchResult_descriptor =
-        getDescriptor().getMessageType(7);
+        getDescriptor().getMessageType(12);
     internal_static_google_cloud_vectorsearch_v1_SearchResult_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_vectorsearch_v1_SearchResult_descriptor,
@@ -438,7 +542,7 @@ public final class DataObjectSearchServiceProto extends com.google.protobuf.Gene
               "DataObject", "Distance",
             });
     internal_static_google_cloud_vectorsearch_v1_SearchDataObjectsResponse_descriptor =
-        getDescriptor().getMessageType(8);
+        getDescriptor().getMessageType(13);
     internal_static_google_cloud_vectorsearch_v1_SearchDataObjectsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_vectorsearch_v1_SearchDataObjectsResponse_descriptor,
@@ -446,7 +550,7 @@ public final class DataObjectSearchServiceProto extends com.google.protobuf.Gene
               "Results", "NextPageToken",
             });
     internal_static_google_cloud_vectorsearch_v1_AggregateDataObjectsRequest_descriptor =
-        getDescriptor().getMessageType(9);
+        getDescriptor().getMessageType(14);
     internal_static_google_cloud_vectorsearch_v1_AggregateDataObjectsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_vectorsearch_v1_AggregateDataObjectsRequest_descriptor,
@@ -454,7 +558,7 @@ public final class DataObjectSearchServiceProto extends com.google.protobuf.Gene
               "Parent", "Filter", "Aggregate",
             });
     internal_static_google_cloud_vectorsearch_v1_AggregateDataObjectsResponse_descriptor =
-        getDescriptor().getMessageType(10);
+        getDescriptor().getMessageType(15);
     internal_static_google_cloud_vectorsearch_v1_AggregateDataObjectsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_vectorsearch_v1_AggregateDataObjectsResponse_descriptor,
@@ -462,7 +566,7 @@ public final class DataObjectSearchServiceProto extends com.google.protobuf.Gene
               "AggregateResults",
             });
     internal_static_google_cloud_vectorsearch_v1_QueryDataObjectsRequest_descriptor =
-        getDescriptor().getMessageType(11);
+        getDescriptor().getMessageType(16);
     internal_static_google_cloud_vectorsearch_v1_QueryDataObjectsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_vectorsearch_v1_QueryDataObjectsRequest_descriptor,
@@ -470,7 +574,7 @@ public final class DataObjectSearchServiceProto extends com.google.protobuf.Gene
               "Parent", "Filter", "OutputFields", "PageSize", "PageToken",
             });
     internal_static_google_cloud_vectorsearch_v1_QueryDataObjectsResponse_descriptor =
-        getDescriptor().getMessageType(12);
+        getDescriptor().getMessageType(17);
     internal_static_google_cloud_vectorsearch_v1_QueryDataObjectsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_vectorsearch_v1_QueryDataObjectsResponse_descriptor,
@@ -478,7 +582,7 @@ public final class DataObjectSearchServiceProto extends com.google.protobuf.Gene
               "DataObjects", "NextPageToken",
             });
     internal_static_google_cloud_vectorsearch_v1_BatchSearchDataObjectsRequest_descriptor =
-        getDescriptor().getMessageType(13);
+        getDescriptor().getMessageType(18);
     internal_static_google_cloud_vectorsearch_v1_BatchSearchDataObjectsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_vectorsearch_v1_BatchSearchDataObjectsRequest_descriptor,
@@ -495,7 +599,7 @@ public final class DataObjectSearchServiceProto extends com.google.protobuf.Gene
               "Ranker", "OutputFields", "TopK",
             });
     internal_static_google_cloud_vectorsearch_v1_Ranker_descriptor =
-        getDescriptor().getMessageType(14);
+        getDescriptor().getMessageType(19);
     internal_static_google_cloud_vectorsearch_v1_Ranker_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_vectorsearch_v1_Ranker_descriptor,
@@ -503,7 +607,7 @@ public final class DataObjectSearchServiceProto extends com.google.protobuf.Gene
               "Rrf", "VertexRanker", "Ranker", "Reranker",
             });
     internal_static_google_cloud_vectorsearch_v1_ReciprocalRankFusion_descriptor =
-        getDescriptor().getMessageType(15);
+        getDescriptor().getMessageType(20);
     internal_static_google_cloud_vectorsearch_v1_ReciprocalRankFusion_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_vectorsearch_v1_ReciprocalRankFusion_descriptor,
@@ -511,7 +615,7 @@ public final class DataObjectSearchServiceProto extends com.google.protobuf.Gene
               "Weights",
             });
     internal_static_google_cloud_vectorsearch_v1_VertexRanker_descriptor =
-        getDescriptor().getMessageType(16);
+        getDescriptor().getMessageType(21);
     internal_static_google_cloud_vectorsearch_v1_VertexRanker_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_vectorsearch_v1_VertexRanker_descriptor,
@@ -527,7 +631,7 @@ public final class DataObjectSearchServiceProto extends com.google.protobuf.Gene
               "Query", "TitleTemplate", "ContentTemplate",
             });
     internal_static_google_cloud_vectorsearch_v1_BatchSearchDataObjectsResponse_descriptor =
-        getDescriptor().getMessageType(17);
+        getDescriptor().getMessageType(22);
     internal_static_google_cloud_vectorsearch_v1_BatchSearchDataObjectsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_vectorsearch_v1_BatchSearchDataObjectsResponse_descriptor,

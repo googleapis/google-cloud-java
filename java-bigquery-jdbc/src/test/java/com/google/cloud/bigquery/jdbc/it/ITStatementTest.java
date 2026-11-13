@@ -227,21 +227,32 @@ public class ITStatementTest extends ITBase {
 
   @Test
   public void testScript() throws SQLException {
-    String connection_uri = ITBase.connectionUrl;
     Properties withReadApi = new Properties();
     withReadApi.setProperty("EnableHighThroughputAPI", "1");
-    Connection connection = DriverManager.getConnection(connection_uri, withReadApi);
-    Statement statement = connection.createStatement();
-    String BASE_QUERY = "SELECT * FROM UNNEST(GENERATE_ARRAY(1, %s));";
-    int expectedCnt = 500000;
-    String longQuery = String.format(BASE_QUERY, expectedCnt);
-    String longerQuery = String.format(BASE_QUERY, 700000);
-    String longerQuery2 = String.format(BASE_QUERY, 900000);
-    statement.execute(longQuery + longerQuery + longerQuery2);
-    ResultSet arrowResultSet = statement.getResultSet();
-    assertEquals(500000, resultSetRowCount(arrowResultSet));
-    arrowResultSet.close();
-    connection.close();
+    String longQuery = String.format(GENERATE_ARRAY_QUERY, 500000);
+    String longerQuery = String.format(GENERATE_ARRAY_QUERY, 700000);
+    String longerQuery2 = String.format(GENERATE_ARRAY_QUERY, 900000);
+
+    try (Connection connection = DriverManager.getConnection(ITBase.connectionUrl, withReadApi);
+        Statement statement = connection.createStatement()) {
+      assertTrue(statement.execute(longQuery + longerQuery + longerQuery2));
+
+      ResultSet arrowResultSet = statement.getResultSet();
+      assertArrowResultSet(arrowResultSet);
+      assertEquals(500000, resultSetRowCount(arrowResultSet));
+
+      assertTrue(statement.getMoreResults());
+      arrowResultSet = statement.getResultSet();
+      assertArrowResultSet(arrowResultSet);
+      assertEquals(700000, resultSetRowCount(arrowResultSet));
+
+      assertTrue(statement.getMoreResults());
+      arrowResultSet = statement.getResultSet();
+      assertArrowResultSet(arrowResultSet);
+      assertEquals(900000, resultSetRowCount(arrowResultSet));
+
+      assertFalse(statement.getMoreResults());
+    }
   }
 
   @Test

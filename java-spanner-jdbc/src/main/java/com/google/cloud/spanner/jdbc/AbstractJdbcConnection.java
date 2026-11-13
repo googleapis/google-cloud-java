@@ -26,6 +26,7 @@ import com.google.cloud.spanner.connection.ConnectionOptions;
 import com.google.cloud.spanner.connection.ConnectionOptionsHelper;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.rpc.Code;
+import com.google.spanner.v1.TransactionOptions.IsolationLevel;
 import java.sql.CallableStatement;
 import java.sql.ResultSet;
 import java.sql.SQLClientInfoException;
@@ -154,8 +155,19 @@ abstract class AbstractJdbcConnection extends AbstractJdbcWrapper
   @Override
   public int getTransactionIsolation() throws SQLException {
     checkClosed();
-    //noinspection MagicConstant
-    return IsolationLevelConverter.convertToJdbc(spanner.getDefaultIsolationLevel());
+    IsolationLevel isolationLevel =
+        spanner.isInTransaction()
+            ? spanner.getTransactionIsolationLevel()
+            : spanner.getDefaultIsolationLevel();
+    if (isolationLevel == IsolationLevel.ISOLATION_LEVEL_UNSPECIFIED) {
+      return JdbcDatabaseMetaData.getDatabaseDefaultTransactionIsolation(getDatabaseClient());
+    }
+    try {
+      //noinspection MagicConstant
+      return IsolationLevelConverter.convertToJdbc(isolationLevel);
+    } catch (IllegalArgumentException e) {
+      throw JdbcSqlExceptionFactory.of(e.getMessage(), Code.INVALID_ARGUMENT, e);
+    }
   }
 
   @Override

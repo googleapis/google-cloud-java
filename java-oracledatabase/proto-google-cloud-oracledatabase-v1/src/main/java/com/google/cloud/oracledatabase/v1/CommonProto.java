@@ -63,34 +63,39 @@ public final class CommonProto extends com.google.protobuf.GeneratedFile {
     java.lang.String[] descriptorData = {
       "\n+google/cloud/oracledatabase/v1/common."
           + "proto\022\036google.cloud.oracledatabase.v1\032\037g"
-          + "oogle/api/field_behavior.proto\"&\n\017Custom"
-          + "erContact\022\023\n\005email\030\001 \001(\tB\004\342A\001\002\"\225\002\n\021Ident"
-          + "ityConnector\022!\n\023service_agent_email\030\001 \001("
-          + "\tB\004\342A\001\003\022a\n\020connection_state\030\002 \001(\0162A.goog"
-          + "le.cloud.oracledatabase.v1.IdentityConne"
-          + "ctor.ConnectionStateB\004\342A\001\003\"z\n\017Connection"
-          + "State\022 \n\034CONNECTION_STATE_UNSPECIFIED\020\000\022"
-          + "\r\n\tCONNECTED\020\001\022\027\n\023PARTIALLY_CONNECTED\020\002\022"
-          + "\020\n\014DISCONNECTED\020\003\022\013\n\007UNKNOWN\020\004\"\236\001\n\033DataC"
-          + "ollectionOptionsCommon\022+\n\035is_diagnostics"
-          + "_events_enabled\030\001 \001(\010B\004\342A\001\001\022*\n\034is_health"
-          + "_monitoring_enabled\030\002 \001(\010B\004\342A\001\001\022&\n\030is_in"
-          + "cident_logs_enabled\030\003 \001(\010B\004\342A\001\001*]\n\014Compu"
-          + "teModel\022\035\n\031COMPUTE_MODEL_UNSPECIFIED\020\000\022\026"
-          + "\n\022COMPUTE_MODEL_ECPU\020\001\022\026\n\022COMPUTE_MODEL_"
-          + "OCPU\020\002B\345\001\n\"com.google.cloud.oracledataba"
-          + "se.v1B\013CommonProtoP\001ZJcloud.google.com/g"
-          + "o/oracledatabase/apiv1/oracledatabasepb;"
-          + "oracledatabasepb\252\002\036Google.Cloud.OracleDa"
-          + "tabase.V1\312\002\036Google\\Cloud\\OracleDatabase\\"
-          + "V1\352\002!Google::Cloud::OracleDatabase::V1b\006"
-          + "proto3"
+          + "oogle/api/field_behavior.proto\032\031google/a"
+          + "pi/resource.proto\"&\n\017CustomerContact\022\023\n\005"
+          + "email\030\001 \001(\tB\004\342A\001\002\"\263\003\n\021IdentityConnector\022"
+          + "!\n\023service_agent_email\030\001 \001(\tB\004\342A\001\003\022a\n\020co"
+          + "nnection_state\030\002 \001(\0162A.google.cloud.orac"
+          + "ledatabase.v1.IdentityConnector.Connecti"
+          + "onStateB\004\342A\001\003\022P\n\026workload_identity_pool\030"
+          + "\003 \001(\tB0\342A\001\003\372A)\n\'iam.googleapis.com/Workl"
+          + "oadIdentityPool\022#\n\025identity_connector_id"
+          + "\030\004 \001(\tB\004\342A\001\003\022%\n\027lifecycle_state_details\030"
+          + "\005 \001(\tB\004\342A\001\003\"z\n\017ConnectionState\022 \n\034CONNEC"
+          + "TION_STATE_UNSPECIFIED\020\000\022\r\n\tCONNECTED\020\001\022"
+          + "\027\n\023PARTIALLY_CONNECTED\020\002\022\020\n\014DISCONNECTED"
+          + "\020\003\022\013\n\007UNKNOWN\020\004\"\236\001\n\033DataCollectionOption"
+          + "sCommon\022+\n\035is_diagnostics_events_enabled"
+          + "\030\001 \001(\010B\004\342A\001\001\022*\n\034is_health_monitoring_ena"
+          + "bled\030\002 \001(\010B\004\342A\001\001\022&\n\030is_incident_logs_ena"
+          + "bled\030\003 \001(\010B\004\342A\001\001*]\n\014ComputeModel\022\035\n\031COMP"
+          + "UTE_MODEL_UNSPECIFIED\020\000\022\026\n\022COMPUTE_MODEL"
+          + "_ECPU\020\001\022\026\n\022COMPUTE_MODEL_OCPU\020\002B\345\001\n\"com."
+          + "google.cloud.oracledatabase.v1B\013CommonPr"
+          + "otoP\001ZJcloud.google.com/go/oracledatabas"
+          + "e/apiv1/oracledatabasepb;oracledatabasep"
+          + "b\252\002\036Google.Cloud.OracleDatabase.V1\312\002\036Goo"
+          + "gle\\Cloud\\OracleDatabase\\V1\352\002!Google::Cl"
+          + "oud::OracleDatabase::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.FieldBehaviorProto.getDescriptor(),
+              com.google.api.ResourceProto.getDescriptor(),
             });
     internal_static_google_cloud_oracledatabase_v1_CustomerContact_descriptor =
         getDescriptor().getMessageType(0);
@@ -106,7 +111,11 @@ public final class CommonProto extends com.google.protobuf.GeneratedFile {
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_oracledatabase_v1_IdentityConnector_descriptor,
             new java.lang.String[] {
-              "ServiceAgentEmail", "ConnectionState",
+              "ServiceAgentEmail",
+              "ConnectionState",
+              "WorkloadIdentityPool",
+              "IdentityConnectorId",
+              "LifecycleStateDetails",
             });
     internal_static_google_cloud_oracledatabase_v1_DataCollectionOptionsCommon_descriptor =
         getDescriptor().getMessageType(2);
@@ -118,9 +127,11 @@ public final class CommonProto extends com.google.protobuf.GeneratedFile {
             });
     descriptor.resolveAllFeaturesImmutable();
     com.google.api.FieldBehaviorProto.getDescriptor();
+    com.google.api.ResourceProto.getDescriptor();
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
+    registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
   }

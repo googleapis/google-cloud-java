@@ -63,5 +63,54 @@ public interface SourceCodeOrBuilder
    */
   com.google.cloud.run.v2.SourceCode.CloudStorageSourceOrBuilder getCloudStorageSourceOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Source code inlined in the request. Cloud Run will
+   * store the inlined_source to Cloud Storage and replace the field with
+   * cloud_storage_source. This field is only supported in Cloud Run Service.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.run.v2.SourceCode.InlinedSource inlined_source = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the inlinedSource field is set.
+   */
+  boolean hasInlinedSource();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Source code inlined in the request. Cloud Run will
+   * store the inlined_source to Cloud Storage and replace the field with
+   * cloud_storage_source. This field is only supported in Cloud Run Service.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.run.v2.SourceCode.InlinedSource inlined_source = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   *
+   * @return The inlinedSource.
+   */
+  com.google.cloud.run.v2.SourceCode.InlinedSource getInlinedSource();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Source code inlined in the request. Cloud Run will
+   * store the inlined_source to Cloud Storage and replace the field with
+   * cloud_storage_source. This field is only supported in Cloud Run Service.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.run.v2.SourceCode.InlinedSource inlined_source = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.run.v2.SourceCode.InlinedSourceOrBuilder getInlinedSourceOrBuilder();
+
   com.google.cloud.run.v2.SourceCode.SourceTypeCase getSourceTypeCase();
 }

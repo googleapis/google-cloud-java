@@ -19,6 +19,7 @@ package com.google.cloud.spanner.jdbc;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
+import com.google.cloud.spanner.Dialect;
 import com.google.cloud.spanner.MockSpannerServiceImpl.StatementResult;
 import com.google.cloud.spanner.connection.AbstractMockServerTest;
 import com.google.cloud.spanner.connection.SpannerPool;
@@ -129,7 +130,11 @@ public class TransactionMockServerTest extends AbstractMockServerTest {
             .createStatement()
             .execute(
                 "begin transaction isolation level " + isolationLevel.toString().replace("_", " "));
+        assertEquals(
+            IsolationLevelConverter.convertToJdbc(isolationLevel),
+            connection.getTransactionIsolation());
         runTestTransaction(connection, isolationLevel);
+        assertEquals(Connection.TRANSACTION_SERIALIZABLE, connection.getTransactionIsolation());
       }
     }
   }
@@ -143,6 +148,29 @@ public class TransactionMockServerTest extends AbstractMockServerTest {
               createUrl(";default_isolation_level=" + isolationLevel.name()))) {
         runTestTransaction(connection, isolationLevel);
       }
+    }
+  }
+
+  @Test
+  public void testUsesDatabaseDefaultIsolationLevel() throws SQLException {
+    SpannerPool.closeSpannerPool();
+    mockSpanner.putStatementResult(
+        StatementResult.detectDialectResult(
+            Dialect.GOOGLE_STANDARD_SQL, IsolationLevel.REPEATABLE_READ));
+    try (Connection connection = createJdbcConnection()) {
+      assertEquals(Connection.TRANSACTION_REPEATABLE_READ, connection.getTransactionIsolation());
+      assertEquals(
+          Connection.TRANSACTION_REPEATABLE_READ,
+          connection.getMetaData().getDefaultTransactionIsolation());
+      runTestTransaction(connection, IsolationLevel.ISOLATION_LEVEL_UNSPECIFIED);
+
+      connection.setTransactionIsolation(Connection.TRANSACTION_SERIALIZABLE);
+      assertEquals(Connection.TRANSACTION_SERIALIZABLE, connection.getTransactionIsolation());
+      runTestTransaction(connection, IsolationLevel.SERIALIZABLE);
+    } finally {
+      SpannerPool.closeSpannerPool();
+      mockSpanner.putStatementResult(
+          StatementResult.detectDialectResult(Dialect.GOOGLE_STANDARD_SQL));
     }
   }
 

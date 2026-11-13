@@ -1001,6 +1001,1967 @@ public final class SourceCode extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public interface SourceFileOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.run.v2.SourceCode.SourceFile)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Input only. The file name for the source code. e.g.,
+     * `"index.js"` or
+     * `"node_modules/dependency.js"`. The filename must be less than 255
+     * characters and cannot contain `..`, `./`, `//`, or end with a `/`.
+     * Cloud Run will place the files in the container subdirectories, please
+     * use relative path to access the file.
+     * </pre>
+     *
+     * <code>
+     * string filename = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     *
+     * @return The filename.
+     */
+    java.lang.String getFilename();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Input only. The file name for the source code. e.g.,
+     * `"index.js"` or
+     * `"node_modules/dependency.js"`. The filename must be less than 255
+     * characters and cannot contain `..`, `./`, `//`, or end with a `/`.
+     * Cloud Run will place the files in the container subdirectories, please
+     * use relative path to access the file.
+     * </pre>
+     *
+     * <code>
+     * string filename = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     *
+     * @return The bytes for filename.
+     */
+    com.google.protobuf.ByteString getFilenameBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Input only. Represents the exact, literal, and complete source
+     * code of the file. Placeholders like `...` or comments such as `# [rest of
+     * code]` should NEVER be used as omission. Every character in this field
+     * will be built into the final container. Any omission will result in a
+     * broken application.
+     * </pre>
+     *
+     * <code>
+     * string content = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     *
+     * @return The content.
+     */
+    java.lang.String getContent();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Input only. Represents the exact, literal, and complete source
+     * code of the file. Placeholders like `...` or comments such as `# [rest of
+     * code]` should NEVER be used as omission. Every character in this field
+     * will be built into the final container. Any omission will result in a
+     * broken application.
+     * </pre>
+     *
+     * <code>
+     * string content = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     *
+     * @return The bytes for content.
+     */
+    com.google.protobuf.ByteString getContentBytes();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Source file.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.run.v2.SourceCode.SourceFile}
+   */
+  public static final class SourceFile extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.run.v2.SourceCode.SourceFile)
+      SourceFileOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 6,
+          /* suffix= */ "",
+          "SourceFile");
+    }
+
+    // Use SourceFile.newBuilder() to construct.
+    private SourceFile(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private SourceFile() {
+      filename_ = "";
+      content_ = "";
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.run.v2.K8sMinProto
+          .internal_static_google_cloud_run_v2_SourceCode_SourceFile_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.run.v2.K8sMinProto
+          .internal_static_google_cloud_run_v2_SourceCode_SourceFile_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.run.v2.SourceCode.SourceFile.class,
+              com.google.cloud.run.v2.SourceCode.SourceFile.Builder.class);
+    }
+
+    public static final int FILENAME_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object filename_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Input only. The file name for the source code. e.g.,
+     * `"index.js"` or
+     * `"node_modules/dependency.js"`. The filename must be less than 255
+     * characters and cannot contain `..`, `./`, `//`, or end with a `/`.
+     * Cloud Run will place the files in the container subdirectories, please
+     * use relative path to access the file.
+     * </pre>
+     *
+     * <code>
+     * string filename = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     *
+     * @return The filename.
+     */
+    @java.lang.Override
+    public java.lang.String getFilename() {
+      java.lang.Object ref = filename_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        filename_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Input only. The file name for the source code. e.g.,
+     * `"index.js"` or
+     * `"node_modules/dependency.js"`. The filename must be less than 255
+     * characters and cannot contain `..`, `./`, `//`, or end with a `/`.
+     * Cloud Run will place the files in the container subdirectories, please
+     * use relative path to access the file.
+     * </pre>
+     *
+     * <code>
+     * string filename = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     *
+     * @return The bytes for filename.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getFilenameBytes() {
+      java.lang.Object ref = filename_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        filename_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CONTENT_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object content_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Input only. Represents the exact, literal, and complete source
+     * code of the file. Placeholders like `...` or comments such as `# [rest of
+     * code]` should NEVER be used as omission. Every character in this field
+     * will be built into the final container. Any omission will result in a
+     * broken application.
+     * </pre>
+     *
+     * <code>
+     * string content = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     *
+     * @return The content.
+     */
+    @java.lang.Override
+    public java.lang.String getContent() {
+      java.lang.Object ref = content_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        content_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Input only. Represents the exact, literal, and complete source
+     * code of the file. Placeholders like `...` or comments such as `# [rest of
+     * code]` should NEVER be used as omission. Every character in this field
+     * will be built into the final container. Any omission will result in a
+     * broken application.
+     * </pre>
+     *
+     * <code>
+     * string content = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     *
+     * @return The bytes for content.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getContentBytes() {
+      java.lang.Object ref = content_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        content_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(filename_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 1, filename_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(content_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 2, content_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(filename_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(1, filename_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(content_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(2, content_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.run.v2.SourceCode.SourceFile)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.run.v2.SourceCode.SourceFile other =
+          (com.google.cloud.run.v2.SourceCode.SourceFile) obj;
+
+      if (!getFilename().equals(other.getFilename())) return false;
+      if (!getContent().equals(other.getContent())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + FILENAME_FIELD_NUMBER;
+      hash = (53 * hash) + getFilename().hashCode();
+      hash = (37 * hash) + CONTENT_FIELD_NUMBER;
+      hash = (53 * hash) + getContent().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.run.v2.SourceCode.SourceFile parseFrom(java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.run.v2.SourceCode.SourceFile parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.run.v2.SourceCode.SourceFile parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.run.v2.SourceCode.SourceFile parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.run.v2.SourceCode.SourceFile parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.run.v2.SourceCode.SourceFile parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.run.v2.SourceCode.SourceFile parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.run.v2.SourceCode.SourceFile parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.run.v2.SourceCode.SourceFile parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.run.v2.SourceCode.SourceFile parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.run.v2.SourceCode.SourceFile parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.run.v2.SourceCode.SourceFile parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(com.google.cloud.run.v2.SourceCode.SourceFile prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Source file.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.run.v2.SourceCode.SourceFile}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.run.v2.SourceCode.SourceFile)
+        com.google.cloud.run.v2.SourceCode.SourceFileOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.run.v2.K8sMinProto
+            .internal_static_google_cloud_run_v2_SourceCode_SourceFile_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.run.v2.K8sMinProto
+            .internal_static_google_cloud_run_v2_SourceCode_SourceFile_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.run.v2.SourceCode.SourceFile.class,
+                com.google.cloud.run.v2.SourceCode.SourceFile.Builder.class);
+      }
+
+      // Construct using com.google.cloud.run.v2.SourceCode.SourceFile.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        filename_ = "";
+        content_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.run.v2.K8sMinProto
+            .internal_static_google_cloud_run_v2_SourceCode_SourceFile_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.run.v2.SourceCode.SourceFile getDefaultInstanceForType() {
+        return com.google.cloud.run.v2.SourceCode.SourceFile.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.run.v2.SourceCode.SourceFile build() {
+        com.google.cloud.run.v2.SourceCode.SourceFile result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.run.v2.SourceCode.SourceFile buildPartial() {
+        com.google.cloud.run.v2.SourceCode.SourceFile result =
+            new com.google.cloud.run.v2.SourceCode.SourceFile(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.google.cloud.run.v2.SourceCode.SourceFile result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.filename_ = filename_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.content_ = content_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.run.v2.SourceCode.SourceFile) {
+          return mergeFrom((com.google.cloud.run.v2.SourceCode.SourceFile) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.run.v2.SourceCode.SourceFile other) {
+        if (other == com.google.cloud.run.v2.SourceCode.SourceFile.getDefaultInstance())
+          return this;
+        if (!other.getFilename().isEmpty()) {
+          filename_ = other.filename_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (!other.getContent().isEmpty()) {
+          content_ = other.content_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  filename_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  content_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object filename_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Input only. The file name for the source code. e.g.,
+       * `"index.js"` or
+       * `"node_modules/dependency.js"`. The filename must be less than 255
+       * characters and cannot contain `..`, `./`, `//`, or end with a `/`.
+       * Cloud Run will place the files in the container subdirectories, please
+       * use relative path to access the file.
+       * </pre>
+       *
+       * <code>
+       * string filename = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];
+       * </code>
+       *
+       * @return The filename.
+       */
+      public java.lang.String getFilename() {
+        java.lang.Object ref = filename_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          filename_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Input only. The file name for the source code. e.g.,
+       * `"index.js"` or
+       * `"node_modules/dependency.js"`. The filename must be less than 255
+       * characters and cannot contain `..`, `./`, `//`, or end with a `/`.
+       * Cloud Run will place the files in the container subdirectories, please
+       * use relative path to access the file.
+       * </pre>
+       *
+       * <code>
+       * string filename = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];
+       * </code>
+       *
+       * @return The bytes for filename.
+       */
+      public com.google.protobuf.ByteString getFilenameBytes() {
+        java.lang.Object ref = filename_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          filename_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Input only. The file name for the source code. e.g.,
+       * `"index.js"` or
+       * `"node_modules/dependency.js"`. The filename must be less than 255
+       * characters and cannot contain `..`, `./`, `//`, or end with a `/`.
+       * Cloud Run will place the files in the container subdirectories, please
+       * use relative path to access the file.
+       * </pre>
+       *
+       * <code>
+       * string filename = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];
+       * </code>
+       *
+       * @param value The filename to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFilename(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        filename_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Input only. The file name for the source code. e.g.,
+       * `"index.js"` or
+       * `"node_modules/dependency.js"`. The filename must be less than 255
+       * characters and cannot contain `..`, `./`, `//`, or end with a `/`.
+       * Cloud Run will place the files in the container subdirectories, please
+       * use relative path to access the file.
+       * </pre>
+       *
+       * <code>
+       * string filename = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearFilename() {
+        filename_ = getDefaultInstance().getFilename();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Input only. The file name for the source code. e.g.,
+       * `"index.js"` or
+       * `"node_modules/dependency.js"`. The filename must be less than 255
+       * characters and cannot contain `..`, `./`, `//`, or end with a `/`.
+       * Cloud Run will place the files in the container subdirectories, please
+       * use relative path to access the file.
+       * </pre>
+       *
+       * <code>
+       * string filename = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];
+       * </code>
+       *
+       * @param value The bytes for filename to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFilenameBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        filename_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object content_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Input only. Represents the exact, literal, and complete source
+       * code of the file. Placeholders like `...` or comments such as `# [rest of
+       * code]` should NEVER be used as omission. Every character in this field
+       * will be built into the final container. Any omission will result in a
+       * broken application.
+       * </pre>
+       *
+       * <code>
+       * string content = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];
+       * </code>
+       *
+       * @return The content.
+       */
+      public java.lang.String getContent() {
+        java.lang.Object ref = content_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          content_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Input only. Represents the exact, literal, and complete source
+       * code of the file. Placeholders like `...` or comments such as `# [rest of
+       * code]` should NEVER be used as omission. Every character in this field
+       * will be built into the final container. Any omission will result in a
+       * broken application.
+       * </pre>
+       *
+       * <code>
+       * string content = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];
+       * </code>
+       *
+       * @return The bytes for content.
+       */
+      public com.google.protobuf.ByteString getContentBytes() {
+        java.lang.Object ref = content_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          content_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Input only. Represents the exact, literal, and complete source
+       * code of the file. Placeholders like `...` or comments such as `# [rest of
+       * code]` should NEVER be used as omission. Every character in this field
+       * will be built into the final container. Any omission will result in a
+       * broken application.
+       * </pre>
+       *
+       * <code>
+       * string content = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];
+       * </code>
+       *
+       * @param value The content to set.
+       * @return This builder for chaining.
+       */
+      public Builder setContent(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        content_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Input only. Represents the exact, literal, and complete source
+       * code of the file. Placeholders like `...` or comments such as `# [rest of
+       * code]` should NEVER be used as omission. Every character in this field
+       * will be built into the final container. Any omission will result in a
+       * broken application.
+       * </pre>
+       *
+       * <code>
+       * string content = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearContent() {
+        content_ = getDefaultInstance().getContent();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Input only. Represents the exact, literal, and complete source
+       * code of the file. Placeholders like `...` or comments such as `# [rest of
+       * code]` should NEVER be used as omission. Every character in this field
+       * will be built into the final container. Any omission will result in a
+       * broken application.
+       * </pre>
+       *
+       * <code>
+       * string content = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];
+       * </code>
+       *
+       * @param value The bytes for content to set.
+       * @return This builder for chaining.
+       */
+      public Builder setContentBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        content_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.run.v2.SourceCode.SourceFile)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.run.v2.SourceCode.SourceFile)
+    private static final com.google.cloud.run.v2.SourceCode.SourceFile DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.run.v2.SourceCode.SourceFile();
+    }
+
+    public static com.google.cloud.run.v2.SourceCode.SourceFile getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<SourceFile> PARSER =
+        new com.google.protobuf.AbstractParser<SourceFile>() {
+          @java.lang.Override
+          public SourceFile parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<SourceFile> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<SourceFile> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.run.v2.SourceCode.SourceFile getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface InlinedSourceOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.run.v2.SourceCode.InlinedSource)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Input only. The source code.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.run.v2.SourceCode.SourceFile sources = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    java.util.List<com.google.cloud.run.v2.SourceCode.SourceFile> getSourcesList();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Input only. The source code.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.run.v2.SourceCode.SourceFile sources = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    com.google.cloud.run.v2.SourceCode.SourceFile getSources(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Input only. The source code.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.run.v2.SourceCode.SourceFile sources = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    int getSourcesCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Input only. The source code.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.run.v2.SourceCode.SourceFile sources = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    java.util.List<? extends com.google.cloud.run.v2.SourceCode.SourceFileOrBuilder>
+        getSourcesOrBuilderList();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Input only. The source code.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.run.v2.SourceCode.SourceFile sources = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    com.google.cloud.run.v2.SourceCode.SourceFileOrBuilder getSourcesOrBuilder(int index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Inlined source.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.run.v2.SourceCode.InlinedSource}
+   */
+  public static final class InlinedSource extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.run.v2.SourceCode.InlinedSource)
+      InlinedSourceOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 6,
+          /* suffix= */ "",
+          "InlinedSource");
+    }
+
+    // Use InlinedSource.newBuilder() to construct.
+    private InlinedSource(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private InlinedSource() {
+      sources_ = java.util.Collections.emptyList();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.run.v2.K8sMinProto
+          .internal_static_google_cloud_run_v2_SourceCode_InlinedSource_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.run.v2.K8sMinProto
+          .internal_static_google_cloud_run_v2_SourceCode_InlinedSource_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.run.v2.SourceCode.InlinedSource.class,
+              com.google.cloud.run.v2.SourceCode.InlinedSource.Builder.class);
+    }
+
+    public static final int SOURCES_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private java.util.List<com.google.cloud.run.v2.SourceCode.SourceFile> sources_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Input only. The source code.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.run.v2.SourceCode.SourceFile sources = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<com.google.cloud.run.v2.SourceCode.SourceFile> getSourcesList() {
+      return sources_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Input only. The source code.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.run.v2.SourceCode.SourceFile sources = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends com.google.cloud.run.v2.SourceCode.SourceFileOrBuilder>
+        getSourcesOrBuilderList() {
+      return sources_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Input only. The source code.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.run.v2.SourceCode.SourceFile sources = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public int getSourcesCount() {
+      return sources_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Input only. The source code.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.run.v2.SourceCode.SourceFile sources = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.run.v2.SourceCode.SourceFile getSources(int index) {
+      return sources_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Input only. The source code.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.run.v2.SourceCode.SourceFile sources = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.run.v2.SourceCode.SourceFileOrBuilder getSourcesOrBuilder(int index) {
+      return sources_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      for (int i = 0; i < sources_.size(); i++) {
+        output.writeMessage(1, sources_.get(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < sources_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, sources_.get(i));
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.run.v2.SourceCode.InlinedSource)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.run.v2.SourceCode.InlinedSource other =
+          (com.google.cloud.run.v2.SourceCode.InlinedSource) obj;
+
+      if (!getSourcesList().equals(other.getSourcesList())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getSourcesCount() > 0) {
+        hash = (37 * hash) + SOURCES_FIELD_NUMBER;
+        hash = (53 * hash) + getSourcesList().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.run.v2.SourceCode.InlinedSource parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.run.v2.SourceCode.InlinedSource parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.run.v2.SourceCode.InlinedSource parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.run.v2.SourceCode.InlinedSource parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.run.v2.SourceCode.InlinedSource parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.run.v2.SourceCode.InlinedSource parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.run.v2.SourceCode.InlinedSource parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.run.v2.SourceCode.InlinedSource parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.run.v2.SourceCode.InlinedSource parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.run.v2.SourceCode.InlinedSource parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.run.v2.SourceCode.InlinedSource parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.run.v2.SourceCode.InlinedSource parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(com.google.cloud.run.v2.SourceCode.InlinedSource prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Inlined source.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.run.v2.SourceCode.InlinedSource}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.run.v2.SourceCode.InlinedSource)
+        com.google.cloud.run.v2.SourceCode.InlinedSourceOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.run.v2.K8sMinProto
+            .internal_static_google_cloud_run_v2_SourceCode_InlinedSource_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.run.v2.K8sMinProto
+            .internal_static_google_cloud_run_v2_SourceCode_InlinedSource_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.run.v2.SourceCode.InlinedSource.class,
+                com.google.cloud.run.v2.SourceCode.InlinedSource.Builder.class);
+      }
+
+      // Construct using com.google.cloud.run.v2.SourceCode.InlinedSource.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        if (sourcesBuilder_ == null) {
+          sources_ = java.util.Collections.emptyList();
+        } else {
+          sources_ = null;
+          sourcesBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000001);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.run.v2.K8sMinProto
+            .internal_static_google_cloud_run_v2_SourceCode_InlinedSource_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.run.v2.SourceCode.InlinedSource getDefaultInstanceForType() {
+        return com.google.cloud.run.v2.SourceCode.InlinedSource.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.run.v2.SourceCode.InlinedSource build() {
+        com.google.cloud.run.v2.SourceCode.InlinedSource result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.run.v2.SourceCode.InlinedSource buildPartial() {
+        com.google.cloud.run.v2.SourceCode.InlinedSource result =
+            new com.google.cloud.run.v2.SourceCode.InlinedSource(this);
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.run.v2.SourceCode.InlinedSource result) {
+        if (sourcesBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            sources_ = java.util.Collections.unmodifiableList(sources_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.sources_ = sources_;
+        } else {
+          result.sources_ = sourcesBuilder_.build();
+        }
+      }
+
+      private void buildPartial0(com.google.cloud.run.v2.SourceCode.InlinedSource result) {
+        int from_bitField0_ = bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.run.v2.SourceCode.InlinedSource) {
+          return mergeFrom((com.google.cloud.run.v2.SourceCode.InlinedSource) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.run.v2.SourceCode.InlinedSource other) {
+        if (other == com.google.cloud.run.v2.SourceCode.InlinedSource.getDefaultInstance())
+          return this;
+        if (sourcesBuilder_ == null) {
+          if (!other.sources_.isEmpty()) {
+            if (sources_.isEmpty()) {
+              sources_ = other.sources_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureSourcesIsMutable();
+              sources_.addAll(other.sources_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.sources_.isEmpty()) {
+            if (sourcesBuilder_.isEmpty()) {
+              sourcesBuilder_.dispose();
+              sourcesBuilder_ = null;
+              sources_ = other.sources_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              sourcesBuilder_ =
+                  com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                      ? internalGetSourcesFieldBuilder()
+                      : null;
+            } else {
+              sourcesBuilder_.addAllMessages(other.sources_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  com.google.cloud.run.v2.SourceCode.SourceFile m =
+                      input.readMessage(
+                          com.google.cloud.run.v2.SourceCode.SourceFile.parser(),
+                          extensionRegistry);
+                  if (sourcesBuilder_ == null) {
+                    ensureSourcesIsMutable();
+                    sources_.add(m);
+                  } else {
+                    sourcesBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.util.List<com.google.cloud.run.v2.SourceCode.SourceFile> sources_ =
+          java.util.Collections.emptyList();
+
+      private void ensureSourcesIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          sources_ =
+              new java.util.ArrayList<com.google.cloud.run.v2.SourceCode.SourceFile>(sources_);
+          bitField0_ |= 0x00000001;
+        }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilder<
+              com.google.cloud.run.v2.SourceCode.SourceFile,
+              com.google.cloud.run.v2.SourceCode.SourceFile.Builder,
+              com.google.cloud.run.v2.SourceCode.SourceFileOrBuilder>
+          sourcesBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Input only. The source code.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.run.v2.SourceCode.SourceFile sources = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];
+       * </code>
+       */
+      public java.util.List<com.google.cloud.run.v2.SourceCode.SourceFile> getSourcesList() {
+        if (sourcesBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(sources_);
+        } else {
+          return sourcesBuilder_.getMessageList();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Input only. The source code.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.run.v2.SourceCode.SourceFile sources = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];
+       * </code>
+       */
+      public int getSourcesCount() {
+        if (sourcesBuilder_ == null) {
+          return sources_.size();
+        } else {
+          return sourcesBuilder_.getCount();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Input only. The source code.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.run.v2.SourceCode.SourceFile sources = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.run.v2.SourceCode.SourceFile getSources(int index) {
+        if (sourcesBuilder_ == null) {
+          return sources_.get(index);
+        } else {
+          return sourcesBuilder_.getMessage(index);
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Input only. The source code.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.run.v2.SourceCode.SourceFile sources = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];
+       * </code>
+       */
+      public Builder setSources(int index, com.google.cloud.run.v2.SourceCode.SourceFile value) {
+        if (sourcesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSourcesIsMutable();
+          sources_.set(index, value);
+          onChanged();
+        } else {
+          sourcesBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Input only. The source code.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.run.v2.SourceCode.SourceFile sources = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];
+       * </code>
+       */
+      public Builder setSources(
+          int index, com.google.cloud.run.v2.SourceCode.SourceFile.Builder builderForValue) {
+        if (sourcesBuilder_ == null) {
+          ensureSourcesIsMutable();
+          sources_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          sourcesBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Input only. The source code.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.run.v2.SourceCode.SourceFile sources = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];
+       * </code>
+       */
+      public Builder addSources(com.google.cloud.run.v2.SourceCode.SourceFile value) {
+        if (sourcesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSourcesIsMutable();
+          sources_.add(value);
+          onChanged();
+        } else {
+          sourcesBuilder_.addMessage(value);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Input only. The source code.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.run.v2.SourceCode.SourceFile sources = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];
+       * </code>
+       */
+      public Builder addSources(int index, com.google.cloud.run.v2.SourceCode.SourceFile value) {
+        if (sourcesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSourcesIsMutable();
+          sources_.add(index, value);
+          onChanged();
+        } else {
+          sourcesBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Input only. The source code.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.run.v2.SourceCode.SourceFile sources = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];
+       * </code>
+       */
+      public Builder addSources(
+          com.google.cloud.run.v2.SourceCode.SourceFile.Builder builderForValue) {
+        if (sourcesBuilder_ == null) {
+          ensureSourcesIsMutable();
+          sources_.add(builderForValue.build());
+          onChanged();
+        } else {
+          sourcesBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Input only. The source code.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.run.v2.SourceCode.SourceFile sources = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];
+       * </code>
+       */
+      public Builder addSources(
+          int index, com.google.cloud.run.v2.SourceCode.SourceFile.Builder builderForValue) {
+        if (sourcesBuilder_ == null) {
+          ensureSourcesIsMutable();
+          sources_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          sourcesBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Input only. The source code.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.run.v2.SourceCode.SourceFile sources = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];
+       * </code>
+       */
+      public Builder addAllSources(
+          java.lang.Iterable<? extends com.google.cloud.run.v2.SourceCode.SourceFile> values) {
+        if (sourcesBuilder_ == null) {
+          ensureSourcesIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, sources_);
+          onChanged();
+        } else {
+          sourcesBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Input only. The source code.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.run.v2.SourceCode.SourceFile sources = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];
+       * </code>
+       */
+      public Builder clearSources() {
+        if (sourcesBuilder_ == null) {
+          sources_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          sourcesBuilder_.clear();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Input only. The source code.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.run.v2.SourceCode.SourceFile sources = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];
+       * </code>
+       */
+      public Builder removeSources(int index) {
+        if (sourcesBuilder_ == null) {
+          ensureSourcesIsMutable();
+          sources_.remove(index);
+          onChanged();
+        } else {
+          sourcesBuilder_.remove(index);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Input only. The source code.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.run.v2.SourceCode.SourceFile sources = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.run.v2.SourceCode.SourceFile.Builder getSourcesBuilder(int index) {
+        return internalGetSourcesFieldBuilder().getBuilder(index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Input only. The source code.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.run.v2.SourceCode.SourceFile sources = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.run.v2.SourceCode.SourceFileOrBuilder getSourcesOrBuilder(int index) {
+        if (sourcesBuilder_ == null) {
+          return sources_.get(index);
+        } else {
+          return sourcesBuilder_.getMessageOrBuilder(index);
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Input only. The source code.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.run.v2.SourceCode.SourceFile sources = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];
+       * </code>
+       */
+      public java.util.List<? extends com.google.cloud.run.v2.SourceCode.SourceFileOrBuilder>
+          getSourcesOrBuilderList() {
+        if (sourcesBuilder_ != null) {
+          return sourcesBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(sources_);
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Input only. The source code.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.run.v2.SourceCode.SourceFile sources = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.run.v2.SourceCode.SourceFile.Builder addSourcesBuilder() {
+        return internalGetSourcesFieldBuilder()
+            .addBuilder(com.google.cloud.run.v2.SourceCode.SourceFile.getDefaultInstance());
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Input only. The source code.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.run.v2.SourceCode.SourceFile sources = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.run.v2.SourceCode.SourceFile.Builder addSourcesBuilder(int index) {
+        return internalGetSourcesFieldBuilder()
+            .addBuilder(index, com.google.cloud.run.v2.SourceCode.SourceFile.getDefaultInstance());
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Input only. The source code.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.run.v2.SourceCode.SourceFile sources = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];
+       * </code>
+       */
+      public java.util.List<com.google.cloud.run.v2.SourceCode.SourceFile.Builder>
+          getSourcesBuilderList() {
+        return internalGetSourcesFieldBuilder().getBuilderList();
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilder<
+              com.google.cloud.run.v2.SourceCode.SourceFile,
+              com.google.cloud.run.v2.SourceCode.SourceFile.Builder,
+              com.google.cloud.run.v2.SourceCode.SourceFileOrBuilder>
+          internalGetSourcesFieldBuilder() {
+        if (sourcesBuilder_ == null) {
+          sourcesBuilder_ =
+              new com.google.protobuf.RepeatedFieldBuilder<
+                  com.google.cloud.run.v2.SourceCode.SourceFile,
+                  com.google.cloud.run.v2.SourceCode.SourceFile.Builder,
+                  com.google.cloud.run.v2.SourceCode.SourceFileOrBuilder>(
+                  sources_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+          sources_ = null;
+        }
+        return sourcesBuilder_;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.run.v2.SourceCode.InlinedSource)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.run.v2.SourceCode.InlinedSource)
+    private static final com.google.cloud.run.v2.SourceCode.InlinedSource DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.run.v2.SourceCode.InlinedSource();
+    }
+
+    public static com.google.cloud.run.v2.SourceCode.InlinedSource getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<InlinedSource> PARSER =
+        new com.google.protobuf.AbstractParser<InlinedSource>() {
+          @java.lang.Override
+          public InlinedSource parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<InlinedSource> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<InlinedSource> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.run.v2.SourceCode.InlinedSource getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int sourceTypeCase_ = 0;
 
   @SuppressWarnings("serial")
@@ -1011,6 +2972,7 @@ public final class SourceCode extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     CLOUD_STORAGE_SOURCE(1),
+    INLINED_SOURCE(2),
     SOURCETYPE_NOT_SET(0);
     private final int value;
 
@@ -1032,6 +2994,8 @@ public final class SourceCode extends com.google.protobuf.GeneratedMessage
       switch (value) {
         case 1:
           return CLOUD_STORAGE_SOURCE;
+        case 2:
+          return INLINED_SOURCE;
         case 0:
           return SOURCETYPE_NOT_SET;
         default:
@@ -1103,6 +3067,72 @@ public final class SourceCode extends com.google.protobuf.GeneratedMessage
     return com.google.cloud.run.v2.SourceCode.CloudStorageSource.getDefaultInstance();
   }
 
+  public static final int INLINED_SOURCE_FIELD_NUMBER = 2;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Source code inlined in the request. Cloud Run will
+   * store the inlined_source to Cloud Storage and replace the field with
+   * cloud_storage_source. This field is only supported in Cloud Run Service.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.run.v2.SourceCode.InlinedSource inlined_source = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the inlinedSource field is set.
+   */
+  @java.lang.Override
+  public boolean hasInlinedSource() {
+    return sourceTypeCase_ == 2;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Source code inlined in the request. Cloud Run will
+   * store the inlined_source to Cloud Storage and replace the field with
+   * cloud_storage_source. This field is only supported in Cloud Run Service.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.run.v2.SourceCode.InlinedSource inlined_source = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   *
+   * @return The inlinedSource.
+   */
+  @java.lang.Override
+  public com.google.cloud.run.v2.SourceCode.InlinedSource getInlinedSource() {
+    if (sourceTypeCase_ == 2) {
+      return (com.google.cloud.run.v2.SourceCode.InlinedSource) sourceType_;
+    }
+    return com.google.cloud.run.v2.SourceCode.InlinedSource.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Source code inlined in the request. Cloud Run will
+   * store the inlined_source to Cloud Storage and replace the field with
+   * cloud_storage_source. This field is only supported in Cloud Run Service.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.run.v2.SourceCode.InlinedSource inlined_source = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.run.v2.SourceCode.InlinedSourceOrBuilder getInlinedSourceOrBuilder() {
+    if (sourceTypeCase_ == 2) {
+      return (com.google.cloud.run.v2.SourceCode.InlinedSource) sourceType_;
+    }
+    return com.google.cloud.run.v2.SourceCode.InlinedSource.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1120,6 +3150,9 @@ public final class SourceCode extends com.google.protobuf.GeneratedMessage
     if (sourceTypeCase_ == 1) {
       output.writeMessage(1, (com.google.cloud.run.v2.SourceCode.CloudStorageSource) sourceType_);
     }
+    if (sourceTypeCase_ == 2) {
+      output.writeMessage(2, (com.google.cloud.run.v2.SourceCode.InlinedSource) sourceType_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1133,6 +3166,11 @@ public final class SourceCode extends com.google.protobuf.GeneratedMessage
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               1, (com.google.cloud.run.v2.SourceCode.CloudStorageSource) sourceType_);
+    }
+    if (sourceTypeCase_ == 2) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              2, (com.google.cloud.run.v2.SourceCode.InlinedSource) sourceType_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -1154,6 +3192,9 @@ public final class SourceCode extends com.google.protobuf.GeneratedMessage
       case 1:
         if (!getCloudStorageSource().equals(other.getCloudStorageSource())) return false;
         break;
+      case 2:
+        if (!getInlinedSource().equals(other.getInlinedSource())) return false;
+        break;
       case 0:
       default:
     }
@@ -1172,6 +3213,10 @@ public final class SourceCode extends com.google.protobuf.GeneratedMessage
       case 1:
         hash = (37 * hash) + CLOUD_STORAGE_SOURCE_FIELD_NUMBER;
         hash = (53 * hash) + getCloudStorageSource().hashCode();
+        break;
+      case 2:
+        hash = (37 * hash) + INLINED_SOURCE_FIELD_NUMBER;
+        hash = (53 * hash) + getInlinedSource().hashCode();
         break;
       case 0:
       default:
@@ -1318,6 +3363,9 @@ public final class SourceCode extends com.google.protobuf.GeneratedMessage
       if (cloudStorageSourceBuilder_ != null) {
         cloudStorageSourceBuilder_.clear();
       }
+      if (inlinedSourceBuilder_ != null) {
+        inlinedSourceBuilder_.clear();
+      }
       sourceTypeCase_ = 0;
       sourceType_ = null;
       return this;
@@ -1364,6 +3412,9 @@ public final class SourceCode extends com.google.protobuf.GeneratedMessage
       if (sourceTypeCase_ == 1 && cloudStorageSourceBuilder_ != null) {
         result.sourceType_ = cloudStorageSourceBuilder_.build();
       }
+      if (sourceTypeCase_ == 2 && inlinedSourceBuilder_ != null) {
+        result.sourceType_ = inlinedSourceBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1382,6 +3433,11 @@ public final class SourceCode extends com.google.protobuf.GeneratedMessage
         case CLOUD_STORAGE_SOURCE:
           {
             mergeCloudStorageSource(other.getCloudStorageSource());
+            break;
+          }
+        case INLINED_SOURCE:
+          {
+            mergeInlinedSource(other.getInlinedSource());
             break;
           }
         case SOURCETYPE_NOT_SET:
@@ -1422,6 +3478,13 @@ public final class SourceCode extends com.google.protobuf.GeneratedMessage
                 sourceTypeCase_ = 1;
                 break;
               } // case 10
+            case 18:
+              {
+                input.readMessage(
+                    internalGetInlinedSourceFieldBuilder().getBuilder(), extensionRegistry);
+                sourceTypeCase_ = 2;
+                break;
+              } // case 18
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1676,6 +3739,261 @@ public final class SourceCode extends com.google.protobuf.GeneratedMessage
       sourceTypeCase_ = 1;
       onChanged();
       return cloudStorageSourceBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.run.v2.SourceCode.InlinedSource,
+            com.google.cloud.run.v2.SourceCode.InlinedSource.Builder,
+            com.google.cloud.run.v2.SourceCode.InlinedSourceOrBuilder>
+        inlinedSourceBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Source code inlined in the request. Cloud Run will
+     * store the inlined_source to Cloud Storage and replace the field with
+     * cloud_storage_source. This field is only supported in Cloud Run Service.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.SourceCode.InlinedSource inlined_source = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the inlinedSource field is set.
+     */
+    @java.lang.Override
+    public boolean hasInlinedSource() {
+      return sourceTypeCase_ == 2;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Source code inlined in the request. Cloud Run will
+     * store the inlined_source to Cloud Storage and replace the field with
+     * cloud_storage_source. This field is only supported in Cloud Run Service.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.SourceCode.InlinedSource inlined_source = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     *
+     * @return The inlinedSource.
+     */
+    @java.lang.Override
+    public com.google.cloud.run.v2.SourceCode.InlinedSource getInlinedSource() {
+      if (inlinedSourceBuilder_ == null) {
+        if (sourceTypeCase_ == 2) {
+          return (com.google.cloud.run.v2.SourceCode.InlinedSource) sourceType_;
+        }
+        return com.google.cloud.run.v2.SourceCode.InlinedSource.getDefaultInstance();
+      } else {
+        if (sourceTypeCase_ == 2) {
+          return inlinedSourceBuilder_.getMessage();
+        }
+        return com.google.cloud.run.v2.SourceCode.InlinedSource.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Source code inlined in the request. Cloud Run will
+     * store the inlined_source to Cloud Storage and replace the field with
+     * cloud_storage_source. This field is only supported in Cloud Run Service.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.SourceCode.InlinedSource inlined_source = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    public Builder setInlinedSource(com.google.cloud.run.v2.SourceCode.InlinedSource value) {
+      if (inlinedSourceBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        sourceType_ = value;
+        onChanged();
+      } else {
+        inlinedSourceBuilder_.setMessage(value);
+      }
+      sourceTypeCase_ = 2;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Source code inlined in the request. Cloud Run will
+     * store the inlined_source to Cloud Storage and replace the field with
+     * cloud_storage_source. This field is only supported in Cloud Run Service.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.SourceCode.InlinedSource inlined_source = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    public Builder setInlinedSource(
+        com.google.cloud.run.v2.SourceCode.InlinedSource.Builder builderForValue) {
+      if (inlinedSourceBuilder_ == null) {
+        sourceType_ = builderForValue.build();
+        onChanged();
+      } else {
+        inlinedSourceBuilder_.setMessage(builderForValue.build());
+      }
+      sourceTypeCase_ = 2;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Source code inlined in the request. Cloud Run will
+     * store the inlined_source to Cloud Storage and replace the field with
+     * cloud_storage_source. This field is only supported in Cloud Run Service.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.SourceCode.InlinedSource inlined_source = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeInlinedSource(com.google.cloud.run.v2.SourceCode.InlinedSource value) {
+      if (inlinedSourceBuilder_ == null) {
+        if (sourceTypeCase_ == 2
+            && sourceType_
+                != com.google.cloud.run.v2.SourceCode.InlinedSource.getDefaultInstance()) {
+          sourceType_ =
+              com.google.cloud.run.v2.SourceCode.InlinedSource.newBuilder(
+                      (com.google.cloud.run.v2.SourceCode.InlinedSource) sourceType_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          sourceType_ = value;
+        }
+        onChanged();
+      } else {
+        if (sourceTypeCase_ == 2) {
+          inlinedSourceBuilder_.mergeFrom(value);
+        } else {
+          inlinedSourceBuilder_.setMessage(value);
+        }
+      }
+      sourceTypeCase_ = 2;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Source code inlined in the request. Cloud Run will
+     * store the inlined_source to Cloud Storage and replace the field with
+     * cloud_storage_source. This field is only supported in Cloud Run Service.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.SourceCode.InlinedSource inlined_source = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    public Builder clearInlinedSource() {
+      if (inlinedSourceBuilder_ == null) {
+        if (sourceTypeCase_ == 2) {
+          sourceTypeCase_ = 0;
+          sourceType_ = null;
+          onChanged();
+        }
+      } else {
+        if (sourceTypeCase_ == 2) {
+          sourceTypeCase_ = 0;
+          sourceType_ = null;
+        }
+        inlinedSourceBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Source code inlined in the request. Cloud Run will
+     * store the inlined_source to Cloud Storage and replace the field with
+     * cloud_storage_source. This field is only supported in Cloud Run Service.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.SourceCode.InlinedSource inlined_source = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.run.v2.SourceCode.InlinedSource.Builder getInlinedSourceBuilder() {
+      return internalGetInlinedSourceFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Source code inlined in the request. Cloud Run will
+     * store the inlined_source to Cloud Storage and replace the field with
+     * cloud_storage_source. This field is only supported in Cloud Run Service.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.SourceCode.InlinedSource inlined_source = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.run.v2.SourceCode.InlinedSourceOrBuilder getInlinedSourceOrBuilder() {
+      if ((sourceTypeCase_ == 2) && (inlinedSourceBuilder_ != null)) {
+        return inlinedSourceBuilder_.getMessageOrBuilder();
+      } else {
+        if (sourceTypeCase_ == 2) {
+          return (com.google.cloud.run.v2.SourceCode.InlinedSource) sourceType_;
+        }
+        return com.google.cloud.run.v2.SourceCode.InlinedSource.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Source code inlined in the request. Cloud Run will
+     * store the inlined_source to Cloud Storage and replace the field with
+     * cloud_storage_source. This field is only supported in Cloud Run Service.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.SourceCode.InlinedSource inlined_source = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.run.v2.SourceCode.InlinedSource,
+            com.google.cloud.run.v2.SourceCode.InlinedSource.Builder,
+            com.google.cloud.run.v2.SourceCode.InlinedSourceOrBuilder>
+        internalGetInlinedSourceFieldBuilder() {
+      if (inlinedSourceBuilder_ == null) {
+        if (!(sourceTypeCase_ == 2)) {
+          sourceType_ = com.google.cloud.run.v2.SourceCode.InlinedSource.getDefaultInstance();
+        }
+        inlinedSourceBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.run.v2.SourceCode.InlinedSource,
+                com.google.cloud.run.v2.SourceCode.InlinedSource.Builder,
+                com.google.cloud.run.v2.SourceCode.InlinedSourceOrBuilder>(
+                (com.google.cloud.run.v2.SourceCode.InlinedSource) sourceType_,
+                getParentForChildren(),
+                isClean());
+        sourceType_ = null;
+      }
+      sourceTypeCase_ = 2;
+      onChanged();
+      return inlinedSourceBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.run.v2.SourceCode)

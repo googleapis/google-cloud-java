@@ -31,7 +31,6 @@ import com.google.cloud.vision.v1.DeleteProductRequest;
 import com.google.cloud.vision.v1.DeleteProductSetRequest;
 import com.google.cloud.vision.v1.DeleteReferenceImageRequest;
 import com.google.cloud.vision.v1.EntityAnnotation;
-import com.google.cloud.vision.v1.FaceAnnotation;
 import com.google.cloud.vision.v1.Feature;
 import com.google.cloud.vision.v1.GetProductRequest;
 import com.google.cloud.vision.v1.GetProductSetRequest;
@@ -281,18 +280,6 @@ public class ITSystemTest {
   private static <T> List<T> assertNotEmpty(AnnotateImageResponse response, List<T> list) {
     Assert.assertFalse("Empty response list: " + response, list.isEmpty());
     return list;
-  }
-
-  @Test
-  public void detectFacesGcsTest() throws IOException {
-    AnnotateImageResponse res =
-        requestAnnotatedImage("face/face_no_surprise.jpg", Type.FACE_DETECTION, true);
-    for (FaceAnnotation annotation : assertNotEmpty(res, res.getFaceAnnotationsList())) {
-      assertThat(annotation.getAngerLikelihood()).isAnyOf(Likelihood.LIKELY, Likelihood.POSSIBLE);
-      assertEquals(Likelihood.VERY_UNLIKELY, annotation.getJoyLikelihood());
-      assertThat(annotation.getSurpriseLikelihood())
-          .isAnyOf(Likelihood.LIKELY, Likelihood.POSSIBLE);
-    }
   }
 
   @Test

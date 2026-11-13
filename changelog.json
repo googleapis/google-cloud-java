@@ -4,6 +4,849 @@
     {
       "changes": [
         {
+          "type": "feat",
+          "sha": "950b81bb0fd858a61e597be671cf4f16bc199977",
+          "message": "adds BigQuery graph integration to DatabaseMetadata methods",
+          "issues": [
+            "14930"
+          ],
+          "scope": "bigquery-jdbc"
+        }
+      ],
+      "version": "1.97.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-bigquery-jdbc",
+      "id": "4a6ee1b9-5817-486f-b5f8-e2c5f050d704",
+      "createTime": "2026-11-12T23:34:04.830Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "2947dfdb004d5c14cbb5956b6f676f6cd6e65642",
+          "message": "remove discontinued Merchant API v1beta",
+          "issues": [
+            "14942"
+          ],
+          "scope": "shopping-merchant",
+          "breakingChangeNote": "remove discontinued Merchant API v1beta ([#14942](https://github.com/googleapis/google-cloud-java/issues/14942))"
+        }
+      ],
+      "version": "1.97.0",
+      "language": "JAVA",
+      "artifactName": "com.google.shopping:google-shopping-merchant-reviews",
+      "id": "08154739-2759-41d4-8cd5-76c3739a6818",
+      "createTime": "2026-11-12T23:34:04.615Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "2947dfdb004d5c14cbb5956b6f676f6cd6e65642",
+          "message": "remove discontinued Merchant API v1beta",
+          "issues": [
+            "14942"
+          ],
+          "scope": "shopping-merchant",
+          "breakingChangeNote": "remove discontinued Merchant API v1beta ([#14942](https://github.com/googleapis/google-cloud-java/issues/14942))"
+        }
+      ],
+      "version": "1.97.0",
+      "language": "JAVA",
+      "artifactName": "com.google.shopping:google-shopping-merchant-reports",
+      "id": "0bf08d38-34b3-408c-8a25-70ef7273493b",
+      "createTime": "2026-11-12T23:34:04.401Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "2947dfdb004d5c14cbb5956b6f676f6cd6e65642",
+          "message": "remove discontinued Merchant API v1beta",
+          "issues": [
+            "14942"
+          ],
+          "scope": "shopping-merchant",
+          "breakingChangeNote": "remove discontinued Merchant API v1beta ([#14942](https://github.com/googleapis/google-cloud-java/issues/14942))"
+        }
+      ],
+      "version": "1.97.0",
+      "language": "JAVA",
+      "artifactName": "com.google.shopping:google-shopping-merchant-quota",
+      "id": "b96cbcdc-3659-41e9-adaa-e37b2c75f075",
+      "createTime": "2026-11-12T23:34:04.177Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "2947dfdb004d5c14cbb5956b6f676f6cd6e65642",
+          "message": "remove discontinued Merchant API v1beta",
+          "issues": [
+            "14942"
+          ],
+          "scope": "shopping-merchant",
+          "breakingChangeNote": "remove discontinued Merchant API v1beta ([#14942](https://github.com/googleapis/google-cloud-java/issues/14942))"
+        }
+      ],
+      "version": "1.97.0",
+      "language": "JAVA",
+      "artifactName": "com.google.shopping:google-shopping-merchant-promotions",
+      "id": "4617b85c-7313-4896-b479-1857e3200f11",
+      "createTime": "2026-11-12T23:34:03.948Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "2947dfdb004d5c14cbb5956b6f676f6cd6e65642",
+          "message": "remove discontinued Merchant API v1beta",
+          "issues": [
+            "14942"
+          ],
+          "scope": "shopping-merchant",
+          "breakingChangeNote": "remove discontinued Merchant API v1beta ([#14942](https://github.com/googleapis/google-cloud-java/issues/14942))"
+        }
+      ],
+      "version": "1.97.0",
+      "language": "JAVA",
+      "artifactName": "com.google.shopping:google-shopping-merchant-products",
+      "id": "d6d777c8-4629-4429-9d5a-61b287274109",
+      "createTime": "2026-11-12T23:34:03.722Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "2947dfdb004d5c14cbb5956b6f676f6cd6e65642",
+          "message": "remove discontinued Merchant API v1beta",
+          "issues": [
+            "14942"
+          ],
+          "scope": "shopping-merchant",
+          "breakingChangeNote": "remove discontinued Merchant API v1beta ([#14942](https://github.com/googleapis/google-cloud-java/issues/14942))"
+        }
+      ],
+      "version": "1.97.0",
+      "language": "JAVA",
+      "artifactName": "com.google.shopping:google-shopping-merchant-order-tracking",
+      "id": "34a8ba6b-31da-4178-85db-22e066c121a4",
+      "createTime": "2026-11-12T23:34:03.449Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "2947dfdb004d5c14cbb5956b6f676f6cd6e65642",
+          "message": "remove discontinued Merchant API v1beta",
+          "issues": [
+            "14942"
+          ],
+          "scope": "shopping-merchant",
+          "breakingChangeNote": "remove discontinued Merchant API v1beta ([#14942](https://github.com/googleapis/google-cloud-java/issues/14942))"
+        }
+      ],
+      "version": "1.97.0",
+      "language": "JAVA",
+      "artifactName": "com.google.shopping:google-shopping-merchant-notifications",
+      "id": "dd04bdff-98ac-4c7f-ba15-1e6687b12388",
+      "createTime": "2026-11-12T23:34:03.224Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "2947dfdb004d5c14cbb5956b6f676f6cd6e65642",
+          "message": "remove discontinued Merchant API v1beta",
+          "issues": [
+            "14942"
+          ],
+          "scope": "shopping-merchant",
+          "breakingChangeNote": "remove discontinued Merchant API v1beta ([#14942](https://github.com/googleapis/google-cloud-java/issues/14942))"
+        }
+      ],
+      "version": "1.97.0",
+      "language": "JAVA",
+      "artifactName": "com.google.shopping:google-shopping-merchant-lfp",
+      "id": "5a29f90c-0895-4858-b439-999d97686582",
+      "createTime": "2026-11-12T23:34:03.002Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "2947dfdb004d5c14cbb5956b6f676f6cd6e65642",
+          "message": "remove discontinued Merchant API v1beta",
+          "issues": [
+            "14942"
+          ],
+          "scope": "shopping-merchant",
+          "breakingChangeNote": "remove discontinued Merchant API v1beta ([#14942](https://github.com/googleapis/google-cloud-java/issues/14942))"
+        }
+      ],
+      "version": "1.97.0",
+      "language": "JAVA",
+      "artifactName": "com.google.shopping:google-shopping-merchant-issue-resolution",
+      "id": "0a61ef43-d5ae-4926-ba21-041f8f188923",
+      "createTime": "2026-11-12T23:34:02.769Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "2947dfdb004d5c14cbb5956b6f676f6cd6e65642",
+          "message": "remove discontinued Merchant API v1beta",
+          "issues": [
+            "14942"
+          ],
+          "scope": "shopping-merchant",
+          "breakingChangeNote": "remove discontinued Merchant API v1beta ([#14942](https://github.com/googleapis/google-cloud-java/issues/14942))"
+        }
+      ],
+      "version": "1.97.0",
+      "language": "JAVA",
+      "artifactName": "com.google.shopping:google-shopping-merchant-inventories",
+      "id": "691b01f0-49f2-4333-8853-54a5b5e163b3",
+      "createTime": "2026-11-12T23:34:02.552Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "2947dfdb004d5c14cbb5956b6f676f6cd6e65642",
+          "message": "remove discontinued Merchant API v1beta",
+          "issues": [
+            "14942"
+          ],
+          "scope": "shopping-merchant",
+          "breakingChangeNote": "remove discontinued Merchant API v1beta ([#14942](https://github.com/googleapis/google-cloud-java/issues/14942))"
+        }
+      ],
+      "version": "1.97.0",
+      "language": "JAVA",
+      "artifactName": "com.google.shopping:google-shopping-merchant-datasources",
+      "id": "2b2d8cc1-b7cd-4298-8b81-bd3eeb43fd2e",
+      "createTime": "2026-11-12T23:34:02.302Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "2947dfdb004d5c14cbb5956b6f676f6cd6e65642",
+          "message": "remove discontinued Merchant API v1beta",
+          "issues": [
+            "14942"
+          ],
+          "scope": "shopping-merchant",
+          "breakingChangeNote": "remove discontinued Merchant API v1beta ([#14942](https://github.com/googleapis/google-cloud-java/issues/14942))"
+        }
+      ],
+      "version": "1.97.0",
+      "language": "JAVA",
+      "artifactName": "com.google.shopping:google-shopping-merchant-conversions",
+      "id": "d25d386e-267c-4218-a04c-50be789f3e61",
+      "createTime": "2026-11-12T23:34:02.074Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "2947dfdb004d5c14cbb5956b6f676f6cd6e65642",
+          "message": "remove discontinued Merchant API v1beta",
+          "issues": [
+            "14942"
+          ],
+          "scope": "shopping-merchant",
+          "breakingChangeNote": "remove discontinued Merchant API v1beta ([#14942](https://github.com/googleapis/google-cloud-java/issues/14942))"
+        }
+      ],
+      "version": "1.97.0",
+      "language": "JAVA",
+      "artifactName": "com.google.shopping:google-shopping-merchant-accounts",
+      "id": "b1884fc6-5f0a-43d2-8c47-4c6a8f80fa92",
+      "createTime": "2026-11-12T23:34:01.859Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "24728d6ff6b2d1783b6be7076616d7deac57e5e8",
+          "message": "implement resumable upload session resumption",
+          "issues": [
+            "14677"
+          ],
+          "scope": "gax"
+        }
+      ],
+      "version": "1.97.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:gapic-showcase",
+      "id": "92e93d6d-9272-4e47-a837-9c4446af813f",
+      "createTime": "2026-11-12T23:34:01.579Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "75944f3ef3597403f76da765f8eb1091b0401537",
+          "message": "update API sources and regenerate",
+          "issues": [
+            "14958"
+          ]
+        }
+      ],
+      "version": "1.97.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-vectorsearch",
+      "id": "d673466f-77e2-4b01-aa07-cc93ce9d3619",
+      "createTime": "2026-11-12T23:34:01.321Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "75944f3ef3597403f76da765f8eb1091b0401537",
+          "message": "update API sources and regenerate",
+          "issues": [
+            "14958"
+          ]
+        }
+      ],
+      "version": "1.97.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-valkey",
+      "id": "3f62ac8c-5ec6-44d4-9c4a-c19a115574a8",
+      "createTime": "2026-11-12T23:34:01.107Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "75944f3ef3597403f76da765f8eb1091b0401537",
+          "message": "update API sources and regenerate",
+          "issues": [
+            "14958"
+          ]
+        }
+      ],
+      "version": "1.97.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-run",
+      "id": "1aebb025-c028-4f95-aeb5-cd7bb1b6c182",
+      "createTime": "2026-11-12T23:34:00.890Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "75944f3ef3597403f76da765f8eb1091b0401537",
+          "message": "update API sources and regenerate",
+          "issues": [
+            "14958"
+          ]
+        }
+      ],
+      "version": "1.97.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-pubsub",
+      "id": "0ff7406b-602e-4cbb-8bd1-cb1331900973",
+      "createTime": "2026-11-12T23:34:00.671Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "75944f3ef3597403f76da765f8eb1091b0401537",
+          "message": "update API sources and regenerate",
+          "issues": [
+            "14958"
+          ]
+        }
+      ],
+      "version": "1.97.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-oracledatabase",
+      "id": "caa18458-60d0-4548-a21c-339270673484",
+      "createTime": "2026-11-12T23:34:00.446Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "75944f3ef3597403f76da765f8eb1091b0401537",
+          "message": "update API sources and regenerate",
+          "issues": [
+            "14958"
+          ]
+        }
+      ],
+      "version": "1.97.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-network-management",
+      "id": "a5845880-d953-4a77-86ee-727d8a700204",
+      "createTime": "2026-11-12T23:34:00.227Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "75944f3ef3597403f76da765f8eb1091b0401537",
+          "message": "update API sources and regenerate",
+          "issues": [
+            "14958"
+          ]
+        }
+      ],
+      "version": "1.97.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-kms",
+      "id": "74a72198-97ff-4d81-a324-6f23a52dfcfe",
+      "createTime": "2026-11-12T23:34:00.005Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "75944f3ef3597403f76da765f8eb1091b0401537",
+          "message": "update API sources and regenerate",
+          "issues": [
+            "14958"
+          ]
+        }
+      ],
+      "version": "1.97.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-hypercomputecluster",
+      "id": "f8f2246f-b057-459d-8b96-88935569c149",
+      "createTime": "2026-11-12T23:33:59.774Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "75944f3ef3597403f76da765f8eb1091b0401537",
+          "message": "update API sources and regenerate",
+          "issues": [
+            "14958"
+          ]
+        }
+      ],
+      "version": "1.97.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-geminidataanalytics",
+      "id": "e700ce48-ad6f-48fb-9b01-ab22f3aab6e3",
+      "createTime": "2026-11-12T23:33:59.517Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "75944f3ef3597403f76da765f8eb1091b0401537",
+          "message": "update API sources and regenerate",
+          "issues": [
+            "14958"
+          ]
+        }
+      ],
+      "version": "1.97.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-discoveryengine",
+      "id": "04599b3a-0598-4c9f-933e-3f36ca145409",
+      "createTime": "2026-11-12T23:33:59.274Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "75944f3ef3597403f76da765f8eb1091b0401537",
+          "message": "update API sources and regenerate",
+          "issues": [
+            "14958"
+          ]
+        }
+      ],
+      "version": "1.97.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-dataplex",
+      "id": "57bfcb17-34d9-425c-a8fa-35ce7bce176d",
+      "createTime": "2026-11-12T23:33:59.038Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "75944f3ef3597403f76da765f8eb1091b0401537",
+          "message": "update API sources and regenerate",
+          "issues": [
+            "14958"
+          ]
+        }
+      ],
+      "version": "1.97.0",
+      "language": "JAVA",
+      "artifactName": "com.google.api-ads:data-manager",
+      "id": "aaaf3f3f-f85d-4f2b-a45a-72b3b581a8c2",
+      "createTime": "2026-11-12T23:33:58.810Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "75944f3ef3597403f76da765f8eb1091b0401537",
+          "message": "update API sources and regenerate",
+          "issues": [
+            "14958"
+          ]
+        }
+      ],
+      "version": "1.97.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-compute",
+      "id": "40977f4c-0f15-49ad-a799-85ea104dd8a6",
+      "createTime": "2026-11-12T23:33:58.579Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "75944f3ef3597403f76da765f8eb1091b0401537",
+          "message": "update API sources and regenerate",
+          "issues": [
+            "14958"
+          ]
+        }
+      ],
+      "version": "1.97.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-chronicle",
+      "id": "9afc7121-ffc5-41d2-b712-9063a0899478",
+      "createTime": "2026-11-12T23:33:58.356Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "75944f3ef3597403f76da765f8eb1091b0401537",
+          "message": "update API sources and regenerate",
+          "issues": [
+            "14958"
+          ]
+        }
+      ],
+      "version": "1.97.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-ces",
+      "id": "8ed5248f-bf35-4d1b-9727-17514828a7e0",
+      "createTime": "2026-11-12T23:33:58.128Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "75944f3ef3597403f76da765f8eb1091b0401537",
+          "message": "update API sources and regenerate",
+          "issues": [
+            "14958"
+          ]
+        }
+      ],
+      "version": "1.97.0",
+      "language": "JAVA",
+      "artifactName": "com.google.api-ads:ad-manager",
+      "id": "97a2f88c-8303-4af1-9d31-615605089cb4",
+      "createTime": "2026-11-12T23:33:57.859Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "deps",
+          "sha": "1a27a00b4df033a7039052e36b9551f293094c19",
+          "message": "bump grpc to 1.85.1, opentelemetry to 1.67.0, and guava to 33.7.2-jre",
+          "issues": [
+            "14957"
+          ]
+        },
+        {
+          "type": "feat",
+          "sha": "589c66c96bc0680fc51bd9d3d000ee3e9ebe7b1e",
+          "message": "wire logical operation metrics in Retrying and StorageOptions",
+          "issues": [
+            "14695"
+          ],
+          "scope": "storage"
+        },
+        {
+          "type": "feat",
+          "sha": "edea39554785ff41e7327601e33201fd4336587a",
+          "message": "add StorageMetricsContext for operation metrics state",
+          "issues": [
+            "14728"
+          ],
+          "scope": "storage"
+        },
+        {
+          "type": "docs",
+          "sha": "e714f62ee3b96f12f32c3c8cb2ab4621f6d069f3",
+          "message": "add Rapid Cache samples",
+          "issues": [
+            "14886"
+          ],
+          "scope": "storage"
+        },
+        {
+          "type": "feat",
+          "sha": "a9ac393f0ca46abbc29fe698468a4852b0f3bcca",
+          "message": "add StorageErrorTypeMapper for standard metrics",
+          "issues": [
+            "14694"
+          ],
+          "scope": "storage"
+        }
+      ],
+      "version": "1.97.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-storage",
+      "id": "a4c4d081-e502-4f05-ba0e-76e506b9b87a",
+      "createTime": "2026-11-12T23:33:57.635Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "deps",
+          "sha": "1a27a00b4df033a7039052e36b9551f293094c19",
+          "message": "bump grpc to 1.85.1, opentelemetry to 1.67.0, and guava to 33.7.2-jre",
+          "issues": [
+            "14957"
+          ]
+        },
+        {
+          "type": "fix",
+          "sha": "bc917edc5ea870007c88dd36a8730ae1a068d68d",
+          "message": "fix PG SHOW isolation level statements",
+          "issues": [
+            "14904"
+          ],
+          "scope": "spanner"
+        },
+        {
+          "type": "docs",
+          "sha": "956681e6726a99b27fd1b495a3d25217180ebdd2",
+          "message": "update CHANGELOG.md for java spanner releases",
+          "issues": [
+            "14935"
+          ],
+          "scope": "spanner"
+        }
+      ],
+      "version": "1.97.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-spanner",
+      "id": "cb7c51ad-205d-4243-a356-2818788faf24",
+      "createTime": "2026-11-12T23:33:57.401Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "deps",
+          "sha": "1a27a00b4df033a7039052e36b9551f293094c19",
+          "message": "bump grpc to 1.85.1, opentelemetry to 1.67.0, and guava to 33.7.2-jre",
+          "issues": [
+            "14957"
+          ]
+        },
+        {
+          "type": "fix",
+          "sha": "7e7595aa7f456dc1218821d3ed2efd2af3542c60",
+          "message": "report database default isolation level",
+          "issues": [
+            "14929"
+          ],
+          "scope": "spanner-jdbc"
+        }
+      ],
+      "version": "1.97.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-spanner-jdbc",
+      "id": "454babbb-5d9c-4f2e-8eb6-f1cc5b6b65b5",
+      "createTime": "2026-11-12T23:33:57.151Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "deps",
+          "sha": "1a27a00b4df033a7039052e36b9551f293094c19",
+          "message": "bump grpc to 1.85.1, opentelemetry to 1.67.0, and guava to 33.7.2-jre",
+          "issues": [
+            "14957"
+          ]
+        }
+      ],
+      "version": "1.97.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-firestore",
+      "id": "1264d521-411b-4003-8fcc-021cf01c2b34",
+      "createTime": "2026-11-12T23:33:56.912Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "deps",
+          "sha": "1a27a00b4df033a7039052e36b9551f293094c19",
+          "message": "bump grpc to 1.85.1, opentelemetry to 1.67.0, and guava to 33.7.2-jre",
+          "issues": [
+            "14957"
+          ]
+        },
+        {
+          "type": "fix",
+          "sha": "c98e7c39b8155fa64f562d9d68b6d5e7b95d6fe8",
+          "message": "set QueryResultsFormat.ARROW in QueryArrow sample",
+          "issues": [
+            "14960"
+          ],
+          "scope": "bigquery"
+        }
+      ],
+      "version": "1.97.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-bigquery",
+      "id": "f7c0a40f-bcae-4e27-8ead-3ce321874a09",
+      "createTime": "2026-11-12T23:33:56.675Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "deps",
+          "sha": "1a27a00b4df033a7039052e36b9551f293094c19",
+          "message": "bump grpc to 1.85.1, opentelemetry to 1.67.0, and guava to 33.7.2-jre",
+          "issues": [
+            "14957"
+          ]
+        },
+        {
+          "type": "feat",
+          "sha": "9f878882c3d9264ac1c3d1223097dae7ba020a69",
+          "message": "add built-in channel_load metric for client library pools",
+          "issues": [
+            "14985"
+          ],
+          "scope": "grpc-gcp"
+        },
+        {
+          "type": "feat",
+          "sha": "712f043e8fe7087997ca97f811a2862ee861ad05",
+          "message": "add built-in channel_count metric for client library pools",
+          "issues": [
+            "14947"
+          ],
+          "scope": "grpc-gcp"
+        },
+        {
+          "type": "deps",
+          "sha": "14415278ae25501f7f4901e38a7af74020f94279",
+          "message": "bump guava to 33.7.1-jre and jspecify to 1.0.1",
+          "issues": [
+            "14937"
+          ]
+        }
+      ],
+      "version": "1.97.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:grpc-gcp",
+      "id": "2fe9e52a-5f7b-473d-9f4e-000e689fbb5e",
+      "createTime": "2026-11-12T23:33:56.420Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "deps",
+          "sha": "1a27a00b4df033a7039052e36b9551f293094c19",
+          "message": "bump grpc to 1.85.1, opentelemetry to 1.67.0, and guava to 33.7.2-jre",
+          "issues": [
+            "14957"
+          ]
+        },
+        {
+          "type": "fix",
+          "sha": "096dbd6b5a0e74edf3b89b34bdb8f347fb6eb636",
+          "message": "verify public/private key match with retries in mTLS keystore loading",
+          "issues": [
+            "14829"
+          ],
+          "scope": "auth"
+        },
+        {
+          "type": "deps",
+          "sha": "14415278ae25501f7f4901e38a7af74020f94279",
+          "message": "bump guava to 33.7.1-jre and jspecify to 1.0.1",
+          "issues": [
+            "14937"
+          ]
+        }
+      ],
+      "version": "1.97.0",
+      "language": "JAVA",
+      "artifactName": "com.google.auth:google-auth-library",
+      "id": "bf2e6d1c-0260-4f93-8ae0-d28b0be8c64e",
+      "createTime": "2026-11-12T23:33:56.191Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "a15acfbdb465123da685797b83f1040b54a972c8",
+          "message": "replace SessionPoolImpl Watchdog with per-session closeTimeout",
+          "issues": [
+            "14977"
+          ],
+          "scope": "bigtable"
+        },
+        {
+          "type": "fix",
+          "sha": "cc7b235981eb0ce4cc4bcbc42ede60ea8417ac87",
+          "message": "handle empty SessionPoolConfiguration in SessionPoolImpl and PoolSizer",
+          "issues": [
+            "14912"
+          ],
+          "scope": "bigtable"
+        },
+        {
+          "type": "fix",
+          "sha": "eb06d2c9b501b4207f50e4a1c5c54aad140325b6",
+          "message": "avoid triggering per-RPC credential session fallback on default call context",
+          "issues": [
+            "14961"
+          ],
+          "scope": "bigtable"
+        },
+        {
+          "type": "fix",
+          "sha": "fa24702a94afc4df290a5f62d515e52ac5474952",
+          "message": "disable SwitchingChannelPool when ChannelPoolConfiguration is empty",
+          "issues": [
+            "14911"
+          ],
+          "scope": "bigtable"
+        },
+        {
+          "type": "fix",
+          "sha": "278fe2fb46c565534a6063d424ad7636f739a81d",
+          "message": "copy Metadata per GetClientConfiguration call",
+          "issues": [
+            "14950"
+          ],
+          "scope": "bigtable"
+        }
+      ],
+      "version": "1.97.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-bigtable",
+      "id": "6af3e106-9ed6-4c5b-be07-0c4547e97253",
+      "createTime": "2026-11-12T23:33:55.943Z"
+    },
+    {
+      "changes": [
+        {
           "type": "fix",
           "sha": "cfea223b9ea23e94ee1015946bcd24e83b7483ce",
           "message": "handle empty queryParameters list in ConnectionImpl",
@@ -373612,5 +374455,5 @@
       "createTime": "2026-02-25T17:30:12.355Z"
     }
   ],
-  "updateTime": "2026-11-05T19:27:35.007Z"
+  "updateTime": "2026-11-12T23:34:04.830Z"
 }

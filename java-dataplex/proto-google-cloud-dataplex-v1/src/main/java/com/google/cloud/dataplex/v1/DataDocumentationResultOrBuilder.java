@@ -114,5 +114,49 @@ public interface DataDocumentationResultOrBuilder
   com.google.cloud.dataplex.v1.DataDocumentationResult.TableResultOrBuilder
       getTableResultOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Insights for a data product.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult data_product_result = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the dataProductResult field is set.
+   */
+  boolean hasDataProductResult();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Insights for a data product.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult data_product_result = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The dataProductResult.
+   */
+  com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult getDataProductResult();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Insights for a data product.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult data_product_result = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResultOrBuilder
+      getDataProductResultOrBuilder();
+
   com.google.cloud.dataplex.v1.DataDocumentationResult.ResultCase getResultCase();
 }

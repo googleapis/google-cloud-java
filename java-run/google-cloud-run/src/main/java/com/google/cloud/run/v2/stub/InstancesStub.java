@@ -29,6 +29,12 @@ import com.google.cloud.run.v2.ListInstancesRequest;
 import com.google.cloud.run.v2.ListInstancesResponse;
 import com.google.cloud.run.v2.StartInstanceRequest;
 import com.google.cloud.run.v2.StopInstanceRequest;
+import com.google.cloud.run.v2.UpdateInstanceRequest;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.OperationsStub;
 import javax.annotation.Generated;
@@ -61,6 +67,15 @@ public abstract class InstancesStub implements BackgroundResource {
 
   public UnaryCallable<CreateInstanceRequest, Operation> createInstanceCallable() {
     throw new UnsupportedOperationException("Not implemented: createInstanceCallable()");
+  }
+
+  public OperationCallable<UpdateInstanceRequest, Instance, Instance>
+      updateInstanceOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateInstanceOperationCallable()");
+  }
+
+  public UnaryCallable<UpdateInstanceRequest, Operation> updateInstanceCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateInstanceCallable()");
   }
 
   public OperationCallable<DeleteInstanceRequest, Instance, Instance>
@@ -101,6 +116,19 @@ public abstract class InstancesStub implements BackgroundResource {
 
   public UnaryCallable<StartInstanceRequest, Operation> startInstanceCallable() {
     throw new UnsupportedOperationException("Not implemented: startInstanceCallable()");
+  }
+
+  public UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
+    throw new UnsupportedOperationException("Not implemented: getIamPolicyCallable()");
+  }
+
+  public UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
+    throw new UnsupportedOperationException("Not implemented: setIamPolicyCallable()");
+  }
+
+  public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsCallable() {
+    throw new UnsupportedOperationException("Not implemented: testIamPermissionsCallable()");
   }
 
   @Override

@@ -80,6 +80,7 @@ public final class Orchestrator extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     SLURM(1),
+    COMPUTE_ENGINE(2),
     OPTION_NOT_SET(0);
     private final int value;
 
@@ -101,6 +102,8 @@ public final class Orchestrator extends com.google.protobuf.GeneratedMessage
       switch (value) {
         case 1:
           return SLURM;
+        case 2:
+          return COMPUTE_ENGINE;
         case 0:
           return OPTION_NOT_SET;
         default:
@@ -181,6 +184,72 @@ public final class Orchestrator extends com.google.protobuf.GeneratedMessage
     return com.google.cloud.hypercomputecluster.v1beta.SlurmOrchestrator.getDefaultInstance();
   }
 
+  public static final int COMPUTE_ENGINE_FIELD_NUMBER = 2;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If set, indicates that the cluster should use Compute Engine as
+   * the orchestrator.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.hypercomputecluster.v1beta.ComputeEngineOrchestrator compute_engine = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the computeEngine field is set.
+   */
+  @java.lang.Override
+  public boolean hasComputeEngine() {
+    return optionCase_ == 2;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If set, indicates that the cluster should use Compute Engine as
+   * the orchestrator.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.hypercomputecluster.v1beta.ComputeEngineOrchestrator compute_engine = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The computeEngine.
+   */
+  @java.lang.Override
+  public com.google.cloud.hypercomputecluster.v1beta.ComputeEngineOrchestrator getComputeEngine() {
+    if (optionCase_ == 2) {
+      return (com.google.cloud.hypercomputecluster.v1beta.ComputeEngineOrchestrator) option_;
+    }
+    return com.google.cloud.hypercomputecluster.v1beta.ComputeEngineOrchestrator
+        .getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If set, indicates that the cluster should use Compute Engine as
+   * the orchestrator.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.hypercomputecluster.v1beta.ComputeEngineOrchestrator compute_engine = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.hypercomputecluster.v1beta.ComputeEngineOrchestratorOrBuilder
+      getComputeEngineOrBuilder() {
+    if (optionCase_ == 2) {
+      return (com.google.cloud.hypercomputecluster.v1beta.ComputeEngineOrchestrator) option_;
+    }
+    return com.google.cloud.hypercomputecluster.v1beta.ComputeEngineOrchestrator
+        .getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -199,6 +268,10 @@ public final class Orchestrator extends com.google.protobuf.GeneratedMessage
       output.writeMessage(
           1, (com.google.cloud.hypercomputecluster.v1beta.SlurmOrchestrator) option_);
     }
+    if (optionCase_ == 2) {
+      output.writeMessage(
+          2, (com.google.cloud.hypercomputecluster.v1beta.ComputeEngineOrchestrator) option_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -212,6 +285,11 @@ public final class Orchestrator extends com.google.protobuf.GeneratedMessage
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               1, (com.google.cloud.hypercomputecluster.v1beta.SlurmOrchestrator) option_);
+    }
+    if (optionCase_ == 2) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              2, (com.google.cloud.hypercomputecluster.v1beta.ComputeEngineOrchestrator) option_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -234,6 +312,9 @@ public final class Orchestrator extends com.google.protobuf.GeneratedMessage
       case 1:
         if (!getSlurm().equals(other.getSlurm())) return false;
         break;
+      case 2:
+        if (!getComputeEngine().equals(other.getComputeEngine())) return false;
+        break;
       case 0:
       default:
     }
@@ -252,6 +333,10 @@ public final class Orchestrator extends com.google.protobuf.GeneratedMessage
       case 1:
         hash = (37 * hash) + SLURM_FIELD_NUMBER;
         hash = (53 * hash) + getSlurm().hashCode();
+        break;
+      case 2:
+        hash = (37 * hash) + COMPUTE_ENGINE_FIELD_NUMBER;
+        hash = (53 * hash) + getComputeEngine().hashCode();
         break;
       case 0:
       default:
@@ -402,6 +487,9 @@ public final class Orchestrator extends com.google.protobuf.GeneratedMessage
       if (slurmBuilder_ != null) {
         slurmBuilder_.clear();
       }
+      if (computeEngineBuilder_ != null) {
+        computeEngineBuilder_.clear();
+      }
       optionCase_ = 0;
       option_ = null;
       return this;
@@ -450,6 +538,9 @@ public final class Orchestrator extends com.google.protobuf.GeneratedMessage
       if (optionCase_ == 1 && slurmBuilder_ != null) {
         result.option_ = slurmBuilder_.build();
       }
+      if (optionCase_ == 2 && computeEngineBuilder_ != null) {
+        result.option_ = computeEngineBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -469,6 +560,11 @@ public final class Orchestrator extends com.google.protobuf.GeneratedMessage
         case SLURM:
           {
             mergeSlurm(other.getSlurm());
+            break;
+          }
+        case COMPUTE_ENGINE:
+          {
+            mergeComputeEngine(other.getComputeEngine());
             break;
           }
         case OPTION_NOT_SET:
@@ -508,6 +604,13 @@ public final class Orchestrator extends com.google.protobuf.GeneratedMessage
                 optionCase_ = 1;
                 break;
               } // case 10
+            case 18:
+              {
+                input.readMessage(
+                    internalGetComputeEngineFieldBuilder().getBuilder(), extensionRegistry);
+                optionCase_ = 2;
+                break;
+              } // case 18
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -788,6 +891,265 @@ public final class Orchestrator extends com.google.protobuf.GeneratedMessage
       optionCase_ = 1;
       onChanged();
       return slurmBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.hypercomputecluster.v1beta.ComputeEngineOrchestrator,
+            com.google.cloud.hypercomputecluster.v1beta.ComputeEngineOrchestrator.Builder,
+            com.google.cloud.hypercomputecluster.v1beta.ComputeEngineOrchestratorOrBuilder>
+        computeEngineBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set, indicates that the cluster should use Compute Engine as
+     * the orchestrator.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.hypercomputecluster.v1beta.ComputeEngineOrchestrator compute_engine = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the computeEngine field is set.
+     */
+    @java.lang.Override
+    public boolean hasComputeEngine() {
+      return optionCase_ == 2;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set, indicates that the cluster should use Compute Engine as
+     * the orchestrator.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.hypercomputecluster.v1beta.ComputeEngineOrchestrator compute_engine = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The computeEngine.
+     */
+    @java.lang.Override
+    public com.google.cloud.hypercomputecluster.v1beta.ComputeEngineOrchestrator
+        getComputeEngine() {
+      if (computeEngineBuilder_ == null) {
+        if (optionCase_ == 2) {
+          return (com.google.cloud.hypercomputecluster.v1beta.ComputeEngineOrchestrator) option_;
+        }
+        return com.google.cloud.hypercomputecluster.v1beta.ComputeEngineOrchestrator
+            .getDefaultInstance();
+      } else {
+        if (optionCase_ == 2) {
+          return computeEngineBuilder_.getMessage();
+        }
+        return com.google.cloud.hypercomputecluster.v1beta.ComputeEngineOrchestrator
+            .getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set, indicates that the cluster should use Compute Engine as
+     * the orchestrator.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.hypercomputecluster.v1beta.ComputeEngineOrchestrator compute_engine = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setComputeEngine(
+        com.google.cloud.hypercomputecluster.v1beta.ComputeEngineOrchestrator value) {
+      if (computeEngineBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        option_ = value;
+        onChanged();
+      } else {
+        computeEngineBuilder_.setMessage(value);
+      }
+      optionCase_ = 2;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set, indicates that the cluster should use Compute Engine as
+     * the orchestrator.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.hypercomputecluster.v1beta.ComputeEngineOrchestrator compute_engine = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setComputeEngine(
+        com.google.cloud.hypercomputecluster.v1beta.ComputeEngineOrchestrator.Builder
+            builderForValue) {
+      if (computeEngineBuilder_ == null) {
+        option_ = builderForValue.build();
+        onChanged();
+      } else {
+        computeEngineBuilder_.setMessage(builderForValue.build());
+      }
+      optionCase_ = 2;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set, indicates that the cluster should use Compute Engine as
+     * the orchestrator.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.hypercomputecluster.v1beta.ComputeEngineOrchestrator compute_engine = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeComputeEngine(
+        com.google.cloud.hypercomputecluster.v1beta.ComputeEngineOrchestrator value) {
+      if (computeEngineBuilder_ == null) {
+        if (optionCase_ == 2
+            && option_
+                != com.google.cloud.hypercomputecluster.v1beta.ComputeEngineOrchestrator
+                    .getDefaultInstance()) {
+          option_ =
+              com.google.cloud.hypercomputecluster.v1beta.ComputeEngineOrchestrator.newBuilder(
+                      (com.google.cloud.hypercomputecluster.v1beta.ComputeEngineOrchestrator)
+                          option_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          option_ = value;
+        }
+        onChanged();
+      } else {
+        if (optionCase_ == 2) {
+          computeEngineBuilder_.mergeFrom(value);
+        } else {
+          computeEngineBuilder_.setMessage(value);
+        }
+      }
+      optionCase_ = 2;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set, indicates that the cluster should use Compute Engine as
+     * the orchestrator.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.hypercomputecluster.v1beta.ComputeEngineOrchestrator compute_engine = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearComputeEngine() {
+      if (computeEngineBuilder_ == null) {
+        if (optionCase_ == 2) {
+          optionCase_ = 0;
+          option_ = null;
+          onChanged();
+        }
+      } else {
+        if (optionCase_ == 2) {
+          optionCase_ = 0;
+          option_ = null;
+        }
+        computeEngineBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set, indicates that the cluster should use Compute Engine as
+     * the orchestrator.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.hypercomputecluster.v1beta.ComputeEngineOrchestrator compute_engine = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.hypercomputecluster.v1beta.ComputeEngineOrchestrator.Builder
+        getComputeEngineBuilder() {
+      return internalGetComputeEngineFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set, indicates that the cluster should use Compute Engine as
+     * the orchestrator.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.hypercomputecluster.v1beta.ComputeEngineOrchestrator compute_engine = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.hypercomputecluster.v1beta.ComputeEngineOrchestratorOrBuilder
+        getComputeEngineOrBuilder() {
+      if ((optionCase_ == 2) && (computeEngineBuilder_ != null)) {
+        return computeEngineBuilder_.getMessageOrBuilder();
+      } else {
+        if (optionCase_ == 2) {
+          return (com.google.cloud.hypercomputecluster.v1beta.ComputeEngineOrchestrator) option_;
+        }
+        return com.google.cloud.hypercomputecluster.v1beta.ComputeEngineOrchestrator
+            .getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set, indicates that the cluster should use Compute Engine as
+     * the orchestrator.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.hypercomputecluster.v1beta.ComputeEngineOrchestrator compute_engine = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.hypercomputecluster.v1beta.ComputeEngineOrchestrator,
+            com.google.cloud.hypercomputecluster.v1beta.ComputeEngineOrchestrator.Builder,
+            com.google.cloud.hypercomputecluster.v1beta.ComputeEngineOrchestratorOrBuilder>
+        internalGetComputeEngineFieldBuilder() {
+      if (computeEngineBuilder_ == null) {
+        if (!(optionCase_ == 2)) {
+          option_ =
+              com.google.cloud.hypercomputecluster.v1beta.ComputeEngineOrchestrator
+                  .getDefaultInstance();
+        }
+        computeEngineBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.hypercomputecluster.v1beta.ComputeEngineOrchestrator,
+                com.google.cloud.hypercomputecluster.v1beta.ComputeEngineOrchestrator.Builder,
+                com.google.cloud.hypercomputecluster.v1beta.ComputeEngineOrchestratorOrBuilder>(
+                (com.google.cloud.hypercomputecluster.v1beta.ComputeEngineOrchestrator) option_,
+                getParentForChildren(),
+                isClean());
+        option_ = null;
+      }
+      optionCase_ = 2;
+      onChanged();
+      return computeEngineBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.hypercomputecluster.v1beta.Orchestrator)

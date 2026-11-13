@@ -31,7 +31,7 @@ public interface NewFilestoreConfigOrBuilder
    *
    * <pre>
    * Required. Immutable. Name of the Filestore instance to create, in the
-   * format `projects/{project}/locations/{location}/instances/{instance}`
+   * format `projects/{project}/locations/{location}/instances/{instance}`.
    * </pre>
    *
    * <code>
@@ -47,7 +47,7 @@ public interface NewFilestoreConfigOrBuilder
    *
    * <pre>
    * Required. Immutable. Name of the Filestore instance to create, in the
-   * format `projects/{project}/locations/{location}/instances/{instance}`
+   * format `projects/{project}/locations/{location}/instances/{instance}`.
    * </pre>
    *
    * <code>
