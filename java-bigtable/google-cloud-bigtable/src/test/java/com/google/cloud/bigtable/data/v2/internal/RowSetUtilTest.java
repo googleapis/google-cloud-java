@@ -344,6 +344,76 @@ public class RowSetUtilTest {
             .build();
     RowSet actual = RowSetUtil.eraseLargeRow(rowSet, key);
     assertThat(actual).isNull();
+
+    // (a, a\0] with large row a\0 should also result in an empty RowSet (null) instead of (a, a\0)
+    RowSet openStartRowSet =
+        RowSet.newBuilder()
+            .addRowRanges(
+                RowRange.newBuilder().setStartKeyOpen(key).setEndKeyClosed(keyTrailer).build())
+            .build();
+    assertThat(RowSetUtil.eraseLargeRow(openStartRowSet, keyTrailer)).isNull();
+
+    // (a, z) with large row a\0 should only emit (a\0, z) and not (a, a\0) on the left split
+    ByteString endKey = ByteString.copyFromUtf8("z");
+    RowSet openStartWideRowSet =
+        RowSet.newBuilder()
+            .addRowRanges(RowRange.newBuilder().setStartKeyOpen(key).setEndKeyOpen(endKey).build())
+            .build();
+    assertThat(RowSetUtil.eraseLargeRow(openStartWideRowSet, keyTrailer))
+        .isEqualTo(
+            RowSet.newBuilder()
+                .addRowRanges(
+                    RowRange.newBuilder().setStartKeyOpen(keyTrailer).setEndKeyOpen(endKey).build())
+                .build());
+  }
+
+  @Test
+  public void testEraseEmptyOpenRange() {
+    ByteString key = ByteString.copyFromUtf8("a");
+    ByteString keyTrailer = key.concat(ByteString.copyFrom(new byte[] {0}));
+
+    // Forward scan: erasing "a" from ["0", "a\0") or ["a", "a\0") leaves (a, a\0) which is empty
+    RowSet forwardRowSet =
+        RowSet.newBuilder()
+            .addRowRanges(
+                RowRange.newBuilder()
+                    .setStartKeyClosed(ByteString.copyFromUtf8("0"))
+                    .setEndKeyOpen(keyTrailer)
+                    .build())
+            .addRowRanges(
+                RowRange.newBuilder().setStartKeyClosed(key).setEndKeyOpen(keyTrailer).build())
+            .build();
+    assertThat(RowSetUtil.erase(forwardRowSet, key, true)).isNull();
+
+    // Reverse scan: erasing "a\0" from ("a", "z"] or ("a", "a\0"] leaves (a, a\0) which is empty
+    RowSet reverseRowSet =
+        RowSet.newBuilder()
+            .addRowRanges(
+                RowRange.newBuilder()
+                    .setStartKeyOpen(key)
+                    .setEndKeyClosed(ByteString.copyFromUtf8("z"))
+                    .build())
+            .addRowRanges(
+                RowRange.newBuilder().setStartKeyOpen(key).setEndKeyClosed(keyTrailer).build())
+            .build();
+    assertThat(RowSetUtil.erase(reverseRowSet, keyTrailer, false)).isNull();
+  }
+
+  @Test
+  public void testShardEmptyOpenRange() {
+    ByteString key = ByteString.copyFromUtf8("a");
+    ByteString keyTrailer = key.concat(ByteString.copyFrom(new byte[] {0}));
+    ByteString endKey = ByteString.copyFromUtf8("z");
+
+    // Sharding (a, z) at splitPoint a\0 should not emit an empty (a, a\0) range on the left
+    RowSet input =
+        RowSet.newBuilder()
+            .addRowRanges(RowRange.newBuilder().setStartKeyOpen(key).setEndKeyOpen(endKey).build())
+            .build();
+    SortedSet<ByteString> splits = new TreeSet<>(ByteStringComparator.INSTANCE);
+    splits.add(keyTrailer);
+
+    assertThat(RowSetUtil.shard(input, splits)).containsExactly(input);
   }
 
   @Test
