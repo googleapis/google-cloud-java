@@ -497,7 +497,7 @@ public class SessionImpl implements Session, VRpcSessionApi {
   public void cancelRpc(long rpcId, @Nullable String message, @Nullable Throwable cause) {
     sessionSyncContext.execute(
         () -> {
-          // The Session V3 protocol does not yet have a wire cancel-vRPC message, so the server
+          // The Session protocol does not yet have a wire cancel-vRPC message, so the server
           // continues executing the vRPC until it finishes or hits the server-enforced
           // VirtualRpcRequest.deadline. We record currentCancel here while keeping currentRpc set
           // until handleVRpcResponse / handleVRpcErrorResponse arrives so that:
