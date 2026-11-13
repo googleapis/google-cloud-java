@@ -103,6 +103,17 @@ class TimestampTest {
   }
 
   @Test
+  void testOf_justBeforeEpoch() {
+    java.sql.Timestamp input = new java.sql.Timestamp(-1);
+    input.setNanos(999_999_999);
+
+    Timestamp timestamp = Timestamp.of(input);
+
+    assertThat(timestamp.getSeconds()).isEqualTo(-1);
+    assertThat(timestamp.getNanos()).isEqualTo(999_999_999);
+  }
+
+  @Test
   void testOf_onEpoch() {
     String expectedTimestampString = "1970-01-01T00:00:00Z";
     java.sql.Timestamp input = new java.sql.Timestamp(0);
