@@ -131,12 +131,16 @@ public final class RowSetUtil {
   private static RowRange truncateRange(RowRange range, ByteString split, boolean fromStart) {
     if (fromStart) {
       // range end is on or left of the split: skip
-      if (EndPoint.extract(range).compareTo(new EndPoint(split, true)) <= 0) {
+      EndPoint endPoint = EndPoint.extract(range);
+      if (endPoint.compareTo(new EndPoint(split, true)) <= 0
+          || (!endPoint.isClosed && isEmptyOpenRange(split, endPoint.value))) {
         return null;
       }
     } else {
       // range is on or right of the split
-      if (StartPoint.extract(range).compareTo(new StartPoint(split, true)) >= 0) {
+      StartPoint startPoint = StartPoint.extract(range);
+      if (startPoint.compareTo(new StartPoint(split, true)) >= 0
+          || (!startPoint.isClosed && isEmptyOpenRange(startPoint.value, split))) {
         return null;
       }
     }
@@ -181,17 +185,23 @@ public final class RowSetUtil {
 
     // if start key is on the left of the large row key, set the end key to be large row key open
     if (ByteStringComparator.INSTANCE.compare(startKey, largeRowKey) < 0) {
-      RowRange beforeSplit = range.toBuilder().setEndKeyOpen(largeRowKey).build();
-      rowRanges.add(beforeSplit);
+      // handle the edge case where (key, key\0) is an empty range and should be excluded
+      StartPoint startPoint = StartPoint.extract(range);
+      boolean isEmptyRange =
+          !startPoint.isClosed && isEmptyOpenRange(startPoint.value, largeRowKey);
+
+      if (!isEmptyRange) {
+        RowRange beforeSplit = range.toBuilder().setEndKeyOpen(largeRowKey).build();
+        rowRanges.add(beforeSplit);
+      }
     }
 
     // if the end key is on the right of the large row key, set the start key to be large row key
     // open.
     if (!boundedEnd || ByteStringComparator.INSTANCE.compare(endKey, largeRowKey) > 0) {
       // handle the edge case where (key, key\0) is an empty range and should be excluded
-      ByteString nextKey = largeRowKey.concat(ByteString.copyFrom(new byte[] {0}));
       EndPoint endPoint = EndPoint.extract(range);
-      boolean isEmptyRange = !endPoint.isClosed && endPoint.value.equals(nextKey);
+      boolean isEmptyRange = !endPoint.isClosed && isEmptyOpenRange(largeRowKey, endPoint.value);
 
       if (!isEmptyRange) {
         RowRange afterSplit = range.toBuilder().setStartKeyOpen(largeRowKey).build();
@@ -200,6 +210,11 @@ public final class RowSetUtil {
     }
 
     return rowRanges;
+  }
+
+  private static boolean isEmptyOpenRange(ByteString startKeyOpen, ByteString endKeyOpen) {
+    return !startKeyOpen.isEmpty()
+        && endKeyOpen.equals(startKeyOpen.concat(ByteString.copyFrom(new byte[] {0})));
   }
 
   /**
@@ -259,7 +274,8 @@ public final class RowSetUtil {
                 .compare(startPoint.value, splitPoint, ByteStringComparator.INSTANCE)
                 // when start point is on the split point, it will always be on the right
                 .result();
-        if (startCmp >= 0) {
+        if (startCmp >= 0
+            || (!startPoint.isClosed && isEmptyOpenRange(startPoint.value, splitPoint))) {
           break;
         }
         RowRange range = ranges.poll();
