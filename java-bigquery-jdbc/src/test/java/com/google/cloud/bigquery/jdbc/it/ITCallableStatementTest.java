@@ -659,11 +659,10 @@ public class ITCallableStatementTest extends ITBase {
     int randomNum = random.nextInt(99);
     String callableStmtQuery =
         String.format(
-            "DECLARE call_result STRING;"
-                + "CALL %s.%s(?,?,call_result);"
-                + "SELECT * FROM UNNEST(GENERATE_ARRAY(1, 5000));"
-                + "SELECT * FROM UNNEST(GENERATE_ARRAY(1, 7000));",
-            DATASET, CALLABLE_STMT_PROC_NAME);
+                "DECLARE call_result STRING;CALL %s.%s(?,?,call_result);",
+                DATASET, CALLABLE_STMT_PROC_NAME)
+            + String.format(GENERATE_ARRAY_QUERY, 5000)
+            + String.format(GENERATE_ARRAY_QUERY, 7000);
 
     try (Connection readApiConnection = DriverManager.getConnection(readApiUrl);
         CallableStatement callableStatement = readApiConnection.prepareCall(callableStmtQuery)) {
@@ -675,12 +674,12 @@ public class ITCallableStatementTest extends ITBase {
 
       assertTrue(callableStatement.getMoreResults());
       ResultSet resultSet1 = callableStatement.getResultSet();
-      assertTrue(resultSet1.getClass().getName().contains("BigQueryArrowResultSet"));
+      assertArrowResultSet(resultSet1);
       assertEquals(5000, resultSetRowCount(resultSet1));
 
       assertTrue(callableStatement.getMoreResults());
       ResultSet resultSet2 = callableStatement.getResultSet();
-      assertTrue(resultSet2.getClass().getName().contains("BigQueryArrowResultSet"));
+      assertArrowResultSet(resultSet2);
       assertEquals(7000, resultSetRowCount(resultSet2));
 
       assertFalse(callableStatement.getMoreResults());

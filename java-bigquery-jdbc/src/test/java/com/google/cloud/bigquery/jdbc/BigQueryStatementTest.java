@@ -1721,30 +1721,9 @@ public class BigQueryStatementTest {
 
   @Test
   public void testScriptAppliesMaxResultsPageSizeAndUsesReadApiAcrossChildJobs() throws Exception {
-    doReturn(true).when(bigQueryConnection).isEnableHighThroughputAPI();
-    doReturn(100).when(bigQueryConnection).getHighThroughputMinTableSize();
-    doReturn(2).when(bigQueryConnection).getHighThroughputActivationRatio();
-    doReturn(1000L).when(bigQueryConnection).getMaxResults();
+    BigQueryStatement stmtSpy = createReadApiStatementSpy();
 
-    BigQueryStatement stmt = new BigQueryStatement(bigQueryConnection);
-    BigQueryStatement stmtSpy = Mockito.spy(stmt);
-    BigQueryReadClient readClientMock = mock(BigQueryReadClient.class);
-    ReadSession readSession = ReadSession.getDefaultInstance();
-    Future<?> mockWorker = mock(Future.class);
-    doReturn(readClientMock).when(stmtSpy).getBigQueryReadClient();
-    doReturn(readSession).when(stmtSpy).getReadSession(any(CreateReadSessionRequest.class));
-    doReturn(arrowSchema).when(stmtSpy).getArrowSchema(any(ReadSession.class));
-    doReturn(mockWorker)
-        .when(stmtSpy)
-        .populateArrowBufferedQueue(
-            any(ReadSession.class), any(BlockingQueue.class), any(BigQueryReadClient.class));
-    doReturn(TableId.of(PROJECT, DEFAULT_TEST_DATASET, "dest_table"))
-        .when(stmtSpy)
-        .getDestinationTable(any(JobId.class));
-
-    JobId parentId = JobId.of(PROJECT, "parent-script-job");
-    TableResult parentResult = mock(TableResult.class);
-    doReturn(parentId).when(parentResult).getJobId();
+    TableResult parentResult = mockTableResultWithJob("parent-script-job");
     doReturn(StatementType.SCRIPT).when(parentResult).getStatementType();
     doReturn(parentResult)
         .when(bigquery)
@@ -1799,30 +1778,9 @@ public class BigQueryStatementTest {
 
   @Test
   public void testScriptUsesJsonForSmallSelectAndReadApiForLargeSelect() throws Exception {
-    doReturn(true).when(bigQueryConnection).isEnableHighThroughputAPI();
-    doReturn(100).when(bigQueryConnection).getHighThroughputMinTableSize();
-    doReturn(2).when(bigQueryConnection).getHighThroughputActivationRatio();
-    doReturn(1000L).when(bigQueryConnection).getMaxResults();
+    BigQueryStatement stmtSpy = createReadApiStatementSpy();
 
-    BigQueryStatement stmt = new BigQueryStatement(bigQueryConnection);
-    BigQueryStatement stmtSpy = Mockito.spy(stmt);
-    BigQueryReadClient readClientMock = mock(BigQueryReadClient.class);
-    ReadSession readSession = ReadSession.getDefaultInstance();
-    Future<?> mockWorker = mock(Future.class);
-    doReturn(readClientMock).when(stmtSpy).getBigQueryReadClient();
-    doReturn(readSession).when(stmtSpy).getReadSession(any(CreateReadSessionRequest.class));
-    doReturn(arrowSchema).when(stmtSpy).getArrowSchema(any(ReadSession.class));
-    doReturn(mockWorker)
-        .when(stmtSpy)
-        .populateArrowBufferedQueue(
-            any(ReadSession.class), any(BlockingQueue.class), any(BigQueryReadClient.class));
-    doReturn(TableId.of(PROJECT, DEFAULT_TEST_DATASET, "dest_table"))
-        .when(stmtSpy)
-        .getDestinationTable(any(JobId.class));
-
-    JobId parentId = JobId.of(PROJECT, "parent-mixed-script-job");
-    TableResult parentResult = mock(TableResult.class);
-    doReturn(parentId).when(parentResult).getJobId();
+    TableResult parentResult = mockTableResultWithJob("parent-mixed-script-job");
     doReturn(StatementType.SCRIPT).when(parentResult).getStatementType();
     doReturn(parentResult)
         .when(bigquery)
@@ -1855,26 +1813,8 @@ public class BigQueryStatementTest {
 
   @Test
   public void testHandleQueryResultFromJobCalculatesSqlTypeAndAppliesMaxResults() throws Exception {
-    doReturn(true).when(bigQueryConnection).isEnableHighThroughputAPI();
-    doReturn(100).when(bigQueryConnection).getHighThroughputMinTableSize();
-    doReturn(2).when(bigQueryConnection).getHighThroughputActivationRatio();
     doReturn(500L).when(bigQueryConnection).getMaxResults();
-
-    BigQueryStatement stmt = new BigQueryStatement(bigQueryConnection);
-    BigQueryStatement stmtSpy = Mockito.spy(stmt);
-    BigQueryReadClient readClientMock = mock(BigQueryReadClient.class);
-    ReadSession readSession = ReadSession.getDefaultInstance();
-    Future<?> mockWorker = mock(Future.class);
-    doReturn(readClientMock).when(stmtSpy).getBigQueryReadClient();
-    doReturn(readSession).when(stmtSpy).getReadSession(any(CreateReadSessionRequest.class));
-    doReturn(arrowSchema).when(stmtSpy).getArrowSchema(any(ReadSession.class));
-    doReturn(mockWorker)
-        .when(stmtSpy)
-        .populateArrowBufferedQueue(
-            any(ReadSession.class), any(BlockingQueue.class), any(BigQueryReadClient.class));
-    doReturn(TableId.of(PROJECT, DEFAULT_TEST_DATASET, "dest_table"))
-        .when(stmtSpy)
-        .getDestinationTable(any(JobId.class));
+    BigQueryStatement stmtSpy = createReadApiStatementSpy();
 
     Job selectJob =
         createScriptChildJobMock("job-select", StatementType.SELECT, 2000L, 500L, true, null);
@@ -1892,6 +1832,25 @@ public class BigQueryStatementTest {
     assertEquals(7, stmtSpy.getUpdateCount());
   }
 
+  private BigQueryStatement createReadApiStatementSpy() throws SQLException {
+    doReturn(true).when(bigQueryConnection).isEnableHighThroughputAPI();
+    doReturn(100).when(bigQueryConnection).getHighThroughputMinTableSize();
+    doReturn(2).when(bigQueryConnection).getHighThroughputActivationRatio();
+
+    BigQueryStatement stmtSpy = Mockito.spy(new BigQueryStatement(bigQueryConnection));
+    doReturn(storageReadClient).when(stmtSpy).getBigQueryReadClient();
+    doReturn(ReadSession.getDefaultInstance())
+        .when(stmtSpy)
+        .getReadSession(any(CreateReadSessionRequest.class));
+    doReturn(arrowSchema).when(stmtSpy).getArrowSchema(any(ReadSession.class));
+    doReturn(mock(Future.class))
+        .when(stmtSpy)
+        .populateArrowBufferedQueue(
+            any(ReadSession.class), any(BlockingQueue.class), any(BigQueryReadClient.class));
+    doReturn(TABLE_ID).when(stmtSpy).getDestinationTable(any());
+    return stmtSpy;
+  }
+
   private Job createScriptChildJobMock(
       String childId,
       StatementType statementType,
@@ -1900,35 +1859,19 @@ public class BigQueryStatementTest {
       boolean hasNextPage,
       Long dmlAffectedRows)
       throws InterruptedException {
-    Job childJob = mock(Job.class);
-    JobId childJobId = JobId.of(PROJECT, childId);
-    QueryStatistics stats = mock(QueryStatistics.class);
-    ScriptStatistics scriptStats = mock(ScriptStatistics.class);
-    QueryJobConfiguration config =
-        QueryJobConfiguration.newBuilder("SELECT 1")
-            .setDestinationTable(TableId.of(PROJECT, DEFAULT_TEST_DATASET, "dest_" + childId))
-            .build();
-    TableResult childResult = mock(TableResult.class);
-    Schema schema = Schema.of(fieldList);
-
-    doReturn(childJobId).when(childJob).getJobId();
-    doReturn(config).when(childJob).getConfiguration();
-    doReturn(stats).when(childJob).getStatistics();
-    doReturn(statementType).when(stats).getStatementType();
-    doReturn(scriptStats).when(stats).getScriptStatistics();
-    doReturn("STATEMENT").when(scriptStats).getEvaluationKind();
-
-    doReturn(childJobId).when(childResult).getJobId();
-    doReturn(schema).when(childResult).getSchema();
+    TableResult childResult = mockTableResultWithJob(childId);
+    doReturn(Schema.of(fieldList)).when(childResult).getSchema();
     doReturn(totalRows).when(childResult).getTotalRows();
     doReturn(rowsInPage).when(childResult).getRowsInPage();
     doReturn(hasNextPage).when(childResult).hasNextPage();
-    doReturn(Collections.emptyList()).when(childResult).getValues();
     if (dmlAffectedRows != null) {
       doReturn(dmlAffectedRows).when(childResult).getNumDmlAffectedRows();
     }
-    doReturn(childResult).when(childJob).getQueryResults(any(QueryResultsOption.class));
-    doReturn(childJob).when(bigquery).getJob(childJobId);
+
+    Job childJob =
+        getJobMock(childResult, QueryJobConfiguration.newBuilder(query).build(), statementType);
+    QueryStatistics stats = childJob.getStatistics();
+    doReturn(mock(ScriptStatistics.class)).when(stats).getScriptStatistics();
     return childJob;
   }
 }
