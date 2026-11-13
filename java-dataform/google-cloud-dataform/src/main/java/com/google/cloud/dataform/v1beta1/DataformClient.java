@@ -648,6 +648,26 @@ import org.jspecify.annotations.Nullable;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> CreateWorkspaceLongRunning</td>
+ *      <td><p> Creates a new Workspace in a given Repository asynchronously.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createWorkspaceLongRunningAsync(CreateWorkspaceRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> createWorkspaceLongRunningAsync(RepositoryName parent, Workspace workspace, String workspaceId)
+ *           <li><p> createWorkspaceLongRunningAsync(String parent, Workspace workspace, String workspaceId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createWorkspaceLongRunningOperationCallable()
+ *           <li><p> createWorkspaceLongRunningCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> DeleteWorkspace</td>
  *      <td><p> Deletes a single Workspace.</td>
  *      <td>
@@ -5506,6 +5526,177 @@ public class DataformClient implements BackgroundResource {
    */
   public final UnaryCallable<CreateWorkspaceRequest, Workspace> createWorkspaceCallable() {
     return stub.createWorkspaceCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new Workspace in a given Repository asynchronously.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   RepositoryName parent = RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]");
+   *   Workspace workspace = Workspace.newBuilder().build();
+   *   String workspaceId = "workspaceId466560144";
+   *   Workspace response =
+   *       dataformClient.createWorkspaceLongRunningAsync(parent, workspace, workspaceId).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The repository in which to create the workspace. Must be in the format
+   *     `projects/&#42;/locations/&#42;/repositories/&#42;`.
+   * @param workspace Required. The workspace to create.
+   * @param workspaceId Required. The ID to use for the workspace, which will become the final
+   *     component of the workspace's resource name.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Workspace, CreateWorkspaceMetadata> createWorkspaceLongRunningAsync(
+      @Nullable RepositoryName parent, Workspace workspace, String workspaceId) {
+    CreateWorkspaceRequest request =
+        CreateWorkspaceRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setWorkspace(workspace)
+            .setWorkspaceId(workspaceId)
+            .build();
+    return createWorkspaceLongRunningAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new Workspace in a given Repository asynchronously.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   String parent = RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString();
+   *   Workspace workspace = Workspace.newBuilder().build();
+   *   String workspaceId = "workspaceId466560144";
+   *   Workspace response =
+   *       dataformClient.createWorkspaceLongRunningAsync(parent, workspace, workspaceId).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The repository in which to create the workspace. Must be in the format
+   *     `projects/&#42;/locations/&#42;/repositories/&#42;`.
+   * @param workspace Required. The workspace to create.
+   * @param workspaceId Required. The ID to use for the workspace, which will become the final
+   *     component of the workspace's resource name.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Workspace, CreateWorkspaceMetadata> createWorkspaceLongRunningAsync(
+      String parent, Workspace workspace, String workspaceId) {
+    CreateWorkspaceRequest request =
+        CreateWorkspaceRequest.newBuilder()
+            .setParent(parent)
+            .setWorkspace(workspace)
+            .setWorkspaceId(workspaceId)
+            .build();
+    return createWorkspaceLongRunningAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new Workspace in a given Repository asynchronously.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   CreateWorkspaceRequest request =
+   *       CreateWorkspaceRequest.newBuilder()
+   *           .setParent(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+   *           .setWorkspace(Workspace.newBuilder().build())
+   *           .setWorkspaceId("workspaceId466560144")
+   *           .build();
+   *   Workspace response = dataformClient.createWorkspaceLongRunningAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Workspace, CreateWorkspaceMetadata> createWorkspaceLongRunningAsync(
+      CreateWorkspaceRequest request) {
+    return createWorkspaceLongRunningOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new Workspace in a given Repository asynchronously.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   CreateWorkspaceRequest request =
+   *       CreateWorkspaceRequest.newBuilder()
+   *           .setParent(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+   *           .setWorkspace(Workspace.newBuilder().build())
+   *           .setWorkspaceId("workspaceId466560144")
+   *           .build();
+   *   OperationFuture<Workspace, CreateWorkspaceMetadata> future =
+   *       dataformClient.createWorkspaceLongRunningOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Workspace response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<CreateWorkspaceRequest, Workspace, CreateWorkspaceMetadata>
+      createWorkspaceLongRunningOperationCallable() {
+    return stub.createWorkspaceLongRunningOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new Workspace in a given Repository asynchronously.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   CreateWorkspaceRequest request =
+   *       CreateWorkspaceRequest.newBuilder()
+   *           .setParent(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+   *           .setWorkspace(Workspace.newBuilder().build())
+   *           .setWorkspaceId("workspaceId466560144")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       dataformClient.createWorkspaceLongRunningCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateWorkspaceRequest, Operation>
+      createWorkspaceLongRunningCallable() {
+    return stub.createWorkspaceLongRunningCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

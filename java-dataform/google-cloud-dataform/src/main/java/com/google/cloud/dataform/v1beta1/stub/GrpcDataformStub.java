@@ -64,6 +64,7 @@ import com.google.cloud.dataform.v1beta1.CreateRepositoryRequest;
 import com.google.cloud.dataform.v1beta1.CreateTeamFolderRequest;
 import com.google.cloud.dataform.v1beta1.CreateWorkflowConfigRequest;
 import com.google.cloud.dataform.v1beta1.CreateWorkflowInvocationRequest;
+import com.google.cloud.dataform.v1beta1.CreateWorkspaceMetadata;
 import com.google.cloud.dataform.v1beta1.CreateWorkspaceRequest;
 import com.google.cloud.dataform.v1beta1.DeleteBranchRequest;
 import com.google.cloud.dataform.v1beta1.DeleteBranchResponse;
@@ -566,6 +567,18 @@ public class GrpcDataformStub extends DataformStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateWorkspaceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Workspace.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<CreateWorkspaceRequest, Operation>
+      createWorkspaceLongRunningMethodDescriptor =
+          MethodDescriptor.<CreateWorkspaceRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.dataform.v1beta1.Dataform/CreateWorkspaceLongRunning")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateWorkspaceRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .setSampledToLocalTracing(true)
               .build();
 
@@ -1252,6 +1265,9 @@ public class GrpcDataformStub extends DataformStub {
       listWorkspacesPagedCallable;
   private final UnaryCallable<GetWorkspaceRequest, Workspace> getWorkspaceCallable;
   private final UnaryCallable<CreateWorkspaceRequest, Workspace> createWorkspaceCallable;
+  private final UnaryCallable<CreateWorkspaceRequest, Operation> createWorkspaceLongRunningCallable;
+  private final OperationCallable<CreateWorkspaceRequest, Workspace, CreateWorkspaceMetadata>
+      createWorkspaceLongRunningOperationCallable;
   private final UnaryCallable<DeleteWorkspaceRequest, Empty> deleteWorkspaceCallable;
   private final UnaryCallable<InstallNpmPackagesRequest, InstallNpmPackagesResponse>
       installNpmPackagesCallable;
@@ -1767,6 +1783,18 @@ public class GrpcDataformStub extends DataformStub {
                 })
             .setResourceNameExtractor(request -> request.getParent())
             .build();
+    GrpcCallSettings<CreateWorkspaceRequest, Operation>
+        createWorkspaceLongRunningTransportSettings =
+            GrpcCallSettings.<CreateWorkspaceRequest, Operation>newBuilder()
+                .setMethodDescriptor(createWorkspaceLongRunningMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
     GrpcCallSettings<DeleteWorkspaceRequest, Empty> deleteWorkspaceTransportSettings =
         GrpcCallSettings.<DeleteWorkspaceRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteWorkspaceMethodDescriptor)
@@ -2568,6 +2596,17 @@ public class GrpcDataformStub extends DataformStub {
     this.createWorkspaceCallable =
         callableFactory.createUnaryCallable(
             createWorkspaceTransportSettings, settings.createWorkspaceSettings(), clientContext);
+    this.createWorkspaceLongRunningCallable =
+        callableFactory.createUnaryCallable(
+            createWorkspaceLongRunningTransportSettings,
+            settings.createWorkspaceLongRunningSettings(),
+            clientContext);
+    this.createWorkspaceLongRunningOperationCallable =
+        callableFactory.createOperationCallable(
+            createWorkspaceLongRunningTransportSettings,
+            settings.createWorkspaceLongRunningOperationSettings(),
+            clientContext,
+            operationsStub);
     this.deleteWorkspaceCallable =
         callableFactory.createUnaryCallable(
             deleteWorkspaceTransportSettings, settings.deleteWorkspaceSettings(), clientContext);
@@ -3103,6 +3142,17 @@ public class GrpcDataformStub extends DataformStub {
   @Override
   public UnaryCallable<CreateWorkspaceRequest, Workspace> createWorkspaceCallable() {
     return createWorkspaceCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateWorkspaceRequest, Operation> createWorkspaceLongRunningCallable() {
+    return createWorkspaceLongRunningCallable;
+  }
+
+  @Override
+  public OperationCallable<CreateWorkspaceRequest, Workspace, CreateWorkspaceMetadata>
+      createWorkspaceLongRunningOperationCallable() {
+    return createWorkspaceLongRunningOperationCallable;
   }
 
   @Override

@@ -1400,6 +1400,52 @@ public final class DataformGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.dataform.v1.CreateWorkspaceRequest, com.google.longrunning.Operation>
+      getCreateWorkspaceLongRunningMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateWorkspaceLongRunning",
+      requestType = com.google.cloud.dataform.v1.CreateWorkspaceRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.dataform.v1.CreateWorkspaceRequest, com.google.longrunning.Operation>
+      getCreateWorkspaceLongRunningMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.dataform.v1.CreateWorkspaceRequest, com.google.longrunning.Operation>
+        getCreateWorkspaceLongRunningMethod;
+    if ((getCreateWorkspaceLongRunningMethod = DataformGrpc.getCreateWorkspaceLongRunningMethod)
+        == null) {
+      synchronized (DataformGrpc.class) {
+        if ((getCreateWorkspaceLongRunningMethod = DataformGrpc.getCreateWorkspaceLongRunningMethod)
+            == null) {
+          DataformGrpc.getCreateWorkspaceLongRunningMethod =
+              getCreateWorkspaceLongRunningMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.dataform.v1.CreateWorkspaceRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "CreateWorkspaceLongRunning"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dataform.v1.CreateWorkspaceRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DataformMethodDescriptorSupplier("CreateWorkspaceLongRunning"))
+                      .build();
+        }
+      }
+    }
+    return getCreateWorkspaceLongRunningMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.dataform.v1.DeleteWorkspaceRequest, com.google.protobuf.Empty>
       getDeleteWorkspaceMethod;
 
@@ -3951,6 +3997,20 @@ public final class DataformGrpc {
      *
      *
      * <pre>
+     * Creates a new Workspace in a given Repository asynchronously.
+     * </pre>
+     */
+    default void createWorkspaceLongRunning(
+        com.google.cloud.dataform.v1.CreateWorkspaceRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateWorkspaceLongRunningMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a single Workspace.
      * </pre>
      */
@@ -5156,6 +5216,22 @@ public final class DataformGrpc {
      *
      *
      * <pre>
+     * Creates a new Workspace in a given Repository asynchronously.
+     * </pre>
+     */
+    public void createWorkspaceLongRunning(
+        com.google.cloud.dataform.v1.CreateWorkspaceRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateWorkspaceLongRunningMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a single Workspace.
      * </pre>
      */
@@ -6352,6 +6428,20 @@ public final class DataformGrpc {
      *
      *
      * <pre>
+     * Creates a new Workspace in a given Repository asynchronously.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createWorkspaceLongRunning(
+        com.google.cloud.dataform.v1.CreateWorkspaceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateWorkspaceLongRunningMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a single Workspace.
      * </pre>
      */
@@ -7405,6 +7495,19 @@ public final class DataformGrpc {
      *
      *
      * <pre>
+     * Creates a new Workspace in a given Repository asynchronously.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createWorkspaceLongRunning(
+        com.google.cloud.dataform.v1.CreateWorkspaceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateWorkspaceLongRunningMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a single Workspace.
      * </pre>
      */
@@ -8451,6 +8554,19 @@ public final class DataformGrpc {
      *
      *
      * <pre>
+     * Creates a new Workspace in a given Repository asynchronously.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        createWorkspaceLongRunning(com.google.cloud.dataform.v1.CreateWorkspaceRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateWorkspaceLongRunningMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a single Workspace.
      * </pre>
      */
@@ -9119,50 +9235,51 @@ public final class DataformGrpc {
   private static final int METHODID_LIST_WORKSPACES = 27;
   private static final int METHODID_GET_WORKSPACE = 28;
   private static final int METHODID_CREATE_WORKSPACE = 29;
-  private static final int METHODID_DELETE_WORKSPACE = 30;
-  private static final int METHODID_INSTALL_NPM_PACKAGES = 31;
-  private static final int METHODID_PULL_GIT_COMMITS = 32;
-  private static final int METHODID_PUSH_GIT_COMMITS = 33;
-  private static final int METHODID_FETCH_FILE_GIT_STATUSES = 34;
-  private static final int METHODID_FETCH_GIT_AHEAD_BEHIND = 35;
-  private static final int METHODID_COMMIT_WORKSPACE_CHANGES = 36;
-  private static final int METHODID_RESET_WORKSPACE_CHANGES = 37;
-  private static final int METHODID_FETCH_FILE_DIFF = 38;
-  private static final int METHODID_QUERY_DIRECTORY_CONTENTS = 39;
-  private static final int METHODID_SEARCH_FILES = 40;
-  private static final int METHODID_MAKE_DIRECTORY = 41;
-  private static final int METHODID_REMOVE_DIRECTORY = 42;
-  private static final int METHODID_MOVE_DIRECTORY = 43;
-  private static final int METHODID_READ_FILE = 44;
-  private static final int METHODID_REMOVE_FILE = 45;
-  private static final int METHODID_MOVE_FILE = 46;
-  private static final int METHODID_WRITE_FILE = 47;
-  private static final int METHODID_LIST_RELEASE_CONFIGS = 48;
-  private static final int METHODID_GET_RELEASE_CONFIG = 49;
-  private static final int METHODID_CREATE_RELEASE_CONFIG = 50;
-  private static final int METHODID_UPDATE_RELEASE_CONFIG = 51;
-  private static final int METHODID_DELETE_RELEASE_CONFIG = 52;
-  private static final int METHODID_LIST_COMPILATION_RESULTS = 53;
-  private static final int METHODID_GET_COMPILATION_RESULT = 54;
-  private static final int METHODID_CREATE_COMPILATION_RESULT = 55;
-  private static final int METHODID_CREATE_COMPILATION_RESULT_LONG_RUNNING = 56;
-  private static final int METHODID_QUERY_COMPILATION_RESULT_ACTIONS = 57;
-  private static final int METHODID_LIST_WORKFLOW_CONFIGS = 58;
-  private static final int METHODID_GET_WORKFLOW_CONFIG = 59;
-  private static final int METHODID_CREATE_WORKFLOW_CONFIG = 60;
-  private static final int METHODID_UPDATE_WORKFLOW_CONFIG = 61;
-  private static final int METHODID_DELETE_WORKFLOW_CONFIG = 62;
-  private static final int METHODID_LIST_WORKFLOW_INVOCATIONS = 63;
-  private static final int METHODID_GET_WORKFLOW_INVOCATION = 64;
-  private static final int METHODID_CREATE_WORKFLOW_INVOCATION = 65;
-  private static final int METHODID_DELETE_WORKFLOW_INVOCATION = 66;
-  private static final int METHODID_CANCEL_WORKFLOW_INVOCATION = 67;
-  private static final int METHODID_QUERY_WORKFLOW_INVOCATION_ACTIONS = 68;
-  private static final int METHODID_GET_CONFIG = 69;
-  private static final int METHODID_UPDATE_CONFIG = 70;
-  private static final int METHODID_GET_IAM_POLICY = 71;
-  private static final int METHODID_SET_IAM_POLICY = 72;
-  private static final int METHODID_TEST_IAM_PERMISSIONS = 73;
+  private static final int METHODID_CREATE_WORKSPACE_LONG_RUNNING = 30;
+  private static final int METHODID_DELETE_WORKSPACE = 31;
+  private static final int METHODID_INSTALL_NPM_PACKAGES = 32;
+  private static final int METHODID_PULL_GIT_COMMITS = 33;
+  private static final int METHODID_PUSH_GIT_COMMITS = 34;
+  private static final int METHODID_FETCH_FILE_GIT_STATUSES = 35;
+  private static final int METHODID_FETCH_GIT_AHEAD_BEHIND = 36;
+  private static final int METHODID_COMMIT_WORKSPACE_CHANGES = 37;
+  private static final int METHODID_RESET_WORKSPACE_CHANGES = 38;
+  private static final int METHODID_FETCH_FILE_DIFF = 39;
+  private static final int METHODID_QUERY_DIRECTORY_CONTENTS = 40;
+  private static final int METHODID_SEARCH_FILES = 41;
+  private static final int METHODID_MAKE_DIRECTORY = 42;
+  private static final int METHODID_REMOVE_DIRECTORY = 43;
+  private static final int METHODID_MOVE_DIRECTORY = 44;
+  private static final int METHODID_READ_FILE = 45;
+  private static final int METHODID_REMOVE_FILE = 46;
+  private static final int METHODID_MOVE_FILE = 47;
+  private static final int METHODID_WRITE_FILE = 48;
+  private static final int METHODID_LIST_RELEASE_CONFIGS = 49;
+  private static final int METHODID_GET_RELEASE_CONFIG = 50;
+  private static final int METHODID_CREATE_RELEASE_CONFIG = 51;
+  private static final int METHODID_UPDATE_RELEASE_CONFIG = 52;
+  private static final int METHODID_DELETE_RELEASE_CONFIG = 53;
+  private static final int METHODID_LIST_COMPILATION_RESULTS = 54;
+  private static final int METHODID_GET_COMPILATION_RESULT = 55;
+  private static final int METHODID_CREATE_COMPILATION_RESULT = 56;
+  private static final int METHODID_CREATE_COMPILATION_RESULT_LONG_RUNNING = 57;
+  private static final int METHODID_QUERY_COMPILATION_RESULT_ACTIONS = 58;
+  private static final int METHODID_LIST_WORKFLOW_CONFIGS = 59;
+  private static final int METHODID_GET_WORKFLOW_CONFIG = 60;
+  private static final int METHODID_CREATE_WORKFLOW_CONFIG = 61;
+  private static final int METHODID_UPDATE_WORKFLOW_CONFIG = 62;
+  private static final int METHODID_DELETE_WORKFLOW_CONFIG = 63;
+  private static final int METHODID_LIST_WORKFLOW_INVOCATIONS = 64;
+  private static final int METHODID_GET_WORKFLOW_INVOCATION = 65;
+  private static final int METHODID_CREATE_WORKFLOW_INVOCATION = 66;
+  private static final int METHODID_DELETE_WORKFLOW_INVOCATION = 67;
+  private static final int METHODID_CANCEL_WORKFLOW_INVOCATION = 68;
+  private static final int METHODID_QUERY_WORKFLOW_INVOCATION_ACTIONS = 69;
+  private static final int METHODID_GET_CONFIG = 70;
+  private static final int METHODID_UPDATE_CONFIG = 71;
+  private static final int METHODID_GET_IAM_POLICY = 72;
+  private static final int METHODID_SET_IAM_POLICY = 73;
+  private static final int METHODID_TEST_IAM_PERMISSIONS = 74;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -9358,6 +9475,11 @@ public final class DataformGrpc {
               (com.google.cloud.dataform.v1.CreateWorkspaceRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.dataform.v1.Workspace>)
                   responseObserver);
+          break;
+        case METHODID_CREATE_WORKSPACE_LONG_RUNNING:
+          serviceImpl.createWorkspaceLongRunning(
+              (com.google.cloud.dataform.v1.CreateWorkspaceRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         case METHODID_DELETE_WORKSPACE:
           serviceImpl.deleteWorkspace(
@@ -9836,6 +9958,13 @@ public final class DataformGrpc {
                     com.google.cloud.dataform.v1.CreateWorkspaceRequest,
                     com.google.cloud.dataform.v1.Workspace>(service, METHODID_CREATE_WORKSPACE)))
         .addMethod(
+            getCreateWorkspaceLongRunningMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataform.v1.CreateWorkspaceRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_CREATE_WORKSPACE_LONG_RUNNING)))
+        .addMethod(
             getDeleteWorkspaceMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -10209,6 +10338,7 @@ public final class DataformGrpc {
                       .addMethod(getListWorkspacesMethod())
                       .addMethod(getGetWorkspaceMethod())
                       .addMethod(getCreateWorkspaceMethod())
+                      .addMethod(getCreateWorkspaceLongRunningMethod())
                       .addMethod(getDeleteWorkspaceMethod())
                       .addMethod(getInstallNpmPackagesMethod())
                       .addMethod(getPullGitCommitsMethod())
