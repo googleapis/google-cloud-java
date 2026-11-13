@@ -1388,6 +1388,7 @@ public final class UnifiedOptsGrpcTest {
                           .put("X-Goog-Encryption-Key-Sha256", "a")
                           .put("X-Goog-Meta-A", "a")
                           .put("X-Goog-Request-Params", "a")
+                          .put("X-Goog-Storage-Java-Features", "a")
                           .put("X-Goog-User-Project", "a")
                           .put("X-HTTP-Method-Override", "a")
                           .put("X-Upload-Content-Length", "a")
@@ -1404,8 +1405,8 @@ public final class UnifiedOptsGrpcTest {
                   + " x-goog-copy-source-encryption-algorithm, x-goog-copy-source-encryption-key,"
                   + " x-goog-copy-source-encryption-key-sha256, x-goog-encryption-algorithm,"
                   + " x-goog-encryption-key, x-goog-encryption-key-sha256, x-goog-meta-a,"
-                  + " x-goog-request-params, x-goog-user-project, x-http-method-override,"
-                  + " x-upload-content-length, x-upload-content-type]");
+                  + " x-goog-request-params, x-goog-storage-java-features, x-goog-user-project,"
+                  + " x-http-method-override, x-upload-content-length, x-upload-content-type]");
     }
   }
 
