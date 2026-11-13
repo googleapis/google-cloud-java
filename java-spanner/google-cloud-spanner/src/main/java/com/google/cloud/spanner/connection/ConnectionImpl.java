@@ -930,7 +930,8 @@ class ConnectionImpl implements Connection {
     this.unitOfWorkType = UnitOfWorkType.of(transactionMode);
   }
 
-  IsolationLevel getTransactionIsolationLevel() {
+  @Override
+  public IsolationLevel getTransactionIsolationLevel() {
     ConnectionPreconditions.checkState(!isClosed(), CLOSED_ERROR_MSG);
     ConnectionPreconditions.checkState(!isDdlBatchActive(), "This connection is in a DDL batch");
     ConnectionPreconditions.checkState(isInTransaction(), "This connection has no transaction");
