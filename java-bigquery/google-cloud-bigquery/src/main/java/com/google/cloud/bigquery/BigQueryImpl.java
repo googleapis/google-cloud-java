@@ -62,7 +62,6 @@ import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Function;
 import com.google.common.base.Strings;
 import com.google.common.base.Supplier;
-import com.google.common.collect.FluentIterable;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
@@ -2059,23 +2058,15 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
     requestPb.setIgnoreUnknownValues(request.ignoreUnknownValues());
     requestPb.setSkipInvalidRows(request.skipInvalidRows());
     requestPb.setTemplateSuffix(request.getTemplateSuffix());
-    // Using an array of size 1 here to have a mutable boolean variable, which can
-    // be modified in
-    // an anonymous inner class.
-    final boolean[] allInsertIdsSet = {true};
-    List<Rows> rowsPb =
-        FluentIterable.from(request.getRows())
-            .transform(
-                new Function<RowToInsert, Rows>() {
-                  @Override
-                  public Rows apply(RowToInsert rowToInsert) {
-                    allInsertIdsSet[0] &= rowToInsert.getId() != null;
-                    return new Rows()
-                        .setInsertId(rowToInsert.getId())
-                        .setJson(rowToInsert.getContent());
-                  }
-                })
-            .toList();
+    List<RowToInsert> rows = request.getRows();
+    // Pre-size directly from rows.size() rather than using FluentIterable.transform, which
+    // hides size() and forces repeated internal array resizes on large batches.
+    List<Rows> rowsPb = new ArrayList<>(rows.size());
+    boolean allInsertIdsSet = true;
+    for (RowToInsert rowToInsert : rows) {
+      allInsertIdsSet &= rowToInsert.getId() != null;
+      rowsPb.add(new Rows().setInsertId(rowToInsert.getId()).setJson(rowToInsert.getContent()));
+    }
     requestPb.setRows(rowsPb);
 
     TableDataInsertAllResponse responsePb;
@@ -2090,7 +2081,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
               .startSpan();
     }
     try (Scope insertAllScope = insertAll != null ? insertAll.makeCurrent() : null) {
-      if (allInsertIdsSet[0]) {
+      if (allInsertIdsSet) {
         // allowing retries only if all row insertIds are set (used for deduplication)
         try {
           responsePb =
