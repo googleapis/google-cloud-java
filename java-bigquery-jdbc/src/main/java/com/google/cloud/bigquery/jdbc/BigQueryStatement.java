@@ -912,7 +912,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     LOG.finer("++enter++");
 
     // set the resultset
-    long totalRows = (getMaxRows() > 0) ? getMaxRows() : results.getTotalRows();
+    long totalRows = getEffectiveTotalRows(results);
     JobId currentJobId = results.getJobId();
     TableId destinationTable = getDestinationTable(currentJobId);
     Schema schema = results.getSchema();
@@ -1203,11 +1203,20 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     return totalRows / pageSize > querySettings.getHighThroughputActivationRatio();
   }
 
+  /**
+   * Number of rows the result set returns: the query's total, capped by {@link #setMaxRows(int)}.
+   */
+  @VisibleForTesting
+  long getEffectiveTotalRows(TableResult results) {
+    long totalRows = results.getTotalRows();
+    return getMaxRows() > 0 ? Math.min(getMaxRows(), totalRows) : totalRows;
+  }
+
   BigQueryJsonResultSet processJsonResultSet(TableResult results, Job job) throws SQLException {
     List<Future<?>> taskList = new ArrayList<>();
 
     Schema schema = results.getSchema();
-    long totalRows = (getMaxRows() > 0) ? getMaxRows() : results.getTotalRows();
+    long totalRows = getEffectiveTotalRows(results);
     this.bigQueryFieldValueListWrapperBlockingQueue = new LinkedBlockingDeque<>(getBufferSize());
     BlockingQueue<Tuple<TableResult, Boolean>> rpcResponseQueue =
         new LinkedBlockingDeque<>(getPageCacheSize(getBufferSize(), schema));

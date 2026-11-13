@@ -454,6 +454,19 @@ public class BigQueryStatementTest {
   }
 
   @Test
+  public void testGetEffectiveTotalRowsIsCappedByMaxRows() throws SQLException {
+    TableResult result = mock(TableResult.class);
+    doReturn(10L).when(result).getTotalRows();
+
+    assertEquals(10, bigQueryStatement.getEffectiveTotalRows(result));
+    // A limit larger than the result must not inflate the total (isLast() relies on it).
+    bigQueryStatement.setMaxRows(1000);
+    assertEquals(10, bigQueryStatement.getEffectiveTotalRows(result));
+    bigQueryStatement.setMaxRows(5);
+    assertEquals(5, bigQueryStatement.getEffectiveTotalRows(result));
+  }
+
+  @Test
   public void setQueryTimeoutTest() throws Exception {
     bigQueryStatement.setQueryTimeout(3);
     BigQueryStatement bigQueryStatementSpy = Mockito.spy(bigQueryStatement);
