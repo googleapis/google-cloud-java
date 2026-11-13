@@ -316,6 +316,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
   private final RetrySettings retryAdministrativeRequestsSettings;
   private final boolean trackTransactionStarter;
   private final boolean enableGrpcGcpOtelMetrics;
+  private final boolean enableChannelPoolBuiltInMetrics;
   private final BuiltInMetricsProvider builtInMetricsProvider = BuiltInMetricsProvider.INSTANCE;
 
   /**
@@ -1031,6 +1032,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     retryAdministrativeRequestsSettings = builder.retryAdministrativeRequestsSettings;
     trackTransactionStarter = builder.trackTransactionStarter;
     enableGrpcGcpOtelMetrics = builder.enableGrpcGcpOtelMetrics;
+    enableChannelPoolBuiltInMetrics = environment.isEnableChannelPoolBuiltInMetrics();
     defaultQueryOptions = builder.defaultQueryOptions;
     envQueryOptions = builder.getEnvironmentQueryOptions();
     if (envQueryOptions.equals(QueryOptions.getDefaultInstance())) {
@@ -1163,6 +1165,10 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
       return true;
     }
 
+    default boolean isEnableChannelPoolBuiltInMetrics() {
+      return true;
+    }
+
     default boolean isEnableEndToEndTracing() {
       return false;
     }
@@ -1218,6 +1224,8 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
         "SPANNER_DISABLE_DIRECT_ACCESS_GRPC_BUILTIN_METRICS";
     private static final String SPANNER_DISABLE_GRPC_GCP_OTEL_METRICS =
         "SPANNER_DISABLE_GRPC_GCP_OTEL_METRICS";
+    private static final String SPANNER_DISABLE_CHANNEL_POOL_BUILTIN_METRICS =
+        "SPANNER_DISABLE_CHANNEL_POOL_BUILTIN_METRICS";
     private static final String SPANNER_MONITORING_HOST = "SPANNER_MONITORING_HOST";
 
     private SpannerEnvironmentImpl() {}
@@ -1277,6 +1285,11 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     @Override
     public boolean isEnableGrpcGcpOtelMetrics() {
       return !Boolean.parseBoolean(System.getenv(SPANNER_DISABLE_GRPC_GCP_OTEL_METRICS));
+    }
+
+    @Override
+    public boolean isEnableChannelPoolBuiltInMetrics() {
+      return !Boolean.parseBoolean(System.getenv(SPANNER_DISABLE_CHANNEL_POOL_BUILTIN_METRICS));
     }
 
     @Override
@@ -2835,6 +2848,15 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
 
   public boolean isGrpcGcpOtelMetricsEnabled() {
     return enableGrpcGcpOtelMetrics;
+  }
+
+  /**
+   * Returns true when built-in metrics are enabled, the client uses credentials, and {@code
+   * SPANNER_DISABLE_CHANNEL_POOL_BUILTIN_METRICS} is not true.
+   */
+  @InternalApi
+  public boolean isEnableChannelPoolBuiltInMetrics() {
+    return enableChannelPoolBuiltInMetrics && isEnableBuiltInMetrics() && !usesNoCredentials();
   }
 
   public GcpManagedChannelOptions getGrpcGcpOptions() {

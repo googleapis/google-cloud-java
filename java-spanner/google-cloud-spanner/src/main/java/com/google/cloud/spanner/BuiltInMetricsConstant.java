@@ -67,6 +67,7 @@ public class BuiltInMetricsConstant {
   static final String ATTEMPT_COUNT_NAME = "attempt_count";
   static final String EEF_FALLBACK_COUNT_NAME = "eef.fallback_count";
   static final String EEF_CALL_STATUS_NAME = "eef.call_status";
+  static final String CHANNEL_COUNT_NAME = "channel_pool.channel_count";
 
   public static final Set<String> SPANNER_METRICS =
       ImmutableSet.of(
@@ -145,14 +146,22 @@ public class BuiltInMetricsConstant {
   static final Set<String> GRPC_GCP_EEF_CALL_STATUS_ATTRIBUTES =
       ImmutableSet.of(CHANNEL_NAME_KEY.getKey(), STATUS_CODE_KEY.getKey());
 
+  public static final AttributeKey<String> LANE_KEY = AttributeKey.stringKey("lane");
+  public static final String LANE_DIRECTPATH = "directpath";
+  public static final String LANE_CLOUDPATH = "cloudpath";
+
+  static final Set<String> GRPC_GCP_CHANNEL_COUNT_ATTRIBUTES =
+      ImmutableSet.of("pool_mode", "state", LANE_KEY.getKey(), "pool_index");
+
   static final Map<String, Set<String>> GRPC_GCP_METRIC_ADDITIONAL_ATTRIBUTES =
       ImmutableMap.<String, Set<String>>builder()
           .put(EEF_FALLBACK_COUNT_NAME, GRPC_GCP_EEF_FALLBACK_COUNT_ATTRIBUTES)
           .put(EEF_CALL_STATUS_NAME, GRPC_GCP_EEF_CALL_STATUS_ATTRIBUTES)
+          .put(CHANNEL_COUNT_NAME, GRPC_GCP_CHANNEL_COUNT_ATTRIBUTES)
           .build();
 
   static final Collection<String> GRPC_GCP_METRICS_TO_ENABLE =
-      ImmutableList.of(EEF_FALLBACK_COUNT_NAME, EEF_CALL_STATUS_NAME);
+      ImmutableList.of(EEF_FALLBACK_COUNT_NAME, EEF_CALL_STATUS_NAME, CHANNEL_COUNT_NAME);
 
   public static final String SPANNER_RESOURCE_TYPE = "spanner_instance_client";
   public static final String UNDEFINED_PROJECT_ID = "undefined-project";

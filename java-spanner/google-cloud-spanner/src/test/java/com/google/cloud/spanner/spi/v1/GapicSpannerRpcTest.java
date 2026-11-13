@@ -53,6 +53,7 @@ import com.google.cloud.grpc.GcpManagedChannelOptions.GcpMetricsOptions;
 import com.google.cloud.grpc.fallback.GcpFallbackChannelOptions;
 import com.google.cloud.grpc.fallback.GcpFallbackOpenTelemetry;
 import com.google.cloud.grpc.fallback.GcpFallbackState;
+import com.google.cloud.spanner.BuiltInMetricsConstant;
 import com.google.cloud.spanner.DatabaseClient;
 import com.google.cloud.spanner.DatabaseId;
 import com.google.cloud.spanner.Dialect;
@@ -113,6 +114,8 @@ import io.grpc.netty.shaded.io.grpc.netty.NettyChannelBuilder;
 import io.grpc.netty.shaded.io.grpc.netty.NettyServerBuilder;
 import io.grpc.protobuf.lite.ProtoLiteUtils;
 import io.opentelemetry.api.OpenTelemetry;
+import io.opentelemetry.api.common.Attributes;
+import io.opentelemetry.api.metrics.Meter;
 import io.opentelemetry.api.trace.propagation.W3CTraceContextPropagator;
 import io.opentelemetry.context.propagation.ContextPropagators;
 import io.opentelemetry.sdk.OpenTelemetrySdk;
@@ -2550,15 +2553,99 @@ public class GapicSpannerRpcTest {
             "maybeEnableGrpcGcpExtension",
             InstantiatingGrpcChannelProvider.Builder.class,
             SpannerOptions.class,
-            DynamicChannelPoolPrimer.class);
+            DynamicChannelPoolPrimer.class,
+            GapicSpannerRpc.BuiltInChannelPoolMetrics.class,
+            String.class);
     method.setAccessible(true);
-    method.invoke(null, channelProviderBuilder, options, null);
+    method.invoke(null, channelProviderBuilder, options, null, null, null);
 
     ApiFunction<ManagedChannelBuilder, ManagedChannelBuilder> chainedConfigurator =
         channelProviderBuilder.getChannelConfigurator();
     chainedConfigurator.apply(NettyChannelBuilder.forAddress("localhost", 1));
 
     assertTrue(baseConfiguratorCalled.get());
+  }
+
+  @Test
+  public void testBuiltInChannelPoolMetricsAreSetWithLaneAndPoolIndex() {
+    Meter meter = OpenTelemetry.noop().getMeter("grpc-gcp");
+    SpannerOptions options =
+        SpannerOptions.newBuilder().setProjectId("[PROJECT]").enableGrpcGcpExtension().build();
+
+    GcpMetricsOptions metricsOptions =
+        GapicSpannerRpc.grpcGcpOptionsWithMetricsAndDcp(
+                options,
+                /* channelPrimer= */ null,
+                new GapicSpannerRpc.BuiltInChannelPoolMetrics(meter, "3"),
+                BuiltInMetricsConstant.LANE_DIRECTPATH)
+            .getMetricsOptions();
+
+    assertSame(meter, metricsOptions.getBuiltInMetricsMeter());
+    assertEquals(
+        Attributes.of(BuiltInMetricsConstant.LANE_KEY, BuiltInMetricsConstant.LANE_DIRECTPATH),
+        metricsOptions.getBuiltInMetricsAttributes());
+    assertEquals("3", metricsOptions.getBuiltInMetricsPoolIndex());
+  }
+
+  @Test
+  public void testBuiltInChannelPoolMetricsWithoutLane() {
+    SpannerOptions options =
+        SpannerOptions.newBuilder().setProjectId("[PROJECT]").enableGrpcGcpExtension().build();
+
+    GcpMetricsOptions metricsOptions =
+        GapicSpannerRpc.grpcGcpOptionsWithMetricsAndDcp(
+                options,
+                /* channelPrimer= */ null,
+                new GapicSpannerRpc.BuiltInChannelPoolMetrics(
+                    OpenTelemetry.noop().getMeter("grpc-gcp"), "1"),
+                /* lane= */ null)
+            .getMetricsOptions();
+
+    assertEquals(Attributes.empty(), metricsOptions.getBuiltInMetricsAttributes());
+  }
+
+  @Test
+  public void testApplicationCannotConfigureBuiltInChannelPoolMetrics() {
+    Meter applicationMeter = OpenTelemetry.noop().getMeter("application");
+    SpannerOptions options =
+        SpannerOptions.newBuilder()
+            .setProjectId("[PROJECT]")
+            .enableGrpcGcpExtension(
+                GcpManagedChannelOptions.newBuilder()
+                    .withMetricsOptions(
+                        GcpMetricsOptions.newBuilder()
+                            .withBuiltInMetrics(
+                                applicationMeter,
+                                Attributes.of(BuiltInMetricsConstant.LANE_KEY, "wrong"))
+                            .withBuiltInMetricsPoolIndex("9")
+                            .build())
+                    .build())
+            .build();
+    Meter builtInMeter = OpenTelemetry.noop().getMeter("grpc-gcp");
+
+    GcpMetricsOptions withoutBuiltInMetrics =
+        GapicSpannerRpc.grpcGcpOptionsWithMetricsAndDcp(
+                options,
+                /* channelPrimer= */ null,
+                /* builtInChannelPoolMetrics= */ null,
+                /* lane= */ null)
+            .getMetricsOptions();
+    GcpMetricsOptions withBuiltInMetrics =
+        GapicSpannerRpc.grpcGcpOptionsWithMetricsAndDcp(
+                options,
+                /* channelPrimer= */ null,
+                new GapicSpannerRpc.BuiltInChannelPoolMetrics(builtInMeter, "1"),
+                BuiltInMetricsConstant.LANE_CLOUDPATH)
+            .getMetricsOptions();
+
+    assertNull(withoutBuiltInMetrics.getBuiltInMetricsMeter());
+    assertEquals(Attributes.empty(), withoutBuiltInMetrics.getBuiltInMetricsAttributes());
+    assertNull(withoutBuiltInMetrics.getBuiltInMetricsPoolIndex());
+    assertSame(builtInMeter, withBuiltInMetrics.getBuiltInMetricsMeter());
+    assertEquals(
+        Attributes.of(BuiltInMetricsConstant.LANE_KEY, BuiltInMetricsConstant.LANE_CLOUDPATH),
+        withBuiltInMetrics.getBuiltInMetricsAttributes());
+    assertEquals("1", withBuiltInMetrics.getBuiltInMetricsPoolIndex());
   }
 
   @Test
