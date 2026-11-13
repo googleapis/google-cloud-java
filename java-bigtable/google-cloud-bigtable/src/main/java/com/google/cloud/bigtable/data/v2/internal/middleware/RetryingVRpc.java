@@ -249,6 +249,8 @@ public class RetryingVRpc<ReqT, RespT> implements VRpc<ReqT, RespT> {
                   Scheduled scheduled = new Scheduled(retryDelay);
                   onStateChange(scheduled);
                 } else {
+                  // Immediate retry for client-initiated retries or server RetryInfo with 0s
+                  // delay (e.g. after GOAWAY).
                   onStateChange(new Idle());
                 }
                 return;
@@ -297,9 +299,15 @@ public class RetryingVRpc<ReqT, RespT> implements VRpc<ReqT, RespT> {
           context.getOperationInfo().getDeadline().timeRemaining(TimeUnit.MILLISECONDS);
 
       // If the error has RetryInfo, it means it comes from the server and should
-      // be retried as long as there's time remaining after the backoff.
+      // be retried as long as the delay is non-negative and there's time remaining
+      // after the backoff. The server caps RetryInfo-directed attempts and may send
+      // a 0s delay (e.g. after GOAWAY) to request an immediate retry on another session.
       if (result.getRetryInfo() != null && result.getRetryInfo().hasRetryDelay()) {
-        long retryDelayMs = Durations.toMillis(result.getRetryInfo().getRetryDelay());
+        Duration retryDelay = result.getRetryInfo().getRetryDelay();
+        if (Durations.compare(retryDelay, Durations.ZERO) < 0) {
+          return false;
+        }
+        long retryDelayMs = Durations.toMillis(retryDelay);
         return timeRemainingMs - retryDelayMs > 1;
       }
 

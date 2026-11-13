@@ -521,4 +521,62 @@ public class RetryingVRpcTest {
     assertThat(vRpcException.getStatus().getCode()).isEqualTo(Status.Code.UNAVAILABLE);
     assertThat(attempts.get()).isEqualTo(1);
   }
+
+  @Test
+  void negativeRetryDelayNotRetried() {
+    AtomicInteger attempts = new AtomicInteger();
+    ErrorResponse.Builder errorBuilder =
+        ErrorResponse.newBuilder()
+            .setRpcId(1)
+            .setRetryInfo(RetryInfo.newBuilder().setRetryDelay(Durations.fromSeconds(-10)).build())
+            .setClusterInfo(ClusterInformation.getDefaultInstance());
+    errorBuilder
+        .getStatusBuilder()
+        .setCode(Code.UNAVAILABLE.getNumber())
+        .setMessage("server unavailable");
+    VRpc.VRpcResult negativeDelayResult = VRpc.VRpcResult.createServerError(errorBuilder.build());
+
+    RetryingVRpc<SessionFakeScriptedRequest, SessionFakeScriptedResponse> retrying =
+        new RetryingVRpc<>(
+            () ->
+                new VRpc<SessionFakeScriptedRequest, SessionFakeScriptedResponse>() {
+                  private boolean done;
+
+                  @Override
+                  public void start(
+                      SessionFakeScriptedRequest req,
+                      VRpcCallContext ctx,
+                      VRpcListener<SessionFakeScriptedResponse> listener) {
+                    attempts.incrementAndGet();
+                    done = true;
+                    ctx.getExecutor().execute(() -> listener.onClose(negativeDelayResult));
+                  }
+
+                  @Override
+                  public void cancel(String message, Throwable cause) {}
+
+                  @Override
+                  public boolean isDone() {
+                    return done;
+                  }
+
+                  @Override
+                  public void requestNext() {}
+                },
+            timer);
+
+    UnaryResponseFuture<SessionFakeScriptedResponse> f = new UnaryResponseFuture<>();
+    retrying.start(
+        SessionFakeScriptedRequest.getDefaultInstance(),
+        VRpc.VRpcCallContext.create(Deadline.after(0, TimeUnit.MILLISECONDS), true, tracer),
+        f);
+
+    ExecutionException executionException = assertThrows(ExecutionException.class, f::get);
+    assertThat(executionException.getCause()).isInstanceOf(VRpcException.class);
+    VRpcException vRpcException = (VRpcException) executionException.getCause();
+    assertThat(vRpcException.getStatus().getCode()).isEqualTo(Status.Code.UNAVAILABLE);
+    assertThat(vRpcException.getStatus().getDescription()).isEqualTo("server unavailable");
+    assertThat(vRpcException.getResult().getState()).isEqualTo(VRpc.VRpcResult.State.SERVER_RESULT);
+    assertThat(attempts.get()).isEqualTo(1);
+  }
 }
