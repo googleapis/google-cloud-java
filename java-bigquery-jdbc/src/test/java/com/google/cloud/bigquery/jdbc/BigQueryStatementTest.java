@@ -66,7 +66,6 @@ import com.google.cloud.bigquery.StandardSQLTypeName;
 import com.google.cloud.bigquery.TableId;
 import com.google.cloud.bigquery.TableResult;
 import com.google.cloud.bigquery.exception.BigQueryJdbcException;
-import com.google.cloud.bigquery.exception.BigQueryJdbcRuntimeException;
 import com.google.cloud.bigquery.jdbc.BigQueryStatement.JobIdWrapper;
 import com.google.cloud.bigquery.spi.BigQueryRpcFactory;
 import com.google.cloud.bigquery.storage.v1.ArrowRecordBatch;
@@ -80,7 +79,6 @@ import com.google.cloud.bigquery.storage.v1.ReadSession;
 import com.google.cloud.bigquery.storage.v1.ReadStream;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Maps;
-import com.google.protobuf.ByteString;
 import io.opentelemetry.api.baggage.Baggage;
 import io.opentelemetry.api.common.AttributeKey;
 import io.opentelemetry.api.trace.Span;
@@ -1396,9 +1394,10 @@ public class BigQueryStatementTest {
                 ReadStream.newBuilder().setName("projects/p/locations/l/sessions/s/streams/0"))
             .build();
 
-    // Each response must carry rows; responses without rows are dropped by the producer.
     ReadRowsResponse batchResponse =
-        ReadRowsResponse.newBuilder().setArrowRecordBatch(NON_EMPTY_BATCH).setRowCount(1).build();
+        ReadRowsResponse.newBuilder()
+            .setArrowRecordBatch(ArrowRecordBatch.getDefaultInstance())
+            .build();
 
     CountDownLatch secondBatchReturnedLatch = new CountDownLatch(1);
     AtomicBoolean streamCancelled = new AtomicBoolean(false);
@@ -1894,60 +1893,5 @@ public class BigQueryStatementTest {
     QueryStatistics stats = childJob.getStatistics();
     doReturn(mock(ScriptStatistics.class)).when(stats).getScriptStatistics();
     return childJob;
-  }
-
-  private static final ArrowRecordBatch NON_EMPTY_BATCH =
-      ArrowRecordBatch.newBuilder()
-          .setSerializedRecordBatch(ByteString.copyFromUtf8("rows"))
-          .build();
-
-  @Test
-  public void testEnqueueReadRowsResponseQueuesBatchWithSchemaAndRowCount()
-      throws InterruptedException {
-    BlockingQueue<BigQueryArrowBatchWrapper> queue = new LinkedBlockingDeque<>();
-    ReadRowsResponse response =
-        ReadRowsResponse.newBuilder()
-            .setArrowSchema(arrowSchema)
-            .setArrowRecordBatch(NON_EMPTY_BATCH)
-            .setRowCount(5)
-            .build();
-
-    BigQueryStatement.enqueueReadRowsResponse(response, queue);
-
-    BigQueryArrowBatchWrapper wrapper = queue.poll();
-    assertEquals(NON_EMPTY_BATCH, wrapper.getCurrentArrowBatch());
-    assertEquals(arrowSchema, wrapper.getArrowSchema());
-    assertTrue(queue.isEmpty());
-  }
-
-  @Test
-  public void testEnqueueReadRowsResponseWithoutRowsForwardsOnlySchema()
-      throws InterruptedException {
-    BlockingQueue<BigQueryArrowBatchWrapper> queue = new LinkedBlockingDeque<>();
-
-    // Statistics-only response and zero-row batch: nothing to queue.
-    BigQueryStatement.enqueueReadRowsResponse(ReadRowsResponse.getDefaultInstance(), queue);
-    BigQueryStatement.enqueueReadRowsResponse(
-        ReadRowsResponse.newBuilder().setArrowRecordBatch(NON_EMPTY_BATCH).build(), queue);
-    assertTrue(queue.isEmpty());
-
-    // Schema-only response: the schema is forwarded without a batch.
-    BigQueryStatement.enqueueReadRowsResponse(
-        ReadRowsResponse.newBuilder().setArrowSchema(arrowSchema).build(), queue);
-    BigQueryArrowBatchWrapper wrapper = queue.poll();
-    assertNull(wrapper.getCurrentArrowBatch());
-    assertEquals(arrowSchema, wrapper.getArrowSchema());
-    assertTrue(queue.isEmpty());
-  }
-
-  @Test
-  public void testEnqueueReadRowsResponseRejectsRowsWithoutBatch() {
-    BlockingQueue<BigQueryArrowBatchWrapper> queue = new LinkedBlockingDeque<>();
-    ReadRowsResponse response = ReadRowsResponse.newBuilder().setRowCount(3).build();
-
-    assertThrows(
-        BigQueryJdbcRuntimeException.class,
-        () -> BigQueryStatement.enqueueReadRowsResponse(response, queue));
-    assertTrue(queue.isEmpty());
   }
 }

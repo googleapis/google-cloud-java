@@ -326,8 +326,10 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
   }
 
   /**
-   * Loads the next batch into the vectors, skipping schema-only messages. Returns false at the end
-   * of the stream.
+   * Loads the next batch that has rows into the vectors. The reader queues every message as-is, so
+   * this is the single place that decides what to use: messages without rows (schema, statistics or
+   * throttling updates) are skipped, and the stream must deliver all {@code totalRows} rows.
+   * Returns false at the end of the stream.
    */
   private boolean loadNextBatch() throws SQLException, InterruptedException {
     while (true) {
@@ -343,23 +345,26 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
           this.vectorSchemaRoot.clear();
         }
         this.hasReachedEnd = true;
+        if (this.rowCount < this.totalRows) {
+          throw new BigQueryJdbcException(
+              String.format(
+                  "The Arrow stream ended after %d of %d rows.", this.rowCount, this.totalRows));
+        }
         return false;
       }
       initDeserializerIfNeeded(batchWrapper.getArrowSchema());
       ArrowRecordBatch arrowBatch = batchWrapper.getCurrentArrowBatch();
-      if (arrowBatch == null) {
-        continue; // schema-only message
+      if (arrowBatch == null || arrowBatch.getSerializedRecordBatch().isEmpty()) {
+        continue; // no rows in this message
       }
       if (this.arrowDeserializer == null) {
         throw new BigQueryJdbcException("Received an Arrow record batch before its schema.");
       }
       // Populates vectorSchemaRoot
       this.arrowDeserializer.deserializeArrowBatch(arrowBatch);
-      if (this.vectorSchemaRoot.getRowCount() == 0) {
-        // Only batches reported as non-empty are queued, so this means corrupt data.
-        throw new BigQueryJdbcException("Received an Arrow record batch with no rows.");
+      if (this.vectorSchemaRoot.getRowCount() > 0) {
+        return true;
       }
-      return true;
     }
   }
 

@@ -877,16 +877,37 @@ public class BigQueryArrowResultSetTest {
   }
 
   @Test
-  public void testZeroRowBatchIsAnError() throws SQLException, IOException {
+  public void testMessagesWithoutRowsAreSkipped() throws SQLException, IOException {
+    BigQueryArrowBatchWrapper noBatch = BigQueryArrowBatchWrapper.of(null);
+    BigQueryArrowBatchWrapper emptyBatch =
+        BigQueryArrowBatchWrapper.of(ArrowRecordBatch.getDefaultInstance());
     BigQueryArrowResultSet rs =
         idResultSet(
-            idArrowSchema(), 3, idWrapper(1, 2), idWrapper(), idWrapper(3), arrowBatchWrapperLast);
+            idArrowSchema(),
+            3,
+            idWrapper(1, 2),
+            noBatch,
+            idWrapper(),
+            emptyBatch,
+            idWrapper(3),
+            arrowBatchWrapperLast);
 
     assertThat(rs.next()).isTrue();
     assertThat(rs.next()).isTrue();
-    assertThat(rs.getLong(1)).isEqualTo(2L);
-    // Only batches reported as non-empty are queued, so a zero-row batch means corrupt data.
-    assertThrows(SQLException.class, rs::next);
+    assertThat(rs.next()).isTrue();
+    assertThat(rs.getLong(1)).isEqualTo(3L);
+    assertThat(rs.next()).isFalse();
+  }
+
+  @Test
+  public void testStreamEndingBeforeTotalRowsThrows() throws SQLException, IOException {
+    BigQueryArrowResultSet rs =
+        idResultSet(idArrowSchema(), 3, idWrapper(1, 2), arrowBatchWrapperLast);
+
+    assertThat(rs.next()).isTrue();
+    assertThat(rs.next()).isTrue();
+    SQLException e = assertThrows(SQLException.class, rs::next);
+    assertThat(e.getCause().getMessage()).contains("ended after 2 of 3 rows");
   }
 
   @Test
