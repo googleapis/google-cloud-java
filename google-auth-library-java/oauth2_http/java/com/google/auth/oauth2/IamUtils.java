@@ -168,10 +168,7 @@ class IamUtils {
         response, LOGGER_PROVIDER, "Received response for signature to sign the blob");
     int statusCode = response.getStatusCode();
     if (statusCode >= 400 && statusCode < HttpStatusCodes.STATUS_CODE_SERVER_ERROR) {
-      GenericData responseError = response.parseAs(GenericData.class);
-      Map<String, Object> error =
-          OAuth2Utils.validateMap(responseError, "error", PARSE_ERROR_MESSAGE);
-      String errorMessage = OAuth2Utils.validateString(error, "message", PARSE_ERROR_MESSAGE);
+      String errorMessage = parseErrorMessage(response);
       throw new IOException(
           String.format(
               "Error code %s trying to sign provided bytes: %s", statusCode, errorMessage));
@@ -195,6 +192,25 @@ class IamUtils {
     LoggingUtils.logResponsePayload(
         responseData, LOGGER_PROVIDER, "Response payload for sign blob");
     return OAuth2Utils.validateString(responseData, "signedBlob", PARSE_ERROR_SIGNATURE);
+  }
+
+  /**
+   * Returns the error message from an IAM Credentials 4xx response.
+   *
+   * <p>The response can have no content. For example, {@code HttpURLConnection} (used by {@code
+   * NetHttpTransport}) discards the body of a 401 response to a request sent in streaming mode,
+   * which includes every POST with content. In that case, the HTTP status message is returned
+   * instead of failing with a {@link NullPointerException} while parsing.
+   */
+  private static String parseErrorMessage(HttpResponse response) throws IOException {
+    if (response.getContent() == null) {
+      String statusMessage = response.getStatusMessage();
+      return statusMessage != null ? statusMessage : "(no error details in the response)";
+    }
+    GenericData responseError = response.parseAs(GenericData.class);
+    Map<String, Object> error =
+        OAuth2Utils.validateMap(responseError, "error", PARSE_ERROR_MESSAGE);
+    return OAuth2Utils.validateString(error, "message", PARSE_ERROR_MESSAGE);
   }
 
   /**
@@ -257,10 +273,7 @@ class IamUtils {
     LoggingUtils.logResponse(response, LOGGER_PROVIDER, "Received response for ID token request");
     int statusCode = response.getStatusCode();
     if (statusCode >= 400 && statusCode < HttpStatusCodes.STATUS_CODE_SERVER_ERROR) {
-      GenericData responseError = response.parseAs(GenericData.class);
-      Map<String, Object> error =
-          OAuth2Utils.validateMap(responseError, "error", PARSE_ERROR_MESSAGE);
-      String errorMessage = OAuth2Utils.validateString(error, "message", PARSE_ERROR_MESSAGE);
+      String errorMessage = parseErrorMessage(response);
       throw new IOException(
           String.format("Error code %s trying to getIDToken: %s", statusCode, errorMessage));
     }
