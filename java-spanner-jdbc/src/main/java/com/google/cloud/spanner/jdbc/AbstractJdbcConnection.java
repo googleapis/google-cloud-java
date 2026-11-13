@@ -162,8 +162,12 @@ abstract class AbstractJdbcConnection extends AbstractJdbcWrapper
     if (isolationLevel == IsolationLevel.ISOLATION_LEVEL_UNSPECIFIED) {
       return JdbcDatabaseMetaData.getDatabaseDefaultTransactionIsolation(getDatabaseClient());
     }
-    //noinspection MagicConstant
-    return IsolationLevelConverter.convertToJdbc(isolationLevel);
+    try {
+      //noinspection MagicConstant
+      return IsolationLevelConverter.convertToJdbc(isolationLevel);
+    } catch (IllegalArgumentException e) {
+      throw JdbcSqlExceptionFactory.of(e.getMessage(), Code.INVALID_ARGUMENT, e);
+    }
   }
 
   @Override
