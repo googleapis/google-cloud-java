@@ -16,18 +16,21 @@
 
 package com.google.cloud.spanner.connection;
 
-import static com.google.cloud.spanner.connection.ConnectionOptionsTest.runWithSystemPropertyEnabled;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThrows;
 
 import com.google.api.gax.core.CredentialsProvider;
 import com.google.auth.Credentials;
 import com.google.auth.oauth2.AccessToken;
 import com.google.auth.oauth2.OAuth2Credentials;
+import com.google.cloud.spanner.ErrorCode;
+import com.google.cloud.spanner.SpannerException;
+import com.google.cloud.spanner.Statement;
 import io.grpc.ManagedChannelBuilder;
 import java.io.ObjectStreamException;
 import java.util.Date;
 import java.util.concurrent.atomic.AtomicInteger;
-import org.junit.BeforeClass;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -36,8 +39,8 @@ import org.junit.runners.JUnit4;
 public class CredentialsProviderTest extends AbstractMockServerTest {
   private static final AtomicInteger COUNTER = new AtomicInteger();
 
-  @BeforeClass
-  public static void resetCounter() {
+  @Before
+  public void resetCounter() {
     COUNTER.set(0);
   }
 
@@ -72,7 +75,7 @@ public class CredentialsProviderTest extends AbstractMockServerTest {
     }
   }
 
-  static final class TestCredentialsProvider implements CredentialsProvider {
+  public static final class TestCredentialsProvider implements CredentialsProvider {
     @Override
     public Credentials getCredentials() {
       return new TestCredentials(COUNTER.incrementAndGet());
@@ -81,7 +84,7 @@ public class CredentialsProviderTest extends AbstractMockServerTest {
 
   @Test
   public void testCredentialsProvider() throws Throwable {
-    runWithSystemPropertyEnabled(
+    ConnectionOptionsTest.runWithSystemPropertyEnabled(
         ConnectionOptions.ENABLE_CREDENTIALS_PROVIDER_SYSTEM_PROPERTY,
         () -> {
           ConnectionOptions options =
@@ -152,5 +155,28 @@ public class CredentialsProviderTest extends AbstractMockServerTest {
             assertEquals(2, credentials.id);
           }
         });
+  }
+
+  @Test
+  public void testSetCredentialsProviderStatementIsNotSupported() {
+    ConnectionOptions options =
+        ConnectionOptions.newBuilder()
+            .setUri(
+                String.format(
+                    "cloudspanner://localhost:%d/projects/proj/instances/inst/databases/db?usePlainText=true",
+                    getPort()))
+            .build();
+    try (Connection connection = options.getConnection()) {
+      SpannerException exception =
+          assertThrows(
+              SpannerException.class,
+              () ->
+                  connection.execute(
+                      Statement.of(
+                          String.format(
+                              "SET credentialsProvider = '%s'",
+                              TestCredentialsProvider.class.getName()))));
+      assertEquals(ErrorCode.INVALID_ARGUMENT, exception.getErrorCode());
+    }
   }
 }
