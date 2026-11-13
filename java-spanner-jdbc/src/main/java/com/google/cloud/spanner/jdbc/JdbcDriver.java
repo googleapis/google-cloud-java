@@ -25,6 +25,7 @@ import com.google.cloud.spanner.connection.ConnectionOptions;
 import com.google.cloud.spanner.connection.ConnectionOptionsHelper;
 import com.google.cloud.spanner.connection.ConnectionProperty;
 import com.google.common.annotations.VisibleForTesting;
+import com.google.common.base.Strings;
 import com.google.common.base.Suppliers;
 import com.google.rpc.Code;
 import io.opentelemetry.api.OpenTelemetry;
@@ -35,12 +36,13 @@ import java.sql.DriverPropertyInfo;
 import java.sql.SQLException;
 import java.sql.SQLFeatureNotSupportedException;
 import java.sql.SQLWarning;
-import java.util.Map.Entry;
+import java.util.Map;
 import java.util.Properties;
 import java.util.function.Supplier;
 import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import org.jspecify.annotations.Nullable;
 
 /**
  * JDBC {@link Driver} for Google Cloud Spanner.
@@ -140,6 +142,8 @@ public class JdbcDriver implements Driver {
    */
   public static final String OPEN_TELEMETRY_PROPERTY_KEY = "openTelemetry";
 
+  private static final String USER_PROPERTY_NAME = "user";
+
   private static final String JDBC_API_CLIENT_LIB_TOKEN = "sp-jdbc";
   // Updated to version 2 when upgraded to Java 8 (JDBC 4.2)
   static final int MAJOR_VERSION = 2;
@@ -218,21 +222,29 @@ public class JdbcDriver implements Driver {
   public JdbcDriver() {}
 
   @Override
-  public Connection connect(String url, Properties info) throws SQLException {
+  public @Nullable Connection connect(String url, @Nullable Properties info) throws SQLException {
     if (url != null && (url.startsWith("jdbc:cloudspanner") || url.startsWith("jdbc:spanner"))) {
       try {
         Matcher matcher = URL_PATTERN.matcher(url);
         Matcher matcherSpannerOmni = SPANNER_OMNI_URL_PATTERN.matcher(url);
         if (matcher.matches() || matcherSpannerOmni.matches()) {
-          // strip 'jdbc:' from the URL, add any extra properties and pass on to the generic
+          // strip 'jdbc:' from the URL, apply any extra properties and pass on to the generic
           // Connection API. Also set the user-agent if we detect that the connection
           // comes from known framework like Hibernate, and there is no other user-agent set.
-          maybeAddUserAgent(info);
-          String connectionUri = appendPropertiesToUrl(url.substring(5), info);
-          ConnectionOptions options = buildConnectionOptions(connectionUri, info);
+          Properties properties = copyProperties(info);
+          maybeAddUserAgent(properties);
+          String connectionUri = url.substring(5);
+          ConnectionOptions.Builder builder =
+              ConnectionOptions.newBuilder().setTracingPrefix("JDBC").setUri(connectionUri);
+          String extraPropertyWarnings =
+              ConnectionOptionsHelper.applyProperties(builder, connectionUri, properties);
+          ConnectionOptions options = buildConnectionOptions(builder, connectionUri, properties);
           JdbcConnection connection = new JdbcConnection(url, options);
-          if (options.getWarnings() != null) {
+          if (hasMeaningfulWarning(options.getWarnings())) {
             connection.pushWarning(new SQLWarning(options.getWarnings()));
+          }
+          if (extraPropertyWarnings != null) {
+            connection.pushWarning(new SQLWarning(extraPropertyWarnings));
           }
           return connection;
         }
@@ -248,29 +260,105 @@ public class JdbcDriver implements Driver {
     return null;
   }
 
-  static ConnectionOptions buildConnectionOptions(String connectionUrl, Properties info) {
+  static ConnectionOptions buildConnectionOptions(String connectionUrl, @Nullable Properties info) {
     ConnectionOptions.Builder builder =
         ConnectionOptions.newBuilder().setTracingPrefix("JDBC").setUri(connectionUrl);
-    if (info.containsKey(OPEN_TELEMETRY_PROPERTY_KEY)
-        && info.get(OPEN_TELEMETRY_PROPERTY_KEY) instanceof OpenTelemetry) {
-      builder.setOpenTelemetry((OpenTelemetry) info.get(OPEN_TELEMETRY_PROPERTY_KEY));
+    ConnectionOptionsHelper.applyProperties(builder, connectionUrl, info);
+    return buildConnectionOptions(builder, connectionUrl, info);
+  }
+
+  private static ConnectionOptions buildConnectionOptions(
+      ConnectionOptions.Builder builder, String connectionUrl, @Nullable Properties info) {
+    if (info != null) {
+      OpenTelemetry openTelemetry = getOpenTelemetryFromInfo(info);
+      if (openTelemetry != null) {
+        builder.setOpenTelemetry(openTelemetry);
+      }
     }
     // Enable multiplexed sessions by default for the JDBC driver.
     builder.setSessionPoolOptions(
         SessionPoolOptionsHelper.useMultiplexedSessions(SessionPoolOptions.newBuilder()).build());
     // Enable direct executor for JDBC, as we don't use the async API.
     builder =
-        ConnectionOptionsHelper.useDirectExecutorIfNotUseVirtualThreads(connectionUrl, builder);
+        ConnectionOptionsHelper.useDirectExecutorIfNotUseVirtualThreads(
+            connectionUrl, info, builder);
     return builder.build();
   }
 
-  static void maybeAddUserAgent(Properties properties) {
-    if (properties.containsKey("userAgent")) {
+  @Nullable
+  private static OpenTelemetry getOpenTelemetryFromInfo(@Nullable Properties info) {
+    if (info == null) {
+      return null;
+    }
+    for (Map.Entry<Object, Object> entry : info.entrySet()) {
+      if (entry.getKey() instanceof String
+          && OPEN_TELEMETRY_PROPERTY_KEY.equalsIgnoreCase((String) entry.getKey())
+          && entry.getValue() instanceof OpenTelemetry) {
+        return (OpenTelemetry) entry.getValue();
+      }
+    }
+    return null;
+  }
+
+  static Properties copyProperties(@Nullable Properties info) {
+    Properties properties = new Properties();
+    if (info != null) {
+      for (Map.Entry<Object, Object> entry : info.entrySet()) {
+        properties.put(entry.getKey(), entry.getValue());
+      }
+      boolean hasUserOrUsername =
+          containsKeyIgnoreCase(properties, ConnectionOptions.USERNAME_PROPERTY_NAME)
+              || containsKeyIgnoreCase(properties, USER_PROPERTY_NAME);
+      if (!hasUserOrUsername) {
+        String defaultUsernameKey =
+            findKeyIgnoreCase(info, ConnectionOptions.USERNAME_PROPERTY_NAME);
+        if (defaultUsernameKey != null) {
+          properties.setProperty(defaultUsernameKey, info.getProperty(defaultUsernameKey));
+        } else {
+          String defaultUserKey = findKeyIgnoreCase(info, USER_PROPERTY_NAME);
+          if (defaultUserKey != null) {
+            properties.setProperty(defaultUserKey, info.getProperty(defaultUserKey));
+          }
+        }
+      }
+      for (String stringName : info.stringPropertyNames()) {
+        if (USER_PROPERTY_NAME.equalsIgnoreCase(stringName)
+            || ConnectionOptions.USERNAME_PROPERTY_NAME.equalsIgnoreCase(stringName)) {
+          continue;
+        }
+        if (!containsKeyIgnoreCase(properties, stringName)) {
+          properties.setProperty(stringName, info.getProperty(stringName));
+        }
+      }
+    }
+    return properties;
+  }
+
+  private static @Nullable String findKeyIgnoreCase(Properties properties, String key) {
+    for (String stringName : properties.stringPropertyNames()) {
+      if (stringName.equalsIgnoreCase(key)) {
+        return stringName;
+      }
+    }
+    return null;
+  }
+
+  static void maybeAddUserAgent(@Nullable Properties properties) {
+    if (properties == null || containsKeyIgnoreCase(properties, "userAgent")) {
       return;
     }
     if (isHibernate()) {
       properties.setProperty("userAgent", "sp-hib");
     }
+  }
+
+  private static boolean containsKeyIgnoreCase(Properties properties, String key) {
+    for (Object name : properties.keySet()) {
+      if (name instanceof String && ((String) name).equalsIgnoreCase(key)) {
+        return true;
+      }
+    }
+    return false;
   }
 
   private static final Supplier<Boolean> isHibernate =
@@ -308,14 +396,15 @@ public class JdbcDriver implements Driver {
     return isHibernate.get();
   }
 
-  static String appendPropertiesToUrl(String url, Properties info) {
-    StringBuilder res = new StringBuilder(url);
-    for (Entry<Object, Object> entry : info.entrySet()) {
-      if (entry.getValue() instanceof String && !"".equals(entry.getValue())) {
-        res.append(";").append(entry.getKey()).append("=").append(entry.getValue());
-      }
+  private static boolean hasMeaningfulWarning(@Nullable String warning) {
+    if (Strings.isNullOrEmpty(warning)) {
+      return false;
     }
-    return res.toString();
+    String prefix = "Invalid properties found in connection URI:";
+    if (warning.startsWith(prefix)) {
+      warning = warning.substring(prefix.length());
+    }
+    return !Strings.isNullOrEmpty(warning.trim());
   }
 
   @Override
@@ -324,16 +413,19 @@ public class JdbcDriver implements Driver {
   }
 
   @Override
-  public DriverPropertyInfo[] getPropertyInfo(String url, Properties info) {
-    String connectionUri = appendPropertiesToUrl(url.substring(5), info);
-    DriverPropertyInfo[] res =
+  public DriverPropertyInfo[] getPropertyInfo(String url, @Nullable Properties info) {
+    String connectionUri = url.substring(5);
+    Map<String, Object> properties =
+        info == null ? null : ConnectionOptionsHelper.collectProperties(info);
+    DriverPropertyInfo[] results =
         new DriverPropertyInfo[ConnectionPropertiesHelper.VALID_CONNECTION_PROPERTIES.size()];
-    int i = 0;
-    for (ConnectionProperty<?> prop : ConnectionPropertiesHelper.VALID_CONNECTION_PROPERTIES) {
-      res[i] = ConnectionPropertiesHelper.toDriverPropertyInfo(connectionUri, prop);
-      i++;
+    int index = 0;
+    for (ConnectionProperty<?> property : ConnectionPropertiesHelper.VALID_CONNECTION_PROPERTIES) {
+      results[index] =
+          ConnectionPropertiesHelper.toDriverPropertyInfo(connectionUri, properties, property);
+      index++;
     }
-    return res;
+    return results;
   }
 
   @Override

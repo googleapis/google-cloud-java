@@ -16,10 +16,10 @@
 
 package com.google.cloud.spanner.jdbc;
 
-import static com.google.cloud.spanner.jdbc.JdbcDriver.appendPropertiesToUrl;
 import static com.google.cloud.spanner.jdbc.JdbcDriver.buildConnectionOptions;
 import static com.google.cloud.spanner.jdbc.JdbcDriver.maybeAddUserAgent;
 
+import com.google.cloud.spanner.SpannerException;
 import com.google.cloud.spanner.connection.ConnectionOptions;
 import com.google.rpc.Code;
 import java.io.PrintWriter;
@@ -91,8 +91,15 @@ public class JdbcDataSource extends AbstractJdbcWrapper implements DataSource {
           }
           Properties properties = createProperties();
           maybeAddUserAgent(properties);
-          String connectionUri = appendPropertiesToUrl(url.substring(5), properties);
-          cachedConnectionOptions = buildConnectionOptions(connectionUri, properties);
+          try {
+            cachedConnectionOptions = buildConnectionOptions(getUrl().substring(5), properties);
+          } catch (SpannerException e) {
+            throw JdbcSqlExceptionFactory.of(e);
+          } catch (IllegalArgumentException e) {
+            throw JdbcSqlExceptionFactory.of(e.getMessage(), Code.INVALID_ARGUMENT, e);
+          } catch (Exception e) {
+            throw JdbcSqlExceptionFactory.of(e.getMessage(), Code.UNKNOWN, e);
+          }
         }
       }
     }
@@ -105,23 +112,24 @@ public class JdbcDataSource extends AbstractJdbcWrapper implements DataSource {
   }
 
   private Properties createProperties() {
-    Properties props = new Properties();
+    Properties properties = new Properties();
     if (this.credentials != null) {
-      props.setProperty(ConnectionOptions.CREDENTIALS_PROPERTY_NAME, this.credentials);
+      properties.setProperty(ConnectionOptions.CREDENTIALS_PROPERTY_NAME, this.credentials);
     }
     if (this.autocommit != null) {
-      props.setProperty(
+      properties.setProperty(
           ConnectionOptions.AUTOCOMMIT_PROPERTY_NAME, String.valueOf(this.autocommit));
     }
     if (this.readonly != null) {
-      props.setProperty(ConnectionOptions.READONLY_PROPERTY_NAME, String.valueOf(this.readonly));
+      properties.setProperty(
+          ConnectionOptions.READONLY_PROPERTY_NAME, String.valueOf(this.readonly));
     }
     if (this.retryAbortsInternally != null) {
-      props.setProperty(
+      properties.setProperty(
           ConnectionOptions.RETRY_ABORTS_INTERNALLY_PROPERTY_NAME,
           String.valueOf(this.retryAbortsInternally));
     }
-    return props;
+    return properties;
   }
 
   @Override
