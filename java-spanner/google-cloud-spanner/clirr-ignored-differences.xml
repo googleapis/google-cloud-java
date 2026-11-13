@@ -1167,4 +1167,9 @@
     <className>com/google/cloud/spanner/DatabaseClient</className>
     <method>com.google.spanner.v1.TransactionOptions$IsolationLevel getDatabaseDefaultIsolationLevel()</method>
   </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/cloud/spanner/DatabaseClient</className>
+    <method>java.lang.String getDatabaseDefaultIsolationLevelValue()</method>
+  </difference>
 </differences>
