@@ -29,6 +29,7 @@
  */
 package com.google.api.gax.rpc;
 
+import com.google.common.base.Preconditions;
 import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
 
@@ -137,6 +138,32 @@ public class ApiExceptionFactory {
       case UNKNOWN: // Fall through.
       default:
         return new UnknownException(message, cause, statusCode, retryable, errorDetails);
+    }
+  }
+
+  static ApiException createException(
+      @Nullable String message,
+      @Nullable Throwable cause,
+      StatusCode.Code code,
+      boolean retryable) {
+    return createException(message, cause, new CodeOnlyStatusCode(code), retryable);
+  }
+
+  private static final class CodeOnlyStatusCode implements StatusCode {
+    private final StatusCode.Code code;
+
+    private CodeOnlyStatusCode(StatusCode.Code code) {
+      this.code = Preconditions.checkNotNull(code, "code cannot be null");
+    }
+
+    @Override
+    public StatusCode.Code getCode() {
+      return code;
+    }
+
+    @Override
+    public @Nullable Object getTransportCode() {
+      return null;
     }
   }
 }

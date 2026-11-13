@@ -298,7 +298,7 @@ final class ResumableUploadFutureImpl<ResponseT> implements ResumableUploadFutur
     }
     fail(
         ApiExceptionFactory.createException(
-            message, null, statusCodeOf(StatusCode.Code.DEADLINE_EXCEEDED), false));
+            message, null, StatusCode.Code.DEADLINE_EXCEEDED, false));
   }
 
   private void succeed(@Nullable ResponseT result) {
@@ -356,8 +356,7 @@ final class ResumableUploadFutureImpl<ResponseT> implements ResumableUploadFutur
           apiException.isRetryable(),
           apiException.getErrorDetails());
     }
-    return ApiExceptionFactory.createException(
-        message, t, statusCodeOf(StatusCode.Code.UNKNOWN), false);
+    return ApiExceptionFactory.createException(message, t, StatusCode.Code.UNKNOWN, false);
   }
 
   static int alignChunkSize(int configuredChunkSize, int chunkGranularity) {
@@ -437,19 +436,5 @@ final class ResumableUploadFutureImpl<ResponseT> implements ResumableUploadFutur
   public ResponseT get(long timeout, TimeUnit unit)
       throws InterruptedException, ExecutionException, TimeoutException {
     return resultFuture.get(timeout, unit);
-  }
-
-  private static StatusCode statusCodeOf(StatusCode.Code code) {
-    return new StatusCode() {
-      @Override
-      public StatusCode.Code getCode() {
-        return code;
-      }
-
-      @Override
-      public @Nullable Object getTransportCode() {
-        return null;
-      }
-    };
   }
 }
