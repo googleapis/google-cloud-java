@@ -771,9 +771,17 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     return null;
   }
 
-  void handleQueryResult(String query, TableResult results, SqlType queryType)
-      throws SQLException, InterruptedException {
-    handleQueryResult(query, results, queryType, null);
+  SqlType handleQueryResult(String query, Job job) throws SQLException, InterruptedException {
+    JobStatistics statistics = job.getStatistics();
+    StatementType statementType =
+        (statistics instanceof QueryStatistics)
+            ? ((QueryStatistics) statistics).getStatementType()
+            : null;
+    SqlType sqlType = getQueryType(job.getConfiguration(), statementType);
+    TableResult results =
+        job.getQueryResults(QueryResultsOption.pageSize(querySettings.getMaxResultPerPage()));
+    handleQueryResult(query, results, sqlType, job);
+    return sqlType;
   }
 
   void handleQueryResult(String query, TableResult results, SqlType queryType, Job job)
@@ -819,10 +827,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
           if (currentJob == null) {
             return;
           }
-          StatementType statementType =
-              ((QueryStatistics) (currentJob.getStatistics())).getStatementType();
-          SqlType sqlType = getQueryType(currentJob.getConfiguration(), statementType);
-          handleQueryResult(query, currentJob.getQueryResults(), sqlType, currentJob);
+          handleQueryResult(query, currentJob);
         } catch (NullPointerException ex) {
           throw new BigQueryJdbcException(ex);
         }
@@ -1847,12 +1852,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
 
       Job currentJob = getNextJob();
       if (currentJob != null) {
-        StatementType statementType =
-            ((QueryStatistics) (currentJob.getStatistics())).getStatementType();
-        SqlType sqlType = getQueryType(currentJob.getConfiguration(), statementType);
-        handleQueryResult(this.scriptQuery, currentJob.getQueryResults(), sqlType, currentJob);
-
-        return sqlType == SqlType.SELECT;
+        return handleQueryResult(this.scriptQuery, currentJob) == SqlType.SELECT;
       } else {
         resetStatementFields();
         return false;
