@@ -110,7 +110,7 @@ public class GrpcCallableFactory {
         new TracedUnaryCallable<>(
             callable,
             clientContext.getTracerFactory(),
-            getApiTracerContext(grpcCallSettings.getMethodDescriptor()),
+            getApiTracerContext(grpcCallSettings),
             grpcCallSettings.getResourceNameExtractor());
 
     return callable.withDefaultCallContext(clientContext.getDefaultCallContext());
@@ -160,7 +160,7 @@ public class GrpcCallableFactory {
         new TracedBatchingCallable<>(
             baseCallable,
             clientContext.getTracerFactory(),
-            getApiTracerContext(grpcCallSettings.getMethodDescriptor()),
+            getApiTracerContext(grpcCallSettings),
             batchingCallSettings.getBatchingDescriptor());
 
     UnaryCallable<RequestT, ResponseT> batchingCallable =
@@ -186,7 +186,7 @@ public class GrpcCallableFactory {
           ClientContext clientContext,
           OperationsStub operationsStub) {
 
-    ApiTracerContext tracerContext = getApiTracerContext(grpcCallSettings.getMethodDescriptor());
+    ApiTracerContext tracerContext = getApiTracerContext(grpcCallSettings);
     SpanName initialSpanName = SpanName.of(tracerContext);
     SpanName operationSpanName =
         SpanName.of(initialSpanName.getClientName(), initialSpanName.getMethodName() + "Operation");
@@ -235,9 +235,7 @@ public class GrpcCallableFactory {
 
     callable =
         new TracedBidiCallable<>(
-            callable,
-            clientContext.getTracerFactory(),
-            getApiTracerContext(grpcCallSettings.getMethodDescriptor()));
+            callable, clientContext.getTracerFactory(), getApiTracerContext(grpcCallSettings));
 
     return callable.withDefaultCallContext(clientContext.getDefaultCallContext());
   }
@@ -293,9 +291,7 @@ public class GrpcCallableFactory {
 
     callable =
         new TracedServerStreamingCallable<>(
-            callable,
-            clientContext.getTracerFactory(),
-            getApiTracerContext(grpcCallSettings.getMethodDescriptor()));
+            callable, clientContext.getTracerFactory(), getApiTracerContext(grpcCallSettings));
 
     return callable.withDefaultCallContext(clientContext.getDefaultCallContext());
   }
@@ -321,19 +317,36 @@ public class GrpcCallableFactory {
 
     callable =
         new TracedClientStreamingCallable<>(
-            callable,
-            clientContext.getTracerFactory(),
-            getApiTracerContext(grpcCallSettings.getMethodDescriptor()));
+            callable, clientContext.getTracerFactory(), getApiTracerContext(grpcCallSettings));
 
     return callable.withDefaultCallContext(clientContext.getDefaultCallContext());
   }
 
+  /**
+   * Builds an {@link ApiTracerContext} from the given {@link GrpcCallSettings}, including the
+   * method descriptor and Java method name.
+   */
+  static ApiTracerContext getApiTracerContext(GrpcCallSettings<?, ?> grpcCallSettings) {
+    return getApiTracerContextBuilder(grpcCallSettings.getMethodDescriptor())
+        .setJavaMethodName(grpcCallSettings.getJavaMethodName())
+        .build();
+  }
+
+  /** Builds an {@link ApiTracerContext} from the given gRPC {@link MethodDescriptor}. */
   @VisibleForTesting
   static ApiTracerContext getApiTracerContext(MethodDescriptor<?, ?> methodDescriptor) {
+    return getApiTracerContextBuilder(methodDescriptor).build();
+  }
+
+  /**
+   * Creates an {@link ApiTracerContext.Builder} populated with common gRPC transport and method
+   * descriptor fields.
+   */
+  private static ApiTracerContext.Builder getApiTracerContextBuilder(
+      MethodDescriptor<?, ?> methodDescriptor) {
     return ApiTracerContext.newBuilder()
         .setFullMethodName(methodDescriptor.getFullMethodName())
         .setTransport(ApiTracerContext.Transport.GRPC)
-        .setLibraryMetadata(LibraryMetadata.empty())
-        .build();
+        .setLibraryMetadata(LibraryMetadata.empty());
   }
 }

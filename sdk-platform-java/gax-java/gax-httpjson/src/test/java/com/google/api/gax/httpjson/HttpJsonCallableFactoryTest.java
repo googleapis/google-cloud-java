@@ -35,6 +35,7 @@ import static org.mockito.Mockito.mock;
 
 import com.google.api.client.http.HttpMethods;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.LibraryMetadata;
 import com.google.api.gax.rpc.ResumableUploadCallable;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.tracing.ApiTracerContext;
@@ -80,6 +81,36 @@ class HttpJsonCallableFactoryTest {
       assertThat(actual.getClientName()).isEqualTo(entry.getValue().getClientName());
       assertThat(actual.getMethodName()).isEqualTo(entry.getValue().getMethodName());
     }
+  }
+
+  @Test
+  void testGetApiTracerContextWithHttpJsonCallSettings() {
+    @SuppressWarnings("unchecked")
+    ApiMethodDescriptor<String, String> descriptor =
+        ApiMethodDescriptor.<String, String>newBuilder()
+            .setFullMethodName("google.cloud.service.v1.CoolService/CoolRPC")
+            .setHttpMethod(HttpMethods.POST)
+            .setRequestFormatter(createMockRequestFormatter())
+            .setResponseParser(
+                mock(HttpResponseParser.class, Mockito.withSettings().withoutAnnotations()))
+            .build();
+
+    HttpJsonCallSettings<String, String> httpJsonCallSettings =
+        HttpJsonCallSettings.<String, String>newBuilder()
+            .setMethodDescriptor(descriptor)
+            .setJavaMethodName("coolRpc")
+            .build();
+
+    assertThat(HttpJsonCallableFactory.getApiTracerContext(httpJsonCallSettings))
+        .isEqualTo(
+            ApiTracerContext.newBuilder()
+                .setFullMethodName("google.cloud.service.v1.CoolService/CoolRPC")
+                .setHttpMethod(HttpMethods.POST)
+                .setHttpPathTemplate("test/path/template")
+                .setTransport(ApiTracerContext.Transport.HTTP)
+                .setLibraryMetadata(LibraryMetadata.empty())
+                .setJavaMethodName("coolRpc")
+                .build());
   }
 
   @Test

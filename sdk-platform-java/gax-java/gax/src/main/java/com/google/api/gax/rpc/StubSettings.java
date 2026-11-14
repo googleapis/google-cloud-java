@@ -255,6 +255,17 @@ public abstract class StubSettings<SettingsT extends StubSettings<SettingsT>> {
     return LibraryMetadata.empty();
   }
 
+  /**
+   * Returns the fully qualified Java client class name (e.g.
+   * "com.google.cloud.secretmanager.v1.SecretManagerServiceClient").
+   *
+   * <p>This should be effectively treated as an abstract method.
+   */
+  @InternalApi
+  protected @Nullable String getJavaClientName() {
+    return null;
+  }
+
   @Override
   public String toString() {
     return MoreObjects.toStringHelper(this)
