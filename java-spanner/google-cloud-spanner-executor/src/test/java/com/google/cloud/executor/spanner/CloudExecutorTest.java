@@ -60,11 +60,7 @@ public class CloudExecutorTest {
         ErrorDetails.builder().setRawErrorMessages(ImmutableList.of(Any.pack(errorInfo))).build();
     ApiException apiException =
         ApiExceptionFactory.createException(
-            "Internal failure",
-            null,
-            GrpcStatusCode.of(Status.Code.INTERNAL),
-            false,
-            errorDetails);
+            "Internal failure", null, GrpcStatusCode.of(Status.Code.INTERNAL), false, errorDetails);
     SpannerException exception = SpannerExceptionFactory.newSpannerException(apiException);
 
     Status status = executor.toStatus(exception);
