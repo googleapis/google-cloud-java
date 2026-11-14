@@ -49,6 +49,9 @@
             "CreateWorkspace": {
               "methods": ["createWorkspace", "createWorkspace", "createWorkspace", "createWorkspaceCallable"]
             },
+            "CreateWorkspaceLongRunning": {
+              "methods": ["createWorkspaceLongRunningAsync", "createWorkspaceLongRunningAsync", "createWorkspaceLongRunningAsync", "createWorkspaceLongRunningOperationCallable", "createWorkspaceLongRunningCallable"]
+            },
             "DeleteFolder": {
               "methods": ["deleteFolder", "deleteFolder", "deleteFolder", "deleteFolderCallable"]
             },
