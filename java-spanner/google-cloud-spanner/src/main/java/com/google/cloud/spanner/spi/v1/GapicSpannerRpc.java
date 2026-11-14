@@ -327,9 +327,11 @@ public class GapicSpannerRpc implements SpannerRpc {
   private final int numChannels;
   private final boolean isGrpcGcpExtensionEnabled;
   private final boolean isDynamicChannelPoolEnabled;
+  private final SessionSourceRegistry sessionRegistry = new SessionSourceRegistry();
   @Nullable private final KeyAwareChannel keyAwareChannel;
   @Nullable private final GcpManagedChannel grpcGcpChannel;
   @Nullable private final DynamicChannelPoolPrimer channelPrimer;
+  @Nullable private final GcpFallbackProber fallbackProber;
 
   private final GrpcCallContext baseGrpcCallContext;
 
@@ -395,17 +397,18 @@ public class GapicSpannerRpc implements SpannerRpc {
     if (initializeStubs) {
       CredentialsProvider credentialsProvider =
           GrpcTransportOptions.setUpCredentialsProvider(options);
+      boolean useGcpFallback =
+          options.getChannelProvider() == null
+              && isEnableDirectAccess
+              && options.isEnableGcpFallback();
       this.channelPrimer = createChannelPrimer(options, credentialsProvider);
+      this.fallbackProber = createFallbackProber(options, useGcpFallback);
 
       InstantiatingGrpcChannelProvider.Builder defaultChannelProviderBuilder =
           createBaseChannelProviderBuilder(
               options, headerProviderWithUserAgent, isEnableDirectAccess);
       GrpcGcpEndpointChannelConfigurator endpointChannelConfigurator =
           createGrpcGcpEndpointChannelConfigurator(defaultChannelProviderBuilder, options);
-      boolean useGcpFallback =
-          options.getChannelProvider() == null
-              && isEnableDirectAccess
-              && options.isEnableGcpFallback();
       if (useGcpFallback) {
         setupGcpFallback(
             defaultChannelProviderBuilder,
@@ -609,6 +612,7 @@ public class GapicSpannerRpc implements SpannerRpc {
       this.keyAwareChannel = null;
       this.grpcGcpChannel = null;
       this.channelPrimer = null;
+      this.fallbackProber = null;
       this.databaseAdminStub = null;
       this.instanceAdminStub = null;
       this.spannerStub = null;
@@ -631,10 +635,7 @@ public class GapicSpannerRpc implements SpannerRpc {
     return Collections.unmodifiableList(fallbackStates);
   }
 
-  /**
-   * Creates a fallback state that is shared by all fallback channels of one grpc-gcp pool, and is
-   * shut down with this rpc.
-   */
+  /** Creates a shared fallback state that is shut down with this rpc. */
   private GcpFallbackState newFallbackState() {
     GcpFallbackState fallbackState = new GcpFallbackState();
     fallbackStates.add(fallbackState);
@@ -650,12 +651,21 @@ public class GapicSpannerRpc implements SpannerRpc {
       GcpFallbackOpenTelemetry fallbackTelemetry,
       int minFailedCalls,
       @Nullable GcpFallbackState fallbackState) {
-    return GcpFallbackChannelOptions.newBuilder()
-        .setSharedState(fallbackState)
-        .setMinFailedCalls(minFailedCalls)
-        .setPeriod(Duration.ofMinutes(3))
-        .setGcpFallbackOpenTelemetry(fallbackTelemetry)
-        .build();
+    GcpFallbackChannelOptions.Builder builder =
+        GcpFallbackChannelOptions.newBuilder()
+            .setSharedState(fallbackState)
+            .setMinFailedCalls(minFailedCalls)
+            .setPeriod(Duration.ofMinutes(3))
+            .setGcpFallbackOpenTelemetry(fallbackTelemetry);
+    if (fallbackProber != null) {
+      builder
+          .setPrimaryProbingFunction(fallbackProber)
+          .setPrimaryProbingInterval(Duration.ofMinutes(1))
+          .setMinPrimaryProbeSuccessCount(20)
+          .setMinPrimaryProbeSuccessDuration(Duration.ofMinutes(10))
+          .setEnableRecovery(true);
+    }
+    return builder.build();
   }
 
   @VisibleForTesting
@@ -761,6 +771,10 @@ public class GapicSpannerRpc implements SpannerRpc {
     if (options.isGrpcGcpExtensionEnabled()) {
       defaultChannelProviderBuilder.setPoolSize(1);
     }
+    final GcpFallbackState gaxPoolFallbackState =
+        !options.isGrpcGcpExtensionEnabled() && options.isEnableGcpFallbackRecovery()
+            ? newFallbackState()
+            : null;
     defaultChannelProviderBuilder.setChannelConfigurator(
         directPathBuilder -> {
           ManagedChannelBuilder builder = directPathBuilder;
@@ -777,30 +791,31 @@ public class GapicSpannerRpc implements SpannerRpc {
 
           return options.isEnableGcpFallbackRecovery()
               ? wrapFallbackChannelsInGrpcGcpPool(
-                  options, builder, cloudPathBuilder, fallbackTelemetry, channelPrimer)
+                  options,
+                  builder,
+                  cloudPathBuilder,
+                  fallbackTelemetry,
+                  channelPrimer,
+                  gaxPoolFallbackState)
               : wrapGrpcGcpPoolsInFallbackChannel(
                   options, builder, cloudPathBuilder, fallbackTelemetry, channelPrimer);
         });
   }
 
-  /**
-   * Returns a builder for one grpc-gcp pool of fallback channels. All fallback channels of the pool
-   * share one fallback state. Without the grpc-gcp extension there is no pool, so this builds plain
-   * fallback channels that each own their state.
-   */
   private ManagedChannelBuilder<?> wrapFallbackChannelsInGrpcGcpPool(
       SpannerOptions options,
       ManagedChannelBuilder<?> directPathBuilder,
       ManagedChannelBuilder<?> cloudPathBuilder,
       GcpFallbackOpenTelemetry fallbackTelemetry,
-      @Nullable DynamicChannelPoolPrimer channelPrimer) {
+      @Nullable DynamicChannelPoolPrimer channelPrimer,
+      @Nullable GcpFallbackState gaxPoolFallbackState) {
     boolean usePool = options.isGrpcGcpExtensionEnabled();
     ManagedChannelBuilder<?> fallbackChannelBuilder =
         new FallbackChannelBuilder(
             directPathBuilder,
             cloudPathBuilder,
             createFallbackChannelOptions(
-                fallbackTelemetry, 1, usePool ? newFallbackState() : null));
+                fallbackTelemetry, 1, usePool ? newFallbackState() : gaxPoolFallbackState));
     return usePool
         ? wrapInGrpcGcpPool(fallbackChannelBuilder, options, channelPrimer)
         : fallbackChannelBuilder;
@@ -919,6 +934,7 @@ public class GapicSpannerRpc implements SpannerRpc {
       return null;
     }
     return new DynamicChannelPoolPrimer(
+        sessionRegistry,
         metadataProvider,
         projectName,
         requestIdCreator,
@@ -926,6 +942,20 @@ public class GapicSpannerRpc implements SpannerRpc {
         // The options already contain the merged prime timeout, including a user-provided one.
         DynamicChannelPoolPrimer.rpcDeadlineFor(
             options.getGcpChannelPoolOptions().getChannelPrimeTimeout()));
+  }
+
+  @Nullable
+  private GcpFallbackProber createFallbackProber(SpannerOptions options, boolean useGcpFallback) {
+    if (!useGcpFallback || !options.isEnableGcpFallbackRecovery()) {
+      return null;
+    }
+    return new GcpFallbackProber(
+        sessionRegistry,
+        metadataProvider,
+        projectName,
+        requestIdCreator,
+        callCredentialsProvider,
+        GcpFallbackProber.DEFAULT_PROBE_DEADLINE);
   }
 
   @VisibleForTesting
@@ -954,6 +984,17 @@ public class GapicSpannerRpc implements SpannerRpc {
   @Nullable
   DynamicChannelPoolPrimer getChannelPrimer() {
     return channelPrimer;
+  }
+
+  @VisibleForTesting
+  @Nullable
+  GcpFallbackProber getFallbackProber() {
+    return fallbackProber;
+  }
+
+  @VisibleForTesting
+  SessionSourceRegistry getSessionRegistry() {
+    return sessionRegistry;
   }
 
   // Enhance gRPC-GCP options with metrics and dynamic channel pool configuration.
@@ -2167,16 +2208,12 @@ public class GapicSpannerRpc implements SpannerRpc {
 
   @Override
   public void registerChannelPrimeSessionSource(ChannelPrimeSessionSource source) {
-    if (channelPrimer != null) {
-      channelPrimer.registerPrimeSessionSource(source);
-    }
+    sessionRegistry.register(source);
   }
 
   @Override
   public void unregisterChannelPrimeSessionSource(ChannelPrimeSessionSource source) {
-    if (channelPrimer != null) {
-      channelPrimer.unregisterPrimeSessionSource(source);
-    }
+    sessionRegistry.unregister(source);
   }
 
   @Override
