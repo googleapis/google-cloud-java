@@ -214,6 +214,32 @@ public final class UpdateServiceRequest extends com.google.protobuf.GeneratedMes
     return allowMissing_;
   }
 
+  public static final int FORCE_NEW_REVISION_FIELD_NUMBER = 5;
+  private boolean forceNewRevision_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If set to true, a new revision will be created from the template
+   * even if the system doesn't detect any changes from the previously deployed
+   * revision.
+   *
+   * This may be useful for cases where the underlying resources need to be
+   * recreated or reinitialized. For example if the image is specified by label,
+   * but the underlying image digest has changed) or if the container performs
+   * deployment initialization work that needs to be performed again.
+   * </pre>
+   *
+   * <code>bool force_new_revision = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The forceNewRevision.
+   */
+  @java.lang.Override
+  public boolean getForceNewRevision() {
+    return forceNewRevision_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -240,6 +266,9 @@ public final class UpdateServiceRequest extends com.google.protobuf.GeneratedMes
     if (allowMissing_ != false) {
       output.writeBool(4, allowMissing_);
     }
+    if (forceNewRevision_ != false) {
+      output.writeBool(5, forceNewRevision_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -260,6 +289,9 @@ public final class UpdateServiceRequest extends com.google.protobuf.GeneratedMes
     }
     if (allowMissing_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(4, allowMissing_);
+    }
+    if (forceNewRevision_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(5, forceNewRevision_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -287,6 +319,7 @@ public final class UpdateServiceRequest extends com.google.protobuf.GeneratedMes
     }
     if (getValidateOnly() != other.getValidateOnly()) return false;
     if (getAllowMissing() != other.getAllowMissing()) return false;
+    if (getForceNewRevision() != other.getForceNewRevision()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -310,6 +343,8 @@ public final class UpdateServiceRequest extends com.google.protobuf.GeneratedMes
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getValidateOnly());
     hash = (37 * hash) + ALLOW_MISSING_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAllowMissing());
+    hash = (37 * hash) + FORCE_NEW_REVISION_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getForceNewRevision());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -472,6 +507,7 @@ public final class UpdateServiceRequest extends com.google.protobuf.GeneratedMes
       }
       validateOnly_ = false;
       allowMissing_ = false;
+      forceNewRevision_ = false;
       return this;
     }
 
@@ -523,6 +559,9 @@ public final class UpdateServiceRequest extends com.google.protobuf.GeneratedMes
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.allowMissing_ = allowMissing_;
       }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.forceNewRevision_ = forceNewRevision_;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -549,6 +588,9 @@ public final class UpdateServiceRequest extends com.google.protobuf.GeneratedMes
       }
       if (other.getAllowMissing() != false) {
         setAllowMissing(other.getAllowMissing());
+      }
+      if (other.getForceNewRevision() != false) {
+        setForceNewRevision(other.getForceNewRevision());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -601,6 +643,12 @@ public final class UpdateServiceRequest extends com.google.protobuf.GeneratedMes
                 bitField0_ |= 0x00000008;
                 break;
               } // case 32
+            case 40:
+              {
+                forceNewRevision_ = input.readBool();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 40
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1139,6 +1187,83 @@ public final class UpdateServiceRequest extends com.google.protobuf.GeneratedMes
     public Builder clearAllowMissing() {
       bitField0_ = (bitField0_ & ~0x00000008);
       allowMissing_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean forceNewRevision_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set to true, a new revision will be created from the template
+     * even if the system doesn't detect any changes from the previously deployed
+     * revision.
+     *
+     * This may be useful for cases where the underlying resources need to be
+     * recreated or reinitialized. For example if the image is specified by label,
+     * but the underlying image digest has changed) or if the container performs
+     * deployment initialization work that needs to be performed again.
+     * </pre>
+     *
+     * <code>bool force_new_revision = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The forceNewRevision.
+     */
+    @java.lang.Override
+    public boolean getForceNewRevision() {
+      return forceNewRevision_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set to true, a new revision will be created from the template
+     * even if the system doesn't detect any changes from the previously deployed
+     * revision.
+     *
+     * This may be useful for cases where the underlying resources need to be
+     * recreated or reinitialized. For example if the image is specified by label,
+     * but the underlying image digest has changed) or if the container performs
+     * deployment initialization work that needs to be performed again.
+     * </pre>
+     *
+     * <code>bool force_new_revision = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The forceNewRevision to set.
+     * @return This builder for chaining.
+     */
+    public Builder setForceNewRevision(boolean value) {
+
+      forceNewRevision_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set to true, a new revision will be created from the template
+     * even if the system doesn't detect any changes from the previously deployed
+     * revision.
+     *
+     * This may be useful for cases where the underlying resources need to be
+     * recreated or reinitialized. For example if the image is specified by label,
+     * but the underlying image digest has changed) or if the container performs
+     * deployment initialization work that needs to be performed again.
+     * </pre>
+     *
+     * <code>bool force_new_revision = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearForceNewRevision() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      forceNewRevision_ = false;
       onChanged();
       return this;
     }

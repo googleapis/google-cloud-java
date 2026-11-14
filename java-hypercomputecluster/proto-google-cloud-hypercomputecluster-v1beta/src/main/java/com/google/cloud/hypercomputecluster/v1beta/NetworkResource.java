@@ -123,10 +123,12 @@ public final class NetworkResource extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Reference to a network in Google Compute Engine.
+   * Output only. A reference to a network in Google Compute Engine.
    * </pre>
    *
-   * <code>.google.cloud.hypercomputecluster.v1beta.NetworkReference network = 3;</code>
+   * <code>
+   * .google.cloud.hypercomputecluster.v1beta.NetworkReference network = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the network field is set.
    */
@@ -139,10 +141,12 @@ public final class NetworkResource extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Reference to a network in Google Compute Engine.
+   * Output only. A reference to a network in Google Compute Engine.
    * </pre>
    *
-   * <code>.google.cloud.hypercomputecluster.v1beta.NetworkReference network = 3;</code>
+   * <code>
+   * .google.cloud.hypercomputecluster.v1beta.NetworkReference network = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The network.
    */
@@ -158,10 +162,12 @@ public final class NetworkResource extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Reference to a network in Google Compute Engine.
+   * Output only. A reference to a network in Google Compute Engine.
    * </pre>
    *
-   * <code>.google.cloud.hypercomputecluster.v1beta.NetworkReference network = 3;</code>
+   * <code>
+   * .google.cloud.hypercomputecluster.v1beta.NetworkReference network = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.hypercomputecluster.v1beta.NetworkReferenceOrBuilder
@@ -656,10 +662,12 @@ public final class NetworkResource extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Reference to a network in Google Compute Engine.
+     * Output only. A reference to a network in Google Compute Engine.
      * </pre>
      *
-     * <code>.google.cloud.hypercomputecluster.v1beta.NetworkReference network = 3;</code>
+     * <code>
+     * .google.cloud.hypercomputecluster.v1beta.NetworkReference network = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return Whether the network field is set.
      */
@@ -672,10 +680,12 @@ public final class NetworkResource extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Reference to a network in Google Compute Engine.
+     * Output only. A reference to a network in Google Compute Engine.
      * </pre>
      *
-     * <code>.google.cloud.hypercomputecluster.v1beta.NetworkReference network = 3;</code>
+     * <code>
+     * .google.cloud.hypercomputecluster.v1beta.NetworkReference network = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The network.
      */
@@ -698,10 +708,12 @@ public final class NetworkResource extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Reference to a network in Google Compute Engine.
+     * Output only. A reference to a network in Google Compute Engine.
      * </pre>
      *
-     * <code>.google.cloud.hypercomputecluster.v1beta.NetworkReference network = 3;</code>
+     * <code>
+     * .google.cloud.hypercomputecluster.v1beta.NetworkReference network = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setNetwork(com.google.cloud.hypercomputecluster.v1beta.NetworkReference value) {
       if (networkBuilder_ == null) {
@@ -721,10 +733,12 @@ public final class NetworkResource extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Reference to a network in Google Compute Engine.
+     * Output only. A reference to a network in Google Compute Engine.
      * </pre>
      *
-     * <code>.google.cloud.hypercomputecluster.v1beta.NetworkReference network = 3;</code>
+     * <code>
+     * .google.cloud.hypercomputecluster.v1beta.NetworkReference network = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setNetwork(
         com.google.cloud.hypercomputecluster.v1beta.NetworkReference.Builder builderForValue) {
@@ -742,10 +756,12 @@ public final class NetworkResource extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Reference to a network in Google Compute Engine.
+     * Output only. A reference to a network in Google Compute Engine.
      * </pre>
      *
-     * <code>.google.cloud.hypercomputecluster.v1beta.NetworkReference network = 3;</code>
+     * <code>
+     * .google.cloud.hypercomputecluster.v1beta.NetworkReference network = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder mergeNetwork(
         com.google.cloud.hypercomputecluster.v1beta.NetworkReference value) {
@@ -778,10 +794,12 @@ public final class NetworkResource extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Reference to a network in Google Compute Engine.
+     * Output only. A reference to a network in Google Compute Engine.
      * </pre>
      *
-     * <code>.google.cloud.hypercomputecluster.v1beta.NetworkReference network = 3;</code>
+     * <code>
+     * .google.cloud.hypercomputecluster.v1beta.NetworkReference network = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearNetwork() {
       if (networkBuilder_ == null) {
@@ -804,10 +822,12 @@ public final class NetworkResource extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Reference to a network in Google Compute Engine.
+     * Output only. A reference to a network in Google Compute Engine.
      * </pre>
      *
-     * <code>.google.cloud.hypercomputecluster.v1beta.NetworkReference network = 3;</code>
+     * <code>
+     * .google.cloud.hypercomputecluster.v1beta.NetworkReference network = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.hypercomputecluster.v1beta.NetworkReference.Builder
         getNetworkBuilder() {
@@ -818,10 +838,12 @@ public final class NetworkResource extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Reference to a network in Google Compute Engine.
+     * Output only. A reference to a network in Google Compute Engine.
      * </pre>
      *
-     * <code>.google.cloud.hypercomputecluster.v1beta.NetworkReference network = 3;</code>
+     * <code>
+     * .google.cloud.hypercomputecluster.v1beta.NetworkReference network = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     @java.lang.Override
     public com.google.cloud.hypercomputecluster.v1beta.NetworkReferenceOrBuilder
@@ -840,10 +862,12 @@ public final class NetworkResource extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Reference to a network in Google Compute Engine.
+     * Output only. A reference to a network in Google Compute Engine.
      * </pre>
      *
-     * <code>.google.cloud.hypercomputecluster.v1beta.NetworkReference network = 3;</code>
+     * <code>
+     * .google.cloud.hypercomputecluster.v1beta.NetworkReference network = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilder<
             com.google.cloud.hypercomputecluster.v1beta.NetworkReference,

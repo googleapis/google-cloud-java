@@ -1584,6 +1584,15 @@ public interface Connection extends AutoCloseable {
     throw new UnsupportedOperationException("Not implemented");
   }
 
+  /**
+   * @return the isolation level of the current transaction. This method may only be called when the
+   *     connection is in a transaction.
+   */
+  @InternalApi
+  default IsolationLevel getTransactionIsolationLevel() {
+    throw new UnsupportedOperationException("Not implemented");
+  }
+
   /** The {@link Spanner} instance that is used by this {@link Connection}. */
   @InternalApi
   default Spanner getSpanner() {

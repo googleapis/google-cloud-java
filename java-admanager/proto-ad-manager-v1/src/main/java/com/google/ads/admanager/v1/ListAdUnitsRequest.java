@@ -228,10 +228,17 @@ public final class ListAdUnitsRequest extends com.google.protobuf.GeneratedMessa
    * See syntax details at
    * https://developers.google.com/ad-manager/api/beta/filters
    *
+   * Syntax summary: double-quoted `"..."` (never `'...'`) strings and RFC 3339
+   * timestamps, full resource names on reference fields (for example, `order =
+   * "networks/123/orders/456"`, not `*Id` or bare IDs), prefix or suffix `*`
+   * wildcards with `=` (`displayName = "foo*"`), `:` for substring or
+   * repeated-field matching, unquoted enums and booleans, uppercase
+   * `AND`/`OR`/`NOT`, and standalone `IN(field, SET(v1, v2))` (not `field IN
+   * (...)`).
+   *
    * **Filterable fields:**
    *
    * * `adUnitCode`
-   * * `adUnitSizes.canonicalName`
    * * `displayName`
    * * `effectiveAdsenseEnabled`
    * * `explicitlyTargeted`
@@ -269,10 +276,17 @@ public final class ListAdUnitsRequest extends com.google.protobuf.GeneratedMessa
    * See syntax details at
    * https://developers.google.com/ad-manager/api/beta/filters
    *
+   * Syntax summary: double-quoted `"..."` (never `'...'`) strings and RFC 3339
+   * timestamps, full resource names on reference fields (for example, `order =
+   * "networks/123/orders/456"`, not `*Id` or bare IDs), prefix or suffix `*`
+   * wildcards with `=` (`displayName = "foo*"`), `:` for substring or
+   * repeated-field matching, unquoted enums and booleans, uppercase
+   * `AND`/`OR`/`NOT`, and standalone `IN(field, SET(v1, v2))` (not `field IN
+   * (...)`).
+   *
    * **Filterable fields:**
    *
    * * `adUnitCode`
-   * * `adUnitSizes.canonicalName`
    * * `displayName`
    * * `effectiveAdsenseEnabled`
    * * `explicitlyTargeted`
@@ -1135,10 +1149,17 @@ public final class ListAdUnitsRequest extends com.google.protobuf.GeneratedMessa
      * See syntax details at
      * https://developers.google.com/ad-manager/api/beta/filters
      *
+     * Syntax summary: double-quoted `"..."` (never `'...'`) strings and RFC 3339
+     * timestamps, full resource names on reference fields (for example, `order =
+     * "networks/123/orders/456"`, not `*Id` or bare IDs), prefix or suffix `*`
+     * wildcards with `=` (`displayName = "foo*"`), `:` for substring or
+     * repeated-field matching, unquoted enums and booleans, uppercase
+     * `AND`/`OR`/`NOT`, and standalone `IN(field, SET(v1, v2))` (not `field IN
+     * (...)`).
+     *
      * **Filterable fields:**
      *
      * * `adUnitCode`
-     * * `adUnitSizes.canonicalName`
      * * `displayName`
      * * `effectiveAdsenseEnabled`
      * * `explicitlyTargeted`
@@ -1175,10 +1196,17 @@ public final class ListAdUnitsRequest extends com.google.protobuf.GeneratedMessa
      * See syntax details at
      * https://developers.google.com/ad-manager/api/beta/filters
      *
+     * Syntax summary: double-quoted `"..."` (never `'...'`) strings and RFC 3339
+     * timestamps, full resource names on reference fields (for example, `order =
+     * "networks/123/orders/456"`, not `*Id` or bare IDs), prefix or suffix `*`
+     * wildcards with `=` (`displayName = "foo*"`), `:` for substring or
+     * repeated-field matching, unquoted enums and booleans, uppercase
+     * `AND`/`OR`/`NOT`, and standalone `IN(field, SET(v1, v2))` (not `field IN
+     * (...)`).
+     *
      * **Filterable fields:**
      *
      * * `adUnitCode`
-     * * `adUnitSizes.canonicalName`
      * * `displayName`
      * * `effectiveAdsenseEnabled`
      * * `explicitlyTargeted`
@@ -1215,10 +1243,17 @@ public final class ListAdUnitsRequest extends com.google.protobuf.GeneratedMessa
      * See syntax details at
      * https://developers.google.com/ad-manager/api/beta/filters
      *
+     * Syntax summary: double-quoted `"..."` (never `'...'`) strings and RFC 3339
+     * timestamps, full resource names on reference fields (for example, `order =
+     * "networks/123/orders/456"`, not `*Id` or bare IDs), prefix or suffix `*`
+     * wildcards with `=` (`displayName = "foo*"`), `:` for substring or
+     * repeated-field matching, unquoted enums and booleans, uppercase
+     * `AND`/`OR`/`NOT`, and standalone `IN(field, SET(v1, v2))` (not `field IN
+     * (...)`).
+     *
      * **Filterable fields:**
      *
      * * `adUnitCode`
-     * * `adUnitSizes.canonicalName`
      * * `displayName`
      * * `effectiveAdsenseEnabled`
      * * `explicitlyTargeted`
@@ -1254,10 +1289,17 @@ public final class ListAdUnitsRequest extends com.google.protobuf.GeneratedMessa
      * See syntax details at
      * https://developers.google.com/ad-manager/api/beta/filters
      *
+     * Syntax summary: double-quoted `"..."` (never `'...'`) strings and RFC 3339
+     * timestamps, full resource names on reference fields (for example, `order =
+     * "networks/123/orders/456"`, not `*Id` or bare IDs), prefix or suffix `*`
+     * wildcards with `=` (`displayName = "foo*"`), `:` for substring or
+     * repeated-field matching, unquoted enums and booleans, uppercase
+     * `AND`/`OR`/`NOT`, and standalone `IN(field, SET(v1, v2))` (not `field IN
+     * (...)`).
+     *
      * **Filterable fields:**
      *
      * * `adUnitCode`
-     * * `adUnitSizes.canonicalName`
      * * `displayName`
      * * `effectiveAdsenseEnabled`
      * * `explicitlyTargeted`
@@ -1289,10 +1331,17 @@ public final class ListAdUnitsRequest extends com.google.protobuf.GeneratedMessa
      * See syntax details at
      * https://developers.google.com/ad-manager/api/beta/filters
      *
+     * Syntax summary: double-quoted `"..."` (never `'...'`) strings and RFC 3339
+     * timestamps, full resource names on reference fields (for example, `order =
+     * "networks/123/orders/456"`, not `*Id` or bare IDs), prefix or suffix `*`
+     * wildcards with `=` (`displayName = "foo*"`), `:` for substring or
+     * repeated-field matching, unquoted enums and booleans, uppercase
+     * `AND`/`OR`/`NOT`, and standalone `IN(field, SET(v1, v2))` (not `field IN
+     * (...)`).
+     *
      * **Filterable fields:**
      *
      * * `adUnitCode`
-     * * `adUnitSizes.canonicalName`
      * * `displayName`
      * * `effectiveAdsenseEnabled`
      * * `explicitlyTargeted`

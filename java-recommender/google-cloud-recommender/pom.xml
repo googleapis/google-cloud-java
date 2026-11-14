@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-recommender</artifactId>
-  <version>2.102.0</version><!-- {x-version-update:google-cloud-recommender:current} -->
+  <version>2.105.0</version><!-- {x-version-update:google-cloud-recommender:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud Recommender</name>
   <description>
@@ -12,7 +12,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-recommender-parent</artifactId>
-    <version>2.102.0</version><!-- {x-version-update:google-cloud-recommender:current} -->
+    <version>2.105.0</version><!-- {x-version-update:google-cloud-recommender:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-recommender</site.installationModule>
@@ -120,17 +120,6 @@
       <artifactId>gax-httpjson</artifactId>
       <classifier>testlib</classifier>
       <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>com.google.truth</groupId>
-      <artifactId>truth</artifactId>
-      <scope>test</scope>
-      <exclusions>
-        <exclusion>
-          <groupId>org.checkerframework</groupId>
-          <artifactId>checker-qual</artifactId>
-        </exclusion>
-      </exclusions>
     </dependency>
   </dependencies>
 </project>

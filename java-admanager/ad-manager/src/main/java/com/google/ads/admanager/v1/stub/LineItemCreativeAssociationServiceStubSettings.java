@@ -18,10 +18,23 @@ package com.google.ads.admanager.v1.stub;
 
 import static com.google.ads.admanager.v1.LineItemCreativeAssociationServiceClient.ListLineItemCreativeAssociationsPagedResponse;
 
+import com.google.ads.admanager.v1.BatchActivateLineItemCreativeAssociationsRequest;
+import com.google.ads.admanager.v1.BatchActivateLineItemCreativeAssociationsResponse;
+import com.google.ads.admanager.v1.BatchCreateLineItemCreativeAssociationsRequest;
+import com.google.ads.admanager.v1.BatchCreateLineItemCreativeAssociationsResponse;
+import com.google.ads.admanager.v1.BatchDeactivateLineItemCreativeAssociationsRequest;
+import com.google.ads.admanager.v1.BatchDeactivateLineItemCreativeAssociationsResponse;
+import com.google.ads.admanager.v1.BatchDeleteLineItemCreativeAssociationsRequest;
+import com.google.ads.admanager.v1.BatchUpdateLineItemCreativeAssociationsRequest;
+import com.google.ads.admanager.v1.BatchUpdateLineItemCreativeAssociationsResponse;
+import com.google.ads.admanager.v1.CreateLineItemCreativeAssociationRequest;
 import com.google.ads.admanager.v1.GetLineItemCreativeAssociationRequest;
 import com.google.ads.admanager.v1.LineItemCreativeAssociation;
 import com.google.ads.admanager.v1.ListLineItemCreativeAssociationsRequest;
 import com.google.ads.admanager.v1.ListLineItemCreativeAssociationsResponse;
+import com.google.ads.admanager.v1.PreviewLineItemCreativeAssociationRequest;
+import com.google.ads.admanager.v1.PreviewLineItemCreativeAssociationResponse;
+import com.google.ads.admanager.v1.UpdateLineItemCreativeAssociationRequest;
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ObsoleteApi;
@@ -49,6 +62,7 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
+import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
@@ -127,6 +141,33 @@ public class LineItemCreativeAssociationServiceStubSettings
           ListLineItemCreativeAssociationsResponse,
           ListLineItemCreativeAssociationsPagedResponse>
       listLineItemCreativeAssociationsSettings;
+  private final UnaryCallSettings<
+          CreateLineItemCreativeAssociationRequest, LineItemCreativeAssociation>
+      createLineItemCreativeAssociationSettings;
+  private final UnaryCallSettings<
+          BatchCreateLineItemCreativeAssociationsRequest,
+          BatchCreateLineItemCreativeAssociationsResponse>
+      batchCreateLineItemCreativeAssociationsSettings;
+  private final UnaryCallSettings<
+          UpdateLineItemCreativeAssociationRequest, LineItemCreativeAssociation>
+      updateLineItemCreativeAssociationSettings;
+  private final UnaryCallSettings<
+          BatchUpdateLineItemCreativeAssociationsRequest,
+          BatchUpdateLineItemCreativeAssociationsResponse>
+      batchUpdateLineItemCreativeAssociationsSettings;
+  private final UnaryCallSettings<
+          BatchActivateLineItemCreativeAssociationsRequest,
+          BatchActivateLineItemCreativeAssociationsResponse>
+      batchActivateLineItemCreativeAssociationsSettings;
+  private final UnaryCallSettings<
+          BatchDeactivateLineItemCreativeAssociationsRequest,
+          BatchDeactivateLineItemCreativeAssociationsResponse>
+      batchDeactivateLineItemCreativeAssociationsSettings;
+  private final UnaryCallSettings<BatchDeleteLineItemCreativeAssociationsRequest, Empty>
+      batchDeleteLineItemCreativeAssociationsSettings;
+  private final UnaryCallSettings<
+          PreviewLineItemCreativeAssociationRequest, PreviewLineItemCreativeAssociationResponse>
+      previewLineItemCreativeAssociationSettings;
 
   private static final PagedListDescriptor<
           ListLineItemCreativeAssociationsRequest,
@@ -223,6 +264,75 @@ public class LineItemCreativeAssociationServiceStubSettings
     return listLineItemCreativeAssociationsSettings;
   }
 
+  /** Returns the object with the settings used for calls to createLineItemCreativeAssociation. */
+  public UnaryCallSettings<CreateLineItemCreativeAssociationRequest, LineItemCreativeAssociation>
+      createLineItemCreativeAssociationSettings() {
+    return createLineItemCreativeAssociationSettings;
+  }
+
+  /**
+   * Returns the object with the settings used for calls to batchCreateLineItemCreativeAssociations.
+   */
+  public UnaryCallSettings<
+          BatchCreateLineItemCreativeAssociationsRequest,
+          BatchCreateLineItemCreativeAssociationsResponse>
+      batchCreateLineItemCreativeAssociationsSettings() {
+    return batchCreateLineItemCreativeAssociationsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateLineItemCreativeAssociation. */
+  public UnaryCallSettings<UpdateLineItemCreativeAssociationRequest, LineItemCreativeAssociation>
+      updateLineItemCreativeAssociationSettings() {
+    return updateLineItemCreativeAssociationSettings;
+  }
+
+  /**
+   * Returns the object with the settings used for calls to batchUpdateLineItemCreativeAssociations.
+   */
+  public UnaryCallSettings<
+          BatchUpdateLineItemCreativeAssociationsRequest,
+          BatchUpdateLineItemCreativeAssociationsResponse>
+      batchUpdateLineItemCreativeAssociationsSettings() {
+    return batchUpdateLineItemCreativeAssociationsSettings;
+  }
+
+  /**
+   * Returns the object with the settings used for calls to
+   * batchActivateLineItemCreativeAssociations.
+   */
+  public UnaryCallSettings<
+          BatchActivateLineItemCreativeAssociationsRequest,
+          BatchActivateLineItemCreativeAssociationsResponse>
+      batchActivateLineItemCreativeAssociationsSettings() {
+    return batchActivateLineItemCreativeAssociationsSettings;
+  }
+
+  /**
+   * Returns the object with the settings used for calls to
+   * batchDeactivateLineItemCreativeAssociations.
+   */
+  public UnaryCallSettings<
+          BatchDeactivateLineItemCreativeAssociationsRequest,
+          BatchDeactivateLineItemCreativeAssociationsResponse>
+      batchDeactivateLineItemCreativeAssociationsSettings() {
+    return batchDeactivateLineItemCreativeAssociationsSettings;
+  }
+
+  /**
+   * Returns the object with the settings used for calls to batchDeleteLineItemCreativeAssociations.
+   */
+  public UnaryCallSettings<BatchDeleteLineItemCreativeAssociationsRequest, Empty>
+      batchDeleteLineItemCreativeAssociationsSettings() {
+    return batchDeleteLineItemCreativeAssociationsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to previewLineItemCreativeAssociation. */
+  public UnaryCallSettings<
+          PreviewLineItemCreativeAssociationRequest, PreviewLineItemCreativeAssociationResponse>
+      previewLineItemCreativeAssociationSettings() {
+    return previewLineItemCreativeAssociationSettings;
+  }
+
   public LineItemCreativeAssociationServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
@@ -311,6 +421,22 @@ public class LineItemCreativeAssociationServiceStubSettings
         settingsBuilder.getLineItemCreativeAssociationSettings().build();
     listLineItemCreativeAssociationsSettings =
         settingsBuilder.listLineItemCreativeAssociationsSettings().build();
+    createLineItemCreativeAssociationSettings =
+        settingsBuilder.createLineItemCreativeAssociationSettings().build();
+    batchCreateLineItemCreativeAssociationsSettings =
+        settingsBuilder.batchCreateLineItemCreativeAssociationsSettings().build();
+    updateLineItemCreativeAssociationSettings =
+        settingsBuilder.updateLineItemCreativeAssociationSettings().build();
+    batchUpdateLineItemCreativeAssociationsSettings =
+        settingsBuilder.batchUpdateLineItemCreativeAssociationsSettings().build();
+    batchActivateLineItemCreativeAssociationsSettings =
+        settingsBuilder.batchActivateLineItemCreativeAssociationsSettings().build();
+    batchDeactivateLineItemCreativeAssociationsSettings =
+        settingsBuilder.batchDeactivateLineItemCreativeAssociationsSettings().build();
+    batchDeleteLineItemCreativeAssociationsSettings =
+        settingsBuilder.batchDeleteLineItemCreativeAssociationsSettings().build();
+    previewLineItemCreativeAssociationSettings =
+        settingsBuilder.previewLineItemCreativeAssociationSettings().build();
   }
 
   @Override
@@ -334,6 +460,33 @@ public class LineItemCreativeAssociationServiceStubSettings
             ListLineItemCreativeAssociationsResponse,
             ListLineItemCreativeAssociationsPagedResponse>
         listLineItemCreativeAssociationsSettings;
+    private final UnaryCallSettings.Builder<
+            CreateLineItemCreativeAssociationRequest, LineItemCreativeAssociation>
+        createLineItemCreativeAssociationSettings;
+    private final UnaryCallSettings.Builder<
+            BatchCreateLineItemCreativeAssociationsRequest,
+            BatchCreateLineItemCreativeAssociationsResponse>
+        batchCreateLineItemCreativeAssociationsSettings;
+    private final UnaryCallSettings.Builder<
+            UpdateLineItemCreativeAssociationRequest, LineItemCreativeAssociation>
+        updateLineItemCreativeAssociationSettings;
+    private final UnaryCallSettings.Builder<
+            BatchUpdateLineItemCreativeAssociationsRequest,
+            BatchUpdateLineItemCreativeAssociationsResponse>
+        batchUpdateLineItemCreativeAssociationsSettings;
+    private final UnaryCallSettings.Builder<
+            BatchActivateLineItemCreativeAssociationsRequest,
+            BatchActivateLineItemCreativeAssociationsResponse>
+        batchActivateLineItemCreativeAssociationsSettings;
+    private final UnaryCallSettings.Builder<
+            BatchDeactivateLineItemCreativeAssociationsRequest,
+            BatchDeactivateLineItemCreativeAssociationsResponse>
+        batchDeactivateLineItemCreativeAssociationsSettings;
+    private final UnaryCallSettings.Builder<BatchDeleteLineItemCreativeAssociationsRequest, Empty>
+        batchDeleteLineItemCreativeAssociationsSettings;
+    private final UnaryCallSettings.Builder<
+            PreviewLineItemCreativeAssociationRequest, PreviewLineItemCreativeAssociationResponse>
+        previewLineItemCreativeAssociationSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -364,10 +517,32 @@ public class LineItemCreativeAssociationServiceStubSettings
       getLineItemCreativeAssociationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listLineItemCreativeAssociationsSettings =
           PagedCallSettings.newBuilder(LIST_LINE_ITEM_CREATIVE_ASSOCIATIONS_PAGE_STR_FACT);
+      createLineItemCreativeAssociationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      batchCreateLineItemCreativeAssociationsSettings =
+          UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateLineItemCreativeAssociationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      batchUpdateLineItemCreativeAssociationsSettings =
+          UnaryCallSettings.newUnaryCallSettingsBuilder();
+      batchActivateLineItemCreativeAssociationsSettings =
+          UnaryCallSettings.newUnaryCallSettingsBuilder();
+      batchDeactivateLineItemCreativeAssociationsSettings =
+          UnaryCallSettings.newUnaryCallSettingsBuilder();
+      batchDeleteLineItemCreativeAssociationsSettings =
+          UnaryCallSettings.newUnaryCallSettingsBuilder();
+      previewLineItemCreativeAssociationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              getLineItemCreativeAssociationSettings, listLineItemCreativeAssociationsSettings);
+              getLineItemCreativeAssociationSettings,
+              listLineItemCreativeAssociationsSettings,
+              createLineItemCreativeAssociationSettings,
+              batchCreateLineItemCreativeAssociationsSettings,
+              updateLineItemCreativeAssociationSettings,
+              batchUpdateLineItemCreativeAssociationsSettings,
+              batchActivateLineItemCreativeAssociationsSettings,
+              batchDeactivateLineItemCreativeAssociationsSettings,
+              batchDeleteLineItemCreativeAssociationsSettings,
+              previewLineItemCreativeAssociationSettings);
       initDefaults(this);
     }
 
@@ -378,10 +553,35 @@ public class LineItemCreativeAssociationServiceStubSettings
           settings.getLineItemCreativeAssociationSettings.toBuilder();
       listLineItemCreativeAssociationsSettings =
           settings.listLineItemCreativeAssociationsSettings.toBuilder();
+      createLineItemCreativeAssociationSettings =
+          settings.createLineItemCreativeAssociationSettings.toBuilder();
+      batchCreateLineItemCreativeAssociationsSettings =
+          settings.batchCreateLineItemCreativeAssociationsSettings.toBuilder();
+      updateLineItemCreativeAssociationSettings =
+          settings.updateLineItemCreativeAssociationSettings.toBuilder();
+      batchUpdateLineItemCreativeAssociationsSettings =
+          settings.batchUpdateLineItemCreativeAssociationsSettings.toBuilder();
+      batchActivateLineItemCreativeAssociationsSettings =
+          settings.batchActivateLineItemCreativeAssociationsSettings.toBuilder();
+      batchDeactivateLineItemCreativeAssociationsSettings =
+          settings.batchDeactivateLineItemCreativeAssociationsSettings.toBuilder();
+      batchDeleteLineItemCreativeAssociationsSettings =
+          settings.batchDeleteLineItemCreativeAssociationsSettings.toBuilder();
+      previewLineItemCreativeAssociationSettings =
+          settings.previewLineItemCreativeAssociationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              getLineItemCreativeAssociationSettings, listLineItemCreativeAssociationsSettings);
+              getLineItemCreativeAssociationSettings,
+              listLineItemCreativeAssociationsSettings,
+              createLineItemCreativeAssociationSettings,
+              batchCreateLineItemCreativeAssociationsSettings,
+              updateLineItemCreativeAssociationSettings,
+              batchUpdateLineItemCreativeAssociationsSettings,
+              batchActivateLineItemCreativeAssociationsSettings,
+              batchDeactivateLineItemCreativeAssociationsSettings,
+              batchDeleteLineItemCreativeAssociationsSettings,
+              previewLineItemCreativeAssociationSettings);
     }
 
     private static Builder createDefault() {
@@ -404,6 +604,46 @@ public class LineItemCreativeAssociationServiceStubSettings
 
       builder
           .listLineItemCreativeAssociationsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .createLineItemCreativeAssociationSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .batchCreateLineItemCreativeAssociationsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .updateLineItemCreativeAssociationSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .batchUpdateLineItemCreativeAssociationsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .batchActivateLineItemCreativeAssociationsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .batchDeactivateLineItemCreativeAssociationsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .batchDeleteLineItemCreativeAssociationsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .previewLineItemCreativeAssociationSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -439,6 +679,82 @@ public class LineItemCreativeAssociationServiceStubSettings
             ListLineItemCreativeAssociationsPagedResponse>
         listLineItemCreativeAssociationsSettings() {
       return listLineItemCreativeAssociationsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createLineItemCreativeAssociation. */
+    public UnaryCallSettings.Builder<
+            CreateLineItemCreativeAssociationRequest, LineItemCreativeAssociation>
+        createLineItemCreativeAssociationSettings() {
+      return createLineItemCreativeAssociationSettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * batchCreateLineItemCreativeAssociations.
+     */
+    public UnaryCallSettings.Builder<
+            BatchCreateLineItemCreativeAssociationsRequest,
+            BatchCreateLineItemCreativeAssociationsResponse>
+        batchCreateLineItemCreativeAssociationsSettings() {
+      return batchCreateLineItemCreativeAssociationsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateLineItemCreativeAssociation. */
+    public UnaryCallSettings.Builder<
+            UpdateLineItemCreativeAssociationRequest, LineItemCreativeAssociation>
+        updateLineItemCreativeAssociationSettings() {
+      return updateLineItemCreativeAssociationSettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * batchUpdateLineItemCreativeAssociations.
+     */
+    public UnaryCallSettings.Builder<
+            BatchUpdateLineItemCreativeAssociationsRequest,
+            BatchUpdateLineItemCreativeAssociationsResponse>
+        batchUpdateLineItemCreativeAssociationsSettings() {
+      return batchUpdateLineItemCreativeAssociationsSettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * batchActivateLineItemCreativeAssociations.
+     */
+    public UnaryCallSettings.Builder<
+            BatchActivateLineItemCreativeAssociationsRequest,
+            BatchActivateLineItemCreativeAssociationsResponse>
+        batchActivateLineItemCreativeAssociationsSettings() {
+      return batchActivateLineItemCreativeAssociationsSettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * batchDeactivateLineItemCreativeAssociations.
+     */
+    public UnaryCallSettings.Builder<
+            BatchDeactivateLineItemCreativeAssociationsRequest,
+            BatchDeactivateLineItemCreativeAssociationsResponse>
+        batchDeactivateLineItemCreativeAssociationsSettings() {
+      return batchDeactivateLineItemCreativeAssociationsSettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * batchDeleteLineItemCreativeAssociations.
+     */
+    public UnaryCallSettings.Builder<BatchDeleteLineItemCreativeAssociationsRequest, Empty>
+        batchDeleteLineItemCreativeAssociationsSettings() {
+      return batchDeleteLineItemCreativeAssociationsSettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to previewLineItemCreativeAssociation.
+     */
+    public UnaryCallSettings.Builder<
+            PreviewLineItemCreativeAssociationRequest, PreviewLineItemCreativeAssociationResponse>
+        previewLineItemCreativeAssociationSettings() {
+      return previewLineItemCreativeAssociationSettings;
     }
 
     @Override

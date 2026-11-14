@@ -17,7 +17,6 @@
 package com.google.cloud.bigquery;
 
 import static com.google.common.base.Preconditions.checkNotNull;
-import static com.google.common.base.Preconditions.checkState;
 import static java.time.temporal.ChronoUnit.MICROS;
 
 import com.google.api.client.util.Data;
@@ -201,10 +200,16 @@ public class FieldValue implements Serializable {
   @SuppressWarnings("unchecked")
   public boolean getBooleanValue() {
     String stringValue = getStringValue();
-    checkState(
-        stringValue.equalsIgnoreCase("true") || stringValue.equalsIgnoreCase("false"),
-        "Field value is not of boolean type");
-    return Boolean.parseBoolean(stringValue);
+    // Validate both literals explicitly rather than delegating directly to Boolean.parseBoolean,
+    // which silently returns false for non-boolean strings instead of throwing
+    // IllegalStateException.
+    if ("true".equalsIgnoreCase(stringValue)) {
+      return true;
+    }
+    if ("false".equalsIgnoreCase(stringValue)) {
+      return false;
+    }
+    throw new IllegalStateException("Field value is not of boolean type");
   }
 
   /**

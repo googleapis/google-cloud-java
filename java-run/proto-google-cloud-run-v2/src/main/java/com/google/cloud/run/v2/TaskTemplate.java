@@ -204,6 +204,65 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessage
     return containers_.get(index);
   }
 
+  public static final int SANDBOXES_FIELD_NUMBER = 15;
+  private com.google.cloud.run.v2.SandboxConfiguration sandboxes_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for sandboxes.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.run.v2.SandboxConfiguration sandboxes = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the sandboxes field is set.
+   */
+  @java.lang.Override
+  public boolean hasSandboxes() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for sandboxes.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.run.v2.SandboxConfiguration sandboxes = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The sandboxes.
+   */
+  @java.lang.Override
+  public com.google.cloud.run.v2.SandboxConfiguration getSandboxes() {
+    return sandboxes_ == null
+        ? com.google.cloud.run.v2.SandboxConfiguration.getDefaultInstance()
+        : sandboxes_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for sandboxes.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.run.v2.SandboxConfiguration sandboxes = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.run.v2.SandboxConfigurationOrBuilder getSandboxesOrBuilder() {
+    return sandboxes_ == null
+        ? com.google.cloud.run.v2.SandboxConfiguration.getDefaultInstance()
+        : sandboxes_;
+  }
+
   public static final int VOLUMES_FIELD_NUMBER = 2;
 
   @SuppressWarnings("serial")
@@ -348,7 +407,7 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasTimeout() {
-    return ((bitField0_ & 0x00000001) != 0);
+    return ((bitField0_ & 0x00000002) != 0);
   }
 
   /**
@@ -563,7 +622,7 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasVpcAccess() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
 
   /**
@@ -620,7 +679,7 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasNodeSelector() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00000008) != 0);
   }
 
   /**
@@ -679,7 +738,7 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasGpuZonalRedundancyDisabled() {
-    return ((bitField0_ & 0x00000008) != 0);
+    return ((bitField0_ & 0x00000010) != 0);
   }
 
   /**
@@ -698,6 +757,66 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessage
   @java.lang.Override
   public boolean getGpuZonalRedundancyDisabled() {
     return gpuZonalRedundancyDisabled_;
+  }
+
+  public static final int WORKLOAD_IDENTITY_CONFIG_FIELD_NUMBER = 13;
+  private com.google.cloud.run.v2.WorkloadIdentityConfig workloadIdentityConfig_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Task's workload identity settings.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.run.v2.WorkloadIdentityConfig workload_identity_config = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the workloadIdentityConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasWorkloadIdentityConfig() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Task's workload identity settings.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.run.v2.WorkloadIdentityConfig workload_identity_config = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The workloadIdentityConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.run.v2.WorkloadIdentityConfig getWorkloadIdentityConfig() {
+    return workloadIdentityConfig_ == null
+        ? com.google.cloud.run.v2.WorkloadIdentityConfig.getDefaultInstance()
+        : workloadIdentityConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Task's workload identity settings.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.run.v2.WorkloadIdentityConfig workload_identity_config = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.run.v2.WorkloadIdentityConfigOrBuilder
+      getWorkloadIdentityConfigOrBuilder() {
+    return workloadIdentityConfig_ == null
+        ? com.google.cloud.run.v2.WorkloadIdentityConfig.getDefaultInstance()
+        : workloadIdentityConfig_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -723,7 +842,7 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessage
     if (retriesCase_ == 3) {
       output.writeInt32(3, (int) ((java.lang.Integer) retries_));
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(4, getTimeout());
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(serviceAccount_)) {
@@ -737,14 +856,20 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(encryptionKey_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 7, encryptionKey_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(8, getVpcAccess());
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       output.writeMessage(11, getNodeSelector());
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       output.writeBool(12, gpuZonalRedundancyDisabled_);
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      output.writeMessage(13, getWorkloadIdentityConfig());
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(15, getSandboxes());
     }
     getUnknownFields().writeTo(output);
   }
@@ -766,7 +891,7 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.CodedOutputStream.computeInt32Size(
               3, (int) ((java.lang.Integer) retries_));
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getTimeout());
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(serviceAccount_)) {
@@ -780,15 +905,22 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(encryptionKey_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(7, encryptionKey_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getVpcAccess());
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, getNodeSelector());
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeBoolSize(12, gpuZonalRedundancyDisabled_);
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(13, getWorkloadIdentityConfig());
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(15, getSandboxes());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -806,6 +938,10 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessage
     com.google.cloud.run.v2.TaskTemplate other = (com.google.cloud.run.v2.TaskTemplate) obj;
 
     if (!getContainersList().equals(other.getContainersList())) return false;
+    if (hasSandboxes() != other.hasSandboxes()) return false;
+    if (hasSandboxes()) {
+      if (!getSandboxes().equals(other.getSandboxes())) return false;
+    }
     if (!getVolumesList().equals(other.getVolumesList())) return false;
     if (hasTimeout() != other.hasTimeout()) return false;
     if (hasTimeout()) {
@@ -825,6 +961,10 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessage
     if (hasGpuZonalRedundancyDisabled() != other.hasGpuZonalRedundancyDisabled()) return false;
     if (hasGpuZonalRedundancyDisabled()) {
       if (getGpuZonalRedundancyDisabled() != other.getGpuZonalRedundancyDisabled()) return false;
+    }
+    if (hasWorkloadIdentityConfig() != other.hasWorkloadIdentityConfig()) return false;
+    if (hasWorkloadIdentityConfig()) {
+      if (!getWorkloadIdentityConfig().equals(other.getWorkloadIdentityConfig())) return false;
     }
     if (!getRetriesCase().equals(other.getRetriesCase())) return false;
     switch (retriesCase_) {
@@ -848,6 +988,10 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessage
     if (getContainersCount() > 0) {
       hash = (37 * hash) + CONTAINERS_FIELD_NUMBER;
       hash = (53 * hash) + getContainersList().hashCode();
+    }
+    if (hasSandboxes()) {
+      hash = (37 * hash) + SANDBOXES_FIELD_NUMBER;
+      hash = (53 * hash) + getSandboxes().hashCode();
     }
     if (getVolumesCount() > 0) {
       hash = (37 * hash) + VOLUMES_FIELD_NUMBER;
@@ -875,6 +1019,10 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + GPU_ZONAL_REDUNDANCY_DISABLED_FIELD_NUMBER;
       hash =
           (53 * hash) + com.google.protobuf.Internal.hashBoolean(getGpuZonalRedundancyDisabled());
+    }
+    if (hasWorkloadIdentityConfig()) {
+      hash = (37 * hash) + WORKLOAD_IDENTITY_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getWorkloadIdentityConfig().hashCode();
     }
     switch (retriesCase_) {
       case 3:
@@ -1026,10 +1174,12 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessage
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
         internalGetContainersFieldBuilder();
+        internalGetSandboxesFieldBuilder();
         internalGetVolumesFieldBuilder();
         internalGetTimeoutFieldBuilder();
         internalGetVpcAccessFieldBuilder();
         internalGetNodeSelectorFieldBuilder();
+        internalGetWorkloadIdentityConfigFieldBuilder();
       }
     }
 
@@ -1044,13 +1194,18 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessage
         containersBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000001);
+      sandboxes_ = null;
+      if (sandboxesBuilder_ != null) {
+        sandboxesBuilder_.dispose();
+        sandboxesBuilder_ = null;
+      }
       if (volumesBuilder_ == null) {
         volumes_ = java.util.Collections.emptyList();
       } else {
         volumes_ = null;
         volumesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       timeout_ = null;
       if (timeoutBuilder_ != null) {
         timeoutBuilder_.dispose();
@@ -1070,6 +1225,11 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessage
         nodeSelectorBuilder_ = null;
       }
       gpuZonalRedundancyDisabled_ = false;
+      workloadIdentityConfig_ = null;
+      if (workloadIdentityConfigBuilder_ != null) {
+        workloadIdentityConfigBuilder_.dispose();
+        workloadIdentityConfigBuilder_ = null;
+      }
       retriesCase_ = 0;
       retries_ = null;
       return this;
@@ -1118,9 +1278,9 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessage
         result.containers_ = containersBuilder_.build();
       }
       if (volumesBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           volumes_ = java.util.Collections.unmodifiableList(volumes_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.volumes_ = volumes_;
       } else {
@@ -1131,31 +1291,42 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessage
     private void buildPartial0(com.google.cloud.run.v2.TaskTemplate result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000008) != 0)) {
-        result.timeout_ = timeoutBuilder_ == null ? timeout_ : timeoutBuilder_.build();
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.sandboxes_ = sandboxesBuilder_ == null ? sandboxes_ : sandboxesBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
-        result.serviceAccount_ = serviceAccount_;
-      }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.executionEnvironment_ = executionEnvironment_;
-      }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
-        result.encryptionKey_ = encryptionKey_;
-      }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
-        result.vpcAccess_ = vpcAccessBuilder_ == null ? vpcAccess_ : vpcAccessBuilder_.build();
+        result.timeout_ = timeoutBuilder_ == null ? timeout_ : timeoutBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.serviceAccount_ = serviceAccount_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.executionEnvironment_ = executionEnvironment_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.encryptionKey_ = encryptionKey_;
+      }
       if (((from_bitField0_ & 0x00000100) != 0)) {
-        result.nodeSelector_ =
-            nodeSelectorBuilder_ == null ? nodeSelector_ : nodeSelectorBuilder_.build();
+        result.vpcAccess_ = vpcAccessBuilder_ == null ? vpcAccess_ : vpcAccessBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
-        result.gpuZonalRedundancyDisabled_ = gpuZonalRedundancyDisabled_;
+        result.nodeSelector_ =
+            nodeSelectorBuilder_ == null ? nodeSelector_ : nodeSelectorBuilder_.build();
         to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.gpuZonalRedundancyDisabled_ = gpuZonalRedundancyDisabled_;
+        to_bitField0_ |= 0x00000010;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.workloadIdentityConfig_ =
+            workloadIdentityConfigBuilder_ == null
+                ? workloadIdentityConfig_
+                : workloadIdentityConfigBuilder_.build();
+        to_bitField0_ |= 0x00000020;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1204,11 +1375,14 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessage
           }
         }
       }
+      if (other.hasSandboxes()) {
+        mergeSandboxes(other.getSandboxes());
+      }
       if (volumesBuilder_ == null) {
         if (!other.volumes_.isEmpty()) {
           if (volumes_.isEmpty()) {
             volumes_ = other.volumes_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureVolumesIsMutable();
             volumes_.addAll(other.volumes_);
@@ -1221,7 +1395,7 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessage
             volumesBuilder_.dispose();
             volumesBuilder_ = null;
             volumes_ = other.volumes_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000004);
             volumesBuilder_ =
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
                     ? internalGetVolumesFieldBuilder()
@@ -1236,7 +1410,7 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessage
       }
       if (!other.getServiceAccount().isEmpty()) {
         serviceAccount_ = other.serviceAccount_;
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (other.executionEnvironment_ != 0) {
@@ -1244,7 +1418,7 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessage
       }
       if (!other.getEncryptionKey().isEmpty()) {
         encryptionKey_ = other.encryptionKey_;
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       if (other.hasVpcAccess()) {
@@ -1255,6 +1429,9 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasGpuZonalRedundancyDisabled()) {
         setGpuZonalRedundancyDisabled(other.getGpuZonalRedundancyDisabled());
+      }
+      if (other.hasWorkloadIdentityConfig()) {
+        mergeWorkloadIdentityConfig(other.getWorkloadIdentityConfig());
       }
       switch (other.getRetriesCase()) {
         case MAX_RETRIES:
@@ -1327,47 +1504,62 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessage
             case 34:
               {
                 input.readMessage(internalGetTimeoutFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 34
             case 42:
               {
                 serviceAccount_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 42
             case 48:
               {
                 executionEnvironment_ = input.readEnum();
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 48
             case 58:
               {
                 encryptionKey_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 58
             case 66:
               {
                 input.readMessage(
                     internalGetVpcAccessFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 66
             case 90:
               {
                 input.readMessage(
                     internalGetNodeSelectorFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 90
             case 96:
               {
                 gpuZonalRedundancyDisabled_ = input.readBool();
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 96
+            case 106:
+              {
+                input.readMessage(
+                    internalGetWorkloadIdentityConfigFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 106
+            case 122:
+              {
+                input.readMessage(
+                    internalGetSandboxesFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 122
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1784,13 +1976,226 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessage
       return containersBuilder_;
     }
 
+    private com.google.cloud.run.v2.SandboxConfiguration sandboxes_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.run.v2.SandboxConfiguration,
+            com.google.cloud.run.v2.SandboxConfiguration.Builder,
+            com.google.cloud.run.v2.SandboxConfigurationOrBuilder>
+        sandboxesBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for sandboxes.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.SandboxConfiguration sandboxes = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the sandboxes field is set.
+     */
+    public boolean hasSandboxes() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for sandboxes.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.SandboxConfiguration sandboxes = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The sandboxes.
+     */
+    public com.google.cloud.run.v2.SandboxConfiguration getSandboxes() {
+      if (sandboxesBuilder_ == null) {
+        return sandboxes_ == null
+            ? com.google.cloud.run.v2.SandboxConfiguration.getDefaultInstance()
+            : sandboxes_;
+      } else {
+        return sandboxesBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for sandboxes.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.SandboxConfiguration sandboxes = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setSandboxes(com.google.cloud.run.v2.SandboxConfiguration value) {
+      if (sandboxesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        sandboxes_ = value;
+      } else {
+        sandboxesBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for sandboxes.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.SandboxConfiguration sandboxes = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setSandboxes(
+        com.google.cloud.run.v2.SandboxConfiguration.Builder builderForValue) {
+      if (sandboxesBuilder_ == null) {
+        sandboxes_ = builderForValue.build();
+      } else {
+        sandboxesBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for sandboxes.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.SandboxConfiguration sandboxes = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeSandboxes(com.google.cloud.run.v2.SandboxConfiguration value) {
+      if (sandboxesBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0)
+            && sandboxes_ != null
+            && sandboxes_ != com.google.cloud.run.v2.SandboxConfiguration.getDefaultInstance()) {
+          getSandboxesBuilder().mergeFrom(value);
+        } else {
+          sandboxes_ = value;
+        }
+      } else {
+        sandboxesBuilder_.mergeFrom(value);
+      }
+      if (sandboxes_ != null) {
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for sandboxes.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.SandboxConfiguration sandboxes = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearSandboxes() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      sandboxes_ = null;
+      if (sandboxesBuilder_ != null) {
+        sandboxesBuilder_.dispose();
+        sandboxesBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for sandboxes.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.SandboxConfiguration sandboxes = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.run.v2.SandboxConfiguration.Builder getSandboxesBuilder() {
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return internalGetSandboxesFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for sandboxes.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.SandboxConfiguration sandboxes = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.run.v2.SandboxConfigurationOrBuilder getSandboxesOrBuilder() {
+      if (sandboxesBuilder_ != null) {
+        return sandboxesBuilder_.getMessageOrBuilder();
+      } else {
+        return sandboxes_ == null
+            ? com.google.cloud.run.v2.SandboxConfiguration.getDefaultInstance()
+            : sandboxes_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for sandboxes.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.SandboxConfiguration sandboxes = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.run.v2.SandboxConfiguration,
+            com.google.cloud.run.v2.SandboxConfiguration.Builder,
+            com.google.cloud.run.v2.SandboxConfigurationOrBuilder>
+        internalGetSandboxesFieldBuilder() {
+      if (sandboxesBuilder_ == null) {
+        sandboxesBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.run.v2.SandboxConfiguration,
+                com.google.cloud.run.v2.SandboxConfiguration.Builder,
+                com.google.cloud.run.v2.SandboxConfigurationOrBuilder>(
+                getSandboxes(), getParentForChildren(), isClean());
+        sandboxes_ = null;
+      }
+      return sandboxesBuilder_;
+    }
+
     private java.util.List<com.google.cloud.run.v2.Volume> volumes_ =
         java.util.Collections.emptyList();
 
     private void ensureVolumesIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         volumes_ = new java.util.ArrayList<com.google.cloud.run.v2.Volume>(volumes_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
       }
     }
 
@@ -2035,7 +2440,7 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessage
     public Builder clearVolumes() {
       if (volumesBuilder_ == null) {
         volumes_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         volumesBuilder_.clear();
@@ -2177,7 +2582,7 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessage
                 com.google.cloud.run.v2.Volume,
                 com.google.cloud.run.v2.Volume.Builder,
                 com.google.cloud.run.v2.VolumeOrBuilder>(
-                volumes_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
+                volumes_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
         volumes_ = null;
       }
       return volumesBuilder_;
@@ -2282,7 +2687,7 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessage
      * @return Whether the timeout field is set.
      */
     public boolean hasTimeout() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
 
     /**
@@ -2328,7 +2733,7 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessage
       } else {
         timeoutBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2351,7 +2756,7 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessage
       } else {
         timeoutBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2370,7 +2775,7 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeTimeout(com.google.protobuf.Duration value) {
       if (timeoutBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)
+        if (((bitField0_ & 0x00000010) != 0)
             && timeout_ != null
             && timeout_ != com.google.protobuf.Duration.getDefaultInstance()) {
           getTimeoutBuilder().mergeFrom(value);
@@ -2381,7 +2786,7 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessage
         timeoutBuilder_.mergeFrom(value);
       }
       if (timeout_ != null) {
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       return this;
@@ -2400,7 +2805,7 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessage
      * <code>.google.protobuf.Duration timeout = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearTimeout() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       timeout_ = null;
       if (timeoutBuilder_ != null) {
         timeoutBuilder_.dispose();
@@ -2423,7 +2828,7 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessage
      * <code>.google.protobuf.Duration timeout = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.protobuf.Duration.Builder getTimeoutBuilder() {
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return internalGetTimeoutFieldBuilder().getBuilder();
     }
@@ -2551,7 +2956,7 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       serviceAccount_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2572,7 +2977,7 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearServiceAccount() {
       serviceAccount_ = getDefaultInstance().getServiceAccount();
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -2598,7 +3003,7 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       serviceAccount_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2639,7 +3044,7 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessage
      */
     public Builder setExecutionEnvironmentValue(int value) {
       executionEnvironment_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2682,7 +3087,7 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       executionEnvironment_ = value.getNumber();
       onChanged();
       return this;
@@ -2702,7 +3107,7 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearExecutionEnvironment() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       executionEnvironment_ = 0;
       onChanged();
       return this;
@@ -2779,7 +3184,7 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       encryptionKey_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2799,7 +3204,7 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearEncryptionKey() {
       encryptionKey_ = getDefaultInstance().getEncryptionKey();
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -2824,7 +3229,7 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       encryptionKey_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2852,7 +3257,7 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessage
      * @return Whether the vpcAccess field is set.
      */
     public boolean hasVpcAccess() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
 
     /**
@@ -2902,7 +3307,7 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessage
       } else {
         vpcAccessBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2926,7 +3331,7 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessage
       } else {
         vpcAccessBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2946,7 +3351,7 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeVpcAccess(com.google.cloud.run.v2.VpcAccess value) {
       if (vpcAccessBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) != 0)
+        if (((bitField0_ & 0x00000100) != 0)
             && vpcAccess_ != null
             && vpcAccess_ != com.google.cloud.run.v2.VpcAccess.getDefaultInstance()) {
           getVpcAccessBuilder().mergeFrom(value);
@@ -2957,7 +3362,7 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessage
         vpcAccessBuilder_.mergeFrom(value);
       }
       if (vpcAccess_ != null) {
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       return this;
@@ -2977,7 +3382,7 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearVpcAccess() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       vpcAccess_ = null;
       if (vpcAccessBuilder_ != null) {
         vpcAccessBuilder_.dispose();
@@ -3001,7 +3406,7 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.cloud.run.v2.VpcAccess.Builder getVpcAccessBuilder() {
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return internalGetVpcAccessFieldBuilder().getBuilder();
     }
@@ -3080,7 +3485,7 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessage
      * @return Whether the nodeSelector field is set.
      */
     public boolean hasNodeSelector() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
 
     /**
@@ -3126,7 +3531,7 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessage
       } else {
         nodeSelectorBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3148,7 +3553,7 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessage
       } else {
         nodeSelectorBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3166,7 +3571,7 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeNodeSelector(com.google.cloud.run.v2.NodeSelector value) {
       if (nodeSelectorBuilder_ == null) {
-        if (((bitField0_ & 0x00000100) != 0)
+        if (((bitField0_ & 0x00000200) != 0)
             && nodeSelector_ != null
             && nodeSelector_ != com.google.cloud.run.v2.NodeSelector.getDefaultInstance()) {
           getNodeSelectorBuilder().mergeFrom(value);
@@ -3177,7 +3582,7 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessage
         nodeSelectorBuilder_.mergeFrom(value);
       }
       if (nodeSelector_ != null) {
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       return this;
@@ -3195,7 +3600,7 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearNodeSelector() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       nodeSelector_ = null;
       if (nodeSelectorBuilder_ != null) {
         nodeSelectorBuilder_.dispose();
@@ -3217,7 +3622,7 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.cloud.run.v2.NodeSelector.Builder getNodeSelectorBuilder() {
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return internalGetNodeSelectorFieldBuilder().getBuilder();
     }
@@ -3288,7 +3693,7 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasGpuZonalRedundancyDisabled() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00000400) != 0);
     }
 
     /**
@@ -3326,7 +3731,7 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessage
     public Builder setGpuZonalRedundancyDisabled(boolean value) {
 
       gpuZonalRedundancyDisabled_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3345,10 +3750,227 @@ public final class TaskTemplate extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearGpuZonalRedundancyDisabled() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       gpuZonalRedundancyDisabled_ = false;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.run.v2.WorkloadIdentityConfig workloadIdentityConfig_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.run.v2.WorkloadIdentityConfig,
+            com.google.cloud.run.v2.WorkloadIdentityConfig.Builder,
+            com.google.cloud.run.v2.WorkloadIdentityConfigOrBuilder>
+        workloadIdentityConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Task's workload identity settings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.WorkloadIdentityConfig workload_identity_config = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the workloadIdentityConfig field is set.
+     */
+    public boolean hasWorkloadIdentityConfig() {
+      return ((bitField0_ & 0x00000800) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Task's workload identity settings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.WorkloadIdentityConfig workload_identity_config = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The workloadIdentityConfig.
+     */
+    public com.google.cloud.run.v2.WorkloadIdentityConfig getWorkloadIdentityConfig() {
+      if (workloadIdentityConfigBuilder_ == null) {
+        return workloadIdentityConfig_ == null
+            ? com.google.cloud.run.v2.WorkloadIdentityConfig.getDefaultInstance()
+            : workloadIdentityConfig_;
+      } else {
+        return workloadIdentityConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Task's workload identity settings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.WorkloadIdentityConfig workload_identity_config = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setWorkloadIdentityConfig(com.google.cloud.run.v2.WorkloadIdentityConfig value) {
+      if (workloadIdentityConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        workloadIdentityConfig_ = value;
+      } else {
+        workloadIdentityConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Task's workload identity settings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.WorkloadIdentityConfig workload_identity_config = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setWorkloadIdentityConfig(
+        com.google.cloud.run.v2.WorkloadIdentityConfig.Builder builderForValue) {
+      if (workloadIdentityConfigBuilder_ == null) {
+        workloadIdentityConfig_ = builderForValue.build();
+      } else {
+        workloadIdentityConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Task's workload identity settings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.WorkloadIdentityConfig workload_identity_config = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeWorkloadIdentityConfig(
+        com.google.cloud.run.v2.WorkloadIdentityConfig value) {
+      if (workloadIdentityConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000800) != 0)
+            && workloadIdentityConfig_ != null
+            && workloadIdentityConfig_
+                != com.google.cloud.run.v2.WorkloadIdentityConfig.getDefaultInstance()) {
+          getWorkloadIdentityConfigBuilder().mergeFrom(value);
+        } else {
+          workloadIdentityConfig_ = value;
+        }
+      } else {
+        workloadIdentityConfigBuilder_.mergeFrom(value);
+      }
+      if (workloadIdentityConfig_ != null) {
+        bitField0_ |= 0x00000800;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Task's workload identity settings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.WorkloadIdentityConfig workload_identity_config = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearWorkloadIdentityConfig() {
+      bitField0_ = (bitField0_ & ~0x00000800);
+      workloadIdentityConfig_ = null;
+      if (workloadIdentityConfigBuilder_ != null) {
+        workloadIdentityConfigBuilder_.dispose();
+        workloadIdentityConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Task's workload identity settings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.WorkloadIdentityConfig workload_identity_config = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.run.v2.WorkloadIdentityConfig.Builder
+        getWorkloadIdentityConfigBuilder() {
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return internalGetWorkloadIdentityConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Task's workload identity settings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.WorkloadIdentityConfig workload_identity_config = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.run.v2.WorkloadIdentityConfigOrBuilder
+        getWorkloadIdentityConfigOrBuilder() {
+      if (workloadIdentityConfigBuilder_ != null) {
+        return workloadIdentityConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return workloadIdentityConfig_ == null
+            ? com.google.cloud.run.v2.WorkloadIdentityConfig.getDefaultInstance()
+            : workloadIdentityConfig_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Task's workload identity settings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.WorkloadIdentityConfig workload_identity_config = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.run.v2.WorkloadIdentityConfig,
+            com.google.cloud.run.v2.WorkloadIdentityConfig.Builder,
+            com.google.cloud.run.v2.WorkloadIdentityConfigOrBuilder>
+        internalGetWorkloadIdentityConfigFieldBuilder() {
+      if (workloadIdentityConfigBuilder_ == null) {
+        workloadIdentityConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.run.v2.WorkloadIdentityConfig,
+                com.google.cloud.run.v2.WorkloadIdentityConfig.Builder,
+                com.google.cloud.run.v2.WorkloadIdentityConfigOrBuilder>(
+                getWorkloadIdentityConfig(), getParentForChildren(), isClean());
+        workloadIdentityConfig_ = null;
+      }
+      return workloadIdentityConfigBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.run.v2.TaskTemplate)

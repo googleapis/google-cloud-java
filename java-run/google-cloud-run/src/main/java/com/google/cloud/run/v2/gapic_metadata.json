@@ -49,17 +49,29 @@
             "DeleteInstance": {
               "methods": ["deleteInstanceAsync", "deleteInstanceAsync", "deleteInstanceAsync", "deleteInstanceOperationCallable", "deleteInstanceCallable"]
             },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
             "GetInstance": {
               "methods": ["getInstance", "getInstance", "getInstance", "getInstanceCallable"]
             },
             "ListInstances": {
               "methods": ["listInstances", "listInstances", "listInstances", "listInstancesPagedCallable", "listInstancesCallable"]
             },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
             "StartInstance": {
               "methods": ["startInstanceAsync", "startInstanceAsync", "startInstanceAsync", "startInstanceOperationCallable", "startInstanceCallable"]
             },
             "StopInstance": {
               "methods": ["stopInstanceAsync", "stopInstanceAsync", "stopInstanceAsync", "stopInstanceOperationCallable", "stopInstanceCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "UpdateInstance": {
+              "methods": ["updateInstanceAsync", "updateInstanceAsync", "updateInstanceOperationCallable", "updateInstanceCallable"]
             }
           }
         }
@@ -147,6 +159,18 @@
             },
             "UpdateService": {
               "methods": ["updateServiceAsync", "updateServiceAsync", "updateServiceAsync", "updateServiceOperationCallable", "updateServiceCallable"]
+            }
+          }
+        }
+      }
+    },
+    "SourceUpload": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "SourceUploadClient",
+          "rpcs": {
+            "UploadSource": {
+              "methods": ["uploadSource", "uploadSource", "uploadSource", "uploadSourceCallable"]
             }
           }
         }

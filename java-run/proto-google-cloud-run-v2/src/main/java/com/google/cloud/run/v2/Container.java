@@ -201,7 +201,8 @@ public final class Container extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Location of the source.
+   * Optional. Location of the source. This field is only supported in Cloud Run
+   * Service.
    * </pre>
    *
    * <code>
@@ -219,7 +220,8 @@ public final class Container extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Location of the source.
+   * Optional. Location of the source. This field is only supported in Cloud Run
+   * Service.
    * </pre>
    *
    * <code>
@@ -239,7 +241,8 @@ public final class Container extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Location of the source.
+   * Optional. Location of the source. This field is only supported in Cloud Run
+   * Service.
    * </pre>
    *
    * <code>
@@ -1108,6 +1111,43 @@ public final class Container extends com.google.protobuf.GeneratedMessage
     return buildInfo_ == null ? com.google.cloud.run.v2.BuildInfo.getDefaultInstance() : buildInfo_;
   }
 
+  public static final int SANDBOX_LAUNCHER_FIELD_NUMBER = 22;
+  private boolean sandboxLauncher_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Indicates that this container can act as a sandbox supervisor and
+   * launch sandboxes.
+   * </pre>
+   *
+   * <code>optional bool sandbox_launcher = 22 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the sandboxLauncher field is set.
+   */
+  @java.lang.Override
+  public boolean hasSandboxLauncher() {
+    return ((bitField0_ & 0x00000040) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Indicates that this container can act as a sandbox supervisor and
+   * launch sandboxes.
+   * </pre>
+   *
+   * <code>optional bool sandbox_launcher = 22 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The sandboxLauncher.
+   */
+  @java.lang.Override
+  public boolean getSandboxLauncher() {
+    return sandboxLauncher_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1169,6 +1209,9 @@ public final class Container extends com.google.protobuf.GeneratedMessage
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(17, getSourceCode());
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      output.writeBool(22, sandboxLauncher_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -1242,6 +1285,9 @@ public final class Container extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(17, getSourceCode());
     }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(22, sandboxLauncher_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1290,6 +1336,10 @@ public final class Container extends com.google.protobuf.GeneratedMessage
     if (hasBuildInfo() != other.hasBuildInfo()) return false;
     if (hasBuildInfo()) {
       if (!getBuildInfo().equals(other.getBuildInfo())) return false;
+    }
+    if (hasSandboxLauncher() != other.hasSandboxLauncher()) return false;
+    if (hasSandboxLauncher()) {
+      if (getSandboxLauncher() != other.getSandboxLauncher()) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -1357,6 +1407,10 @@ public final class Container extends com.google.protobuf.GeneratedMessage
     if (hasBuildInfo()) {
       hash = (37 * hash) + BUILD_INFO_FIELD_NUMBER;
       hash = (53 * hash) + getBuildInfo().hashCode();
+    }
+    if (hasSandboxLauncher()) {
+      hash = (37 * hash) + SANDBOX_LAUNCHER_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSandboxLauncher());
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1576,6 +1630,7 @@ public final class Container extends com.google.protobuf.GeneratedMessage
         buildInfoBuilder_.dispose();
         buildInfoBuilder_ = null;
       }
+      sandboxLauncher_ = false;
       return this;
     }
 
@@ -1693,6 +1748,10 @@ public final class Container extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x00008000) != 0)) {
         result.buildInfo_ = buildInfoBuilder_ == null ? buildInfo_ : buildInfoBuilder_.build();
         to_bitField0_ |= 0x00000020;
+      }
+      if (((from_bitField0_ & 0x00010000) != 0)) {
+        result.sandboxLauncher_ = sandboxLauncher_;
+        to_bitField0_ |= 0x00000040;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1858,6 +1917,9 @@ public final class Container extends com.google.protobuf.GeneratedMessage
       if (other.hasBuildInfo()) {
         mergeBuildInfo(other.getBuildInfo());
       }
+      if (other.hasSandboxLauncher()) {
+        setSandboxLauncher(other.getSandboxLauncher());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -2009,6 +2071,12 @@ public final class Container extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000004;
                 break;
               } // case 138
+            case 176:
+              {
+                sandboxLauncher_ = input.readBool();
+                bitField0_ |= 0x00010000;
+                break;
+              } // case 176
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2271,7 +2339,8 @@ public final class Container extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Location of the source.
+     * Optional. Location of the source. This field is only supported in Cloud Run
+     * Service.
      * </pre>
      *
      * <code>
@@ -2288,7 +2357,8 @@ public final class Container extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Location of the source.
+     * Optional. Location of the source. This field is only supported in Cloud Run
+     * Service.
      * </pre>
      *
      * <code>
@@ -2311,7 +2381,8 @@ public final class Container extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Location of the source.
+     * Optional. Location of the source. This field is only supported in Cloud Run
+     * Service.
      * </pre>
      *
      * <code>
@@ -2336,7 +2407,8 @@ public final class Container extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Location of the source.
+     * Optional. Location of the source. This field is only supported in Cloud Run
+     * Service.
      * </pre>
      *
      * <code>
@@ -2358,7 +2430,8 @@ public final class Container extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Location of the source.
+     * Optional. Location of the source. This field is only supported in Cloud Run
+     * Service.
      * </pre>
      *
      * <code>
@@ -2388,7 +2461,8 @@ public final class Container extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Location of the source.
+     * Optional. Location of the source. This field is only supported in Cloud Run
+     * Service.
      * </pre>
      *
      * <code>
@@ -2410,7 +2484,8 @@ public final class Container extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Location of the source.
+     * Optional. Location of the source. This field is only supported in Cloud Run
+     * Service.
      * </pre>
      *
      * <code>
@@ -2427,7 +2502,8 @@ public final class Container extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Location of the source.
+     * Optional. Location of the source. This field is only supported in Cloud Run
+     * Service.
      * </pre>
      *
      * <code>
@@ -2448,7 +2524,8 @@ public final class Container extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Location of the source.
+     * Optional. Location of the source. This field is only supported in Cloud Run
+     * Service.
      * </pre>
      *
      * <code>
@@ -5480,6 +5557,82 @@ public final class Container extends com.google.protobuf.GeneratedMessage
         buildInfo_ = null;
       }
       return buildInfoBuilder_;
+    }
+
+    private boolean sandboxLauncher_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Indicates that this container can act as a sandbox supervisor and
+     * launch sandboxes.
+     * </pre>
+     *
+     * <code>optional bool sandbox_launcher = 22 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the sandboxLauncher field is set.
+     */
+    @java.lang.Override
+    public boolean hasSandboxLauncher() {
+      return ((bitField0_ & 0x00010000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Indicates that this container can act as a sandbox supervisor and
+     * launch sandboxes.
+     * </pre>
+     *
+     * <code>optional bool sandbox_launcher = 22 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The sandboxLauncher.
+     */
+    @java.lang.Override
+    public boolean getSandboxLauncher() {
+      return sandboxLauncher_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Indicates that this container can act as a sandbox supervisor and
+     * launch sandboxes.
+     * </pre>
+     *
+     * <code>optional bool sandbox_launcher = 22 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The sandboxLauncher to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSandboxLauncher(boolean value) {
+
+      sandboxLauncher_ = value;
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Indicates that this container can act as a sandbox supervisor and
+     * launch sandboxes.
+     * </pre>
+     *
+     * <code>optional bool sandbox_launcher = 22 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSandboxLauncher() {
+      bitField0_ = (bitField0_ & ~0x00010000);
+      sandboxLauncher_ = false;
+      onChanged();
+      return this;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.run.v2.Container)

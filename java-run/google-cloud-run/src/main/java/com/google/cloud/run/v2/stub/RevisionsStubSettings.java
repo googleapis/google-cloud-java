@@ -146,7 +146,11 @@ import org.jspecify.annotations.Nullable;
 public class RevisionsStubSettings extends StubSettings<RevisionsStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
-      ImmutableList.<String>builder().add("https://www.googleapis.com/auth/cloud-platform").build();
+      ImmutableList.<String>builder()
+          .add("https://www.googleapis.com/auth/cloud-platform")
+          .add("https://www.googleapis.com/auth/run")
+          .add("https://www.googleapis.com/auth/run.readonly")
+          .build();
 
   private final UnaryCallSettings<GetRevisionRequest, Revision> getRevisionSettings;
   private final PagedCallSettings<

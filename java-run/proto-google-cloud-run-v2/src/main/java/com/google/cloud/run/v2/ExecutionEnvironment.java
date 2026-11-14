@@ -168,7 +168,7 @@ public enum ExecutionEnvironment implements com.google.protobuf.ProtocolMessageE
   }
 
   public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-    return com.google.cloud.run.v2.VendorSettingsProto.getDescriptor().getEnumTypes().get(1);
+    return com.google.cloud.run.v2.VendorSettingsProto.getDescriptor().getEnumTypes().get(2);
   }
 
   private static final ExecutionEnvironment[] VALUES = values();

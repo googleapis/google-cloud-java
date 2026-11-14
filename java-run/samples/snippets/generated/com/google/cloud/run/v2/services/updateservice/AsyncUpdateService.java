@@ -43,6 +43,7 @@ public class AsyncUpdateService {
               .setService(Service.newBuilder().build())
               .setValidateOnly(true)
               .setAllowMissing(true)
+              .setForceNewRevision(true)
               .build();
       ApiFuture<Operation> future = servicesClient.updateServiceCallable().futureCall(request);
       // Do something.
