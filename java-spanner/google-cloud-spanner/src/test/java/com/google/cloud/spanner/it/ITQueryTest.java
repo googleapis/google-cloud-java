@@ -84,11 +84,9 @@ public class ITQueryTest {
     // Empty database.
     Database googleStandardSQLDatabase = env.getTestHelper().createTestDatabase();
     googleStandardSQLClient = env.getTestHelper().getDatabaseClient(googleStandardSQLDatabase);
-    if (!isUsingEmulator()) {
-      Database postgreSQLDatabase =
-          env.getTestHelper().createTestDatabase(Dialect.POSTGRESQL, Collections.emptyList());
-      postgreSQLClient = env.getTestHelper().getDatabaseClient(postgreSQLDatabase);
-    }
+    Database postgreSQLDatabase =
+        env.getTestHelper().createTestDatabase(Dialect.POSTGRESQL, Collections.emptyList());
+    postgreSQLClient = env.getTestHelper().getDatabaseClient(postgreSQLDatabase);
   }
 
   @AfterClass
@@ -108,10 +106,7 @@ public class ITQueryTest {
   public static List<DialectTestParameter> data() {
     List<DialectTestParameter> params = new ArrayList<>();
     params.add(new DialectTestParameter(Dialect.GOOGLE_STANDARD_SQL));
-    // "PG dialect tests are not supported by the emulator"
-    if (!isUsingEmulator()) {
-      params.add(new DialectTestParameter(Dialect.POSTGRESQL));
-    }
+    params.add(new DialectTestParameter(Dialect.POSTGRESQL));
     return params;
   }
 
