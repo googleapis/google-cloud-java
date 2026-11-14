@@ -254,11 +254,13 @@ public class GrpcSequenceServiceStub extends SequenceServiceStub {
     GrpcCallSettings<CreateSequenceRequest, Sequence> createSequenceTransportSettings =
         GrpcCallSettings.<CreateSequenceRequest, Sequence>newBuilder()
             .setMethodDescriptor(createSequenceMethodDescriptor)
+            .setJavaMethodName("createSequence")
             .build();
     GrpcCallSettings<CreateStreamingSequenceRequest, StreamingSequence>
         createStreamingSequenceTransportSettings =
             GrpcCallSettings.<CreateStreamingSequenceRequest, StreamingSequence>newBuilder()
                 .setMethodDescriptor(createStreamingSequenceMethodDescriptor)
+                .setJavaMethodName("createStreamingSequence")
                 .build();
     GrpcCallSettings<GetSequenceReportRequest, SequenceReport> getSequenceReportTransportSettings =
         GrpcCallSettings.<GetSequenceReportRequest, SequenceReport>newBuilder()
@@ -270,6 +272,7 @@ public class GrpcSequenceServiceStub extends SequenceServiceStub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getName())
+            .setJavaMethodName("getSequenceReport")
             .build();
     GrpcCallSettings<GetStreamingSequenceReportRequest, StreamingSequenceReport>
         getStreamingSequenceReportTransportSettings =
@@ -283,6 +286,7 @@ public class GrpcSequenceServiceStub extends SequenceServiceStub {
                       return builder.build();
                     })
                 .setResourceNameExtractor(request -> request.getName())
+                .setJavaMethodName("getStreamingSequenceReport")
                 .build();
     GrpcCallSettings<AttemptSequenceRequest, Empty> attemptSequenceTransportSettings =
         GrpcCallSettings.<AttemptSequenceRequest, Empty>newBuilder()
@@ -294,6 +298,7 @@ public class GrpcSequenceServiceStub extends SequenceServiceStub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getName())
+            .setJavaMethodName("attemptSequence")
             .build();
     GrpcCallSettings<AttemptStreamingSequenceRequest, AttemptStreamingSequenceResponse>
         attemptStreamingSequenceTransportSettings =
@@ -307,6 +312,7 @@ public class GrpcSequenceServiceStub extends SequenceServiceStub {
                       return builder.build();
                     })
                 .setResourceNameExtractor(request -> request.getName())
+                .setJavaMethodName("attemptStreamingSequence")
                 .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -317,6 +323,7 @@ public class GrpcSequenceServiceStub extends SequenceServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setJavaMethodName("listLocations")
             .build();
     GrpcCallSettings<GetLocationRequest, Location> getLocationTransportSettings =
         GrpcCallSettings.<GetLocationRequest, Location>newBuilder()
@@ -327,6 +334,7 @@ public class GrpcSequenceServiceStub extends SequenceServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setJavaMethodName("getLocation")
             .build();
     GrpcCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         GrpcCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
@@ -338,6 +346,7 @@ public class GrpcSequenceServiceStub extends SequenceServiceStub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getResource())
+            .setJavaMethodName("setIamPolicy")
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -349,6 +358,7 @@ public class GrpcSequenceServiceStub extends SequenceServiceStub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getResource())
+            .setJavaMethodName("getIamPolicy")
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -361,6 +371,7 @@ public class GrpcSequenceServiceStub extends SequenceServiceStub {
                       return builder.build();
                     })
                 .setResourceNameExtractor(request -> request.getResource())
+                .setJavaMethodName("testIamPermissions")
                 .build();
 
     this.createSequenceCallable =

@@ -435,6 +435,11 @@ public class SchemaServiceStubSettings extends StubSettings<SchemaServiceStubSet
     return LibraryMetadata.newBuilder().setVersion(Version.VERSION).build();
   }
 
+  @Override
+  protected String getJavaClientName() {
+    return "com.google.cloud.pubsub.v1.SchemaServiceClient";
+  }
+
   /** Builder for SchemaServiceStubSettings. */
   public static class Builder extends StubSettings.Builder<SchemaServiceStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;

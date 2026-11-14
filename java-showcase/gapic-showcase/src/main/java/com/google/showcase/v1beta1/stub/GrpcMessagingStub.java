@@ -339,6 +339,7 @@ public class GrpcMessagingStub extends MessagingStub {
     GrpcCallSettings<CreateRoomRequest, Room> createRoomTransportSettings =
         GrpcCallSettings.<CreateRoomRequest, Room>newBuilder()
             .setMethodDescriptor(createRoomMethodDescriptor)
+            .setJavaMethodName("createRoom")
             .build();
     GrpcCallSettings<GetRoomRequest, Room> getRoomTransportSettings =
         GrpcCallSettings.<GetRoomRequest, Room>newBuilder()
@@ -350,6 +351,7 @@ public class GrpcMessagingStub extends MessagingStub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getName())
+            .setJavaMethodName("getRoom")
             .build();
     GrpcCallSettings<UpdateRoomRequest, Room> updateRoomTransportSettings =
         GrpcCallSettings.<UpdateRoomRequest, Room>newBuilder()
@@ -360,6 +362,7 @@ public class GrpcMessagingStub extends MessagingStub {
                   builder.add("room.name", String.valueOf(request.getRoom().getName()));
                   return builder.build();
                 })
+            .setJavaMethodName("updateRoom")
             .build();
     GrpcCallSettings<DeleteRoomRequest, Empty> deleteRoomTransportSettings =
         GrpcCallSettings.<DeleteRoomRequest, Empty>newBuilder()
@@ -371,10 +374,12 @@ public class GrpcMessagingStub extends MessagingStub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getName())
+            .setJavaMethodName("deleteRoom")
             .build();
     GrpcCallSettings<ListRoomsRequest, ListRoomsResponse> listRoomsTransportSettings =
         GrpcCallSettings.<ListRoomsRequest, ListRoomsResponse>newBuilder()
             .setMethodDescriptor(listRoomsMethodDescriptor)
+            .setJavaMethodName("listRooms")
             .build();
     GrpcCallSettings<CreateBlurbRequest, Blurb> createBlurbTransportSettings =
         GrpcCallSettings.<CreateBlurbRequest, Blurb>newBuilder()
@@ -386,6 +391,7 @@ public class GrpcMessagingStub extends MessagingStub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getParent())
+            .setJavaMethodName("createBlurb")
             .build();
     GrpcCallSettings<GetBlurbRequest, Blurb> getBlurbTransportSettings =
         GrpcCallSettings.<GetBlurbRequest, Blurb>newBuilder()
@@ -397,6 +403,7 @@ public class GrpcMessagingStub extends MessagingStub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getName())
+            .setJavaMethodName("getBlurb")
             .build();
     GrpcCallSettings<UpdateBlurbRequest, Blurb> updateBlurbTransportSettings =
         GrpcCallSettings.<UpdateBlurbRequest, Blurb>newBuilder()
@@ -407,6 +414,7 @@ public class GrpcMessagingStub extends MessagingStub {
                   builder.add("blurb.name", String.valueOf(request.getBlurb().getName()));
                   return builder.build();
                 })
+            .setJavaMethodName("updateBlurb")
             .build();
     GrpcCallSettings<DeleteBlurbRequest, Empty> deleteBlurbTransportSettings =
         GrpcCallSettings.<DeleteBlurbRequest, Empty>newBuilder()
@@ -418,6 +426,7 @@ public class GrpcMessagingStub extends MessagingStub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getName())
+            .setJavaMethodName("deleteBlurb")
             .build();
     GrpcCallSettings<ListBlurbsRequest, ListBlurbsResponse> listBlurbsTransportSettings =
         GrpcCallSettings.<ListBlurbsRequest, ListBlurbsResponse>newBuilder()
@@ -429,6 +438,7 @@ public class GrpcMessagingStub extends MessagingStub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getParent())
+            .setJavaMethodName("listBlurbs")
             .build();
     GrpcCallSettings<SearchBlurbsRequest, Operation> searchBlurbsTransportSettings =
         GrpcCallSettings.<SearchBlurbsRequest, Operation>newBuilder()
@@ -440,6 +450,7 @@ public class GrpcMessagingStub extends MessagingStub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getParent())
+            .setJavaMethodName("searchBlurbs")
             .build();
     GrpcCallSettings<StreamBlurbsRequest, StreamBlurbsResponse> streamBlurbsTransportSettings =
         GrpcCallSettings.<StreamBlurbsRequest, StreamBlurbsResponse>newBuilder()
@@ -451,6 +462,7 @@ public class GrpcMessagingStub extends MessagingStub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getName())
+            .setJavaMethodName("streamBlurbs")
             .build();
     GrpcCallSettings<CreateBlurbRequest, SendBlurbsResponse> sendBlurbsTransportSettings =
         GrpcCallSettings.<CreateBlurbRequest, SendBlurbsResponse>newBuilder()
@@ -462,10 +474,12 @@ public class GrpcMessagingStub extends MessagingStub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getParent())
+            .setJavaMethodName("sendBlurbs")
             .build();
     GrpcCallSettings<ConnectRequest, StreamBlurbsResponse> connectTransportSettings =
         GrpcCallSettings.<ConnectRequest, StreamBlurbsResponse>newBuilder()
             .setMethodDescriptor(connectMethodDescriptor)
+            .setJavaMethodName("connect")
             .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -476,6 +490,7 @@ public class GrpcMessagingStub extends MessagingStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setJavaMethodName("listLocations")
             .build();
     GrpcCallSettings<GetLocationRequest, Location> getLocationTransportSettings =
         GrpcCallSettings.<GetLocationRequest, Location>newBuilder()
@@ -486,6 +501,7 @@ public class GrpcMessagingStub extends MessagingStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setJavaMethodName("getLocation")
             .build();
     GrpcCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         GrpcCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
@@ -497,6 +513,7 @@ public class GrpcMessagingStub extends MessagingStub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getResource())
+            .setJavaMethodName("setIamPolicy")
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -508,6 +525,7 @@ public class GrpcMessagingStub extends MessagingStub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getResource())
+            .setJavaMethodName("getIamPolicy")
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -520,6 +538,7 @@ public class GrpcMessagingStub extends MessagingStub {
                       return builder.build();
                     })
                 .setResourceNameExtractor(request -> request.getResource())
+                .setJavaMethodName("testIamPermissions")
                 .build();
 
     this.createRoomCallable =

@@ -304,6 +304,11 @@ public class MetricsServiceV2StubSettings extends StubSettings<MetricsServiceV2S
     return LibraryMetadata.newBuilder().build();
   }
 
+  @Override
+  protected String getJavaClientName() {
+    return "com.google.cloud.logging.v2.MetricsClient";
+  }
+
   /** Builder for MetricsServiceV2StubSettings. */
   public static class Builder extends StubSettings.Builder<MetricsServiceV2StubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;

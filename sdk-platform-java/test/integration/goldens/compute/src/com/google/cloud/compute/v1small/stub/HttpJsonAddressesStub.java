@@ -343,6 +343,7 @@ public class HttpJsonAddressesStub extends AddressesStub {
                       return AGGREGATED_LIST_RESOURCE_NAME_TEMPLATE.instantiate(
                           resourceNameSegments);
                     })
+                .setJavaMethodName("aggregatedList")
                 .build();
     HttpJsonCallSettings<DeleteAddressRequest, Operation> deleteTransportSettings =
         HttpJsonCallSettings.<DeleteAddressRequest, Operation>newBuilder()
@@ -364,6 +365,7 @@ public class HttpJsonAddressesStub extends AddressesStub {
                   resourceNameSegments.put("region", String.valueOf(request.getRegion()));
                   return DELETE_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
+            .setJavaMethodName("delete")
             .build();
     HttpJsonCallSettings<InsertAddressRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertAddressRequest, Operation>newBuilder()
@@ -383,6 +385,7 @@ public class HttpJsonAddressesStub extends AddressesStub {
                   resourceNameSegments.put("region", String.valueOf(request.getRegion()));
                   return INSERT_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
+            .setJavaMethodName("insert")
             .build();
     HttpJsonCallSettings<ListAddressesRequest, AddressList> listTransportSettings =
         HttpJsonCallSettings.<ListAddressesRequest, AddressList>newBuilder()
@@ -402,6 +405,7 @@ public class HttpJsonAddressesStub extends AddressesStub {
                   resourceNameSegments.put("region", String.valueOf(request.getRegion()));
                   return LIST_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
+            .setJavaMethodName("list")
             .build();
 
     this.aggregatedListCallable =

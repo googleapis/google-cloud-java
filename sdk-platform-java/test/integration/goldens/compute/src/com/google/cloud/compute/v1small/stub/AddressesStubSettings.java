@@ -410,6 +410,11 @@ public class AddressesStubSettings extends StubSettings<AddressesStubSettings> {
     return LibraryMetadata.newBuilder().build();
   }
 
+  @Override
+  protected String getJavaClientName() {
+    return "com.google.cloud.compute.v1small.AddressesClient";
+  }
+
   /** Builder for AddressesStubSettings. */
   public static class Builder extends StubSettings.Builder<AddressesStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;

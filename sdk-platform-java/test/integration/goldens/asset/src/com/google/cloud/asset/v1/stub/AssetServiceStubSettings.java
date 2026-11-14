@@ -735,6 +735,11 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
     return LibraryMetadata.newBuilder().build();
   }
 
+  @Override
+  protected String getJavaClientName() {
+    return "com.google.cloud.asset.v1.AssetServiceClient";
+  }
+
   /** Builder for AssetServiceStubSettings. */
   public static class Builder extends StubSettings.Builder<AssetServiceStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;

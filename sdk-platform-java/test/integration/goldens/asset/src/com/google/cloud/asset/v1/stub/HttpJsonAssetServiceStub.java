@@ -963,6 +963,7 @@ public class HttpJsonAssetServiceStub extends AssetServiceStub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getParent())
+            .setJavaMethodName("exportAssets")
             .build();
     HttpJsonCallSettings<ListAssetsRequest, ListAssetsResponse> listAssetsTransportSettings =
         HttpJsonCallSettings.<ListAssetsRequest, ListAssetsResponse>newBuilder()
@@ -975,6 +976,7 @@ public class HttpJsonAssetServiceStub extends AssetServiceStub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getParent())
+            .setJavaMethodName("listAssets")
             .build();
     HttpJsonCallSettings<BatchGetAssetsHistoryRequest, BatchGetAssetsHistoryResponse>
         batchGetAssetsHistoryTransportSettings =
@@ -989,6 +991,7 @@ public class HttpJsonAssetServiceStub extends AssetServiceStub {
                       return builder.build();
                     })
                 .setResourceNameExtractor(request -> request.getParent())
+                .setJavaMethodName("batchGetAssetsHistory")
                 .build();
     HttpJsonCallSettings<CreateFeedRequest, Feed> createFeedTransportSettings =
         HttpJsonCallSettings.<CreateFeedRequest, Feed>newBuilder()
@@ -1000,6 +1003,7 @@ public class HttpJsonAssetServiceStub extends AssetServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setJavaMethodName("createFeed")
             .build();
     HttpJsonCallSettings<GetFeedRequest, Feed> getFeedTransportSettings =
         HttpJsonCallSettings.<GetFeedRequest, Feed>newBuilder()
@@ -1012,6 +1016,7 @@ public class HttpJsonAssetServiceStub extends AssetServiceStub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getName())
+            .setJavaMethodName("getFeed")
             .build();
     HttpJsonCallSettings<ListFeedsRequest, ListFeedsResponse> listFeedsTransportSettings =
         HttpJsonCallSettings.<ListFeedsRequest, ListFeedsResponse>newBuilder()
@@ -1023,6 +1028,7 @@ public class HttpJsonAssetServiceStub extends AssetServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setJavaMethodName("listFeeds")
             .build();
     HttpJsonCallSettings<UpdateFeedRequest, Feed> updateFeedTransportSettings =
         HttpJsonCallSettings.<UpdateFeedRequest, Feed>newBuilder()
@@ -1034,6 +1040,7 @@ public class HttpJsonAssetServiceStub extends AssetServiceStub {
                   builder.add("feed.name", String.valueOf(request.getFeed().getName()));
                   return builder.build();
                 })
+            .setJavaMethodName("updateFeed")
             .build();
     HttpJsonCallSettings<DeleteFeedRequest, Empty> deleteFeedTransportSettings =
         HttpJsonCallSettings.<DeleteFeedRequest, Empty>newBuilder()
@@ -1046,6 +1053,7 @@ public class HttpJsonAssetServiceStub extends AssetServiceStub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getName())
+            .setJavaMethodName("deleteFeed")
             .build();
     HttpJsonCallSettings<SearchAllResourcesRequest, SearchAllResourcesResponse>
         searchAllResourcesTransportSettings =
@@ -1058,6 +1066,7 @@ public class HttpJsonAssetServiceStub extends AssetServiceStub {
                       builder.add("scope", String.valueOf(request.getScope()));
                       return builder.build();
                     })
+                .setJavaMethodName("searchAllResources")
                 .build();
     HttpJsonCallSettings<SearchAllIamPoliciesRequest, SearchAllIamPoliciesResponse>
         searchAllIamPoliciesTransportSettings =
@@ -1071,6 +1080,7 @@ public class HttpJsonAssetServiceStub extends AssetServiceStub {
                       builder.add("scope", String.valueOf(request.getScope()));
                       return builder.build();
                     })
+                .setJavaMethodName("searchAllIamPolicies")
                 .build();
     HttpJsonCallSettings<AnalyzeIamPolicyRequest, AnalyzeIamPolicyResponse>
         analyzeIamPolicyTransportSettings =
@@ -1085,6 +1095,7 @@ public class HttpJsonAssetServiceStub extends AssetServiceStub {
                           String.valueOf(request.getAnalysisQuery().getScope()));
                       return builder.build();
                     })
+                .setJavaMethodName("analyzeIamPolicy")
                 .build();
     HttpJsonCallSettings<AnalyzeIamPolicyLongrunningRequest, Operation>
         analyzeIamPolicyLongrunningTransportSettings =
@@ -1099,6 +1110,7 @@ public class HttpJsonAssetServiceStub extends AssetServiceStub {
                           String.valueOf(request.getAnalysisQuery().getScope()));
                       return builder.build();
                     })
+                .setJavaMethodName("analyzeIamPolicyLongrunning")
                 .build();
     HttpJsonCallSettings<AnalyzeMoveRequest, AnalyzeMoveResponse> analyzeMoveTransportSettings =
         HttpJsonCallSettings.<AnalyzeMoveRequest, AnalyzeMoveResponse>newBuilder()
@@ -1110,6 +1122,7 @@ public class HttpJsonAssetServiceStub extends AssetServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setJavaMethodName("analyzeMove")
             .build();
     HttpJsonCallSettings<QueryAssetsRequest, QueryAssetsResponse> queryAssetsTransportSettings =
         HttpJsonCallSettings.<QueryAssetsRequest, QueryAssetsResponse>newBuilder()
@@ -1122,6 +1135,7 @@ public class HttpJsonAssetServiceStub extends AssetServiceStub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getParent())
+            .setJavaMethodName("queryAssets")
             .build();
     HttpJsonCallSettings<CreateSavedQueryRequest, SavedQuery> createSavedQueryTransportSettings =
         HttpJsonCallSettings.<CreateSavedQueryRequest, SavedQuery>newBuilder()
@@ -1134,6 +1148,7 @@ public class HttpJsonAssetServiceStub extends AssetServiceStub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getParent())
+            .setJavaMethodName("createSavedQuery")
             .build();
     HttpJsonCallSettings<GetSavedQueryRequest, SavedQuery> getSavedQueryTransportSettings =
         HttpJsonCallSettings.<GetSavedQueryRequest, SavedQuery>newBuilder()
@@ -1146,6 +1161,7 @@ public class HttpJsonAssetServiceStub extends AssetServiceStub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getName())
+            .setJavaMethodName("getSavedQuery")
             .build();
     HttpJsonCallSettings<ListSavedQueriesRequest, ListSavedQueriesResponse>
         listSavedQueriesTransportSettings =
@@ -1159,6 +1175,7 @@ public class HttpJsonAssetServiceStub extends AssetServiceStub {
                       return builder.build();
                     })
                 .setResourceNameExtractor(request -> request.getParent())
+                .setJavaMethodName("listSavedQueries")
                 .build();
     HttpJsonCallSettings<UpdateSavedQueryRequest, SavedQuery> updateSavedQueryTransportSettings =
         HttpJsonCallSettings.<UpdateSavedQueryRequest, SavedQuery>newBuilder()
@@ -1171,6 +1188,7 @@ public class HttpJsonAssetServiceStub extends AssetServiceStub {
                       "saved_query.name", String.valueOf(request.getSavedQuery().getName()));
                   return builder.build();
                 })
+            .setJavaMethodName("updateSavedQuery")
             .build();
     HttpJsonCallSettings<DeleteSavedQueryRequest, Empty> deleteSavedQueryTransportSettings =
         HttpJsonCallSettings.<DeleteSavedQueryRequest, Empty>newBuilder()
@@ -1183,6 +1201,7 @@ public class HttpJsonAssetServiceStub extends AssetServiceStub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getName())
+            .setJavaMethodName("deleteSavedQuery")
             .build();
     HttpJsonCallSettings<BatchGetEffectiveIamPoliciesRequest, BatchGetEffectiveIamPoliciesResponse>
         batchGetEffectiveIamPoliciesTransportSettings =
@@ -1198,6 +1217,7 @@ public class HttpJsonAssetServiceStub extends AssetServiceStub {
                       return builder.build();
                     })
                 .setResourceNameExtractor(request -> request.getScope())
+                .setJavaMethodName("batchGetEffectiveIamPolicies")
                 .build();
 
     this.exportAssetsCallable =

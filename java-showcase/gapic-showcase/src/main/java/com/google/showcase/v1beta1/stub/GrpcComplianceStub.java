@@ -271,14 +271,17 @@ public class GrpcComplianceStub extends ComplianceStub {
     GrpcCallSettings<RepeatRequest, RepeatResponse> repeatDataBodyTransportSettings =
         GrpcCallSettings.<RepeatRequest, RepeatResponse>newBuilder()
             .setMethodDescriptor(repeatDataBodyMethodDescriptor)
+            .setJavaMethodName("repeatDataBody")
             .build();
     GrpcCallSettings<RepeatRequest, RepeatResponse> repeatDataBodyInfoTransportSettings =
         GrpcCallSettings.<RepeatRequest, RepeatResponse>newBuilder()
             .setMethodDescriptor(repeatDataBodyInfoMethodDescriptor)
+            .setJavaMethodName("repeatDataBodyInfo")
             .build();
     GrpcCallSettings<RepeatRequest, RepeatResponse> repeatDataQueryTransportSettings =
         GrpcCallSettings.<RepeatRequest, RepeatResponse>newBuilder()
             .setMethodDescriptor(repeatDataQueryMethodDescriptor)
+            .setJavaMethodName("repeatDataQuery")
             .build();
     GrpcCallSettings<RepeatRequest, RepeatResponse> repeatDataSimplePathTransportSettings =
         GrpcCallSettings.<RepeatRequest, RepeatResponse>newBuilder()
@@ -294,6 +297,7 @@ public class GrpcComplianceStub extends ComplianceStub {
                   builder.add("info.f_string", String.valueOf(request.getInfo().getFString()));
                   return builder.build();
                 })
+            .setJavaMethodName("repeatDataSimplePath")
             .build();
     GrpcCallSettings<RepeatRequest, RepeatResponse> repeatDataPathResourceTransportSettings =
         GrpcCallSettings.<RepeatRequest, RepeatResponse>newBuilder()
@@ -308,6 +312,7 @@ public class GrpcComplianceStub extends ComplianceStub {
                   builder.add("info.f_string", String.valueOf(request.getInfo().getFString()));
                   return builder.build();
                 })
+            .setJavaMethodName("repeatDataPathResource")
             .build();
     GrpcCallSettings<RepeatRequest, RepeatResponse>
         repeatDataPathTrailingResourceTransportSettings =
@@ -322,22 +327,27 @@ public class GrpcComplianceStub extends ComplianceStub {
                       builder.add("info.f_string", String.valueOf(request.getInfo().getFString()));
                       return builder.build();
                     })
+                .setJavaMethodName("repeatDataPathTrailingResource")
                 .build();
     GrpcCallSettings<RepeatRequest, RepeatResponse> repeatDataBodyPutTransportSettings =
         GrpcCallSettings.<RepeatRequest, RepeatResponse>newBuilder()
             .setMethodDescriptor(repeatDataBodyPutMethodDescriptor)
+            .setJavaMethodName("repeatDataBodyPut")
             .build();
     GrpcCallSettings<RepeatRequest, RepeatResponse> repeatDataBodyPatchTransportSettings =
         GrpcCallSettings.<RepeatRequest, RepeatResponse>newBuilder()
             .setMethodDescriptor(repeatDataBodyPatchMethodDescriptor)
+            .setJavaMethodName("repeatDataBodyPatch")
             .build();
     GrpcCallSettings<EnumRequest, EnumResponse> getEnumTransportSettings =
         GrpcCallSettings.<EnumRequest, EnumResponse>newBuilder()
             .setMethodDescriptor(getEnumMethodDescriptor)
+            .setJavaMethodName("getEnum")
             .build();
     GrpcCallSettings<EnumResponse, EnumResponse> verifyEnumTransportSettings =
         GrpcCallSettings.<EnumResponse, EnumResponse>newBuilder()
             .setMethodDescriptor(verifyEnumMethodDescriptor)
+            .setJavaMethodName("verifyEnum")
             .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -348,6 +358,7 @@ public class GrpcComplianceStub extends ComplianceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setJavaMethodName("listLocations")
             .build();
     GrpcCallSettings<GetLocationRequest, Location> getLocationTransportSettings =
         GrpcCallSettings.<GetLocationRequest, Location>newBuilder()
@@ -358,6 +369,7 @@ public class GrpcComplianceStub extends ComplianceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setJavaMethodName("getLocation")
             .build();
     GrpcCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         GrpcCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
@@ -369,6 +381,7 @@ public class GrpcComplianceStub extends ComplianceStub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getResource())
+            .setJavaMethodName("setIamPolicy")
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -380,6 +393,7 @@ public class GrpcComplianceStub extends ComplianceStub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getResource())
+            .setJavaMethodName("getIamPolicy")
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -392,6 +406,7 @@ public class GrpcComplianceStub extends ComplianceStub {
                       return builder.build();
                     })
                 .setResourceNameExtractor(request -> request.getResource())
+                .setJavaMethodName("testIamPermissions")
                 .build();
 
     this.repeatDataBodyCallable =

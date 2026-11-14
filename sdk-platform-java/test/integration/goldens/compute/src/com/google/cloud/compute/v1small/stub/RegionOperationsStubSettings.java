@@ -212,6 +212,11 @@ public class RegionOperationsStubSettings extends StubSettings<RegionOperationsS
     return LibraryMetadata.newBuilder().build();
   }
 
+  @Override
+  protected String getJavaClientName() {
+    return "com.google.cloud.compute.v1small.RegionOperationsClient";
+  }
+
   /** Builder for RegionOperationsStubSettings. */
   public static class Builder extends StubSettings.Builder<RegionOperationsStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;

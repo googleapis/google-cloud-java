@@ -485,6 +485,7 @@ public class GrpcKeyManagementServiceStub extends KeyManagementServiceStub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getParent())
+            .setJavaMethodName("listKeyRings")
             .build();
     GrpcCallSettings<ListCryptoKeysRequest, ListCryptoKeysResponse>
         listCryptoKeysTransportSettings =
@@ -497,6 +498,7 @@ public class GrpcKeyManagementServiceStub extends KeyManagementServiceStub {
                       return builder.build();
                     })
                 .setResourceNameExtractor(request -> request.getParent())
+                .setJavaMethodName("listCryptoKeys")
                 .build();
     GrpcCallSettings<ListCryptoKeyVersionsRequest, ListCryptoKeyVersionsResponse>
         listCryptoKeyVersionsTransportSettings =
@@ -510,6 +512,7 @@ public class GrpcKeyManagementServiceStub extends KeyManagementServiceStub {
                       return builder.build();
                     })
                 .setResourceNameExtractor(request -> request.getParent())
+                .setJavaMethodName("listCryptoKeyVersions")
                 .build();
     GrpcCallSettings<ListImportJobsRequest, ListImportJobsResponse>
         listImportJobsTransportSettings =
@@ -522,6 +525,7 @@ public class GrpcKeyManagementServiceStub extends KeyManagementServiceStub {
                       return builder.build();
                     })
                 .setResourceNameExtractor(request -> request.getParent())
+                .setJavaMethodName("listImportJobs")
                 .build();
     GrpcCallSettings<GetKeyRingRequest, KeyRing> getKeyRingTransportSettings =
         GrpcCallSettings.<GetKeyRingRequest, KeyRing>newBuilder()
@@ -533,6 +537,7 @@ public class GrpcKeyManagementServiceStub extends KeyManagementServiceStub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getName())
+            .setJavaMethodName("getKeyRing")
             .build();
     GrpcCallSettings<GetCryptoKeyRequest, CryptoKey> getCryptoKeyTransportSettings =
         GrpcCallSettings.<GetCryptoKeyRequest, CryptoKey>newBuilder()
@@ -544,6 +549,7 @@ public class GrpcKeyManagementServiceStub extends KeyManagementServiceStub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getName())
+            .setJavaMethodName("getCryptoKey")
             .build();
     GrpcCallSettings<GetCryptoKeyVersionRequest, CryptoKeyVersion>
         getCryptoKeyVersionTransportSettings =
@@ -556,6 +562,7 @@ public class GrpcKeyManagementServiceStub extends KeyManagementServiceStub {
                       return builder.build();
                     })
                 .setResourceNameExtractor(request -> request.getName())
+                .setJavaMethodName("getCryptoKeyVersion")
                 .build();
     GrpcCallSettings<GetPublicKeyRequest, PublicKey> getPublicKeyTransportSettings =
         GrpcCallSettings.<GetPublicKeyRequest, PublicKey>newBuilder()
@@ -567,6 +574,7 @@ public class GrpcKeyManagementServiceStub extends KeyManagementServiceStub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getName())
+            .setJavaMethodName("getPublicKey")
             .build();
     GrpcCallSettings<GetImportJobRequest, ImportJob> getImportJobTransportSettings =
         GrpcCallSettings.<GetImportJobRequest, ImportJob>newBuilder()
@@ -578,6 +586,7 @@ public class GrpcKeyManagementServiceStub extends KeyManagementServiceStub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getName())
+            .setJavaMethodName("getImportJob")
             .build();
     GrpcCallSettings<CreateKeyRingRequest, KeyRing> createKeyRingTransportSettings =
         GrpcCallSettings.<CreateKeyRingRequest, KeyRing>newBuilder()
@@ -589,6 +598,7 @@ public class GrpcKeyManagementServiceStub extends KeyManagementServiceStub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getParent())
+            .setJavaMethodName("createKeyRing")
             .build();
     GrpcCallSettings<CreateCryptoKeyRequest, CryptoKey> createCryptoKeyTransportSettings =
         GrpcCallSettings.<CreateCryptoKeyRequest, CryptoKey>newBuilder()
@@ -600,6 +610,7 @@ public class GrpcKeyManagementServiceStub extends KeyManagementServiceStub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getParent())
+            .setJavaMethodName("createCryptoKey")
             .build();
     GrpcCallSettings<CreateCryptoKeyVersionRequest, CryptoKeyVersion>
         createCryptoKeyVersionTransportSettings =
@@ -612,6 +623,7 @@ public class GrpcKeyManagementServiceStub extends KeyManagementServiceStub {
                       return builder.build();
                     })
                 .setResourceNameExtractor(request -> request.getParent())
+                .setJavaMethodName("createCryptoKeyVersion")
                 .build();
     GrpcCallSettings<ImportCryptoKeyVersionRequest, CryptoKeyVersion>
         importCryptoKeyVersionTransportSettings =
@@ -624,6 +636,7 @@ public class GrpcKeyManagementServiceStub extends KeyManagementServiceStub {
                       return builder.build();
                     })
                 .setResourceNameExtractor(request -> request.getParent())
+                .setJavaMethodName("importCryptoKeyVersion")
                 .build();
     GrpcCallSettings<CreateImportJobRequest, ImportJob> createImportJobTransportSettings =
         GrpcCallSettings.<CreateImportJobRequest, ImportJob>newBuilder()
@@ -635,6 +648,7 @@ public class GrpcKeyManagementServiceStub extends KeyManagementServiceStub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getParent())
+            .setJavaMethodName("createImportJob")
             .build();
     GrpcCallSettings<UpdateCryptoKeyRequest, CryptoKey> updateCryptoKeyTransportSettings =
         GrpcCallSettings.<UpdateCryptoKeyRequest, CryptoKey>newBuilder()
@@ -645,6 +659,7 @@ public class GrpcKeyManagementServiceStub extends KeyManagementServiceStub {
                   builder.add("crypto_key.name", String.valueOf(request.getCryptoKey().getName()));
                   return builder.build();
                 })
+            .setJavaMethodName("updateCryptoKey")
             .build();
     GrpcCallSettings<UpdateCryptoKeyVersionRequest, CryptoKeyVersion>
         updateCryptoKeyVersionTransportSettings =
@@ -658,6 +673,7 @@ public class GrpcKeyManagementServiceStub extends KeyManagementServiceStub {
                           String.valueOf(request.getCryptoKeyVersion().getName()));
                       return builder.build();
                     })
+                .setJavaMethodName("updateCryptoKeyVersion")
                 .build();
     GrpcCallSettings<EncryptRequest, EncryptResponse> encryptTransportSettings =
         GrpcCallSettings.<EncryptRequest, EncryptResponse>newBuilder()
@@ -669,6 +685,7 @@ public class GrpcKeyManagementServiceStub extends KeyManagementServiceStub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getName())
+            .setJavaMethodName("encrypt")
             .build();
     GrpcCallSettings<DecryptRequest, DecryptResponse> decryptTransportSettings =
         GrpcCallSettings.<DecryptRequest, DecryptResponse>newBuilder()
@@ -680,6 +697,7 @@ public class GrpcKeyManagementServiceStub extends KeyManagementServiceStub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getName())
+            .setJavaMethodName("decrypt")
             .build();
     GrpcCallSettings<AsymmetricSignRequest, AsymmetricSignResponse>
         asymmetricSignTransportSettings =
@@ -692,6 +710,7 @@ public class GrpcKeyManagementServiceStub extends KeyManagementServiceStub {
                       return builder.build();
                     })
                 .setResourceNameExtractor(request -> request.getName())
+                .setJavaMethodName("asymmetricSign")
                 .build();
     GrpcCallSettings<AsymmetricDecryptRequest, AsymmetricDecryptResponse>
         asymmetricDecryptTransportSettings =
@@ -704,6 +723,7 @@ public class GrpcKeyManagementServiceStub extends KeyManagementServiceStub {
                       return builder.build();
                     })
                 .setResourceNameExtractor(request -> request.getName())
+                .setJavaMethodName("asymmetricDecrypt")
                 .build();
     GrpcCallSettings<UpdateCryptoKeyPrimaryVersionRequest, CryptoKey>
         updateCryptoKeyPrimaryVersionTransportSettings =
@@ -716,6 +736,7 @@ public class GrpcKeyManagementServiceStub extends KeyManagementServiceStub {
                       return builder.build();
                     })
                 .setResourceNameExtractor(request -> request.getName())
+                .setJavaMethodName("updateCryptoKeyPrimaryVersion")
                 .build();
     GrpcCallSettings<DestroyCryptoKeyVersionRequest, CryptoKeyVersion>
         destroyCryptoKeyVersionTransportSettings =
@@ -728,6 +749,7 @@ public class GrpcKeyManagementServiceStub extends KeyManagementServiceStub {
                       return builder.build();
                     })
                 .setResourceNameExtractor(request -> request.getName())
+                .setJavaMethodName("destroyCryptoKeyVersion")
                 .build();
     GrpcCallSettings<RestoreCryptoKeyVersionRequest, CryptoKeyVersion>
         restoreCryptoKeyVersionTransportSettings =
@@ -740,6 +762,7 @@ public class GrpcKeyManagementServiceStub extends KeyManagementServiceStub {
                       return builder.build();
                     })
                 .setResourceNameExtractor(request -> request.getName())
+                .setJavaMethodName("restoreCryptoKeyVersion")
                 .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -751,6 +774,7 @@ public class GrpcKeyManagementServiceStub extends KeyManagementServiceStub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getResource())
+            .setJavaMethodName("getIamPolicy")
             .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -762,6 +786,7 @@ public class GrpcKeyManagementServiceStub extends KeyManagementServiceStub {
                   builder.add("page_size", String.valueOf(request.getPageSize()));
                   return builder.build();
                 })
+            .setJavaMethodName("listLocations")
             .build();
     GrpcCallSettings<GetLocationRequest, Location> getLocationTransportSettings =
         GrpcCallSettings.<GetLocationRequest, Location>newBuilder()
@@ -772,6 +797,7 @@ public class GrpcKeyManagementServiceStub extends KeyManagementServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setJavaMethodName("getLocation")
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -784,6 +810,7 @@ public class GrpcKeyManagementServiceStub extends KeyManagementServiceStub {
                       return builder.build();
                     })
                 .setResourceNameExtractor(request -> request.getResource())
+                .setJavaMethodName("testIamPermissions")
                 .build();
 
     this.listKeyRingsCallable =

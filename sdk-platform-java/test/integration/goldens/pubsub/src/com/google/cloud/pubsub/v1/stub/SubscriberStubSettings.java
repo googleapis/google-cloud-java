@@ -487,6 +487,11 @@ public class SubscriberStubSettings extends StubSettings<SubscriberStubSettings>
     return LibraryMetadata.newBuilder().setVersion(Version.VERSION).build();
   }
 
+  @Override
+  protected String getJavaClientName() {
+    return "com.google.cloud.pubsub.v1.SubscriptionAdminClient";
+  }
+
   /** Builder for SubscriberStubSettings. */
   public static class Builder extends StubSettings.Builder<SubscriberStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
