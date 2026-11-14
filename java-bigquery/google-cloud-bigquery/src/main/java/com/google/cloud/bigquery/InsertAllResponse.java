@@ -19,13 +19,10 @@ package com.google.cloud.bigquery;
 import com.google.api.services.bigquery.model.ErrorProto;
 import com.google.api.services.bigquery.model.TableDataInsertAllResponse;
 import com.google.api.services.bigquery.model.TableDataInsertAllResponse.InsertErrors;
-import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
-import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
-import com.google.common.collect.Maps;
 import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
@@ -93,36 +90,36 @@ public class InsertAllResponse implements Serializable {
   TableDataInsertAllResponse toPb() {
     TableDataInsertAllResponse responsePb = new TableDataInsertAllResponse();
     if (!insertErrors.isEmpty()) {
-      responsePb.setInsertErrors(
-          ImmutableList.copyOf(
-              Iterables.transform(
-                  insertErrors.entrySet(),
-                  new Function<Map.Entry<Long, List<BigQueryError>>, InsertErrors>() {
-                    @Override
-                    public InsertErrors apply(Map.Entry<Long, List<BigQueryError>> entry) {
-                      return new InsertErrors()
-                          .setIndex(entry.getKey())
-                          .setErrors(
-                              Lists.transform(entry.getValue(), BigQueryError.TO_PB_FUNCTION));
-                    }
-                  })));
+      ImmutableList.Builder<InsertErrors> errorsBuilder =
+          ImmutableList.builderWithExpectedSize(insertErrors.size());
+      for (Map.Entry<Long, List<BigQueryError>> entry : insertErrors.entrySet()) {
+        errorsBuilder.add(
+            new InsertErrors()
+                .setIndex(entry.getKey())
+                .setErrors(Lists.transform(entry.getValue(), BigQueryError.TO_PB_FUNCTION)));
+      }
+      responsePb.setInsertErrors(errorsBuilder.build());
     }
     return responsePb;
   }
 
   static InsertAllResponse fromPb(TableDataInsertAllResponse responsePb) {
-    Map<Long, List<BigQueryError>> insertErrors = null;
-    if (responsePb.getInsertErrors() != null) {
-      List<InsertErrors> errorsPb = responsePb.getInsertErrors();
-      insertErrors = Maps.newHashMapWithExpectedSize(errorsPb.size());
-      for (InsertErrors errorPb : errorsPb) {
-        insertErrors.put(
-            errorPb.getIndex(),
-            Lists.transform(
-                errorPb.getErrors() != null ? errorPb.getErrors() : ImmutableList.<ErrorProto>of(),
-                BigQueryError.FROM_PB_FUNCTION));
-      }
+    if (responsePb.getInsertErrors() == null) {
+      return new InsertAllResponse(null);
     }
-    return new InsertAllResponse(insertErrors);
+    List<InsertErrors> errorsPb = responsePb.getInsertErrors();
+    ImmutableMap.Builder<Long, List<BigQueryError>> mapBuilder =
+        ImmutableMap.builderWithExpectedSize(errorsPb.size());
+    for (InsertErrors errorPb : errorsPb) {
+      mapBuilder.put(
+          errorPb.getIndex(),
+          Lists.transform(
+              errorPb.getErrors() != null ? errorPb.getErrors() : ImmutableList.<ErrorProto>of(),
+              BigQueryError.FROM_PB_FUNCTION));
+    }
+    // Build an ImmutableMap directly so the InsertAllResponse constructor's ImmutableMap.copyOf
+    // avoids copying out of a temporary HashMap; buildKeepingLast() preserves HashMap.put
+    // last-writer-wins behavior if duplicate row indexes ever appear.
+    return new InsertAllResponse(mapBuilder.buildKeepingLast());
   }
 }
