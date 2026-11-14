@@ -49,6 +49,7 @@ import com.google.auth.Credentials;
 import com.google.auth.ServiceAccountSigner;
 import com.google.auth.http.HttpCredentialsAdapter;
 import com.google.auth.oauth2.MetricsUtils.RequestType;
+import com.google.common.base.Strings;
 import com.google.common.io.BaseEncoding;
 import java.io.IOException;
 import java.io.InputStream;
@@ -168,10 +169,7 @@ class IamUtils {
         response, LOGGER_PROVIDER, "Received response for signature to sign the blob");
     int statusCode = response.getStatusCode();
     if (statusCode >= 400 && statusCode < HttpStatusCodes.STATUS_CODE_SERVER_ERROR) {
-      GenericData responseError = response.parseAs(GenericData.class);
-      Map<String, Object> error =
-          OAuth2Utils.validateMap(responseError, "error", PARSE_ERROR_MESSAGE);
-      String errorMessage = OAuth2Utils.validateString(error, "message", PARSE_ERROR_MESSAGE);
+      String errorMessage = parseErrorMessage(response);
       throw new IOException(
           String.format(
               "Error code %s trying to sign provided bytes: %s", statusCode, errorMessage));
@@ -195,6 +193,38 @@ class IamUtils {
     LoggingUtils.logResponsePayload(
         responseData, LOGGER_PROVIDER, "Response payload for sign blob");
     return OAuth2Utils.validateString(responseData, "signedBlob", PARSE_ERROR_SIGNATURE);
+  }
+
+  /**
+   * Returns the error message from an IAM Credentials 4xx response.
+   *
+   * <p>The response can have no content or an empty body. For example, {@code HttpURLConnection}
+   * (used by {@code NetHttpTransport}) discards the body of a 401 or 407 response to a request sent
+   * in streaming mode, which includes every POST with content, and of any response with {@code
+   * Content-Length: 0}. In those cases, the HTTP status message is returned instead of failing with
+   * a {@link NullPointerException} or {@link IllegalArgumentException} while parsing.
+   */
+  private static String parseErrorMessage(HttpResponse response) throws IOException {
+    if (response.getContent() == null) {
+      return getStatusMessageOrDefault(response);
+    }
+    GenericData responseError;
+    try {
+      responseError = response.parseAs(GenericData.class);
+    } catch (IllegalArgumentException e) {
+      // The JSON parser throws IllegalArgumentException for an empty body ("no JSON input found").
+      return getStatusMessageOrDefault(response);
+    }
+    Map<String, Object> error =
+        OAuth2Utils.validateMap(responseError, "error", PARSE_ERROR_MESSAGE);
+    return OAuth2Utils.validateString(error, "message", PARSE_ERROR_MESSAGE);
+  }
+
+  private static String getStatusMessageOrDefault(HttpResponse response) {
+    String statusMessage = response.getStatusMessage();
+    return Strings.isNullOrEmpty(statusMessage)
+        ? "(no error details in the response)"
+        : statusMessage;
   }
 
   /**
@@ -257,10 +287,7 @@ class IamUtils {
     LoggingUtils.logResponse(response, LOGGER_PROVIDER, "Received response for ID token request");
     int statusCode = response.getStatusCode();
     if (statusCode >= 400 && statusCode < HttpStatusCodes.STATUS_CODE_SERVER_ERROR) {
-      GenericData responseError = response.parseAs(GenericData.class);
-      Map<String, Object> error =
-          OAuth2Utils.validateMap(responseError, "error", PARSE_ERROR_MESSAGE);
-      String errorMessage = OAuth2Utils.validateString(error, "message", PARSE_ERROR_MESSAGE);
+      String errorMessage = parseErrorMessage(response);
       throw new IOException(
           String.format("Error code %s trying to getIDToken: %s", statusCode, errorMessage));
     }

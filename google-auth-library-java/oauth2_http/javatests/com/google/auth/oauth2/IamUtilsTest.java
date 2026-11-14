@@ -36,6 +36,9 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import com.google.api.client.http.HttpStatusCodes;
+import com.google.api.client.testing.http.MockHttpTransport;
+import com.google.api.client.testing.http.MockLowLevelHttpResponse;
+import com.google.auth.CredentialTypeForMetrics;
 import com.google.auth.Credentials;
 import com.google.auth.ServiceAccountSigner;
 import com.google.common.collect.ImmutableMap;
@@ -237,5 +240,174 @@ class IamUtilsTest {
 
     // Only one request will have been made for a 4xx error (no retries)
     assertEquals(1, transportFactory.getTransport().getNumRequests());
+  }
+
+  /**
+   * {@code HttpURLConnection} discards the body of a 401 response to a request sent in streaming
+   * mode (every POST with content), so the response has no content. The error must surface as an
+   * {@link IOException} with the status code, not a {@link NullPointerException}.
+   */
+  @Test
+  void sign_4xxErrorWithEmptyBody_throwsSigningExceptionWithStatusCode() {
+    MockHttpTransport transport =
+        new MockHttpTransport.Builder()
+            .setLowLevelHttpResponse(
+                new MockLowLevelHttpResponse()
+                    .setStatusCode(HttpStatusCodes.STATUS_CODE_UNAUTHORIZED)
+                    .setReasonPhrase("Unauthorized"))
+            .build();
+
+    ServiceAccountSigner.SigningException exception =
+        assertThrows(
+            ServiceAccountSigner.SigningException.class,
+            () ->
+                IamUtils.sign(
+                    CLIENT_EMAIL,
+                    credentials,
+                    Credentials.GOOGLE_DEFAULT_UNIVERSE,
+                    transport,
+                    new byte[] {0xD, 0xE, 0xA, 0xD},
+                    ImmutableMap.of()));
+    assertTrue(exception.getCause() instanceof IOException);
+    assertEquals(
+        "Error code 401 trying to sign provided bytes: Unauthorized",
+        exception.getCause().getMessage());
+  }
+
+  @Test
+  void getIdToken_4xxErrorWithEmptyBody_throwsIOExceptionWithStatusCode() throws IOException {
+    // IAM's 401 carries a Bearer challenge without an error parameter, so HttpCredentialsAdapter
+    // doesn't refresh and retry.
+    MockHttpTransport transport =
+        new MockHttpTransport.Builder()
+            .setLowLevelHttpResponse(
+                new MockLowLevelHttpResponse()
+                    .setStatusCode(HttpStatusCodes.STATUS_CODE_UNAUTHORIZED)
+                    .setReasonPhrase("Unauthorized")
+                    .addHeader("WWW-Authenticate", "Bearer realm=\"https://accounts.google.com/\""))
+            .build();
+
+    IOException exception =
+        assertThrows(
+            IOException.class,
+            () ->
+                IamUtils.getIdToken(
+                    CLIENT_EMAIL,
+                    credentials,
+                    transport,
+                    "https://example.com",
+                    false,
+                    ImmutableMap.of(),
+                    CredentialTypeForMetrics.SERVICE_ACCOUNT_CREDENTIALS_AT,
+                    Credentials.GOOGLE_DEFAULT_UNIVERSE));
+    assertEquals("Error code 401 trying to getIDToken: Unauthorized", exception.getMessage());
+    Mockito.verify(credentials, Mockito.never()).refresh();
+  }
+
+  @Test
+  void getIdToken_4xxErrorWithJsonBody_includesServerMessage() {
+    MockHttpTransport transport =
+        new MockHttpTransport.Builder()
+            .setLowLevelHttpResponse(
+                new MockLowLevelHttpResponse()
+                    .setStatusCode(HttpStatusCodes.STATUS_CODE_FORBIDDEN)
+                    .setContentType("application/json")
+                    .setContent("{\"error\": {\"code\": 403, \"message\": \"Permission denied\"}}"))
+            .build();
+
+    IOException exception =
+        assertThrows(
+            IOException.class,
+            () ->
+                IamUtils.getIdToken(
+                    CLIENT_EMAIL,
+                    credentials,
+                    transport,
+                    "https://example.com",
+                    false,
+                    ImmutableMap.of(),
+                    CredentialTypeForMetrics.SERVICE_ACCOUNT_CREDENTIALS_AT,
+                    Credentials.GOOGLE_DEFAULT_UNIVERSE));
+    assertEquals("Error code 403 trying to getIDToken: Permission denied", exception.getMessage());
+  }
+
+  @Test
+  void sign_4xxErrorWithEmptyStringBody_usesStatusMessage() {
+    MockHttpTransport transport =
+        new MockHttpTransport.Builder()
+            .setLowLevelHttpResponse(
+                new MockLowLevelHttpResponse()
+                    .setStatusCode(HttpStatusCodes.STATUS_CODE_UNAUTHORIZED)
+                    .setReasonPhrase("Unauthorized")
+                    .setContent(""))
+            .build();
+
+    ServiceAccountSigner.SigningException exception =
+        assertThrows(
+            ServiceAccountSigner.SigningException.class,
+            () ->
+                IamUtils.sign(
+                    CLIENT_EMAIL,
+                    credentials,
+                    Credentials.GOOGLE_DEFAULT_UNIVERSE,
+                    transport,
+                    new byte[] {0xD, 0xE, 0xA, 0xD},
+                    ImmutableMap.of()));
+    assertEquals(
+        "Error code 401 trying to sign provided bytes: Unauthorized",
+        exception.getCause().getMessage());
+  }
+
+  @Test
+  void sign_4xxErrorWithEmptyBodyAndNoReasonPhrase_usesFallbackMessage() {
+    MockHttpTransport transport =
+        new MockHttpTransport.Builder()
+            .setLowLevelHttpResponse(
+                new MockLowLevelHttpResponse()
+                    .setStatusCode(HttpStatusCodes.STATUS_CODE_UNAUTHORIZED)
+                    .setReasonPhrase(""))
+            .build();
+
+    ServiceAccountSigner.SigningException exception =
+        assertThrows(
+            ServiceAccountSigner.SigningException.class,
+            () ->
+                IamUtils.sign(
+                    CLIENT_EMAIL,
+                    credentials,
+                    Credentials.GOOGLE_DEFAULT_UNIVERSE,
+                    transport,
+                    new byte[] {0xD, 0xE, 0xA, 0xD},
+                    ImmutableMap.of()));
+    assertEquals(
+        "Error code 401 trying to sign provided bytes: (no error details in the response)",
+        exception.getCause().getMessage());
+  }
+
+  @Test
+  void sign_4xxErrorWithJsonBody_includesServerMessage() {
+    MockHttpTransport transport =
+        new MockHttpTransport.Builder()
+            .setLowLevelHttpResponse(
+                new MockLowLevelHttpResponse()
+                    .setStatusCode(HttpStatusCodes.STATUS_CODE_FORBIDDEN)
+                    .setContentType("application/json")
+                    .setContent("{\"error\": {\"code\": 403, \"message\": \"Permission denied\"}}"))
+            .build();
+
+    ServiceAccountSigner.SigningException exception =
+        assertThrows(
+            ServiceAccountSigner.SigningException.class,
+            () ->
+                IamUtils.sign(
+                    CLIENT_EMAIL,
+                    credentials,
+                    Credentials.GOOGLE_DEFAULT_UNIVERSE,
+                    transport,
+                    new byte[] {0xD, 0xE, 0xA, 0xD},
+                    ImmutableMap.of()));
+    assertEquals(
+        "Error code 403 trying to sign provided bytes: Permission denied",
+        exception.getCause().getMessage());
   }
 }
