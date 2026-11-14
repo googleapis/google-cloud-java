@@ -433,7 +433,10 @@ public class ComputeEngineCredentials extends GoogleCredentials
   @Override
   public AccessToken refreshAccessToken() throws IOException {
     String tokenUrl = createTokenUrlWithScopes();
-    String boundTokenPayload = AgentIdentityUtils.getBoundTokenPayload();
+    // Keep the CertInfo (not only its PEM payload) so the returned token records the certificate
+    // it is bound to. Callers that send the token over mTLS present exactly that certificate.
+    AgentIdentityUtils.CertInfo boundCertInfo = AgentIdentityUtils.getAgentIdentityCertInfo();
+    String boundTokenPayload = boundCertInfo != null ? boundCertInfo.getCertContent() : null;
     HttpRequest request =
         boundTokenPayload != null
             ? buildBoundTokenRequest(tokenUrl, boundTokenPayload)
@@ -481,6 +484,9 @@ public class ComputeEngineCredentials extends GoogleCredentials
         OAuth2Utils.validateInt32(responseData, "expires_in", PARSE_ERROR_PREFIX);
     long expiresAtMilliseconds = clock.currentTimeMillis() + expiresInSeconds * 1000;
 
+    if (boundCertInfo != null) {
+      return new BoundAccessToken(accessToken, new Date(expiresAtMilliseconds), boundCertInfo);
+    }
     return new AccessToken(accessToken, new Date(expiresAtMilliseconds));
   }
 
@@ -880,19 +886,31 @@ public class ComputeEngineCredentials extends GoogleCredentials
   public byte[] sign(byte[] toSign) {
     try {
       String account = getAccount();
+      String universeDomain;
+      try {
+        universeDomain = this.getUniverseDomain();
+      } catch (IOException ex) {
+        throw new SigningException("Failed to sign: Error obtaining universe domain", ex);
+      }
+      IamUtils.IamCallTarget target;
+      try {
+        target =
+            IamUtils.resolveCallTarget(
+                this, transportFactory, universeDomain, /* endpointOverridden= */ false);
+      } catch (IOException ex) {
+        throw new SigningException("Failed to sign: Error refreshing credentials", ex);
+      }
       return IamUtils.sign(
           account,
-          this,
-          this.getUniverseDomain(),
-          transportFactory.create(),
+          target.credentials,
+          target.endpointDomain,
+          target.transportFactory.create(),
           toSign,
           Collections.<String, Object>emptyMap());
     } catch (SigningException ex) {
       throw ex;
     } catch (RuntimeException ex) {
       throw new SigningException("Signing failed", ex);
-    } catch (IOException ex) {
-      throw new SigningException("Failed to sign: Error obtaining universe domain", ex);
     }
   }
 

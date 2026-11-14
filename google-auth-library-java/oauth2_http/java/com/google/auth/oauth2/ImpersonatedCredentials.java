@@ -365,19 +365,29 @@ public class ImpersonatedCredentials extends GoogleCredentials
    */
   @Override
   public byte[] sign(byte[] toSign) {
+    String universeDomain;
     try {
-      return IamUtils.sign(
-          getAccount(),
-          sourceCredentials,
-          getUniverseDomain(),
-          transportFactory.create(),
-          toSign,
-          ImmutableMap.of("delegates", this.delegates));
+      universeDomain = getUniverseDomain();
     } catch (IOException ex) {
       // Throwing an IOException would be a breaking change, so wrap it here.
       // This should not happen for this credential type.
       throw new SigningException("Failed to sign: Error obtaining universe domain", ex);
     }
+    IamUtils.IamCallTarget target;
+    try {
+      target =
+          IamUtils.resolveCallTarget(
+              sourceCredentials, transportFactory, universeDomain, iamEndpointOverride != null);
+    } catch (IOException ex) {
+      throw new SigningException("Failed to sign: Error refreshing source credentials", ex);
+    }
+    return IamUtils.sign(
+        getAccount(),
+        target.credentials,
+        target.endpointDomain,
+        target.transportFactory.create(),
+        toSign,
+        ImmutableMap.of("delegates", this.delegates));
   }
 
   /**
@@ -709,6 +719,8 @@ public class ImpersonatedCredentials extends GoogleCredentials
     HttpTransportFactory effectiveTransportFactory =
         firstNonNull(cycleTransportFactory, this.transportFactory);
     HttpCredentialsAdapter adapter;
+    // Set only when the IAM endpoint domain differs from getUniverseDomain() (mTLS).
+    @Nullable String iamEndpointDomain = null;
     AccessToken intermediateAccessTokenForCache = null;
     boolean usedCachedStsToken = false;
     if (this.sourceCredentials instanceof ExternalAccountCredentials) {
@@ -773,6 +785,25 @@ public class ImpersonatedCredentials extends GoogleCredentials
         }
       }
       adapter = new HttpCredentialsAdapter(sourceCredentials);
+      if (this.iamEndpointOverride == null) {
+        // A certificate-bound agent identity token must be sent over mTLS to the mTLS endpoint.
+        IamUtils.IamCallTarget target;
+        try {
+          target =
+              IamUtils.resolveCallTarget(
+                  this.sourceCredentials,
+                  effectiveTransportFactory,
+                  getUniverseDomain(),
+                  /* endpointOverridden= */ false);
+        } catch (IOException e) {
+          throw new IOException("Unable to refresh sourceCredentials", e);
+        }
+        if (target.usesMtls()) {
+          adapter = new HttpCredentialsAdapter(target.credentials);
+          effectiveTransportFactory = target.transportFactory;
+          iamEndpointDomain = target.endpointDomain;
+        }
+      }
     }
 
     HttpTransport httpTransport = effectiveTransportFactory.create();
@@ -785,7 +816,7 @@ public class ImpersonatedCredentials extends GoogleCredentials
             ? this.iamEndpointOverride
             : String.format(
                 IamUtils.IAM_ACCESS_TOKEN_ENDPOINT_FORMAT,
-                getUniverseDomain(),
+                iamEndpointDomain != null ? iamEndpointDomain : getUniverseDomain(),
                 this.targetPrincipal);
 
     GenericUrl url = new GenericUrl(endpointUrl);
@@ -899,15 +930,18 @@ public class ImpersonatedCredentials extends GoogleCredentials
       String targetAudience, @Nullable List<IdTokenProvider.Option> options) throws IOException {
     boolean includeEmail =
         options != null && options.contains(IdTokenProvider.Option.INCLUDE_EMAIL);
+    IamUtils.IamCallTarget target =
+        IamUtils.resolveCallTarget(
+            sourceCredentials, transportFactory, getUniverseDomain(), iamEndpointOverride != null);
     return IamUtils.getIdToken(
         getAccount(),
-        sourceCredentials,
-        transportFactory.create(),
+        target.credentials,
+        target.transportFactory.create(),
         targetAudience,
         includeEmail,
         ImmutableMap.of("delegates", this.delegates),
         getMetricsCredentialType(),
-        getUniverseDomain());
+        target.endpointDomain);
   }
 
   @Override

@@ -39,6 +39,7 @@ import com.google.auth.oauth2.AgentIdentityCertificateValidationUtils.InvalidCer
 import com.google.auth.oauth2.AgentIdentityCertificateValidationUtils.UnsupportedKeyAlgorithmException;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Strings;
+import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
@@ -46,8 +47,13 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.AccessDeniedException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.security.GeneralSecurityException;
+import java.security.KeyStore;
 import java.security.PrivateKey;
+import java.security.cert.Certificate;
+import java.security.cert.CertificateFactory;
 import java.security.cert.X509Certificate;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.Map;
 import java.util.logging.Level;
@@ -149,14 +155,28 @@ final class AgentIdentityUtils {
    *
    * <p>This class intentionally stores in-memory certificate content rather than file paths to
    * prevent redundant filesystem reads and race conditions when binding tokens to requests.
+   *
+   * <p>When the private key was loaded and verified together with the certificate, it also holds a
+   * {@link KeyStore} with that key and the certificate chain. Callers that present the certificate
+   * over mTLS use it so the TLS client certificate is exactly the certificate a token was bound to,
+   * without reading the files again.
    */
   static class CertInfo {
     private final X509Certificate certificate;
     private final String certContent;
+    private final @Nullable KeyStore keyStore;
 
     CertInfo(final X509Certificate certificate, final String certContent) {
+      this(certificate, certContent, null);
+    }
+
+    CertInfo(
+        final X509Certificate certificate,
+        final String certContent,
+        final @Nullable KeyStore keyStore) {
       this.certificate = certificate;
       this.certContent = certContent;
+      this.keyStore = keyStore;
     }
 
     /** Returns the parsed {@link X509Certificate}. */
@@ -167,6 +187,14 @@ final class AgentIdentityUtils {
     /** Returns the raw PEM certificate chain content. */
     String getCertContent() {
       return certContent;
+    }
+
+    /**
+     * Returns a {@link KeyStore} with the verified private key and certificate chain, or {@code
+     * null} if it isn't available.
+     */
+    @Nullable KeyStore getKeyStore() {
+      return keyStore;
     }
   }
 
@@ -412,7 +440,7 @@ final class AgentIdentityUtils {
                   keyPath, cert.getPublicKey().getAlgorithm());
 
           if (AgentIdentityCertificateValidationUtils.verifyKeyPair(cert, privateKey)) {
-            CertInfo info = new CertInfo(cert, certContent);
+            CertInfo info = new CertInfo(cert, certContent, buildKeyStore(certContent, privateKey));
             if (AgentIdentityCacheUtils.tryUpdateCache(
                 configMetaBefore, certMeta, keyMeta, true, info)) {
               return info;
@@ -484,6 +512,22 @@ final class AgentIdentityUtils {
                 + " failure after %d attempts.",
             CERT_KEY_MATCH_RETRIES),
         lastException);
+  }
+
+  /**
+   * Builds an in-memory {@link KeyStore} with the private key and the full certificate chain from
+   * {@code certContent}. The key and leaf certificate have already been verified to match.
+   */
+  private static KeyStore buildKeyStore(final String certContent, final PrivateKey privateKey)
+      throws IOException, GeneralSecurityException {
+    Collection<? extends Certificate> chain =
+        CertificateFactory.getInstance("X.509")
+            .generateCertificates(
+                new ByteArrayInputStream(certContent.getBytes(StandardCharsets.UTF_8)));
+    KeyStore keyStore = KeyStore.getInstance("JKS");
+    keyStore.load(null);
+    keyStore.setKeyEntry("alias", privateKey, new char[] {}, chain.toArray(new Certificate[0]));
+    return keyStore;
   }
 
   /**
