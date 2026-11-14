@@ -59,6 +59,7 @@ import com.google.cloud.dataform.v1beta1.CreateRepositoryRequest;
 import com.google.cloud.dataform.v1beta1.CreateTeamFolderRequest;
 import com.google.cloud.dataform.v1beta1.CreateWorkflowConfigRequest;
 import com.google.cloud.dataform.v1beta1.CreateWorkflowInvocationRequest;
+import com.google.cloud.dataform.v1beta1.CreateWorkspaceMetadata;
 import com.google.cloud.dataform.v1beta1.CreateWorkspaceRequest;
 import com.google.cloud.dataform.v1beta1.DeleteBranchRequest;
 import com.google.cloud.dataform.v1beta1.DeleteBranchResponse;
@@ -423,6 +424,17 @@ public abstract class DataformStub implements BackgroundResource {
 
   public UnaryCallable<CreateWorkspaceRequest, Workspace> createWorkspaceCallable() {
     throw new UnsupportedOperationException("Not implemented: createWorkspaceCallable()");
+  }
+
+  public OperationCallable<CreateWorkspaceRequest, Workspace, CreateWorkspaceMetadata>
+      createWorkspaceLongRunningOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: createWorkspaceLongRunningOperationCallable()");
+  }
+
+  public UnaryCallable<CreateWorkspaceRequest, Operation> createWorkspaceLongRunningCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: createWorkspaceLongRunningCallable()");
   }
 
   public UnaryCallable<DeleteWorkspaceRequest, Empty> deleteWorkspaceCallable() {

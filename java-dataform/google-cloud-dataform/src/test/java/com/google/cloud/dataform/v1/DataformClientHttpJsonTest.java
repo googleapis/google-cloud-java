@@ -2750,6 +2750,128 @@ public class DataformClientHttpJsonTest {
   }
 
   @Test
+  public void createWorkspaceLongRunningTest() throws Exception {
+    Workspace expectedResponse =
+        Workspace.newBuilder()
+            .setName(
+                WorkspaceName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[WORKSPACE]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setDataEncryptionState(DataEncryptionState.newBuilder().build())
+            .setInternalMetadata("internalMetadata6789388")
+            .setDisableMoves(true)
+            .setPrivateResourceMetadata(PrivateResourceMetadata.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createWorkspaceLongRunningTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    RepositoryName parent = RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]");
+    Workspace workspace = Workspace.newBuilder().build();
+    String workspaceId = "workspaceId466560144";
+
+    Workspace actualResponse =
+        client.createWorkspaceLongRunningAsync(parent, workspace, workspaceId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createWorkspaceLongRunningExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      RepositoryName parent = RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]");
+      Workspace workspace = Workspace.newBuilder().build();
+      String workspaceId = "workspaceId466560144";
+      client.createWorkspaceLongRunningAsync(parent, workspace, workspaceId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void createWorkspaceLongRunningTest2() throws Exception {
+    Workspace expectedResponse =
+        Workspace.newBuilder()
+            .setName(
+                WorkspaceName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[WORKSPACE]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setDataEncryptionState(DataEncryptionState.newBuilder().build())
+            .setInternalMetadata("internalMetadata6789388")
+            .setDisableMoves(true)
+            .setPrivateResourceMetadata(PrivateResourceMetadata.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createWorkspaceLongRunningTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String parent = "projects/project-9015/locations/location-9015/repositories/repositorie-9015";
+    Workspace workspace = Workspace.newBuilder().build();
+    String workspaceId = "workspaceId466560144";
+
+    Workspace actualResponse =
+        client.createWorkspaceLongRunningAsync(parent, workspace, workspaceId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createWorkspaceLongRunningExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-9015/locations/location-9015/repositories/repositorie-9015";
+      Workspace workspace = Workspace.newBuilder().build();
+      String workspaceId = "workspaceId466560144";
+      client.createWorkspaceLongRunningAsync(parent, workspace, workspaceId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
   public void deleteWorkspaceTest() throws Exception {
     Empty expectedResponse = Empty.newBuilder().build();
     mockService.addResponse(expectedResponse);
