@@ -28,6 +28,7 @@ import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.api.gax.rpc.testing.FakeOperationSnapshot;
 import com.google.bigtable.admin.v2.AuthorizedViewName;
+import com.google.bigtable.admin.v2.AvroSchema;
 import com.google.bigtable.admin.v2.Backup.State;
 import com.google.bigtable.admin.v2.BackupInfo;
 import com.google.bigtable.admin.v2.ChangeStreamConfig;
@@ -142,6 +143,9 @@ public class BigtableTableAdminClientTests {
   private static final String TEST_PROTO_SCHEMA_BUNDLE = "proto_schema_bundle.pb";
   // Location: `google-cloud-bigtable/src/test/resources/updated_proto_schema_bundle.pb`
   private static final String TEST_UPDATED_PROTO_SCHEMA_BUNDLE = "updated_proto_schema_bundle.pb";
+  private static final String TEST_AVRO_SCHEMA = "{\"type\": \"record\", \"name\": \"User\"}";
+  private static final String TEST_UPDATED_AVRO_SCHEMA =
+      "{\"type\": \"record\", \"name\": \"UpdatedUser\"}";
 
   private static final String INSTANCE_NAME = NameUtil.formatInstanceName(PROJECT_ID, INSTANCE_ID);
   private static final String TABLE_NAME =
@@ -1592,6 +1596,125 @@ public class BigtableTableAdminClientTests {
 
     // Verify
     assertThat(wasCalled.get()).isTrue();
+  }
+
+  @Test
+  public void testCreateSchemaBundleWithAvroSchema() {
+    // Setup
+    Mockito.when(mockStub.createSchemaBundleOperationCallable())
+        .thenReturn(mockCreateSchemaBundleOperationCallable);
+
+    com.google.bigtable.admin.v2.CreateSchemaBundleRequest expectedRequest =
+        com.google.bigtable.admin.v2.CreateSchemaBundleRequest.newBuilder()
+            .setParent(NameUtil.formatTableName(PROJECT_ID, INSTANCE_ID, TABLE_ID))
+            .setSchemaBundleId(SCHEMA_BUNDLE_ID)
+            .setSchemaBundle(
+                com.google.bigtable.admin.v2.SchemaBundle.newBuilder()
+                    .setAvroSchema(AvroSchema.newBuilder().addJsonSchemas(TEST_AVRO_SCHEMA)))
+            .build();
+
+    com.google.bigtable.admin.v2.SchemaBundle expectedResponse =
+        com.google.bigtable.admin.v2.SchemaBundle.newBuilder()
+            .setName(
+                NameUtil.formatSchemaBundleName(
+                    PROJECT_ID, INSTANCE_ID, TABLE_ID, SCHEMA_BUNDLE_ID))
+            .setAvroSchema(AvroSchema.newBuilder().addJsonSchemas(TEST_AVRO_SCHEMA))
+            .build();
+
+    mockOperationResult(
+        mockCreateSchemaBundleOperationCallable,
+        expectedRequest,
+        expectedResponse,
+        CreateSchemaBundleMetadata.newBuilder()
+            .setName(expectedRequest.getSchemaBundle().getName())
+            .build());
+
+    CreateSchemaBundleRequest req =
+        CreateSchemaBundleRequest.of(TABLE_ID, SCHEMA_BUNDLE_ID).setAvroSchema(TEST_AVRO_SCHEMA);
+
+    // Execute
+    SchemaBundle actualResult = adminClient.createSchemaBundle(req);
+
+    // Verify
+    assertThat(actualResult).isEqualTo(SchemaBundle.fromProto(expectedResponse));
+    assertThat(actualResult.getAvroSchema()).containsExactly(TEST_AVRO_SCHEMA);
+  }
+
+  @Test
+  public void testUpdateSchemaBundleWithAvroSchema() {
+    // Setup
+    Mockito.when(mockStub.updateSchemaBundleOperationCallable())
+        .thenReturn(mockUpdateSchemaBundleOperationCallable);
+
+    com.google.bigtable.admin.v2.UpdateSchemaBundleRequest expectedRequest =
+        com.google.bigtable.admin.v2.UpdateSchemaBundleRequest.newBuilder()
+            .setSchemaBundle(
+                com.google.bigtable.admin.v2.SchemaBundle.newBuilder()
+                    .setName(
+                        NameUtil.formatSchemaBundleName(
+                            PROJECT_ID, INSTANCE_ID, TABLE_ID, SCHEMA_BUNDLE_ID))
+                    .setAvroSchema(
+                        AvroSchema.newBuilder().addJsonSchemas(TEST_UPDATED_AVRO_SCHEMA)))
+            .setUpdateMask(FieldMask.newBuilder().addPaths("avro_schema"))
+            .build();
+
+    com.google.bigtable.admin.v2.SchemaBundle expectedResponse =
+        com.google.bigtable.admin.v2.SchemaBundle.newBuilder()
+            .setName(
+                NameUtil.formatSchemaBundleName(
+                    PROJECT_ID, INSTANCE_ID, TABLE_ID, SCHEMA_BUNDLE_ID))
+            .setAvroSchema(AvroSchema.newBuilder().addJsonSchemas(TEST_UPDATED_AVRO_SCHEMA))
+            .build();
+
+    mockOperationResult(
+        mockUpdateSchemaBundleOperationCallable,
+        expectedRequest,
+        expectedResponse,
+        UpdateSchemaBundleMetadata.newBuilder()
+            .setName(expectedRequest.getSchemaBundle().getName())
+            .build());
+
+    UpdateSchemaBundleRequest req =
+        UpdateSchemaBundleRequest.of(TABLE_ID, SCHEMA_BUNDLE_ID)
+            .setAvroSchema(TEST_UPDATED_AVRO_SCHEMA);
+
+    // Execute
+    SchemaBundle actualResult = adminClient.updateSchemaBundle(req);
+
+    // Verify
+    assertThat(actualResult).isEqualTo(SchemaBundle.fromProto(expectedResponse));
+    assertThat(actualResult.getAvroSchema()).containsExactly(TEST_UPDATED_AVRO_SCHEMA);
+  }
+
+  @Test
+  public void testGetSchemaBundleWithAvroSchema() {
+    // Setup
+    Mockito.when(mockStub.getSchemaBundleCallable()).thenReturn(mockGetSchemaBundleCallable);
+
+    com.google.bigtable.admin.v2.GetSchemaBundleRequest expectedRequest =
+        com.google.bigtable.admin.v2.GetSchemaBundleRequest.newBuilder()
+            .setName(
+                NameUtil.formatSchemaBundleName(
+                    PROJECT_ID, INSTANCE_ID, TABLE_ID, SCHEMA_BUNDLE_ID))
+            .build();
+
+    com.google.bigtable.admin.v2.SchemaBundle expectedResponse =
+        com.google.bigtable.admin.v2.SchemaBundle.newBuilder()
+            .setName(
+                NameUtil.formatSchemaBundleName(
+                    PROJECT_ID, INSTANCE_ID, TABLE_ID, SCHEMA_BUNDLE_ID))
+            .setAvroSchema(AvroSchema.newBuilder().addJsonSchemas(TEST_AVRO_SCHEMA))
+            .build();
+
+    Mockito.when(mockGetSchemaBundleCallable.futureCall(expectedRequest))
+        .thenReturn(ApiFutures.immediateFuture(expectedResponse));
+
+    // Execute
+    SchemaBundle actualResult = adminClient.getSchemaBundle(TABLE_ID, SCHEMA_BUNDLE_ID);
+
+    // Verify
+    assertThat(actualResult).isEqualTo(SchemaBundle.fromProto(expectedResponse));
+    assertThat(actualResult.getAvroSchema()).containsExactly(TEST_AVRO_SCHEMA);
   }
 
   @Test
