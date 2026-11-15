@@ -2850,10 +2850,6 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     return enableGrpcGcpOtelMetrics;
   }
 
-  /**
-   * Returns true when built-in metrics are enabled, the client uses credentials, and {@code
-   * SPANNER_DISABLE_CHANNEL_POOL_BUILTIN_METRICS} is not true.
-   */
   @InternalApi
   public boolean isEnableChannelPoolBuiltInMetrics() {
     return enableChannelPoolBuiltInMetrics && isEnableBuiltInMetrics() && !usesNoCredentials();

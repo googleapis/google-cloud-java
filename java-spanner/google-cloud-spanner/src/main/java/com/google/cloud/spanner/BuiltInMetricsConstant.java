@@ -150,12 +150,16 @@ public class BuiltInMetricsConstant {
   public static final AttributeKey<String> LANE_KEY = AttributeKey.stringKey("lane");
   public static final String LANE_DIRECTPATH = "directpath";
   public static final String LANE_CLOUDPATH = "cloudpath";
+  static final AttributeKey<String> POOL_MODE_KEY = AttributeKey.stringKey("pool_mode");
+  static final AttributeKey<String> STATE_KEY = AttributeKey.stringKey("state");
+  static final AttributeKey<String> POOL_INDEX_KEY = AttributeKey.stringKey("pool_index");
 
   static final Set<String> GRPC_GCP_CHANNEL_COUNT_ATTRIBUTES =
-      ImmutableSet.of("pool_mode", "state", LANE_KEY.getKey(), "pool_index");
+      ImmutableSet.of(
+          POOL_MODE_KEY.getKey(), STATE_KEY.getKey(), LANE_KEY.getKey(), POOL_INDEX_KEY.getKey());
 
   static final Set<String> GRPC_GCP_CHANNEL_LOAD_ATTRIBUTES =
-      ImmutableSet.of("pool_mode", LANE_KEY.getKey());
+      ImmutableSet.of(POOL_MODE_KEY.getKey(), LANE_KEY.getKey());
 
   static final Map<String, Set<String>> GRPC_GCP_METRIC_ADDITIONAL_ATTRIBUTES =
       ImmutableMap.<String, Set<String>>builder()
@@ -165,7 +169,6 @@ public class BuiltInMetricsConstant {
           .put(CHANNEL_LOAD_NAME, GRPC_GCP_CHANNEL_LOAD_ATTRIBUTES)
           .build();
 
-  // The default aggregation of a histogram uses the bucket boundaries that grpc-gcp sets.
   static final Map<String, Aggregation> GRPC_GCP_METRIC_AGGREGATIONS =
       ImmutableMap.of(CHANNEL_LOAD_NAME, Aggregation.defaultAggregation());
 

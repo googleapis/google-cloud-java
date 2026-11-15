@@ -879,7 +879,6 @@ public class GapicSpannerRpc implements SpannerRpc {
             cloudPathBuilder,
             createFallbackChannelOptions(
                 fallbackTelemetry, 1, usePool ? newFallbackState() : null));
-    // The channels of this pool switch between the two paths, so the pool has no single lane.
     return usePool
         ? wrapInGrpcGcpPool(
             fallbackChannelBuilder,
@@ -1098,7 +1097,7 @@ public class GapicSpannerRpc implements SpannerRpc {
       metricsOptionsBuilder.withOpenTelemetryMeter(
           options.getOpenTelemetry().getMeter("com.google.cloud.spanner"));
     }
-    // Always overwritten, so that options from the application cannot change these metrics.
+    // Set even when the application set them, so that the application cannot change these metrics.
     if (builtInChannelPoolMetrics == null) {
       metricsOptionsBuilder
           .withBuiltInMetrics(/* meter= */ null, Attributes.empty())

@@ -110,10 +110,6 @@ class SpannerMetadataProvider {
     return ROUTE_TO_LEADER_HEADER_MAP;
   }
 
-  /**
-   * Returns the project, instance and database of the given resource name as attributes for
-   * built-in metrics, or empty attributes if the resource name does not contain an instance.
-   */
   Attributes newBuiltInMetricsAttributes(@Nullable String resource) {
     if (Strings.isNullOrEmpty(resource)) {
       return Attributes.empty();
@@ -122,7 +118,6 @@ class SpannerMetadataProvider {
       return builtInMetricsAttributesCache.get(
           resource, () -> createBuiltInMetricsAttributes(resource));
     } catch (ExecutionException executionException) {
-      // This should never happen.
       throw SpannerExceptionFactory.asSpannerException(executionException.getCause());
     }
   }

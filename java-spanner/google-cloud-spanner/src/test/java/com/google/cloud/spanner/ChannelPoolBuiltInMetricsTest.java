@@ -29,7 +29,6 @@ import com.google.cloud.spanner.connection.AbstractMockServerTest;
 import com.google.cloud.spanner.spi.v1.GapicSpannerRpc;
 import io.grpc.ManagedChannelBuilder;
 import io.grpc.MethodDescriptor;
-import io.opentelemetry.api.common.AttributeKey;
 import io.opentelemetry.api.common.Attributes;
 import io.opentelemetry.sdk.OpenTelemetrySdk;
 import io.opentelemetry.sdk.metrics.SdkMeterProvider;
@@ -52,9 +51,6 @@ public class ChannelPoolBuiltInMetricsTest extends AbstractMockServerTest {
       BuiltInMetricsConstant.METER_NAME + "/channel_pool/channel_count";
   private static final String CHANNEL_LOAD =
       BuiltInMetricsConstant.METER_NAME + "/channel_pool/channel_load";
-  private static final AttributeKey<String> POOL_MODE = AttributeKey.stringKey("pool_mode");
-  private static final AttributeKey<String> STATE = AttributeKey.stringKey("state");
-  private static final AttributeKey<String> POOL_INDEX = AttributeKey.stringKey("pool_index");
   private static final int NUM_CHANNELS = 4;
 
   private String previousJmhEnabled;
@@ -94,13 +90,15 @@ public class ChannelPoolBuiltInMetricsTest extends AbstractMockServerTest {
       assertThat(active.get(0).getValue()).isEqualTo(NUM_CHANNELS);
       assertThat(active.get(0).getAttributes().get(BuiltInMetricsConstant.LANE_KEY))
           .isEqualTo(BuiltInMetricsConstant.LANE_CLOUDPATH);
-      assertThat(active.get(0).getAttributes().get(POOL_MODE)).isEqualTo("static");
-      assertThat(active.get(0).getAttributes().get(POOL_INDEX)).isNotNull();
+      assertThat(active.get(0).getAttributes().get(BuiltInMetricsConstant.POOL_MODE_KEY))
+          .isEqualTo("static");
+      assertThat(active.get(0).getAttributes().get(BuiltInMetricsConstant.POOL_INDEX_KEY))
+          .isNotNull();
     }
   }
 
   @Test
-  public void channelCountIsNotReportedWithoutCredentials() {
+  public void channelPoolMetricsAreNotReportedWithoutCredentials() {
     System.clearProperty("jmh.enabled");
     try (Spanner spanner = createOptions().build().getService()) {
       executeSelect1(spanner);
@@ -126,7 +124,8 @@ public class ChannelPoolBuiltInMetricsTest extends AbstractMockServerTest {
           .isEqualTo("my-database");
       assertThat(point.getAttributes().get(BuiltInMetricsConstant.LANE_KEY))
           .isEqualTo(BuiltInMetricsConstant.LANE_CLOUDPATH);
-      assertThat(point.getAttributes().get(POOL_MODE)).isEqualTo("static");
+      assertThat(point.getAttributes().get(BuiltInMetricsConstant.POOL_MODE_KEY))
+          .isEqualTo("static");
       assertThat(point.getCount()).isAtLeast(1);
       assertThat(point.getBoundaries())
           .containsExactly(
@@ -180,7 +179,7 @@ public class ChannelPoolBuiltInMetricsTest extends AbstractMockServerTest {
           .containsExactly((long) NUM_CHANNELS, (long) NUM_CHANNELS);
       assertThat(
               active.stream()
-                  .map(point -> point.getAttributes().get(POOL_INDEX))
+                  .map(point -> point.getAttributes().get(BuiltInMetricsConstant.POOL_INDEX_KEY))
                   .distinct()
                   .count())
           .isEqualTo(1);
@@ -210,7 +209,7 @@ public class ChannelPoolBuiltInMetricsTest extends AbstractMockServerTest {
   }
 
   @Test
-  public void channelCountIsNotReportedWhenDisabledWithEnvironmentVariable() {
+  public void channelPoolMetricsAreNotReportedWhenDisabledWithEnvironmentVariable() {
     SpannerOptions.useEnvironment(
         new SpannerOptions.SpannerEnvironment() {
           @Override
@@ -227,7 +226,7 @@ public class ChannelPoolBuiltInMetricsTest extends AbstractMockServerTest {
   }
 
   @Test
-  public void channelCountIsNotReportedWhenBuiltInMetricsAreDisabled() {
+  public void channelPoolMetricsAreNotReportedWhenBuiltInMetricsAreDisabled() {
     try (Spanner spanner = createOptions().setBuiltInMetricsEnabled(false).build().getService()) {
       executeSelect1(spanner);
 
@@ -306,7 +305,8 @@ public class ChannelPoolBuiltInMetricsTest extends AbstractMockServerTest {
 
   private List<LongPointData> activeChannelCountPoints() {
     return channelCountPoints().stream()
-        .filter(point -> "active".equals(point.getAttributes().get(STATE)))
+        .filter(
+            point -> "active".equals(point.getAttributes().get(BuiltInMetricsConstant.STATE_KEY)))
         .collect(Collectors.toList());
   }
 
