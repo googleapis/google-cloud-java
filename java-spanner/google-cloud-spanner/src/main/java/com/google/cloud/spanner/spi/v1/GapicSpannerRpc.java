@@ -1097,7 +1097,6 @@ public class GapicSpannerRpc implements SpannerRpc {
       metricsOptionsBuilder.withOpenTelemetryMeter(
           options.getOpenTelemetry().getMeter("com.google.cloud.spanner"));
     }
-    // Set even when the application set them, so that the application cannot change these metrics.
     if (builtInChannelPoolMetrics == null) {
       metricsOptionsBuilder
           .withBuiltInMetrics(/* meter= */ null, Attributes.empty())
