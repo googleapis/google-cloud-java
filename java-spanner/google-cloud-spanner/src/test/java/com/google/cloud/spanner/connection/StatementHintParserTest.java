@@ -207,4 +207,42 @@ public class StatementHintParserTest {
     assertEquals(NO_HINTS, parser.getClientSideStatementHints());
     assertSame(sql, parser.getSqlWithoutClientSideHints());
   }
+
+  @Test
+  public void testExtractHintsWithEscapesAndCommentDelimiters() {
+    if (dialect == Dialect.GOOGLE_STANDARD_SQL) {
+      StatementHintParser escapedQuoteParser =
+          parserFor("@{statement_tag='\\'} INSERT INTO t VALUES (1) -- '} SELECT 1");
+      assertTrue(escapedQuoteParser.hasStatementHints());
+      assertEquals(
+          ImmutableMap.of("statement_tag", "\\'} INSERT INTO t VALUES (1) -- "),
+          escapedQuoteParser.getClientSideStatementHints());
+      assertEquals(" SELECT 1", escapedQuoteParser.getSqlWithoutClientSideHints());
+
+      StatementHintParser escapedBackslashParser =
+          parserFor("@{statement_tag='\\\\'} INSERT INTO t VALUES (1) -- '} SELECT 1");
+      assertTrue(escapedBackslashParser.hasStatementHints());
+      assertEquals(
+          ImmutableMap.of("statement_tag", "\\\\"),
+          escapedBackslashParser.getClientSideStatementHints());
+      assertEquals(
+          " INSERT INTO t VALUES (1) -- '} SELECT 1",
+          escapedBackslashParser.getSqlWithoutClientSideHints());
+
+      assertInvalidHints("@{statement_tag='''triple'''} SELECT 1");
+      assertInvalidHints("@{statement_tag='doubled''quote'} SELECT 1");
+    } else {
+      StatementHintParser doubledQuoteParser =
+          parserFor("/*@ statement_tag='val''ue' */ SELECT 1");
+      assertTrue(doubledQuoteParser.hasStatementHints());
+      assertEquals(
+          ImmutableMap.of("statement_tag", "val''ue"),
+          doubledQuoteParser.getClientSideStatementHints());
+      assertEquals(" SELECT 1", doubledQuoteParser.getSqlWithoutClientSideHints());
+
+      assertInvalidHints("/*@ statement_tag='*/ INSERT INTO t VALUES (1) /*' */ SELECT 1");
+      assertInvalidHints("/*@ statement_tag='/* nested */' */ SELECT 1");
+      assertInvalidHints("/*@ statement_tag='\\'} INSERT INTO t VALUES (1) -- ' */ SELECT 1");
+    }
+  }
 }

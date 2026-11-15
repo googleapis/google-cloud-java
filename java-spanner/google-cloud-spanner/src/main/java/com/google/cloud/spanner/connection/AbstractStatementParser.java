@@ -17,6 +17,7 @@
 package com.google.cloud.spanner.connection;
 
 import static com.google.cloud.spanner.connection.SimpleParser.isValidIdentifierChar;
+import static com.google.cloud.spanner.connection.SimpleParser.isValidIdentifierFirstChar;
 import static com.google.cloud.spanner.connection.StatementHintParser.convertHintsToOptions;
 
 import com.google.api.core.InternalApi;
@@ -570,8 +571,8 @@ public abstract class AbstractStatementParser {
   }
 
   ParsedStatement internalParse(Statement statement, QueryOptions defaultQueryOptions) {
-    String sql = statement.getSql();
-    StatementHintParser statementHintParser = new StatementHintParser(getDialect(), sql);
+    StatementHintParser statementHintParser =
+        new StatementHintParser(getDialect(), statement.getSql());
     ReadQueryUpdateTransactionOption[] optionsFromHints = EMPTY_OPTIONS;
     if (statementHintParser.hasStatementHints()
         && !statementHintParser.getClientSideStatementHints().isEmpty()) {
@@ -579,6 +580,7 @@ public abstract class AbstractStatementParser {
           statement.toBuilder().replace(statementHintParser.getSqlWithoutClientSideHints()).build();
       optionsFromHints = convertHintsToOptions(statementHintParser.getClientSideStatementHints());
     }
+    String sql = statement.getSql();
     // Create a supplier that will actually remove all comments and hints from the SQL string to be
     // backwards compatible with anything that really needs the SQL string without comments.
     Supplier<String> sqlWithoutCommentsSupplier =
@@ -941,12 +943,13 @@ public abstract class AbstractStatementParser {
   String parseDollarQuotedString(String sql, int index) {
     // Look ahead to the next dollar sign (if any). Everything in between is the quote tag.
     StringBuilder tag = new StringBuilder();
+    int startIndex = index;
     while (index < sql.length()) {
       char c = sql.charAt(index);
       if (c == DOLLAR) {
         return tag.toString();
       }
-      if (!isValidIdentifierChar(c)) {
+      if (index == startIndex ? !isValidIdentifierFirstChar(c) : !isValidIdentifierChar(c)) {
         break;
       }
       tag.append(c);
@@ -970,7 +973,9 @@ public abstract class AbstractStatementParser {
         || (supportsBacktickQuote() && currentChar == BACKTICK_QUOTE)) {
       appendIfNotNull(result, currentChar);
       return skipQuoted(sql, currentIndex, currentChar, result);
-    } else if (supportsDollarQuotedStrings() && currentChar == DOLLAR) {
+    } else if (supportsDollarQuotedStrings()
+        && currentChar == DOLLAR
+        && (currentIndex == 0 || !isValidIdentifierChar(sql.charAt(currentIndex - 1)))) {
       String dollarTag = parseDollarQuotedString(sql, currentIndex + 1);
       if (dollarTag != null) {
         appendIfNotNull(result, currentChar, dollarTag, currentChar);

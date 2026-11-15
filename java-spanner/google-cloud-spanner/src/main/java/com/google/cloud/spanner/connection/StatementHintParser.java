@@ -201,7 +201,10 @@ class StatementHintParser {
     return Tuple.of(updatedSql, builder.build());
   }
 
-  /** Eats a hint literal. This is a literal that could be a quoted string, or an identifier. */
+  /**
+   * Eats a hint literal. This is a literal that could be a single-quoted string (with dialect
+   * escape handling) or an identifier.
+   */
   private static Result eatHintLiteral(SimpleParser parser) {
     if (parser.peekToken('\'')) {
       return parser.eatSingleQuotedString();

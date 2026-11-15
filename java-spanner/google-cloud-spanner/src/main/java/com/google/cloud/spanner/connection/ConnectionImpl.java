@@ -1496,6 +1496,7 @@ class ConnectionImpl implements Connection {
             internalExecuteQuery(CallType.SYNC, parsedStatement, AnalyzeMode.NONE));
       case UPDATE:
         if (parsedStatement.hasReturningClause()) {
+          checkDmlReturningAllowed(parsedStatement);
           return StatementResultImpl.of(
               internalExecuteQuery(CallType.SYNC, parsedStatement, AnalyzeMode.NONE));
         }
@@ -1574,6 +1575,7 @@ class ConnectionImpl implements Connection {
             internalExecuteQueryAsync(CallType.ASYNC, parsedStatement, AnalyzeMode.NONE));
       case UPDATE:
         if (parsedStatement.hasReturningClause()) {
+          checkDmlReturningAllowed(parsedStatement);
           return AsyncStatementResultImpl.of(
               internalExecuteQueryAsync(CallType.ASYNC, parsedStatement, AnalyzeMode.NONE));
         }
@@ -1780,16 +1782,7 @@ class ConnectionImpl implements Connection {
           return internalExecuteQuery(callType, parsedStatement, analyzeMode, options);
         case UPDATE:
           if (parsedStatement.hasReturningClause()) {
-            // Cannot execute DML statement with returning clause in read-only mode or in
-            // READ_ONLY_TRANSACTION transaction mode.
-            if (this.isReadOnly()
-                || (this.isInTransaction()
-                    && this.getTransactionMode() == TransactionMode.READ_ONLY_TRANSACTION)) {
-              throw SpannerExceptionFactory.newSpannerException(
-                  ErrorCode.FAILED_PRECONDITION,
-                  "DML statement with returning clause cannot be executed in read-only mode: "
-                      + parsedStatement.getSql());
-            }
+            checkDmlReturningAllowed(parsedStatement);
             return internalExecuteQuery(callType, parsedStatement, analyzeMode, options);
           }
         case DDL:
@@ -1800,6 +1793,19 @@ class ConnectionImpl implements Connection {
     throw SpannerExceptionFactory.newSpannerException(
         ErrorCode.INVALID_ARGUMENT,
         "Statement is not a query or DML with returning clause: " + parsedStatement.getSql());
+  }
+
+  private void checkDmlReturningAllowed(ParsedStatement parsedStatement) {
+    // Cannot execute DML statement with returning clause in read-only mode or in
+    // READ_ONLY_TRANSACTION transaction mode.
+    if (this.isReadOnly()
+        || (this.isInTransaction()
+            && this.getTransactionMode() == TransactionMode.READ_ONLY_TRANSACTION)) {
+      throw SpannerExceptionFactory.newSpannerException(
+          ErrorCode.FAILED_PRECONDITION,
+          "DML statement with returning clause cannot be executed in read-only mode: "
+              + parsedStatement.getSql());
+    }
   }
 
   private AsyncResultSet parseAndExecuteQueryAsync(Statement query, QueryOption... options) {
@@ -1821,16 +1827,7 @@ class ConnectionImpl implements Connection {
               CallType.ASYNC, parsedStatement, AnalyzeMode.NONE, options);
         case UPDATE:
           if (parsedStatement.hasReturningClause()) {
-            // Cannot execute DML statement with returning clause in read-only mode or in
-            // READ_ONLY_TRANSACTION transaction mode.
-            if (this.isReadOnly()
-                || (this.isInTransaction()
-                    && this.getTransactionMode() == TransactionMode.READ_ONLY_TRANSACTION)) {
-              throw SpannerExceptionFactory.newSpannerException(
-                  ErrorCode.FAILED_PRECONDITION,
-                  "DML statement with returning clause cannot be executed in read-only mode: "
-                      + parsedStatement.getSql());
-            }
+            checkDmlReturningAllowed(parsedStatement);
             return internalExecuteQueryAsync(
                 CallType.ASYNC, parsedStatement, AnalyzeMode.NONE, options);
           }

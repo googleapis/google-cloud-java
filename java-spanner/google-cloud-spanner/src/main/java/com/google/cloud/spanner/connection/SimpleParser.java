@@ -22,6 +22,7 @@ import static com.google.cloud.spanner.connection.AbstractStatementParser.HYPHEN
 import static com.google.cloud.spanner.connection.AbstractStatementParser.SLASH;
 
 import com.google.cloud.spanner.Dialect;
+import com.google.cloud.spanner.SpannerException;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Preconditions;
 import java.util.Objects;
@@ -201,24 +202,33 @@ class SimpleParser {
     return Result.found(sql.substring(startPos, pos));
   }
 
-  /**
-   * Eats a single-quoted string. This implementation currently does not support escape sequences.
-   */
+  /** Eats a single-quoted string using the dialect's quote-escaping rules. */
   Result eatSingleQuotedString() {
     if (!eatToken('\'')) {
       return Result.NOT_FOUND;
     }
-    int startPos = pos;
-    while (pos < sql.length() && sql.charAt(pos) != '\'') {
-      if (sql.charAt(pos) == '\n') {
-        return Result.NOT_FOUND;
-      }
-      pos++;
-    }
-    if (pos == sql.length()) {
+    if (statementParser.supportsTripleQuotedStrings()
+        && pos + 1 < sql.length()
+        && sql.charAt(pos) == '\''
+        && sql.charAt(pos + 1) == '\'') {
+      pos = sql.length();
       return Result.NOT_FOUND;
     }
-    return Result.found(sql.substring(startPos, pos++));
+    final int endPos;
+    try {
+      endPos = statementParser.skipQuoted(sql, pos - 1, '\'', null, null);
+    } catch (SpannerException e) {
+      pos = sql.length();
+      return Result.NOT_FOUND;
+    }
+    String value = sql.substring(pos, endPos - 1);
+    if (value.indexOf('\n') != -1
+        || (treatHintCommentsAsTokens && (value.contains("/*") || value.contains("*/")))) {
+      pos = sql.length();
+      return Result.NOT_FOUND;
+    }
+    pos = endPos;
+    return Result.found(value);
   }
 
   boolean peekTokens(char... tokens) {
@@ -394,13 +404,16 @@ class SimpleParser {
           && sql.length() > (pos + 1)
           && sql.charAt(pos + 1) == ASTERISK) {
         level++;
+        pos += 2;
+        continue;
       }
       if (sql.charAt(pos) == ASTERISK && sql.length() > (pos + 1) && sql.charAt(pos + 1) == SLASH) {
         level--;
+        pos += 2;
         if (level == 0) {
-          pos += 2;
           return true;
         }
+        continue;
       }
       pos++;
     }

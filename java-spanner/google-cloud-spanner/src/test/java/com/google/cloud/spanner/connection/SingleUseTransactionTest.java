@@ -894,4 +894,39 @@ public class SingleUseTransactionTest {
     }
     assertNull(transaction.getCommitResponseOrNull());
   }
+
+  @Test
+  public void testExecuteQueryAsync_UpdateInReadOnlyMode() {
+    ParsedStatement updateWithReturning = createParsedUpdate(VALID_UPDATE);
+    when(updateWithReturning.hasReturningClause()).thenReturn(true);
+
+    SingleUseTransaction readOnlyTx = createReadOnlySubject(TimestampBound.strong());
+    try {
+      get(readOnlyTx.executeQueryAsync(CallType.SYNC, updateWithReturning, AnalyzeMode.NONE));
+      fail("missing expected exception");
+    } catch (SpannerException e) {
+      assertEquals(ErrorCode.FAILED_PRECONDITION, e.getErrorCode());
+      assertThat(e.getMessage()).contains("Update statements are not allowed in read-only mode");
+    }
+    // Verify the single-use transaction was not marked as used when the precondition check failed.
+    assertNotNull(
+        get(
+            readOnlyTx.executeQueryAsync(
+                CallType.SYNC, createParsedQuery(VALID_QUERY), AnalyzeMode.NONE)));
+
+    SingleUseTransaction readOnlyPlanTx = createReadOnlySubject(TimestampBound.strong());
+    try {
+      get(
+          readOnlyPlanTx.executeQueryAsync(
+              CallType.SYNC, createParsedUpdate(VALID_UPDATE), AnalyzeMode.PLAN));
+      fail("missing expected exception");
+    } catch (SpannerException e) {
+      assertEquals(ErrorCode.FAILED_PRECONDITION, e.getErrorCode());
+      assertThat(e.getMessage()).contains("Update statements are not allowed in read-only mode");
+    }
+    assertNotNull(
+        get(
+            readOnlyPlanTx.executeQueryAsync(
+                CallType.SYNC, createParsedQuery(VALID_QUERY), AnalyzeMode.NONE)));
+  }
 }

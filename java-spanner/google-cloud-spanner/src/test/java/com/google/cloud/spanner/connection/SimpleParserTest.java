@@ -247,4 +247,57 @@ public class SimpleParserTest {
     parser.skipHint();
     return parser.getSql().substring(parser.getPos());
   }
+
+  @Test(timeout = 5000)
+  public void testEatSingleQuotedStringEscapesAndCommentTokens() {
+    if (dialect == Dialect.GOOGLE_STANDARD_SQL) {
+      assertEquals(found("foo\\'bar"), parserFor("'foo\\'bar'").eatSingleQuotedString());
+      assertEquals(found("foo\\\\"), parserFor("'foo\\\\'").eatSingleQuotedString());
+      assertEquals(
+          found("\\'} INSERT INTO t VALUES (1) -- "),
+          parserFor("'\\'} INSERT INTO t VALUES (1) -- '}").eatSingleQuotedString());
+      assertEquals(NOT_FOUND, parserFor("'''triple'''").eatSingleQuotedString());
+      assertEquals(found("foo"), parserFor("'foo''bar'").eatSingleQuotedString());
+    } else {
+      assertEquals(found("foo''bar"), parserFor("'foo''bar'").eatSingleQuotedString());
+      assertEquals(found("foo\\bar"), parserFor("'foo\\bar'").eatSingleQuotedString());
+      assertEquals(found("''foo''"), parserFor("'''foo'''").eatSingleQuotedString());
+      assertEquals(
+          NOT_FOUND,
+          new SimpleParser(Dialect.POSTGRESQL, "'has */ inside'", 0, true)
+              .eatSingleQuotedString());
+      assertEquals(
+          NOT_FOUND,
+          new SimpleParser(Dialect.POSTGRESQL, "'has /* inside'", 0, true)
+              .eatSingleQuotedString());
+      assertEquals(
+          NOT_FOUND,
+          new SimpleParser(Dialect.POSTGRESQL, "'line1\nline2'", 0, false)
+              .eatSingleQuotedString());
+    }
+  }
+
+  @Test(timeout = 5000)
+  public void testSkipMultiLineCommentOverlappingAndNested() {
+    SimpleParser singleLineWithCommentToken = parserFor("-- /* x\nSELECT 1");
+    singleLineWithCommentToken.skipWhitespaces();
+    assertEquals("-- /* x\n".length(), singleLineWithCommentToken.getPos());
+
+    SimpleParser trailingCloseComment = parserFor("/* a */*/ SELECT 1");
+    assertTrue(trailingCloseComment.skipMultiLineComment());
+    assertEquals("/* a */".length(), trailingCloseComment.getPos());
+
+    SimpleParser overlappingNested = parserFor("/* /*/ */ SELECT 1");
+    if (dialect == Dialect.POSTGRESQL) {
+      assertFalse(overlappingNested.skipMultiLineComment());
+      assertEquals("/* /*/ */ SELECT 1".length(), overlappingNested.getPos());
+
+      SimpleParser balancedOverlapping = parserFor("/* /*/ */ */ SELECT 1");
+      assertTrue(balancedOverlapping.skipMultiLineComment());
+      assertEquals("/* /*/ */ */".length(), balancedOverlapping.getPos());
+    } else {
+      assertTrue(overlappingNested.skipMultiLineComment());
+      assertEquals("/* /*/".length(), overlappingNested.getPos());
+    }
+  }
 }

@@ -20,6 +20,7 @@ import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotSame;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertThrows;
 import static org.junit.Assert.assertTrue;
@@ -1924,6 +1925,88 @@ public class StatementParserTest {
     assertEquals(
         ClientSideStatementType.SET_STATEMENT_TIMEOUT,
         parsedStatement.getClientSideStatementType());
+  }
+
+  @Test
+  public void testParseWithClientSideHintsAndEscapedQuotes() {
+    if (dialect == Dialect.GOOGLE_STANDARD_SQL) {
+      ParsedStatement escapedQuote =
+          parser.parse(Statement.of("@{statement_tag='\\'} INSERT INTO t VALUES (1) -- '} SELECT 1"));
+      assertEquals(StatementType.QUERY, escapedQuote.getType());
+      assertEquals(" SELECT 1", escapedQuote.getStatement().getSql());
+
+      ParsedStatement escapedBackslash =
+          parser.parse(
+              Statement.of("@{statement_tag='\\\\'} INSERT INTO t VALUES (1) -- '} SELECT 1"));
+      assertEquals(StatementType.UPDATE, escapedBackslash.getType());
+      assertEquals(
+          " INSERT INTO t VALUES (1) -- '} SELECT 1", escapedBackslash.getStatement().getSql());
+    } else {
+      ParsedStatement commentCloseInHint =
+          parser.parse(
+              Statement.of(
+                  "/*@ statement_tag='*/ INSERT INTO t VALUES (1) /*', other_hint=1 */ SELECT 1"));
+      assertEquals(StatementType.UPDATE, commentCloseInHint.getType());
+      assertEquals(
+          "/*@ statement_tag='*/ INSERT INTO t VALUES (1) /*', other_hint=1 */ SELECT 1",
+          commentCloseInHint.getStatement().getSql());
+
+      ParsedStatement mixedClientAndServerHint =
+          parser.parse(
+              Statement.of(
+                  "/*@ statement_tag='tag1', other_hint='*/ INSERT INTO t VALUES (1) /*' */"
+                      + " SELECT 1"));
+      assertEquals(StatementType.UPDATE, mixedClientAndServerHint.getType());
+    }
+  }
+
+  @Test
+  public void testPostgreSQLDollarQuotedStringBoundaries() {
+    assumeTrue(dialect == Dialect.POSTGRESQL);
+
+    assertNull(parser.parseDollarQuotedString("1$", 0));
+    assertNull(parser.parseDollarQuotedString("1a$", 0));
+    assertEquals("", parser.parseDollarQuotedString("$", 0));
+    assertEquals("tag1", parser.parseDollarQuotedString("tag1$", 0));
+    assertEquals("_tag1", parser.parseDollarQuotedString("_tag1$", 0));
+
+    // Mid-identifier '$' must not start a dollar-quoted string.
+    ParametersInfo midIdTag =
+        parser.convertPositionalParametersToNamedParameters(
+            '?', "select col$tag$a, ? from t where x = $tag$?1$tag$ and y = ?");
+    assertEquals(2, midIdTag.numberOfParameters);
+    assertEquals(
+        "select col$tag$a, $1 from t where x = $tag$?1$tag$ and y = $2",
+        midIdTag.sqlWithNamedParameters);
+
+    ParametersInfo midIdEmptyTag =
+        parser.convertPositionalParametersToNamedParameters(
+            '?', "select col$$, ? from t where x = $$?$$ and y = ?");
+    assertEquals(2, midIdEmptyTag.numberOfParameters);
+    assertEquals(
+        "select col$$, $1 from t where x = $$?$$ and y = $2",
+        midIdEmptyTag.sqlWithNamedParameters);
+
+    ParametersInfo numericTagNotDollarQuote =
+        parser.convertPositionalParametersToNamedParameters('?', "select $1 + ? + $1$ from t");
+    assertEquals(1, numericTagNotDollarQuote.numberOfParameters);
+    assertEquals("select $1 + $1 + $1$ from t", numericTagNotDollarQuote.sqlWithNamedParameters);
+
+    assertTrue(
+        parser
+            .parse(
+                Statement.of("INSERT INTO t (col$tag$a) VALUES (1) RETURNING col$tag$b"))
+            .hasReturningClause());
+    assertTrue(
+        parser
+            .parse(Statement.of("INSERT INTO t (a, b) VALUES ($1, $1$) RETURNING id"))
+            .hasReturningClause());
+    assertFalse(
+        parser
+            .parse(
+                Statement.of(
+                    "UPDATE t SET a = $tag$x1$tag$ WHERE b = $tag$ returning $tag$"))
+            .hasReturningClause());
   }
 
   static void assertUnclosedLiteral(AbstractStatementParser parser, String sql) {

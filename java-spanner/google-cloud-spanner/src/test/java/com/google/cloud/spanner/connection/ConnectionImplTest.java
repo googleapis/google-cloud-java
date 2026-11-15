@@ -2087,4 +2087,69 @@ public class ConnectionImplTest {
       assertNull(connection.getProtoDescriptors());
     }
   }
+
+  @Test
+  public void testDmlReturningNotAllowedInReadOnlyMode() {
+    String dmlReturning = "INSERT INTO FOO (ID, NAME) VALUES (1, 'One') THEN RETURN ID";
+    try (ConnectionImpl subject =
+        createConnection(
+            ConnectionOptions.newBuilder()
+                .setCredentials(NoCredentials.getInstance())
+                .setUri(URI)
+                .build())) {
+      subject.setReadOnly(true);
+      for (boolean autocommit : new boolean[] {true, false}) {
+        subject.setAutocommit(autocommit);
+        SpannerException ex1 =
+            assertThrows(
+                SpannerException.class, () -> subject.execute(Statement.of(dmlReturning)));
+        assertEquals(ErrorCode.FAILED_PRECONDITION, ex1.getErrorCode());
+
+        SpannerException ex2 =
+            assertThrows(
+                SpannerException.class, () -> subject.executeAsync(Statement.of(dmlReturning)));
+        assertEquals(ErrorCode.FAILED_PRECONDITION, ex2.getErrorCode());
+
+        SpannerException ex3 =
+            assertThrows(
+                SpannerException.class, () -> subject.executeQuery(Statement.of(dmlReturning)));
+        assertEquals(ErrorCode.FAILED_PRECONDITION, ex3.getErrorCode());
+
+        SpannerException ex4 =
+            assertThrows(
+                SpannerException.class,
+                () -> subject.executeQueryAsync(Statement.of(dmlReturning)));
+        assertEquals(ErrorCode.FAILED_PRECONDITION, ex4.getErrorCode());
+      }
+
+      // Also verify when connection is read-write, but active transaction is READ_ONLY_TRANSACTION.
+      subject.setReadOnly(false);
+      subject.setAutocommit(false);
+      subject.setTransactionMode(TransactionMode.READ_ONLY_TRANSACTION);
+      SpannerException ex5 =
+          assertThrows(SpannerException.class, () -> subject.execute(Statement.of(dmlReturning)));
+      assertEquals(ErrorCode.FAILED_PRECONDITION, ex5.getErrorCode());
+
+      SpannerException ex6 =
+          assertThrows(
+              SpannerException.class, () -> subject.executeAsync(Statement.of(dmlReturning)));
+      assertEquals(ErrorCode.FAILED_PRECONDITION, ex6.getErrorCode());
+    }
+  }
+
+  @Test
+  public void testHintWithEscapedBackslashDoesNotBypassReadOnly() {
+    String dmlWithHint = "@{statement_tag='\\\\'} INSERT INTO FOO (ID) VALUES (1) -- '} SELECT 1";
+    try (ConnectionImpl subject =
+        createConnection(
+            ConnectionOptions.newBuilder()
+                .setCredentials(NoCredentials.getInstance())
+                .setUri(URI)
+                .build())) {
+      subject.setReadOnly(true);
+      SpannerException ex =
+          assertThrows(SpannerException.class, () -> subject.execute(Statement.of(dmlWithHint)));
+      assertEquals(ErrorCode.FAILED_PRECONDITION, ex.getErrorCode());
+    }
+  }
 }

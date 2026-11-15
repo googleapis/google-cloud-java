@@ -295,4 +295,26 @@ public class SpannerStatementParserTest {
       }
     }
   }
+
+  @Test
+  public void testPostgreSQLDollarQuoteSkipAndTags() {
+    AbstractStatementParser pgParser = AbstractStatementParser.getInstance(Dialect.POSTGRESQL);
+
+    // Numeric tag ($1$) is not a valid dollar-quoted string delimiter.
+    assertEquals("$", pgParser.skip("$1$not a dollar string$1$", 0, null) == 1 ? "$" : "invalid");
+
+    // Mid-identifier '$' (col$tag$a, col$$, col$1) must not open a dollar-quoted string.
+    String sqlMidTag = "col$tag$a + $tag$hello$tag$";
+    assertEquals(4, pgParser.skip(sqlMidTag, 3, null));
+
+    String sqlMidEmpty = "col$$ + $$hello$$";
+    assertEquals(4, pgParser.skip(sqlMidEmpty, 3, null));
+
+    // Valid dollar-quoted strings ($$abc$$ and $t$x1$t$) still skip to the end of the closing tag.
+    String emptyTagLiteral = "$$abc$$";
+    assertEquals(emptyTagLiteral.length(), pgParser.skip(emptyTagLiteral, 0, null));
+
+    String namedTagLiteral = "$t$x1$t$";
+    assertEquals(namedTagLiteral.length(), pgParser.skip(namedTagLiteral, 0, null));
+  }
 }
