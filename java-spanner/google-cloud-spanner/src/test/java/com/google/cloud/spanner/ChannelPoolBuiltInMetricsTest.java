@@ -25,6 +25,7 @@ import com.google.cloud.grpc.GcpManagedChannel;
 import com.google.cloud.spanner.SpannerOptions.CallContextConfigurator;
 import com.google.cloud.spanner.connection.AbstractMockServerTest;
 import com.google.cloud.spanner.spi.v1.GapicSpannerRpc;
+import com.google.spanner.admin.instance.v1.ListInstanceConfigsResponse;
 import io.grpc.ManagedChannelBuilder;
 import io.grpc.MethodDescriptor;
 import io.opentelemetry.api.common.Attributes;
@@ -234,6 +235,7 @@ public class ChannelPoolBuiltInMetricsTest extends AbstractMockServerTest {
 
   @Test
   public void channelPoolMetricsAreNotReportedWithTheEmulator() {
+    mockInstanceAdmin.addResponse(ListInstanceConfigsResponse.getDefaultInstance());
     try (Spanner spanner =
         createOptions().setEmulatorHost("localhost:" + getPort()).build().getService()) {
       executeSelect1(spanner);
