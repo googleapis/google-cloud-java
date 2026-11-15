@@ -112,7 +112,7 @@ import org.junit.runners.MethodSorters;
 @RunWith(JUnit4.class)
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class ITBackupTest {
-  private static final long BACKUP_TIMEOUT_MINUTES = 30L;
+  private static final long BACKUP_TIMEOUT_MINUTES = 60L;
   private static final long DATABASE_TIMEOUT_MINUTES = 5;
   private static final Logger logger = Logger.getLogger(ITBackupTest.class.getName());
   private static final String EXPECTED_OP_NAME_FORMAT = "%s/backups/%s/operations/";
