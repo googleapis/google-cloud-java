@@ -236,6 +236,17 @@ public class ChannelPoolBuiltInMetricsTest extends AbstractMockServerTest {
   }
 
   @Test
+  public void channelCountIsNotReportedWithTheEmulator() {
+    try (Spanner spanner =
+        createOptions().setEmulatorHost("localhost:" + getPort()).build().getService()) {
+      executeSelect1(spanner);
+
+      assertThat(channelCountPoints()).isEmpty();
+      assertThat(channelLoadPoints()).isEmpty();
+    }
+  }
+
+  @Test
   public void applicationOptionsCannotRedirectChannelCount() {
     InMemoryMetricReader applicationReader = InMemoryMetricReader.create();
     SdkMeterProvider applicationMeterProvider =

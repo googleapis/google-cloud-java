@@ -2605,6 +2605,37 @@ public class GapicSpannerRpcTest {
   }
 
   @Test
+  public void testEndpointPoolsDoNotGetBuiltInChannelPoolMetrics() throws Exception {
+    SpannerOptions options =
+        SpannerOptions.newBuilder()
+            .setProjectId("[PROJECT]")
+            .enableGrpcGcpExtension(
+                GcpManagedChannelOptions.newBuilder()
+                    .withMetricsOptions(
+                        GcpMetricsOptions.newBuilder()
+                            .withBuiltInMetrics(
+                                OpenTelemetry.noop().getMeter("application"), Attributes.empty())
+                            .withBuiltInMetricsPoolIndex("9")
+                            .build())
+                    .build())
+            .build();
+
+    java.lang.reflect.Method method =
+        GapicSpannerRpc.class.getDeclaredMethod(
+            "createGrpcGcpEndpointChannelConfigurator",
+            InstantiatingGrpcChannelProvider.Builder.class,
+            SpannerOptions.class);
+    method.setAccessible(true);
+    GrpcGcpEndpointChannelConfigurator configurator =
+        (GrpcGcpEndpointChannelConfigurator)
+            method.invoke(null, InstantiatingGrpcChannelProvider.newBuilder(), options);
+
+    GcpMetricsOptions metricsOptions = configurator.getGrpcGcpOptions().getMetricsOptions();
+    assertNull(metricsOptions.getBuiltInMetricsMeter());
+    assertNull(metricsOptions.getBuiltInMetricsPoolIndex());
+  }
+
+  @Test
   public void testApplicationCannotConfigureBuiltInChannelPoolMetrics() {
     Meter applicationMeter = OpenTelemetry.noop().getMeter("application");
     SpannerOptions options =
