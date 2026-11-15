@@ -481,11 +481,15 @@ abstract class ResumableStreamIterator extends AbstractIterator<PartialResultSet
     // Determine the retry delay: either the delay that the server included in the error, or
     // otherwise a delay determined by the exponential backoff.
     long delayMillis = spannerException.getRetryDelayInMillis();
-    if (delayMillis == -1L) {
+    if (delayMillis <= 0L) {
       if (this.backOff == null) {
         this.backOff = newBackOff();
       }
       delayMillis = nextBackOffMillis(this.backOff);
+    } else {
+      long configuredMaxDelayMillis = streamingRetrySettings.getMaxRetryDelay().toMillis();
+      long maxDelayMillis = configuredMaxDelayMillis > 0L ? configuredMaxDelayMillis : 32_000L;
+      delayMillis = Math.min(delayMillis, maxDelayMillis);
     }
     // The total timeout budget applies regardless of whether the delay came from the server
     // or from the backoff.

@@ -200,4 +200,43 @@ public class StatementTest {
       assertSame(Statement.getParameterName(i), Statement.getParameterName(i));
     }
   }
+
+  @Test
+  public void testWithUnnamedParametersCountMismatchThrowsInvalidArgument() {
+    for (Dialect dialect : Dialect.values()) {
+      Statement.StatementFactory factory = new Statement.StatementFactory(dialect);
+
+      // Matching positional parameter count succeeds, ignoring '?' inside literals and comments.
+      Statement valid =
+          factory.withUnnamedParameters(
+              "SELECT '?' AS q, /* ? */ * FROM Users WHERE Id = ? AND Status = ?",
+              1234L,
+              "ACTIVE");
+      assertEquals(Value.toValue(1234L), valid.getParameters().get("p1"));
+      assertEquals(Value.toValue("ACTIVE"), valid.getParameters().get("p2"));
+
+      // Too few parameter values throws INVALID_ARGUMENT.
+      SpannerException tooFew =
+          assertThrows(
+              SpannerException.class,
+              () ->
+                  factory.withUnnamedParameters(
+                      "SELECT * FROM Users WHERE Id = ? AND Status = ?", 1234L));
+      assertEquals(ErrorCode.INVALID_ARGUMENT, tooFew.getErrorCode());
+
+      // Too many parameter values throws INVALID_ARGUMENT.
+      SpannerException tooMany =
+          assertThrows(
+              SpannerException.class,
+              () ->
+                  factory.withUnnamedParameters(
+                      "SELECT '?' AS q, /* ? */ * FROM Users WHERE Id = ?", 1234L, "EXTRA"));
+      assertEquals(ErrorCode.INVALID_ARGUMENT, tooMany.getErrorCode());
+
+      // Null values array throws NullPointerException.
+      assertThrows(
+          NullPointerException.class,
+          () -> factory.withUnnamedParameters("SELECT * FROM Users WHERE Id = ?", (Object[]) null));
+    }
+  }
 }

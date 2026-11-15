@@ -359,10 +359,18 @@ public final class Statement implements Serializable {
      * @see DatabaseClient#getStatementFactory
      */
     public Statement withUnnamedParameters(String sql, Object... values) {
-      Map<String, Value> parameters = getUnnamedParametersMap(values);
+      Preconditions.checkNotNull(values);
       AbstractStatementParser statementParser = AbstractStatementParser.getInstance(this.dialect);
       ParametersInfo parametersInfo =
           statementParser.convertPositionalParametersToNamedParameters('?', sql);
+      if (parametersInfo.numberOfParameters != values.length) {
+        throw SpannerExceptionFactory.newSpannerException(
+            ErrorCode.INVALID_ARGUMENT,
+            String.format(
+                "The number of parameter values (%d) does not match the number of positional parameters (%d) in the SQL statement.",
+                values.length, parametersInfo.numberOfParameters));
+      }
+      Map<String, Value> parameters = getUnnamedParametersMap(values);
       return new Statement(parametersInfo.sqlWithNamedParameters, parameters, null);
     }
 

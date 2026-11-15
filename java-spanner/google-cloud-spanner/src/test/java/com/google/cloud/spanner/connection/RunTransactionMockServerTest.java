@@ -25,8 +25,10 @@ import static org.junit.Assert.assertTrue;
 
 import com.google.cloud.spanner.ErrorCode;
 import com.google.cloud.spanner.MockSpannerServiceImpl.SimulatedExecutionTime;
+import com.google.cloud.spanner.Mutation;
 import com.google.cloud.spanner.ResultSet;
 import com.google.cloud.spanner.SpannerException;
+import com.google.protobuf.ByteString;
 import com.google.spanner.v1.BeginTransactionRequest;
 import com.google.spanner.v1.CommitRequest;
 import com.google.spanner.v1.ExecuteSqlRequest;
@@ -278,5 +280,96 @@ public class RunTransactionMockServerTest extends AbstractMockServerTest {
     assertEquals(1, mockSpanner.countRequestsOfType(ExecuteSqlRequest.class));
     assertEquals(1, mockSpanner.countRequestsOfType(CommitRequest.class));
     assertEquals(0, mockSpanner.countRequestsOfType(RollbackRequest.class));
+  }
+
+  @Test
+  public void testRunTransactionCommitAbortedWithAutocommitRetriesInTransaction() {
+    final AtomicInteger attempts = new AtomicInteger();
+    try (Connection connection = createConnection()) {
+      connection.setAutocommit(true);
+      connection.setSavepointSupport(SavepointSupport.ENABLED);
+      connection.runTransaction(
+          transaction -> {
+            int attempt = attempts.incrementAndGet();
+            assertTrue(transaction.isInTransaction());
+            assertFalse(transaction.isRetryAbortsInternally());
+            transaction.savepoint("s1");
+            assertEquals(1L, transaction.executeUpdate(INSERT_STATEMENT));
+            assertEquals(1L, transaction.executeUpdate(INSERT_STATEMENT));
+            if (attempt == 1) {
+              mockSpanner.abortNextStatement();
+            }
+            return null;
+          });
+      assertTrue(connection.isAutocommit());
+      assertFalse(connection.isInTransaction());
+      assertTrue(connection.isRetryAbortsInternally());
+    }
+    assertEquals(2, attempts.get());
+    assertEquals(4, mockSpanner.countRequestsOfType(ExecuteSqlRequest.class));
+    assertEquals(2, mockSpanner.countRequestsOfType(CommitRequest.class));
+    assertEquals(0, mockSpanner.countRequestsOfType(BeginTransactionRequest.class));
+
+    CommitRequest firstCommit = mockSpanner.getRequestsOfType(CommitRequest.class).get(0);
+    ExecuteSqlRequest firstRetrySql = mockSpanner.getRequestsOfType(ExecuteSqlRequest.class).get(2);
+    assertTrue(firstRetrySql.hasTransaction());
+    assertTrue(firstRetrySql.getTransaction().hasBegin());
+    ByteString prevTxId =
+        firstRetrySql
+            .getTransaction()
+            .getBegin()
+            .getReadWrite()
+            .getMultiplexedSessionPreviousTransactionId();
+    assertEquals(firstCommit.getTransactionId(), prevTxId);
+  }
+
+  @Test
+  public void testRunTransactionCommitNonAbortedErrorPropagatesOriginalException() {
+    try (Connection connection = createConnection()) {
+      connection.setAutocommit(true);
+      SpannerException exception =
+          assertThrows(
+              SpannerException.class,
+              () ->
+                  connection.runTransaction(
+                      transaction -> {
+                        assertEquals(1L, transaction.executeUpdate(INSERT_STATEMENT));
+                        mockSpanner.setCommitExecutionTime(
+                            SimulatedExecutionTime.ofException(
+                                Status.INVALID_ARGUMENT
+                                    .withDescription("commit invalid argument")
+                                    .asRuntimeException()));
+                        return null;
+                      }));
+      assertEquals(ErrorCode.INVALID_ARGUMENT, exception.getErrorCode());
+      assertTrue(
+          exception.getMessage(), exception.getMessage().contains("commit invalid argument"));
+    }
+    assertEquals(1, mockSpanner.countRequestsOfType(ExecuteSqlRequest.class));
+    assertEquals(1, mockSpanner.countRequestsOfType(CommitRequest.class));
+    assertEquals(0, mockSpanner.countRequestsOfType(RollbackRequest.class));
+  }
+
+  @Test
+  public void testRunTransactionCommitAbortedWithoutRetryInfoRetries() {
+    final AtomicInteger attempts = new AtomicInteger();
+    try (Connection connection = createConnection()) {
+      connection.setAutocommit(true);
+      connection.runTransaction(
+          transaction -> {
+            assertEquals(1L, transaction.executeUpdate(INSERT_STATEMENT));
+            if (attempts.incrementAndGet() == 1) {
+              mockSpanner.setCommitExecutionTime(
+                  SimulatedExecutionTime.ofException(
+                      Status.ABORTED
+                          .withDescription("Transaction was aborted without RetryInfo")
+                          .asRuntimeException()));
+            }
+            return null;
+          });
+    }
+    assertEquals(2, attempts.get());
+    assertEquals(2, mockSpanner.countRequestsOfType(ExecuteSqlRequest.class));
+    assertEquals(2, mockSpanner.countRequestsOfType(CommitRequest.class));
   }
 }

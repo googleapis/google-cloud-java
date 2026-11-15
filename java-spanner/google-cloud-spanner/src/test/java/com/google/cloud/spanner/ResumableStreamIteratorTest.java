@@ -525,17 +525,18 @@ public class ResumableStreamIteratorTest {
     initWithLimitAndRetrySettings(
         Integer.MAX_VALUE,
         RetrySettings.newBuilder()
+            .setMaxRetryDelayDuration(java.time.Duration.ofMillis(Long.MAX_VALUE))
             .setTotalTimeoutDuration(java.time.Duration.ofMillis(timeoutMillis))
             .build());
     SpannerException exception =
         Mockito.spy(new RetryableException(errorCodeParameter, "failed by test"));
-    when(exception.getRetryDelayInMillis()).thenReturn(0L);
+    when(exception.getRetryDelayInMillis()).thenReturn(1L);
     nanoTime = () -> 0L;
-    assertEquals(0L, resumableStreamIterator.checkRetryBudgetAndGetDelay(exception));
+    assertEquals(1L, resumableStreamIterator.checkRetryBudgetAndGetDelay(exception));
     nanoTime = () -> TimeUnit.MILLISECONDS.toNanos(elapsedMillis);
     when(exception.getRetryDelayInMillis()).thenReturn(delayMillis);
     try {
-      assertEquals(delayMillis, resumableStreamIterator.checkRetryBudgetAndGetDelay(exception));
+      resumableStreamIterator.checkRetryBudgetAndGetDelay(exception);
       return false;
     } catch (SpannerException e) {
       assertThat(e).isSameInstanceAs(exception);
@@ -562,14 +563,94 @@ public class ResumableStreamIteratorTest {
   }
 
   @Test
+  public void retryInfoWithZeroOrNegativeDelay_usesExponentialBackoff() {
+    initWithLimitAndRetrySettings(
+        Integer.MAX_VALUE,
+        RetrySettings.newBuilder()
+            .setInitialRetryDelayDuration(java.time.Duration.ofMillis(100))
+            .setMaxRetryDelayDuration(java.time.Duration.ofMillis(100))
+            .build());
+    Metadata.Key<RetryInfo> key = ProtoUtils.keyForProto(RetryInfo.getDefaultInstance());
+
+    Metadata zeroTrailers = new Metadata();
+    zeroTrailers.put(
+        key,
+        RetryInfo.newBuilder()
+            .setRetryDelay(Duration.newBuilder().setSeconds(0L).setNanos(0))
+            .build());
+    SpannerException zeroDelayException =
+        new RetryableException(
+            errorCodeParameter,
+            "zero retry delay",
+            errorCodeParameter.getGrpcStatus().asRuntimeException(zeroTrailers));
+    long zeroFallbackDelay = resumableStreamIterator.checkRetryBudgetAndGetDelay(zeroDelayException);
+    assertThat(zeroFallbackDelay).isAtLeast(50L);
+    assertThat(zeroFallbackDelay).isAtMost(150L);
+
+    Metadata negativeTrailers = new Metadata();
+    negativeTrailers.put(
+        key,
+        RetryInfo.newBuilder()
+            .setRetryDelay(Duration.newBuilder().setSeconds(-1L).setNanos(0))
+            .build());
+    SpannerException negativeDelayException =
+        new RetryableException(
+            errorCodeParameter,
+            "negative retry delay",
+            errorCodeParameter.getGrpcStatus().asRuntimeException(negativeTrailers));
+    long negativeFallbackDelay =
+        resumableStreamIterator.checkRetryBudgetAndGetDelay(negativeDelayException);
+    assertThat(negativeFallbackDelay).isAtLeast(50L);
+    assertThat(negativeFallbackDelay).isAtMost(150L);
+  }
+
+  @Test
+  public void retryInfoWithMultiHourDelay_clampsToMaxRetryDelay() {
+    initWithLimitAndRetrySettings(
+        Integer.MAX_VALUE,
+        RetrySettings.newBuilder()
+            .setInitialRetryDelayDuration(java.time.Duration.ofMillis(10))
+            .setMaxRetryDelayDuration(java.time.Duration.ofSeconds(32))
+            .setTotalTimeoutDuration(java.time.Duration.ofHours(24))
+            .build());
+    Metadata.Key<RetryInfo> key = ProtoUtils.keyForProto(RetryInfo.getDefaultInstance());
+    Metadata trailers = new Metadata();
+    trailers.put(
+        key,
+        RetryInfo.newBuilder()
+            .setRetryDelay(
+                Duration.newBuilder().setSeconds(TimeUnit.HOURS.toSeconds(10L)).setNanos(0))
+            .build());
+    SpannerException multiHourException =
+        new RetryableException(
+            errorCodeParameter,
+            "multi-hour retry delay",
+            errorCodeParameter.getGrpcStatus().asRuntimeException(trailers));
+    long clampedDelay = resumableStreamIterator.checkRetryBudgetAndGetDelay(multiHourException);
+    assertEquals(TimeUnit.SECONDS.toMillis(32L), clampedDelay);
+
+    // Also verify default 32s cap when maxRetryDelay is not configured (0ms).
+    initWithLimitAndRetrySettings(
+        Integer.MAX_VALUE,
+        RetrySettings.newBuilder()
+            .setTotalTimeoutDuration(java.time.Duration.ofHours(24))
+            .build());
+    long defaultClampedDelay =
+        resumableStreamIterator.checkRetryBudgetAndGetDelay(multiHourException);
+    assertEquals(TimeUnit.SECONDS.toMillis(32L), defaultClampedDelay);
+  }
+
+  @Test
   public void rawGapicSettings_useConfiguredTimeoutWithoutSpecialCase() {
     RetrySettings settings =
         SpannerStubSettings.newBuilder().executeStreamingSqlSettings().getRetrySettings();
     initWithLimitAndRetrySettings(Integer.MAX_VALUE, settings);
     SpannerException exception =
         Mockito.spy(new RetryableException(errorCodeParameter, "failed by test"));
-    when(exception.getRetryDelayInMillis())
-        .thenReturn(settings.getTotalTimeoutDuration().toMillis());
+    when(exception.getRetryDelayInMillis()).thenReturn(1L);
+    nanoTime = () -> 0L;
+    assertEquals(1L, resumableStreamIterator.checkRetryBudgetAndGetDelay(exception));
+    nanoTime = () -> settings.getTotalTimeoutDuration().toNanos();
     assertThat(
             assertThrows(
                 SpannerException.class,

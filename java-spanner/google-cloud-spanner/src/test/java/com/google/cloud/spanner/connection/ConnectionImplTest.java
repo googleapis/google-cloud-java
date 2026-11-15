@@ -57,6 +57,7 @@ import com.google.cloud.spanner.DatabaseClient;
 import com.google.cloud.spanner.Dialect;
 import com.google.cloud.spanner.ErrorCode;
 import com.google.cloud.spanner.ForwardingResultSet;
+import com.google.cloud.spanner.Mutation;
 import com.google.cloud.spanner.Options;
 import com.google.cloud.spanner.Options.QueryOption;
 import com.google.cloud.spanner.ReadContext.QueryAnalyzeMode;
@@ -2085,6 +2086,117 @@ public class ConnectionImplTest {
       assertArrayEquals("protoDescriptors".getBytes(), connection.getProtoDescriptors());
       connection.execute(Statement.of("CREATE PROTO BUNDLE (examples.spanner.music.SingerInfo)"));
       assertNull(connection.getProtoDescriptors());
+    }
+  }
+
+  @Test
+  public void testRunTransactionCommitAbortedResetsStateSavepointsAndMutations() {
+    ConnectionOptions options =
+        ConnectionOptions.newBuilder()
+            .setCredentials(NoCredentials.getInstance())
+            .setUri(URI)
+            .build();
+    Spanner spanner = mock(Spanner.class);
+    io.opentelemetry.api.OpenTelemetry openTelemetry = io.opentelemetry.api.OpenTelemetry.noop();
+    com.google.cloud.spanner.SpannerOptions spannerOptions =
+        mock(com.google.cloud.spanner.SpannerOptions.class);
+    when(spannerOptions.getOpenTelemetry()).thenReturn(openTelemetry);
+    when(spanner.getOptions()).thenReturn(spannerOptions);
+    SpannerPool spannerPool = mock(SpannerPool.class);
+    when(spannerPool.getSpanner(any(ConnectionOptions.class), any(ConnectionImpl.class)))
+        .thenReturn(spanner);
+    DdlClient ddlClient = createDefaultMockDdlClient();
+    DatabaseClient dbClient = mock(DatabaseClient.class);
+    when(dbClient.getDialect()).thenReturn(Dialect.GOOGLE_STANDARD_SQL);
+
+    final java.util.List<Mutation> committedMutations = new java.util.ArrayList<>();
+    final java.util.concurrent.atomic.AtomicInteger commitCalls =
+        new java.util.concurrent.atomic.AtomicInteger();
+    final java.util.concurrent.atomic.AtomicInteger resetForRetryCalls =
+        new java.util.concurrent.atomic.AtomicInteger();
+    when(dbClient.transactionManager(any()))
+        .thenAnswer(
+            invocation -> {
+              TransactionContext txContext = mock(TransactionContext.class);
+              when(txContext.executeUpdate(Statement.of(UPDATE))).thenReturn(1L);
+              Mockito.doAnswer(
+                      bufInvocation -> {
+                        Iterable<Mutation> mutations = bufInvocation.getArgument(0);
+                        for (Mutation m : mutations) {
+                          committedMutations.add(m);
+                        }
+                        return null;
+                      })
+                  .when(txContext)
+                  .buffer(Mockito.<Iterable<Mutation>>any());
+              return new SimpleTransactionManager(txContext, false) {
+                @Override
+                public void commit() {
+                  int call = commitCalls.incrementAndGet();
+                  if (call == 1 || call == 3) {
+                    throw SpannerExceptionFactory.newSpannerException(
+                        ErrorCode.ABORTED, "commit aborted without retry info");
+                  }
+                  super.commit();
+                }
+
+                @Override
+                public TransactionContext resetForRetry() {
+                  resetForRetryCalls.incrementAndGet();
+                  committedMutations.clear();
+                  return super.resetForRetry();
+                }
+              };
+            });
+
+    try (ConnectionImpl connection =
+        new ConnectionImpl(options, spannerPool, ddlClient, dbClient, mock(BatchClient.class))) {
+      // 1. Verify autocommit=true restores inTransaction, RETRY_ABORTS_INTERNALLY=false, and clears savepoints.
+      connection.setAutocommit(true);
+      connection.setSavepointSupport(SavepointSupport.ENABLED);
+      final java.util.concurrent.atomic.AtomicInteger autocommitAttempts =
+          new java.util.concurrent.atomic.AtomicInteger();
+
+      connection.runTransaction(
+          transaction -> {
+            autocommitAttempts.incrementAndGet();
+            assertTrue(transaction.isInTransaction());
+            assertFalse(transaction.isRetryAbortsInternally());
+            transaction.savepoint("s1");
+            assertEquals(1L, transaction.executeUpdate(Statement.of(UPDATE)));
+            return null;
+          });
+
+      assertEquals(2, autocommitAttempts.get());
+      assertEquals(2, commitCalls.get());
+      assertEquals(1, resetForRetryCalls.get());
+      assertFalse(connection.isInTransaction());
+      assertTrue(connection.isRetryAbortsInternally());
+
+      // 2. Verify autocommit=false clears buffered mutations and savepoints across commit abort retry.
+      connection.setAutocommit(false);
+      committedMutations.clear();
+      final java.util.concurrent.atomic.AtomicInteger transactionalAttempts =
+          new java.util.concurrent.atomic.AtomicInteger();
+
+      connection.runTransaction(
+          transaction -> {
+            int attempt = transactionalAttempts.incrementAndGet();
+            assertTrue(transaction.isInTransaction());
+            assertFalse(transaction.isRetryAbortsInternally());
+            transaction.savepoint("s1");
+            transaction.bufferedWrite(
+                Mutation.newInsertBuilder("FOO").set("ID").to((long) attempt).build());
+            assertEquals(1L, transaction.executeUpdate(Statement.of(UPDATE)));
+            return null;
+          });
+
+      assertEquals(2, transactionalAttempts.get());
+      assertEquals(4, commitCalls.get());
+      assertEquals(2, resetForRetryCalls.get());
+      assertEquals(1, committedMutations.size());
+      assertFalse(connection.isTransactionStarted());
+      assertTrue(connection.isRetryAbortsInternally());
     }
   }
 }

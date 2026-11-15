@@ -1380,7 +1380,20 @@ class ReadWriteTransaction extends AbstractMultiUseTransaction {
 
   @Override
   public void resetForRetry() {
-    txContextFuture = ApiFutures.immediateFuture(txManager.resetForRetry());
+    this.state = UnitOfWorkState.STARTED;
+    this.abortedException = null;
+    this.rolledBackToSavepointException = null;
+    this.timedOutOrCancelled = false;
+    this.commitResponseFuture = null;
+    this.mutations.clear();
+    this.statements.clear();
+    this.autoSavepoint = null;
+    clearSavepoints();
+    if (txManager != null) {
+      txContextFuture = ApiFutures.immediateFuture(txManager.resetForRetry());
+    } else {
+      txContextFuture = null;
+    }
   }
 
   @Override

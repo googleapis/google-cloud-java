@@ -23,6 +23,8 @@ import com.google.cloud.spanner.SpannerExceptionFactory;
 import com.google.cloud.spanner.connection.Connection.TransactionCallable;
 import com.google.cloud.spanner.connection.ConnectionImpl.Caller;
 import com.google.cloud.spanner.connection.UnitOfWork.CallType;
+import com.google.cloud.spanner.connection.UnitOfWork.UnitOfWorkState;
+import java.util.concurrent.ThreadLocalRandom;
 
 class TransactionRunnerImpl {
   private final ConnectionImpl connection;
@@ -43,20 +45,34 @@ class TransactionRunnerImpl {
         return result;
       } catch (AbortedException abortedException) {
         try {
-          //noinspection BusyWait
-          Thread.sleep(abortedException.getRetryDelayInMillis());
+          long retryDelayMillis = abortedException.getRetryDelayInMillis();
+          if (retryDelayMillis > 0L) {
+            //noinspection BusyWait
+            Thread.sleep(retryDelayMillis);
+          } else if (abortedException.isEmulatorOnlySupportsOneTransactionException()) {
+            //noinspection BusyWait
+            Thread.sleep(ThreadLocalRandom.current().nextInt(1, 5));
+          }
           connection.resetForRetry(transaction);
         } catch (InterruptedException interruptedException) {
-          connection.rollbackAsync(CallType.SYNC, Caller.TRANSACTION_RUNNER);
+          rollbackIfActive(transaction);
           throw SpannerExceptionFactory.propagateInterrupt(interruptedException);
         } catch (Throwable t) {
-          connection.rollbackAsync(CallType.SYNC, Caller.TRANSACTION_RUNNER);
+          rollbackIfActive(transaction);
           throw t;
         }
       } catch (Throwable t) {
-        connection.rollbackAsync(CallType.SYNC, Caller.TRANSACTION_RUNNER);
+        rollbackIfActive(transaction);
         throw t;
       }
+    }
+  }
+
+  private void rollbackIfActive(UnitOfWork transaction) {
+    if (connection.isInTransaction()
+        && (transaction.getState() == UnitOfWorkState.STARTED
+            || transaction.getState() == UnitOfWorkState.ABORTED)) {
+      connection.rollbackAsync(CallType.SYNC, Caller.TRANSACTION_RUNNER);
     }
   }
 }
