@@ -21,6 +21,8 @@ import com.google.common.base.MoreObjects;
 import com.google.common.base.Strings;
 import com.google.common.cache.Cache;
 import com.google.common.cache.CacheBuilder;
+import com.google.common.cache.CacheLoader;
+import com.google.common.cache.LoadingCache;
 import com.google.common.collect.ImmutableMap;
 import io.grpc.Metadata;
 import io.grpc.Metadata.Key;
@@ -56,8 +58,10 @@ class SpannerMetadataProvider {
           "^projects/(?<project>[^/]+)/instances/(?<instance>[^/]+)"
               + "(/databases/(?<database>[^/]+))?(/.*)?");
 
-  private final Cache<String, Attributes> builtInMetricsAttributesCache =
-      CacheBuilder.newBuilder().maximumSize(100).build();
+  private final LoadingCache<String, Attributes> builtInMetricsAttributesCache =
+      CacheBuilder.newBuilder()
+          .maximumSize(100)
+          .build(CacheLoader.from(SpannerMetadataProvider::createBuiltInMetricsAttributes));
 
   private static final Map<String, List<String>> ROUTE_TO_LEADER_HEADER_MAP =
       ImmutableMap.of(ROUTE_TO_LEADER_HEADER_KEY, Collections.singletonList("true"));
@@ -114,12 +118,7 @@ class SpannerMetadataProvider {
     if (Strings.isNullOrEmpty(resource)) {
       return Attributes.empty();
     }
-    try {
-      return builtInMetricsAttributesCache.get(
-          resource, () -> createBuiltInMetricsAttributes(resource));
-    } catch (ExecutionException executionException) {
-      throw SpannerExceptionFactory.asSpannerException(executionException.getCause());
-    }
+    return builtInMetricsAttributesCache.getUnchecked(resource);
   }
 
   private static Attributes createBuiltInMetricsAttributes(String resource) {
