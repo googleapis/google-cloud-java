@@ -301,7 +301,7 @@ public class SpannerStatementParserTest {
     AbstractStatementParser pgParser = AbstractStatementParser.getInstance(Dialect.POSTGRESQL);
 
     // Numeric tag ($1$) is not a valid dollar-quoted string delimiter.
-    assertEquals("$", pgParser.skip("$1$not a dollar string$1$", 0, null) == 1 ? "$" : "invalid");
+    assertEquals(1, pgParser.skip("$1$not a dollar string$1$", 0, null));
 
     // Mid-identifier '$' (col$tag$a, col$$, col$1) must not open a dollar-quoted string.
     String sqlMidTag = "col$tag$a + $tag$hello$tag$";

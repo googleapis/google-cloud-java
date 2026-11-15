@@ -2139,7 +2139,10 @@ public class ConnectionImplTest {
 
   @Test
   public void testHintWithEscapedBackslashDoesNotBypassReadOnly() {
-    String dmlWithHint = "@{statement_tag='\\\\'} INSERT INTO FOO (ID) VALUES (1) -- '} SELECT 1";
+    String hintWithEscapedSingleQuote =
+        "@{statement_tag='\\'} INSERT INTO FOO (ID) VALUES (1) -- '} SELECT 1";
+    String hintWithEscapedBackslash =
+        "@{statement_tag='\\\\'} INSERT INTO FOO (ID) VALUES (1) -- '} SELECT 1";
     try (ConnectionImpl subject =
         createConnection(
             ConnectionOptions.newBuilder()
@@ -2147,8 +2150,16 @@ public class ConnectionImplTest {
                 .setUri(URI)
                 .build())) {
       subject.setReadOnly(true);
+      AbstractStatementParser.ParsedStatement parsedEscapedQuote =
+          AbstractStatementParser.getInstance(subject.getDialect())
+              .parse(Statement.of(hintWithEscapedSingleQuote));
+      assertEquals(StatementType.QUERY, parsedEscapedQuote.getType());
+      assertEquals(" SELECT 1", parsedEscapedQuote.getStatement().getSql());
+
       SpannerException ex =
-          assertThrows(SpannerException.class, () -> subject.execute(Statement.of(dmlWithHint)));
+          assertThrows(
+              SpannerException.class,
+              () -> subject.execute(Statement.of(hintWithEscapedBackslash)));
       assertEquals(ErrorCode.FAILED_PRECONDITION, ex.getErrorCode());
     }
   }
