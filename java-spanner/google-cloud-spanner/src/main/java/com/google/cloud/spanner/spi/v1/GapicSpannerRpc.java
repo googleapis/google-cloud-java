@@ -1173,7 +1173,8 @@ public class GapicSpannerRpc implements SpannerRpc {
   }
 
   @Nullable
-  private static GrpcGcpEndpointChannelConfigurator createGrpcGcpEndpointChannelConfigurator(
+  @VisibleForTesting
+  static GrpcGcpEndpointChannelConfigurator createGrpcGcpEndpointChannelConfigurator(
       InstantiatingGrpcChannelProvider.Builder channelProviderBuilder, SpannerOptions options) {
     if (!options.isGrpcGcpExtensionEnabled()) {
       return null;

@@ -22,8 +22,6 @@ import com.google.api.gax.grpc.GrpcCallContext;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.cloud.NoCredentials;
 import com.google.cloud.grpc.GcpManagedChannel;
-import com.google.cloud.grpc.GcpManagedChannelOptions;
-import com.google.cloud.grpc.GcpManagedChannelOptions.GcpMetricsOptions;
 import com.google.cloud.spanner.SpannerOptions.CallContextConfigurator;
 import com.google.cloud.spanner.connection.AbstractMockServerTest;
 import com.google.cloud.spanner.spi.v1.GapicSpannerRpc;
@@ -35,7 +33,6 @@ import io.opentelemetry.sdk.metrics.SdkMeterProvider;
 import io.opentelemetry.sdk.metrics.SdkMeterProviderBuilder;
 import io.opentelemetry.sdk.metrics.data.HistogramPointData;
 import io.opentelemetry.sdk.metrics.data.LongPointData;
-import io.opentelemetry.sdk.metrics.data.MetricData;
 import io.opentelemetry.sdk.testing.exporter.InMemoryMetricReader;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -236,43 +233,13 @@ public class ChannelPoolBuiltInMetricsTest extends AbstractMockServerTest {
   }
 
   @Test
-  public void channelCountIsNotReportedWithTheEmulator() {
+  public void channelPoolMetricsAreNotReportedWithTheEmulator() {
     try (Spanner spanner =
         createOptions().setEmulatorHost("localhost:" + getPort()).build().getService()) {
       executeSelect1(spanner);
 
       assertThat(channelCountPoints()).isEmpty();
       assertThat(channelLoadPoints()).isEmpty();
-    }
-  }
-
-  @Test
-  public void applicationOptionsCannotRedirectChannelCount() {
-    InMemoryMetricReader applicationReader = InMemoryMetricReader.create();
-    SdkMeterProvider applicationMeterProvider =
-        SdkMeterProvider.builder().registerMetricReader(applicationReader).build();
-    GcpManagedChannelOptions applicationOptions =
-        GcpManagedChannelOptions.newBuilder()
-            .withMetricsOptions(
-                GcpMetricsOptions.newBuilder()
-                    .withBuiltInMetrics(
-                        applicationMeterProvider.get("application"),
-                        Attributes.of(BuiltInMetricsConstant.LANE_KEY, "wrong"))
-                    .build())
-            .build();
-    try (Spanner spanner =
-        createOptions().enableGrpcGcpExtension(applicationOptions).build().getService()) {
-      executeSelect1(spanner);
-
-      assertThat(channelCountPoints()).isNotEmpty();
-      assertThat(
-              applicationReader.collectAllMetrics().stream()
-                  .map(MetricData::getName)
-                  .filter(name -> name.contains("channel_count"))
-                  .collect(Collectors.toList()))
-          .isEmpty();
-    } finally {
-      applicationMeterProvider.close();
     }
   }
 

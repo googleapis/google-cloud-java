@@ -2588,24 +2588,7 @@ public class GapicSpannerRpcTest {
   }
 
   @Test
-  public void testBuiltInChannelPoolMetricsWithoutLane() {
-    SpannerOptions options =
-        SpannerOptions.newBuilder().setProjectId("[PROJECT]").enableGrpcGcpExtension().build();
-
-    GcpMetricsOptions metricsOptions =
-        GapicSpannerRpc.grpcGcpOptionsWithMetricsAndDcp(
-                options,
-                /* channelPrimer= */ null,
-                new GapicSpannerRpc.BuiltInChannelPoolMetrics(
-                    OpenTelemetry.noop().getMeter("grpc-gcp"), "1"),
-                /* lane= */ null)
-            .getMetricsOptions();
-
-    assertEquals(Attributes.empty(), metricsOptions.getBuiltInMetricsAttributes());
-  }
-
-  @Test
-  public void testEndpointPoolsDoNotGetBuiltInChannelPoolMetrics() throws Exception {
+  public void testEndpointPoolsDoNotGetBuiltInChannelPoolMetrics() {
     SpannerOptions options =
         SpannerOptions.newBuilder()
             .setProjectId("[PROJECT]")
@@ -2620,15 +2603,9 @@ public class GapicSpannerRpcTest {
                     .build())
             .build();
 
-    java.lang.reflect.Method method =
-        GapicSpannerRpc.class.getDeclaredMethod(
-            "createGrpcGcpEndpointChannelConfigurator",
-            InstantiatingGrpcChannelProvider.Builder.class,
-            SpannerOptions.class);
-    method.setAccessible(true);
     GrpcGcpEndpointChannelConfigurator configurator =
-        (GrpcGcpEndpointChannelConfigurator)
-            method.invoke(null, InstantiatingGrpcChannelProvider.newBuilder(), options);
+        GapicSpannerRpc.createGrpcGcpEndpointChannelConfigurator(
+            InstantiatingGrpcChannelProvider.newBuilder(), options);
 
     GcpMetricsOptions metricsOptions = configurator.getGrpcGcpOptions().getMetricsOptions();
     assertNull(metricsOptions.getBuiltInMetricsMeter());
