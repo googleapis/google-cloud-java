@@ -19,8 +19,12 @@ package com.google.cloud.bigquery;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
+import com.google.common.collect.Lists;
+import java.util.Collections;
+import java.util.concurrent.atomic.AtomicInteger;
 import org.junit.jupiter.api.Test;
 
 class FieldListTest {
@@ -120,5 +124,54 @@ class FieldListTest {
     assertNotEquals(fieldsSchema, FieldList.of(fieldSchema1, fieldSchema3));
 
     assertEquals(fieldsSchema, FieldList.fromPb(fieldsSchema.toPb()));
+  }
+
+  @Test
+  void testSingleEvaluationAndReuseInOf() {
+    assertSame(fieldsSchema, FieldList.of(fieldsSchema));
+    assertSame(fieldsSchema, Schema.of(fieldsSchema).getFields());
+
+    AtomicInteger transformCount = new AtomicInteger();
+    FieldList list =
+        FieldList.of(
+            Lists.transform(
+                Collections.singletonList(fieldSchema1),
+                field -> {
+                  transformCount.incrementAndGet();
+                  return field;
+                }));
+    assertEquals(1, list.size());
+    assertEquals(1, transformCount.get());
+  }
+
+  @Test
+  void testGetIndexExactLowerAndMixedCase() {
+    assertEquals(0, fieldsSchema.getIndex(FIELD_NAME1));
+    assertEquals(1, fieldsSchema.getIndex(FIELD_NAME2));
+    assertEquals(2, fieldsSchema.getIndex(FIELD_NAME3));
+    assertEquals(0, fieldsSchema.getIndex(FIELD_NAME_CASE_INSENSITIVE1));
+    assertEquals(1, fieldsSchema.getIndex(FIELD_NAME_CASE_INSENSITIVE2));
+    assertEquals(2, fieldsSchema.getIndex(FIELD_NAME_CASE_INSENSITIVE3));
+    assertEquals(0, fieldsSchema.getIndex(FIELD_NAME_CASE_INSENSITIVE4));
+    assertEquals(1, fieldsSchema.getIndex(FIELD_NAME_CASE_INSENSITIVE5));
+    assertEquals(2, fieldsSchema.getIndex(FIELD_NAME_CASE_INSENSITIVE6));
+    assertThrows(IllegalArgumentException.class, () -> fieldsSchema.getIndex(FIELD_NAME4));
+  }
+
+  @Test
+  void testGetIndexCaseCollisionPreservesLastWriterWins() {
+    FieldList upperThenLower =
+        FieldList.of(
+            Field.of("FOO", LegacySQLTypeName.STRING), Field.of("foo", LegacySQLTypeName.STRING));
+    assertEquals(1, upperThenLower.getIndex("FOO"));
+    assertEquals(1, upperThenLower.getIndex("foo"));
+    assertEquals(1, upperThenLower.getIndex("Foo"));
+
+    FieldList lowerThenUpper =
+        FieldList.of(
+            Field.of("foo", LegacySQLTypeName.STRING), Field.of("FOO", LegacySQLTypeName.STRING));
+    assertEquals(1, lowerThenUpper.getIndex("foo"));
+    assertEquals(1, lowerThenUpper.getIndex("FOO"));
+    assertEquals(1, lowerThenUpper.getIndex("Foo"));
   }
 }
