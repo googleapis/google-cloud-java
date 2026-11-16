@@ -54,6 +54,9 @@ import io.grpc.Status;
 import java.time.Duration;
 import java.util.*;
 import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -163,29 +166,44 @@ public class MultiplexedSessionDatabaseClientMockServerTest extends AbstractMock
             .setCredentials(NoCredentials.getInstance())
             .build()
             .getService();
+    ExecutorService executor = Executors.newFixedThreadPool(2);
     try {
       DatabaseClient client = testSpanner.getDatabaseClient(DatabaseId.of("p", "i", "d"));
 
       // Wait until the initial CreateSession request is in flight and frozen on the server.
       mockSpanner.waitForRequestsToContain(CreateSessionRequest.class, 5000);
 
-      // Start a query that blocks waiting for the session to be created.
+      // Start a query on a background thread so it blocks waiting for the session to be created.
       try (ReadContext readContext = client.singleUse();
           ResultSet resultSet = readContext.executeQuery(STATEMENT)) {
-        // Close the client while the transaction is waiting for session creation.
-        testSpanner.close();
+        CountDownLatch queryStarted = new CountDownLatch(1);
+        Future<SpannerException> queryFailure =
+            executor.submit(
+                () -> {
+                  queryStarted.countDown();
+                  return assertThrows(SpannerException.class, resultSet::next);
+                });
+        assertTrue(queryStarted.await(5, TimeUnit.SECONDS));
 
-        // The transaction must immediately fail with FAILED_PRECONDITION (client closed),
-        // rather than hanging indefinitely waiting for mockSpanner to unfreeze.
-        SpannerException exception = assertThrows(SpannerException.class, resultSet::next);
+        // Close the client asynchronously so we can verify the blocked transaction fails before
+        // mockSpanner is unfrozen (GapicSpannerRpc.shutdown() otherwise waits up to 20s for the
+        // frozen CreateSession RPC to finish).
+        Future<?> closeFuture = executor.submit(testSpanner::close);
+
+        SpannerException exception = queryFailure.get(5, TimeUnit.SECONDS);
         assertEquals(ErrorCode.FAILED_PRECONDITION, exception.getErrorCode());
         assertTrue(exception.getMessage().contains("This client has been closed"));
+
+        mockSpanner.unfreeze();
+        closeFuture.get(5, TimeUnit.SECONDS);
       }
     } finally {
       mockSpanner.unfreeze();
       if (!testSpanner.isClosed()) {
         testSpanner.close();
       }
+      executor.shutdown();
+      assertTrue(executor.awaitTermination(5, TimeUnit.SECONDS));
     }
   }
 
@@ -204,6 +222,7 @@ public class MultiplexedSessionDatabaseClientMockServerTest extends AbstractMock
             .setCredentials(NoCredentials.getInstance())
             .build()
             .getService();
+    ExecutorService executor = Executors.newFixedThreadPool(2);
     try {
       DatabaseClient client = testSpanner.getDatabaseClient(DatabaseId.of("p", "i", "d"));
 
@@ -220,20 +239,33 @@ public class MultiplexedSessionDatabaseClientMockServerTest extends AbstractMock
       // Start a query that binds to the pending retry future (attempt 2).
       try (ReadContext readContext = client.singleUse();
           ResultSet resultSet = readContext.executeQuery(STATEMENT)) {
-        // Close the client while the query is waiting for attempt 2.
-        testSpanner.close();
+        CountDownLatch queryStarted = new CountDownLatch(1);
+        Future<SpannerException> queryFailure =
+            executor.submit(
+                () -> {
+                  queryStarted.countDown();
+                  return assertThrows(SpannerException.class, resultSet::next);
+                });
+        assertTrue(queryStarted.await(5, TimeUnit.SECONDS));
 
-        // The transaction must immediately fail with FAILED_PRECONDITION (client closed),
-        // instead of hanging while attempt 2 is frozen.
-        SpannerException exception = assertThrows(SpannerException.class, resultSet::next);
+        Future<?> closeFuture = executor.submit(testSpanner::close);
+
+        // The transaction must immediately fail with FAILED_PRECONDITION (client closed) while
+        // attempt 2 is still frozen.
+        SpannerException exception = queryFailure.get(5, TimeUnit.SECONDS);
         assertEquals(ErrorCode.FAILED_PRECONDITION, exception.getErrorCode());
         assertTrue(exception.getMessage().contains("This client has been closed"));
+
+        mockSpanner.unfreeze();
+        closeFuture.get(5, TimeUnit.SECONDS);
       }
     } finally {
       mockSpanner.unfreeze();
       if (!testSpanner.isClosed()) {
         testSpanner.close();
       }
+      executor.shutdown();
+      assertTrue(executor.awaitTermination(5, TimeUnit.SECONDS));
     }
   }
 

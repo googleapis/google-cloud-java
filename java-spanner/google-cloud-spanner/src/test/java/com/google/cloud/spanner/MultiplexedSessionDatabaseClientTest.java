@@ -328,6 +328,123 @@ public class MultiplexedSessionDatabaseClientTest {
   }
 
   @Test
+  public void testCloseDuringFailureNotificationCancelsScheduledRetryWithoutDispatchingRpc() {
+    assumeFalse(isNativeImage());
+    Clock clock = mock(Clock.class);
+    when(clock.instant()).thenReturn(Instant.now());
+    SessionClient sessionClient = mock(SessionClient.class);
+    SpannerImpl spanner = mock(SpannerImpl.class);
+    SpannerOptions spannerOptions = mock(SpannerOptions.class);
+    SessionPoolOptions sessionPoolOptions = mock(SessionPoolOptions.class);
+    when(sessionClient.getSpanner()).thenReturn(spanner);
+    when(sessionClient.getDatabaseId()).thenReturn(TEST_DATABASE_ID);
+    when(spanner.getRpc()).thenReturn(mock(SpannerRpc.class));
+    when(spanner.getOptions()).thenReturn(spannerOptions);
+    when(spannerOptions.getSessionPoolOptions()).thenReturn(sessionPoolOptions);
+    when(sessionPoolOptions.getMultiplexedSessionMaintenanceDuration())
+        .thenReturn(Duration.ofDays(7));
+    when(sessionPoolOptions.getMultiplexedSessionMaintenanceLoopFrequency())
+        .thenReturn(Duration.ofMinutes(10));
+
+    AtomicReference<SessionConsumer> initialConsumer = new AtomicReference<>();
+    doAnswer(
+            (Answer<?>)
+                invocationOnMock -> {
+                  initialConsumer.set(invocationOnMock.getArgument(0));
+                  return null;
+                })
+        .when(sessionClient)
+        .asyncCreateMultiplexedSession(any(SessionConsumer.class));
+
+    MultiplexedSessionDatabaseClient client =
+        new MultiplexedSessionDatabaseClient(sessionClient, clock);
+    try {
+      assertNotNull(initialConsumer.get());
+      ApiFuture<SessionReference> initialFuture = client.getMultiplexedSessionFuture();
+
+      // Simulate a waiter/listener closing the client while initialFuture is failing.
+      AtomicReference<ApiFuture<SessionReference>> retryFutureRef = new AtomicReference<>();
+      initialFuture.addListener(
+          () -> {
+            retryFutureRef.set(client.getMultiplexedSessionFuture());
+            client.close();
+          },
+          MoreExecutors.directExecutor());
+
+      initialConsumer
+          .get()
+          .onSessionCreateFailure(
+              SpannerExceptionFactory.newSpannerException(ErrorCode.DEADLINE_EXCEEDED, "test"), 1);
+
+      SpannerException initialException =
+          assertThrows(SpannerException.class, () -> SpannerApiFutures.get(initialFuture));
+      assertEquals(ErrorCode.DEADLINE_EXCEEDED, initialException.getErrorCode());
+
+      ApiFuture<SessionReference> retryFuture = retryFutureRef.get();
+      assertNotNull(retryFuture);
+      SpannerException retryException =
+          assertThrows(SpannerException.class, () -> SpannerApiFutures.get(retryFuture));
+      assertEquals(ErrorCode.FAILED_PRECONDITION, retryException.getErrorCode());
+      assertTrue(retryException.getMessage().contains("This client has been closed"));
+
+      verify(sessionClient, times(1)).asyncCreateMultiplexedSession(any(SessionConsumer.class));
+    } finally {
+      client.close();
+    }
+  }
+
+  @Test
+  public void testFailureAfterCloseDoesNotScheduleRetry() {
+    assumeFalse(isNativeImage());
+    Clock clock = mock(Clock.class);
+    when(clock.instant()).thenReturn(Instant.now());
+    SessionClient sessionClient = mock(SessionClient.class);
+    SpannerImpl spanner = mock(SpannerImpl.class);
+    SpannerOptions spannerOptions = mock(SpannerOptions.class);
+    SessionPoolOptions sessionPoolOptions = mock(SessionPoolOptions.class);
+    when(sessionClient.getSpanner()).thenReturn(spanner);
+    when(sessionClient.getDatabaseId()).thenReturn(TEST_DATABASE_ID);
+    when(spanner.getRpc()).thenReturn(mock(SpannerRpc.class));
+    when(spanner.getOptions()).thenReturn(spannerOptions);
+    when(spannerOptions.getSessionPoolOptions()).thenReturn(sessionPoolOptions);
+    when(sessionPoolOptions.getMultiplexedSessionMaintenanceDuration())
+        .thenReturn(Duration.ofDays(7));
+    when(sessionPoolOptions.getMultiplexedSessionMaintenanceLoopFrequency())
+        .thenReturn(Duration.ofMinutes(10));
+
+    AtomicReference<SessionConsumer> initialConsumer = new AtomicReference<>();
+    doAnswer(
+            (Answer<?>)
+                invocationOnMock -> {
+                  initialConsumer.set(invocationOnMock.getArgument(0));
+                  return null;
+                })
+        .when(sessionClient)
+        .asyncCreateMultiplexedSession(any(SessionConsumer.class));
+
+    MultiplexedSessionDatabaseClient client =
+        new MultiplexedSessionDatabaseClient(sessionClient, clock);
+    try {
+      assertNotNull(initialConsumer.get());
+      ApiFuture<SessionReference> initialFuture = client.getMultiplexedSessionFuture();
+
+      client.close();
+      initialConsumer
+          .get()
+          .onSessionCreateFailure(
+              SpannerExceptionFactory.newSpannerException(ErrorCode.DEADLINE_EXCEEDED, "test"), 1);
+
+      assertEquals(initialFuture, client.getMultiplexedSessionFuture());
+      SpannerException exception =
+          assertThrows(SpannerException.class, () -> SpannerApiFutures.get(initialFuture));
+      assertEquals(ErrorCode.FAILED_PRECONDITION, exception.getErrorCode());
+      verify(sessionClient, times(1)).asyncCreateMultiplexedSession(any(SessionConsumer.class));
+    } finally {
+      client.close();
+    }
+  }
+
+  @Test
   public void testDisableMultiplexedSessionEnvVar() throws Exception {
     assumeTrue(isJava8() && !isWindows());
     assumeFalse(System.getenv().containsKey("GOOGLE_CLOUD_SPANNER_MULTIPLEXED_SESSIONS"));
