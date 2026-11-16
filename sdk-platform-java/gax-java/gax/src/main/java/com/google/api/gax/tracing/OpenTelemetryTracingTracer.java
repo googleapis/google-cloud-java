@@ -42,6 +42,7 @@ import io.opentelemetry.context.Context;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.CancellationException;
+import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.locks.ReentrantLock;
 import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
@@ -110,7 +111,12 @@ class OpenTelemetryTracingTracer implements ApiTracer {
     // Scope.
     @SuppressWarnings("MustBeClosedChecker")
     io.opentelemetry.context.Scope otelScope = currentSpan.makeCurrent();
-    return otelScope::close;
+    AtomicBoolean closed = new AtomicBoolean();
+    return () -> {
+      if (closed.compareAndSet(false, true)) {
+        otelScope.close();
+      }
+    };
   }
 
   @Override

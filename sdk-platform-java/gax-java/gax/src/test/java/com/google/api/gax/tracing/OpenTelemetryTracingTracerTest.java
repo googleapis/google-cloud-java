@@ -830,6 +830,12 @@ class OpenTelemetryTracingTracerTest {
     }
     assertThat(Span.current().getSpanContext().isValid()).isFalse();
 
+    // Calling close() multiple times is idempotent
+    ApiTracer.Scope manualScope = openTelemetryTracingTracer.inScope();
+    manualScope.close();
+    manualScope.close();
+    assertThat(Span.current().getSpanContext().isValid()).isFalse();
+
     // After operation ends, inScope() is a no-op
     openTelemetryTracingTracer.operationSucceeded();
     try (ApiTracer.Scope ignored = openTelemetryTracingTracer.inScope()) {
