@@ -29,7 +29,7 @@ class PoolSizer {
   // 50% increase in latency (since that also increases requests-in-flight).
   private volatile float idlesSessionHeadRoom;
   private volatile int minIdleSessions;
-  private volatile int maxIdleSessions;
+  private volatile int maxSessions;
 
   private final PoolStats stats;
   private final Sized pendingRpcs;
@@ -60,12 +60,12 @@ class PoolSizer {
   void updateConfig(SessionClientConfiguration.SessionPoolConfiguration poolConfiguration) {
     this.idlesSessionHeadRoom = poolConfiguration.getHeadroom();
     this.minIdleSessions = poolConfiguration.getMinSessionCount();
-    this.maxIdleSessions = poolConfiguration.getMaxSessionCount();
+    this.maxSessions = poolConfiguration.getMaxSessionCount();
     this.pendingVRpcsPerSession = poolConfiguration.getNewSessionQueueLength();
     this.disabled =
         poolConfiguration.equals(
                 SessionClientConfiguration.SessionPoolConfiguration.getDefaultInstance())
-            || this.maxIdleSessions <= 0;
+            || this.maxSessions <= 0;
   }
 
   boolean isDisabled() {
@@ -82,9 +82,9 @@ class PoolSizer {
     int sessionsInUse = effectivePending + stats.getInUseCount();
     int unboundedDesiredIdleSessions = (int) Math.ceil(sessionsInUse * idlesSessionHeadRoom);
     int desiredIdleSessions =
-        Math.max(Math.min(unboundedDesiredIdleSessions, maxIdleSessions), minIdleSessions);
+        Math.max(Math.min(unboundedDesiredIdleSessions, maxSessions), minIdleSessions);
 
-    int desiredCapacity = Math.min(sessionsInUse + desiredIdleSessions, maxIdleSessions);
+    int desiredCapacity = Math.min(sessionsInUse + desiredIdleSessions, maxSessions);
     int eventualCapacity = stats.getExpectedCapacity();
     int immediateCapacity = eventualCapacity - stats.getStartingCount();
 
@@ -105,7 +105,7 @@ class PoolSizer {
     if (isDisabled()) {
       return 0;
     }
-    return maxIdleSessions * Math.max(1, pendingVRpcsPerSession);
+    return maxSessions * Math.max(1, pendingVRpcsPerSession);
   }
 
   /** Returns true if the session should be replaced */
