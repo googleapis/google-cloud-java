@@ -42,7 +42,6 @@ import static com.google.cloud.spanner.connection.StatementResult.ClientSideStat
 import static com.google.cloud.spanner.connection.StatementResult.ClientSideStatementType.SET_OPTIMIZER_STATISTICS_PACKAGE;
 import static com.google.cloud.spanner.connection.StatementResult.ClientSideStatementType.SET_OPTIMIZER_VERSION;
 import static com.google.cloud.spanner.connection.StatementResult.ClientSideStatementType.SET_PROTO_DESCRIPTORS;
-import static com.google.cloud.spanner.connection.StatementResult.ClientSideStatementType.SET_PROTO_DESCRIPTORS_FILE_PATH;
 import static com.google.cloud.spanner.connection.StatementResult.ClientSideStatementType.SET_READONLY;
 import static com.google.cloud.spanner.connection.StatementResult.ClientSideStatementType.SET_READ_LOCK_MODE;
 import static com.google.cloud.spanner.connection.StatementResult.ClientSideStatementType.SET_READ_ONLY_STALENESS;
@@ -75,7 +74,6 @@ import static com.google.cloud.spanner.connection.StatementResult.ClientSideStat
 import static com.google.cloud.spanner.connection.StatementResult.ClientSideStatementType.SHOW_OPTIMIZER_STATISTICS_PACKAGE;
 import static com.google.cloud.spanner.connection.StatementResult.ClientSideStatementType.SHOW_OPTIMIZER_VERSION;
 import static com.google.cloud.spanner.connection.StatementResult.ClientSideStatementType.SHOW_PROTO_DESCRIPTORS;
-import static com.google.cloud.spanner.connection.StatementResult.ClientSideStatementType.SHOW_PROTO_DESCRIPTORS_FILE_PATH;
 import static com.google.cloud.spanner.connection.StatementResult.ClientSideStatementType.SHOW_READONLY;
 import static com.google.cloud.spanner.connection.StatementResult.ClientSideStatementType.SHOW_READ_LOCK_MODE;
 import static com.google.cloud.spanner.connection.StatementResult.ClientSideStatementType.SHOW_READ_ONLY_STALENESS;
@@ -794,9 +792,12 @@ class ConnectionStatementExecutorImpl implements ConnectionStatementExecutor {
 
   @Override
   public StatementResult statementSetProtoDescriptorsFilePath(String filePath) {
-    Preconditions.checkNotNull(filePath);
-    getConnection().setProtoDescriptorsFilePath(filePath);
-    return noResult(SET_PROTO_DESCRIPTORS_FILE_PATH);
+    throw SpannerExceptionFactory.newSpannerException(
+        ErrorCode.INVALID_ARGUMENT,
+        "SET PROTO_DESCRIPTORS_FILE_PATH is not supported. To set proto descriptors, encode the"
+            + " descriptors file as a base64 string and use the SET PROTO_DESCRIPTORS ="
+            + " '<base64_encoded_proto_descriptors>' statement instead, or pass the descriptors"
+            + " bytes directly using the Connection#setProtoDescriptors(byte[]) API.");
   }
 
   @Override
@@ -809,10 +810,10 @@ class ConnectionStatementExecutorImpl implements ConnectionStatementExecutor {
 
   @Override
   public StatementResult statementShowProtoDescriptorsFilePath() {
-    return resultSet(
-        String.format("%sPROTO_DESCRIPTORS_FILE_PATH", getNamespace(connection.getDialect())),
-        getConnection().getProtoDescriptorsFilePath(),
-        SHOW_PROTO_DESCRIPTORS_FILE_PATH);
+    throw SpannerExceptionFactory.newSpannerException(
+        ErrorCode.INVALID_ARGUMENT,
+        "SHOW VARIABLE PROTO_DESCRIPTORS_FILE_PATH is not supported. Use SHOW VARIABLE"
+            + " PROTO_DESCRIPTORS instead.");
   }
 
   @Override
