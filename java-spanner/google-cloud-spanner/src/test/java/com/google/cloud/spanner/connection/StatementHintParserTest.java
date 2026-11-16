@@ -232,8 +232,7 @@ public class StatementHintParserTest {
       assertInvalidHints("@{statement_tag='''triple'''} SELECT 1");
       assertInvalidHints("@{statement_tag='doubled''quote'} SELECT 1");
     } else {
-      StatementHintParser doubledQuoteParser =
-          parserFor("/*@ statement_tag='val''ue' */ SELECT 1");
+      StatementHintParser doubledQuoteParser = parserFor("/*@ statement_tag='val''ue' */ SELECT 1");
       assertTrue(doubledQuoteParser.hasStatementHints());
       assertEquals(
           ImmutableMap.of("statement_tag", "val''ue"),

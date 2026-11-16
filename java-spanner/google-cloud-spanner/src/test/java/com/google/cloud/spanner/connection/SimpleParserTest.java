@@ -264,16 +264,13 @@ public class SimpleParserTest {
       assertEquals(found("''foo''"), parserFor("'''foo'''").eatSingleQuotedString());
       assertEquals(
           NOT_FOUND,
-          new SimpleParser(Dialect.POSTGRESQL, "'has */ inside'", 0, true)
-              .eatSingleQuotedString());
+          new SimpleParser(Dialect.POSTGRESQL, "'has */ inside'", 0, true).eatSingleQuotedString());
       assertEquals(
           NOT_FOUND,
-          new SimpleParser(Dialect.POSTGRESQL, "'has /* inside'", 0, true)
-              .eatSingleQuotedString());
+          new SimpleParser(Dialect.POSTGRESQL, "'has /* inside'", 0, true).eatSingleQuotedString());
       assertEquals(
           NOT_FOUND,
-          new SimpleParser(Dialect.POSTGRESQL, "'line1\nline2'", 0, false)
-              .eatSingleQuotedString());
+          new SimpleParser(Dialect.POSTGRESQL, "'line1\nline2'", 0, false).eatSingleQuotedString());
     }
   }
 

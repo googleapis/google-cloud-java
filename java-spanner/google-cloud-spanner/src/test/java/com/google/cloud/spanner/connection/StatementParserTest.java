@@ -1931,7 +1931,8 @@ public class StatementParserTest {
   public void testParseWithClientSideHintsAndEscapedQuotes() {
     if (dialect == Dialect.GOOGLE_STANDARD_SQL) {
       ParsedStatement escapedQuote =
-          parser.parse(Statement.of("@{statement_tag='\\'} INSERT INTO t VALUES (1) -- '} SELECT 1"));
+          parser.parse(
+              Statement.of("@{statement_tag='\\'} INSERT INTO t VALUES (1) -- '} SELECT 1"));
       assertEquals(StatementType.QUERY, escapedQuote.getType());
       assertEquals(" SELECT 1", escapedQuote.getStatement().getSql());
 
@@ -1984,8 +1985,7 @@ public class StatementParserTest {
             '?', "select col$$, ? from t where x = $$?$$ and y = ?");
     assertEquals(2, midIdEmptyTag.numberOfParameters);
     assertEquals(
-        "select col$$, $1 from t where x = $$?$$ and y = $2",
-        midIdEmptyTag.sqlWithNamedParameters);
+        "select col$$, $1 from t where x = $$?$$ and y = $2", midIdEmptyTag.sqlWithNamedParameters);
 
     ParametersInfo numericTagNotDollarQuote =
         parser.convertPositionalParametersToNamedParameters('?', "select $1 + ? + $1$ from t");
@@ -1994,8 +1994,7 @@ public class StatementParserTest {
 
     assertTrue(
         parser
-            .parse(
-                Statement.of("INSERT INTO t (col$tag$a) VALUES (1) RETURNING col$tag$b"))
+            .parse(Statement.of("INSERT INTO t (col$tag$a) VALUES (1) RETURNING col$tag$b"))
             .hasReturningClause());
     assertTrue(
         parser
@@ -2003,9 +2002,7 @@ public class StatementParserTest {
             .hasReturningClause());
     assertFalse(
         parser
-            .parse(
-                Statement.of(
-                    "UPDATE t SET a = $tag$x1$tag$ WHERE b = $tag$ returning $tag$"))
+            .parse(Statement.of("UPDATE t SET a = $tag$x1$tag$ WHERE b = $tag$ returning $tag$"))
             .hasReturningClause());
   }
 

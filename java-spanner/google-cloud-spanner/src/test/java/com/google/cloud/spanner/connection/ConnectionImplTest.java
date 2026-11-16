@@ -2101,8 +2101,7 @@ public class ConnectionImplTest {
       for (boolean autocommit : new boolean[] {true, false}) {
         subject.setAutocommit(autocommit);
         SpannerException ex1 =
-            assertThrows(
-                SpannerException.class, () -> subject.execute(Statement.of(dmlReturning)));
+            assertThrows(SpannerException.class, () -> subject.execute(Statement.of(dmlReturning)));
         assertEquals(ErrorCode.FAILED_PRECONDITION, ex1.getErrorCode());
 
         SpannerException ex2 =
