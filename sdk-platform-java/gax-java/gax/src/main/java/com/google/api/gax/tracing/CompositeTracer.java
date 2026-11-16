@@ -34,6 +34,7 @@ import com.google.common.collect.ImmutableList;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.atomic.AtomicBoolean;
 import org.jspecify.annotations.NullMarked;
 
 /**
@@ -51,8 +52,9 @@ class CompositeTracer extends BaseApiTracer {
     this.children = ImmutableList.copyOf(children);
   }
 
-  // Unstubbed Mockito mocks of ApiTracer may return null despite @NullMarked.
-  @SuppressWarnings("java:S2589")
+  // Unstubbed Mockito mocks of ApiTracer may return null despite @NullMarked, and Error is caught
+  // alongside RuntimeException solely to close already-opened scopes before rethrowing.
+  @SuppressWarnings({"java:S2589", "java:S1181"})
   @Override
   public Scope inScope() {
     final List<Scope> childScopes = new ArrayList<>(children.size());
@@ -64,32 +66,39 @@ class CompositeTracer extends BaseApiTracer {
           childScopes.add(childScope);
         }
       }
-    } catch (RuntimeException e) {
+    } catch (RuntimeException | Error e) {
       for (int i = childScopes.size() - 1; i >= 0; i--) {
         try {
           childScopes.get(i).close();
-        } catch (RuntimeException suppressed) {
+        } catch (RuntimeException | Error suppressed) {
           e.addSuppressed(suppressed);
         }
       }
       throw e;
     }
 
+    AtomicBoolean closed = new AtomicBoolean();
     return () -> {
-      RuntimeException exception = null;
+      if (!closed.compareAndSet(false, true)) {
+        return;
+      }
+      Throwable primaryError = null;
       for (int i = childScopes.size() - 1; i >= 0; i--) {
         try {
           childScopes.get(i).close();
-        } catch (RuntimeException e) {
-          if (exception == null) {
-            exception = e;
+        } catch (RuntimeException | Error e) {
+          if (primaryError == null) {
+            primaryError = e;
           } else {
-            exception.addSuppressed(e);
+            primaryError.addSuppressed(e);
           }
         }
       }
-      if (exception != null) {
-        throw exception;
+      if (primaryError instanceof RuntimeException) {
+        throw (RuntimeException) primaryError;
+      }
+      if (primaryError instanceof Error) {
+        throw (Error) primaryError;
       }
     };
   }

@@ -83,6 +83,7 @@ class CompositeTracerTest {
 
     ApiTracer.Scope compositeScope = compositeTracer.inScope();
     compositeScope.close();
+    compositeScope.close();
 
     verify(child1).inScope();
     verify(child2).inScope();
@@ -90,6 +91,7 @@ class CompositeTracerTest {
     InOrder inOrder = inOrder(scope2, scope1);
     inOrder.verify(scope2).close();
     inOrder.verify(scope1).close();
+    inOrder.verifyNoMoreInteractions();
   }
 
   @Test
@@ -135,6 +137,44 @@ class CompositeTracerTest {
     InOrder inOrder = inOrder(scope2, scope1);
     inOrder.verify(scope2).close();
     inOrder.verify(scope1).close();
+  }
+
+  @Test
+  void testInScope_childInScopeThrowsError() {
+    ApiTracer.Scope scope1 =
+        mock(ApiTracer.Scope.class, Mockito.withSettings().withoutAnnotations());
+    AssertionError error = new AssertionError("Creation Error");
+    RuntimeException cleanupFailure = new RuntimeException("Cleanup failure");
+
+    when(child1.inScope()).thenReturn(scope1);
+    when(child2.inScope()).thenThrow(error);
+    doThrow(cleanupFailure).when(scope1).close();
+
+    AssertionError thrown = assertThrows(AssertionError.class, () -> compositeTracer.inScope());
+
+    assertEquals(error, thrown);
+    assertThat(Arrays.asList(thrown.getSuppressed())).contains(cleanupFailure);
+    verify(scope1).close();
+  }
+
+  @Test
+  void testInScope_childScopeCloseThrowsError() {
+    ApiTracer.Scope scope1 =
+        mock(ApiTracer.Scope.class, Mockito.withSettings().withoutAnnotations());
+    ApiTracer.Scope scope2 =
+        mock(ApiTracer.Scope.class, Mockito.withSettings().withoutAnnotations());
+    AssertionError error2 = new AssertionError("Scope 2 close Error");
+
+    when(child1.inScope()).thenReturn(scope1);
+    when(child2.inScope()).thenReturn(scope2);
+    doThrow(error2).when(scope2).close();
+
+    ApiTracer.Scope compositeScope = compositeTracer.inScope();
+
+    AssertionError thrown = assertThrows(AssertionError.class, compositeScope::close);
+    assertEquals(error2, thrown);
+    verify(scope2).close();
+    verify(scope1).close();
   }
 
   @Test
