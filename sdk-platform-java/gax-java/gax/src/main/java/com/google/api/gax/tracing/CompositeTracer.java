@@ -85,6 +85,13 @@ class CompositeTracer extends BaseApiTracer {
       throw e;
     }
 
+    if (childScopes.isEmpty()) {
+      return NOOP_SCOPE;
+    }
+    if (childScopes.size() == 1) {
+      return childScopes.get(0);
+    }
+
     // Scope is thread-bound and must be closed on the same thread that opened it.
     return new Scope() {
       private boolean closed;

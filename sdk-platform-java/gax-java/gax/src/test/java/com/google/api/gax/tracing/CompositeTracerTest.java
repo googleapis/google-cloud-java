@@ -360,6 +360,11 @@ class CompositeTracerTest {
     }
 
     verify(scope2).close();
+
+    when(child2.inScope()).thenReturn(null);
+    try (ApiTracer.Scope ignored = compositeTracer.inScope()) {
+      // all-null childScopes returns no-op scope cleanly
+    }
   }
 
   @Test
