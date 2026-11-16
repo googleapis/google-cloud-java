@@ -31,9 +31,11 @@ package com.google.api.gax.tracing;
 
 import com.google.api.core.InternalApi;
 import com.google.common.collect.ImmutableList;
+import com.google.errorprone.annotations.concurrent.GuardedBy;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.locks.ReentrantLock;
 import org.jspecify.annotations.NullMarked;
 
 /**
@@ -86,14 +88,22 @@ class CompositeTracer extends BaseApiTracer {
     }
 
     class CompositeScope implements Scope {
-      private volatile boolean closed;
+      private final ReentrantLock lock = new ReentrantLock();
+
+      @GuardedBy("lock")
+      private boolean closed;
 
       @Override
       public void close() {
-        if (closed) {
-          return;
+        lock.lock();
+        try {
+          if (closed) {
+            return;
+          }
+          closed = true;
+        } finally {
+          lock.unlock();
         }
-        closed = true;
         Throwable primaryError = null;
         for (int i = childScopes.size() - 1; i >= 0; i--) {
           try {
