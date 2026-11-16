@@ -422,9 +422,58 @@ public final class StorageGrpcMetricsInterceptorTest {
 
     assertThat(rpcDurationData).isNotNull();
     assertThat(rpcDurationData.getHistogramData().getPoints()).hasSize(1);
+    HistogramPointData durationPoint =
+        rpcDurationData.getHistogramData().getPoints().iterator().next();
+    assertThat(durationPoint.getAttributes().get(StorageClientMetrics.KEY_NETWORK_PATH))
+        .isEqualTo(StorageClientMetrics.NETWORK_PATH_DIRECTPATH);
 
     MetricData attemptsData =
         allMetrics.stream()
+            .filter(
+                m -> m.getName().equals(StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_ATTEMPTS))
+            .findFirst()
+            .orElse(null);
+    assertThat(attemptsData).isNotNull();
+    assertThat(
+            attemptsData
+                .getLongSumData()
+                .getPoints()
+                .iterator()
+                .next()
+                .getAttributes()
+                .get(StorageClientMetrics.KEY_NETWORK_PATH))
+        .isEqualTo(StorageClientMetrics.NETWORK_PATH_DIRECTPATH);
+  }
+
+  @Test
+  public void interceptCall_streamingReadOnHeaders_setsNetworkPathBeforeOnClose() throws Exception {
+    StorageClientMetrics metrics = StorageClientMetrics.create(meterProvider, true, false);
+    StorageGrpcMetricsInterceptor interceptor = new StorageGrpcMetricsInterceptor(metrics, clock);
+
+    StorageMetricsContext metricsContext = StorageMetricsContext.create("ReadObject");
+    CallOptions callOptions = metricsContext.attach(CallOptions.DEFAULT);
+
+    Attributes directPathAttrs =
+        Attributes.newBuilder()
+            .set(
+                Grpc.TRANSPORT_ATTR_REMOTE_ADDR,
+                new InetSocketAddress(InetAddress.getByName("34.126.0.1"), 443))
+            .build();
+    TestClientCall<Void, Void> testCall = new TestClientCall<>(directPathAttrs);
+    TestChannel testChannel = new TestChannel(testCall, "storage.googleapis.com");
+
+    ClientCall<Void, Void> call =
+        interceptor.interceptCall(READ_OBJECT_METHOD, callOptions, testChannel);
+    TestListener<Void> listener = new TestListener<>();
+    call.start(listener, new Metadata());
+
+    // Simulate streaming ReadObject where headers arrive and the attempt completes before onClose
+    testCall.receiveHeaders(new Metadata());
+    assertThat(listener.headersReceived).isTrue();
+    metricsContext.recordAttemptSuccess(metrics);
+
+    MetricData attemptsData =
+        reader.collectAllMetrics().stream()
             .filter(
                 m -> m.getName().equals(StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_ATTEMPTS))
             .findFirst()
@@ -659,6 +708,12 @@ public final class StorageGrpcMetricsInterceptorTest {
       return attributes;
     }
 
+    void receiveHeaders(Metadata headers) {
+      if (listener != null) {
+        listener.onHeaders(headers);
+      }
+    }
+
     void close(Status status, Metadata trailers) {
       if (listener != null) {
         listener.onClose(status, trailers);
@@ -688,7 +743,14 @@ public final class StorageGrpcMetricsInterceptorTest {
     }
   }
 
-  private static final class TestListener<RespT> extends ClientCall.Listener<RespT> {}
+  private static final class TestListener<RespT> extends ClientCall.Listener<RespT> {
+    boolean headersReceived = false;
+
+    @Override
+    public void onHeaders(Metadata headers) {
+      headersReceived = true;
+    }
+  }
 
   private static final class NoopMarshaller implements MethodDescriptor.Marshaller<Void> {
     @Override
