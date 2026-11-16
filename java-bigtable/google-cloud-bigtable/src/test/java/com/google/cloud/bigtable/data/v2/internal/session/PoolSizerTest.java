@@ -78,7 +78,7 @@ class PoolSizerTest {
   @Test
   void testPendingRpcs() {
     PoolStats stats = new PoolStats();
-    Sized pendingRpcsCount = () -> 9;
+    Sized pendingRpcsCount = () -> 39;
     PoolSizer sizer = new PoolSizer(stats, pendingRpcsCount, DEFAULT_CONFIG);
 
     Preconditions.checkState(
@@ -90,11 +90,11 @@ class PoolSizerTest {
     stats.getTestHelper().setReadyCount(numReadySessions);
     stats.getTestHelper().setInUseCount(0);
     stats.getTestHelper().setExpectedCapacity(numReadySessions);
+    int effectivePending =
+        (int) Math.ceil((float) pendingRpcsCount.getSize() / PENDING_RPCS_PER_SESSION);
+    int desiredIdleSessions = (int) Math.ceil(effectivePending * IDLE_SESSION_HEADROOM_RATIO);
     assertThat(sizer.getScaleDelta())
-        .isEqualTo(
-            (int) Math.ceil((float) pendingRpcsCount.getSize() / PENDING_RPCS_PER_SESSION)
-                - numReadySessions
-                + MIN_SESSIONS);
+        .isEqualTo(effectivePending + desiredIdleSessions - numReadySessions);
     assertThat(sizer.handleNewCall()).isTrue();
     assertThat(sizer.handleGoAway(GoAwayResponse.getDefaultInstance())).isTrue();
     assertThat(sizer.handleSessionClose(Status.getDefaultInstance())).isTrue();
@@ -110,10 +110,9 @@ class PoolSizerTest {
     stats.getTestHelper().setInUseCount(1);
     stats.getTestHelper().setExpectedCapacity(1);
 
-    // Ensure that we always have at least MIN_SESSIONS sessions available
-    // Separately we want to have IDLE_SESSION_HEADROOM_RATIO available sessions, but in this case
-    // MIN_SESSIONS is the primary indicator
-    assertThat(sizer.getScaleDelta()).isEqualTo(MIN_SESSIONS);
+    // Ensure that we always have at least MIN_SESSIONS total sessions in the pool.
+    // With 1 session in use and expectedCapacity = 1, scaleDelta is MIN_SESSIONS - 1.
+    assertThat(sizer.getScaleDelta()).isEqualTo(MIN_SESSIONS - 1);
     // Remain steady in band
     assertThat(sizer.handleNewCall()).isTrue();
     assertThat(sizer.handleGoAway(GoAwayResponse.getDefaultInstance())).isTrue();
@@ -182,24 +181,19 @@ class PoolSizerTest {
       pendingCount.incrementAndGet();
       // ... and call handleNewCall() on the sizer.
       boolean newCallVerdict = sizer.handleNewCall();
-      if (i % PENDING_RPCS_PER_SESSION == 0) {
-        // For 1st, 11th, 21st, 31st etc. pending call we should demand a new session to be started.
-        assertThat(newCallVerdict).isTrue();
-      } else {
-        assertThat(newCallVerdict).isFalse();
-      }
 
       int forPending = (int) Math.ceil((float) pendingCount.get() / PENDING_RPCS_PER_SESSION);
       int sessionsNeeded = forPending + stats.getInUseCount();
       int desiredIdleSessions = (int) Math.ceil(sessionsNeeded * IDLE_SESSION_HEADROOM_RATIO);
-      desiredIdleSessions = Math.max(Math.min(desiredIdleSessions, MAX_SESSIONS), MIN_SESSIONS);
-      int desiredCapacity = Math.min(sessionsNeeded + desiredIdleSessions, MAX_SESSIONS);
+      int desiredCapacity =
+          Math.min(Math.max(sessionsNeeded + desiredIdleSessions, MIN_SESSIONS), MAX_SESSIONS);
 
+      assertThat(newCallVerdict).isEqualTo(desiredCapacity > stats.getExpectedCapacity());
       assertThat(sizer.getScaleDelta())
           .isEqualTo(Math.max(0, desiredCapacity - stats.getExpectedCapacity()));
 
-      if (newCallVerdict) {
-        // Starting new session as instructed by handleNewCall().
+      while (sizer.getScaleDelta() > 0) {
+        // Starting new session as instructed by PoolSizer.
         stats.getTestHelper().setStartingCount(stats.getStartingCount() + 1);
         stats.getTestHelper().setExpectedCapacity(stats.getExpectedCapacity() + 1);
       }
