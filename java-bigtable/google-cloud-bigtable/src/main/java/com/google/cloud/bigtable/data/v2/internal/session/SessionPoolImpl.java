@@ -57,7 +57,6 @@ import java.time.Duration;
 import java.time.Instant;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Deque;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -146,10 +145,12 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
   private int consecutiveFailures = 0;
 
   @GuardedBy("poolLock")
-  private Status lastCloseStatus = Status.UNAVAILABLE;
+  @Nullable
+  private Status lastCloseStatus = null;
 
   @GuardedBy("poolLock")
-  private Metadata lastCloseTrailers = new Metadata();
+  @Nullable
+  private Metadata lastCloseTrailers = null;
 
   /**
    * When the client fallback to a non-session AFE session creation will return unimplemented
@@ -282,7 +283,6 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
             clientConfig -> clientConfig.getSessionConfiguration().getSessionPoolConfiguration(),
             newConfig -> {
               List<PendingVRpc<?, ?>> toCancel = new ArrayList<>();
-              VRpcResult cancelResult = null;
               poolLock.lock();
               try {
                 budget.updateConfig(newConfig);
@@ -294,9 +294,6 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
                     retryCreateSessionTimeout = null;
                   }
                   toCancel = popClosableRpcs();
-                  cancelResult =
-                      VRpcResult.createRejectedError(
-                          Status.UNAVAILABLE.withDescription("SessionPool configuration disabled"));
                   CloseSessionRequest closeReq =
                       CloseSessionRequest.newBuilder()
                           .setReason(CloseSessionReason.CLOSE_SESSION_REASON_DOWNSIZE)
@@ -307,10 +304,6 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
                     handle.getSession().close(closeReq);
                   }
                 } else if (poolState == PoolState.STARTED) {
-                  if (isFailingWithNoEstablishedSessions()) {
-                    toCancel = popClosableRpcs();
-                    cancelResult = createConsecutiveFailureResult(lastCloseStatus, lastCloseTrailers);
-                  }
                   while (poolSizer.getScaleDelta() > 0) {
                     if (!createSession(openParams)) {
                       break;
@@ -321,7 +314,18 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
                 poolLock.unlock();
               }
 
-              cancelPendingRpcs(toCancel, cancelResult);
+              if (!toCancel.isEmpty()) {
+                VRpcResult cancelResult =
+                    VRpcResult.createRejectedError(
+                        Status.UNAVAILABLE.withDescription("SessionPool configuration disabled"));
+                for (PendingVRpc<?, ?> vrpc : toCancel) {
+                  try {
+                    vrpc.cancelWithResult(cancelResult);
+                  } catch (Throwable t) {
+                    logger.log(Level.WARNING, "Exception dispatching close to op executor", t);
+                  }
+                }
+              }
             });
   }
 
@@ -602,6 +606,8 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
           new Object[] {handle.getSession().getLogName(), handle.getSession().getState()});
 
       consecutiveFailures = 0;
+      lastCloseStatus = null;
+      lastCloseTrailers = null;
       consecutiveUnimplementedFailures = 0;
 
       if (poolState != PoolState.STARTED) {
@@ -628,55 +634,38 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
   }
 
   private void onVRpcComplete(SessionHandle handle, Duration elapsed, VRpcResult result) {
-    List<PendingVRpc<?, ?>> toBeClosed;
-    VRpcResult closeResult = null;
     poolLock.lock();
     try {
       handle.onVRpcFinish(elapsed, result);
-      toBeClosed = afterRelease(handle);
-      if (!toBeClosed.isEmpty()) {
-        closeResult = createConsecutiveFailureResult(lastCloseStatus, lastCloseTrailers);
-      }
+      afterRelease(handle);
     } finally {
       poolLock.unlock();
     }
-    cancelPendingRpcs(toBeClosed, closeResult);
   }
 
   // Called when a pending vRPC was drained but cancelled before it attached to a real call.
   // Mirrors onVRpcComplete; the handle reports no latency because nothing ran on it.
   private void onPendingVRpcCancelled(SessionHandle handle) {
-    List<PendingVRpc<?, ?>> toBeClosed;
-    VRpcResult closeResult = null;
     poolLock.lock();
     try {
       handle.onPendingVRpcCancelled();
-      toBeClosed = afterRelease(handle);
-      if (!toBeClosed.isEmpty()) {
-        closeResult = createConsecutiveFailureResult(lastCloseStatus, lastCloseTrailers);
-      }
+      afterRelease(handle);
     } finally {
       poolLock.unlock();
     }
-    cancelPendingRpcs(toBeClosed, closeResult);
   }
 
   @GuardedBy("poolLock")
-  private List<PendingVRpc<?, ?>> afterRelease(SessionHandle handle) {
+  private void afterRelease(SessionHandle handle) {
     // pool is shutting down, dont try to drain vrpcs
     if (poolState != PoolState.STARTED) {
-      return Collections.emptyList();
+      return;
     }
-    // Session is shutting down, don't try to drain vrpcs. If this was the last in-use session
-    // and the pool is in consecutive-failure state, drain and fail any remaining pendingRpcs.
+    // Session is shutting down, don't try to drain vrpcs
     if (handle.getSession().getState() != SessionState.READY) {
-      if (isFailingWithNoEstablishedSessions()) {
-        return popClosableRpcs();
-      }
-      return Collections.emptyList();
+      return;
     }
     tryDrainPendingRpcs();
-    return Collections.emptyList();
   }
 
   private void onSessionGoAway(SessionHandle handle, GoAwayResponse msg) {
@@ -709,8 +698,6 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
       SessionHandle handle, SessionState prevState, Status status, Metadata trailers) {
 
     List<PendingVRpc<?, ?>> toBeClosed = new ArrayList<>();
-    Status failureStatus = status;
-    Metadata failureTrailers = trailers;
 
     poolLock.lock();
     try {
@@ -759,6 +746,10 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
           } else {
             consecutiveUnimplementedFailures = 0;
           }
+          // TODO: decide if max consecutive failures should be capped per client
+          if (isFailingWithNoEstablishedSessions()) {
+            toBeClosed = popClosableRpcs();
+          }
         }
 
         // Budget release for STARTING-phase closes is handled above via sessionsHoldingBudget,
@@ -772,36 +763,19 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
           createSession(openParams.withIncrementedAttempts());
         }
       }
-
-      // Only fail pending vRPCs when session creation is failing consecutively AND the pool has no
-      // established (READY or IN_USE) sessions left to drain the queue. Checking this outside the
-      // STARTING branch also drains pendingRpcs if the last established session closes (e.g. on
-      // GOAWAY or keepalive timeout) while consecutiveFailures is already above the threshold.
-      if (isFailingWithNoEstablishedSessions()) {
-        failureStatus = lastCloseStatus;
-        failureTrailers = lastCloseTrailers;
-        toBeClosed = popClosableRpcs();
-      }
     } finally {
       poolLock.unlock();
     }
 
     if (!toBeClosed.isEmpty()) {
-      cancelPendingRpcs(
-          toBeClosed, createConsecutiveFailureResult(failureStatus, failureTrailers));
-    }
-  }
-
-  private void cancelPendingRpcs(
-      List<PendingVRpc<?, ?>> toCancel, @Nullable VRpcResult cancelResult) {
-    if (toCancel.isEmpty() || cancelResult == null) {
-      return;
-    }
-    for (PendingVRpc<?, ?> vrpc : toCancel) {
-      try {
-        vrpc.cancelWithResult(cancelResult);
-      } catch (Throwable t) {
-        logger.log(Level.WARNING, "Exception dispatching close to op executor", t);
+      // vRPCs failing with consecutive failures should fail
+      VRpcResult result = createConsecutiveFailureResult(status, trailers);
+      for (PendingVRpc<?, ?> vrpc : toBeClosed) {
+        try {
+          vrpc.cancelWithResult(result);
+        } catch (Throwable t) {
+          logger.log(Level.WARNING, "Exception dispatching close to op executor", t);
+        }
       }
     }
   }
@@ -813,19 +787,21 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
 
   @GuardedBy("poolLock")
   private boolean isFailingWithNoEstablishedSessions() {
-    return consecutiveFailures > 0
-        && consecutiveFailures >= getMaxConsecutiveFailures(configManager)
+    return consecutiveFailures >= getMaxConsecutiveFailures(configManager)
+        && lastCloseStatus != null
         && !hasEstablishedSession();
   }
 
-  private static VRpcResult createConsecutiveFailureResult(Status status, Metadata trailers) {
+  private static VRpcResult createConsecutiveFailureResult(
+      Status status, @Nullable Metadata trailers) {
+    Status errorStatus =
+        status.isOk() ? Status.UNAVAILABLE : Status.fromCode(status.getCode());
     return VRpcResult.createRejectedError(
-        Status.fromCode(status.getCode())
-            .withDescription(
-                String.format(
-                    "Session failed with consecutive failures. Most recent server status: %s,"
-                        + " metadata: %s.",
-                    status, trailers)));
+        errorStatus.withDescription(
+            String.format(
+                "Session failed with consecutive failures. Most recent server status: %s,"
+                    + " metadata: %s.",
+                status, trailers)));
   }
 
   @GuardedBy("poolLock")

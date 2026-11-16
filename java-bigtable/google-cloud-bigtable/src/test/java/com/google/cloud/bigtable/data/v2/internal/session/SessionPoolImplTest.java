@@ -1528,6 +1528,9 @@ public class SessionPoolImplTest {
       assertThat(sessionPool.sessions.getStats().getInUseCount()).isEqualTo(1);
 
       // Simulate consecutive STARTING failures reaching threshold while inUseCount == 1.
+      Field lastCloseStatusField = SessionPoolImpl.class.getDeclaredField("lastCloseStatus");
+      lastCloseStatusField.setAccessible(true);
+      lastCloseStatusField.set(sessionPool, Status.INTERNAL.withDescription("fake internal error"));
       consecutiveFailuresField.setInt(sessionPool, 10);
 
       // A new PendingVRpc started while inUseCount > 0 must queue instead of failing fast.
