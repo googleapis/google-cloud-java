@@ -16,6 +16,7 @@
 
 package com.google.cloud.bigtable.data.v2.internal.channels;
 
+import static com.google.common.truth.Truth.assertThat;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.doNothing;
 import static org.mockito.Mockito.doReturn;
@@ -629,6 +630,126 @@ class ChannelPoolDpImplTest {
     // Now it should be recycled again
     verify(channel, times(2)).shutdown();
     verify(channelSupplier, times(3)).get();
+
+    pool.close();
+  }
+
+  @Test
+  void testPackingStreamsWhenMaxGroupsReached() {
+    ManagedChannel channel1 = mock(ManagedChannel.class);
+    when(channel1.newCall(any(), any())).thenReturn(clientCall);
+
+    ManagedChannel channel2 = mock(ManagedChannel.class);
+    when(channel2.newCall(any(), any())).thenReturn(clientCall);
+
+    ManagedChannel channel3 = mock(ManagedChannel.class);
+    when(channel3.newCall(any(), any())).thenReturn(clientCall);
+
+    when(channelSupplier.get()).thenReturn(channel1, channel2, channel3);
+    doNothing().when(clientCall).start(listener.capture(), any());
+
+    ChannelPoolConfiguration config =
+        ChannelPoolConfiguration.newBuilder()
+            .setMinServerCount(1)
+            .setMaxServerCount(2)
+            .setPerServerSessionCount(2)
+            .build();
+
+    ChannelPoolDpImpl pool =
+        new ChannelPoolDpImpl(channelSupplier, config, debugTagTracer, bgExecutor);
+    pool.maxSessionsPerChannel = 4;
+
+    // Start 4 streams:
+    // With softMaxPerGroup = 2 and maxGroups = 2:
+    // Streams 1 & 2 go to channel 1 (reaching softMaxPerGroup).
+    // Stream 3 triggers addChannel() (channel 2 created, activeCount = 2 = maxGroups).
+    // Stream 4 goes to channel 2 (reaching softMaxPerGroup).
+    for (int i = 0; i < 4; i++) {
+      pool.newStream(FakeSessionGrpc.getOpenSessionMethod(), CallOptions.DEFAULT)
+          .start(mock(Listener.class), new Metadata());
+    }
+    // Exactly 2 channels created so far (activeCount == maxGroups)
+    verify(channelSupplier, times(2)).get();
+    assertThat(pool.getActiveChannelCount()).isEqualTo(2);
+
+    // Stream 5: both channels are at softMaxPerGroup (2), but activeCount is at maxGroups (2).
+    // It should PACK onto one of the existing channels instead of calling addChannel().
+    pool.newStream(FakeSessionGrpc.getOpenSessionMethod(), CallOptions.DEFAULT)
+        .start(mock(Listener.class), new Metadata());
+
+    // Still exactly 2 channels!
+    verify(channelSupplier, times(2)).get();
+    assertThat(pool.getActiveChannelCount()).isEqualTo(2);
+
+    // Streams 6, 7, 8: pack until both channels reach maxSessionsPerChannel (4 each)
+    for (int i = 0; i < 3; i++) {
+      pool.newStream(FakeSessionGrpc.getOpenSessionMethod(), CallOptions.DEFAULT)
+          .start(mock(Listener.class), new Metadata());
+    }
+    // Still 2 channels (total 8 streams: 4 on channel 1, 4 on channel 2)
+    verify(channelSupplier, times(2)).get();
+    assertThat(pool.getActiveChannelCount()).isEqualTo(2);
+
+    // Stream 9: Emergency overflow! Both channels are saturated at maxSessionsPerChannel (4).
+    // Now addChannel() should be called, creating channel 3.
+    pool.newStream(FakeSessionGrpc.getOpenSessionMethod(), CallOptions.DEFAULT)
+        .start(mock(Listener.class), new Metadata());
+    verify(channelSupplier, times(3)).get();
+    assertThat(pool.getActiveChannelCount()).isEqualTo(3);
+
+    pool.close();
+  }
+
+  @Test
+  void testDownscaleUnderutilizedChannelsWhenSessionsPerAfeLow() {
+    when(channelSupplier.get()).thenReturn(channel);
+    when(channel.newCall(any(), any())).thenReturn(clientCall);
+    doNothing().when(clientCall).start(listener.capture(), any());
+    doReturn(Attributes.EMPTY).when(clientCall).getAttributes();
+
+    Clock clock = mock(Clock.class);
+    when(clock.instant()).thenReturn(Instant.now());
+
+    ChannelPoolConfiguration config =
+        ChannelPoolConfiguration.newBuilder()
+            .setMinServerCount(2)
+            .setMaxServerCount(10)
+            .setPerServerSessionCount(2)
+            .build();
+
+    ChannelPoolDpImpl pool =
+        new ChannelPoolDpImpl(channelSupplier, config, "pool", debugTagTracer, bgExecutor, clock);
+
+    // Create 4 channels with 1 session each. With softMaxPerGroup = 2, each channel takes
+    // 1 stream (softMaxPerGroup / 2) before the next channel is spawned.
+    for (int i = 0; i < 4; i++) {
+      pool.newStream(FakeSessionGrpc.getOpenSessionMethod(), CallOptions.DEFAULT)
+          .start(mock(Listener.class), new Metadata());
+    }
+    verify(channelSupplier, times(4)).get();
+    assertThat(pool.getActiveChannelCount()).isEqualTo(4);
+
+    // Deliver headers with distinct AFE IDs to establish route observations
+    for (int i = 0; i < 4; i++) {
+      PeerInfo peerInfo = PeerInfo.newBuilder().setApplicationFrontendId(500 + i).build();
+      Metadata headers = new Metadata();
+      headers.put(
+          SessionStreamImpl.PEER_INFO_KEY,
+          Base64.getEncoder().encodeToString(peerInfo.toByteArray()));
+      listener.getAllValues().get(i).onHeaders(headers);
+    }
+
+    // Now update softMaxPerGroup to 6 (so softMaxPerGroup / 2 = 3).
+    // 4 sessions / 4 channels = 1.0 < 3.0 (underutilized!).
+    // target = ceil(4 * 2.0 / 6) = 2 channels.
+    pool.softMaxPerGroup = 6;
+
+    // Service channels: activeCount (4) > target (2).
+    // Should mark 2 channels as DRAINING.
+    pool.serviceChannels();
+
+    assertThat(pool.getActiveChannelCount()).isEqualTo(2);
+    assertThat(pool.getDrainingChannelCount()).isEqualTo(2);
 
     pool.close();
   }
