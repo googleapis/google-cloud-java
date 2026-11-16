@@ -22,13 +22,23 @@ import static org.junit.Assume.assumeFalse;
 import static org.mockito.Mockito.mock;
 
 import com.google.cloud.storage.OpenTelemetryBootstrappingUtils.ChannelConfigurator;
+import com.google.cloud.storage.OpenTelemetryBootstrappingUtils.GrpcMetricsChannelConfigurator;
 import io.grpc.ManagedChannelBuilder;
+import io.opentelemetry.api.common.AttributeKey;
 import io.opentelemetry.api.common.Attributes;
+import io.opentelemetry.api.metrics.DoubleHistogram;
+import io.opentelemetry.api.metrics.Meter;
+import io.opentelemetry.api.metrics.MeterProvider;
 import io.opentelemetry.sdk.metrics.SdkMeterProvider;
 import io.opentelemetry.sdk.metrics.SdkMeterProviderBuilder;
+import io.opentelemetry.sdk.metrics.data.HistogramPointData;
+import io.opentelemetry.sdk.metrics.data.MetricData;
+import io.opentelemetry.sdk.testing.exporter.InMemoryMetricReader;
 import java.time.Duration;
+import java.util.Collection;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.function.Supplier;
 import org.junit.Test;
 
 public final class OpenTelemetryBootstrappingUtilsTest {
@@ -276,6 +286,103 @@ public final class OpenTelemetryBootstrappingUtilsTest {
             OpenTelemetryBootstrappingUtils.getCloudMonitoringEndpoint(
                 "storage.my-universe.com:8443", "my-universe.com"))
         .isEqualTo("monitoring.my-universe.com:8443");
+    assertThat(
+            OpenTelemetryBootstrappingUtils.getCloudMonitoringEndpoint(
+                "storage.googleapis.com:443", null))
+        .isEqualTo("monitoring.googleapis.com:443");
+    assertThat(
+            OpenTelemetryBootstrappingUtils.getCloudMonitoringEndpoint(
+                "storage-direct.googleapis.com:443", null))
+        .isEqualTo("monitoring.googleapis.com:443");
+    assertThat(
+            OpenTelemetryBootstrappingUtils.getCloudMonitoringEndpoint(
+                "storage-preprod-direct.sandbox.googleapis.com:443", null))
+        .isEqualTo("monitoring.googleapis.com:443");
+    assertThat(
+            OpenTelemetryBootstrappingUtils.getCloudMonitoringEndpoint(
+                "storage-direct.apis-tpclp.goog:443", "apis-tpclp.goog"))
+        .isEqualTo("monitoring.apis-tpclp.goog:443");
+    assertThat(
+            OpenTelemetryBootstrappingUtils.getCloudMonitoringEndpoint(
+                "google-c2p:///storage-direct.googleapis.com?force-xds", null))
+        .isEqualTo("monitoring.googleapis.com:443");
+    assertThat(
+            OpenTelemetryBootstrappingUtils.getCloudMonitoringEndpoint(
+                "google-c2p-experimental:///storage-preprod-direct.sandbox.googleapis.com:443?force-xds",
+                null))
+        .isEqualTo("monitoring.googleapis.com:443");
+    assertThat(OpenTelemetryBootstrappingUtils.getCloudMonitoringEndpoint(null, null))
+        .isEqualTo("monitoring.googleapis.com:443");
+    assertThat(OpenTelemetryBootstrappingUtils.getCloudMonitoringEndpoint("", null))
+        .isEqualTo("monitoring.googleapis.com:443");
+  }
+
+  @Test
+  public void registerGrpcChannelViews_exportsChannelCreationLatencyHistogram() {
+    InMemoryMetricReader metricReader = InMemoryMetricReader.create();
+    SdkMeterProviderBuilder providerBuilder =
+        SdkMeterProvider.builder().registerMetricReader(metricReader);
+    SdkMeterProviderBuilder returned =
+        OpenTelemetryBootstrappingUtils.registerGrpcChannelViews(providerBuilder);
+    assertThat(returned).isSameInstanceAs(providerBuilder);
+
+    AttributeKey<String> transportTypeKey = AttributeKey.stringKey("transport_type");
+    try (SdkMeterProvider meterProvider = providerBuilder.build()) {
+      Meter meter = meterProvider.meterBuilder(StorageClientMetrics.METER_NAME).build();
+      DoubleHistogram histogram =
+          meter
+              .histogramBuilder(OpenTelemetryBootstrappingUtils.CHANNEL_CREATION_LATENCY_INSTRUMENT)
+              .setDescription(OpenTelemetryBootstrappingUtils.CHANNEL_CREATION_LATENCY_DESCRIPTION)
+              .setUnit(OpenTelemetryBootstrappingUtils.CHANNEL_CREATION_LATENCY_UNIT)
+              .build();
+      histogram.record(0.125, Attributes.of(transportTypeKey, "DirectPathInterconnect"));
+      histogram.record(0.050, Attributes.of(transportTypeKey, "DirectPath"));
+      histogram.record(0.250, Attributes.of(transportTypeKey, "CloudPath"));
+
+      Collection<MetricData> metrics = metricReader.collectAllMetrics();
+      assertThat(metrics).hasSize(1);
+      MetricData metricData = metrics.iterator().next();
+      assertThat(metricData.getName())
+          .isEqualTo(OpenTelemetryBootstrappingUtils.CHANNEL_CREATION_LATENCY_VIEW_NAME);
+      assertThat(metricData.getUnit())
+          .isEqualTo(OpenTelemetryBootstrappingUtils.CHANNEL_CREATION_LATENCY_UNIT);
+      assertThat(metricData.getDescription())
+          .isEqualTo(OpenTelemetryBootstrappingUtils.CHANNEL_CREATION_LATENCY_DESCRIPTION);
+
+      Collection<HistogramPointData> points = metricData.getHistogramData().getPoints();
+      assertThat(points).hasSize(3);
+      for (HistogramPointData point : points) {
+        String transportType = point.getAttributes().get(transportTypeKey);
+        assertThat(point.getCount()).isEqualTo(1);
+        if ("DirectPathInterconnect".equals(transportType)) {
+          assertThat(point.getSum()).isWithin(1e-6).of(0.125);
+        } else if ("DirectPath".equals(transportType)) {
+          assertThat(point.getSum()).isWithin(1e-6).of(0.050);
+        } else if ("CloudPath".equals(transportType)) {
+          assertThat(point.getSum()).isWithin(1e-6).of(0.250);
+        } else {
+          throw new AssertionError("Unexpected transport_type: " + transportType);
+        }
+      }
+    }
+  }
+
+  @SuppressWarnings("rawtypes") // ManagedChannelBuilder
+  @Test
+  public void grpcMetricsChannelConfigurator_delegatesAndSuppliesMeterProvider() {
+    ManagedChannelBuilder b1 = mock(ManagedChannelBuilder.class, "b1");
+    ManagedChannelBuilder b2 = mock(ManagedChannelBuilder.class, "b2");
+    ChannelConfigurator delegate =
+        b -> {
+          assertThat(b).isSameInstanceAs(b1);
+          return b2;
+        };
+    try (SdkMeterProvider meterProvider = SdkMeterProvider.builder().build()) {
+      GrpcMetricsChannelConfigurator configurator =
+          new GrpcMetricsChannelConfigurator(delegate, meterProvider);
+      assertThat(configurator.apply(b1)).isSameInstanceAs(b2);
+      assertThat(((Supplier<MeterProvider>) configurator).get()).isSameInstanceAs(meterProvider);
+    }
   }
 
   @Test
