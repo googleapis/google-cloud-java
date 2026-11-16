@@ -73,6 +73,9 @@ class PoolSizer {
   }
 
   public int getScaleDelta() {
+    if (isDisabled()) {
+      return 0;
+    }
     // Assume each session handles 1 RPC at a time. This should be revisited if sessions get
     // support for multiplexing.
     int effectivePending =
@@ -90,9 +93,6 @@ class PoolSizer {
     if (desiredCapacity < immediateCapacity) {
       return desiredCapacity - immediateCapacity;
     } else if (desiredCapacity > eventualCapacity) {
-      if (isDisabled()) {
-        return 0;
-      }
       return desiredCapacity - eventualCapacity;
     } else {
       return 0;

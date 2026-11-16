@@ -192,8 +192,8 @@ class PoolSizerTest {
       assertThat(sizer.getScaleDelta())
           .isEqualTo(Math.max(0, desiredCapacity - stats.getExpectedCapacity()));
 
-      while (sizer.getScaleDelta() > 0) {
-        // Starting new session as instructed by PoolSizer.
+      if (newCallVerdict) {
+        // Starting new session as instructed by handleNewCall().
         stats.getTestHelper().setStartingCount(stats.getStartingCount() + 1);
         stats.getTestHelper().setExpectedCapacity(stats.getExpectedCapacity() + 1);
       }
@@ -237,7 +237,7 @@ class PoolSizerTest {
     assertThat(sizer.handleSessionClose(Status.getDefaultInstance())).isFalse();
 
     stats.getTestHelper().setInUseCount(2);
-    stats.getTestHelper().setExpectedCapacity(0);
+    stats.getTestHelper().setExpectedCapacity(2);
     assertThat(sizer.getScaleDelta()).isEqualTo(0);
     assertThat(sizer.handleGoAway(GoAwayResponse.getDefaultInstance())).isFalse();
     assertThat(sizer.handleSessionClose(Status.getDefaultInstance())).isFalse();
