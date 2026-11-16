@@ -911,7 +911,7 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
     private boolean isCancelled = false;
     private VRpc<ReqT, RespT> realCall;
 
-    private BigtableTimer.Timeout deadlineTimeout;
+    private volatile BigtableTimer.Timeout deadlineTimeout;
 
     public PendingVRpc(VRpcDescriptor<?, ReqT, RespT> desc) {
       this.desc = desc;
@@ -922,7 +922,7 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
     // region. Bounded acquisition on the request hot path; see poolLock.
     @SuppressWarnings("GuardedBy")
     public void start(ReqT req, VRpcCallContext ctx, VRpcListener<RespT> listener) {
-      Preconditions.checkState(this.req == null, "request is already started");
+      Preconditions.checkState(this.ctx == null, "request is already started");
       Preconditions.checkNotNull(req, "request can't be null");
       Preconditions.checkNotNull(ctx, "ctx can't be null");
       Preconditions.checkNotNull(listener, "listener can't be null");
@@ -940,13 +940,7 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
             VRpcResult.createUncommitedError(
                 Status.UNAVAILABLE.withCause(
                     new IllegalStateException("SessionPool lock unavailable (pool wedged)")));
-        ctx.getExecutor()
-            .execute(
-                () -> {
-                  if (isCancelled) return;
-                  isCancelled = true;
-                  listener.onClose(result);
-                });
+        cancelWithResult(result);
         return;
       }
       try {
@@ -954,20 +948,14 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
           VRpcResult result =
               VRpcResult.createUncommitedError(
                   Status.UNAVAILABLE.withCause(new IllegalStateException("SessionPool is closed")));
-          ctx.getExecutor().execute(() -> listener.onClose(result));
+          cancelWithResult(result);
           return;
         }
         if (poolSizer.isDisabled()) {
           VRpcResult result =
               VRpcResult.createRejectedError(
                   Status.UNAVAILABLE.withDescription("SessionPool configuration disabled"));
-          ctx.getExecutor()
-              .execute(
-                  () -> {
-                    if (isCancelled) return;
-                    isCancelled = true;
-                    listener.onClose(result);
-                  });
+          cancelWithResult(result);
           return;
         }
         // Only arm the deadline monitor after we've committed to queueing; otherwise the
@@ -1013,8 +1001,10 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
     // region below.
     @SuppressWarnings("GuardedBy")
     private void cancel(Status status, boolean onlyCancelPendingCall) {
-      if (deadlineTimeout != null) {
-        deadlineTimeout.cancel();
+      BigtableTimer.Timeout timeout = deadlineTimeout;
+      deadlineTimeout = null;
+      if (timeout != null) {
+        timeout.cancel();
       }
       // The eager removal is only an optimization to skip a wasted session pick in
       // tryDrainPendingRpcs.
@@ -1037,26 +1027,36 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
               () -> {
                 if (isCancelled) return;
                 isCancelled = true;
+                VRpcListener<RespT> pendingListener = listener;
+                req = null;
+                listener = null;
                 if (realCall != null) {
                   if (!onlyCancelPendingCall) {
                     realCall.cancel(status.getDescription(), status.getCause());
                   }
-                } else {
-                  listener.onClose(VRpcResult.createRejectedError(status));
+                } else if (pendingListener != null) {
+                  pendingListener.onClose(VRpcResult.createRejectedError(status));
                 }
               });
     }
 
     void cancelWithResult(VRpcResult result) {
-      if (deadlineTimeout != null) {
-        deadlineTimeout.cancel();
+      BigtableTimer.Timeout timeout = deadlineTimeout;
+      deadlineTimeout = null;
+      if (timeout != null) {
+        timeout.cancel();
       }
       ctx.getExecutor()
           .execute(
               () -> {
                 if (isCancelled) return;
                 isCancelled = true;
-                listener.onClose(result);
+                VRpcListener<RespT> pendingListener = listener;
+                req = null;
+                listener = null;
+                if (pendingListener != null) {
+                  pendingListener.onClose(result);
+                }
               });
     }
 
@@ -1077,8 +1077,10 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
     }
 
     private void drainTo(SessionHandle handle) {
-      if (deadlineTimeout != null) {
-        deadlineTimeout.cancel();
+      BigtableTimer.Timeout timeout = deadlineTimeout;
+      deadlineTimeout = null;
+      if (timeout != null) {
+        timeout.cancel();
       }
       ctx.getExecutor()
           .execute(
@@ -1087,13 +1089,13 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
                   SessionPoolImpl.this.onPendingVRpcCancelled(handle);
                   return;
                 }
+                ReqT pendingReq = req;
+                VRpcListener<RespT> pendingListener = listener;
+                req = null;
+                listener = null;
                 realCall = newRealCall(desc, handle);
-                realCall.start(req, ctx, listener);
+                realCall.start(pendingReq, ctx, pendingListener);
               });
-    }
-
-    private VRpcListener<RespT> getListener() {
-      return listener;
     }
 
     private BigtableTimer.Timeout monitorDeadline(Deadline deadline) {
