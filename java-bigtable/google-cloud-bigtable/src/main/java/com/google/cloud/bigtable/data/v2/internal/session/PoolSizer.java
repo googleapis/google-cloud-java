@@ -105,7 +105,7 @@ class PoolSizer {
     if (isDisabled()) {
       return 0;
     }
-    return maxIdleSessions * Math.max(1, pendingVRpcsPerSession);
+    return maxSessions * Math.max(1, pendingVRpcsPerSession);
   }
 
   /** Returns true if the session should be replaced */

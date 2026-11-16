@@ -270,6 +270,6 @@ class PoolSizerTest {
     pendingCount.set(50);
     assertThat(sizer.getScaleDelta()).isEqualTo(0);
     assertThat(sizer.handleNewCall()).isFalse();
-    assertThat(sizer.getMaxPendingRpcs()).isEqualTo(MAX_IDLE_SESSIONS * PENDING_RPCS_PER_SESSION);
+    assertThat(sizer.getMaxPendingRpcs()).isEqualTo(MAX_SESSIONS * PENDING_RPCS_PER_SESSION);
   }
 }
