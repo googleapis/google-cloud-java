@@ -95,11 +95,12 @@ public final class RowSetUtil {
    */
   public static RowSet erase(RowSet rowSet, ByteString splitPoint, boolean fromStart) {
     Preconditions.checkArgument(!splitPoint.isEmpty(), "Can't handle empty splitPoint");
-    RowSet.Builder newRowSet = RowSet.newBuilder();
 
     if (rowSet.getRowKeysList().isEmpty() && rowSet.getRowRangesList().isEmpty()) {
       rowSet = RowSet.newBuilder().addRowRanges(RowRange.getDefaultInstance()).build();
     }
+
+    RowSet.Builder newRowSet = RowSet.newBuilder();
 
     // Handle point lookups
     for (ByteString key : rowSet.getRowKeysList()) {
@@ -125,11 +126,10 @@ public final class RowSetUtil {
     }
 
     // Return the new rowset if there is anything left to read
-    RowSet result = newRowSet.build();
-    if (result.getRowKeysList().isEmpty() && result.getRowRangesList().isEmpty()) {
+    if (newRowSet.getRowKeysList().isEmpty() && newRowSet.getRowRangesList().isEmpty()) {
       return null;
     }
-    return result;
+    return newRowSet.build();
   }
 
   private static RowRange truncateRange(RowRange range, ByteString split, boolean fromStart) {
@@ -203,6 +203,7 @@ public final class RowSetUtil {
       }
 
       // Handle ranges
+      List<RowRange> splitRemainders = new ArrayList<>();
       while (!ranges.isEmpty()) {
         // Break early when encountering the first start point that is on or past the split point.
         // Ranges starting on or after the split point lay to the right.
@@ -220,8 +221,11 @@ public final class RowSetUtil {
         } else {
           segment.addRowRanges(range.toBuilder().setEndKeyOpen(splitPoint));
           currentSegmentIsEmpty = false;
-          ranges.addFirst(range.toBuilder().setStartKeyClosed(splitPoint).build());
+          splitRemainders.add(range.toBuilder().setStartKeyClosed(splitPoint).build());
         }
+      }
+      for (int i = splitRemainders.size() - 1; i >= 0; i--) {
+        ranges.addFirst(splitRemainders.get(i));
       }
 
       if (!currentSegmentIsEmpty) {

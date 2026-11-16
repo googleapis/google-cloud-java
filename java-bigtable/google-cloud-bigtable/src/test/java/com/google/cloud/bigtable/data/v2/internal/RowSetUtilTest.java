@@ -139,11 +139,21 @@ public class RowSetUtilTest {
 
     assertThat(RowSetUtil.shard(input, splitPoints))
         .containsExactly(
-            parse("0,-a)"),
-            parse("a,c,[a-a],-b],(c-d)"),
+            parse("0,-a),-a)"),
+            parse("a,c,[a-a],[a-b],(c-d)"),
             parse("[d-e],(d-f]"),
             parse("(m-o)"),
             parse("[o-"))
+        .inOrder();
+  }
+
+  @Test
+  public void testShardOverlappingRanges() {
+    RowSet input = parse("[a-z),[b-d),[b-y)");
+    SortedSet<ByteString> splitPoints = splitPoints("c");
+
+    assertThat(RowSetUtil.shard(input, splitPoints))
+        .containsExactly(parse("[a-c),[b-c),[b-c)"), parse("[c-z),[c-d),[c-y)"))
         .inOrder();
   }
 
@@ -434,6 +444,12 @@ public class RowSetUtilTest {
     splits.add(keyTrailer);
 
     assertThat(RowSetUtil.shard(input, splits)).containsExactly(input);
+
+    // Sharding (a, z) at both "a" and "a\0" should also not emit an empty range
+    SortedSet<ByteString> bothSplits = new TreeSet<>(ByteStringComparator.INSTANCE);
+    bothSplits.add(key);
+    bothSplits.add(keyTrailer);
+    assertThat(RowSetUtil.shard(input, bothSplits)).containsExactly(input);
 
     // Sharding (a, a\0] at splitPoint a\0 should not split since (a is equivalent to [a\0
     RowSet singleElementOpenStart =
