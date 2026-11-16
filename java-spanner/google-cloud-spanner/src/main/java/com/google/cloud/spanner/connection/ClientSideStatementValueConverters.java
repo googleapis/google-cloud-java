@@ -764,25 +764,6 @@ class ClientSideStatementValueConverters {
     }
   }
 
-  /** Converter for converting String that take in file path as input to String */
-  static class ProtoDescriptorsFileConverter implements ClientSideStatementValueConverter<String> {
-
-    public ProtoDescriptorsFileConverter(String allowedValues) {}
-
-    @Override
-    public Class<String> getParameterClass() {
-      return String.class;
-    }
-
-    @Override
-    public String convert(String filePath) {
-      if (Strings.isNullOrEmpty(filePath)) {
-        return null;
-      }
-      return filePath;
-    }
-  }
-
   abstract static class GuardedClassConverter<T> implements ClientSideStatementValueConverter<T> {
     private final Class<T> targetClass;
     private final String systemPropertyName;

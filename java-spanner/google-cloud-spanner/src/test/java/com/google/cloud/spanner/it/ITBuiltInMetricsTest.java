@@ -36,6 +36,7 @@ import java.util.concurrent.TimeUnit;
 import org.junit.After;
 import org.junit.BeforeClass;
 import org.junit.ClassRule;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
 import org.junit.runner.RunWith;
@@ -83,6 +84,7 @@ public class ITBuiltInMetricsTest {
     }
   }
 
+  @Ignore("https://github.com/googleapis/google-cloud-java/issues/14975")
   @Test
   public void testBuiltinMetricsWithDefaultOTEL() throws Exception {
     // This stopwatch is used for to limit fetching of metric data in verifyMetrics
