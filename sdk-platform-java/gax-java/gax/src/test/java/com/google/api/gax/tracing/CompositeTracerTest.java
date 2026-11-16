@@ -29,6 +29,7 @@
  */
 package com.google.api.gax.tracing;
 
+import static com.google.common.truth.Truth.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -39,8 +40,19 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 import com.google.common.collect.ImmutableMap;
+import io.opentelemetry.api.trace.Span;
+import io.opentelemetry.api.trace.SpanContext;
+import io.opentelemetry.api.trace.TraceFlags;
+import io.opentelemetry.api.trace.TraceState;
+import java.time.Duration;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
+import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicReference;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InOrder;
@@ -292,5 +304,146 @@ class CompositeTracerTest {
     InOrder inOrder = inOrder(child1, child2);
     inOrder.verify(child1).requestUrlResolved("the-url");
     inOrder.verify(child2).requestUrlResolved("the-url");
+  }
+
+  @Test
+  void testInScope_nullChildScopeIgnored() {
+    ApiTracer.Scope scope2 =
+        mock(ApiTracer.Scope.class, Mockito.withSettings().withoutAnnotations());
+    when(child1.inScope()).thenReturn(null);
+    when(child2.inScope()).thenReturn(scope2);
+
+    try (ApiTracer.Scope ignored = compositeTracer.inScope()) {
+      verify(child1).inScope();
+      verify(child2).inScope();
+    }
+
+    verify(scope2).close();
+  }
+
+  @Test
+  void testCompletionMethods_enterAndCloseScopeAroundChildren() {
+    ApiTracer.Scope scope1 =
+        mock(ApiTracer.Scope.class, Mockito.withSettings().withoutAnnotations());
+    ApiTracer.Scope scope2 =
+        mock(ApiTracer.Scope.class, Mockito.withSettings().withoutAnnotations());
+    when(child1.inScope()).thenReturn(scope1);
+    when(child2.inScope()).thenReturn(scope2);
+
+    Throwable error = new RuntimeException("test error");
+    compositeTracer.operationFailed(error);
+
+    InOrder inOrder = inOrder(child1, child2, scope1, scope2);
+    inOrder.verify(child1).inScope();
+    inOrder.verify(child2).inScope();
+    inOrder.verify(child2).operationFailed(error);
+    inOrder.verify(child1).operationFailed(error);
+    inOrder.verify(scope2).close();
+    inOrder.verify(scope1).close();
+  }
+
+  @Test
+  void testNestedCompositeTracer_crossThreadScoping() throws Exception {
+    Span operationSpan =
+        Span.wrap(
+            SpanContext.create(
+                "00000000000000000000000000000001",
+                "0000000000000010",
+                TraceFlags.getSampled(),
+                TraceState.getDefault()));
+    Span attemptSpan =
+        Span.wrap(
+            SpanContext.create(
+                "00000000000000000000000000000001",
+                "0000000000000020",
+                TraceFlags.getSampled(),
+                TraceState.getDefault()));
+
+    AtomicReference<Span> activeSpanRef = new AtomicReference<>(operationSpan);
+    List<SpanContext> outerLoggingContexts = new CopyOnWriteArrayList<>();
+    List<SpanContext> innerMetricsContexts = new CopyOnWriteArrayList<>();
+
+    ApiTracer outerLoggingTracer =
+        new BaseApiTracer() {
+          @Override
+          public void attemptFailedDuration(Throwable error, Duration delay) {
+            outerLoggingContexts.add(Span.current().getSpanContext());
+          }
+
+          @Override
+          public void operationFailed(Throwable error) {
+            outerLoggingContexts.add(Span.current().getSpanContext());
+          }
+        };
+
+    ApiTracer innerMetricsTracer =
+        new BaseApiTracer() {
+          @Override
+          public void operationFailed(Throwable error) {
+            innerMetricsContexts.add(Span.current().getSpanContext());
+          }
+        };
+
+    ApiTracer innerTracingTracer =
+        new BaseApiTracer() {
+          @Override
+          public Scope inScope() {
+            Span current = activeSpanRef.get();
+            if (current == null) {
+              return () -> {};
+            }
+            io.opentelemetry.context.Scope otelScope = current.makeCurrent();
+            return otelScope::close;
+          }
+
+          @Override
+          public void attemptStarted(Object request, int attemptNumber) {
+            activeSpanRef.set(attemptSpan);
+          }
+
+          @Override
+          public void attemptFailedDuration(Throwable error, Duration delay) {
+            activeSpanRef.set(operationSpan);
+          }
+
+          @Override
+          public void operationFailed(Throwable error) {
+            activeSpanRef.set(null);
+          }
+        };
+
+    // Mirrors ClientContext: CompositeTracer(Logging, CompositeTracer(Metrics, Tracing))
+    CompositeTracer nestedTracer =
+        new CompositeTracer(
+            Arrays.asList(
+                outerLoggingTracer,
+                new CompositeTracer(Arrays.asList(innerMetricsTracer, innerTracingTracer))));
+
+    nestedTracer.attemptStarted(new Object(), 0);
+    assertThat(Span.current().getSpanContext().isValid()).isFalse();
+
+    ExecutorService executor = Executors.newSingleThreadExecutor();
+    try {
+      executor
+          .submit(
+              () -> {
+                RuntimeException err = new RuntimeException("transient failure");
+                nestedTracer.attemptFailedDuration(err, Duration.ofMillis(10));
+                assertThat(Span.current().getSpanContext().isValid()).isFalse();
+
+                nestedTracer.operationFailed(err);
+                assertThat(Span.current().getSpanContext().isValid()).isFalse();
+              })
+          .get(5, TimeUnit.SECONDS);
+    } finally {
+      executor.shutdownNow();
+    }
+
+    assertThat(outerLoggingContexts).hasSize(2);
+    assertThat(outerLoggingContexts.get(0)).isEqualTo(attemptSpan.getSpanContext());
+    assertThat(outerLoggingContexts.get(1)).isEqualTo(operationSpan.getSpanContext());
+
+    assertThat(innerMetricsContexts).hasSize(1);
+    assertThat(innerMetricsContexts.get(0)).isEqualTo(operationSpan.getSpanContext());
   }
 }
