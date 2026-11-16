@@ -32,6 +32,7 @@ package com.google.api.gax.tracing;
 
 import com.google.api.client.util.Strings;
 import com.google.api.core.InternalApi;
+import com.google.errorprone.annotations.concurrent.GuardedBy;
 import io.opentelemetry.api.trace.Span;
 import io.opentelemetry.api.trace.SpanBuilder;
 import io.opentelemetry.api.trace.SpanKind;
@@ -63,7 +64,11 @@ class OpenTelemetryTracingTracer implements ApiTracer {
   // Trace context containing the operationSpan, serving as the parent for attempt spans.
   private final Context operationContext;
   private final ReentrantLock spanLock = new ReentrantLock();
+
+  @GuardedBy("spanLock")
   private @Nullable Span operationSpan;
+
+  @GuardedBy("spanLock")
   private @Nullable Span attemptSpan;
 
   /**
@@ -170,8 +175,14 @@ class OpenTelemetryTracingTracer implements ApiTracer {
     this.attemptAttributes = new HashMap<>();
     this.parentContext = Context.current();
     buildAttributes();
-    this.operationSpan = startOperationSpan();
-    this.operationContext = parentContext.with(this.operationSpan);
+    Span initialOperationSpan = startOperationSpan();
+    spanLock.lock();
+    try {
+      this.operationSpan = initialOperationSpan;
+    } finally {
+      spanLock.unlock();
+    }
+    this.operationContext = parentContext.with(initialOperationSpan);
   }
 
   /**
