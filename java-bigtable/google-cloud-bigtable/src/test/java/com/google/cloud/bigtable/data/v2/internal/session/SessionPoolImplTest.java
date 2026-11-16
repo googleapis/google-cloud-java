@@ -1448,6 +1448,46 @@ public class SessionPoolImplTest {
     assertThat(sessionPool.hasSession()).isTrue();
   }
 
+  @Test
+  void pendingVRpcClearsReferencesAfterDrainAndCancel() throws Exception {
+    sessionPool.start(OpenFakeSessionRequest.getDefaultInstance(), new Metadata());
+
+    // Create both PendingVRpcs before any session becomes READY so both return PendingVRpc
+    UnaryResponseFuture<SessionFakeScriptedResponse> drainedFuture = new UnaryResponseFuture<>();
+    VRpc<SessionFakeScriptedRequest, SessionFakeScriptedResponse> drainedRpc =
+        sessionPool.newCall(FakeDescriptor.SCRIPTED);
+    UnaryResponseFuture<SessionFakeScriptedResponse> cancelledFuture = new UnaryResponseFuture<>();
+    VRpc<SessionFakeScriptedRequest, SessionFakeScriptedResponse> cancelledRpc =
+        sessionPool.newCall(FakeDescriptor.SCRIPTED);
+
+    cancelledRpc.start(
+        SessionFakeScriptedRequest.getDefaultInstance(),
+        VRpcCallContext.create(Deadline.after(1, TimeUnit.MINUTES), true, vrpcTracer),
+        cancelledFuture);
+    cancelledRpc.cancel("user cancelled", null);
+
+    drainedRpc.start(
+        SessionFakeScriptedRequest.getDefaultInstance(),
+        VRpcCallContext.create(Deadline.after(1, TimeUnit.MINUTES), true, vrpcTracer),
+        drainedFuture);
+    drainedFuture.get(5, TimeUnit.SECONDS);
+
+    Field reqField = drainedRpc.getClass().getDeclaredField("req");
+    Field listenerField = drainedRpc.getClass().getDeclaredField("listener");
+    Field timeoutField = drainedRpc.getClass().getDeclaredField("deadlineTimeout");
+    reqField.setAccessible(true);
+    listenerField.setAccessible(true);
+    timeoutField.setAccessible(true);
+
+    assertThat(reqField.get(drainedRpc)).isNull();
+    assertThat(listenerField.get(drainedRpc)).isNull();
+    assertThat(timeoutField.get(drainedRpc)).isNull();
+
+    assertThat(reqField.get(cancelledRpc)).isNull();
+    assertThat(listenerField.get(cancelledRpc)).isNull();
+    assertThat(timeoutField.get(cancelledRpc)).isNull();
+  }
+
   private void waitForOpenRequestCount(int minCount, Duration timeout) throws InterruptedException {
     long deadline = System.currentTimeMillis() + timeout.toMillis();
     while (System.currentTimeMillis() < deadline) {

@@ -63,7 +63,6 @@ class SessionList {
   // - starting sessions
   // - closing sessions
   private final Set<SessionHandle> allSessions = new HashSet<>();
-  private final Set<SessionHandle> inUseSessions = new HashSet<>();
 
   // pool level statistics across all  the afes
   private final PoolStats poolStats = new PoolStats();
@@ -119,7 +118,6 @@ class SessionList {
         handle -> {
           poolStats.readyCount--;
           poolStats.inUseCount++;
-          inUseSessions.add(handle);
           if (handle.afe.get().sessions.isEmpty()) {
             afesWithReadySessions.remove(afeHandle);
           }
@@ -221,7 +219,6 @@ class SessionList {
       AfeHandle afeHandle = this.afe.get();
 
       poolStats.inUseCount--;
-      inUseSessions.remove(this);
 
       if (!closing && session.getState() == SessionState.READY) {
         poolStats.readyCount++;
