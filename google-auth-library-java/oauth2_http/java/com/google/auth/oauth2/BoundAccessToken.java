@@ -43,8 +43,10 @@ import org.jspecify.annotations.Nullable;
  * send the token over mTLS present exactly that certificate, even if the certificate on disk has
  * rotated since then.
  *
- * <p>The certificate isn't serialized: {@link #writeReplace()} writes a plain {@link AccessToken},
- * so serialized credentials stay readable by versions of the library without this class.
+ * <p>The certificate isn't serialized. {@link #writeReplace()} writes a plain {@link AccessToken}
+ * that is already expired, so serialized credentials stay readable by versions of the library
+ * without this class, and deserialized credentials mint a new token (bound to the certificate
+ * available where they run) on first use instead of sending a bound token without its certificate.
  */
 @NullMarked
 final class BoundAccessToken extends AccessToken {
@@ -63,6 +65,6 @@ final class BoundAccessToken extends AccessToken {
   }
 
   private Object writeReplace() throws ObjectStreamException {
-    return new AccessToken(getTokenValue(), getExpirationTime());
+    return new AccessToken(getTokenValue(), new Date(0));
   }
 }

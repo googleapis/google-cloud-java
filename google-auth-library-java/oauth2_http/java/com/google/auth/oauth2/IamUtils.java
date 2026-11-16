@@ -91,6 +91,10 @@ class IamUtils {
   // for example iamcredentials.mtls.googleapis.com.
   private static final String MTLS_DOMAIN_PREFIX = "mtls.";
 
+  // Creates the mTLS transport factory for a bound token's key store. Replaced only in tests.
+  private static volatile Function<KeyStore, HttpTransportFactory> mtlsTransportFactoryProvider =
+      MtlsHttpTransportFactory::new;
+
   /**
    * The credentials, transport and endpoint domain to use for one IAM Credentials call.
    *
@@ -140,7 +144,17 @@ class IamUtils {
       return new IamCallTarget(authCredentials, transportFactory, universeDomain);
     }
     return resolveBoundTokenCallTarget(
-        authCredentials, transportFactory, universeDomain, MtlsHttpTransportFactory::new);
+        authCredentials, transportFactory, universeDomain, mtlsTransportFactoryProvider);
+  }
+
+  @VisibleForTesting
+  static void setMtlsTransportFactoryProvider(Function<KeyStore, HttpTransportFactory> provider) {
+    mtlsTransportFactoryProvider = provider;
+  }
+
+  @VisibleForTesting
+  static void resetForTest() {
+    mtlsTransportFactoryProvider = MtlsHttpTransportFactory::new;
   }
 
   /**

@@ -377,7 +377,12 @@ public class ImpersonatedCredentials extends GoogleCredentials
     try {
       target =
           IamUtils.resolveCallTarget(
-              sourceCredentials, transportFactory, universeDomain, iamEndpointOverride != null);
+              sourceCredentials,
+              transportFactory,
+              universeDomain,
+              // iamEndpointOverride only applies to generateAccessToken; signBlob always uses the
+              // IAM Credentials endpoint.
+              /* endpointOverridden= */ false);
     } catch (IOException ex) {
       throw new SigningException("Failed to sign: Error refreshing source credentials", ex);
     }
@@ -787,13 +792,14 @@ public class ImpersonatedCredentials extends GoogleCredentials
       adapter = new HttpCredentialsAdapter(sourceCredentials);
       if (this.iamEndpointOverride == null) {
         // A certificate-bound agent identity token must be sent over mTLS to the mTLS endpoint.
+        String universeDomain = getUniverseDomain();
         IamUtils.IamCallTarget target;
         try {
           target =
               IamUtils.resolveCallTarget(
                   this.sourceCredentials,
                   effectiveTransportFactory,
-                  getUniverseDomain(),
+                  universeDomain,
                   /* endpointOverridden= */ false);
         } catch (IOException e) {
           throw new IOException("Unable to refresh sourceCredentials", e);
@@ -932,7 +938,12 @@ public class ImpersonatedCredentials extends GoogleCredentials
         options != null && options.contains(IdTokenProvider.Option.INCLUDE_EMAIL);
     IamUtils.IamCallTarget target =
         IamUtils.resolveCallTarget(
-            sourceCredentials, transportFactory, getUniverseDomain(), iamEndpointOverride != null);
+            sourceCredentials,
+            transportFactory,
+            getUniverseDomain(),
+            // iamEndpointOverride only applies to generateAccessToken; generateIdToken always uses
+            // the IAM Credentials endpoint.
+            /* endpointOverridden= */ false);
     return IamUtils.getIdToken(
         getAccount(),
         target.credentials,

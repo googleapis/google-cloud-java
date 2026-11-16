@@ -49,14 +49,19 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.security.GeneralSecurityException;
 import java.security.KeyStore;
+import java.security.KeyStoreException;
 import java.security.PrivateKey;
 import java.security.cert.Certificate;
+import java.security.cert.CertificateException;
 import java.security.cert.CertificateFactory;
 import java.security.cert.X509Certificate;
-import java.util.Collection;
+import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 import java.util.Map;
 import java.util.logging.Level;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
 
@@ -118,6 +123,9 @@ final class AgentIdentityUtils {
   private static final int CERT_KEY_MATCH_RETRIES = 3;
 
   private static final long CERT_KEY_MATCH_RETRY_INTERVAL_MS = 100;
+
+  private static final Pattern PEM_CERTIFICATE_PATTERN =
+      Pattern.compile("-----BEGIN CERTIFICATE-----.+?-----END CERTIFICATE-----", Pattern.DOTALL);
 
   private static volatile EnvironmentProvider environmentProvider =
       SystemEnvironmentProvider.getInstance();
@@ -303,9 +311,9 @@ final class AgentIdentityUtils {
    *
    * <p>To handle transient race conditions during certificate rotation on disk, this method employs
    * a retry mechanism with backoff when reading the configuration and certificate files. Note that
-   * callers such as {@link ComputeEngineCredentials#refreshAccessToken()} invoke this method via
-   * {@link #getBoundTokenPayload()} under {@link OAuth2Credentials}'s token refresh coalescing,
-   * which already serializes concurrent token refreshes to mitigate thundering herd contention.
+   * callers such as {@link ComputeEngineCredentials#refreshAccessToken()} invoke this method under
+   * {@link OAuth2Credentials}'s token refresh coalescing, which already serializes concurrent token
+   * refreshes to mitigate thundering herd contention.
    *
    * @return A {@link CertInfo} object containing the parsed {@link X509Certificate} and its raw PEM
    *     chain content, or {@code null} if the agent identity features are disabled, opted out, or
@@ -440,7 +448,8 @@ final class AgentIdentityUtils {
                   keyPath, cert.getPublicKey().getAlgorithm());
 
           if (AgentIdentityCertificateValidationUtils.verifyKeyPair(cert, privateKey)) {
-            CertInfo info = new CertInfo(cert, certContent, buildKeyStore(certContent, privateKey));
+            CertInfo info =
+                new CertInfo(cert, certContent, buildKeyStoreOrNull(cert, certContent, privateKey));
             if (AgentIdentityCacheUtils.tryUpdateCache(
                 configMetaBefore, certMeta, keyMeta, true, info)) {
               return info;
@@ -515,16 +524,65 @@ final class AgentIdentityUtils {
   }
 
   /**
-   * Builds an in-memory {@link KeyStore} with the private key and the full certificate chain from
-   * {@code certContent}. The key and leaf certificate have already been verified to match.
+   * Builds an in-memory {@link KeyStore} with the private key and the certificate chain, or returns
+   * {@code null} if it can't be built.
+   *
+   * <p>The key and {@code leaf} have already been verified to match, so a failure here must not
+   * fail token binding: without a {@link KeyStore}, IAM Credentials calls keep using the default
+   * endpoint and transport.
    */
-  private static KeyStore buildKeyStore(final String certContent, final PrivateKey privateKey)
+  private static @Nullable KeyStore buildKeyStoreOrNull(
+      final X509Certificate leaf, final String certContent, final PrivateKey privateKey) {
+    try {
+      return buildKeyStore(leaf, certContent, privateKey);
+    } catch (GeneralSecurityException | IOException | RuntimeException e) {
+      LoggingUtils.log(
+          LOGGER_PROVIDER,
+          Level.FINE,
+          Collections.emptyMap(),
+          "Could not build an mTLS key store from the Agent Identity certificate and key: "
+              + e.getMessage());
+      return null;
+    }
+  }
+
+  /**
+   * Builds an in-memory {@link KeyStore} with the private key, the verified {@code leaf} and any
+   * other certificates in {@code certContent}. Like {@code MtlsKeyStoreUtils}, it skips duplicate
+   * and unparsable additional certificates rather than failing, because the leaf alone is enough to
+   * present the client certificate.
+   */
+  private static KeyStore buildKeyStore(
+      final X509Certificate leaf, final String certContent, final PrivateKey privateKey)
       throws IOException, GeneralSecurityException {
-    Collection<? extends Certificate> chain =
-        CertificateFactory.getInstance("X.509")
-            .generateCertificates(
-                new ByteArrayInputStream(certContent.getBytes(StandardCharsets.UTF_8)));
-    KeyStore keyStore = KeyStore.getInstance("JKS");
+    CertificateFactory certificateFactory = CertificateFactory.getInstance("X.509");
+    List<Certificate> chain = new ArrayList<>();
+    chain.add(leaf);
+    Matcher matcher = PEM_CERTIFICATE_PATTERN.matcher(certContent);
+    while (matcher.find()) {
+      Certificate certificate;
+      try {
+        certificate =
+            certificateFactory.generateCertificate(
+                new ByteArrayInputStream(matcher.group().getBytes(StandardCharsets.UTF_8)));
+      } catch (CertificateException e) {
+        LoggingUtils.log(
+            LOGGER_PROVIDER,
+            Level.FINE,
+            Collections.emptyMap(),
+            "Skipping an unparsable certificate in the Agent Identity certificate chain.");
+        continue;
+      }
+      if (!chain.contains(certificate)) {
+        chain.add(certificate);
+      }
+    }
+    KeyStore keyStore;
+    try {
+      keyStore = KeyStore.getInstance("JKS");
+    } catch (KeyStoreException e) {
+      keyStore = KeyStore.getInstance("PKCS12");
+    }
     keyStore.load(null);
     keyStore.setKeyEntry("alias", privateKey, new char[] {}, chain.toArray(new Certificate[0]));
     return keyStore;
