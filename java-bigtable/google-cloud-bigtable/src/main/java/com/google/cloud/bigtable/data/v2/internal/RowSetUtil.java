@@ -135,21 +135,21 @@ public final class RowSetUtil {
   private static RowRange truncateRange(RowRange range, ByteString split, boolean fromStart) {
     if (fromStart) {
       // range end is on or left of the split: skip
-      if (EndPoint.extract(range).compareTo(new EndPoint(split, true)) <= 0) {
+      if (EndPoint.extract(range).isBeforeOrAt(split)) {
         return null;
       }
       // range start is on or left of the split
-      if (StartPoint.extract(range).compareTo(new StartPoint(split, true)) <= 0) {
+      if (StartPoint.extract(range).isBeforeOrAt(split)) {
         return range.toBuilder().setStartKeyOpen(split).build();
       }
       return range;
     } else {
       // range is on or right of the split: skip
-      if (StartPoint.extract(range).compareTo(new StartPoint(split, true)) >= 0) {
+      if (StartPoint.extract(range).isAtOrAfter(split)) {
         return null;
       }
       // range end is on or right of the split
-      if (EndPoint.extract(range).compareTo(new EndPoint(split, true)) >= 0) {
+      if (EndPoint.extract(range).isAtOrAfter(split)) {
         return range.toBuilder().setEndKeyOpen(split).build();
       }
       return range;
@@ -207,7 +207,7 @@ public final class RowSetUtil {
       while (!ranges.isEmpty()) {
         // Break early when encountering the first start point that is on or past the split point.
         // Ranges starting on or after the split point lay to the right.
-        if (StartPoint.extract(ranges.peek()).compareTo(new StartPoint(splitPoint, true)) >= 0) {
+        if (StartPoint.extract(ranges.peek()).isAtOrAfter(splitPoint)) {
           break;
         }
         RowRange range = ranges.poll();
@@ -215,14 +215,13 @@ public final class RowSetUtil {
         @SuppressWarnings("ConstantConditions")
         EndPoint endPoint = EndPoint.extract(range);
 
-        if (endPoint.compareTo(new EndPoint(splitPoint, false)) <= 0) {
-          segment.addRowRanges(range);
-          currentSegmentIsEmpty = false;
-        } else {
+        if (endPoint.isAtOrAfter(splitPoint)) {
           segment.addRowRanges(range.toBuilder().setEndKeyOpen(splitPoint));
-          currentSegmentIsEmpty = false;
           splitRemainders.add(range.toBuilder().setStartKeyClosed(splitPoint).build());
+        } else {
+          segment.addRowRanges(range);
         }
+        currentSegmentIsEmpty = false;
       }
       for (int i = splitRemainders.size() - 1; i >= 0; i--) {
         ranges.addFirst(splitRemainders.get(i));
@@ -323,6 +322,9 @@ public final class RowSetUtil {
   private static final class StartPoint implements Comparable<StartPoint> {
     private final ByteString value;
     private final boolean isClosed;
+    // The smallest row key included by this start bound. An open start bound (k starts at the
+    // immediate lexicographical successor of k, which is k\0.
+    private final ByteString effectiveKey;
 
     @Nonnull
     static StartPoint extract(@Nonnull RowRange rowRange) {
@@ -346,19 +348,22 @@ public final class RowSetUtil {
     StartPoint(@Nonnull ByteString value, boolean isClosed) {
       this.value = value;
       this.isClosed = isClosed;
+      this.effectiveKey = (isClosed || value.isEmpty()) ? value : value.concat(NULL_BYTE);
     }
 
-    /**
-     * Returns the smallest row key included by this start bound. An open start bound {@code (k}
-     * starts at the immediate lexicographical successor of {@code k}, which is {@code k\0}.
-     */
-    private ByteString effectiveKey() {
-      return (isClosed || value.isEmpty()) ? value : value.concat(NULL_BYTE);
+    /** Returns true if this start bound is at or after {@code [key}. */
+    boolean isAtOrAfter(@Nonnull ByteString key) {
+      return ByteStringComparator.INSTANCE.compare(effectiveKey, key) >= 0;
+    }
+
+    /** Returns true if this start bound is before or at {@code [key}. */
+    boolean isBeforeOrAt(@Nonnull ByteString key) {
+      return ByteStringComparator.INSTANCE.compare(effectiveKey, key) <= 0;
     }
 
     @Override
     public int compareTo(@Nonnull StartPoint o) {
-      return ByteStringComparator.INSTANCE.compare(effectiveKey(), o.effectiveKey());
+      return ByteStringComparator.INSTANCE.compare(effectiveKey, o.effectiveKey);
     }
   }
 
@@ -366,6 +371,9 @@ public final class RowSetUtil {
   private static final class EndPoint implements Comparable<EndPoint> {
     private final ByteString value;
     private final boolean isClosed;
+    // The exclusive upper bound key for bounded endpoints. A closed end bound k] is equivalent to
+    // the open end bound k\0) at its immediate lexicographical successor.
+    private final ByteString effectiveLimit;
 
     @Nonnull
     static EndPoint extract(@Nonnull RowRange rowRange) {
@@ -389,14 +397,24 @@ public final class RowSetUtil {
     EndPoint(@Nonnull ByteString value, boolean isClosed) {
       this.value = value;
       this.isClosed = isClosed;
+      this.effectiveLimit = (isClosed && !value.isEmpty()) ? value.concat(NULL_BYTE) : value;
     }
 
     /**
-     * Returns the exclusive upper bound key for bounded endpoints. A closed end bound {@code k]} is
-     * equivalent to the open end bound {@code k\0)} at its immediate lexicographical successor.
+     * Returns true if this upper bound includes {@code key} or any keys after it (i.e. ends at or
+     * after {@code key]}).
      */
-    private ByteString effectiveLimit() {
-      return (isClosed && !value.isEmpty()) ? value.concat(NULL_BYTE) : value;
+    boolean isAtOrAfter(@Nonnull ByteString key) {
+      return value.isEmpty() || ByteStringComparator.INSTANCE.compare(effectiveLimit, key) > 0;
+    }
+
+    /**
+     * Returns true if this upper bound excludes all keys strictly after {@code key} (i.e. ends
+     * before or at {@code key]}).
+     */
+    boolean isBeforeOrAt(@Nonnull ByteString key) {
+      return !value.isEmpty()
+          && ByteStringComparator.INSTANCE.compare(effectiveLimit, key.concat(NULL_BYTE)) <= 0;
     }
 
     @Override
@@ -404,7 +422,7 @@ public final class RowSetUtil {
       return ComparisonChain.start()
           // Empty string comes last
           .compareFalseFirst(value.isEmpty(), o.value.isEmpty())
-          .compare(effectiveLimit(), o.effectiveLimit(), ByteStringComparator.INSTANCE)
+          .compare(effectiveLimit, o.effectiveLimit, ByteStringComparator.INSTANCE)
           .result();
     }
   }

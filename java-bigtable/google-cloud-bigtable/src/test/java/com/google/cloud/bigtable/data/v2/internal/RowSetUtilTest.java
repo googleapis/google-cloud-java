@@ -480,6 +480,18 @@ public class RowSetUtilTest {
                         .build())
                 .build())
         .inOrder();
+
+    // Sharding [0, a] at splitPoint a\0 should not split since a] is equivalent to a\0)
+    RowSet closedEndBeforeSplit =
+        RowSet.newBuilder()
+            .addRowRanges(
+                RowRange.newBuilder()
+                    .setStartKeyClosed(ByteString.copyFromUtf8("0"))
+                    .setEndKeyClosed(key)
+                    .build())
+            .build();
+    assertThat(RowSetUtil.shard(closedEndBeforeSplit, splits))
+        .containsExactly(closedEndBeforeSplit);
   }
 
   @Test
