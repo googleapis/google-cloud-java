@@ -117,9 +117,13 @@ public final class StorageHttpMetricsInterceptorTest {
         .isEqualTo("/storage/v1/b/{bucket}/o/{object}/watchAll");
     assertThat(
             StorageHttpMetricsInterceptor.extractUrlTemplate(
+                new GenericUrl("https://storage.googleapis.com/storage/v1/b/my-b/o/my-obj/acl")))
+        .isEqualTo("/storage/v1/b/{bucket}/o/{object}/acl");
+    assertThat(
+            StorageHttpMetricsInterceptor.extractUrlTemplate(
                 new GenericUrl(
                     "https://storage.googleapis.com/storage/v1/b/my-b/o/my-obj/acl/allUsers")))
-        .isEqualTo("/storage/v1/b/{bucket}/o/{object}/acl");
+        .isEqualTo("/storage/v1/b/{bucket}/o/{object}/acl/{entity}");
     assertThat(
             StorageHttpMetricsInterceptor.extractUrlTemplate(
                 new GenericUrl(
@@ -136,18 +140,31 @@ public final class StorageHttpMetricsInterceptorTest {
         .isEqualTo("/storage/v1/b/{bucket}/o/{object}/moveTo/o/{object}");
     assertThat(
             StorageHttpMetricsInterceptor.extractUrlTemplate(
-                new GenericUrl("https://storage.googleapis.com/storage/v1/b/b1/acl/allUsers")))
+                new GenericUrl("https://storage.googleapis.com/storage/v1/b/b1/acl")))
         .isEqualTo("/storage/v1/b/{bucket}/acl");
     assertThat(
             StorageHttpMetricsInterceptor.extractUrlTemplate(
-                new GenericUrl(
-                    "https://storage.googleapis.com/storage/v1/b/b1/defaultObjectAcl/allUsers")))
+                new GenericUrl("https://storage.googleapis.com/storage/v1/b/b1/acl/allUsers")))
+        .isEqualTo("/storage/v1/b/{bucket}/acl/{entity}");
+    assertThat(
+            StorageHttpMetricsInterceptor.extractUrlTemplate(
+                new GenericUrl("https://storage.googleapis.com/storage/v1/b/b1/defaultObjectAcl")))
         .isEqualTo("/storage/v1/b/{bucket}/defaultObjectAcl");
     assertThat(
             StorageHttpMetricsInterceptor.extractUrlTemplate(
                 new GenericUrl(
-                    "https://storage.googleapis.com/storage/v1/b/b1/notifications/notif1")))
-        .isEqualTo("/storage/v1/b/{bucket}/notifications");
+                    "https://storage.googleapis.com/storage/v1/b/b1/defaultObjectAcl/allUsers")))
+        .isEqualTo("/storage/v1/b/{bucket}/defaultObjectAcl/{entity}");
+    assertThat(
+            StorageHttpMetricsInterceptor.extractUrlTemplate(
+                new GenericUrl(
+                    "https://storage.googleapis.com/storage/v1/b/b1/notificationConfigs")))
+        .isEqualTo("/storage/v1/b/{bucket}/notificationConfigs");
+    assertThat(
+            StorageHttpMetricsInterceptor.extractUrlTemplate(
+                new GenericUrl(
+                    "https://storage.googleapis.com/storage/v1/b/b1/notificationConfigs/notif1")))
+        .isEqualTo("/storage/v1/b/{bucket}/notificationConfigs/{notification}");
     assertThat(
             StorageHttpMetricsInterceptor.extractUrlTemplate(
                 new GenericUrl("https://storage.googleapis.com/storage/v1/b/b1/iam")))
@@ -327,6 +344,56 @@ public final class StorageHttpMetricsInterceptorTest {
   }
 
   @Test
+  public void initialize_unsuccessfulResponseHandlerReturnsFalseOn404_recordsOnce()
+      throws IOException {
+    StorageClientMetrics metrics = StorageClientMetrics.create(meterProvider, true, false);
+    AtomicBoolean handlerCalled = new AtomicBoolean(false);
+    HttpRequestInitializer delegate =
+        request ->
+            request.setUnsuccessfulResponseHandler(
+                (req, response, supportsRetry) -> {
+                  handlerCalled.set(true);
+                  return false;
+                });
+    StorageHttpMetricsInterceptor interceptor =
+        new StorageHttpMetricsInterceptor(
+            delegate, metrics, clock, "https://storage.googleapis.com");
+
+    HttpTransport transport = createAdvancingTransport(404, 80_000_000L);
+
+    HttpRequest request =
+        transport
+            .createRequestFactory(interceptor)
+            .buildGetRequest(
+                new GenericUrl("https://storage.googleapis.com/storage/v1/b/missing-bucket"));
+    request.setThrowExceptionOnExecuteError(false);
+    request.execute();
+
+    assertThat(handlerCalled.get()).isTrue();
+
+    Collection<MetricData> metricData = reader.collectAllMetrics();
+    MetricData durationData =
+        metricData.stream()
+            .filter(
+                m -> m.getName().equals(StorageClientMetrics.METRIC_HTTP_CLIENT_REQUEST_DURATION))
+            .findFirst()
+            .orElse(null);
+
+    assertThat(durationData).isNotNull();
+    Collection<HistogramPointData> points = durationData.getHistogramData().getPoints();
+    assertThat(points).hasSize(1);
+    HistogramPointData point = points.iterator().next();
+    assertThat(point.getCount()).isEqualTo(1L);
+    assertThat(point.getSum()).isWithin(1e-6).of(0.08);
+    Attributes attrs = point.getAttributes();
+    assertThat(attrs.get(StorageClientMetrics.KEY_RPC_SYSTEM_NAME)).isEqualTo("http");
+    assertThat(attrs.get(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE)).isEqualTo(404L);
+    assertThat(attrs.get(StorageClientMetrics.KEY_ERROR_TYPE)).isEqualTo("NOT_FOUND");
+    assertThat(attrs.get(StorageClientMetrics.KEY_SERVER_ADDRESS))
+        .isEqualTo("storage.googleapis.com");
+  }
+
+  @Test
   public void initialize_503ServiceUnavailable_recordsErrorType() throws IOException {
     StorageClientMetrics metrics = StorageClientMetrics.create(meterProvider, true, false);
     StorageHttpMetricsInterceptor interceptor =
@@ -494,7 +561,15 @@ public final class StorageHttpMetricsInterceptorTest {
     HttpRequestInitializer refreshDelegate =
         request ->
             request.setUnsuccessfulResponseHandler(
-                (req, response, supportsRetry) -> response.getStatusCode() == 401);
+                (req, response, supportsRetry) -> {
+                  if (response.getStatusCode() == 401) {
+                    // Simulate token refresh latency inside the UnsuccessfulResponseHandler;
+                    // the 401 request duration must be captured before this handler runs.
+                    clock.advanceNanos(200_000_000L);
+                    return true;
+                  }
+                  return false;
+                });
     StorageHttpMetricsInterceptor interceptor =
         new StorageHttpMetricsInterceptor(
             refreshDelegate, metrics, clock, "https://storage.googleapis.com");

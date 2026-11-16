@@ -36,10 +36,10 @@ import org.jspecify.annotations.Nullable;
  * client metrics.
  *
  * <p>Note: {@code google-http-client} invokes {@link HttpResponseInterceptor#interceptResponse}
- * inside {@link HttpRequest#execute()} when the HTTP response headers arrive, before streaming
- * download bodies are consumed by the caller (matching the Go SDK's {@code
- * metricsRoundTripper.RoundTrip}). End-to-end download duration including body transfer is captured
- * by {@code gcp.client.request.duration}.
+ * inside {@link HttpRequest#execute()} when the HTTP response headers arrive, so download durations
+ * recorded here end at response headers and exclude streaming body transfer (a follow-up is tracked
+ * for recording when the response body is closed). End-to-end download duration including body
+ * transfer is captured by {@code gcp.client.request.duration}.
  */
 @NullMarked
 final class StorageHttpMetricsInterceptor implements HttpRequestInitializer {
@@ -93,6 +93,7 @@ final class StorageHttpMetricsInterceptor implements HttpRequestInitializer {
     if (existingUnsuccessfulHandler != null) {
       request.setUnsuccessfulResponseHandler(
           (req, response, supportsRetry) -> {
+            long endNanos = clock.nanoTime();
             boolean handled =
                 existingUnsuccessfulHandler.handleResponse(req, response, supportsRetry);
             if (handled && recorded.compareAndSet(false, true)) {
@@ -101,7 +102,7 @@ final class StorageHttpMetricsInterceptor implements HttpRequestInitializer {
                   statusCode >= 400
                       ? StorageErrorTypeMapper.mapHttpResponseCode(statusCode)
                       : StorageErrorTypeMapper.STATUS_OK;
-              recordDuration(req, startTimeNanos.get(), (long) statusCode, errorType);
+              recordDuration(req, startTimeNanos.get(), endNanos, (long) statusCode, errorType);
             }
             return handled;
           });
@@ -141,10 +142,15 @@ final class StorageHttpMetricsInterceptor implements HttpRequestInitializer {
 
   private void recordDuration(
       HttpRequest request, long startNanos, long statusCode, String errorType) {
+    recordDuration(request, startNanos, clock.nanoTime(), statusCode, errorType);
+  }
+
+  private void recordDuration(
+      HttpRequest request, long startNanos, long endNanos, long statusCode, String errorType) {
     if (metrics == null) {
       return;
     }
-    double durationSeconds = Math.max(0.0, (clock.nanoTime() - startNanos) / 1_000_000_000.0);
+    double durationSeconds = Math.max(0.0, (endNanos - startNanos) / 1_000_000_000.0);
     String method = request.getRequestMethod() != null ? request.getRequestMethod() : "UNKNOWN";
     String urlTemplate = extractUrlTemplate(request.getUrl());
     String serverAddress = resolveServerAddress(request.getUrl(), defaultServerAddress);
@@ -223,6 +229,14 @@ final class StorageHttpMetricsInterceptor implements HttpRequestInitializer {
       if ("iam".equals(segments[2]) && segments.length > 3) {
         return "/storage/v1/b/{bucket}/iam/" + segments[3];
       }
+      if (segments.length >= 4) {
+        if ("acl".equals(segments[2]) || "defaultObjectAcl".equals(segments[2])) {
+          return "/storage/v1/b/{bucket}/" + segments[2] + "/{entity}";
+        }
+        if ("notificationConfigs".equals(segments[2]) || "notifications".equals(segments[2])) {
+          return "/storage/v1/b/{bucket}/" + segments[2] + "/{notification}";
+        }
+      }
       return "/storage/v1/b/{bucket}/" + segments[2];
     }
     if (segments.length >= 2 && "projects".equals(segments[0])) {
@@ -251,6 +265,9 @@ final class StorageHttpMetricsInterceptor implements HttpRequestInitializer {
     }
     if ("moveTo".equals(action) && segments.length >= 7 && "o".equals(segments[5])) {
       return "/storage/v1/b/{bucket}/o/{object}/moveTo/o/{object}";
+    }
+    if ("acl".equals(action) && segments.length >= 6) {
+      return "/storage/v1/b/{bucket}/o/{object}/acl/{entity}";
     }
     if (OBJECT_SUB_RESOURCES.contains(action)) {
       return "/storage/v1/b/{bucket}/o/{object}/" + action;
