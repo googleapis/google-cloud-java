@@ -191,6 +191,7 @@ class IamUtils {
     GoogleCredentials pinnedTokenCredentials =
         new GoogleCredentials(
             GoogleCredentials.newBuilder()
+                .setAccessToken(token)
                 .setQuotaProjectId(computeEngineCredentials.getQuotaProjectId())
                 .setUniverseDomain(universeDomain)) {
           @Override

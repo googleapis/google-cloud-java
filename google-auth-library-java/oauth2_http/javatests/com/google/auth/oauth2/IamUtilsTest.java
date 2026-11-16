@@ -34,6 +34,7 @@ import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNotSame;
 import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -511,6 +512,29 @@ class IamUtilsTest {
         target.credentials.getRequestMetadata(
             URI.create("https://iamcredentials.mtls.googleapis.com"));
     assertEquals(Collections.singletonList("Bearer bound-token"), metadata.get("Authorization"));
+  }
+
+  @Test
+  void resolveBoundTokenCallTarget_boundToken_pinnedCredentialsStartWithTokenAndKeepIt()
+      throws Exception {
+    AgentIdentityUtils.CertInfo certInfo = loadAgentCertInfo();
+    BoundAccessToken token = new BoundAccessToken("bound-token", oneHourFromNow(), certInfo);
+    ComputeEngineCredentials source = computeEngineCredentialsWithToken(token);
+
+    IamUtils.IamCallTarget target =
+        IamUtils.resolveBoundTokenCallTarget(
+            source,
+            MockHttpTransport::new,
+            Credentials.GOOGLE_DEFAULT_UNIVERSE,
+            keyStore -> MockHttpTransport::new);
+
+    GoogleCredentials pinned = (GoogleCredentials) target.credentials;
+    assertNotSame(source, pinned);
+    // Seeded with the bound token, so the first use doesn't go through a refresh.
+    assertSame(token, pinned.getAccessToken());
+    // A refresh (for example when the token becomes stale) keeps the same bound token.
+    pinned.refresh();
+    assertSame(token, pinned.getAccessToken());
   }
 
   @Test
