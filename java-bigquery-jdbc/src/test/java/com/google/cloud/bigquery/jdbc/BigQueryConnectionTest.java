@@ -77,13 +77,23 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.URI;
 import java.nio.charset.StandardCharsets;
+import java.sql.DatabaseMetaData;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Base64;
+import java.util.Collections;
+import java.util.IdentityHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.Properties;
+import java.util.Set;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.LogRecord;
 import java.util.logging.Logger;
@@ -1132,6 +1142,36 @@ public class BigQueryConnectionTest extends BigQueryJdbcLoggingBaseTest {
           + "OAuthType=2;ProjectId=MyBigQueryProject;"
           + "OAuthAccessToken=redactedToken;OAuthClientId=redactedToken;"
           + "OAuthClientSecret=redactedToken;";
+
+  @Test
+  public void testGetMetaData_concurrentFirstCallsShareOneInstance() throws Exception {
+    // getMetaDataInternal() lazily creates the DatabaseMetaData; concurrent first calls must
+    // observe a single instance (the method is synchronized). The once-per-connection telemetry
+    // record is covered by testGetMetaData_recordsOncePerConnection: Mockito static mocks are
+    // thread-scoped, so they cannot be verified across the worker threads used here.
+    int threads = 8;
+    ExecutorService pool = Executors.newFixedThreadPool(threads);
+    try (BigQueryConnection connection = new BigQueryConnection(TELEMETRY_TEST_URL)) {
+      CountDownLatch start = new CountDownLatch(1);
+      List<Future<DatabaseMetaData>> results = new ArrayList<>();
+      for (int i = 0; i < threads; i++) {
+        results.add(
+            pool.submit(
+                () -> {
+                  start.await();
+                  return connection.getMetaData();
+                }));
+      }
+      start.countDown();
+      Set<DatabaseMetaData> distinct = Collections.newSetFromMap(new IdentityHashMap<>());
+      for (Future<DatabaseMetaData> f : results) {
+        distinct.add(f.get(10, TimeUnit.SECONDS));
+      }
+      assertEquals(1, distinct.size());
+    } finally {
+      pool.shutdownNow();
+    }
+  }
 
   @Test
   public void testGetMetaData_recordsOncePerConnection() throws SQLException {

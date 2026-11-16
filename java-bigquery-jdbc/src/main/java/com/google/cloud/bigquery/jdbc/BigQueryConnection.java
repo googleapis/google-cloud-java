@@ -86,6 +86,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.logging.Level;
+import javax.annotation.concurrent.GuardedBy;
 
 /**
  * An implementation of {@link java.sql.Connection} for establishing a connection with BigQuery and
@@ -250,7 +251,10 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
   private Context otelContext;
   Tracer tracer =
       OpenTelemetry.noop().getTracer(BigQueryJdbcOpenTelemetry.INSTRUMENTATION_SCOPE_NAME);
-  DatabaseMetaData databaseMetaData;
+
+  @GuardedBy("this")
+  private DatabaseMetaData databaseMetaData;
+
   // A Connection may be used from several threads; compareAndSet keeps the adoption signal at
   // exactly one record per connection without a lock.
   private final AtomicBoolean metadataRetrievalRecorded = new AtomicBoolean();
@@ -1075,8 +1079,12 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
 
   /**
    * Same instance as {@link #getMetaData()} without the usage-telemetry record. Driver-internal.
+   *
+   * <p>Synchronized: a Connection may be shared across threads, and without the lock two threads
+   * could each construct a BigQueryDatabaseMetaData, or one could observe a partially constructed
+   * instance. The lock is uncontended after first use and this is not a hot path.
    */
-  DatabaseMetaData getMetaDataInternal() {
+  synchronized DatabaseMetaData getMetaDataInternal() {
     if (databaseMetaData == null) {
       databaseMetaData = new BigQueryDatabaseMetaData(this);
     }
