@@ -362,6 +362,10 @@ class MutateRowsAttemptCallable implements Callable<MutateRowsAttemptResult> {
   private ApiException createSyntheticErrorForRpcFailure(Throwable overallRequestError) {
     if (overallRequestError instanceof ApiException) {
       ApiException requestApiException = (ApiException) overallRequestError;
+      // When no per-call retryableCodes override is present on callContext, preserve
+      // requestApiException.isRetryable() so both the stub's configured retryableCodes (applied by
+      // GrpcRawCallableFactory) and ConvertExceptionCallable's retryable flag on transient
+      // INTERNAL errors (e.g. RST_STREAM / GOAWAY) are honored.
       boolean isRetryable =
           callContext.getRetryableCodes() != null
               ? callContext
