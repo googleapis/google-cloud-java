@@ -487,7 +487,10 @@ abstract class ResumableStreamIterator extends AbstractIterator<PartialResultSet
       }
       delayMillis = nextBackOffMillis(this.backOff);
     } else {
-      long configuredMaxDelayMillis = streamingRetrySettings.getMaxRetryDelay().toMillis();
+      long configuredMaxDelayMillis =
+          streamingRetrySettings != null && streamingRetrySettings.getMaxRetryDelay() != null
+              ? streamingRetrySettings.getMaxRetryDelay().toMillis()
+              : 0L;
       long maxDelayMillis = configuredMaxDelayMillis > 0L ? configuredMaxDelayMillis : 32_000L;
       delayMillis = Math.min(delayMillis, maxDelayMillis);
     }

@@ -1422,6 +1422,7 @@ class ConnectionImpl implements Connection {
   }
 
   void resetForRetry(UnitOfWork retryUnitOfWork) {
+    this.connectionState.rollback();
     if (isBatchActive()) {
       abortBatch();
     }
@@ -1429,7 +1430,6 @@ class ConnectionImpl implements Connection {
     if (isAutocommit()) {
       inTransaction = true;
     }
-    this.connectionState.rollback();
     setConnectionPropertyValue(RETRY_ABORTS_INTERNALLY, false, true);
     retryUnitOfWork.resetForRetry();
     this.currentUnitOfWork = retryUnitOfWork;
