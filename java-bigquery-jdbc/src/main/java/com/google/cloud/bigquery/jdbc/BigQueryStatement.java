@@ -161,6 +161,36 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
 
   protected StatementExecution.Builder currentExecutionBuilder = StatementExecution.newBuilder();
 
+  /**
+   * False for statements the driver creates for its own purposes (connection validation, metadata
+   * queries). Those must not be reported as user activity, neither as feature usage nor as
+   * statement executions.
+   */
+  private boolean recordTelemetry = true;
+
+  /** Excludes this statement from usage telemetry. Called once, right after construction. */
+  void markInternal() {
+    this.recordTelemetry = false;
+  }
+
+  boolean isRecordingTelemetry() {
+    return this.recordTelemetry;
+  }
+
+  /** Single choke point for execution records so internal statements never reach the batcher. */
+  protected void recordExecution(StatementExecution.Builder builder, long durationMs) {
+    if (this.recordTelemetry) {
+      TelemetryManager.recordStatementExecution(builder, durationMs);
+    }
+  }
+
+  /** Records {@code feature} unless this statement is internal. */
+  protected void recordFeature(DriverFeature feature) {
+    if (this.recordTelemetry) {
+      TelemetryManager.recordFeatureUsage(feature);
+    }
+  }
+
   static {
     BigQueryDaemonPollingTask.startGcDaemonTask(
         referenceQueueArrowRs,
@@ -468,7 +498,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
   public void cancel() throws SQLException {
     LOG.finer("Statement %s cancelled", this);
     cancelInternal();
-    TelemetryManager.recordFeatureUsage(DriverFeature.DRIVER_FEATURE_STATEMENT_CANCEL);
+    recordFeature(DriverFeature.DRIVER_FEATURE_STATEMENT_CANCEL);
   }
 
   /**
@@ -716,7 +746,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
             .setErrorCode(errorCode);
       }
 
-      TelemetryManager.recordStatementExecution(this.currentExecutionBuilder, durationMs);
+      recordExecution(this.currentExecutionBuilder, durationMs);
     }
   }
 
@@ -1814,7 +1844,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
 
     clearBatch();
 
-    TelemetryManager.recordFeatureUsage(DriverFeature.DRIVER_FEATURE_BATCH_OPERATIONS);
+    recordFeature(DriverFeature.DRIVER_FEATURE_BATCH_OPERATIONS);
 
     return result;
   }

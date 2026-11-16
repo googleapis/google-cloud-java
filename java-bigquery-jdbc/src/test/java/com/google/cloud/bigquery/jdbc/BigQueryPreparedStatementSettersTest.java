@@ -23,9 +23,17 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.anyLong;
+import static org.mockito.ArgumentMatchers.anyString;
+import static org.mockito.Mockito.CALLS_REAL_METHODS;
+import static org.mockito.Mockito.doNothing;
 import static org.mockito.Mockito.doReturn;
+import static org.mockito.Mockito.doThrow;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.mockStatic;
+import static org.mockito.Mockito.never;
+import static org.mockito.Mockito.spy;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.when;
 
@@ -37,7 +45,11 @@ import com.google.cloud.bigquery.Schema;
 import com.google.cloud.bigquery.StandardSQLTypeName;
 import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import com.google.cloud.bigquery.jdbc.telemetry.v1.DriverFeature;
+import com.google.cloud.bigquery.jdbc.telemetry.v1.QueryApiType;
+import com.google.cloud.bigquery.jdbc.telemetry.v1.StatementExecution;
+import com.google.cloud.bigquery.jdbc.telemetry.v1.Status;
 import com.google.cloud.bigquery.jdbc.telemetry.v1.TelemetryManager;
+import com.google.cloud.bigquery.storage.v1.BigQueryWriteClient;
 import com.google.gson.Gson;
 import com.google.gson.JsonNull;
 import com.google.gson.JsonObject;
@@ -63,6 +75,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
+import org.mockito.ArgumentCaptor;
 import org.mockito.MockedStatic;
 
 public class BigQueryPreparedStatementSettersTest {
@@ -539,16 +552,135 @@ public class BigQueryPreparedStatementSettersTest {
   }
 
   @Test
-  public void testPrimitiveSetters_recordParameterBindingFeature() throws SQLException {
-    // These setters use the (int, Object, Class) overload of BigQueryParameterHandler, which
-    // previously did not record DRIVER_FEATURE_PARAMETER_BINDING. One record per binding.
+  public void testSetters_recordParameterBindingFeatureOncePerStatement() throws SQLException {
+    // DRIVER_FEATURE_PARAMETER_BINDING is an adoption signal: one record per prepared statement,
+    // regardless of how many setX calls are made or which handler overload they use.
     try (MockedStatic<TelemetryManager> telemetry = mockStatic(TelemetryManager.class)) {
       preparedStatement.setInt(1, 42);
       preparedStatement.setLong(2, 42L);
       preparedStatement.setString(3, "x");
+      preparedStatement.setNull(4, Types.VARCHAR);
       telemetry.verify(
           () -> TelemetryManager.recordFeatureUsage(DriverFeature.DRIVER_FEATURE_PARAMETER_BINDING),
-          times(3));
+          times(1));
+    }
+  }
+
+  @Test
+  public void testExecuteBatch_success_recordsBatchOperationsOnce() throws SQLException {
+    // Standard (non-Write-API) batch path. Stub the query run so no BigQuery client is needed.
+    BigQueryPreparedStatement spy = spy(preparedStatement);
+    doReturn(null).when(spy).getStandardBatchJobConfiguration(anyString());
+    doNothing().when(spy).runQuery(anyString(), any());
+    doReturn(-1).when(spy).getUpdateCount();
+    spy.setInt(1, 1);
+    spy.addBatch();
+
+    try (MockedStatic<TelemetryManager> telemetry = mockStatic(TelemetryManager.class)) {
+      spy.executeBatch();
+      telemetry.verify(
+          () -> TelemetryManager.recordFeatureUsage(DriverFeature.DRIVER_FEATURE_BATCH_OPERATIONS),
+          times(1));
+    }
+  }
+
+  @Test
+  public void testExecuteBatch_failure_doesNotRecordBatchOperations() throws SQLException {
+    // Regression guard: BATCH_OPERATIONS is success-only; the failure is already captured by
+    // the StatementExecution status, so recording the feature here would double-report it.
+    BigQueryPreparedStatement spy = spy(preparedStatement);
+    doReturn(null).when(spy).getStandardBatchJobConfiguration(anyString());
+    doThrow(new BigQueryJdbcException("simulated batch failure"))
+        .when(spy)
+        .runQuery(anyString(), any());
+    spy.setInt(1, 1);
+    spy.addBatch();
+
+    try (MockedStatic<TelemetryManager> telemetry = mockStatic(TelemetryManager.class)) {
+      assertThrows(BigQueryJdbcException.class, spy::executeBatch);
+      telemetry.verify(
+          () -> TelemetryManager.recordFeatureUsage(DriverFeature.DRIVER_FEATURE_BATCH_OPERATIONS),
+          never());
+    }
+  }
+
+  @Test
+  public void testExecuteBatch_writeApiFailure_recordsErrorStatusAndNoBatchFeature()
+      throws SQLException {
+    // Write API branch. bulkInsertWithWriteAPI throws BigQueryJdbcException when the statement
+    // has no insert metadata; that failure must be recorded as STATUS_ERROR (previously it fell
+    // through to STATUS_UNSPECIFIED) and must not count as a BATCH_OPERATIONS feature use.
+    BigQueryPreparedStatement spy = spy(preparedStatement);
+    doReturn(true).when(spy).useWriteAPI();
+    when(connection.getBigQueryWriteClient()).thenReturn(mock(BigQueryWriteClient.class));
+    spy.setInt(1, 1);
+    spy.addBatch();
+
+    try (MockedStatic<TelemetryManager> telemetry =
+        mockStatic(TelemetryManager.class, CALLS_REAL_METHODS)) {
+      assertThrows(Exception.class, spy::executeBatch);
+      ArgumentCaptor<StatementExecution.Builder> execution =
+          ArgumentCaptor.forClass(StatementExecution.Builder.class);
+      telemetry.verify(
+          () -> TelemetryManager.recordStatementExecution(execution.capture(), anyLong()),
+          times(1));
+      assertEquals(Status.STATUS_ERROR, execution.getValue().getStatus());
+      assertEquals(QueryApiType.QUERY_API_TYPE_WRITE_API, execution.getValue().getQueryApiType());
+      telemetry.verify(
+          () -> TelemetryManager.recordFeatureUsage(DriverFeature.DRIVER_FEATURE_BATCH_OPERATIONS),
+          never());
+    }
+  }
+
+  @Test
+  public void testExecuteBatch_internalStatement_recordsNothing() throws SQLException {
+    BigQueryPreparedStatement spy = spy(preparedStatement);
+    spy.markInternal();
+    doReturn(null).when(spy).getStandardBatchJobConfiguration(anyString());
+    doNothing().when(spy).runQuery(anyString(), any());
+    doReturn(-1).when(spy).getUpdateCount();
+    spy.setInt(1, 1);
+    spy.addBatch();
+
+    try (MockedStatic<TelemetryManager> telemetry = mockStatic(TelemetryManager.class)) {
+      spy.executeBatch();
+      telemetry.verifyNoInteractions();
+    }
+  }
+
+  @Test
+  public void testGetMetaData_recordsResultSetMetadataRetrievalOncePerStatement()
+      throws SQLException {
+    preparedStatement.resultSchema = Schema.of(Field.of("c", StandardSQLTypeName.INT64));
+    try (MockedStatic<TelemetryManager> telemetry = mockStatic(TelemetryManager.class)) {
+      preparedStatement.getMetaData();
+      preparedStatement.getMetaData();
+      telemetry.verify(
+          () ->
+              TelemetryManager.recordFeatureUsage(
+                  DriverFeature.DRIVER_FEATURE_METADATA_RETRIEVAL,
+                  "DRIVER_FEATURE_RESULTSET_METADATA_RETRIEVAL"),
+          times(1));
+    }
+  }
+
+  @Test
+  public void testGetMetaData_noResultSchema_returnsNullAndRecordsNothing() throws SQLException {
+    // JDBC: null for a statement that produces no result set. No metadata, no record.
+    preparedStatement.resultSchema = null;
+    try (MockedStatic<TelemetryManager> telemetry = mockStatic(TelemetryManager.class)) {
+      assertNull(preparedStatement.getMetaData());
+      telemetry.verifyNoInteractions();
+    }
+  }
+
+  @Test
+  public void testGetMetaData_internalStatement_recordsNothing() throws SQLException {
+    preparedStatement.resultSchema = Schema.of(Field.of("c", StandardSQLTypeName.INT64));
+    preparedStatement.markInternal();
+    try (MockedStatic<TelemetryManager> telemetry = mockStatic(TelemetryManager.class)) {
+      assertNotNull(preparedStatement.getMetaData());
+      telemetry.verifyNoInteractions();
     }
   }
 }

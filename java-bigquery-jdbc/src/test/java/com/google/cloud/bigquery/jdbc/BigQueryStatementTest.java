@@ -26,6 +26,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
 import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.anyLong;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.mock;
@@ -1730,6 +1731,48 @@ public class BigQueryStatementTest {
   public void testCancel_recordsStatementCancelFeatureOnce() throws SQLException {
     assertFeatureRecorded(
         () -> bigQueryStatement.cancel(), DriverFeature.DRIVER_FEATURE_STATEMENT_CANCEL, 1);
+  }
+
+  @Test
+  public void testInternalStatement_recordsNoTelemetryForExecutionOrCancel() throws Exception {
+    // Statements the driver creates for itself (isValid, metadata queries) must not be reported
+    // as user activity: no StatementExecution, no feature usage.
+    TableResult tableResultMock = setupMockQueryResults(null, StatementType.SELECT, null);
+    BigQueryStatement internalStatement = new BigQueryStatement(bigQueryConnection);
+    internalStatement.markInternal();
+    BigQueryStatement internalSpy = Mockito.spy(internalStatement);
+    doReturn(mock(BigQueryJsonResultSet.class))
+        .when(internalSpy)
+        .processJsonResultSet(eq(tableResultMock), any());
+
+    // CALLS_REAL_METHODS keeps TelemetryManager's pure helpers (toStatementType etc.) working;
+    // the record* methods are no-ops without an initialized instance but are still counted.
+    try (MockedStatic<TelemetryManager> telemetry =
+        Mockito.mockStatic(TelemetryManager.class, Mockito.CALLS_REAL_METHODS)) {
+      internalSpy.executeQuery("SELECT 1");
+      internalSpy.cancel();
+      telemetry.verify(
+          () -> TelemetryManager.recordStatementExecution(any(), anyLong()), Mockito.never());
+      telemetry.verify(() -> TelemetryManager.recordFeatureUsage(any()), Mockito.never());
+      telemetry.verify(() -> TelemetryManager.recordFeatureUsage(any(), any()), Mockito.never());
+    }
+  }
+
+  @Test
+  public void testUserStatement_recordsExecution() throws Exception {
+    // Control for the test above: the same flow on a regular statement does reach the batcher.
+    TableResult tableResultMock = setupMockQueryResults(null, StatementType.SELECT, null);
+    BigQueryStatement userSpy = Mockito.spy(new BigQueryStatement(bigQueryConnection));
+    doReturn(mock(BigQueryJsonResultSet.class))
+        .when(userSpy)
+        .processJsonResultSet(eq(tableResultMock), any());
+
+    try (MockedStatic<TelemetryManager> telemetry =
+        Mockito.mockStatic(TelemetryManager.class, Mockito.CALLS_REAL_METHODS)) {
+      userSpy.executeQuery("SELECT 1");
+      telemetry.verify(
+          () -> TelemetryManager.recordStatementExecution(any(), anyLong()), Mockito.times(1));
+    }
   }
 
   /** Runs {@code action} and asserts how many times {@code feature} was recorded by it. */

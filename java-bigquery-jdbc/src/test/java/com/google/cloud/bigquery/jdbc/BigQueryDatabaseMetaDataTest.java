@@ -42,7 +42,6 @@ import io.opentelemetry.sdk.trace.data.SpanData;
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.DatabaseMetaData;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
@@ -3615,15 +3614,18 @@ public class BigQueryDatabaseMetaDataTest {
 
   @Test
   public void testGetExportedKeys_infoSchema() throws SQLException {
-    PreparedStatement mockStmt = mock(PreparedStatement.class);
+    BigQueryPreparedStatement mockStmt = mock(BigQueryPreparedStatement.class);
     ResultSet mockRs = mock(ResultSet.class);
-    when(bigQueryConnection.prepareStatement(anyString())).thenReturn(mockStmt);
+    when(bigQueryConnection.prepareStatementInternal(anyString())).thenReturn(mockStmt);
     when(mockStmt.executeQuery()).thenReturn(mockRs);
 
     ResultSet rs = dbMetadata.getExportedKeys("test-project", "dataset_p", "ref_table");
     assertEquals(mockRs, rs);
     verify(mockStmt).closeOnCompletion();
     verify(mockStmt).executeQuery();
+    // Driver-internal metadata queries must not go through the user-facing, telemetry-recording
+    // prepareStatement.
+    verify(bigQueryConnection, never()).prepareStatement(anyString());
   }
 
   @Test

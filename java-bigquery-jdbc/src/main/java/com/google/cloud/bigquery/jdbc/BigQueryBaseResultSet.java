@@ -77,6 +77,9 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
   protected final boolean isNested;
   protected boolean isClosed = false;
   protected boolean wasNull = false;
+  // getMetaData() is commonly called inside row loops; record the adoption signal once per
+  // result set. A ResultSet is single-threaded by JDBC contract, so a plain field suffices.
+  private boolean metadataRetrievalRecorded;
   private int fetchSize = -1;
   private Job job;
   private SQLWarning warnings;
@@ -274,9 +277,15 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
       }
     }
 
-    TelemetryManager.recordFeatureUsage(
-        DriverFeature.DRIVER_FEATURE_METADATA_RETRIEVAL,
-        "DRIVER_FEATURE_RESULTSET_METADATA_RETRIEVAL");
+    // Always a user call: no driver code invokes ResultSet.getMetaData(), so this is recorded
+    // regardless of whether the owning statement is internal (e.g. the result set that
+    // DatabaseMetaData.getExportedKeys hands back to the user).
+    if (!this.metadataRetrievalRecorded) {
+      this.metadataRetrievalRecorded = true;
+      TelemetryManager.recordFeatureUsage(
+          DriverFeature.DRIVER_FEATURE_METADATA_RETRIEVAL,
+          "DRIVER_FEATURE_RESULTSET_METADATA_RETRIEVAL");
+    }
 
     return BigQueryJdbcContextProxy.wrap(metaData, ResultSetMetaData.class, connectionId);
   }
