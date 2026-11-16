@@ -2,14 +2,12 @@ permissions:
   contents: read
 
 on:
-  push:
-    branches:
-    - main
   pull_request:
     paths:
-    - 'gapic-generator-java-bom/**'
-    - 'gapic-generator-java-pom-parent/**'
-    - 'java-shared-dependencies/**'
+    - 'sdk-platform-java/gapic-generator-java-bom/**'
+    - 'sdk-platform-java/gapic-generator-java-pom-parent/**'
+    - 'sdk-platform-java/java-shared-dependencies/**'
+    - '.github/workflows/sdk-platform-java-shared_dependencies.yaml'
 name: sdk-platform-java shared-dependencies version check
 env:
   BUILD_SUBDIR: sdk-platform-java
