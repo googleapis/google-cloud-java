@@ -249,4 +249,11 @@ class PoolSizerTest {
     assertThat(sizer.handleGoAway(GoAwayResponse.getDefaultInstance())).isFalse();
     assertThat(sizer.handleSessionClose(Status.getDefaultInstance())).isFalse();
   }
+
+  @Test
+  void testGetMaxPendingRpcs() {
+    PoolStats stats = new PoolStats();
+    PoolSizer sizer = new PoolSizer(stats, () -> 0, DEFAULT_CONFIG);
+    assertThat(sizer.getMaxPendingRpcs()).isEqualTo(MAX_IDLE_SESSIONS * PENDING_RPCS_PER_SESSION);
+  }
 }

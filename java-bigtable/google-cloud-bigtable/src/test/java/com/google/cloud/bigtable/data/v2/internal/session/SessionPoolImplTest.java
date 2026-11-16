@@ -1448,6 +1448,42 @@ public class SessionPoolImplTest {
     assertThat(sessionPool.hasSession()).isTrue();
   }
 
+  @Test
+  void consecutiveFailuresFastFailsDuringBudgetLockout() throws Exception {
+    com.google.rpc.Status errorStatus =
+        com.google.rpc.Status.newBuilder()
+            .setCode(Code.INTERNAL_VALUE)
+            .setMessage("fake internal error")
+            .build();
+    OpenFakeSessionRequest request =
+        OpenFakeSessionRequest.newBuilder()
+            .setStreamError(
+                StreamError.newBuilder()
+                    .setStatus(errorStatus)
+                    .setDelay(Durations.fromMillis(0))
+                    .build())
+            .build();
+    sessionPool.start(request, new Metadata());
+
+    // Wait until all 20 initial SessionCreationBudget slots have been exhausted and closed
+    waitForOpenRequestCount(20, Duration.ofSeconds(5));
+
+    // A new call arriving during the 60s budget lockout must fail immediately instead of queueing
+    UnaryResponseFuture<SessionFakeScriptedResponse> f = new UnaryResponseFuture<>();
+    VRpc<SessionFakeScriptedRequest, SessionFakeScriptedResponse> rpc =
+        sessionPool.newCall(FakeDescriptor.SCRIPTED);
+    rpc.start(
+        SessionFakeScriptedRequest.getDefaultInstance(),
+        VRpcCallContext.create(Deadline.after(1, TimeUnit.MINUTES), true, vrpcTracer),
+        f);
+
+    ExecutionException ex =
+        assertThrows(ExecutionException.class, () -> f.get(1, TimeUnit.SECONDS));
+    assertThat(ex.getCause())
+        .hasMessageThat()
+        .contains("INTERNAL: Session failed with consecutive failures.");
+  }
+
   private void waitForOpenRequestCount(int minCount, Duration timeout) throws InterruptedException {
     long deadline = System.currentTimeMillis() + timeout.toMillis();
     while (System.currentTimeMillis() < deadline) {
