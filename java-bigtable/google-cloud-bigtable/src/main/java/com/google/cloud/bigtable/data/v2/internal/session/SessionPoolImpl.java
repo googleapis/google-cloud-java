@@ -1000,9 +1000,6 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
           return;
         }
         if (isFailingWithNoEstablishedSessions()) {
-          if (poolSizer.handleNewCall() || sessions.getStats().getExpectedCapacity() == 0) {
-            createSession(openParams.withIncrementedAttempts());
-          }
           cancelWithResult(createConsecutiveFailureResult(lastCloseStatus, lastCloseTrailers));
           return;
         }
