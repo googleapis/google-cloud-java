@@ -32,7 +32,6 @@ package com.google.api.gax.tracing;
 
 import com.google.api.client.util.Strings;
 import com.google.api.core.InternalApi;
-import com.google.errorprone.annotations.concurrent.GuardedBy;
 import io.opentelemetry.api.trace.Span;
 import io.opentelemetry.api.trace.SpanBuilder;
 import io.opentelemetry.api.trace.SpanKind;
@@ -43,7 +42,6 @@ import io.opentelemetry.context.Context;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.CancellationException;
-import java.util.concurrent.locks.ReentrantLock;
 import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
 
@@ -63,42 +61,8 @@ class OpenTelemetryTracingTracer implements ApiTracer {
   private final Context parentContext;
   // Trace context containing the operationSpan, serving as the parent for attempt spans.
   private final Context operationContext;
-  private final ReentrantLock spanLock = new ReentrantLock();
-
-  @GuardedBy("spanLock")
-  private @Nullable Span operationSpan;
-
-  @GuardedBy("spanLock")
-  private @Nullable Span attemptSpan;
-
-  /**
-   * Returns the active attempt span when an attempt is in-flight, falling back to the overall
-   * operation span when between attempts or at operation completion.
-   *
-   * @return the current {@link Span}, or {@code null} if the operation has ended
-   */
-  private @Nullable Span getCurrentSpan() {
-    spanLock.lock();
-    try {
-      return attemptSpan != null ? attemptSpan : operationSpan;
-    } finally {
-      spanLock.unlock();
-    }
-  }
-
-  /**
-   * Returns the active attempt span if an attempt is currently in-flight.
-   *
-   * @return the active attempt {@link Span}, or {@code null} if no attempt is active
-   */
-  private @Nullable Span getAttemptSpan() {
-    spanLock.lock();
-    try {
-      return attemptSpan;
-    } finally {
-      spanLock.unlock();
-    }
-  }
+  private volatile @Nullable Span operationSpan;
+  private volatile @Nullable Span attemptSpan;
 
   /**
    * Activates the current span on the calling thread's OpenTelemetry {@link Context}.
@@ -107,7 +71,10 @@ class OpenTelemetryTracingTracer implements ApiTracer {
    */
   @Override
   public Scope inScope() {
-    Span currentSpan = getCurrentSpan();
+    Span currentSpan = attemptSpan;
+    if (currentSpan == null) {
+      currentSpan = operationSpan;
+    }
     if (currentSpan == null) {
       return () -> {};
     }
@@ -115,24 +82,14 @@ class OpenTelemetryTracingTracer implements ApiTracer {
     // Scope.
     @SuppressWarnings("MustBeClosedChecker")
     io.opentelemetry.context.Scope otelScope = currentSpan.makeCurrent();
-    return new Scope() {
-      private boolean closed;
-
-      @Override
-      public void close() {
-        if (!closed) {
-          closed = true;
-          otelScope.close();
-        }
-      }
-    };
+    return otelScope::close;
   }
 
   @Override
   public void injectTraceContext(Map<String, String> carrier) {
     // Prefer the active attempt span so outgoing RPC wire context reflects the specific attempt;
     // fall back to the overall operation span if no attempt is currently in-flight.
-    Span currentSpan = getCurrentSpan();
+    Span currentSpan = attemptSpan != null ? attemptSpan : operationSpan;
     if (currentSpan != null) {
       Context context = Context.current().with(currentSpan);
       W3CTraceContextPropagator.getInstance()
@@ -175,14 +132,8 @@ class OpenTelemetryTracingTracer implements ApiTracer {
     this.attemptAttributes = new HashMap<>();
     this.parentContext = Context.current();
     buildAttributes();
-    Span initialOperationSpan = startOperationSpan();
-    spanLock.lock();
-    try {
-      this.operationSpan = initialOperationSpan;
-    } finally {
-      spanLock.unlock();
-    }
-    this.operationContext = parentContext.with(initialOperationSpan);
+    this.operationSpan = startOperationSpan();
+    this.operationContext = parentContext.with(this.operationSpan);
   }
 
   /**
@@ -265,13 +216,7 @@ class OpenTelemetryTracingTracer implements ApiTracer {
     // Pass the combined attributes to the new SpanBuilder method
     spanBuilder.setAllAttributes(ObservabilityUtils.toOtelAttributes(currentAttemptAttributes));
 
-    Span startedSpan = spanBuilder.startSpan();
-    spanLock.lock();
-    try {
-      this.attemptSpan = startedSpan;
-    } finally {
-      spanLock.unlock();
-    }
+    this.attemptSpan = spanBuilder.startSpan();
   }
 
   /**
@@ -314,22 +259,13 @@ class OpenTelemetryTracingTracer implements ApiTracer {
    * @param error the exception associated with the operation failure, or {@code null} if successful
    */
   private void recordErrorAndEndOperation(@Nullable Throwable error) {
-    Span attemptToEnd;
-    Span operationToEnd;
-    spanLock.lock();
-    try {
-      attemptToEnd = attemptSpan;
+    if (attemptSpan != null) {
+      endSpan(attemptSpan, error);
       attemptSpan = null;
-      operationToEnd = operationSpan;
+    }
+    if (operationSpan != null) {
+      endSpan(operationSpan, error);
       operationSpan = null;
-    } finally {
-      spanLock.unlock();
-    }
-    if (attemptToEnd != null) {
-      endSpan(attemptToEnd, error);
-    }
-    if (operationToEnd != null) {
-      endSpan(operationToEnd, error);
     }
   }
 
@@ -340,14 +276,12 @@ class OpenTelemetryTracingTracer implements ApiTracer {
 
   @Override
   public void responseHeadersReceived(Map<String, Object> headers) {
-    Span currentAttemptSpan = getAttemptSpan();
-    if (currentAttemptSpan == null) {
+    if (attemptSpan == null) {
       return;
     }
     long contentLength = extractContentLength(headers);
     if (contentLength >= 0) {
-      currentAttemptSpan.setAttribute(
-          ObservabilityAttributes.HTTP_RESPONSE_BODY_SIZE, contentLength);
+      attemptSpan.setAttribute(ObservabilityAttributes.HTTP_RESPONSE_BODY_SIZE, contentLength);
     }
   }
 
@@ -408,17 +342,11 @@ class OpenTelemetryTracingTracer implements ApiTracer {
    * @param error the exception associated with the attempt failure, or {@code null} if successful
    */
   private void recordErrorAndEndAttempt(@Nullable Throwable error) {
-    Span attemptToEnd;
-    spanLock.lock();
-    try {
-      attemptToEnd = attemptSpan;
-      attemptSpan = null;
-    } finally {
-      spanLock.unlock();
+    if (attemptSpan == null) {
+      return;
     }
-    if (attemptToEnd != null) {
-      endSpan(attemptToEnd, error);
-    }
+    endSpan(attemptSpan, error);
+    attemptSpan = null;
   }
 
   /**
@@ -446,15 +374,13 @@ class OpenTelemetryTracingTracer implements ApiTracer {
 
   @Override
   public void requestUrlResolved(String url) {
-    Span currentAttemptSpan = getAttemptSpan();
-    if (currentAttemptSpan == null) {
+    if (attemptSpan == null) {
       return;
     }
     String sanitizedUrlString = ObservabilityUtils.sanitizeUrlFull(url);
     if (sanitizedUrlString.isEmpty()) {
       return;
     }
-    currentAttemptSpan.setAttribute(
-        ObservabilityAttributes.HTTP_URL_FULL_ATTRIBUTE, sanitizedUrlString);
+    attemptSpan.setAttribute(ObservabilityAttributes.HTTP_URL_FULL_ATTRIBUTE, sanitizedUrlString);
   }
 }
