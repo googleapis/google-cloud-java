@@ -632,4 +632,35 @@ class ChannelPoolDpImplTest {
 
     pool.close();
   }
+
+  @Test
+  void testPreOpenSessionFailureWithPeerInfoIncrementsFailures() {
+    when(channelSupplier.get()).thenReturn(channel);
+    when(channel.newCall(any(), any())).thenReturn(clientCall);
+    doNothing().when(clientCall).start(listener.capture(), any());
+    doReturn(Attributes.EMPTY).when(clientCall).getAttributes();
+
+    ChannelPoolDpImpl pool =
+        new ChannelPoolDpImpl(channelSupplier, defaultConfig, debugTagTracer, bgExecutor);
+
+    PeerInfo peerInfo = PeerInfo.newBuilder().setApplicationFrontendId(555).build();
+    Metadata headers = new Metadata();
+    headers.put(
+        SessionStreamImpl.PEER_INFO_KEY,
+        Base64.getEncoder().encodeToString(peerInfo.toByteArray()));
+
+    // 5 pre-OpenSessionResponse rejections (onHeaders with PeerInfo followed by onClose(!OK)
+    // without OpenSessionResponse) must count as consecutive failures and recycle the channel.
+    for (int i = 0; i < 5; i++) {
+      pool.newStream(FakeSessionGrpc.getOpenSessionMethod(), CallOptions.DEFAULT)
+          .start(mock(Listener.class), new Metadata());
+      listener.getValue().onHeaders(headers);
+      listener.getValue().onClose(Status.RESOURCE_EXHAUSTED, new Metadata());
+    }
+
+    verify(channel, times(1)).shutdown();
+    verify(channelSupplier, times(2)).get();
+
+    pool.close();
+  }
 }

@@ -308,6 +308,7 @@ public class ChannelPoolDpImpl implements ChannelPool {
     return new SessionStreamImpl(innerCall) {
       // null until onBeforeSessionStart fires
       @Nullable AfeId afeId = null;
+      boolean sessionEstablished = false;
 
       @Override
       public void start(Listener responseListener, Metadata headers) {
@@ -317,8 +318,6 @@ public class ChannelPoolDpImpl implements ChannelPool {
               public void onBeforeSessionStart(PeerInfo peerInfo) {
                 afeId = AfeId.extract(peerInfo);
                 synchronized (ChannelPoolDpImpl.this) {
-                  fw.consecutiveFailures = 0;
-                  recycleBackoff = INITIAL_RECYCLE_BACKOFF;
                   sessionsPerAfeId.add(afeId);
                   if (!fw.channel.isShutdown()) {
                     routeObservations.put(new RouteKey(fw.id, tenant), afeId);
@@ -329,12 +328,31 @@ public class ChannelPoolDpImpl implements ChannelPool {
               }
 
               @Override
+              public void onMessage(SessionResponse msg) {
+                if (!sessionEstablished && msg.hasOpenSession()) {
+                  synchronized (ChannelPoolDpImpl.this) {
+                    sessionEstablished = true;
+                    fw.consecutiveFailures = 0;
+                    recycleBackoff = INITIAL_RECYCLE_BACKOFF;
+                  }
+                }
+                super.onMessage(msg);
+              }
+
+              @Override
               public void onClose(Status status, Metadata trailers) {
                 synchronized (ChannelPoolDpImpl.this) {
                   if (afeId != null) {
                     sessionsPerAfeId.remove(afeId);
-                  } else if (!status.isOk() && status.getCode() != Code.CANCELLED) {
+                  }
+                  if (status.isOk()) {
+                    fw.consecutiveFailures = 0;
+                    recycleBackoff = INITIAL_RECYCLE_BACKOFF;
+                  } else if (!sessionEstablished && status.getCode() != Code.CANCELLED) {
                     fw.consecutiveFailures++;
+                    if (afeId != null) {
+                      routeObservations.remove(new RouteKey(fw.id, tenant), afeId);
+                    }
                   }
                   releaseChannel(fw, status);
                 }
