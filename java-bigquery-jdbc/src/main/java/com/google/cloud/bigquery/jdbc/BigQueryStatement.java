@@ -52,7 +52,6 @@ import com.google.cloud.bigquery.jdbc.telemetry.v1.DriverFeature;
 import com.google.cloud.bigquery.jdbc.telemetry.v1.QueryApiType;
 import com.google.cloud.bigquery.jdbc.telemetry.v1.StatementExecution;
 import com.google.cloud.bigquery.jdbc.telemetry.v1.TelemetryManager;
-import com.google.cloud.bigquery.storage.v1.ArrowRecordBatch;
 import com.google.cloud.bigquery.storage.v1.ArrowSchema;
 import com.google.cloud.bigquery.storage.v1.ArrowSerializationOptions;
 import com.google.cloud.bigquery.storage.v1.BigQueryReadClient;
@@ -1035,9 +1034,13 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
                                 "Arrow stream reading was interrupted or shut down before completion.");
                           }
 
-                          ArrowRecordBatch currentBatch = response.getArrowRecordBatch();
+                          // Queue every response as-is; the result set decides what to use.
                           arrowBatchWrapperBlockingQueue.put(
-                              BigQueryArrowBatchWrapper.of(currentBatch));
+                              BigQueryArrowBatchWrapper.of(
+                                  response.hasArrowRecordBatch()
+                                      ? response.getArrowRecordBatch()
+                                      : null,
+                                  response.hasArrowSchema() ? response.getArrowSchema() : null));
                           rowsRead += response.getRowCount();
                         }
                         if (isWorkerShuttingDown()) {
