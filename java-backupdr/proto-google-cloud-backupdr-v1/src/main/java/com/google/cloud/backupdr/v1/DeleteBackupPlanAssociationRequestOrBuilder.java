@@ -111,4 +111,42 @@ public interface DeleteBackupPlanAssociationRequestOrBuilder
    * @return The bytes for requestId.
    */
   com.google.protobuf.ByteString getRequestIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This field is exclusively used by Backup and DR's auto-protection
+   * feature. The resource name of the `AutoProtectionPolicyBinding` that
+   * triggered the deletion of this association.
+   * Format:
+   * `projects/{project}/locations/{location}/autoProtectionPolicies/{policy}/bindings/{binding}`.
+   * </pre>
+   *
+   * <code>
+   * string auto_protection_policy_binding = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The autoProtectionPolicyBinding.
+   */
+  java.lang.String getAutoProtectionPolicyBinding();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This field is exclusively used by Backup and DR's auto-protection
+   * feature. The resource name of the `AutoProtectionPolicyBinding` that
+   * triggered the deletion of this association.
+   * Format:
+   * `projects/{project}/locations/{location}/autoProtectionPolicies/{policy}/bindings/{binding}`.
+   * </pre>
+   *
+   * <code>
+   * string auto_protection_policy_binding = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for autoProtectionPolicyBinding.
+   */
+  com.google.protobuf.ByteString getAutoProtectionPolicyBindingBytes();
 }

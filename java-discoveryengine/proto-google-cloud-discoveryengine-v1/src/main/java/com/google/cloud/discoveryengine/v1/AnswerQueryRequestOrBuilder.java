@@ -34,6 +34,12 @@ public interface AnswerQueryRequestOrBuilder
    * `projects/&#42;&#47;locations/global/collections/default_collection/engines/&#42;&#47;servingConfigs/default_serving_config`,
    * or
    * `projects/&#42;&#47;locations/global/collections/default_collection/dataStores/&#42;&#47;servingConfigs/default_serving_config`.
+   *
+   * Or the resource name of the agent engine serving config, such as:
+   * `projects/&#42;&#47;locations/global/collections/default_collection/engines/&#42;&#47;servingConfigs/default_agent_answer`.
+   * (use when `enable_agent_invocation` set to true, and you have custom
+   * `AI_MODE` agent engine configured)
+   *
    * This field is used to identify the serving configuration name, set
    * of models used to make the search.
    * </pre>
@@ -54,6 +60,12 @@ public interface AnswerQueryRequestOrBuilder
    * `projects/&#42;&#47;locations/global/collections/default_collection/engines/&#42;&#47;servingConfigs/default_serving_config`,
    * or
    * `projects/&#42;&#47;locations/global/collections/default_collection/dataStores/&#42;&#47;servingConfigs/default_serving_config`.
+   *
+   * Or the resource name of the agent engine serving config, such as:
+   * `projects/&#42;&#47;locations/global/collections/default_collection/engines/&#42;&#47;servingConfigs/default_agent_answer`.
+   * (use when `enable_agent_invocation` set to true, and you have custom
+   * `AI_MODE` agent engine configured)
+   *
    * This field is used to identify the serving configuration name, set
    * of models used to make the search.
    * </pre>
@@ -421,7 +433,7 @@ public interface AnswerQueryRequestOrBuilder
    * <code>bool asynchronous_mode = 10 [deprecated = true];</code>
    *
    * @deprecated google.cloud.discoveryengine.v1.AnswerQueryRequest.asynchronous_mode is deprecated.
-   *     See google/cloud/discoveryengine/v1/conversational_search_service.proto;l=978
+   *     See google/cloud/discoveryengine/v1/conversational_search_service.proto;l=986
    * @return The asynchronousMode.
    */
   @java.lang.Deprecated

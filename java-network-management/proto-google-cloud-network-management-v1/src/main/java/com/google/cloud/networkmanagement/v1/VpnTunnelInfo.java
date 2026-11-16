@@ -335,7 +335,8 @@ public final class VpnTunnelInfo extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * URI of a VPN tunnel.
+   * URI of the VPN tunnel.
+   * Format: `projects/{project_id}/regions/{region}/vpnTunnels/{vpn_tunnel_id}`
    * </pre>
    *
    * <code>string uri = 2;</code>
@@ -359,7 +360,8 @@ public final class VpnTunnelInfo extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * URI of a VPN tunnel.
+   * URI of the VPN tunnel.
+   * Format: `projects/{project_id}/regions/{region}/vpnTunnels/{vpn_tunnel_id}`
    * </pre>
    *
    * <code>string uri = 2;</code>
@@ -389,6 +391,10 @@ public final class VpnTunnelInfo extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * URI of the VPN gateway at local end of the tunnel.
+   * Format:
+   * * `projects/{project_id}/regions/{region}/vpnGateways/{vpn_gateway_id}` (HA
+   * VPN gateway)
+   * * `projects/{project_id}/regions/{region}/targetVpnGateways/{target_vpn_gateway_id}` (Classic VPN gateway)
    * </pre>
    *
    * <code>string source_gateway = 3;</code>
@@ -413,6 +419,10 @@ public final class VpnTunnelInfo extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * URI of the VPN gateway at local end of the tunnel.
+   * Format:
+   * * `projects/{project_id}/regions/{region}/vpnGateways/{vpn_gateway_id}` (HA
+   * VPN gateway)
+   * * `projects/{project_id}/regions/{region}/targetVpnGateways/{target_vpn_gateway_id}` (Classic VPN gateway)
    * </pre>
    *
    * <code>string source_gateway = 3;</code>
@@ -442,6 +452,11 @@ public final class VpnTunnelInfo extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * URI of a VPN gateway at remote end of the tunnel.
+   * Format:
+   * * `projects/{project_id}/regions/{region}/vpnGateways/{vpn_gateway_id}`
+   * (GCP HA VPN gateway)
+   * * `projects/{project_id}/global/peerVpnGateways/{peer_vpn_gateway_id}` (GCP
+   * peer VPN gateway)
    * </pre>
    *
    * <code>string remote_gateway = 4;</code>
@@ -466,6 +481,11 @@ public final class VpnTunnelInfo extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * URI of a VPN gateway at remote end of the tunnel.
+   * Format:
+   * * `projects/{project_id}/regions/{region}/vpnGateways/{vpn_gateway_id}`
+   * (GCP HA VPN gateway)
+   * * `projects/{project_id}/global/peerVpnGateways/{peer_vpn_gateway_id}` (GCP
+   * peer VPN gateway)
    * </pre>
    *
    * <code>string remote_gateway = 4;</code>
@@ -600,7 +620,8 @@ public final class VpnTunnelInfo extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * URI of a Compute Engine network where the VPN tunnel is configured.
+   * URI of the VPC network where the VPN tunnel is configured.
+   * Format: `projects/{project_id}/global/networks/{network_id}`
    * </pre>
    *
    * <code>string network_uri = 7;</code>
@@ -624,7 +645,8 @@ public final class VpnTunnelInfo extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * URI of a Compute Engine network where the VPN tunnel is configured.
+   * URI of the VPC network where the VPN tunnel is configured.
+   * Format: `projects/{project_id}/global/networks/{network_id}`
    * </pre>
    *
    * <code>string network_uri = 7;</code>
@@ -1357,7 +1379,8 @@ public final class VpnTunnelInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * URI of a VPN tunnel.
+     * URI of the VPN tunnel.
+     * Format: `projects/{project_id}/regions/{region}/vpnTunnels/{vpn_tunnel_id}`
      * </pre>
      *
      * <code>string uri = 2;</code>
@@ -1380,7 +1403,8 @@ public final class VpnTunnelInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * URI of a VPN tunnel.
+     * URI of the VPN tunnel.
+     * Format: `projects/{project_id}/regions/{region}/vpnTunnels/{vpn_tunnel_id}`
      * </pre>
      *
      * <code>string uri = 2;</code>
@@ -1403,7 +1427,8 @@ public final class VpnTunnelInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * URI of a VPN tunnel.
+     * URI of the VPN tunnel.
+     * Format: `projects/{project_id}/regions/{region}/vpnTunnels/{vpn_tunnel_id}`
      * </pre>
      *
      * <code>string uri = 2;</code>
@@ -1425,7 +1450,8 @@ public final class VpnTunnelInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * URI of a VPN tunnel.
+     * URI of the VPN tunnel.
+     * Format: `projects/{project_id}/regions/{region}/vpnTunnels/{vpn_tunnel_id}`
      * </pre>
      *
      * <code>string uri = 2;</code>
@@ -1443,7 +1469,8 @@ public final class VpnTunnelInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * URI of a VPN tunnel.
+     * URI of the VPN tunnel.
+     * Format: `projects/{project_id}/regions/{region}/vpnTunnels/{vpn_tunnel_id}`
      * </pre>
      *
      * <code>string uri = 2;</code>
@@ -1469,6 +1496,10 @@ public final class VpnTunnelInfo extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * URI of the VPN gateway at local end of the tunnel.
+     * Format:
+     * * `projects/{project_id}/regions/{region}/vpnGateways/{vpn_gateway_id}` (HA
+     * VPN gateway)
+     * * `projects/{project_id}/regions/{region}/targetVpnGateways/{target_vpn_gateway_id}` (Classic VPN gateway)
      * </pre>
      *
      * <code>string source_gateway = 3;</code>
@@ -1492,6 +1523,10 @@ public final class VpnTunnelInfo extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * URI of the VPN gateway at local end of the tunnel.
+     * Format:
+     * * `projects/{project_id}/regions/{region}/vpnGateways/{vpn_gateway_id}` (HA
+     * VPN gateway)
+     * * `projects/{project_id}/regions/{region}/targetVpnGateways/{target_vpn_gateway_id}` (Classic VPN gateway)
      * </pre>
      *
      * <code>string source_gateway = 3;</code>
@@ -1515,6 +1550,10 @@ public final class VpnTunnelInfo extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * URI of the VPN gateway at local end of the tunnel.
+     * Format:
+     * * `projects/{project_id}/regions/{region}/vpnGateways/{vpn_gateway_id}` (HA
+     * VPN gateway)
+     * * `projects/{project_id}/regions/{region}/targetVpnGateways/{target_vpn_gateway_id}` (Classic VPN gateway)
      * </pre>
      *
      * <code>string source_gateway = 3;</code>
@@ -1537,6 +1576,10 @@ public final class VpnTunnelInfo extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * URI of the VPN gateway at local end of the tunnel.
+     * Format:
+     * * `projects/{project_id}/regions/{region}/vpnGateways/{vpn_gateway_id}` (HA
+     * VPN gateway)
+     * * `projects/{project_id}/regions/{region}/targetVpnGateways/{target_vpn_gateway_id}` (Classic VPN gateway)
      * </pre>
      *
      * <code>string source_gateway = 3;</code>
@@ -1555,6 +1598,10 @@ public final class VpnTunnelInfo extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * URI of the VPN gateway at local end of the tunnel.
+     * Format:
+     * * `projects/{project_id}/regions/{region}/vpnGateways/{vpn_gateway_id}` (HA
+     * VPN gateway)
+     * * `projects/{project_id}/regions/{region}/targetVpnGateways/{target_vpn_gateway_id}` (Classic VPN gateway)
      * </pre>
      *
      * <code>string source_gateway = 3;</code>
@@ -1580,6 +1627,11 @@ public final class VpnTunnelInfo extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * URI of a VPN gateway at remote end of the tunnel.
+     * Format:
+     * * `projects/{project_id}/regions/{region}/vpnGateways/{vpn_gateway_id}`
+     * (GCP HA VPN gateway)
+     * * `projects/{project_id}/global/peerVpnGateways/{peer_vpn_gateway_id}` (GCP
+     * peer VPN gateway)
      * </pre>
      *
      * <code>string remote_gateway = 4;</code>
@@ -1603,6 +1655,11 @@ public final class VpnTunnelInfo extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * URI of a VPN gateway at remote end of the tunnel.
+     * Format:
+     * * `projects/{project_id}/regions/{region}/vpnGateways/{vpn_gateway_id}`
+     * (GCP HA VPN gateway)
+     * * `projects/{project_id}/global/peerVpnGateways/{peer_vpn_gateway_id}` (GCP
+     * peer VPN gateway)
      * </pre>
      *
      * <code>string remote_gateway = 4;</code>
@@ -1626,6 +1683,11 @@ public final class VpnTunnelInfo extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * URI of a VPN gateway at remote end of the tunnel.
+     * Format:
+     * * `projects/{project_id}/regions/{region}/vpnGateways/{vpn_gateway_id}`
+     * (GCP HA VPN gateway)
+     * * `projects/{project_id}/global/peerVpnGateways/{peer_vpn_gateway_id}` (GCP
+     * peer VPN gateway)
      * </pre>
      *
      * <code>string remote_gateway = 4;</code>
@@ -1648,6 +1710,11 @@ public final class VpnTunnelInfo extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * URI of a VPN gateway at remote end of the tunnel.
+     * Format:
+     * * `projects/{project_id}/regions/{region}/vpnGateways/{vpn_gateway_id}`
+     * (GCP HA VPN gateway)
+     * * `projects/{project_id}/global/peerVpnGateways/{peer_vpn_gateway_id}` (GCP
+     * peer VPN gateway)
      * </pre>
      *
      * <code>string remote_gateway = 4;</code>
@@ -1666,6 +1733,11 @@ public final class VpnTunnelInfo extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * URI of a VPN gateway at remote end of the tunnel.
+     * Format:
+     * * `projects/{project_id}/regions/{region}/vpnGateways/{vpn_gateway_id}`
+     * (GCP HA VPN gateway)
+     * * `projects/{project_id}/global/peerVpnGateways/{peer_vpn_gateway_id}` (GCP
+     * peer VPN gateway)
      * </pre>
      *
      * <code>string remote_gateway = 4;</code>
@@ -1912,7 +1984,8 @@ public final class VpnTunnelInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * URI of a Compute Engine network where the VPN tunnel is configured.
+     * URI of the VPC network where the VPN tunnel is configured.
+     * Format: `projects/{project_id}/global/networks/{network_id}`
      * </pre>
      *
      * <code>string network_uri = 7;</code>
@@ -1935,7 +2008,8 @@ public final class VpnTunnelInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * URI of a Compute Engine network where the VPN tunnel is configured.
+     * URI of the VPC network where the VPN tunnel is configured.
+     * Format: `projects/{project_id}/global/networks/{network_id}`
      * </pre>
      *
      * <code>string network_uri = 7;</code>
@@ -1958,7 +2032,8 @@ public final class VpnTunnelInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * URI of a Compute Engine network where the VPN tunnel is configured.
+     * URI of the VPC network where the VPN tunnel is configured.
+     * Format: `projects/{project_id}/global/networks/{network_id}`
      * </pre>
      *
      * <code>string network_uri = 7;</code>
@@ -1980,7 +2055,8 @@ public final class VpnTunnelInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * URI of a Compute Engine network where the VPN tunnel is configured.
+     * URI of the VPC network where the VPN tunnel is configured.
+     * Format: `projects/{project_id}/global/networks/{network_id}`
      * </pre>
      *
      * <code>string network_uri = 7;</code>
@@ -1998,7 +2074,8 @@ public final class VpnTunnelInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * URI of a Compute Engine network where the VPN tunnel is configured.
+     * URI of the VPC network where the VPN tunnel is configured.
+     * Format: `projects/{project_id}/global/networks/{network_id}`
      * </pre>
      *
      * <code>string network_uri = 7;</code>

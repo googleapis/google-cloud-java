@@ -91,6 +91,26 @@ public final class GcsAutoclassConfig extends com.google.protobuf.GeneratedMessa
      * <code>TERMINAL_STORAGE_CLASS_UNSPECIFIED = 0;</code>
      */
     TERMINAL_STORAGE_CLASS_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Nearline terminal storage class
+     * </pre>
+     *
+     * <code>NEARLINE = 1;</code>
+     */
+    NEARLINE(1),
+    /**
+     *
+     *
+     * <pre>
+     * Archive terminal storage class
+     * </pre>
+     *
+     * <code>ARCHIVE = 2;</code>
+     */
+    ARCHIVE(2),
     UNRECOGNIZED(-1),
     ;
 
@@ -114,6 +134,28 @@ public final class GcsAutoclassConfig extends com.google.protobuf.GeneratedMessa
      * <code>TERMINAL_STORAGE_CLASS_UNSPECIFIED = 0;</code>
      */
     public static final int TERMINAL_STORAGE_CLASS_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Nearline terminal storage class
+     * </pre>
+     *
+     * <code>NEARLINE = 1;</code>
+     */
+    public static final int NEARLINE_VALUE = 1;
+
+    /**
+     *
+     *
+     * <pre>
+     * Archive terminal storage class
+     * </pre>
+     *
+     * <code>ARCHIVE = 2;</code>
+     */
+    public static final int ARCHIVE_VALUE = 2;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -141,6 +183,10 @@ public final class GcsAutoclassConfig extends com.google.protobuf.GeneratedMessa
       switch (value) {
         case 0:
           return TERMINAL_STORAGE_CLASS_UNSPECIFIED;
+        case 1:
+          return NEARLINE;
+        case 2:
+          return ARCHIVE;
         default:
           return null;
       }

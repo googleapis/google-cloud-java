@@ -71,1134 +71,20 @@ public final class EnableManagedRotationRequest extends com.google.protobuf.Gene
             com.google.cloud.secretmanager.v1.EnableManagedRotationRequest.Builder.class);
   }
 
-  public interface CloudSQLSingleUserCredentialsOrBuilder
-      extends
-      // @@protoc_insertion_point(interface_extends:google.cloud.secretmanager.v1.EnableManagedRotationRequest.CloudSQLSingleUserCredentials)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     *
-     *
-     * <pre>
-     * Required. Instance ID of the Cloud SQL instance.
-     * </pre>
-     *
-     * <code>string instance_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     *
-     * @return The instanceId.
-     */
-    java.lang.String getInstanceId();
-
-    /**
-     *
-     *
-     * <pre>
-     * Required. Instance ID of the Cloud SQL instance.
-     * </pre>
-     *
-     * <code>string instance_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     *
-     * @return The bytes for instanceId.
-     */
-    com.google.protobuf.ByteString getInstanceIdBytes();
-
-    /**
-     *
-     *
-     * <pre>
-     * Required. Username of the Cloud SQL instance.
-     * </pre>
-     *
-     * <code>string username = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     *
-     * @return The username.
-     */
-    java.lang.String getUsername();
-
-    /**
-     *
-     *
-     * <pre>
-     * Required. Username of the Cloud SQL instance.
-     * </pre>
-     *
-     * <code>string username = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     *
-     * @return The bytes for username.
-     */
-    com.google.protobuf.ByteString getUsernameBytes();
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Password of the Cloud SQL instance. If this is not provided,
-     * a random password will be generated.
-     * </pre>
-     *
-     * <code>string password = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @return The password.
-     */
-    java.lang.String getPassword();
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Password of the Cloud SQL instance. If this is not provided,
-     * a random password will be generated.
-     * </pre>
-     *
-     * <code>string password = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @return The bytes for password.
-     */
-    com.google.protobuf.ByteString getPasswordBytes();
-  }
-
-  /**
-   *
-   *
-   * <pre>
-   * These are the credentials required for Cloud SQL DB for Single user
-   * Managed Rotation.
-   * </pre>
-   *
-   * Protobuf type {@code
-   * google.cloud.secretmanager.v1.EnableManagedRotationRequest.CloudSQLSingleUserCredentials}
-   */
-  public static final class CloudSQLSingleUserCredentials
-      extends com.google.protobuf.GeneratedMessage
-      implements
-      // @@protoc_insertion_point(message_implements:google.cloud.secretmanager.v1.EnableManagedRotationRequest.CloudSQLSingleUserCredentials)
-      CloudSQLSingleUserCredentialsOrBuilder {
-    private static final long serialVersionUID = 0L;
-
-    static {
-      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
-          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
-          /* major= */ 4,
-          /* minor= */ 33,
-          /* patch= */ 6,
-          /* suffix= */ "",
-          "CloudSQLSingleUserCredentials");
-    }
-
-    // Use CloudSQLSingleUserCredentials.newBuilder() to construct.
-    private CloudSQLSingleUserCredentials(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
-      super(builder);
-    }
-
-    private CloudSQLSingleUserCredentials() {
-      instanceId_ = "";
-      username_ = "";
-      password_ = "";
-    }
-
-    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return com.google.cloud.secretmanager.v1.ServiceProto
-          .internal_static_google_cloud_secretmanager_v1_EnableManagedRotationRequest_CloudSQLSingleUserCredentials_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.google.cloud.secretmanager.v1.ServiceProto
-          .internal_static_google_cloud_secretmanager_v1_EnableManagedRotationRequest_CloudSQLSingleUserCredentials_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.google.cloud.secretmanager.v1.EnableManagedRotationRequest
-                  .CloudSQLSingleUserCredentials.class,
-              com.google.cloud.secretmanager.v1.EnableManagedRotationRequest
-                  .CloudSQLSingleUserCredentials.Builder.class);
-    }
-
-    public static final int INSTANCE_ID_FIELD_NUMBER = 1;
-
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object instanceId_ = "";
-
-    /**
-     *
-     *
-     * <pre>
-     * Required. Instance ID of the Cloud SQL instance.
-     * </pre>
-     *
-     * <code>string instance_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     *
-     * @return The instanceId.
-     */
-    @java.lang.Override
-    public java.lang.String getInstanceId() {
-      java.lang.Object ref = instanceId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        instanceId_ = s;
-        return s;
-      }
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Required. Instance ID of the Cloud SQL instance.
-     * </pre>
-     *
-     * <code>string instance_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     *
-     * @return The bytes for instanceId.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString getInstanceIdBytes() {
-      java.lang.Object ref = instanceId_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        instanceId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int USERNAME_FIELD_NUMBER = 2;
-
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object username_ = "";
-
-    /**
-     *
-     *
-     * <pre>
-     * Required. Username of the Cloud SQL instance.
-     * </pre>
-     *
-     * <code>string username = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     *
-     * @return The username.
-     */
-    @java.lang.Override
-    public java.lang.String getUsername() {
-      java.lang.Object ref = username_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        username_ = s;
-        return s;
-      }
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Required. Username of the Cloud SQL instance.
-     * </pre>
-     *
-     * <code>string username = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     *
-     * @return The bytes for username.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString getUsernameBytes() {
-      java.lang.Object ref = username_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        username_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int PASSWORD_FIELD_NUMBER = 3;
-
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object password_ = "";
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Password of the Cloud SQL instance. If this is not provided,
-     * a random password will be generated.
-     * </pre>
-     *
-     * <code>string password = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @return The password.
-     */
-    @java.lang.Override
-    public java.lang.String getPassword() {
-      java.lang.Object ref = password_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        password_ = s;
-        return s;
-      }
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Password of the Cloud SQL instance. If this is not provided,
-     * a random password will be generated.
-     * </pre>
-     *
-     * <code>string password = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @return The bytes for password.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString getPasswordBytes() {
-      java.lang.Object ref = password_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        password_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    private byte memoizedIsInitialized = -1;
-
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(instanceId_)) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 1, instanceId_);
-      }
-      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(username_)) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 2, username_);
-      }
-      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(password_)) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 3, password_);
-      }
-      getUnknownFields().writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(instanceId_)) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(1, instanceId_);
-      }
-      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(username_)) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(2, username_);
-      }
-      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(password_)) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(3, password_);
-      }
-      size += getUnknownFields().getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-        return true;
-      }
-      if (!(obj
-          instanceof
-          com.google.cloud.secretmanager.v1.EnableManagedRotationRequest
-              .CloudSQLSingleUserCredentials)) {
-        return super.equals(obj);
-      }
-      com.google.cloud.secretmanager.v1.EnableManagedRotationRequest.CloudSQLSingleUserCredentials
-          other =
-              (com.google.cloud.secretmanager.v1.EnableManagedRotationRequest
-                      .CloudSQLSingleUserCredentials)
-                  obj;
-
-      if (!getInstanceId().equals(other.getInstanceId())) return false;
-      if (!getUsername().equals(other.getUsername())) return false;
-      if (!getPassword().equals(other.getPassword())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + INSTANCE_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getInstanceId().hashCode();
-      hash = (37 * hash) + USERNAME_FIELD_NUMBER;
-      hash = (53 * hash) + getUsername().hashCode();
-      hash = (37 * hash) + PASSWORD_FIELD_NUMBER;
-      hash = (53 * hash) + getPassword().hashCode();
-      hash = (29 * hash) + getUnknownFields().hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.google.cloud.secretmanager.v1.EnableManagedRotationRequest
-            .CloudSQLSingleUserCredentials
-        parseFrom(java.nio.ByteBuffer data)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-
-    public static com.google.cloud.secretmanager.v1.EnableManagedRotationRequest
-            .CloudSQLSingleUserCredentials
-        parseFrom(
-            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-
-    public static com.google.cloud.secretmanager.v1.EnableManagedRotationRequest
-            .CloudSQLSingleUserCredentials
-        parseFrom(com.google.protobuf.ByteString data)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-
-    public static com.google.cloud.secretmanager.v1.EnableManagedRotationRequest
-            .CloudSQLSingleUserCredentials
-        parseFrom(
-            com.google.protobuf.ByteString data,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-
-    public static com.google.cloud.secretmanager.v1.EnableManagedRotationRequest
-            .CloudSQLSingleUserCredentials
-        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-
-    public static com.google.cloud.secretmanager.v1.EnableManagedRotationRequest
-            .CloudSQLSingleUserCredentials
-        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-
-    public static com.google.cloud.secretmanager.v1.EnableManagedRotationRequest
-            .CloudSQLSingleUserCredentials
-        parseFrom(java.io.InputStream input) throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
-    }
-
-    public static com.google.cloud.secretmanager.v1.EnableManagedRotationRequest
-            .CloudSQLSingleUserCredentials
-        parseFrom(
-            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessage.parseWithIOException(
-          PARSER, input, extensionRegistry);
-    }
-
-    public static com.google.cloud.secretmanager.v1.EnableManagedRotationRequest
-            .CloudSQLSingleUserCredentials
-        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
-    }
-
-    public static com.google.cloud.secretmanager.v1.EnableManagedRotationRequest
-            .CloudSQLSingleUserCredentials
-        parseDelimitedFrom(
-            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
-          PARSER, input, extensionRegistry);
-    }
-
-    public static com.google.cloud.secretmanager.v1.EnableManagedRotationRequest
-            .CloudSQLSingleUserCredentials
-        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
-    }
-
-    public static com.google.cloud.secretmanager.v1.EnableManagedRotationRequest
-            .CloudSQLSingleUserCredentials
-        parseFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessage.parseWithIOException(
-          PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() {
-      return newBuilder();
-    }
-
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-
-    public static Builder newBuilder(
-        com.google.cloud.secretmanager.v1.EnableManagedRotationRequest.CloudSQLSingleUserCredentials
-            prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * These are the credentials required for Cloud SQL DB for Single user
-     * Managed Rotation.
-     * </pre>
-     *
-     * Protobuf type {@code
-     * google.cloud.secretmanager.v1.EnableManagedRotationRequest.CloudSQLSingleUserCredentials}
-     */
-    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
-        implements
-        // @@protoc_insertion_point(builder_implements:google.cloud.secretmanager.v1.EnableManagedRotationRequest.CloudSQLSingleUserCredentials)
-        com.google.cloud.secretmanager.v1.EnableManagedRotationRequest
-            .CloudSQLSingleUserCredentialsOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-        return com.google.cloud.secretmanager.v1.ServiceProto
-            .internal_static_google_cloud_secretmanager_v1_EnableManagedRotationRequest_CloudSQLSingleUserCredentials_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.google.cloud.secretmanager.v1.ServiceProto
-            .internal_static_google_cloud_secretmanager_v1_EnableManagedRotationRequest_CloudSQLSingleUserCredentials_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.google.cloud.secretmanager.v1.EnableManagedRotationRequest
-                    .CloudSQLSingleUserCredentials.class,
-                com.google.cloud.secretmanager.v1.EnableManagedRotationRequest
-                    .CloudSQLSingleUserCredentials.Builder.class);
-      }
-
-      // Construct using
-      // com.google.cloud.secretmanager.v1.EnableManagedRotationRequest.CloudSQLSingleUserCredentials.newBuilder()
-      private Builder() {}
-
-      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-        super(parent);
-      }
-
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        bitField0_ = 0;
-        instanceId_ = "";
-        username_ = "";
-        password_ = "";
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-        return com.google.cloud.secretmanager.v1.ServiceProto
-            .internal_static_google_cloud_secretmanager_v1_EnableManagedRotationRequest_CloudSQLSingleUserCredentials_descriptor;
-      }
-
-      @java.lang.Override
-      public com.google.cloud.secretmanager.v1.EnableManagedRotationRequest
-              .CloudSQLSingleUserCredentials
-          getDefaultInstanceForType() {
-        return com.google.cloud.secretmanager.v1.EnableManagedRotationRequest
-            .CloudSQLSingleUserCredentials.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public com.google.cloud.secretmanager.v1.EnableManagedRotationRequest
-              .CloudSQLSingleUserCredentials
-          build() {
-        com.google.cloud.secretmanager.v1.EnableManagedRotationRequest.CloudSQLSingleUserCredentials
-            result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public com.google.cloud.secretmanager.v1.EnableManagedRotationRequest
-              .CloudSQLSingleUserCredentials
-          buildPartial() {
-        com.google.cloud.secretmanager.v1.EnableManagedRotationRequest.CloudSQLSingleUserCredentials
-            result =
-                new com.google.cloud.secretmanager.v1.EnableManagedRotationRequest
-                    .CloudSQLSingleUserCredentials(this);
-        if (bitField0_ != 0) {
-          buildPartial0(result);
-        }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartial0(
-          com.google.cloud.secretmanager.v1.EnableManagedRotationRequest
-                  .CloudSQLSingleUserCredentials
-              result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.instanceId_ = instanceId_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.username_ = username_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.password_ = password_;
-        }
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other
-            instanceof
-            com.google.cloud.secretmanager.v1.EnableManagedRotationRequest
-                .CloudSQLSingleUserCredentials) {
-          return mergeFrom(
-              (com.google.cloud.secretmanager.v1.EnableManagedRotationRequest
-                      .CloudSQLSingleUserCredentials)
-                  other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(
-          com.google.cloud.secretmanager.v1.EnableManagedRotationRequest
-                  .CloudSQLSingleUserCredentials
-              other) {
-        if (other
-            == com.google.cloud.secretmanager.v1.EnableManagedRotationRequest
-                .CloudSQLSingleUserCredentials.getDefaultInstance()) return this;
-        if (!other.getInstanceId().isEmpty()) {
-          instanceId_ = other.instanceId_;
-          bitField0_ |= 0x00000001;
-          onChanged();
-        }
-        if (!other.getUsername().isEmpty()) {
-          username_ = other.username_;
-          bitField0_ |= 0x00000002;
-          onChanged();
-        }
-        if (!other.getPassword().isEmpty()) {
-          password_ = other.password_;
-          bitField0_ |= 0x00000004;
-          onChanged();
-        }
-        this.mergeUnknownFields(other.getUnknownFields());
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10:
-                {
-                  instanceId_ = input.readStringRequireUtf8();
-                  bitField0_ |= 0x00000001;
-                  break;
-                } // case 10
-              case 18:
-                {
-                  username_ = input.readStringRequireUtf8();
-                  bitField0_ |= 0x00000002;
-                  break;
-                } // case 18
-              case 26:
-                {
-                  password_ = input.readStringRequireUtf8();
-                  bitField0_ |= 0x00000004;
-                  break;
-                } // case 26
-              default:
-                {
-                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                    done = true; // was an endgroup tag
-                  }
-                  break;
-                } // default:
-            } // switch (tag)
-          } // while (!done)
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.unwrapIOException();
-        } finally {
-          onChanged();
-        } // finally
-        return this;
-      }
-
-      private int bitField0_;
-
-      private java.lang.Object instanceId_ = "";
-
-      /**
-       *
-       *
-       * <pre>
-       * Required. Instance ID of the Cloud SQL instance.
-       * </pre>
-       *
-       * <code>string instance_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-       *
-       * @return The instanceId.
-       */
-      public java.lang.String getInstanceId() {
-        java.lang.Object ref = instanceId_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          instanceId_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * Required. Instance ID of the Cloud SQL instance.
-       * </pre>
-       *
-       * <code>string instance_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-       *
-       * @return The bytes for instanceId.
-       */
-      public com.google.protobuf.ByteString getInstanceIdBytes() {
-        java.lang.Object ref = instanceId_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
-              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-          instanceId_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * Required. Instance ID of the Cloud SQL instance.
-       * </pre>
-       *
-       * <code>string instance_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-       *
-       * @param value The instanceId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setInstanceId(java.lang.String value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        instanceId_ = value;
-        bitField0_ |= 0x00000001;
-        onChanged();
-        return this;
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * Required. Instance ID of the Cloud SQL instance.
-       * </pre>
-       *
-       * <code>string instance_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-       *
-       * @return This builder for chaining.
-       */
-      public Builder clearInstanceId() {
-        instanceId_ = getDefaultInstance().getInstanceId();
-        bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
-        return this;
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * Required. Instance ID of the Cloud SQL instance.
-       * </pre>
-       *
-       * <code>string instance_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-       *
-       * @param value The bytes for instanceId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setInstanceIdBytes(com.google.protobuf.ByteString value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        checkByteStringIsUtf8(value);
-        instanceId_ = value;
-        bitField0_ |= 0x00000001;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object username_ = "";
-
-      /**
-       *
-       *
-       * <pre>
-       * Required. Username of the Cloud SQL instance.
-       * </pre>
-       *
-       * <code>string username = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-       *
-       * @return The username.
-       */
-      public java.lang.String getUsername() {
-        java.lang.Object ref = username_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          username_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * Required. Username of the Cloud SQL instance.
-       * </pre>
-       *
-       * <code>string username = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-       *
-       * @return The bytes for username.
-       */
-      public com.google.protobuf.ByteString getUsernameBytes() {
-        java.lang.Object ref = username_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
-              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-          username_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * Required. Username of the Cloud SQL instance.
-       * </pre>
-       *
-       * <code>string username = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-       *
-       * @param value The username to set.
-       * @return This builder for chaining.
-       */
-      public Builder setUsername(java.lang.String value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        username_ = value;
-        bitField0_ |= 0x00000002;
-        onChanged();
-        return this;
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * Required. Username of the Cloud SQL instance.
-       * </pre>
-       *
-       * <code>string username = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-       *
-       * @return This builder for chaining.
-       */
-      public Builder clearUsername() {
-        username_ = getDefaultInstance().getUsername();
-        bitField0_ = (bitField0_ & ~0x00000002);
-        onChanged();
-        return this;
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * Required. Username of the Cloud SQL instance.
-       * </pre>
-       *
-       * <code>string username = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-       *
-       * @param value The bytes for username to set.
-       * @return This builder for chaining.
-       */
-      public Builder setUsernameBytes(com.google.protobuf.ByteString value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        checkByteStringIsUtf8(value);
-        username_ = value;
-        bitField0_ |= 0x00000002;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object password_ = "";
-
-      /**
-       *
-       *
-       * <pre>
-       * Optional. Password of the Cloud SQL instance. If this is not provided,
-       * a random password will be generated.
-       * </pre>
-       *
-       * <code>string password = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
-       *
-       * @return The password.
-       */
-      public java.lang.String getPassword() {
-        java.lang.Object ref = password_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          password_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * Optional. Password of the Cloud SQL instance. If this is not provided,
-       * a random password will be generated.
-       * </pre>
-       *
-       * <code>string password = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
-       *
-       * @return The bytes for password.
-       */
-      public com.google.protobuf.ByteString getPasswordBytes() {
-        java.lang.Object ref = password_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
-              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-          password_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * Optional. Password of the Cloud SQL instance. If this is not provided,
-       * a random password will be generated.
-       * </pre>
-       *
-       * <code>string password = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
-       *
-       * @param value The password to set.
-       * @return This builder for chaining.
-       */
-      public Builder setPassword(java.lang.String value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        password_ = value;
-        bitField0_ |= 0x00000004;
-        onChanged();
-        return this;
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * Optional. Password of the Cloud SQL instance. If this is not provided,
-       * a random password will be generated.
-       * </pre>
-       *
-       * <code>string password = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
-       *
-       * @return This builder for chaining.
-       */
-      public Builder clearPassword() {
-        password_ = getDefaultInstance().getPassword();
-        bitField0_ = (bitField0_ & ~0x00000004);
-        onChanged();
-        return this;
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * Optional. Password of the Cloud SQL instance. If this is not provided,
-       * a random password will be generated.
-       * </pre>
-       *
-       * <code>string password = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
-       *
-       * @param value The bytes for password to set.
-       * @return This builder for chaining.
-       */
-      public Builder setPasswordBytes(com.google.protobuf.ByteString value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        checkByteStringIsUtf8(value);
-        password_ = value;
-        bitField0_ |= 0x00000004;
-        onChanged();
-        return this;
-      }
-
-      // @@protoc_insertion_point(builder_scope:google.cloud.secretmanager.v1.EnableManagedRotationRequest.CloudSQLSingleUserCredentials)
-    }
-
-    // @@protoc_insertion_point(class_scope:google.cloud.secretmanager.v1.EnableManagedRotationRequest.CloudSQLSingleUserCredentials)
-    private static final com.google.cloud.secretmanager.v1.EnableManagedRotationRequest
-            .CloudSQLSingleUserCredentials
-        DEFAULT_INSTANCE;
-
-    static {
-      DEFAULT_INSTANCE =
-          new com.google.cloud.secretmanager.v1.EnableManagedRotationRequest
-              .CloudSQLSingleUserCredentials();
-    }
-
-    public static com.google.cloud.secretmanager.v1.EnableManagedRotationRequest
-            .CloudSQLSingleUserCredentials
-        getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<CloudSQLSingleUserCredentials> PARSER =
-        new com.google.protobuf.AbstractParser<CloudSQLSingleUserCredentials>() {
-          @java.lang.Override
-          public CloudSQLSingleUserCredentials parsePartialFrom(
-              com.google.protobuf.CodedInputStream input,
-              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-              throws com.google.protobuf.InvalidProtocolBufferException {
-            Builder builder = newBuilder();
-            try {
-              builder.mergeFrom(input, extensionRegistry);
-            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-              throw e.setUnfinishedMessage(builder.buildPartial());
-            } catch (com.google.protobuf.UninitializedMessageException e) {
-              throw e.asInvalidProtocolBufferException()
-                  .setUnfinishedMessage(builder.buildPartial());
-            } catch (java.io.IOException e) {
-              throw new com.google.protobuf.InvalidProtocolBufferException(e)
-                  .setUnfinishedMessage(builder.buildPartial());
-            }
-            return builder.buildPartial();
-          }
-        };
-
-    public static com.google.protobuf.Parser<CloudSQLSingleUserCredentials> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<CloudSQLSingleUserCredentials> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.cloud.secretmanager.v1.EnableManagedRotationRequest
-            .CloudSQLSingleUserCredentials
-        getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-  }
-
-  private int credentialsCase_ = 0;
+  private int credentialCase_ = 0;
 
   @SuppressWarnings("serial")
-  private java.lang.Object credentials_;
+  private java.lang.Object credential_;
 
-  public enum CredentialsCase
+  public enum CredentialCase
       implements
           com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     CLOUD_SQL_SINGLE_USER_CREDENTIALS(2),
-    CREDENTIALS_NOT_SET(0);
+    CREDENTIAL_NOT_SET(0);
     private final int value;
 
-    private CredentialsCase(int value) {
+    private CredentialCase(int value) {
       this.value = value;
     }
 
@@ -1208,16 +94,16 @@ public final class EnableManagedRotationRequest extends com.google.protobuf.Gene
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
-    public static CredentialsCase valueOf(int value) {
+    public static CredentialCase valueOf(int value) {
       return forNumber(value);
     }
 
-    public static CredentialsCase forNumber(int value) {
+    public static CredentialCase forNumber(int value) {
       switch (value) {
         case 2:
           return CLOUD_SQL_SINGLE_USER_CREDENTIALS;
         case 0:
-          return CREDENTIALS_NOT_SET;
+          return CREDENTIAL_NOT_SET;
         default:
           return null;
       }
@@ -1228,8 +114,8 @@ public final class EnableManagedRotationRequest extends com.google.protobuf.Gene
     }
   };
 
-  public CredentialsCase getCredentialsCase() {
-    return CredentialsCase.forNumber(credentialsCase_);
+  public CredentialCase getCredentialCase() {
+    return CredentialCase.forNumber(credentialCase_);
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
@@ -1305,14 +191,14 @@ public final class EnableManagedRotationRequest extends com.google.protobuf.Gene
    * </pre>
    *
    * <code>
-   * .google.cloud.secretmanager.v1.EnableManagedRotationRequest.CloudSQLSingleUserCredentials cloud_sql_single_user_credentials = 2;
+   * .google.cloud.secretmanager.v1.CloudSqlSingleUserCredentials cloud_sql_single_user_credentials = 2;
    * </code>
    *
    * @return Whether the cloudSqlSingleUserCredentials field is set.
    */
   @java.lang.Override
   public boolean hasCloudSqlSingleUserCredentials() {
-    return credentialsCase_ == 2;
+    return credentialCase_ == 2;
   }
 
   /**
@@ -1323,22 +209,18 @@ public final class EnableManagedRotationRequest extends com.google.protobuf.Gene
    * </pre>
    *
    * <code>
-   * .google.cloud.secretmanager.v1.EnableManagedRotationRequest.CloudSQLSingleUserCredentials cloud_sql_single_user_credentials = 2;
+   * .google.cloud.secretmanager.v1.CloudSqlSingleUserCredentials cloud_sql_single_user_credentials = 2;
    * </code>
    *
    * @return The cloudSqlSingleUserCredentials.
    */
   @java.lang.Override
-  public com.google.cloud.secretmanager.v1.EnableManagedRotationRequest
-          .CloudSQLSingleUserCredentials
+  public com.google.cloud.secretmanager.v1.CloudSqlSingleUserCredentials
       getCloudSqlSingleUserCredentials() {
-    if (credentialsCase_ == 2) {
-      return (com.google.cloud.secretmanager.v1.EnableManagedRotationRequest
-              .CloudSQLSingleUserCredentials)
-          credentials_;
+    if (credentialCase_ == 2) {
+      return (com.google.cloud.secretmanager.v1.CloudSqlSingleUserCredentials) credential_;
     }
-    return com.google.cloud.secretmanager.v1.EnableManagedRotationRequest
-        .CloudSQLSingleUserCredentials.getDefaultInstance();
+    return com.google.cloud.secretmanager.v1.CloudSqlSingleUserCredentials.getDefaultInstance();
   }
 
   /**
@@ -1349,20 +231,16 @@ public final class EnableManagedRotationRequest extends com.google.protobuf.Gene
    * </pre>
    *
    * <code>
-   * .google.cloud.secretmanager.v1.EnableManagedRotationRequest.CloudSQLSingleUserCredentials cloud_sql_single_user_credentials = 2;
+   * .google.cloud.secretmanager.v1.CloudSqlSingleUserCredentials cloud_sql_single_user_credentials = 2;
    * </code>
    */
   @java.lang.Override
-  public com.google.cloud.secretmanager.v1.EnableManagedRotationRequest
-          .CloudSQLSingleUserCredentialsOrBuilder
+  public com.google.cloud.secretmanager.v1.CloudSqlSingleUserCredentialsOrBuilder
       getCloudSqlSingleUserCredentialsOrBuilder() {
-    if (credentialsCase_ == 2) {
-      return (com.google.cloud.secretmanager.v1.EnableManagedRotationRequest
-              .CloudSQLSingleUserCredentials)
-          credentials_;
+    if (credentialCase_ == 2) {
+      return (com.google.cloud.secretmanager.v1.CloudSqlSingleUserCredentials) credential_;
     }
-    return com.google.cloud.secretmanager.v1.EnableManagedRotationRequest
-        .CloudSQLSingleUserCredentials.getDefaultInstance();
+    return com.google.cloud.secretmanager.v1.CloudSqlSingleUserCredentials.getDefaultInstance();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1382,12 +260,9 @@ public final class EnableManagedRotationRequest extends com.google.protobuf.Gene
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(parent_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 1, parent_);
     }
-    if (credentialsCase_ == 2) {
+    if (credentialCase_ == 2) {
       output.writeMessage(
-          2,
-          (com.google.cloud.secretmanager.v1.EnableManagedRotationRequest
-                  .CloudSQLSingleUserCredentials)
-              credentials_);
+          2, (com.google.cloud.secretmanager.v1.CloudSqlSingleUserCredentials) credential_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -1401,13 +276,10 @@ public final class EnableManagedRotationRequest extends com.google.protobuf.Gene
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(parent_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(1, parent_);
     }
-    if (credentialsCase_ == 2) {
+    if (credentialCase_ == 2) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
-              2,
-              (com.google.cloud.secretmanager.v1.EnableManagedRotationRequest
-                      .CloudSQLSingleUserCredentials)
-                  credentials_);
+              2, (com.google.cloud.secretmanager.v1.CloudSqlSingleUserCredentials) credential_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -1426,8 +298,8 @@ public final class EnableManagedRotationRequest extends com.google.protobuf.Gene
         (com.google.cloud.secretmanager.v1.EnableManagedRotationRequest) obj;
 
     if (!getParent().equals(other.getParent())) return false;
-    if (!getCredentialsCase().equals(other.getCredentialsCase())) return false;
-    switch (credentialsCase_) {
+    if (!getCredentialCase().equals(other.getCredentialCase())) return false;
+    switch (credentialCase_) {
       case 2:
         if (!getCloudSqlSingleUserCredentials().equals(other.getCloudSqlSingleUserCredentials()))
           return false;
@@ -1448,7 +320,7 @@ public final class EnableManagedRotationRequest extends com.google.protobuf.Gene
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + PARENT_FIELD_NUMBER;
     hash = (53 * hash) + getParent().hashCode();
-    switch (credentialsCase_) {
+    switch (credentialCase_) {
       case 2:
         hash = (37 * hash) + CLOUD_SQL_SINGLE_USER_CREDENTIALS_FIELD_NUMBER;
         hash = (53 * hash) + getCloudSqlSingleUserCredentials().hashCode();
@@ -1602,8 +474,8 @@ public final class EnableManagedRotationRequest extends com.google.protobuf.Gene
       if (cloudSqlSingleUserCredentialsBuilder_ != null) {
         cloudSqlSingleUserCredentialsBuilder_.clear();
       }
-      credentialsCase_ = 0;
-      credentials_ = null;
+      credentialCase_ = 0;
+      credential_ = null;
       return this;
     }
 
@@ -1650,10 +522,10 @@ public final class EnableManagedRotationRequest extends com.google.protobuf.Gene
 
     private void buildPartialOneofs(
         com.google.cloud.secretmanager.v1.EnableManagedRotationRequest result) {
-      result.credentialsCase_ = credentialsCase_;
-      result.credentials_ = this.credentials_;
-      if (credentialsCase_ == 2 && cloudSqlSingleUserCredentialsBuilder_ != null) {
-        result.credentials_ = cloudSqlSingleUserCredentialsBuilder_.build();
+      result.credentialCase_ = credentialCase_;
+      result.credential_ = this.credential_;
+      if (credentialCase_ == 2 && cloudSqlSingleUserCredentialsBuilder_ != null) {
+        result.credential_ = cloudSqlSingleUserCredentialsBuilder_.build();
       }
     }
 
@@ -1676,13 +548,13 @@ public final class EnableManagedRotationRequest extends com.google.protobuf.Gene
         bitField0_ |= 0x00000001;
         onChanged();
       }
-      switch (other.getCredentialsCase()) {
+      switch (other.getCredentialCase()) {
         case CLOUD_SQL_SINGLE_USER_CREDENTIALS:
           {
             mergeCloudSqlSingleUserCredentials(other.getCloudSqlSingleUserCredentials());
             break;
           }
-        case CREDENTIALS_NOT_SET:
+        case CREDENTIAL_NOT_SET:
           {
             break;
           }
@@ -1724,7 +596,7 @@ public final class EnableManagedRotationRequest extends com.google.protobuf.Gene
                 input.readMessage(
                     internalGetCloudSqlSingleUserCredentialsFieldBuilder().getBuilder(),
                     extensionRegistry);
-                credentialsCase_ = 2;
+                credentialCase_ = 2;
                 break;
               } // case 18
             default:
@@ -1744,16 +616,16 @@ public final class EnableManagedRotationRequest extends com.google.protobuf.Gene
       return this;
     }
 
-    private int credentialsCase_ = 0;
-    private java.lang.Object credentials_;
+    private int credentialCase_ = 0;
+    private java.lang.Object credential_;
 
-    public CredentialsCase getCredentialsCase() {
-      return CredentialsCase.forNumber(credentialsCase_);
+    public CredentialCase getCredentialCase() {
+      return CredentialCase.forNumber(credentialCase_);
     }
 
-    public Builder clearCredentials() {
-      credentialsCase_ = 0;
-      credentials_ = null;
+    public Builder clearCredential() {
+      credentialCase_ = 0;
+      credential_ = null;
       onChanged();
       return this;
     }
@@ -1897,12 +769,9 @@ public final class EnableManagedRotationRequest extends com.google.protobuf.Gene
     }
 
     private com.google.protobuf.SingleFieldBuilder<
-            com.google.cloud.secretmanager.v1.EnableManagedRotationRequest
-                .CloudSQLSingleUserCredentials,
-            com.google.cloud.secretmanager.v1.EnableManagedRotationRequest
-                .CloudSQLSingleUserCredentials.Builder,
-            com.google.cloud.secretmanager.v1.EnableManagedRotationRequest
-                .CloudSQLSingleUserCredentialsOrBuilder>
+            com.google.cloud.secretmanager.v1.CloudSqlSingleUserCredentials,
+            com.google.cloud.secretmanager.v1.CloudSqlSingleUserCredentials.Builder,
+            com.google.cloud.secretmanager.v1.CloudSqlSingleUserCredentialsOrBuilder>
         cloudSqlSingleUserCredentialsBuilder_;
 
     /**
@@ -1913,14 +782,14 @@ public final class EnableManagedRotationRequest extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>
-     * .google.cloud.secretmanager.v1.EnableManagedRotationRequest.CloudSQLSingleUserCredentials cloud_sql_single_user_credentials = 2;
+     * .google.cloud.secretmanager.v1.CloudSqlSingleUserCredentials cloud_sql_single_user_credentials = 2;
      * </code>
      *
      * @return Whether the cloudSqlSingleUserCredentials field is set.
      */
     @java.lang.Override
     public boolean hasCloudSqlSingleUserCredentials() {
-      return credentialsCase_ == 2;
+      return credentialCase_ == 2;
     }
 
     /**
@@ -1931,29 +800,24 @@ public final class EnableManagedRotationRequest extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>
-     * .google.cloud.secretmanager.v1.EnableManagedRotationRequest.CloudSQLSingleUserCredentials cloud_sql_single_user_credentials = 2;
+     * .google.cloud.secretmanager.v1.CloudSqlSingleUserCredentials cloud_sql_single_user_credentials = 2;
      * </code>
      *
      * @return The cloudSqlSingleUserCredentials.
      */
     @java.lang.Override
-    public com.google.cloud.secretmanager.v1.EnableManagedRotationRequest
-            .CloudSQLSingleUserCredentials
+    public com.google.cloud.secretmanager.v1.CloudSqlSingleUserCredentials
         getCloudSqlSingleUserCredentials() {
       if (cloudSqlSingleUserCredentialsBuilder_ == null) {
-        if (credentialsCase_ == 2) {
-          return (com.google.cloud.secretmanager.v1.EnableManagedRotationRequest
-                  .CloudSQLSingleUserCredentials)
-              credentials_;
+        if (credentialCase_ == 2) {
+          return (com.google.cloud.secretmanager.v1.CloudSqlSingleUserCredentials) credential_;
         }
-        return com.google.cloud.secretmanager.v1.EnableManagedRotationRequest
-            .CloudSQLSingleUserCredentials.getDefaultInstance();
+        return com.google.cloud.secretmanager.v1.CloudSqlSingleUserCredentials.getDefaultInstance();
       } else {
-        if (credentialsCase_ == 2) {
+        if (credentialCase_ == 2) {
           return cloudSqlSingleUserCredentialsBuilder_.getMessage();
         }
-        return com.google.cloud.secretmanager.v1.EnableManagedRotationRequest
-            .CloudSQLSingleUserCredentials.getDefaultInstance();
+        return com.google.cloud.secretmanager.v1.CloudSqlSingleUserCredentials.getDefaultInstance();
       }
     }
 
@@ -1965,22 +829,21 @@ public final class EnableManagedRotationRequest extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>
-     * .google.cloud.secretmanager.v1.EnableManagedRotationRequest.CloudSQLSingleUserCredentials cloud_sql_single_user_credentials = 2;
+     * .google.cloud.secretmanager.v1.CloudSqlSingleUserCredentials cloud_sql_single_user_credentials = 2;
      * </code>
      */
     public Builder setCloudSqlSingleUserCredentials(
-        com.google.cloud.secretmanager.v1.EnableManagedRotationRequest.CloudSQLSingleUserCredentials
-            value) {
+        com.google.cloud.secretmanager.v1.CloudSqlSingleUserCredentials value) {
       if (cloudSqlSingleUserCredentialsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        credentials_ = value;
+        credential_ = value;
         onChanged();
       } else {
         cloudSqlSingleUserCredentialsBuilder_.setMessage(value);
       }
-      credentialsCase_ = 2;
+      credentialCase_ = 2;
       return this;
     }
 
@@ -1992,20 +855,18 @@ public final class EnableManagedRotationRequest extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>
-     * .google.cloud.secretmanager.v1.EnableManagedRotationRequest.CloudSQLSingleUserCredentials cloud_sql_single_user_credentials = 2;
+     * .google.cloud.secretmanager.v1.CloudSqlSingleUserCredentials cloud_sql_single_user_credentials = 2;
      * </code>
      */
     public Builder setCloudSqlSingleUserCredentials(
-        com.google.cloud.secretmanager.v1.EnableManagedRotationRequest.CloudSQLSingleUserCredentials
-                .Builder
-            builderForValue) {
+        com.google.cloud.secretmanager.v1.CloudSqlSingleUserCredentials.Builder builderForValue) {
       if (cloudSqlSingleUserCredentialsBuilder_ == null) {
-        credentials_ = builderForValue.build();
+        credential_ = builderForValue.build();
         onChanged();
       } else {
         cloudSqlSingleUserCredentialsBuilder_.setMessage(builderForValue.build());
       }
-      credentialsCase_ = 2;
+      credentialCase_ = 2;
       return this;
     }
 
@@ -2017,37 +878,33 @@ public final class EnableManagedRotationRequest extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>
-     * .google.cloud.secretmanager.v1.EnableManagedRotationRequest.CloudSQLSingleUserCredentials cloud_sql_single_user_credentials = 2;
+     * .google.cloud.secretmanager.v1.CloudSqlSingleUserCredentials cloud_sql_single_user_credentials = 2;
      * </code>
      */
     public Builder mergeCloudSqlSingleUserCredentials(
-        com.google.cloud.secretmanager.v1.EnableManagedRotationRequest.CloudSQLSingleUserCredentials
-            value) {
+        com.google.cloud.secretmanager.v1.CloudSqlSingleUserCredentials value) {
       if (cloudSqlSingleUserCredentialsBuilder_ == null) {
-        if (credentialsCase_ == 2
-            && credentials_
-                != com.google.cloud.secretmanager.v1.EnableManagedRotationRequest
-                    .CloudSQLSingleUserCredentials.getDefaultInstance()) {
-          credentials_ =
-              com.google.cloud.secretmanager.v1.EnableManagedRotationRequest
-                  .CloudSQLSingleUserCredentials.newBuilder(
-                      (com.google.cloud.secretmanager.v1.EnableManagedRotationRequest
-                              .CloudSQLSingleUserCredentials)
-                          credentials_)
+        if (credentialCase_ == 2
+            && credential_
+                != com.google.cloud.secretmanager.v1.CloudSqlSingleUserCredentials
+                    .getDefaultInstance()) {
+          credential_ =
+              com.google.cloud.secretmanager.v1.CloudSqlSingleUserCredentials.newBuilder(
+                      (com.google.cloud.secretmanager.v1.CloudSqlSingleUserCredentials) credential_)
                   .mergeFrom(value)
                   .buildPartial();
         } else {
-          credentials_ = value;
+          credential_ = value;
         }
         onChanged();
       } else {
-        if (credentialsCase_ == 2) {
+        if (credentialCase_ == 2) {
           cloudSqlSingleUserCredentialsBuilder_.mergeFrom(value);
         } else {
           cloudSqlSingleUserCredentialsBuilder_.setMessage(value);
         }
       }
-      credentialsCase_ = 2;
+      credentialCase_ = 2;
       return this;
     }
 
@@ -2059,20 +916,20 @@ public final class EnableManagedRotationRequest extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>
-     * .google.cloud.secretmanager.v1.EnableManagedRotationRequest.CloudSQLSingleUserCredentials cloud_sql_single_user_credentials = 2;
+     * .google.cloud.secretmanager.v1.CloudSqlSingleUserCredentials cloud_sql_single_user_credentials = 2;
      * </code>
      */
     public Builder clearCloudSqlSingleUserCredentials() {
       if (cloudSqlSingleUserCredentialsBuilder_ == null) {
-        if (credentialsCase_ == 2) {
-          credentialsCase_ = 0;
-          credentials_ = null;
+        if (credentialCase_ == 2) {
+          credentialCase_ = 0;
+          credential_ = null;
           onChanged();
         }
       } else {
-        if (credentialsCase_ == 2) {
-          credentialsCase_ = 0;
-          credentials_ = null;
+        if (credentialCase_ == 2) {
+          credentialCase_ = 0;
+          credential_ = null;
         }
         cloudSqlSingleUserCredentialsBuilder_.clear();
       }
@@ -2087,11 +944,10 @@ public final class EnableManagedRotationRequest extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>
-     * .google.cloud.secretmanager.v1.EnableManagedRotationRequest.CloudSQLSingleUserCredentials cloud_sql_single_user_credentials = 2;
+     * .google.cloud.secretmanager.v1.CloudSqlSingleUserCredentials cloud_sql_single_user_credentials = 2;
      * </code>
      */
-    public com.google.cloud.secretmanager.v1.EnableManagedRotationRequest
-            .CloudSQLSingleUserCredentials.Builder
+    public com.google.cloud.secretmanager.v1.CloudSqlSingleUserCredentials.Builder
         getCloudSqlSingleUserCredentialsBuilder() {
       return internalGetCloudSqlSingleUserCredentialsFieldBuilder().getBuilder();
     }
@@ -2104,23 +960,19 @@ public final class EnableManagedRotationRequest extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>
-     * .google.cloud.secretmanager.v1.EnableManagedRotationRequest.CloudSQLSingleUserCredentials cloud_sql_single_user_credentials = 2;
+     * .google.cloud.secretmanager.v1.CloudSqlSingleUserCredentials cloud_sql_single_user_credentials = 2;
      * </code>
      */
     @java.lang.Override
-    public com.google.cloud.secretmanager.v1.EnableManagedRotationRequest
-            .CloudSQLSingleUserCredentialsOrBuilder
+    public com.google.cloud.secretmanager.v1.CloudSqlSingleUserCredentialsOrBuilder
         getCloudSqlSingleUserCredentialsOrBuilder() {
-      if ((credentialsCase_ == 2) && (cloudSqlSingleUserCredentialsBuilder_ != null)) {
+      if ((credentialCase_ == 2) && (cloudSqlSingleUserCredentialsBuilder_ != null)) {
         return cloudSqlSingleUserCredentialsBuilder_.getMessageOrBuilder();
       } else {
-        if (credentialsCase_ == 2) {
-          return (com.google.cloud.secretmanager.v1.EnableManagedRotationRequest
-                  .CloudSQLSingleUserCredentials)
-              credentials_;
+        if (credentialCase_ == 2) {
+          return (com.google.cloud.secretmanager.v1.CloudSqlSingleUserCredentials) credential_;
         }
-        return com.google.cloud.secretmanager.v1.EnableManagedRotationRequest
-            .CloudSQLSingleUserCredentials.getDefaultInstance();
+        return com.google.cloud.secretmanager.v1.CloudSqlSingleUserCredentials.getDefaultInstance();
       }
     }
 
@@ -2132,39 +984,30 @@ public final class EnableManagedRotationRequest extends com.google.protobuf.Gene
      * </pre>
      *
      * <code>
-     * .google.cloud.secretmanager.v1.EnableManagedRotationRequest.CloudSQLSingleUserCredentials cloud_sql_single_user_credentials = 2;
+     * .google.cloud.secretmanager.v1.CloudSqlSingleUserCredentials cloud_sql_single_user_credentials = 2;
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilder<
-            com.google.cloud.secretmanager.v1.EnableManagedRotationRequest
-                .CloudSQLSingleUserCredentials,
-            com.google.cloud.secretmanager.v1.EnableManagedRotationRequest
-                .CloudSQLSingleUserCredentials.Builder,
-            com.google.cloud.secretmanager.v1.EnableManagedRotationRequest
-                .CloudSQLSingleUserCredentialsOrBuilder>
+            com.google.cloud.secretmanager.v1.CloudSqlSingleUserCredentials,
+            com.google.cloud.secretmanager.v1.CloudSqlSingleUserCredentials.Builder,
+            com.google.cloud.secretmanager.v1.CloudSqlSingleUserCredentialsOrBuilder>
         internalGetCloudSqlSingleUserCredentialsFieldBuilder() {
       if (cloudSqlSingleUserCredentialsBuilder_ == null) {
-        if (!(credentialsCase_ == 2)) {
-          credentials_ =
-              com.google.cloud.secretmanager.v1.EnableManagedRotationRequest
-                  .CloudSQLSingleUserCredentials.getDefaultInstance();
+        if (!(credentialCase_ == 2)) {
+          credential_ =
+              com.google.cloud.secretmanager.v1.CloudSqlSingleUserCredentials.getDefaultInstance();
         }
         cloudSqlSingleUserCredentialsBuilder_ =
             new com.google.protobuf.SingleFieldBuilder<
-                com.google.cloud.secretmanager.v1.EnableManagedRotationRequest
-                    .CloudSQLSingleUserCredentials,
-                com.google.cloud.secretmanager.v1.EnableManagedRotationRequest
-                    .CloudSQLSingleUserCredentials.Builder,
-                com.google.cloud.secretmanager.v1.EnableManagedRotationRequest
-                    .CloudSQLSingleUserCredentialsOrBuilder>(
-                (com.google.cloud.secretmanager.v1.EnableManagedRotationRequest
-                        .CloudSQLSingleUserCredentials)
-                    credentials_,
+                com.google.cloud.secretmanager.v1.CloudSqlSingleUserCredentials,
+                com.google.cloud.secretmanager.v1.CloudSqlSingleUserCredentials.Builder,
+                com.google.cloud.secretmanager.v1.CloudSqlSingleUserCredentialsOrBuilder>(
+                (com.google.cloud.secretmanager.v1.CloudSqlSingleUserCredentials) credential_,
                 getParentForChildren(),
                 isClean());
-        credentials_ = null;
+        credential_ = null;
       }
-      credentialsCase_ = 2;
+      credentialCase_ = 2;
       onChanged();
       return cloudSqlSingleUserCredentialsBuilder_;
     }

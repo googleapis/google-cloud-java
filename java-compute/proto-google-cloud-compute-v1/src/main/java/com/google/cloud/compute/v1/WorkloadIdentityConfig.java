@@ -52,6 +52,7 @@ public final class WorkloadIdentityConfig extends com.google.protobuf.GeneratedM
 
   private WorkloadIdentityConfig() {
     identity_ = "";
+    identityType_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -67,6 +68,151 @@ public final class WorkloadIdentityConfig extends com.google.protobuf.GeneratedM
         .ensureFieldAccessorsInitialized(
             com.google.cloud.compute.v1.WorkloadIdentityConfig.class,
             com.google.cloud.compute.v1.WorkloadIdentityConfig.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.compute.v1.WorkloadIdentityConfig.IdentityType}
+   */
+  public enum IdentityType implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_IDENTITY_TYPE = 0;</code>
+     */
+    UNDEFINED_IDENTITY_TYPE(0),
+    /** <code>AGENT_IDENTITY = 71547096;</code> */
+    AGENT_IDENTITY(71547096),
+    /** <code>IDENTITY_TYPE_UNSPECIFIED = 157537011;</code> */
+    IDENTITY_TYPE_UNSPECIFIED(157537011),
+    /** <code>SERVICE_ACCOUNT = 178301539;</code> */
+    SERVICE_ACCOUNT(178301539),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 6,
+          /* suffix= */ "",
+          "IdentityType");
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_IDENTITY_TYPE = 0;</code>
+     */
+    public static final int UNDEFINED_IDENTITY_TYPE_VALUE = 0;
+
+    /** <code>AGENT_IDENTITY = 71547096;</code> */
+    public static final int AGENT_IDENTITY_VALUE = 71547096;
+
+    /** <code>IDENTITY_TYPE_UNSPECIFIED = 157537011;</code> */
+    public static final int IDENTITY_TYPE_UNSPECIFIED_VALUE = 157537011;
+
+    /** <code>SERVICE_ACCOUNT = 178301539;</code> */
+    public static final int SERVICE_ACCOUNT_VALUE = 178301539;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static IdentityType valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static IdentityType forNumber(int value) {
+      switch (value) {
+        case 0:
+          return UNDEFINED_IDENTITY_TYPE;
+        case 71547096:
+          return AGENT_IDENTITY;
+        case 157537011:
+          return IDENTITY_TYPE_UNSPECIFIED;
+        case 178301539:
+          return SERVICE_ACCOUNT;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<IdentityType> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<IdentityType> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<IdentityType>() {
+          public IdentityType findValueByNumber(int number) {
+            return IdentityType.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.compute.v1.WorkloadIdentityConfig.getDescriptor()
+          .getEnumTypes()
+          .get(0);
+    }
+
+    private static final IdentityType[] VALUES = values();
+
+    public static IdentityType valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private IdentityType(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.WorkloadIdentityConfig.IdentityType)
   }
 
   private int bitField0_;
@@ -144,6 +290,78 @@ public final class WorkloadIdentityConfig extends com.google.protobuf.GeneratedM
     return identityCertificateEnabled_;
   }
 
+  public static final int IDENTITY_TYPE_FIELD_NUMBER = 25665051;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object identityType_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   *
+   * Check the IdentityType enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string identity_type = 25665051;</code>
+   *
+   * @return Whether the identityType field is set.
+   */
+  @java.lang.Override
+  public boolean hasIdentityType() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   *
+   * Check the IdentityType enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string identity_type = 25665051;</code>
+   *
+   * @return The identityType.
+   */
+  @java.lang.Override
+  public java.lang.String getIdentityType() {
+    java.lang.Object ref = identityType_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      identityType_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   *
+   * Check the IdentityType enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string identity_type = 25665051;</code>
+   *
+   * @return The bytes for identityType.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getIdentityTypeBytes() {
+    java.lang.Object ref = identityType_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      identityType_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -158,6 +376,9 @@ public final class WorkloadIdentityConfig extends com.google.protobuf.GeneratedM
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    if (((bitField0_ & 0x00000004) != 0)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 25665051, identityType_);
+    }
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeBool(342892440, identityCertificateEnabled_);
     }
@@ -173,6 +394,9 @@ public final class WorkloadIdentityConfig extends com.google.protobuf.GeneratedM
     if (size != -1) return size;
 
     size = 0;
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(25665051, identityType_);
+    }
     if (((bitField0_ & 0x00000002) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeBoolSize(
@@ -205,6 +429,10 @@ public final class WorkloadIdentityConfig extends com.google.protobuf.GeneratedM
     if (hasIdentityCertificateEnabled()) {
       if (getIdentityCertificateEnabled() != other.getIdentityCertificateEnabled()) return false;
     }
+    if (hasIdentityType() != other.hasIdentityType()) return false;
+    if (hasIdentityType()) {
+      if (!getIdentityType().equals(other.getIdentityType())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -224,6 +452,10 @@ public final class WorkloadIdentityConfig extends com.google.protobuf.GeneratedM
       hash = (37 * hash) + IDENTITY_CERTIFICATE_ENABLED_FIELD_NUMBER;
       hash =
           (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIdentityCertificateEnabled());
+    }
+    if (hasIdentityType()) {
+      hash = (37 * hash) + IDENTITY_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getIdentityType().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -366,6 +598,7 @@ public final class WorkloadIdentityConfig extends com.google.protobuf.GeneratedM
       bitField0_ = 0;
       identity_ = "";
       identityCertificateEnabled_ = false;
+      identityType_ = "";
       return this;
     }
 
@@ -411,6 +644,10 @@ public final class WorkloadIdentityConfig extends com.google.protobuf.GeneratedM
         result.identityCertificateEnabled_ = identityCertificateEnabled_;
         to_bitField0_ |= 0x00000002;
       }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.identityType_ = identityType_;
+        to_bitField0_ |= 0x00000004;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -434,6 +671,11 @@ public final class WorkloadIdentityConfig extends com.google.protobuf.GeneratedM
       }
       if (other.hasIdentityCertificateEnabled()) {
         setIdentityCertificateEnabled(other.getIdentityCertificateEnabled());
+      }
+      if (other.hasIdentityType()) {
+        identityType_ = other.identityType_;
+        bitField0_ |= 0x00000004;
+        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -461,6 +703,12 @@ public final class WorkloadIdentityConfig extends com.google.protobuf.GeneratedM
             case 0:
               done = true;
               break;
+            case 205320410:
+              {
+                identityType_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 205320410
             case -1551827776:
               {
                 identityCertificateEnabled_ = input.readBool();
@@ -626,6 +874,138 @@ public final class WorkloadIdentityConfig extends com.google.protobuf.GeneratedM
     public Builder clearIdentityCertificateEnabled() {
       bitField0_ = (bitField0_ & ~0x00000002);
       identityCertificateEnabled_ = false;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object identityType_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     *
+     * Check the IdentityType enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string identity_type = 25665051;</code>
+     *
+     * @return Whether the identityType field is set.
+     */
+    public boolean hasIdentityType() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     *
+     * Check the IdentityType enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string identity_type = 25665051;</code>
+     *
+     * @return The identityType.
+     */
+    public java.lang.String getIdentityType() {
+      java.lang.Object ref = identityType_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        identityType_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     *
+     * Check the IdentityType enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string identity_type = 25665051;</code>
+     *
+     * @return The bytes for identityType.
+     */
+    public com.google.protobuf.ByteString getIdentityTypeBytes() {
+      java.lang.Object ref = identityType_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        identityType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     *
+     * Check the IdentityType enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string identity_type = 25665051;</code>
+     *
+     * @param value The identityType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIdentityType(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      identityType_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     *
+     * Check the IdentityType enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string identity_type = 25665051;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearIdentityType() {
+      identityType_ = getDefaultInstance().getIdentityType();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     *
+     * Check the IdentityType enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string identity_type = 25665051;</code>
+     *
+     * @param value The bytes for identityType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIdentityTypeBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      identityType_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

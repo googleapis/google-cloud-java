@@ -28,6 +28,9 @@
             "CreateCompilationResult": {
               "methods": ["createCompilationResult", "createCompilationResult", "createCompilationResult", "createCompilationResultCallable"]
             },
+            "CreateCompilationResultLongRunning": {
+              "methods": ["createCompilationResultLongRunningAsync", "createCompilationResultLongRunningAsync", "createCompilationResultLongRunningAsync", "createCompilationResultLongRunningOperationCallable", "createCompilationResultLongRunningCallable"]
+            },
             "CreateFolder": {
               "methods": ["createFolder", "createFolder", "createFolder", "createFolderCallable"]
             },
@@ -102,6 +105,9 @@
             },
             "FetchWorkspaceBranches": {
               "methods": ["fetchWorkspaceBranches", "fetchWorkspaceBranchesPagedCallable", "fetchWorkspaceBranchesCallable"]
+            },
+            "FetchWorkspaceHistory": {
+              "methods": ["fetchWorkspaceHistory", "fetchWorkspaceHistoryPagedCallable", "fetchWorkspaceHistoryCallable"]
             },
             "GetCompilationResult": {
               "methods": ["getCompilationResult", "getCompilationResult", "getCompilationResult", "getCompilationResultCallable"]

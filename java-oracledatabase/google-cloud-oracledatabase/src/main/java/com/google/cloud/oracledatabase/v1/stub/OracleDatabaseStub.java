@@ -23,9 +23,11 @@ import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListAutono
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListCloudExadataInfrastructuresPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListCloudVmClustersPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListDatabaseCharacterSetsPagedResponse;
+import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListDatabaseConnectionsPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListDatabasesPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListDbNodesPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListDbServersPagedResponse;
+import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListDbSystemComputePerformancesPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListDbSystemInitialStorageSizesPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListDbSystemShapesPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListDbSystemsPagedResponse;
@@ -33,6 +35,7 @@ import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListDbVers
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListEntitlementsPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListExadbVmClustersPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListExascaleDbStorageVaultsPagedResponse;
+import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListFlexComponentsPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListGiVersionsPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListGoldengateConnectionAssignmentsPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListGoldengateConnectionTypesPagedResponse;
@@ -63,6 +66,7 @@ import com.google.cloud.oracledatabase.v1.ConfigureExascaleCloudExadataInfrastru
 import com.google.cloud.oracledatabase.v1.CreateAutonomousDatabaseRequest;
 import com.google.cloud.oracledatabase.v1.CreateCloudExadataInfrastructureRequest;
 import com.google.cloud.oracledatabase.v1.CreateCloudVmClusterRequest;
+import com.google.cloud.oracledatabase.v1.CreateDatabaseConnectionRequest;
 import com.google.cloud.oracledatabase.v1.CreateDbSystemRequest;
 import com.google.cloud.oracledatabase.v1.CreateExadbVmClusterRequest;
 import com.google.cloud.oracledatabase.v1.CreateExascaleDbStorageVaultRequest;
@@ -73,10 +77,12 @@ import com.google.cloud.oracledatabase.v1.CreateOdbDnsZoneRequest;
 import com.google.cloud.oracledatabase.v1.CreateOdbNetworkRequest;
 import com.google.cloud.oracledatabase.v1.CreateOdbSubnetRequest;
 import com.google.cloud.oracledatabase.v1.Database;
+import com.google.cloud.oracledatabase.v1.DatabaseConnection;
 import com.google.cloud.oracledatabase.v1.DbSystem;
 import com.google.cloud.oracledatabase.v1.DeleteAutonomousDatabaseRequest;
 import com.google.cloud.oracledatabase.v1.DeleteCloudExadataInfrastructureRequest;
 import com.google.cloud.oracledatabase.v1.DeleteCloudVmClusterRequest;
+import com.google.cloud.oracledatabase.v1.DeleteDatabaseConnectionRequest;
 import com.google.cloud.oracledatabase.v1.DeleteDbSystemRequest;
 import com.google.cloud.oracledatabase.v1.DeleteExadbVmClusterRequest;
 import com.google.cloud.oracledatabase.v1.DeleteExascaleDbStorageVaultRequest;
@@ -86,8 +92,14 @@ import com.google.cloud.oracledatabase.v1.DeleteGoldengateDeploymentRequest;
 import com.google.cloud.oracledatabase.v1.DeleteOdbDnsZoneRequest;
 import com.google.cloud.oracledatabase.v1.DeleteOdbNetworkRequest;
 import com.google.cloud.oracledatabase.v1.DeleteOdbSubnetRequest;
+import com.google.cloud.oracledatabase.v1.DisableCloudVmClusterIdentityConnectorRequest;
+import com.google.cloud.oracledatabase.v1.DisableExadbVmClusterIdentityConnectorRequest;
+import com.google.cloud.oracledatabase.v1.EnableCloudVmClusterIdentityConnectorRequest;
+import com.google.cloud.oracledatabase.v1.EnableExadbVmClusterIdentityConnectorRequest;
 import com.google.cloud.oracledatabase.v1.ExadbVmCluster;
 import com.google.cloud.oracledatabase.v1.ExascaleDbStorageVault;
+import com.google.cloud.oracledatabase.v1.ExecuteSqlRequest;
+import com.google.cloud.oracledatabase.v1.ExecuteSqlResponse;
 import com.google.cloud.oracledatabase.v1.FailoverAutonomousDatabaseRequest;
 import com.google.cloud.oracledatabase.v1.GenerateAutonomousDatabaseWalletRequest;
 import com.google.cloud.oracledatabase.v1.GenerateAutonomousDatabaseWalletResponse;
@@ -95,6 +107,7 @@ import com.google.cloud.oracledatabase.v1.GetAutonomousDatabaseRefreshableClones
 import com.google.cloud.oracledatabase.v1.GetAutonomousDatabaseRequest;
 import com.google.cloud.oracledatabase.v1.GetCloudExadataInfrastructureRequest;
 import com.google.cloud.oracledatabase.v1.GetCloudVmClusterRequest;
+import com.google.cloud.oracledatabase.v1.GetDatabaseConnectionRequest;
 import com.google.cloud.oracledatabase.v1.GetDatabaseRequest;
 import com.google.cloud.oracledatabase.v1.GetDbSystemRequest;
 import com.google.cloud.oracledatabase.v1.GetExadbVmClusterRequest;
@@ -123,12 +136,16 @@ import com.google.cloud.oracledatabase.v1.ListCloudVmClustersRequest;
 import com.google.cloud.oracledatabase.v1.ListCloudVmClustersResponse;
 import com.google.cloud.oracledatabase.v1.ListDatabaseCharacterSetsRequest;
 import com.google.cloud.oracledatabase.v1.ListDatabaseCharacterSetsResponse;
+import com.google.cloud.oracledatabase.v1.ListDatabaseConnectionsRequest;
+import com.google.cloud.oracledatabase.v1.ListDatabaseConnectionsResponse;
 import com.google.cloud.oracledatabase.v1.ListDatabasesRequest;
 import com.google.cloud.oracledatabase.v1.ListDatabasesResponse;
 import com.google.cloud.oracledatabase.v1.ListDbNodesRequest;
 import com.google.cloud.oracledatabase.v1.ListDbNodesResponse;
 import com.google.cloud.oracledatabase.v1.ListDbServersRequest;
 import com.google.cloud.oracledatabase.v1.ListDbServersResponse;
+import com.google.cloud.oracledatabase.v1.ListDbSystemComputePerformancesRequest;
+import com.google.cloud.oracledatabase.v1.ListDbSystemComputePerformancesResponse;
 import com.google.cloud.oracledatabase.v1.ListDbSystemInitialStorageSizesRequest;
 import com.google.cloud.oracledatabase.v1.ListDbSystemInitialStorageSizesResponse;
 import com.google.cloud.oracledatabase.v1.ListDbSystemShapesRequest;
@@ -143,6 +160,8 @@ import com.google.cloud.oracledatabase.v1.ListExadbVmClustersRequest;
 import com.google.cloud.oracledatabase.v1.ListExadbVmClustersResponse;
 import com.google.cloud.oracledatabase.v1.ListExascaleDbStorageVaultsRequest;
 import com.google.cloud.oracledatabase.v1.ListExascaleDbStorageVaultsResponse;
+import com.google.cloud.oracledatabase.v1.ListFlexComponentsRequest;
+import com.google.cloud.oracledatabase.v1.ListFlexComponentsResponse;
 import com.google.cloud.oracledatabase.v1.ListGiVersionsRequest;
 import com.google.cloud.oracledatabase.v1.ListGiVersionsResponse;
 import com.google.cloud.oracledatabase.v1.ListGoldengateConnectionAssignmentsRequest;
@@ -183,10 +202,22 @@ import com.google.cloud.oracledatabase.v1.StartGoldengateDeploymentRequest;
 import com.google.cloud.oracledatabase.v1.StopAutonomousDatabaseRequest;
 import com.google.cloud.oracledatabase.v1.StopGoldengateDeploymentRequest;
 import com.google.cloud.oracledatabase.v1.SwitchoverAutonomousDatabaseRequest;
+import com.google.cloud.oracledatabase.v1.TestDatabaseConnectionRequest;
+import com.google.cloud.oracledatabase.v1.TestDatabaseConnectionResponse;
 import com.google.cloud.oracledatabase.v1.TestGoldengateConnectionAssignmentRequest;
 import com.google.cloud.oracledatabase.v1.TestGoldengateConnectionAssignmentResponse;
 import com.google.cloud.oracledatabase.v1.UpdateAutonomousDatabaseRequest;
+import com.google.cloud.oracledatabase.v1.UpdateCloudExadataInfrastructureRequest;
+import com.google.cloud.oracledatabase.v1.UpdateCloudVmClusterRequest;
+import com.google.cloud.oracledatabase.v1.UpdateDatabaseConnectionRequest;
+import com.google.cloud.oracledatabase.v1.UpdateDbSystemRequest;
 import com.google.cloud.oracledatabase.v1.UpdateExadbVmClusterRequest;
+import com.google.cloud.oracledatabase.v1.UpdateExascaleDbStorageVaultRequest;
+import com.google.cloud.oracledatabase.v1.UpdateGoldengateConnectionAssignmentRequest;
+import com.google.cloud.oracledatabase.v1.UpdateGoldengateConnectionRequest;
+import com.google.cloud.oracledatabase.v1.UpdateGoldengateDeploymentRequest;
+import com.google.cloud.oracledatabase.v1.UpdateOdbNetworkRequest;
+import com.google.cloud.oracledatabase.v1.UpdateOdbSubnetRequest;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.OperationsStub;
 import com.google.protobuf.Empty;
@@ -246,6 +277,19 @@ public abstract class OracleDatabaseStub implements BackgroundResource {
         "Not implemented: createCloudExadataInfrastructureCallable()");
   }
 
+  public OperationCallable<
+          UpdateCloudExadataInfrastructureRequest, CloudExadataInfrastructure, OperationMetadata>
+      updateCloudExadataInfrastructureOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: updateCloudExadataInfrastructureOperationCallable()");
+  }
+
+  public UnaryCallable<UpdateCloudExadataInfrastructureRequest, Operation>
+      updateCloudExadataInfrastructureCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: updateCloudExadataInfrastructureCallable()");
+  }
+
   public OperationCallable<DeleteCloudExadataInfrastructureRequest, Empty, OperationMetadata>
       deleteCloudExadataInfrastructureOperationCallable() {
     throw new UnsupportedOperationException(
@@ -297,6 +341,16 @@ public abstract class OracleDatabaseStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: createCloudVmClusterCallable()");
   }
 
+  public OperationCallable<UpdateCloudVmClusterRequest, CloudVmCluster, OperationMetadata>
+      updateCloudVmClusterOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: updateCloudVmClusterOperationCallable()");
+  }
+
+  public UnaryCallable<UpdateCloudVmClusterRequest, Operation> updateCloudVmClusterCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateCloudVmClusterCallable()");
+  }
+
   public OperationCallable<DeleteCloudVmClusterRequest, Empty, OperationMetadata>
       deleteCloudVmClusterOperationCallable() {
     throw new UnsupportedOperationException(
@@ -307,6 +361,58 @@ public abstract class OracleDatabaseStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: deleteCloudVmClusterCallable()");
   }
 
+  public OperationCallable<
+          EnableCloudVmClusterIdentityConnectorRequest, CloudVmCluster, OperationMetadata>
+      enableCloudVmClusterIdentityConnectorOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: enableCloudVmClusterIdentityConnectorOperationCallable()");
+  }
+
+  public UnaryCallable<EnableCloudVmClusterIdentityConnectorRequest, Operation>
+      enableCloudVmClusterIdentityConnectorCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: enableCloudVmClusterIdentityConnectorCallable()");
+  }
+
+  public OperationCallable<
+          DisableCloudVmClusterIdentityConnectorRequest, CloudVmCluster, OperationMetadata>
+      disableCloudVmClusterIdentityConnectorOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: disableCloudVmClusterIdentityConnectorOperationCallable()");
+  }
+
+  public UnaryCallable<DisableCloudVmClusterIdentityConnectorRequest, Operation>
+      disableCloudVmClusterIdentityConnectorCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: disableCloudVmClusterIdentityConnectorCallable()");
+  }
+
+  public OperationCallable<
+          EnableExadbVmClusterIdentityConnectorRequest, ExadbVmCluster, OperationMetadata>
+      enableExadbVmClusterIdentityConnectorOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: enableExadbVmClusterIdentityConnectorOperationCallable()");
+  }
+
+  public UnaryCallable<EnableExadbVmClusterIdentityConnectorRequest, Operation>
+      enableExadbVmClusterIdentityConnectorCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: enableExadbVmClusterIdentityConnectorCallable()");
+  }
+
+  public OperationCallable<
+          DisableExadbVmClusterIdentityConnectorRequest, ExadbVmCluster, OperationMetadata>
+      disableExadbVmClusterIdentityConnectorOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: disableExadbVmClusterIdentityConnectorOperationCallable()");
+  }
+
+  public UnaryCallable<DisableExadbVmClusterIdentityConnectorRequest, Operation>
+      disableExadbVmClusterIdentityConnectorCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: disableExadbVmClusterIdentityConnectorCallable()");
+  }
+
   public UnaryCallable<ListEntitlementsRequest, ListEntitlementsPagedResponse>
       listEntitlementsPagedCallable() {
     throw new UnsupportedOperationException("Not implemented: listEntitlementsPagedCallable()");
@@ -315,6 +421,16 @@ public abstract class OracleDatabaseStub implements BackgroundResource {
   public UnaryCallable<ListEntitlementsRequest, ListEntitlementsResponse>
       listEntitlementsCallable() {
     throw new UnsupportedOperationException("Not implemented: listEntitlementsCallable()");
+  }
+
+  public UnaryCallable<ListFlexComponentsRequest, ListFlexComponentsPagedResponse>
+      listFlexComponentsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listFlexComponentsPagedCallable()");
+  }
+
+  public UnaryCallable<ListFlexComponentsRequest, ListFlexComponentsResponse>
+      listFlexComponentsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listFlexComponentsCallable()");
   }
 
   public UnaryCallable<ListDbServersRequest, ListDbServersPagedResponse>
@@ -566,6 +682,15 @@ public abstract class OracleDatabaseStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: createOdbNetworkCallable()");
   }
 
+  public OperationCallable<UpdateOdbNetworkRequest, OdbNetwork, OperationMetadata>
+      updateOdbNetworkOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateOdbNetworkOperationCallable()");
+  }
+
+  public UnaryCallable<UpdateOdbNetworkRequest, Operation> updateOdbNetworkCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateOdbNetworkCallable()");
+  }
+
   public OperationCallable<DeleteOdbNetworkRequest, Empty, OperationMetadata>
       deleteOdbNetworkOperationCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteOdbNetworkOperationCallable()");
@@ -595,6 +720,15 @@ public abstract class OracleDatabaseStub implements BackgroundResource {
 
   public UnaryCallable<CreateOdbSubnetRequest, Operation> createOdbSubnetCallable() {
     throw new UnsupportedOperationException("Not implemented: createOdbSubnetCallable()");
+  }
+
+  public OperationCallable<UpdateOdbSubnetRequest, OdbSubnet, OperationMetadata>
+      updateOdbSubnetOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateOdbSubnetOperationCallable()");
+  }
+
+  public UnaryCallable<UpdateOdbSubnetRequest, Operation> updateOdbSubnetCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateOdbSubnetCallable()");
   }
 
   public OperationCallable<DeleteOdbSubnetRequest, Empty, OperationMetadata>
@@ -724,6 +858,19 @@ public abstract class OracleDatabaseStub implements BackgroundResource {
         "Not implemented: createExascaleDbStorageVaultCallable()");
   }
 
+  public OperationCallable<
+          UpdateExascaleDbStorageVaultRequest, ExascaleDbStorageVault, OperationMetadata>
+      updateExascaleDbStorageVaultOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: updateExascaleDbStorageVaultOperationCallable()");
+  }
+
+  public UnaryCallable<UpdateExascaleDbStorageVaultRequest, Operation>
+      updateExascaleDbStorageVaultCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: updateExascaleDbStorageVaultCallable()");
+  }
+
   public OperationCallable<DeleteExascaleDbStorageVaultRequest, Empty, OperationMetadata>
       deleteExascaleDbStorageVaultOperationCallable() {
     throw new UnsupportedOperationException(
@@ -748,6 +895,20 @@ public abstract class OracleDatabaseStub implements BackgroundResource {
       listDbSystemInitialStorageSizesCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: listDbSystemInitialStorageSizesCallable()");
+  }
+
+  public UnaryCallable<
+          ListDbSystemComputePerformancesRequest, ListDbSystemComputePerformancesPagedResponse>
+      listDbSystemComputePerformancesPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listDbSystemComputePerformancesPagedCallable()");
+  }
+
+  public UnaryCallable<
+          ListDbSystemComputePerformancesRequest, ListDbSystemComputePerformancesResponse>
+      listDbSystemComputePerformancesCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listDbSystemComputePerformancesCallable()");
   }
 
   public UnaryCallable<ListDatabasesRequest, ListDatabasesPagedResponse>
@@ -801,6 +962,15 @@ public abstract class OracleDatabaseStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: createDbSystemCallable()");
   }
 
+  public OperationCallable<UpdateDbSystemRequest, DbSystem, OperationMetadata>
+      updateDbSystemOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateDbSystemOperationCallable()");
+  }
+
+  public UnaryCallable<UpdateDbSystemRequest, Operation> updateDbSystemCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateDbSystemCallable()");
+  }
+
   public OperationCallable<DeleteDbSystemRequest, Empty, OperationMetadata>
       deleteDbSystemOperationCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteDbSystemOperationCallable()");
@@ -837,6 +1007,19 @@ public abstract class OracleDatabaseStub implements BackgroundResource {
       createGoldengateDeploymentCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: createGoldengateDeploymentCallable()");
+  }
+
+  public OperationCallable<
+          UpdateGoldengateDeploymentRequest, GoldengateDeployment, OperationMetadata>
+      updateGoldengateDeploymentOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: updateGoldengateDeploymentOperationCallable()");
+  }
+
+  public UnaryCallable<UpdateGoldengateDeploymentRequest, Operation>
+      updateGoldengateDeploymentCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: updateGoldengateDeploymentCallable()");
   }
 
   public OperationCallable<DeleteGoldengateDeploymentRequest, Empty, OperationMetadata>
@@ -901,6 +1084,19 @@ public abstract class OracleDatabaseStub implements BackgroundResource {
       createGoldengateConnectionCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: createGoldengateConnectionCallable()");
+  }
+
+  public OperationCallable<
+          UpdateGoldengateConnectionRequest, GoldengateConnection, OperationMetadata>
+      updateGoldengateConnectionOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: updateGoldengateConnectionOperationCallable()");
+  }
+
+  public UnaryCallable<UpdateGoldengateConnectionRequest, Operation>
+      updateGoldengateConnectionCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: updateGoldengateConnectionCallable()");
   }
 
   public OperationCallable<DeleteGoldengateConnectionRequest, Empty, OperationMetadata>
@@ -1026,6 +1222,21 @@ public abstract class OracleDatabaseStub implements BackgroundResource {
         "Not implemented: createGoldengateConnectionAssignmentCallable()");
   }
 
+  public OperationCallable<
+          UpdateGoldengateConnectionAssignmentRequest,
+          GoldengateConnectionAssignment,
+          OperationMetadata>
+      updateGoldengateConnectionAssignmentOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: updateGoldengateConnectionAssignmentOperationCallable()");
+  }
+
+  public UnaryCallable<UpdateGoldengateConnectionAssignmentRequest, Operation>
+      updateGoldengateConnectionAssignmentCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: updateGoldengateConnectionAssignmentCallable()");
+  }
+
   public OperationCallable<DeleteGoldengateConnectionAssignmentRequest, Empty, OperationMetadata>
       deleteGoldengateConnectionAssignmentOperationCallable() {
     throw new UnsupportedOperationException(
@@ -1043,6 +1254,64 @@ public abstract class OracleDatabaseStub implements BackgroundResource {
       testGoldengateConnectionAssignmentCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: testGoldengateConnectionAssignmentCallable()");
+  }
+
+  public UnaryCallable<ListDatabaseConnectionsRequest, ListDatabaseConnectionsPagedResponse>
+      listDatabaseConnectionsPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listDatabaseConnectionsPagedCallable()");
+  }
+
+  public UnaryCallable<ListDatabaseConnectionsRequest, ListDatabaseConnectionsResponse>
+      listDatabaseConnectionsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listDatabaseConnectionsCallable()");
+  }
+
+  public UnaryCallable<GetDatabaseConnectionRequest, DatabaseConnection>
+      getDatabaseConnectionCallable() {
+    throw new UnsupportedOperationException("Not implemented: getDatabaseConnectionCallable()");
+  }
+
+  public OperationCallable<CreateDatabaseConnectionRequest, DatabaseConnection, OperationMetadata>
+      createDatabaseConnectionOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: createDatabaseConnectionOperationCallable()");
+  }
+
+  public UnaryCallable<CreateDatabaseConnectionRequest, Operation>
+      createDatabaseConnectionCallable() {
+    throw new UnsupportedOperationException("Not implemented: createDatabaseConnectionCallable()");
+  }
+
+  public OperationCallable<UpdateDatabaseConnectionRequest, DatabaseConnection, OperationMetadata>
+      updateDatabaseConnectionOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: updateDatabaseConnectionOperationCallable()");
+  }
+
+  public UnaryCallable<UpdateDatabaseConnectionRequest, Operation>
+      updateDatabaseConnectionCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateDatabaseConnectionCallable()");
+  }
+
+  public OperationCallable<DeleteDatabaseConnectionRequest, Empty, OperationMetadata>
+      deleteDatabaseConnectionOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: deleteDatabaseConnectionOperationCallable()");
+  }
+
+  public UnaryCallable<DeleteDatabaseConnectionRequest, Operation>
+      deleteDatabaseConnectionCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteDatabaseConnectionCallable()");
+  }
+
+  public UnaryCallable<TestDatabaseConnectionRequest, TestDatabaseConnectionResponse>
+      testDatabaseConnectionCallable() {
+    throw new UnsupportedOperationException("Not implemented: testDatabaseConnectionCallable()");
+  }
+
+  public UnaryCallable<ExecuteSqlRequest, ExecuteSqlResponse> executeSqlCallable() {
+    throw new UnsupportedOperationException("Not implemented: executeSqlCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

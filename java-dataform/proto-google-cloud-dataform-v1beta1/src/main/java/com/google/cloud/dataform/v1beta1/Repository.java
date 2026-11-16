@@ -263,6 +263,57 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * Optional. Resource name for the Account Connector used for personal
+     * authentication. Must be in the format
+     * `projects/&#42;&#47;locations/&#42;&#47;accountConnectors/&#42;`
+     * </pre>
+     *
+     * <code>
+     * optional string account_connector = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return Whether the accountConnector field is set.
+     */
+    boolean hasAccountConnector();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Resource name for the Account Connector used for personal
+     * authentication. Must be in the format
+     * `projects/&#42;&#47;locations/&#42;&#47;accountConnectors/&#42;`
+     * </pre>
+     *
+     * <code>
+     * optional string account_connector = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The accountConnector.
+     */
+    java.lang.String getAccountConnector();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Resource name for the Account Connector used for personal
+     * authentication. Must be in the format
+     * `projects/&#42;&#47;locations/&#42;&#47;accountConnectors/&#42;`
+     * </pre>
+     *
+     * <code>
+     * optional string account_connector = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for accountConnector.
+     */
+    com.google.protobuf.ByteString getAccountConnectorBytes();
+
+    /**
+     *
+     *
+     * <pre>
      * Optional. Resource name for the `GitRepositoryLink` used for machine
      * credentials. Must be in the format
      * `projects/&#42;&#47;locations/&#42;&#47;connections/&#42;&#47;gitRepositoryLinks/&#42;`
@@ -324,7 +375,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.dataform.v1beta1.Repository.GitRemoteSettings.token_status is
-     *     deprecated. See google/cloud/dataform/v1beta1/dataform.proto;l=964
+     *     deprecated. See google/cloud/dataform/v1beta1/dataform.proto;l=1002
      * @return The enum numeric value on the wire for tokenStatus.
      */
     @java.lang.Deprecated
@@ -344,7 +395,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.dataform.v1beta1.Repository.GitRemoteSettings.token_status is
-     *     deprecated. See google/cloud/dataform/v1beta1/dataform.proto;l=964
+     *     deprecated. See google/cloud/dataform/v1beta1/dataform.proto;l=1002
      * @return The tokenStatus.
      */
     @java.lang.Deprecated
@@ -386,6 +437,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
       defaultBranch_ = "";
       effectiveDefaultBranch_ = "";
       authenticationTokenSecretVersion_ = "";
+      accountConnector_ = "";
       gitRepositoryLink_ = "";
       tokenStatus_ = 0;
     }
@@ -1831,6 +1883,87 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
           : sshAuthenticationConfig_;
     }
 
+    public static final int ACCOUNT_CONNECTOR_FIELD_NUMBER = 6;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object accountConnector_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Resource name for the Account Connector used for personal
+     * authentication. Must be in the format
+     * `projects/&#42;&#47;locations/&#42;&#47;accountConnectors/&#42;`
+     * </pre>
+     *
+     * <code>
+     * optional string account_connector = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return Whether the accountConnector field is set.
+     */
+    @java.lang.Override
+    public boolean hasAccountConnector() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Resource name for the Account Connector used for personal
+     * authentication. Must be in the format
+     * `projects/&#42;&#47;locations/&#42;&#47;accountConnectors/&#42;`
+     * </pre>
+     *
+     * <code>
+     * optional string account_connector = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The accountConnector.
+     */
+    @java.lang.Override
+    public java.lang.String getAccountConnector() {
+      java.lang.Object ref = accountConnector_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        accountConnector_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Resource name for the Account Connector used for personal
+     * authentication. Must be in the format
+     * `projects/&#42;&#47;locations/&#42;&#47;accountConnectors/&#42;`
+     * </pre>
+     *
+     * <code>
+     * optional string account_connector = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for accountConnector.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getAccountConnectorBytes() {
+      java.lang.Object ref = accountConnector_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        accountConnector_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     public static final int GIT_REPOSITORY_LINK_FIELD_NUMBER = 7;
 
     @SuppressWarnings("serial")
@@ -1853,7 +1986,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasGitRepositoryLink() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
 
     /**
@@ -1929,7 +2062,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.dataform.v1beta1.Repository.GitRemoteSettings.token_status is
-     *     deprecated. See google/cloud/dataform/v1beta1/dataform.proto;l=964
+     *     deprecated. See google/cloud/dataform/v1beta1/dataform.proto;l=1002
      * @return The enum numeric value on the wire for tokenStatus.
      */
     @java.lang.Override
@@ -1952,7 +2085,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.dataform.v1beta1.Repository.GitRemoteSettings.token_status is
-     *     deprecated. See google/cloud/dataform/v1beta1/dataform.proto;l=964
+     *     deprecated. See google/cloud/dataform/v1beta1/dataform.proto;l=1002
      * @return The tokenStatus.
      */
     @java.lang.Override
@@ -2001,6 +2134,9 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
         output.writeMessage(5, getSshAuthenticationConfig());
       }
       if (((bitField0_ & 0x00000002) != 0)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 6, accountConnector_);
+      }
+      if (((bitField0_ & 0x00000004) != 0)) {
         com.google.protobuf.GeneratedMessage.writeString(output, 7, gitRepositoryLink_);
       }
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(effectiveDefaultBranch_)) {
@@ -2038,6 +2174,9 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
                 5, getSshAuthenticationConfig());
       }
       if (((bitField0_ & 0x00000002) != 0)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(6, accountConnector_);
+      }
+      if (((bitField0_ & 0x00000004) != 0)) {
         size += com.google.protobuf.GeneratedMessage.computeStringSize(7, gitRepositoryLink_);
       }
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(effectiveDefaultBranch_)) {
@@ -2068,6 +2207,10 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
       if (hasSshAuthenticationConfig()) {
         if (!getSshAuthenticationConfig().equals(other.getSshAuthenticationConfig())) return false;
       }
+      if (hasAccountConnector() != other.hasAccountConnector()) return false;
+      if (hasAccountConnector()) {
+        if (!getAccountConnector().equals(other.getAccountConnector())) return false;
+      }
       if (hasGitRepositoryLink() != other.hasGitRepositoryLink()) return false;
       if (hasGitRepositoryLink()) {
         if (!getGitRepositoryLink().equals(other.getGitRepositoryLink())) return false;
@@ -2095,6 +2238,10 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
       if (hasSshAuthenticationConfig()) {
         hash = (37 * hash) + SSH_AUTHENTICATION_CONFIG_FIELD_NUMBER;
         hash = (53 * hash) + getSshAuthenticationConfig().hashCode();
+      }
+      if (hasAccountConnector()) {
+        hash = (37 * hash) + ACCOUNT_CONNECTOR_FIELD_NUMBER;
+        hash = (53 * hash) + getAccountConnector().hashCode();
       }
       if (hasGitRepositoryLink()) {
         hash = (37 * hash) + GIT_REPOSITORY_LINK_FIELD_NUMBER;
@@ -2261,6 +2408,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
           sshAuthenticationConfigBuilder_.dispose();
           sshAuthenticationConfigBuilder_ = null;
         }
+        accountConnector_ = "";
         gitRepositoryLink_ = "";
         tokenStatus_ = 0;
         return this;
@@ -2322,10 +2470,14 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
           to_bitField0_ |= 0x00000001;
         }
         if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.gitRepositoryLink_ = gitRepositoryLink_;
+          result.accountConnector_ = accountConnector_;
           to_bitField0_ |= 0x00000002;
         }
         if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.gitRepositoryLink_ = gitRepositoryLink_;
+          to_bitField0_ |= 0x00000004;
+        }
+        if (((from_bitField0_ & 0x00000080) != 0)) {
           result.tokenStatus_ = tokenStatus_;
         }
         result.bitField0_ |= to_bitField0_;
@@ -2369,9 +2521,14 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
         if (other.hasSshAuthenticationConfig()) {
           mergeSshAuthenticationConfig(other.getSshAuthenticationConfig());
         }
+        if (other.hasAccountConnector()) {
+          accountConnector_ = other.accountConnector_;
+          bitField0_ |= 0x00000020;
+          onChanged();
+        }
         if (other.hasGitRepositoryLink()) {
           gitRepositoryLink_ = other.gitRepositoryLink_;
-          bitField0_ |= 0x00000020;
+          bitField0_ |= 0x00000040;
           onChanged();
         }
         if (other.tokenStatus_ != 0) {
@@ -2424,7 +2581,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
               case 32:
                 {
                   tokenStatus_ = input.readEnum();
-                  bitField0_ |= 0x00000040;
+                  bitField0_ |= 0x00000080;
                   break;
                 } // case 32
               case 42:
@@ -2435,10 +2592,16 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
                   bitField0_ |= 0x00000010;
                   break;
                 } // case 42
+              case 50:
+                {
+                  accountConnector_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000020;
+                  break;
+                } // case 50
               case 58:
                 {
                   gitRepositoryLink_ = input.readStringRequireUtf8();
-                  bitField0_ |= 0x00000020;
+                  bitField0_ |= 0x00000040;
                   break;
                 } // case 58
               case 74:
@@ -3190,6 +3353,156 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
         return sshAuthenticationConfigBuilder_;
       }
 
+      private java.lang.Object accountConnector_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Resource name for the Account Connector used for personal
+       * authentication. Must be in the format
+       * `projects/&#42;&#47;locations/&#42;&#47;accountConnectors/&#42;`
+       * </pre>
+       *
+       * <code>
+       * optional string account_connector = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return Whether the accountConnector field is set.
+       */
+      public boolean hasAccountConnector() {
+        return ((bitField0_ & 0x00000020) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Resource name for the Account Connector used for personal
+       * authentication. Must be in the format
+       * `projects/&#42;&#47;locations/&#42;&#47;accountConnectors/&#42;`
+       * </pre>
+       *
+       * <code>
+       * optional string account_connector = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return The accountConnector.
+       */
+      public java.lang.String getAccountConnector() {
+        java.lang.Object ref = accountConnector_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          accountConnector_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Resource name for the Account Connector used for personal
+       * authentication. Must be in the format
+       * `projects/&#42;&#47;locations/&#42;&#47;accountConnectors/&#42;`
+       * </pre>
+       *
+       * <code>
+       * optional string account_connector = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return The bytes for accountConnector.
+       */
+      public com.google.protobuf.ByteString getAccountConnectorBytes() {
+        java.lang.Object ref = accountConnector_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          accountConnector_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Resource name for the Account Connector used for personal
+       * authentication. Must be in the format
+       * `projects/&#42;&#47;locations/&#42;&#47;accountConnectors/&#42;`
+       * </pre>
+       *
+       * <code>
+       * optional string account_connector = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @param value The accountConnector to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAccountConnector(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        accountConnector_ = value;
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Resource name for the Account Connector used for personal
+       * authentication. Must be in the format
+       * `projects/&#42;&#47;locations/&#42;&#47;accountConnectors/&#42;`
+       * </pre>
+       *
+       * <code>
+       * optional string account_connector = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearAccountConnector() {
+        accountConnector_ = getDefaultInstance().getAccountConnector();
+        bitField0_ = (bitField0_ & ~0x00000020);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Resource name for the Account Connector used for personal
+       * authentication. Must be in the format
+       * `projects/&#42;&#47;locations/&#42;&#47;accountConnectors/&#42;`
+       * </pre>
+       *
+       * <code>
+       * optional string account_connector = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @param value The bytes for accountConnector to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAccountConnectorBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        accountConnector_ = value;
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+
       private java.lang.Object gitRepositoryLink_ = "";
 
       /**
@@ -3208,7 +3521,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
        * @return Whether the gitRepositoryLink field is set.
        */
       public boolean hasGitRepositoryLink() {
-        return ((bitField0_ & 0x00000020) != 0);
+        return ((bitField0_ & 0x00000040) != 0);
       }
 
       /**
@@ -3286,7 +3599,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         gitRepositoryLink_ = value;
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -3308,7 +3621,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
        */
       public Builder clearGitRepositoryLink() {
         gitRepositoryLink_ = getDefaultInstance().getGitRepositoryLink();
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000040);
         onChanged();
         return this;
       }
@@ -3335,7 +3648,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
         }
         checkByteStringIsUtf8(value);
         gitRepositoryLink_ = value;
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -3356,7 +3669,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
        * </code>
        *
        * @deprecated google.cloud.dataform.v1beta1.Repository.GitRemoteSettings.token_status is
-       *     deprecated. See google/cloud/dataform/v1beta1/dataform.proto;l=964
+       *     deprecated. See google/cloud/dataform/v1beta1/dataform.proto;l=1002
        * @return The enum numeric value on the wire for tokenStatus.
        */
       @java.lang.Override
@@ -3379,14 +3692,14 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
        * </code>
        *
        * @deprecated google.cloud.dataform.v1beta1.Repository.GitRemoteSettings.token_status is
-       *     deprecated. See google/cloud/dataform/v1beta1/dataform.proto;l=964
+       *     deprecated. See google/cloud/dataform/v1beta1/dataform.proto;l=1002
        * @param value The enum numeric value on the wire for tokenStatus to set.
        * @return This builder for chaining.
        */
       @java.lang.Deprecated
       public Builder setTokenStatusValue(int value) {
         tokenStatus_ = value;
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -3405,7 +3718,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
        * </code>
        *
        * @deprecated google.cloud.dataform.v1beta1.Repository.GitRemoteSettings.token_status is
-       *     deprecated. See google/cloud/dataform/v1beta1/dataform.proto;l=964
+       *     deprecated. See google/cloud/dataform/v1beta1/dataform.proto;l=1002
        * @return The tokenStatus.
        */
       @java.lang.Override
@@ -3435,7 +3748,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
        * </code>
        *
        * @deprecated google.cloud.dataform.v1beta1.Repository.GitRemoteSettings.token_status is
-       *     deprecated. See google/cloud/dataform/v1beta1/dataform.proto;l=964
+       *     deprecated. See google/cloud/dataform/v1beta1/dataform.proto;l=1002
        * @param value The tokenStatus to set.
        * @return This builder for chaining.
        */
@@ -3445,7 +3758,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         tokenStatus_ = value.getNumber();
         onChanged();
         return this;
@@ -3465,12 +3778,12 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
        * </code>
        *
        * @deprecated google.cloud.dataform.v1beta1.Repository.GitRemoteSettings.token_status is
-       *     deprecated. See google/cloud/dataform/v1beta1/dataform.proto;l=964
+       *     deprecated. See google/cloud/dataform/v1beta1/dataform.proto;l=1002
        * @return This builder for chaining.
        */
       @java.lang.Deprecated
       public Builder clearTokenStatus() {
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000080);
         tokenStatus_ = 0;
         onChanged();
         return this;

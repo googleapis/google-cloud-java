@@ -64,6 +64,9 @@ public interface CreateAutoProtectionPolicyRequestOrBuilder
    * <pre>
    * Required. The ID to use for the policy.
    * This will become the final component of the policy's resource name.
+   *
+   * This value must start with a lowercase letter followed by up to 62
+   * lowercase letters, numbers, or hyphens, and cannot end with a hyphen.
    * </pre>
    *
    * <code>string auto_protection_policy_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -78,6 +81,9 @@ public interface CreateAutoProtectionPolicyRequestOrBuilder
    * <pre>
    * Required. The ID to use for the policy.
    * This will become the final component of the policy's resource name.
+   *
+   * This value must start with a lowercase letter followed by up to 62
+   * lowercase letters, numbers, or hyphens, and cannot end with a hyphen.
    * </pre>
    *
    * <code>string auto_protection_policy_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -128,4 +134,46 @@ public interface CreateAutoProtectionPolicyRequestOrBuilder
    * </code>
    */
   com.google.cloud.backupdr.v1beta.AutoProtectionPolicyOrBuilder getAutoProtectionPolicyOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. An optional request ID to identify requests. Specify a unique
+   * request ID so that if you must retry your request, the server will know to
+   * ignore the request if it has already been completed. The server will
+   * guarantee that for at least 60 minutes since the first request.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is
+   * not supported (00000000-0000-0000-0000-000000000000).
+   * </pre>
+   *
+   * <code>
+   * string request_id = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+   * </code>
+   *
+   * @return The requestId.
+   */
+  java.lang.String getRequestId();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. An optional request ID to identify requests. Specify a unique
+   * request ID so that if you must retry your request, the server will know to
+   * ignore the request if it has already been completed. The server will
+   * guarantee that for at least 60 minutes since the first request.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is
+   * not supported (00000000-0000-0000-0000-000000000000).
+   * </pre>
+   *
+   * <code>
+   * string request_id = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+   * </code>
+   *
+   * @return The bytes for requestId.
+   */
+  com.google.protobuf.ByteString getRequestIdBytes();
 }

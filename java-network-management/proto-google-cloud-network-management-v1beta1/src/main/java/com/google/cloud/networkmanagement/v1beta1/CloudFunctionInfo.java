@@ -134,7 +134,9 @@ public final class CloudFunctionInfo extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * URI of a Cloud Function.
+   * URI of the Cloud Function.
+   * Format:
+   * `projects/{project_id}/locations/{location}/functions/{function_id}`
    * </pre>
    *
    * <code>string uri = 2;</code>
@@ -158,7 +160,9 @@ public final class CloudFunctionInfo extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * URI of a Cloud Function.
+   * URI of the Cloud Function.
+   * Format:
+   * `projects/{project_id}/locations/{location}/functions/{function_id}`
    * </pre>
    *
    * <code>string uri = 2;</code>
@@ -751,7 +755,9 @@ public final class CloudFunctionInfo extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * URI of a Cloud Function.
+     * URI of the Cloud Function.
+     * Format:
+     * `projects/{project_id}/locations/{location}/functions/{function_id}`
      * </pre>
      *
      * <code>string uri = 2;</code>
@@ -774,7 +780,9 @@ public final class CloudFunctionInfo extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * URI of a Cloud Function.
+     * URI of the Cloud Function.
+     * Format:
+     * `projects/{project_id}/locations/{location}/functions/{function_id}`
      * </pre>
      *
      * <code>string uri = 2;</code>
@@ -797,7 +805,9 @@ public final class CloudFunctionInfo extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * URI of a Cloud Function.
+     * URI of the Cloud Function.
+     * Format:
+     * `projects/{project_id}/locations/{location}/functions/{function_id}`
      * </pre>
      *
      * <code>string uri = 2;</code>
@@ -819,7 +829,9 @@ public final class CloudFunctionInfo extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * URI of a Cloud Function.
+     * URI of the Cloud Function.
+     * Format:
+     * `projects/{project_id}/locations/{location}/functions/{function_id}`
      * </pre>
      *
      * <code>string uri = 2;</code>
@@ -837,7 +849,9 @@ public final class CloudFunctionInfo extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * URI of a Cloud Function.
+     * URI of the Cloud Function.
+     * Format:
+     * `projects/{project_id}/locations/{location}/functions/{function_id}`
      * </pre>
      *
      * <code>string uri = 2;</code>

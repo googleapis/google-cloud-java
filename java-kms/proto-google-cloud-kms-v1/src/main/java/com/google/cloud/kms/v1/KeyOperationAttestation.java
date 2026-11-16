@@ -118,6 +118,16 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
      * <code>CAVIUM_V2_COMPRESSED = 4;</code>
      */
     CAVIUM_V2_COMPRESSED(4),
+    /**
+     *
+     *
+     * <pre>
+     * Cavium HSM attestation V209, introduced in Cavium's version 2.09-0702.
+     * </pre>
+     *
+     * <code>CAVIUM_V209 = 5;</code>
+     */
+    CAVIUM_V209(5),
     UNRECOGNIZED(-1),
     ;
 
@@ -169,6 +179,17 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
      */
     public static final int CAVIUM_V2_COMPRESSED_VALUE = 4;
 
+    /**
+     *
+     *
+     * <pre>
+     * Cavium HSM attestation V209, introduced in Cavium's version 2.09-0702.
+     * </pre>
+     *
+     * <code>CAVIUM_V209 = 5;</code>
+     */
+    public static final int CAVIUM_V209_VALUE = 5;
+
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -199,6 +220,8 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
           return CAVIUM_V1_COMPRESSED;
         case 4:
           return CAVIUM_V2_COMPRESSED;
+        case 5:
+          return CAVIUM_V209;
         default:
           return null;
       }

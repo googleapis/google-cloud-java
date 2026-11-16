@@ -33,14 +33,12 @@ import com.google.cloud.storage.TransportCompatibility.Transport;
 import com.google.cloud.storage.it.ChecksummedTestContent;
 import com.google.cloud.storage.it.runner.StorageITRunner;
 import com.google.cloud.storage.it.runner.annotations.Backend;
-import com.google.cloud.storage.it.runner.annotations.BucketFixture;
-import com.google.cloud.storage.it.runner.annotations.BucketType;
 import com.google.cloud.storage.it.runner.annotations.CrossRun;
 import com.google.cloud.storage.it.runner.annotations.Inject;
+import com.google.cloud.storage.it.runner.annotations.LocationType;
 import com.google.cloud.storage.it.runner.annotations.Parameterized;
 import com.google.cloud.storage.it.runner.annotations.Parameterized.Parameter;
 import com.google.cloud.storage.it.runner.annotations.Parameterized.ParametersProvider;
-import com.google.cloud.storage.it.runner.registry.Generator;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableList;
 import com.google.common.io.ByteStreams;
@@ -60,17 +58,16 @@ import org.junit.runner.RunWith;
 @RunWith(StorageITRunner.class)
 @CrossRun(
     backends = {Backend.TEST_BENCH, Backend.PROD},
-    transports = Transport.GRPC)
+    transports = Transport.GRPC,
+    locations = {LocationType.ZONAL_RAPID, LocationType.REGIONAL_RAPID})
+// TODO: Enable REGIONAL_RAPID tests once RCU is available in prod
+@CrossRun.Ignore(locations = {LocationType.REGIONAL_RAPID})
 @Parameterized(UploadConfigParameters.class)
 public final class ITAppendableUploadTest {
 
-  @Inject public Generator generator;
-
   @Inject public Storage storage;
 
-  @Inject
-  @BucketFixture(BucketType.RAPID)
-  public BucketInfo bucket;
+  @Inject public BucketInfo bucket;
 
   @Inject public Backend backend;
 
@@ -87,7 +84,10 @@ public final class ITAppendableUploadTest {
 
     BlobAppendableUpload upload =
         storage.blobAppendableUpload(
-            BlobInfo.newBuilder(bucket, UUID.randomUUID().toString()).build(), p.uploadConfig);
+            BlobInfo.newBuilder(bucket, UUID.randomUUID().toString())
+                .setStorageClass(StorageClass.valueOf("RAPID"))
+                .build(),
+            p.uploadConfig);
 
     upload.open().close();
 
@@ -111,7 +111,10 @@ public final class ITAppendableUploadTest {
 
     BlobAppendableUpload upload =
         storage.blobAppendableUpload(
-            BlobInfo.newBuilder(bucket, UUID.randomUUID().toString()).build(), p.uploadConfig);
+            BlobInfo.newBuilder(bucket, UUID.randomUUID().toString())
+                .setStorageClass(StorageClass.valueOf("RAPID"))
+                .build(),
+            p.uploadConfig);
 
     // cut out the middle + 1 byte
     int length = p.content.length();
@@ -144,7 +147,10 @@ public final class ITAppendableUploadTest {
 
     BlobAppendableUpload upload =
         storage.blobAppendableUpload(
-            BlobInfo.newBuilder(bucket, UUID.randomUUID().toString()).build(), p.uploadConfig);
+            BlobInfo.newBuilder(bucket, UUID.randomUUID().toString())
+                .setStorageClass(StorageClass.valueOf("RAPID"))
+                .build(),
+            p.uploadConfig);
 
     try (AppendableUploadWriteableByteChannel channel = upload.open()) {
       ByteBuffer src = p.content.asByteBuffer();
@@ -182,7 +188,9 @@ public final class ITAppendableUploadTest {
         p.uploadConfig.withCloseAction(CloseAction.CLOSE_WITHOUT_FINALIZING);
 
     BlobAppendableUpload upload =
-        storage.blobAppendableUpload(BlobInfo.newBuilder(id).build(), doNotFinalizeConfig);
+        storage.blobAppendableUpload(
+            BlobInfo.newBuilder(id).setStorageClass(StorageClass.valueOf("RAPID")).build(),
+            doNotFinalizeConfig);
     try (AppendableUploadWriteableByteChannel channel = upload.open()) {
       int written = Buffers.emptyTo(ByteBuffer.wrap(c1.getBytes()), channel);
       assertThat(written).isEqualTo(c1.length());
@@ -193,7 +201,10 @@ public final class ITAppendableUploadTest {
 
     BlobAppendableUpload takeOver =
         storage.blobAppendableUpload(
-            BlobInfo.newBuilder(done1.getBlobId()).build(), p.uploadConfig);
+            BlobInfo.newBuilder(done1.getBlobId())
+                .setStorageClass(StorageClass.valueOf("RAPID"))
+                .build(),
+            p.uploadConfig);
     try (AppendableUploadWriteableByteChannel channel = takeOver.open()) {
       int written = Buffers.emptyTo(ByteBuffer.wrap(c2.getBytes()), channel);
       assertThat(written).isEqualTo(c2.length());
@@ -222,7 +233,9 @@ public final class ITAppendableUploadTest {
       }
 
       BlobAppendableUpload appendable =
-          storage.blobAppendableUpload(BlobInfo.newBuilder(bid).build(), p.uploadConfig);
+          storage.blobAppendableUpload(
+              BlobInfo.newBuilder(bid).setStorageClass(StorageClass.valueOf("RAPID")).build(),
+              p.uploadConfig);
       try (SeekableByteChannel r = tmpFile.reader();
           AppendableUploadWriteableByteChannel w = appendable.open()) {
         long copied = ByteStreams.copy(r, w);
@@ -244,7 +257,9 @@ public final class ITAppendableUploadTest {
         p.uploadConfig.getCloseAction() != CloseAction.FINALIZE_WHEN_CLOSING);
 
     BlobAppendableUpload upload =
-        storage.blobAppendableUpload(BlobInfo.newBuilder(bid).build(), p.uploadConfig);
+        storage.blobAppendableUpload(
+            BlobInfo.newBuilder(bid).setStorageClass(StorageClass.valueOf("RAPID")).build(),
+            p.uploadConfig);
     try (AppendableUploadWriteableByteChannel channel = upload.open()) {
       int written = Buffers.emptyTo(ByteBuffer.wrap(p.content.getBytes()), channel);
       assertThat(written).isEqualTo(p.content.length());
@@ -255,7 +270,10 @@ public final class ITAppendableUploadTest {
 
     BlobAppendableUpload takeOver =
         storage.blobAppendableUpload(
-            BlobInfo.newBuilder(done1.getBlobId()).build(), p.uploadConfig);
+            BlobInfo.newBuilder(done1.getBlobId())
+                .setStorageClass(StorageClass.valueOf("RAPID"))
+                .build(),
+            p.uploadConfig);
     takeOver.open().finalizeAndClose();
 
     BlobInfo done2 = takeOver.getResult().get(5, TimeUnit.SECONDS);
@@ -274,7 +292,9 @@ public final class ITAppendableUploadTest {
         p.uploadConfig.getCloseAction() != CloseAction.FINALIZE_WHEN_CLOSING);
 
     BlobAppendableUpload upload =
-        storage.blobAppendableUpload(BlobInfo.newBuilder(bid).build(), p.uploadConfig);
+        storage.blobAppendableUpload(
+            BlobInfo.newBuilder(bid).setStorageClass(StorageClass.valueOf("RAPID")).build(),
+            p.uploadConfig);
 
     try (AppendableUploadWriteableByteChannel channel = upload.open()) {
       int written = Buffers.emptyTo(ByteBuffer.wrap(p.content.getBytes()), channel);
@@ -298,7 +318,9 @@ public final class ITAppendableUploadTest {
         p.uploadConfig.getCloseAction() != CloseAction.FINALIZE_WHEN_CLOSING);
 
     BlobAppendableUpload upload =
-        storage.blobAppendableUpload(BlobInfo.newBuilder(bid).build(), p.uploadConfig);
+        storage.blobAppendableUpload(
+            BlobInfo.newBuilder(bid).setStorageClass(StorageClass.valueOf("RAPID")).build(),
+            p.uploadConfig);
 
     try (AppendableUploadWriteableByteChannel channel = upload.open()) {
       int written = Buffers.emptyTo(ByteBuffer.wrap(p.content.getBytes()), channel);
@@ -331,7 +353,9 @@ public final class ITAppendableUploadTest {
         p.uploadConfig.getCloseAction() != CloseAction.FINALIZE_WHEN_CLOSING);
 
     BlobAppendableUpload upload =
-        storage.blobAppendableUpload(BlobInfo.newBuilder(bid).build(), p.uploadConfig);
+        storage.blobAppendableUpload(
+            BlobInfo.newBuilder(bid).setStorageClass(StorageClass.valueOf("RAPID")).build(),
+            p.uploadConfig);
     try (AppendableUploadWriteableByteChannel channel = upload.open()) {
       int written = Buffers.emptyTo(ByteBuffer.wrap(p.content.getBytes()), channel);
       assertThat(written).isEqualTo(p.content.length());
@@ -342,7 +366,10 @@ public final class ITAppendableUploadTest {
 
     BlobAppendableUpload takeOver =
         storage.blobAppendableUpload(
-            BlobInfo.newBuilder(done1.getBlobId()).build(), p.uploadConfig);
+            BlobInfo.newBuilder(done1.getBlobId())
+                .setStorageClass(StorageClass.valueOf("RAPID"))
+                .build(),
+            p.uploadConfig);
 
     String badCrc = Utils.crc32cCodec.encode(Crc32cValue.zero().getValue());
     try (AppendableUploadWriteableByteChannel channel = takeOver.open()) {
@@ -372,7 +399,9 @@ public final class ITAppendableUploadTest {
         p.uploadConfig.getCloseAction() != CloseAction.FINALIZE_WHEN_CLOSING);
 
     BlobAppendableUpload upload =
-        storage.blobAppendableUpload(BlobInfo.newBuilder(bid).build(), p.uploadConfig);
+        storage.blobAppendableUpload(
+            BlobInfo.newBuilder(bid).setStorageClass(StorageClass.valueOf("RAPID")).build(),
+            p.uploadConfig);
     try (AppendableUploadWriteableByteChannel channel = upload.open()) {
       int written = Buffers.emptyTo(ByteBuffer.wrap(p.content.getBytes()), channel);
       assertThat(written).isEqualTo(p.content.length());
@@ -382,7 +411,10 @@ public final class ITAppendableUploadTest {
 
     BlobAppendableUpload takeOver =
         storage.blobAppendableUpload(
-            BlobInfo.newBuilder(done1.getBlobId()).build(), p.uploadConfig);
+            BlobInfo.newBuilder(done1.getBlobId())
+                .setStorageClass(StorageClass.valueOf("RAPID"))
+                .build(),
+            p.uploadConfig);
 
     try (AppendableUploadWriteableByteChannel channel = takeOver.open()) {
       int written = Buffers.emptyTo(ByteBuffer.wrap(p.content.getBytes()), channel);
@@ -409,7 +441,9 @@ public final class ITAppendableUploadTest {
         p.uploadConfig.getCloseAction() != CloseAction.FINALIZE_WHEN_CLOSING);
 
     BlobAppendableUpload upload =
-        storage.blobAppendableUpload(BlobInfo.newBuilder(bid).build(), p.uploadConfig);
+        storage.blobAppendableUpload(
+            BlobInfo.newBuilder(bid).setStorageClass(StorageClass.valueOf("RAPID")).build(),
+            p.uploadConfig);
     try (AppendableUploadWriteableByteChannel channel = upload.open()) {
       int written = Buffers.emptyTo(ByteBuffer.wrap(p.content.getBytes()), channel);
       assertThat(written).isEqualTo(p.content.length());
@@ -419,7 +453,10 @@ public final class ITAppendableUploadTest {
 
     BlobAppendableUpload takeOver =
         storage.blobAppendableUpload(
-            BlobInfo.newBuilder(done1.getBlobId()).build(), p.uploadConfig);
+            BlobInfo.newBuilder(done1.getBlobId())
+                .setStorageClass(StorageClass.valueOf("RAPID"))
+                .build(),
+            p.uploadConfig);
 
     try (AppendableUploadWriteableByteChannel channel = takeOver.open()) {
       int written = Buffers.emptyTo(ByteBuffer.wrap(p.content.getBytes()), channel);

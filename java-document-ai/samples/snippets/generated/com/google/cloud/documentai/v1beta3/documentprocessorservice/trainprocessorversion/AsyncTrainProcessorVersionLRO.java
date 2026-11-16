@@ -22,6 +22,7 @@ import com.google.cloud.documentai.v1beta3.DocumentProcessorServiceClient;
 import com.google.cloud.documentai.v1beta3.DocumentSchema;
 import com.google.cloud.documentai.v1beta3.ProcessorName;
 import com.google.cloud.documentai.v1beta3.ProcessorVersion;
+import com.google.cloud.documentai.v1beta3.ProcessorVersionOverrides;
 import com.google.cloud.documentai.v1beta3.TrainProcessorVersionMetadata;
 import com.google.cloud.documentai.v1beta3.TrainProcessorVersionRequest;
 import com.google.cloud.documentai.v1beta3.TrainProcessorVersionResponse;
@@ -47,6 +48,7 @@ public class AsyncTrainProcessorVersionLRO {
               .setDocumentSchema(DocumentSchema.newBuilder().build())
               .setInputData(TrainProcessorVersionRequest.InputData.newBuilder().build())
               .setBaseProcessorVersion("baseProcessorVersion337709271")
+              .setProcessorVersionOverrides(ProcessorVersionOverrides.newBuilder().build())
               .build();
       OperationFuture<TrainProcessorVersionResponse, TrainProcessorVersionMetadata> future =
           documentProcessorServiceClient

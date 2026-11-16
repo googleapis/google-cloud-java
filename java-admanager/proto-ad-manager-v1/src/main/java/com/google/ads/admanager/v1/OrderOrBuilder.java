@@ -768,15 +768,39 @@ public interface OrderOrBuilder
    *
    *
    * <pre>
-   * Output only. Indicates whether or not this Order has an end time.
+   * Output only. Deprecated: Indicates whether or not this Order has an end
+   * time.
    * </pre>
    *
-   * <code>optional bool unlimited_end_time = 45 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * <code>
+   * optional bool unlimited_end_time = 45 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
+   * @deprecated google.ads.admanager.v1.Order.unlimited_end_time is deprecated. See
+   *     google/ads/admanager/v1/order_messages.proto;l=144
    * @return Whether the unlimitedEndTime field is set.
    */
+  @java.lang.Deprecated
   boolean hasUnlimitedEndTime();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Deprecated: Indicates whether or not this Order has an end
+   * time.
+   * </pre>
+   *
+   * <code>
+   * optional bool unlimited_end_time = 45 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @deprecated google.ads.admanager.v1.Order.unlimited_end_time is deprecated. See
+   *     google/ads/admanager/v1/order_messages.proto;l=144
+   * @return The unlimitedEndTime.
+   */
+  @java.lang.Deprecated
+  boolean getUnlimitedEndTime();
 
   /**
    *
@@ -785,12 +809,26 @@ public interface OrderOrBuilder
    * Output only. Indicates whether or not this Order has an end time.
    * </pre>
    *
-   * <code>optional bool unlimited_end_time = 45 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * <code>optional bool end_time_unlimited = 82 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
-   * @return The unlimitedEndTime.
+   * @return Whether the endTimeUnlimited field is set.
    */
-  boolean getUnlimitedEndTime();
+  boolean hasEndTimeUnlimited();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Indicates whether or not this Order has an end time.
+   * </pre>
+   *
+   * <code>optional bool end_time_unlimited = 82 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The endTimeUnlimited.
+   */
+  boolean getEndTimeUnlimited();
 
   /**
    *

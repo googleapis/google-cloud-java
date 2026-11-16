@@ -410,6 +410,66 @@ public final class ConfidentialInstanceConfig extends com.google.protobuf.Genera
     }
   }
 
+  public static final int CONFIDENTIAL_PARAVISOR_CONFIG_FIELD_NUMBER = 99055285;
+  private com.google.cloud.compute.v1.ConfidentialParavisorConfig confidentialParavisorConfig_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Defines a set of Confidential Paravisor (SVSM) options.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.ConfidentialParavisorConfig confidential_paravisor_config = 99055285;
+   * </code>
+   *
+   * @return Whether the confidentialParavisorConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasConfidentialParavisorConfig() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Defines a set of Confidential Paravisor (SVSM) options.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.ConfidentialParavisorConfig confidential_paravisor_config = 99055285;
+   * </code>
+   *
+   * @return The confidentialParavisorConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.ConfidentialParavisorConfig getConfidentialParavisorConfig() {
+    return confidentialParavisorConfig_ == null
+        ? com.google.cloud.compute.v1.ConfidentialParavisorConfig.getDefaultInstance()
+        : confidentialParavisorConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Defines a set of Confidential Paravisor (SVSM) options.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.ConfidentialParavisorConfig confidential_paravisor_config = 99055285;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.ConfidentialParavisorConfigOrBuilder
+      getConfidentialParavisorConfigOrBuilder() {
+    return confidentialParavisorConfig_ == null
+        ? com.google.cloud.compute.v1.ConfidentialParavisorConfig.getDefaultInstance()
+        : confidentialParavisorConfig_;
+  }
+
   public static final int ENABLE_CONFIDENTIAL_COMPUTE_FIELD_NUMBER = 102135228;
   private boolean enableConfidentialCompute_ = false;
 
@@ -418,6 +478,8 @@ public final class ConfidentialInstanceConfig extends com.google.protobuf.Genera
    *
    * <pre>
    * Defines whether the instance should have confidential compute enabled.
+   * When enabled, the technology used defaults to
+   * AMD SEV unless confidentialInstanceType is specified.
    * </pre>
    *
    * <code>optional bool enable_confidential_compute = 102135228;</code>
@@ -426,7 +488,7 @@ public final class ConfidentialInstanceConfig extends com.google.protobuf.Genera
    */
   @java.lang.Override
   public boolean hasEnableConfidentialCompute() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
 
   /**
@@ -434,6 +496,8 @@ public final class ConfidentialInstanceConfig extends com.google.protobuf.Genera
    *
    * <pre>
    * Defines whether the instance should have confidential compute enabled.
+   * When enabled, the technology used defaults to
+   * AMD SEV unless confidentialInstanceType is specified.
    * </pre>
    *
    * <code>optional bool enable_confidential_compute = 102135228;</code>
@@ -463,6 +527,9 @@ public final class ConfidentialInstanceConfig extends com.google.protobuf.Genera
       com.google.protobuf.GeneratedMessage.writeString(output, 43484717, confidentialInstanceType_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(99055285, getConfidentialParavisorConfig());
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
       output.writeBool(102135228, enableConfidentialCompute_);
     }
     getUnknownFields().writeTo(output);
@@ -480,6 +547,11 @@ public final class ConfidentialInstanceConfig extends com.google.protobuf.Genera
               43484717, confidentialInstanceType_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              99055285, getConfidentialParavisorConfig());
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeBoolSize(
               102135228, enableConfidentialCompute_);
@@ -504,6 +576,11 @@ public final class ConfidentialInstanceConfig extends com.google.protobuf.Genera
     if (hasConfidentialInstanceType()) {
       if (!getConfidentialInstanceType().equals(other.getConfidentialInstanceType())) return false;
     }
+    if (hasConfidentialParavisorConfig() != other.hasConfidentialParavisorConfig()) return false;
+    if (hasConfidentialParavisorConfig()) {
+      if (!getConfidentialParavisorConfig().equals(other.getConfidentialParavisorConfig()))
+        return false;
+    }
     if (hasEnableConfidentialCompute() != other.hasEnableConfidentialCompute()) return false;
     if (hasEnableConfidentialCompute()) {
       if (getEnableConfidentialCompute() != other.getEnableConfidentialCompute()) return false;
@@ -522,6 +599,10 @@ public final class ConfidentialInstanceConfig extends com.google.protobuf.Genera
     if (hasConfidentialInstanceType()) {
       hash = (37 * hash) + CONFIDENTIAL_INSTANCE_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + getConfidentialInstanceType().hashCode();
+    }
+    if (hasConfidentialParavisorConfig()) {
+      hash = (37 * hash) + CONFIDENTIAL_PARAVISOR_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getConfidentialParavisorConfig().hashCode();
     }
     if (hasEnableConfidentialCompute()) {
       hash = (37 * hash) + ENABLE_CONFIDENTIAL_COMPUTE_FIELD_NUMBER;
@@ -658,10 +739,19 @@ public final class ConfidentialInstanceConfig extends com.google.protobuf.Genera
     }
 
     // Construct using com.google.cloud.compute.v1.ConfidentialInstanceConfig.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        internalGetConfidentialParavisorConfigFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -669,6 +759,11 @@ public final class ConfidentialInstanceConfig extends com.google.protobuf.Genera
       super.clear();
       bitField0_ = 0;
       confidentialInstanceType_ = "";
+      confidentialParavisorConfig_ = null;
+      if (confidentialParavisorConfigBuilder_ != null) {
+        confidentialParavisorConfigBuilder_.dispose();
+        confidentialParavisorConfigBuilder_ = null;
+      }
       enableConfidentialCompute_ = false;
       return this;
     }
@@ -712,8 +807,15 @@ public final class ConfidentialInstanceConfig extends com.google.protobuf.Genera
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.enableConfidentialCompute_ = enableConfidentialCompute_;
+        result.confidentialParavisorConfig_ =
+            confidentialParavisorConfigBuilder_ == null
+                ? confidentialParavisorConfig_
+                : confidentialParavisorConfigBuilder_.build();
         to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.enableConfidentialCompute_ = enableConfidentialCompute_;
+        to_bitField0_ |= 0x00000004;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -735,6 +837,9 @@ public final class ConfidentialInstanceConfig extends com.google.protobuf.Genera
         confidentialInstanceType_ = other.confidentialInstanceType_;
         bitField0_ |= 0x00000001;
         onChanged();
+      }
+      if (other.hasConfidentialParavisorConfig()) {
+        mergeConfidentialParavisorConfig(other.getConfidentialParavisorConfig());
       }
       if (other.hasEnableConfidentialCompute()) {
         setEnableConfidentialCompute(other.getEnableConfidentialCompute());
@@ -771,10 +876,18 @@ public final class ConfidentialInstanceConfig extends com.google.protobuf.Genera
                 bitField0_ |= 0x00000001;
                 break;
               } // case 347877738
+            case 792442282:
+              {
+                input.readMessage(
+                    internalGetConfidentialParavisorConfigFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 792442282
             case 817081824:
               {
                 enableConfidentialCompute_ = input.readBool();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 817081824
             default:
@@ -928,6 +1041,225 @@ public final class ConfidentialInstanceConfig extends com.google.protobuf.Genera
       return this;
     }
 
+    private com.google.cloud.compute.v1.ConfidentialParavisorConfig confidentialParavisorConfig_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.compute.v1.ConfidentialParavisorConfig,
+            com.google.cloud.compute.v1.ConfidentialParavisorConfig.Builder,
+            com.google.cloud.compute.v1.ConfidentialParavisorConfigOrBuilder>
+        confidentialParavisorConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Defines a set of Confidential Paravisor (SVSM) options.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.ConfidentialParavisorConfig confidential_paravisor_config = 99055285;
+     * </code>
+     *
+     * @return Whether the confidentialParavisorConfig field is set.
+     */
+    public boolean hasConfidentialParavisorConfig() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Defines a set of Confidential Paravisor (SVSM) options.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.ConfidentialParavisorConfig confidential_paravisor_config = 99055285;
+     * </code>
+     *
+     * @return The confidentialParavisorConfig.
+     */
+    public com.google.cloud.compute.v1.ConfidentialParavisorConfig
+        getConfidentialParavisorConfig() {
+      if (confidentialParavisorConfigBuilder_ == null) {
+        return confidentialParavisorConfig_ == null
+            ? com.google.cloud.compute.v1.ConfidentialParavisorConfig.getDefaultInstance()
+            : confidentialParavisorConfig_;
+      } else {
+        return confidentialParavisorConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Defines a set of Confidential Paravisor (SVSM) options.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.ConfidentialParavisorConfig confidential_paravisor_config = 99055285;
+     * </code>
+     */
+    public Builder setConfidentialParavisorConfig(
+        com.google.cloud.compute.v1.ConfidentialParavisorConfig value) {
+      if (confidentialParavisorConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        confidentialParavisorConfig_ = value;
+      } else {
+        confidentialParavisorConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Defines a set of Confidential Paravisor (SVSM) options.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.ConfidentialParavisorConfig confidential_paravisor_config = 99055285;
+     * </code>
+     */
+    public Builder setConfidentialParavisorConfig(
+        com.google.cloud.compute.v1.ConfidentialParavisorConfig.Builder builderForValue) {
+      if (confidentialParavisorConfigBuilder_ == null) {
+        confidentialParavisorConfig_ = builderForValue.build();
+      } else {
+        confidentialParavisorConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Defines a set of Confidential Paravisor (SVSM) options.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.ConfidentialParavisorConfig confidential_paravisor_config = 99055285;
+     * </code>
+     */
+    public Builder mergeConfidentialParavisorConfig(
+        com.google.cloud.compute.v1.ConfidentialParavisorConfig value) {
+      if (confidentialParavisorConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0)
+            && confidentialParavisorConfig_ != null
+            && confidentialParavisorConfig_
+                != com.google.cloud.compute.v1.ConfidentialParavisorConfig.getDefaultInstance()) {
+          getConfidentialParavisorConfigBuilder().mergeFrom(value);
+        } else {
+          confidentialParavisorConfig_ = value;
+        }
+      } else {
+        confidentialParavisorConfigBuilder_.mergeFrom(value);
+      }
+      if (confidentialParavisorConfig_ != null) {
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Defines a set of Confidential Paravisor (SVSM) options.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.ConfidentialParavisorConfig confidential_paravisor_config = 99055285;
+     * </code>
+     */
+    public Builder clearConfidentialParavisorConfig() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      confidentialParavisorConfig_ = null;
+      if (confidentialParavisorConfigBuilder_ != null) {
+        confidentialParavisorConfigBuilder_.dispose();
+        confidentialParavisorConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Defines a set of Confidential Paravisor (SVSM) options.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.ConfidentialParavisorConfig confidential_paravisor_config = 99055285;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.ConfidentialParavisorConfig.Builder
+        getConfidentialParavisorConfigBuilder() {
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return internalGetConfidentialParavisorConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Defines a set of Confidential Paravisor (SVSM) options.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.ConfidentialParavisorConfig confidential_paravisor_config = 99055285;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.ConfidentialParavisorConfigOrBuilder
+        getConfidentialParavisorConfigOrBuilder() {
+      if (confidentialParavisorConfigBuilder_ != null) {
+        return confidentialParavisorConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return confidentialParavisorConfig_ == null
+            ? com.google.cloud.compute.v1.ConfidentialParavisorConfig.getDefaultInstance()
+            : confidentialParavisorConfig_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Defines a set of Confidential Paravisor (SVSM) options.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.ConfidentialParavisorConfig confidential_paravisor_config = 99055285;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.compute.v1.ConfidentialParavisorConfig,
+            com.google.cloud.compute.v1.ConfidentialParavisorConfig.Builder,
+            com.google.cloud.compute.v1.ConfidentialParavisorConfigOrBuilder>
+        internalGetConfidentialParavisorConfigFieldBuilder() {
+      if (confidentialParavisorConfigBuilder_ == null) {
+        confidentialParavisorConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.compute.v1.ConfidentialParavisorConfig,
+                com.google.cloud.compute.v1.ConfidentialParavisorConfig.Builder,
+                com.google.cloud.compute.v1.ConfidentialParavisorConfigOrBuilder>(
+                getConfidentialParavisorConfig(), getParentForChildren(), isClean());
+        confidentialParavisorConfig_ = null;
+      }
+      return confidentialParavisorConfigBuilder_;
+    }
+
     private boolean enableConfidentialCompute_;
 
     /**
@@ -935,6 +1267,8 @@ public final class ConfidentialInstanceConfig extends com.google.protobuf.Genera
      *
      * <pre>
      * Defines whether the instance should have confidential compute enabled.
+     * When enabled, the technology used defaults to
+     * AMD SEV unless confidentialInstanceType is specified.
      * </pre>
      *
      * <code>optional bool enable_confidential_compute = 102135228;</code>
@@ -943,7 +1277,7 @@ public final class ConfidentialInstanceConfig extends com.google.protobuf.Genera
      */
     @java.lang.Override
     public boolean hasEnableConfidentialCompute() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
 
     /**
@@ -951,6 +1285,8 @@ public final class ConfidentialInstanceConfig extends com.google.protobuf.Genera
      *
      * <pre>
      * Defines whether the instance should have confidential compute enabled.
+     * When enabled, the technology used defaults to
+     * AMD SEV unless confidentialInstanceType is specified.
      * </pre>
      *
      * <code>optional bool enable_confidential_compute = 102135228;</code>
@@ -967,6 +1303,8 @@ public final class ConfidentialInstanceConfig extends com.google.protobuf.Genera
      *
      * <pre>
      * Defines whether the instance should have confidential compute enabled.
+     * When enabled, the technology used defaults to
+     * AMD SEV unless confidentialInstanceType is specified.
      * </pre>
      *
      * <code>optional bool enable_confidential_compute = 102135228;</code>
@@ -977,7 +1315,7 @@ public final class ConfidentialInstanceConfig extends com.google.protobuf.Genera
     public Builder setEnableConfidentialCompute(boolean value) {
 
       enableConfidentialCompute_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -987,6 +1325,8 @@ public final class ConfidentialInstanceConfig extends com.google.protobuf.Genera
      *
      * <pre>
      * Defines whether the instance should have confidential compute enabled.
+     * When enabled, the technology used defaults to
+     * AMD SEV unless confidentialInstanceType is specified.
      * </pre>
      *
      * <code>optional bool enable_confidential_compute = 102135228;</code>
@@ -994,7 +1334,7 @@ public final class ConfidentialInstanceConfig extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearEnableConfidentialCompute() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       enableConfidentialCompute_ = false;
       onChanged();
       return this;

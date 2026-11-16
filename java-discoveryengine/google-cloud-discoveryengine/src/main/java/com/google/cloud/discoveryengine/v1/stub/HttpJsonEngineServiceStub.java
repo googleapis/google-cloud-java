@@ -44,6 +44,9 @@ import com.google.cloud.discoveryengine.v1.ListEnginesRequest;
 import com.google.cloud.discoveryengine.v1.ListEnginesResponse;
 import com.google.cloud.discoveryengine.v1.UpdateEngineRequest;
 import com.google.common.collect.ImmutableMap;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import com.google.protobuf.TypeRegistry;
@@ -260,6 +263,78 @@ public class HttpJsonEngineServiceStub extends EngineServiceStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<GetIamPolicyRequest, Policy>
+      getIamPolicyMethodDescriptor =
+          ApiMethodDescriptor.<GetIamPolicyRequest, Policy>newBuilder()
+              .setFullMethodName("google.cloud.discoveryengine.v1.EngineService/GetIamPolicy")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetIamPolicyRequest>newBuilder()
+                      .setPath(
+                          "/v1/{resource=projects/*/locations/*/collections/*/engines/*}:getIamPolicy",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetIamPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "resource", request.getResource());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetIamPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "options", request.getOptions());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Policy>newBuilder()
+                      .setDefaultInstance(Policy.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<SetIamPolicyRequest, Policy>
+      setIamPolicyMethodDescriptor =
+          ApiMethodDescriptor.<SetIamPolicyRequest, Policy>newBuilder()
+              .setFullMethodName("google.cloud.discoveryengine.v1.EngineService/SetIamPolicy")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<SetIamPolicyRequest>newBuilder()
+                      .setPath(
+                          "/v1/{resource=projects/*/locations/*/collections/*/engines/*}:setIamPolicy",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<SetIamPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "resource", request.getResource());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<SetIamPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearResource().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Policy>newBuilder()
+                      .setDefaultInstance(Policy.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private final UnaryCallable<CreateEngineRequest, Operation> createEngineCallable;
   private final OperationCallable<CreateEngineRequest, Engine, CreateEngineMetadata>
       createEngineOperationCallable;
@@ -271,6 +346,8 @@ public class HttpJsonEngineServiceStub extends EngineServiceStub {
   private final UnaryCallable<ListEnginesRequest, ListEnginesResponse> listEnginesCallable;
   private final UnaryCallable<ListEnginesRequest, ListEnginesPagedResponse>
       listEnginesPagedCallable;
+  private final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable;
+  private final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonOperationsStub httpJsonOperationsStub;
@@ -378,6 +455,11 @@ public class HttpJsonEngineServiceStub extends EngineServiceStub {
                             HttpRule.newBuilder()
                                 .setGet(
                                     "/v1/{name=projects/*/locations/*/collections/*/dataStores/*/siteSearchEngine/targetSites/operations/*}")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet(
+                                    "/v1/{name=projects/*/locations/*/collections/*/engines/*/assistants/*/agents/*/operations/*}")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
@@ -556,6 +638,30 @@ public class HttpJsonEngineServiceStub extends EngineServiceStub {
                 })
             .setResourceNameExtractor(request -> request.getParent())
             .build();
+    HttpJsonCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
+        HttpJsonCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
+            .setMethodDescriptor(getIamPolicyMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getResource())
+            .build();
+    HttpJsonCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
+        HttpJsonCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
+            .setMethodDescriptor(setIamPolicyMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getResource())
+            .build();
 
     this.createEngineCallable =
         callableFactory.createUnaryCallable(
@@ -587,6 +693,12 @@ public class HttpJsonEngineServiceStub extends EngineServiceStub {
     this.listEnginesPagedCallable =
         callableFactory.createPagedCallable(
             listEnginesTransportSettings, settings.listEnginesSettings(), clientContext);
+    this.getIamPolicyCallable =
+        callableFactory.createUnaryCallable(
+            getIamPolicyTransportSettings, settings.getIamPolicySettings(), clientContext);
+    this.setIamPolicyCallable =
+        callableFactory.createUnaryCallable(
+            setIamPolicyTransportSettings, settings.setIamPolicySettings(), clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -600,6 +712,8 @@ public class HttpJsonEngineServiceStub extends EngineServiceStub {
     methodDescriptors.add(updateEngineMethodDescriptor);
     methodDescriptors.add(getEngineMethodDescriptor);
     methodDescriptors.add(listEnginesMethodDescriptor);
+    methodDescriptors.add(getIamPolicyMethodDescriptor);
+    methodDescriptors.add(setIamPolicyMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -647,6 +761,16 @@ public class HttpJsonEngineServiceStub extends EngineServiceStub {
   @Override
   public UnaryCallable<ListEnginesRequest, ListEnginesPagedResponse> listEnginesPagedCallable() {
     return listEnginesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
+    return getIamPolicyCallable;
+  }
+
+  @Override
+  public UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
+    return setIamPolicyCallable;
   }
 
   @Override

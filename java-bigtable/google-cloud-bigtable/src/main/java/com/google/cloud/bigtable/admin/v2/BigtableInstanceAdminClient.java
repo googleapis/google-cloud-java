@@ -75,7 +75,10 @@ import java.util.List;
 import javax.annotation.Nonnull;
 
 /**
- * Client for creating, configuring and deleting Cloud Bigtable instances, app profiles, and
+ * This class is obsolete. For the recommended proto-based approach, please see {@link
+ * BigtableInstanceAdminClientV2}.
+ *
+ * <p>Client for creating, configuring and deleting Cloud Bigtable instances, app profiles, and
  * clusters.
  *
  * <p>See the individual methods for example code.
@@ -122,23 +125,43 @@ import javax.annotation.Nonnull;
  * BigtableInstanceAdminClient client = BigtableInstanceAdminClient.create(settingsBuilder.build());
  * }</pre>
  */
+@ObsoleteApi("Use BigtableInstanceAdminClientV2 instead.")
 public final class BigtableInstanceAdminClient implements AutoCloseable {
   private final String projectId;
   private final BigtableInstanceAdminStub stub;
   private final BigtableInstanceAdminClientV2 v2Client;
 
-  /** Constructs an instance of BigtableInstanceAdminClient with the given project ID. */
+  /**
+   * This method is obsolete. For the recommended proto-based approach, please see {@link
+   * com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminClientV2#create()}.
+   *
+   * <p>Constructs an instance of BigtableInstanceAdminClient with the given project ID.
+   */
+  @ObsoleteApi("Use BigtableInstanceAdminClientV2.create() instead.")
   public static BigtableInstanceAdminClient create(@Nonnull String projectId) throws IOException {
     return create(BigtableInstanceAdminSettings.newBuilder().setProjectId(projectId).build());
   }
 
-  /** Constructs an instance of BigtableInstanceAdminClient with the given settings. */
+  /**
+   * This method is obsolete. For the recommended proto-based approach, please see {@link
+   * com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminClientV2#create(com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminSettings)}.
+   *
+   * <p>Constructs an instance of BigtableInstanceAdminClient with the given settings.
+   */
+  @ObsoleteApi(
+      "Use BigtableInstanceAdminClientV2.create(BaseBigtableInstanceAdminSettings) instead.")
   public static BigtableInstanceAdminClient create(@Nonnull BigtableInstanceAdminSettings settings)
       throws IOException {
     return create(settings.getProjectId(), settings.getStubSettings().createStub());
   }
 
-  /** Constructs an instance of BigtableInstanceAdminClient with the given project ID and stub. */
+  /**
+   * This method is obsolete. For the recommended proto-based approach, please see {@link
+   * com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient#create(com.google.cloud.bigtable.admin.v2.stub.BigtableInstanceAdminStub)}.
+   *
+   * <p>Constructs an instance of BigtableInstanceAdminClient with the given project ID and stub.
+   */
+  @ObsoleteApi("Use BaseBigtableInstanceAdminClient.create(BigtableInstanceAdminStub) instead.")
   public static BigtableInstanceAdminClient create(
       @Nonnull String projectId, @Nonnull BigtableInstanceAdminStub stub) {
     return new BigtableInstanceAdminClient(projectId, stub);

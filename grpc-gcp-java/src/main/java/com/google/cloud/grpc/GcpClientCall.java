@@ -124,7 +124,7 @@ public class GcpClientCall<ReqT, RespT> extends ClientCall<ReqT, RespT> {
         } else {
           delegateChannelRef = delegateChannel.getChannelRef(key);
         }
-        delegateChannelRef.activeStreamsCountIncr();
+        int load = delegateChannelRef.activeStreamsCountIncr();
         Preconditions.checkState(countState.compareAndSet(0, 1));
 
         // Create the client call and do the previous operations.
@@ -142,6 +142,7 @@ public class GcpClientCall<ReqT, RespT> extends ClientCall<ReqT, RespT> {
         } finally {
           calls.clear();
         }
+        delegateChannel.recordBuiltInChannelLoad(load, callOptions);
         started = true;
       }
     }
@@ -260,7 +261,7 @@ public class GcpClientCall<ReqT, RespT> extends ClientCall<ReqT, RespT> {
       CallOptions callOptionsWithChannelId =
           callOptions.withOption(GcpManagedChannel.CHANNEL_ID_KEY, channelRef.getId());
       startNanos = System.nanoTime();
-      channelRef.activeStreamsCountIncr();
+      int load = channelRef.activeStreamsCountIncr();
       Preconditions.checkState(countState.compareAndSet(0, 1));
       try {
         this.delegateCall =
@@ -269,6 +270,7 @@ public class GcpClientCall<ReqT, RespT> extends ClientCall<ReqT, RespT> {
         finishCount(Status.fromThrowable(failure), true);
         throw failure;
       }
+      delegateChannel.recordBuiltInChannelLoad(load, callOptions);
     }
 
     @Override

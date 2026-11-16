@@ -152,11 +152,11 @@ public final class DbSystem extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The properties of the DbSystem.
+   * Optional. Immutable. The properties of the DbSystem.
    * </pre>
    *
    * <code>
-   * .google.cloud.oracledatabase.v1.DbSystemProperties properties = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.oracledatabase.v1.DbSystemProperties properties = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
    * @return Whether the properties field is set.
@@ -170,11 +170,11 @@ public final class DbSystem extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The properties of the DbSystem.
+   * Optional. Immutable. The properties of the DbSystem.
    * </pre>
    *
    * <code>
-   * .google.cloud.oracledatabase.v1.DbSystemProperties properties = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.oracledatabase.v1.DbSystemProperties properties = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
    * @return The properties.
@@ -190,11 +190,11 @@ public final class DbSystem extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The properties of the DbSystem.
+   * Optional. Immutable. The properties of the DbSystem.
    * </pre>
    *
    * <code>
-   * .google.cloud.oracledatabase.v1.DbSystemProperties properties = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.oracledatabase.v1.DbSystemProperties properties = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    */
   @java.lang.Override
@@ -213,12 +213,14 @@ public final class DbSystem extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The GCP Oracle zone where Oracle DbSystem is hosted.
+   * Optional. Immutable. The GCP Oracle zone where Oracle DbSystem is hosted.
    * Example: us-east4-b-r2.
    * If not specified, the system will pick a zone based on availability.
    * </pre>
    *
-   * <code>string gcp_oracle_zone = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string gcp_oracle_zone = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The gcpOracleZone.
    */
@@ -239,12 +241,14 @@ public final class DbSystem extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The GCP Oracle zone where Oracle DbSystem is hosted.
+   * Optional. Immutable. The GCP Oracle zone where Oracle DbSystem is hosted.
    * Example: us-east4-b-r2.
    * If not specified, the system will pick a zone based on availability.
    * </pre>
    *
-   * <code>string gcp_oracle_zone = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string gcp_oracle_zone = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The bytes for gcpOracleZone.
    */
@@ -377,14 +381,15 @@ public final class DbSystem extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The name of the OdbNetwork associated with the DbSystem.
-   * Format: projects/{project}/locations/{location}/odbNetworks/{odb_network}
-   * It is optional but if specified, this should match the parent ODBNetwork of
-   * the OdbSubnet.
+   * Optional. Immutable. The name of the OdbNetwork associated with the
+   * DbSystem. Format:
+   * projects/{project}/locations/{location}/odbNetworks/{odb_network} It is
+   * optional but if specified, this should match the parent ODBNetwork of the
+   * OdbSubnet.
    * </pre>
    *
    * <code>
-   * string odb_network = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * string odb_network = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The odbNetwork.
@@ -406,14 +411,15 @@ public final class DbSystem extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The name of the OdbNetwork associated with the DbSystem.
-   * Format: projects/{project}/locations/{location}/odbNetworks/{odb_network}
-   * It is optional but if specified, this should match the parent ODBNetwork of
-   * the OdbSubnet.
+   * Optional. Immutable. The name of the OdbNetwork associated with the
+   * DbSystem. Format:
+   * projects/{project}/locations/{location}/odbNetworks/{odb_network} It is
+   * optional but if specified, this should match the parent ODBNetwork of the
+   * OdbSubnet.
    * </pre>
    *
    * <code>
-   * string odb_network = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * string odb_network = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The bytes for odbNetwork.
@@ -440,13 +446,13 @@ public final class DbSystem extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. The name of the OdbSubnet associated with the DbSystem for IP
-   * allocation. Format:
+   * Required. Immutable. The name of the OdbSubnet associated with the DbSystem
+   * for IP allocation. Format:
    * projects/{project}/locations/{location}/odbNetworks/{odb_network}/odbSubnets/{odb_subnet}
    * </pre>
    *
    * <code>
-   * string odb_subnet = 6 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * string odb_subnet = 6 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The odbSubnet.
@@ -468,13 +474,13 @@ public final class DbSystem extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. The name of the OdbSubnet associated with the DbSystem for IP
-   * allocation. Format:
+   * Required. Immutable. The name of the OdbSubnet associated with the DbSystem
+   * for IP allocation. Format:
    * projects/{project}/locations/{location}/odbNetworks/{odb_network}/odbSubnets/{odb_subnet}
    * </pre>
    *
    * <code>
-   * string odb_subnet = 6 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * string odb_subnet = 6 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The bytes for odbSubnet.
@@ -556,11 +562,13 @@ public final class DbSystem extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. The display name for the System db. The name does not have to
-   * be unique within your project.
+   * Required. Immutable. The display name for the System db. The name does not
+   * have to be unique within your project.
    * </pre>
    *
-   * <code>string display_name = 8 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string display_name = 8 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The displayName.
    */
@@ -581,11 +589,13 @@ public final class DbSystem extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. The display name for the System db. The name does not have to
-   * be unique within your project.
+   * Required. Immutable. The display name for the System db. The name does not
+   * have to be unique within your project.
    * </pre>
    *
-   * <code>string display_name = 8 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string display_name = 8 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The bytes for displayName.
    */
@@ -1426,11 +1436,11 @@ public final class DbSystem extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The properties of the DbSystem.
+     * Optional. Immutable. The properties of the DbSystem.
      * </pre>
      *
      * <code>
-     * .google.cloud.oracledatabase.v1.DbSystemProperties properties = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.oracledatabase.v1.DbSystemProperties properties = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @return Whether the properties field is set.
@@ -1443,11 +1453,11 @@ public final class DbSystem extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The properties of the DbSystem.
+     * Optional. Immutable. The properties of the DbSystem.
      * </pre>
      *
      * <code>
-     * .google.cloud.oracledatabase.v1.DbSystemProperties properties = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.oracledatabase.v1.DbSystemProperties properties = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @return The properties.
@@ -1466,11 +1476,11 @@ public final class DbSystem extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The properties of the DbSystem.
+     * Optional. Immutable. The properties of the DbSystem.
      * </pre>
      *
      * <code>
-     * .google.cloud.oracledatabase.v1.DbSystemProperties properties = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.oracledatabase.v1.DbSystemProperties properties = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     public Builder setProperties(com.google.cloud.oracledatabase.v1.DbSystemProperties value) {
@@ -1491,11 +1501,11 @@ public final class DbSystem extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The properties of the DbSystem.
+     * Optional. Immutable. The properties of the DbSystem.
      * </pre>
      *
      * <code>
-     * .google.cloud.oracledatabase.v1.DbSystemProperties properties = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.oracledatabase.v1.DbSystemProperties properties = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     public Builder setProperties(
@@ -1514,11 +1524,11 @@ public final class DbSystem extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The properties of the DbSystem.
+     * Optional. Immutable. The properties of the DbSystem.
      * </pre>
      *
      * <code>
-     * .google.cloud.oracledatabase.v1.DbSystemProperties properties = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.oracledatabase.v1.DbSystemProperties properties = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     public Builder mergeProperties(com.google.cloud.oracledatabase.v1.DbSystemProperties value) {
@@ -1545,11 +1555,11 @@ public final class DbSystem extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The properties of the DbSystem.
+     * Optional. Immutable. The properties of the DbSystem.
      * </pre>
      *
      * <code>
-     * .google.cloud.oracledatabase.v1.DbSystemProperties properties = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.oracledatabase.v1.DbSystemProperties properties = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     public Builder clearProperties() {
@@ -1567,11 +1577,11 @@ public final class DbSystem extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The properties of the DbSystem.
+     * Optional. Immutable. The properties of the DbSystem.
      * </pre>
      *
      * <code>
-     * .google.cloud.oracledatabase.v1.DbSystemProperties properties = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.oracledatabase.v1.DbSystemProperties properties = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     public com.google.cloud.oracledatabase.v1.DbSystemProperties.Builder getPropertiesBuilder() {
@@ -1584,11 +1594,11 @@ public final class DbSystem extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The properties of the DbSystem.
+     * Optional. Immutable. The properties of the DbSystem.
      * </pre>
      *
      * <code>
-     * .google.cloud.oracledatabase.v1.DbSystemProperties properties = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.oracledatabase.v1.DbSystemProperties properties = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     public com.google.cloud.oracledatabase.v1.DbSystemPropertiesOrBuilder getPropertiesOrBuilder() {
@@ -1605,11 +1615,11 @@ public final class DbSystem extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The properties of the DbSystem.
+     * Optional. Immutable. The properties of the DbSystem.
      * </pre>
      *
      * <code>
-     * .google.cloud.oracledatabase.v1.DbSystemProperties properties = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.oracledatabase.v1.DbSystemProperties properties = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilder<
@@ -1635,12 +1645,14 @@ public final class DbSystem extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The GCP Oracle zone where Oracle DbSystem is hosted.
+     * Optional. Immutable. The GCP Oracle zone where Oracle DbSystem is hosted.
      * Example: us-east4-b-r2.
      * If not specified, the system will pick a zone based on availability.
      * </pre>
      *
-     * <code>string gcp_oracle_zone = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string gcp_oracle_zone = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return The gcpOracleZone.
      */
@@ -1660,12 +1672,14 @@ public final class DbSystem extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The GCP Oracle zone where Oracle DbSystem is hosted.
+     * Optional. Immutable. The GCP Oracle zone where Oracle DbSystem is hosted.
      * Example: us-east4-b-r2.
      * If not specified, the system will pick a zone based on availability.
      * </pre>
      *
-     * <code>string gcp_oracle_zone = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string gcp_oracle_zone = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return The bytes for gcpOracleZone.
      */
@@ -1685,12 +1699,14 @@ public final class DbSystem extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The GCP Oracle zone where Oracle DbSystem is hosted.
+     * Optional. Immutable. The GCP Oracle zone where Oracle DbSystem is hosted.
      * Example: us-east4-b-r2.
      * If not specified, the system will pick a zone based on availability.
      * </pre>
      *
-     * <code>string gcp_oracle_zone = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string gcp_oracle_zone = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @param value The gcpOracleZone to set.
      * @return This builder for chaining.
@@ -1709,12 +1725,14 @@ public final class DbSystem extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The GCP Oracle zone where Oracle DbSystem is hosted.
+     * Optional. Immutable. The GCP Oracle zone where Oracle DbSystem is hosted.
      * Example: us-east4-b-r2.
      * If not specified, the system will pick a zone based on availability.
      * </pre>
      *
-     * <code>string gcp_oracle_zone = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string gcp_oracle_zone = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -1729,12 +1747,14 @@ public final class DbSystem extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The GCP Oracle zone where Oracle DbSystem is hosted.
+     * Optional. Immutable. The GCP Oracle zone where Oracle DbSystem is hosted.
      * Example: us-east4-b-r2.
      * If not specified, the system will pick a zone based on availability.
      * </pre>
      *
-     * <code>string gcp_oracle_zone = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string gcp_oracle_zone = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @param value The bytes for gcpOracleZone to set.
      * @return This builder for chaining.
@@ -1928,14 +1948,15 @@ public final class DbSystem extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The name of the OdbNetwork associated with the DbSystem.
-     * Format: projects/{project}/locations/{location}/odbNetworks/{odb_network}
-     * It is optional but if specified, this should match the parent ODBNetwork of
-     * the OdbSubnet.
+     * Optional. Immutable. The name of the OdbNetwork associated with the
+     * DbSystem. Format:
+     * projects/{project}/locations/{location}/odbNetworks/{odb_network} It is
+     * optional but if specified, this should match the parent ODBNetwork of the
+     * OdbSubnet.
      * </pre>
      *
      * <code>
-     * string odb_network = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * string odb_network = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return The odbNetwork.
@@ -1956,14 +1977,15 @@ public final class DbSystem extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The name of the OdbNetwork associated with the DbSystem.
-     * Format: projects/{project}/locations/{location}/odbNetworks/{odb_network}
-     * It is optional but if specified, this should match the parent ODBNetwork of
-     * the OdbSubnet.
+     * Optional. Immutable. The name of the OdbNetwork associated with the
+     * DbSystem. Format:
+     * projects/{project}/locations/{location}/odbNetworks/{odb_network} It is
+     * optional but if specified, this should match the parent ODBNetwork of the
+     * OdbSubnet.
      * </pre>
      *
      * <code>
-     * string odb_network = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * string odb_network = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return The bytes for odbNetwork.
@@ -1984,14 +2006,15 @@ public final class DbSystem extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The name of the OdbNetwork associated with the DbSystem.
-     * Format: projects/{project}/locations/{location}/odbNetworks/{odb_network}
-     * It is optional but if specified, this should match the parent ODBNetwork of
-     * the OdbSubnet.
+     * Optional. Immutable. The name of the OdbNetwork associated with the
+     * DbSystem. Format:
+     * projects/{project}/locations/{location}/odbNetworks/{odb_network} It is
+     * optional but if specified, this should match the parent ODBNetwork of the
+     * OdbSubnet.
      * </pre>
      *
      * <code>
-     * string odb_network = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * string odb_network = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @param value The odbNetwork to set.
@@ -2011,14 +2034,15 @@ public final class DbSystem extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The name of the OdbNetwork associated with the DbSystem.
-     * Format: projects/{project}/locations/{location}/odbNetworks/{odb_network}
-     * It is optional but if specified, this should match the parent ODBNetwork of
-     * the OdbSubnet.
+     * Optional. Immutable. The name of the OdbNetwork associated with the
+     * DbSystem. Format:
+     * projects/{project}/locations/{location}/odbNetworks/{odb_network} It is
+     * optional but if specified, this should match the parent ODBNetwork of the
+     * OdbSubnet.
      * </pre>
      *
      * <code>
-     * string odb_network = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * string odb_network = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return This builder for chaining.
@@ -2034,14 +2058,15 @@ public final class DbSystem extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The name of the OdbNetwork associated with the DbSystem.
-     * Format: projects/{project}/locations/{location}/odbNetworks/{odb_network}
-     * It is optional but if specified, this should match the parent ODBNetwork of
-     * the OdbSubnet.
+     * Optional. Immutable. The name of the OdbNetwork associated with the
+     * DbSystem. Format:
+     * projects/{project}/locations/{location}/odbNetworks/{odb_network} It is
+     * optional but if specified, this should match the parent ODBNetwork of the
+     * OdbSubnet.
      * </pre>
      *
      * <code>
-     * string odb_network = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * string odb_network = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @param value The bytes for odbNetwork to set.
@@ -2064,13 +2089,13 @@ public final class DbSystem extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The name of the OdbSubnet associated with the DbSystem for IP
-     * allocation. Format:
+     * Required. Immutable. The name of the OdbSubnet associated with the DbSystem
+     * for IP allocation. Format:
      * projects/{project}/locations/{location}/odbNetworks/{odb_network}/odbSubnets/{odb_subnet}
      * </pre>
      *
      * <code>
-     * string odb_subnet = 6 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * string odb_subnet = 6 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return The odbSubnet.
@@ -2091,13 +2116,13 @@ public final class DbSystem extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The name of the OdbSubnet associated with the DbSystem for IP
-     * allocation. Format:
+     * Required. Immutable. The name of the OdbSubnet associated with the DbSystem
+     * for IP allocation. Format:
      * projects/{project}/locations/{location}/odbNetworks/{odb_network}/odbSubnets/{odb_subnet}
      * </pre>
      *
      * <code>
-     * string odb_subnet = 6 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * string odb_subnet = 6 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return The bytes for odbSubnet.
@@ -2118,13 +2143,13 @@ public final class DbSystem extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The name of the OdbSubnet associated with the DbSystem for IP
-     * allocation. Format:
+     * Required. Immutable. The name of the OdbSubnet associated with the DbSystem
+     * for IP allocation. Format:
      * projects/{project}/locations/{location}/odbNetworks/{odb_network}/odbSubnets/{odb_subnet}
      * </pre>
      *
      * <code>
-     * string odb_subnet = 6 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * string odb_subnet = 6 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @param value The odbSubnet to set.
@@ -2144,13 +2169,13 @@ public final class DbSystem extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The name of the OdbSubnet associated with the DbSystem for IP
-     * allocation. Format:
+     * Required. Immutable. The name of the OdbSubnet associated with the DbSystem
+     * for IP allocation. Format:
      * projects/{project}/locations/{location}/odbNetworks/{odb_network}/odbSubnets/{odb_subnet}
      * </pre>
      *
      * <code>
-     * string odb_subnet = 6 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * string odb_subnet = 6 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return This builder for chaining.
@@ -2166,13 +2191,13 @@ public final class DbSystem extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The name of the OdbSubnet associated with the DbSystem for IP
-     * allocation. Format:
+     * Required. Immutable. The name of the OdbSubnet associated with the DbSystem
+     * for IP allocation. Format:
      * projects/{project}/locations/{location}/odbNetworks/{odb_network}/odbSubnets/{odb_subnet}
      * </pre>
      *
      * <code>
-     * string odb_subnet = 6 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * string odb_subnet = 6 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @param value The bytes for odbSubnet to set.
@@ -2311,11 +2336,13 @@ public final class DbSystem extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The display name for the System db. The name does not have to
-     * be unique within your project.
+     * Required. Immutable. The display name for the System db. The name does not
+     * have to be unique within your project.
      * </pre>
      *
-     * <code>string display_name = 8 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string display_name = 8 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return The displayName.
      */
@@ -2335,11 +2362,13 @@ public final class DbSystem extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The display name for the System db. The name does not have to
-     * be unique within your project.
+     * Required. Immutable. The display name for the System db. The name does not
+     * have to be unique within your project.
      * </pre>
      *
-     * <code>string display_name = 8 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string display_name = 8 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return The bytes for displayName.
      */
@@ -2359,11 +2388,13 @@ public final class DbSystem extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The display name for the System db. The name does not have to
-     * be unique within your project.
+     * Required. Immutable. The display name for the System db. The name does not
+     * have to be unique within your project.
      * </pre>
      *
-     * <code>string display_name = 8 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string display_name = 8 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @param value The displayName to set.
      * @return This builder for chaining.
@@ -2382,11 +2413,13 @@ public final class DbSystem extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The display name for the System db. The name does not have to
-     * be unique within your project.
+     * Required. Immutable. The display name for the System db. The name does not
+     * have to be unique within your project.
      * </pre>
      *
-     * <code>string display_name = 8 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string display_name = 8 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -2401,11 +2434,13 @@ public final class DbSystem extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The display name for the System db. The name does not have to
-     * be unique within your project.
+     * Required. Immutable. The display name for the System db. The name does not
+     * have to be unique within your project.
      * </pre>
      *
-     * <code>string display_name = 8 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string display_name = 8 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @param value The bytes for displayName to set.
      * @return This builder for chaining.

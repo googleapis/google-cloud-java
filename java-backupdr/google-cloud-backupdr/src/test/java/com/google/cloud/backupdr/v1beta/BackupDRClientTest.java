@@ -33,6 +33,10 @@ import static com.google.cloud.backupdr.v1beta.BackupDRClient.ListDataSourceRefe
 import static com.google.cloud.backupdr.v1beta.BackupDRClient.ListDataSourcesPagedResponse;
 import static com.google.cloud.backupdr.v1beta.BackupDRClient.ListLocationsPagedResponse;
 import static com.google.cloud.backupdr.v1beta.BackupDRClient.ListManagementServersPagedResponse;
+import static com.google.cloud.backupdr.v1beta.BackupDRClient.ListRestoreTemplateExecutionsPagedResponse;
+import static com.google.cloud.backupdr.v1beta.BackupDRClient.ListRestoreTemplatesPagedResponse;
+import static com.google.cloud.backupdr.v1beta.BackupDRClient.ListRestoreVerificationPlanAssociationsPagedResponse;
+import static com.google.cloud.backupdr.v1beta.BackupDRClient.ListRestoreVerificationPlansPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
@@ -63,6 +67,7 @@ import com.google.protobuf.ByteString;
 import com.google.protobuf.Duration;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
+import com.google.protobuf.Struct;
 import com.google.protobuf.Timestamp;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
@@ -543,6 +548,1888 @@ public class BackupDRClientTest {
     try {
       String name = "name3373707";
       client.deleteManagementServerAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void createRestoreTemplateTest() throws Exception {
+    RestoreTemplate expectedResponse =
+        RestoreTemplate.newBuilder()
+            .setName(
+                RestoreTemplateName.of("[PROJECT]", "[LOCATION]", "[RESTORE_TEMPLATE]").toString())
+            .setDescription("description-1724546052")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setResourceType("resourceType-384364440")
+            .putAllLabels(new HashMap<String, String>())
+            .setBackupSelectionConfig(BackupSelectionConfig.newBuilder().build())
+            .setPreRestoreConfig(PreRestoreConfig.newBuilder().build())
+            .setPostRestoreConfig(PostRestoreConfig.newBuilder().build())
+            .setVerificationConfig(VerificationConfig.newBuilder().build())
+            .setRestoreProperties(Struct.newBuilder().build())
+            .setExecutionSummary(ExecutionSummary.newBuilder().build())
+            .setEtag("etag3123477")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createRestoreTemplateTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockBackupDR.addResponse(resultOperation);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    RestoreTemplate restoreTemplate = RestoreTemplate.newBuilder().build();
+    String restoreTemplateId = "restoreTemplateId-84741021";
+
+    RestoreTemplate actualResponse =
+        client.createRestoreTemplateAsync(parent, restoreTemplate, restoreTemplateId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockBackupDR.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateRestoreTemplateRequest actualRequest =
+        ((CreateRestoreTemplateRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(restoreTemplate, actualRequest.getRestoreTemplate());
+    Assert.assertEquals(restoreTemplateId, actualRequest.getRestoreTemplateId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createRestoreTemplateExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBackupDR.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      RestoreTemplate restoreTemplate = RestoreTemplate.newBuilder().build();
+      String restoreTemplateId = "restoreTemplateId-84741021";
+      client.createRestoreTemplateAsync(parent, restoreTemplate, restoreTemplateId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void createRestoreTemplateTest2() throws Exception {
+    RestoreTemplate expectedResponse =
+        RestoreTemplate.newBuilder()
+            .setName(
+                RestoreTemplateName.of("[PROJECT]", "[LOCATION]", "[RESTORE_TEMPLATE]").toString())
+            .setDescription("description-1724546052")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setResourceType("resourceType-384364440")
+            .putAllLabels(new HashMap<String, String>())
+            .setBackupSelectionConfig(BackupSelectionConfig.newBuilder().build())
+            .setPreRestoreConfig(PreRestoreConfig.newBuilder().build())
+            .setPostRestoreConfig(PostRestoreConfig.newBuilder().build())
+            .setVerificationConfig(VerificationConfig.newBuilder().build())
+            .setRestoreProperties(Struct.newBuilder().build())
+            .setExecutionSummary(ExecutionSummary.newBuilder().build())
+            .setEtag("etag3123477")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createRestoreTemplateTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockBackupDR.addResponse(resultOperation);
+
+    String parent = "parent-995424086";
+    RestoreTemplate restoreTemplate = RestoreTemplate.newBuilder().build();
+    String restoreTemplateId = "restoreTemplateId-84741021";
+
+    RestoreTemplate actualResponse =
+        client.createRestoreTemplateAsync(parent, restoreTemplate, restoreTemplateId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockBackupDR.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateRestoreTemplateRequest actualRequest =
+        ((CreateRestoreTemplateRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(restoreTemplate, actualRequest.getRestoreTemplate());
+    Assert.assertEquals(restoreTemplateId, actualRequest.getRestoreTemplateId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createRestoreTemplateExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBackupDR.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      RestoreTemplate restoreTemplate = RestoreTemplate.newBuilder().build();
+      String restoreTemplateId = "restoreTemplateId-84741021";
+      client.createRestoreTemplateAsync(parent, restoreTemplate, restoreTemplateId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void getRestoreTemplateTest() throws Exception {
+    RestoreTemplate expectedResponse =
+        RestoreTemplate.newBuilder()
+            .setName(
+                RestoreTemplateName.of("[PROJECT]", "[LOCATION]", "[RESTORE_TEMPLATE]").toString())
+            .setDescription("description-1724546052")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setResourceType("resourceType-384364440")
+            .putAllLabels(new HashMap<String, String>())
+            .setBackupSelectionConfig(BackupSelectionConfig.newBuilder().build())
+            .setPreRestoreConfig(PreRestoreConfig.newBuilder().build())
+            .setPostRestoreConfig(PostRestoreConfig.newBuilder().build())
+            .setVerificationConfig(VerificationConfig.newBuilder().build())
+            .setRestoreProperties(Struct.newBuilder().build())
+            .setExecutionSummary(ExecutionSummary.newBuilder().build())
+            .setEtag("etag3123477")
+            .build();
+    mockBackupDR.addResponse(expectedResponse);
+
+    RestoreTemplateName name =
+        RestoreTemplateName.of("[PROJECT]", "[LOCATION]", "[RESTORE_TEMPLATE]");
+
+    RestoreTemplate actualResponse = client.getRestoreTemplate(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockBackupDR.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetRestoreTemplateRequest actualRequest = ((GetRestoreTemplateRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getRestoreTemplateExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBackupDR.addException(exception);
+
+    try {
+      RestoreTemplateName name =
+          RestoreTemplateName.of("[PROJECT]", "[LOCATION]", "[RESTORE_TEMPLATE]");
+      client.getRestoreTemplate(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getRestoreTemplateTest2() throws Exception {
+    RestoreTemplate expectedResponse =
+        RestoreTemplate.newBuilder()
+            .setName(
+                RestoreTemplateName.of("[PROJECT]", "[LOCATION]", "[RESTORE_TEMPLATE]").toString())
+            .setDescription("description-1724546052")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setResourceType("resourceType-384364440")
+            .putAllLabels(new HashMap<String, String>())
+            .setBackupSelectionConfig(BackupSelectionConfig.newBuilder().build())
+            .setPreRestoreConfig(PreRestoreConfig.newBuilder().build())
+            .setPostRestoreConfig(PostRestoreConfig.newBuilder().build())
+            .setVerificationConfig(VerificationConfig.newBuilder().build())
+            .setRestoreProperties(Struct.newBuilder().build())
+            .setExecutionSummary(ExecutionSummary.newBuilder().build())
+            .setEtag("etag3123477")
+            .build();
+    mockBackupDR.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    RestoreTemplate actualResponse = client.getRestoreTemplate(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockBackupDR.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetRestoreTemplateRequest actualRequest = ((GetRestoreTemplateRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getRestoreTemplateExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBackupDR.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getRestoreTemplate(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listRestoreTemplatesTest() throws Exception {
+    RestoreTemplate responsesElement = RestoreTemplate.newBuilder().build();
+    ListRestoreTemplatesResponse expectedResponse =
+        ListRestoreTemplatesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllRestoreTemplates(Arrays.asList(responsesElement))
+            .build();
+    mockBackupDR.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListRestoreTemplatesPagedResponse pagedListResponse = client.listRestoreTemplates(parent);
+
+    List<RestoreTemplate> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getRestoreTemplatesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockBackupDR.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListRestoreTemplatesRequest actualRequest =
+        ((ListRestoreTemplatesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listRestoreTemplatesExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBackupDR.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listRestoreTemplates(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listRestoreTemplatesTest2() throws Exception {
+    RestoreTemplate responsesElement = RestoreTemplate.newBuilder().build();
+    ListRestoreTemplatesResponse expectedResponse =
+        ListRestoreTemplatesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllRestoreTemplates(Arrays.asList(responsesElement))
+            .build();
+    mockBackupDR.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListRestoreTemplatesPagedResponse pagedListResponse = client.listRestoreTemplates(parent);
+
+    List<RestoreTemplate> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getRestoreTemplatesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockBackupDR.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListRestoreTemplatesRequest actualRequest =
+        ((ListRestoreTemplatesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listRestoreTemplatesExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBackupDR.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listRestoreTemplates(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateRestoreTemplateTest() throws Exception {
+    RestoreTemplate expectedResponse =
+        RestoreTemplate.newBuilder()
+            .setName(
+                RestoreTemplateName.of("[PROJECT]", "[LOCATION]", "[RESTORE_TEMPLATE]").toString())
+            .setDescription("description-1724546052")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setResourceType("resourceType-384364440")
+            .putAllLabels(new HashMap<String, String>())
+            .setBackupSelectionConfig(BackupSelectionConfig.newBuilder().build())
+            .setPreRestoreConfig(PreRestoreConfig.newBuilder().build())
+            .setPostRestoreConfig(PostRestoreConfig.newBuilder().build())
+            .setVerificationConfig(VerificationConfig.newBuilder().build())
+            .setRestoreProperties(Struct.newBuilder().build())
+            .setExecutionSummary(ExecutionSummary.newBuilder().build())
+            .setEtag("etag3123477")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateRestoreTemplateTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockBackupDR.addResponse(resultOperation);
+
+    RestoreTemplate restoreTemplate = RestoreTemplate.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    RestoreTemplate actualResponse =
+        client.updateRestoreTemplateAsync(restoreTemplate, updateMask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockBackupDR.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateRestoreTemplateRequest actualRequest =
+        ((UpdateRestoreTemplateRequest) actualRequests.get(0));
+
+    Assert.assertEquals(restoreTemplate, actualRequest.getRestoreTemplate());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateRestoreTemplateExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBackupDR.addException(exception);
+
+    try {
+      RestoreTemplate restoreTemplate = RestoreTemplate.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateRestoreTemplateAsync(restoreTemplate, updateMask).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteRestoreTemplateTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteRestoreTemplateTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockBackupDR.addResponse(resultOperation);
+
+    RestoreTemplateName name =
+        RestoreTemplateName.of("[PROJECT]", "[LOCATION]", "[RESTORE_TEMPLATE]");
+
+    client.deleteRestoreTemplateAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockBackupDR.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteRestoreTemplateRequest actualRequest =
+        ((DeleteRestoreTemplateRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteRestoreTemplateExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBackupDR.addException(exception);
+
+    try {
+      RestoreTemplateName name =
+          RestoreTemplateName.of("[PROJECT]", "[LOCATION]", "[RESTORE_TEMPLATE]");
+      client.deleteRestoreTemplateAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteRestoreTemplateTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteRestoreTemplateTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockBackupDR.addResponse(resultOperation);
+
+    String name = "name3373707";
+
+    client.deleteRestoreTemplateAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockBackupDR.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteRestoreTemplateRequest actualRequest =
+        ((DeleteRestoreTemplateRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteRestoreTemplateExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBackupDR.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteRestoreTemplateAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void runRestoreTemplateTest() throws Exception {
+    RunRestoreTemplateResponse expectedResponse =
+        RunRestoreTemplateResponse.newBuilder()
+            .setRestoreTemplateExecution(
+                RestoreTemplateExecutionName.of(
+                        "[PROJECT]", "[LOCATION]", "[RESTORE_TEMPLATE]", "[EXECUTION]")
+                    .toString())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("runRestoreTemplateTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockBackupDR.addResponse(resultOperation);
+
+    RestoreTemplateName name =
+        RestoreTemplateName.of("[PROJECT]", "[LOCATION]", "[RESTORE_TEMPLATE]");
+
+    RunRestoreTemplateResponse actualResponse = client.runRestoreTemplateAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockBackupDR.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    RunRestoreTemplateRequest actualRequest = ((RunRestoreTemplateRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void runRestoreTemplateExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBackupDR.addException(exception);
+
+    try {
+      RestoreTemplateName name =
+          RestoreTemplateName.of("[PROJECT]", "[LOCATION]", "[RESTORE_TEMPLATE]");
+      client.runRestoreTemplateAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void runRestoreTemplateTest2() throws Exception {
+    RunRestoreTemplateResponse expectedResponse =
+        RunRestoreTemplateResponse.newBuilder()
+            .setRestoreTemplateExecution(
+                RestoreTemplateExecutionName.of(
+                        "[PROJECT]", "[LOCATION]", "[RESTORE_TEMPLATE]", "[EXECUTION]")
+                    .toString())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("runRestoreTemplateTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockBackupDR.addResponse(resultOperation);
+
+    String name = "name3373707";
+
+    RunRestoreTemplateResponse actualResponse = client.runRestoreTemplateAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockBackupDR.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    RunRestoreTemplateRequest actualRequest = ((RunRestoreTemplateRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void runRestoreTemplateExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBackupDR.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.runRestoreTemplateAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void getRestoreTemplateExecutionTest() throws Exception {
+    RestoreTemplateExecution expectedResponse =
+        RestoreTemplateExecution.newBuilder()
+            .setName(
+                RestoreTemplateExecutionName.of(
+                        "[PROJECT]", "[LOCATION]", "[RESTORE_TEMPLATE]", "[EXECUTION]")
+                    .toString())
+            .setResourceType("resourceType-384364440")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setPreparePhaseInfo(PreparePhaseInfo.newBuilder().build())
+            .setPreRestorePhaseInfo(PreRestorePhaseInfo.newBuilder().build())
+            .setRestorePhaseInfo(RestorePhaseInfo.newBuilder().build())
+            .setPostRestorePhaseInfo(PostRestorePhaseInfo.newBuilder().build())
+            .setVerificationPhaseInfo(VerificationPhaseInfo.newBuilder().build())
+            .setCleanupPhaseInfo(CleanupPhaseInfo.newBuilder().build())
+            .build();
+    mockBackupDR.addResponse(expectedResponse);
+
+    RestoreTemplateExecutionName name =
+        RestoreTemplateExecutionName.of(
+            "[PROJECT]", "[LOCATION]", "[RESTORE_TEMPLATE]", "[EXECUTION]");
+
+    RestoreTemplateExecution actualResponse = client.getRestoreTemplateExecution(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockBackupDR.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetRestoreTemplateExecutionRequest actualRequest =
+        ((GetRestoreTemplateExecutionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getRestoreTemplateExecutionExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBackupDR.addException(exception);
+
+    try {
+      RestoreTemplateExecutionName name =
+          RestoreTemplateExecutionName.of(
+              "[PROJECT]", "[LOCATION]", "[RESTORE_TEMPLATE]", "[EXECUTION]");
+      client.getRestoreTemplateExecution(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getRestoreTemplateExecutionTest2() throws Exception {
+    RestoreTemplateExecution expectedResponse =
+        RestoreTemplateExecution.newBuilder()
+            .setName(
+                RestoreTemplateExecutionName.of(
+                        "[PROJECT]", "[LOCATION]", "[RESTORE_TEMPLATE]", "[EXECUTION]")
+                    .toString())
+            .setResourceType("resourceType-384364440")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setPreparePhaseInfo(PreparePhaseInfo.newBuilder().build())
+            .setPreRestorePhaseInfo(PreRestorePhaseInfo.newBuilder().build())
+            .setRestorePhaseInfo(RestorePhaseInfo.newBuilder().build())
+            .setPostRestorePhaseInfo(PostRestorePhaseInfo.newBuilder().build())
+            .setVerificationPhaseInfo(VerificationPhaseInfo.newBuilder().build())
+            .setCleanupPhaseInfo(CleanupPhaseInfo.newBuilder().build())
+            .build();
+    mockBackupDR.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    RestoreTemplateExecution actualResponse = client.getRestoreTemplateExecution(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockBackupDR.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetRestoreTemplateExecutionRequest actualRequest =
+        ((GetRestoreTemplateExecutionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getRestoreTemplateExecutionExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBackupDR.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getRestoreTemplateExecution(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listRestoreTemplateExecutionsTest() throws Exception {
+    RestoreTemplateExecution responsesElement = RestoreTemplateExecution.newBuilder().build();
+    ListRestoreTemplateExecutionsResponse expectedResponse =
+        ListRestoreTemplateExecutionsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllRestoreTemplateExecutions(Arrays.asList(responsesElement))
+            .build();
+    mockBackupDR.addResponse(expectedResponse);
+
+    RestoreTemplateName parent =
+        RestoreTemplateName.of("[PROJECT]", "[LOCATION]", "[RESTORE_TEMPLATE]");
+
+    ListRestoreTemplateExecutionsPagedResponse pagedListResponse =
+        client.listRestoreTemplateExecutions(parent);
+
+    List<RestoreTemplateExecution> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(
+        expectedResponse.getRestoreTemplateExecutionsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockBackupDR.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListRestoreTemplateExecutionsRequest actualRequest =
+        ((ListRestoreTemplateExecutionsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listRestoreTemplateExecutionsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBackupDR.addException(exception);
+
+    try {
+      RestoreTemplateName parent =
+          RestoreTemplateName.of("[PROJECT]", "[LOCATION]", "[RESTORE_TEMPLATE]");
+      client.listRestoreTemplateExecutions(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listRestoreTemplateExecutionsTest2() throws Exception {
+    RestoreTemplateExecution responsesElement = RestoreTemplateExecution.newBuilder().build();
+    ListRestoreTemplateExecutionsResponse expectedResponse =
+        ListRestoreTemplateExecutionsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllRestoreTemplateExecutions(Arrays.asList(responsesElement))
+            .build();
+    mockBackupDR.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListRestoreTemplateExecutionsPagedResponse pagedListResponse =
+        client.listRestoreTemplateExecutions(parent);
+
+    List<RestoreTemplateExecution> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(
+        expectedResponse.getRestoreTemplateExecutionsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockBackupDR.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListRestoreTemplateExecutionsRequest actualRequest =
+        ((ListRestoreTemplateExecutionsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listRestoreTemplateExecutionsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBackupDR.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listRestoreTemplateExecutions(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void triggerRestoreCleanupTest() throws Exception {
+    RestoreTemplateExecution expectedResponse =
+        RestoreTemplateExecution.newBuilder()
+            .setName(
+                RestoreTemplateExecutionName.of(
+                        "[PROJECT]", "[LOCATION]", "[RESTORE_TEMPLATE]", "[EXECUTION]")
+                    .toString())
+            .setResourceType("resourceType-384364440")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setPreparePhaseInfo(PreparePhaseInfo.newBuilder().build())
+            .setPreRestorePhaseInfo(PreRestorePhaseInfo.newBuilder().build())
+            .setRestorePhaseInfo(RestorePhaseInfo.newBuilder().build())
+            .setPostRestorePhaseInfo(PostRestorePhaseInfo.newBuilder().build())
+            .setVerificationPhaseInfo(VerificationPhaseInfo.newBuilder().build())
+            .setCleanupPhaseInfo(CleanupPhaseInfo.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("triggerRestoreCleanupTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockBackupDR.addResponse(resultOperation);
+
+    RestoreTemplateExecutionName name =
+        RestoreTemplateExecutionName.of(
+            "[PROJECT]", "[LOCATION]", "[RESTORE_TEMPLATE]", "[EXECUTION]");
+
+    RestoreTemplateExecution actualResponse = client.triggerRestoreCleanupAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockBackupDR.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    TriggerRestoreCleanupRequest actualRequest =
+        ((TriggerRestoreCleanupRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void triggerRestoreCleanupExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBackupDR.addException(exception);
+
+    try {
+      RestoreTemplateExecutionName name =
+          RestoreTemplateExecutionName.of(
+              "[PROJECT]", "[LOCATION]", "[RESTORE_TEMPLATE]", "[EXECUTION]");
+      client.triggerRestoreCleanupAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void triggerRestoreCleanupTest2() throws Exception {
+    RestoreTemplateExecution expectedResponse =
+        RestoreTemplateExecution.newBuilder()
+            .setName(
+                RestoreTemplateExecutionName.of(
+                        "[PROJECT]", "[LOCATION]", "[RESTORE_TEMPLATE]", "[EXECUTION]")
+                    .toString())
+            .setResourceType("resourceType-384364440")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setPreparePhaseInfo(PreparePhaseInfo.newBuilder().build())
+            .setPreRestorePhaseInfo(PreRestorePhaseInfo.newBuilder().build())
+            .setRestorePhaseInfo(RestorePhaseInfo.newBuilder().build())
+            .setPostRestorePhaseInfo(PostRestorePhaseInfo.newBuilder().build())
+            .setVerificationPhaseInfo(VerificationPhaseInfo.newBuilder().build())
+            .setCleanupPhaseInfo(CleanupPhaseInfo.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("triggerRestoreCleanupTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockBackupDR.addResponse(resultOperation);
+
+    String name = "name3373707";
+
+    RestoreTemplateExecution actualResponse = client.triggerRestoreCleanupAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockBackupDR.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    TriggerRestoreCleanupRequest actualRequest =
+        ((TriggerRestoreCleanupRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void triggerRestoreCleanupExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBackupDR.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.triggerRestoreCleanupAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void createRestoreVerificationPlanTest() throws Exception {
+    RestoreVerificationPlan expectedResponse =
+        RestoreVerificationPlan.newBuilder()
+            .setName(
+                RestoreVerificationPlanName.of(
+                        "[PROJECT]", "[LOCATION]", "[RESTOREVERIFICATIONPLAN]")
+                    .toString())
+            .setDescription("description-1724546052")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setSchedule("schedule-697920873")
+            .setTimeZone("timeZone-2077180903")
+            .setSuccessCleanupRule(RestoreVerificationCleanupRule.newBuilder().build())
+            .setFailureCleanupRule(RestoreVerificationCleanupRule.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createRestoreVerificationPlanTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockBackupDR.addResponse(resultOperation);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    RestoreVerificationPlan restoreVerificationPlan = RestoreVerificationPlan.newBuilder().build();
+    String restoreVerificationPlanId = "restoreVerificationPlanId-1986447539";
+
+    RestoreVerificationPlan actualResponse =
+        client
+            .createRestoreVerificationPlanAsync(
+                parent, restoreVerificationPlan, restoreVerificationPlanId)
+            .get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockBackupDR.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateRestoreVerificationPlanRequest actualRequest =
+        ((CreateRestoreVerificationPlanRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(restoreVerificationPlan, actualRequest.getRestoreVerificationPlan());
+    Assert.assertEquals(restoreVerificationPlanId, actualRequest.getRestoreVerificationPlanId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createRestoreVerificationPlanExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBackupDR.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      RestoreVerificationPlan restoreVerificationPlan =
+          RestoreVerificationPlan.newBuilder().build();
+      String restoreVerificationPlanId = "restoreVerificationPlanId-1986447539";
+      client
+          .createRestoreVerificationPlanAsync(
+              parent, restoreVerificationPlan, restoreVerificationPlanId)
+          .get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void createRestoreVerificationPlanTest2() throws Exception {
+    RestoreVerificationPlan expectedResponse =
+        RestoreVerificationPlan.newBuilder()
+            .setName(
+                RestoreVerificationPlanName.of(
+                        "[PROJECT]", "[LOCATION]", "[RESTOREVERIFICATIONPLAN]")
+                    .toString())
+            .setDescription("description-1724546052")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setSchedule("schedule-697920873")
+            .setTimeZone("timeZone-2077180903")
+            .setSuccessCleanupRule(RestoreVerificationCleanupRule.newBuilder().build())
+            .setFailureCleanupRule(RestoreVerificationCleanupRule.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createRestoreVerificationPlanTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockBackupDR.addResponse(resultOperation);
+
+    String parent = "parent-995424086";
+    RestoreVerificationPlan restoreVerificationPlan = RestoreVerificationPlan.newBuilder().build();
+    String restoreVerificationPlanId = "restoreVerificationPlanId-1986447539";
+
+    RestoreVerificationPlan actualResponse =
+        client
+            .createRestoreVerificationPlanAsync(
+                parent, restoreVerificationPlan, restoreVerificationPlanId)
+            .get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockBackupDR.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateRestoreVerificationPlanRequest actualRequest =
+        ((CreateRestoreVerificationPlanRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(restoreVerificationPlan, actualRequest.getRestoreVerificationPlan());
+    Assert.assertEquals(restoreVerificationPlanId, actualRequest.getRestoreVerificationPlanId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createRestoreVerificationPlanExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBackupDR.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      RestoreVerificationPlan restoreVerificationPlan =
+          RestoreVerificationPlan.newBuilder().build();
+      String restoreVerificationPlanId = "restoreVerificationPlanId-1986447539";
+      client
+          .createRestoreVerificationPlanAsync(
+              parent, restoreVerificationPlan, restoreVerificationPlanId)
+          .get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void createRestoreVerificationPlanAssociationTest() throws Exception {
+    RestoreVerificationPlanAssociation expectedResponse =
+        RestoreVerificationPlanAssociation.newBuilder()
+            .setName(
+                RestoreVerificationPlanAssociationName.of(
+                        "[PROJECT]", "[LOCATION]", "[RESTORE_VERIFICATION_PLAN]", "[ASSOCIATION]")
+                    .toString())
+            .setDescription("description-1724546052")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setTriggerSummary(TriggerSummary.newBuilder().build())
+            .setResourceType("resourceType-384364440")
+            .putAllLabels(new HashMap<String, String>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createRestoreVerificationPlanAssociationTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockBackupDR.addResponse(resultOperation);
+
+    RestoreVerificationPlanName parent =
+        RestoreVerificationPlanName.of("[PROJECT]", "[LOCATION]", "[RESTOREVERIFICATIONPLAN]");
+    RestoreVerificationPlanAssociation restoreVerificationPlanAssociation =
+        RestoreVerificationPlanAssociation.newBuilder().build();
+    String restoreVerificationPlanAssociationId = "restoreVerificationPlanAssociationId-1096897526";
+
+    RestoreVerificationPlanAssociation actualResponse =
+        client
+            .createRestoreVerificationPlanAssociationAsync(
+                parent, restoreVerificationPlanAssociation, restoreVerificationPlanAssociationId)
+            .get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockBackupDR.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateRestoreVerificationPlanAssociationRequest actualRequest =
+        ((CreateRestoreVerificationPlanAssociationRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(
+        restoreVerificationPlanAssociation, actualRequest.getRestoreVerificationPlanAssociation());
+    Assert.assertEquals(
+        restoreVerificationPlanAssociationId,
+        actualRequest.getRestoreVerificationPlanAssociationId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createRestoreVerificationPlanAssociationExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBackupDR.addException(exception);
+
+    try {
+      RestoreVerificationPlanName parent =
+          RestoreVerificationPlanName.of("[PROJECT]", "[LOCATION]", "[RESTOREVERIFICATIONPLAN]");
+      RestoreVerificationPlanAssociation restoreVerificationPlanAssociation =
+          RestoreVerificationPlanAssociation.newBuilder().build();
+      String restoreVerificationPlanAssociationId =
+          "restoreVerificationPlanAssociationId-1096897526";
+      client
+          .createRestoreVerificationPlanAssociationAsync(
+              parent, restoreVerificationPlanAssociation, restoreVerificationPlanAssociationId)
+          .get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void createRestoreVerificationPlanAssociationTest2() throws Exception {
+    RestoreVerificationPlanAssociation expectedResponse =
+        RestoreVerificationPlanAssociation.newBuilder()
+            .setName(
+                RestoreVerificationPlanAssociationName.of(
+                        "[PROJECT]", "[LOCATION]", "[RESTORE_VERIFICATION_PLAN]", "[ASSOCIATION]")
+                    .toString())
+            .setDescription("description-1724546052")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setTriggerSummary(TriggerSummary.newBuilder().build())
+            .setResourceType("resourceType-384364440")
+            .putAllLabels(new HashMap<String, String>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createRestoreVerificationPlanAssociationTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockBackupDR.addResponse(resultOperation);
+
+    String parent = "parent-995424086";
+    RestoreVerificationPlanAssociation restoreVerificationPlanAssociation =
+        RestoreVerificationPlanAssociation.newBuilder().build();
+    String restoreVerificationPlanAssociationId = "restoreVerificationPlanAssociationId-1096897526";
+
+    RestoreVerificationPlanAssociation actualResponse =
+        client
+            .createRestoreVerificationPlanAssociationAsync(
+                parent, restoreVerificationPlanAssociation, restoreVerificationPlanAssociationId)
+            .get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockBackupDR.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateRestoreVerificationPlanAssociationRequest actualRequest =
+        ((CreateRestoreVerificationPlanAssociationRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(
+        restoreVerificationPlanAssociation, actualRequest.getRestoreVerificationPlanAssociation());
+    Assert.assertEquals(
+        restoreVerificationPlanAssociationId,
+        actualRequest.getRestoreVerificationPlanAssociationId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createRestoreVerificationPlanAssociationExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBackupDR.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      RestoreVerificationPlanAssociation restoreVerificationPlanAssociation =
+          RestoreVerificationPlanAssociation.newBuilder().build();
+      String restoreVerificationPlanAssociationId =
+          "restoreVerificationPlanAssociationId-1096897526";
+      client
+          .createRestoreVerificationPlanAssociationAsync(
+              parent, restoreVerificationPlanAssociation, restoreVerificationPlanAssociationId)
+          .get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void getRestoreVerificationPlanAssociationTest() throws Exception {
+    RestoreVerificationPlanAssociation expectedResponse =
+        RestoreVerificationPlanAssociation.newBuilder()
+            .setName(
+                RestoreVerificationPlanAssociationName.of(
+                        "[PROJECT]", "[LOCATION]", "[RESTORE_VERIFICATION_PLAN]", "[ASSOCIATION]")
+                    .toString())
+            .setDescription("description-1724546052")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setTriggerSummary(TriggerSummary.newBuilder().build())
+            .setResourceType("resourceType-384364440")
+            .putAllLabels(new HashMap<String, String>())
+            .build();
+    mockBackupDR.addResponse(expectedResponse);
+
+    RestoreVerificationPlanAssociationName name =
+        RestoreVerificationPlanAssociationName.of(
+            "[PROJECT]", "[LOCATION]", "[RESTORE_VERIFICATION_PLAN]", "[ASSOCIATION]");
+
+    RestoreVerificationPlanAssociation actualResponse =
+        client.getRestoreVerificationPlanAssociation(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockBackupDR.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetRestoreVerificationPlanAssociationRequest actualRequest =
+        ((GetRestoreVerificationPlanAssociationRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getRestoreVerificationPlanAssociationExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBackupDR.addException(exception);
+
+    try {
+      RestoreVerificationPlanAssociationName name =
+          RestoreVerificationPlanAssociationName.of(
+              "[PROJECT]", "[LOCATION]", "[RESTORE_VERIFICATION_PLAN]", "[ASSOCIATION]");
+      client.getRestoreVerificationPlanAssociation(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getRestoreVerificationPlanAssociationTest2() throws Exception {
+    RestoreVerificationPlanAssociation expectedResponse =
+        RestoreVerificationPlanAssociation.newBuilder()
+            .setName(
+                RestoreVerificationPlanAssociationName.of(
+                        "[PROJECT]", "[LOCATION]", "[RESTORE_VERIFICATION_PLAN]", "[ASSOCIATION]")
+                    .toString())
+            .setDescription("description-1724546052")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setTriggerSummary(TriggerSummary.newBuilder().build())
+            .setResourceType("resourceType-384364440")
+            .putAllLabels(new HashMap<String, String>())
+            .build();
+    mockBackupDR.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    RestoreVerificationPlanAssociation actualResponse =
+        client.getRestoreVerificationPlanAssociation(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockBackupDR.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetRestoreVerificationPlanAssociationRequest actualRequest =
+        ((GetRestoreVerificationPlanAssociationRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getRestoreVerificationPlanAssociationExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBackupDR.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getRestoreVerificationPlanAssociation(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listRestoreVerificationPlanAssociationsTest() throws Exception {
+    RestoreVerificationPlanAssociation responsesElement =
+        RestoreVerificationPlanAssociation.newBuilder().build();
+    ListRestoreVerificationPlanAssociationsResponse expectedResponse =
+        ListRestoreVerificationPlanAssociationsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllRestoreVerificationPlanAssociations(Arrays.asList(responsesElement))
+            .build();
+    mockBackupDR.addResponse(expectedResponse);
+
+    RestoreVerificationPlanName parent =
+        RestoreVerificationPlanName.of("[PROJECT]", "[LOCATION]", "[RESTOREVERIFICATIONPLAN]");
+
+    ListRestoreVerificationPlanAssociationsPagedResponse pagedListResponse =
+        client.listRestoreVerificationPlanAssociations(parent);
+
+    List<RestoreVerificationPlanAssociation> resources =
+        Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(
+        expectedResponse.getRestoreVerificationPlanAssociationsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockBackupDR.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListRestoreVerificationPlanAssociationsRequest actualRequest =
+        ((ListRestoreVerificationPlanAssociationsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listRestoreVerificationPlanAssociationsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBackupDR.addException(exception);
+
+    try {
+      RestoreVerificationPlanName parent =
+          RestoreVerificationPlanName.of("[PROJECT]", "[LOCATION]", "[RESTOREVERIFICATIONPLAN]");
+      client.listRestoreVerificationPlanAssociations(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listRestoreVerificationPlanAssociationsTest2() throws Exception {
+    RestoreVerificationPlanAssociation responsesElement =
+        RestoreVerificationPlanAssociation.newBuilder().build();
+    ListRestoreVerificationPlanAssociationsResponse expectedResponse =
+        ListRestoreVerificationPlanAssociationsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllRestoreVerificationPlanAssociations(Arrays.asList(responsesElement))
+            .build();
+    mockBackupDR.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListRestoreVerificationPlanAssociationsPagedResponse pagedListResponse =
+        client.listRestoreVerificationPlanAssociations(parent);
+
+    List<RestoreVerificationPlanAssociation> resources =
+        Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(
+        expectedResponse.getRestoreVerificationPlanAssociationsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockBackupDR.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListRestoreVerificationPlanAssociationsRequest actualRequest =
+        ((ListRestoreVerificationPlanAssociationsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listRestoreVerificationPlanAssociationsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBackupDR.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listRestoreVerificationPlanAssociations(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteRestoreVerificationPlanAssociationTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteRestoreVerificationPlanAssociationTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockBackupDR.addResponse(resultOperation);
+
+    RestoreVerificationPlanAssociationName name =
+        RestoreVerificationPlanAssociationName.of(
+            "[PROJECT]", "[LOCATION]", "[RESTORE_VERIFICATION_PLAN]", "[ASSOCIATION]");
+
+    client.deleteRestoreVerificationPlanAssociationAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockBackupDR.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteRestoreVerificationPlanAssociationRequest actualRequest =
+        ((DeleteRestoreVerificationPlanAssociationRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteRestoreVerificationPlanAssociationExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBackupDR.addException(exception);
+
+    try {
+      RestoreVerificationPlanAssociationName name =
+          RestoreVerificationPlanAssociationName.of(
+              "[PROJECT]", "[LOCATION]", "[RESTORE_VERIFICATION_PLAN]", "[ASSOCIATION]");
+      client.deleteRestoreVerificationPlanAssociationAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteRestoreVerificationPlanAssociationTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteRestoreVerificationPlanAssociationTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockBackupDR.addResponse(resultOperation);
+
+    String name = "name3373707";
+
+    client.deleteRestoreVerificationPlanAssociationAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockBackupDR.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteRestoreVerificationPlanAssociationRequest actualRequest =
+        ((DeleteRestoreVerificationPlanAssociationRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteRestoreVerificationPlanAssociationExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBackupDR.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteRestoreVerificationPlanAssociationAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void triggerRestoreVerificationTest() throws Exception {
+    TriggerRestoreVerificationResponse expectedResponse =
+        TriggerRestoreVerificationResponse.newBuilder()
+            .setRestoreTemplateExecution(
+                RestoreTemplateExecutionName.of(
+                        "[PROJECT]", "[LOCATION]", "[RESTORE_TEMPLATE]", "[EXECUTION]")
+                    .toString())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("triggerRestoreVerificationTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockBackupDR.addResponse(resultOperation);
+
+    RestoreVerificationPlanAssociationName name =
+        RestoreVerificationPlanAssociationName.of(
+            "[PROJECT]", "[LOCATION]", "[RESTORE_VERIFICATION_PLAN]", "[ASSOCIATION]");
+
+    TriggerRestoreVerificationResponse actualResponse =
+        client.triggerRestoreVerificationAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockBackupDR.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    TriggerRestoreVerificationRequest actualRequest =
+        ((TriggerRestoreVerificationRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void triggerRestoreVerificationExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBackupDR.addException(exception);
+
+    try {
+      RestoreVerificationPlanAssociationName name =
+          RestoreVerificationPlanAssociationName.of(
+              "[PROJECT]", "[LOCATION]", "[RESTORE_VERIFICATION_PLAN]", "[ASSOCIATION]");
+      client.triggerRestoreVerificationAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void triggerRestoreVerificationTest2() throws Exception {
+    TriggerRestoreVerificationResponse expectedResponse =
+        TriggerRestoreVerificationResponse.newBuilder()
+            .setRestoreTemplateExecution(
+                RestoreTemplateExecutionName.of(
+                        "[PROJECT]", "[LOCATION]", "[RESTORE_TEMPLATE]", "[EXECUTION]")
+                    .toString())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("triggerRestoreVerificationTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockBackupDR.addResponse(resultOperation);
+
+    String name = "name3373707";
+
+    TriggerRestoreVerificationResponse actualResponse =
+        client.triggerRestoreVerificationAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockBackupDR.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    TriggerRestoreVerificationRequest actualRequest =
+        ((TriggerRestoreVerificationRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void triggerRestoreVerificationExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBackupDR.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.triggerRestoreVerificationAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void getRestoreVerificationPlanTest() throws Exception {
+    RestoreVerificationPlan expectedResponse =
+        RestoreVerificationPlan.newBuilder()
+            .setName(
+                RestoreVerificationPlanName.of(
+                        "[PROJECT]", "[LOCATION]", "[RESTOREVERIFICATIONPLAN]")
+                    .toString())
+            .setDescription("description-1724546052")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setSchedule("schedule-697920873")
+            .setTimeZone("timeZone-2077180903")
+            .setSuccessCleanupRule(RestoreVerificationCleanupRule.newBuilder().build())
+            .setFailureCleanupRule(RestoreVerificationCleanupRule.newBuilder().build())
+            .build();
+    mockBackupDR.addResponse(expectedResponse);
+
+    RestoreVerificationPlanName name =
+        RestoreVerificationPlanName.of("[PROJECT]", "[LOCATION]", "[RESTOREVERIFICATIONPLAN]");
+
+    RestoreVerificationPlan actualResponse = client.getRestoreVerificationPlan(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockBackupDR.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetRestoreVerificationPlanRequest actualRequest =
+        ((GetRestoreVerificationPlanRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getRestoreVerificationPlanExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBackupDR.addException(exception);
+
+    try {
+      RestoreVerificationPlanName name =
+          RestoreVerificationPlanName.of("[PROJECT]", "[LOCATION]", "[RESTOREVERIFICATIONPLAN]");
+      client.getRestoreVerificationPlan(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getRestoreVerificationPlanTest2() throws Exception {
+    RestoreVerificationPlan expectedResponse =
+        RestoreVerificationPlan.newBuilder()
+            .setName(
+                RestoreVerificationPlanName.of(
+                        "[PROJECT]", "[LOCATION]", "[RESTOREVERIFICATIONPLAN]")
+                    .toString())
+            .setDescription("description-1724546052")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setSchedule("schedule-697920873")
+            .setTimeZone("timeZone-2077180903")
+            .setSuccessCleanupRule(RestoreVerificationCleanupRule.newBuilder().build())
+            .setFailureCleanupRule(RestoreVerificationCleanupRule.newBuilder().build())
+            .build();
+    mockBackupDR.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    RestoreVerificationPlan actualResponse = client.getRestoreVerificationPlan(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockBackupDR.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetRestoreVerificationPlanRequest actualRequest =
+        ((GetRestoreVerificationPlanRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getRestoreVerificationPlanExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBackupDR.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getRestoreVerificationPlan(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listRestoreVerificationPlansTest() throws Exception {
+    RestoreVerificationPlan responsesElement = RestoreVerificationPlan.newBuilder().build();
+    ListRestoreVerificationPlansResponse expectedResponse =
+        ListRestoreVerificationPlansResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllRestoreVerificationPlans(Arrays.asList(responsesElement))
+            .build();
+    mockBackupDR.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListRestoreVerificationPlansPagedResponse pagedListResponse =
+        client.listRestoreVerificationPlans(parent);
+
+    List<RestoreVerificationPlan> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(
+        expectedResponse.getRestoreVerificationPlansList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockBackupDR.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListRestoreVerificationPlansRequest actualRequest =
+        ((ListRestoreVerificationPlansRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listRestoreVerificationPlansExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBackupDR.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listRestoreVerificationPlans(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listRestoreVerificationPlansTest2() throws Exception {
+    RestoreVerificationPlan responsesElement = RestoreVerificationPlan.newBuilder().build();
+    ListRestoreVerificationPlansResponse expectedResponse =
+        ListRestoreVerificationPlansResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllRestoreVerificationPlans(Arrays.asList(responsesElement))
+            .build();
+    mockBackupDR.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListRestoreVerificationPlansPagedResponse pagedListResponse =
+        client.listRestoreVerificationPlans(parent);
+
+    List<RestoreVerificationPlan> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(
+        expectedResponse.getRestoreVerificationPlansList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockBackupDR.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListRestoreVerificationPlansRequest actualRequest =
+        ((ListRestoreVerificationPlansRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listRestoreVerificationPlansExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBackupDR.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listRestoreVerificationPlans(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteRestoreVerificationPlanTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteRestoreVerificationPlanTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockBackupDR.addResponse(resultOperation);
+
+    RestoreVerificationPlanName name =
+        RestoreVerificationPlanName.of("[PROJECT]", "[LOCATION]", "[RESTOREVERIFICATIONPLAN]");
+
+    client.deleteRestoreVerificationPlanAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockBackupDR.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteRestoreVerificationPlanRequest actualRequest =
+        ((DeleteRestoreVerificationPlanRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteRestoreVerificationPlanExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBackupDR.addException(exception);
+
+    try {
+      RestoreVerificationPlanName name =
+          RestoreVerificationPlanName.of("[PROJECT]", "[LOCATION]", "[RESTOREVERIFICATIONPLAN]");
+      client.deleteRestoreVerificationPlanAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteRestoreVerificationPlanTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteRestoreVerificationPlanTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockBackupDR.addResponse(resultOperation);
+
+    String name = "name3373707";
+
+    client.deleteRestoreVerificationPlanAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockBackupDR.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteRestoreVerificationPlanRequest actualRequest =
+        ((DeleteRestoreVerificationPlanRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteRestoreVerificationPlanExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBackupDR.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteRestoreVerificationPlanAsync(name).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
@@ -1574,6 +3461,7 @@ public class BackupDRClientTest {
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
             .addAllKmsKeyVersions(new ArrayList<String>())
+            .setVerificationSummary(VerificationSummary.newBuilder().build())
             .build();
     mockBackupDR.addResponse(expectedResponse);
 
@@ -1631,6 +3519,7 @@ public class BackupDRClientTest {
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
             .addAllKmsKeyVersions(new ArrayList<String>())
+            .setVerificationSummary(VerificationSummary.newBuilder().build())
             .build();
     mockBackupDR.addResponse(expectedResponse);
 
@@ -1686,6 +3575,7 @@ public class BackupDRClientTest {
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
             .addAllKmsKeyVersions(new ArrayList<String>())
+            .setVerificationSummary(VerificationSummary.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1752,6 +3642,7 @@ public class BackupDRClientTest {
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
             .addAllKmsKeyVersions(new ArrayList<String>())
+            .setVerificationSummary(VerificationSummary.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1817,6 +3708,7 @@ public class BackupDRClientTest {
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
             .addAllKmsKeyVersions(new ArrayList<String>())
+            .setVerificationSummary(VerificationSummary.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()

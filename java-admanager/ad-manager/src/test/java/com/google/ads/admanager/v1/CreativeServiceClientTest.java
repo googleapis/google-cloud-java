@@ -29,6 +29,7 @@ import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.testing.FakeStatusCode;
 import com.google.common.collect.Lists;
+import com.google.protobuf.FieldMask;
 import com.google.protobuf.Timestamp;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -281,6 +282,389 @@ public class CreativeServiceClientTest {
     try {
       String parent = "networks/network-5450";
       client.listCreatives(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createCreativeTest() throws Exception {
+    Creative expectedResponse =
+        Creative.newBuilder()
+            .setName(CreativeName.of("[NETWORK_CODE]", "[CREATIVE]").toString())
+            .setDisplayName("displayName1714148973")
+            .setAdvertiser(CompanyName.of("[NETWORK_CODE]", "[COMPANY]").toString())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .addAllCustomFieldValues(new ArrayList<CustomFieldValue>())
+            .setPreviewUrl("previewUrl-41651065")
+            .setSize(Size.newBuilder().build())
+            .setThirdPartyDataDeclaration(ThirdPartyDataDeclaration.newBuilder().build())
+            .setSelfDeclaredEuropeanUnionPoliticalContent(true)
+            .setAdBadgingEnabled(true)
+            .addAllAppliedLabels(new ArrayList<AppliedLabel>())
+            .setBuyerPlacementConfig(BuyerPlacementConfig.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    NetworkName parent = NetworkName.of("[NETWORK_CODE]");
+    Creative creative = Creative.newBuilder().build();
+
+    Creative actualResponse = client.createCreative(parent, creative);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createCreativeExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      NetworkName parent = NetworkName.of("[NETWORK_CODE]");
+      Creative creative = Creative.newBuilder().build();
+      client.createCreative(parent, creative);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createCreativeTest2() throws Exception {
+    Creative expectedResponse =
+        Creative.newBuilder()
+            .setName(CreativeName.of("[NETWORK_CODE]", "[CREATIVE]").toString())
+            .setDisplayName("displayName1714148973")
+            .setAdvertiser(CompanyName.of("[NETWORK_CODE]", "[COMPANY]").toString())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .addAllCustomFieldValues(new ArrayList<CustomFieldValue>())
+            .setPreviewUrl("previewUrl-41651065")
+            .setSize(Size.newBuilder().build())
+            .setThirdPartyDataDeclaration(ThirdPartyDataDeclaration.newBuilder().build())
+            .setSelfDeclaredEuropeanUnionPoliticalContent(true)
+            .setAdBadgingEnabled(true)
+            .addAllAppliedLabels(new ArrayList<AppliedLabel>())
+            .setBuyerPlacementConfig(BuyerPlacementConfig.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "networks/network-5450";
+    Creative creative = Creative.newBuilder().build();
+
+    Creative actualResponse = client.createCreative(parent, creative);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createCreativeExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "networks/network-5450";
+      Creative creative = Creative.newBuilder().build();
+      client.createCreative(parent, creative);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateCreativeTest() throws Exception {
+    Creative expectedResponse =
+        Creative.newBuilder()
+            .setName(CreativeName.of("[NETWORK_CODE]", "[CREATIVE]").toString())
+            .setDisplayName("displayName1714148973")
+            .setAdvertiser(CompanyName.of("[NETWORK_CODE]", "[COMPANY]").toString())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .addAllCustomFieldValues(new ArrayList<CustomFieldValue>())
+            .setPreviewUrl("previewUrl-41651065")
+            .setSize(Size.newBuilder().build())
+            .setThirdPartyDataDeclaration(ThirdPartyDataDeclaration.newBuilder().build())
+            .setSelfDeclaredEuropeanUnionPoliticalContent(true)
+            .setAdBadgingEnabled(true)
+            .addAllAppliedLabels(new ArrayList<AppliedLabel>())
+            .setBuyerPlacementConfig(BuyerPlacementConfig.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    Creative creative =
+        Creative.newBuilder()
+            .setName(CreativeName.of("[NETWORK_CODE]", "[CREATIVE]").toString())
+            .setDisplayName("displayName1714148973")
+            .setAdvertiser(CompanyName.of("[NETWORK_CODE]", "[COMPANY]").toString())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .addAllCustomFieldValues(new ArrayList<CustomFieldValue>())
+            .setPreviewUrl("previewUrl-41651065")
+            .setSize(Size.newBuilder().build())
+            .setThirdPartyDataDeclaration(ThirdPartyDataDeclaration.newBuilder().build())
+            .setSelfDeclaredEuropeanUnionPoliticalContent(true)
+            .setAdBadgingEnabled(true)
+            .addAllAppliedLabels(new ArrayList<AppliedLabel>())
+            .setBuyerPlacementConfig(BuyerPlacementConfig.newBuilder().build())
+            .build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    Creative actualResponse = client.updateCreative(creative, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateCreativeExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      Creative creative =
+          Creative.newBuilder()
+              .setName(CreativeName.of("[NETWORK_CODE]", "[CREATIVE]").toString())
+              .setDisplayName("displayName1714148973")
+              .setAdvertiser(CompanyName.of("[NETWORK_CODE]", "[COMPANY]").toString())
+              .setUpdateTime(Timestamp.newBuilder().build())
+              .addAllCustomFieldValues(new ArrayList<CustomFieldValue>())
+              .setPreviewUrl("previewUrl-41651065")
+              .setSize(Size.newBuilder().build())
+              .setThirdPartyDataDeclaration(ThirdPartyDataDeclaration.newBuilder().build())
+              .setSelfDeclaredEuropeanUnionPoliticalContent(true)
+              .setAdBadgingEnabled(true)
+              .addAllAppliedLabels(new ArrayList<AppliedLabel>())
+              .setBuyerPlacementConfig(BuyerPlacementConfig.newBuilder().build())
+              .build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateCreative(creative, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void batchCreateCreativesTest() throws Exception {
+    BatchCreateCreativesResponse expectedResponse =
+        BatchCreateCreativesResponse.newBuilder()
+            .addAllCreatives(new ArrayList<Creative>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    NetworkName parent = NetworkName.of("[NETWORK_CODE]");
+    List<CreateCreativeRequest> requests = new ArrayList<>();
+
+    BatchCreateCreativesResponse actualResponse = client.batchCreateCreatives(parent, requests);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void batchCreateCreativesExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      NetworkName parent = NetworkName.of("[NETWORK_CODE]");
+      List<CreateCreativeRequest> requests = new ArrayList<>();
+      client.batchCreateCreatives(parent, requests);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void batchCreateCreativesTest2() throws Exception {
+    BatchCreateCreativesResponse expectedResponse =
+        BatchCreateCreativesResponse.newBuilder()
+            .addAllCreatives(new ArrayList<Creative>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "networks/network-5450";
+    List<CreateCreativeRequest> requests = new ArrayList<>();
+
+    BatchCreateCreativesResponse actualResponse = client.batchCreateCreatives(parent, requests);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void batchCreateCreativesExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "networks/network-5450";
+      List<CreateCreativeRequest> requests = new ArrayList<>();
+      client.batchCreateCreatives(parent, requests);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void batchUpdateCreativesTest() throws Exception {
+    BatchUpdateCreativesResponse expectedResponse =
+        BatchUpdateCreativesResponse.newBuilder()
+            .addAllCreatives(new ArrayList<Creative>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    NetworkName parent = NetworkName.of("[NETWORK_CODE]");
+    List<UpdateCreativeRequest> requests = new ArrayList<>();
+
+    BatchUpdateCreativesResponse actualResponse = client.batchUpdateCreatives(parent, requests);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void batchUpdateCreativesExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      NetworkName parent = NetworkName.of("[NETWORK_CODE]");
+      List<UpdateCreativeRequest> requests = new ArrayList<>();
+      client.batchUpdateCreatives(parent, requests);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void batchUpdateCreativesTest2() throws Exception {
+    BatchUpdateCreativesResponse expectedResponse =
+        BatchUpdateCreativesResponse.newBuilder()
+            .addAllCreatives(new ArrayList<Creative>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "networks/network-5450";
+    List<UpdateCreativeRequest> requests = new ArrayList<>();
+
+    BatchUpdateCreativesResponse actualResponse = client.batchUpdateCreatives(parent, requests);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void batchUpdateCreativesExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "networks/network-5450";
+      List<UpdateCreativeRequest> requests = new ArrayList<>();
+      client.batchUpdateCreatives(parent, requests);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

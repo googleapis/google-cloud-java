@@ -26,7 +26,8 @@ package com.google.cloud.discoveryengine.v1;
  * <pre>
  * Response message for
  * [CompletionService.PurgeCompletionSuggestions][google.cloud.discoveryengine.v1.CompletionService.PurgeCompletionSuggestions]
- * method.
+ * method. If the long running operation is successfully done, then this
+ * message is returned by the google.longrunning.Operations.response field.
  * </pre>
  *
  * Protobuf type {@code google.cloud.discoveryengine.v1.PurgeCompletionSuggestionsResponse}
@@ -346,7 +347,8 @@ public final class PurgeCompletionSuggestionsResponse extends com.google.protobu
    * <pre>
    * Response message for
    * [CompletionService.PurgeCompletionSuggestions][google.cloud.discoveryengine.v1.CompletionService.PurgeCompletionSuggestions]
-   * method.
+   * method. If the long running operation is successfully done, then this
+   * message is returned by the google.longrunning.Operations.response field.
    * </pre>
    *
    * Protobuf type {@code google.cloud.discoveryengine.v1.PurgeCompletionSuggestionsResponse}

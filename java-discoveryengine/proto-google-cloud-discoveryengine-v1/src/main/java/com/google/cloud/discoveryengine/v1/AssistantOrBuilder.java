@@ -59,4 +59,410 @@ public interface AssistantOrBuilder
    * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. The assistant display name.
+   *
+   * It must be a UTF-8 encoded string with a length limit of 128 characters.
+   * </pre>
+   *
+   * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The displayName.
+   */
+  java.lang.String getDisplayName();
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. The assistant display name.
+   *
+   * It must be a UTF-8 encoded string with a length limit of 128 characters.
+   * </pre>
+   *
+   * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for displayName.
+   */
+  com.google.protobuf.ByteString getDisplayNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Description for additional information. Expected to be shown on
+   * the configuration UI, not to the users of the assistant.
+   * </pre>
+   *
+   * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The description.
+   */
+  java.lang.String getDescription();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Description for additional information. Expected to be shown on
+   * the configuration UI, not to the users of the assistant.
+   * </pre>
+   *
+   * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for description.
+   */
+  com.google.protobuf.ByteString getDescriptionBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for the generation of the assistant response.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.Assistant.GenerationConfig generation_config = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the generationConfig field is set.
+   */
+  boolean hasGenerationConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for the generation of the assistant response.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.Assistant.GenerationConfig generation_config = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The generationConfig.
+   */
+  com.google.cloud.discoveryengine.v1.Assistant.GenerationConfig getGenerationConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for the generation of the assistant response.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.Assistant.GenerationConfig generation_config = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.discoveryengine.v1.Assistant.GenerationConfigOrBuilder
+      getGenerationConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The type of web grounding to use.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.Assistant.WebGroundingType web_grounding_type = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for webGroundingType.
+   */
+  int getWebGroundingTypeValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The type of web grounding to use.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.Assistant.WebGroundingType web_grounding_type = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The webGroundingType.
+   */
+  com.google.cloud.discoveryengine.v1.Assistant.WebGroundingType getWebGroundingType();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This field controls the default web grounding toggle for end
+   * users if `web_grounding_type` is set to `WEB_GROUNDING_TYPE_GOOGLE_SEARCH`
+   * or `WEB_GROUNDING_TYPE_ENTERPRISE_WEB_SEARCH`. By default, this field is
+   * set to false. If `web_grounding_type` is `WEB_GROUNDING_TYPE_GOOGLE_SEARCH`
+   * or `WEB_GROUNDING_TYPE_ENTERPRISE_WEB_SEARCH`, end users will have web
+   * grounding enabled by default on UI. If true, grounding toggle will be
+   * disabled by default on UI. End users can still enable web grounding in
+   * the UI if web grounding is enabled.
+   * </pre>
+   *
+   * <code>bool default_web_grounding_toggle_off = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The defaultWebGroundingToggleOff.
+   */
+  boolean getDefaultWebGroundingToggleOff();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Note: not implemented yet. Use
+   * [enabled_actions][google.cloud.discoveryengine.v1.Assistant.enabled_actions]
+   * instead. The enabled tools on this assistant. The keys are connector name,
+   * for example
+   * "projects/{projectId}/locations/{locationId}/collections/{collectionId}/dataconnector
+   * The values consist of admin enabled tools towards the connector
+   * instance. Admin can selectively enable multiple tools on any of the
+   * connector instances that they created in the project. For example
+   * {"jira1ConnectorName": [(toolId1, "createTicket"), (toolId2,
+   * "transferTicket")],
+   * "gmail1ConnectorName": [(toolId3, "sendEmail"),..] }
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.discoveryengine.v1.Assistant.ToolList&gt; enabled_tools = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getEnabledToolsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Note: not implemented yet. Use
+   * [enabled_actions][google.cloud.discoveryengine.v1.Assistant.enabled_actions]
+   * instead. The enabled tools on this assistant. The keys are connector name,
+   * for example
+   * "projects/{projectId}/locations/{locationId}/collections/{collectionId}/dataconnector
+   * The values consist of admin enabled tools towards the connector
+   * instance. Admin can selectively enable multiple tools on any of the
+   * connector instances that they created in the project. For example
+   * {"jira1ConnectorName": [(toolId1, "createTicket"), (toolId2,
+   * "transferTicket")],
+   * "gmail1ConnectorName": [(toolId3, "sendEmail"),..] }
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.discoveryengine.v1.Assistant.ToolList&gt; enabled_tools = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  boolean containsEnabledTools(java.lang.String key);
+
+  /** Use {@link #getEnabledToolsMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, com.google.cloud.discoveryengine.v1.Assistant.ToolList>
+      getEnabledTools();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Note: not implemented yet. Use
+   * [enabled_actions][google.cloud.discoveryengine.v1.Assistant.enabled_actions]
+   * instead. The enabled tools on this assistant. The keys are connector name,
+   * for example
+   * "projects/{projectId}/locations/{locationId}/collections/{collectionId}/dataconnector
+   * The values consist of admin enabled tools towards the connector
+   * instance. Admin can selectively enable multiple tools on any of the
+   * connector instances that they created in the project. For example
+   * {"jira1ConnectorName": [(toolId1, "createTicket"), (toolId2,
+   * "transferTicket")],
+   * "gmail1ConnectorName": [(toolId3, "sendEmail"),..] }
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.discoveryengine.v1.Assistant.ToolList&gt; enabled_tools = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.Map<java.lang.String, com.google.cloud.discoveryengine.v1.Assistant.ToolList>
+      getEnabledToolsMap();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Note: not implemented yet. Use
+   * [enabled_actions][google.cloud.discoveryengine.v1.Assistant.enabled_actions]
+   * instead. The enabled tools on this assistant. The keys are connector name,
+   * for example
+   * "projects/{projectId}/locations/{locationId}/collections/{collectionId}/dataconnector
+   * The values consist of admin enabled tools towards the connector
+   * instance. Admin can selectively enable multiple tools on any of the
+   * connector instances that they created in the project. For example
+   * {"jira1ConnectorName": [(toolId1, "createTicket"), (toolId2,
+   * "transferTicket")],
+   * "gmail1ConnectorName": [(toolId3, "sendEmail"),..] }
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.discoveryengine.v1.Assistant.ToolList&gt; enabled_tools = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  /* nullable */
+  com.google.cloud.discoveryengine.v1.Assistant.ToolList getEnabledToolsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      com.google.cloud.discoveryengine.v1.Assistant.ToolList defaultValue);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Note: not implemented yet. Use
+   * [enabled_actions][google.cloud.discoveryengine.v1.Assistant.enabled_actions]
+   * instead. The enabled tools on this assistant. The keys are connector name,
+   * for example
+   * "projects/{projectId}/locations/{locationId}/collections/{collectionId}/dataconnector
+   * The values consist of admin enabled tools towards the connector
+   * instance. Admin can selectively enable multiple tools on any of the
+   * connector instances that they created in the project. For example
+   * {"jira1ConnectorName": [(toolId1, "createTicket"), (toolId2,
+   * "transferTicket")],
+   * "gmail1ConnectorName": [(toolId3, "sendEmail"),..] }
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.discoveryengine.v1.Assistant.ToolList&gt; enabled_tools = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.discoveryengine.v1.Assistant.ToolList getEnabledToolsOrThrow(
+      java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Customer policy for the assistant.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.Assistant.CustomerPolicy customer_policy = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the customerPolicy field is set.
+   */
+  boolean hasCustomerPolicy();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Customer policy for the assistant.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.Assistant.CustomerPolicy customer_policy = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The customerPolicy.
+   */
+  com.google.cloud.discoveryengine.v1.Assistant.CustomerPolicy getCustomerPolicy();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Customer policy for the assistant.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.Assistant.CustomerPolicy customer_policy = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.discoveryengine.v1.Assistant.CustomerPolicyOrBuilder
+      getCustomerPolicyOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Represents the time when this Assistant was created.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the createTime field is set.
+   */
+  boolean hasCreateTime();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Represents the time when this Assistant was created.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The createTime.
+   */
+  com.google.protobuf.Timestamp getCreateTime();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Represents the time when this Assistant was created.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Represents the time when this Assistant was most recently
+   * updated.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the updateTime field is set.
+   */
+  boolean hasUpdateTime();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Represents the time when this Assistant was most recently
+   * updated.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The updateTime.
+   */
+  com.google.protobuf.Timestamp getUpdateTime();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Represents the time when this Assistant was most recently
+   * updated.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
 }

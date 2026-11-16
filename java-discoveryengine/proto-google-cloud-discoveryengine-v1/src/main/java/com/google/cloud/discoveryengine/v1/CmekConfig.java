@@ -177,6 +177,17 @@ public final class CmekConfig extends com.google.protobuf.GeneratedMessage
      * <code>DELETED = 8;</code>
      */
     DELETED(8),
+    /**
+     *
+     *
+     * <pre>
+     * The KMS key is expired, meaning the key has been disabled for 30+ days.
+     * The customer can call DeleteCmekConfig to change the state to DELETED.
+     * </pre>
+     *
+     * <code>EXPIRED = 9;</code>
+     */
+    EXPIRED(9),
     UNRECOGNIZED(-1),
     ;
 
@@ -291,6 +302,18 @@ public final class CmekConfig extends com.google.protobuf.GeneratedMessage
      */
     public static final int DELETED_VALUE = 8;
 
+    /**
+     *
+     *
+     * <pre>
+     * The KMS key is expired, meaning the key has been disabled for 30+ days.
+     * The customer can call DeleteCmekConfig to change the state to DELETED.
+     * </pre>
+     *
+     * <code>EXPIRED = 9;</code>
+     */
+    public static final int EXPIRED_VALUE = 9;
+
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -333,6 +356,8 @@ public final class CmekConfig extends com.google.protobuf.GeneratedMessage
           return ACTIVE_ROTATING;
         case 8:
           return DELETED;
+        case 9:
+          return EXPIRED;
         default:
           return null;
       }
@@ -646,11 +671,13 @@ public final class CmekConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * KMS key resource name which will be used to encrypt resources
+   * Required. KMS key resource name which will be used to encrypt resources
    * `projects/{project}/locations/{location}/keyRings/{keyRing}/cryptoKeys/{keyId}`.
    * </pre>
    *
-   * <code>string kms_key = 2 [(.google.api.resource_reference) = { ... }</code>
+   * <code>
+   * string kms_key = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The kmsKey.
    */
@@ -671,11 +698,13 @@ public final class CmekConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * KMS key resource name which will be used to encrypt resources
+   * Required. KMS key resource name which will be used to encrypt resources
    * `projects/{project}/locations/{location}/keyRings/{keyRing}/cryptoKeys/{keyId}`.
    * </pre>
    *
-   * <code>string kms_key = 2 [(.google.api.resource_reference) = { ... }</code>
+   * <code>
+   * string kms_key = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for kmsKey.
    */
@@ -701,11 +730,14 @@ public final class CmekConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * KMS key version resource name which will be used to encrypt resources
+   * Output only. KMS key version resource name which will be used to encrypt
+   * resources
    * `&lt;kms_key&gt;/cryptoKeyVersions/{keyVersion}`.
    * </pre>
    *
-   * <code>string kms_key_version = 6 [(.google.api.resource_reference) = { ... }</code>
+   * <code>
+   * string kms_key_version = 6 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The kmsKeyVersion.
    */
@@ -726,11 +758,14 @@ public final class CmekConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * KMS key version resource name which will be used to encrypt resources
+   * Output only. KMS key version resource name which will be used to encrypt
+   * resources
    * `&lt;kms_key&gt;/cryptoKeyVersions/{keyVersion}`.
    * </pre>
    *
-   * <code>string kms_key_version = 6 [(.google.api.resource_reference) = { ... }</code>
+   * <code>
+   * string kms_key_version = 6 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for kmsKeyVersion.
    */
@@ -1613,11 +1648,13 @@ public final class CmekConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * KMS key resource name which will be used to encrypt resources
+     * Required. KMS key resource name which will be used to encrypt resources
      * `projects/{project}/locations/{location}/keyRings/{keyRing}/cryptoKeys/{keyId}`.
      * </pre>
      *
-     * <code>string kms_key = 2 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string kms_key = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The kmsKey.
      */
@@ -1637,11 +1674,13 @@ public final class CmekConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * KMS key resource name which will be used to encrypt resources
+     * Required. KMS key resource name which will be used to encrypt resources
      * `projects/{project}/locations/{location}/keyRings/{keyRing}/cryptoKeys/{keyId}`.
      * </pre>
      *
-     * <code>string kms_key = 2 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string kms_key = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for kmsKey.
      */
@@ -1661,11 +1700,13 @@ public final class CmekConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * KMS key resource name which will be used to encrypt resources
+     * Required. KMS key resource name which will be used to encrypt resources
      * `projects/{project}/locations/{location}/keyRings/{keyRing}/cryptoKeys/{keyId}`.
      * </pre>
      *
-     * <code>string kms_key = 2 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string kms_key = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The kmsKey to set.
      * @return This builder for chaining.
@@ -1684,11 +1725,13 @@ public final class CmekConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * KMS key resource name which will be used to encrypt resources
+     * Required. KMS key resource name which will be used to encrypt resources
      * `projects/{project}/locations/{location}/keyRings/{keyRing}/cryptoKeys/{keyId}`.
      * </pre>
      *
-     * <code>string kms_key = 2 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string kms_key = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -1703,11 +1746,13 @@ public final class CmekConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * KMS key resource name which will be used to encrypt resources
+     * Required. KMS key resource name which will be used to encrypt resources
      * `projects/{project}/locations/{location}/keyRings/{keyRing}/cryptoKeys/{keyId}`.
      * </pre>
      *
-     * <code>string kms_key = 2 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string kms_key = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for kmsKey to set.
      * @return This builder for chaining.
@@ -1729,11 +1774,14 @@ public final class CmekConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * KMS key version resource name which will be used to encrypt resources
+     * Output only. KMS key version resource name which will be used to encrypt
+     * resources
      * `&lt;kms_key&gt;/cryptoKeyVersions/{keyVersion}`.
      * </pre>
      *
-     * <code>string kms_key_version = 6 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string kms_key_version = 6 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The kmsKeyVersion.
      */
@@ -1753,11 +1801,14 @@ public final class CmekConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * KMS key version resource name which will be used to encrypt resources
+     * Output only. KMS key version resource name which will be used to encrypt
+     * resources
      * `&lt;kms_key&gt;/cryptoKeyVersions/{keyVersion}`.
      * </pre>
      *
-     * <code>string kms_key_version = 6 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string kms_key_version = 6 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for kmsKeyVersion.
      */
@@ -1777,11 +1828,14 @@ public final class CmekConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * KMS key version resource name which will be used to encrypt resources
+     * Output only. KMS key version resource name which will be used to encrypt
+     * resources
      * `&lt;kms_key&gt;/cryptoKeyVersions/{keyVersion}`.
      * </pre>
      *
-     * <code>string kms_key_version = 6 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string kms_key_version = 6 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The kmsKeyVersion to set.
      * @return This builder for chaining.
@@ -1800,11 +1854,14 @@ public final class CmekConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * KMS key version resource name which will be used to encrypt resources
+     * Output only. KMS key version resource name which will be used to encrypt
+     * resources
      * `&lt;kms_key&gt;/cryptoKeyVersions/{keyVersion}`.
      * </pre>
      *
-     * <code>string kms_key_version = 6 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string kms_key_version = 6 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -1819,11 +1876,14 @@ public final class CmekConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * KMS key version resource name which will be used to encrypt resources
+     * Output only. KMS key version resource name which will be used to encrypt
+     * resources
      * `&lt;kms_key&gt;/cryptoKeyVersions/{keyVersion}`.
      * </pre>
      *
-     * <code>string kms_key_version = 6 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string kms_key_version = 6 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for kmsKeyVersion to set.
      * @return This builder for chaining.

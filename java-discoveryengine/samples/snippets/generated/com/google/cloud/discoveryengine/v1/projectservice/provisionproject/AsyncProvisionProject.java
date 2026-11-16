@@ -41,6 +41,7 @@ public class AsyncProvisionProject {
               .setName(ProjectName.of("[PROJECT]").toString())
               .setAcceptDataUseTerms(true)
               .setDataUseTermsVersion("dataUseTermsVersion-1913570450")
+              .setSaasParams(ProvisionProjectRequest.SaasParams.newBuilder().build())
               .build();
       ApiFuture<Operation> future =
           projectServiceClient.provisionProjectCallable().futureCall(request);

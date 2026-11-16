@@ -3791,6 +3791,8 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      * <pre>
      * The time when the document was indexed.
      * If this field is populated, it means the document has been indexed.
+     * While documents typically become searchable within seconds of indexing,
+     * it can sometimes take up to a few hours.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp index_time = 1;</code>
@@ -3805,6 +3807,8 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      * <pre>
      * The time when the document was indexed.
      * If this field is populated, it means the document has been indexed.
+     * While documents typically become searchable within seconds of indexing,
+     * it can sometimes take up to a few hours.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp index_time = 1;</code>
@@ -3819,6 +3823,8 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      * <pre>
      * The time when the document was indexed.
      * If this field is populated, it means the document has been indexed.
+     * While documents typically become searchable within seconds of indexing,
+     * it can sometimes take up to a few hours.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp index_time = 1;</code>
@@ -3974,6 +3980,8 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      * <pre>
      * The time when the document was indexed.
      * If this field is populated, it means the document has been indexed.
+     * While documents typically become searchable within seconds of indexing,
+     * it can sometimes take up to a few hours.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp index_time = 1;</code>
@@ -3991,6 +3999,8 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      * <pre>
      * The time when the document was indexed.
      * If this field is populated, it means the document has been indexed.
+     * While documents typically become searchable within seconds of indexing,
+     * it can sometimes take up to a few hours.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp index_time = 1;</code>
@@ -4008,6 +4018,8 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      * <pre>
      * The time when the document was indexed.
      * If this field is populated, it means the document has been indexed.
+     * While documents typically become searchable within seconds of indexing,
+     * it can sometimes take up to a few hours.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp index_time = 1;</code>
@@ -4592,6 +4604,8 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        * <pre>
        * The time when the document was indexed.
        * If this field is populated, it means the document has been indexed.
+       * While documents typically become searchable within seconds of indexing,
+       * it can sometimes take up to a few hours.
        * </pre>
        *
        * <code>.google.protobuf.Timestamp index_time = 1;</code>
@@ -4608,6 +4622,8 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        * <pre>
        * The time when the document was indexed.
        * If this field is populated, it means the document has been indexed.
+       * While documents typically become searchable within seconds of indexing,
+       * it can sometimes take up to a few hours.
        * </pre>
        *
        * <code>.google.protobuf.Timestamp index_time = 1;</code>
@@ -4630,6 +4646,8 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        * <pre>
        * The time when the document was indexed.
        * If this field is populated, it means the document has been indexed.
+       * While documents typically become searchable within seconds of indexing,
+       * it can sometimes take up to a few hours.
        * </pre>
        *
        * <code>.google.protobuf.Timestamp index_time = 1;</code>
@@ -4654,6 +4672,8 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        * <pre>
        * The time when the document was indexed.
        * If this field is populated, it means the document has been indexed.
+       * While documents typically become searchable within seconds of indexing,
+       * it can sometimes take up to a few hours.
        * </pre>
        *
        * <code>.google.protobuf.Timestamp index_time = 1;</code>
@@ -4675,6 +4695,8 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        * <pre>
        * The time when the document was indexed.
        * If this field is populated, it means the document has been indexed.
+       * While documents typically become searchable within seconds of indexing,
+       * it can sometimes take up to a few hours.
        * </pre>
        *
        * <code>.google.protobuf.Timestamp index_time = 1;</code>
@@ -4704,6 +4726,8 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        * <pre>
        * The time when the document was indexed.
        * If this field is populated, it means the document has been indexed.
+       * While documents typically become searchable within seconds of indexing,
+       * it can sometimes take up to a few hours.
        * </pre>
        *
        * <code>.google.protobuf.Timestamp index_time = 1;</code>
@@ -4725,6 +4749,8 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        * <pre>
        * The time when the document was indexed.
        * If this field is populated, it means the document has been indexed.
+       * While documents typically become searchable within seconds of indexing,
+       * it can sometimes take up to a few hours.
        * </pre>
        *
        * <code>.google.protobuf.Timestamp index_time = 1;</code>
@@ -4741,6 +4767,8 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        * <pre>
        * The time when the document was indexed.
        * If this field is populated, it means the document has been indexed.
+       * While documents typically become searchable within seconds of indexing,
+       * it can sometimes take up to a few hours.
        * </pre>
        *
        * <code>.google.protobuf.Timestamp index_time = 1;</code>
@@ -4761,6 +4789,8 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        * <pre>
        * The time when the document was indexed.
        * If this field is populated, it means the document has been indexed.
+       * While documents typically become searchable within seconds of indexing,
+       * it can sometimes take up to a few hours.
        * </pre>
        *
        * <code>.google.protobuf.Timestamp index_time = 1;</code>
@@ -5934,11 +5964,14 @@ public final class Document extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. The last time the document was indexed. If this field is set,
-   * the document could be returned in search results.
+   * Output only. The time when the document was last indexed.
    *
-   * This field is OUTPUT_ONLY. If this field is not populated, it means the
-   * document has never been indexed.
+   * If this field is populated, it means the document has been indexed.
+   * While documents typically become searchable within seconds of indexing,
+   * it can sometimes take up to a few hours.
+   *
+   * If this field is not populated, it means the document has never been
+   * indexed.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp index_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -5955,11 +5988,14 @@ public final class Document extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. The last time the document was indexed. If this field is set,
-   * the document could be returned in search results.
+   * Output only. The time when the document was last indexed.
    *
-   * This field is OUTPUT_ONLY. If this field is not populated, it means the
-   * document has never been indexed.
+   * If this field is populated, it means the document has been indexed.
+   * While documents typically become searchable within seconds of indexing,
+   * it can sometimes take up to a few hours.
+   *
+   * If this field is not populated, it means the document has never been
+   * indexed.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp index_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -5976,11 +6012,14 @@ public final class Document extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. The last time the document was indexed. If this field is set,
-   * the document could be returned in search results.
+   * Output only. The time when the document was last indexed.
    *
-   * This field is OUTPUT_ONLY. If this field is not populated, it means the
-   * document has never been indexed.
+   * If this field is populated, it means the document has been indexed.
+   * While documents typically become searchable within seconds of indexing,
+   * it can sometimes take up to a few hours.
+   *
+   * If this field is not populated, it means the document has never been
+   * indexed.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp index_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -8249,11 +8288,14 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The last time the document was indexed. If this field is set,
-     * the document could be returned in search results.
+     * Output only. The time when the document was last indexed.
      *
-     * This field is OUTPUT_ONLY. If this field is not populated, it means the
-     * document has never been indexed.
+     * If this field is populated, it means the document has been indexed.
+     * While documents typically become searchable within seconds of indexing,
+     * it can sometimes take up to a few hours.
+     *
+     * If this field is not populated, it means the document has never been
+     * indexed.
      * </pre>
      *
      * <code>
@@ -8270,11 +8312,14 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The last time the document was indexed. If this field is set,
-     * the document could be returned in search results.
+     * Output only. The time when the document was last indexed.
      *
-     * This field is OUTPUT_ONLY. If this field is not populated, it means the
-     * document has never been indexed.
+     * If this field is populated, it means the document has been indexed.
+     * While documents typically become searchable within seconds of indexing,
+     * it can sometimes take up to a few hours.
+     *
+     * If this field is not populated, it means the document has never been
+     * indexed.
      * </pre>
      *
      * <code>
@@ -8295,11 +8340,14 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The last time the document was indexed. If this field is set,
-     * the document could be returned in search results.
+     * Output only. The time when the document was last indexed.
      *
-     * This field is OUTPUT_ONLY. If this field is not populated, it means the
-     * document has never been indexed.
+     * If this field is populated, it means the document has been indexed.
+     * While documents typically become searchable within seconds of indexing,
+     * it can sometimes take up to a few hours.
+     *
+     * If this field is not populated, it means the document has never been
+     * indexed.
      * </pre>
      *
      * <code>
@@ -8324,11 +8372,14 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The last time the document was indexed. If this field is set,
-     * the document could be returned in search results.
+     * Output only. The time when the document was last indexed.
      *
-     * This field is OUTPUT_ONLY. If this field is not populated, it means the
-     * document has never been indexed.
+     * If this field is populated, it means the document has been indexed.
+     * While documents typically become searchable within seconds of indexing,
+     * it can sometimes take up to a few hours.
+     *
+     * If this field is not populated, it means the document has never been
+     * indexed.
      * </pre>
      *
      * <code>
@@ -8350,11 +8401,14 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The last time the document was indexed. If this field is set,
-     * the document could be returned in search results.
+     * Output only. The time when the document was last indexed.
      *
-     * This field is OUTPUT_ONLY. If this field is not populated, it means the
-     * document has never been indexed.
+     * If this field is populated, it means the document has been indexed.
+     * While documents typically become searchable within seconds of indexing,
+     * it can sometimes take up to a few hours.
+     *
+     * If this field is not populated, it means the document has never been
+     * indexed.
      * </pre>
      *
      * <code>
@@ -8384,11 +8438,14 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The last time the document was indexed. If this field is set,
-     * the document could be returned in search results.
+     * Output only. The time when the document was last indexed.
      *
-     * This field is OUTPUT_ONLY. If this field is not populated, it means the
-     * document has never been indexed.
+     * If this field is populated, it means the document has been indexed.
+     * While documents typically become searchable within seconds of indexing,
+     * it can sometimes take up to a few hours.
+     *
+     * If this field is not populated, it means the document has never been
+     * indexed.
      * </pre>
      *
      * <code>
@@ -8410,11 +8467,14 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The last time the document was indexed. If this field is set,
-     * the document could be returned in search results.
+     * Output only. The time when the document was last indexed.
      *
-     * This field is OUTPUT_ONLY. If this field is not populated, it means the
-     * document has never been indexed.
+     * If this field is populated, it means the document has been indexed.
+     * While documents typically become searchable within seconds of indexing,
+     * it can sometimes take up to a few hours.
+     *
+     * If this field is not populated, it means the document has never been
+     * indexed.
      * </pre>
      *
      * <code>
@@ -8431,11 +8491,14 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The last time the document was indexed. If this field is set,
-     * the document could be returned in search results.
+     * Output only. The time when the document was last indexed.
      *
-     * This field is OUTPUT_ONLY. If this field is not populated, it means the
-     * document has never been indexed.
+     * If this field is populated, it means the document has been indexed.
+     * While documents typically become searchable within seconds of indexing,
+     * it can sometimes take up to a few hours.
+     *
+     * If this field is not populated, it means the document has never been
+     * indexed.
      * </pre>
      *
      * <code>
@@ -8454,11 +8517,14 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The last time the document was indexed. If this field is set,
-     * the document could be returned in search results.
+     * Output only. The time when the document was last indexed.
      *
-     * This field is OUTPUT_ONLY. If this field is not populated, it means the
-     * document has never been indexed.
+     * If this field is populated, it means the document has been indexed.
+     * While documents typically become searchable within seconds of indexing,
+     * it can sometimes take up to a few hours.
+     *
+     * If this field is not populated, it means the document has never been
+     * indexed.
      * </pre>
      *
      * <code>

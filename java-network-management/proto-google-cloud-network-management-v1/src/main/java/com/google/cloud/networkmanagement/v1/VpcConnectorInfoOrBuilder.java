@@ -57,6 +57,8 @@ public interface VpcConnectorInfoOrBuilder
    *
    * <pre>
    * URI of a VPC connector.
+   * Format:
+   * `projects/{project_id}/locations/{location}/connectors/{connector_id}`
    * </pre>
    *
    * <code>string uri = 2;</code>
@@ -70,6 +72,8 @@ public interface VpcConnectorInfoOrBuilder
    *
    * <pre>
    * URI of a VPC connector.
+   * Format:
+   * `projects/{project_id}/locations/{location}/connectors/{connector_id}`
    * </pre>
    *
    * <code>string uri = 2;</code>

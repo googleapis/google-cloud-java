@@ -1126,6 +1126,49 @@ public interface BackupOrBuilder
    */
   com.google.protobuf.ByteString getKmsKeyVersionsBytes(int index);
 
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The restore verification status of the backup.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.backupdr.v1.VerificationSummary verification_summary = 37 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the verificationSummary field is set.
+   */
+  boolean hasVerificationSummary();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The restore verification status of the backup.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.backupdr.v1.VerificationSummary verification_summary = 37 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The verificationSummary.
+   */
+  com.google.cloud.backupdr.v1.VerificationSummary getVerificationSummary();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The restore verification status of the backup.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.backupdr.v1.VerificationSummary verification_summary = 37 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.backupdr.v1.VerificationSummaryOrBuilder getVerificationSummaryOrBuilder();
+
   com.google.cloud.backupdr.v1.Backup.BackupPropertiesCase getBackupPropertiesCase();
 
   com.google.cloud.backupdr.v1.Backup.PlanInfoCase getPlanInfoCase();

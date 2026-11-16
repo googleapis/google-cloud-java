@@ -58,6 +58,8 @@ public final class NewSpotInstancesConfig extends com.google.protobuf.GeneratedM
   private NewSpotInstancesConfig() {
     zone_ = "";
     machineType_ = "";
+    terminationAction_ = 0;
+    networkTags_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -73,6 +75,181 @@ public final class NewSpotInstancesConfig extends com.google.protobuf.GeneratedM
         .ensureFieldAccessorsInitialized(
             com.google.cloud.hypercomputecluster.v1beta.NewSpotInstancesConfig.class,
             com.google.cloud.hypercomputecluster.v1beta.NewSpotInstancesConfig.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the termination action of the instance.
+   * </pre>
+   *
+   * Protobuf enum {@code
+   * google.cloud.hypercomputecluster.v1beta.NewSpotInstancesConfig.TerminationAction}
+   */
+  public enum TerminationAction implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Not set.
+     * </pre>
+     *
+     * <code>TERMINATION_ACTION_UNSPECIFIED = 0;</code>
+     */
+    TERMINATION_ACTION_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Compute Engine stops the Spot VM on preemption.
+     * </pre>
+     *
+     * <code>STOP = 1;</code>
+     */
+    STOP(1),
+    /**
+     *
+     *
+     * <pre>
+     * Compute Engine deletes the Spot VM on preemption.
+     * </pre>
+     *
+     * <code>DELETE = 2;</code>
+     */
+    DELETE(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 6,
+          /* suffix= */ "",
+          "TerminationAction");
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Not set.
+     * </pre>
+     *
+     * <code>TERMINATION_ACTION_UNSPECIFIED = 0;</code>
+     */
+    public static final int TERMINATION_ACTION_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Compute Engine stops the Spot VM on preemption.
+     * </pre>
+     *
+     * <code>STOP = 1;</code>
+     */
+    public static final int STOP_VALUE = 1;
+
+    /**
+     *
+     *
+     * <pre>
+     * Compute Engine deletes the Spot VM on preemption.
+     * </pre>
+     *
+     * <code>DELETE = 2;</code>
+     */
+    public static final int DELETE_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static TerminationAction valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static TerminationAction forNumber(int value) {
+      switch (value) {
+        case 0:
+          return TERMINATION_ACTION_UNSPECIFIED;
+        case 1:
+          return STOP;
+        case 2:
+          return DELETE;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<TerminationAction>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<TerminationAction>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<TerminationAction>() {
+              public TerminationAction findValueByNumber(int number) {
+                return TerminationAction.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.hypercomputecluster.v1beta.NewSpotInstancesConfig.getDescriptor()
+          .getEnumTypes()
+          .get(0);
+    }
+
+    private static final TerminationAction[] VALUES = values();
+
+    public static TerminationAction valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private TerminationAction(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.hypercomputecluster.v1beta.NewSpotInstancesConfig.TerminationAction)
   }
 
   public static final int ZONE_FIELD_NUMBER = 1;
@@ -197,6 +374,134 @@ public final class NewSpotInstancesConfig extends com.google.protobuf.GeneratedM
     }
   }
 
+  public static final int TERMINATION_ACTION_FIELD_NUMBER = 5;
+  private int terminationAction_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Termination action for the instance. If not specified, Compute
+   * Engine sets the termination action to DELETE.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.hypercomputecluster.v1beta.NewSpotInstancesConfig.TerminationAction termination_action = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for terminationAction.
+   */
+  @java.lang.Override
+  public int getTerminationActionValue() {
+    return terminationAction_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Termination action for the instance. If not specified, Compute
+   * Engine sets the termination action to DELETE.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.hypercomputecluster.v1beta.NewSpotInstancesConfig.TerminationAction termination_action = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The terminationAction.
+   */
+  @java.lang.Override
+  public com.google.cloud.hypercomputecluster.v1beta.NewSpotInstancesConfig.TerminationAction
+      getTerminationAction() {
+    com.google.cloud.hypercomputecluster.v1beta.NewSpotInstancesConfig.TerminationAction result =
+        com.google.cloud.hypercomputecluster.v1beta.NewSpotInstancesConfig.TerminationAction
+            .forNumber(terminationAction_);
+    return result == null
+        ? com.google.cloud.hypercomputecluster.v1beta.NewSpotInstancesConfig.TerminationAction
+            .UNRECOGNIZED
+        : result;
+  }
+
+  public static final int NETWORK_TAGS_FIELD_NUMBER = 6;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList networkTags_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. A list of network tags to attach to the VM instances.
+   * A maximum of 64 network tags are allowed.
+   * </pre>
+   *
+   * <code>
+   * repeated string network_tags = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return A list containing the networkTags.
+   */
+  public com.google.protobuf.ProtocolStringList getNetworkTagsList() {
+    return networkTags_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. A list of network tags to attach to the VM instances.
+   * A maximum of 64 network tags are allowed.
+   * </pre>
+   *
+   * <code>
+   * repeated string network_tags = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The count of networkTags.
+   */
+  public int getNetworkTagsCount() {
+    return networkTags_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. A list of network tags to attach to the VM instances.
+   * A maximum of 64 network tags are allowed.
+   * </pre>
+   *
+   * <code>
+   * repeated string network_tags = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The networkTags at the given index.
+   */
+  public java.lang.String getNetworkTags(int index) {
+    return networkTags_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. A list of network tags to attach to the VM instances.
+   * A maximum of 64 network tags are allowed.
+   * </pre>
+   *
+   * <code>
+   * repeated string network_tags = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the networkTags at the given index.
+   */
+  public com.google.protobuf.ByteString getNetworkTagsBytes(int index) {
+    return networkTags_.getByteString(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -217,6 +522,15 @@ public final class NewSpotInstancesConfig extends com.google.protobuf.GeneratedM
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(machineType_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 2, machineType_);
     }
+    if (terminationAction_
+        != com.google.cloud.hypercomputecluster.v1beta.NewSpotInstancesConfig.TerminationAction
+            .TERMINATION_ACTION_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(5, terminationAction_);
+    }
+    for (int i = 0; i < networkTags_.size(); i++) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 6, networkTags_.getRaw(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -231,6 +545,20 @@ public final class NewSpotInstancesConfig extends com.google.protobuf.GeneratedM
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(machineType_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(2, machineType_);
+    }
+    if (terminationAction_
+        != com.google.cloud.hypercomputecluster.v1beta.NewSpotInstancesConfig.TerminationAction
+            .TERMINATION_ACTION_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(5, terminationAction_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < networkTags_.size(); i++) {
+        dataSize += computeStringSizeNoTag(networkTags_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getNetworkTagsList().size();
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -250,6 +578,8 @@ public final class NewSpotInstancesConfig extends com.google.protobuf.GeneratedM
 
     if (!getZone().equals(other.getZone())) return false;
     if (!getMachineType().equals(other.getMachineType())) return false;
+    if (terminationAction_ != other.terminationAction_) return false;
+    if (!getNetworkTagsList().equals(other.getNetworkTagsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -265,6 +595,12 @@ public final class NewSpotInstancesConfig extends com.google.protobuf.GeneratedM
     hash = (53 * hash) + getZone().hashCode();
     hash = (37 * hash) + MACHINE_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + getMachineType().hashCode();
+    hash = (37 * hash) + TERMINATION_ACTION_FIELD_NUMBER;
+    hash = (53 * hash) + terminationAction_;
+    if (getNetworkTagsCount() > 0) {
+      hash = (37 * hash) + NETWORK_TAGS_FIELD_NUMBER;
+      hash = (53 * hash) + getNetworkTagsList().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -414,6 +750,8 @@ public final class NewSpotInstancesConfig extends com.google.protobuf.GeneratedM
       bitField0_ = 0;
       zone_ = "";
       machineType_ = "";
+      terminationAction_ = 0;
+      networkTags_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -459,6 +797,13 @@ public final class NewSpotInstancesConfig extends com.google.protobuf.GeneratedM
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.machineType_ = machineType_;
       }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.terminationAction_ = terminationAction_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        networkTags_.makeImmutable();
+        result.networkTags_ = networkTags_;
+      }
     }
 
     @java.lang.Override
@@ -485,6 +830,19 @@ public final class NewSpotInstancesConfig extends com.google.protobuf.GeneratedM
       if (!other.getMachineType().isEmpty()) {
         machineType_ = other.machineType_;
         bitField0_ |= 0x00000002;
+        onChanged();
+      }
+      if (other.terminationAction_ != 0) {
+        setTerminationActionValue(other.getTerminationActionValue());
+      }
+      if (!other.networkTags_.isEmpty()) {
+        if (networkTags_.isEmpty()) {
+          networkTags_ = other.networkTags_;
+          bitField0_ |= 0x00000008;
+        } else {
+          ensureNetworkTagsIsMutable();
+          networkTags_.addAll(other.networkTags_);
+        }
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -525,6 +883,19 @@ public final class NewSpotInstancesConfig extends com.google.protobuf.GeneratedM
                 bitField0_ |= 0x00000002;
                 break;
               } // case 18
+            case 40:
+              {
+                terminationAction_ = input.readEnum();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 40
+            case 50:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureNetworkTagsIsMutable();
+                networkTags_.add(s);
+                break;
+              } // case 50
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -802,6 +1173,333 @@ public final class NewSpotInstancesConfig extends com.google.protobuf.GeneratedM
       checkByteStringIsUtf8(value);
       machineType_ = value;
       bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    private int terminationAction_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Termination action for the instance. If not specified, Compute
+     * Engine sets the termination action to DELETE.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.hypercomputecluster.v1beta.NewSpotInstancesConfig.TerminationAction termination_action = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for terminationAction.
+     */
+    @java.lang.Override
+    public int getTerminationActionValue() {
+      return terminationAction_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Termination action for the instance. If not specified, Compute
+     * Engine sets the termination action to DELETE.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.hypercomputecluster.v1beta.NewSpotInstancesConfig.TerminationAction termination_action = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for terminationAction to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTerminationActionValue(int value) {
+      terminationAction_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Termination action for the instance. If not specified, Compute
+     * Engine sets the termination action to DELETE.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.hypercomputecluster.v1beta.NewSpotInstancesConfig.TerminationAction termination_action = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The terminationAction.
+     */
+    @java.lang.Override
+    public com.google.cloud.hypercomputecluster.v1beta.NewSpotInstancesConfig.TerminationAction
+        getTerminationAction() {
+      com.google.cloud.hypercomputecluster.v1beta.NewSpotInstancesConfig.TerminationAction result =
+          com.google.cloud.hypercomputecluster.v1beta.NewSpotInstancesConfig.TerminationAction
+              .forNumber(terminationAction_);
+      return result == null
+          ? com.google.cloud.hypercomputecluster.v1beta.NewSpotInstancesConfig.TerminationAction
+              .UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Termination action for the instance. If not specified, Compute
+     * Engine sets the termination action to DELETE.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.hypercomputecluster.v1beta.NewSpotInstancesConfig.TerminationAction termination_action = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The terminationAction to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTerminationAction(
+        com.google.cloud.hypercomputecluster.v1beta.NewSpotInstancesConfig.TerminationAction
+            value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000004;
+      terminationAction_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Termination action for the instance. If not specified, Compute
+     * Engine sets the termination action to DELETE.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.hypercomputecluster.v1beta.NewSpotInstancesConfig.TerminationAction termination_action = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearTerminationAction() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      terminationAction_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringArrayList networkTags_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureNetworkTagsIsMutable() {
+      if (!networkTags_.isModifiable()) {
+        networkTags_ = new com.google.protobuf.LazyStringArrayList(networkTags_);
+      }
+      bitField0_ |= 0x00000008;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. A list of network tags to attach to the VM instances.
+     * A maximum of 64 network tags are allowed.
+     * </pre>
+     *
+     * <code>
+     * repeated string network_tags = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return A list containing the networkTags.
+     */
+    public com.google.protobuf.ProtocolStringList getNetworkTagsList() {
+      networkTags_.makeImmutable();
+      return networkTags_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. A list of network tags to attach to the VM instances.
+     * A maximum of 64 network tags are allowed.
+     * </pre>
+     *
+     * <code>
+     * repeated string network_tags = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return The count of networkTags.
+     */
+    public int getNetworkTagsCount() {
+      return networkTags_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. A list of network tags to attach to the VM instances.
+     * A maximum of 64 network tags are allowed.
+     * </pre>
+     *
+     * <code>
+     * repeated string network_tags = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The networkTags at the given index.
+     */
+    public java.lang.String getNetworkTags(int index) {
+      return networkTags_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. A list of network tags to attach to the VM instances.
+     * A maximum of 64 network tags are allowed.
+     * </pre>
+     *
+     * <code>
+     * repeated string network_tags = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the networkTags at the given index.
+     */
+    public com.google.protobuf.ByteString getNetworkTagsBytes(int index) {
+      return networkTags_.getByteString(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. A list of network tags to attach to the VM instances.
+     * A maximum of 64 network tags are allowed.
+     * </pre>
+     *
+     * <code>
+     * repeated string network_tags = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The networkTags to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNetworkTags(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureNetworkTagsIsMutable();
+      networkTags_.set(index, value);
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. A list of network tags to attach to the VM instances.
+     * A maximum of 64 network tags are allowed.
+     * </pre>
+     *
+     * <code>
+     * repeated string network_tags = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @param value The networkTags to add.
+     * @return This builder for chaining.
+     */
+    public Builder addNetworkTags(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureNetworkTagsIsMutable();
+      networkTags_.add(value);
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. A list of network tags to attach to the VM instances.
+     * A maximum of 64 network tags are allowed.
+     * </pre>
+     *
+     * <code>
+     * repeated string network_tags = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @param values The networkTags to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllNetworkTags(java.lang.Iterable<java.lang.String> values) {
+      ensureNetworkTagsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, networkTags_);
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. A list of network tags to attach to the VM instances.
+     * A maximum of 64 network tags are allowed.
+     * </pre>
+     *
+     * <code>
+     * repeated string network_tags = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearNetworkTags() {
+      networkTags_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000008);
+      ;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. A list of network tags to attach to the VM instances.
+     * A maximum of 64 network tags are allowed.
+     * </pre>
+     *
+     * <code>
+     * repeated string network_tags = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @param value The bytes of the networkTags to add.
+     * @return This builder for chaining.
+     */
+    public Builder addNetworkTagsBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureNetworkTagsIsMutable();
+      networkTags_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

@@ -90,6 +90,49 @@ public interface TaskTemplateOrBuilder
    *
    *
    * <pre>
+   * Optional. Configuration for sandboxes.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.run.v2.SandboxConfiguration sandboxes = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the sandboxes field is set.
+   */
+  boolean hasSandboxes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for sandboxes.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.run.v2.SandboxConfiguration sandboxes = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The sandboxes.
+   */
+  com.google.cloud.run.v2.SandboxConfiguration getSandboxes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for sandboxes.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.run.v2.SandboxConfiguration sandboxes = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.run.v2.SandboxConfigurationOrBuilder getSandboxesOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. A list of Volumes to make available to containers.
    * </pre>
    *
@@ -435,6 +478,49 @@ public interface TaskTemplateOrBuilder
    * @return The gpuZonalRedundancyDisabled.
    */
   boolean getGpuZonalRedundancyDisabled();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Task's workload identity settings.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.run.v2.WorkloadIdentityConfig workload_identity_config = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the workloadIdentityConfig field is set.
+   */
+  boolean hasWorkloadIdentityConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Task's workload identity settings.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.run.v2.WorkloadIdentityConfig workload_identity_config = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The workloadIdentityConfig.
+   */
+  com.google.cloud.run.v2.WorkloadIdentityConfig getWorkloadIdentityConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Task's workload identity settings.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.run.v2.WorkloadIdentityConfig workload_identity_config = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.run.v2.WorkloadIdentityConfigOrBuilder getWorkloadIdentityConfigOrBuilder();
 
   com.google.cloud.run.v2.TaskTemplate.RetriesCase getRetriesCase();
 }

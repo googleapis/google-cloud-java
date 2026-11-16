@@ -372,7 +372,7 @@ public class ImagesStubSettings extends StubSettings<ImagesStubSettings> {
         .setTransportToken(
             GaxHttpJsonProperties.getHttpJsonTokenName(),
             GaxHttpJsonProperties.getHttpJsonVersion())
-        .setApiVersionToken("2026-09-01");
+        .setApiVersionToken("2026-11-01");
   }
 
   /** Returns a new builder for this class. */

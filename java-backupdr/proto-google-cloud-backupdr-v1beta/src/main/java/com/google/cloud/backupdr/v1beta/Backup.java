@@ -3543,6 +3543,66 @@ public final class Backup extends com.google.protobuf.GeneratedMessage
     return kmsKeyVersions_.getByteString(index);
   }
 
+  public static final int VERIFICATION_SUMMARY_FIELD_NUMBER = 37;
+  private com.google.cloud.backupdr.v1beta.VerificationSummary verificationSummary_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The restore verification status of the backup.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.backupdr.v1beta.VerificationSummary verification_summary = 37 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the verificationSummary field is set.
+   */
+  @java.lang.Override
+  public boolean hasVerificationSummary() {
+    return ((bitField0_ & 0x00000400) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The restore verification status of the backup.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.backupdr.v1beta.VerificationSummary verification_summary = 37 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The verificationSummary.
+   */
+  @java.lang.Override
+  public com.google.cloud.backupdr.v1beta.VerificationSummary getVerificationSummary() {
+    return verificationSummary_ == null
+        ? com.google.cloud.backupdr.v1beta.VerificationSummary.getDefaultInstance()
+        : verificationSummary_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The restore verification status of the backup.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.backupdr.v1beta.VerificationSummary verification_summary = 37 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.backupdr.v1beta.VerificationSummaryOrBuilder
+      getVerificationSummaryOrBuilder() {
+    return verificationSummary_ == null
+        ? com.google.cloud.backupdr.v1beta.VerificationSummary.getDefaultInstance()
+        : verificationSummary_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -3638,6 +3698,9 @@ public final class Backup extends com.google.protobuf.GeneratedMessage
     }
     for (int i = 0; i < kmsKeyVersions_.size(); i++) {
       com.google.protobuf.GeneratedMessage.writeString(output, 33, kmsKeyVersions_.getRaw(i));
+    }
+    if (((bitField0_ & 0x00000400) != 0)) {
+      output.writeMessage(37, getVerificationSummary());
     }
     getUnknownFields().writeTo(output);
   }
@@ -3760,6 +3823,10 @@ public final class Backup extends com.google.protobuf.GeneratedMessage
       size += dataSize;
       size += 2 * getKmsKeyVersionsList().size();
     }
+    if (((bitField0_ & 0x00000400) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(37, getVerificationSummary());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -3823,6 +3890,10 @@ public final class Backup extends com.google.protobuf.GeneratedMessage
       if (getSatisfiesPzi() != other.getSatisfiesPzi()) return false;
     }
     if (!getKmsKeyVersionsList().equals(other.getKmsKeyVersionsList())) return false;
+    if (hasVerificationSummary() != other.hasVerificationSummary()) return false;
+    if (hasVerificationSummary()) {
+      if (!getVerificationSummary().equals(other.getVerificationSummary())) return false;
+    }
     if (!getBackupPropertiesCase().equals(other.getBackupPropertiesCase())) return false;
     switch (backupPropertiesCase_) {
       case 19:
@@ -3936,6 +4007,10 @@ public final class Backup extends com.google.protobuf.GeneratedMessage
     if (getKmsKeyVersionsCount() > 0) {
       hash = (37 * hash) + KMS_KEY_VERSIONS_FIELD_NUMBER;
       hash = (53 * hash) + getKmsKeyVersionsList().hashCode();
+    }
+    if (hasVerificationSummary()) {
+      hash = (37 * hash) + VERIFICATION_SUMMARY_FIELD_NUMBER;
+      hash = (53 * hash) + getVerificationSummary().hashCode();
     }
     switch (backupPropertiesCase_) {
       case 19:
@@ -4147,6 +4222,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessage
         internalGetConsistencyTimeFieldBuilder();
         internalGetServiceLocksFieldBuilder();
         internalGetBackupApplianceLocksFieldBuilder();
+        internalGetVerificationSummaryFieldBuilder();
       }
     }
 
@@ -4225,6 +4301,11 @@ public final class Backup extends com.google.protobuf.GeneratedMessage
       satisfiesPzs_ = false;
       satisfiesPzi_ = false;
       kmsKeyVersions_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      verificationSummary_ = null;
+      if (verificationSummaryBuilder_ != null) {
+        verificationSummaryBuilder_.dispose();
+        verificationSummaryBuilder_ = null;
+      }
       backupPropertiesCase_ = 0;
       backupProperties_ = null;
       planInfoCase_ = 0;
@@ -4354,6 +4435,13 @@ public final class Backup extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x01000000) != 0)) {
         kmsKeyVersions_.makeImmutable();
         result.kmsKeyVersions_ = kmsKeyVersions_;
+      }
+      if (((from_bitField0_ & 0x02000000) != 0)) {
+        result.verificationSummary_ =
+            verificationSummaryBuilder_ == null
+                ? verificationSummary_
+                : verificationSummaryBuilder_.build();
+        to_bitField0_ |= 0x00000400;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -4513,6 +4601,9 @@ public final class Backup extends com.google.protobuf.GeneratedMessage
           kmsKeyVersions_.addAll(other.kmsKeyVersions_);
         }
         onChanged();
+      }
+      if (other.hasVerificationSummary()) {
+        mergeVerificationSummary(other.getVerificationSummary());
       }
       switch (other.getBackupPropertiesCase()) {
         case COMPUTE_INSTANCE_BACKUP_PROPERTIES:
@@ -4781,6 +4872,13 @@ public final class Backup extends com.google.protobuf.GeneratedMessage
                 kmsKeyVersions_.add(s);
                 break;
               } // case 266
+            case 298:
+              {
+                input.readMessage(
+                    internalGetVerificationSummaryFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x02000000;
+                break;
+              } // case 298
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -9829,6 +9927,224 @@ public final class Backup extends com.google.protobuf.GeneratedMessage
       bitField0_ |= 0x01000000;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.backupdr.v1beta.VerificationSummary verificationSummary_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.backupdr.v1beta.VerificationSummary,
+            com.google.cloud.backupdr.v1beta.VerificationSummary.Builder,
+            com.google.cloud.backupdr.v1beta.VerificationSummaryOrBuilder>
+        verificationSummaryBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The restore verification status of the backup.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.backupdr.v1beta.VerificationSummary verification_summary = 37 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the verificationSummary field is set.
+     */
+    public boolean hasVerificationSummary() {
+      return ((bitField0_ & 0x02000000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The restore verification status of the backup.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.backupdr.v1beta.VerificationSummary verification_summary = 37 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The verificationSummary.
+     */
+    public com.google.cloud.backupdr.v1beta.VerificationSummary getVerificationSummary() {
+      if (verificationSummaryBuilder_ == null) {
+        return verificationSummary_ == null
+            ? com.google.cloud.backupdr.v1beta.VerificationSummary.getDefaultInstance()
+            : verificationSummary_;
+      } else {
+        return verificationSummaryBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The restore verification status of the backup.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.backupdr.v1beta.VerificationSummary verification_summary = 37 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setVerificationSummary(
+        com.google.cloud.backupdr.v1beta.VerificationSummary value) {
+      if (verificationSummaryBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        verificationSummary_ = value;
+      } else {
+        verificationSummaryBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x02000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The restore verification status of the backup.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.backupdr.v1beta.VerificationSummary verification_summary = 37 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setVerificationSummary(
+        com.google.cloud.backupdr.v1beta.VerificationSummary.Builder builderForValue) {
+      if (verificationSummaryBuilder_ == null) {
+        verificationSummary_ = builderForValue.build();
+      } else {
+        verificationSummaryBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x02000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The restore verification status of the backup.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.backupdr.v1beta.VerificationSummary verification_summary = 37 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeVerificationSummary(
+        com.google.cloud.backupdr.v1beta.VerificationSummary value) {
+      if (verificationSummaryBuilder_ == null) {
+        if (((bitField0_ & 0x02000000) != 0)
+            && verificationSummary_ != null
+            && verificationSummary_
+                != com.google.cloud.backupdr.v1beta.VerificationSummary.getDefaultInstance()) {
+          getVerificationSummaryBuilder().mergeFrom(value);
+        } else {
+          verificationSummary_ = value;
+        }
+      } else {
+        verificationSummaryBuilder_.mergeFrom(value);
+      }
+      if (verificationSummary_ != null) {
+        bitField0_ |= 0x02000000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The restore verification status of the backup.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.backupdr.v1beta.VerificationSummary verification_summary = 37 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearVerificationSummary() {
+      bitField0_ = (bitField0_ & ~0x02000000);
+      verificationSummary_ = null;
+      if (verificationSummaryBuilder_ != null) {
+        verificationSummaryBuilder_.dispose();
+        verificationSummaryBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The restore verification status of the backup.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.backupdr.v1beta.VerificationSummary verification_summary = 37 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.backupdr.v1beta.VerificationSummary.Builder
+        getVerificationSummaryBuilder() {
+      bitField0_ |= 0x02000000;
+      onChanged();
+      return internalGetVerificationSummaryFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The restore verification status of the backup.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.backupdr.v1beta.VerificationSummary verification_summary = 37 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.backupdr.v1beta.VerificationSummaryOrBuilder
+        getVerificationSummaryOrBuilder() {
+      if (verificationSummaryBuilder_ != null) {
+        return verificationSummaryBuilder_.getMessageOrBuilder();
+      } else {
+        return verificationSummary_ == null
+            ? com.google.cloud.backupdr.v1beta.VerificationSummary.getDefaultInstance()
+            : verificationSummary_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The restore verification status of the backup.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.backupdr.v1beta.VerificationSummary verification_summary = 37 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.backupdr.v1beta.VerificationSummary,
+            com.google.cloud.backupdr.v1beta.VerificationSummary.Builder,
+            com.google.cloud.backupdr.v1beta.VerificationSummaryOrBuilder>
+        internalGetVerificationSummaryFieldBuilder() {
+      if (verificationSummaryBuilder_ == null) {
+        verificationSummaryBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.backupdr.v1beta.VerificationSummary,
+                com.google.cloud.backupdr.v1beta.VerificationSummary.Builder,
+                com.google.cloud.backupdr.v1beta.VerificationSummaryOrBuilder>(
+                getVerificationSummary(), getParentForChildren(), isClean());
+        verificationSummary_ = null;
+      }
+      return verificationSummaryBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.backupdr.v1beta.Backup)

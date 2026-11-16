@@ -19,7 +19,6 @@ package com.google.cloud.storage.it.runner;
 import com.google.cloud.storage.it.runner.annotations.CrossRun;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Sets;
-import java.lang.annotation.Annotation;
 import java.util.Optional;
 import org.junit.runners.model.FrameworkMethod;
 
@@ -46,32 +45,36 @@ final class CrossRunFrameworkMethod {
   }
 
   private ImmutableSet<CrossRunIntersection> excludedAndNotIgnored() {
-    ImmutableSet<CrossRunIntersection> excludes =
-        findMethodOrClassAnnotation(fm, CrossRun.Exclude.class)
-            .map(CrossRunIntersection::expand)
-            .orElse(ImmutableSet.of());
+    ImmutableSet<CrossRunIntersection> excludes = excludes();
     ImmutableSet<CrossRunIntersection> ignores = ignores();
     return ImmutableSet.copyOf(Sets.difference(excludes, ignores));
   }
 
+  private ImmutableSet<CrossRunIntersection> excludes() {
+    ImmutableSet<CrossRunIntersection> methodExcludes =
+        Optional.ofNullable(fm.getAnnotation(CrossRun.Exclude.class))
+            .map(CrossRunIntersection::expand)
+            .orElse(ImmutableSet.of());
+    ImmutableSet<CrossRunIntersection> classExcludes =
+        Optional.ofNullable(fm.getDeclaringClass().getAnnotation(CrossRun.Exclude.class))
+            .map(CrossRunIntersection::expand)
+            .orElse(ImmutableSet.of());
+    return ImmutableSet.copyOf(Sets.union(methodExcludes, classExcludes));
+  }
+
   private ImmutableSet<CrossRunIntersection> ignores() {
-    return findMethodOrClassAnnotation(fm, CrossRun.Ignore.class)
-        .map(CrossRunIntersection::expand)
-        .orElse(ImmutableSet.of());
+    ImmutableSet<CrossRunIntersection> methodIgnores =
+        Optional.ofNullable(fm.getAnnotation(CrossRun.Ignore.class))
+            .map(CrossRunIntersection::expand)
+            .orElse(ImmutableSet.of());
+    ImmutableSet<CrossRunIntersection> classIgnores =
+        Optional.ofNullable(fm.getDeclaringClass().getAnnotation(CrossRun.Ignore.class))
+            .map(CrossRunIntersection::expand)
+            .orElse(ImmutableSet.of());
+    return ImmutableSet.copyOf(Sets.union(methodIgnores, classIgnores));
   }
 
   static CrossRunFrameworkMethod of(FrameworkMethod fm) {
     return new CrossRunFrameworkMethod(fm);
-  }
-
-  private static <A extends Annotation> Optional<A> findMethodOrClassAnnotation(
-      FrameworkMethod child, Class<A> annotation) {
-    A methodA = child.getAnnotation(annotation);
-    A classA = child.getDeclaringClass().getAnnotation(annotation);
-    if (methodA != null) {
-      return Optional.of(methodA);
-    } else {
-      return Optional.ofNullable(classA);
-    }
   }
 }

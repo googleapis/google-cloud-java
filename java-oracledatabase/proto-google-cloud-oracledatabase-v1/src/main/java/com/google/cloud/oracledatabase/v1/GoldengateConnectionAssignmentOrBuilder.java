@@ -60,11 +60,11 @@ public interface GoldengateConnectionAssignmentOrBuilder
    *
    *
    * <pre>
-   * Required. The properties of the GoldengateConnectionAssignment.
+   * Required. Immutable. The properties of the GoldengateConnectionAssignment.
    * </pre>
    *
    * <code>
-   * .google.cloud.oracledatabase.v1.GoldengateConnectionAssignmentProperties properties = 2 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.oracledatabase.v1.GoldengateConnectionAssignmentProperties properties = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
    * @return Whether the properties field is set.
@@ -75,11 +75,11 @@ public interface GoldengateConnectionAssignmentOrBuilder
    *
    *
    * <pre>
-   * Required. The properties of the GoldengateConnectionAssignment.
+   * Required. Immutable. The properties of the GoldengateConnectionAssignment.
    * </pre>
    *
    * <code>
-   * .google.cloud.oracledatabase.v1.GoldengateConnectionAssignmentProperties properties = 2 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.oracledatabase.v1.GoldengateConnectionAssignmentProperties properties = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
    * @return The properties.
@@ -90,11 +90,11 @@ public interface GoldengateConnectionAssignmentOrBuilder
    *
    *
    * <pre>
-   * Required. The properties of the GoldengateConnectionAssignment.
+   * Required. Immutable. The properties of the GoldengateConnectionAssignment.
    * </pre>
    *
    * <code>
-   * .google.cloud.oracledatabase.v1.GoldengateConnectionAssignmentProperties properties = 2 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.oracledatabase.v1.GoldengateConnectionAssignmentProperties properties = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    */
   com.google.cloud.oracledatabase.v1.GoldengateConnectionAssignmentPropertiesOrBuilder
@@ -212,10 +212,13 @@ public interface GoldengateConnectionAssignmentOrBuilder
    *
    *
    * <pre>
-   * Optional. The display name for the GoldengateConnectionAssignment.
+   * Optional. Immutable. The display name for the
+   * GoldengateConnectionAssignment.
    * </pre>
    *
-   * <code>string display_name = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string display_name = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The displayName.
    */
@@ -225,10 +228,13 @@ public interface GoldengateConnectionAssignmentOrBuilder
    *
    *
    * <pre>
-   * Optional. The display name for the GoldengateConnectionAssignment.
+   * Optional. Immutable. The display name for the
+   * GoldengateConnectionAssignment.
    * </pre>
    *
-   * <code>string display_name = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string display_name = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The bytes for displayName.
    */

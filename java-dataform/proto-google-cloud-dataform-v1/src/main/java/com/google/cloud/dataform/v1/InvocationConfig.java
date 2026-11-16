@@ -58,6 +58,7 @@ public final class InvocationConfig extends com.google.protobuf.GeneratedMessage
     includedTags_ = com.google.protobuf.LazyStringArrayList.emptyList();
     serviceAccount_ = "";
     queryPriority_ = 0;
+    executionMode_ = 0;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -250,6 +251,201 @@ public final class InvocationConfig extends com.google.protobuf.GeneratedMessage
     }
 
     // @@protoc_insertion_point(enum_scope:google.cloud.dataform.v1.InvocationConfig.QueryPriority)
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Execution mode for the workflow invocation.
+   * Determines whether to run actions or unit tests.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.dataform.v1.InvocationConfig.ExecutionMode}
+   */
+  public enum ExecutionMode implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Default value.
+     * </pre>
+     *
+     * <code>EXECUTION_MODE_UNSPECIFIED = 0;</code>
+     */
+    EXECUTION_MODE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Default execution mode, which runs all actions except unit tests.
+     * Same as ALL_EXCEPT_UNIT_TESTS.
+     * </pre>
+     *
+     * <code>DEFAULT = 1;</code>
+     */
+    DEFAULT(1),
+    /**
+     *
+     *
+     * <pre>
+     * Run all actions except unit tests.
+     * </pre>
+     *
+     * <code>ALL_EXCEPT_UNIT_TESTS = 2;</code>
+     */
+    ALL_EXCEPT_UNIT_TESTS(2),
+    /**
+     *
+     *
+     * <pre>
+     * Run unit tests only.
+     * </pre>
+     *
+     * <code>UNIT_TESTS_ONLY = 3;</code>
+     */
+    UNIT_TESTS_ONLY(3),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 6,
+          /* suffix= */ "",
+          "ExecutionMode");
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Default value.
+     * </pre>
+     *
+     * <code>EXECUTION_MODE_UNSPECIFIED = 0;</code>
+     */
+    public static final int EXECUTION_MODE_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Default execution mode, which runs all actions except unit tests.
+     * Same as ALL_EXCEPT_UNIT_TESTS.
+     * </pre>
+     *
+     * <code>DEFAULT = 1;</code>
+     */
+    public static final int DEFAULT_VALUE = 1;
+
+    /**
+     *
+     *
+     * <pre>
+     * Run all actions except unit tests.
+     * </pre>
+     *
+     * <code>ALL_EXCEPT_UNIT_TESTS = 2;</code>
+     */
+    public static final int ALL_EXCEPT_UNIT_TESTS_VALUE = 2;
+
+    /**
+     *
+     *
+     * <pre>
+     * Run unit tests only.
+     * </pre>
+     *
+     * <code>UNIT_TESTS_ONLY = 3;</code>
+     */
+    public static final int UNIT_TESTS_ONLY_VALUE = 3;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static ExecutionMode valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static ExecutionMode forNumber(int value) {
+      switch (value) {
+        case 0:
+          return EXECUTION_MODE_UNSPECIFIED;
+        case 1:
+          return DEFAULT;
+        case 2:
+          return ALL_EXCEPT_UNIT_TESTS;
+        case 3:
+          return UNIT_TESTS_ONLY;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<ExecutionMode> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<ExecutionMode> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<ExecutionMode>() {
+          public ExecutionMode findValueByNumber(int number) {
+            return ExecutionMode.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.dataform.v1.InvocationConfig.getDescriptor().getEnumTypes().get(1);
+    }
+
+    private static final ExecutionMode[] VALUES = values();
+
+    public static ExecutionMode valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private ExecutionMode(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.dataform.v1.InvocationConfig.ExecutionMode)
   }
 
   public interface EndUserAuthenticationConfigOrBuilder
@@ -1523,7 +1719,7 @@ public final class InvocationConfig extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Optional. Configuration for end user authentication.
-   * Note that this should not be set when `service_account` is used.
+   * Do not set if `service_account` is used.
    * </pre>
    *
    * <code>
@@ -1542,7 +1738,7 @@ public final class InvocationConfig extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Optional. Configuration for end user authentication.
-   * Note that this should not be set when `service_account` is used.
+   * Do not set if `service_account` is used.
    * </pre>
    *
    * <code>
@@ -1565,7 +1761,7 @@ public final class InvocationConfig extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Optional. Configuration for end user authentication.
-   * Note that this should not be set when `service_account` is used.
+   * Do not set if `service_account` is used.
    * </pre>
    *
    * <code>
@@ -1648,6 +1844,86 @@ public final class InvocationConfig extends com.google.protobuf.GeneratedMessage
         : result;
   }
 
+  public static final int CONCURRENT_ACTIONS_LIMIT_FIELD_NUMBER = 10;
+  private int concurrentActionsLimit_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Maximum number of actions that can be executed concurrently.
+   * </pre>
+   *
+   * <code>optional int32 concurrent_actions_limit = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the concurrentActionsLimit field is set.
+   */
+  @java.lang.Override
+  public boolean hasConcurrentActionsLimit() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Maximum number of actions that can be executed concurrently.
+   * </pre>
+   *
+   * <code>optional int32 concurrent_actions_limit = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The concurrentActionsLimit.
+   */
+  @java.lang.Override
+  public int getConcurrentActionsLimit() {
+    return concurrentActionsLimit_;
+  }
+
+  public static final int EXECUTION_MODE_FIELD_NUMBER = 16;
+  private int executionMode_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the execution mode for the workflow invocation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataform.v1.InvocationConfig.ExecutionMode execution_mode = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for executionMode.
+   */
+  @java.lang.Override
+  public int getExecutionModeValue() {
+    return executionMode_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the execution mode for the workflow invocation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataform.v1.InvocationConfig.ExecutionMode execution_mode = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The executionMode.
+   */
+  @java.lang.Override
+  public com.google.cloud.dataform.v1.InvocationConfig.ExecutionMode getExecutionMode() {
+    com.google.cloud.dataform.v1.InvocationConfig.ExecutionMode result =
+        com.google.cloud.dataform.v1.InvocationConfig.ExecutionMode.forNumber(executionMode_);
+    return result == null
+        ? com.google.cloud.dataform.v1.InvocationConfig.ExecutionMode.UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1685,6 +1961,14 @@ public final class InvocationConfig extends com.google.protobuf.GeneratedMessage
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeEnum(9, queryPriority_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeInt32(10, concurrentActionsLimit_);
+    }
+    if (executionMode_
+        != com.google.cloud.dataform.v1.InvocationConfig.ExecutionMode.EXECUTION_MODE_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(16, executionMode_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -1728,6 +2012,14 @@ public final class InvocationConfig extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(9, queryPriority_);
     }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(10, concurrentActionsLimit_);
+    }
+    if (executionMode_
+        != com.google.cloud.dataform.v1.InvocationConfig.ExecutionMode.EXECUTION_MODE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(16, executionMode_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1760,6 +2052,11 @@ public final class InvocationConfig extends com.google.protobuf.GeneratedMessage
     if (hasQueryPriority()) {
       if (queryPriority_ != other.queryPriority_) return false;
     }
+    if (hasConcurrentActionsLimit() != other.hasConcurrentActionsLimit()) return false;
+    if (hasConcurrentActionsLimit()) {
+      if (getConcurrentActionsLimit() != other.getConcurrentActionsLimit()) return false;
+    }
+    if (executionMode_ != other.executionMode_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1799,6 +2096,12 @@ public final class InvocationConfig extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + QUERY_PRIORITY_FIELD_NUMBER;
       hash = (53 * hash) + queryPriority_;
     }
+    if (hasConcurrentActionsLimit()) {
+      hash = (37 * hash) + CONCURRENT_ACTIONS_LIMIT_FIELD_NUMBER;
+      hash = (53 * hash) + getConcurrentActionsLimit();
+    }
+    hash = (37 * hash) + EXECUTION_MODE_FIELD_NUMBER;
+    hash = (53 * hash) + executionMode_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1969,6 +2272,8 @@ public final class InvocationConfig extends com.google.protobuf.GeneratedMessage
         endUserAuthConfigBuilder_ = null;
       }
       queryPriority_ = 0;
+      concurrentActionsLimit_ = 0;
+      executionMode_ = 0;
       return this;
     }
 
@@ -2046,6 +2351,13 @@ public final class InvocationConfig extends com.google.protobuf.GeneratedMessage
         result.queryPriority_ = queryPriority_;
         to_bitField0_ |= 0x00000002;
       }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.concurrentActionsLimit_ = concurrentActionsLimit_;
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.executionMode_ = executionMode_;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -2117,6 +2429,12 @@ public final class InvocationConfig extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasQueryPriority()) {
         setQueryPriorityValue(other.getQueryPriorityValue());
+      }
+      if (other.hasConcurrentActionsLimit()) {
+        setConcurrentActionsLimit(other.getConcurrentActionsLimit());
+      }
+      if (other.executionMode_ != 0) {
+        setExecutionModeValue(other.getExecutionModeValue());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -2201,6 +2519,18 @@ public final class InvocationConfig extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000080;
                 break;
               } // case 72
+            case 80:
+              {
+                concurrentActionsLimit_ = input.readInt32();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 80
+            case 128:
+              {
+                executionMode_ = input.readEnum();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 128
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3119,7 +3449,7 @@ public final class InvocationConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. Configuration for end user authentication.
-     * Note that this should not be set when `service_account` is used.
+     * Do not set if `service_account` is used.
      * </pre>
      *
      * <code>
@@ -3137,7 +3467,7 @@ public final class InvocationConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. Configuration for end user authentication.
-     * Note that this should not be set when `service_account` is used.
+     * Do not set if `service_account` is used.
      * </pre>
      *
      * <code>
@@ -3163,7 +3493,7 @@ public final class InvocationConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. Configuration for end user authentication.
-     * Note that this should not be set when `service_account` is used.
+     * Do not set if `service_account` is used.
      * </pre>
      *
      * <code>
@@ -3190,7 +3520,7 @@ public final class InvocationConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. Configuration for end user authentication.
-     * Note that this should not be set when `service_account` is used.
+     * Do not set if `service_account` is used.
      * </pre>
      *
      * <code>
@@ -3215,7 +3545,7 @@ public final class InvocationConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. Configuration for end user authentication.
-     * Note that this should not be set when `service_account` is used.
+     * Do not set if `service_account` is used.
      * </pre>
      *
      * <code>
@@ -3249,7 +3579,7 @@ public final class InvocationConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. Configuration for end user authentication.
-     * Note that this should not be set when `service_account` is used.
+     * Do not set if `service_account` is used.
      * </pre>
      *
      * <code>
@@ -3272,7 +3602,7 @@ public final class InvocationConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. Configuration for end user authentication.
-     * Note that this should not be set when `service_account` is used.
+     * Do not set if `service_account` is used.
      * </pre>
      *
      * <code>
@@ -3291,7 +3621,7 @@ public final class InvocationConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. Configuration for end user authentication.
-     * Note that this should not be set when `service_account` is used.
+     * Do not set if `service_account` is used.
      * </pre>
      *
      * <code>
@@ -3315,7 +3645,7 @@ public final class InvocationConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. Configuration for end user authentication.
-     * Note that this should not be set when `service_account` is used.
+     * Do not set if `service_account` is used.
      * </pre>
      *
      * <code>
@@ -3473,6 +3803,190 @@ public final class InvocationConfig extends com.google.protobuf.GeneratedMessage
     public Builder clearQueryPriority() {
       bitField0_ = (bitField0_ & ~0x00000080);
       queryPriority_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int concurrentActionsLimit_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Maximum number of actions that can be executed concurrently.
+     * </pre>
+     *
+     * <code>optional int32 concurrent_actions_limit = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the concurrentActionsLimit field is set.
+     */
+    @java.lang.Override
+    public boolean hasConcurrentActionsLimit() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Maximum number of actions that can be executed concurrently.
+     * </pre>
+     *
+     * <code>optional int32 concurrent_actions_limit = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The concurrentActionsLimit.
+     */
+    @java.lang.Override
+    public int getConcurrentActionsLimit() {
+      return concurrentActionsLimit_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Maximum number of actions that can be executed concurrently.
+     * </pre>
+     *
+     * <code>optional int32 concurrent_actions_limit = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The concurrentActionsLimit to set.
+     * @return This builder for chaining.
+     */
+    public Builder setConcurrentActionsLimit(int value) {
+
+      concurrentActionsLimit_ = value;
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Maximum number of actions that can be executed concurrently.
+     * </pre>
+     *
+     * <code>optional int32 concurrent_actions_limit = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearConcurrentActionsLimit() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      concurrentActionsLimit_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int executionMode_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the execution mode for the workflow invocation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1.InvocationConfig.ExecutionMode execution_mode = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for executionMode.
+     */
+    @java.lang.Override
+    public int getExecutionModeValue() {
+      return executionMode_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the execution mode for the workflow invocation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1.InvocationConfig.ExecutionMode execution_mode = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for executionMode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setExecutionModeValue(int value) {
+      executionMode_ = value;
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the execution mode for the workflow invocation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1.InvocationConfig.ExecutionMode execution_mode = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The executionMode.
+     */
+    @java.lang.Override
+    public com.google.cloud.dataform.v1.InvocationConfig.ExecutionMode getExecutionMode() {
+      com.google.cloud.dataform.v1.InvocationConfig.ExecutionMode result =
+          com.google.cloud.dataform.v1.InvocationConfig.ExecutionMode.forNumber(executionMode_);
+      return result == null
+          ? com.google.cloud.dataform.v1.InvocationConfig.ExecutionMode.UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the execution mode for the workflow invocation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1.InvocationConfig.ExecutionMode execution_mode = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The executionMode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setExecutionMode(
+        com.google.cloud.dataform.v1.InvocationConfig.ExecutionMode value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000200;
+      executionMode_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the execution mode for the workflow invocation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1.InvocationConfig.ExecutionMode execution_mode = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearExecutionMode() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      executionMode_ = 0;
       onChanged();
       return this;
     }

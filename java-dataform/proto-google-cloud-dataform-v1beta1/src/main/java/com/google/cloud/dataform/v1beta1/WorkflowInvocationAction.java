@@ -154,6 +154,17 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
      * <code>FAILED = 6;</code>
      */
     FAILED(6),
+    /**
+     *
+     *
+     * <pre>
+     * Execution of the action was queued waiting for an available concurrency
+     * slot.
+     * </pre>
+     *
+     * <code>QUEUED = 7;</code>
+     */
+    QUEUED(7),
     UNRECOGNIZED(-1),
     ;
 
@@ -246,6 +257,18 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
      */
     public static final int FAILED_VALUE = 6;
 
+    /**
+     *
+     *
+     * <pre>
+     * Execution of the action was queued waiting for an available concurrency
+     * slot.
+     * </pre>
+     *
+     * <code>QUEUED = 7;</code>
+     */
+    public static final int QUEUED_VALUE = 7;
+
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -284,6 +307,8 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
           return CANCELLED;
         case 6:
           return FAILED;
+        case 7:
+          return QUEUED;
         default:
           return null;
       }
@@ -9829,6 +9854,1548 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
     }
   }
 
+  public interface BigQueryUnitTestActionOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryUnitTestAction)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Job ID for the actual results.
+     * </pre>
+     *
+     * <code>string actual_results_job_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The actualResultsJobId.
+     */
+    java.lang.String getActualResultsJobId();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Job ID for the actual results.
+     * </pre>
+     *
+     * <code>string actual_results_job_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for actualResultsJobId.
+     */
+    com.google.protobuf.ByteString getActualResultsJobIdBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. SQL script for the actual results.
+     * </pre>
+     *
+     * <code>string actual_results_sql_script = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The actualResultsSqlScript.
+     */
+    java.lang.String getActualResultsSqlScript();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. SQL script for the actual results.
+     * </pre>
+     *
+     * <code>string actual_results_sql_script = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The bytes for actualResultsSqlScript.
+     */
+    com.google.protobuf.ByteString getActualResultsSqlScriptBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Job ID for the expected results.
+     * </pre>
+     *
+     * <code>string expected_results_job_id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The expectedResultsJobId.
+     */
+    java.lang.String getExpectedResultsJobId();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Job ID for the expected results.
+     * </pre>
+     *
+     * <code>string expected_results_job_id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for expectedResultsJobId.
+     */
+    com.google.protobuf.ByteString getExpectedResultsJobIdBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. SQL script for the expected results.
+     * </pre>
+     *
+     * <code>string expected_results_sql_script = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The expectedResultsSqlScript.
+     */
+    java.lang.String getExpectedResultsSqlScript();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. SQL script for the expected results.
+     * </pre>
+     *
+     * <code>string expected_results_sql_script = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The bytes for expectedResultsSqlScript.
+     */
+    com.google.protobuf.ByteString getExpectedResultsSqlScriptBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Total bytes processed for this action. Combined total for
+     * actual and expected jobs.
+     * </pre>
+     *
+     * <code>int64 total_processed_bytes = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The totalProcessedBytes.
+     */
+    long getTotalProcessedBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Total bytes billed for this action. Combined total for
+     * actual and expected jobs.
+     * </pre>
+     *
+     * <code>int64 total_billed_bytes = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The totalBilledBytes.
+     */
+    long getTotalBilledBytes();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Represents a workflow action that will run a BigQuery unit test.
+   * </pre>
+   *
+   * Protobuf type {@code
+   * google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryUnitTestAction}
+   */
+  public static final class BigQueryUnitTestAction extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryUnitTestAction)
+      BigQueryUnitTestActionOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 6,
+          /* suffix= */ "",
+          "BigQueryUnitTestAction");
+    }
+
+    // Use BigQueryUnitTestAction.newBuilder() to construct.
+    private BigQueryUnitTestAction(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private BigQueryUnitTestAction() {
+      actualResultsJobId_ = "";
+      actualResultsSqlScript_ = "";
+      expectedResultsJobId_ = "";
+      expectedResultsSqlScript_ = "";
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.dataform.v1beta1.DataformProto
+          .internal_static_google_cloud_dataform_v1beta1_WorkflowInvocationAction_BigQueryUnitTestAction_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.dataform.v1beta1.DataformProto
+          .internal_static_google_cloud_dataform_v1beta1_WorkflowInvocationAction_BigQueryUnitTestAction_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryUnitTestAction
+                  .class,
+              com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryUnitTestAction
+                  .Builder.class);
+    }
+
+    public static final int ACTUAL_RESULTS_JOB_ID_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object actualResultsJobId_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Job ID for the actual results.
+     * </pre>
+     *
+     * <code>string actual_results_job_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The actualResultsJobId.
+     */
+    @java.lang.Override
+    public java.lang.String getActualResultsJobId() {
+      java.lang.Object ref = actualResultsJobId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        actualResultsJobId_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Job ID for the actual results.
+     * </pre>
+     *
+     * <code>string actual_results_job_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for actualResultsJobId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getActualResultsJobIdBytes() {
+      java.lang.Object ref = actualResultsJobId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        actualResultsJobId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ACTUAL_RESULTS_SQL_SCRIPT_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object actualResultsSqlScript_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. SQL script for the actual results.
+     * </pre>
+     *
+     * <code>string actual_results_sql_script = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The actualResultsSqlScript.
+     */
+    @java.lang.Override
+    public java.lang.String getActualResultsSqlScript() {
+      java.lang.Object ref = actualResultsSqlScript_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        actualResultsSqlScript_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. SQL script for the actual results.
+     * </pre>
+     *
+     * <code>string actual_results_sql_script = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The bytes for actualResultsSqlScript.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getActualResultsSqlScriptBytes() {
+      java.lang.Object ref = actualResultsSqlScript_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        actualResultsSqlScript_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int EXPECTED_RESULTS_JOB_ID_FIELD_NUMBER = 3;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object expectedResultsJobId_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Job ID for the expected results.
+     * </pre>
+     *
+     * <code>string expected_results_job_id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The expectedResultsJobId.
+     */
+    @java.lang.Override
+    public java.lang.String getExpectedResultsJobId() {
+      java.lang.Object ref = expectedResultsJobId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        expectedResultsJobId_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Job ID for the expected results.
+     * </pre>
+     *
+     * <code>string expected_results_job_id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for expectedResultsJobId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getExpectedResultsJobIdBytes() {
+      java.lang.Object ref = expectedResultsJobId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        expectedResultsJobId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int EXPECTED_RESULTS_SQL_SCRIPT_FIELD_NUMBER = 4;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object expectedResultsSqlScript_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. SQL script for the expected results.
+     * </pre>
+     *
+     * <code>string expected_results_sql_script = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The expectedResultsSqlScript.
+     */
+    @java.lang.Override
+    public java.lang.String getExpectedResultsSqlScript() {
+      java.lang.Object ref = expectedResultsSqlScript_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        expectedResultsSqlScript_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. SQL script for the expected results.
+     * </pre>
+     *
+     * <code>string expected_results_sql_script = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The bytes for expectedResultsSqlScript.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getExpectedResultsSqlScriptBytes() {
+      java.lang.Object ref = expectedResultsSqlScript_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        expectedResultsSqlScript_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int TOTAL_PROCESSED_BYTES_FIELD_NUMBER = 5;
+    private long totalProcessedBytes_ = 0L;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Total bytes processed for this action. Combined total for
+     * actual and expected jobs.
+     * </pre>
+     *
+     * <code>int64 total_processed_bytes = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The totalProcessedBytes.
+     */
+    @java.lang.Override
+    public long getTotalProcessedBytes() {
+      return totalProcessedBytes_;
+    }
+
+    public static final int TOTAL_BILLED_BYTES_FIELD_NUMBER = 6;
+    private long totalBilledBytes_ = 0L;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Total bytes billed for this action. Combined total for
+     * actual and expected jobs.
+     * </pre>
+     *
+     * <code>int64 total_billed_bytes = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The totalBilledBytes.
+     */
+    @java.lang.Override
+    public long getTotalBilledBytes() {
+      return totalBilledBytes_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(actualResultsJobId_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 1, actualResultsJobId_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(actualResultsSqlScript_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 2, actualResultsSqlScript_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(expectedResultsJobId_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 3, expectedResultsJobId_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(expectedResultsSqlScript_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 4, expectedResultsSqlScript_);
+      }
+      if (totalProcessedBytes_ != 0L) {
+        output.writeInt64(5, totalProcessedBytes_);
+      }
+      if (totalBilledBytes_ != 0L) {
+        output.writeInt64(6, totalBilledBytes_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(actualResultsJobId_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(1, actualResultsJobId_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(actualResultsSqlScript_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(2, actualResultsSqlScript_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(expectedResultsJobId_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(3, expectedResultsJobId_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(expectedResultsSqlScript_)) {
+        size +=
+            com.google.protobuf.GeneratedMessage.computeStringSize(4, expectedResultsSqlScript_);
+      }
+      if (totalProcessedBytes_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream.computeInt64Size(5, totalProcessedBytes_);
+      }
+      if (totalBilledBytes_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream.computeInt64Size(6, totalBilledBytes_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof
+          com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryUnitTestAction)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryUnitTestAction other =
+          (com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryUnitTestAction) obj;
+
+      if (!getActualResultsJobId().equals(other.getActualResultsJobId())) return false;
+      if (!getActualResultsSqlScript().equals(other.getActualResultsSqlScript())) return false;
+      if (!getExpectedResultsJobId().equals(other.getExpectedResultsJobId())) return false;
+      if (!getExpectedResultsSqlScript().equals(other.getExpectedResultsSqlScript())) return false;
+      if (getTotalProcessedBytes() != other.getTotalProcessedBytes()) return false;
+      if (getTotalBilledBytes() != other.getTotalBilledBytes()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ACTUAL_RESULTS_JOB_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getActualResultsJobId().hashCode();
+      hash = (37 * hash) + ACTUAL_RESULTS_SQL_SCRIPT_FIELD_NUMBER;
+      hash = (53 * hash) + getActualResultsSqlScript().hashCode();
+      hash = (37 * hash) + EXPECTED_RESULTS_JOB_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getExpectedResultsJobId().hashCode();
+      hash = (37 * hash) + EXPECTED_RESULTS_SQL_SCRIPT_FIELD_NUMBER;
+      hash = (53 * hash) + getExpectedResultsSqlScript().hashCode();
+      hash = (37 * hash) + TOTAL_PROCESSED_BYTES_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getTotalProcessedBytes());
+      hash = (37 * hash) + TOTAL_BILLED_BYTES_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getTotalBilledBytes());
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryUnitTestAction
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryUnitTestAction
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryUnitTestAction
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryUnitTestAction
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryUnitTestAction
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryUnitTestAction
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryUnitTestAction
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryUnitTestAction
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryUnitTestAction
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryUnitTestAction
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryUnitTestAction
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryUnitTestAction
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryUnitTestAction
+            prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Represents a workflow action that will run a BigQuery unit test.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryUnitTestAction}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryUnitTestAction)
+        com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryUnitTestActionOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.dataform.v1beta1.DataformProto
+            .internal_static_google_cloud_dataform_v1beta1_WorkflowInvocationAction_BigQueryUnitTestAction_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.dataform.v1beta1.DataformProto
+            .internal_static_google_cloud_dataform_v1beta1_WorkflowInvocationAction_BigQueryUnitTestAction_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryUnitTestAction
+                    .class,
+                com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryUnitTestAction
+                    .Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryUnitTestAction.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        actualResultsJobId_ = "";
+        actualResultsSqlScript_ = "";
+        expectedResultsJobId_ = "";
+        expectedResultsSqlScript_ = "";
+        totalProcessedBytes_ = 0L;
+        totalBilledBytes_ = 0L;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.dataform.v1beta1.DataformProto
+            .internal_static_google_cloud_dataform_v1beta1_WorkflowInvocationAction_BigQueryUnitTestAction_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryUnitTestAction
+          getDefaultInstanceForType() {
+        return com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryUnitTestAction
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryUnitTestAction
+          build() {
+        com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryUnitTestAction result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryUnitTestAction
+          buildPartial() {
+        com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryUnitTestAction result =
+            new com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryUnitTestAction(
+                this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryUnitTestAction
+              result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.actualResultsJobId_ = actualResultsJobId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.actualResultsSqlScript_ = actualResultsSqlScript_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.expectedResultsJobId_ = expectedResultsJobId_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.expectedResultsSqlScript_ = expectedResultsSqlScript_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.totalProcessedBytes_ = totalProcessedBytes_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.totalBilledBytes_ = totalBilledBytes_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof
+            com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryUnitTestAction) {
+          return mergeFrom(
+              (com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryUnitTestAction)
+                  other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryUnitTestAction other) {
+        if (other
+            == com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryUnitTestAction
+                .getDefaultInstance()) return this;
+        if (!other.getActualResultsJobId().isEmpty()) {
+          actualResultsJobId_ = other.actualResultsJobId_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (!other.getActualResultsSqlScript().isEmpty()) {
+          actualResultsSqlScript_ = other.actualResultsSqlScript_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        if (!other.getExpectedResultsJobId().isEmpty()) {
+          expectedResultsJobId_ = other.expectedResultsJobId_;
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        if (!other.getExpectedResultsSqlScript().isEmpty()) {
+          expectedResultsSqlScript_ = other.expectedResultsSqlScript_;
+          bitField0_ |= 0x00000008;
+          onChanged();
+        }
+        if (other.getTotalProcessedBytes() != 0L) {
+          setTotalProcessedBytes(other.getTotalProcessedBytes());
+        }
+        if (other.getTotalBilledBytes() != 0L) {
+          setTotalBilledBytes(other.getTotalBilledBytes());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  actualResultsJobId_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  actualResultsSqlScript_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              case 26:
+                {
+                  expectedResultsJobId_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 26
+              case 34:
+                {
+                  expectedResultsSqlScript_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 34
+              case 40:
+                {
+                  totalProcessedBytes_ = input.readInt64();
+                  bitField0_ |= 0x00000010;
+                  break;
+                } // case 40
+              case 48:
+                {
+                  totalBilledBytes_ = input.readInt64();
+                  bitField0_ |= 0x00000020;
+                  break;
+                } // case 48
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object actualResultsJobId_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Job ID for the actual results.
+       * </pre>
+       *
+       * <code>string actual_results_job_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The actualResultsJobId.
+       */
+      public java.lang.String getActualResultsJobId() {
+        java.lang.Object ref = actualResultsJobId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          actualResultsJobId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Job ID for the actual results.
+       * </pre>
+       *
+       * <code>string actual_results_job_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The bytes for actualResultsJobId.
+       */
+      public com.google.protobuf.ByteString getActualResultsJobIdBytes() {
+        java.lang.Object ref = actualResultsJobId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          actualResultsJobId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Job ID for the actual results.
+       * </pre>
+       *
+       * <code>string actual_results_job_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The actualResultsJobId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setActualResultsJobId(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        actualResultsJobId_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Job ID for the actual results.
+       * </pre>
+       *
+       * <code>string actual_results_job_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearActualResultsJobId() {
+        actualResultsJobId_ = getDefaultInstance().getActualResultsJobId();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Job ID for the actual results.
+       * </pre>
+       *
+       * <code>string actual_results_job_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The bytes for actualResultsJobId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setActualResultsJobIdBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        actualResultsJobId_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object actualResultsSqlScript_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. SQL script for the actual results.
+       * </pre>
+       *
+       * <code>string actual_results_sql_script = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The actualResultsSqlScript.
+       */
+      public java.lang.String getActualResultsSqlScript() {
+        java.lang.Object ref = actualResultsSqlScript_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          actualResultsSqlScript_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. SQL script for the actual results.
+       * </pre>
+       *
+       * <code>string actual_results_sql_script = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The bytes for actualResultsSqlScript.
+       */
+      public com.google.protobuf.ByteString getActualResultsSqlScriptBytes() {
+        java.lang.Object ref = actualResultsSqlScript_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          actualResultsSqlScript_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. SQL script for the actual results.
+       * </pre>
+       *
+       * <code>string actual_results_sql_script = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @param value The actualResultsSqlScript to set.
+       * @return This builder for chaining.
+       */
+      public Builder setActualResultsSqlScript(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        actualResultsSqlScript_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. SQL script for the actual results.
+       * </pre>
+       *
+       * <code>string actual_results_sql_script = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearActualResultsSqlScript() {
+        actualResultsSqlScript_ = getDefaultInstance().getActualResultsSqlScript();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. SQL script for the actual results.
+       * </pre>
+       *
+       * <code>string actual_results_sql_script = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @param value The bytes for actualResultsSqlScript to set.
+       * @return This builder for chaining.
+       */
+      public Builder setActualResultsSqlScriptBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        actualResultsSqlScript_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object expectedResultsJobId_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Job ID for the expected results.
+       * </pre>
+       *
+       * <code>string expected_results_job_id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The expectedResultsJobId.
+       */
+      public java.lang.String getExpectedResultsJobId() {
+        java.lang.Object ref = expectedResultsJobId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          expectedResultsJobId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Job ID for the expected results.
+       * </pre>
+       *
+       * <code>string expected_results_job_id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The bytes for expectedResultsJobId.
+       */
+      public com.google.protobuf.ByteString getExpectedResultsJobIdBytes() {
+        java.lang.Object ref = expectedResultsJobId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          expectedResultsJobId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Job ID for the expected results.
+       * </pre>
+       *
+       * <code>string expected_results_job_id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @param value The expectedResultsJobId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setExpectedResultsJobId(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        expectedResultsJobId_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Job ID for the expected results.
+       * </pre>
+       *
+       * <code>string expected_results_job_id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearExpectedResultsJobId() {
+        expectedResultsJobId_ = getDefaultInstance().getExpectedResultsJobId();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Job ID for the expected results.
+       * </pre>
+       *
+       * <code>string expected_results_job_id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @param value The bytes for expectedResultsJobId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setExpectedResultsJobIdBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        expectedResultsJobId_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object expectedResultsSqlScript_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. SQL script for the expected results.
+       * </pre>
+       *
+       * <code>string expected_results_sql_script = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The expectedResultsSqlScript.
+       */
+      public java.lang.String getExpectedResultsSqlScript() {
+        java.lang.Object ref = expectedResultsSqlScript_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          expectedResultsSqlScript_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. SQL script for the expected results.
+       * </pre>
+       *
+       * <code>string expected_results_sql_script = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The bytes for expectedResultsSqlScript.
+       */
+      public com.google.protobuf.ByteString getExpectedResultsSqlScriptBytes() {
+        java.lang.Object ref = expectedResultsSqlScript_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          expectedResultsSqlScript_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. SQL script for the expected results.
+       * </pre>
+       *
+       * <code>string expected_results_sql_script = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @param value The expectedResultsSqlScript to set.
+       * @return This builder for chaining.
+       */
+      public Builder setExpectedResultsSqlScript(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        expectedResultsSqlScript_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. SQL script for the expected results.
+       * </pre>
+       *
+       * <code>string expected_results_sql_script = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearExpectedResultsSqlScript() {
+        expectedResultsSqlScript_ = getDefaultInstance().getExpectedResultsSqlScript();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. SQL script for the expected results.
+       * </pre>
+       *
+       * <code>string expected_results_sql_script = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @param value The bytes for expectedResultsSqlScript to set.
+       * @return This builder for chaining.
+       */
+      public Builder setExpectedResultsSqlScriptBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        expectedResultsSqlScript_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      private long totalProcessedBytes_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Total bytes processed for this action. Combined total for
+       * actual and expected jobs.
+       * </pre>
+       *
+       * <code>int64 total_processed_bytes = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The totalProcessedBytes.
+       */
+      @java.lang.Override
+      public long getTotalProcessedBytes() {
+        return totalProcessedBytes_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Total bytes processed for this action. Combined total for
+       * actual and expected jobs.
+       * </pre>
+       *
+       * <code>int64 total_processed_bytes = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The totalProcessedBytes to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTotalProcessedBytes(long value) {
+
+        totalProcessedBytes_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Total bytes processed for this action. Combined total for
+       * actual and expected jobs.
+       * </pre>
+       *
+       * <code>int64 total_processed_bytes = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearTotalProcessedBytes() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        totalProcessedBytes_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long totalBilledBytes_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Total bytes billed for this action. Combined total for
+       * actual and expected jobs.
+       * </pre>
+       *
+       * <code>int64 total_billed_bytes = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The totalBilledBytes.
+       */
+      @java.lang.Override
+      public long getTotalBilledBytes() {
+        return totalBilledBytes_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Total bytes billed for this action. Combined total for
+       * actual and expected jobs.
+       * </pre>
+       *
+       * <code>int64 total_billed_bytes = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The totalBilledBytes to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTotalBilledBytes(long value) {
+
+        totalBilledBytes_ = value;
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Total bytes billed for this action. Combined total for
+       * actual and expected jobs.
+       * </pre>
+       *
+       * <code>int64 total_billed_bytes = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearTotalBilledBytes() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        totalBilledBytes_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryUnitTestAction)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryUnitTestAction)
+    private static final com.google.cloud.dataform.v1beta1.WorkflowInvocationAction
+            .BigQueryUnitTestAction
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryUnitTestAction();
+    }
+
+    public static com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryUnitTestAction
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<BigQueryUnitTestAction> PARSER =
+        new com.google.protobuf.AbstractParser<BigQueryUnitTestAction>() {
+          @java.lang.Override
+          public BigQueryUnitTestAction parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<BigQueryUnitTestAction> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<BigQueryUnitTestAction> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryUnitTestAction
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
   private int actionCase_ = 0;
 
@@ -9842,6 +11409,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
     BIGQUERY_ACTION(6),
     NOTEBOOK_ACTION(8),
     DATA_PREPARATION_ACTION(9),
+    BIGQUERY_UNIT_TEST_ACTION(12),
     ACTION_NOT_SET(0);
     private final int value;
 
@@ -9867,6 +11435,8 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
           return NOTEBOOK_ACTION;
         case 9:
           return DATA_PREPARATION_ACTION;
+        case 12:
+          return BIGQUERY_UNIT_TEST_ACTION;
         case 0:
           return ACTION_NOT_SET;
         default:
@@ -10074,6 +11644,72 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
           action_;
     }
     return com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+        .getDefaultInstance();
+  }
+
+  public static final int BIGQUERY_UNIT_TEST_ACTION_FIELD_NUMBER = 12;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The workflow action's unit test details.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryUnitTestAction bigquery_unit_test_action = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the bigqueryUnitTestAction field is set.
+   */
+  @java.lang.Override
+  public boolean hasBigqueryUnitTestAction() {
+    return actionCase_ == 12;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The workflow action's unit test details.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryUnitTestAction bigquery_unit_test_action = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The bigqueryUnitTestAction.
+   */
+  @java.lang.Override
+  public com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryUnitTestAction
+      getBigqueryUnitTestAction() {
+    if (actionCase_ == 12) {
+      return (com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryUnitTestAction)
+          action_;
+    }
+    return com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryUnitTestAction
+        .getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The workflow action's unit test details.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryUnitTestAction bigquery_unit_test_action = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryUnitTestActionOrBuilder
+      getBigqueryUnitTestActionOrBuilder() {
+    if (actionCase_ == 12) {
+      return (com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryUnitTestAction)
+          action_;
+    }
+    return com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryUnitTestAction
         .getDefaultInstance();
   }
 
@@ -10492,6 +12128,12 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
     if (((bitField0_ & 0x00000008) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 10, internalMetadata_);
     }
+    if (actionCase_ == 12) {
+      output.writeMessage(
+          12,
+          (com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryUnitTestAction)
+              action_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -10539,6 +12181,13 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
     if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(10, internalMetadata_);
     }
+    if (actionCase_ == 12) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              12,
+              (com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryUnitTestAction)
+                  action_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -10583,6 +12232,9 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
         break;
       case 9:
         if (!getDataPreparationAction().equals(other.getDataPreparationAction())) return false;
+        break;
+      case 12:
+        if (!getBigqueryUnitTestAction().equals(other.getBigqueryUnitTestAction())) return false;
         break;
       case 0:
       default:
@@ -10630,6 +12282,10 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
       case 9:
         hash = (37 * hash) + DATA_PREPARATION_ACTION_FIELD_NUMBER;
         hash = (53 * hash) + getDataPreparationAction().hashCode();
+        break;
+      case 12:
+        hash = (37 * hash) + BIGQUERY_UNIT_TEST_ACTION_FIELD_NUMBER;
+        hash = (53 * hash) + getBigqueryUnitTestAction().hashCode();
         break;
       case 0:
       default:
@@ -10795,6 +12451,9 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
       if (dataPreparationActionBuilder_ != null) {
         dataPreparationActionBuilder_.clear();
       }
+      if (bigqueryUnitTestActionBuilder_ != null) {
+        bigqueryUnitTestActionBuilder_.clear();
+      }
       target_ = null;
       if (targetBuilder_ != null) {
         targetBuilder_.dispose();
@@ -10853,27 +12512,27 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
     private void buildPartial0(com.google.cloud.dataform.v1beta1.WorkflowInvocationAction result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.target_ = targetBuilder_ == null ? target_ : targetBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.canonicalTarget_ =
             canonicalTargetBuilder_ == null ? canonicalTarget_ : canonicalTargetBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.state_ = state_;
       }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.failureReason_ = failureReason_;
       }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.invocationTiming_ =
             invocationTimingBuilder_ == null ? invocationTiming_ : invocationTimingBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
-      if (((from_bitField0_ & 0x00000100) != 0)) {
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.internalMetadata_ = internalMetadata_;
         to_bitField0_ |= 0x00000008;
       }
@@ -10892,6 +12551,9 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
       }
       if (actionCase_ == 9 && dataPreparationActionBuilder_ != null) {
         result.action_ = dataPreparationActionBuilder_.build();
+      }
+      if (actionCase_ == 12 && bigqueryUnitTestActionBuilder_ != null) {
+        result.action_ = bigqueryUnitTestActionBuilder_.build();
       }
     }
 
@@ -10919,7 +12581,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
       }
       if (!other.getFailureReason().isEmpty()) {
         failureReason_ = other.failureReason_;
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       if (other.hasInvocationTiming()) {
@@ -10927,7 +12589,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
       }
       if (other.hasInternalMetadata()) {
         internalMetadata_ = other.internalMetadata_;
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       switch (other.getActionCase()) {
@@ -10944,6 +12606,11 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
         case DATA_PREPARATION_ACTION:
           {
             mergeDataPreparationAction(other.getDataPreparationAction());
+            break;
+          }
+        case BIGQUERY_UNIT_TEST_ACTION:
+          {
+            mergeBigqueryUnitTestAction(other.getBigqueryUnitTestAction());
             break;
           }
         case ACTION_NOT_SET:
@@ -10980,27 +12647,27 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
             case 10:
               {
                 input.readMessage(internalGetTargetFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(
                     internalGetCanonicalTargetFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 18
             case 32:
               {
                 state_ = input.readEnum();
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 32
             case 42:
               {
                 input.readMessage(
                     internalGetInvocationTimingFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 42
             case 50:
@@ -11013,7 +12680,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
             case 58:
               {
                 failureReason_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 58
             case 66:
@@ -11033,9 +12700,17 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
             case 82:
               {
                 internalMetadata_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 82
+            case 98:
+              {
+                input.readMessage(
+                    internalGetBigqueryUnitTestActionFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                actionCase_ = 12;
+                break;
+              } // case 98
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -11834,6 +13509,268 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
       return dataPreparationActionBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryUnitTestAction,
+            com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryUnitTestAction
+                .Builder,
+            com.google.cloud.dataform.v1beta1.WorkflowInvocationAction
+                .BigQueryUnitTestActionOrBuilder>
+        bigqueryUnitTestActionBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The workflow action's unit test details.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryUnitTestAction bigquery_unit_test_action = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the bigqueryUnitTestAction field is set.
+     */
+    @java.lang.Override
+    public boolean hasBigqueryUnitTestAction() {
+      return actionCase_ == 12;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The workflow action's unit test details.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryUnitTestAction bigquery_unit_test_action = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The bigqueryUnitTestAction.
+     */
+    @java.lang.Override
+    public com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryUnitTestAction
+        getBigqueryUnitTestAction() {
+      if (bigqueryUnitTestActionBuilder_ == null) {
+        if (actionCase_ == 12) {
+          return (com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryUnitTestAction)
+              action_;
+        }
+        return com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryUnitTestAction
+            .getDefaultInstance();
+      } else {
+        if (actionCase_ == 12) {
+          return bigqueryUnitTestActionBuilder_.getMessage();
+        }
+        return com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryUnitTestAction
+            .getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The workflow action's unit test details.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryUnitTestAction bigquery_unit_test_action = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setBigqueryUnitTestAction(
+        com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryUnitTestAction value) {
+      if (bigqueryUnitTestActionBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        action_ = value;
+        onChanged();
+      } else {
+        bigqueryUnitTestActionBuilder_.setMessage(value);
+      }
+      actionCase_ = 12;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The workflow action's unit test details.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryUnitTestAction bigquery_unit_test_action = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setBigqueryUnitTestAction(
+        com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryUnitTestAction.Builder
+            builderForValue) {
+      if (bigqueryUnitTestActionBuilder_ == null) {
+        action_ = builderForValue.build();
+        onChanged();
+      } else {
+        bigqueryUnitTestActionBuilder_.setMessage(builderForValue.build());
+      }
+      actionCase_ = 12;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The workflow action's unit test details.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryUnitTestAction bigquery_unit_test_action = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeBigqueryUnitTestAction(
+        com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryUnitTestAction value) {
+      if (bigqueryUnitTestActionBuilder_ == null) {
+        if (actionCase_ == 12
+            && action_
+                != com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryUnitTestAction
+                    .getDefaultInstance()) {
+          action_ =
+              com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryUnitTestAction
+                  .newBuilder(
+                      (com.google.cloud.dataform.v1beta1.WorkflowInvocationAction
+                              .BigQueryUnitTestAction)
+                          action_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          action_ = value;
+        }
+        onChanged();
+      } else {
+        if (actionCase_ == 12) {
+          bigqueryUnitTestActionBuilder_.mergeFrom(value);
+        } else {
+          bigqueryUnitTestActionBuilder_.setMessage(value);
+        }
+      }
+      actionCase_ = 12;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The workflow action's unit test details.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryUnitTestAction bigquery_unit_test_action = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearBigqueryUnitTestAction() {
+      if (bigqueryUnitTestActionBuilder_ == null) {
+        if (actionCase_ == 12) {
+          actionCase_ = 0;
+          action_ = null;
+          onChanged();
+        }
+      } else {
+        if (actionCase_ == 12) {
+          actionCase_ = 0;
+          action_ = null;
+        }
+        bigqueryUnitTestActionBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The workflow action's unit test details.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryUnitTestAction bigquery_unit_test_action = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryUnitTestAction.Builder
+        getBigqueryUnitTestActionBuilder() {
+      return internalGetBigqueryUnitTestActionFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The workflow action's unit test details.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryUnitTestAction bigquery_unit_test_action = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dataform.v1beta1.WorkflowInvocationAction
+            .BigQueryUnitTestActionOrBuilder
+        getBigqueryUnitTestActionOrBuilder() {
+      if ((actionCase_ == 12) && (bigqueryUnitTestActionBuilder_ != null)) {
+        return bigqueryUnitTestActionBuilder_.getMessageOrBuilder();
+      } else {
+        if (actionCase_ == 12) {
+          return (com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryUnitTestAction)
+              action_;
+        }
+        return com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryUnitTestAction
+            .getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The workflow action's unit test details.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryUnitTestAction bigquery_unit_test_action = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryUnitTestAction,
+            com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryUnitTestAction
+                .Builder,
+            com.google.cloud.dataform.v1beta1.WorkflowInvocationAction
+                .BigQueryUnitTestActionOrBuilder>
+        internalGetBigqueryUnitTestActionFieldBuilder() {
+      if (bigqueryUnitTestActionBuilder_ == null) {
+        if (!(actionCase_ == 12)) {
+          action_ =
+              com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryUnitTestAction
+                  .getDefaultInstance();
+        }
+        bigqueryUnitTestActionBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryUnitTestAction,
+                com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryUnitTestAction
+                    .Builder,
+                com.google.cloud.dataform.v1beta1.WorkflowInvocationAction
+                    .BigQueryUnitTestActionOrBuilder>(
+                (com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryUnitTestAction)
+                    action_,
+                getParentForChildren(),
+                isClean());
+        action_ = null;
+      }
+      actionCase_ = 12;
+      onChanged();
+      return bigqueryUnitTestActionBuilder_;
+    }
+
     private com.google.cloud.dataform.v1beta1.Target target_;
     private com.google.protobuf.SingleFieldBuilder<
             com.google.cloud.dataform.v1beta1.Target,
@@ -11856,7 +13793,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
      * @return Whether the target field is set.
      */
     public boolean hasTarget() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
 
     /**
@@ -11904,7 +13841,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
       } else {
         targetBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -11927,7 +13864,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
       } else {
         targetBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -11946,7 +13883,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
      */
     public Builder mergeTarget(com.google.cloud.dataform.v1beta1.Target value) {
       if (targetBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)
+        if (((bitField0_ & 0x00000010) != 0)
             && target_ != null
             && target_ != com.google.cloud.dataform.v1beta1.Target.getDefaultInstance()) {
           getTargetBuilder().mergeFrom(value);
@@ -11957,7 +13894,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
         targetBuilder_.mergeFrom(value);
       }
       if (target_ != null) {
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       return this;
@@ -11976,7 +13913,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
      * </code>
      */
     public Builder clearTarget() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       target_ = null;
       if (targetBuilder_ != null) {
         targetBuilder_.dispose();
@@ -11999,7 +13936,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
      * </code>
      */
     public com.google.cloud.dataform.v1beta1.Target.Builder getTargetBuilder() {
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return internalGetTargetFieldBuilder().getBuilder();
     }
@@ -12077,7 +14014,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
      * @return Whether the canonicalTarget field is set.
      */
     public boolean hasCanonicalTarget() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
 
     /**
@@ -12125,7 +14062,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
       } else {
         canonicalTargetBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -12149,7 +14086,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
       } else {
         canonicalTargetBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -12168,7 +14105,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
      */
     public Builder mergeCanonicalTarget(com.google.cloud.dataform.v1beta1.Target value) {
       if (canonicalTargetBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)
+        if (((bitField0_ & 0x00000020) != 0)
             && canonicalTarget_ != null
             && canonicalTarget_ != com.google.cloud.dataform.v1beta1.Target.getDefaultInstance()) {
           getCanonicalTargetBuilder().mergeFrom(value);
@@ -12179,7 +14116,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
         canonicalTargetBuilder_.mergeFrom(value);
       }
       if (canonicalTarget_ != null) {
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       return this;
@@ -12198,7 +14135,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
      * </code>
      */
     public Builder clearCanonicalTarget() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       canonicalTarget_ = null;
       if (canonicalTargetBuilder_ != null) {
         canonicalTargetBuilder_.dispose();
@@ -12221,7 +14158,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
      * </code>
      */
     public com.google.cloud.dataform.v1beta1.Target.Builder getCanonicalTargetBuilder() {
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return internalGetCanonicalTargetFieldBuilder().getBuilder();
     }
@@ -12313,7 +14250,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
      */
     public Builder setStateValue(int value) {
       state_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -12359,7 +14296,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -12379,7 +14316,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearState() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       state_ = 0;
       onChanged();
       return this;
@@ -12453,7 +14390,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       failureReason_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -12472,7 +14409,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
      */
     public Builder clearFailureReason() {
       failureReason_ = getDefaultInstance().getFailureReason();
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -12496,7 +14433,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
       }
       checkByteStringIsUtf8(value);
       failureReason_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -12526,7 +14463,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
      * @return Whether the invocationTiming field is set.
      */
     public boolean hasInvocationTiming() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
 
     /**
@@ -12580,7 +14517,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
       } else {
         invocationTimingBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -12606,7 +14543,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
       } else {
         invocationTimingBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -12628,7 +14565,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
      */
     public Builder mergeInvocationTiming(com.google.type.Interval value) {
       if (invocationTimingBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) != 0)
+        if (((bitField0_ & 0x00000100) != 0)
             && invocationTiming_ != null
             && invocationTiming_ != com.google.type.Interval.getDefaultInstance()) {
           getInvocationTimingBuilder().mergeFrom(value);
@@ -12639,7 +14576,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
         invocationTimingBuilder_.mergeFrom(value);
       }
       if (invocationTiming_ != null) {
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       return this;
@@ -12661,7 +14598,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
      * </code>
      */
     public Builder clearInvocationTiming() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       invocationTiming_ = null;
       if (invocationTimingBuilder_ != null) {
         invocationTimingBuilder_.dispose();
@@ -12687,7 +14624,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
      * </code>
      */
     public com.google.type.Interval.Builder getInvocationTimingBuilder() {
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return internalGetInvocationTimingFieldBuilder().getBuilder();
     }
@@ -12766,7 +14703,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
      * @return Whether the internalMetadata field is set.
      */
     public boolean hasInternalMetadata() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
 
     /**
@@ -12841,7 +14778,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       internalMetadata_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -12862,7 +14799,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
      */
     public Builder clearInternalMetadata() {
       internalMetadata_ = getDefaultInstance().getInternalMetadata();
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       onChanged();
       return this;
     }
@@ -12888,7 +14825,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
       }
       checkByteStringIsUtf8(value);
       internalMetadata_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }

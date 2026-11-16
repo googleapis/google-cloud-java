@@ -11,6 +11,5 @@
   "repo_short": "java-saasservicemgmt",
   "distribution_name": "com.google.cloud:google-cloud-saasservicemgmt",
   "api_id": "saasservicemgmt.googleapis.com",
-  "library_type": "GAPIC_AUTO",
-  "rpc_documentation": "https://cloud.google.com/saas-runtime/docs/apis"
+  "library_type": "GAPIC_AUTO"
 }

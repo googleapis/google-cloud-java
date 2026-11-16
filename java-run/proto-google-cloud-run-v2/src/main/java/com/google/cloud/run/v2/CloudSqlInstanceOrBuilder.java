@@ -30,11 +30,23 @@ public interface CloudSqlInstanceOrBuilder
    *
    *
    * <pre>
-   * The Cloud SQL instance connection names, as can be found in
-   * https://console.cloud.google.com/sql/instances. Visit
-   * https://cloud.google.com/sql/docs/mysql/connect-run for more information on
-   * how to connect Cloud SQL and Cloud Run. Format:
-   * {project}:{location}:{instance}
+   * A list of Cloud SQL instance connection names. Cloud Run uses these
+   * to establish connections to the specified Cloud SQL instances.
+   * While the SQL instance name itself is unique within a project,
+   * the full connection name requires the location for proper routing.
+   * Format: `{project}:{location}:{instance}`
+   * Example: `my-project:us-central1:my-instance`
+   *
+   * You can find this value on the instance's **Overview** page in the
+   * Google Cloud console or by using the following `gcloud` command:
+   *
+   * ```sh
+   * gcloud sql instances describe INSTANCE_NAME &#92;
+   * --format='value(connectionName)'
+   * ```
+   *
+   * Visit https://cloud.google.com/sql/docs/mysql/connect-run for more
+   * information on how to connect Cloud SQL and Cloud Run.
    * </pre>
    *
    * <code>repeated string instances = 1;</code>
@@ -47,11 +59,23 @@ public interface CloudSqlInstanceOrBuilder
    *
    *
    * <pre>
-   * The Cloud SQL instance connection names, as can be found in
-   * https://console.cloud.google.com/sql/instances. Visit
-   * https://cloud.google.com/sql/docs/mysql/connect-run for more information on
-   * how to connect Cloud SQL and Cloud Run. Format:
-   * {project}:{location}:{instance}
+   * A list of Cloud SQL instance connection names. Cloud Run uses these
+   * to establish connections to the specified Cloud SQL instances.
+   * While the SQL instance name itself is unique within a project,
+   * the full connection name requires the location for proper routing.
+   * Format: `{project}:{location}:{instance}`
+   * Example: `my-project:us-central1:my-instance`
+   *
+   * You can find this value on the instance's **Overview** page in the
+   * Google Cloud console or by using the following `gcloud` command:
+   *
+   * ```sh
+   * gcloud sql instances describe INSTANCE_NAME &#92;
+   * --format='value(connectionName)'
+   * ```
+   *
+   * Visit https://cloud.google.com/sql/docs/mysql/connect-run for more
+   * information on how to connect Cloud SQL and Cloud Run.
    * </pre>
    *
    * <code>repeated string instances = 1;</code>
@@ -64,11 +88,23 @@ public interface CloudSqlInstanceOrBuilder
    *
    *
    * <pre>
-   * The Cloud SQL instance connection names, as can be found in
-   * https://console.cloud.google.com/sql/instances. Visit
-   * https://cloud.google.com/sql/docs/mysql/connect-run for more information on
-   * how to connect Cloud SQL and Cloud Run. Format:
-   * {project}:{location}:{instance}
+   * A list of Cloud SQL instance connection names. Cloud Run uses these
+   * to establish connections to the specified Cloud SQL instances.
+   * While the SQL instance name itself is unique within a project,
+   * the full connection name requires the location for proper routing.
+   * Format: `{project}:{location}:{instance}`
+   * Example: `my-project:us-central1:my-instance`
+   *
+   * You can find this value on the instance's **Overview** page in the
+   * Google Cloud console or by using the following `gcloud` command:
+   *
+   * ```sh
+   * gcloud sql instances describe INSTANCE_NAME &#92;
+   * --format='value(connectionName)'
+   * ```
+   *
+   * Visit https://cloud.google.com/sql/docs/mysql/connect-run for more
+   * information on how to connect Cloud SQL and Cloud Run.
    * </pre>
    *
    * <code>repeated string instances = 1;</code>
@@ -82,11 +118,23 @@ public interface CloudSqlInstanceOrBuilder
    *
    *
    * <pre>
-   * The Cloud SQL instance connection names, as can be found in
-   * https://console.cloud.google.com/sql/instances. Visit
-   * https://cloud.google.com/sql/docs/mysql/connect-run for more information on
-   * how to connect Cloud SQL and Cloud Run. Format:
-   * {project}:{location}:{instance}
+   * A list of Cloud SQL instance connection names. Cloud Run uses these
+   * to establish connections to the specified Cloud SQL instances.
+   * While the SQL instance name itself is unique within a project,
+   * the full connection name requires the location for proper routing.
+   * Format: `{project}:{location}:{instance}`
+   * Example: `my-project:us-central1:my-instance`
+   *
+   * You can find this value on the instance's **Overview** page in the
+   * Google Cloud console or by using the following `gcloud` command:
+   *
+   * ```sh
+   * gcloud sql instances describe INSTANCE_NAME &#92;
+   * --format='value(connectionName)'
+   * ```
+   *
+   * Visit https://cloud.google.com/sql/docs/mysql/connect-run for more
+   * information on how to connect Cloud SQL and Cloud Run.
    * </pre>
    *
    * <code>repeated string instances = 1;</code>

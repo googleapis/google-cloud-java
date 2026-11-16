@@ -55,6 +55,9 @@ public final class IdentityConnector extends com.google.protobuf.GeneratedMessag
   private IdentityConnector() {
     serviceAgentEmail_ = "";
     connectionState_ = 0;
+    workloadIdentityPool_ = "";
+    identityConnectorId_ = "";
+    lifecycleStateDetails_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -392,6 +395,183 @@ public final class IdentityConnector extends com.google.protobuf.GeneratedMessag
         : result;
   }
 
+  public static final int WORKLOAD_IDENTITY_POOL_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object workloadIdentityPool_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The resource name of the Workload Identity Pool
+   * configured for identity federation with OCI. This exact pool name can be
+   * used to configure VPC Service Controls (VPC-SC) egress rules.
+   * Format:
+   * `projects/{project}/locations/global/workloadIdentityPools/{workload_identity_pool}`
+   * </pre>
+   *
+   * <code>
+   * string workload_identity_pool = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The workloadIdentityPool.
+   */
+  @java.lang.Override
+  public java.lang.String getWorkloadIdentityPool() {
+    java.lang.Object ref = workloadIdentityPool_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      workloadIdentityPool_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The resource name of the Workload Identity Pool
+   * configured for identity federation with OCI. This exact pool name can be
+   * used to configure VPC Service Controls (VPC-SC) egress rules.
+   * Format:
+   * `projects/{project}/locations/global/workloadIdentityPools/{workload_identity_pool}`
+   * </pre>
+   *
+   * <code>
+   * string workload_identity_pool = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for workloadIdentityPool.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getWorkloadIdentityPoolBytes() {
+    java.lang.Object ref = workloadIdentityPool_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      workloadIdentityPool_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int IDENTITY_CONNECTOR_ID_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object identityConnectorId_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The unique partner identifier for the Identity Connector,
+   * used to establish secure cross-cloud access between Google Cloud and OCI.
+   * This corresponds directly to the ID of the OracleDbGcpIdentityConnector
+   * resource in Oracle Cloud Infrastructure (OCI).
+   * </pre>
+   *
+   * <code>string identity_connector_id = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The identityConnectorId.
+   */
+  @java.lang.Override
+  public java.lang.String getIdentityConnectorId() {
+    java.lang.Object ref = identityConnectorId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      identityConnectorId_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The unique partner identifier for the Identity Connector,
+   * used to establish secure cross-cloud access between Google Cloud and OCI.
+   * This corresponds directly to the ID of the OracleDbGcpIdentityConnector
+   * resource in Oracle Cloud Infrastructure (OCI).
+   * </pre>
+   *
+   * <code>string identity_connector_id = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for identityConnectorId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getIdentityConnectorIdBytes() {
+    java.lang.Object ref = identityConnectorId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      identityConnectorId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int LIFECYCLE_STATE_DETAILS_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object lifecycleStateDetails_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Additional information about the current lifecycle state.
+   * </pre>
+   *
+   * <code>string lifecycle_state_details = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The lifecycleStateDetails.
+   */
+  @java.lang.Override
+  public java.lang.String getLifecycleStateDetails() {
+    java.lang.Object ref = lifecycleStateDetails_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      lifecycleStateDetails_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Additional information about the current lifecycle state.
+   * </pre>
+   *
+   * <code>string lifecycle_state_details = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for lifecycleStateDetails.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getLifecycleStateDetailsBytes() {
+    java.lang.Object ref = lifecycleStateDetails_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      lifecycleStateDetails_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -415,6 +595,15 @@ public final class IdentityConnector extends com.google.protobuf.GeneratedMessag
             .getNumber()) {
       output.writeEnum(2, connectionState_);
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(workloadIdentityPool_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 3, workloadIdentityPool_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(identityConnectorId_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 4, identityConnectorId_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(lifecycleStateDetails_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 5, lifecycleStateDetails_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -432,6 +621,15 @@ public final class IdentityConnector extends com.google.protobuf.GeneratedMessag
             .CONNECTION_STATE_UNSPECIFIED
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, connectionState_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(workloadIdentityPool_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(3, workloadIdentityPool_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(identityConnectorId_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(4, identityConnectorId_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(lifecycleStateDetails_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(5, lifecycleStateDetails_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -451,6 +649,9 @@ public final class IdentityConnector extends com.google.protobuf.GeneratedMessag
 
     if (!getServiceAgentEmail().equals(other.getServiceAgentEmail())) return false;
     if (connectionState_ != other.connectionState_) return false;
+    if (!getWorkloadIdentityPool().equals(other.getWorkloadIdentityPool())) return false;
+    if (!getIdentityConnectorId().equals(other.getIdentityConnectorId())) return false;
+    if (!getLifecycleStateDetails().equals(other.getLifecycleStateDetails())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -466,6 +667,12 @@ public final class IdentityConnector extends com.google.protobuf.GeneratedMessag
     hash = (53 * hash) + getServiceAgentEmail().hashCode();
     hash = (37 * hash) + CONNECTION_STATE_FIELD_NUMBER;
     hash = (53 * hash) + connectionState_;
+    hash = (37 * hash) + WORKLOAD_IDENTITY_POOL_FIELD_NUMBER;
+    hash = (53 * hash) + getWorkloadIdentityPool().hashCode();
+    hash = (37 * hash) + IDENTITY_CONNECTOR_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getIdentityConnectorId().hashCode();
+    hash = (37 * hash) + LIFECYCLE_STATE_DETAILS_FIELD_NUMBER;
+    hash = (53 * hash) + getLifecycleStateDetails().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -609,6 +816,9 @@ public final class IdentityConnector extends com.google.protobuf.GeneratedMessag
       bitField0_ = 0;
       serviceAgentEmail_ = "";
       connectionState_ = 0;
+      workloadIdentityPool_ = "";
+      identityConnectorId_ = "";
+      lifecycleStateDetails_ = "";
       return this;
     }
 
@@ -651,6 +861,15 @@ public final class IdentityConnector extends com.google.protobuf.GeneratedMessag
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.connectionState_ = connectionState_;
       }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.workloadIdentityPool_ = workloadIdentityPool_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.identityConnectorId_ = identityConnectorId_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.lifecycleStateDetails_ = lifecycleStateDetails_;
+      }
     }
 
     @java.lang.Override
@@ -673,6 +892,21 @@ public final class IdentityConnector extends com.google.protobuf.GeneratedMessag
       }
       if (other.connectionState_ != 0) {
         setConnectionStateValue(other.getConnectionStateValue());
+      }
+      if (!other.getWorkloadIdentityPool().isEmpty()) {
+        workloadIdentityPool_ = other.workloadIdentityPool_;
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
+      if (!other.getIdentityConnectorId().isEmpty()) {
+        identityConnectorId_ = other.identityConnectorId_;
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
+      if (!other.getLifecycleStateDetails().isEmpty()) {
+        lifecycleStateDetails_ = other.lifecycleStateDetails_;
+        bitField0_ |= 0x00000010;
+        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -712,6 +946,24 @@ public final class IdentityConnector extends com.google.protobuf.GeneratedMessag
                 bitField0_ |= 0x00000002;
                 break;
               } // case 16
+            case 26:
+              {
+                workloadIdentityPool_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
+            case 34:
+              {
+                identityConnectorId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 34
+            case 42:
+              {
+                lifecycleStateDetails_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 42
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -958,6 +1210,384 @@ public final class IdentityConnector extends com.google.protobuf.GeneratedMessag
     public Builder clearConnectionState() {
       bitField0_ = (bitField0_ & ~0x00000002);
       connectionState_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object workloadIdentityPool_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The resource name of the Workload Identity Pool
+     * configured for identity federation with OCI. This exact pool name can be
+     * used to configure VPC Service Controls (VPC-SC) egress rules.
+     * Format:
+     * `projects/{project}/locations/global/workloadIdentityPools/{workload_identity_pool}`
+     * </pre>
+     *
+     * <code>
+     * string workload_identity_pool = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The workloadIdentityPool.
+     */
+    public java.lang.String getWorkloadIdentityPool() {
+      java.lang.Object ref = workloadIdentityPool_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        workloadIdentityPool_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The resource name of the Workload Identity Pool
+     * configured for identity federation with OCI. This exact pool name can be
+     * used to configure VPC Service Controls (VPC-SC) egress rules.
+     * Format:
+     * `projects/{project}/locations/global/workloadIdentityPools/{workload_identity_pool}`
+     * </pre>
+     *
+     * <code>
+     * string workload_identity_pool = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for workloadIdentityPool.
+     */
+    public com.google.protobuf.ByteString getWorkloadIdentityPoolBytes() {
+      java.lang.Object ref = workloadIdentityPool_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        workloadIdentityPool_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The resource name of the Workload Identity Pool
+     * configured for identity federation with OCI. This exact pool name can be
+     * used to configure VPC Service Controls (VPC-SC) egress rules.
+     * Format:
+     * `projects/{project}/locations/global/workloadIdentityPools/{workload_identity_pool}`
+     * </pre>
+     *
+     * <code>
+     * string workload_identity_pool = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The workloadIdentityPool to set.
+     * @return This builder for chaining.
+     */
+    public Builder setWorkloadIdentityPool(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      workloadIdentityPool_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The resource name of the Workload Identity Pool
+     * configured for identity federation with OCI. This exact pool name can be
+     * used to configure VPC Service Controls (VPC-SC) egress rules.
+     * Format:
+     * `projects/{project}/locations/global/workloadIdentityPools/{workload_identity_pool}`
+     * </pre>
+     *
+     * <code>
+     * string workload_identity_pool = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearWorkloadIdentityPool() {
+      workloadIdentityPool_ = getDefaultInstance().getWorkloadIdentityPool();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The resource name of the Workload Identity Pool
+     * configured for identity federation with OCI. This exact pool name can be
+     * used to configure VPC Service Controls (VPC-SC) egress rules.
+     * Format:
+     * `projects/{project}/locations/global/workloadIdentityPools/{workload_identity_pool}`
+     * </pre>
+     *
+     * <code>
+     * string workload_identity_pool = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes for workloadIdentityPool to set.
+     * @return This builder for chaining.
+     */
+    public Builder setWorkloadIdentityPoolBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      workloadIdentityPool_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object identityConnectorId_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The unique partner identifier for the Identity Connector,
+     * used to establish secure cross-cloud access between Google Cloud and OCI.
+     * This corresponds directly to the ID of the OracleDbGcpIdentityConnector
+     * resource in Oracle Cloud Infrastructure (OCI).
+     * </pre>
+     *
+     * <code>string identity_connector_id = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The identityConnectorId.
+     */
+    public java.lang.String getIdentityConnectorId() {
+      java.lang.Object ref = identityConnectorId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        identityConnectorId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The unique partner identifier for the Identity Connector,
+     * used to establish secure cross-cloud access between Google Cloud and OCI.
+     * This corresponds directly to the ID of the OracleDbGcpIdentityConnector
+     * resource in Oracle Cloud Infrastructure (OCI).
+     * </pre>
+     *
+     * <code>string identity_connector_id = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for identityConnectorId.
+     */
+    public com.google.protobuf.ByteString getIdentityConnectorIdBytes() {
+      java.lang.Object ref = identityConnectorId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        identityConnectorId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The unique partner identifier for the Identity Connector,
+     * used to establish secure cross-cloud access between Google Cloud and OCI.
+     * This corresponds directly to the ID of the OracleDbGcpIdentityConnector
+     * resource in Oracle Cloud Infrastructure (OCI).
+     * </pre>
+     *
+     * <code>string identity_connector_id = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The identityConnectorId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIdentityConnectorId(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      identityConnectorId_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The unique partner identifier for the Identity Connector,
+     * used to establish secure cross-cloud access between Google Cloud and OCI.
+     * This corresponds directly to the ID of the OracleDbGcpIdentityConnector
+     * resource in Oracle Cloud Infrastructure (OCI).
+     * </pre>
+     *
+     * <code>string identity_connector_id = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearIdentityConnectorId() {
+      identityConnectorId_ = getDefaultInstance().getIdentityConnectorId();
+      bitField0_ = (bitField0_ & ~0x00000008);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The unique partner identifier for the Identity Connector,
+     * used to establish secure cross-cloud access between Google Cloud and OCI.
+     * This corresponds directly to the ID of the OracleDbGcpIdentityConnector
+     * resource in Oracle Cloud Infrastructure (OCI).
+     * </pre>
+     *
+     * <code>string identity_connector_id = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for identityConnectorId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIdentityConnectorIdBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      identityConnectorId_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object lifecycleStateDetails_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Additional information about the current lifecycle state.
+     * </pre>
+     *
+     * <code>string lifecycle_state_details = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The lifecycleStateDetails.
+     */
+    public java.lang.String getLifecycleStateDetails() {
+      java.lang.Object ref = lifecycleStateDetails_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        lifecycleStateDetails_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Additional information about the current lifecycle state.
+     * </pre>
+     *
+     * <code>string lifecycle_state_details = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for lifecycleStateDetails.
+     */
+    public com.google.protobuf.ByteString getLifecycleStateDetailsBytes() {
+      java.lang.Object ref = lifecycleStateDetails_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        lifecycleStateDetails_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Additional information about the current lifecycle state.
+     * </pre>
+     *
+     * <code>string lifecycle_state_details = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The lifecycleStateDetails to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLifecycleStateDetails(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      lifecycleStateDetails_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Additional information about the current lifecycle state.
+     * </pre>
+     *
+     * <code>string lifecycle_state_details = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearLifecycleStateDetails() {
+      lifecycleStateDetails_ = getDefaultInstance().getLifecycleStateDetails();
+      bitField0_ = (bitField0_ & ~0x00000010);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Additional information about the current lifecycle state.
+     * </pre>
+     *
+     * <code>string lifecycle_state_details = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for lifecycleStateDetails to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLifecycleStateDetailsBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      lifecycleStateDetails_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

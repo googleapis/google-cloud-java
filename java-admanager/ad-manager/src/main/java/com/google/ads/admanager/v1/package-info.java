@@ -129,6 +129,27 @@
  * }
  * }</pre>
  *
+ * <p>======================= AudienceSegmentCategoryServiceClient =======================
+ *
+ * <p>Service Description: Provides methods for handling `AudienceSegmentCategory` objects.
+ *
+ * <p>Sample for AudienceSegmentCategoryServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (AudienceSegmentCategoryServiceClient audienceSegmentCategoryServiceClient =
+ *     AudienceSegmentCategoryServiceClient.create()) {
+ *   AudienceSegmentCategoryName name =
+ *       AudienceSegmentCategoryName.of("[NETWORK_CODE]", "[AUDIENCE_SEGMENT_CATEGORY]");
+ *   AudienceSegmentCategory response =
+ *       audienceSegmentCategoryServiceClient.getAudienceSegmentCategory(name);
+ * }
+ * }</pre>
+ *
  * <p>======================= AudienceSegmentServiceClient =======================
  *
  * <p>Service Description: Provides methods for handling `AudienceSegment` objects.
@@ -238,6 +259,24 @@
  * try (CdnConfigServiceClient cdnConfigServiceClient = CdnConfigServiceClient.create()) {
  *   CdnConfigName name = CdnConfigName.of("[NETWORK_CODE]", "[CDN_CONFIG]");
  *   CdnConfig response = cdnConfigServiceClient.getCdnConfig(name);
+ * }
+ * }</pre>
+ *
+ * <p>======================= ChangeEventServiceClient =======================
+ *
+ * <p>Service Description: Provides methods for handling `ChangeEvent` objects.
+ *
+ * <p>Sample for ChangeEventServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (ChangeEventServiceClient changeEventServiceClient = ChangeEventServiceClient.create()) {
+ *   ChangeEventName name = ChangeEventName.of("[NETWORK_CODE]", "[CHANGE_EVENT]");
+ *   ChangeEvent response = changeEventServiceClient.getChangeEvent(name);
  * }
  * }</pre>
  *
@@ -662,6 +701,26 @@
  * }
  * }</pre>
  *
+ * <p>======================= ForecastAdjustmentServiceClient =======================
+ *
+ * <p>Service Description: Provides methods for handling `ForecastAdjustment` objects.
+ *
+ * <p>Sample for ForecastAdjustmentServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (ForecastAdjustmentServiceClient forecastAdjustmentServiceClient =
+ *     ForecastAdjustmentServiceClient.create()) {
+ *   ForecastAdjustmentName name =
+ *       ForecastAdjustmentName.of("[NETWORK_CODE]", "[FORECAST_ADJUSTMENT]");
+ *   ForecastAdjustment response = forecastAdjustmentServiceClient.getForecastAdjustment(name);
+ * }
+ * }</pre>
+ *
  * <p>======================= ForecastServiceClient =======================
  *
  * <p>Service Description: Provides methods for handling forecasting actions.
@@ -1079,6 +1138,24 @@
  * }
  * }</pre>
  *
+ * <p>======================= ProposalServiceClient =======================
+ *
+ * <p>Service Description: Provides methods for handling `Proposal` objects.
+ *
+ * <p>Sample for ProposalServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (ProposalServiceClient proposalServiceClient = ProposalServiceClient.create()) {
+ *   ProposalName name = ProposalName.of("[NETWORK_CODE]", "[PROPOSAL]");
+ *   Proposal response = proposalServiceClient.getProposal(name);
+ * }
+ * }</pre>
+ *
  * <p>======================= ReportServiceClient =======================
  *
  * <p>Service Description: Provides methods for interacting with reports.
@@ -1267,6 +1344,27 @@
  * }
  * }</pre>
  *
+ * <p>======================= TrafficForecastSegmentServiceClient =======================
+ *
+ * <p>Service Description: Provides methods for handling `TrafficForecastSegment` objects.
+ *
+ * <p>Sample for TrafficForecastSegmentServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (TrafficForecastSegmentServiceClient trafficForecastSegmentServiceClient =
+ *     TrafficForecastSegmentServiceClient.create()) {
+ *   TrafficForecastSegmentName name =
+ *       TrafficForecastSegmentName.of("[NETWORK_CODE]", "[TRAFFIC_FORECAST_SEGMENT]");
+ *   TrafficForecastSegment response =
+ *       trafficForecastSegmentServiceClient.getTrafficForecastSegment(name);
+ * }
+ * }</pre>
+ *
  * <p>======================= UserServiceClient =======================
  *
  * <p>Service Description: Provides methods for handling User objects.
@@ -1303,6 +1401,42 @@
  *   ViewabilityProviderName name =
  *       ViewabilityProviderName.of("[NETWORK_CODE]", "[VIEWABILITY_PROVIDER]");
  *   ViewabilityProvider response = viewabilityProviderServiceClient.getViewabilityProvider(name);
+ * }
+ * }</pre>
+ *
+ * <p>======================= YieldGroupServiceClient =======================
+ *
+ * <p>Service Description: Provides methods for handling `YieldGroup` objects.
+ *
+ * <p>Sample for YieldGroupServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (YieldGroupServiceClient yieldGroupServiceClient = YieldGroupServiceClient.create()) {
+ *   YieldGroupName name = YieldGroupName.of("[NETWORK_CODE]", "[YIELD_GROUP]");
+ *   YieldGroup response = yieldGroupServiceClient.getYieldGroup(name);
+ * }
+ * }</pre>
+ *
+ * <p>======================= YieldPartnerServiceClient =======================
+ *
+ * <p>Service Description: Provides methods for retrieving yield partners.
+ *
+ * <p>Sample for YieldPartnerServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (YieldPartnerServiceClient yieldPartnerServiceClient = YieldPartnerServiceClient.create()) {
+ *   YieldPartnerName name = YieldPartnerName.of("[NETWORK_CODE]", "[YIELD_PARTNER]");
+ *   YieldPartner response = yieldPartnerServiceClient.getYieldPartner(name);
  * }
  * }</pre>
  */

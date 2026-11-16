@@ -53,6 +53,7 @@ public final class GetTripRequest extends com.google.protobuf.GeneratedMessage
 
   private GetTripRequest() {
     name_ = "";
+    routePolylineFormat_ = 0;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -68,6 +69,234 @@ public final class GetTripRequest extends com.google.protobuf.GeneratedMessage
         .ensureFieldAccessorsInitialized(
             com.google.maps.navconnect.v1.GetTripRequest.class,
             com.google.maps.navconnect.v1.GetTripRequest.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the format of the route polyline.
+   * </pre>
+   *
+   * Protobuf enum {@code google.maps.navconnect.v1.GetTripRequest.RoutePolylineFormat}
+   */
+  public enum RoutePolylineFormat implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * The route polyline format is unspecified.
+     * </pre>
+     *
+     * <code>ROUTE_POLYLINE_FORMAT_UNSPECIFIED = 0;</code>
+     */
+    ROUTE_POLYLINE_FORMAT_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * The route polyline is returned as a simple array of points represented as
+     * `google.type.LatLng`.
+     * </pre>
+     *
+     * <code>SIMPLE = 1;</code>
+     */
+    SIMPLE(1),
+    /**
+     *
+     *
+     * <pre>
+     * The route polyline is returned as an encoded string.
+     * See
+     * https://developers.google.com/maps/documentation/utilities/polylinealgorithm.
+     * </pre>
+     *
+     * <code>ENCODED = 4;</code>
+     */
+    ENCODED(4),
+    /**
+     *
+     *
+     * <pre>
+     * The route polyline is encoded as a S2Polyline.
+     * See https://s2geometry.io/devguide/basic_types.html.
+     * </pre>
+     *
+     * <code>S2ENCODED = 2;</code>
+     */
+    S2ENCODED(2),
+    /**
+     *
+     *
+     * <pre>
+     * The route polyline is returned as a GeoJSON LineString.
+     * See https://tools.ietf.org/html/rfc7946#section-3.1.4.
+     * </pre>
+     *
+     * <code>GEO_JSON = 3;</code>
+     */
+    GEO_JSON(3),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 6,
+          /* suffix= */ "",
+          "RoutePolylineFormat");
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The route polyline format is unspecified.
+     * </pre>
+     *
+     * <code>ROUTE_POLYLINE_FORMAT_UNSPECIFIED = 0;</code>
+     */
+    public static final int ROUTE_POLYLINE_FORMAT_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * The route polyline is returned as a simple array of points represented as
+     * `google.type.LatLng`.
+     * </pre>
+     *
+     * <code>SIMPLE = 1;</code>
+     */
+    public static final int SIMPLE_VALUE = 1;
+
+    /**
+     *
+     *
+     * <pre>
+     * The route polyline is returned as an encoded string.
+     * See
+     * https://developers.google.com/maps/documentation/utilities/polylinealgorithm.
+     * </pre>
+     *
+     * <code>ENCODED = 4;</code>
+     */
+    public static final int ENCODED_VALUE = 4;
+
+    /**
+     *
+     *
+     * <pre>
+     * The route polyline is encoded as a S2Polyline.
+     * See https://s2geometry.io/devguide/basic_types.html.
+     * </pre>
+     *
+     * <code>S2ENCODED = 2;</code>
+     */
+    public static final int S2ENCODED_VALUE = 2;
+
+    /**
+     *
+     *
+     * <pre>
+     * The route polyline is returned as a GeoJSON LineString.
+     * See https://tools.ietf.org/html/rfc7946#section-3.1.4.
+     * </pre>
+     *
+     * <code>GEO_JSON = 3;</code>
+     */
+    public static final int GEO_JSON_VALUE = 3;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static RoutePolylineFormat valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static RoutePolylineFormat forNumber(int value) {
+      switch (value) {
+        case 0:
+          return ROUTE_POLYLINE_FORMAT_UNSPECIFIED;
+        case 1:
+          return SIMPLE;
+        case 4:
+          return ENCODED;
+        case 2:
+          return S2ENCODED;
+        case 3:
+          return GEO_JSON;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<RoutePolylineFormat>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<RoutePolylineFormat>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<RoutePolylineFormat>() {
+              public RoutePolylineFormat findValueByNumber(int number) {
+                return RoutePolylineFormat.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.maps.navconnect.v1.GetTripRequest.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final RoutePolylineFormat[] VALUES = values();
+
+    public static RoutePolylineFormat valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private RoutePolylineFormat(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.maps.navconnect.v1.GetTripRequest.RoutePolylineFormat)
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
@@ -129,6 +358,52 @@ public final class GetTripRequest extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public static final int ROUTE_POLYLINE_FORMAT_FIELD_NUMBER = 2;
+  private int routePolylineFormat_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The format of the route polyline to return.
+   * If not set, `SIMPLE` route polyline will be returned.
+   * </pre>
+   *
+   * <code>
+   * .google.maps.navconnect.v1.GetTripRequest.RoutePolylineFormat route_polyline_format = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for routePolylineFormat.
+   */
+  @java.lang.Override
+  public int getRoutePolylineFormatValue() {
+    return routePolylineFormat_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The format of the route polyline to return.
+   * If not set, `SIMPLE` route polyline will be returned.
+   * </pre>
+   *
+   * <code>
+   * .google.maps.navconnect.v1.GetTripRequest.RoutePolylineFormat route_polyline_format = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The routePolylineFormat.
+   */
+  @java.lang.Override
+  public com.google.maps.navconnect.v1.GetTripRequest.RoutePolylineFormat getRoutePolylineFormat() {
+    com.google.maps.navconnect.v1.GetTripRequest.RoutePolylineFormat result =
+        com.google.maps.navconnect.v1.GetTripRequest.RoutePolylineFormat.forNumber(
+            routePolylineFormat_);
+    return result == null
+        ? com.google.maps.navconnect.v1.GetTripRequest.RoutePolylineFormat.UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -146,6 +421,12 @@ public final class GetTripRequest extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 1, name_);
     }
+    if (routePolylineFormat_
+        != com.google.maps.navconnect.v1.GetTripRequest.RoutePolylineFormat
+            .ROUTE_POLYLINE_FORMAT_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(2, routePolylineFormat_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -157,6 +438,12 @@ public final class GetTripRequest extends com.google.protobuf.GeneratedMessage
     size = 0;
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(1, name_);
+    }
+    if (routePolylineFormat_
+        != com.google.maps.navconnect.v1.GetTripRequest.RoutePolylineFormat
+            .ROUTE_POLYLINE_FORMAT_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, routePolylineFormat_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -175,6 +462,7 @@ public final class GetTripRequest extends com.google.protobuf.GeneratedMessage
         (com.google.maps.navconnect.v1.GetTripRequest) obj;
 
     if (!getName().equals(other.getName())) return false;
+    if (routePolylineFormat_ != other.routePolylineFormat_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -188,6 +476,8 @@ public final class GetTripRequest extends com.google.protobuf.GeneratedMessage
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
+    hash = (37 * hash) + ROUTE_POLYLINE_FORMAT_FIELD_NUMBER;
+    hash = (53 * hash) + routePolylineFormat_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -329,6 +619,7 @@ public final class GetTripRequest extends com.google.protobuf.GeneratedMessage
       super.clear();
       bitField0_ = 0;
       name_ = "";
+      routePolylineFormat_ = 0;
       return this;
     }
 
@@ -368,6 +659,9 @@ public final class GetTripRequest extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.name_ = name_;
       }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.routePolylineFormat_ = routePolylineFormat_;
+      }
     }
 
     @java.lang.Override
@@ -386,6 +680,9 @@ public final class GetTripRequest extends com.google.protobuf.GeneratedMessage
         name_ = other.name_;
         bitField0_ |= 0x00000001;
         onChanged();
+      }
+      if (other.routePolylineFormat_ != 0) {
+        setRoutePolylineFormatValue(other.getRoutePolylineFormatValue());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -419,6 +716,12 @@ public final class GetTripRequest extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000001;
                 break;
               } // case 10
+            case 16:
+              {
+                routePolylineFormat_ = input.readEnum();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -560,6 +863,121 @@ public final class GetTripRequest extends com.google.protobuf.GeneratedMessage
       checkByteStringIsUtf8(value);
       name_ = value;
       bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    private int routePolylineFormat_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The format of the route polyline to return.
+     * If not set, `SIMPLE` route polyline will be returned.
+     * </pre>
+     *
+     * <code>
+     * .google.maps.navconnect.v1.GetTripRequest.RoutePolylineFormat route_polyline_format = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for routePolylineFormat.
+     */
+    @java.lang.Override
+    public int getRoutePolylineFormatValue() {
+      return routePolylineFormat_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The format of the route polyline to return.
+     * If not set, `SIMPLE` route polyline will be returned.
+     * </pre>
+     *
+     * <code>
+     * .google.maps.navconnect.v1.GetTripRequest.RoutePolylineFormat route_polyline_format = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for routePolylineFormat to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRoutePolylineFormatValue(int value) {
+      routePolylineFormat_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The format of the route polyline to return.
+     * If not set, `SIMPLE` route polyline will be returned.
+     * </pre>
+     *
+     * <code>
+     * .google.maps.navconnect.v1.GetTripRequest.RoutePolylineFormat route_polyline_format = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The routePolylineFormat.
+     */
+    @java.lang.Override
+    public com.google.maps.navconnect.v1.GetTripRequest.RoutePolylineFormat
+        getRoutePolylineFormat() {
+      com.google.maps.navconnect.v1.GetTripRequest.RoutePolylineFormat result =
+          com.google.maps.navconnect.v1.GetTripRequest.RoutePolylineFormat.forNumber(
+              routePolylineFormat_);
+      return result == null
+          ? com.google.maps.navconnect.v1.GetTripRequest.RoutePolylineFormat.UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The format of the route polyline to return.
+     * If not set, `SIMPLE` route polyline will be returned.
+     * </pre>
+     *
+     * <code>
+     * .google.maps.navconnect.v1.GetTripRequest.RoutePolylineFormat route_polyline_format = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The routePolylineFormat to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRoutePolylineFormat(
+        com.google.maps.navconnect.v1.GetTripRequest.RoutePolylineFormat value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000002;
+      routePolylineFormat_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The format of the route polyline to return.
+     * If not set, `SIMPLE` route polyline will be returned.
+     * </pre>
+     *
+     * <code>
+     * .google.maps.navconnect.v1.GetTripRequest.RoutePolylineFormat route_polyline_format = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRoutePolylineFormat() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      routePolylineFormat_ = 0;
       onChanged();
       return this;
     }

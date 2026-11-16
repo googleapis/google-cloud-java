@@ -83,6 +83,16 @@ public enum SolutionType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>SOLUTION_TYPE_GENERATIVE_CHAT = 4;</code>
    */
   SOLUTION_TYPE_GENERATIVE_CHAT(4),
+  /**
+   *
+   *
+   * <pre>
+   * Used for AI Mode.
+   * </pre>
+   *
+   * <code>SOLUTION_TYPE_AI_MODE = 5;</code>
+   */
+  SOLUTION_TYPE_AI_MODE(5),
   UNRECOGNIZED(-1),
   ;
 
@@ -153,6 +163,17 @@ public enum SolutionType implements com.google.protobuf.ProtocolMessageEnum {
    */
   public static final int SOLUTION_TYPE_GENERATIVE_CHAT_VALUE = 4;
 
+  /**
+   *
+   *
+   * <pre>
+   * Used for AI Mode.
+   * </pre>
+   *
+   * <code>SOLUTION_TYPE_AI_MODE = 5;</code>
+   */
+  public static final int SOLUTION_TYPE_AI_MODE_VALUE = 5;
+
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
       throw new java.lang.IllegalArgumentException(
@@ -187,6 +208,8 @@ public enum SolutionType implements com.google.protobuf.ProtocolMessageEnum {
         return SOLUTION_TYPE_CHAT;
       case 4:
         return SOLUTION_TYPE_GENERATIVE_CHAT;
+      case 5:
+        return SOLUTION_TYPE_AI_MODE;
       default:
         return null;
     }

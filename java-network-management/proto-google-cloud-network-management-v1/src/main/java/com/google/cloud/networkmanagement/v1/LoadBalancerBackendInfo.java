@@ -382,8 +382,9 @@ public final class LoadBalancerBackendInfo extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * URI of the backend instance (if applicable). Populated for instance group
-   * backends, and zonal NEG backends.
+   * URI of the backend instance (if applicable) in format
+   * "projects/{project}/zones/{zone}/instances/{instance}". Populated for
+   * instance group backends, and zonal NEG backends.
    * </pre>
    *
    * <code>string instance_uri = 2;</code>
@@ -407,8 +408,9 @@ public final class LoadBalancerBackendInfo extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * URI of the backend instance (if applicable). Populated for instance group
-   * backends, and zonal NEG backends.
+   * URI of the backend instance (if applicable) in format
+   * "projects/{project}/zones/{zone}/instances/{instance}". Populated for
+   * instance group backends, and zonal NEG backends.
    * </pre>
    *
    * <code>string instance_uri = 2;</code>
@@ -437,7 +439,11 @@ public final class LoadBalancerBackendInfo extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * URI of the backend service this backend belongs to (if applicable).
+   * URI of the backend service this backend belongs to (if applicable) in
+   * format
+   * "projects/{project}/regions/{region}/backendServices/{backend_service}"
+   * (regional) or "projects/{project}/global/backendServices/{backend_service}"
+   * (global).
    * </pre>
    *
    * <code>string backend_service_uri = 3;</code>
@@ -461,7 +467,11 @@ public final class LoadBalancerBackendInfo extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * URI of the backend service this backend belongs to (if applicable).
+   * URI of the backend service this backend belongs to (if applicable) in
+   * format
+   * "projects/{project}/regions/{region}/backendServices/{backend_service}"
+   * (regional) or "projects/{project}/global/backendServices/{backend_service}"
+   * (global).
    * </pre>
    *
    * <code>string backend_service_uri = 3;</code>
@@ -490,7 +500,8 @@ public final class LoadBalancerBackendInfo extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * URI of the instance group this backend belongs to (if applicable).
+   * URI of the instance group this backend belongs to (if applicable) in
+   * format "projects/{project}/zones/{zone}/instanceGroups/{instance_group}".
    * </pre>
    *
    * <code>string instance_group_uri = 4;</code>
@@ -514,7 +525,8 @@ public final class LoadBalancerBackendInfo extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * URI of the instance group this backend belongs to (if applicable).
+   * URI of the instance group this backend belongs to (if applicable) in
+   * format "projects/{project}/zones/{zone}/instanceGroups/{instance_group}".
    * </pre>
    *
    * <code>string instance_group_uri = 4;</code>
@@ -543,7 +555,14 @@ public final class LoadBalancerBackendInfo extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * URI of the network endpoint group this backend belongs to (if applicable).
+   * URI of the network endpoint group this backend belongs to (if applicable)
+   * Format:
+   * * `projects/{project_id}/zones/{zone}/networkEndpointGroups/{neg_id}`
+   * (zonal NEG)
+   * * `projects/{project_id}/regions/{region}/networkEndpointGroups/{neg_id}`
+   * (regional NEG)
+   * * `projects/{project_id}/global/networkEndpointGroups/{neg_id}` (global
+   * NEG)
    * </pre>
    *
    * <code>string network_endpoint_group_uri = 5;</code>
@@ -567,7 +586,14 @@ public final class LoadBalancerBackendInfo extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * URI of the network endpoint group this backend belongs to (if applicable).
+   * URI of the network endpoint group this backend belongs to (if applicable)
+   * Format:
+   * * `projects/{project_id}/zones/{zone}/networkEndpointGroups/{neg_id}`
+   * (zonal NEG)
+   * * `projects/{project_id}/regions/{region}/networkEndpointGroups/{neg_id}`
+   * (regional NEG)
+   * * `projects/{project_id}/global/networkEndpointGroups/{neg_id}` (global
+   * NEG)
    * </pre>
    *
    * <code>string network_endpoint_group_uri = 5;</code>
@@ -596,7 +622,8 @@ public final class LoadBalancerBackendInfo extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * URI of the backend bucket this backend targets (if applicable).
+   * URI of the backend bucket this backend targets (if applicable) in format
+   * "projects/{project}/global/backendBuckets/{backend_bucket}".
    * </pre>
    *
    * <code>string backend_bucket_uri = 8;</code>
@@ -620,7 +647,8 @@ public final class LoadBalancerBackendInfo extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * URI of the backend bucket this backend targets (if applicable).
+   * URI of the backend bucket this backend targets (if applicable) in format
+   * "projects/{project}/global/backendBuckets/{backend_bucket}".
    * </pre>
    *
    * <code>string backend_bucket_uri = 8;</code>
@@ -650,7 +678,8 @@ public final class LoadBalancerBackendInfo extends com.google.protobuf.Generated
    *
    * <pre>
    * URI of the PSC service attachment this PSC NEG backend targets (if
-   * applicable).
+   * applicable) in format
+   * "projects/{project}/regions/{region}/serviceAttachments/{service_attachment}".
    * </pre>
    *
    * <code>string psc_service_attachment_uri = 9;</code>
@@ -675,7 +704,8 @@ public final class LoadBalancerBackendInfo extends com.google.protobuf.Generated
    *
    * <pre>
    * URI of the PSC service attachment this PSC NEG backend targets (if
-   * applicable).
+   * applicable) in format
+   * "projects/{project}/regions/{region}/serviceAttachments/{service_attachment}".
    * </pre>
    *
    * <code>string psc_service_attachment_uri = 9;</code>
@@ -758,6 +788,11 @@ public final class LoadBalancerBackendInfo extends com.google.protobuf.Generated
    *
    * <pre>
    * URI of the health check attached to this backend (if applicable).
+   * Format:
+   * * `projects/{project_id}/global/healthChecks/{health_check_id}`
+   * * `projects/{project_id}/regions/{region}/healthChecks/{health_check_id}`
+   * * `projects/{project_id}/global/httpHealthChecks/{health_check_id}`
+   * (legacy)
    * </pre>
    *
    * <code>string health_check_uri = 6;</code>
@@ -782,6 +817,11 @@ public final class LoadBalancerBackendInfo extends com.google.protobuf.Generated
    *
    * <pre>
    * URI of the health check attached to this backend (if applicable).
+   * Format:
+   * * `projects/{project_id}/global/healthChecks/{health_check_id}`
+   * * `projects/{project_id}/regions/{region}/healthChecks/{health_check_id}`
+   * * `projects/{project_id}/global/httpHealthChecks/{health_check_id}`
+   * (legacy)
    * </pre>
    *
    * <code>string health_check_uri = 6;</code>
@@ -1522,8 +1562,9 @@ public final class LoadBalancerBackendInfo extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * URI of the backend instance (if applicable). Populated for instance group
-     * backends, and zonal NEG backends.
+     * URI of the backend instance (if applicable) in format
+     * "projects/{project}/zones/{zone}/instances/{instance}". Populated for
+     * instance group backends, and zonal NEG backends.
      * </pre>
      *
      * <code>string instance_uri = 2;</code>
@@ -1546,8 +1587,9 @@ public final class LoadBalancerBackendInfo extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * URI of the backend instance (if applicable). Populated for instance group
-     * backends, and zonal NEG backends.
+     * URI of the backend instance (if applicable) in format
+     * "projects/{project}/zones/{zone}/instances/{instance}". Populated for
+     * instance group backends, and zonal NEG backends.
      * </pre>
      *
      * <code>string instance_uri = 2;</code>
@@ -1570,8 +1612,9 @@ public final class LoadBalancerBackendInfo extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * URI of the backend instance (if applicable). Populated for instance group
-     * backends, and zonal NEG backends.
+     * URI of the backend instance (if applicable) in format
+     * "projects/{project}/zones/{zone}/instances/{instance}". Populated for
+     * instance group backends, and zonal NEG backends.
      * </pre>
      *
      * <code>string instance_uri = 2;</code>
@@ -1593,8 +1636,9 @@ public final class LoadBalancerBackendInfo extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * URI of the backend instance (if applicable). Populated for instance group
-     * backends, and zonal NEG backends.
+     * URI of the backend instance (if applicable) in format
+     * "projects/{project}/zones/{zone}/instances/{instance}". Populated for
+     * instance group backends, and zonal NEG backends.
      * </pre>
      *
      * <code>string instance_uri = 2;</code>
@@ -1612,8 +1656,9 @@ public final class LoadBalancerBackendInfo extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * URI of the backend instance (if applicable). Populated for instance group
-     * backends, and zonal NEG backends.
+     * URI of the backend instance (if applicable) in format
+     * "projects/{project}/zones/{zone}/instances/{instance}". Populated for
+     * instance group backends, and zonal NEG backends.
      * </pre>
      *
      * <code>string instance_uri = 2;</code>
@@ -1638,7 +1683,11 @@ public final class LoadBalancerBackendInfo extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * URI of the backend service this backend belongs to (if applicable).
+     * URI of the backend service this backend belongs to (if applicable) in
+     * format
+     * "projects/{project}/regions/{region}/backendServices/{backend_service}"
+     * (regional) or "projects/{project}/global/backendServices/{backend_service}"
+     * (global).
      * </pre>
      *
      * <code>string backend_service_uri = 3;</code>
@@ -1661,7 +1710,11 @@ public final class LoadBalancerBackendInfo extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * URI of the backend service this backend belongs to (if applicable).
+     * URI of the backend service this backend belongs to (if applicable) in
+     * format
+     * "projects/{project}/regions/{region}/backendServices/{backend_service}"
+     * (regional) or "projects/{project}/global/backendServices/{backend_service}"
+     * (global).
      * </pre>
      *
      * <code>string backend_service_uri = 3;</code>
@@ -1684,7 +1737,11 @@ public final class LoadBalancerBackendInfo extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * URI of the backend service this backend belongs to (if applicable).
+     * URI of the backend service this backend belongs to (if applicable) in
+     * format
+     * "projects/{project}/regions/{region}/backendServices/{backend_service}"
+     * (regional) or "projects/{project}/global/backendServices/{backend_service}"
+     * (global).
      * </pre>
      *
      * <code>string backend_service_uri = 3;</code>
@@ -1706,7 +1763,11 @@ public final class LoadBalancerBackendInfo extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * URI of the backend service this backend belongs to (if applicable).
+     * URI of the backend service this backend belongs to (if applicable) in
+     * format
+     * "projects/{project}/regions/{region}/backendServices/{backend_service}"
+     * (regional) or "projects/{project}/global/backendServices/{backend_service}"
+     * (global).
      * </pre>
      *
      * <code>string backend_service_uri = 3;</code>
@@ -1724,7 +1785,11 @@ public final class LoadBalancerBackendInfo extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * URI of the backend service this backend belongs to (if applicable).
+     * URI of the backend service this backend belongs to (if applicable) in
+     * format
+     * "projects/{project}/regions/{region}/backendServices/{backend_service}"
+     * (regional) or "projects/{project}/global/backendServices/{backend_service}"
+     * (global).
      * </pre>
      *
      * <code>string backend_service_uri = 3;</code>
@@ -1749,7 +1814,8 @@ public final class LoadBalancerBackendInfo extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * URI of the instance group this backend belongs to (if applicable).
+     * URI of the instance group this backend belongs to (if applicable) in
+     * format "projects/{project}/zones/{zone}/instanceGroups/{instance_group}".
      * </pre>
      *
      * <code>string instance_group_uri = 4;</code>
@@ -1772,7 +1838,8 @@ public final class LoadBalancerBackendInfo extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * URI of the instance group this backend belongs to (if applicable).
+     * URI of the instance group this backend belongs to (if applicable) in
+     * format "projects/{project}/zones/{zone}/instanceGroups/{instance_group}".
      * </pre>
      *
      * <code>string instance_group_uri = 4;</code>
@@ -1795,7 +1862,8 @@ public final class LoadBalancerBackendInfo extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * URI of the instance group this backend belongs to (if applicable).
+     * URI of the instance group this backend belongs to (if applicable) in
+     * format "projects/{project}/zones/{zone}/instanceGroups/{instance_group}".
      * </pre>
      *
      * <code>string instance_group_uri = 4;</code>
@@ -1817,7 +1885,8 @@ public final class LoadBalancerBackendInfo extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * URI of the instance group this backend belongs to (if applicable).
+     * URI of the instance group this backend belongs to (if applicable) in
+     * format "projects/{project}/zones/{zone}/instanceGroups/{instance_group}".
      * </pre>
      *
      * <code>string instance_group_uri = 4;</code>
@@ -1835,7 +1904,8 @@ public final class LoadBalancerBackendInfo extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * URI of the instance group this backend belongs to (if applicable).
+     * URI of the instance group this backend belongs to (if applicable) in
+     * format "projects/{project}/zones/{zone}/instanceGroups/{instance_group}".
      * </pre>
      *
      * <code>string instance_group_uri = 4;</code>
@@ -1860,7 +1930,14 @@ public final class LoadBalancerBackendInfo extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * URI of the network endpoint group this backend belongs to (if applicable).
+     * URI of the network endpoint group this backend belongs to (if applicable)
+     * Format:
+     * * `projects/{project_id}/zones/{zone}/networkEndpointGroups/{neg_id}`
+     * (zonal NEG)
+     * * `projects/{project_id}/regions/{region}/networkEndpointGroups/{neg_id}`
+     * (regional NEG)
+     * * `projects/{project_id}/global/networkEndpointGroups/{neg_id}` (global
+     * NEG)
      * </pre>
      *
      * <code>string network_endpoint_group_uri = 5;</code>
@@ -1883,7 +1960,14 @@ public final class LoadBalancerBackendInfo extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * URI of the network endpoint group this backend belongs to (if applicable).
+     * URI of the network endpoint group this backend belongs to (if applicable)
+     * Format:
+     * * `projects/{project_id}/zones/{zone}/networkEndpointGroups/{neg_id}`
+     * (zonal NEG)
+     * * `projects/{project_id}/regions/{region}/networkEndpointGroups/{neg_id}`
+     * (regional NEG)
+     * * `projects/{project_id}/global/networkEndpointGroups/{neg_id}` (global
+     * NEG)
      * </pre>
      *
      * <code>string network_endpoint_group_uri = 5;</code>
@@ -1906,7 +1990,14 @@ public final class LoadBalancerBackendInfo extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * URI of the network endpoint group this backend belongs to (if applicable).
+     * URI of the network endpoint group this backend belongs to (if applicable)
+     * Format:
+     * * `projects/{project_id}/zones/{zone}/networkEndpointGroups/{neg_id}`
+     * (zonal NEG)
+     * * `projects/{project_id}/regions/{region}/networkEndpointGroups/{neg_id}`
+     * (regional NEG)
+     * * `projects/{project_id}/global/networkEndpointGroups/{neg_id}` (global
+     * NEG)
      * </pre>
      *
      * <code>string network_endpoint_group_uri = 5;</code>
@@ -1928,7 +2019,14 @@ public final class LoadBalancerBackendInfo extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * URI of the network endpoint group this backend belongs to (if applicable).
+     * URI of the network endpoint group this backend belongs to (if applicable)
+     * Format:
+     * * `projects/{project_id}/zones/{zone}/networkEndpointGroups/{neg_id}`
+     * (zonal NEG)
+     * * `projects/{project_id}/regions/{region}/networkEndpointGroups/{neg_id}`
+     * (regional NEG)
+     * * `projects/{project_id}/global/networkEndpointGroups/{neg_id}` (global
+     * NEG)
      * </pre>
      *
      * <code>string network_endpoint_group_uri = 5;</code>
@@ -1946,7 +2044,14 @@ public final class LoadBalancerBackendInfo extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * URI of the network endpoint group this backend belongs to (if applicable).
+     * URI of the network endpoint group this backend belongs to (if applicable)
+     * Format:
+     * * `projects/{project_id}/zones/{zone}/networkEndpointGroups/{neg_id}`
+     * (zonal NEG)
+     * * `projects/{project_id}/regions/{region}/networkEndpointGroups/{neg_id}`
+     * (regional NEG)
+     * * `projects/{project_id}/global/networkEndpointGroups/{neg_id}` (global
+     * NEG)
      * </pre>
      *
      * <code>string network_endpoint_group_uri = 5;</code>
@@ -1971,7 +2076,8 @@ public final class LoadBalancerBackendInfo extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * URI of the backend bucket this backend targets (if applicable).
+     * URI of the backend bucket this backend targets (if applicable) in format
+     * "projects/{project}/global/backendBuckets/{backend_bucket}".
      * </pre>
      *
      * <code>string backend_bucket_uri = 8;</code>
@@ -1994,7 +2100,8 @@ public final class LoadBalancerBackendInfo extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * URI of the backend bucket this backend targets (if applicable).
+     * URI of the backend bucket this backend targets (if applicable) in format
+     * "projects/{project}/global/backendBuckets/{backend_bucket}".
      * </pre>
      *
      * <code>string backend_bucket_uri = 8;</code>
@@ -2017,7 +2124,8 @@ public final class LoadBalancerBackendInfo extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * URI of the backend bucket this backend targets (if applicable).
+     * URI of the backend bucket this backend targets (if applicable) in format
+     * "projects/{project}/global/backendBuckets/{backend_bucket}".
      * </pre>
      *
      * <code>string backend_bucket_uri = 8;</code>
@@ -2039,7 +2147,8 @@ public final class LoadBalancerBackendInfo extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * URI of the backend bucket this backend targets (if applicable).
+     * URI of the backend bucket this backend targets (if applicable) in format
+     * "projects/{project}/global/backendBuckets/{backend_bucket}".
      * </pre>
      *
      * <code>string backend_bucket_uri = 8;</code>
@@ -2057,7 +2166,8 @@ public final class LoadBalancerBackendInfo extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * URI of the backend bucket this backend targets (if applicable).
+     * URI of the backend bucket this backend targets (if applicable) in format
+     * "projects/{project}/global/backendBuckets/{backend_bucket}".
      * </pre>
      *
      * <code>string backend_bucket_uri = 8;</code>
@@ -2083,7 +2193,8 @@ public final class LoadBalancerBackendInfo extends com.google.protobuf.Generated
      *
      * <pre>
      * URI of the PSC service attachment this PSC NEG backend targets (if
-     * applicable).
+     * applicable) in format
+     * "projects/{project}/regions/{region}/serviceAttachments/{service_attachment}".
      * </pre>
      *
      * <code>string psc_service_attachment_uri = 9;</code>
@@ -2107,7 +2218,8 @@ public final class LoadBalancerBackendInfo extends com.google.protobuf.Generated
      *
      * <pre>
      * URI of the PSC service attachment this PSC NEG backend targets (if
-     * applicable).
+     * applicable) in format
+     * "projects/{project}/regions/{region}/serviceAttachments/{service_attachment}".
      * </pre>
      *
      * <code>string psc_service_attachment_uri = 9;</code>
@@ -2131,7 +2243,8 @@ public final class LoadBalancerBackendInfo extends com.google.protobuf.Generated
      *
      * <pre>
      * URI of the PSC service attachment this PSC NEG backend targets (if
-     * applicable).
+     * applicable) in format
+     * "projects/{project}/regions/{region}/serviceAttachments/{service_attachment}".
      * </pre>
      *
      * <code>string psc_service_attachment_uri = 9;</code>
@@ -2154,7 +2267,8 @@ public final class LoadBalancerBackendInfo extends com.google.protobuf.Generated
      *
      * <pre>
      * URI of the PSC service attachment this PSC NEG backend targets (if
-     * applicable).
+     * applicable) in format
+     * "projects/{project}/regions/{region}/serviceAttachments/{service_attachment}".
      * </pre>
      *
      * <code>string psc_service_attachment_uri = 9;</code>
@@ -2173,7 +2287,8 @@ public final class LoadBalancerBackendInfo extends com.google.protobuf.Generated
      *
      * <pre>
      * URI of the PSC service attachment this PSC NEG backend targets (if
-     * applicable).
+     * applicable) in format
+     * "projects/{project}/regions/{region}/serviceAttachments/{service_attachment}".
      * </pre>
      *
      * <code>string psc_service_attachment_uri = 9;</code>
@@ -2310,6 +2425,11 @@ public final class LoadBalancerBackendInfo extends com.google.protobuf.Generated
      *
      * <pre>
      * URI of the health check attached to this backend (if applicable).
+     * Format:
+     * * `projects/{project_id}/global/healthChecks/{health_check_id}`
+     * * `projects/{project_id}/regions/{region}/healthChecks/{health_check_id}`
+     * * `projects/{project_id}/global/httpHealthChecks/{health_check_id}`
+     * (legacy)
      * </pre>
      *
      * <code>string health_check_uri = 6;</code>
@@ -2333,6 +2453,11 @@ public final class LoadBalancerBackendInfo extends com.google.protobuf.Generated
      *
      * <pre>
      * URI of the health check attached to this backend (if applicable).
+     * Format:
+     * * `projects/{project_id}/global/healthChecks/{health_check_id}`
+     * * `projects/{project_id}/regions/{region}/healthChecks/{health_check_id}`
+     * * `projects/{project_id}/global/httpHealthChecks/{health_check_id}`
+     * (legacy)
      * </pre>
      *
      * <code>string health_check_uri = 6;</code>
@@ -2356,6 +2481,11 @@ public final class LoadBalancerBackendInfo extends com.google.protobuf.Generated
      *
      * <pre>
      * URI of the health check attached to this backend (if applicable).
+     * Format:
+     * * `projects/{project_id}/global/healthChecks/{health_check_id}`
+     * * `projects/{project_id}/regions/{region}/healthChecks/{health_check_id}`
+     * * `projects/{project_id}/global/httpHealthChecks/{health_check_id}`
+     * (legacy)
      * </pre>
      *
      * <code>string health_check_uri = 6;</code>
@@ -2378,6 +2508,11 @@ public final class LoadBalancerBackendInfo extends com.google.protobuf.Generated
      *
      * <pre>
      * URI of the health check attached to this backend (if applicable).
+     * Format:
+     * * `projects/{project_id}/global/healthChecks/{health_check_id}`
+     * * `projects/{project_id}/regions/{region}/healthChecks/{health_check_id}`
+     * * `projects/{project_id}/global/httpHealthChecks/{health_check_id}`
+     * (legacy)
      * </pre>
      *
      * <code>string health_check_uri = 6;</code>
@@ -2396,6 +2531,11 @@ public final class LoadBalancerBackendInfo extends com.google.protobuf.Generated
      *
      * <pre>
      * URI of the health check attached to this backend (if applicable).
+     * Format:
+     * * `projects/{project_id}/global/healthChecks/{health_check_id}`
+     * * `projects/{project_id}/regions/{region}/healthChecks/{health_check_id}`
+     * * `projects/{project_id}/global/httpHealthChecks/{health_check_id}`
+     * (legacy)
      * </pre>
      *
      * <code>string health_check_uri = 6;</code>

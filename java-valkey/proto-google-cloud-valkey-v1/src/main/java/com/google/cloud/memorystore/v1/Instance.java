@@ -9044,7 +9044,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.memorystore.v1.Instance.ondemand_maintenance is deprecated. See
-   *     google/cloud/memorystore/v1/memorystore.proto;l=836
+   *     google/cloud/memorystore/v1/memorystore.proto;l=848
    * @return Whether the ondemandMaintenance field is set.
    */
   @java.lang.Override
@@ -9065,7 +9065,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.memorystore.v1.Instance.ondemand_maintenance is deprecated. See
-   *     google/cloud/memorystore/v1/memorystore.proto;l=836
+   *     google/cloud/memorystore/v1/memorystore.proto;l=848
    * @return The ondemandMaintenance.
    */
   @java.lang.Override
@@ -9908,7 +9908,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.memorystore.v1.Instance.allow_fewer_zones_deployment is deprecated.
-   *     See google/cloud/memorystore/v1/memorystore.proto;l=917
+   *     See google/cloud/memorystore/v1/memorystore.proto;l=929
    * @return The allowFewerZonesDeployment.
    */
   @java.lang.Override
@@ -17449,7 +17449,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.memorystore.v1.Instance.ondemand_maintenance is deprecated. See
-     *     google/cloud/memorystore/v1/memorystore.proto;l=836
+     *     google/cloud/memorystore/v1/memorystore.proto;l=848
      * @return Whether the ondemandMaintenance field is set.
      */
     @java.lang.Override
@@ -17470,7 +17470,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.memorystore.v1.Instance.ondemand_maintenance is deprecated. See
-     *     google/cloud/memorystore/v1/memorystore.proto;l=836
+     *     google/cloud/memorystore/v1/memorystore.proto;l=848
      * @return The ondemandMaintenance.
      */
     @java.lang.Override
@@ -17491,7 +17491,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.memorystore.v1.Instance.ondemand_maintenance is deprecated. See
-     *     google/cloud/memorystore/v1/memorystore.proto;l=836
+     *     google/cloud/memorystore/v1/memorystore.proto;l=848
      * @param value The ondemandMaintenance to set.
      * @return This builder for chaining.
      */
@@ -17516,7 +17516,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.memorystore.v1.Instance.ondemand_maintenance is deprecated. See
-     *     google/cloud/memorystore/v1/memorystore.proto;l=836
+     *     google/cloud/memorystore/v1/memorystore.proto;l=848
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -19678,7 +19678,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.memorystore.v1.Instance.allow_fewer_zones_deployment is deprecated.
-     *     See google/cloud/memorystore/v1/memorystore.proto;l=917
+     *     See google/cloud/memorystore/v1/memorystore.proto;l=929
      * @return The allowFewerZonesDeployment.
      */
     @java.lang.Override
@@ -19699,7 +19699,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.memorystore.v1.Instance.allow_fewer_zones_deployment is deprecated.
-     *     See google/cloud/memorystore/v1/memorystore.proto;l=917
+     *     See google/cloud/memorystore/v1/memorystore.proto;l=929
      * @param value The allowFewerZonesDeployment to set.
      * @return This builder for chaining.
      */
@@ -19724,7 +19724,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.memorystore.v1.Instance.allow_fewer_zones_deployment is deprecated.
-     *     See google/cloud/memorystore/v1/memorystore.proto;l=917
+     *     See google/cloud/memorystore/v1/memorystore.proto;l=929
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

@@ -21,14 +21,21 @@ import static com.google.common.truth.Truth.assertThat;
 import com.google.common.collect.ImmutableList;
 import io.opentelemetry.api.common.AttributeKey;
 import io.opentelemetry.api.common.Attributes;
+import io.opentelemetry.sdk.common.CompletableResultCode;
+import io.opentelemetry.sdk.metrics.Aggregation;
+import io.opentelemetry.sdk.metrics.InstrumentType;
 import io.opentelemetry.sdk.metrics.SdkMeterProvider;
 import io.opentelemetry.sdk.metrics.SdkMeterProviderBuilder;
+import io.opentelemetry.sdk.metrics.data.AggregationTemporality;
 import io.opentelemetry.sdk.metrics.data.HistogramPointData;
 import io.opentelemetry.sdk.metrics.data.MetricData;
+import io.opentelemetry.sdk.metrics.export.CollectionRegistration;
+import io.opentelemetry.sdk.metrics.export.MetricReader;
 import io.opentelemetry.sdk.testing.exporter.InMemoryMetricReader;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 import org.junit.Before;
@@ -79,8 +86,6 @@ public final class StorageClientMetricsTest {
         .isEqualTo(StorageOptions.version());
     assertThat(metrics.getClientAttributes().get(StorageClientMetrics.KEY_GCP_CLIENT_ARTIFACT))
         .isEqualTo("com.google.cloud:google-cloud-storage");
-    assertThat(metrics.getClientAttributes().get(StorageClientMetrics.KEY_GCP_CLIENT_INSTANCE_ID))
-        .isNotEmpty();
 
     assertInstruments(metrics, DEBUG_INSTRUMENTS, /* isNull= */ true);
   }
@@ -275,8 +280,7 @@ public final class StorageClientMetricsTest {
   @Test
   public void attachClientAttributes_mergesAdditionalAttributes() {
     SdkMeterProvider provider = SdkMeterProvider.builder().registerMetricReader(reader).build();
-    StorageClientMetrics metrics =
-        StorageClientMetrics.create(provider, "test-instance", true, false);
+    StorageClientMetrics metrics = StorageClientMetrics.create(provider, true, false);
 
     Attributes extra =
         Attributes.of(
@@ -287,8 +291,6 @@ public final class StorageClientMetricsTest {
 
     Attributes merged = metrics.attachClientAttributes(extra);
 
-    assertThat(merged.get(StorageClientMetrics.KEY_GCP_CLIENT_INSTANCE_ID))
-        .isEqualTo("test-instance");
     assertThat(merged.get(StorageClientMetrics.KEY_GCP_CLIENT_VERSION))
         .isEqualTo(StorageOptions.version());
     assertThat(merged.get(StorageClientMetrics.KEY_GCP_CLIENT_ARTIFACT))
@@ -307,8 +309,7 @@ public final class StorageClientMetricsTest {
   @Test
   public void clientAttributesBuilder_containsBaseClientAttributes() {
     SdkMeterProvider provider = SdkMeterProvider.builder().registerMetricReader(reader).build();
-    StorageClientMetrics metrics =
-        StorageClientMetrics.create(provider, "test-instance", true, false);
+    StorageClientMetrics metrics = StorageClientMetrics.create(provider, true, false);
 
     Attributes built = metrics.clientAttributesBuilder().build();
     assertThat(built).isEqualTo(metrics.getClientAttributes());
@@ -321,6 +322,126 @@ public final class StorageClientMetricsTest {
         .isEqualTo("http.request.method");
     assertThat(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE.getKey())
         .isEqualTo("http.response.status_code");
+  }
+
+  @Test
+  public void close_closesOwnedMeterProvider() {
+    TestMetricReader reader = new TestMetricReader();
+    SdkMeterProvider provider = SdkMeterProvider.builder().registerMetricReader(reader).build();
+    StorageClientMetrics metrics = StorageClientMetrics.create(provider, provider, true, false);
+    metrics.close();
+    assertThat(reader.shutdownCalled.get()).isTrue();
+  }
+
+  @Test
+  public void close_doesNotThrowWhenOwnedMeterProviderIsNull() {
+    TestMetricReader reader = new TestMetricReader();
+    SdkMeterProvider provider = SdkMeterProvider.builder().registerMetricReader(reader).build();
+    StorageClientMetrics metrics =
+        StorageClientMetrics.create(provider, (SdkMeterProvider) null, true, false);
+    metrics.close();
+    assertThat(reader.shutdownCalled.get()).isFalse();
+  }
+
+  @Test
+  public void createContext_httpOptions_populatesRpcSystemNameAndServerAddress() {
+    SdkMeterProvider meterProvider = SdkMeterProvider.builder().build();
+    HttpStorageOptions httpOptions =
+        StorageOptions.http()
+            .setEnableOtelMetrics(true)
+            .setMeterProvider(meterProvider)
+            .setHost("https://storage.googleapis.com")
+            .build();
+    StorageClientMetrics httpMetrics = httpOptions.getStorageClientMetrics();
+    assertThat(httpMetrics).isNotNull();
+
+    StorageMetricsContext httpContext = httpMetrics.createContext("GetObject");
+
+    assertThat(httpContext).isNotNull();
+    assertThat(httpContext.getBaseAttributes().get(StorageClientMetrics.KEY_RPC_SYSTEM_NAME))
+        .isEqualTo("http");
+    assertThat(httpContext.getBaseAttributes().get(StorageClientMetrics.KEY_SERVER_ADDRESS))
+        .isEqualTo("storage.googleapis.com");
+    assertThat(httpContext.shouldRecordOperationOnRetrierExit()).isTrue();
+  }
+
+  @Test
+  public void createMultiStepContext_disablesRecordOperationOnRetrierExit() {
+    SdkMeterProvider meterProvider = SdkMeterProvider.builder().build();
+    HttpStorageOptions httpOptions =
+        StorageOptions.http()
+            .setEnableOtelMetrics(true)
+            .setMeterProvider(meterProvider)
+            .setHost("https://storage.googleapis.com")
+            .build();
+    StorageClientMetrics httpMetrics = httpOptions.getStorageClientMetrics();
+
+    StorageMetricsContext httpMultiStep =
+        StorageClientMetrics.createMultiStepContext(httpMetrics, "WriteObject");
+
+    assertThat(httpMultiStep).isNotNull();
+    assertThat(httpMultiStep.getBaseAttributes().get(StorageClientMetrics.KEY_RPC_SYSTEM_NAME))
+        .isEqualTo("http");
+    assertThat(httpMultiStep.shouldRecordOperationOnRetrierExit()).isFalse();
+  }
+
+  @Test
+  public void createContext_grpcOptions_extractsServerAddressFromC2pUri() {
+    SdkMeterProvider meterProvider = SdkMeterProvider.builder().build();
+    GrpcStorageOptions grpcOptions =
+        StorageOptions.grpc()
+            .setEnableOtelMetrics(true)
+            .setMeterProvider(meterProvider)
+            .setHost("google-c2p:///storage.googleapis.com")
+            .build();
+    StorageClientMetrics grpcMetrics = grpcOptions.getStorageClientMetrics();
+    assertThat(grpcMetrics).isNotNull();
+
+    StorageMetricsContext grpcContext =
+        StorageClientMetrics.createContext(grpcMetrics, "GetObject");
+
+    assertThat(grpcContext).isNotNull();
+    assertThat(grpcContext.getBaseAttributes().get(StorageClientMetrics.KEY_RPC_SYSTEM_NAME))
+        .isEqualTo("grpc");
+    assertThat(grpcContext.getBaseAttributes().get(StorageClientMetrics.KEY_SERVER_ADDRESS))
+        .isEqualTo("storage.googleapis.com");
+  }
+
+  @Test
+  public void createContext_nullMetrics_returnsNull() {
+    assertThat(StorageClientMetrics.createContext(null, "GetObject")).isNull();
+    assertThat(StorageClientMetrics.createMultiStepContext(null, "WriteObject")).isNull();
+  }
+
+  static final class TestMetricReader implements MetricReader {
+    private final MetricReader delegate = InMemoryMetricReader.create();
+    final AtomicBoolean shutdownCalled = new AtomicBoolean(false);
+
+    @Override
+    public void register(CollectionRegistration registration) {
+      delegate.register(registration);
+    }
+
+    @Override
+    public AggregationTemporality getAggregationTemporality(InstrumentType instrumentType) {
+      return delegate.getAggregationTemporality(instrumentType);
+    }
+
+    @Override
+    public Aggregation getDefaultAggregation(InstrumentType instrumentType) {
+      return delegate.getDefaultAggregation(instrumentType);
+    }
+
+    @Override
+    public CompletableResultCode forceFlush() {
+      return delegate.forceFlush();
+    }
+
+    @Override
+    public CompletableResultCode shutdown() {
+      shutdownCalled.set(true);
+      return delegate.shutdown();
+    }
   }
 
   private static int findBucketIndex(List<Double> boundaries, double value) {

@@ -49,6 +49,34 @@ public final class DataStoreProto extends com.google.protobuf.GeneratedFile {
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_discoveryengine_v1_DataStore_BillingEstimation_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1_DataStore_ServingConfigDataStore_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1_DataStore_ServingConfigDataStore_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1_DataStore_FederatedSearchConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1_DataStore_FederatedSearchConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1_DataStore_FederatedSearchConfig_AlloyDbConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1_DataStore_FederatedSearchConfig_AlloyDbConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1_DataStore_FederatedSearchConfig_AlloyDbConfig_AlloyDbConnectionConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1_DataStore_FederatedSearchConfig_AlloyDbConfig_AlloyDbConnectionConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1_DataStore_FederatedSearchConfig_AlloyDbConfig_AlloyDbAiNaturalLanguageConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1_DataStore_FederatedSearchConfig_AlloyDbConfig_AlloyDbAiNaturalLanguageConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1_DataStore_FederatedSearchConfig_ThirdPartyOauthConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1_DataStore_FederatedSearchConfig_ThirdPartyOauthConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1_DataStore_FederatedSearchConfig_NotebooklmConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1_DataStore_FederatedSearchConfig_NotebooklmConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_discoveryengine_v1_AdvancedSiteSearchConfig_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_discoveryengine_v1_AdvancedSiteSearchConfig_fieldAccessorTable;
@@ -69,89 +97,152 @@ public final class DataStoreProto extends com.google.protobuf.GeneratedFile {
 
   static {
     java.lang.String[] descriptorData = {
-      "\n0google/cloud/discoveryengine/v1/data_s"
-          + "tore.proto\022\037google.cloud.discoveryengine"
+      "\n"
+          + "0google/cloud/discoveryengine/v1/data_store.proto\022\037google.cloud.discoveryengine"
           + ".v1\032\037google/api/field_behavior.proto\032\031go"
-          + "ogle/api/resource.proto\0329google/cloud/di"
-          + "scoveryengine/v1/cmek_config_service.pro"
-          + "to\032,google/cloud/discoveryengine/v1/comm"
-          + "on.proto\032@google/cloud/discoveryengine/v"
+          + "ogle/api/resource.proto\0329google/cloud/discoveryengine/v1/cmek_config_service.pro"
+          + "to\032,google/cloud/discoveryengine/v1/common.proto\032@google/cloud/discoveryengine/v"
           + "1/document_processing_config.proto\032,goog"
-          + "le/cloud/discoveryengine/v1/schema.proto"
-          + "\032\037google/protobuf/timestamp.proto\"\370\016\n\tDa"
-          + "taStore\022\023\n\004name\030\001 \001(\tB\005\342A\002\005\010\022\032\n\014display_"
-          + "name\030\002 \001(\tB\004\342A\001\002\022R\n\021industry_vertical\030\003 "
-          + "\001(\01621.google.cloud.discoveryengine.v1.In"
-          + "dustryVerticalB\004\342A\001\005\022E\n\016solution_types\030\005"
-          + " \003(\0162-.google.cloud.discoveryengine.v1.S"
-          + "olutionType\022\037\n\021default_schema_id\030\007 \001(\tB\004"
-          + "\342A\001\003\022V\n\016content_config\030\006 \001(\01628.google.cl"
-          + "oud.discoveryengine.v1.DataStore.Content"
-          + "ConfigB\004\342A\001\005\0225\n\013create_time\030\004 \001(\0132\032.goog"
-          + "le.protobuf.TimestampB\004\342A\001\003\022d\n\033advanced_"
-          + "site_search_config\030\014 \001(\01329.google.cloud."
-          + "discoveryengine.v1.AdvancedSiteSearchCon"
-          + "figB\004\342A\001\001\022\203\001\n+natural_language_query_und"
-          + "erstanding_config\030\" \001(\0132H.google.cloud.d"
-          + "iscoveryengine.v1.NaturalLanguageQueryUn"
-          + "derstandingConfigB\004\342A\001\001\022\032\n\014kms_key_name\030"
-          + "  \001(\tB\004\342A\001\004\022F\n\013cmek_config\030\022 \001(\0132+.googl"
-          + "e.cloud.discoveryengine.v1.CmekConfigB\004\342"
-          + "A\001\003\022^\n\022billing_estimation\030\027 \001(\0132<.google"
-          + ".cloud.discoveryengine.v1.DataStore.Bill"
-          + "ingEstimationB\004\342A\001\003\022\031\n\013acl_enabled\030\030 \001(\010"
-          + "B\004\342A\001\005\022J\n\020workspace_config\030\031 \001(\01320.googl"
-          + "e.cloud.discoveryengine.v1.WorkspaceConf"
-          + "ig\022]\n\032document_processing_config\030\033 \001(\01329"
-          + ".google.cloud.discoveryengine.v1.Documen"
-          + "tProcessingConfig\022@\n\017starting_schema\030\034 \001"
-          + "(\0132\'.google.cloud.discoveryengine.v1.Sch"
-          + "ema\022[\n\026healthcare_fhir_config\030\035 \001(\01325.go"
-          + "ogle.cloud.discoveryengine.v1.Healthcare"
-          + "FhirConfigB\004\342A\001\001\022\\\n\026identity_mapping_sto"
-          + "re\030\037 \001(\tB<\342A\001\005\372A5\n3discoveryengine.googl"
-          + "eapis.com/IdentityMappingStore\032\256\002\n\021Billi"
-          + "ngEstimation\022\034\n\024structured_data_size\030\001 \001"
-          + "(\003\022\036\n\026unstructured_data_size\030\002 \001(\003\022\031\n\021we"
-          + "bsite_data_size\030\003 \001(\003\022?\n\033structured_data"
-          + "_update_time\030\004 \001(\0132\032.google.protobuf.Tim"
-          + "estamp\022A\n\035unstructured_data_update_time\030"
-          + "\005 \001(\0132\032.google.protobuf.Timestamp\022<\n\030web"
-          + "site_data_update_time\030\006 \001(\0132\032.google.pro"
-          + "tobuf.Timestamp\"\177\n\rContentConfig\022\036\n\032CONT"
-          + "ENT_CONFIG_UNSPECIFIED\020\000\022\016\n\nNO_CONTENT\020\001"
-          + "\022\024\n\020CONTENT_REQUIRED\020\002\022\022\n\016PUBLIC_WEBSITE"
-          + "\020\003\022\024\n\020GOOGLE_WORKSPACE\020\004:\311\001\352A\305\001\n(discove"
-          + "ryengine.googleapis.com/DataStore\022?proje"
-          + "cts/{project}/locations/{location}/dataS"
-          + "tores/{data_store}\022Xprojects/{project}/l"
-          + "ocations/{location}/collections/{collect"
-          + "ion}/dataStores/{data_store}\"\236\001\n\030Advance"
-          + "dSiteSearchConfig\022\"\n\025disable_initial_ind"
-          + "ex\030\003 \001(\010H\000\210\001\001\022&\n\031disable_automatic_refre"
-          + "sh\030\004 \001(\010H\001\210\001\001B\030\n\026_disable_initial_indexB"
-          + "\034\n\032_disable_automatic_refresh\"\277\001\n\'Natura"
-          + "lLanguageQueryUnderstandingConfig\022[\n\004mod"
-          + "e\030\001 \001(\0162M.google.cloud.discoveryengine.v"
-          + "1.NaturalLanguageQueryUnderstandingConfi"
-          + "g.Mode\"7\n\004Mode\022\024\n\020MODE_UNSPECIFIED\020\000\022\014\n\010"
-          + "DISABLED\020\001\022\013\n\007ENABLED\020\002\"\367\002\n\017WorkspaceCon"
-          + "fig\022C\n\004type\030\001 \001(\01625.google.cloud.discove"
-          + "ryengine.v1.WorkspaceConfig.Type\022\032\n\022dash"
-          + "er_customer_id\030\002 \001(\t\022)\n\033super_admin_serv"
-          + "ice_account\030\004 \001(\tB\004\342A\001\001\022\'\n\031super_admin_e"
-          + "mail_address\030\005 \001(\tB\004\342A\001\001\"\256\001\n\004Type\022\024\n\020TYP"
-          + "E_UNSPECIFIED\020\000\022\020\n\014GOOGLE_DRIVE\020\001\022\017\n\013GOO"
-          + "GLE_MAIL\020\002\022\020\n\014GOOGLE_SITES\020\003\022\023\n\017GOOGLE_C"
-          + "ALENDAR\020\004\022\017\n\013GOOGLE_CHAT\020\005\022\021\n\rGOOGLE_GRO"
-          + "UPS\020\006\022\017\n\013GOOGLE_KEEP\020\007\022\021\n\rGOOGLE_PEOPLE\020"
-          + "\010B\201\002\n#com.google.cloud.discoveryengine.v"
-          + "1B\016DataStoreProtoP\001ZMcloud.google.com/go"
-          + "/discoveryengine/apiv1/discoveryenginepb"
-          + ";discoveryenginepb\242\002\017DISCOVERYENGINE\252\002\037G"
-          + "oogle.Cloud.DiscoveryEngine.V1\312\002\037Google\\"
-          + "Cloud\\DiscoveryEngine\\V1\352\002\"Google::Cloud"
-          + "::DiscoveryEngine::V1b\006proto3"
+          + "le/cloud/discoveryengine/v1/schema.proto\032\037google/protobuf/timestamp.proto\"\343\037\n"
+          + "\tDataStore\022\023\n"
+          + "\004name\030\001 \001(\tB\005\342A\002\005\010\022\032\n"
+          + "\014display_name\030\002 \001(\tB\004\342A\001\002\022R\n"
+          + "\021industry_vertical\030\003 "
+          + "\001(\01621.google.cloud.discoveryengine.v1.IndustryVerticalB\004\342A\001\005\022E\n"
+          + "\016solution_types\030\005"
+          + " \003(\0162-.google.cloud.discoveryengine.v1.SolutionType\022\037\n"
+          + "\021default_schema_id\030\007 \001(\tB\004\342A\001\003\022V\n"
+          + "\016content_config\030\006 \001(\01628.google.cl"
+          + "oud.discoveryengine.v1.DataStore.ContentConfigB\004\342A\001\005\0225\n"
+          + "\013create_time\030\004"
+          + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\022d\n"
+          + "\033advanced_site_search_config\030\014 \001(\01329.google.cloud."
+          + "discoveryengine.v1.AdvancedSiteSearchConfigB\004\342A\001\001\022\203\001\n"
+          + "+natural_language_query_understanding_config\030\" \001(\0132H.google.cloud.d"
+          + "iscoveryengine.v1.NaturalLanguageQueryUnderstandingConfigB\004\342A\001\001\022\032\n"
+          + "\014kms_key_name\030  \001(\tB\004\342A\001\004\022F\n"
+          + "\013cmek_config\030\022 \001(\0132+.googl"
+          + "e.cloud.discoveryengine.v1.CmekConfigB\004\342A\001\003\022^\n"
+          + "\022billing_estimation\030\027 \001(\0132<.google"
+          + ".cloud.discoveryengine.v1.DataStore.BillingEstimationB\004\342A\001\003\022\031\n"
+          + "\013acl_enabled\030\030 \001(\010B\004\342A\001\005\022J\n"
+          + "\020workspace_config\030\031 \001(\01320.googl"
+          + "e.cloud.discoveryengine.v1.WorkspaceConfig\022]\n"
+          + "\032document_processing_config\030\033 \001(\01329"
+          + ".google.cloud.discoveryengine.v1.DocumentProcessingConfig\022@\n"
+          + "\017starting_schema\030\034 \001(\0132\'.google.cloud.discoveryengine.v1.Schema\022[\n"
+          + "\026healthcare_fhir_config\030\035 \001(\01325.go"
+          + "ogle.cloud.discoveryengine.v1.HealthcareFhirConfigB\004\342A\001\001\022j\n"
+          + "\031serving_config_data_store\030\036 \001(\0132A.google.cloud.discoveryengi"
+          + "ne.v1.DataStore.ServingConfigDataStoreB\004\342A\001\001\022\\\n"
+          + "\026identity_mapping_store\030\037 \001(\tB<\342A\001\005\372A5\n"
+          + "3discoveryengine.googleapis.com/IdentityMappingStore\022\'\n"
+          + "\031is_infobot_faq_data_store\030% \001(\010B\004\342A\001\001\022g\n"
+          + "\027federated_search_config\030& \001(\0132@.google.cloud.discoveryeng"
+          + "ine.v1.DataStore.FederatedSearchConfigB\004\342A\001\001\022s\n"
+          + "\035configurable_billing_approach\030- \001(\0162F.google.cloud.discoveryengine.v1.Da"
+          + "taStore.ConfigurableBillingApproachB\004\342A\001\001\022S\n"
+          + ")configurable_billing_approach_update_time\030."
+          + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\022[\n"
+          + "\026data_protection_policy\0300 \001(\01325"
+          + ".google.cloud.discoveryengine.v1.DataProtectionPolicyB\004\342A\001\001\032\256\002\n"
+          + "\021BillingEstimation\022\034\n"
+          + "\024structured_data_size\030\001 \001(\003\022\036\n"
+          + "\026unstructured_data_size\030\002 \001(\003\022\031\n"
+          + "\021website_data_size\030\003 \001(\003\022?\n"
+          + "\033structured_data_update_time\030\004"
+          + " \001(\0132\032.google.protobuf.Timestamp\022A\n"
+          + "\035unstructured_data_update_time\030\005"
+          + " \001(\0132\032.google.protobuf.Timestamp\022<\n"
+          + "\030website_data_update_time\030\006 \001(\0132\032.google.protobuf.Timestamp\032<\n"
+          + "\026ServingConfigDataStore\022\"\n"
+          + "\024disabled_for_serving\030\001 \001(\010B\004\342A\001\001\032\341\n\n"
+          + "\025FederatedSearchConfig\022i\n"
+          + "\017alloy_db_config\030\001 \001(\0132N.google.cloud.discoveryengine.v1.DataStor"
+          + "e.FederatedSearchConfig.AlloyDbConfigH\000\022z\n"
+          + "\030third_party_oauth_config\030\002 \001(\0132V.goog"
+          + "le.cloud.discoveryengine.v1.DataStore.Fe"
+          + "deratedSearchConfig.ThirdPartyOauthConfigH\000\022n\n"
+          + "\021notebooklm_config\030\003 \001(\0132Q.google."
+          + "cloud.discoveryengine.v1.DataStore.FederatedSearchConfig.NotebooklmConfigH\000\032\226\006\n\r"
+          + "AlloyDbConfig\022\217\001\n"
+          + "\031alloydb_connection_config\030\001 \001(\0132f.google.cloud.discoveryengine"
+          + ".v1.DataStore.FederatedSearchConfig.Allo"
+          + "yDbConfig.AlloyDbConnectionConfigB\004\342A\001\002\022\221\001\n"
+          + "\024alloydb_ai_nl_config\030\002 \001(\0132m.google."
+          + "cloud.discoveryengine.v1.DataStore.Feder"
+          + "atedSearchConfig.AlloyDbConfig.AlloyDbAiNaturalLanguageConfigB\004\342A\001\001\022\035\n"
+          + "\017returned_fields\030\003 \003(\tB\004\342A\001\001\032\201\003\n"
+          + "\027AlloyDbConnectionConfig\022\026\n"
+          + "\010instance\030\001 \001(\tB\004\342A\001\002\022\026\n"
+          + "\010database\030\002 \001(\tB\004\342A\001\002\022\022\n"
+          + "\004user\030\003 \001(\tB\004\342A\001\002\022\026\n"
+          + "\010password\030\004 \001(\tB\004\342A\001\002\022\210\001\n"
+          + "\tauth_mode\030\005 \001(\0162o.google.cloud.discoveryengine.v1.DataSto"
+          + "re.FederatedSearchConfig.AlloyDbConfig.AlloyDbConnectionConfig.AuthModeB\004\342A\001\001\022\031\n"
+          + "\013enable_psvs\030\006 \001(\010B\004\342A\001\001\"d\n"
+          + "\010AuthMode\022\031\n"
+          + "\025AUTH_MODE_UNSPECIFIED\020\000\022\035\n"
+          + "\031AUTH_MODE_SERVICE_ACCOUNT\020\001\022\036\n"
+          + "\032AUTH_MODE_END_USER_ACCOUNT\020\002\032<\n"
+          + "\036AlloyDbAiNaturalLanguageConfig\022\032\n"
+          + "\014nl_config_id\030\001 \001(\tB\004\342A\001\001\032L\n"
+          + "\025ThirdPartyOauthConfig\022\026\n"
+          + "\010app_name\030\001 \001(\tB\004\342A\001\001\022\033\n"
+          + "\r"
+          + "instance_name\030\002 \001(\tB\004\342A\001\001\032t\n"
+          + "\020NotebooklmConfig\022\033\n\r"
+          + "search_config\030\001 \001(\tB\004\342A\001\002\022C\n"
+          + "\tnotebooks\030\002 \003(\tB0\342A\001\001\372A)\n"
+          + "\'discoveryengine.googleapis.com/NotebookB\024\n"
+          + "\022data_source_config\"\177\n\r"
+          + "ContentConfig\022\036\n"
+          + "\032CONTENT_CONFIG_UNSPECIFIED\020\000\022\016\n\n"
+          + "NO_CONTENT\020\001\022\024\n"
+          + "\020CONTENT_REQUIRED\020\002\022\022\n"
+          + "\016PUBLIC_WEBSITE\020\003\022\024\n"
+          + "\020GOOGLE_WORKSPACE\020\004\"\241\001\n"
+          + "\033ConfigurableBillingApproach\022-\n"
+          + ")CONFIGURABLE_BILLING_APPROACH_UNSPECIFIED\020\000\022+\n"
+          + "\'CONFIGURABLE_SUBSCRIPTION_INDEXING_CORE\020\001\022&\n"
+          + "\"CONFIGURABLE_CONSUMPTION_EMBEDDING\020\002:\311\001\352A\305\001\n"
+          + "(discoveryengine.googleapis.com/DataStore\022?projects/{"
+          + "project}/locations/{location}/dataStores/{data_store}\022Xprojects/{project}/locati"
+          + "ons/{location}/collections/{collection}/dataStores/{data_store}\"\236\001\n"
+          + "\030AdvancedSiteSearchConfig\022\"\n"
+          + "\025disable_initial_index\030\003 \001(\010H\000\210\001\001\022&\n"
+          + "\031disable_automatic_refresh\030\004 \001(\010H\001\210\001\001B\030\n"
+          + "\026_disable_initial_indexB\034\n"
+          + "\032_disable_automatic_refresh\"\277\001\n"
+          + "\'NaturalLanguageQueryUnderstandingConfig\022[\n"
+          + "\004mode\030\001 \001(\0162M.google.cloud.discoveryengine.v1.Nat"
+          + "uralLanguageQueryUnderstandingConfig.Mode\"7\n"
+          + "\004Mode\022\024\n"
+          + "\020MODE_UNSPECIFIED\020\000\022\014\n"
+          + "\010DISABLED\020\001\022\013\n"
+          + "\007ENABLED\020\002\"\223\003\n"
+          + "\017WorkspaceConfig\022C\n"
+          + "\004type\030\001 \001(\01625.google.cloud.discoveryengine.v1.WorkspaceConfig.Type\022"
+          + " \n"
+          + "\022dasher_customer_id\030\002 \001(\tB\004\342A\001\003\022)\n"
+          + "\033super_admin_service_account\030\004 \001(\tB\004\342A\001\001\022\'\n"
+          + "\031super_admin_email_address\030\005 \001(\tB\004\342A\001\001\"\304\001\n"
+          + "\004Type\022\024\n"
+          + "\020TYPE_UNSPECIFIED\020\000\022\020\n"
+          + "\014GOOGLE_DRIVE\020\001\022\017\n"
+          + "\013GOOGLE_MAIL\020\002\022\020\n"
+          + "\014GOOGLE_SITES\020\003\022\023\n"
+          + "\017GOOGLE_CALENDAR\020\004\022\017\n"
+          + "\013GOOGLE_CHAT\020\005\022\021\n\r"
+          + "GOOGLE_GROUPS\020\006\022\017\n"
+          + "\013GOOGLE_KEEP\020\007\022\021\n\r"
+          + "GOOGLE_PEOPLE\020\010\022\024\n"
+          + "\020GOOGLE_WORKSPACE\020\tB\201\002\n"
+          + "#com.google.cloud.discoveryengine.v1B\016DataStoreProto"
+          + "P\001ZMcloud.google.com/go/discoveryengine/apiv1/discoveryenginepb;discoveryenginep"
+          + "b\242\002\017DISCOVERYENGINE\252\002\037Google.Cloud.Disco"
+          + "veryEngine.V1\312\002\037Google\\Cloud\\DiscoveryEn"
+          + "gine\\V1\352\002\"Google::Cloud::DiscoveryEngine::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -188,7 +279,13 @@ public final class DataStoreProto extends com.google.protobuf.GeneratedFile {
               "DocumentProcessingConfig",
               "StartingSchema",
               "HealthcareFhirConfig",
+              "ServingConfigDataStore",
               "IdentityMappingStore",
+              "IsInfobotFaqDataStore",
+              "FederatedSearchConfig",
+              "ConfigurableBillingApproach",
+              "ConfigurableBillingApproachUpdateTime",
+              "DataProtectionPolicy",
             });
     internal_static_google_cloud_discoveryengine_v1_DataStore_BillingEstimation_descriptor =
         internal_static_google_cloud_discoveryengine_v1_DataStore_descriptor.getNestedType(0);
@@ -202,6 +299,67 @@ public final class DataStoreProto extends com.google.protobuf.GeneratedFile {
               "StructuredDataUpdateTime",
               "UnstructuredDataUpdateTime",
               "WebsiteDataUpdateTime",
+            });
+    internal_static_google_cloud_discoveryengine_v1_DataStore_ServingConfigDataStore_descriptor =
+        internal_static_google_cloud_discoveryengine_v1_DataStore_descriptor.getNestedType(1);
+    internal_static_google_cloud_discoveryengine_v1_DataStore_ServingConfigDataStore_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1_DataStore_ServingConfigDataStore_descriptor,
+            new java.lang.String[] {
+              "DisabledForServing",
+            });
+    internal_static_google_cloud_discoveryengine_v1_DataStore_FederatedSearchConfig_descriptor =
+        internal_static_google_cloud_discoveryengine_v1_DataStore_descriptor.getNestedType(2);
+    internal_static_google_cloud_discoveryengine_v1_DataStore_FederatedSearchConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1_DataStore_FederatedSearchConfig_descriptor,
+            new java.lang.String[] {
+              "AlloyDbConfig", "ThirdPartyOauthConfig", "NotebooklmConfig", "DataSourceConfig",
+            });
+    internal_static_google_cloud_discoveryengine_v1_DataStore_FederatedSearchConfig_AlloyDbConfig_descriptor =
+        internal_static_google_cloud_discoveryengine_v1_DataStore_FederatedSearchConfig_descriptor
+            .getNestedType(0);
+    internal_static_google_cloud_discoveryengine_v1_DataStore_FederatedSearchConfig_AlloyDbConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1_DataStore_FederatedSearchConfig_AlloyDbConfig_descriptor,
+            new java.lang.String[] {
+              "AlloydbConnectionConfig", "AlloydbAiNlConfig", "ReturnedFields",
+            });
+    internal_static_google_cloud_discoveryengine_v1_DataStore_FederatedSearchConfig_AlloyDbConfig_AlloyDbConnectionConfig_descriptor =
+        internal_static_google_cloud_discoveryengine_v1_DataStore_FederatedSearchConfig_AlloyDbConfig_descriptor
+            .getNestedType(0);
+    internal_static_google_cloud_discoveryengine_v1_DataStore_FederatedSearchConfig_AlloyDbConfig_AlloyDbConnectionConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1_DataStore_FederatedSearchConfig_AlloyDbConfig_AlloyDbConnectionConfig_descriptor,
+            new java.lang.String[] {
+              "Instance", "Database", "User", "Password", "AuthMode", "EnablePsvs",
+            });
+    internal_static_google_cloud_discoveryengine_v1_DataStore_FederatedSearchConfig_AlloyDbConfig_AlloyDbAiNaturalLanguageConfig_descriptor =
+        internal_static_google_cloud_discoveryengine_v1_DataStore_FederatedSearchConfig_AlloyDbConfig_descriptor
+            .getNestedType(1);
+    internal_static_google_cloud_discoveryengine_v1_DataStore_FederatedSearchConfig_AlloyDbConfig_AlloyDbAiNaturalLanguageConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1_DataStore_FederatedSearchConfig_AlloyDbConfig_AlloyDbAiNaturalLanguageConfig_descriptor,
+            new java.lang.String[] {
+              "NlConfigId",
+            });
+    internal_static_google_cloud_discoveryengine_v1_DataStore_FederatedSearchConfig_ThirdPartyOauthConfig_descriptor =
+        internal_static_google_cloud_discoveryengine_v1_DataStore_FederatedSearchConfig_descriptor
+            .getNestedType(1);
+    internal_static_google_cloud_discoveryengine_v1_DataStore_FederatedSearchConfig_ThirdPartyOauthConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1_DataStore_FederatedSearchConfig_ThirdPartyOauthConfig_descriptor,
+            new java.lang.String[] {
+              "AppName", "InstanceName",
+            });
+    internal_static_google_cloud_discoveryengine_v1_DataStore_FederatedSearchConfig_NotebooklmConfig_descriptor =
+        internal_static_google_cloud_discoveryengine_v1_DataStore_FederatedSearchConfig_descriptor
+            .getNestedType(2);
+    internal_static_google_cloud_discoveryengine_v1_DataStore_FederatedSearchConfig_NotebooklmConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1_DataStore_FederatedSearchConfig_NotebooklmConfig_descriptor,
+            new java.lang.String[] {
+              "SearchConfig", "Notebooks",
             });
     internal_static_google_cloud_discoveryengine_v1_AdvancedSiteSearchConfig_descriptor =
         getDescriptor().getMessageType(1);

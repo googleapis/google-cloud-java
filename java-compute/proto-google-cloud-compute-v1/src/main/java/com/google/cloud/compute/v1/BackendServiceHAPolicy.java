@@ -88,6 +88,9 @@ public final class BackendServiceHAPolicy extends com.google.protobuf.GeneratedM
    * Advertisement(RA) packet (IPv6).  Google Cloud immediately but
    * temporarily associates the forwarding rule IP address with that VM, and
    * both new and in-flight packets are quickly delivered to that VM.
+   * - HA_CONTROLLER: The Backend Service is managed by a High Availability
+   * Controller. Failover and leader election are exclusively managed by the
+   * HA Controller service.
    *
    *
    *
@@ -307,6 +310,9 @@ public final class BackendServiceHAPolicy extends com.google.protobuf.GeneratedM
    * Advertisement(RA) packet (IPv6).  Google Cloud immediately but
    * temporarily associates the forwarding rule IP address with that VM, and
    * both new and in-flight packets are quickly delivered to that VM.
+   * - HA_CONTROLLER: The Backend Service is managed by a High Availability
+   * Controller. Failover and leader election are exclusively managed by the
+   * HA Controller service.
    *
    *
    *
@@ -398,6 +404,9 @@ public final class BackendServiceHAPolicy extends com.google.protobuf.GeneratedM
    * Advertisement(RA) packet (IPv6).  Google Cloud immediately but
    * temporarily associates the forwarding rule IP address with that VM, and
    * both new and in-flight packets are quickly delivered to that VM.
+   * - HA_CONTROLLER: The Backend Service is managed by a High Availability
+   * Controller. Failover and leader election are exclusively managed by the
+   * HA Controller service.
    *
    *
    *
@@ -497,6 +506,9 @@ public final class BackendServiceHAPolicy extends com.google.protobuf.GeneratedM
    * Advertisement(RA) packet (IPv6).  Google Cloud immediately but
    * temporarily associates the forwarding rule IP address with that VM, and
    * both new and in-flight packets are quickly delivered to that VM.
+   * - HA_CONTROLLER: The Backend Service is managed by a High Availability
+   * Controller. Failover and leader election are exclusively managed by the
+   * HA Controller service.
    *
    *
    *
@@ -1039,6 +1051,9 @@ public final class BackendServiceHAPolicy extends com.google.protobuf.GeneratedM
      * Advertisement(RA) packet (IPv6).  Google Cloud immediately but
      * temporarily associates the forwarding rule IP address with that VM, and
      * both new and in-flight packets are quickly delivered to that VM.
+     * - HA_CONTROLLER: The Backend Service is managed by a High Availability
+     * Controller. Failover and leader election are exclusively managed by the
+     * HA Controller service.
      *
      *
      *
@@ -1129,6 +1144,9 @@ public final class BackendServiceHAPolicy extends com.google.protobuf.GeneratedM
      * Advertisement(RA) packet (IPv6).  Google Cloud immediately but
      * temporarily associates the forwarding rule IP address with that VM, and
      * both new and in-flight packets are quickly delivered to that VM.
+     * - HA_CONTROLLER: The Backend Service is managed by a High Availability
+     * Controller. Failover and leader election are exclusively managed by the
+     * HA Controller service.
      *
      *
      *
@@ -1227,6 +1245,9 @@ public final class BackendServiceHAPolicy extends com.google.protobuf.GeneratedM
      * Advertisement(RA) packet (IPv6).  Google Cloud immediately but
      * temporarily associates the forwarding rule IP address with that VM, and
      * both new and in-flight packets are quickly delivered to that VM.
+     * - HA_CONTROLLER: The Backend Service is managed by a High Availability
+     * Controller. Failover and leader election are exclusively managed by the
+     * HA Controller service.
      *
      *
      *
@@ -1325,6 +1346,9 @@ public final class BackendServiceHAPolicy extends com.google.protobuf.GeneratedM
      * Advertisement(RA) packet (IPv6).  Google Cloud immediately but
      * temporarily associates the forwarding rule IP address with that VM, and
      * both new and in-flight packets are quickly delivered to that VM.
+     * - HA_CONTROLLER: The Backend Service is managed by a High Availability
+     * Controller. Failover and leader election are exclusively managed by the
+     * HA Controller service.
      *
      *
      *
@@ -1422,6 +1446,9 @@ public final class BackendServiceHAPolicy extends com.google.protobuf.GeneratedM
      * Advertisement(RA) packet (IPv6).  Google Cloud immediately but
      * temporarily associates the forwarding rule IP address with that VM, and
      * both new and in-flight packets are quickly delivered to that VM.
+     * - HA_CONTROLLER: The Backend Service is managed by a High Availability
+     * Controller. Failover and leader election are exclusively managed by the
+     * HA Controller service.
      *
      *
      *
@@ -1515,6 +1542,9 @@ public final class BackendServiceHAPolicy extends com.google.protobuf.GeneratedM
      * Advertisement(RA) packet (IPv6).  Google Cloud immediately but
      * temporarily associates the forwarding rule IP address with that VM, and
      * both new and in-flight packets are quickly delivered to that VM.
+     * - HA_CONTROLLER: The Backend Service is managed by a High Availability
+     * Controller. Failover and leader election are exclusively managed by the
+     * HA Controller service.
      *
      *
      *

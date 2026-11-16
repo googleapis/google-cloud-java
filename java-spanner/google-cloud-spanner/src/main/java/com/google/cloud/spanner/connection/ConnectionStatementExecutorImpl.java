@@ -42,7 +42,6 @@ import static com.google.cloud.spanner.connection.StatementResult.ClientSideStat
 import static com.google.cloud.spanner.connection.StatementResult.ClientSideStatementType.SET_OPTIMIZER_STATISTICS_PACKAGE;
 import static com.google.cloud.spanner.connection.StatementResult.ClientSideStatementType.SET_OPTIMIZER_VERSION;
 import static com.google.cloud.spanner.connection.StatementResult.ClientSideStatementType.SET_PROTO_DESCRIPTORS;
-import static com.google.cloud.spanner.connection.StatementResult.ClientSideStatementType.SET_PROTO_DESCRIPTORS_FILE_PATH;
 import static com.google.cloud.spanner.connection.StatementResult.ClientSideStatementType.SET_READONLY;
 import static com.google.cloud.spanner.connection.StatementResult.ClientSideStatementType.SET_READ_LOCK_MODE;
 import static com.google.cloud.spanner.connection.StatementResult.ClientSideStatementType.SET_READ_ONLY_STALENESS;
@@ -75,7 +74,6 @@ import static com.google.cloud.spanner.connection.StatementResult.ClientSideStat
 import static com.google.cloud.spanner.connection.StatementResult.ClientSideStatementType.SHOW_OPTIMIZER_STATISTICS_PACKAGE;
 import static com.google.cloud.spanner.connection.StatementResult.ClientSideStatementType.SHOW_OPTIMIZER_VERSION;
 import static com.google.cloud.spanner.connection.StatementResult.ClientSideStatementType.SHOW_PROTO_DESCRIPTORS;
-import static com.google.cloud.spanner.connection.StatementResult.ClientSideStatementType.SHOW_PROTO_DESCRIPTORS_FILE_PATH;
 import static com.google.cloud.spanner.connection.StatementResult.ClientSideStatementType.SHOW_READONLY;
 import static com.google.cloud.spanner.connection.StatementResult.ClientSideStatementType.SHOW_READ_LOCK_MODE;
 import static com.google.cloud.spanner.connection.StatementResult.ClientSideStatementType.SHOW_READ_ONLY_STALENESS;
@@ -652,15 +650,54 @@ class ConnectionStatementExecutorImpl implements ConnectionStatementExecutor {
         getConnection().isInTransaction()
             ? getConnection().getTransactionIsolationLevel()
             : getConnection().getDefaultIsolationLevel();
-    return resultSet("transaction_isolation", isolationLevel, SHOW_TRANSACTION_ISOLATION_LEVEL);
+    return resultSet(
+        "transaction_isolation",
+        formatIsolationLevel(getEffectiveIsolationLevel(isolationLevel)),
+        SHOW_TRANSACTION_ISOLATION_LEVEL);
   }
 
   @Override
   public StatementResult statementShowDefaultTransactionIsolation() {
     return resultSet(
         "default_transaction_isolation",
-        getConnection().getDefaultIsolationLevel(),
+        formatIsolationLevel(
+            getEffectiveIsolationLevel(getConnection().getDefaultIsolationLevel())),
         SHOW_DEFAULT_TRANSACTION_ISOLATION);
+  }
+
+  /** Resolves an unspecified isolation level to the database default. */
+  private TransactionOptions.IsolationLevel getEffectiveIsolationLevel(
+      TransactionOptions.IsolationLevel isolationLevel) {
+    TransactionOptions.IsolationLevel configuredIsolationLevel =
+        isolationLevel == TransactionOptions.IsolationLevel.ISOLATION_LEVEL_UNSPECIFIED
+            ? getConnection().getDatabaseClient().getDatabaseDefaultIsolationLevel()
+            : isolationLevel;
+    switch (configuredIsolationLevel) {
+      case ISOLATION_LEVEL_UNSPECIFIED:
+        return TransactionOptions.IsolationLevel.SERIALIZABLE;
+      case UNRECOGNIZED:
+        throw SpannerExceptionFactory.newSpannerException(
+            ErrorCode.FAILED_PRECONDITION,
+            "The default isolation level of the database is not supported by this version of the"
+                + " client.");
+      default:
+        return configuredIsolationLevel;
+    }
+  }
+
+  private String formatIsolationLevel(TransactionOptions.IsolationLevel isolationLevel) {
+    if (getConnection().getDialect() != Dialect.POSTGRESQL) {
+      return isolationLevel.name();
+    }
+    switch (isolationLevel) {
+      case SERIALIZABLE:
+        return "serializable";
+      case REPEATABLE_READ:
+        return "repeatable read";
+      default:
+        throw SpannerExceptionFactory.newSpannerException(
+            ErrorCode.INVALID_ARGUMENT, "Unknown isolation level: " + isolationLevel);
+    }
   }
 
   @Override
@@ -755,9 +792,12 @@ class ConnectionStatementExecutorImpl implements ConnectionStatementExecutor {
 
   @Override
   public StatementResult statementSetProtoDescriptorsFilePath(String filePath) {
-    Preconditions.checkNotNull(filePath);
-    getConnection().setProtoDescriptorsFilePath(filePath);
-    return noResult(SET_PROTO_DESCRIPTORS_FILE_PATH);
+    throw SpannerExceptionFactory.newSpannerException(
+        ErrorCode.INVALID_ARGUMENT,
+        "SET PROTO_DESCRIPTORS_FILE_PATH is not supported. To set proto descriptors, encode the"
+            + " descriptors file as a base64 string and use the SET PROTO_DESCRIPTORS ="
+            + " '<base64_encoded_proto_descriptors>' statement instead, or pass the descriptors"
+            + " bytes directly using the Connection#setProtoDescriptors(byte[]) API.");
   }
 
   @Override
@@ -770,10 +810,10 @@ class ConnectionStatementExecutorImpl implements ConnectionStatementExecutor {
 
   @Override
   public StatementResult statementShowProtoDescriptorsFilePath() {
-    return resultSet(
-        String.format("%sPROTO_DESCRIPTORS_FILE_PATH", getNamespace(connection.getDialect())),
-        getConnection().getProtoDescriptorsFilePath(),
-        SHOW_PROTO_DESCRIPTORS_FILE_PATH);
+    throw SpannerExceptionFactory.newSpannerException(
+        ErrorCode.INVALID_ARGUMENT,
+        "SHOW VARIABLE PROTO_DESCRIPTORS_FILE_PATH is not supported. Use SHOW VARIABLE"
+            + " PROTO_DESCRIPTORS instead.");
   }
 
   @Override

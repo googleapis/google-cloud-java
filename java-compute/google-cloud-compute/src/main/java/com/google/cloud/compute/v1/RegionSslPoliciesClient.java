@@ -40,7 +40,7 @@ import org.jspecify.annotations.Nullable;
 /**
  * Service Description: The RegionSslPolicies API.
  *
- * <p>This client uses RegionSslPolicies version 2026-09-01.
+ * <p>This client uses RegionSslPolicies version 2026-11-01.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -104,6 +104,24 @@ import org.jspecify.annotations.Nullable;
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
  *           <li><p> getCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetIamPolicy</td>
+ *      <td><p> Gets the access control policy for a resource. May be empty if no such policy or resource exists.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getIamPolicy(GetIamPolicyRegionSslPolicyRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getIamPolicy(String project, String region, String resource)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getIamPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -179,6 +197,42 @@ import org.jspecify.annotations.Nullable;
  *      <ul>
  *           <li><p> patchOperationCallable()
  *           <li><p> patchCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> SetIamPolicy</td>
+ *      <td><p> Sets the access control policy on the specified resource. Replaces any existing policy.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> setIamPolicy(SetIamPolicyRegionSslPolicyRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> setIamPolicy(String project, String region, String resource, RegionSetPolicyRequest regionSetPolicyRequestResource)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> setIamPolicyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> TestIamPermissions</td>
+ *      <td><p> Returns permissions that a caller has on the specified resource.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> testIamPermissions(TestIamPermissionsRegionSslPolicyRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> testIamPermissions(String project, String region, String resource, TestPermissionsRequest testPermissionsRequestResource)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> testIamPermissionsCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -504,6 +558,105 @@ public class RegionSslPoliciesClient implements BackgroundResource {
    */
   public final UnaryCallable<GetRegionSslPolicyRequest, SslPolicy> getCallable() {
     return stub.getCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the access control policy for a resource. May be empty if no such policy or resource
+   * exists.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RegionSslPoliciesClient regionSslPoliciesClient = RegionSslPoliciesClient.create()) {
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String resource = "resource-341064690";
+   *   Policy response = regionSslPoliciesClient.getIamPolicy(project, region, resource);
+   * }
+   * }</pre>
+   *
+   * @param project Project ID for this request.
+   * @param region The name of the region for this request.
+   * @param resource Name or id of the resource for this request.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Policy getIamPolicy(String project, String region, String resource) {
+    GetIamPolicyRegionSslPolicyRequest request =
+        GetIamPolicyRegionSslPolicyRequest.newBuilder()
+            .setProject(project)
+            .setRegion(region)
+            .setResource(resource)
+            .build();
+    return getIamPolicy(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the access control policy for a resource. May be empty if no such policy or resource
+   * exists.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RegionSslPoliciesClient regionSslPoliciesClient = RegionSslPoliciesClient.create()) {
+   *   GetIamPolicyRegionSslPolicyRequest request =
+   *       GetIamPolicyRegionSslPolicyRequest.newBuilder()
+   *           .setOptionsRequestedPolicyVersion(-574521795)
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setResource("resource-341064690")
+   *           .build();
+   *   Policy response = regionSslPoliciesClient.getIamPolicy(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Policy getIamPolicy(GetIamPolicyRegionSslPolicyRequest request) {
+    return getIamPolicyCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the access control policy for a resource. May be empty if no such policy or resource
+   * exists.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RegionSslPoliciesClient regionSslPoliciesClient = RegionSslPoliciesClient.create()) {
+   *   GetIamPolicyRegionSslPolicyRequest request =
+   *       GetIamPolicyRegionSslPolicyRequest.newBuilder()
+   *           .setOptionsRequestedPolicyVersion(-574521795)
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setResource("resource-341064690")
+   *           .build();
+   *   ApiFuture<Policy> future = regionSslPoliciesClient.getIamPolicyCallable().futureCall(request);
+   *   // Do something.
+   *   Policy response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetIamPolicyRegionSslPolicyRequest, Policy> getIamPolicyCallable() {
+    return stub.getIamPolicyCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -1022,6 +1175,221 @@ public class RegionSslPoliciesClient implements BackgroundResource {
    */
   public final UnaryCallable<PatchRegionSslPolicyRequest, Operation> patchCallable() {
     return stub.patchCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets the access control policy on the specified resource. Replaces any existing policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RegionSslPoliciesClient regionSslPoliciesClient = RegionSslPoliciesClient.create()) {
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String resource = "resource-341064690";
+   *   RegionSetPolicyRequest regionSetPolicyRequestResource =
+   *       RegionSetPolicyRequest.newBuilder().build();
+   *   Policy response =
+   *       regionSslPoliciesClient.setIamPolicy(
+   *           project, region, resource, regionSetPolicyRequestResource);
+   * }
+   * }</pre>
+   *
+   * @param project Project ID for this request.
+   * @param region The name of the region for this request.
+   * @param resource Name or id of the resource for this request.
+   * @param regionSetPolicyRequestResource The body resource for this request
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Policy setIamPolicy(
+      String project,
+      String region,
+      String resource,
+      RegionSetPolicyRequest regionSetPolicyRequestResource) {
+    SetIamPolicyRegionSslPolicyRequest request =
+        SetIamPolicyRegionSslPolicyRequest.newBuilder()
+            .setProject(project)
+            .setRegion(region)
+            .setResource(resource)
+            .setRegionSetPolicyRequestResource(regionSetPolicyRequestResource)
+            .build();
+    return setIamPolicy(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets the access control policy on the specified resource. Replaces any existing policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RegionSslPoliciesClient regionSslPoliciesClient = RegionSslPoliciesClient.create()) {
+   *   SetIamPolicyRegionSslPolicyRequest request =
+   *       SetIamPolicyRegionSslPolicyRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRegionSetPolicyRequestResource(RegionSetPolicyRequest.newBuilder().build())
+   *           .setResource("resource-341064690")
+   *           .build();
+   *   Policy response = regionSslPoliciesClient.setIamPolicy(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Policy setIamPolicy(SetIamPolicyRegionSslPolicyRequest request) {
+    return setIamPolicyCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets the access control policy on the specified resource. Replaces any existing policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RegionSslPoliciesClient regionSslPoliciesClient = RegionSslPoliciesClient.create()) {
+   *   SetIamPolicyRegionSslPolicyRequest request =
+   *       SetIamPolicyRegionSslPolicyRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRegionSetPolicyRequestResource(RegionSetPolicyRequest.newBuilder().build())
+   *           .setResource("resource-341064690")
+   *           .build();
+   *   ApiFuture<Policy> future = regionSslPoliciesClient.setIamPolicyCallable().futureCall(request);
+   *   // Do something.
+   *   Policy response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<SetIamPolicyRegionSslPolicyRequest, Policy> setIamPolicyCallable() {
+    return stub.setIamPolicyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns permissions that a caller has on the specified resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RegionSslPoliciesClient regionSslPoliciesClient = RegionSslPoliciesClient.create()) {
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String resource = "resource-341064690";
+   *   TestPermissionsRequest testPermissionsRequestResource =
+   *       TestPermissionsRequest.newBuilder().build();
+   *   TestPermissionsResponse response =
+   *       regionSslPoliciesClient.testIamPermissions(
+   *           project, region, resource, testPermissionsRequestResource);
+   * }
+   * }</pre>
+   *
+   * @param project Project ID for this request.
+   * @param region The name of the region for this request.
+   * @param resource Name or id of the resource for this request.
+   * @param testPermissionsRequestResource The body resource for this request
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final TestPermissionsResponse testIamPermissions(
+      String project,
+      String region,
+      String resource,
+      TestPermissionsRequest testPermissionsRequestResource) {
+    TestIamPermissionsRegionSslPolicyRequest request =
+        TestIamPermissionsRegionSslPolicyRequest.newBuilder()
+            .setProject(project)
+            .setRegion(region)
+            .setResource(resource)
+            .setTestPermissionsRequestResource(testPermissionsRequestResource)
+            .build();
+    return testIamPermissions(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns permissions that a caller has on the specified resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RegionSslPoliciesClient regionSslPoliciesClient = RegionSslPoliciesClient.create()) {
+   *   TestIamPermissionsRegionSslPolicyRequest request =
+   *       TestIamPermissionsRegionSslPolicyRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setResource("resource-341064690")
+   *           .setTestPermissionsRequestResource(TestPermissionsRequest.newBuilder().build())
+   *           .build();
+   *   TestPermissionsResponse response = regionSslPoliciesClient.testIamPermissions(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final TestPermissionsResponse testIamPermissions(
+      TestIamPermissionsRegionSslPolicyRequest request) {
+    return testIamPermissionsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns permissions that a caller has on the specified resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RegionSslPoliciesClient regionSslPoliciesClient = RegionSslPoliciesClient.create()) {
+   *   TestIamPermissionsRegionSslPolicyRequest request =
+   *       TestIamPermissionsRegionSslPolicyRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setResource("resource-341064690")
+   *           .setTestPermissionsRequestResource(TestPermissionsRequest.newBuilder().build())
+   *           .build();
+   *   ApiFuture<TestPermissionsResponse> future =
+   *       regionSslPoliciesClient.testIamPermissionsCallable().futureCall(request);
+   *   // Do something.
+   *   TestPermissionsResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<TestIamPermissionsRegionSslPolicyRequest, TestPermissionsResponse>
+      testIamPermissionsCallable() {
+    return stub.testIamPermissionsCallable();
   }
 
   @Override

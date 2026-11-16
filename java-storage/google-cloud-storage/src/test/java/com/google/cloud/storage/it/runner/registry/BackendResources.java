@@ -35,8 +35,10 @@ import com.google.cloud.storage.StorageClass;
 import com.google.cloud.storage.StorageOptions;
 import com.google.cloud.storage.TransportCompatibility.Transport;
 import com.google.cloud.storage.it.GrpcPlainRequestLoggingInterceptor;
+import com.google.cloud.storage.it.runner.CrossRunIntersection;
 import com.google.cloud.storage.it.runner.annotations.Backend;
 import com.google.cloud.storage.it.runner.annotations.BucketType;
+import com.google.cloud.storage.it.runner.annotations.LocationType;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableList;
 import com.google.storage.control.v2.StorageControlClient;
@@ -46,14 +48,17 @@ import io.grpc.ManagedChannelBuilder;
 import java.io.IOException;
 import java.net.URI;
 import java.util.Locale;
+import java.util.Objects;
 import java.util.UUID;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentMap;
+import org.junit.runners.model.FrameworkField;
 
 /** The set of resources which are defined for a single backend. */
 final class BackendResources implements ManagedLifecycle {
 
   private final Backend backend;
   private final ProtectedBucketNames protectedBucketNames;
-
   private final ImmutableList<RegistryEntry<?>> registryEntries;
 
   private BackendResources(
@@ -93,6 +98,7 @@ final class BackendResources implements ManagedLifecycle {
       TestRunScopedInstance<OtelSdkShim> otelSdk,
       TestRunScopedInstance<Zone.ZoneShim> zone) {
     ProtectedBucketNames protectedBucketNames = new ProtectedBucketNames();
+
     TestRunScopedInstance<StorageInstance> storageJson =
         TestRunScopedInstance.of(
             "fixture/STORAGE/[JSON][" + backend.name() + "]",
@@ -105,6 +111,13 @@ final class BackendResources implements ManagedLifecycle {
                           .setCredentials(NoCredentials.getInstance())
                           .setHost(Registry.getInstance().testBench().getBaseUri())
                           .setProjectId("test-project-id");
+                  break;
+                case PREPROD:
+                  optionsBuilder =
+                      StorageOptions.http()
+                          .setHost(
+                              "https://storage-preprod-test-unified.googleusercontent.com/storage/v1_preprod/")
+                          .setOpenTelemetry(otelSdk.get().get());
                   break;
                 default: // PROD, java8 doesn't have exhaustive checking for enum switch
                   // Register the exporters with OpenTelemetry
@@ -129,6 +142,12 @@ final class BackendResources implements ManagedLifecycle {
                           .setHost(Registry.getInstance().testBench().getGRPCBaseUri())
                           .setAttemptDirectPath(false)
                           .setProjectId("test-project-id");
+                  break;
+                case PREPROD:
+                  optionsBuilder =
+                      StorageOptions.grpc()
+                          .setHost("storage-preprod-test-grpc.googleusercontent.com:443")
+                          .setOpenTelemetry(otelSdk.get().get());
                   break;
                 default: // PROD, java8 doesn't have exhaustive checking for enum switch
                   // Register the exporters with OpenTelemetry
@@ -168,6 +187,18 @@ final class BackendResources implements ManagedLifecycle {
                           .setEndpoint(endpoint)
                           .setTransportChannelProvider(instantiatingGrpcChannelProvider);
                   break;
+                case PREPROD:
+                  String preProdEndpoint = "storage-preprod-test-grpc.googleusercontent.com:443";
+                  builder =
+                      StorageControlSettings.newBuilder()
+                          .setEndpoint(preProdEndpoint)
+                          .setTransportChannelProvider(
+                              StorageControlStubSettings.defaultGrpcTransportProviderBuilder()
+                                  .setInterceptorProvider(
+                                      GrpcPlainRequestLoggingInterceptor.getInterceptorProvider())
+                                  .setEndpoint(preProdEndpoint)
+                                  .build());
+                  break;
                 default: // PROD, java8 doesn't have exhaustive checking for enum switch
                   builder =
                       StorageControlSettings.newBuilder()
@@ -186,20 +217,11 @@ final class BackendResources implements ManagedLifecycle {
                 throw new RuntimeException(e);
               }
             });
-    TestRunScopedInstance<BucketInfoShim> bucket =
+    TestRunScopedInstance<DynamicBucketLifecycle> bucket =
         TestRunScopedInstance.of(
-            "fixture/BUCKET/[" + backend.name() + "]",
-            () -> {
-              String bucketName =
-                  String.format(Locale.US, "java-storage-grpc-%s", UUID.randomUUID());
-              protectedBucketNames.add(bucketName);
-              return new BucketInfoShim(
-                  BucketInfo.newBuilder(bucketName)
-                      .setLocation(zone.get().get().getRegion())
-                      .build(),
-                  storageJson.get().getStorage(),
-                  ctrl.get().getCtrl());
-            });
+            "fixture/BUCKET/[" + backend.name() + "]/DYNAMIC",
+            () ->
+                new DynamicBucketLifecycle(backend, storageJson, ctrl, zone, protectedBucketNames));
     TestRunScopedInstance<BucketInfoShim> bucketRp =
         TestRunScopedInstance.of(
             "fixture/BUCKET/[" + backend.name() + "]/REQUESTER_PAYS",
@@ -213,7 +235,7 @@ final class BackendResources implements ManagedLifecycle {
                       .setRequesterPays(true)
                       .build(),
                   storageJson.get().getStorage(),
-                  ctrl.get().getCtrl());
+                  controlClientOrNull(backend, ctrl));
             });
     TestRunScopedInstance<BucketInfoShim> bucketVersioned =
         TestRunScopedInstance.of(
@@ -228,7 +250,7 @@ final class BackendResources implements ManagedLifecycle {
                       .setVersioningEnabled(true)
                       .build(),
                   storageJson.get().getStorage(),
-                  ctrl.get().getCtrl());
+                  controlClientOrNull(backend, ctrl));
             });
     TestRunScopedInstance<BucketInfoShim> bucketHns =
         TestRunScopedInstance.of(
@@ -248,7 +270,7 @@ final class BackendResources implements ManagedLifecycle {
                               .build())
                       .build(),
                   storageJson.get().getStorage(),
-                  ctrl.get().getCtrl());
+                  controlClientOrNull(backend, ctrl));
             });
     TestRunScopedInstance<BucketInfoShim> bucketRapid =
         TestRunScopedInstance.of(
@@ -273,12 +295,12 @@ final class BackendResources implements ManagedLifecycle {
                               .build())
                       .build(),
                   storageJson.get().getStorage(),
-                  ctrl.get().getCtrl());
+                  controlClientOrNull(backend, ctrl));
             });
-    TestRunScopedInstance<ObjectsFixture> objectsFixture =
+    TestRunScopedInstance<DynamicObjectsFixtureLifecycle> objectsFixture =
         TestRunScopedInstance.of(
             "fixture/OBJECTS/[" + backend.name() + "]",
-            () -> new ObjectsFixture(storageJson.get().getStorage(), bucket.get().getBucketInfo()));
+            () -> new DynamicObjectsFixtureLifecycle(storageJson, bucket));
     TestRunScopedInstance<ObjectsFixture> objectsFixtureRp =
         TestRunScopedInstance.of(
             "fixture/OBJECTS/[" + backend.name() + "]/REQUESTER_PAYS",
@@ -342,5 +364,239 @@ final class BackendResources implements ManagedLifecycle {
                 objectsFixtureHns,
                 backendIs(backend).and(bucketTypeIs(BucketType.HNS))),
             RegistryEntry.of(100, KmsFixture.class, kmsFixture, backendIs(backend))));
+  }
+
+  private static StorageControlClient controlClientOrNull(
+      Backend backend, TestRunScopedInstance<StorageControlInstance> ctrl) {
+    return backend == Backend.TEST_BENCH ? null : ctrl.get().getCtrl();
+  }
+
+  static final class BucketKey {
+    private final LocationType locationType;
+
+    BucketKey(LocationType locationType) {
+      this.locationType = locationType;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+      if (this == o) {
+        return true;
+      }
+      if (!(o instanceof BucketKey)) {
+        return false;
+      }
+      BucketKey bucketKey = (BucketKey) o;
+      return locationType == bucketKey.locationType;
+    }
+
+    @Override
+    public int hashCode() {
+      return Objects.hash(locationType);
+    }
+
+    @Override
+    public String toString() {
+      return MoreObjects.toStringHelper(this).add("locationType", locationType).toString();
+    }
+  }
+
+  static final class DynamicBucketLifecycle
+      implements Registry.StatelessManagedLifecycle<BucketInfo> {
+    private final Backend backend;
+    private final TestRunScopedInstance<StorageInstance> storageJson;
+    private final TestRunScopedInstance<StorageControlInstance> ctrl;
+    private final TestRunScopedInstance<Zone.ZoneShim> zone;
+    private final ProtectedBucketNames protectedBucketNames;
+    private final ConcurrentMap<BucketKey, BucketInfoShim> dynamicBuckets =
+        new ConcurrentHashMap<>();
+    private final ConcurrentMap<BucketKey, RuntimeException> locationFailures =
+        new ConcurrentHashMap<>();
+    private final ConcurrentMap<String, String> rapidCacheZones = new ConcurrentHashMap<>();
+
+    DynamicBucketLifecycle(
+        Backend backend,
+        TestRunScopedInstance<StorageInstance> storageJson,
+        TestRunScopedInstance<StorageControlInstance> ctrl,
+        TestRunScopedInstance<Zone.ZoneShim> zone,
+        ProtectedBucketNames protectedBucketNames) {
+      this.backend = backend;
+      this.storageJson = storageJson;
+      this.ctrl = ctrl;
+      this.zone = zone;
+      this.protectedBucketNames = protectedBucketNames;
+    }
+
+    @Override
+    public void stop() {
+      dynamicBuckets.values().forEach(this::stopBucketShim);
+      dynamicBuckets.clear();
+      locationFailures.clear();
+      rapidCacheZones.clear();
+    }
+
+    @Override
+    public BucketInfo resolve(FrameworkField ff, CrossRunIntersection crossRunIntersection) {
+      LocationType lt = crossRunIntersection.getLocationType();
+
+      if (lt == null) {
+        lt = LocationType.REGIONAL_STANDARD;
+      }
+
+      BucketKey key = new BucketKey(lt);
+      RuntimeException priorFailure = locationFailures.get(key);
+      if (priorFailure != null) {
+        throw priorFailure;
+      }
+      BucketInfoShim shim =
+          dynamicBuckets.computeIfAbsent(
+              key,
+              k -> {
+                try {
+                  return createBucketShim(k);
+                } catch (RuntimeException e) {
+                  locationFailures.put(k, e);
+                  throw e;
+                }
+              });
+      return (BucketInfo) shim.get();
+    }
+
+    private void stopBucketShim(BucketInfoShim shim) {
+      BucketInfo info = shim.getBucketInfo();
+      if (info != null) {
+        String targetZone = rapidCacheZones.remove(info.getName());
+        if (targetZone != null && backend != Backend.TEST_BENCH) {
+          RapidCacheHelper.disableRapidCache(
+              controlClientOrNull(backend, ctrl), info.getName(), targetZone);
+        }
+      }
+      shim.stop();
+    }
+
+    private BucketInfoShim createBucketShim(BucketKey key) {
+      Zone z = zone.get().get();
+      String region = z.getRegion();
+      String zoneName = z.getZone();
+
+      String targetRegion = region;
+      String targetZone = zoneName;
+
+      Storage storageClientToUse = storageJson.get().getStorage();
+      StorageControlClient controlClientToUse = controlClientOrNull(backend, ctrl);
+
+      if (key.locationType == LocationType.REGIONAL_RAPID
+          || key.locationType == LocationType.ZONAL_RAPID) {
+        if (backend == Backend.PREPROD) {
+          targetRegion = "us-central1";
+          targetZone = "us-central1-a";
+        } else {
+          targetRegion = "europe-west1";
+          targetZone = "europe-west1-c";
+        }
+      }
+
+      BucketInfo.Builder builder;
+      String prefix;
+
+      switch (key.locationType) {
+        case REGIONAL_STANDARD:
+          prefix = "java-storage-reg-std";
+          builder = BucketInfo.newBuilder("").setLocation(targetRegion);
+          break;
+        case REGIONAL_RAPID:
+          prefix = "java-storage-reg-rapid";
+          builder =
+              BucketInfo.newBuilder("")
+                  .setLocation(targetRegion)
+                  .setHierarchicalNamespace(
+                      HierarchicalNamespace.newBuilder().setEnabled(true).build())
+                  .setIamConfiguration(
+                      IamConfiguration.newBuilder()
+                          .setIsUniformBucketLevelAccessEnabled(true)
+                          .build());
+          break;
+        case ZONAL_RAPID:
+          prefix = "java-storage-zon-rapid";
+          builder =
+              BucketInfo.newBuilder("")
+                  .setLocation(targetRegion)
+                  .setCustomPlacementConfig(
+                      CustomPlacementConfig.newBuilder()
+                          .setDataLocations(ImmutableList.of(targetZone))
+                          .build())
+                  .setStorageClass(StorageClass.valueOf("RAPID"))
+                  .setHierarchicalNamespace(
+                      HierarchicalNamespace.newBuilder().setEnabled(true).build())
+                  .setIamConfiguration(
+                      IamConfiguration.newBuilder()
+                          .setIsUniformBucketLevelAccessEnabled(true)
+                          .build());
+          break;
+        default:
+          throw new IllegalArgumentException("Unknown location type: " + key.locationType);
+      }
+
+      String bucketName =
+          String.format(
+              Locale.US,
+              "%s-%s-%s",
+              prefix,
+              backend.name().toLowerCase(Locale.US),
+              UUID.randomUUID().toString().substring(0, 8));
+
+      builder.setName(bucketName);
+      protectedBucketNames.add(bucketName);
+
+      BucketInfoShim shim =
+          new BucketInfoShim(builder.build(), storageClientToUse, controlClientToUse);
+
+      shim.start();
+      if (key.locationType == LocationType.REGIONAL_RAPID && backend != Backend.TEST_BENCH) {
+        RapidCacheHelper.createRapidCache(
+            controlClientToUse, shim.getBucketInfo().getName(), targetZone, shim::stop);
+        rapidCacheZones.put(shim.getBucketInfo().getName(), targetZone);
+      }
+      return shim;
+    }
+  }
+
+  static final class DynamicObjectsFixtureLifecycle
+      implements Registry.StatelessManagedLifecycle<ObjectsFixture> {
+    private final TestRunScopedInstance<StorageInstance> storageJson;
+    private final TestRunScopedInstance<DynamicBucketLifecycle> bucket;
+    private final ConcurrentMap<BucketKey, ObjectsFixture> dynamicFixtures =
+        new ConcurrentHashMap<>();
+
+    DynamicObjectsFixtureLifecycle(
+        TestRunScopedInstance<StorageInstance> storageJson,
+        TestRunScopedInstance<DynamicBucketLifecycle> bucket) {
+      this.storageJson = storageJson;
+      this.bucket = bucket;
+    }
+
+    @Override
+    public void stop() {
+      dynamicFixtures.values().forEach(ObjectsFixture::stop);
+      dynamicFixtures.clear();
+    }
+
+    @Override
+    public ObjectsFixture resolve(FrameworkField ff, CrossRunIntersection crossRunIntersection) {
+      LocationType lt = crossRunIntersection.getLocationType();
+      if (lt == null) {
+        lt = LocationType.REGIONAL_STANDARD;
+      }
+      BucketKey key = new BucketKey(lt);
+      BucketInfo resolvedBucket = bucket.get().resolve(ff, crossRunIntersection);
+      return dynamicFixtures.computeIfAbsent(
+          key,
+          k -> {
+            ObjectsFixture fixture =
+                new ObjectsFixture(storageJson.get().getStorage(), resolvedBucket);
+            fixture.start();
+            return fixture;
+          });
+    }
   }
 }

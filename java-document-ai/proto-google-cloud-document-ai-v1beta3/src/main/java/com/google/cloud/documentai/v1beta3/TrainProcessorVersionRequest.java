@@ -3460,6 +3460,67 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
     }
   }
 
+  public static final int PROCESSOR_VERSION_OVERRIDES_FIELD_NUMBER = 13;
+  private com.google.cloud.documentai.v1beta3.ProcessorVersionOverrides processorVersionOverrides_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Options to override structures in the base processor version.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.documentai.v1beta3.ProcessorVersionOverrides processor_version_overrides = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the processorVersionOverrides field is set.
+   */
+  @java.lang.Override
+  public boolean hasProcessorVersionOverrides() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Options to override structures in the base processor version.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.documentai.v1beta3.ProcessorVersionOverrides processor_version_overrides = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The processorVersionOverrides.
+   */
+  @java.lang.Override
+  public com.google.cloud.documentai.v1beta3.ProcessorVersionOverrides
+      getProcessorVersionOverrides() {
+    return processorVersionOverrides_ == null
+        ? com.google.cloud.documentai.v1beta3.ProcessorVersionOverrides.getDefaultInstance()
+        : processorVersionOverrides_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Options to override structures in the base processor version.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.documentai.v1beta3.ProcessorVersionOverrides processor_version_overrides = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.documentai.v1beta3.ProcessorVersionOverridesOrBuilder
+      getProcessorVersionOverridesOrBuilder() {
+    return processorVersionOverrides_ == null
+        ? com.google.cloud.documentai.v1beta3.ProcessorVersionOverrides.getDefaultInstance()
+        : processorVersionOverrides_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -3503,6 +3564,9 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
                   .FoundationModelTuningOptions)
               processorFlags_);
     }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeMessage(13, getProcessorVersionOverrides());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -3543,6 +3607,11 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
                       .FoundationModelTuningOptions)
                   processorFlags_);
     }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              13, getProcessorVersionOverrides());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -3573,6 +3642,11 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
       if (!getInputData().equals(other.getInputData())) return false;
     }
     if (!getBaseProcessorVersion().equals(other.getBaseProcessorVersion())) return false;
+    if (hasProcessorVersionOverrides() != other.hasProcessorVersionOverrides()) return false;
+    if (hasProcessorVersionOverrides()) {
+      if (!getProcessorVersionOverrides().equals(other.getProcessorVersionOverrides()))
+        return false;
+    }
     if (!getProcessorFlagsCase().equals(other.getProcessorFlagsCase())) return false;
     switch (processorFlagsCase_) {
       case 5:
@@ -3613,6 +3687,10 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
     }
     hash = (37 * hash) + BASE_PROCESSOR_VERSION_FIELD_NUMBER;
     hash = (53 * hash) + getBaseProcessorVersion().hashCode();
+    if (hasProcessorVersionOverrides()) {
+      hash = (37 * hash) + PROCESSOR_VERSION_OVERRIDES_FIELD_NUMBER;
+      hash = (53 * hash) + getProcessorVersionOverrides().hashCode();
+    }
     switch (processorFlagsCase_) {
       case 5:
         hash = (37 * hash) + CUSTOM_DOCUMENT_EXTRACTION_OPTIONS_FIELD_NUMBER;
@@ -3772,6 +3850,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
         internalGetProcessorVersionFieldBuilder();
         internalGetDocumentSchemaFieldBuilder();
         internalGetInputDataFieldBuilder();
+        internalGetProcessorVersionOverridesFieldBuilder();
       }
     }
 
@@ -3802,6 +3881,11 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
         inputDataBuilder_ = null;
       }
       baseProcessorVersion_ = "";
+      processorVersionOverrides_ = null;
+      if (processorVersionOverridesBuilder_ != null) {
+        processorVersionOverridesBuilder_.dispose();
+        processorVersionOverridesBuilder_ = null;
+      }
       processorFlagsCase_ = 0;
       processorFlags_ = null;
       return this;
@@ -3864,6 +3948,13 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
       if (((from_bitField0_ & 0x00000040) != 0)) {
         result.baseProcessorVersion_ = baseProcessorVersion_;
       }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.processorVersionOverrides_ =
+            processorVersionOverridesBuilder_ == null
+                ? processorVersionOverrides_
+                : processorVersionOverridesBuilder_.build();
+        to_bitField0_ |= 0x00000008;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -3912,6 +4003,9 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
         baseProcessorVersion_ = other.baseProcessorVersion_;
         bitField0_ |= 0x00000040;
         onChanged();
+      }
+      if (other.hasProcessorVersionOverrides()) {
+        mergeProcessorVersionOverrides(other.getProcessorVersionOverrides());
       }
       switch (other.getProcessorFlagsCase()) {
         case CUSTOM_DOCUMENT_EXTRACTION_OPTIONS:
@@ -4004,6 +4098,14 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
                 processorFlagsCase_ = 12;
                 break;
               } // case 98
+            case 106:
+              {
+                input.readMessage(
+                    internalGetProcessorVersionOverridesFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 106
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -5501,6 +5603,227 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
       bitField0_ |= 0x00000040;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.documentai.v1beta3.ProcessorVersionOverrides
+        processorVersionOverrides_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.documentai.v1beta3.ProcessorVersionOverrides,
+            com.google.cloud.documentai.v1beta3.ProcessorVersionOverrides.Builder,
+            com.google.cloud.documentai.v1beta3.ProcessorVersionOverridesOrBuilder>
+        processorVersionOverridesBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Options to override structures in the base processor version.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1beta3.ProcessorVersionOverrides processor_version_overrides = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the processorVersionOverrides field is set.
+     */
+    public boolean hasProcessorVersionOverrides() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Options to override structures in the base processor version.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1beta3.ProcessorVersionOverrides processor_version_overrides = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The processorVersionOverrides.
+     */
+    public com.google.cloud.documentai.v1beta3.ProcessorVersionOverrides
+        getProcessorVersionOverrides() {
+      if (processorVersionOverridesBuilder_ == null) {
+        return processorVersionOverrides_ == null
+            ? com.google.cloud.documentai.v1beta3.ProcessorVersionOverrides.getDefaultInstance()
+            : processorVersionOverrides_;
+      } else {
+        return processorVersionOverridesBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Options to override structures in the base processor version.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1beta3.ProcessorVersionOverrides processor_version_overrides = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setProcessorVersionOverrides(
+        com.google.cloud.documentai.v1beta3.ProcessorVersionOverrides value) {
+      if (processorVersionOverridesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        processorVersionOverrides_ = value;
+      } else {
+        processorVersionOverridesBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Options to override structures in the base processor version.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1beta3.ProcessorVersionOverrides processor_version_overrides = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setProcessorVersionOverrides(
+        com.google.cloud.documentai.v1beta3.ProcessorVersionOverrides.Builder builderForValue) {
+      if (processorVersionOverridesBuilder_ == null) {
+        processorVersionOverrides_ = builderForValue.build();
+      } else {
+        processorVersionOverridesBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Options to override structures in the base processor version.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1beta3.ProcessorVersionOverrides processor_version_overrides = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeProcessorVersionOverrides(
+        com.google.cloud.documentai.v1beta3.ProcessorVersionOverrides value) {
+      if (processorVersionOverridesBuilder_ == null) {
+        if (((bitField0_ & 0x00000080) != 0)
+            && processorVersionOverrides_ != null
+            && processorVersionOverrides_
+                != com.google.cloud.documentai.v1beta3.ProcessorVersionOverrides
+                    .getDefaultInstance()) {
+          getProcessorVersionOverridesBuilder().mergeFrom(value);
+        } else {
+          processorVersionOverrides_ = value;
+        }
+      } else {
+        processorVersionOverridesBuilder_.mergeFrom(value);
+      }
+      if (processorVersionOverrides_ != null) {
+        bitField0_ |= 0x00000080;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Options to override structures in the base processor version.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1beta3.ProcessorVersionOverrides processor_version_overrides = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearProcessorVersionOverrides() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      processorVersionOverrides_ = null;
+      if (processorVersionOverridesBuilder_ != null) {
+        processorVersionOverridesBuilder_.dispose();
+        processorVersionOverridesBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Options to override structures in the base processor version.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1beta3.ProcessorVersionOverrides processor_version_overrides = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.documentai.v1beta3.ProcessorVersionOverrides.Builder
+        getProcessorVersionOverridesBuilder() {
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return internalGetProcessorVersionOverridesFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Options to override structures in the base processor version.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1beta3.ProcessorVersionOverrides processor_version_overrides = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.documentai.v1beta3.ProcessorVersionOverridesOrBuilder
+        getProcessorVersionOverridesOrBuilder() {
+      if (processorVersionOverridesBuilder_ != null) {
+        return processorVersionOverridesBuilder_.getMessageOrBuilder();
+      } else {
+        return processorVersionOverrides_ == null
+            ? com.google.cloud.documentai.v1beta3.ProcessorVersionOverrides.getDefaultInstance()
+            : processorVersionOverrides_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Options to override structures in the base processor version.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1beta3.ProcessorVersionOverrides processor_version_overrides = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.documentai.v1beta3.ProcessorVersionOverrides,
+            com.google.cloud.documentai.v1beta3.ProcessorVersionOverrides.Builder,
+            com.google.cloud.documentai.v1beta3.ProcessorVersionOverridesOrBuilder>
+        internalGetProcessorVersionOverridesFieldBuilder() {
+      if (processorVersionOverridesBuilder_ == null) {
+        processorVersionOverridesBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.documentai.v1beta3.ProcessorVersionOverrides,
+                com.google.cloud.documentai.v1beta3.ProcessorVersionOverrides.Builder,
+                com.google.cloud.documentai.v1beta3.ProcessorVersionOverridesOrBuilder>(
+                getProcessorVersionOverrides(), getParentForChildren(), isClean());
+        processorVersionOverrides_ = null;
+      }
+      return processorVersionOverridesBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.documentai.v1beta3.TrainProcessorVersionRequest)

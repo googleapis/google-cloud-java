@@ -18,6 +18,7 @@ package com.google.cloud.dataform.v1beta1.stub;
 
 import static com.google.cloud.dataform.v1beta1.DataformClient.FetchRepositoryHistoryPagedResponse;
 import static com.google.cloud.dataform.v1beta1.DataformClient.FetchWorkspaceBranchesPagedResponse;
+import static com.google.cloud.dataform.v1beta1.DataformClient.FetchWorkspaceHistoryPagedResponse;
 import static com.google.cloud.dataform.v1beta1.DataformClient.ListCompilationResultsPagedResponse;
 import static com.google.cloud.dataform.v1beta1.DataformClient.ListLocationsPagedResponse;
 import static com.google.cloud.dataform.v1beta1.DataformClient.ListReleaseConfigsPagedResponse;
@@ -63,6 +64,7 @@ import com.google.cloud.dataform.v1beta1.CompilationResult;
 import com.google.cloud.dataform.v1beta1.ComputeRepositoryAccessTokenStatusRequest;
 import com.google.cloud.dataform.v1beta1.ComputeRepositoryAccessTokenStatusResponse;
 import com.google.cloud.dataform.v1beta1.Config;
+import com.google.cloud.dataform.v1beta1.CreateCompilationResultMetadata;
 import com.google.cloud.dataform.v1beta1.CreateCompilationResultRequest;
 import com.google.cloud.dataform.v1beta1.CreateFolderRequest;
 import com.google.cloud.dataform.v1beta1.CreateReleaseConfigRequest;
@@ -100,6 +102,8 @@ import com.google.cloud.dataform.v1beta1.FetchRepositoryHistoryRequest;
 import com.google.cloud.dataform.v1beta1.FetchRepositoryHistoryResponse;
 import com.google.cloud.dataform.v1beta1.FetchWorkspaceBranchesRequest;
 import com.google.cloud.dataform.v1beta1.FetchWorkspaceBranchesResponse;
+import com.google.cloud.dataform.v1beta1.FetchWorkspaceHistoryRequest;
+import com.google.cloud.dataform.v1beta1.FetchWorkspaceHistoryResponse;
 import com.google.cloud.dataform.v1beta1.Folder;
 import com.google.cloud.dataform.v1beta1.GetCompilationResultRequest;
 import com.google.cloud.dataform.v1beta1.GetConfigRequest;
@@ -220,6 +224,8 @@ public class HttpJsonDataformStub extends DataformStub {
           .add(DeleteRepositoryLongRunningResponse.getDescriptor())
           .add(DeleteRepositoryLongRunningMetadata.getDescriptor())
           .add(MoveRepositoryMetadata.getDescriptor())
+          .add(CreateCompilationResultMetadata.getDescriptor())
+          .add(CompilationResult.getDescriptor())
           .add(DeleteFolderTreeMetadata.getDescriptor())
           .add(MoveFolderMetadata.getDescriptor())
           .build();
@@ -1804,6 +1810,44 @@ public class HttpJsonDataformStub extends DataformStub {
               .build();
 
   private static final ApiMethodDescriptor<
+          FetchWorkspaceHistoryRequest, FetchWorkspaceHistoryResponse>
+      fetchWorkspaceHistoryMethodDescriptor =
+          ApiMethodDescriptor
+              .<FetchWorkspaceHistoryRequest, FetchWorkspaceHistoryResponse>newBuilder()
+              .setFullMethodName("google.cloud.dataform.v1beta1.Dataform/FetchWorkspaceHistory")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<FetchWorkspaceHistoryRequest>newBuilder()
+                      .setPath(
+                          "/v1beta1/{name=projects/*/locations/*/repositories/*/workspaces/*}:fetchHistory",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<FetchWorkspaceHistoryRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<FetchWorkspaceHistoryRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<FetchWorkspaceHistoryResponse>newBuilder()
+                      .setDefaultInstance(FetchWorkspaceHistoryResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
           CommitWorkspaceChangesRequest, CommitWorkspaceChangesResponse>
       commitWorkspaceChangesMethodDescriptor =
           ApiMethodDescriptor
@@ -2543,6 +2587,48 @@ public class HttpJsonDataformStub extends DataformStub {
                       .setDefaultInstance(CompilationResult.getDefaultInstance())
                       .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .build();
+
+  private static final ApiMethodDescriptor<CreateCompilationResultRequest, Operation>
+      createCompilationResultLongRunningMethodDescriptor =
+          ApiMethodDescriptor.<CreateCompilationResultRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.dataform.v1beta1.Dataform/CreateCompilationResultLongRunning")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CreateCompilationResultRequest>newBuilder()
+                      .setPath(
+                          "/v1beta1/{parent=projects/*/locations/*/repositories/*}/compilationResults:createLongRunning",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateCompilationResultRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateCompilationResultRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "compilationResult", request.getCompilationResult(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (CreateCompilationResultRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
               .build();
 
   private static final ApiMethodDescriptor<
@@ -3354,6 +3440,10 @@ public class HttpJsonDataformStub extends DataformStub {
       fetchFileGitStatusesCallable;
   private final UnaryCallable<FetchGitAheadBehindRequest, FetchGitAheadBehindResponse>
       fetchGitAheadBehindCallable;
+  private final UnaryCallable<FetchWorkspaceHistoryRequest, FetchWorkspaceHistoryResponse>
+      fetchWorkspaceHistoryCallable;
+  private final UnaryCallable<FetchWorkspaceHistoryRequest, FetchWorkspaceHistoryPagedResponse>
+      fetchWorkspaceHistoryPagedCallable;
   private final UnaryCallable<CommitWorkspaceChangesRequest, CommitWorkspaceChangesResponse>
       commitWorkspaceChangesCallable;
   private final UnaryCallable<ResetWorkspaceChangesRequest, ResetWorkspaceChangesResponse>
@@ -3392,6 +3482,11 @@ public class HttpJsonDataformStub extends DataformStub {
       getCompilationResultCallable;
   private final UnaryCallable<CreateCompilationResultRequest, CompilationResult>
       createCompilationResultCallable;
+  private final UnaryCallable<CreateCompilationResultRequest, Operation>
+      createCompilationResultLongRunningCallable;
+  private final OperationCallable<
+          CreateCompilationResultRequest, CompilationResult, CreateCompilationResultMetadata>
+      createCompilationResultLongRunningOperationCallable;
   private final UnaryCallable<
           QueryCompilationResultActionsRequest, QueryCompilationResultActionsResponse>
       queryCompilationResultActionsCallable;
@@ -4049,6 +4144,20 @@ public class HttpJsonDataformStub extends DataformStub {
                     })
                 .setResourceNameExtractor(request -> request.getName())
                 .build();
+    HttpJsonCallSettings<FetchWorkspaceHistoryRequest, FetchWorkspaceHistoryResponse>
+        fetchWorkspaceHistoryTransportSettings =
+            HttpJsonCallSettings
+                .<FetchWorkspaceHistoryRequest, FetchWorkspaceHistoryResponse>newBuilder()
+                .setMethodDescriptor(fetchWorkspaceHistoryMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
     HttpJsonCallSettings<CommitWorkspaceChangesRequest, CommitWorkspaceChangesResponse>
         commitWorkspaceChangesTransportSettings =
             HttpJsonCallSettings
@@ -4298,6 +4407,19 @@ public class HttpJsonDataformStub extends DataformStub {
         createCompilationResultTransportSettings =
             HttpJsonCallSettings.<CreateCompilationResultRequest, CompilationResult>newBuilder()
                 .setMethodDescriptor(createCompilationResultMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    HttpJsonCallSettings<CreateCompilationResultRequest, Operation>
+        createCompilationResultLongRunningTransportSettings =
+            HttpJsonCallSettings.<CreateCompilationResultRequest, Operation>newBuilder()
+                .setMethodDescriptor(createCompilationResultLongRunningMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
                 .setParamsExtractor(
                     request -> {
@@ -4791,6 +4913,16 @@ public class HttpJsonDataformStub extends DataformStub {
             fetchGitAheadBehindTransportSettings,
             settings.fetchGitAheadBehindSettings(),
             clientContext);
+    this.fetchWorkspaceHistoryCallable =
+        callableFactory.createUnaryCallable(
+            fetchWorkspaceHistoryTransportSettings,
+            settings.fetchWorkspaceHistorySettings(),
+            clientContext);
+    this.fetchWorkspaceHistoryPagedCallable =
+        callableFactory.createPagedCallable(
+            fetchWorkspaceHistoryTransportSettings,
+            settings.fetchWorkspaceHistorySettings(),
+            clientContext);
     this.commitWorkspaceChangesCallable =
         callableFactory.createUnaryCallable(
             commitWorkspaceChangesTransportSettings,
@@ -4889,6 +5021,17 @@ public class HttpJsonDataformStub extends DataformStub {
             createCompilationResultTransportSettings,
             settings.createCompilationResultSettings(),
             clientContext);
+    this.createCompilationResultLongRunningCallable =
+        callableFactory.createUnaryCallable(
+            createCompilationResultLongRunningTransportSettings,
+            settings.createCompilationResultLongRunningSettings(),
+            clientContext);
+    this.createCompilationResultLongRunningOperationCallable =
+        callableFactory.createOperationCallable(
+            createCompilationResultLongRunningTransportSettings,
+            settings.createCompilationResultLongRunningOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.queryCompilationResultActionsCallable =
         callableFactory.createUnaryCallable(
             queryCompilationResultActionsTransportSettings,
@@ -5045,6 +5188,7 @@ public class HttpJsonDataformStub extends DataformStub {
     methodDescriptors.add(pushGitCommitsMethodDescriptor);
     methodDescriptors.add(fetchFileGitStatusesMethodDescriptor);
     methodDescriptors.add(fetchGitAheadBehindMethodDescriptor);
+    methodDescriptors.add(fetchWorkspaceHistoryMethodDescriptor);
     methodDescriptors.add(commitWorkspaceChangesMethodDescriptor);
     methodDescriptors.add(resetWorkspaceChangesMethodDescriptor);
     methodDescriptors.add(fetchFileDiffMethodDescriptor);
@@ -5065,6 +5209,7 @@ public class HttpJsonDataformStub extends DataformStub {
     methodDescriptors.add(listCompilationResultsMethodDescriptor);
     methodDescriptors.add(getCompilationResultMethodDescriptor);
     methodDescriptors.add(createCompilationResultMethodDescriptor);
+    methodDescriptors.add(createCompilationResultLongRunningMethodDescriptor);
     methodDescriptors.add(queryCompilationResultActionsMethodDescriptor);
     methodDescriptors.add(listWorkflowConfigsMethodDescriptor);
     methodDescriptors.add(getWorkflowConfigMethodDescriptor);
@@ -5410,6 +5555,18 @@ public class HttpJsonDataformStub extends DataformStub {
   }
 
   @Override
+  public UnaryCallable<FetchWorkspaceHistoryRequest, FetchWorkspaceHistoryResponse>
+      fetchWorkspaceHistoryCallable() {
+    return fetchWorkspaceHistoryCallable;
+  }
+
+  @Override
+  public UnaryCallable<FetchWorkspaceHistoryRequest, FetchWorkspaceHistoryPagedResponse>
+      fetchWorkspaceHistoryPagedCallable() {
+    return fetchWorkspaceHistoryPagedCallable;
+  }
+
+  @Override
   public UnaryCallable<CommitWorkspaceChangesRequest, CommitWorkspaceChangesResponse>
       commitWorkspaceChangesCallable() {
     return commitWorkspaceChangesCallable;
@@ -5537,6 +5694,19 @@ public class HttpJsonDataformStub extends DataformStub {
   public UnaryCallable<CreateCompilationResultRequest, CompilationResult>
       createCompilationResultCallable() {
     return createCompilationResultCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateCompilationResultRequest, Operation>
+      createCompilationResultLongRunningCallable() {
+    return createCompilationResultLongRunningCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          CreateCompilationResultRequest, CompilationResult, CreateCompilationResultMetadata>
+      createCompilationResultLongRunningOperationCallable() {
+    return createCompilationResultLongRunningOperationCallable;
   }
 
   @Override

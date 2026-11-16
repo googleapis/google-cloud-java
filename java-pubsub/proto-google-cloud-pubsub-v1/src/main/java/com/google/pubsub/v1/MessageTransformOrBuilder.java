@@ -169,7 +169,7 @@ public interface MessageTransformOrBuilder
    * <code>bool enabled = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @deprecated google.pubsub.v1.MessageTransform.enabled is deprecated. See
-   *     google/pubsub/v1/pubsub.proto;l=922
+   *     google/pubsub/v1/pubsub.proto;l=925
    * @return The enabled.
    */
   @java.lang.Deprecated
