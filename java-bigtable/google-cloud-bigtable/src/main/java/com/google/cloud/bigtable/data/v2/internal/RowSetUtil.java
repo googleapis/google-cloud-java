@@ -344,8 +344,12 @@ public final class RowSetUtil {
       this.isClosed = isClosed;
     }
 
+    /**
+     * Returns the smallest row key included by this start bound. An open start bound {@code (k}
+     * starts at the immediate lexicographical successor of {@code k}, which is {@code k\0}.
+     */
     private ByteString effectiveKey() {
-      return isClosed ? value : value.concat(NULL_BYTE);
+      return (isClosed || value.isEmpty()) ? value : value.concat(NULL_BYTE);
     }
 
     @Override
@@ -383,6 +387,10 @@ public final class RowSetUtil {
       this.isClosed = isClosed;
     }
 
+    /**
+     * Returns the exclusive upper bound key for bounded endpoints. A closed end bound {@code k]} is
+     * equivalent to the open end bound {@code k\0)} at its immediate lexicographical successor.
+     */
     private ByteString effectiveLimit() {
       return (isClosed && !value.isEmpty()) ? value.concat(NULL_BYTE) : value;
     }

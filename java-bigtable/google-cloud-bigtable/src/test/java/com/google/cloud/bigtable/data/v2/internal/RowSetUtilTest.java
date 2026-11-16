@@ -365,6 +365,26 @@ public class RowSetUtilTest {
                 .addRowRanges(
                     RowRange.newBuilder().setStartKeyOpen(keyTrailer).setEndKeyOpen(endKey).build())
                 .build());
+
+    // [a\0, z) with large row a should remain [a\0, z) untouched
+    RowSet closedTrailerStartRowSet =
+        RowSet.newBuilder()
+            .addRowRanges(
+                RowRange.newBuilder().setStartKeyClosed(keyTrailer).setEndKeyOpen(endKey).build())
+            .build();
+    assertThat(RowSetUtil.eraseLargeRow(closedTrailerStartRowSet, key))
+        .isEqualTo(closedTrailerStartRowSet);
+
+    // [0, a] with large row a\0 should remain [0, a] untouched
+    RowSet closedEndRowSet =
+        RowSet.newBuilder()
+            .addRowRanges(
+                RowRange.newBuilder()
+                    .setStartKeyClosed(ByteString.copyFromUtf8("0"))
+                    .setEndKeyClosed(key)
+                    .build())
+            .build();
+    assertThat(RowSetUtil.eraseLargeRow(closedEndRowSet, keyTrailer)).isEqualTo(closedEndRowSet);
   }
 
   @Test
@@ -414,6 +434,36 @@ public class RowSetUtilTest {
     splits.add(keyTrailer);
 
     assertThat(RowSetUtil.shard(input, splits)).containsExactly(input);
+
+    // Sharding (a, a\0] at splitPoint a\0 should not split since (a is equivalent to [a\0
+    RowSet singleElementOpenStart =
+        RowSet.newBuilder()
+            .addRowRanges(
+                RowRange.newBuilder().setStartKeyOpen(key).setEndKeyClosed(keyTrailer).build())
+            .build();
+    assertThat(RowSetUtil.shard(singleElementOpenStart, splits))
+        .containsExactly(singleElementOpenStart);
+
+    // Sharding [a, a\0] at splitPoint a\0 should split into [a, a\0) and [a\0, a\0]
+    RowSet twoElementClosed =
+        RowSet.newBuilder()
+            .addRowRanges(
+                RowRange.newBuilder().setStartKeyClosed(key).setEndKeyClosed(keyTrailer).build())
+            .build();
+    assertThat(RowSetUtil.shard(twoElementClosed, splits))
+        .containsExactly(
+            RowSet.newBuilder()
+                .addRowRanges(
+                    RowRange.newBuilder().setStartKeyClosed(key).setEndKeyOpen(keyTrailer).build())
+                .build(),
+            RowSet.newBuilder()
+                .addRowRanges(
+                    RowRange.newBuilder()
+                        .setStartKeyClosed(keyTrailer)
+                        .setEndKeyClosed(keyTrailer)
+                        .build())
+                .build())
+        .inOrder();
   }
 
   @Test
