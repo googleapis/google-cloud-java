@@ -209,9 +209,7 @@ public class StatementTest {
       // Matching positional parameter count succeeds, ignoring '?' inside literals and comments.
       Statement valid =
           factory.withUnnamedParameters(
-              "SELECT '?' AS q, /* ? */ * FROM Users WHERE Id = ? AND Status = ?",
-              1234L,
-              "ACTIVE");
+              "SELECT '?' AS q, /* ? */ * FROM Users WHERE Id = ? AND Status = ?", 1234L, "ACTIVE");
       assertEquals(Value.toValue(1234L), valid.getParameters().get("p1"));
       assertEquals(Value.toValue("ACTIVE"), valid.getParameters().get("p2"));
 

@@ -2151,7 +2151,8 @@ public class ConnectionImplTest {
 
     try (ConnectionImpl connection =
         new ConnectionImpl(options, spannerPool, ddlClient, dbClient, mock(BatchClient.class))) {
-      // 1. Verify autocommit=true restores inTransaction, RETRY_ABORTS_INTERNALLY=false, and clears savepoints.
+      // 1. Verify autocommit=true restores inTransaction, RETRY_ABORTS_INTERNALLY=false, and clears
+      // savepoints.
       connection.setAutocommit(true);
       connection.setSavepointSupport(SavepointSupport.ENABLED);
       final java.util.concurrent.atomic.AtomicInteger autocommitAttempts =
@@ -2173,7 +2174,8 @@ public class ConnectionImplTest {
       assertFalse(connection.isInTransaction());
       assertTrue(connection.isRetryAbortsInternally());
 
-      // 2. Verify autocommit=false clears buffered mutations and savepoints across commit abort retry.
+      // 2. Verify autocommit=false clears buffered mutations and savepoints across commit abort
+      // retry.
       connection.setAutocommit(false);
       committedMutations.clear();
       final java.util.concurrent.atomic.AtomicInteger transactionalAttempts =

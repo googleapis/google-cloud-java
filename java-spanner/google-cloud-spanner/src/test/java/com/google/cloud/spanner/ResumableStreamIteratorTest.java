@@ -583,7 +583,8 @@ public class ResumableStreamIteratorTest {
             errorCodeParameter,
             "zero retry delay",
             errorCodeParameter.getGrpcStatus().asRuntimeException(zeroTrailers));
-    long zeroFallbackDelay = resumableStreamIterator.checkRetryBudgetAndGetDelay(zeroDelayException);
+    long zeroFallbackDelay =
+        resumableStreamIterator.checkRetryBudgetAndGetDelay(zeroDelayException);
     assertThat(zeroFallbackDelay).isAtLeast(50L);
     assertThat(zeroFallbackDelay).isAtMost(150L);
 
@@ -632,9 +633,7 @@ public class ResumableStreamIteratorTest {
     // Also verify default 32s cap when maxRetryDelay is not configured (0ms).
     initWithLimitAndRetrySettings(
         Integer.MAX_VALUE,
-        RetrySettings.newBuilder()
-            .setTotalTimeoutDuration(java.time.Duration.ofHours(24))
-            .build());
+        RetrySettings.newBuilder().setTotalTimeoutDuration(java.time.Duration.ofHours(24)).build());
     long defaultClampedDelay =
         resumableStreamIterator.checkRetryBudgetAndGetDelay(multiHourException);
     assertEquals(TimeUnit.SECONDS.toMillis(32L), defaultClampedDelay);
