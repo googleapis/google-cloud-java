@@ -31,14 +31,14 @@ class PoolSizerTest {
 
   private static final float IDLE_SESSION_HEADROOM_RATIO = 0.5f;
   private static final int MIN_IDLE_SESSIONS = 5;
-  private static final int MAX_IDLE_SESSIONS = 400;
+  private static final int MAX_SESSIONS = 400;
   private static final int PENDING_RPCS_PER_SESSION = 10;
 
   private static final SessionClientConfiguration.SessionPoolConfiguration DEFAULT_CONFIG =
       SessionClientConfiguration.SessionPoolConfiguration.newBuilder()
           .setHeadroom(IDLE_SESSION_HEADROOM_RATIO)
           .setMinSessionCount(MIN_IDLE_SESSIONS)
-          .setMaxSessionCount(MAX_IDLE_SESSIONS)
+          .setMaxSessionCount(MAX_SESSIONS)
           .setNewSessionQueueLength(PENDING_RPCS_PER_SESSION)
           .build();
 
@@ -193,7 +193,7 @@ class PoolSizerTest {
       int sessionsNeeded = forPending + stats.getInUseCount();
       int desiredIdleSessions = (int) Math.ceil(sessionsNeeded * IDLE_SESSION_HEADROOM_RATIO);
       desiredIdleSessions =
-          Math.max(Math.min(desiredIdleSessions, MAX_IDLE_SESSIONS), MIN_IDLE_SESSIONS);
+          Math.max(Math.min(desiredIdleSessions, MAX_SESSIONS), MIN_IDLE_SESSIONS);
       int desiredCapacity = sessionsNeeded + desiredIdleSessions;
 
       assertThat(sizer.getScaleDelta())
@@ -251,22 +251,22 @@ class PoolSizerTest {
   }
 
   @Test
-  void testDesiredCapacityCappedAtMaxIdleSessions() {
+  void testDesiredCapacityCappedAtMaxSessions() {
     PoolStats stats = new PoolStats();
     AtomicInteger pendingCount = new AtomicInteger(0);
     PoolSizer sizer = new PoolSizer(stats, pendingCount::get, DEFAULT_CONFIG);
 
-    // MAX_IDLE_SESSIONS in use + 2 ready -> immediateCapacity = MAX_IDLE_SESSIONS + 2.
-    // Total desiredCapacity is capped at MAX_IDLE_SESSIONS, so scaleDelta is -2.
-    stats.getTestHelper().setInUseCount(MAX_IDLE_SESSIONS);
+    // MAX_SESSIONS in use + 2 ready -> immediateCapacity = MAX_SESSIONS + 2.
+    // Total desiredCapacity is capped at MAX_SESSIONS, so scaleDelta is -2.
+    stats.getTestHelper().setInUseCount(MAX_SESSIONS);
     stats.getTestHelper().setReadyCount(2);
-    stats.getTestHelper().setExpectedCapacity(MAX_IDLE_SESSIONS + 2);
+    stats.getTestHelper().setExpectedCapacity(MAX_SESSIONS + 2);
     assertThat(sizer.getScaleDelta()).isEqualTo(-2);
 
-    // When MAX_IDLE_SESSIONS are in use and 50 RPCs are queued, scaleDelta must be 0
-    // rather than scaling above MAX_IDLE_SESSIONS.
+    // When MAX_SESSIONS are in use and 50 RPCs are queued, scaleDelta must be 0
+    // rather than scaling above MAX_SESSIONS.
     stats.getTestHelper().setReadyCount(0);
-    stats.getTestHelper().setExpectedCapacity(MAX_IDLE_SESSIONS);
+    stats.getTestHelper().setExpectedCapacity(MAX_SESSIONS);
     pendingCount.set(50);
     assertThat(sizer.getScaleDelta()).isEqualTo(0);
     assertThat(sizer.handleNewCall()).isFalse();
