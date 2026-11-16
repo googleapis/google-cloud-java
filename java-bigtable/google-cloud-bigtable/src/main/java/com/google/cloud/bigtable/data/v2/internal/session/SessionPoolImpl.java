@@ -144,6 +144,12 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
   @GuardedBy("poolLock")
   private int consecutiveFailures = 0;
 
+  @GuardedBy("poolLock")
+  private Status lastCloseStatus = Status.UNAVAILABLE;
+
+  @GuardedBy("poolLock")
+  private Metadata lastCloseTrailers = new Metadata();
+
   /**
    * When the client fallback to a non-session AFE session creation will return unimplemented
    * errors. In which case the requests should fallback to classic client instead of waiting for an
@@ -729,6 +735,8 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
         // rather than session establishment failures and should not fail pending vRPCs.
         if (prevState == SessionState.STARTING) {
           consecutiveFailures++;
+          lastCloseStatus = status;
+          lastCloseTrailers = trailers;
           if (status.getCode() == Status.Code.UNIMPLEMENTED) {
             consecutiveUnimplementedFailures++;
           } else {
@@ -955,6 +963,36 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
           VRpcResult result =
               VRpcResult.createRejectedError(
                   Status.UNAVAILABLE.withDescription("SessionPool configuration disabled"));
+          cancelWithResult(result);
+          return;
+        }
+        if (consecutiveFailures >= getMaxConsecutiveFailures(configManager)
+            && sessions.getStats().getReadyCount() == 0) {
+          if (poolSizer.handleNewCall()) {
+            createSession(openParams);
+          }
+          VRpcResult result =
+              VRpcResult.createRejectedError(
+                  Status.fromCode(lastCloseStatus.getCode())
+                      .withDescription(
+                          String.format(
+                              "Session failed with consecutive failures. Most recent server status:"
+                                  + " %s, metadata: %s.",
+                              lastCloseStatus, lastCloseTrailers)));
+          cancelWithResult(result);
+          return;
+        }
+        int maxPendingRpcs = poolSizer.getMaxPendingRpcs();
+        if (maxPendingRpcs > 0 && pendingRpcs.size() >= maxPendingRpcs) {
+          if (poolSizer.handleNewCall()) {
+            createSession(openParams);
+          }
+          VRpcResult result =
+              VRpcResult.createRejectedError(
+                  Status.RESOURCE_EXHAUSTED.withDescription(
+                      String.format(
+                          "SessionPool pending RPC queue is full (%d/%d)",
+                          pendingRpcs.size(), maxPendingRpcs)));
           cancelWithResult(result);
           return;
         }

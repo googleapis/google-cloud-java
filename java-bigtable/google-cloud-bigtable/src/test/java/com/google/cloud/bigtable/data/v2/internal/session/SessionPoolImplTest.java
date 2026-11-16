@@ -1488,6 +1488,119 @@ public class SessionPoolImplTest {
     assertThat(timeoutField.get(cancelledRpc)).isNull();
   }
 
+  @Test
+  void consecutiveFailuresFastFailsDuringBudgetLockout() throws Exception {
+    com.google.rpc.Status errorStatus =
+        com.google.rpc.Status.newBuilder()
+            .setCode(Code.INTERNAL_VALUE)
+            .setMessage("fake internal error")
+            .build();
+    OpenFakeSessionRequest request =
+        OpenFakeSessionRequest.newBuilder()
+            .setStreamError(
+                StreamError.newBuilder()
+                    .setStatus(errorStatus)
+                    .setDelay(Durations.fromMillis(0))
+                    .build())
+            .build();
+    sessionPool.start(request, new Metadata());
+
+    // Wait until all 20 initial SessionCreationBudget slots have been exhausted and closed
+    waitForOpenRequestCount(20, Duration.ofSeconds(5));
+
+    // A new call arriving during the 60s budget lockout must fail immediately instead of queueing
+    UnaryResponseFuture<SessionFakeScriptedResponse> f = new UnaryResponseFuture<>();
+    VRpc<SessionFakeScriptedRequest, SessionFakeScriptedResponse> rpc =
+        sessionPool.newCall(FakeDescriptor.SCRIPTED);
+    rpc.start(
+        SessionFakeScriptedRequest.getDefaultInstance(),
+        VRpcCallContext.create(Deadline.after(1, TimeUnit.MINUTES), true, vrpcTracer),
+        f);
+
+    ExecutionException ex =
+        assertThrows(ExecutionException.class, () -> f.get(1, TimeUnit.SECONDS));
+    assertThat(ex.getCause())
+        .hasMessageThat()
+        .contains("INTERNAL: Session failed with consecutive failures.");
+  }
+
+  @Test
+  void pendingRpcsQueueBoundRejectsExcessCalls() throws Exception {
+    try (ChannelPool delayedPool =
+        new SingleChannelPool(
+            Suppliers.ofInstance(
+                Grpc.newChannelBuilderForAddress(
+                        "localhost", server.getPort(), InsecureChannelCredentials.create())
+                    .intercept(new DelayedClientInterceptor(Duration.ofMillis(200)))
+                    .build()))) {
+      delayedPool.start();
+
+      ClientConfigurationManager boundedConfigManager = mock(ClientConfigurationManager.class);
+      ClientConfigurationManager.ListenerHandle handle =
+          mock(ClientConfigurationManager.ListenerHandle.class);
+      ArgumentCaptor<ClientConfigurationManager.ConfigListener> captor =
+          ArgumentCaptor.forClass(ClientConfigurationManager.ConfigListener.class);
+      when(boundedConfigManager.getClientConfiguration())
+          .thenReturn(ClientConfigurationManager.loadDefault());
+      when(boundedConfigManager.addListener(any(), captor.capture())).thenReturn(handle);
+
+      SessionPoolImpl<OpenFakeSessionRequest> boundedPool =
+          new SessionPoolImpl<>(
+              metrics,
+              FeatureFlags.getDefaultInstance(),
+              CLIENT_INFO,
+              boundedConfigManager,
+              delayedPool,
+              CallOptions.DEFAULT,
+              FakeDescriptor.FAKE_SESSION,
+              "bounded-pool",
+              testTimer,
+              MoreExecutors.directExecutor());
+      try {
+        // Set maxSessionCount=2, newSessionQueueLength=2 -> maxPendingRpcs = 4
+        SessionPoolConfiguration smallConfig =
+            ClientConfigurationManager.loadDefault()
+                .getSessionConfiguration()
+                .getSessionPoolConfiguration()
+                .toBuilder()
+                .setMinSessionCount(1)
+                .setMaxSessionCount(2)
+                .setNewSessionQueueLength(2)
+                .build();
+        captor.getValue().onChange(smallConfig);
+
+        boundedPool.start(OpenFakeSessionRequest.getDefaultInstance(), new Metadata());
+
+        for (int i = 0; i < 4; i++) {
+          UnaryResponseFuture<SessionFakeScriptedResponse> f = new UnaryResponseFuture<>();
+          VRpc<SessionFakeScriptedRequest, SessionFakeScriptedResponse> rpc =
+              boundedPool.newCall(FakeDescriptor.SCRIPTED);
+          rpc.start(
+              SessionFakeScriptedRequest.getDefaultInstance(),
+              VRpcCallContext.create(Deadline.after(1, TimeUnit.MINUTES), true, vrpcTracer),
+              f);
+        }
+
+        // 5th pending call exceeds maxPendingRpcs (4) and must be rejected immediately
+        UnaryResponseFuture<SessionFakeScriptedResponse> fifthFuture = new UnaryResponseFuture<>();
+        VRpc<SessionFakeScriptedRequest, SessionFakeScriptedResponse> fifthRpc =
+            boundedPool.newCall(FakeDescriptor.SCRIPTED);
+        fifthRpc.start(
+            SessionFakeScriptedRequest.getDefaultInstance(),
+            VRpcCallContext.create(Deadline.after(1, TimeUnit.MINUTES), true, vrpcTracer),
+            fifthFuture);
+
+        ExecutionException ex =
+            assertThrows(ExecutionException.class, () -> fifthFuture.get(1, TimeUnit.SECONDS));
+        assertThat(ex.getCause())
+            .hasMessageThat()
+            .contains("RESOURCE_EXHAUSTED: SessionPool pending RPC queue is full (4/4)");
+      } finally {
+        boundedPool.close(CloseSessionRequest.getDefaultInstance());
+      }
+    }
+  }
+
   private void waitForOpenRequestCount(int minCount, Duration timeout) throws InterruptedException {
     long deadline = System.currentTimeMillis() + timeout.toMillis();
     while (System.currentTimeMillis() < deadline) {

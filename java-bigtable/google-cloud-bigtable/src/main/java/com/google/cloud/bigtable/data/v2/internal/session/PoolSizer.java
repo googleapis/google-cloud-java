@@ -100,6 +100,14 @@ class PoolSizer {
     }
   }
 
+  /** Returns the maximum number of pending vRPCs allowed in the pool queue. */
+  int getMaxPendingRpcs() {
+    if (isDisabled()) {
+      return 0;
+    }
+    return maxIdleSessions * Math.max(1, pendingVRpcsPerSession);
+  }
+
   /** Returns true if the session should be replaced */
   @CheckReturnValue
   public boolean handleGoAway(GoAwayResponse msg) {
