@@ -694,6 +694,8 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
       SessionHandle handle, SessionState prevState, Status status, Metadata trailers) {
 
     List<PendingVRpc<?, ?>> toBeClosed = new ArrayList<>();
+    Status failureStatus = status;
+    Metadata failureTrailers = trailers;
 
     poolLock.lock();
     try {
@@ -727,8 +729,6 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
         return;
       }
 
-      Status failureStatus = status;
-      Metadata failureTrailers = trailers;
       // Handle abnormal close. This can happen if the Session was aborted due to underlying stream
       // termination
       if (prevState != SessionState.WAIT_SERVER_CLOSE) {
