@@ -46,6 +46,7 @@ import io.opentelemetry.api.trace.TraceFlags;
 import io.opentelemetry.api.trace.TraceState;
 import java.time.Duration;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.CopyOnWriteArrayList;
@@ -359,6 +360,29 @@ class CompositeTracerTest {
     }
 
     verify(scope2).close();
+  }
+
+  @Test
+  void testInScope_emptyAndSingleChildFastPath() {
+    CompositeTracer emptyTracer = new CompositeTracer(Collections.emptyList());
+    try (ApiTracer.Scope ignored = emptyTracer.inScope()) {
+      // no-op scope closes cleanly
+    }
+
+    ApiTracer.Scope singleScope =
+        mock(ApiTracer.Scope.class, Mockito.withSettings().withoutAnnotations());
+    when(child1.inScope()).thenReturn(singleScope);
+    CompositeTracer singleChildTracer = new CompositeTracer(Collections.singletonList(child1));
+    try (ApiTracer.Scope scope = singleChildTracer.inScope()) {
+      assertThat(scope).isSameInstanceAs(singleScope);
+    }
+    verify(singleScope).close();
+
+    when(child2.inScope()).thenReturn(null);
+    CompositeTracer singleNullScopeTracer = new CompositeTracer(Collections.singletonList(child2));
+    try (ApiTracer.Scope ignored = singleNullScopeTracer.inScope()) {
+      verify(child2).inScope();
+    }
   }
 
   @Test

@@ -45,6 +45,8 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @InternalApi
 class CompositeTracer extends BaseApiTracer {
+  private static final Scope NOOP_SCOPE = () -> {};
+
   private final List<ApiTracer> children;
 
   public CompositeTracer(List<ApiTracer> children) {
@@ -56,6 +58,13 @@ class CompositeTracer extends BaseApiTracer {
   @SuppressWarnings({"java:S2589", "java:S1181"})
   @Override
   public Scope inScope() {
+    if (children.isEmpty()) {
+      return NOOP_SCOPE;
+    }
+    if (children.size() == 1) {
+      Scope scope = children.get(0).inScope();
+      return scope != null ? scope : NOOP_SCOPE;
+    }
     final List<Scope> childScopes = new ArrayList<>(children.size());
 
     try {
