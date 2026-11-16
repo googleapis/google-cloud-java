@@ -84,7 +84,7 @@ class PoolSizer {
     int desiredIdleSessions =
         Math.max(Math.min(unboundedDesiredIdleSessions, maxIdleSessions), minIdleSessions);
 
-    int desiredCapacity = sessionsInUse + desiredIdleSessions;
+    int desiredCapacity = Math.min(sessionsInUse + desiredIdleSessions, maxIdleSessions);
     int eventualCapacity = stats.getExpectedCapacity();
     int immediateCapacity = eventualCapacity - stats.getStartingCount();
 

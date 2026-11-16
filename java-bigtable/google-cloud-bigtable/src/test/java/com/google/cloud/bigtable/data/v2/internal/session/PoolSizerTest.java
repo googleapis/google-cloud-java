@@ -249,4 +249,26 @@ class PoolSizerTest {
     assertThat(sizer.handleGoAway(GoAwayResponse.getDefaultInstance())).isFalse();
     assertThat(sizer.handleSessionClose(Status.getDefaultInstance())).isFalse();
   }
+
+  @Test
+  void testDesiredCapacityCappedAtMaxIdleSessions() {
+    PoolStats stats = new PoolStats();
+    AtomicInteger pendingCount = new AtomicInteger(0);
+    PoolSizer sizer = new PoolSizer(stats, pendingCount::get, DEFAULT_CONFIG);
+
+    // MAX_IDLE_SESSIONS in use + 2 ready -> immediateCapacity = MAX_IDLE_SESSIONS + 2.
+    // Total desiredCapacity is capped at MAX_IDLE_SESSIONS, so scaleDelta is -2.
+    stats.getTestHelper().setInUseCount(MAX_IDLE_SESSIONS);
+    stats.getTestHelper().setReadyCount(2);
+    stats.getTestHelper().setExpectedCapacity(MAX_IDLE_SESSIONS + 2);
+    assertThat(sizer.getScaleDelta()).isEqualTo(-2);
+
+    // When MAX_IDLE_SESSIONS are in use and 50 RPCs are queued, scaleDelta must be 0
+    // rather than scaling above MAX_IDLE_SESSIONS.
+    stats.getTestHelper().setReadyCount(0);
+    stats.getTestHelper().setExpectedCapacity(MAX_IDLE_SESSIONS);
+    pendingCount.set(50);
+    assertThat(sizer.getScaleDelta()).isEqualTo(0);
+    assertThat(sizer.handleNewCall()).isFalse();
+  }
 }
