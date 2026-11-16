@@ -45,6 +45,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutionException;
+import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TestName;
@@ -249,6 +250,7 @@ public class ITQueryCountTest extends ITBaseTest {
     assertThat(task.get().getCount()).isEqualTo(20);
   }
 
+  @Ignore("Flaky test: b/585596133")
   @Test
   public void inFlightAggregateQueriesShouldRunToCompletionWhenFirestoreIsShutDownForcefully()
       throws Exception {
