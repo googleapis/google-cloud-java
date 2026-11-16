@@ -4,9 +4,12 @@ target-it/**
 **/ITBigQueryJDBCLocalTest.java
 **/BigQueryStatementE2EBenchmark.java
 
-# Agent files: ignore local/generated content, but track shared skills.
+# Agent files: only shared skills are tracked; everything else is local.
+# .claude/skills is a symlink to .agents/skills, for Claude Code.
 .agents/*
 !.agents/skills/
+.claude/*
+!.claude/skills
 
 tools/**/*.class
 tools/**/drivers/**

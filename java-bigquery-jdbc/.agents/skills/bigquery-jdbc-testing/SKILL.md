@@ -7,10 +7,15 @@ description: Conventions for writing and refactoring unit and integration tests 
 
 Applies to `java-bigquery-jdbc/src/test/java/com/google/cloud/bigquery/jdbc/**`.
 
-- **Unit tests** live in `com.google.cloud.bigquery.jdbc` and extend
-  `BigQueryJdbcBaseTest` (directly or through `BigQueryJdbcLoggingBaseTest`).
-- **Integration tests** live in `com.google.cloud.bigquery.jdbc.it`, are named
-  `IT*`, and extend `ITBase`.
+- **Unit tests** live in `com.google.cloud.bigquery.jdbc`. A new test class that
+  needs the shared fixtures extends `BigQueryJdbcBaseTest`, or
+  `BigQueryJdbcLoggingBaseTest` when it asserts on log output.
+- **Integration tests** live in `com.google.cloud.bigquery.jdbc.it` and are
+  named `IT*`. A new one extends `ITBase` when it uses the shared connection,
+  datasets, or helpers.
+
+Many existing test classes extend neither base class. Leave their parent alone:
+don't re-parent a class unless that is the task you were given.
 
 Aim for tests that are short and read top to bottom: setup comes from shared
 fixtures, the test body holds only what is specific to the case, and repeated
@@ -34,7 +39,7 @@ Example:
 String url =
     getUriOAuthServiceAccount()
         .append("ProjectId", "project")
-        .append("universeDomain", TPC_UNIVERSE)
+        .append("universeDomain", "apis-tpczero.goog")
         .toString();
 ```
 
@@ -49,13 +54,21 @@ the assertions into one `private static` helper that takes the varying parts
 (credentials, endpoint URI, expected scopes, expected universe) as parameters.
 Each test then makes one call per object.
 
+This is how `BigQueryConnectionTest` does it. `TPC_UNIVERSE`, `storageUri` and
+`assertStorageCredentialsScoped` are private members of that class, not shared
+fixtures:
+
 ```java
 assertStorageCredentialsScoped(
     readClient.getSettings().getCredentialsProvider().getCredentials(),
-    TPC_UNIVERSE, TPC_READ_URI, BigQueryReadSettings.getDefaultServiceScopes());
+    TPC_UNIVERSE,
+    storageUri(TPC_UNIVERSE, "BigQueryRead"),
+    BigQueryReadSettings.getDefaultServiceScopes());
 assertStorageCredentialsScoped(
     writeClient.getSettings().getCredentialsProvider().getCredentials(),
-    TPC_UNIVERSE, TPC_WRITE_URI, BigQueryWriteSettings.getDefaultServiceScopes());
+    TPC_UNIVERSE,
+    storageUri(TPC_UNIVERSE, "BigQueryWrite"),
+    BigQueryWriteSettings.getDefaultServiceScopes());
 ```
 
 Put repeated literals (universe domains, endpoint URIs, scope lists) in
@@ -83,18 +96,19 @@ cases or weaken assertions (for example, changing `assertEquals` to
 
 ## 4. Integration tests: shared pieces belong in `ITBase`
 
+- Read `ITBase` before you add a query template or a check. It is the source of
+  truth for what is shared. It already has, for example,
+  `GENERATE_ARRAY_QUERY` (used as `String.format(GENERATE_ARRAY_QUERY, n)`),
+  `assertArrowResultSet(ResultSet)` (proves the High-Throughput, Storage Read
+  API path was taken), `resultSetRowCount(ResultSet)` and
+  `validateStatement(...)`.
 - If more than one `IT*` class uses the same query template or check, define it
-  once in `ITBase` as a `public static final` constant or a `protected`/`public
-  static` helper. Don't redefine it per class or inline the literal. Current
-  shared pieces:
-  - `GENERATE_ARRAY_QUERY` = `"SELECT * FROM UNNEST(GENERATE_ARRAY(1, %s));"`,
-    used with `String.format(GENERATE_ARRAY_QUERY, n)`.
-  - `assertArrowResultSet(ResultSet)`, which checks that the High-Throughput
-    (Storage Read) API path was taken.
-  - `resultSetRowCount(ResultSet)` and `validateStatement(...)`.
-- Don't shadow `ITBase` members with a same-named `private static final` field
-  that means something else (for example a class-local `BASE_QUERY` that is a
-  different query).
+  once in `ITBase`. Don't redefine it per class or inline the literal. Use the
+  least visibility that works: `protected static` is enough unless something
+  outside the `ITBase` hierarchy needs it.
+- Don't give a class-local constant or helper the same name as an `ITBase`
+  member. A same-named field that means something else hides the shared one and
+  misleads the reader.
 - Use try-with-resources for `Connection`, `Statement`, and `ResultSet`, or close
   them explicitly. IT suites share quotas.
 - `@Tag("disable_tpc")` excludes a test from TPC runs. Remove it only when the
@@ -103,9 +117,10 @@ cases or weaken assertions (for example, changing `assertEquals` to
 
 ## 5. Style and verification
 
-- Follow the repo `AGENTS.md`: least visibility (`private static` helpers),
-  short names over fully qualified names, no `@Deprecated`/`@ObsoleteApi`
-  calls, and no unrelated formatting changes.
+- Follow the repo and module `AGENTS.md`: least visibility (`private static`
+  helpers), short names over fully qualified names, no
+  `@Deprecated`/`@ObsoleteApi` calls, no Mockito mocks of final JDK types, and
+  no unrelated formatting changes.
 - Remove imports that the refactor makes unused (for example `KeyPairGenerator`,
   `PrivateKey`, `Base64`).
 - Run the formatter from `java-bigquery-jdbc/`:
@@ -113,8 +128,8 @@ cases or weaken assertions (for example, changing `assertEquals` to
   make lint   # mvn com.spotify.fmt:fmt-maven-plugin:format
   ```
   If the formatter fails with `NoSuchMethodError`, your JDK is too new for
-  google-java-format. Run it under an older JDK, for example
-  `JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64 make lint`.
+  google-java-format. Run it under JDK 17, which is what the CI lint job uses:
+  `JAVA_HOME=<path to a JDK 17> make lint`.
 - Run the affected unit tests:
   ```bash
   make unittest test=BigQueryConnectionTest
