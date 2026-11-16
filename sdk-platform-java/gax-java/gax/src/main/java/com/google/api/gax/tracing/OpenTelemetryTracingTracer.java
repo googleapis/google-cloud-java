@@ -86,6 +86,9 @@ class OpenTelemetryTracingTracer implements ApiTracer {
     if (currentSpan == null) {
       return () -> {};
     }
+    // Suppressing MustBeClosedChecker because the scope is closed indirectly via the returned
+    // Scope.
+    @SuppressWarnings("MustBeClosedChecker")
     io.opentelemetry.context.Scope otelScope = currentSpan.makeCurrent();
     return otelScope::close;
   }
