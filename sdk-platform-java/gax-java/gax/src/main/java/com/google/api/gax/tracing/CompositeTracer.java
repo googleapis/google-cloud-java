@@ -45,26 +45,16 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @InternalApi
 class CompositeTracer extends BaseApiTracer {
-  private static final Scope NOOP_SCOPE = () -> {};
-
   private final List<ApiTracer> children;
 
   public CompositeTracer(List<ApiTracer> children) {
     this.children = ImmutableList.copyOf(children);
   }
 
-  // Unstubbed Mockito mocks of ApiTracer may return null despite @NullMarked, and Error is caught
-  // alongside RuntimeException solely to close already-opened scopes before rethrowing.
-  @SuppressWarnings({"java:S2589", "java:S1181"})
+  // Unstubbed Mockito mocks of ApiTracer may return null despite @NullMarked.
+  @SuppressWarnings("java:S2589")
   @Override
   public Scope inScope() {
-    if (children.isEmpty()) {
-      return NOOP_SCOPE;
-    }
-    if (children.size() == 1) {
-      Scope scope = children.get(0).inScope();
-      return scope != null ? scope : NOOP_SCOPE;
-    }
     final List<Scope> childScopes = new ArrayList<>(children.size());
 
     try {
@@ -74,52 +64,32 @@ class CompositeTracer extends BaseApiTracer {
           childScopes.add(childScope);
         }
       }
-    } catch (RuntimeException | Error e) {
+    } catch (RuntimeException e) {
       for (int i = childScopes.size() - 1; i >= 0; i--) {
         try {
           childScopes.get(i).close();
-        } catch (RuntimeException | Error suppressed) {
+        } catch (RuntimeException suppressed) {
           e.addSuppressed(suppressed);
         }
       }
       throw e;
     }
 
-    if (childScopes.isEmpty()) {
-      return NOOP_SCOPE;
-    }
-    if (childScopes.size() == 1) {
-      return childScopes.get(0);
-    }
-
-    // Scope is thread-bound and must be closed on the same thread that opened it.
-    return new Scope() {
-      private boolean closed;
-
-      @Override
-      public void close() {
-        if (closed) {
-          return;
-        }
-        closed = true;
-        Throwable primaryError = null;
-        for (int i = childScopes.size() - 1; i >= 0; i--) {
-          try {
-            childScopes.get(i).close();
-          } catch (RuntimeException | Error e) {
-            if (primaryError == null) {
-              primaryError = e;
-            } else {
-              primaryError.addSuppressed(e);
-            }
+    return () -> {
+      RuntimeException exception = null;
+      for (int i = childScopes.size() - 1; i >= 0; i--) {
+        try {
+          childScopes.get(i).close();
+        } catch (RuntimeException e) {
+          if (exception == null) {
+            exception = e;
+          } else {
+            exception.addSuppressed(e);
           }
         }
-        if (primaryError instanceof RuntimeException) {
-          throw (RuntimeException) primaryError;
-        }
-        if (primaryError instanceof Error) {
-          throw (Error) primaryError;
-        }
+      }
+      if (exception != null) {
+        throw exception;
       }
     };
   }
