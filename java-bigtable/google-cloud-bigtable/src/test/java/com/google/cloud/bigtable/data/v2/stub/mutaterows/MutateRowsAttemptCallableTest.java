@@ -53,6 +53,7 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.junit.Before;
 import org.junit.Test;
@@ -495,7 +496,7 @@ public class MutateRowsAttemptCallableTest {
   }
 
   @Test
-  public void perCallRetrySettingsMaxAttemptsOverrideTest() {
+  public void perCallRetrySettingsMaxAttemptsOverrideTest() throws Exception {
     MutateRowsRequest request =
         MutateRowsRequest.newBuilder().addEntries(Entry.getDefaultInstance()).build();
     final UnavailableException rpcError =
@@ -545,8 +546,8 @@ public class MutateRowsAttemptCallableTest {
 
       Throwable actualError = null;
       try {
-        retryingCallable.futureCall(request, perCallContext).get();
-      } catch (Throwable t) {
+        retryingCallable.futureCall(request, perCallContext).get(10, TimeUnit.SECONDS);
+      } catch (ExecutionException t) {
         actualError = t.getCause();
       }
       assertThat(actualError).isInstanceOf(MutateRowsException.class);
