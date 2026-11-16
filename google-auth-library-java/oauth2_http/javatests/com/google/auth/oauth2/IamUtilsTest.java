@@ -410,4 +410,35 @@ class IamUtilsTest {
         "Error code 403 trying to sign provided bytes: Permission denied",
         exception.getCause().getMessage());
   }
+
+  @Test
+  void sign_4xxErrorWithJsonNullBody_throwsSigningExceptionNotNullPointerException() {
+    // A JSON null body parses to Data.nullOf(GenericData.class), not a Java null, so the missing
+    // "error" field is reported as a parse error with the status code.
+    MockHttpTransport transport =
+        new MockHttpTransport.Builder()
+            .setLowLevelHttpResponse(
+                new MockLowLevelHttpResponse()
+                    .setStatusCode(HttpStatusCodes.STATUS_CODE_UNAUTHORIZED)
+                    .setReasonPhrase("Unauthorized")
+                    .setContentType("application/json")
+                    .setContent("null"))
+            .build();
+
+    ServiceAccountSigner.SigningException exception =
+        assertThrows(
+            ServiceAccountSigner.SigningException.class,
+            () ->
+                IamUtils.sign(
+                    CLIENT_EMAIL,
+                    credentials,
+                    Credentials.GOOGLE_DEFAULT_UNIVERSE,
+                    transport,
+                    new byte[] {0xD, 0xE, 0xA, 0xD},
+                    ImmutableMap.of()));
+    assertTrue(exception.getCause() instanceof IOException);
+    assertTrue(
+        exception.getCause().getMessage().startsWith("Error parsing error message response."),
+        exception.getCause().getMessage());
+  }
 }
