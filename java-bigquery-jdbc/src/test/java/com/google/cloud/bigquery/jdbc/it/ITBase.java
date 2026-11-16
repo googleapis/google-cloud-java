@@ -284,6 +284,11 @@ public class ITBase extends BigQueryJdbcBaseTest {
       getBaseConnectionUrl() + "ProjectId=" + DEFAULT_CATALOG + ";OAuthType=3;Timeout=3600;";
   public static final BigQuery bigQuery = BigQueryJdbcBaseTest.getBigQuery(connectionUrl);
 
+  /**
+   * Query template returning rows 1..N; use with {@code String.format(GENERATE_ARRAY_QUERY, n)}.
+   */
+  public static final String GENERATE_ARRAY_QUERY = "SELECT * FROM UNNEST(GENERATE_ARRAY(1, %s));";
+
   public static final String FORCE_READ_API_PROPERTIES =
       ";EnableHighThroughputAPI=1;HighThroughputActivationRatio=0;HighThroughputMinTableSize=0;";
 
@@ -436,6 +441,11 @@ public class ITBase extends BigQueryJdbcBaseTest {
     JsonObject authJson = getAuthJson();
     return GoogleCredentials.fromStream(
         new ByteArrayInputStream(authJson.toString().getBytes(StandardCharsets.UTF_8)));
+  }
+
+  /** Asserts that the result set was served by the Storage Read (High-Throughput) API. */
+  protected static void assertArrowResultSet(ResultSet resultSet) {
+    assertTrue(resultSet.getClass().getName().contains("BigQueryArrowResultSet"));
   }
 
   protected int resultSetRowCount(ResultSet resultSet) throws SQLException {

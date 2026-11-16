@@ -34800,33 +34800,45 @@ NEW_CONNECTION;
 @EXPECT EXCEPTION INVALID_ARGUMENT
 set/-proto_descriptors='protodescriptorsbase64';
 NEW_CONNECTION;
+@EXPECT EXCEPTION INVALID_ARGUMENT
 set proto_descriptors_file_path='src/test/resources/com/google/cloud/spanner/descriptors.pb';
 NEW_CONNECTION;
+@EXPECT EXCEPTION INVALID_ARGUMENT
 SET PROTO_DESCRIPTORS_FILE_PATH='SRC/TEST/RESOURCES/COM/GOOGLE/CLOUD/SPANNER/DESCRIPTORS.PB';
 NEW_CONNECTION;
+@EXPECT EXCEPTION INVALID_ARGUMENT
 set proto_descriptors_file_path='src/test/resources/com/google/cloud/spanner/descriptors.pb';
 NEW_CONNECTION;
+@EXPECT EXCEPTION INVALID_ARGUMENT
    set proto_descriptors_file_path='src/test/resources/com/google/cloud/spanner/descriptors.pb';
 NEW_CONNECTION;
+@EXPECT EXCEPTION INVALID_ARGUMENT
 			set proto_descriptors_file_path='src/test/resources/com/google/cloud/spanner/descriptors.pb';
 NEW_CONNECTION;
+@EXPECT EXCEPTION INVALID_ARGUMENT
 
 
 
 set proto_descriptors_file_path='src/test/resources/com/google/cloud/spanner/descriptors.pb';
 NEW_CONNECTION;
+@EXPECT EXCEPTION INVALID_ARGUMENT
 set proto_descriptors_file_path='src/test/resources/com/google/cloud/spanner/descriptors.pb'  ;
 NEW_CONNECTION;
+@EXPECT EXCEPTION INVALID_ARGUMENT
 set proto_descriptors_file_path='src/test/resources/com/google/cloud/spanner/descriptors.pb'		;
 NEW_CONNECTION;
+@EXPECT EXCEPTION INVALID_ARGUMENT
 set proto_descriptors_file_path='src/test/resources/com/google/cloud/spanner/descriptors.pb'
 
 ;
 NEW_CONNECTION;
+@EXPECT EXCEPTION INVALID_ARGUMENT
 set   proto_descriptors_file_path='src/test/resources/com/google/cloud/spanner/descriptors.pb';
 NEW_CONNECTION;
+@EXPECT EXCEPTION INVALID_ARGUMENT
 set	proto_descriptors_file_path='src/test/resources/com/google/cloud/spanner/descriptors.pb';
 NEW_CONNECTION;
+@EXPECT EXCEPTION INVALID_ARGUMENT
 set
 proto_descriptors_file_path='src/test/resources/com/google/cloud/spanner/descriptors.pb';
 NEW_CONNECTION;
@@ -35197,33 +35209,45 @@ NEW_CONNECTION;
 @EXPECT EXCEPTION UNIMPLEMENTED
 show variable/-proto_descriptors;
 NEW_CONNECTION;
+@EXPECT EXCEPTION INVALID_ARGUMENT
 show variable proto_descriptors_file_path;
 NEW_CONNECTION;
+@EXPECT EXCEPTION INVALID_ARGUMENT
 SHOW VARIABLE PROTO_DESCRIPTORS_FILE_PATH;
 NEW_CONNECTION;
+@EXPECT EXCEPTION INVALID_ARGUMENT
 show variable proto_descriptors_file_path;
 NEW_CONNECTION;
+@EXPECT EXCEPTION INVALID_ARGUMENT
    show variable proto_descriptors_file_path;
 NEW_CONNECTION;
+@EXPECT EXCEPTION INVALID_ARGUMENT
 			show variable proto_descriptors_file_path;
 NEW_CONNECTION;
+@EXPECT EXCEPTION INVALID_ARGUMENT
 
 
 
 show variable proto_descriptors_file_path;
 NEW_CONNECTION;
+@EXPECT EXCEPTION INVALID_ARGUMENT
 show variable proto_descriptors_file_path  ;
 NEW_CONNECTION;
+@EXPECT EXCEPTION INVALID_ARGUMENT
 show variable proto_descriptors_file_path		;
 NEW_CONNECTION;
+@EXPECT EXCEPTION INVALID_ARGUMENT
 show variable proto_descriptors_file_path
 
 ;
 NEW_CONNECTION;
+@EXPECT EXCEPTION INVALID_ARGUMENT
 show   variable   proto_descriptors_file_path;
 NEW_CONNECTION;
+@EXPECT EXCEPTION INVALID_ARGUMENT
 show	variable	proto_descriptors_file_path;
 NEW_CONNECTION;
+@EXPECT EXCEPTION INVALID_ARGUMENT
 show
 variable
 proto_descriptors_file_path;
