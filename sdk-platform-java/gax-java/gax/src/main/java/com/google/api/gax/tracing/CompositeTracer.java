@@ -51,6 +51,8 @@ class CompositeTracer extends BaseApiTracer {
     this.children = ImmutableList.copyOf(children);
   }
 
+  // Unstubbed Mockito mocks of ApiTracer may return null despite @NullMarked.
+  @SuppressWarnings("java:S2589")
   @Override
   public Scope inScope() {
     final List<Scope> childScopes = new ArrayList<>(children.size());

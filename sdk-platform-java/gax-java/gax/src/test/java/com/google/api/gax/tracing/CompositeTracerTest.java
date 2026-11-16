@@ -392,6 +392,7 @@ class CompositeTracerTest {
             if (current == null) {
               return () -> {};
             }
+            @SuppressWarnings("MustBeClosedChecker")
             io.opentelemetry.context.Scope otelScope = current.makeCurrent();
             return otelScope::close;
           }
