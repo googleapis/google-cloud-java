@@ -40,6 +40,12 @@ import org.jspecify.annotations.NullMarked;
  * A composite implementation of {@link ApiTracer} that delegates all tracing events to a list of
  * underlying tracers.
  *
+ * <p>Completion and failure callbacks execute asynchronously on background worker threads where no
+ * trace span is active on thread-local storage. Wrapping those callbacks in {@code try (Scope
+ * ignored = inScope())} briefly activates the current span on the callback thread before any child
+ * tracer ends it, allowing sibling tracers (such as logging and metrics) to correlate error logs
+ * and metric exemplars with the active span before the scope closes on the same thread.
+ *
  * <p>For internal use only.
  */
 @NullMarked
@@ -94,6 +100,8 @@ class CompositeTracer extends BaseApiTracer {
     };
   }
 
+  // Activate the operation span on the callback thread before any child ends it so sibling
+  // tracers (e.g., metrics exemplars and operation error logs) observe the active span.
   @Override
   public void operationSucceeded() {
     try (Scope ignored = inScope()) {
@@ -143,6 +151,8 @@ class CompositeTracer extends BaseApiTracer {
     }
   }
 
+  // Activate the attempt span on the callback thread before any child ends it so sibling
+  // tracers (e.g., attempt debug error logs) observe the active span.
   @Override
   public void attemptSucceeded() {
     try (Scope ignored = inScope()) {

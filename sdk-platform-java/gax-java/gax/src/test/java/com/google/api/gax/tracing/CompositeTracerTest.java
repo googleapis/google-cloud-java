@@ -333,6 +333,8 @@ class CompositeTracerTest {
     Throwable error = new RuntimeException("test error");
     compositeTracer.operationFailed(error);
 
+    // Scopes open in forward order, callbacks dispatch in reverse order, and scopes close in LIFO
+    // order.
     InOrder inOrder = inOrder(child1, child2, scope1, scope2);
     inOrder.verify(child1).inScope();
     inOrder.verify(child2).inScope();
@@ -404,6 +406,8 @@ class CompositeTracerTest {
 
           @Override
           public void attemptFailedDuration(Throwable error, Duration delay) {
+            // Simulates OpenTelemetryTracingTracer ending attemptSpan and falling back to
+            // operationSpan.
             activeSpanRef.set(operationSpan);
           }
 
@@ -420,9 +424,11 @@ class CompositeTracerTest {
                 outerLoggingTracer,
                 new CompositeTracer(Arrays.asList(innerMetricsTracer, innerTracingTracer))));
 
+    // Start the attempt on the caller thread; no long-lived scope should remain open.
     nestedTracer.attemptStarted(new Object(), 0);
     assertThat(Span.current().getSpanContext().isValid()).isFalse();
 
+    // Dispatch failure callbacks on a separate worker thread, matching async GAX RPC completion.
     ExecutorService executor = Executors.newSingleThreadExecutor();
     try {
       executor
@@ -440,6 +446,8 @@ class CompositeTracerTest {
       executor.shutdownNow();
     }
 
+    // Attempt failure logged under attemptSpan; operation failure logged/recorded under
+    // operationSpan.
     assertThat(outerLoggingContexts).hasSize(2);
     assertThat(outerLoggingContexts.get(0)).isEqualTo(attemptSpan.getSpanContext());
     assertThat(outerLoggingContexts.get(1)).isEqualTo(operationSpan.getSpanContext());
