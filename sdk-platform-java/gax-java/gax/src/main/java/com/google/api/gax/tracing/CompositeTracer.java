@@ -57,7 +57,11 @@ class CompositeTracer extends BaseApiTracer {
     this.children = ImmutableList.copyOf(children);
   }
 
-  // Unstubbed Mockito mocks of ApiTracer may return null despite @NullMarked.
+  /**
+   * Opens a scope on each child tracer in forward order and returns a composite scope that closes
+   * them in reverse (LIFO) order. Null scopes (for example, from unstubbed {@link ApiTracer} mocks
+   * in tests) are ignored.
+   */
   @SuppressWarnings("java:S2589")
   @Override
   public Scope inScope() {
@@ -100,8 +104,10 @@ class CompositeTracer extends BaseApiTracer {
     };
   }
 
-  // Activate the operation span on the callback thread before any child ends it so sibling
-  // tracers (e.g., metrics exemplars and operation error logs) observe the active span.
+  /**
+   * Activates the operation span on the callback thread before any child ends it so sibling tracers
+   * (such as metrics exemplars) observe the active span during completion.
+   */
   @Override
   public void operationSucceeded() {
     try (Scope ignored = inScope()) {
@@ -111,6 +117,10 @@ class CompositeTracer extends BaseApiTracer {
     }
   }
 
+  /**
+   * Activates the operation span on the callback thread before any child ends it so sibling tracers
+   * (such as metrics exemplars and cancellation logs) observe the active span.
+   */
   @Override
   public void operationCancelled() {
     try (Scope ignored = inScope()) {
@@ -120,6 +130,10 @@ class CompositeTracer extends BaseApiTracer {
     }
   }
 
+  /**
+   * Activates the operation span on the callback thread before any child ends it so sibling tracers
+   * (such as metrics exemplars and ERROR-level logs) observe the active span.
+   */
   @Override
   public void operationFailed(Throwable error) {
     try (Scope ignored = inScope()) {
@@ -151,8 +165,10 @@ class CompositeTracer extends BaseApiTracer {
     }
   }
 
-  // Activate the attempt span on the callback thread before any child ends it so sibling
-  // tracers (e.g., attempt debug error logs) observe the active span.
+  /**
+   * Activates the attempt span on the callback thread before any child ends it so sibling tracers
+   * observe the active attempt span during completion.
+   */
   @Override
   public void attemptSucceeded() {
     try (Scope ignored = inScope()) {
@@ -162,6 +178,10 @@ class CompositeTracer extends BaseApiTracer {
     }
   }
 
+  /**
+   * Activates the attempt span on the callback thread before any child ends it so sibling tracers
+   * observe the active attempt span on cancellation.
+   */
   @Override
   public void attemptCancelled() {
     try (Scope ignored = inScope()) {
@@ -171,6 +191,10 @@ class CompositeTracer extends BaseApiTracer {
     }
   }
 
+  /**
+   * Activates the attempt span on the callback thread before any child ends it so sibling tracers
+   * (such as DEBUG-level retry logs) observe the active attempt span.
+   */
   @Override
   public void attemptFailed(Throwable error, org.threeten.bp.Duration delay) {
     try (Scope ignored = inScope()) {
@@ -180,6 +204,10 @@ class CompositeTracer extends BaseApiTracer {
     }
   }
 
+  /**
+   * Activates the attempt span on the callback thread before any child ends it so sibling tracers
+   * (such as DEBUG-level retry logs) observe the active attempt span.
+   */
   @Override
   public void attemptFailedDuration(Throwable error, java.time.Duration delay) {
     try (Scope ignored = inScope()) {
@@ -189,6 +217,10 @@ class CompositeTracer extends BaseApiTracer {
     }
   }
 
+  /**
+   * Activates the attempt span on the callback thread before any child ends it so sibling tracers
+   * (such as DEBUG-level exhausted-retry logs) observe the active attempt span.
+   */
   @Override
   public void attemptFailedRetriesExhausted(Throwable error) {
     try (Scope ignored = inScope()) {
@@ -198,6 +230,10 @@ class CompositeTracer extends BaseApiTracer {
     }
   }
 
+  /**
+   * Activates the attempt span on the callback thread before any child ends it so sibling tracers
+   * (such as DEBUG-level permanent-failure logs) observe the active attempt span.
+   */
   @Override
   public void attemptPermanentFailure(Throwable error) {
     try (Scope ignored = inScope()) {
