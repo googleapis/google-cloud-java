@@ -20,6 +20,7 @@ import com.google.bigtable.v2.GoAwayResponse;
 import com.google.bigtable.v2.SessionClientConfiguration;
 import com.google.cloud.bigtable.data.v2.internal.session.SessionList.PoolStats;
 import com.google.rpc.Status;
+import java.util.function.IntSupplier;
 import javax.annotation.CheckReturnValue;
 
 class PoolSizer {
@@ -28,11 +29,12 @@ class PoolSizer {
   // example, a headroom of 50% will keep enough sessions to deal with a 50% increase in QPS or a
   // 50% increase in latency (since that also increases requests-in-flight).
   private float idlesSessionHeadRoom;
-  private int minSessions;
-  private int maxSessions;
+  private int minIdleSessions;
+  private int maxIdleSessions;
 
   private final PoolStats stats;
   private final Sized pendingRpcs;
+  private final IntSupplier consecutiveFailures;
 
   // This resolves cold start overprovisioning issue.
   // Session creation sometimes involves creating new connection and warming the backend.
@@ -41,6 +43,7 @@ class PoolSizer {
   // We assume that it is okay to collect 10 pending calls per starting session so that after
   // the session is ready it takes 10-40ms to process all pending calls.
   private int pendingVRpcsPerSession;
+  private int maxConsecutiveFailures;
 
   private boolean disabled;
 
@@ -52,20 +55,30 @@ class PoolSizer {
       PoolStats stats,
       Sized pendingRpcs,
       SessionClientConfiguration.SessionPoolConfiguration poolConfig) {
+    this(stats, pendingRpcs, () -> 0, poolConfig);
+  }
+
+  PoolSizer(
+      PoolStats stats,
+      Sized pendingRpcs,
+      IntSupplier consecutiveFailures,
+      SessionClientConfiguration.SessionPoolConfiguration poolConfig) {
     this.stats = stats;
     this.pendingRpcs = pendingRpcs;
+    this.consecutiveFailures = consecutiveFailures;
     updateConfig(poolConfig);
   }
 
   void updateConfig(SessionClientConfiguration.SessionPoolConfiguration poolConfiguration) {
     this.idlesSessionHeadRoom = poolConfiguration.getHeadroom();
-    this.minSessions = poolConfiguration.getMinSessionCount();
-    this.maxSessions = poolConfiguration.getMaxSessionCount();
+    this.minIdleSessions = poolConfiguration.getMinSessionCount();
+    this.maxIdleSessions = poolConfiguration.getMaxSessionCount();
     this.pendingVRpcsPerSession = poolConfiguration.getNewSessionQueueLength();
+    this.maxConsecutiveFailures = poolConfiguration.getConsecutiveSessionFailureThreshold();
     this.disabled =
         poolConfiguration.equals(
                 SessionClientConfiguration.SessionPoolConfiguration.getDefaultInstance())
-            || this.maxSessions <= 0;
+            || this.maxIdleSessions <= 0;
   }
 
   boolean isDisabled() {
@@ -76,23 +89,32 @@ class PoolSizer {
     if (isDisabled()) {
       return 0;
     }
+    int failures = consecutiveFailures.getAsInt();
     // Assume each session handles 1 RPC at a time. This should be revisited if sessions get
     // support for multiplexing.
+    // Ignore queued pendingRpcs while session establishment is failing so queued requests do not
+    // drive unbounded session creation.
     int effectivePending =
-        pendingVRpcsPerSession > 0
-            ? (int) Math.ceil((float) pendingRpcs.getSize() / pendingVRpcsPerSession)
-            : pendingRpcs.getSize();
+        failures > 0
+            ? 0
+            : (pendingVRpcsPerSession > 0
+                ? (int) Math.ceil((float) pendingRpcs.getSize() / pendingVRpcsPerSession)
+                : pendingRpcs.getSize());
     int sessionsInUse = effectivePending + stats.getInUseCount();
-    int desiredIdleSessions = (int) Math.ceil(sessionsInUse * idlesSessionHeadRoom);
+    int unboundedDesiredIdleSessions = (int) Math.ceil(sessionsInUse * idlesSessionHeadRoom);
+    int desiredIdleSessions =
+        Math.max(Math.min(unboundedDesiredIdleSessions, maxIdleSessions), minIdleSessions);
 
-    int desiredCapacity =
-        Math.min(Math.max(sessionsInUse + desiredIdleSessions, minSessions), maxSessions);
+    int desiredCapacity = sessionsInUse + desiredIdleSessions;
     int eventualCapacity = stats.getExpectedCapacity();
     int immediateCapacity = eventualCapacity - stats.getStartingCount();
 
     if (desiredCapacity < immediateCapacity) {
       return desiredCapacity - immediateCapacity;
     } else if (desiredCapacity > eventualCapacity) {
+      if (maxConsecutiveFailures > 0 && failures >= maxConsecutiveFailures) {
+        return stats.getStartingCount() == 0 ? 1 : 0;
+      }
       return desiredCapacity - eventualCapacity;
     } else {
       return 0;

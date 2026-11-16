@@ -256,6 +256,7 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
         new PoolSizer(
             sessions.getStats(),
             pendingRpcs::size,
+            () -> consecutiveFailures,
             configManager
                 .getClientConfiguration()
                 .getSessionConfiguration()
@@ -597,6 +598,7 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
           "Session {0} in state {1}",
           new Object[] {handle.getSession().getLogName(), handle.getSession().getState()});
 
+      boolean wasFailingToOpen = consecutiveFailures > 0;
       consecutiveFailures = 0;
       consecutiveUnimplementedFailures = 0;
 
@@ -618,6 +620,14 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
 
       // handle pending rpcs
       tryDrainPendingRpcs();
+
+      if (wasFailingToOpen) {
+        while (poolSizer.getScaleDelta() > 0) {
+          if (!createSession(openParams)) {
+            break;
+          }
+        }
+      }
     } finally {
       poolLock.unlock();
     }
