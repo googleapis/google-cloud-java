@@ -30,6 +30,7 @@ import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.testing.FakeStatusCode;
 import com.google.common.collect.Lists;
 import com.google.protobuf.FieldMask;
+import com.google.protobuf.Timestamp;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -84,6 +85,8 @@ public class DaiAuthenticationKeyServiceClientTest {
             .setName(
                 DaiAuthenticationKeyName.of("[NETWORK_CODE]", "[DAI_AUTHENTICATION_KEY]")
                     .toString())
+            .setKey("key106079")
+            .setCreateTime(Timestamp.newBuilder().build())
             .setDisplayName("displayName1714148973")
             .build();
     mockService.addResponse(expectedResponse);
@@ -133,6 +136,8 @@ public class DaiAuthenticationKeyServiceClientTest {
             .setName(
                 DaiAuthenticationKeyName.of("[NETWORK_CODE]", "[DAI_AUTHENTICATION_KEY]")
                     .toString())
+            .setKey("key106079")
+            .setCreateTime(Timestamp.newBuilder().build())
             .setDisplayName("displayName1714148973")
             .build();
     mockService.addResponse(expectedResponse);
@@ -282,6 +287,8 @@ public class DaiAuthenticationKeyServiceClientTest {
             .setName(
                 DaiAuthenticationKeyName.of("[NETWORK_CODE]", "[DAI_AUTHENTICATION_KEY]")
                     .toString())
+            .setKey("key106079")
+            .setCreateTime(Timestamp.newBuilder().build())
             .setDisplayName("displayName1714148973")
             .build();
     mockService.addResponse(expectedResponse);
@@ -332,6 +339,8 @@ public class DaiAuthenticationKeyServiceClientTest {
             .setName(
                 DaiAuthenticationKeyName.of("[NETWORK_CODE]", "[DAI_AUTHENTICATION_KEY]")
                     .toString())
+            .setKey("key106079")
+            .setCreateTime(Timestamp.newBuilder().build())
             .setDisplayName("displayName1714148973")
             .build();
     mockService.addResponse(expectedResponse);
@@ -476,6 +485,8 @@ public class DaiAuthenticationKeyServiceClientTest {
             .setName(
                 DaiAuthenticationKeyName.of("[NETWORK_CODE]", "[DAI_AUTHENTICATION_KEY]")
                     .toString())
+            .setKey("key106079")
+            .setCreateTime(Timestamp.newBuilder().build())
             .setDisplayName("displayName1714148973")
             .build();
     mockService.addResponse(expectedResponse);
@@ -485,6 +496,8 @@ public class DaiAuthenticationKeyServiceClientTest {
             .setName(
                 DaiAuthenticationKeyName.of("[NETWORK_CODE]", "[DAI_AUTHENTICATION_KEY]")
                     .toString())
+            .setKey("key106079")
+            .setCreateTime(Timestamp.newBuilder().build())
             .setDisplayName("displayName1714148973")
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
@@ -521,6 +534,8 @@ public class DaiAuthenticationKeyServiceClientTest {
               .setName(
                   DaiAuthenticationKeyName.of("[NETWORK_CODE]", "[DAI_AUTHENTICATION_KEY]")
                       .toString())
+              .setKey("key106079")
+              .setCreateTime(Timestamp.newBuilder().build())
               .setDisplayName("displayName1714148973")
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();

@@ -431,6 +431,49 @@ public interface WorkerPoolRevisionTemplateOrBuilder
    *
    *
    * <pre>
+   * Optional. Configuration for sandboxes.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.run.v2.SandboxConfiguration sandboxes = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the sandboxes field is set.
+   */
+  boolean hasSandboxes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for sandboxes.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.run.v2.SandboxConfiguration sandboxes = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The sandboxes.
+   */
+  com.google.cloud.run.v2.SandboxConfiguration getSandboxes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for sandboxes.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.run.v2.SandboxConfiguration sandboxes = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.run.v2.SandboxConfigurationOrBuilder getSandboxesOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. A list of Volumes to make available to containers.
    * </pre>
    *
@@ -713,4 +756,56 @@ public interface WorkerPoolRevisionTemplateOrBuilder
    * @return The gpuZonalRedundancyDisabled.
    */
   boolean getGpuZonalRedundancyDisabled();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Arbitrary identifier for the API client.
+   * </pre>
+   *
+   * <code>string client = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The client.
+   */
+  java.lang.String getClient();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Arbitrary identifier for the API client.
+   * </pre>
+   *
+   * <code>string client = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for client.
+   */
+  com.google.protobuf.ByteString getClientBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Arbitrary version identifier for the API client.
+   * </pre>
+   *
+   * <code>string client_version = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The clientVersion.
+   */
+  java.lang.String getClientVersion();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Arbitrary version identifier for the API client.
+   * </pre>
+   *
+   * <code>string client_version = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for clientVersion.
+   */
+  com.google.protobuf.ByteString getClientVersionBytes();
 }

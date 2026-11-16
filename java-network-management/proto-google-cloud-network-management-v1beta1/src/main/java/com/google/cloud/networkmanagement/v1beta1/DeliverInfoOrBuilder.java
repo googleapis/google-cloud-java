@@ -57,6 +57,9 @@ public interface DeliverInfoOrBuilder
    *
    * <pre>
    * URI of the resource that the packet is delivered to.
+   * For example:
+   * * `"projects/{project}/zones/{zone}/instances/{instance}"`
+   * * `"projects/{project}/regions/{region}/networkEndpointGroups/{network_endpoint_group}"`
    * </pre>
    *
    * <code>string resource_uri = 2;</code>
@@ -70,6 +73,9 @@ public interface DeliverInfoOrBuilder
    *
    * <pre>
    * URI of the resource that the packet is delivered to.
+   * For example:
+   * * `"projects/{project}/zones/{zone}/instances/{instance}"`
+   * * `"projects/{project}/regions/{region}/networkEndpointGroups/{network_endpoint_group}"`
    * </pre>
    *
    * <code>string resource_uri = 2;</code>

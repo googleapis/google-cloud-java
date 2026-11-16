@@ -23,6 +23,7 @@ import static com.google.cloud.spanner.connection.ConnectionOptions.determineHos
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertThrows;
 import static org.junit.Assert.assertTrue;
@@ -42,6 +43,7 @@ import com.google.cloud.spanner.SpannerException;
 import com.google.cloud.spanner.SpannerOptions;
 import com.google.cloud.spanner.omni.SpannerOmniCredentials;
 import com.google.common.collect.ImmutableMap;
+import com.google.common.hash.Hashing;
 import com.google.common.io.BaseEncoding;
 import com.google.common.io.Files;
 import java.io.File;
@@ -970,8 +972,26 @@ public class ConnectionOptionsTest {
 
           ConnectionOptions options = ConnectionOptions.newBuilder().setUri(uri).build();
           assertEquals(
+              "encoded:" + Hashing.sha256().hashString(encoded, StandardCharsets.UTF_8).toString(),
+              options.getEncodedCredentialsHash());
+          assertNull(
+              options.getInitialConnectionPropertyValue(ConnectionProperties.ENCODED_CREDENTIALS));
+          assertEquals(
               new CredentialsService().createCredentials(FILE_TEST_PATH), options.getCredentials());
         });
+  }
+
+  @Test
+  public void testOAuthTokenCredentials() {
+    String uri =
+        "cloudspanner:/projects/test-project/instances/test-instance/databases/test-database?oauthToken=my-secret-token";
+    ConnectionOptions options = ConnectionOptions.newBuilder().setUri(uri).build();
+    assertEquals(
+        "oauth:"
+            + Hashing.sha256().hashString("my-secret-token", StandardCharsets.UTF_8).toString(),
+        options.getOAuthTokenHash());
+    assertNull(options.getInitialConnectionPropertyValue(ConnectionProperties.OAUTH_TOKEN));
+    assertNotNull(options.getCredentials());
   }
 
   @Test

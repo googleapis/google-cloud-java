@@ -132,6 +132,14 @@ public final class K8sMinProto extends com.google.protobuf.GeneratedFile {
       internal_static_google_cloud_run_v2_SourceCode_CloudStorageSource_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_run_v2_SourceCode_CloudStorageSource_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_run_v2_SourceCode_SourceFile_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_run_v2_SourceCode_SourceFile_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_run_v2_SourceCode_InlinedSource_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_run_v2_SourceCode_InlinedSource_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -143,7 +151,7 @@ public final class K8sMinProto extends com.google.protobuf.GeneratedFile {
     java.lang.String[] descriptorData = {
       "\n"
           + "!google/cloud/run/v2/k8s.min.proto\022\023goo"
-          + "gle.cloud.run.v2\032\037google/api/field_behavior.proto\032\031google/api/resource.proto\"\364\004\n"
+          + "gle.cloud.run.v2\032\037google/api/field_behavior.proto\032\031google/api/resource.proto\"\256\005\n"
           + "\tContainer\022\014\n"
           + "\004name\030\001 \001(\t\022\023\n"
           + "\005image\030\002 \001(\tB\004\342A\001\002\022:\n"
@@ -164,10 +172,12 @@ public final class K8sMinProto extends com.google.protobuf.GeneratedFile {
           + "\016base_image_uri\030\r"
           + " \001(\t\0228\n\n"
           + "build_info\030\017"
-          + " \001(\0132\036.google.cloud.run.v2.BuildInfoB\004\342A\001\003\"\271\001\n"
+          + " \001(\0132\036.google.cloud.run.v2.BuildInfoB\004\342A\001\003\022#\n"
+          + "\020sandbox_launcher\030\026 \001(\010B\004\342A\001\001H\000\210\001\001B\023\n"
+          + "\021_sandbox_launcher\"\271\001\n"
           + "\024ResourceRequirements\022E\n"
-          + "\006limits\030\001 \003(\01325.google.cl"
-          + "oud.run.v2.ResourceRequirements.LimitsEntry\022\020\n"
+          + "\006limits\030\001"
+          + " \003(\01325.google.cloud.run.v2.ResourceRequirements.LimitsEntry\022\020\n"
           + "\010cpu_idle\030\002 \001(\010\022\031\n"
           + "\021startup_cpu_boost\030\003 \001(\010\032-\n"
           + "\013LimitsEntry\022\013\n"
@@ -196,8 +206,8 @@ public final class K8sMinProto extends com.google.protobuf.GeneratedFile {
           + "\006Volume\022\022\n"
           + "\004name\030\001 \001(\tB\004\342A\001\002\0229\n"
           + "\006secret\030\002 \001(\0132\'.google.cloud.run.v2.SecretVolumeSourceH\000\022C\n"
-          + "\022cloud_sql_instance\030\003"
-          + " \001(\0132%.google.cloud.run.v2.CloudSqlInstanceH\000\022>\n"
+          + "\022cloud_sql_instance\030\003 \001(\0132%."
+          + "google.cloud.run.v2.CloudSqlInstanceH\000\022>\n"
           + "\tempty_dir\030\004 \001(\0132).google.cloud.run.v2.EmptyDirVolumeSourceH\000\0223\n"
           + "\003nfs\030\005 \001(\0132$.google.cloud.run.v2.NFSVolumeSourceH\000\0223\n"
           + "\003gcs\030\006 \001(\0132$.google.cloud.run.v2.GCSVolumeSourceH\000B\r\n"
@@ -211,14 +221,15 @@ public final class K8sMinProto extends com.google.protobuf.GeneratedFile {
           + "\007version\030\002 \001(\t\022\014\n"
           + "\004mode\030\003 \001(\005\"%\n"
           + "\020CloudSqlInstance\022\021\n"
-          + "\tinstances\030\001 \003(\t\"\232\001\n"
+          + "\tinstances\030\001 \003(\t\"\244\001\n"
           + "\024EmptyDirVolumeSource\022@\n"
-          + "\006medium\030\001 \001(\01620.google."
-          + "cloud.run.v2.EmptyDirVolumeSource.Medium\022\022\n\n"
-          + "size_limit\030\002 \001(\t\",\n"
+          + "\006medium\030\001"
+          + " \001(\01620.google.cloud.run.v2.EmptyDirVolumeSource.Medium\022\022\n\n"
+          + "size_limit\030\002 \001(\t\"6\n"
           + "\006Medium\022\026\n"
           + "\022MEDIUM_UNSPECIFIED\020\000\022\n\n"
-          + "\006MEMORY\020\001\"B\n"
+          + "\006MEMORY\020\001\022\010\n"
+          + "\004DISK\020\002\"B\n"
           + "\017NFSVolumeSource\022\016\n"
           + "\006server\030\001 \001(\t\022\014\n"
           + "\004path\030\002 \001(\t\022\021\n"
@@ -232,12 +243,12 @@ public final class K8sMinProto extends com.google.protobuf.GeneratedFile {
           + "\017timeout_seconds\030\002 \001(\005B\004\342A\001\001\022\034\n"
           + "\016period_seconds\030\003 \001(\005B\004\342A\001\001\022\037\n"
           + "\021failure_threshold\030\004 \001(\005B\004\342A\001\001\022<\n"
-          + "\010http_get\030\005"
-          + " \001(\0132\".google.cloud.run.v2.HTTPGetActionB\004\342A\001\001H\000\022@\n\n"
-          + "tcp_socket\030\006 \001(\0132$.goo"
-          + "gle.cloud.run.v2.TCPSocketActionB\004\342A\001\001H\000\0225\n"
-          + "\004grpc\030\007"
-          + " \001(\0132\037.google.cloud.run.v2.GRPCActionB\004\342A\001\001H\000B\014\n\n"
+          + "\010http_get\030\005 \001(\0132\""
+          + ".google.cloud.run.v2.HTTPGetActionB\004\342A\001\001H\000\022@\n\n"
+          + "tcp_socket\030\006"
+          + " \001(\0132$.google.cloud.run.v2.TCPSocketActionB\004\342A\001\001H\000\0225\n"
+          + "\004grpc\030\007 \001"
+          + "(\0132\037.google.cloud.run.v2.GRPCActionB\004\342A\001\001H\000B\014\n\n"
           + "probe_type\"t\n\r"
           + "HTTPGetAction\022\022\n"
           + "\004path\030\001 \001(\tB\004\342A\001\001\022;\n"
@@ -254,24 +265,32 @@ public final class K8sMinProto extends com.google.protobuf.GeneratedFile {
           + "\007service\030\002 \001(\tB\004\342A\001\001\"I\n"
           + "\tBuildInfo\022\035\n"
           + "\017function_target\030\001 \001(\tB\004\342A\001\003\022\035\n"
-          + "\017source_location\030\002 \001(\tB\004\342A\001\003\"\313\001\n\n"
+          + "\017source_location\030\002 \001(\tB\004\342A\001\003\"\257\003\n\n"
           + "SourceCode\022R\n"
           + "\024cloud_storage_source\030\001"
-          + " \001(\01322.google.cloud.run.v2.SourceCode.CloudStorageSourceH\000\032Z\n"
+          + " \001(\01322.google.cloud.run.v2.SourceCode.CloudStorageSourceH\000\022N\n"
+          + "\016inlined_source\030\002"
+          + " \001(\0132-.google.cloud.run.v2.SourceCode.InlinedSourceB\005\342A\002\001\004H\000\032Z\n"
           + "\022CloudStorageSource\022\024\n"
           + "\006bucket\030\001 \001(\tB\004\342A\001\002\022\024\n"
           + "\006object\030\002 \001(\tB\004\342A\001\002\022\030\n\n"
-          + "generation\030\003 \001(\003B\004\342A\001\001B\r\n"
+          + "generation\030\003 \001(\003B\004\342A\001\001\032=\n\n"
+          + "SourceFile\022\027\n"
+          + "\010filename\030\001 \001(\tB\005\342A\002\002\004\022\026\n"
+          + "\007content\030\002 \001(\tB\005\342A\002\002\004\032S\n\r"
+          + "InlinedSource\022B\n"
+          + "\007sources\030\001"
+          + " \003(\0132*.google.cloud.run.v2.SourceCode.SourceFileB\005\342A\002\002\004B\r\n"
           + "\013source_typeB\351\003\n"
-          + "\027com.google.cloud"
-          + ".run.v2B\013K8sMinProtoP\001Z)cloud.google.com/go/run/apiv2/runpb;runpb\352Ax\n"
-          + "!cloudkms.googleapis.com/CryptoKey\022Sprojects/{proje"
-          + "ct}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}\352AJ\n"
+          + "\027com.google.cloud.run.v2B\013K8sMinProtoP\001Z)"
+          + "cloud.google.com/go/run/apiv2/runpb;runpb\352Ax\n"
+          + "!cloudkms.googleapis.com/CryptoKey\022Sprojects/{project}/locations/{location}"
+          + "/keyRings/{key_ring}/cryptoKeys/{crypto_key}\352AJ\n"
           + "#secretmanager.googleapis.com/Secret\022#projects/{project}/secrets/{secret}\352Ad\n"
-          + "*secretmanager.googleapis.com/SecretVersion\0226projec"
-          + "ts/{project}/secrets/{secret}/versions/{version}\352Ad\n"
-          + "\"vpcaccess.googleapis.com/Connector\022>projects/{project}/locations/{l"
-          + "ocation}/connectors/{connector}b\006proto3"
+          + "*secretmanager.googleapis.com/Secre"
+          + "tVersion\0226projects/{project}/secrets/{secret}/versions/{version}\352Ad\n"
+          + "\"vpcaccess.googleapis.com/Connector\022>projects/{proje"
+          + "ct}/locations/{location}/connectors/{connector}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -301,6 +320,7 @@ public final class K8sMinProto extends com.google.protobuf.GeneratedFile {
               "DependsOn",
               "BaseImageUri",
               "BuildInfo",
+              "SandboxLauncher",
             });
     internal_static_google_cloud_run_v2_ResourceRequirements_descriptor =
         getDescriptor().getMessageType(1);
@@ -466,7 +486,7 @@ public final class K8sMinProto extends com.google.protobuf.GeneratedFile {
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_run_v2_SourceCode_descriptor,
             new java.lang.String[] {
-              "CloudStorageSource", "SourceType",
+              "CloudStorageSource", "InlinedSource", "SourceType",
             });
     internal_static_google_cloud_run_v2_SourceCode_CloudStorageSource_descriptor =
         internal_static_google_cloud_run_v2_SourceCode_descriptor.getNestedType(0);
@@ -475,6 +495,22 @@ public final class K8sMinProto extends com.google.protobuf.GeneratedFile {
             internal_static_google_cloud_run_v2_SourceCode_CloudStorageSource_descriptor,
             new java.lang.String[] {
               "Bucket", "Object", "Generation",
+            });
+    internal_static_google_cloud_run_v2_SourceCode_SourceFile_descriptor =
+        internal_static_google_cloud_run_v2_SourceCode_descriptor.getNestedType(1);
+    internal_static_google_cloud_run_v2_SourceCode_SourceFile_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_run_v2_SourceCode_SourceFile_descriptor,
+            new java.lang.String[] {
+              "Filename", "Content",
+            });
+    internal_static_google_cloud_run_v2_SourceCode_InlinedSource_descriptor =
+        internal_static_google_cloud_run_v2_SourceCode_descriptor.getNestedType(2);
+    internal_static_google_cloud_run_v2_SourceCode_InlinedSource_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_run_v2_SourceCode_InlinedSource_descriptor,
+            new java.lang.String[] {
+              "Sources",
             });
     descriptor.resolveAllFeaturesImmutable();
     com.google.api.FieldBehaviorProto.getDescriptor();

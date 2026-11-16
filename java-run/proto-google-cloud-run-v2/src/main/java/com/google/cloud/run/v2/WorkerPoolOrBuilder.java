@@ -1210,7 +1210,7 @@ public interface WorkerPoolOrBuilder
    * <code>repeated string custom_audiences = 37 [deprecated = true];</code>
    *
    * @deprecated google.cloud.run.v2.WorkerPool.custom_audiences is deprecated. See
-   *     google/cloud/run/v2/worker_pool.proto;l=459
+   *     google/cloud/run/v2/worker_pool.proto;l=462
    * @return A list containing the customAudiences.
    */
   @java.lang.Deprecated
@@ -1226,7 +1226,7 @@ public interface WorkerPoolOrBuilder
    * <code>repeated string custom_audiences = 37 [deprecated = true];</code>
    *
    * @deprecated google.cloud.run.v2.WorkerPool.custom_audiences is deprecated. See
-   *     google/cloud/run/v2/worker_pool.proto;l=459
+   *     google/cloud/run/v2/worker_pool.proto;l=462
    * @return The count of customAudiences.
    */
   @java.lang.Deprecated
@@ -1242,7 +1242,7 @@ public interface WorkerPoolOrBuilder
    * <code>repeated string custom_audiences = 37 [deprecated = true];</code>
    *
    * @deprecated google.cloud.run.v2.WorkerPool.custom_audiences is deprecated. See
-   *     google/cloud/run/v2/worker_pool.proto;l=459
+   *     google/cloud/run/v2/worker_pool.proto;l=462
    * @param index The index of the element to return.
    * @return The customAudiences at the given index.
    */
@@ -1259,7 +1259,7 @@ public interface WorkerPoolOrBuilder
    * <code>repeated string custom_audiences = 37 [deprecated = true];</code>
    *
    * @deprecated google.cloud.run.v2.WorkerPool.custom_audiences is deprecated. See
-   *     google/cloud/run/v2/worker_pool.proto;l=459
+   *     google/cloud/run/v2/worker_pool.proto;l=462
    * @param index The index of the value to return.
    * @return The bytes of the customAudiences at the given index.
    */

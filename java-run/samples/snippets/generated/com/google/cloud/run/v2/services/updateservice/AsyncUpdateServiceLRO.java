@@ -42,6 +42,7 @@ public class AsyncUpdateServiceLRO {
               .setService(Service.newBuilder().build())
               .setValidateOnly(true)
               .setAllowMissing(true)
+              .setForceNewRevision(true)
               .build();
       OperationFuture<Service, Service> future =
           servicesClient.updateServiceOperationCallable().futureCall(request);

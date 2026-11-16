@@ -42,6 +42,7 @@ public class SyncListMessages {
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
               .setFilter("filter-1274492040")
+              .setPendingWriteWaitSkipped(true)
               .build();
       for (StorageMessage element : dataChatServiceClient.listMessages(request).iterateAll()) {
         // doThingsWith(element);

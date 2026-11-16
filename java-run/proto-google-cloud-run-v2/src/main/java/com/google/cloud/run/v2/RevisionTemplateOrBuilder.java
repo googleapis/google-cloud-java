@@ -451,7 +451,7 @@ public interface RevisionTemplateOrBuilder
    *
    *
    * <pre>
-   * Holds the single container that defines the unit of execution for this
+   * Holds the list which define the units of execution for this
    * Revision.
    * </pre>
    *
@@ -463,7 +463,7 @@ public interface RevisionTemplateOrBuilder
    *
    *
    * <pre>
-   * Holds the single container that defines the unit of execution for this
+   * Holds the list which define the units of execution for this
    * Revision.
    * </pre>
    *
@@ -475,7 +475,7 @@ public interface RevisionTemplateOrBuilder
    *
    *
    * <pre>
-   * Holds the single container that defines the unit of execution for this
+   * Holds the list which define the units of execution for this
    * Revision.
    * </pre>
    *
@@ -487,7 +487,7 @@ public interface RevisionTemplateOrBuilder
    *
    *
    * <pre>
-   * Holds the single container that defines the unit of execution for this
+   * Holds the list which define the units of execution for this
    * Revision.
    * </pre>
    *
@@ -499,13 +499,56 @@ public interface RevisionTemplateOrBuilder
    *
    *
    * <pre>
-   * Holds the single container that defines the unit of execution for this
+   * Holds the list which define the units of execution for this
    * Revision.
    * </pre>
    *
    * <code>repeated .google.cloud.run.v2.Container containers = 10;</code>
    */
   com.google.cloud.run.v2.ContainerOrBuilder getContainersOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for sandboxes.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.run.v2.SandboxConfiguration sandboxes = 31 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the sandboxes field is set.
+   */
+  boolean hasSandboxes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for sandboxes.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.run.v2.SandboxConfiguration sandboxes = 31 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The sandboxes.
+   */
+  com.google.cloud.run.v2.SandboxConfiguration getSandboxes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for sandboxes.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.run.v2.SandboxConfiguration sandboxes = 31 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.run.v2.SandboxConfigurationOrBuilder getSandboxesOrBuilder();
 
   /**
    *
@@ -840,6 +883,49 @@ public interface RevisionTemplateOrBuilder
    *
    *
    * <pre>
+   * Optional. The Revision's workload identity settings.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.run.v2.WorkloadIdentityConfig workload_identity_config = 27 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the workloadIdentityConfig field is set.
+   */
+  boolean hasWorkloadIdentityConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Revision's workload identity settings.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.run.v2.WorkloadIdentityConfig workload_identity_config = 27 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The workloadIdentityConfig.
+   */
+  com.google.cloud.run.v2.WorkloadIdentityConfig getWorkloadIdentityConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Revision's workload identity settings.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.run.v2.WorkloadIdentityConfig workload_identity_config = 27 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.run.v2.WorkloadIdentityConfigOrBuilder getWorkloadIdentityConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. True if GPU zonal redundancy is disabled on this revision.
    * </pre>
    *
@@ -865,4 +951,99 @@ public interface RevisionTemplateOrBuilder
    * @return The gpuZonalRedundancyDisabled.
    */
   boolean getGpuZonalRedundancyDisabled();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Arbitrary identifier for the API client.
+   * </pre>
+   *
+   * <code>string client = 28 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The client.
+   */
+  java.lang.String getClient();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Arbitrary identifier for the API client.
+   * </pre>
+   *
+   * <code>string client = 28 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for client.
+   */
+  com.google.protobuf.ByteString getClientBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Arbitrary version identifier for the API client.
+   * </pre>
+   *
+   * <code>string client_version = 29 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The clientVersion.
+   */
+  java.lang.String getClientVersion();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Arbitrary version identifier for the API client.
+   * </pre>
+   *
+   * <code>string client_version = 29 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for clientVersion.
+   */
+  com.google.protobuf.ByteString getClientVersionBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The ambient networking configuration for this revision.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.run.v2.AmbientNetworking ambient_networking = 33 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the ambientNetworking field is set.
+   */
+  boolean hasAmbientNetworking();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The ambient networking configuration for this revision.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.run.v2.AmbientNetworking ambient_networking = 33 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The ambientNetworking.
+   */
+  com.google.cloud.run.v2.AmbientNetworking getAmbientNetworking();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The ambient networking configuration for this revision.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.run.v2.AmbientNetworking ambient_networking = 33 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.run.v2.AmbientNetworkingOrBuilder getAmbientNetworkingOrBuilder();
 }

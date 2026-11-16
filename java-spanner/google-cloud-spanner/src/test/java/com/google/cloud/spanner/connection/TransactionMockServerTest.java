@@ -302,6 +302,42 @@ public class TransactionMockServerTest extends AbstractMockServerTest {
   }
 
   @Test
+  public void testShowTransactionIsolationLevel() {
+    try {
+      for (IsolationLevel databaseDefault :
+          new IsolationLevel[] {
+            IsolationLevel.ISOLATION_LEVEL_UNSPECIFIED, IsolationLevel.REPEATABLE_READ
+          }) {
+        SpannerPool.closeSpannerPool();
+        mockSpanner.putStatementResult(
+            MockSpannerServiceImpl.StatementResult.detectDialectResult(
+                Dialect.POSTGRESQL, databaseDefault));
+        IsolationLevel effective =
+            isolationLevel == IsolationLevel.ISOLATION_LEVEL_UNSPECIFIED
+                ? databaseDefault
+                : isolationLevel;
+        String expected =
+            effective == IsolationLevel.REPEATABLE_READ ? "repeatable read" : "serializable";
+
+        try (Connection connection = createConnection()) {
+          assertEquals(expected, getSingleString(connection, "show transaction isolation level"));
+          assertEquals(expected, getSingleString(connection, "show transaction_isolation"));
+          assertEquals(expected, getSingleString(connection, "show default_transaction_isolation"));
+
+          connection.execute(Statement.of("set transaction isolation level repeatable read"));
+          assertEquals(
+              "repeatable read", getSingleString(connection, "show transaction_isolation"));
+          assertEquals(expected, getSingleString(connection, "show default_transaction_isolation"));
+        }
+      }
+    } finally {
+      SpannerPool.closeSpannerPool();
+      mockSpanner.putStatementResult(
+          MockSpannerServiceImpl.StatementResult.detectDialectResult(Dialect.GOOGLE_STANDARD_SQL));
+    }
+  }
+
+  @Test
   public void testTransactionTimeout() {
     // Use a fake ticker to be able to advance the clock without having to sleep for X ms.
     AtomicLong nanos = new AtomicLong();
@@ -397,6 +433,13 @@ public class TransactionMockServerTest extends AbstractMockServerTest {
         assertFalse(result.next());
       }
       connection.commit();
+    }
+  }
+
+  private static String getSingleString(Connection connection, String sql) {
+    try (ResultSet resultSet = connection.executeQuery(Statement.of(sql))) {
+      assertTrue(resultSet.next());
+      return resultSet.getString(0);
     }
   }
 }

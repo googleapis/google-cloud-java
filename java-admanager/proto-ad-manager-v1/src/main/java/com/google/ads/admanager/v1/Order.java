@@ -1141,17 +1141,64 @@ public final class Order extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. Indicates whether or not this Order has an end time.
+   * Output only. Deprecated: Indicates whether or not this Order has an end
+   * time.
    * </pre>
    *
-   * <code>optional bool unlimited_end_time = 45 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * <code>
+   * optional bool unlimited_end_time = 45 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
+   * @deprecated google.ads.admanager.v1.Order.unlimited_end_time is deprecated. See
+   *     google/ads/admanager/v1/order_messages.proto;l=144
    * @return Whether the unlimitedEndTime field is set.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean hasUnlimitedEndTime() {
     return ((bitField0_ & 0x00000400) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Deprecated: Indicates whether or not this Order has an end
+   * time.
+   * </pre>
+   *
+   * <code>
+   * optional bool unlimited_end_time = 45 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @deprecated google.ads.admanager.v1.Order.unlimited_end_time is deprecated. See
+   *     google/ads/admanager/v1/order_messages.proto;l=144
+   * @return The unlimitedEndTime.
+   */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public boolean getUnlimitedEndTime() {
+    return unlimitedEndTime_;
+  }
+
+  public static final int END_TIME_UNLIMITED_FIELD_NUMBER = 82;
+  private boolean endTimeUnlimited_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Indicates whether or not this Order has an end time.
+   * </pre>
+   *
+   * <code>optional bool end_time_unlimited = 82 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the endTimeUnlimited field is set.
+   */
+  @java.lang.Override
+  public boolean hasEndTimeUnlimited() {
+    return ((bitField0_ & 0x00000800) != 0);
   }
 
   /**
@@ -1161,14 +1208,14 @@ public final class Order extends com.google.protobuf.GeneratedMessage
    * Output only. Indicates whether or not this Order has an end time.
    * </pre>
    *
-   * <code>optional bool unlimited_end_time = 45 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * <code>optional bool end_time_unlimited = 82 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
-   * @return The unlimitedEndTime.
+   * @return The endTimeUnlimited.
    */
   @java.lang.Override
-  public boolean getUnlimitedEndTime() {
-    return unlimitedEndTime_;
+  public boolean getEndTimeUnlimited() {
+    return endTimeUnlimited_;
   }
 
   public static final int EXTERNAL_ORDER_ID_FIELD_NUMBER = 13;
@@ -1188,7 +1235,7 @@ public final class Order extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasExternalOrderId() {
-    return ((bitField0_ & 0x00000800) != 0);
+    return ((bitField0_ & 0x00001000) != 0);
   }
 
   /**
@@ -1224,7 +1271,7 @@ public final class Order extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasArchived() {
-    return ((bitField0_ & 0x00001000) != 0);
+    return ((bitField0_ & 0x00002000) != 0);
   }
 
   /**
@@ -1262,7 +1309,7 @@ public final class Order extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasLastModifiedByApp() {
-    return ((bitField0_ & 0x00002000) != 0);
+    return ((bitField0_ & 0x00004000) != 0);
   }
 
   /**
@@ -1333,7 +1380,7 @@ public final class Order extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasUpdateTime() {
-    return ((bitField0_ & 0x00004000) != 0);
+    return ((bitField0_ & 0x00008000) != 0);
   }
 
   /**
@@ -1389,7 +1436,7 @@ public final class Order extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasNotes() {
-    return ((bitField0_ & 0x00008000) != 0);
+    return ((bitField0_ & 0x00010000) != 0);
   }
 
   /**
@@ -1461,7 +1508,7 @@ public final class Order extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasPoNumber() {
-    return ((bitField0_ & 0x00010000) != 0);
+    return ((bitField0_ & 0x00020000) != 0);
   }
 
   /**
@@ -1532,7 +1579,7 @@ public final class Order extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasStatus() {
-    return ((bitField0_ & 0x00020000) != 0);
+    return ((bitField0_ & 0x00040000) != 0);
   }
 
   /**
@@ -1596,7 +1643,7 @@ public final class Order extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasSalesperson() {
-    return ((bitField0_ & 0x00040000) != 0);
+    return ((bitField0_ & 0x00080000) != 0);
   }
 
   /**
@@ -2114,7 +2161,7 @@ public final class Order extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasImpressionsDelivered() {
-    return ((bitField0_ & 0x00080000) != 0);
+    return ((bitField0_ & 0x00100000) != 0);
   }
 
   /**
@@ -2153,7 +2200,7 @@ public final class Order extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasTotalClicksDelivered() {
-    return ((bitField0_ & 0x00100000) != 0);
+    return ((bitField0_ & 0x00200000) != 0);
   }
 
   /**
@@ -2194,7 +2241,7 @@ public final class Order extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasTotalViewableImpressionsDelivered() {
-    return ((bitField0_ & 0x00200000) != 0);
+    return ((bitField0_ & 0x00400000) != 0);
   }
 
   /**
@@ -2267,31 +2314,31 @@ public final class Order extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000200) != 0)) {
       output.writeMessage(12, getEndTime());
     }
-    if (((bitField0_ & 0x00000800) != 0)) {
+    if (((bitField0_ & 0x00001000) != 0)) {
       output.writeInt32(13, externalOrderId_);
     }
-    if (((bitField0_ & 0x00001000) != 0)) {
+    if (((bitField0_ & 0x00002000) != 0)) {
       output.writeBool(14, archived_);
     }
-    if (((bitField0_ & 0x00002000) != 0)) {
+    if (((bitField0_ & 0x00004000) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 15, lastModifiedByApp_);
     }
-    if (((bitField0_ & 0x00004000) != 0)) {
+    if (((bitField0_ & 0x00008000) != 0)) {
       output.writeMessage(16, getUpdateTime());
     }
-    if (((bitField0_ & 0x00008000) != 0)) {
+    if (((bitField0_ & 0x00010000) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 17, notes_);
     }
-    if (((bitField0_ & 0x00010000) != 0)) {
+    if (((bitField0_ & 0x00020000) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 18, poNumber_);
     }
     if (((bitField0_ & 0x00000100) != 0)) {
       output.writeMessage(19, getStartTime());
     }
-    if (((bitField0_ & 0x00020000) != 0)) {
+    if (((bitField0_ & 0x00040000) != 0)) {
       output.writeEnum(20, status_);
     }
-    if (((bitField0_ & 0x00040000) != 0)) {
+    if (((bitField0_ & 0x00080000) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 21, salesperson_);
     }
     for (int i = 0; i < secondarySalespeople_.size(); i++) {
@@ -2315,17 +2362,20 @@ public final class Order extends com.google.protobuf.GeneratedMessage
     for (int i = 0; i < customFieldValues_.size(); i++) {
       output.writeMessage(38, customFieldValues_.get(i));
     }
-    if (((bitField0_ & 0x00080000) != 0)) {
+    if (((bitField0_ & 0x00100000) != 0)) {
       output.writeInt64(41, impressionsDelivered_);
     }
     if (((bitField0_ & 0x00000400) != 0)) {
       output.writeBool(45, unlimitedEndTime_);
     }
-    if (((bitField0_ & 0x00100000) != 0)) {
+    if (((bitField0_ & 0x00200000) != 0)) {
       output.writeInt64(53, totalClicksDelivered_);
     }
-    if (((bitField0_ & 0x00200000) != 0)) {
+    if (((bitField0_ & 0x00400000) != 0)) {
       output.writeInt64(54, totalViewableImpressionsDelivered_);
+    }
+    if (((bitField0_ & 0x00000800) != 0)) {
+      output.writeBool(82, endTimeUnlimited_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -2387,31 +2437,31 @@ public final class Order extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000200) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(12, getEndTime());
     }
-    if (((bitField0_ & 0x00000800) != 0)) {
+    if (((bitField0_ & 0x00001000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(13, externalOrderId_);
     }
-    if (((bitField0_ & 0x00001000) != 0)) {
+    if (((bitField0_ & 0x00002000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(14, archived_);
     }
-    if (((bitField0_ & 0x00002000) != 0)) {
+    if (((bitField0_ & 0x00004000) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(15, lastModifiedByApp_);
     }
-    if (((bitField0_ & 0x00004000) != 0)) {
+    if (((bitField0_ & 0x00008000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(16, getUpdateTime());
     }
-    if (((bitField0_ & 0x00008000) != 0)) {
+    if (((bitField0_ & 0x00010000) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(17, notes_);
     }
-    if (((bitField0_ & 0x00010000) != 0)) {
+    if (((bitField0_ & 0x00020000) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(18, poNumber_);
     }
     if (((bitField0_ & 0x00000100) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(19, getStartTime());
     }
-    if (((bitField0_ & 0x00020000) != 0)) {
+    if (((bitField0_ & 0x00040000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(20, status_);
     }
-    if (((bitField0_ & 0x00040000) != 0)) {
+    if (((bitField0_ & 0x00080000) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(21, salesperson_);
     }
     {
@@ -2453,19 +2503,22 @@ public final class Order extends com.google.protobuf.GeneratedMessage
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(38, customFieldValues_.get(i));
     }
-    if (((bitField0_ & 0x00080000) != 0)) {
+    if (((bitField0_ & 0x00100000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(41, impressionsDelivered_);
     }
     if (((bitField0_ & 0x00000400) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(45, unlimitedEndTime_);
     }
-    if (((bitField0_ & 0x00100000) != 0)) {
+    if (((bitField0_ & 0x00200000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(53, totalClicksDelivered_);
     }
-    if (((bitField0_ & 0x00200000) != 0)) {
+    if (((bitField0_ & 0x00400000) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeInt64Size(
               54, totalViewableImpressionsDelivered_);
+    }
+    if (((bitField0_ & 0x00000800) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(82, endTimeUnlimited_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -2530,6 +2583,10 @@ public final class Order extends com.google.protobuf.GeneratedMessage
     if (hasUnlimitedEndTime() != other.hasUnlimitedEndTime()) return false;
     if (hasUnlimitedEndTime()) {
       if (getUnlimitedEndTime() != other.getUnlimitedEndTime()) return false;
+    }
+    if (hasEndTimeUnlimited() != other.hasEndTimeUnlimited()) return false;
+    if (hasEndTimeUnlimited()) {
+      if (getEndTimeUnlimited() != other.getEndTimeUnlimited()) return false;
     }
     if (hasExternalOrderId() != other.hasExternalOrderId()) return false;
     if (hasExternalOrderId()) {
@@ -2655,6 +2712,10 @@ public final class Order extends com.google.protobuf.GeneratedMessage
     if (hasUnlimitedEndTime()) {
       hash = (37 * hash) + UNLIMITED_END_TIME_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getUnlimitedEndTime());
+    }
+    if (hasEndTimeUnlimited()) {
+      hash = (37 * hash) + END_TIME_UNLIMITED_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEndTimeUnlimited());
     }
     if (hasExternalOrderId()) {
       hash = (37 * hash) + EXTERNAL_ORDER_ID_FIELD_NUMBER;
@@ -2875,6 +2936,7 @@ public final class Order extends com.google.protobuf.GeneratedMessage
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
+      bitField1_ = 0;
       name_ = "";
       orderId_ = 0L;
       displayName_ = "";
@@ -2899,6 +2961,7 @@ public final class Order extends com.google.protobuf.GeneratedMessage
         endTimeBuilder_ = null;
       }
       unlimitedEndTime_ = false;
+      endTimeUnlimited_ = false;
       externalOrderId_ = 0;
       archived_ = false;
       lastModifiedByApp_ = "";
@@ -2919,21 +2982,21 @@ public final class Order extends com.google.protobuf.GeneratedMessage
         appliedLabels_ = null;
         appliedLabelsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x04000000);
+      bitField0_ = (bitField0_ & ~0x08000000);
       if (effectiveAppliedLabelsBuilder_ == null) {
         effectiveAppliedLabels_ = java.util.Collections.emptyList();
       } else {
         effectiveAppliedLabels_ = null;
         effectiveAppliedLabelsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x08000000);
+      bitField0_ = (bitField0_ & ~0x10000000);
       if (customFieldValuesBuilder_ == null) {
         customFieldValues_ = java.util.Collections.emptyList();
       } else {
         customFieldValues_ = null;
         customFieldValuesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x10000000);
+      bitField0_ = (bitField0_ & ~0x20000000);
       impressionsDelivered_ = 0L;
       totalClicksDelivered_ = 0L;
       totalViewableImpressionsDelivered_ = 0L;
@@ -2967,33 +3030,36 @@ public final class Order extends com.google.protobuf.GeneratedMessage
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
+      if (bitField1_ != 0) {
+        buildPartial1(result);
+      }
       onBuilt();
       return result;
     }
 
     private void buildPartialRepeatedFields(com.google.ads.admanager.v1.Order result) {
       if (appliedLabelsBuilder_ == null) {
-        if (((bitField0_ & 0x04000000) != 0)) {
+        if (((bitField0_ & 0x08000000) != 0)) {
           appliedLabels_ = java.util.Collections.unmodifiableList(appliedLabels_);
-          bitField0_ = (bitField0_ & ~0x04000000);
+          bitField0_ = (bitField0_ & ~0x08000000);
         }
         result.appliedLabels_ = appliedLabels_;
       } else {
         result.appliedLabels_ = appliedLabelsBuilder_.build();
       }
       if (effectiveAppliedLabelsBuilder_ == null) {
-        if (((bitField0_ & 0x08000000) != 0)) {
+        if (((bitField0_ & 0x10000000) != 0)) {
           effectiveAppliedLabels_ = java.util.Collections.unmodifiableList(effectiveAppliedLabels_);
-          bitField0_ = (bitField0_ & ~0x08000000);
+          bitField0_ = (bitField0_ & ~0x10000000);
         }
         result.effectiveAppliedLabels_ = effectiveAppliedLabels_;
       } else {
         result.effectiveAppliedLabels_ = effectiveAppliedLabelsBuilder_.build();
       }
       if (customFieldValuesBuilder_ == null) {
-        if (((bitField0_ & 0x10000000) != 0)) {
+        if (((bitField0_ & 0x20000000) != 0)) {
           customFieldValues_ = java.util.Collections.unmodifiableList(customFieldValues_);
-          bitField0_ = (bitField0_ & ~0x10000000);
+          bitField0_ = (bitField0_ & ~0x20000000);
         }
         result.customFieldValues_ = customFieldValues_;
       } else {
@@ -3068,56 +3134,66 @@ public final class Order extends com.google.protobuf.GeneratedMessage
         to_bitField0_ |= 0x00000400;
       }
       if (((from_bitField0_ & 0x00010000) != 0)) {
-        result.externalOrderId_ = externalOrderId_;
+        result.endTimeUnlimited_ = endTimeUnlimited_;
         to_bitField0_ |= 0x00000800;
       }
       if (((from_bitField0_ & 0x00020000) != 0)) {
-        result.archived_ = archived_;
+        result.externalOrderId_ = externalOrderId_;
         to_bitField0_ |= 0x00001000;
       }
       if (((from_bitField0_ & 0x00040000) != 0)) {
-        result.lastModifiedByApp_ = lastModifiedByApp_;
+        result.archived_ = archived_;
         to_bitField0_ |= 0x00002000;
       }
       if (((from_bitField0_ & 0x00080000) != 0)) {
-        result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
+        result.lastModifiedByApp_ = lastModifiedByApp_;
         to_bitField0_ |= 0x00004000;
       }
       if (((from_bitField0_ & 0x00100000) != 0)) {
-        result.notes_ = notes_;
+        result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
         to_bitField0_ |= 0x00008000;
       }
       if (((from_bitField0_ & 0x00200000) != 0)) {
-        result.poNumber_ = poNumber_;
+        result.notes_ = notes_;
         to_bitField0_ |= 0x00010000;
       }
       if (((from_bitField0_ & 0x00400000) != 0)) {
-        result.status_ = status_;
+        result.poNumber_ = poNumber_;
         to_bitField0_ |= 0x00020000;
       }
       if (((from_bitField0_ & 0x00800000) != 0)) {
-        result.salesperson_ = salesperson_;
+        result.status_ = status_;
         to_bitField0_ |= 0x00040000;
       }
       if (((from_bitField0_ & 0x01000000) != 0)) {
+        result.salesperson_ = salesperson_;
+        to_bitField0_ |= 0x00080000;
+      }
+      if (((from_bitField0_ & 0x02000000) != 0)) {
         secondarySalespeople_.makeImmutable();
         result.secondarySalespeople_ = secondarySalespeople_;
       }
-      if (((from_bitField0_ & 0x02000000) != 0)) {
+      if (((from_bitField0_ & 0x04000000) != 0)) {
         secondaryTraffickers_.makeImmutable();
         result.secondaryTraffickers_ = secondaryTraffickers_;
       }
-      if (((from_bitField0_ & 0x20000000) != 0)) {
-        result.impressionsDelivered_ = impressionsDelivered_;
-        to_bitField0_ |= 0x00080000;
-      }
       if (((from_bitField0_ & 0x40000000) != 0)) {
-        result.totalClicksDelivered_ = totalClicksDelivered_;
+        result.impressionsDelivered_ = impressionsDelivered_;
         to_bitField0_ |= 0x00100000;
       }
       if (((from_bitField0_ & 0x80000000) != 0)) {
-        result.totalViewableImpressionsDelivered_ = totalViewableImpressionsDelivered_;
+        result.totalClicksDelivered_ = totalClicksDelivered_;
         to_bitField0_ |= 0x00200000;
+      }
+      result.bitField0_ |= to_bitField0_;
+    }
+
+    private void buildPartial1(com.google.ads.admanager.v1.Order result) {
+      int from_bitField1_ = bitField1_;
+      int to_bitField0_ = 0;
+      if (((from_bitField1_ & 0x00000001) != 0)) {
+        result.totalViewableImpressionsDelivered_ = totalViewableImpressionsDelivered_;
+        to_bitField0_ |= 0x00400000;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -3224,6 +3300,9 @@ public final class Order extends com.google.protobuf.GeneratedMessage
       if (other.hasUnlimitedEndTime()) {
         setUnlimitedEndTime(other.getUnlimitedEndTime());
       }
+      if (other.hasEndTimeUnlimited()) {
+        setEndTimeUnlimited(other.getEndTimeUnlimited());
+      }
       if (other.hasExternalOrderId()) {
         setExternalOrderId(other.getExternalOrderId());
       }
@@ -3232,7 +3311,7 @@ public final class Order extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasLastModifiedByApp()) {
         lastModifiedByApp_ = other.lastModifiedByApp_;
-        bitField0_ |= 0x00040000;
+        bitField0_ |= 0x00080000;
         onChanged();
       }
       if (other.hasUpdateTime()) {
@@ -3240,12 +3319,12 @@ public final class Order extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasNotes()) {
         notes_ = other.notes_;
-        bitField0_ |= 0x00100000;
+        bitField0_ |= 0x00200000;
         onChanged();
       }
       if (other.hasPoNumber()) {
         poNumber_ = other.poNumber_;
-        bitField0_ |= 0x00200000;
+        bitField0_ |= 0x00400000;
         onChanged();
       }
       if (other.hasStatus()) {
@@ -3253,13 +3332,13 @@ public final class Order extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasSalesperson()) {
         salesperson_ = other.salesperson_;
-        bitField0_ |= 0x00800000;
+        bitField0_ |= 0x01000000;
         onChanged();
       }
       if (!other.secondarySalespeople_.isEmpty()) {
         if (secondarySalespeople_.isEmpty()) {
           secondarySalespeople_ = other.secondarySalespeople_;
-          bitField0_ |= 0x01000000;
+          bitField0_ |= 0x02000000;
         } else {
           ensureSecondarySalespeopleIsMutable();
           secondarySalespeople_.addAll(other.secondarySalespeople_);
@@ -3269,7 +3348,7 @@ public final class Order extends com.google.protobuf.GeneratedMessage
       if (!other.secondaryTraffickers_.isEmpty()) {
         if (secondaryTraffickers_.isEmpty()) {
           secondaryTraffickers_ = other.secondaryTraffickers_;
-          bitField0_ |= 0x02000000;
+          bitField0_ |= 0x04000000;
         } else {
           ensureSecondaryTraffickersIsMutable();
           secondaryTraffickers_.addAll(other.secondaryTraffickers_);
@@ -3280,7 +3359,7 @@ public final class Order extends com.google.protobuf.GeneratedMessage
         if (!other.appliedLabels_.isEmpty()) {
           if (appliedLabels_.isEmpty()) {
             appliedLabels_ = other.appliedLabels_;
-            bitField0_ = (bitField0_ & ~0x04000000);
+            bitField0_ = (bitField0_ & ~0x08000000);
           } else {
             ensureAppliedLabelsIsMutable();
             appliedLabels_.addAll(other.appliedLabels_);
@@ -3293,7 +3372,7 @@ public final class Order extends com.google.protobuf.GeneratedMessage
             appliedLabelsBuilder_.dispose();
             appliedLabelsBuilder_ = null;
             appliedLabels_ = other.appliedLabels_;
-            bitField0_ = (bitField0_ & ~0x04000000);
+            bitField0_ = (bitField0_ & ~0x08000000);
             appliedLabelsBuilder_ =
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
                     ? internalGetAppliedLabelsFieldBuilder()
@@ -3307,7 +3386,7 @@ public final class Order extends com.google.protobuf.GeneratedMessage
         if (!other.effectiveAppliedLabels_.isEmpty()) {
           if (effectiveAppliedLabels_.isEmpty()) {
             effectiveAppliedLabels_ = other.effectiveAppliedLabels_;
-            bitField0_ = (bitField0_ & ~0x08000000);
+            bitField0_ = (bitField0_ & ~0x10000000);
           } else {
             ensureEffectiveAppliedLabelsIsMutable();
             effectiveAppliedLabels_.addAll(other.effectiveAppliedLabels_);
@@ -3320,7 +3399,7 @@ public final class Order extends com.google.protobuf.GeneratedMessage
             effectiveAppliedLabelsBuilder_.dispose();
             effectiveAppliedLabelsBuilder_ = null;
             effectiveAppliedLabels_ = other.effectiveAppliedLabels_;
-            bitField0_ = (bitField0_ & ~0x08000000);
+            bitField0_ = (bitField0_ & ~0x10000000);
             effectiveAppliedLabelsBuilder_ =
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
                     ? internalGetEffectiveAppliedLabelsFieldBuilder()
@@ -3334,7 +3413,7 @@ public final class Order extends com.google.protobuf.GeneratedMessage
         if (!other.customFieldValues_.isEmpty()) {
           if (customFieldValues_.isEmpty()) {
             customFieldValues_ = other.customFieldValues_;
-            bitField0_ = (bitField0_ & ~0x10000000);
+            bitField0_ = (bitField0_ & ~0x20000000);
           } else {
             ensureCustomFieldValuesIsMutable();
             customFieldValues_.addAll(other.customFieldValues_);
@@ -3347,7 +3426,7 @@ public final class Order extends com.google.protobuf.GeneratedMessage
             customFieldValuesBuilder_.dispose();
             customFieldValuesBuilder_ = null;
             customFieldValues_ = other.customFieldValues_;
-            bitField0_ = (bitField0_ & ~0x10000000);
+            bitField0_ = (bitField0_ & ~0x20000000);
             customFieldValuesBuilder_ =
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
                     ? internalGetCustomFieldValuesFieldBuilder()
@@ -3470,38 +3549,38 @@ public final class Order extends com.google.protobuf.GeneratedMessage
             case 104:
               {
                 externalOrderId_ = input.readInt32();
-                bitField0_ |= 0x00010000;
+                bitField0_ |= 0x00020000;
                 break;
               } // case 104
             case 112:
               {
                 archived_ = input.readBool();
-                bitField0_ |= 0x00020000;
+                bitField0_ |= 0x00040000;
                 break;
               } // case 112
             case 122:
               {
                 lastModifiedByApp_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00040000;
+                bitField0_ |= 0x00080000;
                 break;
               } // case 122
             case 130:
               {
                 input.readMessage(
                     internalGetUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00080000;
+                bitField0_ |= 0x00100000;
                 break;
               } // case 130
             case 138:
               {
                 notes_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00100000;
+                bitField0_ |= 0x00200000;
                 break;
               } // case 138
             case 146:
               {
                 poNumber_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00200000;
+                bitField0_ |= 0x00400000;
                 break;
               } // case 146
             case 154:
@@ -3514,13 +3593,13 @@ public final class Order extends com.google.protobuf.GeneratedMessage
             case 160:
               {
                 status_ = input.readEnum();
-                bitField0_ |= 0x00400000;
+                bitField0_ |= 0x00800000;
                 break;
               } // case 160
             case 170:
               {
                 salesperson_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00800000;
+                bitField0_ |= 0x01000000;
                 break;
               } // case 170
             case 178:
@@ -3592,7 +3671,7 @@ public final class Order extends com.google.protobuf.GeneratedMessage
             case 328:
               {
                 impressionsDelivered_ = input.readInt64();
-                bitField0_ |= 0x20000000;
+                bitField0_ |= 0x40000000;
                 break;
               } // case 328
             case 360:
@@ -3604,15 +3683,21 @@ public final class Order extends com.google.protobuf.GeneratedMessage
             case 424:
               {
                 totalClicksDelivered_ = input.readInt64();
-                bitField0_ |= 0x40000000;
+                bitField0_ |= 0x80000000;
                 break;
               } // case 424
             case 432:
               {
                 totalViewableImpressionsDelivered_ = input.readInt64();
-                bitField0_ |= 0x80000000;
+                bitField1_ |= 0x00000001;
                 break;
               } // case 432
+            case 656:
+              {
+                endTimeUnlimited_ = input.readBool();
+                bitField0_ |= 0x00010000;
+                break;
+              } // case 656
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3631,6 +3716,7 @@ public final class Order extends com.google.protobuf.GeneratedMessage
     }
 
     private int bitField0_;
+    private int bitField1_;
 
     private java.lang.Object name_ = "";
 
@@ -6071,15 +6157,20 @@ public final class Order extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Indicates whether or not this Order has an end time.
+     * Output only. Deprecated: Indicates whether or not this Order has an end
+     * time.
      * </pre>
      *
-     * <code>optional bool unlimited_end_time = 45 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * <code>
+     * optional bool unlimited_end_time = 45 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
+     * @deprecated google.ads.admanager.v1.Order.unlimited_end_time is deprecated. See
+     *     google/ads/admanager/v1/order_messages.proto;l=144
      * @return Whether the unlimitedEndTime field is set.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public boolean hasUnlimitedEndTime() {
       return ((bitField0_ & 0x00008000) != 0);
     }
@@ -6088,15 +6179,20 @@ public final class Order extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Indicates whether or not this Order has an end time.
+     * Output only. Deprecated: Indicates whether or not this Order has an end
+     * time.
      * </pre>
      *
-     * <code>optional bool unlimited_end_time = 45 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * <code>
+     * optional bool unlimited_end_time = 45 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
+     * @deprecated google.ads.admanager.v1.Order.unlimited_end_time is deprecated. See
+     *     google/ads/admanager/v1/order_messages.proto;l=144
      * @return The unlimitedEndTime.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public boolean getUnlimitedEndTime() {
       return unlimitedEndTime_;
     }
@@ -6105,15 +6201,20 @@ public final class Order extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Indicates whether or not this Order has an end time.
+     * Output only. Deprecated: Indicates whether or not this Order has an end
+     * time.
      * </pre>
      *
-     * <code>optional bool unlimited_end_time = 45 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * <code>
+     * optional bool unlimited_end_time = 45 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
+     * @deprecated google.ads.admanager.v1.Order.unlimited_end_time is deprecated. See
+     *     google/ads/admanager/v1/order_messages.proto;l=144
      * @param value The unlimitedEndTime to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setUnlimitedEndTime(boolean value) {
 
       unlimitedEndTime_ = value;
@@ -6126,17 +6227,98 @@ public final class Order extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * Output only. Deprecated: Indicates whether or not this Order has an end
+     * time.
+     * </pre>
+     *
+     * <code>
+     * optional bool unlimited_end_time = 45 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @deprecated google.ads.admanager.v1.Order.unlimited_end_time is deprecated. See
+     *     google/ads/admanager/v1/order_messages.proto;l=144
+     * @return This builder for chaining.
+     */
+    @java.lang.Deprecated
+    public Builder clearUnlimitedEndTime() {
+      bitField0_ = (bitField0_ & ~0x00008000);
+      unlimitedEndTime_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean endTimeUnlimited_;
+
+    /**
+     *
+     *
+     * <pre>
      * Output only. Indicates whether or not this Order has an end time.
      * </pre>
      *
-     * <code>optional bool unlimited_end_time = 45 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * <code>optional bool end_time_unlimited = 82 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the endTimeUnlimited field is set.
+     */
+    @java.lang.Override
+    public boolean hasEndTimeUnlimited() {
+      return ((bitField0_ & 0x00010000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Indicates whether or not this Order has an end time.
+     * </pre>
+     *
+     * <code>optional bool end_time_unlimited = 82 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The endTimeUnlimited.
+     */
+    @java.lang.Override
+    public boolean getEndTimeUnlimited() {
+      return endTimeUnlimited_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Indicates whether or not this Order has an end time.
+     * </pre>
+     *
+     * <code>optional bool end_time_unlimited = 82 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The endTimeUnlimited to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEndTimeUnlimited(boolean value) {
+
+      endTimeUnlimited_ = value;
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Indicates whether or not this Order has an end time.
+     * </pre>
+     *
+     * <code>optional bool end_time_unlimited = 82 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @return This builder for chaining.
      */
-    public Builder clearUnlimitedEndTime() {
-      bitField0_ = (bitField0_ & ~0x00008000);
-      unlimitedEndTime_ = false;
+    public Builder clearEndTimeUnlimited() {
+      bitField0_ = (bitField0_ & ~0x00010000);
+      endTimeUnlimited_ = false;
       onChanged();
       return this;
     }
@@ -6157,7 +6339,7 @@ public final class Order extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasExternalOrderId() {
-      return ((bitField0_ & 0x00010000) != 0);
+      return ((bitField0_ & 0x00020000) != 0);
     }
 
     /**
@@ -6193,7 +6375,7 @@ public final class Order extends com.google.protobuf.GeneratedMessage
     public Builder setExternalOrderId(int value) {
 
       externalOrderId_ = value;
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -6211,7 +6393,7 @@ public final class Order extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearExternalOrderId() {
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       externalOrderId_ = 0;
       onChanged();
       return this;
@@ -6232,7 +6414,7 @@ public final class Order extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasArchived() {
-      return ((bitField0_ & 0x00020000) != 0);
+      return ((bitField0_ & 0x00040000) != 0);
     }
 
     /**
@@ -6266,7 +6448,7 @@ public final class Order extends com.google.protobuf.GeneratedMessage
     public Builder setArchived(boolean value) {
 
       archived_ = value;
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -6283,7 +6465,7 @@ public final class Order extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearArchived() {
-      bitField0_ = (bitField0_ & ~0x00020000);
+      bitField0_ = (bitField0_ & ~0x00040000);
       archived_ = false;
       onChanged();
       return this;
@@ -6304,7 +6486,7 @@ public final class Order extends com.google.protobuf.GeneratedMessage
      * @return Whether the lastModifiedByApp field is set.
      */
     public boolean hasLastModifiedByApp() {
-      return ((bitField0_ & 0x00040000) != 0);
+      return ((bitField0_ & 0x00080000) != 0);
     }
 
     /**
@@ -6373,7 +6555,7 @@ public final class Order extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       lastModifiedByApp_ = value;
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -6392,7 +6574,7 @@ public final class Order extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearLastModifiedByApp() {
       lastModifiedByApp_ = getDefaultInstance().getLastModifiedByApp();
-      bitField0_ = (bitField0_ & ~0x00040000);
+      bitField0_ = (bitField0_ & ~0x00080000);
       onChanged();
       return this;
     }
@@ -6416,7 +6598,7 @@ public final class Order extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       lastModifiedByApp_ = value;
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -6442,7 +6624,7 @@ public final class Order extends com.google.protobuf.GeneratedMessage
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return ((bitField0_ & 0x00080000) != 0);
+      return ((bitField0_ & 0x00100000) != 0);
     }
 
     /**
@@ -6488,7 +6670,7 @@ public final class Order extends com.google.protobuf.GeneratedMessage
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -6510,7 +6692,7 @@ public final class Order extends com.google.protobuf.GeneratedMessage
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -6528,7 +6710,7 @@ public final class Order extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00080000) != 0)
+        if (((bitField0_ & 0x00100000) != 0)
             && updateTime_ != null
             && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getUpdateTimeBuilder().mergeFrom(value);
@@ -6539,7 +6721,7 @@ public final class Order extends com.google.protobuf.GeneratedMessage
         updateTimeBuilder_.mergeFrom(value);
       }
       if (updateTime_ != null) {
-        bitField0_ |= 0x00080000;
+        bitField0_ |= 0x00100000;
         onChanged();
       }
       return this;
@@ -6557,7 +6739,7 @@ public final class Order extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearUpdateTime() {
-      bitField0_ = (bitField0_ & ~0x00080000);
+      bitField0_ = (bitField0_ & ~0x00100000);
       updateTime_ = null;
       if (updateTimeBuilder_ != null) {
         updateTimeBuilder_.dispose();
@@ -6579,7 +6761,7 @@ public final class Order extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return internalGetUpdateTimeFieldBuilder().getBuilder();
     }
@@ -6648,7 +6830,7 @@ public final class Order extends com.google.protobuf.GeneratedMessage
      * @return Whether the notes field is set.
      */
     public boolean hasNotes() {
-      return ((bitField0_ & 0x00100000) != 0);
+      return ((bitField0_ & 0x00200000) != 0);
     }
 
     /**
@@ -6717,7 +6899,7 @@ public final class Order extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       notes_ = value;
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -6736,7 +6918,7 @@ public final class Order extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearNotes() {
       notes_ = getDefaultInstance().getNotes();
-      bitField0_ = (bitField0_ & ~0x00100000);
+      bitField0_ = (bitField0_ & ~0x00200000);
       onChanged();
       return this;
     }
@@ -6760,7 +6942,7 @@ public final class Order extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       notes_ = value;
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -6780,7 +6962,7 @@ public final class Order extends com.google.protobuf.GeneratedMessage
      * @return Whether the poNumber field is set.
      */
     public boolean hasPoNumber() {
-      return ((bitField0_ & 0x00200000) != 0);
+      return ((bitField0_ & 0x00400000) != 0);
     }
 
     /**
@@ -6849,7 +7031,7 @@ public final class Order extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       poNumber_ = value;
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x00400000;
       onChanged();
       return this;
     }
@@ -6868,7 +7050,7 @@ public final class Order extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearPoNumber() {
       poNumber_ = getDefaultInstance().getPoNumber();
-      bitField0_ = (bitField0_ & ~0x00200000);
+      bitField0_ = (bitField0_ & ~0x00400000);
       onChanged();
       return this;
     }
@@ -6892,7 +7074,7 @@ public final class Order extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       poNumber_ = value;
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x00400000;
       onChanged();
       return this;
     }
@@ -6914,7 +7096,7 @@ public final class Order extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasStatus() {
-      return ((bitField0_ & 0x00400000) != 0);
+      return ((bitField0_ & 0x00800000) != 0);
     }
 
     /**
@@ -6951,7 +7133,7 @@ public final class Order extends com.google.protobuf.GeneratedMessage
      */
     public Builder setStatusValue(int value) {
       status_ = value;
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -6996,7 +7178,7 @@ public final class Order extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x00800000;
       status_ = value.getNumber();
       onChanged();
       return this;
@@ -7016,7 +7198,7 @@ public final class Order extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearStatus() {
-      bitField0_ = (bitField0_ & ~0x00400000);
+      bitField0_ = (bitField0_ & ~0x00800000);
       status_ = 0;
       onChanged();
       return this;
@@ -7039,7 +7221,7 @@ public final class Order extends com.google.protobuf.GeneratedMessage
      * @return Whether the salesperson field is set.
      */
     public boolean hasSalesperson() {
-      return ((bitField0_ & 0x00800000) != 0);
+      return ((bitField0_ & 0x01000000) != 0);
     }
 
     /**
@@ -7114,7 +7296,7 @@ public final class Order extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       salesperson_ = value;
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x01000000;
       onChanged();
       return this;
     }
@@ -7135,7 +7317,7 @@ public final class Order extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearSalesperson() {
       salesperson_ = getDefaultInstance().getSalesperson();
-      bitField0_ = (bitField0_ & ~0x00800000);
+      bitField0_ = (bitField0_ & ~0x01000000);
       onChanged();
       return this;
     }
@@ -7161,7 +7343,7 @@ public final class Order extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       salesperson_ = value;
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x01000000;
       onChanged();
       return this;
     }
@@ -7173,7 +7355,7 @@ public final class Order extends com.google.protobuf.GeneratedMessage
       if (!secondarySalespeople_.isModifiable()) {
         secondarySalespeople_ = new com.google.protobuf.LazyStringArrayList(secondarySalespeople_);
       }
-      bitField0_ |= 0x01000000;
+      bitField0_ |= 0x02000000;
     }
 
     /**
@@ -7278,7 +7460,7 @@ public final class Order extends com.google.protobuf.GeneratedMessage
       }
       ensureSecondarySalespeopleIsMutable();
       secondarySalespeople_.set(index, value);
-      bitField0_ |= 0x01000000;
+      bitField0_ |= 0x02000000;
       onChanged();
       return this;
     }
@@ -7305,7 +7487,7 @@ public final class Order extends com.google.protobuf.GeneratedMessage
       }
       ensureSecondarySalespeopleIsMutable();
       secondarySalespeople_.add(value);
-      bitField0_ |= 0x01000000;
+      bitField0_ |= 0x02000000;
       onChanged();
       return this;
     }
@@ -7329,7 +7511,7 @@ public final class Order extends com.google.protobuf.GeneratedMessage
     public Builder addAllSecondarySalespeople(java.lang.Iterable<java.lang.String> values) {
       ensureSecondarySalespeopleIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, secondarySalespeople_);
-      bitField0_ |= 0x01000000;
+      bitField0_ |= 0x02000000;
       onChanged();
       return this;
     }
@@ -7351,7 +7533,7 @@ public final class Order extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearSecondarySalespeople() {
       secondarySalespeople_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x01000000);
+      bitField0_ = (bitField0_ & ~0x02000000);
       ;
       onChanged();
       return this;
@@ -7380,7 +7562,7 @@ public final class Order extends com.google.protobuf.GeneratedMessage
       checkByteStringIsUtf8(value);
       ensureSecondarySalespeopleIsMutable();
       secondarySalespeople_.add(value);
-      bitField0_ |= 0x01000000;
+      bitField0_ |= 0x02000000;
       onChanged();
       return this;
     }
@@ -7392,7 +7574,7 @@ public final class Order extends com.google.protobuf.GeneratedMessage
       if (!secondaryTraffickers_.isModifiable()) {
         secondaryTraffickers_ = new com.google.protobuf.LazyStringArrayList(secondaryTraffickers_);
       }
-      bitField0_ |= 0x02000000;
+      bitField0_ |= 0x04000000;
     }
 
     /**
@@ -7497,7 +7679,7 @@ public final class Order extends com.google.protobuf.GeneratedMessage
       }
       ensureSecondaryTraffickersIsMutable();
       secondaryTraffickers_.set(index, value);
-      bitField0_ |= 0x02000000;
+      bitField0_ |= 0x04000000;
       onChanged();
       return this;
     }
@@ -7524,7 +7706,7 @@ public final class Order extends com.google.protobuf.GeneratedMessage
       }
       ensureSecondaryTraffickersIsMutable();
       secondaryTraffickers_.add(value);
-      bitField0_ |= 0x02000000;
+      bitField0_ |= 0x04000000;
       onChanged();
       return this;
     }
@@ -7548,7 +7730,7 @@ public final class Order extends com.google.protobuf.GeneratedMessage
     public Builder addAllSecondaryTraffickers(java.lang.Iterable<java.lang.String> values) {
       ensureSecondaryTraffickersIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, secondaryTraffickers_);
-      bitField0_ |= 0x02000000;
+      bitField0_ |= 0x04000000;
       onChanged();
       return this;
     }
@@ -7570,7 +7752,7 @@ public final class Order extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearSecondaryTraffickers() {
       secondaryTraffickers_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x02000000);
+      bitField0_ = (bitField0_ & ~0x04000000);
       ;
       onChanged();
       return this;
@@ -7599,7 +7781,7 @@ public final class Order extends com.google.protobuf.GeneratedMessage
       checkByteStringIsUtf8(value);
       ensureSecondaryTraffickersIsMutable();
       secondaryTraffickers_.add(value);
-      bitField0_ |= 0x02000000;
+      bitField0_ |= 0x04000000;
       onChanged();
       return this;
     }
@@ -7608,10 +7790,10 @@ public final class Order extends com.google.protobuf.GeneratedMessage
         java.util.Collections.emptyList();
 
     private void ensureAppliedLabelsIsMutable() {
-      if (!((bitField0_ & 0x04000000) != 0)) {
+      if (!((bitField0_ & 0x08000000) != 0)) {
         appliedLabels_ =
             new java.util.ArrayList<com.google.ads.admanager.v1.AppliedLabel>(appliedLabels_);
-        bitField0_ |= 0x04000000;
+        bitField0_ |= 0x08000000;
       }
     }
 
@@ -7859,7 +8041,7 @@ public final class Order extends com.google.protobuf.GeneratedMessage
     public Builder clearAppliedLabels() {
       if (appliedLabelsBuilder_ == null) {
         appliedLabels_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x04000000);
+        bitField0_ = (bitField0_ & ~0x08000000);
         onChanged();
       } else {
         appliedLabelsBuilder_.clear();
@@ -8003,7 +8185,7 @@ public final class Order extends com.google.protobuf.GeneratedMessage
                 com.google.ads.admanager.v1.AppliedLabel.Builder,
                 com.google.ads.admanager.v1.AppliedLabelOrBuilder>(
                 appliedLabels_,
-                ((bitField0_ & 0x04000000) != 0),
+                ((bitField0_ & 0x08000000) != 0),
                 getParentForChildren(),
                 isClean());
         appliedLabels_ = null;
@@ -8015,11 +8197,11 @@ public final class Order extends com.google.protobuf.GeneratedMessage
         java.util.Collections.emptyList();
 
     private void ensureEffectiveAppliedLabelsIsMutable() {
-      if (!((bitField0_ & 0x08000000) != 0)) {
+      if (!((bitField0_ & 0x10000000) != 0)) {
         effectiveAppliedLabels_ =
             new java.util.ArrayList<com.google.ads.admanager.v1.AppliedLabel>(
                 effectiveAppliedLabels_);
-        bitField0_ |= 0x08000000;
+        bitField0_ |= 0x10000000;
       }
     }
 
@@ -8303,7 +8485,7 @@ public final class Order extends com.google.protobuf.GeneratedMessage
     public Builder clearEffectiveAppliedLabels() {
       if (effectiveAppliedLabelsBuilder_ == null) {
         effectiveAppliedLabels_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x08000000);
+        bitField0_ = (bitField0_ & ~0x10000000);
         onChanged();
       } else {
         effectiveAppliedLabelsBuilder_.clear();
@@ -8471,7 +8653,7 @@ public final class Order extends com.google.protobuf.GeneratedMessage
                 com.google.ads.admanager.v1.AppliedLabel.Builder,
                 com.google.ads.admanager.v1.AppliedLabelOrBuilder>(
                 effectiveAppliedLabels_,
-                ((bitField0_ & 0x08000000) != 0),
+                ((bitField0_ & 0x10000000) != 0),
                 getParentForChildren(),
                 isClean());
         effectiveAppliedLabels_ = null;
@@ -8483,11 +8665,11 @@ public final class Order extends com.google.protobuf.GeneratedMessage
         java.util.Collections.emptyList();
 
     private void ensureCustomFieldValuesIsMutable() {
-      if (!((bitField0_ & 0x10000000) != 0)) {
+      if (!((bitField0_ & 0x20000000) != 0)) {
         customFieldValues_ =
             new java.util.ArrayList<com.google.ads.admanager.v1.CustomFieldValue>(
                 customFieldValues_);
-        bitField0_ |= 0x10000000;
+        bitField0_ |= 0x20000000;
       }
     }
 
@@ -8737,7 +8919,7 @@ public final class Order extends com.google.protobuf.GeneratedMessage
     public Builder clearCustomFieldValues() {
       if (customFieldValuesBuilder_ == null) {
         customFieldValues_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x10000000);
+        bitField0_ = (bitField0_ & ~0x20000000);
         onChanged();
       } else {
         customFieldValuesBuilder_.clear();
@@ -8884,7 +9066,7 @@ public final class Order extends com.google.protobuf.GeneratedMessage
                 com.google.ads.admanager.v1.CustomFieldValue.Builder,
                 com.google.ads.admanager.v1.CustomFieldValueOrBuilder>(
                 customFieldValues_,
-                ((bitField0_ & 0x10000000) != 0),
+                ((bitField0_ & 0x20000000) != 0),
                 getParentForChildren(),
                 isClean());
         customFieldValues_ = null;
@@ -8909,7 +9091,7 @@ public final class Order extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasImpressionsDelivered() {
-      return ((bitField0_ & 0x20000000) != 0);
+      return ((bitField0_ & 0x40000000) != 0);
     }
 
     /**
@@ -8947,7 +9129,7 @@ public final class Order extends com.google.protobuf.GeneratedMessage
     public Builder setImpressionsDelivered(long value) {
 
       impressionsDelivered_ = value;
-      bitField0_ |= 0x20000000;
+      bitField0_ |= 0x40000000;
       onChanged();
       return this;
     }
@@ -8966,7 +9148,7 @@ public final class Order extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearImpressionsDelivered() {
-      bitField0_ = (bitField0_ & ~0x20000000);
+      bitField0_ = (bitField0_ & ~0x40000000);
       impressionsDelivered_ = 0L;
       onChanged();
       return this;
@@ -8990,7 +9172,7 @@ public final class Order extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasTotalClicksDelivered() {
-      return ((bitField0_ & 0x40000000) != 0);
+      return ((bitField0_ & 0x80000000) != 0);
     }
 
     /**
@@ -9030,7 +9212,7 @@ public final class Order extends com.google.protobuf.GeneratedMessage
     public Builder setTotalClicksDelivered(long value) {
 
       totalClicksDelivered_ = value;
-      bitField0_ |= 0x40000000;
+      bitField0_ |= 0x80000000;
       onChanged();
       return this;
     }
@@ -9050,7 +9232,7 @@ public final class Order extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearTotalClicksDelivered() {
-      bitField0_ = (bitField0_ & ~0x40000000);
+      bitField0_ = (bitField0_ & ~0x80000000);
       totalClicksDelivered_ = 0L;
       onChanged();
       return this;
@@ -9075,7 +9257,7 @@ public final class Order extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasTotalViewableImpressionsDelivered() {
-      return ((bitField0_ & 0x80000000) != 0);
+      return ((bitField1_ & 0x00000001) != 0);
     }
 
     /**
@@ -9117,7 +9299,7 @@ public final class Order extends com.google.protobuf.GeneratedMessage
     public Builder setTotalViewableImpressionsDelivered(long value) {
 
       totalViewableImpressionsDelivered_ = value;
-      bitField0_ |= 0x80000000;
+      bitField1_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -9138,7 +9320,7 @@ public final class Order extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearTotalViewableImpressionsDelivered() {
-      bitField0_ = (bitField0_ & ~0x80000000);
+      bitField1_ = (bitField1_ & ~0x00000001);
       totalViewableImpressionsDelivered_ = 0L;
       onChanged();
       return this;

@@ -60,6 +60,7 @@ public final class SlurmLoginNodes extends com.google.protobuf.GeneratedMessage
     startupScript_ = "";
     storageConfigs_ = java.util.Collections.emptyList();
     instances_ = java.util.Collections.emptyList();
+    networkTags_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -235,6 +236,9 @@ public final class SlurmLoginNodes extends com.google.protobuf.GeneratedMessage
    * Optional. [Startup
    * script](https://cloud.google.com/compute/docs/instances/startup-scripts/linux)
    * to be run on each login node instance. Max 256KB.
+   * The script must complete within the system-defined default timeout of 5
+   * minutes. For tasks that require more time, consider running them in the
+   * background using methods such as `&amp;` or `nohup`.
    * </pre>
    *
    * <code>string startup_script = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -261,6 +265,9 @@ public final class SlurmLoginNodes extends com.google.protobuf.GeneratedMessage
    * Optional. [Startup
    * script](https://cloud.google.com/compute/docs/instances/startup-scripts/linux)
    * to be run on each login node instance. Max 256KB.
+   * The script must complete within the system-defined default timeout of 5
+   * minutes. For tasks that require more time, consider running them in the
+   * background using methods such as `&amp;` or `nohup`.
    * </pre>
    *
    * <code>string startup_script = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -687,6 +694,78 @@ public final class SlurmLoginNodes extends com.google.protobuf.GeneratedMessage
         : bootDisk_;
   }
 
+  public static final int NETWORK_TAGS_FIELD_NUMBER = 14;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList networkTags_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Network tags to be applied to each login node instance.
+   * A maximum of 64 network tags are allowed.
+   * </pre>
+   *
+   * <code>repeated string network_tags = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return A list containing the networkTags.
+   */
+  public com.google.protobuf.ProtocolStringList getNetworkTagsList() {
+    return networkTags_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Network tags to be applied to each login node instance.
+   * A maximum of 64 network tags are allowed.
+   * </pre>
+   *
+   * <code>repeated string network_tags = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The count of networkTags.
+   */
+  public int getNetworkTagsCount() {
+    return networkTags_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Network tags to be applied to each login node instance.
+   * A maximum of 64 network tags are allowed.
+   * </pre>
+   *
+   * <code>repeated string network_tags = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The networkTags at the given index.
+   */
+  public java.lang.String getNetworkTags(int index) {
+    return networkTags_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Network tags to be applied to each login node instance.
+   * A maximum of 64 network tags are allowed.
+   * </pre>
+   *
+   * <code>repeated string network_tags = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the networkTags at the given index.
+   */
+  public com.google.protobuf.ByteString getNetworkTagsBytes(int index) {
+    return networkTags_.getByteString(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -729,6 +808,9 @@ public final class SlurmLoginNodes extends com.google.protobuf.GeneratedMessage
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(13, getBootDisk());
+    }
+    for (int i = 0; i < networkTags_.size(); i++) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 14, networkTags_.getRaw(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -776,6 +858,14 @@ public final class SlurmLoginNodes extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(13, getBootDisk());
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < networkTags_.size(); i++) {
+        dataSize += computeStringSizeNoTag(networkTags_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getNetworkTagsList().size();
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -805,6 +895,7 @@ public final class SlurmLoginNodes extends com.google.protobuf.GeneratedMessage
     if (hasBootDisk()) {
       if (!getBootDisk().equals(other.getBootDisk())) return false;
     }
+    if (!getNetworkTagsList().equals(other.getNetworkTagsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -843,6 +934,10 @@ public final class SlurmLoginNodes extends com.google.protobuf.GeneratedMessage
     if (hasBootDisk()) {
       hash = (37 * hash) + BOOT_DISK_FIELD_NUMBER;
       hash = (53 * hash) + getBootDisk().hashCode();
+    }
+    if (getNetworkTagsCount() > 0) {
+      hash = (37 * hash) + NETWORK_TAGS_FIELD_NUMBER;
+      hash = (53 * hash) + getNetworkTagsList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1047,6 +1142,7 @@ public final class SlurmLoginNodes extends com.google.protobuf.GeneratedMessage
         bootDiskBuilder_.dispose();
         bootDiskBuilder_ = null;
       }
+      networkTags_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -1132,6 +1228,10 @@ public final class SlurmLoginNodes extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x00000200) != 0)) {
         result.bootDisk_ = bootDiskBuilder_ == null ? bootDisk_ : bootDiskBuilder_.build();
         to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        networkTags_.makeImmutable();
+        result.networkTags_ = networkTags_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1231,6 +1331,16 @@ public final class SlurmLoginNodes extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasBootDisk()) {
         mergeBootDisk(other.getBootDisk());
+      }
+      if (!other.networkTags_.isEmpty()) {
+        if (networkTags_.isEmpty()) {
+          networkTags_ = other.networkTags_;
+          bitField0_ |= 0x00000400;
+        } else {
+          ensureNetworkTagsIsMutable();
+          networkTags_.addAll(other.networkTags_);
+        }
+        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1341,6 +1451,13 @@ public final class SlurmLoginNodes extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000200;
                 break;
               } // case 106
+            case 114:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureNetworkTagsIsMutable();
+                networkTags_.add(s);
+                break;
+              } // case 114
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1667,6 +1784,9 @@ public final class SlurmLoginNodes extends com.google.protobuf.GeneratedMessage
      * Optional. [Startup
      * script](https://cloud.google.com/compute/docs/instances/startup-scripts/linux)
      * to be run on each login node instance. Max 256KB.
+     * The script must complete within the system-defined default timeout of 5
+     * minutes. For tasks that require more time, consider running them in the
+     * background using methods such as `&amp;` or `nohup`.
      * </pre>
      *
      * <code>string startup_script = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1692,6 +1812,9 @@ public final class SlurmLoginNodes extends com.google.protobuf.GeneratedMessage
      * Optional. [Startup
      * script](https://cloud.google.com/compute/docs/instances/startup-scripts/linux)
      * to be run on each login node instance. Max 256KB.
+     * The script must complete within the system-defined default timeout of 5
+     * minutes. For tasks that require more time, consider running them in the
+     * background using methods such as `&amp;` or `nohup`.
      * </pre>
      *
      * <code>string startup_script = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1717,6 +1840,9 @@ public final class SlurmLoginNodes extends com.google.protobuf.GeneratedMessage
      * Optional. [Startup
      * script](https://cloud.google.com/compute/docs/instances/startup-scripts/linux)
      * to be run on each login node instance. Max 256KB.
+     * The script must complete within the system-defined default timeout of 5
+     * minutes. For tasks that require more time, consider running them in the
+     * background using methods such as `&amp;` or `nohup`.
      * </pre>
      *
      * <code>string startup_script = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1741,6 +1867,9 @@ public final class SlurmLoginNodes extends com.google.protobuf.GeneratedMessage
      * Optional. [Startup
      * script](https://cloud.google.com/compute/docs/instances/startup-scripts/linux)
      * to be run on each login node instance. Max 256KB.
+     * The script must complete within the system-defined default timeout of 5
+     * minutes. For tasks that require more time, consider running them in the
+     * background using methods such as `&amp;` or `nohup`.
      * </pre>
      *
      * <code>string startup_script = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1761,6 +1890,9 @@ public final class SlurmLoginNodes extends com.google.protobuf.GeneratedMessage
      * Optional. [Startup
      * script](https://cloud.google.com/compute/docs/instances/startup-scripts/linux)
      * to be run on each login node instance. Max 256KB.
+     * The script must complete within the system-defined default timeout of 5
+     * minutes. For tasks that require more time, consider running them in the
+     * background using methods such as `&amp;` or `nohup`.
      * </pre>
      *
      * <code>string startup_script = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3191,6 +3323,198 @@ public final class SlurmLoginNodes extends com.google.protobuf.GeneratedMessage
         bootDisk_ = null;
       }
       return bootDiskBuilder_;
+    }
+
+    private com.google.protobuf.LazyStringArrayList networkTags_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureNetworkTagsIsMutable() {
+      if (!networkTags_.isModifiable()) {
+        networkTags_ = new com.google.protobuf.LazyStringArrayList(networkTags_);
+      }
+      bitField0_ |= 0x00000400;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Network tags to be applied to each login node instance.
+     * A maximum of 64 network tags are allowed.
+     * </pre>
+     *
+     * <code>repeated string network_tags = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return A list containing the networkTags.
+     */
+    public com.google.protobuf.ProtocolStringList getNetworkTagsList() {
+      networkTags_.makeImmutable();
+      return networkTags_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Network tags to be applied to each login node instance.
+     * A maximum of 64 network tags are allowed.
+     * </pre>
+     *
+     * <code>repeated string network_tags = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The count of networkTags.
+     */
+    public int getNetworkTagsCount() {
+      return networkTags_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Network tags to be applied to each login node instance.
+     * A maximum of 64 network tags are allowed.
+     * </pre>
+     *
+     * <code>repeated string network_tags = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the element to return.
+     * @return The networkTags at the given index.
+     */
+    public java.lang.String getNetworkTags(int index) {
+      return networkTags_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Network tags to be applied to each login node instance.
+     * A maximum of 64 network tags are allowed.
+     * </pre>
+     *
+     * <code>repeated string network_tags = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the networkTags at the given index.
+     */
+    public com.google.protobuf.ByteString getNetworkTagsBytes(int index) {
+      return networkTags_.getByteString(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Network tags to be applied to each login node instance.
+     * A maximum of 64 network tags are allowed.
+     * </pre>
+     *
+     * <code>repeated string network_tags = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The networkTags to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNetworkTags(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureNetworkTagsIsMutable();
+      networkTags_.set(index, value);
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Network tags to be applied to each login node instance.
+     * A maximum of 64 network tags are allowed.
+     * </pre>
+     *
+     * <code>repeated string network_tags = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The networkTags to add.
+     * @return This builder for chaining.
+     */
+    public Builder addNetworkTags(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureNetworkTagsIsMutable();
+      networkTags_.add(value);
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Network tags to be applied to each login node instance.
+     * A maximum of 64 network tags are allowed.
+     * </pre>
+     *
+     * <code>repeated string network_tags = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param values The networkTags to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllNetworkTags(java.lang.Iterable<java.lang.String> values) {
+      ensureNetworkTagsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, networkTags_);
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Network tags to be applied to each login node instance.
+     * A maximum of 64 network tags are allowed.
+     * </pre>
+     *
+     * <code>repeated string network_tags = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearNetworkTags() {
+      networkTags_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000400);
+      ;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Network tags to be applied to each login node instance.
+     * A maximum of 64 network tags are allowed.
+     * </pre>
+     *
+     * <code>repeated string network_tags = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes of the networkTags to add.
+     * @return This builder for chaining.
+     */
+    public Builder addNetworkTagsBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureNetworkTagsIsMutable();
+      networkTags_.add(value);
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.hypercomputecluster.v1beta.SlurmLoginNodes)

@@ -137,7 +137,8 @@ public final class RedisInstanceInfo extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * URI of a Cloud Redis Instance.
+   * URI of a Cloud Redis Instance in format
+   * "projects/{project}/locations/{location}/instances/{instance}"
    * </pre>
    *
    * <code>string uri = 2;</code>
@@ -161,7 +162,8 @@ public final class RedisInstanceInfo extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * URI of a Cloud Redis Instance.
+   * URI of a Cloud Redis Instance in format
+   * "projects/{project}/locations/{location}/instances/{instance}"
    * </pre>
    *
    * <code>string uri = 2;</code>
@@ -190,7 +192,8 @@ public final class RedisInstanceInfo extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * URI of a Cloud Redis Instance network.
+   * URI of a Cloud Redis Instance network in format
+   * "projects/{project}/global/networks/{network}".
    * </pre>
    *
    * <code>string network_uri = 3;</code>
@@ -214,7 +217,8 @@ public final class RedisInstanceInfo extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * URI of a Cloud Redis Instance network.
+   * URI of a Cloud Redis Instance network in format
+   * "projects/{project}/global/networks/{network}".
    * </pre>
    *
    * <code>string network_uri = 3;</code>
@@ -944,7 +948,8 @@ public final class RedisInstanceInfo extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * URI of a Cloud Redis Instance.
+     * URI of a Cloud Redis Instance in format
+     * "projects/{project}/locations/{location}/instances/{instance}"
      * </pre>
      *
      * <code>string uri = 2;</code>
@@ -967,7 +972,8 @@ public final class RedisInstanceInfo extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * URI of a Cloud Redis Instance.
+     * URI of a Cloud Redis Instance in format
+     * "projects/{project}/locations/{location}/instances/{instance}"
      * </pre>
      *
      * <code>string uri = 2;</code>
@@ -990,7 +996,8 @@ public final class RedisInstanceInfo extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * URI of a Cloud Redis Instance.
+     * URI of a Cloud Redis Instance in format
+     * "projects/{project}/locations/{location}/instances/{instance}"
      * </pre>
      *
      * <code>string uri = 2;</code>
@@ -1012,7 +1019,8 @@ public final class RedisInstanceInfo extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * URI of a Cloud Redis Instance.
+     * URI of a Cloud Redis Instance in format
+     * "projects/{project}/locations/{location}/instances/{instance}"
      * </pre>
      *
      * <code>string uri = 2;</code>
@@ -1030,7 +1038,8 @@ public final class RedisInstanceInfo extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * URI of a Cloud Redis Instance.
+     * URI of a Cloud Redis Instance in format
+     * "projects/{project}/locations/{location}/instances/{instance}"
      * </pre>
      *
      * <code>string uri = 2;</code>
@@ -1055,7 +1064,8 @@ public final class RedisInstanceInfo extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * URI of a Cloud Redis Instance network.
+     * URI of a Cloud Redis Instance network in format
+     * "projects/{project}/global/networks/{network}".
      * </pre>
      *
      * <code>string network_uri = 3;</code>
@@ -1078,7 +1088,8 @@ public final class RedisInstanceInfo extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * URI of a Cloud Redis Instance network.
+     * URI of a Cloud Redis Instance network in format
+     * "projects/{project}/global/networks/{network}".
      * </pre>
      *
      * <code>string network_uri = 3;</code>
@@ -1101,7 +1112,8 @@ public final class RedisInstanceInfo extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * URI of a Cloud Redis Instance network.
+     * URI of a Cloud Redis Instance network in format
+     * "projects/{project}/global/networks/{network}".
      * </pre>
      *
      * <code>string network_uri = 3;</code>
@@ -1123,7 +1135,8 @@ public final class RedisInstanceInfo extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * URI of a Cloud Redis Instance network.
+     * URI of a Cloud Redis Instance network in format
+     * "projects/{project}/global/networks/{network}".
      * </pre>
      *
      * <code>string network_uri = 3;</code>
@@ -1141,7 +1154,8 @@ public final class RedisInstanceInfo extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * URI of a Cloud Redis Instance network.
+     * URI of a Cloud Redis Instance network in format
+     * "projects/{project}/global/networks/{network}".
      * </pre>
      *
      * <code>string network_uri = 3;</code>

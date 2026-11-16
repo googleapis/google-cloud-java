@@ -2934,6 +2934,9 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * URI of the resource that caused the drop.
+   * Format:
+   * * `projects/{project_id}/global/firewalls/{firewall_id}` (firewall rule)
+   * * `projects/{project_id}/global/routes/{route_id}` (route)
    * </pre>
    *
    * <code>string resource_uri = 2;</code>
@@ -2958,6 +2961,9 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * URI of the resource that caused the drop.
+   * Format:
+   * * `projects/{project_id}/global/firewalls/{firewall_id}` (firewall rule)
+   * * `projects/{project_id}/global/routes/{route_id}` (route)
    * </pre>
    *
    * <code>string resource_uri = 2;</code>
@@ -3801,6 +3807,9 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * URI of the resource that caused the drop.
+     * Format:
+     * * `projects/{project_id}/global/firewalls/{firewall_id}` (firewall rule)
+     * * `projects/{project_id}/global/routes/{route_id}` (route)
      * </pre>
      *
      * <code>string resource_uri = 2;</code>
@@ -3824,6 +3833,9 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * URI of the resource that caused the drop.
+     * Format:
+     * * `projects/{project_id}/global/firewalls/{firewall_id}` (firewall rule)
+     * * `projects/{project_id}/global/routes/{route_id}` (route)
      * </pre>
      *
      * <code>string resource_uri = 2;</code>
@@ -3847,6 +3859,9 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * URI of the resource that caused the drop.
+     * Format:
+     * * `projects/{project_id}/global/firewalls/{firewall_id}` (firewall rule)
+     * * `projects/{project_id}/global/routes/{route_id}` (route)
      * </pre>
      *
      * <code>string resource_uri = 2;</code>
@@ -3869,6 +3884,9 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * URI of the resource that caused the drop.
+     * Format:
+     * * `projects/{project_id}/global/firewalls/{firewall_id}` (firewall rule)
+     * * `projects/{project_id}/global/routes/{route_id}` (route)
      * </pre>
      *
      * <code>string resource_uri = 2;</code>
@@ -3887,6 +3905,9 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * URI of the resource that caused the drop.
+     * Format:
+     * * `projects/{project_id}/global/firewalls/{firewall_id}` (firewall rule)
+     * * `projects/{project_id}/global/routes/{route_id}` (route)
      * </pre>
      *
      * <code>string resource_uri = 2;</code>

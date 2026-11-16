@@ -29,6 +29,7 @@ import com.google.api.gax.rpc.ClientSettings;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
+import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
@@ -107,6 +108,83 @@ public class LineItemCreativeAssociationServiceSettings
       listLineItemCreativeAssociationsSettings() {
     return ((LineItemCreativeAssociationServiceStubSettings) getStubSettings())
         .listLineItemCreativeAssociationsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createLineItemCreativeAssociation. */
+  public UnaryCallSettings<CreateLineItemCreativeAssociationRequest, LineItemCreativeAssociation>
+      createLineItemCreativeAssociationSettings() {
+    return ((LineItemCreativeAssociationServiceStubSettings) getStubSettings())
+        .createLineItemCreativeAssociationSettings();
+  }
+
+  /**
+   * Returns the object with the settings used for calls to batchCreateLineItemCreativeAssociations.
+   */
+  public UnaryCallSettings<
+          BatchCreateLineItemCreativeAssociationsRequest,
+          BatchCreateLineItemCreativeAssociationsResponse>
+      batchCreateLineItemCreativeAssociationsSettings() {
+    return ((LineItemCreativeAssociationServiceStubSettings) getStubSettings())
+        .batchCreateLineItemCreativeAssociationsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateLineItemCreativeAssociation. */
+  public UnaryCallSettings<UpdateLineItemCreativeAssociationRequest, LineItemCreativeAssociation>
+      updateLineItemCreativeAssociationSettings() {
+    return ((LineItemCreativeAssociationServiceStubSettings) getStubSettings())
+        .updateLineItemCreativeAssociationSettings();
+  }
+
+  /**
+   * Returns the object with the settings used for calls to batchUpdateLineItemCreativeAssociations.
+   */
+  public UnaryCallSettings<
+          BatchUpdateLineItemCreativeAssociationsRequest,
+          BatchUpdateLineItemCreativeAssociationsResponse>
+      batchUpdateLineItemCreativeAssociationsSettings() {
+    return ((LineItemCreativeAssociationServiceStubSettings) getStubSettings())
+        .batchUpdateLineItemCreativeAssociationsSettings();
+  }
+
+  /**
+   * Returns the object with the settings used for calls to
+   * batchActivateLineItemCreativeAssociations.
+   */
+  public UnaryCallSettings<
+          BatchActivateLineItemCreativeAssociationsRequest,
+          BatchActivateLineItemCreativeAssociationsResponse>
+      batchActivateLineItemCreativeAssociationsSettings() {
+    return ((LineItemCreativeAssociationServiceStubSettings) getStubSettings())
+        .batchActivateLineItemCreativeAssociationsSettings();
+  }
+
+  /**
+   * Returns the object with the settings used for calls to
+   * batchDeactivateLineItemCreativeAssociations.
+   */
+  public UnaryCallSettings<
+          BatchDeactivateLineItemCreativeAssociationsRequest,
+          BatchDeactivateLineItemCreativeAssociationsResponse>
+      batchDeactivateLineItemCreativeAssociationsSettings() {
+    return ((LineItemCreativeAssociationServiceStubSettings) getStubSettings())
+        .batchDeactivateLineItemCreativeAssociationsSettings();
+  }
+
+  /**
+   * Returns the object with the settings used for calls to batchDeleteLineItemCreativeAssociations.
+   */
+  public UnaryCallSettings<BatchDeleteLineItemCreativeAssociationsRequest, Empty>
+      batchDeleteLineItemCreativeAssociationsSettings() {
+    return ((LineItemCreativeAssociationServiceStubSettings) getStubSettings())
+        .batchDeleteLineItemCreativeAssociationsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to previewLineItemCreativeAssociation. */
+  public UnaryCallSettings<
+          PreviewLineItemCreativeAssociationRequest, PreviewLineItemCreativeAssociationResponse>
+      previewLineItemCreativeAssociationSettings() {
+    return ((LineItemCreativeAssociationServiceStubSettings) getStubSettings())
+        .previewLineItemCreativeAssociationSettings();
   }
 
   public static final LineItemCreativeAssociationServiceSettings create(
@@ -221,6 +299,82 @@ public class LineItemCreativeAssociationServiceSettings
             ListLineItemCreativeAssociationsPagedResponse>
         listLineItemCreativeAssociationsSettings() {
       return getStubSettingsBuilder().listLineItemCreativeAssociationsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createLineItemCreativeAssociation. */
+    public UnaryCallSettings.Builder<
+            CreateLineItemCreativeAssociationRequest, LineItemCreativeAssociation>
+        createLineItemCreativeAssociationSettings() {
+      return getStubSettingsBuilder().createLineItemCreativeAssociationSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * batchCreateLineItemCreativeAssociations.
+     */
+    public UnaryCallSettings.Builder<
+            BatchCreateLineItemCreativeAssociationsRequest,
+            BatchCreateLineItemCreativeAssociationsResponse>
+        batchCreateLineItemCreativeAssociationsSettings() {
+      return getStubSettingsBuilder().batchCreateLineItemCreativeAssociationsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateLineItemCreativeAssociation. */
+    public UnaryCallSettings.Builder<
+            UpdateLineItemCreativeAssociationRequest, LineItemCreativeAssociation>
+        updateLineItemCreativeAssociationSettings() {
+      return getStubSettingsBuilder().updateLineItemCreativeAssociationSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * batchUpdateLineItemCreativeAssociations.
+     */
+    public UnaryCallSettings.Builder<
+            BatchUpdateLineItemCreativeAssociationsRequest,
+            BatchUpdateLineItemCreativeAssociationsResponse>
+        batchUpdateLineItemCreativeAssociationsSettings() {
+      return getStubSettingsBuilder().batchUpdateLineItemCreativeAssociationsSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * batchActivateLineItemCreativeAssociations.
+     */
+    public UnaryCallSettings.Builder<
+            BatchActivateLineItemCreativeAssociationsRequest,
+            BatchActivateLineItemCreativeAssociationsResponse>
+        batchActivateLineItemCreativeAssociationsSettings() {
+      return getStubSettingsBuilder().batchActivateLineItemCreativeAssociationsSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * batchDeactivateLineItemCreativeAssociations.
+     */
+    public UnaryCallSettings.Builder<
+            BatchDeactivateLineItemCreativeAssociationsRequest,
+            BatchDeactivateLineItemCreativeAssociationsResponse>
+        batchDeactivateLineItemCreativeAssociationsSettings() {
+      return getStubSettingsBuilder().batchDeactivateLineItemCreativeAssociationsSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * batchDeleteLineItemCreativeAssociations.
+     */
+    public UnaryCallSettings.Builder<BatchDeleteLineItemCreativeAssociationsRequest, Empty>
+        batchDeleteLineItemCreativeAssociationsSettings() {
+      return getStubSettingsBuilder().batchDeleteLineItemCreativeAssociationsSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to previewLineItemCreativeAssociation.
+     */
+    public UnaryCallSettings.Builder<
+            PreviewLineItemCreativeAssociationRequest, PreviewLineItemCreativeAssociationResponse>
+        previewLineItemCreativeAssociationSettings() {
+      return getStubSettingsBuilder().previewLineItemCreativeAssociationSettings();
     }
 
     @Override

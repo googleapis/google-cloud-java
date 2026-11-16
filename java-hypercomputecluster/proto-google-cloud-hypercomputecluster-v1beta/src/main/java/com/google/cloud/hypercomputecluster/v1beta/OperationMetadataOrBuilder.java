@@ -201,4 +201,47 @@ public interface OperationMetadataOrBuilder
    * @return The bytes for apiVersion.
    */
   com.google.protobuf.ByteString getApiVersionBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Progress of the operation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.hypercomputecluster.v1beta.OperationProgress progress = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the progress field is set.
+   */
+  boolean hasProgress();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Progress of the operation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.hypercomputecluster.v1beta.OperationProgress progress = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The progress.
+   */
+  com.google.cloud.hypercomputecluster.v1beta.OperationProgress getProgress();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Progress of the operation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.hypercomputecluster.v1beta.OperationProgress progress = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.hypercomputecluster.v1beta.OperationProgressOrBuilder getProgressOrBuilder();
 }

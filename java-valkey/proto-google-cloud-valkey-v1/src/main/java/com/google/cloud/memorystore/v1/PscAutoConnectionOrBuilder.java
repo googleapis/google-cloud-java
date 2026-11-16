@@ -306,5 +306,37 @@ public interface PscAutoConnectionOrBuilder
    */
   com.google.cloud.memorystore.v1.ConnectionType getConnectionType();
 
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. The IP version used for the PSC auto-created
+   * endpoint. If not specified, defaults to IPV4.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.memorystore.v1.IpVersion ip_version = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for ipVersion.
+   */
+  int getIpVersionValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. The IP version used for the PSC auto-created
+   * endpoint. If not specified, defaults to IPV4.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.memorystore.v1.IpVersion ip_version = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The ipVersion.
+   */
+  com.google.cloud.memorystore.v1.IpVersion getIpVersion();
+
   com.google.cloud.memorystore.v1.PscAutoConnection.PortsCase getPortsCase();
 }

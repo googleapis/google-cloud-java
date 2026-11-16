@@ -24,7 +24,7 @@ package com.google.ads.admanager.v1;
  *
  *
  * <pre>
- * Response object for [RunAvailabilityForecast][] method.
+ * Response object for `RunAvailabilityForecast` method.
  * </pre>
  *
  * Protobuf type {@code google.ads.admanager.v1.RunAvailabilityForecastResponse}
@@ -296,7 +296,7 @@ public final class RunAvailabilityForecastResponse extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Response object for [RunAvailabilityForecast][] method.
+   * Response object for `RunAvailabilityForecast` method.
    * </pre>
    *
    * Protobuf type {@code google.ads.admanager.v1.RunAvailabilityForecastResponse}

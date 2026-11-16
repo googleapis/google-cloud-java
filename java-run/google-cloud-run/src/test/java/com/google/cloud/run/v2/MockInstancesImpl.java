@@ -18,6 +18,11 @@ package com.google.cloud.run.v2;
 
 import com.google.api.core.BetaApi;
 import com.google.cloud.run.v2.InstancesGrpc.InstancesImplBase;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import com.google.protobuf.AbstractMessage;
 import io.grpc.stub.StreamObserver;
@@ -74,6 +79,27 @@ public class MockInstancesImpl extends InstancesImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateInstance, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateInstance(
+      UpdateInstanceRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateInstance, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -180,6 +206,68 @@ public class MockInstancesImpl extends InstancesImplBase {
                   "Unrecognized response type %s for method StartInstance, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getIamPolicy(GetIamPolicyRequest request, StreamObserver<Policy> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Policy) {
+      requests.add(request);
+      responseObserver.onNext(((Policy) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetIamPolicy, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Policy.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void setIamPolicy(SetIamPolicyRequest request, StreamObserver<Policy> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Policy) {
+      requests.add(request);
+      responseObserver.onNext(((Policy) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method SetIamPolicy, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Policy.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void testIamPermissions(
+      TestIamPermissionsRequest request,
+      StreamObserver<TestIamPermissionsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof TestIamPermissionsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((TestIamPermissionsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method TestIamPermissions, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  TestIamPermissionsResponse.class.getName(),
                   Exception.class.getName())));
     }
   }

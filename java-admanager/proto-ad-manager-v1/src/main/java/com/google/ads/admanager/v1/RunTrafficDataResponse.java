@@ -24,7 +24,7 @@ package com.google.ads.admanager.v1;
  *
  *
  * <pre>
- * Response object for [RunTrafficData][] method.
+ * Response object for `RunTrafficData` method.
  * </pre>
  *
  * Protobuf type {@code google.ads.admanager.v1.RunTrafficDataResponse}
@@ -558,7 +558,7 @@ public final class RunTrafficDataResponse extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Response object for [RunTrafficData][] method.
+   * Response object for `RunTrafficData` method.
    * </pre>
    *
    * Protobuf type {@code google.ads.admanager.v1.RunTrafficDataResponse}

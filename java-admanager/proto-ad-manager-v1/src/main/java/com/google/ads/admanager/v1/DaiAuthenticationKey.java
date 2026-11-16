@@ -54,6 +54,7 @@ public final class DaiAuthenticationKey extends com.google.protobuf.GeneratedMes
 
   private DaiAuthenticationKey() {
     name_ = "";
+    key_ = "";
     status_ = 0;
     displayName_ = "";
     keyType_ = 0;
@@ -132,6 +133,127 @@ public final class DaiAuthenticationKey extends com.google.protobuf.GeneratedMes
     }
   }
 
+  public static final int KEY_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object key_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The value of the secure key.
+   * </pre>
+   *
+   * <code>optional string key = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the key field is set.
+   */
+  @java.lang.Override
+  public boolean hasKey() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The value of the secure key.
+   * </pre>
+   *
+   * <code>optional string key = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The key.
+   */
+  @java.lang.Override
+  public java.lang.String getKey() {
+    java.lang.Object ref = key_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      key_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The value of the secure key.
+   * </pre>
+   *
+   * <code>optional string key = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for key.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getKeyBytes() {
+    java.lang.Object ref = key_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      key_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int CREATE_TIME_FIELD_NUMBER = 3;
+  private com.google.protobuf.Timestamp createTime_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The date and time this DaiAuthenticationKey was created.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the createTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasCreateTime() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The date and time this DaiAuthenticationKey was created.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The createTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getCreateTime() {
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The date and time this DaiAuthenticationKey was created.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
+  }
+
   public static final int STATUS_FIELD_NUMBER = 4;
   private int status_ = 0;
 
@@ -156,7 +278,7 @@ public final class DaiAuthenticationKey extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public boolean hasStatus() {
-    return ((bitField0_ & 0x00000001) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
 
   /**
@@ -232,7 +354,7 @@ public final class DaiAuthenticationKey extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public boolean hasDisplayName() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000008) != 0);
   }
 
   /**
@@ -302,7 +424,7 @@ public final class DaiAuthenticationKey extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public boolean hasKeyType() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00000010) != 0);
   }
 
   /**
@@ -368,12 +490,18 @@ public final class DaiAuthenticationKey extends com.google.protobuf.GeneratedMes
       com.google.protobuf.GeneratedMessage.writeString(output, 1, name_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
-      output.writeEnum(4, status_);
+      com.google.protobuf.GeneratedMessage.writeString(output, 2, key_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 5, displayName_);
+      output.writeMessage(3, getCreateTime());
     }
     if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeEnum(4, status_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 5, displayName_);
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
       output.writeEnum(6, keyType_);
     }
     getUnknownFields().writeTo(output);
@@ -389,12 +517,18 @@ public final class DaiAuthenticationKey extends com.google.protobuf.GeneratedMes
       size += com.google.protobuf.GeneratedMessage.computeStringSize(1, name_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, status_);
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(2, key_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(5, displayName_);
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getCreateTime());
     }
     if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, status_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(5, displayName_);
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(6, keyType_);
     }
     size += getUnknownFields().getSerializedSize();
@@ -414,6 +548,14 @@ public final class DaiAuthenticationKey extends com.google.protobuf.GeneratedMes
         (com.google.ads.admanager.v1.DaiAuthenticationKey) obj;
 
     if (!getName().equals(other.getName())) return false;
+    if (hasKey() != other.hasKey()) return false;
+    if (hasKey()) {
+      if (!getKey().equals(other.getKey())) return false;
+    }
+    if (hasCreateTime() != other.hasCreateTime()) return false;
+    if (hasCreateTime()) {
+      if (!getCreateTime().equals(other.getCreateTime())) return false;
+    }
     if (hasStatus() != other.hasStatus()) return false;
     if (hasStatus()) {
       if (status_ != other.status_) return false;
@@ -439,6 +581,14 @@ public final class DaiAuthenticationKey extends com.google.protobuf.GeneratedMes
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
+    if (hasKey()) {
+      hash = (37 * hash) + KEY_FIELD_NUMBER;
+      hash = (53 * hash) + getKey().hashCode();
+    }
+    if (hasCreateTime()) {
+      hash = (37 * hash) + CREATE_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getCreateTime().hashCode();
+    }
     if (hasStatus()) {
       hash = (37 * hash) + STATUS_FIELD_NUMBER;
       hash = (53 * hash) + status_;
@@ -582,10 +732,19 @@ public final class DaiAuthenticationKey extends com.google.protobuf.GeneratedMes
     }
 
     // Construct using com.google.ads.admanager.v1.DaiAuthenticationKey.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        internalGetCreateTimeFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -593,6 +752,12 @@ public final class DaiAuthenticationKey extends com.google.protobuf.GeneratedMes
       super.clear();
       bitField0_ = 0;
       name_ = "";
+      key_ = "";
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
+        createTimeBuilder_ = null;
+      }
       status_ = 0;
       displayName_ = "";
       keyType_ = 0;
@@ -637,16 +802,24 @@ public final class DaiAuthenticationKey extends com.google.protobuf.GeneratedMes
       }
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.status_ = status_;
+        result.key_ = key_;
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.displayName_ = displayName_;
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
-        result.keyType_ = keyType_;
+        result.status_ = status_;
         to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.displayName_ = displayName_;
+        to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.keyType_ = keyType_;
+        to_bitField0_ |= 0x00000010;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -669,12 +842,20 @@ public final class DaiAuthenticationKey extends com.google.protobuf.GeneratedMes
         bitField0_ |= 0x00000001;
         onChanged();
       }
+      if (other.hasKey()) {
+        key_ = other.key_;
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
+      if (other.hasCreateTime()) {
+        mergeCreateTime(other.getCreateTime());
+      }
       if (other.hasStatus()) {
         setStatusValue(other.getStatusValue());
       }
       if (other.hasDisplayName()) {
         displayName_ = other.displayName_;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (other.hasKeyType()) {
@@ -712,22 +893,35 @@ public final class DaiAuthenticationKey extends com.google.protobuf.GeneratedMes
                 bitField0_ |= 0x00000001;
                 break;
               } // case 10
+            case 18:
+              {
+                key_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+            case 26:
+              {
+                input.readMessage(
+                    internalGetCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
             case 32:
               {
                 status_ = input.readEnum();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             case 42:
               {
                 displayName_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 48:
               {
                 keyType_ = input.readEnum();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 48
             default:
@@ -870,6 +1064,344 @@ public final class DaiAuthenticationKey extends com.google.protobuf.GeneratedMes
       return this;
     }
 
+    private java.lang.Object key_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The value of the secure key.
+     * </pre>
+     *
+     * <code>optional string key = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return Whether the key field is set.
+     */
+    public boolean hasKey() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The value of the secure key.
+     * </pre>
+     *
+     * <code>optional string key = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The key.
+     */
+    public java.lang.String getKey() {
+      java.lang.Object ref = key_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        key_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The value of the secure key.
+     * </pre>
+     *
+     * <code>optional string key = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for key.
+     */
+    public com.google.protobuf.ByteString getKeyBytes() {
+      java.lang.Object ref = key_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        key_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The value of the secure key.
+     * </pre>
+     *
+     * <code>optional string key = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The key to set.
+     * @return This builder for chaining.
+     */
+    public Builder setKey(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      key_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The value of the secure key.
+     * </pre>
+     *
+     * <code>optional string key = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearKey() {
+      key_ = getDefaultInstance().getKey();
+      bitField0_ = (bitField0_ & ~0x00000002);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The value of the secure key.
+     * </pre>
+     *
+     * <code>optional string key = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for key to set.
+     * @return This builder for chaining.
+     */
+    public Builder setKeyBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      key_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.Timestamp createTime_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        createTimeBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The date and time this DaiAuthenticationKey was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the createTime field is set.
+     */
+    public boolean hasCreateTime() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The date and time this DaiAuthenticationKey was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The createTime.
+     */
+    public com.google.protobuf.Timestamp getCreateTime() {
+      if (createTimeBuilder_ == null) {
+        return createTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : createTime_;
+      } else {
+        return createTimeBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The date and time this DaiAuthenticationKey was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setCreateTime(com.google.protobuf.Timestamp value) {
+      if (createTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        createTime_ = value;
+      } else {
+        createTimeBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The date and time this DaiAuthenticationKey was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (createTimeBuilder_ == null) {
+        createTime_ = builderForValue.build();
+      } else {
+        createTimeBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The date and time this DaiAuthenticationKey was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
+      if (createTimeBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
+        } else {
+          createTime_ = value;
+        }
+      } else {
+        createTimeBuilder_.mergeFrom(value);
+      }
+      if (createTime_ != null) {
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The date and time this DaiAuthenticationKey was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearCreateTime() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
+        createTimeBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The date and time this DaiAuthenticationKey was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return internalGetCreateTimeFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The date and time this DaiAuthenticationKey was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
+      if (createTimeBuilder_ != null) {
+        return createTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return createTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : createTime_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The date and time this DaiAuthenticationKey was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        internalGetCreateTimeFieldBuilder() {
+      if (createTimeBuilder_ == null) {
+        createTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getCreateTime(), getParentForChildren(), isClean());
+        createTime_ = null;
+      }
+      return createTimeBuilder_;
+    }
+
     private int status_ = 0;
 
     /**
@@ -893,7 +1425,7 @@ public final class DaiAuthenticationKey extends com.google.protobuf.GeneratedMes
      */
     @java.lang.Override
     public boolean hasStatus() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
 
     /**
@@ -942,7 +1474,7 @@ public final class DaiAuthenticationKey extends com.google.protobuf.GeneratedMes
      */
     public Builder setStatusValue(int value) {
       status_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1004,7 +1536,7 @@ public final class DaiAuthenticationKey extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000008;
       status_ = value.getNumber();
       onChanged();
       return this;
@@ -1030,7 +1562,7 @@ public final class DaiAuthenticationKey extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearStatus() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000008);
       status_ = 0;
       onChanged();
       return this;
@@ -1050,7 +1582,7 @@ public final class DaiAuthenticationKey extends com.google.protobuf.GeneratedMes
      * @return Whether the displayName field is set.
      */
     public boolean hasDisplayName() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
 
     /**
@@ -1116,7 +1648,7 @@ public final class DaiAuthenticationKey extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       displayName_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1134,7 +1666,7 @@ public final class DaiAuthenticationKey extends com.google.protobuf.GeneratedMes
      */
     public Builder clearDisplayName() {
       displayName_ = getDefaultInstance().getDisplayName();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1157,7 +1689,7 @@ public final class DaiAuthenticationKey extends com.google.protobuf.GeneratedMes
       }
       checkByteStringIsUtf8(value);
       displayName_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1180,7 +1712,7 @@ public final class DaiAuthenticationKey extends com.google.protobuf.GeneratedMes
      */
     @java.lang.Override
     public boolean hasKeyType() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
 
     /**
@@ -1219,7 +1751,7 @@ public final class DaiAuthenticationKey extends com.google.protobuf.GeneratedMes
      */
     public Builder setKeyTypeValue(int value) {
       keyType_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1270,7 +1802,7 @@ public final class DaiAuthenticationKey extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000020;
       keyType_ = value.getNumber();
       onChanged();
       return this;
@@ -1291,7 +1823,7 @@ public final class DaiAuthenticationKey extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearKeyType() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000020);
       keyType_ = 0;
       onChanged();
       return this;

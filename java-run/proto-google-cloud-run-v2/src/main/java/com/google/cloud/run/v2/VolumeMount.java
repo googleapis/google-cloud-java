@@ -197,6 +197,8 @@ public final class VolumeMount extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Optional. Path within the volume from which the container's volume should
    * be mounted. Defaults to "" (volume's root).
+   *
+   * This field is currently rejected in Secret volume mounts.
    * </pre>
    *
    * <code>string sub_path = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -222,6 +224,8 @@ public final class VolumeMount extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Optional. Path within the volume from which the container's volume should
    * be mounted. Defaults to "" (volume's root).
+   *
+   * This field is currently rejected in Secret volume mounts.
    * </pre>
    *
    * <code>string sub_path = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -845,6 +849,8 @@ public final class VolumeMount extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. Path within the volume from which the container's volume should
      * be mounted. Defaults to "" (volume's root).
+     *
+     * This field is currently rejected in Secret volume mounts.
      * </pre>
      *
      * <code>string sub_path = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -869,6 +875,8 @@ public final class VolumeMount extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. Path within the volume from which the container's volume should
      * be mounted. Defaults to "" (volume's root).
+     *
+     * This field is currently rejected in Secret volume mounts.
      * </pre>
      *
      * <code>string sub_path = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -893,6 +901,8 @@ public final class VolumeMount extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. Path within the volume from which the container's volume should
      * be mounted. Defaults to "" (volume's root).
+     *
+     * This field is currently rejected in Secret volume mounts.
      * </pre>
      *
      * <code>string sub_path = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -916,6 +926,8 @@ public final class VolumeMount extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. Path within the volume from which the container's volume should
      * be mounted. Defaults to "" (volume's root).
+     *
+     * This field is currently rejected in Secret volume mounts.
      * </pre>
      *
      * <code>string sub_path = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -935,6 +947,8 @@ public final class VolumeMount extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. Path within the volume from which the container's volume should
      * be mounted. Defaults to "" (volume's root).
+     *
+     * This field is currently rejected in Secret volume mounts.
      * </pre>
      *
      * <code>string sub_path = 4 [(.google.api.field_behavior) = OPTIONAL];</code>

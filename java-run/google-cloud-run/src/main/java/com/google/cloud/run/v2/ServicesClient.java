@@ -368,9 +368,10 @@ public class ServicesClient implements BackgroundResource {
    *     Format: projects/{project}/locations/{location}, where {project} can be project id or
    *     number. Only lowercase characters, digits, and hyphens.
    * @param service Required. The Service instance to create.
-   * @param serviceId Required. The unique identifier for the Service. It must begin with letter,
+   * @param serviceId Optional. The unique identifier for the Service. It must begin with letter,
    *     and cannot end with hyphen; must contain fewer than 50 characters. The name of the service
-   *     becomes {parent}/services/{service_id}.
+   *     becomes {parent}/services/{service_id}. If not provided, the server will generate a unique
+   *     `service_id`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Service, Service> createServiceAsync(
@@ -408,9 +409,10 @@ public class ServicesClient implements BackgroundResource {
    *     Format: projects/{project}/locations/{location}, where {project} can be project id or
    *     number. Only lowercase characters, digits, and hyphens.
    * @param service Required. The Service instance to create.
-   * @param serviceId Required. The unique identifier for the Service. It must begin with letter,
+   * @param serviceId Optional. The unique identifier for the Service. It must begin with letter,
    *     and cannot end with hyphen; must contain fewer than 50 characters. The name of the service
-   *     becomes {parent}/services/{service_id}.
+   *     becomes {parent}/services/{service_id}. If not provided, the server will generate a unique
+   *     `service_id`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Service, Service> createServiceAsync(
@@ -872,6 +874,7 @@ public class ServicesClient implements BackgroundResource {
    *           .setService(Service.newBuilder().build())
    *           .setValidateOnly(true)
    *           .setAllowMissing(true)
+   *           .setForceNewRevision(true)
    *           .build();
    *   Service response = servicesClient.updateServiceAsync(request).get();
    * }
@@ -903,6 +906,7 @@ public class ServicesClient implements BackgroundResource {
    *           .setService(Service.newBuilder().build())
    *           .setValidateOnly(true)
    *           .setAllowMissing(true)
+   *           .setForceNewRevision(true)
    *           .build();
    *   OperationFuture<Service, Service> future =
    *       servicesClient.updateServiceOperationCallable().futureCall(request);
@@ -935,6 +939,7 @@ public class ServicesClient implements BackgroundResource {
    *           .setService(Service.newBuilder().build())
    *           .setValidateOnly(true)
    *           .setAllowMissing(true)
+   *           .setForceNewRevision(true)
    *           .build();
    *   ApiFuture<Operation> future = servicesClient.updateServiceCallable().futureCall(request);
    *   // Do something.

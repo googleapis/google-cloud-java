@@ -73,10 +73,12 @@ public final class Address extends com.google.protobuf.GeneratedMessage
     labelFingerprint_ = "";
     name_ = "";
     network_ = "";
+    networkAttachment_ = "";
     networkTier_ = "";
     purpose_ = "";
     region_ = "";
     selfLink_ = "";
+    serviceClassId_ = "";
     status_ = "";
     subnetwork_ = "";
     users_ = com.google.protobuf.LazyStringArrayList.emptyList();
@@ -930,6 +932,30 @@ public final class Address extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * The global external address can only be assigned to Global External
+     * Passthrough Network Load Balancer forwarding rules, as an Availability
+     * Group 0 address.
+     * </pre>
+     *
+     * <code>PASSTHROUGH_LOAD_BALANCER_AVAILABILITY_GROUP0 = 119932186;</code>
+     */
+    PASSTHROUGH_LOAD_BALANCER_AVAILABILITY_GROUP0(119932186),
+    /**
+     *
+     *
+     * <pre>
+     * The global external address can only be assigned to Global External
+     * Passthrough Network Load Balancer forwarding rules, as an Availability
+     * Group 1 address.
+     * </pre>
+     *
+     * <code>PASSTHROUGH_LOAD_BALANCER_AVAILABILITY_GROUP1 = 119932187;</code>
+     */
+    PASSTHROUGH_LOAD_BALANCER_AVAILABILITY_GROUP1(119932187),
+    /**
+     *
+     *
+     * <pre>
      * A private network IP address that can be used to configure Private
      * Service Connect. This purpose can be specified only forGLOBAL addresses of Type INTERNAL
      * </pre>
@@ -1046,6 +1072,32 @@ public final class Address extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * The global external address can only be assigned to Global External
+     * Passthrough Network Load Balancer forwarding rules, as an Availability
+     * Group 0 address.
+     * </pre>
+     *
+     * <code>PASSTHROUGH_LOAD_BALANCER_AVAILABILITY_GROUP0 = 119932186;</code>
+     */
+    public static final int PASSTHROUGH_LOAD_BALANCER_AVAILABILITY_GROUP0_VALUE = 119932186;
+
+    /**
+     *
+     *
+     * <pre>
+     * The global external address can only be assigned to Global External
+     * Passthrough Network Load Balancer forwarding rules, as an Availability
+     * Group 1 address.
+     * </pre>
+     *
+     * <code>PASSTHROUGH_LOAD_BALANCER_AVAILABILITY_GROUP1 = 119932187;</code>
+     */
+    public static final int PASSTHROUGH_LOAD_BALANCER_AVAILABILITY_GROUP1_VALUE = 119932187;
+
+    /**
+     *
+     *
+     * <pre>
      * A private network IP address that can be used to configure Private
      * Service Connect. This purpose can be specified only forGLOBAL addresses of Type INTERNAL
      * </pre>
@@ -1122,6 +1174,10 @@ public final class Address extends com.google.protobuf.GeneratedMessage
           return IPSEC_INTERCONNECT;
         case 163666477:
           return NAT_AUTO;
+        case 119932186:
+          return PASSTHROUGH_LOAD_BALANCER_AVAILABILITY_GROUP0;
+        case 119932187:
+          return PASSTHROUGH_LOAD_BALANCER_AVAILABILITY_GROUP1;
         case 48134724:
           return PRIVATE_SERVICE_CONNECT;
         case 270492508:
@@ -2443,6 +2499,81 @@ public final class Address extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public static final int NETWORK_ATTACHMENT_FIELD_NUMBER = 224644052;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object networkAttachment_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The URL of the network attachment that this address comes from in the
+   * following format:
+   * projects/{project}/regions/{region_name}/networkAttachments/{network_attachment_name}.
+   * </pre>
+   *
+   * <code>optional string network_attachment = 224644052;</code>
+   *
+   * @return Whether the networkAttachment field is set.
+   */
+  @java.lang.Override
+  public boolean hasNetworkAttachment() {
+    return ((bitField0_ & 0x00001000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The URL of the network attachment that this address comes from in the
+   * following format:
+   * projects/{project}/regions/{region_name}/networkAttachments/{network_attachment_name}.
+   * </pre>
+   *
+   * <code>optional string network_attachment = 224644052;</code>
+   *
+   * @return The networkAttachment.
+   */
+  @java.lang.Override
+  public java.lang.String getNetworkAttachment() {
+    java.lang.Object ref = networkAttachment_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      networkAttachment_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The URL of the network attachment that this address comes from in the
+   * following format:
+   * projects/{project}/regions/{region_name}/networkAttachments/{network_attachment_name}.
+   * </pre>
+   *
+   * <code>optional string network_attachment = 224644052;</code>
+   *
+   * @return The bytes for networkAttachment.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getNetworkAttachmentBytes() {
+    java.lang.Object ref = networkAttachment_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      networkAttachment_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int NETWORK_TIER_FIELD_NUMBER = 517397843;
 
   @SuppressWarnings("serial")
@@ -2467,7 +2598,7 @@ public final class Address extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasNetworkTier() {
-    return ((bitField0_ & 0x00001000) != 0);
+    return ((bitField0_ & 0x00002000) != 0);
   }
 
   /**
@@ -2546,7 +2677,7 @@ public final class Address extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasPrefixLength() {
-    return ((bitField0_ & 0x00002000) != 0);
+    return ((bitField0_ & 0x00004000) != 0);
   }
 
   /**
@@ -2614,7 +2745,7 @@ public final class Address extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasPurpose() {
-    return ((bitField0_ & 0x00004000) != 0);
+    return ((bitField0_ & 0x00008000) != 0);
   }
 
   /**
@@ -2748,7 +2879,7 @@ public final class Address extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasRegion() {
-    return ((bitField0_ & 0x00008000) != 0);
+    return ((bitField0_ & 0x00010000) != 0);
   }
 
   /**
@@ -2823,7 +2954,7 @@ public final class Address extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasSelfLink() {
-    return ((bitField0_ & 0x00010000) != 0);
+    return ((bitField0_ & 0x00020000) != 0);
   }
 
   /**
@@ -2874,6 +3005,81 @@ public final class Address extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public static final int SERVICE_CLASS_ID_FIELD_NUMBER = 422763404;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object serviceClassId_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Producer Service's Service class ID for the region of this address. Can
+   * only be used with network_attachment. It is not possible to use on its own;
+   * however, network_attachment can be used without service_class_id.
+   * </pre>
+   *
+   * <code>optional string service_class_id = 422763404;</code>
+   *
+   * @return Whether the serviceClassId field is set.
+   */
+  @java.lang.Override
+  public boolean hasServiceClassId() {
+    return ((bitField0_ & 0x00040000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Producer Service's Service class ID for the region of this address. Can
+   * only be used with network_attachment. It is not possible to use on its own;
+   * however, network_attachment can be used without service_class_id.
+   * </pre>
+   *
+   * <code>optional string service_class_id = 422763404;</code>
+   *
+   * @return The serviceClassId.
+   */
+  @java.lang.Override
+  public java.lang.String getServiceClassId() {
+    java.lang.Object ref = serviceClassId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      serviceClassId_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Producer Service's Service class ID for the region of this address. Can
+   * only be used with network_attachment. It is not possible to use on its own;
+   * however, network_attachment can be used without service_class_id.
+   * </pre>
+   *
+   * <code>optional string service_class_id = 422763404;</code>
+   *
+   * @return The bytes for serviceClassId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getServiceClassIdBytes() {
+    java.lang.Object ref = serviceClassId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      serviceClassId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int STATUS_FIELD_NUMBER = 181260274;
 
   @SuppressWarnings("serial")
@@ -2897,7 +3103,7 @@ public final class Address extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasStatus() {
-    return ((bitField0_ & 0x00020000) != 0);
+    return ((bitField0_ & 0x00080000) != 0);
   }
 
   /**
@@ -2978,7 +3184,7 @@ public final class Address extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasSubnetwork() {
-    return ((bitField0_ & 0x00040000) != 0);
+    return ((bitField0_ & 0x00100000) != 0);
   }
 
   /**
@@ -3133,7 +3339,7 @@ public final class Address extends com.google.protobuf.GeneratedMessage
     for (int i = 0; i < users_.size(); i++) {
       com.google.protobuf.GeneratedMessage.writeString(output, 111578632, users_.getRaw(i));
     }
-    if (((bitField0_ & 0x00008000) != 0)) {
+    if (((bitField0_ & 0x00010000) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 138946292, region_);
     }
     if (((bitField0_ & 0x00000020) != 0)) {
@@ -3142,8 +3348,11 @@ public final class Address extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000200) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 178124825, labelFingerprint_);
     }
-    if (((bitField0_ & 0x00020000) != 0)) {
+    if (((bitField0_ & 0x00080000) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 181260274, status_);
+    }
+    if (((bitField0_ & 0x00001000) != 0)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 224644052, networkAttachment_);
     }
     if (((bitField0_ & 0x00000800) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 232872494, network_);
@@ -3154,19 +3363,22 @@ public final class Address extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000040) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 294959552, ipVersion_);
     }
-    if (((bitField0_ & 0x00040000) != 0)) {
+    if (((bitField0_ & 0x00100000) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 307827694, subnetwork_);
     }
-    if (((bitField0_ & 0x00004000) != 0)) {
+    if (((bitField0_ & 0x00008000) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 316407070, purpose_);
+    }
+    if (((bitField0_ & 0x00040000) != 0)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 422763404, serviceClassId_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 422937596, description_);
     }
-    if (((bitField0_ & 0x00002000) != 0)) {
+    if (((bitField0_ & 0x00004000) != 0)) {
       output.writeInt32(453565747, prefixLength_);
     }
-    if (((bitField0_ & 0x00010000) != 0)) {
+    if (((bitField0_ & 0x00020000) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 456214797, selfLink_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
@@ -3174,7 +3386,7 @@ public final class Address extends com.google.protobuf.GeneratedMessage
     }
     com.google.protobuf.GeneratedMessage.serializeStringMapTo(
         output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 500195327);
-    if (((bitField0_ & 0x00001000) != 0)) {
+    if (((bitField0_ & 0x00002000) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 517397843, networkTier_);
     }
     getUnknownFields().writeTo(output);
@@ -3209,7 +3421,7 @@ public final class Address extends com.google.protobuf.GeneratedMessage
       size += dataSize;
       size += 5 * getUsersList().size();
     }
-    if (((bitField0_ & 0x00008000) != 0)) {
+    if (((bitField0_ & 0x00010000) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(138946292, region_);
     }
     if (((bitField0_ & 0x00000020) != 0)) {
@@ -3218,8 +3430,11 @@ public final class Address extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000200) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(178124825, labelFingerprint_);
     }
-    if (((bitField0_ & 0x00020000) != 0)) {
+    if (((bitField0_ & 0x00080000) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(181260274, status_);
+    }
+    if (((bitField0_ & 0x00001000) != 0)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(224644052, networkAttachment_);
     }
     if (((bitField0_ & 0x00000800) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(232872494, network_);
@@ -3230,19 +3445,22 @@ public final class Address extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000040) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(294959552, ipVersion_);
     }
-    if (((bitField0_ & 0x00040000) != 0)) {
+    if (((bitField0_ & 0x00100000) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(307827694, subnetwork_);
     }
-    if (((bitField0_ & 0x00004000) != 0)) {
+    if (((bitField0_ & 0x00008000) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(316407070, purpose_);
+    }
+    if (((bitField0_ & 0x00040000) != 0)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(422763404, serviceClassId_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(422937596, description_);
     }
-    if (((bitField0_ & 0x00002000) != 0)) {
+    if (((bitField0_ & 0x00004000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(453565747, prefixLength_);
     }
-    if (((bitField0_ & 0x00010000) != 0)) {
+    if (((bitField0_ & 0x00020000) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(456214797, selfLink_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
@@ -3258,7 +3476,7 @@ public final class Address extends com.google.protobuf.GeneratedMessage
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(500195327, labels__);
     }
-    if (((bitField0_ & 0x00001000) != 0)) {
+    if (((bitField0_ & 0x00002000) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(517397843, networkTier_);
     }
     size += getUnknownFields().getSerializedSize();
@@ -3325,6 +3543,10 @@ public final class Address extends com.google.protobuf.GeneratedMessage
     if (hasNetwork()) {
       if (!getNetwork().equals(other.getNetwork())) return false;
     }
+    if (hasNetworkAttachment() != other.hasNetworkAttachment()) return false;
+    if (hasNetworkAttachment()) {
+      if (!getNetworkAttachment().equals(other.getNetworkAttachment())) return false;
+    }
     if (hasNetworkTier() != other.hasNetworkTier()) return false;
     if (hasNetworkTier()) {
       if (!getNetworkTier().equals(other.getNetworkTier())) return false;
@@ -3344,6 +3566,10 @@ public final class Address extends com.google.protobuf.GeneratedMessage
     if (hasSelfLink() != other.hasSelfLink()) return false;
     if (hasSelfLink()) {
       if (!getSelfLink().equals(other.getSelfLink())) return false;
+    }
+    if (hasServiceClassId() != other.hasServiceClassId()) return false;
+    if (hasServiceClassId()) {
+      if (!getServiceClassId().equals(other.getServiceClassId())) return false;
     }
     if (hasStatus() != other.hasStatus()) return false;
     if (hasStatus()) {
@@ -3417,6 +3643,10 @@ public final class Address extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + NETWORK_FIELD_NUMBER;
       hash = (53 * hash) + getNetwork().hashCode();
     }
+    if (hasNetworkAttachment()) {
+      hash = (37 * hash) + NETWORK_ATTACHMENT_FIELD_NUMBER;
+      hash = (53 * hash) + getNetworkAttachment().hashCode();
+    }
     if (hasNetworkTier()) {
       hash = (37 * hash) + NETWORK_TIER_FIELD_NUMBER;
       hash = (53 * hash) + getNetworkTier().hashCode();
@@ -3436,6 +3666,10 @@ public final class Address extends com.google.protobuf.GeneratedMessage
     if (hasSelfLink()) {
       hash = (37 * hash) + SELF_LINK_FIELD_NUMBER;
       hash = (53 * hash) + getSelfLink().hashCode();
+    }
+    if (hasServiceClassId()) {
+      hash = (37 * hash) + SERVICE_CLASS_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getServiceClassId().hashCode();
     }
     if (hasStatus()) {
       hash = (37 * hash) + STATUS_FIELD_NUMBER;
@@ -3633,11 +3867,13 @@ public final class Address extends com.google.protobuf.GeneratedMessage
       internalGetMutableLabels().clear();
       name_ = "";
       network_ = "";
+      networkAttachment_ = "";
       networkTier_ = "";
       prefixLength_ = 0;
       purpose_ = "";
       region_ = "";
       selfLink_ = "";
+      serviceClassId_ = "";
       status_ = "";
       subnetwork_ = "";
       users_ = com.google.protobuf.LazyStringArrayList.emptyList();
@@ -3730,34 +3966,42 @@ public final class Address extends com.google.protobuf.GeneratedMessage
         to_bitField0_ |= 0x00000800;
       }
       if (((from_bitField0_ & 0x00002000) != 0)) {
-        result.networkTier_ = networkTier_;
+        result.networkAttachment_ = networkAttachment_;
         to_bitField0_ |= 0x00001000;
       }
       if (((from_bitField0_ & 0x00004000) != 0)) {
-        result.prefixLength_ = prefixLength_;
+        result.networkTier_ = networkTier_;
         to_bitField0_ |= 0x00002000;
       }
       if (((from_bitField0_ & 0x00008000) != 0)) {
-        result.purpose_ = purpose_;
+        result.prefixLength_ = prefixLength_;
         to_bitField0_ |= 0x00004000;
       }
       if (((from_bitField0_ & 0x00010000) != 0)) {
-        result.region_ = region_;
+        result.purpose_ = purpose_;
         to_bitField0_ |= 0x00008000;
       }
       if (((from_bitField0_ & 0x00020000) != 0)) {
-        result.selfLink_ = selfLink_;
+        result.region_ = region_;
         to_bitField0_ |= 0x00010000;
       }
       if (((from_bitField0_ & 0x00040000) != 0)) {
-        result.status_ = status_;
+        result.selfLink_ = selfLink_;
         to_bitField0_ |= 0x00020000;
       }
       if (((from_bitField0_ & 0x00080000) != 0)) {
-        result.subnetwork_ = subnetwork_;
+        result.serviceClassId_ = serviceClassId_;
         to_bitField0_ |= 0x00040000;
       }
       if (((from_bitField0_ & 0x00100000) != 0)) {
+        result.status_ = status_;
+        to_bitField0_ |= 0x00080000;
+      }
+      if (((from_bitField0_ & 0x00200000) != 0)) {
+        result.subnetwork_ = subnetwork_;
+        to_bitField0_ |= 0x00100000;
+      }
+      if (((from_bitField0_ & 0x00400000) != 0)) {
         users_.makeImmutable();
         result.users_ = users_;
       }
@@ -3836,9 +4080,14 @@ public final class Address extends com.google.protobuf.GeneratedMessage
         bitField0_ |= 0x00001000;
         onChanged();
       }
+      if (other.hasNetworkAttachment()) {
+        networkAttachment_ = other.networkAttachment_;
+        bitField0_ |= 0x00002000;
+        onChanged();
+      }
       if (other.hasNetworkTier()) {
         networkTier_ = other.networkTier_;
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00004000;
         onChanged();
       }
       if (other.hasPrefixLength()) {
@@ -3846,33 +4095,38 @@ public final class Address extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasPurpose()) {
         purpose_ = other.purpose_;
-        bitField0_ |= 0x00008000;
+        bitField0_ |= 0x00010000;
         onChanged();
       }
       if (other.hasRegion()) {
         region_ = other.region_;
-        bitField0_ |= 0x00010000;
+        bitField0_ |= 0x00020000;
         onChanged();
       }
       if (other.hasSelfLink()) {
         selfLink_ = other.selfLink_;
-        bitField0_ |= 0x00020000;
+        bitField0_ |= 0x00040000;
+        onChanged();
+      }
+      if (other.hasServiceClassId()) {
+        serviceClassId_ = other.serviceClassId_;
+        bitField0_ |= 0x00080000;
         onChanged();
       }
       if (other.hasStatus()) {
         status_ = other.status_;
-        bitField0_ |= 0x00040000;
+        bitField0_ |= 0x00100000;
         onChanged();
       }
       if (other.hasSubnetwork()) {
         subnetwork_ = other.subnetwork_;
-        bitField0_ |= 0x00080000;
+        bitField0_ |= 0x00200000;
         onChanged();
       }
       if (!other.users_.isEmpty()) {
         if (users_.isEmpty()) {
           users_ = other.users_;
-          bitField0_ |= 0x00100000;
+          bitField0_ |= 0x00400000;
         } else {
           ensureUsersIsMutable();
           users_.addAll(other.users_);
@@ -3945,7 +4199,7 @@ public final class Address extends com.google.protobuf.GeneratedMessage
             case 1111570338:
               {
                 region_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00010000;
+                bitField0_ |= 0x00020000;
                 break;
               } // case 1111570338
             case 1414546866:
@@ -3963,9 +4217,15 @@ public final class Address extends com.google.protobuf.GeneratedMessage
             case 1450082194:
               {
                 status_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00040000;
+                bitField0_ |= 0x00100000;
                 break;
               } // case 1450082194
+            case 1797152418:
+              {
+                networkAttachment_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00002000;
+                break;
+              } // case 1797152418
             case 1862979954:
               {
                 network_ = input.readStringRequireUtf8();
@@ -3987,15 +4247,21 @@ public final class Address extends com.google.protobuf.GeneratedMessage
             case -1832345742:
               {
                 subnetwork_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00080000;
+                bitField0_ |= 0x00200000;
                 break;
               } // case -1832345742
             case -1763710734:
               {
                 purpose_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00008000;
+                bitField0_ |= 0x00010000;
                 break;
               } // case -1763710734
+            case -912860062:
+              {
+                serviceClassId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00080000;
+                break;
+              } // case -912860062
             case -911466526:
               {
                 description_ = input.readStringRequireUtf8();
@@ -4005,13 +4271,13 @@ public final class Address extends com.google.protobuf.GeneratedMessage
             case -666441320:
               {
                 prefixLength_ = input.readInt32();
-                bitField0_ |= 0x00004000;
+                bitField0_ |= 0x00008000;
                 break;
               } // case -666441320
             case -645248918:
               {
                 selfLink_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00020000;
+                bitField0_ |= 0x00040000;
                 break;
               } // case -645248918
             case -591601758:
@@ -4035,7 +4301,7 @@ public final class Address extends com.google.protobuf.GeneratedMessage
             case -155784550:
               {
                 networkTier_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00004000;
                 break;
               } // case -155784550
             default:
@@ -6010,6 +6276,144 @@ public final class Address extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
+    private java.lang.Object networkAttachment_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The URL of the network attachment that this address comes from in the
+     * following format:
+     * projects/{project}/regions/{region_name}/networkAttachments/{network_attachment_name}.
+     * </pre>
+     *
+     * <code>optional string network_attachment = 224644052;</code>
+     *
+     * @return Whether the networkAttachment field is set.
+     */
+    public boolean hasNetworkAttachment() {
+      return ((bitField0_ & 0x00002000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The URL of the network attachment that this address comes from in the
+     * following format:
+     * projects/{project}/regions/{region_name}/networkAttachments/{network_attachment_name}.
+     * </pre>
+     *
+     * <code>optional string network_attachment = 224644052;</code>
+     *
+     * @return The networkAttachment.
+     */
+    public java.lang.String getNetworkAttachment() {
+      java.lang.Object ref = networkAttachment_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        networkAttachment_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The URL of the network attachment that this address comes from in the
+     * following format:
+     * projects/{project}/regions/{region_name}/networkAttachments/{network_attachment_name}.
+     * </pre>
+     *
+     * <code>optional string network_attachment = 224644052;</code>
+     *
+     * @return The bytes for networkAttachment.
+     */
+    public com.google.protobuf.ByteString getNetworkAttachmentBytes() {
+      java.lang.Object ref = networkAttachment_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        networkAttachment_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The URL of the network attachment that this address comes from in the
+     * following format:
+     * projects/{project}/regions/{region_name}/networkAttachments/{network_attachment_name}.
+     * </pre>
+     *
+     * <code>optional string network_attachment = 224644052;</code>
+     *
+     * @param value The networkAttachment to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNetworkAttachment(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      networkAttachment_ = value;
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The URL of the network attachment that this address comes from in the
+     * following format:
+     * projects/{project}/regions/{region_name}/networkAttachments/{network_attachment_name}.
+     * </pre>
+     *
+     * <code>optional string network_attachment = 224644052;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearNetworkAttachment() {
+      networkAttachment_ = getDefaultInstance().getNetworkAttachment();
+      bitField0_ = (bitField0_ & ~0x00002000);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The URL of the network attachment that this address comes from in the
+     * following format:
+     * projects/{project}/regions/{region_name}/networkAttachments/{network_attachment_name}.
+     * </pre>
+     *
+     * <code>optional string network_attachment = 224644052;</code>
+     *
+     * @param value The bytes for networkAttachment to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNetworkAttachmentBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      networkAttachment_ = value;
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object networkTier_ = "";
 
     /**
@@ -6030,7 +6434,7 @@ public final class Address extends com.google.protobuf.GeneratedMessage
      * @return Whether the networkTier field is set.
      */
     public boolean hasNetworkTier() {
-      return ((bitField0_ & 0x00002000) != 0);
+      return ((bitField0_ & 0x00004000) != 0);
     }
 
     /**
@@ -6114,7 +6518,7 @@ public final class Address extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       networkTier_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -6138,7 +6542,7 @@ public final class Address extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearNetworkTier() {
       networkTier_ = getDefaultInstance().getNetworkTier();
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       onChanged();
       return this;
     }
@@ -6167,7 +6571,7 @@ public final class Address extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       networkTier_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -6187,7 +6591,7 @@ public final class Address extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasPrefixLength() {
-      return ((bitField0_ & 0x00004000) != 0);
+      return ((bitField0_ & 0x00008000) != 0);
     }
 
     /**
@@ -6221,7 +6625,7 @@ public final class Address extends com.google.protobuf.GeneratedMessage
     public Builder setPrefixLength(int value) {
 
       prefixLength_ = value;
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -6238,7 +6642,7 @@ public final class Address extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearPrefixLength() {
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       prefixLength_ = 0;
       onChanged();
       return this;
@@ -6289,7 +6693,7 @@ public final class Address extends com.google.protobuf.GeneratedMessage
      * @return Whether the purpose field is set.
      */
     public boolean hasPurpose() {
-      return ((bitField0_ & 0x00008000) != 0);
+      return ((bitField0_ & 0x00010000) != 0);
     }
 
     /**
@@ -6448,7 +6852,7 @@ public final class Address extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       purpose_ = value;
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -6497,7 +6901,7 @@ public final class Address extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearPurpose() {
       purpose_ = getDefaultInstance().getPurpose();
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       onChanged();
       return this;
     }
@@ -6551,7 +6955,7 @@ public final class Address extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       purpose_ = value;
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -6573,7 +6977,7 @@ public final class Address extends com.google.protobuf.GeneratedMessage
      * @return Whether the region field is set.
      */
     public boolean hasRegion() {
-      return ((bitField0_ & 0x00010000) != 0);
+      return ((bitField0_ & 0x00020000) != 0);
     }
 
     /**
@@ -6648,7 +7052,7 @@ public final class Address extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       region_ = value;
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -6669,7 +7073,7 @@ public final class Address extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearRegion() {
       region_ = getDefaultInstance().getRegion();
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       onChanged();
       return this;
     }
@@ -6695,7 +7099,7 @@ public final class Address extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       region_ = value;
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -6714,7 +7118,7 @@ public final class Address extends com.google.protobuf.GeneratedMessage
      * @return Whether the selfLink field is set.
      */
     public boolean hasSelfLink() {
-      return ((bitField0_ & 0x00020000) != 0);
+      return ((bitField0_ & 0x00040000) != 0);
     }
 
     /**
@@ -6780,7 +7184,7 @@ public final class Address extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       selfLink_ = value;
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -6798,7 +7202,7 @@ public final class Address extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearSelfLink() {
       selfLink_ = getDefaultInstance().getSelfLink();
-      bitField0_ = (bitField0_ & ~0x00020000);
+      bitField0_ = (bitField0_ & ~0x00040000);
       onChanged();
       return this;
     }
@@ -6821,7 +7225,145 @@ public final class Address extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       selfLink_ = value;
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object serviceClassId_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Producer Service's Service class ID for the region of this address. Can
+     * only be used with network_attachment. It is not possible to use on its own;
+     * however, network_attachment can be used without service_class_id.
+     * </pre>
+     *
+     * <code>optional string service_class_id = 422763404;</code>
+     *
+     * @return Whether the serviceClassId field is set.
+     */
+    public boolean hasServiceClassId() {
+      return ((bitField0_ & 0x00080000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Producer Service's Service class ID for the region of this address. Can
+     * only be used with network_attachment. It is not possible to use on its own;
+     * however, network_attachment can be used without service_class_id.
+     * </pre>
+     *
+     * <code>optional string service_class_id = 422763404;</code>
+     *
+     * @return The serviceClassId.
+     */
+    public java.lang.String getServiceClassId() {
+      java.lang.Object ref = serviceClassId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        serviceClassId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Producer Service's Service class ID for the region of this address. Can
+     * only be used with network_attachment. It is not possible to use on its own;
+     * however, network_attachment can be used without service_class_id.
+     * </pre>
+     *
+     * <code>optional string service_class_id = 422763404;</code>
+     *
+     * @return The bytes for serviceClassId.
+     */
+    public com.google.protobuf.ByteString getServiceClassIdBytes() {
+      java.lang.Object ref = serviceClassId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        serviceClassId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Producer Service's Service class ID for the region of this address. Can
+     * only be used with network_attachment. It is not possible to use on its own;
+     * however, network_attachment can be used without service_class_id.
+     * </pre>
+     *
+     * <code>optional string service_class_id = 422763404;</code>
+     *
+     * @param value The serviceClassId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setServiceClassId(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      serviceClassId_ = value;
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Producer Service's Service class ID for the region of this address. Can
+     * only be used with network_attachment. It is not possible to use on its own;
+     * however, network_attachment can be used without service_class_id.
+     * </pre>
+     *
+     * <code>optional string service_class_id = 422763404;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearServiceClassId() {
+      serviceClassId_ = getDefaultInstance().getServiceClassId();
+      bitField0_ = (bitField0_ & ~0x00080000);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Producer Service's Service class ID for the region of this address. Can
+     * only be used with network_attachment. It is not possible to use on its own;
+     * however, network_attachment can be used without service_class_id.
+     * </pre>
+     *
+     * <code>optional string service_class_id = 422763404;</code>
+     *
+     * @param value The bytes for serviceClassId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setServiceClassIdBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      serviceClassId_ = value;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -6845,7 +7387,7 @@ public final class Address extends com.google.protobuf.GeneratedMessage
      * @return Whether the status field is set.
      */
     public boolean hasStatus() {
-      return ((bitField0_ & 0x00040000) != 0);
+      return ((bitField0_ & 0x00100000) != 0);
     }
 
     /**
@@ -6926,7 +7468,7 @@ public final class Address extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       status_ = value;
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -6949,7 +7491,7 @@ public final class Address extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearStatus() {
       status_ = getDefaultInstance().getStatus();
-      bitField0_ = (bitField0_ & ~0x00040000);
+      bitField0_ = (bitField0_ & ~0x00100000);
       onChanged();
       return this;
     }
@@ -6977,7 +7519,7 @@ public final class Address extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       status_ = value;
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -6998,7 +7540,7 @@ public final class Address extends com.google.protobuf.GeneratedMessage
      * @return Whether the subnetwork field is set.
      */
     public boolean hasSubnetwork() {
-      return ((bitField0_ & 0x00080000) != 0);
+      return ((bitField0_ & 0x00200000) != 0);
     }
 
     /**
@@ -7070,7 +7612,7 @@ public final class Address extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       subnetwork_ = value;
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -7090,7 +7632,7 @@ public final class Address extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearSubnetwork() {
       subnetwork_ = getDefaultInstance().getSubnetwork();
-      bitField0_ = (bitField0_ & ~0x00080000);
+      bitField0_ = (bitField0_ & ~0x00200000);
       onChanged();
       return this;
     }
@@ -7115,7 +7657,7 @@ public final class Address extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       subnetwork_ = value;
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -7127,7 +7669,7 @@ public final class Address extends com.google.protobuf.GeneratedMessage
       if (!users_.isModifiable()) {
         users_ = new com.google.protobuf.LazyStringArrayList(users_);
       }
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00400000;
     }
 
     /**
@@ -7212,7 +7754,7 @@ public final class Address extends com.google.protobuf.GeneratedMessage
       }
       ensureUsersIsMutable();
       users_.set(index, value);
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00400000;
       onChanged();
       return this;
     }
@@ -7235,7 +7777,7 @@ public final class Address extends com.google.protobuf.GeneratedMessage
       }
       ensureUsersIsMutable();
       users_.add(value);
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00400000;
       onChanged();
       return this;
     }
@@ -7255,7 +7797,7 @@ public final class Address extends com.google.protobuf.GeneratedMessage
     public Builder addAllUsers(java.lang.Iterable<java.lang.String> values) {
       ensureUsersIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, users_);
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00400000;
       onChanged();
       return this;
     }
@@ -7273,7 +7815,7 @@ public final class Address extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearUsers() {
       users_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00100000);
+      bitField0_ = (bitField0_ & ~0x00400000);
       ;
       onChanged();
       return this;
@@ -7298,7 +7840,7 @@ public final class Address extends com.google.protobuf.GeneratedMessage
       checkByteStringIsUtf8(value);
       ensureUsersIsMutable();
       users_.add(value);
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00400000;
       onChanged();
       return this;
     }

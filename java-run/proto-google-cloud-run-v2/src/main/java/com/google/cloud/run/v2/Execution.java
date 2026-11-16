@@ -61,6 +61,8 @@ public final class Execution extends com.google.protobuf.GeneratedMessage
     job_ = "";
     conditions_ = java.util.Collections.emptyList();
     logUri_ = "";
+    client_ = "";
+    clientVersion_ = "";
     etag_ = "";
   }
 
@@ -885,7 +887,7 @@ public final class Execution extends com.google.protobuf.GeneratedMessage
    *
    * Note that this value might not be what was used
    * as input. For example, if ALPHA was provided as input in the parent
-   * resource, but only BETA and GA-level features are were, this field will be
+   * resource, but only BETA and GA-level features are used, this field will be
    * BETA.
    * </pre>
    *
@@ -909,7 +911,7 @@ public final class Execution extends com.google.protobuf.GeneratedMessage
    *
    * Note that this value might not be what was used
    * as input. For example, if ALPHA was provided as input in the parent
-   * resource, but only BETA and GA-level features are were, this field will be
+   * resource, but only BETA and GA-level features are used, this field will be
    * BETA.
    * </pre>
    *
@@ -1390,6 +1392,112 @@ public final class Execution extends com.google.protobuf.GeneratedMessage
     return satisfiesPzs_;
   }
 
+  public static final int CLIENT_FIELD_NUMBER = 33;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object client_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Arbitrary identifier for the API client.
+   * </pre>
+   *
+   * <code>string client = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The client.
+   */
+  @java.lang.Override
+  public java.lang.String getClient() {
+    java.lang.Object ref = client_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      client_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Arbitrary identifier for the API client.
+   * </pre>
+   *
+   * <code>string client = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for client.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getClientBytes() {
+    java.lang.Object ref = client_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      client_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int CLIENT_VERSION_FIELD_NUMBER = 34;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object clientVersion_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Arbitrary version identifier for the API client.
+   * </pre>
+   *
+   * <code>string client_version = 34 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The clientVersion.
+   */
+  @java.lang.Override
+  public java.lang.String getClientVersion() {
+    java.lang.Object ref = clientVersion_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      clientVersion_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Arbitrary version identifier for the API client.
+   * </pre>
+   *
+   * <code>string client_version = 34 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for clientVersion.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getClientVersionBytes() {
+    java.lang.Object ref = clientVersion_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      clientVersion_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int ETAG_FIELD_NUMBER = 99;
 
   @SuppressWarnings("serial")
@@ -1538,6 +1646,12 @@ public final class Execution extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(creator_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 32, creator_);
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(client_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 33, client_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(clientVersion_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 34, clientVersion_);
+    }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(etag_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 99, etag_);
     }
@@ -1645,6 +1759,12 @@ public final class Execution extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(creator_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(32, creator_);
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(client_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(33, client_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(clientVersion_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(34, clientVersion_);
+    }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(etag_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(99, etag_);
     }
@@ -1711,6 +1831,8 @@ public final class Execution extends com.google.protobuf.GeneratedMessage
     if (getRetriedCount() != other.getRetriedCount()) return false;
     if (!getLogUri().equals(other.getLogUri())) return false;
     if (getSatisfiesPzs() != other.getSatisfiesPzs()) return false;
+    if (!getClient().equals(other.getClient())) return false;
+    if (!getClientVersion().equals(other.getClientVersion())) return false;
     if (!getEtag().equals(other.getEtag())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -1797,6 +1919,10 @@ public final class Execution extends com.google.protobuf.GeneratedMessage
     hash = (53 * hash) + getLogUri().hashCode();
     hash = (37 * hash) + SATISFIES_PZS_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSatisfiesPzs());
+    hash = (37 * hash) + CLIENT_FIELD_NUMBER;
+    hash = (53 * hash) + getClient().hashCode();
+    hash = (37 * hash) + CLIENT_VERSION_FIELD_NUMBER;
+    hash = (53 * hash) + getClientVersion().hashCode();
     hash = (37 * hash) + ETAG_FIELD_NUMBER;
     hash = (53 * hash) + getEtag().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
@@ -2043,6 +2169,8 @@ public final class Execution extends com.google.protobuf.GeneratedMessage
       retriedCount_ = 0;
       logUri_ = "";
       satisfiesPzs_ = false;
+      client_ = "";
+      clientVersion_ = "";
       etag_ = "";
       return this;
     }
@@ -2182,6 +2310,12 @@ public final class Execution extends com.google.protobuf.GeneratedMessage
         result.satisfiesPzs_ = satisfiesPzs_;
       }
       if (((from_bitField0_ & 0x08000000) != 0)) {
+        result.client_ = client_;
+      }
+      if (((from_bitField0_ & 0x10000000) != 0)) {
+        result.clientVersion_ = clientVersion_;
+      }
+      if (((from_bitField0_ & 0x20000000) != 0)) {
         result.etag_ = etag_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -2312,9 +2446,19 @@ public final class Execution extends com.google.protobuf.GeneratedMessage
       if (other.getSatisfiesPzs() != false) {
         setSatisfiesPzs(other.getSatisfiesPzs());
       }
+      if (!other.getClient().isEmpty()) {
+        client_ = other.client_;
+        bitField0_ |= 0x08000000;
+        onChanged();
+      }
+      if (!other.getClientVersion().isEmpty()) {
+        clientVersion_ = other.clientVersion_;
+        bitField0_ |= 0x10000000;
+        onChanged();
+      }
       if (!other.getEtag().isEmpty()) {
         etag_ = other.etag_;
-        bitField0_ |= 0x08000000;
+        bitField0_ |= 0x20000000;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -2531,10 +2675,22 @@ public final class Execution extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000004;
                 break;
               } // case 258
+            case 266:
+              {
+                client_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x08000000;
+                break;
+              } // case 266
+            case 274:
+              {
+                clientVersion_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x10000000;
+                break;
+              } // case 274
             case 794:
               {
                 etag_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x08000000;
+                bitField0_ |= 0x20000000;
                 break;
               } // case 794
             default:
@@ -4728,7 +4884,7 @@ public final class Execution extends com.google.protobuf.GeneratedMessage
      *
      * Note that this value might not be what was used
      * as input. For example, if ALPHA was provided as input in the parent
-     * resource, but only BETA and GA-level features are were, this field will be
+     * resource, but only BETA and GA-level features are used, this field will be
      * BETA.
      * </pre>
      *
@@ -4752,7 +4908,7 @@ public final class Execution extends com.google.protobuf.GeneratedMessage
      *
      * Note that this value might not be what was used
      * as input. For example, if ALPHA was provided as input in the parent
-     * resource, but only BETA and GA-level features are were, this field will be
+     * resource, but only BETA and GA-level features are used, this field will be
      * BETA.
      * </pre>
      *
@@ -4779,7 +4935,7 @@ public final class Execution extends com.google.protobuf.GeneratedMessage
      *
      * Note that this value might not be what was used
      * as input. For example, if ALPHA was provided as input in the parent
-     * resource, but only BETA and GA-level features are were, this field will be
+     * resource, but only BETA and GA-level features are used, this field will be
      * BETA.
      * </pre>
      *
@@ -4804,7 +4960,7 @@ public final class Execution extends com.google.protobuf.GeneratedMessage
      *
      * Note that this value might not be what was used
      * as input. For example, if ALPHA was provided as input in the parent
-     * resource, but only BETA and GA-level features are were, this field will be
+     * resource, but only BETA and GA-level features are used, this field will be
      * BETA.
      * </pre>
      *
@@ -4834,7 +4990,7 @@ public final class Execution extends com.google.protobuf.GeneratedMessage
      *
      * Note that this value might not be what was used
      * as input. For example, if ALPHA was provided as input in the parent
-     * resource, but only BETA and GA-level features are were, this field will be
+     * resource, but only BETA and GA-level features are used, this field will be
      * BETA.
      * </pre>
      *
@@ -6325,6 +6481,228 @@ public final class Execution extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
+    private java.lang.Object client_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Arbitrary identifier for the API client.
+     * </pre>
+     *
+     * <code>string client = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The client.
+     */
+    public java.lang.String getClient() {
+      java.lang.Object ref = client_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        client_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Arbitrary identifier for the API client.
+     * </pre>
+     *
+     * <code>string client = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for client.
+     */
+    public com.google.protobuf.ByteString getClientBytes() {
+      java.lang.Object ref = client_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        client_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Arbitrary identifier for the API client.
+     * </pre>
+     *
+     * <code>string client = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The client to set.
+     * @return This builder for chaining.
+     */
+    public Builder setClient(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      client_ = value;
+      bitField0_ |= 0x08000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Arbitrary identifier for the API client.
+     * </pre>
+     *
+     * <code>string client = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearClient() {
+      client_ = getDefaultInstance().getClient();
+      bitField0_ = (bitField0_ & ~0x08000000);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Arbitrary identifier for the API client.
+     * </pre>
+     *
+     * <code>string client = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for client to set.
+     * @return This builder for chaining.
+     */
+    public Builder setClientBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      client_ = value;
+      bitField0_ |= 0x08000000;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object clientVersion_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Arbitrary version identifier for the API client.
+     * </pre>
+     *
+     * <code>string client_version = 34 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The clientVersion.
+     */
+    public java.lang.String getClientVersion() {
+      java.lang.Object ref = clientVersion_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        clientVersion_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Arbitrary version identifier for the API client.
+     * </pre>
+     *
+     * <code>string client_version = 34 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for clientVersion.
+     */
+    public com.google.protobuf.ByteString getClientVersionBytes() {
+      java.lang.Object ref = clientVersion_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        clientVersion_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Arbitrary version identifier for the API client.
+     * </pre>
+     *
+     * <code>string client_version = 34 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The clientVersion to set.
+     * @return This builder for chaining.
+     */
+    public Builder setClientVersion(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      clientVersion_ = value;
+      bitField0_ |= 0x10000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Arbitrary version identifier for the API client.
+     * </pre>
+     *
+     * <code>string client_version = 34 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearClientVersion() {
+      clientVersion_ = getDefaultInstance().getClientVersion();
+      bitField0_ = (bitField0_ & ~0x10000000);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Arbitrary version identifier for the API client.
+     * </pre>
+     *
+     * <code>string client_version = 34 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for clientVersion to set.
+     * @return This builder for chaining.
+     */
+    public Builder setClientVersionBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      clientVersion_ = value;
+      bitField0_ |= 0x10000000;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object etag_ = "";
 
     /**
@@ -6393,7 +6771,7 @@ public final class Execution extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       etag_ = value;
-      bitField0_ |= 0x08000000;
+      bitField0_ |= 0x20000000;
       onChanged();
       return this;
     }
@@ -6412,7 +6790,7 @@ public final class Execution extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearEtag() {
       etag_ = getDefaultInstance().getEtag();
-      bitField0_ = (bitField0_ & ~0x08000000);
+      bitField0_ = (bitField0_ & ~0x20000000);
       onChanged();
       return this;
     }
@@ -6436,7 +6814,7 @@ public final class Execution extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       etag_ = value;
-      bitField0_ |= 0x08000000;
+      bitField0_ |= 0x20000000;
       onChanged();
       return this;
     }

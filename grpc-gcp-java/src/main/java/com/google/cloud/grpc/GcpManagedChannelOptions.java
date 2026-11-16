@@ -16,10 +16,12 @@
 
 package com.google.cloud.grpc;
 
+import com.google.api.core.InternalApi;
 import com.google.common.base.Preconditions;
 import io.opencensus.metrics.LabelKey;
 import io.opencensus.metrics.LabelValue;
 import io.opencensus.metrics.MetricRegistry;
+import io.opentelemetry.api.common.Attributes;
 import io.opentelemetry.api.metrics.Meter;
 import java.time.Duration;
 import java.util.ArrayList;
@@ -739,6 +741,9 @@ public class GcpManagedChannelOptions {
     @Nullable private final Meter otelMeter;
     @Nullable private final List<String> otelLabelKeys;
     @Nullable private final List<String> otelLabelValues;
+    @Nullable private final Meter builtInMetricsMeter;
+    private final Attributes builtInMetricsAttributes;
+    @Nullable private final String builtInMetricsPoolIndex;
 
     public GcpMetricsOptions(Builder builder) {
       metricRegistry = builder.metricRegistry;
@@ -748,6 +753,9 @@ public class GcpManagedChannelOptions {
       otelMeter = builder.otelMeter;
       otelLabelKeys = builder.otelLabelKeys;
       otelLabelValues = builder.otelLabelValues;
+      builtInMetricsMeter = builder.builtInMetricsMeter;
+      builtInMetricsAttributes = builder.builtInMetricsAttributes;
+      builtInMetricsPoolIndex = builder.builtInMetricsPoolIndex;
     }
 
     public MetricRegistry getMetricRegistry() {
@@ -779,6 +787,45 @@ public class GcpManagedChannelOptions {
     @Nullable
     public List<String> getOtelLabelValues() {
       return otelLabelValues;
+    }
+
+    /**
+     * Returns the meter of the built-in metrics pipeline, or null if built-in channel pool metrics
+     * are disabled.
+     */
+    @InternalApi("For use by Google Cloud client libraries only")
+    @Nullable
+    public Meter getBuiltInMetricsMeter() {
+      return builtInMetricsMeter;
+    }
+
+    /** Returns the attributes added to every built-in channel pool metric of this pool. */
+    @InternalApi("For use by Google Cloud client libraries only")
+    public Attributes getBuiltInMetricsAttributes() {
+      return builtInMetricsAttributes;
+    }
+
+    /**
+     * Returns the pool index added to the built-in channel count metric of this pool, or null if
+     * none was set.
+     */
+    @InternalApi("For use by Google Cloud client libraries only")
+    @Nullable
+    public String getBuiltInMetricsPoolIndex() {
+      return builtInMetricsPoolIndex;
+    }
+
+    /**
+     * Returns the next value for the pool index attribute of the built-in channel pool metrics: "1"
+     * to "10" in creation order, then "other". Values are unique within the process and never
+     * reused. A client library that creates several pools for one client (for example one per
+     * network path) should call this once per client and pass the same value to all of its pools.
+     * If several pools share a pool index, give each of them a different value for at least one
+     * other attribute, for example {@code lane}, so that their counts are reported separately.
+     */
+    @InternalApi("For use by Google Cloud client libraries only")
+    public static String nextBuiltInMetricsPoolIndex() {
+      return GcpChannelPoolBuiltInMetrics.nextPoolIndex();
     }
 
     @Override
@@ -815,6 +862,9 @@ public class GcpManagedChannelOptions {
       private Meter otelMeter;
       private List<String> otelLabelKeys;
       private List<String> otelLabelValues;
+      private Meter builtInMetricsMeter;
+      private Attributes builtInMetricsAttributes;
+      private String builtInMetricsPoolIndex;
 
       /** Constructor for GcpMetricsOptions.Builder. */
       public Builder() {
@@ -823,6 +873,7 @@ public class GcpManagedChannelOptions {
         namePrefix = "";
         otelLabelKeys = new ArrayList<>();
         otelLabelValues = new ArrayList<>();
+        builtInMetricsAttributes = Attributes.empty();
       }
 
       public Builder(GcpMetricsOptions options) {
@@ -837,6 +888,9 @@ public class GcpManagedChannelOptions {
         this.otelMeter = options.getOpenTelemetryMeter();
         this.otelLabelKeys = options.getOtelLabelKeys();
         this.otelLabelValues = options.getOtelLabelValues();
+        this.builtInMetricsMeter = options.getBuiltInMetricsMeter();
+        this.builtInMetricsAttributes = options.getBuiltInMetricsAttributes();
+        this.builtInMetricsPoolIndex = options.getBuiltInMetricsPoolIndex();
       }
 
       public GcpMetricsOptions build() {
@@ -896,6 +950,46 @@ public class GcpManagedChannelOptions {
         }
         this.otelLabelKeys = labelKeys;
         this.otelLabelValues = labelValues;
+        return this;
+      }
+
+      /**
+       * Enables the channel pool metrics that a Google Cloud client library sends to its built-in
+       * metrics pipeline. This is separate from {@link #withOpenTelemetryMeter(Meter)}, which
+       * configures the metrics sent to the application's own OpenTelemetry setup.
+       *
+       * <p>Every pool configured with the same {@code meter} reports through a single process-wide
+       * reader, so pools with the same attributes add up instead of overwriting each other. The
+       * reader reads the pool sizes when metrics are collected, so the values cannot drift.
+       *
+       * <p>This is not intended for application use. The metric names and attributes can change at
+       * any time.
+       *
+       * @param meter the meter of the built-in metrics pipeline, or null to disable.
+       * @param poolAttributes attributes added to every metric of this pool, for example the
+       *     network path that the pool uses.
+       */
+      @InternalApi("For use by Google Cloud client libraries only")
+      public Builder withBuiltInMetrics(@Nullable Meter meter, Attributes poolAttributes) {
+        Preconditions.checkNotNull(poolAttributes, "poolAttributes must not be null.");
+        this.builtInMetricsMeter = meter;
+        this.builtInMetricsAttributes = poolAttributes;
+        return this;
+      }
+
+      /**
+       * Sets the value of the {@code pool_index} attribute on the built-in {@code channel_count}
+       * metric of this pool. Get the value from {@link
+       * GcpMetricsOptions#nextBuiltInMetricsPoolIndex()}.
+       *
+       * <p>This is not intended for application use.
+       *
+       * @param poolIndex the pool index, or null to report {@code channel_count} without a {@code
+       *     pool_index} attribute.
+       */
+      @InternalApi("For use by Google Cloud client libraries only")
+      public Builder withBuiltInMetricsPoolIndex(@Nullable String poolIndex) {
+        this.builtInMetricsPoolIndex = poolIndex;
         return this;
       }
     }

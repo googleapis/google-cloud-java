@@ -30,6 +30,60 @@ public interface CacheInvalidationRuleOrBuilder
    *
    *
    * <pre>
+   * If set, this invalidation rule will only apply to requests routed to the
+   * given backend service or backend bucket.
+   * For example, for a backend bucket `bb1` in the same scope as the URL map,
+   * the path would be `projects/my-project/global/backendBuckets/bb1`; and
+   * for a backend service `bs1` in the same scope as the URL map, the path
+   * would be `projects/my-project/global/backendServices/bs1`.
+   * </pre>
+   *
+   * <code>optional string backend_service = 306946058;</code>
+   *
+   * @return Whether the backendService field is set.
+   */
+  boolean hasBackendService();
+
+  /**
+   *
+   *
+   * <pre>
+   * If set, this invalidation rule will only apply to requests routed to the
+   * given backend service or backend bucket.
+   * For example, for a backend bucket `bb1` in the same scope as the URL map,
+   * the path would be `projects/my-project/global/backendBuckets/bb1`; and
+   * for a backend service `bs1` in the same scope as the URL map, the path
+   * would be `projects/my-project/global/backendServices/bs1`.
+   * </pre>
+   *
+   * <code>optional string backend_service = 306946058;</code>
+   *
+   * @return The backendService.
+   */
+  java.lang.String getBackendService();
+
+  /**
+   *
+   *
+   * <pre>
+   * If set, this invalidation rule will only apply to requests routed to the
+   * given backend service or backend bucket.
+   * For example, for a backend bucket `bb1` in the same scope as the URL map,
+   * the path would be `projects/my-project/global/backendBuckets/bb1`; and
+   * for a backend service `bs1` in the same scope as the URL map, the path
+   * would be `projects/my-project/global/backendServices/bs1`.
+   * </pre>
+   *
+   * <code>optional string backend_service = 306946058;</code>
+   *
+   * @return The bytes for backendService.
+   */
+  com.google.protobuf.ByteString getBackendServiceBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * A list of cache tags used to identify cached objects.
    *
    *
@@ -128,6 +182,51 @@ public interface CacheInvalidationRuleOrBuilder
    *
    *
    * <pre>
+   * If set, this invalidation rule will only apply to responses with the given
+   * content-type. Parameters are not allowed and are ignored from the response
+   * when matching. Wildcards are not allowed.
+   * </pre>
+   *
+   * <code>optional string content_type = 294975296;</code>
+   *
+   * @return Whether the contentType field is set.
+   */
+  boolean hasContentType();
+
+  /**
+   *
+   *
+   * <pre>
+   * If set, this invalidation rule will only apply to responses with the given
+   * content-type. Parameters are not allowed and are ignored from the response
+   * when matching. Wildcards are not allowed.
+   * </pre>
+   *
+   * <code>optional string content_type = 294975296;</code>
+   *
+   * @return The contentType.
+   */
+  java.lang.String getContentType();
+
+  /**
+   *
+   *
+   * <pre>
+   * If set, this invalidation rule will only apply to responses with the given
+   * content-type. Parameters are not allowed and are ignored from the response
+   * when matching. Wildcards are not allowed.
+   * </pre>
+   *
+   * <code>optional string content_type = 294975296;</code>
+   *
+   * @return The bytes for contentType.
+   */
+  com.google.protobuf.ByteString getContentTypeBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * If set, this invalidation rule will only apply to requests with a Host
    * header matching host. This field also accepts wildcards (*) to replace the
    * leftmost (or first) label of a hostname. For example, *.example.com will
@@ -171,6 +270,34 @@ public interface CacheInvalidationRuleOrBuilder
    * @return The bytes for host.
    */
   com.google.protobuf.ByteString getHostBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * If set, this invalidation rule will only apply to responses with the
+   * given HTTP status. Valid range is 200-599.
+   * </pre>
+   *
+   * <code>optional int32 http_status = 468949897;</code>
+   *
+   * @return Whether the httpStatus field is set.
+   */
+  boolean hasHttpStatus();
+
+  /**
+   *
+   *
+   * <pre>
+   * If set, this invalidation rule will only apply to responses with the
+   * given HTTP status. Valid range is 200-599.
+   * </pre>
+   *
+   * <code>optional int32 http_status = 468949897;</code>
+   *
+   * @return The httpStatus.
+   */
+  int getHttpStatus();
 
   /**
    * <code>optional string path = 3433509;</code>

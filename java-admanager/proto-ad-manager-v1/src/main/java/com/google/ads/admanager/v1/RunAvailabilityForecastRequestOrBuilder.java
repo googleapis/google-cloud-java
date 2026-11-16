@@ -81,6 +81,55 @@ public interface RunAvailabilityForecastRequestOrBuilder
    *
    *
    * <pre>
+   * Optional. The
+   * [ForecastingLineItem][google.ads.admanager.v1.ForecastingLineItem] to be
+   * forecasted.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.ForecastingLineItem forecasting_line_item = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the forecastingLineItem field is set.
+   */
+  boolean hasForecastingLineItem();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The
+   * [ForecastingLineItem][google.ads.admanager.v1.ForecastingLineItem] to be
+   * forecasted.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.ForecastingLineItem forecasting_line_item = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The forecastingLineItem.
+   */
+  com.google.ads.admanager.v1.ForecastingLineItem getForecastingLineItem();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The
+   * [ForecastingLineItem][google.ads.admanager.v1.ForecastingLineItem] to be
+   * forecasted.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.ForecastingLineItem forecasting_line_item = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.ads.admanager.v1.ForecastingLineItemOrBuilder getForecastingLineItemOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Required. Format: `networks/{network_code}`
    * </pre>
    *

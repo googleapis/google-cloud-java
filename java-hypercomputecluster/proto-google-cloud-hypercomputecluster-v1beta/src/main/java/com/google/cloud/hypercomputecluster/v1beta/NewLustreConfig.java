@@ -277,6 +277,30 @@ public final class NewLustreConfig extends com.google.protobuf.GeneratedMessage
     return capacityGb_;
   }
 
+  public static final int PER_UNIT_STORAGE_THROUGHPUT_FIELD_NUMBER = 5;
+  private long perUnitStorageThroughput_ = 0L;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. Throughput of the instance in MB/s/TiB. Valid values
+   * are 125, 250, 500, 1000. See [Performance tiers and maximum storage
+   * capacities](https://cloud.google.com/managed-lustre/docs/create-instance#performance-tiers)
+   * for more information.
+   * </pre>
+   *
+   * <code>
+   * int64 per_unit_storage_throughput = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The perUnitStorageThroughput.
+   */
+  @java.lang.Override
+  public long getPerUnitStorageThroughput() {
+    return perUnitStorageThroughput_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -303,6 +327,9 @@ public final class NewLustreConfig extends com.google.protobuf.GeneratedMessage
     if (capacityGb_ != 0L) {
       output.writeInt64(4, capacityGb_);
     }
+    if (perUnitStorageThroughput_ != 0L) {
+      output.writeInt64(5, perUnitStorageThroughput_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -324,6 +351,9 @@ public final class NewLustreConfig extends com.google.protobuf.GeneratedMessage
     if (capacityGb_ != 0L) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(4, capacityGb_);
     }
+    if (perUnitStorageThroughput_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(5, perUnitStorageThroughput_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -344,6 +374,7 @@ public final class NewLustreConfig extends com.google.protobuf.GeneratedMessage
     if (!getDescription().equals(other.getDescription())) return false;
     if (!getFilesystem().equals(other.getFilesystem())) return false;
     if (getCapacityGb() != other.getCapacityGb()) return false;
+    if (getPerUnitStorageThroughput() != other.getPerUnitStorageThroughput()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -363,6 +394,8 @@ public final class NewLustreConfig extends com.google.protobuf.GeneratedMessage
     hash = (53 * hash) + getFilesystem().hashCode();
     hash = (37 * hash) + CAPACITY_GB_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getCapacityGb());
+    hash = (37 * hash) + PER_UNIT_STORAGE_THROUGHPUT_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getPerUnitStorageThroughput());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -512,6 +545,7 @@ public final class NewLustreConfig extends com.google.protobuf.GeneratedMessage
       description_ = "";
       filesystem_ = "";
       capacityGb_ = 0L;
+      perUnitStorageThroughput_ = 0L;
       return this;
     }
 
@@ -560,6 +594,9 @@ public final class NewLustreConfig extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.capacityGb_ = capacityGb_;
       }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.perUnitStorageThroughput_ = perUnitStorageThroughput_;
+      }
     }
 
     @java.lang.Override
@@ -592,6 +629,9 @@ public final class NewLustreConfig extends com.google.protobuf.GeneratedMessage
       }
       if (other.getCapacityGb() != 0L) {
         setCapacityGb(other.getCapacityGb());
+      }
+      if (other.getPerUnitStorageThroughput() != 0L) {
+        setPerUnitStorageThroughput(other.getPerUnitStorageThroughput());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -643,6 +683,12 @@ public final class NewLustreConfig extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000008;
                 break;
               } // case 32
+            case 40:
+              {
+                perUnitStorageThroughput_ = input.readInt64();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 40
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1106,6 +1152,77 @@ public final class NewLustreConfig extends com.google.protobuf.GeneratedMessage
     public Builder clearCapacityGb() {
       bitField0_ = (bitField0_ & ~0x00000008);
       capacityGb_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long perUnitStorageThroughput_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Throughput of the instance in MB/s/TiB. Valid values
+     * are 125, 250, 500, 1000. See [Performance tiers and maximum storage
+     * capacities](https://cloud.google.com/managed-lustre/docs/create-instance#performance-tiers)
+     * for more information.
+     * </pre>
+     *
+     * <code>
+     * int64 per_unit_storage_throughput = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return The perUnitStorageThroughput.
+     */
+    @java.lang.Override
+    public long getPerUnitStorageThroughput() {
+      return perUnitStorageThroughput_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Throughput of the instance in MB/s/TiB. Valid values
+     * are 125, 250, 500, 1000. See [Performance tiers and maximum storage
+     * capacities](https://cloud.google.com/managed-lustre/docs/create-instance#performance-tiers)
+     * for more information.
+     * </pre>
+     *
+     * <code>
+     * int64 per_unit_storage_throughput = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @param value The perUnitStorageThroughput to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPerUnitStorageThroughput(long value) {
+
+      perUnitStorageThroughput_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Throughput of the instance in MB/s/TiB. Valid values
+     * are 125, 250, 500, 1000. See [Performance tiers and maximum storage
+     * capacities](https://cloud.google.com/managed-lustre/docs/create-instance#performance-tiers)
+     * for more information.
+     * </pre>
+     *
+     * <code>
+     * int64 per_unit_storage_throughput = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPerUnitStorageThroughput() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      perUnitStorageThroughput_ = 0L;
       onChanged();
       return this;
     }

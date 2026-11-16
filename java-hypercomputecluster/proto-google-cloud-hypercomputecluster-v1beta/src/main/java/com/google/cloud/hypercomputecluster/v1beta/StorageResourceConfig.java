@@ -85,6 +85,7 @@ public final class StorageResourceConfig extends com.google.protobuf.GeneratedMe
     EXISTING_BUCKET(4),
     NEW_LUSTRE(5),
     EXISTING_LUSTRE(6),
+    EXISTING_NFS(7),
     CONFIG_NOT_SET(0);
     private final int value;
 
@@ -116,6 +117,8 @@ public final class StorageResourceConfig extends com.google.protobuf.GeneratedMe
           return NEW_LUSTRE;
         case 6:
           return EXISTING_LUSTRE;
+        case 7:
+          return EXISTING_NFS;
         case 0:
           return CONFIG_NOT_SET;
         default:
@@ -517,6 +520,70 @@ public final class StorageResourceConfig extends com.google.protobuf.GeneratedMe
     return com.google.cloud.hypercomputecluster.v1beta.ExistingLustreConfig.getDefaultInstance();
   }
 
+  public static final int EXISTING_NFS_FIELD_NUMBER = 7;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. If set, indicates that an existing NFS share should
+   * be imported.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.hypercomputecluster.v1beta.ExistingNfsConfig existing_nfs = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return Whether the existingNfs field is set.
+   */
+  @java.lang.Override
+  public boolean hasExistingNfs() {
+    return configCase_ == 7;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. If set, indicates that an existing NFS share should
+   * be imported.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.hypercomputecluster.v1beta.ExistingNfsConfig existing_nfs = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The existingNfs.
+   */
+  @java.lang.Override
+  public com.google.cloud.hypercomputecluster.v1beta.ExistingNfsConfig getExistingNfs() {
+    if (configCase_ == 7) {
+      return (com.google.cloud.hypercomputecluster.v1beta.ExistingNfsConfig) config_;
+    }
+    return com.google.cloud.hypercomputecluster.v1beta.ExistingNfsConfig.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. If set, indicates that an existing NFS share should
+   * be imported.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.hypercomputecluster.v1beta.ExistingNfsConfig existing_nfs = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.hypercomputecluster.v1beta.ExistingNfsConfigOrBuilder
+      getExistingNfsOrBuilder() {
+    if (configCase_ == 7) {
+      return (com.google.cloud.hypercomputecluster.v1beta.ExistingNfsConfig) config_;
+    }
+    return com.google.cloud.hypercomputecluster.v1beta.ExistingNfsConfig.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -552,6 +619,10 @@ public final class StorageResourceConfig extends com.google.protobuf.GeneratedMe
     if (configCase_ == 6) {
       output.writeMessage(
           6, (com.google.cloud.hypercomputecluster.v1beta.ExistingLustreConfig) config_);
+    }
+    if (configCase_ == 7) {
+      output.writeMessage(
+          7, (com.google.cloud.hypercomputecluster.v1beta.ExistingNfsConfig) config_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -592,6 +663,11 @@ public final class StorageResourceConfig extends com.google.protobuf.GeneratedMe
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               6, (com.google.cloud.hypercomputecluster.v1beta.ExistingLustreConfig) config_);
     }
+    if (configCase_ == 7) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              7, (com.google.cloud.hypercomputecluster.v1beta.ExistingNfsConfig) config_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -627,6 +703,9 @@ public final class StorageResourceConfig extends com.google.protobuf.GeneratedMe
         break;
       case 6:
         if (!getExistingLustre().equals(other.getExistingLustre())) return false;
+        break;
+      case 7:
+        if (!getExistingNfs().equals(other.getExistingNfs())) return false;
         break;
       case 0:
       default:
@@ -666,6 +745,10 @@ public final class StorageResourceConfig extends com.google.protobuf.GeneratedMe
       case 6:
         hash = (37 * hash) + EXISTING_LUSTRE_FIELD_NUMBER;
         hash = (53 * hash) + getExistingLustre().hashCode();
+        break;
+      case 7:
+        hash = (37 * hash) + EXISTING_NFS_FIELD_NUMBER;
+        hash = (53 * hash) + getExistingNfs().hashCode();
         break;
       case 0:
       default:
@@ -833,6 +916,9 @@ public final class StorageResourceConfig extends com.google.protobuf.GeneratedMe
       if (existingLustreBuilder_ != null) {
         existingLustreBuilder_.clear();
       }
+      if (existingNfsBuilder_ != null) {
+        existingNfsBuilder_.clear();
+      }
       configCase_ = 0;
       config_ = null;
       return this;
@@ -898,6 +984,9 @@ public final class StorageResourceConfig extends com.google.protobuf.GeneratedMe
       if (configCase_ == 6 && existingLustreBuilder_ != null) {
         result.config_ = existingLustreBuilder_.build();
       }
+      if (configCase_ == 7 && existingNfsBuilder_ != null) {
+        result.config_ = existingNfsBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -944,6 +1033,11 @@ public final class StorageResourceConfig extends com.google.protobuf.GeneratedMe
         case EXISTING_LUSTRE:
           {
             mergeExistingLustre(other.getExistingLustre());
+            break;
+          }
+        case EXISTING_NFS:
+          {
+            mergeExistingNfs(other.getExistingNfs());
             break;
           }
         case CONFIG_NOT_SET:
@@ -1019,6 +1113,13 @@ public final class StorageResourceConfig extends com.google.protobuf.GeneratedMe
                 configCase_ = 6;
                 break;
               } // case 50
+            case 58:
+              {
+                input.readMessage(
+                    internalGetExistingNfsFieldBuilder().getBuilder(), extensionRegistry);
+                configCase_ = 7;
+                break;
+              } // case 58
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2572,6 +2673,258 @@ public final class StorageResourceConfig extends com.google.protobuf.GeneratedMe
       configCase_ = 6;
       onChanged();
       return existingLustreBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.hypercomputecluster.v1beta.ExistingNfsConfig,
+            com.google.cloud.hypercomputecluster.v1beta.ExistingNfsConfig.Builder,
+            com.google.cloud.hypercomputecluster.v1beta.ExistingNfsConfigOrBuilder>
+        existingNfsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. If set, indicates that an existing NFS share should
+     * be imported.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.hypercomputecluster.v1beta.ExistingNfsConfig existing_nfs = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return Whether the existingNfs field is set.
+     */
+    @java.lang.Override
+    public boolean hasExistingNfs() {
+      return configCase_ == 7;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. If set, indicates that an existing NFS share should
+     * be imported.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.hypercomputecluster.v1beta.ExistingNfsConfig existing_nfs = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return The existingNfs.
+     */
+    @java.lang.Override
+    public com.google.cloud.hypercomputecluster.v1beta.ExistingNfsConfig getExistingNfs() {
+      if (existingNfsBuilder_ == null) {
+        if (configCase_ == 7) {
+          return (com.google.cloud.hypercomputecluster.v1beta.ExistingNfsConfig) config_;
+        }
+        return com.google.cloud.hypercomputecluster.v1beta.ExistingNfsConfig.getDefaultInstance();
+      } else {
+        if (configCase_ == 7) {
+          return existingNfsBuilder_.getMessage();
+        }
+        return com.google.cloud.hypercomputecluster.v1beta.ExistingNfsConfig.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. If set, indicates that an existing NFS share should
+     * be imported.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.hypercomputecluster.v1beta.ExistingNfsConfig existing_nfs = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder setExistingNfs(
+        com.google.cloud.hypercomputecluster.v1beta.ExistingNfsConfig value) {
+      if (existingNfsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        config_ = value;
+        onChanged();
+      } else {
+        existingNfsBuilder_.setMessage(value);
+      }
+      configCase_ = 7;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. If set, indicates that an existing NFS share should
+     * be imported.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.hypercomputecluster.v1beta.ExistingNfsConfig existing_nfs = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder setExistingNfs(
+        com.google.cloud.hypercomputecluster.v1beta.ExistingNfsConfig.Builder builderForValue) {
+      if (existingNfsBuilder_ == null) {
+        config_ = builderForValue.build();
+        onChanged();
+      } else {
+        existingNfsBuilder_.setMessage(builderForValue.build());
+      }
+      configCase_ = 7;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. If set, indicates that an existing NFS share should
+     * be imported.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.hypercomputecluster.v1beta.ExistingNfsConfig existing_nfs = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder mergeExistingNfs(
+        com.google.cloud.hypercomputecluster.v1beta.ExistingNfsConfig value) {
+      if (existingNfsBuilder_ == null) {
+        if (configCase_ == 7
+            && config_
+                != com.google.cloud.hypercomputecluster.v1beta.ExistingNfsConfig
+                    .getDefaultInstance()) {
+          config_ =
+              com.google.cloud.hypercomputecluster.v1beta.ExistingNfsConfig.newBuilder(
+                      (com.google.cloud.hypercomputecluster.v1beta.ExistingNfsConfig) config_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          config_ = value;
+        }
+        onChanged();
+      } else {
+        if (configCase_ == 7) {
+          existingNfsBuilder_.mergeFrom(value);
+        } else {
+          existingNfsBuilder_.setMessage(value);
+        }
+      }
+      configCase_ = 7;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. If set, indicates that an existing NFS share should
+     * be imported.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.hypercomputecluster.v1beta.ExistingNfsConfig existing_nfs = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder clearExistingNfs() {
+      if (existingNfsBuilder_ == null) {
+        if (configCase_ == 7) {
+          configCase_ = 0;
+          config_ = null;
+          onChanged();
+        }
+      } else {
+        if (configCase_ == 7) {
+          configCase_ = 0;
+          config_ = null;
+        }
+        existingNfsBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. If set, indicates that an existing NFS share should
+     * be imported.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.hypercomputecluster.v1beta.ExistingNfsConfig existing_nfs = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public com.google.cloud.hypercomputecluster.v1beta.ExistingNfsConfig.Builder
+        getExistingNfsBuilder() {
+      return internalGetExistingNfsFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. If set, indicates that an existing NFS share should
+     * be imported.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.hypercomputecluster.v1beta.ExistingNfsConfig existing_nfs = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.hypercomputecluster.v1beta.ExistingNfsConfigOrBuilder
+        getExistingNfsOrBuilder() {
+      if ((configCase_ == 7) && (existingNfsBuilder_ != null)) {
+        return existingNfsBuilder_.getMessageOrBuilder();
+      } else {
+        if (configCase_ == 7) {
+          return (com.google.cloud.hypercomputecluster.v1beta.ExistingNfsConfig) config_;
+        }
+        return com.google.cloud.hypercomputecluster.v1beta.ExistingNfsConfig.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. If set, indicates that an existing NFS share should
+     * be imported.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.hypercomputecluster.v1beta.ExistingNfsConfig existing_nfs = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.hypercomputecluster.v1beta.ExistingNfsConfig,
+            com.google.cloud.hypercomputecluster.v1beta.ExistingNfsConfig.Builder,
+            com.google.cloud.hypercomputecluster.v1beta.ExistingNfsConfigOrBuilder>
+        internalGetExistingNfsFieldBuilder() {
+      if (existingNfsBuilder_ == null) {
+        if (!(configCase_ == 7)) {
+          config_ =
+              com.google.cloud.hypercomputecluster.v1beta.ExistingNfsConfig.getDefaultInstance();
+        }
+        existingNfsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.hypercomputecluster.v1beta.ExistingNfsConfig,
+                com.google.cloud.hypercomputecluster.v1beta.ExistingNfsConfig.Builder,
+                com.google.cloud.hypercomputecluster.v1beta.ExistingNfsConfigOrBuilder>(
+                (com.google.cloud.hypercomputecluster.v1beta.ExistingNfsConfig) config_,
+                getParentForChildren(),
+                isClean());
+        config_ = null;
+      }
+      configCase_ = 7;
+      onChanged();
+      return existingNfsBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.hypercomputecluster.v1beta.StorageResourceConfig)

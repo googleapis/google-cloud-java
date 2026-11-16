@@ -56,26 +56,31 @@ public final class TaskTemplateProto extends com.google.protobuf.GeneratedFile {
       "\n\'google/cloud/run/v2/task_template.prot"
           + "o\022\023google.cloud.run.v2\032\037google/api/field"
           + "_behavior.proto\032\031google/api/resource.pro"
-          + "to\032!google/cloud/run/v2/k8s.min.proto\032)g"
-          + "oogle/cloud/run/v2/vendor_settings.proto"
-          + "\032\036google/protobuf/duration.proto\"\307\004\n\014Tas"
-          + "kTemplate\0222\n\ncontainers\030\001 \003(\0132\036.google.c"
-          + "loud.run.v2.Container\0222\n\007volumes\030\002 \003(\0132\033"
-          + ".google.cloud.run.v2.VolumeB\004\342A\001\001\022\025\n\013max"
-          + "_retries\030\003 \001(\005H\000\0220\n\007timeout\030\004 \001(\0132\031.goog"
-          + "le.protobuf.DurationB\004\342A\001\001\022\035\n\017service_ac"
-          + "count\030\005 \001(\tB\004\342A\001\001\022N\n\025execution_environme"
-          + "nt\030\006 \001(\0162).google.cloud.run.v2.Execution"
-          + "EnvironmentB\004\342A\001\001\022>\n\016encryption_key\030\007 \001("
-          + "\tB&\372A#\n!cloudkms.googleapis.com/CryptoKe"
-          + "y\0228\n\nvpc_access\030\010 \001(\0132\036.google.cloud.run"
-          + ".v2.VpcAccessB\004\342A\001\001\022>\n\rnode_selector\030\013 \001"
-          + "(\0132!.google.cloud.run.v2.NodeSelectorB\004\342"
-          + "A\001\001\0220\n\035gpu_zonal_redundancy_disabled\030\014 \001"
-          + "(\010B\004\342A\001\001H\001\210\001\001B\t\n\007retriesB \n\036_gpu_zonal_r"
-          + "edundancy_disabledBY\n\027com.google.cloud.r"
-          + "un.v2B\021TaskTemplateProtoP\001Z)cloud.google"
-          + ".com/go/run/apiv2/runpb;runpbb\006proto3"
+          + "to\032!google/cloud/run/v2/k8s.min.proto\032!g"
+          + "oogle/cloud/run/v2/sandbox.proto\032)google"
+          + "/cloud/run/v2/vendor_settings.proto\032\036goo"
+          + "gle/protobuf/duration.proto\"\340\005\n\014TaskTemp"
+          + "late\0222\n\ncontainers\030\001 \003(\0132\036.google.cloud."
+          + "run.v2.Container\022B\n\tsandboxes\030\017 \001(\0132).go"
+          + "ogle.cloud.run.v2.SandboxConfigurationB\004"
+          + "\342A\001\001\0222\n\007volumes\030\002 \003(\0132\033.google.cloud.run"
+          + ".v2.VolumeB\004\342A\001\001\022\025\n\013max_retries\030\003 \001(\005H\000\022"
+          + "0\n\007timeout\030\004 \001(\0132\031.google.protobuf.Durat"
+          + "ionB\004\342A\001\001\022\035\n\017service_account\030\005 \001(\tB\004\342A\001\001"
+          + "\022N\n\025execution_environment\030\006 \001(\0162).google"
+          + ".cloud.run.v2.ExecutionEnvironmentB\004\342A\001\001"
+          + "\022>\n\016encryption_key\030\007 \001(\tB&\372A#\n!cloudkms."
+          + "googleapis.com/CryptoKey\0228\n\nvpc_access\030\010"
+          + " \001(\0132\036.google.cloud.run.v2.VpcAccessB\004\342A"
+          + "\001\001\022>\n\rnode_selector\030\013 \001(\0132!.google.cloud"
+          + ".run.v2.NodeSelectorB\004\342A\001\001\0220\n\035gpu_zonal_"
+          + "redundancy_disabled\030\014 \001(\010B\004\342A\001\001H\001\210\001\001\022S\n\030"
+          + "workload_identity_config\030\r \001(\0132+.google."
+          + "cloud.run.v2.WorkloadIdentityConfigB\004\342A\001"
+          + "\001B\t\n\007retriesB \n\036_gpu_zonal_redundancy_di"
+          + "sabledBY\n\027com.google.cloud.run.v2B\021TaskT"
+          + "emplateProtoP\001Z)cloud.google.com/go/run/"
+          + "apiv2/runpb;runpbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -84,6 +89,7 @@ public final class TaskTemplateProto extends com.google.protobuf.GeneratedFile {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.run.v2.K8sMinProto.getDescriptor(),
+              com.google.cloud.run.v2.SandboxProto.getDescriptor(),
               com.google.cloud.run.v2.VendorSettingsProto.getDescriptor(),
               com.google.protobuf.DurationProto.getDescriptor(),
             });
@@ -93,6 +99,7 @@ public final class TaskTemplateProto extends com.google.protobuf.GeneratedFile {
             internal_static_google_cloud_run_v2_TaskTemplate_descriptor,
             new java.lang.String[] {
               "Containers",
+              "Sandboxes",
               "Volumes",
               "MaxRetries",
               "Timeout",
@@ -102,12 +109,14 @@ public final class TaskTemplateProto extends com.google.protobuf.GeneratedFile {
               "VpcAccess",
               "NodeSelector",
               "GpuZonalRedundancyDisabled",
+              "WorkloadIdentityConfig",
               "Retries",
             });
     descriptor.resolveAllFeaturesImmutable();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.run.v2.K8sMinProto.getDescriptor();
+    com.google.cloud.run.v2.SandboxProto.getDescriptor();
     com.google.cloud.run.v2.VendorSettingsProto.getDescriptor();
     com.google.protobuf.DurationProto.getDescriptor();
     com.google.protobuf.ExtensionRegistry registry =

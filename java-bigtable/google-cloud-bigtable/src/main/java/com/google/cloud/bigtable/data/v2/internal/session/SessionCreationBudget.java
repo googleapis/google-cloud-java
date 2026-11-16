@@ -69,11 +69,11 @@ class SessionCreationBudget {
   boolean tryReserveSession() {
     sanityCheck();
 
-    if (concurrentRequests == maxConcurrentRequest) {
+    if (concurrentRequests >= maxConcurrentRequest) {
       drainCreationFailures();
     }
 
-    if (concurrentRequests == maxConcurrentRequest) {
+    if (concurrentRequests >= maxConcurrentRequest) {
       return false;
     }
 
@@ -116,9 +116,8 @@ class SessionCreationBudget {
     if (concurrentRequests > maxConcurrentRequest) {
       DEFAULT_LOGGER.log(
           Level.FINE,
-          "Concurrent requests out of range: {0}. Resetting it to max.",
-          concurrentRequests);
-      concurrentRequests = maxConcurrentRequest;
+          "Concurrent requests ({0}) exceeds max ({1}).",
+          new Object[] {concurrentRequests, maxConcurrentRequest});
     }
   }
 

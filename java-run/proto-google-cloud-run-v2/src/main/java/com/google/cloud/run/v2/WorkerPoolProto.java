@@ -102,7 +102,7 @@ public final class WorkerPoolProto extends com.google.protobuf.GeneratedFile {
           + "\tB&\342A\001\002\372A\037\022\035run.googleapis.com/WorkerPool\022:\n"
           + "\013worker_pool\030\002 \001(\013"
           + "2\037.google.cloud.run.v2.WorkerPoolB\004\342A\001\002\022\034\n"
-          + "\016worker_pool_id\030\003 \001(\tB\004\342A\001\002\022\033\n\r"
+          + "\016worker_pool_id\030\003 \001(\tB\004\342A\001\001\022\033\n\r"
           + "validate_only\030\004 \001(\010B\004\342A\001\001\"\350\001\n"
           + "\027UpdateWorkerPoolRequest\0225\n"
           + "\013update_mask\030\002"
@@ -184,7 +184,7 @@ public final class WorkerPoolProto extends com.google.protobuf.GeneratedFile {
           + "\005value\030\002 \001(\t:\0028\001:\201\001\352A~\n"
           + "\035run.googleapis.com/WorkerPool\022Aprojects/{project}/locati"
           + "ons/{location}/workerPools/{worker_pool}*\013workerPools2\n"
-          + "workerPoolR\001\0012\276\016\n"
+          + "workerPoolR\001\0012\220\017\n"
           + "\013WorkerPools\022\230\002\n"
           + "\020CreateWorkerPool\022,.google.cloud"
           + ".run.v2.CreateWorkerPoolRequest\032\035.google.longrunning.Operation\"\266\001\312A\030\n\n"
@@ -225,10 +225,11 @@ public final class WorkerPoolProto extends com.google.protobuf.GeneratedFile {
           + "Request\032).google.iam.v1.TestIamPermissio"
           + "nsResponse\"Q\202\323\344\223\002K\"F/v2/{resource=projec"
           + "ts/*/locations/*/workerPools/*}:testIamP"
-          + "ermissions:\001*\032F\312A\022run.googleapis.com\322A.h"
-          + "ttps://www.googleapis.com/auth/cloud-platformBW\n"
-          + "\027com.google.cloud.run.v2B\017WorkerPoolProtoP\001Z)cloud.google.com/go/run/api"
-          + "v2/runpb;runpbb\006proto3"
+          + "ermissions:\001*\032\227\001\312A\022run.googleapis.com\322A\177"
+          + "https://www.googleapis.com/auth/cloud-platform,https://www.googleapis.com/auth/r"
+          + "un,https://www.googleapis.com/auth/run.readonlyBW\n"
+          + "\027com.google.cloud.run.v2B\017WorkerPoolProtoP\001Z)cloud.google.com/go/run/a"
+          + "piv2/runpb;runpbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
