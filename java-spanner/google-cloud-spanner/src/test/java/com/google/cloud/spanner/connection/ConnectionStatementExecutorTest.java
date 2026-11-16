@@ -274,8 +274,11 @@ public class ConnectionStatementExecutorTest {
   @Test
   public void testStatementSetProtoDescriptorsFilePath() {
     String filePath = "com/google/cloud/spanner/descriptors.pb";
-    subject.statementSetProtoDescriptorsFilePath(filePath);
-    verify(connection).setProtoDescriptorsFilePath(filePath);
+    SpannerException exception =
+        assertThrows(
+            SpannerException.class, () -> subject.statementSetProtoDescriptorsFilePath(filePath));
+    assertEquals(ErrorCode.INVALID_ARGUMENT, exception.getErrorCode());
+    assertTrue(exception.getMessage().contains("SET PROTO_DESCRIPTORS_FILE_PATH is not supported"));
   }
 
   @Test
@@ -286,8 +289,13 @@ public class ConnectionStatementExecutorTest {
 
   @Test
   public void testStatementGetProtoDescriptorsFilePath() {
-    subject.statementShowProtoDescriptorsFilePath();
-    verify(connection).getProtoDescriptorsFilePath();
+    SpannerException exception =
+        assertThrows(SpannerException.class, () -> subject.statementShowProtoDescriptorsFilePath());
+    assertEquals(ErrorCode.INVALID_ARGUMENT, exception.getErrorCode());
+    assertTrue(
+        exception
+            .getMessage()
+            .contains("SHOW VARIABLE PROTO_DESCRIPTORS_FILE_PATH is not supported"));
   }
 
   @Test

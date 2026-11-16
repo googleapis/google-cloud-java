@@ -73,7 +73,15 @@ final class StorageGrpcMetricsInterceptor implements ClientInterceptor {
         super.start(
             new SimpleForwardingClientCallListener<RespT>(responseListener) {
               @Override
-              public void onClose(@Nullable Status status, @Nullable Metadata trailers) {
+              public void onHeaders(Metadata headers) {
+                if (metricsCtx != null) {
+                  metricsCtx.setNetworkPath(detectNetworkPath(getAttributes()));
+                }
+                super.onHeaders(headers);
+              }
+
+              @Override
+              public void onClose(Status status, Metadata trailers) {
                 try {
                   if (callRecorded.compareAndSet(false, true)) {
                     double durationSeconds =
@@ -82,10 +90,7 @@ final class StorageGrpcMetricsInterceptor implements ClientInterceptor {
                     if (metricsCtx != null) {
                       metricsCtx.setNetworkPath(networkPath);
                     }
-                    String statusCode =
-                        status != null && status.getCode() != null
-                            ? status.getCode().name()
-                            : StorageErrorTypeMapper.STATUS_UNKNOWN;
+                    String statusCode = status.getCode().name();
                     String errorType = StorageErrorTypeMapper.mapGrpcStatus(status);
 
                     metrics.recordRpcCallDuration(
