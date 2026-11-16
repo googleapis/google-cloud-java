@@ -34,7 +34,6 @@ import com.google.common.collect.ImmutableList;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.atomic.AtomicBoolean;
 import org.jspecify.annotations.NullMarked;
 
 /**
@@ -77,30 +76,36 @@ class CompositeTracer extends BaseApiTracer {
       throw e;
     }
 
-    AtomicBoolean closed = new AtomicBoolean();
-    return () -> {
-      if (!closed.compareAndSet(false, true)) {
-        return;
-      }
-      Throwable primaryError = null;
-      for (int i = childScopes.size() - 1; i >= 0; i--) {
-        try {
-          childScopes.get(i).close();
-        } catch (RuntimeException | Error e) {
-          if (primaryError == null) {
-            primaryError = e;
-          } else {
-            primaryError.addSuppressed(e);
+    class CompositeScope implements Scope {
+      private volatile boolean closed;
+
+      @Override
+      public void close() {
+        if (closed) {
+          return;
+        }
+        closed = true;
+        Throwable primaryError = null;
+        for (int i = childScopes.size() - 1; i >= 0; i--) {
+          try {
+            childScopes.get(i).close();
+          } catch (RuntimeException | Error e) {
+            if (primaryError == null) {
+              primaryError = e;
+            } else {
+              primaryError.addSuppressed(e);
+            }
           }
         }
+        if (primaryError instanceof RuntimeException) {
+          throw (RuntimeException) primaryError;
+        }
+        if (primaryError instanceof Error) {
+          throw (Error) primaryError;
+        }
       }
-      if (primaryError instanceof RuntimeException) {
-        throw (RuntimeException) primaryError;
-      }
-      if (primaryError instanceof Error) {
-        throw (Error) primaryError;
-      }
-    };
+    }
+    return new CompositeScope();
   }
 
   @Override
