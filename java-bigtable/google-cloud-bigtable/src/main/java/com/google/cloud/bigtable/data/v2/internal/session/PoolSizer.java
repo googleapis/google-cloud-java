@@ -27,9 +27,9 @@ class PoolSizer {
   // Fraction of idle sessions to keep in order to manage an increase in requests-in-flight. For
   // example, a headroom of 50% will keep enough sessions to deal with a 50% increase in QPS or a
   // 50% increase in latency (since that also increases requests-in-flight).
-  private volatile float idlesSessionHeadRoom;
-  private volatile int minSessions;
-  private volatile int maxSessions;
+  private float idlesSessionHeadRoom;
+  private int minSessions;
+  private int maxSessions;
 
   private final PoolStats stats;
   private final Sized pendingRpcs;
@@ -40,9 +40,9 @@ class PoolSizer {
   // point reads are expected to complete within 1-4ms.
   // We assume that it is okay to collect 10 pending calls per starting session so that after
   // the session is ready it takes 10-40ms to process all pending calls.
-  private volatile int pendingVRpcsPerSession;
+  private int pendingVRpcsPerSession;
 
-  private volatile boolean disabled;
+  private boolean disabled;
 
   interface Sized {
     int getSize();
