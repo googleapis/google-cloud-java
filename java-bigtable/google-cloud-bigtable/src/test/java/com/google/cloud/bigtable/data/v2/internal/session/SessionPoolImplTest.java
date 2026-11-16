@@ -1449,6 +1449,7 @@ public class SessionPoolImplTest {
   }
 
   @Test
+  @SuppressWarnings("GuardedBy")
   void consecutiveFailuresFastFailsDuringBudgetLockout() throws Exception {
     com.google.rpc.Status errorStatus =
         com.google.rpc.Status.newBuilder()
@@ -1465,8 +1466,24 @@ public class SessionPoolImplTest {
             .build();
     sessionPool.start(request, new Metadata());
 
-    // Wait until all 20 initial SessionCreationBudget slots have been exhausted and closed
-    waitForOpenRequestCount(20, Duration.ofSeconds(5));
+    // Wait until all initial SessionCreationBudget slots have been exhausted and closed on the
+    // client
+    ReentrantLock poolLock = extractPoolLock(sessionPool);
+    Field consecutiveFailuresField = SessionPoolImpl.class.getDeclaredField("consecutiveFailures");
+    consecutiveFailuresField.setAccessible(true);
+    long deadline = System.currentTimeMillis() + 5000;
+    while (System.currentTimeMillis() < deadline) {
+      poolLock.lock();
+      try {
+        if (sessionPool.sessions.getAllSessions().isEmpty()
+            && consecutiveFailuresField.getInt(sessionPool) >= 10) {
+          break;
+        }
+      } finally {
+        poolLock.unlock();
+      }
+      Thread.sleep(10);
+    }
 
     // A new call arriving during the 60s budget lockout must fail immediately instead of queueing
     UnaryResponseFuture<SessionFakeScriptedResponse> f = new UnaryResponseFuture<>();
