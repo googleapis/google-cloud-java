@@ -233,7 +233,7 @@ final class OpenTelemetryBootstrappingUtils {
       final String resolvedHost = host;
       String match =
           ImmutableList.of(canonicalEndpoint, privateEndpoint, restrictedEndpoint).stream()
-              .filter(s -> resolvedHost.contains(s) || endpoint.contains(C2P_PREFIX + s))
+              .filter(resolvedHost::contains)
               .collect(Collectors.joining());
       if (!StringUtils.isNullOrEmpty(match)) {
         metricServiceEndpoint = match;
