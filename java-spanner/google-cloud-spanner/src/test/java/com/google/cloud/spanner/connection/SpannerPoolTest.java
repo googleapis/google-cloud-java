@@ -18,8 +18,11 @@ package com.google.cloud.spanner.connection;
 
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertThrows;
+import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.never;
@@ -928,6 +931,72 @@ public class SpannerPoolTest {
     SpannerPoolKey key = SpannerPoolKey.of(options);
     assertThrows(
         IllegalArgumentException.class, () -> SpannerPool.INSTANCE.createSpanner(key, options));
+  }
+
+  @Test
+  public void testCreateSpannerWithOmniCredentialsPlainText() {
+    ConnectionOptions options =
+        ConnectionOptions.newBuilder()
+            .setUri(
+                "spanner://localhost:15000/projects/default/instances/default/databases/test-db"
+                    + ";usePlainText=true;type=omni;username=test_user;password=test_password")
+            .build();
+    SpannerPoolKey key = SpannerPoolKey.of(options);
+    try (Spanner spanner = SpannerPool.INSTANCE.createSpanner(key, options)) {
+      assertTrue(spanner.getOptions().isUsePlainText());
+      assertEquals(SpannerOptions.InstanceType.OMNI, spanner.getOptions().getInstanceType());
+      assertSame(options.getCredentials(), spanner.getOptions().getCredentials());
+      assertTrue(spanner.getOptions().getCredentials() instanceof SpannerOmniCredentials);
+      assertEquals("http://localhost:15000", spanner.getOptions().getHost());
+    }
+  }
+
+  @Test
+  public void testCreateSpannerWithOmniCredentialsTls() {
+    ConnectionOptions options =
+        ConnectionOptions.newBuilder()
+            .setUri(
+                "spanner://localhost:15000/projects/default/instances/default/databases/test-db"
+                    + ";usePlainText=false;type=omni;username=test_user;password=test_password")
+            .build();
+    SpannerPoolKey key = SpannerPoolKey.of(options);
+    try (Spanner spanner = SpannerPool.INSTANCE.createSpanner(key, options)) {
+      assertFalse(spanner.getOptions().isUsePlainText());
+      assertEquals(SpannerOptions.InstanceType.OMNI, spanner.getOptions().getInstanceType());
+      assertSame(options.getCredentials(), spanner.getOptions().getCredentials());
+      assertTrue(spanner.getOptions().getCredentials() instanceof SpannerOmniCredentials);
+    }
+  }
+
+  @Test
+  public void testCreateSpannerWithPlainTextDefaultCredentials() {
+    ConnectionOptions options =
+        ConnectionOptions.newBuilder()
+            .setUri(
+                "cloudspanner://localhost:9010/projects/p/instances/i/databases/d?usePlainText=true")
+            .setCredentials(NoCredentials.getInstance())
+            .build();
+    SpannerPoolKey key = SpannerPoolKey.of(options);
+    try (Spanner spanner = SpannerPool.INSTANCE.createSpanner(key, options)) {
+      assertTrue(spanner.getOptions().isUsePlainText());
+      assertEquals(NoCredentials.getInstance(), spanner.getOptions().getCredentials());
+    }
+  }
+
+  @Test
+  public void testCreateSpannerWithPlainTextReplacesNonOmniCredentials() {
+    Credentials credentials = mock(Credentials.class, withSettings().withoutAnnotations());
+    ConnectionOptions options =
+        ConnectionOptions.newBuilder()
+            .setUri(
+                "cloudspanner://localhost:9010/projects/p/instances/i/databases/d?usePlainText=true")
+            .setCredentials(credentials)
+            .build();
+    SpannerPoolKey key = SpannerPoolKey.of(options);
+    try (Spanner spanner = SpannerPool.INSTANCE.createSpanner(key, options)) {
+      assertTrue(spanner.getOptions().isUsePlainText());
+      assertEquals(NoCredentials.getInstance(), spanner.getOptions().getCredentials());
+    }
   }
 
   @Test
