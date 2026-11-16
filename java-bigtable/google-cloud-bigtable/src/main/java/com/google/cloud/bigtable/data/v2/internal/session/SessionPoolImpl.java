@@ -794,8 +794,7 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
 
   private static VRpcResult createConsecutiveFailureResult(
       Status status, @Nullable Metadata trailers) {
-    Status errorStatus =
-        status.isOk() ? Status.UNAVAILABLE : Status.fromCode(status.getCode());
+    Status errorStatus = status.isOk() ? Status.UNAVAILABLE : Status.fromCode(status.getCode());
     return VRpcResult.createRejectedError(
         errorStatus.withDescription(
             String.format(
