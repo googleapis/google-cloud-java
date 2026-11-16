@@ -2691,7 +2691,9 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
           + " OpenTelemetry traces")
   @VisibleForTesting
   static void resetActiveTracingFramework() {
-    activeTracingFramework = null;
+    synchronized (lock) {
+      activeTracingFramework = null;
+    }
   }
 
   public static TracingFramework getActiveTracingFramework() {

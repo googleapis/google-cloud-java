@@ -57,7 +57,7 @@ import org.jspecify.annotations.Nullable;
  *
  * <p>For example, to set the
  * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
- * of listUserLicenses:
+ * of listLicenseConfigsUsageStats:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -68,10 +68,10 @@ import org.jspecify.annotations.Nullable;
  * UserLicenseServiceSettings.Builder userLicenseServiceSettingsBuilder =
  *     UserLicenseServiceSettings.newBuilder();
  * userLicenseServiceSettingsBuilder
- *     .listUserLicensesSettings()
+ *     .listLicenseConfigsUsageStatsSettings()
  *     .setRetrySettings(
  *         userLicenseServiceSettingsBuilder
- *             .listUserLicensesSettings()
+ *             .listLicenseConfigsUsageStatsSettings()
  *             .getRetrySettings()
  *             .toBuilder()
  *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
@@ -126,6 +126,14 @@ public class UserLicenseServiceSettings extends ClientSettings<UserLicenseServic
           ListUserLicensesRequest, ListUserLicensesResponse, ListUserLicensesPagedResponse>
       listUserLicensesSettings() {
     return ((UserLicenseServiceStubSettings) getStubSettings()).listUserLicensesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listLicenseConfigsUsageStats. */
+  public UnaryCallSettings<
+          ListLicenseConfigsUsageStatsRequest, ListLicenseConfigsUsageStatsResponse>
+      listLicenseConfigsUsageStatsSettings() {
+    return ((UserLicenseServiceStubSettings) getStubSettings())
+        .listLicenseConfigsUsageStatsSettings();
   }
 
   /** Returns the object with the settings used for calls to batchUpdateUserLicenses. */
@@ -261,6 +269,13 @@ public class UserLicenseServiceSettings extends ClientSettings<UserLicenseServic
             ListUserLicensesRequest, ListUserLicensesResponse, ListUserLicensesPagedResponse>
         listUserLicensesSettings() {
       return getStubSettingsBuilder().listUserLicensesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listLicenseConfigsUsageStats. */
+    public UnaryCallSettings.Builder<
+            ListLicenseConfigsUsageStatsRequest, ListLicenseConfigsUsageStatsResponse>
+        listLicenseConfigsUsageStatsSettings() {
+      return getStubSettingsBuilder().listLicenseConfigsUsageStatsSettings();
     }
 
     /** Returns the builder for the settings used for calls to batchUpdateUserLicenses. */

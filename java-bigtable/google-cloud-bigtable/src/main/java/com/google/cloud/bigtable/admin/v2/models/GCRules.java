@@ -17,6 +17,7 @@ package com.google.cloud.bigtable.admin.v2.models;
 
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
+import com.google.api.core.ObsoleteApi;
 import com.google.bigtable.admin.v2.GcRule;
 import com.google.bigtable.admin.v2.GcRule.Intersection;
 import com.google.bigtable.admin.v2.GcRule.Union;
@@ -31,13 +32,17 @@ import org.threeten.bp.Duration;
 // TODO(igorbernstein2): the distinction between GcRule & GCRule is too subtle, use fully qualified
 // names for the protos.
 /**
- * Wraps {@link GcRule} protocol buffer object and exposes a friendly API.
+ * This class is obsolete. For the recommended proto-based approach, please see {@link
+ * GcRuleBuilder}.
+ *
+ * <p>Wraps {@link GcRule} protocol buffer object and exposes a friendly API.
  *
  * <p>Note: Garbage collection executes opportunistically in the background, and so it's possible
  * for reads to return a cell even if it matches the active GC expression for its family. Please use
  * appropriate filters in your reads to exclude cells which are eligible for garbage collection.
  */
 @BetaApi
+@ObsoleteApi("Use GcRuleBuilder instead.")
 public final class GCRules {
   /** Factory method to create GCRules - entry point into the DSL. */
   public static final GCRules GCRULES = new GCRules();

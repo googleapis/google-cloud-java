@@ -1113,7 +1113,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.networkmanagement.v1beta1.RouteInfo.route_scope is deprecated. See
-   *     google/cloud/networkmanagement/v1beta1/trace.proto;l=690
+   *     google/cloud/networkmanagement/v1beta1/trace.proto;l=710
    * @return The enum numeric value on the wire for routeScope.
    */
   @java.lang.Override
@@ -1135,7 +1135,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.networkmanagement.v1beta1.RouteInfo.route_scope is deprecated. See
-   *     google/cloud/networkmanagement/v1beta1/trace.proto;l=690
+   *     google/cloud/networkmanagement/v1beta1/trace.proto;l=710
    * @return The routeScope.
    */
   @java.lang.Override
@@ -1210,8 +1210,9 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * URI of a route. SUBNET, STATIC, PEERING_SUBNET (only for peering network)
-   * and POLICY_BASED routes only.
+   * URI of a route in format
+   * "projects/{project}/global/routes/{route}". SUBNET, STATIC,
+   * PEERING_SUBNET (only for peering network) and POLICY_BASED routes only.
    * </pre>
    *
    * <code>string uri = 2;</code>
@@ -1235,8 +1236,9 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * URI of a route. SUBNET, STATIC, PEERING_SUBNET (only for peering network)
-   * and POLICY_BASED routes only.
+   * URI of a route in format
+   * "projects/{project}/global/routes/{route}". SUBNET, STATIC,
+   * PEERING_SUBNET (only for peering network) and POLICY_BASED routes only.
    * </pre>
    *
    * <code>string uri = 2;</code>
@@ -1387,7 +1389,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
    * <code>string next_hop = 4 [deprecated = true];</code>
    *
    * @deprecated google.cloud.networkmanagement.v1beta1.RouteInfo.next_hop is deprecated. See
-   *     google/cloud/networkmanagement/v1beta1/trace.proto;l=712
+   *     google/cloud/networkmanagement/v1beta1/trace.proto;l=733
    * @return The nextHop.
    */
   @java.lang.Override
@@ -1416,7 +1418,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
    * <code>string next_hop = 4 [deprecated = true];</code>
    *
    * @deprecated google.cloud.networkmanagement.v1beta1.RouteInfo.next_hop is deprecated. See
-   *     google/cloud/networkmanagement/v1beta1/trace.proto;l=712
+   *     google/cloud/networkmanagement/v1beta1/trace.proto;l=733
    * @return The bytes for nextHop.
    */
   @java.lang.Override
@@ -1442,7 +1444,8 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * URI of a VPC network where route is located.
+   * URI of a VPC network where route is located in format
+   * "projects/{project}/global/networks/{network}".
    * </pre>
    *
    * <code>string network_uri = 5;</code>
@@ -1466,7 +1469,8 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * URI of a VPC network where route is located.
+   * URI of a VPC network where route is located in format
+   * "projects/{project}/global/networks/{network}".
    * </pre>
    *
    * <code>string network_uri = 5;</code>
@@ -1839,7 +1843,8 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * URI of the NCC Hub the route is advertised by. PEERING_SUBNET and
+   * URI of the NCC Hub the route is advertised by in format
+   * "projects/{project}/locations/global/hubs/{hub}". PEERING_SUBNET and
    * PEERING_DYNAMIC routes that are advertised by NCC Hub only.
    * </pre>
    *
@@ -1856,7 +1861,8 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * URI of the NCC Hub the route is advertised by. PEERING_SUBNET and
+   * URI of the NCC Hub the route is advertised by in format
+   * "projects/{project}/locations/global/hubs/{hub}". PEERING_SUBNET and
    * PEERING_DYNAMIC routes that are advertised by NCC Hub only.
    * </pre>
    *
@@ -1881,7 +1887,8 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * URI of the NCC Hub the route is advertised by. PEERING_SUBNET and
+   * URI of the NCC Hub the route is advertised by in format
+   * "projects/{project}/locations/global/hubs/{hub}". PEERING_SUBNET and
    * PEERING_DYNAMIC routes that are advertised by NCC Hub only.
    * </pre>
    *
@@ -1911,8 +1918,11 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * URI of the destination NCC Spoke. PEERING_SUBNET and PEERING_DYNAMIC routes
-   * that are advertised by NCC Hub only.
+   * URI of the destination NCC Spoke in format
+   * "projects/{project}/locations/{location}/spokes/{spoke}" (regional) or
+   * "projects/{project}/locations/global/spokes/{spoke}" (global).
+   * PEERING_SUBNET and PEERING_DYNAMIC routes that are advertised by NCC Hub
+   * only.
    * </pre>
    *
    * <code>optional string ncc_spoke_uri = 16;</code>
@@ -1928,8 +1938,11 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * URI of the destination NCC Spoke. PEERING_SUBNET and PEERING_DYNAMIC routes
-   * that are advertised by NCC Hub only.
+   * URI of the destination NCC Spoke in format
+   * "projects/{project}/locations/{location}/spokes/{spoke}" (regional) or
+   * "projects/{project}/locations/global/spokes/{spoke}" (global).
+   * PEERING_SUBNET and PEERING_DYNAMIC routes that are advertised by NCC Hub
+   * only.
    * </pre>
    *
    * <code>optional string ncc_spoke_uri = 16;</code>
@@ -1953,8 +1966,11 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * URI of the destination NCC Spoke. PEERING_SUBNET and PEERING_DYNAMIC routes
-   * that are advertised by NCC Hub only.
+   * URI of the destination NCC Spoke in format
+   * "projects/{project}/locations/{location}/spokes/{spoke}" (regional) or
+   * "projects/{project}/locations/global/spokes/{spoke}" (global).
+   * PEERING_SUBNET and PEERING_DYNAMIC routes that are advertised by NCC Hub
+   * only.
    * </pre>
    *
    * <code>optional string ncc_spoke_uri = 16;</code>
@@ -1984,7 +2000,8 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * For ADVERTISED dynamic routes, the URI of the Cloud Router that advertised
-   * the corresponding IP prefix.
+   * the corresponding IP prefix in format
+   * "projects/{project}/regions/{region}/routers/{router}".
    * </pre>
    *
    * <code>optional string advertised_route_source_router_uri = 17;</code>
@@ -2001,7 +2018,8 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * For ADVERTISED dynamic routes, the URI of the Cloud Router that advertised
-   * the corresponding IP prefix.
+   * the corresponding IP prefix in format
+   * "projects/{project}/regions/{region}/routers/{router}".
    * </pre>
    *
    * <code>optional string advertised_route_source_router_uri = 17;</code>
@@ -2026,7 +2044,8 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * For ADVERTISED dynamic routes, the URI of the Cloud Router that advertised
-   * the corresponding IP prefix.
+   * the corresponding IP prefix in format
+   * "projects/{project}/regions/{region}/routers/{router}".
    * </pre>
    *
    * <code>optional string advertised_route_source_router_uri = 17;</code>
@@ -2065,7 +2084,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
    * <code>optional string advertised_route_next_hop_uri = 18 [deprecated = true];</code>
    *
    * @deprecated google.cloud.networkmanagement.v1beta1.RouteInfo.advertised_route_next_hop_uri is
-   *     deprecated. See google/cloud/networkmanagement/v1beta1/trace.proto;l=752
+   *     deprecated. See google/cloud/networkmanagement/v1beta1/trace.proto;l=779
    * @return Whether the advertisedRouteNextHopUri field is set.
    */
   @java.lang.Override
@@ -2088,7 +2107,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
    * <code>optional string advertised_route_next_hop_uri = 18 [deprecated = true];</code>
    *
    * @deprecated google.cloud.networkmanagement.v1beta1.RouteInfo.advertised_route_next_hop_uri is
-   *     deprecated. See google/cloud/networkmanagement/v1beta1/trace.proto;l=752
+   *     deprecated. See google/cloud/networkmanagement/v1beta1/trace.proto;l=779
    * @return The advertisedRouteNextHopUri.
    */
   @java.lang.Override
@@ -2119,7 +2138,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
    * <code>optional string advertised_route_next_hop_uri = 18 [deprecated = true];</code>
    *
    * @deprecated google.cloud.networkmanagement.v1beta1.RouteInfo.advertised_route_next_hop_uri is
-   *     deprecated. See google/cloud/networkmanagement/v1beta1/trace.proto;l=752
+   *     deprecated. See google/cloud/networkmanagement/v1beta1/trace.proto;l=779
    * @return The bytes for advertisedRouteNextHopUri.
    */
   @java.lang.Override
@@ -2198,7 +2217,8 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * URI of a VPC network where the next hop resource is located.
+   * URI of a VPC network where the next hop resource is located in format
+   * "projects/{project}/global/networks/{network}".
    * </pre>
    *
    * <code>string next_hop_network_uri = 21;</code>
@@ -2222,7 +2242,8 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * URI of a VPC network where the next hop resource is located.
+   * URI of a VPC network where the next hop resource is located in format
+   * "projects/{project}/global/networks/{network}".
    * </pre>
    *
    * <code>string next_hop_network_uri = 21;</code>
@@ -2253,6 +2274,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
    * <pre>
    * For PEERING_SUBNET and PEERING_STATIC routes, the URI of the originating
    * SUBNET/STATIC route.
+   * Format: `projects/{project_id}/global/routes/{route_id}`
    * </pre>
    *
    * <code>string originating_route_uri = 22;</code>
@@ -2278,6 +2300,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
    * <pre>
    * For PEERING_SUBNET and PEERING_STATIC routes, the URI of the originating
    * SUBNET/STATIC route.
+   * Format: `projects/{project_id}/global/routes/{route_id}`
    * </pre>
    *
    * <code>string originating_route_uri = 22;</code>
@@ -2363,6 +2386,8 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
    * <pre>
    * For PEERING_SUBNET and PEERING_DYNAMIC routes that are advertised by NCC
    * Hub, the URI of the corresponding route in NCC Hub's routing table.
+   * Format:
+   * `projects/{project_id}/locations/global/hubs/{hub_id}/routeTables/{route_table_id}/routes/{route_id}`
    * </pre>
    *
    * <code>string ncc_hub_route_uri = 24;</code>
@@ -2388,6 +2413,8 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
    * <pre>
    * For PEERING_SUBNET and PEERING_DYNAMIC routes that are advertised by NCC
    * Hub, the URI of the corresponding route in NCC Hub's routing table.
+   * Format:
+   * `projects/{project_id}/locations/global/hubs/{hub_id}/routeTables/{route_table_id}/routes/{route_id}`
    * </pre>
    *
    * <code>string ncc_hub_route_uri = 24;</code>
@@ -3576,7 +3603,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.networkmanagement.v1beta1.RouteInfo.route_scope is deprecated. See
-     *     google/cloud/networkmanagement/v1beta1/trace.proto;l=690
+     *     google/cloud/networkmanagement/v1beta1/trace.proto;l=710
      * @return The enum numeric value on the wire for routeScope.
      */
     @java.lang.Override
@@ -3598,7 +3625,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.networkmanagement.v1beta1.RouteInfo.route_scope is deprecated. See
-     *     google/cloud/networkmanagement/v1beta1/trace.proto;l=690
+     *     google/cloud/networkmanagement/v1beta1/trace.proto;l=710
      * @param value The enum numeric value on the wire for routeScope to set.
      * @return This builder for chaining.
      */
@@ -3623,7 +3650,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.networkmanagement.v1beta1.RouteInfo.route_scope is deprecated. See
-     *     google/cloud/networkmanagement/v1beta1/trace.proto;l=690
+     *     google/cloud/networkmanagement/v1beta1/trace.proto;l=710
      * @return The routeScope.
      */
     @java.lang.Override
@@ -3649,7 +3676,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.networkmanagement.v1beta1.RouteInfo.route_scope is deprecated. See
-     *     google/cloud/networkmanagement/v1beta1/trace.proto;l=690
+     *     google/cloud/networkmanagement/v1beta1/trace.proto;l=710
      * @param value The routeScope to set.
      * @return This builder for chaining.
      */
@@ -3678,7 +3705,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.networkmanagement.v1beta1.RouteInfo.route_scope is deprecated. See
-     *     google/cloud/networkmanagement/v1beta1/trace.proto;l=690
+     *     google/cloud/networkmanagement/v1beta1/trace.proto;l=710
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -3806,8 +3833,9 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * URI of a route. SUBNET, STATIC, PEERING_SUBNET (only for peering network)
-     * and POLICY_BASED routes only.
+     * URI of a route in format
+     * "projects/{project}/global/routes/{route}". SUBNET, STATIC,
+     * PEERING_SUBNET (only for peering network) and POLICY_BASED routes only.
      * </pre>
      *
      * <code>string uri = 2;</code>
@@ -3830,8 +3858,9 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * URI of a route. SUBNET, STATIC, PEERING_SUBNET (only for peering network)
-     * and POLICY_BASED routes only.
+     * URI of a route in format
+     * "projects/{project}/global/routes/{route}". SUBNET, STATIC,
+     * PEERING_SUBNET (only for peering network) and POLICY_BASED routes only.
      * </pre>
      *
      * <code>string uri = 2;</code>
@@ -3854,8 +3883,9 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * URI of a route. SUBNET, STATIC, PEERING_SUBNET (only for peering network)
-     * and POLICY_BASED routes only.
+     * URI of a route in format
+     * "projects/{project}/global/routes/{route}". SUBNET, STATIC,
+     * PEERING_SUBNET (only for peering network) and POLICY_BASED routes only.
      * </pre>
      *
      * <code>string uri = 2;</code>
@@ -3877,8 +3907,9 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * URI of a route. SUBNET, STATIC, PEERING_SUBNET (only for peering network)
-     * and POLICY_BASED routes only.
+     * URI of a route in format
+     * "projects/{project}/global/routes/{route}". SUBNET, STATIC,
+     * PEERING_SUBNET (only for peering network) and POLICY_BASED routes only.
      * </pre>
      *
      * <code>string uri = 2;</code>
@@ -3896,8 +3927,9 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * URI of a route. SUBNET, STATIC, PEERING_SUBNET (only for peering network)
-     * and POLICY_BASED routes only.
+     * URI of a route in format
+     * "projects/{project}/global/routes/{route}". SUBNET, STATIC,
+     * PEERING_SUBNET (only for peering network) and POLICY_BASED routes only.
      * </pre>
      *
      * <code>string uri = 2;</code>
@@ -4172,7 +4204,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
      * <code>string next_hop = 4 [deprecated = true];</code>
      *
      * @deprecated google.cloud.networkmanagement.v1beta1.RouteInfo.next_hop is deprecated. See
-     *     google/cloud/networkmanagement/v1beta1/trace.proto;l=712
+     *     google/cloud/networkmanagement/v1beta1/trace.proto;l=733
      * @return The nextHop.
      */
     @java.lang.Deprecated
@@ -4200,7 +4232,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
      * <code>string next_hop = 4 [deprecated = true];</code>
      *
      * @deprecated google.cloud.networkmanagement.v1beta1.RouteInfo.next_hop is deprecated. See
-     *     google/cloud/networkmanagement/v1beta1/trace.proto;l=712
+     *     google/cloud/networkmanagement/v1beta1/trace.proto;l=733
      * @return The bytes for nextHop.
      */
     @java.lang.Deprecated
@@ -4228,7 +4260,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
      * <code>string next_hop = 4 [deprecated = true];</code>
      *
      * @deprecated google.cloud.networkmanagement.v1beta1.RouteInfo.next_hop is deprecated. See
-     *     google/cloud/networkmanagement/v1beta1/trace.proto;l=712
+     *     google/cloud/networkmanagement/v1beta1/trace.proto;l=733
      * @param value The nextHop to set.
      * @return This builder for chaining.
      */
@@ -4255,7 +4287,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
      * <code>string next_hop = 4 [deprecated = true];</code>
      *
      * @deprecated google.cloud.networkmanagement.v1beta1.RouteInfo.next_hop is deprecated. See
-     *     google/cloud/networkmanagement/v1beta1/trace.proto;l=712
+     *     google/cloud/networkmanagement/v1beta1/trace.proto;l=733
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -4278,7 +4310,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
      * <code>string next_hop = 4 [deprecated = true];</code>
      *
      * @deprecated google.cloud.networkmanagement.v1beta1.RouteInfo.next_hop is deprecated. See
-     *     google/cloud/networkmanagement/v1beta1/trace.proto;l=712
+     *     google/cloud/networkmanagement/v1beta1/trace.proto;l=733
      * @param value The bytes for nextHop to set.
      * @return This builder for chaining.
      */
@@ -4300,7 +4332,8 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * URI of a VPC network where route is located.
+     * URI of a VPC network where route is located in format
+     * "projects/{project}/global/networks/{network}".
      * </pre>
      *
      * <code>string network_uri = 5;</code>
@@ -4323,7 +4356,8 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * URI of a VPC network where route is located.
+     * URI of a VPC network where route is located in format
+     * "projects/{project}/global/networks/{network}".
      * </pre>
      *
      * <code>string network_uri = 5;</code>
@@ -4346,7 +4380,8 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * URI of a VPC network where route is located.
+     * URI of a VPC network where route is located in format
+     * "projects/{project}/global/networks/{network}".
      * </pre>
      *
      * <code>string network_uri = 5;</code>
@@ -4368,7 +4403,8 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * URI of a VPC network where route is located.
+     * URI of a VPC network where route is located in format
+     * "projects/{project}/global/networks/{network}".
      * </pre>
      *
      * <code>string network_uri = 5;</code>
@@ -4386,7 +4422,8 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * URI of a VPC network where route is located.
+     * URI of a VPC network where route is located in format
+     * "projects/{project}/global/networks/{network}".
      * </pre>
      *
      * <code>string network_uri = 5;</code>
@@ -5310,7 +5347,8 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * URI of the NCC Hub the route is advertised by. PEERING_SUBNET and
+     * URI of the NCC Hub the route is advertised by in format
+     * "projects/{project}/locations/global/hubs/{hub}". PEERING_SUBNET and
      * PEERING_DYNAMIC routes that are advertised by NCC Hub only.
      * </pre>
      *
@@ -5326,7 +5364,8 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * URI of the NCC Hub the route is advertised by. PEERING_SUBNET and
+     * URI of the NCC Hub the route is advertised by in format
+     * "projects/{project}/locations/global/hubs/{hub}". PEERING_SUBNET and
      * PEERING_DYNAMIC routes that are advertised by NCC Hub only.
      * </pre>
      *
@@ -5350,7 +5389,8 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * URI of the NCC Hub the route is advertised by. PEERING_SUBNET and
+     * URI of the NCC Hub the route is advertised by in format
+     * "projects/{project}/locations/global/hubs/{hub}". PEERING_SUBNET and
      * PEERING_DYNAMIC routes that are advertised by NCC Hub only.
      * </pre>
      *
@@ -5374,7 +5414,8 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * URI of the NCC Hub the route is advertised by. PEERING_SUBNET and
+     * URI of the NCC Hub the route is advertised by in format
+     * "projects/{project}/locations/global/hubs/{hub}". PEERING_SUBNET and
      * PEERING_DYNAMIC routes that are advertised by NCC Hub only.
      * </pre>
      *
@@ -5397,7 +5438,8 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * URI of the NCC Hub the route is advertised by. PEERING_SUBNET and
+     * URI of the NCC Hub the route is advertised by in format
+     * "projects/{project}/locations/global/hubs/{hub}". PEERING_SUBNET and
      * PEERING_DYNAMIC routes that are advertised by NCC Hub only.
      * </pre>
      *
@@ -5416,7 +5458,8 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * URI of the NCC Hub the route is advertised by. PEERING_SUBNET and
+     * URI of the NCC Hub the route is advertised by in format
+     * "projects/{project}/locations/global/hubs/{hub}". PEERING_SUBNET and
      * PEERING_DYNAMIC routes that are advertised by NCC Hub only.
      * </pre>
      *
@@ -5442,8 +5485,11 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * URI of the destination NCC Spoke. PEERING_SUBNET and PEERING_DYNAMIC routes
-     * that are advertised by NCC Hub only.
+     * URI of the destination NCC Spoke in format
+     * "projects/{project}/locations/{location}/spokes/{spoke}" (regional) or
+     * "projects/{project}/locations/global/spokes/{spoke}" (global).
+     * PEERING_SUBNET and PEERING_DYNAMIC routes that are advertised by NCC Hub
+     * only.
      * </pre>
      *
      * <code>optional string ncc_spoke_uri = 16;</code>
@@ -5458,8 +5504,11 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * URI of the destination NCC Spoke. PEERING_SUBNET and PEERING_DYNAMIC routes
-     * that are advertised by NCC Hub only.
+     * URI of the destination NCC Spoke in format
+     * "projects/{project}/locations/{location}/spokes/{spoke}" (regional) or
+     * "projects/{project}/locations/global/spokes/{spoke}" (global).
+     * PEERING_SUBNET and PEERING_DYNAMIC routes that are advertised by NCC Hub
+     * only.
      * </pre>
      *
      * <code>optional string ncc_spoke_uri = 16;</code>
@@ -5482,8 +5531,11 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * URI of the destination NCC Spoke. PEERING_SUBNET and PEERING_DYNAMIC routes
-     * that are advertised by NCC Hub only.
+     * URI of the destination NCC Spoke in format
+     * "projects/{project}/locations/{location}/spokes/{spoke}" (regional) or
+     * "projects/{project}/locations/global/spokes/{spoke}" (global).
+     * PEERING_SUBNET and PEERING_DYNAMIC routes that are advertised by NCC Hub
+     * only.
      * </pre>
      *
      * <code>optional string ncc_spoke_uri = 16;</code>
@@ -5506,8 +5558,11 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * URI of the destination NCC Spoke. PEERING_SUBNET and PEERING_DYNAMIC routes
-     * that are advertised by NCC Hub only.
+     * URI of the destination NCC Spoke in format
+     * "projects/{project}/locations/{location}/spokes/{spoke}" (regional) or
+     * "projects/{project}/locations/global/spokes/{spoke}" (global).
+     * PEERING_SUBNET and PEERING_DYNAMIC routes that are advertised by NCC Hub
+     * only.
      * </pre>
      *
      * <code>optional string ncc_spoke_uri = 16;</code>
@@ -5529,8 +5584,11 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * URI of the destination NCC Spoke. PEERING_SUBNET and PEERING_DYNAMIC routes
-     * that are advertised by NCC Hub only.
+     * URI of the destination NCC Spoke in format
+     * "projects/{project}/locations/{location}/spokes/{spoke}" (regional) or
+     * "projects/{project}/locations/global/spokes/{spoke}" (global).
+     * PEERING_SUBNET and PEERING_DYNAMIC routes that are advertised by NCC Hub
+     * only.
      * </pre>
      *
      * <code>optional string ncc_spoke_uri = 16;</code>
@@ -5548,8 +5606,11 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * URI of the destination NCC Spoke. PEERING_SUBNET and PEERING_DYNAMIC routes
-     * that are advertised by NCC Hub only.
+     * URI of the destination NCC Spoke in format
+     * "projects/{project}/locations/{location}/spokes/{spoke}" (regional) or
+     * "projects/{project}/locations/global/spokes/{spoke}" (global).
+     * PEERING_SUBNET and PEERING_DYNAMIC routes that are advertised by NCC Hub
+     * only.
      * </pre>
      *
      * <code>optional string ncc_spoke_uri = 16;</code>
@@ -5575,7 +5636,8 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * For ADVERTISED dynamic routes, the URI of the Cloud Router that advertised
-     * the corresponding IP prefix.
+     * the corresponding IP prefix in format
+     * "projects/{project}/regions/{region}/routers/{router}".
      * </pre>
      *
      * <code>optional string advertised_route_source_router_uri = 17;</code>
@@ -5591,7 +5653,8 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * For ADVERTISED dynamic routes, the URI of the Cloud Router that advertised
-     * the corresponding IP prefix.
+     * the corresponding IP prefix in format
+     * "projects/{project}/regions/{region}/routers/{router}".
      * </pre>
      *
      * <code>optional string advertised_route_source_router_uri = 17;</code>
@@ -5615,7 +5678,8 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * For ADVERTISED dynamic routes, the URI of the Cloud Router that advertised
-     * the corresponding IP prefix.
+     * the corresponding IP prefix in format
+     * "projects/{project}/regions/{region}/routers/{router}".
      * </pre>
      *
      * <code>optional string advertised_route_source_router_uri = 17;</code>
@@ -5639,7 +5703,8 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * For ADVERTISED dynamic routes, the URI of the Cloud Router that advertised
-     * the corresponding IP prefix.
+     * the corresponding IP prefix in format
+     * "projects/{project}/regions/{region}/routers/{router}".
      * </pre>
      *
      * <code>optional string advertised_route_source_router_uri = 17;</code>
@@ -5662,7 +5727,8 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * For ADVERTISED dynamic routes, the URI of the Cloud Router that advertised
-     * the corresponding IP prefix.
+     * the corresponding IP prefix in format
+     * "projects/{project}/regions/{region}/routers/{router}".
      * </pre>
      *
      * <code>optional string advertised_route_source_router_uri = 17;</code>
@@ -5681,7 +5747,8 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * For ADVERTISED dynamic routes, the URI of the Cloud Router that advertised
-     * the corresponding IP prefix.
+     * the corresponding IP prefix in format
+     * "projects/{project}/regions/{region}/routers/{router}".
      * </pre>
      *
      * <code>optional string advertised_route_source_router_uri = 17;</code>
@@ -5716,7 +5783,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
      * <code>optional string advertised_route_next_hop_uri = 18 [deprecated = true];</code>
      *
      * @deprecated google.cloud.networkmanagement.v1beta1.RouteInfo.advertised_route_next_hop_uri is
-     *     deprecated. See google/cloud/networkmanagement/v1beta1/trace.proto;l=752
+     *     deprecated. See google/cloud/networkmanagement/v1beta1/trace.proto;l=779
      * @return Whether the advertisedRouteNextHopUri field is set.
      */
     @java.lang.Deprecated
@@ -5738,7 +5805,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
      * <code>optional string advertised_route_next_hop_uri = 18 [deprecated = true];</code>
      *
      * @deprecated google.cloud.networkmanagement.v1beta1.RouteInfo.advertised_route_next_hop_uri is
-     *     deprecated. See google/cloud/networkmanagement/v1beta1/trace.proto;l=752
+     *     deprecated. See google/cloud/networkmanagement/v1beta1/trace.proto;l=779
      * @return The advertisedRouteNextHopUri.
      */
     @java.lang.Deprecated
@@ -5768,7 +5835,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
      * <code>optional string advertised_route_next_hop_uri = 18 [deprecated = true];</code>
      *
      * @deprecated google.cloud.networkmanagement.v1beta1.RouteInfo.advertised_route_next_hop_uri is
-     *     deprecated. See google/cloud/networkmanagement/v1beta1/trace.proto;l=752
+     *     deprecated. See google/cloud/networkmanagement/v1beta1/trace.proto;l=779
      * @return The bytes for advertisedRouteNextHopUri.
      */
     @java.lang.Deprecated
@@ -5798,7 +5865,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
      * <code>optional string advertised_route_next_hop_uri = 18 [deprecated = true];</code>
      *
      * @deprecated google.cloud.networkmanagement.v1beta1.RouteInfo.advertised_route_next_hop_uri is
-     *     deprecated. See google/cloud/networkmanagement/v1beta1/trace.proto;l=752
+     *     deprecated. See google/cloud/networkmanagement/v1beta1/trace.proto;l=779
      * @param value The advertisedRouteNextHopUri to set.
      * @return This builder for chaining.
      */
@@ -5827,7 +5894,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
      * <code>optional string advertised_route_next_hop_uri = 18 [deprecated = true];</code>
      *
      * @deprecated google.cloud.networkmanagement.v1beta1.RouteInfo.advertised_route_next_hop_uri is
-     *     deprecated. See google/cloud/networkmanagement/v1beta1/trace.proto;l=752
+     *     deprecated. See google/cloud/networkmanagement/v1beta1/trace.proto;l=779
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -5852,7 +5919,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
      * <code>optional string advertised_route_next_hop_uri = 18 [deprecated = true];</code>
      *
      * @deprecated google.cloud.networkmanagement.v1beta1.RouteInfo.advertised_route_next_hop_uri is
-     *     deprecated. See google/cloud/networkmanagement/v1beta1/trace.proto;l=752
+     *     deprecated. See google/cloud/networkmanagement/v1beta1/trace.proto;l=779
      * @param value The bytes for advertisedRouteNextHopUri to set.
      * @return This builder for chaining.
      */
@@ -5985,7 +6052,8 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * URI of a VPC network where the next hop resource is located.
+     * URI of a VPC network where the next hop resource is located in format
+     * "projects/{project}/global/networks/{network}".
      * </pre>
      *
      * <code>string next_hop_network_uri = 21;</code>
@@ -6008,7 +6076,8 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * URI of a VPC network where the next hop resource is located.
+     * URI of a VPC network where the next hop resource is located in format
+     * "projects/{project}/global/networks/{network}".
      * </pre>
      *
      * <code>string next_hop_network_uri = 21;</code>
@@ -6031,7 +6100,8 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * URI of a VPC network where the next hop resource is located.
+     * URI of a VPC network where the next hop resource is located in format
+     * "projects/{project}/global/networks/{network}".
      * </pre>
      *
      * <code>string next_hop_network_uri = 21;</code>
@@ -6053,7 +6123,8 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * URI of a VPC network where the next hop resource is located.
+     * URI of a VPC network where the next hop resource is located in format
+     * "projects/{project}/global/networks/{network}".
      * </pre>
      *
      * <code>string next_hop_network_uri = 21;</code>
@@ -6071,7 +6142,8 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * URI of a VPC network where the next hop resource is located.
+     * URI of a VPC network where the next hop resource is located in format
+     * "projects/{project}/global/networks/{network}".
      * </pre>
      *
      * <code>string next_hop_network_uri = 21;</code>
@@ -6098,6 +6170,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
      * <pre>
      * For PEERING_SUBNET and PEERING_STATIC routes, the URI of the originating
      * SUBNET/STATIC route.
+     * Format: `projects/{project_id}/global/routes/{route_id}`
      * </pre>
      *
      * <code>string originating_route_uri = 22;</code>
@@ -6122,6 +6195,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
      * <pre>
      * For PEERING_SUBNET and PEERING_STATIC routes, the URI of the originating
      * SUBNET/STATIC route.
+     * Format: `projects/{project_id}/global/routes/{route_id}`
      * </pre>
      *
      * <code>string originating_route_uri = 22;</code>
@@ -6146,6 +6220,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
      * <pre>
      * For PEERING_SUBNET and PEERING_STATIC routes, the URI of the originating
      * SUBNET/STATIC route.
+     * Format: `projects/{project_id}/global/routes/{route_id}`
      * </pre>
      *
      * <code>string originating_route_uri = 22;</code>
@@ -6169,6 +6244,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
      * <pre>
      * For PEERING_SUBNET and PEERING_STATIC routes, the URI of the originating
      * SUBNET/STATIC route.
+     * Format: `projects/{project_id}/global/routes/{route_id}`
      * </pre>
      *
      * <code>string originating_route_uri = 22;</code>
@@ -6188,6 +6264,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
      * <pre>
      * For PEERING_SUBNET and PEERING_STATIC routes, the URI of the originating
      * SUBNET/STATIC route.
+     * Format: `projects/{project_id}/global/routes/{route_id}`
      * </pre>
      *
      * <code>string originating_route_uri = 22;</code>
@@ -6330,6 +6407,8 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
      * <pre>
      * For PEERING_SUBNET and PEERING_DYNAMIC routes that are advertised by NCC
      * Hub, the URI of the corresponding route in NCC Hub's routing table.
+     * Format:
+     * `projects/{project_id}/locations/global/hubs/{hub_id}/routeTables/{route_table_id}/routes/{route_id}`
      * </pre>
      *
      * <code>string ncc_hub_route_uri = 24;</code>
@@ -6354,6 +6433,8 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
      * <pre>
      * For PEERING_SUBNET and PEERING_DYNAMIC routes that are advertised by NCC
      * Hub, the URI of the corresponding route in NCC Hub's routing table.
+     * Format:
+     * `projects/{project_id}/locations/global/hubs/{hub_id}/routeTables/{route_table_id}/routes/{route_id}`
      * </pre>
      *
      * <code>string ncc_hub_route_uri = 24;</code>
@@ -6378,6 +6459,8 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
      * <pre>
      * For PEERING_SUBNET and PEERING_DYNAMIC routes that are advertised by NCC
      * Hub, the URI of the corresponding route in NCC Hub's routing table.
+     * Format:
+     * `projects/{project_id}/locations/global/hubs/{hub_id}/routeTables/{route_table_id}/routes/{route_id}`
      * </pre>
      *
      * <code>string ncc_hub_route_uri = 24;</code>
@@ -6401,6 +6484,8 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
      * <pre>
      * For PEERING_SUBNET and PEERING_DYNAMIC routes that are advertised by NCC
      * Hub, the URI of the corresponding route in NCC Hub's routing table.
+     * Format:
+     * `projects/{project_id}/locations/global/hubs/{hub_id}/routeTables/{route_table_id}/routes/{route_id}`
      * </pre>
      *
      * <code>string ncc_hub_route_uri = 24;</code>
@@ -6420,6 +6505,8 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
      * <pre>
      * For PEERING_SUBNET and PEERING_DYNAMIC routes that are advertised by NCC
      * Hub, the URI of the corresponding route in NCC Hub's routing table.
+     * Format:
+     * `projects/{project_id}/locations/global/hubs/{hub_id}/routeTables/{route_table_id}/routes/{route_id}`
      * </pre>
      *
      * <code>string ncc_hub_route_uri = 24;</code>

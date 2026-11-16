@@ -31,7 +31,7 @@ public interface BackupPlanAssociationOrBuilder
    *
    * <pre>
    * Output only. Identifier. The resource name of BackupPlanAssociation in
-   * below format Format :
+   * below format Format:
    * projects/{project}/locations/{location}/backupPlanAssociations/{backupPlanAssociationId}
    * </pre>
    *
@@ -48,7 +48,7 @@ public interface BackupPlanAssociationOrBuilder
    *
    * <pre>
    * Output only. Identifier. The resource name of BackupPlanAssociation in
-   * below format Format :
+   * below format Format:
    * projects/{project}/locations/{location}/backupPlanAssociations/{backupPlanAssociationId}
    * </pre>
    *
@@ -527,6 +527,40 @@ public interface BackupPlanAssociationOrBuilder
    * @return The bytes for backupPlanRevisionName.
    */
   com.google.protobuf.ByteString getBackupPlanRevisionNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The resource name of the `AutoProtectionPolicyBinding` that
+   * manages this association, if any. Format:
+   * `projects/{project}/locations/{location}/autoProtectionPolicies/{policy}/bindings/{binding}`.
+   * </pre>
+   *
+   * <code>
+   * string auto_protection_policy_binding = 16 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The autoProtectionPolicyBinding.
+   */
+  java.lang.String getAutoProtectionPolicyBinding();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The resource name of the `AutoProtectionPolicyBinding` that
+   * manages this association, if any. Format:
+   * `projects/{project}/locations/{location}/autoProtectionPolicies/{policy}/bindings/{binding}`.
+   * </pre>
+   *
+   * <code>
+   * string auto_protection_policy_binding = 16 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for autoProtectionPolicyBinding.
+   */
+  com.google.protobuf.ByteString getAutoProtectionPolicyBindingBytes();
 
   com.google.cloud.backupdr.v1.BackupPlanAssociation.ResourcePropertiesCase
       getResourcePropertiesCase();

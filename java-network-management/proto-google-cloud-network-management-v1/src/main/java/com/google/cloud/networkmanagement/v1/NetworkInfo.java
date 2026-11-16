@@ -136,7 +136,8 @@ public final class NetworkInfo extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * URI of a Compute Engine network.
+   * URI of a Compute Engine network in format
+   * "projects/{project}/global/networks/{network}"
    * </pre>
    *
    * <code>string uri = 2;</code>
@@ -160,7 +161,8 @@ public final class NetworkInfo extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * URI of a Compute Engine network.
+   * URI of a Compute Engine network in format
+   * "projects/{project}/global/networks/{network}"
    * </pre>
    *
    * <code>string uri = 2;</code>
@@ -189,7 +191,8 @@ public final class NetworkInfo extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * URI of the subnet matching the source IP address of the test.
+   * URI of the subnet matching the source IP address of the test in format
+   * "projects/{project}/regions/{region}/subnetworks/{subnetwork}"
    * </pre>
    *
    * <code>string matched_subnet_uri = 5;</code>
@@ -213,7 +216,8 @@ public final class NetworkInfo extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * URI of the subnet matching the source IP address of the test.
+   * URI of the subnet matching the source IP address of the test in format
+   * "projects/{project}/regions/{region}/subnetworks/{subnetwork}"
    * </pre>
    *
    * <code>string matched_subnet_uri = 5;</code>
@@ -862,7 +866,8 @@ public final class NetworkInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * URI of a Compute Engine network.
+     * URI of a Compute Engine network in format
+     * "projects/{project}/global/networks/{network}"
      * </pre>
      *
      * <code>string uri = 2;</code>
@@ -885,7 +890,8 @@ public final class NetworkInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * URI of a Compute Engine network.
+     * URI of a Compute Engine network in format
+     * "projects/{project}/global/networks/{network}"
      * </pre>
      *
      * <code>string uri = 2;</code>
@@ -908,7 +914,8 @@ public final class NetworkInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * URI of a Compute Engine network.
+     * URI of a Compute Engine network in format
+     * "projects/{project}/global/networks/{network}"
      * </pre>
      *
      * <code>string uri = 2;</code>
@@ -930,7 +937,8 @@ public final class NetworkInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * URI of a Compute Engine network.
+     * URI of a Compute Engine network in format
+     * "projects/{project}/global/networks/{network}"
      * </pre>
      *
      * <code>string uri = 2;</code>
@@ -948,7 +956,8 @@ public final class NetworkInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * URI of a Compute Engine network.
+     * URI of a Compute Engine network in format
+     * "projects/{project}/global/networks/{network}"
      * </pre>
      *
      * <code>string uri = 2;</code>
@@ -973,7 +982,8 @@ public final class NetworkInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * URI of the subnet matching the source IP address of the test.
+     * URI of the subnet matching the source IP address of the test in format
+     * "projects/{project}/regions/{region}/subnetworks/{subnetwork}"
      * </pre>
      *
      * <code>string matched_subnet_uri = 5;</code>
@@ -996,7 +1006,8 @@ public final class NetworkInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * URI of the subnet matching the source IP address of the test.
+     * URI of the subnet matching the source IP address of the test in format
+     * "projects/{project}/regions/{region}/subnetworks/{subnetwork}"
      * </pre>
      *
      * <code>string matched_subnet_uri = 5;</code>
@@ -1019,7 +1030,8 @@ public final class NetworkInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * URI of the subnet matching the source IP address of the test.
+     * URI of the subnet matching the source IP address of the test in format
+     * "projects/{project}/regions/{region}/subnetworks/{subnetwork}"
      * </pre>
      *
      * <code>string matched_subnet_uri = 5;</code>
@@ -1041,7 +1053,8 @@ public final class NetworkInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * URI of the subnet matching the source IP address of the test.
+     * URI of the subnet matching the source IP address of the test in format
+     * "projects/{project}/regions/{region}/subnetworks/{subnetwork}"
      * </pre>
      *
      * <code>string matched_subnet_uri = 5;</code>
@@ -1059,7 +1072,8 @@ public final class NetworkInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * URI of the subnet matching the source IP address of the test.
+     * URI of the subnet matching the source IP address of the test in format
+     * "projects/{project}/regions/{region}/subnetworks/{subnetwork}"
      * </pre>
      *
      * <code>string matched_subnet_uri = 5;</code>

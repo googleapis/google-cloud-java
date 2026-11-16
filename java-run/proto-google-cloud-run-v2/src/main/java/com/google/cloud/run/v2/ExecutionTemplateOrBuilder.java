@@ -332,4 +332,84 @@ public interface ExecutionTemplateOrBuilder
    * </code>
    */
   com.google.cloud.run.v2.TaskTemplateOrBuilder getTemplateOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If true, the system will start the execution within the next 12
+   * hours depending on available capacity.
+   * </pre>
+   *
+   * <code>optional bool delay_execution = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the delayExecution field is set.
+   */
+  boolean hasDelayExecution();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If true, the system will start the execution within the next 12
+   * hours depending on available capacity.
+   * </pre>
+   *
+   * <code>optional bool delay_execution = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The delayExecution.
+   */
+  boolean getDelayExecution();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Arbitrary identifier for the API client.
+   * </pre>
+   *
+   * <code>string client = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The client.
+   */
+  java.lang.String getClient();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Arbitrary identifier for the API client.
+   * </pre>
+   *
+   * <code>string client = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for client.
+   */
+  com.google.protobuf.ByteString getClientBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Arbitrary version identifier for the API client.
+   * </pre>
+   *
+   * <code>string client_version = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The clientVersion.
+   */
+  java.lang.String getClientVersion();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Arbitrary version identifier for the API client.
+   * </pre>
+   *
+   * <code>string client_version = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for clientVersion.
+   */
+  com.google.protobuf.ByteString getClientVersionBytes();
 }

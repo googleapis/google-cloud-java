@@ -76,7 +76,7 @@ public final class TripConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Whether to enable high frequency trip updates.
+   * Optional. Whether to enable high-frequency trip updates.
    *
    * NOTE: Enabling this feature logs the trip under Enterprise Tier usage, and
    * is subject to Enterprise Tier rates.
@@ -208,6 +208,52 @@ public final class TripConfig extends com.google.protobuf.GeneratedMessage
         : pubsubFieldMask_;
   }
 
+  public static final int ENABLE_REMAINING_ROUTE_REPORTING_FIELD_NUMBER = 4;
+  private boolean enableRemainingRouteReporting_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Whether to enable remaining route reporting for the trip.
+   *
+   * NOTE: Enabling this feature logs the trip under Enterprise Tier usage, and
+   * is subject to Enterprise Tier rates.
+   * </pre>
+   *
+   * <code>bool enable_remaining_route_reporting = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enableRemainingRouteReporting.
+   */
+  @java.lang.Override
+  public boolean getEnableRemainingRouteReporting() {
+    return enableRemainingRouteReporting_;
+  }
+
+  public static final int ENABLE_ROUTE_DEVIATION_REPORTING_FIELD_NUMBER = 5;
+  private boolean enableRouteDeviationReporting_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Whether to enable route deviation reporting for the trip.
+   *
+   * NOTE: Enabling this feature logs the trip under Enterprise Tier usage, and
+   * is subject to Enterprise Tier rates.
+   * </pre>
+   *
+   * <code>bool enable_route_deviation_reporting = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enableRouteDeviationReporting.
+   */
+  @java.lang.Override
+  public boolean getEnableRouteDeviationReporting() {
+    return enableRouteDeviationReporting_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -231,6 +277,12 @@ public final class TripConfig extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(3, getPubsubFieldMask());
     }
+    if (enableRemainingRouteReporting_ != false) {
+      output.writeBool(4, enableRemainingRouteReporting_);
+    }
+    if (enableRouteDeviationReporting_ != false) {
+      output.writeBool(5, enableRouteDeviationReporting_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -248,6 +300,14 @@ public final class TripConfig extends com.google.protobuf.GeneratedMessage
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getPubsubFieldMask());
+    }
+    if (enableRemainingRouteReporting_ != false) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeBoolSize(4, enableRemainingRouteReporting_);
+    }
+    if (enableRouteDeviationReporting_ != false) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeBoolSize(5, enableRouteDeviationReporting_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -270,6 +330,10 @@ public final class TripConfig extends com.google.protobuf.GeneratedMessage
     if (hasPubsubFieldMask()) {
       if (!getPubsubFieldMask().equals(other.getPubsubFieldMask())) return false;
     }
+    if (getEnableRemainingRouteReporting() != other.getEnableRemainingRouteReporting())
+      return false;
+    if (getEnableRouteDeviationReporting() != other.getEnableRouteDeviationReporting())
+      return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -289,6 +353,12 @@ public final class TripConfig extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + PUBSUB_FIELD_MASK_FIELD_NUMBER;
       hash = (53 * hash) + getPubsubFieldMask().hashCode();
     }
+    hash = (37 * hash) + ENABLE_REMAINING_ROUTE_REPORTING_FIELD_NUMBER;
+    hash =
+        (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableRemainingRouteReporting());
+    hash = (37 * hash) + ENABLE_ROUTE_DEVIATION_REPORTING_FIELD_NUMBER;
+    hash =
+        (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableRouteDeviationReporting());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -445,6 +515,8 @@ public final class TripConfig extends com.google.protobuf.GeneratedMessage
         pubsubFieldMaskBuilder_.dispose();
         pubsubFieldMaskBuilder_ = null;
       }
+      enableRemainingRouteReporting_ = false;
+      enableRouteDeviationReporting_ = false;
       return this;
     }
 
@@ -493,6 +565,12 @@ public final class TripConfig extends com.google.protobuf.GeneratedMessage
             pubsubFieldMaskBuilder_ == null ? pubsubFieldMask_ : pubsubFieldMaskBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.enableRemainingRouteReporting_ = enableRemainingRouteReporting_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.enableRouteDeviationReporting_ = enableRouteDeviationReporting_;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -516,6 +594,12 @@ public final class TripConfig extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasPubsubFieldMask()) {
         mergePubsubFieldMask(other.getPubsubFieldMask());
+      }
+      if (other.getEnableRemainingRouteReporting() != false) {
+        setEnableRemainingRouteReporting(other.getEnableRemainingRouteReporting());
+      }
+      if (other.getEnableRouteDeviationReporting() != false) {
+        setEnableRouteDeviationReporting(other.getEnableRouteDeviationReporting());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -562,6 +646,18 @@ public final class TripConfig extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000004;
                 break;
               } // case 26
+            case 32:
+              {
+                enableRemainingRouteReporting_ = input.readBool();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 32
+            case 40:
+              {
+                enableRouteDeviationReporting_ = input.readBool();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 40
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -587,7 +683,7 @@ public final class TripConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Whether to enable high frequency trip updates.
+     * Optional. Whether to enable high-frequency trip updates.
      *
      * NOTE: Enabling this feature logs the trip under Enterprise Tier usage, and
      * is subject to Enterprise Tier rates.
@@ -607,7 +703,7 @@ public final class TripConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Whether to enable high frequency trip updates.
+     * Optional. Whether to enable high-frequency trip updates.
      *
      * NOTE: Enabling this feature logs the trip under Enterprise Tier usage, and
      * is subject to Enterprise Tier rates.
@@ -631,7 +727,7 @@ public final class TripConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Whether to enable high frequency trip updates.
+     * Optional. Whether to enable high-frequency trip updates.
      *
      * NOTE: Enabling this feature logs the trip under Enterprise Tier usage, and
      * is subject to Enterprise Tier rates.
@@ -1032,6 +1128,142 @@ public final class TripConfig extends com.google.protobuf.GeneratedMessage
         pubsubFieldMask_ = null;
       }
       return pubsubFieldMaskBuilder_;
+    }
+
+    private boolean enableRemainingRouteReporting_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether to enable remaining route reporting for the trip.
+     *
+     * NOTE: Enabling this feature logs the trip under Enterprise Tier usage, and
+     * is subject to Enterprise Tier rates.
+     * </pre>
+     *
+     * <code>bool enable_remaining_route_reporting = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enableRemainingRouteReporting.
+     */
+    @java.lang.Override
+    public boolean getEnableRemainingRouteReporting() {
+      return enableRemainingRouteReporting_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether to enable remaining route reporting for the trip.
+     *
+     * NOTE: Enabling this feature logs the trip under Enterprise Tier usage, and
+     * is subject to Enterprise Tier rates.
+     * </pre>
+     *
+     * <code>bool enable_remaining_route_reporting = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enableRemainingRouteReporting to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEnableRemainingRouteReporting(boolean value) {
+
+      enableRemainingRouteReporting_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether to enable remaining route reporting for the trip.
+     *
+     * NOTE: Enabling this feature logs the trip under Enterprise Tier usage, and
+     * is subject to Enterprise Tier rates.
+     * </pre>
+     *
+     * <code>bool enable_remaining_route_reporting = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEnableRemainingRouteReporting() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      enableRemainingRouteReporting_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean enableRouteDeviationReporting_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether to enable route deviation reporting for the trip.
+     *
+     * NOTE: Enabling this feature logs the trip under Enterprise Tier usage, and
+     * is subject to Enterprise Tier rates.
+     * </pre>
+     *
+     * <code>bool enable_route_deviation_reporting = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enableRouteDeviationReporting.
+     */
+    @java.lang.Override
+    public boolean getEnableRouteDeviationReporting() {
+      return enableRouteDeviationReporting_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether to enable route deviation reporting for the trip.
+     *
+     * NOTE: Enabling this feature logs the trip under Enterprise Tier usage, and
+     * is subject to Enterprise Tier rates.
+     * </pre>
+     *
+     * <code>bool enable_route_deviation_reporting = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enableRouteDeviationReporting to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEnableRouteDeviationReporting(boolean value) {
+
+      enableRouteDeviationReporting_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether to enable route deviation reporting for the trip.
+     *
+     * NOTE: Enabling this feature logs the trip under Enterprise Tier usage, and
+     * is subject to Enterprise Tier rates.
+     * </pre>
+     *
+     * <code>bool enable_route_deviation_reporting = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEnableRouteDeviationReporting() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      enableRouteDeviationReporting_ = false;
+      onChanged();
+      return this;
     }
 
     // @@protoc_insertion_point(builder_scope:google.maps.navconnect.v1.TripConfig)

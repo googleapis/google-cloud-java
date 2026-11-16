@@ -30,10 +30,7 @@ public interface StartInstanceRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the Instance to stop.
-   * Format:
-   * `projects/{project}/locations/{location}/instances/{instance}`,
-   * where `{project}` can be project id or number.
+   * Required. The name of the Instance to start.
    * </pre>
    *
    * <code>
@@ -48,10 +45,7 @@ public interface StartInstanceRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the Instance to stop.
-   * Format:
-   * `projects/{project}/locations/{location}/instances/{instance}`,
-   * where `{project}` can be project id or number.
+   * Required. The name of the Instance to start.
    * </pre>
    *
    * <code>

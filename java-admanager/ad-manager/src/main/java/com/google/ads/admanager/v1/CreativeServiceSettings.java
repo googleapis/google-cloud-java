@@ -100,6 +100,28 @@ public class CreativeServiceSettings extends ClientSettings<CreativeServiceSetti
     return ((CreativeServiceStubSettings) getStubSettings()).listCreativesSettings();
   }
 
+  /** Returns the object with the settings used for calls to createCreative. */
+  public UnaryCallSettings<CreateCreativeRequest, Creative> createCreativeSettings() {
+    return ((CreativeServiceStubSettings) getStubSettings()).createCreativeSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateCreative. */
+  public UnaryCallSettings<UpdateCreativeRequest, Creative> updateCreativeSettings() {
+    return ((CreativeServiceStubSettings) getStubSettings()).updateCreativeSettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchCreateCreatives. */
+  public UnaryCallSettings<BatchCreateCreativesRequest, BatchCreateCreativesResponse>
+      batchCreateCreativesSettings() {
+    return ((CreativeServiceStubSettings) getStubSettings()).batchCreateCreativesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchUpdateCreatives. */
+  public UnaryCallSettings<BatchUpdateCreativesRequest, BatchUpdateCreativesResponse>
+      batchUpdateCreativesSettings() {
+    return ((CreativeServiceStubSettings) getStubSettings()).batchUpdateCreativesSettings();
+  }
+
   /** Returns the object with the settings used for calls to batchActivateCreatives. */
   public UnaryCallSettings<BatchActivateCreativesRequest, BatchActivateCreativesResponse>
       batchActivateCreativesSettings() {
@@ -219,6 +241,28 @@ public class CreativeServiceSettings extends ClientSettings<CreativeServiceSetti
             ListCreativesRequest, ListCreativesResponse, ListCreativesPagedResponse>
         listCreativesSettings() {
       return getStubSettingsBuilder().listCreativesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createCreative. */
+    public UnaryCallSettings.Builder<CreateCreativeRequest, Creative> createCreativeSettings() {
+      return getStubSettingsBuilder().createCreativeSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateCreative. */
+    public UnaryCallSettings.Builder<UpdateCreativeRequest, Creative> updateCreativeSettings() {
+      return getStubSettingsBuilder().updateCreativeSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchCreateCreatives. */
+    public UnaryCallSettings.Builder<BatchCreateCreativesRequest, BatchCreateCreativesResponse>
+        batchCreateCreativesSettings() {
+      return getStubSettingsBuilder().batchCreateCreativesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchUpdateCreatives. */
+    public UnaryCallSettings.Builder<BatchUpdateCreativesRequest, BatchUpdateCreativesResponse>
+        batchUpdateCreativesSettings() {
+      return getStubSettingsBuilder().batchUpdateCreativesSettings();
     }
 
     /** Returns the builder for the settings used for calls to batchActivateCreatives. */

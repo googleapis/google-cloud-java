@@ -30,6 +30,9 @@ import com.google.cloud.discoveryengine.v1.GetEngineRequest;
 import com.google.cloud.discoveryengine.v1.ListEnginesRequest;
 import com.google.cloud.discoveryengine.v1.ListEnginesResponse;
 import com.google.cloud.discoveryengine.v1.UpdateEngineRequest;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.OperationsStub;
 import com.google.protobuf.Empty;
@@ -88,6 +91,14 @@ public abstract class EngineServiceStub implements BackgroundResource {
 
   public UnaryCallable<ListEnginesRequest, ListEnginesResponse> listEnginesCallable() {
     throw new UnsupportedOperationException("Not implemented: listEnginesCallable()");
+  }
+
+  public UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
+    throw new UnsupportedOperationException("Not implemented: getIamPolicyCallable()");
+  }
+
+  public UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
+    throw new UnsupportedOperationException("Not implemented: setIamPolicyCallable()");
   }
 
   @Override

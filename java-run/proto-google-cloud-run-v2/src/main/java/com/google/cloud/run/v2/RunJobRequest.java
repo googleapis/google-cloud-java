@@ -202,6 +202,34 @@ public final class RunJobRequest extends com.google.protobuf.GeneratedMessage
      * <code>.google.protobuf.Duration timeout = 4;</code>
      */
     com.google.protobuf.DurationOrBuilder getTimeoutOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, the system will start the execution within the next 12
+     * hours depending on available capacity.
+     * </pre>
+     *
+     * <code>optional bool delay_execution = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the delayExecution field is set.
+     */
+    boolean hasDelayExecution();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, the system will start the execution within the next 12
+     * hours depending on available capacity.
+     * </pre>
+     *
+     * <code>optional bool delay_execution = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The delayExecution.
+     */
+    boolean getDelayExecution();
   }
 
   /**
@@ -2108,6 +2136,43 @@ public final class RunJobRequest extends com.google.protobuf.GeneratedMessage
       return timeout_ == null ? com.google.protobuf.Duration.getDefaultInstance() : timeout_;
     }
 
+    public static final int DELAY_EXECUTION_FIELD_NUMBER = 6;
+    private boolean delayExecution_ = false;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, the system will start the execution within the next 12
+     * hours depending on available capacity.
+     * </pre>
+     *
+     * <code>optional bool delay_execution = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the delayExecution field is set.
+     */
+    @java.lang.Override
+    public boolean hasDelayExecution() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, the system will start the execution within the next 12
+     * hours depending on available capacity.
+     * </pre>
+     *
+     * <code>optional bool delay_execution = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The delayExecution.
+     */
+    @java.lang.Override
+    public boolean getDelayExecution() {
+      return delayExecution_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -2131,6 +2196,9 @@ public final class RunJobRequest extends com.google.protobuf.GeneratedMessage
       if (((bitField0_ & 0x00000001) != 0)) {
         output.writeMessage(4, getTimeout());
       }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        output.writeBool(6, delayExecution_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -2149,6 +2217,9 @@ public final class RunJobRequest extends com.google.protobuf.GeneratedMessage
       }
       if (((bitField0_ & 0x00000001) != 0)) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getTimeout());
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(6, delayExecution_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -2172,6 +2243,10 @@ public final class RunJobRequest extends com.google.protobuf.GeneratedMessage
       if (hasTimeout()) {
         if (!getTimeout().equals(other.getTimeout())) return false;
       }
+      if (hasDelayExecution() != other.hasDelayExecution()) return false;
+      if (hasDelayExecution()) {
+        if (getDelayExecution() != other.getDelayExecution()) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -2192,6 +2267,10 @@ public final class RunJobRequest extends com.google.protobuf.GeneratedMessage
       if (hasTimeout()) {
         hash = (37 * hash) + TIMEOUT_FIELD_NUMBER;
         hash = (53 * hash) + getTimeout().hashCode();
+      }
+      if (hasDelayExecution()) {
+        hash = (37 * hash) + DELAY_EXECUTION_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDelayExecution());
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
@@ -2356,6 +2435,7 @@ public final class RunJobRequest extends com.google.protobuf.GeneratedMessage
           timeoutBuilder_.dispose();
           timeoutBuilder_ = null;
         }
+        delayExecution_ = false;
         return this;
       }
 
@@ -2414,6 +2494,10 @@ public final class RunJobRequest extends com.google.protobuf.GeneratedMessage
           result.timeout_ = timeoutBuilder_ == null ? timeout_ : timeoutBuilder_.build();
           to_bitField0_ |= 0x00000001;
         }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.delayExecution_ = delayExecution_;
+          to_bitField0_ |= 0x00000002;
+        }
         result.bitField0_ |= to_bitField0_;
       }
 
@@ -2462,6 +2546,9 @@ public final class RunJobRequest extends com.google.protobuf.GeneratedMessage
         }
         if (other.hasTimeout()) {
           mergeTimeout(other.getTimeout());
+        }
+        if (other.hasDelayExecution()) {
+          setDelayExecution(other.getDelayExecution());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -2517,6 +2604,12 @@ public final class RunJobRequest extends com.google.protobuf.GeneratedMessage
                   bitField0_ |= 0x00000004;
                   break;
                 } // case 34
+              case 48:
+                {
+                  delayExecution_ = input.readBool();
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 48
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3233,6 +3326,82 @@ public final class RunJobRequest extends com.google.protobuf.GeneratedMessage
           timeout_ = null;
         }
         return timeoutBuilder_;
+      }
+
+      private boolean delayExecution_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If true, the system will start the execution within the next 12
+       * hours depending on available capacity.
+       * </pre>
+       *
+       * <code>optional bool delay_execution = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return Whether the delayExecution field is set.
+       */
+      @java.lang.Override
+      public boolean hasDelayExecution() {
+        return ((bitField0_ & 0x00000008) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If true, the system will start the execution within the next 12
+       * hours depending on available capacity.
+       * </pre>
+       *
+       * <code>optional bool delay_execution = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The delayExecution.
+       */
+      @java.lang.Override
+      public boolean getDelayExecution() {
+        return delayExecution_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If true, the system will start the execution within the next 12
+       * hours depending on available capacity.
+       * </pre>
+       *
+       * <code>optional bool delay_execution = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The delayExecution to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDelayExecution(boolean value) {
+
+        delayExecution_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If true, the system will start the execution within the next 12
+       * hours depending on available capacity.
+       * </pre>
+       *
+       * <code>optional bool delay_execution = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearDelayExecution() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        delayExecution_ = false;
+        onChanged();
+        return this;
       }
 
       // @@protoc_insertion_point(builder_scope:google.cloud.run.v2.RunJobRequest.Overrides)

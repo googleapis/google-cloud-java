@@ -27,6 +27,12 @@ public interface VpnTunnelPhase2AlgorithmsOrBuilder
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
+   * <pre>
+   * Encryption algorithms for IKE phase 2.
+   * </pre>
+   *
    * <code>repeated string encryption = 97980291;</code>
    *
    * @return A list containing the encryption.
@@ -34,6 +40,12 @@ public interface VpnTunnelPhase2AlgorithmsOrBuilder
   java.util.List<java.lang.String> getEncryptionList();
 
   /**
+   *
+   *
+   * <pre>
+   * Encryption algorithms for IKE phase 2.
+   * </pre>
+   *
    * <code>repeated string encryption = 97980291;</code>
    *
    * @return The count of encryption.
@@ -41,6 +53,12 @@ public interface VpnTunnelPhase2AlgorithmsOrBuilder
   int getEncryptionCount();
 
   /**
+   *
+   *
+   * <pre>
+   * Encryption algorithms for IKE phase 2.
+   * </pre>
+   *
    * <code>repeated string encryption = 97980291;</code>
    *
    * @param index The index of the element to return.
@@ -49,6 +67,12 @@ public interface VpnTunnelPhase2AlgorithmsOrBuilder
   java.lang.String getEncryption(int index);
 
   /**
+   *
+   *
+   * <pre>
+   * Encryption algorithms for IKE phase 2.
+   * </pre>
+   *
    * <code>repeated string encryption = 97980291;</code>
    *
    * @param index The index of the value to return.
@@ -57,6 +81,12 @@ public interface VpnTunnelPhase2AlgorithmsOrBuilder
   com.google.protobuf.ByteString getEncryptionBytes(int index);
 
   /**
+   *
+   *
+   * <pre>
+   * Integrity algorithms for IKE phase 2.
+   * </pre>
+   *
    * <code>repeated string integrity = 492830541;</code>
    *
    * @return A list containing the integrity.
@@ -64,6 +94,12 @@ public interface VpnTunnelPhase2AlgorithmsOrBuilder
   java.util.List<java.lang.String> getIntegrityList();
 
   /**
+   *
+   *
+   * <pre>
+   * Integrity algorithms for IKE phase 2.
+   * </pre>
+   *
    * <code>repeated string integrity = 492830541;</code>
    *
    * @return The count of integrity.
@@ -71,6 +107,12 @@ public interface VpnTunnelPhase2AlgorithmsOrBuilder
   int getIntegrityCount();
 
   /**
+   *
+   *
+   * <pre>
+   * Integrity algorithms for IKE phase 2.
+   * </pre>
+   *
    * <code>repeated string integrity = 492830541;</code>
    *
    * @param index The index of the element to return.
@@ -79,6 +121,12 @@ public interface VpnTunnelPhase2AlgorithmsOrBuilder
   java.lang.String getIntegrity(int index);
 
   /**
+   *
+   *
+   * <pre>
+   * Integrity algorithms for IKE phase 2.
+   * </pre>
+   *
    * <code>repeated string integrity = 492830541;</code>
    *
    * @param index The index of the value to return.
@@ -87,6 +135,12 @@ public interface VpnTunnelPhase2AlgorithmsOrBuilder
   com.google.protobuf.ByteString getIntegrityBytes(int index);
 
   /**
+   *
+   *
+   * <pre>
+   * Perfect Forward Secrecy (PFS) groups for IKE phase 2.
+   * </pre>
+   *
    * <code>repeated string pfs = 110909;</code>
    *
    * @return A list containing the pfs.
@@ -94,6 +148,12 @@ public interface VpnTunnelPhase2AlgorithmsOrBuilder
   java.util.List<java.lang.String> getPfsList();
 
   /**
+   *
+   *
+   * <pre>
+   * Perfect Forward Secrecy (PFS) groups for IKE phase 2.
+   * </pre>
+   *
    * <code>repeated string pfs = 110909;</code>
    *
    * @return The count of pfs.
@@ -101,6 +161,12 @@ public interface VpnTunnelPhase2AlgorithmsOrBuilder
   int getPfsCount();
 
   /**
+   *
+   *
+   * <pre>
+   * Perfect Forward Secrecy (PFS) groups for IKE phase 2.
+   * </pre>
+   *
    * <code>repeated string pfs = 110909;</code>
    *
    * @param index The index of the element to return.
@@ -109,6 +175,12 @@ public interface VpnTunnelPhase2AlgorithmsOrBuilder
   java.lang.String getPfs(int index);
 
   /**
+   *
+   *
+   * <pre>
+   * Perfect Forward Secrecy (PFS) groups for IKE phase 2.
+   * </pre>
+   *
    * <code>repeated string pfs = 110909;</code>
    *
    * @param index The index of the value to return.

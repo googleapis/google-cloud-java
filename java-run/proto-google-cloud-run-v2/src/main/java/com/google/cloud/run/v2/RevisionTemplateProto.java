@@ -66,24 +66,26 @@ public final class RevisionTemplateProto extends com.google.protobuf.GeneratedFi
           + "proto\022\023google.cloud.run.v2\032\037google/api/f"
           + "ield_behavior.proto\032\031google/api/resource"
           + ".proto\032!google/cloud/run/v2/k8s.min.prot"
-          + "o\032)google/cloud/run/v2/vendor_settings.proto\032\036google/protobuf/duration.proto\"\377"
-          + "\t\n"
+          + "o\032!google/cloud/run/v2/sandbox.proto\032)go"
+          + "ogle/cloud/run/v2/vendor_settings.proto\032\036google/protobuf/duration.proto\"\226\014\n"
           + "\020RevisionTemplate\0226\n"
           + "\010revision\030\001 \001(\tB$\342A\001\001\372A\035\n"
           + "\033run.googleapis.com/Revision\022G\n"
           + "\006labels\030\002"
           + " \003(\01321.google.cloud.run.v2.RevisionTemplate.LabelsEntryB\004\342A\001\001\022Q\n"
-          + "\013annotations\030\003"
-          + " \003(\01326.google.cloud.run.v2.RevisionTemplate.AnnotationsEntryB\004\342A\001\001\022;\n"
-          + "\007scaling\030\004"
-          + " \001(\0132$.google.cloud.run.v2.RevisionScalingB\004\342A\001\001\0228\n\n"
+          + "\013annotations\030\003 \003"
+          + "(\01326.google.cloud.run.v2.RevisionTemplate.AnnotationsEntryB\004\342A\001\001\022;\n"
+          + "\007scaling\030\004 \001("
+          + "\0132$.google.cloud.run.v2.RevisionScalingB\004\342A\001\001\0228\n\n"
           + "vpc_access\030\006"
           + " \001(\0132\036.google.cloud.run.v2.VpcAccessB\004\342A\001\001\0220\n"
           + "\007timeout\030\010"
           + " \001(\0132\031.google.protobuf.DurationB\004\342A\001\001\022\035\n"
           + "\017service_account\030\t \001(\tB\004\342A\001\001\0222\n\n"
           + "containers\030\n"
-          + " \003(\0132\036.google.cloud.run.v2.Container\0222\n"
+          + " \003(\0132\036.google.cloud.run.v2.Container\022B\n"
+          + "\tsandboxes\030\037"
+          + " \001(\0132).google.cloud.run.v2.SandboxConfigurationB\004\342A\001\001\0222\n"
           + "\007volumes\030\013 \003(\0132\033.google.cloud.run.v2.VolumeB\004\342A\001\001\022N\n"
           + "\025execution_environment\030\r"
           + " \001(\0162).google.cloud.run.v2.ExecutionEnvironmentB\004\342A\001\001\022>\n"
@@ -92,16 +94,22 @@ public final class RevisionTemplateProto extends com.google.protobuf.GeneratedFi
           + " max_instance_request_concurrency\030\017 \001(\005B\004\342A\001\001\022<\n"
           + "\014service_mesh\030\020 \001(\0132"
           + " .google.cloud.run.v2.ServiceMeshB\004\342A\001\001\022b\n"
-          + " encryption_key_revocation_action\030\021 \001(\01622.google.c"
-          + "loud.run.v2.EncryptionKeyRevocationActionB\004\342A\001\001\022I\n"
+          + " encryption_key_revocation_action\030\021"
+          + " \001(\01622.google.cloud.run.v2.EncryptionKeyRevocationActionB\004\342A\001\001\022I\n"
           + " encryption_key_shutdown_duration\030\022"
           + " \001(\0132\031.google.protobuf.DurationB\004\342A\001\001\022\036\n"
           + "\020session_affinity\030\023 \001(\010B\004\342A\001\001\022#\n"
           + "\025health_check_disabled\030\024 \001(\010B\004\342A\001\001\022>\n\r"
-          + "node_selector\030\025"
-          + " \001(\0132!.google.cloud.run.v2.NodeSelectorB\004\342A\001\001\0220\n"
+          + "node_selector\030\025 \001(\0132!."
+          + "google.cloud.run.v2.NodeSelectorB\004\342A\001\001\022S\n"
+          + "\030workload_identity_config\030\033 \001(\0132+.googl"
+          + "e.cloud.run.v2.WorkloadIdentityConfigB\004\342A\001\001\0220\n"
           + "\035gpu_zonal_redundancy_disabled\030\030"
-          + " \001(\010B\004\342A\001\001H\000\210\001\001\032-\n"
+          + " \001(\010B\004\342A\001\001H\000\210\001\001\022\024\n"
+          + "\006client\030\034 \001(\tB\004\342A\001\001\022\034\n"
+          + "\016client_version\030\035 \001(\tB\004\342A\001\001\022H\n"
+          + "\022ambient_networking\030!"
+          + " \001(\0132&.google.cloud.run.v2.AmbientNetworkingB\004\342A\001\001\032-\n"
           + "\013LabelsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001\0322\n"
@@ -109,8 +117,8 @@ public final class RevisionTemplateProto extends com.google.protobuf.GeneratedFi
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001B \n"
           + "\036_gpu_zonal_redundancy_disabledB]\n"
-          + "\027com.google.cloud.run.v2B\025RevisionTempl"
-          + "ateProtoP\001Z)cloud.google.com/go/run/apiv2/runpb;runpbb\006proto3"
+          + "\027com.google.cloud.run.v2B\025RevisionTemplatePro"
+          + "toP\001Z)cloud.google.com/go/run/apiv2/runpb;runpbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -119,6 +127,7 @@ public final class RevisionTemplateProto extends com.google.protobuf.GeneratedFi
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.run.v2.K8sMinProto.getDescriptor(),
+              com.google.cloud.run.v2.SandboxProto.getDescriptor(),
               com.google.cloud.run.v2.VendorSettingsProto.getDescriptor(),
               com.google.protobuf.DurationProto.getDescriptor(),
             });
@@ -136,6 +145,7 @@ public final class RevisionTemplateProto extends com.google.protobuf.GeneratedFi
               "Timeout",
               "ServiceAccount",
               "Containers",
+              "Sandboxes",
               "Volumes",
               "ExecutionEnvironment",
               "EncryptionKey",
@@ -146,7 +156,11 @@ public final class RevisionTemplateProto extends com.google.protobuf.GeneratedFi
               "SessionAffinity",
               "HealthCheckDisabled",
               "NodeSelector",
+              "WorkloadIdentityConfig",
               "GpuZonalRedundancyDisabled",
+              "Client",
+              "ClientVersion",
+              "AmbientNetworking",
             });
     internal_static_google_cloud_run_v2_RevisionTemplate_LabelsEntry_descriptor =
         internal_static_google_cloud_run_v2_RevisionTemplate_descriptor.getNestedType(0);
@@ -168,6 +182,7 @@ public final class RevisionTemplateProto extends com.google.protobuf.GeneratedFi
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.run.v2.K8sMinProto.getDescriptor();
+    com.google.cloud.run.v2.SandboxProto.getDescriptor();
     com.google.cloud.run.v2.VendorSettingsProto.getDescriptor();
     com.google.protobuf.DurationProto.getDescriptor();
     com.google.protobuf.ExtensionRegistry registry =

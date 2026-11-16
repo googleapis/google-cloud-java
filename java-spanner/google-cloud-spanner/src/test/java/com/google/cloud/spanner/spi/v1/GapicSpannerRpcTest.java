@@ -119,7 +119,9 @@ import io.opentelemetry.sdk.OpenTelemetrySdk;
 import io.opentelemetry.sdk.metrics.SdkMeterProvider;
 import io.opentelemetry.sdk.metrics.data.MetricData;
 import io.opentelemetry.sdk.testing.exporter.InMemoryMetricReader;
+import io.opentelemetry.sdk.testing.exporter.InMemorySpanExporter;
 import io.opentelemetry.sdk.trace.SdkTracerProvider;
+import io.opentelemetry.sdk.trace.export.SimpleSpanProcessor;
 import io.opentelemetry.sdk.trace.samplers.Sampler;
 import java.io.IOException;
 import java.lang.reflect.Array;
@@ -322,6 +324,7 @@ public class GapicSpannerRpcTest {
 
   @After
   public void reset() throws InterruptedException {
+    SpannerOptionsHelper.resetActiveTracingFramework();
     if (mockSpanner != null) {
       mockSpanner.reset();
     }
@@ -1915,7 +1918,11 @@ public class GapicSpannerRpcTest {
     OpenTelemetry openTelemetry =
         OpenTelemetrySdk.builder()
             .setPropagators(ContextPropagators.create(W3CTraceContextPropagator.getInstance()))
-            .setTracerProvider(SdkTracerProvider.builder().setSampler(Sampler.alwaysOn()).build())
+            .setTracerProvider(
+                SdkTracerProvider.builder()
+                    .addSpanProcessor(SimpleSpanProcessor.create(InMemorySpanExporter.create()))
+                    .setSampler(Sampler.alwaysOn())
+                    .build())
             .build();
 
     final SpannerOptions options =
@@ -1940,7 +1947,11 @@ public class GapicSpannerRpcTest {
     OpenTelemetry openTelemetry =
         OpenTelemetrySdk.builder()
             .setPropagators(ContextPropagators.create(W3CTraceContextPropagator.getInstance()))
-            .setTracerProvider(SdkTracerProvider.builder().setSampler(Sampler.alwaysOn()).build())
+            .setTracerProvider(
+                SdkTracerProvider.builder()
+                    .addSpanProcessor(SimpleSpanProcessor.create(InMemorySpanExporter.create()))
+                    .setSampler(Sampler.alwaysOn())
+                    .build())
             .build();
 
     final SpannerOptions options =

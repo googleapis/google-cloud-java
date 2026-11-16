@@ -534,10 +534,12 @@ public final class OdbSubnet extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. The CIDR range of the subnet.
+   * Required. Immutable. The CIDR range of the subnet.
    * </pre>
    *
-   * <code>string cidr_range = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string cidr_range = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The cidrRange.
    */
@@ -558,10 +560,12 @@ public final class OdbSubnet extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. The CIDR range of the subnet.
+   * Required. Immutable. The CIDR range of the subnet.
    * </pre>
    *
-   * <code>string cidr_range = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string cidr_range = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The bytes for cidrRange.
    */
@@ -585,11 +589,11 @@ public final class OdbSubnet extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. Purpose of the subnet.
+   * Required. Immutable. Purpose of the subnet.
    * </pre>
    *
    * <code>
-   * .google.cloud.oracledatabase.v1.OdbSubnet.Purpose purpose = 3 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.oracledatabase.v1.OdbSubnet.Purpose purpose = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
    * @return The enum numeric value on the wire for purpose.
@@ -603,11 +607,11 @@ public final class OdbSubnet extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. Purpose of the subnet.
+   * Required. Immutable. Purpose of the subnet.
    * </pre>
    *
    * <code>
-   * .google.cloud.oracledatabase.v1.OdbSubnet.Purpose purpose = 3 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.oracledatabase.v1.OdbSubnet.Purpose purpose = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
    * @return The purpose.
@@ -1428,10 +1432,12 @@ public final class OdbSubnet extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The CIDR range of the subnet.
+     * Required. Immutable. The CIDR range of the subnet.
      * </pre>
      *
-     * <code>string cidr_range = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string cidr_range = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return The cidrRange.
      */
@@ -1451,10 +1457,12 @@ public final class OdbSubnet extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The CIDR range of the subnet.
+     * Required. Immutable. The CIDR range of the subnet.
      * </pre>
      *
-     * <code>string cidr_range = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string cidr_range = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return The bytes for cidrRange.
      */
@@ -1474,10 +1482,12 @@ public final class OdbSubnet extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The CIDR range of the subnet.
+     * Required. Immutable. The CIDR range of the subnet.
      * </pre>
      *
-     * <code>string cidr_range = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string cidr_range = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @param value The cidrRange to set.
      * @return This builder for chaining.
@@ -1496,10 +1506,12 @@ public final class OdbSubnet extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The CIDR range of the subnet.
+     * Required. Immutable. The CIDR range of the subnet.
      * </pre>
      *
-     * <code>string cidr_range = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string cidr_range = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -1514,10 +1526,12 @@ public final class OdbSubnet extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The CIDR range of the subnet.
+     * Required. Immutable. The CIDR range of the subnet.
      * </pre>
      *
-     * <code>string cidr_range = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string cidr_range = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @param value The bytes for cidrRange to set.
      * @return This builder for chaining.
@@ -1539,11 +1553,11 @@ public final class OdbSubnet extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Purpose of the subnet.
+     * Required. Immutable. Purpose of the subnet.
      * </pre>
      *
      * <code>
-     * .google.cloud.oracledatabase.v1.OdbSubnet.Purpose purpose = 3 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.oracledatabase.v1.OdbSubnet.Purpose purpose = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @return The enum numeric value on the wire for purpose.
@@ -1557,11 +1571,11 @@ public final class OdbSubnet extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Purpose of the subnet.
+     * Required. Immutable. Purpose of the subnet.
      * </pre>
      *
      * <code>
-     * .google.cloud.oracledatabase.v1.OdbSubnet.Purpose purpose = 3 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.oracledatabase.v1.OdbSubnet.Purpose purpose = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @param value The enum numeric value on the wire for purpose to set.
@@ -1578,11 +1592,11 @@ public final class OdbSubnet extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Purpose of the subnet.
+     * Required. Immutable. Purpose of the subnet.
      * </pre>
      *
      * <code>
-     * .google.cloud.oracledatabase.v1.OdbSubnet.Purpose purpose = 3 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.oracledatabase.v1.OdbSubnet.Purpose purpose = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @return The purpose.
@@ -1600,11 +1614,11 @@ public final class OdbSubnet extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Purpose of the subnet.
+     * Required. Immutable. Purpose of the subnet.
      * </pre>
      *
      * <code>
-     * .google.cloud.oracledatabase.v1.OdbSubnet.Purpose purpose = 3 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.oracledatabase.v1.OdbSubnet.Purpose purpose = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @param value The purpose to set.
@@ -1624,11 +1638,11 @@ public final class OdbSubnet extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Purpose of the subnet.
+     * Required. Immutable. Purpose of the subnet.
      * </pre>
      *
      * <code>
-     * .google.cloud.oracledatabase.v1.OdbSubnet.Purpose purpose = 3 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.oracledatabase.v1.OdbSubnet.Purpose purpose = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @return This builder for chaining.

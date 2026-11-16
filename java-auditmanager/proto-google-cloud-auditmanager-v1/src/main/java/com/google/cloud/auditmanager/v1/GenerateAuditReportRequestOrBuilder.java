@@ -121,7 +121,7 @@ public interface GenerateAuditReportRequestOrBuilder
    * </code>
    *
    * @deprecated google.cloud.auditmanager.v1.GenerateAuditReportRequest.compliance_standard is
-   *     deprecated. See google/cloud/auditmanager/v1/auditmanager.proto;l=478
+   *     deprecated. See google/cloud/auditmanager/v1/auditmanager.proto;l=486
    * @return The complianceStandard.
    */
   @java.lang.Deprecated
@@ -141,7 +141,7 @@ public interface GenerateAuditReportRequestOrBuilder
    * </code>
    *
    * @deprecated google.cloud.auditmanager.v1.GenerateAuditReportRequest.compliance_standard is
-   *     deprecated. See google/cloud/auditmanager/v1/auditmanager.proto;l=478
+   *     deprecated. See google/cloud/auditmanager/v1/auditmanager.proto;l=486
    * @return The bytes for complianceStandard.
    */
   @java.lang.Deprecated
@@ -204,6 +204,97 @@ public interface GenerateAuditReportRequestOrBuilder
    * @return The bytes for complianceFramework.
    */
   com.google.protobuf.ByteString getComplianceFrameworkBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Maps dynamic parameter overrides by Cloud Control resource name
+   * at execution time. For example,
+   * `{"organizations/123/locations/global/cloudControls/control-1":
+   * {parameters: [...]}}`
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.auditmanager.v1.ParameterOverrides&gt; parameter_overrides = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getParameterOverridesCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Maps dynamic parameter overrides by Cloud Control resource name
+   * at execution time. For example,
+   * `{"organizations/123/locations/global/cloudControls/control-1":
+   * {parameters: [...]}}`
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.auditmanager.v1.ParameterOverrides&gt; parameter_overrides = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  boolean containsParameterOverrides(java.lang.String key);
+
+  /** Use {@link #getParameterOverridesMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, com.google.cloud.auditmanager.v1.ParameterOverrides>
+      getParameterOverrides();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Maps dynamic parameter overrides by Cloud Control resource name
+   * at execution time. For example,
+   * `{"organizations/123/locations/global/cloudControls/control-1":
+   * {parameters: [...]}}`
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.auditmanager.v1.ParameterOverrides&gt; parameter_overrides = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.Map<java.lang.String, com.google.cloud.auditmanager.v1.ParameterOverrides>
+      getParameterOverridesMap();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Maps dynamic parameter overrides by Cloud Control resource name
+   * at execution time. For example,
+   * `{"organizations/123/locations/global/cloudControls/control-1":
+   * {parameters: [...]}}`
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.auditmanager.v1.ParameterOverrides&gt; parameter_overrides = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  /* nullable */
+  com.google.cloud.auditmanager.v1.ParameterOverrides getParameterOverridesOrDefault(
+      java.lang.String key,
+      /* nullable */
+      com.google.cloud.auditmanager.v1.ParameterOverrides defaultValue);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Maps dynamic parameter overrides by Cloud Control resource name
+   * at execution time. For example,
+   * `{"organizations/123/locations/global/cloudControls/control-1":
+   * {parameters: [...]}}`
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.auditmanager.v1.ParameterOverrides&gt; parameter_overrides = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.auditmanager.v1.ParameterOverrides getParameterOverridesOrThrow(
+      java.lang.String key);
 
   /**
    *

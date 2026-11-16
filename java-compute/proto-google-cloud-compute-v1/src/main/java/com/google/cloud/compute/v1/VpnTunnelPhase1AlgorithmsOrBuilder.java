@@ -27,6 +27,12 @@ public interface VpnTunnelPhase1AlgorithmsOrBuilder
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
+   * <pre>
+   * Diffie-Hellman groups for IKE phase 1.
+   * </pre>
+   *
    * <code>repeated string dh = 3204;</code>
    *
    * @return A list containing the dh.
@@ -34,6 +40,12 @@ public interface VpnTunnelPhase1AlgorithmsOrBuilder
   java.util.List<java.lang.String> getDhList();
 
   /**
+   *
+   *
+   * <pre>
+   * Diffie-Hellman groups for IKE phase 1.
+   * </pre>
+   *
    * <code>repeated string dh = 3204;</code>
    *
    * @return The count of dh.
@@ -41,6 +53,12 @@ public interface VpnTunnelPhase1AlgorithmsOrBuilder
   int getDhCount();
 
   /**
+   *
+   *
+   * <pre>
+   * Diffie-Hellman groups for IKE phase 1.
+   * </pre>
+   *
    * <code>repeated string dh = 3204;</code>
    *
    * @param index The index of the element to return.
@@ -49,6 +67,12 @@ public interface VpnTunnelPhase1AlgorithmsOrBuilder
   java.lang.String getDh(int index);
 
   /**
+   *
+   *
+   * <pre>
+   * Diffie-Hellman groups for IKE phase 1.
+   * </pre>
+   *
    * <code>repeated string dh = 3204;</code>
    *
    * @param index The index of the value to return.
@@ -57,6 +81,12 @@ public interface VpnTunnelPhase1AlgorithmsOrBuilder
   com.google.protobuf.ByteString getDhBytes(int index);
 
   /**
+   *
+   *
+   * <pre>
+   * Encryption algorithms for IKE phase 1.
+   * </pre>
+   *
    * <code>repeated string encryption = 97980291;</code>
    *
    * @return A list containing the encryption.
@@ -64,6 +94,12 @@ public interface VpnTunnelPhase1AlgorithmsOrBuilder
   java.util.List<java.lang.String> getEncryptionList();
 
   /**
+   *
+   *
+   * <pre>
+   * Encryption algorithms for IKE phase 1.
+   * </pre>
+   *
    * <code>repeated string encryption = 97980291;</code>
    *
    * @return The count of encryption.
@@ -71,6 +107,12 @@ public interface VpnTunnelPhase1AlgorithmsOrBuilder
   int getEncryptionCount();
 
   /**
+   *
+   *
+   * <pre>
+   * Encryption algorithms for IKE phase 1.
+   * </pre>
+   *
    * <code>repeated string encryption = 97980291;</code>
    *
    * @param index The index of the element to return.
@@ -79,6 +121,12 @@ public interface VpnTunnelPhase1AlgorithmsOrBuilder
   java.lang.String getEncryption(int index);
 
   /**
+   *
+   *
+   * <pre>
+   * Encryption algorithms for IKE phase 1.
+   * </pre>
+   *
    * <code>repeated string encryption = 97980291;</code>
    *
    * @param index The index of the value to return.
@@ -87,6 +135,12 @@ public interface VpnTunnelPhase1AlgorithmsOrBuilder
   com.google.protobuf.ByteString getEncryptionBytes(int index);
 
   /**
+   *
+   *
+   * <pre>
+   * Integrity algorithms for IKE phase 1.
+   * </pre>
+   *
    * <code>repeated string integrity = 492830541;</code>
    *
    * @return A list containing the integrity.
@@ -94,6 +148,12 @@ public interface VpnTunnelPhase1AlgorithmsOrBuilder
   java.util.List<java.lang.String> getIntegrityList();
 
   /**
+   *
+   *
+   * <pre>
+   * Integrity algorithms for IKE phase 1.
+   * </pre>
+   *
    * <code>repeated string integrity = 492830541;</code>
    *
    * @return The count of integrity.
@@ -101,6 +161,12 @@ public interface VpnTunnelPhase1AlgorithmsOrBuilder
   int getIntegrityCount();
 
   /**
+   *
+   *
+   * <pre>
+   * Integrity algorithms for IKE phase 1.
+   * </pre>
+   *
    * <code>repeated string integrity = 492830541;</code>
    *
    * @param index The index of the element to return.
@@ -109,6 +175,12 @@ public interface VpnTunnelPhase1AlgorithmsOrBuilder
   java.lang.String getIntegrity(int index);
 
   /**
+   *
+   *
+   * <pre>
+   * Integrity algorithms for IKE phase 1.
+   * </pre>
+   *
    * <code>repeated string integrity = 492830541;</code>
    *
    * @param index The index of the value to return.
@@ -117,6 +189,12 @@ public interface VpnTunnelPhase1AlgorithmsOrBuilder
   com.google.protobuf.ByteString getIntegrityBytes(int index);
 
   /**
+   *
+   *
+   * <pre>
+   * Pseudo-random functions (PRF) for IKE phase 1.
+   * </pre>
+   *
    * <code>repeated string prf = 111268;</code>
    *
    * @return A list containing the prf.
@@ -124,6 +202,12 @@ public interface VpnTunnelPhase1AlgorithmsOrBuilder
   java.util.List<java.lang.String> getPrfList();
 
   /**
+   *
+   *
+   * <pre>
+   * Pseudo-random functions (PRF) for IKE phase 1.
+   * </pre>
+   *
    * <code>repeated string prf = 111268;</code>
    *
    * @return The count of prf.
@@ -131,6 +215,12 @@ public interface VpnTunnelPhase1AlgorithmsOrBuilder
   int getPrfCount();
 
   /**
+   *
+   *
+   * <pre>
+   * Pseudo-random functions (PRF) for IKE phase 1.
+   * </pre>
+   *
    * <code>repeated string prf = 111268;</code>
    *
    * @param index The index of the element to return.
@@ -139,6 +229,12 @@ public interface VpnTunnelPhase1AlgorithmsOrBuilder
   java.lang.String getPrf(int index);
 
   /**
+   *
+   *
+   * <pre>
+   * Pseudo-random functions (PRF) for IKE phase 1.
+   * </pre>
+   *
    * <code>repeated string prf = 111268;</code>
    *
    * @param index The index of the value to return.

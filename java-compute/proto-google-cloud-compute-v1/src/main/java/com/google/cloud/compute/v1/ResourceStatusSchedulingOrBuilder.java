@@ -102,6 +102,54 @@ public interface ResourceStatusSchedulingOrBuilder
    *
    *
    * <pre>
+   * Output only. Protection tier for the workload which specifies the workload
+   * expectations in the event of infrastructure failures at data center
+   * (e.g. power and/or cooling failures).
+   * Check the ProtectionTier enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string protection_tier = 503959432;</code>
+   *
+   * @return Whether the protectionTier field is set.
+   */
+  boolean hasProtectionTier();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Protection tier for the workload which specifies the workload
+   * expectations in the event of infrastructure failures at data center
+   * (e.g. power and/or cooling failures).
+   * Check the ProtectionTier enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string protection_tier = 503959432;</code>
+   *
+   * @return The protectionTier.
+   */
+  java.lang.String getProtectionTier();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Protection tier for the workload which specifies the workload
+   * expectations in the event of infrastructure failures at data center
+   * (e.g. power and/or cooling failures).
+   * Check the ProtectionTier enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string protection_tier = 503959432;</code>
+   *
+   * @return The bytes for protectionTier.
+   */
+  com.google.protobuf.ByteString getProtectionTierBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Time in future when the instance will be terminated inRFC3339 text format.
    * </pre>
    *

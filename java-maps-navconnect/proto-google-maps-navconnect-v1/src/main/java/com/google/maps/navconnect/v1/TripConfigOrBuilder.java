@@ -30,7 +30,7 @@ public interface TripConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. Whether to enable high frequency trip updates.
+   * Optional. Whether to enable high-frequency trip updates.
    *
    * NOTE: Enabling this feature logs the trip under Enterprise Tier usage, and
    * is subject to Enterprise Tier rates.
@@ -136,4 +136,38 @@ public interface TripConfigOrBuilder
    * </code>
    */
   com.google.protobuf.FieldMaskOrBuilder getPubsubFieldMaskOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Whether to enable remaining route reporting for the trip.
+   *
+   * NOTE: Enabling this feature logs the trip under Enterprise Tier usage, and
+   * is subject to Enterprise Tier rates.
+   * </pre>
+   *
+   * <code>bool enable_remaining_route_reporting = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enableRemainingRouteReporting.
+   */
+  boolean getEnableRemainingRouteReporting();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Whether to enable route deviation reporting for the trip.
+   *
+   * NOTE: Enabling this feature logs the trip under Enterprise Tier usage, and
+   * is subject to Enterprise Tier rates.
+   * </pre>
+   *
+   * <code>bool enable_route_deviation_reporting = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enableRouteDeviationReporting.
+   */
+  boolean getEnableRouteDeviationReporting();
 }

@@ -572,7 +572,7 @@ public final class LoadBalancerInfo extends com.google.protobuf.GeneratedMessage
    * <code>string health_check_uri = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.networkmanagement.v1.LoadBalancerInfo.health_check_uri is deprecated.
-   *     See google/cloud/networkmanagement/v1/trace.proto;l=901
+   *     See google/cloud/networkmanagement/v1/trace.proto;l=937
    * @return The healthCheckUri.
    */
   @java.lang.Override
@@ -601,7 +601,7 @@ public final class LoadBalancerInfo extends com.google.protobuf.GeneratedMessage
    * <code>string health_check_uri = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.networkmanagement.v1.LoadBalancerInfo.health_check_uri is deprecated.
-   *     See google/cloud/networkmanagement/v1/trace.proto;l=901
+   *     See google/cloud/networkmanagement/v1/trace.proto;l=937
    * @return The bytes for healthCheckUri.
    */
   @java.lang.Override
@@ -745,7 +745,12 @@ public final class LoadBalancerInfo extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Backend configuration URI.
+   * URI of the backend associated with the load balancer.
+   * Format:
+   * * `projects/{project_id}/regions/{region}/backendServices/{backend_service_id}`
+   * * `projects/{project_id}/global/backendServices/{backend_service_id}`
+   * * `projects/{project_id}/regions/{region}/targetPools/{target_pool_id}`
+   * * `projects/{project_id}/zones/{zone}/targetInstances/{target_instance_id}`
    * </pre>
    *
    * <code>string backend_uri = 5;</code>
@@ -769,7 +774,12 @@ public final class LoadBalancerInfo extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Backend configuration URI.
+   * URI of the backend associated with the load balancer.
+   * Format:
+   * * `projects/{project_id}/regions/{region}/backendServices/{backend_service_id}`
+   * * `projects/{project_id}/global/backendServices/{backend_service_id}`
+   * * `projects/{project_id}/regions/{region}/targetPools/{target_pool_id}`
+   * * `projects/{project_id}/zones/{zone}/targetInstances/{target_instance_id}`
    * </pre>
    *
    * <code>string backend_uri = 5;</code>
@@ -1377,7 +1387,7 @@ public final class LoadBalancerInfo extends com.google.protobuf.GeneratedMessage
      * <code>string health_check_uri = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.networkmanagement.v1.LoadBalancerInfo.health_check_uri is
-     *     deprecated. See google/cloud/networkmanagement/v1/trace.proto;l=901
+     *     deprecated. See google/cloud/networkmanagement/v1/trace.proto;l=937
      * @return The healthCheckUri.
      */
     @java.lang.Deprecated
@@ -1405,7 +1415,7 @@ public final class LoadBalancerInfo extends com.google.protobuf.GeneratedMessage
      * <code>string health_check_uri = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.networkmanagement.v1.LoadBalancerInfo.health_check_uri is
-     *     deprecated. See google/cloud/networkmanagement/v1/trace.proto;l=901
+     *     deprecated. See google/cloud/networkmanagement/v1/trace.proto;l=937
      * @return The bytes for healthCheckUri.
      */
     @java.lang.Deprecated
@@ -1433,7 +1443,7 @@ public final class LoadBalancerInfo extends com.google.protobuf.GeneratedMessage
      * <code>string health_check_uri = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.networkmanagement.v1.LoadBalancerInfo.health_check_uri is
-     *     deprecated. See google/cloud/networkmanagement/v1/trace.proto;l=901
+     *     deprecated. See google/cloud/networkmanagement/v1/trace.proto;l=937
      * @param value The healthCheckUri to set.
      * @return This builder for chaining.
      */
@@ -1460,7 +1470,7 @@ public final class LoadBalancerInfo extends com.google.protobuf.GeneratedMessage
      * <code>string health_check_uri = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.networkmanagement.v1.LoadBalancerInfo.health_check_uri is
-     *     deprecated. See google/cloud/networkmanagement/v1/trace.proto;l=901
+     *     deprecated. See google/cloud/networkmanagement/v1/trace.proto;l=937
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -1483,7 +1493,7 @@ public final class LoadBalancerInfo extends com.google.protobuf.GeneratedMessage
      * <code>string health_check_uri = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.networkmanagement.v1.LoadBalancerInfo.health_check_uri is
-     *     deprecated. See google/cloud/networkmanagement/v1/trace.proto;l=901
+     *     deprecated. See google/cloud/networkmanagement/v1/trace.proto;l=937
      * @param value The bytes for healthCheckUri to set.
      * @return This builder for chaining.
      */
@@ -1991,7 +2001,12 @@ public final class LoadBalancerInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Backend configuration URI.
+     * URI of the backend associated with the load balancer.
+     * Format:
+     * * `projects/{project_id}/regions/{region}/backendServices/{backend_service_id}`
+     * * `projects/{project_id}/global/backendServices/{backend_service_id}`
+     * * `projects/{project_id}/regions/{region}/targetPools/{target_pool_id}`
+     * * `projects/{project_id}/zones/{zone}/targetInstances/{target_instance_id}`
      * </pre>
      *
      * <code>string backend_uri = 5;</code>
@@ -2014,7 +2029,12 @@ public final class LoadBalancerInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Backend configuration URI.
+     * URI of the backend associated with the load balancer.
+     * Format:
+     * * `projects/{project_id}/regions/{region}/backendServices/{backend_service_id}`
+     * * `projects/{project_id}/global/backendServices/{backend_service_id}`
+     * * `projects/{project_id}/regions/{region}/targetPools/{target_pool_id}`
+     * * `projects/{project_id}/zones/{zone}/targetInstances/{target_instance_id}`
      * </pre>
      *
      * <code>string backend_uri = 5;</code>
@@ -2037,7 +2057,12 @@ public final class LoadBalancerInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Backend configuration URI.
+     * URI of the backend associated with the load balancer.
+     * Format:
+     * * `projects/{project_id}/regions/{region}/backendServices/{backend_service_id}`
+     * * `projects/{project_id}/global/backendServices/{backend_service_id}`
+     * * `projects/{project_id}/regions/{region}/targetPools/{target_pool_id}`
+     * * `projects/{project_id}/zones/{zone}/targetInstances/{target_instance_id}`
      * </pre>
      *
      * <code>string backend_uri = 5;</code>
@@ -2059,7 +2084,12 @@ public final class LoadBalancerInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Backend configuration URI.
+     * URI of the backend associated with the load balancer.
+     * Format:
+     * * `projects/{project_id}/regions/{region}/backendServices/{backend_service_id}`
+     * * `projects/{project_id}/global/backendServices/{backend_service_id}`
+     * * `projects/{project_id}/regions/{region}/targetPools/{target_pool_id}`
+     * * `projects/{project_id}/zones/{zone}/targetInstances/{target_instance_id}`
      * </pre>
      *
      * <code>string backend_uri = 5;</code>
@@ -2077,7 +2107,12 @@ public final class LoadBalancerInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Backend configuration URI.
+     * URI of the backend associated with the load balancer.
+     * Format:
+     * * `projects/{project_id}/regions/{region}/backendServices/{backend_service_id}`
+     * * `projects/{project_id}/global/backendServices/{backend_service_id}`
+     * * `projects/{project_id}/regions/{region}/targetPools/{target_pool_id}`
+     * * `projects/{project_id}/zones/{zone}/targetInstances/{target_instance_id}`
      * </pre>
      *
      * <code>string backend_uri = 5;</code>

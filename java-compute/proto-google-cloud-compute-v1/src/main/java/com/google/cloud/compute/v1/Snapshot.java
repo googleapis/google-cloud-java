@@ -308,7 +308,8 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Indicates the type of the snapshot.
+   * Indicates the type of the snapshot. Valid values are ARCHIVE
+   * or STANDARD. The default is STANDARD.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.Snapshot.SnapshotType}
@@ -324,9 +325,27 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessage
      * <code>UNDEFINED_SNAPSHOT_TYPE = 0;</code>
      */
     UNDEFINED_SNAPSHOT_TYPE(0),
-    /** <code>ARCHIVE = 506752162;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Indicates an archive snapshot, which is recommended for long-term
+     * retention and compliance.
+     * </pre>
+     *
+     * <code>ARCHIVE = 506752162;</code>
+     */
     ARCHIVE(506752162),
-    /** <code>STANDARD = 484642493;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Indicates a standard snapshot, which is recommended for frequent
+     * restores.
+     * </pre>
+     *
+     * <code>STANDARD = 484642493;</code>
+     */
     STANDARD(484642493),
     UNRECOGNIZED(-1),
     ;
@@ -352,10 +371,28 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessage
      */
     public static final int UNDEFINED_SNAPSHOT_TYPE_VALUE = 0;
 
-    /** <code>ARCHIVE = 506752162;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Indicates an archive snapshot, which is recommended for long-term
+     * retention and compliance.
+     * </pre>
+     *
+     * <code>ARCHIVE = 506752162;</code>
+     */
     public static final int ARCHIVE_VALUE = 506752162;
 
-    /** <code>STANDARD = 484642493;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Indicates a standard snapshot, which is recommended for frequent
+     * restores.
+     * </pre>
+     *
+     * <code>STANDARD = 484642493;</code>
+     */
     public static final int STANDARD_VALUE = 484642493;
 
     public final int getNumber() {
@@ -2569,7 +2606,8 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Indicates the type of the snapshot.
+   * Indicates the type of the snapshot. Valid values are ARCHIVE
+   * or STANDARD. The default is STANDARD.
    * Check the SnapshotType enum for the list of possible values.
    * </pre>
    *
@@ -2586,7 +2624,8 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Indicates the type of the snapshot.
+   * Indicates the type of the snapshot. Valid values are ARCHIVE
+   * or STANDARD. The default is STANDARD.
    * Check the SnapshotType enum for the list of possible values.
    * </pre>
    *
@@ -2611,7 +2650,8 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Indicates the type of the snapshot.
+   * Indicates the type of the snapshot. Valid values are ARCHIVE
+   * or STANDARD. The default is STANDARD.
    * Check the SnapshotType enum for the list of possible values.
    * </pre>
    *
@@ -9111,7 +9151,8 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Indicates the type of the snapshot.
+     * Indicates the type of the snapshot. Valid values are ARCHIVE
+     * or STANDARD. The default is STANDARD.
      * Check the SnapshotType enum for the list of possible values.
      * </pre>
      *
@@ -9127,7 +9168,8 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Indicates the type of the snapshot.
+     * Indicates the type of the snapshot. Valid values are ARCHIVE
+     * or STANDARD. The default is STANDARD.
      * Check the SnapshotType enum for the list of possible values.
      * </pre>
      *
@@ -9151,7 +9193,8 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Indicates the type of the snapshot.
+     * Indicates the type of the snapshot. Valid values are ARCHIVE
+     * or STANDARD. The default is STANDARD.
      * Check the SnapshotType enum for the list of possible values.
      * </pre>
      *
@@ -9175,7 +9218,8 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Indicates the type of the snapshot.
+     * Indicates the type of the snapshot. Valid values are ARCHIVE
+     * or STANDARD. The default is STANDARD.
      * Check the SnapshotType enum for the list of possible values.
      * </pre>
      *
@@ -9198,7 +9242,8 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Indicates the type of the snapshot.
+     * Indicates the type of the snapshot. Valid values are ARCHIVE
+     * or STANDARD. The default is STANDARD.
      * Check the SnapshotType enum for the list of possible values.
      * </pre>
      *
@@ -9217,7 +9262,8 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Indicates the type of the snapshot.
+     * Indicates the type of the snapshot. Valid values are ARCHIVE
+     * or STANDARD. The default is STANDARD.
      * Check the SnapshotType enum for the list of possible values.
      * </pre>
      *

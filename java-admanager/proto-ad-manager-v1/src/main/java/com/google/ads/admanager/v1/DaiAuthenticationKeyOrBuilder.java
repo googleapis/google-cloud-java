@@ -60,6 +60,85 @@ public interface DaiAuthenticationKeyOrBuilder
    *
    *
    * <pre>
+   * Output only. The value of the secure key.
+   * </pre>
+   *
+   * <code>optional string key = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the key field is set.
+   */
+  boolean hasKey();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The value of the secure key.
+   * </pre>
+   *
+   * <code>optional string key = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The key.
+   */
+  java.lang.String getKey();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The value of the secure key.
+   * </pre>
+   *
+   * <code>optional string key = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for key.
+   */
+  com.google.protobuf.ByteString getKeyBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The date and time this DaiAuthenticationKey was created.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the createTime field is set.
+   */
+  boolean hasCreateTime();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The date and time this DaiAuthenticationKey was created.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The createTime.
+   */
+  com.google.protobuf.Timestamp getCreateTime();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The date and time this DaiAuthenticationKey was created.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. The status of this DaiAuthenticationKey.
    *
    * DAI authentication keys are created in the

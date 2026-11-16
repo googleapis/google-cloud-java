@@ -68,6 +68,12 @@ public final class GetInstanceRequest extends com.google.protobuf.GeneratedMessa
   private volatile java.lang.Object name_ = "";
 
   /**
+   *
+   *
+   * <pre>
+   * Required. The name of the Instance to retrieve.
+   * </pre>
+   *
    * <code>
    * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
@@ -88,6 +94,12 @@ public final class GetInstanceRequest extends com.google.protobuf.GeneratedMessa
   }
 
   /**
+   *
+   *
+   * <pre>
+   * Required. The name of the Instance to retrieve.
+   * </pre>
+   *
    * <code>
    * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
@@ -411,6 +423,12 @@ public final class GetInstanceRequest extends com.google.protobuf.GeneratedMessa
     private java.lang.Object name_ = "";
 
     /**
+     *
+     *
+     * <pre>
+     * Required. The name of the Instance to retrieve.
+     * </pre>
+     *
      * <code>
      * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
@@ -430,6 +448,12 @@ public final class GetInstanceRequest extends com.google.protobuf.GeneratedMessa
     }
 
     /**
+     *
+     *
+     * <pre>
+     * Required. The name of the Instance to retrieve.
+     * </pre>
+     *
      * <code>
      * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
@@ -449,6 +473,12 @@ public final class GetInstanceRequest extends com.google.protobuf.GeneratedMessa
     }
 
     /**
+     *
+     *
+     * <pre>
+     * Required. The name of the Instance to retrieve.
+     * </pre>
+     *
      * <code>
      * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
@@ -467,6 +497,12 @@ public final class GetInstanceRequest extends com.google.protobuf.GeneratedMessa
     }
 
     /**
+     *
+     *
+     * <pre>
+     * Required. The name of the Instance to retrieve.
+     * </pre>
+     *
      * <code>
      * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
@@ -481,6 +517,12 @@ public final class GetInstanceRequest extends com.google.protobuf.GeneratedMessa
     }
 
     /**
+     *
+     *
+     * <pre>
+     * Required. The name of the Instance to retrieve.
+     * </pre>
+     *
      * <code>
      * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>

@@ -52,7 +52,9 @@ public final class UpdateAutoProtectionPolicyRequest extends com.google.protobuf
     super(builder);
   }
 
-  private UpdateAutoProtectionPolicyRequest() {}
+  private UpdateAutoProtectionPolicyRequest() {
+    requestId_ = "";
+  }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.backupdr.v1beta.AutoProtectionPolicyProto
@@ -137,14 +139,14 @@ public final class UpdateAutoProtectionPolicyRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * Required. Field mask is used to specify the fields to be overwritten in the
+   * Optional. Field mask is used to specify the fields to be overwritten in the
    * AutoProtectionPolicy resource by the update.
    * The fields specified in the update_mask are relative to the resource, not
    * the full request. A field will be overwritten if it is in the mask. If the
    * user does not provide a mask then all fields will be overwritten.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return Whether the updateMask field is set.
@@ -158,14 +160,14 @@ public final class UpdateAutoProtectionPolicyRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * Required. Field mask is used to specify the fields to be overwritten in the
+   * Optional. Field mask is used to specify the fields to be overwritten in the
    * AutoProtectionPolicy resource by the update.
    * The fields specified in the update_mask are relative to the resource, not
    * the full request. A field will be overwritten if it is in the mask. If the
    * user does not provide a mask then all fields will be overwritten.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The updateMask.
@@ -179,19 +181,88 @@ public final class UpdateAutoProtectionPolicyRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * Required. Field mask is used to specify the fields to be overwritten in the
+   * Optional. Field mask is used to specify the fields to be overwritten in the
    * AutoProtectionPolicy resource by the update.
    * The fields specified in the update_mask are relative to the resource, not
    * the full request. A field will be overwritten if it is in the mask. If the
    * user does not provide a mask then all fields will be overwritten.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
+  }
+
+  public static final int REQUEST_ID_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. An optional request ID to identify requests. Specify a unique
+   * request ID so that if you must retry your request, the server will know to
+   * ignore the request if it has already been completed. The server will
+   * guarantee that for at least 60 minutes since the first request.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is
+   * not supported (00000000-0000-0000-0000-000000000000).
+   * </pre>
+   *
+   * <code>
+   * string request_id = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+   * </code>
+   *
+   * @return The requestId.
+   */
+  @java.lang.Override
+  public java.lang.String getRequestId() {
+    java.lang.Object ref = requestId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      requestId_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. An optional request ID to identify requests. Specify a unique
+   * request ID so that if you must retry your request, the server will know to
+   * ignore the request if it has already been completed. The server will
+   * guarantee that for at least 60 minutes since the first request.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is
+   * not supported (00000000-0000-0000-0000-000000000000).
+   * </pre>
+   *
+   * <code>
+   * string request_id = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+   * </code>
+   *
+   * @return The bytes for requestId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getRequestIdBytes() {
+    java.lang.Object ref = requestId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      requestId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -214,6 +285,9 @@ public final class UpdateAutoProtectionPolicyRequest extends com.google.protobuf
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(2, getUpdateMask());
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(requestId_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 3, requestId_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -229,6 +303,9 @@ public final class UpdateAutoProtectionPolicyRequest extends com.google.protobuf
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getUpdateMask());
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(requestId_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(3, requestId_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -254,6 +331,7 @@ public final class UpdateAutoProtectionPolicyRequest extends com.google.protobuf
     if (hasUpdateMask()) {
       if (!getUpdateMask().equals(other.getUpdateMask())) return false;
     }
+    if (!getRequestId().equals(other.getRequestId())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -273,6 +351,8 @@ public final class UpdateAutoProtectionPolicyRequest extends com.google.protobuf
       hash = (37 * hash) + UPDATE_MASK_FIELD_NUMBER;
       hash = (53 * hash) + getUpdateMask().hashCode();
     }
+    hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getRequestId().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -436,6 +516,7 @@ public final class UpdateAutoProtectionPolicyRequest extends com.google.protobuf
         updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
+      requestId_ = "";
       return this;
     }
 
@@ -487,6 +568,9 @@ public final class UpdateAutoProtectionPolicyRequest extends com.google.protobuf
         result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.requestId_ = requestId_;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -511,6 +595,11 @@ public final class UpdateAutoProtectionPolicyRequest extends com.google.protobuf
       }
       if (other.hasUpdateMask()) {
         mergeUpdateMask(other.getUpdateMask());
+      }
+      if (!other.getRequestId().isEmpty()) {
+        requestId_ = other.requestId_;
+        bitField0_ |= 0x00000004;
+        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -552,6 +641,12 @@ public final class UpdateAutoProtectionPolicyRequest extends com.google.protobuf
                 bitField0_ |= 0x00000002;
                 break;
               } // case 18
+            case 26:
+              {
+                requestId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -800,14 +895,14 @@ public final class UpdateAutoProtectionPolicyRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Required. Field mask is used to specify the fields to be overwritten in the
+     * Optional. Field mask is used to specify the fields to be overwritten in the
      * AutoProtectionPolicy resource by the update.
      * The fields specified in the update_mask are relative to the resource, not
      * the full request. A field will be overwritten if it is in the mask. If the
      * user does not provide a mask then all fields will be overwritten.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return Whether the updateMask field is set.
@@ -820,14 +915,14 @@ public final class UpdateAutoProtectionPolicyRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Required. Field mask is used to specify the fields to be overwritten in the
+     * Optional. Field mask is used to specify the fields to be overwritten in the
      * AutoProtectionPolicy resource by the update.
      * The fields specified in the update_mask are relative to the resource, not
      * the full request. A field will be overwritten if it is in the mask. If the
      * user does not provide a mask then all fields will be overwritten.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The updateMask.
@@ -846,14 +941,14 @@ public final class UpdateAutoProtectionPolicyRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Required. Field mask is used to specify the fields to be overwritten in the
+     * Optional. Field mask is used to specify the fields to be overwritten in the
      * AutoProtectionPolicy resource by the update.
      * The fields specified in the update_mask are relative to the resource, not
      * the full request. A field will be overwritten if it is in the mask. If the
      * user does not provide a mask then all fields will be overwritten.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setUpdateMask(com.google.protobuf.FieldMask value) {
@@ -874,14 +969,14 @@ public final class UpdateAutoProtectionPolicyRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Required. Field mask is used to specify the fields to be overwritten in the
+     * Optional. Field mask is used to specify the fields to be overwritten in the
      * AutoProtectionPolicy resource by the update.
      * The fields specified in the update_mask are relative to the resource, not
      * the full request. A field will be overwritten if it is in the mask. If the
      * user does not provide a mask then all fields will be overwritten.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
@@ -899,14 +994,14 @@ public final class UpdateAutoProtectionPolicyRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Required. Field mask is used to specify the fields to be overwritten in the
+     * Optional. Field mask is used to specify the fields to be overwritten in the
      * AutoProtectionPolicy resource by the update.
      * The fields specified in the update_mask are relative to the resource, not
      * the full request. A field will be overwritten if it is in the mask. If the
      * user does not provide a mask then all fields will be overwritten.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
@@ -932,14 +1027,14 @@ public final class UpdateAutoProtectionPolicyRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Required. Field mask is used to specify the fields to be overwritten in the
+     * Optional. Field mask is used to specify the fields to be overwritten in the
      * AutoProtectionPolicy resource by the update.
      * The fields specified in the update_mask are relative to the resource, not
      * the full request. A field will be overwritten if it is in the mask. If the
      * user does not provide a mask then all fields will be overwritten.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder clearUpdateMask() {
@@ -957,14 +1052,14 @@ public final class UpdateAutoProtectionPolicyRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Required. Field mask is used to specify the fields to be overwritten in the
+     * Optional. Field mask is used to specify the fields to be overwritten in the
      * AutoProtectionPolicy resource by the update.
      * The fields specified in the update_mask are relative to the resource, not
      * the full request. A field will be overwritten if it is in the mask. If the
      * user does not provide a mask then all fields will be overwritten.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
@@ -977,14 +1072,14 @@ public final class UpdateAutoProtectionPolicyRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Required. Field mask is used to specify the fields to be overwritten in the
+     * Optional. Field mask is used to specify the fields to be overwritten in the
      * AutoProtectionPolicy resource by the update.
      * The fields specified in the update_mask are relative to the resource, not
      * the full request. A field will be overwritten if it is in the mask. If the
      * user does not provide a mask then all fields will be overwritten.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
@@ -1001,14 +1096,14 @@ public final class UpdateAutoProtectionPolicyRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Required. Field mask is used to specify the fields to be overwritten in the
+     * Optional. Field mask is used to specify the fields to be overwritten in the
      * AutoProtectionPolicy resource by the update.
      * The fields specified in the update_mask are relative to the resource, not
      * the full request. A field will be overwritten if it is in the mask. If the
      * user does not provide a mask then all fields will be overwritten.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilder<
@@ -1026,6 +1121,157 @@ public final class UpdateAutoProtectionPolicyRequest extends com.google.protobuf
         updateMask_ = null;
       }
       return updateMaskBuilder_;
+    }
+
+    private java.lang.Object requestId_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An optional request ID to identify requests. Specify a unique
+     * request ID so that if you must retry your request, the server will know to
+     * ignore the request if it has already been completed. The server will
+     * guarantee that for at least 60 minutes since the first request.
+     *
+     * The request ID must be a valid UUID with the exception that zero UUID is
+     * not supported (00000000-0000-0000-0000-000000000000).
+     * </pre>
+     *
+     * <code>
+     * string request_id = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+     * </code>
+     *
+     * @return The requestId.
+     */
+    public java.lang.String getRequestId() {
+      java.lang.Object ref = requestId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        requestId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An optional request ID to identify requests. Specify a unique
+     * request ID so that if you must retry your request, the server will know to
+     * ignore the request if it has already been completed. The server will
+     * guarantee that for at least 60 minutes since the first request.
+     *
+     * The request ID must be a valid UUID with the exception that zero UUID is
+     * not supported (00000000-0000-0000-0000-000000000000).
+     * </pre>
+     *
+     * <code>
+     * string request_id = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+     * </code>
+     *
+     * @return The bytes for requestId.
+     */
+    public com.google.protobuf.ByteString getRequestIdBytes() {
+      java.lang.Object ref = requestId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        requestId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An optional request ID to identify requests. Specify a unique
+     * request ID so that if you must retry your request, the server will know to
+     * ignore the request if it has already been completed. The server will
+     * guarantee that for at least 60 minutes since the first request.
+     *
+     * The request ID must be a valid UUID with the exception that zero UUID is
+     * not supported (00000000-0000-0000-0000-000000000000).
+     * </pre>
+     *
+     * <code>
+     * string request_id = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+     * </code>
+     *
+     * @param value The requestId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRequestId(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      requestId_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An optional request ID to identify requests. Specify a unique
+     * request ID so that if you must retry your request, the server will know to
+     * ignore the request if it has already been completed. The server will
+     * guarantee that for at least 60 minutes since the first request.
+     *
+     * The request ID must be a valid UUID with the exception that zero UUID is
+     * not supported (00000000-0000-0000-0000-000000000000).
+     * </pre>
+     *
+     * <code>
+     * string request_id = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRequestId() {
+      requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An optional request ID to identify requests. Specify a unique
+     * request ID so that if you must retry your request, the server will know to
+     * ignore the request if it has already been completed. The server will
+     * guarantee that for at least 60 minutes since the first request.
+     *
+     * The request ID must be a valid UUID with the exception that zero UUID is
+     * not supported (00000000-0000-0000-0000-000000000000).
+     * </pre>
+     *
+     * <code>
+     * string request_id = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+     * </code>
+     *
+     * @param value The bytes for requestId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRequestIdBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      requestId_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.backupdr.v1beta.UpdateAutoProtectionPolicyRequest)

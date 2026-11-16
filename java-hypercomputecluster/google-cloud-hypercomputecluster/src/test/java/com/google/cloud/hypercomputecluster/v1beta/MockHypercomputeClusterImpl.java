@@ -162,4 +162,25 @@ public class MockHypercomputeClusterImpl extends HypercomputeClusterImplBase {
                   Exception.class.getName())));
     }
   }
+
+  @Override
+  public void listNodes(
+      ListNodesRequest request, StreamObserver<ListNodesResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListNodesResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListNodesResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListNodes, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListNodesResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
 }

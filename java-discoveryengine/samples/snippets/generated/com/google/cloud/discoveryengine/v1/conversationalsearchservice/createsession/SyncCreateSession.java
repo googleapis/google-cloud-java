@@ -43,6 +43,7 @@ public class SyncCreateSession {
                           "[PROJECT]", "[LOCATION]", "[DATA_STORE]")
                       .toString())
               .setSession(Session.newBuilder().build())
+              .setSessionId("sessionId607796817")
               .build();
       Session response = conversationalSearchServiceClient.createSession(request);
     }

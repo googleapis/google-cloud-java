@@ -345,4 +345,40 @@ public interface SessionOrBuilder
    * @return The isPinned.
    */
   boolean getIsPinned();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Full resource name of an in-progress AsyncAssist operation for
+   * this session, e.g.
+   * `projects/&#42;&#47;locations/&#42;&#47;collections/&#42;&#47;engines/&#42;&#47;sessions/&#42;&#47;operations/&#42;`.
+   * Set when the operation starts and cleared when it finishes.
+   * </pre>
+   *
+   * <code>
+   * string pending_async_assist_operation_id = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The pendingAsyncAssistOperationId.
+   */
+  java.lang.String getPendingAsyncAssistOperationId();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Full resource name of an in-progress AsyncAssist operation for
+   * this session, e.g.
+   * `projects/&#42;&#47;locations/&#42;&#47;collections/&#42;&#47;engines/&#42;&#47;sessions/&#42;&#47;operations/&#42;`.
+   * Set when the operation starts and cleared when it finishes.
+   * </pre>
+   *
+   * <code>
+   * string pending_async_assist_operation_id = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The bytes for pendingAsyncAssistOperationId.
+   */
+  com.google.protobuf.ByteString getPendingAsyncAssistOperationIdBytes();
 }

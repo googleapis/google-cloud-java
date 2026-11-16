@@ -668,6 +668,26 @@ public final class Commitment extends com.google.protobuf.GeneratedMessage
     MEMORY_OPTIMIZED_M3(276301372),
     /** <code>MEMORY_OPTIMIZED_M4 = 276301373;</code> */
     MEMORY_OPTIMIZED_M4(276301373),
+    /**
+     *
+     *
+     * <pre>
+     * CUD bucket for M4N machines with less than 6TB of memory.
+     * </pre>
+     *
+     * <code>MEMORY_OPTIMIZED_M4N = 512278961;</code>
+     */
+    MEMORY_OPTIMIZED_M4N(512278961),
+    /**
+     *
+     *
+     * <pre>
+     * CUD bucket for M4N machines with 6TB of memory.
+     * </pre>
+     *
+     * <code>MEMORY_OPTIMIZED_M4N_6TB = 69895574;</code>
+     */
+    MEMORY_OPTIMIZED_M4N_6TB(69895574),
     /** <code>MEMORY_OPTIMIZED_M4_6TB = 210543650;</code> */
     MEMORY_OPTIMIZED_M4_6TB(210543650),
     /**
@@ -736,6 +756,56 @@ public final class Commitment extends com.google.protobuf.GeneratedMessage
      * <code>MEMORY_OPTIMIZED_X4_960_16T = 424752534;</code>
      */
     MEMORY_OPTIMIZED_X4_960_16T(424752534),
+    /**
+     *
+     *
+     * <pre>
+     * CUD bucket for X5 machine with 1376 vCPUs and 24TB of memory.
+     * </pre>
+     *
+     * <code>MEMORY_OPTIMIZED_X5_1376_24T = 287823040;</code>
+     */
+    MEMORY_OPTIMIZED_X5_1376_24T(287823040),
+    /**
+     *
+     *
+     * <pre>
+     * CUD bucket for X5 machine with 1376 vCPUs and 32TB of memory.
+     * </pre>
+     *
+     * <code>MEMORY_OPTIMIZED_X5_1376_32T = 287823939;</code>
+     */
+    MEMORY_OPTIMIZED_X5_1376_32T(287823939),
+    /**
+     *
+     *
+     * <pre>
+     * CUD bucket for X5 machine with 2064 vCPUs and 48TB of memory.
+     * </pre>
+     *
+     * <code>MEMORY_OPTIMIZED_X5_2064_48T = 411390009;</code>
+     */
+    MEMORY_OPTIMIZED_X5_2064_48T(411390009),
+    /**
+     *
+     *
+     * <pre>
+     * CUD bucket for X5 machine with 688 vCPUs and 12TB of memory.
+     * </pre>
+     *
+     * <code>MEMORY_OPTIMIZED_X5_688_12T = 314400670;</code>
+     */
+    MEMORY_OPTIMIZED_X5_688_12T(314400670),
+    /**
+     *
+     *
+     * <pre>
+     * CUD bucket for X5 machine with 688 vCPUs and 16TB of memory.
+     * </pre>
+     *
+     * <code>MEMORY_OPTIMIZED_X5_688_16T = 314400794;</code>
+     */
+    MEMORY_OPTIMIZED_X5_688_16T(314400794),
     /**
      *
      *
@@ -949,6 +1019,28 @@ public final class Commitment extends com.google.protobuf.GeneratedMessage
     /** <code>MEMORY_OPTIMIZED_M4 = 276301373;</code> */
     public static final int MEMORY_OPTIMIZED_M4_VALUE = 276301373;
 
+    /**
+     *
+     *
+     * <pre>
+     * CUD bucket for M4N machines with less than 6TB of memory.
+     * </pre>
+     *
+     * <code>MEMORY_OPTIMIZED_M4N = 512278961;</code>
+     */
+    public static final int MEMORY_OPTIMIZED_M4N_VALUE = 512278961;
+
+    /**
+     *
+     *
+     * <pre>
+     * CUD bucket for M4N machines with 6TB of memory.
+     * </pre>
+     *
+     * <code>MEMORY_OPTIMIZED_M4N_6TB = 69895574;</code>
+     */
+    public static final int MEMORY_OPTIMIZED_M4N_6TB_VALUE = 69895574;
+
     /** <code>MEMORY_OPTIMIZED_M4_6TB = 210543650;</code> */
     public static final int MEMORY_OPTIMIZED_M4_6TB_VALUE = 210543650;
 
@@ -1026,6 +1118,61 @@ public final class Commitment extends com.google.protobuf.GeneratedMessage
      * <code>MEMORY_OPTIMIZED_X4_960_16T = 424752534;</code>
      */
     public static final int MEMORY_OPTIMIZED_X4_960_16T_VALUE = 424752534;
+
+    /**
+     *
+     *
+     * <pre>
+     * CUD bucket for X5 machine with 1376 vCPUs and 24TB of memory.
+     * </pre>
+     *
+     * <code>MEMORY_OPTIMIZED_X5_1376_24T = 287823040;</code>
+     */
+    public static final int MEMORY_OPTIMIZED_X5_1376_24T_VALUE = 287823040;
+
+    /**
+     *
+     *
+     * <pre>
+     * CUD bucket for X5 machine with 1376 vCPUs and 32TB of memory.
+     * </pre>
+     *
+     * <code>MEMORY_OPTIMIZED_X5_1376_32T = 287823939;</code>
+     */
+    public static final int MEMORY_OPTIMIZED_X5_1376_32T_VALUE = 287823939;
+
+    /**
+     *
+     *
+     * <pre>
+     * CUD bucket for X5 machine with 2064 vCPUs and 48TB of memory.
+     * </pre>
+     *
+     * <code>MEMORY_OPTIMIZED_X5_2064_48T = 411390009;</code>
+     */
+    public static final int MEMORY_OPTIMIZED_X5_2064_48T_VALUE = 411390009;
+
+    /**
+     *
+     *
+     * <pre>
+     * CUD bucket for X5 machine with 688 vCPUs and 12TB of memory.
+     * </pre>
+     *
+     * <code>MEMORY_OPTIMIZED_X5_688_12T = 314400670;</code>
+     */
+    public static final int MEMORY_OPTIMIZED_X5_688_12T_VALUE = 314400670;
+
+    /**
+     *
+     *
+     * <pre>
+     * CUD bucket for X5 machine with 688 vCPUs and 16TB of memory.
+     * </pre>
+     *
+     * <code>MEMORY_OPTIMIZED_X5_688_16T = 314400794;</code>
+     */
+    public static final int MEMORY_OPTIMIZED_X5_688_16T_VALUE = 314400794;
 
     /**
      *
@@ -1215,6 +1362,10 @@ public final class Commitment extends com.google.protobuf.GeneratedMessage
           return MEMORY_OPTIMIZED_M3;
         case 276301373:
           return MEMORY_OPTIMIZED_M4;
+        case 512278961:
+          return MEMORY_OPTIMIZED_M4N;
+        case 69895574:
+          return MEMORY_OPTIMIZED_M4N_6TB;
         case 210543650:
           return MEMORY_OPTIMIZED_M4_6TB;
         case 206669823:
@@ -1235,6 +1386,16 @@ public final class Commitment extends com.google.protobuf.GeneratedMessage
           return MEMORY_OPTIMIZED_X4_960_12T;
         case 424752534:
           return MEMORY_OPTIMIZED_X4_960_16T;
+        case 287823040:
+          return MEMORY_OPTIMIZED_X5_1376_24T;
+        case 287823939:
+          return MEMORY_OPTIMIZED_X5_1376_32T;
+        case 411390009:
+          return MEMORY_OPTIMIZED_X5_2064_48T;
+        case 314400670:
+          return MEMORY_OPTIMIZED_X5_688_12T;
+        case 314400794:
+          return MEMORY_OPTIMIZED_X5_688_16T;
         case 147027572:
           return NETWORK_OPTIMIZED_C4N;
         case 147044859:

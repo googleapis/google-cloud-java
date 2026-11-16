@@ -175,6 +175,30 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      *
      *
      * <pre>
+     * The global external address can only be assigned to Global External
+     * Passthrough Network Load Balancer forwarding rules, as an Availability
+     * Group 0 address.
+     * </pre>
+     *
+     * <code>PASSTHROUGH_LOAD_BALANCER_AVAILABILITY_GROUP0 = 119932186;</code>
+     */
+    PASSTHROUGH_LOAD_BALANCER_AVAILABILITY_GROUP0(119932186),
+    /**
+     *
+     *
+     * <pre>
+     * The global external address can only be assigned to Global External
+     * Passthrough Network Load Balancer forwarding rules, as an Availability
+     * Group 1 address.
+     * </pre>
+     *
+     * <code>PASSTHROUGH_LOAD_BALANCER_AVAILABILITY_GROUP1 = 119932187;</code>
+     */
+    PASSTHROUGH_LOAD_BALANCER_AVAILABILITY_GROUP1(119932187),
+    /**
+     *
+     *
+     * <pre>
      * A private network IP address that can be used to configure Private
      * Service Connect. This purpose can be specified only forGLOBAL addresses of Type INTERNAL
      * </pre>
@@ -291,6 +315,32 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      *
      *
      * <pre>
+     * The global external address can only be assigned to Global External
+     * Passthrough Network Load Balancer forwarding rules, as an Availability
+     * Group 0 address.
+     * </pre>
+     *
+     * <code>PASSTHROUGH_LOAD_BALANCER_AVAILABILITY_GROUP0 = 119932186;</code>
+     */
+    public static final int PASSTHROUGH_LOAD_BALANCER_AVAILABILITY_GROUP0_VALUE = 119932186;
+
+    /**
+     *
+     *
+     * <pre>
+     * The global external address can only be assigned to Global External
+     * Passthrough Network Load Balancer forwarding rules, as an Availability
+     * Group 1 address.
+     * </pre>
+     *
+     * <code>PASSTHROUGH_LOAD_BALANCER_AVAILABILITY_GROUP1 = 119932187;</code>
+     */
+    public static final int PASSTHROUGH_LOAD_BALANCER_AVAILABILITY_GROUP1_VALUE = 119932187;
+
+    /**
+     *
+     *
+     * <pre>
      * A private network IP address that can be used to configure Private
      * Service Connect. This purpose can be specified only forGLOBAL addresses of Type INTERNAL
      * </pre>
@@ -367,6 +417,10 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
           return IPSEC_INTERCONNECT;
         case 163666477:
           return NAT_AUTO;
+        case 119932186:
+          return PASSTHROUGH_LOAD_BALANCER_AVAILABILITY_GROUP0;
+        case 119932187:
+          return PASSTHROUGH_LOAD_BALANCER_AVAILABILITY_GROUP1;
         case 48134724:
           return PRIVATE_SERVICE_CONNECT;
         case 270492508:

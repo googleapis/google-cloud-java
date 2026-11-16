@@ -61,6 +61,10 @@ public final class VendorSettingsProto extends com.google.protobuf.GeneratedFile
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_run_v2_ServiceMesh_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_run_v2_AmbientNetworking_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_run_v2_AmbientNetworking_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_run_v2_ServiceScaling_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_run_v2_ServiceScaling_fieldAccessorTable;
@@ -80,6 +84,10 @@ public final class VendorSettingsProto extends com.google.protobuf.GeneratedFile
       internal_static_google_cloud_run_v2_BuildConfig_EnvironmentVariablesEntry_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_run_v2_BuildConfig_EnvironmentVariablesEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_run_v2_WorkloadIdentityConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_run_v2_WorkloadIdentityConfig_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -113,13 +121,22 @@ public final class VendorSettingsProto extends com.google.protobuf.GeneratedFile
           + "\006policy\030\003 \001(\tB2\342A\001\001\372A+\n"
           + ")binaryauthorization.googleapis.com/PolicyH\000\022&\n"
           + "\030breakglass_justification\030\002 \001(\tB\004\342A\001\001B\021\n"
-          + "\017binauthz_method\"U\n"
+          + "\017binauthz_method\"\325\001\n"
           + "\017RevisionScaling\022 \n"
           + "\022min_instance_count\030\001 \001(\005B\004\342A\001\001\022 \n"
-          + "\022max_instance_count\030\002 \001(\005B\004\342A\001\001\"E\n"
+          + "\022max_instance_count\030\002 \001(\005B\004\342A\001\001\022\"\n"
+          + "\017cpu_utilization\030\004 \001(\002B\004\342A\001\001H\000\210\001\001\022*\n"
+          + "\027concurrency_utilization\030\005"
+          + " \001(\002B\004\342A\001\001H\001\210\001\001B\022\n"
+          + "\020_cpu_utilizationB\032\n"
+          + "\030_concurrency_utilization\"E\n"
           + "\013ServiceMesh\0226\n"
           + "\004mesh\030\001 \001(\tB(\372A%\n"
-          + "#networkservices.googleapis.com/Mesh\"\255\002\n"
+          + "#networkservices.googleapis.com/Mesh\"u\n"
+          + "\021AmbientNetworking\022\032\n"
+          + "\007enabled\030\001 \001(\010B\004\342A\001\001H\000\210\001\001\0228\n\r"
+          + "ambient_scope\030\002 \001(\0162!.google.cloud.run.v2.AmbientScopeB\n\n"
+          + "\010_enabled\"\255\002\n"
           + "\016ServiceScaling\022 \n"
           + "\022min_instance_count\030\001 \001(\005B\004\342A\001\001\022K\n"
           + "\014scaling_mode\030\003"
@@ -146,12 +163,23 @@ public final class VendorSettingsProto extends com.google.protobuf.GeneratedFile
           + "\030enable_automatic_updates\030\006 \001(\010B\004\342A\001\001\022G\n"
           + "\013worker_pool\030\007 \001(\tB2\342A\001\001\372A+\n"
           + ")cloudbuild.googleapis.com/BuildWorkerPool\022_\n"
-          + "\025environment_variables\030\010 \003(\0132:.google.cloud.run.v2.B"
-          + "uildConfig.EnvironmentVariablesEntryB\004\342A\001\001\022\035\n"
+          + "\025environment_variables\030\010 \003(\0132:.google.cloud."
+          + "run.v2.BuildConfig.EnvironmentVariablesEntryB\004\342A\001\001\022\035\n"
           + "\017service_account\030\t \001(\tB\004\342A\001\001\032;\n"
           + "\031EnvironmentVariablesEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
-          + "\005value\030\002 \001(\t:\0028\001*\263\001\n"
+          + "\005value\030\002 \001(\t:\0028\001\"\302\001\n"
+          + "\026WorkloadIdentityConfig\022\026\n"
+          + "\010identity\030\001 \001(\tB\004\342A\001\001\022>\n\r"
+          + "identity_type\030\002"
+          + " \001(\0162!.google.cloud.run.v2.IdentityTypeB\004\342A\001\001\022/\n"
+          + "\034identity_certificate_enabled\030\003"
+          + " \001(\010B\004\342A\001\001H\000\210\001\001B\037\n"
+          + "\035_identity_certificate_enabled*c\n"
+          + "\014AmbientScope\022\035\n"
+          + "\031AMBIENT_SCOPE_UNSPECIFIED\020\000\022\032\n"
+          + "\026AMBIENT_SCOPE_REGIONAL\020\001\022\030\n"
+          + "\024AMBIENT_SCOPE_GLOBAL\020\002*\263\001\n"
           + "\016IngressTraffic\022\037\n"
           + "\033INGRESS_TRAFFIC_UNSPECIFIED\020\000\022\027\n"
           + "\023INGRESS_TRAFFIC_ALL\020\001\022!\n"
@@ -165,15 +193,23 @@ public final class VendorSettingsProto extends com.google.protobuf.GeneratedFile
           + "\035EncryptionKeyRevocationAction\0220\n"
           + ",ENCRYPTION_KEY_REVOCATION_ACTION_UNSPECIFIED\020\000\022\017\n"
           + "\013PREVENT_NEW\020\001\022\014\n"
-          + "\010SHUTDOWN\020\002B\374\002\n"
-          + "\027com.google.cloud.run.v2B\023VendorSetting"
-          + "sProtoP\001Z)cloud.google.com/go/run/apiv2/runpb;runpb\352Ac\n"
-          + ")binaryauthorization.goog"
-          + "leapis.com/Policy\022\031projects/{project}/policy\022\033locations/{location}/policy\352A\\\n"
-          + "#networkservices.googleapis.com/Mesh\0225proje"
-          + "cts/{project}/locations/{location}/meshes/{mesh}\352AY\n"
-          + "\037cloudbuild.googleapis.com/Build\0226projects/{project}/locations/{loca"
-          + "tion}/builds/{build}b\006proto3"
+          + "\010SHUTDOWN\020\002*r\n"
+          + "\014IdentityType\022\035\n"
+          + "\031IDENTITY_TYPE_UNSPECIFIED\020\000\022!\n"
+          + "\035IDENTITY_TYPE_SERVICE_ACCOUNT\020\001\022 \n"
+          + "\034IDENTITY_TYPE_AGENT_IDENTITY\020\003*l\n"
+          + "\016FunctionalType\022\037\n"
+          + "\033FUNCTIONAL_TYPE_UNSPECIFIED\020\000\022\031\n"
+          + "\025FUNCTIONAL_TYPE_AGENT\020\001\022\036\n"
+          + "\032FUNCTIONAL_TYPE_MCP_SERVER\020\002B\374\002\n"
+          + "\027com.google.cloud.run.v2B\023V"
+          + "endorSettingsProtoP\001Z)cloud.google.com/go/run/apiv2/runpb;runpb\352Ac\n"
+          + ")binaryauthorization.googleapis.com/Policy\022\031projects/"
+          + "{project}/policy\022\033locations/{location}/policy\352A\\\n"
+          + "#networkservices.googleapis.com"
+          + "/Mesh\0225projects/{project}/locations/{location}/meshes/{mesh}\352AY\n"
+          + "\037cloudbuild.googleapis.com/Build\0226projects/{project}/loc"
+          + "ations/{location}/builds/{build}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -211,7 +247,7 @@ public final class VendorSettingsProto extends com.google.protobuf.GeneratedFile
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_run_v2_RevisionScaling_descriptor,
             new java.lang.String[] {
-              "MinInstanceCount", "MaxInstanceCount",
+              "MinInstanceCount", "MaxInstanceCount", "CpuUtilization", "ConcurrencyUtilization",
             });
     internal_static_google_cloud_run_v2_ServiceMesh_descriptor = getDescriptor().getMessageType(3);
     internal_static_google_cloud_run_v2_ServiceMesh_fieldAccessorTable =
@@ -220,8 +256,16 @@ public final class VendorSettingsProto extends com.google.protobuf.GeneratedFile
             new java.lang.String[] {
               "Mesh",
             });
-    internal_static_google_cloud_run_v2_ServiceScaling_descriptor =
+    internal_static_google_cloud_run_v2_AmbientNetworking_descriptor =
         getDescriptor().getMessageType(4);
+    internal_static_google_cloud_run_v2_AmbientNetworking_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_run_v2_AmbientNetworking_descriptor,
+            new java.lang.String[] {
+              "Enabled", "AmbientScope",
+            });
+    internal_static_google_cloud_run_v2_ServiceScaling_descriptor =
+        getDescriptor().getMessageType(5);
     internal_static_google_cloud_run_v2_ServiceScaling_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_run_v2_ServiceScaling_descriptor,
@@ -229,21 +273,21 @@ public final class VendorSettingsProto extends com.google.protobuf.GeneratedFile
               "MinInstanceCount", "ScalingMode", "MaxInstanceCount", "ManualInstanceCount",
             });
     internal_static_google_cloud_run_v2_WorkerPoolScaling_descriptor =
-        getDescriptor().getMessageType(5);
+        getDescriptor().getMessageType(6);
     internal_static_google_cloud_run_v2_WorkerPoolScaling_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_run_v2_WorkerPoolScaling_descriptor,
             new java.lang.String[] {
               "ManualInstanceCount",
             });
-    internal_static_google_cloud_run_v2_NodeSelector_descriptor = getDescriptor().getMessageType(6);
+    internal_static_google_cloud_run_v2_NodeSelector_descriptor = getDescriptor().getMessageType(7);
     internal_static_google_cloud_run_v2_NodeSelector_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_run_v2_NodeSelector_descriptor,
             new java.lang.String[] {
               "Accelerator",
             });
-    internal_static_google_cloud_run_v2_BuildConfig_descriptor = getDescriptor().getMessageType(7);
+    internal_static_google_cloud_run_v2_BuildConfig_descriptor = getDescriptor().getMessageType(8);
     internal_static_google_cloud_run_v2_BuildConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_run_v2_BuildConfig_descriptor,
@@ -265,6 +309,14 @@ public final class VendorSettingsProto extends com.google.protobuf.GeneratedFile
             internal_static_google_cloud_run_v2_BuildConfig_EnvironmentVariablesEntry_descriptor,
             new java.lang.String[] {
               "Key", "Value",
+            });
+    internal_static_google_cloud_run_v2_WorkloadIdentityConfig_descriptor =
+        getDescriptor().getMessageType(9);
+    internal_static_google_cloud_run_v2_WorkloadIdentityConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_run_v2_WorkloadIdentityConfig_descriptor,
+            new java.lang.String[] {
+              "Identity", "IdentityType", "IdentityCertificateEnabled",
             });
     descriptor.resolveAllFeaturesImmutable();
     com.google.api.FieldBehaviorProto.getDescriptor();

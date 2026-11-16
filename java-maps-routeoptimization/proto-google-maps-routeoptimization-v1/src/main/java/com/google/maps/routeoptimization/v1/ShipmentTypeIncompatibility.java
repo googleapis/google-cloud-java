@@ -112,6 +112,7 @@ public final class ShipmentTypeIncompatibility extends com.google.protobuf.Gener
      * <pre>
      * In this mode, two shipments with incompatible types can never be on the
      * same vehicle at the same time:
+     *
      * * They can share the same vehicle only if one is delivered before the
      * other is picked up.
      * * When both shipments are pickups-only (no deliveries) or deliveries-only
@@ -163,6 +164,7 @@ public final class ShipmentTypeIncompatibility extends com.google.protobuf.Gener
      * <pre>
      * In this mode, two shipments with incompatible types can never be on the
      * same vehicle at the same time:
+     *
      * * They can share the same vehicle only if one is delivered before the
      * other is picked up.
      * * When both shipments are pickups-only (no deliveries) or deliveries-only

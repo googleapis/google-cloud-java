@@ -153,10 +153,12 @@ public final class CloudExadataInfrastructure extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Optional. User friendly name for this resource.
+   * Optional. Immutable. User friendly name for this resource.
    * </pre>
    *
-   * <code>string display_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string display_name = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The displayName.
    */
@@ -177,10 +179,12 @@ public final class CloudExadataInfrastructure extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Optional. User friendly name for this resource.
+   * Optional. Immutable. User friendly name for this resource.
    * </pre>
    *
-   * <code>string display_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string display_name = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The bytes for displayName.
    */
@@ -206,12 +210,14 @@ public final class CloudExadataInfrastructure extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Optional. The GCP Oracle zone where Oracle Exadata Infrastructure is
-   * hosted. Example: us-east4-b-r2. If not specified, the system will pick a
-   * zone based on availability.
+   * Optional. Immutable. The GCP Oracle zone where Oracle Exadata
+   * Infrastructure is hosted. Example: us-east4-b-r2. If not specified, the
+   * system will pick a zone based on availability.
    * </pre>
    *
-   * <code>string gcp_oracle_zone = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string gcp_oracle_zone = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The gcpOracleZone.
    */
@@ -232,12 +238,14 @@ public final class CloudExadataInfrastructure extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Optional. The GCP Oracle zone where Oracle Exadata Infrastructure is
-   * hosted. Example: us-east4-b-r2. If not specified, the system will pick a
-   * zone based on availability.
+   * Optional. Immutable. The GCP Oracle zone where Oracle Exadata
+   * Infrastructure is hosted. Example: us-east4-b-r2. If not specified, the
+   * system will pick a zone based on availability.
    * </pre>
    *
-   * <code>string gcp_oracle_zone = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string gcp_oracle_zone = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The bytes for gcpOracleZone.
    */
@@ -316,11 +324,11 @@ public final class CloudExadataInfrastructure extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Optional. Various properties of the infra.
+   * Optional. Immutable. Various properties of the infra.
    * </pre>
    *
    * <code>
-   * .google.cloud.oracledatabase.v1.CloudExadataInfrastructureProperties properties = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.oracledatabase.v1.CloudExadataInfrastructureProperties properties = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
    * @return Whether the properties field is set.
@@ -334,11 +342,11 @@ public final class CloudExadataInfrastructure extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Optional. Various properties of the infra.
+   * Optional. Immutable. Various properties of the infra.
    * </pre>
    *
    * <code>
-   * .google.cloud.oracledatabase.v1.CloudExadataInfrastructureProperties properties = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.oracledatabase.v1.CloudExadataInfrastructureProperties properties = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
    * @return The properties.
@@ -355,11 +363,11 @@ public final class CloudExadataInfrastructure extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Optional. Various properties of the infra.
+   * Optional. Immutable. Various properties of the infra.
    * </pre>
    *
    * <code>
-   * .google.cloud.oracledatabase.v1.CloudExadataInfrastructureProperties properties = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.oracledatabase.v1.CloudExadataInfrastructureProperties properties = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    */
   @java.lang.Override
@@ -1180,10 +1188,12 @@ public final class CloudExadataInfrastructure extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Optional. User friendly name for this resource.
+     * Optional. Immutable. User friendly name for this resource.
      * </pre>
      *
-     * <code>string display_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string display_name = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return The displayName.
      */
@@ -1203,10 +1213,12 @@ public final class CloudExadataInfrastructure extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Optional. User friendly name for this resource.
+     * Optional. Immutable. User friendly name for this resource.
      * </pre>
      *
-     * <code>string display_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string display_name = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return The bytes for displayName.
      */
@@ -1226,10 +1238,12 @@ public final class CloudExadataInfrastructure extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Optional. User friendly name for this resource.
+     * Optional. Immutable. User friendly name for this resource.
      * </pre>
      *
-     * <code>string display_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string display_name = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @param value The displayName to set.
      * @return This builder for chaining.
@@ -1248,10 +1262,12 @@ public final class CloudExadataInfrastructure extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Optional. User friendly name for this resource.
+     * Optional. Immutable. User friendly name for this resource.
      * </pre>
      *
-     * <code>string display_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string display_name = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -1266,10 +1282,12 @@ public final class CloudExadataInfrastructure extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Optional. User friendly name for this resource.
+     * Optional. Immutable. User friendly name for this resource.
      * </pre>
      *
-     * <code>string display_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string display_name = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @param value The bytes for displayName to set.
      * @return This builder for chaining.
@@ -1291,12 +1309,14 @@ public final class CloudExadataInfrastructure extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Optional. The GCP Oracle zone where Oracle Exadata Infrastructure is
-     * hosted. Example: us-east4-b-r2. If not specified, the system will pick a
-     * zone based on availability.
+     * Optional. Immutable. The GCP Oracle zone where Oracle Exadata
+     * Infrastructure is hosted. Example: us-east4-b-r2. If not specified, the
+     * system will pick a zone based on availability.
      * </pre>
      *
-     * <code>string gcp_oracle_zone = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string gcp_oracle_zone = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return The gcpOracleZone.
      */
@@ -1316,12 +1336,14 @@ public final class CloudExadataInfrastructure extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Optional. The GCP Oracle zone where Oracle Exadata Infrastructure is
-     * hosted. Example: us-east4-b-r2. If not specified, the system will pick a
-     * zone based on availability.
+     * Optional. Immutable. The GCP Oracle zone where Oracle Exadata
+     * Infrastructure is hosted. Example: us-east4-b-r2. If not specified, the
+     * system will pick a zone based on availability.
      * </pre>
      *
-     * <code>string gcp_oracle_zone = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string gcp_oracle_zone = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return The bytes for gcpOracleZone.
      */
@@ -1341,12 +1363,14 @@ public final class CloudExadataInfrastructure extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Optional. The GCP Oracle zone where Oracle Exadata Infrastructure is
-     * hosted. Example: us-east4-b-r2. If not specified, the system will pick a
-     * zone based on availability.
+     * Optional. Immutable. The GCP Oracle zone where Oracle Exadata
+     * Infrastructure is hosted. Example: us-east4-b-r2. If not specified, the
+     * system will pick a zone based on availability.
      * </pre>
      *
-     * <code>string gcp_oracle_zone = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string gcp_oracle_zone = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @param value The gcpOracleZone to set.
      * @return This builder for chaining.
@@ -1365,12 +1389,14 @@ public final class CloudExadataInfrastructure extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Optional. The GCP Oracle zone where Oracle Exadata Infrastructure is
-     * hosted. Example: us-east4-b-r2. If not specified, the system will pick a
-     * zone based on availability.
+     * Optional. Immutable. The GCP Oracle zone where Oracle Exadata
+     * Infrastructure is hosted. Example: us-east4-b-r2. If not specified, the
+     * system will pick a zone based on availability.
      * </pre>
      *
-     * <code>string gcp_oracle_zone = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string gcp_oracle_zone = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -1385,12 +1411,14 @@ public final class CloudExadataInfrastructure extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Optional. The GCP Oracle zone where Oracle Exadata Infrastructure is
-     * hosted. Example: us-east4-b-r2. If not specified, the system will pick a
-     * zone based on availability.
+     * Optional. Immutable. The GCP Oracle zone where Oracle Exadata
+     * Infrastructure is hosted. Example: us-east4-b-r2. If not specified, the
+     * system will pick a zone based on availability.
      * </pre>
      *
-     * <code>string gcp_oracle_zone = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string gcp_oracle_zone = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @param value The bytes for gcpOracleZone to set.
      * @return This builder for chaining.
@@ -1533,11 +1561,11 @@ public final class CloudExadataInfrastructure extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Optional. Various properties of the infra.
+     * Optional. Immutable. Various properties of the infra.
      * </pre>
      *
      * <code>
-     * .google.cloud.oracledatabase.v1.CloudExadataInfrastructureProperties properties = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.oracledatabase.v1.CloudExadataInfrastructureProperties properties = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @return Whether the properties field is set.
@@ -1550,11 +1578,11 @@ public final class CloudExadataInfrastructure extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Optional. Various properties of the infra.
+     * Optional. Immutable. Various properties of the infra.
      * </pre>
      *
      * <code>
-     * .google.cloud.oracledatabase.v1.CloudExadataInfrastructureProperties properties = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.oracledatabase.v1.CloudExadataInfrastructureProperties properties = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @return The properties.
@@ -1574,11 +1602,11 @@ public final class CloudExadataInfrastructure extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Optional. Various properties of the infra.
+     * Optional. Immutable. Various properties of the infra.
      * </pre>
      *
      * <code>
-     * .google.cloud.oracledatabase.v1.CloudExadataInfrastructureProperties properties = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.oracledatabase.v1.CloudExadataInfrastructureProperties properties = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     public Builder setProperties(
@@ -1600,11 +1628,11 @@ public final class CloudExadataInfrastructure extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Optional. Various properties of the infra.
+     * Optional. Immutable. Various properties of the infra.
      * </pre>
      *
      * <code>
-     * .google.cloud.oracledatabase.v1.CloudExadataInfrastructureProperties properties = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.oracledatabase.v1.CloudExadataInfrastructureProperties properties = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     public Builder setProperties(
@@ -1624,11 +1652,11 @@ public final class CloudExadataInfrastructure extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Optional. Various properties of the infra.
+     * Optional. Immutable. Various properties of the infra.
      * </pre>
      *
      * <code>
-     * .google.cloud.oracledatabase.v1.CloudExadataInfrastructureProperties properties = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.oracledatabase.v1.CloudExadataInfrastructureProperties properties = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     public Builder mergeProperties(
@@ -1657,11 +1685,11 @@ public final class CloudExadataInfrastructure extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Optional. Various properties of the infra.
+     * Optional. Immutable. Various properties of the infra.
      * </pre>
      *
      * <code>
-     * .google.cloud.oracledatabase.v1.CloudExadataInfrastructureProperties properties = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.oracledatabase.v1.CloudExadataInfrastructureProperties properties = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     public Builder clearProperties() {
@@ -1679,11 +1707,11 @@ public final class CloudExadataInfrastructure extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Optional. Various properties of the infra.
+     * Optional. Immutable. Various properties of the infra.
      * </pre>
      *
      * <code>
-     * .google.cloud.oracledatabase.v1.CloudExadataInfrastructureProperties properties = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.oracledatabase.v1.CloudExadataInfrastructureProperties properties = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     public com.google.cloud.oracledatabase.v1.CloudExadataInfrastructureProperties.Builder
@@ -1697,11 +1725,11 @@ public final class CloudExadataInfrastructure extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Optional. Various properties of the infra.
+     * Optional. Immutable. Various properties of the infra.
      * </pre>
      *
      * <code>
-     * .google.cloud.oracledatabase.v1.CloudExadataInfrastructureProperties properties = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.oracledatabase.v1.CloudExadataInfrastructureProperties properties = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     public com.google.cloud.oracledatabase.v1.CloudExadataInfrastructurePropertiesOrBuilder
@@ -1720,11 +1748,11 @@ public final class CloudExadataInfrastructure extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Optional. Various properties of the infra.
+     * Optional. Immutable. Various properties of the infra.
      * </pre>
      *
      * <code>
-     * .google.cloud.oracledatabase.v1.CloudExadataInfrastructureProperties properties = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.oracledatabase.v1.CloudExadataInfrastructureProperties properties = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilder<

@@ -16,6 +16,8 @@
 
 package com.google.cloud.discoveryengine.v1.stub;
 
+import static com.google.cloud.discoveryengine.v1.AssistantServiceClient.ListAssistantsPagedResponse;
+
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -23,9 +25,18 @@ import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.ServerStreamingCallable;
+import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.discoveryengine.v1.Assistant;
+import com.google.cloud.discoveryengine.v1.CreateAssistantRequest;
+import com.google.cloud.discoveryengine.v1.DeleteAssistantRequest;
+import com.google.cloud.discoveryengine.v1.GetAssistantRequest;
+import com.google.cloud.discoveryengine.v1.ListAssistantsRequest;
+import com.google.cloud.discoveryengine.v1.ListAssistantsResponse;
 import com.google.cloud.discoveryengine.v1.StreamAssistRequest;
 import com.google.cloud.discoveryengine.v1.StreamAssistResponse;
+import com.google.cloud.discoveryengine.v1.UpdateAssistantRequest;
 import com.google.longrunning.stub.GrpcOperationsStub;
+import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
@@ -53,8 +64,70 @@ public class GrpcAssistantServiceStub extends AssistantServiceStub {
               .setSampledToLocalTracing(true)
               .build();
 
+  private static final MethodDescriptor<CreateAssistantRequest, Assistant>
+      createAssistantMethodDescriptor =
+          MethodDescriptor.<CreateAssistantRequest, Assistant>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.discoveryengine.v1.AssistantService/CreateAssistant")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateAssistantRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Assistant.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<DeleteAssistantRequest, Empty>
+      deleteAssistantMethodDescriptor =
+          MethodDescriptor.<DeleteAssistantRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.discoveryengine.v1.AssistantService/DeleteAssistant")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteAssistantRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<UpdateAssistantRequest, Assistant>
+      updateAssistantMethodDescriptor =
+          MethodDescriptor.<UpdateAssistantRequest, Assistant>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.discoveryengine.v1.AssistantService/UpdateAssistant")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateAssistantRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Assistant.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<GetAssistantRequest, Assistant>
+      getAssistantMethodDescriptor =
+          MethodDescriptor.<GetAssistantRequest, Assistant>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.discoveryengine.v1.AssistantService/GetAssistant")
+              .setRequestMarshaller(ProtoUtils.marshaller(GetAssistantRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Assistant.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<ListAssistantsRequest, ListAssistantsResponse>
+      listAssistantsMethodDescriptor =
+          MethodDescriptor.<ListAssistantsRequest, ListAssistantsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.discoveryengine.v1.AssistantService/ListAssistants")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListAssistantsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListAssistantsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private final ServerStreamingCallable<StreamAssistRequest, StreamAssistResponse>
       streamAssistCallable;
+  private final UnaryCallable<CreateAssistantRequest, Assistant> createAssistantCallable;
+  private final UnaryCallable<DeleteAssistantRequest, Empty> deleteAssistantCallable;
+  private final UnaryCallable<UpdateAssistantRequest, Assistant> updateAssistantCallable;
+  private final UnaryCallable<GetAssistantRequest, Assistant> getAssistantCallable;
+  private final UnaryCallable<ListAssistantsRequest, ListAssistantsResponse> listAssistantsCallable;
+  private final UnaryCallable<ListAssistantsRequest, ListAssistantsPagedResponse>
+      listAssistantsPagedCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -111,10 +184,83 @@ public class GrpcAssistantServiceStub extends AssistantServiceStub {
                 })
             .setResourceNameExtractor(request -> request.getName())
             .build();
+    GrpcCallSettings<CreateAssistantRequest, Assistant> createAssistantTransportSettings =
+        GrpcCallSettings.<CreateAssistantRequest, Assistant>newBuilder()
+            .setMethodDescriptor(createAssistantMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getParent())
+            .build();
+    GrpcCallSettings<DeleteAssistantRequest, Empty> deleteAssistantTransportSettings =
+        GrpcCallSettings.<DeleteAssistantRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteAssistantMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    GrpcCallSettings<UpdateAssistantRequest, Assistant> updateAssistantTransportSettings =
+        GrpcCallSettings.<UpdateAssistantRequest, Assistant>newBuilder()
+            .setMethodDescriptor(updateAssistantMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("assistant.name", String.valueOf(request.getAssistant().getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<GetAssistantRequest, Assistant> getAssistantTransportSettings =
+        GrpcCallSettings.<GetAssistantRequest, Assistant>newBuilder()
+            .setMethodDescriptor(getAssistantMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    GrpcCallSettings<ListAssistantsRequest, ListAssistantsResponse>
+        listAssistantsTransportSettings =
+            GrpcCallSettings.<ListAssistantsRequest, ListAssistantsResponse>newBuilder()
+                .setMethodDescriptor(listAssistantsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
 
     this.streamAssistCallable =
         callableFactory.createServerStreamingCallable(
             streamAssistTransportSettings, settings.streamAssistSettings(), clientContext);
+    this.createAssistantCallable =
+        callableFactory.createUnaryCallable(
+            createAssistantTransportSettings, settings.createAssistantSettings(), clientContext);
+    this.deleteAssistantCallable =
+        callableFactory.createUnaryCallable(
+            deleteAssistantTransportSettings, settings.deleteAssistantSettings(), clientContext);
+    this.updateAssistantCallable =
+        callableFactory.createUnaryCallable(
+            updateAssistantTransportSettings, settings.updateAssistantSettings(), clientContext);
+    this.getAssistantCallable =
+        callableFactory.createUnaryCallable(
+            getAssistantTransportSettings, settings.getAssistantSettings(), clientContext);
+    this.listAssistantsCallable =
+        callableFactory.createUnaryCallable(
+            listAssistantsTransportSettings, settings.listAssistantsSettings(), clientContext);
+    this.listAssistantsPagedCallable =
+        callableFactory.createPagedCallable(
+            listAssistantsTransportSettings, settings.listAssistantsSettings(), clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -127,6 +273,37 @@ public class GrpcAssistantServiceStub extends AssistantServiceStub {
   @Override
   public ServerStreamingCallable<StreamAssistRequest, StreamAssistResponse> streamAssistCallable() {
     return streamAssistCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateAssistantRequest, Assistant> createAssistantCallable() {
+    return createAssistantCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteAssistantRequest, Empty> deleteAssistantCallable() {
+    return deleteAssistantCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateAssistantRequest, Assistant> updateAssistantCallable() {
+    return updateAssistantCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetAssistantRequest, Assistant> getAssistantCallable() {
+    return getAssistantCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAssistantsRequest, ListAssistantsResponse> listAssistantsCallable() {
+    return listAssistantsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAssistantsRequest, ListAssistantsPagedResponse>
+      listAssistantsPagedCallable() {
+    return listAssistantsPagedCallable;
   }
 
   @Override

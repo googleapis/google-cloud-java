@@ -33,6 +33,10 @@ import static com.google.cloud.backupdr.v1beta.BackupDRClient.ListDataSourceRefe
 import static com.google.cloud.backupdr.v1beta.BackupDRClient.ListDataSourcesPagedResponse;
 import static com.google.cloud.backupdr.v1beta.BackupDRClient.ListLocationsPagedResponse;
 import static com.google.cloud.backupdr.v1beta.BackupDRClient.ListManagementServersPagedResponse;
+import static com.google.cloud.backupdr.v1beta.BackupDRClient.ListRestoreTemplateExecutionsPagedResponse;
+import static com.google.cloud.backupdr.v1beta.BackupDRClient.ListRestoreTemplatesPagedResponse;
+import static com.google.cloud.backupdr.v1beta.BackupDRClient.ListRestoreVerificationPlanAssociationsPagedResponse;
+import static com.google.cloud.backupdr.v1beta.BackupDRClient.ListRestoreVerificationPlansPagedResponse;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -52,6 +56,9 @@ import com.google.cloud.backupdr.v1beta.CreateBackupPlanAssociationRequest;
 import com.google.cloud.backupdr.v1beta.CreateBackupPlanRequest;
 import com.google.cloud.backupdr.v1beta.CreateBackupVaultRequest;
 import com.google.cloud.backupdr.v1beta.CreateManagementServerRequest;
+import com.google.cloud.backupdr.v1beta.CreateRestoreTemplateRequest;
+import com.google.cloud.backupdr.v1beta.CreateRestoreVerificationPlanAssociationRequest;
+import com.google.cloud.backupdr.v1beta.CreateRestoreVerificationPlanRequest;
 import com.google.cloud.backupdr.v1beta.DataSource;
 import com.google.cloud.backupdr.v1beta.DataSourceReference;
 import com.google.cloud.backupdr.v1beta.DeleteAutoProtectionPolicyRequest;
@@ -60,6 +67,9 @@ import com.google.cloud.backupdr.v1beta.DeleteBackupPlanRequest;
 import com.google.cloud.backupdr.v1beta.DeleteBackupRequest;
 import com.google.cloud.backupdr.v1beta.DeleteBackupVaultRequest;
 import com.google.cloud.backupdr.v1beta.DeleteManagementServerRequest;
+import com.google.cloud.backupdr.v1beta.DeleteRestoreTemplateRequest;
+import com.google.cloud.backupdr.v1beta.DeleteRestoreVerificationPlanAssociationRequest;
+import com.google.cloud.backupdr.v1beta.DeleteRestoreVerificationPlanRequest;
 import com.google.cloud.backupdr.v1beta.FetchBackupPlanAssociationsForResourceTypeRequest;
 import com.google.cloud.backupdr.v1beta.FetchBackupPlanAssociationsForResourceTypeResponse;
 import com.google.cloud.backupdr.v1beta.FetchBackupsForResourceTypeRequest;
@@ -79,6 +89,10 @@ import com.google.cloud.backupdr.v1beta.GetBindingMatchingResourceRequest;
 import com.google.cloud.backupdr.v1beta.GetDataSourceReferenceRequest;
 import com.google.cloud.backupdr.v1beta.GetDataSourceRequest;
 import com.google.cloud.backupdr.v1beta.GetManagementServerRequest;
+import com.google.cloud.backupdr.v1beta.GetRestoreTemplateExecutionRequest;
+import com.google.cloud.backupdr.v1beta.GetRestoreTemplateRequest;
+import com.google.cloud.backupdr.v1beta.GetRestoreVerificationPlanAssociationRequest;
+import com.google.cloud.backupdr.v1beta.GetRestoreVerificationPlanRequest;
 import com.google.cloud.backupdr.v1beta.InitializeServiceRequest;
 import com.google.cloud.backupdr.v1beta.InitializeServiceResponse;
 import com.google.cloud.backupdr.v1beta.InitiateDeleteAutoProtectionPolicyBindingRequest;
@@ -106,17 +120,35 @@ import com.google.cloud.backupdr.v1beta.ListDataSourcesRequest;
 import com.google.cloud.backupdr.v1beta.ListDataSourcesResponse;
 import com.google.cloud.backupdr.v1beta.ListManagementServersRequest;
 import com.google.cloud.backupdr.v1beta.ListManagementServersResponse;
+import com.google.cloud.backupdr.v1beta.ListRestoreTemplateExecutionsRequest;
+import com.google.cloud.backupdr.v1beta.ListRestoreTemplateExecutionsResponse;
+import com.google.cloud.backupdr.v1beta.ListRestoreTemplatesRequest;
+import com.google.cloud.backupdr.v1beta.ListRestoreTemplatesResponse;
+import com.google.cloud.backupdr.v1beta.ListRestoreVerificationPlanAssociationsRequest;
+import com.google.cloud.backupdr.v1beta.ListRestoreVerificationPlanAssociationsResponse;
+import com.google.cloud.backupdr.v1beta.ListRestoreVerificationPlansRequest;
+import com.google.cloud.backupdr.v1beta.ListRestoreVerificationPlansResponse;
 import com.google.cloud.backupdr.v1beta.ManagementServer;
 import com.google.cloud.backupdr.v1beta.OperationMetadata;
 import com.google.cloud.backupdr.v1beta.RestoreBackupRequest;
 import com.google.cloud.backupdr.v1beta.RestoreBackupResponse;
+import com.google.cloud.backupdr.v1beta.RestoreTemplate;
+import com.google.cloud.backupdr.v1beta.RestoreTemplateExecution;
+import com.google.cloud.backupdr.v1beta.RestoreVerificationPlan;
+import com.google.cloud.backupdr.v1beta.RestoreVerificationPlanAssociation;
+import com.google.cloud.backupdr.v1beta.RunRestoreTemplateRequest;
+import com.google.cloud.backupdr.v1beta.RunRestoreTemplateResponse;
 import com.google.cloud.backupdr.v1beta.TriggerBackupRequest;
+import com.google.cloud.backupdr.v1beta.TriggerRestoreCleanupRequest;
+import com.google.cloud.backupdr.v1beta.TriggerRestoreVerificationRequest;
+import com.google.cloud.backupdr.v1beta.TriggerRestoreVerificationResponse;
 import com.google.cloud.backupdr.v1beta.UpdateAutoProtectionPolicyRequest;
 import com.google.cloud.backupdr.v1beta.UpdateBackupPlanAssociationRequest;
 import com.google.cloud.backupdr.v1beta.UpdateBackupPlanRequest;
 import com.google.cloud.backupdr.v1beta.UpdateBackupRequest;
 import com.google.cloud.backupdr.v1beta.UpdateBackupVaultRequest;
 import com.google.cloud.backupdr.v1beta.UpdateDataSourceRequest;
+import com.google.cloud.backupdr.v1beta.UpdateRestoreTemplateRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -186,6 +218,198 @@ public abstract class BackupDRStub implements BackgroundResource {
 
   public UnaryCallable<DeleteManagementServerRequest, Operation> deleteManagementServerCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteManagementServerCallable()");
+  }
+
+  public OperationCallable<CreateRestoreTemplateRequest, RestoreTemplate, OperationMetadata>
+      createRestoreTemplateOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: createRestoreTemplateOperationCallable()");
+  }
+
+  public UnaryCallable<CreateRestoreTemplateRequest, Operation> createRestoreTemplateCallable() {
+    throw new UnsupportedOperationException("Not implemented: createRestoreTemplateCallable()");
+  }
+
+  public UnaryCallable<GetRestoreTemplateRequest, RestoreTemplate> getRestoreTemplateCallable() {
+    throw new UnsupportedOperationException("Not implemented: getRestoreTemplateCallable()");
+  }
+
+  public UnaryCallable<ListRestoreTemplatesRequest, ListRestoreTemplatesPagedResponse>
+      listRestoreTemplatesPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listRestoreTemplatesPagedCallable()");
+  }
+
+  public UnaryCallable<ListRestoreTemplatesRequest, ListRestoreTemplatesResponse>
+      listRestoreTemplatesCallable() {
+    throw new UnsupportedOperationException("Not implemented: listRestoreTemplatesCallable()");
+  }
+
+  public OperationCallable<UpdateRestoreTemplateRequest, RestoreTemplate, OperationMetadata>
+      updateRestoreTemplateOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: updateRestoreTemplateOperationCallable()");
+  }
+
+  public UnaryCallable<UpdateRestoreTemplateRequest, Operation> updateRestoreTemplateCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateRestoreTemplateCallable()");
+  }
+
+  public OperationCallable<DeleteRestoreTemplateRequest, Empty, OperationMetadata>
+      deleteRestoreTemplateOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: deleteRestoreTemplateOperationCallable()");
+  }
+
+  public UnaryCallable<DeleteRestoreTemplateRequest, Operation> deleteRestoreTemplateCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteRestoreTemplateCallable()");
+  }
+
+  public OperationCallable<RunRestoreTemplateRequest, RunRestoreTemplateResponse, OperationMetadata>
+      runRestoreTemplateOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: runRestoreTemplateOperationCallable()");
+  }
+
+  public UnaryCallable<RunRestoreTemplateRequest, Operation> runRestoreTemplateCallable() {
+    throw new UnsupportedOperationException("Not implemented: runRestoreTemplateCallable()");
+  }
+
+  public UnaryCallable<GetRestoreTemplateExecutionRequest, RestoreTemplateExecution>
+      getRestoreTemplateExecutionCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: getRestoreTemplateExecutionCallable()");
+  }
+
+  public UnaryCallable<
+          ListRestoreTemplateExecutionsRequest, ListRestoreTemplateExecutionsPagedResponse>
+      listRestoreTemplateExecutionsPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listRestoreTemplateExecutionsPagedCallable()");
+  }
+
+  public UnaryCallable<ListRestoreTemplateExecutionsRequest, ListRestoreTemplateExecutionsResponse>
+      listRestoreTemplateExecutionsCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listRestoreTemplateExecutionsCallable()");
+  }
+
+  public OperationCallable<
+          TriggerRestoreCleanupRequest, RestoreTemplateExecution, OperationMetadata>
+      triggerRestoreCleanupOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: triggerRestoreCleanupOperationCallable()");
+  }
+
+  public UnaryCallable<TriggerRestoreCleanupRequest, Operation> triggerRestoreCleanupCallable() {
+    throw new UnsupportedOperationException("Not implemented: triggerRestoreCleanupCallable()");
+  }
+
+  public OperationCallable<
+          CreateRestoreVerificationPlanRequest, RestoreVerificationPlan, OperationMetadata>
+      createRestoreVerificationPlanOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: createRestoreVerificationPlanOperationCallable()");
+  }
+
+  public UnaryCallable<CreateRestoreVerificationPlanRequest, Operation>
+      createRestoreVerificationPlanCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: createRestoreVerificationPlanCallable()");
+  }
+
+  public OperationCallable<
+          CreateRestoreVerificationPlanAssociationRequest,
+          RestoreVerificationPlanAssociation,
+          OperationMetadata>
+      createRestoreVerificationPlanAssociationOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: createRestoreVerificationPlanAssociationOperationCallable()");
+  }
+
+  public UnaryCallable<CreateRestoreVerificationPlanAssociationRequest, Operation>
+      createRestoreVerificationPlanAssociationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: createRestoreVerificationPlanAssociationCallable()");
+  }
+
+  public UnaryCallable<
+          GetRestoreVerificationPlanAssociationRequest, RestoreVerificationPlanAssociation>
+      getRestoreVerificationPlanAssociationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: getRestoreVerificationPlanAssociationCallable()");
+  }
+
+  public UnaryCallable<
+          ListRestoreVerificationPlanAssociationsRequest,
+          ListRestoreVerificationPlanAssociationsPagedResponse>
+      listRestoreVerificationPlanAssociationsPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listRestoreVerificationPlanAssociationsPagedCallable()");
+  }
+
+  public UnaryCallable<
+          ListRestoreVerificationPlanAssociationsRequest,
+          ListRestoreVerificationPlanAssociationsResponse>
+      listRestoreVerificationPlanAssociationsCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listRestoreVerificationPlanAssociationsCallable()");
+  }
+
+  public OperationCallable<
+          DeleteRestoreVerificationPlanAssociationRequest, Empty, OperationMetadata>
+      deleteRestoreVerificationPlanAssociationOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: deleteRestoreVerificationPlanAssociationOperationCallable()");
+  }
+
+  public UnaryCallable<DeleteRestoreVerificationPlanAssociationRequest, Operation>
+      deleteRestoreVerificationPlanAssociationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: deleteRestoreVerificationPlanAssociationCallable()");
+  }
+
+  public OperationCallable<
+          TriggerRestoreVerificationRequest, TriggerRestoreVerificationResponse, OperationMetadata>
+      triggerRestoreVerificationOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: triggerRestoreVerificationOperationCallable()");
+  }
+
+  public UnaryCallable<TriggerRestoreVerificationRequest, Operation>
+      triggerRestoreVerificationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: triggerRestoreVerificationCallable()");
+  }
+
+  public UnaryCallable<GetRestoreVerificationPlanRequest, RestoreVerificationPlan>
+      getRestoreVerificationPlanCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: getRestoreVerificationPlanCallable()");
+  }
+
+  public UnaryCallable<
+          ListRestoreVerificationPlansRequest, ListRestoreVerificationPlansPagedResponse>
+      listRestoreVerificationPlansPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listRestoreVerificationPlansPagedCallable()");
+  }
+
+  public UnaryCallable<ListRestoreVerificationPlansRequest, ListRestoreVerificationPlansResponse>
+      listRestoreVerificationPlansCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listRestoreVerificationPlansCallable()");
+  }
+
+  public OperationCallable<DeleteRestoreVerificationPlanRequest, Empty, OperationMetadata>
+      deleteRestoreVerificationPlanOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: deleteRestoreVerificationPlanOperationCallable()");
+  }
+
+  public UnaryCallable<DeleteRestoreVerificationPlanRequest, Operation>
+      deleteRestoreVerificationPlanCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: deleteRestoreVerificationPlanCallable()");
   }
 
   public OperationCallable<CreateBackupVaultRequest, BackupVault, OperationMetadata>

@@ -103,6 +103,7 @@ public class OpenTelemetryApiTracerTest extends AbstractMockServerTest {
 
   @AfterClass
   public static void closeOpenTelemetry() {
+    SpannerOptions.resetActiveTracingFramework();
     if (openTelemetry != null) {
       openTelemetry.close();
     }

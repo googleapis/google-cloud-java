@@ -30,7 +30,7 @@ public interface FileSearchResultOrBuilder
    *
    *
    * <pre>
-   * File system path relative to the workspace root.
+   * File system path relative to the file tree root.
    * </pre>
    *
    * <code>string path = 1;</code>
@@ -43,7 +43,7 @@ public interface FileSearchResultOrBuilder
    *
    *
    * <pre>
-   * File system path relative to the workspace root.
+   * File system path relative to the file tree root.
    * </pre>
    *
    * <code>string path = 1;</code>

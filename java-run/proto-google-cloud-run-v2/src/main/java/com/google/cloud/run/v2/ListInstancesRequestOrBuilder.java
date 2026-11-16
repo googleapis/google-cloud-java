@@ -31,8 +31,6 @@ public interface ListInstancesRequestOrBuilder
    *
    * <pre>
    * Required. The location and project to list resources on.
-   * Format: projects/{project}/locations/{location}, where {project} can be
-   * project id or number.
    * </pre>
    *
    * <code>
@@ -48,8 +46,6 @@ public interface ListInstancesRequestOrBuilder
    *
    * <pre>
    * Required. The location and project to list resources on.
-   * Format: projects/{project}/locations/{location}, where {project} can be
-   * project id or number.
    * </pre>
    *
    * <code>

@@ -145,7 +145,11 @@ import org.jspecify.annotations.Nullable;
 public class CmekConfigServiceStubSettings extends StubSettings<CmekConfigServiceStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
-      ImmutableList.<String>builder().add("https://www.googleapis.com/auth/cloud-platform").build();
+      ImmutableList.<String>builder()
+          .add("https://www.googleapis.com/auth/cloud-platform")
+          .add("https://www.googleapis.com/auth/discoveryengine.readwrite")
+          .add("https://www.googleapis.com/auth/discoveryengine.serving.readwrite")
+          .build();
 
   private final UnaryCallSettings<UpdateCmekConfigRequest, Operation> updateCmekConfigSettings;
   private final OperationCallSettings<UpdateCmekConfigRequest, CmekConfig, UpdateCmekConfigMetadata>

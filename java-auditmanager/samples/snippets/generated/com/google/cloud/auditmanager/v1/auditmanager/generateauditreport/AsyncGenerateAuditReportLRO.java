@@ -22,6 +22,8 @@ import com.google.cloud.auditmanager.v1.AuditManagerClient;
 import com.google.cloud.auditmanager.v1.AuditReport;
 import com.google.cloud.auditmanager.v1.GenerateAuditReportRequest;
 import com.google.cloud.auditmanager.v1.OperationMetadata;
+import com.google.cloud.auditmanager.v1.ParameterOverrides;
+import java.util.HashMap;
 
 public class AsyncGenerateAuditReportLRO {
 
@@ -41,6 +43,7 @@ public class AsyncGenerateAuditReportLRO {
               .setScope("scope109264468")
               .setComplianceStandard("complianceStandard-1534269448")
               .setComplianceFramework("complianceFramework-1808314333")
+              .putAllParameterOverrides(new HashMap<String, ParameterOverrides>())
               .setValidateOnly(true)
               .build();
       OperationFuture<AuditReport, OperationMetadata> future =

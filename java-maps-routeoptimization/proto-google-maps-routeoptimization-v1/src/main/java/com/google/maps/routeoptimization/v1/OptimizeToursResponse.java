@@ -134,7 +134,10 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Number of mandatory shipments skipped.
+     * Number of high priority shipments skipped.
+     * High priority shipments are those with an unset
+     * [Shipment.penalty_cost][google.maps.routeoptimization.v1.Shipment.penalty_cost]
+     * field.
      * </pre>
      *
      * <code>int32 skipped_mandatory_shipment_count = 2;</code>
@@ -490,7 +493,10 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Number of mandatory shipments skipped.
+     * Number of high priority shipments skipped.
+     * High priority shipments are those with an unset
+     * [Shipment.penalty_cost][google.maps.routeoptimization.v1.Shipment.penalty_cost]
+     * field.
      * </pre>
      *
      * <code>int32 skipped_mandatory_shipment_count = 2;</code>
@@ -1594,7 +1600,10 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * Number of mandatory shipments skipped.
+       * Number of high priority shipments skipped.
+       * High priority shipments are those with an unset
+       * [Shipment.penalty_cost][google.maps.routeoptimization.v1.Shipment.penalty_cost]
+       * field.
        * </pre>
        *
        * <code>int32 skipped_mandatory_shipment_count = 2;</code>
@@ -1610,7 +1619,10 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * Number of mandatory shipments skipped.
+       * Number of high priority shipments skipped.
+       * High priority shipments are those with an unset
+       * [Shipment.penalty_cost][google.maps.routeoptimization.v1.Shipment.penalty_cost]
+       * field.
        * </pre>
        *
        * <code>int32 skipped_mandatory_shipment_count = 2;</code>
@@ -1630,7 +1642,10 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * Number of mandatory shipments skipped.
+       * Number of high priority shipments skipped.
+       * High priority shipments are those with an unset
+       * [Shipment.penalty_cost][google.maps.routeoptimization.v1.Shipment.penalty_cost]
+       * field.
        * </pre>
        *
        * <code>int32 skipped_mandatory_shipment_count = 2;</code>

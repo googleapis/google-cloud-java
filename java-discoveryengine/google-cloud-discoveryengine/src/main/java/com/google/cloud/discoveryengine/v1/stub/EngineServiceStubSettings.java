@@ -62,6 +62,9 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import java.io.IOException;
@@ -154,7 +157,11 @@ import org.jspecify.annotations.Nullable;
 public class EngineServiceStubSettings extends StubSettings<EngineServiceStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
-      ImmutableList.<String>builder().add("https://www.googleapis.com/auth/cloud-platform").build();
+      ImmutableList.<String>builder()
+          .add("https://www.googleapis.com/auth/cloud-platform")
+          .add("https://www.googleapis.com/auth/discoveryengine.readwrite")
+          .add("https://www.googleapis.com/auth/discoveryengine.serving.readwrite")
+          .build();
 
   private final UnaryCallSettings<CreateEngineRequest, Operation> createEngineSettings;
   private final OperationCallSettings<CreateEngineRequest, Engine, CreateEngineMetadata>
@@ -166,6 +173,8 @@ public class EngineServiceStubSettings extends StubSettings<EngineServiceStubSet
   private final UnaryCallSettings<GetEngineRequest, Engine> getEngineSettings;
   private final PagedCallSettings<ListEnginesRequest, ListEnginesResponse, ListEnginesPagedResponse>
       listEnginesSettings;
+  private final UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings;
+  private final UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings;
 
   private static final PagedListDescriptor<ListEnginesRequest, ListEnginesResponse, Engine>
       LIST_ENGINES_PAGE_STR_DESC =
@@ -254,6 +263,16 @@ public class EngineServiceStubSettings extends StubSettings<EngineServiceStubSet
   public PagedCallSettings<ListEnginesRequest, ListEnginesResponse, ListEnginesPagedResponse>
       listEnginesSettings() {
     return listEnginesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getIamPolicy. */
+  public UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings() {
+    return getIamPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to setIamPolicy. */
+  public UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings() {
+    return setIamPolicySettings;
   }
 
   public EngineServiceStub createStub() throws IOException {
@@ -374,6 +393,8 @@ public class EngineServiceStubSettings extends StubSettings<EngineServiceStubSet
     updateEngineSettings = settingsBuilder.updateEngineSettings().build();
     getEngineSettings = settingsBuilder.getEngineSettings().build();
     listEnginesSettings = settingsBuilder.listEnginesSettings().build();
+    getIamPolicySettings = settingsBuilder.getIamPolicySettings().build();
+    setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
   }
 
   @Override
@@ -399,6 +420,8 @@ public class EngineServiceStubSettings extends StubSettings<EngineServiceStubSet
     private final PagedCallSettings.Builder<
             ListEnginesRequest, ListEnginesResponse, ListEnginesPagedResponse>
         listEnginesSettings;
+    private final UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings;
+    private final UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -433,6 +456,8 @@ public class EngineServiceStubSettings extends StubSettings<EngineServiceStubSet
       updateEngineSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getEngineSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listEnginesSettings = PagedCallSettings.newBuilder(LIST_ENGINES_PAGE_STR_FACT);
+      getIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -440,7 +465,9 @@ public class EngineServiceStubSettings extends StubSettings<EngineServiceStubSet
               deleteEngineSettings,
               updateEngineSettings,
               getEngineSettings,
-              listEnginesSettings);
+              listEnginesSettings,
+              getIamPolicySettings,
+              setIamPolicySettings);
       initDefaults(this);
     }
 
@@ -454,6 +481,8 @@ public class EngineServiceStubSettings extends StubSettings<EngineServiceStubSet
       updateEngineSettings = settings.updateEngineSettings.toBuilder();
       getEngineSettings = settings.getEngineSettings.toBuilder();
       listEnginesSettings = settings.listEnginesSettings.toBuilder();
+      getIamPolicySettings = settings.getIamPolicySettings.toBuilder();
+      setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -461,7 +490,9 @@ public class EngineServiceStubSettings extends StubSettings<EngineServiceStubSet
               deleteEngineSettings,
               updateEngineSettings,
               getEngineSettings,
-              listEnginesSettings);
+              listEnginesSettings,
+              getIamPolicySettings,
+              setIamPolicySettings);
     }
 
     private static Builder createDefault() {
@@ -511,6 +542,16 @@ public class EngineServiceStubSettings extends StubSettings<EngineServiceStubSet
 
       builder
           .listEnginesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getIamPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .setIamPolicySettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -617,6 +658,16 @@ public class EngineServiceStubSettings extends StubSettings<EngineServiceStubSet
             ListEnginesRequest, ListEnginesResponse, ListEnginesPagedResponse>
         listEnginesSettings() {
       return listEnginesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getIamPolicy. */
+    public UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings() {
+      return getIamPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to setIamPolicy. */
+    public UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings() {
+      return setIamPolicySettings;
     }
 
     @Override

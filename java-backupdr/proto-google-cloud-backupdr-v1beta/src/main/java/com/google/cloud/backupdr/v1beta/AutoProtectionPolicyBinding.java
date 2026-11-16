@@ -280,12 +280,14 @@ public final class AutoProtectionPolicyBinding extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Identifier. The resource name of the AutoProtectionPolicyBinding.
-   * Format:
+   * Output only. Identifier. The resource name of the
+   * AutoProtectionPolicyBinding. Format:
    * `projects/{project}/locations/{location}/autoProtectionPolicies/{auto_protection_policy}/bindings/{binding}`
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IDENTIFIER];
+   * </code>
    *
    * @return The name.
    */
@@ -306,12 +308,14 @@ public final class AutoProtectionPolicyBinding extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Identifier. The resource name of the AutoProtectionPolicyBinding.
-   * Format:
+   * Output only. Identifier. The resource name of the
+   * AutoProtectionPolicyBinding. Format:
    * `projects/{project}/locations/{location}/autoProtectionPolicies/{auto_protection_policy}/bindings/{binding}`
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IDENTIFIER];
+   * </code>
    *
    * @return The bytes for name.
    */
@@ -337,7 +341,8 @@ public final class AutoProtectionPolicyBinding extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Optional. A description of the binding.
+   * Optional. A description of the binding. The description must be at most
+   * 2048 characters.
    * </pre>
    *
    * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -361,7 +366,8 @@ public final class AutoProtectionPolicyBinding extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Optional. A description of the binding.
+   * Optional. A description of the binding. The description must be at most
+   * 2048 characters.
    * </pre>
    *
    * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -659,11 +665,11 @@ public final class AutoProtectionPolicyBinding extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Optional. Output only. The etag for the binding.
+   * Output only. The etag for the binding.
    * If this is provided on update, it must match the server's etag.
    * </pre>
    *
-   * <code>string etag = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string etag = 8;</code>
    *
    * @return The etag.
    */
@@ -684,11 +690,11 @@ public final class AutoProtectionPolicyBinding extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Optional. Output only. The etag for the binding.
+   * Output only. The etag for the binding.
    * If this is provided on update, it must match the server's etag.
    * </pre>
    *
-   * <code>string etag = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string etag = 8;</code>
    *
    * @return The bytes for etag.
    */
@@ -1243,12 +1249,14 @@ public final class AutoProtectionPolicyBinding extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Identifier. The resource name of the AutoProtectionPolicyBinding.
-     * Format:
+     * Output only. Identifier. The resource name of the
+     * AutoProtectionPolicyBinding. Format:
      * `projects/{project}/locations/{location}/autoProtectionPolicies/{auto_protection_policy}/bindings/{binding}`
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IDENTIFIER];
+     * </code>
      *
      * @return The name.
      */
@@ -1268,12 +1276,14 @@ public final class AutoProtectionPolicyBinding extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Identifier. The resource name of the AutoProtectionPolicyBinding.
-     * Format:
+     * Output only. Identifier. The resource name of the
+     * AutoProtectionPolicyBinding. Format:
      * `projects/{project}/locations/{location}/autoProtectionPolicies/{auto_protection_policy}/bindings/{binding}`
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IDENTIFIER];
+     * </code>
      *
      * @return The bytes for name.
      */
@@ -1293,12 +1303,14 @@ public final class AutoProtectionPolicyBinding extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Identifier. The resource name of the AutoProtectionPolicyBinding.
-     * Format:
+     * Output only. Identifier. The resource name of the
+     * AutoProtectionPolicyBinding. Format:
      * `projects/{project}/locations/{location}/autoProtectionPolicies/{auto_protection_policy}/bindings/{binding}`
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IDENTIFIER];
+     * </code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -1317,12 +1329,14 @@ public final class AutoProtectionPolicyBinding extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Identifier. The resource name of the AutoProtectionPolicyBinding.
-     * Format:
+     * Output only. Identifier. The resource name of the
+     * AutoProtectionPolicyBinding. Format:
      * `projects/{project}/locations/{location}/autoProtectionPolicies/{auto_protection_policy}/bindings/{binding}`
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IDENTIFIER];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -1337,12 +1351,14 @@ public final class AutoProtectionPolicyBinding extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Identifier. The resource name of the AutoProtectionPolicyBinding.
-     * Format:
+     * Output only. Identifier. The resource name of the
+     * AutoProtectionPolicyBinding. Format:
      * `projects/{project}/locations/{location}/autoProtectionPolicies/{auto_protection_policy}/bindings/{binding}`
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IDENTIFIER];
+     * </code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -1364,7 +1380,8 @@ public final class AutoProtectionPolicyBinding extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Optional. A description of the binding.
+     * Optional. A description of the binding. The description must be at most
+     * 2048 characters.
      * </pre>
      *
      * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1387,7 +1404,8 @@ public final class AutoProtectionPolicyBinding extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Optional. A description of the binding.
+     * Optional. A description of the binding. The description must be at most
+     * 2048 characters.
      * </pre>
      *
      * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1410,7 +1428,8 @@ public final class AutoProtectionPolicyBinding extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Optional. A description of the binding.
+     * Optional. A description of the binding. The description must be at most
+     * 2048 characters.
      * </pre>
      *
      * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1432,7 +1451,8 @@ public final class AutoProtectionPolicyBinding extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Optional. A description of the binding.
+     * Optional. A description of the binding. The description must be at most
+     * 2048 characters.
      * </pre>
      *
      * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1450,7 +1470,8 @@ public final class AutoProtectionPolicyBinding extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Optional. A description of the binding.
+     * Optional. A description of the binding. The description must be at most
+     * 2048 characters.
      * </pre>
      *
      * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2360,11 +2381,11 @@ public final class AutoProtectionPolicyBinding extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Optional. Output only. The etag for the binding.
+     * Output only. The etag for the binding.
      * If this is provided on update, it must match the server's etag.
      * </pre>
      *
-     * <code>string etag = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string etag = 8;</code>
      *
      * @return The etag.
      */
@@ -2384,11 +2405,11 @@ public final class AutoProtectionPolicyBinding extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Optional. Output only. The etag for the binding.
+     * Output only. The etag for the binding.
      * If this is provided on update, it must match the server's etag.
      * </pre>
      *
-     * <code>string etag = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string etag = 8;</code>
      *
      * @return The bytes for etag.
      */
@@ -2408,11 +2429,11 @@ public final class AutoProtectionPolicyBinding extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Optional. Output only. The etag for the binding.
+     * Output only. The etag for the binding.
      * If this is provided on update, it must match the server's etag.
      * </pre>
      *
-     * <code>string etag = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string etag = 8;</code>
      *
      * @param value The etag to set.
      * @return This builder for chaining.
@@ -2431,11 +2452,11 @@ public final class AutoProtectionPolicyBinding extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Optional. Output only. The etag for the binding.
+     * Output only. The etag for the binding.
      * If this is provided on update, it must match the server's etag.
      * </pre>
      *
-     * <code>string etag = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string etag = 8;</code>
      *
      * @return This builder for chaining.
      */
@@ -2450,11 +2471,11 @@ public final class AutoProtectionPolicyBinding extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Optional. Output only. The etag for the binding.
+     * Output only. The etag for the binding.
      * If this is provided on update, it must match the server's etag.
      * </pre>
      *
-     * <code>string etag = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string etag = 8;</code>
      *
      * @param value The bytes for etag to set.
      * @return This builder for chaining.

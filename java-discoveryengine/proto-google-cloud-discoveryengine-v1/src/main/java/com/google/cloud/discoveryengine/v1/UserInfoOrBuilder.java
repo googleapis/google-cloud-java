@@ -41,6 +41,10 @@ public interface UserInfoOrBuilder
    *
    * The field must be a UTF-8 encoded string with a length limit of 128
    * characters. Otherwise, an `INVALID_ARGUMENT` error is returned.
+   *
+   * Represents an opaque ID to the Search API. The Search API doesn't
+   * interpret the value in any way. This field is used to associate events
+   * with a user across sessions if the events are being uploaded.
    * </pre>
    *
    * <code>string user_id = 1;</code>
@@ -64,6 +68,10 @@ public interface UserInfoOrBuilder
    *
    * The field must be a UTF-8 encoded string with a length limit of 128
    * characters. Otherwise, an `INVALID_ARGUMENT` error is returned.
+   *
+   * Represents an opaque ID to the Search API. The Search API doesn't
+   * interpret the value in any way. This field is used to associate events
+   * with a user across sessions if the events are being uploaded.
    * </pre>
    *
    * <code>string user_id = 1;</code>
@@ -143,4 +151,54 @@ public interface UserInfoOrBuilder
    * @return The bytes for timeZone.
    */
   com.google.protobuf.ByteString getTimeZoneBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Precise location of the user.
+   * It is used in Custom Ranking to calculate the distance between the user and
+   * the relevant documents.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.UserInfo.PreciseLocation precise_location = 4 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the preciseLocation field is set.
+   */
+  boolean hasPreciseLocation();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Precise location of the user.
+   * It is used in Custom Ranking to calculate the distance between the user and
+   * the relevant documents.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.UserInfo.PreciseLocation precise_location = 4 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The preciseLocation.
+   */
+  com.google.cloud.discoveryengine.v1.UserInfo.PreciseLocation getPreciseLocation();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Precise location of the user.
+   * It is used in Custom Ranking to calculate the distance between the user and
+   * the relevant documents.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.UserInfo.PreciseLocation precise_location = 4 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.discoveryengine.v1.UserInfo.PreciseLocationOrBuilder
+      getPreciseLocationOrBuilder();
 }

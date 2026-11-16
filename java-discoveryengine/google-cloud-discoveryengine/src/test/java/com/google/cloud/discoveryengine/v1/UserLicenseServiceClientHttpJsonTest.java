@@ -181,6 +181,96 @@ public class UserLicenseServiceClientHttpJsonTest {
   }
 
   @Test
+  public void listLicenseConfigsUsageStatsTest() throws Exception {
+    ListLicenseConfigsUsageStatsResponse expectedResponse =
+        ListLicenseConfigsUsageStatsResponse.newBuilder()
+            .addAllLicenseConfigUsageStats(new ArrayList<LicenseConfigUsageStats>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    UserStoreName parent = UserStoreName.of("[PROJECT]", "[LOCATION]", "[USER_STORE]");
+
+    ListLicenseConfigsUsageStatsResponse actualResponse =
+        client.listLicenseConfigsUsageStats(parent);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listLicenseConfigsUsageStatsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      UserStoreName parent = UserStoreName.of("[PROJECT]", "[LOCATION]", "[USER_STORE]");
+      client.listLicenseConfigsUsageStats(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listLicenseConfigsUsageStatsTest2() throws Exception {
+    ListLicenseConfigsUsageStatsResponse expectedResponse =
+        ListLicenseConfigsUsageStatsResponse.newBuilder()
+            .addAllLicenseConfigUsageStats(new ArrayList<LicenseConfigUsageStats>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-3682/locations/location-3682/userStores/userStore-3682";
+
+    ListLicenseConfigsUsageStatsResponse actualResponse =
+        client.listLicenseConfigsUsageStats(parent);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listLicenseConfigsUsageStatsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-3682/locations/location-3682/userStores/userStore-3682";
+      client.listLicenseConfigsUsageStats(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void batchUpdateUserLicensesTest() throws Exception {
     BatchUpdateUserLicensesResponse expectedResponse =
         BatchUpdateUserLicensesResponse.newBuilder()

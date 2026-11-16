@@ -27,6 +27,8 @@ import com.google.api.gax.paging.AbstractPagedListResponse;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.common.util.concurrent.MoreExecutors;
+import com.google.protobuf.Empty;
+import com.google.protobuf.FieldMask;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -103,6 +105,151 @@ import org.jspecify.annotations.Nullable;
  *      <ul>
  *           <li><p> listLineItemCreativeAssociationsPagedCallable()
  *           <li><p> listLineItemCreativeAssociationsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateLineItemCreativeAssociation</td>
+ *      <td><p> Creates a `LineItemCreativeAssociation` object.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createLineItemCreativeAssociation(CreateLineItemCreativeAssociationRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> createLineItemCreativeAssociation(LineItemName parent, LineItemCreativeAssociation lineItemCreativeAssociation)
+ *           <li><p> createLineItemCreativeAssociation(String parent, LineItemCreativeAssociation lineItemCreativeAssociation)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createLineItemCreativeAssociationCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> BatchCreateLineItemCreativeAssociations</td>
+ *      <td><p> Creates `LineItemCreativeAssociation` objects.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> batchCreateLineItemCreativeAssociations(LineItemName parent, List&lt;CreateLineItemCreativeAssociationRequest&gt; requests)
+ *           <li><p> batchCreateLineItemCreativeAssociations(String parent, List&lt;CreateLineItemCreativeAssociationRequest&gt; requests)
+ *           <li><p> batchCreateLineItemCreativeAssociations(BatchCreateLineItemCreativeAssociationsRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> batchCreateLineItemCreativeAssociationsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateLineItemCreativeAssociation</td>
+ *      <td><p> Updates a `LineItemCreativeAssociation` object.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateLineItemCreativeAssociation(UpdateLineItemCreativeAssociationRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateLineItemCreativeAssociation(LineItemCreativeAssociation lineItemCreativeAssociation, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateLineItemCreativeAssociationCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> BatchUpdateLineItemCreativeAssociations</td>
+ *      <td><p> Batch updates `LineItemCreativeAssociation` objects.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> batchUpdateLineItemCreativeAssociations(LineItemName parent, List&lt;UpdateLineItemCreativeAssociationRequest&gt; requests)
+ *           <li><p> batchUpdateLineItemCreativeAssociations(String parent, List&lt;UpdateLineItemCreativeAssociationRequest&gt; requests)
+ *           <li><p> batchUpdateLineItemCreativeAssociations(BatchUpdateLineItemCreativeAssociationsRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> batchUpdateLineItemCreativeAssociationsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> BatchActivateLineItemCreativeAssociations</td>
+ *      <td><p> Activate a list of `LineItemCreativeAssociation` objects.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> batchActivateLineItemCreativeAssociations(BatchActivateLineItemCreativeAssociationsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> batchActivateLineItemCreativeAssociations(LineItemName parent, List&lt;String&gt; names)
+ *           <li><p> batchActivateLineItemCreativeAssociations(String parent, List&lt;String&gt; names)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> batchActivateLineItemCreativeAssociationsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> BatchDeactivateLineItemCreativeAssociations</td>
+ *      <td><p> Deactivates a list of `LineItemCreativeAssociation` objects.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> batchDeactivateLineItemCreativeAssociations(BatchDeactivateLineItemCreativeAssociationsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> batchDeactivateLineItemCreativeAssociations(LineItemName parent, List&lt;String&gt; names)
+ *           <li><p> batchDeactivateLineItemCreativeAssociations(String parent, List&lt;String&gt; names)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> batchDeactivateLineItemCreativeAssociationsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> BatchDeleteLineItemCreativeAssociations</td>
+ *      <td><p> Deletes a list of `LineItemCreativeAssociation` objects.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> batchDeleteLineItemCreativeAssociations(BatchDeleteLineItemCreativeAssociationsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> batchDeleteLineItemCreativeAssociations(LineItemName parent, List&lt;String&gt; names)
+ *           <li><p> batchDeleteLineItemCreativeAssociations(String parent, List&lt;String&gt; names)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> batchDeleteLineItemCreativeAssociationsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> PreviewLineItemCreativeAssociation</td>
+ *      <td><p> Fetch previews for the [LineItemCreativeAssociation][google.ads.admanager.v1.LineItemCreativeAssociation].</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> previewLineItemCreativeAssociation(PreviewLineItemCreativeAssociationRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> previewLineItemCreativeAssociation(LineItemCreativeAssociationName name, String siteUrl)
+ *           <li><p> previewLineItemCreativeAssociation(String name, String siteUrl)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> previewLineItemCreativeAssociationCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -539,6 +686,1157 @@ public class LineItemCreativeAssociationServiceClient implements BackgroundResou
           ListLineItemCreativeAssociationsRequest, ListLineItemCreativeAssociationsResponse>
       listLineItemCreativeAssociationsCallable() {
     return stub.listLineItemCreativeAssociationsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a `LineItemCreativeAssociation` object.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LineItemCreativeAssociationServiceClient lineItemCreativeAssociationServiceClient =
+   *     LineItemCreativeAssociationServiceClient.create()) {
+   *   LineItemName parent = LineItemName.of("[NETWORK_CODE]", "[LINE_ITEM]");
+   *   LineItemCreativeAssociation lineItemCreativeAssociation =
+   *       LineItemCreativeAssociation.newBuilder().build();
+   *   LineItemCreativeAssociation response =
+   *       lineItemCreativeAssociationServiceClient.createLineItemCreativeAssociation(
+   *           parent, lineItemCreativeAssociation);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource where this `LineItemCreativeAssociation` will be
+   *     created. Format: `networks/{network_code}/lineItems/{line_item_id}`
+   * @param lineItemCreativeAssociation Required. The `LineItemCreativeAssociation` to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final LineItemCreativeAssociation createLineItemCreativeAssociation(
+      @Nullable LineItemName parent, LineItemCreativeAssociation lineItemCreativeAssociation) {
+    CreateLineItemCreativeAssociationRequest request =
+        CreateLineItemCreativeAssociationRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setLineItemCreativeAssociation(lineItemCreativeAssociation)
+            .build();
+    return createLineItemCreativeAssociation(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a `LineItemCreativeAssociation` object.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LineItemCreativeAssociationServiceClient lineItemCreativeAssociationServiceClient =
+   *     LineItemCreativeAssociationServiceClient.create()) {
+   *   String parent = LineItemName.of("[NETWORK_CODE]", "[LINE_ITEM]").toString();
+   *   LineItemCreativeAssociation lineItemCreativeAssociation =
+   *       LineItemCreativeAssociation.newBuilder().build();
+   *   LineItemCreativeAssociation response =
+   *       lineItemCreativeAssociationServiceClient.createLineItemCreativeAssociation(
+   *           parent, lineItemCreativeAssociation);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource where this `LineItemCreativeAssociation` will be
+   *     created. Format: `networks/{network_code}/lineItems/{line_item_id}`
+   * @param lineItemCreativeAssociation Required. The `LineItemCreativeAssociation` to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final LineItemCreativeAssociation createLineItemCreativeAssociation(
+      String parent, LineItemCreativeAssociation lineItemCreativeAssociation) {
+    CreateLineItemCreativeAssociationRequest request =
+        CreateLineItemCreativeAssociationRequest.newBuilder()
+            .setParent(parent)
+            .setLineItemCreativeAssociation(lineItemCreativeAssociation)
+            .build();
+    return createLineItemCreativeAssociation(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a `LineItemCreativeAssociation` object.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LineItemCreativeAssociationServiceClient lineItemCreativeAssociationServiceClient =
+   *     LineItemCreativeAssociationServiceClient.create()) {
+   *   CreateLineItemCreativeAssociationRequest request =
+   *       CreateLineItemCreativeAssociationRequest.newBuilder()
+   *           .setParent(LineItemName.of("[NETWORK_CODE]", "[LINE_ITEM]").toString())
+   *           .setLineItemCreativeAssociation(LineItemCreativeAssociation.newBuilder().build())
+   *           .build();
+   *   LineItemCreativeAssociation response =
+   *       lineItemCreativeAssociationServiceClient.createLineItemCreativeAssociation(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final LineItemCreativeAssociation createLineItemCreativeAssociation(
+      CreateLineItemCreativeAssociationRequest request) {
+    return createLineItemCreativeAssociationCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a `LineItemCreativeAssociation` object.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LineItemCreativeAssociationServiceClient lineItemCreativeAssociationServiceClient =
+   *     LineItemCreativeAssociationServiceClient.create()) {
+   *   CreateLineItemCreativeAssociationRequest request =
+   *       CreateLineItemCreativeAssociationRequest.newBuilder()
+   *           .setParent(LineItemName.of("[NETWORK_CODE]", "[LINE_ITEM]").toString())
+   *           .setLineItemCreativeAssociation(LineItemCreativeAssociation.newBuilder().build())
+   *           .build();
+   *   ApiFuture<LineItemCreativeAssociation> future =
+   *       lineItemCreativeAssociationServiceClient
+   *           .createLineItemCreativeAssociationCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   LineItemCreativeAssociation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateLineItemCreativeAssociationRequest, LineItemCreativeAssociation>
+      createLineItemCreativeAssociationCallable() {
+    return stub.createLineItemCreativeAssociationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates `LineItemCreativeAssociation` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LineItemCreativeAssociationServiceClient lineItemCreativeAssociationServiceClient =
+   *     LineItemCreativeAssociationServiceClient.create()) {
+   *   LineItemName parent = LineItemName.of("[NETWORK_CODE]", "[LINE_ITEM]");
+   *   List<CreateLineItemCreativeAssociationRequest> requests = new ArrayList<>();
+   *   BatchCreateLineItemCreativeAssociationsResponse response =
+   *       lineItemCreativeAssociationServiceClient.batchCreateLineItemCreativeAssociations(
+   *           parent, requests);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource where `LineItemCreativeAssociations` will be
+   *     created. This request supports using the "-" character as a wildcard for resources that
+   *     span across multiple LineItem parents. Format:
+   *     `networks/{network_code}/lineItems/{line_item_id}` Format:
+   *     `networks/{network_code}/lineItems/-`
+   * @param requests Required. The `LineItemCreativeAssociation` objects to create. A maximum of 100
+   *     objects can be created in a batch.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchCreateLineItemCreativeAssociationsResponse
+      batchCreateLineItemCreativeAssociations(
+          @Nullable LineItemName parent, List<CreateLineItemCreativeAssociationRequest> requests) {
+    BatchCreateLineItemCreativeAssociationsRequest request =
+        BatchCreateLineItemCreativeAssociationsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .addAllRequests(requests)
+            .build();
+    return batchCreateLineItemCreativeAssociations(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates `LineItemCreativeAssociation` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LineItemCreativeAssociationServiceClient lineItemCreativeAssociationServiceClient =
+   *     LineItemCreativeAssociationServiceClient.create()) {
+   *   String parent = LineItemName.of("[NETWORK_CODE]", "[LINE_ITEM]").toString();
+   *   List<CreateLineItemCreativeAssociationRequest> requests = new ArrayList<>();
+   *   BatchCreateLineItemCreativeAssociationsResponse response =
+   *       lineItemCreativeAssociationServiceClient.batchCreateLineItemCreativeAssociations(
+   *           parent, requests);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource where `LineItemCreativeAssociations` will be
+   *     created. This request supports using the "-" character as a wildcard for resources that
+   *     span across multiple LineItem parents. Format:
+   *     `networks/{network_code}/lineItems/{line_item_id}` Format:
+   *     `networks/{network_code}/lineItems/-`
+   * @param requests Required. The `LineItemCreativeAssociation` objects to create. A maximum of 100
+   *     objects can be created in a batch.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchCreateLineItemCreativeAssociationsResponse
+      batchCreateLineItemCreativeAssociations(
+          String parent, List<CreateLineItemCreativeAssociationRequest> requests) {
+    BatchCreateLineItemCreativeAssociationsRequest request =
+        BatchCreateLineItemCreativeAssociationsRequest.newBuilder()
+            .setParent(parent)
+            .addAllRequests(requests)
+            .build();
+    return batchCreateLineItemCreativeAssociations(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates `LineItemCreativeAssociation` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LineItemCreativeAssociationServiceClient lineItemCreativeAssociationServiceClient =
+   *     LineItemCreativeAssociationServiceClient.create()) {
+   *   BatchCreateLineItemCreativeAssociationsRequest request =
+   *       BatchCreateLineItemCreativeAssociationsRequest.newBuilder()
+   *           .setParent(LineItemName.of("[NETWORK_CODE]", "[LINE_ITEM]").toString())
+   *           .addAllRequests(new ArrayList<CreateLineItemCreativeAssociationRequest>())
+   *           .build();
+   *   BatchCreateLineItemCreativeAssociationsResponse response =
+   *       lineItemCreativeAssociationServiceClient.batchCreateLineItemCreativeAssociations(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchCreateLineItemCreativeAssociationsResponse
+      batchCreateLineItemCreativeAssociations(
+          BatchCreateLineItemCreativeAssociationsRequest request) {
+    return batchCreateLineItemCreativeAssociationsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates `LineItemCreativeAssociation` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LineItemCreativeAssociationServiceClient lineItemCreativeAssociationServiceClient =
+   *     LineItemCreativeAssociationServiceClient.create()) {
+   *   BatchCreateLineItemCreativeAssociationsRequest request =
+   *       BatchCreateLineItemCreativeAssociationsRequest.newBuilder()
+   *           .setParent(LineItemName.of("[NETWORK_CODE]", "[LINE_ITEM]").toString())
+   *           .addAllRequests(new ArrayList<CreateLineItemCreativeAssociationRequest>())
+   *           .build();
+   *   ApiFuture<BatchCreateLineItemCreativeAssociationsResponse> future =
+   *       lineItemCreativeAssociationServiceClient
+   *           .batchCreateLineItemCreativeAssociationsCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   BatchCreateLineItemCreativeAssociationsResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          BatchCreateLineItemCreativeAssociationsRequest,
+          BatchCreateLineItemCreativeAssociationsResponse>
+      batchCreateLineItemCreativeAssociationsCallable() {
+    return stub.batchCreateLineItemCreativeAssociationsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a `LineItemCreativeAssociation` object.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LineItemCreativeAssociationServiceClient lineItemCreativeAssociationServiceClient =
+   *     LineItemCreativeAssociationServiceClient.create()) {
+   *   LineItemCreativeAssociation lineItemCreativeAssociation =
+   *       LineItemCreativeAssociation.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   LineItemCreativeAssociation response =
+   *       lineItemCreativeAssociationServiceClient.updateLineItemCreativeAssociation(
+   *           lineItemCreativeAssociation, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param lineItemCreativeAssociation Required. The `LineItemCreativeAssociation` to update.
+   *     Format: `networks/{network_code}/lineItems/{line_item_id}/creatives/{creative_id}`
+   * @param updateMask Optional. The list of fields to update.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final LineItemCreativeAssociation updateLineItemCreativeAssociation(
+      LineItemCreativeAssociation lineItemCreativeAssociation, FieldMask updateMask) {
+    UpdateLineItemCreativeAssociationRequest request =
+        UpdateLineItemCreativeAssociationRequest.newBuilder()
+            .setLineItemCreativeAssociation(lineItemCreativeAssociation)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateLineItemCreativeAssociation(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a `LineItemCreativeAssociation` object.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LineItemCreativeAssociationServiceClient lineItemCreativeAssociationServiceClient =
+   *     LineItemCreativeAssociationServiceClient.create()) {
+   *   UpdateLineItemCreativeAssociationRequest request =
+   *       UpdateLineItemCreativeAssociationRequest.newBuilder()
+   *           .setLineItemCreativeAssociation(LineItemCreativeAssociation.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   LineItemCreativeAssociation response =
+   *       lineItemCreativeAssociationServiceClient.updateLineItemCreativeAssociation(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final LineItemCreativeAssociation updateLineItemCreativeAssociation(
+      UpdateLineItemCreativeAssociationRequest request) {
+    return updateLineItemCreativeAssociationCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a `LineItemCreativeAssociation` object.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LineItemCreativeAssociationServiceClient lineItemCreativeAssociationServiceClient =
+   *     LineItemCreativeAssociationServiceClient.create()) {
+   *   UpdateLineItemCreativeAssociationRequest request =
+   *       UpdateLineItemCreativeAssociationRequest.newBuilder()
+   *           .setLineItemCreativeAssociation(LineItemCreativeAssociation.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<LineItemCreativeAssociation> future =
+   *       lineItemCreativeAssociationServiceClient
+   *           .updateLineItemCreativeAssociationCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   LineItemCreativeAssociation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateLineItemCreativeAssociationRequest, LineItemCreativeAssociation>
+      updateLineItemCreativeAssociationCallable() {
+    return stub.updateLineItemCreativeAssociationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Batch updates `LineItemCreativeAssociation` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LineItemCreativeAssociationServiceClient lineItemCreativeAssociationServiceClient =
+   *     LineItemCreativeAssociationServiceClient.create()) {
+   *   LineItemName parent = LineItemName.of("[NETWORK_CODE]", "[LINE_ITEM]");
+   *   List<UpdateLineItemCreativeAssociationRequest> requests = new ArrayList<>();
+   *   BatchUpdateLineItemCreativeAssociationsResponse response =
+   *       lineItemCreativeAssociationServiceClient.batchUpdateLineItemCreativeAssociations(
+   *           parent, requests);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource where `LineItemCreativeAssociations` will be
+   *     updated. This request supports using the "-" character as a wildcard for resources that
+   *     span across multiple LineItem parents. Format:
+   *     `networks/{network_code}/lineItems/{line_item_id}` Format:
+   *     `networks/{network_code}/lineItems/-`
+   * @param requests Required. The `LineItemCreativeAssociation` objects to update. A maximum of 100
+   *     objects can be updated in a batch.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchUpdateLineItemCreativeAssociationsResponse
+      batchUpdateLineItemCreativeAssociations(
+          @Nullable LineItemName parent, List<UpdateLineItemCreativeAssociationRequest> requests) {
+    BatchUpdateLineItemCreativeAssociationsRequest request =
+        BatchUpdateLineItemCreativeAssociationsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .addAllRequests(requests)
+            .build();
+    return batchUpdateLineItemCreativeAssociations(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Batch updates `LineItemCreativeAssociation` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LineItemCreativeAssociationServiceClient lineItemCreativeAssociationServiceClient =
+   *     LineItemCreativeAssociationServiceClient.create()) {
+   *   String parent = LineItemName.of("[NETWORK_CODE]", "[LINE_ITEM]").toString();
+   *   List<UpdateLineItemCreativeAssociationRequest> requests = new ArrayList<>();
+   *   BatchUpdateLineItemCreativeAssociationsResponse response =
+   *       lineItemCreativeAssociationServiceClient.batchUpdateLineItemCreativeAssociations(
+   *           parent, requests);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource where `LineItemCreativeAssociations` will be
+   *     updated. This request supports using the "-" character as a wildcard for resources that
+   *     span across multiple LineItem parents. Format:
+   *     `networks/{network_code}/lineItems/{line_item_id}` Format:
+   *     `networks/{network_code}/lineItems/-`
+   * @param requests Required. The `LineItemCreativeAssociation` objects to update. A maximum of 100
+   *     objects can be updated in a batch.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchUpdateLineItemCreativeAssociationsResponse
+      batchUpdateLineItemCreativeAssociations(
+          String parent, List<UpdateLineItemCreativeAssociationRequest> requests) {
+    BatchUpdateLineItemCreativeAssociationsRequest request =
+        BatchUpdateLineItemCreativeAssociationsRequest.newBuilder()
+            .setParent(parent)
+            .addAllRequests(requests)
+            .build();
+    return batchUpdateLineItemCreativeAssociations(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Batch updates `LineItemCreativeAssociation` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LineItemCreativeAssociationServiceClient lineItemCreativeAssociationServiceClient =
+   *     LineItemCreativeAssociationServiceClient.create()) {
+   *   BatchUpdateLineItemCreativeAssociationsRequest request =
+   *       BatchUpdateLineItemCreativeAssociationsRequest.newBuilder()
+   *           .setParent(LineItemName.of("[NETWORK_CODE]", "[LINE_ITEM]").toString())
+   *           .addAllRequests(new ArrayList<UpdateLineItemCreativeAssociationRequest>())
+   *           .build();
+   *   BatchUpdateLineItemCreativeAssociationsResponse response =
+   *       lineItemCreativeAssociationServiceClient.batchUpdateLineItemCreativeAssociations(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchUpdateLineItemCreativeAssociationsResponse
+      batchUpdateLineItemCreativeAssociations(
+          BatchUpdateLineItemCreativeAssociationsRequest request) {
+    return batchUpdateLineItemCreativeAssociationsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Batch updates `LineItemCreativeAssociation` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LineItemCreativeAssociationServiceClient lineItemCreativeAssociationServiceClient =
+   *     LineItemCreativeAssociationServiceClient.create()) {
+   *   BatchUpdateLineItemCreativeAssociationsRequest request =
+   *       BatchUpdateLineItemCreativeAssociationsRequest.newBuilder()
+   *           .setParent(LineItemName.of("[NETWORK_CODE]", "[LINE_ITEM]").toString())
+   *           .addAllRequests(new ArrayList<UpdateLineItemCreativeAssociationRequest>())
+   *           .build();
+   *   ApiFuture<BatchUpdateLineItemCreativeAssociationsResponse> future =
+   *       lineItemCreativeAssociationServiceClient
+   *           .batchUpdateLineItemCreativeAssociationsCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   BatchUpdateLineItemCreativeAssociationsResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          BatchUpdateLineItemCreativeAssociationsRequest,
+          BatchUpdateLineItemCreativeAssociationsResponse>
+      batchUpdateLineItemCreativeAssociationsCallable() {
+    return stub.batchUpdateLineItemCreativeAssociationsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Activate a list of `LineItemCreativeAssociation` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LineItemCreativeAssociationServiceClient lineItemCreativeAssociationServiceClient =
+   *     LineItemCreativeAssociationServiceClient.create()) {
+   *   LineItemName parent = LineItemName.of("[NETWORK_CODE]", "[LINE_ITEM]");
+   *   List<String> names = new ArrayList<>();
+   *   BatchActivateLineItemCreativeAssociationsResponse response =
+   *       lineItemCreativeAssociationServiceClient.batchActivateLineItemCreativeAssociations(
+   *           parent, names);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource where `LineItemCreativeAssociations` will be
+   *     activated. This request supports using the "-" character as a wildcard for resources that
+   *     span across multiple LineItem parents. Format:
+   *     `networks/{network_code}/lineItems/{line_item_id}` Format:
+   *     `networks/{network_code}/lineItems/-`
+   * @param names Required. The names of the `LineItemCreativeAssociation` objects to activate. A
+   *     maximum of 1000 objects can be activated in a batch. Format:
+   *     `networks/{network_code}/lineItems/{line_item_id}/creatives/{creative_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchActivateLineItemCreativeAssociationsResponse
+      batchActivateLineItemCreativeAssociations(@Nullable LineItemName parent, List<String> names) {
+    BatchActivateLineItemCreativeAssociationsRequest request =
+        BatchActivateLineItemCreativeAssociationsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .addAllNames(names)
+            .build();
+    return batchActivateLineItemCreativeAssociations(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Activate a list of `LineItemCreativeAssociation` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LineItemCreativeAssociationServiceClient lineItemCreativeAssociationServiceClient =
+   *     LineItemCreativeAssociationServiceClient.create()) {
+   *   String parent = LineItemName.of("[NETWORK_CODE]", "[LINE_ITEM]").toString();
+   *   List<String> names = new ArrayList<>();
+   *   BatchActivateLineItemCreativeAssociationsResponse response =
+   *       lineItemCreativeAssociationServiceClient.batchActivateLineItemCreativeAssociations(
+   *           parent, names);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource where `LineItemCreativeAssociations` will be
+   *     activated. This request supports using the "-" character as a wildcard for resources that
+   *     span across multiple LineItem parents. Format:
+   *     `networks/{network_code}/lineItems/{line_item_id}` Format:
+   *     `networks/{network_code}/lineItems/-`
+   * @param names Required. The names of the `LineItemCreativeAssociation` objects to activate. A
+   *     maximum of 1000 objects can be activated in a batch. Format:
+   *     `networks/{network_code}/lineItems/{line_item_id}/creatives/{creative_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchActivateLineItemCreativeAssociationsResponse
+      batchActivateLineItemCreativeAssociations(String parent, List<String> names) {
+    BatchActivateLineItemCreativeAssociationsRequest request =
+        BatchActivateLineItemCreativeAssociationsRequest.newBuilder()
+            .setParent(parent)
+            .addAllNames(names)
+            .build();
+    return batchActivateLineItemCreativeAssociations(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Activate a list of `LineItemCreativeAssociation` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LineItemCreativeAssociationServiceClient lineItemCreativeAssociationServiceClient =
+   *     LineItemCreativeAssociationServiceClient.create()) {
+   *   BatchActivateLineItemCreativeAssociationsRequest request =
+   *       BatchActivateLineItemCreativeAssociationsRequest.newBuilder()
+   *           .setParent(LineItemName.of("[NETWORK_CODE]", "[LINE_ITEM]").toString())
+   *           .addAllNames(new ArrayList<String>())
+   *           .build();
+   *   BatchActivateLineItemCreativeAssociationsResponse response =
+   *       lineItemCreativeAssociationServiceClient.batchActivateLineItemCreativeAssociations(
+   *           request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchActivateLineItemCreativeAssociationsResponse
+      batchActivateLineItemCreativeAssociations(
+          BatchActivateLineItemCreativeAssociationsRequest request) {
+    return batchActivateLineItemCreativeAssociationsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Activate a list of `LineItemCreativeAssociation` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LineItemCreativeAssociationServiceClient lineItemCreativeAssociationServiceClient =
+   *     LineItemCreativeAssociationServiceClient.create()) {
+   *   BatchActivateLineItemCreativeAssociationsRequest request =
+   *       BatchActivateLineItemCreativeAssociationsRequest.newBuilder()
+   *           .setParent(LineItemName.of("[NETWORK_CODE]", "[LINE_ITEM]").toString())
+   *           .addAllNames(new ArrayList<String>())
+   *           .build();
+   *   ApiFuture<BatchActivateLineItemCreativeAssociationsResponse> future =
+   *       lineItemCreativeAssociationServiceClient
+   *           .batchActivateLineItemCreativeAssociationsCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   BatchActivateLineItemCreativeAssociationsResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          BatchActivateLineItemCreativeAssociationsRequest,
+          BatchActivateLineItemCreativeAssociationsResponse>
+      batchActivateLineItemCreativeAssociationsCallable() {
+    return stub.batchActivateLineItemCreativeAssociationsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deactivates a list of `LineItemCreativeAssociation` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LineItemCreativeAssociationServiceClient lineItemCreativeAssociationServiceClient =
+   *     LineItemCreativeAssociationServiceClient.create()) {
+   *   LineItemName parent = LineItemName.of("[NETWORK_CODE]", "[LINE_ITEM]");
+   *   List<String> names = new ArrayList<>();
+   *   BatchDeactivateLineItemCreativeAssociationsResponse response =
+   *       lineItemCreativeAssociationServiceClient.batchDeactivateLineItemCreativeAssociations(
+   *           parent, names);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource where `LineItemCreativeAssociations` will be
+   *     deactivated. This request supports using the "-" character as a wildcard for resources that
+   *     span across multiple LineItem parents. Format:
+   *     `networks/{network_code}/lineItems/{line_item_id}` Format:
+   *     `networks/{network_code}/lineItems/-`
+   * @param names Required. The names of the `LineItemCreativeAssociation` objects to deactivate. A
+   *     maximum of 1000 objects can be deactivated in a batch. Format:
+   *     `networks/{network_code}/lineItems/{line_item_id}/creatives/{creative_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchDeactivateLineItemCreativeAssociationsResponse
+      batchDeactivateLineItemCreativeAssociations(
+          @Nullable LineItemName parent, List<String> names) {
+    BatchDeactivateLineItemCreativeAssociationsRequest request =
+        BatchDeactivateLineItemCreativeAssociationsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .addAllNames(names)
+            .build();
+    return batchDeactivateLineItemCreativeAssociations(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deactivates a list of `LineItemCreativeAssociation` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LineItemCreativeAssociationServiceClient lineItemCreativeAssociationServiceClient =
+   *     LineItemCreativeAssociationServiceClient.create()) {
+   *   String parent = LineItemName.of("[NETWORK_CODE]", "[LINE_ITEM]").toString();
+   *   List<String> names = new ArrayList<>();
+   *   BatchDeactivateLineItemCreativeAssociationsResponse response =
+   *       lineItemCreativeAssociationServiceClient.batchDeactivateLineItemCreativeAssociations(
+   *           parent, names);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource where `LineItemCreativeAssociations` will be
+   *     deactivated. This request supports using the "-" character as a wildcard for resources that
+   *     span across multiple LineItem parents. Format:
+   *     `networks/{network_code}/lineItems/{line_item_id}` Format:
+   *     `networks/{network_code}/lineItems/-`
+   * @param names Required. The names of the `LineItemCreativeAssociation` objects to deactivate. A
+   *     maximum of 1000 objects can be deactivated in a batch. Format:
+   *     `networks/{network_code}/lineItems/{line_item_id}/creatives/{creative_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchDeactivateLineItemCreativeAssociationsResponse
+      batchDeactivateLineItemCreativeAssociations(String parent, List<String> names) {
+    BatchDeactivateLineItemCreativeAssociationsRequest request =
+        BatchDeactivateLineItemCreativeAssociationsRequest.newBuilder()
+            .setParent(parent)
+            .addAllNames(names)
+            .build();
+    return batchDeactivateLineItemCreativeAssociations(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deactivates a list of `LineItemCreativeAssociation` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LineItemCreativeAssociationServiceClient lineItemCreativeAssociationServiceClient =
+   *     LineItemCreativeAssociationServiceClient.create()) {
+   *   BatchDeactivateLineItemCreativeAssociationsRequest request =
+   *       BatchDeactivateLineItemCreativeAssociationsRequest.newBuilder()
+   *           .setParent(LineItemName.of("[NETWORK_CODE]", "[LINE_ITEM]").toString())
+   *           .addAllNames(new ArrayList<String>())
+   *           .build();
+   *   BatchDeactivateLineItemCreativeAssociationsResponse response =
+   *       lineItemCreativeAssociationServiceClient.batchDeactivateLineItemCreativeAssociations(
+   *           request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchDeactivateLineItemCreativeAssociationsResponse
+      batchDeactivateLineItemCreativeAssociations(
+          BatchDeactivateLineItemCreativeAssociationsRequest request) {
+    return batchDeactivateLineItemCreativeAssociationsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deactivates a list of `LineItemCreativeAssociation` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LineItemCreativeAssociationServiceClient lineItemCreativeAssociationServiceClient =
+   *     LineItemCreativeAssociationServiceClient.create()) {
+   *   BatchDeactivateLineItemCreativeAssociationsRequest request =
+   *       BatchDeactivateLineItemCreativeAssociationsRequest.newBuilder()
+   *           .setParent(LineItemName.of("[NETWORK_CODE]", "[LINE_ITEM]").toString())
+   *           .addAllNames(new ArrayList<String>())
+   *           .build();
+   *   ApiFuture<BatchDeactivateLineItemCreativeAssociationsResponse> future =
+   *       lineItemCreativeAssociationServiceClient
+   *           .batchDeactivateLineItemCreativeAssociationsCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   BatchDeactivateLineItemCreativeAssociationsResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          BatchDeactivateLineItemCreativeAssociationsRequest,
+          BatchDeactivateLineItemCreativeAssociationsResponse>
+      batchDeactivateLineItemCreativeAssociationsCallable() {
+    return stub.batchDeactivateLineItemCreativeAssociationsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a list of `LineItemCreativeAssociation` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LineItemCreativeAssociationServiceClient lineItemCreativeAssociationServiceClient =
+   *     LineItemCreativeAssociationServiceClient.create()) {
+   *   LineItemName parent = LineItemName.of("[NETWORK_CODE]", "[LINE_ITEM]");
+   *   List<String> names = new ArrayList<>();
+   *   lineItemCreativeAssociationServiceClient.batchDeleteLineItemCreativeAssociations(
+   *       parent, names);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource where `LineItemCreativeAssociations` will be
+   *     deleted. This request supports using the "-" character as a wildcard for resources that
+   *     span across multiple LineItem parents. Format:
+   *     `networks/{network_code}/lineItems/{line_item_id}` Format:
+   *     `networks/{network_code}/lineItems/-`
+   * @param names Required. The names of the `LineItemCreativeAssociation` objects to delete. A
+   *     maximum of 1000 objects can be deleted in a batch. Format:
+   *     `networks/{network_code}/lineItems/{line_item_id}/creatives/{creative_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void batchDeleteLineItemCreativeAssociations(
+      @Nullable LineItemName parent, List<String> names) {
+    BatchDeleteLineItemCreativeAssociationsRequest request =
+        BatchDeleteLineItemCreativeAssociationsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .addAllNames(names)
+            .build();
+    batchDeleteLineItemCreativeAssociations(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a list of `LineItemCreativeAssociation` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LineItemCreativeAssociationServiceClient lineItemCreativeAssociationServiceClient =
+   *     LineItemCreativeAssociationServiceClient.create()) {
+   *   String parent = LineItemName.of("[NETWORK_CODE]", "[LINE_ITEM]").toString();
+   *   List<String> names = new ArrayList<>();
+   *   lineItemCreativeAssociationServiceClient.batchDeleteLineItemCreativeAssociations(
+   *       parent, names);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource where `LineItemCreativeAssociations` will be
+   *     deleted. This request supports using the "-" character as a wildcard for resources that
+   *     span across multiple LineItem parents. Format:
+   *     `networks/{network_code}/lineItems/{line_item_id}` Format:
+   *     `networks/{network_code}/lineItems/-`
+   * @param names Required. The names of the `LineItemCreativeAssociation` objects to delete. A
+   *     maximum of 1000 objects can be deleted in a batch. Format:
+   *     `networks/{network_code}/lineItems/{line_item_id}/creatives/{creative_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void batchDeleteLineItemCreativeAssociations(String parent, List<String> names) {
+    BatchDeleteLineItemCreativeAssociationsRequest request =
+        BatchDeleteLineItemCreativeAssociationsRequest.newBuilder()
+            .setParent(parent)
+            .addAllNames(names)
+            .build();
+    batchDeleteLineItemCreativeAssociations(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a list of `LineItemCreativeAssociation` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LineItemCreativeAssociationServiceClient lineItemCreativeAssociationServiceClient =
+   *     LineItemCreativeAssociationServiceClient.create()) {
+   *   BatchDeleteLineItemCreativeAssociationsRequest request =
+   *       BatchDeleteLineItemCreativeAssociationsRequest.newBuilder()
+   *           .setParent(LineItemName.of("[NETWORK_CODE]", "[LINE_ITEM]").toString())
+   *           .addAllNames(new ArrayList<String>())
+   *           .build();
+   *   lineItemCreativeAssociationServiceClient.batchDeleteLineItemCreativeAssociations(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void batchDeleteLineItemCreativeAssociations(
+      BatchDeleteLineItemCreativeAssociationsRequest request) {
+    batchDeleteLineItemCreativeAssociationsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a list of `LineItemCreativeAssociation` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LineItemCreativeAssociationServiceClient lineItemCreativeAssociationServiceClient =
+   *     LineItemCreativeAssociationServiceClient.create()) {
+   *   BatchDeleteLineItemCreativeAssociationsRequest request =
+   *       BatchDeleteLineItemCreativeAssociationsRequest.newBuilder()
+   *           .setParent(LineItemName.of("[NETWORK_CODE]", "[LINE_ITEM]").toString())
+   *           .addAllNames(new ArrayList<String>())
+   *           .build();
+   *   ApiFuture<Empty> future =
+   *       lineItemCreativeAssociationServiceClient
+   *           .batchDeleteLineItemCreativeAssociationsCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<BatchDeleteLineItemCreativeAssociationsRequest, Empty>
+      batchDeleteLineItemCreativeAssociationsCallable() {
+    return stub.batchDeleteLineItemCreativeAssociationsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Fetch previews for the
+   * [LineItemCreativeAssociation][google.ads.admanager.v1.LineItemCreativeAssociation].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LineItemCreativeAssociationServiceClient lineItemCreativeAssociationServiceClient =
+   *     LineItemCreativeAssociationServiceClient.create()) {
+   *   LineItemCreativeAssociationName name =
+   *       LineItemCreativeAssociationName.of("[NETWORK_CODE]", "[LINE_ITEM]", "[CREATIVE]");
+   *   String siteUrl = "siteUrl2099991720";
+   *   PreviewLineItemCreativeAssociationResponse response =
+   *       lineItemCreativeAssociationServiceClient.previewLineItemCreativeAssociation(
+   *           name, siteUrl);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the `LineItemCreativeAssociation` object to preview. Format:
+   *     `networks/{network_code}/lineItems/{line_item_id}/creatives/{creative_id}`
+   * @param siteUrl Required. The URL of the site that the creative should be previewed in
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final PreviewLineItemCreativeAssociationResponse previewLineItemCreativeAssociation(
+      @Nullable LineItemCreativeAssociationName name, String siteUrl) {
+    PreviewLineItemCreativeAssociationRequest request =
+        PreviewLineItemCreativeAssociationRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setSiteUrl(siteUrl)
+            .build();
+    return previewLineItemCreativeAssociation(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Fetch previews for the
+   * [LineItemCreativeAssociation][google.ads.admanager.v1.LineItemCreativeAssociation].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LineItemCreativeAssociationServiceClient lineItemCreativeAssociationServiceClient =
+   *     LineItemCreativeAssociationServiceClient.create()) {
+   *   String name =
+   *       LineItemCreativeAssociationName.of("[NETWORK_CODE]", "[LINE_ITEM]", "[CREATIVE]")
+   *           .toString();
+   *   String siteUrl = "siteUrl2099991720";
+   *   PreviewLineItemCreativeAssociationResponse response =
+   *       lineItemCreativeAssociationServiceClient.previewLineItemCreativeAssociation(
+   *           name, siteUrl);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the `LineItemCreativeAssociation` object to preview. Format:
+   *     `networks/{network_code}/lineItems/{line_item_id}/creatives/{creative_id}`
+   * @param siteUrl Required. The URL of the site that the creative should be previewed in
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final PreviewLineItemCreativeAssociationResponse previewLineItemCreativeAssociation(
+      String name, String siteUrl) {
+    PreviewLineItemCreativeAssociationRequest request =
+        PreviewLineItemCreativeAssociationRequest.newBuilder()
+            .setName(name)
+            .setSiteUrl(siteUrl)
+            .build();
+    return previewLineItemCreativeAssociation(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Fetch previews for the
+   * [LineItemCreativeAssociation][google.ads.admanager.v1.LineItemCreativeAssociation].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LineItemCreativeAssociationServiceClient lineItemCreativeAssociationServiceClient =
+   *     LineItemCreativeAssociationServiceClient.create()) {
+   *   PreviewLineItemCreativeAssociationRequest request =
+   *       PreviewLineItemCreativeAssociationRequest.newBuilder()
+   *           .setName(
+   *               LineItemCreativeAssociationName.of("[NETWORK_CODE]", "[LINE_ITEM]", "[CREATIVE]")
+   *                   .toString())
+   *           .setSiteUrl("siteUrl2099991720")
+   *           .build();
+   *   PreviewLineItemCreativeAssociationResponse response =
+   *       lineItemCreativeAssociationServiceClient.previewLineItemCreativeAssociation(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final PreviewLineItemCreativeAssociationResponse previewLineItemCreativeAssociation(
+      PreviewLineItemCreativeAssociationRequest request) {
+    return previewLineItemCreativeAssociationCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Fetch previews for the
+   * [LineItemCreativeAssociation][google.ads.admanager.v1.LineItemCreativeAssociation].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LineItemCreativeAssociationServiceClient lineItemCreativeAssociationServiceClient =
+   *     LineItemCreativeAssociationServiceClient.create()) {
+   *   PreviewLineItemCreativeAssociationRequest request =
+   *       PreviewLineItemCreativeAssociationRequest.newBuilder()
+   *           .setName(
+   *               LineItemCreativeAssociationName.of("[NETWORK_CODE]", "[LINE_ITEM]", "[CREATIVE]")
+   *                   .toString())
+   *           .setSiteUrl("siteUrl2099991720")
+   *           .build();
+   *   ApiFuture<PreviewLineItemCreativeAssociationResponse> future =
+   *       lineItemCreativeAssociationServiceClient
+   *           .previewLineItemCreativeAssociationCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   PreviewLineItemCreativeAssociationResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          PreviewLineItemCreativeAssociationRequest, PreviewLineItemCreativeAssociationResponse>
+      previewLineItemCreativeAssociationCallable() {
+    return stub.previewLineItemCreativeAssociationCallable();
   }
 
   @Override

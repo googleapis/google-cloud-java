@@ -30,12 +30,14 @@ public interface AutoProtectionPolicyBindingOrBuilder
    *
    *
    * <pre>
-   * Identifier. The resource name of the AutoProtectionPolicyBinding.
-   * Format:
+   * Output only. Identifier. The resource name of the
+   * AutoProtectionPolicyBinding. Format:
    * `projects/{project}/locations/{location}/autoProtectionPolicies/{auto_protection_policy}/bindings/{binding}`
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IDENTIFIER];
+   * </code>
    *
    * @return The name.
    */
@@ -45,12 +47,14 @@ public interface AutoProtectionPolicyBindingOrBuilder
    *
    *
    * <pre>
-   * Identifier. The resource name of the AutoProtectionPolicyBinding.
-   * Format:
+   * Output only. Identifier. The resource name of the
+   * AutoProtectionPolicyBinding. Format:
    * `projects/{project}/locations/{location}/autoProtectionPolicies/{auto_protection_policy}/bindings/{binding}`
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IDENTIFIER];
+   * </code>
    *
    * @return The bytes for name.
    */
@@ -60,7 +64,8 @@ public interface AutoProtectionPolicyBindingOrBuilder
    *
    *
    * <pre>
-   * Optional. A description of the binding.
+   * Optional. A description of the binding. The description must be at most
+   * 2048 characters.
    * </pre>
    *
    * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -73,7 +78,8 @@ public interface AutoProtectionPolicyBindingOrBuilder
    *
    *
    * <pre>
-   * Optional. A description of the binding.
+   * Optional. A description of the binding. The description must be at most
+   * 2048 characters.
    * </pre>
    *
    * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -275,11 +281,11 @@ public interface AutoProtectionPolicyBindingOrBuilder
    *
    *
    * <pre>
-   * Optional. Output only. The etag for the binding.
+   * Output only. The etag for the binding.
    * If this is provided on update, it must match the server's etag.
    * </pre>
    *
-   * <code>string etag = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string etag = 8;</code>
    *
    * @return The etag.
    */
@@ -289,11 +295,11 @@ public interface AutoProtectionPolicyBindingOrBuilder
    *
    *
    * <pre>
-   * Optional. Output only. The etag for the binding.
+   * Output only. The etag for the binding.
    * If this is provided on update, it must match the server's etag.
    * </pre>
    *
-   * <code>string etag = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string etag = 8;</code>
    *
    * @return The bytes for etag.
    */

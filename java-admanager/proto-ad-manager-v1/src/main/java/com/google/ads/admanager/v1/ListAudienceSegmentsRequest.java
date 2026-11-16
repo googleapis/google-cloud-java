@@ -228,6 +228,22 @@ public final class ListAudienceSegmentsRequest extends com.google.protobuf.Gener
    * See syntax details at
    * https://developers.google.com/ad-manager/api/beta/filters
    *
+   * Notes specific to AudienceSegmentService:
+   * * `OR` operator: Not supported. Multiple conditions can only be combined
+   * using `AND`. Use `IN` for multi-value matching on a single field.
+   * * `NOT` operator: Cannot wrap compound expressions. For example, `NOT (A
+   * AND B)`.
+   * * Text-based searches (for example, from using wildcards) are
+   * case-insensitive. Other string comparisons are case-sensitive.
+   *
+   * Syntax summary: double-quoted `"..."` (never `'...'`) strings and RFC 3339
+   * timestamps, full resource names on reference fields (for example, `order =
+   * "networks/123/orders/456"`, not `*Id` or bare IDs), prefix or suffix `*`
+   * wildcards with `=` (`displayName = "foo*"`), `:` for substring or
+   * repeated-field matching, unquoted enums and booleans, uppercase
+   * `AND`/`OR`/`NOT`, and standalone `IN(field, SET(v1, v2))` (not `field IN
+   * (...)`).
+   *
    * **Filterable fields:**
    *
    * * `adIdSize`
@@ -244,6 +260,7 @@ public final class ListAudienceSegmentsRequest extends com.google.protobuf.Gener
    * * `thirdPartyAudienceSegment.approvalStatus`
    * * `thirdPartyAudienceSegment.cost`
    * * `thirdPartyAudienceSegment.endTime`
+   * * `thirdPartyAudienceSegment.licenseType`
    * * `thirdPartyAudienceSegment.startTime`
    * </pre>
    *
@@ -272,6 +289,22 @@ public final class ListAudienceSegmentsRequest extends com.google.protobuf.Gener
    * See syntax details at
    * https://developers.google.com/ad-manager/api/beta/filters
    *
+   * Notes specific to AudienceSegmentService:
+   * * `OR` operator: Not supported. Multiple conditions can only be combined
+   * using `AND`. Use `IN` for multi-value matching on a single field.
+   * * `NOT` operator: Cannot wrap compound expressions. For example, `NOT (A
+   * AND B)`.
+   * * Text-based searches (for example, from using wildcards) are
+   * case-insensitive. Other string comparisons are case-sensitive.
+   *
+   * Syntax summary: double-quoted `"..."` (never `'...'`) strings and RFC 3339
+   * timestamps, full resource names on reference fields (for example, `order =
+   * "networks/123/orders/456"`, not `*Id` or bare IDs), prefix or suffix `*`
+   * wildcards with `=` (`displayName = "foo*"`), `:` for substring or
+   * repeated-field matching, unquoted enums and booleans, uppercase
+   * `AND`/`OR`/`NOT`, and standalone `IN(field, SET(v1, v2))` (not `field IN
+   * (...)`).
+   *
    * **Filterable fields:**
    *
    * * `adIdSize`
@@ -288,6 +321,7 @@ public final class ListAudienceSegmentsRequest extends com.google.protobuf.Gener
    * * `thirdPartyAudienceSegment.approvalStatus`
    * * `thirdPartyAudienceSegment.cost`
    * * `thirdPartyAudienceSegment.endTime`
+   * * `thirdPartyAudienceSegment.licenseType`
    * * `thirdPartyAudienceSegment.startTime`
    * </pre>
    *
@@ -1143,6 +1177,22 @@ public final class ListAudienceSegmentsRequest extends com.google.protobuf.Gener
      * See syntax details at
      * https://developers.google.com/ad-manager/api/beta/filters
      *
+     * Notes specific to AudienceSegmentService:
+     * * `OR` operator: Not supported. Multiple conditions can only be combined
+     * using `AND`. Use `IN` for multi-value matching on a single field.
+     * * `NOT` operator: Cannot wrap compound expressions. For example, `NOT (A
+     * AND B)`.
+     * * Text-based searches (for example, from using wildcards) are
+     * case-insensitive. Other string comparisons are case-sensitive.
+     *
+     * Syntax summary: double-quoted `"..."` (never `'...'`) strings and RFC 3339
+     * timestamps, full resource names on reference fields (for example, `order =
+     * "networks/123/orders/456"`, not `*Id` or bare IDs), prefix or suffix `*`
+     * wildcards with `=` (`displayName = "foo*"`), `:` for substring or
+     * repeated-field matching, unquoted enums and booleans, uppercase
+     * `AND`/`OR`/`NOT`, and standalone `IN(field, SET(v1, v2))` (not `field IN
+     * (...)`).
+     *
      * **Filterable fields:**
      *
      * * `adIdSize`
@@ -1159,6 +1209,7 @@ public final class ListAudienceSegmentsRequest extends com.google.protobuf.Gener
      * * `thirdPartyAudienceSegment.approvalStatus`
      * * `thirdPartyAudienceSegment.cost`
      * * `thirdPartyAudienceSegment.endTime`
+     * * `thirdPartyAudienceSegment.licenseType`
      * * `thirdPartyAudienceSegment.startTime`
      * </pre>
      *
@@ -1186,6 +1237,22 @@ public final class ListAudienceSegmentsRequest extends com.google.protobuf.Gener
      * See syntax details at
      * https://developers.google.com/ad-manager/api/beta/filters
      *
+     * Notes specific to AudienceSegmentService:
+     * * `OR` operator: Not supported. Multiple conditions can only be combined
+     * using `AND`. Use `IN` for multi-value matching on a single field.
+     * * `NOT` operator: Cannot wrap compound expressions. For example, `NOT (A
+     * AND B)`.
+     * * Text-based searches (for example, from using wildcards) are
+     * case-insensitive. Other string comparisons are case-sensitive.
+     *
+     * Syntax summary: double-quoted `"..."` (never `'...'`) strings and RFC 3339
+     * timestamps, full resource names on reference fields (for example, `order =
+     * "networks/123/orders/456"`, not `*Id` or bare IDs), prefix or suffix `*`
+     * wildcards with `=` (`displayName = "foo*"`), `:` for substring or
+     * repeated-field matching, unquoted enums and booleans, uppercase
+     * `AND`/`OR`/`NOT`, and standalone `IN(field, SET(v1, v2))` (not `field IN
+     * (...)`).
+     *
      * **Filterable fields:**
      *
      * * `adIdSize`
@@ -1202,6 +1269,7 @@ public final class ListAudienceSegmentsRequest extends com.google.protobuf.Gener
      * * `thirdPartyAudienceSegment.approvalStatus`
      * * `thirdPartyAudienceSegment.cost`
      * * `thirdPartyAudienceSegment.endTime`
+     * * `thirdPartyAudienceSegment.licenseType`
      * * `thirdPartyAudienceSegment.startTime`
      * </pre>
      *
@@ -1229,6 +1297,22 @@ public final class ListAudienceSegmentsRequest extends com.google.protobuf.Gener
      * See syntax details at
      * https://developers.google.com/ad-manager/api/beta/filters
      *
+     * Notes specific to AudienceSegmentService:
+     * * `OR` operator: Not supported. Multiple conditions can only be combined
+     * using `AND`. Use `IN` for multi-value matching on a single field.
+     * * `NOT` operator: Cannot wrap compound expressions. For example, `NOT (A
+     * AND B)`.
+     * * Text-based searches (for example, from using wildcards) are
+     * case-insensitive. Other string comparisons are case-sensitive.
+     *
+     * Syntax summary: double-quoted `"..."` (never `'...'`) strings and RFC 3339
+     * timestamps, full resource names on reference fields (for example, `order =
+     * "networks/123/orders/456"`, not `*Id` or bare IDs), prefix or suffix `*`
+     * wildcards with `=` (`displayName = "foo*"`), `:` for substring or
+     * repeated-field matching, unquoted enums and booleans, uppercase
+     * `AND`/`OR`/`NOT`, and standalone `IN(field, SET(v1, v2))` (not `field IN
+     * (...)`).
+     *
      * **Filterable fields:**
      *
      * * `adIdSize`
@@ -1245,6 +1329,7 @@ public final class ListAudienceSegmentsRequest extends com.google.protobuf.Gener
      * * `thirdPartyAudienceSegment.approvalStatus`
      * * `thirdPartyAudienceSegment.cost`
      * * `thirdPartyAudienceSegment.endTime`
+     * * `thirdPartyAudienceSegment.licenseType`
      * * `thirdPartyAudienceSegment.startTime`
      * </pre>
      *
@@ -1271,6 +1356,22 @@ public final class ListAudienceSegmentsRequest extends com.google.protobuf.Gener
      * See syntax details at
      * https://developers.google.com/ad-manager/api/beta/filters
      *
+     * Notes specific to AudienceSegmentService:
+     * * `OR` operator: Not supported. Multiple conditions can only be combined
+     * using `AND`. Use `IN` for multi-value matching on a single field.
+     * * `NOT` operator: Cannot wrap compound expressions. For example, `NOT (A
+     * AND B)`.
+     * * Text-based searches (for example, from using wildcards) are
+     * case-insensitive. Other string comparisons are case-sensitive.
+     *
+     * Syntax summary: double-quoted `"..."` (never `'...'`) strings and RFC 3339
+     * timestamps, full resource names on reference fields (for example, `order =
+     * "networks/123/orders/456"`, not `*Id` or bare IDs), prefix or suffix `*`
+     * wildcards with `=` (`displayName = "foo*"`), `:` for substring or
+     * repeated-field matching, unquoted enums and booleans, uppercase
+     * `AND`/`OR`/`NOT`, and standalone `IN(field, SET(v1, v2))` (not `field IN
+     * (...)`).
+     *
      * **Filterable fields:**
      *
      * * `adIdSize`
@@ -1287,6 +1388,7 @@ public final class ListAudienceSegmentsRequest extends com.google.protobuf.Gener
      * * `thirdPartyAudienceSegment.approvalStatus`
      * * `thirdPartyAudienceSegment.cost`
      * * `thirdPartyAudienceSegment.endTime`
+     * * `thirdPartyAudienceSegment.licenseType`
      * * `thirdPartyAudienceSegment.startTime`
      * </pre>
      *
@@ -1309,6 +1411,22 @@ public final class ListAudienceSegmentsRequest extends com.google.protobuf.Gener
      * See syntax details at
      * https://developers.google.com/ad-manager/api/beta/filters
      *
+     * Notes specific to AudienceSegmentService:
+     * * `OR` operator: Not supported. Multiple conditions can only be combined
+     * using `AND`. Use `IN` for multi-value matching on a single field.
+     * * `NOT` operator: Cannot wrap compound expressions. For example, `NOT (A
+     * AND B)`.
+     * * Text-based searches (for example, from using wildcards) are
+     * case-insensitive. Other string comparisons are case-sensitive.
+     *
+     * Syntax summary: double-quoted `"..."` (never `'...'`) strings and RFC 3339
+     * timestamps, full resource names on reference fields (for example, `order =
+     * "networks/123/orders/456"`, not `*Id` or bare IDs), prefix or suffix `*`
+     * wildcards with `=` (`displayName = "foo*"`), `:` for substring or
+     * repeated-field matching, unquoted enums and booleans, uppercase
+     * `AND`/`OR`/`NOT`, and standalone `IN(field, SET(v1, v2))` (not `field IN
+     * (...)`).
+     *
      * **Filterable fields:**
      *
      * * `adIdSize`
@@ -1325,6 +1443,7 @@ public final class ListAudienceSegmentsRequest extends com.google.protobuf.Gener
      * * `thirdPartyAudienceSegment.approvalStatus`
      * * `thirdPartyAudienceSegment.cost`
      * * `thirdPartyAudienceSegment.endTime`
+     * * `thirdPartyAudienceSegment.licenseType`
      * * `thirdPartyAudienceSegment.startTime`
      * </pre>
      *

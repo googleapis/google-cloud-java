@@ -79,7 +79,7 @@ public final class FileSearchResult extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * File system path relative to the workspace root.
+   * File system path relative to the file tree root.
    * </pre>
    *
    * <code>string path = 1;</code>
@@ -103,7 +103,7 @@ public final class FileSearchResult extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * File system path relative to the workspace root.
+   * File system path relative to the file tree root.
    * </pre>
    *
    * <code>string path = 1;</code>
@@ -439,7 +439,7 @@ public final class FileSearchResult extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * File system path relative to the workspace root.
+     * File system path relative to the file tree root.
      * </pre>
      *
      * <code>string path = 1;</code>
@@ -462,7 +462,7 @@ public final class FileSearchResult extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * File system path relative to the workspace root.
+     * File system path relative to the file tree root.
      * </pre>
      *
      * <code>string path = 1;</code>
@@ -485,7 +485,7 @@ public final class FileSearchResult extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * File system path relative to the workspace root.
+     * File system path relative to the file tree root.
      * </pre>
      *
      * <code>string path = 1;</code>
@@ -507,7 +507,7 @@ public final class FileSearchResult extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * File system path relative to the workspace root.
+     * File system path relative to the file tree root.
      * </pre>
      *
      * <code>string path = 1;</code>
@@ -525,7 +525,7 @@ public final class FileSearchResult extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * File system path relative to the workspace root.
+     * File system path relative to the file tree root.
      * </pre>
      *
      * <code>string path = 1;</code>

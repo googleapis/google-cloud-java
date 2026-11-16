@@ -60,6 +60,7 @@ public final class PscAutoConnection extends com.google.protobuf.GeneratedMessag
     serviceAttachment_ = "";
     pscConnectionStatus_ = 0;
     connectionType_ = 0;
+    ipVersion_ = 0;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -603,6 +604,49 @@ public final class PscAutoConnection extends com.google.protobuf.GeneratedMessag
         : result;
   }
 
+  public static final int IP_VERSION_FIELD_NUMBER = 10;
+  private int ipVersion_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. The IP version used for the PSC auto-created
+   * endpoint. If not specified, defaults to IPV4.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.memorystore.v1beta.IpVersion ip_version = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for ipVersion.
+   */
+  @java.lang.Override
+  public int getIpVersionValue() {
+    return ipVersion_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. The IP version used for the PSC auto-created
+   * endpoint. If not specified, defaults to IPV4.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.memorystore.v1beta.IpVersion ip_version = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The ipVersion.
+   */
+  @java.lang.Override
+  public com.google.cloud.memorystore.v1beta.IpVersion getIpVersion() {
+    com.google.cloud.memorystore.v1beta.IpVersion result =
+        com.google.cloud.memorystore.v1beta.IpVersion.forNumber(ipVersion_);
+    return result == null ? com.google.cloud.memorystore.v1beta.IpVersion.UNRECOGNIZED : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -648,6 +692,10 @@ public final class PscAutoConnection extends com.google.protobuf.GeneratedMessag
     if (portsCase_ == 9) {
       output.writeInt32(9, (int) ((java.lang.Integer) ports_));
     }
+    if (ipVersion_
+        != com.google.cloud.memorystore.v1beta.IpVersion.IP_VERSION_UNSPECIFIED.getNumber()) {
+      output.writeEnum(10, ipVersion_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -690,6 +738,10 @@ public final class PscAutoConnection extends com.google.protobuf.GeneratedMessag
           com.google.protobuf.CodedOutputStream.computeInt32Size(
               9, (int) ((java.lang.Integer) ports_));
     }
+    if (ipVersion_
+        != com.google.cloud.memorystore.v1beta.IpVersion.IP_VERSION_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(10, ipVersion_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -714,6 +766,7 @@ public final class PscAutoConnection extends com.google.protobuf.GeneratedMessag
     if (!getServiceAttachment().equals(other.getServiceAttachment())) return false;
     if (pscConnectionStatus_ != other.pscConnectionStatus_) return false;
     if (connectionType_ != other.connectionType_) return false;
+    if (ipVersion_ != other.ipVersion_) return false;
     if (!getPortsCase().equals(other.getPortsCase())) return false;
     switch (portsCase_) {
       case 9:
@@ -749,6 +802,8 @@ public final class PscAutoConnection extends com.google.protobuf.GeneratedMessag
     hash = (53 * hash) + pscConnectionStatus_;
     hash = (37 * hash) + CONNECTION_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + connectionType_;
+    hash = (37 * hash) + IP_VERSION_FIELD_NUMBER;
+    hash = (53 * hash) + ipVersion_;
     switch (portsCase_) {
       case 9:
         hash = (37 * hash) + PORT_FIELD_NUMBER;
@@ -906,6 +961,7 @@ public final class PscAutoConnection extends com.google.protobuf.GeneratedMessag
       serviceAttachment_ = "";
       pscConnectionStatus_ = 0;
       connectionType_ = 0;
+      ipVersion_ = 0;
       portsCase_ = 0;
       ports_ = null;
       return this;
@@ -969,6 +1025,9 @@ public final class PscAutoConnection extends com.google.protobuf.GeneratedMessag
       if (((from_bitField0_ & 0x00000100) != 0)) {
         result.connectionType_ = connectionType_;
       }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.ipVersion_ = ipVersion_;
+      }
     }
 
     private void buildPartialOneofs(com.google.cloud.memorystore.v1beta.PscAutoConnection result) {
@@ -1024,6 +1083,9 @@ public final class PscAutoConnection extends com.google.protobuf.GeneratedMessag
       }
       if (other.connectionType_ != 0) {
         setConnectionTypeValue(other.getConnectionTypeValue());
+      }
+      if (other.ipVersion_ != 0) {
+        setIpVersionValue(other.getIpVersionValue());
       }
       switch (other.getPortsCase()) {
         case PORT:
@@ -1116,6 +1178,12 @@ public final class PscAutoConnection extends com.google.protobuf.GeneratedMessag
                 portsCase_ = 9;
                 break;
               } // case 72
+            case 80:
+              {
+                ipVersion_ = input.readEnum();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 80
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2194,6 +2262,116 @@ public final class PscAutoConnection extends com.google.protobuf.GeneratedMessag
     public Builder clearConnectionType() {
       bitField0_ = (bitField0_ & ~0x00000100);
       connectionType_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int ipVersion_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The IP version used for the PSC auto-created
+     * endpoint. If not specified, defaults to IPV4.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.memorystore.v1beta.IpVersion ip_version = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for ipVersion.
+     */
+    @java.lang.Override
+    public int getIpVersionValue() {
+      return ipVersion_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The IP version used for the PSC auto-created
+     * endpoint. If not specified, defaults to IPV4.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.memorystore.v1beta.IpVersion ip_version = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for ipVersion to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIpVersionValue(int value) {
+      ipVersion_ = value;
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The IP version used for the PSC auto-created
+     * endpoint. If not specified, defaults to IPV4.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.memorystore.v1beta.IpVersion ip_version = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return The ipVersion.
+     */
+    @java.lang.Override
+    public com.google.cloud.memorystore.v1beta.IpVersion getIpVersion() {
+      com.google.cloud.memorystore.v1beta.IpVersion result =
+          com.google.cloud.memorystore.v1beta.IpVersion.forNumber(ipVersion_);
+      return result == null ? com.google.cloud.memorystore.v1beta.IpVersion.UNRECOGNIZED : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The IP version used for the PSC auto-created
+     * endpoint. If not specified, defaults to IPV4.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.memorystore.v1beta.IpVersion ip_version = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @param value The ipVersion to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIpVersion(com.google.cloud.memorystore.v1beta.IpVersion value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000200;
+      ipVersion_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The IP version used for the PSC auto-created
+     * endpoint. If not specified, defaults to IPV4.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.memorystore.v1beta.IpVersion ip_version = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearIpVersion() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      ipVersion_ = 0;
       onChanged();
       return this;
     }

@@ -42,6 +42,7 @@ public class AsyncCreateAutoProtectionPolicyLRO {
               .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .setAutoProtectionPolicyId("autoProtectionPolicyId1759243253")
               .setAutoProtectionPolicy(AutoProtectionPolicy.newBuilder().build())
+              .setRequestId("requestId693933066")
               .build();
       OperationFuture<AutoProtectionPolicy, OperationMetadata> future =
           backupDRClient.createAutoProtectionPolicyOperationCallable().futureCall(request);

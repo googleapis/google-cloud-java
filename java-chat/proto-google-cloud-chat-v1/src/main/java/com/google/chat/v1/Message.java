@@ -2092,6 +2092,94 @@ public final class Message extends com.google.protobuf.GeneratedMessage
     return accessoryWidgets_.get(index);
   }
 
+  public static final int ELEMENTS_FIELD_NUMBER = 45;
+  private com.google.chat.v1.Elements elements_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Additional message components, including inline `citations`
+   * (where each citation is associated with a specific portion of the message
+   * text) and `cited_sources` (which are general references used to generate
+   * the response and are not directly linked to specific segments of the text).
+   *
+   * On input, provide `elements` when creating or updating a message. On
+   * output, both `citations` and `cited_sources` are populated when reading a
+   * message that contains them. Callers can read structured citation metadata
+   * from `elements`, while `formatted_text` also includes inline citation tags
+   * or source links depending on `markup_syntax`.
+   *
+   * These differ from `annotations`, which are output-only and offer
+   * supplementary information tied to message fragments or the entire message
+   * text.
+   * </pre>
+   *
+   * <code>.google.chat.v1.Elements elements = 45 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the elements field is set.
+   */
+  @java.lang.Override
+  public boolean hasElements() {
+    return ((bitField0_ & 0x00001000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Additional message components, including inline `citations`
+   * (where each citation is associated with a specific portion of the message
+   * text) and `cited_sources` (which are general references used to generate
+   * the response and are not directly linked to specific segments of the text).
+   *
+   * On input, provide `elements` when creating or updating a message. On
+   * output, both `citations` and `cited_sources` are populated when reading a
+   * message that contains them. Callers can read structured citation metadata
+   * from `elements`, while `formatted_text` also includes inline citation tags
+   * or source links depending on `markup_syntax`.
+   *
+   * These differ from `annotations`, which are output-only and offer
+   * supplementary information tied to message fragments or the entire message
+   * text.
+   * </pre>
+   *
+   * <code>.google.chat.v1.Elements elements = 45 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The elements.
+   */
+  @java.lang.Override
+  public com.google.chat.v1.Elements getElements() {
+    return elements_ == null ? com.google.chat.v1.Elements.getDefaultInstance() : elements_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Additional message components, including inline `citations`
+   * (where each citation is associated with a specific portion of the message
+   * text) and `cited_sources` (which are general references used to generate
+   * the response and are not directly linked to specific segments of the text).
+   *
+   * On input, provide `elements` when creating or updating a message. On
+   * output, both `citations` and `cited_sources` are populated when reading a
+   * message that contains them. Callers can read structured citation metadata
+   * from `elements`, while `formatted_text` also includes inline citation tags
+   * or source links depending on `markup_syntax`.
+   *
+   * These differ from `annotations`, which are output-only and offer
+   * supplementary information tied to message fragments or the entire message
+   * text.
+   * </pre>
+   *
+   * <code>.google.chat.v1.Elements elements = 45 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  @java.lang.Override
+  public com.google.chat.v1.ElementsOrBuilder getElementsOrBuilder() {
+    return elements_ == null ? com.google.chat.v1.Elements.getDefaultInstance() : elements_;
+  }
+
   public static final int MARKUP_SYNTAX_FIELD_NUMBER = 47;
   private int markupSyntax_ = 0;
 
@@ -2227,6 +2315,9 @@ public final class Message extends com.google.protobuf.GeneratedMessage
     for (int i = 0; i < accessoryWidgets_.size(); i++) {
       output.writeMessage(44, accessoryWidgets_.get(i));
     }
+    if (((bitField0_ & 0x00001000) != 0)) {
+      output.writeMessage(45, getElements());
+    }
     if (silent_ != false) {
       output.writeBool(46, silent_);
     }
@@ -2325,6 +2416,9 @@ public final class Message extends com.google.protobuf.GeneratedMessage
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(44, accessoryWidgets_.get(i));
     }
+    if (((bitField0_ & 0x00001000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(45, getElements());
+    }
     if (silent_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(46, silent_);
     }
@@ -2410,6 +2504,10 @@ public final class Message extends com.google.protobuf.GeneratedMessage
     }
     if (!getAttachedGifsList().equals(other.getAttachedGifsList())) return false;
     if (!getAccessoryWidgetsList().equals(other.getAccessoryWidgetsList())) return false;
+    if (hasElements() != other.hasElements()) return false;
+    if (hasElements()) {
+      if (!getElements().equals(other.getElements())) return false;
+    }
     if (markupSyntax_ != other.markupSyntax_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -2513,6 +2611,10 @@ public final class Message extends com.google.protobuf.GeneratedMessage
     if (getAccessoryWidgetsCount() > 0) {
       hash = (37 * hash) + ACCESSORY_WIDGETS_FIELD_NUMBER;
       hash = (53 * hash) + getAccessoryWidgetsList().hashCode();
+    }
+    if (hasElements()) {
+      hash = (37 * hash) + ELEMENTS_FIELD_NUMBER;
+      hash = (53 * hash) + getElements().hashCode();
     }
     hash = (37 * hash) + MARKUP_SYNTAX_FIELD_NUMBER;
     hash = (53 * hash) + markupSyntax_;
@@ -2673,6 +2775,7 @@ public final class Message extends com.google.protobuf.GeneratedMessage
         internalGetQuotedMessageMetadataFieldBuilder();
         internalGetAttachedGifsFieldBuilder();
         internalGetAccessoryWidgetsFieldBuilder();
+        internalGetElementsFieldBuilder();
       }
     }
 
@@ -2797,6 +2900,11 @@ public final class Message extends com.google.protobuf.GeneratedMessage
         accessoryWidgetsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x04000000);
+      elements_ = null;
+      if (elementsBuilder_ != null) {
+        elementsBuilder_.dispose();
+        elementsBuilder_ = null;
+      }
       markupSyntax_ = 0;
       return this;
     }
@@ -2983,6 +3091,10 @@ public final class Message extends com.google.protobuf.GeneratedMessage
         to_bitField0_ |= 0x00000800;
       }
       if (((from_bitField0_ & 0x08000000) != 0)) {
+        result.elements_ = elementsBuilder_ == null ? elements_ : elementsBuilder_.build();
+        to_bitField0_ |= 0x00001000;
+      }
+      if (((from_bitField0_ & 0x10000000) != 0)) {
         result.markupSyntax_ = markupSyntax_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -3261,6 +3373,9 @@ public final class Message extends com.google.protobuf.GeneratedMessage
           }
         }
       }
+      if (other.hasElements()) {
+        mergeElements(other.getElements());
+      }
       if (other.markupSyntax_ != 0) {
         setMarkupSyntaxValue(other.getMarkupSyntaxValue());
       }
@@ -3500,6 +3615,13 @@ public final class Message extends com.google.protobuf.GeneratedMessage
                 }
                 break;
               } // case 354
+            case 362:
+              {
+                input.readMessage(
+                    internalGetElementsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x08000000;
+                break;
+              } // case 362
             case 368:
               {
                 silent_ = input.readBool();
@@ -3509,7 +3631,7 @@ public final class Message extends com.google.protobuf.GeneratedMessage
             case 376:
               {
                 markupSyntax_ = input.readEnum();
-                bitField0_ |= 0x08000000;
+                bitField0_ |= 0x10000000;
                 break;
               } // case 376
             default:
@@ -10841,6 +10963,322 @@ public final class Message extends com.google.protobuf.GeneratedMessage
       return accessoryWidgetsBuilder_;
     }
 
+    private com.google.chat.v1.Elements elements_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.chat.v1.Elements,
+            com.google.chat.v1.Elements.Builder,
+            com.google.chat.v1.ElementsOrBuilder>
+        elementsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional message components, including inline `citations`
+     * (where each citation is associated with a specific portion of the message
+     * text) and `cited_sources` (which are general references used to generate
+     * the response and are not directly linked to specific segments of the text).
+     *
+     * On input, provide `elements` when creating or updating a message. On
+     * output, both `citations` and `cited_sources` are populated when reading a
+     * message that contains them. Callers can read structured citation metadata
+     * from `elements`, while `formatted_text` also includes inline citation tags
+     * or source links depending on `markup_syntax`.
+     *
+     * These differ from `annotations`, which are output-only and offer
+     * supplementary information tied to message fragments or the entire message
+     * text.
+     * </pre>
+     *
+     * <code>.google.chat.v1.Elements elements = 45 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the elements field is set.
+     */
+    public boolean hasElements() {
+      return ((bitField0_ & 0x08000000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional message components, including inline `citations`
+     * (where each citation is associated with a specific portion of the message
+     * text) and `cited_sources` (which are general references used to generate
+     * the response and are not directly linked to specific segments of the text).
+     *
+     * On input, provide `elements` when creating or updating a message. On
+     * output, both `citations` and `cited_sources` are populated when reading a
+     * message that contains them. Callers can read structured citation metadata
+     * from `elements`, while `formatted_text` also includes inline citation tags
+     * or source links depending on `markup_syntax`.
+     *
+     * These differ from `annotations`, which are output-only and offer
+     * supplementary information tied to message fragments or the entire message
+     * text.
+     * </pre>
+     *
+     * <code>.google.chat.v1.Elements elements = 45 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The elements.
+     */
+    public com.google.chat.v1.Elements getElements() {
+      if (elementsBuilder_ == null) {
+        return elements_ == null ? com.google.chat.v1.Elements.getDefaultInstance() : elements_;
+      } else {
+        return elementsBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional message components, including inline `citations`
+     * (where each citation is associated with a specific portion of the message
+     * text) and `cited_sources` (which are general references used to generate
+     * the response and are not directly linked to specific segments of the text).
+     *
+     * On input, provide `elements` when creating or updating a message. On
+     * output, both `citations` and `cited_sources` are populated when reading a
+     * message that contains them. Callers can read structured citation metadata
+     * from `elements`, while `formatted_text` also includes inline citation tags
+     * or source links depending on `markup_syntax`.
+     *
+     * These differ from `annotations`, which are output-only and offer
+     * supplementary information tied to message fragments or the entire message
+     * text.
+     * </pre>
+     *
+     * <code>.google.chat.v1.Elements elements = 45 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setElements(com.google.chat.v1.Elements value) {
+      if (elementsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        elements_ = value;
+      } else {
+        elementsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x08000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional message components, including inline `citations`
+     * (where each citation is associated with a specific portion of the message
+     * text) and `cited_sources` (which are general references used to generate
+     * the response and are not directly linked to specific segments of the text).
+     *
+     * On input, provide `elements` when creating or updating a message. On
+     * output, both `citations` and `cited_sources` are populated when reading a
+     * message that contains them. Callers can read structured citation metadata
+     * from `elements`, while `formatted_text` also includes inline citation tags
+     * or source links depending on `markup_syntax`.
+     *
+     * These differ from `annotations`, which are output-only and offer
+     * supplementary information tied to message fragments or the entire message
+     * text.
+     * </pre>
+     *
+     * <code>.google.chat.v1.Elements elements = 45 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setElements(com.google.chat.v1.Elements.Builder builderForValue) {
+      if (elementsBuilder_ == null) {
+        elements_ = builderForValue.build();
+      } else {
+        elementsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x08000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional message components, including inline `citations`
+     * (where each citation is associated with a specific portion of the message
+     * text) and `cited_sources` (which are general references used to generate
+     * the response and are not directly linked to specific segments of the text).
+     *
+     * On input, provide `elements` when creating or updating a message. On
+     * output, both `citations` and `cited_sources` are populated when reading a
+     * message that contains them. Callers can read structured citation metadata
+     * from `elements`, while `formatted_text` also includes inline citation tags
+     * or source links depending on `markup_syntax`.
+     *
+     * These differ from `annotations`, which are output-only and offer
+     * supplementary information tied to message fragments or the entire message
+     * text.
+     * </pre>
+     *
+     * <code>.google.chat.v1.Elements elements = 45 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeElements(com.google.chat.v1.Elements value) {
+      if (elementsBuilder_ == null) {
+        if (((bitField0_ & 0x08000000) != 0)
+            && elements_ != null
+            && elements_ != com.google.chat.v1.Elements.getDefaultInstance()) {
+          getElementsBuilder().mergeFrom(value);
+        } else {
+          elements_ = value;
+        }
+      } else {
+        elementsBuilder_.mergeFrom(value);
+      }
+      if (elements_ != null) {
+        bitField0_ |= 0x08000000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional message components, including inline `citations`
+     * (where each citation is associated with a specific portion of the message
+     * text) and `cited_sources` (which are general references used to generate
+     * the response and are not directly linked to specific segments of the text).
+     *
+     * On input, provide `elements` when creating or updating a message. On
+     * output, both `citations` and `cited_sources` are populated when reading a
+     * message that contains them. Callers can read structured citation metadata
+     * from `elements`, while `formatted_text` also includes inline citation tags
+     * or source links depending on `markup_syntax`.
+     *
+     * These differ from `annotations`, which are output-only and offer
+     * supplementary information tied to message fragments or the entire message
+     * text.
+     * </pre>
+     *
+     * <code>.google.chat.v1.Elements elements = 45 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearElements() {
+      bitField0_ = (bitField0_ & ~0x08000000);
+      elements_ = null;
+      if (elementsBuilder_ != null) {
+        elementsBuilder_.dispose();
+        elementsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional message components, including inline `citations`
+     * (where each citation is associated with a specific portion of the message
+     * text) and `cited_sources` (which are general references used to generate
+     * the response and are not directly linked to specific segments of the text).
+     *
+     * On input, provide `elements` when creating or updating a message. On
+     * output, both `citations` and `cited_sources` are populated when reading a
+     * message that contains them. Callers can read structured citation metadata
+     * from `elements`, while `formatted_text` also includes inline citation tags
+     * or source links depending on `markup_syntax`.
+     *
+     * These differ from `annotations`, which are output-only and offer
+     * supplementary information tied to message fragments or the entire message
+     * text.
+     * </pre>
+     *
+     * <code>.google.chat.v1.Elements elements = 45 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.chat.v1.Elements.Builder getElementsBuilder() {
+      bitField0_ |= 0x08000000;
+      onChanged();
+      return internalGetElementsFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional message components, including inline `citations`
+     * (where each citation is associated with a specific portion of the message
+     * text) and `cited_sources` (which are general references used to generate
+     * the response and are not directly linked to specific segments of the text).
+     *
+     * On input, provide `elements` when creating or updating a message. On
+     * output, both `citations` and `cited_sources` are populated when reading a
+     * message that contains them. Callers can read structured citation metadata
+     * from `elements`, while `formatted_text` also includes inline citation tags
+     * or source links depending on `markup_syntax`.
+     *
+     * These differ from `annotations`, which are output-only and offer
+     * supplementary information tied to message fragments or the entire message
+     * text.
+     * </pre>
+     *
+     * <code>.google.chat.v1.Elements elements = 45 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.chat.v1.ElementsOrBuilder getElementsOrBuilder() {
+      if (elementsBuilder_ != null) {
+        return elementsBuilder_.getMessageOrBuilder();
+      } else {
+        return elements_ == null ? com.google.chat.v1.Elements.getDefaultInstance() : elements_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional message components, including inline `citations`
+     * (where each citation is associated with a specific portion of the message
+     * text) and `cited_sources` (which are general references used to generate
+     * the response and are not directly linked to specific segments of the text).
+     *
+     * On input, provide `elements` when creating or updating a message. On
+     * output, both `citations` and `cited_sources` are populated when reading a
+     * message that contains them. Callers can read structured citation metadata
+     * from `elements`, while `formatted_text` also includes inline citation tags
+     * or source links depending on `markup_syntax`.
+     *
+     * These differ from `annotations`, which are output-only and offer
+     * supplementary information tied to message fragments or the entire message
+     * text.
+     * </pre>
+     *
+     * <code>.google.chat.v1.Elements elements = 45 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.chat.v1.Elements,
+            com.google.chat.v1.Elements.Builder,
+            com.google.chat.v1.ElementsOrBuilder>
+        internalGetElementsFieldBuilder() {
+      if (elementsBuilder_ == null) {
+        elementsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.chat.v1.Elements,
+                com.google.chat.v1.Elements.Builder,
+                com.google.chat.v1.ElementsOrBuilder>(
+                getElements(), getParentForChildren(), isClean());
+        elements_ = null;
+      }
+      return elementsBuilder_;
+    }
+
     private int markupSyntax_ = 0;
 
     /**
@@ -10879,7 +11317,7 @@ public final class Message extends com.google.protobuf.GeneratedMessage
      */
     public Builder setMarkupSyntaxValue(int value) {
       markupSyntax_ = value;
-      bitField0_ |= 0x08000000;
+      bitField0_ |= 0x10000000;
       onChanged();
       return this;
     }
@@ -10924,7 +11362,7 @@ public final class Message extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x08000000;
+      bitField0_ |= 0x10000000;
       markupSyntax_ = value.getNumber();
       onChanged();
       return this;
@@ -10945,7 +11383,7 @@ public final class Message extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearMarkupSyntax() {
-      bitField0_ = (bitField0_ & ~0x08000000);
+      bitField0_ = (bitField0_ & ~0x10000000);
       markupSyntax_ = 0;
       onChanged();
       return this;

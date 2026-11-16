@@ -212,7 +212,7 @@ public enum IngressTraffic implements com.google.protobuf.ProtocolMessageEnum {
   }
 
   public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-    return com.google.cloud.run.v2.VendorSettingsProto.getDescriptor().getEnumTypes().get(0);
+    return com.google.cloud.run.v2.VendorSettingsProto.getDescriptor().getEnumTypes().get(1);
   }
 
   private static final IngressTraffic[] VALUES = values();

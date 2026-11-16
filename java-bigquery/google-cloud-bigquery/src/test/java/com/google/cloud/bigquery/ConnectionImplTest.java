@@ -19,6 +19,7 @@ package com.google.cloud.bigquery;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.doReturn;
@@ -47,6 +48,7 @@ import java.math.BigInteger;
 import java.sql.SQLException;
 import java.util.AbstractList;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -793,5 +795,26 @@ class ConnectionImplTest {
     assertTrue(connectionSpy.getPageCacheSize(10000, QUERY_SCHEMA) >= 3);
     assertTrue(connectionSpy.getPageCacheSize(100000000, QUERY_SCHEMA) <= 20);
     verify(connectionSpy, times(2)).getPageCacheSize(any(Integer.class), any(Schema.class));
+  }
+
+  @Test
+  void testCreateQueryRequestAndJobWithEmptyParameters() throws BigQuerySQLException, IOException {
+    List<Parameter> emptyParameters = Collections.emptyList();
+    Map<String, String> emptyLabels = Collections.emptyMap();
+    QueryRequest request =
+        connection.createQueryRequest(connectionSettings, SQL_QUERY, emptyParameters, emptyLabels);
+    assertNull(request.getQueryParameters());
+
+    com.google.api.services.bigquery.model.Job jobResponseMock =
+        new com.google.api.services.bigquery.model.Job()
+            .setJobReference(QUERY_JOB.toPb())
+            .setId(JOB)
+            .setStatus(new com.google.api.services.bigquery.model.JobStatus().setState("DONE"));
+    when(bigqueryRpcMock.createJobForQuerySkipExceptionTranslation(
+            any(com.google.api.services.bigquery.model.Job.class)))
+        .thenReturn(jobResponseMock);
+    com.google.api.services.bigquery.model.Job createdJob =
+        connection.createQueryJob(SQL_QUERY, connectionSettings, emptyParameters, emptyLabels);
+    assertEquals(JOB, createdJob.getId());
   }
 }

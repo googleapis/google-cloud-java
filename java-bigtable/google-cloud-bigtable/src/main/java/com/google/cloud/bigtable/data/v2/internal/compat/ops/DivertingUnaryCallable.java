@@ -40,6 +40,7 @@ import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CompletionException;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ThreadLocalRandom;
+import javax.annotation.Nonnull;
 
 /** A callable to fork traffic between classic and session based operations. */
 public class DivertingUnaryCallable<ReqT, RespT> extends UnaryCallable<ReqT, RespT> {
@@ -48,7 +49,7 @@ public class DivertingUnaryCallable<ReqT, RespT> extends UnaryCallable<ReqT, Res
   private final UnaryCallable<ReqT, RespT> classic;
   private final UnaryShim<ReqT, RespT> experimental;
 
-  private final Duration defaultTimeout;
+  @Nonnull private final Duration defaultTimeout;
   private final DebugTagTracer debugTagTracer;
   // The diversion scope this callable's method belongs to.
   private final SessionScope scope;
@@ -57,7 +58,7 @@ public class DivertingUnaryCallable<ReqT, RespT> extends UnaryCallable<ReqT, Res
       ClientConfigurationManager configurationManager,
       UnaryCallable<ReqT, RespT> classic,
       UnaryShim<ReqT, RespT> experimental,
-      Duration defaultTimeout,
+      @Nonnull Duration defaultTimeout,
       DebugTagTracer debugTagTracer,
       SessionScope scope) {
     this.configurationManager = configurationManager;

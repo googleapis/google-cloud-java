@@ -39,7 +39,6 @@ public interface UserEventOrBuilder
    * * `view-item-list`: View of a panel or ordered list of Documents.
    * * `view-home-page`: View of the home page.
    * * `view-category-page`: View of a category page, e.g. Home &gt; Men &gt; Jeans
-   * * `add-feedback`: Add a user feedback.
    *
    * Retail-related values:
    *
@@ -75,7 +74,6 @@ public interface UserEventOrBuilder
    * * `view-item-list`: View of a panel or ordered list of Documents.
    * * `view-home-page`: View of the home page.
    * * `view-category-page`: View of a category page, e.g. Home &gt; Men &gt; Jeans
-   * * `add-feedback`: Add a user feedback.
    *
    * Retail-related values:
    *
@@ -545,8 +543,9 @@ public interface UserEventOrBuilder
    *
    *
    * <pre>
-   * The filter syntax consists of an expression language for constructing a
-   * predicate from one or more fields of the documents being filtered.
+   * Optional. The filter syntax consists of an expression language for
+   * constructing a predicate from one or more fields of the documents being
+   * filtered.
    *
    * One example is for `search` events, the associated
    * [SearchRequest][google.cloud.discoveryengine.v1.SearchRequest] may contain
@@ -564,7 +563,7 @@ public interface UserEventOrBuilder
    * characters. Otherwise, an `INVALID_ARGUMENT` error is returned.
    * </pre>
    *
-   * <code>string filter = 9;</code>
+   * <code>string filter = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The filter.
    */
@@ -574,8 +573,9 @@ public interface UserEventOrBuilder
    *
    *
    * <pre>
-   * The filter syntax consists of an expression language for constructing a
-   * predicate from one or more fields of the documents being filtered.
+   * Optional. The filter syntax consists of an expression language for
+   * constructing a predicate from one or more fields of the documents being
+   * filtered.
    *
    * One example is for `search` events, the associated
    * [SearchRequest][google.cloud.discoveryengine.v1.SearchRequest] may contain
@@ -593,7 +593,7 @@ public interface UserEventOrBuilder
    * characters. Otherwise, an `INVALID_ARGUMENT` error is returned.
    * </pre>
    *
-   * <code>string filter = 9;</code>
+   * <code>string filter = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for filter.
    */
@@ -1033,7 +1033,7 @@ public interface UserEventOrBuilder
    *
    *
    * <pre>
-   * Extra user event features to include in the recommendation model.
+   * Optional. Extra user event features to include in the recommendation model.
    * These attributes must NOT contain data that needs to be parsed or processed
    * further, e.g. JSON or other encodings.
    *
@@ -1061,7 +1061,8 @@ public interface UserEventOrBuilder
    * search, or in other ways.
    * </pre>
    *
-   * <code>map&lt;string, .google.cloud.discoveryengine.v1.CustomAttribute&gt; attributes = 17;
+   * <code>
+   * map&lt;string, .google.cloud.discoveryengine.v1.CustomAttribute&gt; attributes = 17 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   int getAttributesCount();
@@ -1070,7 +1071,7 @@ public interface UserEventOrBuilder
    *
    *
    * <pre>
-   * Extra user event features to include in the recommendation model.
+   * Optional. Extra user event features to include in the recommendation model.
    * These attributes must NOT contain data that needs to be parsed or processed
    * further, e.g. JSON or other encodings.
    *
@@ -1098,7 +1099,8 @@ public interface UserEventOrBuilder
    * search, or in other ways.
    * </pre>
    *
-   * <code>map&lt;string, .google.cloud.discoveryengine.v1.CustomAttribute&gt; attributes = 17;
+   * <code>
+   * map&lt;string, .google.cloud.discoveryengine.v1.CustomAttribute&gt; attributes = 17 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   boolean containsAttributes(java.lang.String key);
@@ -1112,7 +1114,7 @@ public interface UserEventOrBuilder
    *
    *
    * <pre>
-   * Extra user event features to include in the recommendation model.
+   * Optional. Extra user event features to include in the recommendation model.
    * These attributes must NOT contain data that needs to be parsed or processed
    * further, e.g. JSON or other encodings.
    *
@@ -1140,7 +1142,8 @@ public interface UserEventOrBuilder
    * search, or in other ways.
    * </pre>
    *
-   * <code>map&lt;string, .google.cloud.discoveryengine.v1.CustomAttribute&gt; attributes = 17;
+   * <code>
+   * map&lt;string, .google.cloud.discoveryengine.v1.CustomAttribute&gt; attributes = 17 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   java.util.Map<java.lang.String, com.google.cloud.discoveryengine.v1.CustomAttribute>
@@ -1150,7 +1153,7 @@ public interface UserEventOrBuilder
    *
    *
    * <pre>
-   * Extra user event features to include in the recommendation model.
+   * Optional. Extra user event features to include in the recommendation model.
    * These attributes must NOT contain data that needs to be parsed or processed
    * further, e.g. JSON or other encodings.
    *
@@ -1178,7 +1181,8 @@ public interface UserEventOrBuilder
    * search, or in other ways.
    * </pre>
    *
-   * <code>map&lt;string, .google.cloud.discoveryengine.v1.CustomAttribute&gt; attributes = 17;
+   * <code>
+   * map&lt;string, .google.cloud.discoveryengine.v1.CustomAttribute&gt; attributes = 17 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   /* nullable */
@@ -1191,7 +1195,7 @@ public interface UserEventOrBuilder
    *
    *
    * <pre>
-   * Extra user event features to include in the recommendation model.
+   * Optional. Extra user event features to include in the recommendation model.
    * These attributes must NOT contain data that needs to be parsed or processed
    * further, e.g. JSON or other encodings.
    *
@@ -1219,7 +1223,8 @@ public interface UserEventOrBuilder
    * search, or in other ways.
    * </pre>
    *
-   * <code>map&lt;string, .google.cloud.discoveryengine.v1.CustomAttribute&gt; attributes = 17;
+   * <code>
+   * map&lt;string, .google.cloud.discoveryengine.v1.CustomAttribute&gt; attributes = 17 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   com.google.cloud.discoveryengine.v1.CustomAttribute getAttributesOrThrow(java.lang.String key);
@@ -1331,4 +1336,81 @@ public interface UserEventOrBuilder
    * </code>
    */
   com.google.cloud.discoveryengine.v1.PanelInfoOrBuilder getPanelsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This field is optional except for the `add-feedback` event types.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.Feedback feedback = 23 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the feedback field is set.
+   */
+  boolean hasFeedback();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This field is optional except for the `add-feedback` event types.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.Feedback feedback = 23 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The feedback.
+   */
+  com.google.cloud.discoveryengine.v1.Feedback getFeedback();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This field is optional except for the `add-feedback` event types.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.Feedback feedback = 23 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.discoveryengine.v1.FeedbackOrBuilder getFeedbackOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Represents the entity for customers that may run multiple
+   * different entities, domains, sites or regions, for example, `Google US`,
+   * `Google Ads`, `Waymo`, `google.com`, `youtube.com`, etc. We recommend that
+   * you set `entity` to get better per-entity search, completion, and
+   * prediction results.
+   * </pre>
+   *
+   * <code>string entity = 25 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The entity.
+   */
+  java.lang.String getEntity();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Represents the entity for customers that may run multiple
+   * different entities, domains, sites or regions, for example, `Google US`,
+   * `Google Ads`, `Waymo`, `google.com`, `youtube.com`, etc. We recommend that
+   * you set `entity` to get better per-entity search, completion, and
+   * prediction results.
+   * </pre>
+   *
+   * <code>string entity = 25 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for entity.
+   */
+  com.google.protobuf.ByteString getEntityBytes();
 }

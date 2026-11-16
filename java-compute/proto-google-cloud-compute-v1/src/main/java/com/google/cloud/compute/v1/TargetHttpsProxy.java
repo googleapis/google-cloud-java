@@ -1660,7 +1660,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
    * Certificate Manager Certificates accepted formats are:
    *
    * - //certificatemanager.googleapis.com/projects/{project}/locations/{location}/certificates/{resourceName}.
-   * - https://certificatemanager.googleapis.com/v1alpha1/projects/{project}/locations/{location}/certificates/{resourceName}.
+   * - https://certificatemanager.{universeDomain}/v1alpha1/projects/{project}/locations/{location}/certificates/{resourceName}.
    * </pre>
    *
    * <code>repeated string ssl_certificates = 366006543;</code>
@@ -1694,7 +1694,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
    * Certificate Manager Certificates accepted formats are:
    *
    * - //certificatemanager.googleapis.com/projects/{project}/locations/{location}/certificates/{resourceName}.
-   * - https://certificatemanager.googleapis.com/v1alpha1/projects/{project}/locations/{location}/certificates/{resourceName}.
+   * - https://certificatemanager.{universeDomain}/v1alpha1/projects/{project}/locations/{location}/certificates/{resourceName}.
    * </pre>
    *
    * <code>repeated string ssl_certificates = 366006543;</code>
@@ -1728,7 +1728,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
    * Certificate Manager Certificates accepted formats are:
    *
    * - //certificatemanager.googleapis.com/projects/{project}/locations/{location}/certificates/{resourceName}.
-   * - https://certificatemanager.googleapis.com/v1alpha1/projects/{project}/locations/{location}/certificates/{resourceName}.
+   * - https://certificatemanager.{universeDomain}/v1alpha1/projects/{project}/locations/{location}/certificates/{resourceName}.
    * </pre>
    *
    * <code>repeated string ssl_certificates = 366006543;</code>
@@ -1763,7 +1763,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
    * Certificate Manager Certificates accepted formats are:
    *
    * - //certificatemanager.googleapis.com/projects/{project}/locations/{location}/certificates/{resourceName}.
-   * - https://certificatemanager.googleapis.com/v1alpha1/projects/{project}/locations/{location}/certificates/{resourceName}.
+   * - https://certificatemanager.{universeDomain}/v1alpha1/projects/{project}/locations/{location}/certificates/{resourceName}.
    * </pre>
    *
    * <code>repeated string ssl_certificates = 366006543;</code>
@@ -4960,7 +4960,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
      * Certificate Manager Certificates accepted formats are:
      *
      * - //certificatemanager.googleapis.com/projects/{project}/locations/{location}/certificates/{resourceName}.
-     * - https://certificatemanager.googleapis.com/v1alpha1/projects/{project}/locations/{location}/certificates/{resourceName}.
+     * - https://certificatemanager.{universeDomain}/v1alpha1/projects/{project}/locations/{location}/certificates/{resourceName}.
      * </pre>
      *
      * <code>repeated string ssl_certificates = 366006543;</code>
@@ -4995,7 +4995,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
      * Certificate Manager Certificates accepted formats are:
      *
      * - //certificatemanager.googleapis.com/projects/{project}/locations/{location}/certificates/{resourceName}.
-     * - https://certificatemanager.googleapis.com/v1alpha1/projects/{project}/locations/{location}/certificates/{resourceName}.
+     * - https://certificatemanager.{universeDomain}/v1alpha1/projects/{project}/locations/{location}/certificates/{resourceName}.
      * </pre>
      *
      * <code>repeated string ssl_certificates = 366006543;</code>
@@ -5029,7 +5029,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
      * Certificate Manager Certificates accepted formats are:
      *
      * - //certificatemanager.googleapis.com/projects/{project}/locations/{location}/certificates/{resourceName}.
-     * - https://certificatemanager.googleapis.com/v1alpha1/projects/{project}/locations/{location}/certificates/{resourceName}.
+     * - https://certificatemanager.{universeDomain}/v1alpha1/projects/{project}/locations/{location}/certificates/{resourceName}.
      * </pre>
      *
      * <code>repeated string ssl_certificates = 366006543;</code>
@@ -5064,7 +5064,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
      * Certificate Manager Certificates accepted formats are:
      *
      * - //certificatemanager.googleapis.com/projects/{project}/locations/{location}/certificates/{resourceName}.
-     * - https://certificatemanager.googleapis.com/v1alpha1/projects/{project}/locations/{location}/certificates/{resourceName}.
+     * - https://certificatemanager.{universeDomain}/v1alpha1/projects/{project}/locations/{location}/certificates/{resourceName}.
      * </pre>
      *
      * <code>repeated string ssl_certificates = 366006543;</code>
@@ -5099,7 +5099,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
      * Certificate Manager Certificates accepted formats are:
      *
      * - //certificatemanager.googleapis.com/projects/{project}/locations/{location}/certificates/{resourceName}.
-     * - https://certificatemanager.googleapis.com/v1alpha1/projects/{project}/locations/{location}/certificates/{resourceName}.
+     * - https://certificatemanager.{universeDomain}/v1alpha1/projects/{project}/locations/{location}/certificates/{resourceName}.
      * </pre>
      *
      * <code>repeated string ssl_certificates = 366006543;</code>
@@ -5142,7 +5142,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
      * Certificate Manager Certificates accepted formats are:
      *
      * - //certificatemanager.googleapis.com/projects/{project}/locations/{location}/certificates/{resourceName}.
-     * - https://certificatemanager.googleapis.com/v1alpha1/projects/{project}/locations/{location}/certificates/{resourceName}.
+     * - https://certificatemanager.{universeDomain}/v1alpha1/projects/{project}/locations/{location}/certificates/{resourceName}.
      * </pre>
      *
      * <code>repeated string ssl_certificates = 366006543;</code>
@@ -5184,7 +5184,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
      * Certificate Manager Certificates accepted formats are:
      *
      * - //certificatemanager.googleapis.com/projects/{project}/locations/{location}/certificates/{resourceName}.
-     * - https://certificatemanager.googleapis.com/v1alpha1/projects/{project}/locations/{location}/certificates/{resourceName}.
+     * - https://certificatemanager.{universeDomain}/v1alpha1/projects/{project}/locations/{location}/certificates/{resourceName}.
      * </pre>
      *
      * <code>repeated string ssl_certificates = 366006543;</code>
@@ -5223,7 +5223,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
      * Certificate Manager Certificates accepted formats are:
      *
      * - //certificatemanager.googleapis.com/projects/{project}/locations/{location}/certificates/{resourceName}.
-     * - https://certificatemanager.googleapis.com/v1alpha1/projects/{project}/locations/{location}/certificates/{resourceName}.
+     * - https://certificatemanager.{universeDomain}/v1alpha1/projects/{project}/locations/{location}/certificates/{resourceName}.
      * </pre>
      *
      * <code>repeated string ssl_certificates = 366006543;</code>
@@ -5261,7 +5261,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
      * Certificate Manager Certificates accepted formats are:
      *
      * - //certificatemanager.googleapis.com/projects/{project}/locations/{location}/certificates/{resourceName}.
-     * - https://certificatemanager.googleapis.com/v1alpha1/projects/{project}/locations/{location}/certificates/{resourceName}.
+     * - https://certificatemanager.{universeDomain}/v1alpha1/projects/{project}/locations/{location}/certificates/{resourceName}.
      * </pre>
      *
      * <code>repeated string ssl_certificates = 366006543;</code>

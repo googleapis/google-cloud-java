@@ -58,8 +58,9 @@ public interface FirewallInfoOrBuilder
    *
    *
    * <pre>
-   * The URI of the firewall rule. This field is not applicable to implied
-   * VPC firewall rules.
+   * The URI of the firewall rule in format
+   * "projects/{project}/global/firewalls/{firewall}". This field is not
+   * applicable to implied VPC firewall rules.
    * </pre>
    *
    * <code>string uri = 2;</code>
@@ -72,8 +73,9 @@ public interface FirewallInfoOrBuilder
    *
    *
    * <pre>
-   * The URI of the firewall rule. This field is not applicable to implied
-   * VPC firewall rules.
+   * The URI of the firewall rule in format
+   * "projects/{project}/global/firewalls/{firewall}". This field is not
+   * applicable to implied VPC firewall rules.
    * </pre>
    *
    * <code>string uri = 2;</code>
@@ -151,7 +153,8 @@ public interface FirewallInfoOrBuilder
    *
    *
    * <pre>
-   * The URI of the VPC network that the firewall rule is associated with.
+   * The URI of the VPC network that the firewall rule is associated with in
+   * format "projects/{project}/global/networks/{network}".
    * This field is not applicable to hierarchical firewall policy rules.
    * </pre>
    *
@@ -165,7 +168,8 @@ public interface FirewallInfoOrBuilder
    *
    *
    * <pre>
-   * The URI of the VPC network that the firewall rule is associated with.
+   * The URI of the VPC network that the firewall rule is associated with in
+   * format "projects/{project}/global/networks/{network}".
    * This field is not applicable to hierarchical firewall policy rules.
    * </pre>
    *
@@ -324,6 +328,12 @@ public interface FirewallInfoOrBuilder
    * The URI of the firewall policy that this rule is associated with.
    * This field is not applicable to VPC firewall rules and implied VPC firewall
    * rules.
+   * Format:
+   * * `locations/global/firewallPolicies/{policy_id}` (hierarchical policy)
+   * * `projects/{project_id}/global/firewallPolicies/{policy_id}` (global
+   * network firewall policy)
+   * * `projects/{project_id}/regions/{region}/firewallPolicies/{policy_id}`
+   * (regional network firewall policy)
    * </pre>
    *
    * <code>string policy_uri = 11;</code>
@@ -339,6 +349,12 @@ public interface FirewallInfoOrBuilder
    * The URI of the firewall policy that this rule is associated with.
    * This field is not applicable to VPC firewall rules and implied VPC firewall
    * rules.
+   * Format:
+   * * `locations/global/firewallPolicies/{policy_id}` (hierarchical policy)
+   * * `projects/{project_id}/global/firewallPolicies/{policy_id}` (global
+   * network firewall policy)
+   * * `projects/{project_id}/regions/{region}/firewallPolicies/{policy_id}`
+   * (regional network firewall policy)
    * </pre>
    *
    * <code>string policy_uri = 11;</code>

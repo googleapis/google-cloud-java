@@ -468,6 +468,7 @@ public class HttpJsonConversationalSearchServiceStub extends ConversationalSearc
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<CreateSessionRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "sessionId", request.getSessionId());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })

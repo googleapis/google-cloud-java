@@ -18,6 +18,7 @@ package com.google.cloud.bigtable.data.v2.internal.compat;
 import com.google.api.gax.grpc.GrpcCallContext;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.UnaryCallSettings;
+import com.google.common.base.Preconditions;
 import com.google.common.cache.CacheBuilder;
 import com.google.common.cache.CacheLoader;
 import com.google.common.cache.LoadingCache;
@@ -30,6 +31,7 @@ import java.util.Optional;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Function;
 import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 
 public class Util {
   public static <K, V extends Closeable> LoadingCache<K, V> createSessionMap(
@@ -59,40 +61,33 @@ public class Util {
             });
   }
 
-  public static Duration extractTimeout(UnaryCallSettings<?, ?> settings) {
+  @Nonnull
+  public static Duration extractTimeout(@Nonnull UnaryCallSettings<?, ?> settings) {
     return settings.getRetrySettings().getTotalTimeoutDuration();
   }
 
-  public static Deadline extractDeadline(GrpcCallContext callContext, Duration defaultDeadline) {
+  @Nonnull
+  public static Deadline extractDeadline(
+      @Nullable GrpcCallContext callContext, @Nonnull Duration defaultDeadline) {
+    Preconditions.checkNotNull(defaultDeadline, "defaultDeadline can't be null");
     // NOTE: ignoring callContext.timeout because its an attempt timeout
     Optional<Deadline> ambientDeadline = Optional.ofNullable(Context.current().getDeadline());
-    Optional<Duration> retryTotalTimeout =
+    Duration totalTimeout =
         Optional.ofNullable(callContext)
             .flatMap(ctx -> Optional.ofNullable(ctx.getRetrySettings()))
-            .map(RetrySettings::getTotalTimeoutDuration);
+            .map(RetrySettings::getTotalTimeoutDuration)
+            .orElse(defaultDeadline);
     Optional<Deadline> grpcCallDeadline =
         Optional.ofNullable(callContext)
             .flatMap(ctx -> Optional.ofNullable(ctx.getCallOptions()))
             .flatMap(ctx -> Optional.ofNullable(ctx.getDeadline()));
 
-    Deadline effectiveDeadline = null;
-    if (ambientDeadline.isPresent()) {
+    Deadline effectiveDeadline = Deadline.after(totalTimeout.toMillis(), TimeUnit.MILLISECONDS);
+    if (ambientDeadline.isPresent() && ambientDeadline.get().isBefore(effectiveDeadline)) {
       effectiveDeadline = ambientDeadline.get();
     }
-    if (grpcCallDeadline.isPresent()) {
-      if (effectiveDeadline == null || grpcCallDeadline.get().isBefore(effectiveDeadline)) {
-        effectiveDeadline = grpcCallDeadline.get();
-      }
-    }
-    if (retryTotalTimeout.isPresent()) {
-      Deadline retryDeadline =
-          Deadline.after(retryTotalTimeout.get().toMillis(), TimeUnit.MILLISECONDS);
-      if (effectiveDeadline == null || retryDeadline.isBefore(effectiveDeadline)) {
-        effectiveDeadline = retryDeadline;
-      }
-    }
-    if (effectiveDeadline == null) {
-      effectiveDeadline = Deadline.after(defaultDeadline.toMillis(), TimeUnit.MILLISECONDS);
+    if (grpcCallDeadline.isPresent() && grpcCallDeadline.get().isBefore(effectiveDeadline)) {
+      effectiveDeadline = grpcCallDeadline.get();
     }
     return effectiveDeadline;
   }

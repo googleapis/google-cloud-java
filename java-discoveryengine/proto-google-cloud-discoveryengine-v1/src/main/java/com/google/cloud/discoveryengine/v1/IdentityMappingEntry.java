@@ -54,6 +54,7 @@ public final class IdentityMappingEntry extends com.google.protobuf.GeneratedMes
 
   private IdentityMappingEntry() {
     externalIdentity_ = "";
+    externalIdentityName_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -346,6 +347,59 @@ public final class IdentityMappingEntry extends com.google.protobuf.GeneratedMes
     }
   }
 
+  public static final int EXTERNAL_IDENTITY_NAME_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object externalIdentityName_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The name of the external identity.
+   * </pre>
+   *
+   * <code>string external_identity_name = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The externalIdentityName.
+   */
+  @java.lang.Override
+  public java.lang.String getExternalIdentityName() {
+    java.lang.Object ref = externalIdentityName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      externalIdentityName_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The name of the external identity.
+   * </pre>
+   *
+   * <code>string external_identity_name = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for externalIdentityName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getExternalIdentityNameBytes() {
+    java.lang.Object ref = externalIdentityName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      externalIdentityName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -369,6 +423,9 @@ public final class IdentityMappingEntry extends com.google.protobuf.GeneratedMes
     if (identityProviderIdCase_ == 3) {
       com.google.protobuf.GeneratedMessage.writeString(output, 3, identityProviderId_);
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(externalIdentityName_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 4, externalIdentityName_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -387,6 +444,9 @@ public final class IdentityMappingEntry extends com.google.protobuf.GeneratedMes
     if (identityProviderIdCase_ == 3) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(3, identityProviderId_);
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(externalIdentityName_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(4, externalIdentityName_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -404,6 +464,7 @@ public final class IdentityMappingEntry extends com.google.protobuf.GeneratedMes
         (com.google.cloud.discoveryengine.v1.IdentityMappingEntry) obj;
 
     if (!getExternalIdentity().equals(other.getExternalIdentity())) return false;
+    if (!getExternalIdentityName().equals(other.getExternalIdentityName())) return false;
     if (!getIdentityProviderIdCase().equals(other.getIdentityProviderIdCase())) return false;
     switch (identityProviderIdCase_) {
       case 2:
@@ -428,6 +489,8 @@ public final class IdentityMappingEntry extends com.google.protobuf.GeneratedMes
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + EXTERNAL_IDENTITY_FIELD_NUMBER;
     hash = (53 * hash) + getExternalIdentity().hashCode();
+    hash = (37 * hash) + EXTERNAL_IDENTITY_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getExternalIdentityName().hashCode();
     switch (identityProviderIdCase_) {
       case 2:
         hash = (37 * hash) + USER_ID_FIELD_NUMBER;
@@ -583,6 +646,7 @@ public final class IdentityMappingEntry extends com.google.protobuf.GeneratedMes
       super.clear();
       bitField0_ = 0;
       externalIdentity_ = "";
+      externalIdentityName_ = "";
       identityProviderIdCase_ = 0;
       identityProviderId_ = null;
       return this;
@@ -625,6 +689,9 @@ public final class IdentityMappingEntry extends com.google.protobuf.GeneratedMes
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.externalIdentity_ = externalIdentity_;
       }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.externalIdentityName_ = externalIdentityName_;
+      }
     }
 
     private void buildPartialOneofs(
@@ -649,6 +716,11 @@ public final class IdentityMappingEntry extends com.google.protobuf.GeneratedMes
       if (!other.getExternalIdentity().isEmpty()) {
         externalIdentity_ = other.externalIdentity_;
         bitField0_ |= 0x00000004;
+        onChanged();
+      }
+      if (!other.getExternalIdentityName().isEmpty()) {
+        externalIdentityName_ = other.externalIdentityName_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       switch (other.getIdentityProviderIdCase()) {
@@ -717,6 +789,12 @@ public final class IdentityMappingEntry extends com.google.protobuf.GeneratedMes
                 identityProviderId_ = s;
                 break;
               } // case 26
+            case 34:
+              {
+                externalIdentityName_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 34
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1188,6 +1266,117 @@ public final class IdentityMappingEntry extends com.google.protobuf.GeneratedMes
       checkByteStringIsUtf8(value);
       externalIdentity_ = value;
       bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object externalIdentityName_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name of the external identity.
+     * </pre>
+     *
+     * <code>string external_identity_name = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The externalIdentityName.
+     */
+    public java.lang.String getExternalIdentityName() {
+      java.lang.Object ref = externalIdentityName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        externalIdentityName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name of the external identity.
+     * </pre>
+     *
+     * <code>string external_identity_name = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for externalIdentityName.
+     */
+    public com.google.protobuf.ByteString getExternalIdentityNameBytes() {
+      java.lang.Object ref = externalIdentityName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        externalIdentityName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name of the external identity.
+     * </pre>
+     *
+     * <code>string external_identity_name = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The externalIdentityName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setExternalIdentityName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      externalIdentityName_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name of the external identity.
+     * </pre>
+     *
+     * <code>string external_identity_name = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearExternalIdentityName() {
+      externalIdentityName_ = getDefaultInstance().getExternalIdentityName();
+      bitField0_ = (bitField0_ & ~0x00000008);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name of the external identity.
+     * </pre>
+     *
+     * <code>string external_identity_name = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for externalIdentityName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setExternalIdentityNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      externalIdentityName_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

@@ -19,6 +19,7 @@ package com.google.cloud.discoveryengine.v1;
 import com.google.api.core.BetaApi;
 import com.google.cloud.discoveryengine.v1.AssistantServiceGrpc.AssistantServiceImplBase;
 import com.google.protobuf.AbstractMessage;
+import com.google.protobuf.Empty;
 import io.grpc.stub.StreamObserver;
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -75,6 +76,111 @@ public class MockAssistantServiceImpl extends AssistantServiceImplBase {
                   "Unrecognized response type %s for method StreamAssist, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   StreamAssistResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createAssistant(
+      CreateAssistantRequest request, StreamObserver<Assistant> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Assistant) {
+      requests.add(request);
+      responseObserver.onNext(((Assistant) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateAssistant, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Assistant.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteAssistant(
+      DeleteAssistantRequest request, StreamObserver<Empty> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext(((Empty) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteAssistant, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateAssistant(
+      UpdateAssistantRequest request, StreamObserver<Assistant> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Assistant) {
+      requests.add(request);
+      responseObserver.onNext(((Assistant) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateAssistant, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Assistant.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getAssistant(
+      GetAssistantRequest request, StreamObserver<Assistant> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Assistant) {
+      requests.add(request);
+      responseObserver.onNext(((Assistant) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetAssistant, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Assistant.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listAssistants(
+      ListAssistantsRequest request, StreamObserver<ListAssistantsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListAssistantsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListAssistantsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListAssistants, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListAssistantsResponse.class.getName(),
                   Exception.class.getName())));
     }
   }

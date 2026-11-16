@@ -52,6 +52,7 @@ import com.google.cloud.dataform.v1.CompilationResult;
 import com.google.cloud.dataform.v1.ComputeRepositoryAccessTokenStatusRequest;
 import com.google.cloud.dataform.v1.ComputeRepositoryAccessTokenStatusResponse;
 import com.google.cloud.dataform.v1.Config;
+import com.google.cloud.dataform.v1.CreateCompilationResultMetadata;
 import com.google.cloud.dataform.v1.CreateCompilationResultRequest;
 import com.google.cloud.dataform.v1.CreateFolderRequest;
 import com.google.cloud.dataform.v1.CreateReleaseConfigRequest;
@@ -840,6 +841,18 @@ public class GrpcDataformStub extends DataformStub {
               .setSampledToLocalTracing(true)
               .build();
 
+  private static final MethodDescriptor<CreateCompilationResultRequest, Operation>
+      createCompilationResultLongRunningMethodDescriptor =
+          MethodDescriptor.<CreateCompilationResultRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.dataform.v1.Dataform/CreateCompilationResultLongRunning")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateCompilationResultRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private static final MethodDescriptor<
           QueryCompilationResultActionsRequest, QueryCompilationResultActionsResponse>
       queryCompilationResultActionsMethodDescriptor =
@@ -1172,6 +1185,11 @@ public class GrpcDataformStub extends DataformStub {
       getCompilationResultCallable;
   private final UnaryCallable<CreateCompilationResultRequest, CompilationResult>
       createCompilationResultCallable;
+  private final UnaryCallable<CreateCompilationResultRequest, Operation>
+      createCompilationResultLongRunningCallable;
+  private final OperationCallable<
+          CreateCompilationResultRequest, CompilationResult, CreateCompilationResultMetadata>
+      createCompilationResultLongRunningOperationCallable;
   private final UnaryCallable<
           QueryCompilationResultActionsRequest, QueryCompilationResultActionsResponse>
       queryCompilationResultActionsCallable;
@@ -1913,6 +1931,18 @@ public class GrpcDataformStub extends DataformStub {
                     })
                 .setResourceNameExtractor(request -> request.getParent())
                 .build();
+    GrpcCallSettings<CreateCompilationResultRequest, Operation>
+        createCompilationResultLongRunningTransportSettings =
+            GrpcCallSettings.<CreateCompilationResultRequest, Operation>newBuilder()
+                .setMethodDescriptor(createCompilationResultLongRunningMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
     GrpcCallSettings<QueryCompilationResultActionsRequest, QueryCompilationResultActionsResponse>
         queryCompilationResultActionsTransportSettings =
             GrpcCallSettings
@@ -2432,6 +2462,17 @@ public class GrpcDataformStub extends DataformStub {
             createCompilationResultTransportSettings,
             settings.createCompilationResultSettings(),
             clientContext);
+    this.createCompilationResultLongRunningCallable =
+        callableFactory.createUnaryCallable(
+            createCompilationResultLongRunningTransportSettings,
+            settings.createCompilationResultLongRunningSettings(),
+            clientContext);
+    this.createCompilationResultLongRunningOperationCallable =
+        callableFactory.createOperationCallable(
+            createCompilationResultLongRunningTransportSettings,
+            settings.createCompilationResultLongRunningOperationSettings(),
+            clientContext,
+            operationsStub);
     this.queryCompilationResultActionsCallable =
         callableFactory.createUnaryCallable(
             queryCompilationResultActionsTransportSettings,
@@ -2944,6 +2985,19 @@ public class GrpcDataformStub extends DataformStub {
   public UnaryCallable<CreateCompilationResultRequest, CompilationResult>
       createCompilationResultCallable() {
     return createCompilationResultCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateCompilationResultRequest, Operation>
+      createCompilationResultLongRunningCallable() {
+    return createCompilationResultLongRunningCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          CreateCompilationResultRequest, CompilationResult, CreateCompilationResultMetadata>
+      createCompilationResultLongRunningOperationCallable() {
+    return createCompilationResultLongRunningOperationCallable;
   }
 
   @Override

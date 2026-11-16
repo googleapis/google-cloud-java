@@ -133,8 +133,8 @@ public interface LineItemDeliveryForecastOrBuilder
    *
    * <pre>
    * The unit with which the goal or cap of the LineItem is defined. Will be the
-   * same value as [Goal.unitType][] for both a set line item or a prospective
-   * one.
+   * same value as [Goal.unitType][google.ads.admanager.v1.Goal.unit_type] for
+   * both a set line item or a prospective one.
    * </pre>
    *
    * <code>optional .google.ads.admanager.v1.UnitTypeEnum.UnitType unit_type = 3;</code>
@@ -148,8 +148,8 @@ public interface LineItemDeliveryForecastOrBuilder
    *
    * <pre>
    * The unit with which the goal or cap of the LineItem is defined. Will be the
-   * same value as [Goal.unitType][] for both a set line item or a prospective
-   * one.
+   * same value as [Goal.unitType][google.ads.admanager.v1.Goal.unit_type] for
+   * both a set line item or a prospective one.
    * </pre>
    *
    * <code>optional .google.ads.admanager.v1.UnitTypeEnum.UnitType unit_type = 3;</code>
@@ -163,8 +163,8 @@ public interface LineItemDeliveryForecastOrBuilder
    *
    * <pre>
    * The unit with which the goal or cap of the LineItem is defined. Will be the
-   * same value as [Goal.unitType][] for both a set line item or a prospective
-   * one.
+   * same value as [Goal.unitType][google.ads.admanager.v1.Goal.unit_type] for
+   * both a set line item or a prospective one.
    * </pre>
    *
    * <code>optional .google.ads.admanager.v1.UnitTypeEnum.UnitType unit_type = 3;</code>
@@ -177,9 +177,10 @@ public interface LineItemDeliveryForecastOrBuilder
    *
    *
    * <pre>
-   * The number of units, defined by [Goal.unitType][], that will be delivered
-   * by the line item. Delivery of existing line items that are of same or lower
-   * priorities may be impacted.
+   * The number of units, defined by
+   * [Goal.unitType][google.ads.admanager.v1.Goal.unit_type], that will be
+   * delivered by the line item. Delivery of existing line items that are of
+   * same or lower priorities may be impacted.
    * </pre>
    *
    * <code>optional int64 predicted_delivery_units = 4;</code>
@@ -192,9 +193,10 @@ public interface LineItemDeliveryForecastOrBuilder
    *
    *
    * <pre>
-   * The number of units, defined by [Goal.unitType][], that will be delivered
-   * by the line item. Delivery of existing line items that are of same or lower
-   * priorities may be impacted.
+   * The number of units, defined by
+   * [Goal.unitType][google.ads.admanager.v1.Goal.unit_type], that will be
+   * delivered by the line item. Delivery of existing line items that are of
+   * same or lower priorities may be impacted.
    * </pre>
    *
    * <code>optional int64 predicted_delivery_units = 4;</code>
@@ -207,8 +209,9 @@ public interface LineItemDeliveryForecastOrBuilder
    *
    *
    * <pre>
-   * The number of units, defined by [Goal.unitType][], that have already been
-   * served if the reservation is already running.
+   * The number of units, defined by
+   * [Goal.unitType][google.ads.admanager.v1.Goal.unit_type], that have already
+   * been served if the reservation is already running.
    * </pre>
    *
    * <code>optional int64 delivered_units = 5;</code>
@@ -221,8 +224,9 @@ public interface LineItemDeliveryForecastOrBuilder
    *
    *
    * <pre>
-   * The number of units, defined by [Goal.unitType][], that have already been
-   * served if the reservation is already running.
+   * The number of units, defined by
+   * [Goal.unitType][google.ads.admanager.v1.Goal.unit_type], that have already
+   * been served if the reservation is already running.
    * </pre>
    *
    * <code>optional int64 delivered_units = 5;</code>
@@ -235,7 +239,8 @@ public interface LineItemDeliveryForecastOrBuilder
    *
    *
    * <pre>
-   * The number of units, defined by [Goal.unitType][], that match the
+   * The number of units, defined by
+   * [Goal.unitType][google.ads.admanager.v1.Goal.unit_type], that match the
    * specified LineItem#targeting and delivery settings.
    * </pre>
    *
@@ -249,7 +254,8 @@ public interface LineItemDeliveryForecastOrBuilder
    *
    *
    * <pre>
-   * The number of units, defined by [Goal.unitType][], that match the
+   * The number of units, defined by
+   * [Goal.unitType][google.ads.admanager.v1.Goal.unit_type], that match the
    * specified LineItem#targeting and delivery settings.
    * </pre>
    *

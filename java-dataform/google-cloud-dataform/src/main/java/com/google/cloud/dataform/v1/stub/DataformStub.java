@@ -47,6 +47,7 @@ import com.google.cloud.dataform.v1.CompilationResult;
 import com.google.cloud.dataform.v1.ComputeRepositoryAccessTokenStatusRequest;
 import com.google.cloud.dataform.v1.ComputeRepositoryAccessTokenStatusResponse;
 import com.google.cloud.dataform.v1.Config;
+import com.google.cloud.dataform.v1.CreateCompilationResultMetadata;
 import com.google.cloud.dataform.v1.CreateCompilationResultRequest;
 import com.google.cloud.dataform.v1.CreateFolderRequest;
 import com.google.cloud.dataform.v1.CreateReleaseConfigRequest;
@@ -524,6 +525,19 @@ public abstract class DataformStub implements BackgroundResource {
   public UnaryCallable<CreateCompilationResultRequest, CompilationResult>
       createCompilationResultCallable() {
     throw new UnsupportedOperationException("Not implemented: createCompilationResultCallable()");
+  }
+
+  public OperationCallable<
+          CreateCompilationResultRequest, CompilationResult, CreateCompilationResultMetadata>
+      createCompilationResultLongRunningOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: createCompilationResultLongRunningOperationCallable()");
+  }
+
+  public UnaryCallable<CreateCompilationResultRequest, Operation>
+      createCompilationResultLongRunningCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: createCompilationResultLongRunningCallable()");
   }
 
   public UnaryCallable<

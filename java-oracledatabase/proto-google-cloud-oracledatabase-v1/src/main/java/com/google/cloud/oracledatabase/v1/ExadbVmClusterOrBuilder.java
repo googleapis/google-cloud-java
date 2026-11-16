@@ -449,4 +449,23 @@ public interface ExadbVmClusterOrBuilder
    * </code>
    */
   com.google.cloud.oracledatabase.v1.IdentityConnectorOrBuilder getIdentityConnectorOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. If set to true, disables the automatic
+   * provisioning of the Workload Identity Connector during creation. If set to
+   * false or omitted, the Workload Identity Connector will be automatically
+   * provisioned by default. Note: Provisioning the Workload Identity Connector
+   * is a prerequisite for enabling Google Cloud CMEK.
+   * </pre>
+   *
+   * <code>
+   * bool identity_connector_disabled = 13 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The identityConnectorDisabled.
+   */
+  boolean getIdentityConnectorDisabled();
 }
