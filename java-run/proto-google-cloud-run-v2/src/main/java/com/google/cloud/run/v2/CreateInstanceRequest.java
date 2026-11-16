@@ -70,6 +70,13 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
   private volatile java.lang.Object parent_ = "";
 
   /**
+   *
+   *
+   * <pre>
+   * Required. The location and project in which this Instance should be
+   * created.
+   * </pre>
+   *
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
@@ -90,6 +97,13 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
   }
 
   /**
+   *
+   *
+   * <pre>
+   * Required. The location and project in which this Instance should be
+   * created.
+   * </pre>
+   *
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
@@ -152,12 +166,13 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required. The unique identifier for the Instance. It must begin with
+   * Optional. The unique identifier for the Instance. It must begin with
    * letter, and cannot end with hyphen; must contain fewer than 50 characters.
    * The name of the instance becomes {parent}/instances/{instance_id}.
+   * If not provided, the server will generate a unique `instance_id`.
    * </pre>
    *
-   * <code>string instance_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string instance_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The instanceId.
    */
@@ -178,12 +193,13 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required. The unique identifier for the Instance. It must begin with
+   * Optional. The unique identifier for the Instance. It must begin with
    * letter, and cannot end with hyphen; must contain fewer than 50 characters.
    * The name of the instance becomes {parent}/instances/{instance_id}.
+   * If not provided, the server will generate a unique `instance_id`.
    * </pre>
    *
-   * <code>string instance_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string instance_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for instanceId.
    */
@@ -614,6 +630,13 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
     private java.lang.Object parent_ = "";
 
     /**
+     *
+     *
+     * <pre>
+     * Required. The location and project in which this Instance should be
+     * created.
+     * </pre>
+     *
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
@@ -633,6 +656,13 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
     }
 
     /**
+     *
+     *
+     * <pre>
+     * Required. The location and project in which this Instance should be
+     * created.
+     * </pre>
+     *
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
@@ -652,6 +682,13 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
     }
 
     /**
+     *
+     *
+     * <pre>
+     * Required. The location and project in which this Instance should be
+     * created.
+     * </pre>
+     *
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
@@ -670,6 +707,13 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
     }
 
     /**
+     *
+     *
+     * <pre>
+     * Required. The location and project in which this Instance should be
+     * created.
+     * </pre>
+     *
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
@@ -684,6 +728,13 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
     }
 
     /**
+     *
+     *
+     * <pre>
+     * Required. The location and project in which this Instance should be
+     * created.
+     * </pre>
+     *
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
@@ -857,12 +908,13 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The unique identifier for the Instance. It must begin with
+     * Optional. The unique identifier for the Instance. It must begin with
      * letter, and cannot end with hyphen; must contain fewer than 50 characters.
      * The name of the instance becomes {parent}/instances/{instance_id}.
+     * If not provided, the server will generate a unique `instance_id`.
      * </pre>
      *
-     * <code>string instance_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string instance_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The instanceId.
      */
@@ -882,12 +934,13 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The unique identifier for the Instance. It must begin with
+     * Optional. The unique identifier for the Instance. It must begin with
      * letter, and cannot end with hyphen; must contain fewer than 50 characters.
      * The name of the instance becomes {parent}/instances/{instance_id}.
+     * If not provided, the server will generate a unique `instance_id`.
      * </pre>
      *
-     * <code>string instance_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string instance_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for instanceId.
      */
@@ -907,12 +960,13 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The unique identifier for the Instance. It must begin with
+     * Optional. The unique identifier for the Instance. It must begin with
      * letter, and cannot end with hyphen; must contain fewer than 50 characters.
      * The name of the instance becomes {parent}/instances/{instance_id}.
+     * If not provided, the server will generate a unique `instance_id`.
      * </pre>
      *
-     * <code>string instance_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string instance_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The instanceId to set.
      * @return This builder for chaining.
@@ -931,12 +985,13 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The unique identifier for the Instance. It must begin with
+     * Optional. The unique identifier for the Instance. It must begin with
      * letter, and cannot end with hyphen; must contain fewer than 50 characters.
      * The name of the instance becomes {parent}/instances/{instance_id}.
+     * If not provided, the server will generate a unique `instance_id`.
      * </pre>
      *
-     * <code>string instance_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string instance_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -951,12 +1006,13 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The unique identifier for the Instance. It must begin with
+     * Optional. The unique identifier for the Instance. It must begin with
      * letter, and cannot end with hyphen; must contain fewer than 50 characters.
      * The name of the instance becomes {parent}/instances/{instance_id}.
+     * If not provided, the server will generate a unique `instance_id`.
      * </pre>
      *
-     * <code>string instance_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string instance_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for instanceId to set.
      * @return This builder for chaining.

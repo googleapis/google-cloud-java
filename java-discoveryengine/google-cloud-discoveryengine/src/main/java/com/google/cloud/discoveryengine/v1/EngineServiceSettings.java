@@ -32,6 +32,9 @@ import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.discoveryengine.v1.stub.EngineServiceStubSettings;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import java.io.IOException;
@@ -155,6 +158,16 @@ public class EngineServiceSettings extends ClientSettings<EngineServiceSettings>
   public PagedCallSettings<ListEnginesRequest, ListEnginesResponse, ListEnginesPagedResponse>
       listEnginesSettings() {
     return ((EngineServiceStubSettings) getStubSettings()).listEnginesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getIamPolicy. */
+  public UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings() {
+    return ((EngineServiceStubSettings) getStubSettings()).getIamPolicySettings();
+  }
+
+  /** Returns the object with the settings used for calls to setIamPolicy. */
+  public UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings() {
+    return ((EngineServiceStubSettings) getStubSettings()).setIamPolicySettings();
   }
 
   public static final EngineServiceSettings create(EngineServiceStubSettings stub)
@@ -306,6 +319,16 @@ public class EngineServiceSettings extends ClientSettings<EngineServiceSettings>
             ListEnginesRequest, ListEnginesResponse, ListEnginesPagedResponse>
         listEnginesSettings() {
       return getStubSettingsBuilder().listEnginesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getIamPolicy. */
+    public UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings() {
+      return getStubSettingsBuilder().getIamPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setIamPolicy. */
+    public UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings() {
+      return getStubSettingsBuilder().setIamPolicySettings();
     }
 
     @Override

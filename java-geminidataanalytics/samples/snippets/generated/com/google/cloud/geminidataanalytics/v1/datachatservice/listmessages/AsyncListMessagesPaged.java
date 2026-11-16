@@ -44,6 +44,7 @@ public class AsyncListMessagesPaged {
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
               .setFilter("filter-1274492040")
+              .setPendingWriteWaitSkipped(true)
               .build();
       while (true) {
         ListMessagesResponse response = dataChatServiceClient.listMessagesCallable().call(request);

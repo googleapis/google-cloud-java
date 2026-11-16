@@ -81,6 +81,10 @@ public final class GoldengateConnectionAssignmentProto extends com.google.protob
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_oracledatabase_v1_TestGoldengateConnectionAssignmentResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_oracledatabase_v1_UpdateGoldengateConnectionAssignmentRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_oracledatabase_v1_UpdateGoldengateConnectionAssignmentRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_oracledatabase_v1_DeleteGoldengateConnectionAssignmentRequest_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_oracledatabase_v1_DeleteGoldengateConnectionAssignmentRequest_fieldAccessorTable;
@@ -96,25 +100,24 @@ public final class GoldengateConnectionAssignmentProto extends com.google.protob
       "\n"
           + "Egoogle/cloud/oracledatabase/v1/goldengate_connection_assignment.proto\022\036google."
           + "cloud.oracledatabase.v1\032\037google/api/fiel"
-          + "d_behavior.proto\032\033google/api/field_info."
-          + "proto\032\031google/api/resource.proto\032\037google/protobuf/timestamp.proto\"\214\005\n"
+          + "d_behavior.proto\032\033google/api/field_info.proto\032\031google/api/resource.proto\032"
+          + " google/protobuf/field_mask.proto\032\037google/protobuf/timestamp.proto\"\216\005\n"
           + "\036GoldengateConnectionAssignment\022\022\n"
-          + "\004name\030\001 \001(\tB\004\342A\001\010\022b\n\n"
-          + "properties\030\002 \001(\0132H.google.cloud.orac"
-          + "ledatabase.v1.GoldengateConnectionAssignmentPropertiesB\004\342A\001\002\0225\n"
+          + "\004name\030\001 \001(\tB\004\342A\001\010\022c\n\n"
+          + "properties\030\002 \001(\0132H.google.cloud.oracledata"
+          + "base.v1.GoldengateConnectionAssignmentPropertiesB\005\342A\002\002\005\0225\n"
           + "\013create_time\030\003"
           + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\022`\n"
-          + "\006labels\030\004 \003(\0132J.google.cloud.oracledatabas"
-          + "e.v1.GoldengateConnectionAssignment.LabelsEntryB\004\342A\001\001\022\032\n"
-          + "\014display_name\030\005 \001(\tB\004\342A\001\001\022\034\n"
+          + "\006labels\030\004 \003(\0132J.google.cloud.oracledatabase.v1."
+          + "GoldengateConnectionAssignment.LabelsEntryB\004\342A\001\001\022\033\n"
+          + "\014display_name\030\005 \001(\tB\005\342A\002\001\005\022\034\n"
           + "\016entitlement_id\030\006 \001(\tB\004\342A\001\003\032-\n"
           + "\013LabelsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001:\357\001\352A\353\001\n"
-          + "<oracledatabase.googleapis.com/GoldengateConnectionAssignment\022jprojects/{p"
-          + "roject}/locations/{location}/goldengateConnectionAssignments/{goldengate_connect"
-          + "ion_assignment}*\037goldengateConnectionAss"
-          + "ignments2\036goldengateConnectionAssignment\"\322\003\n"
+          + "<oracledatabase.googleapis.com/GoldengateConnectionAssignment\022jprojects/{proje"
+          + "ct}/locations/{location}/goldengateConnectionAssignments/{goldengate_connection_"
+          + "assignment}*\037goldengateConnectionAssignments2\036goldengateConnectionAssignment\"\322\003\n"
           + "(GoldengateConnectionAssignmentProperties\022\022\n"
           + "\004ocid\030\001 \001(\tB\004\342A\001\003\022Z\n"
           + "\025goldengate_connection\030\002 \001(\tB;\342A\001\002\372A4\n"
@@ -122,8 +125,8 @@ public final class GoldengateConnectionAssignmentProto extends com.google.protob
           + "\025goldengate_deployment\030\003 \001(\tB;\342A\001\002\372A4\n"
           + "2oracledatabase.googleapis.com/GoldengateDeployment\022\023\n"
           + "\005alias\030\004 \001(\tB\004\342A\001\003\022c\n"
-          + "\005state\030\005 \001(\0162N.google.cloud.oracledatabase.v1.G"
-          + "oldengateConnectionAssignmentProperties.StateB\004\342A\001\003\"`\n"
+          + "\005state\030\005 \001(\0162N.google.cloud.oracledatabase.v1.Golde"
+          + "ngateConnectionAssignmentProperties.StateB\004\342A\001\003\"`\n"
           + "\005State\022\025\n"
           + "\021STATE_UNSPECIFIED\020\000\022\014\n"
           + "\010CREATING\020\001\022\n\n"
@@ -132,33 +135,33 @@ public final class GoldengateConnectionAssignmentProto extends com.google.protob
           + "\010UPDATING\020\004\022\014\n"
           + "\010DELETING\020\005\"\344\001\n"
           + "*ListGoldengateConnectionAssignmentsRequest\022U\n"
-          + "\006parent\030\001 \001(\tBE\342A\001\002\372A>\022<oracledatabase.go"
-          + "ogleapis.com/GoldengateConnectionAssignment\022\027\n"
+          + "\006parent\030\001 \001(\tBE\342A\001\002\372A>\022<oracledatabase.google"
+          + "apis.com/GoldengateConnectionAssignment\022\027\n"
           + "\tpage_size\030\002 \001(\005B\004\342A\001\001\022\030\n\n"
           + "page_token\030\003 \001(\tB\004\342A\001\001\022\024\n"
           + "\006filter\030\004 \001(\tB\004\342A\001\001\022\026\n"
           + "\010order_by\030\005 \001(\tB\004\342A\001\001\"\306\001\n"
           + "+ListGoldengateConnectionAssignmentsResponse\022i\n"
-          + "!goldengate_connection_assignments\030\001 \003(\0132>.google"
-          + ".cloud.oracledatabase.v1.GoldengateConnectionAssignment\022\027\n"
+          + "!goldengate_connection_assignments\030\001 \003(\0132>.google.clo"
+          + "ud.oracledatabase.v1.GoldengateConnectionAssignment\022\027\n"
           + "\017next_page_token\030\002 \001(\t\022\023\n"
           + "\013unreachable\030\003 \003(\t\"\177\n"
           + "(GetGoldengateConnectionAssignmentRequest\022S\n"
           + "\004name\030\001 \001(\tBE\342A\001\002\372A>\n"
           + "<oracledatabase.googleapis.com/GoldengateConnectionAssignment\"\311\002\n"
           + "+CreateGoldengateConnectionAssignmentRequest\022U\n"
-          + "\006parent\030\001 \001(\tBE\342A\001\002\372A>\022<oracledatabase."
-          + "googleapis.com/GoldengateConnectionAssignment\0221\n"
+          + "\006parent\030\001 \001(\tBE\342A\001\002\372A>\022<oracledatabase.goog"
+          + "leapis.com/GoldengateConnectionAssignment\0221\n"
           + "#goldengate_connection_assignment_id\030\002 \001(\tB\004\342A\001\002\022n\n"
-          + " goldengate_connection_assignment\030\003 \001(\0132>.google.cloud.oracle"
-          + "database.v1.GoldengateConnectionAssignmentB\004\342A\001\002\022 \n\n"
+          + " goldengate_connection_assignment\030\003 \001(\0132>.google.cloud.oracledata"
+          + "base.v1.GoldengateConnectionAssignmentB\004\342A\001\002\022 \n\n"
           + "request_id\030\004 \001("
           + "\tB\014\342A\001\001\342\214\317\327\010\002\010\001\"\234\002\n"
           + ")TestGoldengateConnectionAssignmentRequest\022S\n"
           + "\004name\030\001 \001(\tBE\342A\001\002\372A>\n"
           + "<oracledatabase.googleapis.com/GoldengateConnectionAssignment\022f\n"
-          + "\004type\030\002 \001(\0162R.google.clo"
-          + "ud.oracledatabase.v1.TestGoldengateConnectionAssignmentRequest.TestTypeB\004\342A\001\001\"2\n"
+          + "\004type\030\002 \001(\0162R.google.cloud.o"
+          + "racledatabase.v1.TestGoldengateConnectionAssignmentRequest.TestTypeB\004\342A\001\001\"2\n"
           + "\010TestType\022\031\n"
           + "\025TEST_TYPE_UNSPECIFIED\020\000\022\013\n"
           + "\007DEFAULT\020\001\"]\n"
@@ -168,27 +171,35 @@ public final class GoldengateConnectionAssignmentProto extends com.google.protob
           + "\006action\030\003 \001(\t\022\r\n"
           + "\005issue\030\004 \001(\t\"\212\003\n"
           + "*TestGoldengateConnectionAssignmentResponse\022j\n"
-          + "\013result_type\030\001 \001(\0162U.google.cloud.oracledataba"
-          + "se.v1.TestGoldengateConnectionAssignmentResponse.ResultType\022L\n"
-          + "\005error\030\002 \001(\0132=.goo"
-          + "gle.cloud.oracledatabase.v1.TestConnectionAssignmentError\022M\n"
-          + "\006errors\030\003 \003(\0132=.goog"
-          + "le.cloud.oracledatabase.v1.TestConnectionAssignmentError\"S\n\n"
+          + "\013result_type\030\001 \001(\0162U.google.cloud.oracledatabase.v"
+          + "1.TestGoldengateConnectionAssignmentResponse.ResultType\022L\n"
+          + "\005error\030\002 \001(\0132=.google."
+          + "cloud.oracledatabase.v1.TestConnectionAssignmentError\022M\n"
+          + "\006errors\030\003 \003(\0132=.google.c"
+          + "loud.oracledatabase.v1.TestConnectionAssignmentError\"S\n\n"
           + "ResultType\022\033\n"
           + "\027RESULT_TYPE_UNSPECIFIED\020\000\022\r\n"
           + "\tSUCCEEDED\020\001\022\n\n"
           + "\006FAILED\020\002\022\r\n"
-          + "\tTIMED_OUT\020\003\"\244\001\n"
+          + "\tTIMED_OUT\020\003\"\366\001\n"
+          + "+UpdateGoldengateConnectionAssignmentRequest\0225\n"
+          + "\013update_mask\030\001"
+          + " \001(\0132\032.google.protobuf.FieldMaskB\004\342A\001\001\022n\n"
+          + " goldengate_connection_assignment\030\002 \001"
+          + "(\0132>.google.cloud.oracledatabase.v1.GoldengateConnectionAssignmentB\004\342A\001\002\022"
+          + " \n\n"
+          + "request_id\030\003 \001("
+          + "\tB\014\342A\001\001\342\214\317\327\010\002\010\001\"\244\001\n"
           + "+DeleteGoldengateConnectionAssignmentRequest\022S\n"
           + "\004name\030\001 \001(\tBE\342A\001\002\372A>\n"
           + "<oracledatabase.googleapis.com/GoldengateConnectionAssignment\022 \n\n"
           + "request_id\030\002 \001("
           + "\tB\014\342A\001\001\342\214\317\327\010\002\010\001B\375\001\n"
-          + "\"com.google.cloud.oracledatabase.v1B#GoldengateC"
-          + "onnectionAssignmentProtoP\001ZJcloud.google.com/go/oracledatabase/apiv1/oracledatab"
-          + "asepb;oracledatabasepb\252\002\036Google.Cloud.Or"
-          + "acleDatabase.V1\312\002\036Google\\Cloud\\OracleDat"
-          + "abase\\V1\352\002!Google::Cloud::OracleDatabase::V1b\006proto3"
+          + "\"com.google.cloud.oracledatabase.v1B#Golden"
+          + "gateConnectionAssignmentProtoP\001ZJcloud.google.com/go/oracledatabase/apiv1/oracle"
+          + "databasepb;oracledatabasepb\252\002\036Google.Clo"
+          + "ud.OracleDatabase.V1\312\002\036Google\\Cloud\\Orac"
+          + "leDatabase\\V1\352\002!Google::Cloud::OracleDatabase::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -197,6 +208,7 @@ public final class GoldengateConnectionAssignmentProto extends com.google.protob
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.FieldInfoProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
+              com.google.protobuf.FieldMaskProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
             });
     internal_static_google_cloud_oracledatabase_v1_GoldengateConnectionAssignment_descriptor =
@@ -283,8 +295,16 @@ public final class GoldengateConnectionAssignmentProto extends com.google.protob
             new java.lang.String[] {
               "ResultType", "Error", "Errors",
             });
-    internal_static_google_cloud_oracledatabase_v1_DeleteGoldengateConnectionAssignmentRequest_descriptor =
+    internal_static_google_cloud_oracledatabase_v1_UpdateGoldengateConnectionAssignmentRequest_descriptor =
         getDescriptor().getMessageType(9);
+    internal_static_google_cloud_oracledatabase_v1_UpdateGoldengateConnectionAssignmentRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_oracledatabase_v1_UpdateGoldengateConnectionAssignmentRequest_descriptor,
+            new java.lang.String[] {
+              "UpdateMask", "GoldengateConnectionAssignment", "RequestId",
+            });
+    internal_static_google_cloud_oracledatabase_v1_DeleteGoldengateConnectionAssignmentRequest_descriptor =
+        getDescriptor().getMessageType(10);
     internal_static_google_cloud_oracledatabase_v1_DeleteGoldengateConnectionAssignmentRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_oracledatabase_v1_DeleteGoldengateConnectionAssignmentRequest_descriptor,
@@ -295,6 +315,7 @@ public final class GoldengateConnectionAssignmentProto extends com.google.protob
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.FieldInfoProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
+    com.google.protobuf.FieldMaskProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

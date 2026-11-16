@@ -61,6 +61,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessage
     name_ = "";
     packetMirroringRules_ = java.util.Collections.emptyList();
     parent_ = "";
+    policySource_ = "";
     policyType_ = "";
     region_ = "";
     rules_ = java.util.Collections.emptyList();
@@ -82,6 +83,190 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessage
         .ensureFieldAccessorsInitialized(
             com.google.cloud.compute.v1.FirewallPolicy.class,
             com.google.cloud.compute.v1.FirewallPolicy.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Indicates the source of this Firewall Policy. This field is optional on
+   * creation and defaults to USER_DEFINED.
+   *
+   * The USER_DEFINED value indicates a regular firewall policy.
+   *
+   * The SYSTEM value indicates a system-level policy managed by an
+   * internal service like GKE. This SYSTEM value is reserved for
+   * internal services and cannot be set by users during policy creation.
+   * Policies with a SYSTEM source cannot be modified or deleted by
+   * users.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.compute.v1.FirewallPolicy.PolicySource}
+   */
+  public enum PolicySource implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_POLICY_SOURCE = 0;</code>
+     */
+    UNDEFINED_POLICY_SOURCE(0),
+    /**
+     *
+     *
+     * <pre>
+     * A system-level policy managed by an internal service like GKE. This value
+     * is reserved for internal services and cannot be set by users during
+     * policy creation. Policies with a SYSTEM source cannot be modified or
+     * deleted by users.
+     * </pre>
+     *
+     * <code>SYSTEM = 313484847;</code>
+     */
+    SYSTEM(313484847),
+    /**
+     *
+     *
+     * <pre>
+     * A regular firewall policy.
+     * </pre>
+     *
+     * <code>USER_DEFINED = 491485557;</code>
+     */
+    USER_DEFINED(491485557),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 6,
+          /* suffix= */ "",
+          "PolicySource");
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_POLICY_SOURCE = 0;</code>
+     */
+    public static final int UNDEFINED_POLICY_SOURCE_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * A system-level policy managed by an internal service like GKE. This value
+     * is reserved for internal services and cannot be set by users during
+     * policy creation. Policies with a SYSTEM source cannot be modified or
+     * deleted by users.
+     * </pre>
+     *
+     * <code>SYSTEM = 313484847;</code>
+     */
+    public static final int SYSTEM_VALUE = 313484847;
+
+    /**
+     *
+     *
+     * <pre>
+     * A regular firewall policy.
+     * </pre>
+     *
+     * <code>USER_DEFINED = 491485557;</code>
+     */
+    public static final int USER_DEFINED_VALUE = 491485557;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static PolicySource valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static PolicySource forNumber(int value) {
+      switch (value) {
+        case 0:
+          return UNDEFINED_POLICY_SOURCE;
+        case 313484847:
+          return SYSTEM;
+        case 491485557:
+          return USER_DEFINED;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<PolicySource> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<PolicySource> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<PolicySource>() {
+          public PolicySource findValueByNumber(int number) {
+            return PolicySource.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.compute.v1.FirewallPolicy.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final PolicySource[] VALUES = values();
+
+    public static PolicySource valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private PolicySource(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.FirewallPolicy.PolicySource)
   }
 
   /**
@@ -207,7 +392,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessage
     }
 
     public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-      return com.google.cloud.compute.v1.FirewallPolicy.getDescriptor().getEnumTypes().get(0);
+      return com.google.cloud.compute.v1.FirewallPolicy.getDescriptor().getEnumTypes().get(1);
     }
 
     private static final PolicyType[] VALUES = values();
@@ -987,6 +1172,105 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public static final int POLICY_SOURCE_FIELD_NUMBER = 232383432;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object policySource_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Indicates the source of this Firewall Policy. This field is optional on
+   * creation and defaults to USER_DEFINED.
+   *
+   * The USER_DEFINED value indicates a regular firewall policy.
+   *
+   * The SYSTEM value indicates a system-level policy managed by an
+   * internal service like GKE. This SYSTEM value is reserved for
+   * internal services and cannot be set by users during policy creation.
+   * Policies with a SYSTEM source cannot be modified or deleted by
+   * users.
+   * Check the PolicySource enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string policy_source = 232383432;</code>
+   *
+   * @return Whether the policySource field is set.
+   */
+  @java.lang.Override
+  public boolean hasPolicySource() {
+    return ((bitField0_ & 0x00000100) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Indicates the source of this Firewall Policy. This field is optional on
+   * creation and defaults to USER_DEFINED.
+   *
+   * The USER_DEFINED value indicates a regular firewall policy.
+   *
+   * The SYSTEM value indicates a system-level policy managed by an
+   * internal service like GKE. This SYSTEM value is reserved for
+   * internal services and cannot be set by users during policy creation.
+   * Policies with a SYSTEM source cannot be modified or deleted by
+   * users.
+   * Check the PolicySource enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string policy_source = 232383432;</code>
+   *
+   * @return The policySource.
+   */
+  @java.lang.Override
+  public java.lang.String getPolicySource() {
+    java.lang.Object ref = policySource_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      policySource_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Indicates the source of this Firewall Policy. This field is optional on
+   * creation and defaults to USER_DEFINED.
+   *
+   * The USER_DEFINED value indicates a regular firewall policy.
+   *
+   * The SYSTEM value indicates a system-level policy managed by an
+   * internal service like GKE. This SYSTEM value is reserved for
+   * internal services and cannot be set by users during policy creation.
+   * Policies with a SYSTEM source cannot be modified or deleted by
+   * users.
+   * Check the PolicySource enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string policy_source = 232383432;</code>
+   *
+   * @return The bytes for policySource.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getPolicySourceBytes() {
+    java.lang.Object ref = policySource_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      policySource_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int POLICY_TYPE_FIELD_NUMBER = 18158119;
 
   @SuppressWarnings("serial")
@@ -1009,7 +1293,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasPolicyType() {
-    return ((bitField0_ & 0x00000100) != 0);
+    return ((bitField0_ & 0x00000200) != 0);
   }
 
   /**
@@ -1089,7 +1373,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasRegion() {
-    return ((bitField0_ & 0x00000200) != 0);
+    return ((bitField0_ & 0x00000400) != 0);
   }
 
   /**
@@ -1163,7 +1447,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasRuleTupleCount() {
-    return ((bitField0_ & 0x00000400) != 0);
+    return ((bitField0_ & 0x00000800) != 0);
   }
 
   /**
@@ -1292,7 +1576,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasSelfLink() {
-    return ((bitField0_ & 0x00000800) != 0);
+    return ((bitField0_ & 0x00001000) != 0);
   }
 
   /**
@@ -1361,7 +1645,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasSelfLinkWithId() {
-    return ((bitField0_ & 0x00001000) != 0);
+    return ((bitField0_ & 0x00002000) != 0);
   }
 
   /**
@@ -1439,7 +1723,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasShortName() {
-    return ((bitField0_ & 0x00002000) != 0);
+    return ((bitField0_ & 0x00004000) != 0);
   }
 
   /**
@@ -1534,13 +1818,13 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 4473832, displayName_);
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 18158119, policyType_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 30525366, creationTimestamp_);
     }
-    if (((bitField0_ & 0x00001000) != 0)) {
+    if (((bitField0_ & 0x00002000) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 44520962, selfLinkWithId_);
     }
     if (((bitField0_ & 0x00000080) != 0)) {
@@ -1549,22 +1833,25 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessage
     for (int i = 0; i < rules_.size(); i++) {
       output.writeMessage(108873975, rules_.get(i));
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 138946292, region_);
+    }
+    if (((bitField0_ & 0x00000100) != 0)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 232383432, policySource_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 234678500, fingerprint_);
     }
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       output.writeInt32(388342037, ruleTupleCount_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 422937596, description_);
     }
-    if (((bitField0_ & 0x00000800) != 0)) {
+    if (((bitField0_ & 0x00001000) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 456214797, selfLink_);
     }
-    if (((bitField0_ & 0x00002000) != 0)) {
+    if (((bitField0_ & 0x00004000) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 492051566, shortName_);
     }
     for (int i = 0; i < associations_.size(); i++) {
@@ -1594,13 +1881,13 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(4473832, displayName_);
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(18158119, policyType_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(30525366, creationTimestamp_);
     }
-    if (((bitField0_ & 0x00001000) != 0)) {
+    if (((bitField0_ & 0x00002000) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(44520962, selfLinkWithId_);
     }
     if (((bitField0_ & 0x00000080) != 0)) {
@@ -1609,22 +1896,25 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessage
     for (int i = 0; i < rules_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(108873975, rules_.get(i));
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(138946292, region_);
+    }
+    if (((bitField0_ & 0x00000100) != 0)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(232383432, policySource_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(234678500, fingerprint_);
     }
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(388342037, ruleTupleCount_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(422937596, description_);
     }
-    if (((bitField0_ & 0x00000800) != 0)) {
+    if (((bitField0_ & 0x00001000) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(456214797, selfLink_);
     }
-    if (((bitField0_ & 0x00002000) != 0)) {
+    if (((bitField0_ & 0x00004000) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(492051566, shortName_);
     }
     for (int i = 0; i < associations_.size(); i++) {
@@ -1685,6 +1975,10 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessage
     if (hasParent() != other.hasParent()) return false;
     if (hasParent()) {
       if (!getParent().equals(other.getParent())) return false;
+    }
+    if (hasPolicySource() != other.hasPolicySource()) return false;
+    if (hasPolicySource()) {
+      if (!getPolicySource().equals(other.getPolicySource())) return false;
     }
     if (hasPolicyType() != other.hasPolicyType()) return false;
     if (hasPolicyType()) {
@@ -1761,6 +2055,10 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessage
     if (hasParent()) {
       hash = (37 * hash) + PARENT_FIELD_NUMBER;
       hash = (53 * hash) + getParent().hashCode();
+    }
+    if (hasPolicySource()) {
+      hash = (37 * hash) + POLICY_SOURCE_FIELD_NUMBER;
+      hash = (53 * hash) + getPolicySource().hashCode();
     }
     if (hasPolicyType()) {
       hash = (37 * hash) + POLICY_TYPE_FIELD_NUMBER;
@@ -1952,6 +2250,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessage
       }
       bitField0_ = (bitField0_ & ~0x00000100);
       parent_ = "";
+      policySource_ = "";
       policyType_ = "";
       region_ = "";
       ruleTupleCount_ = 0;
@@ -1961,7 +2260,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessage
         rules_ = null;
         rulesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       selfLink_ = "";
       selfLinkWithId_ = "";
       shortName_ = "";
@@ -2020,9 +2319,9 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessage
         result.packetMirroringRules_ = packetMirroringRulesBuilder_.build();
       }
       if (rulesBuilder_ == null) {
-        if (((bitField0_ & 0x00002000) != 0)) {
+        if (((bitField0_ & 0x00004000) != 0)) {
           rules_ = java.util.Collections.unmodifiableList(rules_);
-          bitField0_ = (bitField0_ & ~0x00002000);
+          bitField0_ = (bitField0_ & ~0x00004000);
         }
         result.rules_ = rules_;
       } else {
@@ -2066,28 +2365,32 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessage
         to_bitField0_ |= 0x00000080;
       }
       if (((from_bitField0_ & 0x00000400) != 0)) {
-        result.policyType_ = policyType_;
+        result.policySource_ = policySource_;
         to_bitField0_ |= 0x00000100;
       }
       if (((from_bitField0_ & 0x00000800) != 0)) {
-        result.region_ = region_;
+        result.policyType_ = policyType_;
         to_bitField0_ |= 0x00000200;
       }
       if (((from_bitField0_ & 0x00001000) != 0)) {
-        result.ruleTupleCount_ = ruleTupleCount_;
+        result.region_ = region_;
         to_bitField0_ |= 0x00000400;
       }
-      if (((from_bitField0_ & 0x00004000) != 0)) {
-        result.selfLink_ = selfLink_;
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.ruleTupleCount_ = ruleTupleCount_;
         to_bitField0_ |= 0x00000800;
       }
       if (((from_bitField0_ & 0x00008000) != 0)) {
-        result.selfLinkWithId_ = selfLinkWithId_;
+        result.selfLink_ = selfLink_;
         to_bitField0_ |= 0x00001000;
       }
       if (((from_bitField0_ & 0x00010000) != 0)) {
-        result.shortName_ = shortName_;
+        result.selfLinkWithId_ = selfLinkWithId_;
         to_bitField0_ |= 0x00002000;
+      }
+      if (((from_bitField0_ & 0x00020000) != 0)) {
+        result.shortName_ = shortName_;
+        to_bitField0_ |= 0x00004000;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2196,14 +2499,19 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessage
         bitField0_ |= 0x00000200;
         onChanged();
       }
+      if (other.hasPolicySource()) {
+        policySource_ = other.policySource_;
+        bitField0_ |= 0x00000400;
+        onChanged();
+      }
       if (other.hasPolicyType()) {
         policyType_ = other.policyType_;
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       if (other.hasRegion()) {
         region_ = other.region_;
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       if (other.hasRuleTupleCount()) {
@@ -2213,7 +2521,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessage
         if (!other.rules_.isEmpty()) {
           if (rules_.isEmpty()) {
             rules_ = other.rules_;
-            bitField0_ = (bitField0_ & ~0x00002000);
+            bitField0_ = (bitField0_ & ~0x00004000);
           } else {
             ensureRulesIsMutable();
             rules_.addAll(other.rules_);
@@ -2226,7 +2534,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessage
             rulesBuilder_.dispose();
             rulesBuilder_ = null;
             rules_ = other.rules_;
-            bitField0_ = (bitField0_ & ~0x00002000);
+            bitField0_ = (bitField0_ & ~0x00004000);
             rulesBuilder_ =
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
                     ? internalGetRulesFieldBuilder()
@@ -2238,17 +2546,17 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasSelfLink()) {
         selfLink_ = other.selfLink_;
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00008000;
         onChanged();
       }
       if (other.hasSelfLinkWithId()) {
         selfLinkWithId_ = other.selfLinkWithId_;
-        bitField0_ |= 0x00008000;
+        bitField0_ |= 0x00010000;
         onChanged();
       }
       if (other.hasShortName()) {
         shortName_ = other.shortName_;
-        bitField0_ |= 0x00010000;
+        bitField0_ |= 0x00020000;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -2304,7 +2612,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessage
             case 145264954:
               {
                 policyType_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 145264954
             case 244202930:
@@ -2316,7 +2624,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessage
             case 356167698:
               {
                 selfLinkWithId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00008000;
+                bitField0_ |= 0x00010000;
                 break;
               } // case 356167698
             case 626541906:
@@ -2341,9 +2649,15 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessage
             case 1111570338:
               {
                 region_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 1111570338
+            case 1859067458:
+              {
+                policySource_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 1859067458
             case 1877428002:
               {
                 fingerprint_ = input.readStringRequireUtf8();
@@ -2353,7 +2667,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessage
             case -1188231000:
               {
                 ruleTupleCount_ = input.readInt32();
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00002000;
                 break;
               } // case -1188231000
             case -911466526:
@@ -2365,13 +2679,13 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessage
             case -645248918:
               {
                 selfLink_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00004000;
+                bitField0_ |= 0x00008000;
                 break;
               } // case -645248918
             case -358554766:
               {
                 shortName_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00010000;
+                bitField0_ |= 0x00020000;
                 break;
               } // case -358554766
             case -225075054:
@@ -4325,6 +4639,192 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
+    private java.lang.Object policySource_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Indicates the source of this Firewall Policy. This field is optional on
+     * creation and defaults to USER_DEFINED.
+     *
+     * The USER_DEFINED value indicates a regular firewall policy.
+     *
+     * The SYSTEM value indicates a system-level policy managed by an
+     * internal service like GKE. This SYSTEM value is reserved for
+     * internal services and cannot be set by users during policy creation.
+     * Policies with a SYSTEM source cannot be modified or deleted by
+     * users.
+     * Check the PolicySource enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string policy_source = 232383432;</code>
+     *
+     * @return Whether the policySource field is set.
+     */
+    public boolean hasPolicySource() {
+      return ((bitField0_ & 0x00000400) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Indicates the source of this Firewall Policy. This field is optional on
+     * creation and defaults to USER_DEFINED.
+     *
+     * The USER_DEFINED value indicates a regular firewall policy.
+     *
+     * The SYSTEM value indicates a system-level policy managed by an
+     * internal service like GKE. This SYSTEM value is reserved for
+     * internal services and cannot be set by users during policy creation.
+     * Policies with a SYSTEM source cannot be modified or deleted by
+     * users.
+     * Check the PolicySource enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string policy_source = 232383432;</code>
+     *
+     * @return The policySource.
+     */
+    public java.lang.String getPolicySource() {
+      java.lang.Object ref = policySource_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        policySource_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Indicates the source of this Firewall Policy. This field is optional on
+     * creation and defaults to USER_DEFINED.
+     *
+     * The USER_DEFINED value indicates a regular firewall policy.
+     *
+     * The SYSTEM value indicates a system-level policy managed by an
+     * internal service like GKE. This SYSTEM value is reserved for
+     * internal services and cannot be set by users during policy creation.
+     * Policies with a SYSTEM source cannot be modified or deleted by
+     * users.
+     * Check the PolicySource enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string policy_source = 232383432;</code>
+     *
+     * @return The bytes for policySource.
+     */
+    public com.google.protobuf.ByteString getPolicySourceBytes() {
+      java.lang.Object ref = policySource_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        policySource_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Indicates the source of this Firewall Policy. This field is optional on
+     * creation and defaults to USER_DEFINED.
+     *
+     * The USER_DEFINED value indicates a regular firewall policy.
+     *
+     * The SYSTEM value indicates a system-level policy managed by an
+     * internal service like GKE. This SYSTEM value is reserved for
+     * internal services and cannot be set by users during policy creation.
+     * Policies with a SYSTEM source cannot be modified or deleted by
+     * users.
+     * Check the PolicySource enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string policy_source = 232383432;</code>
+     *
+     * @param value The policySource to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPolicySource(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      policySource_ = value;
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Indicates the source of this Firewall Policy. This field is optional on
+     * creation and defaults to USER_DEFINED.
+     *
+     * The USER_DEFINED value indicates a regular firewall policy.
+     *
+     * The SYSTEM value indicates a system-level policy managed by an
+     * internal service like GKE. This SYSTEM value is reserved for
+     * internal services and cannot be set by users during policy creation.
+     * Policies with a SYSTEM source cannot be modified or deleted by
+     * users.
+     * Check the PolicySource enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string policy_source = 232383432;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPolicySource() {
+      policySource_ = getDefaultInstance().getPolicySource();
+      bitField0_ = (bitField0_ & ~0x00000400);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Indicates the source of this Firewall Policy. This field is optional on
+     * creation and defaults to USER_DEFINED.
+     *
+     * The USER_DEFINED value indicates a regular firewall policy.
+     *
+     * The SYSTEM value indicates a system-level policy managed by an
+     * internal service like GKE. This SYSTEM value is reserved for
+     * internal services and cannot be set by users during policy creation.
+     * Policies with a SYSTEM source cannot be modified or deleted by
+     * users.
+     * Check the PolicySource enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string policy_source = 232383432;</code>
+     *
+     * @param value The bytes for policySource to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPolicySourceBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      policySource_ = value;
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object policyType_ = "";
 
     /**
@@ -4343,7 +4843,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessage
      * @return Whether the policyType field is set.
      */
     public boolean hasPolicyType() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00000800) != 0);
     }
 
     /**
@@ -4421,7 +4921,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       policyType_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -4443,7 +4943,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearPolicyType() {
       policyType_ = getDefaultInstance().getPolicyType();
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       onChanged();
       return this;
     }
@@ -4470,7 +4970,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       policyType_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -4492,7 +4992,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessage
      * @return Whether the region field is set.
      */
     public boolean hasRegion() {
-      return ((bitField0_ & 0x00000800) != 0);
+      return ((bitField0_ & 0x00001000) != 0);
     }
 
     /**
@@ -4567,7 +5067,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       region_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -4588,7 +5088,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearRegion() {
       region_ = getDefaultInstance().getRegion();
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       onChanged();
       return this;
     }
@@ -4614,7 +5114,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       region_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -4635,7 +5135,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasRuleTupleCount() {
-      return ((bitField0_ & 0x00001000) != 0);
+      return ((bitField0_ & 0x00002000) != 0);
     }
 
     /**
@@ -4671,7 +5171,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessage
     public Builder setRuleTupleCount(int value) {
 
       ruleTupleCount_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -4689,7 +5189,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearRuleTupleCount() {
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       ruleTupleCount_ = 0;
       onChanged();
       return this;
@@ -4699,9 +5199,9 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessage
         java.util.Collections.emptyList();
 
     private void ensureRulesIsMutable() {
-      if (!((bitField0_ & 0x00002000) != 0)) {
+      if (!((bitField0_ & 0x00004000) != 0)) {
         rules_ = new java.util.ArrayList<com.google.cloud.compute.v1.FirewallPolicyRule>(rules_);
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00004000;
       }
     }
 
@@ -4960,7 +5460,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessage
     public Builder clearRules() {
       if (rulesBuilder_ == null) {
         rules_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00002000);
+        bitField0_ = (bitField0_ & ~0x00004000);
         onChanged();
       } else {
         rulesBuilder_.clear();
@@ -5110,7 +5610,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessage
                 com.google.cloud.compute.v1.FirewallPolicyRule,
                 com.google.cloud.compute.v1.FirewallPolicyRule.Builder,
                 com.google.cloud.compute.v1.FirewallPolicyRuleOrBuilder>(
-                rules_, ((bitField0_ & 0x00002000) != 0), getParentForChildren(), isClean());
+                rules_, ((bitField0_ & 0x00004000) != 0), getParentForChildren(), isClean());
         rules_ = null;
       }
       return rulesBuilder_;
@@ -5130,7 +5630,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessage
      * @return Whether the selfLink field is set.
      */
     public boolean hasSelfLink() {
-      return ((bitField0_ & 0x00004000) != 0);
+      return ((bitField0_ & 0x00008000) != 0);
     }
 
     /**
@@ -5196,7 +5696,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       selfLink_ = value;
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -5214,7 +5714,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearSelfLink() {
       selfLink_ = getDefaultInstance().getSelfLink();
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       onChanged();
       return this;
     }
@@ -5237,7 +5737,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       selfLink_ = value;
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -5256,7 +5756,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessage
      * @return Whether the selfLinkWithId field is set.
      */
     public boolean hasSelfLinkWithId() {
-      return ((bitField0_ & 0x00008000) != 0);
+      return ((bitField0_ & 0x00010000) != 0);
     }
 
     /**
@@ -5322,7 +5822,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       selfLinkWithId_ = value;
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -5340,7 +5840,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearSelfLinkWithId() {
       selfLinkWithId_ = getDefaultInstance().getSelfLinkWithId();
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       onChanged();
       return this;
     }
@@ -5363,7 +5863,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       selfLinkWithId_ = value;
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -5391,7 +5891,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessage
      * @return Whether the shortName field is set.
      */
     public boolean hasShortName() {
-      return ((bitField0_ & 0x00010000) != 0);
+      return ((bitField0_ & 0x00020000) != 0);
     }
 
     /**
@@ -5484,7 +5984,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       shortName_ = value;
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -5511,7 +6011,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearShortName() {
       shortName_ = getDefaultInstance().getShortName();
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       onChanged();
       return this;
     }
@@ -5543,7 +6043,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       shortName_ = value;
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }

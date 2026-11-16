@@ -24,16 +24,21 @@ import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AggregatedListSslPoliciesRequest;
 import com.google.cloud.compute.v1.DeleteSslPolicyRequest;
+import com.google.cloud.compute.v1.GetIamPolicySslPolicyRequest;
 import com.google.cloud.compute.v1.GetSslPolicyRequest;
 import com.google.cloud.compute.v1.InsertSslPolicyRequest;
 import com.google.cloud.compute.v1.ListAvailableFeaturesSslPoliciesRequest;
 import com.google.cloud.compute.v1.ListSslPoliciesRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PatchSslPolicyRequest;
+import com.google.cloud.compute.v1.Policy;
+import com.google.cloud.compute.v1.SetIamPolicySslPolicyRequest;
 import com.google.cloud.compute.v1.SslPoliciesAggregatedList;
 import com.google.cloud.compute.v1.SslPoliciesList;
 import com.google.cloud.compute.v1.SslPoliciesListAvailableFeaturesResponse;
 import com.google.cloud.compute.v1.SslPolicy;
+import com.google.cloud.compute.v1.TestIamPermissionsSslPolicyRequest;
+import com.google.cloud.compute.v1.TestPermissionsResponse;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
 
@@ -69,6 +74,10 @@ public abstract class SslPoliciesStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: getCallable()");
   }
 
+  public UnaryCallable<GetIamPolicySslPolicyRequest, Policy> getIamPolicyCallable() {
+    throw new UnsupportedOperationException("Not implemented: getIamPolicyCallable()");
+  }
+
   public OperationCallable<InsertSslPolicyRequest, Operation, Operation> insertOperationCallable() {
     throw new UnsupportedOperationException("Not implemented: insertOperationCallable()");
   }
@@ -97,6 +106,15 @@ public abstract class SslPoliciesStub implements BackgroundResource {
 
   public UnaryCallable<PatchSslPolicyRequest, Operation> patchCallable() {
     throw new UnsupportedOperationException("Not implemented: patchCallable()");
+  }
+
+  public UnaryCallable<SetIamPolicySslPolicyRequest, Policy> setIamPolicyCallable() {
+    throw new UnsupportedOperationException("Not implemented: setIamPolicyCallable()");
+  }
+
+  public UnaryCallable<TestIamPermissionsSslPolicyRequest, TestPermissionsResponse>
+      testIamPermissionsCallable() {
+    throw new UnsupportedOperationException("Not implemented: testIamPermissionsCallable()");
   }
 
   @Override

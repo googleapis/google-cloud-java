@@ -52,6 +52,7 @@ public final class ResourceStatusScheduling extends com.google.protobuf.Generate
 
   private ResourceStatusScheduling() {
     gracefulShutdownTimestamp_ = "";
+    protectionTier_ = "";
     terminationTimestamp_ = "";
   }
 
@@ -68,6 +69,218 @@ public final class ResourceStatusScheduling extends com.google.protobuf.Generate
         .ensureFieldAccessorsInitialized(
             com.google.cloud.compute.v1.ResourceStatusScheduling.class,
             com.google.cloud.compute.v1.ResourceStatusScheduling.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Protection tier for the workload which specifies the workload
+   * expectations in the event of infrastructure failures at data center
+   * (e.g. power and/or cooling failures).
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.compute.v1.ResourceStatusScheduling.ProtectionTier}
+   */
+  public enum ProtectionTier implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_PROTECTION_TIER = 0;</code>
+     */
+    UNDEFINED_PROTECTION_TIER(0),
+    /**
+     *
+     *
+     * <pre>
+     * CAPACITY_OPTIMIZED capacity leverages redundancies (e.g. power,
+     * cooling) at the data center during normal operating conditions. In the
+     * event of infrastructure failures at data center (e.g. power and/or
+     * cooling failures), this workload may be disrupted. As a consequence, it
+     * has a weaker availability SLO than STANDARD.
+     * </pre>
+     *
+     * <code>PROTECTION_TIER_CAPACITY_OPTIMIZED = 59631065;</code>
+     */
+    PROTECTION_TIER_CAPACITY_OPTIMIZED(59631065),
+    /**
+     *
+     *
+     * <pre>
+     * STANDARD protection for workload that should be protected by
+     * redundancies (e.g. power, cooling) at the data center level. In the
+     * event of infrastructure failures at data center (e.g. power and/or
+     * cooling failures), this workload is expected to continue as normal
+     * using the redundancies.
+     * </pre>
+     *
+     * <code>PROTECTION_TIER_STANDARD = 312368532;</code>
+     */
+    PROTECTION_TIER_STANDARD(312368532),
+    /**
+     *
+     *
+     * <pre>
+     * Unspecified protection tier.
+     * </pre>
+     *
+     * <code>PROTECTION_TIER_UNSPECIFIED = 262261984;</code>
+     */
+    PROTECTION_TIER_UNSPECIFIED(262261984),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 6,
+          /* suffix= */ "",
+          "ProtectionTier");
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_PROTECTION_TIER = 0;</code>
+     */
+    public static final int UNDEFINED_PROTECTION_TIER_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * CAPACITY_OPTIMIZED capacity leverages redundancies (e.g. power,
+     * cooling) at the data center during normal operating conditions. In the
+     * event of infrastructure failures at data center (e.g. power and/or
+     * cooling failures), this workload may be disrupted. As a consequence, it
+     * has a weaker availability SLO than STANDARD.
+     * </pre>
+     *
+     * <code>PROTECTION_TIER_CAPACITY_OPTIMIZED = 59631065;</code>
+     */
+    public static final int PROTECTION_TIER_CAPACITY_OPTIMIZED_VALUE = 59631065;
+
+    /**
+     *
+     *
+     * <pre>
+     * STANDARD protection for workload that should be protected by
+     * redundancies (e.g. power, cooling) at the data center level. In the
+     * event of infrastructure failures at data center (e.g. power and/or
+     * cooling failures), this workload is expected to continue as normal
+     * using the redundancies.
+     * </pre>
+     *
+     * <code>PROTECTION_TIER_STANDARD = 312368532;</code>
+     */
+    public static final int PROTECTION_TIER_STANDARD_VALUE = 312368532;
+
+    /**
+     *
+     *
+     * <pre>
+     * Unspecified protection tier.
+     * </pre>
+     *
+     * <code>PROTECTION_TIER_UNSPECIFIED = 262261984;</code>
+     */
+    public static final int PROTECTION_TIER_UNSPECIFIED_VALUE = 262261984;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static ProtectionTier valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static ProtectionTier forNumber(int value) {
+      switch (value) {
+        case 0:
+          return UNDEFINED_PROTECTION_TIER;
+        case 59631065:
+          return PROTECTION_TIER_CAPACITY_OPTIMIZED;
+        case 312368532:
+          return PROTECTION_TIER_STANDARD;
+        case 262261984:
+          return PROTECTION_TIER_UNSPECIFIED;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<ProtectionTier> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<ProtectionTier> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<ProtectionTier>() {
+          public ProtectionTier findValueByNumber(int number) {
+            return ProtectionTier.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.compute.v1.ResourceStatusScheduling.getDescriptor()
+          .getEnumTypes()
+          .get(0);
+    }
+
+    private static final ProtectionTier[] VALUES = values();
+
+    public static ProtectionTier valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private ProtectionTier(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.ResourceStatusScheduling.ProtectionTier)
   }
 
   private int bitField0_;
@@ -182,6 +395,84 @@ public final class ResourceStatusScheduling extends com.google.protobuf.Generate
     }
   }
 
+  public static final int PROTECTION_TIER_FIELD_NUMBER = 503959432;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object protectionTier_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Protection tier for the workload which specifies the workload
+   * expectations in the event of infrastructure failures at data center
+   * (e.g. power and/or cooling failures).
+   * Check the ProtectionTier enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string protection_tier = 503959432;</code>
+   *
+   * @return Whether the protectionTier field is set.
+   */
+  @java.lang.Override
+  public boolean hasProtectionTier() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Protection tier for the workload which specifies the workload
+   * expectations in the event of infrastructure failures at data center
+   * (e.g. power and/or cooling failures).
+   * Check the ProtectionTier enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string protection_tier = 503959432;</code>
+   *
+   * @return The protectionTier.
+   */
+  @java.lang.Override
+  public java.lang.String getProtectionTier() {
+    java.lang.Object ref = protectionTier_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      protectionTier_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Protection tier for the workload which specifies the workload
+   * expectations in the event of infrastructure failures at data center
+   * (e.g. power and/or cooling failures).
+   * Check the ProtectionTier enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string protection_tier = 503959432;</code>
+   *
+   * @return The bytes for protectionTier.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getProtectionTierBytes() {
+    java.lang.Object ref = protectionTier_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      protectionTier_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int TERMINATION_TIMESTAMP_FIELD_NUMBER = 364180891;
 
   @SuppressWarnings("serial")
@@ -200,7 +491,7 @@ public final class ResourceStatusScheduling extends com.google.protobuf.Generate
    */
   @java.lang.Override
   public boolean hasTerminationTimestamp() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00000008) != 0);
   }
 
   /**
@@ -268,12 +559,15 @@ public final class ResourceStatusScheduling extends com.google.protobuf.Generate
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeInt32(252514344, availabilityDomain_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 364180891, terminationTimestamp_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(
           output, 403022375, gracefulShutdownTimestamp_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 503959432, protectionTier_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -288,7 +582,7 @@ public final class ResourceStatusScheduling extends com.google.protobuf.Generate
       size +=
           com.google.protobuf.CodedOutputStream.computeInt32Size(252514344, availabilityDomain_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessage.computeStringSize(364180891, terminationTimestamp_);
     }
@@ -296,6 +590,9 @@ public final class ResourceStatusScheduling extends com.google.protobuf.Generate
       size +=
           com.google.protobuf.GeneratedMessage.computeStringSize(
               403022375, gracefulShutdownTimestamp_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(503959432, protectionTier_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -322,6 +619,10 @@ public final class ResourceStatusScheduling extends com.google.protobuf.Generate
       if (!getGracefulShutdownTimestamp().equals(other.getGracefulShutdownTimestamp()))
         return false;
     }
+    if (hasProtectionTier() != other.hasProtectionTier()) return false;
+    if (hasProtectionTier()) {
+      if (!getProtectionTier().equals(other.getProtectionTier())) return false;
+    }
     if (hasTerminationTimestamp() != other.hasTerminationTimestamp()) return false;
     if (hasTerminationTimestamp()) {
       if (!getTerminationTimestamp().equals(other.getTerminationTimestamp())) return false;
@@ -344,6 +645,10 @@ public final class ResourceStatusScheduling extends com.google.protobuf.Generate
     if (hasGracefulShutdownTimestamp()) {
       hash = (37 * hash) + GRACEFUL_SHUTDOWN_TIMESTAMP_FIELD_NUMBER;
       hash = (53 * hash) + getGracefulShutdownTimestamp().hashCode();
+    }
+    if (hasProtectionTier()) {
+      hash = (37 * hash) + PROTECTION_TIER_FIELD_NUMBER;
+      hash = (53 * hash) + getProtectionTier().hashCode();
     }
     if (hasTerminationTimestamp()) {
       hash = (37 * hash) + TERMINATION_TIMESTAMP_FIELD_NUMBER;
@@ -490,6 +795,7 @@ public final class ResourceStatusScheduling extends com.google.protobuf.Generate
       bitField0_ = 0;
       availabilityDomain_ = 0;
       gracefulShutdownTimestamp_ = "";
+      protectionTier_ = "";
       terminationTimestamp_ = "";
       return this;
     }
@@ -537,8 +843,12 @@ public final class ResourceStatusScheduling extends com.google.protobuf.Generate
         to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.terminationTimestamp_ = terminationTimestamp_;
+        result.protectionTier_ = protectionTier_;
         to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.terminationTimestamp_ = terminationTimestamp_;
+        to_bitField0_ |= 0x00000008;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -564,9 +874,14 @@ public final class ResourceStatusScheduling extends com.google.protobuf.Generate
         bitField0_ |= 0x00000002;
         onChanged();
       }
+      if (other.hasProtectionTier()) {
+        protectionTier_ = other.protectionTier_;
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
       if (other.hasTerminationTimestamp()) {
         terminationTimestamp_ = other.terminationTimestamp_;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -604,7 +919,7 @@ public final class ResourceStatusScheduling extends com.google.protobuf.Generate
             case -1381520166:
               {
                 terminationTimestamp_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case -1381520166
             case -1070788294:
@@ -613,6 +928,12 @@ public final class ResourceStatusScheduling extends com.google.protobuf.Generate
                 bitField0_ |= 0x00000002;
                 break;
               } // case -1070788294
+            case -263291838:
+              {
+                protectionTier_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case -263291838
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -844,6 +1165,150 @@ public final class ResourceStatusScheduling extends com.google.protobuf.Generate
       return this;
     }
 
+    private java.lang.Object protectionTier_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Protection tier for the workload which specifies the workload
+     * expectations in the event of infrastructure failures at data center
+     * (e.g. power and/or cooling failures).
+     * Check the ProtectionTier enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string protection_tier = 503959432;</code>
+     *
+     * @return Whether the protectionTier field is set.
+     */
+    public boolean hasProtectionTier() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Protection tier for the workload which specifies the workload
+     * expectations in the event of infrastructure failures at data center
+     * (e.g. power and/or cooling failures).
+     * Check the ProtectionTier enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string protection_tier = 503959432;</code>
+     *
+     * @return The protectionTier.
+     */
+    public java.lang.String getProtectionTier() {
+      java.lang.Object ref = protectionTier_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        protectionTier_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Protection tier for the workload which specifies the workload
+     * expectations in the event of infrastructure failures at data center
+     * (e.g. power and/or cooling failures).
+     * Check the ProtectionTier enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string protection_tier = 503959432;</code>
+     *
+     * @return The bytes for protectionTier.
+     */
+    public com.google.protobuf.ByteString getProtectionTierBytes() {
+      java.lang.Object ref = protectionTier_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        protectionTier_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Protection tier for the workload which specifies the workload
+     * expectations in the event of infrastructure failures at data center
+     * (e.g. power and/or cooling failures).
+     * Check the ProtectionTier enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string protection_tier = 503959432;</code>
+     *
+     * @param value The protectionTier to set.
+     * @return This builder for chaining.
+     */
+    public Builder setProtectionTier(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      protectionTier_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Protection tier for the workload which specifies the workload
+     * expectations in the event of infrastructure failures at data center
+     * (e.g. power and/or cooling failures).
+     * Check the ProtectionTier enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string protection_tier = 503959432;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearProtectionTier() {
+      protectionTier_ = getDefaultInstance().getProtectionTier();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Protection tier for the workload which specifies the workload
+     * expectations in the event of infrastructure failures at data center
+     * (e.g. power and/or cooling failures).
+     * Check the ProtectionTier enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string protection_tier = 503959432;</code>
+     *
+     * @param value The bytes for protectionTier to set.
+     * @return This builder for chaining.
+     */
+    public Builder setProtectionTierBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      protectionTier_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object terminationTimestamp_ = "";
 
     /**
@@ -858,7 +1323,7 @@ public final class ResourceStatusScheduling extends com.google.protobuf.Generate
      * @return Whether the terminationTimestamp field is set.
      */
     public boolean hasTerminationTimestamp() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
 
     /**
@@ -924,7 +1389,7 @@ public final class ResourceStatusScheduling extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       terminationTimestamp_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -942,7 +1407,7 @@ public final class ResourceStatusScheduling extends com.google.protobuf.Generate
      */
     public Builder clearTerminationTimestamp() {
       terminationTimestamp_ = getDefaultInstance().getTerminationTimestamp();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -965,7 +1430,7 @@ public final class ResourceStatusScheduling extends com.google.protobuf.Generate
       }
       checkByteStringIsUtf8(value);
       terminationTimestamp_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

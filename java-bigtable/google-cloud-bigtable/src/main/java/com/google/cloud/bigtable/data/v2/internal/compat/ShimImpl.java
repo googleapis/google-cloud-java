@@ -129,6 +129,7 @@ public class ShimImpl implements Shim {
                 .setChannelPoolSettings(ChannelPoolSettings.staticallySized(1))
                 .setAttemptDirectPath(true)
                 .setAttemptDirectPathXds()
+                .setAllowNonDefaultServiceAccount(true)
                 .build();
 
     if (transportProvider.needsEndpoint()) {

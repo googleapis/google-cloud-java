@@ -52,6 +52,42 @@ public final class CompletionServiceProto extends com.google.protobuf.GeneratedF
       internal_static_google_cloud_discoveryengine_v1_CompleteQueryResponse_QuerySuggestion_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_discoveryengine_v1_CompleteQueryResponse_QuerySuggestion_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1_AdvancedCompleteQueryRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1_AdvancedCompleteQueryRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1_AdvancedCompleteQueryRequest_BoostSpec_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1_AdvancedCompleteQueryRequest_BoostSpec_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1_AdvancedCompleteQueryRequest_BoostSpec_ConditionBoostSpec_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1_AdvancedCompleteQueryRequest_BoostSpec_ConditionBoostSpec_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1_AdvancedCompleteQueryRequest_SuggestionTypeSpec_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1_AdvancedCompleteQueryRequest_SuggestionTypeSpec_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1_AdvancedCompleteQueryResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1_AdvancedCompleteQueryResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1_AdvancedCompleteQueryResponse_QuerySuggestion_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1_AdvancedCompleteQueryResponse_QuerySuggestion_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1_AdvancedCompleteQueryResponse_PersonSuggestion_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1_AdvancedCompleteQueryResponse_PersonSuggestion_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1_AdvancedCompleteQueryResponse_ContentSuggestion_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1_AdvancedCompleteQueryResponse_ContentSuggestion_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1_AdvancedCompleteQueryResponse_RecentSearchSuggestion_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1_AdvancedCompleteQueryResponse_RecentSearchSuggestion_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -61,90 +97,169 @@ public final class CompletionServiceProto extends com.google.protobuf.GeneratedF
 
   static {
     java.lang.String[] descriptorData = {
-      "\n8google/cloud/discoveryengine/v1/comple"
-          + "tion_service.proto\022\037google.cloud.discove"
+      "\n"
+          + "8google/cloud/discoveryengine/v1/completion_service.proto\022\037google.cloud.discove"
           + "ryengine.v1\032\034google/api/annotations.prot"
           + "o\032\027google/api/client.proto\032\037google/api/f"
           + "ield_behavior.proto\032\031google/api/resource"
-          + ".proto\0323google/cloud/discoveryengine/v1/"
-          + "import_config.proto\0322google/cloud/discov"
-          + "eryengine/v1/purge_config.proto\032#google/"
-          + "longrunning/operations.proto\"\301\001\n\024Complet"
-          + "eQueryRequest\022E\n\ndata_store\030\001 \001(\tB1\342A\001\002\372"
-          + "A*\n(discoveryengine.googleapis.com/DataS"
-          + "tore\022\023\n\005query\030\002 \001(\tB\004\342A\001\002\022\023\n\013query_model"
-          + "\030\003 \001(\t\022\026\n\016user_pseudo_id\030\004 \001(\t\022 \n\030includ"
-          + "e_tail_suggestions\030\005 \001(\010\"\340\001\n\025CompleteQue"
-          + "ryResponse\022a\n\021query_suggestions\030\001 \003(\0132F."
-          + "google.cloud.discoveryengine.v1.Complete"
-          + "QueryResponse.QuerySuggestion\022\034\n\024tail_ma"
-          + "tch_triggered\030\002 \001(\010\032F\n\017QuerySuggestion\022\022"
-          + "\n\nsuggestion\030\001 \001(\t\022\037\n\027completable_field_"
-          + "paths\030\002 \003(\t2\357\021\n\021CompletionService\022\240\002\n\rCo"
-          + "mpleteQuery\0225.google.cloud.discoveryengi"
-          + "ne.v1.CompleteQueryRequest\0326.google.clou"
-          + "d.discoveryengine.v1.CompleteQueryRespon"
-          + "se\"\237\001\202\323\344\223\002\230\001\022B/v1/{data_store=projects/*"
-          + "/locations/*/dataStores/*}:completeQuery"
-          + "ZR\022P/v1/{data_store=projects/*/locations"
-          + "/*/collections/*/dataStores/*}:completeQ"
-          + "uery\022\345\003\n\037ImportSuggestionDenyListEntries"
-          + "\022G.google.cloud.discoveryengine.v1.Impor"
-          + "tSuggestionDenyListEntriesRequest\032\035.goog"
-          + "le.longrunning.Operation\"\331\002\312A\222\001\nGgoogle."
-          + "cloud.discoveryengine.v1.ImportSuggestio"
-          + "nDenyListEntriesResponse\022Ggoogle.cloud.d"
-          + "iscoveryengine.v1.ImportSuggestionDenyLi"
-          + "stEntriesMetadata\202\323\344\223\002\274\001\"_/v1/{parent=pr"
-          + "ojects/*/locations/*/collections/*/dataS"
-          + "tores/*}/suggestionDenyListEntries:impor"
-          + "t:\001*ZV\"Q/v1/{parent=projects/*/locations"
-          + "/*/dataStores/*}/suggestionDenyListEntri"
-          + "es:import:\001*\022\340\003\n\036PurgeSuggestionDenyList"
-          + "Entries\022F.google.cloud.discoveryengine.v"
-          + "1.PurgeSuggestionDenyListEntriesRequest\032"
-          + "\035.google.longrunning.Operation\"\326\002\312A\220\001\nFg"
-          + "oogle.cloud.discoveryengine.v1.PurgeSugg"
-          + "estionDenyListEntriesResponse\022Fgoogle.cl"
-          + "oud.discoveryengine.v1.PurgeSuggestionDe"
-          + "nyListEntriesMetadata\202\323\344\223\002\273\001\"^/v1/{paren"
-          + "t=projects/*/locations/*/collections/*/d"
-          + "ataStores/*}/suggestionDenyListEntries:p"
-          + "urge:\001*ZV\"Q/v1/{parent=projects/*/locati"
-          + "ons/*/dataStores/**}/suggestionDenyListE"
-          + "ntries:purge:\001*\022\315\003\n\033ImportCompletionSugg"
-          + "estions\022C.google.cloud.discoveryengine.v"
-          + "1.ImportCompletionSuggestionsRequest\032\035.g"
-          + "oogle.longrunning.Operation\"\311\002\312A\212\001\nCgoog"
-          + "le.cloud.discoveryengine.v1.ImportComple"
-          + "tionSuggestionsResponse\022Cgoogle.cloud.di"
-          + "scoveryengine.v1.ImportCompletionSuggest"
-          + "ionsMetadata\202\323\344\223\002\264\001\"[/v1/{parent=project"
-          + "s/*/locations/*/collections/*/dataStores"
-          + "/*}/completionSuggestions:import:\001*ZR\"M/"
-          + "v1/{parent=projects/*/locations/*/dataSt"
-          + "ores/*}/completionSuggestions:import:\001*\022"
-          + "\307\003\n\032PurgeCompletionSuggestions\022B.google."
-          + "cloud.discoveryengine.v1.PurgeCompletion"
-          + "SuggestionsRequest\032\035.google.longrunning."
-          + "Operation\"\305\002\312A\210\001\nBgoogle.cloud.discovery"
-          + "engine.v1.PurgeCompletionSuggestionsResp"
-          + "onse\022Bgoogle.cloud.discoveryengine.v1.Pu"
-          + "rgeCompletionSuggestionsMetadata\202\323\344\223\002\262\001\""
-          + "Z/v1/{parent=projects/*/locations/*/coll"
-          + "ections/*/dataStores/*}/completionSugges"
-          + "tions:purge:\001*ZQ\"L/v1/{parent=projects/*"
-          + "/locations/*/dataStores/*}/completionSug"
-          + "gestions:purge:\001*\032R\312A\036discoveryengine.go"
-          + "ogleapis.com\322A.https://www.googleapis.co"
-          + "m/auth/cloud-platformB\211\002\n#com.google.clo"
-          + "ud.discoveryengine.v1B\026CompletionService"
-          + "ProtoP\001ZMcloud.google.com/go/discoveryen"
-          + "gine/apiv1/discoveryenginepb;discoveryen"
-          + "ginepb\242\002\017DISCOVERYENGINE\252\002\037Google.Cloud."
-          + "DiscoveryEngine.V1\312\002\037Google\\Cloud\\Discov"
-          + "eryEngine\\V1\352\002\"Google::Cloud::DiscoveryE"
-          + "ngine::V1b\006proto3"
+          + ".proto\032,google/cloud/discoveryengine/v1/common.proto\032.google/cloud/discoveryengi"
+          + "ne/v1/document.proto\0323google/cloud/discoveryengine/v1/import_config.proto\0322googl"
+          + "e/cloud/discoveryengine/v1/purge_config."
+          + "proto\032#google/longrunning/operations.proto\032\037google/protobuf/timestamp.proto\"\307\001\n"
+          + "\024CompleteQueryRequest\022E\n\n"
+          + "data_store\030\001 \001(\tB1\342A\001\002\372A*\n"
+          + "(discoveryengine.googleapis.com/DataStore\022\023\n"
+          + "\005query\030\002 \001(\tB\004\342A\001\002\022\023\n"
+          + "\013query_model\030\003 \001(\t\022\034\n"
+          + "\016user_pseudo_id\030\004 \001(\tB\004\342A\001\001\022 \n"
+          + "\030include_tail_suggestions\030\005 \001(\010\"\340\001\n"
+          + "\025CompleteQueryResponse\022a\n"
+          + "\021query_suggestions\030\001 \003(\0132F.google.cloud.discoveryengin"
+          + "e.v1.CompleteQueryResponse.QuerySuggestion\022\034\n"
+          + "\024tail_match_triggered\030\002 \001(\010\032F\n"
+          + "\017QuerySuggestion\022\022\n\n"
+          + "suggestion\030\001 \001(\t\022\037\n"
+          + "\027completable_field_paths\030\002 \003(\t\"\353\010\n"
+          + "\034AdvancedCompleteQueryRequest\022S\n"
+          + "\021completion_config\030\001 \001(\tB8\342A\001\002\372A1\n"
+          + "/discoveryengine.googleapis.com/CompletionConfig\022\023\n"
+          + "\005query\030\002 \001(\tB\004\342A\001\002\022\023\n"
+          + "\013query_model\030\003 \001(\t\022\034\n"
+          + "\016user_pseudo_id\030\004 \001(\tB\004\342A\001\001\022B\n"
+          + "\tuser_info\030\t \001(\0132).goog"
+          + "le.cloud.discoveryengine.v1.UserInfoB\004\342A\001\001\022 \n"
+          + "\030include_tail_suggestions\030\005 \001(\010\022a\n\n"
+          + "boost_spec\030\006 \001(\0132G.google.cloud.discover"
+          + "yengine.v1.AdvancedCompleteQueryRequest.BoostSpecB\004\342A\001\001\022l\n"
+          + "\020suggestion_types\030\007 \003(\0162L.google.cloud.discoveryengine.v1.Adva"
+          + "ncedCompleteQueryRequest.SuggestionTypeB\004\342A\001\001\022u\n"
+          + "\025suggestion_type_specs\030\n"
+          + " \003(\0132P.google.cloud.discoveryengine.v1.AdvancedC"
+          + "ompleteQueryRequest.SuggestionTypeSpecB\004\342A\001\001\022\034\n"
+          + "\016experiment_ids\030\016 \003(\tB\004\342A\001\001\032\276\001\n"
+          + "\tBoostSpec\022y\n"
+          + "\025condition_boost_specs\030\001 \003(\0132Z.google.cloud.discoveryengine.v1.Advanc"
+          + "edCompleteQueryRequest.BoostSpec.ConditionBoostSpec\0326\n"
+          + "\022ConditionBoostSpec\022\021\n"
+          + "\tcondition\030\001 \001(\t\022\r\n"
+          + "\005boost\030\002 \001(\002\032\240\001\n"
+          + "\022SuggestionTypeSpec\022k\n"
+          + "\017suggestion_type\030\001 \001(\0162L.google.cloud.discoveryengine.v1.AdvancedCo"
+          + "mpleteQueryRequest.SuggestionTypeB\004\342A\001\001\022\035\n"
+          + "\017max_suggestions\030\002 \001(\005B\004\342A\001\001\"~\n"
+          + "\016SuggestionType\022\037\n"
+          + "\033SUGGESTION_TYPE_UNSPECIFIED\020\000\022\t\n"
+          + "\005QUERY\020\001\022\n\n"
+          + "\006PEOPLE\020\002\022\013\n"
+          + "\007CONTENT\020\003\022\021\n"
+          + "\r"
+          + "RECENT_SEARCH\020\004\022\024\n"
+          + "\020GOOGLE_WORKSPACE\020\005\"\322\014\n"
+          + "\035AdvancedCompleteQueryResponse\022i\n"
+          + "\021query_suggestions\030\001 \003(\0132N.google.cloud.disco"
+          + "veryengine.v1.AdvancedCompleteQueryResponse.QuerySuggestion\022\034\n"
+          + "\024tail_match_triggered\030\002 \001(\010\022k\n"
+          + "\022people_suggestions\030\003 \003(\0132O.google.cloud.discoveryengine.v1.Advanced"
+          + "CompleteQueryResponse.PersonSuggestion\022m\n"
+          + "\023content_suggestions\030\004 \003(\0132P.google.clo"
+          + "ud.discoveryengine.v1.AdvancedCompleteQueryResponse.ContentSuggestion\022x\n"
+          + "\031recent_search_suggestions\030\005 \003(\0132U.google.cloud."
+          + "discoveryengine.v1.AdvancedCompleteQueryResponse.RecentSearchSuggestion\032i\n"
+          + "\017QuerySuggestion\022\022\n\n"
+          + "suggestion\030\001 \001(\t\022\037\n"
+          + "\027completable_field_paths\030\002 \003(\t\022\022\n\n"
+          + "data_store\030\003 \003(\t\022\r\n"
+          + "\005score\030\004 \001(\001\032\305\003\n"
+          + "\020PersonSuggestion\022\022\n\n"
+          + "suggestion\030\001 \001(\t\022o\n"
+          + "\013person_type\030\002 \001(\0162Z.google.cloud.discoveryengine.v1.Advan"
+          + "cedCompleteQueryResponse.PersonSuggestion.PersonType\022;\n"
+          + "\010document\030\004 \001(\0132).google.cloud.discoveryengine.v1.Document\022A\n\n"
+          + "data_store\030\005 \001(\tB-\372A*\n"
+          + "(discoveryengine.googleapis.com/DataStore\022\r\n"
+          + "\005score\030\006 \001(\001\022\031\n"
+          + "\021display_photo_uri\030\007 \001(\t\022\027\n"
+          + "\017destination_uri\030\010 \001(\t\"i\n\n"
+          + "PersonType\022\033\n"
+          + "\027PERSON_TYPE_UNSPECIFIED\020\000\022\022\n"
+          + "\016CLOUD_IDENTITY\020\001\022\030\n"
+          + "\024THIRD_PARTY_IDENTITY\020\002\022\020\n"
+          + "\014GOOGLE_GROUP\020\003\032\251\003\n"
+          + "\021ContentSuggestion\022\022\n\n"
+          + "suggestion\030\001 \001(\t\022r\n"
+          + "\014content_type\030\002 \001(\0162\\.google.cloud.discov"
+          + "eryengine.v1.AdvancedCompleteQueryResponse.ContentSuggestion.ContentType\022;\n"
+          + "\010document\030\004 \001(\0132).google.cloud.discoveryengine.v1.Document\022A\n\n"
+          + "data_store\030\005 \001(\tB-\372A*\n"
+          + "(discoveryengine.googleapis.com/DataStore\022\r\n"
+          + "\005score\030\006 \001(\001\022\020\n"
+          + "\010icon_uri\030\007 \001(\t\022\027\n"
+          + "\017destination_uri\030\010 \001(\t\"R\n"
+          + "\013ContentType\022\034\n"
+          + "\030CONTENT_TYPE_UNSPECIFIED\020\000\022\024\n"
+          + "\020GOOGLE_WORKSPACE\020\001\022\017\n"
+          + "\013THIRD_PARTY\020\002\032s\n"
+          + "\026RecentSearchSuggestion\022\022\n\n"
+          + "suggestion\030\001 \001(\t\0226\n"
+          + "\022recent_search_time\030\002 \001(\0132\032.google.protobuf.Timestamp\022\r\n"
+          + "\005score\030\003 \001(\0012\276\027\n"
+          + "\021CompletionService\022\240\002\n\r"
+          + "CompleteQuery\0225.google.cloud.discoveryengine.v1.CompleteQueryRequest\0326.goo"
+          + "gle.cloud.discoveryengine.v1.CompleteQue"
+          + "ryResponse\"\237\001\202\323\344\223\002\230\001\022B/v1/{data_store=pr"
+          + "ojects/*/locations/*/dataStores/*}:completeQueryZR\022P/v1/{data_store=projects/*/l"
+          + "ocations/*/collections/*/dataStores/*}:completeQuery\022\332\003\n"
+          + "\025AdvancedCompleteQuery\022=.google.cloud.discoveryengine.v1.Advance"
+          + "dCompleteQueryRequest\032>.google.cloud.discoveryengine.v1.AdvancedCompleteQueryRes"
+          + "ponse\"\301\002\202\323\344\223\002\272\002\"Z/v1/{completion_config="
+          + "projects/*/locations/*/dataStores/*/completionConfig}:completeQuery:\001*Zm\"h/v1/{c"
+          + "ompletion_config=projects/*/locations/*/collections/*/dataStores/*/completionCon"
+          + "fig}:completeQuery:\001*Zj\"e/v1/{completion_config=projects/*/locations/*/collectio"
+          + "ns/*/engines/*/completionConfig}:completeQuery:\001*\022\345\003\n"
+          + "\037ImportSuggestionDenyListEntries\022G.google.cloud.discoveryengine.v1."
+          + "ImportSuggestionDenyListEntriesRequest\032\035.google.longrunning.Operation\"\331\002\312A\222\001\n"
+          + "Ggoogle.cloud.discoveryengine.v1.ImportSuggestionDenyListEntriesResponse\022Ggoogle.cl"
+          + "oud.discoveryengine.v1.ImportSuggestionD"
+          + "enyListEntriesMetadata\202\323\344\223\002\274\001\"_/v1/{pare"
+          + "nt=projects/*/locations/*/collections/*/dataStores/*}/suggestionDenyListEntries:"
+          + "import:\001*ZV\"Q/v1/{parent=projects/*/loca"
+          + "tions/*/dataStores/*}/suggestionDenyListEntries:import:\001*\022\340\003\n"
+          + "\036PurgeSuggestionDenyListEntries\022F.google.cloud.discoveryeng"
+          + "ine.v1.PurgeSuggestionDenyListEntriesReq"
+          + "uest\032\035.google.longrunning.Operation\"\326\002\312A\220\001\n"
+          + "Fgoogle.cloud.discoveryengine.v1.PurgeSuggestionDenyListEntriesResponse\022Fgoog"
+          + "le.cloud.discoveryengine.v1.PurgeSuggest"
+          + "ionDenyListEntriesMetadata\202\323\344\223\002\273\001\"^/v1/{"
+          + "parent=projects/*/locations/*/collections/*/dataStores/*}/suggestionDenyListEntr"
+          + "ies:purge:\001*ZV\"Q/v1/{parent=projects/*/l"
+          + "ocations/*/dataStores/**}/suggestionDenyListEntries:purge:\001*\022\315\003\n"
+          + "\033ImportCompletionSuggestions\022C.google.cloud.discoveryeng"
+          + "ine.v1.ImportCompletionSuggestionsRequest\032\035.google.longrunning.Operation\"\311\002\312A\212\001\n"
+          + "Cgoogle.cloud.discoveryengine.v1.ImportCompletionSuggestionsResponse\022Cgoogle.clo"
+          + "ud.discoveryengine.v1.ImportCompletionSu"
+          + "ggestionsMetadata\202\323\344\223\002\264\001\"[/v1/{parent=pr"
+          + "ojects/*/locations/*/collections/*/dataStores/*}/completionSuggestions:import:\001*"
+          + "ZR\"M/v1/{parent=projects/*/locations/*/d"
+          + "ataStores/*}/completionSuggestions:import:\001*\022\307\003\n"
+          + "\032PurgeCompletionSuggestions\022B.google.cloud.discoveryengine.v1.PurgeCompl"
+          + "etionSuggestionsRequest\032\035.google.longrunning.Operation\"\305\002\312A\210\001\n"
+          + "Bgoogle.cloud.discoveryengine.v1.PurgeCompletionSuggestion"
+          + "sResponse\022Bgoogle.cloud.discoveryengine."
+          + "v1.PurgeCompletionSuggestionsMetadata\202\323\344"
+          + "\223\002\262\001\"Z/v1/{parent=projects/*/locations/*"
+          + "/collections/*/dataStores/*}/completionSuggestions:purge:\001*ZQ\"L/v1/{parent=proje"
+          + "cts/*/locations/*/dataStores/*}/completi"
+          + "onSuggestions:purge:\001*\032\303\002\312A\036discoveryeng"
+          + "ine.googleapis.com\322A\236\002https://www.google"
+          + "apis.com/auth/cloud-platform,https://www.googleapis.com/auth/cloud_search.query,"
+          + "https://www.googleapis.com/auth/discoveryengine.assist.readwrite,https://www.goo"
+          + "gleapis.com/auth/discoveryengine.readwri"
+          + "te,https://www.googleapis.com/auth/discoveryengine.serving.readwriteB\211\002\n"
+          + "#com.google.cloud.discoveryengine.v1B\026Completion"
+          + "ServiceProtoP\001ZMcloud.google.com/go/discoveryengine/apiv1/discoveryenginepb;disc"
+          + "overyenginepb\242\002\017DISCOVERYENGINE\252\002\037Google"
+          + ".Cloud.DiscoveryEngine.V1\312\002\037Google\\Cloud"
+          + "\\DiscoveryEngine\\V1\352\002\"Google::Cloud::DiscoveryEngine::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -154,9 +269,12 @@ public final class CompletionServiceProto extends com.google.protobuf.GeneratedF
               com.google.api.ClientProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
+              com.google.cloud.discoveryengine.v1.CommonProto.getDescriptor(),
+              com.google.cloud.discoveryengine.v1.DocumentProto.getDescriptor(),
               com.google.cloud.discoveryengine.v1.ImportConfigProto.getDescriptor(),
               com.google.cloud.discoveryengine.v1.PurgeConfigProto.getDescriptor(),
               com.google.longrunning.OperationsProto.getDescriptor(),
+              com.google.protobuf.TimestampProto.getDescriptor(),
             });
     internal_static_google_cloud_discoveryengine_v1_CompleteQueryRequest_descriptor =
         getDescriptor().getMessageType(0);
@@ -183,14 +301,121 @@ public final class CompletionServiceProto extends com.google.protobuf.GeneratedF
             new java.lang.String[] {
               "Suggestion", "CompletableFieldPaths",
             });
+    internal_static_google_cloud_discoveryengine_v1_AdvancedCompleteQueryRequest_descriptor =
+        getDescriptor().getMessageType(2);
+    internal_static_google_cloud_discoveryengine_v1_AdvancedCompleteQueryRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1_AdvancedCompleteQueryRequest_descriptor,
+            new java.lang.String[] {
+              "CompletionConfig",
+              "Query",
+              "QueryModel",
+              "UserPseudoId",
+              "UserInfo",
+              "IncludeTailSuggestions",
+              "BoostSpec",
+              "SuggestionTypes",
+              "SuggestionTypeSpecs",
+              "ExperimentIds",
+            });
+    internal_static_google_cloud_discoveryengine_v1_AdvancedCompleteQueryRequest_BoostSpec_descriptor =
+        internal_static_google_cloud_discoveryengine_v1_AdvancedCompleteQueryRequest_descriptor
+            .getNestedType(0);
+    internal_static_google_cloud_discoveryengine_v1_AdvancedCompleteQueryRequest_BoostSpec_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1_AdvancedCompleteQueryRequest_BoostSpec_descriptor,
+            new java.lang.String[] {
+              "ConditionBoostSpecs",
+            });
+    internal_static_google_cloud_discoveryengine_v1_AdvancedCompleteQueryRequest_BoostSpec_ConditionBoostSpec_descriptor =
+        internal_static_google_cloud_discoveryengine_v1_AdvancedCompleteQueryRequest_BoostSpec_descriptor
+            .getNestedType(0);
+    internal_static_google_cloud_discoveryengine_v1_AdvancedCompleteQueryRequest_BoostSpec_ConditionBoostSpec_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1_AdvancedCompleteQueryRequest_BoostSpec_ConditionBoostSpec_descriptor,
+            new java.lang.String[] {
+              "Condition", "Boost",
+            });
+    internal_static_google_cloud_discoveryengine_v1_AdvancedCompleteQueryRequest_SuggestionTypeSpec_descriptor =
+        internal_static_google_cloud_discoveryengine_v1_AdvancedCompleteQueryRequest_descriptor
+            .getNestedType(1);
+    internal_static_google_cloud_discoveryengine_v1_AdvancedCompleteQueryRequest_SuggestionTypeSpec_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1_AdvancedCompleteQueryRequest_SuggestionTypeSpec_descriptor,
+            new java.lang.String[] {
+              "SuggestionType", "MaxSuggestions",
+            });
+    internal_static_google_cloud_discoveryengine_v1_AdvancedCompleteQueryResponse_descriptor =
+        getDescriptor().getMessageType(3);
+    internal_static_google_cloud_discoveryengine_v1_AdvancedCompleteQueryResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1_AdvancedCompleteQueryResponse_descriptor,
+            new java.lang.String[] {
+              "QuerySuggestions",
+              "TailMatchTriggered",
+              "PeopleSuggestions",
+              "ContentSuggestions",
+              "RecentSearchSuggestions",
+            });
+    internal_static_google_cloud_discoveryengine_v1_AdvancedCompleteQueryResponse_QuerySuggestion_descriptor =
+        internal_static_google_cloud_discoveryengine_v1_AdvancedCompleteQueryResponse_descriptor
+            .getNestedType(0);
+    internal_static_google_cloud_discoveryengine_v1_AdvancedCompleteQueryResponse_QuerySuggestion_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1_AdvancedCompleteQueryResponse_QuerySuggestion_descriptor,
+            new java.lang.String[] {
+              "Suggestion", "CompletableFieldPaths", "DataStore", "Score",
+            });
+    internal_static_google_cloud_discoveryengine_v1_AdvancedCompleteQueryResponse_PersonSuggestion_descriptor =
+        internal_static_google_cloud_discoveryengine_v1_AdvancedCompleteQueryResponse_descriptor
+            .getNestedType(1);
+    internal_static_google_cloud_discoveryengine_v1_AdvancedCompleteQueryResponse_PersonSuggestion_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1_AdvancedCompleteQueryResponse_PersonSuggestion_descriptor,
+            new java.lang.String[] {
+              "Suggestion",
+              "PersonType",
+              "Document",
+              "DataStore",
+              "Score",
+              "DisplayPhotoUri",
+              "DestinationUri",
+            });
+    internal_static_google_cloud_discoveryengine_v1_AdvancedCompleteQueryResponse_ContentSuggestion_descriptor =
+        internal_static_google_cloud_discoveryengine_v1_AdvancedCompleteQueryResponse_descriptor
+            .getNestedType(2);
+    internal_static_google_cloud_discoveryengine_v1_AdvancedCompleteQueryResponse_ContentSuggestion_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1_AdvancedCompleteQueryResponse_ContentSuggestion_descriptor,
+            new java.lang.String[] {
+              "Suggestion",
+              "ContentType",
+              "Document",
+              "DataStore",
+              "Score",
+              "IconUri",
+              "DestinationUri",
+            });
+    internal_static_google_cloud_discoveryengine_v1_AdvancedCompleteQueryResponse_RecentSearchSuggestion_descriptor =
+        internal_static_google_cloud_discoveryengine_v1_AdvancedCompleteQueryResponse_descriptor
+            .getNestedType(3);
+    internal_static_google_cloud_discoveryengine_v1_AdvancedCompleteQueryResponse_RecentSearchSuggestion_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1_AdvancedCompleteQueryResponse_RecentSearchSuggestion_descriptor,
+            new java.lang.String[] {
+              "Suggestion", "RecentSearchTime", "Score",
+            });
     descriptor.resolveAllFeaturesImmutable();
     com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.ClientProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
+    com.google.cloud.discoveryengine.v1.CommonProto.getDescriptor();
+    com.google.cloud.discoveryengine.v1.DocumentProto.getDescriptor();
     com.google.cloud.discoveryengine.v1.ImportConfigProto.getDescriptor();
     com.google.cloud.discoveryengine.v1.PurgeConfigProto.getDescriptor();
     com.google.longrunning.OperationsProto.getDescriptor();
+    com.google.protobuf.TimestampProto.getDescriptor();
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.ClientProto.defaultHost);

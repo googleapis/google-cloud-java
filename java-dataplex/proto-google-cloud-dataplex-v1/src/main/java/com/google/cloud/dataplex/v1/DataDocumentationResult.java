@@ -3918,6 +3918,2945 @@ public final class DataDocumentationResult extends com.google.protobuf.Generated
     }
   }
 
+  public interface DataProductResultOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A detailed description for the data product.
+     * </pre>
+     *
+     * <code>string overview = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The overview.
+     */
+    java.lang.String getOverview();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A detailed description for the data product.
+     * </pre>
+     *
+     * <code>string overview = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for overview.
+     */
+    com.google.protobuf.ByteString getOverviewBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Unordered list. Sample SQL queries for the data product.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataDocumentationResult.Query queries = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = UNORDERED_LIST];
+     * </code>
+     */
+    java.util.List<com.google.cloud.dataplex.v1.DataDocumentationResult.Query> getQueriesList();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Unordered list. Sample SQL queries for the data product.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataDocumentationResult.Query queries = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = UNORDERED_LIST];
+     * </code>
+     */
+    com.google.cloud.dataplex.v1.DataDocumentationResult.Query getQueries(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Unordered list. Sample SQL queries for the data product.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataDocumentationResult.Query queries = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = UNORDERED_LIST];
+     * </code>
+     */
+    int getQueriesCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Unordered list. Sample SQL queries for the data product.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataDocumentationResult.Query queries = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = UNORDERED_LIST];
+     * </code>
+     */
+    java.util.List<? extends com.google.cloud.dataplex.v1.DataDocumentationResult.QueryOrBuilder>
+        getQueriesOrBuilderList();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Unordered list. Sample SQL queries for the data product.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataDocumentationResult.Query queries = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = UNORDERED_LIST];
+     * </code>
+     */
+    com.google.cloud.dataplex.v1.DataDocumentationResult.QueryOrBuilder getQueriesOrBuilder(
+        int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Unordered list. Generated descriptions for assets in the
+     * data product. Note that some assets may not have a generated description.
+     * Such assets will not be included in this list.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult.AssetDescription asset_descriptions = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = UNORDERED_LIST];
+     * </code>
+     */
+    java.util.List<
+            com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult.AssetDescription>
+        getAssetDescriptionsList();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Unordered list. Generated descriptions for assets in the
+     * data product. Note that some assets may not have a generated description.
+     * Such assets will not be included in this list.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult.AssetDescription asset_descriptions = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = UNORDERED_LIST];
+     * </code>
+     */
+    com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult.AssetDescription
+        getAssetDescriptions(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Unordered list. Generated descriptions for assets in the
+     * data product. Note that some assets may not have a generated description.
+     * Such assets will not be included in this list.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult.AssetDescription asset_descriptions = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = UNORDERED_LIST];
+     * </code>
+     */
+    int getAssetDescriptionsCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Unordered list. Generated descriptions for assets in the
+     * data product. Note that some assets may not have a generated description.
+     * Such assets will not be included in this list.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult.AssetDescription asset_descriptions = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = UNORDERED_LIST];
+     * </code>
+     */
+    java.util.List<
+            ? extends
+                com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult
+                    .AssetDescriptionOrBuilder>
+        getAssetDescriptionsOrBuilderList();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Unordered list. Generated descriptions for assets in the
+     * data product. Note that some assets may not have a generated description.
+     * Such assets will not be included in this list.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult.AssetDescription asset_descriptions = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = UNORDERED_LIST];
+     * </code>
+     */
+    com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult.AssetDescriptionOrBuilder
+        getAssetDescriptionsOrBuilder(int index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Generated metadata about a data product.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult}
+   */
+  public static final class DataProductResult extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult)
+      DataProductResultOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 6,
+          /* suffix= */ "",
+          "DataProductResult");
+    }
+
+    // Use DataProductResult.newBuilder() to construct.
+    private DataProductResult(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private DataProductResult() {
+      overview_ = "";
+      queries_ = java.util.Collections.emptyList();
+      assetDescriptions_ = java.util.Collections.emptyList();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.dataplex.v1.DataDocumentationProto
+          .internal_static_google_cloud_dataplex_v1_DataDocumentationResult_DataProductResult_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.dataplex.v1.DataDocumentationProto
+          .internal_static_google_cloud_dataplex_v1_DataDocumentationResult_DataProductResult_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult.class,
+              com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult.Builder.class);
+    }
+
+    public interface AssetDescriptionOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult.AssetDescription)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The service-qualified full resource name of the asset.
+       * Example:
+       * //bigquery.googleapis.com/projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID
+       * </pre>
+       *
+       * <code>string resource = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The resource.
+       */
+      java.lang.String getResource();
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The service-qualified full resource name of the asset.
+       * Example:
+       * //bigquery.googleapis.com/projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID
+       * </pre>
+       *
+       * <code>string resource = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The bytes for resource.
+       */
+      com.google.protobuf.ByteString getResourceBytes();
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. A generated description for the asset.
+       * </pre>
+       *
+       * <code>string overview = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The overview.
+       */
+      java.lang.String getOverview();
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. A generated description for the asset.
+       * </pre>
+       *
+       * <code>string overview = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The bytes for overview.
+       */
+      com.google.protobuf.ByteString getOverviewBytes();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Description for an asset in the data product.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult.AssetDescription}
+     */
+    public static final class AssetDescription extends com.google.protobuf.GeneratedMessage
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult.AssetDescription)
+        AssetDescriptionOrBuilder {
+      private static final long serialVersionUID = 0L;
+
+      static {
+        com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+            com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+            /* major= */ 4,
+            /* minor= */ 33,
+            /* patch= */ 6,
+            /* suffix= */ "",
+            "AssetDescription");
+      }
+
+      // Use AssetDescription.newBuilder() to construct.
+      private AssetDescription(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+        super(builder);
+      }
+
+      private AssetDescription() {
+        resource_ = "";
+        overview_ = "";
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.dataplex.v1.DataDocumentationProto
+            .internal_static_google_cloud_dataplex_v1_DataDocumentationResult_DataProductResult_AssetDescription_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.dataplex.v1.DataDocumentationProto
+            .internal_static_google_cloud_dataplex_v1_DataDocumentationResult_DataProductResult_AssetDescription_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult
+                    .AssetDescription.class,
+                com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult
+                    .AssetDescription.Builder.class);
+      }
+
+      public static final int RESOURCE_FIELD_NUMBER = 1;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object resource_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The service-qualified full resource name of the asset.
+       * Example:
+       * //bigquery.googleapis.com/projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID
+       * </pre>
+       *
+       * <code>string resource = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The resource.
+       */
+      @java.lang.Override
+      public java.lang.String getResource() {
+        java.lang.Object ref = resource_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          resource_ = s;
+          return s;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The service-qualified full resource name of the asset.
+       * Example:
+       * //bigquery.googleapis.com/projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID
+       * </pre>
+       *
+       * <code>string resource = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The bytes for resource.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getResourceBytes() {
+        java.lang.Object ref = resource_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          resource_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int OVERVIEW_FIELD_NUMBER = 2;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object overview_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. A generated description for the asset.
+       * </pre>
+       *
+       * <code>string overview = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The overview.
+       */
+      @java.lang.Override
+      public java.lang.String getOverview() {
+        java.lang.Object ref = overview_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          overview_ = s;
+          return s;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. A generated description for the asset.
+       * </pre>
+       *
+       * <code>string overview = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The bytes for overview.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getOverviewBytes() {
+        java.lang.Object ref = overview_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          overview_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(resource_)) {
+          com.google.protobuf.GeneratedMessage.writeString(output, 1, resource_);
+        }
+        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(overview_)) {
+          com.google.protobuf.GeneratedMessage.writeString(output, 2, overview_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(resource_)) {
+          size += com.google.protobuf.GeneratedMessage.computeStringSize(1, resource_);
+        }
+        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(overview_)) {
+          size += com.google.protobuf.GeneratedMessage.computeStringSize(2, overview_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult
+                .AssetDescription)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult.AssetDescription
+            other =
+                (com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult
+                        .AssetDescription)
+                    obj;
+
+        if (!getResource().equals(other.getResource())) return false;
+        if (!getOverview().equals(other.getOverview())) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + RESOURCE_FIELD_NUMBER;
+        hash = (53 * hash) + getResource().hashCode();
+        hash = (37 * hash) + OVERVIEW_FIELD_NUMBER;
+        hash = (53 * hash) + getOverview().hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult
+              .AssetDescription
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult
+              .AssetDescription
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult
+              .AssetDescription
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult
+              .AssetDescription
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult
+              .AssetDescription
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult
+              .AssetDescription
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult
+              .AssetDescription
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult
+              .AssetDescription
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult
+              .AssetDescription
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult
+              .AssetDescription
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult
+              .AssetDescription
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult
+              .AssetDescription
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult.AssetDescription
+              prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Description for an asset in the data product.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult.AssetDescription}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult.AssetDescription)
+          com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult
+              .AssetDescriptionOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.dataplex.v1.DataDocumentationProto
+              .internal_static_google_cloud_dataplex_v1_DataDocumentationResult_DataProductResult_AssetDescription_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.dataplex.v1.DataDocumentationProto
+              .internal_static_google_cloud_dataplex_v1_DataDocumentationResult_DataProductResult_AssetDescription_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult
+                      .AssetDescription.class,
+                  com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult
+                      .AssetDescription.Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult.AssetDescription.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          resource_ = "";
+          overview_ = "";
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.dataplex.v1.DataDocumentationProto
+              .internal_static_google_cloud_dataplex_v1_DataDocumentationResult_DataProductResult_AssetDescription_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult
+                .AssetDescription
+            getDefaultInstanceForType() {
+          return com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult
+              .AssetDescription.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult
+                .AssetDescription
+            build() {
+          com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult.AssetDescription
+              result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult
+                .AssetDescription
+            buildPartial() {
+          com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult.AssetDescription
+              result =
+                  new com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult
+                      .AssetDescription(this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult.AssetDescription
+                result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.resource_ = resource_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.overview_ = overview_;
+          }
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult
+                  .AssetDescription) {
+            return mergeFrom(
+                (com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult
+                        .AssetDescription)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult.AssetDescription
+                other) {
+          if (other
+              == com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult
+                  .AssetDescription.getDefaultInstance()) return this;
+          if (!other.getResource().isEmpty()) {
+            resource_ = other.resource_;
+            bitField0_ |= 0x00000001;
+            onChanged();
+          }
+          if (!other.getOverview().isEmpty()) {
+            overview_ = other.overview_;
+            bitField0_ |= 0x00000002;
+            onChanged();
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    resource_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 10
+                case 18:
+                  {
+                    overview_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000002;
+                    break;
+                  } // case 18
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private java.lang.Object resource_ = "";
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. The service-qualified full resource name of the asset.
+         * Example:
+         * //bigquery.googleapis.com/projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID
+         * </pre>
+         *
+         * <code>string resource = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         *
+         * @return The resource.
+         */
+        public java.lang.String getResource() {
+          java.lang.Object ref = resource_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            resource_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. The service-qualified full resource name of the asset.
+         * Example:
+         * //bigquery.googleapis.com/projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID
+         * </pre>
+         *
+         * <code>string resource = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         *
+         * @return The bytes for resource.
+         */
+        public com.google.protobuf.ByteString getResourceBytes() {
+          java.lang.Object ref = resource_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            resource_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. The service-qualified full resource name of the asset.
+         * Example:
+         * //bigquery.googleapis.com/projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID
+         * </pre>
+         *
+         * <code>string resource = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         *
+         * @param value The resource to set.
+         * @return This builder for chaining.
+         */
+        public Builder setResource(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          resource_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. The service-qualified full resource name of the asset.
+         * Example:
+         * //bigquery.googleapis.com/projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID
+         * </pre>
+         *
+         * <code>string resource = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearResource() {
+          resource_ = getDefaultInstance().getResource();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. The service-qualified full resource name of the asset.
+         * Example:
+         * //bigquery.googleapis.com/projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID
+         * </pre>
+         *
+         * <code>string resource = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         *
+         * @param value The bytes for resource to set.
+         * @return This builder for chaining.
+         */
+        public Builder setResourceBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          resource_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object overview_ = "";
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. A generated description for the asset.
+         * </pre>
+         *
+         * <code>string overview = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         *
+         * @return The overview.
+         */
+        public java.lang.String getOverview() {
+          java.lang.Object ref = overview_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            overview_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. A generated description for the asset.
+         * </pre>
+         *
+         * <code>string overview = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         *
+         * @return The bytes for overview.
+         */
+        public com.google.protobuf.ByteString getOverviewBytes() {
+          java.lang.Object ref = overview_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            overview_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. A generated description for the asset.
+         * </pre>
+         *
+         * <code>string overview = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         *
+         * @param value The overview to set.
+         * @return This builder for chaining.
+         */
+        public Builder setOverview(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          overview_ = value;
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. A generated description for the asset.
+         * </pre>
+         *
+         * <code>string overview = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearOverview() {
+          overview_ = getDefaultInstance().getOverview();
+          bitField0_ = (bitField0_ & ~0x00000002);
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. A generated description for the asset.
+         * </pre>
+         *
+         * <code>string overview = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         *
+         * @param value The bytes for overview to set.
+         * @return This builder for chaining.
+         */
+        public Builder setOverviewBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          overview_ = value;
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult.AssetDescription)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult.AssetDescription)
+      private static final com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult
+              .AssetDescription
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult
+                .AssetDescription();
+      }
+
+      public static com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult
+              .AssetDescription
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<AssetDescription> PARSER =
+          new com.google.protobuf.AbstractParser<AssetDescription>() {
+            @java.lang.Override
+            public AssetDescription parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<AssetDescription> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<AssetDescription> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult.AssetDescription
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    public static final int OVERVIEW_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object overview_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A detailed description for the data product.
+     * </pre>
+     *
+     * <code>string overview = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The overview.
+     */
+    @java.lang.Override
+    public java.lang.String getOverview() {
+      java.lang.Object ref = overview_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        overview_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A detailed description for the data product.
+     * </pre>
+     *
+     * <code>string overview = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for overview.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getOverviewBytes() {
+      java.lang.Object ref = overview_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        overview_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int QUERIES_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private java.util.List<com.google.cloud.dataplex.v1.DataDocumentationResult.Query> queries_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Unordered list. Sample SQL queries for the data product.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataDocumentationResult.Query queries = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = UNORDERED_LIST];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<com.google.cloud.dataplex.v1.DataDocumentationResult.Query>
+        getQueriesList() {
+      return queries_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Unordered list. Sample SQL queries for the data product.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataDocumentationResult.Query queries = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = UNORDERED_LIST];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<
+            ? extends com.google.cloud.dataplex.v1.DataDocumentationResult.QueryOrBuilder>
+        getQueriesOrBuilderList() {
+      return queries_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Unordered list. Sample SQL queries for the data product.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataDocumentationResult.Query queries = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = UNORDERED_LIST];
+     * </code>
+     */
+    @java.lang.Override
+    public int getQueriesCount() {
+      return queries_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Unordered list. Sample SQL queries for the data product.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataDocumentationResult.Query queries = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = UNORDERED_LIST];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dataplex.v1.DataDocumentationResult.Query getQueries(int index) {
+      return queries_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Unordered list. Sample SQL queries for the data product.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataDocumentationResult.Query queries = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = UNORDERED_LIST];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dataplex.v1.DataDocumentationResult.QueryOrBuilder getQueriesOrBuilder(
+        int index) {
+      return queries_.get(index);
+    }
+
+    public static final int ASSET_DESCRIPTIONS_FIELD_NUMBER = 3;
+
+    @SuppressWarnings("serial")
+    private java.util.List<
+            com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult.AssetDescription>
+        assetDescriptions_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Unordered list. Generated descriptions for assets in the
+     * data product. Note that some assets may not have a generated description.
+     * Such assets will not be included in this list.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult.AssetDescription asset_descriptions = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = UNORDERED_LIST];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<
+            com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult.AssetDescription>
+        getAssetDescriptionsList() {
+      return assetDescriptions_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Unordered list. Generated descriptions for assets in the
+     * data product. Note that some assets may not have a generated description.
+     * Such assets will not be included in this list.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult.AssetDescription asset_descriptions = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = UNORDERED_LIST];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<
+            ? extends
+                com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult
+                    .AssetDescriptionOrBuilder>
+        getAssetDescriptionsOrBuilderList() {
+      return assetDescriptions_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Unordered list. Generated descriptions for assets in the
+     * data product. Note that some assets may not have a generated description.
+     * Such assets will not be included in this list.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult.AssetDescription asset_descriptions = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = UNORDERED_LIST];
+     * </code>
+     */
+    @java.lang.Override
+    public int getAssetDescriptionsCount() {
+      return assetDescriptions_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Unordered list. Generated descriptions for assets in the
+     * data product. Note that some assets may not have a generated description.
+     * Such assets will not be included in this list.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult.AssetDescription asset_descriptions = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = UNORDERED_LIST];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult.AssetDescription
+        getAssetDescriptions(int index) {
+      return assetDescriptions_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Unordered list. Generated descriptions for assets in the
+     * data product. Note that some assets may not have a generated description.
+     * Such assets will not be included in this list.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult.AssetDescription asset_descriptions = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = UNORDERED_LIST];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult
+            .AssetDescriptionOrBuilder
+        getAssetDescriptionsOrBuilder(int index) {
+      return assetDescriptions_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(overview_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 1, overview_);
+      }
+      for (int i = 0; i < queries_.size(); i++) {
+        output.writeMessage(2, queries_.get(i));
+      }
+      for (int i = 0; i < assetDescriptions_.size(); i++) {
+        output.writeMessage(3, assetDescriptions_.get(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(overview_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(1, overview_);
+      }
+      for (int i = 0; i < queries_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, queries_.get(i));
+      }
+      for (int i = 0; i < assetDescriptions_.size(); i++) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(3, assetDescriptions_.get(i));
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult other =
+          (com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult) obj;
+
+      if (!getOverview().equals(other.getOverview())) return false;
+      if (!getQueriesList().equals(other.getQueriesList())) return false;
+      if (!getAssetDescriptionsList().equals(other.getAssetDescriptionsList())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + OVERVIEW_FIELD_NUMBER;
+      hash = (53 * hash) + getOverview().hashCode();
+      if (getQueriesCount() > 0) {
+        hash = (37 * hash) + QUERIES_FIELD_NUMBER;
+        hash = (53 * hash) + getQueriesList().hashCode();
+      }
+      if (getAssetDescriptionsCount() > 0) {
+        hash = (37 * hash) + ASSET_DESCRIPTIONS_FIELD_NUMBER;
+        hash = (53 * hash) + getAssetDescriptionsList().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Generated metadata about a data product.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult)
+        com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResultOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.dataplex.v1.DataDocumentationProto
+            .internal_static_google_cloud_dataplex_v1_DataDocumentationResult_DataProductResult_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.dataplex.v1.DataDocumentationProto
+            .internal_static_google_cloud_dataplex_v1_DataDocumentationResult_DataProductResult_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult.class,
+                com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult.Builder
+                    .class);
+      }
+
+      // Construct using
+      // com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        overview_ = "";
+        if (queriesBuilder_ == null) {
+          queries_ = java.util.Collections.emptyList();
+        } else {
+          queries_ = null;
+          queriesBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000002);
+        if (assetDescriptionsBuilder_ == null) {
+          assetDescriptions_ = java.util.Collections.emptyList();
+        } else {
+          assetDescriptions_ = null;
+          assetDescriptionsBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000004);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.dataplex.v1.DataDocumentationProto
+            .internal_static_google_cloud_dataplex_v1_DataDocumentationResult_DataProductResult_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult
+          getDefaultInstanceForType() {
+        return com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult build() {
+        com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult buildPartial() {
+        com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult result =
+            new com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult(this);
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult result) {
+        if (queriesBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)) {
+            queries_ = java.util.Collections.unmodifiableList(queries_);
+            bitField0_ = (bitField0_ & ~0x00000002);
+          }
+          result.queries_ = queries_;
+        } else {
+          result.queries_ = queriesBuilder_.build();
+        }
+        if (assetDescriptionsBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) != 0)) {
+            assetDescriptions_ = java.util.Collections.unmodifiableList(assetDescriptions_);
+            bitField0_ = (bitField0_ & ~0x00000004);
+          }
+          result.assetDescriptions_ = assetDescriptions_;
+        } else {
+          result.assetDescriptions_ = assetDescriptionsBuilder_.build();
+        }
+      }
+
+      private void buildPartial0(
+          com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.overview_ = overview_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult) {
+          return mergeFrom(
+              (com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult other) {
+        if (other
+            == com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult
+                .getDefaultInstance()) return this;
+        if (!other.getOverview().isEmpty()) {
+          overview_ = other.overview_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (queriesBuilder_ == null) {
+          if (!other.queries_.isEmpty()) {
+            if (queries_.isEmpty()) {
+              queries_ = other.queries_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+            } else {
+              ensureQueriesIsMutable();
+              queries_.addAll(other.queries_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.queries_.isEmpty()) {
+            if (queriesBuilder_.isEmpty()) {
+              queriesBuilder_.dispose();
+              queriesBuilder_ = null;
+              queries_ = other.queries_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+              queriesBuilder_ =
+                  com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                      ? internalGetQueriesFieldBuilder()
+                      : null;
+            } else {
+              queriesBuilder_.addAllMessages(other.queries_);
+            }
+          }
+        }
+        if (assetDescriptionsBuilder_ == null) {
+          if (!other.assetDescriptions_.isEmpty()) {
+            if (assetDescriptions_.isEmpty()) {
+              assetDescriptions_ = other.assetDescriptions_;
+              bitField0_ = (bitField0_ & ~0x00000004);
+            } else {
+              ensureAssetDescriptionsIsMutable();
+              assetDescriptions_.addAll(other.assetDescriptions_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.assetDescriptions_.isEmpty()) {
+            if (assetDescriptionsBuilder_.isEmpty()) {
+              assetDescriptionsBuilder_.dispose();
+              assetDescriptionsBuilder_ = null;
+              assetDescriptions_ = other.assetDescriptions_;
+              bitField0_ = (bitField0_ & ~0x00000004);
+              assetDescriptionsBuilder_ =
+                  com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                      ? internalGetAssetDescriptionsFieldBuilder()
+                      : null;
+            } else {
+              assetDescriptionsBuilder_.addAllMessages(other.assetDescriptions_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  overview_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  com.google.cloud.dataplex.v1.DataDocumentationResult.Query m =
+                      input.readMessage(
+                          com.google.cloud.dataplex.v1.DataDocumentationResult.Query.parser(),
+                          extensionRegistry);
+                  if (queriesBuilder_ == null) {
+                    ensureQueriesIsMutable();
+                    queries_.add(m);
+                  } else {
+                    queriesBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 18
+              case 26:
+                {
+                  com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult
+                          .AssetDescription
+                      m =
+                          input.readMessage(
+                              com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult
+                                  .AssetDescription.parser(),
+                              extensionRegistry);
+                  if (assetDescriptionsBuilder_ == null) {
+                    ensureAssetDescriptionsIsMutable();
+                    assetDescriptions_.add(m);
+                  } else {
+                    assetDescriptionsBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 26
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object overview_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. A detailed description for the data product.
+       * </pre>
+       *
+       * <code>string overview = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The overview.
+       */
+      public java.lang.String getOverview() {
+        java.lang.Object ref = overview_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          overview_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. A detailed description for the data product.
+       * </pre>
+       *
+       * <code>string overview = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The bytes for overview.
+       */
+      public com.google.protobuf.ByteString getOverviewBytes() {
+        java.lang.Object ref = overview_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          overview_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. A detailed description for the data product.
+       * </pre>
+       *
+       * <code>string overview = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The overview to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOverview(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        overview_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. A detailed description for the data product.
+       * </pre>
+       *
+       * <code>string overview = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearOverview() {
+        overview_ = getDefaultInstance().getOverview();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. A detailed description for the data product.
+       * </pre>
+       *
+       * <code>string overview = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The bytes for overview to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOverviewBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        overview_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<com.google.cloud.dataplex.v1.DataDocumentationResult.Query> queries_ =
+          java.util.Collections.emptyList();
+
+      private void ensureQueriesIsMutable() {
+        if (!((bitField0_ & 0x00000002) != 0)) {
+          queries_ =
+              new java.util.ArrayList<com.google.cloud.dataplex.v1.DataDocumentationResult.Query>(
+                  queries_);
+          bitField0_ |= 0x00000002;
+        }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilder<
+              com.google.cloud.dataplex.v1.DataDocumentationResult.Query,
+              com.google.cloud.dataplex.v1.DataDocumentationResult.Query.Builder,
+              com.google.cloud.dataplex.v1.DataDocumentationResult.QueryOrBuilder>
+          queriesBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Unordered list. Sample SQL queries for the data product.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataDocumentationResult.Query queries = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = UNORDERED_LIST];
+       * </code>
+       */
+      public java.util.List<com.google.cloud.dataplex.v1.DataDocumentationResult.Query>
+          getQueriesList() {
+        if (queriesBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(queries_);
+        } else {
+          return queriesBuilder_.getMessageList();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Unordered list. Sample SQL queries for the data product.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataDocumentationResult.Query queries = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = UNORDERED_LIST];
+       * </code>
+       */
+      public int getQueriesCount() {
+        if (queriesBuilder_ == null) {
+          return queries_.size();
+        } else {
+          return queriesBuilder_.getCount();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Unordered list. Sample SQL queries for the data product.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataDocumentationResult.Query queries = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = UNORDERED_LIST];
+       * </code>
+       */
+      public com.google.cloud.dataplex.v1.DataDocumentationResult.Query getQueries(int index) {
+        if (queriesBuilder_ == null) {
+          return queries_.get(index);
+        } else {
+          return queriesBuilder_.getMessage(index);
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Unordered list. Sample SQL queries for the data product.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataDocumentationResult.Query queries = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = UNORDERED_LIST];
+       * </code>
+       */
+      public Builder setQueries(
+          int index, com.google.cloud.dataplex.v1.DataDocumentationResult.Query value) {
+        if (queriesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureQueriesIsMutable();
+          queries_.set(index, value);
+          onChanged();
+        } else {
+          queriesBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Unordered list. Sample SQL queries for the data product.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataDocumentationResult.Query queries = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = UNORDERED_LIST];
+       * </code>
+       */
+      public Builder setQueries(
+          int index,
+          com.google.cloud.dataplex.v1.DataDocumentationResult.Query.Builder builderForValue) {
+        if (queriesBuilder_ == null) {
+          ensureQueriesIsMutable();
+          queries_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          queriesBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Unordered list. Sample SQL queries for the data product.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataDocumentationResult.Query queries = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = UNORDERED_LIST];
+       * </code>
+       */
+      public Builder addQueries(com.google.cloud.dataplex.v1.DataDocumentationResult.Query value) {
+        if (queriesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureQueriesIsMutable();
+          queries_.add(value);
+          onChanged();
+        } else {
+          queriesBuilder_.addMessage(value);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Unordered list. Sample SQL queries for the data product.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataDocumentationResult.Query queries = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = UNORDERED_LIST];
+       * </code>
+       */
+      public Builder addQueries(
+          int index, com.google.cloud.dataplex.v1.DataDocumentationResult.Query value) {
+        if (queriesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureQueriesIsMutable();
+          queries_.add(index, value);
+          onChanged();
+        } else {
+          queriesBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Unordered list. Sample SQL queries for the data product.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataDocumentationResult.Query queries = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = UNORDERED_LIST];
+       * </code>
+       */
+      public Builder addQueries(
+          com.google.cloud.dataplex.v1.DataDocumentationResult.Query.Builder builderForValue) {
+        if (queriesBuilder_ == null) {
+          ensureQueriesIsMutable();
+          queries_.add(builderForValue.build());
+          onChanged();
+        } else {
+          queriesBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Unordered list. Sample SQL queries for the data product.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataDocumentationResult.Query queries = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = UNORDERED_LIST];
+       * </code>
+       */
+      public Builder addQueries(
+          int index,
+          com.google.cloud.dataplex.v1.DataDocumentationResult.Query.Builder builderForValue) {
+        if (queriesBuilder_ == null) {
+          ensureQueriesIsMutable();
+          queries_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          queriesBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Unordered list. Sample SQL queries for the data product.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataDocumentationResult.Query queries = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = UNORDERED_LIST];
+       * </code>
+       */
+      public Builder addAllQueries(
+          java.lang.Iterable<? extends com.google.cloud.dataplex.v1.DataDocumentationResult.Query>
+              values) {
+        if (queriesBuilder_ == null) {
+          ensureQueriesIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, queries_);
+          onChanged();
+        } else {
+          queriesBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Unordered list. Sample SQL queries for the data product.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataDocumentationResult.Query queries = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = UNORDERED_LIST];
+       * </code>
+       */
+      public Builder clearQueries() {
+        if (queriesBuilder_ == null) {
+          queries_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+          onChanged();
+        } else {
+          queriesBuilder_.clear();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Unordered list. Sample SQL queries for the data product.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataDocumentationResult.Query queries = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = UNORDERED_LIST];
+       * </code>
+       */
+      public Builder removeQueries(int index) {
+        if (queriesBuilder_ == null) {
+          ensureQueriesIsMutable();
+          queries_.remove(index);
+          onChanged();
+        } else {
+          queriesBuilder_.remove(index);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Unordered list. Sample SQL queries for the data product.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataDocumentationResult.Query queries = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = UNORDERED_LIST];
+       * </code>
+       */
+      public com.google.cloud.dataplex.v1.DataDocumentationResult.Query.Builder getQueriesBuilder(
+          int index) {
+        return internalGetQueriesFieldBuilder().getBuilder(index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Unordered list. Sample SQL queries for the data product.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataDocumentationResult.Query queries = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = UNORDERED_LIST];
+       * </code>
+       */
+      public com.google.cloud.dataplex.v1.DataDocumentationResult.QueryOrBuilder
+          getQueriesOrBuilder(int index) {
+        if (queriesBuilder_ == null) {
+          return queries_.get(index);
+        } else {
+          return queriesBuilder_.getMessageOrBuilder(index);
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Unordered list. Sample SQL queries for the data product.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataDocumentationResult.Query queries = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = UNORDERED_LIST];
+       * </code>
+       */
+      public java.util.List<
+              ? extends com.google.cloud.dataplex.v1.DataDocumentationResult.QueryOrBuilder>
+          getQueriesOrBuilderList() {
+        if (queriesBuilder_ != null) {
+          return queriesBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(queries_);
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Unordered list. Sample SQL queries for the data product.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataDocumentationResult.Query queries = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = UNORDERED_LIST];
+       * </code>
+       */
+      public com.google.cloud.dataplex.v1.DataDocumentationResult.Query.Builder
+          addQueriesBuilder() {
+        return internalGetQueriesFieldBuilder()
+            .addBuilder(
+                com.google.cloud.dataplex.v1.DataDocumentationResult.Query.getDefaultInstance());
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Unordered list. Sample SQL queries for the data product.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataDocumentationResult.Query queries = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = UNORDERED_LIST];
+       * </code>
+       */
+      public com.google.cloud.dataplex.v1.DataDocumentationResult.Query.Builder addQueriesBuilder(
+          int index) {
+        return internalGetQueriesFieldBuilder()
+            .addBuilder(
+                index,
+                com.google.cloud.dataplex.v1.DataDocumentationResult.Query.getDefaultInstance());
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Unordered list. Sample SQL queries for the data product.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataDocumentationResult.Query queries = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = UNORDERED_LIST];
+       * </code>
+       */
+      public java.util.List<com.google.cloud.dataplex.v1.DataDocumentationResult.Query.Builder>
+          getQueriesBuilderList() {
+        return internalGetQueriesFieldBuilder().getBuilderList();
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilder<
+              com.google.cloud.dataplex.v1.DataDocumentationResult.Query,
+              com.google.cloud.dataplex.v1.DataDocumentationResult.Query.Builder,
+              com.google.cloud.dataplex.v1.DataDocumentationResult.QueryOrBuilder>
+          internalGetQueriesFieldBuilder() {
+        if (queriesBuilder_ == null) {
+          queriesBuilder_ =
+              new com.google.protobuf.RepeatedFieldBuilder<
+                  com.google.cloud.dataplex.v1.DataDocumentationResult.Query,
+                  com.google.cloud.dataplex.v1.DataDocumentationResult.Query.Builder,
+                  com.google.cloud.dataplex.v1.DataDocumentationResult.QueryOrBuilder>(
+                  queries_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
+          queries_ = null;
+        }
+        return queriesBuilder_;
+      }
+
+      private java.util.List<
+              com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult
+                  .AssetDescription>
+          assetDescriptions_ = java.util.Collections.emptyList();
+
+      private void ensureAssetDescriptionsIsMutable() {
+        if (!((bitField0_ & 0x00000004) != 0)) {
+          assetDescriptions_ =
+              new java.util.ArrayList<
+                  com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult
+                      .AssetDescription>(assetDescriptions_);
+          bitField0_ |= 0x00000004;
+        }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilder<
+              com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult
+                  .AssetDescription,
+              com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult
+                  .AssetDescription.Builder,
+              com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult
+                  .AssetDescriptionOrBuilder>
+          assetDescriptionsBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Unordered list. Generated descriptions for assets in the
+       * data product. Note that some assets may not have a generated description.
+       * Such assets will not be included in this list.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult.AssetDescription asset_descriptions = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = UNORDERED_LIST];
+       * </code>
+       */
+      public java.util.List<
+              com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult
+                  .AssetDescription>
+          getAssetDescriptionsList() {
+        if (assetDescriptionsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(assetDescriptions_);
+        } else {
+          return assetDescriptionsBuilder_.getMessageList();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Unordered list. Generated descriptions for assets in the
+       * data product. Note that some assets may not have a generated description.
+       * Such assets will not be included in this list.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult.AssetDescription asset_descriptions = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = UNORDERED_LIST];
+       * </code>
+       */
+      public int getAssetDescriptionsCount() {
+        if (assetDescriptionsBuilder_ == null) {
+          return assetDescriptions_.size();
+        } else {
+          return assetDescriptionsBuilder_.getCount();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Unordered list. Generated descriptions for assets in the
+       * data product. Note that some assets may not have a generated description.
+       * Such assets will not be included in this list.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult.AssetDescription asset_descriptions = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = UNORDERED_LIST];
+       * </code>
+       */
+      public com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult.AssetDescription
+          getAssetDescriptions(int index) {
+        if (assetDescriptionsBuilder_ == null) {
+          return assetDescriptions_.get(index);
+        } else {
+          return assetDescriptionsBuilder_.getMessage(index);
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Unordered list. Generated descriptions for assets in the
+       * data product. Note that some assets may not have a generated description.
+       * Such assets will not be included in this list.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult.AssetDescription asset_descriptions = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = UNORDERED_LIST];
+       * </code>
+       */
+      public Builder setAssetDescriptions(
+          int index,
+          com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult.AssetDescription
+              value) {
+        if (assetDescriptionsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureAssetDescriptionsIsMutable();
+          assetDescriptions_.set(index, value);
+          onChanged();
+        } else {
+          assetDescriptionsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Unordered list. Generated descriptions for assets in the
+       * data product. Note that some assets may not have a generated description.
+       * Such assets will not be included in this list.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult.AssetDescription asset_descriptions = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = UNORDERED_LIST];
+       * </code>
+       */
+      public Builder setAssetDescriptions(
+          int index,
+          com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult.AssetDescription
+                  .Builder
+              builderForValue) {
+        if (assetDescriptionsBuilder_ == null) {
+          ensureAssetDescriptionsIsMutable();
+          assetDescriptions_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          assetDescriptionsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Unordered list. Generated descriptions for assets in the
+       * data product. Note that some assets may not have a generated description.
+       * Such assets will not be included in this list.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult.AssetDescription asset_descriptions = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = UNORDERED_LIST];
+       * </code>
+       */
+      public Builder addAssetDescriptions(
+          com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult.AssetDescription
+              value) {
+        if (assetDescriptionsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureAssetDescriptionsIsMutable();
+          assetDescriptions_.add(value);
+          onChanged();
+        } else {
+          assetDescriptionsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Unordered list. Generated descriptions for assets in the
+       * data product. Note that some assets may not have a generated description.
+       * Such assets will not be included in this list.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult.AssetDescription asset_descriptions = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = UNORDERED_LIST];
+       * </code>
+       */
+      public Builder addAssetDescriptions(
+          int index,
+          com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult.AssetDescription
+              value) {
+        if (assetDescriptionsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureAssetDescriptionsIsMutable();
+          assetDescriptions_.add(index, value);
+          onChanged();
+        } else {
+          assetDescriptionsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Unordered list. Generated descriptions for assets in the
+       * data product. Note that some assets may not have a generated description.
+       * Such assets will not be included in this list.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult.AssetDescription asset_descriptions = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = UNORDERED_LIST];
+       * </code>
+       */
+      public Builder addAssetDescriptions(
+          com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult.AssetDescription
+                  .Builder
+              builderForValue) {
+        if (assetDescriptionsBuilder_ == null) {
+          ensureAssetDescriptionsIsMutable();
+          assetDescriptions_.add(builderForValue.build());
+          onChanged();
+        } else {
+          assetDescriptionsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Unordered list. Generated descriptions for assets in the
+       * data product. Note that some assets may not have a generated description.
+       * Such assets will not be included in this list.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult.AssetDescription asset_descriptions = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = UNORDERED_LIST];
+       * </code>
+       */
+      public Builder addAssetDescriptions(
+          int index,
+          com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult.AssetDescription
+                  .Builder
+              builderForValue) {
+        if (assetDescriptionsBuilder_ == null) {
+          ensureAssetDescriptionsIsMutable();
+          assetDescriptions_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          assetDescriptionsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Unordered list. Generated descriptions for assets in the
+       * data product. Note that some assets may not have a generated description.
+       * Such assets will not be included in this list.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult.AssetDescription asset_descriptions = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = UNORDERED_LIST];
+       * </code>
+       */
+      public Builder addAllAssetDescriptions(
+          java.lang.Iterable<
+                  ? extends
+                      com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult
+                          .AssetDescription>
+              values) {
+        if (assetDescriptionsBuilder_ == null) {
+          ensureAssetDescriptionsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, assetDescriptions_);
+          onChanged();
+        } else {
+          assetDescriptionsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Unordered list. Generated descriptions for assets in the
+       * data product. Note that some assets may not have a generated description.
+       * Such assets will not be included in this list.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult.AssetDescription asset_descriptions = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = UNORDERED_LIST];
+       * </code>
+       */
+      public Builder clearAssetDescriptions() {
+        if (assetDescriptionsBuilder_ == null) {
+          assetDescriptions_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000004);
+          onChanged();
+        } else {
+          assetDescriptionsBuilder_.clear();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Unordered list. Generated descriptions for assets in the
+       * data product. Note that some assets may not have a generated description.
+       * Such assets will not be included in this list.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult.AssetDescription asset_descriptions = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = UNORDERED_LIST];
+       * </code>
+       */
+      public Builder removeAssetDescriptions(int index) {
+        if (assetDescriptionsBuilder_ == null) {
+          ensureAssetDescriptionsIsMutable();
+          assetDescriptions_.remove(index);
+          onChanged();
+        } else {
+          assetDescriptionsBuilder_.remove(index);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Unordered list. Generated descriptions for assets in the
+       * data product. Note that some assets may not have a generated description.
+       * Such assets will not be included in this list.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult.AssetDescription asset_descriptions = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = UNORDERED_LIST];
+       * </code>
+       */
+      public com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult.AssetDescription
+              .Builder
+          getAssetDescriptionsBuilder(int index) {
+        return internalGetAssetDescriptionsFieldBuilder().getBuilder(index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Unordered list. Generated descriptions for assets in the
+       * data product. Note that some assets may not have a generated description.
+       * Such assets will not be included in this list.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult.AssetDescription asset_descriptions = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = UNORDERED_LIST];
+       * </code>
+       */
+      public com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult
+              .AssetDescriptionOrBuilder
+          getAssetDescriptionsOrBuilder(int index) {
+        if (assetDescriptionsBuilder_ == null) {
+          return assetDescriptions_.get(index);
+        } else {
+          return assetDescriptionsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Unordered list. Generated descriptions for assets in the
+       * data product. Note that some assets may not have a generated description.
+       * Such assets will not be included in this list.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult.AssetDescription asset_descriptions = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = UNORDERED_LIST];
+       * </code>
+       */
+      public java.util.List<
+              ? extends
+                  com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult
+                      .AssetDescriptionOrBuilder>
+          getAssetDescriptionsOrBuilderList() {
+        if (assetDescriptionsBuilder_ != null) {
+          return assetDescriptionsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(assetDescriptions_);
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Unordered list. Generated descriptions for assets in the
+       * data product. Note that some assets may not have a generated description.
+       * Such assets will not be included in this list.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult.AssetDescription asset_descriptions = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = UNORDERED_LIST];
+       * </code>
+       */
+      public com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult.AssetDescription
+              .Builder
+          addAssetDescriptionsBuilder() {
+        return internalGetAssetDescriptionsFieldBuilder()
+            .addBuilder(
+                com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult
+                    .AssetDescription.getDefaultInstance());
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Unordered list. Generated descriptions for assets in the
+       * data product. Note that some assets may not have a generated description.
+       * Such assets will not be included in this list.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult.AssetDescription asset_descriptions = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = UNORDERED_LIST];
+       * </code>
+       */
+      public com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult.AssetDescription
+              .Builder
+          addAssetDescriptionsBuilder(int index) {
+        return internalGetAssetDescriptionsFieldBuilder()
+            .addBuilder(
+                index,
+                com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult
+                    .AssetDescription.getDefaultInstance());
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Unordered list. Generated descriptions for assets in the
+       * data product. Note that some assets may not have a generated description.
+       * Such assets will not be included in this list.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult.AssetDescription asset_descriptions = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = UNORDERED_LIST];
+       * </code>
+       */
+      public java.util.List<
+              com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult
+                  .AssetDescription.Builder>
+          getAssetDescriptionsBuilderList() {
+        return internalGetAssetDescriptionsFieldBuilder().getBuilderList();
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilder<
+              com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult
+                  .AssetDescription,
+              com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult
+                  .AssetDescription.Builder,
+              com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult
+                  .AssetDescriptionOrBuilder>
+          internalGetAssetDescriptionsFieldBuilder() {
+        if (assetDescriptionsBuilder_ == null) {
+          assetDescriptionsBuilder_ =
+              new com.google.protobuf.RepeatedFieldBuilder<
+                  com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult
+                      .AssetDescription,
+                  com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult
+                      .AssetDescription.Builder,
+                  com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult
+                      .AssetDescriptionOrBuilder>(
+                  assetDescriptions_,
+                  ((bitField0_ & 0x00000004) != 0),
+                  getParentForChildren(),
+                  isClean());
+          assetDescriptions_ = null;
+        }
+        return assetDescriptionsBuilder_;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult)
+    private static final com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult();
+    }
+
+    public static com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<DataProductResult> PARSER =
+        new com.google.protobuf.AbstractParser<DataProductResult>() {
+          @java.lang.Override
+          public DataProductResult parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<DataProductResult> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<DataProductResult> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   public interface SchemaRelationshipOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship)
@@ -10727,6 +13666,7 @@ public final class DataDocumentationResult extends com.google.protobuf.Generated
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     DATASET_RESULT(7),
     TABLE_RESULT(8),
+    DATA_PRODUCT_RESULT(9),
     RESULT_NOT_SET(0);
     private final int value;
 
@@ -10750,6 +13690,8 @@ public final class DataDocumentationResult extends com.google.protobuf.Generated
           return DATASET_RESULT;
         case 8:
           return TABLE_RESULT;
+        case 9:
+          return DATA_PRODUCT_RESULT;
         case 0:
           return RESULT_NOT_SET;
         default:
@@ -10888,6 +13830,70 @@ public final class DataDocumentationResult extends com.google.protobuf.Generated
     return com.google.cloud.dataplex.v1.DataDocumentationResult.TableResult.getDefaultInstance();
   }
 
+  public static final int DATA_PRODUCT_RESULT_FIELD_NUMBER = 9;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Insights for a data product.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult data_product_result = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the dataProductResult field is set.
+   */
+  @java.lang.Override
+  public boolean hasDataProductResult() {
+    return resultCase_ == 9;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Insights for a data product.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult data_product_result = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The dataProductResult.
+   */
+  @java.lang.Override
+  public com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult
+      getDataProductResult() {
+    if (resultCase_ == 9) {
+      return (com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult) result_;
+    }
+    return com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult
+        .getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Insights for a data product.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult data_product_result = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResultOrBuilder
+      getDataProductResultOrBuilder() {
+    if (resultCase_ == 9) {
+      return (com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult) result_;
+    }
+    return com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult
+        .getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -10910,6 +13916,10 @@ public final class DataDocumentationResult extends com.google.protobuf.Generated
       output.writeMessage(
           8, (com.google.cloud.dataplex.v1.DataDocumentationResult.TableResult) result_);
     }
+    if (resultCase_ == 9) {
+      output.writeMessage(
+          9, (com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult) result_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -10928,6 +13938,11 @@ public final class DataDocumentationResult extends com.google.protobuf.Generated
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               8, (com.google.cloud.dataplex.v1.DataDocumentationResult.TableResult) result_);
+    }
+    if (resultCase_ == 9) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              9, (com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult) result_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -10953,6 +13968,9 @@ public final class DataDocumentationResult extends com.google.protobuf.Generated
       case 8:
         if (!getTableResult().equals(other.getTableResult())) return false;
         break;
+      case 9:
+        if (!getDataProductResult().equals(other.getDataProductResult())) return false;
+        break;
       case 0:
       default:
     }
@@ -10975,6 +13993,10 @@ public final class DataDocumentationResult extends com.google.protobuf.Generated
       case 8:
         hash = (37 * hash) + TABLE_RESULT_FIELD_NUMBER;
         hash = (53 * hash) + getTableResult().hashCode();
+        break;
+      case 9:
+        hash = (37 * hash) + DATA_PRODUCT_RESULT_FIELD_NUMBER;
+        hash = (53 * hash) + getDataProductResult().hashCode();
         break;
       case 0:
       default:
@@ -11125,6 +14147,9 @@ public final class DataDocumentationResult extends com.google.protobuf.Generated
       if (tableResultBuilder_ != null) {
         tableResultBuilder_.clear();
       }
+      if (dataProductResultBuilder_ != null) {
+        dataProductResultBuilder_.clear();
+      }
       resultCase_ = 0;
       result_ = null;
       return this;
@@ -11175,6 +14200,9 @@ public final class DataDocumentationResult extends com.google.protobuf.Generated
       if (resultCase_ == 8 && tableResultBuilder_ != null) {
         result.result_ = tableResultBuilder_.build();
       }
+      if (resultCase_ == 9 && dataProductResultBuilder_ != null) {
+        result.result_ = dataProductResultBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -11199,6 +14227,11 @@ public final class DataDocumentationResult extends com.google.protobuf.Generated
         case TABLE_RESULT:
           {
             mergeTableResult(other.getTableResult());
+            break;
+          }
+        case DATA_PRODUCT_RESULT:
+          {
+            mergeDataProductResult(other.getDataProductResult());
             break;
           }
         case RESULT_NOT_SET:
@@ -11246,6 +14279,13 @@ public final class DataDocumentationResult extends com.google.protobuf.Generated
                 resultCase_ = 8;
                 break;
               } // case 66
+            case 74:
+              {
+                input.readMessage(
+                    internalGetDataProductResultFieldBuilder().getBuilder(), extensionRegistry);
+                resultCase_ = 9;
+                break;
+              } // case 74
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -11771,6 +14811,256 @@ public final class DataDocumentationResult extends com.google.protobuf.Generated
       resultCase_ = 8;
       onChanged();
       return tableResultBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult,
+            com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult.Builder,
+            com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResultOrBuilder>
+        dataProductResultBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Insights for a data product.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult data_product_result = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the dataProductResult field is set.
+     */
+    @java.lang.Override
+    public boolean hasDataProductResult() {
+      return resultCase_ == 9;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Insights for a data product.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult data_product_result = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The dataProductResult.
+     */
+    @java.lang.Override
+    public com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult
+        getDataProductResult() {
+      if (dataProductResultBuilder_ == null) {
+        if (resultCase_ == 9) {
+          return (com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult) result_;
+        }
+        return com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult
+            .getDefaultInstance();
+      } else {
+        if (resultCase_ == 9) {
+          return dataProductResultBuilder_.getMessage();
+        }
+        return com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult
+            .getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Insights for a data product.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult data_product_result = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setDataProductResult(
+        com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult value) {
+      if (dataProductResultBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        result_ = value;
+        onChanged();
+      } else {
+        dataProductResultBuilder_.setMessage(value);
+      }
+      resultCase_ = 9;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Insights for a data product.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult data_product_result = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setDataProductResult(
+        com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult.Builder
+            builderForValue) {
+      if (dataProductResultBuilder_ == null) {
+        result_ = builderForValue.build();
+        onChanged();
+      } else {
+        dataProductResultBuilder_.setMessage(builderForValue.build());
+      }
+      resultCase_ = 9;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Insights for a data product.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult data_product_result = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeDataProductResult(
+        com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult value) {
+      if (dataProductResultBuilder_ == null) {
+        if (resultCase_ == 9
+            && result_
+                != com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult
+                    .getDefaultInstance()) {
+          result_ =
+              com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult.newBuilder(
+                      (com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult)
+                          result_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          result_ = value;
+        }
+        onChanged();
+      } else {
+        if (resultCase_ == 9) {
+          dataProductResultBuilder_.mergeFrom(value);
+        } else {
+          dataProductResultBuilder_.setMessage(value);
+        }
+      }
+      resultCase_ = 9;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Insights for a data product.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult data_product_result = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearDataProductResult() {
+      if (dataProductResultBuilder_ == null) {
+        if (resultCase_ == 9) {
+          resultCase_ = 0;
+          result_ = null;
+          onChanged();
+        }
+      } else {
+        if (resultCase_ == 9) {
+          resultCase_ = 0;
+          result_ = null;
+        }
+        dataProductResultBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Insights for a data product.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult data_product_result = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult.Builder
+        getDataProductResultBuilder() {
+      return internalGetDataProductResultFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Insights for a data product.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult data_product_result = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResultOrBuilder
+        getDataProductResultOrBuilder() {
+      if ((resultCase_ == 9) && (dataProductResultBuilder_ != null)) {
+        return dataProductResultBuilder_.getMessageOrBuilder();
+      } else {
+        if (resultCase_ == 9) {
+          return (com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult) result_;
+        }
+        return com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult
+            .getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Insights for a data product.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult data_product_result = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult,
+            com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult.Builder,
+            com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResultOrBuilder>
+        internalGetDataProductResultFieldBuilder() {
+      if (dataProductResultBuilder_ == null) {
+        if (!(resultCase_ == 9)) {
+          result_ =
+              com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult
+                  .getDefaultInstance();
+        }
+        dataProductResultBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult,
+                com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult.Builder,
+                com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResultOrBuilder>(
+                (com.google.cloud.dataplex.v1.DataDocumentationResult.DataProductResult) result_,
+                getParentForChildren(),
+                isClean());
+        result_ = null;
+      }
+      resultCase_ = 9;
+      onChanged();
+      return dataProductResultBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.dataplex.v1.DataDocumentationResult)

@@ -57,6 +57,10 @@ public final class NavConnectServiceProto extends com.google.protobuf.GeneratedF
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_maps_navconnect_v1_TripExecution_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_maps_navconnect_v1_RouteDeviation_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_maps_navconnect_v1_RouteDeviation_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_maps_navconnect_v1_Stop_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_maps_navconnect_v1_Stop_fieldAccessorTable;
@@ -64,6 +68,18 @@ public final class NavConnectServiceProto extends com.google.protobuf.GeneratedF
       internal_static_google_maps_navconnect_v1_Location_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_maps_navconnect_v1_Location_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_maps_navconnect_v1_SimplePolyline_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_maps_navconnect_v1_SimplePolyline_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_maps_navconnect_v1_SpeedReadingInterval_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_maps_navconnect_v1_SpeedReadingInterval_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_maps_navconnect_v1_Route_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_maps_navconnect_v1_Route_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_maps_navconnect_v1_CreateTripRequest_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
@@ -88,20 +104,20 @@ public final class NavConnectServiceProto extends com.google.protobuf.GeneratedF
           + "i/client.proto\032\037google/api/field_behavio"
           + "r.proto\032\033google/api/field_info.proto\032\031go"
           + "ogle/api/resource.proto\032\036google/protobuf/duration.proto\032"
-          + " google/protobuf/field_m"
-          + "ask.proto\032\037google/protobuf/timestamp.proto\032\030google/type/latlng.proto\"\202\005\n"
+          + " google/protobuf/field_mask.proto\032\034google/protobuf/struct.proto\032"
+          + "\037google/protobuf/timestamp.proto\032\030google/type/latlng.proto\"\202\005\n"
           + "\004Trip\022\023\n"
           + "\004name\030\001 \001(\tB\005\342A\002\003\010\022;\n"
-          + "\006config\030\007 \001(\0132%.goo"
-          + "gle.maps.navconnect.v1.TripConfigB\004\342A\001\005\022\035\n"
+          + "\006config\030\007"
+          + " \001(\0132%.google.maps.navconnect.v1.TripConfigB\004\342A\001\005\022\035\n"
           + "\016android_app_id\030\010 \001(\tB\005\342A\002\004\005\022\031\n\n"
           + "ios_app_id\030\t \001(\tB\005\342A\002\004\005\022>\n\n"
-          + "auth_token\030\002 \001(\0132$."
-          + "google.maps.navconnect.v1.AuthTokenB\004\342A\001\003\022:\n"
+          + "auth_token\030\002"
+          + " \001(\0132$.google.maps.navconnect.v1.AuthTokenB\004\342A\001\003\022:\n"
           + "\005state\030\003"
           + " \001(\0162%.google.maps.navconnect.v1.Trip.StateB\004\342A\001\003\022A\n"
-          + "\texecution\030\004 \001(\013"
-          + "2(.google.maps.navconnect.v1.TripExecutionB\004\342A\001\003\0225\n"
+          + "\texecution\030\004 \001(\0132(.google."
+          + "maps.navconnect.v1.TripExecutionB\004\342A\001\003\0225\n"
           + "\013create_time\030\005"
           + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\0225\n"
           + "\013update_time\030\006"
@@ -114,24 +130,30 @@ public final class NavConnectServiceProto extends com.google.protobuf.GeneratedF
           + "\tSUSPENDED\020\004\022\n\n"
           + "\006FAILED\020\005\022\020\n"
           + "\014CLIENT_ERROR\020\006:Q\352AN\n"
-          + "\036nav"
-          + "connect.googleapis.com/Trip\022\037projects/{project}/trips/{trip}*\005trips2\004trip\"\223\001\n\n"
+          + "\036navconnect.go"
+          + "ogleapis.com/Trip\022\037projects/{project}/trips/{trip}*\005trips2\004trip\"\363\001\n\n"
           + "TripConfig\022+\n"
           + "\035enable_high_frequency_updates\030\001 \001(\010B\004\342A\001\001\022\033\n\r"
           + "enable_pubsub\030\002 \001(\010B\004\342A\001\001\022;\n"
           + "\021pubsub_field_mask\030\003"
-          + " \001(\0132\032.google.protobuf.FieldMaskB\004\342A\001\001\"W\n"
+          + " \001(\0132\032.google.protobuf.FieldMaskB\004\342A\001\001\022.\n"
+          + " enable_remaining_route_reporting\030\004 \001(\010B\004\342A\001\001\022.\n"
+          + " enable_route_deviation_reporting\030\005 \001(\010B\004\342A\001\001\"W\n"
           + "\tAuthToken\022\023\n"
           + "\005token\030\001 \001(\tB\004\342A\001\003\0225\n"
           + "\013expire_time\030\002"
-          + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\"\222\004\n\r"
+          + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\"\242\005\n\r"
           + "TripExecution\0229\n"
           + "\006origin\030\001"
           + " \001(\0132#.google.maps.navconnect.v1.LocationB\004\342A\001\003\022:\n"
           + "\013destination\030\002"
           + " \001(\0132\037.google.maps.navconnect.v1.StopB\004\342A\001\003\022;\n"
           + "\010location\030\003"
-          + " \001(\0132#.google.maps.navconnect.v1.LocationB\004\342A\001\003\022:\n"
+          + " \001(\0132#.google.maps.navconnect.v1.LocationB\004\342A\001\003\022?\n"
+          + "\017remaining_route\030\t \001(\0132"
+          + " .google.maps.navconnect.v1.RouteB\004\342A\001\003\022M\n"
+          + "\024last_route_deviation\030\n"
+          + " \001(\0132).google.maps.navconnect.v1.RouteDeviationB\004\342A\001\003\022:\n"
           + "\021traveled_duration\030\004"
           + " \001(\0132\031.google.protobuf.DurationB\004\342A\001\003\022;\n"
           + "\022remaining_duration\030\005"
@@ -143,7 +165,16 @@ public final class NavConnectServiceProto extends com.google.protobuf.GeneratedF
           + "\023stop_added_in_route\030\010 \001(\010B\004\342A\001\003H\002\210\001\001B\033\n"
           + "\031_traveled_distance_metersB\034\n"
           + "\032_remaining_distance_metersB\026\n"
-          + "\024_stop_added_in_route\"0\n"
+          + "\024_stop_added_in_route\"\211\002\n"
+          + "\016RouteDeviation\022;\n"
+          + "\010location\030\001"
+          + " \001(\0132#.google.maps.navconnect.v1.LocationB\004\342A\001\003\022M\n"
+          + "\006source\030\002"
+          + " \001(\01627.google.maps.navconnect.v1.RouteDeviation.TriggerSourceB\004\342A\001\003\"k\n\r"
+          + "TriggerSource\022\036\n"
+          + "\032TRIGGER_SOURCE_UNSPECIFIED\020\000\022\034\n"
+          + "\030DRIVER_INITIATED_REROUTE\020\001\022\034\n"
+          + "\030SYSTEM_INITIATED_REROUTE\020\002\"0\n"
           + "\004Stop\022(\n"
           + "\005point\030\001 \001(\0132\023.google.type.LatLngB\004\342A\001\002\"\242\001\n"
           + "\010Location\022(\n"
@@ -151,24 +182,62 @@ public final class NavConnectServiceProto extends com.google.protobuf.GeneratedF
           + "\013source_time\030\002"
           + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\0225\n"
           + "\013server_time\030\003"
-          + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\"}\n"
+          + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\";\n"
+          + "\016SimplePolyline\022)\n"
+          + "\006points\030\001 \003(\0132\023.google.type.LatLngB\004\342A\001\003\"\301\002\n"
+          + "\024SpeedReadingInterval\022-\n"
+          + "\032start_polyline_point_index\030\001"
+          + " \001(\005B\004\342A\001\003H\000\210\001\001\022+\n"
+          + "\030end_polyline_point_index\030\002"
+          + " \001(\005B\004\342A\001\003H\001\210\001\001\022J\n"
+          + "\005speed\030\003 \001(\01625.google"
+          + ".maps.navconnect.v1.SpeedReadingInterval.SpeedB\004\342A\001\003\"E\n"
+          + "\005Speed\022\025\n"
+          + "\021SPEED_UNSPECIFIED\020\000\022\n\n"
+          + "\006NORMAL\020\001\022\010\n"
+          + "\004SLOW\020\002\022\017\n"
+          + "\013TRAFFIC_JAM\020\003B\035\n"
+          + "\033_start_polyline_point_indexB\033\n"
+          + "\031_end_polyline_point_index\"\243\002\n"
+          + "\005Route\022J\n"
+          + "\017simple_polyline\030\001"
+          + " \001(\0132).google.maps.navconnect.v1.SimplePolylineB\004\342A\001\003H\000\022 \n"
+          + "\020encoded_polyline\030\005 \001(\tB\004\342A\001\003H\000\022\033\n"
+          + "\013s2_polyline\030\002 \001(\014B\004\342A\001\003H\000\0221\n"
+          + "\010geo_json\030\003"
+          + " \001(\0132\027.google.protobuf.StructB\004\342A\001\003H\000\022R\n"
+          + "\023traffic_information\030\004"
+          + " \003(\0132/.google.maps.navconnect.v1.SpeedReadingIntervalB\004\342A\001\003B\010\n"
+          + "\006format\"}\n"
           + "\021CreateTripRequest\022\024\n"
           + "\006parent\030\001 \001(\tB\004\342A\001\002\022\035\n"
           + "\007trip_id\030\002 \001(\tB\014\342A\001\002\342\214\317\327\010\002\010\001\0223\n"
-          + "\004trip\030\003 \001(\0132\037.google.maps.navconnect.v1.TripB\004\342A\001\002\"G\n"
+          + "\004trip\030\003"
+          + " \001(\0132\037.google.maps.navconnect.v1.TripB\004\342A\001\002\"\237\002\n"
           + "\016GetTripRequest\0225\n"
           + "\004name\030\001 \001(\tB\'\342A\001\002\372A \n"
-          + "\036navconnect.googleapis.com/Trip2\220\003\n"
-          + "\021NavConnectService\022\236\001\n\n"
-          + "CreateTrip\022,.google.maps.navconnect.v1.CreateTripRequest\032\037.google.maps.na"
-          + "vconnect.v1.Trip\"A\332A\023parent,trip,trip_id"
-          + "\202\323\344\223\002%\"\035/v1/{parent=projects/*}/trips:\004trip\022\203\001\n"
-          + "\007GetTrip\022).google.maps.navconnect.v1.GetTripRequest\032\037.google.maps.navconn"
-          + "ect.v1.Trip\",\332A\004name\202\323\344\223\002\037\022\035/v1/{name=projects/*/trips/*}\032T\312A"
-          + " navigationconnect."
-          + "googleapis.com\322A.https://www.googleapis.com/auth/cloud-platformB~\n"
-          + "\035com.google.maps.navconnect.v1B\026NavConnectServiceProto"
-          + "P\001ZCcloud.google.com/go/maps/navconnect/apiv1/navconnectpb;navconnectpbb\006proto3"
+          + "\036navconnect.googleapis.com/Trip\022b\n"
+          + "\025route_polyline_format\030\002 \001(\0162=.google.m"
+          + "aps.navconnect.v1.GetTripRequest.RoutePolylineFormatB\004\342A\001\001\"r\n"
+          + "\023RoutePolylineFormat\022%\n"
+          + "!ROUTE_POLYLINE_FORMAT_UNSPECIFIED\020\000\022\n\n"
+          + "\006SIMPLE\020\001\022\013\n"
+          + "\007ENCODED\020\004\022\r\n"
+          + "\tS2ENCODED\020\002\022\014\n"
+          + "\010GEO_JSON\020\0032\220\003\n"
+          + "\021NavConnectService\022\236\001\n"
+          + "\n"
+          + "CreateTrip\022,.google.maps.navconnect.v1."
+          + "CreateTripRequest\032\037.google.maps.navconne"
+          + "ct.v1.Trip\"A\332A\023parent,trip,trip_id\202\323\344\223\002%"
+          + "\"\035/v1/{parent=projects/*}/trips:\004trip\022\203\001\n"
+          + "\007GetTrip\022).google.maps.navconnect.v1.Ge"
+          + "tTripRequest\032\037.google.maps.navconnect.v1"
+          + ".Trip\",\332A\004name\202\323\344\223\002\037\022\035/v1/{name=projects/*/trips/*}\032T\312A"
+          + " navigationconnect.google"
+          + "apis.com\322A.https://www.googleapis.com/auth/cloud-platformB~\n"
+          + "\035com.google.maps.navconnect.v1B\026NavConnectServiceProtoP\001ZCcl"
+          + "oud.google.com/go/maps/navconnect/apiv1/navconnectpb;navconnectpbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -181,6 +250,7 @@ public final class NavConnectServiceProto extends com.google.protobuf.GeneratedF
               com.google.api.ResourceProto.getDescriptor(),
               com.google.protobuf.DurationProto.getDescriptor(),
               com.google.protobuf.FieldMaskProto.getDescriptor(),
+              com.google.protobuf.StructProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
               com.google.type.LatLngProto.getDescriptor(),
             });
@@ -205,7 +275,11 @@ public final class NavConnectServiceProto extends com.google.protobuf.GeneratedF
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_maps_navconnect_v1_TripConfig_descriptor,
             new java.lang.String[] {
-              "EnableHighFrequencyUpdates", "EnablePubsub", "PubsubFieldMask",
+              "EnableHighFrequencyUpdates",
+              "EnablePubsub",
+              "PubsubFieldMask",
+              "EnableRemainingRouteReporting",
+              "EnableRouteDeviationReporting",
             });
     internal_static_google_maps_navconnect_v1_AuthToken_descriptor =
         getDescriptor().getMessageType(2);
@@ -224,13 +298,23 @@ public final class NavConnectServiceProto extends com.google.protobuf.GeneratedF
               "Origin",
               "Destination",
               "Location",
+              "RemainingRoute",
+              "LastRouteDeviation",
               "TraveledDuration",
               "RemainingDuration",
               "TraveledDistanceMeters",
               "RemainingDistanceMeters",
               "StopAddedInRoute",
             });
-    internal_static_google_maps_navconnect_v1_Stop_descriptor = getDescriptor().getMessageType(4);
+    internal_static_google_maps_navconnect_v1_RouteDeviation_descriptor =
+        getDescriptor().getMessageType(4);
+    internal_static_google_maps_navconnect_v1_RouteDeviation_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_maps_navconnect_v1_RouteDeviation_descriptor,
+            new java.lang.String[] {
+              "Location", "Source",
+            });
+    internal_static_google_maps_navconnect_v1_Stop_descriptor = getDescriptor().getMessageType(5);
     internal_static_google_maps_navconnect_v1_Stop_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_maps_navconnect_v1_Stop_descriptor,
@@ -238,15 +322,43 @@ public final class NavConnectServiceProto extends com.google.protobuf.GeneratedF
               "Point",
             });
     internal_static_google_maps_navconnect_v1_Location_descriptor =
-        getDescriptor().getMessageType(5);
+        getDescriptor().getMessageType(6);
     internal_static_google_maps_navconnect_v1_Location_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_maps_navconnect_v1_Location_descriptor,
             new java.lang.String[] {
               "Point", "SourceTime", "ServerTime",
             });
+    internal_static_google_maps_navconnect_v1_SimplePolyline_descriptor =
+        getDescriptor().getMessageType(7);
+    internal_static_google_maps_navconnect_v1_SimplePolyline_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_maps_navconnect_v1_SimplePolyline_descriptor,
+            new java.lang.String[] {
+              "Points",
+            });
+    internal_static_google_maps_navconnect_v1_SpeedReadingInterval_descriptor =
+        getDescriptor().getMessageType(8);
+    internal_static_google_maps_navconnect_v1_SpeedReadingInterval_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_maps_navconnect_v1_SpeedReadingInterval_descriptor,
+            new java.lang.String[] {
+              "StartPolylinePointIndex", "EndPolylinePointIndex", "Speed",
+            });
+    internal_static_google_maps_navconnect_v1_Route_descriptor = getDescriptor().getMessageType(9);
+    internal_static_google_maps_navconnect_v1_Route_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_maps_navconnect_v1_Route_descriptor,
+            new java.lang.String[] {
+              "SimplePolyline",
+              "EncodedPolyline",
+              "S2Polyline",
+              "GeoJson",
+              "TrafficInformation",
+              "Format",
+            });
     internal_static_google_maps_navconnect_v1_CreateTripRequest_descriptor =
-        getDescriptor().getMessageType(6);
+        getDescriptor().getMessageType(10);
     internal_static_google_maps_navconnect_v1_CreateTripRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_maps_navconnect_v1_CreateTripRequest_descriptor,
@@ -254,12 +366,12 @@ public final class NavConnectServiceProto extends com.google.protobuf.GeneratedF
               "Parent", "TripId", "Trip",
             });
     internal_static_google_maps_navconnect_v1_GetTripRequest_descriptor =
-        getDescriptor().getMessageType(7);
+        getDescriptor().getMessageType(11);
     internal_static_google_maps_navconnect_v1_GetTripRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_maps_navconnect_v1_GetTripRequest_descriptor,
             new java.lang.String[] {
-              "Name",
+              "Name", "RoutePolylineFormat",
             });
     descriptor.resolveAllFeaturesImmutable();
     com.google.api.AnnotationsProto.getDescriptor();
@@ -269,6 +381,7 @@ public final class NavConnectServiceProto extends com.google.protobuf.GeneratedF
     com.google.api.ResourceProto.getDescriptor();
     com.google.protobuf.DurationProto.getDescriptor();
     com.google.protobuf.FieldMaskProto.getDescriptor();
+    com.google.protobuf.StructProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
     com.google.type.LatLngProto.getDescriptor();
     com.google.protobuf.ExtensionRegistry registry =

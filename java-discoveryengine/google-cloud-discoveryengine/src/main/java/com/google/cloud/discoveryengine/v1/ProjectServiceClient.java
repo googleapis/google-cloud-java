@@ -302,6 +302,7 @@ public class ProjectServiceClient implements BackgroundResource {
    *           .setName(ProjectName.of("[PROJECT]").toString())
    *           .setAcceptDataUseTerms(true)
    *           .setDataUseTermsVersion("dataUseTermsVersion-1913570450")
+   *           .setSaasParams(ProvisionProjectRequest.SaasParams.newBuilder().build())
    *           .build();
    *   Project response = projectServiceClient.provisionProjectAsync(request).get();
    * }
@@ -337,6 +338,7 @@ public class ProjectServiceClient implements BackgroundResource {
    *           .setName(ProjectName.of("[PROJECT]").toString())
    *           .setAcceptDataUseTerms(true)
    *           .setDataUseTermsVersion("dataUseTermsVersion-1913570450")
+   *           .setSaasParams(ProvisionProjectRequest.SaasParams.newBuilder().build())
    *           .build();
    *   OperationFuture<Project, ProvisionProjectMetadata> future =
    *       projectServiceClient.provisionProjectOperationCallable().futureCall(request);
@@ -372,6 +374,7 @@ public class ProjectServiceClient implements BackgroundResource {
    *           .setName(ProjectName.of("[PROJECT]").toString())
    *           .setAcceptDataUseTerms(true)
    *           .setDataUseTermsVersion("dataUseTermsVersion-1913570450")
+   *           .setSaasParams(ProvisionProjectRequest.SaasParams.newBuilder().build())
    *           .build();
    *   ApiFuture<Operation> future =
    *       projectServiceClient.provisionProjectCallable().futureCall(request);

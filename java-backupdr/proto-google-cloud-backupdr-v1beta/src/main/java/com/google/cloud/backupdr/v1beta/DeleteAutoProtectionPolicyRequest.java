@@ -55,6 +55,7 @@ public final class DeleteAutoProtectionPolicyRequest extends com.google.protobuf
   private DeleteAutoProtectionPolicyRequest() {
     name_ = "";
     etag_ = "";
+    requestId_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -142,12 +143,12 @@ public final class DeleteAutoProtectionPolicyRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * The current etag of the AutoProtectionPolicy.
+   * Optional. The current etag of the AutoProtectionPolicy.
    * If an etag is provided and does not match the current etag of the
    * connection, the request will be rejected with an ABORTED error.
    * </pre>
    *
-   * <code>string etag = 2;</code>
+   * <code>string etag = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The etag.
    */
@@ -168,12 +169,12 @@ public final class DeleteAutoProtectionPolicyRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * The current etag of the AutoProtectionPolicy.
+   * Optional. The current etag of the AutoProtectionPolicy.
    * If an etag is provided and does not match the current etag of the
    * connection, the request will be rejected with an ABORTED error.
    * </pre>
    *
-   * <code>string etag = 2;</code>
+   * <code>string etag = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for etag.
    */
@@ -184,6 +185,75 @@ public final class DeleteAutoProtectionPolicyRequest extends com.google.protobuf
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       etag_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int REQUEST_ID_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. An optional request ID to identify requests. Specify a unique
+   * request ID so that if you must retry your request, the server will know to
+   * ignore the request if it has already been completed. The server will
+   * guarantee that for at least 60 minutes since the first request.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is
+   * not supported (00000000-0000-0000-0000-000000000000).
+   * </pre>
+   *
+   * <code>
+   * string request_id = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+   * </code>
+   *
+   * @return The requestId.
+   */
+  @java.lang.Override
+  public java.lang.String getRequestId() {
+    java.lang.Object ref = requestId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      requestId_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. An optional request ID to identify requests. Specify a unique
+   * request ID so that if you must retry your request, the server will know to
+   * ignore the request if it has already been completed. The server will
+   * guarantee that for at least 60 minutes since the first request.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is
+   * not supported (00000000-0000-0000-0000-000000000000).
+   * </pre>
+   *
+   * <code>
+   * string request_id = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+   * </code>
+   *
+   * @return The bytes for requestId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getRequestIdBytes() {
+    java.lang.Object ref = requestId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      requestId_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -210,6 +280,9 @@ public final class DeleteAutoProtectionPolicyRequest extends com.google.protobuf
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(etag_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 2, etag_);
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(requestId_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 3, requestId_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -224,6 +297,9 @@ public final class DeleteAutoProtectionPolicyRequest extends com.google.protobuf
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(etag_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(2, etag_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(requestId_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(3, requestId_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -243,6 +319,7 @@ public final class DeleteAutoProtectionPolicyRequest extends com.google.protobuf
 
     if (!getName().equals(other.getName())) return false;
     if (!getEtag().equals(other.getEtag())) return false;
+    if (!getRequestId().equals(other.getRequestId())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -258,6 +335,8 @@ public final class DeleteAutoProtectionPolicyRequest extends com.google.protobuf
     hash = (53 * hash) + getName().hashCode();
     hash = (37 * hash) + ETAG_FIELD_NUMBER;
     hash = (53 * hash) + getEtag().hashCode();
+    hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getRequestId().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -403,6 +482,7 @@ public final class DeleteAutoProtectionPolicyRequest extends com.google.protobuf
       bitField0_ = 0;
       name_ = "";
       etag_ = "";
+      requestId_ = "";
       return this;
     }
 
@@ -448,6 +528,9 @@ public final class DeleteAutoProtectionPolicyRequest extends com.google.protobuf
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.etag_ = etag_;
       }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.requestId_ = requestId_;
+      }
     }
 
     @java.lang.Override
@@ -474,6 +557,11 @@ public final class DeleteAutoProtectionPolicyRequest extends com.google.protobuf
       if (!other.getEtag().isEmpty()) {
         etag_ = other.etag_;
         bitField0_ |= 0x00000002;
+        onChanged();
+      }
+      if (!other.getRequestId().isEmpty()) {
+        requestId_ = other.requestId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -514,6 +602,12 @@ public final class DeleteAutoProtectionPolicyRequest extends com.google.protobuf
                 bitField0_ |= 0x00000002;
                 break;
               } // case 18
+            case 26:
+              {
+                requestId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -670,12 +764,12 @@ public final class DeleteAutoProtectionPolicyRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * The current etag of the AutoProtectionPolicy.
+     * Optional. The current etag of the AutoProtectionPolicy.
      * If an etag is provided and does not match the current etag of the
      * connection, the request will be rejected with an ABORTED error.
      * </pre>
      *
-     * <code>string etag = 2;</code>
+     * <code>string etag = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The etag.
      */
@@ -695,12 +789,12 @@ public final class DeleteAutoProtectionPolicyRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * The current etag of the AutoProtectionPolicy.
+     * Optional. The current etag of the AutoProtectionPolicy.
      * If an etag is provided and does not match the current etag of the
      * connection, the request will be rejected with an ABORTED error.
      * </pre>
      *
-     * <code>string etag = 2;</code>
+     * <code>string etag = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for etag.
      */
@@ -720,12 +814,12 @@ public final class DeleteAutoProtectionPolicyRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * The current etag of the AutoProtectionPolicy.
+     * Optional. The current etag of the AutoProtectionPolicy.
      * If an etag is provided and does not match the current etag of the
      * connection, the request will be rejected with an ABORTED error.
      * </pre>
      *
-     * <code>string etag = 2;</code>
+     * <code>string etag = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The etag to set.
      * @return This builder for chaining.
@@ -744,12 +838,12 @@ public final class DeleteAutoProtectionPolicyRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * The current etag of the AutoProtectionPolicy.
+     * Optional. The current etag of the AutoProtectionPolicy.
      * If an etag is provided and does not match the current etag of the
      * connection, the request will be rejected with an ABORTED error.
      * </pre>
      *
-     * <code>string etag = 2;</code>
+     * <code>string etag = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -764,12 +858,12 @@ public final class DeleteAutoProtectionPolicyRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * The current etag of the AutoProtectionPolicy.
+     * Optional. The current etag of the AutoProtectionPolicy.
      * If an etag is provided and does not match the current etag of the
      * connection, the request will be rejected with an ABORTED error.
      * </pre>
      *
-     * <code>string etag = 2;</code>
+     * <code>string etag = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for etag to set.
      * @return This builder for chaining.
@@ -781,6 +875,157 @@ public final class DeleteAutoProtectionPolicyRequest extends com.google.protobuf
       checkByteStringIsUtf8(value);
       etag_ = value;
       bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object requestId_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An optional request ID to identify requests. Specify a unique
+     * request ID so that if you must retry your request, the server will know to
+     * ignore the request if it has already been completed. The server will
+     * guarantee that for at least 60 minutes since the first request.
+     *
+     * The request ID must be a valid UUID with the exception that zero UUID is
+     * not supported (00000000-0000-0000-0000-000000000000).
+     * </pre>
+     *
+     * <code>
+     * string request_id = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+     * </code>
+     *
+     * @return The requestId.
+     */
+    public java.lang.String getRequestId() {
+      java.lang.Object ref = requestId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        requestId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An optional request ID to identify requests. Specify a unique
+     * request ID so that if you must retry your request, the server will know to
+     * ignore the request if it has already been completed. The server will
+     * guarantee that for at least 60 minutes since the first request.
+     *
+     * The request ID must be a valid UUID with the exception that zero UUID is
+     * not supported (00000000-0000-0000-0000-000000000000).
+     * </pre>
+     *
+     * <code>
+     * string request_id = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+     * </code>
+     *
+     * @return The bytes for requestId.
+     */
+    public com.google.protobuf.ByteString getRequestIdBytes() {
+      java.lang.Object ref = requestId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        requestId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An optional request ID to identify requests. Specify a unique
+     * request ID so that if you must retry your request, the server will know to
+     * ignore the request if it has already been completed. The server will
+     * guarantee that for at least 60 minutes since the first request.
+     *
+     * The request ID must be a valid UUID with the exception that zero UUID is
+     * not supported (00000000-0000-0000-0000-000000000000).
+     * </pre>
+     *
+     * <code>
+     * string request_id = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+     * </code>
+     *
+     * @param value The requestId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRequestId(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      requestId_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An optional request ID to identify requests. Specify a unique
+     * request ID so that if you must retry your request, the server will know to
+     * ignore the request if it has already been completed. The server will
+     * guarantee that for at least 60 minutes since the first request.
+     *
+     * The request ID must be a valid UUID with the exception that zero UUID is
+     * not supported (00000000-0000-0000-0000-000000000000).
+     * </pre>
+     *
+     * <code>
+     * string request_id = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRequestId() {
+      requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An optional request ID to identify requests. Specify a unique
+     * request ID so that if you must retry your request, the server will know to
+     * ignore the request if it has already been completed. The server will
+     * guarantee that for at least 60 minutes since the first request.
+     *
+     * The request ID must be a valid UUID with the exception that zero UUID is
+     * not supported (00000000-0000-0000-0000-000000000000).
+     * </pre>
+     *
+     * <code>
+     * string request_id = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+     * </code>
+     *
+     * @param value The bytes for requestId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRequestIdBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      requestId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

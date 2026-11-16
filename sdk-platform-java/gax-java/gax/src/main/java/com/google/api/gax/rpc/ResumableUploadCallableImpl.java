@@ -29,6 +29,7 @@
  */
 package com.google.api.gax.rpc;
 
+import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.api.core.ApiFuture;
@@ -45,6 +46,7 @@ import com.google.api.gax.retrying.ExponentialRetryAlgorithm;
 import com.google.api.gax.retrying.RetryAlgorithm;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.retrying.ScheduledRetryingExecutor;
+import com.google.common.base.Strings;
 import java.time.Duration;
 import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
@@ -62,7 +64,7 @@ import org.jspecify.annotations.Nullable;
 public class ResumableUploadCallableImpl<RequestT, ResponseT>
     extends ResumableUploadCallable<RequestT, ResponseT> {
 
-  private static final RetrySettings RETRY_SETTINGS =
+  static final RetrySettings RETRY_SETTINGS =
       RetrySettings.newBuilder()
           .setInitialRetryDelayDuration(Duration.ofSeconds(1))
           .setRetryDelayMultiplier(2.0)
@@ -81,7 +83,6 @@ public class ResumableUploadCallableImpl<RequestT, ResponseT>
       retryingUploadChunkCallable;
   private final UnaryCallable<QueryStatusRequest, QueryStatusResponse<ResponseT>>
       retryingQueryCallable;
-  private final ExponentialRetryAlgorithm recoveryAlgorithm;
 
   public ResumableUploadCallableImpl(
       ResumableUploadClient<RequestT, ResponseT> client,
@@ -96,18 +97,16 @@ public class ResumableUploadCallableImpl<RequestT, ResponseT>
     this.retryingQueryCallable =
         createRetryingCallable(
             client.queryStatusCallable(), ResumableUploadCommand.QUERY, clientContext);
-    this.recoveryAlgorithm =
-        new ExponentialRetryAlgorithm(RETRY_SETTINGS, clientContext.getClock());
   }
 
   @Override
   public ResumableUploadFuture<ResponseT> futureCall(
       RequestT request,
-      InputStreamSupplier payload,
+      InputStreamSupplier payloadSupplier,
       @Nullable ApiCallContext context,
       @Nullable ResumableUploadOptions options) {
     checkNotNull(request, "request must not be null");
-    checkNotNull(payload, "payload must not be null");
+    checkNotNull(payloadSupplier, "payloadSupplier must not be null");
     ResumableUploadOptions effectiveOptions = defaultOptions.merge(options);
     ApiCallContext effectiveCallContext = clientContext.getDefaultCallContext().merge(context);
 
@@ -122,16 +121,25 @@ public class ResumableUploadCallableImpl<RequestT, ResponseT>
         startFuture,
         retryingUploadChunkCallable,
         retryingQueryCallable,
-        payload,
+        payloadSupplier,
         effectiveOptions,
-        clientContext,
-        recoveryAlgorithm);
+        clientContext);
   }
 
   @Override
   public ResumableUploadFuture<ResponseT> resumeCall(
-      String sessionUrl, InputStreamSupplier payload, @Nullable ResumableUploadOptions options) {
-    throw new UnsupportedOperationException("Session resumption is not yet implemented.");
+      String sessionUrl,
+      InputStreamSupplier payloadSupplier,
+      @Nullable ResumableUploadOptions options) {
+    checkArgument(!Strings.isNullOrEmpty(sessionUrl), "sessionUrl must not be null or empty");
+    checkNotNull(payloadSupplier, "payloadSupplier must not be null");
+    return ResumableUploadFutureImpl.createForResume(
+        sessionUrl,
+        retryingUploadChunkCallable,
+        retryingQueryCallable,
+        payloadSupplier,
+        defaultOptions.merge(options),
+        clientContext);
   }
 
   private static <RequestT, ResponseT> UnaryCallable<RequestT, ResponseT> createRetryingCallable(

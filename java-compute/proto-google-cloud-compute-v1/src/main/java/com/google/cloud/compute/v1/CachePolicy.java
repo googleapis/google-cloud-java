@@ -97,6 +97,17 @@ public final class CachePolicy extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * Bypasses the cache for this route. All requests are forwarded to the
+     * origin, and responses are not cached.
+     * </pre>
+     *
+     * <code>BYPASS_CACHE = 372518219;</code>
+     */
+    BYPASS_CACHE(372518219),
+    /**
+     *
+     *
+     * <pre>
      * Automatically cache static content, including common image formats,
      * media (video and audio), and web assets (JavaScript and CSS).
      * Requests and responses that are marked as uncacheable, as well as
@@ -155,6 +166,18 @@ public final class CachePolicy extends com.google.protobuf.GeneratedMessage
      * <code>UNDEFINED_CACHE_MODE = 0;</code>
      */
     public static final int UNDEFINED_CACHE_MODE_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Bypasses the cache for this route. All requests are forwarded to the
+     * origin, and responses are not cached.
+     * </pre>
+     *
+     * <code>BYPASS_CACHE = 372518219;</code>
+     */
+    public static final int BYPASS_CACHE_VALUE = 372518219;
 
     /**
      *
@@ -224,6 +247,8 @@ public final class CachePolicy extends com.google.protobuf.GeneratedMessage
       switch (value) {
         case 0:
           return UNDEFINED_CACHE_MODE;
+        case 372518219:
+          return BYPASS_CACHE;
         case 355027945:
           return CACHE_ALL_STATIC;
         case 486026928:

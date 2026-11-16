@@ -571,7 +571,7 @@ public interface ExecutionOrBuilder
    *
    * Note that this value might not be what was used
    * as input. For example, if ALPHA was provided as input in the parent
-   * resource, but only BETA and GA-level features are were, this field will be
+   * resource, but only BETA and GA-level features are used, this field will be
    * BETA.
    * </pre>
    *
@@ -592,7 +592,7 @@ public interface ExecutionOrBuilder
    *
    * Note that this value might not be what was used
    * as input. For example, if ALPHA was provided as input in the parent
-   * resource, but only BETA and GA-level features are were, this field will be
+   * resource, but only BETA and GA-level features are used, this field will be
    * BETA.
    * </pre>
    *
@@ -917,6 +917,58 @@ public interface ExecutionOrBuilder
    * @return The satisfiesPzs.
    */
   boolean getSatisfiesPzs();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Arbitrary identifier for the API client.
+   * </pre>
+   *
+   * <code>string client = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The client.
+   */
+  java.lang.String getClient();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Arbitrary identifier for the API client.
+   * </pre>
+   *
+   * <code>string client = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for client.
+   */
+  com.google.protobuf.ByteString getClientBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Arbitrary version identifier for the API client.
+   * </pre>
+   *
+   * <code>string client_version = 34 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The clientVersion.
+   */
+  java.lang.String getClientVersion();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Arbitrary version identifier for the API client.
+   * </pre>
+   *
+   * <code>string client_version = 34 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for clientVersion.
+   */
+  com.google.protobuf.ByteString getClientVersionBytes();
 
   /**
    *

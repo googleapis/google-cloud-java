@@ -45,6 +45,10 @@ public final class InstanceOuterClass extends com.google.protobuf.GeneratedFile 
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_run_v2_CreateInstanceRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_run_v2_UpdateInstanceRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_run_v2_UpdateInstanceRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_run_v2_GetInstanceRequest_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_run_v2_GetInstanceRequest_fieldAccessorTable;
@@ -97,16 +101,25 @@ public final class InstanceOuterClass extends com.google.protobuf.GeneratedFile 
           + "unch_stage.proto\032\031google/api/resource.pr"
           + "oto\032\030google/api/routing.proto\032#google/cl"
           + "oud/run/v2/condition.proto\032*google/cloud/run/v2/container_status.proto\032!google/c"
-          + "loud/run/v2/k8s.min.proto\032)google/cloud/run/v2/vendor_settings.proto\032#google/lon"
-          + "grunning/operations.proto\032\036google/protob"
-          + "uf/duration.proto\032\037google/protobuf/timestamp.proto\"\274\001\n"
+          + "loud/run/v2/k8s.min.proto\032!google/cloud/run/v2/sandbox.proto\032)google/cloud/run/v"
+          + "2/vendor_settings.proto\032\036google/iam/v1/i"
+          + "am_policy.proto\032\032google/iam/v1/policy.pr"
+          + "oto\032#google/longrunning/operations.proto\032\036google/protobuf/duration.proto\032"
+          + " google/protobuf/field_mask.proto\032\037google/protobuf/timestamp.proto\"\274\001\n"
           + "\025CreateInstanceRequest\0224\n"
           + "\006parent\030\001 \001("
           + "\tB$\342A\001\002\372A\035\022\033run.googleapis.com/Instance\0225\n"
           + "\010instance\030\002"
           + " \001(\0132\035.google.cloud.run.v2.InstanceB\004\342A\001\002\022\031\n"
-          + "\013instance_id\030\003 \001(\tB\004\342A\001\002\022\033\n\r"
-          + "validate_only\030\004 \001(\010B\004\342A\001\001\"H\n"
+          + "\013instance_id\030\003 \001(\tB\004\342A\001\001\022\033\n\r"
+          + "validate_only\030\004 \001(\010B\004\342A\001\001\"\277\001\n"
+          + "\025UpdateInstanceRequest\0225\n"
+          + "\013update_mask\030\001"
+          + " \001(\0132\032.google.protobuf.FieldMaskB\004\342A\001\001\0225\n"
+          + "\010instance\030\002"
+          + " \001(\0132\035.google.cloud.run.v2.InstanceB\004\342A\001\002\022\033\n\r"
+          + "validate_only\030\003 \001(\010B\004\342A\001\001\022\033\n\r"
+          + "allow_missing\030\004 \001(\010B\004\342A\001\001\"H\n"
           + "\022GetInstanceRequest\0222\n"
           + "\004name\030\001 \001(\tB$\342A\001\002\372A\035\n"
           + "\033run.googleapis.com/Instance\"|\n"
@@ -133,15 +146,15 @@ public final class InstanceOuterClass extends com.google.protobuf.GeneratedFile 
           + "\004name\030\001 \001(\tB$\342A\001\002\372A\035\n"
           + "\033run.googleapis.com/Instance\022\033\n\r"
           + "validate_only\030\002 \001(\010B\004\342A\001\001\022\022\n"
-          + "\004etag\030\003 \001(\tB\004\342A\001\001\"\354\016\n"
+          + "\004etag\030\003 \001(\tB\004\342A\001\001\"\247\021\n"
           + "\010Instance\022\014\n"
           + "\004name\030\001 \001(\t\022\023\n"
           + "\013description\030\003 \001(\t\022\021\n"
           + "\003uid\030\004 \001(\tB\004\342A\001\003\022\030\n\n"
           + "generation\030\005 \001(\003B\004\342A\001\003\0229\n"
           + "\006labels\030\006 \003(\0132).google.cloud.run.v2.Instance.LabelsEntry\022C\n"
-          + "\013annotations\030\007 \003("
-          + "\0132..google.cloud.run.v2.Instance.AnnotationsEntry\0225\n"
+          + "\013annotations\030\007"
+          + " \003(\0132..google.cloud.run.v2.Instance.AnnotationsEntry\0225\n"
           + "\013create_time\030\010"
           + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\0225\n"
           + "\013update_time\030\t"
@@ -156,13 +169,15 @@ public final class InstanceOuterClass extends com.google.protobuf.GeneratedFile 
           + "\006client\030\016 \001(\t\022\026\n"
           + "\016client_version\030\017 \001(\t\022-\n"
           + "\014launch_stage\030\020 \001(\0162\027.google.api.LaunchStage\022F\n"
-          + "\024binary_authorization\030\021 \001(\0132("
-          + ".google.cloud.run.v2.BinaryAuthorization\0228\n\n"
+          + "\024binary_authorization\030\021 \001("
+          + "\0132(.google.cloud.run.v2.BinaryAuthorization\0228\n\n"
           + "vpc_access\030\022"
           + " \001(\0132\036.google.cloud.run.v2.VpcAccessB\004\342A\001\001\022\027\n"
           + "\017service_account\030\023 \001(\t\0228\n\n"
           + "containers\030\024"
-          + " \003(\0132\036.google.cloud.run.v2.ContainerB\004\342A\001\002\022,\n"
+          + " \003(\0132\036.google.cloud.run.v2.ContainerB\004\342A\001\002\022B\n"
+          + "\tsandboxes\030\" "
+          + "\001(\0132).google.cloud.run.v2.SandboxConfigurationB\004\342A\001\001\022,\n"
           + "\007volumes\030\025 \003(\0132\033.google.cloud.run.v2.Volume\022>\n"
           + "\016encryption_key\030\026 \001(\tB&\372A#\n"
           + "!cloudkms.googleapis.com/CryptoKey\022\\\n"
@@ -170,21 +185,25 @@ public final class InstanceOuterClass extends com.google.protobuf.GeneratedFile 
           + " \001(\01622.google.cloud.run.v2.EncryptionKeyRevocationAction\022C\n"
           + " encryption_key_shutdown_duration\030\031"
           + " \001(\0132\031.google.protobuf.Duration\022>\n\r"
-          + "node_selector\030\032 \001(\0132!."
-          + "google.cloud.run.v2.NodeSelectorB\004\342A\001\001\0220\n"
+          + "node_selector\030\032"
+          + " \001(\0132!.google.cloud.run.v2.NodeSelectorB\004\342A\001\001\0220\n"
           + "\035gpu_zonal_redundancy_disabled\030\033"
           + " \001(\010B\004\342A\001\001H\000\210\001\001\022:\n"
           + "\007ingress\030\034"
           + " \001(\0162#.google.cloud.run.v2.IngressTrafficB\004\342A\001\001\022\"\n"
-          + "\024invoker_iam_disabled\030\035 \001(\010B\004\342A\001\001\022\031\n"
-          + "\013iap_enabled\030\036 \001(\010B\004\342A\001\001\022!\n"
+          + "\024invoker_iam_disabled\030\035 \001(\010B\004\342A\001\001\022\"\n"
+          + "\024default_uri_disabled\030! \001(\010B\004\342A\001\001\022\031\n"
+          + "\013iap_enabled\030\036 \001(\010B\004\342A\001\001\022\036\n"
+          + "\013ssh_enabled\030  \001(\010B\004\342A\001\001H\001\210\001\001\022I\n"
+          + "\016restart_policy\030#"
+          + " \001(\0162+.google.cloud.run.v2.Instance.RestartPolicyB\004\342A\001\001\022!\n"
           + "\023observed_generation\030( \001(\003B\004\342A\001\003\022\025\n"
           + "\007log_uri\030) \001(\tB\004\342A\001\003\022@\n"
           + "\022terminal_condition\030*"
           + " \001(\0132\036.google.cloud.run.v2.ConditionB\004\342A\001\003\0228\n\n"
           + "conditions\030+ \003(\0132\036.google.cloud.run.v2.ConditionB\004\342A\001\003\022F\n"
-          + "\022container_statuses\030,"
-          + " \003(\0132$.google.cloud.run.v2.ContainerStatusB\004\342A\001\003\022\033\n\r"
+          + "\022container_statuses\030, \003(\0132$.go"
+          + "ogle.cloud.run.v2.ContainerStatusB\004\342A\001\003\022\033\n\r"
           + "satisfies_pzs\030. \001(\010B\004\342A\001\003\022\022\n"
           + "\004urls\030- \003(\tB\004\342A\001\003\022\031\n"
           + "\013reconciling\030b \001(\010B\004\342A\001\003\022\022\n"
@@ -194,41 +213,64 @@ public final class InstanceOuterClass extends com.google.protobuf.GeneratedFile 
           + "\005value\030\002 \001(\t:\0028\001\0322\n"
           + "\020AnnotationsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
-          + "\005value\030\002 \001(\t:\0028\001:s\352Ap\n"
-          + "\033run.googleapi"
-          + "s.com/Instance\022<projects/{project}/locations/{location}/instances/{instance}*"
-          + "\tinstances2\010instanceB \n"
-          + "\036_gpu_zonal_redundancy_disabled2\316\n\n"
+          + "\005value\030\002 \001(\t:\0028\001\"V\n\r"
+          + "RestartPolicy\022\036\n"
+          + "\032RESTART_POLICY_UNSPECIFIED\020\000\022\n\n"
+          + "\006ALWAYS\020\001\022\016\n\n"
+          + "ON_FAILURE\020\002\022\t\n"
+          + "\005NEVER\020\003:s\352Ap\n"
+          + "\033run.googleapis.com/Instance\022<pr"
+          + "ojects/{project}/locations/{location}/instances/{instance}*\tinstances2\010instanceB"
+          + " \n"
+          + "\036_gpu_zonal_redundancy_disabledB\016\n"
+          + "\014_ssh_enabled2\234\021\n"
           + "\tInstances\022\371\001\n"
-          + "\016CreateInstance\022*.google.cloud.run.v2.CreateInstanc"
-          + "eRequest\032\035.google.longrunning.Operation\"\233\001\312A\024\n"
-          + "\010Instance\022\010Instance\332A\017parent,insta"
-          + "nce\202\323\344\223\0029\"-/v2/{parent=projects/*/locations/*}/instances:\010instance\212\323\344\223\002-\022+\n"
-          + "\006parent\022!projects/*/locations/{location=*}\022\345\001\n"
-          + "\016DeleteInstance\022*.google.cloud.run.v2.D"
-          + "eleteInstanceRequest\032\035.google.longrunning.Operation\"\207\001\312A\024\n"
-          + "\010Instance\022\010Instance\332A\004"
-          + "name\202\323\344\223\002/*-/v2/{name=projects/*/locations/*/instances/*}\212\323\344\223\002.\022,\n"
-          + "\004name\022$projects/*/locations/{location=*}/**\022\307\001\n"
-          + "\013GetInstance\022\'.google.cloud.run.v2.GetInstanceR"
-          + "equest\032\035.google.cloud.run.v2.Instance\"p\332"
-          + "A\004name\202\323\344\223\002/\022-/v2/{name=projects/*/locations/*/instances/*}\212\323\344\223\002.\022,\n"
-          + "\004name\022$projects/*/locations/{location=*}/**\022\331\001\n\r"
-          + "ListInstances\022).google.cloud.run.v2.ListInst"
-          + "ancesRequest\032*.google.cloud.run.v2.ListI"
-          + "nstancesResponse\"q\332A\006parent\202\323\344\223\002/\022-/v2/{"
-          + "parent=projects/*/locations/*}/instances\212\323\344\223\002-\022+\n"
-          + "\006parent\022!projects/*/locations/{location=*}\022\264\001\n"
-          + "\014StopInstance\022(.google.cl"
-          + "oud.run.v2.StopInstanceRequest\032\035.google.longrunning.Operation\"[\312A\024\n"
-          + "\010Instance\022\010In"
-          + "stance\332A\004name\202\323\344\223\0027\"2/v2/{name=projects/*/locations/*/instances/*}:stop:\001*\022\267\001\n\r"
-          + "StartInstance\022).google.cloud.run.v2.Start"
-          + "InstanceRequest\032\035.google.longrunning.Operation\"\\\312A\024\n"
+          + "\016CreateInstance\022*.google.cloud.run.v2.CreateInstanceR"
+          + "equest\032\035.google.longrunning.Operation\"\233\001\312A\024\n"
+          + "\010Instance\022\010Instance\332A\017parent,instanc"
+          + "e\202\323\344\223\0029\"-/v2/{parent=projects/*/locations/*}/instances:\010instance\212\323\344\223\002-\022+\n"
+          + "\006parent\022!projects/*/locations/{location=*}\022\221\002\n"
+          + "\016UpdateInstance\022*.google.cloud.run.v2.Upd"
+          + "ateInstanceRequest\032\035.google.longrunning.Operation\"\263\001\312A\024\n"
+          + "\010Instance\022\010Instance\332A\024in"
+          + "stance,update_mask\202\323\344\223\002B26/v2/{instance."
+          + "name=projects/*/locations/*/instances/*}:\010instance\212\323\344\223\0027\0225\n\r"
+          + "instance.name\022$projects/*/locations/{location=*}/**\022\345\001\n"
+          + "\016DeleteInstance\022*.google.cloud.run.v2.DeleteI"
+          + "nstanceRequest\032\035.google.longrunning.Operation\"\207\001\312A\024\n"
           + "\010Instance\022\010Instance\332A\004name\202\323"
-          + "\344\223\0028\"3/v2/{name=projects/*/locations/*/i"
-          + "nstances/*}:start:\001*\032F\312A\022run.googleapis."
-          + "com\322A.https://www.googleapis.com/auth/cloud-platformBF\n"
+          + "\344\223\002/*-/v2/{name=projects/*/locations/*/instances/*}\212\323\344\223\002.\022,\n"
+          + "\004name\022$projects/*/locations/{location=*}/**\022\307\001\n"
+          + "\013GetInstance\022\'.google.cloud.run.v2.GetInstanceRequest"
+          + "\032\035.google.cloud.run.v2.Instance\"p\332A\004name"
+          + "\202\323\344\223\002/\022-/v2/{name=projects/*/locations/*/instances/*}\212\323\344\223\002.\022,\n"
+          + "\004name\022$projects/*/locations/{location=*}/**\022\331\001\n\r"
+          + "ListInstances\022).google.cloud.run.v2.ListInstancesR"
+          + "equest\032*.google.cloud.run.v2.ListInstanc"
+          + "esResponse\"q\332A\006parent\202\323\344\223\002/\022-/v2/{parent"
+          + "=projects/*/locations/*}/instances\212\323\344\223\002-\022+\n"
+          + "\006parent\022!projects/*/locations/{location=*}\022\264\001\n"
+          + "\014StopInstance\022(.google.cloud.ru"
+          + "n.v2.StopInstanceRequest\032\035.google.longrunning.Operation\"[\312A\024\n"
+          + "\010Instance\022\010Instance"
+          + "\332A\004name\202\323\344\223\0027\"2/v2/{name=projects/*/locations/*/instances/*}:stop:\001*\022\267\001\n\r"
+          + "StartInstance\022).google.cloud.run.v2.StartInstan"
+          + "ceRequest\032\035.google.longrunning.Operation\"\\\312A\024\n"
+          + "\010Instance\022\010Instance\332A\004name\202\323\344\223\0028\"3"
+          + "/v2/{name=projects/*/locations/*/instances/*}:start:\001*\022\221\001\n"
+          + "\014GetIamPolicy\022\".google.iam.v1.GetIamPolicyRequest\032\025.google.iam"
+          + ".v1.Policy\"F\202\323\344\223\002@\022>/v2/{resource=projec"
+          + "ts/*/locations/*/instances/*}:getIamPolicy\022\224\001\n"
+          + "\014SetIamPolicy\022\".google.iam.v1.SetI"
+          + "amPolicyRequest\032\025.google.iam.v1.Policy\"I"
+          + "\202\323\344\223\002C\">/v2/{resource=projects/*/locations/*/instances/*}:setIamPolicy:\001*\022\272\001\n"
+          + "\022TestIamPermissions\022(.google.iam.v1.TestIam"
+          + "PermissionsRequest\032).google.iam.v1.TestI"
+          + "amPermissionsResponse\"O\202\323\344\223\002I\"D/v2/{reso"
+          + "urce=projects/*/locations/*/instances/*}"
+          + ":testIamPermissions:\001*\032\227\001\312A\022run.googleap"
+          + "is.com\322A\177https://www.googleapis.com/auth/cloud-platform,https://www.googleapis.c"
+          + "om/auth/run,https://www.googleapis.com/auth/run.readonlyBF\n"
           + "\027com.google.cloud.run.v2P\001Z)cloud.google.com/go/run/apiv2/runpb;runpbb\006proto3"
     };
     descriptor =
@@ -244,9 +286,13 @@ public final class InstanceOuterClass extends com.google.protobuf.GeneratedFile 
               com.google.cloud.run.v2.ConditionProto.getDescriptor(),
               com.google.cloud.run.v2.ContainerStatusProto.getDescriptor(),
               com.google.cloud.run.v2.K8sMinProto.getDescriptor(),
+              com.google.cloud.run.v2.SandboxProto.getDescriptor(),
               com.google.cloud.run.v2.VendorSettingsProto.getDescriptor(),
+              com.google.iam.v1.IamPolicyProto.getDescriptor(),
+              com.google.iam.v1.PolicyProto.getDescriptor(),
               com.google.longrunning.OperationsProto.getDescriptor(),
               com.google.protobuf.DurationProto.getDescriptor(),
+              com.google.protobuf.FieldMaskProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
             });
     internal_static_google_cloud_run_v2_CreateInstanceRequest_descriptor =
@@ -257,8 +303,16 @@ public final class InstanceOuterClass extends com.google.protobuf.GeneratedFile 
             new java.lang.String[] {
               "Parent", "Instance", "InstanceId", "ValidateOnly",
             });
-    internal_static_google_cloud_run_v2_GetInstanceRequest_descriptor =
+    internal_static_google_cloud_run_v2_UpdateInstanceRequest_descriptor =
         getDescriptor().getMessageType(1);
+    internal_static_google_cloud_run_v2_UpdateInstanceRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_run_v2_UpdateInstanceRequest_descriptor,
+            new java.lang.String[] {
+              "UpdateMask", "Instance", "ValidateOnly", "AllowMissing",
+            });
+    internal_static_google_cloud_run_v2_GetInstanceRequest_descriptor =
+        getDescriptor().getMessageType(2);
     internal_static_google_cloud_run_v2_GetInstanceRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_run_v2_GetInstanceRequest_descriptor,
@@ -266,7 +320,7 @@ public final class InstanceOuterClass extends com.google.protobuf.GeneratedFile 
               "Name",
             });
     internal_static_google_cloud_run_v2_DeleteInstanceRequest_descriptor =
-        getDescriptor().getMessageType(2);
+        getDescriptor().getMessageType(3);
     internal_static_google_cloud_run_v2_DeleteInstanceRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_run_v2_DeleteInstanceRequest_descriptor,
@@ -274,7 +328,7 @@ public final class InstanceOuterClass extends com.google.protobuf.GeneratedFile 
               "Name", "ValidateOnly", "Etag",
             });
     internal_static_google_cloud_run_v2_ListInstancesRequest_descriptor =
-        getDescriptor().getMessageType(3);
+        getDescriptor().getMessageType(4);
     internal_static_google_cloud_run_v2_ListInstancesRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_run_v2_ListInstancesRequest_descriptor,
@@ -282,7 +336,7 @@ public final class InstanceOuterClass extends com.google.protobuf.GeneratedFile 
               "Parent", "PageSize", "PageToken", "ShowDeleted",
             });
     internal_static_google_cloud_run_v2_ListInstancesResponse_descriptor =
-        getDescriptor().getMessageType(4);
+        getDescriptor().getMessageType(5);
     internal_static_google_cloud_run_v2_ListInstancesResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_run_v2_ListInstancesResponse_descriptor,
@@ -290,7 +344,7 @@ public final class InstanceOuterClass extends com.google.protobuf.GeneratedFile 
               "Instances", "NextPageToken",
             });
     internal_static_google_cloud_run_v2_StopInstanceRequest_descriptor =
-        getDescriptor().getMessageType(5);
+        getDescriptor().getMessageType(6);
     internal_static_google_cloud_run_v2_StopInstanceRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_run_v2_StopInstanceRequest_descriptor,
@@ -298,14 +352,14 @@ public final class InstanceOuterClass extends com.google.protobuf.GeneratedFile 
               "Name", "ValidateOnly", "Etag",
             });
     internal_static_google_cloud_run_v2_StartInstanceRequest_descriptor =
-        getDescriptor().getMessageType(6);
+        getDescriptor().getMessageType(7);
     internal_static_google_cloud_run_v2_StartInstanceRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_run_v2_StartInstanceRequest_descriptor,
             new java.lang.String[] {
               "Name", "ValidateOnly", "Etag",
             });
-    internal_static_google_cloud_run_v2_Instance_descriptor = getDescriptor().getMessageType(7);
+    internal_static_google_cloud_run_v2_Instance_descriptor = getDescriptor().getMessageType(8);
     internal_static_google_cloud_run_v2_Instance_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_run_v2_Instance_descriptor,
@@ -329,6 +383,7 @@ public final class InstanceOuterClass extends com.google.protobuf.GeneratedFile 
               "VpcAccess",
               "ServiceAccount",
               "Containers",
+              "Sandboxes",
               "Volumes",
               "EncryptionKey",
               "EncryptionKeyRevocationAction",
@@ -337,7 +392,10 @@ public final class InstanceOuterClass extends com.google.protobuf.GeneratedFile 
               "GpuZonalRedundancyDisabled",
               "Ingress",
               "InvokerIamDisabled",
+              "DefaultUriDisabled",
               "IapEnabled",
+              "SshEnabled",
+              "RestartPolicy",
               "ObservedGeneration",
               "LogUri",
               "TerminalCondition",
@@ -374,9 +432,13 @@ public final class InstanceOuterClass extends com.google.protobuf.GeneratedFile 
     com.google.cloud.run.v2.ConditionProto.getDescriptor();
     com.google.cloud.run.v2.ContainerStatusProto.getDescriptor();
     com.google.cloud.run.v2.K8sMinProto.getDescriptor();
+    com.google.cloud.run.v2.SandboxProto.getDescriptor();
     com.google.cloud.run.v2.VendorSettingsProto.getDescriptor();
+    com.google.iam.v1.IamPolicyProto.getDescriptor();
+    com.google.iam.v1.PolicyProto.getDescriptor();
     com.google.longrunning.OperationsProto.getDescriptor();
     com.google.protobuf.DurationProto.getDescriptor();
+    com.google.protobuf.FieldMaskProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

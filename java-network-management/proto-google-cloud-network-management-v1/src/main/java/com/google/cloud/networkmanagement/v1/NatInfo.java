@@ -659,7 +659,8 @@ public final class NatInfo extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * URI of the network where NAT translation takes place.
+   * URI of the VPC network where NAT translation takes place.
+   * Format: `projects/{project_id}/global/networks/{network_id}`
    * </pre>
    *
    * <code>string network_uri = 3;</code>
@@ -683,7 +684,8 @@ public final class NatInfo extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * URI of the network where NAT translation takes place.
+   * URI of the VPC network where NAT translation takes place.
+   * Format: `projects/{project_id}/global/networks/{network_id}`
    * </pre>
    *
    * <code>string network_uri = 3;</code>
@@ -1002,7 +1004,8 @@ public final class NatInfo extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Uri of the Cloud Router. Only valid when type is CLOUD_NAT.
+   * URI of the Cloud Router. Only valid when type is CLOUD_NAT.
+   * Format: `projects/{project_id}/regions/{region}/routers/{router_id}`
    * </pre>
    *
    * <code>string router_uri = 12;</code>
@@ -1026,7 +1029,8 @@ public final class NatInfo extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Uri of the Cloud Router. Only valid when type is CLOUD_NAT.
+   * URI of the Cloud Router. Only valid when type is CLOUD_NAT.
+   * Format: `projects/{project_id}/regions/{region}/routers/{router_id}`
    * </pre>
    *
    * <code>string router_uri = 12;</code>
@@ -1973,7 +1977,8 @@ public final class NatInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * URI of the network where NAT translation takes place.
+     * URI of the VPC network where NAT translation takes place.
+     * Format: `projects/{project_id}/global/networks/{network_id}`
      * </pre>
      *
      * <code>string network_uri = 3;</code>
@@ -1996,7 +2001,8 @@ public final class NatInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * URI of the network where NAT translation takes place.
+     * URI of the VPC network where NAT translation takes place.
+     * Format: `projects/{project_id}/global/networks/{network_id}`
      * </pre>
      *
      * <code>string network_uri = 3;</code>
@@ -2019,7 +2025,8 @@ public final class NatInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * URI of the network where NAT translation takes place.
+     * URI of the VPC network where NAT translation takes place.
+     * Format: `projects/{project_id}/global/networks/{network_id}`
      * </pre>
      *
      * <code>string network_uri = 3;</code>
@@ -2041,7 +2048,8 @@ public final class NatInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * URI of the network where NAT translation takes place.
+     * URI of the VPC network where NAT translation takes place.
+     * Format: `projects/{project_id}/global/networks/{network_id}`
      * </pre>
      *
      * <code>string network_uri = 3;</code>
@@ -2059,7 +2067,8 @@ public final class NatInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * URI of the network where NAT translation takes place.
+     * URI of the VPC network where NAT translation takes place.
+     * Format: `projects/{project_id}/global/networks/{network_id}`
      * </pre>
      *
      * <code>string network_uri = 3;</code>
@@ -2758,7 +2767,8 @@ public final class NatInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Uri of the Cloud Router. Only valid when type is CLOUD_NAT.
+     * URI of the Cloud Router. Only valid when type is CLOUD_NAT.
+     * Format: `projects/{project_id}/regions/{region}/routers/{router_id}`
      * </pre>
      *
      * <code>string router_uri = 12;</code>
@@ -2781,7 +2791,8 @@ public final class NatInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Uri of the Cloud Router. Only valid when type is CLOUD_NAT.
+     * URI of the Cloud Router. Only valid when type is CLOUD_NAT.
+     * Format: `projects/{project_id}/regions/{region}/routers/{router_id}`
      * </pre>
      *
      * <code>string router_uri = 12;</code>
@@ -2804,7 +2815,8 @@ public final class NatInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Uri of the Cloud Router. Only valid when type is CLOUD_NAT.
+     * URI of the Cloud Router. Only valid when type is CLOUD_NAT.
+     * Format: `projects/{project_id}/regions/{region}/routers/{router_id}`
      * </pre>
      *
      * <code>string router_uri = 12;</code>
@@ -2826,7 +2838,8 @@ public final class NatInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Uri of the Cloud Router. Only valid when type is CLOUD_NAT.
+     * URI of the Cloud Router. Only valid when type is CLOUD_NAT.
+     * Format: `projects/{project_id}/regions/{region}/routers/{router_id}`
      * </pre>
      *
      * <code>string router_uri = 12;</code>
@@ -2844,7 +2857,8 @@ public final class NatInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Uri of the Cloud Router. Only valid when type is CLOUD_NAT.
+     * URI of the Cloud Router. Only valid when type is CLOUD_NAT.
+     * Format: `projects/{project_id}/regions/{region}/routers/{router_id}`
      * </pre>
      *
      * <code>string router_uri = 12;</code>

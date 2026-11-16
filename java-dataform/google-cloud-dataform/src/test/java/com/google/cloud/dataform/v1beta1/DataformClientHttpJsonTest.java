@@ -18,6 +18,7 @@ package com.google.cloud.dataform.v1beta1;
 
 import static com.google.cloud.dataform.v1beta1.DataformClient.FetchRepositoryHistoryPagedResponse;
 import static com.google.cloud.dataform.v1beta1.DataformClient.FetchWorkspaceBranchesPagedResponse;
+import static com.google.cloud.dataform.v1beta1.DataformClient.FetchWorkspaceHistoryPagedResponse;
 import static com.google.cloud.dataform.v1beta1.DataformClient.ListCompilationResultsPagedResponse;
 import static com.google.cloud.dataform.v1beta1.DataformClient.ListLocationsPagedResponse;
 import static com.google.cloud.dataform.v1beta1.DataformClient.ListReleaseConfigsPagedResponse;
@@ -3508,6 +3509,70 @@ public class DataformClientHttpJsonTest {
   }
 
   @Test
+  public void fetchWorkspaceHistoryTest() throws Exception {
+    CommitLogEntry responsesElement = CommitLogEntry.newBuilder().build();
+    FetchWorkspaceHistoryResponse expectedResponse =
+        FetchWorkspaceHistoryResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllCommits(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    FetchWorkspaceHistoryRequest request =
+        FetchWorkspaceHistoryRequest.newBuilder()
+            .setName(
+                WorkspaceName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[WORKSPACE]")
+                    .toString())
+            .setPageSize(883849137)
+            .setPageToken("pageToken873572522")
+            .build();
+
+    FetchWorkspaceHistoryPagedResponse pagedListResponse = client.fetchWorkspaceHistory(request);
+
+    List<CommitLogEntry> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getCommitsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void fetchWorkspaceHistoryExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      FetchWorkspaceHistoryRequest request =
+          FetchWorkspaceHistoryRequest.newBuilder()
+              .setName(
+                  WorkspaceName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[WORKSPACE]")
+                      .toString())
+              .setPageSize(883849137)
+              .setPageToken("pageToken873572522")
+              .build();
+      client.fetchWorkspaceHistory(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void commitWorkspaceChangesTest() throws Exception {
     CommitWorkspaceChangesResponse expectedResponse =
         CommitWorkspaceChangesResponse.newBuilder().build();
@@ -5044,6 +5109,134 @@ public class DataformClientHttpJsonTest {
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
+    }
+  }
+
+  @Test
+  public void createCompilationResultLongRunningTest() throws Exception {
+    CompilationResult expectedResponse =
+        CompilationResult.newBuilder()
+            .setName(
+                CompilationResultName.of(
+                        "[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[COMPILATION_RESULT]")
+                    .toString())
+            .setCodeCompilationConfig(CodeCompilationConfig.newBuilder().build())
+            .setResolvedGitCommitSha("resolvedGitCommitSha1908380763")
+            .setDataformCoreVersion("dataformCoreVersion1859535851")
+            .addAllCompilationErrors(new ArrayList<CompilationResult.CompilationError>())
+            .setDataEncryptionState(DataEncryptionState.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setInternalMetadata("internalMetadata6789388")
+            .setPrivateResourceMetadata(PrivateResourceMetadata.newBuilder().build())
+            .setGcsRepositorySnapshotMetadata(GcsRepositorySnapshotMetadata.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createCompilationResultLongRunningTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    RepositoryName parent = RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]");
+    CompilationResult compilationResult = CompilationResult.newBuilder().build();
+
+    CompilationResult actualResponse =
+        client.createCompilationResultLongRunningAsync(parent, compilationResult).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createCompilationResultLongRunningExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      RepositoryName parent = RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]");
+      CompilationResult compilationResult = CompilationResult.newBuilder().build();
+      client.createCompilationResultLongRunningAsync(parent, compilationResult).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void createCompilationResultLongRunningTest2() throws Exception {
+    CompilationResult expectedResponse =
+        CompilationResult.newBuilder()
+            .setName(
+                CompilationResultName.of(
+                        "[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[COMPILATION_RESULT]")
+                    .toString())
+            .setCodeCompilationConfig(CodeCompilationConfig.newBuilder().build())
+            .setResolvedGitCommitSha("resolvedGitCommitSha1908380763")
+            .setDataformCoreVersion("dataformCoreVersion1859535851")
+            .addAllCompilationErrors(new ArrayList<CompilationResult.CompilationError>())
+            .setDataEncryptionState(DataEncryptionState.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setInternalMetadata("internalMetadata6789388")
+            .setPrivateResourceMetadata(PrivateResourceMetadata.newBuilder().build())
+            .setGcsRepositorySnapshotMetadata(GcsRepositorySnapshotMetadata.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createCompilationResultLongRunningTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String parent = "projects/project-9015/locations/location-9015/repositories/repositorie-9015";
+    CompilationResult compilationResult = CompilationResult.newBuilder().build();
+
+    CompilationResult actualResponse =
+        client.createCompilationResultLongRunningAsync(parent, compilationResult).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createCompilationResultLongRunningExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-9015/locations/location-9015/repositories/repositorie-9015";
+      CompilationResult compilationResult = CompilationResult.newBuilder().build();
+      client.createCompilationResultLongRunningAsync(parent, compilationResult).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
     }
   }
 

@@ -18,6 +18,7 @@ package com.google.cloud.dataform.v1beta1.stub;
 
 import static com.google.cloud.dataform.v1beta1.DataformClient.FetchRepositoryHistoryPagedResponse;
 import static com.google.cloud.dataform.v1beta1.DataformClient.FetchWorkspaceBranchesPagedResponse;
+import static com.google.cloud.dataform.v1beta1.DataformClient.FetchWorkspaceHistoryPagedResponse;
 import static com.google.cloud.dataform.v1beta1.DataformClient.ListCompilationResultsPagedResponse;
 import static com.google.cloud.dataform.v1beta1.DataformClient.ListLocationsPagedResponse;
 import static com.google.cloud.dataform.v1beta1.DataformClient.ListReleaseConfigsPagedResponse;
@@ -80,6 +81,7 @@ import com.google.cloud.dataform.v1beta1.CompilationResultAction;
 import com.google.cloud.dataform.v1beta1.ComputeRepositoryAccessTokenStatusRequest;
 import com.google.cloud.dataform.v1beta1.ComputeRepositoryAccessTokenStatusResponse;
 import com.google.cloud.dataform.v1beta1.Config;
+import com.google.cloud.dataform.v1beta1.CreateCompilationResultMetadata;
 import com.google.cloud.dataform.v1beta1.CreateCompilationResultRequest;
 import com.google.cloud.dataform.v1beta1.CreateFolderRequest;
 import com.google.cloud.dataform.v1beta1.CreateReleaseConfigRequest;
@@ -118,6 +120,8 @@ import com.google.cloud.dataform.v1beta1.FetchRepositoryHistoryRequest;
 import com.google.cloud.dataform.v1beta1.FetchRepositoryHistoryResponse;
 import com.google.cloud.dataform.v1beta1.FetchWorkspaceBranchesRequest;
 import com.google.cloud.dataform.v1beta1.FetchWorkspaceBranchesResponse;
+import com.google.cloud.dataform.v1beta1.FetchWorkspaceHistoryRequest;
+import com.google.cloud.dataform.v1beta1.FetchWorkspaceHistoryResponse;
 import com.google.cloud.dataform.v1beta1.Folder;
 import com.google.cloud.dataform.v1beta1.GetCompilationResultRequest;
 import com.google.cloud.dataform.v1beta1.GetConfigRequest;
@@ -409,6 +413,11 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
       fetchFileGitStatusesSettings;
   private final UnaryCallSettings<FetchGitAheadBehindRequest, FetchGitAheadBehindResponse>
       fetchGitAheadBehindSettings;
+  private final PagedCallSettings<
+          FetchWorkspaceHistoryRequest,
+          FetchWorkspaceHistoryResponse,
+          FetchWorkspaceHistoryPagedResponse>
+      fetchWorkspaceHistorySettings;
   private final UnaryCallSettings<CommitWorkspaceChangesRequest, CommitWorkspaceChangesResponse>
       commitWorkspaceChangesSettings;
   private final UnaryCallSettings<ResetWorkspaceChangesRequest, ResetWorkspaceChangesResponse>
@@ -450,6 +459,11 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
       getCompilationResultSettings;
   private final UnaryCallSettings<CreateCompilationResultRequest, CompilationResult>
       createCompilationResultSettings;
+  private final UnaryCallSettings<CreateCompilationResultRequest, Operation>
+      createCompilationResultLongRunningSettings;
+  private final OperationCallSettings<
+          CreateCompilationResultRequest, CompilationResult, CreateCompilationResultMetadata>
+      createCompilationResultLongRunningOperationSettings;
   private final PagedCallSettings<
           QueryCompilationResultActionsRequest,
           QueryCompilationResultActionsResponse,
@@ -866,6 +880,45 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
             public Iterable<BranchMetadata> extractResources(
                 FetchWorkspaceBranchesResponse payload) {
               return payload.getBranchesList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          FetchWorkspaceHistoryRequest, FetchWorkspaceHistoryResponse, CommitLogEntry>
+      FETCH_WORKSPACE_HISTORY_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              FetchWorkspaceHistoryRequest, FetchWorkspaceHistoryResponse, CommitLogEntry>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public FetchWorkspaceHistoryRequest injectToken(
+                FetchWorkspaceHistoryRequest payload, String token) {
+              return FetchWorkspaceHistoryRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public FetchWorkspaceHistoryRequest injectPageSize(
+                FetchWorkspaceHistoryRequest payload, int pageSize) {
+              return FetchWorkspaceHistoryRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(FetchWorkspaceHistoryRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(FetchWorkspaceHistoryResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<CommitLogEntry> extractResources(
+                FetchWorkspaceHistoryResponse payload) {
+              return payload.getCommitsList();
             }
           };
 
@@ -1453,6 +1506,30 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
           };
 
   private static final PagedListResponseFactory<
+          FetchWorkspaceHistoryRequest,
+          FetchWorkspaceHistoryResponse,
+          FetchWorkspaceHistoryPagedResponse>
+      FETCH_WORKSPACE_HISTORY_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              FetchWorkspaceHistoryRequest,
+              FetchWorkspaceHistoryResponse,
+              FetchWorkspaceHistoryPagedResponse>() {
+            @Override
+            public ApiFuture<FetchWorkspaceHistoryPagedResponse> getFuturePagedResponse(
+                UnaryCallable<FetchWorkspaceHistoryRequest, FetchWorkspaceHistoryResponse> callable,
+                FetchWorkspaceHistoryRequest request,
+                ApiCallContext context,
+                ApiFuture<FetchWorkspaceHistoryResponse> futureResponse) {
+              PageContext<
+                      FetchWorkspaceHistoryRequest, FetchWorkspaceHistoryResponse, CommitLogEntry>
+                  pageContext =
+                      PageContext.create(
+                          callable, FETCH_WORKSPACE_HISTORY_PAGE_STR_DESC, request, context);
+              return FetchWorkspaceHistoryPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
           QueryDirectoryContentsRequest,
           QueryDirectoryContentsResponse,
           QueryDirectoryContentsPagedResponse>
@@ -1955,6 +2032,15 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
     return fetchGitAheadBehindSettings;
   }
 
+  /** Returns the object with the settings used for calls to fetchWorkspaceHistory. */
+  public PagedCallSettings<
+          FetchWorkspaceHistoryRequest,
+          FetchWorkspaceHistoryResponse,
+          FetchWorkspaceHistoryPagedResponse>
+      fetchWorkspaceHistorySettings() {
+    return fetchWorkspaceHistorySettings;
+  }
+
   /** Returns the object with the settings used for calls to commitWorkspaceChanges. */
   public UnaryCallSettings<CommitWorkspaceChangesRequest, CommitWorkspaceChangesResponse>
       commitWorkspaceChangesSettings() {
@@ -2071,6 +2157,19 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
   public UnaryCallSettings<CreateCompilationResultRequest, CompilationResult>
       createCompilationResultSettings() {
     return createCompilationResultSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createCompilationResultLongRunning. */
+  public UnaryCallSettings<CreateCompilationResultRequest, Operation>
+      createCompilationResultLongRunningSettings() {
+    return createCompilationResultLongRunningSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createCompilationResultLongRunning. */
+  public OperationCallSettings<
+          CreateCompilationResultRequest, CompilationResult, CreateCompilationResultMetadata>
+      createCompilationResultLongRunningOperationSettings() {
+    return createCompilationResultLongRunningOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to queryCompilationResultActions. */
@@ -2352,6 +2451,7 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
     pushGitCommitsSettings = settingsBuilder.pushGitCommitsSettings().build();
     fetchFileGitStatusesSettings = settingsBuilder.fetchFileGitStatusesSettings().build();
     fetchGitAheadBehindSettings = settingsBuilder.fetchGitAheadBehindSettings().build();
+    fetchWorkspaceHistorySettings = settingsBuilder.fetchWorkspaceHistorySettings().build();
     commitWorkspaceChangesSettings = settingsBuilder.commitWorkspaceChangesSettings().build();
     resetWorkspaceChangesSettings = settingsBuilder.resetWorkspaceChangesSettings().build();
     fetchFileDiffSettings = settingsBuilder.fetchFileDiffSettings().build();
@@ -2372,6 +2472,10 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
     listCompilationResultsSettings = settingsBuilder.listCompilationResultsSettings().build();
     getCompilationResultSettings = settingsBuilder.getCompilationResultSettings().build();
     createCompilationResultSettings = settingsBuilder.createCompilationResultSettings().build();
+    createCompilationResultLongRunningSettings =
+        settingsBuilder.createCompilationResultLongRunningSettings().build();
+    createCompilationResultLongRunningOperationSettings =
+        settingsBuilder.createCompilationResultLongRunningOperationSettings().build();
     queryCompilationResultActionsSettings =
         settingsBuilder.queryCompilationResultActionsSettings().build();
     listWorkflowConfigsSettings = settingsBuilder.listWorkflowConfigsSettings().build();
@@ -2523,6 +2627,11 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
         fetchFileGitStatusesSettings;
     private final UnaryCallSettings.Builder<FetchGitAheadBehindRequest, FetchGitAheadBehindResponse>
         fetchGitAheadBehindSettings;
+    private final PagedCallSettings.Builder<
+            FetchWorkspaceHistoryRequest,
+            FetchWorkspaceHistoryResponse,
+            FetchWorkspaceHistoryPagedResponse>
+        fetchWorkspaceHistorySettings;
     private final UnaryCallSettings.Builder<
             CommitWorkspaceChangesRequest, CommitWorkspaceChangesResponse>
         commitWorkspaceChangesSettings;
@@ -2570,6 +2679,11 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
         getCompilationResultSettings;
     private final UnaryCallSettings.Builder<CreateCompilationResultRequest, CompilationResult>
         createCompilationResultSettings;
+    private final UnaryCallSettings.Builder<CreateCompilationResultRequest, Operation>
+        createCompilationResultLongRunningSettings;
+    private final OperationCallSettings.Builder<
+            CreateCompilationResultRequest, CompilationResult, CreateCompilationResultMetadata>
+        createCompilationResultLongRunningOperationSettings;
     private final PagedCallSettings.Builder<
             QueryCompilationResultActionsRequest,
             QueryCompilationResultActionsResponse,
@@ -2697,6 +2811,8 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
       pushGitCommitsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       fetchFileGitStatusesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       fetchGitAheadBehindSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      fetchWorkspaceHistorySettings =
+          PagedCallSettings.newBuilder(FETCH_WORKSPACE_HISTORY_PAGE_STR_FACT);
       commitWorkspaceChangesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       resetWorkspaceChangesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       fetchFileDiffSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -2719,6 +2835,8 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
           PagedCallSettings.newBuilder(LIST_COMPILATION_RESULTS_PAGE_STR_FACT);
       getCompilationResultSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createCompilationResultSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createCompilationResultLongRunningSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createCompilationResultLongRunningOperationSettings = OperationCallSettings.newBuilder();
       queryCompilationResultActionsSettings =
           PagedCallSettings.newBuilder(QUERY_COMPILATION_RESULT_ACTIONS_PAGE_STR_FACT);
       listWorkflowConfigsSettings =
@@ -2787,6 +2905,7 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
               pushGitCommitsSettings,
               fetchFileGitStatusesSettings,
               fetchGitAheadBehindSettings,
+              fetchWorkspaceHistorySettings,
               commitWorkspaceChangesSettings,
               resetWorkspaceChangesSettings,
               fetchFileDiffSettings,
@@ -2807,6 +2926,7 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
               listCompilationResultsSettings,
               getCompilationResultSettings,
               createCompilationResultSettings,
+              createCompilationResultLongRunningSettings,
               queryCompilationResultActionsSettings,
               listWorkflowConfigsSettings,
               getWorkflowConfigSettings,
@@ -2885,6 +3005,7 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
       pushGitCommitsSettings = settings.pushGitCommitsSettings.toBuilder();
       fetchFileGitStatusesSettings = settings.fetchFileGitStatusesSettings.toBuilder();
       fetchGitAheadBehindSettings = settings.fetchGitAheadBehindSettings.toBuilder();
+      fetchWorkspaceHistorySettings = settings.fetchWorkspaceHistorySettings.toBuilder();
       commitWorkspaceChangesSettings = settings.commitWorkspaceChangesSettings.toBuilder();
       resetWorkspaceChangesSettings = settings.resetWorkspaceChangesSettings.toBuilder();
       fetchFileDiffSettings = settings.fetchFileDiffSettings.toBuilder();
@@ -2905,6 +3026,10 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
       listCompilationResultsSettings = settings.listCompilationResultsSettings.toBuilder();
       getCompilationResultSettings = settings.getCompilationResultSettings.toBuilder();
       createCompilationResultSettings = settings.createCompilationResultSettings.toBuilder();
+      createCompilationResultLongRunningSettings =
+          settings.createCompilationResultLongRunningSettings.toBuilder();
+      createCompilationResultLongRunningOperationSettings =
+          settings.createCompilationResultLongRunningOperationSettings.toBuilder();
       queryCompilationResultActionsSettings =
           settings.queryCompilationResultActionsSettings.toBuilder();
       listWorkflowConfigsSettings = settings.listWorkflowConfigsSettings.toBuilder();
@@ -2971,6 +3096,7 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
               pushGitCommitsSettings,
               fetchFileGitStatusesSettings,
               fetchGitAheadBehindSettings,
+              fetchWorkspaceHistorySettings,
               commitWorkspaceChangesSettings,
               resetWorkspaceChangesSettings,
               fetchFileDiffSettings,
@@ -2991,6 +3117,7 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
               listCompilationResultsSettings,
               getCompilationResultSettings,
               createCompilationResultSettings,
+              createCompilationResultLongRunningSettings,
               queryCompilationResultActionsSettings,
               listWorkflowConfigsSettings,
               getWorkflowConfigSettings,
@@ -3248,6 +3375,11 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
+          .fetchWorkspaceHistorySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
           .commitWorkspaceChangesSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
@@ -3344,6 +3476,11 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
 
       builder
           .createCompilationResultSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .createCompilationResultLongRunningSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -3552,6 +3689,31 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
               ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
           .setMetadataTransformer(
               ProtoOperationTransformers.MetadataTransformer.create(MoveRepositoryMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .createCompilationResultLongRunningOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<CreateCompilationResultRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(CompilationResult.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(
+                  CreateCompilationResultMetadata.class))
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
@@ -3881,6 +4043,15 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
       return fetchGitAheadBehindSettings;
     }
 
+    /** Returns the builder for the settings used for calls to fetchWorkspaceHistory. */
+    public PagedCallSettings.Builder<
+            FetchWorkspaceHistoryRequest,
+            FetchWorkspaceHistoryResponse,
+            FetchWorkspaceHistoryPagedResponse>
+        fetchWorkspaceHistorySettings() {
+      return fetchWorkspaceHistorySettings;
+    }
+
     /** Returns the builder for the settings used for calls to commitWorkspaceChanges. */
     public UnaryCallSettings.Builder<CommitWorkspaceChangesRequest, CommitWorkspaceChangesResponse>
         commitWorkspaceChangesSettings() {
@@ -4003,6 +4174,23 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
     public UnaryCallSettings.Builder<CreateCompilationResultRequest, CompilationResult>
         createCompilationResultSettings() {
       return createCompilationResultSettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to createCompilationResultLongRunning.
+     */
+    public UnaryCallSettings.Builder<CreateCompilationResultRequest, Operation>
+        createCompilationResultLongRunningSettings() {
+      return createCompilationResultLongRunningSettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to createCompilationResultLongRunning.
+     */
+    public OperationCallSettings.Builder<
+            CreateCompilationResultRequest, CompilationResult, CreateCompilationResultMetadata>
+        createCompilationResultLongRunningOperationSettings() {
+      return createCompilationResultLongRunningOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to queryCompilationResultActions. */

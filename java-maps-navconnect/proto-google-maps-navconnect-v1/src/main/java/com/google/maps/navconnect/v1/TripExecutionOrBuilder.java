@@ -168,6 +168,95 @@ public interface TripExecutionOrBuilder
    *
    *
    * <pre>
+   * Output only. Provides the polyline for the remaining portion of the route.
+   * </pre>
+   *
+   * <code>
+   * .google.maps.navconnect.v1.Route remaining_route = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the remainingRoute field is set.
+   */
+  boolean hasRemainingRoute();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Provides the polyline for the remaining portion of the route.
+   * </pre>
+   *
+   * <code>
+   * .google.maps.navconnect.v1.Route remaining_route = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The remainingRoute.
+   */
+  com.google.maps.navconnect.v1.Route getRemainingRoute();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Provides the polyline for the remaining portion of the route.
+   * </pre>
+   *
+   * <code>
+   * .google.maps.navconnect.v1.Route remaining_route = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.maps.navconnect.v1.RouteOrBuilder getRemainingRouteOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The most recent route deviation event captured during the
+   * trip.
+   * </pre>
+   *
+   * <code>
+   * .google.maps.navconnect.v1.RouteDeviation last_route_deviation = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the lastRouteDeviation field is set.
+   */
+  boolean hasLastRouteDeviation();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The most recent route deviation event captured during the
+   * trip.
+   * </pre>
+   *
+   * <code>
+   * .google.maps.navconnect.v1.RouteDeviation last_route_deviation = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The lastRouteDeviation.
+   */
+  com.google.maps.navconnect.v1.RouteDeviation getLastRouteDeviation();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The most recent route deviation event captured during the
+   * trip.
+   * </pre>
+   *
+   * <code>
+   * .google.maps.navconnect.v1.RouteDeviation last_route_deviation = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.maps.navconnect.v1.RouteDeviationOrBuilder getLastRouteDeviationOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. Time traveled thus far.
    * </pre>
    *

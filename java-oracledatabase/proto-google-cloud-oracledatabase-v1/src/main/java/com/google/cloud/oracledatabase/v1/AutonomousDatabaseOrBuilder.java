@@ -154,13 +154,13 @@ public interface AutonomousDatabaseOrBuilder
    *
    *
    * <pre>
-   * Optional. Immutable. The password for the default ADMIN user.
+   * Optional. Input only. Immutable. The password for the default ADMIN user.
    * Note: Only one of `admin_password_secret_version` or `admin_password` can
    * be populated.
    * </pre>
    *
    * <code>
-   * string admin_password = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * string admin_password = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
    * @return The adminPassword.
@@ -171,13 +171,13 @@ public interface AutonomousDatabaseOrBuilder
    *
    *
    * <pre>
-   * Optional. Immutable. The password for the default ADMIN user.
+   * Optional. Input only. Immutable. The password for the default ADMIN user.
    * Note: Only one of `admin_password_secret_version` or `admin_password` can
    * be populated.
    * </pre>
    *
    * <code>
-   * string admin_password = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * string admin_password = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
    * @return The bytes for adminPassword.
@@ -188,14 +188,14 @@ public interface AutonomousDatabaseOrBuilder
    *
    *
    * <pre>
-   * Optional. Immutable. The resource name of a secret version in Secret
-   * Manager which contains the database admin user's password. Format:
+   * Optional. Input only. Immutable. The resource name of a secret version in
+   * Secret Manager which contains the database admin user's password. Format:
    * projects/{project}/secrets/{secret}/versions/{version}. Note: Only one of
    * `admin_password_secret_version` or `admin_password` can be populated.
    * </pre>
    *
    * <code>
-   * string admin_password_secret_version = 18 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+   * string admin_password_secret_version = 18 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The adminPasswordSecretVersion.
@@ -206,14 +206,14 @@ public interface AutonomousDatabaseOrBuilder
    *
    *
    * <pre>
-   * Optional. Immutable. The resource name of a secret version in Secret
-   * Manager which contains the database admin user's password. Format:
+   * Optional. Input only. Immutable. The resource name of a secret version in
+   * Secret Manager which contains the database admin user's password. Format:
    * projects/{project}/secrets/{secret}/versions/{version}. Note: Only one of
    * `admin_password_secret_version` or `admin_password` can be populated.
    * </pre>
    *
    * <code>
-   * string admin_password_secret_version = 18 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+   * string admin_password_secret_version = 18 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The bytes for adminPasswordSecretVersion.

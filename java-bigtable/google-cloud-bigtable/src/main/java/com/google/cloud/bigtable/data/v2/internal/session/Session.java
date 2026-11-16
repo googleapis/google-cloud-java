@@ -33,7 +33,24 @@ import java.time.Instant;
  * vRPC transport.
  */
 public interface Session {
-  /** State transitions of Session, will happen in defined order */
+  /**
+   * State transitions of Session, will happen in defined order:
+   *
+   * <ul>
+   *   <li>{@link #NEW}: Initial state before {@link #start} is called.
+   *   <li>{@link #STARTING}: Open handshake sent; bounded by {@code OPEN_SESSION_TIMEOUT}.
+   *   <li>{@link #READY}: Open handshake completed; ready to serve vRPCs.
+   *   <li>{@link #CLOSING}: Graceful close initiated (via {@link #close} or server {@code
+   *       GoAwayResponse}) while an in-flight vRPC (including a client-cancelled one) is still on
+   *       the wire waiting for the server's response before {@code CloseSessionRequest} can be
+   *       sent. Bounded by server heartbeats ({@code checkHeartbeat}) and the server-enforced
+   *       {@code VirtualRpcRequest.deadline}.
+   *   <li>{@link #WAIT_SERVER_CLOSE}: No vRPC is in flight on the wire (so server heartbeats stop)
+   *       and {@code CloseSessionRequest} + {@code halfClose()} have been sent; waiting for the
+   *       server to close the stream. Bounded by {@code CLOSE_SESSION_TIMEOUT}.
+   *   <li>{@link #CLOSED}: Terminal state; underlying stream is closed.
+   * </ul>
+   */
   enum SessionState {
     NEW(0),
     STARTING(1),
@@ -76,8 +93,6 @@ public interface Session {
 
   SessionState getState();
 
-  Instant getLastStateChange();
-
   OpenParams getOpenParams();
 
   boolean isOpenParamsUpdated();
@@ -97,12 +112,14 @@ public interface Session {
   void start(OpenSessionRequest req, Metadata headers, Listener sessionListener);
 
   /**
-   * Caller instructed close of the Session. Will immediately close the session and abort all
-   * outstanding vRPCs.
+   * Initiates a graceful close of the Session. Transitions the session to {@link
+   * SessionState#CLOSING}, waits for any in-flight vRPC on the wire (including a client-cancelled
+   * one) to receive its server response, and then sends {@link CloseSessionRequest} ({@link
+   * SessionState#WAIT_SERVER_CLOSE}).
    */
   void close(CloseSessionRequest req);
 
-  /** Force close a session. */
+  /** Immediately aborts the session stream and fails any in-flight vRPC. */
   void forceClose(CloseSessionRequest reason);
 
   /**

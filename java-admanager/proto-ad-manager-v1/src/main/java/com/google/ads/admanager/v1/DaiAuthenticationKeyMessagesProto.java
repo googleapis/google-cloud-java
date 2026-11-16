@@ -57,18 +57,22 @@ public final class DaiAuthenticationKeyMessagesProto extends com.google.protobuf
           + "=google/ads/admanager/v1/dai_authentication_key_messages.proto\022\027google.ads.adma"
           + "nager.v1\032:google/ads/admanager/v1/dai_au"
           + "thentication_key_enums.proto\032\037google/api"
-          + "/field_behavior.proto\032\031google/api/resource.proto\"\373\003\n"
+          + "/field_behavior.proto\032\031google/api/resour"
+          + "ce.proto\032\037google/protobuf/timestamp.proto\"\322\004\n"
           + "\024DaiAuthenticationKey\022\022\n"
-          + "\004name\030\001 \001(\tB\004\342A\001\010\022m\n"
-          + "\006status\030\004 \001(\0162R.google.ads.admanager.v1.DaiAuthenticationKeyStat"
-          + "usEnum.DaiAuthenticationKeyStatusB\004\342A\001\003H\000\210\001\001\022\037\n"
-          + "\014display_name\030\005 \001(\tB\004\342A\001\002H\001\210\001\001\022k\n"
-          + "\010key_type\030\006 \001(\0162N.google.ads.admanager.v"
-          + "1.DaiAuthenticationKeyTypeEnum.DaiAuthenticationKeyTypeB\004\342A\001\001H\002\210\001\001:\250\001\352A\244\001\n"
-          + "-admanager.googleapis.com/DaiAuthenticationKey"
-          + "\022Fnetworks/{network_code}/daiAuthenticat"
-          + "ionKeys/{dai_authentication_key}*\025daiAuthenticationKeys2\024daiAuthenticationKeyB"
-          + "\t\n"
+          + "\004name\030\001 \001(\tB\004\342A\001\010\022\026\n"
+          + "\003key\030\002 \001(\tB\004\342A\001\003H\000\210\001\001\0225\n"
+          + "\013create_time\030\003"
+          + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\022m\n"
+          + "\006status\030\004 \001(\0162R.google.ads.adman"
+          + "ager.v1.DaiAuthenticationKeyStatusEnum.DaiAuthenticationKeyStatusB\004\342A\001\003H\001\210\001\001\022\037\n"
+          + "\014display_name\030\005 \001(\tB\004\342A\001\002H\002\210\001\001\022k\n"
+          + "\010key_type\030\006 \001(\0162N.google.ads.admanager.v1.DaiAut"
+          + "henticationKeyTypeEnum.DaiAuthenticationKeyTypeB\004\342A\001\001H\003\210\001\001:\250\001\352A\244\001\n"
+          + "-admanager.googleapis.com/DaiAuthenticationKey\022Fnetwor"
+          + "ks/{network_code}/daiAuthenticationKeys/"
+          + "{dai_authentication_key}*\025daiAuthenticationKeys2\024daiAuthenticationKeyB\006\n"
+          + "\004_keyB\t\n"
           + "\007_statusB\017\n\r"
           + "_display_nameB\013\n"
           + "\t_key_typeB\325\001\n"
@@ -84,6 +88,7 @@ public final class DaiAuthenticationKeyMessagesProto extends com.google.protobuf
               com.google.ads.admanager.v1.DaiAuthenticationKeyEnumsProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
+              com.google.protobuf.TimestampProto.getDescriptor(),
             });
     internal_static_google_ads_admanager_v1_DaiAuthenticationKey_descriptor =
         getDescriptor().getMessageType(0);
@@ -91,12 +96,13 @@ public final class DaiAuthenticationKeyMessagesProto extends com.google.protobuf
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_ads_admanager_v1_DaiAuthenticationKey_descriptor,
             new java.lang.String[] {
-              "Name", "Status", "DisplayName", "KeyType",
+              "Name", "Key", "CreateTime", "Status", "DisplayName", "KeyType",
             });
     descriptor.resolveAllFeaturesImmutable();
     com.google.ads.admanager.v1.DaiAuthenticationKeyEnumsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
+    com.google.protobuf.TimestampProto.getDescriptor();
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);

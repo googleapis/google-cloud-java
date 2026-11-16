@@ -203,13 +203,14 @@ public final class CreateWorkerPoolRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required. The unique identifier for the WorkerPool. It must begin with
+   * Optional. The unique identifier for the WorkerPool. It must begin with
    * letter, and cannot end with hyphen; must contain fewer than 50 characters.
    * The name of the worker pool becomes
    * `{parent}/workerPools/{worker_pool_id}`.
+   * If not provided, the server will generate a unique `worker_pool_id`.
    * </pre>
    *
-   * <code>string worker_pool_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string worker_pool_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The workerPoolId.
    */
@@ -230,13 +231,14 @@ public final class CreateWorkerPoolRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required. The unique identifier for the WorkerPool. It must begin with
+   * Optional. The unique identifier for the WorkerPool. It must begin with
    * letter, and cannot end with hyphen; must contain fewer than 50 characters.
    * The name of the worker pool becomes
    * `{parent}/workerPools/{worker_pool_id}`.
+   * If not provided, the server will generate a unique `worker_pool_id`.
    * </pre>
    *
-   * <code>string worker_pool_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string worker_pool_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for workerPoolId.
    */
@@ -1027,13 +1029,14 @@ public final class CreateWorkerPoolRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The unique identifier for the WorkerPool. It must begin with
+     * Optional. The unique identifier for the WorkerPool. It must begin with
      * letter, and cannot end with hyphen; must contain fewer than 50 characters.
      * The name of the worker pool becomes
      * `{parent}/workerPools/{worker_pool_id}`.
+     * If not provided, the server will generate a unique `worker_pool_id`.
      * </pre>
      *
-     * <code>string worker_pool_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string worker_pool_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The workerPoolId.
      */
@@ -1053,13 +1056,14 @@ public final class CreateWorkerPoolRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The unique identifier for the WorkerPool. It must begin with
+     * Optional. The unique identifier for the WorkerPool. It must begin with
      * letter, and cannot end with hyphen; must contain fewer than 50 characters.
      * The name of the worker pool becomes
      * `{parent}/workerPools/{worker_pool_id}`.
+     * If not provided, the server will generate a unique `worker_pool_id`.
      * </pre>
      *
-     * <code>string worker_pool_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string worker_pool_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for workerPoolId.
      */
@@ -1079,13 +1083,14 @@ public final class CreateWorkerPoolRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The unique identifier for the WorkerPool. It must begin with
+     * Optional. The unique identifier for the WorkerPool. It must begin with
      * letter, and cannot end with hyphen; must contain fewer than 50 characters.
      * The name of the worker pool becomes
      * `{parent}/workerPools/{worker_pool_id}`.
+     * If not provided, the server will generate a unique `worker_pool_id`.
      * </pre>
      *
-     * <code>string worker_pool_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string worker_pool_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The workerPoolId to set.
      * @return This builder for chaining.
@@ -1104,13 +1109,14 @@ public final class CreateWorkerPoolRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The unique identifier for the WorkerPool. It must begin with
+     * Optional. The unique identifier for the WorkerPool. It must begin with
      * letter, and cannot end with hyphen; must contain fewer than 50 characters.
      * The name of the worker pool becomes
      * `{parent}/workerPools/{worker_pool_id}`.
+     * If not provided, the server will generate a unique `worker_pool_id`.
      * </pre>
      *
-     * <code>string worker_pool_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string worker_pool_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -1125,13 +1131,14 @@ public final class CreateWorkerPoolRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The unique identifier for the WorkerPool. It must begin with
+     * Optional. The unique identifier for the WorkerPool. It must begin with
      * letter, and cannot end with hyphen; must contain fewer than 50 characters.
      * The name of the worker pool becomes
      * `{parent}/workerPools/{worker_pool_id}`.
+     * If not provided, the server will generate a unique `worker_pool_id`.
      * </pre>
      *
-     * <code>string worker_pool_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string worker_pool_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for workerPoolId to set.
      * @return This builder for chaining.

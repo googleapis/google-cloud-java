@@ -16,6 +16,8 @@
 
 package com.google.cloud.discoveryengine.v1;
 
+import static com.google.cloud.discoveryengine.v1.ServingConfigServiceClient.ListServingConfigsPagedResponse;
+
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.GoogleCredentialsProvider;
@@ -25,9 +27,11 @@ import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
+import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.discoveryengine.v1.stub.ServingConfigServiceStubSettings;
+import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
@@ -52,7 +56,7 @@ import org.jspecify.annotations.Nullable;
  *
  * <p>For example, to set the
  * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
- * of updateServingConfig:
+ * of createServingConfig:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -63,10 +67,10 @@ import org.jspecify.annotations.Nullable;
  * ServingConfigServiceSettings.Builder servingConfigServiceSettingsBuilder =
  *     ServingConfigServiceSettings.newBuilder();
  * servingConfigServiceSettingsBuilder
- *     .updateServingConfigSettings()
+ *     .createServingConfigSettings()
  *     .setRetrySettings(
  *         servingConfigServiceSettingsBuilder
- *             .updateServingConfigSettings()
+ *             .createServingConfigSettings()
  *             .getRetrySettings()
  *             .toBuilder()
  *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
@@ -90,10 +94,33 @@ import org.jspecify.annotations.Nullable;
 @Generated("by gapic-generator-java")
 public class ServingConfigServiceSettings extends ClientSettings<ServingConfigServiceSettings> {
 
+  /** Returns the object with the settings used for calls to createServingConfig. */
+  public UnaryCallSettings<CreateServingConfigRequest, ServingConfig>
+      createServingConfigSettings() {
+    return ((ServingConfigServiceStubSettings) getStubSettings()).createServingConfigSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteServingConfig. */
+  public UnaryCallSettings<DeleteServingConfigRequest, Empty> deleteServingConfigSettings() {
+    return ((ServingConfigServiceStubSettings) getStubSettings()).deleteServingConfigSettings();
+  }
+
   /** Returns the object with the settings used for calls to updateServingConfig. */
   public UnaryCallSettings<UpdateServingConfigRequest, ServingConfig>
       updateServingConfigSettings() {
     return ((ServingConfigServiceStubSettings) getStubSettings()).updateServingConfigSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getServingConfig. */
+  public UnaryCallSettings<GetServingConfigRequest, ServingConfig> getServingConfigSettings() {
+    return ((ServingConfigServiceStubSettings) getStubSettings()).getServingConfigSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listServingConfigs. */
+  public PagedCallSettings<
+          ListServingConfigsRequest, ListServingConfigsResponse, ListServingConfigsPagedResponse>
+      listServingConfigsSettings() {
+    return ((ServingConfigServiceStubSettings) getStubSettings()).listServingConfigsSettings();
   }
 
   public static final ServingConfigServiceSettings create(ServingConfigServiceStubSettings stub)
@@ -209,10 +236,35 @@ public class ServingConfigServiceSettings extends ClientSettings<ServingConfigSe
       return this;
     }
 
+    /** Returns the builder for the settings used for calls to createServingConfig. */
+    public UnaryCallSettings.Builder<CreateServingConfigRequest, ServingConfig>
+        createServingConfigSettings() {
+      return getStubSettingsBuilder().createServingConfigSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteServingConfig. */
+    public UnaryCallSettings.Builder<DeleteServingConfigRequest, Empty>
+        deleteServingConfigSettings() {
+      return getStubSettingsBuilder().deleteServingConfigSettings();
+    }
+
     /** Returns the builder for the settings used for calls to updateServingConfig. */
     public UnaryCallSettings.Builder<UpdateServingConfigRequest, ServingConfig>
         updateServingConfigSettings() {
       return getStubSettingsBuilder().updateServingConfigSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getServingConfig. */
+    public UnaryCallSettings.Builder<GetServingConfigRequest, ServingConfig>
+        getServingConfigSettings() {
+      return getStubSettingsBuilder().getServingConfigSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listServingConfigs. */
+    public PagedCallSettings.Builder<
+            ListServingConfigsRequest, ListServingConfigsResponse, ListServingConfigsPagedResponse>
+        listServingConfigsSettings() {
+      return getStubSettingsBuilder().listServingConfigsSettings();
     }
 
     @Override

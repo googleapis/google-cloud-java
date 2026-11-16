@@ -17,7 +17,9 @@ package com.google.cloud.bigtable.data.v2.internal.session;
 
 import static com.google.common.truth.Truth.assertThat;
 
+import com.google.bigtable.v2.SessionClientConfiguration.SessionPoolConfiguration;
 import com.google.cloud.bigtable.data.v2.internal.session.fake.FakeClock;
+import com.google.protobuf.util.Durations;
 import java.time.Duration;
 import java.time.Instant;
 import org.junit.jupiter.api.BeforeEach;
@@ -55,5 +57,28 @@ public class SessionCreationBudgetTest {
     // increment the clock, try reserver again should return true
     clock.increment(penalty.plus(Duration.ofNanos(1)));
     assertThat(budget.tryReserveSession()).isTrue();
+  }
+
+  @Test
+  public void testUpdateConfigToEmptyAfterFailure() {
+    SessionCreationBudget budget = new SessionCreationBudget(2, penalty, clock);
+    assertThat(budget.tryReserveSession()).isTrue();
+    budget.onSessionCreationFailure();
+
+    // Expire the failure token, then update config to empty (budget = 0).
+    clock.increment(penalty.plus(Duration.ofNanos(1)));
+    budget.updateConfig(SessionPoolConfiguration.getDefaultInstance());
+
+    // Must not allow reserving when budget is 0, even with an expired failure token.
+    assertThat(budget.tryReserveSession()).isFalse();
+
+    // Re-enabling budget should allow reservations again.
+    budget.updateConfig(
+        SessionPoolConfiguration.newBuilder()
+            .setNewSessionCreationBudget(1)
+            .setNewSessionCreationPenalty(Durations.fromMinutes(1))
+            .build());
+    assertThat(budget.tryReserveSession()).isTrue();
+    assertThat(budget.tryReserveSession()).isFalse();
   }
 }

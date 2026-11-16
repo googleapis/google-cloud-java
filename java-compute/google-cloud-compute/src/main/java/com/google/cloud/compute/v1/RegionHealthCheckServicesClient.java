@@ -41,7 +41,7 @@ import org.jspecify.annotations.Nullable;
 /**
  * Service Description: The RegionHealthCheckServices API.
  *
- * <p>This client uses RegionHealthCheckServices version 2026-09-01.
+ * <p>This client uses RegionHealthCheckServices version 2026-11-01.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:

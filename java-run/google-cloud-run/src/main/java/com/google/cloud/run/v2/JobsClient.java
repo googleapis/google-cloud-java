@@ -384,8 +384,8 @@ public class JobsClient implements BackgroundResource {
    * @param parent Required. The location and project in which this Job should be created. Format:
    *     projects/{project}/locations/{location}, where {project} can be project id or number.
    * @param job Required. The Job instance to create.
-   * @param jobId Required. The unique identifier for the Job. The name of the job becomes
-   *     {parent}/jobs/{job_id}.
+   * @param jobId Optional. The unique identifier for the Job. The name of the job becomes
+   *     {parent}/jobs/{job_id}. If not provided, the server will generate a unique `job_id`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Job, Job> createJobAsync(
@@ -422,8 +422,8 @@ public class JobsClient implements BackgroundResource {
    * @param parent Required. The location and project in which this Job should be created. Format:
    *     projects/{project}/locations/{location}, where {project} can be project id or number.
    * @param job Required. The Job instance to create.
-   * @param jobId Required. The unique identifier for the Job. The name of the job becomes
-   *     {parent}/jobs/{job_id}.
+   * @param jobId Optional. The unique identifier for the Job. The name of the job becomes
+   *     {parent}/jobs/{job_id}. If not provided, the server will generate a unique `job_id`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Job, Job> createJobAsync(String parent, Job job, String jobId) {

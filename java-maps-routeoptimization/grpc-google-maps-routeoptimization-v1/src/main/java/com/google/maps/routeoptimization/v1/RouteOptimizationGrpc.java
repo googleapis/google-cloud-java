@@ -391,9 +391,6 @@ public final class RouteOptimizationGrpc {
      * The [response][google.longrunning.Operation.response] field type is
      * [OptimizeToursResponse][google.maps.routeoptimization.v1.OptimizeToursResponse],
      * if successful.
-     * Experimental: See
-     * https://developers.google.com/maps/tt/route-optimization/experimental/otlr/make-request
-     * for more details.
      * </pre>
      */
     default void optimizeToursLongRunning(
@@ -423,13 +420,10 @@ public final class RouteOptimizationGrpc {
      * `&lt;parent&gt;/operations/&lt;operation_id&gt;` and can be used to track
      * progress of the computation. The
      * [metadata][google.longrunning.Operation.metadata] field type is
-     * [OptimizeToursLongRunningMetadata][google.maps.routeoptimization.v1.OptimizeToursUriMetadata].
+     * [OptimizeToursUriMetadata][google.maps.routeoptimization.v1.OptimizeToursUriMetadata].
      * The [response][google.longrunning.Operation.response] field type is
      * [OptimizeToursUriResponse][google.maps.routeoptimization.v1.OptimizeToursUriResponse],
      * if successful.
-     * Experimental: See
-     * https://developers.google.com/maps/tt/route-optimization/experimental/otlr/make-request
-     * for more details.
      * </pre>
      */
     default void optimizeToursUri(
@@ -583,9 +577,6 @@ public final class RouteOptimizationGrpc {
      * The [response][google.longrunning.Operation.response] field type is
      * [OptimizeToursResponse][google.maps.routeoptimization.v1.OptimizeToursResponse],
      * if successful.
-     * Experimental: See
-     * https://developers.google.com/maps/tt/route-optimization/experimental/otlr/make-request
-     * for more details.
      * </pre>
      */
     public void optimizeToursLongRunning(
@@ -617,13 +608,10 @@ public final class RouteOptimizationGrpc {
      * `&lt;parent&gt;/operations/&lt;operation_id&gt;` and can be used to track
      * progress of the computation. The
      * [metadata][google.longrunning.Operation.metadata] field type is
-     * [OptimizeToursLongRunningMetadata][google.maps.routeoptimization.v1.OptimizeToursUriMetadata].
+     * [OptimizeToursUriMetadata][google.maps.routeoptimization.v1.OptimizeToursUriMetadata].
      * The [response][google.longrunning.Operation.response] field type is
      * [OptimizeToursUriResponse][google.maps.routeoptimization.v1.OptimizeToursUriResponse],
      * if successful.
-     * Experimental: See
-     * https://developers.google.com/maps/tt/route-optimization/experimental/otlr/make-request
-     * for more details.
      * </pre>
      */
     public void optimizeToursUri(
@@ -745,9 +733,6 @@ public final class RouteOptimizationGrpc {
      * The [response][google.longrunning.Operation.response] field type is
      * [OptimizeToursResponse][google.maps.routeoptimization.v1.OptimizeToursResponse],
      * if successful.
-     * Experimental: See
-     * https://developers.google.com/maps/tt/route-optimization/experimental/otlr/make-request
-     * for more details.
      * </pre>
      */
     public com.google.longrunning.Operation optimizeToursLongRunning(
@@ -777,13 +762,10 @@ public final class RouteOptimizationGrpc {
      * `&lt;parent&gt;/operations/&lt;operation_id&gt;` and can be used to track
      * progress of the computation. The
      * [metadata][google.longrunning.Operation.metadata] field type is
-     * [OptimizeToursLongRunningMetadata][google.maps.routeoptimization.v1.OptimizeToursUriMetadata].
+     * [OptimizeToursUriMetadata][google.maps.routeoptimization.v1.OptimizeToursUriMetadata].
      * The [response][google.longrunning.Operation.response] field type is
      * [OptimizeToursUriResponse][google.maps.routeoptimization.v1.OptimizeToursUriResponse],
      * if successful.
-     * Experimental: See
-     * https://developers.google.com/maps/tt/route-optimization/experimental/otlr/make-request
-     * for more details.
      * </pre>
      */
     public com.google.longrunning.Operation optimizeToursUri(
@@ -901,9 +883,6 @@ public final class RouteOptimizationGrpc {
      * The [response][google.longrunning.Operation.response] field type is
      * [OptimizeToursResponse][google.maps.routeoptimization.v1.OptimizeToursResponse],
      * if successful.
-     * Experimental: See
-     * https://developers.google.com/maps/tt/route-optimization/experimental/otlr/make-request
-     * for more details.
      * </pre>
      */
     public com.google.longrunning.Operation optimizeToursLongRunning(
@@ -932,13 +911,10 @@ public final class RouteOptimizationGrpc {
      * `&lt;parent&gt;/operations/&lt;operation_id&gt;` and can be used to track
      * progress of the computation. The
      * [metadata][google.longrunning.Operation.metadata] field type is
-     * [OptimizeToursLongRunningMetadata][google.maps.routeoptimization.v1.OptimizeToursUriMetadata].
+     * [OptimizeToursUriMetadata][google.maps.routeoptimization.v1.OptimizeToursUriMetadata].
      * The [response][google.longrunning.Operation.response] field type is
      * [OptimizeToursUriResponse][google.maps.routeoptimization.v1.OptimizeToursUriResponse],
      * if successful.
-     * Experimental: See
-     * https://developers.google.com/maps/tt/route-optimization/experimental/otlr/make-request
-     * for more details.
      * </pre>
      */
     public com.google.longrunning.Operation optimizeToursUri(
@@ -1055,9 +1031,6 @@ public final class RouteOptimizationGrpc {
      * The [response][google.longrunning.Operation.response] field type is
      * [OptimizeToursResponse][google.maps.routeoptimization.v1.OptimizeToursResponse],
      * if successful.
-     * Experimental: See
-     * https://developers.google.com/maps/tt/route-optimization/experimental/otlr/make-request
-     * for more details.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -1087,13 +1060,10 @@ public final class RouteOptimizationGrpc {
      * `&lt;parent&gt;/operations/&lt;operation_id&gt;` and can be used to track
      * progress of the computation. The
      * [metadata][google.longrunning.Operation.metadata] field type is
-     * [OptimizeToursLongRunningMetadata][google.maps.routeoptimization.v1.OptimizeToursUriMetadata].
+     * [OptimizeToursUriMetadata][google.maps.routeoptimization.v1.OptimizeToursUriMetadata].
      * The [response][google.longrunning.Operation.response] field type is
      * [OptimizeToursUriResponse][google.maps.routeoptimization.v1.OptimizeToursUriResponse],
      * if successful.
-     * Experimental: See
-     * https://developers.google.com/maps/tt/route-optimization/experimental/otlr/make-request
-     * for more details.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>

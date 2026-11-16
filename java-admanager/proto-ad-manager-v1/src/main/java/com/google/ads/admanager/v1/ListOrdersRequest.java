@@ -228,6 +228,14 @@ public final class ListOrdersRequest extends com.google.protobuf.GeneratedMessag
    * See syntax details at
    * https://developers.google.com/ad-manager/api/beta/filters
    *
+   * Syntax summary: double-quoted `"..."` (never `'...'`) strings and RFC 3339
+   * timestamps, full resource names on reference fields (for example, `order =
+   * "networks/123/orders/456"`, not `*Id` or bare IDs), prefix or suffix `*`
+   * wildcards with `=` (`displayName = "foo*"`), `:` for substring or
+   * repeated-field matching, unquoted enums and booleans, uppercase
+   * `AND`/`OR`/`NOT`, and standalone `IN(field, SET(v1, v2))` (not `field IN
+   * (...)`).
+   *
    * **Filterable fields:**
    *
    * * `advertiser`
@@ -278,6 +286,14 @@ public final class ListOrdersRequest extends com.google.protobuf.GeneratedMessag
    * Optional. Expression to filter the response.
    * See syntax details at
    * https://developers.google.com/ad-manager/api/beta/filters
+   *
+   * Syntax summary: double-quoted `"..."` (never `'...'`) strings and RFC 3339
+   * timestamps, full resource names on reference fields (for example, `order =
+   * "networks/123/orders/456"`, not `*Id` or bare IDs), prefix or suffix `*`
+   * wildcards with `=` (`displayName = "foo*"`), `:` for substring or
+   * repeated-field matching, unquoted enums and booleans, uppercase
+   * `AND`/`OR`/`NOT`, and standalone `IN(field, SET(v1, v2))` (not `field IN
+   * (...)`).
    *
    * **Filterable fields:**
    *
@@ -1155,6 +1171,14 @@ public final class ListOrdersRequest extends com.google.protobuf.GeneratedMessag
      * See syntax details at
      * https://developers.google.com/ad-manager/api/beta/filters
      *
+     * Syntax summary: double-quoted `"..."` (never `'...'`) strings and RFC 3339
+     * timestamps, full resource names on reference fields (for example, `order =
+     * "networks/123/orders/456"`, not `*Id` or bare IDs), prefix or suffix `*`
+     * wildcards with `=` (`displayName = "foo*"`), `:` for substring or
+     * repeated-field matching, unquoted enums and booleans, uppercase
+     * `AND`/`OR`/`NOT`, and standalone `IN(field, SET(v1, v2))` (not `field IN
+     * (...)`).
+     *
      * **Filterable fields:**
      *
      * * `advertiser`
@@ -1204,6 +1228,14 @@ public final class ListOrdersRequest extends com.google.protobuf.GeneratedMessag
      * Optional. Expression to filter the response.
      * See syntax details at
      * https://developers.google.com/ad-manager/api/beta/filters
+     *
+     * Syntax summary: double-quoted `"..."` (never `'...'`) strings and RFC 3339
+     * timestamps, full resource names on reference fields (for example, `order =
+     * "networks/123/orders/456"`, not `*Id` or bare IDs), prefix or suffix `*`
+     * wildcards with `=` (`displayName = "foo*"`), `:` for substring or
+     * repeated-field matching, unquoted enums and booleans, uppercase
+     * `AND`/`OR`/`NOT`, and standalone `IN(field, SET(v1, v2))` (not `field IN
+     * (...)`).
      *
      * **Filterable fields:**
      *
@@ -1255,6 +1287,14 @@ public final class ListOrdersRequest extends com.google.protobuf.GeneratedMessag
      * See syntax details at
      * https://developers.google.com/ad-manager/api/beta/filters
      *
+     * Syntax summary: double-quoted `"..."` (never `'...'`) strings and RFC 3339
+     * timestamps, full resource names on reference fields (for example, `order =
+     * "networks/123/orders/456"`, not `*Id` or bare IDs), prefix or suffix `*`
+     * wildcards with `=` (`displayName = "foo*"`), `:` for substring or
+     * repeated-field matching, unquoted enums and booleans, uppercase
+     * `AND`/`OR`/`NOT`, and standalone `IN(field, SET(v1, v2))` (not `field IN
+     * (...)`).
+     *
      * **Filterable fields:**
      *
      * * `advertiser`
@@ -1304,6 +1344,14 @@ public final class ListOrdersRequest extends com.google.protobuf.GeneratedMessag
      * See syntax details at
      * https://developers.google.com/ad-manager/api/beta/filters
      *
+     * Syntax summary: double-quoted `"..."` (never `'...'`) strings and RFC 3339
+     * timestamps, full resource names on reference fields (for example, `order =
+     * "networks/123/orders/456"`, not `*Id` or bare IDs), prefix or suffix `*`
+     * wildcards with `=` (`displayName = "foo*"`), `:` for substring or
+     * repeated-field matching, unquoted enums and booleans, uppercase
+     * `AND`/`OR`/`NOT`, and standalone `IN(field, SET(v1, v2))` (not `field IN
+     * (...)`).
+     *
      * **Filterable fields:**
      *
      * * `advertiser`
@@ -1348,6 +1396,14 @@ public final class ListOrdersRequest extends com.google.protobuf.GeneratedMessag
      * Optional. Expression to filter the response.
      * See syntax details at
      * https://developers.google.com/ad-manager/api/beta/filters
+     *
+     * Syntax summary: double-quoted `"..."` (never `'...'`) strings and RFC 3339
+     * timestamps, full resource names on reference fields (for example, `order =
+     * "networks/123/orders/456"`, not `*Id` or bare IDs), prefix or suffix `*`
+     * wildcards with `=` (`displayName = "foo*"`), `:` for substring or
+     * repeated-field matching, unquoted enums and booleans, uppercase
+     * `AND`/`OR`/`NOT`, and standalone `IN(field, SET(v1, v2))` (not `field IN
+     * (...)`).
      *
      * **Filterable fields:**
      *

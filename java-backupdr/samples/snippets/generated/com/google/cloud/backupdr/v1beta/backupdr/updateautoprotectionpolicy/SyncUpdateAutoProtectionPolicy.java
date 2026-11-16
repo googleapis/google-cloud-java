@@ -39,6 +39,7 @@ public class SyncUpdateAutoProtectionPolicy {
           UpdateAutoProtectionPolicyRequest.newBuilder()
               .setAutoProtectionPolicy(AutoProtectionPolicy.newBuilder().build())
               .setUpdateMask(FieldMask.newBuilder().build())
+              .setRequestId("requestId693933066")
               .build();
       AutoProtectionPolicy response = backupDRClient.updateAutoProtectionPolicyAsync(request).get();
     }

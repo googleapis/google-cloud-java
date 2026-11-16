@@ -48,17 +48,22 @@ import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AggregatedListSslPoliciesRequest;
 import com.google.cloud.compute.v1.DeleteSslPolicyRequest;
+import com.google.cloud.compute.v1.GetIamPolicySslPolicyRequest;
 import com.google.cloud.compute.v1.GetSslPolicyRequest;
 import com.google.cloud.compute.v1.InsertSslPolicyRequest;
 import com.google.cloud.compute.v1.ListAvailableFeaturesSslPoliciesRequest;
 import com.google.cloud.compute.v1.ListSslPoliciesRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PatchSslPolicyRequest;
+import com.google.cloud.compute.v1.Policy;
+import com.google.cloud.compute.v1.SetIamPolicySslPolicyRequest;
 import com.google.cloud.compute.v1.SslPoliciesAggregatedList;
 import com.google.cloud.compute.v1.SslPoliciesList;
 import com.google.cloud.compute.v1.SslPoliciesListAvailableFeaturesResponse;
 import com.google.cloud.compute.v1.SslPoliciesScopedList;
 import com.google.cloud.compute.v1.SslPolicy;
+import com.google.cloud.compute.v1.TestIamPermissionsSslPolicyRequest;
+import com.google.cloud.compute.v1.TestPermissionsResponse;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -165,6 +170,7 @@ public class SslPoliciesStubSettings extends StubSettings<SslPoliciesStubSetting
   private final OperationCallSettings<DeleteSslPolicyRequest, Operation, Operation>
       deleteOperationSettings;
   private final UnaryCallSettings<GetSslPolicyRequest, SslPolicy> getSettings;
+  private final UnaryCallSettings<GetIamPolicySslPolicyRequest, Policy> getIamPolicySettings;
   private final UnaryCallSettings<InsertSslPolicyRequest, Operation> insertSettings;
   private final OperationCallSettings<InsertSslPolicyRequest, Operation, Operation>
       insertOperationSettings;
@@ -176,6 +182,9 @@ public class SslPoliciesStubSettings extends StubSettings<SslPoliciesStubSetting
   private final UnaryCallSettings<PatchSslPolicyRequest, Operation> patchSettings;
   private final OperationCallSettings<PatchSslPolicyRequest, Operation, Operation>
       patchOperationSettings;
+  private final UnaryCallSettings<SetIamPolicySslPolicyRequest, Policy> setIamPolicySettings;
+  private final UnaryCallSettings<TestIamPermissionsSslPolicyRequest, TestPermissionsResponse>
+      testIamPermissionsSettings;
 
   private static final PagedListDescriptor<
           AggregatedListSslPoliciesRequest,
@@ -323,6 +332,11 @@ public class SslPoliciesStubSettings extends StubSettings<SslPoliciesStubSetting
     return getSettings;
   }
 
+  /** Returns the object with the settings used for calls to getIamPolicy. */
+  public UnaryCallSettings<GetIamPolicySslPolicyRequest, Policy> getIamPolicySettings() {
+    return getIamPolicySettings;
+  }
+
   /** Returns the object with the settings used for calls to insert. */
   public UnaryCallSettings<InsertSslPolicyRequest, Operation> insertSettings() {
     return insertSettings;
@@ -356,6 +370,17 @@ public class SslPoliciesStubSettings extends StubSettings<SslPoliciesStubSetting
   public OperationCallSettings<PatchSslPolicyRequest, Operation, Operation>
       patchOperationSettings() {
     return patchOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to setIamPolicy. */
+  public UnaryCallSettings<SetIamPolicySslPolicyRequest, Policy> setIamPolicySettings() {
+    return setIamPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to testIamPermissions. */
+  public UnaryCallSettings<TestIamPermissionsSslPolicyRequest, TestPermissionsResponse>
+      testIamPermissionsSettings() {
+    return testIamPermissionsSettings;
   }
 
   public SslPoliciesStub createStub() throws IOException {
@@ -420,7 +445,7 @@ public class SslPoliciesStubSettings extends StubSettings<SslPoliciesStubSetting
         .setTransportToken(
             GaxHttpJsonProperties.getHttpJsonTokenName(),
             GaxHttpJsonProperties.getHttpJsonVersion())
-        .setApiVersionToken("2026-09-01");
+        .setApiVersionToken("2026-11-01");
   }
 
   /** Returns a new builder for this class. */
@@ -445,12 +470,15 @@ public class SslPoliciesStubSettings extends StubSettings<SslPoliciesStubSetting
     deleteSettings = settingsBuilder.deleteSettings().build();
     deleteOperationSettings = settingsBuilder.deleteOperationSettings().build();
     getSettings = settingsBuilder.getSettings().build();
+    getIamPolicySettings = settingsBuilder.getIamPolicySettings().build();
     insertSettings = settingsBuilder.insertSettings().build();
     insertOperationSettings = settingsBuilder.insertOperationSettings().build();
     listSettings = settingsBuilder.listSettings().build();
     listAvailableFeaturesSettings = settingsBuilder.listAvailableFeaturesSettings().build();
     patchSettings = settingsBuilder.patchSettings().build();
     patchOperationSettings = settingsBuilder.patchOperationSettings().build();
+    setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
+    testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
   }
 
   @Override
@@ -474,6 +502,8 @@ public class SslPoliciesStubSettings extends StubSettings<SslPoliciesStubSetting
     private final OperationCallSettings.Builder<DeleteSslPolicyRequest, Operation, Operation>
         deleteOperationSettings;
     private final UnaryCallSettings.Builder<GetSslPolicyRequest, SslPolicy> getSettings;
+    private final UnaryCallSettings.Builder<GetIamPolicySslPolicyRequest, Policy>
+        getIamPolicySettings;
     private final UnaryCallSettings.Builder<InsertSslPolicyRequest, Operation> insertSettings;
     private final OperationCallSettings.Builder<InsertSslPolicyRequest, Operation, Operation>
         insertOperationSettings;
@@ -486,6 +516,11 @@ public class SslPoliciesStubSettings extends StubSettings<SslPoliciesStubSetting
     private final UnaryCallSettings.Builder<PatchSslPolicyRequest, Operation> patchSettings;
     private final OperationCallSettings.Builder<PatchSslPolicyRequest, Operation, Operation>
         patchOperationSettings;
+    private final UnaryCallSettings.Builder<SetIamPolicySslPolicyRequest, Policy>
+        setIamPolicySettings;
+    private final UnaryCallSettings.Builder<
+            TestIamPermissionsSslPolicyRequest, TestPermissionsResponse>
+        testIamPermissionsSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -540,22 +575,28 @@ public class SslPoliciesStubSettings extends StubSettings<SslPoliciesStubSetting
       deleteSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteOperationSettings = OperationCallSettings.newBuilder();
       getSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       insertSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       insertOperationSettings = OperationCallSettings.newBuilder();
       listSettings = PagedCallSettings.newBuilder(LIST_PAGE_STR_FACT);
       listAvailableFeaturesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       patchSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       patchOperationSettings = OperationCallSettings.newBuilder();
+      setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               aggregatedListSettings,
               deleteSettings,
               getSettings,
+              getIamPolicySettings,
               insertSettings,
               listSettings,
               listAvailableFeaturesSettings,
-              patchSettings);
+              patchSettings,
+              setIamPolicySettings,
+              testIamPermissionsSettings);
       initDefaults(this);
     }
 
@@ -566,22 +607,28 @@ public class SslPoliciesStubSettings extends StubSettings<SslPoliciesStubSetting
       deleteSettings = settings.deleteSettings.toBuilder();
       deleteOperationSettings = settings.deleteOperationSettings.toBuilder();
       getSettings = settings.getSettings.toBuilder();
+      getIamPolicySettings = settings.getIamPolicySettings.toBuilder();
       insertSettings = settings.insertSettings.toBuilder();
       insertOperationSettings = settings.insertOperationSettings.toBuilder();
       listSettings = settings.listSettings.toBuilder();
       listAvailableFeaturesSettings = settings.listAvailableFeaturesSettings.toBuilder();
       patchSettings = settings.patchSettings.toBuilder();
       patchOperationSettings = settings.patchOperationSettings.toBuilder();
+      setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
+      testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               aggregatedListSettings,
               deleteSettings,
               getSettings,
+              getIamPolicySettings,
               insertSettings,
               listSettings,
               listAvailableFeaturesSettings,
-              patchSettings);
+              patchSettings,
+              setIamPolicySettings,
+              testIamPermissionsSettings);
     }
 
     private static Builder createDefault() {
@@ -613,6 +660,11 @@ public class SslPoliciesStubSettings extends StubSettings<SslPoliciesStubSetting
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
+          .getIamPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
           .insertSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
@@ -629,6 +681,16 @@ public class SslPoliciesStubSettings extends StubSettings<SslPoliciesStubSetting
 
       builder
           .patchSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .setIamPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .testIamPermissionsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
@@ -747,6 +809,11 @@ public class SslPoliciesStubSettings extends StubSettings<SslPoliciesStubSetting
       return getSettings;
     }
 
+    /** Returns the builder for the settings used for calls to getIamPolicy. */
+    public UnaryCallSettings.Builder<GetIamPolicySslPolicyRequest, Policy> getIamPolicySettings() {
+      return getIamPolicySettings;
+    }
+
     /** Returns the builder for the settings used for calls to insert. */
     public UnaryCallSettings.Builder<InsertSslPolicyRequest, Operation> insertSettings() {
       return insertSettings;
@@ -780,6 +847,17 @@ public class SslPoliciesStubSettings extends StubSettings<SslPoliciesStubSetting
     public OperationCallSettings.Builder<PatchSslPolicyRequest, Operation, Operation>
         patchOperationSettings() {
       return patchOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to setIamPolicy. */
+    public UnaryCallSettings.Builder<SetIamPolicySslPolicyRequest, Policy> setIamPolicySettings() {
+      return setIamPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to testIamPermissions. */
+    public UnaryCallSettings.Builder<TestIamPermissionsSslPolicyRequest, TestPermissionsResponse>
+        testIamPermissionsSettings() {
+      return testIamPermissionsSettings;
     }
 
     @Override

@@ -100,6 +100,7 @@ public class SessionServiceClientTest {
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
             .setIsPinned(true)
+            .setPendingAsyncAssistOperationId("pendingAsyncAssistOperationId1460582932")
             .build();
     mockSessionService.addResponse(expectedResponse);
 
@@ -153,6 +154,7 @@ public class SessionServiceClientTest {
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
             .setIsPinned(true)
+            .setPendingAsyncAssistOperationId("pendingAsyncAssistOperationId1460582932")
             .build();
     mockSessionService.addResponse(expectedResponse);
 
@@ -276,6 +278,7 @@ public class SessionServiceClientTest {
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
             .setIsPinned(true)
+            .setPendingAsyncAssistOperationId("pendingAsyncAssistOperationId1460582932")
             .build();
     mockSessionService.addResponse(expectedResponse);
 
@@ -327,6 +330,7 @@ public class SessionServiceClientTest {
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
             .setIsPinned(true)
+            .setPendingAsyncAssistOperationId("pendingAsyncAssistOperationId1460582932")
             .build();
     mockSessionService.addResponse(expectedResponse);
 
@@ -379,6 +383,7 @@ public class SessionServiceClientTest {
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
             .setIsPinned(true)
+            .setPendingAsyncAssistOperationId("pendingAsyncAssistOperationId1460582932")
             .build();
     mockSessionService.addResponse(expectedResponse);
 

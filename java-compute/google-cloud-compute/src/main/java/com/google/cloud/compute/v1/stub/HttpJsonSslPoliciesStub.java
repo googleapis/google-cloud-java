@@ -36,6 +36,7 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.AggregatedListSslPoliciesRequest;
 import com.google.cloud.compute.v1.DeleteSslPolicyRequest;
+import com.google.cloud.compute.v1.GetIamPolicySslPolicyRequest;
 import com.google.cloud.compute.v1.GetSslPolicyRequest;
 import com.google.cloud.compute.v1.InsertSslPolicyRequest;
 import com.google.cloud.compute.v1.ListAvailableFeaturesSslPoliciesRequest;
@@ -43,10 +44,14 @@ import com.google.cloud.compute.v1.ListSslPoliciesRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.PatchSslPolicyRequest;
+import com.google.cloud.compute.v1.Policy;
+import com.google.cloud.compute.v1.SetIamPolicySslPolicyRequest;
 import com.google.cloud.compute.v1.SslPoliciesAggregatedList;
 import com.google.cloud.compute.v1.SslPoliciesList;
 import com.google.cloud.compute.v1.SslPoliciesListAvailableFeaturesResponse;
 import com.google.cloud.compute.v1.SslPolicy;
+import com.google.cloud.compute.v1.TestIamPermissionsSslPolicyRequest;
+import com.google.cloud.compute.v1.TestPermissionsResponse;
 import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -208,6 +213,46 @@ public class HttpJsonSslPoliciesStub extends SslPoliciesStub {
                   .setDefaultTypeRegistry(typeRegistry)
                   .build())
           .build();
+
+  private static final ApiMethodDescriptor<GetIamPolicySslPolicyRequest, Policy>
+      getIamPolicyMethodDescriptor =
+          ApiMethodDescriptor.<GetIamPolicySslPolicyRequest, Policy>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.SslPolicies/GetIamPolicy")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetIamPolicySslPolicyRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/global/sslPolicies/{resource}/getIamPolicy",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetIamPolicySslPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "resource", request.getResource());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetIamPolicySslPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasOptionsRequestedPolicyVersion()) {
+                              serializer.putQueryParam(
+                                  fields,
+                                  "optionsRequestedPolicyVersion",
+                                  request.getOptionsRequestedPolicyVersion());
+                            }
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Policy>newBuilder()
+                      .setDefaultInstance(Policy.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
 
   private static final ApiMethodDescriptor<InsertSslPolicyRequest, Operation>
       insertMethodDescriptor =
@@ -408,6 +453,88 @@ public class HttpJsonSslPoliciesStub extends SslPoliciesStub {
               })
           .build();
 
+  private static final ApiMethodDescriptor<SetIamPolicySslPolicyRequest, Policy>
+      setIamPolicyMethodDescriptor =
+          ApiMethodDescriptor.<SetIamPolicySslPolicyRequest, Policy>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.SslPolicies/SetIamPolicy")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<SetIamPolicySslPolicyRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/global/sslPolicies/{resource}/setIamPolicy",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<SetIamPolicySslPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "resource", request.getResource());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<SetIamPolicySslPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "globalSetPolicyRequestResource",
+                                      request.getGlobalSetPolicyRequestResource(),
+                                      false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Policy>newBuilder()
+                      .setDefaultInstance(Policy.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          TestIamPermissionsSslPolicyRequest, TestPermissionsResponse>
+      testIamPermissionsMethodDescriptor =
+          ApiMethodDescriptor
+              .<TestIamPermissionsSslPolicyRequest, TestPermissionsResponse>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.SslPolicies/TestIamPermissions")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<TestIamPermissionsSslPolicyRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/global/sslPolicies/{resource}/testIamPermissions",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<TestIamPermissionsSslPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "resource", request.getResource());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<TestIamPermissionsSslPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "testPermissionsRequestResource",
+                                      request.getTestPermissionsRequestResource(),
+                                      false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<TestPermissionsResponse>newBuilder()
+                      .setDefaultInstance(TestPermissionsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private final UnaryCallable<AggregatedListSslPoliciesRequest, SslPoliciesAggregatedList>
       aggregatedListCallable;
   private final UnaryCallable<AggregatedListSslPoliciesRequest, AggregatedListPagedResponse>
@@ -416,6 +543,7 @@ public class HttpJsonSslPoliciesStub extends SslPoliciesStub {
   private final OperationCallable<DeleteSslPolicyRequest, Operation, Operation>
       deleteOperationCallable;
   private final UnaryCallable<GetSslPolicyRequest, SslPolicy> getCallable;
+  private final UnaryCallable<GetIamPolicySslPolicyRequest, Policy> getIamPolicyCallable;
   private final UnaryCallable<InsertSslPolicyRequest, Operation> insertCallable;
   private final OperationCallable<InsertSslPolicyRequest, Operation, Operation>
       insertOperationCallable;
@@ -427,6 +555,9 @@ public class HttpJsonSslPoliciesStub extends SslPoliciesStub {
   private final UnaryCallable<PatchSslPolicyRequest, Operation> patchCallable;
   private final OperationCallable<PatchSslPolicyRequest, Operation, Operation>
       patchOperationCallable;
+  private final UnaryCallable<SetIamPolicySslPolicyRequest, Policy> setIamPolicyCallable;
+  private final UnaryCallable<TestIamPermissionsSslPolicyRequest, TestPermissionsResponse>
+      testIamPermissionsCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonGlobalOperationsStub httpJsonOperationsStub;
@@ -438,6 +569,8 @@ public class HttpJsonSslPoliciesStub extends SslPoliciesStub {
       PathTemplate.create("projects/{project}/global/sslPolicies/{ssl_policy}");
   private static final PathTemplate GET_RESOURCE_NAME_TEMPLATE =
       PathTemplate.create("projects/{project}/global/sslPolicies/{ssl_policy}");
+  private static final PathTemplate GET_IAM_POLICY_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/sslPolicies/{resource}");
   private static final PathTemplate INSERT_RESOURCE_NAME_TEMPLATE =
       PathTemplate.create("projects/{project}");
   private static final PathTemplate LIST_RESOURCE_NAME_TEMPLATE =
@@ -446,6 +579,10 @@ public class HttpJsonSslPoliciesStub extends SslPoliciesStub {
       PathTemplate.create("projects/{project}");
   private static final PathTemplate PATCH_RESOURCE_NAME_TEMPLATE =
       PathTemplate.create("projects/{project}/global/sslPolicies/{ssl_policy}");
+  private static final PathTemplate SET_IAM_POLICY_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/sslPolicies/{resource}");
+  private static final PathTemplate TEST_IAM_PERMISSIONS_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/sslPolicies/{resource}");
 
   public static final HttpJsonSslPoliciesStub create(SslPoliciesStubSettings settings)
       throws IOException {
@@ -545,6 +682,25 @@ public class HttpJsonSslPoliciesStub extends SslPoliciesStub {
                   return GET_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
+    HttpJsonCallSettings<GetIamPolicySslPolicyRequest, Policy> getIamPolicyTransportSettings =
+        HttpJsonCallSettings.<GetIamPolicySslPolicyRequest, Policy>newBuilder()
+            .setMethodDescriptor(getIamPolicyMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("resource", String.valueOf(request.getResource()));
+                  return GET_IAM_POLICY_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
+            .build();
     HttpJsonCallSettings<InsertSslPolicyRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertSslPolicyRequest, Operation>newBuilder()
             .setMethodDescriptor(insertMethodDescriptor)
@@ -620,6 +776,47 @@ public class HttpJsonSslPoliciesStub extends SslPoliciesStub {
                   return PATCH_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
+    HttpJsonCallSettings<SetIamPolicySslPolicyRequest, Policy> setIamPolicyTransportSettings =
+        HttpJsonCallSettings.<SetIamPolicySslPolicyRequest, Policy>newBuilder()
+            .setMethodDescriptor(setIamPolicyMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("resource", String.valueOf(request.getResource()));
+                  return SET_IAM_POLICY_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
+            .build();
+    HttpJsonCallSettings<TestIamPermissionsSslPolicyRequest, TestPermissionsResponse>
+        testIamPermissionsTransportSettings =
+            HttpJsonCallSettings
+                .<TestIamPermissionsSslPolicyRequest, TestPermissionsResponse>newBuilder()
+                .setMethodDescriptor(testIamPermissionsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("resource", String.valueOf(request.getResource()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("resource", String.valueOf(request.getResource()));
+                      return TEST_IAM_PERMISSIONS_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
+                .build();
 
     this.aggregatedListCallable =
         callableFactory.createUnaryCallable(
@@ -639,6 +836,9 @@ public class HttpJsonSslPoliciesStub extends SslPoliciesStub {
     this.getCallable =
         callableFactory.createUnaryCallable(
             getTransportSettings, settings.getSettings(), clientContext);
+    this.getIamPolicyCallable =
+        callableFactory.createUnaryCallable(
+            getIamPolicyTransportSettings, settings.getIamPolicySettings(), clientContext);
     this.insertCallable =
         callableFactory.createUnaryCallable(
             insertTransportSettings, settings.insertSettings(), clientContext);
@@ -668,6 +868,14 @@ public class HttpJsonSslPoliciesStub extends SslPoliciesStub {
             settings.patchOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.setIamPolicyCallable =
+        callableFactory.createUnaryCallable(
+            setIamPolicyTransportSettings, settings.setIamPolicySettings(), clientContext);
+    this.testIamPermissionsCallable =
+        callableFactory.createUnaryCallable(
+            testIamPermissionsTransportSettings,
+            settings.testIamPermissionsSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -679,10 +887,13 @@ public class HttpJsonSslPoliciesStub extends SslPoliciesStub {
     methodDescriptors.add(aggregatedListMethodDescriptor);
     methodDescriptors.add(deleteMethodDescriptor);
     methodDescriptors.add(getMethodDescriptor);
+    methodDescriptors.add(getIamPolicyMethodDescriptor);
     methodDescriptors.add(insertMethodDescriptor);
     methodDescriptors.add(listMethodDescriptor);
     methodDescriptors.add(listAvailableFeaturesMethodDescriptor);
     methodDescriptors.add(patchMethodDescriptor);
+    methodDescriptors.add(setIamPolicyMethodDescriptor);
+    methodDescriptors.add(testIamPermissionsMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -711,6 +922,11 @@ public class HttpJsonSslPoliciesStub extends SslPoliciesStub {
   @Override
   public UnaryCallable<GetSslPolicyRequest, SslPolicy> getCallable() {
     return getCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetIamPolicySslPolicyRequest, Policy> getIamPolicyCallable() {
+    return getIamPolicyCallable;
   }
 
   @Override
@@ -748,6 +964,17 @@ public class HttpJsonSslPoliciesStub extends SslPoliciesStub {
   @Override
   public OperationCallable<PatchSslPolicyRequest, Operation, Operation> patchOperationCallable() {
     return patchOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<SetIamPolicySslPolicyRequest, Policy> setIamPolicyCallable() {
+    return setIamPolicyCallable;
+  }
+
+  @Override
+  public UnaryCallable<TestIamPermissionsSslPolicyRequest, TestPermissionsResponse>
+      testIamPermissionsCallable() {
+    return testIamPermissionsCallable;
   }
 
   @Override

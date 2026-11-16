@@ -172,7 +172,11 @@ import org.jspecify.annotations.Nullable;
 public class VectorSearchServiceStubSettings extends StubSettings<VectorSearchServiceStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
-      ImmutableList.<String>builder().add("https://www.googleapis.com/auth/cloud-platform").build();
+      ImmutableList.<String>builder()
+          .add("https://www.googleapis.com/auth/cloud-platform")
+          .add("https://www.googleapis.com/auth/vectorsearch")
+          .add("https://www.googleapis.com/auth/vectorsearch.readonly")
+          .build();
 
   private final PagedCallSettings<
           ListCollectionsRequest, ListCollectionsResponse, ListCollectionsPagedResponse>

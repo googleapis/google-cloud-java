@@ -57,4 +57,36 @@ public interface GetTripRequestOrBuilder
    * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The format of the route polyline to return.
+   * If not set, `SIMPLE` route polyline will be returned.
+   * </pre>
+   *
+   * <code>
+   * .google.maps.navconnect.v1.GetTripRequest.RoutePolylineFormat route_polyline_format = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for routePolylineFormat.
+   */
+  int getRoutePolylineFormatValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The format of the route polyline to return.
+   * If not set, `SIMPLE` route polyline will be returned.
+   * </pre>
+   *
+   * <code>
+   * .google.maps.navconnect.v1.GetTripRequest.RoutePolylineFormat route_polyline_format = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The routePolylineFormat.
+   */
+  com.google.maps.navconnect.v1.GetTripRequest.RoutePolylineFormat getRoutePolylineFormat();
 }

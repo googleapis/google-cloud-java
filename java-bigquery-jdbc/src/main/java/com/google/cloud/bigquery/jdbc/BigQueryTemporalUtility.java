@@ -54,7 +54,7 @@ final class BigQueryTemporalUtility {
   private static final BigDecimal MICROS_PER_SECOND = new BigDecimal("1000000");
   private static final DateTimeFormatter BASE_FORMATTER =
       DateTimeFormatter.ofPattern("uuuu-MM-dd HH:mm:ss.");
-  private static final DateTimeFormatter UTC_TIMESTAMP_TO_STRING_FORMATTER =
+  static final DateTimeFormatter UTC_TIMESTAMP_TO_STRING_FORMATTER =
       new DateTimeFormatterBuilder()
           .appendPattern("uuuu-MM-dd HH:mm:ss.")
           .appendFraction(ChronoField.NANO_OF_SECOND, 1, 9, false)
@@ -390,6 +390,12 @@ final class BigQueryTemporalUtility {
       return null;
     }
     return UTC_TIMESTAMP_TO_STRING_FORMATTER.format(ts.toInstant());
+  }
+
+  static boolean isCivilTemporalType(StandardSQLTypeName type) {
+    return type == StandardSQLTypeName.DATE
+        || type == StandardSQLTypeName.TIME
+        || type == StandardSQLTypeName.DATETIME;
   }
 
   /**

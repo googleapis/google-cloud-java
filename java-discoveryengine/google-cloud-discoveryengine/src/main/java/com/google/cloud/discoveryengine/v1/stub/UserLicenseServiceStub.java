@@ -24,6 +24,8 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.discoveryengine.v1.BatchUpdateUserLicensesMetadata;
 import com.google.cloud.discoveryengine.v1.BatchUpdateUserLicensesRequest;
 import com.google.cloud.discoveryengine.v1.BatchUpdateUserLicensesResponse;
+import com.google.cloud.discoveryengine.v1.ListLicenseConfigsUsageStatsRequest;
+import com.google.cloud.discoveryengine.v1.ListLicenseConfigsUsageStatsResponse;
 import com.google.cloud.discoveryengine.v1.ListUserLicensesRequest;
 import com.google.cloud.discoveryengine.v1.ListUserLicensesResponse;
 import com.google.longrunning.Operation;
@@ -59,6 +61,12 @@ public abstract class UserLicenseServiceStub implements BackgroundResource {
   public UnaryCallable<ListUserLicensesRequest, ListUserLicensesResponse>
       listUserLicensesCallable() {
     throw new UnsupportedOperationException("Not implemented: listUserLicensesCallable()");
+  }
+
+  public UnaryCallable<ListLicenseConfigsUsageStatsRequest, ListLicenseConfigsUsageStatsResponse>
+      listLicenseConfigsUsageStatsCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listLicenseConfigsUsageStatsCallable()");
   }
 
   public OperationCallable<

@@ -57,6 +57,10 @@ public final class SolarServiceProto extends com.google.protobuf.GeneratedFile {
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_maps_solar_v1_BuildingInsights_DetectedArrays_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_maps_solar_v1_BuildingInsights_DetectedArrays_SolarArray_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_maps_solar_v1_BuildingInsights_DetectedArrays_SolarArray_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_maps_solar_v1_SolarPotential_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_maps_solar_v1_SolarPotential_fieldAccessorTable;
@@ -130,12 +134,13 @@ public final class SolarServiceProto extends com.google.protobuf.GeneratedFile {
           + "to\022\024google.maps.solar.v1\032\034google/api/ann"
           + "otations.proto\032\027google/api/client.proto\032"
           + "\037google/api/field_behavior.proto\032\031google"
-          + "/api/httpbody.proto\032\026google/type/date.pr"
-          + "oto\032\030google/type/latlng.proto\032\027google/type/money.proto\"\307\002\n"
+          + "/api/httpbody.proto\032\034google/protobuf/str"
+          + "uct.proto\032\026google/type/date.proto\032\030googl"
+          + "e/type/latlng.proto\032\027google/type/money.proto\"\307\002\n"
           + "\"FindClosestBuildingInsightsRequest\022+\n"
           + "\010location\030\001 \001(\0132\023.google.type.LatLngB\004\342A\001\002\022D\n"
-          + "\020required_quality\030\003"
-          + " \001(\0162$.google.maps.solar.v1.ImageryQualityB\004\342A\001\001\022$\n"
+          + "\020required_quality\030\003 \001(\0162$.goo"
+          + "gle.maps.solar.v1.ImageryQualityB\004\342A\001\001\022$\n"
           + "\026exact_quality_required\030\004 \001(\010B\004\342A\001\001\022;\n"
           + "\013experiments\030\005 \003(\0162"
           + " .google.maps.solar.v1.ExperimentB\004\342A\001\001\022K\n"
@@ -143,7 +148,7 @@ public final class SolarServiceProto extends com.google.protobuf.GeneratedFile {
           + " \003(\0162(.google.maps.solar.v1.AdditionalInsightsB\004\342A\001\001\"M\n"
           + "\tLatLngBox\022\037\n"
           + "\002sw\030\001 \001(\0132\023.google.type.LatLng\022\037\n"
-          + "\002ne\030\002 \001(\0132\023.google.type.LatLng\"\327\006\n"
+          + "\002ne\030\002 \001(\0132\023.google.type.LatLng\"\351\007\n"
           + "\020BuildingInsights\022\014\n"
           + "\004name\030\001 \001(\t\022#\n"
           + "\006center\030\002 \001(\0132\023.google.type.LatLng\0225\n"
@@ -157,12 +162,16 @@ public final class SolarServiceProto extends com.google.protobuf.GeneratedFile {
           + "\017solar_potential\030\010 \001(\0132$.google.maps.solar.v1.SolarPotential\022=\n"
           + "\017imagery_quality\030\n"
           + " \001(\0162$.google.maps.solar.v1.ImageryQuality\022N\n"
-          + "\017detected_arrays\030\014"
-          + " \001(\01325.google.maps.solar.v1.BuildingInsights.DetectedArrays\032\315\002\n"
+          + "\017detected_arrays\030\014 \001(\013"
+          + "25.google.maps.solar.v1.BuildingInsights.DetectedArrays\032\337\003\n"
           + "\016DetectedArrays\022_\n"
-          + "\020detection_status\030\001 \001(\0162E.google."
-          + "maps.solar.v1.BuildingInsights.DetectedArrays.DetectionStatus\022.\n"
-          + "\023latest_capture_date\030\003 \001(\0132\021.google.type.Date\"\251\001\n"
+          + "\020detection_status\030\001 \001(\0162E.google.maps.solar"
+          + ".v1.BuildingInsights.DetectedArrays.DetectionStatus\022P\n"
+          + "\006arrays\030\002 \003(\0132@.google.map"
+          + "s.solar.v1.BuildingInsights.DetectedArrays.SolarArray\022.\n"
+          + "\023latest_capture_date\030\003 \001(\0132\021.google.type.Date\032>\n\n"
+          + "SolarArray\0220\n"
+          + "\017polygon_geojson\030\003 \001(\0132\027.google.protobuf.Struct\"\251\001\n"
           + "\017DetectionStatus\022 \n"
           + "\034DETECTION_STATUS_UNSPECIFIED\020\000\022%\n"
           + "!DETECTION_STATUS_DATA_UNAVAILABLE\020\001\022$\n"
@@ -178,15 +187,15 @@ public final class SolarServiceProto extends com.google.protobuf.GeneratedFile {
           + "\026max_array_area_meters2\030\002 \001(\002\022#\n"
           + "\033max_sunshine_hours_per_year\030\003 \001(\002\022\'\n"
           + "\037carbon_offset_factor_kg_per_mwh\030\004 \001(\002\022D\n"
-          + "\020whole_roof_stats\030\005"
-          + " \001(\0132*.google.maps.solar.v1.SizeAndSunshineStats\022B\n"
+          + "\020whole_roof_stats\030\005 \001("
+          + "\0132*.google.maps.solar.v1.SizeAndSunshineStats\022B\n"
           + "\016building_stats\030\r"
           + " \001(\0132*.google.maps.solar.v1.SizeAndSunshineStats\022Q\n"
           + "\022roof_segment_stats\030\006"
           + " \003(\01325.google.maps.solar.v1.RoofSegmentSizeAndSunshineStats\0226\n"
           + "\014solar_panels\030\016 \003(\0132 .google.maps.solar.v1.SolarPanel\022C\n"
-          + "\023solar_panel_configs\030\007"
-          + " \003(\0132&.google.maps.solar.v1.SolarPanelConfig\022C\n"
+          + "\023solar_panel_configs\030\007 \003("
+          + "\0132&.google.maps.solar.v1.SolarPanelConfig\022C\n"
           + "\022financial_analyses\030\010"
           + " \003(\0132\'.google.maps.solar.v1.FinancialAnalysis\"\346\002\n"
           + "\037RoofSegmentSizeAndSunshineStats\022\032\n\r"
@@ -231,8 +240,8 @@ public final class SolarServiceProto extends com.google.protobuf.GeneratedFile {
           + "\022panel_config_index\030\006 \001(\005H\000\210\001\001\022A\n"
           + "\021financial_details\030\007 \001(\0132&.google.maps.solar.v1.FinancialDetails\022=\n"
           + "\017leasing_savings\030\010 \001(\0132$.google.maps.solar.v1.LeasingSavings\022H\n"
-          + "\025cash_purchase_savings\030\t"
-          + " \001(\0132).google.maps.solar.v1.CashPurchaseSavings\022P\n"
+          + "\025cash_purchase_savings\030\t "
+          + "\001(\0132).google.maps.solar.v1.CashPurchaseSavings\022P\n"
           + "\031financed_purchase_savings\030\n"
           + " \001(\0132-.google.maps.solar.v1.FinancedPurchaseSavingsB\025\n"
           + "\023_panel_config_index\"\207\004\n"
@@ -250,8 +259,7 @@ public final class SolarServiceProto extends com.google.protobuf.GeneratedFile {
           + " \001(\002H\001\210\001\001B\023\n"
           + "\021_solar_percentageB\036\n"
           + "\034_percentage_exported_to_grid\"\256\002\n"
-          + "\017SavingsOverTime\022)\n"
-          + "\r"
+          + "\017SavingsOverTime\022)\n\r"
           + "savings_year1\030\001 \001(\0132\022.google.type.Money\022*\n"
           + "\016savings_year20\030\002 \001(\0132\022.google.type.Money\022;\n"
           + "\037present_value_of_savings_year20\030\003 \001(\0132\022.google.type.Money\022,\n"
@@ -280,8 +288,8 @@ public final class SolarServiceProto extends com.google.protobuf.GeneratedFile {
           + "radius_meters\030\002 \001(\002B\004\342A\001\002\0227\n"
           + "\004view\030\003"
           + " \001(\0162#.google.maps.solar.v1.DataLayerViewB\004\342A\001\001\022D\n"
-          + "\020required_quality\030\005"
-          + " \001(\0162$.google.maps.solar.v1.ImageryQualityB\004\342A\001\001\022\037\n"
+          + "\020required_quality\030\005 \001(\0162$.go"
+          + "ogle.maps.solar.v1.ImageryQualityB\004\342A\001\001\022\037\n"
           + "\021pixel_size_meters\030\006 \001(\002B\004\342A\001\001\022$\n"
           + "\026exact_quality_required\030\007 \001(\010B\004\342A\001\001\022;\n"
           + "\013experiments\030\010 \003(\0162"
@@ -322,19 +330,20 @@ public final class SolarServiceProto extends com.google.protobuf.GeneratedFile {
           + "\026EXPERIMENT_UNSPECIFIED\020\000\022\025\n"
           + "\021EXPANDED_COVERAGE\020\0012\336\003\n"
           + "\005Solar\022\251\001\n"
-          + "\033FindClosestBuildingInsights\0228.google.maps.solar.v1.FindClosestBuild"
-          + "ingInsightsRequest\032&.google.maps.solar.v1.BuildingInsights\"(\202\323\344\223\002\"\022"
+          + "\033FindClosestBuildingInsights\0228.google.maps.solar.v1."
+          + "FindClosestBuildingInsightsRequest\032&.goo"
+          + "gle.maps.solar.v1.BuildingInsights\"(\202\323\344\223\002\"\022"
           + " /v1/buildingInsights:findClosest\022y\n\r"
-          + "GetDataLayers\022*.google.maps.solar.v1.GetDataLayersRequest\032"
-          + " .google.maps.solar.v1.DataLayers\"\032\202\323\344\223\002\024\022\022/v1/dataLayers:get\022d\n\n"
-          + "GetGeoTiff\022\'.google.maps.solar.v1.GetGeoTiffRequest\032\024"
-          + ".google.api.HttpBody\"\027\202\323\344\223\002\021\022\017/v1/geoTif"
-          + "f:get\032H\312A\024solar.googleapis.com\322A.https:/"
-          + "/www.googleapis.com/auth/cloud-platformB\267\001\n"
-          + "\030com.google.maps.solar.v1B\021SolarServiceProtoP\001Z4cloud.google.com/go/maps/sola"
-          + "r/apiv1/solarpb;solarpb\242\002\007GGMPV1A\252\002\024Goog"
-          + "le.Maps.Solar.V1\312\002\024Google\\Maps\\Solar\\V1\352"
-          + "\002\027Google::Maps::Solar::V1b\006proto3"
+          + "GetDataLayers\022*.google.maps.solar.v1.GetDataLayersRequest\032 .google.maps.solar.v1"
+          + ".DataLayers\"\032\202\323\344\223\002\024\022\022/v1/dataLayers:get\022d\n\n"
+          + "GetGeoTiff\022\'.google.maps.solar.v1.Get"
+          + "GeoTiffRequest\032\024.google.api.HttpBody\"\027\202\323"
+          + "\344\223\002\021\022\017/v1/geoTiff:get\032H\312A\024solar.googleap"
+          + "is.com\322A.https://www.googleapis.com/auth/cloud-platformB\267\001\n"
+          + "\030com.google.maps.solar.v1B\021SolarServiceProtoP\001Z4cloud.google."
+          + "com/go/maps/solar/apiv1/solarpb;solarpb\242"
+          + "\002\007GGMPV1A\252\002\024Google.Maps.Solar.V1\312\002\024Googl"
+          + "e\\Maps\\Solar\\V1\352\002\027Google::Maps::Solar::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -344,6 +353,7 @@ public final class SolarServiceProto extends com.google.protobuf.GeneratedFile {
               com.google.api.ClientProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.HttpBodyProto.getDescriptor(),
+              com.google.protobuf.StructProto.getDescriptor(),
               com.google.type.DateProto.getDescriptor(),
               com.google.type.LatLngProto.getDescriptor(),
               com.google.type.MoneyProto.getDescriptor(),
@@ -392,7 +402,16 @@ public final class SolarServiceProto extends com.google.protobuf.GeneratedFile {
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_maps_solar_v1_BuildingInsights_DetectedArrays_descriptor,
             new java.lang.String[] {
-              "DetectionStatus", "LatestCaptureDate",
+              "DetectionStatus", "Arrays", "LatestCaptureDate",
+            });
+    internal_static_google_maps_solar_v1_BuildingInsights_DetectedArrays_SolarArray_descriptor =
+        internal_static_google_maps_solar_v1_BuildingInsights_DetectedArrays_descriptor
+            .getNestedType(0);
+    internal_static_google_maps_solar_v1_BuildingInsights_DetectedArrays_SolarArray_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_maps_solar_v1_BuildingInsights_DetectedArrays_SolarArray_descriptor,
+            new java.lang.String[] {
+              "PolygonGeojson",
             });
     internal_static_google_maps_solar_v1_SolarPotential_descriptor =
         getDescriptor().getMessageType(3);
@@ -570,6 +589,7 @@ public final class SolarServiceProto extends com.google.protobuf.GeneratedFile {
     com.google.api.ClientProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.HttpBodyProto.getDescriptor();
+    com.google.protobuf.StructProto.getDescriptor();
     com.google.type.DateProto.getDescriptor();
     com.google.type.LatLngProto.getDescriptor();
     com.google.type.MoneyProto.getDescriptor();

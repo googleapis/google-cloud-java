@@ -118,6 +118,16 @@ public final class InstanceGroupManagerStatusAcceleratorTopology
      *
      *
      * <pre>
+     * The accelerator topology is active but operating in degraded mode.
+     * </pre>
+     *
+     * <code>ACTIVE_DEGRADED = 471128135;</code>
+     */
+    ACTIVE_DEGRADED(471128135),
+    /**
+     *
+     *
+     * <pre>
      * The accelerator topology is being deactivated.
      * </pre>
      *
@@ -205,6 +215,17 @@ public final class InstanceGroupManagerStatusAcceleratorTopology
      *
      *
      * <pre>
+     * The accelerator topology is active but operating in degraded mode.
+     * </pre>
+     *
+     * <code>ACTIVE_DEGRADED = 471128135;</code>
+     */
+    public static final int ACTIVE_DEGRADED_VALUE = 471128135;
+
+    /**
+     *
+     *
+     * <pre>
      * The accelerator topology is being deactivated.
      * </pre>
      *
@@ -276,6 +297,8 @@ public final class InstanceGroupManagerStatusAcceleratorTopology
           return ACTIVATING;
         case 314733318:
           return ACTIVE;
+        case 471128135:
+          return ACTIVE_DEGRADED;
         case 57182257:
           return DEACTIVATING;
         case 455706685:

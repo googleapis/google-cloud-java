@@ -56,7 +56,9 @@ public interface InterconnectAttachmentInfoOrBuilder
    *
    *
    * <pre>
-   * URI of an Interconnect attachment.
+   * URI of the Interconnect attachment.
+   * Format:
+   * `projects/{project_id}/regions/{region}/interconnectAttachments/{attachment_id}`
    * </pre>
    *
    * <code>string uri = 2;</code>
@@ -69,7 +71,9 @@ public interface InterconnectAttachmentInfoOrBuilder
    *
    *
    * <pre>
-   * URI of an Interconnect attachment.
+   * URI of the Interconnect attachment.
+   * Format:
+   * `projects/{project_id}/regions/{region}/interconnectAttachments/{attachment_id}`
    * </pre>
    *
    * <code>string uri = 2;</code>
@@ -82,8 +86,8 @@ public interface InterconnectAttachmentInfoOrBuilder
    *
    *
    * <pre>
-   * URI of the Interconnect where the Interconnect attachment is
-   * configured.
+   * URI of the Interconnect.
+   * Format: `projects/{project_id}/global/interconnects/{interconnect_id}`
    * </pre>
    *
    * <code>string interconnect_uri = 3;</code>
@@ -96,8 +100,8 @@ public interface InterconnectAttachmentInfoOrBuilder
    *
    *
    * <pre>
-   * URI of the Interconnect where the Interconnect attachment is
-   * configured.
+   * URI of the Interconnect.
+   * Format: `projects/{project_id}/global/interconnects/{interconnect_id}`
    * </pre>
    *
    * <code>string interconnect_uri = 3;</code>
@@ -139,6 +143,7 @@ public interface InterconnectAttachmentInfoOrBuilder
    *
    * <pre>
    * URI of the Cloud Router to be used for dynamic routing.
+   * Format: `projects/{project_id}/regions/{region}/routers/{router_id}`
    * </pre>
    *
    * <code>string cloud_router_uri = 5;</code>
@@ -152,6 +157,7 @@ public interface InterconnectAttachmentInfoOrBuilder
    *
    * <pre>
    * URI of the Cloud Router to be used for dynamic routing.
+   * Format: `projects/{project_id}/regions/{region}/routers/{router_id}`
    * </pre>
    *
    * <code>string cloud_router_uri = 5;</code>

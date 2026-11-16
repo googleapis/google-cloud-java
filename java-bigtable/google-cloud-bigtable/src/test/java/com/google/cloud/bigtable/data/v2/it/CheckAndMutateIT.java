@@ -38,6 +38,7 @@ import com.google.cloud.bigtable.test_helpers.env.TestEnvRule;
 import com.google.protobuf.ByteString;
 import java.util.UUID;
 import java.util.concurrent.TimeUnit;
+import org.junit.Before;
 import org.junit.ClassRule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -46,6 +47,15 @@ import org.junit.runners.JUnit4;
 @RunWith(JUnit4.class)
 public class CheckAndMutateIT {
   @ClassRule public static TestEnvRule testEnvRule = new TestEnvRule();
+
+  @Before
+  public void setUp() {
+    // TODO: Remove this skip once CheckAndMutateRow is enabled on the session test backend.
+    assume()
+        .withMessage("CheckAndMutateRow is not yet enabled on the session test backend")
+        .that(System.getProperty("bigtable.internal.client-config-override", ""))
+        .isEmpty();
+  }
 
   @Test
   public void test() throws Exception {

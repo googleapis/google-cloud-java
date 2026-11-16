@@ -24,9 +24,12 @@ import com.google.cloud.storage.StorageException;
 import com.google.cloud.storage.it.BucketCleaner;
 import com.google.storage.control.v2.StorageControlClient;
 import java.util.Locale;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /** Shim to lift a BucketInfo to be a managed bucket instance */
 final class BucketInfoShim implements ManagedLifecycle {
+  private static final Logger LOGGER = LoggerFactory.getLogger(BucketInfoShim.class);
 
   private final BucketInfo bucketInfo;
   private final Storage s;
@@ -46,18 +49,24 @@ final class BucketInfoShim implements ManagedLifecycle {
 
   @Override
   public Object get() {
-    return bucketInfo;
+    return createdBucket != null ? createdBucket : bucketInfo;
   }
 
   @Override
   public void start() {
     try {
       createdBucket = s.create(bucketInfo).asBucketInfo();
+      LOGGER.info(
+          "Successfully created bucket: {} (Location: {})",
+          createdBucket.getName(),
+          createdBucket.getLocation());
     } catch (StorageException se) {
       String msg = se.getMessage().toLowerCase(Locale.US);
-      if (se.getCode() == 400 && (msg.contains("not a valid zone in location"))
-          || msg.contains("custom placement config")
-          || msg.contains("zonal")) {
+      if (se.getCode() == 400
+          && (msg.contains("not a valid zone in location")
+              || msg.contains("custom placement config")
+              || msg.contains("zonal"))) {
+        LOGGER.info("Skipping test: setup unavailable in current zone.");
         assumeTrue(
             "Skipping test due to bucket setup unavailable in current zone. (" + msg + ")", false);
       }
@@ -67,6 +76,10 @@ final class BucketInfoShim implements ManagedLifecycle {
 
   @Override
   public void stop() {
-    BucketCleaner.doCleanup(bucketInfo.getName(), s /*, ctrl*/);
+    if (ctrl != null) {
+      BucketCleaner.doCleanup(bucketInfo.getName(), s, ctrl);
+    } else {
+      BucketCleaner.doCleanup(bucketInfo.getName(), s);
+    }
   }
 }

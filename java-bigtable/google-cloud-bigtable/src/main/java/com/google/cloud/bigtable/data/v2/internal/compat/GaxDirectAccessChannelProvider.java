@@ -36,7 +36,11 @@ public class GaxDirectAccessChannelProvider implements ChannelProvider {
   public static ChannelProvider create(
       InstantiatingGrpcChannelProvider outer, @Nullable Credentials credentials) {
     InstantiatingGrpcChannelProvider directAccessProvider =
-        outer.toBuilder().setAttemptDirectPath(true).setAttemptDirectPathXds().build();
+        outer.toBuilder()
+            .setAttemptDirectPath(true)
+            .setAttemptDirectPathXds()
+            .setAllowNonDefaultServiceAccount(true)
+            .build();
 
     InstantiatingGrpcChannelProvider cloudPathProvider =
         outer.toBuilder().setAttemptDirectPath(false).build();
@@ -52,7 +56,11 @@ public class GaxDirectAccessChannelProvider implements ChannelProvider {
   public static ChannelProvider createWithFallback(
       InstantiatingGrpcChannelProvider outer, @Nullable Credentials credentials) {
     InstantiatingGrpcChannelProvider directAccessProvider =
-        outer.toBuilder().setAttemptDirectPath(true).setAttemptDirectPathXds().build();
+        outer.toBuilder()
+            .setAttemptDirectPath(true)
+            .setAttemptDirectPathXds()
+            .setAllowNonDefaultServiceAccount(true)
+            .build();
 
     InstantiatingGrpcChannelProvider cloudPathProvider =
         outer.toBuilder().setAttemptDirectPath(false).build();

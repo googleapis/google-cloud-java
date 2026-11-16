@@ -30,7 +30,8 @@ public interface ServerlessNegInfoOrBuilder
    *
    *
    * <pre>
-   * URI of the serverless network endpoint group.
+   * URI of the serverless network endpoint group in format
+   * "projects/{project}/regions/{region}/networkEndpointGroups/{network_endpoint_group}".
    * </pre>
    *
    * <code>string neg_uri = 1;</code>
@@ -43,7 +44,8 @@ public interface ServerlessNegInfoOrBuilder
    *
    *
    * <pre>
-   * URI of the serverless network endpoint group.
+   * URI of the serverless network endpoint group in format
+   * "projects/{project}/regions/{region}/networkEndpointGroups/{network_endpoint_group}".
    * </pre>
    *
    * <code>string neg_uri = 1;</code>

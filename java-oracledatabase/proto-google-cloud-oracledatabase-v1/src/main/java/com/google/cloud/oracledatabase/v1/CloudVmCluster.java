@@ -159,13 +159,13 @@ public final class CloudVmCluster extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. The name of the Exadata Infrastructure resource on which VM
-   * cluster resource is created, in the following format:
+   * Required. Immutable. The name of the Exadata Infrastructure resource on
+   * which VM cluster resource is created, in the following format:
    * projects/{project}/locations/{region}/cloudExadataInfrastuctures/{cloud_extradata_infrastructure}
    * </pre>
    *
    * <code>
-   * string exadata_infrastructure = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * string exadata_infrastructure = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The exadataInfrastructure.
@@ -187,13 +187,13 @@ public final class CloudVmCluster extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. The name of the Exadata Infrastructure resource on which VM
-   * cluster resource is created, in the following format:
+   * Required. Immutable. The name of the Exadata Infrastructure resource on
+   * which VM cluster resource is created, in the following format:
    * projects/{project}/locations/{region}/cloudExadataInfrastuctures/{cloud_extradata_infrastructure}
    * </pre>
    *
    * <code>
-   * string exadata_infrastructure = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * string exadata_infrastructure = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The bytes for exadataInfrastructure.
@@ -220,10 +220,12 @@ public final class CloudVmCluster extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. User friendly name for this resource.
+   * Optional. Immutable. User friendly name for this resource.
    * </pre>
    *
-   * <code>string display_name = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string display_name = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The displayName.
    */
@@ -244,10 +246,12 @@ public final class CloudVmCluster extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. User friendly name for this resource.
+   * Optional. Immutable. User friendly name for this resource.
    * </pre>
    *
-   * <code>string display_name = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string display_name = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The bytes for displayName.
    */
@@ -271,11 +275,11 @@ public final class CloudVmCluster extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Various properties of the VM Cluster.
+   * Optional. Immutable. Various properties of the VM Cluster.
    * </pre>
    *
    * <code>
-   * .google.cloud.oracledatabase.v1.CloudVmClusterProperties properties = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.oracledatabase.v1.CloudVmClusterProperties properties = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
    * @return Whether the properties field is set.
@@ -289,11 +293,11 @@ public final class CloudVmCluster extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Various properties of the VM Cluster.
+   * Optional. Immutable. Various properties of the VM Cluster.
    * </pre>
    *
    * <code>
-   * .google.cloud.oracledatabase.v1.CloudVmClusterProperties properties = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.oracledatabase.v1.CloudVmClusterProperties properties = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
    * @return The properties.
@@ -309,11 +313,11 @@ public final class CloudVmCluster extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Various properties of the VM Cluster.
+   * Optional. Immutable. Various properties of the VM Cluster.
    * </pre>
    *
    * <code>
-   * .google.cloud.oracledatabase.v1.CloudVmClusterProperties properties = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.oracledatabase.v1.CloudVmClusterProperties properties = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    */
   @java.lang.Override
@@ -492,10 +496,13 @@ public final class CloudVmCluster extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Network settings. CIDR to use for cluster IP allocation.
+   * Optional. Immutable. Network settings. CIDR to use for cluster IP
+   * allocation.
    * </pre>
    *
-   * <code>string cidr = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string cidr = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The cidr.
    */
@@ -516,10 +523,13 @@ public final class CloudVmCluster extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Network settings. CIDR to use for cluster IP allocation.
+   * Optional. Immutable. Network settings. CIDR to use for cluster IP
+   * allocation.
    * </pre>
    *
-   * <code>string cidr = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string cidr = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The bytes for cidr.
    */
@@ -545,10 +555,12 @@ public final class CloudVmCluster extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. CIDR range of the backup subnet.
+   * Optional. Immutable. CIDR range of the backup subnet.
    * </pre>
    *
-   * <code>string backup_subnet_cidr = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string backup_subnet_cidr = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The backupSubnetCidr.
    */
@@ -569,10 +581,12 @@ public final class CloudVmCluster extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. CIDR range of the backup subnet.
+   * Optional. Immutable. CIDR range of the backup subnet.
    * </pre>
    *
-   * <code>string backup_subnet_cidr = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string backup_subnet_cidr = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The bytes for backupSubnetCidr.
    */
@@ -598,12 +612,12 @@ public final class CloudVmCluster extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The name of the VPC network.
+   * Optional. Immutable. The name of the VPC network.
    * Format: projects/{project}/global/networks/{network}
    * </pre>
    *
    * <code>
-   * string network = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * string network = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The network.
@@ -625,12 +639,12 @@ public final class CloudVmCluster extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The name of the VPC network.
+   * Optional. Immutable. The name of the VPC network.
    * Format: projects/{project}/global/networks/{network}
    * </pre>
    *
    * <code>
-   * string network = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * string network = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The bytes for network.
@@ -714,15 +728,15 @@ public final class CloudVmCluster extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The name of the OdbNetwork associated with the VM Cluster.
-   * Format:
+   * Optional. Immutable. The name of the OdbNetwork associated with the VM
+   * Cluster. Format:
    * projects/{project}/locations/{location}/odbNetworks/{odb_network}
    * It is optional but if specified, this should match the parent ODBNetwork of
    * the odb_subnet and backup_odb_subnet.
    * </pre>
    *
    * <code>
-   * string odb_network = 13 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * string odb_network = 13 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The odbNetwork.
@@ -744,15 +758,15 @@ public final class CloudVmCluster extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The name of the OdbNetwork associated with the VM Cluster.
-   * Format:
+   * Optional. Immutable. The name of the OdbNetwork associated with the VM
+   * Cluster. Format:
    * projects/{project}/locations/{location}/odbNetworks/{odb_network}
    * It is optional but if specified, this should match the parent ODBNetwork of
    * the odb_subnet and backup_odb_subnet.
    * </pre>
    *
    * <code>
-   * string odb_network = 13 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * string odb_network = 13 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The bytes for odbNetwork.
@@ -779,13 +793,13 @@ public final class CloudVmCluster extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The name of the OdbSubnet associated with the VM Cluster for
-   * IP allocation. Format:
+   * Optional. Immutable. The name of the OdbSubnet associated with the VM
+   * Cluster for IP allocation. Format:
    * projects/{project}/locations/{location}/odbNetworks/{odb_network}/odbSubnets/{odb_subnet}
    * </pre>
    *
    * <code>
-   * string odb_subnet = 14 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * string odb_subnet = 14 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The odbSubnet.
@@ -807,13 +821,13 @@ public final class CloudVmCluster extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The name of the OdbSubnet associated with the VM Cluster for
-   * IP allocation. Format:
+   * Optional. Immutable. The name of the OdbSubnet associated with the VM
+   * Cluster for IP allocation. Format:
    * projects/{project}/locations/{location}/odbNetworks/{odb_network}/odbSubnets/{odb_subnet}
    * </pre>
    *
    * <code>
-   * string odb_subnet = 14 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * string odb_subnet = 14 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The bytes for odbSubnet.
@@ -840,13 +854,13 @@ public final class CloudVmCluster extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The name of the backup OdbSubnet associated with the VM Cluster.
-   * Format:
+   * Optional. Immutable. The name of the backup OdbSubnet associated with the
+   * VM Cluster. Format:
    * projects/{project}/locations/{location}/odbNetworks/{odb_network}/odbSubnets/{odb_subnet}
    * </pre>
    *
    * <code>
-   * string backup_odb_subnet = 15 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * string backup_odb_subnet = 15 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The backupOdbSubnet.
@@ -868,13 +882,13 @@ public final class CloudVmCluster extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The name of the backup OdbSubnet associated with the VM Cluster.
-   * Format:
+   * Optional. Immutable. The name of the backup OdbSubnet associated with the
+   * VM Cluster. Format:
    * projects/{project}/locations/{location}/odbNetworks/{odb_network}/odbSubnets/{odb_subnet}
    * </pre>
    *
    * <code>
-   * string backup_odb_subnet = 15 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * string backup_odb_subnet = 15 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The bytes for backupOdbSubnet.
@@ -1025,13 +1039,13 @@ public final class CloudVmCluster extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The name of ExascaleDbStorageVault associated with the VM
-   * Cluster. Format:
+   * Optional. Immutable. The name of ExascaleDbStorageVault associated with the
+   * VM Cluster. Format:
    * projects/{project}/locations/{location}/exascaleDbStorageVaults/{exascale_db_storage_vault}
    * </pre>
    *
    * <code>
-   * string exascale_db_storage_vault = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * string exascale_db_storage_vault = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The exascaleDbStorageVault.
@@ -1053,13 +1067,13 @@ public final class CloudVmCluster extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The name of ExascaleDbStorageVault associated with the VM
-   * Cluster. Format:
+   * Optional. Immutable. The name of ExascaleDbStorageVault associated with the
+   * VM Cluster. Format:
    * projects/{project}/locations/{location}/exascaleDbStorageVaults/{exascale_db_storage_vault}
    * </pre>
    *
    * <code>
-   * string exascale_db_storage_vault = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * string exascale_db_storage_vault = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The bytes for exascaleDbStorageVault.
@@ -1075,6 +1089,31 @@ public final class CloudVmCluster extends com.google.protobuf.GeneratedMessage
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int IDENTITY_CONNECTOR_DISABLED_FIELD_NUMBER = 19;
+  private boolean identityConnectorDisabled_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. If set to true, disables the automatic
+   * provisioning of the Workload Identity Connector during creation. If set to
+   * false or omitted, the Workload Identity Connector will be automatically
+   * provisioned by default. Note: Provisioning the Workload Identity Connector
+   * is a prerequisite for enabling Google Cloud CMEK.
+   * </pre>
+   *
+   * <code>
+   * bool identity_connector_disabled = 19 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The identityConnectorDisabled.
+   */
+  @java.lang.Override
+  public boolean getIdentityConnectorDisabled() {
+    return identityConnectorDisabled_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1137,6 +1176,9 @@ public final class CloudVmCluster extends com.google.protobuf.GeneratedMessage
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(odbDnsZone_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 18, odbDnsZone_);
+    }
+    if (identityConnectorDisabled_ != false) {
+      output.writeBool(19, identityConnectorDisabled_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -1202,6 +1244,9 @@ public final class CloudVmCluster extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(odbDnsZone_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(18, odbDnsZone_);
     }
+    if (identityConnectorDisabled_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(19, identityConnectorDisabled_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1243,6 +1288,7 @@ public final class CloudVmCluster extends com.google.protobuf.GeneratedMessage
       if (!getIdentityConnector().equals(other.getIdentityConnector())) return false;
     }
     if (!getExascaleDbStorageVault().equals(other.getExascaleDbStorageVault())) return false;
+    if (getIdentityConnectorDisabled() != other.getIdentityConnectorDisabled()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1294,6 +1340,8 @@ public final class CloudVmCluster extends com.google.protobuf.GeneratedMessage
     }
     hash = (37 * hash) + EXASCALE_DB_STORAGE_VAULT_FIELD_NUMBER;
     hash = (53 * hash) + getExascaleDbStorageVault().hashCode();
+    hash = (37 * hash) + IDENTITY_CONNECTOR_DISABLED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIdentityConnectorDisabled());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1496,6 +1544,7 @@ public final class CloudVmCluster extends com.google.protobuf.GeneratedMessage
         identityConnectorBuilder_ = null;
       }
       exascaleDbStorageVault_ = "";
+      identityConnectorDisabled_ = false;
       return this;
     }
 
@@ -1588,6 +1637,9 @@ public final class CloudVmCluster extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x00008000) != 0)) {
         result.exascaleDbStorageVault_ = exascaleDbStorageVault_;
       }
+      if (((from_bitField0_ & 0x00010000) != 0)) {
+        result.identityConnectorDisabled_ = identityConnectorDisabled_;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -1674,6 +1726,9 @@ public final class CloudVmCluster extends com.google.protobuf.GeneratedMessage
         exascaleDbStorageVault_ = other.exascaleDbStorageVault_;
         bitField0_ |= 0x00008000;
         onChanged();
+      }
+      if (other.getIdentityConnectorDisabled() != false) {
+        setIdentityConnectorDisabled(other.getIdentityConnectorDisabled());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1806,6 +1861,12 @@ public final class CloudVmCluster extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00002000;
                 break;
               } // case 146
+            case 152:
+              {
+                identityConnectorDisabled_ = input.readBool();
+                bitField0_ |= 0x00010000;
+                break;
+              } // case 152
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1947,13 +2008,13 @@ public final class CloudVmCluster extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The name of the Exadata Infrastructure resource on which VM
-     * cluster resource is created, in the following format:
+     * Required. Immutable. The name of the Exadata Infrastructure resource on
+     * which VM cluster resource is created, in the following format:
      * projects/{project}/locations/{region}/cloudExadataInfrastuctures/{cloud_extradata_infrastructure}
      * </pre>
      *
      * <code>
-     * string exadata_infrastructure = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * string exadata_infrastructure = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return The exadataInfrastructure.
@@ -1974,13 +2035,13 @@ public final class CloudVmCluster extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The name of the Exadata Infrastructure resource on which VM
-     * cluster resource is created, in the following format:
+     * Required. Immutable. The name of the Exadata Infrastructure resource on
+     * which VM cluster resource is created, in the following format:
      * projects/{project}/locations/{region}/cloudExadataInfrastuctures/{cloud_extradata_infrastructure}
      * </pre>
      *
      * <code>
-     * string exadata_infrastructure = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * string exadata_infrastructure = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return The bytes for exadataInfrastructure.
@@ -2001,13 +2062,13 @@ public final class CloudVmCluster extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The name of the Exadata Infrastructure resource on which VM
-     * cluster resource is created, in the following format:
+     * Required. Immutable. The name of the Exadata Infrastructure resource on
+     * which VM cluster resource is created, in the following format:
      * projects/{project}/locations/{region}/cloudExadataInfrastuctures/{cloud_extradata_infrastructure}
      * </pre>
      *
      * <code>
-     * string exadata_infrastructure = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * string exadata_infrastructure = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @param value The exadataInfrastructure to set.
@@ -2027,13 +2088,13 @@ public final class CloudVmCluster extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The name of the Exadata Infrastructure resource on which VM
-     * cluster resource is created, in the following format:
+     * Required. Immutable. The name of the Exadata Infrastructure resource on
+     * which VM cluster resource is created, in the following format:
      * projects/{project}/locations/{region}/cloudExadataInfrastuctures/{cloud_extradata_infrastructure}
      * </pre>
      *
      * <code>
-     * string exadata_infrastructure = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * string exadata_infrastructure = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return This builder for chaining.
@@ -2049,13 +2110,13 @@ public final class CloudVmCluster extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The name of the Exadata Infrastructure resource on which VM
-     * cluster resource is created, in the following format:
+     * Required. Immutable. The name of the Exadata Infrastructure resource on
+     * which VM cluster resource is created, in the following format:
      * projects/{project}/locations/{region}/cloudExadataInfrastuctures/{cloud_extradata_infrastructure}
      * </pre>
      *
      * <code>
-     * string exadata_infrastructure = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * string exadata_infrastructure = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @param value The bytes for exadataInfrastructure to set.
@@ -2078,10 +2139,12 @@ public final class CloudVmCluster extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. User friendly name for this resource.
+     * Optional. Immutable. User friendly name for this resource.
      * </pre>
      *
-     * <code>string display_name = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string display_name = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return The displayName.
      */
@@ -2101,10 +2164,12 @@ public final class CloudVmCluster extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. User friendly name for this resource.
+     * Optional. Immutable. User friendly name for this resource.
      * </pre>
      *
-     * <code>string display_name = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string display_name = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return The bytes for displayName.
      */
@@ -2124,10 +2189,12 @@ public final class CloudVmCluster extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. User friendly name for this resource.
+     * Optional. Immutable. User friendly name for this resource.
      * </pre>
      *
-     * <code>string display_name = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string display_name = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @param value The displayName to set.
      * @return This builder for chaining.
@@ -2146,10 +2213,12 @@ public final class CloudVmCluster extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. User friendly name for this resource.
+     * Optional. Immutable. User friendly name for this resource.
      * </pre>
      *
-     * <code>string display_name = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string display_name = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -2164,10 +2233,12 @@ public final class CloudVmCluster extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. User friendly name for this resource.
+     * Optional. Immutable. User friendly name for this resource.
      * </pre>
      *
-     * <code>string display_name = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string display_name = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @param value The bytes for displayName to set.
      * @return This builder for chaining.
@@ -2194,11 +2265,11 @@ public final class CloudVmCluster extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Various properties of the VM Cluster.
+     * Optional. Immutable. Various properties of the VM Cluster.
      * </pre>
      *
      * <code>
-     * .google.cloud.oracledatabase.v1.CloudVmClusterProperties properties = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.oracledatabase.v1.CloudVmClusterProperties properties = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @return Whether the properties field is set.
@@ -2211,11 +2282,11 @@ public final class CloudVmCluster extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Various properties of the VM Cluster.
+     * Optional. Immutable. Various properties of the VM Cluster.
      * </pre>
      *
      * <code>
-     * .google.cloud.oracledatabase.v1.CloudVmClusterProperties properties = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.oracledatabase.v1.CloudVmClusterProperties properties = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @return The properties.
@@ -2234,11 +2305,11 @@ public final class CloudVmCluster extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Various properties of the VM Cluster.
+     * Optional. Immutable. Various properties of the VM Cluster.
      * </pre>
      *
      * <code>
-     * .google.cloud.oracledatabase.v1.CloudVmClusterProperties properties = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.oracledatabase.v1.CloudVmClusterProperties properties = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     public Builder setProperties(
@@ -2260,11 +2331,11 @@ public final class CloudVmCluster extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Various properties of the VM Cluster.
+     * Optional. Immutable. Various properties of the VM Cluster.
      * </pre>
      *
      * <code>
-     * .google.cloud.oracledatabase.v1.CloudVmClusterProperties properties = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.oracledatabase.v1.CloudVmClusterProperties properties = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     public Builder setProperties(
@@ -2283,11 +2354,11 @@ public final class CloudVmCluster extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Various properties of the VM Cluster.
+     * Optional. Immutable. Various properties of the VM Cluster.
      * </pre>
      *
      * <code>
-     * .google.cloud.oracledatabase.v1.CloudVmClusterProperties properties = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.oracledatabase.v1.CloudVmClusterProperties properties = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     public Builder mergeProperties(
@@ -2316,11 +2387,11 @@ public final class CloudVmCluster extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Various properties of the VM Cluster.
+     * Optional. Immutable. Various properties of the VM Cluster.
      * </pre>
      *
      * <code>
-     * .google.cloud.oracledatabase.v1.CloudVmClusterProperties properties = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.oracledatabase.v1.CloudVmClusterProperties properties = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     public Builder clearProperties() {
@@ -2338,11 +2409,11 @@ public final class CloudVmCluster extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Various properties of the VM Cluster.
+     * Optional. Immutable. Various properties of the VM Cluster.
      * </pre>
      *
      * <code>
-     * .google.cloud.oracledatabase.v1.CloudVmClusterProperties properties = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.oracledatabase.v1.CloudVmClusterProperties properties = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     public com.google.cloud.oracledatabase.v1.CloudVmClusterProperties.Builder
@@ -2356,11 +2427,11 @@ public final class CloudVmCluster extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Various properties of the VM Cluster.
+     * Optional. Immutable. Various properties of the VM Cluster.
      * </pre>
      *
      * <code>
-     * .google.cloud.oracledatabase.v1.CloudVmClusterProperties properties = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.oracledatabase.v1.CloudVmClusterProperties properties = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     public com.google.cloud.oracledatabase.v1.CloudVmClusterPropertiesOrBuilder
@@ -2378,11 +2449,11 @@ public final class CloudVmCluster extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Various properties of the VM Cluster.
+     * Optional. Immutable. Various properties of the VM Cluster.
      * </pre>
      *
      * <code>
-     * .google.cloud.oracledatabase.v1.CloudVmClusterProperties properties = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.oracledatabase.v1.CloudVmClusterProperties properties = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilder<
@@ -2792,10 +2863,13 @@ public final class CloudVmCluster extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Network settings. CIDR to use for cluster IP allocation.
+     * Optional. Immutable. Network settings. CIDR to use for cluster IP
+     * allocation.
      * </pre>
      *
-     * <code>string cidr = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string cidr = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return The cidr.
      */
@@ -2815,10 +2889,13 @@ public final class CloudVmCluster extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Network settings. CIDR to use for cluster IP allocation.
+     * Optional. Immutable. Network settings. CIDR to use for cluster IP
+     * allocation.
      * </pre>
      *
-     * <code>string cidr = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string cidr = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return The bytes for cidr.
      */
@@ -2838,10 +2915,13 @@ public final class CloudVmCluster extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Network settings. CIDR to use for cluster IP allocation.
+     * Optional. Immutable. Network settings. CIDR to use for cluster IP
+     * allocation.
      * </pre>
      *
-     * <code>string cidr = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string cidr = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @param value The cidr to set.
      * @return This builder for chaining.
@@ -2860,10 +2940,13 @@ public final class CloudVmCluster extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Network settings. CIDR to use for cluster IP allocation.
+     * Optional. Immutable. Network settings. CIDR to use for cluster IP
+     * allocation.
      * </pre>
      *
-     * <code>string cidr = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string cidr = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -2878,10 +2961,13 @@ public final class CloudVmCluster extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Network settings. CIDR to use for cluster IP allocation.
+     * Optional. Immutable. Network settings. CIDR to use for cluster IP
+     * allocation.
      * </pre>
      *
-     * <code>string cidr = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string cidr = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @param value The bytes for cidr to set.
      * @return This builder for chaining.
@@ -2903,10 +2989,12 @@ public final class CloudVmCluster extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. CIDR range of the backup subnet.
+     * Optional. Immutable. CIDR range of the backup subnet.
      * </pre>
      *
-     * <code>string backup_subnet_cidr = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string backup_subnet_cidr = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return The backupSubnetCidr.
      */
@@ -2926,10 +3014,12 @@ public final class CloudVmCluster extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. CIDR range of the backup subnet.
+     * Optional. Immutable. CIDR range of the backup subnet.
      * </pre>
      *
-     * <code>string backup_subnet_cidr = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string backup_subnet_cidr = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return The bytes for backupSubnetCidr.
      */
@@ -2949,10 +3039,12 @@ public final class CloudVmCluster extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. CIDR range of the backup subnet.
+     * Optional. Immutable. CIDR range of the backup subnet.
      * </pre>
      *
-     * <code>string backup_subnet_cidr = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string backup_subnet_cidr = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @param value The backupSubnetCidr to set.
      * @return This builder for chaining.
@@ -2971,10 +3063,12 @@ public final class CloudVmCluster extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. CIDR range of the backup subnet.
+     * Optional. Immutable. CIDR range of the backup subnet.
      * </pre>
      *
-     * <code>string backup_subnet_cidr = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string backup_subnet_cidr = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -2989,10 +3083,12 @@ public final class CloudVmCluster extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. CIDR range of the backup subnet.
+     * Optional. Immutable. CIDR range of the backup subnet.
      * </pre>
      *
-     * <code>string backup_subnet_cidr = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string backup_subnet_cidr = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @param value The bytes for backupSubnetCidr to set.
      * @return This builder for chaining.
@@ -3014,12 +3110,12 @@ public final class CloudVmCluster extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The name of the VPC network.
+     * Optional. Immutable. The name of the VPC network.
      * Format: projects/{project}/global/networks/{network}
      * </pre>
      *
      * <code>
-     * string network = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * string network = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return The network.
@@ -3040,12 +3136,12 @@ public final class CloudVmCluster extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The name of the VPC network.
+     * Optional. Immutable. The name of the VPC network.
      * Format: projects/{project}/global/networks/{network}
      * </pre>
      *
      * <code>
-     * string network = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * string network = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return The bytes for network.
@@ -3066,12 +3162,12 @@ public final class CloudVmCluster extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The name of the VPC network.
+     * Optional. Immutable. The name of the VPC network.
      * Format: projects/{project}/global/networks/{network}
      * </pre>
      *
      * <code>
-     * string network = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * string network = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @param value The network to set.
@@ -3091,12 +3187,12 @@ public final class CloudVmCluster extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The name of the VPC network.
+     * Optional. Immutable. The name of the VPC network.
      * Format: projects/{project}/global/networks/{network}
      * </pre>
      *
      * <code>
-     * string network = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * string network = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return This builder for chaining.
@@ -3112,12 +3208,12 @@ public final class CloudVmCluster extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The name of the VPC network.
+     * Optional. Immutable. The name of the VPC network.
      * Format: projects/{project}/global/networks/{network}
      * </pre>
      *
      * <code>
-     * string network = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * string network = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @param value The bytes for network to set.
@@ -3261,15 +3357,15 @@ public final class CloudVmCluster extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The name of the OdbNetwork associated with the VM Cluster.
-     * Format:
+     * Optional. Immutable. The name of the OdbNetwork associated with the VM
+     * Cluster. Format:
      * projects/{project}/locations/{location}/odbNetworks/{odb_network}
      * It is optional but if specified, this should match the parent ODBNetwork of
      * the odb_subnet and backup_odb_subnet.
      * </pre>
      *
      * <code>
-     * string odb_network = 13 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * string odb_network = 13 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return The odbNetwork.
@@ -3290,15 +3386,15 @@ public final class CloudVmCluster extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The name of the OdbNetwork associated with the VM Cluster.
-     * Format:
+     * Optional. Immutable. The name of the OdbNetwork associated with the VM
+     * Cluster. Format:
      * projects/{project}/locations/{location}/odbNetworks/{odb_network}
      * It is optional but if specified, this should match the parent ODBNetwork of
      * the odb_subnet and backup_odb_subnet.
      * </pre>
      *
      * <code>
-     * string odb_network = 13 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * string odb_network = 13 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return The bytes for odbNetwork.
@@ -3319,15 +3415,15 @@ public final class CloudVmCluster extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The name of the OdbNetwork associated with the VM Cluster.
-     * Format:
+     * Optional. Immutable. The name of the OdbNetwork associated with the VM
+     * Cluster. Format:
      * projects/{project}/locations/{location}/odbNetworks/{odb_network}
      * It is optional but if specified, this should match the parent ODBNetwork of
      * the odb_subnet and backup_odb_subnet.
      * </pre>
      *
      * <code>
-     * string odb_network = 13 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * string odb_network = 13 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @param value The odbNetwork to set.
@@ -3347,15 +3443,15 @@ public final class CloudVmCluster extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The name of the OdbNetwork associated with the VM Cluster.
-     * Format:
+     * Optional. Immutable. The name of the OdbNetwork associated with the VM
+     * Cluster. Format:
      * projects/{project}/locations/{location}/odbNetworks/{odb_network}
      * It is optional but if specified, this should match the parent ODBNetwork of
      * the odb_subnet and backup_odb_subnet.
      * </pre>
      *
      * <code>
-     * string odb_network = 13 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * string odb_network = 13 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return This builder for chaining.
@@ -3371,15 +3467,15 @@ public final class CloudVmCluster extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The name of the OdbNetwork associated with the VM Cluster.
-     * Format:
+     * Optional. Immutable. The name of the OdbNetwork associated with the VM
+     * Cluster. Format:
      * projects/{project}/locations/{location}/odbNetworks/{odb_network}
      * It is optional but if specified, this should match the parent ODBNetwork of
      * the odb_subnet and backup_odb_subnet.
      * </pre>
      *
      * <code>
-     * string odb_network = 13 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * string odb_network = 13 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @param value The bytes for odbNetwork to set.
@@ -3402,13 +3498,13 @@ public final class CloudVmCluster extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The name of the OdbSubnet associated with the VM Cluster for
-     * IP allocation. Format:
+     * Optional. Immutable. The name of the OdbSubnet associated with the VM
+     * Cluster for IP allocation. Format:
      * projects/{project}/locations/{location}/odbNetworks/{odb_network}/odbSubnets/{odb_subnet}
      * </pre>
      *
      * <code>
-     * string odb_subnet = 14 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * string odb_subnet = 14 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return The odbSubnet.
@@ -3429,13 +3525,13 @@ public final class CloudVmCluster extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The name of the OdbSubnet associated with the VM Cluster for
-     * IP allocation. Format:
+     * Optional. Immutable. The name of the OdbSubnet associated with the VM
+     * Cluster for IP allocation. Format:
      * projects/{project}/locations/{location}/odbNetworks/{odb_network}/odbSubnets/{odb_subnet}
      * </pre>
      *
      * <code>
-     * string odb_subnet = 14 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * string odb_subnet = 14 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return The bytes for odbSubnet.
@@ -3456,13 +3552,13 @@ public final class CloudVmCluster extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The name of the OdbSubnet associated with the VM Cluster for
-     * IP allocation. Format:
+     * Optional. Immutable. The name of the OdbSubnet associated with the VM
+     * Cluster for IP allocation. Format:
      * projects/{project}/locations/{location}/odbNetworks/{odb_network}/odbSubnets/{odb_subnet}
      * </pre>
      *
      * <code>
-     * string odb_subnet = 14 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * string odb_subnet = 14 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @param value The odbSubnet to set.
@@ -3482,13 +3578,13 @@ public final class CloudVmCluster extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The name of the OdbSubnet associated with the VM Cluster for
-     * IP allocation. Format:
+     * Optional. Immutable. The name of the OdbSubnet associated with the VM
+     * Cluster for IP allocation. Format:
      * projects/{project}/locations/{location}/odbNetworks/{odb_network}/odbSubnets/{odb_subnet}
      * </pre>
      *
      * <code>
-     * string odb_subnet = 14 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * string odb_subnet = 14 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return This builder for chaining.
@@ -3504,13 +3600,13 @@ public final class CloudVmCluster extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The name of the OdbSubnet associated with the VM Cluster for
-     * IP allocation. Format:
+     * Optional. Immutable. The name of the OdbSubnet associated with the VM
+     * Cluster for IP allocation. Format:
      * projects/{project}/locations/{location}/odbNetworks/{odb_network}/odbSubnets/{odb_subnet}
      * </pre>
      *
      * <code>
-     * string odb_subnet = 14 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * string odb_subnet = 14 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @param value The bytes for odbSubnet to set.
@@ -3533,13 +3629,13 @@ public final class CloudVmCluster extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The name of the backup OdbSubnet associated with the VM Cluster.
-     * Format:
+     * Optional. Immutable. The name of the backup OdbSubnet associated with the
+     * VM Cluster. Format:
      * projects/{project}/locations/{location}/odbNetworks/{odb_network}/odbSubnets/{odb_subnet}
      * </pre>
      *
      * <code>
-     * string backup_odb_subnet = 15 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * string backup_odb_subnet = 15 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return The backupOdbSubnet.
@@ -3560,13 +3656,13 @@ public final class CloudVmCluster extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The name of the backup OdbSubnet associated with the VM Cluster.
-     * Format:
+     * Optional. Immutable. The name of the backup OdbSubnet associated with the
+     * VM Cluster. Format:
      * projects/{project}/locations/{location}/odbNetworks/{odb_network}/odbSubnets/{odb_subnet}
      * </pre>
      *
      * <code>
-     * string backup_odb_subnet = 15 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * string backup_odb_subnet = 15 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return The bytes for backupOdbSubnet.
@@ -3587,13 +3683,13 @@ public final class CloudVmCluster extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The name of the backup OdbSubnet associated with the VM Cluster.
-     * Format:
+     * Optional. Immutable. The name of the backup OdbSubnet associated with the
+     * VM Cluster. Format:
      * projects/{project}/locations/{location}/odbNetworks/{odb_network}/odbSubnets/{odb_subnet}
      * </pre>
      *
      * <code>
-     * string backup_odb_subnet = 15 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * string backup_odb_subnet = 15 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @param value The backupOdbSubnet to set.
@@ -3613,13 +3709,13 @@ public final class CloudVmCluster extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The name of the backup OdbSubnet associated with the VM Cluster.
-     * Format:
+     * Optional. Immutable. The name of the backup OdbSubnet associated with the
+     * VM Cluster. Format:
      * projects/{project}/locations/{location}/odbNetworks/{odb_network}/odbSubnets/{odb_subnet}
      * </pre>
      *
      * <code>
-     * string backup_odb_subnet = 15 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * string backup_odb_subnet = 15 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return This builder for chaining.
@@ -3635,13 +3731,13 @@ public final class CloudVmCluster extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The name of the backup OdbSubnet associated with the VM Cluster.
-     * Format:
+     * Optional. Immutable. The name of the backup OdbSubnet associated with the
+     * VM Cluster. Format:
      * projects/{project}/locations/{location}/odbNetworks/{odb_network}/odbSubnets/{odb_subnet}
      * </pre>
      *
      * <code>
-     * string backup_odb_subnet = 15 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * string backup_odb_subnet = 15 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @param value The bytes for backupOdbSubnet to set.
@@ -4022,13 +4118,13 @@ public final class CloudVmCluster extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The name of ExascaleDbStorageVault associated with the VM
-     * Cluster. Format:
+     * Optional. Immutable. The name of ExascaleDbStorageVault associated with the
+     * VM Cluster. Format:
      * projects/{project}/locations/{location}/exascaleDbStorageVaults/{exascale_db_storage_vault}
      * </pre>
      *
      * <code>
-     * string exascale_db_storage_vault = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * string exascale_db_storage_vault = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return The exascaleDbStorageVault.
@@ -4049,13 +4145,13 @@ public final class CloudVmCluster extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The name of ExascaleDbStorageVault associated with the VM
-     * Cluster. Format:
+     * Optional. Immutable. The name of ExascaleDbStorageVault associated with the
+     * VM Cluster. Format:
      * projects/{project}/locations/{location}/exascaleDbStorageVaults/{exascale_db_storage_vault}
      * </pre>
      *
      * <code>
-     * string exascale_db_storage_vault = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * string exascale_db_storage_vault = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return The bytes for exascaleDbStorageVault.
@@ -4076,13 +4172,13 @@ public final class CloudVmCluster extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The name of ExascaleDbStorageVault associated with the VM
-     * Cluster. Format:
+     * Optional. Immutable. The name of ExascaleDbStorageVault associated with the
+     * VM Cluster. Format:
      * projects/{project}/locations/{location}/exascaleDbStorageVaults/{exascale_db_storage_vault}
      * </pre>
      *
      * <code>
-     * string exascale_db_storage_vault = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * string exascale_db_storage_vault = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @param value The exascaleDbStorageVault to set.
@@ -4102,13 +4198,13 @@ public final class CloudVmCluster extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The name of ExascaleDbStorageVault associated with the VM
-     * Cluster. Format:
+     * Optional. Immutable. The name of ExascaleDbStorageVault associated with the
+     * VM Cluster. Format:
      * projects/{project}/locations/{location}/exascaleDbStorageVaults/{exascale_db_storage_vault}
      * </pre>
      *
      * <code>
-     * string exascale_db_storage_vault = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * string exascale_db_storage_vault = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return This builder for chaining.
@@ -4124,13 +4220,13 @@ public final class CloudVmCluster extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The name of ExascaleDbStorageVault associated with the VM
-     * Cluster. Format:
+     * Optional. Immutable. The name of ExascaleDbStorageVault associated with the
+     * VM Cluster. Format:
      * projects/{project}/locations/{location}/exascaleDbStorageVaults/{exascale_db_storage_vault}
      * </pre>
      *
      * <code>
-     * string exascale_db_storage_vault = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * string exascale_db_storage_vault = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @param value The bytes for exascaleDbStorageVault to set.
@@ -4143,6 +4239,80 @@ public final class CloudVmCluster extends com.google.protobuf.GeneratedMessage
       checkByteStringIsUtf8(value);
       exascaleDbStorageVault_ = value;
       bitField0_ |= 0x00008000;
+      onChanged();
+      return this;
+    }
+
+    private boolean identityConnectorDisabled_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Immutable. If set to true, disables the automatic
+     * provisioning of the Workload Identity Connector during creation. If set to
+     * false or omitted, the Workload Identity Connector will be automatically
+     * provisioned by default. Note: Provisioning the Workload Identity Connector
+     * is a prerequisite for enabling Google Cloud CMEK.
+     * </pre>
+     *
+     * <code>
+     * bool identity_connector_disabled = 19 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return The identityConnectorDisabled.
+     */
+    @java.lang.Override
+    public boolean getIdentityConnectorDisabled() {
+      return identityConnectorDisabled_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Immutable. If set to true, disables the automatic
+     * provisioning of the Workload Identity Connector during creation. If set to
+     * false or omitted, the Workload Identity Connector will be automatically
+     * provisioned by default. Note: Provisioning the Workload Identity Connector
+     * is a prerequisite for enabling Google Cloud CMEK.
+     * </pre>
+     *
+     * <code>
+     * bool identity_connector_disabled = 19 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @param value The identityConnectorDisabled to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIdentityConnectorDisabled(boolean value) {
+
+      identityConnectorDisabled_ = value;
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Immutable. If set to true, disables the automatic
+     * provisioning of the Workload Identity Connector during creation. If set to
+     * false or omitted, the Workload Identity Connector will be automatically
+     * provisioned by default. Note: Provisioning the Workload Identity Connector
+     * is a prerequisite for enabling Google Cloud CMEK.
+     * </pre>
+     *
+     * <code>
+     * bool identity_connector_disabled = 19 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearIdentityConnectorDisabled() {
+      bitField0_ = (bitField0_ & ~0x00010000);
+      identityConnectorDisabled_ = false;
       onChanged();
       return this;
     }

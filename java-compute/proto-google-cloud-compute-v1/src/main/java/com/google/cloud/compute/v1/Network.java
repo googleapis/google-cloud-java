@@ -56,6 +56,7 @@ public final class Network extends com.google.protobuf.GeneratedMessage
 
   private Network() {
     iPv4Range_ = "";
+    additionalTags_ = com.google.protobuf.LazyStringArrayList.emptyList();
     creationTimestamp_ = "";
     description_ = "";
     firewallPolicy_ = "";
@@ -307,6 +308,74 @@ public final class Network extends com.google.protobuf.GeneratedMessage
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int ADDITIONAL_TAGS_FIELD_NUMBER = 418903345;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList additionalTags_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] Additional tags for this resource.
+   * </pre>
+   *
+   * <code>repeated string additional_tags = 418903345;</code>
+   *
+   * @return A list containing the additionalTags.
+   */
+  public com.google.protobuf.ProtocolStringList getAdditionalTagsList() {
+    return additionalTags_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] Additional tags for this resource.
+   * </pre>
+   *
+   * <code>repeated string additional_tags = 418903345;</code>
+   *
+   * @return The count of additionalTags.
+   */
+  public int getAdditionalTagsCount() {
+    return additionalTags_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] Additional tags for this resource.
+   * </pre>
+   *
+   * <code>repeated string additional_tags = 418903345;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The additionalTags at the given index.
+   */
+  public java.lang.String getAdditionalTags(int index) {
+    return additionalTags_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] Additional tags for this resource.
+   * </pre>
+   *
+   * <code>repeated string additional_tags = 418903345;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the additionalTags at the given index.
+   */
+  public com.google.protobuf.ByteString getAdditionalTagsBytes(int index) {
+    return additionalTags_.getByteString(index);
   }
 
   public static final int AUTO_CREATE_SUBNETWORKS_FIELD_NUMBER = 256156690;
@@ -1634,6 +1703,10 @@ public final class Network extends com.google.protobuf.GeneratedMessage
     for (int i = 0; i < subnetworks_.size(); i++) {
       com.google.protobuf.GeneratedMessage.writeString(output, 415853125, subnetworks_.getRaw(i));
     }
+    for (int i = 0; i < additionalTags_.size(); i++) {
+      com.google.protobuf.GeneratedMessage.writeString(
+          output, 418903345, additionalTags_.getRaw(i));
+    }
     if (((bitField0_ & 0x00000008) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 422937596, description_);
     }
@@ -1711,6 +1784,14 @@ public final class Network extends com.google.protobuf.GeneratedMessage
       size += dataSize;
       size += 5 * getSubnetworksList().size();
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < additionalTags_.size(); i++) {
+        dataSize += computeStringSizeNoTag(additionalTags_.getRaw(i));
+      }
+      size += dataSize;
+      size += 5 * getAdditionalTagsList().size();
+    }
     if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(422937596, description_);
     }
@@ -1747,6 +1828,7 @@ public final class Network extends com.google.protobuf.GeneratedMessage
     if (hasIPv4Range()) {
       if (!getIPv4Range().equals(other.getIPv4Range())) return false;
     }
+    if (!getAdditionalTagsList().equals(other.getAdditionalTagsList())) return false;
     if (hasAutoCreateSubnetworks() != other.hasAutoCreateSubnetworks()) return false;
     if (hasAutoCreateSubnetworks()) {
       if (getAutoCreateSubnetworks() != other.getAutoCreateSubnetworks()) return false;
@@ -1833,6 +1915,10 @@ public final class Network extends com.google.protobuf.GeneratedMessage
     if (hasIPv4Range()) {
       hash = (37 * hash) + I_PV4_RANGE_FIELD_NUMBER;
       hash = (53 * hash) + getIPv4Range().hashCode();
+    }
+    if (getAdditionalTagsCount() > 0) {
+      hash = (37 * hash) + ADDITIONAL_TAGS_FIELD_NUMBER;
+      hash = (53 * hash) + getAdditionalTagsList().hashCode();
     }
     if (hasAutoCreateSubnetworks()) {
       hash = (37 * hash) + AUTO_CREATE_SUBNETWORKS_FIELD_NUMBER;
@@ -2064,6 +2150,7 @@ public final class Network extends com.google.protobuf.GeneratedMessage
       super.clear();
       bitField0_ = 0;
       iPv4Range_ = "";
+      additionalTags_ = com.google.protobuf.LazyStringArrayList.emptyList();
       autoCreateSubnetworks_ = false;
       creationTimestamp_ = "";
       description_ = "";
@@ -2088,7 +2175,7 @@ public final class Network extends com.google.protobuf.GeneratedMessage
         peerings_ = null;
         peeringsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       routingConfig_ = null;
       if (routingConfigBuilder_ != null) {
         routingConfigBuilder_.dispose();
@@ -2133,9 +2220,9 @@ public final class Network extends com.google.protobuf.GeneratedMessage
 
     private void buildPartialRepeatedFields(com.google.cloud.compute.v1.Network result) {
       if (peeringsBuilder_ == null) {
-        if (((bitField0_ & 0x00008000) != 0)) {
+        if (((bitField0_ & 0x00010000) != 0)) {
           peerings_ = java.util.Collections.unmodifiableList(peerings_);
-          bitField0_ = (bitField0_ & ~0x00008000);
+          bitField0_ = (bitField0_ & ~0x00010000);
         }
         result.peerings_ = peerings_;
       } else {
@@ -2151,75 +2238,79 @@ public final class Network extends com.google.protobuf.GeneratedMessage
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        additionalTags_.makeImmutable();
+        result.additionalTags_ = additionalTags_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
         result.autoCreateSubnetworks_ = autoCreateSubnetworks_;
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.creationTimestamp_ = creationTimestamp_;
         to_bitField0_ |= 0x00000004;
       }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.description_ = description_;
         to_bitField0_ |= 0x00000008;
       }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.enableUlaInternalIpv6_ = enableUlaInternalIpv6_;
         to_bitField0_ |= 0x00000010;
       }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.firewallPolicy_ = firewallPolicy_;
         to_bitField0_ |= 0x00000020;
       }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.gatewayIPv4_ = gatewayIPv4_;
         to_bitField0_ |= 0x00000040;
       }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.id_ = id_;
         to_bitField0_ |= 0x00000080;
       }
-      if (((from_bitField0_ & 0x00000100) != 0)) {
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.internalIpv6Range_ = internalIpv6Range_;
         to_bitField0_ |= 0x00000100;
       }
-      if (((from_bitField0_ & 0x00000200) != 0)) {
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         result.kind_ = kind_;
         to_bitField0_ |= 0x00000200;
       }
-      if (((from_bitField0_ & 0x00000400) != 0)) {
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         result.mtu_ = mtu_;
         to_bitField0_ |= 0x00000400;
       }
-      if (((from_bitField0_ & 0x00000800) != 0)) {
+      if (((from_bitField0_ & 0x00001000) != 0)) {
         result.name_ = name_;
         to_bitField0_ |= 0x00000800;
       }
-      if (((from_bitField0_ & 0x00001000) != 0)) {
+      if (((from_bitField0_ & 0x00002000) != 0)) {
         result.networkFirewallPolicyEnforcementOrder_ = networkFirewallPolicyEnforcementOrder_;
         to_bitField0_ |= 0x00001000;
       }
-      if (((from_bitField0_ & 0x00002000) != 0)) {
+      if (((from_bitField0_ & 0x00004000) != 0)) {
         result.networkProfile_ = networkProfile_;
         to_bitField0_ |= 0x00002000;
       }
-      if (((from_bitField0_ & 0x00004000) != 0)) {
+      if (((from_bitField0_ & 0x00008000) != 0)) {
         result.params_ = paramsBuilder_ == null ? params_ : paramsBuilder_.build();
         to_bitField0_ |= 0x00004000;
       }
-      if (((from_bitField0_ & 0x00010000) != 0)) {
+      if (((from_bitField0_ & 0x00020000) != 0)) {
         result.routingConfig_ =
             routingConfigBuilder_ == null ? routingConfig_ : routingConfigBuilder_.build();
         to_bitField0_ |= 0x00008000;
       }
-      if (((from_bitField0_ & 0x00020000) != 0)) {
+      if (((from_bitField0_ & 0x00040000) != 0)) {
         result.selfLink_ = selfLink_;
         to_bitField0_ |= 0x00010000;
       }
-      if (((from_bitField0_ & 0x00040000) != 0)) {
+      if (((from_bitField0_ & 0x00080000) != 0)) {
         result.selfLinkWithId_ = selfLinkWithId_;
         to_bitField0_ |= 0x00020000;
       }
-      if (((from_bitField0_ & 0x00080000) != 0)) {
+      if (((from_bitField0_ & 0x00100000) != 0)) {
         subnetworks_.makeImmutable();
         result.subnetworks_ = subnetworks_;
       }
@@ -2243,17 +2334,27 @@ public final class Network extends com.google.protobuf.GeneratedMessage
         bitField0_ |= 0x00000001;
         onChanged();
       }
+      if (!other.additionalTags_.isEmpty()) {
+        if (additionalTags_.isEmpty()) {
+          additionalTags_ = other.additionalTags_;
+          bitField0_ |= 0x00000002;
+        } else {
+          ensureAdditionalTagsIsMutable();
+          additionalTags_.addAll(other.additionalTags_);
+        }
+        onChanged();
+      }
       if (other.hasAutoCreateSubnetworks()) {
         setAutoCreateSubnetworks(other.getAutoCreateSubnetworks());
       }
       if (other.hasCreationTimestamp()) {
         creationTimestamp_ = other.creationTimestamp_;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.hasDescription()) {
         description_ = other.description_;
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (other.hasEnableUlaInternalIpv6()) {
@@ -2261,12 +2362,12 @@ public final class Network extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasFirewallPolicy()) {
         firewallPolicy_ = other.firewallPolicy_;
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (other.hasGatewayIPv4()) {
         gatewayIPv4_ = other.gatewayIPv4_;
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       if (other.hasId()) {
@@ -2274,12 +2375,12 @@ public final class Network extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasInternalIpv6Range()) {
         internalIpv6Range_ = other.internalIpv6Range_;
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       if (other.hasKind()) {
         kind_ = other.kind_;
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       if (other.hasMtu()) {
@@ -2287,17 +2388,17 @@ public final class Network extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasName()) {
         name_ = other.name_;
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       if (other.hasNetworkFirewallPolicyEnforcementOrder()) {
         networkFirewallPolicyEnforcementOrder_ = other.networkFirewallPolicyEnforcementOrder_;
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00002000;
         onChanged();
       }
       if (other.hasNetworkProfile()) {
         networkProfile_ = other.networkProfile_;
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00004000;
         onChanged();
       }
       if (other.hasParams()) {
@@ -2307,7 +2408,7 @@ public final class Network extends com.google.protobuf.GeneratedMessage
         if (!other.peerings_.isEmpty()) {
           if (peerings_.isEmpty()) {
             peerings_ = other.peerings_;
-            bitField0_ = (bitField0_ & ~0x00008000);
+            bitField0_ = (bitField0_ & ~0x00010000);
           } else {
             ensurePeeringsIsMutable();
             peerings_.addAll(other.peerings_);
@@ -2320,7 +2421,7 @@ public final class Network extends com.google.protobuf.GeneratedMessage
             peeringsBuilder_.dispose();
             peeringsBuilder_ = null;
             peerings_ = other.peerings_;
-            bitField0_ = (bitField0_ & ~0x00008000);
+            bitField0_ = (bitField0_ & ~0x00010000);
             peeringsBuilder_ =
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
                     ? internalGetPeeringsFieldBuilder()
@@ -2335,18 +2436,18 @@ public final class Network extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasSelfLink()) {
         selfLink_ = other.selfLink_;
-        bitField0_ |= 0x00020000;
+        bitField0_ |= 0x00040000;
         onChanged();
       }
       if (other.hasSelfLinkWithId()) {
         selfLinkWithId_ = other.selfLinkWithId_;
-        bitField0_ |= 0x00040000;
+        bitField0_ |= 0x00080000;
         onChanged();
       }
       if (!other.subnetworks_.isEmpty()) {
         if (subnetworks_.isEmpty()) {
           subnetworks_ = other.subnetworks_;
-          bitField0_ |= 0x00080000;
+          bitField0_ |= 0x00100000;
         } else {
           ensureSubnetworksIsMutable();
           subnetworks_.addAll(other.subnetworks_);
@@ -2382,43 +2483,43 @@ public final class Network extends com.google.protobuf.GeneratedMessage
             case 26840:
               {
                 id_ = input.readUInt64();
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 26840
             case 867696:
               {
                 mtu_ = input.readInt32();
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 867696
             case 26336418:
               {
                 kind_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 26336418
             case 26989658:
               {
                 name_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 26989658
             case 52038274:
               {
                 networkFirewallPolicyEnforcementOrder_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00002000;
                 break;
               } // case 52038274
             case 244202930:
               {
                 creationTimestamp_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 244202930
             case 356167698:
               {
                 selfLinkWithId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00040000;
+                bitField0_ |= 0x00080000;
                 break;
               } // case 356167698
             case 473874866:
@@ -2443,31 +2544,31 @@ public final class Network extends com.google.protobuf.GeneratedMessage
             case 626510898:
               {
                 input.readMessage(internalGetParamsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00004000;
+                bitField0_ |= 0x00008000;
                 break;
               } // case 626510898
             case 1384899778:
               {
                 networkProfile_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00004000;
                 break;
               } // case 1384899778
             case 1429431018:
               {
                 gatewayIPv4_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 1429431018
             case 2049253520:
               {
                 autoCreateSubnetworks_ = input.readBool();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 2049253520
             case -2075312838:
               {
                 internalIpv6Range_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case -2075312838
             case -968142294:
@@ -2477,35 +2578,42 @@ public final class Network extends com.google.protobuf.GeneratedMessage
                 subnetworks_.add(s);
                 break;
               } // case -968142294
+            case -943740534:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureAdditionalTagsIsMutable();
+                additionalTags_.add(s);
+                break;
+              } // case -943740534
             case -911466526:
               {
                 description_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case -911466526
             case -904905536:
               {
                 enableUlaInternalIpv6_ = input.readBool();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case -904905536
             case -645248918:
               {
                 selfLink_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00020000;
+                bitField0_ |= 0x00040000;
                 break;
               } // case -645248918
             case -309581174:
               {
                 firewallPolicy_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case -309581174
             case -106518822:
               {
                 input.readMessage(
                     internalGetRoutingConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00010000;
+                bitField0_ |= 0x00020000;
                 break;
               } // case -106518822
             default:
@@ -2671,6 +2779,189 @@ public final class Network extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
+    private com.google.protobuf.LazyStringArrayList additionalTags_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureAdditionalTagsIsMutable() {
+      if (!additionalTags_.isModifiable()) {
+        additionalTags_ = new com.google.protobuf.LazyStringArrayList(additionalTags_);
+      }
+      bitField0_ |= 0x00000002;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] Additional tags for this resource.
+     * </pre>
+     *
+     * <code>repeated string additional_tags = 418903345;</code>
+     *
+     * @return A list containing the additionalTags.
+     */
+    public com.google.protobuf.ProtocolStringList getAdditionalTagsList() {
+      additionalTags_.makeImmutable();
+      return additionalTags_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] Additional tags for this resource.
+     * </pre>
+     *
+     * <code>repeated string additional_tags = 418903345;</code>
+     *
+     * @return The count of additionalTags.
+     */
+    public int getAdditionalTagsCount() {
+      return additionalTags_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] Additional tags for this resource.
+     * </pre>
+     *
+     * <code>repeated string additional_tags = 418903345;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The additionalTags at the given index.
+     */
+    public java.lang.String getAdditionalTags(int index) {
+      return additionalTags_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] Additional tags for this resource.
+     * </pre>
+     *
+     * <code>repeated string additional_tags = 418903345;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the additionalTags at the given index.
+     */
+    public com.google.protobuf.ByteString getAdditionalTagsBytes(int index) {
+      return additionalTags_.getByteString(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] Additional tags for this resource.
+     * </pre>
+     *
+     * <code>repeated string additional_tags = 418903345;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The additionalTags to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAdditionalTags(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureAdditionalTagsIsMutable();
+      additionalTags_.set(index, value);
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] Additional tags for this resource.
+     * </pre>
+     *
+     * <code>repeated string additional_tags = 418903345;</code>
+     *
+     * @param value The additionalTags to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAdditionalTags(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureAdditionalTagsIsMutable();
+      additionalTags_.add(value);
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] Additional tags for this resource.
+     * </pre>
+     *
+     * <code>repeated string additional_tags = 418903345;</code>
+     *
+     * @param values The additionalTags to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllAdditionalTags(java.lang.Iterable<java.lang.String> values) {
+      ensureAdditionalTagsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, additionalTags_);
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] Additional tags for this resource.
+     * </pre>
+     *
+     * <code>repeated string additional_tags = 418903345;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAdditionalTags() {
+      additionalTags_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000002);
+      ;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] Additional tags for this resource.
+     * </pre>
+     *
+     * <code>repeated string additional_tags = 418903345;</code>
+     *
+     * @param value The bytes of the additionalTags to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAdditionalTagsBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureAdditionalTagsIsMutable();
+      additionalTags_.add(value);
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
     private boolean autoCreateSubnetworks_;
 
     /**
@@ -2696,7 +2987,7 @@ public final class Network extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasAutoCreateSubnetworks() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
 
     /**
@@ -2750,7 +3041,7 @@ public final class Network extends com.google.protobuf.GeneratedMessage
     public Builder setAutoCreateSubnetworks(boolean value) {
 
       autoCreateSubnetworks_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2777,7 +3068,7 @@ public final class Network extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearAutoCreateSubnetworks() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       autoCreateSubnetworks_ = false;
       onChanged();
       return this;
@@ -2798,7 +3089,7 @@ public final class Network extends com.google.protobuf.GeneratedMessage
      * @return Whether the creationTimestamp field is set.
      */
     public boolean hasCreationTimestamp() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
 
     /**
@@ -2867,7 +3158,7 @@ public final class Network extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       creationTimestamp_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2886,7 +3177,7 @@ public final class Network extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearCreationTimestamp() {
       creationTimestamp_ = getDefaultInstance().getCreationTimestamp();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -2910,7 +3201,7 @@ public final class Network extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       creationTimestamp_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2930,7 +3221,7 @@ public final class Network extends com.google.protobuf.GeneratedMessage
      * @return Whether the description field is set.
      */
     public boolean hasDescription() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
 
     /**
@@ -2999,7 +3290,7 @@ public final class Network extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       description_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -3018,7 +3309,7 @@ public final class Network extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearDescription() {
       description_ = getDefaultInstance().getDescription();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -3042,7 +3333,7 @@ public final class Network extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       description_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -3064,7 +3355,7 @@ public final class Network extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasEnableUlaInternalIpv6() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
 
     /**
@@ -3102,7 +3393,7 @@ public final class Network extends com.google.protobuf.GeneratedMessage
     public Builder setEnableUlaInternalIpv6(boolean value) {
 
       enableUlaInternalIpv6_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -3121,7 +3412,7 @@ public final class Network extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearEnableUlaInternalIpv6() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       enableUlaInternalIpv6_ = false;
       onChanged();
       return this;
@@ -3141,7 +3432,7 @@ public final class Network extends com.google.protobuf.GeneratedMessage
      * @return Whether the firewallPolicy field is set.
      */
     public boolean hasFirewallPolicy() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
 
     /**
@@ -3207,7 +3498,7 @@ public final class Network extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       firewallPolicy_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -3225,7 +3516,7 @@ public final class Network extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearFirewallPolicy() {
       firewallPolicy_ = getDefaultInstance().getFirewallPolicy();
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -3248,7 +3539,7 @@ public final class Network extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       firewallPolicy_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -3268,7 +3559,7 @@ public final class Network extends com.google.protobuf.GeneratedMessage
      * @return Whether the gatewayIPv4 field is set.
      */
     public boolean hasGatewayIPv4() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
 
     /**
@@ -3337,7 +3628,7 @@ public final class Network extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       gatewayIPv4_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -3356,7 +3647,7 @@ public final class Network extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearGatewayIPv4() {
       gatewayIPv4_ = getDefaultInstance().getGatewayIPv4();
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -3380,7 +3671,7 @@ public final class Network extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       gatewayIPv4_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -3401,7 +3692,7 @@ public final class Network extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasId() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
 
     /**
@@ -3437,7 +3728,7 @@ public final class Network extends com.google.protobuf.GeneratedMessage
     public Builder setId(long value) {
 
       id_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3455,7 +3746,7 @@ public final class Network extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearId() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       id_ = 0L;
       onChanged();
       return this;
@@ -3481,7 +3772,7 @@ public final class Network extends com.google.protobuf.GeneratedMessage
      * @return Whether the internalIpv6Range field is set.
      */
     public boolean hasInternalIpv6Range() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
 
     /**
@@ -3565,7 +3856,7 @@ public final class Network extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       internalIpv6Range_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3589,7 +3880,7 @@ public final class Network extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearInternalIpv6Range() {
       internalIpv6Range_ = getDefaultInstance().getInternalIpv6Range();
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       onChanged();
       return this;
     }
@@ -3618,7 +3909,7 @@ public final class Network extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       internalIpv6Range_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3638,7 +3929,7 @@ public final class Network extends com.google.protobuf.GeneratedMessage
      * @return Whether the kind field is set.
      */
     public boolean hasKind() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00000400) != 0);
     }
 
     /**
@@ -3707,7 +3998,7 @@ public final class Network extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       kind_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3726,7 +4017,7 @@ public final class Network extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearKind() {
       kind_ = getDefaultInstance().getKind();
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -3750,7 +4041,7 @@ public final class Network extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       kind_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3774,7 +4065,7 @@ public final class Network extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasMtu() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00000800) != 0);
     }
 
     /**
@@ -3816,7 +4107,7 @@ public final class Network extends com.google.protobuf.GeneratedMessage
     public Builder setMtu(int value) {
 
       mtu_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3837,7 +4128,7 @@ public final class Network extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearMtu() {
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       mtu_ = 0;
       onChanged();
       return this;
@@ -3863,7 +4154,7 @@ public final class Network extends com.google.protobuf.GeneratedMessage
      * @return Whether the name field is set.
      */
     public boolean hasName() {
-      return ((bitField0_ & 0x00000800) != 0);
+      return ((bitField0_ & 0x00001000) != 0);
     }
 
     /**
@@ -3947,7 +4238,7 @@ public final class Network extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       name_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -3971,7 +4262,7 @@ public final class Network extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearName() {
       name_ = getDefaultInstance().getName();
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       onChanged();
       return this;
     }
@@ -4000,7 +4291,7 @@ public final class Network extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       name_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -4022,7 +4313,7 @@ public final class Network extends com.google.protobuf.GeneratedMessage
      * @return Whether the networkFirewallPolicyEnforcementOrder field is set.
      */
     public boolean hasNetworkFirewallPolicyEnforcementOrder() {
-      return ((bitField0_ & 0x00001000) != 0);
+      return ((bitField0_ & 0x00002000) != 0);
     }
 
     /**
@@ -4097,7 +4388,7 @@ public final class Network extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       networkFirewallPolicyEnforcementOrder_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -4119,7 +4410,7 @@ public final class Network extends com.google.protobuf.GeneratedMessage
     public Builder clearNetworkFirewallPolicyEnforcementOrder() {
       networkFirewallPolicyEnforcementOrder_ =
           getDefaultInstance().getNetworkFirewallPolicyEnforcementOrder();
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       onChanged();
       return this;
     }
@@ -4146,7 +4437,7 @@ public final class Network extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       networkFirewallPolicyEnforcementOrder_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -4170,7 +4461,7 @@ public final class Network extends com.google.protobuf.GeneratedMessage
      * @return Whether the networkProfile field is set.
      */
     public boolean hasNetworkProfile() {
-      return ((bitField0_ & 0x00002000) != 0);
+      return ((bitField0_ & 0x00004000) != 0);
     }
 
     /**
@@ -4251,7 +4542,7 @@ public final class Network extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       networkProfile_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -4274,7 +4565,7 @@ public final class Network extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearNetworkProfile() {
       networkProfile_ = getDefaultInstance().getNetworkProfile();
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       onChanged();
       return this;
     }
@@ -4302,7 +4593,7 @@ public final class Network extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       networkProfile_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -4327,7 +4618,7 @@ public final class Network extends com.google.protobuf.GeneratedMessage
      * @return Whether the params field is set.
      */
     public boolean hasParams() {
-      return ((bitField0_ & 0x00004000) != 0);
+      return ((bitField0_ & 0x00008000) != 0);
     }
 
     /**
@@ -4371,7 +4662,7 @@ public final class Network extends com.google.protobuf.GeneratedMessage
       } else {
         paramsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -4392,7 +4683,7 @@ public final class Network extends com.google.protobuf.GeneratedMessage
       } else {
         paramsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -4409,7 +4700,7 @@ public final class Network extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeParams(com.google.cloud.compute.v1.NetworkParams value) {
       if (paramsBuilder_ == null) {
-        if (((bitField0_ & 0x00004000) != 0)
+        if (((bitField0_ & 0x00008000) != 0)
             && params_ != null
             && params_ != com.google.cloud.compute.v1.NetworkParams.getDefaultInstance()) {
           getParamsBuilder().mergeFrom(value);
@@ -4420,7 +4711,7 @@ public final class Network extends com.google.protobuf.GeneratedMessage
         paramsBuilder_.mergeFrom(value);
       }
       if (params_ != null) {
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00008000;
         onChanged();
       }
       return this;
@@ -4437,7 +4728,7 @@ public final class Network extends com.google.protobuf.GeneratedMessage
      * <code>optional .google.cloud.compute.v1.NetworkParams params = 78313862;</code>
      */
     public Builder clearParams() {
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       params_ = null;
       if (paramsBuilder_ != null) {
         paramsBuilder_.dispose();
@@ -4458,7 +4749,7 @@ public final class Network extends com.google.protobuf.GeneratedMessage
      * <code>optional .google.cloud.compute.v1.NetworkParams params = 78313862;</code>
      */
     public com.google.cloud.compute.v1.NetworkParams.Builder getParamsBuilder() {
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return internalGetParamsFieldBuilder().getBuilder();
     }
@@ -4514,9 +4805,9 @@ public final class Network extends com.google.protobuf.GeneratedMessage
         java.util.Collections.emptyList();
 
     private void ensurePeeringsIsMutable() {
-      if (!((bitField0_ & 0x00008000) != 0)) {
+      if (!((bitField0_ & 0x00010000) != 0)) {
         peerings_ = new java.util.ArrayList<com.google.cloud.compute.v1.NetworkPeering>(peerings_);
-        bitField0_ |= 0x00008000;
+        bitField0_ |= 0x00010000;
       }
     }
 
@@ -4741,7 +5032,7 @@ public final class Network extends com.google.protobuf.GeneratedMessage
     public Builder clearPeerings() {
       if (peeringsBuilder_ == null) {
         peerings_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00008000);
+        bitField0_ = (bitField0_ & ~0x00010000);
         onChanged();
       } else {
         peeringsBuilder_.clear();
@@ -4870,7 +5161,7 @@ public final class Network extends com.google.protobuf.GeneratedMessage
                 com.google.cloud.compute.v1.NetworkPeering,
                 com.google.cloud.compute.v1.NetworkPeering.Builder,
                 com.google.cloud.compute.v1.NetworkPeeringOrBuilder>(
-                peerings_, ((bitField0_ & 0x00008000) != 0), getParentForChildren(), isClean());
+                peerings_, ((bitField0_ & 0x00010000) != 0), getParentForChildren(), isClean());
         peerings_ = null;
       }
       return peeringsBuilder_;
@@ -4897,7 +5188,7 @@ public final class Network extends com.google.protobuf.GeneratedMessage
      * @return Whether the routingConfig field is set.
      */
     public boolean hasRoutingConfig() {
-      return ((bitField0_ & 0x00010000) != 0);
+      return ((bitField0_ & 0x00020000) != 0);
     }
 
     /**
@@ -4943,7 +5234,7 @@ public final class Network extends com.google.protobuf.GeneratedMessage
       } else {
         routingConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -4966,7 +5257,7 @@ public final class Network extends com.google.protobuf.GeneratedMessage
       } else {
         routingConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -4984,7 +5275,7 @@ public final class Network extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeRoutingConfig(com.google.cloud.compute.v1.NetworkRoutingConfig value) {
       if (routingConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00010000) != 0)
+        if (((bitField0_ & 0x00020000) != 0)
             && routingConfig_ != null
             && routingConfig_
                 != com.google.cloud.compute.v1.NetworkRoutingConfig.getDefaultInstance()) {
@@ -4996,7 +5287,7 @@ public final class Network extends com.google.protobuf.GeneratedMessage
         routingConfigBuilder_.mergeFrom(value);
       }
       if (routingConfig_ != null) {
-        bitField0_ |= 0x00010000;
+        bitField0_ |= 0x00020000;
         onChanged();
       }
       return this;
@@ -5014,7 +5305,7 @@ public final class Network extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearRoutingConfig() {
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       routingConfig_ = null;
       if (routingConfigBuilder_ != null) {
         routingConfigBuilder_.dispose();
@@ -5036,7 +5327,7 @@ public final class Network extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.cloud.compute.v1.NetworkRoutingConfig.Builder getRoutingConfigBuilder() {
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return internalGetRoutingConfigFieldBuilder().getBuilder();
     }
@@ -5104,7 +5395,7 @@ public final class Network extends com.google.protobuf.GeneratedMessage
      * @return Whether the selfLink field is set.
      */
     public boolean hasSelfLink() {
-      return ((bitField0_ & 0x00020000) != 0);
+      return ((bitField0_ & 0x00040000) != 0);
     }
 
     /**
@@ -5170,7 +5461,7 @@ public final class Network extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       selfLink_ = value;
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -5188,7 +5479,7 @@ public final class Network extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearSelfLink() {
       selfLink_ = getDefaultInstance().getSelfLink();
-      bitField0_ = (bitField0_ & ~0x00020000);
+      bitField0_ = (bitField0_ & ~0x00040000);
       onChanged();
       return this;
     }
@@ -5211,7 +5502,7 @@ public final class Network extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       selfLink_ = value;
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -5230,7 +5521,7 @@ public final class Network extends com.google.protobuf.GeneratedMessage
      * @return Whether the selfLinkWithId field is set.
      */
     public boolean hasSelfLinkWithId() {
-      return ((bitField0_ & 0x00040000) != 0);
+      return ((bitField0_ & 0x00080000) != 0);
     }
 
     /**
@@ -5296,7 +5587,7 @@ public final class Network extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       selfLinkWithId_ = value;
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -5314,7 +5605,7 @@ public final class Network extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearSelfLinkWithId() {
       selfLinkWithId_ = getDefaultInstance().getSelfLinkWithId();
-      bitField0_ = (bitField0_ & ~0x00040000);
+      bitField0_ = (bitField0_ & ~0x00080000);
       onChanged();
       return this;
     }
@@ -5337,7 +5628,7 @@ public final class Network extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       selfLinkWithId_ = value;
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -5349,7 +5640,7 @@ public final class Network extends com.google.protobuf.GeneratedMessage
       if (!subnetworks_.isModifiable()) {
         subnetworks_ = new com.google.protobuf.LazyStringArrayList(subnetworks_);
       }
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
     }
 
     /**
@@ -5439,7 +5730,7 @@ public final class Network extends com.google.protobuf.GeneratedMessage
       }
       ensureSubnetworksIsMutable();
       subnetworks_.set(index, value);
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -5463,7 +5754,7 @@ public final class Network extends com.google.protobuf.GeneratedMessage
       }
       ensureSubnetworksIsMutable();
       subnetworks_.add(value);
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -5484,7 +5775,7 @@ public final class Network extends com.google.protobuf.GeneratedMessage
     public Builder addAllSubnetworks(java.lang.Iterable<java.lang.String> values) {
       ensureSubnetworksIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, subnetworks_);
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -5503,7 +5794,7 @@ public final class Network extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearSubnetworks() {
       subnetworks_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00080000);
+      bitField0_ = (bitField0_ & ~0x00100000);
       ;
       onChanged();
       return this;
@@ -5529,7 +5820,7 @@ public final class Network extends com.google.protobuf.GeneratedMessage
       checkByteStringIsUtf8(value);
       ensureSubnetworksIsMutable();
       subnetworks_.add(value);
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }

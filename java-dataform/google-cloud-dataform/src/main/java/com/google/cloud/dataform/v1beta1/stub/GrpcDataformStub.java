@@ -18,6 +18,7 @@ package com.google.cloud.dataform.v1beta1.stub;
 
 import static com.google.cloud.dataform.v1beta1.DataformClient.FetchRepositoryHistoryPagedResponse;
 import static com.google.cloud.dataform.v1beta1.DataformClient.FetchWorkspaceBranchesPagedResponse;
+import static com.google.cloud.dataform.v1beta1.DataformClient.FetchWorkspaceHistoryPagedResponse;
 import static com.google.cloud.dataform.v1beta1.DataformClient.ListCompilationResultsPagedResponse;
 import static com.google.cloud.dataform.v1beta1.DataformClient.ListLocationsPagedResponse;
 import static com.google.cloud.dataform.v1beta1.DataformClient.ListReleaseConfigsPagedResponse;
@@ -55,6 +56,7 @@ import com.google.cloud.dataform.v1beta1.CompilationResult;
 import com.google.cloud.dataform.v1beta1.ComputeRepositoryAccessTokenStatusRequest;
 import com.google.cloud.dataform.v1beta1.ComputeRepositoryAccessTokenStatusResponse;
 import com.google.cloud.dataform.v1beta1.Config;
+import com.google.cloud.dataform.v1beta1.CreateCompilationResultMetadata;
 import com.google.cloud.dataform.v1beta1.CreateCompilationResultRequest;
 import com.google.cloud.dataform.v1beta1.CreateFolderRequest;
 import com.google.cloud.dataform.v1beta1.CreateReleaseConfigRequest;
@@ -92,6 +94,8 @@ import com.google.cloud.dataform.v1beta1.FetchRepositoryHistoryRequest;
 import com.google.cloud.dataform.v1beta1.FetchRepositoryHistoryResponse;
 import com.google.cloud.dataform.v1beta1.FetchWorkspaceBranchesRequest;
 import com.google.cloud.dataform.v1beta1.FetchWorkspaceBranchesResponse;
+import com.google.cloud.dataform.v1beta1.FetchWorkspaceHistoryRequest;
+import com.google.cloud.dataform.v1beta1.FetchWorkspaceHistoryResponse;
 import com.google.cloud.dataform.v1beta1.Folder;
 import com.google.cloud.dataform.v1beta1.GetCompilationResultRequest;
 import com.google.cloud.dataform.v1beta1.GetConfigRequest;
@@ -699,6 +703,18 @@ public class GrpcDataformStub extends DataformStub {
               .setSampledToLocalTracing(true)
               .build();
 
+  private static final MethodDescriptor<FetchWorkspaceHistoryRequest, FetchWorkspaceHistoryResponse>
+      fetchWorkspaceHistoryMethodDescriptor =
+          MethodDescriptor.<FetchWorkspaceHistoryRequest, FetchWorkspaceHistoryResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.dataform.v1beta1.Dataform/FetchWorkspaceHistory")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(FetchWorkspaceHistoryRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(FetchWorkspaceHistoryResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private static final MethodDescriptor<
           CommitWorkspaceChangesRequest, CommitWorkspaceChangesResponse>
       commitWorkspaceChangesMethodDescriptor =
@@ -927,6 +943,18 @@ public class GrpcDataformStub extends DataformStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateCompilationResultRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(CompilationResult.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<CreateCompilationResultRequest, Operation>
+      createCompilationResultLongRunningMethodDescriptor =
+          MethodDescriptor.<CreateCompilationResultRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.dataform.v1beta1.Dataform/CreateCompilationResultLongRunning")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateCompilationResultRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .setSampledToLocalTracing(true)
               .build();
 
@@ -1245,6 +1273,10 @@ public class GrpcDataformStub extends DataformStub {
       fetchFileGitStatusesCallable;
   private final UnaryCallable<FetchGitAheadBehindRequest, FetchGitAheadBehindResponse>
       fetchGitAheadBehindCallable;
+  private final UnaryCallable<FetchWorkspaceHistoryRequest, FetchWorkspaceHistoryResponse>
+      fetchWorkspaceHistoryCallable;
+  private final UnaryCallable<FetchWorkspaceHistoryRequest, FetchWorkspaceHistoryPagedResponse>
+      fetchWorkspaceHistoryPagedCallable;
   private final UnaryCallable<CommitWorkspaceChangesRequest, CommitWorkspaceChangesResponse>
       commitWorkspaceChangesCallable;
   private final UnaryCallable<ResetWorkspaceChangesRequest, ResetWorkspaceChangesResponse>
@@ -1283,6 +1315,11 @@ public class GrpcDataformStub extends DataformStub {
       getCompilationResultCallable;
   private final UnaryCallable<CreateCompilationResultRequest, CompilationResult>
       createCompilationResultCallable;
+  private final UnaryCallable<CreateCompilationResultRequest, Operation>
+      createCompilationResultLongRunningCallable;
+  private final OperationCallable<
+          CreateCompilationResultRequest, CompilationResult, CreateCompilationResultMetadata>
+      createCompilationResultLongRunningOperationCallable;
   private final UnaryCallable<
           QueryCompilationResultActionsRequest, QueryCompilationResultActionsResponse>
       queryCompilationResultActionsCallable;
@@ -1863,6 +1900,19 @@ public class GrpcDataformStub extends DataformStub {
                     })
                 .setResourceNameExtractor(request -> request.getName())
                 .build();
+    GrpcCallSettings<FetchWorkspaceHistoryRequest, FetchWorkspaceHistoryResponse>
+        fetchWorkspaceHistoryTransportSettings =
+            GrpcCallSettings
+                .<FetchWorkspaceHistoryRequest, FetchWorkspaceHistoryResponse>newBuilder()
+                .setMethodDescriptor(fetchWorkspaceHistoryMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
     GrpcCallSettings<CommitWorkspaceChangesRequest, CommitWorkspaceChangesResponse>
         commitWorkspaceChangesTransportSettings =
             GrpcCallSettings
@@ -2090,6 +2140,18 @@ public class GrpcDataformStub extends DataformStub {
         createCompilationResultTransportSettings =
             GrpcCallSettings.<CreateCompilationResultRequest, CompilationResult>newBuilder()
                 .setMethodDescriptor(createCompilationResultMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    GrpcCallSettings<CreateCompilationResultRequest, Operation>
+        createCompilationResultLongRunningTransportSettings =
+            GrpcCallSettings.<CreateCompilationResultRequest, Operation>newBuilder()
+                .setMethodDescriptor(createCompilationResultLongRunningMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
                       RequestParamsBuilder builder = RequestParamsBuilder.create();
@@ -2558,6 +2620,16 @@ public class GrpcDataformStub extends DataformStub {
             fetchGitAheadBehindTransportSettings,
             settings.fetchGitAheadBehindSettings(),
             clientContext);
+    this.fetchWorkspaceHistoryCallable =
+        callableFactory.createUnaryCallable(
+            fetchWorkspaceHistoryTransportSettings,
+            settings.fetchWorkspaceHistorySettings(),
+            clientContext);
+    this.fetchWorkspaceHistoryPagedCallable =
+        callableFactory.createPagedCallable(
+            fetchWorkspaceHistoryTransportSettings,
+            settings.fetchWorkspaceHistorySettings(),
+            clientContext);
     this.commitWorkspaceChangesCallable =
         callableFactory.createUnaryCallable(
             commitWorkspaceChangesTransportSettings,
@@ -2656,6 +2728,17 @@ public class GrpcDataformStub extends DataformStub {
             createCompilationResultTransportSettings,
             settings.createCompilationResultSettings(),
             clientContext);
+    this.createCompilationResultLongRunningCallable =
+        callableFactory.createUnaryCallable(
+            createCompilationResultLongRunningTransportSettings,
+            settings.createCompilationResultLongRunningSettings(),
+            clientContext);
+    this.createCompilationResultLongRunningOperationCallable =
+        callableFactory.createOperationCallable(
+            createCompilationResultLongRunningTransportSettings,
+            settings.createCompilationResultLongRunningOperationSettings(),
+            clientContext,
+            operationsStub);
     this.queryCompilationResultActionsCallable =
         callableFactory.createUnaryCallable(
             queryCompilationResultActionsTransportSettings,
@@ -3090,6 +3173,18 @@ public class GrpcDataformStub extends DataformStub {
   }
 
   @Override
+  public UnaryCallable<FetchWorkspaceHistoryRequest, FetchWorkspaceHistoryResponse>
+      fetchWorkspaceHistoryCallable() {
+    return fetchWorkspaceHistoryCallable;
+  }
+
+  @Override
+  public UnaryCallable<FetchWorkspaceHistoryRequest, FetchWorkspaceHistoryPagedResponse>
+      fetchWorkspaceHistoryPagedCallable() {
+    return fetchWorkspaceHistoryPagedCallable;
+  }
+
+  @Override
   public UnaryCallable<CommitWorkspaceChangesRequest, CommitWorkspaceChangesResponse>
       commitWorkspaceChangesCallable() {
     return commitWorkspaceChangesCallable;
@@ -3217,6 +3312,19 @@ public class GrpcDataformStub extends DataformStub {
   public UnaryCallable<CreateCompilationResultRequest, CompilationResult>
       createCompilationResultCallable() {
     return createCompilationResultCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateCompilationResultRequest, Operation>
+      createCompilationResultLongRunningCallable() {
+    return createCompilationResultLongRunningCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          CreateCompilationResultRequest, CompilationResult, CreateCompilationResultMetadata>
+      createCompilationResultLongRunningOperationCallable() {
+    return createCompilationResultLongRunningOperationCallable;
   }
 
   @Override

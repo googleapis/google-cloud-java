@@ -64,6 +64,18 @@ public final class GenerateAuditScopeReportRequest extends com.google.protobuf.G
         .internal_static_google_cloud_auditmanager_v1_GenerateAuditScopeReportRequest_descriptor;
   }
 
+  @SuppressWarnings({"rawtypes"})
+  @java.lang.Override
+  protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+      int number) {
+    switch (number) {
+      case 7:
+        return internalGetParameterOverrides();
+      default:
+        throw new RuntimeException("Invalid map field number: " + number);
+    }
+  }
+
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internalGetFieldAccessorTable() {
@@ -309,7 +321,7 @@ public final class GenerateAuditScopeReportRequest extends com.google.protobuf.G
    * </code>
    *
    * @deprecated google.cloud.auditmanager.v1.GenerateAuditScopeReportRequest.compliance_standard is
-   *     deprecated. See google/cloud/auditmanager/v1/auditmanager.proto;l=420
+   *     deprecated. See google/cloud/auditmanager/v1/auditmanager.proto;l=421
    * @return The complianceStandard.
    */
   @java.lang.Override
@@ -341,7 +353,7 @@ public final class GenerateAuditScopeReportRequest extends com.google.protobuf.G
    * </code>
    *
    * @deprecated google.cloud.auditmanager.v1.GenerateAuditScopeReportRequest.compliance_standard is
-   *     deprecated. See google/cloud/auditmanager/v1/auditmanager.proto;l=420
+   *     deprecated. See google/cloud/auditmanager/v1/auditmanager.proto;l=421
    * @return The bytes for complianceStandard.
    */
   @java.lang.Override
@@ -490,6 +502,148 @@ public final class GenerateAuditScopeReportRequest extends com.google.protobuf.G
     return validateOnly_;
   }
 
+  public static final int PARAMETER_OVERRIDES_FIELD_NUMBER = 7;
+
+  private static final class ParameterOverridesDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<
+            java.lang.String, com.google.cloud.auditmanager.v1.ParameterOverrides>
+        defaultEntry =
+            com.google.protobuf.MapEntry
+                .<java.lang.String, com.google.cloud.auditmanager.v1.ParameterOverrides>
+                    newDefaultInstance(
+                        com.google.cloud.auditmanager.v1.V1mainProto
+                            .internal_static_google_cloud_auditmanager_v1_GenerateAuditScopeReportRequest_ParameterOverridesEntry_descriptor,
+                        com.google.protobuf.WireFormat.FieldType.STRING,
+                        "",
+                        com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                        com.google.cloud.auditmanager.v1.ParameterOverrides.getDefaultInstance());
+  }
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.MapField<
+          java.lang.String, com.google.cloud.auditmanager.v1.ParameterOverrides>
+      parameterOverrides_;
+
+  private com.google.protobuf.MapField<
+          java.lang.String, com.google.cloud.auditmanager.v1.ParameterOverrides>
+      internalGetParameterOverrides() {
+    if (parameterOverrides_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(
+          ParameterOverridesDefaultEntryHolder.defaultEntry);
+    }
+    return parameterOverrides_;
+  }
+
+  public int getParameterOverridesCount() {
+    return internalGetParameterOverrides().getMap().size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Maps dynamic parameter overrides by Cloud Control resource name
+   * at execution time. For example,
+   * `{"organizations/123/locations/global/cloudControls/control-1":
+   * {parameters: [...]}}`
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.auditmanager.v1.ParameterOverrides&gt; parameter_overrides = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public boolean containsParameterOverrides(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    return internalGetParameterOverrides().getMap().containsKey(key);
+  }
+
+  /** Use {@link #getParameterOverridesMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, com.google.cloud.auditmanager.v1.ParameterOverrides>
+      getParameterOverrides() {
+    return getParameterOverridesMap();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Maps dynamic parameter overrides by Cloud Control resource name
+   * at execution time. For example,
+   * `{"organizations/123/locations/global/cloudControls/control-1":
+   * {parameters: [...]}}`
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.auditmanager.v1.ParameterOverrides&gt; parameter_overrides = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, com.google.cloud.auditmanager.v1.ParameterOverrides>
+      getParameterOverridesMap() {
+    return internalGetParameterOverrides().getMap();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Maps dynamic parameter overrides by Cloud Control resource name
+   * at execution time. For example,
+   * `{"organizations/123/locations/global/cloudControls/control-1":
+   * {parameters: [...]}}`
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.auditmanager.v1.ParameterOverrides&gt; parameter_overrides = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public /* nullable */ com.google.cloud.auditmanager.v1.ParameterOverrides
+      getParameterOverridesOrDefault(
+          java.lang.String key,
+          /* nullable */
+          com.google.cloud.auditmanager.v1.ParameterOverrides defaultValue) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, com.google.cloud.auditmanager.v1.ParameterOverrides> map =
+        internalGetParameterOverrides().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Maps dynamic parameter overrides by Cloud Control resource name
+   * at execution time. For example,
+   * `{"organizations/123/locations/global/cloudControls/control-1":
+   * {parameters: [...]}}`
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.auditmanager.v1.ParameterOverrides&gt; parameter_overrides = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.auditmanager.v1.ParameterOverrides getParameterOverridesOrThrow(
+      java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, com.google.cloud.auditmanager.v1.ParameterOverrides> map =
+        internalGetParameterOverrides().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -522,6 +676,11 @@ public final class GenerateAuditScopeReportRequest extends com.google.protobuf.G
     if (validateOnly_ != false) {
       output.writeBool(6, validateOnly_);
     }
+    com.google.protobuf.GeneratedMessage.serializeStringMapTo(
+        output,
+        internalGetParameterOverrides(),
+        ParameterOverridesDefaultEntryHolder.defaultEntry,
+        7);
     getUnknownFields().writeTo(output);
   }
 
@@ -549,6 +708,18 @@ public final class GenerateAuditScopeReportRequest extends com.google.protobuf.G
     if (validateOnly_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(6, validateOnly_);
     }
+    for (java.util.Map.Entry<java.lang.String, com.google.cloud.auditmanager.v1.ParameterOverrides>
+        entry : internalGetParameterOverrides().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<
+              java.lang.String, com.google.cloud.auditmanager.v1.ParameterOverrides>
+          parameterOverrides__ =
+              ParameterOverridesDefaultEntryHolder.defaultEntry
+                  .newBuilderForType()
+                  .setKey(entry.getKey())
+                  .setValue(entry.getValue())
+                  .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, parameterOverrides__);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -570,6 +741,8 @@ public final class GenerateAuditScopeReportRequest extends com.google.protobuf.G
     if (reportFormat_ != other.reportFormat_) return false;
     if (!getComplianceFramework().equals(other.getComplianceFramework())) return false;
     if (getValidateOnly() != other.getValidateOnly()) return false;
+    if (!internalGetParameterOverrides().equals(other.internalGetParameterOverrides()))
+      return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -591,6 +764,10 @@ public final class GenerateAuditScopeReportRequest extends com.google.protobuf.G
     hash = (53 * hash) + getComplianceFramework().hashCode();
     hash = (37 * hash) + VALIDATE_ONLY_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getValidateOnly());
+    if (!internalGetParameterOverrides().getMap().isEmpty()) {
+      hash = (37 * hash) + PARAMETER_OVERRIDES_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetParameterOverrides().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -712,6 +889,28 @@ public final class GenerateAuditScopeReportRequest extends com.google.protobuf.G
           .internal_static_google_cloud_auditmanager_v1_GenerateAuditScopeReportRequest_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+        int number) {
+      switch (number) {
+        case 7:
+          return internalGetParameterOverrides();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMutableMapFieldReflection(
+        int number) {
+      switch (number) {
+        case 7:
+          return internalGetMutableParameterOverrides();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -738,6 +937,7 @@ public final class GenerateAuditScopeReportRequest extends com.google.protobuf.G
       reportFormat_ = 0;
       complianceFramework_ = "";
       validateOnly_ = false;
+      internalGetMutableParameterOverrides().clear();
       return this;
     }
 
@@ -791,6 +991,11 @@ public final class GenerateAuditScopeReportRequest extends com.google.protobuf.G
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.validateOnly_ = validateOnly_;
       }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.parameterOverrides_ =
+            internalGetParameterOverrides()
+                .build(ParameterOverridesDefaultEntryHolder.defaultEntry);
+      }
     }
 
     @java.lang.Override
@@ -829,6 +1034,8 @@ public final class GenerateAuditScopeReportRequest extends com.google.protobuf.G
       if (other.getValidateOnly() != false) {
         setValidateOnly(other.getValidateOnly());
       }
+      internalGetMutableParameterOverrides().mergeFrom(other.internalGetParameterOverrides());
+      bitField0_ |= 0x00000020;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -885,6 +1092,20 @@ public final class GenerateAuditScopeReportRequest extends com.google.protobuf.G
                 bitField0_ |= 0x00000010;
                 break;
               } // case 48
+            case 58:
+              {
+                com.google.protobuf.MapEntry<
+                        java.lang.String, com.google.cloud.auditmanager.v1.ParameterOverrides>
+                    parameterOverrides__ =
+                        input.readMessage(
+                            ParameterOverridesDefaultEntryHolder.defaultEntry.getParserForType(),
+                            extensionRegistry);
+                internalGetMutableParameterOverrides()
+                    .ensureBuilderMap()
+                    .put(parameterOverrides__.getKey(), parameterOverrides__.getValue());
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 58
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1057,7 +1278,7 @@ public final class GenerateAuditScopeReportRequest extends com.google.protobuf.G
      * </code>
      *
      * @deprecated google.cloud.auditmanager.v1.GenerateAuditScopeReportRequest.compliance_standard
-     *     is deprecated. See google/cloud/auditmanager/v1/auditmanager.proto;l=420
+     *     is deprecated. See google/cloud/auditmanager/v1/auditmanager.proto;l=421
      * @return The complianceStandard.
      */
     @java.lang.Deprecated
@@ -1088,7 +1309,7 @@ public final class GenerateAuditScopeReportRequest extends com.google.protobuf.G
      * </code>
      *
      * @deprecated google.cloud.auditmanager.v1.GenerateAuditScopeReportRequest.compliance_standard
-     *     is deprecated. See google/cloud/auditmanager/v1/auditmanager.proto;l=420
+     *     is deprecated. See google/cloud/auditmanager/v1/auditmanager.proto;l=421
      * @return The bytes for complianceStandard.
      */
     @java.lang.Deprecated
@@ -1119,7 +1340,7 @@ public final class GenerateAuditScopeReportRequest extends com.google.protobuf.G
      * </code>
      *
      * @deprecated google.cloud.auditmanager.v1.GenerateAuditScopeReportRequest.compliance_standard
-     *     is deprecated. See google/cloud/auditmanager/v1/auditmanager.proto;l=420
+     *     is deprecated. See google/cloud/auditmanager/v1/auditmanager.proto;l=421
      * @param value The complianceStandard to set.
      * @return This builder for chaining.
      */
@@ -1149,7 +1370,7 @@ public final class GenerateAuditScopeReportRequest extends com.google.protobuf.G
      * </code>
      *
      * @deprecated google.cloud.auditmanager.v1.GenerateAuditScopeReportRequest.compliance_standard
-     *     is deprecated. See google/cloud/auditmanager/v1/auditmanager.proto;l=420
+     *     is deprecated. See google/cloud/auditmanager/v1/auditmanager.proto;l=421
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -1175,7 +1396,7 @@ public final class GenerateAuditScopeReportRequest extends com.google.protobuf.G
      * </code>
      *
      * @deprecated google.cloud.auditmanager.v1.GenerateAuditScopeReportRequest.compliance_standard
-     *     is deprecated. See google/cloud/auditmanager/v1/auditmanager.proto;l=420
+     *     is deprecated. See google/cloud/auditmanager/v1/auditmanager.proto;l=421
      * @param value The bytes for complianceStandard to set.
      * @return This builder for chaining.
      */
@@ -1510,6 +1731,298 @@ public final class GenerateAuditScopeReportRequest extends com.google.protobuf.G
       validateOnly_ = false;
       onChanged();
       return this;
+    }
+
+    private static final class ParameterOverridesConverter
+        implements com.google.protobuf.MapFieldBuilder.Converter<
+            java.lang.String,
+            com.google.cloud.auditmanager.v1.ParameterOverridesOrBuilder,
+            com.google.cloud.auditmanager.v1.ParameterOverrides> {
+      @java.lang.Override
+      public com.google.cloud.auditmanager.v1.ParameterOverrides build(
+          com.google.cloud.auditmanager.v1.ParameterOverridesOrBuilder val) {
+        if (val instanceof com.google.cloud.auditmanager.v1.ParameterOverrides) {
+          return (com.google.cloud.auditmanager.v1.ParameterOverrides) val;
+        }
+        return ((com.google.cloud.auditmanager.v1.ParameterOverrides.Builder) val).build();
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.MapEntry<
+              java.lang.String, com.google.cloud.auditmanager.v1.ParameterOverrides>
+          defaultEntry() {
+        return ParameterOverridesDefaultEntryHolder.defaultEntry;
+      }
+    }
+    ;
+
+    private static final ParameterOverridesConverter parameterOverridesConverter =
+        new ParameterOverridesConverter();
+
+    private com.google.protobuf.MapFieldBuilder<
+            java.lang.String,
+            com.google.cloud.auditmanager.v1.ParameterOverridesOrBuilder,
+            com.google.cloud.auditmanager.v1.ParameterOverrides,
+            com.google.cloud.auditmanager.v1.ParameterOverrides.Builder>
+        parameterOverrides_;
+
+    private com.google.protobuf.MapFieldBuilder<
+            java.lang.String,
+            com.google.cloud.auditmanager.v1.ParameterOverridesOrBuilder,
+            com.google.cloud.auditmanager.v1.ParameterOverrides,
+            com.google.cloud.auditmanager.v1.ParameterOverrides.Builder>
+        internalGetParameterOverrides() {
+      if (parameterOverrides_ == null) {
+        return new com.google.protobuf.MapFieldBuilder<>(parameterOverridesConverter);
+      }
+      return parameterOverrides_;
+    }
+
+    private com.google.protobuf.MapFieldBuilder<
+            java.lang.String,
+            com.google.cloud.auditmanager.v1.ParameterOverridesOrBuilder,
+            com.google.cloud.auditmanager.v1.ParameterOverrides,
+            com.google.cloud.auditmanager.v1.ParameterOverrides.Builder>
+        internalGetMutableParameterOverrides() {
+      if (parameterOverrides_ == null) {
+        parameterOverrides_ =
+            new com.google.protobuf.MapFieldBuilder<>(parameterOverridesConverter);
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return parameterOverrides_;
+    }
+
+    public int getParameterOverridesCount() {
+      return internalGetParameterOverrides().ensureBuilderMap().size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Maps dynamic parameter overrides by Cloud Control resource name
+     * at execution time. For example,
+     * `{"organizations/123/locations/global/cloudControls/control-1":
+     * {parameters: [...]}}`
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.auditmanager.v1.ParameterOverrides&gt; parameter_overrides = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public boolean containsParameterOverrides(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetParameterOverrides().ensureBuilderMap().containsKey(key);
+    }
+
+    /** Use {@link #getParameterOverridesMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, com.google.cloud.auditmanager.v1.ParameterOverrides>
+        getParameterOverrides() {
+      return getParameterOverridesMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Maps dynamic parameter overrides by Cloud Control resource name
+     * at execution time. For example,
+     * `{"organizations/123/locations/global/cloudControls/control-1":
+     * {parameters: [...]}}`
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.auditmanager.v1.ParameterOverrides&gt; parameter_overrides = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, com.google.cloud.auditmanager.v1.ParameterOverrides>
+        getParameterOverridesMap() {
+      return internalGetParameterOverrides().getImmutableMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Maps dynamic parameter overrides by Cloud Control resource name
+     * at execution time. For example,
+     * `{"organizations/123/locations/global/cloudControls/control-1":
+     * {parameters: [...]}}`
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.auditmanager.v1.ParameterOverrides&gt; parameter_overrides = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public /* nullable */ com.google.cloud.auditmanager.v1.ParameterOverrides
+        getParameterOverridesOrDefault(
+            java.lang.String key,
+            /* nullable */
+            com.google.cloud.auditmanager.v1.ParameterOverrides defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, com.google.cloud.auditmanager.v1.ParameterOverridesOrBuilder>
+          map = internalGetMutableParameterOverrides().ensureBuilderMap();
+      return map.containsKey(key) ? parameterOverridesConverter.build(map.get(key)) : defaultValue;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Maps dynamic parameter overrides by Cloud Control resource name
+     * at execution time. For example,
+     * `{"organizations/123/locations/global/cloudControls/control-1":
+     * {parameters: [...]}}`
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.auditmanager.v1.ParameterOverrides&gt; parameter_overrides = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.auditmanager.v1.ParameterOverrides getParameterOverridesOrThrow(
+        java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, com.google.cloud.auditmanager.v1.ParameterOverridesOrBuilder>
+          map = internalGetMutableParameterOverrides().ensureBuilderMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return parameterOverridesConverter.build(map.get(key));
+    }
+
+    public Builder clearParameterOverrides() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      internalGetMutableParameterOverrides().clear();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Maps dynamic parameter overrides by Cloud Control resource name
+     * at execution time. For example,
+     * `{"organizations/123/locations/global/cloudControls/control-1":
+     * {parameters: [...]}}`
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.auditmanager.v1.ParameterOverrides&gt; parameter_overrides = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeParameterOverrides(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      internalGetMutableParameterOverrides().ensureBuilderMap().remove(key);
+      return this;
+    }
+
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, com.google.cloud.auditmanager.v1.ParameterOverrides>
+        getMutableParameterOverrides() {
+      bitField0_ |= 0x00000020;
+      return internalGetMutableParameterOverrides().ensureMessageMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Maps dynamic parameter overrides by Cloud Control resource name
+     * at execution time. For example,
+     * `{"organizations/123/locations/global/cloudControls/control-1":
+     * {parameters: [...]}}`
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.auditmanager.v1.ParameterOverrides&gt; parameter_overrides = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder putParameterOverrides(
+        java.lang.String key, com.google.cloud.auditmanager.v1.ParameterOverrides value) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      if (value == null) {
+        throw new NullPointerException("map value");
+      }
+      internalGetMutableParameterOverrides().ensureBuilderMap().put(key, value);
+      bitField0_ |= 0x00000020;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Maps dynamic parameter overrides by Cloud Control resource name
+     * at execution time. For example,
+     * `{"organizations/123/locations/global/cloudControls/control-1":
+     * {parameters: [...]}}`
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.auditmanager.v1.ParameterOverrides&gt; parameter_overrides = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder putAllParameterOverrides(
+        java.util.Map<java.lang.String, com.google.cloud.auditmanager.v1.ParameterOverrides>
+            values) {
+      for (java.util.Map.Entry<
+              java.lang.String, com.google.cloud.auditmanager.v1.ParameterOverrides>
+          e : values.entrySet()) {
+        if (e.getKey() == null || e.getValue() == null) {
+          throw new NullPointerException();
+        }
+      }
+      internalGetMutableParameterOverrides().ensureBuilderMap().putAll(values);
+      bitField0_ |= 0x00000020;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Maps dynamic parameter overrides by Cloud Control resource name
+     * at execution time. For example,
+     * `{"organizations/123/locations/global/cloudControls/control-1":
+     * {parameters: [...]}}`
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.auditmanager.v1.ParameterOverrides&gt; parameter_overrides = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.auditmanager.v1.ParameterOverrides.Builder
+        putParameterOverridesBuilderIfAbsent(java.lang.String key) {
+      java.util.Map<java.lang.String, com.google.cloud.auditmanager.v1.ParameterOverridesOrBuilder>
+          builderMap = internalGetMutableParameterOverrides().ensureBuilderMap();
+      com.google.cloud.auditmanager.v1.ParameterOverridesOrBuilder entry = builderMap.get(key);
+      if (entry == null) {
+        entry = com.google.cloud.auditmanager.v1.ParameterOverrides.newBuilder();
+        builderMap.put(key, entry);
+      }
+      if (entry instanceof com.google.cloud.auditmanager.v1.ParameterOverrides) {
+        entry = ((com.google.cloud.auditmanager.v1.ParameterOverrides) entry).toBuilder();
+        builderMap.put(key, entry);
+      }
+      return (com.google.cloud.auditmanager.v1.ParameterOverrides.Builder) entry;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.auditmanager.v1.GenerateAuditScopeReportRequest)

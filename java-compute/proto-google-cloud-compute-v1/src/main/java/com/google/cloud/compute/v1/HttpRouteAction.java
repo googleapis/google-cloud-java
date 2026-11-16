@@ -200,6 +200,69 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
         : corsPolicy_;
   }
 
+  public static final int DYNAMIC_COMPRESSION_POLICY_FIELD_NUMBER = 356626987;
+  private com.google.cloud.compute.v1.DynamicCompressionPolicy dynamicCompressionPolicy_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Dynamic compression policy for this URL Map's route. Available only for
+   * Global EXTERNAL_MANAGED load balancer schemes.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.DynamicCompressionPolicy dynamic_compression_policy = 356626987;
+   * </code>
+   *
+   * @return Whether the dynamicCompressionPolicy field is set.
+   */
+  @java.lang.Override
+  public boolean hasDynamicCompressionPolicy() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Dynamic compression policy for this URL Map's route. Available only for
+   * Global EXTERNAL_MANAGED load balancer schemes.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.DynamicCompressionPolicy dynamic_compression_policy = 356626987;
+   * </code>
+   *
+   * @return The dynamicCompressionPolicy.
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.DynamicCompressionPolicy getDynamicCompressionPolicy() {
+    return dynamicCompressionPolicy_ == null
+        ? com.google.cloud.compute.v1.DynamicCompressionPolicy.getDefaultInstance()
+        : dynamicCompressionPolicy_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Dynamic compression policy for this URL Map's route. Available only for
+   * Global EXTERNAL_MANAGED load balancer schemes.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.DynamicCompressionPolicy dynamic_compression_policy = 356626987;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.DynamicCompressionPolicyOrBuilder
+      getDynamicCompressionPolicyOrBuilder() {
+    return dynamicCompressionPolicy_ == null
+        ? com.google.cloud.compute.v1.DynamicCompressionPolicy.getDefaultInstance()
+        : dynamicCompressionPolicy_;
+  }
+
   public static final int FAULT_INJECTION_POLICY_FIELD_NUMBER = 412781079;
   private com.google.cloud.compute.v1.HttpFaultInjection faultInjectionPolicy_;
 
@@ -229,7 +292,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasFaultInjectionPolicy() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00000008) != 0);
   }
 
   /**
@@ -293,6 +356,75 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
         : faultInjectionPolicy_;
   }
 
+  public static final int IMAGE_OPTIMIZATION_POLICY_FIELD_NUMBER = 86640480;
+  private com.google.cloud.compute.v1.ImageOptimizationPolicy imageOptimizationPolicy_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Image optimization policy for this URL Map's route. Available only for
+   * Global EXTERNAL_MANAGED load balancer schemes.
+   * Either Cloud CDN must be enabled on the backend service or backend bucket
+   * serving the route, or cache policy must be configured on the same route
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.ImageOptimizationPolicy image_optimization_policy = 86640480;
+   * </code>
+   *
+   * @return Whether the imageOptimizationPolicy field is set.
+   */
+  @java.lang.Override
+  public boolean hasImageOptimizationPolicy() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Image optimization policy for this URL Map's route. Available only for
+   * Global EXTERNAL_MANAGED load balancer schemes.
+   * Either Cloud CDN must be enabled on the backend service or backend bucket
+   * serving the route, or cache policy must be configured on the same route
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.ImageOptimizationPolicy image_optimization_policy = 86640480;
+   * </code>
+   *
+   * @return The imageOptimizationPolicy.
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.ImageOptimizationPolicy getImageOptimizationPolicy() {
+    return imageOptimizationPolicy_ == null
+        ? com.google.cloud.compute.v1.ImageOptimizationPolicy.getDefaultInstance()
+        : imageOptimizationPolicy_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Image optimization policy for this URL Map's route. Available only for
+   * Global EXTERNAL_MANAGED load balancer schemes.
+   * Either Cloud CDN must be enabled on the backend service or backend bucket
+   * serving the route, or cache policy must be configured on the same route
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.ImageOptimizationPolicy image_optimization_policy = 86640480;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.ImageOptimizationPolicyOrBuilder
+      getImageOptimizationPolicyOrBuilder() {
+    return imageOptimizationPolicy_ == null
+        ? com.google.cloud.compute.v1.ImageOptimizationPolicy.getDefaultInstance()
+        : imageOptimizationPolicy_;
+  }
+
   public static final int MAX_STREAM_DURATION_FIELD_NUMBER = 61428376;
   private com.google.cloud.compute.v1.Duration maxStreamDuration_;
 
@@ -320,7 +452,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasMaxStreamDuration() {
-    return ((bitField0_ & 0x00000008) != 0);
+    return ((bitField0_ & 0x00000020) != 0);
   }
 
   /**
@@ -402,7 +534,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasRequestMirrorPolicy() {
-    return ((bitField0_ & 0x00000010) != 0);
+    return ((bitField0_ & 0x00000040) != 0);
   }
 
   /**
@@ -470,7 +602,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasRetryPolicy() {
-    return ((bitField0_ & 0x00000020) != 0);
+    return ((bitField0_ & 0x00000080) != 0);
   }
 
   /**
@@ -532,7 +664,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasTimeout() {
-    return ((bitField0_ & 0x00000040) != 0);
+    return ((bitField0_ & 0x00000100) != 0);
   }
 
   /**
@@ -606,7 +738,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasUrlRewrite() {
-    return ((bitField0_ & 0x00000080) != 0);
+    return ((bitField0_ & 0x00000200) != 0);
   }
 
   /**
@@ -805,28 +937,34 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       output.writeMessage(56799913, getRetryPolicy());
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       output.writeMessage(61428376, getMaxStreamDuration());
     }
     if (((bitField0_ & 0x00000010) != 0)) {
-      output.writeMessage(220196866, getRequestMirrorPolicy());
-    }
-    if (((bitField0_ & 0x00000080) != 0)) {
-      output.writeMessage(273333948, getUrlRewrite());
+      output.writeMessage(86640480, getImageOptimizationPolicy());
     }
     if (((bitField0_ & 0x00000040) != 0)) {
+      output.writeMessage(220196866, getRequestMirrorPolicy());
+    }
+    if (((bitField0_ & 0x00000200) != 0)) {
+      output.writeMessage(273333948, getUrlRewrite());
+    }
+    if (((bitField0_ & 0x00000100) != 0)) {
       output.writeMessage(296701281, getTimeout());
     }
     for (int i = 0; i < weightedBackendServices_.size(); i++) {
       output.writeMessage(337028049, weightedBackendServices_.get(i));
     }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(356626987, getDynamicCompressionPolicy());
+    }
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(398943748, getCorsPolicy());
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       output.writeMessage(412781079, getFaultInjectionPolicy());
     }
     if (((bitField0_ & 0x00000001) != 0)) {
@@ -841,10 +979,10 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
     if (size != -1) return size;
 
     size = 0;
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(56799913, getRetryPolicy());
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               61428376, getMaxStreamDuration());
@@ -852,12 +990,17 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000010) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
-              220196866, getRequestMirrorPolicy());
-    }
-    if (((bitField0_ & 0x00000080) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(273333948, getUrlRewrite());
+              86640480, getImageOptimizationPolicy());
     }
     if (((bitField0_ & 0x00000040) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              220196866, getRequestMirrorPolicy());
+    }
+    if (((bitField0_ & 0x00000200) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(273333948, getUrlRewrite());
+    }
+    if (((bitField0_ & 0x00000100) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(296701281, getTimeout());
     }
     for (int i = 0; i < weightedBackendServices_.size(); i++) {
@@ -865,10 +1008,15 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               337028049, weightedBackendServices_.get(i));
     }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              356626987, getDynamicCompressionPolicy());
+    }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(398943748, getCorsPolicy());
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               412781079, getFaultInjectionPolicy());
@@ -900,9 +1048,17 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
     if (hasCorsPolicy()) {
       if (!getCorsPolicy().equals(other.getCorsPolicy())) return false;
     }
+    if (hasDynamicCompressionPolicy() != other.hasDynamicCompressionPolicy()) return false;
+    if (hasDynamicCompressionPolicy()) {
+      if (!getDynamicCompressionPolicy().equals(other.getDynamicCompressionPolicy())) return false;
+    }
     if (hasFaultInjectionPolicy() != other.hasFaultInjectionPolicy()) return false;
     if (hasFaultInjectionPolicy()) {
       if (!getFaultInjectionPolicy().equals(other.getFaultInjectionPolicy())) return false;
+    }
+    if (hasImageOptimizationPolicy() != other.hasImageOptimizationPolicy()) return false;
+    if (hasImageOptimizationPolicy()) {
+      if (!getImageOptimizationPolicy().equals(other.getImageOptimizationPolicy())) return false;
     }
     if (hasMaxStreamDuration() != other.hasMaxStreamDuration()) return false;
     if (hasMaxStreamDuration()) {
@@ -945,9 +1101,17 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + CORS_POLICY_FIELD_NUMBER;
       hash = (53 * hash) + getCorsPolicy().hashCode();
     }
+    if (hasDynamicCompressionPolicy()) {
+      hash = (37 * hash) + DYNAMIC_COMPRESSION_POLICY_FIELD_NUMBER;
+      hash = (53 * hash) + getDynamicCompressionPolicy().hashCode();
+    }
     if (hasFaultInjectionPolicy()) {
       hash = (37 * hash) + FAULT_INJECTION_POLICY_FIELD_NUMBER;
       hash = (53 * hash) + getFaultInjectionPolicy().hashCode();
+    }
+    if (hasImageOptimizationPolicy()) {
+      hash = (37 * hash) + IMAGE_OPTIMIZATION_POLICY_FIELD_NUMBER;
+      hash = (53 * hash) + getImageOptimizationPolicy().hashCode();
     }
     if (hasMaxStreamDuration()) {
       hash = (37 * hash) + MAX_STREAM_DURATION_FIELD_NUMBER;
@@ -1115,7 +1279,9 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
       if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
         internalGetCachePolicyFieldBuilder();
         internalGetCorsPolicyFieldBuilder();
+        internalGetDynamicCompressionPolicyFieldBuilder();
         internalGetFaultInjectionPolicyFieldBuilder();
+        internalGetImageOptimizationPolicyFieldBuilder();
         internalGetMaxStreamDurationFieldBuilder();
         internalGetRequestMirrorPolicyFieldBuilder();
         internalGetRetryPolicyFieldBuilder();
@@ -1139,10 +1305,20 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
         corsPolicyBuilder_.dispose();
         corsPolicyBuilder_ = null;
       }
+      dynamicCompressionPolicy_ = null;
+      if (dynamicCompressionPolicyBuilder_ != null) {
+        dynamicCompressionPolicyBuilder_.dispose();
+        dynamicCompressionPolicyBuilder_ = null;
+      }
       faultInjectionPolicy_ = null;
       if (faultInjectionPolicyBuilder_ != null) {
         faultInjectionPolicyBuilder_.dispose();
         faultInjectionPolicyBuilder_ = null;
+      }
+      imageOptimizationPolicy_ = null;
+      if (imageOptimizationPolicyBuilder_ != null) {
+        imageOptimizationPolicyBuilder_.dispose();
+        imageOptimizationPolicyBuilder_ = null;
       }
       maxStreamDuration_ = null;
       if (maxStreamDurationBuilder_ != null) {
@@ -1175,7 +1351,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
         weightedBackendServices_ = null;
         weightedBackendServicesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000400);
       return this;
     }
 
@@ -1213,10 +1389,10 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
 
     private void buildPartialRepeatedFields(com.google.cloud.compute.v1.HttpRouteAction result) {
       if (weightedBackendServicesBuilder_ == null) {
-        if (((bitField0_ & 0x00000100) != 0)) {
+        if (((bitField0_ & 0x00000400) != 0)) {
           weightedBackendServices_ =
               java.util.Collections.unmodifiableList(weightedBackendServices_);
-          bitField0_ = (bitField0_ & ~0x00000100);
+          bitField0_ = (bitField0_ & ~0x00000400);
         }
         result.weightedBackendServices_ = weightedBackendServices_;
       } else {
@@ -1237,38 +1413,52 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
         to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.dynamicCompressionPolicy_ =
+            dynamicCompressionPolicyBuilder_ == null
+                ? dynamicCompressionPolicy_
+                : dynamicCompressionPolicyBuilder_.build();
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.faultInjectionPolicy_ =
             faultInjectionPolicyBuilder_ == null
                 ? faultInjectionPolicy_
                 : faultInjectionPolicyBuilder_.build();
-        to_bitField0_ |= 0x00000004;
+        to_bitField0_ |= 0x00000008;
       }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.imageOptimizationPolicy_ =
+            imageOptimizationPolicyBuilder_ == null
+                ? imageOptimizationPolicy_
+                : imageOptimizationPolicyBuilder_.build();
+        to_bitField0_ |= 0x00000010;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.maxStreamDuration_ =
             maxStreamDurationBuilder_ == null
                 ? maxStreamDuration_
                 : maxStreamDurationBuilder_.build();
-        to_bitField0_ |= 0x00000008;
+        to_bitField0_ |= 0x00000020;
       }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.requestMirrorPolicy_ =
             requestMirrorPolicyBuilder_ == null
                 ? requestMirrorPolicy_
                 : requestMirrorPolicyBuilder_.build();
-        to_bitField0_ |= 0x00000010;
-      }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.retryPolicy_ =
-            retryPolicyBuilder_ == null ? retryPolicy_ : retryPolicyBuilder_.build();
-        to_bitField0_ |= 0x00000020;
-      }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
-        result.timeout_ = timeoutBuilder_ == null ? timeout_ : timeoutBuilder_.build();
         to_bitField0_ |= 0x00000040;
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
-        result.urlRewrite_ = urlRewriteBuilder_ == null ? urlRewrite_ : urlRewriteBuilder_.build();
+        result.retryPolicy_ =
+            retryPolicyBuilder_ == null ? retryPolicy_ : retryPolicyBuilder_.build();
         to_bitField0_ |= 0x00000080;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.timeout_ = timeoutBuilder_ == null ? timeout_ : timeoutBuilder_.build();
+        to_bitField0_ |= 0x00000100;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.urlRewrite_ = urlRewriteBuilder_ == null ? urlRewrite_ : urlRewriteBuilder_.build();
+        to_bitField0_ |= 0x00000200;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1291,8 +1481,14 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
       if (other.hasCorsPolicy()) {
         mergeCorsPolicy(other.getCorsPolicy());
       }
+      if (other.hasDynamicCompressionPolicy()) {
+        mergeDynamicCompressionPolicy(other.getDynamicCompressionPolicy());
+      }
       if (other.hasFaultInjectionPolicy()) {
         mergeFaultInjectionPolicy(other.getFaultInjectionPolicy());
+      }
+      if (other.hasImageOptimizationPolicy()) {
+        mergeImageOptimizationPolicy(other.getImageOptimizationPolicy());
       }
       if (other.hasMaxStreamDuration()) {
         mergeMaxStreamDuration(other.getMaxStreamDuration());
@@ -1313,7 +1509,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
         if (!other.weightedBackendServices_.isEmpty()) {
           if (weightedBackendServices_.isEmpty()) {
             weightedBackendServices_ = other.weightedBackendServices_;
-            bitField0_ = (bitField0_ & ~0x00000100);
+            bitField0_ = (bitField0_ & ~0x00000400);
           } else {
             ensureWeightedBackendServicesIsMutable();
             weightedBackendServices_.addAll(other.weightedBackendServices_);
@@ -1326,7 +1522,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
             weightedBackendServicesBuilder_.dispose();
             weightedBackendServicesBuilder_ = null;
             weightedBackendServices_ = other.weightedBackendServices_;
-            bitField0_ = (bitField0_ & ~0x00000100);
+            bitField0_ = (bitField0_ & ~0x00000400);
             weightedBackendServicesBuilder_ =
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
                     ? internalGetWeightedBackendServicesFieldBuilder()
@@ -1366,34 +1562,42 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
               {
                 input.readMessage(
                     internalGetRetryPolicyFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 454399306
             case 491427010:
               {
                 input.readMessage(
                     internalGetMaxStreamDurationFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 491427010
+            case 693123842:
+              {
+                input.readMessage(
+                    internalGetImageOptimizationPolicyFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 693123842
             case 1761574930:
               {
                 input.readMessage(
                     internalGetRequestMirrorPolicyFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 1761574930
             case -2108295710:
               {
                 input.readMessage(
                     internalGetUrlRewriteFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000200;
                 break;
               } // case -2108295710
             case -1921357046:
               {
                 input.readMessage(internalGetTimeoutFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000100;
                 break;
               } // case -1921357046
             case -1598742902:
@@ -1410,6 +1614,14 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
                 }
                 break;
               } // case -1598742902
+            case -1441951398:
+              {
+                input.readMessage(
+                    internalGetDynamicCompressionPolicyFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case -1441951398
             case -1103417310:
               {
                 input.readMessage(
@@ -1421,7 +1633,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
               {
                 input.readMessage(
                     internalGetFaultInjectionPolicyFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case -992718662
             case -636033926:
@@ -1910,6 +2122,233 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
       return corsPolicyBuilder_;
     }
 
+    private com.google.cloud.compute.v1.DynamicCompressionPolicy dynamicCompressionPolicy_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.compute.v1.DynamicCompressionPolicy,
+            com.google.cloud.compute.v1.DynamicCompressionPolicy.Builder,
+            com.google.cloud.compute.v1.DynamicCompressionPolicyOrBuilder>
+        dynamicCompressionPolicyBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Dynamic compression policy for this URL Map's route. Available only for
+     * Global EXTERNAL_MANAGED load balancer schemes.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.DynamicCompressionPolicy dynamic_compression_policy = 356626987;
+     * </code>
+     *
+     * @return Whether the dynamicCompressionPolicy field is set.
+     */
+    public boolean hasDynamicCompressionPolicy() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Dynamic compression policy for this URL Map's route. Available only for
+     * Global EXTERNAL_MANAGED load balancer schemes.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.DynamicCompressionPolicy dynamic_compression_policy = 356626987;
+     * </code>
+     *
+     * @return The dynamicCompressionPolicy.
+     */
+    public com.google.cloud.compute.v1.DynamicCompressionPolicy getDynamicCompressionPolicy() {
+      if (dynamicCompressionPolicyBuilder_ == null) {
+        return dynamicCompressionPolicy_ == null
+            ? com.google.cloud.compute.v1.DynamicCompressionPolicy.getDefaultInstance()
+            : dynamicCompressionPolicy_;
+      } else {
+        return dynamicCompressionPolicyBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Dynamic compression policy for this URL Map's route. Available only for
+     * Global EXTERNAL_MANAGED load balancer schemes.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.DynamicCompressionPolicy dynamic_compression_policy = 356626987;
+     * </code>
+     */
+    public Builder setDynamicCompressionPolicy(
+        com.google.cloud.compute.v1.DynamicCompressionPolicy value) {
+      if (dynamicCompressionPolicyBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        dynamicCompressionPolicy_ = value;
+      } else {
+        dynamicCompressionPolicyBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Dynamic compression policy for this URL Map's route. Available only for
+     * Global EXTERNAL_MANAGED load balancer schemes.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.DynamicCompressionPolicy dynamic_compression_policy = 356626987;
+     * </code>
+     */
+    public Builder setDynamicCompressionPolicy(
+        com.google.cloud.compute.v1.DynamicCompressionPolicy.Builder builderForValue) {
+      if (dynamicCompressionPolicyBuilder_ == null) {
+        dynamicCompressionPolicy_ = builderForValue.build();
+      } else {
+        dynamicCompressionPolicyBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Dynamic compression policy for this URL Map's route. Available only for
+     * Global EXTERNAL_MANAGED load balancer schemes.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.DynamicCompressionPolicy dynamic_compression_policy = 356626987;
+     * </code>
+     */
+    public Builder mergeDynamicCompressionPolicy(
+        com.google.cloud.compute.v1.DynamicCompressionPolicy value) {
+      if (dynamicCompressionPolicyBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)
+            && dynamicCompressionPolicy_ != null
+            && dynamicCompressionPolicy_
+                != com.google.cloud.compute.v1.DynamicCompressionPolicy.getDefaultInstance()) {
+          getDynamicCompressionPolicyBuilder().mergeFrom(value);
+        } else {
+          dynamicCompressionPolicy_ = value;
+        }
+      } else {
+        dynamicCompressionPolicyBuilder_.mergeFrom(value);
+      }
+      if (dynamicCompressionPolicy_ != null) {
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Dynamic compression policy for this URL Map's route. Available only for
+     * Global EXTERNAL_MANAGED load balancer schemes.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.DynamicCompressionPolicy dynamic_compression_policy = 356626987;
+     * </code>
+     */
+    public Builder clearDynamicCompressionPolicy() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      dynamicCompressionPolicy_ = null;
+      if (dynamicCompressionPolicyBuilder_ != null) {
+        dynamicCompressionPolicyBuilder_.dispose();
+        dynamicCompressionPolicyBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Dynamic compression policy for this URL Map's route. Available only for
+     * Global EXTERNAL_MANAGED load balancer schemes.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.DynamicCompressionPolicy dynamic_compression_policy = 356626987;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.DynamicCompressionPolicy.Builder
+        getDynamicCompressionPolicyBuilder() {
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return internalGetDynamicCompressionPolicyFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Dynamic compression policy for this URL Map's route. Available only for
+     * Global EXTERNAL_MANAGED load balancer schemes.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.DynamicCompressionPolicy dynamic_compression_policy = 356626987;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.DynamicCompressionPolicyOrBuilder
+        getDynamicCompressionPolicyOrBuilder() {
+      if (dynamicCompressionPolicyBuilder_ != null) {
+        return dynamicCompressionPolicyBuilder_.getMessageOrBuilder();
+      } else {
+        return dynamicCompressionPolicy_ == null
+            ? com.google.cloud.compute.v1.DynamicCompressionPolicy.getDefaultInstance()
+            : dynamicCompressionPolicy_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Dynamic compression policy for this URL Map's route. Available only for
+     * Global EXTERNAL_MANAGED load balancer schemes.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.DynamicCompressionPolicy dynamic_compression_policy = 356626987;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.compute.v1.DynamicCompressionPolicy,
+            com.google.cloud.compute.v1.DynamicCompressionPolicy.Builder,
+            com.google.cloud.compute.v1.DynamicCompressionPolicyOrBuilder>
+        internalGetDynamicCompressionPolicyFieldBuilder() {
+      if (dynamicCompressionPolicyBuilder_ == null) {
+        dynamicCompressionPolicyBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.compute.v1.DynamicCompressionPolicy,
+                com.google.cloud.compute.v1.DynamicCompressionPolicy.Builder,
+                com.google.cloud.compute.v1.DynamicCompressionPolicyOrBuilder>(
+                getDynamicCompressionPolicy(), getParentForChildren(), isClean());
+        dynamicCompressionPolicy_ = null;
+      }
+      return dynamicCompressionPolicyBuilder_;
+    }
+
     private com.google.cloud.compute.v1.HttpFaultInjection faultInjectionPolicy_;
     private com.google.protobuf.SingleFieldBuilder<
             com.google.cloud.compute.v1.HttpFaultInjection,
@@ -1943,7 +2382,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
      * @return Whether the faultInjectionPolicy field is set.
      */
     public boolean hasFaultInjectionPolicy() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
 
     /**
@@ -2013,7 +2452,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
       } else {
         faultInjectionPolicyBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2048,7 +2487,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
       } else {
         faultInjectionPolicyBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2078,7 +2517,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeFaultInjectionPolicy(com.google.cloud.compute.v1.HttpFaultInjection value) {
       if (faultInjectionPolicyBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)
+        if (((bitField0_ & 0x00000008) != 0)
             && faultInjectionPolicy_ != null
             && faultInjectionPolicy_
                 != com.google.cloud.compute.v1.HttpFaultInjection.getDefaultInstance()) {
@@ -2090,7 +2529,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
         faultInjectionPolicyBuilder_.mergeFrom(value);
       }
       if (faultInjectionPolicy_ != null) {
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       return this;
@@ -2120,7 +2559,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearFaultInjectionPolicy() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       faultInjectionPolicy_ = null;
       if (faultInjectionPolicyBuilder_ != null) {
         faultInjectionPolicyBuilder_.dispose();
@@ -2154,7 +2593,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.cloud.compute.v1.HttpFaultInjection.Builder getFaultInjectionPolicyBuilder() {
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return internalGetFaultInjectionPolicyFieldBuilder().getBuilder();
     }
@@ -2233,6 +2672,251 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
       return faultInjectionPolicyBuilder_;
     }
 
+    private com.google.cloud.compute.v1.ImageOptimizationPolicy imageOptimizationPolicy_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.compute.v1.ImageOptimizationPolicy,
+            com.google.cloud.compute.v1.ImageOptimizationPolicy.Builder,
+            com.google.cloud.compute.v1.ImageOptimizationPolicyOrBuilder>
+        imageOptimizationPolicyBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Image optimization policy for this URL Map's route. Available only for
+     * Global EXTERNAL_MANAGED load balancer schemes.
+     * Either Cloud CDN must be enabled on the backend service or backend bucket
+     * serving the route, or cache policy must be configured on the same route
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.ImageOptimizationPolicy image_optimization_policy = 86640480;
+     * </code>
+     *
+     * @return Whether the imageOptimizationPolicy field is set.
+     */
+    public boolean hasImageOptimizationPolicy() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Image optimization policy for this URL Map's route. Available only for
+     * Global EXTERNAL_MANAGED load balancer schemes.
+     * Either Cloud CDN must be enabled on the backend service or backend bucket
+     * serving the route, or cache policy must be configured on the same route
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.ImageOptimizationPolicy image_optimization_policy = 86640480;
+     * </code>
+     *
+     * @return The imageOptimizationPolicy.
+     */
+    public com.google.cloud.compute.v1.ImageOptimizationPolicy getImageOptimizationPolicy() {
+      if (imageOptimizationPolicyBuilder_ == null) {
+        return imageOptimizationPolicy_ == null
+            ? com.google.cloud.compute.v1.ImageOptimizationPolicy.getDefaultInstance()
+            : imageOptimizationPolicy_;
+      } else {
+        return imageOptimizationPolicyBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Image optimization policy for this URL Map's route. Available only for
+     * Global EXTERNAL_MANAGED load balancer schemes.
+     * Either Cloud CDN must be enabled on the backend service or backend bucket
+     * serving the route, or cache policy must be configured on the same route
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.ImageOptimizationPolicy image_optimization_policy = 86640480;
+     * </code>
+     */
+    public Builder setImageOptimizationPolicy(
+        com.google.cloud.compute.v1.ImageOptimizationPolicy value) {
+      if (imageOptimizationPolicyBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        imageOptimizationPolicy_ = value;
+      } else {
+        imageOptimizationPolicyBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Image optimization policy for this URL Map's route. Available only for
+     * Global EXTERNAL_MANAGED load balancer schemes.
+     * Either Cloud CDN must be enabled on the backend service or backend bucket
+     * serving the route, or cache policy must be configured on the same route
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.ImageOptimizationPolicy image_optimization_policy = 86640480;
+     * </code>
+     */
+    public Builder setImageOptimizationPolicy(
+        com.google.cloud.compute.v1.ImageOptimizationPolicy.Builder builderForValue) {
+      if (imageOptimizationPolicyBuilder_ == null) {
+        imageOptimizationPolicy_ = builderForValue.build();
+      } else {
+        imageOptimizationPolicyBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Image optimization policy for this URL Map's route. Available only for
+     * Global EXTERNAL_MANAGED load balancer schemes.
+     * Either Cloud CDN must be enabled on the backend service or backend bucket
+     * serving the route, or cache policy must be configured on the same route
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.ImageOptimizationPolicy image_optimization_policy = 86640480;
+     * </code>
+     */
+    public Builder mergeImageOptimizationPolicy(
+        com.google.cloud.compute.v1.ImageOptimizationPolicy value) {
+      if (imageOptimizationPolicyBuilder_ == null) {
+        if (((bitField0_ & 0x00000010) != 0)
+            && imageOptimizationPolicy_ != null
+            && imageOptimizationPolicy_
+                != com.google.cloud.compute.v1.ImageOptimizationPolicy.getDefaultInstance()) {
+          getImageOptimizationPolicyBuilder().mergeFrom(value);
+        } else {
+          imageOptimizationPolicy_ = value;
+        }
+      } else {
+        imageOptimizationPolicyBuilder_.mergeFrom(value);
+      }
+      if (imageOptimizationPolicy_ != null) {
+        bitField0_ |= 0x00000010;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Image optimization policy for this URL Map's route. Available only for
+     * Global EXTERNAL_MANAGED load balancer schemes.
+     * Either Cloud CDN must be enabled on the backend service or backend bucket
+     * serving the route, or cache policy must be configured on the same route
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.ImageOptimizationPolicy image_optimization_policy = 86640480;
+     * </code>
+     */
+    public Builder clearImageOptimizationPolicy() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      imageOptimizationPolicy_ = null;
+      if (imageOptimizationPolicyBuilder_ != null) {
+        imageOptimizationPolicyBuilder_.dispose();
+        imageOptimizationPolicyBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Image optimization policy for this URL Map's route. Available only for
+     * Global EXTERNAL_MANAGED load balancer schemes.
+     * Either Cloud CDN must be enabled on the backend service or backend bucket
+     * serving the route, or cache policy must be configured on the same route
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.ImageOptimizationPolicy image_optimization_policy = 86640480;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.ImageOptimizationPolicy.Builder
+        getImageOptimizationPolicyBuilder() {
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return internalGetImageOptimizationPolicyFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Image optimization policy for this URL Map's route. Available only for
+     * Global EXTERNAL_MANAGED load balancer schemes.
+     * Either Cloud CDN must be enabled on the backend service or backend bucket
+     * serving the route, or cache policy must be configured on the same route
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.ImageOptimizationPolicy image_optimization_policy = 86640480;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.ImageOptimizationPolicyOrBuilder
+        getImageOptimizationPolicyOrBuilder() {
+      if (imageOptimizationPolicyBuilder_ != null) {
+        return imageOptimizationPolicyBuilder_.getMessageOrBuilder();
+      } else {
+        return imageOptimizationPolicy_ == null
+            ? com.google.cloud.compute.v1.ImageOptimizationPolicy.getDefaultInstance()
+            : imageOptimizationPolicy_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Image optimization policy for this URL Map's route. Available only for
+     * Global EXTERNAL_MANAGED load balancer schemes.
+     * Either Cloud CDN must be enabled on the backend service or backend bucket
+     * serving the route, or cache policy must be configured on the same route
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.ImageOptimizationPolicy image_optimization_policy = 86640480;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.compute.v1.ImageOptimizationPolicy,
+            com.google.cloud.compute.v1.ImageOptimizationPolicy.Builder,
+            com.google.cloud.compute.v1.ImageOptimizationPolicyOrBuilder>
+        internalGetImageOptimizationPolicyFieldBuilder() {
+      if (imageOptimizationPolicyBuilder_ == null) {
+        imageOptimizationPolicyBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.compute.v1.ImageOptimizationPolicy,
+                com.google.cloud.compute.v1.ImageOptimizationPolicy.Builder,
+                com.google.cloud.compute.v1.ImageOptimizationPolicyOrBuilder>(
+                getImageOptimizationPolicy(), getParentForChildren(), isClean());
+        imageOptimizationPolicy_ = null;
+      }
+      return imageOptimizationPolicyBuilder_;
+    }
+
     private com.google.cloud.compute.v1.Duration maxStreamDuration_;
     private com.google.protobuf.SingleFieldBuilder<
             com.google.cloud.compute.v1.Duration,
@@ -2263,7 +2947,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
      * @return Whether the maxStreamDuration field is set.
      */
     public boolean hasMaxStreamDuration() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
 
     /**
@@ -2327,7 +3011,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
       } else {
         maxStreamDurationBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2359,7 +3043,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
       } else {
         maxStreamDurationBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2386,7 +3070,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeMaxStreamDuration(com.google.cloud.compute.v1.Duration value) {
       if (maxStreamDurationBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)
+        if (((bitField0_ & 0x00000020) != 0)
             && maxStreamDuration_ != null
             && maxStreamDuration_ != com.google.cloud.compute.v1.Duration.getDefaultInstance()) {
           getMaxStreamDurationBuilder().mergeFrom(value);
@@ -2397,7 +3081,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
         maxStreamDurationBuilder_.mergeFrom(value);
       }
       if (maxStreamDuration_ != null) {
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       return this;
@@ -2424,7 +3108,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
      * <code>optional .google.cloud.compute.v1.Duration max_stream_duration = 61428376;</code>
      */
     public Builder clearMaxStreamDuration() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000020);
       maxStreamDuration_ = null;
       if (maxStreamDurationBuilder_ != null) {
         maxStreamDurationBuilder_.dispose();
@@ -2455,7 +3139,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
      * <code>optional .google.cloud.compute.v1.Duration max_stream_duration = 61428376;</code>
      */
     public com.google.cloud.compute.v1.Duration.Builder getMaxStreamDurationBuilder() {
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000020;
       onChanged();
       return internalGetMaxStreamDurationFieldBuilder().getBuilder();
     }
@@ -2554,7 +3238,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
      * @return Whether the requestMirrorPolicy field is set.
      */
     public boolean hasRequestMirrorPolicy() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
 
     /**
@@ -2612,7 +3296,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
       } else {
         requestMirrorPolicyBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2641,7 +3325,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
       } else {
         requestMirrorPolicyBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2665,7 +3349,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeRequestMirrorPolicy(com.google.cloud.compute.v1.RequestMirrorPolicy value) {
       if (requestMirrorPolicyBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)
+        if (((bitField0_ & 0x00000040) != 0)
             && requestMirrorPolicy_ != null
             && requestMirrorPolicy_
                 != com.google.cloud.compute.v1.RequestMirrorPolicy.getDefaultInstance()) {
@@ -2677,7 +3361,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
         requestMirrorPolicyBuilder_.mergeFrom(value);
       }
       if (requestMirrorPolicy_ != null) {
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       return this;
@@ -2701,7 +3385,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearRequestMirrorPolicy() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000040);
       requestMirrorPolicy_ = null;
       if (requestMirrorPolicyBuilder_ != null) {
         requestMirrorPolicyBuilder_.dispose();
@@ -2729,7 +3413,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.cloud.compute.v1.RequestMirrorPolicy.Builder getRequestMirrorPolicyBuilder() {
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000040;
       onChanged();
       return internalGetRequestMirrorPolicyFieldBuilder().getBuilder();
     }
@@ -2815,7 +3499,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
      * @return Whether the retryPolicy field is set.
      */
     public boolean hasRetryPolicy() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
 
     /**
@@ -2857,7 +3541,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
       } else {
         retryPolicyBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2878,7 +3562,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
       } else {
         retryPolicyBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2894,7 +3578,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeRetryPolicy(com.google.cloud.compute.v1.HttpRetryPolicy value) {
       if (retryPolicyBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)
+        if (((bitField0_ & 0x00000080) != 0)
             && retryPolicy_ != null
             && retryPolicy_ != com.google.cloud.compute.v1.HttpRetryPolicy.getDefaultInstance()) {
           getRetryPolicyBuilder().mergeFrom(value);
@@ -2905,7 +3589,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
         retryPolicyBuilder_.mergeFrom(value);
       }
       if (retryPolicy_ != null) {
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       return this;
@@ -2921,7 +3605,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
      * <code>optional .google.cloud.compute.v1.HttpRetryPolicy retry_policy = 56799913;</code>
      */
     public Builder clearRetryPolicy() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000080);
       retryPolicy_ = null;
       if (retryPolicyBuilder_ != null) {
         retryPolicyBuilder_.dispose();
@@ -2941,7 +3625,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
      * <code>optional .google.cloud.compute.v1.HttpRetryPolicy retry_policy = 56799913;</code>
      */
     public com.google.cloud.compute.v1.HttpRetryPolicy.Builder getRetryPolicyBuilder() {
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000080;
       onChanged();
       return internalGetRetryPolicyFieldBuilder().getBuilder();
     }
@@ -3019,7 +3703,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
      * @return Whether the timeout field is set.
      */
     public boolean hasTimeout() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
 
     /**
@@ -3079,7 +3763,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
       } else {
         timeoutBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3108,7 +3792,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
       } else {
         timeoutBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3133,7 +3817,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeTimeout(com.google.cloud.compute.v1.Duration value) {
       if (timeoutBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) != 0)
+        if (((bitField0_ & 0x00000100) != 0)
             && timeout_ != null
             && timeout_ != com.google.cloud.compute.v1.Duration.getDefaultInstance()) {
           getTimeoutBuilder().mergeFrom(value);
@@ -3144,7 +3828,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
         timeoutBuilder_.mergeFrom(value);
       }
       if (timeout_ != null) {
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       return this;
@@ -3169,7 +3853,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
      * <code>optional .google.cloud.compute.v1.Duration timeout = 296701281;</code>
      */
     public Builder clearTimeout() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000100);
       timeout_ = null;
       if (timeoutBuilder_ != null) {
         timeoutBuilder_.dispose();
@@ -3198,7 +3882,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
      * <code>optional .google.cloud.compute.v1.Duration timeout = 296701281;</code>
      */
     public com.google.cloud.compute.v1.Duration.Builder getTimeoutBuilder() {
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000100;
       onChanged();
       return internalGetTimeoutFieldBuilder().getBuilder();
     }
@@ -3292,7 +3976,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
      * @return Whether the urlRewrite field is set.
      */
     public boolean hasUrlRewrite() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
 
     /**
@@ -3348,7 +4032,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
       } else {
         urlRewriteBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3375,7 +4059,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
       } else {
         urlRewriteBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3398,7 +4082,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeUrlRewrite(com.google.cloud.compute.v1.UrlRewrite value) {
       if (urlRewriteBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) != 0)
+        if (((bitField0_ & 0x00000200) != 0)
             && urlRewrite_ != null
             && urlRewrite_ != com.google.cloud.compute.v1.UrlRewrite.getDefaultInstance()) {
           getUrlRewriteBuilder().mergeFrom(value);
@@ -3409,7 +4093,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
         urlRewriteBuilder_.mergeFrom(value);
       }
       if (urlRewrite_ != null) {
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       return this;
@@ -3432,7 +4116,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
      * <code>optional .google.cloud.compute.v1.UrlRewrite url_rewrite = 273333948;</code>
      */
     public Builder clearUrlRewrite() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000200);
       urlRewrite_ = null;
       if (urlRewriteBuilder_ != null) {
         urlRewriteBuilder_.dispose();
@@ -3459,7 +4143,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
      * <code>optional .google.cloud.compute.v1.UrlRewrite url_rewrite = 273333948;</code>
      */
     public com.google.cloud.compute.v1.UrlRewrite.Builder getUrlRewriteBuilder() {
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000200;
       onChanged();
       return internalGetUrlRewriteFieldBuilder().getBuilder();
     }
@@ -3527,11 +4211,11 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
         weightedBackendServices_ = java.util.Collections.emptyList();
 
     private void ensureWeightedBackendServicesIsMutable() {
-      if (!((bitField0_ & 0x00000100) != 0)) {
+      if (!((bitField0_ & 0x00000400) != 0)) {
         weightedBackendServices_ =
             new java.util.ArrayList<com.google.cloud.compute.v1.WeightedBackendService>(
                 weightedBackendServices_);
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000400;
       }
     }
 
@@ -3883,7 +4567,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
     public Builder clearWeightedBackendServices() {
       if (weightedBackendServicesBuilder_ == null) {
         weightedBackendServices_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000100);
+        bitField0_ = (bitField0_ & ~0x00000400);
         onChanged();
       } else {
         weightedBackendServicesBuilder_.clear();
@@ -4095,7 +4779,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
                 com.google.cloud.compute.v1.WeightedBackendService.Builder,
                 com.google.cloud.compute.v1.WeightedBackendServiceOrBuilder>(
                 weightedBackendServices_,
-                ((bitField0_ & 0x00000100) != 0),
+                ((bitField0_ & 0x00000400) != 0),
                 getParentForChildren(),
                 isClean());
         weightedBackendServices_ = null;

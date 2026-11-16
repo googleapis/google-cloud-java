@@ -70,7 +70,7 @@ public interface EnableManagedRotationRequestOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.secretmanager.v1.EnableManagedRotationRequest.CloudSQLSingleUserCredentials cloud_sql_single_user_credentials = 2;
+   * .google.cloud.secretmanager.v1.CloudSqlSingleUserCredentials cloud_sql_single_user_credentials = 2;
    * </code>
    *
    * @return Whether the cloudSqlSingleUserCredentials field is set.
@@ -85,12 +85,12 @@ public interface EnableManagedRotationRequestOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.secretmanager.v1.EnableManagedRotationRequest.CloudSQLSingleUserCredentials cloud_sql_single_user_credentials = 2;
+   * .google.cloud.secretmanager.v1.CloudSqlSingleUserCredentials cloud_sql_single_user_credentials = 2;
    * </code>
    *
    * @return The cloudSqlSingleUserCredentials.
    */
-  com.google.cloud.secretmanager.v1.EnableManagedRotationRequest.CloudSQLSingleUserCredentials
+  com.google.cloud.secretmanager.v1.CloudSqlSingleUserCredentials
       getCloudSqlSingleUserCredentials();
 
   /**
@@ -101,13 +101,11 @@ public interface EnableManagedRotationRequestOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.secretmanager.v1.EnableManagedRotationRequest.CloudSQLSingleUserCredentials cloud_sql_single_user_credentials = 2;
+   * .google.cloud.secretmanager.v1.CloudSqlSingleUserCredentials cloud_sql_single_user_credentials = 2;
    * </code>
    */
-  com.google.cloud.secretmanager.v1.EnableManagedRotationRequest
-          .CloudSQLSingleUserCredentialsOrBuilder
+  com.google.cloud.secretmanager.v1.CloudSqlSingleUserCredentialsOrBuilder
       getCloudSqlSingleUserCredentialsOrBuilder();
 
-  com.google.cloud.secretmanager.v1.EnableManagedRotationRequest.CredentialsCase
-      getCredentialsCase();
+  com.google.cloud.secretmanager.v1.EnableManagedRotationRequest.CredentialCase getCredentialCase();
 }

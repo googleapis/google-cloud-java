@@ -39,7 +39,7 @@ import org.jspecify.annotations.Nullable;
 /**
  * Service Description: The MachineTypes API.
  *
- * <p>This client uses MachineTypes version 2026-09-01.
+ * <p>This client uses MachineTypes version 2026-11-01.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:

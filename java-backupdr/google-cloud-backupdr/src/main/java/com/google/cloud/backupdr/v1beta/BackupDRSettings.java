@@ -33,6 +33,10 @@ import static com.google.cloud.backupdr.v1beta.BackupDRClient.ListDataSourceRefe
 import static com.google.cloud.backupdr.v1beta.BackupDRClient.ListDataSourcesPagedResponse;
 import static com.google.cloud.backupdr.v1beta.BackupDRClient.ListLocationsPagedResponse;
 import static com.google.cloud.backupdr.v1beta.BackupDRClient.ListManagementServersPagedResponse;
+import static com.google.cloud.backupdr.v1beta.BackupDRClient.ListRestoreTemplateExecutionsPagedResponse;
+import static com.google.cloud.backupdr.v1beta.BackupDRClient.ListRestoreTemplatesPagedResponse;
+import static com.google.cloud.backupdr.v1beta.BackupDRClient.ListRestoreVerificationPlanAssociationsPagedResponse;
+import static com.google.cloud.backupdr.v1beta.BackupDRClient.ListRestoreVerificationPlansPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
@@ -181,6 +185,218 @@ public class BackupDRSettings extends ClientSettings<BackupDRSettings> {
   public OperationCallSettings<DeleteManagementServerRequest, Empty, OperationMetadata>
       deleteManagementServerOperationSettings() {
     return ((BackupDRStubSettings) getStubSettings()).deleteManagementServerOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createRestoreTemplate. */
+  public UnaryCallSettings<CreateRestoreTemplateRequest, Operation>
+      createRestoreTemplateSettings() {
+    return ((BackupDRStubSettings) getStubSettings()).createRestoreTemplateSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createRestoreTemplate. */
+  public OperationCallSettings<CreateRestoreTemplateRequest, RestoreTemplate, OperationMetadata>
+      createRestoreTemplateOperationSettings() {
+    return ((BackupDRStubSettings) getStubSettings()).createRestoreTemplateOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getRestoreTemplate. */
+  public UnaryCallSettings<GetRestoreTemplateRequest, RestoreTemplate>
+      getRestoreTemplateSettings() {
+    return ((BackupDRStubSettings) getStubSettings()).getRestoreTemplateSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listRestoreTemplates. */
+  public PagedCallSettings<
+          ListRestoreTemplatesRequest,
+          ListRestoreTemplatesResponse,
+          ListRestoreTemplatesPagedResponse>
+      listRestoreTemplatesSettings() {
+    return ((BackupDRStubSettings) getStubSettings()).listRestoreTemplatesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateRestoreTemplate. */
+  public UnaryCallSettings<UpdateRestoreTemplateRequest, Operation>
+      updateRestoreTemplateSettings() {
+    return ((BackupDRStubSettings) getStubSettings()).updateRestoreTemplateSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateRestoreTemplate. */
+  public OperationCallSettings<UpdateRestoreTemplateRequest, RestoreTemplate, OperationMetadata>
+      updateRestoreTemplateOperationSettings() {
+    return ((BackupDRStubSettings) getStubSettings()).updateRestoreTemplateOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteRestoreTemplate. */
+  public UnaryCallSettings<DeleteRestoreTemplateRequest, Operation>
+      deleteRestoreTemplateSettings() {
+    return ((BackupDRStubSettings) getStubSettings()).deleteRestoreTemplateSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteRestoreTemplate. */
+  public OperationCallSettings<DeleteRestoreTemplateRequest, Empty, OperationMetadata>
+      deleteRestoreTemplateOperationSettings() {
+    return ((BackupDRStubSettings) getStubSettings()).deleteRestoreTemplateOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to runRestoreTemplate. */
+  public UnaryCallSettings<RunRestoreTemplateRequest, Operation> runRestoreTemplateSettings() {
+    return ((BackupDRStubSettings) getStubSettings()).runRestoreTemplateSettings();
+  }
+
+  /** Returns the object with the settings used for calls to runRestoreTemplate. */
+  public OperationCallSettings<
+          RunRestoreTemplateRequest, RunRestoreTemplateResponse, OperationMetadata>
+      runRestoreTemplateOperationSettings() {
+    return ((BackupDRStubSettings) getStubSettings()).runRestoreTemplateOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getRestoreTemplateExecution. */
+  public UnaryCallSettings<GetRestoreTemplateExecutionRequest, RestoreTemplateExecution>
+      getRestoreTemplateExecutionSettings() {
+    return ((BackupDRStubSettings) getStubSettings()).getRestoreTemplateExecutionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listRestoreTemplateExecutions. */
+  public PagedCallSettings<
+          ListRestoreTemplateExecutionsRequest,
+          ListRestoreTemplateExecutionsResponse,
+          ListRestoreTemplateExecutionsPagedResponse>
+      listRestoreTemplateExecutionsSettings() {
+    return ((BackupDRStubSettings) getStubSettings()).listRestoreTemplateExecutionsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to triggerRestoreCleanup. */
+  public UnaryCallSettings<TriggerRestoreCleanupRequest, Operation>
+      triggerRestoreCleanupSettings() {
+    return ((BackupDRStubSettings) getStubSettings()).triggerRestoreCleanupSettings();
+  }
+
+  /** Returns the object with the settings used for calls to triggerRestoreCleanup. */
+  public OperationCallSettings<
+          TriggerRestoreCleanupRequest, RestoreTemplateExecution, OperationMetadata>
+      triggerRestoreCleanupOperationSettings() {
+    return ((BackupDRStubSettings) getStubSettings()).triggerRestoreCleanupOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createRestoreVerificationPlan. */
+  public UnaryCallSettings<CreateRestoreVerificationPlanRequest, Operation>
+      createRestoreVerificationPlanSettings() {
+    return ((BackupDRStubSettings) getStubSettings()).createRestoreVerificationPlanSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createRestoreVerificationPlan. */
+  public OperationCallSettings<
+          CreateRestoreVerificationPlanRequest, RestoreVerificationPlan, OperationMetadata>
+      createRestoreVerificationPlanOperationSettings() {
+    return ((BackupDRStubSettings) getStubSettings())
+        .createRestoreVerificationPlanOperationSettings();
+  }
+
+  /**
+   * Returns the object with the settings used for calls to
+   * createRestoreVerificationPlanAssociation.
+   */
+  public UnaryCallSettings<CreateRestoreVerificationPlanAssociationRequest, Operation>
+      createRestoreVerificationPlanAssociationSettings() {
+    return ((BackupDRStubSettings) getStubSettings())
+        .createRestoreVerificationPlanAssociationSettings();
+  }
+
+  /**
+   * Returns the object with the settings used for calls to
+   * createRestoreVerificationPlanAssociation.
+   */
+  public OperationCallSettings<
+          CreateRestoreVerificationPlanAssociationRequest,
+          RestoreVerificationPlanAssociation,
+          OperationMetadata>
+      createRestoreVerificationPlanAssociationOperationSettings() {
+    return ((BackupDRStubSettings) getStubSettings())
+        .createRestoreVerificationPlanAssociationOperationSettings();
+  }
+
+  /**
+   * Returns the object with the settings used for calls to getRestoreVerificationPlanAssociation.
+   */
+  public UnaryCallSettings<
+          GetRestoreVerificationPlanAssociationRequest, RestoreVerificationPlanAssociation>
+      getRestoreVerificationPlanAssociationSettings() {
+    return ((BackupDRStubSettings) getStubSettings())
+        .getRestoreVerificationPlanAssociationSettings();
+  }
+
+  /**
+   * Returns the object with the settings used for calls to listRestoreVerificationPlanAssociations.
+   */
+  public PagedCallSettings<
+          ListRestoreVerificationPlanAssociationsRequest,
+          ListRestoreVerificationPlanAssociationsResponse,
+          ListRestoreVerificationPlanAssociationsPagedResponse>
+      listRestoreVerificationPlanAssociationsSettings() {
+    return ((BackupDRStubSettings) getStubSettings())
+        .listRestoreVerificationPlanAssociationsSettings();
+  }
+
+  /**
+   * Returns the object with the settings used for calls to
+   * deleteRestoreVerificationPlanAssociation.
+   */
+  public UnaryCallSettings<DeleteRestoreVerificationPlanAssociationRequest, Operation>
+      deleteRestoreVerificationPlanAssociationSettings() {
+    return ((BackupDRStubSettings) getStubSettings())
+        .deleteRestoreVerificationPlanAssociationSettings();
+  }
+
+  /**
+   * Returns the object with the settings used for calls to
+   * deleteRestoreVerificationPlanAssociation.
+   */
+  public OperationCallSettings<
+          DeleteRestoreVerificationPlanAssociationRequest, Empty, OperationMetadata>
+      deleteRestoreVerificationPlanAssociationOperationSettings() {
+    return ((BackupDRStubSettings) getStubSettings())
+        .deleteRestoreVerificationPlanAssociationOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to triggerRestoreVerification. */
+  public UnaryCallSettings<TriggerRestoreVerificationRequest, Operation>
+      triggerRestoreVerificationSettings() {
+    return ((BackupDRStubSettings) getStubSettings()).triggerRestoreVerificationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to triggerRestoreVerification. */
+  public OperationCallSettings<
+          TriggerRestoreVerificationRequest, TriggerRestoreVerificationResponse, OperationMetadata>
+      triggerRestoreVerificationOperationSettings() {
+    return ((BackupDRStubSettings) getStubSettings()).triggerRestoreVerificationOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getRestoreVerificationPlan. */
+  public UnaryCallSettings<GetRestoreVerificationPlanRequest, RestoreVerificationPlan>
+      getRestoreVerificationPlanSettings() {
+    return ((BackupDRStubSettings) getStubSettings()).getRestoreVerificationPlanSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listRestoreVerificationPlans. */
+  public PagedCallSettings<
+          ListRestoreVerificationPlansRequest,
+          ListRestoreVerificationPlansResponse,
+          ListRestoreVerificationPlansPagedResponse>
+      listRestoreVerificationPlansSettings() {
+    return ((BackupDRStubSettings) getStubSettings()).listRestoreVerificationPlansSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteRestoreVerificationPlan. */
+  public UnaryCallSettings<DeleteRestoreVerificationPlanRequest, Operation>
+      deleteRestoreVerificationPlanSettings() {
+    return ((BackupDRStubSettings) getStubSettings()).deleteRestoreVerificationPlanSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteRestoreVerificationPlan. */
+  public OperationCallSettings<DeleteRestoreVerificationPlanRequest, Empty, OperationMetadata>
+      deleteRestoreVerificationPlanOperationSettings() {
+    return ((BackupDRStubSettings) getStubSettings())
+        .deleteRestoreVerificationPlanOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to createBackupVault. */
@@ -798,6 +1014,217 @@ public class BackupDRSettings extends ClientSettings<BackupDRSettings> {
     public OperationCallSettings.Builder<DeleteManagementServerRequest, Empty, OperationMetadata>
         deleteManagementServerOperationSettings() {
       return getStubSettingsBuilder().deleteManagementServerOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createRestoreTemplate. */
+    public UnaryCallSettings.Builder<CreateRestoreTemplateRequest, Operation>
+        createRestoreTemplateSettings() {
+      return getStubSettingsBuilder().createRestoreTemplateSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createRestoreTemplate. */
+    public OperationCallSettings.Builder<
+            CreateRestoreTemplateRequest, RestoreTemplate, OperationMetadata>
+        createRestoreTemplateOperationSettings() {
+      return getStubSettingsBuilder().createRestoreTemplateOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getRestoreTemplate. */
+    public UnaryCallSettings.Builder<GetRestoreTemplateRequest, RestoreTemplate>
+        getRestoreTemplateSettings() {
+      return getStubSettingsBuilder().getRestoreTemplateSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listRestoreTemplates. */
+    public PagedCallSettings.Builder<
+            ListRestoreTemplatesRequest,
+            ListRestoreTemplatesResponse,
+            ListRestoreTemplatesPagedResponse>
+        listRestoreTemplatesSettings() {
+      return getStubSettingsBuilder().listRestoreTemplatesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateRestoreTemplate. */
+    public UnaryCallSettings.Builder<UpdateRestoreTemplateRequest, Operation>
+        updateRestoreTemplateSettings() {
+      return getStubSettingsBuilder().updateRestoreTemplateSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateRestoreTemplate. */
+    public OperationCallSettings.Builder<
+            UpdateRestoreTemplateRequest, RestoreTemplate, OperationMetadata>
+        updateRestoreTemplateOperationSettings() {
+      return getStubSettingsBuilder().updateRestoreTemplateOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteRestoreTemplate. */
+    public UnaryCallSettings.Builder<DeleteRestoreTemplateRequest, Operation>
+        deleteRestoreTemplateSettings() {
+      return getStubSettingsBuilder().deleteRestoreTemplateSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteRestoreTemplate. */
+    public OperationCallSettings.Builder<DeleteRestoreTemplateRequest, Empty, OperationMetadata>
+        deleteRestoreTemplateOperationSettings() {
+      return getStubSettingsBuilder().deleteRestoreTemplateOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to runRestoreTemplate. */
+    public UnaryCallSettings.Builder<RunRestoreTemplateRequest, Operation>
+        runRestoreTemplateSettings() {
+      return getStubSettingsBuilder().runRestoreTemplateSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to runRestoreTemplate. */
+    public OperationCallSettings.Builder<
+            RunRestoreTemplateRequest, RunRestoreTemplateResponse, OperationMetadata>
+        runRestoreTemplateOperationSettings() {
+      return getStubSettingsBuilder().runRestoreTemplateOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getRestoreTemplateExecution. */
+    public UnaryCallSettings.Builder<GetRestoreTemplateExecutionRequest, RestoreTemplateExecution>
+        getRestoreTemplateExecutionSettings() {
+      return getStubSettingsBuilder().getRestoreTemplateExecutionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listRestoreTemplateExecutions. */
+    public PagedCallSettings.Builder<
+            ListRestoreTemplateExecutionsRequest,
+            ListRestoreTemplateExecutionsResponse,
+            ListRestoreTemplateExecutionsPagedResponse>
+        listRestoreTemplateExecutionsSettings() {
+      return getStubSettingsBuilder().listRestoreTemplateExecutionsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to triggerRestoreCleanup. */
+    public UnaryCallSettings.Builder<TriggerRestoreCleanupRequest, Operation>
+        triggerRestoreCleanupSettings() {
+      return getStubSettingsBuilder().triggerRestoreCleanupSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to triggerRestoreCleanup. */
+    public OperationCallSettings.Builder<
+            TriggerRestoreCleanupRequest, RestoreTemplateExecution, OperationMetadata>
+        triggerRestoreCleanupOperationSettings() {
+      return getStubSettingsBuilder().triggerRestoreCleanupOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createRestoreVerificationPlan. */
+    public UnaryCallSettings.Builder<CreateRestoreVerificationPlanRequest, Operation>
+        createRestoreVerificationPlanSettings() {
+      return getStubSettingsBuilder().createRestoreVerificationPlanSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createRestoreVerificationPlan. */
+    public OperationCallSettings.Builder<
+            CreateRestoreVerificationPlanRequest, RestoreVerificationPlan, OperationMetadata>
+        createRestoreVerificationPlanOperationSettings() {
+      return getStubSettingsBuilder().createRestoreVerificationPlanOperationSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * createRestoreVerificationPlanAssociation.
+     */
+    public UnaryCallSettings.Builder<CreateRestoreVerificationPlanAssociationRequest, Operation>
+        createRestoreVerificationPlanAssociationSettings() {
+      return getStubSettingsBuilder().createRestoreVerificationPlanAssociationSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * createRestoreVerificationPlanAssociation.
+     */
+    public OperationCallSettings.Builder<
+            CreateRestoreVerificationPlanAssociationRequest,
+            RestoreVerificationPlanAssociation,
+            OperationMetadata>
+        createRestoreVerificationPlanAssociationOperationSettings() {
+      return getStubSettingsBuilder().createRestoreVerificationPlanAssociationOperationSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to getRestoreVerificationPlanAssociation.
+     */
+    public UnaryCallSettings.Builder<
+            GetRestoreVerificationPlanAssociationRequest, RestoreVerificationPlanAssociation>
+        getRestoreVerificationPlanAssociationSettings() {
+      return getStubSettingsBuilder().getRestoreVerificationPlanAssociationSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * listRestoreVerificationPlanAssociations.
+     */
+    public PagedCallSettings.Builder<
+            ListRestoreVerificationPlanAssociationsRequest,
+            ListRestoreVerificationPlanAssociationsResponse,
+            ListRestoreVerificationPlanAssociationsPagedResponse>
+        listRestoreVerificationPlanAssociationsSettings() {
+      return getStubSettingsBuilder().listRestoreVerificationPlanAssociationsSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * deleteRestoreVerificationPlanAssociation.
+     */
+    public UnaryCallSettings.Builder<DeleteRestoreVerificationPlanAssociationRequest, Operation>
+        deleteRestoreVerificationPlanAssociationSettings() {
+      return getStubSettingsBuilder().deleteRestoreVerificationPlanAssociationSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * deleteRestoreVerificationPlanAssociation.
+     */
+    public OperationCallSettings.Builder<
+            DeleteRestoreVerificationPlanAssociationRequest, Empty, OperationMetadata>
+        deleteRestoreVerificationPlanAssociationOperationSettings() {
+      return getStubSettingsBuilder().deleteRestoreVerificationPlanAssociationOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to triggerRestoreVerification. */
+    public UnaryCallSettings.Builder<TriggerRestoreVerificationRequest, Operation>
+        triggerRestoreVerificationSettings() {
+      return getStubSettingsBuilder().triggerRestoreVerificationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to triggerRestoreVerification. */
+    public OperationCallSettings.Builder<
+            TriggerRestoreVerificationRequest,
+            TriggerRestoreVerificationResponse,
+            OperationMetadata>
+        triggerRestoreVerificationOperationSettings() {
+      return getStubSettingsBuilder().triggerRestoreVerificationOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getRestoreVerificationPlan. */
+    public UnaryCallSettings.Builder<GetRestoreVerificationPlanRequest, RestoreVerificationPlan>
+        getRestoreVerificationPlanSettings() {
+      return getStubSettingsBuilder().getRestoreVerificationPlanSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listRestoreVerificationPlans. */
+    public PagedCallSettings.Builder<
+            ListRestoreVerificationPlansRequest,
+            ListRestoreVerificationPlansResponse,
+            ListRestoreVerificationPlansPagedResponse>
+        listRestoreVerificationPlansSettings() {
+      return getStubSettingsBuilder().listRestoreVerificationPlansSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteRestoreVerificationPlan. */
+    public UnaryCallSettings.Builder<DeleteRestoreVerificationPlanRequest, Operation>
+        deleteRestoreVerificationPlanSettings() {
+      return getStubSettingsBuilder().deleteRestoreVerificationPlanSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteRestoreVerificationPlan. */
+    public OperationCallSettings.Builder<
+            DeleteRestoreVerificationPlanRequest, Empty, OperationMetadata>
+        deleteRestoreVerificationPlanOperationSettings() {
+      return getStubSettingsBuilder().deleteRestoreVerificationPlanOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to createBackupVault. */

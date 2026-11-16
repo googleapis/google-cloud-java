@@ -808,6 +808,21 @@ import org.jspecify.annotations.Nullable;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> FetchWorkspaceHistory</td>
+ *      <td><p> Fetches a Workspace's history of commits.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> fetchWorkspaceHistory(FetchWorkspaceHistoryRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> fetchWorkspaceHistoryPagedCallable()
+ *           <li><p> fetchWorkspaceHistoryCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> CommitWorkspaceChanges</td>
  *      <td><p> Applies a Git commit for uncommitted files in a Workspace.</td>
  *      <td>
@@ -1128,6 +1143,26 @@ import org.jspecify.annotations.Nullable;
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
  *           <li><p> createCompilationResultCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateCompilationResultLongRunning</td>
+ *      <td><p> Creates a new CompilationResult in a given project and location asynchronously.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createCompilationResultLongRunningAsync(CreateCompilationResultRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> createCompilationResultLongRunningAsync(RepositoryName parent, CompilationResult compilationResult)
+ *           <li><p> createCompilationResultLongRunningAsync(String parent, CompilationResult compilationResult)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createCompilationResultLongRunningOperationCallable()
+ *           <li><p> createCompilationResultLongRunningCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -6277,6 +6312,118 @@ public class DataformClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Fetches a Workspace's history of commits.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   FetchWorkspaceHistoryRequest request =
+   *       FetchWorkspaceHistoryRequest.newBuilder()
+   *           .setName(
+   *               WorkspaceName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[WORKSPACE]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (CommitLogEntry element : dataformClient.fetchWorkspaceHistory(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final FetchWorkspaceHistoryPagedResponse fetchWorkspaceHistory(
+      FetchWorkspaceHistoryRequest request) {
+    return fetchWorkspaceHistoryPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Fetches a Workspace's history of commits.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   FetchWorkspaceHistoryRequest request =
+   *       FetchWorkspaceHistoryRequest.newBuilder()
+   *           .setName(
+   *               WorkspaceName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[WORKSPACE]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<CommitLogEntry> future =
+   *       dataformClient.fetchWorkspaceHistoryPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (CommitLogEntry element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<FetchWorkspaceHistoryRequest, FetchWorkspaceHistoryPagedResponse>
+      fetchWorkspaceHistoryPagedCallable() {
+    return stub.fetchWorkspaceHistoryPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Fetches a Workspace's history of commits.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   FetchWorkspaceHistoryRequest request =
+   *       FetchWorkspaceHistoryRequest.newBuilder()
+   *           .setName(
+   *               WorkspaceName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[WORKSPACE]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     FetchWorkspaceHistoryResponse response =
+   *         dataformClient.fetchWorkspaceHistoryCallable().call(request);
+   *     for (CommitLogEntry element : response.getCommitsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<FetchWorkspaceHistoryRequest, FetchWorkspaceHistoryResponse>
+      fetchWorkspaceHistoryCallable() {
+    return stub.fetchWorkspaceHistoryCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Applies a Git commit for uncommitted files in a Workspace.
    *
    * <p>Sample code:
@@ -8221,6 +8368,169 @@ public class DataformClient implements BackgroundResource {
   public final UnaryCallable<CreateCompilationResultRequest, CompilationResult>
       createCompilationResultCallable() {
     return stub.createCompilationResultCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new CompilationResult in a given project and location asynchronously.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   RepositoryName parent = RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]");
+   *   CompilationResult compilationResult = CompilationResult.newBuilder().build();
+   *   CompilationResult response =
+   *       dataformClient.createCompilationResultLongRunningAsync(parent, compilationResult).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The repository in which to create the compilation result. Must be in
+   *     the format `projects/&#42;/locations/&#42;/repositories/&#42;`.
+   * @param compilationResult Required. The compilation result to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<CompilationResult, CreateCompilationResultMetadata>
+      createCompilationResultLongRunningAsync(
+          @Nullable RepositoryName parent, CompilationResult compilationResult) {
+    CreateCompilationResultRequest request =
+        CreateCompilationResultRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setCompilationResult(compilationResult)
+            .build();
+    return createCompilationResultLongRunningAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new CompilationResult in a given project and location asynchronously.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   String parent = RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString();
+   *   CompilationResult compilationResult = CompilationResult.newBuilder().build();
+   *   CompilationResult response =
+   *       dataformClient.createCompilationResultLongRunningAsync(parent, compilationResult).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The repository in which to create the compilation result. Must be in
+   *     the format `projects/&#42;/locations/&#42;/repositories/&#42;`.
+   * @param compilationResult Required. The compilation result to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<CompilationResult, CreateCompilationResultMetadata>
+      createCompilationResultLongRunningAsync(String parent, CompilationResult compilationResult) {
+    CreateCompilationResultRequest request =
+        CreateCompilationResultRequest.newBuilder()
+            .setParent(parent)
+            .setCompilationResult(compilationResult)
+            .build();
+    return createCompilationResultLongRunningAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new CompilationResult in a given project and location asynchronously.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   CreateCompilationResultRequest request =
+   *       CreateCompilationResultRequest.newBuilder()
+   *           .setParent(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+   *           .setCompilationResult(CompilationResult.newBuilder().build())
+   *           .build();
+   *   CompilationResult response =
+   *       dataformClient.createCompilationResultLongRunningAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<CompilationResult, CreateCompilationResultMetadata>
+      createCompilationResultLongRunningAsync(CreateCompilationResultRequest request) {
+    return createCompilationResultLongRunningOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new CompilationResult in a given project and location asynchronously.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   CreateCompilationResultRequest request =
+   *       CreateCompilationResultRequest.newBuilder()
+   *           .setParent(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+   *           .setCompilationResult(CompilationResult.newBuilder().build())
+   *           .build();
+   *   OperationFuture<CompilationResult, CreateCompilationResultMetadata> future =
+   *       dataformClient.createCompilationResultLongRunningOperationCallable().futureCall(request);
+   *   // Do something.
+   *   CompilationResult response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          CreateCompilationResultRequest, CompilationResult, CreateCompilationResultMetadata>
+      createCompilationResultLongRunningOperationCallable() {
+    return stub.createCompilationResultLongRunningOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new CompilationResult in a given project and location asynchronously.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   CreateCompilationResultRequest request =
+   *       CreateCompilationResultRequest.newBuilder()
+   *           .setParent(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+   *           .setCompilationResult(CompilationResult.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       dataformClient.createCompilationResultLongRunningCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateCompilationResultRequest, Operation>
+      createCompilationResultLongRunningCallable() {
+    return stub.createCompilationResultLongRunningCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -11251,6 +11561,93 @@ public class DataformClient implements BackgroundResource {
     protected FetchWorkspaceBranchesFixedSizeCollection createCollection(
         @Nullable List<FetchWorkspaceBranchesPage> pages, int collectionSize) {
       return new FetchWorkspaceBranchesFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class FetchWorkspaceHistoryPagedResponse
+      extends AbstractPagedListResponse<
+          FetchWorkspaceHistoryRequest,
+          FetchWorkspaceHistoryResponse,
+          CommitLogEntry,
+          FetchWorkspaceHistoryPage,
+          FetchWorkspaceHistoryFixedSizeCollection> {
+
+    public static ApiFuture<FetchWorkspaceHistoryPagedResponse> createAsync(
+        PageContext<FetchWorkspaceHistoryRequest, FetchWorkspaceHistoryResponse, CommitLogEntry>
+            context,
+        ApiFuture<FetchWorkspaceHistoryResponse> futureResponse) {
+      ApiFuture<FetchWorkspaceHistoryPage> futurePage =
+          FetchWorkspaceHistoryPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new FetchWorkspaceHistoryPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private FetchWorkspaceHistoryPagedResponse(FetchWorkspaceHistoryPage page) {
+      super(page, FetchWorkspaceHistoryFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class FetchWorkspaceHistoryPage
+      extends AbstractPage<
+          FetchWorkspaceHistoryRequest,
+          FetchWorkspaceHistoryResponse,
+          CommitLogEntry,
+          FetchWorkspaceHistoryPage> {
+
+    private FetchWorkspaceHistoryPage(
+        @Nullable
+            PageContext<FetchWorkspaceHistoryRequest, FetchWorkspaceHistoryResponse, CommitLogEntry>
+            context,
+        @Nullable FetchWorkspaceHistoryResponse response) {
+      super(context, response);
+    }
+
+    private static FetchWorkspaceHistoryPage createEmptyPage() {
+      return new FetchWorkspaceHistoryPage(null, null);
+    }
+
+    @Override
+    protected FetchWorkspaceHistoryPage createPage(
+        @Nullable
+            PageContext<FetchWorkspaceHistoryRequest, FetchWorkspaceHistoryResponse, CommitLogEntry>
+            context,
+        @Nullable FetchWorkspaceHistoryResponse response) {
+      return new FetchWorkspaceHistoryPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<FetchWorkspaceHistoryPage> createPageAsync(
+        @Nullable
+            PageContext<FetchWorkspaceHistoryRequest, FetchWorkspaceHistoryResponse, CommitLogEntry>
+            context,
+        ApiFuture<FetchWorkspaceHistoryResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class FetchWorkspaceHistoryFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          FetchWorkspaceHistoryRequest,
+          FetchWorkspaceHistoryResponse,
+          CommitLogEntry,
+          FetchWorkspaceHistoryPage,
+          FetchWorkspaceHistoryFixedSizeCollection> {
+
+    private FetchWorkspaceHistoryFixedSizeCollection(
+        @Nullable List<FetchWorkspaceHistoryPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static FetchWorkspaceHistoryFixedSizeCollection createEmptyCollection() {
+      return new FetchWorkspaceHistoryFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected FetchWorkspaceHistoryFixedSizeCollection createCollection(
+        @Nullable List<FetchWorkspaceHistoryPage> pages, int collectionSize) {
+      return new FetchWorkspaceHistoryFixedSizeCollection(pages, collectionSize);
     }
   }
 

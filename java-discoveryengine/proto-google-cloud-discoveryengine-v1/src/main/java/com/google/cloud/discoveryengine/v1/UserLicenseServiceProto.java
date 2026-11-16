@@ -49,6 +49,14 @@ public final class UserLicenseServiceProto extends com.google.protobuf.Generated
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_discoveryengine_v1_ListUserLicensesResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1_ListLicenseConfigsUsageStatsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1_ListLicenseConfigsUsageStatsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1_ListLicenseConfigsUsageStatsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1_ListLicenseConfigsUsageStatsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_discoveryengine_v1_BatchUpdateUserLicensesRequest_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_discoveryengine_v1_BatchUpdateUserLicensesRequest_fieldAccessorTable;
@@ -80,26 +88,33 @@ public final class UserLicenseServiceProto extends com.google.protobuf.Generated
           + "/field_behavior.proto\032\031google/api/resour"
           + "ce.proto\0322google/cloud/discoveryengine/v"
           + "1/user_license.proto\032#google/longrunning/operations.proto\032 google/protobuf/field"
-          + "_mask.proto\032\037google/protobuf/timestamp.proto\032\027google/rpc/status.proto\"\245\001\n"
+          + "_mask.proto\032\037google/protobuf/timestamp.proto\032\027google/rpc/status.proto\"\275\001\n"
           + "\027ListUserLicensesRequest\022A\n"
           + "\006parent\030\001 \001(\tB1\342A\001\002\372A*\n"
           + "(discoveryengine.googleapis.com/UserStore\022\027\n"
           + "\tpage_size\030\002 \001(\005B\004\342A\001\001\022\030\n\n"
           + "page_token\030\003 \001(\tB\004\342A\001\001\022\024\n"
-          + "\006filter\030\004 \001(\tB\004\342A\001\001\"x\n"
+          + "\006filter\030\004 \001(\tB\004\342A\001\001\022\026\n"
+          + "\010order_by\030\005 \001(\tB\004\342A\001\001\"x\n"
           + "\030ListUserLicensesResponse\022C\n\r"
-          + "user_licenses\030\001"
-          + " \003(\0132,.google.cloud.discoveryengine.v1.UserLicense\022\027\n"
-          + "\017next_page_token\030\002 \001(\t\"\226\003\n"
+          + "user_licenses\030\001 \003(\0132,.googl"
+          + "e.cloud.discoveryengine.v1.UserLicense\022\027\n"
+          + "\017next_page_token\030\002 \001(\t\"h\n"
+          + "#ListLicenseConfigsUsageStatsRequest\022A\n"
+          + "\006parent\030\001 \001(\tB1\342A\001\002\372A*\n"
+          + "(discoveryengine.googleapis.com/UserStore\"\204\001\n"
+          + "$ListLicenseConfigsUsageStatsResponse\022\\\n"
+          + "\032license_config_usage_stats\030\001"
+          + " \003(\01328.google.cloud.discoveryengine.v1.LicenseConfigUsageStats\"\226\003\n"
           + "\036BatchUpdateUserLicensesRequest\022e\n\r"
-          + "inline_source\030\002 \001(\0132L.google.cloud.discove"
-          + "ryengine.v1.BatchUpdateUserLicensesRequest.InlineSourceH\000\022A\n"
+          + "inline_source\030\002 \001(\0132L.google.cloud.discoveryengine.v1.Bat"
+          + "chUpdateUserLicensesRequest.InlineSourceH\000\022A\n"
           + "\006parent\030\001 \001(\tB1\342A\001\002\372A*\n"
           + "(discoveryengine.googleapis.com/UserStore\022-\n"
           + "\037delete_unassigned_user_licenses\030\004 \001(\010B\004\342A\001\001\032\220\001\n"
           + "\014InlineSource\022I\n\r"
-          + "user_licenses\030\001"
-          + " \003(\0132,.google.cloud.discoveryengine.v1.UserLicenseB\004\342A\001\002\0225\n"
+          + "user_licenses\030\001 \003(\0132,.g"
+          + "oogle.cloud.discoveryengine.v1.UserLicenseB\004\342A\001\002\0225\n"
           + "\013update_mask\030\002"
           + " \001(\0132\032.google.protobuf.FieldMaskB\004\342A\001\001B\010\n"
           + "\006source\"\261\001\n"
@@ -110,27 +125,31 @@ public final class UserLicenseServiceProto extends com.google.protobuf.Generated
           + "failure_count\030\004 \001(\003\"\221\001\n"
           + "\037BatchUpdateUserLicensesResponse\022C\n\r"
           + "user_licenses\030\001 \003(\0132,.google.cloud.discoveryengine.v1.UserLicense\022)\n\r"
-          + "error_samples\030\002 \003(\0132\022.google.rpc.Status2\232\005\n"
+          + "error_samples\030\002 \003(\0132\022.google.rpc.Status2\242\010\n"
           + "\022UserLicenseService\022\327\001\n"
-          + "\020ListUserLicenses\0228.google.cloud.discoveryengine.v1.ListUserLicensesRequest\0329"
-          + ".google.cloud.discoveryengine.v1.ListUse"
-          + "rLicensesResponse\"N\332A\006parent\202\323\344\223\002?\022=/v1/"
-          + "{parent=projects/*/locations/*/userStores/*}/userLicenses\022\325\002\n"
-          + "\027BatchUpdateUserLicenses\022?.google.cloud.discoveryengine.v1."
-          + "BatchUpdateUserLicensesRequest\032\035.google.longrunning.Operation\"\331\001\312A\202\001\n"
-          + "?google.cloud.discoveryengine.v1.BatchUpdateUserLic"
-          + "ensesResponse\022?google.cloud.discoveryeng"
-          + "ine.v1.BatchUpdateUserLicensesMetadata\202\323"
-          + "\344\223\002M\"H/v1/{parent=projects/*/locations/*"
-          + "/userStores/*}:batchUpdateUserLicenses:\001"
-          + "*\032R\312A\036discoveryengine.googleapis.com\322A.h"
-          + "ttps://www.googleapis.com/auth/cloud-platformB\212\002\n"
-          + "#com.google.cloud.discoveryengine.v1B\027UserLicenseServiceProtoP\001ZMcloud."
-          + "google.com/go/discoveryengine/apiv1/disc"
-          + "overyenginepb;discoveryenginepb\242\002\017DISCOV"
-          + "ERYENGINE\252\002\037Google.Cloud.DiscoveryEngine"
-          + ".V1\312\002\037Google\\Cloud\\DiscoveryEngine\\V1\352\002\""
-          + "Google::Cloud::DiscoveryEngine::V1b\006proto3"
+          + "\020ListUserLicenses\0228.google.cloud.discoveryengine.v1."
+          + "ListUserLicensesRequest\0329.google.cloud.discoveryengine.v1.ListUserLicensesRespon"
+          + "se\"N\332A\006parent\202\323\344\223\002?\022=/v1/{parent=project"
+          + "s/*/locations/*/userStores/*}/userLicenses\022\207\002\n"
+          + "\034ListLicenseConfigsUsageStats\022D.google.cloud.discoveryengine.v1.ListLicens"
+          + "eConfigsUsageStatsRequest\032E.google.cloud.discoveryengine.v1.ListLicenseConfigsUs"
+          + "ageStatsResponse\"Z\332A\006parent\202\323\344\223\002K\022I/v1/{"
+          + "parent=projects/*/locations/*/userStores/*}/licenseConfigsUsageStats\022\325\002\n"
+          + "\027BatchUpdateUserLicenses\022?.google.cloud.discover"
+          + "yengine.v1.BatchUpdateUserLicensesRequest\032\035.google.longrunning.Operation\"\331\001\312A\202\001\n"
+          + "?google.cloud.discoveryengine.v1.BatchUpdateUserLicensesResponse\022?google.cloud.d"
+          + "iscoveryengine.v1.BatchUpdateUserLicense"
+          + "sMetadata\202\323\344\223\002M\"H/v1/{parent=projects/*/"
+          + "locations/*/userStores/*}:batchUpdateUse"
+          + "rLicenses:\001*\032\317\001\312A\036discoveryengine.google"
+          + "apis.com\322A\252\001https://www.googleapis.com/a"
+          + "uth/cloud-platform,https://www.googleapis.com/auth/discoveryengine.readwrite,htt"
+          + "ps://www.googleapis.com/auth/discoveryengine.serving.readwriteB\212\002\n"
+          + "#com.google.cloud.discoveryengine.v1B\027UserLicenseServi"
+          + "ceProtoP\001ZMcloud.google.com/go/discoveryengine/apiv1/discoveryenginepb;discovery"
+          + "enginepb\242\002\017DISCOVERYENGINE\252\002\037Google.Clou"
+          + "d.DiscoveryEngine.V1\312\002\037Google\\Cloud\\Disc"
+          + "overyEngine\\V1\352\002\"Google::Cloud::DiscoveryEngine::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -152,7 +171,7 @@ public final class UserLicenseServiceProto extends com.google.protobuf.Generated
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1_ListUserLicensesRequest_descriptor,
             new java.lang.String[] {
-              "Parent", "PageSize", "PageToken", "Filter",
+              "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
             });
     internal_static_google_cloud_discoveryengine_v1_ListUserLicensesResponse_descriptor =
         getDescriptor().getMessageType(1);
@@ -162,8 +181,24 @@ public final class UserLicenseServiceProto extends com.google.protobuf.Generated
             new java.lang.String[] {
               "UserLicenses", "NextPageToken",
             });
-    internal_static_google_cloud_discoveryengine_v1_BatchUpdateUserLicensesRequest_descriptor =
+    internal_static_google_cloud_discoveryengine_v1_ListLicenseConfigsUsageStatsRequest_descriptor =
         getDescriptor().getMessageType(2);
+    internal_static_google_cloud_discoveryengine_v1_ListLicenseConfigsUsageStatsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1_ListLicenseConfigsUsageStatsRequest_descriptor,
+            new java.lang.String[] {
+              "Parent",
+            });
+    internal_static_google_cloud_discoveryengine_v1_ListLicenseConfigsUsageStatsResponse_descriptor =
+        getDescriptor().getMessageType(3);
+    internal_static_google_cloud_discoveryengine_v1_ListLicenseConfigsUsageStatsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1_ListLicenseConfigsUsageStatsResponse_descriptor,
+            new java.lang.String[] {
+              "LicenseConfigUsageStats",
+            });
+    internal_static_google_cloud_discoveryengine_v1_BatchUpdateUserLicensesRequest_descriptor =
+        getDescriptor().getMessageType(4);
     internal_static_google_cloud_discoveryengine_v1_BatchUpdateUserLicensesRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1_BatchUpdateUserLicensesRequest_descriptor,
@@ -180,7 +215,7 @@ public final class UserLicenseServiceProto extends com.google.protobuf.Generated
               "UserLicenses", "UpdateMask",
             });
     internal_static_google_cloud_discoveryengine_v1_BatchUpdateUserLicensesMetadata_descriptor =
-        getDescriptor().getMessageType(3);
+        getDescriptor().getMessageType(5);
     internal_static_google_cloud_discoveryengine_v1_BatchUpdateUserLicensesMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1_BatchUpdateUserLicensesMetadata_descriptor,
@@ -188,7 +223,7 @@ public final class UserLicenseServiceProto extends com.google.protobuf.Generated
               "CreateTime", "UpdateTime", "SuccessCount", "FailureCount",
             });
     internal_static_google_cloud_discoveryengine_v1_BatchUpdateUserLicensesResponse_descriptor =
-        getDescriptor().getMessageType(4);
+        getDescriptor().getMessageType(6);
     internal_static_google_cloud_discoveryengine_v1_BatchUpdateUserLicensesResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1_BatchUpdateUserLicensesResponse_descriptor,

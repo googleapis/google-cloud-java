@@ -56,7 +56,9 @@ public interface HybridSubnetInfoOrBuilder
    *
    *
    * <pre>
-   * URI of a hybrid subnet.
+   * URI of the hybrid subnet.
+   * Format:
+   * `projects/{project_id}/regions/{region}/subnetworks/{subnetwork_id}`
    * </pre>
    *
    * <code>string uri = 2;</code>
@@ -69,7 +71,9 @@ public interface HybridSubnetInfoOrBuilder
    *
    *
    * <pre>
-   * URI of a hybrid subnet.
+   * URI of the hybrid subnet.
+   * Format:
+   * `projects/{project_id}/regions/{region}/subnetworks/{subnetwork_id}`
    * </pre>
    *
    * <code>string uri = 2;</code>

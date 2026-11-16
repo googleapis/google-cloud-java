@@ -58,12 +58,12 @@ public interface OdbNetworkOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the VPC network in the following format:
+   * Required. Immutable. The name of the VPC network in the following format:
    * projects/{project}/global/networks/{network}
    * </pre>
    *
    * <code>
-   * string network = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * string network = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The network.
@@ -74,12 +74,12 @@ public interface OdbNetworkOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the VPC network in the following format:
+   * Required. Immutable. The name of the VPC network in the following format:
    * projects/{project}/global/networks/{network}
    * </pre>
    *
    * <code>
-   * string network = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * string network = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The bytes for network.
@@ -251,12 +251,14 @@ public interface OdbNetworkOrBuilder
    *
    *
    * <pre>
-   * Optional. The GCP Oracle zone where OdbNetwork is hosted.
+   * Optional. Immutable. The GCP Oracle zone where OdbNetwork is hosted.
    * Example: us-east4-b-r2.
    * If not specified, the system will pick a zone based on availability.
    * </pre>
    *
-   * <code>string gcp_oracle_zone = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string gcp_oracle_zone = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The gcpOracleZone.
    */
@@ -266,14 +268,95 @@ public interface OdbNetworkOrBuilder
    *
    *
    * <pre>
-   * Optional. The GCP Oracle zone where OdbNetwork is hosted.
+   * Optional. Immutable. The GCP Oracle zone where OdbNetwork is hosted.
    * Example: us-east4-b-r2.
    * If not specified, the system will pick a zone based on availability.
    * </pre>
    *
-   * <code>string gcp_oracle_zone = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string gcp_oracle_zone = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The bytes for gcpOracleZone.
    */
   com.google.protobuf.ByteString getGcpOracleZoneBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration to enable the service (Oracledatabase&#64;Google Cloud)
+   * to establish connectivity to the database.
+   *
+   * This should be specified if you intend to associate this OdbNetwork with a
+   * DatabaseConnection resource to `ExecuteSQL` on the database, or to create a
+   * ServiceIntegration with the Database.
+   *
+   * Please don't specify it otherwise to avoid complicating the network setup.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.oracledatabase.v1.ServiceConnectivityConfig service_connectivity_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the serviceConnectivityConfig field is set.
+   */
+  boolean hasServiceConnectivityConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration to enable the service (Oracledatabase&#64;Google Cloud)
+   * to establish connectivity to the database.
+   *
+   * This should be specified if you intend to associate this OdbNetwork with a
+   * DatabaseConnection resource to `ExecuteSQL` on the database, or to create a
+   * ServiceIntegration with the Database.
+   *
+   * Please don't specify it otherwise to avoid complicating the network setup.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.oracledatabase.v1.ServiceConnectivityConfig service_connectivity_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The serviceConnectivityConfig.
+   */
+  com.google.cloud.oracledatabase.v1.ServiceConnectivityConfig getServiceConnectivityConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration to enable the service (Oracledatabase&#64;Google Cloud)
+   * to establish connectivity to the database.
+   *
+   * This should be specified if you intend to associate this OdbNetwork with a
+   * DatabaseConnection resource to `ExecuteSQL` on the database, or to create a
+   * ServiceIntegration with the Database.
+   *
+   * Please don't specify it otherwise to avoid complicating the network setup.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.oracledatabase.v1.ServiceConnectivityConfig service_connectivity_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.oracledatabase.v1.ServiceConnectivityConfigOrBuilder
+      getServiceConnectivityConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Indicates whether the OdbNetwork is currently reconciling
+   * changes.
+   * </pre>
+   *
+   * <code>bool reconciling = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The reconciling.
+   */
+  boolean getReconciling();
 }

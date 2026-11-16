@@ -135,6 +135,8 @@ public final class VpcConnectorInfo extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * URI of a VPC connector.
+   * Format:
+   * `projects/{project_id}/locations/{location}/connectors/{connector_id}`
    * </pre>
    *
    * <code>string uri = 2;</code>
@@ -159,6 +161,8 @@ public final class VpcConnectorInfo extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * URI of a VPC connector.
+   * Format:
+   * `projects/{project_id}/locations/{location}/connectors/{connector_id}`
    * </pre>
    *
    * <code>string uri = 2;</code>
@@ -708,6 +712,8 @@ public final class VpcConnectorInfo extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * URI of a VPC connector.
+     * Format:
+     * `projects/{project_id}/locations/{location}/connectors/{connector_id}`
      * </pre>
      *
      * <code>string uri = 2;</code>
@@ -731,6 +737,8 @@ public final class VpcConnectorInfo extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * URI of a VPC connector.
+     * Format:
+     * `projects/{project_id}/locations/{location}/connectors/{connector_id}`
      * </pre>
      *
      * <code>string uri = 2;</code>
@@ -754,6 +762,8 @@ public final class VpcConnectorInfo extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * URI of a VPC connector.
+     * Format:
+     * `projects/{project_id}/locations/{location}/connectors/{connector_id}`
      * </pre>
      *
      * <code>string uri = 2;</code>
@@ -776,6 +786,8 @@ public final class VpcConnectorInfo extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * URI of a VPC connector.
+     * Format:
+     * `projects/{project_id}/locations/{location}/connectors/{connector_id}`
      * </pre>
      *
      * <code>string uri = 2;</code>
@@ -794,6 +806,8 @@ public final class VpcConnectorInfo extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * URI of a VPC connector.
+     * Format:
+     * `projects/{project_id}/locations/{location}/connectors/{connector_id}`
      * </pre>
      *
      * <code>string uri = 2;</code>
