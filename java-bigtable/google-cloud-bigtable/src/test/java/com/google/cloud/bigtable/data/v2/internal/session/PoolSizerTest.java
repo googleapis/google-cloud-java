@@ -30,14 +30,14 @@ import org.junit.jupiter.api.Test;
 class PoolSizerTest {
 
   private static final float IDLE_SESSION_HEADROOM_RATIO = 0.5f;
-  private static final int MIN_IDLE_SESSIONS = 5;
+  private static final int MIN_SESSIONS = 5;
   private static final int MAX_SESSIONS = 400;
   private static final int PENDING_RPCS_PER_SESSION = 10;
 
   private static final SessionClientConfiguration.SessionPoolConfiguration DEFAULT_CONFIG =
       SessionClientConfiguration.SessionPoolConfiguration.newBuilder()
           .setHeadroom(IDLE_SESSION_HEADROOM_RATIO)
-          .setMinSessionCount(MIN_IDLE_SESSIONS)
+          .setMinSessionCount(MIN_SESSIONS)
           .setMaxSessionCount(MAX_SESSIONS)
           .setNewSessionQueueLength(PENDING_RPCS_PER_SESSION)
           .build();
@@ -48,7 +48,7 @@ class PoolSizerTest {
     Sized pendingRpcsCount = () -> 0;
     PoolSizer sizer = new PoolSizer(stats, pendingRpcsCount, DEFAULT_CONFIG);
 
-    assertThat(sizer.getScaleDelta()).isEqualTo(MIN_IDLE_SESSIONS);
+    assertThat(sizer.getScaleDelta()).isEqualTo(MIN_SESSIONS);
     assertThat(sizer.handleNewCall()).isTrue();
     assertThat(sizer.handleGoAway(GoAwayResponse.getDefaultInstance())).isTrue();
     assertThat(sizer.handleSessionClose(Status.getDefaultInstance())).isTrue();
@@ -60,17 +60,17 @@ class PoolSizerTest {
     Sized pendingRpcsCount = () -> 0;
     PoolSizer sizer = new PoolSizer(stats, pendingRpcsCount, DEFAULT_CONFIG);
 
-    stats.getTestHelper().setReadyCount(MIN_IDLE_SESSIONS);
-    stats.getTestHelper().setExpectedCapacity(MIN_IDLE_SESSIONS);
+    stats.getTestHelper().setReadyCount(MIN_SESSIONS);
+    stats.getTestHelper().setExpectedCapacity(MIN_SESSIONS);
 
     assertThat(sizer.getScaleDelta()).isEqualTo(0);
     assertThat(sizer.handleNewCall()).isFalse();
     assertThat(sizer.handleGoAway(GoAwayResponse.getDefaultInstance())).isFalse();
     assertThat(sizer.handleSessionClose(Status.getDefaultInstance())).isFalse();
 
-    // After onSessionClosing / onSessionClosed decrements expectedCapacity below MIN_IDLE_SESSIONS:
-    stats.getTestHelper().setReadyCount(MIN_IDLE_SESSIONS - 1);
-    stats.getTestHelper().setExpectedCapacity(MIN_IDLE_SESSIONS - 1);
+    // After onSessionClosing / onSessionClosed decrements expectedCapacity below MIN_SESSIONS:
+    stats.getTestHelper().setReadyCount(MIN_SESSIONS - 1);
+    stats.getTestHelper().setExpectedCapacity(MIN_SESSIONS - 1);
     assertThat(sizer.handleGoAway(GoAwayResponse.getDefaultInstance())).isTrue();
     assertThat(sizer.handleSessionClose(Status.getDefaultInstance())).isTrue();
   }
@@ -82,10 +82,10 @@ class PoolSizerTest {
     PoolSizer sizer = new PoolSizer(stats, pendingRpcsCount, DEFAULT_CONFIG);
 
     Preconditions.checkState(
-        pendingRpcsCount.getSize() > MIN_IDLE_SESSIONS,
+        pendingRpcsCount.getSize() > MIN_SESSIONS,
         "Test requires the pendingCount to be larger than ready count");
 
-    int numReadySessions = MIN_IDLE_SESSIONS;
+    int numReadySessions = MIN_SESSIONS;
 
     stats.getTestHelper().setReadyCount(numReadySessions);
     stats.getTestHelper().setInUseCount(0);
@@ -94,7 +94,7 @@ class PoolSizerTest {
         .isEqualTo(
             (int) Math.ceil((float) pendingRpcsCount.getSize() / PENDING_RPCS_PER_SESSION)
                 - numReadySessions
-                + MIN_IDLE_SESSIONS);
+                + MIN_SESSIONS);
     assertThat(sizer.handleNewCall()).isTrue();
     assertThat(sizer.handleGoAway(GoAwayResponse.getDefaultInstance())).isTrue();
     assertThat(sizer.handleSessionClose(Status.getDefaultInstance())).isTrue();
@@ -110,10 +110,10 @@ class PoolSizerTest {
     stats.getTestHelper().setInUseCount(1);
     stats.getTestHelper().setExpectedCapacity(1);
 
-    // Ensure that we always have at least MIN_IDLE_SESSIONS sessions available
+    // Ensure that we always have at least MIN_SESSIONS sessions available
     // Separately we want to have IDLE_SESSION_HEADROOM_RATIO available sessions, but in this case
-    // MIN_IDLE_SESSIONS is the primary indicator
-    assertThat(sizer.getScaleDelta()).isEqualTo(MIN_IDLE_SESSIONS);
+    // MIN_SESSIONS is the primary indicator
+    assertThat(sizer.getScaleDelta()).isEqualTo(MIN_SESSIONS);
     // Remain steady in band
     assertThat(sizer.handleNewCall()).isTrue();
     assertThat(sizer.handleGoAway(GoAwayResponse.getDefaultInstance())).isTrue();
@@ -131,7 +131,7 @@ class PoolSizerTest {
     stats.getTestHelper().setExpectedCapacity(20);
 
     // Separately we want to have IDLE_SESSION_HEADROOM_RATIO available sessions
-    // Separately we want to ensure that we always have at least MIN_IDLE_SESSIONS sessions
+    // Separately we want to ensure that we always have at least MIN_SESSIONS sessions
     // but in this case the ratio is the primary indicator available
     assertThat(sizer.getScaleDelta()).isEqualTo(10);
     // Remain steady in band
@@ -146,8 +146,8 @@ class PoolSizerTest {
     Sized pendingRpcsCount = () -> 0;
     PoolSizer sizer = new PoolSizer(stats, pendingRpcsCount, DEFAULT_CONFIG);
 
-    stats.getTestHelper().setStartingCount(MIN_IDLE_SESSIONS);
-    stats.getTestHelper().setExpectedCapacity(MIN_IDLE_SESSIONS);
+    stats.getTestHelper().setStartingCount(MIN_SESSIONS);
+    stats.getTestHelper().setExpectedCapacity(MIN_SESSIONS);
 
     assertThat(sizer.getScaleDelta()).isEqualTo(0);
     // Remain steady in band
@@ -155,9 +155,9 @@ class PoolSizerTest {
     assertThat(sizer.handleGoAway(GoAwayResponse.getDefaultInstance())).isFalse();
     assertThat(sizer.handleSessionClose(Status.getDefaultInstance())).isFalse();
 
-    // After onSessionClosing / onSessionClosed decrements expectedCapacity below MIN_IDLE_SESSIONS:
-    stats.getTestHelper().setStartingCount(MIN_IDLE_SESSIONS - 1);
-    stats.getTestHelper().setExpectedCapacity(MIN_IDLE_SESSIONS - 1);
+    // After onSessionClosing / onSessionClosed decrements expectedCapacity below MIN_SESSIONS:
+    stats.getTestHelper().setStartingCount(MIN_SESSIONS - 1);
+    stats.getTestHelper().setExpectedCapacity(MIN_SESSIONS - 1);
     assertThat(sizer.handleGoAway(GoAwayResponse.getDefaultInstance())).isTrue();
     assertThat(sizer.handleSessionClose(Status.getDefaultInstance())).isTrue();
   }
@@ -169,11 +169,11 @@ class PoolSizerTest {
     Sized pendingRpcsCount = () -> pendingCount.get();
     PoolSizer sizer = new PoolSizer(stats, pendingRpcsCount, DEFAULT_CONFIG);
 
-    assertThat(sizer.getScaleDelta()).isEqualTo(MIN_IDLE_SESSIONS);
+    assertThat(sizer.getScaleDelta()).isEqualTo(MIN_SESSIONS);
 
-    // Started 5 sessions on startup to satisfy PoolSizer.MIN_IDLE_SESSIONS.
-    stats.getTestHelper().setStartingCount(MIN_IDLE_SESSIONS);
-    stats.getTestHelper().setExpectedCapacity(MIN_IDLE_SESSIONS);
+    // Started 5 sessions on startup to satisfy PoolSizer.MIN_SESSIONS.
+    stats.getTestHelper().setStartingCount(MIN_SESSIONS);
+    stats.getTestHelper().setExpectedCapacity(MIN_SESSIONS);
 
     // Requests start to pile up while we still have our first 5 sessions starting.
     int incomingRequests = 100;
@@ -192,9 +192,8 @@ class PoolSizerTest {
       int forPending = (int) Math.ceil((float) pendingCount.get() / PENDING_RPCS_PER_SESSION);
       int sessionsNeeded = forPending + stats.getInUseCount();
       int desiredIdleSessions = (int) Math.ceil(sessionsNeeded * IDLE_SESSION_HEADROOM_RATIO);
-      desiredIdleSessions =
-          Math.max(Math.min(desiredIdleSessions, MAX_SESSIONS), MIN_IDLE_SESSIONS);
-      int desiredCapacity = sessionsNeeded + desiredIdleSessions;
+      desiredIdleSessions = Math.max(Math.min(desiredIdleSessions, MAX_SESSIONS), MIN_SESSIONS);
+      int desiredCapacity = Math.min(sessionsNeeded + desiredIdleSessions, MAX_SESSIONS);
 
       assertThat(sizer.getScaleDelta())
           .isEqualTo(Math.max(0, desiredCapacity - stats.getExpectedCapacity()));

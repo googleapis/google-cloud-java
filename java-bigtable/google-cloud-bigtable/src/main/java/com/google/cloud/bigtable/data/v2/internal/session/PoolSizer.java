@@ -28,7 +28,7 @@ class PoolSizer {
   // example, a headroom of 50% will keep enough sessions to deal with a 50% increase in QPS or a
   // 50% increase in latency (since that also increases requests-in-flight).
   private volatile float idlesSessionHeadRoom;
-  private volatile int minIdleSessions;
+  private volatile int minSessions;
   private volatile int maxSessions;
 
   private final PoolStats stats;
@@ -59,7 +59,7 @@ class PoolSizer {
 
   void updateConfig(SessionClientConfiguration.SessionPoolConfiguration poolConfiguration) {
     this.idlesSessionHeadRoom = poolConfiguration.getHeadroom();
-    this.minIdleSessions = poolConfiguration.getMinSessionCount();
+    this.minSessions = poolConfiguration.getMinSessionCount();
     this.maxSessions = poolConfiguration.getMaxSessionCount();
     this.pendingVRpcsPerSession = poolConfiguration.getNewSessionQueueLength();
     this.disabled =
@@ -82,7 +82,7 @@ class PoolSizer {
     int sessionsInUse = effectivePending + stats.getInUseCount();
     int unboundedDesiredIdleSessions = (int) Math.ceil(sessionsInUse * idlesSessionHeadRoom);
     int desiredIdleSessions =
-        Math.max(Math.min(unboundedDesiredIdleSessions, maxSessions), minIdleSessions);
+        Math.max(Math.min(unboundedDesiredIdleSessions, maxSessions), minSessions);
 
     int desiredCapacity = Math.min(sessionsInUse + desiredIdleSessions, maxSessions);
     int eventualCapacity = stats.getExpectedCapacity();
