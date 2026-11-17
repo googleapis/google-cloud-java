@@ -589,6 +589,7 @@ public class ChannelPoolDpImpl implements ChannelPool {
     final ManagedChannel channel;
     final Instant createdAt;
     volatile State state = State.ACTIVE;
+    // Guarded by the enclosing ChannelPoolDpImpl instance.
     int numOutstanding = 0;
     int consecutiveFailures = 0;
     Instant lastUsedAt;
