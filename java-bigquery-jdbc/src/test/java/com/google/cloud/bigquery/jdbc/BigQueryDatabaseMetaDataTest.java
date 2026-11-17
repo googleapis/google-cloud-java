@@ -3626,6 +3626,41 @@ public class BigQueryDatabaseMetaDataTest {
   }
 
   @Test
+  public void testGraphMetadataQueries_useInternalPreparedStatements() throws SQLException {
+    // The PROPERTY_GRAPHS lookups behind getTables, getColumns and getPrimaryKeys are
+    // driver-internal and must not be reported as user PREPARED_STATEMENT / PARAMETER_BINDING /
+    // SELECT telemetry: they must go through prepareStatementInternal, never prepareStatement.
+    when(bigQueryConnection.isEnableGraphMetadata()).thenReturn(true);
+    BigQueryPreparedStatement mockStmt = mock(BigQueryPreparedStatement.class);
+    ResultSet emptyRs = mock(ResultSet.class);
+    when(emptyRs.next()).thenReturn(false);
+    when(mockStmt.executeQuery()).thenReturn(emptyRs);
+    when(bigQueryConnection.prepareStatementInternal(anyString())).thenReturn(mockStmt);
+
+    List<FieldValueList> rows = new ArrayList<>();
+    dbMetadata.appendGraphTableRows(
+        "test-project",
+        "dataset_p",
+        "Graph.%",
+        Collections.singleton("GRAPH TABLE"),
+        rows,
+        dbMetadata.defineGetTablesSchema().getFields());
+    dbMetadata.appendGraphColumnRows(
+        "test-project",
+        "dataset_p",
+        "Graph.Node",
+        "%",
+        rows,
+        dbMetadata.defineGetColumnsSchema().getFields());
+    try (ResultSet rs = dbMetadata.getPrimaryKeys("test-project", "dataset_p", "Graph.Node")) {
+      assertFalse(rs.next());
+    }
+
+    verify(bigQueryConnection, times(3)).prepareStatementInternal(anyString());
+    verify(bigQueryConnection, never()).prepareStatement(anyString());
+  }
+
+  @Test
   public void testGetExportedKeys_infoSchema() throws SQLException {
     BigQueryPreparedStatement mockStmt = mock(BigQueryPreparedStatement.class);
     ResultSet mockRs = mock(ResultSet.class);

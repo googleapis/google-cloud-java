@@ -607,9 +607,11 @@ public class BigQueryPreparedStatementSettersTest {
   @Test
   public void testExecuteBatch_writeApiFailure_recordsErrorStatusAndNoBatchFeature()
       throws SQLException {
-    // Write API branch. bulkInsertWithWriteAPI throws BigQueryJdbcException when the statement
-    // has no insert metadata; that failure must be recorded as STATUS_ERROR (previously it fell
-    // through to STATUS_UNSPECIFIED) and must not count as a BATCH_OPERATIONS feature use.
+    // Write API branch. With no insert metadata on the statement, bulkInsertWithWriteAPI fails
+    // with a NullPointerException from BigQueryJdbcBulkInsertWriter.initialize. That exercises
+    // the RuntimeException arm of the new catch: the failure must be recorded as STATUS_ERROR
+    // (previously it fell through to STATUS_UNSPECIFIED) and must not count as a
+    // BATCH_OPERATIONS feature use.
     BigQueryPreparedStatement spy = spy(preparedStatement);
     doReturn(true).when(spy).useWriteAPI();
     when(connection.getBigQueryWriteClient()).thenReturn(mock(BigQueryWriteClient.class));
@@ -618,7 +620,7 @@ public class BigQueryPreparedStatementSettersTest {
 
     try (MockedStatic<TelemetryManager> telemetry =
         mockStatic(TelemetryManager.class, CALLS_REAL_METHODS)) {
-      assertThrows(Exception.class, spy::executeBatch);
+      assertThrows(NullPointerException.class, spy::executeBatch);
       ArgumentCaptor<StatementExecution.Builder> execution =
           ArgumentCaptor.forClass(StatementExecution.Builder.class);
       telemetry.verify(
