@@ -60,6 +60,7 @@ public class ChannelPoolBuiltInMetricsTest extends AbstractMockServerTest {
 
   @Before
   public void setUp() {
+    SpannerOptions.useEnvironment(new SpannerOptions.SpannerEnvironment() {});
     previousJmhEnabled = System.getProperty("jmh.enabled");
     System.setProperty("jmh.enabled", "true");
     BuiltInMetricsProvider.INSTANCE.reset();
