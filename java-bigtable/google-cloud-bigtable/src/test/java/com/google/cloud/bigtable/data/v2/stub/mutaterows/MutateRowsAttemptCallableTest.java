@@ -29,6 +29,7 @@ import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.retrying.RetryingFuture;
 import com.google.api.gax.retrying.ScheduledRetryingExecutor;
 import com.google.api.gax.retrying.TimedAttemptSettings;
+import com.google.api.gax.rpc.AbortedException;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.StatusCode.Code;
@@ -548,6 +549,131 @@ public class MutateRowsAttemptCallableTest {
     } finally {
       executorService.shutdownNow();
     }
+  }
+
+  @Test
+  public void perCallRetryableCodesEntryErrorTest() throws Exception {
+    MutateRowsRequest request =
+        MutateRowsRequest.newBuilder()
+            .addEntries(Entry.newBuilder().setRowKey(ByteString.copyFromUtf8("0-aborted")))
+            .addEntries(Entry.newBuilder().setRowKey(ByteString.copyFromUtf8("1-unavailable")))
+            .build();
+
+    Status abortedStatusProto =
+        Status.newBuilder().setCode(com.google.rpc.Code.ABORTED_VALUE).build();
+    innerCallable.response.add(
+        MutateRowsResponse.newBuilder()
+            .addEntries(
+                MutateRowsResponse.Entry.newBuilder().setIndex(0).setStatus(abortedStatusProto))
+            .addEntries(
+                MutateRowsResponse.Entry.newBuilder()
+                    .setIndex(1)
+                    .setStatus(TRANSIENT_ERROR_STATUS_PROTO))
+            .build());
+
+    ApiCallContext customCallContext =
+        callContext.withRetryableCodes(ImmutableSet.of(Code.ABORTED));
+    MutateRowsAttemptCallable attemptCallable =
+        new MutateRowsAttemptCallable(
+            innerCallable, request, customCallContext, retryCodes, mockRetryAlgorithm);
+    attemptCallable.setExternalFuture(parentFuture);
+    attemptCallable.call();
+
+    MutateRowsAttemptResult result = parentFuture.attemptFuture.get();
+    assertThat(result.getIsRetryable()).isTrue();
+    List<FailedMutation> failedMutations = result.getFailedMutations();
+    assertThat(failedMutations).hasSize(2);
+
+    assertThat(failedMutations.get(0).getIndex()).isEqualTo(0);
+    assertThat(failedMutations.get(0).getError().getStatusCode().getCode()).isEqualTo(Code.ABORTED);
+    assertThat(failedMutations.get(0).getError().isRetryable()).isTrue();
+
+    assertThat(failedMutations.get(1).getIndex()).isEqualTo(1);
+    assertThat(failedMutations.get(1).getError().getStatusCode().getCode())
+        .isEqualTo(Code.UNAVAILABLE);
+    assertThat(failedMutations.get(1).getError().isRetryable()).isFalse();
+
+    // Next attempt should only resend the retryable ABORTED entry (index 0)
+    innerCallable.response =
+        Lists.newArrayList(
+            MutateRowsResponse.newBuilder()
+                .addEntries(
+                    MutateRowsResponse.Entry.newBuilder().setIndex(0).setStatus(OK_STATUS_PROTO))
+                .build());
+    attemptCallable.call();
+    assertThat(innerCallable.lastRequest.getEntriesCount()).isEqualTo(1);
+    assertThat(innerCallable.lastRequest.getEntries(0).getRowKey())
+        .isEqualTo(ByteString.copyFromUtf8("0-aborted"));
+  }
+
+  @Test
+  public void perCallRetryableCodesRpcErrorTest() {
+    MutateRowsRequest request =
+        MutateRowsRequest.newBuilder().addEntries(Entry.getDefaultInstance()).build();
+
+    // Stub default marks ABORTED as non-retryable and UNAVAILABLE as retryable, but per-call
+    // context overrides retryableCodes to {ABORTED}.
+    final AbortedException abortedError =
+        new AbortedException(
+            "aborted", null, GrpcStatusCode.of(io.grpc.Status.Code.ABORTED), false);
+    final UnavailableException unavailableError =
+        new UnavailableException(
+            "unavailable", null, GrpcStatusCode.of(io.grpc.Status.Code.UNAVAILABLE), true);
+
+    ApiCallContext customCallContext =
+        callContext.withRetryableCodes(ImmutableSet.of(Code.ABORTED));
+
+    UnaryCallable<MutateRowsRequest, List<MutateRowsResponse>> abortedCallable =
+        new UnaryCallable<MutateRowsRequest, List<MutateRowsResponse>>() {
+          @Override
+          public ApiFuture<List<MutateRowsResponse>> futureCall(
+              MutateRowsRequest req, ApiCallContext ctx) {
+            return ApiFutures.immediateFailedFuture(abortedError);
+          }
+        };
+
+    MutateRowsAttemptCallable attemptCallable1 =
+        new MutateRowsAttemptCallable(
+            abortedCallable, request, customCallContext, retryCodes, mockRetryAlgorithm);
+    attemptCallable1.setExternalFuture(parentFuture);
+    attemptCallable1.call();
+
+    Throwable actualError1 = null;
+    try {
+      parentFuture.attemptFuture.get();
+    } catch (Throwable t) {
+      actualError1 = t.getCause();
+    }
+    assertThat(actualError1).isInstanceOf(MutateRowsException.class);
+    MutateRowsException ex1 = (MutateRowsException) actualError1;
+    assertThat(ex1.isRetryable()).isTrue();
+    assertThat(ex1.getFailedMutations().get(0).getError().isRetryable()).isTrue();
+
+    UnaryCallable<MutateRowsRequest, List<MutateRowsResponse>> unavailableCallable =
+        new UnaryCallable<MutateRowsRequest, List<MutateRowsResponse>>() {
+          @Override
+          public ApiFuture<List<MutateRowsResponse>> futureCall(
+              MutateRowsRequest req, ApiCallContext ctx) {
+            return ApiFutures.immediateFailedFuture(unavailableError);
+          }
+        };
+
+    MutateRowsAttemptCallable attemptCallable2 =
+        new MutateRowsAttemptCallable(
+            unavailableCallable, request, customCallContext, retryCodes, mockRetryAlgorithm);
+    attemptCallable2.setExternalFuture(parentFuture);
+    attemptCallable2.call();
+
+    Throwable actualError2 = null;
+    try {
+      parentFuture.attemptFuture.get();
+    } catch (Throwable t) {
+      actualError2 = t.getCause();
+    }
+    assertThat(actualError2).isInstanceOf(MutateRowsException.class);
+    MutateRowsException ex2 = (MutateRowsException) actualError2;
+    assertThat(ex2.isRetryable()).isFalse();
+    assertThat(ex2.getFailedMutations().get(0).getError().isRetryable()).isFalse();
   }
 
   // <editor-fold desc="Helpers">

@@ -350,11 +350,13 @@ class MutateRowsAttemptCallable implements Callable<MutateRowsAttemptResult> {
             .withDescription(protoStatus.getMessage());
 
     StatusCode gaxStatusCode = GrpcStatusCode.of(grpcStatus.getCode());
+    Set<StatusCode.Code> effectiveRetryableCodes =
+        callContext.getRetryableCodes() != null ? callContext.getRetryableCodes() : retryableCodes;
 
     return ApiExceptionFactory.createException(
         grpcStatus.asRuntimeException(),
         gaxStatusCode,
-        retryableCodes.contains(gaxStatusCode.getCode()));
+        effectiveRetryableCodes.contains(gaxStatusCode.getCode()));
   }
 
   /**
@@ -362,14 +364,24 @@ class MutateRowsAttemptCallable implements Callable<MutateRowsAttemptResult> {
    * implies that all entries failed as well. This helper is used to make that behavior explicit.
    * The generated exception will have the overall error as its cause.
    */
-  private static ApiException createSyntheticErrorForRpcFailure(Throwable overallRequestError) {
+  private ApiException createSyntheticErrorForRpcFailure(Throwable overallRequestError) {
     if (overallRequestError instanceof ApiException) {
       ApiException requestApiException = (ApiException) overallRequestError;
+      // When no per-call retryableCodes override is present on callContext, preserve
+      // requestApiException.isRetryable() so both the stub's configured retryableCodes (applied by
+      // GrpcRawCallableFactory) and ConvertExceptionCallable's retryable flag on transient
+      // INTERNAL errors (e.g. RST_STREAM / GOAWAY) are honored.
+      boolean isRetryable =
+          callContext.getRetryableCodes() != null
+              ? callContext
+                  .getRetryableCodes()
+                  .contains(requestApiException.getStatusCode().getCode())
+              : requestApiException.isRetryable();
 
       return ApiExceptionFactory.createException(
           overallRequestError,
           requestApiException.getStatusCode(),
-          requestApiException.isRetryable(),
+          isRetryable,
           requestApiException.getErrorDetails());
     }
 
