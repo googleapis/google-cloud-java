@@ -79,25 +79,6 @@ public class EndpointLifecycleManagerTest {
     assertTrue(message, condition.getAsBoolean());
   }
 
-  /**
-   * Registers {@code address} with its channel already CONNECTING and waits until the background
-   * prober's initial run (scheduled with zero delay) has read that state. A CONNECTING probe does
-   * not touch the transient failure counter, so once this returns, manual {@code probe()} calls are
-   * the only writers of that counter until the next scheduled probe one interval later.
-   */
-  private static void registerAndAwaitInitialConnectingProbe(
-      EndpointLifecycleManager mgr, KeyRangeCacheTest.FakeEndpointCache cache, String address) {
-    KeyRangeCacheTest.FakeEndpoint endpoint = (KeyRangeCacheTest.FakeEndpoint) cache.get(address);
-    endpoint.setState(KeyRangeCacheTest.EndpointHealthState.CONNECTING);
-    registerAddresses(mgr, address);
-    awaitCondition(
-        "background prober should observe the initial CONNECTING state",
-        () -> endpoint.getStateCallCount() > 0);
-    EndpointLifecycleManager.EndpointState state = mgr.getEndpointState(address);
-    assertNotNull(state);
-    assertEquals(0, state.consecutiveTransientFailures);
-  }
-
   @Test
   public void endpointCreationStartsProbing() throws Exception {
     KeyRangeCacheTest.FakeEndpointCache cache = new KeyRangeCacheTest.FakeEndpointCache();
@@ -294,9 +275,15 @@ public class EndpointLifecycleManagerTest {
     KeyRangeCacheTest.FakeEndpointCache cache = new KeyRangeCacheTest.FakeEndpointCache();
     manager =
         new EndpointLifecycleManager(
-            cache, /* probeIntervalSeconds= */ 60, Duration.ofMinutes(30), Clock.systemUTC());
+            cache,
+            /* probeIntervalSeconds= */ 60,
+            Duration.ofMinutes(30),
+            Clock.systemUTC(),
+            /* enableBackgroundProbing= */ false);
 
-    registerAndAwaitInitialConnectingProbe(manager, cache, "server1");
+    registerAddresses(manager, "server1");
+    awaitCondition(
+        "endpoint should be created in background", () -> cache.getIfPresent("server1") != null);
 
     cache.setState("server1", KeyRangeCacheTest.EndpointHealthState.TRANSIENT_FAILURE);
     manager.probe("server1");
@@ -327,9 +314,15 @@ public class EndpointLifecycleManagerTest {
     KeyRangeCacheTest.FakeEndpointCache cache = new KeyRangeCacheTest.FakeEndpointCache();
     manager =
         new EndpointLifecycleManager(
-            cache, /* probeIntervalSeconds= */ 60, Duration.ofMinutes(30), Clock.systemUTC());
+            cache,
+            /* probeIntervalSeconds= */ 60,
+            Duration.ofMinutes(30),
+            Clock.systemUTC(),
+            /* enableBackgroundProbing= */ false);
 
-    registerAndAwaitInitialConnectingProbe(manager, cache, "server1");
+    registerAddresses(manager, "server1");
+    awaitCondition(
+        "endpoint should be created in background", () -> cache.getIfPresent("server1") != null);
 
     cache.setState("server1", KeyRangeCacheTest.EndpointHealthState.TRANSIENT_FAILURE);
     manager.probe("server1");

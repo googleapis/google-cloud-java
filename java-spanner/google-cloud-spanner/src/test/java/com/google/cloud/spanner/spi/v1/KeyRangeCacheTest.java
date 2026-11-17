@@ -2023,11 +2023,6 @@ public class KeyRangeCacheTest {
       channel.setConnectivityState(toConnectivityState(state));
     }
 
-    /** Returns how many times the channel connectivity state has been read. */
-    int getStateCallCount() {
-      return channel.getStateCallCount();
-    }
-
     private static ConnectivityState toConnectivityState(EndpointHealthState healthState) {
       switch (healthState) {
         case READY:
@@ -2049,22 +2044,14 @@ public class KeyRangeCacheTest {
   private static final class FakeManagedChannel extends ManagedChannel {
     private volatile boolean shutdown = false;
     private volatile ConnectivityState connectivityState = ConnectivityState.READY;
-    private final AtomicInteger getStateCalls = new AtomicInteger();
 
     void setConnectivityState(ConnectivityState state) {
       this.connectivityState = state;
     }
 
-    int getStateCallCount() {
-      return getStateCalls.get();
-    }
-
     @Override
     public ConnectivityState getState(boolean requestConnection) {
-      ConnectivityState result = shutdown ? ConnectivityState.SHUTDOWN : connectivityState;
-      // Count after the state has been read so observers know the read already happened.
-      getStateCalls.incrementAndGet();
-      return result;
+      return shutdown ? ConnectivityState.SHUTDOWN : connectivityState;
     }
 
     @Override
