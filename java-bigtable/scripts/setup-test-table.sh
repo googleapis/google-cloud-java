@@ -2,19 +2,18 @@
 
 # Set up a table to use for integration tests.
 
+# Usage: ./scripts/setup-test-table.sh projects/<project-id>/instances/<instance-id>/tables/<table-id> [admin-endpoint]
+# Environment overrides: ADMIN_HOST, ZONE
+
 set -e
 set -u
 
-ADMIN_HOSTS=(
-  "bigtableadmin.googleapis.com:443"
-  "test-bigtableadmin.sandbox.googleapis.com:443"
-)
-
-ZONE=us-central1-b
+ZONE=${ZONE:-us-central1-b}
 FAMILY=cf
 
 # Format: projects/<project-id>/instances/<instance-id>/tables/<table-id>
 TABLE_NAME=$1
+ADMIN_HOST=${2:-${ADMIN_HOST:-bigtableadmin.googleapis.com:443}}
 
 if [[ ${TABLE_NAME} =~ projects\/([^/]+)\/instances\/([^/]+)\/tables\/([^/]+) ]]; then
   PROJECT_ID=${BASH_REMATCH[1]}
@@ -29,14 +28,12 @@ call_cbt() {
   cbt -admin-endpoint="${ADMIN_HOST}" -project "${PROJECT_ID}" -instance "${INSTANCE_ID}" "$@"
 }
 
-for ADMIN_HOST in "${ADMIN_HOSTS[@]}"; do
-  # Ensure that the instance exists.
-  if ! call_cbt listinstances | grep -q "${INSTANCE_ID}"; then
-    call_cbt createinstance "${INSTANCE_ID}" "${INSTANCE_ID}" "${INSTANCE_ID}-c0" "${ZONE}" 1 SSD
-  fi
+# Ensure that the instance exists.
+if ! call_cbt listinstances | grep -q "^${INSTANCE_ID}\b"; then
+  call_cbt createinstance "${INSTANCE_ID}" "${INSTANCE_ID}" "${INSTANCE_ID}-c0" "${ZONE}" 1 SSD
+fi
 
-  # Ensure that the table exists
-  if ! call_cbt -instance "$INSTANCE_ID" ls | grep -q "^${TABLE_ID}\$"; then
-    call_cbt createtable "$TABLE_ID" "families=$FAMILY:maxversions=1||maxage=1h"
-  fi
-done
+# Ensure that the table exists.
+if ! call_cbt -instance "$INSTANCE_ID" ls | grep -q "^${TABLE_ID}\$"; then
+  call_cbt createtable "$TABLE_ID" "families=$FAMILY:maxversions=1||maxage=1h"
+fi
