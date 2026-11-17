@@ -308,7 +308,7 @@ public class ChannelPoolDpImpl implements ChannelPool {
     return new SessionStreamImpl(innerCall) {
       // null until onBeforeSessionStart fires
       @Nullable AfeId afeId = null;
-      boolean sessionEstablished = false;
+      volatile boolean sessionEstablished = false;
 
       @Override
       public void afterSessionStart() {
@@ -317,8 +317,8 @@ public class ChannelPoolDpImpl implements ChannelPool {
         // sends initial PeerInfo response headers before completing OpenSession, so streams
         // rejected during OpenSession (e.g. RESOURCE_EXHAUSTED) still fire
         // onBeforeSessionStart before closing with an error.
+        sessionEstablished = true;
         synchronized (ChannelPoolDpImpl.this) {
-          sessionEstablished = true;
           fw.consecutiveFailures = 0;
           recycleBackoff = INITIAL_RECYCLE_BACKOFF;
         }
