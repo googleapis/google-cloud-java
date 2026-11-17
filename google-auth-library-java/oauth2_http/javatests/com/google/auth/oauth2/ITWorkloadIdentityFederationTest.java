@@ -113,7 +113,7 @@ final class ITWorkloadIdentityFederationTest {
     clientId = (String) keys.get("client_id");
     privateKeyId = (String) keys.get("private_key_id");
     privateKey = OAuth2Utils.privateKeyFromPkcs8((String) keys.get("private_key"));
-    ensureOidcJwtProviderJwksSynced();
+    ensureOidcJwtProviderJwksSynced(clientEmail, privateKeyId);
   }
 
   /**
@@ -690,7 +690,8 @@ final class ITWorkloadIdentityFederationTest {
    * set for the service account and patches {@code oidc-jwt-1} using the service account's own
    * {@code roles/iam.workloadIdentityPoolAdmin} permission.
    */
-  private static void ensureOidcJwtProviderJwksSynced() throws IOException {
+  private static void ensureOidcJwtProviderJwksSynced(String clientEmail, String privateKeyId)
+      throws IOException {
     GoogleCredentials adminCredentials =
         GoogleCredentials.getApplicationDefault().createScoped(OAuth2Utils.CLOUD_PLATFORM_SCOPE);
     HttpTransport transport = new NetHttpTransport();
