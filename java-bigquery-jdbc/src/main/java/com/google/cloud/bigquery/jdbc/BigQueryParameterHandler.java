@@ -289,6 +289,8 @@ class BigQueryParameterHandler {
     parameter.setParamType(BigQueryStatementParameterType.UNSPECIFIED);
     parameter.setScale(-1);
 
+    TelemetryManager.recordFeatureUsage(DriverFeature.DRIVER_FEATURE_PARAMETER_BINDING);
+
     LOG.finest("Parameter set { %s }", parameter.toString());
   }
 

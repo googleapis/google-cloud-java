@@ -139,11 +139,21 @@ public class RowSetUtilTest {
 
     assertThat(RowSetUtil.shard(input, splitPoints))
         .containsExactly(
-            parse("0,-a)"),
-            parse("a,c,[a-a],-b],(c-d)"),
+            parse("0,-a),-a)"),
+            parse("a,c,[a-a],[a-b],(c-d)"),
             parse("[d-e],(d-f]"),
             parse("(m-o)"),
             parse("[o-"))
+        .inOrder();
+  }
+
+  @Test
+  public void testShardOverlappingRanges() {
+    RowSet input = parse("[a-z),[b-d),[b-y)");
+    SortedSet<ByteString> splitPoints = splitPoints("c");
+
+    assertThat(RowSetUtil.shard(input, splitPoints))
+        .containsExactly(parse("[a-c),[b-c),[b-c)"), parse("[c-z),[c-d),[c-y)"))
         .inOrder();
   }
 
@@ -344,6 +354,144 @@ public class RowSetUtilTest {
             .build();
     RowSet actual = RowSetUtil.eraseLargeRow(rowSet, key);
     assertThat(actual).isNull();
+
+    // (a, a\0] with large row a\0 should also result in an empty RowSet (null) instead of (a, a\0)
+    RowSet openStartRowSet =
+        RowSet.newBuilder()
+            .addRowRanges(
+                RowRange.newBuilder().setStartKeyOpen(key).setEndKeyClosed(keyTrailer).build())
+            .build();
+    assertThat(RowSetUtil.eraseLargeRow(openStartRowSet, keyTrailer)).isNull();
+
+    // (a, z) with large row a\0 should only emit (a\0, z) and not (a, a\0) on the left split
+    ByteString endKey = ByteString.copyFromUtf8("z");
+    RowSet openStartWideRowSet =
+        RowSet.newBuilder()
+            .addRowRanges(RowRange.newBuilder().setStartKeyOpen(key).setEndKeyOpen(endKey).build())
+            .build();
+    assertThat(RowSetUtil.eraseLargeRow(openStartWideRowSet, keyTrailer))
+        .isEqualTo(
+            RowSet.newBuilder()
+                .addRowRanges(
+                    RowRange.newBuilder().setStartKeyOpen(keyTrailer).setEndKeyOpen(endKey).build())
+                .build());
+
+    // [a\0, z) with large row a should remain [a\0, z) untouched
+    RowSet closedTrailerStartRowSet =
+        RowSet.newBuilder()
+            .addRowRanges(
+                RowRange.newBuilder().setStartKeyClosed(keyTrailer).setEndKeyOpen(endKey).build())
+            .build();
+    assertThat(RowSetUtil.eraseLargeRow(closedTrailerStartRowSet, key))
+        .isEqualTo(closedTrailerStartRowSet);
+
+    // [0, a] with large row a\0 should remain [0, a] untouched
+    RowSet closedEndRowSet =
+        RowSet.newBuilder()
+            .addRowRanges(
+                RowRange.newBuilder()
+                    .setStartKeyClosed(ByteString.copyFromUtf8("0"))
+                    .setEndKeyClosed(key)
+                    .build())
+            .build();
+    assertThat(RowSetUtil.eraseLargeRow(closedEndRowSet, keyTrailer)).isEqualTo(closedEndRowSet);
+  }
+
+  @Test
+  public void testEraseEmptyOpenRange() {
+    ByteString key = ByteString.copyFromUtf8("a");
+    ByteString keyTrailer = key.concat(ByteString.copyFrom(new byte[] {0}));
+
+    // Forward scan: erasing "a" from ["0", "a\0") or ["a", "a\0") leaves (a, a\0) which is empty
+    RowSet forwardRowSet =
+        RowSet.newBuilder()
+            .addRowRanges(
+                RowRange.newBuilder()
+                    .setStartKeyClosed(ByteString.copyFromUtf8("0"))
+                    .setEndKeyOpen(keyTrailer)
+                    .build())
+            .addRowRanges(
+                RowRange.newBuilder().setStartKeyClosed(key).setEndKeyOpen(keyTrailer).build())
+            .build();
+    assertThat(RowSetUtil.erase(forwardRowSet, key, true)).isNull();
+
+    // Reverse scan: erasing "a\0" from ("a", "z"] or ("a", "a\0"] leaves (a, a\0) which is empty
+    RowSet reverseRowSet =
+        RowSet.newBuilder()
+            .addRowRanges(
+                RowRange.newBuilder()
+                    .setStartKeyOpen(key)
+                    .setEndKeyClosed(ByteString.copyFromUtf8("z"))
+                    .build())
+            .addRowRanges(
+                RowRange.newBuilder().setStartKeyOpen(key).setEndKeyClosed(keyTrailer).build())
+            .build();
+    assertThat(RowSetUtil.erase(reverseRowSet, keyTrailer, false)).isNull();
+  }
+
+  @Test
+  public void testShardEmptyOpenRange() {
+    ByteString key = ByteString.copyFromUtf8("a");
+    ByteString keyTrailer = key.concat(ByteString.copyFrom(new byte[] {0}));
+    ByteString endKey = ByteString.copyFromUtf8("z");
+
+    // Sharding (a, z) at splitPoint a\0 should not emit an empty (a, a\0) range on the left
+    RowSet input =
+        RowSet.newBuilder()
+            .addRowRanges(RowRange.newBuilder().setStartKeyOpen(key).setEndKeyOpen(endKey).build())
+            .build();
+    SortedSet<ByteString> splits = new TreeSet<>(ByteStringComparator.INSTANCE);
+    splits.add(keyTrailer);
+
+    assertThat(RowSetUtil.shard(input, splits)).containsExactly(input);
+
+    // Sharding (a, z) at both "a" and "a\0" should also not emit an empty range
+    SortedSet<ByteString> bothSplits = new TreeSet<>(ByteStringComparator.INSTANCE);
+    bothSplits.add(key);
+    bothSplits.add(keyTrailer);
+    assertThat(RowSetUtil.shard(input, bothSplits)).containsExactly(input);
+
+    // Sharding (a, a\0] at splitPoint a\0 should not split since (a is equivalent to [a\0
+    RowSet singleElementOpenStart =
+        RowSet.newBuilder()
+            .addRowRanges(
+                RowRange.newBuilder().setStartKeyOpen(key).setEndKeyClosed(keyTrailer).build())
+            .build();
+    assertThat(RowSetUtil.shard(singleElementOpenStart, splits))
+        .containsExactly(singleElementOpenStart);
+
+    // Sharding [a, a\0] at splitPoint a\0 should split into [a, a\0) and [a\0, a\0]
+    RowSet twoElementClosed =
+        RowSet.newBuilder()
+            .addRowRanges(
+                RowRange.newBuilder().setStartKeyClosed(key).setEndKeyClosed(keyTrailer).build())
+            .build();
+    assertThat(RowSetUtil.shard(twoElementClosed, splits))
+        .containsExactly(
+            RowSet.newBuilder()
+                .addRowRanges(
+                    RowRange.newBuilder().setStartKeyClosed(key).setEndKeyOpen(keyTrailer).build())
+                .build(),
+            RowSet.newBuilder()
+                .addRowRanges(
+                    RowRange.newBuilder()
+                        .setStartKeyClosed(keyTrailer)
+                        .setEndKeyClosed(keyTrailer)
+                        .build())
+                .build())
+        .inOrder();
+
+    // Sharding [0, a] at splitPoint a\0 should not split since a] is equivalent to a\0)
+    RowSet closedEndBeforeSplit =
+        RowSet.newBuilder()
+            .addRowRanges(
+                RowRange.newBuilder()
+                    .setStartKeyClosed(ByteString.copyFromUtf8("0"))
+                    .setEndKeyClosed(key)
+                    .build())
+            .build();
+    assertThat(RowSetUtil.shard(closedEndBeforeSplit, splits))
+        .containsExactly(closedEndBeforeSplit);
   }
 
   @Test

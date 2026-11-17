@@ -25,6 +25,8 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.mockStatic;
+import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.when;
 
 import com.google.cloud.bigquery.Field;
@@ -34,6 +36,8 @@ import com.google.cloud.bigquery.QueryParameterValue;
 import com.google.cloud.bigquery.Schema;
 import com.google.cloud.bigquery.StandardSQLTypeName;
 import com.google.cloud.bigquery.exception.BigQueryJdbcException;
+import com.google.cloud.bigquery.jdbc.telemetry.v1.DriverFeature;
+import com.google.cloud.bigquery.jdbc.telemetry.v1.TelemetryManager;
 import com.google.gson.Gson;
 import com.google.gson.JsonNull;
 import com.google.gson.JsonObject;
@@ -59,6 +63,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
+import org.mockito.MockedStatic;
 
 public class BigQueryPreparedStatementSettersTest {
 
@@ -531,5 +536,19 @@ public class BigQueryPreparedStatementSettersTest {
     // LocalDateTime.toString() would print "2025-01-01T12:00"; BigQuery needs full HH:mm:ss.SSSSSS.
     preparedStatement.setObject(1, LocalDateTime.of(2025, 1, 1, 12, 0));
     assertEquals("2025-01-01 12:00:00.000000", preparedStatement.parameterHandler.getParameter(1));
+  }
+
+  @Test
+  public void testPrimitiveSetters_recordParameterBindingFeature() throws SQLException {
+    // These setters use the (int, Object, Class) overload of BigQueryParameterHandler, which
+    // previously did not record DRIVER_FEATURE_PARAMETER_BINDING. One record per binding.
+    try (MockedStatic<TelemetryManager> telemetry = mockStatic(TelemetryManager.class)) {
+      preparedStatement.setInt(1, 42);
+      preparedStatement.setLong(2, 42L);
+      preparedStatement.setString(3, "x");
+      telemetry.verify(
+          () -> TelemetryManager.recordFeatureUsage(DriverFeature.DRIVER_FEATURE_PARAMETER_BINDING),
+          times(3));
+    }
   }
 }
