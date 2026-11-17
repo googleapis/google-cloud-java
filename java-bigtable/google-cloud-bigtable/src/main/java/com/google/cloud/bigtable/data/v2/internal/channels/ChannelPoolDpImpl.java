@@ -329,9 +329,16 @@ public class ChannelPoolDpImpl implements ChannelPool {
 
               @Override
               public void onMessage(SessionResponse msg) {
+                // Wait for OpenSessionResponse before marking the session established and resetting
+                // consecutiveFailures. onBeforeSessionStart is not enough because the AFE sends
+                // initial PeerInfo response headers before completing OpenSession, so streams
+                // rejected during OpenSession (e.g. RESOURCE_EXHAUSTED) still fire
+                // onBeforeSessionStart before closing with an error.
                 if (!sessionEstablished && msg.hasOpenSession()) {
+                  sessionEstablished = true;
+                  // Synchronize on the pool to update shared channel/pool failure state
+                  // (recycleBackoff is @GuardedBy("this")).
                   synchronized (ChannelPoolDpImpl.this) {
-                    sessionEstablished = true;
                     fw.consecutiveFailures = 0;
                     recycleBackoff = INITIAL_RECYCLE_BACKOFF;
                   }
