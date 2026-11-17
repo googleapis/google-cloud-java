@@ -77,10 +77,11 @@ public class MutateRowsAttemptCallableTest {
     callContext = GrpcCallContext.createDefault();
     parentFuture = new MockRetryingFuture();
     Mockito.when(mockRetryAlgorithm.shouldRetry(any(), any(), any(), any()))
-        .thenAnswer(input -> {
-          Throwable throwable = input.getArgument(1);
-          return ((ApiException) throwable).isRetryable();
-        });
+        .thenAnswer(
+            input -> {
+              Throwable throwable = input.getArgument(1);
+              return ((ApiException) throwable).isRetryable();
+            });
   }
 
   @Test
@@ -449,6 +450,18 @@ public class MutateRowsAttemptCallableTest {
     assertThat(failedMutations.get(1).getError().getStatusCode().getCode())
         .isEqualTo(Code.UNAVAILABLE);
     assertThat(failedMutations.get(1).getError().isRetryable()).isFalse();
+
+    // Next attempt should only resend the retryable ABORTED entry (index 0)
+    innerCallable.response =
+        Lists.newArrayList(
+            MutateRowsResponse.newBuilder()
+                .addEntries(
+                    MutateRowsResponse.Entry.newBuilder().setIndex(0).setStatus(OK_STATUS_PROTO))
+                .build());
+    attemptCallable.call();
+    assertThat(innerCallable.lastRequest.getEntriesCount()).isEqualTo(1);
+    assertThat(innerCallable.lastRequest.getEntries(0).getRowKey())
+        .isEqualTo(ByteString.copyFromUtf8("0-aborted"));
   }
 
   @Test
