@@ -819,15 +819,34 @@
               -Dbigtable.project=<project-id>
               -Dbigtable.instance=<instance-id>
               -Dbigtable.table=<table-id>
-            Optional system properties:
-              -Dbigtable.admin-endpoint=<host:port> (defaults to client default: bigtableadmin.googleapis.com:443)
-              -Dbigtable.data-endpoint=<host:port>  (defaults to client default: bigtable.googleapis.com:443)
+            Optional system properties (consistent with Failsafe IT profiles):
+              -Dbigtable.cfe-admin-endpoint=<host:port> (defaults to client default: bigtableadmin.googleapis.com:443)
+              -Dbigtable.cfe-data-endpoint=<host:port>  (defaults to client default: bigtable.googleapis.com:443)
+              -Dbigtable.cfe-jwt-audience=<audience>    (defaults to client default)
           -->
           <execution>
             <id>cleanup-stale-resources</id>
             <configuration>
               <mainClass>com.google.cloud.bigtable.test_helpers.env.StaleResourceCleaner</mainClass>
               <classpathScope>test</classpathScope>
+              <systemProperties>
+                <systemProperty>
+                  <key>java.util.logging.config.file</key>
+                  <value>${java-log-config}</value>
+                </systemProperty>
+                <systemProperty>
+                  <key>bigtable.data-endpoint</key>
+                  <value>${bigtable.cfe-data-endpoint}</value>
+                </systemProperty>
+                <systemProperty>
+                  <key>bigtable.admin-endpoint</key>
+                  <value>${bigtable.cfe-admin-endpoint}</value>
+                </systemProperty>
+                <systemProperty>
+                  <key>bigtable.data-jwt-audience</key>
+                  <value>${bigtable.cfe-jwt-audience}</value>
+                </systemProperty>
+              </systemProperties>
             </configuration>
           </execution>
         </executions>
