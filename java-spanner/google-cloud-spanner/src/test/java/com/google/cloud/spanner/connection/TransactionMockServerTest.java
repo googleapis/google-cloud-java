@@ -338,6 +338,36 @@ public class TransactionMockServerTest extends AbstractMockServerTest {
   }
 
   @Test
+  public void testShowTransactionIsolationLevelWithUnrecognizedDatabaseDefault() {
+    try {
+      SpannerPool.closeSpannerPool();
+      mockSpanner.putStatementResult(
+          MockSpannerServiceImpl.StatementResult.detectDialectResult(
+              Dialect.POSTGRESQL, "READ COMMITTED"));
+      String expected =
+          isolationLevel == IsolationLevel.ISOLATION_LEVEL_UNSPECIFIED
+              ? "read committed"
+              : (isolationLevel == IsolationLevel.REPEATABLE_READ
+                  ? "repeatable read"
+                  : "serializable");
+
+      try (Connection connection = createConnection()) {
+        assertEquals(expected, getSingleString(connection, "show transaction isolation level"));
+        assertEquals(expected, getSingleString(connection, "show transaction_isolation"));
+        assertEquals(expected, getSingleString(connection, "show default_transaction_isolation"));
+
+        connection.execute(Statement.of("set transaction isolation level repeatable read"));
+        assertEquals("repeatable read", getSingleString(connection, "show transaction_isolation"));
+        assertEquals(expected, getSingleString(connection, "show default_transaction_isolation"));
+      }
+    } finally {
+      SpannerPool.closeSpannerPool();
+      mockSpanner.putStatementResult(
+          MockSpannerServiceImpl.StatementResult.detectDialectResult(Dialect.GOOGLE_STANDARD_SQL));
+    }
+  }
+
+  @Test
   public void testTransactionTimeout() {
     // Use a fake ticker to be able to advance the clock without having to sleep for X ms.
     AtomicLong nanos = new AtomicLong();

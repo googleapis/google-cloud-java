@@ -290,13 +290,13 @@ public class ConnectionStatementExecutorTest {
   @Test
   public void testStatementShowTransactionIsolationLevel() {
     when(connection.getDefaultIsolationLevel()).thenReturn(REPEATABLE_READ);
-    assertEquals(name(REPEATABLE_READ), value(subject.statementShowTransactionIsolationLevel()));
-    assertEquals(name(REPEATABLE_READ), value(subject.statementShowDefaultTransactionIsolation()));
+    assertEquals("repeatable read", value(subject.statementShowTransactionIsolationLevel()));
+    assertEquals("repeatable read", value(subject.statementShowDefaultTransactionIsolation()));
 
     when(connection.isInTransaction()).thenReturn(true);
     when(connection.getTransactionIsolationLevel()).thenReturn(SERIALIZABLE);
-    assertEquals(name(SERIALIZABLE), value(subject.statementShowTransactionIsolationLevel()));
-    assertEquals(name(REPEATABLE_READ), value(subject.statementShowDefaultTransactionIsolation()));
+    assertEquals("serializable", value(subject.statementShowTransactionIsolationLevel()));
+    assertEquals("repeatable read", value(subject.statementShowDefaultTransactionIsolation()));
   }
 
   @Test
@@ -313,8 +313,8 @@ public class ConnectionStatementExecutorTest {
   public void testStatementShowIsolationLevelFallsBackToSerializable() {
     when(connection.getDefaultIsolationLevel()).thenReturn(ISOLATION_LEVEL_UNSPECIFIED);
     mockDatabaseDefaultIsolationLevel(ISOLATION_LEVEL_UNSPECIFIED);
-    assertEquals(name(SERIALIZABLE), value(subject.statementShowTransactionIsolationLevel()));
-    assertEquals(name(SERIALIZABLE), value(subject.statementShowDefaultTransactionIsolation()));
+    assertEquals("serializable", value(subject.statementShowTransactionIsolationLevel()));
+    assertEquals("serializable", value(subject.statementShowDefaultTransactionIsolation()));
   }
 
   @Test
@@ -322,22 +322,24 @@ public class ConnectionStatementExecutorTest {
     when(connection.getDefaultIsolationLevel()).thenReturn(ISOLATION_LEVEL_UNSPECIFIED);
     mockDatabaseDefaultIsolationLevel(UNRECOGNIZED);
     when(connection.getDatabaseClient().getDatabaseDefaultIsolationLevelValue())
-        .thenReturn("read committed");
+        .thenReturn("READ_COMMITTED");
     assertEquals("read committed", value(subject.statementShowTransactionIsolationLevel()));
     assertEquals("read committed", value(subject.statementShowDefaultTransactionIsolation()));
+  }
+
+  @Test
+  public void testStatementShowIsolationLevelWithBlankDatabaseDefaultFallsBackToSerializable() {
+    when(connection.getDefaultIsolationLevel()).thenReturn(ISOLATION_LEVEL_UNSPECIFIED);
+    mockDatabaseDefaultIsolationLevel(UNRECOGNIZED);
+    when(connection.getDatabaseClient().getDatabaseDefaultIsolationLevelValue()).thenReturn("  ");
+    assertEquals("serializable", value(subject.statementShowTransactionIsolationLevel()));
+    assertEquals("serializable", value(subject.statementShowDefaultTransactionIsolation()));
   }
 
   private void mockDatabaseDefaultIsolationLevel(TransactionOptions.IsolationLevel isolationLevel) {
     DatabaseClient databaseClient = mock(DatabaseClient.class);
     when(databaseClient.getDatabaseDefaultIsolationLevel()).thenReturn(isolationLevel);
     when(connection.getDatabaseClient()).thenReturn(databaseClient);
-  }
-
-  private String name(TransactionOptions.IsolationLevel isolationLevel) {
-    if (dialect == Dialect.POSTGRESQL) {
-      return isolationLevel == SERIALIZABLE ? "serializable" : "repeatable read";
-    }
-    return isolationLevel.name();
   }
 
   private static String value(StatementResult result) {

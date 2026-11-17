@@ -123,6 +123,7 @@ import com.google.spanner.v1.TransactionOptions.ReadWrite.ReadLockMode;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Locale;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Nullable;
 
@@ -668,29 +669,14 @@ class ConnectionStatementExecutorImpl implements ConnectionStatementExecutor {
 
   /** Resolves an unspecified isolation level to the database default and formats it. */
   private String getEffectiveIsolationLevel(TransactionOptions.IsolationLevel isolationLevel) {
-    if (isolationLevel != TransactionOptions.IsolationLevel.ISOLATION_LEVEL_UNSPECIFIED) {
-      return formatIsolationLevel(isolationLevel);
+    String effectiveIsolationLevel =
+        isolationLevel == TransactionOptions.IsolationLevel.ISOLATION_LEVEL_UNSPECIFIED
+            ? getConnection().getDatabaseClient().getDatabaseDefaultIsolationLevelValue()
+            : isolationLevel.name();
+    if (effectiveIsolationLevel == null || effectiveIsolationLevel.trim().isEmpty()) {
+      effectiveIsolationLevel = TransactionOptions.IsolationLevel.SERIALIZABLE.name();
     }
-    String databaseDefault =
-        getConnection().getDatabaseClient().getDatabaseDefaultIsolationLevelValue();
-    return databaseDefault == null
-        ? formatIsolationLevel(TransactionOptions.IsolationLevel.SERIALIZABLE)
-        : databaseDefault;
-  }
-
-  private String formatIsolationLevel(TransactionOptions.IsolationLevel isolationLevel) {
-    if (getConnection().getDialect() != Dialect.POSTGRESQL) {
-      return isolationLevel.name();
-    }
-    switch (isolationLevel) {
-      case SERIALIZABLE:
-        return "serializable";
-      case REPEATABLE_READ:
-        return "repeatable read";
-      default:
-        throw SpannerExceptionFactory.newSpannerException(
-            ErrorCode.INVALID_ARGUMENT, "Unknown isolation level: " + isolationLevel);
-    }
+    return effectiveIsolationLevel.toLowerCase(Locale.ROOT).replace('_', ' ');
   }
 
   @Override
