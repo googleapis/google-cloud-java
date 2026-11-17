@@ -292,7 +292,7 @@ public class ChannelPoolBuiltInMetricsTest extends AbstractMockServerTest {
           .isEqualTo(BuiltInMetricsConstant.SPANNER_RESOURCE_TYPE);
       assertThat(channelCount.getResource().getLabelsMap())
           .containsEntry("project_id", "my-project");
-      assertThat(channelCount.getResource().getLabelsMap()).containsEntry("instance_id", "unknown");
+      assertThat(channelCount.getResource().getLabelsMap()).doesNotContainKey("instance_id");
       assertThat(channelCount.getMetric().getLabelsMap())
           .containsEntry("lane", BuiltInMetricsConstant.LANE_CLOUDPATH);
       assertThat(channelCount.getMetric().getLabelsMap()).containsEntry("pool_mode", "static");
