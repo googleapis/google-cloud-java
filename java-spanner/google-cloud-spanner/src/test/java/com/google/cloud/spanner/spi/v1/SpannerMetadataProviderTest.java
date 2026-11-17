@@ -18,11 +18,13 @@ package com.google.cloud.spanner.spi.v1;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
+import com.google.cloud.spanner.BuiltInMetricsConstant;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Maps;
 import io.grpc.Metadata;
 import io.grpc.Metadata.Key;
+import io.opentelemetry.api.common.Attributes;
 import java.util.List;
 import java.util.Map;
 import org.junit.Test;
@@ -40,6 +42,39 @@ public class SpannerMetadataProviderTest {
     assertEquals(
         headers.get("header2"), metadata.get(Key.of("header2", Metadata.ASCII_STRING_MARSHALLER)));
     assertEquals("stuff", metadata.get(Key.of("header3", Metadata.ASCII_STRING_MARSHALLER)));
+  }
+
+  @Test
+  public void testNewBuiltInMetricsAttributes() {
+    SpannerMetadataProvider metadataProvider =
+        SpannerMetadataProvider.create(ImmutableMap.of(), "header");
+
+    Attributes database =
+        Attributes.of(
+            BuiltInMetricsConstant.PROJECT_ID_KEY,
+            "p",
+            BuiltInMetricsConstant.INSTANCE_ID_KEY,
+            "i",
+            BuiltInMetricsConstant.DATABASE_KEY,
+            "d");
+    assertEquals(
+        database,
+        metadataProvider.newBuiltInMetricsAttributes("projects/p/instances/i/databases/d"));
+    assertEquals(
+        database,
+        metadataProvider.newBuiltInMetricsAttributes(
+            "projects/p/instances/i/databases/d/sessions/s"));
+    assertEquals(
+        Attributes.of(
+            BuiltInMetricsConstant.PROJECT_ID_KEY,
+            "p",
+            BuiltInMetricsConstant.INSTANCE_ID_KEY,
+            "i"),
+        metadataProvider.newBuiltInMetricsAttributes("projects/p/instances/i"));
+    assertEquals(Attributes.empty(), metadataProvider.newBuiltInMetricsAttributes("projects/p"));
+    assertEquals(Attributes.empty(), metadataProvider.newBuiltInMetricsAttributes("garbage"));
+    assertEquals(Attributes.empty(), metadataProvider.newBuiltInMetricsAttributes(""));
+    assertEquals(Attributes.empty(), metadataProvider.newBuiltInMetricsAttributes(null));
   }
 
   @Test

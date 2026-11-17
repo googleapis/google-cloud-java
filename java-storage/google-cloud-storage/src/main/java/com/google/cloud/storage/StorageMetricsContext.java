@@ -306,9 +306,7 @@ final class StorageMetricsContext {
 
   private Attributes buildAttemptBaseAttributes(StorageClientMetrics metrics) {
     AttributesBuilder baseBuilder = Attributes.builder();
-    if (baseAttributes.get(StorageClientMetrics.KEY_GCP_CLIENT_INSTANCE_ID) == null) {
-      baseBuilder.putAll(metrics.getClientAttributes());
-    }
+    baseBuilder.putAll(metrics.getClientAttributes());
     baseAttributes.forEach(
         (key, val) -> {
           if (!key.equals(StorageClientMetrics.KEY_RPC_METHOD)

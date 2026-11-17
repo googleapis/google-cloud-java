@@ -3,7 +3,13 @@ target-it/**
 **/*logs*/**
 **/ITBigQueryJDBCLocalTest.java
 **/BigQueryStatementE2EBenchmark.java
-.agents/
+
+# Agent files: only shared skills are tracked; everything else is local.
+# .claude/skills is a symlink to .agents/skills, for Claude Code.
+.agents/*
+!.agents/skills/
+.claude/*
+!.claude/skills
 
 tools/**/*.class
 tools/**/drivers/**
@@ -11,6 +17,3 @@ tools/**/logs/**
 tools/**/*.jfr
 tools/**/odbc/
 tools/**/native_odbc_perf
-
-# Gemini/Jetski agent custom skills
-.agents/
