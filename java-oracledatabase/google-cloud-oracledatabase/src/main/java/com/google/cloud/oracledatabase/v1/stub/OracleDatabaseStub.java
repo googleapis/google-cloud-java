@@ -216,6 +216,7 @@ import com.google.cloud.oracledatabase.v1.UpdateExascaleDbStorageVaultRequest;
 import com.google.cloud.oracledatabase.v1.UpdateGoldengateConnectionAssignmentRequest;
 import com.google.cloud.oracledatabase.v1.UpdateGoldengateConnectionRequest;
 import com.google.cloud.oracledatabase.v1.UpdateGoldengateDeploymentRequest;
+import com.google.cloud.oracledatabase.v1.UpdateOdbDnsZoneRequest;
 import com.google.cloud.oracledatabase.v1.UpdateOdbNetworkRequest;
 import com.google.cloud.oracledatabase.v1.UpdateOdbSubnetRequest;
 import com.google.longrunning.Operation;
@@ -760,6 +761,15 @@ public abstract class OracleDatabaseStub implements BackgroundResource {
 
   public UnaryCallable<CreateOdbDnsZoneRequest, Operation> createOdbDnsZoneCallable() {
     throw new UnsupportedOperationException("Not implemented: createOdbDnsZoneCallable()");
+  }
+
+  public OperationCallable<UpdateOdbDnsZoneRequest, OdbDnsZone, OperationMetadata>
+      updateOdbDnsZoneOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateOdbDnsZoneOperationCallable()");
+  }
+
+  public UnaryCallable<UpdateOdbDnsZoneRequest, Operation> updateOdbDnsZoneCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateOdbDnsZoneCallable()");
   }
 
   public OperationCallable<DeleteOdbDnsZoneRequest, Empty, OperationMetadata>

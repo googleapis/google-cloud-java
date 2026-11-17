@@ -790,6 +790,28 @@ public class MockChatServiceImpl extends ChatServiceImplBase {
   }
 
   @Override
+  public void updateThreadReadState(
+      UpdateThreadReadStateRequest request, StreamObserver<ThreadReadState> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ThreadReadState) {
+      requests.add(request);
+      responseObserver.onNext(((ThreadReadState) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateThreadReadState, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ThreadReadState.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void getThreadReadState(
       GetThreadReadStateRequest request, StreamObserver<ThreadReadState> responseObserver) {
     Object response = responses.poll();
