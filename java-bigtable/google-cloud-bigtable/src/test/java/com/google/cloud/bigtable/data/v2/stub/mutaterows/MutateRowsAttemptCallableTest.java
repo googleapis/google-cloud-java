@@ -16,7 +16,6 @@
 package com.google.cloud.bigtable.data.v2.stub.mutaterows;
 
 import static com.google.common.truth.Truth.assertThat;
-import static org.mockito.Mockito.any;
 
 import com.google.api.core.AbstractApiFuture;
 import com.google.api.core.ApiFuture;
@@ -31,7 +30,6 @@ import com.google.api.gax.retrying.RetryingFuture;
 import com.google.api.gax.retrying.ScheduledRetryingExecutor;
 import com.google.api.gax.retrying.TimedAttemptSettings;
 import com.google.api.gax.rpc.ApiCallContext;
-import com.google.api.gax.rpc.ApiException;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.StatusCode.Code;
 import com.google.api.gax.rpc.UnaryCallable;
@@ -87,11 +85,6 @@ public class MutateRowsAttemptCallableTest {
     parentFuture = new MockRetryingFuture();
     Mockito.when(mockRetryAlgorithm.getResultAlgorithm())
         .thenReturn(new MutateRowsPartialErrorRetryAlgorithm(new RetryInfoRetryAlgorithm<>()));
-    Mockito.when(mockRetryAlgorithm.shouldRetry(any(), any(), any(), any()))
-        .thenAnswer(input -> {
-          Throwable throwable = input.getArgument(1);
-          return ((ApiException) throwable).isRetryable();
-        });
   }
 
   @Test
