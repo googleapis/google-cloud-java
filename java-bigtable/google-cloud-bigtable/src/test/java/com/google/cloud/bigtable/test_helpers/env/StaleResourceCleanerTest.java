@@ -15,6 +15,8 @@
  */
 package com.google.cloud.bigtable.test_helpers.env;
 
+import static com.google.common.truth.Truth.assertThat;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.inOrder;
@@ -30,6 +32,7 @@ import com.google.api.gax.grpc.GrpcStatusCode;
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.longrunning.OperationFutures;
 import com.google.api.gax.longrunning.OperationSnapshot;
+import com.google.api.gax.rpc.InternalException;
 import com.google.api.gax.rpc.NotFoundException;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
@@ -769,6 +772,94 @@ class StaleResourceCleanerTest {
         .futureCall(
             DeleteInstanceRequest.newBuilder()
                 .setName(NameUtil.formatInstanceName(PROJECT_ID, remainingStaleInst))
+                .build());
+  }
+
+  @Test
+  @SuppressWarnings("unchecked")
+  void testNonNotFoundErrorsContinueCleanupAndThrowAtEnd() throws Exception {
+    EnhancedBigtableTableAdminStub sharedTableStub = createTableStubForInstance(SHARED_INSTANCE_ID);
+    InternalException internalError =
+        new InternalException(null, GrpcStatusCode.of(Code.INTERNAL), false);
+
+    // 1. Materialized views: first stale view throws InternalException on delete, second succeeds
+    String failingMv = STALE_ID_PREFIX + "mv-fail";
+    String succeedingMv = STALE_ID_PREFIX + "mv-ok";
+    mockMaterializedViews(
+        SHARED_INSTANCE_ID,
+        ImmutableList.of(
+            buildMaterializedView(SHARED_INSTANCE_ID, failingMv, false),
+            buildMaterializedView(SHARED_INSTANCE_ID, succeedingMv, false)));
+    when(mockDeleteMaterializedViewCallable.futureCall(
+            DeleteMaterializedViewRequest.newBuilder()
+                .setName(
+                    NameUtil.formatMaterializedViewName(PROJECT_ID, SHARED_INSTANCE_ID, failingMv))
+                .build()))
+        .thenReturn(ApiFutures.immediateFailedFuture(internalError));
+
+    mockLogicalViews(SHARED_INSTANCE_ID, ImmutableList.of());
+    mockListTables(sharedTableStub, SHARED_INSTANCE_ID, ImmutableList.of());
+
+    // 2. App profiles: first stale app profile throws InternalException on delete, second succeeds
+    String failingAp = STALE_ID_PREFIX + "ap-fail";
+    String succeedingAp = STALE_ID_PREFIX + "ap-ok";
+    mockAppProfiles(SHARED_INSTANCE_ID, ImmutableList.of(failingAp, succeedingAp));
+    when(mockDeleteAppProfileCallable.futureCall(
+            DeleteAppProfileRequest.newBuilder()
+                .setName(NameUtil.formatAppProfileName(PROJECT_ID, SHARED_INSTANCE_ID, failingAp))
+                .setIgnoreWarnings(true)
+                .build()))
+        .thenReturn(ApiFutures.immediateFailedFuture(internalError));
+
+    mockClusters(SHARED_INSTANCE_ID, ImmutableList.of());
+
+    // 3. Stale instances: first stale instance fails to delete, second stale instance succeeds
+    String failingInst = STALE_ID_PREFIX + "inst-fail";
+    String succeedingInst = STALE_ID_PREFIX + "inst-ok";
+    mockInstances(ImmutableList.of(failingInst, succeedingInst));
+
+    mockMaterializedViews(failingInst, ImmutableList.of());
+    mockLogicalViews(failingInst, ImmutableList.of());
+    mockClusters(failingInst, ImmutableList.of());
+    createTableStubForInstance(failingInst);
+    when(mockDeleteInstanceCallable.futureCall(
+            DeleteInstanceRequest.newBuilder()
+                .setName(NameUtil.formatInstanceName(PROJECT_ID, failingInst))
+                .build()))
+        .thenReturn(ApiFutures.immediateFailedFuture(internalError));
+
+    mockMaterializedViews(succeedingInst, ImmutableList.of());
+    mockLogicalViews(succeedingInst, ImmutableList.of());
+    mockClusters(succeedingInst, ImmutableList.of());
+    createTableStubForInstance(succeedingInst);
+
+    StaleResourceCleaner cleaner = createCleaner();
+    RuntimeException thrown =
+        assertThrows(RuntimeException.class, () -> cleaner.cleanUp(STALE_PREFIX));
+
+    assertThat(thrown.getMessage()).contains("3 error(s)");
+    assertThat(thrown.getCause()).isNotNull();
+    assertThat(thrown.getSuppressed()).hasLength(2);
+
+    // Subsequent resources in each phase were still cleaned up despite earlier failures
+    verify(mockDeleteMaterializedViewCallable)
+        .futureCall(
+            DeleteMaterializedViewRequest.newBuilder()
+                .setName(
+                    NameUtil.formatMaterializedViewName(
+                        PROJECT_ID, SHARED_INSTANCE_ID, succeedingMv))
+                .build());
+    verify(mockDeleteAppProfileCallable)
+        .futureCall(
+            DeleteAppProfileRequest.newBuilder()
+                .setName(
+                    NameUtil.formatAppProfileName(PROJECT_ID, SHARED_INSTANCE_ID, succeedingAp))
+                .setIgnoreWarnings(true)
+                .build());
+    verify(mockDeleteInstanceCallable)
+        .futureCall(
+            DeleteInstanceRequest.newBuilder()
+                .setName(NameUtil.formatInstanceName(PROJECT_ID, succeedingInst))
                 .build());
   }
 
