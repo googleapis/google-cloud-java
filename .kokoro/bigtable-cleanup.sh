@@ -37,7 +37,7 @@ RETURN_CODE=0
 for instance in google-cloud-bigtable google-cloud-bigtable-session; do
   echo "Cleaning up stale resources in instance: ${instance}"
   mvn -B -ntp -pl google-cloud-bigtable \
-    test-compile exec:java@cleanup-stale-resources \
+    exec:java@cleanup-stale-resources \
     -Dbigtable.project="${GOOGLE_CLOUD_PROJECT:-gcloud-devel}" \
     -Dbigtable.instance="${instance}" \
     -Dbigtable.table=integration-tests || RETURN_CODE=$?

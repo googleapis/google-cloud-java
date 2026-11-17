@@ -811,6 +811,18 @@
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>exec-maven-plugin</artifactId>
         <executions>
+          <!--
+            Cleans up stale test resources (>24h old) in the configured shared Bigtable instance
+            and orphaned test instances in the project via CloudEnv.
+            Invoke with: mvn test-compile exec:java@cleanup-stale-resources ...
+            Required system properties:
+              -Dbigtable.project=<project-id>
+              -Dbigtable.instance=<instance-id>
+              -Dbigtable.table=<table-id>
+            Optional system properties:
+              -Dbigtable.admin-endpoint=<host:port> (defaults to client default: bigtableadmin.googleapis.com:443)
+              -Dbigtable.data-endpoint=<host:port>  (defaults to client default: bigtable.googleapis.com:443)
+          -->
           <execution>
             <id>cleanup-stale-resources</id>
             <configuration>
