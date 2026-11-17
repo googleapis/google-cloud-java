@@ -591,7 +591,9 @@ public class ChannelPoolDpImpl implements ChannelPool {
     volatile State state = State.ACTIVE;
     // Guarded by the enclosing ChannelPoolDpImpl instance.
     int numOutstanding = 0;
+    // Guarded by the enclosing ChannelPoolDpImpl instance.
     int consecutiveFailures = 0;
+    // Guarded by the enclosing ChannelPoolDpImpl instance.
     Instant lastUsedAt;
 
     ChannelWrapper(long id, ManagedChannel channel, Clock clock) {
