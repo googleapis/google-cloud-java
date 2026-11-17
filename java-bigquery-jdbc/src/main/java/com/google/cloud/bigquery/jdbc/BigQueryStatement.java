@@ -409,7 +409,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
 
     boolean cancelSucceeded = false;
     try {
-      cancel(); // This attempts to cancel jobs and calls closeStatementResources()
+      cancelInternal(); // Cancels jobs and calls closeStatementResources(); no telemetry.
       cancelSucceeded = true;
     } catch (SQLException e) {
       LOG.warning("Failed to cancel statement during close().", e);
@@ -470,6 +470,16 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
   @Override
   public void cancel() throws SQLException {
     LOG.finer("Statement %s cancelled", this);
+    cancelInternal();
+    TelemetryManager.recordFeatureUsage(DriverFeature.DRIVER_FEATURE_STATEMENT_CANCEL);
+  }
+
+  /**
+   * Cancels running jobs and releases statement resources without recording telemetry. Used by
+   * {@link #close()}, where cancellation is housekeeping, not a user-initiated cancel.
+   */
+  private void cancelInternal() throws SQLException {
+    LOG.finer("Statement %s cancelled internally", this);
     synchronized (cancelLock) {
       this.isCanceled = true;
       for (JobId jobId : this.jobIds) {
@@ -491,8 +501,6 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     // If a ResultSet exists, then it will be closed as well, closing the
     // ownedThreads
     closeStatementResources();
-
-    TelemetryManager.recordFeatureUsage(DriverFeature.DRIVER_FEATURE_STATEMENT_CANCEL);
   }
 
   @Override
