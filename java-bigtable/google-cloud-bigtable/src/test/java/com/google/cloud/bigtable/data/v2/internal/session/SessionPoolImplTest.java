@@ -1530,6 +1530,8 @@ public class SessionPoolImplTest {
 
     Field consecutiveFailuresField = SessionPoolImpl.class.getDeclaredField("consecutiveFailures");
     consecutiveFailuresField.setAccessible(true);
+    Field budgetField = SessionPoolImpl.class.getDeclaredField("budget");
+    budgetField.setAccessible(true);
     Method onSessionCloseMethod =
         SessionPoolImpl.class.getDeclaredMethod(
             "onSessionClose",
@@ -1545,10 +1547,16 @@ public class SessionPoolImplTest {
     UnaryResponseFuture<SessionFakeScriptedResponse> queuedAfterCloseFuture =
         new UnaryResponseFuture<>();
     VRpc<SessionFakeScriptedRequest, SessionFakeScriptedResponse> checkedOutRpc;
-    SessionHandle failingStartingHandle;
     poolLock.lock();
     try {
       assertThat(sessionPool.sessions.getStats().getReadyCount()).isEqualTo(5);
+      // Exhaust the session creation budget so scale-up triggers in start()/onSessionClose() do not
+      // open new background sessions that could race with the single in-use session under test.
+      SessionCreationBudget budget = (SessionCreationBudget) budgetField.get(sessionPool);
+      while (budget.tryReserveSession()) {
+        budget.onSessionCreationFailure();
+      }
+
       // Mark 4 of the 5 ready sessions closing, then check out the remaining 1 ready session via
       // newCall() so readyCount == 0 and inUseCount == 1.
       List<SessionHandle> handles = new ArrayList<>(sessionPool.sessions.getAllSessions());
@@ -1571,30 +1579,31 @@ public class SessionPoolImplTest {
 
       Session mockStartingSession = mock(Session.class);
       when(mockStartingSession.getLogName()).thenReturn("mock-starting");
-      failingStartingHandle = sessionPool.sessions.newHandle(mockStartingSession);
+      SessionHandle failingStartingHandle = sessionPool.sessions.newHandle(mockStartingSession);
+
+      // Trigger the 10th STARTING failure via onSessionClose while inUseCount == 1;
+      // queuedBeforeCloseFuture must remain queued rather than being aborted.
+      onSessionCloseMethod.invoke(
+          sessionPool,
+          failingStartingHandle,
+          SessionState.STARTING,
+          Status.INTERNAL.withDescription("fake internal error"),
+          new Metadata());
+      assertThat(consecutiveFailuresField.getInt(sessionPool)).isEqualTo(10);
+      assertThat(queuedBeforeCloseFuture.isDone()).isFalse();
+
+      // A second PendingVRpc started after consecutiveFailures == 10 while inUseCount == 1 must
+      // also queue instead of failing fast.
+      VRpc<SessionFakeScriptedRequest, SessionFakeScriptedResponse> queuedAfterCloseRpc =
+          sessionPool.newCall(FakeDescriptor.SCRIPTED);
+      queuedAfterCloseRpc.start(
+          SessionFakeScriptedRequest.newBuilder().setTag(0).build(),
+          VRpcCallContext.create(Deadline.after(1, TimeUnit.MINUTES), true, vrpcTracer),
+          queuedAfterCloseFuture);
+      assertThat(queuedAfterCloseFuture.isDone()).isFalse();
     } finally {
       poolLock.unlock();
     }
-
-    // Trigger the 10th STARTING failure via onSessionClose while inUseCount == 1;
-    // queuedBeforeCloseFuture must remain queued rather than being aborted.
-    onSessionCloseMethod.invoke(
-        sessionPool,
-        failingStartingHandle,
-        SessionState.STARTING,
-        Status.INTERNAL.withDescription("fake internal error"),
-        new Metadata());
-    assertThat(queuedBeforeCloseFuture.isDone()).isFalse();
-
-    // A second PendingVRpc started after consecutiveFailures == 10 while inUseCount == 1 must also
-    // queue instead of failing fast.
-    VRpc<SessionFakeScriptedRequest, SessionFakeScriptedResponse> queuedAfterCloseRpc =
-        sessionPool.newCall(FakeDescriptor.SCRIPTED);
-    queuedAfterCloseRpc.start(
-        SessionFakeScriptedRequest.newBuilder().setTag(0).build(),
-        VRpcCallContext.create(Deadline.after(1, TimeUnit.MINUTES), true, vrpcTracer),
-        queuedAfterCloseFuture);
-    assertThat(queuedAfterCloseFuture.isDone()).isFalse();
 
     // Complete the checked-out RPC so its session returns to the pool and drains both pending RPCs.
     checkedOutRpc.start(
