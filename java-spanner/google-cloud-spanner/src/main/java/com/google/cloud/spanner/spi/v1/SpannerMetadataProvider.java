@@ -15,20 +15,26 @@
  */
 package com.google.cloud.spanner.spi.v1;
 
+import com.google.cloud.spanner.BuiltInMetricsConstant;
 import com.google.cloud.spanner.SpannerExceptionFactory;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Strings;
 import com.google.common.cache.Cache;
 import com.google.common.cache.CacheBuilder;
+import com.google.common.cache.CacheLoader;
+import com.google.common.cache.LoadingCache;
 import com.google.common.collect.ImmutableMap;
 import io.grpc.Metadata;
 import io.grpc.Metadata.Key;
+import io.opentelemetry.api.common.Attributes;
+import io.opentelemetry.api.common.AttributesBuilder;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ExecutionException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import javax.annotation.Nullable;
 
 /** For internal use only. */
 class SpannerMetadataProvider {
@@ -47,6 +53,15 @@ class SpannerMetadataProvider {
     Pattern.compile("^(?<headerValue>projects/[^/]*/instances/[^/]*/databases/[^/]*)(.*)?"),
     Pattern.compile("^(?<headerValue>projects/[^/]*/instances/[^/]*)(.*)?")
   };
+  private static final Pattern BUILT_IN_METRICS_RESOURCE_PATTERN =
+      Pattern.compile(
+          "^projects/(?<project>[^/]+)/instances/(?<instance>[^/]+)"
+              + "(/databases/(?<database>[^/]+))?(/.*)?");
+
+  private final LoadingCache<String, Attributes> builtInMetricsAttributesCache =
+      CacheBuilder.newBuilder()
+          .maximumSize(100)
+          .build(CacheLoader.from(SpannerMetadataProvider::createBuiltInMetricsAttributes));
 
   private static final Map<String, List<String>> ROUTE_TO_LEADER_HEADER_MAP =
       ImmutableMap.of(ROUTE_TO_LEADER_HEADER_KEY, Collections.singletonList("true"));
@@ -97,6 +112,29 @@ class SpannerMetadataProvider {
 
   Map<String, List<String>> newRouteToLeaderHeader() {
     return ROUTE_TO_LEADER_HEADER_MAP;
+  }
+
+  Attributes newBuiltInMetricsAttributes(@Nullable String resource) {
+    if (Strings.isNullOrEmpty(resource)) {
+      return Attributes.empty();
+    }
+    return builtInMetricsAttributesCache.getUnchecked(resource);
+  }
+
+  private static Attributes createBuiltInMetricsAttributes(String resource) {
+    Matcher matcher = BUILT_IN_METRICS_RESOURCE_PATTERN.matcher(resource);
+    if (!matcher.matches()) {
+      return Attributes.empty();
+    }
+    AttributesBuilder builder =
+        Attributes.builder()
+            .put(BuiltInMetricsConstant.PROJECT_ID_KEY, matcher.group("project"))
+            .put(BuiltInMetricsConstant.INSTANCE_ID_KEY, matcher.group("instance"));
+    String database = matcher.group("database");
+    if (database != null) {
+      builder.put(BuiltInMetricsConstant.DATABASE_KEY, database);
+    }
+    return builder.build();
   }
 
   Map<String, List<String>> newEndToEndTracingHeader() {
