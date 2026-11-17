@@ -20,6 +20,7 @@ import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import com.google.api.client.util.Data;
@@ -233,5 +234,16 @@ public class FieldValueTest {
       assertEquals(FieldValue.parseCanonicalInterval(entry.getKey()), entry.getValue());
       System.out.println(FieldValue.parseCanonicalInterval(entry.getKey()));
     }
+  }
+
+  @Test
+  public void testGetBooleanValue() {
+    assertTrue(FieldValue.of(FieldValue.Attribute.PRIMITIVE, "true").getBooleanValue());
+    assertTrue(FieldValue.of(FieldValue.Attribute.PRIMITIVE, "TRUE").getBooleanValue());
+    assertFalse(FieldValue.of(FieldValue.Attribute.PRIMITIVE, "false").getBooleanValue());
+    assertFalse(FieldValue.of(FieldValue.Attribute.PRIMITIVE, "False").getBooleanValue());
+    assertThrows(
+        IllegalStateException.class,
+        () -> FieldValue.of(FieldValue.Attribute.PRIMITIVE, "not-a-bool").getBooleanValue());
   }
 }

@@ -271,27 +271,40 @@ public class ClientSideStatementsTest extends AbstractSqlScriptTest {
     }
   }
 
+  private static void logValid(
+      ClientSideStatementImpl statement, String sql, boolean unsupportedStatement) {
+    if (unsupportedStatement) {
+      log(statement.getExamplePrerequisiteStatements(), sql, ErrorCode.INVALID_ARGUMENT);
+    } else {
+      log(statement.getExamplePrerequisiteStatements(), sql);
+    }
+  }
+
   /** Generates test statements for all {@link ClientSideStatement}s */
   private static void generateTestStatements(
       AbstractStatementParser parser, ClientSideStatementImpl statement) {
+    boolean unsupportedStatement =
+        statement.getStatementType() == ClientSideStatementType.SET_PROTO_DESCRIPTORS_FILE_PATH
+            || statement.getStatementType()
+                == ClientSideStatementType.SHOW_PROTO_DESCRIPTORS_FILE_PATH;
     for (String sql : statement.getExampleStatements()) {
-      log(statement.getExamplePrerequisiteStatements(), sql);
+      logValid(statement, sql, unsupportedStatement);
       if (statement.getStatementType() != ClientSideStatementType.RUN_PARTITION
           && statement.getStatementType() != ClientSideStatementType.SET_DIRECTED_READ) {
         // Partition ids are case-sensitive.
         // DirectedReadOptions are case-sensitive.
-        log(statement.getExamplePrerequisiteStatements(), upper(sql));
-        log(statement.getExamplePrerequisiteStatements(), lower(sql));
+        logValid(statement, upper(sql), unsupportedStatement);
+        logValid(statement, lower(sql), unsupportedStatement);
       }
-      log(statement.getExamplePrerequisiteStatements(), withLeadingSpaces(sql));
-      log(statement.getExamplePrerequisiteStatements(), withLeadingTabs(sql));
-      log(statement.getExamplePrerequisiteStatements(), withLeadingLinefeeds(sql));
-      log(statement.getExamplePrerequisiteStatements(), withTrailingSpaces(sql));
-      log(statement.getExamplePrerequisiteStatements(), withTrailingTabs(sql));
-      log(statement.getExamplePrerequisiteStatements(), withTrailingLinefeeds(sql));
-      log(statement.getExamplePrerequisiteStatements(), withSpaces(sql));
-      log(statement.getExamplePrerequisiteStatements(), withTabs(sql));
-      log(statement.getExamplePrerequisiteStatements(), withLinefeeds(sql));
+      logValid(statement, withLeadingSpaces(sql), unsupportedStatement);
+      logValid(statement, withLeadingTabs(sql), unsupportedStatement);
+      logValid(statement, withLeadingLinefeeds(sql), unsupportedStatement);
+      logValid(statement, withTrailingSpaces(sql), unsupportedStatement);
+      logValid(statement, withTrailingTabs(sql), unsupportedStatement);
+      logValid(statement, withTrailingLinefeeds(sql), unsupportedStatement);
+      logValid(statement, withSpaces(sql), unsupportedStatement);
+      logValid(statement, withTabs(sql), unsupportedStatement);
+      logValid(statement, withLinefeeds(sql), unsupportedStatement);
 
       log(
           statement.getExamplePrerequisiteStatements(),
