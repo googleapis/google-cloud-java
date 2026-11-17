@@ -311,6 +311,20 @@ public class ChannelPoolDpImpl implements ChannelPool {
       boolean sessionEstablished = false;
 
       @Override
+      public void afterSessionStart() {
+        // Only mark the session established and reset consecutiveFailures after
+        // OpenSessionResponse is processed. onBeforeSessionStart is not enough because the AFE
+        // sends initial PeerInfo response headers before completing OpenSession, so streams
+        // rejected during OpenSession (e.g. RESOURCE_EXHAUSTED) still fire
+        // onBeforeSessionStart before closing with an error.
+        synchronized (ChannelPoolDpImpl.this) {
+          sessionEstablished = true;
+          fw.consecutiveFailures = 0;
+          recycleBackoff = INITIAL_RECYCLE_BACKOFF;
+        }
+      }
+
+      @Override
       public void start(Listener responseListener, Metadata headers) {
         super.start(
             new ForwardingListener(responseListener) {
@@ -328,34 +342,12 @@ public class ChannelPoolDpImpl implements ChannelPool {
               }
 
               @Override
-              public void onMessage(SessionResponse msg) {
-                // Wait for OpenSessionResponse before marking the session established and resetting
-                // consecutiveFailures. onBeforeSessionStart is not enough because the AFE sends
-                // initial PeerInfo response headers before completing OpenSession, so streams
-                // rejected during OpenSession (e.g. RESOURCE_EXHAUSTED) still fire
-                // onBeforeSessionStart before closing with an error.
-                if (!sessionEstablished && msg.hasOpenSession()) {
-                  sessionEstablished = true;
-                  // Synchronize on the pool to update shared channel/pool failure state
-                  // (recycleBackoff is @GuardedBy("this")).
-                  synchronized (ChannelPoolDpImpl.this) {
-                    fw.consecutiveFailures = 0;
-                    recycleBackoff = INITIAL_RECYCLE_BACKOFF;
-                  }
-                }
-                super.onMessage(msg);
-              }
-
-              @Override
               public void onClose(Status status, Metadata trailers) {
                 synchronized (ChannelPoolDpImpl.this) {
                   if (afeId != null) {
                     sessionsPerAfeId.remove(afeId);
                   }
-                  if (status.isOk()) {
-                    fw.consecutiveFailures = 0;
-                    recycleBackoff = INITIAL_RECYCLE_BACKOFF;
-                  } else if (!sessionEstablished && status.getCode() != Code.CANCELLED) {
+                  if (!sessionEstablished && !status.isOk() && status.getCode() != Code.CANCELLED) {
                     fw.consecutiveFailures++;
                     if (afeId != null) {
                       routeObservations.remove(new RouteKey(fw.id, tenant), afeId);

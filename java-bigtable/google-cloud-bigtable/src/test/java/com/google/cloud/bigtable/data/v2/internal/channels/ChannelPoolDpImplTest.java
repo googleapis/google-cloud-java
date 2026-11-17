@@ -517,9 +517,10 @@ class ChannelPoolDpImplTest {
     }
     verify(channel, times(0)).shutdown();
 
-    // A success: onHeaders (which calls onBeforeSessionStart)
-    pool.newStream(FakeSessionGrpc.getOpenSessionMethod(), CallOptions.DEFAULT)
-        .start(mock(Listener.class), new Metadata());
+    // A success: onHeaders (which calls onBeforeSessionStart) followed by afterSessionStart()
+    SessionStream stream =
+        pool.newStream(FakeSessionGrpc.getOpenSessionMethod(), CallOptions.DEFAULT);
+    stream.start(mock(Listener.class), new Metadata());
 
     PeerInfo peerInfo = PeerInfo.newBuilder().setApplicationFrontendId(555).build();
     Metadata headers = new Metadata();
@@ -527,6 +528,7 @@ class ChannelPoolDpImplTest {
         SessionStreamImpl.PEER_INFO_KEY,
         Base64.getEncoder().encodeToString(peerInfo.toByteArray()));
     listener.getValue().onHeaders(headers);
+    stream.afterSessionStart();
     listener.getValue().onClose(Status.OK, new Metadata());
 
     // Another 4 failures - should still not recycle because counter was reset
