@@ -250,6 +250,10 @@ public class SubscriberTest {
         fakeSubscriberServiceImpl.getLastSeenRequest().getStreamAckDeadlineSeconds());
 
     subscriber.stopAsync().awaitTerminated();
+    // awaitTerminated() only covers the client side. The fake server finds out asynchronously
+    // that the stream was closed, so wait for that before starting the next subscriber. Otherwise
+    // the old stream may still be counted, and its request returned, by the assertions below.
+    fakeSubscriberServiceImpl.waitForClosedStreams(1);
 
     // Deadline is higher than the allowed streamAckDeadline.
     maxDurationPerAckExtension = 700;
@@ -265,6 +269,7 @@ public class SubscriberTest {
         fakeSubscriberServiceImpl.getLastSeenRequest().getStreamAckDeadlineSeconds());
 
     subscriber.stopAsync().awaitTerminated();
+    fakeSubscriberServiceImpl.waitForClosedStreams(2);
 
     // Deadline is within the allowed limits for streamAckDeadline.
     maxDurationPerAckExtension = 100;
@@ -280,6 +285,7 @@ public class SubscriberTest {
         fakeSubscriberServiceImpl.getLastSeenRequest().getStreamAckDeadlineSeconds());
 
     subscriber.stopAsync().awaitTerminated();
+    fakeSubscriberServiceImpl.waitForClosedStreams(3);
 
     // maxDurationPerAckExtension is unset.
     subscriber = startSubscriber(getTestSubscriberBuilder(testReceiver));

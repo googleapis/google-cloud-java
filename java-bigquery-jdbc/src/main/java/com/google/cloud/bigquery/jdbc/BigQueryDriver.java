@@ -27,6 +27,7 @@ import io.grpc.internal.PickFirstLoadBalancerProvider;
 import io.opentelemetry.api.OpenTelemetry;
 import java.io.IOException;
 import java.sql.Connection;
+import java.sql.DatabaseMetaData;
 import java.sql.Driver;
 import java.sql.DriverManager;
 import java.sql.DriverPropertyInfo;
@@ -196,10 +197,12 @@ public class BigQueryDriver implements Driver {
           LOG.log(Level.SEVERE, "Failed to parse connection URL", e);
           throw new BigQueryJdbcException("Failed to parse connection URL", e);
         }
+        authType = TelemetryManager.toAuthenticationType(ds.getOAuthType());
         if (customOpenTelemetryObj instanceof OpenTelemetry) {
           ds.setCustomOpenTelemetry((OpenTelemetry) customOpenTelemetryObj);
         }
         BigQueryConnection connection = new BigQueryConnection(connectionUri, ds);
+        DatabaseMetaData metaData = connection.getMetaData();
         LOG.info(
             "Driver info : { {Database Product Name : %s}, "
                 + "{Database Product Version : %s}, "
@@ -208,17 +211,16 @@ public class BigQueryDriver implements Driver {
                 + "{LogLevel : %s}, "
                 + "{LogPath : %s}, "
                 + "{Driver Instance : %s} }",
-            connection.getMetaData().getDatabaseProductName(),
-            connection.getMetaData().getDatabaseProductVersion(),
-            connection.getMetaData().getDriverName(),
-            connection.getMetaData().getDriverVersion(),
+            metaData.getDatabaseProductName(),
+            metaData.getDatabaseProductVersion(),
+            metaData.getDriverName(),
+            metaData.getDriverVersion(),
             logLevel,
             logPath,
             this.toString());
 
         Connection wrapped = BigQueryJdbcContextProxy.wrap(connection, Connection.class);
 
-        authType = TelemetryManager.toAuthenticationType(ds.getOAuthType());
         TelemetryManager.recordConnectionAttempt(Status.STATUS_SUCCESS, 0, authType);
         return wrapped;
       } else {
@@ -227,8 +229,7 @@ public class BigQueryDriver implements Driver {
     } catch (IOException e) {
       TelemetryManager.recordConnectionAttempt(
           Status.STATUS_ERROR, TelemetryManager.extractErrorCode(e), authType);
-      LOG.warning("Getting a warning: %s", e.getMessage());
-      return null;
+      throw new BigQueryJdbcException("Failed to establish connection", e);
     } catch (Throwable t) {
       TelemetryManager.recordConnectionAttempt(
           Status.STATUS_ERROR, TelemetryManager.extractErrorCode(t), authType);
