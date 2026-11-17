@@ -18,13 +18,16 @@ package com.google.cloud.spanner;
 
 import static com.google.common.truth.Truth.assertThat;
 
+import com.google.api.MetricDescriptor;
 import com.google.api.gax.grpc.GrpcCallContext;
+import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.cloud.NoCredentials;
 import com.google.cloud.grpc.GcpManagedChannel;
 import com.google.cloud.spanner.SpannerOptions.CallContextConfigurator;
 import com.google.cloud.spanner.connection.AbstractMockServerTest;
 import com.google.cloud.spanner.spi.v1.GapicSpannerRpc;
+import com.google.monitoring.v3.TimeSeries;
 import com.google.spanner.admin.instance.v1.ListInstanceConfigsResponse;
 import io.grpc.ManagedChannelBuilder;
 import io.grpc.MethodDescriptor;
@@ -36,6 +39,7 @@ import io.opentelemetry.sdk.metrics.data.HistogramPointData;
 import io.opentelemetry.sdk.metrics.data.LongPointData;
 import io.opentelemetry.sdk.testing.exporter.InMemoryMetricReader;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 import org.junit.After;
 import org.junit.Before;
@@ -245,6 +249,172 @@ public class ChannelPoolBuiltInMetricsTest extends AbstractMockServerTest {
     }
   }
 
+  @Test
+  public void eachClientReportsItsOwnPoolUntilItIsClosed() {
+    try (Spanner first = createOptions().build().getService()) {
+      executeSelect1(first);
+      try (Spanner second = createOptions().build().getService()) {
+        executeSelect1(second);
+
+        List<LongPointData> active = activeChannelCountPoints();
+        assertThat(sumOfValues(active)).isEqualTo(2 * NUM_CHANNELS);
+        Set<String> poolIndices =
+            active.stream()
+                .map(point -> point.getAttributes().get(BuiltInMetricsConstant.POOL_INDEX_KEY))
+                .collect(Collectors.toSet());
+        if (poolIndices.size() == 1) {
+          assertThat(poolIndices).containsExactly("other");
+        }
+      }
+
+      assertThat(sumOfValues(activeChannelCountPoints())).isEqualTo(NUM_CHANNELS);
+    }
+  }
+
+  @Test
+  public void channelPoolMetricsConvertToCloudMonitoringTimeSeries() {
+    try (Spanner spanner = createOptions().build().getService()) {
+      executeSelect1(spanner);
+
+      List<TimeSeries> allTimeSeries =
+          SpannerCloudMonitoringExporterUtils.convertToSpannerTimeSeries(
+              builtInReader.collectAllMetrics(), "my-project");
+
+      TimeSeries channelCount =
+          allTimeSeries.stream()
+              .filter(ts -> ts.getMetric().getType().equals(CHANNEL_COUNT))
+              .filter(ts -> "active".equals(ts.getMetric().getLabelsMap().get("state")))
+              .findFirst()
+              .orElseThrow(AssertionError::new);
+      assertThat(channelCount.getMetricKind()).isEqualTo(MetricDescriptor.MetricKind.GAUGE);
+      assertThat(channelCount.getValueType()).isEqualTo(MetricDescriptor.ValueType.INT64);
+      assertThat(channelCount.getResource().getType())
+          .isEqualTo(BuiltInMetricsConstant.SPANNER_RESOURCE_TYPE);
+      assertThat(channelCount.getResource().getLabelsMap())
+          .containsEntry("project_id", "my-project");
+      assertThat(channelCount.getResource().getLabelsMap()).containsEntry("instance_id", "unknown");
+      assertThat(channelCount.getMetric().getLabelsMap())
+          .containsEntry("lane", BuiltInMetricsConstant.LANE_CLOUDPATH);
+      assertThat(channelCount.getMetric().getLabelsMap()).containsEntry("pool_mode", "static");
+      assertThat(channelCount.getMetric().getLabelsMap()).containsKey("pool_index");
+      assertThat(channelCount.getPoints(0).getValue().getInt64Value()).isEqualTo(NUM_CHANNELS);
+
+      TimeSeries channelLoad =
+          allTimeSeries.stream()
+              .filter(ts -> ts.getMetric().getType().equals(CHANNEL_LOAD))
+              .findFirst()
+              .orElseThrow(AssertionError::new);
+      assertThat(channelLoad.getMetricKind()).isEqualTo(MetricDescriptor.MetricKind.CUMULATIVE);
+      assertThat(channelLoad.getValueType()).isEqualTo(MetricDescriptor.ValueType.DISTRIBUTION);
+      assertThat(channelLoad.getResource().getLabelsMap())
+          .containsEntry("project_id", "my-project");
+      assertThat(channelLoad.getResource().getLabelsMap())
+          .containsEntry("instance_id", "my-instance");
+      assertThat(channelLoad.getMetric().getLabelsMap()).containsEntry("database", "my-database");
+      assertThat(channelLoad.getMetric().getLabelsMap())
+          .containsEntry("lane", BuiltInMetricsConstant.LANE_CLOUDPATH);
+      assertThat(channelLoad.getMetric().getLabelsMap()).containsEntry("pool_mode", "static");
+      assertThat(channelLoad.getMetric().getLabelsMap()).doesNotContainKey("pool_index");
+      assertThat(channelLoad.getMetric().getLabelsMap()).doesNotContainKey("state");
+      assertThat(
+              channelLoad
+                  .getPoints(0)
+                  .getValue()
+                  .getDistributionValue()
+                  .getBucketOptions()
+                  .getExplicitBuckets()
+                  .getBoundsList())
+          .containsExactly(
+              1.0, 2.0, 3.0, 5.0, 8.0, 12.0, 16.0, 20.0, 25.0, 30.0, 40.0, 50.0, 75.0, 100.0, 150.0,
+              200.0)
+          .inOrder();
+    }
+  }
+
+  @Test
+  public void adminCallsDoNotReportChannelLoad() {
+    mockInstanceAdmin.addResponse(ListInstanceConfigsResponse.getDefaultInstance());
+    try (Spanner spanner = createOptions().build().getService()) {
+      spanner.getInstanceAdminClient().listInstanceConfigs().iterateAll().forEach(ignored -> {});
+
+      assertThat(channelLoadPoints()).isEmpty();
+      assertThat(activeChannelCountPoints()).hasSize(1);
+    }
+  }
+
+  @Test
+  public void dynamicPoolReportsDynamicPoolModeAndChannelLoad() {
+    SpannerOptions options =
+        SpannerOptions.newBuilder()
+            .setProjectId("my-project")
+            .setHost(String.format("http://localhost:%d", getPort()))
+            .setChannelConfigurator(ManagedChannelBuilder::usePlaintext)
+            .setCredentials(NoCredentials.getInstance())
+            .enableGrpcGcpExtension()
+            .enableDynamicChannelPool()
+            .build();
+    try (Spanner spanner = options.getService()) {
+      executeSelect1(spanner);
+
+      List<LongPointData> active = activeChannelCountPoints();
+      assertThat(active).hasSize(1);
+      assertThat(active.get(0).getAttributes().get(BuiltInMetricsConstant.POOL_MODE_KEY))
+          .isEqualTo("dynamic");
+
+      List<HistogramPointData> loadPoints = channelLoadPoints();
+      assertThat(loadPoints).hasSize(1);
+      assertThat(loadPoints.get(0).getAttributes().get(BuiltInMetricsConstant.POOL_MODE_KEY))
+          .isEqualTo("dynamic");
+    }
+  }
+
+  @Test
+  public void directPathWithoutFallbackReportsDirectPathLane() {
+    SpannerOptions.useEnvironment(
+        new SpannerOptions.SpannerEnvironment() {
+          @Override
+          public boolean isEnableGcpFallback() {
+            return false;
+          }
+        });
+    GapicSpannerRpc rpc = new GapicSpannerRpc(createDirectPathFallbackOptions());
+    try {
+      List<LongPointData> active = activeChannelCountPoints();
+      assertThat(active).hasSize(1);
+      assertThat(active.get(0).getValue()).isEqualTo(NUM_CHANNELS);
+      assertThat(active.get(0).getAttributes().get(BuiltInMetricsConstant.LANE_KEY))
+          .isEqualTo(BuiltInMetricsConstant.LANE_DIRECTPATH);
+    } finally {
+      rpc.shutdown();
+    }
+  }
+
+  @Test
+  public void channelPoolMetricsAreNotReportedWithCustomChannelProvider() {
+    InstantiatingGrpcChannelProvider customProvider =
+        InstantiatingGrpcChannelProvider.newBuilder()
+            .setEndpoint("localhost:" + getPort())
+            .setChannelConfigurator(ManagedChannelBuilder::usePlaintext)
+            .build();
+    try (Spanner spanner =
+        createOptions().setChannelProvider(customProvider).build().getService()) {
+      executeSelect1(spanner);
+
+      assertThat(channelCountPoints()).isEmpty();
+      assertThat(channelLoadPoints()).isEmpty();
+    }
+  }
+
+  @Test
+  public void channelPoolMetricsAreNotReportedWhenGrpcGcpExtensionIsDisabled() {
+    try (Spanner spanner = createOptions().disableGrpcGcpExtension().build().getService()) {
+      executeSelect1(spanner);
+
+      assertThat(channelCountPoints()).isEmpty();
+      assertThat(channelLoadPoints()).isEmpty();
+    }
+  }
+
   private SpannerOptions.Builder createOptions() {
     return SpannerOptions.newBuilder()
         .setProjectId("my-project")
@@ -288,6 +458,10 @@ public class ChannelPoolBuiltInMetricsTest extends AbstractMockServerTest {
         .filter(
             point -> "active".equals(point.getAttributes().get(BuiltInMetricsConstant.STATE_KEY)))
         .collect(Collectors.toList());
+  }
+
+  private static long sumOfValues(List<LongPointData> points) {
+    return points.stream().mapToLong(LongPointData::getValue).sum();
   }
 
   private List<HistogramPointData> channelLoadPoints() {

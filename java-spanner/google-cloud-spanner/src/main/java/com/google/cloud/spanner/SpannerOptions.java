@@ -1224,6 +1224,8 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
         "SPANNER_DISABLE_DIRECT_ACCESS_GRPC_BUILTIN_METRICS";
     private static final String SPANNER_DISABLE_GRPC_GCP_OTEL_METRICS =
         "SPANNER_DISABLE_GRPC_GCP_OTEL_METRICS";
+    // TODO: Remove this once these metrics have been in production without any issues for at least
+    // 3 months.
     private static final String SPANNER_DISABLE_CHANNEL_POOL_BUILTIN_METRICS =
         "SPANNER_DISABLE_CHANNEL_POOL_BUILTIN_METRICS";
     private static final String SPANNER_MONITORING_HOST = "SPANNER_MONITORING_HOST";
