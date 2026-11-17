@@ -19,6 +19,7 @@ package com.google.cloud.spanner.spi.v1;
 import com.google.api.core.ApiFunction;
 import com.google.cloud.grpc.GcpManagedChannelBuilder;
 import com.google.cloud.grpc.GcpManagedChannelOptions;
+import com.google.common.annotations.VisibleForTesting;
 import io.grpc.ManagedChannelBuilder;
 import javax.annotation.Nullable;
 
@@ -50,5 +51,10 @@ final class GrpcGcpEndpointChannelConfigurator {
     return GcpManagedChannelBuilder.forDelegateBuilder(effectiveBuilder)
         .withApiConfigJsonString(apiConfigJson)
         .withOptions(grpcGcpOptions);
+  }
+
+  @VisibleForTesting
+  GcpManagedChannelOptions getGrpcGcpOptions() {
+    return grpcGcpOptions;
   }
 }
