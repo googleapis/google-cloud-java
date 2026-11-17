@@ -49,7 +49,7 @@ public abstract class ITBaseTest {
   protected Firestore firestore;
   protected FirestoreSpy firestoreSpy;
   private FirestoreOptions firestoreOptions;
-  private boolean backendPrimed = false;
+  private static volatile boolean backendPrimed = false;
 
   protected enum FirestoreEdition {
     STANDARD,
@@ -126,47 +126,52 @@ public abstract class ITBaseTest {
   public void primeBackend() throws Exception {
     if (backendPrimed) return;
 
-    backendPrimed = true;
-    CompletableFuture<Void> watchInitialized = new CompletableFuture<>();
-    CompletableFuture<Void> watchUpdateReceived = new CompletableFuture<>();
-    DocumentReference docRef = firestore.collection(autoId()).document();
-    ListenerRegistration listenerRegistration =
-        docRef.addSnapshotListener(
-            (snapshot, error) -> {
-              if (error != null) {
-                logger.log(
-                    Level.SEVERE, "Prime backend received error in snapshot listener.", error);
-                if (!watchInitialized.isDone()) {
-                  watchInitialized.completeExceptionally(error);
-                } else if (!watchUpdateReceived.isDone()) {
-                  watchUpdateReceived.completeExceptionally(error);
+    synchronized (ITBaseTest.class) {
+      if (backendPrimed) return;
+
+      CompletableFuture<Void> watchInitialized = new CompletableFuture<>();
+      CompletableFuture<Void> watchUpdateReceived = new CompletableFuture<>();
+      DocumentReference docRef = firestore.collection(autoId()).document();
+      ListenerRegistration listenerRegistration =
+          docRef.addSnapshotListener(
+              (snapshot, error) -> {
+                if (error != null) {
+                  logger.log(
+                      Level.SEVERE, "Prime backend received error in snapshot listener.", error);
+                  if (!watchInitialized.isDone()) {
+                    watchInitialized.completeExceptionally(error);
+                  } else if (!watchUpdateReceived.isDone()) {
+                    watchUpdateReceived.completeExceptionally(error);
+                  }
                 }
-              }
-              if (snapshot != null) {
-                if ("done".equals(snapshot.get("value"))) {
-                  watchUpdateReceived.complete(null);
-                } else {
-                  watchInitialized.complete(null);
+                if (snapshot != null) {
+                  if ("done".equals(snapshot.get("value"))) {
+                    watchUpdateReceived.complete(null);
+                  } else {
+                    watchInitialized.complete(null);
+                  }
                 }
-              }
-            });
+              });
+      try {
+        // Wait for watch to initialize and deliver first event.
+        watchInitialized.get(PRIMING_TIMEOUT_MS, TimeUnit.MILLISECONDS);
 
-    // Wait for watch to initialize and deliver first event.
-    watchInitialized.get(PRIMING_TIMEOUT_MS, TimeUnit.MILLISECONDS);
+        // Use a transaction to perform a write without triggering any local events.
+        docRef
+            .getFirestore()
+            .runTransaction(
+                transaction -> {
+                  transaction.set(docRef, map("value", "done"));
+                  return null;
+                });
 
-    // Use a transaction to perform a write without triggering any local events.
-    docRef
-        .getFirestore()
-        .runTransaction(
-            transaction -> {
-              transaction.set(docRef, map("value", "done"));
-              return null;
-            });
-
-    // Wait to see the write on the watch stream.
-    watchUpdateReceived.get(PRIMING_TIMEOUT_MS, TimeUnit.MILLISECONDS);
-
-    listenerRegistration.remove();
+        // Wait to see the write on the watch stream.
+        watchUpdateReceived.get(PRIMING_TIMEOUT_MS, TimeUnit.MILLISECONDS);
+        backendPrimed = true;
+      } finally {
+        listenerRegistration.remove();
+      }
+    }
   }
 
   @After
