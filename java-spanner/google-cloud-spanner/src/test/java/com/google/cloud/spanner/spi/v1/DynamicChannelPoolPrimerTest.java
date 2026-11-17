@@ -97,7 +97,7 @@ public class DynamicChannelPoolPrimerTest {
   private static final Metadata.Key<String> REQUEST_ID_KEY =
       Metadata.Key.of("x-goog-spanner-request-id", Metadata.ASCII_STRING_MARSHALLER);
 
-  /** Minimal Spanner service that only serves ExecuteSql and can hold or fail calls. */
+  /** Minimal Spanner service that serves ExecuteSql and can hold or fail calls. */
   private static final class PrimeService extends SpannerGrpc.SpannerImplBase {
     final List<ExecuteSqlRequest> requests = new CopyOnWriteArrayList<>();
     final List<Metadata> headers = new CopyOnWriteArrayList<>();
@@ -131,6 +131,7 @@ public class DynamicChannelPoolPrimerTest {
   private String serverNameForChannels;
   private final List<ManagedChannel> channels = new ArrayList<>();
   private final RequestIdCreatorImpl requestIdCreator = new RequestIdCreatorImpl();
+  private final SessionSourceRegistry sessionRegistry = new SessionSourceRegistry();
 
   @Before
   public void setUp() throws Exception {
@@ -220,7 +221,12 @@ public class DynamicChannelPoolPrimerTest {
             ImmutableMap.of("x-goog-api-client", "test-client", "user-agent", "test-agent"),
             RESOURCE_HEADER_KEY);
     return new DynamicChannelPoolPrimer(
-        metadataProvider, PROJECT_NAME, requestIdCreator, callCredentialsProvider, rpcDeadline);
+        sessionRegistry,
+        metadataProvider,
+        PROJECT_NAME,
+        requestIdCreator,
+        callCredentialsProvider,
+        rpcDeadline);
   }
 
   private DynamicChannelPoolPrimer newPrimer() {
@@ -241,26 +247,9 @@ public class DynamicChannelPoolPrimerTest {
     }
   }
 
-  private static final class EqualSessionSource extends MutableSessionSource {
-    private EqualSessionSource(String sessionName) {
-      super(sessionName);
-    }
-
-    @Override
-    public boolean equals(Object other) {
-      return other instanceof EqualSessionSource;
-    }
-
-    @Override
-    public int hashCode() {
-      return 1;
-    }
-  }
-
-  private static MutableSessionSource registerPrimeSession(
-      DynamicChannelPoolPrimer primer, String databaseName, String sessionName) {
+  private MutableSessionSource registerPrimeSession(String sessionName) {
     MutableSessionSource source = new MutableSessionSource(sessionName);
-    primer.registerPrimeSessionSource(source);
+    sessionRegistry.register(source);
     return source;
   }
 
@@ -314,7 +303,7 @@ public class DynamicChannelPoolPrimerTest {
   @Test
   public void primeExecutesSelectOneWithSessionAndHeaders() throws Exception {
     DynamicChannelPoolPrimer primer = newPrimer();
-    registerPrimeSession(primer, DATABASE_NAME, SESSION_NAME);
+    registerPrimeSession(SESSION_NAME);
 
     ListenableFuture<Void> future = primer.prime(newChannel());
 
@@ -337,7 +326,7 @@ public class DynamicChannelPoolPrimerTest {
   @Test
   public void primeSendsEveryHeaderOnceOnDelegateThatCarriesFixedHeaders() throws Exception {
     DynamicChannelPoolPrimer primer = newPrimer();
-    registerPrimeSession(primer, DATABASE_NAME, SESSION_NAME);
+    registerPrimeSession(SESSION_NAME);
 
     getWithin(primer.prime(newDelegateLikeChannel()), Duration.ofSeconds(10));
 
@@ -349,7 +338,7 @@ public class DynamicChannelPoolPrimerTest {
   @Test
   public void everyPrimeCarriesFreshRequestIdWithFirstAttempt() throws Exception {
     DynamicChannelPoolPrimer primer = newPrimer();
-    registerPrimeSession(primer, DATABASE_NAME, SESSION_NAME);
+    registerPrimeSession(SESSION_NAME);
     ManagedChannel channel = newChannel();
 
     // The pool invokes prime() once per attempt, so each attempt is a new request id.
@@ -367,7 +356,7 @@ public class DynamicChannelPoolPrimerTest {
   @Test
   public void primeOmitsRouteToLeaderHeader() throws Exception {
     DynamicChannelPoolPrimer primer = newPrimer();
-    registerPrimeSession(primer, DATABASE_NAME, SESSION_NAME);
+    registerPrimeSession(SESSION_NAME);
 
     getWithin(primer.prime(newChannel()), Duration.ofSeconds(10));
 
@@ -381,7 +370,7 @@ public class DynamicChannelPoolPrimerTest {
             () -> oauthCredentialsWithToken(DEFAULT_TOKEN),
             () -> credentialsWithToken(PROVIDER_TOKEN));
     DynamicChannelPoolPrimer primer = newPrimer(credentialsProvider, Duration.ofSeconds(5));
-    registerPrimeSession(primer, DATABASE_NAME, SESSION_NAME);
+    registerPrimeSession(SESSION_NAME);
 
     getWithin(primer.prime(newChannel()), Duration.ofSeconds(10));
 
@@ -395,7 +384,7 @@ public class DynamicChannelPoolPrimerTest {
         GapicSpannerRpc.createChannelPrimeCallCredentialsProvider(
             () -> oauthCredentialsWithToken(DEFAULT_TOKEN), () -> null);
     DynamicChannelPoolPrimer primer = newPrimer(credentialsProvider, Duration.ofSeconds(5));
-    registerPrimeSession(primer, DATABASE_NAME, SESSION_NAME);
+    registerPrimeSession(SESSION_NAME);
 
     getWithin(primer.prime(newChannel()), Duration.ofSeconds(10));
 
@@ -408,7 +397,7 @@ public class DynamicChannelPoolPrimerTest {
     CallCredentialsProvider credentialsProvider =
         GapicSpannerRpc.createChannelPrimeCallCredentialsProvider(() -> null, null);
     DynamicChannelPoolPrimer primer = newPrimer(credentialsProvider, Duration.ofSeconds(5));
-    registerPrimeSession(primer, DATABASE_NAME, SESSION_NAME);
+    registerPrimeSession(SESSION_NAME);
 
     getWithin(primer.prime(newChannel()), Duration.ofSeconds(10));
 
@@ -424,7 +413,7 @@ public class DynamicChannelPoolPrimerTest {
               throw expected;
             },
             Duration.ofSeconds(5));
-    registerPrimeSession(primer, DATABASE_NAME, SESSION_NAME);
+    registerPrimeSession(SESSION_NAME);
 
     ListenableFuture<Void> future = primer.prime(newChannel());
 
@@ -435,7 +424,7 @@ public class DynamicChannelPoolPrimerTest {
   public void primeFailsWhenRpcFails() throws Exception {
     service.failWith = Status.UNAVAILABLE.withDescription("backend unavailable");
     DynamicChannelPoolPrimer primer = newPrimer();
-    registerPrimeSession(primer, DATABASE_NAME, SESSION_NAME);
+    registerPrimeSession(SESSION_NAME);
 
     Throwable failure = failureOf(primer.prime(newChannel()));
 
@@ -443,7 +432,7 @@ public class DynamicChannelPoolPrimerTest {
     assertThat(((StatusRuntimeException) failure).getStatus().getCode())
         .isEqualTo(Status.Code.UNAVAILABLE);
     // A transient failure says nothing about the session, so it stays registered.
-    assertThat(primer.getPrimeSessionName()).isEqualTo(SESSION_NAME);
+    assertThat(sessionRegistry.nextSessionName()).isEqualTo(SESSION_NAME);
   }
 
   @Test
@@ -451,7 +440,7 @@ public class DynamicChannelPoolPrimerTest {
     service.holdResponses = true;
     DynamicChannelPoolPrimer primer =
         newPrimer(() -> credentialsWithToken(DEFAULT_TOKEN), Duration.ofMillis(200));
-    registerPrimeSession(primer, DATABASE_NAME, SESSION_NAME);
+    registerPrimeSession(SESSION_NAME);
 
     Throwable failure = failureOf(primer.prime(newChannel()));
 
@@ -461,14 +450,14 @@ public class DynamicChannelPoolPrimerTest {
     // The deadline cancels the server-side call as well.
     assertThat(service.callCancelled.await(5, TimeUnit.SECONDS)).isTrue();
     // A deadline says nothing about the session, so it stays registered.
-    assertThat(primer.getPrimeSessionName()).isEqualTo(SESSION_NAME);
+    assertThat(sessionRegistry.nextSessionName()).isEqualTo(SESSION_NAME);
   }
 
   @Test
   public void cancellingPrimeCancelsRpc() throws Exception {
     service.holdResponses = true;
     DynamicChannelPoolPrimer primer = newPrimer();
-    registerPrimeSession(primer, DATABASE_NAME, SESSION_NAME);
+    registerPrimeSession(SESSION_NAME);
 
     ListenableFuture<Void> future = primer.prime(newChannel());
     assertThat(service.callStarted.await(5, TimeUnit.SECONDS)).isTrue();
@@ -484,7 +473,7 @@ public class DynamicChannelPoolPrimerTest {
   public void primeFailsWhenChannelIsShutDownDuringRpc() throws Exception {
     service.holdResponses = true;
     DynamicChannelPoolPrimer primer = newPrimer();
-    registerPrimeSession(primer, DATABASE_NAME, SESSION_NAME);
+    registerPrimeSession(SESSION_NAME);
     ManagedChannel channel = newChannel();
 
     ListenableFuture<Void> future = primer.prime(channel);
@@ -499,7 +488,7 @@ public class DynamicChannelPoolPrimerTest {
   @Test
   public void primeOnShutDownChannelFailsPromptly() throws Exception {
     DynamicChannelPoolPrimer primer = newPrimer();
-    registerPrimeSession(primer, DATABASE_NAME, SESSION_NAME);
+    registerPrimeSession(SESSION_NAME);
     ManagedChannel channel = newChannel();
     channel.shutdownNow();
 
@@ -525,7 +514,7 @@ public class DynamicChannelPoolPrimerTest {
   @Test
   public void concurrentPrimesOnOneChannelAllSucceed() throws Exception {
     DynamicChannelPoolPrimer primer = newPrimer();
-    registerPrimeSession(primer, DATABASE_NAME, SESSION_NAME);
+    registerPrimeSession(SESSION_NAME);
     ManagedChannel channel = newChannel();
 
     List<ListenableFuture<Void>> futures = new ArrayList<>();
@@ -539,61 +528,18 @@ public class DynamicChannelPoolPrimerTest {
   }
 
   @Test
-  public void latestRegisteredSessionIsUsedForPriming() throws Exception {
+  public void primingUsesTheCurrentSessionOfARegisteredSource() throws Exception {
     DynamicChannelPoolPrimer primer = newPrimer();
-    assertThat(primer.getPrimeSessionName()).isNull();
-
-    MutableSessionSource source = registerPrimeSession(primer, DATABASE_NAME, SESSION_NAME);
-    assertThat(primer.getPrimeSessionName()).isEqualTo(SESSION_NAME);
+    MutableSessionSource source = registerPrimeSession(SESSION_NAME);
     getWithin(primer.prime(newChannel()), Duration.ofSeconds(10));
 
     // Refreshing changes what the source returns without changing its registration.
     source.sessionName = REFRESHED_SESSION_NAME;
-    assertThat(primer.getPrimeSessionName()).isEqualTo(REFRESHED_SESSION_NAME);
-    assertThat(primer.getPrimeSessionSources()).containsExactly(source);
     getWithin(primer.prime(newChannel()), Duration.ofSeconds(10));
 
     assertThat(service.requests).hasSize(2);
     assertThat(service.requests.get(0).getSession()).isEqualTo(SESSION_NAME);
     assertThat(service.requests.get(1).getSession()).isEqualTo(REFRESHED_SESSION_NAME);
-  }
-
-  @Test
-  public void primeAttemptsRotateAcrossAvailableSources() {
-    DynamicChannelPoolPrimer primer = newPrimer();
-    MutableSessionSource first = registerPrimeSession(primer, DATABASE_NAME, SESSION_NAME);
-    MutableSessionSource second =
-        registerPrimeSession(primer, OTHER_DATABASE_NAME, OTHER_SESSION_NAME);
-
-    assertThat(primer.getPrimeSessionName()).isEqualTo(SESSION_NAME);
-    assertThat(primer.getPrimeSessionName()).isEqualTo(OTHER_SESSION_NAME);
-    assertThat(primer.getPrimeSessionName()).isEqualTo(SESSION_NAME);
-
-    // An unavailable source is skipped without blocking, while the cursor still advances.
-    first.sessionName = null;
-    assertThat(primer.getPrimeSessionName()).isEqualTo(OTHER_SESSION_NAME);
-    assertThat(primer.getPrimeSessionName()).isEqualTo(OTHER_SESSION_NAME);
-    assertThat(primer.getPrimeSessionSources()).containsExactly(first, second).inOrder();
-  }
-
-  @Test
-  public void unregisterIsTargetedAndIdempotent() {
-    DynamicChannelPoolPrimer primer = newPrimer();
-    EqualSessionSource first = new EqualSessionSource(SESSION_NAME);
-    EqualSessionSource second = new EqualSessionSource(OTHER_SESSION_NAME);
-    assertThat(first).isEqualTo(second);
-    primer.registerPrimeSessionSource(first);
-    primer.registerPrimeSessionSource(first);
-    primer.registerPrimeSessionSource(second);
-
-    primer.unregisterPrimeSessionSource(first);
-    primer.unregisterPrimeSessionSource(first);
-
-    assertThat(primer.getPrimeSessionSources()).containsExactly(second);
-    assertThat(primer.getPrimeSessionName()).isEqualTo(OTHER_SESSION_NAME);
-    primer.unregisterPrimeSessionSource(second);
-    assertThat(primer.getPrimeSessionSources()).isEmpty();
-    assertThat(primer.getPrimeSessionName()).isNull();
   }
 
   @Test
@@ -639,14 +585,5 @@ public class DynamicChannelPoolPrimerTest {
         () -> DynamicChannelPoolPrimer.rpcDeadlineFor(Duration.ofSeconds(-1)));
     assertThrows(
         IllegalArgumentException.class, () -> DynamicChannelPoolPrimer.rpcDeadlineFor(null));
-  }
-
-  @Test
-  public void nullSourcesAreRejected() {
-    DynamicChannelPoolPrimer primer = newPrimer();
-
-    assertThrows(NullPointerException.class, () -> primer.registerPrimeSessionSource(null));
-    assertThrows(NullPointerException.class, () -> primer.unregisterPrimeSessionSource(null));
-    assertThat(primer.getPrimeSessionSources()).isEmpty();
   }
 }
