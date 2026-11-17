@@ -272,18 +272,23 @@ public class StaleResourceCleaner {
 
   private void cleanUpStaleAuthorizedViewsOnPersistentTable(
       BigtableTableAdminClient tableAdmin, String tableId, String stalePrefix) {
-    for (String viewId : tableAdmin.listAuthorizedViews(tableId)) {
-      if (!isStale(viewId, stalePrefix)) {
-        continue;
+    try {
+      for (String viewId : tableAdmin.listAuthorizedViews(tableId)) {
+        if (!isStale(viewId, stalePrefix)) {
+          continue;
+        }
+        LOGGER.info(
+            "Deleting stale authorized view: " + viewId + " on persistent table: " + tableId);
+        try {
+          tableAdmin.updateAuthorizedView(
+              UpdateAuthorizedViewRequest.of(tableId, viewId).setDeletionProtection(false));
+          tableAdmin.deleteAuthorizedView(tableId, viewId);
+        } catch (NotFoundException ignored) {
+          // nothing to clean up, the view was already deleted
+        }
       }
-      LOGGER.info("Deleting stale authorized view: " + viewId + " on persistent table: " + tableId);
-      try {
-        tableAdmin.updateAuthorizedView(
-            UpdateAuthorizedViewRequest.of(tableId, viewId).setDeletionProtection(false));
-        tableAdmin.deleteAuthorizedView(tableId, viewId);
-      } catch (NotFoundException ignored) {
-        // nothing to clean up, the view was already deleted
-      }
+    } catch (NotFoundException ignored) {
+      // nothing to clean up, the table was already deleted
     }
   }
 
@@ -335,8 +340,8 @@ public class StaleResourceCleaner {
       if (!isStale(instance.getId(), stalePrefix)) {
         continue;
       }
-      prepInstanceForDelete(instance.getId());
       try {
+        prepInstanceForDelete(instance.getId());
         deleteInstance(instance.getId());
       } catch (NotFoundException ignored) {
         // nothing to clean up, the instance was already deleted
@@ -361,7 +366,11 @@ public class StaleResourceCleaner {
       boolean isFirstCluster = true;
 
       for (Cluster cluster : clusters) {
-        deleteAllBackups(tableAdmin, cluster.getId());
+        try {
+          deleteAllBackups(tableAdmin, cluster.getId());
+        } catch (NotFoundException ignored) {
+          // nothing to clean up, the cluster or backup was already deleted
+        }
         // Skip the first cluster so that it can be deleted by deleteInstance (instances can't exist
         // without clusters)
         if (!isFirstCluster) {

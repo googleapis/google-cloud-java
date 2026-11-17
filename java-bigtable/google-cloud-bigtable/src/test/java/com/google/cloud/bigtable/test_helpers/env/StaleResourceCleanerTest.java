@@ -31,6 +31,7 @@ import com.google.api.gax.grpc.GrpcStatusCode;
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.longrunning.OperationFutures;
 import com.google.api.gax.longrunning.OperationSnapshot;
+import com.google.api.gax.rpc.NotFoundException;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.api.gax.rpc.testing.FakeOperationSnapshot;
@@ -679,6 +680,125 @@ class StaleResourceCleanerTest {
         .futureCall(
             DeleteInstanceRequest.newBuilder()
                 .setName(NameUtil.formatInstanceName(PROJECT_ID, freshInstance))
+                .build());
+  }
+
+  @Test
+  @SuppressWarnings("unchecked")
+  void testConcurrentNotFoundExceptionsAreIgnored() throws Exception {
+    EnhancedBigtableTableAdminStub sharedTableStub = createTableStubForInstance(SHARED_INSTANCE_ID);
+    mockMaterializedViews(SHARED_INSTANCE_ID, ImmutableList.of());
+    mockLogicalViews(SHARED_INSTANCE_ID, ImmutableList.of());
+    mockAppProfiles(SHARED_INSTANCE_ID, ImmutableList.of());
+    mockClusters(SHARED_INSTANCE_ID, ImmutableList.of());
+
+    String concurrentlyDeletedTable = "deleted-persistent-table";
+    String survivingPersistentTable = "integration-tests";
+    String staleAv = STALE_ID_PREFIX + "av";
+    mockListTables(
+        sharedTableStub,
+        SHARED_INSTANCE_ID,
+        ImmutableList.of(concurrentlyDeletedTable, survivingPersistentTable));
+
+    UnaryCallable<ListAuthorizedViewsRequest, ListAuthorizedViewsPagedResponse>
+        mockListAuthorizedViewsCallable =
+            mock(UnaryCallable.class, withSettings().withoutAnnotations());
+    OperationCallable<UpdateAuthorizedViewRequest, AuthorizedView, UpdateAuthorizedViewMetadata>
+        mockUpdateAuthorizedViewCallable =
+            mock(OperationCallable.class, withSettings().withoutAnnotations());
+    UnaryCallable<DeleteAuthorizedViewRequest, Empty> mockDeleteAuthorizedViewCallable =
+        mock(UnaryCallable.class, withSettings().withoutAnnotations());
+    when(sharedTableStub.listAuthorizedViewsPagedCallable())
+        .thenReturn(mockListAuthorizedViewsCallable);
+    when(sharedTableStub.updateAuthorizedViewOperationCallable())
+        .thenReturn(mockUpdateAuthorizedViewCallable);
+    when(sharedTableStub.deleteAuthorizedViewCallable())
+        .thenReturn(mockDeleteAuthorizedViewCallable);
+
+    NotFoundException notFound =
+        new NotFoundException(null, GrpcStatusCode.of(Code.NOT_FOUND), false);
+    when(mockListAuthorizedViewsCallable.futureCall(
+            ListAuthorizedViewsRequest.newBuilder()
+                .setParent(
+                    NameUtil.formatTableName(
+                        PROJECT_ID, SHARED_INSTANCE_ID, concurrentlyDeletedTable))
+                .build()))
+        .thenReturn(ApiFutures.immediateFailedFuture(notFound));
+    mockAuthorizedViews(
+        mockListAuthorizedViewsCallable,
+        SHARED_INSTANCE_ID,
+        survivingPersistentTable,
+        ImmutableList.of(staleAv));
+    mockOperationFuture(
+        mockUpdateAuthorizedViewCallable,
+        AuthorizedView.newBuilder()
+            .setName(
+                NameUtil.formatAuthorizedViewName(
+                    PROJECT_ID, SHARED_INSTANCE_ID, survivingPersistentTable, staleAv))
+            .setSubsetView(AuthorizedView.SubsetView.getDefaultInstance())
+            .setDeletionProtection(false)
+            .build());
+    when(mockDeleteAuthorizedViewCallable.futureCall(any()))
+        .thenReturn(ApiFutures.immediateFuture(Empty.getDefaultInstance()));
+
+    // Stale instances: first one throws NotFoundException in prepInstanceForDelete, second one has
+    // cluster0 throw NotFoundException in deleteAllBackups but continues to cluster1 and deletes
+    String concurrentlyDeletedInst = STALE_ID_PREFIX + "deleted-inst";
+    String remainingStaleInst = STALE_ID_PREFIX + "remaining-inst";
+    mockInstances(ImmutableList.of(concurrentlyDeletedInst, remainingStaleInst));
+
+    when(mockListMaterializedViewsCallable.futureCall(
+            ListMaterializedViewsRequest.newBuilder()
+                .setParent(NameUtil.formatInstanceName(PROJECT_ID, concurrentlyDeletedInst))
+                .build()))
+        .thenReturn(ApiFutures.immediateFailedFuture(notFound));
+
+    mockMaterializedViews(remainingStaleInst, ImmutableList.of());
+    mockLogicalViews(remainingStaleInst, ImmutableList.of());
+    mockClusters(remainingStaleInst, ImmutableList.of("c0", "c1"));
+
+    EnhancedBigtableTableAdminStub remainingInstTableStub =
+        createTableStubForInstance(remainingStaleInst);
+    UnaryCallable<ListBackupsRequest, ListBackupsPagedResponse> mockListBackupsCallable =
+        mock(UnaryCallable.class, withSettings().withoutAnnotations());
+    UnaryCallable<DeleteBackupRequest, Empty> mockDeleteBackupCallable =
+        mock(UnaryCallable.class, withSettings().withoutAnnotations());
+    when(remainingInstTableStub.listBackupsPagedCallable()).thenReturn(mockListBackupsCallable);
+    when(remainingInstTableStub.deleteBackupCallable()).thenReturn(mockDeleteBackupCallable);
+    when(mockDeleteBackupCallable.futureCall(any()))
+        .thenReturn(ApiFutures.immediateFuture(Empty.getDefaultInstance()));
+
+    when(mockListBackupsCallable.futureCall(
+            ListBackupsRequest.newBuilder()
+                .setParent(NameUtil.formatClusterName(PROJECT_ID, remainingStaleInst, "c0"))
+                .build()))
+        .thenReturn(ApiFutures.immediateFailedFuture(notFound));
+    mockBackups(mockListBackupsCallable, remainingStaleInst, "c1", ImmutableList.of("b1"));
+
+    StaleResourceCleaner cleaner = createCleaner(ImmutableList.of(SHARED_INSTANCE_ID));
+    cleaner.cleanUp(STALE_PREFIX);
+
+    verify(mockDeleteAuthorizedViewCallable)
+        .futureCall(
+            DeleteAuthorizedViewRequest.newBuilder()
+                .setName(
+                    NameUtil.formatAuthorizedViewName(
+                        PROJECT_ID, SHARED_INSTANCE_ID, survivingPersistentTable, staleAv))
+                .build());
+    verify(mockDeleteBackupCallable)
+        .futureCall(
+            DeleteBackupRequest.newBuilder()
+                .setName(NameUtil.formatBackupName(PROJECT_ID, remainingStaleInst, "c1", "b1"))
+                .build());
+    verify(mockDeleteClusterCallable)
+        .futureCall(
+            DeleteClusterRequest.newBuilder()
+                .setName(NameUtil.formatClusterName(PROJECT_ID, remainingStaleInst, "c1"))
+                .build());
+    verify(mockDeleteInstanceCallable)
+        .futureCall(
+            DeleteInstanceRequest.newBuilder()
+                .setName(NameUtil.formatInstanceName(PROJECT_ID, remainingStaleInst))
                 .build());
   }
 
