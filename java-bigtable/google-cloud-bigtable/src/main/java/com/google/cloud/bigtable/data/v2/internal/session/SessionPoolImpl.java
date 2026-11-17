@@ -144,6 +144,10 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
   @GuardedBy("poolLock")
   private int consecutiveFailures = 0;
 
+  @GuardedBy("poolLock")
+  @Nullable
+  private VRpcResult lastFailureResult = null;
+
   /**
    * When the client fallback to a non-session AFE session creation will return unimplemented
    * errors. In which case the requests should fallback to classic client instead of waiting for an
@@ -281,6 +285,7 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
                 poolSizer.updateConfig(newConfig);
                 picker.updateConfig(newConfig);
                 if (poolSizer.isDisabled()) {
+                  resetConsecutiveFailures();
                   if (retryCreateSessionTimeout != null) {
                     retryCreateSessionTimeout.cancel();
                     retryCreateSessionTimeout = null;
@@ -597,8 +602,7 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
           "Session {0} in state {1}",
           new Object[] {handle.getSession().getLogName(), handle.getSession().getState()});
 
-      consecutiveFailures = 0;
-      consecutiveUnimplementedFailures = 0;
+      resetConsecutiveFailures();
 
       if (poolState != PoolState.STARTED) {
         logger.fine(
@@ -688,6 +692,7 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
       SessionHandle handle, SessionState prevState, Status status, Metadata trailers) {
 
     List<PendingVRpc<?, ?>> toBeClosed = new ArrayList<>();
+    VRpcResult failureResult = null;
 
     poolLock.lock();
     try {
@@ -729,13 +734,15 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
         // rather than session establishment failures and should not fail pending vRPCs.
         if (prevState == SessionState.STARTING) {
           consecutiveFailures++;
+          lastFailureResult = createConsecutiveFailureResult(status, trailers);
           if (status.getCode() == Status.Code.UNIMPLEMENTED) {
             consecutiveUnimplementedFailures++;
           } else {
             consecutiveUnimplementedFailures = 0;
           }
           // TODO: decide if max consecutive failures should be capped per client
-          if (consecutiveFailures >= getMaxConsecutiveFailures(configManager)) {
+          if (isFailingWithNoEstablishedSessions()) {
+            failureResult = lastFailureResult;
             toBeClosed = popClosableRpcs();
           }
         }
@@ -757,22 +764,44 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
 
     if (!toBeClosed.isEmpty()) {
       // vRPCs failing with consecutive failures should fail
-      VRpcResult result =
-          VRpcResult.createRejectedError(
-              Status.fromCode(status.getCode())
-                  .withDescription(
-                      String.format(
-                          "Session failed with consecutive failures. Most recent server status: %s,"
-                              + " metadata: %s.",
-                          status, trailers)));
       for (PendingVRpc<?, ?> vrpc : toBeClosed) {
         try {
-          vrpc.cancelWithResult(result);
+          vrpc.cancelWithResult(failureResult);
         } catch (Throwable t) {
           logger.log(Level.WARNING, "Exception dispatching close to op executor", t);
         }
       }
     }
+  }
+
+  @GuardedBy("poolLock")
+  private void resetConsecutiveFailures() {
+    consecutiveFailures = 0;
+    lastFailureResult = null;
+    consecutiveUnimplementedFailures = 0;
+  }
+
+  @GuardedBy("poolLock")
+  private boolean hasEstablishedSession() {
+    return sessions.getStats().getReadyCount() + sessions.getStats().getInUseCount() > 0;
+  }
+
+  @GuardedBy("poolLock")
+  private boolean isFailingWithNoEstablishedSessions() {
+    return consecutiveFailures >= getMaxConsecutiveFailures(configManager)
+        && lastFailureResult != null
+        && !hasEstablishedSession();
+  }
+
+  private static VRpcResult createConsecutiveFailureResult(
+      Status status, @Nullable Metadata trailers) {
+    Status errorStatus = status.isOk() ? Status.UNAVAILABLE : Status.fromCode(status.getCode());
+    return VRpcResult.createRejectedError(
+        errorStatus.withDescription(
+            String.format(
+                "Session failed with consecutive failures. Most recent server status: %s,"
+                    + " metadata: %s.",
+                status, trailers)));
   }
 
   @GuardedBy("poolLock")
@@ -895,7 +924,7 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
       return false;
     }
     try {
-      return sessions.getStats().getReadyCount() + sessions.getStats().getInUseCount() > 0;
+      return hasEstablishedSession();
     } finally {
       poolLock.unlock();
     }
@@ -968,6 +997,10 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
                     isCancelled = true;
                     listener.onClose(result);
                   });
+          return;
+        }
+        if (isFailingWithNoEstablishedSessions()) {
+          cancelWithResult(lastFailureResult);
           return;
         }
         // Only arm the deadline monitor after we've committed to queueing; otherwise the
