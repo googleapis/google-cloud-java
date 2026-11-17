@@ -15,9 +15,8 @@
  */
 package com.google.cloud.bigtable.test_helpers.env;
 
-import static com.google.common.truth.Truth.assertThat;
-import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.inOrder;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.never;
@@ -201,42 +200,6 @@ class StaleResourceCleanerTest {
   }
 
   @Test
-  void testParseInstanceIds() {
-    assertThat(
-            StaleResourceCleaner.parseInstanceIds(
-                "google-cloud-bigtable, google-cloud-bigtable-session", "ignored-fallback"))
-        .containsExactly("google-cloud-bigtable", "google-cloud-bigtable-session")
-        .inOrder();
-
-    assertThat(StaleResourceCleaner.parseInstanceIds(null, "google-cloud-bigtable"))
-        .containsExactly("google-cloud-bigtable");
-
-    assertThat(StaleResourceCleaner.parseInstanceIds("", "google-cloud-bigtable"))
-        .containsExactly("google-cloud-bigtable");
-
-    assertThrows(
-        IllegalArgumentException.class, () -> StaleResourceCleaner.parseInstanceIds(null, null));
-    assertThrows(
-        IllegalArgumentException.class, () -> StaleResourceCleaner.parseInstanceIds(" , ", ""));
-  }
-
-  @Test
-  void testResolveAdminEndpoint() {
-    assertThat(
-            StaleResourceCleaner.resolveAdminEndpoint(
-                "test-bigtableadmin.sandbox.googleapis.com:443",
-                "staging-bigtableadmin.sandbox.googleapis.com:443"))
-        .isEqualTo("test-bigtableadmin.sandbox.googleapis.com:443");
-
-    assertThat(
-            StaleResourceCleaner.resolveAdminEndpoint(
-                "", "staging-bigtableadmin.sandbox.googleapis.com:443"))
-        .isEqualTo("staging-bigtableadmin.sandbox.googleapis.com:443");
-
-    assertThat(StaleResourceCleaner.resolveAdminEndpoint(null, null)).isEmpty();
-  }
-
-  @Test
   @SuppressWarnings("unchecked")
   void testCleanUpSharedInstance_viewsTablesAndAuthorizedViews() throws Exception {
     EnhancedBigtableTableAdminStub tableStub = createTableStubForInstance(SHARED_INSTANCE_ID);
@@ -360,7 +323,7 @@ class StaleResourceCleanerTest {
     mockClusters(SHARED_INSTANCE_ID, ImmutableList.of());
     mockInstances(ImmutableList.of());
 
-    StaleResourceCleaner cleaner = createCleaner(ImmutableList.of(SHARED_INSTANCE_ID));
+    StaleResourceCleaner cleaner = createCleaner();
     cleaner.cleanUp(STALE_PREFIX);
 
     // MaterializedViews: stale ones deleted before table deletion; only protected one updated
@@ -533,7 +496,7 @@ class StaleResourceCleanerTest {
 
     mockInstances(ImmutableList.of());
 
-    StaleResourceCleaner cleaner = createCleaner(ImmutableList.of(SHARED_INSTANCE_ID));
+    StaleResourceCleaner cleaner = createCleaner();
     cleaner.cleanUp(STALE_PREFIX);
 
     // AppProfiles: only staleAp deleted with ignoreWarnings=true
@@ -630,7 +593,14 @@ class StaleResourceCleanerTest {
     mockBackups(mockListBackupsCallable, staleInstance, cluster0, ImmutableList.of("b0"));
     mockBackups(mockListBackupsCallable, staleInstance, cluster1, ImmutableList.of("b1"));
 
-    StaleResourceCleaner cleaner = createCleaner(ImmutableList.of());
+    EnhancedBigtableTableAdminStub sharedTableStub = createTableStubForInstance(SHARED_INSTANCE_ID);
+    mockMaterializedViews(SHARED_INSTANCE_ID, ImmutableList.of());
+    mockLogicalViews(SHARED_INSTANCE_ID, ImmutableList.of());
+    mockListTables(sharedTableStub, SHARED_INSTANCE_ID, ImmutableList.of());
+    mockAppProfiles(SHARED_INSTANCE_ID, ImmutableList.of());
+    mockClusters(SHARED_INSTANCE_ID, ImmutableList.of());
+
+    StaleResourceCleaner cleaner = createCleaner();
     cleaner.cleanUp(STALE_PREFIX);
 
     verify(mockDeleteMaterializedViewCallable)
@@ -775,7 +745,7 @@ class StaleResourceCleanerTest {
         .thenReturn(ApiFutures.immediateFailedFuture(notFound));
     mockBackups(mockListBackupsCallable, remainingStaleInst, "c1", ImmutableList.of("b1"));
 
-    StaleResourceCleaner cleaner = createCleaner(ImmutableList.of(SHARED_INSTANCE_ID));
+    StaleResourceCleaner cleaner = createCleaner();
     cleaner.cleanUp(STALE_PREFIX);
 
     verify(mockDeleteAuthorizedViewCallable)
@@ -802,13 +772,22 @@ class StaleResourceCleanerTest {
                 .build());
   }
 
-  private StaleResourceCleaner createCleaner(List<String> sharedInstanceIds) {
-    return new StaleResourceCleaner(
-        instanceAdmin,
-        instanceId ->
+  private StaleResourceCleaner createCleaner() throws Exception {
+    AbstractTestEnv mockEnv = mock(AbstractTestEnv.class);
+    when(mockEnv.getInstanceId()).thenReturn(SHARED_INSTANCE_ID);
+    when(mockEnv.getInstanceAdminClient()).thenReturn(instanceAdmin);
+    when(mockEnv.getTableAdminClient())
+        .thenReturn(
             BigtableTableAdminClient.create(
-                PROJECT_ID, instanceId, tableStubsByInstance.get(instanceId)),
-        sharedInstanceIds);
+                PROJECT_ID, SHARED_INSTANCE_ID, tableStubsByInstance.get(SHARED_INSTANCE_ID)));
+    when(mockEnv.getTableAdminClientForInstance(anyString()))
+        .thenAnswer(
+            invocation -> {
+              String instanceId = invocation.getArgument(0);
+              return BigtableTableAdminClient.create(
+                  PROJECT_ID, instanceId, tableStubsByInstance.get(instanceId));
+            });
+    return new StaleResourceCleaner(mockEnv);
   }
 
   private EnhancedBigtableTableAdminStub createTableStubForInstance(String instanceId)

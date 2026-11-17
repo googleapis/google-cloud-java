@@ -169,21 +169,6 @@ case ${JOB_TYPE} in
       printf "Finished integration tests for modules:\n%s\n" "${BUILD_SUBDIR}"
     fi
     ;;
-  bigtable-cleanup)
-    echo "Compiling and building all modules for ${BUILD_SUBDIR}"
-    install_modules "${BUILD_SUBDIR}"
-    echo "Running in subdir: ${BUILD_SUBDIR}"
-    pushd "${BUILD_SUBDIR}"
-    echo "INTEGRATION_TEST_ARGS: ${INTEGRATION_TEST_ARGS}"
-    mvn test-compile exec:java -pl google-cloud-bigtable -Pquick-build \
-      ${INTEGRATION_TEST_ARGS} \
-      -B -ntp \
-      -DtrimStackTrace=false \
-      -Dorg.slf4j.simpleLogger.showDateTime=true \
-      -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS
-    RETURN_CODE=$?
-    popd
-    ;;
   graalvm-presubmit)
     generate_graalvm_presubmit_modules_list
     if [[ "$(release_please_snapshot_pull_request)" == "true" ]]; then

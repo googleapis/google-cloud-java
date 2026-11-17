@@ -810,10 +810,15 @@
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>exec-maven-plugin</artifactId>
-        <configuration>
-          <mainClass>com.google.cloud.bigtable.test_helpers.env.StaleResourceCleaner</mainClass>
-          <classpathScope>test</classpathScope>
-        </configuration>
+        <executions>
+          <execution>
+            <id>cleanup-stale-resources</id>
+            <configuration>
+              <mainClass>com.google.cloud.bigtable.test_helpers.env.StaleResourceCleaner</mainClass>
+              <classpathScope>test</classpathScope>
+            </configuration>
+          </execution>
+        </executions>
       </plugin>
 
       <plugin>

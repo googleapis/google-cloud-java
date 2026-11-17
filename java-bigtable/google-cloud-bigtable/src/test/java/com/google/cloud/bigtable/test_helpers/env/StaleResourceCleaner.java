@@ -18,9 +18,7 @@ package com.google.cloud.bigtable.test_helpers.env;
 import com.google.api.core.ApiFuture;
 import com.google.api.gax.rpc.NotFoundException;
 import com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminClient;
-import com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminSettings;
 import com.google.cloud.bigtable.admin.v2.BigtableTableAdminClient;
-import com.google.cloud.bigtable.admin.v2.BigtableTableAdminSettings;
 import com.google.cloud.bigtable.admin.v2.models.AppProfile;
 import com.google.cloud.bigtable.admin.v2.models.Cluster;
 import com.google.cloud.bigtable.admin.v2.models.Instance;
@@ -31,8 +29,6 @@ import com.google.cloud.bigtable.admin.v2.models.UpdateAuthorizedViewRequest;
 import com.google.cloud.bigtable.admin.v2.models.UpdateLogicalViewRequest;
 import com.google.cloud.bigtable.admin.v2.models.UpdateMaterializedViewRequest;
 import com.google.cloud.bigtable.admin.v2.models.UpdateTableRequest;
-import com.google.common.base.Splitter;
-import com.google.common.base.Strings;
 import java.io.IOException;
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
@@ -41,114 +37,29 @@ import java.util.List;
 import java.util.concurrent.ExecutionException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.annotation.Nullable;
 
 /**
- * Standalone utility to clean up stale test resources older than 24 hours across shared Bigtable
- * instances and dynamically created test instances in a project.
+ * Standalone utility to clean up stale test resources older than 24 hours in the configured {@link
+ * CloudEnv} shared Bigtable instance as well as dynamically created test instances in the project.
  */
 public class StaleResourceCleaner {
 
   private static final Logger LOGGER = Logger.getLogger(StaleResourceCleaner.class.getName());
 
-  static final String PROJECT_PROPERTY_NAME = "bigtable.project";
-  static final String INSTANCES_PROPERTY_NAME = "bigtable.instances";
-  static final String INSTANCE_PROPERTY_NAME = "bigtable.instance";
-  static final String ADMIN_ENDPOINT_PROPERTY_NAME = "bigtable.admin-endpoint";
-  static final String CFE_ADMIN_ENDPOINT_PROPERTY_NAME = "bigtable.cfe-admin-endpoint";
+  private final AbstractTestEnv testEnv;
 
-  @FunctionalInterface
-  interface TableAdminFactory {
-    BigtableTableAdminClient createForInstance(String instanceId) throws IOException;
+  StaleResourceCleaner(AbstractTestEnv testEnv) {
+    this.testEnv = testEnv;
   }
 
-  private final BigtableInstanceAdminClient instanceAdmin;
-  private final TableAdminFactory tableAdminFactory;
-  private final List<String> sharedInstanceIds;
-
-  StaleResourceCleaner(
-      BigtableInstanceAdminClient instanceAdmin,
-      TableAdminFactory tableAdminFactory,
-      List<String> sharedInstanceIds) {
-    this.instanceAdmin = instanceAdmin;
-    this.tableAdminFactory = tableAdminFactory;
-    this.sharedInstanceIds = sharedInstanceIds;
-  }
-
-  public static void main(String[] args)
-      throws IOException, ExecutionException, InterruptedException {
-    String projectId = System.getProperty(PROJECT_PROPERTY_NAME);
-    if (Strings.isNullOrEmpty(projectId)) {
-      throw new IllegalArgumentException(
-          "Missing required system property: " + PROJECT_PROPERTY_NAME);
+  public static void main(String[] args) throws Exception {
+    CloudEnv cloudEnv = CloudEnv.fromSystemProperties();
+    cloudEnv.start();
+    try {
+      new StaleResourceCleaner(cloudEnv).cleanUp();
+    } finally {
+      cloudEnv.stop();
     }
-
-    List<String> sharedInstanceIds =
-        parseInstanceIds(
-            System.getProperty(INSTANCES_PROPERTY_NAME),
-            System.getProperty(INSTANCE_PROPERTY_NAME));
-
-    String adminEndpoint =
-        resolveAdminEndpoint(
-            System.getProperty(ADMIN_ENDPOINT_PROPERTY_NAME),
-            System.getProperty(CFE_ADMIN_ENDPOINT_PROPERTY_NAME));
-
-    BigtableInstanceAdminSettings.Builder instanceAdminSettings =
-        BigtableInstanceAdminSettings.newBuilder().setProjectId(projectId);
-    if (!Strings.isNullOrEmpty(adminEndpoint)) {
-      instanceAdminSettings.stubSettings().setEndpoint(adminEndpoint);
-    }
-
-    TableAdminFactory tableAdminFactory =
-        instanceId -> {
-          BigtableTableAdminSettings.Builder tableAdminSettings =
-              BigtableTableAdminSettings.newBuilder()
-                  .setProjectId(projectId)
-                  .setInstanceId(instanceId);
-          if (!Strings.isNullOrEmpty(adminEndpoint)) {
-            tableAdminSettings.stubSettings().setEndpoint(adminEndpoint);
-          }
-          return BigtableTableAdminClient.create(tableAdminSettings.build());
-        };
-
-    try (BigtableInstanceAdminClient instanceAdmin =
-        BigtableInstanceAdminClient.create(instanceAdminSettings.build())) {
-      StaleResourceCleaner cleaner =
-          new StaleResourceCleaner(instanceAdmin, tableAdminFactory, sharedInstanceIds);
-      cleaner.cleanUp();
-    }
-  }
-
-  static List<String> parseInstanceIds(
-      @Nullable String instancesProp, @Nullable String instanceProp) {
-    String raw = !Strings.isNullOrEmpty(instancesProp) ? instancesProp : instanceProp;
-    if (Strings.isNullOrEmpty(raw)) {
-      throw new IllegalArgumentException(
-          "Missing required system property: "
-              + INSTANCES_PROPERTY_NAME
-              + " or "
-              + INSTANCE_PROPERTY_NAME);
-    }
-    List<String> instanceIds = Splitter.on(',').trimResults().omitEmptyStrings().splitToList(raw);
-    if (instanceIds.isEmpty()) {
-      throw new IllegalArgumentException(
-          "No instance IDs found in system property: "
-              + INSTANCES_PROPERTY_NAME
-              + " or "
-              + INSTANCE_PROPERTY_NAME);
-    }
-    return instanceIds;
-  }
-
-  static String resolveAdminEndpoint(
-      @Nullable String adminEndpoint, @Nullable String cfeAdminEndpoint) {
-    if (!Strings.isNullOrEmpty(adminEndpoint)) {
-      return adminEndpoint;
-    }
-    if (!Strings.isNullOrEmpty(cfeAdminEndpoint)) {
-      return cfeAdminEndpoint;
-    }
-    return "";
   }
 
   static boolean isStale(String resourceId, String stalePrefix) {
@@ -161,30 +72,29 @@ public class StaleResourceCleaner {
   }
 
   void cleanUp(String stalePrefix) throws IOException, ExecutionException, InterruptedException {
+    String instanceId = testEnv.getInstanceId();
     LOGGER.info(
         "Starting stale resource cleanup with stalePrefix="
             + stalePrefix
-            + " for shared instances="
-            + sharedInstanceIds);
-    for (String instanceId : sharedInstanceIds) {
-      cleanUpSharedInstance(instanceId, stalePrefix);
-    }
+            + " for shared instance="
+            + instanceId);
+    cleanUpSharedInstance(instanceId, stalePrefix);
     cleanUpStaleInstances(stalePrefix);
   }
 
   void cleanUpSharedInstance(String instanceId, String stalePrefix)
-      throws IOException, ExecutionException, InterruptedException {
+      throws ExecutionException, InterruptedException {
     LOGGER.info("Cleaning up shared instance: " + instanceId);
-    try (BigtableTableAdminClient tableAdmin = tableAdminFactory.createForInstance(instanceId)) {
-      cleanUpStaleMaterializedViews(instanceId, stalePrefix);
-      cleanUpStaleLogicalViews(instanceId, stalePrefix);
-      cleanUpTablesAndAuthorizedViews(tableAdmin, stalePrefix);
-      cleanUpStaleAppProfiles(instanceId, stalePrefix);
-      cleanUpClustersAndBackups(instanceId, tableAdmin, stalePrefix);
-    }
+    BigtableTableAdminClient tableAdmin = testEnv.getTableAdminClient();
+    cleanUpStaleMaterializedViews(instanceId, stalePrefix);
+    cleanUpStaleLogicalViews(instanceId, stalePrefix);
+    cleanUpTablesAndAuthorizedViews(tableAdmin, stalePrefix);
+    cleanUpStaleAppProfiles(instanceId, stalePrefix);
+    cleanUpClustersAndBackups(instanceId, tableAdmin, stalePrefix);
   }
 
   private void cleanUpStaleMaterializedViews(String instanceId, String stalePrefix) {
+    BigtableInstanceAdminClient instanceAdmin = testEnv.getInstanceAdminClient();
     for (MaterializedView view : instanceAdmin.listMaterializedViews(instanceId)) {
       if (!isStale(view.getId(), stalePrefix)) {
         continue;
@@ -196,6 +106,7 @@ public class StaleResourceCleaner {
   }
 
   private void unprotectAndDeleteMaterializedView(String instanceId, MaterializedView view) {
+    BigtableInstanceAdminClient instanceAdmin = testEnv.getInstanceAdminClient();
     try {
       if (view.isDeletionProtected()) {
         instanceAdmin.updateMaterializedView(
@@ -209,6 +120,7 @@ public class StaleResourceCleaner {
   }
 
   private void cleanUpStaleLogicalViews(String instanceId, String stalePrefix) {
+    BigtableInstanceAdminClient instanceAdmin = testEnv.getInstanceAdminClient();
     for (LogicalView view : instanceAdmin.listLogicalViews(instanceId)) {
       if (!isStale(view.getId(), stalePrefix)) {
         continue;
@@ -219,6 +131,7 @@ public class StaleResourceCleaner {
   }
 
   private void unprotectAndDeleteLogicalView(String instanceId, LogicalView view) {
+    BigtableInstanceAdminClient instanceAdmin = testEnv.getInstanceAdminClient();
     try {
       if (view.isDeletionProtected()) {
         instanceAdmin.updateLogicalView(
@@ -293,6 +206,7 @@ public class StaleResourceCleaner {
   }
 
   private void cleanUpStaleAppProfiles(String instanceId, String stalePrefix) {
+    BigtableInstanceAdminClient instanceAdmin = testEnv.getInstanceAdminClient();
     for (AppProfile appProfile : instanceAdmin.listAppProfiles(instanceId)) {
       if (!isStale(appProfile.getId(), stalePrefix)) {
         continue;
@@ -308,6 +222,7 @@ public class StaleResourceCleaner {
   private void cleanUpClustersAndBackups(
       String instanceId, BigtableTableAdminClient tableAdmin, String stalePrefix)
       throws ExecutionException, InterruptedException {
+    BigtableInstanceAdminClient instanceAdmin = testEnv.getInstanceAdminClient();
     for (Cluster cluster : instanceAdmin.listClusters(instanceId)) {
       if (!cluster.getId().startsWith(PrefixGenerator.PREFIX)) {
         try {
@@ -336,6 +251,7 @@ public class StaleResourceCleaner {
 
   private void cleanUpStaleInstances(String stalePrefix)
       throws IOException, ExecutionException, InterruptedException {
+    BigtableInstanceAdminClient instanceAdmin = testEnv.getInstanceAdminClient();
     for (Instance instance : instanceAdmin.listInstances()) {
       if (!isStale(instance.getId(), stalePrefix)) {
         continue;
@@ -350,6 +266,7 @@ public class StaleResourceCleaner {
   }
 
   private void prepInstanceForDelete(String instanceId) {
+    BigtableInstanceAdminClient instanceAdmin = testEnv.getInstanceAdminClient();
     for (MaterializedView materializedView : instanceAdmin.listMaterializedViews(instanceId)) {
       unprotectAndDeleteMaterializedView(instanceId, materializedView);
     }
@@ -360,7 +277,8 @@ public class StaleResourceCleaner {
 
   private void deleteInstance(String instanceId)
       throws IOException, ExecutionException, InterruptedException {
-    try (BigtableTableAdminClient tableAdmin = tableAdminFactory.createForInstance(instanceId)) {
+    BigtableInstanceAdminClient instanceAdmin = testEnv.getInstanceAdminClient();
+    try (BigtableTableAdminClient tableAdmin = testEnv.getTableAdminClientForInstance(instanceId)) {
       List<Cluster> clusters = instanceAdmin.listClusters(instanceId);
 
       boolean isFirstCluster = true;
