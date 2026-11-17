@@ -29,7 +29,7 @@ call_cbt() {
 }
 
 # Ensure that the instance exists.
-if ! call_cbt listinstances | grep -q "^${INSTANCE_ID}\b"; then
+if ! call_cbt listinstances | grep -Eq "^${INSTANCE_ID}([[:space:]]|$)"; then
   call_cbt createinstance "${INSTANCE_ID}" "${INSTANCE_ID}" "${INSTANCE_ID}-c0" "${ZONE}" 1 SSD
 fi
 
