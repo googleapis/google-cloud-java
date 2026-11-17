@@ -16,19 +16,21 @@
 package com.google.cloud.bigtable.data.v2.stub.mutaterows;
 
 import static com.google.common.truth.Truth.assertThat;
-import static org.mockito.Mockito.any;
 
 import com.google.api.core.AbstractApiFuture;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
+import com.google.api.core.NanoClock;
 import com.google.api.gax.grpc.GrpcCallContext;
 import com.google.api.gax.grpc.GrpcStatusCode;
+import com.google.api.gax.retrying.ExponentialRetryAlgorithm;
 import com.google.api.gax.retrying.RetryAlgorithm;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.retrying.RetryingFuture;
+import com.google.api.gax.retrying.ScheduledRetryingExecutor;
 import com.google.api.gax.retrying.TimedAttemptSettings;
 import com.google.api.gax.rpc.ApiCallContext;
-import com.google.api.gax.rpc.ApiException;
+import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.StatusCode.Code;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.api.gax.rpc.UnavailableException;
@@ -37,6 +39,7 @@ import com.google.bigtable.v2.MutateRowsRequest.Entry;
 import com.google.bigtable.v2.MutateRowsResponse;
 import com.google.cloud.bigtable.data.v2.models.MutateRowsException;
 import com.google.cloud.bigtable.data.v2.models.MutateRowsException.FailedMutation;
+import com.google.cloud.bigtable.gaxx.retrying.RetryInfoRetryAlgorithm;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
 import com.google.protobuf.ByteString;
@@ -45,6 +48,11 @@ import java.time.Duration;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicInteger;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -66,7 +74,7 @@ public class MutateRowsAttemptCallableTest {
   private Set<Code> retryCodes;
   private ApiCallContext callContext;
   private MockRetryingFuture parentFuture;
-  private final RetryAlgorithm<MutateRowsRequest> mockRetryAlgorithm =
+  private final RetryAlgorithm<MutateRowsAttemptResult> mockRetryAlgorithm =
       Mockito.mock(RetryAlgorithm.class, Mockito.withSettings().withoutAnnotations());
 
   @Before
@@ -75,12 +83,8 @@ public class MutateRowsAttemptCallableTest {
     retryCodes = ImmutableSet.of(Code.DEADLINE_EXCEEDED, Code.UNAVAILABLE);
     callContext = GrpcCallContext.createDefault();
     parentFuture = new MockRetryingFuture();
-    Mockito.when(mockRetryAlgorithm.shouldRetry(any(), any(), any(), any()))
-        .thenAnswer(
-            input -> {
-              Throwable throwable = input.getArgument(1);
-              return ((ApiException) throwable).isRetryable();
-            });
+    Mockito.when(mockRetryAlgorithm.getResultAlgorithm())
+        .thenReturn(new MutateRowsPartialErrorRetryAlgorithm(new RetryInfoRetryAlgorithm<>()));
   }
 
   @Test
@@ -406,6 +410,144 @@ public class MutateRowsAttemptCallableTest {
     assertThat(failedMutations.get(1).getIndex()).isEqualTo(1);
     assertThat(failedMutations.get(1).getError().isRetryable()).isFalse();
     assertThat(failedMutations.get(1).getError().getCause()).isEqualTo(rpcError);
+  }
+
+  @Test
+  public void partialSuccessThenRpcErrorTest() throws Exception {
+    MutateRowsRequest request =
+        MutateRowsRequest.newBuilder()
+            .addEntries(Entry.newBuilder().setRowKey(ByteString.copyFromUtf8("0-ok")))
+            .addEntries(Entry.newBuilder().setRowKey(ByteString.copyFromUtf8("1-unavailable")))
+            .addEntries(Entry.newBuilder().setRowKey(ByteString.copyFromUtf8("2-invalid")))
+            .build();
+
+    final UnavailableException rpcError =
+        new UnavailableException(
+            "fake error", null, GrpcStatusCode.of(io.grpc.Status.Code.UNAVAILABLE), true);
+    AtomicInteger attempt = new AtomicInteger();
+
+    UnaryCallable<MutateRowsRequest, List<MutateRowsResponse>> callable =
+        new UnaryCallable<MutateRowsRequest, List<MutateRowsResponse>>() {
+          @Override
+          public ApiFuture<List<MutateRowsResponse>> futureCall(
+              MutateRowsRequest req, ApiCallContext ctx) {
+            if (attempt.incrementAndGet() == 1) {
+              return ApiFutures.immediateFuture(
+                  Lists.newArrayList(
+                      MutateRowsResponse.newBuilder()
+                          .addEntries(
+                              MutateRowsResponse.Entry.newBuilder()
+                                  .setIndex(0)
+                                  .setStatus(OK_STATUS_PROTO))
+                          .addEntries(
+                              MutateRowsResponse.Entry.newBuilder()
+                                  .setIndex(1)
+                                  .setStatus(TRANSIENT_ERROR_STATUS_PROTO))
+                          .addEntries(
+                              MutateRowsResponse.Entry.newBuilder()
+                                  .setIndex(2)
+                                  .setStatus(PERMENANT_ERROR_STATUS_PROTO))
+                          .build()));
+            }
+            return ApiFutures.immediateFailedFuture(rpcError);
+          }
+        };
+
+    RetryAlgorithm<MutateRowsAttemptResult> realRetryAlgorithm =
+        new RetryAlgorithm<>(
+            new MutateRowsPartialErrorRetryAlgorithm(new RetryInfoRetryAlgorithm<>()),
+            new ExponentialRetryAlgorithm(
+                RetrySettings.newBuilder().setMaxAttempts(2).build(), NanoClock.getDefaultClock()));
+
+    MutateRowsAttemptCallable attemptCallable =
+        new MutateRowsAttemptCallable(
+            callable, request, callContext, retryCodes, realRetryAlgorithm);
+    attemptCallable.setExternalFuture(parentFuture);
+
+    // Attempt 1: partial failure
+    attemptCallable.call();
+    MutateRowsAttemptResult attempt1Result = parentFuture.attemptFuture.get();
+    assertThat(attempt1Result.getIsRetryable()).isTrue();
+    assertThat(attempt1Result.getFailedMutations()).hasSize(2);
+
+    // Attempt 2: RPC-level failure
+    attemptCallable.call();
+    Throwable actualError = null;
+    try {
+      parentFuture.attemptFuture.get();
+    } catch (ExecutionException e) {
+      actualError = e.getCause();
+    }
+    assertThat(actualError).isInstanceOf(MutateRowsException.class);
+    MutateRowsException mutateRowsException = (MutateRowsException) actualError;
+    assertThat(mutateRowsException.isRetryable()).isTrue();
+    assertThat(mutateRowsException.getFailedMutations()).hasSize(2);
+    assertThat(mutateRowsException.getFailedMutations().get(0).getIndex()).isEqualTo(2);
+    assertThat(mutateRowsException.getFailedMutations().get(0).getError().isRetryable()).isFalse();
+    assertThat(mutateRowsException.getFailedMutations().get(1).getIndex()).isEqualTo(1);
+    assertThat(mutateRowsException.getFailedMutations().get(1).getError().isRetryable()).isTrue();
+  }
+
+  @Test
+  public void perCallRetrySettingsMaxAttemptsOverrideTest() throws Exception {
+    MutateRowsRequest request =
+        MutateRowsRequest.newBuilder().addEntries(Entry.getDefaultInstance()).build();
+    final UnavailableException rpcError =
+        new UnavailableException(
+            "fake error", null, GrpcStatusCode.of(io.grpc.Status.Code.UNAVAILABLE), true);
+    AtomicInteger attempts = new AtomicInteger();
+
+    ServerStreamingCallable<MutateRowsRequest, MutateRowsResponse> streamingCallable =
+        new ServerStreamingCallable<MutateRowsRequest, MutateRowsResponse>() {
+          @Override
+          public void call(
+              MutateRowsRequest req,
+              com.google.api.gax.rpc.ResponseObserver<MutateRowsResponse> responseObserver,
+              ApiCallContext ctx) {
+            attempts.incrementAndGet();
+            responseObserver.onError(rpcError);
+          }
+        };
+
+    RetrySettings defaultRetrySettings =
+        RetrySettings.newBuilder()
+            .setMaxAttempts(2)
+            .setInitialRetryDelayDuration(Duration.ofMillis(1))
+            .setMaxRetryDelayDuration(Duration.ofMillis(5))
+            .setRetryDelayMultiplier(1.0)
+            .setTotalTimeoutDuration(Duration.ofSeconds(5))
+            .build();
+    RetryAlgorithm<MutateRowsAttemptResult> retryAlgorithm =
+        new RetryAlgorithm<>(
+            new MutateRowsPartialErrorRetryAlgorithm(new RetryInfoRetryAlgorithm<>()),
+            new ExponentialRetryAlgorithm(defaultRetrySettings, NanoClock.getDefaultClock()));
+
+    ScheduledExecutorService executorService = Executors.newSingleThreadScheduledExecutor();
+    try {
+      ScheduledRetryingExecutor<MutateRowsAttemptResult> retryingExecutor =
+          new ScheduledRetryingExecutor<>(retryAlgorithm, executorService);
+      MutateRowsRetryingCallable retryingCallable =
+          new MutateRowsRetryingCallable(
+              callContext.withRetrySettings(defaultRetrySettings),
+              streamingCallable,
+              retryingExecutor,
+              retryCodes,
+              retryAlgorithm);
+
+      ApiCallContext perCallContext =
+          callContext.withRetrySettings(defaultRetrySettings.toBuilder().setMaxAttempts(4).build());
+
+      Throwable actualError = null;
+      try {
+        retryingCallable.futureCall(request, perCallContext).get(10, TimeUnit.SECONDS);
+      } catch (ExecutionException t) {
+        actualError = t.getCause();
+      }
+      assertThat(actualError).isInstanceOf(MutateRowsException.class);
+      assertThat(attempts.get()).isEqualTo(4);
+    } finally {
+      executorService.shutdownNow();
+    }
   }
 
   // <editor-fold desc="Helpers">
