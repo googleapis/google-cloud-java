@@ -36,6 +36,7 @@ import com.google.api.client.testing.http.MockLowLevelHttpResponse;
 import com.google.api.core.ApiClock;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
+import com.google.api.core.NanoClock;
 import com.google.api.gax.grpc.GrpcCallContext;
 import com.google.api.gax.grpc.GrpcStatusCode;
 import com.google.api.gax.retrying.RetrySettings;
@@ -80,6 +81,8 @@ import io.grpc.stub.StreamObserver;
 import io.opentelemetry.api.common.AttributeKey;
 import io.opentelemetry.api.common.Attributes;
 import io.opentelemetry.context.Context;
+import io.opentelemetry.context.ContextKey;
+import io.opentelemetry.context.Scope;
 import io.opentelemetry.sdk.metrics.SdkMeterProvider;
 import io.opentelemetry.sdk.metrics.data.HistogramPointData;
 import io.opentelemetry.sdk.metrics.data.LongPointData;
@@ -292,6 +295,38 @@ public final class StorageMetricsContextTest {
 
     assertThat(StorageMetricsContext.from((GrpcCallContext) null)).isNull();
     assertThat(StorageMetricsContext.from(GrpcCallContext.createDefault())).isNull();
+  }
+
+  @Test
+  public void makeCurrent_setsAndRestoresThreadLocalAndOtelContext() {
+    assertThat(StorageMetricsContext.current()).isNull();
+    Context initialOtelContext = Context.current();
+
+    ContextKey<String> key = ContextKey.named("storage-metrics-context-test");
+    Context outerOtel = Context.root().with(key, "outer");
+    Context innerOtel = Context.root().with(key, "inner");
+    StorageMetricsContext outer =
+        StorageMetricsContext.create(
+            metrics, "GetBucket", Attributes.empty(), outerOtel, NanoClock.getDefaultClock());
+    StorageMetricsContext inner =
+        StorageMetricsContext.create(
+            metrics, "UpdateBucket", Attributes.empty(), innerOtel, NanoClock.getDefaultClock());
+
+    try (Scope outerScope = outer.makeCurrent()) {
+      assertThat(StorageMetricsContext.current()).isSameInstanceAs(outer);
+      assertThat(Context.current()).isSameInstanceAs(outerOtel);
+
+      try (Scope innerScope = inner.makeCurrent()) {
+        assertThat(StorageMetricsContext.current()).isSameInstanceAs(inner);
+        assertThat(Context.current()).isSameInstanceAs(innerOtel);
+      }
+
+      assertThat(StorageMetricsContext.current()).isSameInstanceAs(outer);
+      assertThat(Context.current()).isSameInstanceAs(outerOtel);
+    }
+
+    assertThat(StorageMetricsContext.current()).isNull();
+    assertThat(Context.current()).isSameInstanceAs(initialOtelContext);
   }
 
   @Test

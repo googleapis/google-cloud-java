@@ -43,10 +43,13 @@ import com.google.cloud.storage.Retrying.DefaultRetrier;
 import com.google.cloud.storage.Retrying.Retrier;
 import com.google.cloud.storage.Retrying.RetrierWithAlg;
 import com.google.cloud.storage.Retrying.RetryingDependencies;
+import com.google.common.collect.ImmutableList;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import io.opentelemetry.api.common.AttributeKey;
+import io.opentelemetry.api.common.Attributes;
 import io.opentelemetry.context.Context;
+import io.opentelemetry.context.ContextKey;
 import io.opentelemetry.sdk.metrics.SdkMeterProvider;
 import io.opentelemetry.sdk.metrics.data.HistogramPointData;
 import io.opentelemetry.sdk.metrics.data.LongPointData;
@@ -362,19 +365,44 @@ public final class RetryingMetricsTest {
 
   @Test
   public void run_withCustomMetricsContext_propagatesOtelContextScope() {
-    StorageMetricsContext customContext = StorageMetricsContext.create("GetObject");
-    Context[] observedContext = new Context[1];
+    ContextKey<String> key = ContextKey.named("retrying-scope-key");
+    Context expectedOtelContext = Context.root().with(key, "expected");
 
-    baseRetrier.run(
-        Retrying.neverRetry(),
-        () -> {
-          observedContext[0] = Context.current();
-          return "ok";
-        },
-        Decoder.identity(),
-        customContext);
+    for (Retrier retrier : ImmutableList.of(baseRetrier, Retrier.attemptOnce())) {
+      StorageMetricsContext customContext =
+          StorageMetricsContext.create("GetObject", Attributes.empty(), expectedOtelContext);
+      Context[] observedContext = new Context[1];
+      StorageMetricsContext[] observedMetricsContext = new StorageMetricsContext[1];
 
-    assertThat(observedContext[0]).isEqualTo(customContext.getOtelContext());
+      retrier.run(
+          Retrying.neverRetry(),
+          () -> {
+            observedContext[0] = Context.current();
+            observedMetricsContext[0] = StorageMetricsContext.current();
+            return "ok";
+          },
+          Decoder.identity(),
+          customContext);
+
+      assertThat(observedContext[0]).isSameInstanceAs(customContext.getOtelContext());
+      assertThat(observedMetricsContext[0]).isSameInstanceAs(customContext);
+      assertThat(StorageMetricsContext.current()).isNull();
+
+      StorageMetricsContext[] observedOnFailure = new StorageMetricsContext[1];
+      assertThrows(
+          StorageException.class,
+          () ->
+              retrier.run(
+                  Retrying.neverRetry(),
+                  () -> {
+                    observedOnFailure[0] = StorageMetricsContext.current();
+                    throw new StorageException(503, "Unavailable");
+                  },
+                  Decoder.identity(),
+                  customContext));
+      assertThat(observedOnFailure[0]).isSameInstanceAs(customContext);
+      assertThat(StorageMetricsContext.current()).isNull();
+    }
   }
 
   @Test

@@ -43,6 +43,7 @@ final class StorageMetricsContext {
   static final CallOptions.Key<StorageMetricsContext> GRPC_CALL_OPTIONS_KEY =
       CallOptions.Key.create("storage-metrics-context");
 
+  private static final ThreadLocal<StorageMetricsContext> CURRENT = new ThreadLocal<>();
   private static final long HTTP_STATUS_OK = 200L;
   private static final long HTTP_STATUS_UNSET = 0L;
 
@@ -173,6 +174,27 @@ final class StorageMetricsContext {
     requireNonNull(clock, "clock cannot be null");
     return new StorageMetricsContext(
         metrics, operationName, baseAttributes, clock, clock.nanoTime(), otelContext, false);
+  }
+
+  static @Nullable StorageMetricsContext current() {
+    return CURRENT.get();
+  }
+
+  Scope makeCurrent() {
+    Scope otelScope = otelContext.makeCurrent();
+    StorageMetricsContext prev = CURRENT.get();
+    CURRENT.set(this);
+    return () -> {
+      try {
+        otelScope.close();
+      } finally {
+        if (prev == null) {
+          CURRENT.remove();
+        } else {
+          CURRENT.set(prev);
+        }
+      }
+    };
   }
 
   boolean shouldRecordOperationOnRetrierExit() {

@@ -26,9 +26,11 @@ import com.google.api.client.http.HttpRequestInitializer;
 import com.google.api.client.http.HttpResponseInterceptor;
 import com.google.api.client.http.HttpUnsuccessfulResponseHandler;
 import com.google.api.core.ApiClock;
+import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import io.opentelemetry.context.Context;
 import java.io.IOException;
+import java.util.Locale;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicLong;
 import org.jspecify.annotations.NullMarked;
@@ -44,15 +46,67 @@ import org.jspecify.annotations.Nullable;
  * for recording when the response body is closed). End-to-end download duration including body
  * transfer is captured by {@code gcp.client.request.duration}.
  *
- * <p>{@code gcp.storage.client.ttfb} is recorded here for media download requests across all HTTP
- * response status codes when response headers arrive (HTTP unary and upload TTFB are tracked for a
- * follow-up).
+ * <p>{@code gcp.storage.client.ttfb} is recorded here across all HTTP operations and response
+ * status codes when response headers arrive, resolving {@code gcp.storage.operation} from {@link
+ * StorageMetricsContext#current()} when active or falling back to route-based resolution.
  */
 @NullMarked
 final class StorageHttpMetricsInterceptor implements HttpRequestInitializer {
 
   private static final ImmutableSet<String> OBJECT_SUB_RESOURCES =
       ImmutableSet.of("acl", "compose", "restore");
+
+  private static final ImmutableMap<String, String> ROUTE_OPERATIONS =
+      ImmutableMap.<String, String>builder()
+          .put("POST /batch/storage/v1", "Batch")
+          .put("POST /storage/v1/b", "CreateBucket")
+          .put("GET /storage/v1/b", "ListBuckets")
+          .put("GET /storage/v1/b/{bucket}", "GetBucket")
+          .put("PATCH /storage/v1/b/{bucket}", "UpdateBucket")
+          .put("DELETE /storage/v1/b/{bucket}", "DeleteBucket")
+          .put("POST /storage/v1/b/{bucket}/lockRetentionPolicy", "LockBucketRetentionPolicy")
+          .put("GET /storage/v1/b/{bucket}/iam", "GetIamPolicy")
+          .put("PUT /storage/v1/b/{bucket}/iam", "SetIamPolicy")
+          .put("GET /storage/v1/b/{bucket}/iam/testPermissions", "TestIamPermissions")
+          .put("POST /storage/v1/b/{bucket}/acl", "CreateBucketACL")
+          .put("GET /storage/v1/b/{bucket}/acl", "ListBucketACLs")
+          .put("GET /storage/v1/b/{bucket}/acl/{entity}", "GetBucketACL")
+          .put("PATCH /storage/v1/b/{bucket}/acl/{entity}", "UpdateBucketACL")
+          .put("DELETE /storage/v1/b/{bucket}/acl/{entity}", "DeleteBucketACL")
+          .put("POST /storage/v1/b/{bucket}/defaultObjectAcl", "CreateDefaultObjectACL")
+          .put("GET /storage/v1/b/{bucket}/defaultObjectAcl", "ListDefaultObjectACLs")
+          .put("GET /storage/v1/b/{bucket}/defaultObjectAcl/{entity}", "GetDefaultObjectACL")
+          .put("PATCH /storage/v1/b/{bucket}/defaultObjectAcl/{entity}", "UpdateDefaultObjectACL")
+          .put("DELETE /storage/v1/b/{bucket}/defaultObjectAcl/{entity}", "DeleteDefaultObjectACL")
+          .put("POST /storage/v1/b/{bucket}/notificationConfigs", "CreateNotification")
+          .put("GET /storage/v1/b/{bucket}/notificationConfigs", "ListNotifications")
+          .put("GET /storage/v1/b/{bucket}/notificationConfigs/{notification}", "GetNotification")
+          .put(
+              "DELETE /storage/v1/b/{bucket}/notificationConfigs/{notification}",
+              "DeleteNotification")
+          .put("POST /storage/v1/b/{bucket}/o", "WriteObject")
+          .put("GET /storage/v1/b/{bucket}/o", "ListObjects")
+          .put("GET /storage/v1/b/{bucket}/o/{object}", "GetObject")
+          .put("PATCH /storage/v1/b/{bucket}/o/{object}", "UpdateObject")
+          .put("DELETE /storage/v1/b/{bucket}/o/{object}", "DeleteObject")
+          .put("POST /storage/v1/b/{bucket}/o/{object}/compose", "ComposeObject")
+          .put("POST /storage/v1/b/{bucket}/o/{object}/restore", "RestoreObject")
+          .put(
+              "POST /storage/v1/b/{bucket}/o/{object}/rewriteTo/b/{bucket}/o/{object}",
+              "RewriteObject")
+          .put("POST /storage/v1/b/{bucket}/o/{object}/moveTo/o/{object}", "MoveObject")
+          .put("POST /storage/v1/b/{bucket}/o/{object}/acl", "CreateObjectACL")
+          .put("GET /storage/v1/b/{bucket}/o/{object}/acl", "ListObjectACLs")
+          .put("GET /storage/v1/b/{bucket}/o/{object}/acl/{entity}", "GetObjectACL")
+          .put("PATCH /storage/v1/b/{bucket}/o/{object}/acl/{entity}", "UpdateObjectACL")
+          .put("DELETE /storage/v1/b/{bucket}/o/{object}/acl/{entity}", "DeleteObjectACL")
+          .put("POST /storage/v1/projects/{project}/hmacKeys", "CreateHMACKey")
+          .put("GET /storage/v1/projects/{project}/hmacKeys", "ListHMACKeys")
+          .put("GET /storage/v1/projects/{project}/hmacKeys/{access_id}", "GetHMACKey")
+          .put("PUT /storage/v1/projects/{project}/hmacKeys/{access_id}", "UpdateHMACKey")
+          .put("DELETE /storage/v1/projects/{project}/hmacKeys/{access_id}", "DeleteHMACKey")
+          .put("GET /storage/v1/projects/{project}/serviceAccount", "GetServiceAccount")
+          .build();
 
   @Nullable private final HttpRequestInitializer delegate;
   private final StorageClientMetrics metrics;
@@ -119,11 +173,12 @@ final class StorageHttpMetricsInterceptor implements HttpRequestInitializer {
     request.setIOExceptionHandler(
         (req, supportsRetry) -> {
           if (recorded.compareAndSet(false, true)) {
+            double durationSeconds = (clock.nanoTime() - startTimeNanos.get()) / 1_000_000_000.0;
             recordDuration(
                 req,
-                startTimeNanos.get(),
-                clock.nanoTime(),
+                durationSeconds,
                 0L,
+                extractUrlTemplate(req.getUrl()),
                 StorageErrorTypeMapper.STATUS_CONNECTION_ERROR);
           }
           return existingIoHandler != null
@@ -132,42 +187,60 @@ final class StorageHttpMetricsInterceptor implements HttpRequestInitializer {
   }
 
   private void recordResponse(HttpRequest request, long startNanos, long endNanos, int statusCode) {
+    double durationSeconds = (endNanos - startNanos) / 1_000_000_000.0;
+    String urlTemplate = extractUrlTemplate(request.getUrl());
     String errorType =
         statusCode >= 400
             ? StorageErrorTypeMapper.mapHttpResponseCode(statusCode)
             : StorageErrorTypeMapper.STATUS_OK;
-    recordDuration(request, startNanos, endNanos, statusCode, errorType);
-    // Evaluate isMediaDownloadRequest(request) at response time rather than in
-    // initialize(HttpRequest), because callers such as MediaHttpDownloader may append
-    // query parameters (e.g. alt=media) to request.getUrl() after buildGetRequest().
-    if (isMediaDownloadRequest(request)) {
-      metrics.recordTtfb(
-          Context.current(),
-          "ReadObject",
-          (endNanos - startNanos) / 1_000_000_000.0,
-          StorageClientMetrics.NETWORK_PATH_CLOUDPATH);
-    }
+    recordDuration(request, durationSeconds, statusCode, urlTemplate, errorType);
+    // Evaluate request URL and query parameters at response time rather than in
+    // initialize(HttpRequest), because callers such as MediaHttpDownloader or MediaHttpUploader
+    // may append query parameters (e.g. alt=media, uploadType) after buildRequest().
+    StorageMetricsContext ctx = StorageMetricsContext.current();
+    Context otelContext = ctx != null ? ctx.getOtelContext() : Context.current();
+    metrics.recordTtfb(
+        otelContext,
+        resolveOperationName(request, urlTemplate),
+        durationSeconds,
+        StorageClientMetrics.NETWORK_PATH_CLOUDPATH);
   }
 
   private void recordDuration(
-      HttpRequest request, long startNanos, long endNanos, long statusCode, String errorType) {
-    double durationSeconds = (endNanos - startNanos) / 1_000_000_000.0;
+      HttpRequest request,
+      double durationSeconds,
+      long statusCode,
+      String urlTemplate,
+      String errorType) {
     metrics.recordHttpRequestDuration(
-        durationSeconds,
-        request.getRequestMethod(),
-        statusCode,
-        extractUrlTemplate(request.getUrl()),
-        errorType);
+        durationSeconds, request.getRequestMethod(), statusCode, urlTemplate, errorType);
+  }
+
+  static String resolveOperationName(HttpRequest request, String urlTemplate) {
+    StorageMetricsContext ctx = StorageMetricsContext.current();
+    return ctx != null ? ctx.getOperationName() : defaultOperationName(request, urlTemplate);
   }
 
   static boolean isMediaDownloadRequest(HttpRequest request) {
-    if (!"GET".equalsIgnoreCase(request.getRequestMethod())) {
+    if (!"GET".equalsIgnoreCase(effectiveMethod(request))) {
       return false;
     }
     GenericUrl url = request.getUrl();
     String path = url.getRawPath();
     return (path != null && path.startsWith("/download/storage/v1/"))
         || "media".equals(url.getFirst("alt"));
+  }
+
+  static boolean isMediaUploadRequest(HttpRequest request) {
+    String method = effectiveMethod(request);
+    if (!"POST".equalsIgnoreCase(method) && !"PUT".equalsIgnoreCase(method)) {
+      return false;
+    }
+    GenericUrl url = request.getUrl();
+    String path = url.getRawPath();
+    return (path != null && path.startsWith("/upload/storage/v1/"))
+        || url.getFirst("uploadType") != null
+        || url.getFirst("upload_id") != null;
   }
 
   static String extractUrlTemplate(GenericUrl url) {
@@ -202,6 +275,23 @@ final class StorageHttpMetricsInterceptor implements HttpRequestInitializer {
     }
     String[] parts = trimmed.split("/", 2);
     return parts.length == 1 ? "/{bucket}" : "/{bucket}/{object}";
+  }
+
+  private static String defaultOperationName(HttpRequest request, String urlTemplate) {
+    if (isMediaDownloadRequest(request)) {
+      return "ReadObject";
+    }
+    if (isMediaUploadRequest(request)) {
+      return "WriteObject";
+    }
+    return ROUTE_OPERATIONS.getOrDefault(
+        effectiveMethod(request).toUpperCase(Locale.ROOT) + " " + urlTemplate,
+        StorageErrorTypeMapper.STATUS_UNKNOWN);
+  }
+
+  private static String effectiveMethod(HttpRequest request) {
+    String override = request.getHeaders().getFirstHeaderStringValue("X-HTTP-Method-Override");
+    return override != null ? override : request.getRequestMethod();
   }
 
   private static String extractV1UrlTemplate(String rest) {
