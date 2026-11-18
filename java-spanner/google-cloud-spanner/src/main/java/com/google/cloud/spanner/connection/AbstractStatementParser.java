@@ -17,6 +17,7 @@
 package com.google.cloud.spanner.connection;
 
 import static com.google.cloud.spanner.connection.SimpleParser.isValidIdentifierChar;
+import static com.google.cloud.spanner.connection.SimpleParser.isValidIdentifierFirstChar;
 import static com.google.cloud.spanner.connection.StatementHintParser.convertHintsToOptions;
 
 import com.google.api.core.InternalApi;
@@ -937,19 +938,29 @@ public abstract class AbstractStatementParser {
   /** Returns the query parameter prefix that should be used for this dialect. */
   abstract String getQueryParameterPrefix();
 
-  /** Reads a dollar-quoted string literal from position index in the given sql string. */
+  /**
+   * Parses a dollar-quote tag starting at {@code index} (the character immediately following an
+   * opening or closing {@code '$'}) up to the matching {@code '$'}.
+   *
+   * <p>Returns {@code ""} for an empty {@code $$} delimiter, the tag name when the tag starts with
+   * {@link SimpleParser#isValidIdentifierFirstChar(char)} (which excludes ASCII and non-letter
+   * Unicode digits such as {@code '١'}) and continues with {@link
+   * SimpleParser#isValidIdentifierChar(char)}, or {@code null} if no valid dollar-quote tag starts
+   * at {@code index}.
+   */
   String parseDollarQuotedString(String sql, int index) {
-    // Look ahead to the next dollar sign (if any). Everything in between is the quote tag.
-    StringBuilder tag = new StringBuilder();
+    // Look ahead to the next dollar sign (if any). An empty tag ($$) is valid, while any non-empty
+    // tag must start with a valid identifier-start character so positional parameters ($1) are not
+    // mistaken for dollar-quote tags.
+    int startIndex = index;
     while (index < sql.length()) {
       char c = sql.charAt(index);
       if (c == DOLLAR) {
-        return tag.toString();
+        return index == startIndex ? "" : sql.substring(startIndex, index);
       }
-      if (!isValidIdentifierChar(c)) {
+      if (index == startIndex ? !isValidIdentifierFirstChar(c) : !isValidIdentifierChar(c)) {
         break;
       }
-      tag.append(c);
       index++;
     }
     return null;
@@ -970,7 +981,11 @@ public abstract class AbstractStatementParser {
         || (supportsBacktickQuote() && currentChar == BACKTICK_QUOTE)) {
       appendIfNotNull(result, currentChar);
       return skipQuoted(sql, currentIndex, currentChar, result);
-    } else if (supportsDollarQuotedStrings() && currentChar == DOLLAR) {
+    } else if (supportsDollarQuotedStrings()
+        && currentChar == DOLLAR
+        // In PostgreSQL, '$' is a valid identifier continuation character (e.g. col$tag$a, col$$)
+        // and cannot open a dollar-quoted literal immediately after an identifier character.
+        && (currentIndex == 0 || !isValidIdentifierChar(sql.charAt(currentIndex - 1)))) {
       String dollarTag = parseDollarQuotedString(sql, currentIndex + 1);
       if (dollarTag != null) {
         appendIfNotNull(result, currentChar, dollarTag, currentChar);

@@ -292,6 +292,139 @@ public class StatementParserTest {
     assertThat(
             parser.removeCommentsAndTrim("SELECT FOO, $BAR -- This is a comment\nFROM SOME_TABLE"))
         .isEqualTo("SELECT FOO, $BAR \nFROM SOME_TABLE");
+
+    // Mid-identifier $tag$ is part of an unquoted identifier, not a dollar-quote opener.
+    ParametersInfo midIdentifierParams =
+        parser.convertPositionalParametersToNamedParameters(
+            '?', "SELECT col$tag$a, ?, col$tag$b FROM t");
+    assertEquals(1, midIdentifierParams.numberOfParameters);
+    assertEquals(
+        "SELECT col$tag$a, $1, col$tag$b FROM t", midIdentifierParams.sqlWithNamedParameters);
+    ParametersInfo singleMidIdentifierParam =
+        parser.convertPositionalParametersToNamedParameters('?', "SELECT col$tag$a WHERE x = ?");
+    assertEquals(1, singleMidIdentifierParam.numberOfParameters);
+    assertEquals("SELECT col$tag$a WHERE x = $1", singleMidIdentifierParam.sqlWithNamedParameters);
+
+    // Mid-identifier $$ and chained/digit-preceded $ tags strip comments and detect RETURNING.
+    assertThat(parser.removeCommentsAndTrim("SELECT col$$ -- comment\nFROM t"))
+        .isEqualTo("SELECT col$$ \nFROM t");
+    assertThat(parser.removeCommentsAndTrim("SELECT col$$tag$a -- comment\nFROM t"))
+        .isEqualTo("SELECT col$$tag$a \nFROM t");
+    assertThat(parser.removeCommentsAndTrim("SELECT col1$tag$a -- comment\nFROM t"))
+        .isEqualTo("SELECT col1$tag$a \nFROM t");
+    assertThat(parser.removeCommentsAndTrim("SELECT $$foo$$col$tag$a -- comment\nFROM t"))
+        .isEqualTo("SELECT $$foo$$col$tag$a \nFROM t");
+    assertTrue(
+        parser.parse(Statement.of("UPDATE t SET a = col$$ RETURNING col$$")).hasReturningClause());
+    assertTrue(
+        parser
+            .parse(Statement.of("UPDATE t SET a = col$tag$a RETURNING col$tag$b"))
+            .hasReturningClause());
+    assertTrue(
+        parser
+            .parse(Statement.of("UPDATE t SET a = col1$tag$a RETURNING col1$tag$b"))
+            .hasReturningClause());
+
+    // Numeric-leading tags ($1$, $10$, $12$, $1a$, and non-ASCII digit $١$) are rejected.
+    assertThat(parser.removeCommentsAndTrim("SELECT $1$ -- comment\nFROM t"))
+        .isEqualTo("SELECT $1$ \nFROM t");
+    assertThat(parser.removeCommentsAndTrim("SELECT $10$11")).isEqualTo("SELECT $10$11");
+    assertThat(parser.removeCommentsAndTrim("SELECT $12$ -- comment\nFROM t"))
+        .isEqualTo("SELECT $12$ \nFROM t");
+    assertThat(parser.removeCommentsAndTrim("SELECT $1a$ -- comment\nFROM t"))
+        .isEqualTo("SELECT $1a$ \nFROM t");
+    assertThat(parser.removeCommentsAndTrim("SELECT $\u0661$ -- comment\nFROM t"))
+        .isEqualTo("SELECT $\u0661$ \nFROM t");
+    assertThat(parser.removeCommentsAndTrim("SELECT $1$ /* comment */ $1$"))
+        .isEqualTo("SELECT $1$  $1$");
+
+    for (String invalidNumericTag : new String[] {"$1$", "$10$", "$12$", "$1a$", "$\u0661$"}) {
+      ParametersInfo numericTagParams =
+          parser.convertPositionalParametersToNamedParameters(
+              '?', "SELECT " + invalidNumericTag + " + ? + " + invalidNumericTag);
+      assertEquals(1, numericTagParams.numberOfParameters);
+      assertEquals(
+          "SELECT " + invalidNumericTag + " + $1 + " + invalidNumericTag,
+          numericTagParams.sqlWithNamedParameters);
+      assertTrue(
+          parser
+              .parse(
+                  Statement.of(
+                      "UPDATE t SET a = " + invalidNumericTag + " RETURNING " + invalidNumericTag))
+              .hasReturningClause());
+    }
+
+    // Valid tags ($$, $tag$, $_1$, $tag_1$, $tag10$, $ø1$, and $a$price $$a$) preserve interior
+    // ?, --, /*, and RETURNING tokens while still converting/stripping/detecting outer tokens.
+    for (String validTag :
+        new String[] {"$$", "$tag$", "$_1$", "$tag_1$", "$tag10$", "$\u00f81$"}) {
+      String literalWithTokens =
+          validTag + " ? -- not a comment /* block */ RETURNING * " + validTag;
+      ParametersInfo validTagParams =
+          parser.convertPositionalParametersToNamedParameters(
+              '?', "SELECT " + literalWithTokens + " WHERE id = ?");
+      assertEquals(1, validTagParams.numberOfParameters);
+      assertEquals(
+          "SELECT " + literalWithTokens + " WHERE id = $1", validTagParams.sqlWithNamedParameters);
+      assertThat(parser.removeCommentsAndTrim("SELECT " + literalWithTokens + " -- outer comment"))
+          .isEqualTo("SELECT " + literalWithTokens);
+      assertFalse(
+          parser
+              .parse(Statement.of("UPDATE t SET x = " + literalWithTokens + " WHERE id = 1"))
+              .hasReturningClause());
+    }
+
+    // Closing delimiter preceded by '$' inside literal content ($a$price $$a$) still closes.
+    ParametersInfo dollarBeforeCloseParams =
+        parser.convertPositionalParametersToNamedParameters(
+            '?', "SELECT $a$price ? $$a$ WHERE id = ?");
+    assertEquals(1, dollarBeforeCloseParams.numberOfParameters);
+    assertEquals(
+        "SELECT $a$price ? $$a$ WHERE id = $1", dollarBeforeCloseParams.sqlWithNamedParameters);
+    assertThat(parser.removeCommentsAndTrim("SELECT $a$-- price $$a$ -- outer comment"))
+        .isEqualTo("SELECT $a$-- price $$a$");
+    assertFalse(
+        parser
+            .parse(Statement.of("UPDATE t SET x = $a$ RETURNING price $$a$ WHERE id = 1"))
+            .hasReturningClause());
+    assertTrue(
+        parser
+            .parse(Statement.of("UPDATE t SET x = $a$price $$a$ WHERE id = 1 RETURNING *"))
+            .hasReturningClause());
+
+    assertUnclosedLiteral(parser, "SELECT $$unclosed");
+    assertUnclosedLiteral(parser, "SELECT $_1$unclosed");
+  }
+
+  @Test
+  public void testPostgreSQLSkipDollarQuoted() {
+    assumeTrue(dialect == Dialect.POSTGRESQL);
+
+    // Valid dollar-quoted literals at index 0 and after non-identifier delimiters.
+    assertEquals("$$foo$$", skipPostgreSQL("$$foo$$ bar", 0));
+    assertEquals("$tag$foo$tag$", skipPostgreSQL("$tag$foo$tag$ bar", 0));
+    assertEquals("$_1$foo$_1$", skipPostgreSQL("$_1$foo$_1$ bar", 0));
+    assertEquals("$\u00f81$foo$\u00f81$", skipPostgreSQL("$\u00f81$foo$\u00f81$ bar", 0));
+    assertEquals("$a$price $$a$", skipPostgreSQL("$a$price $$a$ bar", 0));
+    assertEquals("$$foo$$", skipPostgreSQL("SELECT $$foo$$", 7));
+
+    // Mid-identifier $, numeric-leading tags, and trailing $ advance exactly 1 character.
+    assertEquals("$", skipPostgreSQL("col$tag$a$tag$", 3));
+    assertEquals("$", skipPostgreSQL("col$$foo$$", 3));
+    assertEquals("$", skipPostgreSQL("col1$tag$a$tag$", 4));
+    assertEquals("$", skipPostgreSQL("$1$foo$1$", 0));
+    assertEquals("$", skipPostgreSQL("SELECT $12$foo$12$", 7));
+    assertEquals("$", skipPostgreSQL("SELECT $\u0661$foo$\u0661$", 7));
+    assertEquals("$", skipPostgreSQL("col$", 3));
+    assertEquals("$", skipPostgreSQL("SELECT $", 7));
+  }
+
+  private String skipPostgreSQL(String sql, int currentIndex) {
+    StringBuilder result = new StringBuilder();
+    int nextIndex = parser.skip(sql, currentIndex, result);
+    String skipped = sql.substring(currentIndex, nextIndex);
+    assertEquals(skipped, result.toString());
+    return skipped;
   }
 
   @Test
@@ -1538,6 +1671,15 @@ public class StatementParserTest {
             "/* @lock_scanned_ranges = exclusive */ select -- random comment\n"
                 + " '$2' from foo /* comment /* with nested comment */ outside of nested comment */"
                 + " where bar=$1 and baz=$foo"));
+    assertEquals(ImmutableSet.of("$1", "$2"), parser.getQueryParameters("SELECT $1$2"));
+    assertEquals(ImmutableSet.of("$10", "$11"), parser.getQueryParameters("SELECT $10$11"));
+    assertEquals(ImmutableSet.of("$1", "$2"), parser.getQueryParameters("SELECT $1$, $2"));
+    assertEquals(
+        ImmutableSet.of("$1"), parser.getQueryParameters("SELECT col$tag$a, $1, col$tag$b"));
+    assertEquals(
+        ImmutableSet.of("$1", "$2"),
+        parser.getQueryParameters("SELECT col$tag$a, $1, col$tag$b, $2"));
+    assertEquals(ImmutableSet.of("$1"), parser.getQueryParameters("SELECT $_1$$2$_1$, $1"));
   }
 
   @Test
