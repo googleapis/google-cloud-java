@@ -25,8 +25,8 @@ import com.google.cloud.bigquery.Job;
 import com.google.cloud.bigquery.Schema;
 import com.google.cloud.bigquery.StandardSQLTypeName;
 import com.google.cloud.bigquery.exception.BigQueryJdbcException;
-import com.google.cloud.bigquery.storage.v1.ArrowRecordBatch;
 import com.google.cloud.bigquery.storage.v1.ArrowSchema;
+import com.google.common.annotations.VisibleForTesting;
 import io.opentelemetry.context.Scope;
 import java.io.IOException;
 import java.math.BigDecimal;
@@ -46,6 +46,7 @@ import org.apache.arrow.vector.FieldVector;
 import org.apache.arrow.vector.VectorLoader;
 import org.apache.arrow.vector.VectorSchemaRoot;
 import org.apache.arrow.vector.ipc.ReadChannel;
+import org.apache.arrow.vector.ipc.message.ArrowRecordBatch;
 import org.apache.arrow.vector.ipc.message.MessageSerializer;
 import org.apache.arrow.vector.util.ByteArrayReadableSeekableByteChannel;
 import org.apache.arrow.vector.util.JsonStringArrayList;
@@ -80,11 +81,11 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
 
   private boolean afterLast = false;
 
+  // Created once the Arrow schema is known: at construction, or from the stream's first message.
   private ArrowDeserializer arrowDeserializer;
-  BufferAllocator allocator = new RootAllocator(Long.MAX_VALUE);
-  // Decoder object will be reused to avoid re-allocation and too much garbage collection.
+  private final BufferAllocator allocator = new RootAllocator(Long.MAX_VALUE);
+  // What the getters read: the rows of the batch the cursor is in. Null until a batch is decoded.
   private VectorSchemaRoot vectorSchemaRoot;
-  private VectorLoader vectorLoader;
   // producer task's reference
   private final Future<?> ownedTask;
   private final boolean enableTimestampPicos;
@@ -173,7 +174,6 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
     this.ownedTask = null;
     this.arrowDeserializer = null;
     this.vectorSchemaRoot = null;
-    this.vectorLoader = null;
     this.enableTimestampPicos = false;
   }
 
@@ -200,9 +200,15 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
         enableTimestampPicos);
   }
 
+  /**
+   * Decodes the record batches of one stream. It owns the vectors it decodes into, and reuses them
+   * for every batch to avoid re-allocation and too much garbage collection. Their memory comes from
+   * the result set's allocator.
+   */
   private class ArrowDeserializer implements AutoCloseable {
+    private final VectorSchemaRoot root;
+    private final VectorLoader loader;
 
-    /* Decoder object will be reused to avoid re-allocation and too much garbage collection. */
     private ArrowDeserializer(ArrowSchema arrowSchema) throws IOException {
       org.apache.arrow.vector.types.pojo.Schema schema =
           MessageSerializer.deserializeSchema(
@@ -214,39 +220,49 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
       for (org.apache.arrow.vector.types.pojo.Field field : fields) {
         vectors.add(field.createVector(allocator));
       }
-      vectorSchemaRoot = new VectorSchemaRoot(vectors);
-      vectorLoader = new VectorLoader(vectorSchemaRoot);
+      root = new VectorSchemaRoot(vectors);
+      loader = new VectorLoader(root);
     }
 
-    private void deserializeArrowBatch(ArrowRecordBatch batch) throws SQLException {
+    /**
+     * Decodes the message's record batch and returns its rows. The returned vectors hold these rows
+     * only until the next call. Fails if the batch can't be decoded, or doesn't hold the number of
+     * rows its message reports. After a failure the vectors hold nothing.
+     */
+    private VectorSchemaRoot deserializeArrowBatch(BigQueryArrowBatchWrapper batchWrapper)
+        throws SQLException {
       LOG.finestTrace("deserializeArrowBatch");
       try {
-        if (vectorSchemaRoot != null) {
-          // Clear vectorSchemaRoot before populating a new batch
-          vectorSchemaRoot.clear();
-        }
+        // Clear the vectors before populating a new batch
+        root.clear();
         // Read straight from the ByteString instead of copying it into a heap byte[] first.
-        try (org.apache.arrow.vector.ipc.message.ArrowRecordBatch deserializedBatch =
+        try (ArrowRecordBatch deserializedBatch =
             MessageSerializer.deserializeRecordBatch(
-                new ReadChannel(Channels.newChannel(batch.getSerializedRecordBatch().newInput())),
+                new ReadChannel(
+                    Channels.newChannel(
+                        batchWrapper.getCurrentArrowBatch().getSerializedRecordBatch().newInput())),
                 allocator)) {
+          batchWrapper.checkRowCount(deserializedBatch.getLength());
           // The vectors keep their own references to the buffers after the batch is closed.
-          vectorLoader.load(deserializedBatch);
+          loader.load(deserializedBatch);
         }
       } catch (RuntimeException | IOException ex) {
+        // A batch that fails part-way has already put some of its buffers into the vectors.
+        root.clear();
         throw new BigQueryJdbcException(ex);
       }
+      return root;
+    }
+
+    /** Frees the buffers of the batch decoded last. The vectors stay usable for the next batch. */
+    private void releaseBatch() {
+      root.clear();
     }
 
     @Override
     public void close() {
-      LOG.fineTrace("close", () -> String.format("Closing BigQueryArrowResultSet %s.", this));
-      if (vectorSchemaRoot != null) {
-        vectorSchemaRoot.close();
-      }
-      if (allocator != null) {
-        allocator.close();
-      }
+      LOG.fineTrace("close", "Closing the Arrow vectors.");
+      root.close();
     }
   }
 
@@ -268,9 +284,9 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
     } else {
       /* Non nested */
       if (this.afterLast || this.hasReachedEnd || reachedRowLimit()) {
-        if (!this.afterLast && this.vectorSchemaRoot != null) {
+        if (!this.afterLast) {
           // Free the last batch's Arrow buffers as soon as iteration ends, not at close().
-          this.vectorSchemaRoot.clear();
+          releaseCurrentBatch();
         }
         this.afterLast = true;
         return false;
@@ -318,6 +334,19 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
         && this.currentBatchRowIndex < this.vectorSchemaRoot.getRowCount() - 1;
   }
 
+  /** Frees the Arrow buffers of the batch decoded last. Without a schema nothing was decoded. */
+  private void releaseCurrentBatch() {
+    if (this.arrowDeserializer != null) {
+      this.arrowDeserializer.releaseBatch();
+    }
+  }
+
+  /** Bytes of Arrow memory this result set holds: the buffers of the batch decoded last. */
+  @VisibleForTesting
+  long getAllocatedMemory() {
+    return this.allocator.getAllocatedMemory();
+  }
+
   private void initDeserializerIfNeeded(ArrowSchema arrowSchema) throws SQLException {
     if (arrowSchema == null || this.arrowDeserializer != null) {
       return;
@@ -332,12 +361,13 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
 
   /**
    * Loads the next batch that has rows into the vectors. The reader queues every message as-is, so
-   * this is the single place that decides what to use:
+   * every message is checked here, when it is consumed:
    *
    * <ul>
    *   <li>A message without batch data (a schema, statistics or throttling update) is skipped. It
-   *       must not report rows.
-   *   <li>A message with batch data is decoded, and must hold exactly the rows it reports.
+   *       must not report rows, which the message checks itself.
+   *   <li>A message with batch data is decoded. The deserializer fails unless the batch holds
+   *       exactly the rows the message reports.
    *   <li>The stream must deliver all {@code totalRows} rows.
    * </ul>
    *
@@ -352,10 +382,8 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
       }
       if (batchWrapper.isLast()) {
         /* Marks the end of the records */
-        if (this.vectorSchemaRoot != null) {
-          // IMP: To avoid memory leak: clear vectorSchemaRoot as it still holds the last batch
-          this.vectorSchemaRoot.clear();
-        }
+        // IMP: To avoid memory leak: the vectors still hold the last batch
+        releaseCurrentBatch();
         this.hasReachedEnd = true;
         if (this.rowCount < this.totalRows) {
           throw new BigQueryJdbcException(
@@ -365,34 +393,18 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
         return false;
       }
       initDeserializerIfNeeded(batchWrapper.getArrowSchema());
-      ArrowRecordBatch arrowBatch = batchWrapper.getCurrentArrowBatch();
-      Long reportedRows = batchWrapper.getReportedRowCount();
-      if (arrowBatch == null || arrowBatch.getSerializedRecordBatch().isEmpty()) {
-        if (reportedRows != null && reportedRows > 0) {
-          throw rowCountMismatch(reportedRows, 0);
-        }
+      batchWrapper.validate();
+      if (!batchWrapper.hasBatchData()) {
         continue; // no rows in this message
       }
       if (this.arrowDeserializer == null) {
         throw new BigQueryJdbcException("Received an Arrow record batch before its schema.");
       }
-      // Populates vectorSchemaRoot
-      this.arrowDeserializer.deserializeArrowBatch(arrowBatch);
-      int decodedRows = this.vectorSchemaRoot.getRowCount();
-      if (reportedRows != null && reportedRows != decodedRows) {
-        throw rowCountMismatch(reportedRows, decodedRows);
-      }
-      if (decodedRows > 0) {
+      this.vectorSchemaRoot = this.arrowDeserializer.deserializeArrowBatch(batchWrapper);
+      if (this.vectorSchemaRoot.getRowCount() > 0) {
         return true;
       }
     }
-  }
-
-  private static SQLException rowCountMismatch(long reportedRows, long decodedRows) {
-    return new BigQueryJdbcException(
-        String.format(
-            "An Arrow stream message reported %d rows but its batch has %d.",
-            reportedRows, decodedRows));
   }
 
   @Override
@@ -551,13 +563,12 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
       if (this.buffer != null) {
         this.buffer.clear();
         // Unblock any consumer thread currently waiting on buffer.take() in next()
-        this.buffer.offer(BigQueryArrowBatchWrapper.of(null, true));
+        this.buffer.offer(BigQueryArrowBatchWrapper.ofEndOfStream());
       }
       if (this.arrowDeserializer != null) {
         this.arrowDeserializer.close();
-      } else if (this.allocator != null) {
-        this.allocator.close();
       }
+      this.allocator.close();
     } finally {
       super.close();
     }
