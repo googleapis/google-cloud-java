@@ -37,6 +37,7 @@ import com.google.spanner.v1.PartialResultSet;
 import io.grpc.Context;
 import io.opentelemetry.api.common.Attributes;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.ArrayDeque;
 import java.util.Set;
 import java.util.concurrent.CountDownLatch;
@@ -62,7 +63,9 @@ import org.jspecify.annotations.Nullable;
  * token that differs from the last seen resume token) resets both, so a long-running stream that
  * regularly makes progress is not terminated by an occasional transient error. The default settings
  * have no maximum number of attempts or total timeout. Setting maxAttempts to 1 disables streaming
- * retries.
+ * retries. Positive server-supplied retry delays are capped at {@link
+ * RetrySettings#getMaxRetryDelayDuration()} (defaulting to 1000ms when unset or non-positive), and
+ * missing or non-positive server retry delays fall back to exponential backoff.
  *
  * <p>These limits bound the number of streams that this iterator starts. Each (re)started stream is
  * a call through the underlying GAX callable, and GAX applies the same {@link RetrySettings} to
@@ -89,6 +92,7 @@ abstract class ResumableStreamIterator extends AbstractIterator<PartialResultSet
   @Nullable private volatile StreamMessageListener streamMessageListener;
   private final RetrySettings streamingRetrySettings;
   private final Set<Code> retryableCodes;
+  private static final long DEFAULT_MAX_RETRY_DELAY_MILLIS = 1000L;
   private static final Logger logger = Logger.getLogger(ResumableStreamIterator.class.getName());
   @Nullable private BackOff backOff;
   private final ArrayDeque<PartialResultSet> buffer = new ArrayDeque<>();
@@ -200,8 +204,9 @@ abstract class ResumableStreamIterator extends AbstractIterator<PartialResultSet
    * zero means that no total timeout has been set, and that only maxAttempts (if set) limits the
    * retries. This mirrors the interpretation of these values in GAX.
    */
-  private boolean totalTimeoutExceeded(long proposedDelayMillis) {
-    long totalTimeoutMillis = streamingRetrySettings.getTotalTimeout().toMillis();
+  @VisibleForTesting
+  boolean totalTimeoutExceeded(long proposedDelayMillis) {
+    long totalTimeoutMillis = streamingRetrySettings.getTotalTimeoutDuration().toMillis();
     if (totalTimeoutMillis <= 0L) {
       return false;
     }
@@ -215,23 +220,48 @@ abstract class ResumableStreamIterator extends AbstractIterator<PartialResultSet
     return Math.max(proposedDelayMillis, 0L) >= totalTimeoutMillis - elapsedMillis;
   }
 
-  private ExponentialBackOff newBackOff() {
+  /**
+   * Returns the effective maximum retry delay in milliseconds: the configured {@link
+   * RetrySettings#getMaxRetryDelayDuration()} when positive (floored at 1ms for sub-millisecond
+   * durations and saturated at {@link Long#MAX_VALUE}), or {@link #DEFAULT_MAX_RETRY_DELAY_MILLIS}
+   * when unset or non-positive.
+   */
+  private long effectiveMaxRetryDelayMillis() {
+    Duration maxRetryDelay = streamingRetrySettings.getMaxRetryDelayDuration();
+    if (maxRetryDelay.isZero() || maxRetryDelay.isNegative()) {
+      return DEFAULT_MAX_RETRY_DELAY_MILLIS;
+    }
+    try {
+      return Math.max(1L, maxRetryDelay.toMillis());
+    } catch (ArithmeticException overflow) {
+      return Long.MAX_VALUE;
+    }
+  }
+
+  private int effectiveInitialRetryDelayMillis() {
+    Duration initialRetryDelay = streamingRetrySettings.getInitialRetryDelayDuration();
+    if (initialRetryDelay.isZero() || initialRetryDelay.isNegative()) {
+      return 1;
+    }
+    try {
+      return Math.max(1, (int) Math.min(initialRetryDelay.toMillis(), Integer.MAX_VALUE));
+    } catch (ArithmeticException overflow) {
+      return Integer.MAX_VALUE;
+    }
+  }
+
+  @VisibleForTesting
+  BackOff newBackOff() {
+    int initialIntervalMillis = effectiveInitialRetryDelayMillis();
+    int maxIntervalMillis =
+        Math.max(
+            initialIntervalMillis,
+            (int) Math.min(effectiveMaxRetryDelayMillis(), Integer.MAX_VALUE));
     return new ExponentialBackOff.Builder()
         .setMultiplier(streamingRetrySettings.getRetryDelayMultiplier())
         // All of these values must be > 0.
-        .setInitialIntervalMillis(
-            Math.max(
-                1,
-                (int)
-                    Math.min(
-                        streamingRetrySettings.getInitialRetryDelay().toMillis(),
-                        Integer.MAX_VALUE)))
-        .setMaxIntervalMillis(
-            Math.max(
-                1,
-                (int)
-                    Math.min(
-                        streamingRetrySettings.getMaxRetryDelay().toMillis(), Integer.MAX_VALUE)))
+        .setInitialIntervalMillis(initialIntervalMillis)
+        .setMaxIntervalMillis(maxIntervalMillis)
         // The total timeout is enforced explicitly in computeNext(), based on the elapsed time
         // since the first failure of the current retry sequence. Prevent the backoff from
         // returning BackOff.STOP, as that would misinterpret a total timeout of zero (that is, no
@@ -261,7 +291,7 @@ abstract class ResumableStreamIterator extends AbstractIterator<PartialResultSet
     try {
       if (backoffMillis == BackOff.STOP) {
         // Highly unlikely but we handle it just in case.
-        backoffMillis = streamingRetrySettings.getMaxRetryDelay().toMillis();
+        backoffMillis = effectiveMaxRetryDelayMillis();
       }
       if (latch.await(backoffMillis, TimeUnit.MILLISECONDS)) {
         // Woken by context cancellation.
@@ -478,14 +508,19 @@ abstract class ResumableStreamIterator extends AbstractIterator<PartialResultSet
           spannerException);
       throw spannerException;
     }
-    // Determine the retry delay: either the delay that the server included in the error, or
-    // otherwise a delay determined by the exponential backoff.
+    // Determine the retry delay: use a positive server-supplied retry delay (clamped to the
+    // effective max retry delay), or fall back to exponential backoff when absent or non-positive.
     long delayMillis = spannerException.getRetryDelayInMillis();
-    if (delayMillis == -1L) {
+    long maxRetryDelayMillis = effectiveMaxRetryDelayMillis();
+    if (delayMillis <= 0L) {
       if (this.backOff == null) {
         this.backOff = newBackOff();
       }
-      delayMillis = nextBackOffMillis(this.backOff);
+      long backOffMillis = nextBackOffMillis(this.backOff);
+      delayMillis =
+          backOffMillis == BackOff.STOP ? maxRetryDelayMillis : Math.max(1L, backOffMillis);
+    } else {
+      delayMillis = Math.min(delayMillis, maxRetryDelayMillis);
     }
     // The total timeout budget applies regardless of whether the delay came from the server
     // or from the backoff.
