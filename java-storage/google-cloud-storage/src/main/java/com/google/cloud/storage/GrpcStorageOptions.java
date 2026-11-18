@@ -358,18 +358,8 @@ public final class GrpcStorageOptions extends StorageOptions
     }
 
     InstantiatingGrpcChannelProvider baseProvider = channelProviderBuilder.build();
-    InstantiatingGrpcChannelProvider telemetryProvider =
-        (credentials == null || credentials instanceof NoCredentials)
-            ? baseProvider
-            : (InstantiatingGrpcChannelProvider) baseProvider.withCredentials(credentials);
-    boolean interconnectEnabled =
-        GrpcChannelTelemetry.isDirectPathInterconnectEnabled(attemptDirectPathXdsOverInterconnect);
-    boolean grpcSupportsForceXds = GrpcChannelTelemetry.grpcForceXdsIsSupported();
-    String effectiveTarget =
-        GrpcChannelTelemetry.resolveEffectiveTarget(telemetryProvider, interconnectEnabled);
     GrpcChannelTelemetry.logChannelConfiguration(
-        effectiveTarget, null, interconnectEnabled, grpcSupportsForceXds);
-
+        baseProvider, credentials, attemptDirectPathXdsOverInterconnect);
     builder.setTransportChannelProvider(baseProvider);
     RetrySettings baseRetrySettings = getRetrySettings();
     RetrySettings readRetrySettings =

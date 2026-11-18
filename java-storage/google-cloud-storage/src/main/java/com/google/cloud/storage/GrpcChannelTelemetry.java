@@ -17,6 +17,8 @@
 package com.google.cloud.storage;
 
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
+import com.google.auth.Credentials;
+import com.google.cloud.NoCredentials;
 import com.google.common.annotations.VisibleForTesting;
 import io.grpc.internal.GrpcUtil;
 import java.util.logging.Level;
@@ -62,7 +64,6 @@ final class GrpcChannelTelemetry {
     }
   }
 
-  @VisibleForTesting
   static boolean hasQueryParameter(@Nullable String uri, String key) {
     if (uri == null || key == null) {
       return false;
@@ -91,7 +92,6 @@ final class GrpcChannelTelemetry {
     return false;
   }
 
-  @VisibleForTesting
   static TransportType detectTransportType(@Nullable String endpoint) {
     if (endpoint == null
         || (!endpoint.startsWith(C2P_PREFIX) && !endpoint.startsWith(C2P_EXPERIMENTAL_PREFIX))) {
@@ -103,7 +103,6 @@ final class GrpcChannelTelemetry {
     return TransportType.DIRECT_PATH;
   }
 
-  @VisibleForTesting
   static String extractHost(@Nullable String endpointOrAuthority) {
     if (endpointOrAuthority == null || endpointOrAuthority.isEmpty()) {
       return "";
@@ -124,14 +123,12 @@ final class GrpcChannelTelemetry {
     return extracted != null ? extracted : "";
   }
 
-  @VisibleForTesting
   static boolean isDirectPathInterconnectHost(@Nullable String host) {
     String h = extractHost(host);
     return DIRECT_PATH_INTERCONNECT_HOST.equals(h)
         || DIRECT_PATH_INTERCONNECT_PREPROD_HOST.equals(h);
   }
 
-  @VisibleForTesting
   static boolean grpcForceXdsIsSupported() {
     return GRPC_FORCE_XDS_SUPPORTED;
   }
@@ -157,9 +154,8 @@ final class GrpcChannelTelemetry {
     return attemptDirectPathXdsOverInterconnect;
   }
 
-  @VisibleForTesting
   static String resolveEffectiveTarget(
-      InstantiatingGrpcChannelProvider provider, boolean attemptDirectPathXdsOverInterconnect) {
+      InstantiatingGrpcChannelProvider provider, boolean interconnectEnabled) {
     String endpoint = provider.getEndpoint();
     if (endpoint == null) {
       return "";
@@ -167,8 +163,6 @@ final class GrpcChannelTelemetry {
     if (endpoint.startsWith(C2P_PREFIX) || endpoint.startsWith(C2P_EXPERIMENTAL_PREFIX)) {
       return endpoint;
     }
-    boolean interconnectEnabled =
-        isDirectPathInterconnectEnabled(attemptDirectPathXdsOverInterconnect);
     if (!provider.needsCredentials()
         && provider.canUseDirectPath()
         && provider.isDirectPathXdsEnabled()) {
@@ -184,15 +178,26 @@ final class GrpcChannelTelemetry {
     return endpoint;
   }
 
-  @VisibleForTesting
+  static String logChannelConfiguration(
+      InstantiatingGrpcChannelProvider baseProvider,
+      @Nullable Credentials credentials,
+      boolean attemptDirectPathXdsOverInterconnect) {
+    InstantiatingGrpcChannelProvider telemetryProvider =
+        (credentials == null || credentials instanceof NoCredentials)
+            ? baseProvider
+            : (InstantiatingGrpcChannelProvider) baseProvider.withCredentials(credentials);
+    boolean interconnectEnabled =
+        isDirectPathInterconnectEnabled(attemptDirectPathXdsOverInterconnect);
+    boolean grpcSupportsForceXds = grpcForceXdsIsSupported();
+    String effectiveTarget = resolveEffectiveTarget(telemetryProvider, interconnectEnabled);
+    logChannelConfiguration(effectiveTarget, interconnectEnabled, grpcSupportsForceXds);
+    return effectiveTarget;
+  }
+
   static void logChannelConfiguration(
-      String effectiveEndpoint,
-      @Nullable String authority,
-      boolean interconnectEnabled,
-      boolean grpcSupportsForceXds) {
+      String effectiveEndpoint, boolean interconnectEnabled, boolean grpcSupportsForceXds) {
     TransportType requestedTransport = detectTransportType(effectiveEndpoint);
-    String effectiveAuthority =
-        (authority == null || authority.isEmpty()) ? extractHost(effectiveEndpoint) : authority;
+    String effectiveAuthority = extractHost(effectiveEndpoint);
     String grpcVersion = GrpcUtil.getGrpcBuildVersion().toString();
 
     if (!grpcSupportsForceXds

@@ -17,6 +17,8 @@
 package com.google.cloud.storage;
 
 import static com.google.common.truth.Truth.assertThat;
+import static com.google.common.truth.Truth.assertWithMessage;
+import static org.junit.Assume.assumeFalse;
 
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.auth.oauth2.AccessToken;
@@ -58,138 +60,132 @@ public final class GrpcChannelTelemetryTest {
 
   @Test
   public void detectTransportType_allCases() {
-    assertThat(GrpcChannelTelemetry.detectTransportType(null)).isEqualTo(TransportType.CLOUD_PATH);
-    assertThat(GrpcChannelTelemetry.detectTransportType("")).isEqualTo(TransportType.CLOUD_PATH);
-    assertThat(GrpcChannelTelemetry.detectTransportType("storage.googleapis.com:443"))
-        .isEqualTo(TransportType.CLOUD_PATH);
-    assertThat(GrpcChannelTelemetry.detectTransportType("https://storage.googleapis.com"))
-        .isEqualTo(TransportType.CLOUD_PATH);
-    assertThat(GrpcChannelTelemetry.detectTransportType("google-c2p:///storage.googleapis.com"))
-        .isEqualTo(TransportType.DIRECT_PATH);
-    assertThat(
-            GrpcChannelTelemetry.detectTransportType(
-                "google-c2p-experimental:///storage.googleapis.com"))
-        .isEqualTo(TransportType.DIRECT_PATH);
-    assertThat(
-            GrpcChannelTelemetry.detectTransportType(
-                "google-c2p:///storage-direct.googleapis.com?force-xds"))
-        .isEqualTo(TransportType.DIRECT_PATH_INTERCONNECT);
-    assertThat(
-            GrpcChannelTelemetry.detectTransportType(
-                "google-c2p:///storage-direct.googleapis.com?foo=1&force-xds=true"))
-        .isEqualTo(TransportType.DIRECT_PATH_INTERCONNECT);
-    assertThat(
-            GrpcChannelTelemetry.detectTransportType(
-                "google-c2p-experimental:///storage-direct.googleapis.com?force-xds"))
-        .isEqualTo(TransportType.DIRECT_PATH_INTERCONNECT);
-    assertThat(
-            GrpcChannelTelemetry.detectTransportType(
-                "google-c2p:///storage.googleapis.com?other=force-xds"))
-        .isEqualTo(TransportType.DIRECT_PATH);
-    assertThat(
-            GrpcChannelTelemetry.detectTransportType(
-                "google-c2p:///storage.googleapis.com#force-xds"))
-        .isEqualTo(TransportType.DIRECT_PATH);
-    assertThat(
-            GrpcChannelTelemetry.detectTransportType(
-                "google-c2p:///storage-direct.googleapis.com?force-xds#section"))
-        .isEqualTo(TransportType.DIRECT_PATH_INTERCONNECT);
-    assertThat(
-            GrpcChannelTelemetry.detectTransportType(
-                "google-c2p:///storage.googleapis.com#frag?force-xds=1"))
-        .isEqualTo(TransportType.DIRECT_PATH);
+    Object[][] cases = {
+      {null, TransportType.CLOUD_PATH},
+      {"", TransportType.CLOUD_PATH},
+      {"storage.googleapis.com:443", TransportType.CLOUD_PATH},
+      {"https://storage.googleapis.com", TransportType.CLOUD_PATH},
+      {"google-c2p:///storage.googleapis.com", TransportType.DIRECT_PATH},
+      {"google-c2p-experimental:///storage.googleapis.com", TransportType.DIRECT_PATH},
+      {
+        "google-c2p:///storage-direct.googleapis.com?force-xds",
+        TransportType.DIRECT_PATH_INTERCONNECT
+      },
+      {
+        "google-c2p:///storage-direct.googleapis.com?foo=1&force-xds=true",
+        TransportType.DIRECT_PATH_INTERCONNECT
+      },
+      {
+        "google-c2p-experimental:///storage-direct.googleapis.com?force-xds",
+        TransportType.DIRECT_PATH_INTERCONNECT
+      },
+      {"google-c2p:///storage.googleapis.com?other=force-xds", TransportType.DIRECT_PATH},
+      {"google-c2p:///storage.googleapis.com#force-xds", TransportType.DIRECT_PATH},
+      {
+        "google-c2p:///storage-direct.googleapis.com?force-xds#section",
+        TransportType.DIRECT_PATH_INTERCONNECT
+      },
+      {"google-c2p:///storage.googleapis.com#frag?force-xds=1", TransportType.DIRECT_PATH}
+    };
+    for (Object[] c : cases) {
+      String endpoint = (String) c[0];
+      TransportType expected = (TransportType) c[1];
+      assertWithMessage("endpoint=%s", endpoint)
+          .that(GrpcChannelTelemetry.detectTransportType(endpoint))
+          .isEqualTo(expected);
+    }
   }
 
   @Test
-  public void extractHost_and_isDirectPathInterconnectHost() {
-    assertThat(
-            GrpcChannelTelemetry.extractHost(
-                "google-c2p:///storage-direct.googleapis.com?force-xds"))
-        .isEqualTo("storage-direct.googleapis.com");
-    assertThat(
-            GrpcChannelTelemetry.extractHost(
-                "google-c2p-experimental:///storage-preprod-direct.sandbox.googleapis.com:443?force-xds"))
-        .isEqualTo("storage-preprod-direct.sandbox.googleapis.com");
-    assertThat(GrpcChannelTelemetry.extractHost("google-c2p:///storage.googleapis.com/path"))
-        .isEqualTo("storage.googleapis.com");
-    assertThat(GrpcChannelTelemetry.extractHost("google-c2p:///storage.googleapis.com#frag"))
-        .isEqualTo("storage.googleapis.com");
-    assertThat(GrpcChannelTelemetry.extractHost("storage-direct.googleapis.com:443"))
-        .isEqualTo("storage-direct.googleapis.com");
-    assertThat(GrpcChannelTelemetry.extractHost("storage-direct.googleapis.com"))
-        .isEqualTo("storage-direct.googleapis.com");
-    assertThat(GrpcChannelTelemetry.extractHost(null)).isEmpty();
-    assertThat(GrpcChannelTelemetry.extractHost("")).isEmpty();
+  public void extractHost_extractsNormalizedServerAddress() {
+    String[][] cases = {
+      {"google-c2p:///storage-direct.googleapis.com?force-xds", "storage-direct.googleapis.com"},
+      {
+        "google-c2p-experimental:///storage-preprod-direct.sandbox.googleapis.com:443?force-xds",
+        "storage-preprod-direct.sandbox.googleapis.com"
+      },
+      {"google-c2p:///storage.googleapis.com/path", "storage.googleapis.com"},
+      {"google-c2p:///storage.googleapis.com#frag", "storage.googleapis.com"},
+      {"storage-direct.googleapis.com:443", "storage-direct.googleapis.com"},
+      {"storage-direct.googleapis.com", "storage-direct.googleapis.com"},
+      {null, ""},
+      {"", ""}
+    };
+    for (String[] c : cases) {
+      assertWithMessage("input=%s", c[0])
+          .that(GrpcChannelTelemetry.extractHost(c[0]))
+          .isEqualTo(c[1]);
+    }
+  }
 
-    assertThat(GrpcChannelTelemetry.isDirectPathInterconnectHost("storage-direct.googleapis.com"))
-        .isTrue();
-    assertThat(
-            GrpcChannelTelemetry.isDirectPathInterconnectHost("storage-direct.googleapis.com:443"))
-        .isTrue();
-    assertThat(
-            GrpcChannelTelemetry.isDirectPathInterconnectHost(
-                "storage-preprod-direct.sandbox.googleapis.com"))
-        .isTrue();
-    assertThat(
-            GrpcChannelTelemetry.isDirectPathInterconnectHost(
-                "storage-preprod-direct.sandbox.googleapis.com:443"))
-        .isTrue();
-    assertThat(GrpcChannelTelemetry.isDirectPathInterconnectHost("storage.googleapis.com"))
-        .isFalse();
-    assertThat(GrpcChannelTelemetry.isDirectPathInterconnectHost("custom.example.com")).isFalse();
-    assertThat(GrpcChannelTelemetry.isDirectPathInterconnectHost(null)).isFalse();
+  @Test
+  public void isDirectPathInterconnectHost_matchesDirectHostsOnly() {
+    Object[][] cases = {
+      {"storage-direct.googleapis.com", true},
+      {"storage-direct.googleapis.com:443", true},
+      {"storage-preprod-direct.sandbox.googleapis.com", true},
+      {"storage-preprod-direct.sandbox.googleapis.com:443", true},
+      {"storage.googleapis.com", false},
+      {"custom.example.com", false},
+      {null, false}
+    };
+    for (Object[] c : cases) {
+      String host = (String) c[0];
+      boolean expected = (Boolean) c[1];
+      assertWithMessage("host=%s", host)
+          .that(GrpcChannelTelemetry.isDirectPathInterconnectHost(host))
+          .isEqualTo(expected);
+    }
   }
 
   @Test
   public void logChannelConfiguration_validConfigurations_logInfo() {
-    GrpcChannelTelemetry.logChannelConfiguration(
-        "storage.googleapis.com:443", "storage.googleapis.com", false, true);
-    assertThat(logHandler.records).hasSize(1);
-    assertThat(logHandler.records.get(0).getLevel()).isEqualTo(Level.INFO);
-    assertThat(logHandler.records.get(0).getMessage())
-        .contains("Configured gRPC transport. requested_transport_type=CloudPath");
-
-    logHandler.clear();
-    GrpcChannelTelemetry.logChannelConfiguration(
-        "google-c2p:///storage.googleapis.com", "storage.googleapis.com", false, true);
-    assertThat(logHandler.records).hasSize(1);
-    assertThat(logHandler.records.get(0).getLevel()).isEqualTo(Level.INFO);
-    assertThat(logHandler.records.get(0).getMessage())
-        .contains("Configured gRPC transport. requested_transport_type=DirectPath");
-
-    logHandler.clear();
-    GrpcChannelTelemetry.logChannelConfiguration(
-        "google-c2p:///storage-direct.googleapis.com?force-xds", null, true, true);
-    assertThat(logHandler.records).hasSize(1);
-    assertThat(logHandler.records.get(0).getLevel()).isEqualTo(Level.INFO);
-    assertThat(logHandler.records.get(0).getMessage())
-        .contains("Configured gRPC transport. requested_transport_type=DirectPathInterconnect");
-    assertThat(logHandler.records.get(0).getMessage())
-        .contains("authority=storage-direct.googleapis.com");
-
-    logHandler.clear();
-    GrpcChannelTelemetry.logChannelConfiguration(
-        "google-c2p:///storage-preprod-direct.sandbox.googleapis.com?force-xds", null, true, true);
-    assertThat(logHandler.records).hasSize(1);
-    assertThat(logHandler.records.get(0).getLevel()).isEqualTo(Level.INFO);
-    assertThat(logHandler.records.get(0).getMessage())
-        .contains("authority=storage-preprod-direct.sandbox.googleapis.com");
+    Object[][] cases = {
+      {"storage.googleapis.com:443", false, "CloudPath", "storage.googleapis.com"},
+      {"google-c2p:///storage.googleapis.com", false, "DirectPath", "storage.googleapis.com"},
+      {
+        "google-c2p:///storage-direct.googleapis.com?force-xds",
+        true,
+        "DirectPathInterconnect",
+        "storage-direct.googleapis.com"
+      },
+      {
+        "google-c2p:///storage-preprod-direct.sandbox.googleapis.com?force-xds",
+        true,
+        "DirectPathInterconnect",
+        "storage-preprod-direct.sandbox.googleapis.com"
+      }
+    };
+    for (int i = 0; i < cases.length; i++) {
+      String endpoint = (String) cases[i][0];
+      boolean interconnectEnabled = (Boolean) cases[i][1];
+      String expectedTransport = (String) cases[i][2];
+      String expectedAuthority = (String) cases[i][3];
+      GrpcChannelTelemetry.logChannelConfiguration(endpoint, interconnectEnabled, true);
+      LogRecord record = logHandler.records.get(i);
+      assertWithMessage(endpoint).that(record.getLevel()).isEqualTo(Level.INFO);
+      assertWithMessage(endpoint)
+          .that(record.getMessage())
+          .contains("Configured gRPC transport. requested_transport_type=" + expectedTransport);
+      assertWithMessage(endpoint)
+          .that(record.getMessage())
+          .contains("authority=" + expectedAuthority);
+    }
   }
 
   @Test
-  public void logChannelConfiguration_warnings() {
-    // Priority 1: gRPC version does not support force-xds
+  public void logChannelConfiguration_unsupportedGrpcForceXds_logsWarning() {
     GrpcChannelTelemetry.logChannelConfiguration(
-        "google-c2p:///storage-direct.googleapis.com?force-xds", null, true, false);
+        "google-c2p:///storage-direct.googleapis.com?force-xds", true, false);
     assertThat(logHandler.records).hasSize(1);
     assertThat(logHandler.records.get(0).getLevel()).isEqualTo(Level.WARNING);
     assertThat(logHandler.records.get(0).getMessage())
         .contains("DirectPath over Interconnect requires a gRPC version supporting force-xds");
+  }
 
-    // Priority 2: interconnectEnabled = true, but effectiveEndpoint is CloudPath or DirectPath
-    logHandler.clear();
-    GrpcChannelTelemetry.logChannelConfiguration(
-        "storage.googleapis.com:443", "storage.googleapis.com", true, true);
+  @Test
+  public void logChannelConfiguration_interconnectOverriddenByCloudPath_logsWarning() {
+    GrpcChannelTelemetry.logChannelConfiguration("storage.googleapis.com:443", true, true);
     assertThat(logHandler.records).hasSize(1);
     assertThat(logHandler.records.get(0).getLevel()).isEqualTo(Level.WARNING);
     assertThat(logHandler.records.get(0).getMessage())
@@ -198,19 +194,22 @@ public final class GrpcChannelTelemetryTest {
                 + " it.");
     assertThat(logHandler.records.get(0).getMessage())
         .contains("requested_transport_type=CloudPath");
+  }
 
-    logHandler.clear();
+  @Test
+  public void logChannelConfiguration_interconnectOverriddenByDirectPath_logsWarning() {
     GrpcChannelTelemetry.logChannelConfiguration(
-        "google-c2p:///storage.googleapis.com", "storage.googleapis.com", true, true);
+        "google-c2p:///storage.googleapis.com", true, true);
     assertThat(logHandler.records).hasSize(1);
     assertThat(logHandler.records.get(0).getLevel()).isEqualTo(Level.WARNING);
     assertThat(logHandler.records.get(0).getMessage())
         .contains("requested_transport_type=DirectPath");
+  }
 
-    // Priority 3: force-xds active, but authority is not a -direct host
-    logHandler.clear();
+  @Test
+  public void logChannelConfiguration_nonDirectAuthorityWithForceXds_logsWarning() {
     GrpcChannelTelemetry.logChannelConfiguration(
-        "google-c2p:///storage.googleapis.com?force-xds", "storage.googleapis.com", true, true);
+        "google-c2p:///storage.googleapis.com?force-xds", true, true);
     assertThat(logHandler.records).hasSize(1);
     assertThat(logHandler.records.get(0).getLevel()).isEqualTo(Level.WARNING);
     assertThat(logHandler.records.get(0).getMessage())
@@ -221,13 +220,23 @@ public final class GrpcChannelTelemetryTest {
 
   @Test
   public void isDirectPathInterconnectEnabled_envPrecedence() {
-    assertThat(GrpcChannelTelemetry.isDirectPathInterconnectEnabled(false, "true")).isTrue();
-    assertThat(GrpcChannelTelemetry.isDirectPathInterconnectEnabled(false, " TRUE ")).isTrue();
-    assertThat(GrpcChannelTelemetry.isDirectPathInterconnectEnabled(true, "false")).isFalse();
-    assertThat(GrpcChannelTelemetry.isDirectPathInterconnectEnabled(true, " FALSE ")).isFalse();
-    assertThat(GrpcChannelTelemetry.isDirectPathInterconnectEnabled(true, "invalid")).isTrue();
-    assertThat(GrpcChannelTelemetry.isDirectPathInterconnectEnabled(false, "invalid")).isFalse();
-    assertThat(GrpcChannelTelemetry.isDirectPathInterconnectEnabled(true, null)).isTrue();
+    Object[][] cases = {
+      {false, "true", true},
+      {false, " TRUE ", true},
+      {true, "false", false},
+      {true, " FALSE ", false},
+      {true, "invalid", true},
+      {false, "invalid", false},
+      {true, null, true}
+    };
+    for (Object[] c : cases) {
+      boolean builderOption = (Boolean) c[0];
+      String envValue = (String) c[1];
+      boolean expected = (Boolean) c[2];
+      assertWithMessage("builder=%s, env=%s", builderOption, envValue)
+          .that(GrpcChannelTelemetry.isDirectPathInterconnectEnabled(builderOption, envValue))
+          .isEqualTo(expected);
+    }
   }
 
   @Test
@@ -248,48 +257,66 @@ public final class GrpcChannelTelemetryTest {
     assertThat(provider.canUseDirectPath()).isFalse();
     assertThat(GrpcChannelTelemetry.resolveEffectiveTarget(provider, true))
         .isEqualTo("storage.googleapis.com:443");
+    assertThat(logHandler.records).hasSize(1);
+    assertThat(logHandler.records.get(0).getLevel()).isEqualTo(Level.WARNING);
+  }
 
-    if (!Boolean.parseBoolean(System.getenv("GOOGLE_CLOUD_DISABLE_DIRECT_PATH"))) {
-      GrpcStorageOptions enabledOptions =
-          StorageOptions.grpc()
-              .setAttemptDirectPathXdsOverInterconnect(true)
-              .setCredentials(GoogleCredentials.create(new AccessToken("fake-token", null)))
-              .build();
-      InstantiatingGrpcChannelProvider enabledProvider =
-          (InstantiatingGrpcChannelProvider)
-              enabledOptions
-                  .getStorageSettings()
-                  .getTransportChannelProvider()
-                  .withCredentials(enabledOptions.getCredentials());
-      assertThat(GrpcChannelTelemetry.resolveEffectiveTarget(enabledProvider, true))
-          .isEqualTo("google-c2p:///storage-direct.googleapis.com?force-xds");
+  @Test
+  public void grpcStorageOptions_directPathOverInterconnect_resolvesProdDirectTarget()
+      throws Exception {
+    assumeDirectPathNotDisabledByEnv();
+    GrpcStorageOptions options =
+        StorageOptions.grpc()
+            .setAttemptDirectPathXdsOverInterconnect(true)
+            .setCredentials(GoogleCredentials.create(new AccessToken("fake-token", null)))
+            .build();
+    InstantiatingGrpcChannelProvider provider =
+        (InstantiatingGrpcChannelProvider)
+            options
+                .getStorageSettings()
+                .getTransportChannelProvider()
+                .withCredentials(options.getCredentials());
+    assertThat(GrpcChannelTelemetry.resolveEffectiveTarget(provider, true))
+        .isEqualTo("google-c2p:///storage-direct.googleapis.com?force-xds");
+  }
 
-      GrpcStorageOptions preprodOptions =
-          StorageOptions.grpc()
-              .setHost("https://storage-preprod.sandbox.googleapis.com")
-              .setAttemptDirectPathXdsOverInterconnect(true)
-              .setCredentials(GoogleCredentials.create(new AccessToken("fake-token", null)))
-              .build();
-      InstantiatingGrpcChannelProvider preprodProvider =
-          (InstantiatingGrpcChannelProvider)
-              preprodOptions
-                  .getStorageSettings()
-                  .getTransportChannelProvider()
-                  .withCredentials(preprodOptions.getCredentials());
-      assertThat(GrpcChannelTelemetry.resolveEffectiveTarget(preprodProvider, true))
-          .isEqualTo("google-c2p:///storage-preprod-direct.sandbox.googleapis.com?force-xds");
+  @Test
+  public void grpcStorageOptions_directPathOverInterconnect_resolvesPreprodDirectTarget()
+      throws Exception {
+    assumeDirectPathNotDisabledByEnv();
+    GrpcStorageOptions options =
+        StorageOptions.grpc()
+            .setHost("https://storage-preprod.sandbox.googleapis.com")
+            .setAttemptDirectPathXdsOverInterconnect(true)
+            .setCredentials(GoogleCredentials.create(new AccessToken("fake-token", null)))
+            .build();
+    InstantiatingGrpcChannelProvider provider =
+        (InstantiatingGrpcChannelProvider)
+            options
+                .getStorageSettings()
+                .getTransportChannelProvider()
+                .withCredentials(options.getCredentials());
+    assertThat(GrpcChannelTelemetry.resolveEffectiveTarget(provider, true))
+        .isEqualTo("google-c2p:///storage-preprod-direct.sandbox.googleapis.com?force-xds");
+  }
 
-      GrpcStorageOptions unauthenticatedOptions =
-          StorageOptions.grpc()
-              .setAttemptDirectPathXdsOverInterconnect(true)
-              .setCredentials(NoCredentials.getInstance())
-              .build();
-      InstantiatingGrpcChannelProvider unauthenticatedProvider =
-          (InstantiatingGrpcChannelProvider)
-              unauthenticatedOptions.getStorageSettings().getTransportChannelProvider();
-      assertThat(GrpcChannelTelemetry.resolveEffectiveTarget(unauthenticatedProvider, true))
-          .isEqualTo("storage.googleapis.com:443");
-    }
+  @Test
+  public void grpcStorageOptions_noCredentials_fallsBackToCloudPath() throws Exception {
+    assumeDirectPathNotDisabledByEnv();
+    GrpcStorageOptions options =
+        StorageOptions.grpc()
+            .setAttemptDirectPathXdsOverInterconnect(true)
+            .setCredentials(NoCredentials.getInstance())
+            .build();
+    InstantiatingGrpcChannelProvider provider =
+        (InstantiatingGrpcChannelProvider)
+            options.getStorageSettings().getTransportChannelProvider();
+    assertThat(GrpcChannelTelemetry.resolveEffectiveTarget(provider, true))
+        .isEqualTo("storage.googleapis.com:443");
+  }
+
+  private static void assumeDirectPathNotDisabledByEnv() {
+    assumeFalse(Boolean.parseBoolean(System.getenv("GOOGLE_CLOUD_DISABLE_DIRECT_PATH")));
   }
 
   private static final class CapturingLogHandler extends Handler {
@@ -305,9 +332,5 @@ public final class GrpcChannelTelemetryTest {
 
     @Override
     public void close() {}
-
-    void clear() {
-      records.clear();
-    }
   }
 }
