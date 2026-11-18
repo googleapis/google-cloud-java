@@ -662,7 +662,6 @@ final class OpenTelemetryBootstrappingUtils {
     return providerBuilder.build();
   }
 
-  @VisibleForTesting
   static SdkMeterProviderBuilder registerGrpcChannelViews(SdkMeterProviderBuilder providerBuilder) {
     addHistogramView(
         providerBuilder,
@@ -690,11 +689,9 @@ final class OpenTelemetryBootstrappingUtils {
             .histogramBuilder(CHANNEL_CREATION_LATENCY_INSTRUMENT)
             .setDescription(CHANNEL_CREATION_LATENCY_DESCRIPTION)
             .setUnit(CHANNEL_CREATION_LATENCY_UNIT)
+            .setExplicitBucketBoundariesAdvice(latencyHistogramBoundaries())
             .build();
     return (transportType, latency) -> {
-      if (transportType == null || latency == null) {
-        return;
-      }
       double seconds = latency.toNanos() / 1_000_000_000.0;
       histogram.record(seconds, Attributes.of(TRANSPORT_TYPE_KEY, transportType));
     };
