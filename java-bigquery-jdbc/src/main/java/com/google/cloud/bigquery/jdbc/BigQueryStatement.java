@@ -1065,9 +1065,6 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
       BlockingQueue<BigQueryArrowBatchWrapper> arrowBatchWrapperBlockingQueue,
       BigQueryReadClient bqReadClient)
       throws BigQueryJdbcException {
-    if (startOffset < 0) {
-      throw new BigQueryJdbcException("A job stream offset can't be negative: " + startOffset);
-    }
     ReadRowsRequest firstRequest =
         ReadRowsRequest.newBuilder()
             .setReadStream(jobStreamName(jobId))

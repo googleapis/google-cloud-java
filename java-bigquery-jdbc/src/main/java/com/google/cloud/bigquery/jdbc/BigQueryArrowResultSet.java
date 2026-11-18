@@ -366,9 +366,9 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
       }
       initDeserializerIfNeeded(batchWrapper.getArrowSchema());
       ArrowRecordBatch arrowBatch = batchWrapper.getCurrentArrowBatch();
-      long reportedRows = batchWrapper.getReportedRowCount();
+      Long reportedRows = batchWrapper.getReportedRowCount();
       if (arrowBatch == null || arrowBatch.getSerializedRecordBatch().isEmpty()) {
-        if (reportedRows > 0) {
+        if (reportedRows != null && reportedRows > 0) {
           throw rowCountMismatch(reportedRows, 0);
         }
         continue; // no rows in this message
@@ -379,7 +379,7 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
       // Populates vectorSchemaRoot
       this.arrowDeserializer.deserializeArrowBatch(arrowBatch);
       int decodedRows = this.vectorSchemaRoot.getRowCount();
-      if (batchWrapper.hasReportedRowCount() && reportedRows != decodedRows) {
+      if (reportedRows != null && reportedRows != decodedRows) {
         throw rowCountMismatch(reportedRows, decodedRows);
       }
       if (decodedRows > 0) {

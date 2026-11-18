@@ -1802,6 +1802,7 @@ public class BigQueryStatementTest {
     BigQueryArrowBatchWrapper end = queue.poll();
     assertTrue(end.isLast());
     assertNull(end.getException());
+    assertNull(end.getReportedRowCount());
     assertTrue(queue.isEmpty());
   }
 
@@ -1825,15 +1826,10 @@ public class BigQueryStatementTest {
   }
 
   @Test
-  public void testJobStreamReaderRejectsBadArgumentsBeforeStartingAWorker() {
+  public void testJobStreamReaderRejectsIncompleteJobReferenceBeforeStartingAWorker() {
     BlockingQueue<BigQueryArrowBatchWrapper> queue = new LinkedBlockingDeque<>();
     JobId withoutProjectAndLocation = JobId.of("j");
 
-    assertThrows(
-        BigQueryJdbcException.class,
-        () ->
-            bigQueryStatement.populateArrowBufferedQueueFromJobStream(
-                STREAM_JOB_ID, -1L, queue, storageReadClient));
     assertThrows(
         BigQueryJdbcException.class,
         () ->

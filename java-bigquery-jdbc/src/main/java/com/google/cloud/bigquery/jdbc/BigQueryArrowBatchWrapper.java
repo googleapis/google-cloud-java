@@ -22,16 +22,14 @@ import org.apache.arrow.vector.util.JsonStringArrayList;
 
 /** This class acts as a facade layer and wraps Arrow's VectorSchemaRoot & JsonStringArrayList */
 class BigQueryArrowBatchWrapper {
-  private static final long ROW_COUNT_NOT_REPORTED = -1;
-
   // Reference to the current arrowBatch
   private final ArrowRecordBatch currentArrowBatch;
   // Arrow schema carried with this batch, set only when the source sent one (e.g. the first
   // ReadRowsResponse of a stream)
   private final ArrowSchema arrowSchema;
-  // Rows the source reported for this message (ReadRowsResponse.row_count), or -1 when the wrapper
-  // was not built from a stream message (markers, nested records)
-  private final long reportedRowCount;
+  // Rows the source reported for this message (ReadRowsResponse.row_count), or null when the
+  // wrapper was not built from a stream message (markers, nested records)
+  private final Long reportedRowCount;
   // Reference to the nested Records, set as null otherwise (Arrays)
   private final JsonStringArrayList nestedRecords;
 
@@ -43,7 +41,7 @@ class BigQueryArrowBatchWrapper {
   private BigQueryArrowBatchWrapper(
       ArrowRecordBatch currentArrowBatch,
       ArrowSchema arrowSchema,
-      long reportedRowCount,
+      Long reportedRowCount,
       JsonStringArrayList nestedRecords,
       boolean isLast,
       Throwable exception) {
@@ -57,8 +55,7 @@ class BigQueryArrowBatchWrapper {
 
   static BigQueryArrowBatchWrapper of(ArrowRecordBatch currentArrowBatch, boolean... isLast) {
     boolean isLastFlag = isLast != null && isLast.length == 1 && isLast[0];
-    return new BigQueryArrowBatchWrapper(
-        currentArrowBatch, null, ROW_COUNT_NOT_REPORTED, null, isLastFlag, null);
+    return new BigQueryArrowBatchWrapper(currentArrowBatch, null, null, null, isLastFlag, null);
   }
 
   /**
@@ -75,12 +72,11 @@ class BigQueryArrowBatchWrapper {
   static BigQueryArrowBatchWrapper getNestedFieldValueListWrapper(
       JsonStringArrayList nestedRecords, boolean... isLast) {
     boolean isLastFlag = isLast != null && isLast.length == 1 && isLast[0];
-    return new BigQueryArrowBatchWrapper(
-        null, null, ROW_COUNT_NOT_REPORTED, nestedRecords, isLastFlag, null);
+    return new BigQueryArrowBatchWrapper(null, null, null, nestedRecords, isLastFlag, null);
   }
 
   static BigQueryArrowBatchWrapper ofError(Throwable exception) {
-    return new BigQueryArrowBatchWrapper(null, null, ROW_COUNT_NOT_REPORTED, null, true, exception);
+    return new BigQueryArrowBatchWrapper(null, null, null, null, true, exception);
   }
 
   ArrowRecordBatch getCurrentArrowBatch() {
@@ -91,13 +87,11 @@ class BigQueryArrowBatchWrapper {
     return this.arrowSchema;
   }
 
-  /** True if this wrapper was built from a stream message, which always reports a row count. */
-  boolean hasReportedRowCount() {
-    return this.reportedRowCount != ROW_COUNT_NOT_REPORTED;
-  }
-
-  /** Rows the source reported for this message. See {@link #hasReportedRowCount()}. */
-  long getReportedRowCount() {
+  /**
+   * Rows the source reported for this message, or null if this wrapper was not built from a stream
+   * message.
+   */
+  Long getReportedRowCount() {
     return this.reportedRowCount;
   }
 
