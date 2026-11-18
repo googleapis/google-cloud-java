@@ -17,8 +17,10 @@
 package com.google.cloud.bigquery;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
+import com.google.common.collect.ImmutableMap;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
@@ -44,11 +46,14 @@ public class FieldTest {
   private static final String FIELD_DESCRIPTION3 = "FieldDescription3";
   private static final String FIELD_DEFAULT_VALUE_EXPRESSION1 =
       "This is default value for this field";
+  private static final DataGovernanceTagsInfo DATA_GOVERNANCE_TAGS_INFO =
+      DataGovernanceTagsInfo.of(ImmutableMap.of("myProject/pii", "sensitive"));
   private static final Field FIELD_SCHEMA1 =
       Field.newBuilder(FIELD_NAME1, FIELD_TYPE1)
           .setMode(FIELD_MODE1)
           .setDescription(FIELD_DESCRIPTION1)
           .setDefaultValueExpression(FIELD_DEFAULT_VALUE_EXPRESSION1)
+          .setDataGovernanceTagsInfo(DATA_GOVERNANCE_TAGS_INFO)
           .build();
   private static final Field FIELD_SCHEMA2 =
       Field.newBuilder(FIELD_NAME2, FIELD_TYPE2)
@@ -67,6 +72,7 @@ public class FieldTest {
           .setMode(FIELD_MODE1)
           .setDescription(FIELD_DESCRIPTION1)
           .setDefaultValueExpression(FIELD_DEFAULT_VALUE_EXPRESSION1)
+          .setDataGovernanceTagsInfo(DATA_GOVERNANCE_TAGS_INFO)
           .build();
   private static final Field STANDARD_FIELD_SCHEMA2 =
       Field.newBuilder(FIELD_NAME2, StandardSQLTypeName.INT64)
@@ -151,6 +157,8 @@ public class FieldTest {
     assertEquals(FIELD_MODE1, FIELD_SCHEMA1.getMode());
     assertEquals(FIELD_DESCRIPTION1, FIELD_SCHEMA1.getDescription());
     assertEquals(FIELD_DEFAULT_VALUE_EXPRESSION1, FIELD_SCHEMA1.getDefaultValueExpression());
+    assertEquals(DATA_GOVERNANCE_TAGS_INFO, FIELD_SCHEMA1.getDataGovernanceTagsInfo());
+    assertNull(FIELD_SCHEMA2.getDataGovernanceTagsInfo());
     assertEquals(null, FIELD_SCHEMA1.getSubFields());
     assertEquals(FIELD_NAME3, FIELD_SCHEMA3.getName());
     assertEquals(FIELD_TYPE3, FIELD_SCHEMA3.getType());
@@ -166,6 +174,7 @@ public class FieldTest {
     assertEquals(FIELD_MODE1, STANDARD_FIELD_SCHEMA1.getMode());
     assertEquals(FIELD_DESCRIPTION1, STANDARD_FIELD_SCHEMA1.getDescription());
     assertEquals(FIELD_DEFAULT_VALUE_EXPRESSION1, FIELD_SCHEMA1.getDefaultValueExpression());
+    assertEquals(DATA_GOVERNANCE_TAGS_INFO, STANDARD_FIELD_SCHEMA1.getDataGovernanceTagsInfo());
     assertEquals(null, STANDARD_FIELD_SCHEMA1.getSubFields());
     assertEquals(FIELD_NAME3, STANDARD_FIELD_SCHEMA3.getName());
     assertEquals(FIELD_TYPE3, STANDARD_FIELD_SCHEMA3.getType());
@@ -185,6 +194,11 @@ public class FieldTest {
     compareFieldSchemas(FIELD_SCHEMA3, Field.fromPb(FIELD_SCHEMA3.toPb()));
     Field field = Field.newBuilder(FIELD_NAME1, FIELD_TYPE1).build();
     compareFieldSchemas(field, Field.fromPb(field.toPb()));
+    Field clearTagsField =
+        Field.newBuilder(FIELD_NAME1, FIELD_TYPE1)
+            .setDataGovernanceTagsInfo(DataGovernanceTagsInfo.newBuilder().build())
+            .build();
+    compareFieldSchemas(clearTagsField, Field.fromPb(clearTagsField.toPb()));
   }
 
   @Test
@@ -234,6 +248,7 @@ public class FieldTest {
     assertEquals(expected.getType(), value.getType());
     assertEquals(expected.getMode(), value.getMode());
     assertEquals(expected.getDescription(), value.getDescription());
+    assertEquals(expected.getDataGovernanceTagsInfo(), value.getDataGovernanceTagsInfo());
     assertEquals(expected.getSubFields(), value.getSubFields());
   }
 }
