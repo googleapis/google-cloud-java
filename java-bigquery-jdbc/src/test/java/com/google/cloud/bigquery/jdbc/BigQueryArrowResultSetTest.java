@@ -21,6 +21,7 @@ import static com.google.cloud.bigquery.jdbc.utils.ArrowUtilities.serializeVecto
 import static com.google.common.truth.Truth.assertThat;
 import static org.apache.arrow.vector.types.Types.MinorType.INT;
 import static org.apache.arrow.vector.types.Types.MinorType.VARCHAR;
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.mock;
@@ -239,8 +240,8 @@ public class BigQueryArrowResultSetTest {
         ArrowRecordBatch.newBuilder()
             .setSerializedRecordBatch(serializeVectorSchemaRoot(vectorSchemaRoot))
             .build();
-    arrowBatchWrapper = BigQueryArrowBatchWrapper.of(batch);
-    arrowBatchWrapperLast = BigQueryArrowBatchWrapper.of(null, true); // last flag
+    arrowBatchWrapper = BigQueryArrowBatchWrapper.of(batch, null, vectorSchemaRoot.getRowCount());
+    arrowBatchWrapperLast = BigQueryArrowBatchWrapper.ofEndOfStream(); // last flag
     buffer.add(arrowBatchWrapper);
     buffer.add(arrowBatchWrapperLast);
     bufferWithTwoRows.add(arrowBatchWrapper);
@@ -503,8 +504,8 @@ public class BigQueryArrowResultSetTest {
             .setSerializedRecordBatch(serializeVectorSchemaRoot(root))
             .build();
     BlockingQueue<BigQueryArrowBatchWrapper> picosBuffer = new LinkedBlockingDeque<>();
-    picosBuffer.add(BigQueryArrowBatchWrapper.of(batch));
-    picosBuffer.add(BigQueryArrowBatchWrapper.of(null, true));
+    picosBuffer.add(BigQueryArrowBatchWrapper.of(batch, null, root.getRowCount()));
+    picosBuffer.add(BigQueryArrowBatchWrapper.ofEndOfStream());
 
     BigQueryStatement picosStmt = mock(BigQueryStatement.class);
     doReturn(true).when(picosStmt).isEnableTimestampPicos();
@@ -542,8 +543,8 @@ public class BigQueryArrowResultSetTest {
             .setSerializedRecordBatch(serializeVectorSchemaRoot(root))
             .build();
     BlockingQueue<BigQueryArrowBatchWrapper> picosBuffer = new LinkedBlockingDeque<>();
-    picosBuffer.add(BigQueryArrowBatchWrapper.of(batch));
-    picosBuffer.add(BigQueryArrowBatchWrapper.of(null, true));
+    picosBuffer.add(BigQueryArrowBatchWrapper.of(batch, null, root.getRowCount()));
+    picosBuffer.add(BigQueryArrowBatchWrapper.ofEndOfStream());
 
     BigQueryStatement disabledStmt = mock(BigQueryStatement.class);
     doReturn(false).when(disabledStmt).isEnableTimestampPicos();
@@ -576,8 +577,8 @@ public class BigQueryArrowResultSetTest {
             .setSerializedRecordBatch(serializeVectorSchemaRoot(root))
             .build();
     BlockingQueue<BigQueryArrowBatchWrapper> picosBuffer = new LinkedBlockingDeque<>();
-    picosBuffer.add(BigQueryArrowBatchWrapper.of(batch));
-    picosBuffer.add(BigQueryArrowBatchWrapper.of(null, true));
+    picosBuffer.add(BigQueryArrowBatchWrapper.of(batch, null, root.getRowCount()));
+    picosBuffer.add(BigQueryArrowBatchWrapper.ofEndOfStream());
 
     BigQueryStatement picosStmt = mock(BigQueryStatement.class);
     doReturn(true).when(picosStmt).isEnableTimestampPicos();
@@ -624,8 +625,8 @@ public class BigQueryArrowResultSetTest {
             .setSerializedRecordBatch(serializeVectorSchemaRoot(root))
             .build();
     BlockingQueue<BigQueryArrowBatchWrapper> arrowBuffer = new LinkedBlockingDeque<>();
-    arrowBuffer.add(BigQueryArrowBatchWrapper.of(batch));
-    arrowBuffer.add(BigQueryArrowBatchWrapper.of(null, true));
+    arrowBuffer.add(BigQueryArrowBatchWrapper.of(batch, null, root.getRowCount()));
+    arrowBuffer.add(BigQueryArrowBatchWrapper.ofEndOfStream());
 
     Schema schema =
         Schema.of(
@@ -776,8 +777,8 @@ public class BigQueryArrowResultSetTest {
               .setSerializedRecordBatch(serializeVectorSchemaRoot(root))
               .build();
       BlockingQueue<BigQueryArrowBatchWrapper> picosBuffer = new LinkedBlockingDeque<>();
-      picosBuffer.add(BigQueryArrowBatchWrapper.of(batch));
-      picosBuffer.add(BigQueryArrowBatchWrapper.of(null, true));
+      picosBuffer.add(BigQueryArrowBatchWrapper.of(batch, null, root.getRowCount()));
+      picosBuffer.add(BigQueryArrowBatchWrapper.ofEndOfStream());
 
       BigQueryStatement picosStmt = mock(BigQueryStatement.class);
       doReturn(true).when(picosStmt).isEnableTimestampPicos();
@@ -866,8 +867,9 @@ public class BigQueryArrowResultSetTest {
         .build();
   }
 
+  /** A stream message that reports as many rows as its batch holds. */
   private static BigQueryArrowBatchWrapper idWrapper(int... ids) throws IOException {
-    return BigQueryArrowBatchWrapper.of(idBatch(ids));
+    return idMessage(ids.length, ids);
   }
 
   /** A stream message: the ids as an Arrow batch, and the row count the message reports. */
@@ -945,7 +947,121 @@ public class BigQueryArrowResultSetTest {
                     .substring(0, whole.getSerializedRecordBatch().size() / 2))
             .build();
 
-    assertStreamFailsOn(BigQueryArrowBatchWrapper.of(truncated));
+    SQLException e = assertStreamFailsOn(BigQueryArrowBatchWrapper.of(truncated, null, 2));
+    // The decoding failed, not the row-count check.
+    assertThat(e.getCause().getCause()).isNotNull();
+    assertThat(e.getCause().getMessage()).doesNotContain("reported");
+  }
+
+  @Test
+  public void testFirstBatchFailureEndsIteration() throws SQLException, IOException {
+    // No batch was decoded before the failing one.
+    BigQueryArrowResultSet rs =
+        idResultSet(
+            idArrowSchema(), 2, idMessage(3, 1, 2), idMessage(2, 3, 4), arrowBatchWrapperLast);
+
+    SQLException e = assertThrows(SQLException.class, rs::next);
+    assertThat(e.getCause().getMessage()).contains("reported 3 rows but its batch has 2");
+    // The rejected batch was not loaded.
+    assertThat(rs.getAllocatedMemory()).isEqualTo(0L);
+    assertThrows(SQLException.class, () -> rs.getLong(1));
+    assertThat(rs.next()).isFalse();
+  }
+
+  @Test
+  public void testFailureReleasesTheBatchReadBefore() throws SQLException, IOException {
+    BigQueryArrowResultSet rs =
+        idResultSet(idArrowSchema(), 3, idMessage(1, 1), idMessage(3, 1, 2), arrowBatchWrapperLast);
+    assertThat(rs.next()).isTrue();
+
+    SQLException e = assertThrows(SQLException.class, rs::next);
+    assertThat(e.getCause().getMessage()).contains("reported 3 rows but its batch has 2");
+    // Neither the rejected batch nor the one read before it is held.
+    assertThat(rs.getAllocatedMemory()).isEqualTo(0L);
+  }
+
+  /** Two rows in two columns. The one-column id schema can't load it. */
+  private static ArrowRecordBatch twoColumnBatch() throws IOException {
+    VectorSchemaRoot twoColumns =
+        new VectorSchemaRoot(
+            ImmutableList.<FieldVector>of(idRoot(1, 2).getVector(0), idRoot(3, 4).getVector(0)));
+    twoColumns.setRowCount(2);
+    return ArrowRecordBatch.newBuilder()
+        .setSerializedRecordBatch(serializeVectorSchemaRoot(twoColumns))
+        .build();
+  }
+
+  @Test
+  public void testBatchThatFailsWhileLoadingIsReleased() throws SQLException, IOException {
+    // The first column is loaded before the batch fails on the second.
+    BigQueryArrowResultSet rs =
+        idResultSet(
+            idArrowSchema(),
+            2,
+            BigQueryArrowBatchWrapper.of(twoColumnBatch(), null, 2),
+            arrowBatchWrapperLast);
+
+    SQLException e = assertThrows(SQLException.class, rs::next);
+    assertThat(e.getCause().getMessage()).doesNotContain("reported");
+    assertThat(rs.getAllocatedMemory()).isEqualTo(0L);
+  }
+
+  @Test
+  public void testRowCountIsCheckedBeforeTheBatchIsLoaded() throws SQLException, IOException {
+    // The batch can't be loaded either, but its wrong row count is found first.
+    BigQueryArrowResultSet rs =
+        idResultSet(
+            idArrowSchema(),
+            3,
+            BigQueryArrowBatchWrapper.of(twoColumnBatch(), null, 3),
+            arrowBatchWrapperLast);
+
+    SQLException e = assertThrows(SQLException.class, rs::next);
+    assertThat(e.getCause().getMessage()).contains("reported 3 rows but its batch has 2");
+  }
+
+  @Test
+  public void testBatchIsReleasedAtTheRowLimit() throws SQLException, IOException {
+    BigQueryArrowResultSet rs =
+        idResultSet(idArrowSchema(), 1, idWrapper(1, 2), arrowBatchWrapperLast);
+    assertThat(rs.next()).isTrue();
+    assertThat(rs.getAllocatedMemory()).isGreaterThan(0L);
+
+    assertThat(rs.next()).isFalse();
+    assertThat(rs.getAllocatedMemory()).isEqualTo(0L);
+  }
+
+  @Test
+  public void testBatchIsReleasedAtTheEndOfTheStream() throws SQLException, IOException {
+    BigQueryArrowResultSet rs =
+        idResultSet(idArrowSchema(), 3, idWrapper(1, 2), arrowBatchWrapperLast);
+    assertThat(rs.next()).isTrue();
+    assertThat(rs.next()).isTrue();
+
+    // The stream ends a row short. The last batch is released before that is reported.
+    assertThrows(SQLException.class, rs::next);
+    assertThat(rs.getAllocatedMemory()).isEqualTo(0L);
+  }
+
+  @Test
+  public void testCloseReleasesTheBatchUnderTheCursor() throws SQLException, IOException {
+    BigQueryArrowResultSet rs =
+        idResultSet(idArrowSchema(), 2, idWrapper(1, 2), arrowBatchWrapperLast);
+    assertThat(rs.next()).isTrue();
+
+    // The allocator fails to close while a batch still holds its buffers.
+    assertDoesNotThrow(rs::close);
+    assertThat(rs.isClosed()).isTrue();
+  }
+
+  @Test
+  public void testEndAndCloseWithoutASchema() throws SQLException {
+    // No schema arrived, so there is no deserializer and nothing was decoded.
+    BigQueryArrowResultSet rs = idResultSet(null, 0, arrowBatchWrapperLast);
+
+    assertThat(rs.next()).isFalse();
+    assertDoesNotThrow(rs::close);
+    assertThat(rs.isClosed()).isTrue();
   }
 
   @Test
@@ -977,9 +1093,9 @@ public class BigQueryArrowResultSetTest {
 
   @Test
   public void testMessagesWithoutRowsAreSkipped() throws SQLException, IOException {
-    BigQueryArrowBatchWrapper noBatch = BigQueryArrowBatchWrapper.of(null);
+    BigQueryArrowBatchWrapper noBatch = BigQueryArrowBatchWrapper.of(null, null, 0);
     BigQueryArrowBatchWrapper emptyBatch =
-        BigQueryArrowBatchWrapper.of(ArrowRecordBatch.getDefaultInstance());
+        BigQueryArrowBatchWrapper.of(ArrowRecordBatch.getDefaultInstance(), null, 0);
     BigQueryArrowResultSet rs =
         idResultSet(
             idArrowSchema(),

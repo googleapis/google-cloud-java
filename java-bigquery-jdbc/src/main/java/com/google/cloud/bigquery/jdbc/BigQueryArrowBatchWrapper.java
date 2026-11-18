@@ -16,8 +16,10 @@
 
 package com.google.cloud.bigquery.jdbc;
 
+import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import com.google.cloud.bigquery.storage.v1.ArrowRecordBatch;
 import com.google.cloud.bigquery.storage.v1.ArrowSchema;
+import com.google.common.annotations.VisibleForTesting;
 import org.apache.arrow.vector.util.JsonStringArrayList;
 
 /** This class acts as a facade layer and wraps Arrow's VectorSchemaRoot & JsonStringArrayList */
@@ -53,9 +55,9 @@ class BigQueryArrowBatchWrapper {
     this.exception = exception;
   }
 
-  static BigQueryArrowBatchWrapper of(ArrowRecordBatch currentArrowBatch, boolean... isLast) {
-    boolean isLastFlag = isLast != null && isLast.length == 1 && isLast[0];
-    return new BigQueryArrowBatchWrapper(currentArrowBatch, null, null, null, isLastFlag, null);
+  /** Marks the end of the stream. It carries no data. */
+  static BigQueryArrowBatchWrapper ofEndOfStream() {
+    return new BigQueryArrowBatchWrapper(null, null, null, null, true, null);
   }
 
   /**
@@ -70,9 +72,8 @@ class BigQueryArrowBatchWrapper {
   }
 
   static BigQueryArrowBatchWrapper getNestedFieldValueListWrapper(
-      JsonStringArrayList nestedRecords, boolean... isLast) {
-    boolean isLastFlag = isLast != null && isLast.length == 1 && isLast[0];
-    return new BigQueryArrowBatchWrapper(null, null, null, nestedRecords, isLastFlag, null);
+      JsonStringArrayList nestedRecords) {
+    return new BigQueryArrowBatchWrapper(null, null, null, nestedRecords, false, null);
   }
 
   static BigQueryArrowBatchWrapper ofError(Throwable exception) {
@@ -91,8 +92,42 @@ class BigQueryArrowBatchWrapper {
    * Rows the source reported for this message, or null if this wrapper was not built from a stream
    * message.
    */
+  @VisibleForTesting
   Long getReportedRowCount() {
     return this.reportedRowCount;
+  }
+
+  /**
+   * True if this stream message carries record batch data. A schema, statistics or throttling
+   * update carries none.
+   */
+  boolean hasBatchData() {
+    return this.currentArrowBatch != null
+        && !this.currentArrowBatch.getSerializedRecordBatch().isEmpty();
+  }
+
+  /**
+   * Checks what this wrapper can check about itself before its batch is decoded: without batch data
+   * it holds no rows, so it must not report any.
+   */
+  void validate() throws BigQueryJdbcException {
+    if (!hasBatchData()) {
+      checkRowCount(0);
+    }
+  }
+
+  /**
+   * Fails unless this message reports exactly {@code actualRows}, the rows its record batch holds.
+   * A wrapper that is not a stream message reports no count, so there is nothing to check.
+   */
+  void checkRowCount(int actualRows) throws BigQueryJdbcException {
+    if (this.reportedRowCount == null || this.reportedRowCount == actualRows) {
+      return;
+    }
+    throw new BigQueryJdbcException(
+        String.format(
+            "An Arrow stream message reported %d rows but its batch has %d.",
+            this.reportedRowCount, actualRows));
   }
 
   JsonStringArrayList getNestedRecords() {
