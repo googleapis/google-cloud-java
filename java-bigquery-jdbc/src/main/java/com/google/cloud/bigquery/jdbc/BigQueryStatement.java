@@ -771,9 +771,17 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     return null;
   }
 
-  void handleQueryResult(String query, TableResult results, SqlType queryType)
-      throws SQLException, InterruptedException {
-    handleQueryResult(query, results, queryType, null);
+  SqlType handleQueryResult(String query, Job job) throws SQLException, InterruptedException {
+    JobStatistics statistics = job.getStatistics();
+    StatementType statementType =
+        (statistics instanceof QueryStatistics)
+            ? ((QueryStatistics) statistics).getStatementType()
+            : null;
+    SqlType sqlType = getQueryType(job.getConfiguration(), statementType);
+    TableResult results =
+        job.getQueryResults(QueryResultsOption.pageSize(querySettings.getMaxResultPerPage()));
+    handleQueryResult(query, results, sqlType, job);
+    return sqlType;
   }
 
   void handleQueryResult(String query, TableResult results, SqlType queryType, Job job)
@@ -819,10 +827,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
           if (currentJob == null) {
             return;
           }
-          StatementType statementType =
-              ((QueryStatistics) (currentJob.getStatistics())).getStatementType();
-          SqlType sqlType = getQueryType(currentJob.getConfiguration(), statementType);
-          handleQueryResult(query, currentJob.getQueryResults(), sqlType, currentJob);
+          handleQueryResult(query, currentJob);
         } catch (NullPointerException ex) {
           throw new BigQueryJdbcException(ex);
         }
@@ -907,7 +912,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     LOG.finer("++enter++");
 
     // set the resultset
-    long totalRows = (getMaxRows() > 0) ? getMaxRows() : results.getTotalRows();
+    long totalRows = getEffectiveTotalRows(results);
     JobId currentJobId = results.getJobId();
     TableId destinationTable = getDestinationTable(currentJobId);
     Schema schema = results.getSchema();
@@ -1198,11 +1203,20 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     return totalRows / pageSize > querySettings.getHighThroughputActivationRatio();
   }
 
+  /**
+   * Number of rows the result set returns: the query's total, capped by {@link #setMaxRows(int)}.
+   */
+  @VisibleForTesting
+  long getEffectiveTotalRows(TableResult results) {
+    long totalRows = results.getTotalRows();
+    return getMaxRows() > 0 ? Math.min(getMaxRows(), totalRows) : totalRows;
+  }
+
   BigQueryJsonResultSet processJsonResultSet(TableResult results, Job job) throws SQLException {
     List<Future<?>> taskList = new ArrayList<>();
 
     Schema schema = results.getSchema();
-    long totalRows = (getMaxRows() > 0) ? getMaxRows() : results.getTotalRows();
+    long totalRows = getEffectiveTotalRows(results);
     this.bigQueryFieldValueListWrapperBlockingQueue = new LinkedBlockingDeque<>(getBufferSize());
     BlockingQueue<Tuple<TableResult, Boolean>> rpcResponseQueue =
         new LinkedBlockingDeque<>(getPageCacheSize(getBufferSize(), schema));
@@ -1847,12 +1861,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
 
       Job currentJob = getNextJob();
       if (currentJob != null) {
-        StatementType statementType =
-            ((QueryStatistics) (currentJob.getStatistics())).getStatementType();
-        SqlType sqlType = getQueryType(currentJob.getConfiguration(), statementType);
-        handleQueryResult(this.scriptQuery, currentJob.getQueryResults(), sqlType, currentJob);
-
-        return sqlType == SqlType.SELECT;
+        return handleQueryResult(this.scriptQuery, currentJob) == SqlType.SELECT;
       } else {
         resetStatementFields();
         return false;

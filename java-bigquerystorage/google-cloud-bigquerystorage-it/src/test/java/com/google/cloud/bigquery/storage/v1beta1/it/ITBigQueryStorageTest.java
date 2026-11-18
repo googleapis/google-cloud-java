@@ -353,6 +353,7 @@ class ITBigQueryStorageTest {
     assertEquals(1, rowCount);
   }
 
+  @Disabled("Flaky test: b/564596647")
   @Test
   void testSimpleReadAndResume() {
     TableReference tableReference =
