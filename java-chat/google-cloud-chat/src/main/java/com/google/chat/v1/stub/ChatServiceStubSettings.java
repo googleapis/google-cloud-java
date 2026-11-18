@@ -139,6 +139,7 @@ import com.google.chat.v1.UpdateSectionRequest;
 import com.google.chat.v1.UpdateSpaceNotificationSettingRequest;
 import com.google.chat.v1.UpdateSpaceReadStateRequest;
 import com.google.chat.v1.UpdateSpaceRequest;
+import com.google.chat.v1.UpdateThreadReadStateRequest;
 import com.google.chat.v1.UploadAttachmentRequest;
 import com.google.chat.v1.UploadAttachmentResponse;
 import com.google.common.collect.ImmutableList;
@@ -309,6 +310,8 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
       getSpaceReadStateSettings;
   private final UnaryCallSettings<UpdateSpaceReadStateRequest, SpaceReadState>
       updateSpaceReadStateSettings;
+  private final UnaryCallSettings<UpdateThreadReadStateRequest, ThreadReadState>
+      updateThreadReadStateSettings;
   private final UnaryCallSettings<GetThreadReadStateRequest, ThreadReadState>
       getThreadReadStateSettings;
   private final UnaryCallSettings<GetAvailabilityRequest, Availability> getAvailabilitySettings;
@@ -1172,6 +1175,12 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
     return updateSpaceReadStateSettings;
   }
 
+  /** Returns the object with the settings used for calls to updateThreadReadState. */
+  public UnaryCallSettings<UpdateThreadReadStateRequest, ThreadReadState>
+      updateThreadReadStateSettings() {
+    return updateThreadReadStateSettings;
+  }
+
   /** Returns the object with the settings used for calls to getThreadReadState. */
   public UnaryCallSettings<GetThreadReadStateRequest, ThreadReadState>
       getThreadReadStateSettings() {
@@ -1419,6 +1428,7 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
     deleteCustomEmojiSettings = settingsBuilder.deleteCustomEmojiSettings().build();
     getSpaceReadStateSettings = settingsBuilder.getSpaceReadStateSettings().build();
     updateSpaceReadStateSettings = settingsBuilder.updateSpaceReadStateSettings().build();
+    updateThreadReadStateSettings = settingsBuilder.updateThreadReadStateSettings().build();
     getThreadReadStateSettings = settingsBuilder.getThreadReadStateSettings().build();
     getAvailabilitySettings = settingsBuilder.getAvailabilitySettings().build();
     markAsActiveSettings = settingsBuilder.markAsActiveSettings().build();
@@ -1519,6 +1529,8 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
         getSpaceReadStateSettings;
     private final UnaryCallSettings.Builder<UpdateSpaceReadStateRequest, SpaceReadState>
         updateSpaceReadStateSettings;
+    private final UnaryCallSettings.Builder<UpdateThreadReadStateRequest, ThreadReadState>
+        updateThreadReadStateSettings;
     private final UnaryCallSettings.Builder<GetThreadReadStateRequest, ThreadReadState>
         getThreadReadStateSettings;
     private final UnaryCallSettings.Builder<GetAvailabilityRequest, Availability>
@@ -1630,6 +1642,7 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
       deleteCustomEmojiSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getSpaceReadStateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateSpaceReadStateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateThreadReadStateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getThreadReadStateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getAvailabilitySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       markAsActiveSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -1686,6 +1699,7 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
               deleteCustomEmojiSettings,
               getSpaceReadStateSettings,
               updateSpaceReadStateSettings,
+              updateThreadReadStateSettings,
               getThreadReadStateSettings,
               getAvailabilitySettings,
               markAsActiveSettings,
@@ -1745,6 +1759,7 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
       deleteCustomEmojiSettings = settings.deleteCustomEmojiSettings.toBuilder();
       getSpaceReadStateSettings = settings.getSpaceReadStateSettings.toBuilder();
       updateSpaceReadStateSettings = settings.updateSpaceReadStateSettings.toBuilder();
+      updateThreadReadStateSettings = settings.updateThreadReadStateSettings.toBuilder();
       getThreadReadStateSettings = settings.getThreadReadStateSettings.toBuilder();
       getAvailabilitySettings = settings.getAvailabilitySettings.toBuilder();
       markAsActiveSettings = settings.markAsActiveSettings.toBuilder();
@@ -1803,6 +1818,7 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
               deleteCustomEmojiSettings,
               getSpaceReadStateSettings,
               updateSpaceReadStateSettings,
+              updateThreadReadStateSettings,
               getThreadReadStateSettings,
               getAvailabilitySettings,
               markAsActiveSettings,
@@ -2020,6 +2036,11 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
 
       builder
           .updateSpaceReadStateSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .updateThreadReadStateSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -2330,6 +2351,12 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
     public UnaryCallSettings.Builder<UpdateSpaceReadStateRequest, SpaceReadState>
         updateSpaceReadStateSettings() {
       return updateSpaceReadStateSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateThreadReadState. */
+    public UnaryCallSettings.Builder<UpdateThreadReadStateRequest, ThreadReadState>
+        updateThreadReadStateSettings() {
+      return updateThreadReadStateSettings;
     }
 
     /** Returns the builder for the settings used for calls to getThreadReadState. */

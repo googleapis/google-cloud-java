@@ -475,6 +475,52 @@ public interface SpokeOrBuilder
    *
    *
    * <pre>
+   * Optional. This is a gateway that can apply specialized processing to
+   * traffic going through it.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkconnectivity.v1.Gateway gateway = 24 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the gateway field is set.
+   */
+  boolean hasGateway();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This is a gateway that can apply specialized processing to
+   * traffic going through it.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkconnectivity.v1.Gateway gateway = 24 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The gateway.
+   */
+  com.google.cloud.networkconnectivity.v1.Gateway getGateway();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This is a gateway that can apply specialized processing to
+   * traffic going through it.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkconnectivity.v1.Gateway gateway = 24 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.networkconnectivity.v1.GatewayOrBuilder getGatewayOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. The linked producer VPC that is associated with the spoke.
    * </pre>
    *
@@ -705,11 +751,11 @@ public interface SpokeOrBuilder
    *
    *
    * <pre>
-   * Optional. The list of fields waiting for hub administration's approval.
+   * Output only. The list of fields waiting for hub administrator's approval.
    * </pre>
    *
    * <code>
-   * repeated string field_paths_pending_update = 28 [(.google.api.field_behavior) = OPTIONAL];
+   * repeated string field_paths_pending_update = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return A list containing the fieldPathsPendingUpdate.
@@ -720,11 +766,11 @@ public interface SpokeOrBuilder
    *
    *
    * <pre>
-   * Optional. The list of fields waiting for hub administration's approval.
+   * Output only. The list of fields waiting for hub administrator's approval.
    * </pre>
    *
    * <code>
-   * repeated string field_paths_pending_update = 28 [(.google.api.field_behavior) = OPTIONAL];
+   * repeated string field_paths_pending_update = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return The count of fieldPathsPendingUpdate.
@@ -735,11 +781,11 @@ public interface SpokeOrBuilder
    *
    *
    * <pre>
-   * Optional. The list of fields waiting for hub administration's approval.
+   * Output only. The list of fields waiting for hub administrator's approval.
    * </pre>
    *
    * <code>
-   * repeated string field_paths_pending_update = 28 [(.google.api.field_behavior) = OPTIONAL];
+   * repeated string field_paths_pending_update = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @param index The index of the element to return.
@@ -751,11 +797,11 @@ public interface SpokeOrBuilder
    *
    *
    * <pre>
-   * Optional. The list of fields waiting for hub administration's approval.
+   * Output only. The list of fields waiting for hub administrator's approval.
    * </pre>
    *
    * <code>
-   * repeated string field_paths_pending_update = 28 [(.google.api.field_behavior) = OPTIONAL];
+   * repeated string field_paths_pending_update = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @param index The index of the value to return.

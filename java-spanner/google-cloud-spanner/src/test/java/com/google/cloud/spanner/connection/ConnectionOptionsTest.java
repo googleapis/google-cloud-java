@@ -1155,8 +1155,8 @@ public class ConnectionOptionsTest {
           assertEquals(ErrorCode.FAILED_PRECONDITION, exception.getErrorCode());
           assertEquals(
               "FAILED_PRECONDITION: credentialsProvider can only be used if the system property"
-                  + " ENABLE_CREDENTIALS_PROVIDER has been set to true. Start the application with the"
-                  + " JVM command line option -DENABLE_CREDENTIALS_PROVIDER=true",
+                  + " ENABLE_CREDENTIALS_PROVIDER has been set to true. Start the application with"
+                  + " the JVM command line option -DENABLE_CREDENTIALS_PROVIDER=true",
               exception.getMessage());
         });
   }
@@ -1203,8 +1203,8 @@ public class ConnectionOptionsTest {
           assertEquals(ErrorCode.FAILED_PRECONDITION, exception.getErrorCode());
           assertEquals(
               "FAILED_PRECONDITION: credentialsProvider can only be used if the system property"
-                  + " ENABLE_CREDENTIALS_PROVIDER has been set to true. Start the application with the"
-                  + " JVM command line option -DENABLE_CREDENTIALS_PROVIDER=true",
+                  + " ENABLE_CREDENTIALS_PROVIDER has been set to true. Start the application with"
+                  + " the JVM command line option -DENABLE_CREDENTIALS_PROVIDER=true",
               exception.getMessage());
         });
   }
@@ -1262,7 +1262,8 @@ public class ConnectionOptionsTest {
               exception
                   .getMessage()
                   .contains(
-                      "Unknown or invalid CredentialsProvider class name: com.google.cloud.spanner.connection.NonExistentClass"));
+                      "Unknown or invalid CredentialsProvider class name:"
+                          + " com.google.cloud.spanner.connection.NonExistentClass"));
         });
   }
 
@@ -1487,7 +1488,8 @@ public class ConnectionOptionsTest {
               exception
                   .getMessage()
                   .contains(
-                      "Unknown or invalid ExternalChannelProvider class name: com.google.cloud.spanner.connection.NonExistentClass"));
+                      "Unknown or invalid ExternalChannelProvider class name:"
+                          + " com.google.cloud.spanner.connection.NonExistentClass"));
         });
   }
 

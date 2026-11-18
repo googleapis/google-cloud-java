@@ -2636,6 +2636,49 @@ public class ChatServiceClientTest {
   }
 
   @Test
+  public void updateThreadReadStateTest() throws Exception {
+    ThreadReadState expectedResponse =
+        ThreadReadState.newBuilder()
+            .setName(ThreadReadStateName.of("[USER]", "[SPACE]", "[THREAD]").toString())
+            .setLastReadTime(Timestamp.newBuilder().build())
+            .build();
+    mockChatService.addResponse(expectedResponse);
+
+    ThreadReadState threadReadState = ThreadReadState.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    ThreadReadState actualResponse = client.updateThreadReadState(threadReadState, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockChatService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateThreadReadStateRequest actualRequest =
+        ((UpdateThreadReadStateRequest) actualRequests.get(0));
+
+    Assert.assertEquals(threadReadState, actualRequest.getThreadReadState());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateThreadReadStateExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockChatService.addException(exception);
+
+    try {
+      ThreadReadState threadReadState = ThreadReadState.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateThreadReadState(threadReadState, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void getThreadReadStateTest() throws Exception {
     ThreadReadState expectedResponse =
         ThreadReadState.newBuilder()

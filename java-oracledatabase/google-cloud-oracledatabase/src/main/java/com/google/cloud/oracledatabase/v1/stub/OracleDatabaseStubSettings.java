@@ -262,6 +262,7 @@ import com.google.cloud.oracledatabase.v1.UpdateExascaleDbStorageVaultRequest;
 import com.google.cloud.oracledatabase.v1.UpdateGoldengateConnectionAssignmentRequest;
 import com.google.cloud.oracledatabase.v1.UpdateGoldengateConnectionRequest;
 import com.google.cloud.oracledatabase.v1.UpdateGoldengateDeploymentRequest;
+import com.google.cloud.oracledatabase.v1.UpdateOdbDnsZoneRequest;
 import com.google.cloud.oracledatabase.v1.UpdateOdbNetworkRequest;
 import com.google.cloud.oracledatabase.v1.UpdateOdbSubnetRequest;
 import com.google.common.collect.ImmutableList;
@@ -560,6 +561,9 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
   private final UnaryCallSettings<CreateOdbDnsZoneRequest, Operation> createOdbDnsZoneSettings;
   private final OperationCallSettings<CreateOdbDnsZoneRequest, OdbDnsZone, OperationMetadata>
       createOdbDnsZoneOperationSettings;
+  private final UnaryCallSettings<UpdateOdbDnsZoneRequest, Operation> updateOdbDnsZoneSettings;
+  private final OperationCallSettings<UpdateOdbDnsZoneRequest, OdbDnsZone, OperationMetadata>
+      updateOdbDnsZoneOperationSettings;
   private final UnaryCallSettings<DeleteOdbDnsZoneRequest, Operation> deleteOdbDnsZoneSettings;
   private final OperationCallSettings<DeleteOdbDnsZoneRequest, Empty, OperationMetadata>
       deleteOdbDnsZoneOperationSettings;
@@ -3563,6 +3567,17 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
     return createOdbDnsZoneOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to updateOdbDnsZone. */
+  public UnaryCallSettings<UpdateOdbDnsZoneRequest, Operation> updateOdbDnsZoneSettings() {
+    return updateOdbDnsZoneSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateOdbDnsZone. */
+  public OperationCallSettings<UpdateOdbDnsZoneRequest, OdbDnsZone, OperationMetadata>
+      updateOdbDnsZoneOperationSettings() {
+    return updateOdbDnsZoneOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to deleteOdbDnsZone. */
   public UnaryCallSettings<DeleteOdbDnsZoneRequest, Operation> deleteOdbDnsZoneSettings() {
     return deleteOdbDnsZoneSettings;
@@ -4339,6 +4354,8 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
     getOdbDnsZoneSettings = settingsBuilder.getOdbDnsZoneSettings().build();
     createOdbDnsZoneSettings = settingsBuilder.createOdbDnsZoneSettings().build();
     createOdbDnsZoneOperationSettings = settingsBuilder.createOdbDnsZoneOperationSettings().build();
+    updateOdbDnsZoneSettings = settingsBuilder.updateOdbDnsZoneSettings().build();
+    updateOdbDnsZoneOperationSettings = settingsBuilder.updateOdbDnsZoneOperationSettings().build();
     deleteOdbDnsZoneSettings = settingsBuilder.deleteOdbDnsZoneSettings().build();
     deleteOdbDnsZoneOperationSettings = settingsBuilder.deleteOdbDnsZoneOperationSettings().build();
     listExadbVmClustersSettings = settingsBuilder.listExadbVmClustersSettings().build();
@@ -4697,6 +4714,11 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
     private final OperationCallSettings.Builder<
             CreateOdbDnsZoneRequest, OdbDnsZone, OperationMetadata>
         createOdbDnsZoneOperationSettings;
+    private final UnaryCallSettings.Builder<UpdateOdbDnsZoneRequest, Operation>
+        updateOdbDnsZoneSettings;
+    private final OperationCallSettings.Builder<
+            UpdateOdbDnsZoneRequest, OdbDnsZone, OperationMetadata>
+        updateOdbDnsZoneOperationSettings;
     private final UnaryCallSettings.Builder<DeleteOdbDnsZoneRequest, Operation>
         deleteOdbDnsZoneSettings;
     private final OperationCallSettings.Builder<DeleteOdbDnsZoneRequest, Empty, OperationMetadata>
@@ -5075,6 +5097,8 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
       getOdbDnsZoneSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createOdbDnsZoneSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createOdbDnsZoneOperationSettings = OperationCallSettings.newBuilder();
+      updateOdbDnsZoneSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateOdbDnsZoneOperationSettings = OperationCallSettings.newBuilder();
       deleteOdbDnsZoneSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteOdbDnsZoneOperationSettings = OperationCallSettings.newBuilder();
       listExadbVmClustersSettings =
@@ -5228,6 +5252,7 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
               listOdbDnsZonesSettings,
               getOdbDnsZoneSettings,
               createOdbDnsZoneSettings,
+              updateOdbDnsZoneSettings,
               deleteOdbDnsZoneSettings,
               listExadbVmClustersSettings,
               getExadbVmClusterSettings,
@@ -5406,6 +5431,8 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
       getOdbDnsZoneSettings = settings.getOdbDnsZoneSettings.toBuilder();
       createOdbDnsZoneSettings = settings.createOdbDnsZoneSettings.toBuilder();
       createOdbDnsZoneOperationSettings = settings.createOdbDnsZoneOperationSettings.toBuilder();
+      updateOdbDnsZoneSettings = settings.updateOdbDnsZoneSettings.toBuilder();
+      updateOdbDnsZoneOperationSettings = settings.updateOdbDnsZoneOperationSettings.toBuilder();
       deleteOdbDnsZoneSettings = settings.deleteOdbDnsZoneSettings.toBuilder();
       deleteOdbDnsZoneOperationSettings = settings.deleteOdbDnsZoneOperationSettings.toBuilder();
       listExadbVmClustersSettings = settings.listExadbVmClustersSettings.toBuilder();
@@ -5580,6 +5607,7 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
               listOdbDnsZonesSettings,
               getOdbDnsZoneSettings,
               createOdbDnsZoneSettings,
+              updateOdbDnsZoneSettings,
               deleteOdbDnsZoneSettings,
               listExadbVmClustersSettings,
               getExadbVmClusterSettings,
@@ -5920,6 +5948,11 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
 
       builder
           .createOdbDnsZoneSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .updateOdbDnsZoneSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
@@ -6872,6 +6905,30 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
           .setInitialCallSettings(
               UnaryCallSettings
                   .<CreateOdbDnsZoneRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(OdbDnsZone.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .updateOdbDnsZoneOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdateOdbDnsZoneRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
                   .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
                   .build())
@@ -8080,6 +8137,18 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
     public OperationCallSettings.Builder<CreateOdbDnsZoneRequest, OdbDnsZone, OperationMetadata>
         createOdbDnsZoneOperationSettings() {
       return createOdbDnsZoneOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateOdbDnsZone. */
+    public UnaryCallSettings.Builder<UpdateOdbDnsZoneRequest, Operation>
+        updateOdbDnsZoneSettings() {
+      return updateOdbDnsZoneSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateOdbDnsZone. */
+    public OperationCallSettings.Builder<UpdateOdbDnsZoneRequest, OdbDnsZone, OperationMetadata>
+        updateOdbDnsZoneOperationSettings() {
+      return updateOdbDnsZoneOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to deleteOdbDnsZone. */

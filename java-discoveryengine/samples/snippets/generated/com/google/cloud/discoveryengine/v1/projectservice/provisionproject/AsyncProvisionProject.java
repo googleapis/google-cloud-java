@@ -18,6 +18,7 @@ package com.google.cloud.discoveryengine.v1.samples;
 
 // [START discoveryengine_v1_generated_ProjectService_ProvisionProject_async]
 import com.google.api.core.ApiFuture;
+import com.google.cloud.discoveryengine.v1.IdpConfig;
 import com.google.cloud.discoveryengine.v1.ProjectName;
 import com.google.cloud.discoveryengine.v1.ProjectServiceClient;
 import com.google.cloud.discoveryengine.v1.ProvisionProjectRequest;
@@ -42,6 +43,8 @@ public class AsyncProvisionProject {
               .setAcceptDataUseTerms(true)
               .setDataUseTermsVersion("dataUseTermsVersion-1913570450")
               .setSaasParams(ProvisionProjectRequest.SaasParams.newBuilder().build())
+              .setIdpConfig(IdpConfig.newBuilder().build())
+              .setPreProvisionMode(true)
               .build();
       ApiFuture<Operation> future =
           projectServiceClient.provisionProjectCallable().futureCall(request);
