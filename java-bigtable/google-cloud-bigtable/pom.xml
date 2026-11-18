@@ -485,7 +485,6 @@
     <profile>
       <id>enable-verbose-grpc-logs</id>
       <properties>
-        <bigtable.enable-grpc-logs>true</bigtable.enable-grpc-logs>
         <java-log-config>src/test/resources/logging-verbose.properties</java-log-config>
       </properties>
       <build>
@@ -527,8 +526,6 @@
 
                   <systemPropertyVariables>
                     <bigtable.env>emulator</bigtable.env>
-                    <bigtable.enable-grpc-logs>${bigtable.enable-grpc-logs}</bigtable.enable-grpc-logs>
-                    <bigtable.grpc-log-dir>${project.build.directory}/test-grpc-logs/emulator-it</bigtable.grpc-log-dir>
                   </systemPropertyVariables>
                   <includes>
                     <include>com.google.cloud.bigtable.**.it.*IT</include>
@@ -564,8 +561,6 @@
                     <bigtable.data-endpoint>${bigtable.cfe-data-endpoint}</bigtable.data-endpoint>
                     <bigtable.admin-endpoint>${bigtable.cfe-admin-endpoint}</bigtable.admin-endpoint>
                     <bigtable.data-jwt-audience>${bigtable.cfe-jwt-audience}</bigtable.data-jwt-audience>
-                    <bigtable.enable-grpc-logs>${bigtable.enable-grpc-logs}</bigtable.enable-grpc-logs>
-                    <bigtable.grpc-log-dir>${project.build.directory}/test-grpc-logs/prod-it</bigtable.grpc-log-dir>
                   </systemPropertyVariables>
                   <includes>
                     <include>com.google.cloud.bigtable.**.it.*IT</include>
@@ -608,8 +603,6 @@
                     <bigtable.data-endpoint>${bigtable.directpath-data-endpoint}</bigtable.data-endpoint>
                     <bigtable.admin-endpoint>${bigtable.directpath-admin-endpoint}</bigtable.admin-endpoint>
                     <bigtable.data-jwt-audience>${bigtable.directpath-jwt-audience}</bigtable.data-jwt-audience>
-                    <bigtable.enable-grpc-logs>${bigtable.enable-grpc-logs}</bigtable.enable-grpc-logs>
-                    <bigtable.grpc-log-dir>${project.build.directory}/test-grpc-logs/directpath-it</bigtable.grpc-log-dir>
                     <bigtable.connection-mode>REQUIRE_DIRECT_PATH</bigtable.connection-mode>
                   </systemPropertyVariables>
                   <environmentVariables>
@@ -650,8 +643,6 @@
                     <bigtable.data-endpoint>${bigtable.cfe-data-endpoint}</bigtable.data-endpoint>
                     <bigtable.admin-endpoint>${bigtable.cfe-admin-endpoint}</bigtable.admin-endpoint>
                     <bigtable.data-jwt-audience>${bigtable.cfe-jwt-audience}</bigtable.data-jwt-audience>
-                    <bigtable.enable-grpc-logs>${bigtable.enable-grpc-logs}</bigtable.enable-grpc-logs>
-                    <bigtable.grpc-log-dir>${project.build.directory}/test-grpc-logs/cfe-it</bigtable.grpc-log-dir>
                     <bigtable.connection-mode>REQUIRE_CFE</bigtable.connection-mode>
                   </systemPropertyVariables>
                   <includes>
@@ -689,8 +680,6 @@
                     <bigtable.data-endpoint>${bigtable.directpath-data-endpoint}</bigtable.data-endpoint>
                     <bigtable.admin-endpoint>${bigtable.directpath-admin-endpoint}</bigtable.admin-endpoint>
                     <bigtable.data-jwt-audience>${bigtable.directpath-jwt-audience}</bigtable.data-jwt-audience>
-                    <bigtable.enable-grpc-logs>${bigtable.enable-grpc-logs}</bigtable.enable-grpc-logs>
-                    <bigtable.grpc-log-dir>${project.build.directory}/test-grpc-logs/directpath-ipv4only-it</bigtable.grpc-log-dir>
                     <bigtable.connection-mode>REQUIRE_DIRECT_PATH_IPV4</bigtable.connection-mode>
                   </systemPropertyVariables>
                   <environmentVariables>
@@ -816,6 +805,51 @@
             <java.util.logging.config.file>src/test/resources/logging.properties</java.util.logging.config.file>
           </systemPropertyVariables>
         </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>exec-maven-plugin</artifactId>
+        <executions>
+          <!--
+            Cleans up stale test resources (>24h old) in the configured shared Bigtable instance
+            and orphaned test instances in the project via CloudEnv.
+            Invoke with: mvn test-compile exec:java@cleanup-stale-resources ...
+            Required system properties:
+              -Dbigtable.project=<project-id>
+              -Dbigtable.instance=<instance-id>
+              -Dbigtable.table=<table-id>
+            Optional system properties (consistent with Failsafe IT profiles):
+              -Dbigtable.cfe-admin-endpoint=<host:port> (defaults to client default: bigtableadmin.googleapis.com:443)
+              -Dbigtable.cfe-data-endpoint=<host:port>  (defaults to client default: bigtable.googleapis.com:443)
+              -Dbigtable.cfe-jwt-audience=<audience>    (defaults to client default)
+          -->
+          <execution>
+            <id>cleanup-stale-resources</id>
+            <configuration>
+              <mainClass>com.google.cloud.bigtable.test_helpers.env.StaleResourceCleaner</mainClass>
+              <classpathScope>test</classpathScope>
+              <systemProperties>
+                <systemProperty>
+                  <key>java.util.logging.config.file</key>
+                  <value>${java-log-config}</value>
+                </systemProperty>
+                <systemProperty>
+                  <key>bigtable.data-endpoint</key>
+                  <value>${bigtable.cfe-data-endpoint}</value>
+                </systemProperty>
+                <systemProperty>
+                  <key>bigtable.admin-endpoint</key>
+                  <value>${bigtable.cfe-admin-endpoint}</value>
+                </systemProperty>
+                <systemProperty>
+                  <key>bigtable.data-jwt-audience</key>
+                  <value>${bigtable.cfe-jwt-audience}</value>
+                </systemProperty>
+              </systemProperties>
+            </configuration>
+          </execution>
+        </executions>
       </plugin>
 
       <plugin>
