@@ -127,6 +127,7 @@ public class SessionImplTest {
     when(sessionPoolOptions.getPoolMaintainerClock()).thenReturn(Clock.INSTANCE);
     when(spannerOptions.getSessionPoolOptions()).thenReturn(sessionPoolOptions);
     when(spannerOptions.getOpenTelemetry()).thenReturn(OpenTelemetry.noop());
+    when(spannerOptions.getTracingOpenTelemetry()).thenReturn(OpenTelemetry.noop());
     @SuppressWarnings("resource")
     SpannerImpl spanner = new SpannerImpl(rpc, spannerOptions);
     String dbName = "projects/p1/instances/i1/databases/d1";

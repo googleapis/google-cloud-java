@@ -518,7 +518,6 @@
     <dependency>
       <groupId>io.opentelemetry</groupId>
       <artifactId>opentelemetry-sdk-trace</artifactId>
-      <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>io.opentelemetry</groupId>
@@ -529,7 +528,6 @@
       <groupId>com.google.cloud.opentelemetry</groupId>
       <artifactId>exporter-trace</artifactId>
       <version>0.36.0</version>
-      <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>com.google.cloud</groupId>

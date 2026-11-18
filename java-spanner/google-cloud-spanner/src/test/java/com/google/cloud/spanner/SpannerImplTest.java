@@ -106,6 +106,7 @@ public class SpannerImplTest {
     when(spannerOptions.getClock()).thenReturn(NanoClock.getDefaultClock());
     when(spannerOptions.getSessionLabels()).thenReturn(Collections.emptyMap());
     when(spannerOptions.getOpenTelemetry()).thenReturn(OpenTelemetry.noop());
+    when(spannerOptions.getTracingOpenTelemetry()).thenReturn(OpenTelemetry.noop());
     impl = new SpannerImpl(rpc, spannerOptions);
   }
 
