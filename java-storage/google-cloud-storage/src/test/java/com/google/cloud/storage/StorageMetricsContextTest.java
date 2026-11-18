@@ -19,6 +19,9 @@ package com.google.cloud.storage;
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.assertThrows;
 import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.anyLong;
+import static org.mockito.ArgumentMatchers.anyMap;
+import static org.mockito.Mockito.doAnswer;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
@@ -35,22 +38,36 @@ import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.gax.grpc.GrpcCallContext;
 import com.google.api.gax.grpc.GrpcStatusCode;
+import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.services.storage.model.StorageObject;
 import com.google.cloud.NoCredentials;
+import com.google.cloud.ReadChannel;
 import com.google.cloud.RestorableState;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.WriteChannel;
+import com.google.cloud.storage.BufferedReadableByteChannelSession.BufferedReadableByteChannel;
 import com.google.cloud.storage.BufferedWritableByteChannelSession.BufferedWritableByteChannel;
 import com.google.cloud.storage.Conversions.Decoder;
 import com.google.cloud.storage.UnifiedOpts.Opts;
+import com.google.cloud.storage.ZeroCopySupport.DisposableByteString;
+import com.google.cloud.storage.it.ChecksummedTestContent;
 import com.google.cloud.storage.spi.StorageRpcFactory;
 import com.google.cloud.storage.spi.v1.StorageRpc;
 import com.google.common.io.ByteStreams;
+import com.google.protobuf.ByteString;
+import com.google.storage.v2.BidiReadObjectRequest;
+import com.google.storage.v2.BidiReadObjectResponse;
+import com.google.storage.v2.BucketName;
+import com.google.storage.v2.ObjectRangeData;
+import com.google.storage.v2.ReadObjectRequest;
+import com.google.storage.v2.ReadObjectResponse;
+import com.google.storage.v2.ReadRange;
 import com.google.storage.v2.StartResumableWriteRequest;
 import com.google.storage.v2.StartResumableWriteResponse;
 import com.google.storage.v2.StorageGrpc;
+import com.google.storage.v2.StorageGrpc.StorageImplBase;
 import com.google.storage.v2.WriteObjectRequest;
 import com.google.storage.v2.WriteObjectResponse;
 import io.grpc.CallOptions;
@@ -69,17 +86,30 @@ import io.opentelemetry.sdk.metrics.data.LongPointData;
 import io.opentelemetry.sdk.metrics.data.MetricData;
 import io.opentelemetry.sdk.testing.exporter.InMemoryMetricReader;
 import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStream;
+import java.io.UncheckedIOException;
 import java.lang.reflect.Field;
 import java.net.InetSocketAddress;
 import java.nio.ByteBuffer;
+import java.nio.channels.Channels;
+import java.nio.channels.FileChannel;
+import java.nio.channels.ReadableByteChannel;
+import java.nio.channels.ScatteringByteChannel;
+import java.nio.channels.SeekableByteChannel;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.NoSuchFileException;
 import java.nio.file.Path;
+import java.nio.file.StandardOpenOption;
+import java.time.Duration;
 import java.util.Collection;
 import java.util.Locale;
+import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLong;
 import org.jspecify.annotations.Nullable;
 import org.junit.Before;
@@ -1202,6 +1232,714 @@ public final class StorageMetricsContextTest {
     }
   }
 
+  @Test
+  public void recordOperation_recordsResponseBodySize_whenReadObjectAndBytesGreaterThanZero() {
+    StorageMetricsContext context = metrics.createContext("ReadObject");
+    context.setResponseBytes(4096L);
+    context.recordOperation(metrics, null);
+
+    Collection<MetricData> collected = reader.collectAllMetrics();
+    HistogramPointData point =
+        getSingleHistogramPoint(
+            collected, StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_RESPONSE_BODY_SIZE);
+    assertThat(point.getCount()).isEqualTo(1L);
+    assertThat(point.getSum()).isEqualTo(4096.0);
+    Attributes attrs = point.getAttributes();
+    assertThat(attrs.asMap().keySet())
+        .containsExactly(
+            StorageClientMetrics.KEY_GCP_CLIENT_SERVICE,
+            StorageClientMetrics.KEY_GCP_CLIENT_VERSION,
+            StorageClientMetrics.KEY_GCP_CLIENT_ARTIFACT,
+            StorageClientMetrics.KEY_GCP_STORAGE_OPERATION,
+            StorageClientMetrics.KEY_GCP_CLIENT_METHOD);
+    assertThat(attrs.get(StorageClientMetrics.KEY_GCP_STORAGE_OPERATION)).isEqualTo("ReadObject");
+    assertThat(attrs.get(StorageClientMetrics.KEY_GCP_CLIENT_METHOD)).isEqualTo("ReadObject");
+  }
+
+  @Test
+  public void recordOperation_doesNotRecordResponseBodySize_whenNotReadObject() {
+    StorageMetricsContext context = metrics.createContext("WriteObject");
+    context.setResponseBytes(4096L);
+    context.recordOperation(metrics, null);
+
+    Collection<MetricData> collected = reader.collectAllMetrics();
+    assertThat(
+            findMetric(
+                collected, StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_RESPONSE_BODY_SIZE))
+        .isNull();
+  }
+
+  @Test
+  public void baseStorageReadChannel_recordsResponseBodySizeOnClose_fullRead() throws IOException {
+    StorageMetricsContext context = metrics.createMultiStepContext("ReadObject");
+
+    byte[] payload = "0123456789abcdef0123456789abcdef".getBytes(StandardCharsets.UTF_8);
+    try (StorageReadChannel channel = new FakeStorageReadChannel(payload, null, context, metrics)) {
+      ByteBuffer buf = ByteBuffer.allocate(10);
+      int total = 0;
+      int r;
+      while ((r = channel.read(buf)) != -1) {
+        total += r;
+        buf.clear();
+      }
+      assertThat(total).isEqualTo(payload.length);
+    }
+
+    Collection<MetricData> collected = reader.collectAllMetrics();
+    HistogramPointData point =
+        getSingleHistogramPoint(
+            collected, StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_RESPONSE_BODY_SIZE);
+    assertThat(point.getCount()).isEqualTo(1L);
+    assertThat(point.getSum()).isEqualTo((double) payload.length);
+    LongPointData opPoint =
+        getSinglePoint(collected, StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_OPERATIONS);
+    assertThat(opPoint.getAttributes().get(StorageClientMetrics.KEY_ERROR_TYPE))
+        .isEqualTo(StorageErrorTypeMapper.STATUS_OK);
+  }
+
+  @Test
+  public void baseStorageReadChannel_recordsResponseBodySizeOnClose_partialReadEarlyClose()
+      throws IOException {
+    StorageMetricsContext context = metrics.createMultiStepContext("ReadObject");
+
+    byte[] payload = new byte[100];
+    try (StorageReadChannel channel = new FakeStorageReadChannel(payload, null, context, metrics)) {
+      ByteBuffer buf = ByteBuffer.allocate(12);
+      int read = channel.read(buf);
+      assertThat(read).isEqualTo(12);
+    }
+
+    Collection<MetricData> collected = reader.collectAllMetrics();
+    HistogramPointData point =
+        getSingleHistogramPoint(
+            collected, StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_RESPONSE_BODY_SIZE);
+    assertThat(point.getCount()).isEqualTo(1L);
+    assertThat(point.getSum()).isEqualTo(12.0);
+  }
+
+  @Test
+  public void baseStorageReadChannel_recordsResponseBodySize_whenClosedWithoutReading() {
+    StorageMetricsContext context = metrics.createMultiStepContext("ReadObject");
+
+    byte[] payload = new byte[100];
+    try (StorageReadChannel ignored = new FakeStorageReadChannel(payload, null, context, metrics)) {
+      // Close immediately without reading any bytes
+    }
+
+    Collection<MetricData> collected = reader.collectAllMetrics();
+    HistogramPointData point =
+        getSingleHistogramPoint(
+            collected, StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_RESPONSE_BODY_SIZE);
+    assertThat(point.getCount()).isEqualTo(1L);
+    assertThat(point.getSum()).isEqualTo(0.0);
+    assertThat(findMetric(collected, StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_OPERATIONS))
+        .isNotNull();
+  }
+
+  @Test
+  public void baseStorageReadChannel_recordsPartialBytesAndError_whenMidStreamErrorOccurs() {
+    StorageMetricsContext context = metrics.createMultiStepContext("ReadObject");
+
+    byte[] payload = new byte[64];
+    StorageException midStreamError = new StorageException(503, "Service Unavailable");
+    IOException thrown =
+        assertThrows(
+            IOException.class,
+            () -> {
+              try (StorageReadChannel channel =
+                  new FakeStorageReadChannel(payload, midStreamError, context, metrics)) {
+                ByteBuffer buf = ByteBuffer.allocate(16);
+                assertThat(channel.read(buf)).isEqualTo(16);
+                buf.clear();
+                channel.read(buf);
+              }
+            });
+    assertThat(thrown).hasCauseThat().isSameInstanceAs(midStreamError);
+
+    Collection<MetricData> collected = reader.collectAllMetrics();
+    HistogramPointData point =
+        getSingleHistogramPoint(
+            collected, StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_RESPONSE_BODY_SIZE);
+    assertThat(point.getCount()).isEqualTo(1L);
+    assertThat(point.getSum()).isEqualTo(16.0);
+
+    LongPointData opPoint =
+        getSinglePoint(collected, StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_OPERATIONS);
+    assertThat(opPoint.getAttributes().get(StorageClientMetrics.KEY_ERROR_TYPE))
+        .isEqualTo(StorageErrorTypeMapper.STATUS_UNAVAILABLE);
+  }
+
+  @Test
+  public void storageImpl_readAllBytes_recordsResponseBodySize() {
+    StorageRpc storageRpc = mock(StorageRpc.class);
+    StorageRpcFactory rpcFactory = options -> storageRpc;
+
+    byte[] payload = "response-body-bytes".getBytes(StandardCharsets.UTF_8);
+    when(storageRpc.load(any(StorageObject.class), anyMap()))
+        .thenAnswer(
+            inv -> {
+              StorageObject obj = inv.getArgument(0);
+              if ("fail".equals(obj.getName())) {
+                throw new StorageException(403, "Forbidden");
+              }
+              return payload;
+            });
+
+    HttpStorageOptions options =
+        HttpStorageOptions.newBuilder()
+            .setProjectId("test-proj")
+            .setCredentials(NoCredentials.getInstance())
+            .setServiceRpcFactory(rpcFactory)
+            .setRetrySettings(ServiceOptions.getNoRetrySettings())
+            .setMeterProvider(provider)
+            .setEnableOtelMetrics(true)
+            .build();
+    Storage storage = options.getService();
+
+    byte[] actual = storage.readAllBytes(BlobId.of("b", "ok"));
+    assertThat(actual).isEqualTo(payload);
+
+    HistogramPointData point =
+        getSingleHistogramPoint(
+            reader.collectAllMetrics(),
+            StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_RESPONSE_BODY_SIZE);
+    assertThat(point.getCount()).isEqualTo(1L);
+    assertThat(point.getSum()).isEqualTo((double) payload.length);
+
+    assertThrows(StorageException.class, () -> storage.readAllBytes(BlobId.of("b", "fail")));
+    HistogramPointData afterFailPoint =
+        getSingleHistogramPoint(
+            reader.collectAllMetrics(),
+            StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_RESPONSE_BODY_SIZE);
+    assertThat(afterFailPoint.getCount()).isEqualTo(2L);
+    assertThat(afterFailPoint.getSum()).isEqualTo((double) payload.length);
+  }
+
+  @Test
+  public void storageImpl_downloadTo_recordsResponseBodySize_acrossRetriesWithoutDoubleCounting() {
+    StorageRpc storageRpc = mock(StorageRpc.class);
+    StorageRpcFactory rpcFactory = options -> storageRpc;
+
+    byte[] payload =
+        "0123456789abcdefghij0123456789abcdefghij0123456789".getBytes(StandardCharsets.UTF_8);
+    AtomicInteger callCount = new AtomicInteger(0);
+    doAnswer(
+            invocation -> {
+              long position = invocation.getArgument(2);
+              OutputStream out = invocation.getArgument(3);
+              int attempt = callCount.incrementAndGet();
+              if (attempt == 1) {
+                out.write(payload, 0, 20);
+                throw new StorageException(503, "Transient failure after 20 bytes");
+              }
+              out.write(payload, (int) position, payload.length - (int) position);
+              return (long) (payload.length - (int) position);
+            })
+        .when(storageRpc)
+        .read(any(StorageObject.class), anyMap(), anyLong(), any(OutputStream.class));
+
+    HttpStorageOptions options =
+        HttpStorageOptions.newBuilder()
+            .setProjectId("test-proj")
+            .setCredentials(NoCredentials.getInstance())
+            .setServiceRpcFactory(rpcFactory)
+            .setRetrySettings(
+                RetrySettings.newBuilder()
+                    .setMaxAttempts(3)
+                    .setInitialRetryDelayDuration(Duration.ofMillis(1))
+                    .setMaxRetryDelayDuration(Duration.ofMillis(5))
+                    .setRetryDelayMultiplier(1.0)
+                    .build())
+            .setMeterProvider(provider)
+            .setEnableOtelMetrics(true)
+            .build();
+    Storage storage = options.getService();
+
+    ByteArrayOutputStream out = new ByteArrayOutputStream();
+    storage.downloadTo(BlobId.of("b", "o"), out);
+    assertThat(out.toByteArray()).isEqualTo(payload);
+    assertThat(callCount.get()).isEqualTo(2);
+
+    Collection<MetricData> collected = reader.collectAllMetrics();
+    HistogramPointData point =
+        getSingleHistogramPoint(
+            collected, StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_RESPONSE_BODY_SIZE);
+    assertThat(point.getCount()).isEqualTo(1L);
+    assertThat(point.getSum()).isEqualTo((double) payload.length);
+  }
+
+  @Test
+  public void blobReadSessionAdapter_recordsResponseBodySizeOnClose_acrossProjections()
+      throws Exception {
+    StorageMetricsContext context = metrics.createMultiStepContext("ReadObject");
+
+    byte[] futureBytesPayload = new byte[25];
+    ByteString byteStringPayload = ByteString.copyFrom(new byte[15]);
+    byte[] channelPayload = new byte[40];
+    byte[] seekablePayload = new byte[30];
+    Path seekableFile = tempFolder.newFile("seekable.bin").toPath();
+    Files.write(seekableFile, seekablePayload);
+
+    ObjectReadSession fakeSession =
+        new ObjectReadSession() {
+          @Override
+          public com.google.storage.v2.Object getResource() {
+            return com.google.storage.v2.Object.getDefaultInstance();
+          }
+
+          @SuppressWarnings("unchecked")
+          @Override
+          public <Projection> Projection readAs(ReadProjectionConfig<Projection> config) {
+            if (config instanceof ReadAsFutureBytes) {
+              return (Projection) ApiFutures.immediateFuture(futureBytesPayload);
+            }
+            if (config instanceof ReadAsFutureByteString) {
+              DisposableByteString dbs =
+                  new DisposableByteString() {
+                    @Override
+                    public ByteString byteString() {
+                      return byteStringPayload;
+                    }
+
+                    @Override
+                    public void close() {}
+                  };
+              return (Projection) ApiFutures.immediateFuture(dbs);
+            }
+            if (config instanceof ReadAsChannel) {
+              return (Projection)
+                  StorageByteChannels.readable()
+                      .asScatteringByteChannel(
+                          Channels.newChannel(new ByteArrayInputStream(channelPayload)));
+            }
+            if (config instanceof ReadAsSeekableChannel) {
+              try {
+                return (Projection) FileChannel.open(seekableFile, StandardOpenOption.READ);
+              } catch (IOException e) {
+                throw new UncheckedIOException(e);
+              }
+            }
+            throw new UnsupportedOperationException("Unexpected config: " + config);
+          }
+
+          @Override
+          public void close() {}
+        };
+
+    ApiFuture<BlobReadSession> wrapped =
+        BlobReadSessionAdapter.wrap(ApiFutures.immediateFuture(fakeSession), context, metrics);
+    try (BlobReadSession session = wrapped.get()) {
+      byte[] b1 = session.readAs(ReadProjectionConfigs.asFutureBytes()).get();
+      assertThat(b1).hasLength(25);
+
+      try (DisposableByteString dbs =
+          session.readAs(ReadProjectionConfigs.asFutureByteString()).get()) {
+        assertThat(dbs.byteString().size()).isEqualTo(15);
+      }
+
+      // Partial read from ScatteringByteChannel across all 3 read overloads (4 + 3 + 3 = 10 of 40
+      // bytes)
+      try (ScatteringByteChannel ch = session.readAs(ReadProjectionConfigs.asChannel())) {
+        assertThat(ch.read(ByteBuffer.allocate(4))).isEqualTo(4);
+        assertThat(ch.read(new ByteBuffer[] {ByteBuffer.allocate(3)})).isEqualTo(3L);
+        assertThat(ch.read(new ByteBuffer[] {ByteBuffer.allocate(3)}, 0, 1)).isEqualTo(3L);
+      }
+
+      // Read 12 bytes from SeekableByteChannel
+      try (SeekableByteChannel seekable =
+          session.readAs(ReadProjectionConfigs.asSeekableChannel())) {
+        ByteBuffer dst = ByteBuffer.allocate(12);
+        assertThat(seekable.read(dst)).isEqualTo(12);
+      }
+    }
+
+    Collection<MetricData> collected = reader.collectAllMetrics();
+    HistogramPointData point =
+        getSingleHistogramPoint(
+            collected, StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_RESPONSE_BODY_SIZE);
+    assertThat(point.getCount()).isEqualTo(1L);
+    assertThat(point.getSum()).isEqualTo(25.0 + 15.0 + 10.0 + 12.0);
+  }
+
+  @Test
+  public void blobReadSessionAdapter_recordsZeroResponseBodySize_whenOpenFails() {
+    StorageMetricsContext context = metrics.createMultiStepContext("ReadObject");
+
+    ApiFuture<ObjectReadSession> failedOpen =
+        ApiFutures.immediateFailedFuture(new StorageException(404, "Not Found"));
+    ApiFuture<BlobReadSession> wrapped = BlobReadSessionAdapter.wrap(failedOpen, context, metrics);
+
+    assertThrows(ExecutionException.class, wrapped::get);
+
+    Collection<MetricData> collected = reader.collectAllMetrics();
+    HistogramPointData point =
+        getSingleHistogramPoint(
+            collected, StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_RESPONSE_BODY_SIZE);
+    assertThat(point.getCount()).isEqualTo(1L);
+    assertThat(point.getSum()).isEqualTo(0.0);
+    LongPointData opPoint =
+        getSinglePoint(collected, StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_OPERATIONS);
+    assertThat(opPoint.getAttributes().get(StorageClientMetrics.KEY_ERROR_TYPE))
+        .isEqualTo(StorageErrorTypeMapper.STATUS_NOT_FOUND);
+  }
+
+  @Test
+  public void
+      blobReadSessionAdapter_recordsPartialBytesAndErrorType_whenProjectionFailsBeforeClose()
+          throws Exception {
+    // 1. Async projection (asFutureBytes) fails after an earlier successful read
+    StorageMetricsContext asyncContext = metrics.createMultiStepContext("ReadObject");
+    AtomicInteger futureCalls = new AtomicInteger(0);
+    ObjectReadSession failingFutureSession =
+        new ObjectReadSession() {
+          @Override
+          public com.google.storage.v2.Object getResource() {
+            return com.google.storage.v2.Object.getDefaultInstance();
+          }
+
+          @SuppressWarnings("unchecked")
+          @Override
+          public <Projection> Projection readAs(ReadProjectionConfig<Projection> config) {
+            if (config instanceof ReadAsFutureBytes) {
+              if (futureCalls.incrementAndGet() == 1) {
+                return (Projection) ApiFutures.immediateFuture(new byte[25]);
+              }
+              return (Projection)
+                  ApiFutures.immediateFailedFuture(Status.PERMISSION_DENIED.asRuntimeException());
+            }
+            throw new UnsupportedOperationException("Unexpected config: " + config);
+          }
+
+          @Override
+          public void close() {}
+        };
+
+    try (BlobReadSession session =
+        BlobReadSessionAdapter.wrap(
+                ApiFutures.immediateFuture(failingFutureSession), asyncContext, metrics)
+            .get()) {
+      assertThat(session.readAs(ReadProjectionConfigs.asFutureBytes()).get()).hasLength(25);
+      ApiFuture<byte[]> failedRead = session.readAs(ReadProjectionConfigs.asFutureBytes());
+      assertThrows(ExecutionException.class, failedRead::get);
+    }
+
+    Collection<MetricData> collected = reader.collectAllMetrics();
+    HistogramPointData asyncBodyPoint =
+        getSingleHistogramPoint(
+            collected, StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_RESPONSE_BODY_SIZE);
+    assertThat(asyncBodyPoint.getCount()).isEqualTo(1L);
+    assertThat(asyncBodyPoint.getSum()).isEqualTo(25.0);
+    LongPointData asyncOpPoint =
+        getSinglePoint(collected, StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_OPERATIONS);
+    assertThat(asyncOpPoint.getAttributes().get(StorageClientMetrics.KEY_ERROR_TYPE))
+        .isEqualTo("PERMISSION_DENIED");
+    HistogramPointData asyncDurationPoint =
+        getSingleHistogramPoint(collected, StorageClientMetrics.METRIC_GCP_CLIENT_REQUEST_DURATION);
+    assertThat(asyncDurationPoint.getAttributes().get(StorageClientMetrics.KEY_ERROR_TYPE))
+        .isEqualTo("PERMISSION_DENIED");
+
+    // 2. Channel projection throws IOException wrapping coalesced StorageException mid-stream
+    resetMetrics();
+    StorageMetricsContext channelContext = metrics.createMultiStepContext("ReadObject");
+    ObjectReadSession failingChannelSession =
+        new ObjectReadSession() {
+          @Override
+          public com.google.storage.v2.Object getResource() {
+            return com.google.storage.v2.Object.getDefaultInstance();
+          }
+
+          @SuppressWarnings("unchecked")
+          @Override
+          public <Projection> Projection readAs(ReadProjectionConfig<Projection> config) {
+            if (config instanceof ReadAsChannel) {
+              ReadableByteChannel failingChannel =
+                  new ReadableByteChannel() {
+                    private boolean firstRead = true;
+                    private boolean open = true;
+
+                    @Override
+                    public int read(ByteBuffer dst) throws IOException {
+                      if (firstRead) {
+                        firstRead = false;
+                        int toCopy = Math.min(dst.remaining(), 18);
+                        dst.put(new byte[toCopy]);
+                        return toCopy;
+                      }
+                      throw new IOException(
+                          StorageException.coalesce(Status.UNAVAILABLE.asRuntimeException()));
+                    }
+
+                    @Override
+                    public boolean isOpen() {
+                      return open;
+                    }
+
+                    @Override
+                    public void close() {
+                      open = false;
+                    }
+                  };
+              return (Projection)
+                  StorageByteChannels.readable().asScatteringByteChannel(failingChannel);
+            }
+            throw new UnsupportedOperationException("Unexpected config: " + config);
+          }
+
+          @Override
+          public void close() {}
+        };
+
+    try (BlobReadSession session =
+        BlobReadSessionAdapter.wrap(
+                ApiFutures.immediateFuture(failingChannelSession), channelContext, metrics)
+            .get()) {
+      try (ScatteringByteChannel ch = session.readAs(ReadProjectionConfigs.asChannel())) {
+        assertThat(ch.read(ByteBuffer.allocate(32))).isEqualTo(18);
+        assertThrows(IOException.class, () -> ch.read(ByteBuffer.allocate(32)));
+      }
+    }
+
+    Collection<MetricData> channelCollected = reader.collectAllMetrics();
+    HistogramPointData channelBodyPoint =
+        getSingleHistogramPoint(
+            channelCollected, StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_RESPONSE_BODY_SIZE);
+    assertThat(channelBodyPoint.getCount()).isEqualTo(1L);
+    assertThat(channelBodyPoint.getSum()).isEqualTo(18.0);
+    LongPointData channelOpPoint =
+        getSinglePoint(channelCollected, StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_OPERATIONS);
+    assertThat(channelOpPoint.getAttributes().get(StorageClientMetrics.KEY_ERROR_TYPE))
+        .isEqualTo(StorageErrorTypeMapper.STATUS_UNAVAILABLE);
+  }
+
+  @Test
+  public void grpcStorageImpl_readAllBytes_recordsResponseBodySizeAndZeroOnMidStreamError()
+      throws Exception {
+    // chunk1 (16 KiB) exceeds ByteStreams.copy's 8 KiB buffer so partial bytes are flushed into
+    // baos before chunk2 fails mid-stream.
+    int chunk1Len = 16 * 1024;
+    int chunk2Len = 4 * 1024;
+    byte[] payload = new byte[chunk1Len + chunk2Len];
+    for (int i = 0; i < payload.length; i++) {
+      payload[i] = (byte) (i & 0x7f);
+    }
+    ChecksummedTestContent chunk1 = ChecksummedTestContent.of(payload, 0, chunk1Len);
+    ChecksummedTestContent chunk2 = ChecksummedTestContent.of(payload, chunk1Len, chunk2Len);
+    com.google.storage.v2.Object meta =
+        com.google.storage.v2.Object.newBuilder()
+            .setBucket(BucketName.format("_", "b"))
+            .setName("ok")
+            .setGeneration(1L)
+            .setSize(payload.length)
+            .build();
+
+    StorageImplBase fakeService =
+        new StorageImplBase() {
+          @Override
+          public void readObject(
+              ReadObjectRequest request, StreamObserver<ReadObjectResponse> responseObserver) {
+            if ("ok".equals(request.getObject())) {
+              responseObserver.onNext(
+                  ReadObjectResponse.newBuilder()
+                      .setMetadata(meta)
+                      .setChecksummedData(chunk1.asChecksummedData())
+                      .build());
+              responseObserver.onNext(
+                  ReadObjectResponse.newBuilder()
+                      .setChecksummedData(chunk2.asChecksummedData())
+                      .build());
+              responseObserver.onCompleted();
+            } else {
+              responseObserver.onNext(
+                  ReadObjectResponse.newBuilder()
+                      .setMetadata(meta.toBuilder().setName("fail").build())
+                      .setChecksummedData(chunk1.asChecksummedData())
+                      .build());
+              responseObserver.onError(Status.PERMISSION_DENIED.asRuntimeException());
+            }
+          }
+        };
+
+    try (FakeServer fakeServer = FakeServer.of(fakeService);
+        Storage storage =
+            fakeServer.getGrpcStorageOptions().toBuilder()
+                .setRetrySettings(RetrySettings.newBuilder().setMaxAttempts(1).build())
+                .setMeterProvider(provider)
+                .setEnableOtelMetrics(true)
+                .build()
+                .getService()) {
+      byte[] actual = storage.readAllBytes(BlobId.of("b", "ok"));
+      assertThat(actual).isEqualTo(payload);
+
+      HistogramPointData okPoint =
+          getSingleHistogramPoint(
+              reader.collectAllMetrics(),
+              StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_RESPONSE_BODY_SIZE);
+      assertThat(okPoint.getCount()).isEqualTo(1L);
+      assertThat(okPoint.getSum()).isEqualTo((double) payload.length);
+
+      assertThrows(StorageException.class, () -> storage.readAllBytes(BlobId.of("b", "fail")));
+
+      Collection<MetricData> collected = reader.collectAllMetrics();
+      HistogramPointData cumulativePoint =
+          getSingleHistogramPoint(
+              collected, StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_RESPONSE_BODY_SIZE);
+      assertThat(cumulativePoint.getCount()).isEqualTo(2L);
+      assertThat(cumulativePoint.getSum()).isEqualTo((double) payload.length);
+
+      MetricData opsMetric =
+          findMetric(collected, StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_OPERATIONS);
+      assertThat(opsMetric).isNotNull();
+      assertThat(
+              opsMetric.getLongSumData().getPoints().stream()
+                  .filter(
+                      p ->
+                          "PERMISSION_DENIED"
+                              .equals(p.getAttributes().get(StorageClientMetrics.KEY_ERROR_TYPE)))
+                  .mapToLong(LongPointData::getValue)
+                  .sum())
+          .isEqualTo(1L);
+    }
+  }
+
+  @Test
+  public void grpcStorageImpl_downloadToAndBlobReadSession_recordResponseBodySize()
+      throws Exception {
+    byte[] payload = "0123456789abcdefghij0123456789".getBytes(StandardCharsets.UTF_8);
+    ChecksummedTestContent content = ChecksummedTestContent.of(payload);
+    byte[] partialChunkBytes = new byte[16 * 1024];
+    ChecksummedTestContent partialChunk = ChecksummedTestContent.of(partialChunkBytes);
+    com.google.storage.v2.Object meta =
+        com.google.storage.v2.Object.newBuilder()
+            .setBucket(BucketName.format("_", "b"))
+            .setName("o")
+            .setGeneration(1L)
+            .setSize(payload.length)
+            .build();
+
+    StorageImplBase fakeService =
+        new StorageImplBase() {
+          @Override
+          public void readObject(
+              ReadObjectRequest request, StreamObserver<ReadObjectResponse> responseObserver) {
+            if ("fail".equals(request.getObject())) {
+              responseObserver.onNext(
+                  ReadObjectResponse.newBuilder()
+                      .setMetadata(meta.toBuilder().setName("fail").setSize(20 * 1024).build())
+                      .setChecksummedData(partialChunk.asChecksummedData())
+                      .build());
+              responseObserver.onError(Status.PERMISSION_DENIED.asRuntimeException());
+              return;
+            }
+            responseObserver.onNext(
+                ReadObjectResponse.newBuilder()
+                    .setMetadata(meta)
+                    .setChecksummedData(content.asChecksummedData())
+                    .build());
+            responseObserver.onCompleted();
+          }
+
+          @Override
+          public StreamObserver<BidiReadObjectRequest> bidiReadObject(
+              StreamObserver<BidiReadObjectResponse> responseObserver) {
+            return new StreamObserver<BidiReadObjectRequest>() {
+              @Override
+              public void onNext(BidiReadObjectRequest req) {
+                if (req.getReadRangesList().isEmpty()) {
+                  responseObserver.onNext(
+                      BidiReadObjectResponse.newBuilder().setMetadata(meta).build());
+                } else {
+                  ReadRange rr = req.getReadRangesList().get(0);
+                  responseObserver.onNext(
+                      BidiReadObjectResponse.newBuilder()
+                          .addObjectDataRanges(
+                              ObjectRangeData.newBuilder()
+                                  .setReadRange(
+                                      ReadRange.newBuilder()
+                                          .setReadId(rr.getReadId())
+                                          .setReadOffset(0)
+                                          .setReadLength(payload.length)
+                                          .build())
+                                  .setRangeEnd(true)
+                                  .setChecksummedData(content.asChecksummedData())
+                                  .build())
+                          .build());
+                }
+              }
+
+              @Override
+              public void onError(Throwable t) {
+                responseObserver.onError(t);
+              }
+
+              @Override
+              public void onCompleted() {
+                responseObserver.onCompleted();
+              }
+            };
+          }
+        };
+
+    try (FakeServer fakeServer = FakeServer.of(fakeService);
+        Storage storage =
+            fakeServer.getGrpcStorageOptions().toBuilder()
+                .setRetrySettings(RetrySettings.newBuilder().setMaxAttempts(1).build())
+                .setMeterProvider(provider)
+                .setEnableOtelMetrics(true)
+                .build()
+                .getService()) {
+      ByteArrayOutputStream baos = new ByteArrayOutputStream();
+      storage.downloadTo(BlobId.of("b", "o"), baos);
+      assertThat(baos.toByteArray()).isEqualTo(payload);
+
+      HistogramPointData downloadPoint =
+          getSingleHistogramPoint(
+              reader.collectAllMetrics(),
+              StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_RESPONSE_BODY_SIZE);
+      assertThat(downloadPoint.getCount()).isEqualTo(1L);
+      assertThat(downloadPoint.getSum()).isEqualTo((double) payload.length);
+
+      try (BlobReadSession session =
+          storage.blobReadSession(BlobId.of("b", "o")).get(5, TimeUnit.SECONDS)) {
+        byte[] sessionBytes =
+            session.readAs(ReadProjectionConfigs.asFutureBytes()).get(5, TimeUnit.SECONDS);
+        assertThat(sessionBytes).isEqualTo(payload);
+      }
+
+      HistogramPointData sessionPoint =
+          getSingleHistogramPoint(
+              reader.collectAllMetrics(),
+              StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_RESPONSE_BODY_SIZE);
+      assertThat(sessionPoint.getCount()).isEqualTo(2L);
+      assertThat(sessionPoint.getSum()).isEqualTo(2.0 * payload.length);
+
+      ByteArrayOutputStream partialOut = new ByteArrayOutputStream();
+      assertThrows(
+          StorageException.class, () -> storage.downloadTo(BlobId.of("b", "fail"), partialOut));
+      assertThat(partialOut.size()).isEqualTo(partialChunkBytes.length);
+
+      Collection<MetricData> collected = reader.collectAllMetrics();
+      HistogramPointData afterFailPoint =
+          getSingleHistogramPoint(
+              collected, StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_RESPONSE_BODY_SIZE);
+      assertThat(afterFailPoint.getCount()).isEqualTo(3L);
+      assertThat(afterFailPoint.getSum())
+          .isEqualTo(2.0 * payload.length + partialChunkBytes.length);
+
+      MetricData opsMetric =
+          findMetric(collected, StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_OPERATIONS);
+      assertThat(opsMetric).isNotNull();
+      assertThat(
+              opsMetric.getLongSumData().getPoints().stream()
+                  .filter(
+                      p ->
+                          "PERMISSION_DENIED"
+                              .equals(p.getAttributes().get(StorageClientMetrics.KEY_ERROR_TYPE)))
+                  .mapToLong(LongPointData::getValue)
+                  .sum())
+          .isEqualTo(1L);
+    }
+  }
+
   private static @Nullable MetricData findMetric(
       Collection<MetricData> metrics, String metricName) {
     return metrics.stream().filter(m -> m.getName().equals(metricName)).findFirst().orElse(null);
@@ -1280,5 +2018,72 @@ public final class StorageMetricsContextTest {
         return new LazyWriteChannel<>(() -> session);
       }
     };
+  }
+
+  private static final class FakeStorageReadChannel extends BaseStorageReadChannel<String> {
+    private final byte[] data;
+    @Nullable private final StorageException errorAfterFirstRead;
+
+    FakeStorageReadChannel(
+        byte[] data,
+        @Nullable StorageException errorAfterFirstRead,
+        @Nullable StorageMetricsContext metricsContext,
+        @Nullable StorageClientMetrics storageClientMetrics) {
+      super(s -> BlobInfo.newBuilder("b", "o").build(), metricsContext, storageClientMetrics);
+      this.data = data;
+      this.errorAfterFirstRead = errorAfterFirstRead;
+    }
+
+    @Override
+    protected LazyReadChannel<?, String> newLazyReadChannel() {
+      return new LazyReadChannel<>(
+          () ->
+              new BufferedReadableByteChannelSession<String>() {
+                @Override
+                public ApiFuture<BufferedReadableByteChannel> openAsync() {
+                  return ApiFutures.immediateFuture(
+                      new BufferedReadableByteChannel() {
+                        private int offset = 0;
+                        private boolean open = true;
+                        private int reads = 0;
+
+                        @Override
+                        public int read(ByteBuffer dst) throws IOException {
+                          reads++;
+                          if (reads > 1 && errorAfterFirstRead != null) {
+                            throw errorAfterFirstRead;
+                          }
+                          if (offset >= data.length) {
+                            return -1;
+                          }
+                          int toCopy = Math.min(dst.remaining(), data.length - offset);
+                          dst.put(data, offset, toCopy);
+                          offset += toCopy;
+                          return toCopy;
+                        }
+
+                        @Override
+                        public boolean isOpen() {
+                          return open;
+                        }
+
+                        @Override
+                        public void close() {
+                          open = false;
+                        }
+                      });
+                }
+
+                @Override
+                public ApiFuture<String> getResult() {
+                  return ApiFutures.immediateFuture("ok");
+                }
+              });
+    }
+
+    @Override
+    public RestorableState<ReadChannel> capture() {
+      throw new UnsupportedOperationException();
+    }
   }
 }
