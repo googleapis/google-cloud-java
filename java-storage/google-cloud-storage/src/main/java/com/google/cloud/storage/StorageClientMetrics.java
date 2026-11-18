@@ -172,12 +172,10 @@ final class StorageClientMetrics implements AutoCloseable {
             .put(KEY_GCP_CLIENT_VERSION, StorageOptions.version())
             .put(KEY_GCP_CLIENT_ARTIFACT, ARTIFACT_STORAGE)
             .build();
-    Attributes baseAttributes =
-        clientAttributes.toBuilder().put(KEY_SERVER_ADDRESS, "storage.googleapis.com").build();
     return new StorageClientMetrics(
         meter,
         clientAttributes,
-        baseAttributes,
+        clientAttributes,
         ownedMeterProvider,
         enableOtelMetrics,
         enableOtelDebugMetrics);
@@ -463,7 +461,6 @@ final class StorageClientMetrics implements AutoCloseable {
     }
     Attributes attributes =
         baseAttributes.toBuilder()
-            .put(KEY_RPC_SYSTEM_NAME, "grpc")
             .put(KEY_RPC_METHOD, rpcMethod)
             .put(KEY_RPC_RESPONSE_STATUS_CODE, statusCode)
             .put(KEY_NETWORK_PATH, networkPath)
