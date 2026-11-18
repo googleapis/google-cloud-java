@@ -34,7 +34,6 @@ import io.opentelemetry.context.Context;
 import java.net.InetAddress;
 import java.net.InetSocketAddress;
 import java.net.SocketAddress;
-import java.util.concurrent.atomic.AtomicBoolean;
 import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
 
@@ -56,10 +55,6 @@ final class StorageGrpcMetricsInterceptor implements ClientInterceptor {
   @Override
   public <ReqT, RespT> ClientCall<ReqT, RespT> interceptCall(
       MethodDescriptor<ReqT, RespT> method, CallOptions callOptions, Channel next) {
-    if (metrics.getRpcClientCallDuration() == null) {
-      return next.newCall(method, callOptions);
-    }
-
     String rpcMethod = method.getFullMethodName();
     StorageMetricsContext metricsCtx = StorageMetricsContext.from(callOptions);
     Context otelContext = metricsCtx != null ? metricsCtx.getOtelContext() : Context.current();
@@ -68,7 +63,6 @@ final class StorageGrpcMetricsInterceptor implements ClientInterceptor {
       @Override
       public void start(Listener<RespT> responseListener, Metadata headers) {
         long startTimeNanos = clock.nanoTime();
-        AtomicBoolean callRecorded = new AtomicBoolean(false);
 
         super.start(
             new SimpleForwardingClientCallListener<RespT>(responseListener) {
@@ -83,24 +77,16 @@ final class StorageGrpcMetricsInterceptor implements ClientInterceptor {
               @Override
               public void onClose(Status status, Metadata trailers) {
                 try {
-                  if (callRecorded.compareAndSet(false, true)) {
-                    double durationSeconds =
-                        Math.max(0.0, (clock.nanoTime() - startTimeNanos) / 1_000_000_000.0);
-                    String networkPath = detectNetworkPath(getAttributes());
-                    if (metricsCtx != null) {
-                      metricsCtx.setNetworkPath(networkPath);
-                    }
-                    String statusCode = status.getCode().name();
-                    String errorType = StorageErrorTypeMapper.mapGrpcStatus(status);
-
-                    metrics.recordRpcCallDuration(
-                        otelContext,
-                        durationSeconds,
-                        rpcMethod,
-                        statusCode,
-                        networkPath,
-                        errorType);
+                  double durationSeconds = (clock.nanoTime() - startTimeNanos) / 1_000_000_000.0;
+                  String networkPath = detectNetworkPath(getAttributes());
+                  if (metricsCtx != null) {
+                    metricsCtx.setNetworkPath(networkPath);
                   }
+                  String statusCode = status.getCode().name();
+                  String errorType = StorageErrorTypeMapper.mapGrpcStatus(status);
+
+                  metrics.recordRpcCallDuration(
+                      otelContext, durationSeconds, rpcMethod, statusCode, networkPath, errorType);
                 } finally {
                   super.onClose(status, trailers);
                 }
