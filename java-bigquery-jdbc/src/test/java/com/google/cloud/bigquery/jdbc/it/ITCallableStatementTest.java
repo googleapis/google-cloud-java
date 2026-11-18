@@ -647,4 +647,43 @@ public class ITCallableStatementTest extends ITBase {
     assertEquals(-1, callableStatement.getUpdateCount());
     callableStatement.close();
   }
+
+  @Test
+  public void testCallableStatementScriptWithReadApi() throws SQLException {
+    String readApiUrl =
+        connection_uri
+            + "EnableHighThroughputAPI=1;"
+            + "MaxResults=1000;"
+            + "HighThroughputActivationRatio=2;"
+            + "HighThroughputMinTableSize=100;";
+    int randomNum = random.nextInt(99);
+    String callableStmtQuery =
+        String.format(
+                "DECLARE call_result STRING;CALL %s.%s(?,?,call_result);",
+                DATASET, CALLABLE_STMT_PROC_NAME)
+            + String.format(GENERATE_ARRAY_QUERY, 5000)
+            + String.format(GENERATE_ARRAY_QUERY, 7000);
+
+    try (Connection readApiConnection = DriverManager.getConnection(readApiUrl);
+        CallableStatement callableStatement = readApiConnection.prepareCall(callableStmtQuery)) {
+      callableStatement.setString(1, "callable-readapi-test");
+      callableStatement.setInt(2, randomNum);
+
+      assertFalse(callableStatement.execute());
+      assertEquals(1, callableStatement.getUpdateCount());
+
+      assertTrue(callableStatement.getMoreResults());
+      ResultSet resultSet1 = callableStatement.getResultSet();
+      assertArrowResultSet(resultSet1);
+      assertEquals(5000, resultSetRowCount(resultSet1));
+
+      assertTrue(callableStatement.getMoreResults());
+      ResultSet resultSet2 = callableStatement.getResultSet();
+      assertArrowResultSet(resultSet2);
+      assertEquals(7000, resultSetRowCount(resultSet2));
+
+      assertFalse(callableStatement.getMoreResults());
+      assertEquals(-1, callableStatement.getUpdateCount());
+    }
+  }
 }
