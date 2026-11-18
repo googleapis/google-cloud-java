@@ -247,4 +247,45 @@ public class SimpleParserTest {
     parser.skipHint();
     return parser.getSql().substring(parser.getPos());
   }
+
+  @Test
+  public void testSkipCommentsWithCarriageReturnAndNestedDelimiters() {
+    SimpleParser crParser = parserFor("-- comment\rSELECT");
+    assertTrue(crParser.skipSingleLineComment(2));
+    assertEquals("-- comment\r".length(), crParser.getPos());
+    assertEquals(found("SELECT"), parserFor("-- comment\rSELECT").eatKeyword());
+
+    SimpleParser crlfParser = parserFor("-- comment\r\nSELECT");
+    assertTrue(crlfParser.skipSingleLineComment(2));
+    assertEquals("-- comment\r\n".length(), crlfParser.getPos());
+    assertEquals(found("SELECT"), parserFor("-- comment\r\nSELECT").eatKeyword());
+
+    if (dialect == Dialect.GOOGLE_STANDARD_SQL) {
+      SimpleParser hashCrParser = parserFor("# comment\rSELECT");
+      assertTrue(hashCrParser.skipSingleLineComment(1));
+      assertEquals("# comment\r".length(), hashCrParser.getPos());
+      assertEquals(found("SELECT"), parserFor("# comment\rSELECT").eatKeyword());
+    }
+
+    if (dialect == Dialect.POSTGRESQL) {
+      SimpleParser unclosedNested = parserFor("/*/*/");
+      assertFalse(unclosedNested.skipMultiLineComment());
+      assertEquals("/*/*/".length(), unclosedNested.getPos());
+
+      SimpleParser balancedSlashStarSlash = parserFor("/*/*/ */ */SELECT");
+      assertTrue(balancedSlashStarSlash.skipMultiLineComment());
+      assertEquals("/*/*/ */ */".length(), balancedSlashStarSlash.getPos());
+      assertEquals(found("SELECT"), balancedSlashStarSlash.eatKeyword());
+
+      SimpleParser balancedStarSlashStar = parserFor("/* /* inner */* outer */SELECT");
+      assertTrue(balancedStarSlashStar.skipMultiLineComment());
+      assertEquals("/* /* inner */* outer */".length(), balancedStarSlashStar.getPos());
+      assertEquals(found("SELECT"), balancedStarSlashStar.eatKeyword());
+    } else {
+      SimpleParser nonNested = parserFor("/*/*/SELECT");
+      assertTrue(nonNested.skipMultiLineComment());
+      assertEquals("/*/*/".length(), nonNested.getPos());
+      assertEquals(found("SELECT"), nonNested.eatKeyword());
+    }
+  }
 }

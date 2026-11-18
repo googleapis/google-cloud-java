@@ -17,6 +17,7 @@
 package com.google.cloud.spanner.connection;
 
 import static com.google.cloud.spanner.connection.SimpleParser.isValidIdentifierChar;
+import static com.google.cloud.spanner.connection.SimpleParser.isValidIdentifierFirstChar;
 import static com.google.cloud.spanner.connection.StatementHintParser.convertHintsToOptions;
 
 import com.google.api.core.InternalApi;
@@ -921,6 +922,12 @@ public abstract class AbstractStatementParser {
   abstract boolean supportsBackslashEscape();
 
   /**
+   * Returns true if the dialect supports escape string constants prefixed with {@code E} or {@code
+   * e} (e.g. {@code E'foo\'bar'}).
+   */
+  abstract boolean supportsEscapeStringConstants();
+
+  /**
    * Returns true if the dialect supports single-line comments that start with a dash.
    *
    * <p>Example: # This is a comment
@@ -937,16 +944,18 @@ public abstract class AbstractStatementParser {
   /** Returns the query parameter prefix that should be used for this dialect. */
   abstract String getQueryParameterPrefix();
 
-  /** Reads a dollar-quoted string literal from position index in the given sql string. */
+  /** Reads a dollar-quoted string literal tag from position index in the given sql string. */
   String parseDollarQuotedString(String sql, int index) {
-    // Look ahead to the next dollar sign (if any). Everything in between is the quote tag.
+    // Look ahead to the next dollar sign (if any). A non-empty dollar-quote tag follows unquoted
+    // identifier rules: it must start with a letter or underscore and cannot contain '$'.
     StringBuilder tag = new StringBuilder();
+    int startIndex = index;
     while (index < sql.length()) {
       char c = sql.charAt(index);
       if (c == DOLLAR) {
         return tag.toString();
       }
-      if (!isValidIdentifierChar(c)) {
+      if (index == startIndex ? !isValidIdentifierFirstChar(c) : !isValidIdentifierChar(c)) {
         break;
       }
       tag.append(c);
@@ -970,7 +979,22 @@ public abstract class AbstractStatementParser {
         || (supportsBacktickQuote() && currentChar == BACKTICK_QUOTE)) {
       appendIfNotNull(result, currentChar);
       return skipQuoted(sql, currentIndex, currentChar, result);
-    } else if (supportsDollarQuotedStrings() && currentChar == DOLLAR) {
+    } else if (supportsEscapeStringConstants()
+        && (currentChar == 'E' || currentChar == 'e')
+        && sql.length() > (currentIndex + 1)
+        && sql.charAt(currentIndex + 1) == SINGLE_QUOTE
+        && (currentIndex == 0 || !isValidIdentifierChar(sql.charAt(currentIndex - 1)))) {
+      // PostgreSQL escape string constants (E'...' / e'...') interpret backslash escapes even
+      // though standard PostgreSQL string literals do not, and can only start at a token boundary.
+      appendIfNotNull(result, currentChar);
+      appendIfNotNull(result, SINGLE_QUOTE);
+      return skipQuoted(
+          sql, currentIndex + 1, SINGLE_QUOTE, null, result, /* allowBackslashEscape= */ true);
+    } else if (supportsDollarQuotedStrings()
+        && currentChar == DOLLAR
+        && (currentIndex == 0 || !isValidIdentifierChar(sql.charAt(currentIndex - 1)))) {
+      // Unquoted PostgreSQL identifiers may contain '$', so a dollar-quoted literal can only start
+      // when '$' is not preceded by an identifier character.
       String dollarTag = parseDollarQuotedString(sql, currentIndex + 1);
       if (dollarTag != null) {
         appendIfNotNull(result, currentChar, dollarTag, currentChar);
@@ -1015,16 +1039,17 @@ public abstract class AbstractStatementParser {
   /** Skips a multi-line comment from startIndex and adds it to result if result is not null. */
   int skipMultiLineComment(String sql, int startIndex, @Nullable StringBuilder result) {
     SimpleParser simpleParser = new SimpleParser(getDialect(), sql, startIndex, false);
-    if (simpleParser.skipMultiLineComment()) {
-      appendIfNotNull(result, sql.substring(startIndex, simpleParser.getPos()));
-    }
+    simpleParser.skipMultiLineComment();
+    // Always preserve the comment text even when unterminated so malformed SQL is not truncated
+    // before reaching the server.
+    appendIfNotNull(result, sql.substring(startIndex, simpleParser.getPos()));
     return simpleParser.getPos();
   }
 
   /** Skips a quoted string from startIndex. */
   private int skipQuoted(
       String sql, int startIndex, char startQuote, @Nullable StringBuilder result) {
-    return skipQuoted(sql, startIndex, startQuote, null, result);
+    return skipQuoted(sql, startIndex, startQuote, null, result, supportsBackslashEscape());
   }
 
   /**
@@ -1037,6 +1062,16 @@ public abstract class AbstractStatementParser {
       char startQuote,
       @Nullable String dollarTag,
       @Nullable StringBuilder result) {
+    return skipQuoted(sql, startIndex, startQuote, dollarTag, result, supportsBackslashEscape());
+  }
+
+  int skipQuoted(
+      String sql,
+      int startIndex,
+      char startQuote,
+      @Nullable String dollarTag,
+      @Nullable StringBuilder result,
+      boolean allowBackslashEscape) {
     boolean isTripleQuoted =
         supportsTripleQuotedStrings()
             && sql.length() > startIndex + 2
@@ -1080,7 +1115,7 @@ public abstract class AbstractStatementParser {
           appendIfNotNull(result, currentChar);
           return currentIndex + 1;
         }
-      } else if (supportsBackslashEscape()
+      } else if (allowBackslashEscape
           && currentChar == BACKSLASH
           && length > currentIndex + 1
           && (sql.charAt(currentIndex + 1) == startQuote
@@ -1092,7 +1127,9 @@ public abstract class AbstractStatementParser {
         appendIfNotNull(result, sql.charAt(currentIndex + 1));
         currentIndex += 2;
         continue;
-      } else if (currentChar == '\n' && !isTripleQuoted && !supportsLineFeedInQuotedString()) {
+      } else if ((currentChar == '\n' || currentChar == '\r')
+          && !isTripleQuoted
+          && !supportsLineFeedInQuotedString()) {
         break;
       }
       currentIndex++;

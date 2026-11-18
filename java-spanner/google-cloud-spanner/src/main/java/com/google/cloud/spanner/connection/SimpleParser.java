@@ -374,12 +374,18 @@ class SimpleParser {
    */
   @VisibleForTesting
   boolean skipSingleLineComment(int prefixLength) {
-    int endIndex = sql.indexOf('\n', pos + prefixLength);
-    if (endIndex == -1) {
-      pos = sql.length();
-      return true;
+    for (int i = pos + prefixLength; i < sql.length(); i++) {
+      char c = sql.charAt(i);
+      if (c == '\n') {
+        pos = i + 1;
+        return true;
+      }
+      if (c == '\r') {
+        pos = (i + 1 < sql.length() && sql.charAt(i + 1) == '\n') ? i + 2 : i + 1;
+        return true;
+      }
     }
-    pos = endIndex + 1;
+    pos = sql.length();
     return true;
   }
 
@@ -394,13 +400,18 @@ class SimpleParser {
           && sql.length() > (pos + 1)
           && sql.charAt(pos + 1) == ASTERISK) {
         level++;
+        // Advance past both characters of '/*' so '/*/*/' cannot reuse '*' as '*/'.
+        pos += 2;
+        continue;
       }
       if (sql.charAt(pos) == ASTERISK && sql.length() > (pos + 1) && sql.charAt(pos + 1) == SLASH) {
         level--;
+        // Advance past both characters of '*/' so '*/*' cannot reuse '/' as '/*'.
+        pos += 2;
         if (level == 0) {
-          pos += 2;
           return true;
         }
+        continue;
       }
       pos++;
     }

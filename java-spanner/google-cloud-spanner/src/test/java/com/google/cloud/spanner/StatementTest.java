@@ -27,6 +27,7 @@ import static org.junit.Assert.assertThrows;
 import com.google.cloud.ByteArray;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.testing.EqualsTester;
+import java.util.concurrent.atomic.AtomicBoolean;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -199,5 +200,236 @@ public class StatementTest {
     for (int i = 1; i <= 950; i++) {
       assertSame(Statement.getParameterName(i), Statement.getParameterName(i));
     }
+  }
+
+  @Test
+  public void withUnnamedParametersMatchingCounts() {
+    Statement.StatementFactory gsqlFactory =
+        new Statement.StatementFactory(Dialect.GOOGLE_STANDARD_SQL);
+    Statement.StatementFactory pgFactory = new Statement.StatementFactory(Dialect.POSTGRESQL);
+
+    Statement rawOf = gsqlFactory.of("SELECT * FROM Users WHERE id = ?");
+    assertThat(rawOf.getSql()).isEqualTo("SELECT * FROM Users WHERE id = ?");
+    assertThat(rawOf.getParameters()).isEmpty();
+
+    Statement gsqlZero = gsqlFactory.withUnnamedParameters("SELECT 1");
+    assertThat(gsqlZero.getSql()).isEqualTo("SELECT 1");
+    assertThat(gsqlZero.getParameters()).isEmpty();
+    assertThrows(
+        UnsupportedOperationException.class,
+        () -> gsqlZero.getParameters().put("p1", Value.bool(true)));
+
+    Statement pgZero = pgFactory.withUnnamedParameters("SELECT 1");
+    assertThat(pgZero.getSql()).isEqualTo("SELECT 1");
+    assertThat(pgZero.getParameters()).isEmpty();
+    assertThrows(
+        UnsupportedOperationException.class,
+        () -> pgZero.getParameters().put("p1", Value.bool(true)));
+
+    Statement gsqlOne = gsqlFactory.withUnnamedParameters("SELECT * FROM Users WHERE id = ?", 10L);
+    assertThat(gsqlOne.getSql()).isEqualTo("SELECT * FROM Users WHERE id = @p1");
+    assertThat(gsqlOne.getParameters()).containsExactly("p1", Value.toValue(10L));
+    assertThrows(
+        UnsupportedOperationException.class,
+        () -> gsqlOne.getParameters().put("p2", Value.bool(true)));
+    reserializeAndAssert(gsqlOne);
+
+    Statement pgOne = pgFactory.withUnnamedParameters("SELECT * FROM users WHERE id = ?", 10L);
+    assertThat(pgOne.getSql()).isEqualTo("SELECT * FROM users WHERE id = $1");
+    assertThat(pgOne.getParameters()).containsExactly("p1", Value.toValue(10L));
+    assertThrows(
+        UnsupportedOperationException.class,
+        () -> pgOne.getParameters().put("p2", Value.bool(true)));
+    reserializeAndAssert(pgOne);
+
+    Statement gsqlMulti =
+        gsqlFactory.withUnnamedParameters(
+            "INSERT INTO Users (id, name, active) VALUES (?, ?, ?)", 10L, "Alice", true);
+    assertThat(gsqlMulti.getSql())
+        .isEqualTo("INSERT INTO Users (id, name, active) VALUES (@p1, @p2, @p3)");
+    assertThat(gsqlMulti.getParameters())
+        .containsExactly(
+            "p1", Value.toValue(10L), "p2", Value.toValue("Alice"), "p3", Value.bool(true));
+    assertThrows(UnsupportedOperationException.class, () -> gsqlMulti.getParameters().clear());
+
+    Statement pgMulti =
+        pgFactory.withUnnamedParameters(
+            "INSERT INTO users (id, name, active) VALUES (?, ?, ?)", 10L, "Alice", true);
+    assertThat(pgMulti.getSql())
+        .isEqualTo("INSERT INTO users (id, name, active) VALUES ($1, $2, $3)");
+    assertThat(pgMulti.getParameters())
+        .containsExactly(
+            "p1", Value.toValue(10L), "p2", Value.toValue("Alice"), "p3", Value.bool(true));
+    assertThrows(UnsupportedOperationException.class, () -> pgMulti.getParameters().clear());
+  }
+
+  @Test
+  public void withUnnamedParametersNullHandling() {
+    assertThrows(NullPointerException.class, () -> new Statement.StatementFactory(null));
+
+    Statement.StatementFactory gsqlFactory =
+        new Statement.StatementFactory(Dialect.GOOGLE_STANDARD_SQL);
+    Statement.StatementFactory pgFactory = new Statement.StatementFactory(Dialect.POSTGRESQL);
+
+    AtomicBoolean iteratorRequested = new AtomicBoolean(false);
+    Iterable<Long> unconsumedIterable =
+        () -> {
+          iteratorRequested.set(true);
+          throw new AssertionError("Iterator must not be consumed when sql is null");
+        };
+
+    assertThrows(NullPointerException.class, () -> gsqlFactory.withUnnamedParameters(null));
+    assertThrows(
+        NullPointerException.class,
+        () -> gsqlFactory.withUnnamedParameters(null, unconsumedIterable));
+    assertFalse(iteratorRequested.get());
+
+    assertThrows(
+        NullPointerException.class,
+        () -> gsqlFactory.withUnnamedParameters("SELECT ?", (Object[]) null));
+    assertThrows(
+        NullPointerException.class,
+        () -> pgFactory.withUnnamedParameters("SELECT 1", (Object[]) null));
+
+    Statement gsqlNullElement =
+        gsqlFactory.withUnnamedParameters("SELECT * FROM Users WHERE name = ?", (Object) null);
+    assertThat(gsqlNullElement.getSql()).isEqualTo("SELECT * FROM Users WHERE name = @p1");
+    assertThat(gsqlNullElement.hasBinding("p1")).isTrue();
+    assertThat(gsqlNullElement.getParameters().get("p1").isNull()).isTrue();
+    assertThat(gsqlNullElement.getParameters().get("p1")).isEqualTo(Value.toValue(null));
+
+    Statement pgNullElement =
+        pgFactory.withUnnamedParameters("SELECT * FROM users WHERE name = ?", (Object) null);
+    assertThat(pgNullElement.getSql()).isEqualTo("SELECT * FROM users WHERE name = $1");
+    assertThat(pgNullElement.getParameters().get("p1").isNull()).isTrue();
+  }
+
+  @Test
+  public void withUnnamedParametersTooFewValues() {
+    for (Dialect dialect : Dialect.values()) {
+      Statement.StatementFactory factory = new Statement.StatementFactory(dialect);
+
+      SpannerException zeroForOne =
+          assertThrows(
+              SpannerException.class,
+              () -> factory.withUnnamedParameters("SELECT * FROM Users WHERE id = ?"));
+      assertEquals(ErrorCode.INVALID_ARGUMENT, zeroForOne.getErrorCode());
+      assertThat(zeroForOne.getMessage()).contains("1");
+      assertThat(zeroForOne.getMessage()).contains("0");
+
+      AtomicBoolean iteratorRequested = new AtomicBoolean(false);
+      Iterable<Long> unconsumedIterable =
+          () -> {
+            iteratorRequested.set(true);
+            throw new AssertionError("Iterator must not be consumed on parameter count mismatch");
+          };
+
+      SpannerException oneForTwo =
+          assertThrows(
+              SpannerException.class,
+              () ->
+                  factory.withUnnamedParameters(
+                      "SELECT * FROM Users WHERE id = ? AND parent_id = ?", unconsumedIterable));
+      assertEquals(ErrorCode.INVALID_ARGUMENT, oneForTwo.getErrorCode());
+      assertThat(oneForTwo.getMessage()).contains("2");
+      assertThat(oneForTwo.getMessage()).contains("1");
+      assertFalse(iteratorRequested.get());
+    }
+  }
+
+  @Test
+  public void withUnnamedParametersTooManyValues() {
+    for (Dialect dialect : Dialect.values()) {
+      Statement.StatementFactory factory = new Statement.StatementFactory(dialect);
+
+      SpannerException oneForZero =
+          assertThrows(
+              SpannerException.class, () -> factory.withUnnamedParameters("SELECT 1", 10L));
+      assertEquals(ErrorCode.INVALID_ARGUMENT, oneForZero.getErrorCode());
+      assertThat(oneForZero.getMessage()).contains("0");
+      assertThat(oneForZero.getMessage()).contains("1");
+
+      SpannerException nullElementForZero =
+          assertThrows(
+              SpannerException.class,
+              () -> factory.withUnnamedParameters("SELECT 1", (Object) null));
+      assertEquals(ErrorCode.INVALID_ARGUMENT, nullElementForZero.getErrorCode());
+
+      AtomicBoolean iteratorRequested = new AtomicBoolean(false);
+      Iterable<Long> unconsumedIterable =
+          () -> {
+            iteratorRequested.set(true);
+            throw new AssertionError("Iterator must not be consumed on parameter count mismatch");
+          };
+
+      SpannerException threeForTwo =
+          assertThrows(
+              SpannerException.class,
+              () ->
+                  factory.withUnnamedParameters(
+                      "SELECT * FROM Users WHERE id = ? AND name = ?",
+                      10L,
+                      "Alice",
+                      unconsumedIterable));
+      assertEquals(ErrorCode.INVALID_ARGUMENT, threeForTwo.getErrorCode());
+      assertThat(threeForTwo.getMessage()).contains("2");
+      assertThat(threeForTwo.getMessage()).contains("3");
+      assertFalse(iteratorRequested.get());
+    }
+
+    Statement.StatementFactory gsqlFactory =
+        new Statement.StatementFactory(Dialect.GOOGLE_STANDARD_SQL);
+    SpannerException gsqlNativePlaceholder =
+        assertThrows(
+            SpannerException.class,
+            () -> gsqlFactory.withUnnamedParameters("SELECT * FROM Users WHERE id = @p1", 10L));
+    assertEquals(ErrorCode.INVALID_ARGUMENT, gsqlNativePlaceholder.getErrorCode());
+
+    Statement.StatementFactory pgFactory = new Statement.StatementFactory(Dialect.POSTGRESQL);
+    SpannerException pgNativePlaceholder =
+        assertThrows(
+            SpannerException.class,
+            () -> pgFactory.withUnnamedParameters("SELECT * FROM users WHERE id = $1", 10L));
+    assertEquals(ErrorCode.INVALID_ARGUMENT, pgNativePlaceholder.getErrorCode());
+  }
+
+  @Test
+  public void withUnnamedParametersIgnoresLiteralsAndComments() {
+    Statement.StatementFactory gsqlFactory =
+        new Statement.StatementFactory(Dialect.GOOGLE_STANDARD_SQL);
+    String gsql =
+        "-- ? line comment\n"
+            + "# ? hash comment\r"
+            + "/* ? block comment */ "
+            + "SELECT '?', \"?\", `?`, '''?''', 'it\\'s ?' FROM Users WHERE id = ?";
+    Statement gsqlStmt = gsqlFactory.withUnnamedParameters(gsql, 42L);
+    assertThat(gsqlStmt.getSql()).endsWith("WHERE id = @p1");
+    assertThat(gsqlStmt.getParameters()).containsExactly("p1", Value.toValue(42L));
+    assertEquals(
+        ErrorCode.INVALID_ARGUMENT,
+        assertThrows(SpannerException.class, () -> gsqlFactory.withUnnamedParameters(gsql))
+            .getErrorCode());
+    assertEquals(
+        ErrorCode.INVALID_ARGUMENT,
+        assertThrows(
+                SpannerException.class, () -> gsqlFactory.withUnnamedParameters(gsql, 42L, 99L))
+            .getErrorCode());
+
+    Statement.StatementFactory pgFactory = new Statement.StatementFactory(Dialect.POSTGRESQL);
+    String pgSql =
+        "-- ? line comment\r"
+            + "/* outer /* inner ? */ ? */ "
+            + "SELECT '?', \"?\", $$?$$, $tag$?$tag$, E'it\\'s ?' FROM users WHERE id = ?";
+    Statement pgStmt = pgFactory.withUnnamedParameters(pgSql, 42L);
+    assertThat(pgStmt.getSql()).endsWith("WHERE id = $1");
+    assertThat(pgStmt.getParameters()).containsExactly("p1", Value.toValue(42L));
+    assertEquals(
+        ErrorCode.INVALID_ARGUMENT,
+        assertThrows(SpannerException.class, () -> pgFactory.withUnnamedParameters(pgSql))
+            .getErrorCode());
+    assertEquals(
+        ErrorCode.INVALID_ARGUMENT,
+        assertThrows(SpannerException.class, () -> pgFactory.withUnnamedParameters(pgSql, 42L, 99L))
+            .getErrorCode());
   }
 }
