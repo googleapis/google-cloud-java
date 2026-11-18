@@ -34,15 +34,25 @@ import com.google.api.client.testing.http.MockLowLevelHttpRequest;
 import com.google.api.client.testing.http.MockLowLevelHttpResponse;
 import com.google.api.core.ApiClock;
 import com.google.cloud.NoCredentials;
+import com.google.cloud.ServiceOptions;
+import com.google.cloud.WriteChannel;
+import com.google.cloud.http.HttpTransportOptions;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 import io.opentelemetry.api.common.Attributes;
+import io.opentelemetry.api.trace.Span;
+import io.opentelemetry.api.trace.SpanContext;
+import io.opentelemetry.api.trace.TraceFlags;
+import io.opentelemetry.api.trace.TraceState;
+import io.opentelemetry.context.Context;
+import io.opentelemetry.context.Scope;
 import io.opentelemetry.sdk.metrics.SdkMeterProvider;
+import io.opentelemetry.sdk.metrics.data.DoubleExemplarData;
 import io.opentelemetry.sdk.metrics.data.HistogramPointData;
 import io.opentelemetry.sdk.testing.exporter.InMemoryMetricReader;
 import java.io.IOException;
+import java.nio.ByteBuffer;
+import java.nio.charset.StandardCharsets;
 import java.util.List;
-import java.util.Map;
 import java.util.Objects;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicLong;
@@ -196,14 +206,264 @@ public final class StorageHttpMetricsInterceptorTest {
   }
 
   @Test
-  public void initialize_statusCodes_recordsDurationAndErrorType() throws IOException {
-    Map<Integer, String> cases =
-        ImmutableMap.of(
-            308, "OK",
-            503, "UNAVAILABLE",
-            200, "OK");
+  public void isMediaUploadRequest_cases() throws IOException {
+    HttpRequestFactory factory = new MockHttpTransport().createRequestFactory();
+    Object[][] cases = {
+      {
+        "POST",
+        "https://storage.googleapis.com/upload/storage/v1/b/my-b/o?uploadType=multipart",
+        true
+      },
+      {
+        "POST",
+        "https://storage.googleapis.com/upload/storage/v1/b/my-b/o?uploadType=resumable",
+        true
+      },
+      {
+        "PUT",
+        "https://storage.googleapis.com/upload/storage/v1/b/my-b/o?uploadType=resumable&upload_id=u1",
+        true
+      },
+      {"POST", "https://storage.googleapis.com/my-b/my-obj?uploadType=resumable", true},
+      {"PUT", "https://storage.googleapis.com/my-b/my-obj?upload_id=u1", true},
+      {"POST", "https://storage.googleapis.com/storage/v1/b/my-b/o", false},
+      {"GET", "https://storage.googleapis.com/upload/storage/v1/b/my-b/o", false},
+      {"DELETE", "https://storage.googleapis.com/storage/v1/b/my-b/o/my-obj", false},
+    };
 
-    for (int statusCode : cases.keySet()) {
+    for (Object[] testCase : cases) {
+      String method = (String) testCase[0];
+      String url = (String) testCase[1];
+      boolean expected = (boolean) testCase[2];
+      HttpRequest request = factory.buildRequest(method, new GenericUrl(url), null);
+      assertWithMessage("%s %s", method, url)
+          .that(StorageHttpMetricsInterceptor.isMediaUploadRequest(request))
+          .isEqualTo(expected);
+    }
+  }
+
+  @Test
+  public void resolveOperationName_cases() throws IOException {
+    HttpRequestFactory factory = new MockHttpTransport().createRequestFactory();
+    String[][] cases = {
+      {"GET", "https://storage.googleapis.com/download/storage/v1/b/my-b/o/my-obj", "ReadObject"},
+      {"GET", "https://storage.googleapis.com/storage/v1/b/my-b/o/my-obj?alt=media", "ReadObject"},
+      {
+        "POST",
+        "https://storage.googleapis.com/upload/storage/v1/b/my-b/o?uploadType=multipart",
+        "WriteObject"
+      },
+      {
+        "PUT",
+        "https://storage.googleapis.com/upload/storage/v1/b/my-b/o?uploadType=resumable&upload_id=u1",
+        "WriteObject"
+      },
+      {"PUT", "https://storage.googleapis.com/my-b/my-obj?upload_id=u1", "WriteObject"},
+      {"POST", "https://storage.googleapis.com/batch/storage/v1", "Batch"},
+      {"POST", "https://storage.googleapis.com/storage/v1/b", "CreateBucket"},
+      {"GET", "https://storage.googleapis.com/storage/v1/b", "ListBuckets"},
+      {"GET", "https://storage.googleapis.com/storage/v1/b/my-b", "GetBucket"},
+      {"PATCH", "https://storage.googleapis.com/storage/v1/b/my-b", "UpdateBucket"},
+      {"DELETE", "https://storage.googleapis.com/storage/v1/b/my-b", "DeleteBucket"},
+      {
+        "POST",
+        "https://storage.googleapis.com/storage/v1/b/my-b/lockRetentionPolicy",
+        "LockBucketRetentionPolicy"
+      },
+      {"GET", "https://storage.googleapis.com/storage/v1/b/my-b/iam", "GetIamPolicy"},
+      {"PUT", "https://storage.googleapis.com/storage/v1/b/my-b/iam", "SetIamPolicy"},
+      {
+        "GET",
+        "https://storage.googleapis.com/storage/v1/b/my-b/iam/testPermissions",
+        "TestIamPermissions"
+      },
+      {"POST", "https://storage.googleapis.com/storage/v1/b/my-b/acl", "CreateBucketACL"},
+      {"GET", "https://storage.googleapis.com/storage/v1/b/my-b/acl", "ListBucketACLs"},
+      {"GET", "https://storage.googleapis.com/storage/v1/b/my-b/acl/allUsers", "GetBucketACL"},
+      {"PATCH", "https://storage.googleapis.com/storage/v1/b/my-b/acl/allUsers", "UpdateBucketACL"},
+      {
+        "DELETE", "https://storage.googleapis.com/storage/v1/b/my-b/acl/allUsers", "DeleteBucketACL"
+      },
+      {
+        "POST",
+        "https://storage.googleapis.com/storage/v1/b/my-b/defaultObjectAcl",
+        "CreateDefaultObjectACL"
+      },
+      {
+        "GET",
+        "https://storage.googleapis.com/storage/v1/b/my-b/defaultObjectAcl",
+        "ListDefaultObjectACLs"
+      },
+      {
+        "GET",
+        "https://storage.googleapis.com/storage/v1/b/my-b/defaultObjectAcl/allUsers",
+        "GetDefaultObjectACL"
+      },
+      {
+        "PATCH",
+        "https://storage.googleapis.com/storage/v1/b/my-b/defaultObjectAcl/allUsers",
+        "UpdateDefaultObjectACL"
+      },
+      {
+        "DELETE",
+        "https://storage.googleapis.com/storage/v1/b/my-b/defaultObjectAcl/allUsers",
+        "DeleteDefaultObjectACL"
+      },
+      {
+        "POST",
+        "https://storage.googleapis.com/storage/v1/b/my-b/notificationConfigs",
+        "CreateNotification"
+      },
+      {
+        "GET",
+        "https://storage.googleapis.com/storage/v1/b/my-b/notificationConfigs",
+        "ListNotifications"
+      },
+      {
+        "GET",
+        "https://storage.googleapis.com/storage/v1/b/my-b/notificationConfigs/n1",
+        "GetNotification"
+      },
+      {
+        "DELETE",
+        "https://storage.googleapis.com/storage/v1/b/my-b/notificationConfigs/n1",
+        "DeleteNotification"
+      },
+      {"POST", "https://storage.googleapis.com/storage/v1/b/my-b/o", "WriteObject"},
+      {"GET", "https://storage.googleapis.com/storage/v1/b/my-b/o", "ListObjects"},
+      {"GET", "https://storage.googleapis.com/storage/v1/b/my-b/o/my-obj", "GetObject"},
+      {"PATCH", "https://storage.googleapis.com/storage/v1/b/my-b/o/my-obj", "UpdateObject"},
+      {"DELETE", "https://storage.googleapis.com/storage/v1/b/my-b/o/my-obj", "DeleteObject"},
+      {
+        "POST", "https://storage.googleapis.com/storage/v1/b/my-b/o/my-obj/compose", "ComposeObject"
+      },
+      {
+        "POST", "https://storage.googleapis.com/storage/v1/b/my-b/o/my-obj/restore", "RestoreObject"
+      },
+      {
+        "POST",
+        "https://storage.googleapis.com/storage/v1/b/b1/o/o1/rewriteTo/b/b2/o/o2",
+        "RewriteObject"
+      },
+      {"POST", "https://storage.googleapis.com/storage/v1/b/b1/o/o1/moveTo/o/o2", "MoveObject"},
+      {"POST", "https://storage.googleapis.com/storage/v1/b/my-b/o/my-obj/acl", "CreateObjectACL"},
+      {"GET", "https://storage.googleapis.com/storage/v1/b/my-b/o/my-obj/acl", "ListObjectACLs"},
+      {
+        "GET",
+        "https://storage.googleapis.com/storage/v1/b/my-b/o/my-obj/acl/allUsers",
+        "GetObjectACL"
+      },
+      {
+        "PATCH",
+        "https://storage.googleapis.com/storage/v1/b/my-b/o/my-obj/acl/allUsers",
+        "UpdateObjectACL"
+      },
+      {
+        "DELETE",
+        "https://storage.googleapis.com/storage/v1/b/my-b/o/my-obj/acl/allUsers",
+        "DeleteObjectACL"
+      },
+      {"POST", "https://storage.googleapis.com/storage/v1/projects/my-p/hmacKeys", "CreateHMACKey"},
+      {"GET", "https://storage.googleapis.com/storage/v1/projects/my-p/hmacKeys", "ListHMACKeys"},
+      {"GET", "https://storage.googleapis.com/storage/v1/projects/my-p/hmacKeys/k1", "GetHMACKey"},
+      {
+        "PUT",
+        "https://storage.googleapis.com/storage/v1/projects/my-p/hmacKeys/k1",
+        "UpdateHMACKey"
+      },
+      {
+        "DELETE",
+        "https://storage.googleapis.com/storage/v1/projects/my-p/hmacKeys/k1",
+        "DeleteHMACKey"
+      },
+      {
+        "GET",
+        "https://storage.googleapis.com/storage/v1/projects/my-p/serviceAccount",
+        "GetServiceAccount"
+      },
+      {"POST", "https://storage.googleapis.com/my-b/my-obj?uploadType=resumable", "WriteObject"},
+      {"PUT", "https://my-b.storage.googleapis.com/my-obj?upload_id=u1", "WriteObject"},
+      {"GET", "https://storage.googleapis.com/my-b/my-obj?uploadId=u1", "UNKNOWN"},
+      {"GET", "https://storage.googleapis.com/", "UNKNOWN"},
+    };
+
+    for (String[] testCase : cases) {
+      String method = testCase[0];
+      String url = testCase[1];
+      String expectedOp = testCase[2];
+      GenericUrl genericUrl = new GenericUrl(url);
+      HttpRequest request = factory.buildRequest(method, genericUrl, null);
+      String urlTemplate = StorageHttpMetricsInterceptor.extractUrlTemplate(genericUrl);
+      assertWithMessage("%s %s", method, url)
+          .that(StorageHttpMetricsInterceptor.resolveOperationName(request, urlTemplate))
+          .isEqualTo(expectedOp);
+    }
+
+    // Verify X-HTTP-Method-Override (applied by MethodOverride on NetHttpTransport for PATCH and
+    // >2048-char GET URLs) resolves to the logical HTTP method rather than wire POST.
+    String[][] overrideCases = {
+      {"PATCH", "https://storage.googleapis.com/storage/v1/b/my-b", "UpdateBucket"},
+      {"PATCH", "https://storage.googleapis.com/storage/v1/b/my-b/o/my-obj", "UpdateObject"},
+      {"GET", "https://storage.googleapis.com/storage/v1/b/my-b/o", "ListObjects"},
+      {"GET", "https://storage.googleapis.com/storage/v1/b/my-b/o/my-obj?alt=media", "ReadObject"},
+    };
+    for (String[] testCase : overrideCases) {
+      String logicalMethod = testCase[0];
+      String url = testCase[1];
+      String expectedOp = testCase[2];
+      GenericUrl genericUrl = new GenericUrl(url);
+      HttpRequest request = factory.buildPostRequest(genericUrl, null);
+      request.getHeaders().set("X-HTTP-Method-Override", logicalMethod);
+      String urlTemplate = StorageHttpMetricsInterceptor.extractUrlTemplate(genericUrl);
+      assertWithMessage("override=%s %s", logicalMethod, url)
+          .that(StorageHttpMetricsInterceptor.resolveOperationName(request, urlTemplate))
+          .isEqualTo(expectedOp);
+    }
+
+    GenericUrl bucketUrl = new GenericUrl("https://storage.googleapis.com/storage/v1/b/my-b");
+    HttpRequest bucketGet = factory.buildGetRequest(bucketUrl);
+    String bucketTemplate = StorageHttpMetricsInterceptor.extractUrlTemplate(bucketUrl);
+    try (Scope ignore = StorageMetricsContext.create("UpdateBucket").makeCurrent()) {
+      assertThat(StorageHttpMetricsInterceptor.resolveOperationName(bucketGet, bucketTemplate))
+          .isEqualTo("UpdateBucket");
+    }
+    assertThat(StorageHttpMetricsInterceptor.resolveOperationName(bucketGet, bucketTemplate))
+        .isEqualTo("GetBucket");
+  }
+
+  @Test
+  public void initialize_statusCodes_recordsDurationAndErrorType() throws IOException {
+    Object[][] cases = {
+      {
+        308,
+        "PUT",
+        "https://storage.googleapis.com/upload/storage/v1/b/my-b/o?uploadType=resumable&upload_id=u1",
+        "/upload/storage/v1/b/{bucket}/o",
+        "OK",
+        "WriteObject"
+      },
+      {
+        503,
+        "GET",
+        "https://storage.googleapis.com/storage/v1/b/my-b",
+        "/storage/v1/b/{bucket}",
+        "UNAVAILABLE",
+        "GetBucket"
+      },
+      {
+        200,
+        "GET",
+        "https://storage.googleapis.com/storage/v1/b/my-b/o/my-obj?alt=media",
+        "/storage/v1/b/{bucket}/o/{object}",
+        "OK",
+        "ReadObject"
+      },
+    };
+
+    for (Object[] testCase : cases) {
+      int statusCode = (int) testCase[0];
+      String method = (String) testCase[1];
+      String url = (String) testCase[2];
       AtomicBoolean delegateCalled = new AtomicBoolean(false);
       AtomicBoolean execCalled = new AtomicBoolean(false);
       AtomicBoolean respCalled = new AtomicBoolean(false);
@@ -220,12 +480,10 @@ public final class StorageHttpMetricsInterceptorTest {
       HttpRequestInitializer interceptor = httpOptions.decorateWithMetrics(delegate);
 
       HttpTransport transport = createAdvancingTransport(statusCode, 250_000_000L);
-      String url =
-          statusCode == 200
-              ? "https://storage.googleapis.com/storage/v1/b/my-b/o/my-obj?alt=media"
-              : "https://storage.googleapis.com/storage/v1/b/my-b/o/my-obj";
       HttpRequest request =
-          transport.createRequestFactory(interceptor).buildGetRequest(new GenericUrl(url));
+          transport
+              .createRequestFactory(interceptor)
+              .buildRequest(method, new GenericUrl(url), null);
       if (statusCode != 200) {
         request.setThrowExceptionOnExecuteError(false);
       }
@@ -234,15 +492,20 @@ public final class StorageHttpMetricsInterceptorTest {
       assertWithMessage("status=%s", statusCode).that(delegateCalled.get()).isTrue();
       assertWithMessage("status=%s", statusCode).that(execCalled.get()).isTrue();
       assertWithMessage("status=%s", statusCode).that(respCalled.get()).isTrue();
-      if (statusCode != 200) {
-        assertWithMessage("status=%s", statusCode).that(ttfbPoints()).isEmpty();
-      }
     }
 
     List<HistogramPointData> points = durationPoints();
-    assertThat(points).hasSize(cases.size());
-    for (Map.Entry<Integer, String> entry : cases.entrySet()) {
-      long statusCode = entry.getKey();
+    assertThat(points).hasSize(cases.length);
+    List<HistogramPointData> ttfb = ttfbPoints();
+    assertThat(ttfb).hasSize(cases.length);
+
+    for (Object[] testCase : cases) {
+      long statusCode = (int) testCase[0];
+      String expectedMethod = (String) testCase[1];
+      String expectedTemplate = (String) testCase[3];
+      String expectedErrorType = (String) testCase[4];
+      String expectedOperation = (String) testCase[5];
+
       HistogramPointData point = findPointByStatus(points, statusCode);
       assertWithMessage("status=%s", statusCode).that(point.getCount()).isEqualTo(1L);
       assertWithMessage("status=%s", statusCode).that(point.getSum()).isWithin(1e-6).of(0.25);
@@ -255,42 +518,42 @@ public final class StorageHttpMetricsInterceptorTest {
       assertThat(attrs.get(StorageClientMetrics.KEY_GCP_CLIENT_ARTIFACT))
           .isEqualTo(StorageClientMetrics.ARTIFACT_STORAGE);
       assertThat(attrs.get(StorageClientMetrics.KEY_RPC_SYSTEM_NAME)).isEqualTo("http");
-      assertThat(attrs.get(StorageClientMetrics.KEY_HTTP_REQUEST_METHOD)).isEqualTo("GET");
+      assertThat(attrs.get(StorageClientMetrics.KEY_HTTP_REQUEST_METHOD)).isEqualTo(expectedMethod);
       assertThat(attrs.get(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE))
           .isEqualTo(statusCode);
       assertThat(attrs.get(StorageClientMetrics.KEY_NETWORK_PATH))
           .isEqualTo(StorageClientMetrics.NETWORK_PATH_CLOUDPATH);
-      assertThat(attrs.get(StorageClientMetrics.KEY_URL_TEMPLATE))
-          .isEqualTo("/storage/v1/b/{bucket}/o/{object}");
+      assertThat(attrs.get(StorageClientMetrics.KEY_URL_TEMPLATE)).isEqualTo(expectedTemplate);
       assertThat(attrs.get(StorageClientMetrics.KEY_SERVER_ADDRESS))
           .isEqualTo("storage.googleapis.com");
       assertWithMessage("status=%s", statusCode)
           .that(attrs.get(StorageClientMetrics.KEY_ERROR_TYPE))
-          .isEqualTo(entry.getValue());
-    }
+          .isEqualTo(expectedErrorType);
 
-    List<HistogramPointData> ttfb = ttfbPoints();
-    assertThat(ttfb).hasSize(1);
-    HistogramPointData ttfbPoint = ttfb.get(0);
-    assertThat(ttfbPoint.getCount()).isEqualTo(1L);
-    assertThat(ttfbPoint.getSum()).isWithin(1e-6).of(0.25);
-    assertThat(ttfbPoint.getAttributes())
-        .isEqualTo(
-            Attributes.builder()
-                .put(
-                    StorageClientMetrics.KEY_GCP_CLIENT_SERVICE,
-                    StorageClientMetrics.SERVICE_STORAGE)
-                .put(StorageClientMetrics.KEY_GCP_CLIENT_VERSION, StorageOptions.version())
-                .put(
-                    StorageClientMetrics.KEY_GCP_CLIENT_ARTIFACT,
-                    StorageClientMetrics.ARTIFACT_STORAGE)
-                .put(StorageClientMetrics.KEY_RPC_SYSTEM_NAME, "http")
-                .put(StorageClientMetrics.KEY_GCP_STORAGE_OPERATION, "ReadObject")
-                .put(
-                    StorageClientMetrics.KEY_NETWORK_PATH,
-                    StorageClientMetrics.NETWORK_PATH_CLOUDPATH)
-                .put(StorageClientMetrics.KEY_SERVER_ADDRESS, "storage.googleapis.com")
-                .build());
+      HistogramPointData ttfbPoint = findTtfbPointByOperation(ttfb, expectedOperation);
+      assertWithMessage("op=%s", expectedOperation).that(ttfbPoint.getCount()).isEqualTo(1L);
+      assertWithMessage("op=%s", expectedOperation)
+          .that(ttfbPoint.getSum())
+          .isWithin(1e-6)
+          .of(0.25);
+      assertThat(ttfbPoint.getAttributes())
+          .isEqualTo(
+              Attributes.builder()
+                  .put(
+                      StorageClientMetrics.KEY_GCP_CLIENT_SERVICE,
+                      StorageClientMetrics.SERVICE_STORAGE)
+                  .put(StorageClientMetrics.KEY_GCP_CLIENT_VERSION, StorageOptions.version())
+                  .put(
+                      StorageClientMetrics.KEY_GCP_CLIENT_ARTIFACT,
+                      StorageClientMetrics.ARTIFACT_STORAGE)
+                  .put(StorageClientMetrics.KEY_RPC_SYSTEM_NAME, "http")
+                  .put(StorageClientMetrics.KEY_GCP_STORAGE_OPERATION, expectedOperation)
+                  .put(
+                      StorageClientMetrics.KEY_NETWORK_PATH,
+                      StorageClientMetrics.NETWORK_PATH_CLOUDPATH)
+                  .put(StorageClientMetrics.KEY_SERVER_ADDRESS, "storage.googleapis.com")
+                  .build());
+    }
   }
 
   @Test
@@ -419,7 +682,13 @@ public final class StorageHttpMetricsInterceptorTest {
     assertThat(okPoint.getAttributes().get(StorageClientMetrics.KEY_ERROR_TYPE))
         .isEqualTo(StorageErrorTypeMapper.STATUS_OK);
 
-    assertThat(ttfbPoints()).isEmpty();
+    List<HistogramPointData> ttfb = ttfbPoints();
+    assertThat(ttfb).hasSize(1);
+    HistogramPointData ttfbPoint = ttfb.get(0);
+    assertThat(ttfbPoint.getCount()).isEqualTo(1L);
+    assertThat(ttfbPoint.getSum()).isWithin(1e-6).of(0.20);
+    assertThat(ttfbPoint.getAttributes().get(StorageClientMetrics.KEY_GCP_STORAGE_OPERATION))
+        .isEqualTo("GetBucket");
   }
 
   @Test
@@ -589,7 +858,116 @@ public final class StorageHttpMetricsInterceptorTest {
     assertThat(attrs.get(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE)).isEqualTo(200L);
     assertThat(attrs.get(StorageClientMetrics.KEY_ERROR_TYPE))
         .isEqualTo(StorageErrorTypeMapper.STATUS_OK);
-    assertThat(ttfbPoints()).isEmpty();
+
+    List<HistogramPointData> ttfb = ttfbPoints();
+    assertThat(ttfb).hasSize(1);
+    HistogramPointData batchTtfb = findTtfbPointByOperation(ttfb, "Batch");
+    assertThat(batchTtfb.getCount()).isEqualTo(2L);
+    assertThat(batchTtfb.getSum()).isWithin(1e-6).of(0.20);
+  }
+
+  @Test
+  public void endToEnd_storageImplUnaryAndResumableWrite_recordsHttpTtfb() throws Exception {
+    byte[] directPayload = "hello".getBytes(StandardCharsets.UTF_8);
+    byte[] resumablePayload = new byte[300 * 1024];
+    String uploadId =
+        "https://storage.googleapis.com/upload/storage/v1/b/my-b/o?uploadType=resumable&upload_id=session-1";
+    String traceId = "0123456789abcdef0123456789abcdef";
+    String spanId = "0123456789abcdef";
+    Context tracedContext =
+        Context.root()
+            .with(
+                Span.wrap(
+                    SpanContext.create(
+                        traceId, spanId, TraceFlags.getSampled(), TraceState.getDefault())));
+
+    HttpTransport transport =
+        new MockHttpTransport() {
+          @Override
+          public LowLevelHttpRequest buildRequest(String method, String url) {
+            return new MockLowLevelHttpRequest(url) {
+              @Override
+              public LowLevelHttpResponse execute() {
+                clock.advanceNanos(100_000_000L);
+                MockLowLevelHttpResponse resp = new MockLowLevelHttpResponse();
+                if ("GET".equals(method) && url.contains("/storage/v1/b/my-b")) {
+                  resp.setStatusCode(200);
+                  resp.setContentType("application/json; charset=UTF-8");
+                  resp.setContent("{\"name\":\"my-b\"}");
+                } else if ("POST".equals(method) && url.contains("uploadType=multipart")) {
+                  resp.setStatusCode(200);
+                  resp.setContentType("application/json; charset=UTF-8");
+                  resp.setContent(
+                      "{\"bucket\":\"my-b\",\"name\":\"direct.txt\",\"size\":\""
+                          + directPayload.length
+                          + "\"}");
+                } else if ("POST".equals(method) && url.contains("uploadType=resumable")) {
+                  resp.setStatusCode(200);
+                  resp.addHeader("Location", uploadId);
+                } else if ("PUT".equals(method) && url.contains("upload_id=session-1")) {
+                  String contentRange = getFirstHeaderValue("Content-Range");
+                  if (contentRange != null && contentRange.endsWith("/*")) {
+                    resp.setStatusCode(308);
+                    resp.addHeader("Range", "bytes=0-262143");
+                  } else {
+                    resp.setStatusCode(200);
+                    resp.setContentType("application/json; charset=UTF-8");
+                    resp.addHeader("Content-Type", "application/json; charset=UTF-8");
+                    resp.setContent(
+                        "{\"bucket\":\"my-b\",\"name\":\"resumable.txt\",\"size\":\""
+                            + resumablePayload.length
+                            + "\"}");
+                  }
+                } else {
+                  throw new AssertionError("Unexpected request: " + method + " " + url);
+                }
+                return resp;
+              }
+            };
+          }
+        };
+
+    try (Storage storage =
+        httpOptions.toBuilder()
+            .setTransportOptions(
+                HttpTransportOptions.newBuilder().setHttpTransportFactory(() -> transport).build())
+            .setRetrySettings(ServiceOptions.getNoRetrySettings())
+            .build()
+            .getService()) {
+      // 1. Unmodified BucketInfo.update executes GET /storage/v1/b/my-b with "UpdateBucket" context
+      // and propagates the active trace exemplar through StorageMetricsContext.makeCurrent().
+      try (Scope ignore = tracedContext.makeCurrent()) {
+        Bucket updated = storage.update(BucketInfo.of("my-b"));
+        assertThat(updated.getName()).isEqualTo("my-b");
+      }
+
+      // 2. Direct upload executes multipart POST
+      Blob created =
+          storage.create(BlobInfo.newBuilder("my-b", "direct.txt").build(), directPayload);
+      assertThat(created.getName()).isEqualTo("direct.txt");
+
+      // 3. Resumable upload executes open POST + 256 KiB chunk PUT (308) + final PUT (200)
+      try (WriteChannel writer =
+          storage.writer(BlobInfo.newBuilder("my-b", "resumable.txt").build())) {
+        writer.setChunkSize(256 * 1024);
+        writer.write(ByteBuffer.wrap(resumablePayload));
+      }
+
+      List<HistogramPointData> ttfb = ttfbPoints();
+      assertThat(ttfb).hasSize(2);
+
+      HistogramPointData updateBucketTtfb = findTtfbPointByOperation(ttfb, "UpdateBucket");
+      assertThat(updateBucketTtfb.getCount()).isEqualTo(1L);
+      assertThat(updateBucketTtfb.getSum()).isWithin(1e-6).of(0.10);
+      assertThat(updateBucketTtfb.getExemplars()).isNotEmpty();
+      DoubleExemplarData exemplar = (DoubleExemplarData) updateBucketTtfb.getExemplars().get(0);
+      assertThat(exemplar.getSpanContext().getTraceId()).isEqualTo(traceId);
+      assertThat(exemplar.getSpanContext().getSpanId()).isEqualTo(spanId);
+
+      HistogramPointData writeObjectTtfb = findTtfbPointByOperation(ttfb, "WriteObject");
+      assertThat(writeObjectTtfb.getCount()).isEqualTo(4L);
+      assertThat(writeObjectTtfb.getSum()).isWithin(1e-6).of(0.40);
+    }
   }
 
   private List<HistogramPointData> durationPoints() {
@@ -618,6 +996,18 @@ public final class StorageHttpMetricsInterceptorTest {
                     statusCode))
         .findFirst()
         .orElseThrow(() -> new AssertionError("No point for status " + statusCode));
+  }
+
+  private static HistogramPointData findTtfbPointByOperation(
+      List<HistogramPointData> points, String operationName) {
+    return points.stream()
+        .filter(
+            p ->
+                Objects.equals(
+                    p.getAttributes().get(StorageClientMetrics.KEY_GCP_STORAGE_OPERATION),
+                    operationName))
+        .findFirst()
+        .orElseThrow(() -> new AssertionError("No TTFB point for operation " + operationName));
   }
 
   private HttpTransport createAdvancingTransport(int statusCode, long advanceNanos) {

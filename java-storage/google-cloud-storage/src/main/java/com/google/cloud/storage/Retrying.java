@@ -119,8 +119,7 @@ final class Retrying {
         Callable<Response> c,
         Decoder<Response, Model> d,
         @Nullable StorageMetricsContext metricsContext) {
-      try (Scope ignore =
-          metricsContext != null ? metricsContext.getOtelContext().makeCurrent() : null) {
+      try (Scope ignore = metricsContext != null ? metricsContext.makeCurrent() : null) {
         if (metricsContext != null) {
           metricsContext.incrementAttempts();
         }
@@ -240,8 +239,7 @@ final class Retrying {
         Callable<Response> c,
         Decoder<Response, Model> d,
         @Nullable StorageMetricsContext metricsContext) {
-      try (Scope ignore =
-          metricsContext != null ? metricsContext.getOtelContext().makeCurrent() : null) {
+      try (Scope ignore = metricsContext != null ? metricsContext.makeCurrent() : null) {
         RetryContext ctx =
             decorator.apply(
                 RetryContext.of(
