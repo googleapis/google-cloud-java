@@ -58,7 +58,6 @@ final class StorageClientMetrics implements AutoCloseable {
       AttributeKey.longKey("http.response.status_code");
   static final AttributeKey<String> KEY_URL_TEMPLATE = AttributeKey.stringKey("url.template");
   static final AttributeKey<String> KEY_SERVER_ADDRESS = AttributeKey.stringKey("server.address");
-  static final AttributeKey<Long> KEY_SERVER_PORT = AttributeKey.longKey("server.port");
   static final AttributeKey<String> KEY_ERROR_TYPE = AttributeKey.stringKey("error.type");
   static final AttributeKey<String> KEY_NETWORK_PATH = AttributeKey.stringKey("network.path");
   static final AttributeKey<String> KEY_NETWORK_IO_DIRECTION =
@@ -172,12 +171,10 @@ final class StorageClientMetrics implements AutoCloseable {
             .put(KEY_GCP_CLIENT_VERSION, StorageOptions.version())
             .put(KEY_GCP_CLIENT_ARTIFACT, ARTIFACT_STORAGE)
             .build();
-    Attributes baseAttributes =
-        clientAttributes.toBuilder().put(KEY_SERVER_ADDRESS, "storage.googleapis.com").build();
     return new StorageClientMetrics(
         meter,
         clientAttributes,
-        baseAttributes,
+        clientAttributes,
         ownedMeterProvider,
         enableOtelMetrics,
         enableOtelDebugMetrics);
@@ -463,7 +460,6 @@ final class StorageClientMetrics implements AutoCloseable {
     }
     Attributes attributes =
         baseAttributes.toBuilder()
-            .put(KEY_RPC_SYSTEM_NAME, "grpc")
             .put(KEY_RPC_METHOD, rpcMethod)
             .put(KEY_RPC_RESPONSE_STATUS_CODE, statusCode)
             .put(KEY_NETWORK_PATH, networkPath)
@@ -472,25 +468,37 @@ final class StorageClientMetrics implements AutoCloseable {
     rpcClientCallDuration.record(durationSeconds, attributes, otelContext);
   }
 
+  void recordHttpRequestDuration(
+      double durationSeconds,
+      String httpMethod,
+      long statusCode,
+      String urlTemplate,
+      String errorType) {
+    if (httpClientRequestDuration == null) {
+      return;
+    }
+    Attributes attributes =
+        baseAttributes.toBuilder()
+            .put(KEY_HTTP_REQUEST_METHOD, httpMethod)
+            .put(KEY_HTTP_RESPONSE_STATUS_CODE, statusCode)
+            .put(KEY_NETWORK_PATH, NETWORK_PATH_CLOUDPATH)
+            .put(KEY_URL_TEMPLATE, urlTemplate)
+            .put(KEY_ERROR_TYPE, errorType)
+            .build();
+    httpClientRequestDuration.record(durationSeconds, attributes, Context.current());
+  }
+
   void recordTtfb(
-      Context otelContext,
-      String operationName,
-      double ttfbSeconds,
-      String rpcSystemName,
-      String networkPath,
-      @Nullable String serverAddress) {
+      Context otelContext, String operationName, double ttfbSeconds, String networkPath) {
     if (ttfb == null) {
       return;
     }
-    AttributesBuilder builder =
+    Attributes attributes =
         baseAttributes.toBuilder()
-            .put(KEY_RPC_SYSTEM_NAME, rpcSystemName)
             .put(KEY_GCP_STORAGE_OPERATION, operationName)
-            .put(KEY_NETWORK_PATH, networkPath);
-    if (serverAddress != null) {
-      builder.put(KEY_SERVER_ADDRESS, serverAddress);
-    }
-    ttfb.record(ttfbSeconds, builder.build(), otelContext);
+            .put(KEY_NETWORK_PATH, networkPath)
+            .build();
+    ttfb.record(ttfbSeconds, attributes, otelContext);
   }
 
   @Nullable

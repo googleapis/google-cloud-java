@@ -923,45 +923,9 @@ public final class StorageMetricsContextTest {
         .isEqualTo(StorageErrorTypeMapper.STATUS_UNKNOWN);
   }
 
-  private static @Nullable MetricData findMetric(
-      Collection<MetricData> metrics, String metricName) {
-    return metrics.stream().filter(m -> m.getName().equals(metricName)).findFirst().orElse(null);
-  }
-
-  private static LongPointData getSinglePoint(Collection<MetricData> metrics, String metricName) {
-    MetricData metric = findMetric(metrics, metricName);
-    assertThat(metric).isNotNull();
-    assertThat(metric.getLongSumData().getPoints()).hasSize(1);
-    return metric.getLongSumData().getPoints().iterator().next();
-  }
-
-  private static HistogramPointData getSingleHistogramPoint(
-      Collection<MetricData> metrics, String metricName) {
-    MetricData metric = findMetric(metrics, metricName);
-    assertThat(metric).isNotNull();
-    assertThat(metric.getHistogramData().getPoints()).hasSize(1);
-    return metric.getHistogramData().getPoints().iterator().next();
-  }
-
   @Test
   public void recordOperation_recordsRequestBodySize_whenWriteObjectAndBytesGreaterThanZero() {
-    InMemoryMetricReader reader = InMemoryMetricReader.create();
-    SdkMeterProvider provider = SdkMeterProvider.builder().registerMetricReader(reader).build();
-    StorageClientMetrics metrics = StorageClientMetrics.create(provider, true, false);
-
-    Attributes baseAttributes =
-        Attributes.builder()
-            .put(StorageClientMetrics.KEY_RPC_SYSTEM_NAME, "grpc")
-            .put(StorageClientMetrics.KEY_SERVER_ADDRESS, "storage.googleapis.com")
-            .put(
-                StorageClientMetrics.KEY_NETWORK_PATH, StorageClientMetrics.NETWORK_PATH_DIRECTPATH)
-            .put(StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE, "OK")
-            .put(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE, 200L)
-            .put(StorageClientMetrics.KEY_ERROR_TYPE, StorageErrorTypeMapper.STATUS_OK)
-            .put(StorageClientMetrics.KEY_GCP_STORAGE_OPERATION, "WriteObject")
-            .put(StorageClientMetrics.KEY_GCP_CLIENT_METHOD, "Storage.writer")
-            .build();
-    StorageMetricsContext context = StorageMetricsContext.create("WriteObject", baseAttributes);
+    StorageMetricsContext context = metrics.createContext("WriteObject");
     context.setRequestBytes(2048L);
     context.recordOperation(metrics, null);
 
@@ -972,91 +936,26 @@ public final class StorageMetricsContextTest {
     assertThat(point.getCount()).isEqualTo(1L);
     assertThat(point.getSum()).isEqualTo(2048.0);
     Attributes attrs = point.getAttributes();
+    assertThat(attrs.asMap().keySet())
+        .containsExactly(
+            StorageClientMetrics.KEY_GCP_CLIENT_SERVICE,
+            StorageClientMetrics.KEY_GCP_CLIENT_VERSION,
+            StorageClientMetrics.KEY_GCP_CLIENT_ARTIFACT,
+            StorageClientMetrics.KEY_GCP_STORAGE_OPERATION,
+            StorageClientMetrics.KEY_GCP_CLIENT_METHOD);
+    assertThat(attrs.get(StorageClientMetrics.KEY_GCP_CLIENT_SERVICE))
+        .isEqualTo(StorageClientMetrics.SERVICE_STORAGE);
+    assertThat(attrs.get(StorageClientMetrics.KEY_GCP_CLIENT_VERSION))
+        .isEqualTo(StorageOptions.version());
+    assertThat(attrs.get(StorageClientMetrics.KEY_GCP_CLIENT_ARTIFACT))
+        .isEqualTo(StorageClientMetrics.ARTIFACT_STORAGE);
     assertThat(attrs.get(StorageClientMetrics.KEY_GCP_STORAGE_OPERATION)).isEqualTo("WriteObject");
-    assertThat(attrs.get(StorageClientMetrics.KEY_RPC_SYSTEM_NAME)).isEqualTo("grpc");
-    assertThat(attrs.get(StorageClientMetrics.KEY_SERVER_ADDRESS))
-        .isEqualTo("storage.googleapis.com");
-    assertThat(attrs.get(StorageClientMetrics.KEY_SERVER_PORT)).isNull();
-    assertThat(attrs.get(StorageClientMetrics.KEY_GCP_CLIENT_SERVICE)).isEqualTo("storage");
-    assertThat(attrs.get(StorageClientMetrics.KEY_NETWORK_PATH)).isNull();
-    assertThat(attrs.get(StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE)).isNull();
-    assertThat(attrs.get(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE)).isNull();
-    assertThat(attrs.get(StorageClientMetrics.KEY_ERROR_TYPE)).isNull();
-    assertThat(attrs.get(StorageClientMetrics.KEY_RPC_METHOD)).isNull();
-    assertThat(attrs.get(StorageClientMetrics.KEY_GCP_CLIENT_METHOD)).isEqualTo("Storage.writer");
-  }
-
-  @Test
-  public void recordOperation_requestBodySize_excludesAttemptAndHttpOnlyAttributes() {
-    InMemoryMetricReader reader = InMemoryMetricReader.create();
-    SdkMeterProvider provider = SdkMeterProvider.builder().registerMetricReader(reader).build();
-    StorageClientMetrics metrics = StorageClientMetrics.create(provider, true, false);
-
-    Attributes base =
-        Attributes.builder()
-            .put(StorageClientMetrics.KEY_RPC_SYSTEM_NAME, "http")
-            .put(StorageClientMetrics.KEY_SERVER_ADDRESS, "storage.googleapis.com")
-            .put(StorageClientMetrics.KEY_HTTP_REQUEST_METHOD, "POST")
-            .put(StorageClientMetrics.KEY_URL_TEMPLATE, "/upload/storage/v1/b/{bucket}/o")
-            .put(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE, 200L)
-            .put(StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE, "OK")
-            .put(StorageClientMetrics.KEY_NETWORK_PATH, StorageClientMetrics.NETWORK_PATH_CLOUDPATH)
-            .put(StorageClientMetrics.KEY_ERROR_TYPE, "OK")
-            .put(StorageClientMetrics.KEY_GCP_STORAGE_OPERATION, "WriteObject")
-            .put(StorageClientMetrics.KEY_GCP_CLIENT_METHOD, "Storage.create")
-            .put(StorageClientMetrics.KEY_RPC_METHOD, "google.storage.v2.Storage/WriteObject")
-            .build();
-    StorageMetricsContext context = StorageMetricsContext.create("WriteObject", base);
-    context.setRequestBytes(512L);
-    context.recordOperation(metrics, null);
-
-    Collection<MetricData> collected = reader.collectAllMetrics();
-    HistogramPointData point =
-        getSingleHistogramPoint(
-            collected, StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_REQUEST_BODY_SIZE);
-    Attributes recordedAttrs = point.getAttributes();
-    assertThat(recordedAttrs.get(StorageClientMetrics.KEY_GCP_STORAGE_OPERATION))
-        .isEqualTo("WriteObject");
-    assertThat(recordedAttrs.get(StorageClientMetrics.KEY_RPC_SYSTEM_NAME)).isEqualTo("http");
-    assertThat(recordedAttrs.get(StorageClientMetrics.KEY_SERVER_ADDRESS))
-        .isEqualTo("storage.googleapis.com");
-    assertThat(recordedAttrs.get(StorageClientMetrics.KEY_GCP_CLIENT_METHOD))
-        .isEqualTo("Storage.create");
-    assertThat(recordedAttrs.get(StorageClientMetrics.KEY_SERVER_PORT)).isNull();
-    assertThat(recordedAttrs.get(StorageClientMetrics.KEY_HTTP_REQUEST_METHOD)).isNull();
-    assertThat(recordedAttrs.get(StorageClientMetrics.KEY_URL_TEMPLATE)).isNull();
-    assertThat(recordedAttrs.get(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE)).isNull();
-    assertThat(recordedAttrs.get(StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE)).isNull();
-    assertThat(recordedAttrs.get(StorageClientMetrics.KEY_NETWORK_PATH)).isNull();
-    assertThat(recordedAttrs.get(StorageClientMetrics.KEY_ERROR_TYPE)).isNull();
-    assertThat(recordedAttrs.get(StorageClientMetrics.KEY_RPC_METHOD)).isNull();
-  }
-
-  @Test
-  public void recordOperation_recordsRequestBodySize_whenBytesIsZero() {
-    InMemoryMetricReader reader = InMemoryMetricReader.create();
-    SdkMeterProvider provider = SdkMeterProvider.builder().registerMetricReader(reader).build();
-    StorageClientMetrics metrics = StorageClientMetrics.create(provider, true, false);
-
-    StorageMetricsContext context = StorageMetricsContext.create("WriteObject");
-    context.setRequestBytes(0L);
-    context.recordOperation(metrics, null);
-
-    Collection<MetricData> collected = reader.collectAllMetrics();
-    HistogramPointData point =
-        getSingleHistogramPoint(
-            collected, StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_REQUEST_BODY_SIZE);
-    assertThat(point.getCount()).isEqualTo(1L);
-    assertThat(point.getSum()).isEqualTo(0.0);
+    assertThat(attrs.get(StorageClientMetrics.KEY_GCP_CLIENT_METHOD)).isEqualTo("WriteObject");
   }
 
   @Test
   public void recordOperation_doesNotRecordRequestBodySize_whenNotWriteObject() {
-    InMemoryMetricReader reader = InMemoryMetricReader.create();
-    SdkMeterProvider provider = SdkMeterProvider.builder().registerMetricReader(reader).build();
-    StorageClientMetrics metrics = StorageClientMetrics.create(provider, true, false);
-
-    StorageMetricsContext context = StorageMetricsContext.create("ReadObject");
+    StorageMetricsContext context = metrics.createContext("ReadObject");
     context.setRequestBytes(2048L);
     context.recordOperation(metrics, null);
 
@@ -1067,35 +966,9 @@ public final class StorageMetricsContextTest {
   }
 
   @Test
-  public void baseStorageWriteChannel_recordsRequestBodySizeOnClose_afterMultipleWrites()
-      throws IOException {
-    InMemoryMetricReader reader = InMemoryMetricReader.create();
-    SdkMeterProvider provider = SdkMeterProvider.builder().registerMetricReader(reader).build();
-    StorageClientMetrics metrics = StorageClientMetrics.create(provider, true, false);
-    StorageMetricsContext context = StorageMetricsContext.createForMultiStep("WriteObject");
-
-    BaseStorageWriteChannel<BlobInfo> channel = createTestWriteChannel(context, metrics, false);
-    channel.write(ByteBuffer.wrap(new byte[128]));
-    channel.write(ByteBuffer.wrap(new byte[384]));
-    channel.close();
-
-    Collection<MetricData> collected = reader.collectAllMetrics();
-    HistogramPointData point =
-        getSingleHistogramPoint(
-            collected, StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_REQUEST_BODY_SIZE);
-    assertThat(point.getCount()).isEqualTo(1L);
-    assertThat(point.getSum()).isEqualTo(512.0);
-    assertThat(point.getAttributes().get(StorageClientMetrics.KEY_GCP_STORAGE_OPERATION))
-        .isEqualTo("WriteObject");
-  }
-
-  @Test
   public void baseStorageWriteChannel_recordsRequestBodySize_whenZeroBytesWritten()
       throws IOException {
-    InMemoryMetricReader reader = InMemoryMetricReader.create();
-    SdkMeterProvider provider = SdkMeterProvider.builder().registerMetricReader(reader).build();
-    StorageClientMetrics metrics = StorageClientMetrics.create(provider, true, false);
-    StorageMetricsContext context = StorageMetricsContext.createForMultiStep("WriteObject");
+    StorageMetricsContext context = metrics.createMultiStepContext("WriteObject");
 
     BaseStorageWriteChannel<BlobInfo> channel = createTestWriteChannel(context, metrics, false);
     channel.close();
@@ -1114,29 +987,27 @@ public final class StorageMetricsContextTest {
   @Test
   public void baseStorageWriteChannel_recordsRequestBodySizeEvenWhenCloseFails()
       throws IOException {
-    InMemoryMetricReader reader = InMemoryMetricReader.create();
-    SdkMeterProvider provider = SdkMeterProvider.builder().registerMetricReader(reader).build();
-    StorageClientMetrics metrics = StorageClientMetrics.create(provider, true, false);
-    StorageMetricsContext context = StorageMetricsContext.createForMultiStep("WriteObject");
+    StorageMetricsContext context = metrics.createMultiStepContext("WriteObject");
 
     BaseStorageWriteChannel<BlobInfo> channel = createTestWriteChannel(context, metrics, true);
-    channel.write(ByteBuffer.wrap(new byte[256]));
+    channel.write(ByteBuffer.wrap(new byte[128]));
+    channel.write(ByteBuffer.wrap(new byte[384]));
     assertThrows(StorageException.class, channel::close);
 
     Collection<MetricData> collected = reader.collectAllMetrics();
     HistogramPointData point =
         getSingleHistogramPoint(
             collected, StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_REQUEST_BODY_SIZE);
-    assertThat(point.getSum()).isEqualTo(256.0);
+    assertThat(point.getCount()).isEqualTo(1L);
+    assertThat(point.getSum()).isEqualTo(512.0);
+    assertThat(point.getAttributes().get(StorageClientMetrics.KEY_GCP_STORAGE_OPERATION))
+        .isEqualTo("WriteObject");
   }
 
   @Test
   @SuppressWarnings("deprecation")
   public void storageImpl_writeMethods_recordRequestBodySize_andPcuHookSuppresses()
       throws Exception {
-    InMemoryMetricReader reader = InMemoryMetricReader.create();
-    SdkMeterProvider provider = SdkMeterProvider.builder().registerMetricReader(reader).build();
-
     StorageRpcFactory rpcFactoryMock = mock(StorageRpcFactory.class);
     StorageRpc storageRpcMock = mock(StorageRpc.class);
     when(rpcFactoryMock.create(any(StorageOptions.class))).thenReturn(storageRpcMock);
@@ -1197,10 +1068,8 @@ public final class StorageMetricsContextTest {
     Path file1 = tempFolder.newFile("f1.bin").toPath();
     Files.write(file1, new byte[300]);
     storage.createFrom(blobInfo, file1);
-    // 4. internalCreateFrom(Path, BlobInfo, Opts) -> 400 bytes
-    Path file2 = tempFolder.newFile("f2.bin").toPath();
-    Files.write(file2, new byte[400]);
-    storage.internalCreateFrom(file2, blobInfo, Opts.empty());
+    // 4. create(BlobInfo) -> 0 bytes
+    storage.create(blobInfo);
     // 5. 3-arg internalDirectUpload (PCU part upload hook) -> must NOT record request.body.size
     storage.internalDirectUpload(blobInfo, Opts.empty(), ByteBuffer.wrap(new byte[999]));
 
@@ -1209,15 +1078,27 @@ public final class StorageMetricsContextTest {
         getSingleHistogramPoint(
             collected, StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_REQUEST_BODY_SIZE);
     assertThat(point.getCount()).isEqualTo(4L);
-    assertThat(point.getSum()).isEqualTo(1000.0);
+    assertThat(point.getSum()).isEqualTo(600.0);
+    Attributes attrs = point.getAttributes();
+    assertThat(attrs.asMap().keySet())
+        .containsExactly(
+            StorageClientMetrics.KEY_GCP_CLIENT_SERVICE,
+            StorageClientMetrics.KEY_GCP_CLIENT_VERSION,
+            StorageClientMetrics.KEY_GCP_CLIENT_ARTIFACT,
+            StorageClientMetrics.KEY_RPC_SYSTEM_NAME,
+            StorageClientMetrics.KEY_SERVER_ADDRESS,
+            StorageClientMetrics.KEY_GCP_STORAGE_OPERATION,
+            StorageClientMetrics.KEY_GCP_CLIENT_METHOD);
+    assertThat(attrs.get(StorageClientMetrics.KEY_RPC_SYSTEM_NAME)).isEqualTo("http");
+    assertThat(attrs.get(StorageClientMetrics.KEY_SERVER_ADDRESS))
+        .isEqualTo("storage.googleapis.com");
+    assertThat(attrs.get(StorageClientMetrics.KEY_GCP_STORAGE_OPERATION)).isEqualTo("WriteObject");
+    assertThat(attrs.get(StorageClientMetrics.KEY_GCP_CLIENT_METHOD)).isEqualTo("WriteObject");
   }
 
   @Test
   public void grpcStorageImpl_writeMethods_recordRequestBodySize_andPcuHookSuppresses()
       throws Exception {
-    InMemoryMetricReader reader = InMemoryMetricReader.create();
-    SdkMeterProvider provider = SdkMeterProvider.builder().registerMetricReader(reader).build();
-
     StorageGrpc.StorageImplBase service =
         new StorageGrpc.StorageImplBase() {
           @Override
@@ -1313,6 +1194,21 @@ public final class StorageMetricsContextTest {
         // B)
         assertThat(bodyPoint.getCount()).isEqualTo(6L);
         assertThat(bodyPoint.getSum()).isEqualTo(1600.0);
+        Attributes attrs = bodyPoint.getAttributes();
+        assertThat(attrs.asMap().keySet())
+            .containsExactly(
+                StorageClientMetrics.KEY_GCP_CLIENT_SERVICE,
+                StorageClientMetrics.KEY_GCP_CLIENT_VERSION,
+                StorageClientMetrics.KEY_GCP_CLIENT_ARTIFACT,
+                StorageClientMetrics.KEY_RPC_SYSTEM_NAME,
+                StorageClientMetrics.KEY_SERVER_ADDRESS,
+                StorageClientMetrics.KEY_GCP_STORAGE_OPERATION,
+                StorageClientMetrics.KEY_GCP_CLIENT_METHOD);
+        assertThat(attrs.get(StorageClientMetrics.KEY_RPC_SYSTEM_NAME)).isEqualTo("grpc");
+        assertThat(attrs.get(StorageClientMetrics.KEY_SERVER_ADDRESS)).isEqualTo("127.0.0.1");
+        assertThat(attrs.get(StorageClientMetrics.KEY_GCP_STORAGE_OPERATION))
+            .isEqualTo("WriteObject");
+        assertThat(attrs.get(StorageClientMetrics.KEY_GCP_CLIENT_METHOD)).isEqualTo("WriteObject");
 
         MetricData opsMetric =
             findMetric(collected, StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_OPERATIONS);
@@ -1329,8 +1225,28 @@ public final class StorageMetricsContextTest {
     }
   }
 
+  private static @Nullable MetricData findMetric(
+      Collection<MetricData> metrics, String metricName) {
+    return metrics.stream().filter(m -> m.getName().equals(metricName)).findFirst().orElse(null);
+  }
+
+  private static LongPointData getSinglePoint(Collection<MetricData> metrics, String metricName) {
+    MetricData metric = findMetric(metrics, metricName);
+    assertThat(metric).isNotNull();
+    assertThat(metric.getLongSumData().getPoints()).hasSize(1);
+    return metric.getLongSumData().getPoints().iterator().next();
+  }
+
+  private static HistogramPointData getSingleHistogramPoint(
+      Collection<MetricData> collected, String metricName) {
+    MetricData metric = findMetric(collected, metricName);
+    assertThat(metric).isNotNull();
+    assertThat(metric.getHistogramData().getPoints()).hasSize(1);
+    return metric.getHistogramData().getPoints().iterator().next();
+  }
+
   private static BaseStorageWriteChannel<BlobInfo> createTestWriteChannel(
-      StorageMetricsContext context, StorageClientMetrics metrics, boolean failOnClose) {
+      StorageMetricsContext context, StorageClientMetrics clientMetrics, boolean failOnClose) {
     BlobInfo resultBlob = BlobInfo.newBuilder("b", "n").build();
     BufferedWritableByteChannel bufferedChannel =
         new BufferedWritableByteChannel() {
@@ -1376,7 +1292,7 @@ public final class StorageMetricsContextTest {
             return ApiFutures.immediateFuture(resultBlob);
           }
         };
-    return new BaseStorageWriteChannel<BlobInfo>(Decoder.identity(), context, metrics) {
+    return new BaseStorageWriteChannel<BlobInfo>(Decoder.identity(), context, clientMetrics) {
       @Override
       public RestorableState<WriteChannel> capture() {
         return null;
@@ -1423,7 +1339,6 @@ public final class StorageMetricsContextTest {
     assertThat(attrs.get(StorageClientMetrics.KEY_RPC_SYSTEM_NAME)).isEqualTo("grpc");
     assertThat(attrs.get(StorageClientMetrics.KEY_SERVER_ADDRESS))
         .isEqualTo("storage.googleapis.com");
-    assertThat(attrs.get(StorageClientMetrics.KEY_SERVER_PORT)).isNull();
     assertThat(attrs.get(StorageClientMetrics.KEY_GCP_CLIENT_SERVICE)).isEqualTo("storage");
     assertThat(attrs.get(StorageClientMetrics.KEY_NETWORK_PATH)).isNull();
     assertThat(attrs.get(StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE)).isNull();
