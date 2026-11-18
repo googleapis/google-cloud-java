@@ -57,6 +57,7 @@ final class StorageMetricsContext {
   private final AtomicInteger attemptCount = new AtomicInteger(0);
   private final AtomicLong requestBytes = new AtomicLong(0L);
   private final AtomicLong responseBytes = new AtomicLong(0L);
+  @Nullable private volatile String networkPath;
 
   private StorageMetricsContext(
       @Nullable StorageClientMetrics metrics,
@@ -268,6 +269,10 @@ final class StorageMetricsContext {
     }
   }
 
+  void setNetworkPath(String networkPath) {
+    this.networkPath = networkPath;
+  }
+
   /**
    * Populates both {@code rpc.response.status_code} and {@code http.response.status_code} on
    * attempt metrics so every {@code gcp.storage.client.attempts} data point emits a consistent set
@@ -324,6 +329,10 @@ final class StorageMetricsContext {
   }
 
   private String resolveNetworkPath() {
+    String detected = this.networkPath;
+    if (detected != null && !detected.isEmpty()) {
+      return detected;
+    }
     String path = baseAttributes.get(StorageClientMetrics.KEY_NETWORK_PATH);
     if (path != null && !path.isEmpty()) {
       return path;

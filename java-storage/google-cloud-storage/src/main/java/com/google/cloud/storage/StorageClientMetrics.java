@@ -26,6 +26,7 @@ import io.opentelemetry.api.metrics.LongHistogram;
 import io.opentelemetry.api.metrics.LongUpDownCounter;
 import io.opentelemetry.api.metrics.Meter;
 import io.opentelemetry.api.metrics.MeterProvider;
+import io.opentelemetry.context.Context;
 import io.opentelemetry.sdk.metrics.SdkMeterProvider;
 import java.util.logging.Logger;
 import org.checkerframework.checker.nullness.qual.Nullable;
@@ -446,6 +447,26 @@ final class StorageClientMetrics implements AutoCloseable {
 
   StorageMetricsContext createMultiStepContext(String operationName) {
     return StorageMetricsContext.createForMultiStep(this, operationName, baseAttributes);
+  }
+
+  void recordRpcCallDuration(
+      Context otelContext,
+      double durationSeconds,
+      String rpcMethod,
+      String statusCode,
+      String networkPath,
+      String errorType) {
+    if (rpcClientCallDuration == null) {
+      return;
+    }
+    Attributes attributes =
+        baseAttributes.toBuilder()
+            .put(KEY_RPC_METHOD, rpcMethod)
+            .put(KEY_RPC_RESPONSE_STATUS_CODE, statusCode)
+            .put(KEY_NETWORK_PATH, networkPath)
+            .put(KEY_ERROR_TYPE, errorType)
+            .build();
+    rpcClientCallDuration.record(durationSeconds, attributes, otelContext);
   }
 
   @Nullable
