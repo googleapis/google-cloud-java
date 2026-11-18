@@ -43,6 +43,7 @@ import com.google.api.gax.rpc.ClientStreamingCallable;
 import com.google.api.gax.rpc.NotFoundException;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.BaseService;
+import com.google.cloud.BaseServiceException;
 import com.google.cloud.Policy;
 import com.google.cloud.WriteChannel;
 import com.google.cloud.storage.Acl.Entity;
@@ -872,14 +873,17 @@ final class GrpcStorageImpl extends BaseService<StorageOptions>
         WritableByteChannel w = Channels.newChannel(baos)) {
       ByteStreams.copy(r, w);
     } catch (ApiException | IOException e) {
-      error = e;
-      throw StorageException.coalesce(e);
+      BaseServiceException coalesced = StorageException.coalesce(e);
+      error = coalesced;
+      throw coalesced;
     } catch (Exception e) {
       error = e;
       throw e;
     } finally {
       if (metricsContext != null) {
-        metricsContext.setResponseBytes(baos.size());
+        if (error == null) {
+          metricsContext.setResponseBytes(baos.size());
+        }
         metricsContext.recordOperation(getOptions().getStorageClientMetrics(), error);
       }
     }
@@ -929,8 +933,9 @@ final class GrpcStorageImpl extends BaseService<StorageOptions>
         WritableByteChannel w = countBytes(Files.newByteChannel(path, WRITE_OPS), metricsContext)) {
       ByteStreams.copy(r, w);
     } catch (ApiException | IOException e) {
-      error = e;
-      throw StorageException.coalesce(e);
+      BaseServiceException coalesced = StorageException.coalesce(e);
+      error = coalesced;
+      throw coalesced;
     } catch (Exception e) {
       error = e;
       throw e;
@@ -954,8 +959,9 @@ final class GrpcStorageImpl extends BaseService<StorageOptions>
         WritableByteChannel w = countBytes(Channels.newChannel(outputStream), metricsContext)) {
       ByteStreams.copy(r, w);
     } catch (ApiException | IOException e) {
-      error = e;
-      throw StorageException.coalesce(e);
+      BaseServiceException coalesced = StorageException.coalesce(e);
+      error = coalesced;
+      throw coalesced;
     } catch (Exception e) {
       error = e;
       throw e;

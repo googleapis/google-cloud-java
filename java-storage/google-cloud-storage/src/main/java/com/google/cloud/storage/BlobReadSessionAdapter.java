@@ -17,8 +17,9 @@
 package com.google.cloud.storage;
 
 import com.google.api.core.ApiFuture;
-import com.google.api.core.ApiFutureCallback;
 import com.google.api.core.ApiFutures;
+import com.google.api.gax.rpc.ApiException;
+import com.google.cloud.BaseServiceException;
 import com.google.cloud.storage.ZeroCopySupport.DisposableByteString;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.util.concurrent.MoreExecutors;
@@ -26,18 +27,14 @@ import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.channels.ScatteringByteChannel;
 import java.nio.channels.SeekableByteChannel;
-import org.checkerframework.checker.nullness.qual.Nullable;
+import org.jspecify.annotations.Nullable;
 
 final class BlobReadSessionAdapter implements BlobReadSession {
 
   @VisibleForTesting final ObjectReadSession session;
-  @Nullable private final StorageMetricsContext metricsContext;
-  @Nullable private final StorageClientMetrics storageClientMetrics;
-  @Nullable private volatile Throwable lastOperationError;
-
-  BlobReadSessionAdapter(ObjectReadSession session) {
-    this(session, null, null);
-  }
+  private final @Nullable StorageMetricsContext metricsContext;
+  private final @Nullable StorageClientMetrics storageClientMetrics;
+  private volatile @Nullable Throwable lastOperationError;
 
   BlobReadSessionAdapter(
       ObjectReadSession session,
@@ -62,47 +59,51 @@ final class BlobReadSessionAdapter implements BlobReadSession {
     try {
       projection = session.readAs(config);
     } catch (Throwable t) {
-      lastOperationError = t;
+      lastOperationError = unwrapIoException(t);
       throw t;
     }
+    StorageMetricsContext ctx = this.metricsContext;
     if (projection instanceof ApiFuture) {
-      ApiFuture apiFuture = StorageException.coalesceAsync((ApiFuture) projection);
-      if (metricsContext != null) {
-        ApiFutures.addCallback(
-            apiFuture,
-            new ApiFutureCallback<Object>() {
-              @Override
-              public void onSuccess(Object result) {
-                if (result instanceof byte[]) {
-                  int len = ((byte[]) result).length;
-                  if (len > 0) {
-                    metricsContext.addResponseBytes(len);
+      ApiFuture<Object> apiFuture = StorageException.coalesceAsync((ApiFuture) projection);
+      if (ctx != null) {
+        ApiFuture<Object> tracked =
+            ApiFutures.transform(
+                apiFuture,
+                result -> {
+                  if (result instanceof byte[]) {
+                    int len = ((byte[]) result).length;
+                    if (len > 0) {
+                      ctx.addResponseBytes(len);
+                    }
+                  } else if (result instanceof DisposableByteString) {
+                    int len = ((DisposableByteString) result).byteString().size();
+                    if (len > 0) {
+                      ctx.addResponseBytes(len);
+                    }
                   }
-                } else if (result instanceof DisposableByteString) {
-                  int len = ((DisposableByteString) result).byteString().size();
-                  if (len > 0) {
-                    metricsContext.addResponseBytes(len);
+                  return result;
+                },
+                MoreExecutors.directExecutor());
+        apiFuture =
+            ApiFutures.catchingAsync(
+                tracked,
+                Throwable.class,
+                t -> {
+                  if (!(t instanceof AsyncSessionClosedException)
+                      && !(t.getCause() instanceof AsyncSessionClosedException)) {
+                    lastOperationError = t;
                   }
-                }
-              }
-
-              @Override
-              public void onFailure(Throwable t) {
-                if (!(t instanceof AsyncSessionClosedException)
-                    && !(t.getCause() instanceof AsyncSessionClosedException)) {
-                  lastOperationError = t;
-                }
-              }
-            },
-            MoreExecutors.directExecutor());
+                  return ApiFutures.immediateFailedFuture(t);
+                },
+                MoreExecutors.directExecutor());
       }
       return (Projection) apiFuture;
     }
-    if (metricsContext != null && projection instanceof SeekableByteChannel) {
-      return (Projection) wrapSeekableByteChannel((SeekableByteChannel) projection);
+    if (ctx != null && projection instanceof SeekableByteChannel) {
+      return (Projection) wrapSeekableByteChannel((SeekableByteChannel) projection, ctx);
     }
-    if (metricsContext != null && projection instanceof ScatteringByteChannel) {
-      return (Projection) wrapScatteringByteChannel((ScatteringByteChannel) projection);
+    if (ctx != null && projection instanceof ScatteringByteChannel) {
+      return (Projection) wrapScatteringByteChannel((ScatteringByteChannel) projection, ctx);
     }
     return projection;
   }
@@ -114,7 +115,7 @@ final class BlobReadSessionAdapter implements BlobReadSession {
     try {
       session.close();
     } catch (Throwable t) {
-      error = t;
+      error = unwrapIoException(t);
       throw t;
     } finally {
       if (metricsContext != null && storageClientMetrics != null) {
@@ -123,20 +124,34 @@ final class BlobReadSessionAdapter implements BlobReadSession {
     }
   }
 
-  private SeekableByteChannel wrapSeekableByteChannel(SeekableByteChannel delegate) {
+  static ApiFuture<BlobReadSession> wrap(
+      ApiFuture<ObjectReadSession> session,
+      @Nullable StorageMetricsContext metricsContext,
+      @Nullable StorageClientMetrics storageClientMetrics) {
+    ApiFuture<ObjectReadSession> coalesced = StorageException.coalesceAsync(session);
+    if (metricsContext != null && storageClientMetrics != null) {
+      coalesced =
+          ApiFutures.catchingAsync(
+              coalesced,
+              Throwable.class,
+              t -> {
+                metricsContext.recordOperation(storageClientMetrics, t);
+                return ApiFutures.immediateFailedFuture(t);
+              },
+              MoreExecutors.directExecutor());
+    }
+    return ApiFutures.transform(
+        coalesced,
+        s -> new BlobReadSessionAdapter(s, metricsContext, storageClientMetrics),
+        MoreExecutors.directExecutor());
+  }
+
+  private SeekableByteChannel wrapSeekableByteChannel(
+      SeekableByteChannel delegate, StorageMetricsContext ctx) {
     return new SeekableByteChannel() {
       @Override
       public int read(ByteBuffer dst) throws IOException {
-        try {
-          int read = delegate.read(dst);
-          if (read > 0) {
-            metricsContext.addResponseBytes(read);
-          }
-          return read;
-        } catch (IOException | RuntimeException | Error e) {
-          lastOperationError = e;
-          throw e;
-        }
+        return (int) trackRead(ctx, () -> delegate.read(dst));
       }
 
       @Override
@@ -178,48 +193,22 @@ final class BlobReadSessionAdapter implements BlobReadSession {
     };
   }
 
-  private ScatteringByteChannel wrapScatteringByteChannel(ScatteringByteChannel delegate) {
+  private ScatteringByteChannel wrapScatteringByteChannel(
+      ScatteringByteChannel delegate, StorageMetricsContext ctx) {
     return new ScatteringByteChannel() {
       @Override
       public int read(ByteBuffer dst) throws IOException {
-        try {
-          int read = delegate.read(dst);
-          if (read > 0) {
-            metricsContext.addResponseBytes(read);
-          }
-          return read;
-        } catch (IOException | RuntimeException | Error e) {
-          lastOperationError = e;
-          throw e;
-        }
+        return (int) trackRead(ctx, () -> delegate.read(dst));
       }
 
       @Override
       public long read(ByteBuffer[] dsts, int offset, int length) throws IOException {
-        try {
-          long read = delegate.read(dsts, offset, length);
-          if (read > 0) {
-            metricsContext.addResponseBytes(read);
-          }
-          return read;
-        } catch (IOException | RuntimeException | Error e) {
-          lastOperationError = e;
-          throw e;
-        }
+        return trackRead(ctx, () -> delegate.read(dsts, offset, length));
       }
 
       @Override
       public long read(ByteBuffer[] dsts) throws IOException {
-        try {
-          long read = delegate.read(dsts);
-          if (read > 0) {
-            metricsContext.addResponseBytes(read);
-          }
-          return read;
-        } catch (IOException | RuntimeException | Error e) {
-          lastOperationError = e;
-          throw e;
-        }
+        return trackRead(ctx, () -> delegate.read(dsts));
       }
 
       @Override
@@ -234,32 +223,29 @@ final class BlobReadSessionAdapter implements BlobReadSession {
     };
   }
 
-  static ApiFuture<BlobReadSession> wrap(ApiFuture<ObjectReadSession> session) {
-    return wrap(session, null, null);
+  private long trackRead(StorageMetricsContext ctx, ReadOp op) throws IOException {
+    try {
+      long read = op.read();
+      if (read > 0) {
+        ctx.addResponseBytes(read);
+      }
+      return read;
+    } catch (IOException | RuntimeException | Error e) {
+      lastOperationError = unwrapIoException(e);
+      throw e;
+    }
   }
 
-  static ApiFuture<BlobReadSession> wrap(
-      ApiFuture<ObjectReadSession> session,
-      @Nullable StorageMetricsContext metricsContext,
-      @Nullable StorageClientMetrics storageClientMetrics) {
-    ApiFuture<ObjectReadSession> coalesced = StorageException.coalesceAsync(session);
-    if (metricsContext != null && storageClientMetrics != null) {
-      ApiFutures.addCallback(
-          coalesced,
-          new ApiFutureCallback<ObjectReadSession>() {
-            @Override
-            public void onSuccess(ObjectReadSession result) {}
-
-            @Override
-            public void onFailure(Throwable t) {
-              metricsContext.recordOperation(storageClientMetrics, t);
-            }
-          },
-          MoreExecutors.directExecutor());
+  private static Throwable unwrapIoException(Throwable t) {
+    if (t instanceof IOException
+        && (t.getCause() instanceof BaseServiceException || t.getCause() instanceof ApiException)) {
+      return t.getCause();
     }
-    return ApiFutures.transform(
-        coalesced,
-        s -> new BlobReadSessionAdapter(s, metricsContext, storageClientMetrics),
-        MoreExecutors.directExecutor());
+    return t;
+  }
+
+  @FunctionalInterface
+  private interface ReadOp {
+    long read() throws IOException;
   }
 }
