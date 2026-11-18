@@ -291,6 +291,10 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
         this.rowCount++;
         return true;
       } catch (SQLException ex) {
+        // A stream error ends iteration: the next call returns false and no row stays readable.
+        // The failed message is never skipped, even if the caller ignores this exception.
+        this.hasReachedEnd = true;
+        this.currentBatchRowIndex = -1;
         throw new BigQueryJdbcException(
             "Error occurred while advancing the cursor. This could happen when connection is closed while the next method is being called.",
             ex);
@@ -320,16 +324,24 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
     }
     try {
       this.arrowDeserializer = new ArrowDeserializer(arrowSchema);
-    } catch (IOException ex) {
-      throw new BigQueryJdbcException("IOException during ArrowDeserializer creation", ex);
+    } catch (RuntimeException | IOException ex) {
+      // Arrow throws unchecked exceptions on malformed schema bytes.
+      throw new BigQueryJdbcException("Failed to create the Arrow deserializer", ex);
     }
   }
 
   /**
    * Loads the next batch that has rows into the vectors. The reader queues every message as-is, so
-   * this is the single place that decides what to use: messages without rows (schema, statistics or
-   * throttling updates) are skipped, and the stream must deliver all {@code totalRows} rows.
-   * Returns false at the end of the stream.
+   * this is the single place that decides what to use:
+   *
+   * <ul>
+   *   <li>A message without batch data (a schema, statistics or throttling update) is skipped. It
+   *       must not report rows.
+   *   <li>A message with batch data is decoded, and must hold exactly the rows it reports.
+   *   <li>The stream must deliver all {@code totalRows} rows.
+   * </ul>
+   *
+   * Returns false at the end of the stream. A failure ends iteration, see {@link #next()}.
    */
   private boolean loadNextBatch() throws SQLException, InterruptedException {
     while (true) {
@@ -354,7 +366,11 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
       }
       initDeserializerIfNeeded(batchWrapper.getArrowSchema());
       ArrowRecordBatch arrowBatch = batchWrapper.getCurrentArrowBatch();
+      Long reportedRows = batchWrapper.getReportedRowCount();
       if (arrowBatch == null || arrowBatch.getSerializedRecordBatch().isEmpty()) {
+        if (reportedRows != null && reportedRows > 0) {
+          throw rowCountMismatch(reportedRows, 0);
+        }
         continue; // no rows in this message
       }
       if (this.arrowDeserializer == null) {
@@ -362,10 +378,21 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
       }
       // Populates vectorSchemaRoot
       this.arrowDeserializer.deserializeArrowBatch(arrowBatch);
-      if (this.vectorSchemaRoot.getRowCount() > 0) {
+      int decodedRows = this.vectorSchemaRoot.getRowCount();
+      if (reportedRows != null && reportedRows != decodedRows) {
+        throw rowCountMismatch(reportedRows, decodedRows);
+      }
+      if (decodedRows > 0) {
         return true;
       }
     }
+  }
+
+  private static SQLException rowCountMismatch(long reportedRows, long decodedRows) {
+    return new BigQueryJdbcException(
+        String.format(
+            "An Arrow stream message reported %d rows but its batch has %d.",
+            reportedRows, decodedRows));
   }
 
   @Override
@@ -562,7 +589,8 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
     if (this.isNested) {
       return !this.afterLast && this.nestedRowIndex == this.fromIndex;
     } else {
-      return !this.afterLast && this.rowCount == 1;
+      // The index is negative after a stream error: the cursor is on no row then.
+      return !this.afterLast && this.rowCount == 1 && this.currentBatchRowIndex >= 0;
     }
   }
 
