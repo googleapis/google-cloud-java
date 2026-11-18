@@ -2082,7 +2082,7 @@ class ConnectionImpl implements Connection {
   /**
    * Throws a {@link SpannerException} with {@link ErrorCode#FAILED_PRECONDITION} if this connection
    * is in read-only mode or in a {@link TransactionMode#READ_ONLY_TRANSACTION}, since DML
-   * statements with a returning clause mutate data and require a read/write transaction.
+   * statements mutate data and require a read/write transaction.
    */
   private void checkDmlReturningAllowed(ParsedStatement parsedStatement) {
     if (this.isReadOnly()
@@ -2090,8 +2090,10 @@ class ConnectionImpl implements Connection {
             && this.getTransactionMode() == TransactionMode.READ_ONLY_TRANSACTION)) {
       throw SpannerExceptionFactory.newSpannerException(
           ErrorCode.FAILED_PRECONDITION,
-          "DML statement with returning clause cannot be executed in read-only mode: "
-              + parsedStatement.getSql());
+          parsedStatement.hasReturningClause()
+              ? "DML statement with returning clause cannot be executed in read-only mode: "
+                  + parsedStatement.getSql()
+              : "Update statements are not allowed in read-only mode");
     }
   }
 
