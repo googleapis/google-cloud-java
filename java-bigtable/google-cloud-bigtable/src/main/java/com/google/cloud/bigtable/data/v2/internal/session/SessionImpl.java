@@ -682,6 +682,7 @@ public class SessionImpl implements Session, VRpcSessionApi {
     }
     PeerInfo localPeerInfo = stream.getPeerInfo();
     updateState(SessionState.READY);
+    stream.afterSessionStart();
     tracer.onOpen(localPeerInfo);
     sessionListener.onReady(openSession);
   }
