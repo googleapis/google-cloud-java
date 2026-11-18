@@ -1698,6 +1698,9 @@ public class PublisherImplTest {
     shutdownTestPublisher(publisher);
   }
 
+  // Disabled because it intermittently hits a deadlock in publish hedging. That is a bug in the
+  // library, not a timing problem in this test, so raising the timeout below would not help.
+  @Ignore("https://github.com/googleapis/google-cloud-java/issues/15008")
   @Test
   public void testPermanentErrorOnHedgedAttemptDiscarded() throws Exception {
     Publisher publisher = getPublisherWithHedge(Duration.ofMillis(100), 0.2f, 20);
