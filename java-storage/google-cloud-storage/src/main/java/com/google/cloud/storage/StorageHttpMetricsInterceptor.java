@@ -16,6 +16,8 @@
 
 package com.google.cloud.storage;
 
+import static java.util.Objects.requireNonNull;
+
 import com.google.api.client.http.GenericUrl;
 import com.google.api.client.http.HttpExecuteInterceptor;
 import com.google.api.client.http.HttpIOExceptionHandler;
@@ -45,31 +47,23 @@ import org.jspecify.annotations.Nullable;
 final class StorageHttpMetricsInterceptor implements HttpRequestInitializer {
 
   private static final ImmutableSet<String> OBJECT_SUB_RESOURCES =
-      ImmutableSet.of("acl", "compose", "restore", "watchAll");
+      ImmutableSet.of("acl", "compose", "restore");
 
   @Nullable private final HttpRequestInitializer delegate;
-  @Nullable private final StorageClientMetrics metrics;
+  private final StorageClientMetrics metrics;
   private final ApiClock clock;
-  @Nullable private final String defaultServerAddress;
 
   StorageHttpMetricsInterceptor(
-      @Nullable HttpRequestInitializer delegate,
-      @Nullable StorageClientMetrics metrics,
-      ApiClock clock,
-      @Nullable String host) {
+      @Nullable HttpRequestInitializer delegate, StorageClientMetrics metrics, ApiClock clock) {
     this.delegate = delegate;
-    this.metrics = metrics;
-    this.clock = clock;
-    this.defaultServerAddress = OpenTelemetryBootstrappingUtils.extractServerAddress(host);
+    this.metrics = requireNonNull(metrics, "metrics cannot be null");
+    this.clock = requireNonNull(clock, "clock cannot be null");
   }
 
   @Override
   public void initialize(HttpRequest request) throws IOException {
     if (delegate != null) {
       delegate.initialize(request);
-    }
-    if (metrics == null || metrics.getHttpClientRequestDuration() == null) {
-      return;
     }
 
     HttpExecuteInterceptor existingExec = request.getInterceptor();
@@ -96,13 +90,8 @@ final class StorageHttpMetricsInterceptor implements HttpRequestInitializer {
             long endNanos = clock.nanoTime();
             boolean handled =
                 existingUnsuccessfulHandler.handleResponse(req, response, supportsRetry);
-            if (handled && recorded.compareAndSet(false, true)) {
-              int statusCode = response.getStatusCode();
-              String errorType =
-                  statusCode >= 400
-                      ? StorageErrorTypeMapper.mapHttpResponseCode(statusCode)
-                      : StorageErrorTypeMapper.STATUS_OK;
-              recordDuration(req, startTimeNanos.get(), endNanos, (long) statusCode, errorType);
+            if (handled && response.getRequest() == req && recorded.compareAndSet(false, true)) {
+              recordResponse(req, startTimeNanos.get(), endNanos, response.getStatusCode());
             }
             return handled;
           });
@@ -110,16 +99,12 @@ final class StorageHttpMetricsInterceptor implements HttpRequestInitializer {
 
     request.setResponseInterceptor(
         response -> {
+          long endNanos = clock.nanoTime();
           if (existingResp != null) {
             existingResp.interceptResponse(response);
           }
           if (recorded.compareAndSet(false, true)) {
-            int statusCode = response.getStatusCode();
-            String errorType =
-                statusCode >= 400
-                    ? StorageErrorTypeMapper.mapHttpResponseCode(statusCode)
-                    : StorageErrorTypeMapper.STATUS_OK;
-            recordDuration(request, startTimeNanos.get(), (long) statusCode, errorType);
+            recordResponse(request, startTimeNanos.get(), endNanos, response.getStatusCode());
           }
         });
 
@@ -132,7 +117,8 @@ final class StorageHttpMetricsInterceptor implements HttpRequestInitializer {
             recordDuration(
                 req,
                 startTimeNanos.get(),
-                StorageMetricsContext.HTTP_STATUS_UNSET,
+                clock.nanoTime(),
+                0L,
                 StorageErrorTypeMapper.STATUS_CONNECTION_ERROR);
           }
           return existingIoHandler != null
@@ -140,47 +126,26 @@ final class StorageHttpMetricsInterceptor implements HttpRequestInitializer {
         });
   }
 
-  private void recordDuration(
-      HttpRequest request, long startNanos, long statusCode, String errorType) {
-    recordDuration(request, startNanos, clock.nanoTime(), statusCode, errorType);
+  private void recordResponse(HttpRequest request, long startNanos, long endNanos, int statusCode) {
+    String errorType =
+        statusCode >= 400
+            ? StorageErrorTypeMapper.mapHttpResponseCode(statusCode)
+            : StorageErrorTypeMapper.STATUS_OK;
+    recordDuration(request, startNanos, endNanos, statusCode, errorType);
   }
 
   private void recordDuration(
       HttpRequest request, long startNanos, long endNanos, long statusCode, String errorType) {
-    if (metrics == null) {
-      return;
-    }
-    double durationSeconds = Math.max(0.0, (endNanos - startNanos) / 1_000_000_000.0);
-    String method = request.getRequestMethod() != null ? request.getRequestMethod() : "UNKNOWN";
-    String urlTemplate = extractUrlTemplate(request.getUrl());
-    String serverAddress = resolveServerAddress(request.getUrl(), defaultServerAddress);
-
-    StorageMetricsContext.recordHttpRequestDuration(
-        metrics, durationSeconds, method, statusCode, urlTemplate, serverAddress, errorType);
+    double durationSeconds = (endNanos - startNanos) / 1_000_000_000.0;
+    metrics.recordHttpRequestDuration(
+        durationSeconds,
+        request.getRequestMethod(),
+        statusCode,
+        extractUrlTemplate(request.getUrl()),
+        errorType);
   }
 
-  @Nullable
-  static String resolveServerAddress(
-      @Nullable GenericUrl url, @Nullable String defaultServerAddress) {
-    String host = url != null ? url.getHost() : null;
-    if (host == null || host.isEmpty()) {
-      return defaultServerAddress;
-    }
-    if (host.endsWith(".storage.googleapis.com") && !host.equals("storage.googleapis.com")) {
-      return "storage.googleapis.com";
-    }
-    if (defaultServerAddress != null
-        && !defaultServerAddress.isEmpty()
-        && host.endsWith("." + defaultServerAddress)) {
-      return defaultServerAddress;
-    }
-    return host;
-  }
-
-  static String extractUrlTemplate(@Nullable GenericUrl url) {
-    if (url == null) {
-      return "/";
-    }
+  static String extractUrlTemplate(GenericUrl url) {
     String path = url.getRawPath();
     if (path == null || path.isEmpty()) {
       return "/";
@@ -233,8 +198,8 @@ final class StorageHttpMetricsInterceptor implements HttpRequestInitializer {
         if ("acl".equals(segments[2]) || "defaultObjectAcl".equals(segments[2])) {
           return "/storage/v1/b/{bucket}/" + segments[2] + "/{entity}";
         }
-        if ("notificationConfigs".equals(segments[2]) || "notifications".equals(segments[2])) {
-          return "/storage/v1/b/{bucket}/" + segments[2] + "/{notification}";
+        if ("notificationConfigs".equals(segments[2])) {
+          return "/storage/v1/b/{bucket}/notificationConfigs/{notification}";
         }
       }
       return "/storage/v1/b/{bucket}/" + segments[2];
@@ -257,11 +222,11 @@ final class StorageHttpMetricsInterceptor implements HttpRequestInitializer {
       return "/storage/v1/b/{bucket}/o/{object}";
     }
     String action = segments[4];
-    if (("copyTo".equals(action) || "rewriteTo".equals(action))
+    if ("rewriteTo".equals(action)
         && segments.length >= 8
         && "b".equals(segments[5])
         && "o".equals(segments[7])) {
-      return "/storage/v1/b/{bucket}/o/{object}/" + action + "/b/{bucket}/o/{object}";
+      return "/storage/v1/b/{bucket}/o/{object}/rewriteTo/b/{bucket}/o/{object}";
     }
     if ("moveTo".equals(action) && segments.length >= 7 && "o".equals(segments[5])) {
       return "/storage/v1/b/{bucket}/o/{object}/moveTo/o/{object}";

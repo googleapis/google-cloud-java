@@ -410,7 +410,7 @@ public abstract class StorageOptions extends ServiceOptions<Storage, StorageOpti
     if (metrics == null) {
       return initializer;
     }
-    return new StorageHttpMetricsInterceptor(initializer, metrics, getClock(), getHost());
+    return new StorageHttpMetricsInterceptor(initializer, metrics, getClock());
   }
 
   /**

@@ -469,6 +469,26 @@ final class StorageClientMetrics implements AutoCloseable {
     rpcClientCallDuration.record(durationSeconds, attributes, otelContext);
   }
 
+  void recordHttpRequestDuration(
+      double durationSeconds,
+      String httpMethod,
+      long statusCode,
+      String urlTemplate,
+      String errorType) {
+    if (httpClientRequestDuration == null) {
+      return;
+    }
+    Attributes attributes =
+        baseAttributes.toBuilder()
+            .put(KEY_HTTP_REQUEST_METHOD, httpMethod)
+            .put(KEY_HTTP_RESPONSE_STATUS_CODE, statusCode)
+            .put(KEY_NETWORK_PATH, NETWORK_PATH_CLOUDPATH)
+            .put(KEY_URL_TEMPLATE, urlTemplate)
+            .put(KEY_ERROR_TYPE, errorType)
+            .build();
+    httpClientRequestDuration.record(durationSeconds, attributes, Context.current());
+  }
+
   @Nullable
   static StorageMetricsContext createContext(
       @Nullable StorageClientMetrics metrics, String operationName) {
