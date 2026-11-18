@@ -333,11 +333,7 @@ final class StorageMetricsContext {
               && !key.equals(StorageClientMetrics.KEY_GCP_CLIENT_METHOD)
               && !key.equals(StorageClientMetrics.KEY_NETWORK_PATH)
               && !key.equals(StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE)
-              && !key.equals(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE)
-              && !key.equals(StorageClientMetrics.KEY_HTTP_REQUEST_METHOD)
-              && !key.equals(StorageClientMetrics.KEY_URL_TEMPLATE)
-              && !key.equals(StorageClientMetrics.KEY_ERROR_TYPE)
-              && !key.equals(StorageClientMetrics.KEY_SERVER_PORT)) {
+              && !key.equals(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE)) {
             @SuppressWarnings("unchecked")
             AttributeKey<Object> objKey = (AttributeKey<Object>) key;
             baseBuilder.put(objKey, val);
