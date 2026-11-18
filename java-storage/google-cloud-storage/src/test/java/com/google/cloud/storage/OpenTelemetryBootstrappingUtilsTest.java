@@ -38,6 +38,7 @@ import java.time.Duration;
 import java.util.Collection;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.function.BiConsumer;
 import java.util.function.Supplier;
 import org.junit.Test;
 
@@ -432,5 +433,56 @@ public final class OpenTelemetryBootstrappingUtilsTest {
             "json",
             Attributes.empty());
     assertThat(nullProvider).isNull();
+  }
+
+  @Test
+  public void createChannelCreationLatencyRecorder_recordsHistogramAndHandlesNulls() {
+    BiConsumer<String, Duration> noopRecorder =
+        OpenTelemetryBootstrappingUtils.createChannelCreationLatencyRecorder(null);
+    noopRecorder.accept("CloudPath", Duration.ofMillis(10));
+    noopRecorder.accept(null, Duration.ofMillis(10));
+    noopRecorder.accept("CloudPath", null);
+
+    InMemoryMetricReader metricReader = InMemoryMetricReader.create();
+    SdkMeterProviderBuilder providerBuilder =
+        OpenTelemetryBootstrappingUtils.registerGrpcChannelViews(
+            SdkMeterProvider.builder().registerMetricReader(metricReader));
+
+    try (SdkMeterProvider meterProvider = providerBuilder.build()) {
+      BiConsumer<String, Duration> recorder =
+          OpenTelemetryBootstrappingUtils.createChannelCreationLatencyRecorder(meterProvider);
+      recorder.accept(null, Duration.ofMillis(10));
+      recorder.accept("CloudPath", null);
+      recorder.accept("DirectPathInterconnect", Duration.ofMillis(125));
+      recorder.accept("DirectPath", Duration.ofMillis(50));
+      recorder.accept("CloudPath", Duration.ofMillis(250));
+
+      Collection<MetricData> metrics = metricReader.collectAllMetrics();
+      assertThat(metrics).hasSize(1);
+      MetricData metricData = metrics.iterator().next();
+      assertThat(metricData.getName())
+          .isEqualTo(OpenTelemetryBootstrappingUtils.CHANNEL_CREATION_LATENCY_VIEW_NAME);
+      assertThat(metricData.getUnit())
+          .isEqualTo(OpenTelemetryBootstrappingUtils.CHANNEL_CREATION_LATENCY_UNIT);
+      assertThat(metricData.getDescription())
+          .isEqualTo(OpenTelemetryBootstrappingUtils.CHANNEL_CREATION_LATENCY_DESCRIPTION);
+
+      Collection<HistogramPointData> points = metricData.getHistogramData().getPoints();
+      assertThat(points).hasSize(3);
+      for (HistogramPointData point : points) {
+        String transportType =
+            point.getAttributes().get(OpenTelemetryBootstrappingUtils.TRANSPORT_TYPE_KEY);
+        assertThat(point.getCount()).isEqualTo(1);
+        if ("DirectPathInterconnect".equals(transportType)) {
+          assertThat(point.getSum()).isWithin(1e-6).of(0.125);
+        } else if ("DirectPath".equals(transportType)) {
+          assertThat(point.getSum()).isWithin(1e-6).of(0.050);
+        } else if ("CloudPath".equals(transportType)) {
+          assertThat(point.getSum()).isWithin(1e-6).of(0.250);
+        } else {
+          throw new AssertionError("Unexpected transport_type: " + transportType);
+        }
+      }
+    }
   }
 }

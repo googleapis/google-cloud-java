@@ -33,6 +33,8 @@ import io.opentelemetry.api.common.AttributeKey;
 import io.opentelemetry.api.common.Attributes;
 import io.opentelemetry.api.common.AttributesBuilder;
 import io.opentelemetry.api.internal.StringUtils;
+import io.opentelemetry.api.metrics.DoubleHistogram;
+import io.opentelemetry.api.metrics.Meter;
 import io.opentelemetry.api.metrics.MeterProvider;
 import io.opentelemetry.contrib.gcp.resource.GCPResourceProvider;
 import io.opentelemetry.sdk.OpenTelemetrySdk;
@@ -62,6 +64,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.UUID;
 import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.function.BiConsumer;
 import java.util.function.Supplier;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
@@ -76,6 +79,7 @@ final class OpenTelemetryBootstrappingUtils {
   static final String CHANNEL_CREATION_LATENCY_DESCRIPTION =
       "Time from client construction until the first gRPC channel became ready.";
   static final String CHANNEL_CREATION_LATENCY_UNIT = "s";
+  static final AttributeKey<String> TRANSPORT_TYPE_KEY = AttributeKey.stringKey("transport_type");
 
   private static final String C2P_PREFIX = "google-c2p:///";
   private static final String C2P_EXPERIMENTAL_PREFIX = "google-c2p-experimental:///";
@@ -659,6 +663,31 @@ final class OpenTelemetryBootstrappingUtils {
         CHANNEL_CREATION_LATENCY_UNIT,
         CHANNEL_CREATION_LATENCY_DESCRIPTION);
     return providerBuilder;
+  }
+
+  static BiConsumer<String, Duration> createChannelCreationLatencyRecorder(
+      @Nullable MeterProvider meterProvider) {
+    if (meterProvider == null) {
+      return (transportType, latency) -> {};
+    }
+    Meter meter =
+        meterProvider
+            .meterBuilder(StorageClientMetrics.METER_NAME)
+            .setInstrumentationVersion(StorageOptions.version())
+            .build();
+    DoubleHistogram histogram =
+        meter
+            .histogramBuilder(CHANNEL_CREATION_LATENCY_INSTRUMENT)
+            .setDescription(CHANNEL_CREATION_LATENCY_DESCRIPTION)
+            .setUnit(CHANNEL_CREATION_LATENCY_UNIT)
+            .build();
+    return (transportType, latency) -> {
+      if (transportType == null || latency == null) {
+        return;
+      }
+      double seconds = latency.toNanos() / 1_000_000_000.0;
+      histogram.record(seconds, Attributes.of(TRANSPORT_TYPE_KEY, transportType));
+    };
   }
 
   @VisibleForTesting
