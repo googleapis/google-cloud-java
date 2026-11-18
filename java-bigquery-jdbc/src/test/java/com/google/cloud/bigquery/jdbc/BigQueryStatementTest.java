@@ -162,6 +162,12 @@ public class BigQueryStatementTest {
 
   private static final TableId TABLE_ID = TableId.of(DEFAULT_TEST_DATASET, PROJECT);
 
+  private static final JobId STREAM_JOB_ID =
+      JobId.newBuilder().setProject("p").setLocation("us-central1").setJob("j").build();
+
+  private static final String JOB_STREAM_NAME =
+      "projects/p/locations/us-central1/jobs/j/streams/_default";
+
   private static ArrowSchema arrowSchema;
 
   private final Map<String, String> LABELS =
@@ -1304,6 +1310,13 @@ public class BigQueryStatementTest {
   }
 
   @Test
+  public void testEnableQueryResultsArrowFormatPropagation() throws SQLException {
+    doReturn(true).when(bigQueryConnection).isEnableQueryResultsArrowFormat();
+    BigQueryStatement statement = new BigQueryStatement(bigQueryConnection);
+    assertTrue(statement.querySettings.isEnableQueryResultsArrowFormat());
+  }
+
+  @Test
   public void testJoblessQueryPopulatesQueryStatistics() throws Exception {
     doReturn(true).when(bigQueryConnection).getUseStatelessQueryMode();
     BigQueryStatement joblessStatement = new BigQueryStatement(bigQueryConnection);
@@ -1580,6 +1593,251 @@ public class BigQueryStatementTest {
     assertNotNull(
         marker.getException(),
         "Stopping early due to worker shutdown must enqueue an error marker rather than normal end-of-stream");
+  }
+
+  private static ReadRowsResponse rowsResponse(long rowCount) {
+    return ReadRowsResponse.newBuilder()
+        .setRowCount(rowCount)
+        .setArrowRecordBatch(ArrowRecordBatch.getDefaultInstance())
+        .build();
+  }
+
+  /** One ReadRows attempt: delivers {@code responses}, then throws {@code failure} unless null. */
+  private static ServerStream<ReadRowsResponse> readRowsAttempt(
+      RuntimeException failure, ReadRowsResponse... responses) {
+    Iterator<ReadRowsResponse> delivered = Arrays.asList(responses).iterator();
+    Iterator<ReadRowsResponse> attempt =
+        new Iterator<ReadRowsResponse>() {
+          @Override
+          public boolean hasNext() {
+            if (!delivered.hasNext() && failure != null) {
+              throw failure;
+            }
+            return delivered.hasNext();
+          }
+
+          @Override
+          public ReadRowsResponse next() {
+            return delivered.next();
+          }
+        };
+    @SuppressWarnings("unchecked")
+    ServerStream<ReadRowsResponse> stream = mock(ServerStream.class);
+    doReturn(attempt).when(stream).iterator();
+    return stream;
+  }
+
+  /** A read client that serves {@code attempts} in order and records each request it is sent. */
+  @SafeVarargs
+  private static BigQueryReadClient readClientServing(
+      List<ReadRowsRequest> requests, ServerStream<ReadRowsResponse>... attempts) {
+    Iterator<ServerStream<ReadRowsResponse>> remaining = Arrays.asList(attempts).iterator();
+    @SuppressWarnings("unchecked")
+    ServerStreamingCallable<ReadRowsRequest, ReadRowsResponse> callable =
+        mock(ServerStreamingCallable.class);
+    Mockito.doAnswer(
+            invocation -> {
+              requests.add(invocation.getArgument(0));
+              return remaining.next();
+            })
+        .when(callable)
+        .call(any(ReadRowsRequest.class));
+    BigQueryReadClient readClient = mock(BigQueryReadClient.class);
+    doReturn(callable).when(readClient).readRowsCallable();
+    return readClient;
+  }
+
+  /** A statement with picosecond timestamps on, whose reader retries without waiting. */
+  private BigQueryStatement picosStatementWithoutRetryDelay() throws SQLException {
+    doReturn(true).when(bigQueryConnection).isEnableTimestampPicos();
+    BigQueryStatement statement = Mockito.spy(new BigQueryStatement(bigQueryConnection));
+    doReturn(0L).when(statement).getArrowRetryDelayMs();
+    return statement;
+  }
+
+  @Test
+  public void testJobStreamNameUsesJobReference() throws SQLException {
+    assertEquals(JOB_STREAM_NAME, BigQueryStatement.jobStreamName(STREAM_JOB_ID));
+  }
+
+  @Test
+  public void testJobStreamNameRejectsMissingParts() {
+    for (JobId incomplete :
+        Arrays.asList(
+            null,
+            STREAM_JOB_ID.toBuilder().setProject(null).build(),
+            STREAM_JOB_ID.toBuilder().setLocation(null).build(),
+            STREAM_JOB_ID.toBuilder().setLocation("").build(),
+            STREAM_JOB_ID.toBuilder().setJob(null).build())) {
+      assertThrows(
+          BigQueryJdbcException.class,
+          () -> BigQueryStatement.jobStreamName(incomplete),
+          "Expected no stream name for " + incomplete);
+    }
+  }
+
+  @Test
+  public void testArrowSerializationOptionsDefaultToMicros() {
+    ArrowSerializationOptions options = bigQueryStatement.buildArrowSerializationOptions();
+
+    assertEquals(
+        ArrowSerializationOptions.PicosTimestampPrecision.TIMESTAMP_PRECISION_MICROS,
+        options.getPicosTimestampPrecision());
+    assertEquals(
+        ArrowSerializationOptions.CompressionCodec.COMPRESSION_UNSPECIFIED,
+        options.getBufferCompression());
+  }
+
+  @Test
+  public void testArrowSerializationOptionsUsePicosWhenEnabled() throws SQLException {
+    doReturn(true).when(bigQueryConnection).isEnableTimestampPicos();
+    BigQueryStatement statement = new BigQueryStatement(bigQueryConnection);
+
+    assertEquals(
+        ArrowSerializationOptions.PicosTimestampPrecision.TIMESTAMP_PRECISION_PICOS,
+        statement.buildArrowSerializationOptions().getPicosTimestampPrecision());
+  }
+
+  @Test
+  public void testJobStreamReaderSendsNameOffsetAndOptions() throws Exception {
+    BlockingQueue<BigQueryArrowBatchWrapper> queue = new LinkedBlockingDeque<>();
+    List<ReadRowsRequest> requests = new ArrayList<>();
+    BigQueryReadClient readClient =
+        readClientServing(requests, readRowsAttempt(null, rowsResponse(3)));
+
+    bigQueryStatement
+        .populateArrowBufferedQueueFromJobStream(STREAM_JOB_ID, 1000L, queue, readClient)
+        .get(5, TimeUnit.SECONDS);
+
+    assertEquals(1, requests.size());
+    ReadRowsRequest request = requests.get(0);
+    assertEquals(JOB_STREAM_NAME, request.getReadStream());
+    assertEquals(1000L, request.getOffset());
+    assertTrue(request.hasArrowSerializationOptions());
+    assertEquals(
+        ArrowSerializationOptions.PicosTimestampPrecision.TIMESTAMP_PRECISION_MICROS,
+        request.getArrowSerializationOptions().getPicosTimestampPrecision());
+  }
+
+  @Test
+  public void testJobStreamReaderResumeKeepsOptionsAndOffset() throws Exception {
+    BigQueryStatement statement = picosStatementWithoutRetryDelay();
+    BlockingQueue<BigQueryArrowBatchWrapper> queue = new LinkedBlockingDeque<>();
+    List<ReadRowsRequest> requests = new ArrayList<>();
+    BigQueryReadClient readClient =
+        readClientServing(
+            requests,
+            readRowsAttempt(
+                mockApiException(StatusCode.Code.UNAVAILABLE), rowsResponse(2), rowsResponse(1)),
+            readRowsAttempt(null, rowsResponse(4)));
+
+    statement
+        .populateArrowBufferedQueueFromJobStream(STREAM_JOB_ID, 1000L, queue, readClient)
+        .get(5, TimeUnit.SECONDS);
+
+    assertEquals(2, requests.size());
+    ReadRowsRequest first = requests.get(0);
+    ReadRowsRequest resumed = requests.get(1);
+    assertEquals(1000L, first.getOffset());
+    assertEquals(1003L, resumed.getOffset());
+    assertEquals(
+        ArrowSerializationOptions.PicosTimestampPrecision.TIMESTAMP_PRECISION_PICOS,
+        resumed.getArrowSerializationOptions().getPicosTimestampPrecision());
+    // The resumed request differs from the first one in its offset only.
+    assertEquals(first, resumed.toBuilder().setOffset(first.getOffset()).build());
+
+    // Three messages, then a normal end of stream.
+    List<BigQueryArrowBatchWrapper> queued = new ArrayList<>(queue);
+    assertEquals(4, queued.size());
+    assertTrue(queued.get(3).isLast());
+    assertNull(queued.get(3).getException());
+  }
+
+  @Test
+  public void testReadSessionReaderSendsNoArrowOptions() throws Exception {
+    // Picoseconds are on, so the session carries the Arrow options. ReadRows on a session stream
+    // must not: the request accepts them for job streams only.
+    BigQueryStatement statement = picosStatementWithoutRetryDelay();
+    String sessionStream = "projects/p/locations/l/sessions/s/streams/0";
+    ReadSession readSession =
+        ReadSession.newBuilder().addStreams(ReadStream.newBuilder().setName(sessionStream)).build();
+    BlockingQueue<BigQueryArrowBatchWrapper> queue = new LinkedBlockingDeque<>();
+    List<ReadRowsRequest> requests = new ArrayList<>();
+    BigQueryReadClient readClient =
+        readClientServing(
+            requests,
+            readRowsAttempt(mockApiException(StatusCode.Code.UNAVAILABLE), rowsResponse(2)),
+            readRowsAttempt(null, rowsResponse(4)));
+
+    statement.populateArrowBufferedQueue(readSession, queue, readClient).get(5, TimeUnit.SECONDS);
+
+    assertEquals(
+        Arrays.asList(
+            ReadRowsRequest.newBuilder().setReadStream(sessionStream).build(),
+            ReadRowsRequest.newBuilder().setReadStream(sessionStream).setOffset(2).build()),
+        requests);
+  }
+
+  @Test
+  public void testJobStreamReaderQueuesMessagesAsReceived() throws Exception {
+    ReadRowsResponse schemaAndRows =
+        rowsResponse(3).toBuilder().setArrowSchema(arrowSchema).build();
+    ReadRowsResponse noRows = ReadRowsResponse.getDefaultInstance();
+    BlockingQueue<BigQueryArrowBatchWrapper> queue = new LinkedBlockingDeque<>();
+    BigQueryReadClient readClient =
+        readClientServing(new ArrayList<>(), readRowsAttempt(null, schemaAndRows, noRows));
+
+    bigQueryStatement
+        .populateArrowBufferedQueueFromJobStream(STREAM_JOB_ID, 0L, queue, readClient)
+        .get(5, TimeUnit.SECONDS);
+
+    BigQueryArrowBatchWrapper first = queue.poll();
+    assertEquals(arrowSchema, first.getArrowSchema());
+    assertNotNull(first.getCurrentArrowBatch());
+    assertEquals(3L, first.getReportedRowCount());
+    BigQueryArrowBatchWrapper second = queue.poll();
+    assertNull(second.getArrowSchema());
+    assertNull(second.getCurrentArrowBatch());
+    assertEquals(0L, second.getReportedRowCount());
+    BigQueryArrowBatchWrapper end = queue.poll();
+    assertTrue(end.isLast());
+    assertNull(end.getException());
+    assertNull(end.getReportedRowCount());
+    assertTrue(queue.isEmpty());
+  }
+
+  @Test
+  public void testJobStreamReaderDoesNotRetryNotFound() throws Exception {
+    ApiException notFound = mockApiException(StatusCode.Code.NOT_FOUND);
+    BlockingQueue<BigQueryArrowBatchWrapper> queue = new LinkedBlockingDeque<>();
+    List<ReadRowsRequest> requests = new ArrayList<>();
+    BigQueryReadClient readClient = readClientServing(requests, readRowsAttempt(notFound));
+
+    bigQueryStatement
+        .populateArrowBufferedQueueFromJobStream(STREAM_JOB_ID, 0L, queue, readClient)
+        .get(5, TimeUnit.SECONDS);
+
+    assertEquals(1, requests.size());
+    assertEquals(notFound, queue.poll().getException());
+    BigQueryArrowBatchWrapper end = queue.poll();
+    assertTrue(end.isLast());
+    assertNull(end.getException());
+    assertTrue(queue.isEmpty());
+  }
+
+  @Test
+  public void testJobStreamReaderRejectsIncompleteJobReferenceBeforeStartingAWorker() {
+    BlockingQueue<BigQueryArrowBatchWrapper> queue = new LinkedBlockingDeque<>();
+    JobId withoutProjectAndLocation = JobId.of("j");
+
+    assertThrows(
+        BigQueryJdbcException.class,
+        () ->
+            bigQueryStatement.populateArrowBufferedQueueFromJobStream(
+                withoutProjectAndLocation, 0L, queue, storageReadClient));
+
+    verify(bigQueryConnection, Mockito.never()).getExecutorService();
+    assertTrue(queue.isEmpty());
   }
 
   private static FieldValueList createTestRow(boolean first, long second) {

@@ -53,6 +53,7 @@ public class DataSource implements javax.sql.DataSource {
   private String location;
   private String userAgent;
   private Boolean enableHighThroughputAPI;
+  private Boolean enableQueryResultsArrowFormat;
   private Integer highThroughputMinTableSize;
   private Integer highThroughputActivationRatio;
   private Boolean unsupportedHTAPIFallback;
@@ -160,6 +161,13 @@ public class DataSource implements javax.sql.DataSource {
                   ds.setEnableHighThroughputAPI(
                       BigQueryJdbcUrlUtility.convertToBoolean(
                           val, BigQueryJdbcUrlUtility.ENABLE_HTAPI_PROPERTY_NAME)))
+          .put(
+              BigQueryJdbcUrlUtility.ENABLE_QUERY_RESULTS_ARROW_FORMAT_PROPERTY_NAME,
+              (ds, val) ->
+                  ds.setEnableQueryResultsArrowFormat(
+                      BigQueryJdbcUrlUtility.convertToBoolean(
+                          val,
+                          BigQueryJdbcUrlUtility.ENABLE_QUERY_RESULTS_ARROW_FORMAT_PROPERTY_NAME)))
           .put(
               BigQueryJdbcUrlUtility.UNSUPPORTED_HTAPI_FALLBACK_PROPERTY_NAME,
               (ds, val) ->
@@ -485,6 +493,11 @@ public class DataSource implements javax.sql.DataSource {
       connectionProperties.setProperty(
           BigQueryJdbcUrlUtility.ENABLE_HTAPI_PROPERTY_NAME,
           String.valueOf(this.enableHighThroughputAPI));
+    }
+    if (this.enableQueryResultsArrowFormat != null) {
+      connectionProperties.setProperty(
+          BigQueryJdbcUrlUtility.ENABLE_QUERY_RESULTS_ARROW_FORMAT_PROPERTY_NAME,
+          String.valueOf(this.enableQueryResultsArrowFormat));
     }
     if (this.unsupportedHTAPIFallback != null) {
       connectionProperties.setProperty(
@@ -844,6 +857,16 @@ public class DataSource implements javax.sql.DataSource {
 
   public void setEnableHighThroughputAPI(Boolean enableHighThroughputAPI) {
     this.enableHighThroughputAPI = enableHighThroughputAPI;
+  }
+
+  public Boolean getEnableQueryResultsArrowFormat() {
+    return enableQueryResultsArrowFormat != null
+        ? enableQueryResultsArrowFormat
+        : BigQueryJdbcUrlUtility.DEFAULT_ENABLE_QUERY_RESULTS_ARROW_FORMAT_VALUE;
+  }
+
+  public void setEnableQueryResultsArrowFormat(Boolean enableQueryResultsArrowFormat) {
+    this.enableQueryResultsArrowFormat = enableQueryResultsArrowFormat;
   }
 
   public Integer getHighThroughputMinTableSize() {

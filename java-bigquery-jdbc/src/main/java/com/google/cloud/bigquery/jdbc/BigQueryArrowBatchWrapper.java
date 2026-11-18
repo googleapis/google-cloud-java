@@ -17,12 +17,19 @@
 package com.google.cloud.bigquery.jdbc;
 
 import com.google.cloud.bigquery.storage.v1.ArrowRecordBatch;
+import com.google.cloud.bigquery.storage.v1.ArrowSchema;
 import org.apache.arrow.vector.util.JsonStringArrayList;
 
 /** This class acts as a facade layer and wraps Arrow's VectorSchemaRoot & JsonStringArrayList */
 class BigQueryArrowBatchWrapper {
   // Reference to the current arrowBatch
   private final ArrowRecordBatch currentArrowBatch;
+  // Arrow schema carried with this batch, set only when the source sent one (e.g. the first
+  // ReadRowsResponse of a stream)
+  private final ArrowSchema arrowSchema;
+  // Rows the source reported for this message (ReadRowsResponse.row_count), or null when the
+  // wrapper was not built from a stream message (markers, nested records)
+  private final Long reportedRowCount;
   // Reference to the nested Records, set as null otherwise (Arrays)
   private final JsonStringArrayList nestedRecords;
 
@@ -33,10 +40,14 @@ class BigQueryArrowBatchWrapper {
 
   private BigQueryArrowBatchWrapper(
       ArrowRecordBatch currentArrowBatch,
+      ArrowSchema arrowSchema,
+      Long reportedRowCount,
       JsonStringArrayList nestedRecords,
       boolean isLast,
       Throwable exception) {
     this.currentArrowBatch = currentArrowBatch;
+    this.arrowSchema = arrowSchema;
+    this.reportedRowCount = reportedRowCount;
     this.nestedRecords = nestedRecords;
     this.isLast = isLast;
     this.exception = exception;
@@ -44,21 +55,44 @@ class BigQueryArrowBatchWrapper {
 
   static BigQueryArrowBatchWrapper of(ArrowRecordBatch currentArrowBatch, boolean... isLast) {
     boolean isLastFlag = isLast != null && isLast.length == 1 && isLast[0];
-    return new BigQueryArrowBatchWrapper(currentArrowBatch, null, isLastFlag, null);
+    return new BigQueryArrowBatchWrapper(currentArrowBatch, null, null, null, isLastFlag, null);
+  }
+
+  /**
+   * Wraps one stream message: its record batch, the schema sent with it, and the row count it
+   * reports. The batch and the schema may each be null (a schema-only message carries no batch;
+   * later messages carry no schema).
+   */
+  static BigQueryArrowBatchWrapper of(
+      ArrowRecordBatch currentArrowBatch, ArrowSchema arrowSchema, long reportedRowCount) {
+    return new BigQueryArrowBatchWrapper(
+        currentArrowBatch, arrowSchema, reportedRowCount, null, false, null);
   }
 
   static BigQueryArrowBatchWrapper getNestedFieldValueListWrapper(
       JsonStringArrayList nestedRecords, boolean... isLast) {
     boolean isLastFlag = isLast != null && isLast.length == 1 && isLast[0];
-    return new BigQueryArrowBatchWrapper(null, nestedRecords, isLastFlag, null);
+    return new BigQueryArrowBatchWrapper(null, null, null, nestedRecords, isLastFlag, null);
   }
 
   static BigQueryArrowBatchWrapper ofError(Throwable exception) {
-    return new BigQueryArrowBatchWrapper(null, null, true, exception);
+    return new BigQueryArrowBatchWrapper(null, null, null, null, true, exception);
   }
 
   ArrowRecordBatch getCurrentArrowBatch() {
     return this.currentArrowBatch;
+  }
+
+  ArrowSchema getArrowSchema() {
+    return this.arrowSchema;
+  }
+
+  /**
+   * Rows the source reported for this message, or null if this wrapper was not built from a stream
+   * message.
+   */
+  Long getReportedRowCount() {
+    return this.reportedRowCount;
   }
 
   JsonStringArrayList getNestedRecords() {
