@@ -864,7 +864,7 @@ class StaleResourceCleanerTest {
   }
 
   private StaleResourceCleaner createCleaner() throws Exception {
-    AbstractTestEnv mockEnv = mock(AbstractTestEnv.class);
+    AbstractTestEnv mockEnv = mock(AbstractTestEnv.class, withSettings().withoutAnnotations());
     when(mockEnv.getInstanceId()).thenReturn(SHARED_INSTANCE_ID);
     when(mockEnv.getInstanceAdminClient()).thenReturn(instanceAdmin);
     when(mockEnv.getTableAdminClient())
@@ -888,7 +888,8 @@ class StaleResourceCleanerTest {
     Field backgroundResourcesField =
         GrpcBigtableTableAdminStub.class.getDeclaredField("backgroundResources");
     backgroundResourcesField.setAccessible(true);
-    backgroundResourcesField.set(stub, mock(BackgroundResource.class));
+    backgroundResourcesField.set(
+        stub, mock(BackgroundResource.class, withSettings().withoutAnnotations()));
     tableStubsByInstance.put(instanceId, stub);
     return stub;
   }
@@ -912,10 +913,12 @@ class StaleResourceCleanerTest {
   }
 
   private void mockMaterializedViews(String instanceId, List<MaterializedView> views) {
-    ListMaterializedViewsPage page = mock(ListMaterializedViewsPage.class);
+    ListMaterializedViewsPage page =
+        mock(ListMaterializedViewsPage.class, withSettings().withoutAnnotations());
     when(page.getValues()).thenReturn(views);
     when(page.hasNextPage()).thenReturn(false);
-    ListMaterializedViewsPagedResponse response = mock(ListMaterializedViewsPagedResponse.class);
+    ListMaterializedViewsPagedResponse response =
+        mock(ListMaterializedViewsPagedResponse.class, withSettings().withoutAnnotations());
     when(response.getPage()).thenReturn(page);
     when(mockListMaterializedViewsCallable.futureCall(
             ListMaterializedViewsRequest.newBuilder()
@@ -925,10 +928,12 @@ class StaleResourceCleanerTest {
   }
 
   private void mockLogicalViews(String instanceId, List<LogicalView> views) {
-    ListLogicalViewsPage page = mock(ListLogicalViewsPage.class);
+    ListLogicalViewsPage page =
+        mock(ListLogicalViewsPage.class, withSettings().withoutAnnotations());
     when(page.getValues()).thenReturn(views);
     when(page.hasNextPage()).thenReturn(false);
-    ListLogicalViewsPagedResponse response = mock(ListLogicalViewsPagedResponse.class);
+    ListLogicalViewsPagedResponse response =
+        mock(ListLogicalViewsPagedResponse.class, withSettings().withoutAnnotations());
     when(response.getPage()).thenReturn(page);
     when(mockListLogicalViewsCallable.futureCall(
             ListLogicalViewsRequest.newBuilder()
@@ -951,10 +956,11 @@ class StaleResourceCleanerTest {
               .setName(NameUtil.formatTableName(PROJECT_ID, instanceId, tableId))
               .build());
     }
-    ListTablesPage page = mock(ListTablesPage.class);
+    ListTablesPage page = mock(ListTablesPage.class, withSettings().withoutAnnotations());
     when(page.getValues()).thenReturn(tables);
     when(page.hasNextPage()).thenReturn(false);
-    ListTablesPagedResponse response = mock(ListTablesPagedResponse.class);
+    ListTablesPagedResponse response =
+        mock(ListTablesPagedResponse.class, withSettings().withoutAnnotations());
     when(response.getPage()).thenReturn(page);
     when(mockListTablesCallable.futureCall(
             ListTablesRequest.newBuilder()
@@ -975,10 +981,12 @@ class StaleResourceCleanerTest {
               .setName(NameUtil.formatAuthorizedViewName(PROJECT_ID, instanceId, tableId, viewId))
               .build());
     }
-    ListAuthorizedViewsPage page = mock(ListAuthorizedViewsPage.class);
+    ListAuthorizedViewsPage page =
+        mock(ListAuthorizedViewsPage.class, withSettings().withoutAnnotations());
     when(page.getValues()).thenReturn(views);
     when(page.hasNextPage()).thenReturn(false);
-    ListAuthorizedViewsPagedResponse response = mock(ListAuthorizedViewsPagedResponse.class);
+    ListAuthorizedViewsPagedResponse response =
+        mock(ListAuthorizedViewsPagedResponse.class, withSettings().withoutAnnotations());
     when(response.getPage()).thenReturn(page);
     when(callable.futureCall(
             ListAuthorizedViewsRequest.newBuilder()
@@ -997,10 +1005,11 @@ class StaleResourceCleanerTest {
                   AppProfile.MultiClusterRoutingUseAny.getDefaultInstance())
               .build());
     }
-    ListAppProfilesPage page = mock(ListAppProfilesPage.class);
+    ListAppProfilesPage page = mock(ListAppProfilesPage.class, withSettings().withoutAnnotations());
     when(page.getValues()).thenReturn(profiles);
     when(page.hasNextPage()).thenReturn(false);
-    ListAppProfilesPagedResponse response = mock(ListAppProfilesPagedResponse.class);
+    ListAppProfilesPagedResponse response =
+        mock(ListAppProfilesPagedResponse.class, withSettings().withoutAnnotations());
     when(response.getPage()).thenReturn(page);
     when(mockListAppProfilesCallable.futureCall(
             ListAppProfilesRequest.newBuilder()
@@ -1039,10 +1048,11 @@ class StaleResourceCleanerTest {
               .setName(NameUtil.formatBackupName(PROJECT_ID, instanceId, clusterId, backupId))
               .build());
     }
-    ListBackupsPage page = mock(ListBackupsPage.class);
+    ListBackupsPage page = mock(ListBackupsPage.class, withSettings().withoutAnnotations());
     when(page.getValues()).thenReturn(backups);
     when(page.hasNextPage()).thenReturn(false);
-    ListBackupsPagedResponse response = mock(ListBackupsPagedResponse.class);
+    ListBackupsPagedResponse response =
+        mock(ListBackupsPagedResponse.class, withSettings().withoutAnnotations());
     when(response.getPage()).thenReturn(page);
     when(callable.futureCall(
             ListBackupsRequest.newBuilder()
