@@ -23,6 +23,11 @@ import com.google.api.gax.grpc.GrpcInterceptorProvider;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.cloud.NoCredentials;
 import com.google.common.collect.ImmutableList;
+import com.google.storage.v2.BidiWriteObjectRequest;
+import com.google.storage.v2.BidiWriteObjectResponse;
+import com.google.storage.v2.ReadObjectRequest;
+import com.google.storage.v2.StorageGrpc;
+import com.google.storage.v2.WriteObjectRequest;
 import io.grpc.Attributes;
 import io.grpc.CallOptions;
 import io.grpc.Channel;
@@ -50,11 +55,12 @@ import java.io.InputStream;
 import java.lang.reflect.Field;
 import java.net.InetAddress;
 import java.net.InetSocketAddress;
+import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicLong;
-import java.util.concurrent.atomic.AtomicReference;
 import org.jspecify.annotations.Nullable;
 import org.junit.Before;
 import org.junit.Test;
@@ -162,6 +168,52 @@ public final class StorageGrpcMetricsInterceptorTest {
   }
 
   @Test
+  public void defaultOperationName_cases() {
+    assertThat(StorageGrpcMetricsInterceptor.defaultOperationName("BidiReadObject"))
+        .isEqualTo("ReadObject");
+    assertThat(StorageGrpcMetricsInterceptor.defaultOperationName("BidiWriteObject"))
+        .isEqualTo("WriteObject");
+    assertThat(StorageGrpcMetricsInterceptor.defaultOperationName("StartResumableWrite"))
+        .isEqualTo("WriteObject");
+    assertThat(StorageGrpcMetricsInterceptor.defaultOperationName("QueryWriteStatus"))
+        .isEqualTo("WriteObject");
+    assertThat(StorageGrpcMetricsInterceptor.defaultOperationName("ReadObject"))
+        .isEqualTo("ReadObject");
+    assertThat(StorageGrpcMetricsInterceptor.defaultOperationName("GetBucket"))
+        .isEqualTo("GetBucket");
+    assertThat(StorageGrpcMetricsInterceptor.defaultOperationName("")).isEqualTo("UNKNOWN");
+    assertThat(StorageGrpcMetricsInterceptor.defaultOperationName(null)).isEqualTo("UNKNOWN");
+  }
+
+  @Test
+  public void isWriteFlush_cases() {
+    assertThat(
+            StorageGrpcMetricsInterceptor.isWriteFlush(
+                BidiWriteObjectRequest.newBuilder().setFlush(true).build()))
+        .isTrue();
+    assertThat(
+            StorageGrpcMetricsInterceptor.isWriteFlush(
+                BidiWriteObjectRequest.newBuilder().setFinishWrite(true).build()))
+        .isTrue();
+    assertThat(
+            StorageGrpcMetricsInterceptor.isWriteFlush(
+                BidiWriteObjectRequest.newBuilder().setStateLookup(true).build()))
+        .isFalse();
+    assertThat(
+            StorageGrpcMetricsInterceptor.isWriteFlush(BidiWriteObjectRequest.getDefaultInstance()))
+        .isFalse();
+    assertThat(
+            StorageGrpcMetricsInterceptor.isWriteFlush(
+                WriteObjectRequest.newBuilder().setFinishWrite(true).build()))
+        .isTrue();
+    assertThat(StorageGrpcMetricsInterceptor.isWriteFlush(WriteObjectRequest.getDefaultInstance()))
+        .isFalse();
+    assertThat(StorageGrpcMetricsInterceptor.isWriteFlush(ReadObjectRequest.getDefaultInstance()))
+        .isFalse();
+    assertThat(StorageGrpcMetricsInterceptor.isWriteFlush(null)).isFalse();
+  }
+
+  @Test
   public void interceptCall_unaryCallSuccess_recordsMetricWithErrorTypeOk() throws Exception {
     Attributes callAttrs =
         Attributes.newBuilder()
@@ -177,7 +229,11 @@ public final class StorageGrpcMetricsInterceptorTest {
     TestListener<Void> listener = new TestListener<>();
     call.start(listener, new Metadata());
 
-    clock.advanceNanos(500_000_000L); // 0.5s
+    clock.advanceNanos(200_000_000L); // 0.2s: first response message triggers TTFB
+    testCall.deliverMessage(null);
+    clock.advanceNanos(150_000_000L); // 0.35s: second message must not record TTFB again
+    testCall.deliverMessage(null);
+    clock.advanceNanos(150_000_000L); // 0.5s total duration
     testCall.close(Status.OK, new Metadata());
 
     MetricData rpcDurationData = findMetric(StorageClientMetrics.METRIC_RPC_CLIENT_CALL_DURATION);
@@ -198,6 +254,65 @@ public final class StorageGrpcMetricsInterceptorTest {
     assertThat(attrs.get(StorageClientMetrics.KEY_SERVER_ADDRESS))
         .isEqualTo("storage.googleapis.com");
     assertThat(attrs.get(StorageClientMetrics.KEY_ERROR_TYPE)).isEqualTo("OK");
+
+    MetricData ttfbData = findMetric(StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_TTFB);
+    assertThat(ttfbData).isNotNull();
+    assertThat(ttfbData.getHistogramData().getPoints()).hasSize(1);
+    HistogramPointData ttfbPoint = ttfbData.getHistogramData().getPoints().iterator().next();
+    assertThat(ttfbPoint.getCount()).isEqualTo(1L);
+    assertThat(ttfbPoint.getSum()).isWithin(1e-6).of(0.2);
+    assertThat(ttfbPoint.getAttributes())
+        .isEqualTo(
+            io.opentelemetry.api.common.Attributes.builder()
+                .put(
+                    StorageClientMetrics.KEY_GCP_CLIENT_SERVICE,
+                    StorageClientMetrics.SERVICE_STORAGE)
+                .put(StorageClientMetrics.KEY_GCP_CLIENT_VERSION, StorageOptions.version())
+                .put(
+                    StorageClientMetrics.KEY_GCP_CLIENT_ARTIFACT,
+                    StorageClientMetrics.ARTIFACT_STORAGE)
+                .put(StorageClientMetrics.KEY_RPC_SYSTEM_NAME, "grpc")
+                .put(StorageClientMetrics.KEY_GCP_STORAGE_OPERATION, "ReadObject")
+                .put(
+                    StorageClientMetrics.KEY_NETWORK_PATH,
+                    StorageClientMetrics.NETWORK_PATH_CLOUDPATH)
+                .put(StorageClientMetrics.KEY_SERVER_ADDRESS, "storage.googleapis.com")
+                .build());
+  }
+
+  @Test
+  public void interceptCall_bidiWriteObject_recordsTtfbFromFlush() {
+    TestClientCall<BidiWriteObjectRequest, BidiWriteObjectResponse> writeCall =
+        new TestClientCall<>(Attributes.EMPTY);
+    TestChannel writeChannel = new TestChannel(writeCall);
+
+    ClientCall<BidiWriteObjectRequest, BidiWriteObjectResponse> call =
+        interceptor.interceptCall(
+            StorageGrpc.getBidiWriteObjectMethod(), CallOptions.DEFAULT, writeChannel);
+    call.start(new TestListener<>(), new Metadata());
+
+    clock.advanceNanos(100_000_000L); // t = 0.10s: flush re-anchors ttfbStartNanos
+    call.sendMessage(BidiWriteObjectRequest.newBuilder().setFlush(true).build());
+
+    clock.advanceNanos(100_000_000L); // t = 0.20s: trailing non-flush chunk must not re-anchor
+    call.sendMessage(BidiWriteObjectRequest.getDefaultInstance());
+
+    clock.advanceNanos(150_000_000L); // t = 0.35s: first server ack -> TTFB = 0.35 - 0.10 = 0.25s
+    writeCall.deliverMessage(BidiWriteObjectResponse.getDefaultInstance());
+    writeCall.close(Status.OK, new Metadata());
+
+    MetricData ttfbData = findMetric(StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_TTFB);
+    assertThat(ttfbData).isNotNull();
+    assertThat(ttfbData.getHistogramData().getPoints()).hasSize(1);
+    HistogramPointData ttfbPoint = ttfbData.getHistogramData().getPoints().iterator().next();
+    assertThat(ttfbPoint.getCount()).isEqualTo(1L);
+    assertThat(ttfbPoint.getSum()).isWithin(1e-6).of(0.25);
+    assertThat(ttfbPoint.getAttributes().get(StorageClientMetrics.KEY_GCP_STORAGE_OPERATION))
+        .isEqualTo("WriteObject");
+    assertThat(ttfbPoint.getAttributes().get(StorageClientMetrics.KEY_RPC_SYSTEM_NAME))
+        .isEqualTo("grpc");
+    assertThat(ttfbPoint.getAttributes().get(StorageClientMetrics.KEY_SERVER_ADDRESS))
+        .isEqualTo("storage.googleapis.com");
   }
 
   @Test
@@ -222,12 +337,14 @@ public final class StorageGrpcMetricsInterceptorTest {
         .isEqualTo("NOT_FOUND");
     assertThat(point.getAttributes().get(StorageClientMetrics.KEY_SERVER_ADDRESS))
         .isEqualTo("storage.googleapis.com");
+
+    assertThat(findMetric(StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_TTFB)).isNull();
   }
 
   @Test
   public void interceptCall_withStorageMetricsContext_propagatesContextAndFeedsNetworkPath()
       throws Exception {
-    StorageMetricsContext metricsContext = metrics.createContext("ReadObject");
+    StorageMetricsContext metricsContext = metrics.createContext("CustomOperation");
     CallOptions callOptions = metricsContext.attach(CallOptions.DEFAULT);
 
     Attributes directPathAttrs =
@@ -242,6 +359,8 @@ public final class StorageGrpcMetricsInterceptorTest {
     ClientCall<Void, Void> call =
         interceptor.interceptCall(READ_OBJECT_METHOD, callOptions, testChannel);
     call.start(new TestListener<>(), new Metadata());
+    clock.advanceNanos(150_000_000L);
+    testCall.deliverMessage(null);
     testCall.close(Status.OK, new Metadata());
 
     metricsContext.recordAttemptSuccess(metrics);
@@ -252,6 +371,16 @@ public final class StorageGrpcMetricsInterceptorTest {
     HistogramPointData durationPoint =
         rpcDurationData.getHistogramData().getPoints().iterator().next();
     assertThat(durationPoint.getAttributes().get(StorageClientMetrics.KEY_NETWORK_PATH))
+        .isEqualTo(StorageClientMetrics.NETWORK_PATH_DIRECTPATH);
+
+    MetricData ttfbData = findMetric(StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_TTFB);
+    assertThat(ttfbData).isNotNull();
+    assertThat(ttfbData.getHistogramData().getPoints()).hasSize(1);
+    HistogramPointData ttfbPoint = ttfbData.getHistogramData().getPoints().iterator().next();
+    assertThat(ttfbPoint.getSum()).isWithin(1e-6).of(0.15);
+    assertThat(ttfbPoint.getAttributes().get(StorageClientMetrics.KEY_GCP_STORAGE_OPERATION))
+        .isEqualTo("CustomOperation");
+    assertThat(ttfbPoint.getAttributes().get(StorageClientMetrics.KEY_NETWORK_PATH))
         .isEqualTo(StorageClientMetrics.NETWORK_PATH_DIRECTPATH);
 
     MetricData attemptsData = findMetric(StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_ATTEMPTS);
@@ -311,11 +440,11 @@ public final class StorageGrpcMetricsInterceptorTest {
     Context callerContext = Context.root().with(testKey, "caller-trace-value");
     Context callbackThreadContext = Context.root().with(testKey, "callback-thread-value");
 
-    AtomicReference<Context> recordedContext = new AtomicReference<>();
+    List<Context> recordedContexts = Collections.synchronizedList(new ArrayList<>());
     DoubleHistogram mockHistogram = Mockito.mock(DoubleHistogram.class);
     Mockito.doAnswer(
             invocation -> {
-              recordedContext.set(invocation.getArgument(2));
+              recordedContexts.add(invocation.getArgument(2));
               return null;
             })
         .when(mockHistogram)
@@ -364,6 +493,7 @@ public final class StorageGrpcMetricsInterceptorTest {
         new Thread(
             () -> {
               try (Scope ignored = callbackThreadContext.makeCurrent()) {
+                testCall.deliverMessage(null);
                 testCall.close(Status.OK, new Metadata());
               } finally {
                 latch.countDown();
@@ -372,8 +502,11 @@ public final class StorageGrpcMetricsInterceptorTest {
     asyncCallbackThread.start();
     assertThat(latch.await(5, TimeUnit.SECONDS)).isTrue();
 
-    assertThat(recordedContext.get()).isSameInstanceAs(callerContext);
-    assertThat(recordedContext.get().get(testKey)).isEqualTo("caller-trace-value");
+    assertThat(recordedContexts).hasSize(2);
+    for (Context ctx : recordedContexts) {
+      assertThat(ctx).isSameInstanceAs(callerContext);
+      assertThat(ctx.get(testKey)).isEqualTo("caller-trace-value");
+    }
   }
 
   @Test
@@ -513,6 +646,12 @@ public final class StorageGrpcMetricsInterceptorTest {
     void receiveHeaders(Metadata headers) {
       if (listener != null) {
         listener.onHeaders(headers);
+      }
+    }
+
+    void deliverMessage(@Nullable RespT message) {
+      if (listener != null) {
+        listener.onMessage(message);
       }
     }
 

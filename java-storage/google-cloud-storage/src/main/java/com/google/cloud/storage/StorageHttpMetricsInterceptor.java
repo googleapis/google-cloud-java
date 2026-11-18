@@ -27,6 +27,7 @@ import com.google.api.client.http.HttpResponseInterceptor;
 import com.google.api.client.http.HttpUnsuccessfulResponseHandler;
 import com.google.api.core.ApiClock;
 import com.google.common.collect.ImmutableSet;
+import io.opentelemetry.context.Context;
 import java.io.IOException;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicLong;
@@ -42,6 +43,10 @@ import org.jspecify.annotations.Nullable;
  * recorded here end at response headers and exclude streaming body transfer (a follow-up is tracked
  * for recording when the response body is closed). End-to-end download duration including body
  * transfer is captured by {@code gcp.client.request.duration}.
+ *
+ * <p>{@code gcp.storage.client.ttfb} is recorded here for media download requests across all HTTP
+ * response status codes when response headers arrive (HTTP unary and upload TTFB are tracked for a
+ * follow-up).
  */
 @NullMarked
 final class StorageHttpMetricsInterceptor implements HttpRequestInitializer {
@@ -132,6 +137,16 @@ final class StorageHttpMetricsInterceptor implements HttpRequestInitializer {
             ? StorageErrorTypeMapper.mapHttpResponseCode(statusCode)
             : StorageErrorTypeMapper.STATUS_OK;
     recordDuration(request, startNanos, endNanos, statusCode, errorType);
+    // Evaluate isMediaDownloadRequest(request) at response time rather than in
+    // initialize(HttpRequest), because callers such as MediaHttpDownloader may append
+    // query parameters (e.g. alt=media) to request.getUrl() after buildGetRequest().
+    if (isMediaDownloadRequest(request)) {
+      metrics.recordTtfb(
+          Context.current(),
+          "ReadObject",
+          (endNanos - startNanos) / 1_000_000_000.0,
+          StorageClientMetrics.NETWORK_PATH_CLOUDPATH);
+    }
   }
 
   private void recordDuration(
@@ -143,6 +158,16 @@ final class StorageHttpMetricsInterceptor implements HttpRequestInitializer {
         statusCode,
         extractUrlTemplate(request.getUrl()),
         errorType);
+  }
+
+  static boolean isMediaDownloadRequest(HttpRequest request) {
+    if (!"GET".equalsIgnoreCase(request.getRequestMethod())) {
+      return false;
+    }
+    GenericUrl url = request.getUrl();
+    String path = url.getRawPath();
+    return (path != null && path.startsWith("/download/storage/v1/"))
+        || "media".equals(url.getFirst("alt"));
   }
 
   static String extractUrlTemplate(GenericUrl url) {

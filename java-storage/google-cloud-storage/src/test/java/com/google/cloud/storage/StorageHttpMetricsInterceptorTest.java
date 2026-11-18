@@ -24,6 +24,7 @@ import com.google.api.client.googleapis.batch.BatchRequest;
 import com.google.api.client.http.GenericUrl;
 import com.google.api.client.http.HttpHeaders;
 import com.google.api.client.http.HttpRequest;
+import com.google.api.client.http.HttpRequestFactory;
 import com.google.api.client.http.HttpRequestInitializer;
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.http.LowLevelHttpRequest;
@@ -172,12 +173,35 @@ public final class StorageHttpMetricsInterceptorTest {
   }
 
   @Test
+  public void isMediaDownloadRequest_cases() throws IOException {
+    HttpRequestFactory factory = new MockHttpTransport().createRequestFactory();
+    Object[][] cases = {
+      {"GET", "https://storage.googleapis.com/download/storage/v1/b/my-b/o/my-obj", true},
+      {"GET", "https://storage.googleapis.com/storage/v1/b/my-b/o/my-obj?alt=media", true},
+      {"GET", "https://storage.googleapis.com/storage/v1/b/my-b/o/my-obj?alt=json", false},
+      {"GET", "https://storage.googleapis.com/storage/v1/b/my-b/o/my-obj", false},
+      {"GET", "https://storage.googleapis.com", false},
+      {"POST", "https://storage.googleapis.com/download/storage/v1/b/my-b/o/my-obj", false},
+    };
+
+    for (Object[] testCase : cases) {
+      String method = (String) testCase[0];
+      String url = (String) testCase[1];
+      boolean expected = (boolean) testCase[2];
+      HttpRequest request = factory.buildRequest(method, new GenericUrl(url), null);
+      assertWithMessage("%s %s", method, url)
+          .that(StorageHttpMetricsInterceptor.isMediaDownloadRequest(request))
+          .isEqualTo(expected);
+    }
+  }
+
+  @Test
   public void initialize_statusCodes_recordsDurationAndErrorType() throws IOException {
     Map<Integer, String> cases =
         ImmutableMap.of(
-            200, "OK",
             308, "OK",
-            503, "UNAVAILABLE");
+            503, "UNAVAILABLE",
+            200, "OK");
 
     for (int statusCode : cases.keySet()) {
       AtomicBoolean delegateCalled = new AtomicBoolean(false);
@@ -196,11 +220,12 @@ public final class StorageHttpMetricsInterceptorTest {
       HttpRequestInitializer interceptor = httpOptions.decorateWithMetrics(delegate);
 
       HttpTransport transport = createAdvancingTransport(statusCode, 250_000_000L);
+      String url =
+          statusCode == 200
+              ? "https://storage.googleapis.com/storage/v1/b/my-b/o/my-obj?alt=media"
+              : "https://storage.googleapis.com/storage/v1/b/my-b/o/my-obj";
       HttpRequest request =
-          transport
-              .createRequestFactory(interceptor)
-              .buildGetRequest(
-                  new GenericUrl("https://storage.googleapis.com/storage/v1/b/my-b/o/my-obj"));
+          transport.createRequestFactory(interceptor).buildGetRequest(new GenericUrl(url));
       if (statusCode != 200) {
         request.setThrowExceptionOnExecuteError(false);
       }
@@ -209,6 +234,9 @@ public final class StorageHttpMetricsInterceptorTest {
       assertWithMessage("status=%s", statusCode).that(delegateCalled.get()).isTrue();
       assertWithMessage("status=%s", statusCode).that(execCalled.get()).isTrue();
       assertWithMessage("status=%s", statusCode).that(respCalled.get()).isTrue();
+      if (statusCode != 200) {
+        assertWithMessage("status=%s", statusCode).that(ttfbPoints()).isEmpty();
+      }
     }
 
     List<HistogramPointData> points = durationPoints();
@@ -240,6 +268,53 @@ public final class StorageHttpMetricsInterceptorTest {
           .that(attrs.get(StorageClientMetrics.KEY_ERROR_TYPE))
           .isEqualTo(entry.getValue());
     }
+
+    List<HistogramPointData> ttfb = ttfbPoints();
+    assertThat(ttfb).hasSize(1);
+    HistogramPointData ttfbPoint = ttfb.get(0);
+    assertThat(ttfbPoint.getCount()).isEqualTo(1L);
+    assertThat(ttfbPoint.getSum()).isWithin(1e-6).of(0.25);
+    assertThat(ttfbPoint.getAttributes())
+        .isEqualTo(
+            Attributes.builder()
+                .put(
+                    StorageClientMetrics.KEY_GCP_CLIENT_SERVICE,
+                    StorageClientMetrics.SERVICE_STORAGE)
+                .put(StorageClientMetrics.KEY_GCP_CLIENT_VERSION, StorageOptions.version())
+                .put(
+                    StorageClientMetrics.KEY_GCP_CLIENT_ARTIFACT,
+                    StorageClientMetrics.ARTIFACT_STORAGE)
+                .put(StorageClientMetrics.KEY_RPC_SYSTEM_NAME, "http")
+                .put(StorageClientMetrics.KEY_GCP_STORAGE_OPERATION, "ReadObject")
+                .put(
+                    StorageClientMetrics.KEY_NETWORK_PATH,
+                    StorageClientMetrics.NETWORK_PATH_CLOUDPATH)
+                .put(StorageClientMetrics.KEY_SERVER_ADDRESS, "storage.googleapis.com")
+                .build());
+  }
+
+  @Test
+  public void initialize_altMediaAddedAfterBuildGetRequest_recordsTtfb() throws IOException {
+    HttpRequestInitializer interceptor = httpOptions.decorateWithMetrics(null);
+
+    HttpTransport transport = createAdvancingTransport(200, 120_000_000L);
+    HttpRequest request =
+        transport
+            .createRequestFactory(interceptor)
+            .buildGetRequest(
+                new GenericUrl("https://storage.googleapis.com/storage/v1/b/my-b/o/my-obj"));
+    request.getUrl().put("alt", "media");
+    request.execute();
+
+    List<HistogramPointData> ttfb = ttfbPoints();
+    assertThat(ttfb).hasSize(1);
+    HistogramPointData ttfbPoint = ttfb.get(0);
+    assertThat(ttfbPoint.getCount()).isEqualTo(1L);
+    assertThat(ttfbPoint.getSum()).isWithin(1e-6).of(0.12);
+    assertThat(ttfbPoint.getAttributes().get(StorageClientMetrics.KEY_GCP_STORAGE_OPERATION))
+        .isEqualTo("ReadObject");
+    assertThat(ttfbPoint.getAttributes().get(StorageClientMetrics.KEY_SERVER_ADDRESS))
+        .isEqualTo("storage.googleapis.com");
   }
 
   @Test
@@ -261,7 +336,8 @@ public final class StorageHttpMetricsInterceptorTest {
         transport
             .createRequestFactory(interceptor)
             .buildGetRequest(
-                new GenericUrl("https://storage.googleapis.com/storage/v1/b/missing-bucket"));
+                new GenericUrl(
+                    "https://storage.googleapis.com/download/storage/v1/b/my-b/o/missing-obj?alt=media"));
     request.setThrowExceptionOnExecuteError(false);
     request.execute();
 
@@ -275,8 +351,20 @@ public final class StorageHttpMetricsInterceptorTest {
     Attributes attrs = point.getAttributes();
     assertThat(attrs.get(StorageClientMetrics.KEY_RPC_SYSTEM_NAME)).isEqualTo("http");
     assertThat(attrs.get(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE)).isEqualTo(404L);
+    assertThat(attrs.get(StorageClientMetrics.KEY_URL_TEMPLATE))
+        .isEqualTo("/download/storage/v1/b/{bucket}/o/{object}");
     assertThat(attrs.get(StorageClientMetrics.KEY_ERROR_TYPE)).isEqualTo("NOT_FOUND");
     assertThat(attrs.get(StorageClientMetrics.KEY_SERVER_ADDRESS))
+        .isEqualTo("storage.googleapis.com");
+
+    List<HistogramPointData> ttfb = ttfbPoints();
+    assertThat(ttfb).hasSize(1);
+    HistogramPointData ttfbPoint = ttfb.get(0);
+    assertThat(ttfbPoint.getCount()).isEqualTo(1L);
+    assertThat(ttfbPoint.getSum()).isWithin(1e-6).of(0.08);
+    assertThat(ttfbPoint.getAttributes().get(StorageClientMetrics.KEY_GCP_STORAGE_OPERATION))
+        .isEqualTo("ReadObject");
+    assertThat(ttfbPoint.getAttributes().get(StorageClientMetrics.KEY_SERVER_ADDRESS))
         .isEqualTo("storage.googleapis.com");
   }
 
@@ -330,6 +418,8 @@ public final class StorageHttpMetricsInterceptorTest {
     assertThat(okPoint.getSum()).isWithin(1e-6).of(0.20);
     assertThat(okPoint.getAttributes().get(StorageClientMetrics.KEY_ERROR_TYPE))
         .isEqualTo(StorageErrorTypeMapper.STATUS_OK);
+
+    assertThat(ttfbPoints()).isEmpty();
   }
 
   @Test
@@ -341,7 +431,7 @@ public final class StorageHttpMetricsInterceptorTest {
                 (req, response, supportsRetry) -> {
                   if (response.getStatusCode() == 401) {
                     // Simulate token refresh latency inside the UnsuccessfulResponseHandler;
-                    // the 401 request duration must be captured before this handler runs.
+                    // the 401 request duration and TTFB must be captured before this handler runs.
                     clock.advanceNanos(200_000_000L);
                     return true;
                   }
@@ -374,7 +464,9 @@ public final class StorageHttpMetricsInterceptorTest {
     HttpRequest req =
         transport
             .createRequestFactory(interceptor)
-            .buildGetRequest(new GenericUrl("https://storage.googleapis.com/storage/v1/b/my-b"));
+            .buildGetRequest(
+                new GenericUrl(
+                    "https://storage.googleapis.com/download/storage/v1/b/my-b/o/my-obj?alt=media"));
     req.execute();
 
     List<HistogramPointData> points = durationPoints();
@@ -382,13 +474,27 @@ public final class StorageHttpMetricsInterceptorTest {
 
     HistogramPointData unauthorizedPoint = findPointByStatus(points, 401L);
     assertThat(unauthorizedPoint.getSum()).isWithin(1e-6).of(0.09);
+    assertThat(unauthorizedPoint.getAttributes().get(StorageClientMetrics.KEY_URL_TEMPLATE))
+        .isEqualTo("/download/storage/v1/b/{bucket}/o/{object}");
     assertThat(unauthorizedPoint.getAttributes().get(StorageClientMetrics.KEY_ERROR_TYPE))
         .isEqualTo("UNAUTHENTICATED");
 
     HistogramPointData okPoint = findPointByStatus(points, 200L);
     assertThat(okPoint.getSum()).isWithin(1e-6).of(0.18);
+    assertThat(okPoint.getAttributes().get(StorageClientMetrics.KEY_URL_TEMPLATE))
+        .isEqualTo("/download/storage/v1/b/{bucket}/o/{object}");
     assertThat(okPoint.getAttributes().get(StorageClientMetrics.KEY_ERROR_TYPE))
         .isEqualTo(StorageErrorTypeMapper.STATUS_OK);
+
+    List<HistogramPointData> ttfb = ttfbPoints();
+    assertThat(ttfb).hasSize(1);
+    HistogramPointData ttfbPoint = ttfb.get(0);
+    assertThat(ttfbPoint.getCount()).isEqualTo(2L);
+    assertThat(ttfbPoint.getSum()).isWithin(1e-6).of(0.27);
+    assertThat(ttfbPoint.getAttributes().get(StorageClientMetrics.KEY_GCP_STORAGE_OPERATION))
+        .isEqualTo("ReadObject");
+    assertThat(ttfbPoint.getAttributes().get(StorageClientMetrics.KEY_SERVER_ADDRESS))
+        .isEqualTo("storage.googleapis.com");
   }
 
   @Test
@@ -483,11 +589,20 @@ public final class StorageHttpMetricsInterceptorTest {
     assertThat(attrs.get(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE)).isEqualTo(200L);
     assertThat(attrs.get(StorageClientMetrics.KEY_ERROR_TYPE))
         .isEqualTo(StorageErrorTypeMapper.STATUS_OK);
+    assertThat(ttfbPoints()).isEmpty();
   }
 
   private List<HistogramPointData> durationPoints() {
+    return histogramPoints(StorageClientMetrics.METRIC_HTTP_CLIENT_REQUEST_DURATION);
+  }
+
+  private List<HistogramPointData> ttfbPoints() {
+    return histogramPoints(StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_TTFB);
+  }
+
+  private List<HistogramPointData> histogramPoints(String metricName) {
     return reader.collectAllMetrics().stream()
-        .filter(m -> m.getName().equals(StorageClientMetrics.METRIC_HTTP_CLIENT_REQUEST_DURATION))
+        .filter(m -> m.getName().equals(metricName))
         .findFirst()
         .map(m -> ImmutableList.copyOf(m.getHistogramData().getPoints()))
         .orElse(ImmutableList.of());

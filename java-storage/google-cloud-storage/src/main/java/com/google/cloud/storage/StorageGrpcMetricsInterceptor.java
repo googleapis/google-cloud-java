@@ -19,6 +19,8 @@ package com.google.cloud.storage;
 import static java.util.Objects.requireNonNull;
 
 import com.google.api.core.ApiClock;
+import com.google.storage.v2.BidiWriteObjectRequest;
+import com.google.storage.v2.WriteObjectRequest;
 import io.grpc.Attributes;
 import io.grpc.CallOptions;
 import io.grpc.Channel;
@@ -34,6 +36,8 @@ import io.opentelemetry.context.Context;
 import java.net.InetAddress;
 import java.net.InetSocketAddress;
 import java.net.SocketAddress;
+import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicLong;
 import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
 
@@ -58,11 +62,19 @@ final class StorageGrpcMetricsInterceptor implements ClientInterceptor {
     String rpcMethod = method.getFullMethodName();
     StorageMetricsContext metricsCtx = StorageMetricsContext.from(callOptions);
     Context otelContext = metricsCtx != null ? metricsCtx.getOtelContext() : Context.current();
+    String operationName =
+        metricsCtx != null
+            ? metricsCtx.getOperationName()
+            : defaultOperationName(method.getBareMethodName());
 
     return new SimpleForwardingClientCall<ReqT, RespT>(next.newCall(method, callOptions)) {
+      private final AtomicBoolean ttfbRecorded = new AtomicBoolean(false);
+      private final AtomicLong ttfbStartNanos = new AtomicLong();
+
       @Override
       public void start(Listener<RespT> responseListener, Metadata headers) {
         long startTimeNanos = clock.nanoTime();
+        ttfbStartNanos.set(startTimeNanos);
 
         super.start(
             new SimpleForwardingClientCallListener<RespT>(responseListener) {
@@ -72,6 +84,18 @@ final class StorageGrpcMetricsInterceptor implements ClientInterceptor {
                   metricsCtx.setNetworkPath(detectNetworkPath(getAttributes()));
                 }
                 super.onHeaders(headers);
+              }
+
+              @Override
+              public void onMessage(@Nullable RespT message) {
+                // The first response message from the server (including metadata-only
+                // responses for 0-byte objects) marks Time To First Byte (TTFB).
+                if (ttfbRecorded.compareAndSet(false, true)) {
+                  double ttfbSeconds = (clock.nanoTime() - ttfbStartNanos.get()) / 1_000_000_000.0;
+                  String networkPath = detectNetworkPath(getAttributes());
+                  metrics.recordTtfb(otelContext, operationName, ttfbSeconds, networkPath);
+                }
+                super.onMessage(message);
               }
 
               @Override
@@ -94,7 +118,42 @@ final class StorageGrpcMetricsInterceptor implements ClientInterceptor {
             },
             headers);
       }
+
+      @Override
+      public void sendMessage(ReqT message) {
+        if (!ttfbRecorded.get() && isWriteFlush(message)) {
+          ttfbStartNanos.set(clock.nanoTime());
+        }
+        super.sendMessage(message);
+      }
     };
+  }
+
+  static String defaultOperationName(@Nullable String bareMethod) {
+    if (bareMethod == null || bareMethod.isEmpty()) {
+      return "UNKNOWN";
+    }
+    switch (bareMethod) {
+      case "BidiReadObject":
+        return "ReadObject";
+      case "BidiWriteObject":
+      case "StartResumableWrite":
+      case "QueryWriteStatus":
+        return "WriteObject";
+      default:
+        return bareMethod;
+    }
+  }
+
+  static boolean isWriteFlush(@Nullable Object message) {
+    if (message instanceof BidiWriteObjectRequest) {
+      BidiWriteObjectRequest req = (BidiWriteObjectRequest) message;
+      return req.getFlush() || req.getFinishWrite();
+    }
+    if (message instanceof WriteObjectRequest) {
+      return ((WriteObjectRequest) message).getFinishWrite();
+    }
+    return false;
   }
 
   static String detectNetworkPath(@Nullable Attributes callAttributes) {
