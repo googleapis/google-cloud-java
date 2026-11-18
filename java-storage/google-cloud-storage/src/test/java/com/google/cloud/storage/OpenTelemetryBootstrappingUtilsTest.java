@@ -285,6 +285,16 @@ public final class OpenTelemetryBootstrappingUtilsTest {
         .isEqualTo("monitoring.googleapis.com:8080");
     assertThat(
             OpenTelemetryBootstrappingUtils.getCloudMonitoringEndpoint(
+                "[::1]:8443", "googleapis.com"))
+        .isEqualTo("monitoring.googleapis.com:8443");
+    assertThat(OpenTelemetryBootstrappingUtils.getCloudMonitoringEndpoint("::1", "googleapis.com"))
+        .isEqualTo("monitoring.googleapis.com:443");
+    assertThat(
+            OpenTelemetryBootstrappingUtils.getCloudMonitoringEndpoint(
+                "[::1]:invalid", "googleapis.com"))
+        .isEqualTo("monitoring.googleapis.com:443");
+    assertThat(
+            OpenTelemetryBootstrappingUtils.getCloudMonitoringEndpoint(
                 "storage.my-universe.com:8443", "my-universe.com"))
         .isEqualTo("monitoring.my-universe.com:8443");
     assertThat(

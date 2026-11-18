@@ -256,7 +256,17 @@ final class OpenTelemetryBootstrappingUtils {
     int end = indexOfPathQueryOrFragment(s);
     String hostPort = end >= 0 ? s.substring(0, end) : s;
     int colon = hostPort.lastIndexOf(':');
-    return colon >= 0 ? hostPort.substring(0, colon) : hostPort;
+    if (colon >= 0) {
+      int closeBracket = hostPort.indexOf(']');
+      if (closeBracket >= 0 && colon < closeBracket) {
+        return hostPort;
+      }
+      if (closeBracket < 0 && hostPort.indexOf(':') != colon) {
+        return hostPort;
+      }
+      return hostPort.substring(0, colon);
+    }
+    return hostPort;
   }
 
   private static String stripEndpointScheme(String s) {
