@@ -59,6 +59,7 @@ import java.util.concurrent.atomic.AtomicReference;
 import java.util.stream.Collectors;
 import org.junit.Before;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -101,6 +102,7 @@ public class MultiplexedSessionDatabaseClientMockServerTest extends AbstractMock
             .getService();
   }
 
+  @Ignore("Flaky test: b/579436726")
   @Test
   public void testCreateSessionDeadlineExceededWithNoSessionCreateWaitTime() throws Exception {
     // Simulate a problem with the CreateSession RPC making it slow.
