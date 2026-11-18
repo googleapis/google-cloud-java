@@ -357,10 +357,9 @@ public final class GrpcStorageOptions extends StorageOptions
       channelProviderBuilder.setChannelConfigurator(channelConfigurator);
     }
 
-    InstantiatingGrpcChannelProvider baseProvider = channelProviderBuilder.build();
-    GrpcChannelTelemetry.logChannelConfiguration(
-        baseProvider, credentials, attemptDirectPathXdsOverInterconnect);
-    builder.setTransportChannelProvider(baseProvider);
+    GrpcChannelTelemetry.configureChannelTelemetry(
+        channelProviderBuilder, credentials, attemptDirectPathXdsOverInterconnect, getClock());
+    builder.setTransportChannelProvider(channelProviderBuilder.build());
     RetrySettings baseRetrySettings = getRetrySettings();
     RetrySettings readRetrySettings =
         baseRetrySettings.toBuilder()
