@@ -195,9 +195,12 @@ final class StorageMetricsContext {
         clientMethod = operationName;
       }
 
-      Attributes operationAttributes =
+      Attributes bodySizeAttributes =
           buildAttemptBaseAttributes(metrics).toBuilder()
               .put(StorageClientMetrics.KEY_GCP_CLIENT_METHOD, clientMethod)
+              .build();
+      Attributes operationAttributes =
+          bodySizeAttributes.toBuilder()
               .put(StorageClientMetrics.KEY_ERROR_TYPE, terminalErrorType)
               .build();
 
@@ -216,6 +219,18 @@ final class StorageMetricsContext {
                 .build();
         metrics.getGcpClientRequestDuration().record(getElapsedSeconds(), durationAttributes);
       }
+
+      recordRequestBodySize(metrics, bodySizeAttributes);
+    }
+  }
+
+  private void recordRequestBodySize(StorageClientMetrics metrics, Attributes bodySizeAttributes) {
+    if (metrics.getRequestBodySize() == null) {
+      return;
+    }
+    long reqBytes = requestBytes.get();
+    if ("WriteObject".equals(operationName) && reqBytes >= 0) {
+      metrics.getRequestBodySize().record(reqBytes, bodySizeAttributes, otelContext);
     }
   }
 
@@ -378,6 +393,10 @@ final class StorageMetricsContext {
 
   long addRequestBytes(long bytes) {
     return requestBytes.addAndGet(bytes);
+  }
+
+  void setRequestBytes(long bytes) {
+    requestBytes.set(bytes);
   }
 
   long getRequestBytes() {
