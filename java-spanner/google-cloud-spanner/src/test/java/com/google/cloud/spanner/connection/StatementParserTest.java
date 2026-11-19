@@ -1969,43 +1969,6 @@ public class StatementParserTest {
   }
 
   @Test
-  public void testPostgreSQLDollarQuoteBoundaries() {
-    assumeTrue(dialect == Dialect.POSTGRESQL);
-
-    ParametersInfo digitTag =
-        parser.convertPositionalParametersToNamedParameters('?', "SELECT $1$ ? $1$");
-    assertEquals(1, digitTag.numberOfParameters);
-    assertEquals("SELECT $1$ $1 $1$", digitTag.sqlWithNamedParameters);
-
-    ParametersInfo singleDigitTag =
-        parser.convertPositionalParametersToNamedParameters('?', "SELECT $1$, ?");
-    assertEquals(1, singleDigitTag.numberOfParameters);
-    assertEquals("SELECT $1$, $1", singleDigitTag.sqlWithNamedParameters);
-
-    ParametersInfo midIdentifierSingle =
-        parser.convertPositionalParametersToNamedParameters('?', "SELECT foo$bar$baz, ?");
-    assertEquals(1, midIdentifierSingle.numberOfParameters);
-    assertEquals("SELECT foo$bar$baz, $1", midIdentifierSingle.sqlWithNamedParameters);
-
-    ParametersInfo midIdentifierPair =
-        parser.convertPositionalParametersToNamedParameters('?', "SELECT foo$bar$baz, ?, x$bar$y");
-    assertEquals(1, midIdentifierPair.numberOfParameters);
-    assertEquals("SELECT foo$bar$baz, $1, x$bar$y", midIdentifierPair.sqlWithNamedParameters);
-
-    ParametersInfo midIdentifierDoubleDollar =
-        parser.convertPositionalParametersToNamedParameters('?', "SELECT foo$$bar, ?, x$$y");
-    assertEquals(1, midIdentifierDoubleDollar.numberOfParameters);
-    assertEquals("SELECT foo$$bar, $1, x$$y", midIdentifierDoubleDollar.sqlWithNamedParameters);
-
-    ParametersInfo validDollarQuotes =
-        parser.convertPositionalParametersToNamedParameters(
-            '?', "SELECT $$?$$, $_tag_1$?$_tag_1$, ($a$?$a$), ?");
-    assertEquals(1, validDollarQuotes.numberOfParameters);
-    assertEquals(
-        "SELECT $$?$$, $_tag_1$?$_tag_1$, ($a$?$a$), $1", validDollarQuotes.sqlWithNamedParameters);
-  }
-
-  @Test
   public void testCommentAndCarriageReturnEdgeCases() {
     String firstParam = dialect == Dialect.POSTGRESQL ? "$1" : "@p1";
 

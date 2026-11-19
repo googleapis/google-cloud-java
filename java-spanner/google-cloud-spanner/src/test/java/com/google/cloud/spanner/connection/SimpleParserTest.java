@@ -199,6 +199,7 @@ public class SimpleParserTest {
     assertEquals(
         found("test"), parserFor("/* comment */'test'/*comment*/").eatSingleQuotedString());
     assertEquals(found("test"), parserFor("-- comment\n'test'--comment\n").eatSingleQuotedString());
+    assertEquals(found("test"), parserFor("-- comment\r'test'--comment\r").eatSingleQuotedString());
     assertEquals(
         found("test /* not a comment */"),
         parserFor("'test /* not a comment */'").eatSingleQuotedString());
@@ -210,6 +211,9 @@ public class SimpleParserTest {
     assertEquals(NOT_FOUND, parserFor("'test\n'").eatSingleQuotedString());
     assertEquals(NOT_FOUND, parserFor("'\ntest'").eatSingleQuotedString());
     assertEquals(NOT_FOUND, parserFor("'te\nst'").eatSingleQuotedString());
+    assertEquals(NOT_FOUND, parserFor("'test\r'").eatSingleQuotedString());
+    assertEquals(NOT_FOUND, parserFor("'\rtest'").eatSingleQuotedString());
+    assertEquals(NOT_FOUND, parserFor("'te\rst'").eatSingleQuotedString());
   }
 
   @Test

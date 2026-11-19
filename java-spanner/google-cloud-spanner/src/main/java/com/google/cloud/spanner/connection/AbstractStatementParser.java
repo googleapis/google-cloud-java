@@ -17,7 +17,6 @@
 package com.google.cloud.spanner.connection;
 
 import static com.google.cloud.spanner.connection.SimpleParser.isValidIdentifierChar;
-import static com.google.cloud.spanner.connection.SimpleParser.isValidIdentifierFirstChar;
 import static com.google.cloud.spanner.connection.StatementHintParser.convertHintsToOptions;
 
 import com.google.api.core.InternalApi;
@@ -944,18 +943,16 @@ public abstract class AbstractStatementParser {
   /** Returns the query parameter prefix that should be used for this dialect. */
   abstract String getQueryParameterPrefix();
 
-  /** Reads a dollar-quoted string literal tag from position index in the given sql string. */
+  /** Reads a dollar-quoted string literal from position index in the given sql string. */
   String parseDollarQuotedString(String sql, int index) {
-    // Look ahead to the next dollar sign (if any). A non-empty dollar-quote tag follows unquoted
-    // identifier rules: it must start with a letter or underscore and cannot contain '$'.
+    // Look ahead to the next dollar sign (if any). Everything in between is the quote tag.
     StringBuilder tag = new StringBuilder();
-    int startIndex = index;
     while (index < sql.length()) {
       char c = sql.charAt(index);
       if (c == DOLLAR) {
         return tag.toString();
       }
-      if (index == startIndex ? !isValidIdentifierFirstChar(c) : !isValidIdentifierChar(c)) {
+      if (!isValidIdentifierChar(c)) {
         break;
       }
       tag.append(c);
@@ -990,11 +987,7 @@ public abstract class AbstractStatementParser {
       appendIfNotNull(result, SINGLE_QUOTE);
       return skipQuoted(
           sql, currentIndex + 1, SINGLE_QUOTE, null, result, /* allowBackslashEscape= */ true);
-    } else if (supportsDollarQuotedStrings()
-        && currentChar == DOLLAR
-        && (currentIndex == 0 || !isValidIdentifierChar(sql.charAt(currentIndex - 1)))) {
-      // Unquoted PostgreSQL identifiers may contain '$', so a dollar-quoted literal can only start
-      // when '$' is not preceded by an identifier character.
+    } else if (supportsDollarQuotedStrings() && currentChar == DOLLAR) {
       String dollarTag = parseDollarQuotedString(sql, currentIndex + 1);
       if (dollarTag != null) {
         appendIfNotNull(result, currentChar, dollarTag, currentChar);
