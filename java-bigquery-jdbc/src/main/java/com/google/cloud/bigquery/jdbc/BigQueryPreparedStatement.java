@@ -21,7 +21,6 @@ import com.google.api.services.bigquery.model.QueryParameter;
 import com.google.cloud.Tuple;
 import com.google.cloud.bigquery.FieldList;
 import com.google.cloud.bigquery.JobStatistics.QueryStatistics;
-import com.google.cloud.bigquery.JobStatistics.QueryStatistics.StatementType;
 import com.google.cloud.bigquery.QueryJobConfiguration;
 import com.google.cloud.bigquery.QueryParameterValue;
 import com.google.cloud.bigquery.Schema;
@@ -30,7 +29,10 @@ import com.google.cloud.bigquery.TableId;
 import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import com.google.cloud.bigquery.exception.BigQueryJdbcSqlFeatureNotSupportedException;
 import com.google.cloud.bigquery.jdbc.telemetry.v1.DriverFeature;
+import com.google.cloud.bigquery.jdbc.telemetry.v1.QueryApiType;
 import com.google.cloud.bigquery.jdbc.telemetry.v1.StatementExecution;
+import com.google.cloud.bigquery.jdbc.telemetry.v1.StatementType;
+import com.google.cloud.bigquery.jdbc.telemetry.v1.Status;
 import com.google.cloud.bigquery.jdbc.telemetry.v1.TelemetryManager;
 import com.google.cloud.bigquery.storage.v1.BatchCommitWriteStreamsRequest;
 import com.google.cloud.bigquery.storage.v1.BatchCommitWriteStreamsResponse;
@@ -75,7 +77,7 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
   private static final char POSITIONAL_PARAMETER_CHAR = '?';
   // parameterHandler is inherited from BigQueryStatement
   protected final int parameterCount;
-  protected String currentQuery;
+  protected final String currentQuery;
   private Queue<ArrayList<BigQueryJdbcParameter>> batchParameters = new LinkedList<>();
   // Both hold statistics.getSchema(), which reports different things per statement type: the rows
   // a SELECT returns, versus the columns an INSERT writes.
@@ -85,6 +87,9 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
 
   BigQueryPreparedStatement(BigQueryConnection connection, String query) throws SQLException {
     super(connection);
+    if (query == null) {
+      throw new BigQueryJdbcException("SQL query cannot be null.");
+    }
     this.currentQuery = query;
     QueryStatistics queryStatistics = describeQueryQuietly();
     this.parameterCount = resolveParameterCount(query, queryStatistics);
@@ -159,7 +164,7 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
   // Remembers the table and schema of single-table INSERT targets, for the Storage Write API.
   // Failure is delegated to executeBatch instead of the constructor.
   private void captureInsertMetadata(QueryStatistics statistics) {
-    if (!StatementType.INSERT.equals(statistics.getStatementType())
+    if (!QueryStatistics.StatementType.INSERT.equals(statistics.getStatementType())
         || statistics.getSchema() == null
         || statistics.getReferencedTables() == null
         || statistics.getReferencedTables().stream().distinct().count() != 1) {
@@ -176,7 +181,7 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
   // The column names are as they are returned from the query dryRun and may not match the actual
   // table column names.
   private void captureResultSchema(QueryStatistics statistics) {
-    if (StatementType.SELECT.equals(statistics.getStatementType())) {
+    if (QueryStatistics.StatementType.SELECT.equals(statistics.getStatementType())) {
       this.resultSchema = statistics.getSchema();
     }
   }
@@ -378,14 +383,46 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
     this.batchParameters.add(currentParameterList);
   }
 
+  @Override
+  public void clearBatch() {
+    super.clearBatch();
+    this.batchParameters.clear();
+  }
+
+  @Override
+  public void close() throws SQLException {
+    try {
+      super.close();
+    } finally {
+      this.batchParameters.clear();
+    }
+  }
+
   private ArrayList<BigQueryJdbcParameter> deepCopyParameterList(
       ArrayList<BigQueryJdbcParameter> parametersList) {
-    ArrayList<BigQueryJdbcParameter> copiedParameterList = new ArrayList<>();
+    ArrayList<BigQueryJdbcParameter> copiedParameterList = new ArrayList<>(parametersList.size());
     for (BigQueryJdbcParameter parameter : parametersList) {
-      BigQueryJdbcParameter newParameter = new BigQueryJdbcParameter(parameter);
-      copiedParameterList.add(newParameter);
+      copiedParameterList.add(parameter == null ? null : new BigQueryJdbcParameter(parameter));
     }
     return copiedParameterList;
+  }
+
+  private void validateBatchParameters() throws BigQueryJdbcException {
+    for (ArrayList<BigQueryJdbcParameter> parameterList : this.batchParameters) {
+      for (int i = 1; i <= this.parameterCount; i++) {
+        int arrayIndex = i - 1;
+        if (parameterList == null
+            || parameterList.size() <= arrayIndex
+            || parameterList.get(arrayIndex) == null
+            || !parameterList.get(arrayIndex).isBound()) {
+          throw new BigQueryJdbcException(
+              String.format(
+                  "One or more parameters missing in Prepared statement. No value was set for"
+                      + " parameter %d of %d.",
+                  i, this.parameterCount));
+        }
+      }
+    }
   }
 
   @Override
@@ -395,7 +432,15 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
     if (this.batchParameters.isEmpty()) {
       return result;
     }
+    try {
+      validateBatchParameters();
+      return executeBatchInternal(result);
+    } finally {
+      this.batchParameters.clear();
+    }
+  }
 
+  private int[] executeBatchInternal(int[] result) throws SQLException {
     // The constructor's dry run may have happened before the target table existed.
     if (this.insertSchema == null
         && this.querySettings.isUseWriteAPI()
@@ -410,37 +455,41 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
 
     if (useWriteAPI()) {
       long startTime = System.currentTimeMillis();
+      int fallbackErrorCode = 1000;
       StatementExecution.Builder writeApiExecutionBuilder =
           StatementExecution.newBuilder()
-              .setStatementType(
-                  com.google.cloud.bigquery.jdbc.telemetry.v1.StatementType.STATEMENT_TYPE_INSERT)
-              .setQueryApiType(
-                  com.google.cloud.bigquery.jdbc.telemetry.v1.QueryApiType
-                      .QUERY_API_TYPE_WRITE_API);
-      try (BigQueryWriteClient writeClient = this.connection.getBigQueryWriteClient()) {
+              .setStatementType(StatementType.STATEMENT_TYPE_INSERT)
+              .setQueryApiType(QueryApiType.QUERY_API_TYPE_WRITE_API);
+      try {
+        // Lifecycle of the cached BigQueryWriteClient belongs to BigQueryConnection.close().
+        BigQueryWriteClient writeClient = this.connection.getBigQueryWriteClient();
         LOG.info("Using Write API for bulk INSERT operation.");
 
         long rowCount = bulkInsertWithWriteAPI(writeClient);
         int[] insertArray = new int[Math.toIntExact(rowCount)];
         Arrays.fill(insertArray, 1);
 
-        writeApiExecutionBuilder.setStatus(
-            com.google.cloud.bigquery.jdbc.telemetry.v1.Status.STATUS_SUCCESS);
+        writeApiExecutionBuilder.setStatus(Status.STATUS_SUCCESS);
 
         return insertArray;
 
       } catch (InterruptedException e) {
         Thread.currentThread().interrupt();
-        writeApiExecutionBuilder
-            .setStatus(com.google.cloud.bigquery.jdbc.telemetry.v1.Status.STATUS_ERROR)
-            .setErrorCode(TelemetryManager.extractErrorCode(e));
+        fallbackErrorCode = TelemetryManager.extractErrorCode(e);
+        writeApiExecutionBuilder.setStatus(Status.STATUS_ERROR).setErrorCode(fallbackErrorCode);
         throw new BigQueryJdbcException("Interrupted during Write API batch", e);
-      } catch (DescriptorValidationException | IOException e) {
-        writeApiExecutionBuilder
-            .setStatus(com.google.cloud.bigquery.jdbc.telemetry.v1.Status.STATUS_ERROR)
-            .setErrorCode(TelemetryManager.extractErrorCode(e));
+      } catch (BigQueryJdbcException e) {
+        fallbackErrorCode = TelemetryManager.extractErrorCode(e);
+        writeApiExecutionBuilder.setStatus(Status.STATUS_ERROR).setErrorCode(fallbackErrorCode);
+        throw e;
+      } catch (DescriptorValidationException | IOException | RuntimeException e) {
+        fallbackErrorCode = TelemetryManager.extractErrorCode(e);
+        writeApiExecutionBuilder.setStatus(Status.STATUS_ERROR).setErrorCode(fallbackErrorCode);
         throw new BigQueryJdbcException("Failed to execute batch with Write API", e);
       } finally {
+        if (writeApiExecutionBuilder.getStatus() == Status.STATUS_UNSPECIFIED) {
+          writeApiExecutionBuilder.setStatus(Status.STATUS_ERROR).setErrorCode(fallbackErrorCode);
+        }
         long durationMs = System.currentTimeMillis() - startTime;
         TelemetryManager.recordStatementExecution(writeApiExecutionBuilder, durationMs);
         TelemetryManager.recordFeatureUsage(DriverFeature.DRIVER_FEATURE_BATCH_OPERATIONS);
@@ -478,6 +527,10 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
     }
   }
 
+  BigQueryJdbcBulkInsertWriter createBulkInsertWriter() {
+    return new BigQueryJdbcBulkInsertWriter();
+  }
+
   private long bulkInsertWithWriteAPI(BigQueryWriteClient bigQueryWriteClient)
       throws DescriptorValidationException,
           IOException,
@@ -486,52 +539,54 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
     LOG.finer("++enter++");
     RetrySettings retrySettings = this.connection.getRetrySettings();
 
-    BigQueryJdbcBulkInsertWriter bulkInsertWriter = new BigQueryJdbcBulkInsertWriter();
-    bulkInsertWriter.initialize(this.insertTableName, bigQueryWriteClient, retrySettings);
-
+    BigQueryJdbcBulkInsertWriter bulkInsertWriter = createBulkInsertWriter();
+    boolean cleanedUp = false;
     try {
+      bulkInsertWriter.initialize(this.insertTableName, bigQueryWriteClient, retrySettings);
+
       long offset = 0;
       JsonArray jsonArray = new JsonArray();
       Gson gson = new Gson();
+      FieldList fieldLists = this.insertSchema.getFields();
       int count = this.batchParameters.size();
       for (int i = 0; i < count; i++) {
-
         ArrayList<BigQueryJdbcParameter> parameterList = this.batchParameters.poll();
-        FieldList fieldLists = this.insertSchema.getFields();
-        if (fieldLists.size() == parameterList.size()) {
-
-          JsonObject rowObject = createJsonRow(fieldLists, parameterList, gson);
-          jsonArray.add(rowObject);
-
-          if (jsonArray.size() == this.querySettings.getWriteAPIAppendRowCount()
-              || this.batchParameters.size() == 0) {
-            bulkInsertWriter.append(jsonArray, offset);
-            LOG.finer("Append called ");
-            offset += jsonArray.size();
-            jsonArray = new JsonArray();
-          }
-        } else {
+        if (fieldLists.size() != parameterList.size()) {
           throw new BigQueryJdbcException("Mismatch between field count and parameter count.");
         }
+
+        JsonObject rowObject = createJsonRow(fieldLists, parameterList, gson);
+        jsonArray.add(rowObject);
+
+        if (jsonArray.size() == this.querySettings.getWriteAPIAppendRowCount()
+            || this.batchParameters.isEmpty()) {
+          bulkInsertWriter.append(jsonArray, offset);
+          LOG.finer("Append called ");
+          offset += jsonArray.size();
+          jsonArray = new JsonArray();
+        }
       }
-    } catch (BigQueryJdbcException e) {
-      throw new BigQueryJdbcException("BigQueryJdbcException during bulkInsertWithWriteAPI", e);
-    }
 
-    long rowCount = bulkInsertWriter.cleanup(bigQueryWriteClient);
+      long rowCount = bulkInsertWriter.cleanup(bigQueryWriteClient);
+      cleanedUp = true;
 
-    BatchCommitWriteStreamsRequest commitRequest =
-        BatchCommitWriteStreamsRequest.newBuilder()
-            .setParent(this.insertTableName.toString())
-            .addWriteStreams(bulkInsertWriter.getStreamName())
-            .build();
-    BatchCommitWriteStreamsResponse commitResponse =
-        bigQueryWriteClient.batchCommitWriteStreams(commitRequest);
-    if (commitResponse.hasCommitTime() == false) {
-      throw new BigQueryJdbcException("Error committing the streams");
+      BatchCommitWriteStreamsRequest commitRequest =
+          BatchCommitWriteStreamsRequest.newBuilder()
+              .setParent(this.insertTableName.toString())
+              .addWriteStreams(bulkInsertWriter.getStreamName())
+              .build();
+      BatchCommitWriteStreamsResponse commitResponse =
+          bigQueryWriteClient.batchCommitWriteStreams(commitRequest);
+      if (!commitResponse.hasCommitTime()) {
+        throw new BigQueryJdbcException("Error committing the streams");
+      }
+      LOG.finer("Commit called.");
+      return rowCount;
+    } finally {
+      if (!cleanedUp) {
+        bulkInsertWriter.closeQuietly();
+      }
     }
-    LOG.finer("Commit called.");
-    return rowCount;
   }
 
   static JsonObject createJsonRow(
