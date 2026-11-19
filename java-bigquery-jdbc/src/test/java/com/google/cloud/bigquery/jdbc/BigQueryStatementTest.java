@@ -45,6 +45,7 @@ import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQuery.JobListOption;
 import com.google.cloud.bigquery.BigQuery.QueryResultsOption;
 import com.google.cloud.bigquery.BigQuery.TableDataListOption;
+import com.google.cloud.bigquery.BigQueryError;
 import com.google.cloud.bigquery.BigQueryException;
 import com.google.cloud.bigquery.BigQueryOptions;
 import com.google.cloud.bigquery.DatasetId;
@@ -1399,6 +1400,21 @@ public class BigQueryStatementTest {
   }
 
   @Test
+  public void testProcessArrowResultSetFailureReportsItsCauseOnce() throws SQLException {
+    BigQueryStatement stmtSpy = Mockito.spy(bigQueryStatement);
+    doReturn(TABLE_ID).when(stmtSpy).getDestinationTable(any());
+    IllegalStateException noSession = new IllegalStateException("No read session");
+    Mockito.doThrow(noSession).when(stmtSpy).getReadSession(any(CreateReadSessionRequest.class));
+
+    SQLException thrown =
+        assertThrows(
+            SQLException.class, () -> stmtSpy.processArrowResultSet(mock(TableResult.class), null));
+
+    assertThat(thrown.getMessage()).isEqualTo("No read session");
+    assertThat(thrown.getCause()).isSameInstanceAs(noSession);
+  }
+
+  @Test
   public void testPopulateArrowBufferedQueueStopsAndCancelsStreamWhenResultSetClosedWhileQueueFull()
       throws Exception {
     BlockingQueue<BigQueryArrowBatchWrapper> boundedQueue = new LinkedBlockingDeque<>(1);
@@ -2076,10 +2092,37 @@ public class BigQueryStatementTest {
             SQLException.class,
             () -> stmtSpy.processQueryResponse("SELECT 1", multiPageResult(5000L)));
 
-    assertThat(thrown.getMessage()).contains("Failed to initialize BigQueryReadClient");
+    // The cause's message is reported once, not repeated.
+    assertThat(thrown.getMessage()).isEqualTo("Failed to initialize BigQueryReadClient");
     assertEquals(noClient, thrown.getCause());
     verifyNoJobStreamReader(stmtSpy);
     verify(stmtSpy, Mockito.never()).processJsonResultSet(any(), any());
+  }
+
+  @Test
+  public void testProcessQueryResponsePassesOnJdbcExceptionFromJobStreamSetup()
+      throws SQLException {
+    BigQueryStatement stmtSpy = jobStreamStatementSpy();
+    BigQueryException accessDenied =
+        new BigQueryException(
+            403, "Access Denied", new BigQueryError("accessDenied", null, "Access Denied"));
+    BigQueryJdbcException failure = new BigQueryJdbcException("Query failed", accessDenied);
+    Mockito.doThrow(failure)
+        .when(stmtSpy)
+        .populateArrowBufferedQueueFromJobStream(
+            any(JobId.class), anyLong(), any(BlockingQueue.class), any(BigQueryReadClient.class));
+
+    SQLException thrown =
+        assertThrows(
+            SQLException.class,
+            () -> stmtSpy.processQueryResponse("SELECT 1", multiPageResult(5000L)));
+
+    // The driver's own exception keeps its details and is not nested in a second one.
+    assertThat(thrown.getMessage()).isEqualTo(failure.getMessage());
+    assertThat(thrown.getSQLState()).isEqualTo("42501"); // insufficient privilege
+    assertThat(thrown.getCause()).isSameInstanceAs(accessDenied);
+    assertThat(((BigQueryJdbcException) thrown).getBigQueryException())
+        .isSameInstanceAs(accessDenied);
   }
 
   @Test
