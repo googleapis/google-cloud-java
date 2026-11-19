@@ -27,8 +27,10 @@ import com.google.api.client.http.LowLevelHttpResponse;
 import com.google.api.client.json.gson.GsonFactory;
 import com.google.api.client.testing.http.MockLowLevelHttpRequest;
 import com.google.api.client.testing.http.MockLowLevelHttpResponse;
+import com.google.api.core.ApiClock;
 import com.google.api.core.SettableApiFuture;
 import com.google.api.gax.retrying.BasicResultRetryAlgorithm;
+import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.services.storage.Storage;
 import com.google.api.services.storage.model.StorageObject;
 import com.google.cloud.NoCredentials;
@@ -40,6 +42,7 @@ import com.google.cloud.storage.spi.v1.AuditingHttpTransport;
 import com.google.common.collect.ImmutableMap;
 import io.opentelemetry.api.common.Attributes;
 import io.opentelemetry.sdk.metrics.SdkMeterProvider;
+import io.opentelemetry.sdk.metrics.data.HistogramPointData;
 import io.opentelemetry.sdk.metrics.data.LongPointData;
 import io.opentelemetry.sdk.metrics.data.MetricData;
 import io.opentelemetry.sdk.testing.exporter.InMemoryMetricReader;
@@ -48,9 +51,11 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.SequenceInputStream;
+import java.net.SocketTimeoutException;
 import java.nio.ByteBuffer;
 import java.nio.channels.Channels;
 import java.nio.channels.WritableByteChannel;
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -58,6 +63,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicLong;
 import java.util.logging.Handler;
 import java.util.logging.LogRecord;
 import java.util.logging.Logger;
@@ -531,6 +537,164 @@ public final class ApiaryUnbufferedReadableByteChannelTest {
             .mapToLong(LongPointData::getValue)
             .sum();
     assertThat(attemptsTotal).isEqualTo(2L);
+  }
+
+  @Test
+  public void read_httpSocketTimeout_recordsStallDurationForOpenAndMidStream() throws IOException {
+    InMemoryMetricReader reader = InMemoryMetricReader.create();
+    SdkMeterProvider provider = SdkMeterProvider.builder().registerMetricReader(reader).build();
+    AtomicLong nanos = new AtomicLong(1_000_000_000L);
+    ApiClock fakeClock =
+        new ApiClock() {
+          @Override
+          public long nanoTime() {
+            return nanos.get();
+          }
+
+          @Override
+          public long millisTime() {
+            return nanos.get() / 1_000_000L;
+          }
+        };
+    HttpStorageOptions options =
+        StorageOptions.http()
+            .setProjectId("test-project")
+            .setCredentials(NoCredentials.getInstance())
+            .setClock(fakeClock)
+            .setRetrySettings(
+                RetrySettings.newBuilder()
+                    .setInitialRetryDelayDuration(Duration.ZERO)
+                    .setMaxRetryDelayDuration(Duration.ZERO)
+                    .setMaxAttempts(3)
+                    .build())
+            .setEnableOtelMetrics(true)
+            .setEnableOtelDebugMetrics(true)
+            .setMeterProvider(provider)
+            .build();
+    StorageClientMetrics metrics = options.getStorageClientMetrics();
+    StorageMetricsContext ctx =
+        StorageMetricsContext.createForMultiStep(
+            metrics,
+            "ReadObject",
+            metrics.createMultiStepContext("ReadObject").getBaseAttributes(),
+            fakeClock);
+
+    AtomicInteger openCalls = new AtomicInteger(0);
+    HttpTransport transport =
+        new HttpTransport() {
+          @Override
+          protected LowLevelHttpRequest buildRequest(String method, String url) {
+            return new MockLowLevelHttpRequest() {
+              @Override
+              public LowLevelHttpResponse execute() throws IOException {
+                int call = openCalls.incrementAndGet();
+                if (call == 1) {
+                  // Open attempt stalls for 1.2s -> recorded via Retrying.recordAttemptFailure.
+                  nanos.addAndGet(1_200_000_000L);
+                  throw new SocketTimeoutException("open read timed out");
+                }
+                if (call == 2) {
+                  // Deliver 5 bytes, then stall 0.8s mid-stream (retryable SocketTimeoutException).
+                  InputStream partialThenTimeout =
+                      new SequenceInputStream(
+                          new ByteArrayInputStream(Arrays.copyOf(CONTENT_BYTES, 5)),
+                          new InputStream() {
+                            @Override
+                            public int read() throws IOException {
+                              nanos.addAndGet(800_000_000L);
+                              throw new SocketTimeoutException("retryable mid-stream timeout");
+                            }
+                          });
+                  return new MockLowLevelHttpResponse()
+                      .setStatusCode(200)
+                      .setContent(partialThenTimeout)
+                      .addHeader("x-goog-generation", "12345");
+                }
+                // Call 3: terminal non-retryable mid-stream SocketTimeoutException after 0.5s.
+                InputStream terminalTimeout =
+                    new InputStream() {
+                      @Override
+                      public int read() throws IOException {
+                        nanos.addAndGet(500_000_000L);
+                        throw new SocketTimeoutException("terminal mid-stream timeout");
+                      }
+                    };
+                return new MockLowLevelHttpResponse()
+                    .setStatusCode(200)
+                    .setContent(terminalTimeout)
+                    .addHeader("x-goog-generation", "12345");
+              }
+            };
+          }
+        };
+    Storage storageClient =
+        new Storage.Builder(transport, GsonFactory.getDefaultInstance(), null)
+            .setApplicationName("test")
+            .build();
+    ApiaryReadRequest req =
+        new ApiaryReadRequest(
+            new StorageObject().setBucket("bucket").setName("blob"),
+            ImmutableMap.of(),
+            ByteRangeSpec.nullRange());
+
+    try (ApiaryUnbufferedReadableByteChannel channel =
+        new ApiaryUnbufferedReadableByteChannel(
+            req,
+            storageClient,
+            SettableApiFuture.create(),
+            options.createRetrier().withMetricsContext(ctx),
+            new BasicResultRetryAlgorithm<Object>() {
+              @Override
+              public boolean shouldRetry(Throwable previousThrowable, Object previousResponse) {
+                return previousThrowable != null
+                    && !String.valueOf(previousThrowable.getMessage()).contains("terminal")
+                    && (previousThrowable.getCause() == null
+                        || !String.valueOf(previousThrowable.getCause().getMessage())
+                            .contains("terminal"));
+              }
+            },
+            Hasher.noop())) {
+      ByteBuffer firstChunk = ByteBuffer.allocate(5);
+      assertThat(channel.read(new ByteBuffer[] {firstChunk}, 0, 1)).isEqualTo(5L);
+      // Simulate 10s of application processing between read() calls; must not inflate stall.
+      nanos.addAndGet(10_000_000_000L);
+      assertThrows(
+          SocketTimeoutException.class,
+          () -> channel.read(new ByteBuffer[] {ByteBuffer.allocate(16)}, 0, 1));
+    }
+
+    MetricData stallMetric =
+        reader.collectAllMetrics().stream()
+            .filter(
+                m ->
+                    m.getName()
+                        .equals(StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_STALL_DURATION))
+            .findFirst()
+            .orElse(null);
+    assertThat(stallMetric).isNotNull();
+    assertThat(stallMetric.getUnit()).isEqualTo("s");
+    assertThat(stallMetric.getHistogramData().getPoints()).hasSize(1);
+    HistogramPointData point = stallMetric.getHistogramData().getPoints().iterator().next();
+    assertThat(point.getCount()).isEqualTo(3L);
+    assertThat(point.getSum()).isWithin(0.0001).of(2.5);
+    assertThat(point.getAttributes())
+        .isEqualTo(
+            Attributes.builder()
+                .put(
+                    StorageClientMetrics.KEY_GCP_CLIENT_SERVICE,
+                    StorageClientMetrics.SERVICE_STORAGE)
+                .put(StorageClientMetrics.KEY_GCP_CLIENT_VERSION, StorageOptions.version())
+                .put(
+                    StorageClientMetrics.KEY_GCP_CLIENT_ARTIFACT,
+                    StorageClientMetrics.ARTIFACT_STORAGE)
+                .put(StorageClientMetrics.KEY_RPC_SYSTEM_NAME, "http")
+                .put(StorageClientMetrics.KEY_SERVER_ADDRESS, "storage.googleapis.com")
+                .put(StorageClientMetrics.KEY_GCP_STORAGE_OPERATION, "ReadObject")
+                .put(StorageClientMetrics.KEY_RPC_METHOD, "google.storage.v2.Storage/ReadObject")
+                .put(
+                    StorageClientMetrics.KEY_NETWORK_PATH,
+                    StorageClientMetrics.NETWORK_PATH_CLOUDPATH)
+                .build());
   }
 
   private static LongPointData findSinglePoint(Collection<MetricData> collected, String name) {

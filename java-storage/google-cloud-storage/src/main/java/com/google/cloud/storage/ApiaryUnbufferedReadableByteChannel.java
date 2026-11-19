@@ -125,6 +125,7 @@ class ApiaryUnbufferedReadableByteChannel implements UnbufferedReadableByteChann
       }
 
       long totalRemaining = Buffers.totalRemaining(dsts, offset, length);
+      markMetricsActivity();
       try {
         // According to the contract of Retrying#run it's possible for sbc to be null even after
         // invocation. However, the function we provide is guaranteed to return non-null or throw
@@ -149,6 +150,7 @@ class ApiaryUnbufferedReadableByteChannel implements UnbufferedReadableByteChann
         }
         return totalRead;
       } catch (Exception t) {
+        recordHttpReadStall(t);
         if (resultRetryAlgorithm.shouldRetry(t, null)) {
           // if our retry algorithm COULD allow a retry, continue the loop and allow trying to
           // open the stream again.
@@ -202,6 +204,20 @@ class ApiaryUnbufferedReadableByteChannel implements UnbufferedReadableByteChann
       if (sbc != null) {
         sbc.close();
       }
+    }
+  }
+
+  private void markMetricsActivity() {
+    StorageMetricsContext metricsContext = retrier.getMetricsContext();
+    if (metricsContext != null) {
+      metricsContext.markActivity();
+    }
+  }
+
+  private void recordHttpReadStall(Throwable error) {
+    StorageMetricsContext metricsContext = retrier.getMetricsContext();
+    if (metricsContext != null) {
+      metricsContext.recordHttpReadStallIfTimeout(error);
     }
   }
 
