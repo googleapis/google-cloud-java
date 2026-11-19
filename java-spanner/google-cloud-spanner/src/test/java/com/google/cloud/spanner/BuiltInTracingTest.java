@@ -263,6 +263,17 @@ public class BuiltInTracingTest {
   }
 
   @Test
+  public void builtInTracingIsNotUsedInOtherUniverses() {
+    SpannerOptions options =
+        createOptionsBuilder()
+            .setEnableBuiltInTracing(true)
+            .setUniverseDomain("example.com")
+            .build();
+
+    assertThat(options.getTracingOpenTelemetry()).isNotInstanceOf(OpenTelemetrySdk.class);
+  }
+
+  @Test
   public void builtInTracingIsNotUsedWithOpenCensus() {
     createOptionsBuilder().build();
     SpannerOptions options = createOptionsBuilder().setEnableBuiltInTracing(true).build();

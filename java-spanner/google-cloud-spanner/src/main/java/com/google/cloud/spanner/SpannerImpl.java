@@ -176,8 +176,9 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
             + options.isEndToEndTracingEnabled()
             + "\nBuilt-in tracing enabled: "
             + options.isEnableBuiltInTracing()
-            + "\nBuilt-in tracing sampling rate: "
-            + options.getBuiltInTracingSamplingRate()
+            + (options.isEnableBuiltInTracing()
+                ? "\nBuilt-in tracing sampling rate: " + options.getBuiltInTracingSamplingRate()
+                : "")
             + "\nBuilt-in metrics enabled: "
             + options.isEnableBuiltInMetrics());
     if (options.getSessionPoolOptions() != null) {

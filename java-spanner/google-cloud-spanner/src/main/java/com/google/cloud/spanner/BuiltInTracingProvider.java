@@ -94,14 +94,18 @@ final class BuiltInTracingProvider {
     }
   }
 
-  synchronized void logCustomTracingInfoOnce() {
+  synchronized void logCustomTracingInfoOnce(boolean setInOptions) {
     if (!customTracingInfoLogged) {
       customTracingInfoLogged = true;
       logger.log(
           Level.INFO,
-          "Built-in tracing is enabled, but OpenTelemetry tracing has already been configured for"
-              + " this application. Spanner uses the configured OpenTelemetry instead of built-in"
-              + " tracing.");
+          setInOptions
+              ? "Built-in tracing is enabled, but an OpenTelemetry instance was set with"
+                  + " SpannerOptions.Builder#setOpenTelemetry. Spanner uses that instance instead"
+                  + " of built-in tracing."
+              : "Built-in tracing is enabled, but a global OpenTelemetry instance with tracing is"
+                  + " registered, for example by the OpenTelemetry Java agent. Spanner uses that"
+                  + " instance instead of built-in tracing.");
     }
   }
 

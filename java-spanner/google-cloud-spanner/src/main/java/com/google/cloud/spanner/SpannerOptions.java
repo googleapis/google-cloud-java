@@ -3057,10 +3057,13 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     }
     OpenTelemetry openTelemetry = getOpenTelemetry();
     if (this.openTelemetry != null || openTelemetry.getTracerProvider() != TracerProvider.noop()) {
-      BuiltInTracingProvider.INSTANCE.logCustomTracingInfoOnce();
+      BuiltInTracingProvider.INSTANCE.logCustomTracingInfoOnce(this.openTelemetry != null);
       return openTelemetry;
     }
-    if (usesNoCredentials() || emulatorHost != null || instanceType == InstanceType.OMNI) {
+    if (usesNoCredentials()
+        || emulatorHost != null
+        || instanceType == InstanceType.OMNI
+        || !GOOGLE_DEFAULT_UNIVERSE.equals(getResolvedUniverseDomain())) {
       return openTelemetry;
     }
     OpenTelemetry builtInOpenTelemetry =
