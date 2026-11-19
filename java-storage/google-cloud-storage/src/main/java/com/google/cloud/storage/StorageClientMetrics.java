@@ -86,14 +86,14 @@ final class StorageClientMetrics implements AutoCloseable {
       "gcp.storage.client.request.body.size";
   static final String METRIC_GCP_STORAGE_CLIENT_RESPONSE_BODY_SIZE =
       "gcp.storage.client.response.body.size";
+  static final String METRIC_GCP_STORAGE_CLIENT_SERVER_UNREACHED =
+      "gcp.storage.client.server.unreached";
 
   // Debug metric names
   static final String METRIC_GCP_STORAGE_CLIENT_REQUEST_ACTIVE =
       "gcp.storage.client.request.active";
   static final String METRIC_GCP_STORAGE_CLIENT_SERVER_DURATION =
       "gcp.storage.client.server.duration";
-  static final String METRIC_GCP_STORAGE_CLIENT_SERVER_UNREACHED =
-      "gcp.storage.client.server.unreached";
   static final String METRIC_GCP_STORAGE_CLIENT_STALL_DURATION =
       "gcp.storage.client.stall.duration";
   static final String METRIC_GCP_STORAGE_CLIENT_NETWORK_IO = "gcp.storage.client.network.io";
@@ -191,10 +191,10 @@ final class StorageClientMetrics implements AutoCloseable {
   @Nullable private final DoubleHistogram ttfb;
   @Nullable private final LongHistogram requestBodySize;
   @Nullable private final LongHistogram responseBodySize;
+  @Nullable private final LongCounter serverUnreached;
 
   @Nullable private final LongUpDownCounter requestActive;
   @Nullable private final DoubleHistogram serverDuration;
-  @Nullable private final LongCounter serverUnreached;
   @Nullable private final DoubleHistogram stallDuration;
   @Nullable private final LongCounter networkIo;
   @Nullable private final DoubleHistogram credentialRefreshDuration;
@@ -299,6 +299,12 @@ final class StorageClientMetrics implements AutoCloseable {
               .setExplicitBucketBoundariesAdvice(
                   OpenTelemetryBootstrappingUtils.sizeHistogramLongBoundaries())
               .build();
+      this.serverUnreached =
+          meter
+              .counterBuilder(METRIC_GCP_STORAGE_CLIENT_SERVER_UNREACHED)
+              .setDescription("Count of requests that failed before reaching the GCS server.")
+              .setUnit("{request}")
+              .build();
     } else {
       this.rpcClientCallDuration = null;
       this.httpClientRequestDuration = null;
@@ -310,6 +316,7 @@ final class StorageClientMetrics implements AutoCloseable {
       this.ttfb = null;
       this.requestBodySize = null;
       this.responseBodySize = null;
+      this.serverUnreached = null;
     }
 
     if (enableOtelDebugMetrics) {
@@ -328,15 +335,6 @@ final class StorageClientMetrics implements AutoCloseable {
               .setUnit("s")
               .setExplicitBucketBoundariesAdvice(
                   OpenTelemetryBootstrappingUtils.latencyHistogramBoundaries())
-              .build();
-      this.serverUnreached =
-          meter
-              .counterBuilder(METRIC_GCP_STORAGE_CLIENT_SERVER_UNREACHED)
-              .setDescription(
-                  "Number of attempts that received no response from a GCS server (gRPC:"
-                      + " grpc-server-stats-bin trailer absent; HTTP: X-GUploader-UploadID header"
-                      + " absent).")
-              .setUnit("{attempt}")
               .build();
       this.stallDuration =
           meter
@@ -369,7 +367,6 @@ final class StorageClientMetrics implements AutoCloseable {
     } else {
       this.requestActive = null;
       this.serverDuration = null;
-      this.serverUnreached = null;
       this.stallDuration = null;
       this.networkIo = null;
       this.credentialRefreshDuration = null;
@@ -431,16 +428,16 @@ final class StorageClientMetrics implements AutoCloseable {
     return responseBodySize;
   }
 
+  @Nullable LongCounter getServerUnreached() {
+    return serverUnreached;
+  }
+
   @Nullable LongUpDownCounter getRequestActive() {
     return requestActive;
   }
 
   @Nullable DoubleHistogram getServerDuration() {
     return serverDuration;
-  }
-
-  @Nullable LongCounter getServerUnreached() {
-    return serverUnreached;
   }
 
   @Nullable DoubleHistogram getStallDuration() {
@@ -550,6 +547,20 @@ final class StorageClientMetrics implements AutoCloseable {
             .put(KEY_NETWORK_PATH, networkPath)
             .build();
     serverDuration.record(durationSeconds, attributes, otelContext);
+  }
+
+  void recordServerUnreached(
+      Context otelContext, String operationName, String networkPath, String errorType) {
+    if (serverUnreached == null) {
+      return;
+    }
+    Attributes attributes =
+        baseAttributes.toBuilder()
+            .put(KEY_GCP_STORAGE_OPERATION, operationName)
+            .put(KEY_NETWORK_PATH, networkPath)
+            .put(KEY_ERROR_TYPE, errorType)
+            .build();
+    serverUnreached.add(1L, attributes, otelContext);
   }
 
   @Nullable

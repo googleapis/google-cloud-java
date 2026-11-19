@@ -52,6 +52,8 @@ final class StorageGrpcMetricsInterceptor implements ClientInterceptor {
 
   static final Metadata.Key<byte[]> GRPC_SERVER_STATS_BIN_KEY =
       Metadata.Key.of("grpc-server-stats-bin", Metadata.BINARY_BYTE_MARSHALLER);
+  static final Metadata.Key<String> UPLOADER_UPLOAD_ID_KEY =
+      Metadata.Key.of("x-guploader-uploadid", Metadata.ASCII_STRING_MARSHALLER);
 
   private final StorageClientMetrics metrics;
   private final ApiClock clock;
@@ -84,8 +86,15 @@ final class StorageGrpcMetricsInterceptor implements ClientInterceptor {
 
         super.start(
             new SimpleForwardingClientCallListener<RespT>(responseListener) {
+              private boolean receivedServerHeaders;
+              private boolean headerHasUploadId;
+
               @Override
               public void onHeaders(Metadata headers) {
+                receivedServerHeaders = true;
+                if (hasNonEmptyMetadata(headers, UPLOADER_UPLOAD_ID_KEY)) {
+                  headerHasUploadId = true;
+                }
                 if (metricsCtx != null) {
                   metricsCtx.setNetworkPath(detectNetworkPath(getAttributes()));
                 }
@@ -117,12 +126,21 @@ final class StorageGrpcMetricsInterceptor implements ClientInterceptor {
 
                   metrics.recordRpcCallDuration(
                       otelContext, durationSeconds, rpcMethod, statusCode, networkPath, errorType);
-                  if (metrics.getServerDuration() != null) {
-                    double serverDurationSeconds = decodeServerDurationSeconds(trailers);
-                    if (serverDurationSeconds >= 0.0) {
-                      metrics.recordServerDuration(
-                          otelContext, serverDurationSeconds, operationName, networkPath);
-                    }
+                  double serverDurationSeconds = decodeServerDurationSeconds(trailers);
+                  if (serverDurationSeconds >= 0.0) {
+                    metrics.recordServerDuration(
+                        otelContext, serverDurationSeconds, operationName, networkPath);
+                  }
+                  if (isServerUnreached(
+                      networkPath,
+                      status,
+                      errorType,
+                      serverDurationSeconds >= 0.0,
+                      receivedServerHeaders,
+                      headerHasUploadId,
+                      trailers)) {
+                    metrics.recordServerUnreached(
+                        otelContext, operationName, networkPath, errorType);
                   }
                 } finally {
                   metrics.recordRequestActive(otelContext, operationName, -1L);
@@ -210,5 +228,42 @@ final class StorageGrpcMetricsInterceptor implements ClientInterceptor {
           && (b[5] & 0xC0) == 0x40;
     }
     return false;
+  }
+
+  private static boolean isServerUnreached(
+      String networkPath,
+      Status status,
+      String errorType,
+      boolean hasServerDuration,
+      boolean receivedServerHeaders,
+      boolean headerHasUploadId,
+      Metadata trailers) {
+    if (StorageClientMetrics.NETWORK_PATH_DIRECTPATH.equals(networkPath)) {
+      boolean reached =
+          hasServerDuration || receivedServerHeaders || !trailers.keys().isEmpty() || status.isOk();
+      return !reached && isPreServerErrorType(errorType);
+    }
+    boolean hasUploadId =
+        headerHasUploadId || hasNonEmptyMetadata(trailers, UPLOADER_UPLOAD_ID_KEY);
+    boolean reached = hasServerDuration || hasUploadId;
+    return !reached && !isAmbiguousClientAbort(errorType);
+  }
+
+  private static boolean isAmbiguousClientAbort(String errorType) {
+    return StorageErrorTypeMapper.STATUS_CANCELLED.equals(errorType)
+        || StorageErrorTypeMapper.STATUS_TIMEOUT.equals(errorType)
+        || StorageErrorTypeMapper.STATUS_DEADLINE_EXCEEDED.equals(errorType);
+  }
+
+  private static boolean isPreServerErrorType(String errorType) {
+    return StorageErrorTypeMapper.STATUS_AUTHENTICATION_ERROR.equals(errorType)
+        || StorageErrorTypeMapper.STATUS_TLS_FAILURE.equals(errorType)
+        || StorageErrorTypeMapper.STATUS_DNS_FAILURE.equals(errorType)
+        || StorageErrorTypeMapper.STATUS_CONNECTION_ERROR.equals(errorType);
+  }
+
+  private static boolean hasNonEmptyMetadata(Metadata metadata, Metadata.Key<String> key) {
+    String value = metadata.get(key);
+    return value != null && !value.isEmpty();
   }
 }

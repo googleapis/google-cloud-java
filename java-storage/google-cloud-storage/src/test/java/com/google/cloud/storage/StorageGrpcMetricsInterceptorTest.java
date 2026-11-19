@@ -53,10 +53,12 @@ import io.opentelemetry.sdk.metrics.data.LongPointData;
 import io.opentelemetry.sdk.metrics.data.MetricData;
 import io.opentelemetry.sdk.testing.exporter.InMemoryMetricReader;
 import java.io.ByteArrayInputStream;
+import java.io.IOException;
 import java.io.InputStream;
 import java.lang.reflect.Field;
 import java.net.InetAddress;
 import java.net.InetSocketAddress;
+import java.net.UnknownHostException;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.util.ArrayList;
@@ -64,7 +66,10 @@ import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
 import java.util.concurrent.atomic.AtomicLong;
+import javax.net.ssl.SSLException;
+import javax.security.sasl.AuthenticationException;
 import org.jspecify.annotations.Nullable;
 import org.junit.Before;
 import org.junit.Test;
@@ -483,6 +488,166 @@ public final class StorageGrpcMetricsInterceptorTest {
   }
 
   @Test
+  public void interceptCall_serverUnreached_directPathAndCloudPathRules() throws Exception {
+    Attributes directPathAttrs =
+        Attributes.newBuilder()
+            .set(
+                Grpc.TRANSPORT_ATTR_REMOTE_ADDR,
+                new InetSocketAddress(InetAddress.getByName("34.126.1.2"), 443))
+            .build();
+    Attributes cloudPathAttrs =
+        Attributes.newBuilder()
+            .set(
+                Grpc.TRANSPORT_ATTR_REMOTE_ADDR,
+                new InetSocketAddress(InetAddress.getByName("142.250.1.1"), 443))
+            .build();
+    Metadata headerWithUploadId = new Metadata();
+    headerWithUploadId.put(StorageGrpcMetricsInterceptor.UPLOADER_UPLOAD_ID_KEY, "upload-1");
+    Metadata headerWithEmptyUploadId = new Metadata();
+    headerWithEmptyUploadId.put(StorageGrpcMetricsInterceptor.UPLOADER_UPLOAD_ID_KEY, "");
+    Metadata trailerWithStats = new Metadata();
+    trailerWithStats.put(
+        StorageGrpcMetricsInterceptor.GRPC_SERVER_STATS_BIN_KEY,
+        encodeServerStats(0, 0, 50_000_000L));
+    Metadata trailerNonEmpty = new Metadata();
+    trailerNonEmpty.put(Metadata.Key.of("x-custom-trailer", Metadata.ASCII_STRING_MARSHALLER), "v");
+
+    // DirectPath & unknown: only pre-server errors with no headers/trailers/stats/OK are unreached.
+    assertServerUnreached(
+        "dp connection error",
+        directPathAttrs,
+        null,
+        new Metadata(),
+        Status.UNAVAILABLE.withCause(new IOException("connect failed")),
+        StorageClientMetrics.NETWORK_PATH_DIRECTPATH,
+        StorageErrorTypeMapper.STATUS_CONNECTION_ERROR);
+    assertServerUnreached(
+        "dp dns failure",
+        directPathAttrs,
+        null,
+        new Metadata(),
+        Status.UNAVAILABLE.withCause(new UnknownHostException("dns")),
+        StorageClientMetrics.NETWORK_PATH_DIRECTPATH,
+        StorageErrorTypeMapper.STATUS_DNS_FAILURE);
+    assertServerUnreached(
+        "dp tls failure",
+        directPathAttrs,
+        null,
+        new Metadata(),
+        Status.UNAVAILABLE.withCause(new SSLException("tls")),
+        StorageClientMetrics.NETWORK_PATH_DIRECTPATH,
+        StorageErrorTypeMapper.STATUS_TLS_FAILURE);
+    assertServerUnreached(
+        "dp authentication error",
+        directPathAttrs,
+        null,
+        new Metadata(),
+        Status.UNAUTHENTICATED.withCause(new AuthenticationException("token failed")),
+        StorageClientMetrics.NETWORK_PATH_DIRECTPATH,
+        StorageErrorTypeMapper.STATUS_AUTHENTICATION_ERROR);
+    assertServerUnreached(
+        "unknown path pre-connect error",
+        Attributes.EMPTY,
+        null,
+        new Metadata(),
+        Status.UNAVAILABLE.withCause(new IOException("connection refused")),
+        StorageClientMetrics.NETWORK_PATH_UNKNOWN,
+        StorageErrorTypeMapper.STATUS_CONNECTION_ERROR);
+    assertServerUnreached(
+        "dp bare UNAVAILABLE not pre-server",
+        directPathAttrs,
+        null,
+        new Metadata(),
+        Status.UNAVAILABLE,
+        null,
+        null);
+    assertServerUnreached(
+        "dp connection error after headers received",
+        directPathAttrs,
+        new Metadata(),
+        new Metadata(),
+        Status.UNAVAILABLE.withCause(new IOException("reset")),
+        null,
+        null);
+    assertServerUnreached(
+        "dp connection error with non-empty trailers",
+        directPathAttrs,
+        null,
+        trailerNonEmpty,
+        Status.UNAVAILABLE.withCause(new IOException("reset")),
+        null,
+        null);
+    assertServerUnreached(
+        "dp OK without headers", directPathAttrs, null, new Metadata(), Status.OK, null, null);
+
+    // CloudPath: unreached when no stats-bin and no x-guploader-uploadid, excluding client aborts.
+    assertServerUnreached(
+        "cp UNAVAILABLE without markers",
+        cloudPathAttrs,
+        null,
+        new Metadata(),
+        Status.UNAVAILABLE,
+        StorageClientMetrics.NETWORK_PATH_CLOUDPATH,
+        StorageErrorTypeMapper.STATUS_UNAVAILABLE);
+    assertServerUnreached(
+        "cp empty upload id header treated as absent",
+        cloudPathAttrs,
+        headerWithEmptyUploadId,
+        new Metadata(),
+        Status.UNAVAILABLE,
+        StorageClientMetrics.NETWORK_PATH_CLOUDPATH,
+        StorageErrorTypeMapper.STATUS_UNAVAILABLE);
+    assertServerUnreached(
+        "cp reached via header upload id",
+        cloudPathAttrs,
+        headerWithUploadId,
+        new Metadata(),
+        Status.UNAVAILABLE,
+        null,
+        null);
+    assertServerUnreached(
+        "cp reached via trailer upload id",
+        cloudPathAttrs,
+        null,
+        headerWithUploadId,
+        Status.UNAVAILABLE,
+        null,
+        null);
+    assertServerUnreached(
+        "cp reached via server stats bin",
+        cloudPathAttrs,
+        null,
+        trailerWithStats,
+        Status.UNAVAILABLE,
+        null,
+        null);
+    assertServerUnreached(
+        "cp CANCELLED ambiguous abort",
+        cloudPathAttrs,
+        null,
+        new Metadata(),
+        Status.CANCELLED,
+        null,
+        null);
+    assertServerUnreached(
+        "cp DEADLINE_EXCEEDED ambiguous abort",
+        cloudPathAttrs,
+        null,
+        new Metadata(),
+        Status.DEADLINE_EXCEEDED,
+        null,
+        null);
+    assertServerUnreached(
+        "cp TIMEOUT ambiguous abort",
+        cloudPathAttrs,
+        null,
+        new Metadata(),
+        Status.UNAVAILABLE.withCause(new TimeoutException("timed out")),
+        null,
+        null);
+  }
+
+  @Test
   public void interceptCall_withStorageMetricsContext_propagatesContextAndFeedsNetworkPath()
       throws Exception {
     StorageMetricsContext metricsContext = metrics.createContext("CustomOperation");
@@ -735,6 +900,64 @@ public final class StorageGrpcMetricsInterceptorTest {
     assertThat(extractInterceptorProvider(disabledDefaultChannelProvider)).isNull();
   }
 
+  private void assertServerUnreached(
+      String label,
+      Attributes attrs,
+      @Nullable Metadata headers,
+      Metadata trailers,
+      Status status,
+      @Nullable String expectedNetworkPath,
+      @Nullable String expectedErrorType) {
+    InMemoryMetricReader caseReader = InMemoryMetricReader.create();
+    SdkMeterProvider caseProvider =
+        SdkMeterProvider.builder().registerMetricReader(caseReader).build();
+    StorageClientMetrics caseMetrics =
+        StorageOptions.grpc()
+            .setProjectId("test-project")
+            .setCredentials(NoCredentials.getInstance())
+            .setEnableOtelMetrics(true)
+            .setMeterProvider(caseProvider)
+            .build()
+            .getStorageClientMetrics();
+    TestClientCall<Void, Void> testCall = new TestClientCall<>(attrs);
+    new StorageGrpcMetricsInterceptor(caseMetrics, clock)
+        .interceptCall(READ_OBJECT_METHOD, CallOptions.DEFAULT, new TestChannel(testCall))
+        .start(new TestListener<>(), new Metadata());
+    if (headers != null) {
+      testCall.receiveHeaders(headers);
+    }
+    testCall.close(status, trailers);
+
+    MetricData unreached =
+        findMetric(caseReader, StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_SERVER_UNREACHED);
+    if (expectedErrorType == null) {
+      assertWithMessage(label).that(unreached).isNull();
+      return;
+    }
+    assertWithMessage(label).that(unreached).isNotNull();
+    assertWithMessage(label).that(unreached.getUnit()).isEqualTo("{request}");
+    assertWithMessage(label).that(unreached.getLongSumData().getPoints()).hasSize(1);
+    LongPointData point = unreached.getLongSumData().getPoints().iterator().next();
+    assertWithMessage(label).that(point.getValue()).isEqualTo(1L);
+    assertWithMessage(label)
+        .that(point.getAttributes())
+        .isEqualTo(
+            io.opentelemetry.api.common.Attributes.builder()
+                .put(
+                    StorageClientMetrics.KEY_GCP_CLIENT_SERVICE,
+                    StorageClientMetrics.SERVICE_STORAGE)
+                .put(StorageClientMetrics.KEY_GCP_CLIENT_VERSION, StorageOptions.version())
+                .put(
+                    StorageClientMetrics.KEY_GCP_CLIENT_ARTIFACT,
+                    StorageClientMetrics.ARTIFACT_STORAGE)
+                .put(StorageClientMetrics.KEY_RPC_SYSTEM_NAME, "grpc")
+                .put(StorageClientMetrics.KEY_SERVER_ADDRESS, "storage.googleapis.com")
+                .put(StorageClientMetrics.KEY_GCP_STORAGE_OPERATION, "ReadObject")
+                .put(StorageClientMetrics.KEY_NETWORK_PATH, expectedNetworkPath)
+                .put(StorageClientMetrics.KEY_ERROR_TYPE, expectedErrorType)
+                .build());
+  }
+
   private StorageGrpcMetricsInterceptor createDebugInterceptor() {
     StorageClientMetrics debugMetrics =
         StorageOptions.grpc()
@@ -765,7 +988,11 @@ public final class StorageGrpcMetricsInterceptorTest {
   }
 
   private @Nullable MetricData findMetric(String name) {
-    return reader.collectAllMetrics().stream()
+    return findMetric(reader, name);
+  }
+
+  private static @Nullable MetricData findMetric(InMemoryMetricReader metricReader, String name) {
+    return metricReader.collectAllMetrics().stream()
         .filter(m -> m.getName().equals(name))
         .findFirst()
         .orElse(null);

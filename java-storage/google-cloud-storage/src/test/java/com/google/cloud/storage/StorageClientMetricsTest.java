@@ -58,13 +58,13 @@ public final class StorageClientMetricsTest {
           StorageClientMetrics::getErrors,
           StorageClientMetrics::getTtfb,
           StorageClientMetrics::getRequestBodySize,
-          StorageClientMetrics::getResponseBodySize);
+          StorageClientMetrics::getResponseBodySize,
+          StorageClientMetrics::getServerUnreached);
 
   private static final List<Function<StorageClientMetrics, Object>> DEBUG_INSTRUMENTS =
       ImmutableList.of(
           StorageClientMetrics::getRequestActive,
           StorageClientMetrics::getServerDuration,
-          StorageClientMetrics::getServerUnreached,
           StorageClientMetrics::getStallDuration,
           StorageClientMetrics::getNetworkIo,
           StorageClientMetrics::getCredentialRefreshDuration);
@@ -229,7 +229,7 @@ public final class StorageClientMetricsTest {
     String serverUnreachedName =
         StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_SERVER_UNREACHED.replace(".", "/");
     assertThat(metricsMap).containsKey(serverUnreachedName);
-    assertThat(metricsMap.get(serverUnreachedName).getUnit()).isEqualTo("{attempt}");
+    assertThat(metricsMap.get(serverUnreachedName).getUnit()).isEqualTo("{request}");
 
     assertThat(metricsMap)
         .containsKey(StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_NETWORK_IO.replace(".", "/"));
@@ -578,6 +578,62 @@ public final class StorageClientMetricsTest {
                 .put(
                     StorageClientMetrics.KEY_NETWORK_PATH,
                     StorageClientMetrics.NETWORK_PATH_DIRECTPATH)
+                .build());
+  }
+
+  @Test
+  public void recordServerUnreached_recordsExactEightAttributes() {
+    SdkMeterProvider provider = SdkMeterProvider.builder().registerMetricReader(reader).build();
+    StorageClientMetrics disabledMetrics = StorageClientMetrics.create(provider, false, false);
+    disabledMetrics.recordServerUnreached(
+        Context.current(),
+        "GetObject",
+        StorageClientMetrics.NETWORK_PATH_CLOUDPATH,
+        StorageErrorTypeMapper.STATUS_CONNECTION_ERROR);
+    assertThat(findMetric(StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_SERVER_UNREACHED))
+        .isNull();
+
+    StorageClientMetrics standardMetrics =
+        StorageOptions.http()
+            .setProjectId("test-project")
+            .setCredentials(NoCredentials.getInstance())
+            .setEnableOtelMetrics(true)
+            .setMeterProvider(provider)
+            .build()
+            .getStorageClientMetrics();
+
+    standardMetrics.recordServerUnreached(
+        Context.current(),
+        "GetObject",
+        StorageClientMetrics.NETWORK_PATH_CLOUDPATH,
+        StorageErrorTypeMapper.STATUS_CONNECTION_ERROR);
+
+    MetricData metricData =
+        findMetric(StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_SERVER_UNREACHED);
+    assertThat(metricData).isNotNull();
+    assertThat(metricData.getUnit()).isEqualTo("{request}");
+    assertThat(metricData.getLongSumData().getPoints()).hasSize(1);
+    LongPointData point = metricData.getLongSumData().getPoints().iterator().next();
+    assertThat(point.getValue()).isEqualTo(1L);
+    assertThat(point.getAttributes())
+        .isEqualTo(
+            Attributes.builder()
+                .put(
+                    StorageClientMetrics.KEY_GCP_CLIENT_SERVICE,
+                    StorageClientMetrics.SERVICE_STORAGE)
+                .put(StorageClientMetrics.KEY_GCP_CLIENT_VERSION, StorageOptions.version())
+                .put(
+                    StorageClientMetrics.KEY_GCP_CLIENT_ARTIFACT,
+                    StorageClientMetrics.ARTIFACT_STORAGE)
+                .put(StorageClientMetrics.KEY_RPC_SYSTEM_NAME, "http")
+                .put(StorageClientMetrics.KEY_SERVER_ADDRESS, "storage.googleapis.com")
+                .put(StorageClientMetrics.KEY_GCP_STORAGE_OPERATION, "GetObject")
+                .put(
+                    StorageClientMetrics.KEY_NETWORK_PATH,
+                    StorageClientMetrics.NETWORK_PATH_CLOUDPATH)
+                .put(
+                    StorageClientMetrics.KEY_ERROR_TYPE,
+                    StorageErrorTypeMapper.STATUS_CONNECTION_ERROR)
                 .build());
   }
 
