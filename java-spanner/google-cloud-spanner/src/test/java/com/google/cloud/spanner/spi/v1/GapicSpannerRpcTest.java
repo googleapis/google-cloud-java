@@ -53,6 +53,7 @@ import com.google.cloud.grpc.GcpManagedChannelOptions.GcpMetricsOptions;
 import com.google.cloud.grpc.fallback.GcpFallbackChannelOptions;
 import com.google.cloud.grpc.fallback.GcpFallbackOpenTelemetry;
 import com.google.cloud.grpc.fallback.GcpFallbackState;
+import com.google.cloud.spanner.BuiltInMetricsConstant;
 import com.google.cloud.spanner.DatabaseClient;
 import com.google.cloud.spanner.DatabaseId;
 import com.google.cloud.spanner.Dialect;
@@ -75,24 +76,30 @@ import com.google.cloud.spanner.spi.v1.GapicSpannerRpc.AdminRequestsLimitExceede
 import com.google.cloud.spanner.spi.v1.SpannerRpc.Option;
 import com.google.common.collect.ImmutableList;
 import com.google.common.util.concurrent.Futures;
+import com.google.protobuf.ByteString;
 import com.google.protobuf.ListValue;
 import com.google.rpc.ErrorInfo;
 import com.google.spanner.admin.database.v1.DatabaseAdminGrpc;
 import com.google.spanner.admin.database.v1.ListDatabaseRolesRequest;
+import com.google.spanner.v1.BeginTransactionRequest;
 import com.google.spanner.v1.CommitRequest;
 import com.google.spanner.v1.CreateSessionRequest;
 import com.google.spanner.v1.ExecuteSqlRequest;
 import com.google.spanner.v1.GetSessionRequest;
+import com.google.spanner.v1.PartialResultSet;
 import com.google.spanner.v1.ReadRequest;
 import com.google.spanner.v1.ResultSetMetadata;
 import com.google.spanner.v1.Session;
 import com.google.spanner.v1.SpannerGrpc;
 import com.google.spanner.v1.StructType;
 import com.google.spanner.v1.StructType.Field;
+import com.google.spanner.v1.TransactionOptions;
+import com.google.spanner.v1.TransactionSelector;
 import com.google.spanner.v1.TypeCode;
 import io.grpc.CallOptions;
 import io.grpc.Context;
 import io.grpc.Contexts;
+import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import io.grpc.Metadata;
 import io.grpc.Metadata.Key;
@@ -107,13 +114,17 @@ import io.grpc.netty.shaded.io.grpc.netty.NettyChannelBuilder;
 import io.grpc.netty.shaded.io.grpc.netty.NettyServerBuilder;
 import io.grpc.protobuf.lite.ProtoLiteUtils;
 import io.opentelemetry.api.OpenTelemetry;
+import io.opentelemetry.api.common.Attributes;
+import io.opentelemetry.api.metrics.Meter;
 import io.opentelemetry.api.trace.propagation.W3CTraceContextPropagator;
 import io.opentelemetry.context.propagation.ContextPropagators;
 import io.opentelemetry.sdk.OpenTelemetrySdk;
 import io.opentelemetry.sdk.metrics.SdkMeterProvider;
 import io.opentelemetry.sdk.metrics.data.MetricData;
 import io.opentelemetry.sdk.testing.exporter.InMemoryMetricReader;
+import io.opentelemetry.sdk.testing.exporter.InMemorySpanExporter;
 import io.opentelemetry.sdk.trace.SdkTracerProvider;
+import io.opentelemetry.sdk.trace.export.SimpleSpanProcessor;
 import io.opentelemetry.sdk.trace.samplers.Sampler;
 import java.io.IOException;
 import java.lang.reflect.Array;
@@ -141,6 +152,7 @@ import java.util.concurrent.Future;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.function.BooleanSupplier;
 import javax.annotation.Nullable;
 import org.junit.After;
@@ -315,6 +327,7 @@ public class GapicSpannerRpcTest {
 
   @After
   public void reset() throws InterruptedException {
+    SpannerOptionsHelper.resetActiveTracingFramework();
     if (mockSpanner != null) {
       mockSpanner.reset();
     }
@@ -1908,7 +1921,11 @@ public class GapicSpannerRpcTest {
     OpenTelemetry openTelemetry =
         OpenTelemetrySdk.builder()
             .setPropagators(ContextPropagators.create(W3CTraceContextPropagator.getInstance()))
-            .setTracerProvider(SdkTracerProvider.builder().setSampler(Sampler.alwaysOn()).build())
+            .setTracerProvider(
+                SdkTracerProvider.builder()
+                    .addSpanProcessor(SimpleSpanProcessor.create(InMemorySpanExporter.create()))
+                    .setSampler(Sampler.alwaysOn())
+                    .build())
             .build();
 
     final SpannerOptions options =
@@ -1933,7 +1950,11 @@ public class GapicSpannerRpcTest {
     OpenTelemetry openTelemetry =
         OpenTelemetrySdk.builder()
             .setPropagators(ContextPropagators.create(W3CTraceContextPropagator.getInstance()))
-            .setTracerProvider(SdkTracerProvider.builder().setSampler(Sampler.alwaysOn()).build())
+            .setTracerProvider(
+                SdkTracerProvider.builder()
+                    .addSpanProcessor(SimpleSpanProcessor.create(InMemorySpanExporter.create()))
+                    .setSampler(Sampler.alwaysOn())
+                    .build())
             .build();
 
     final SpannerOptions options =
@@ -2209,6 +2230,154 @@ public class GapicSpannerRpcTest {
   }
 
   @Test
+  public void testPartitionedDmlUsesDefaultChannelWithoutEnteringKeyAwareChannel()
+      throws Exception {
+    AtomicInteger keyAwareRoutedCalls = new AtomicInteger();
+    ChannelEndpointCacheFactory factory =
+        baseProvider -> {
+          GrpcChannelEndpointCache delegateCache = new GrpcChannelEndpointCache(baseProvider);
+          ChannelEndpoint delegateDefault = delegateCache.defaultChannel();
+          ChannelEndpoint countingDefault =
+              new ChannelEndpoint() {
+                @Override
+                public String getAddress() {
+                  return delegateDefault.getAddress();
+                }
+
+                @Override
+                public boolean isHealthy() {
+                  return delegateDefault.isHealthy();
+                }
+
+                @Override
+                public boolean isTransientFailure() {
+                  return delegateDefault.isTransientFailure();
+                }
+
+                @Override
+                public ManagedChannel getChannel() {
+                  return delegateDefault.getChannel();
+                }
+
+                @Override
+                public void incrementActiveRequests() {
+                  keyAwareRoutedCalls.incrementAndGet();
+                  delegateDefault.incrementActiveRequests();
+                }
+
+                @Override
+                public void decrementActiveRequests() {
+                  delegateDefault.decrementActiveRequests();
+                }
+
+                @Override
+                public int getActiveRequestCount() {
+                  return delegateDefault.getActiveRequestCount();
+                }
+              };
+          return new ChannelEndpointCache() {
+            @Override
+            public ChannelEndpoint defaultChannel() {
+              return countingDefault;
+            }
+
+            @Override
+            public ChannelEndpoint get(String addr) {
+              return addr.equals(countingDefault.getAddress())
+                  ? countingDefault
+                  : delegateCache.get(addr);
+            }
+
+            @Override
+            @Nullable
+            public ChannelEndpoint getIfPresent(String addr) {
+              return addr.equals(countingDefault.getAddress())
+                  ? countingDefault
+                  : delegateCache.getIfPresent(addr);
+            }
+
+            @Override
+            public void evict(String addr) {
+              delegateCache.evict(addr);
+            }
+
+            @Override
+            public void shutdown() {
+              delegateCache.shutdown();
+            }
+          };
+        };
+
+    try {
+      SpannerOptions.useEnvironment(
+          new SpannerOptions.SpannerEnvironment() {
+            @Override
+            public boolean isEnableLocationApi() {
+              return true;
+            }
+          });
+      SpannerOptions options =
+          createSpannerOptions().toBuilder().setChannelEndpointCacheFactory(factory).build();
+      try (Spanner testSpanner = options.getService()) {
+        DatabaseClient client = testSpanner.getDatabaseClient(DatabaseId.of("[PROJECT]", "i", "d"));
+        try (ResultSet rs = client.singleUse().executeQuery(SELECT1AND2)) {
+          while (rs.next()) {}
+        }
+        assertThat(keyAwareRoutedCalls.get()).isGreaterThan(0);
+
+        mockSpanner.clearRequests();
+        keyAwareRoutedCalls.set(0);
+
+        // End-to-end Partitioned DML: BeginTransaction goes through spannerStub (1 call), while
+        // ExecuteStreamingSql goes through partitionedDmlStub directly on the default channel (0
+        // KeyAwareClientCall entries).
+        long updateCount = client.executePartitionedUpdate(UPDATE_FOO_STATEMENT);
+        assertEquals(1L, updateCount);
+        assertEquals(1, keyAwareRoutedCalls.get());
+        List<ExecuteSqlRequest> pdmlStreamingRequests =
+            mockSpanner.getRequestsOfType(ExecuteSqlRequest.class);
+        assertEquals(1, pdmlStreamingRequests.size());
+        assertFalse(pdmlStreamingRequests.get(0).hasRoutingHint());
+
+        // Direct unary and streaming Partitioned DML RPCs must never enter KeyAwareChannel at all.
+        GapicSpannerRpc rpc = getRpc(testSpanner);
+        String sessionName =
+            mockSpanner.getRequestsOfType(BeginTransactionRequest.class).get(0).getSession();
+        BeginTransactionRequest beginPdmlRequest =
+            BeginTransactionRequest.newBuilder()
+                .setSession(sessionName)
+                .setOptions(
+                    TransactionOptions.newBuilder()
+                        .setPartitionedDml(TransactionOptions.PartitionedDml.getDefaultInstance()))
+                .build();
+        ByteString unaryTxId = rpc.beginTransaction(beginPdmlRequest, optionsMap, true).getId();
+        ByteString streamingTxId = rpc.beginTransaction(beginPdmlRequest, optionsMap, true).getId();
+        keyAwareRoutedCalls.set(0);
+        rpc.executePartitionedDml(
+            ExecuteSqlRequest.newBuilder()
+                .setSession(sessionName)
+                .setSql(UPDATE_FOO_STATEMENT.getSql())
+                .setTransaction(TransactionSelector.newBuilder().setId(unaryTxId))
+                .build(),
+            optionsMap);
+        for (PartialResultSet ignored :
+            rpc.executeStreamingPartitionedDml(
+                ExecuteSqlRequest.newBuilder()
+                    .setSession(sessionName)
+                    .setSql(UPDATE_FOO_STATEMENT.getSql())
+                    .setTransaction(TransactionSelector.newBuilder().setId(streamingTxId))
+                    .build(),
+                optionsMap,
+                rpc.getRequestIdCreator().nextRequestId(0),
+                Duration.ofSeconds(10))) {}
+        assertEquals(0, keyAwareRoutedCalls.get());
+      }
+    } finally {
+      SpannerOptions.useDefaultEnvironment();
+    }
+  }
+
+  @Test
   public void testLocationApiDoesNotOverrideExplicitChannelProvider() {
     AtomicBoolean factoryCalled = new AtomicBoolean(false);
     ChannelEndpointCacheFactory factory =
@@ -2384,15 +2553,107 @@ public class GapicSpannerRpcTest {
             "maybeEnableGrpcGcpExtension",
             InstantiatingGrpcChannelProvider.Builder.class,
             SpannerOptions.class,
-            DynamicChannelPoolPrimer.class);
+            DynamicChannelPoolPrimer.class,
+            GapicSpannerRpc.BuiltInChannelPoolMetrics.class,
+            String.class);
     method.setAccessible(true);
-    method.invoke(null, channelProviderBuilder, options, null);
+    method.invoke(null, channelProviderBuilder, options, null, null, null);
 
     ApiFunction<ManagedChannelBuilder, ManagedChannelBuilder> chainedConfigurator =
         channelProviderBuilder.getChannelConfigurator();
     chainedConfigurator.apply(NettyChannelBuilder.forAddress("localhost", 1));
 
     assertTrue(baseConfiguratorCalled.get());
+  }
+
+  @Test
+  public void testBuiltInChannelPoolMetricsAreSetWithLaneAndPoolIndex() {
+    Meter meter = OpenTelemetry.noop().getMeter("grpc-gcp");
+    SpannerOptions options =
+        SpannerOptions.newBuilder().setProjectId("[PROJECT]").enableGrpcGcpExtension().build();
+
+    GcpMetricsOptions metricsOptions =
+        GapicSpannerRpc.grpcGcpOptionsWithMetricsAndDcp(
+                options,
+                /* channelPrimer= */ null,
+                new GapicSpannerRpc.BuiltInChannelPoolMetrics(meter, "3"),
+                BuiltInMetricsConstant.LANE_DIRECTPATH)
+            .getMetricsOptions();
+
+    assertSame(meter, metricsOptions.getBuiltInMetricsMeter());
+    assertEquals(
+        Attributes.of(BuiltInMetricsConstant.LANE_KEY, BuiltInMetricsConstant.LANE_DIRECTPATH),
+        metricsOptions.getBuiltInMetricsAttributes());
+    assertEquals("3", metricsOptions.getBuiltInMetricsPoolIndex());
+  }
+
+  @Test
+  public void testEndpointPoolsDoNotGetBuiltInChannelPoolMetrics() {
+    SpannerOptions options =
+        SpannerOptions.newBuilder()
+            .setProjectId("[PROJECT]")
+            .enableGrpcGcpExtension(
+                GcpManagedChannelOptions.newBuilder()
+                    .withMetricsOptions(
+                        GcpMetricsOptions.newBuilder()
+                            .withBuiltInMetrics(
+                                OpenTelemetry.noop().getMeter("application"), Attributes.empty())
+                            .withBuiltInMetricsPoolIndex("9")
+                            .build())
+                    .build())
+            .build();
+
+    GrpcGcpEndpointChannelConfigurator configurator =
+        GapicSpannerRpc.createGrpcGcpEndpointChannelConfigurator(
+            InstantiatingGrpcChannelProvider.newBuilder(), options);
+
+    GcpMetricsOptions metricsOptions = configurator.getGrpcGcpOptions().getMetricsOptions();
+    assertNull(metricsOptions.getBuiltInMetricsMeter());
+    assertNull(metricsOptions.getBuiltInMetricsPoolIndex());
+  }
+
+  @Test
+  public void testApplicationCannotConfigureBuiltInChannelPoolMetrics() {
+    Meter applicationMeter = OpenTelemetry.noop().getMeter("application");
+    SpannerOptions options =
+        SpannerOptions.newBuilder()
+            .setProjectId("[PROJECT]")
+            .enableGrpcGcpExtension(
+                GcpManagedChannelOptions.newBuilder()
+                    .withMetricsOptions(
+                        GcpMetricsOptions.newBuilder()
+                            .withBuiltInMetrics(
+                                applicationMeter,
+                                Attributes.of(BuiltInMetricsConstant.LANE_KEY, "wrong"))
+                            .withBuiltInMetricsPoolIndex("9")
+                            .build())
+                    .build())
+            .build();
+    Meter builtInMeter = OpenTelemetry.noop().getMeter("grpc-gcp");
+
+    GcpMetricsOptions withoutBuiltInMetrics =
+        GapicSpannerRpc.grpcGcpOptionsWithMetricsAndDcp(
+                options,
+                /* channelPrimer= */ null,
+                /* builtInChannelPoolMetrics= */ null,
+                /* lane= */ null)
+            .getMetricsOptions();
+    GcpMetricsOptions withBuiltInMetrics =
+        GapicSpannerRpc.grpcGcpOptionsWithMetricsAndDcp(
+                options,
+                /* channelPrimer= */ null,
+                new GapicSpannerRpc.BuiltInChannelPoolMetrics(builtInMeter, "1"),
+                BuiltInMetricsConstant.LANE_CLOUDPATH)
+            .getMetricsOptions();
+
+    assertNull(withoutBuiltInMetrics.getBuiltInMetricsMeter());
+    assertEquals(Attributes.empty(), withoutBuiltInMetrics.getBuiltInMetricsAttributes());
+    assertNull(withoutBuiltInMetrics.getBuiltInMetricsPoolIndex());
+    assertSame(builtInMeter, withBuiltInMetrics.getBuiltInMetricsMeter());
+    assertEquals(
+        Attributes.of(BuiltInMetricsConstant.LANE_KEY, BuiltInMetricsConstant.LANE_CLOUDPATH),
+        withBuiltInMetrics.getBuiltInMetricsAttributes());
+    assertEquals("1", withBuiltInMetrics.getBuiltInMetricsPoolIndex());
   }
 
   @Test

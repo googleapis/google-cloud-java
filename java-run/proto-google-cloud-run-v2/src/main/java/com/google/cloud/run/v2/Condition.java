@@ -1442,6 +1442,16 @@ public final class Condition extends com.google.protobuf.GeneratedMessage
      * <code>DELAYED_START_PENDING = 6;</code>
      */
     DELAYED_START_PENDING(6),
+    /**
+     *
+     *
+     * <pre>
+     * A delayed execution exceeded the maximum runtime duration.
+     * </pre>
+     *
+     * <code>DELAYED_EXECUTION_EXCEEDING_DURATION_LIMIT = 7;</code>
+     */
+    DELAYED_EXECUTION_EXCEEDING_DURATION_LIMIT(7),
     UNRECOGNIZED(-1),
     ;
 
@@ -1533,6 +1543,17 @@ public final class Condition extends com.google.protobuf.GeneratedMessage
      */
     public static final int DELAYED_START_PENDING_VALUE = 6;
 
+    /**
+     *
+     *
+     * <pre>
+     * A delayed execution exceeded the maximum runtime duration.
+     * </pre>
+     *
+     * <code>DELAYED_EXECUTION_EXCEEDING_DURATION_LIMIT = 7;</code>
+     */
+    public static final int DELAYED_EXECUTION_EXCEEDING_DURATION_LIMIT_VALUE = 7;
+
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -1571,6 +1592,8 @@ public final class Condition extends com.google.protobuf.GeneratedMessage
           return DELETED;
         case 6:
           return DELAYED_START_PENDING;
+        case 7:
+          return DELAYED_EXECUTION_EXCEEDING_DURATION_LIMIT;
         default:
           return null;
       }
@@ -1626,6 +1649,221 @@ public final class Condition extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(enum_scope:google.cloud.run.v2.Condition.ExecutionReason)
   }
 
+  /**
+   *
+   *
+   * <pre>
+   * Reasons specific to Instance resource.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.run.v2.Condition.InstanceReason}
+   */
+  public enum InstanceReason implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Default value.
+     * </pre>
+     *
+     * <code>INSTANCE_REASON_UNSPECIFIED = 0;</code>
+     */
+    INSTANCE_REASON_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Instance deleted.
+     * </pre>
+     *
+     * <code>INSTANCE_DELETED = 1;</code>
+     */
+    INSTANCE_DELETED(1),
+    /**
+     *
+     *
+     * <pre>
+     * Instance stopped.
+     * </pre>
+     *
+     * <code>INSTANCE_STOPPED = 2;</code>
+     */
+    INSTANCE_STOPPED(2),
+    /**
+     *
+     *
+     * <pre>
+     * Instance stopping.
+     * </pre>
+     *
+     * <code>INSTANCE_STOPPING = 3;</code>
+     */
+    INSTANCE_STOPPING(3),
+    /**
+     *
+     *
+     * <pre>
+     * Instance exited with a non-zero exit code.
+     * </pre>
+     *
+     * <code>INSTANCE_NON_ZERO_EXIT_CODE = 4;</code>
+     */
+    INSTANCE_NON_ZERO_EXIT_CODE(4),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 6,
+          /* suffix= */ "",
+          "InstanceReason");
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Default value.
+     * </pre>
+     *
+     * <code>INSTANCE_REASON_UNSPECIFIED = 0;</code>
+     */
+    public static final int INSTANCE_REASON_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Instance deleted.
+     * </pre>
+     *
+     * <code>INSTANCE_DELETED = 1;</code>
+     */
+    public static final int INSTANCE_DELETED_VALUE = 1;
+
+    /**
+     *
+     *
+     * <pre>
+     * Instance stopped.
+     * </pre>
+     *
+     * <code>INSTANCE_STOPPED = 2;</code>
+     */
+    public static final int INSTANCE_STOPPED_VALUE = 2;
+
+    /**
+     *
+     *
+     * <pre>
+     * Instance stopping.
+     * </pre>
+     *
+     * <code>INSTANCE_STOPPING = 3;</code>
+     */
+    public static final int INSTANCE_STOPPING_VALUE = 3;
+
+    /**
+     *
+     *
+     * <pre>
+     * Instance exited with a non-zero exit code.
+     * </pre>
+     *
+     * <code>INSTANCE_NON_ZERO_EXIT_CODE = 4;</code>
+     */
+    public static final int INSTANCE_NON_ZERO_EXIT_CODE_VALUE = 4;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static InstanceReason valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static InstanceReason forNumber(int value) {
+      switch (value) {
+        case 0:
+          return INSTANCE_REASON_UNSPECIFIED;
+        case 1:
+          return INSTANCE_DELETED;
+        case 2:
+          return INSTANCE_STOPPED;
+        case 3:
+          return INSTANCE_STOPPING;
+        case 4:
+          return INSTANCE_NON_ZERO_EXIT_CODE;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<InstanceReason> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<InstanceReason> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<InstanceReason>() {
+          public InstanceReason findValueByNumber(int number) {
+            return InstanceReason.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.run.v2.Condition.getDescriptor().getEnumTypes().get(5);
+    }
+
+    private static final InstanceReason[] VALUES = values();
+
+    public static InstanceReason valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private InstanceReason(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.run.v2.Condition.InstanceReason)
+  }
+
   private int bitField0_;
   private int reasonsCase_ = 0;
 
@@ -1639,6 +1877,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessage
     REASON(6),
     REVISION_REASON(9),
     EXECUTION_REASON(11),
+    INSTANCE_REASON(12),
     REASONS_NOT_SET(0);
     private final int value;
 
@@ -1664,6 +1903,8 @@ public final class Condition extends com.google.protobuf.GeneratedMessage
           return REVISION_REASON;
         case 11:
           return EXECUTION_REASON;
+        case 12:
+          return INSTANCE_REASON;
         case 0:
           return REASONS_NOT_SET;
         default:
@@ -2108,6 +2349,69 @@ public final class Condition extends com.google.protobuf.GeneratedMessage
     return com.google.cloud.run.v2.Condition.ExecutionReason.EXECUTION_REASON_UNDEFINED;
   }
 
+  public static final int INSTANCE_REASON_FIELD_NUMBER = 12;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A reason for the instance condition.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.run.v2.Condition.InstanceReason instance_reason = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the instanceReason field is set.
+   */
+  public boolean hasInstanceReason() {
+    return reasonsCase_ == 12;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A reason for the instance condition.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.run.v2.Condition.InstanceReason instance_reason = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for instanceReason.
+   */
+  public int getInstanceReasonValue() {
+    if (reasonsCase_ == 12) {
+      return (java.lang.Integer) reasons_;
+    }
+    return 0;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A reason for the instance condition.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.run.v2.Condition.InstanceReason instance_reason = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The instanceReason.
+   */
+  public com.google.cloud.run.v2.Condition.InstanceReason getInstanceReason() {
+    if (reasonsCase_ == 12) {
+      com.google.cloud.run.v2.Condition.InstanceReason result =
+          com.google.cloud.run.v2.Condition.InstanceReason.forNumber((java.lang.Integer) reasons_);
+      return result == null
+          ? com.google.cloud.run.v2.Condition.InstanceReason.UNRECOGNIZED
+          : result;
+    }
+    return com.google.cloud.run.v2.Condition.InstanceReason.INSTANCE_REASON_UNSPECIFIED;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2146,6 +2450,9 @@ public final class Condition extends com.google.protobuf.GeneratedMessage
     if (reasonsCase_ == 11) {
       output.writeEnum(11, ((java.lang.Integer) reasons_));
     }
+    if (reasonsCase_ == 12) {
+      output.writeEnum(12, ((java.lang.Integer) reasons_));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -2182,6 +2489,10 @@ public final class Condition extends com.google.protobuf.GeneratedMessage
       size +=
           com.google.protobuf.CodedOutputStream.computeEnumSize(11, ((java.lang.Integer) reasons_));
     }
+    if (reasonsCase_ == 12) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeEnumSize(12, ((java.lang.Integer) reasons_));
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2215,6 +2526,9 @@ public final class Condition extends com.google.protobuf.GeneratedMessage
         break;
       case 11:
         if (getExecutionReasonValue() != other.getExecutionReasonValue()) return false;
+        break;
+      case 12:
+        if (getInstanceReasonValue() != other.getInstanceReasonValue()) return false;
         break;
       case 0:
       default:
@@ -2254,6 +2568,10 @@ public final class Condition extends com.google.protobuf.GeneratedMessage
       case 11:
         hash = (37 * hash) + EXECUTION_REASON_FIELD_NUMBER;
         hash = (53 * hash) + getExecutionReasonValue();
+        break;
+      case 12:
+        hash = (37 * hash) + INSTANCE_REASON_FIELD_NUMBER;
+        hash = (53 * hash) + getInstanceReasonValue();
         break;
       case 0:
       default:
@@ -2528,6 +2846,11 @@ public final class Condition extends com.google.protobuf.GeneratedMessage
             setExecutionReasonValue(other.getExecutionReasonValue());
             break;
           }
+        case INSTANCE_REASON:
+          {
+            setInstanceReasonValue(other.getInstanceReasonValue());
+            break;
+          }
         case REASONS_NOT_SET:
           {
             break;
@@ -2611,6 +2934,13 @@ public final class Condition extends com.google.protobuf.GeneratedMessage
                 reasons_ = rawValue;
                 break;
               } // case 88
+            case 96:
+              {
+                int rawValue = input.readEnum();
+                reasonsCase_ = 12;
+                reasons_ = rawValue;
+                break;
+              } // case 96
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3658,6 +3988,138 @@ public final class Condition extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearExecutionReason() {
       if (reasonsCase_ == 11) {
+        reasonsCase_ = 0;
+        reasons_ = null;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A reason for the instance condition.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.Condition.InstanceReason instance_reason = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the instanceReason field is set.
+     */
+    @java.lang.Override
+    public boolean hasInstanceReason() {
+      return reasonsCase_ == 12;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A reason for the instance condition.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.Condition.InstanceReason instance_reason = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for instanceReason.
+     */
+    @java.lang.Override
+    public int getInstanceReasonValue() {
+      if (reasonsCase_ == 12) {
+        return ((java.lang.Integer) reasons_).intValue();
+      }
+      return 0;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A reason for the instance condition.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.Condition.InstanceReason instance_reason = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for instanceReason to set.
+     * @return This builder for chaining.
+     */
+    public Builder setInstanceReasonValue(int value) {
+      reasonsCase_ = 12;
+      reasons_ = value;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A reason for the instance condition.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.Condition.InstanceReason instance_reason = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The instanceReason.
+     */
+    @java.lang.Override
+    public com.google.cloud.run.v2.Condition.InstanceReason getInstanceReason() {
+      if (reasonsCase_ == 12) {
+        com.google.cloud.run.v2.Condition.InstanceReason result =
+            com.google.cloud.run.v2.Condition.InstanceReason.forNumber(
+                (java.lang.Integer) reasons_);
+        return result == null
+            ? com.google.cloud.run.v2.Condition.InstanceReason.UNRECOGNIZED
+            : result;
+      }
+      return com.google.cloud.run.v2.Condition.InstanceReason.INSTANCE_REASON_UNSPECIFIED;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A reason for the instance condition.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.Condition.InstanceReason instance_reason = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The instanceReason to set.
+     * @return This builder for chaining.
+     */
+    public Builder setInstanceReason(com.google.cloud.run.v2.Condition.InstanceReason value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      reasonsCase_ = 12;
+      reasons_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A reason for the instance condition.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.Condition.InstanceReason instance_reason = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearInstanceReason() {
+      if (reasonsCase_ == 12) {
         reasonsCase_ = 0;
         reasons_ = null;
         onChanged();

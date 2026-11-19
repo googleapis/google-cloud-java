@@ -60,7 +60,8 @@ public interface ClusterOrBuilder
    *
    *
    * <pre>
-   * Optional. User-provided description of the cluster.
+   * Optional. A description for your cluster. You can use up to 2,048
+   * characters.
    * </pre>
    *
    * <code>string description = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -73,7 +74,8 @@ public interface ClusterOrBuilder
    *
    *
    * <pre>
-   * Optional. User-provided description of the cluster.
+   * Optional. A description for your cluster. You can use up to 2,048
+   * characters.
    * </pre>
    *
    * <code>string description = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -259,7 +261,7 @@ public interface ClusterOrBuilder
    *
    *
    * <pre>
-   * Optional. Network resources available to the cluster. Must contain at most
+   * Optional. Network resources available to the cluster. Must contain exactly
    * one value. Keys specify the ID of the network resource by which it can be
    * referenced elsewhere, and must conform to
    * [RFC-1034](https://datatracker.ietf.org/doc/html/rfc1034) (lower-case,
@@ -276,7 +278,7 @@ public interface ClusterOrBuilder
    *
    *
    * <pre>
-   * Optional. Network resources available to the cluster. Must contain at most
+   * Optional. Network resources available to the cluster. Must contain exactly
    * one value. Keys specify the ID of the network resource by which it can be
    * referenced elsewhere, and must conform to
    * [RFC-1034](https://datatracker.ietf.org/doc/html/rfc1034) (lower-case,
@@ -298,7 +300,7 @@ public interface ClusterOrBuilder
    *
    *
    * <pre>
-   * Optional. Network resources available to the cluster. Must contain at most
+   * Optional. Network resources available to the cluster. Must contain exactly
    * one value. Keys specify the ID of the network resource by which it can be
    * referenced elsewhere, and must conform to
    * [RFC-1034](https://datatracker.ietf.org/doc/html/rfc1034) (lower-case,
@@ -316,7 +318,7 @@ public interface ClusterOrBuilder
    *
    *
    * <pre>
-   * Optional. Network resources available to the cluster. Must contain at most
+   * Optional. Network resources available to the cluster. Must contain exactly
    * one value. Keys specify the ID of the network resource by which it can be
    * referenced elsewhere, and must conform to
    * [RFC-1034](https://datatracker.ietf.org/doc/html/rfc1034) (lower-case,
@@ -337,7 +339,7 @@ public interface ClusterOrBuilder
    *
    *
    * <pre>
-   * Optional. Network resources available to the cluster. Must contain at most
+   * Optional. Network resources available to the cluster. Must contain exactly
    * one value. Keys specify the ID of the network resource by which it can be
    * referenced elsewhere, and must conform to
    * [RFC-1034](https://datatracker.ietf.org/doc/html/rfc1034) (lower-case,
@@ -578,4 +580,34 @@ public interface ClusterOrBuilder
    * </code>
    */
   com.google.cloud.hypercomputecluster.v1beta.OrchestratorOrBuilder getOrchestratorOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The globally unique identifier for this Cluster.
+   * </pre>
+   *
+   * <code>
+   * string uid = 16 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+   * </code>
+   *
+   * @return The uid.
+   */
+  java.lang.String getUid();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The globally unique identifier for this Cluster.
+   * </pre>
+   *
+   * <code>
+   * string uid = 16 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+   * </code>
+   *
+   * @return The bytes for uid.
+   */
+  com.google.protobuf.ByteString getUidBytes();
 }

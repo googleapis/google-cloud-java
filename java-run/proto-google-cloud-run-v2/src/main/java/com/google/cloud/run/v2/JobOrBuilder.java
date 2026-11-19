@@ -1068,6 +1068,36 @@ public interface JobOrBuilder
    *
    *
    * <pre>
+   * Optional. The functional type of the Job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.run.v2.FunctionalType functional_type = 31 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for functionalType.
+   */
+  int getFunctionalTypeValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The functional type of the Job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.run.v2.FunctionalType functional_type = 31 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The functionalType.
+   */
+  com.google.cloud.run.v2.FunctionalType getFunctionalType();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. A system-generated fingerprint for this version of the
    * resource. May be used to detect modification conflict during updates.
    * </pre>

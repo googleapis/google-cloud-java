@@ -843,7 +843,7 @@ public final class Space extends com.google.protobuf.GeneratedMessage
      * Optional. A description of the space. For example, describe the space's
      * discussion topic, functional purpose, or participants.
      *
-     * Supports up to 150 characters.
+     * Supports up to 4,096 characters.
      * </pre>
      *
      * <code>string description = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -859,7 +859,7 @@ public final class Space extends com.google.protobuf.GeneratedMessage
      * Optional. A description of the space. For example, describe the space's
      * discussion topic, functional purpose, or participants.
      *
-     * Supports up to 150 characters.
+     * Supports up to 4,096 characters.
      * </pre>
      *
      * <code>string description = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -961,7 +961,7 @@ public final class Space extends com.google.protobuf.GeneratedMessage
      * Optional. A description of the space. For example, describe the space's
      * discussion topic, functional purpose, or participants.
      *
-     * Supports up to 150 characters.
+     * Supports up to 4,096 characters.
      * </pre>
      *
      * <code>string description = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -988,7 +988,7 @@ public final class Space extends com.google.protobuf.GeneratedMessage
      * Optional. A description of the space. For example, describe the space's
      * discussion topic, functional purpose, or participants.
      *
-     * Supports up to 150 characters.
+     * Supports up to 4,096 characters.
      * </pre>
      *
      * <code>string description = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1406,7 +1406,7 @@ public final class Space extends com.google.protobuf.GeneratedMessage
        * Optional. A description of the space. For example, describe the space's
        * discussion topic, functional purpose, or participants.
        *
-       * Supports up to 150 characters.
+       * Supports up to 4,096 characters.
        * </pre>
        *
        * <code>string description = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1432,7 +1432,7 @@ public final class Space extends com.google.protobuf.GeneratedMessage
        * Optional. A description of the space. For example, describe the space's
        * discussion topic, functional purpose, or participants.
        *
-       * Supports up to 150 characters.
+       * Supports up to 4,096 characters.
        * </pre>
        *
        * <code>string description = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1458,7 +1458,7 @@ public final class Space extends com.google.protobuf.GeneratedMessage
        * Optional. A description of the space. For example, describe the space's
        * discussion topic, functional purpose, or participants.
        *
-       * Supports up to 150 characters.
+       * Supports up to 4,096 characters.
        * </pre>
        *
        * <code>string description = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1483,7 +1483,7 @@ public final class Space extends com.google.protobuf.GeneratedMessage
        * Optional. A description of the space. For example, describe the space's
        * discussion topic, functional purpose, or participants.
        *
-       * Supports up to 150 characters.
+       * Supports up to 4,096 characters.
        * </pre>
        *
        * <code>string description = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1504,7 +1504,7 @@ public final class Space extends com.google.protobuf.GeneratedMessage
        * Optional. A description of the space. For example, describe the space's
        * discussion topic, functional purpose, or participants.
        *
-       * Supports up to 150 characters.
+       * Supports up to 4,096 characters.
        * </pre>
        *
        * <code>string description = 1 [(.google.api.field_behavior) = OPTIONAL];</code>

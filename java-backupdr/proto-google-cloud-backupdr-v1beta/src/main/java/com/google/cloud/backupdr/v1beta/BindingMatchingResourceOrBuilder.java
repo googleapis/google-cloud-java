@@ -30,12 +30,14 @@ public interface BindingMatchingResourceOrBuilder
    *
    *
    * <pre>
-   * Identifier. The resource name of the `BindingMatchingResource`.
-   * Format:
+   * Output only. Identifier. The resource name of the
+   * `BindingMatchingResource`. Format:
    * `projects/{project}/locations/{location}/autoProtectionPolicies/{auto_protection_policy}/bindings/{binding}/matchingResources/{matching_resource}`
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = IDENTIFIER, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The name.
    */
@@ -45,12 +47,14 @@ public interface BindingMatchingResourceOrBuilder
    *
    *
    * <pre>
-   * Identifier. The resource name of the `BindingMatchingResource`.
-   * Format:
+   * Output only. Identifier. The resource name of the
+   * `BindingMatchingResource`. Format:
    * `projects/{project}/locations/{location}/autoProtectionPolicies/{auto_protection_policy}/bindings/{binding}/matchingResources/{matching_resource}`
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = IDENTIFIER, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The bytes for name.
    */
@@ -60,8 +64,8 @@ public interface BindingMatchingResourceOrBuilder
    *
    *
    * <pre>
-   * Required. Immutable. Resource name of the workload that matches the
-   * criteria of the binding.
+   * Output only. Resource name of the workload that matches the criteria of the
+   * binding.
    *
    * The format can be either a relative resource name (e.g.,
    * `projects/my-project/zones/us-central1-a/instances/my-instance`) or a
@@ -69,9 +73,7 @@ public interface BindingMatchingResourceOrBuilder
    * `//compute.googleapis.com/projects/my-project/zones/us-central1-a/instances/my-instance`).
    * </pre>
    *
-   * <code>
-   * string resource = 2 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>string resource = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The resource.
    */
@@ -81,8 +83,8 @@ public interface BindingMatchingResourceOrBuilder
    *
    *
    * <pre>
-   * Required. Immutable. Resource name of the workload that matches the
-   * criteria of the binding.
+   * Output only. Resource name of the workload that matches the criteria of the
+   * binding.
    *
    * The format can be either a relative resource name (e.g.,
    * `projects/my-project/zones/us-central1-a/instances/my-instance`) or a
@@ -90,9 +92,7 @@ public interface BindingMatchingResourceOrBuilder
    * `//compute.googleapis.com/projects/my-project/zones/us-central1-a/instances/my-instance`).
    * </pre>
    *
-   * <code>
-   * string resource = 2 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>string resource = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for resource.
    */

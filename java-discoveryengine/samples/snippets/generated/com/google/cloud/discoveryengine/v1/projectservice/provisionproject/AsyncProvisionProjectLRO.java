@@ -42,6 +42,7 @@ public class AsyncProvisionProjectLRO {
               .setName(ProjectName.of("[PROJECT]").toString())
               .setAcceptDataUseTerms(true)
               .setDataUseTermsVersion("dataUseTermsVersion-1913570450")
+              .setSaasParams(ProvisionProjectRequest.SaasParams.newBuilder().build())
               .build();
       OperationFuture<Project, ProvisionProjectMetadata> future =
           projectServiceClient.provisionProjectOperationCallable().futureCall(request);

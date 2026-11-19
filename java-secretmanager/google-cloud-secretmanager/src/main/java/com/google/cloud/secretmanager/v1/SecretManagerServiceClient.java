@@ -372,8 +372,8 @@ import org.jspecify.annotations.Nullable;
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li><p> enableManagedRotation(SecretName parent, EnableManagedRotationRequest.CloudSQLSingleUserCredentials cloudSqlSingleUserCredentials)
- *           <li><p> enableManagedRotation(String parent, EnableManagedRotationRequest.CloudSQLSingleUserCredentials cloudSqlSingleUserCredentials)
+ *           <li><p> enableManagedRotation(SecretName parent, CloudSqlSingleUserCredentials cloudSqlSingleUserCredentials)
+ *           <li><p> enableManagedRotation(String parent, CloudSqlSingleUserCredentials cloudSqlSingleUserCredentials)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
@@ -2539,8 +2539,8 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * try (SecretManagerServiceClient secretManagerServiceClient =
    *     SecretManagerServiceClient.create()) {
    *   SecretName parent = SecretName.ofProjectSecretName("[PROJECT]", "[SECRET]");
-   *   EnableManagedRotationRequest.CloudSQLSingleUserCredentials cloudSqlSingleUserCredentials =
-   *       EnableManagedRotationRequest.CloudSQLSingleUserCredentials.newBuilder().build();
+   *   CloudSqlSingleUserCredentials cloudSqlSingleUserCredentials =
+   *       CloudSqlSingleUserCredentials.newBuilder().build();
    *   SecretVersion response =
    *       secretManagerServiceClient.enableManagedRotation(parent, cloudSqlSingleUserCredentials);
    * }
@@ -2554,8 +2554,7 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SecretVersion enableManagedRotation(
-      @Nullable SecretName parent,
-      EnableManagedRotationRequest.CloudSQLSingleUserCredentials cloudSqlSingleUserCredentials) {
+      @Nullable SecretName parent, CloudSqlSingleUserCredentials cloudSqlSingleUserCredentials) {
     EnableManagedRotationRequest request =
         EnableManagedRotationRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2581,8 +2580,8 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * try (SecretManagerServiceClient secretManagerServiceClient =
    *     SecretManagerServiceClient.create()) {
    *   String parent = SecretName.ofProjectSecretName("[PROJECT]", "[SECRET]").toString();
-   *   EnableManagedRotationRequest.CloudSQLSingleUserCredentials cloudSqlSingleUserCredentials =
-   *       EnableManagedRotationRequest.CloudSQLSingleUserCredentials.newBuilder().build();
+   *   CloudSqlSingleUserCredentials cloudSqlSingleUserCredentials =
+   *       CloudSqlSingleUserCredentials.newBuilder().build();
    *   SecretVersion response =
    *       secretManagerServiceClient.enableManagedRotation(parent, cloudSqlSingleUserCredentials);
    * }
@@ -2596,8 +2595,7 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SecretVersion enableManagedRotation(
-      String parent,
-      EnableManagedRotationRequest.CloudSQLSingleUserCredentials cloudSqlSingleUserCredentials) {
+      String parent, CloudSqlSingleUserCredentials cloudSqlSingleUserCredentials) {
     EnableManagedRotationRequest request =
         EnableManagedRotationRequest.newBuilder()
             .setParent(parent)

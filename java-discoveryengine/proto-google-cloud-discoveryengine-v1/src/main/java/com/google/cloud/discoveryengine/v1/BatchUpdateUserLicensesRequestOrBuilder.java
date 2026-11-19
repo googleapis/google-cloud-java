@@ -30,7 +30,7 @@ public interface BatchUpdateUserLicensesRequestOrBuilder
    *
    *
    * <pre>
-   * The inline source for the input content for document embeddings.
+   * The inline source for the input content for license assignment.
    * </pre>
    *
    * <code>
@@ -45,7 +45,7 @@ public interface BatchUpdateUserLicensesRequestOrBuilder
    *
    *
    * <pre>
-   * The inline source for the input content for document embeddings.
+   * The inline source for the input content for license assignment.
    * </pre>
    *
    * <code>
@@ -60,7 +60,7 @@ public interface BatchUpdateUserLicensesRequestOrBuilder
    *
    *
    * <pre>
-   * The inline source for the input content for document embeddings.
+   * The inline source for the input content for license assignment.
    * </pre>
    *
    * <code>
@@ -74,7 +74,8 @@ public interface BatchUpdateUserLicensesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The parent [UserStore][] resource name, format:
+   * Required. The parent [UserStore][google.cloud.discoveryengine.v1.UserStore]
+   * resource name, format:
    * `projects/{project}/locations/{location}/userStores/{user_store_id}`.
    * </pre>
    *
@@ -90,7 +91,8 @@ public interface BatchUpdateUserLicensesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The parent [UserStore][] resource name, format:
+   * Required. The parent [UserStore][google.cloud.discoveryengine.v1.UserStore]
+   * resource name, format:
    * `projects/{project}/locations/{location}/userStores/{user_store_id}`.
    * </pre>
    *

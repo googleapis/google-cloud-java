@@ -141,6 +141,20 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessage
      * <code>WALKING = 2;</code>
      */
     WALKING(2),
+    /**
+     *
+     *
+     * <pre>
+     * Two-wheeled, motorized vehicle. For example, motorcycle. Note that this
+     * differs from the BICYCLING travel mode which covers human-powered mode.
+     * This travel mode is supported only in the countries listed at
+     * [Countries and regions supported for two-wheeled
+     * vehicles](https://developers.google.com/maps/documentation/routes/coverage-two-wheeled).
+     * </pre>
+     *
+     * <code>TWO_WHEELER = 5;</code>
+     */
+    TWO_WHEELER(5),
     UNRECOGNIZED(-1),
     ;
 
@@ -187,6 +201,21 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessage
      */
     public static final int WALKING_VALUE = 2;
 
+    /**
+     *
+     *
+     * <pre>
+     * Two-wheeled, motorized vehicle. For example, motorcycle. Note that this
+     * differs from the BICYCLING travel mode which covers human-powered mode.
+     * This travel mode is supported only in the countries listed at
+     * [Countries and regions supported for two-wheeled
+     * vehicles](https://developers.google.com/maps/documentation/routes/coverage-two-wheeled).
+     * </pre>
+     *
+     * <code>TWO_WHEELER = 5;</code>
+     */
+    public static final int TWO_WHEELER_VALUE = 5;
+
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -217,6 +246,8 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessage
           return DRIVING;
         case 2:
           return WALKING;
+        case 5:
+          return TWO_WHEELER;
         default:
           return null;
       }
@@ -4826,11 +4857,13 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessage
      * makes the route incur a cost, quadratic in the duration. This cost adds
      * up to other costs defined in the model, with the same unit.
      *
-     * If defined, `quadratic_soft_max_duration` must be nonnegative. If
-     * `max_duration` is also defined, `quadratic_soft_max_duration` must be
-     * less than `max_duration`, and the difference must be no larger than one
-     * day:
+     * If `quadratic_soft_max_duration` is set, the following conditions must be
+     * met:
      *
+     * *   It must be non-negative.
+     * *   `max_duration` must be defined.
+     * *   `quadratic_soft_max_duration` must be less than `max_duration`.
+     * *   The difference must be no more than one day:
      * `max_duration - quadratic_soft_max_duration &lt;= 86400 seconds`
      * </pre>
      *
@@ -4848,11 +4881,13 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessage
      * makes the route incur a cost, quadratic in the duration. This cost adds
      * up to other costs defined in the model, with the same unit.
      *
-     * If defined, `quadratic_soft_max_duration` must be nonnegative. If
-     * `max_duration` is also defined, `quadratic_soft_max_duration` must be
-     * less than `max_duration`, and the difference must be no larger than one
-     * day:
+     * If `quadratic_soft_max_duration` is set, the following conditions must be
+     * met:
      *
+     * *   It must be non-negative.
+     * *   `max_duration` must be defined.
+     * *   `quadratic_soft_max_duration` must be less than `max_duration`.
+     * *   The difference must be no more than one day:
      * `max_duration - quadratic_soft_max_duration &lt;= 86400 seconds`
      * </pre>
      *
@@ -4870,11 +4905,13 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessage
      * makes the route incur a cost, quadratic in the duration. This cost adds
      * up to other costs defined in the model, with the same unit.
      *
-     * If defined, `quadratic_soft_max_duration` must be nonnegative. If
-     * `max_duration` is also defined, `quadratic_soft_max_duration` must be
-     * less than `max_duration`, and the difference must be no larger than one
-     * day:
+     * If `quadratic_soft_max_duration` is set, the following conditions must be
+     * met:
      *
+     * *   It must be non-negative.
+     * *   `max_duration` must be defined.
+     * *   `quadratic_soft_max_duration` must be less than `max_duration`.
+     * *   The difference must be no more than one day:
      * `max_duration - quadratic_soft_max_duration &lt;= 86400 seconds`
      * </pre>
      *
@@ -5162,11 +5199,13 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessage
      * makes the route incur a cost, quadratic in the duration. This cost adds
      * up to other costs defined in the model, with the same unit.
      *
-     * If defined, `quadratic_soft_max_duration` must be nonnegative. If
-     * `max_duration` is also defined, `quadratic_soft_max_duration` must be
-     * less than `max_duration`, and the difference must be no larger than one
-     * day:
+     * If `quadratic_soft_max_duration` is set, the following conditions must be
+     * met:
      *
+     * *   It must be non-negative.
+     * *   `max_duration` must be defined.
+     * *   `quadratic_soft_max_duration` must be less than `max_duration`.
+     * *   The difference must be no more than one day:
      * `max_duration - quadratic_soft_max_duration &lt;= 86400 seconds`
      * </pre>
      *
@@ -5187,11 +5226,13 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessage
      * makes the route incur a cost, quadratic in the duration. This cost adds
      * up to other costs defined in the model, with the same unit.
      *
-     * If defined, `quadratic_soft_max_duration` must be nonnegative. If
-     * `max_duration` is also defined, `quadratic_soft_max_duration` must be
-     * less than `max_duration`, and the difference must be no larger than one
-     * day:
+     * If `quadratic_soft_max_duration` is set, the following conditions must be
+     * met:
      *
+     * *   It must be non-negative.
+     * *   `max_duration` must be defined.
+     * *   `quadratic_soft_max_duration` must be less than `max_duration`.
+     * *   The difference must be no more than one day:
      * `max_duration - quadratic_soft_max_duration &lt;= 86400 seconds`
      * </pre>
      *
@@ -5214,11 +5255,13 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessage
      * makes the route incur a cost, quadratic in the duration. This cost adds
      * up to other costs defined in the model, with the same unit.
      *
-     * If defined, `quadratic_soft_max_duration` must be nonnegative. If
-     * `max_duration` is also defined, `quadratic_soft_max_duration` must be
-     * less than `max_duration`, and the difference must be no larger than one
-     * day:
+     * If `quadratic_soft_max_duration` is set, the following conditions must be
+     * met:
      *
+     * *   It must be non-negative.
+     * *   `max_duration` must be defined.
+     * *   `quadratic_soft_max_duration` must be less than `max_duration`.
+     * *   The difference must be no more than one day:
      * `max_duration - quadratic_soft_max_duration &lt;= 86400 seconds`
      * </pre>
      *
@@ -6317,11 +6360,13 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessage
        * makes the route incur a cost, quadratic in the duration. This cost adds
        * up to other costs defined in the model, with the same unit.
        *
-       * If defined, `quadratic_soft_max_duration` must be nonnegative. If
-       * `max_duration` is also defined, `quadratic_soft_max_duration` must be
-       * less than `max_duration`, and the difference must be no larger than one
-       * day:
+       * If `quadratic_soft_max_duration` is set, the following conditions must be
+       * met:
        *
+       * *   It must be non-negative.
+       * *   `max_duration` must be defined.
+       * *   `quadratic_soft_max_duration` must be less than `max_duration`.
+       * *   The difference must be no more than one day:
        * `max_duration - quadratic_soft_max_duration &lt;= 86400 seconds`
        * </pre>
        *
@@ -6341,11 +6386,13 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessage
        * makes the route incur a cost, quadratic in the duration. This cost adds
        * up to other costs defined in the model, with the same unit.
        *
-       * If defined, `quadratic_soft_max_duration` must be nonnegative. If
-       * `max_duration` is also defined, `quadratic_soft_max_duration` must be
-       * less than `max_duration`, and the difference must be no larger than one
-       * day:
+       * If `quadratic_soft_max_duration` is set, the following conditions must be
+       * met:
        *
+       * *   It must be non-negative.
+       * *   `max_duration` must be defined.
+       * *   `quadratic_soft_max_duration` must be less than `max_duration`.
+       * *   The difference must be no more than one day:
        * `max_duration - quadratic_soft_max_duration &lt;= 86400 seconds`
        * </pre>
        *
@@ -6371,11 +6418,13 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessage
        * makes the route incur a cost, quadratic in the duration. This cost adds
        * up to other costs defined in the model, with the same unit.
        *
-       * If defined, `quadratic_soft_max_duration` must be nonnegative. If
-       * `max_duration` is also defined, `quadratic_soft_max_duration` must be
-       * less than `max_duration`, and the difference must be no larger than one
-       * day:
+       * If `quadratic_soft_max_duration` is set, the following conditions must be
+       * met:
        *
+       * *   It must be non-negative.
+       * *   `max_duration` must be defined.
+       * *   `quadratic_soft_max_duration` must be less than `max_duration`.
+       * *   The difference must be no more than one day:
        * `max_duration - quadratic_soft_max_duration &lt;= 86400 seconds`
        * </pre>
        *
@@ -6403,11 +6452,13 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessage
        * makes the route incur a cost, quadratic in the duration. This cost adds
        * up to other costs defined in the model, with the same unit.
        *
-       * If defined, `quadratic_soft_max_duration` must be nonnegative. If
-       * `max_duration` is also defined, `quadratic_soft_max_duration` must be
-       * less than `max_duration`, and the difference must be no larger than one
-       * day:
+       * If `quadratic_soft_max_duration` is set, the following conditions must be
+       * met:
        *
+       * *   It must be non-negative.
+       * *   `max_duration` must be defined.
+       * *   `quadratic_soft_max_duration` must be less than `max_duration`.
+       * *   The difference must be no more than one day:
        * `max_duration - quadratic_soft_max_duration &lt;= 86400 seconds`
        * </pre>
        *
@@ -6433,11 +6484,13 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessage
        * makes the route incur a cost, quadratic in the duration. This cost adds
        * up to other costs defined in the model, with the same unit.
        *
-       * If defined, `quadratic_soft_max_duration` must be nonnegative. If
-       * `max_duration` is also defined, `quadratic_soft_max_duration` must be
-       * less than `max_duration`, and the difference must be no larger than one
-       * day:
+       * If `quadratic_soft_max_duration` is set, the following conditions must be
+       * met:
        *
+       * *   It must be non-negative.
+       * *   `max_duration` must be defined.
+       * *   `quadratic_soft_max_duration` must be less than `max_duration`.
+       * *   The difference must be no more than one day:
        * `max_duration - quadratic_soft_max_duration &lt;= 86400 seconds`
        * </pre>
        *
@@ -6470,11 +6523,13 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessage
        * makes the route incur a cost, quadratic in the duration. This cost adds
        * up to other costs defined in the model, with the same unit.
        *
-       * If defined, `quadratic_soft_max_duration` must be nonnegative. If
-       * `max_duration` is also defined, `quadratic_soft_max_duration` must be
-       * less than `max_duration`, and the difference must be no larger than one
-       * day:
+       * If `quadratic_soft_max_duration` is set, the following conditions must be
+       * met:
        *
+       * *   It must be non-negative.
+       * *   `max_duration` must be defined.
+       * *   `quadratic_soft_max_duration` must be less than `max_duration`.
+       * *   The difference must be no more than one day:
        * `max_duration - quadratic_soft_max_duration &lt;= 86400 seconds`
        * </pre>
        *
@@ -6499,11 +6554,13 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessage
        * makes the route incur a cost, quadratic in the duration. This cost adds
        * up to other costs defined in the model, with the same unit.
        *
-       * If defined, `quadratic_soft_max_duration` must be nonnegative. If
-       * `max_duration` is also defined, `quadratic_soft_max_duration` must be
-       * less than `max_duration`, and the difference must be no larger than one
-       * day:
+       * If `quadratic_soft_max_duration` is set, the following conditions must be
+       * met:
        *
+       * *   It must be non-negative.
+       * *   `max_duration` must be defined.
+       * *   `quadratic_soft_max_duration` must be less than `max_duration`.
+       * *   The difference must be no more than one day:
        * `max_duration - quadratic_soft_max_duration &lt;= 86400 seconds`
        * </pre>
        *
@@ -6523,11 +6580,13 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessage
        * makes the route incur a cost, quadratic in the duration. This cost adds
        * up to other costs defined in the model, with the same unit.
        *
-       * If defined, `quadratic_soft_max_duration` must be nonnegative. If
-       * `max_duration` is also defined, `quadratic_soft_max_duration` must be
-       * less than `max_duration`, and the difference must be no larger than one
-       * day:
+       * If `quadratic_soft_max_duration` is set, the following conditions must be
+       * met:
        *
+       * *   It must be non-negative.
+       * *   `max_duration` must be defined.
+       * *   `quadratic_soft_max_duration` must be less than `max_duration`.
+       * *   The difference must be no more than one day:
        * `max_duration - quadratic_soft_max_duration &lt;= 86400 seconds`
        * </pre>
        *
@@ -6551,11 +6610,13 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessage
        * makes the route incur a cost, quadratic in the duration. This cost adds
        * up to other costs defined in the model, with the same unit.
        *
-       * If defined, `quadratic_soft_max_duration` must be nonnegative. If
-       * `max_duration` is also defined, `quadratic_soft_max_duration` must be
-       * less than `max_duration`, and the difference must be no larger than one
-       * day:
+       * If `quadratic_soft_max_duration` is set, the following conditions must be
+       * met:
        *
+       * *   It must be non-negative.
+       * *   `max_duration` must be defined.
+       * *   `quadratic_soft_max_duration` must be less than `max_duration`.
+       * *   The difference must be no more than one day:
        * `max_duration - quadratic_soft_max_duration &lt;= 86400 seconds`
        * </pre>
        *

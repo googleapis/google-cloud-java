@@ -16,16 +16,23 @@
 
 package com.google.cloud.spanner;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThrows;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.never;
+import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 import com.google.api.core.ApiFutures;
 import com.google.cloud.Timestamp;
+import com.google.cloud.spanner.TransactionManager.TransactionState;
+import com.google.protobuf.Empty;
 import io.opentelemetry.api.trace.Span;
 import io.opentelemetry.context.Scope;
+import java.util.concurrent.ExecutionException;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
@@ -55,5 +62,116 @@ public class AsyncTransactionManagerImplTest {
       manager.commitAsync();
       verify(transaction).commitAsync();
     }
+  }
+
+  @Test
+  public void testCommitFailsWithDeadlineExceededRollsBack() {
+    Span oTspan = mock(Span.class);
+    ISpan span = new OpenTelemetrySpan(oTspan);
+    when(oTspan.makeCurrent()).thenReturn(mock(Scope.class));
+    when(session.newTransaction(eq(Options.fromTransactionOptions()), any()))
+        .thenReturn(transaction);
+    when(transaction.ensureTxnAsync()).thenReturn(ApiFutures.immediateFuture(null));
+    when(transaction.commitAsync())
+        .thenReturn(
+            ApiFutures.immediateFailedFuture(
+                SpannerExceptionFactory.newSpannerException(
+                    ErrorCode.DEADLINE_EXCEEDED, "commit deadline exceeded")));
+    when(transaction.rollbackAsync())
+        .thenReturn(ApiFutures.immediateFuture(Empty.getDefaultInstance()));
+    try (AsyncTransactionManagerImpl manager = new AsyncTransactionManagerImpl(session, span)) {
+      manager.beginAsync();
+      assertThrows(ExecutionException.class, () -> manager.commitAsync().get());
+      assertEquals(TransactionState.COMMIT_FAILED, manager.getState());
+      verify(transaction, times(1)).rollbackAsync();
+    }
+  }
+
+  @Test
+  public void testCommitFailsWithCancelledRollsBack() {
+    Span oTspan = mock(Span.class);
+    ISpan span = new OpenTelemetrySpan(oTspan);
+    when(oTspan.makeCurrent()).thenReturn(mock(Scope.class));
+    when(session.newTransaction(eq(Options.fromTransactionOptions()), any()))
+        .thenReturn(transaction);
+    when(transaction.ensureTxnAsync()).thenReturn(ApiFutures.immediateFuture(null));
+    when(transaction.commitAsync())
+        .thenReturn(
+            ApiFutures.immediateFailedFuture(
+                SpannerExceptionFactory.newSpannerException(
+                    ErrorCode.CANCELLED, "commit cancelled")));
+    when(transaction.rollbackAsync())
+        .thenReturn(ApiFutures.immediateFuture(Empty.getDefaultInstance()));
+    try (AsyncTransactionManagerImpl manager = new AsyncTransactionManagerImpl(session, span)) {
+      manager.beginAsync();
+      assertThrows(ExecutionException.class, () -> manager.commitAsync().get());
+      assertEquals(TransactionState.COMMIT_FAILED, manager.getState());
+      verify(transaction, times(1)).rollbackAsync();
+    }
+  }
+
+  @Test
+  public void testCommitFailsWithUnavailableRollsBack() {
+    Span oTspan = mock(Span.class);
+    ISpan span = new OpenTelemetrySpan(oTspan);
+    when(oTspan.makeCurrent()).thenReturn(mock(Scope.class));
+    when(session.newTransaction(eq(Options.fromTransactionOptions()), any()))
+        .thenReturn(transaction);
+    when(transaction.ensureTxnAsync()).thenReturn(ApiFutures.immediateFuture(null));
+    when(transaction.commitAsync())
+        .thenReturn(
+            ApiFutures.immediateFailedFuture(
+                SpannerExceptionFactory.newSpannerException(
+                    ErrorCode.UNAVAILABLE, "commit unavailable")));
+    when(transaction.rollbackAsync())
+        .thenReturn(ApiFutures.immediateFuture(Empty.getDefaultInstance()));
+    try (AsyncTransactionManagerImpl manager = new AsyncTransactionManagerImpl(session, span)) {
+      manager.beginAsync();
+      assertThrows(ExecutionException.class, () -> manager.commitAsync().get());
+      assertEquals(TransactionState.COMMIT_FAILED, manager.getState());
+      verify(transaction, times(1)).rollbackAsync();
+    }
+  }
+
+  @Test
+  public void testCommitFailsWithResourceExhaustedWithRetryInfoRollsBack() {
+    Span oTspan = mock(Span.class);
+    ISpan span = new OpenTelemetrySpan(oTspan);
+    when(oTspan.makeCurrent()).thenReturn(mock(Scope.class));
+    when(session.newTransaction(eq(Options.fromTransactionOptions()), any()))
+        .thenReturn(transaction);
+    when(transaction.ensureTxnAsync()).thenReturn(ApiFutures.immediateFuture(null));
+    when(transaction.commitAsync())
+        .thenReturn(
+            ApiFutures.immediateFailedFuture(
+                TransactionRunnerImplTest.resourceExhaustedWithRetryInfo()));
+    when(transaction.rollbackAsync())
+        .thenReturn(ApiFutures.immediateFuture(Empty.getDefaultInstance()));
+    try (AsyncTransactionManagerImpl manager = new AsyncTransactionManagerImpl(session, span)) {
+      manager.beginAsync();
+      assertThrows(ExecutionException.class, () -> manager.commitAsync().get());
+      assertEquals(TransactionState.COMMIT_FAILED, manager.getState());
+      verify(transaction, times(1)).rollbackAsync();
+    }
+  }
+
+  @Test
+  public void testCommitFailsWithNonAbortDoesNotRollBack() {
+    Span oTspan = mock(Span.class);
+    ISpan span = new OpenTelemetrySpan(oTspan);
+    when(oTspan.makeCurrent()).thenReturn(mock(Scope.class));
+    when(session.newTransaction(eq(Options.fromTransactionOptions()), any()))
+        .thenReturn(transaction);
+    when(transaction.ensureTxnAsync()).thenReturn(ApiFutures.immediateFuture(null));
+    when(transaction.commitAsync())
+        .thenReturn(
+            ApiFutures.immediateFailedFuture(
+                SpannerExceptionFactory.newSpannerException(ErrorCode.UNKNOWN, "unknown error")));
+    try (AsyncTransactionManagerImpl manager = new AsyncTransactionManagerImpl(session, span)) {
+      manager.beginAsync();
+      assertThrows(ExecutionException.class, () -> manager.commitAsync().get());
+      assertEquals(TransactionState.COMMIT_FAILED, manager.getState());
+    }
+    verify(transaction, never()).rollbackAsync();
   }
 }

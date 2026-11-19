@@ -370,9 +370,10 @@ public class WorkerPoolsClient implements BackgroundResource {
    *     Format: `projects/{project}/locations/{location}`, where `{project}` can be project id or
    *     number. Only lowercase characters, digits, and hyphens.
    * @param workerPool Required. The WorkerPool instance to create.
-   * @param workerPoolId Required. The unique identifier for the WorkerPool. It must begin with
+   * @param workerPoolId Optional. The unique identifier for the WorkerPool. It must begin with
    *     letter, and cannot end with hyphen; must contain fewer than 50 characters. The name of the
-   *     worker pool becomes `{parent}/workerPools/{worker_pool_id}`.
+   *     worker pool becomes `{parent}/workerPools/{worker_pool_id}`. If not provided, the server
+   *     will generate a unique `worker_pool_id`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<WorkerPool, WorkerPool> createWorkerPoolAsync(
@@ -411,9 +412,10 @@ public class WorkerPoolsClient implements BackgroundResource {
    *     Format: `projects/{project}/locations/{location}`, where `{project}` can be project id or
    *     number. Only lowercase characters, digits, and hyphens.
    * @param workerPool Required. The WorkerPool instance to create.
-   * @param workerPoolId Required. The unique identifier for the WorkerPool. It must begin with
+   * @param workerPoolId Optional. The unique identifier for the WorkerPool. It must begin with
    *     letter, and cannot end with hyphen; must contain fewer than 50 characters. The name of the
-   *     worker pool becomes `{parent}/workerPools/{worker_pool_id}`.
+   *     worker pool becomes `{parent}/workerPools/{worker_pool_id}`. If not provided, the server
+   *     will generate a unique `worker_pool_id`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<WorkerPool, WorkerPool> createWorkerPoolAsync(

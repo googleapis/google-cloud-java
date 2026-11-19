@@ -100,6 +100,16 @@ public final class Compression extends com.google.protobuf.GeneratedMessage
      * <code>ZLIB = 1;</code>
      */
     ZLIB(1),
+    /**
+     *
+     *
+     * <pre>
+     * Zstd compression.
+     * </pre>
+     *
+     * <code>ZSTD = 3;</code>
+     */
+    ZSTD(3),
     UNRECOGNIZED(-1),
     ;
 
@@ -135,6 +145,17 @@ public final class Compression extends com.google.protobuf.GeneratedMessage
      */
     public static final int ZLIB_VALUE = 1;
 
+    /**
+     *
+     *
+     * <pre>
+     * Zstd compression.
+     * </pre>
+     *
+     * <code>ZSTD = 3;</code>
+     */
+    public static final int ZSTD_VALUE = 3;
+
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -163,6 +184,8 @@ public final class Compression extends com.google.protobuf.GeneratedMessage
           return COMPRESSION_ALGORITHM_UNSPECIFIED;
         case 1:
           return ZLIB;
+        case 3:
+          return ZSTD;
         default:
           return null;
       }

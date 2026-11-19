@@ -18,6 +18,7 @@ package com.google.cloud.backupdr.v1.samples;
 
 // [START backupdr_v1_generated_BackupDR_DeleteBackupPlanAssociation_LRO_async]
 import com.google.api.gax.longrunning.OperationFuture;
+import com.google.cloud.backupdr.v1.AutoProtectionPolicyBindingName;
 import com.google.cloud.backupdr.v1.BackupDRClient;
 import com.google.cloud.backupdr.v1.BackupPlanAssociationName;
 import com.google.cloud.backupdr.v1.DeleteBackupPlanAssociationRequest;
@@ -44,6 +45,10 @@ public class AsyncDeleteBackupPlanAssociationLRO {
                           "[PROJECT]", "[LOCATION]", "[BACKUP_PLAN_ASSOCIATION]")
                       .toString())
               .setRequestId("requestId693933066")
+              .setAutoProtectionPolicyBinding(
+                  AutoProtectionPolicyBindingName.of(
+                          "[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]", "[BINDING]")
+                      .toString())
               .build();
       OperationFuture<Empty, OperationMetadata> future =
           backupDRClient.deleteBackupPlanAssociationOperationCallable().futureCall(request);

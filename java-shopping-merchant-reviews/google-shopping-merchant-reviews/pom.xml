@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.shopping</groupId>
   <artifactId>google-shopping-merchant-reviews</artifactId>
-  <version>0.46.0</version><!-- {x-version-update:google-shopping-merchant-reviews:current} -->
+  <version>0.49.0</version><!-- {x-version-update:google-shopping-merchant-reviews:current} -->
   <packaging>jar</packaging>
   <name>Google Merchant API</name>
   <description>Merchant API Programmatically manage your Merchant Center Accounts.</description>
   <parent>
     <groupId>com.google.shopping</groupId>
     <artifactId>google-shopping-merchant-reviews-parent</artifactId>
-    <version>0.46.0</version><!-- {x-version-update:google-shopping-merchant-reviews:current} -->
+    <version>0.49.0</version><!-- {x-version-update:google-shopping-merchant-reviews:current} -->
   </parent>
   <properties>
     <site.installationModule>google-shopping-merchant-reviews</site.installationModule>
@@ -45,10 +45,6 @@
     <dependency>
       <groupId>com.google.shopping.api.grpc</groupId>
       <artifactId>proto-google-shopping-merchant-reviews-v1</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>com.google.shopping.api.grpc</groupId>
-      <artifactId>proto-google-shopping-merchant-reviews-v1beta</artifactId>
     </dependency>
     <!-- {x-generated-proto-dependencies-end} -->
     <dependency>
@@ -97,11 +93,6 @@
     <dependency>
       <groupId>com.google.shopping.api.grpc</groupId>
       <artifactId>grpc-google-shopping-merchant-reviews-v1</artifactId>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>com.google.shopping.api.grpc</groupId>
-      <artifactId>grpc-google-shopping-merchant-reviews-v1beta</artifactId>
       <scope>test</scope>
     </dependency>
     <!-- {x-generated-grpc-dependencies-end} -->

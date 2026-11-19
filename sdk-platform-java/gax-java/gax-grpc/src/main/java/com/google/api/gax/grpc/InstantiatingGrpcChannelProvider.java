@@ -110,6 +110,12 @@ public final class InstantiatingGrpcChannelProvider implements TransportChannelP
   @VisibleForTesting
   static final String DIRECT_PATH_ENV_ENABLE_XDS = "GOOGLE_CLOUD_ENABLE_DIRECT_PATH_XDS";
 
+  @VisibleForTesting
+  static final String DIRECT_PATH_ENV_ENABLE_XDS_OVER_INTERCONNECT =
+      "GOOGLE_CLOUD_ENABLE_DIRECT_PATH_XDS_OVER_INTERCONNECT";
+
+  private static final String DIRECT_PATH_INTERCONNECT_INFIX = "-direct.";
+
   // The public portion of the mTLS MDS root certificate is stored for performing
   // cert verification when establishing an mTLS connection with the MDS. See
   // {@link <a
@@ -152,6 +158,7 @@ public final class InstantiatingGrpcChannelProvider implements TransportChannelP
   private final @Nullable ChannelPrimer channelPrimer;
   private final @Nullable Boolean attemptDirectPath;
   private final @Nullable Boolean attemptDirectPathXds;
+  private final @Nullable Boolean attemptDirectPathXdsOverInterconnect;
   private final @Nullable Boolean allowNonDefaultServiceAccount;
   @VisibleForTesting final ImmutableMap<String, ?> directPathServiceConfig;
   private final @Nullable MtlsProvider mtlsProvider;
@@ -235,6 +242,7 @@ public final class InstantiatingGrpcChannelProvider implements TransportChannelP
     this.channelPrimer = builder.channelPrimer;
     this.attemptDirectPath = builder.attemptDirectPath;
     this.attemptDirectPathXds = builder.attemptDirectPathXds;
+    this.attemptDirectPathXdsOverInterconnect = builder.attemptDirectPathXdsOverInterconnect;
     this.allowNonDefaultServiceAccount = builder.allowNonDefaultServiceAccount;
     this.directPathServiceConfig =
         builder.directPathServiceConfig == null
@@ -400,9 +408,10 @@ public final class InstantiatingGrpcChannelProvider implements TransportChannelP
 
   private TransportChannel createChannel() throws IOException {
     // Only track the workload certificate for rotation when the pool's channels actually present
-    // it, mirroring the credential selection in createSingleChannel(): DirectPath channels use
-    // GoogleDefaultChannelCredentials (ALTS) rather than the client certificate, and without an
-    // mtlsProvider there is no client certificate KeyStore (S2A or plain TLS is used instead).
+    // it, mirroring the credential selection in createChannelBuilder(): DirectPath channels use
+    // createDirectPathChannelCredentials() (ALTS, or TLS over Interconnect) rather than the client
+    // certificate, and without an mtlsProvider there is no client certificate KeyStore (S2A or
+    // plain TLS is used instead).
     String workloadCertPath =
         !this.canUseDirectPath() && mtlsProvider != null
             ? certificateBasedAccess.getWorkloadCertPath()
@@ -440,30 +449,44 @@ public final class InstantiatingGrpcChannelProvider implements TransportChannelP
     return Boolean.parseBoolean(directPathXdsEnv);
   }
 
+  private boolean isAttemptDirectPathXdsOverInterconnect() {
+    String directPathInterconnectEnv =
+        envProvider.getenv(DIRECT_PATH_ENV_ENABLE_XDS_OVER_INTERCONNECT);
+    if (directPathInterconnectEnv != null) {
+      String trimmed = directPathInterconnectEnv.trim();
+      if ("true".equalsIgnoreCase(trimmed)) {
+        return true;
+      }
+      if ("false".equalsIgnoreCase(trimmed)) {
+        return false;
+      }
+    }
+    return Boolean.TRUE.equals(attemptDirectPathXdsOverInterconnect);
+  }
+
   /**
-   * This method tells if Direct Path xDS was enabled. There are two ways of enabling it: via
-   * environment variable (by setting GOOGLE_CLOUD_ENABLE_DIRECT_PATH_XDS=true) or when building
-   * this channel provider (via the {@link Builder#setAttemptDirectPathXds()} method).
+   * This method tells if Direct Path xDS was enabled. It can be enabled via environment variables
+   * ({@code GOOGLE_CLOUD_ENABLE_DIRECT_PATH_XDS=true} or {@code
+   * GOOGLE_CLOUD_ENABLE_DIRECT_PATH_XDS_OVER_INTERCONNECT=true}) or when building this channel
+   * provider (via {@link Builder#setAttemptDirectPathXds()} or {@link
+   * Builder#setAttemptDirectPathXdsOverInterconnect(boolean)}).
    *
    * @return true if Direct Path xDS was either enabled via env var or via builder option
    */
   @InternalApi
   public boolean isDirectPathXdsEnabled() {
-    return isDirectPathXdsEnabledViaEnv() || isDirectPathXdsEnabledViaBuilderOption();
+    return isDirectPathXdsEnabledViaEnv()
+        || isDirectPathXdsEnabledViaBuilderOption()
+        || isAttemptDirectPathXdsOverInterconnect();
   }
 
   // This method should be called once per client initialization, hence can not be called in the
   // builder or createSingleChannel, only in getTransportChannel which creates the first channel
   // for a client.
   private void logDirectPathMisconfig() {
-    if (!isDirectPathXdsEnabled()) {
-      return;
-    }
-
     Level level = isOnComputeEngine() ? Level.WARNING : Level.FINE;
 
     if (!isDirectPathEnabled()) {
-      // This misconfiguration occurs when Direct Path xDS is enabled, but Direct Path is not
       // Direct Path xDS can be enabled two ways: via environment variable or via builder.
       // Case 1: Direct Path is only enabled via xDS env var. We will _warn_ the user that this is
       // a misconfiguration if they intended to set the env var.
@@ -487,16 +510,29 @@ public final class InstantiatingGrpcChannelProvider implements TransportChannelP
                 + " attemptDirectPathXds options.");
       }
     } else {
-      // Case 3: credential is not correctly set
-      if (!isCredentialDirectPathCompatible()) {
+      // Case 3: DirectPath is enabled, but xDS is not.
+      if (!isDirectPathXdsEnabled()) {
+        LOG.log(
+            level,
+            "DirectPath is enabled, but DirectPath xDS is not. Please note that DirectPath will"
+                + " soon require xDS to be enabled. Please set the attemptDirectPathXds option.");
+      }
+      // Case 4: credential is not correctly set
+      if (isAttemptDirectPathXdsOverInterconnect() && needsCredentials()) {
+        // Always a warning: Interconnect is meant to run off GCE, where `level` is FINE.
+        LOG.log(
+            Level.WARNING,
+            "DirectPath over Interconnect is misconfigured. Credentials are required; without them"
+                + " the channel falls back to CloudPath.");
+      } else if (!isCredentialDirectPathCompatible()) {
         LOG.log(
             level,
             "DirectPath is misconfigured. Please make sure the credential is an instance of "
                 + ComputeEngineCredentials.class.getName()
                 + " .");
       }
-      // Case 4: not running on GCE
-      if (!isOnComputeEngine()) {
+      // Case 5: not running on GCE
+      if (!isOnComputeEngine() && !isAttemptDirectPathXdsOverInterconnect()) {
         LOG.log(
             level,
             "DirectPath is misconfigured. DirectPath is only available in a GCE environment.");
@@ -509,6 +545,10 @@ public final class InstantiatingGrpcChannelProvider implements TransportChannelP
     // DirectPath requires a call credential during gRPC channel construction.
     if (needsCredentials()) {
       return false;
+    }
+    // xDS over Interconnect is designed to work on-premise using arbitrary service credentials.
+    if (isAttemptDirectPathXdsOverInterconnect()) {
+      return true;
     }
     if (allowNonDefaultServiceAccount != null && allowNonDefaultServiceAccount) {
       return true;
@@ -719,6 +759,36 @@ public final class InstantiatingGrpcChannelProvider implements TransportChannelP
     return s2aChannelCredentials;
   }
 
+  /**
+   * Returns the channel credentials for a DirectPath channel.
+   *
+   * <p>Over Interconnect every subchannel negotiates TLS. {@link GoogleDefaultChannelCredentials}
+   * would select ALTS for every xDS cluster it does not recognize as a CFE ({@code google_cfe_})
+   * cluster, which includes the regional Interconnect clusters, and ALTS is unavailable outside
+   * Google Cloud. The call credentials are attached to the channel credentials because those are
+   * the only credentials the RLS control channel inherits from the parent channel. ALTS hard-bound
+   * tokens ({@code altsCallCredentials}) are not requested because they require an ALTS connection.
+   */
+  @VisibleForTesting
+  ChannelCredentials createDirectPathChannelCredentials() {
+    if (isAttemptDirectPathXdsOverInterconnect()) {
+      return CompositeChannelCredentials.create(
+          TlsChannelCredentials.create(),
+          MoreCallCredentials.from(
+              Preconditions.checkNotNull(
+                  credentials, "DirectPath over Interconnect requires credentials")));
+    }
+    GoogleDefaultChannelCredentials.Builder credsBuilder =
+        GoogleDefaultChannelCredentials.newBuilder();
+    if (credentials != null) {
+      credsBuilder.callCredentials(MoreCallCredentials.from(credentials));
+    }
+    if (altsCallCredentials != null) {
+      credsBuilder.altsCallCredentials(altsCallCredentials);
+    }
+    return credsBuilder.build();
+  }
+
   @InternalApi("For internal use by google-cloud-java clients only")
   public ManagedChannelBuilder<?> createChannelBuilder() throws IOException {
     int colon = endpoint.lastIndexOf(':');
@@ -733,21 +803,22 @@ public final class InstantiatingGrpcChannelProvider implements TransportChannelP
     // Check DirectPath traffic.
     boolean useDirectPathXds = false;
     if (canUseDirectPath()) {
-      CallCredentials callCreds = MoreCallCredentials.from(credentials);
-      // altsCallCredentials may be null and GoogleDefaultChannelCredentials
-      // will solely use callCreds. Otherwise it uses altsCallCredentials
-      // for DirectPath connections and callCreds for CloudPath fallbacks.
-      ChannelCredentials channelCreds =
-          GoogleDefaultChannelCredentials.newBuilder()
-              .callCredentials(callCreds)
-              .altsCallCredentials(altsCallCredentials)
-              .build();
+      ChannelCredentials channelCreds = createDirectPathChannelCredentials();
       useDirectPathXds = isDirectPathXdsEnabled();
       if (useDirectPathXds) {
         // google-c2p: CloudToProd(C2P) Directpath. This scheme is defined in
         // io.grpc.googleapis.GoogleCloudToProdNameResolverProvider.
         // This resolver target must not have a port number.
-        builder = Grpc.newChannelBuilder("google-c2p:///" + serviceAddress, channelCreds);
+        String target = "google-c2p:///" + serviceAddress;
+        if (isAttemptDirectPathXdsOverInterconnect()) {
+          // DirectPath over Interconnect traffic is identified by the -direct hostname in the RPC
+          // :authority, which GoogleCloudToProdNameResolver natively derives from the target URI
+          // without needing overrideAuthority. Wildcard TLS certificates (*.googleapis.com)
+          // already match <service>-direct.googleapis.com.
+          target =
+              "google-c2p:///" + rewriteDirectPathInterconnectHost(serviceAddress) + "?force-xds";
+        }
+        builder = Grpc.newChannelBuilder(target, channelCreds);
       } else {
         builder = Grpc.newChannelBuilderForAddress(serviceAddress, port, channelCreds);
         builder.defaultServiceConfig(directPathServiceConfig);
@@ -880,13 +951,19 @@ public final class InstantiatingGrpcChannelProvider implements TransportChannelP
    * settings and a few other configurations/settings must also be valid for the request to go
    * through DirectPath.
    *
-   * <p>Checks: 1. Credentials are compatible 2.Running on Compute Engine 3. Universe Domain is
-   * configured to for the Google Default Universe
+   * <p>Checks: 1. Credentials are compatible 2. Running on Compute Engine (bypassed if
+   * attemptDirectPathXdsOverInterconnect is enabled) 3. Universe Domain is configured for the
+   * Google Default Universe
    *
    * @return if DirectPath is enabled for the client AND if the configurations are valid
    */
   @InternalApi
   public boolean canUseDirectPath() {
+    if (isAttemptDirectPathXdsOverInterconnect()) {
+      return isDirectPathEnabled()
+          && isCredentialDirectPathCompatible()
+          && canUseDirectPathWithUniverseDomain();
+    }
     return isDirectPathEnabled()
         && isCredentialDirectPathCompatible()
         && isOnComputeEngine()
@@ -982,6 +1059,7 @@ public final class InstantiatingGrpcChannelProvider implements TransportChannelP
     private ChannelPoolSettings channelPoolSettings;
     private @Nullable Boolean attemptDirectPath;
     private @Nullable Boolean attemptDirectPathXds;
+    private @Nullable Boolean attemptDirectPathXdsOverInterconnect;
     private @Nullable Boolean allowNonDefaultServiceAccount;
     private @Nullable ImmutableMap<String, ?> directPathServiceConfig;
     private List<HardBoundTokenTypes> allowedHardBoundTokenTypes;
@@ -1015,6 +1093,7 @@ public final class InstantiatingGrpcChannelProvider implements TransportChannelP
       this.channelPoolSettings = provider.channelPoolSettings;
       this.attemptDirectPath = provider.attemptDirectPath;
       this.attemptDirectPathXds = provider.attemptDirectPathXds;
+      this.attemptDirectPathXdsOverInterconnect = provider.attemptDirectPathXdsOverInterconnect;
       this.allowNonDefaultServiceAccount = provider.allowNonDefaultServiceAccount;
       this.allowedHardBoundTokenTypes = provider.allowedHardBoundTokenTypes;
       this.directPathServiceConfig = provider.directPathServiceConfig;
@@ -1322,6 +1401,26 @@ public final class InstantiatingGrpcChannelProvider implements TransportChannelP
       return this;
     }
 
+    /**
+     * Use DirectPath xDS over Interconnect. Bypasses GCP GCE environment checks.
+     *
+     * <p>DirectPath must also be enabled with {@link #setAttemptDirectPath(boolean)}; otherwise the
+     * channel uses CloudPath. Credentials are required, as for standard DirectPath; without them
+     * the channel falls back to CloudPath. The channel negotiates TLS rather than ALTS, which is
+     * unavailable outside Google Cloud. Application Default Credentials must also be available,
+     * because the google-c2p name resolver uses them for its connection to the control plane.
+     *
+     * <p>This can also be enabled or disabled via the {@code
+     * GOOGLE_CLOUD_ENABLE_DIRECT_PATH_XDS_OVER_INTERCONNECT} environment variable ({@code "true"}
+     * or {@code "false"}), which takes precedence over this builder option.
+     */
+    @InternalApi("For internal use by google-cloud-java clients only")
+    public Builder setAttemptDirectPathXdsOverInterconnect(
+        boolean attemptDirectPathXdsOverInterconnect) {
+      this.attemptDirectPathXdsOverInterconnect = attemptDirectPathXdsOverInterconnect;
+      return this;
+    }
+
     @VisibleForTesting
     Builder setEnvProvider(EnvironmentProvider envProvider) {
       this.envProvider = envProvider;
@@ -1479,6 +1578,18 @@ public final class InstantiatingGrpcChannelProvider implements TransportChannelP
 
     return ImmutableMap.<String, Object>of(
         "loadBalancingConfig", ImmutableList.of(pickFirstStrategy));
+  }
+
+  private static String rewriteDirectPathInterconnectHost(String serviceAddress) {
+    if (!serviceAddress.contains(DIRECT_PATH_INTERCONNECT_INFIX)) {
+      int dotIndex = serviceAddress.indexOf('.');
+      if (dotIndex > 0) {
+        return serviceAddress.substring(0, dotIndex)
+            + DIRECT_PATH_INTERCONNECT_INFIX
+            + serviceAddress.substring(dotIndex + 1);
+      }
+    }
+    return serviceAddress;
   }
 
   private static void validateEndpoint(String endpoint) {

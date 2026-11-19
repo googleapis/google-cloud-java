@@ -310,5 +310,50 @@ public interface ConditionOrBuilder
    */
   com.google.cloud.run.v2.Condition.ExecutionReason getExecutionReason();
 
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A reason for the instance condition.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.run.v2.Condition.InstanceReason instance_reason = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the instanceReason field is set.
+   */
+  boolean hasInstanceReason();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A reason for the instance condition.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.run.v2.Condition.InstanceReason instance_reason = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for instanceReason.
+   */
+  int getInstanceReasonValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A reason for the instance condition.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.run.v2.Condition.InstanceReason instance_reason = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The instanceReason.
+   */
+  com.google.cloud.run.v2.Condition.InstanceReason getInstanceReason();
+
   com.google.cloud.run.v2.Condition.ReasonsCase getReasonsCase();
 }

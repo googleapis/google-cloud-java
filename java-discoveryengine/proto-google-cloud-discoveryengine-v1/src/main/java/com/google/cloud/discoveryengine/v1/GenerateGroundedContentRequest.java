@@ -324,6 +324,38 @@ public final class GenerateGroundedContentRequest extends com.google.protobuf.Ge
      * @return The maxOutputTokens.
      */
     int getMaxOutputTokens();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Setting for provisioned throughput.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.GenerateGroundedContentRequest.GenerationSpec.ProvisionedThroughputSetting provisioned_throughput_setting = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for provisionedThroughputSetting.
+     */
+    int getProvisionedThroughputSettingValue();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Setting for provisioned throughput.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.GenerateGroundedContentRequest.GenerationSpec.ProvisionedThroughputSetting provisioned_throughput_setting = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The provisionedThroughputSetting.
+     */
+    com.google.cloud.discoveryengine.v1.GenerateGroundedContentRequest.GenerationSpec
+            .ProvisionedThroughputSetting
+        getProvisionedThroughputSetting();
   }
 
   /**
@@ -360,6 +392,7 @@ public final class GenerateGroundedContentRequest extends com.google.protobuf.Ge
     private GenerationSpec() {
       modelId_ = "";
       languageCode_ = "";
+      provisionedThroughputSetting_ = 0;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -377,6 +410,188 @@ public final class GenerateGroundedContentRequest extends com.google.protobuf.Ge
                   .class,
               com.google.cloud.discoveryengine.v1.GenerateGroundedContentRequest.GenerationSpec
                   .Builder.class);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Setting for provisioned throughput.
+     * </pre>
+     *
+     * Protobuf enum {@code
+     * google.cloud.discoveryengine.v1.GenerateGroundedContentRequest.GenerationSpec.ProvisionedThroughputSetting}
+     */
+    public enum ProvisionedThroughputSetting implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       *
+       *
+       * <pre>
+       * Default value. If the user has remaining provisioned throughput,
+       * provisioned throughput will be used. Otherwise, pay as you go will be
+       * used.
+       * </pre>
+       *
+       * <code>PROVISIONED_THROUGHPUT_SETTING_UNSPECIFIED = 0;</code>
+       */
+      PROVISIONED_THROUGHPUT_SETTING_UNSPECIFIED(0),
+      /**
+       *
+       *
+       * <pre>
+       * Only use provisioned throughput. If the user has no remaining
+       * provisioned throughput, an error will be returned.
+       * </pre>
+       *
+       * <code>PROVISIONED_THROUGHPUT_ONLY = 1;</code>
+       */
+      PROVISIONED_THROUGHPUT_ONLY(1),
+      /**
+       *
+       *
+       * <pre>
+       * Disables provisioned throughput.
+       * </pre>
+       *
+       * <code>PAY_AS_YOU_GO_ONLY = 2;</code>
+       */
+      PAY_AS_YOU_GO_ONLY(2),
+      UNRECOGNIZED(-1),
+      ;
+
+      static {
+        com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+            com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+            /* major= */ 4,
+            /* minor= */ 33,
+            /* patch= */ 6,
+            /* suffix= */ "",
+            "ProvisionedThroughputSetting");
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Default value. If the user has remaining provisioned throughput,
+       * provisioned throughput will be used. Otherwise, pay as you go will be
+       * used.
+       * </pre>
+       *
+       * <code>PROVISIONED_THROUGHPUT_SETTING_UNSPECIFIED = 0;</code>
+       */
+      public static final int PROVISIONED_THROUGHPUT_SETTING_UNSPECIFIED_VALUE = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * Only use provisioned throughput. If the user has no remaining
+       * provisioned throughput, an error will be returned.
+       * </pre>
+       *
+       * <code>PROVISIONED_THROUGHPUT_ONLY = 1;</code>
+       */
+      public static final int PROVISIONED_THROUGHPUT_ONLY_VALUE = 1;
+
+      /**
+       *
+       *
+       * <pre>
+       * Disables provisioned throughput.
+       * </pre>
+       *
+       * <code>PAY_AS_YOU_GO_ONLY = 2;</code>
+       */
+      public static final int PAY_AS_YOU_GO_ONLY_VALUE = 2;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static ProvisionedThroughputSetting valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static ProvisionedThroughputSetting forNumber(int value) {
+        switch (value) {
+          case 0:
+            return PROVISIONED_THROUGHPUT_SETTING_UNSPECIFIED;
+          case 1:
+            return PROVISIONED_THROUGHPUT_ONLY;
+          case 2:
+            return PAY_AS_YOU_GO_ONLY;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<ProvisionedThroughputSetting>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<ProvisionedThroughputSetting>
+          internalValueMap =
+              new com.google.protobuf.Internal.EnumLiteMap<ProvisionedThroughputSetting>() {
+                public ProvisionedThroughputSetting findValueByNumber(int number) {
+                  return ProvisionedThroughputSetting.forNumber(number);
+                }
+              };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.cloud.discoveryengine.v1.GenerateGroundedContentRequest.GenerationSpec
+            .getDescriptor()
+            .getEnumTypes()
+            .get(0);
+      }
+
+      private static final ProvisionedThroughputSetting[] VALUES = values();
+
+      public static ProvisionedThroughputSetting valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private ProvisionedThroughputSetting(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:google.cloud.discoveryengine.v1.GenerateGroundedContentRequest.GenerationSpec.ProvisionedThroughputSetting)
     }
 
     private int bitField0_;
@@ -733,6 +948,55 @@ public final class GenerateGroundedContentRequest extends com.google.protobuf.Ge
       return maxOutputTokens_;
     }
 
+    public static final int PROVISIONED_THROUGHPUT_SETTING_FIELD_NUMBER = 13;
+    private int provisionedThroughputSetting_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Setting for provisioned throughput.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.GenerateGroundedContentRequest.GenerationSpec.ProvisionedThroughputSetting provisioned_throughput_setting = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for provisionedThroughputSetting.
+     */
+    @java.lang.Override
+    public int getProvisionedThroughputSettingValue() {
+      return provisionedThroughputSetting_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Setting for provisioned throughput.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.GenerateGroundedContentRequest.GenerationSpec.ProvisionedThroughputSetting provisioned_throughput_setting = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The provisionedThroughputSetting.
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1.GenerateGroundedContentRequest.GenerationSpec
+            .ProvisionedThroughputSetting
+        getProvisionedThroughputSetting() {
+      com.google.cloud.discoveryengine.v1.GenerateGroundedContentRequest.GenerationSpec
+              .ProvisionedThroughputSetting
+          result =
+              com.google.cloud.discoveryengine.v1.GenerateGroundedContentRequest.GenerationSpec
+                  .ProvisionedThroughputSetting.forNumber(provisionedThroughputSetting_);
+      return result == null
+          ? com.google.cloud.discoveryengine.v1.GenerateGroundedContentRequest.GenerationSpec
+              .ProvisionedThroughputSetting.UNRECOGNIZED
+          : result;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -774,6 +1038,12 @@ public final class GenerateGroundedContentRequest extends com.google.protobuf.Ge
       if (((bitField0_ & 0x00000010) != 0)) {
         output.writeInt32(12, seed_);
       }
+      if (provisionedThroughputSetting_
+          != com.google.cloud.discoveryengine.v1.GenerateGroundedContentRequest.GenerationSpec
+              .ProvisionedThroughputSetting.PROVISIONED_THROUGHPUT_SETTING_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(13, provisionedThroughputSetting_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -809,6 +1079,14 @@ public final class GenerateGroundedContentRequest extends com.google.protobuf.Ge
       }
       if (((bitField0_ & 0x00000010) != 0)) {
         size += com.google.protobuf.CodedOutputStream.computeInt32Size(12, seed_);
+      }
+      if (provisionedThroughputSetting_
+          != com.google.cloud.discoveryengine.v1.GenerateGroundedContentRequest.GenerationSpec
+              .ProvisionedThroughputSetting.PROVISIONED_THROUGHPUT_SETTING_UNSPECIFIED
+              .getNumber()) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeEnumSize(
+                13, provisionedThroughputSetting_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -862,6 +1140,7 @@ public final class GenerateGroundedContentRequest extends com.google.protobuf.Ge
       if (hasMaxOutputTokens()) {
         if (getMaxOutputTokens() != other.getMaxOutputTokens()) return false;
       }
+      if (provisionedThroughputSetting_ != other.provisionedThroughputSetting_) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -905,6 +1184,8 @@ public final class GenerateGroundedContentRequest extends com.google.protobuf.Ge
         hash = (37 * hash) + MAX_OUTPUT_TOKENS_FIELD_NUMBER;
         hash = (53 * hash) + getMaxOutputTokens();
       }
+      hash = (37 * hash) + PROVISIONED_THROUGHPUT_SETTING_FIELD_NUMBER;
+      hash = (53 * hash) + provisionedThroughputSetting_;
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1066,6 +1347,7 @@ public final class GenerateGroundedContentRequest extends com.google.protobuf.Ge
         seed_ = 0;
         presencePenalty_ = 0F;
         maxOutputTokens_ = 0;
+        provisionedThroughputSetting_ = 0;
         return this;
       }
 
@@ -1145,6 +1427,9 @@ public final class GenerateGroundedContentRequest extends com.google.protobuf.Ge
           result.maxOutputTokens_ = maxOutputTokens_;
           to_bitField0_ |= 0x00000040;
         }
+        if (((from_bitField0_ & 0x00000200) != 0)) {
+          result.provisionedThroughputSetting_ = provisionedThroughputSetting_;
+        }
         result.bitField0_ |= to_bitField0_;
       }
 
@@ -1197,6 +1482,9 @@ public final class GenerateGroundedContentRequest extends com.google.protobuf.Ge
         }
         if (other.hasMaxOutputTokens()) {
           setMaxOutputTokens(other.getMaxOutputTokens());
+        }
+        if (other.provisionedThroughputSetting_ != 0) {
+          setProvisionedThroughputSettingValue(other.getProvisionedThroughputSettingValue());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -1278,6 +1566,12 @@ public final class GenerateGroundedContentRequest extends com.google.protobuf.Ge
                   bitField0_ |= 0x00000040;
                   break;
                 } // case 96
+              case 104:
+                {
+                  provisionedThroughputSetting_ = input.readEnum();
+                  bitField0_ |= 0x00000200;
+                  break;
+                } // case 104
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2024,6 +2318,122 @@ public final class GenerateGroundedContentRequest extends com.google.protobuf.Ge
       public Builder clearMaxOutputTokens() {
         bitField0_ = (bitField0_ & ~0x00000100);
         maxOutputTokens_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int provisionedThroughputSetting_ = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Setting for provisioned throughput.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.GenerateGroundedContentRequest.GenerationSpec.ProvisionedThroughputSetting provisioned_throughput_setting = 13 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The enum numeric value on the wire for provisionedThroughputSetting.
+       */
+      @java.lang.Override
+      public int getProvisionedThroughputSettingValue() {
+        return provisionedThroughputSetting_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Setting for provisioned throughput.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.GenerateGroundedContentRequest.GenerationSpec.ProvisionedThroughputSetting provisioned_throughput_setting = 13 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for provisionedThroughputSetting to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProvisionedThroughputSettingValue(int value) {
+        provisionedThroughputSetting_ = value;
+        bitField0_ |= 0x00000200;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Setting for provisioned throughput.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.GenerateGroundedContentRequest.GenerationSpec.ProvisionedThroughputSetting provisioned_throughput_setting = 13 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The provisionedThroughputSetting.
+       */
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1.GenerateGroundedContentRequest.GenerationSpec
+              .ProvisionedThroughputSetting
+          getProvisionedThroughputSetting() {
+        com.google.cloud.discoveryengine.v1.GenerateGroundedContentRequest.GenerationSpec
+                .ProvisionedThroughputSetting
+            result =
+                com.google.cloud.discoveryengine.v1.GenerateGroundedContentRequest.GenerationSpec
+                    .ProvisionedThroughputSetting.forNumber(provisionedThroughputSetting_);
+        return result == null
+            ? com.google.cloud.discoveryengine.v1.GenerateGroundedContentRequest.GenerationSpec
+                .ProvisionedThroughputSetting.UNRECOGNIZED
+            : result;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Setting for provisioned throughput.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.GenerateGroundedContentRequest.GenerationSpec.ProvisionedThroughputSetting provisioned_throughput_setting = 13 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The provisionedThroughputSetting to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProvisionedThroughputSetting(
+          com.google.cloud.discoveryengine.v1.GenerateGroundedContentRequest.GenerationSpec
+                  .ProvisionedThroughputSetting
+              value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000200;
+        provisionedThroughputSetting_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Setting for provisioned throughput.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.GenerateGroundedContentRequest.GenerationSpec.ProvisionedThroughputSetting provisioned_throughput_setting = 13 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearProvisionedThroughputSetting() {
+        bitField0_ = (bitField0_ & ~0x00000200);
+        provisionedThroughputSetting_ = 0;
         onChanged();
         return this;
       }
@@ -6967,6 +7377,92 @@ public final class GenerateGroundedContentRequest extends com.google.protobuf.Ge
       com.google.cloud.discoveryengine.v1.GenerateGroundedContentRequest
               .DynamicRetrievalConfigurationOrBuilder
           getDynamicRetrievalConfigOrBuilder();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of domains to be excluded from the search results.
+       * </pre>
+       *
+       * <code>repeated string exclude_domains = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return A list containing the excludeDomains.
+       */
+      java.util.List<java.lang.String> getExcludeDomainsList();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of domains to be excluded from the search results.
+       * </pre>
+       *
+       * <code>repeated string exclude_domains = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The count of excludeDomains.
+       */
+      int getExcludeDomainsCount();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of domains to be excluded from the search results.
+       * </pre>
+       *
+       * <code>repeated string exclude_domains = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param index The index of the element to return.
+       * @return The excludeDomains at the given index.
+       */
+      java.lang.String getExcludeDomains(int index);
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of domains to be excluded from the search results.
+       * </pre>
+       *
+       * <code>repeated string exclude_domains = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the excludeDomains at the given index.
+       */
+      com.google.protobuf.ByteString getExcludeDomainsBytes(int index);
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Sites with confidence level chosen &amp; above this value will be
+       * blocked from the search results.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.Citation.PhishBlockThreshold blocking_confidence = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The enum numeric value on the wire for blockingConfidence.
+       */
+      int getBlockingConfidenceValue();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Sites with confidence level chosen &amp; above this value will be
+       * blocked from the search results.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.Citation.PhishBlockThreshold blocking_confidence = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The blockingConfidence.
+       */
+      com.google.cloud.discoveryengine.v1.Citation.PhishBlockThreshold getBlockingConfidence();
     }
 
     /**
@@ -7000,7 +7496,10 @@ public final class GenerateGroundedContentRequest extends com.google.protobuf.Ge
         super(builder);
       }
 
-      private GoogleSearchSource() {}
+      private GoogleSearchSource() {
+        excludeDomains_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        blockingConfidence_ = 0;
+      }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
         return com.google.cloud.discoveryengine.v1.GroundedGenerationServiceProto
@@ -7090,6 +7589,121 @@ public final class GenerateGroundedContentRequest extends com.google.protobuf.Ge
             : dynamicRetrievalConfig_;
       }
 
+      public static final int EXCLUDE_DOMAINS_FIELD_NUMBER = 5;
+
+      @SuppressWarnings("serial")
+      private com.google.protobuf.LazyStringArrayList excludeDomains_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of domains to be excluded from the search results.
+       * </pre>
+       *
+       * <code>repeated string exclude_domains = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return A list containing the excludeDomains.
+       */
+      public com.google.protobuf.ProtocolStringList getExcludeDomainsList() {
+        return excludeDomains_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of domains to be excluded from the search results.
+       * </pre>
+       *
+       * <code>repeated string exclude_domains = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The count of excludeDomains.
+       */
+      public int getExcludeDomainsCount() {
+        return excludeDomains_.size();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of domains to be excluded from the search results.
+       * </pre>
+       *
+       * <code>repeated string exclude_domains = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param index The index of the element to return.
+       * @return The excludeDomains at the given index.
+       */
+      public java.lang.String getExcludeDomains(int index) {
+        return excludeDomains_.get(index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of domains to be excluded from the search results.
+       * </pre>
+       *
+       * <code>repeated string exclude_domains = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the excludeDomains at the given index.
+       */
+      public com.google.protobuf.ByteString getExcludeDomainsBytes(int index) {
+        return excludeDomains_.getByteString(index);
+      }
+
+      public static final int BLOCKING_CONFIDENCE_FIELD_NUMBER = 6;
+      private int blockingConfidence_ = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Sites with confidence level chosen &amp; above this value will be
+       * blocked from the search results.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.Citation.PhishBlockThreshold blocking_confidence = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The enum numeric value on the wire for blockingConfidence.
+       */
+      @java.lang.Override
+      public int getBlockingConfidenceValue() {
+        return blockingConfidence_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Sites with confidence level chosen &amp; above this value will be
+       * blocked from the search results.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.Citation.PhishBlockThreshold blocking_confidence = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The blockingConfidence.
+       */
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1.Citation.PhishBlockThreshold
+          getBlockingConfidence() {
+        com.google.cloud.discoveryengine.v1.Citation.PhishBlockThreshold result =
+            com.google.cloud.discoveryengine.v1.Citation.PhishBlockThreshold.forNumber(
+                blockingConfidence_);
+        return result == null
+            ? com.google.cloud.discoveryengine.v1.Citation.PhishBlockThreshold.UNRECOGNIZED
+            : result;
+      }
+
       private byte memoizedIsInitialized = -1;
 
       @java.lang.Override
@@ -7107,6 +7721,15 @@ public final class GenerateGroundedContentRequest extends com.google.protobuf.Ge
         if (((bitField0_ & 0x00000001) != 0)) {
           output.writeMessage(2, getDynamicRetrievalConfig());
         }
+        for (int i = 0; i < excludeDomains_.size(); i++) {
+          com.google.protobuf.GeneratedMessage.writeString(output, 5, excludeDomains_.getRaw(i));
+        }
+        if (blockingConfidence_
+            != com.google.cloud.discoveryengine.v1.Citation.PhishBlockThreshold
+                .PHISH_BLOCK_THRESHOLD_UNSPECIFIED
+                .getNumber()) {
+          output.writeEnum(6, blockingConfidence_);
+        }
         getUnknownFields().writeTo(output);
       }
 
@@ -7120,6 +7743,20 @@ public final class GenerateGroundedContentRequest extends com.google.protobuf.Ge
           size +=
               com.google.protobuf.CodedOutputStream.computeMessageSize(
                   2, getDynamicRetrievalConfig());
+        }
+        {
+          int dataSize = 0;
+          for (int i = 0; i < excludeDomains_.size(); i++) {
+            dataSize += computeStringSizeNoTag(excludeDomains_.getRaw(i));
+          }
+          size += dataSize;
+          size += 1 * getExcludeDomainsList().size();
+        }
+        if (blockingConfidence_
+            != com.google.cloud.discoveryengine.v1.Citation.PhishBlockThreshold
+                .PHISH_BLOCK_THRESHOLD_UNSPECIFIED
+                .getNumber()) {
+          size += com.google.protobuf.CodedOutputStream.computeEnumSize(6, blockingConfidence_);
         }
         size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
@@ -7148,6 +7785,8 @@ public final class GenerateGroundedContentRequest extends com.google.protobuf.Ge
         if (hasDynamicRetrievalConfig()) {
           if (!getDynamicRetrievalConfig().equals(other.getDynamicRetrievalConfig())) return false;
         }
+        if (!getExcludeDomainsList().equals(other.getExcludeDomainsList())) return false;
+        if (blockingConfidence_ != other.blockingConfidence_) return false;
         if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
@@ -7163,6 +7802,12 @@ public final class GenerateGroundedContentRequest extends com.google.protobuf.Ge
           hash = (37 * hash) + DYNAMIC_RETRIEVAL_CONFIG_FIELD_NUMBER;
           hash = (53 * hash) + getDynamicRetrievalConfig().hashCode();
         }
+        if (getExcludeDomainsCount() > 0) {
+          hash = (37 * hash) + EXCLUDE_DOMAINS_FIELD_NUMBER;
+          hash = (53 * hash) + getExcludeDomainsList().hashCode();
+        }
+        hash = (37 * hash) + BLOCKING_CONFIDENCE_FIELD_NUMBER;
+        hash = (53 * hash) + blockingConfidence_;
         hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
@@ -7347,6 +7992,8 @@ public final class GenerateGroundedContentRequest extends com.google.protobuf.Ge
             dynamicRetrievalConfigBuilder_.dispose();
             dynamicRetrievalConfigBuilder_ = null;
           }
+          excludeDomains_ = com.google.protobuf.LazyStringArrayList.emptyList();
+          blockingConfidence_ = 0;
           return this;
         }
 
@@ -7406,6 +8053,13 @@ public final class GenerateGroundedContentRequest extends com.google.protobuf.Ge
                     : dynamicRetrievalConfigBuilder_.build();
             to_bitField0_ |= 0x00000001;
           }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            excludeDomains_.makeImmutable();
+            result.excludeDomains_ = excludeDomains_;
+          }
+          if (((from_bitField0_ & 0x00000004) != 0)) {
+            result.blockingConfidence_ = blockingConfidence_;
+          }
           result.bitField0_ |= to_bitField0_;
         }
 
@@ -7434,6 +8088,19 @@ public final class GenerateGroundedContentRequest extends com.google.protobuf.Ge
                   .GoogleSearchSource.getDefaultInstance()) return this;
           if (other.hasDynamicRetrievalConfig()) {
             mergeDynamicRetrievalConfig(other.getDynamicRetrievalConfig());
+          }
+          if (!other.excludeDomains_.isEmpty()) {
+            if (excludeDomains_.isEmpty()) {
+              excludeDomains_ = other.excludeDomains_;
+              bitField0_ |= 0x00000002;
+            } else {
+              ensureExcludeDomainsIsMutable();
+              excludeDomains_.addAll(other.excludeDomains_);
+            }
+            onChanged();
+          }
+          if (other.blockingConfidence_ != 0) {
+            setBlockingConfidenceValue(other.getBlockingConfidenceValue());
           }
           this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
@@ -7469,6 +8136,19 @@ public final class GenerateGroundedContentRequest extends com.google.protobuf.Ge
                     bitField0_ |= 0x00000001;
                     break;
                   } // case 18
+                case 42:
+                  {
+                    java.lang.String s = input.readStringRequireUtf8();
+                    ensureExcludeDomainsIsMutable();
+                    excludeDomains_.add(s);
+                    break;
+                  } // case 42
+                case 48:
+                  {
+                    blockingConfidence_ = input.readEnum();
+                    bitField0_ |= 0x00000004;
+                    break;
+                  } // case 48
                 default:
                   {
                     if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -7739,6 +8419,313 @@ public final class GenerateGroundedContentRequest extends com.google.protobuf.Ge
           return dynamicRetrievalConfigBuilder_;
         }
 
+        private com.google.protobuf.LazyStringArrayList excludeDomains_ =
+            com.google.protobuf.LazyStringArrayList.emptyList();
+
+        private void ensureExcludeDomainsIsMutable() {
+          if (!excludeDomains_.isModifiable()) {
+            excludeDomains_ = new com.google.protobuf.LazyStringArrayList(excludeDomains_);
+          }
+          bitField0_ |= 0x00000002;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. List of domains to be excluded from the search results.
+         * </pre>
+         *
+         * <code>repeated string exclude_domains = 5 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return A list containing the excludeDomains.
+         */
+        public com.google.protobuf.ProtocolStringList getExcludeDomainsList() {
+          excludeDomains_.makeImmutable();
+          return excludeDomains_;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. List of domains to be excluded from the search results.
+         * </pre>
+         *
+         * <code>repeated string exclude_domains = 5 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return The count of excludeDomains.
+         */
+        public int getExcludeDomainsCount() {
+          return excludeDomains_.size();
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. List of domains to be excluded from the search results.
+         * </pre>
+         *
+         * <code>repeated string exclude_domains = 5 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @param index The index of the element to return.
+         * @return The excludeDomains at the given index.
+         */
+        public java.lang.String getExcludeDomains(int index) {
+          return excludeDomains_.get(index);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. List of domains to be excluded from the search results.
+         * </pre>
+         *
+         * <code>repeated string exclude_domains = 5 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @param index The index of the value to return.
+         * @return The bytes of the excludeDomains at the given index.
+         */
+        public com.google.protobuf.ByteString getExcludeDomainsBytes(int index) {
+          return excludeDomains_.getByteString(index);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. List of domains to be excluded from the search results.
+         * </pre>
+         *
+         * <code>repeated string exclude_domains = 5 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @param index The index to set the value at.
+         * @param value The excludeDomains to set.
+         * @return This builder for chaining.
+         */
+        public Builder setExcludeDomains(int index, java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureExcludeDomainsIsMutable();
+          excludeDomains_.set(index, value);
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. List of domains to be excluded from the search results.
+         * </pre>
+         *
+         * <code>repeated string exclude_domains = 5 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @param value The excludeDomains to add.
+         * @return This builder for chaining.
+         */
+        public Builder addExcludeDomains(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureExcludeDomainsIsMutable();
+          excludeDomains_.add(value);
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. List of domains to be excluded from the search results.
+         * </pre>
+         *
+         * <code>repeated string exclude_domains = 5 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @param values The excludeDomains to add.
+         * @return This builder for chaining.
+         */
+        public Builder addAllExcludeDomains(java.lang.Iterable<java.lang.String> values) {
+          ensureExcludeDomainsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, excludeDomains_);
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. List of domains to be excluded from the search results.
+         * </pre>
+         *
+         * <code>repeated string exclude_domains = 5 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearExcludeDomains() {
+          excludeDomains_ = com.google.protobuf.LazyStringArrayList.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+          ;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. List of domains to be excluded from the search results.
+         * </pre>
+         *
+         * <code>repeated string exclude_domains = 5 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @param value The bytes of the excludeDomains to add.
+         * @return This builder for chaining.
+         */
+        public Builder addExcludeDomainsBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          ensureExcludeDomainsIsMutable();
+          excludeDomains_.add(value);
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+
+        private int blockingConfidence_ = 0;
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Sites with confidence level chosen &amp; above this value will be
+         * blocked from the search results.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1.Citation.PhishBlockThreshold blocking_confidence = 6 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return The enum numeric value on the wire for blockingConfidence.
+         */
+        @java.lang.Override
+        public int getBlockingConfidenceValue() {
+          return blockingConfidence_;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Sites with confidence level chosen &amp; above this value will be
+         * blocked from the search results.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1.Citation.PhishBlockThreshold blocking_confidence = 6 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @param value The enum numeric value on the wire for blockingConfidence to set.
+         * @return This builder for chaining.
+         */
+        public Builder setBlockingConfidenceValue(int value) {
+          blockingConfidence_ = value;
+          bitField0_ |= 0x00000004;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Sites with confidence level chosen &amp; above this value will be
+         * blocked from the search results.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1.Citation.PhishBlockThreshold blocking_confidence = 6 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return The blockingConfidence.
+         */
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1.Citation.PhishBlockThreshold
+            getBlockingConfidence() {
+          com.google.cloud.discoveryengine.v1.Citation.PhishBlockThreshold result =
+              com.google.cloud.discoveryengine.v1.Citation.PhishBlockThreshold.forNumber(
+                  blockingConfidence_);
+          return result == null
+              ? com.google.cloud.discoveryengine.v1.Citation.PhishBlockThreshold.UNRECOGNIZED
+              : result;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Sites with confidence level chosen &amp; above this value will be
+         * blocked from the search results.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1.Citation.PhishBlockThreshold blocking_confidence = 6 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @param value The blockingConfidence to set.
+         * @return This builder for chaining.
+         */
+        public Builder setBlockingConfidence(
+            com.google.cloud.discoveryengine.v1.Citation.PhishBlockThreshold value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          bitField0_ |= 0x00000004;
+          blockingConfidence_ = value.getNumber();
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Sites with confidence level chosen &amp; above this value will be
+         * blocked from the search results.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1.Citation.PhishBlockThreshold blocking_confidence = 6 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearBlockingConfidence() {
+          bitField0_ = (bitField0_ & ~0x00000004);
+          blockingConfidence_ = 0;
+          onChanged();
+          return this;
+        }
+
         // @@protoc_insertion_point(builder_scope:google.cloud.discoveryengine.v1.GenerateGroundedContentRequest.GroundingSource.GoogleSearchSource)
       }
 
@@ -7802,7 +8789,94 @@ public final class GenerateGroundedContentRequest extends com.google.protobuf.Ge
     public interface EnterpriseWebRetrievalSourceOrBuilder
         extends
         // @@protoc_insertion_point(interface_extends:google.cloud.discoveryengine.v1.GenerateGroundedContentRequest.GroundingSource.EnterpriseWebRetrievalSource)
-        com.google.protobuf.MessageOrBuilder {}
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of domains to be excluded from the search results.
+       * </pre>
+       *
+       * <code>repeated string exclude_domains = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return A list containing the excludeDomains.
+       */
+      java.util.List<java.lang.String> getExcludeDomainsList();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of domains to be excluded from the search results.
+       * </pre>
+       *
+       * <code>repeated string exclude_domains = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The count of excludeDomains.
+       */
+      int getExcludeDomainsCount();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of domains to be excluded from the search results.
+       * </pre>
+       *
+       * <code>repeated string exclude_domains = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param index The index of the element to return.
+       * @return The excludeDomains at the given index.
+       */
+      java.lang.String getExcludeDomains(int index);
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of domains to be excluded from the search results.
+       * </pre>
+       *
+       * <code>repeated string exclude_domains = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the excludeDomains at the given index.
+       */
+      com.google.protobuf.ByteString getExcludeDomainsBytes(int index);
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Sites with confidence level chosen &amp; above this value will be
+       * blocked from the search results.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.Citation.PhishBlockThreshold blocking_confidence = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The enum numeric value on the wire for blockingConfidence.
+       */
+      int getBlockingConfidenceValue();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Sites with confidence level chosen &amp; above this value will be
+       * blocked from the search results.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.Citation.PhishBlockThreshold blocking_confidence = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The blockingConfidence.
+       */
+      com.google.cloud.discoveryengine.v1.Citation.PhishBlockThreshold getBlockingConfidence();
+    }
 
     /**
      *
@@ -7837,7 +8911,10 @@ public final class GenerateGroundedContentRequest extends com.google.protobuf.Ge
         super(builder);
       }
 
-      private EnterpriseWebRetrievalSource() {}
+      private EnterpriseWebRetrievalSource() {
+        excludeDomains_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        blockingConfidence_ = 0;
+      }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
         return com.google.cloud.discoveryengine.v1.GroundedGenerationServiceProto
@@ -7856,6 +8933,121 @@ public final class GenerateGroundedContentRequest extends com.google.protobuf.Ge
                     .EnterpriseWebRetrievalSource.Builder.class);
       }
 
+      public static final int EXCLUDE_DOMAINS_FIELD_NUMBER = 1;
+
+      @SuppressWarnings("serial")
+      private com.google.protobuf.LazyStringArrayList excludeDomains_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of domains to be excluded from the search results.
+       * </pre>
+       *
+       * <code>repeated string exclude_domains = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return A list containing the excludeDomains.
+       */
+      public com.google.protobuf.ProtocolStringList getExcludeDomainsList() {
+        return excludeDomains_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of domains to be excluded from the search results.
+       * </pre>
+       *
+       * <code>repeated string exclude_domains = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The count of excludeDomains.
+       */
+      public int getExcludeDomainsCount() {
+        return excludeDomains_.size();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of domains to be excluded from the search results.
+       * </pre>
+       *
+       * <code>repeated string exclude_domains = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param index The index of the element to return.
+       * @return The excludeDomains at the given index.
+       */
+      public java.lang.String getExcludeDomains(int index) {
+        return excludeDomains_.get(index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of domains to be excluded from the search results.
+       * </pre>
+       *
+       * <code>repeated string exclude_domains = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the excludeDomains at the given index.
+       */
+      public com.google.protobuf.ByteString getExcludeDomainsBytes(int index) {
+        return excludeDomains_.getByteString(index);
+      }
+
+      public static final int BLOCKING_CONFIDENCE_FIELD_NUMBER = 2;
+      private int blockingConfidence_ = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Sites with confidence level chosen &amp; above this value will be
+       * blocked from the search results.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.Citation.PhishBlockThreshold blocking_confidence = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The enum numeric value on the wire for blockingConfidence.
+       */
+      @java.lang.Override
+      public int getBlockingConfidenceValue() {
+        return blockingConfidence_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Sites with confidence level chosen &amp; above this value will be
+       * blocked from the search results.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.Citation.PhishBlockThreshold blocking_confidence = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The blockingConfidence.
+       */
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1.Citation.PhishBlockThreshold
+          getBlockingConfidence() {
+        com.google.cloud.discoveryengine.v1.Citation.PhishBlockThreshold result =
+            com.google.cloud.discoveryengine.v1.Citation.PhishBlockThreshold.forNumber(
+                blockingConfidence_);
+        return result == null
+            ? com.google.cloud.discoveryengine.v1.Citation.PhishBlockThreshold.UNRECOGNIZED
+            : result;
+      }
+
       private byte memoizedIsInitialized = -1;
 
       @java.lang.Override
@@ -7870,6 +9062,15 @@ public final class GenerateGroundedContentRequest extends com.google.protobuf.Ge
 
       @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        for (int i = 0; i < excludeDomains_.size(); i++) {
+          com.google.protobuf.GeneratedMessage.writeString(output, 1, excludeDomains_.getRaw(i));
+        }
+        if (blockingConfidence_
+            != com.google.cloud.discoveryengine.v1.Citation.PhishBlockThreshold
+                .PHISH_BLOCK_THRESHOLD_UNSPECIFIED
+                .getNumber()) {
+          output.writeEnum(2, blockingConfidence_);
+        }
         getUnknownFields().writeTo(output);
       }
 
@@ -7879,6 +9080,20 @@ public final class GenerateGroundedContentRequest extends com.google.protobuf.Ge
         if (size != -1) return size;
 
         size = 0;
+        {
+          int dataSize = 0;
+          for (int i = 0; i < excludeDomains_.size(); i++) {
+            dataSize += computeStringSizeNoTag(excludeDomains_.getRaw(i));
+          }
+          size += dataSize;
+          size += 1 * getExcludeDomainsList().size();
+        }
+        if (blockingConfidence_
+            != com.google.cloud.discoveryengine.v1.Citation.PhishBlockThreshold
+                .PHISH_BLOCK_THRESHOLD_UNSPECIFIED
+                .getNumber()) {
+          size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, blockingConfidence_);
+        }
         size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
@@ -7902,6 +9117,8 @@ public final class GenerateGroundedContentRequest extends com.google.protobuf.Ge
                         .EnterpriseWebRetrievalSource)
                     obj;
 
+        if (!getExcludeDomainsList().equals(other.getExcludeDomainsList())) return false;
+        if (blockingConfidence_ != other.blockingConfidence_) return false;
         if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
@@ -7913,6 +9130,12 @@ public final class GenerateGroundedContentRequest extends com.google.protobuf.Ge
         }
         int hash = 41;
         hash = (19 * hash) + getDescriptor().hashCode();
+        if (getExcludeDomainsCount() > 0) {
+          hash = (37 * hash) + EXCLUDE_DOMAINS_FIELD_NUMBER;
+          hash = (53 * hash) + getExcludeDomainsList().hashCode();
+        }
+        hash = (37 * hash) + BLOCKING_CONFIDENCE_FIELD_NUMBER;
+        hash = (53 * hash) + blockingConfidence_;
         hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
@@ -8082,6 +9305,9 @@ public final class GenerateGroundedContentRequest extends com.google.protobuf.Ge
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
+          excludeDomains_ = com.google.protobuf.LazyStringArrayList.emptyList();
+          blockingConfidence_ = 0;
           return this;
         }
 
@@ -8121,8 +9347,25 @@ public final class GenerateGroundedContentRequest extends com.google.protobuf.Ge
               result =
                   new com.google.cloud.discoveryengine.v1.GenerateGroundedContentRequest
                       .GroundingSource.EnterpriseWebRetrievalSource(this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
           onBuilt();
           return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.discoveryengine.v1.GenerateGroundedContentRequest.GroundingSource
+                    .EnterpriseWebRetrievalSource
+                result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            excludeDomains_.makeImmutable();
+            result.excludeDomains_ = excludeDomains_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.blockingConfidence_ = blockingConfidence_;
+          }
         }
 
         @java.lang.Override
@@ -8148,6 +9391,19 @@ public final class GenerateGroundedContentRequest extends com.google.protobuf.Ge
           if (other
               == com.google.cloud.discoveryengine.v1.GenerateGroundedContentRequest.GroundingSource
                   .EnterpriseWebRetrievalSource.getDefaultInstance()) return this;
+          if (!other.excludeDomains_.isEmpty()) {
+            if (excludeDomains_.isEmpty()) {
+              excludeDomains_ = other.excludeDomains_;
+              bitField0_ |= 0x00000001;
+            } else {
+              ensureExcludeDomainsIsMutable();
+              excludeDomains_.addAll(other.excludeDomains_);
+            }
+            onChanged();
+          }
+          if (other.blockingConfidence_ != 0) {
+            setBlockingConfidenceValue(other.getBlockingConfidenceValue());
+          }
           this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
@@ -8174,6 +9430,19 @@ public final class GenerateGroundedContentRequest extends com.google.protobuf.Ge
                 case 0:
                   done = true;
                   break;
+                case 10:
+                  {
+                    java.lang.String s = input.readStringRequireUtf8();
+                    ensureExcludeDomainsIsMutable();
+                    excludeDomains_.add(s);
+                    break;
+                  } // case 10
+                case 16:
+                  {
+                    blockingConfidence_ = input.readEnum();
+                    bitField0_ |= 0x00000002;
+                    break;
+                  } // case 16
                 default:
                   {
                     if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -8188,6 +9457,315 @@ public final class GenerateGroundedContentRequest extends com.google.protobuf.Ge
           } finally {
             onChanged();
           } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private com.google.protobuf.LazyStringArrayList excludeDomains_ =
+            com.google.protobuf.LazyStringArrayList.emptyList();
+
+        private void ensureExcludeDomainsIsMutable() {
+          if (!excludeDomains_.isModifiable()) {
+            excludeDomains_ = new com.google.protobuf.LazyStringArrayList(excludeDomains_);
+          }
+          bitField0_ |= 0x00000001;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. List of domains to be excluded from the search results.
+         * </pre>
+         *
+         * <code>repeated string exclude_domains = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return A list containing the excludeDomains.
+         */
+        public com.google.protobuf.ProtocolStringList getExcludeDomainsList() {
+          excludeDomains_.makeImmutable();
+          return excludeDomains_;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. List of domains to be excluded from the search results.
+         * </pre>
+         *
+         * <code>repeated string exclude_domains = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return The count of excludeDomains.
+         */
+        public int getExcludeDomainsCount() {
+          return excludeDomains_.size();
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. List of domains to be excluded from the search results.
+         * </pre>
+         *
+         * <code>repeated string exclude_domains = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @param index The index of the element to return.
+         * @return The excludeDomains at the given index.
+         */
+        public java.lang.String getExcludeDomains(int index) {
+          return excludeDomains_.get(index);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. List of domains to be excluded from the search results.
+         * </pre>
+         *
+         * <code>repeated string exclude_domains = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @param index The index of the value to return.
+         * @return The bytes of the excludeDomains at the given index.
+         */
+        public com.google.protobuf.ByteString getExcludeDomainsBytes(int index) {
+          return excludeDomains_.getByteString(index);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. List of domains to be excluded from the search results.
+         * </pre>
+         *
+         * <code>repeated string exclude_domains = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @param index The index to set the value at.
+         * @param value The excludeDomains to set.
+         * @return This builder for chaining.
+         */
+        public Builder setExcludeDomains(int index, java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureExcludeDomainsIsMutable();
+          excludeDomains_.set(index, value);
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. List of domains to be excluded from the search results.
+         * </pre>
+         *
+         * <code>repeated string exclude_domains = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @param value The excludeDomains to add.
+         * @return This builder for chaining.
+         */
+        public Builder addExcludeDomains(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureExcludeDomainsIsMutable();
+          excludeDomains_.add(value);
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. List of domains to be excluded from the search results.
+         * </pre>
+         *
+         * <code>repeated string exclude_domains = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @param values The excludeDomains to add.
+         * @return This builder for chaining.
+         */
+        public Builder addAllExcludeDomains(java.lang.Iterable<java.lang.String> values) {
+          ensureExcludeDomainsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, excludeDomains_);
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. List of domains to be excluded from the search results.
+         * </pre>
+         *
+         * <code>repeated string exclude_domains = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearExcludeDomains() {
+          excludeDomains_ = com.google.protobuf.LazyStringArrayList.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          ;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. List of domains to be excluded from the search results.
+         * </pre>
+         *
+         * <code>repeated string exclude_domains = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @param value The bytes of the excludeDomains to add.
+         * @return This builder for chaining.
+         */
+        public Builder addExcludeDomainsBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          ensureExcludeDomainsIsMutable();
+          excludeDomains_.add(value);
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        private int blockingConfidence_ = 0;
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Sites with confidence level chosen &amp; above this value will be
+         * blocked from the search results.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1.Citation.PhishBlockThreshold blocking_confidence = 2 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return The enum numeric value on the wire for blockingConfidence.
+         */
+        @java.lang.Override
+        public int getBlockingConfidenceValue() {
+          return blockingConfidence_;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Sites with confidence level chosen &amp; above this value will be
+         * blocked from the search results.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1.Citation.PhishBlockThreshold blocking_confidence = 2 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @param value The enum numeric value on the wire for blockingConfidence to set.
+         * @return This builder for chaining.
+         */
+        public Builder setBlockingConfidenceValue(int value) {
+          blockingConfidence_ = value;
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Sites with confidence level chosen &amp; above this value will be
+         * blocked from the search results.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1.Citation.PhishBlockThreshold blocking_confidence = 2 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return The blockingConfidence.
+         */
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1.Citation.PhishBlockThreshold
+            getBlockingConfidence() {
+          com.google.cloud.discoveryengine.v1.Citation.PhishBlockThreshold result =
+              com.google.cloud.discoveryengine.v1.Citation.PhishBlockThreshold.forNumber(
+                  blockingConfidence_);
+          return result == null
+              ? com.google.cloud.discoveryengine.v1.Citation.PhishBlockThreshold.UNRECOGNIZED
+              : result;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Sites with confidence level chosen &amp; above this value will be
+         * blocked from the search results.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1.Citation.PhishBlockThreshold blocking_confidence = 2 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @param value The blockingConfidence to set.
+         * @return This builder for chaining.
+         */
+        public Builder setBlockingConfidence(
+            com.google.cloud.discoveryengine.v1.Citation.PhishBlockThreshold value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          bitField0_ |= 0x00000002;
+          blockingConfidence_ = value.getNumber();
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Sites with confidence level chosen &amp; above this value will be
+         * blocked from the search results.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1.Citation.PhishBlockThreshold blocking_confidence = 2 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearBlockingConfidence() {
+          bitField0_ = (bitField0_ & ~0x00000002);
+          blockingConfidence_ = 0;
+          onChanged();
           return this;
         }
 

@@ -33,6 +33,10 @@ import static com.google.cloud.backupdr.v1beta.BackupDRClient.ListDataSourceRefe
 import static com.google.cloud.backupdr.v1beta.BackupDRClient.ListDataSourcesPagedResponse;
 import static com.google.cloud.backupdr.v1beta.BackupDRClient.ListLocationsPagedResponse;
 import static com.google.cloud.backupdr.v1beta.BackupDRClient.ListManagementServersPagedResponse;
+import static com.google.cloud.backupdr.v1beta.BackupDRClient.ListRestoreTemplateExecutionsPagedResponse;
+import static com.google.cloud.backupdr.v1beta.BackupDRClient.ListRestoreTemplatesPagedResponse;
+import static com.google.cloud.backupdr.v1beta.BackupDRClient.ListRestoreVerificationPlanAssociationsPagedResponse;
+import static com.google.cloud.backupdr.v1beta.BackupDRClient.ListRestoreVerificationPlansPagedResponse;
 
 import com.google.api.HttpRule;
 import com.google.api.core.BetaApi;
@@ -65,6 +69,9 @@ import com.google.cloud.backupdr.v1beta.CreateBackupPlanAssociationRequest;
 import com.google.cloud.backupdr.v1beta.CreateBackupPlanRequest;
 import com.google.cloud.backupdr.v1beta.CreateBackupVaultRequest;
 import com.google.cloud.backupdr.v1beta.CreateManagementServerRequest;
+import com.google.cloud.backupdr.v1beta.CreateRestoreTemplateRequest;
+import com.google.cloud.backupdr.v1beta.CreateRestoreVerificationPlanAssociationRequest;
+import com.google.cloud.backupdr.v1beta.CreateRestoreVerificationPlanRequest;
 import com.google.cloud.backupdr.v1beta.DataSource;
 import com.google.cloud.backupdr.v1beta.DataSourceReference;
 import com.google.cloud.backupdr.v1beta.DeleteAutoProtectionPolicyRequest;
@@ -73,6 +80,9 @@ import com.google.cloud.backupdr.v1beta.DeleteBackupPlanRequest;
 import com.google.cloud.backupdr.v1beta.DeleteBackupRequest;
 import com.google.cloud.backupdr.v1beta.DeleteBackupVaultRequest;
 import com.google.cloud.backupdr.v1beta.DeleteManagementServerRequest;
+import com.google.cloud.backupdr.v1beta.DeleteRestoreTemplateRequest;
+import com.google.cloud.backupdr.v1beta.DeleteRestoreVerificationPlanAssociationRequest;
+import com.google.cloud.backupdr.v1beta.DeleteRestoreVerificationPlanRequest;
 import com.google.cloud.backupdr.v1beta.FetchBackupPlanAssociationsForResourceTypeRequest;
 import com.google.cloud.backupdr.v1beta.FetchBackupPlanAssociationsForResourceTypeResponse;
 import com.google.cloud.backupdr.v1beta.FetchBackupsForResourceTypeRequest;
@@ -92,6 +102,10 @@ import com.google.cloud.backupdr.v1beta.GetBindingMatchingResourceRequest;
 import com.google.cloud.backupdr.v1beta.GetDataSourceReferenceRequest;
 import com.google.cloud.backupdr.v1beta.GetDataSourceRequest;
 import com.google.cloud.backupdr.v1beta.GetManagementServerRequest;
+import com.google.cloud.backupdr.v1beta.GetRestoreTemplateExecutionRequest;
+import com.google.cloud.backupdr.v1beta.GetRestoreTemplateRequest;
+import com.google.cloud.backupdr.v1beta.GetRestoreVerificationPlanAssociationRequest;
+import com.google.cloud.backupdr.v1beta.GetRestoreVerificationPlanRequest;
 import com.google.cloud.backupdr.v1beta.InitializeServiceRequest;
 import com.google.cloud.backupdr.v1beta.InitializeServiceResponse;
 import com.google.cloud.backupdr.v1beta.InitiateDeleteAutoProtectionPolicyBindingRequest;
@@ -119,17 +133,35 @@ import com.google.cloud.backupdr.v1beta.ListDataSourcesRequest;
 import com.google.cloud.backupdr.v1beta.ListDataSourcesResponse;
 import com.google.cloud.backupdr.v1beta.ListManagementServersRequest;
 import com.google.cloud.backupdr.v1beta.ListManagementServersResponse;
+import com.google.cloud.backupdr.v1beta.ListRestoreTemplateExecutionsRequest;
+import com.google.cloud.backupdr.v1beta.ListRestoreTemplateExecutionsResponse;
+import com.google.cloud.backupdr.v1beta.ListRestoreTemplatesRequest;
+import com.google.cloud.backupdr.v1beta.ListRestoreTemplatesResponse;
+import com.google.cloud.backupdr.v1beta.ListRestoreVerificationPlanAssociationsRequest;
+import com.google.cloud.backupdr.v1beta.ListRestoreVerificationPlanAssociationsResponse;
+import com.google.cloud.backupdr.v1beta.ListRestoreVerificationPlansRequest;
+import com.google.cloud.backupdr.v1beta.ListRestoreVerificationPlansResponse;
 import com.google.cloud.backupdr.v1beta.ManagementServer;
 import com.google.cloud.backupdr.v1beta.OperationMetadata;
 import com.google.cloud.backupdr.v1beta.RestoreBackupRequest;
 import com.google.cloud.backupdr.v1beta.RestoreBackupResponse;
+import com.google.cloud.backupdr.v1beta.RestoreTemplate;
+import com.google.cloud.backupdr.v1beta.RestoreTemplateExecution;
+import com.google.cloud.backupdr.v1beta.RestoreVerificationPlan;
+import com.google.cloud.backupdr.v1beta.RestoreVerificationPlanAssociation;
+import com.google.cloud.backupdr.v1beta.RunRestoreTemplateRequest;
+import com.google.cloud.backupdr.v1beta.RunRestoreTemplateResponse;
 import com.google.cloud.backupdr.v1beta.TriggerBackupRequest;
+import com.google.cloud.backupdr.v1beta.TriggerRestoreCleanupRequest;
+import com.google.cloud.backupdr.v1beta.TriggerRestoreVerificationRequest;
+import com.google.cloud.backupdr.v1beta.TriggerRestoreVerificationResponse;
 import com.google.cloud.backupdr.v1beta.UpdateAutoProtectionPolicyRequest;
 import com.google.cloud.backupdr.v1beta.UpdateBackupPlanAssociationRequest;
 import com.google.cloud.backupdr.v1beta.UpdateBackupPlanRequest;
 import com.google.cloud.backupdr.v1beta.UpdateBackupRequest;
 import com.google.cloud.backupdr.v1beta.UpdateBackupVaultRequest;
 import com.google.cloud.backupdr.v1beta.UpdateDataSourceRequest;
+import com.google.cloud.backupdr.v1beta.UpdateRestoreTemplateRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -164,6 +196,11 @@ import org.jspecify.annotations.NullMarked;
 public class HttpJsonBackupDRStub extends BackupDRStub {
   private static final TypeRegistry typeRegistry =
       TypeRegistry.newBuilder()
+          .add(RestoreTemplateExecution.getDescriptor())
+          .add(OperationMetadata.getDescriptor())
+          .add(RestoreVerificationPlanAssociation.getDescriptor())
+          .add(AutoProtectionPolicy.getDescriptor())
+          .add(RestoreTemplate.getDescriptor())
           .add(Empty.getDescriptor())
           .add(RestoreBackupResponse.getDescriptor())
           .add(AutoProtectionPolicyBinding.getDescriptor())
@@ -171,9 +208,10 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
           .add(BackupPlanAssociation.getDescriptor())
           .add(ManagementServer.getDescriptor())
           .add(Backup.getDescriptor())
-          .add(OperationMetadata.getDescriptor())
+          .add(RunRestoreTemplateResponse.getDescriptor())
+          .add(RestoreVerificationPlan.getDescriptor())
           .add(BackupVault.getDescriptor())
-          .add(AutoProtectionPolicy.getDescriptor())
+          .add(TriggerRestoreVerificationResponse.getDescriptor())
           .add(DataSource.getDescriptor())
           .add(BackupPlan.getDescriptor())
           .build();
@@ -334,6 +372,756 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
                       .build())
               .setOperationSnapshotFactory(
                   (DeleteManagementServerRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<CreateRestoreTemplateRequest, Operation>
+      createRestoreTemplateMethodDescriptor =
+          ApiMethodDescriptor.<CreateRestoreTemplateRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.backupdr.v1beta.BackupDR/CreateRestoreTemplate")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CreateRestoreTemplateRequest>newBuilder()
+                      .setPath(
+                          "/v1beta/{parent=projects/*/locations/*}/restoreTemplates",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateRestoreTemplateRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateRestoreTemplateRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(
+                                fields, "restoreTemplateId", request.getRestoreTemplateId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("restoreTemplate", request.getRestoreTemplate(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (CreateRestoreTemplateRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<GetRestoreTemplateRequest, RestoreTemplate>
+      getRestoreTemplateMethodDescriptor =
+          ApiMethodDescriptor.<GetRestoreTemplateRequest, RestoreTemplate>newBuilder()
+              .setFullMethodName("google.cloud.backupdr.v1beta.BackupDR/GetRestoreTemplate")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetRestoreTemplateRequest>newBuilder()
+                      .setPath(
+                          "/v1beta/{name=projects/*/locations/*/restoreTemplates/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetRestoreTemplateRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetRestoreTemplateRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<RestoreTemplate>newBuilder()
+                      .setDefaultInstance(RestoreTemplate.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          ListRestoreTemplatesRequest, ListRestoreTemplatesResponse>
+      listRestoreTemplatesMethodDescriptor =
+          ApiMethodDescriptor
+              .<ListRestoreTemplatesRequest, ListRestoreTemplatesResponse>newBuilder()
+              .setFullMethodName("google.cloud.backupdr.v1beta.BackupDR/ListRestoreTemplates")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListRestoreTemplatesRequest>newBuilder()
+                      .setPath(
+                          "/v1beta/{parent=projects/*/locations/*}/restoreTemplates",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListRestoreTemplatesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListRestoreTemplatesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListRestoreTemplatesResponse>newBuilder()
+                      .setDefaultInstance(ListRestoreTemplatesResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<UpdateRestoreTemplateRequest, Operation>
+      updateRestoreTemplateMethodDescriptor =
+          ApiMethodDescriptor.<UpdateRestoreTemplateRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.backupdr.v1beta.BackupDR/UpdateRestoreTemplate")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateRestoreTemplateRequest>newBuilder()
+                      .setPath(
+                          "/v1beta/{restoreTemplate.name=projects/*/locations/*/restoreTemplates/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateRestoreTemplateRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields,
+                                "restoreTemplate.name",
+                                request.getRestoreTemplate().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateRestoreTemplateRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(
+                                fields, "validateOnly", request.getValidateOnly());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("restoreTemplate", request.getRestoreTemplate(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (UpdateRestoreTemplateRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteRestoreTemplateRequest, Operation>
+      deleteRestoreTemplateMethodDescriptor =
+          ApiMethodDescriptor.<DeleteRestoreTemplateRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.backupdr.v1beta.BackupDR/DeleteRestoreTemplate")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteRestoreTemplateRequest>newBuilder()
+                      .setPath(
+                          "/v1beta/{name=projects/*/locations/*/restoreTemplates/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteRestoreTemplateRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteRestoreTemplateRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "force", request.getForce());
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (DeleteRestoreTemplateRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<RunRestoreTemplateRequest, Operation>
+      runRestoreTemplateMethodDescriptor =
+          ApiMethodDescriptor.<RunRestoreTemplateRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.backupdr.v1beta.BackupDR/RunRestoreTemplate")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<RunRestoreTemplateRequest>newBuilder()
+                      .setPath(
+                          "/v1beta/{name=projects/*/locations/*/restoreTemplates/*}:run",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<RunRestoreTemplateRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<RunRestoreTemplateRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (RunRestoreTemplateRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<
+          GetRestoreTemplateExecutionRequest, RestoreTemplateExecution>
+      getRestoreTemplateExecutionMethodDescriptor =
+          ApiMethodDescriptor
+              .<GetRestoreTemplateExecutionRequest, RestoreTemplateExecution>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.backupdr.v1beta.BackupDR/GetRestoreTemplateExecution")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetRestoreTemplateExecutionRequest>newBuilder()
+                      .setPath(
+                          "/v1beta/{name=projects/*/locations/*/restoreTemplates/*/executions/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetRestoreTemplateExecutionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetRestoreTemplateExecutionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<RestoreTemplateExecution>newBuilder()
+                      .setDefaultInstance(RestoreTemplateExecution.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          ListRestoreTemplateExecutionsRequest, ListRestoreTemplateExecutionsResponse>
+      listRestoreTemplateExecutionsMethodDescriptor =
+          ApiMethodDescriptor
+              .<ListRestoreTemplateExecutionsRequest, ListRestoreTemplateExecutionsResponse>
+                  newBuilder()
+              .setFullMethodName(
+                  "google.cloud.backupdr.v1beta.BackupDR/ListRestoreTemplateExecutions")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListRestoreTemplateExecutionsRequest>newBuilder()
+                      .setPath(
+                          "/v1beta/{parent=projects/*/locations/*/restoreTemplates/*}/executions",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListRestoreTemplateExecutionsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListRestoreTemplateExecutionsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListRestoreTemplateExecutionsResponse>newBuilder()
+                      .setDefaultInstance(
+                          ListRestoreTemplateExecutionsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<TriggerRestoreCleanupRequest, Operation>
+      triggerRestoreCleanupMethodDescriptor =
+          ApiMethodDescriptor.<TriggerRestoreCleanupRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.backupdr.v1beta.BackupDR/TriggerRestoreCleanup")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<TriggerRestoreCleanupRequest>newBuilder()
+                      .setPath(
+                          "/v1beta/{name=projects/*/locations/*/restoreTemplates/*/executions/*}:triggerRestoreCleanup",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<TriggerRestoreCleanupRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<TriggerRestoreCleanupRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (TriggerRestoreCleanupRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<CreateRestoreVerificationPlanRequest, Operation>
+      createRestoreVerificationPlanMethodDescriptor =
+          ApiMethodDescriptor.<CreateRestoreVerificationPlanRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.backupdr.v1beta.BackupDR/CreateRestoreVerificationPlan")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CreateRestoreVerificationPlanRequest>newBuilder()
+                      .setPath(
+                          "/v1beta/{parent=projects/*/locations/*}/restoreVerificationPlans",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateRestoreVerificationPlanRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateRestoreVerificationPlanRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(
+                                fields,
+                                "restoreVerificationPlanId",
+                                request.getRestoreVerificationPlanId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "restoreVerificationPlan",
+                                      request.getRestoreVerificationPlan(),
+                                      true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (CreateRestoreVerificationPlanRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<
+          CreateRestoreVerificationPlanAssociationRequest, Operation>
+      createRestoreVerificationPlanAssociationMethodDescriptor =
+          ApiMethodDescriptor
+              .<CreateRestoreVerificationPlanAssociationRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.backupdr.v1beta.BackupDR/CreateRestoreVerificationPlanAssociation")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter
+                      .<CreateRestoreVerificationPlanAssociationRequest>newBuilder()
+                      .setPath(
+                          "/v1beta/{parent=projects/*/locations/*/restoreVerificationPlans/*}/associations",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateRestoreVerificationPlanAssociationRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateRestoreVerificationPlanAssociationRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(
+                                fields,
+                                "restoreVerificationPlanAssociationId",
+                                request.getRestoreVerificationPlanAssociationId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "restoreVerificationPlanAssociation",
+                                      request.getRestoreVerificationPlanAssociation(),
+                                      true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (CreateRestoreVerificationPlanAssociationRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<
+          GetRestoreVerificationPlanAssociationRequest, RestoreVerificationPlanAssociation>
+      getRestoreVerificationPlanAssociationMethodDescriptor =
+          ApiMethodDescriptor
+              .<GetRestoreVerificationPlanAssociationRequest, RestoreVerificationPlanAssociation>
+                  newBuilder()
+              .setFullMethodName(
+                  "google.cloud.backupdr.v1beta.BackupDR/GetRestoreVerificationPlanAssociation")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter
+                      .<GetRestoreVerificationPlanAssociationRequest>newBuilder()
+                      .setPath(
+                          "/v1beta/{name=projects/*/locations/*/restoreVerificationPlans/*/associations/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetRestoreVerificationPlanAssociationRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetRestoreVerificationPlanAssociationRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<RestoreVerificationPlanAssociation>newBuilder()
+                      .setDefaultInstance(RestoreVerificationPlanAssociation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          ListRestoreVerificationPlanAssociationsRequest,
+          ListRestoreVerificationPlanAssociationsResponse>
+      listRestoreVerificationPlanAssociationsMethodDescriptor =
+          ApiMethodDescriptor
+              .<ListRestoreVerificationPlanAssociationsRequest,
+                  ListRestoreVerificationPlanAssociationsResponse>
+                  newBuilder()
+              .setFullMethodName(
+                  "google.cloud.backupdr.v1beta.BackupDR/ListRestoreVerificationPlanAssociations")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter
+                      .<ListRestoreVerificationPlanAssociationsRequest>newBuilder()
+                      .setPath(
+                          "/v1beta/{parent=projects/*/locations/*/restoreVerificationPlans/*}/associations",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListRestoreVerificationPlanAssociationsRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListRestoreVerificationPlanAssociationsRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser
+                      .<ListRestoreVerificationPlanAssociationsResponse>newBuilder()
+                      .setDefaultInstance(
+                          ListRestoreVerificationPlanAssociationsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          DeleteRestoreVerificationPlanAssociationRequest, Operation>
+      deleteRestoreVerificationPlanAssociationMethodDescriptor =
+          ApiMethodDescriptor
+              .<DeleteRestoreVerificationPlanAssociationRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.backupdr.v1beta.BackupDR/DeleteRestoreVerificationPlanAssociation")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter
+                      .<DeleteRestoreVerificationPlanAssociationRequest>newBuilder()
+                      .setPath(
+                          "/v1beta/{name=projects/*/locations/*/restoreVerificationPlans/*/associations/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteRestoreVerificationPlanAssociationRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteRestoreVerificationPlanAssociationRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (DeleteRestoreVerificationPlanAssociationRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<TriggerRestoreVerificationRequest, Operation>
+      triggerRestoreVerificationMethodDescriptor =
+          ApiMethodDescriptor.<TriggerRestoreVerificationRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.backupdr.v1beta.BackupDR/TriggerRestoreVerification")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<TriggerRestoreVerificationRequest>newBuilder()
+                      .setPath(
+                          "/v1beta/{name=projects/*/locations/*/restoreVerificationPlans/*/associations/*}:triggerRestoreVerification",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<TriggerRestoreVerificationRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<TriggerRestoreVerificationRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (TriggerRestoreVerificationRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<
+          GetRestoreVerificationPlanRequest, RestoreVerificationPlan>
+      getRestoreVerificationPlanMethodDescriptor =
+          ApiMethodDescriptor
+              .<GetRestoreVerificationPlanRequest, RestoreVerificationPlan>newBuilder()
+              .setFullMethodName("google.cloud.backupdr.v1beta.BackupDR/GetRestoreVerificationPlan")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetRestoreVerificationPlanRequest>newBuilder()
+                      .setPath(
+                          "/v1beta/{name=projects/*/locations/*/restoreVerificationPlans/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetRestoreVerificationPlanRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetRestoreVerificationPlanRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<RestoreVerificationPlan>newBuilder()
+                      .setDefaultInstance(RestoreVerificationPlan.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          ListRestoreVerificationPlansRequest, ListRestoreVerificationPlansResponse>
+      listRestoreVerificationPlansMethodDescriptor =
+          ApiMethodDescriptor
+              .<ListRestoreVerificationPlansRequest, ListRestoreVerificationPlansResponse>
+                  newBuilder()
+              .setFullMethodName(
+                  "google.cloud.backupdr.v1beta.BackupDR/ListRestoreVerificationPlans")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListRestoreVerificationPlansRequest>newBuilder()
+                      .setPath(
+                          "/v1beta/{parent=projects/*/locations/*}/restoreVerificationPlans",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListRestoreVerificationPlansRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListRestoreVerificationPlansRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListRestoreVerificationPlansResponse>newBuilder()
+                      .setDefaultInstance(ListRestoreVerificationPlansResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteRestoreVerificationPlanRequest, Operation>
+      deleteRestoreVerificationPlanMethodDescriptor =
+          ApiMethodDescriptor.<DeleteRestoreVerificationPlanRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.backupdr.v1beta.BackupDR/DeleteRestoreVerificationPlan")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteRestoreVerificationPlanRequest>newBuilder()
+                      .setPath(
+                          "/v1beta/{name=projects/*/locations/*/restoreVerificationPlans/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteRestoreVerificationPlanRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteRestoreVerificationPlanRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "force", request.getForce());
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (DeleteRestoreVerificationPlanRequest request, Operation response) ->
                       HttpJsonOperationSnapshot.create(response))
               .build();
 
@@ -1709,6 +2497,7 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
                                 fields,
                                 "autoProtectionPolicyId",
                                 request.getAutoProtectionPolicyId());
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
@@ -1829,6 +2618,7 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<UpdateAutoProtectionPolicyRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
@@ -1874,6 +2664,7 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
                             ProtoRestSerializer<DeleteAutoProtectionPolicyRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "etag", request.getEtag());
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
@@ -1917,6 +2708,7 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
                                 fields,
                                 "autoProtectionPolicyBindingId",
                                 request.getAutoProtectionPolicyBindingId());
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
@@ -2375,6 +3167,86 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
       deleteManagementServerCallable;
   private final OperationCallable<DeleteManagementServerRequest, Empty, OperationMetadata>
       deleteManagementServerOperationCallable;
+  private final UnaryCallable<CreateRestoreTemplateRequest, Operation>
+      createRestoreTemplateCallable;
+  private final OperationCallable<CreateRestoreTemplateRequest, RestoreTemplate, OperationMetadata>
+      createRestoreTemplateOperationCallable;
+  private final UnaryCallable<GetRestoreTemplateRequest, RestoreTemplate>
+      getRestoreTemplateCallable;
+  private final UnaryCallable<ListRestoreTemplatesRequest, ListRestoreTemplatesResponse>
+      listRestoreTemplatesCallable;
+  private final UnaryCallable<ListRestoreTemplatesRequest, ListRestoreTemplatesPagedResponse>
+      listRestoreTemplatesPagedCallable;
+  private final UnaryCallable<UpdateRestoreTemplateRequest, Operation>
+      updateRestoreTemplateCallable;
+  private final OperationCallable<UpdateRestoreTemplateRequest, RestoreTemplate, OperationMetadata>
+      updateRestoreTemplateOperationCallable;
+  private final UnaryCallable<DeleteRestoreTemplateRequest, Operation>
+      deleteRestoreTemplateCallable;
+  private final OperationCallable<DeleteRestoreTemplateRequest, Empty, OperationMetadata>
+      deleteRestoreTemplateOperationCallable;
+  private final UnaryCallable<RunRestoreTemplateRequest, Operation> runRestoreTemplateCallable;
+  private final OperationCallable<
+          RunRestoreTemplateRequest, RunRestoreTemplateResponse, OperationMetadata>
+      runRestoreTemplateOperationCallable;
+  private final UnaryCallable<GetRestoreTemplateExecutionRequest, RestoreTemplateExecution>
+      getRestoreTemplateExecutionCallable;
+  private final UnaryCallable<
+          ListRestoreTemplateExecutionsRequest, ListRestoreTemplateExecutionsResponse>
+      listRestoreTemplateExecutionsCallable;
+  private final UnaryCallable<
+          ListRestoreTemplateExecutionsRequest, ListRestoreTemplateExecutionsPagedResponse>
+      listRestoreTemplateExecutionsPagedCallable;
+  private final UnaryCallable<TriggerRestoreCleanupRequest, Operation>
+      triggerRestoreCleanupCallable;
+  private final OperationCallable<
+          TriggerRestoreCleanupRequest, RestoreTemplateExecution, OperationMetadata>
+      triggerRestoreCleanupOperationCallable;
+  private final UnaryCallable<CreateRestoreVerificationPlanRequest, Operation>
+      createRestoreVerificationPlanCallable;
+  private final OperationCallable<
+          CreateRestoreVerificationPlanRequest, RestoreVerificationPlan, OperationMetadata>
+      createRestoreVerificationPlanOperationCallable;
+  private final UnaryCallable<CreateRestoreVerificationPlanAssociationRequest, Operation>
+      createRestoreVerificationPlanAssociationCallable;
+  private final OperationCallable<
+          CreateRestoreVerificationPlanAssociationRequest,
+          RestoreVerificationPlanAssociation,
+          OperationMetadata>
+      createRestoreVerificationPlanAssociationOperationCallable;
+  private final UnaryCallable<
+          GetRestoreVerificationPlanAssociationRequest, RestoreVerificationPlanAssociation>
+      getRestoreVerificationPlanAssociationCallable;
+  private final UnaryCallable<
+          ListRestoreVerificationPlanAssociationsRequest,
+          ListRestoreVerificationPlanAssociationsResponse>
+      listRestoreVerificationPlanAssociationsCallable;
+  private final UnaryCallable<
+          ListRestoreVerificationPlanAssociationsRequest,
+          ListRestoreVerificationPlanAssociationsPagedResponse>
+      listRestoreVerificationPlanAssociationsPagedCallable;
+  private final UnaryCallable<DeleteRestoreVerificationPlanAssociationRequest, Operation>
+      deleteRestoreVerificationPlanAssociationCallable;
+  private final OperationCallable<
+          DeleteRestoreVerificationPlanAssociationRequest, Empty, OperationMetadata>
+      deleteRestoreVerificationPlanAssociationOperationCallable;
+  private final UnaryCallable<TriggerRestoreVerificationRequest, Operation>
+      triggerRestoreVerificationCallable;
+  private final OperationCallable<
+          TriggerRestoreVerificationRequest, TriggerRestoreVerificationResponse, OperationMetadata>
+      triggerRestoreVerificationOperationCallable;
+  private final UnaryCallable<GetRestoreVerificationPlanRequest, RestoreVerificationPlan>
+      getRestoreVerificationPlanCallable;
+  private final UnaryCallable<
+          ListRestoreVerificationPlansRequest, ListRestoreVerificationPlansResponse>
+      listRestoreVerificationPlansCallable;
+  private final UnaryCallable<
+          ListRestoreVerificationPlansRequest, ListRestoreVerificationPlansPagedResponse>
+      listRestoreVerificationPlansPagedCallable;
+  private final UnaryCallable<DeleteRestoreVerificationPlanRequest, Operation>
+      deleteRestoreVerificationPlanCallable;
+  private final OperationCallable<DeleteRestoreVerificationPlanRequest, Empty, OperationMetadata>
+      deleteRestoreVerificationPlanOperationCallable;
   private final UnaryCallable<CreateBackupVaultRequest, Operation> createBackupVaultCallable;
   private final OperationCallable<CreateBackupVaultRequest, BackupVault, OperationMetadata>
       createBackupVaultOperationCallable;
@@ -2668,6 +3540,258 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
         deleteManagementServerTransportSettings =
             HttpJsonCallSettings.<DeleteManagementServerRequest, Operation>newBuilder()
                 .setMethodDescriptor(deleteManagementServerMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    HttpJsonCallSettings<CreateRestoreTemplateRequest, Operation>
+        createRestoreTemplateTransportSettings =
+            HttpJsonCallSettings.<CreateRestoreTemplateRequest, Operation>newBuilder()
+                .setMethodDescriptor(createRestoreTemplateMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    HttpJsonCallSettings<GetRestoreTemplateRequest, RestoreTemplate>
+        getRestoreTemplateTransportSettings =
+            HttpJsonCallSettings.<GetRestoreTemplateRequest, RestoreTemplate>newBuilder()
+                .setMethodDescriptor(getRestoreTemplateMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    HttpJsonCallSettings<ListRestoreTemplatesRequest, ListRestoreTemplatesResponse>
+        listRestoreTemplatesTransportSettings =
+            HttpJsonCallSettings
+                .<ListRestoreTemplatesRequest, ListRestoreTemplatesResponse>newBuilder()
+                .setMethodDescriptor(listRestoreTemplatesMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    HttpJsonCallSettings<UpdateRestoreTemplateRequest, Operation>
+        updateRestoreTemplateTransportSettings =
+            HttpJsonCallSettings.<UpdateRestoreTemplateRequest, Operation>newBuilder()
+                .setMethodDescriptor(updateRestoreTemplateMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "restore_template.name",
+                          String.valueOf(request.getRestoreTemplate().getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<DeleteRestoreTemplateRequest, Operation>
+        deleteRestoreTemplateTransportSettings =
+            HttpJsonCallSettings.<DeleteRestoreTemplateRequest, Operation>newBuilder()
+                .setMethodDescriptor(deleteRestoreTemplateMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    HttpJsonCallSettings<RunRestoreTemplateRequest, Operation> runRestoreTemplateTransportSettings =
+        HttpJsonCallSettings.<RunRestoreTemplateRequest, Operation>newBuilder()
+            .setMethodDescriptor(runRestoreTemplateMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    HttpJsonCallSettings<GetRestoreTemplateExecutionRequest, RestoreTemplateExecution>
+        getRestoreTemplateExecutionTransportSettings =
+            HttpJsonCallSettings
+                .<GetRestoreTemplateExecutionRequest, RestoreTemplateExecution>newBuilder()
+                .setMethodDescriptor(getRestoreTemplateExecutionMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    HttpJsonCallSettings<
+            ListRestoreTemplateExecutionsRequest, ListRestoreTemplateExecutionsResponse>
+        listRestoreTemplateExecutionsTransportSettings =
+            HttpJsonCallSettings
+                .<ListRestoreTemplateExecutionsRequest, ListRestoreTemplateExecutionsResponse>
+                    newBuilder()
+                .setMethodDescriptor(listRestoreTemplateExecutionsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    HttpJsonCallSettings<TriggerRestoreCleanupRequest, Operation>
+        triggerRestoreCleanupTransportSettings =
+            HttpJsonCallSettings.<TriggerRestoreCleanupRequest, Operation>newBuilder()
+                .setMethodDescriptor(triggerRestoreCleanupMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    HttpJsonCallSettings<CreateRestoreVerificationPlanRequest, Operation>
+        createRestoreVerificationPlanTransportSettings =
+            HttpJsonCallSettings.<CreateRestoreVerificationPlanRequest, Operation>newBuilder()
+                .setMethodDescriptor(createRestoreVerificationPlanMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    HttpJsonCallSettings<CreateRestoreVerificationPlanAssociationRequest, Operation>
+        createRestoreVerificationPlanAssociationTransportSettings =
+            HttpJsonCallSettings
+                .<CreateRestoreVerificationPlanAssociationRequest, Operation>newBuilder()
+                .setMethodDescriptor(createRestoreVerificationPlanAssociationMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    HttpJsonCallSettings<
+            GetRestoreVerificationPlanAssociationRequest, RestoreVerificationPlanAssociation>
+        getRestoreVerificationPlanAssociationTransportSettings =
+            HttpJsonCallSettings
+                .<GetRestoreVerificationPlanAssociationRequest, RestoreVerificationPlanAssociation>
+                    newBuilder()
+                .setMethodDescriptor(getRestoreVerificationPlanAssociationMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    HttpJsonCallSettings<
+            ListRestoreVerificationPlanAssociationsRequest,
+            ListRestoreVerificationPlanAssociationsResponse>
+        listRestoreVerificationPlanAssociationsTransportSettings =
+            HttpJsonCallSettings
+                .<ListRestoreVerificationPlanAssociationsRequest,
+                    ListRestoreVerificationPlanAssociationsResponse>
+                    newBuilder()
+                .setMethodDescriptor(listRestoreVerificationPlanAssociationsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    HttpJsonCallSettings<DeleteRestoreVerificationPlanAssociationRequest, Operation>
+        deleteRestoreVerificationPlanAssociationTransportSettings =
+            HttpJsonCallSettings
+                .<DeleteRestoreVerificationPlanAssociationRequest, Operation>newBuilder()
+                .setMethodDescriptor(deleteRestoreVerificationPlanAssociationMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    HttpJsonCallSettings<TriggerRestoreVerificationRequest, Operation>
+        triggerRestoreVerificationTransportSettings =
+            HttpJsonCallSettings.<TriggerRestoreVerificationRequest, Operation>newBuilder()
+                .setMethodDescriptor(triggerRestoreVerificationMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    HttpJsonCallSettings<GetRestoreVerificationPlanRequest, RestoreVerificationPlan>
+        getRestoreVerificationPlanTransportSettings =
+            HttpJsonCallSettings
+                .<GetRestoreVerificationPlanRequest, RestoreVerificationPlan>newBuilder()
+                .setMethodDescriptor(getRestoreVerificationPlanMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    HttpJsonCallSettings<ListRestoreVerificationPlansRequest, ListRestoreVerificationPlansResponse>
+        listRestoreVerificationPlansTransportSettings =
+            HttpJsonCallSettings
+                .<ListRestoreVerificationPlansRequest, ListRestoreVerificationPlansResponse>
+                    newBuilder()
+                .setMethodDescriptor(listRestoreVerificationPlansMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    HttpJsonCallSettings<DeleteRestoreVerificationPlanRequest, Operation>
+        deleteRestoreVerificationPlanTransportSettings =
+            HttpJsonCallSettings.<DeleteRestoreVerificationPlanRequest, Operation>newBuilder()
+                .setMethodDescriptor(deleteRestoreVerificationPlanMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
                 .setParamsExtractor(
                     request -> {
@@ -3373,6 +4497,176 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
             settings.deleteManagementServerOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.createRestoreTemplateCallable =
+        callableFactory.createUnaryCallable(
+            createRestoreTemplateTransportSettings,
+            settings.createRestoreTemplateSettings(),
+            clientContext);
+    this.createRestoreTemplateOperationCallable =
+        callableFactory.createOperationCallable(
+            createRestoreTemplateTransportSettings,
+            settings.createRestoreTemplateOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.getRestoreTemplateCallable =
+        callableFactory.createUnaryCallable(
+            getRestoreTemplateTransportSettings,
+            settings.getRestoreTemplateSettings(),
+            clientContext);
+    this.listRestoreTemplatesCallable =
+        callableFactory.createUnaryCallable(
+            listRestoreTemplatesTransportSettings,
+            settings.listRestoreTemplatesSettings(),
+            clientContext);
+    this.listRestoreTemplatesPagedCallable =
+        callableFactory.createPagedCallable(
+            listRestoreTemplatesTransportSettings,
+            settings.listRestoreTemplatesSettings(),
+            clientContext);
+    this.updateRestoreTemplateCallable =
+        callableFactory.createUnaryCallable(
+            updateRestoreTemplateTransportSettings,
+            settings.updateRestoreTemplateSettings(),
+            clientContext);
+    this.updateRestoreTemplateOperationCallable =
+        callableFactory.createOperationCallable(
+            updateRestoreTemplateTransportSettings,
+            settings.updateRestoreTemplateOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.deleteRestoreTemplateCallable =
+        callableFactory.createUnaryCallable(
+            deleteRestoreTemplateTransportSettings,
+            settings.deleteRestoreTemplateSettings(),
+            clientContext);
+    this.deleteRestoreTemplateOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteRestoreTemplateTransportSettings,
+            settings.deleteRestoreTemplateOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.runRestoreTemplateCallable =
+        callableFactory.createUnaryCallable(
+            runRestoreTemplateTransportSettings,
+            settings.runRestoreTemplateSettings(),
+            clientContext);
+    this.runRestoreTemplateOperationCallable =
+        callableFactory.createOperationCallable(
+            runRestoreTemplateTransportSettings,
+            settings.runRestoreTemplateOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.getRestoreTemplateExecutionCallable =
+        callableFactory.createUnaryCallable(
+            getRestoreTemplateExecutionTransportSettings,
+            settings.getRestoreTemplateExecutionSettings(),
+            clientContext);
+    this.listRestoreTemplateExecutionsCallable =
+        callableFactory.createUnaryCallable(
+            listRestoreTemplateExecutionsTransportSettings,
+            settings.listRestoreTemplateExecutionsSettings(),
+            clientContext);
+    this.listRestoreTemplateExecutionsPagedCallable =
+        callableFactory.createPagedCallable(
+            listRestoreTemplateExecutionsTransportSettings,
+            settings.listRestoreTemplateExecutionsSettings(),
+            clientContext);
+    this.triggerRestoreCleanupCallable =
+        callableFactory.createUnaryCallable(
+            triggerRestoreCleanupTransportSettings,
+            settings.triggerRestoreCleanupSettings(),
+            clientContext);
+    this.triggerRestoreCleanupOperationCallable =
+        callableFactory.createOperationCallable(
+            triggerRestoreCleanupTransportSettings,
+            settings.triggerRestoreCleanupOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.createRestoreVerificationPlanCallable =
+        callableFactory.createUnaryCallable(
+            createRestoreVerificationPlanTransportSettings,
+            settings.createRestoreVerificationPlanSettings(),
+            clientContext);
+    this.createRestoreVerificationPlanOperationCallable =
+        callableFactory.createOperationCallable(
+            createRestoreVerificationPlanTransportSettings,
+            settings.createRestoreVerificationPlanOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.createRestoreVerificationPlanAssociationCallable =
+        callableFactory.createUnaryCallable(
+            createRestoreVerificationPlanAssociationTransportSettings,
+            settings.createRestoreVerificationPlanAssociationSettings(),
+            clientContext);
+    this.createRestoreVerificationPlanAssociationOperationCallable =
+        callableFactory.createOperationCallable(
+            createRestoreVerificationPlanAssociationTransportSettings,
+            settings.createRestoreVerificationPlanAssociationOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.getRestoreVerificationPlanAssociationCallable =
+        callableFactory.createUnaryCallable(
+            getRestoreVerificationPlanAssociationTransportSettings,
+            settings.getRestoreVerificationPlanAssociationSettings(),
+            clientContext);
+    this.listRestoreVerificationPlanAssociationsCallable =
+        callableFactory.createUnaryCallable(
+            listRestoreVerificationPlanAssociationsTransportSettings,
+            settings.listRestoreVerificationPlanAssociationsSettings(),
+            clientContext);
+    this.listRestoreVerificationPlanAssociationsPagedCallable =
+        callableFactory.createPagedCallable(
+            listRestoreVerificationPlanAssociationsTransportSettings,
+            settings.listRestoreVerificationPlanAssociationsSettings(),
+            clientContext);
+    this.deleteRestoreVerificationPlanAssociationCallable =
+        callableFactory.createUnaryCallable(
+            deleteRestoreVerificationPlanAssociationTransportSettings,
+            settings.deleteRestoreVerificationPlanAssociationSettings(),
+            clientContext);
+    this.deleteRestoreVerificationPlanAssociationOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteRestoreVerificationPlanAssociationTransportSettings,
+            settings.deleteRestoreVerificationPlanAssociationOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.triggerRestoreVerificationCallable =
+        callableFactory.createUnaryCallable(
+            triggerRestoreVerificationTransportSettings,
+            settings.triggerRestoreVerificationSettings(),
+            clientContext);
+    this.triggerRestoreVerificationOperationCallable =
+        callableFactory.createOperationCallable(
+            triggerRestoreVerificationTransportSettings,
+            settings.triggerRestoreVerificationOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.getRestoreVerificationPlanCallable =
+        callableFactory.createUnaryCallable(
+            getRestoreVerificationPlanTransportSettings,
+            settings.getRestoreVerificationPlanSettings(),
+            clientContext);
+    this.listRestoreVerificationPlansCallable =
+        callableFactory.createUnaryCallable(
+            listRestoreVerificationPlansTransportSettings,
+            settings.listRestoreVerificationPlansSettings(),
+            clientContext);
+    this.listRestoreVerificationPlansPagedCallable =
+        callableFactory.createPagedCallable(
+            listRestoreVerificationPlansTransportSettings,
+            settings.listRestoreVerificationPlansSettings(),
+            clientContext);
+    this.deleteRestoreVerificationPlanCallable =
+        callableFactory.createUnaryCallable(
+            deleteRestoreVerificationPlanTransportSettings,
+            settings.deleteRestoreVerificationPlanSettings(),
+            clientContext);
+    this.deleteRestoreVerificationPlanOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteRestoreVerificationPlanTransportSettings,
+            settings.deleteRestoreVerificationPlanOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.createBackupVaultCallable =
         callableFactory.createUnaryCallable(
             createBackupVaultTransportSettings,
@@ -3785,6 +5079,24 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
     methodDescriptors.add(getManagementServerMethodDescriptor);
     methodDescriptors.add(createManagementServerMethodDescriptor);
     methodDescriptors.add(deleteManagementServerMethodDescriptor);
+    methodDescriptors.add(createRestoreTemplateMethodDescriptor);
+    methodDescriptors.add(getRestoreTemplateMethodDescriptor);
+    methodDescriptors.add(listRestoreTemplatesMethodDescriptor);
+    methodDescriptors.add(updateRestoreTemplateMethodDescriptor);
+    methodDescriptors.add(deleteRestoreTemplateMethodDescriptor);
+    methodDescriptors.add(runRestoreTemplateMethodDescriptor);
+    methodDescriptors.add(getRestoreTemplateExecutionMethodDescriptor);
+    methodDescriptors.add(listRestoreTemplateExecutionsMethodDescriptor);
+    methodDescriptors.add(triggerRestoreCleanupMethodDescriptor);
+    methodDescriptors.add(createRestoreVerificationPlanMethodDescriptor);
+    methodDescriptors.add(createRestoreVerificationPlanAssociationMethodDescriptor);
+    methodDescriptors.add(getRestoreVerificationPlanAssociationMethodDescriptor);
+    methodDescriptors.add(listRestoreVerificationPlanAssociationsMethodDescriptor);
+    methodDescriptors.add(deleteRestoreVerificationPlanAssociationMethodDescriptor);
+    methodDescriptors.add(triggerRestoreVerificationMethodDescriptor);
+    methodDescriptors.add(getRestoreVerificationPlanMethodDescriptor);
+    methodDescriptors.add(listRestoreVerificationPlansMethodDescriptor);
+    methodDescriptors.add(deleteRestoreVerificationPlanMethodDescriptor);
     methodDescriptors.add(createBackupVaultMethodDescriptor);
     methodDescriptors.add(listBackupVaultsMethodDescriptor);
     methodDescriptors.add(fetchUsableBackupVaultsMethodDescriptor);
@@ -3879,6 +5191,206 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
   public OperationCallable<DeleteManagementServerRequest, Empty, OperationMetadata>
       deleteManagementServerOperationCallable() {
     return deleteManagementServerOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateRestoreTemplateRequest, Operation> createRestoreTemplateCallable() {
+    return createRestoreTemplateCallable;
+  }
+
+  @Override
+  public OperationCallable<CreateRestoreTemplateRequest, RestoreTemplate, OperationMetadata>
+      createRestoreTemplateOperationCallable() {
+    return createRestoreTemplateOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetRestoreTemplateRequest, RestoreTemplate> getRestoreTemplateCallable() {
+    return getRestoreTemplateCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListRestoreTemplatesRequest, ListRestoreTemplatesResponse>
+      listRestoreTemplatesCallable() {
+    return listRestoreTemplatesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListRestoreTemplatesRequest, ListRestoreTemplatesPagedResponse>
+      listRestoreTemplatesPagedCallable() {
+    return listRestoreTemplatesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateRestoreTemplateRequest, Operation> updateRestoreTemplateCallable() {
+    return updateRestoreTemplateCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateRestoreTemplateRequest, RestoreTemplate, OperationMetadata>
+      updateRestoreTemplateOperationCallable() {
+    return updateRestoreTemplateOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteRestoreTemplateRequest, Operation> deleteRestoreTemplateCallable() {
+    return deleteRestoreTemplateCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteRestoreTemplateRequest, Empty, OperationMetadata>
+      deleteRestoreTemplateOperationCallable() {
+    return deleteRestoreTemplateOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<RunRestoreTemplateRequest, Operation> runRestoreTemplateCallable() {
+    return runRestoreTemplateCallable;
+  }
+
+  @Override
+  public OperationCallable<RunRestoreTemplateRequest, RunRestoreTemplateResponse, OperationMetadata>
+      runRestoreTemplateOperationCallable() {
+    return runRestoreTemplateOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetRestoreTemplateExecutionRequest, RestoreTemplateExecution>
+      getRestoreTemplateExecutionCallable() {
+    return getRestoreTemplateExecutionCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListRestoreTemplateExecutionsRequest, ListRestoreTemplateExecutionsResponse>
+      listRestoreTemplateExecutionsCallable() {
+    return listRestoreTemplateExecutionsCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          ListRestoreTemplateExecutionsRequest, ListRestoreTemplateExecutionsPagedResponse>
+      listRestoreTemplateExecutionsPagedCallable() {
+    return listRestoreTemplateExecutionsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<TriggerRestoreCleanupRequest, Operation> triggerRestoreCleanupCallable() {
+    return triggerRestoreCleanupCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          TriggerRestoreCleanupRequest, RestoreTemplateExecution, OperationMetadata>
+      triggerRestoreCleanupOperationCallable() {
+    return triggerRestoreCleanupOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateRestoreVerificationPlanRequest, Operation>
+      createRestoreVerificationPlanCallable() {
+    return createRestoreVerificationPlanCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          CreateRestoreVerificationPlanRequest, RestoreVerificationPlan, OperationMetadata>
+      createRestoreVerificationPlanOperationCallable() {
+    return createRestoreVerificationPlanOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateRestoreVerificationPlanAssociationRequest, Operation>
+      createRestoreVerificationPlanAssociationCallable() {
+    return createRestoreVerificationPlanAssociationCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          CreateRestoreVerificationPlanAssociationRequest,
+          RestoreVerificationPlanAssociation,
+          OperationMetadata>
+      createRestoreVerificationPlanAssociationOperationCallable() {
+    return createRestoreVerificationPlanAssociationOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          GetRestoreVerificationPlanAssociationRequest, RestoreVerificationPlanAssociation>
+      getRestoreVerificationPlanAssociationCallable() {
+    return getRestoreVerificationPlanAssociationCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          ListRestoreVerificationPlanAssociationsRequest,
+          ListRestoreVerificationPlanAssociationsResponse>
+      listRestoreVerificationPlanAssociationsCallable() {
+    return listRestoreVerificationPlanAssociationsCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          ListRestoreVerificationPlanAssociationsRequest,
+          ListRestoreVerificationPlanAssociationsPagedResponse>
+      listRestoreVerificationPlanAssociationsPagedCallable() {
+    return listRestoreVerificationPlanAssociationsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteRestoreVerificationPlanAssociationRequest, Operation>
+      deleteRestoreVerificationPlanAssociationCallable() {
+    return deleteRestoreVerificationPlanAssociationCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          DeleteRestoreVerificationPlanAssociationRequest, Empty, OperationMetadata>
+      deleteRestoreVerificationPlanAssociationOperationCallable() {
+    return deleteRestoreVerificationPlanAssociationOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<TriggerRestoreVerificationRequest, Operation>
+      triggerRestoreVerificationCallable() {
+    return triggerRestoreVerificationCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          TriggerRestoreVerificationRequest, TriggerRestoreVerificationResponse, OperationMetadata>
+      triggerRestoreVerificationOperationCallable() {
+    return triggerRestoreVerificationOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetRestoreVerificationPlanRequest, RestoreVerificationPlan>
+      getRestoreVerificationPlanCallable() {
+    return getRestoreVerificationPlanCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListRestoreVerificationPlansRequest, ListRestoreVerificationPlansResponse>
+      listRestoreVerificationPlansCallable() {
+    return listRestoreVerificationPlansCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          ListRestoreVerificationPlansRequest, ListRestoreVerificationPlansPagedResponse>
+      listRestoreVerificationPlansPagedCallable() {
+    return listRestoreVerificationPlansPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteRestoreVerificationPlanRequest, Operation>
+      deleteRestoreVerificationPlanCallable() {
+    return deleteRestoreVerificationPlanCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteRestoreVerificationPlanRequest, Empty, OperationMetadata>
+      deleteRestoreVerificationPlanOperationCallable() {
+    return deleteRestoreVerificationPlanOperationCallable;
   }
 
   @Override

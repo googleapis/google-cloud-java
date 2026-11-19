@@ -108,6 +108,7 @@ public class AuditManagerClientHttpJsonTest {
             .setNextRunTime(Timestamp.newBuilder().build())
             .setLastTriggerTime(Timestamp.newBuilder().build())
             .setErrorMessage("errorMessage1203236063")
+            .putAllParameterOverrides(new HashMap<String, ParameterOverrides>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -172,6 +173,7 @@ public class AuditManagerClientHttpJsonTest {
             .setNextRunTime(Timestamp.newBuilder().build())
             .setLastTriggerTime(Timestamp.newBuilder().build())
             .setErrorMessage("errorMessage1203236063")
+            .putAllParameterOverrides(new HashMap<String, ParameterOverrides>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -234,6 +236,7 @@ public class AuditManagerClientHttpJsonTest {
             .setNextRunTime(Timestamp.newBuilder().build())
             .setLastTriggerTime(Timestamp.newBuilder().build())
             .setErrorMessage("errorMessage1203236063")
+            .putAllParameterOverrides(new HashMap<String, ParameterOverrides>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -296,6 +299,7 @@ public class AuditManagerClientHttpJsonTest {
             .setNextRunTime(Timestamp.newBuilder().build())
             .setLastTriggerTime(Timestamp.newBuilder().build())
             .setErrorMessage("errorMessage1203236063")
+            .putAllParameterOverrides(new HashMap<String, ParameterOverrides>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -315,6 +319,7 @@ public class AuditManagerClientHttpJsonTest {
             .setNextRunTime(Timestamp.newBuilder().build())
             .setLastTriggerTime(Timestamp.newBuilder().build())
             .setErrorMessage("errorMessage1203236063")
+            .putAllParameterOverrides(new HashMap<String, ParameterOverrides>())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -360,6 +365,7 @@ public class AuditManagerClientHttpJsonTest {
               .setNextRunTime(Timestamp.newBuilder().build())
               .setLastTriggerTime(Timestamp.newBuilder().build())
               .setErrorMessage("errorMessage1203236063")
+              .putAllParameterOverrides(new HashMap<String, ParameterOverrides>())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateAuditSchedule(auditSchedule, updateMask);
@@ -387,6 +393,7 @@ public class AuditManagerClientHttpJsonTest {
             .setNextRunTime(Timestamp.newBuilder().build())
             .setLastTriggerTime(Timestamp.newBuilder().build())
             .setErrorMessage("errorMessage1203236063")
+            .putAllParameterOverrides(new HashMap<String, ParameterOverrides>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -448,6 +455,7 @@ public class AuditManagerClientHttpJsonTest {
             .setNextRunTime(Timestamp.newBuilder().build())
             .setLastTriggerTime(Timestamp.newBuilder().build())
             .setErrorMessage("errorMessage1203236063")
+            .putAllParameterOverrides(new HashMap<String, ParameterOverrides>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -753,6 +761,7 @@ public class AuditManagerClientHttpJsonTest {
             .addAllControlDetails(new ArrayList<ControlDetails>())
             .setComplianceFramework("complianceFramework-1808314333")
             .setScopeId("scopeId1923941007")
+            .putAllCloudControlParameterStates(new HashMap<String, CloudControlParameterStates>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -975,6 +984,7 @@ public class AuditManagerClientHttpJsonTest {
             .addAllControlDetails(new ArrayList<ControlDetails>())
             .setComplianceFramework("complianceFramework-1808314333")
             .setScopeId("scopeId1923941007")
+            .putAllCloudControlParameterStates(new HashMap<String, CloudControlParameterStates>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1034,6 +1044,7 @@ public class AuditManagerClientHttpJsonTest {
             .addAllControlDetails(new ArrayList<ControlDetails>())
             .setComplianceFramework("complianceFramework-1808314333")
             .setScopeId("scopeId1923941007")
+            .putAllCloudControlParameterStates(new HashMap<String, CloudControlParameterStates>())
             .build();
     mockService.addResponse(expectedResponse);
 

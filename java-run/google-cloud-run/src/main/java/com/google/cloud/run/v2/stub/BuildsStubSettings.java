@@ -103,7 +103,10 @@ import org.jspecify.annotations.Nullable;
 public class BuildsStubSettings extends StubSettings<BuildsStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
-      ImmutableList.<String>builder().add("https://www.googleapis.com/auth/cloud-platform").build();
+      ImmutableList.<String>builder()
+          .add("https://www.googleapis.com/auth/cloud-platform")
+          .add("https://www.googleapis.com/auth/run")
+          .build();
 
   private final UnaryCallSettings<SubmitBuildRequest, SubmitBuildResponse> submitBuildSettings;
 

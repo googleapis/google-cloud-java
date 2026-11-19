@@ -97,7 +97,12 @@ class GrpcStreamIterator extends AbstractIterator<PartialResultSet>
   @VisibleForTesting
   GrpcStreamIterator(
       boolean lastStatement, int prefetchChunks, boolean cancelQueryWhenClientIsClosed) {
-    this(null, lastStatement, prefetchChunks, cancelQueryWhenClientIsClosed);
+    this(
+        /* statement= */ null,
+        lastStatement,
+        prefetchChunks,
+        cancelQueryWhenClientIsClosed,
+        /* withBeginTransaction= */ false);
   }
 
   @VisibleForTesting
@@ -106,9 +111,38 @@ class GrpcStreamIterator extends AbstractIterator<PartialResultSet>
       boolean lastStatement,
       int prefetchChunks,
       boolean cancelQueryWhenClientIsClosed) {
+    this(
+        statement,
+        lastStatement,
+        prefetchChunks,
+        cancelQueryWhenClientIsClosed,
+        /* withBeginTransaction= */ false);
+  }
+
+  @VisibleForTesting
+  GrpcStreamIterator(
+      boolean lastStatement,
+      int prefetchChunks,
+      boolean cancelQueryWhenClientIsClosed,
+      boolean withBeginTransaction) {
+    this(
+        /* statement= */ null,
+        lastStatement,
+        prefetchChunks,
+        cancelQueryWhenClientIsClosed,
+        withBeginTransaction);
+  }
+
+  GrpcStreamIterator(
+      Statement statement,
+      boolean lastStatement,
+      int prefetchChunks,
+      boolean cancelQueryWhenClientIsClosed,
+      boolean withBeginTransaction) {
     this.statement = statement;
     this.lastStatement = lastStatement;
     this.prefetchChunks = prefetchChunks;
+    this.withBeginTransaction = withBeginTransaction;
     this.consumer = new ConsumerImpl(cancelQueryWhenClientIsClosed);
     // One extra to allow for END_OF_STREAM message.
     this.stream = new LinkedBlockingQueue<>(prefetchChunks + 1);
@@ -136,12 +170,17 @@ class GrpcStreamIterator extends AbstractIterator<PartialResultSet>
     }
   }
 
-  public void setCall(SpannerRpc.StreamingCall call, boolean withBeginTransaction) {
+  @VisibleForTesting
+  void setCall(SpannerRpc.StreamingCall call, boolean withBeginTransaction) {
+    this.withBeginTransaction = withBeginTransaction;
+    setCall(call);
+  }
+
+  void setCall(SpannerRpc.StreamingCall call) {
     Timeout timeout = extractTimeout(call);
     boolean shouldCancel;
     String messageToCancel;
     synchronized (this) {
-      this.withBeginTransaction = withBeginTransaction;
       shouldCancel = this.closed && !this.callCleared;
       if (!this.callCleared && !this.closed) {
         this.call = call;
@@ -246,10 +285,10 @@ class GrpcStreamIterator extends AbstractIterator<PartialResultSet>
    *
    * <p>When an asynchronous {@link AsyncResultSet.StreamMessageListener} is registered, consumption
    * is gated until the underlying {@link SpannerRpc.StreamingCall} is initialized via {@link
-   * #setCall(SpannerRpc.StreamingCall, boolean)} so that call context, cancellation hooks, and
-   * listener notifications are properly established. In synchronous mode (where no listener is
-   * registered, e.g. {@code streamMessageListener == null}), this gating is not needed because
-   * callers invoke {@link #next()} directly on the iterator.
+   * #setCall(SpannerRpc.StreamingCall)} so that call context, cancellation hooks, and listener
+   * notifications are properly established. In synchronous mode (where no listener is registered,
+   * e.g. {@code streamMessageListener == null}), this gating is not needed because callers invoke
+   * {@link #next()} directly on the iterator.
    */
   private boolean isReadyForConsumption() {
     return callInitialized || streamMessageListener == null;

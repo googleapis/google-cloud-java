@@ -16,6 +16,8 @@
 
 package com.google.cloud.discoveryengine.v1.stub;
 
+import static com.google.cloud.discoveryengine.v1.ServingConfigServiceClient.ListServingConfigsPagedResponse;
+
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
@@ -28,8 +30,14 @@ import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.discoveryengine.v1.CreateServingConfigRequest;
+import com.google.cloud.discoveryengine.v1.DeleteServingConfigRequest;
+import com.google.cloud.discoveryengine.v1.GetServingConfigRequest;
+import com.google.cloud.discoveryengine.v1.ListServingConfigsRequest;
+import com.google.cloud.discoveryengine.v1.ListServingConfigsResponse;
 import com.google.cloud.discoveryengine.v1.ServingConfig;
 import com.google.cloud.discoveryengine.v1.UpdateServingConfigRequest;
+import com.google.protobuf.Empty;
 import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -50,6 +58,87 @@ import org.jspecify.annotations.NullMarked;
 @Generated("by gapic-generator-java")
 public class HttpJsonServingConfigServiceStub extends ServingConfigServiceStub {
   private static final TypeRegistry typeRegistry = TypeRegistry.newBuilder().build();
+
+  private static final ApiMethodDescriptor<CreateServingConfigRequest, ServingConfig>
+      createServingConfigMethodDescriptor =
+          ApiMethodDescriptor.<CreateServingConfigRequest, ServingConfig>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.discoveryengine.v1.ServingConfigService/CreateServingConfig")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CreateServingConfigRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*/dataStores/*}/servingConfigs",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateServingConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v1/{parent=projects/*/locations/*/collections/*/dataStores/*}/servingConfigs",
+                          "/v1/{parent=projects/*/locations/*/collections/*/engines/*}/servingConfigs")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateServingConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields, "servingConfigId", request.getServingConfigId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("servingConfig", request.getServingConfig(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ServingConfig>newBuilder()
+                      .setDefaultInstance(ServingConfig.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteServingConfigRequest, Empty>
+      deleteServingConfigMethodDescriptor =
+          ApiMethodDescriptor.<DeleteServingConfigRequest, Empty>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.discoveryengine.v1.ServingConfigService/DeleteServingConfig")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteServingConfigRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/dataStores/*/servingConfigs/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteServingConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v1/{name=projects/*/locations/*/collections/*/dataStores/*/servingConfigs/*}",
+                          "/v1/{name=projects/*/locations/*/collections/*/engines/*/servingConfigs/*}")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteServingConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Empty>newBuilder()
+                      .setDefaultInstance(Empty.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
 
   private static final ApiMethodDescriptor<UpdateServingConfigRequest, ServingConfig>
       updateServingConfigMethodDescriptor =
@@ -94,8 +183,94 @@ public class HttpJsonServingConfigServiceStub extends ServingConfigServiceStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<GetServingConfigRequest, ServingConfig>
+      getServingConfigMethodDescriptor =
+          ApiMethodDescriptor.<GetServingConfigRequest, ServingConfig>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.discoveryengine.v1.ServingConfigService/GetServingConfig")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetServingConfigRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/dataStores/*/servingConfigs/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetServingConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v1/{name=projects/*/locations/*/collections/*/dataStores/*/servingConfigs/*}",
+                          "/v1/{name=projects/*/locations/*/collections/*/engines/*/servingConfigs/*}")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetServingConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ServingConfig>newBuilder()
+                      .setDefaultInstance(ServingConfig.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<ListServingConfigsRequest, ListServingConfigsResponse>
+      listServingConfigsMethodDescriptor =
+          ApiMethodDescriptor.<ListServingConfigsRequest, ListServingConfigsResponse>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.discoveryengine.v1.ServingConfigService/ListServingConfigs")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListServingConfigsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*/dataStores/*}/servingConfigs",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListServingConfigsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v1/{parent=projects/*/locations/*/collections/*/dataStores/*}/servingConfigs",
+                          "/v1/{parent=projects/*/locations/*/collections/*/engines/*}/servingConfigs")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListServingConfigsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListServingConfigsResponse>newBuilder()
+                      .setDefaultInstance(ListServingConfigsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private final UnaryCallable<CreateServingConfigRequest, ServingConfig>
+      createServingConfigCallable;
+  private final UnaryCallable<DeleteServingConfigRequest, Empty> deleteServingConfigCallable;
   private final UnaryCallable<UpdateServingConfigRequest, ServingConfig>
       updateServingConfigCallable;
+  private final UnaryCallable<GetServingConfigRequest, ServingConfig> getServingConfigCallable;
+  private final UnaryCallable<ListServingConfigsRequest, ListServingConfigsResponse>
+      listServingConfigsCallable;
+  private final UnaryCallable<ListServingConfigsRequest, ListServingConfigsPagedResponse>
+      listServingConfigsPagedCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
@@ -141,6 +316,31 @@ public class HttpJsonServingConfigServiceStub extends ServingConfigServiceStub {
       throws IOException {
     this.callableFactory = callableFactory;
 
+    HttpJsonCallSettings<CreateServingConfigRequest, ServingConfig>
+        createServingConfigTransportSettings =
+            HttpJsonCallSettings.<CreateServingConfigRequest, ServingConfig>newBuilder()
+                .setMethodDescriptor(createServingConfigMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    HttpJsonCallSettings<DeleteServingConfigRequest, Empty> deleteServingConfigTransportSettings =
+        HttpJsonCallSettings.<DeleteServingConfigRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteServingConfigMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
     HttpJsonCallSettings<UpdateServingConfigRequest, ServingConfig>
         updateServingConfigTransportSettings =
             HttpJsonCallSettings.<UpdateServingConfigRequest, ServingConfig>newBuilder()
@@ -155,11 +355,59 @@ public class HttpJsonServingConfigServiceStub extends ServingConfigServiceStub {
                       return builder.build();
                     })
                 .build();
+    HttpJsonCallSettings<GetServingConfigRequest, ServingConfig> getServingConfigTransportSettings =
+        HttpJsonCallSettings.<GetServingConfigRequest, ServingConfig>newBuilder()
+            .setMethodDescriptor(getServingConfigMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    HttpJsonCallSettings<ListServingConfigsRequest, ListServingConfigsResponse>
+        listServingConfigsTransportSettings =
+            HttpJsonCallSettings.<ListServingConfigsRequest, ListServingConfigsResponse>newBuilder()
+                .setMethodDescriptor(listServingConfigsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
 
+    this.createServingConfigCallable =
+        callableFactory.createUnaryCallable(
+            createServingConfigTransportSettings,
+            settings.createServingConfigSettings(),
+            clientContext);
+    this.deleteServingConfigCallable =
+        callableFactory.createUnaryCallable(
+            deleteServingConfigTransportSettings,
+            settings.deleteServingConfigSettings(),
+            clientContext);
     this.updateServingConfigCallable =
         callableFactory.createUnaryCallable(
             updateServingConfigTransportSettings,
             settings.updateServingConfigSettings(),
+            clientContext);
+    this.getServingConfigCallable =
+        callableFactory.createUnaryCallable(
+            getServingConfigTransportSettings, settings.getServingConfigSettings(), clientContext);
+    this.listServingConfigsCallable =
+        callableFactory.createUnaryCallable(
+            listServingConfigsTransportSettings,
+            settings.listServingConfigsSettings(),
+            clientContext);
+    this.listServingConfigsPagedCallable =
+        callableFactory.createPagedCallable(
+            listServingConfigsTransportSettings,
+            settings.listServingConfigsSettings(),
             clientContext);
 
     this.backgroundResources =
@@ -169,13 +417,44 @@ public class HttpJsonServingConfigServiceStub extends ServingConfigServiceStub {
   @InternalApi
   public static List<ApiMethodDescriptor> getMethodDescriptors() {
     List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
+    methodDescriptors.add(createServingConfigMethodDescriptor);
+    methodDescriptors.add(deleteServingConfigMethodDescriptor);
     methodDescriptors.add(updateServingConfigMethodDescriptor);
+    methodDescriptors.add(getServingConfigMethodDescriptor);
+    methodDescriptors.add(listServingConfigsMethodDescriptor);
     return methodDescriptors;
+  }
+
+  @Override
+  public UnaryCallable<CreateServingConfigRequest, ServingConfig> createServingConfigCallable() {
+    return createServingConfigCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteServingConfigRequest, Empty> deleteServingConfigCallable() {
+    return deleteServingConfigCallable;
   }
 
   @Override
   public UnaryCallable<UpdateServingConfigRequest, ServingConfig> updateServingConfigCallable() {
     return updateServingConfigCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetServingConfigRequest, ServingConfig> getServingConfigCallable() {
+    return getServingConfigCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListServingConfigsRequest, ListServingConfigsResponse>
+      listServingConfigsCallable() {
+    return listServingConfigsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListServingConfigsRequest, ListServingConfigsPagedResponse>
+      listServingConfigsPagedCallable() {
+    return listServingConfigsPagedCallable;
   }
 
   @Override

@@ -204,6 +204,16 @@ public enum WarningReason implements com.google.protobuf.ProtocolMessageEnum {
    * <code>WARNING_REASON_INVALID_MERCHANT_ID = 14;</code>
    */
   WARNING_REASON_INVALID_MERCHANT_ID(14),
+  /**
+   *
+   *
+   * <pre>
+   * The number format is invalid.
+   * </pre>
+   *
+   * <code>WARNING_REASON_INVALID_NUMBER_FORMAT = 15;</code>
+   */
+  WARNING_REASON_INVALID_NUMBER_FORMAT(15),
   UNRECOGNIZED(-1),
   ;
 
@@ -405,6 +415,17 @@ public enum WarningReason implements com.google.protobuf.ProtocolMessageEnum {
    */
   public static final int WARNING_REASON_INVALID_MERCHANT_ID_VALUE = 14;
 
+  /**
+   *
+   *
+   * <pre>
+   * The number format is invalid.
+   * </pre>
+   *
+   * <code>WARNING_REASON_INVALID_NUMBER_FORMAT = 15;</code>
+   */
+  public static final int WARNING_REASON_INVALID_NUMBER_FORMAT_VALUE = 15;
+
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
       throw new java.lang.IllegalArgumentException(
@@ -459,6 +480,8 @@ public enum WarningReason implements com.google.protobuf.ProtocolMessageEnum {
         return WARNING_REASON_INVALID_DEVICE_SCREEN_RESOLUTION;
       case 14:
         return WARNING_REASON_INVALID_MERCHANT_ID;
+      case 15:
+        return WARNING_REASON_INVALID_NUMBER_FORMAT;
       default:
         return null;
     }

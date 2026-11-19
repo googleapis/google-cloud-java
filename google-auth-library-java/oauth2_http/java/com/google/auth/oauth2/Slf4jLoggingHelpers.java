@@ -71,6 +71,7 @@ class Slf4jLoggingHelpers {
             "signedBlob",
             "authorization",
             "subject_token",
+            "actor_token",
             "id_token"));
   }
 

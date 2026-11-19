@@ -30,7 +30,7 @@ public interface SearchInfoOrBuilder
    *
    *
    * <pre>
-   * The user's search query.
+   * Optional. The user's search query.
    *
    * See
    * [SearchRequest.query][google.cloud.discoveryengine.v1.SearchRequest.query]
@@ -46,7 +46,7 @@ public interface SearchInfoOrBuilder
    * field. Otherwise, an `INVALID_ARGUMENT` error is returned.
    * </pre>
    *
-   * <code>string search_query = 1;</code>
+   * <code>string search_query = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The searchQuery.
    */
@@ -56,7 +56,7 @@ public interface SearchInfoOrBuilder
    *
    *
    * <pre>
-   * The user's search query.
+   * Optional. The user's search query.
    *
    * See
    * [SearchRequest.query][google.cloud.discoveryengine.v1.SearchRequest.query]
@@ -72,7 +72,7 @@ public interface SearchInfoOrBuilder
    * field. Otherwise, an `INVALID_ARGUMENT` error is returned.
    * </pre>
    *
-   * <code>string search_query = 1;</code>
+   * <code>string search_query = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for searchQuery.
    */

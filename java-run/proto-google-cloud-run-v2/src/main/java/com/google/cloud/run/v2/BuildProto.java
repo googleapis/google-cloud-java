@@ -119,17 +119,18 @@ public final class BuildProto extends com.google.protobuf.GeneratedFile {
           + "StorageSource\022\024\n"
           + "\006bucket\030\001 \001(\tB\004\342A\001\002\022\024\n"
           + "\006object\030\002 \001(\tB\004\342A\001\002\022\030\n\n"
-          + "generation\030\003 \001(\003B\004\342A\001\0012\361\001\n"
+          + "generation\030\003 \001(\003B\004\342A\001\0012\225\002\n"
           + "\006Builds\022\236\001\n"
           + "\013SubmitBuild\022\'.google.cloud.run.v2.SubmitBuildRequest\032(.goo"
           + "gle.cloud.run.v2.SubmitBuildResponse\"<\202\323"
           + "\344\223\0026\"1/v2/{parent=projects/*/locations/*"
-          + "}/builds:submit:\001*\032F\312A\022run.googleapis.co"
-          + "m\322A.https://www.googleapis.com/auth/cloud-platformB\303\001\n"
+          + "}/builds:submit:\001*\032j\312A\022run.googleapis.co"
+          + "m\322ARhttps://www.googleapis.com/auth/clou"
+          + "d-platform,https://www.googleapis.com/auth/runB\303\001\n"
           + "\027com.google.cloud.run.v2B\n"
           + "BuildProtoP\001Z)cloud.google.com/go/run/apiv2/runpb;runpb\352An\n"
-          + ")cloudbuild.googleapis.com/BuildWorkerPool\022Aprojects/{project"
-          + "}/locations/{location}/workerPools/{worker_pool}b\006proto3"
+          + ")cloudbuild.googleapis.com/BuildWorkerPool\022Aprojects/{project}/lo"
+          + "cations/{location}/workerPools/{worker_pool}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -407,4 +407,30 @@ public interface AdIdentifiersOrBuilder
    * @return The bytes for visitorPpid.
    */
   com.google.protobuf.ByteString getVisitorPpidBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Google generated ID issued when user submits a lead form.
+   * </pre>
+   *
+   * <code>string lead_id = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The leadId.
+   */
+  java.lang.String getLeadId();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Google generated ID issued when user submits a lead form.
+   * </pre>
+   *
+   * <code>string lead_id = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for leadId.
+   */
+  com.google.protobuf.ByteString getLeadIdBytes();
 }

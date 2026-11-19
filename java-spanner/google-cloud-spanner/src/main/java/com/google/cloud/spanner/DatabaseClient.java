@@ -16,6 +16,7 @@
 
 package com.google.cloud.spanner;
 
+import com.google.api.core.InternalApi;
 import com.google.api.gax.rpc.ServerStream;
 import com.google.cloud.Timestamp;
 import com.google.cloud.spanner.Options.ReadOnlyTransactionOption;
@@ -26,6 +27,7 @@ import com.google.cloud.spanner.Statement.StatementFactory;
 import com.google.spanner.v1.BatchWriteResponse;
 import com.google.spanner.v1.TransactionOptions.IsolationLevel;
 import com.google.spanner.v1.TransactionOptions.ReadWrite.ReadLockMode;
+import org.jspecify.annotations.Nullable;
 
 /**
  * Interface for all the APIs that are used to read/write data into a Cloud Spanner database. An
@@ -39,6 +41,32 @@ public interface DatabaseClient {
    * @return the SQL dialect that is used by the database.
    */
   default Dialect getDialect() {
+    throw new UnsupportedOperationException("method should be overwritten");
+  }
+
+  /**
+   * Returns the default transaction isolation level that is configured for the database with the
+   * {@code default_transaction_isolation} database option. Returns {@link
+   * IsolationLevel#ISOLATION_LEVEL_UNSPECIFIED} if the option has not been set, and {@link
+   * IsolationLevel#UNRECOGNIZED} if the option is set to a value that is not known to this version
+   * of the client.
+   *
+   * <p>The option is read once, together with the dialect of the database, and is cached for the
+   * lifetime of this client. Changes to the option after it has been read are not reflected.
+   *
+   * @return the default transaction isolation level configured for the database.
+   */
+  @InternalApi
+  default IsolationLevel getDatabaseDefaultIsolationLevel() {
+    throw new UnsupportedOperationException("method should be overwritten");
+  }
+
+  /**
+   * Returns the value of the {@code default_transaction_isolation} database option as returned by
+   * Spanner, or {@code null} if the option has not been set.
+   */
+  @InternalApi
+  default @Nullable String getDatabaseDefaultIsolationLevelValue() {
     throw new UnsupportedOperationException("method should be overwritten");
   }
 

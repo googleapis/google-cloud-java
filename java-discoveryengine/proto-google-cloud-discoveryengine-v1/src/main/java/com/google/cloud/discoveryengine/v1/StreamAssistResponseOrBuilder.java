@@ -42,11 +42,14 @@ public interface StreamAssistResponseOrBuilder
    * see if more parts are to be expected. While the state is `IN_PROGRESS`, the
    * [AssistAnswer.replies][google.cloud.discoveryengine.v1.AssistAnswer.replies]
    * field in each response will contain replies (reply fragments) to be
-   * appended to the ones received in previous responses. [AssistAnswer.name][]
+   * appended to the ones received in previous responses.
+   * [AssistAnswer.name][google.cloud.discoveryengine.v1.AssistAnswer.name]
    * won't be filled.
    *
    * If the state is `SUCCEEDED`, `FAILED` or `SKIPPED`, the response
-   * is the last response and [AssistAnswer.name][] will have a value.
+   * is the last response and
+   * [AssistAnswer.name][google.cloud.discoveryengine.v1.AssistAnswer.name] will
+   * have a value.
    * </pre>
    *
    * <code>.google.cloud.discoveryengine.v1.AssistAnswer answer = 1;</code>
@@ -71,11 +74,14 @@ public interface StreamAssistResponseOrBuilder
    * see if more parts are to be expected. While the state is `IN_PROGRESS`, the
    * [AssistAnswer.replies][google.cloud.discoveryengine.v1.AssistAnswer.replies]
    * field in each response will contain replies (reply fragments) to be
-   * appended to the ones received in previous responses. [AssistAnswer.name][]
+   * appended to the ones received in previous responses.
+   * [AssistAnswer.name][google.cloud.discoveryengine.v1.AssistAnswer.name]
    * won't be filled.
    *
    * If the state is `SUCCEEDED`, `FAILED` or `SKIPPED`, the response
-   * is the last response and [AssistAnswer.name][] will have a value.
+   * is the last response and
+   * [AssistAnswer.name][google.cloud.discoveryengine.v1.AssistAnswer.name] will
+   * have a value.
    * </pre>
    *
    * <code>.google.cloud.discoveryengine.v1.AssistAnswer answer = 1;</code>
@@ -100,11 +106,14 @@ public interface StreamAssistResponseOrBuilder
    * see if more parts are to be expected. While the state is `IN_PROGRESS`, the
    * [AssistAnswer.replies][google.cloud.discoveryengine.v1.AssistAnswer.replies]
    * field in each response will contain replies (reply fragments) to be
-   * appended to the ones received in previous responses. [AssistAnswer.name][]
+   * appended to the ones received in previous responses.
+   * [AssistAnswer.name][google.cloud.discoveryengine.v1.AssistAnswer.name]
    * won't be filled.
    *
    * If the state is `SUCCEEDED`, `FAILED` or `SKIPPED`, the response
-   * is the last response and [AssistAnswer.name][] will have a value.
+   * is the last response and
+   * [AssistAnswer.name][google.cloud.discoveryengine.v1.AssistAnswer.name] will
+   * have a value.
    * </pre>
    *
    * <code>.google.cloud.discoveryengine.v1.AssistAnswer answer = 1;</code>
@@ -115,7 +124,8 @@ public interface StreamAssistResponseOrBuilder
    *
    *
    * <pre>
-   * Session information.
+   * Session information. Only included in the final StreamAssistResponse of the
+   * response stream.
    * </pre>
    *
    * <code>.google.cloud.discoveryengine.v1.StreamAssistResponse.SessionInfo session_info = 2;
@@ -129,7 +139,8 @@ public interface StreamAssistResponseOrBuilder
    *
    *
    * <pre>
-   * Session information.
+   * Session information. Only included in the final StreamAssistResponse of the
+   * response stream.
    * </pre>
    *
    * <code>.google.cloud.discoveryengine.v1.StreamAssistResponse.SessionInfo session_info = 2;
@@ -143,7 +154,8 @@ public interface StreamAssistResponseOrBuilder
    *
    *
    * <pre>
-   * Session information.
+   * Session information. Only included in the final StreamAssistResponse of the
+   * response stream.
    * </pre>
    *
    * <code>.google.cloud.discoveryengine.v1.StreamAssistResponse.SessionInfo session_info = 2;
@@ -179,4 +191,208 @@ public interface StreamAssistResponseOrBuilder
    * @return The bytes for assistToken.
    */
   com.google.protobuf.ByteString getAssistTokenBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The tool names of the tools that were invoked.
+   * </pre>
+   *
+   * <code>repeated string invocation_tools = 8;</code>
+   *
+   * @return A list containing the invocationTools.
+   */
+  java.util.List<java.lang.String> getInvocationToolsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * The tool names of the tools that were invoked.
+   * </pre>
+   *
+   * <code>repeated string invocation_tools = 8;</code>
+   *
+   * @return The count of invocationTools.
+   */
+  int getInvocationToolsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * The tool names of the tools that were invoked.
+   * </pre>
+   *
+   * <code>repeated string invocation_tools = 8;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The invocationTools at the given index.
+   */
+  java.lang.String getInvocationTools(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * The tool names of the tools that were invoked.
+   * </pre>
+   *
+   * <code>repeated string invocation_tools = 8;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the invocationTools at the given index.
+   */
+  com.google.protobuf.ByteString getInvocationToolsBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * The skills executed during the turn.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1.StreamAssistResponse.InvokedSkill invoked_skills = 10;
+   * </code>
+   */
+  java.util.List<com.google.cloud.discoveryengine.v1.StreamAssistResponse.InvokedSkill>
+      getInvokedSkillsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * The skills executed during the turn.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1.StreamAssistResponse.InvokedSkill invoked_skills = 10;
+   * </code>
+   */
+  com.google.cloud.discoveryengine.v1.StreamAssistResponse.InvokedSkill getInvokedSkills(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * The skills executed during the turn.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1.StreamAssistResponse.InvokedSkill invoked_skills = 10;
+   * </code>
+   */
+  int getInvokedSkillsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * The skills executed during the turn.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1.StreamAssistResponse.InvokedSkill invoked_skills = 10;
+   * </code>
+   */
+  java.util.List<
+          ? extends com.google.cloud.discoveryengine.v1.StreamAssistResponse.InvokedSkillOrBuilder>
+      getInvokedSkillsOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * The skills executed during the turn.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1.StreamAssistResponse.InvokedSkill invoked_skills = 10;
+   * </code>
+   */
+  com.google.cloud.discoveryengine.v1.StreamAssistResponse.InvokedSkillOrBuilder
+      getInvokedSkillsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Per-connector authentication errors encountered during the request.
+   * Present when one or more connectors failed authentication but the
+   * request proceeded with the remaining connectors.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1.StreamAssistResponse.ConnectorAuthError connector_auth_errors = 11;
+   * </code>
+   */
+  java.util.List<com.google.cloud.discoveryengine.v1.StreamAssistResponse.ConnectorAuthError>
+      getConnectorAuthErrorsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Per-connector authentication errors encountered during the request.
+   * Present when one or more connectors failed authentication but the
+   * request proceeded with the remaining connectors.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1.StreamAssistResponse.ConnectorAuthError connector_auth_errors = 11;
+   * </code>
+   */
+  com.google.cloud.discoveryengine.v1.StreamAssistResponse.ConnectorAuthError
+      getConnectorAuthErrors(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Per-connector authentication errors encountered during the request.
+   * Present when one or more connectors failed authentication but the
+   * request proceeded with the remaining connectors.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1.StreamAssistResponse.ConnectorAuthError connector_auth_errors = 11;
+   * </code>
+   */
+  int getConnectorAuthErrorsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Per-connector authentication errors encountered during the request.
+   * Present when one or more connectors failed authentication but the
+   * request proceeded with the remaining connectors.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1.StreamAssistResponse.ConnectorAuthError connector_auth_errors = 11;
+   * </code>
+   */
+  java.util.List<
+          ? extends
+              com.google.cloud.discoveryengine.v1.StreamAssistResponse.ConnectorAuthErrorOrBuilder>
+      getConnectorAuthErrorsOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Per-connector authentication errors encountered during the request.
+   * Present when one or more connectors failed authentication but the
+   * request proceeded with the remaining connectors.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1.StreamAssistResponse.ConnectorAuthError connector_auth_errors = 11;
+   * </code>
+   */
+  com.google.cloud.discoveryengine.v1.StreamAssistResponse.ConnectorAuthErrorOrBuilder
+      getConnectorAuthErrorsOrBuilder(int index);
 }

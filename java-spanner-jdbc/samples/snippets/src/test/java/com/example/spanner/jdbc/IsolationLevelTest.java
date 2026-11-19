@@ -26,6 +26,7 @@ import java.sql.Statement;
 import java.util.Properties;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -89,6 +90,7 @@ public class IsolationLevelTest {
     }
   }
 
+  @Ignore("Flaky test: b/579438023")
   @Test
   public void testIsolationLevel() throws SQLException {
     isolationLevel("emulator-project", "my-instance", "my-database", PROPERTIES);

@@ -56,7 +56,8 @@ public interface AppEngineVersionInfoOrBuilder
    *
    *
    * <pre>
-   * URI of an App Engine version.
+   * URI of the App Engine version.
+   * Format: `apps/{app_id}/services/{service_id}/versions/{version_id}`
    * </pre>
    *
    * <code>string uri = 2;</code>
@@ -69,7 +70,8 @@ public interface AppEngineVersionInfoOrBuilder
    *
    *
    * <pre>
-   * URI of an App Engine version.
+   * URI of the App Engine version.
+   * Format: `apps/{app_id}/services/{service_id}/versions/{version_id}`
    * </pre>
    *
    * <code>string uri = 2;</code>

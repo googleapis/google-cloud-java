@@ -24,7 +24,7 @@ package com.google.ads.admanager.v1;
  *
  *
  * <pre>
- * Request object for [RunAvailabilityForecast][] method.
+ * Request object for `RunAvailabilityForecast` method.
  * </pre>
  *
  * Protobuf type {@code google.ads.admanager.v1.RunAvailabilityForecastRequest}
@@ -81,6 +81,7 @@ public final class RunAvailabilityForecastRequest extends com.google.protobuf.Ge
           com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     EXISTING_LINE_ITEM(3),
+    FORECASTING_LINE_ITEM(6),
     LINEITEMDATA_NOT_SET(0);
     private final int value;
 
@@ -102,6 +103,8 @@ public final class RunAvailabilityForecastRequest extends com.google.protobuf.Ge
       switch (value) {
         case 3:
           return EXISTING_LINE_ITEM;
+        case 6:
+          return FORECASTING_LINE_ITEM;
         case 0:
           return LINEITEMDATA_NOT_SET;
         default:
@@ -201,6 +204,73 @@ public final class RunAvailabilityForecastRequest extends com.google.protobuf.Ge
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int FORECASTING_LINE_ITEM_FIELD_NUMBER = 6;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The
+   * [ForecastingLineItem][google.ads.admanager.v1.ForecastingLineItem] to be
+   * forecasted.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.ForecastingLineItem forecasting_line_item = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the forecastingLineItem field is set.
+   */
+  @java.lang.Override
+  public boolean hasForecastingLineItem() {
+    return lineItemDataCase_ == 6;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The
+   * [ForecastingLineItem][google.ads.admanager.v1.ForecastingLineItem] to be
+   * forecasted.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.ForecastingLineItem forecasting_line_item = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The forecastingLineItem.
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.ForecastingLineItem getForecastingLineItem() {
+    if (lineItemDataCase_ == 6) {
+      return (com.google.ads.admanager.v1.ForecastingLineItem) lineItemData_;
+    }
+    return com.google.ads.admanager.v1.ForecastingLineItem.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The
+   * [ForecastingLineItem][google.ads.admanager.v1.ForecastingLineItem] to be
+   * forecasted.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.ForecastingLineItem forecasting_line_item = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.ForecastingLineItemOrBuilder
+      getForecastingLineItemOrBuilder() {
+    if (lineItemDataCase_ == 6) {
+      return (com.google.ads.admanager.v1.ForecastingLineItem) lineItemData_;
+    }
+    return com.google.ads.admanager.v1.ForecastingLineItem.getDefaultInstance();
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
@@ -343,6 +413,9 @@ public final class RunAvailabilityForecastRequest extends com.google.protobuf.Ge
     if (lineItemDataCase_ == 3) {
       com.google.protobuf.GeneratedMessage.writeString(output, 3, lineItemData_);
     }
+    if (lineItemDataCase_ == 6) {
+      output.writeMessage(6, (com.google.ads.admanager.v1.ForecastingLineItem) lineItemData_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -362,6 +435,11 @@ public final class RunAvailabilityForecastRequest extends com.google.protobuf.Ge
     }
     if (lineItemDataCase_ == 3) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(3, lineItemData_);
+    }
+    if (lineItemDataCase_ == 6) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              6, (com.google.ads.admanager.v1.ForecastingLineItem) lineItemData_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -390,6 +468,9 @@ public final class RunAvailabilityForecastRequest extends com.google.protobuf.Ge
       case 3:
         if (!getExistingLineItem().equals(other.getExistingLineItem())) return false;
         break;
+      case 6:
+        if (!getForecastingLineItem().equals(other.getForecastingLineItem())) return false;
+        break;
       case 0:
       default:
     }
@@ -414,6 +495,10 @@ public final class RunAvailabilityForecastRequest extends com.google.protobuf.Ge
       case 3:
         hash = (37 * hash) + EXISTING_LINE_ITEM_FIELD_NUMBER;
         hash = (53 * hash) + getExistingLineItem().hashCode();
+        break;
+      case 6:
+        hash = (37 * hash) + FORECASTING_LINE_ITEM_FIELD_NUMBER;
+        hash = (53 * hash) + getForecastingLineItem().hashCode();
         break;
       case 0:
       default:
@@ -524,7 +609,7 @@ public final class RunAvailabilityForecastRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Request object for [RunAvailabilityForecast][] method.
+   * Request object for `RunAvailabilityForecast` method.
    * </pre>
    *
    * Protobuf type {@code google.ads.admanager.v1.RunAvailabilityForecastRequest}
@@ -568,6 +653,9 @@ public final class RunAvailabilityForecastRequest extends com.google.protobuf.Ge
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
+      if (forecastingLineItemBuilder_ != null) {
+        forecastingLineItemBuilder_.clear();
+      }
       parent_ = "";
       availabilityForecastOptions_ = null;
       if (availabilityForecastOptionsBuilder_ != null) {
@@ -613,11 +701,11 @@ public final class RunAvailabilityForecastRequest extends com.google.protobuf.Ge
 
     private void buildPartial0(com.google.ads.admanager.v1.RunAvailabilityForecastRequest result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000002) != 0)) {
+      if (((from_bitField0_ & 0x00000004) != 0)) {
         result.parent_ = parent_;
       }
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000004) != 0)) {
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.availabilityForecastOptions_ =
             availabilityForecastOptionsBuilder_ == null
                 ? availabilityForecastOptions_
@@ -631,6 +719,9 @@ public final class RunAvailabilityForecastRequest extends com.google.protobuf.Ge
         com.google.ads.admanager.v1.RunAvailabilityForecastRequest result) {
       result.lineItemDataCase_ = lineItemDataCase_;
       result.lineItemData_ = this.lineItemData_;
+      if (lineItemDataCase_ == 6 && forecastingLineItemBuilder_ != null) {
+        result.lineItemData_ = forecastingLineItemBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -648,7 +739,7 @@ public final class RunAvailabilityForecastRequest extends com.google.protobuf.Ge
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasAvailabilityForecastOptions()) {
@@ -660,6 +751,11 @@ public final class RunAvailabilityForecastRequest extends com.google.protobuf.Ge
             lineItemDataCase_ = 3;
             lineItemData_ = other.lineItemData_;
             onChanged();
+            break;
+          }
+        case FORECASTING_LINE_ITEM:
+          {
+            mergeForecastingLineItem(other.getForecastingLineItem());
             break;
           }
         case LINEITEMDATA_NOT_SET:
@@ -696,7 +792,7 @@ public final class RunAvailabilityForecastRequest extends com.google.protobuf.Ge
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 10
             case 18:
@@ -704,7 +800,7 @@ public final class RunAvailabilityForecastRequest extends com.google.protobuf.Ge
                 input.readMessage(
                     internalGetAvailabilityForecastOptionsFieldBuilder().getBuilder(),
                     extensionRegistry);
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 18
             case 26:
@@ -714,6 +810,13 @@ public final class RunAvailabilityForecastRequest extends com.google.protobuf.Ge
                 lineItemData_ = s;
                 break;
               } // case 26
+            case 50:
+              {
+                input.readMessage(
+                    internalGetForecastingLineItemFieldBuilder().getBuilder(), extensionRegistry);
+                lineItemDataCase_ = 6;
+                break;
+              } // case 50
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -910,6 +1013,262 @@ public final class RunAvailabilityForecastRequest extends com.google.protobuf.Ge
       return this;
     }
 
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.ads.admanager.v1.ForecastingLineItem,
+            com.google.ads.admanager.v1.ForecastingLineItem.Builder,
+            com.google.ads.admanager.v1.ForecastingLineItemOrBuilder>
+        forecastingLineItemBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The
+     * [ForecastingLineItem][google.ads.admanager.v1.ForecastingLineItem] to be
+     * forecasted.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.ForecastingLineItem forecasting_line_item = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the forecastingLineItem field is set.
+     */
+    @java.lang.Override
+    public boolean hasForecastingLineItem() {
+      return lineItemDataCase_ == 6;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The
+     * [ForecastingLineItem][google.ads.admanager.v1.ForecastingLineItem] to be
+     * forecasted.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.ForecastingLineItem forecasting_line_item = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The forecastingLineItem.
+     */
+    @java.lang.Override
+    public com.google.ads.admanager.v1.ForecastingLineItem getForecastingLineItem() {
+      if (forecastingLineItemBuilder_ == null) {
+        if (lineItemDataCase_ == 6) {
+          return (com.google.ads.admanager.v1.ForecastingLineItem) lineItemData_;
+        }
+        return com.google.ads.admanager.v1.ForecastingLineItem.getDefaultInstance();
+      } else {
+        if (lineItemDataCase_ == 6) {
+          return forecastingLineItemBuilder_.getMessage();
+        }
+        return com.google.ads.admanager.v1.ForecastingLineItem.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The
+     * [ForecastingLineItem][google.ads.admanager.v1.ForecastingLineItem] to be
+     * forecasted.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.ForecastingLineItem forecasting_line_item = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setForecastingLineItem(com.google.ads.admanager.v1.ForecastingLineItem value) {
+      if (forecastingLineItemBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        lineItemData_ = value;
+        onChanged();
+      } else {
+        forecastingLineItemBuilder_.setMessage(value);
+      }
+      lineItemDataCase_ = 6;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The
+     * [ForecastingLineItem][google.ads.admanager.v1.ForecastingLineItem] to be
+     * forecasted.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.ForecastingLineItem forecasting_line_item = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setForecastingLineItem(
+        com.google.ads.admanager.v1.ForecastingLineItem.Builder builderForValue) {
+      if (forecastingLineItemBuilder_ == null) {
+        lineItemData_ = builderForValue.build();
+        onChanged();
+      } else {
+        forecastingLineItemBuilder_.setMessage(builderForValue.build());
+      }
+      lineItemDataCase_ = 6;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The
+     * [ForecastingLineItem][google.ads.admanager.v1.ForecastingLineItem] to be
+     * forecasted.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.ForecastingLineItem forecasting_line_item = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeForecastingLineItem(com.google.ads.admanager.v1.ForecastingLineItem value) {
+      if (forecastingLineItemBuilder_ == null) {
+        if (lineItemDataCase_ == 6
+            && lineItemData_
+                != com.google.ads.admanager.v1.ForecastingLineItem.getDefaultInstance()) {
+          lineItemData_ =
+              com.google.ads.admanager.v1.ForecastingLineItem.newBuilder(
+                      (com.google.ads.admanager.v1.ForecastingLineItem) lineItemData_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          lineItemData_ = value;
+        }
+        onChanged();
+      } else {
+        if (lineItemDataCase_ == 6) {
+          forecastingLineItemBuilder_.mergeFrom(value);
+        } else {
+          forecastingLineItemBuilder_.setMessage(value);
+        }
+      }
+      lineItemDataCase_ = 6;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The
+     * [ForecastingLineItem][google.ads.admanager.v1.ForecastingLineItem] to be
+     * forecasted.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.ForecastingLineItem forecasting_line_item = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearForecastingLineItem() {
+      if (forecastingLineItemBuilder_ == null) {
+        if (lineItemDataCase_ == 6) {
+          lineItemDataCase_ = 0;
+          lineItemData_ = null;
+          onChanged();
+        }
+      } else {
+        if (lineItemDataCase_ == 6) {
+          lineItemDataCase_ = 0;
+          lineItemData_ = null;
+        }
+        forecastingLineItemBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The
+     * [ForecastingLineItem][google.ads.admanager.v1.ForecastingLineItem] to be
+     * forecasted.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.ForecastingLineItem forecasting_line_item = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.ForecastingLineItem.Builder getForecastingLineItemBuilder() {
+      return internalGetForecastingLineItemFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The
+     * [ForecastingLineItem][google.ads.admanager.v1.ForecastingLineItem] to be
+     * forecasted.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.ForecastingLineItem forecasting_line_item = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.ads.admanager.v1.ForecastingLineItemOrBuilder
+        getForecastingLineItemOrBuilder() {
+      if ((lineItemDataCase_ == 6) && (forecastingLineItemBuilder_ != null)) {
+        return forecastingLineItemBuilder_.getMessageOrBuilder();
+      } else {
+        if (lineItemDataCase_ == 6) {
+          return (com.google.ads.admanager.v1.ForecastingLineItem) lineItemData_;
+        }
+        return com.google.ads.admanager.v1.ForecastingLineItem.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The
+     * [ForecastingLineItem][google.ads.admanager.v1.ForecastingLineItem] to be
+     * forecasted.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.ForecastingLineItem forecasting_line_item = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.ads.admanager.v1.ForecastingLineItem,
+            com.google.ads.admanager.v1.ForecastingLineItem.Builder,
+            com.google.ads.admanager.v1.ForecastingLineItemOrBuilder>
+        internalGetForecastingLineItemFieldBuilder() {
+      if (forecastingLineItemBuilder_ == null) {
+        if (!(lineItemDataCase_ == 6)) {
+          lineItemData_ = com.google.ads.admanager.v1.ForecastingLineItem.getDefaultInstance();
+        }
+        forecastingLineItemBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.ads.admanager.v1.ForecastingLineItem,
+                com.google.ads.admanager.v1.ForecastingLineItem.Builder,
+                com.google.ads.admanager.v1.ForecastingLineItemOrBuilder>(
+                (com.google.ads.admanager.v1.ForecastingLineItem) lineItemData_,
+                getParentForChildren(),
+                isClean());
+        lineItemData_ = null;
+      }
+      lineItemDataCase_ = 6;
+      onChanged();
+      return forecastingLineItemBuilder_;
+    }
+
     private java.lang.Object parent_ = "";
 
     /**
@@ -981,7 +1340,7 @@ public final class RunAvailabilityForecastRequest extends com.google.protobuf.Ge
         throw new NullPointerException();
       }
       parent_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1001,7 +1360,7 @@ public final class RunAvailabilityForecastRequest extends com.google.protobuf.Ge
      */
     public Builder clearParent() {
       parent_ = getDefaultInstance().getParent();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1026,7 +1385,7 @@ public final class RunAvailabilityForecastRequest extends com.google.protobuf.Ge
       }
       checkByteStringIsUtf8(value);
       parent_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1052,7 +1411,7 @@ public final class RunAvailabilityForecastRequest extends com.google.protobuf.Ge
      * @return Whether the availabilityForecastOptions field is set.
      */
     public boolean hasAvailabilityForecastOptions() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
 
     /**
@@ -1100,7 +1459,7 @@ public final class RunAvailabilityForecastRequest extends com.google.protobuf.Ge
       } else {
         availabilityForecastOptionsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1123,7 +1482,7 @@ public final class RunAvailabilityForecastRequest extends com.google.protobuf.Ge
       } else {
         availabilityForecastOptionsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1142,7 +1501,7 @@ public final class RunAvailabilityForecastRequest extends com.google.protobuf.Ge
     public Builder mergeAvailabilityForecastOptions(
         com.google.ads.admanager.v1.AvailabilityForecastOptions value) {
       if (availabilityForecastOptionsBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)
+        if (((bitField0_ & 0x00000008) != 0)
             && availabilityForecastOptions_ != null
             && availabilityForecastOptions_
                 != com.google.ads.admanager.v1.AvailabilityForecastOptions.getDefaultInstance()) {
@@ -1154,7 +1513,7 @@ public final class RunAvailabilityForecastRequest extends com.google.protobuf.Ge
         availabilityForecastOptionsBuilder_.mergeFrom(value);
       }
       if (availabilityForecastOptions_ != null) {
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       return this;
@@ -1172,7 +1531,7 @@ public final class RunAvailabilityForecastRequest extends com.google.protobuf.Ge
      * </code>
      */
     public Builder clearAvailabilityForecastOptions() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       availabilityForecastOptions_ = null;
       if (availabilityForecastOptionsBuilder_ != null) {
         availabilityForecastOptionsBuilder_.dispose();
@@ -1195,7 +1554,7 @@ public final class RunAvailabilityForecastRequest extends com.google.protobuf.Ge
      */
     public com.google.ads.admanager.v1.AvailabilityForecastOptions.Builder
         getAvailabilityForecastOptionsBuilder() {
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return internalGetAvailabilityForecastOptionsFieldBuilder().getBuilder();
     }

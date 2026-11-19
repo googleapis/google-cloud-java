@@ -52,7 +52,6 @@ import static com.google.cloud.spanner.connection.ConnectionProperties.TRANSACTI
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.gax.core.GaxProperties;
-import com.google.cloud.ByteArray;
 import com.google.cloud.Timestamp;
 import com.google.cloud.spanner.AsyncResultSet;
 import com.google.cloud.spanner.BatchClient;
@@ -105,9 +104,6 @@ import io.opentelemetry.api.common.Attributes;
 import io.opentelemetry.api.common.AttributesBuilder;
 import io.opentelemetry.api.trace.Span;
 import io.opentelemetry.api.trace.Tracer;
-import java.io.File;
-import java.io.InputStream;
-import java.nio.file.Files;
 import java.time.Duration;
 import java.time.Instant;
 import java.util.ArrayList;
@@ -303,7 +299,6 @@ class ConnectionImpl implements Connection {
   private RequestOptions.ClientContext clientContext;
   private boolean excludeTxnFromChangeStreams;
   private byte[] protoDescriptors;
-  private String protoDescriptorsFilePath;
 
   /** Create a connection and register it in the SpannerPool. */
   ConnectionImpl(ConnectionOptions options) {
@@ -464,7 +459,7 @@ class ConnectionImpl implements Connection {
         if (isBatchActive()) {
           abortBatch();
         }
-        if (isTransactionStarted()) {
+        if (isTransactionStarted() || isCurrentTransactionAborted()) {
           try {
             futures.add(rollbackAsync());
           } catch (Exception exception) {
@@ -537,7 +532,6 @@ class ConnectionImpl implements Connection {
     this.connectionState.resetValue(DIRECTED_READ, context, inTransaction);
     this.connectionState.resetValue(SAVEPOINT_SUPPORT, context, inTransaction);
     this.protoDescriptors = null;
-    this.protoDescriptorsFilePath = null;
     this.clientContext = null;
 
     if (!isTransactionStarted()) {
@@ -930,7 +924,8 @@ class ConnectionImpl implements Connection {
     this.unitOfWorkType = UnitOfWorkType.of(transactionMode);
   }
 
-  IsolationLevel getTransactionIsolationLevel() {
+  @Override
+  public IsolationLevel getTransactionIsolationLevel() {
     ConnectionPreconditions.checkState(!isClosed(), CLOSED_ERROR_MSG);
     ConnectionPreconditions.checkState(!isDdlBatchActive(), "This connection is in a DDL batch");
     ConnectionPreconditions.checkState(isInTransaction(), "This connection has no transaction");
@@ -1025,22 +1020,6 @@ class ConnectionImpl implements Connection {
   @Override
   public byte[] getProtoDescriptors() {
     ConnectionPreconditions.checkState(!isClosed(), CLOSED_ERROR_MSG);
-    if (this.protoDescriptors == null && this.protoDescriptorsFilePath != null) {
-      // Read from file if filepath is valid
-      try {
-        File protoDescriptorsFile = new File(this.protoDescriptorsFilePath);
-        if (!protoDescriptorsFile.isFile()) {
-          throw SpannerExceptionFactory.newSpannerException(
-              ErrorCode.INVALID_ARGUMENT,
-              String.format(
-                  "File %s is not a valid proto descriptors file", this.protoDescriptorsFilePath));
-        }
-        InputStream pdStream = Files.newInputStream(protoDescriptorsFile.toPath());
-        this.protoDescriptors = ByteArray.copyFrom(pdStream).toByteArray();
-      } catch (Exception exception) {
-        throw SpannerExceptionFactory.newSpannerException(exception);
-      }
-    }
     return this.protoDescriptors;
   }
 
@@ -1051,21 +1030,6 @@ class ConnectionImpl implements Connection {
     ConnectionPreconditions.checkState(
         !isBatchActive(), "Proto descriptors cannot be set when a batch is active");
     this.protoDescriptors = protoDescriptors;
-    this.protoDescriptorsFilePath = null;
-  }
-
-  void setProtoDescriptorsFilePath(@Nonnull String protoDescriptorsFilePath) {
-    Preconditions.checkNotNull(protoDescriptorsFilePath);
-    ConnectionPreconditions.checkState(!isClosed(), CLOSED_ERROR_MSG);
-    ConnectionPreconditions.checkState(
-        !isBatchActive(), "Proto descriptors file path cannot be set when a batch is active");
-    this.protoDescriptorsFilePath = protoDescriptorsFilePath;
-    this.protoDescriptors = null;
-  }
-
-  String getProtoDescriptorsFilePath() {
-    ConnectionPreconditions.checkState(!isClosed(), CLOSED_ERROR_MSG);
-    return this.protoDescriptorsFilePath;
   }
 
   /**
@@ -1140,6 +1104,18 @@ class ConnectionImpl implements Connection {
 
   private boolean hasTransactionalChanges() {
     return internalIsTransactionStarted() || this.connectionState.hasTransactionalChanges();
+  }
+
+  /**
+   * Returns true if the current transaction has been aborted and could not be retried. Ending such
+   * a transaction must be delegated to the underlying unit of work so that committing returns the
+   * abort error instead of silently succeeding, and rolling back transitions the state to
+   * ROLLED_BACK, cancels any scheduled keep-alive ping, and ends the OpenTelemetry span.
+   */
+  private boolean isCurrentTransactionAborted() {
+    return internalIsInTransaction()
+        && this.currentUnitOfWork != null
+        && this.currentUnitOfWork.getState() == UnitOfWorkState.ABORTED;
   }
 
   @Override
@@ -1387,7 +1363,7 @@ class ConnectionImpl implements Connection {
         statementTag == null, "Statement tags are not supported for COMMIT or ROLLBACK");
     ApiFuture<Void> res;
     try {
-      if (hasTransactionalChanges()) {
+      if (hasTransactionalChanges() || isCurrentTransactionAborted()) {
         res =
             endTransactionMethod.endAsync(
                 callType, getCurrentUnitOfWorkOrStartNewUnitOfWork(parsedStatement));
@@ -1780,16 +1756,6 @@ class ConnectionImpl implements Connection {
           return internalExecuteQuery(callType, parsedStatement, analyzeMode, options);
         case UPDATE:
           if (parsedStatement.hasReturningClause()) {
-            // Cannot execute DML statement with returning clause in read-only mode or in
-            // READ_ONLY_TRANSACTION transaction mode.
-            if (this.isReadOnly()
-                || (this.isInTransaction()
-                    && this.getTransactionMode() == TransactionMode.READ_ONLY_TRANSACTION)) {
-              throw SpannerExceptionFactory.newSpannerException(
-                  ErrorCode.FAILED_PRECONDITION,
-                  "DML statement with returning clause cannot be executed in read-only mode: "
-                      + parsedStatement.getSql());
-            }
             return internalExecuteQuery(callType, parsedStatement, analyzeMode, options);
           }
         case DDL:
@@ -1821,16 +1787,6 @@ class ConnectionImpl implements Connection {
               CallType.ASYNC, parsedStatement, AnalyzeMode.NONE, options);
         case UPDATE:
           if (parsedStatement.hasReturningClause()) {
-            // Cannot execute DML statement with returning clause in read-only mode or in
-            // READ_ONLY_TRANSACTION transaction mode.
-            if (this.isReadOnly()
-                || (this.isInTransaction()
-                    && this.getTransactionMode() == TransactionMode.READ_ONLY_TRANSACTION)) {
-              throw SpannerExceptionFactory.newSpannerException(
-                  ErrorCode.FAILED_PRECONDITION,
-                  "DML statement with returning clause cannot be executed in read-only mode: "
-                      + parsedStatement.getSql());
-            }
             return internalExecuteQueryAsync(
                 CallType.ASYNC, parsedStatement, AnalyzeMode.NONE, options);
           }
@@ -2099,6 +2055,24 @@ class ConnectionImpl implements Connection {
     return options;
   }
 
+  /**
+   * Throws a {@link SpannerException} with {@link ErrorCode#FAILED_PRECONDITION} if this connection
+   * is in read-only mode or in a {@link TransactionMode#READ_ONLY_TRANSACTION}, since DML
+   * statements mutate data and require a read/write transaction.
+   */
+  private void checkDmlReturningAllowed(ParsedStatement parsedStatement) {
+    if (this.isReadOnly()
+        || (this.isInTransaction()
+            && this.getTransactionMode() == TransactionMode.READ_ONLY_TRANSACTION)) {
+      throw SpannerExceptionFactory.newSpannerException(
+          ErrorCode.FAILED_PRECONDITION,
+          parsedStatement.hasReturningClause()
+              ? "DML statement with returning clause cannot be executed in read-only mode: "
+                  + parsedStatement.getSql()
+              : "Update statements are not allowed in read-only mode");
+    }
+  }
+
   private ResultSet internalExecuteQuery(
       final CallType callType,
       final ParsedStatement statement,
@@ -2110,6 +2084,10 @@ class ConnectionImpl implements Connection {
                 && (analyzeMode != AnalyzeMode.NONE || statement.hasReturningClause())),
         "Statement must either be a query or a DML mode with analyzeMode!=NONE or returning"
             + " clause");
+    // Enforce read-only restrictions before allocating a UnitOfWork or consuming statementTag.
+    if (statement.isUpdate()) {
+      checkDmlReturningAllowed(statement);
+    }
     boolean isInternalMetadataQuery = isInternalMetadataQuery(options);
     QueryOption[] combinedOptions = concat(statement.getOptionsFromHints(), options);
     UnitOfWork transaction =
@@ -2137,6 +2115,10 @@ class ConnectionImpl implements Connection {
         (statement.getType() == StatementType.QUERY)
             || (statement.getType() == StatementType.UPDATE && statement.hasReturningClause()),
         "Statement must be a query or DML with returning clause.");
+    // Enforce read-only restrictions before allocating a UnitOfWork or consuming statementTag.
+    if (statement.isUpdate()) {
+      checkDmlReturningAllowed(statement);
+    }
     ConnectionPreconditions.checkState(
         !(isAutoPartitionMode() && statement.getType() == StatementType.QUERY),
         "Partitioned queries cannot be executed asynchronously");
@@ -2427,7 +2409,6 @@ class ConnectionImpl implements Connection {
     ApiFuture<Void> result = getOrStartDdlUnitOfWork(ddl).executeDdlAsync(callType, ddl);
     // reset proto descriptors after executing a DDL statement
     this.protoDescriptors = null;
-    this.protoDescriptorsFilePath = null;
     return result;
   }
 
@@ -2539,7 +2520,6 @@ class ConnectionImpl implements Connection {
       if (isDdlBatchActive()) {
         // reset proto descriptors after executing a DDL batch
         this.protoDescriptors = null;
-        this.protoDescriptorsFilePath = null;
       }
       this.batchMode = BatchMode.NONE;
       setDefaultTransactionOptions(getDefaultIsolationLevel());

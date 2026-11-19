@@ -53,6 +53,62 @@ public final class LineItemCreativeAssociationServiceProto
       internal_static_google_ads_admanager_v1_ListLineItemCreativeAssociationsResponse_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_ads_admanager_v1_ListLineItemCreativeAssociationsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_CreateLineItemCreativeAssociationRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_CreateLineItemCreativeAssociationRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchCreateLineItemCreativeAssociationsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchCreateLineItemCreativeAssociationsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchCreateLineItemCreativeAssociationsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchCreateLineItemCreativeAssociationsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_UpdateLineItemCreativeAssociationRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_UpdateLineItemCreativeAssociationRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchUpdateLineItemCreativeAssociationsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchUpdateLineItemCreativeAssociationsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchUpdateLineItemCreativeAssociationsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchUpdateLineItemCreativeAssociationsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchActivateLineItemCreativeAssociationsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchActivateLineItemCreativeAssociationsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchActivateLineItemCreativeAssociationsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchActivateLineItemCreativeAssociationsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchDeactivateLineItemCreativeAssociationsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchDeactivateLineItemCreativeAssociationsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchDeactivateLineItemCreativeAssociationsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchDeactivateLineItemCreativeAssociationsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchDeleteLineItemCreativeAssociationsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchDeleteLineItemCreativeAssociationsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_PreviewLineItemCreativeAssociationRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_PreviewLineItemCreativeAssociationRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_PreviewLineItemCreativeAssociationResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_PreviewLineItemCreativeAssociationResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_PreviewLineItemCreativeAssociationResponse_Preview_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_PreviewLineItemCreativeAssociationResponse_Preview_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -67,7 +123,8 @@ public final class LineItemCreativeAssociationServiceProto
           + "ds.admanager.v1\032Egoogle/ads/admanager/v1/line_item_creative_association_messages"
           + ".proto\032\034google/api/annotations.proto\032\027go"
           + "ogle/api/client.proto\032\037google/api/field_"
-          + "behavior.proto\032\031google/api/resource.proto\"t\n"
+          + "behavior.proto\032\031google/api/resource.proto\032\033google/protobuf/empty.proto\032"
+          + " google/protobuf/field_mask.proto\"t\n"
           + "%GetLineItemCreativeAssociationRequest\022K\n"
           + "\004name\030\001 \001(\tB=\342A\001\002\372A6\n"
           + "4admanager.googleapis.com/LineItemCreativeAssociation\"\332\001\n"
@@ -80,20 +137,116 @@ public final class LineItemCreativeAssociationServiceProto
           + "\010order_by\030\005 \001(\tB\004\342A\001\001\022\022\n"
           + "\004skip\030\006 \001(\005B\004\342A\001\001\"\266\001\n"
           + "(ListLineItemCreativeAssociationsResponse\022]\n"
-          + "\037line_item_creative_associations\030\001 \003(\01324.google.ads."
-          + "admanager.v1.LineItemCreativeAssociation\022\027\n"
+          + "\037line_item_creative_associations\030\001"
+          + " \003(\01324.google.ads.admanager.v1.LineItemCreativeAssociation\022\027\n"
           + "\017next_page_token\030\002 \001(\t\022\022\n\n"
-          + "total_size\030\003 \001(\0052\341\004\n"
+          + "total_size\030\003 \001(\005\"\312\001\n"
+          + "(CreateLineItemCreativeAssociationRequest\022:\n"
+          + "\006parent\030\001 \001(\tB*\342A\001\002\372A#\n"
+          + "!admanager.googleapis.com/LineItem\022b\n"
+          + "\036line_item_creative_association\030\002"
+          + " \001(\01324.google.ads.admanager.v1.LineItemCreativeAssociationB\004\342A\001\002\"\307\001\n"
+          + ".BatchCreateLineItemCreativeAssociationsRequest\022:\n"
+          + "\006parent\030\001 \001(\tB*\342A\001\002\372A#\n"
+          + "!admanager.googleapis.com/LineItem\022Y\n"
+          + "\010requests\030\002 \003"
+          + "(\0132A.google.ads.admanager.v1.CreateLineItemCreativeAssociationRequestB\004\342A\001\002\"\220\001\n"
+          + "/BatchCreateLineItemCreativeAssociationsResponse\022]\n"
+          + "\037line_item_creative_associations\030\001"
+          + " \003(\01324.google.ads.admanager.v1.LineItemCreativeAssociation\"\305\001\n"
+          + "(UpdateLineItemCreativeAssociationRequest\022b\n"
+          + "\036line_item_creative_association\030\001 \001(\01324.google.ads"
+          + ".admanager.v1.LineItemCreativeAssociationB\004\342A\001\002\0225\n"
+          + "\013update_mask\030\002"
+          + " \001(\0132\032.google.protobuf.FieldMaskB\004\342A\001\001\"\307\001\n"
+          + ".BatchUpdateLineItemCreativeAssociationsRequest\022:\n"
+          + "\006parent\030\001 \001(\tB*\342A\001\002\372A#\n"
+          + "!admanager.googleapis.com/LineItem\022Y\n"
+          + "\010requests\030\002 \003(\0132A.google"
+          + ".ads.admanager.v1.UpdateLineItemCreativeAssociationRequestB\004\342A\001\002\"\220\001\n"
+          + "/BatchUpdateLineItemCreativeAssociationsResponse\022]\n"
+          + "\037line_item_creative_associations\030\001 \003(\01324."
+          + "google.ads.admanager.v1.LineItemCreativeAssociation\"\274\001\n"
+          + "0BatchActivateLineItemCreativeAssociationsRequest\022:\n"
+          + "\006parent\030\001 \001(\tB*\342A\001\002\372A#\n"
+          + "!admanager.googleapis.com/LineItem\022L\n"
+          + "\005names\030\002 \003(\tB=\342A\001\002\372A6\n"
+          + "4admanager.googleapis.com/LineItemCreativeAssociation\"3\n"
+          + "1BatchActivateLineItemCreativeAssociationsResponse\"\276\001\n"
+          + "2BatchDeactivateLineItemCreativeAssociationsRequest\022:\n"
+          + "\006parent\030\001 \001(\tB*\342A\001\002\372A#\n"
+          + "!admanager.googleapis.com/LineItem\022L\n"
+          + "\005names\030\002 \003(\tB=\342A\001\002\372A6\n"
+          + "4admanager.googleapis.com/LineItemCreativeAssociation\"5\n"
+          + "3BatchDeactivateLineItemCreativeAssociationsResponse\"\272\001\n"
+          + ".BatchDeleteLineItemCreativeAssociationsRequest\022:\n"
+          + "\006parent\030\001 \001(\tB*\342A\001\002\372A#\n"
+          + "!admanager.googleapis.com/LineItem\022L\n"
+          + "\005names\030\002 \003(\tB=\342A\001\002\372A6\n"
+          + "4admanager.googleapis.com/LineItemCreativeAssociation\"\220\001\n"
+          + ")PreviewLineItemCreativeAssociationRequest\022K\n"
+          + "\004name\030\001 \001(\tB=\342A\001\002\372A6\n"
+          + "4admanager.googleapis.com/LineItemCreativeAssociation\022\026\n"
+          + "\010site_url\030\002 \001(\tB\004\342A\001\002\"\370\002\n"
+          + "*PreviewLineItemCreativeAssociationResponse\022]\n"
+          + "\010previews\030\001 \003(\0132K.google.ads.ad"
+          + "manager.v1.PreviewLineItemCreativeAssociationResponse.Preview\032\243\001\n"
+          + "\007Preview\022e\n"
+          + "\014preview_type\030\001 \001(\0162O.google.ads.admanager.v"
+          + "1.PreviewLineItemCreativeAssociationResponse.PreviewType\022\033\n"
+          + "\023on_site_preview_url\030\002 \001(\t\022\024\n"
+          + "\014native_style\030\003 \001(\t\"E\n"
+          + "\013PreviewType\022\034\n"
+          + "\030PREVIEW_TYPE_UNSPECIFIED\020\000\022\014\n"
+          + "\010STANDARD\020\001\022\n\n"
+          + "\006NATIVE\020\0022\224\026\n"
           + "\"LineItemCreativeAssociationService\022\324\001\n"
-          + "\036GetLineItemCreativeAssociation\022>.google.ads.admanager.v1.GetLineItemCre"
-          + "ativeAssociationRequest\0324.google.ads.adm"
-          + "anager.v1.LineItemCreativeAssociation\"<\332"
-          + "A\004name\202\323\344\223\002/\022-/v1/{name=networks/*/lineItems/*/creatives/*}\022\347\001\n"
-          + " ListLineItemCreativeAssociations\022@.google.ads.admanager."
-          + "v1.ListLineItemCreativeAssociationsRequest\032A.google.ads.admanager.v1.ListLineIte"
-          + "mCreativeAssociationsResponse\">\332A\006parent"
-          + "\202\323\344\223\002/\022-/v1/{parent=networks/*/lineItems"
-          + "/*}/creatives\032z\312A\030admanager.googleapis.c"
+          + "\036GetLineItemCreativeAssociation\022>.google.ads.admanager.v1.G"
+          + "etLineItemCreativeAssociationRequest\0324.google.ads.admanager.v1.LineItemCreativeA"
+          + "ssociation\"<\332A\004name\202\323\344\223\002/\022-/v1/{name=networks/*/lineItems/*/creatives/*}\022\347\001\n"
+          + " ListLineItemCreativeAssociations\022@.google.a"
+          + "ds.admanager.v1.ListLineItemCreativeAssociationsRequest\032A.google.ads.admanager.v"
+          + "1.ListLineItemCreativeAssociationsRespon"
+          + "se\">\332A\006parent\202\323\344\223\002/\022-/v1/{parent=networks/*/lineItems/*}/creatives\022\233\002\n"
+          + "!CreateLineItemCreativeAssociation\022A.google.ads.ad"
+          + "manager.v1.CreateLineItemCreativeAssociationRequest\0324.google.ads.admanager.v1.Li"
+          + "neItemCreativeAssociation\"}\332A%parent,lin"
+          + "e_item_creative_association\202\323\344\223\002O\"-/v1/{"
+          + "parent=networks/*/lineItems/*}/creatives:\036line_item_creative_association\022\224\002\n"
+          + "\'BatchCreateLineItemCreativeAssociations\022G.g"
+          + "oogle.ads.admanager.v1.BatchCreateLineItemCreativeAssociationsRequest\032H.google.a"
+          + "ds.admanager.v1.BatchCreateLineItemCreat"
+          + "iveAssociationsResponse\"V\332A\017parent,reque"
+          + "sts\202\323\344\223\002>\"9/v1/{parent=networks/*/lineItems/*}/creatives:batchCreate:\001*\022\300\002\n"
+          + "!UpdateLineItemCreativeAssociation\022A.google.a"
+          + "ds.admanager.v1.UpdateLineItemCreativeAssociationRequest\0324.google.ads.admanager."
+          + "v1.LineItemCreativeAssociation\"\241\001\332A*line"
+          + "_item_creative_association,update_mask\202\323"
+          + "\344\223\002n2L/v1/{line_item_creative_associatio"
+          + "n.name=networks/*/lineItems/*/creatives/*}:\036line_item_creative_association\022\224\002\n"
+          + "\'BatchUpdateLineItemCreativeAssociations\022G.google.ads.admanager.v1.BatchUpdateLine"
+          + "ItemCreativeAssociationsRequest\032H.google.ads.admanager.v1.BatchUpdateLineItemCre"
+          + "ativeAssociationsResponse\"V\332A\017parent,req"
+          + "uests\202\323\344\223\002>\"9/v1/{parent=networks/*/lineItems/*}/creatives:batchUpdate:\001*\022\231\002\n"
+          + ")BatchActivateLineItemCreativeAssociations\022I.google.ads.admanager.v1.BatchActivateL"
+          + "ineItemCreativeAssociationsRequest\032J.google.ads.admanager.v1.BatchActivateLineIt"
+          + "emCreativeAssociationsResponse\"U\332A\014paren"
+          + "t,names\202\323\344\223\002@\";/v1/{parent=networks/*/li"
+          + "neItems/*}/creatives:batchActivate:\001*\022\241\002\n"
+          + "+BatchDeactivateLineItemCreativeAssociations\022K.google.ads.admanager.v1.BatchDea"
+          + "ctivateLineItemCreativeAssociationsRequest\032L.google.ads.admanager.v1.BatchDeacti"
+          + "vateLineItemCreativeAssociationsResponse"
+          + "\"W\332A\014parent,names\202\323\344\223\002B\"=/v1/{parent=net"
+          + "works/*/lineItems/*}/creatives:batchDeactivate:\001*\022\337\001\n"
+          + "\'BatchDeleteLineItemCreativeAssociations\022G.google.ads.admanager.v1."
+          + "BatchDeleteLineItemCreativeAssociationsR"
+          + "equest\032\026.google.protobuf.Empty\"S\332A\014paren"
+          + "t,names\202\323\344\223\002>\"9/v1/{parent=networks/*/lineItems/*}/creatives:batchDelete:\001*\022\377\001\n"
+          + "\"PreviewLineItemCreativeAssociation\022B.google.ads.admanager.v1.PreviewLineItemCrea"
+          + "tiveAssociationRequest\032C.google.ads.adma"
+          + "nager.v1.PreviewLineItemCreativeAssociationResponse\"P\332A\r"
+          + "name,site_url\202\323\344\223\002:\"5/v1/{name=networks/*/lineItems/*/creatives/"
+          + "*}:preview:\001*\032z\312A\030admanager.googleapis.c"
           + "om\322A\\https://www.googleapis.com/auth/adm"
           + "anager,https://www.googleapis.com/auth/admanager.readonlyB\333\001\n"
           + "\033com.google.ads.admanager.v1B\'LineItemCreativeAssociationSe"
@@ -111,6 +264,8 @@ public final class LineItemCreativeAssociationServiceProto
               com.google.api.ClientProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
+              com.google.protobuf.EmptyProto.getDescriptor(),
+              com.google.protobuf.FieldMaskProto.getDescriptor(),
             });
     internal_static_google_ads_admanager_v1_GetLineItemCreativeAssociationRequest_descriptor =
         getDescriptor().getMessageType(0);
@@ -136,12 +291,123 @@ public final class LineItemCreativeAssociationServiceProto
             new java.lang.String[] {
               "LineItemCreativeAssociations", "NextPageToken", "TotalSize",
             });
+    internal_static_google_ads_admanager_v1_CreateLineItemCreativeAssociationRequest_descriptor =
+        getDescriptor().getMessageType(3);
+    internal_static_google_ads_admanager_v1_CreateLineItemCreativeAssociationRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_CreateLineItemCreativeAssociationRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "LineItemCreativeAssociation",
+            });
+    internal_static_google_ads_admanager_v1_BatchCreateLineItemCreativeAssociationsRequest_descriptor =
+        getDescriptor().getMessageType(4);
+    internal_static_google_ads_admanager_v1_BatchCreateLineItemCreativeAssociationsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchCreateLineItemCreativeAssociationsRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Requests",
+            });
+    internal_static_google_ads_admanager_v1_BatchCreateLineItemCreativeAssociationsResponse_descriptor =
+        getDescriptor().getMessageType(5);
+    internal_static_google_ads_admanager_v1_BatchCreateLineItemCreativeAssociationsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchCreateLineItemCreativeAssociationsResponse_descriptor,
+            new java.lang.String[] {
+              "LineItemCreativeAssociations",
+            });
+    internal_static_google_ads_admanager_v1_UpdateLineItemCreativeAssociationRequest_descriptor =
+        getDescriptor().getMessageType(6);
+    internal_static_google_ads_admanager_v1_UpdateLineItemCreativeAssociationRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_UpdateLineItemCreativeAssociationRequest_descriptor,
+            new java.lang.String[] {
+              "LineItemCreativeAssociation", "UpdateMask",
+            });
+    internal_static_google_ads_admanager_v1_BatchUpdateLineItemCreativeAssociationsRequest_descriptor =
+        getDescriptor().getMessageType(7);
+    internal_static_google_ads_admanager_v1_BatchUpdateLineItemCreativeAssociationsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchUpdateLineItemCreativeAssociationsRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Requests",
+            });
+    internal_static_google_ads_admanager_v1_BatchUpdateLineItemCreativeAssociationsResponse_descriptor =
+        getDescriptor().getMessageType(8);
+    internal_static_google_ads_admanager_v1_BatchUpdateLineItemCreativeAssociationsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchUpdateLineItemCreativeAssociationsResponse_descriptor,
+            new java.lang.String[] {
+              "LineItemCreativeAssociations",
+            });
+    internal_static_google_ads_admanager_v1_BatchActivateLineItemCreativeAssociationsRequest_descriptor =
+        getDescriptor().getMessageType(9);
+    internal_static_google_ads_admanager_v1_BatchActivateLineItemCreativeAssociationsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchActivateLineItemCreativeAssociationsRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Names",
+            });
+    internal_static_google_ads_admanager_v1_BatchActivateLineItemCreativeAssociationsResponse_descriptor =
+        getDescriptor().getMessageType(10);
+    internal_static_google_ads_admanager_v1_BatchActivateLineItemCreativeAssociationsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchActivateLineItemCreativeAssociationsResponse_descriptor,
+            new java.lang.String[] {});
+    internal_static_google_ads_admanager_v1_BatchDeactivateLineItemCreativeAssociationsRequest_descriptor =
+        getDescriptor().getMessageType(11);
+    internal_static_google_ads_admanager_v1_BatchDeactivateLineItemCreativeAssociationsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchDeactivateLineItemCreativeAssociationsRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Names",
+            });
+    internal_static_google_ads_admanager_v1_BatchDeactivateLineItemCreativeAssociationsResponse_descriptor =
+        getDescriptor().getMessageType(12);
+    internal_static_google_ads_admanager_v1_BatchDeactivateLineItemCreativeAssociationsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchDeactivateLineItemCreativeAssociationsResponse_descriptor,
+            new java.lang.String[] {});
+    internal_static_google_ads_admanager_v1_BatchDeleteLineItemCreativeAssociationsRequest_descriptor =
+        getDescriptor().getMessageType(13);
+    internal_static_google_ads_admanager_v1_BatchDeleteLineItemCreativeAssociationsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchDeleteLineItemCreativeAssociationsRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Names",
+            });
+    internal_static_google_ads_admanager_v1_PreviewLineItemCreativeAssociationRequest_descriptor =
+        getDescriptor().getMessageType(14);
+    internal_static_google_ads_admanager_v1_PreviewLineItemCreativeAssociationRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_PreviewLineItemCreativeAssociationRequest_descriptor,
+            new java.lang.String[] {
+              "Name", "SiteUrl",
+            });
+    internal_static_google_ads_admanager_v1_PreviewLineItemCreativeAssociationResponse_descriptor =
+        getDescriptor().getMessageType(15);
+    internal_static_google_ads_admanager_v1_PreviewLineItemCreativeAssociationResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_PreviewLineItemCreativeAssociationResponse_descriptor,
+            new java.lang.String[] {
+              "Previews",
+            });
+    internal_static_google_ads_admanager_v1_PreviewLineItemCreativeAssociationResponse_Preview_descriptor =
+        internal_static_google_ads_admanager_v1_PreviewLineItemCreativeAssociationResponse_descriptor
+            .getNestedType(0);
+    internal_static_google_ads_admanager_v1_PreviewLineItemCreativeAssociationResponse_Preview_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_PreviewLineItemCreativeAssociationResponse_Preview_descriptor,
+            new java.lang.String[] {
+              "PreviewType", "OnSitePreviewUrl", "NativeStyle",
+            });
     descriptor.resolveAllFeaturesImmutable();
     com.google.ads.admanager.v1.LineItemCreativeAssociationMessagesProto.getDescriptor();
     com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.ClientProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
+    com.google.protobuf.EmptyProto.getDescriptor();
+    com.google.protobuf.FieldMaskProto.getDescriptor();
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.ClientProto.defaultHost);

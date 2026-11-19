@@ -56,7 +56,8 @@ public interface CloudRunJobInfoOrBuilder
    *
    *
    * <pre>
-   * URI of a Cloud Run job.
+   * URI of the Cloud Run job.
+   * Format: `projects/{project_id}/locations/{location}/jobs/{job_id}`
    * </pre>
    *
    * <code>string uri = 2;</code>
@@ -69,7 +70,8 @@ public interface CloudRunJobInfoOrBuilder
    *
    *
    * <pre>
-   * URI of a Cloud Run job.
+   * URI of the Cloud Run job.
+   * Format: `projects/{project_id}/locations/{location}/jobs/{job_id}`
    * </pre>
    *
    * <code>string uri = 2;</code>

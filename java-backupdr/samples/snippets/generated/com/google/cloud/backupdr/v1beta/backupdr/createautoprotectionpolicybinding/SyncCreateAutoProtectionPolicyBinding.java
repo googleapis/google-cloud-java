@@ -42,6 +42,7 @@ public class SyncCreateAutoProtectionPolicyBinding {
                       .toString())
               .setAutoProtectionPolicyBindingId("autoProtectionPolicyBindingId2122957414")
               .setAutoProtectionPolicyBinding(AutoProtectionPolicyBinding.newBuilder().build())
+              .setRequestId("requestId693933066")
               .build();
       AutoProtectionPolicyBinding response =
           backupDRClient.createAutoProtectionPolicyBindingAsync(request).get();

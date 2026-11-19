@@ -134,7 +134,8 @@ public final class CloudRunJobInfo extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * URI of a Cloud Run job.
+   * URI of the Cloud Run job.
+   * Format: `projects/{project_id}/locations/{location}/jobs/{job_id}`
    * </pre>
    *
    * <code>string uri = 2;</code>
@@ -158,7 +159,8 @@ public final class CloudRunJobInfo extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * URI of a Cloud Run job.
+   * URI of the Cloud Run job.
+   * Format: `projects/{project_id}/locations/{location}/jobs/{job_id}`
    * </pre>
    *
    * <code>string uri = 2;</code>
@@ -707,7 +709,8 @@ public final class CloudRunJobInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * URI of a Cloud Run job.
+     * URI of the Cloud Run job.
+     * Format: `projects/{project_id}/locations/{location}/jobs/{job_id}`
      * </pre>
      *
      * <code>string uri = 2;</code>
@@ -730,7 +733,8 @@ public final class CloudRunJobInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * URI of a Cloud Run job.
+     * URI of the Cloud Run job.
+     * Format: `projects/{project_id}/locations/{location}/jobs/{job_id}`
      * </pre>
      *
      * <code>string uri = 2;</code>
@@ -753,7 +757,8 @@ public final class CloudRunJobInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * URI of a Cloud Run job.
+     * URI of the Cloud Run job.
+     * Format: `projects/{project_id}/locations/{location}/jobs/{job_id}`
      * </pre>
      *
      * <code>string uri = 2;</code>
@@ -775,7 +780,8 @@ public final class CloudRunJobInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * URI of a Cloud Run job.
+     * URI of the Cloud Run job.
+     * Format: `projects/{project_id}/locations/{location}/jobs/{job_id}`
      * </pre>
      *
      * <code>string uri = 2;</code>
@@ -793,7 +799,8 @@ public final class CloudRunJobInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * URI of a Cloud Run job.
+     * URI of the Cloud Run job.
+     * Format: `projects/{project_id}/locations/{location}/jobs/{job_id}`
      * </pre>
      *
      * <code>string uri = 2;</code>

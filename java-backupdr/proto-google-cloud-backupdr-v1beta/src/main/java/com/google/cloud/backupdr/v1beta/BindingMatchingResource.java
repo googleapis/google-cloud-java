@@ -82,12 +82,14 @@ public final class BindingMatchingResource extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Identifier. The resource name of the `BindingMatchingResource`.
-   * Format:
+   * Output only. Identifier. The resource name of the
+   * `BindingMatchingResource`. Format:
    * `projects/{project}/locations/{location}/autoProtectionPolicies/{auto_protection_policy}/bindings/{binding}/matchingResources/{matching_resource}`
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = IDENTIFIER, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The name.
    */
@@ -108,12 +110,14 @@ public final class BindingMatchingResource extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Identifier. The resource name of the `BindingMatchingResource`.
-   * Format:
+   * Output only. Identifier. The resource name of the
+   * `BindingMatchingResource`. Format:
    * `projects/{project}/locations/{location}/autoProtectionPolicies/{auto_protection_policy}/bindings/{binding}/matchingResources/{matching_resource}`
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = IDENTIFIER, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The bytes for name.
    */
@@ -139,8 +143,8 @@ public final class BindingMatchingResource extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required. Immutable. Resource name of the workload that matches the
-   * criteria of the binding.
+   * Output only. Resource name of the workload that matches the criteria of the
+   * binding.
    *
    * The format can be either a relative resource name (e.g.,
    * `projects/my-project/zones/us-central1-a/instances/my-instance`) or a
@@ -148,9 +152,7 @@ public final class BindingMatchingResource extends com.google.protobuf.Generated
    * `//compute.googleapis.com/projects/my-project/zones/us-central1-a/instances/my-instance`).
    * </pre>
    *
-   * <code>
-   * string resource = 2 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>string resource = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The resource.
    */
@@ -171,8 +173,8 @@ public final class BindingMatchingResource extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required. Immutable. Resource name of the workload that matches the
-   * criteria of the binding.
+   * Output only. Resource name of the workload that matches the criteria of the
+   * binding.
    *
    * The format can be either a relative resource name (e.g.,
    * `projects/my-project/zones/us-central1-a/instances/my-instance`) or a
@@ -180,9 +182,7 @@ public final class BindingMatchingResource extends com.google.protobuf.Generated
    * `//compute.googleapis.com/projects/my-project/zones/us-central1-a/instances/my-instance`).
    * </pre>
    *
-   * <code>
-   * string resource = 2 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>string resource = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for resource.
    */
@@ -751,12 +751,14 @@ public final class BindingMatchingResource extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Identifier. The resource name of the `BindingMatchingResource`.
-     * Format:
+     * Output only. Identifier. The resource name of the
+     * `BindingMatchingResource`. Format:
      * `projects/{project}/locations/{location}/autoProtectionPolicies/{auto_protection_policy}/bindings/{binding}/matchingResources/{matching_resource}`
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = IDENTIFIER, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The name.
      */
@@ -776,12 +778,14 @@ public final class BindingMatchingResource extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Identifier. The resource name of the `BindingMatchingResource`.
-     * Format:
+     * Output only. Identifier. The resource name of the
+     * `BindingMatchingResource`. Format:
      * `projects/{project}/locations/{location}/autoProtectionPolicies/{auto_protection_policy}/bindings/{binding}/matchingResources/{matching_resource}`
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = IDENTIFIER, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The bytes for name.
      */
@@ -801,12 +805,14 @@ public final class BindingMatchingResource extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Identifier. The resource name of the `BindingMatchingResource`.
-     * Format:
+     * Output only. Identifier. The resource name of the
+     * `BindingMatchingResource`. Format:
      * `projects/{project}/locations/{location}/autoProtectionPolicies/{auto_protection_policy}/bindings/{binding}/matchingResources/{matching_resource}`
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = IDENTIFIER, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -825,12 +831,14 @@ public final class BindingMatchingResource extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Identifier. The resource name of the `BindingMatchingResource`.
-     * Format:
+     * Output only. Identifier. The resource name of the
+     * `BindingMatchingResource`. Format:
      * `projects/{project}/locations/{location}/autoProtectionPolicies/{auto_protection_policy}/bindings/{binding}/matchingResources/{matching_resource}`
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = IDENTIFIER, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -845,12 +853,14 @@ public final class BindingMatchingResource extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Identifier. The resource name of the `BindingMatchingResource`.
-     * Format:
+     * Output only. Identifier. The resource name of the
+     * `BindingMatchingResource`. Format:
      * `projects/{project}/locations/{location}/autoProtectionPolicies/{auto_protection_policy}/bindings/{binding}/matchingResources/{matching_resource}`
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = IDENTIFIER, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -872,8 +882,8 @@ public final class BindingMatchingResource extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. Immutable. Resource name of the workload that matches the
-     * criteria of the binding.
+     * Output only. Resource name of the workload that matches the criteria of the
+     * binding.
      *
      * The format can be either a relative resource name (e.g.,
      * `projects/my-project/zones/us-central1-a/instances/my-instance`) or a
@@ -881,9 +891,7 @@ public final class BindingMatchingResource extends com.google.protobuf.Generated
      * `//compute.googleapis.com/projects/my-project/zones/us-central1-a/instances/my-instance`).
      * </pre>
      *
-     * <code>
-     * string resource = 2 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>string resource = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The resource.
      */
@@ -903,8 +911,8 @@ public final class BindingMatchingResource extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. Immutable. Resource name of the workload that matches the
-     * criteria of the binding.
+     * Output only. Resource name of the workload that matches the criteria of the
+     * binding.
      *
      * The format can be either a relative resource name (e.g.,
      * `projects/my-project/zones/us-central1-a/instances/my-instance`) or a
@@ -912,9 +920,7 @@ public final class BindingMatchingResource extends com.google.protobuf.Generated
      * `//compute.googleapis.com/projects/my-project/zones/us-central1-a/instances/my-instance`).
      * </pre>
      *
-     * <code>
-     * string resource = 2 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>string resource = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The bytes for resource.
      */
@@ -934,8 +940,8 @@ public final class BindingMatchingResource extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. Immutable. Resource name of the workload that matches the
-     * criteria of the binding.
+     * Output only. Resource name of the workload that matches the criteria of the
+     * binding.
      *
      * The format can be either a relative resource name (e.g.,
      * `projects/my-project/zones/us-central1-a/instances/my-instance`) or a
@@ -943,9 +949,7 @@ public final class BindingMatchingResource extends com.google.protobuf.Generated
      * `//compute.googleapis.com/projects/my-project/zones/us-central1-a/instances/my-instance`).
      * </pre>
      *
-     * <code>
-     * string resource = 2 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>string resource = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The resource to set.
      * @return This builder for chaining.
@@ -964,8 +968,8 @@ public final class BindingMatchingResource extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. Immutable. Resource name of the workload that matches the
-     * criteria of the binding.
+     * Output only. Resource name of the workload that matches the criteria of the
+     * binding.
      *
      * The format can be either a relative resource name (e.g.,
      * `projects/my-project/zones/us-central1-a/instances/my-instance`) or a
@@ -973,9 +977,7 @@ public final class BindingMatchingResource extends com.google.protobuf.Generated
      * `//compute.googleapis.com/projects/my-project/zones/us-central1-a/instances/my-instance`).
      * </pre>
      *
-     * <code>
-     * string resource = 2 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>string resource = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return This builder for chaining.
      */
@@ -990,8 +992,8 @@ public final class BindingMatchingResource extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. Immutable. Resource name of the workload that matches the
-     * criteria of the binding.
+     * Output only. Resource name of the workload that matches the criteria of the
+     * binding.
      *
      * The format can be either a relative resource name (e.g.,
      * `projects/my-project/zones/us-central1-a/instances/my-instance`) or a
@@ -999,9 +1001,7 @@ public final class BindingMatchingResource extends com.google.protobuf.Generated
      * `//compute.googleapis.com/projects/my-project/zones/us-central1-a/instances/my-instance`).
      * </pre>
      *
-     * <code>
-     * string resource = 2 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>string resource = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The bytes for resource to set.
      * @return This builder for chaining.

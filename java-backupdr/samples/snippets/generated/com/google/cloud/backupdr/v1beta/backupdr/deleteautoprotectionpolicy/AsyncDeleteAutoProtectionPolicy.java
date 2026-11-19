@@ -42,6 +42,7 @@ public class AsyncDeleteAutoProtectionPolicy {
                   AutoProtectionPolicyName.of("[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]")
                       .toString())
               .setEtag("etag3123477")
+              .setRequestId("requestId693933066")
               .build();
       ApiFuture<Operation> future =
           backupDRClient.deleteAutoProtectionPolicyCallable().futureCall(request);

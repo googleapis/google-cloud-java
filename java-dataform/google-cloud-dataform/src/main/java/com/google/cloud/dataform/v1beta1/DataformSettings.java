@@ -18,6 +18,7 @@ package com.google.cloud.dataform.v1beta1;
 
 import static com.google.cloud.dataform.v1beta1.DataformClient.FetchRepositoryHistoryPagedResponse;
 import static com.google.cloud.dataform.v1beta1.DataformClient.FetchWorkspaceBranchesPagedResponse;
+import static com.google.cloud.dataform.v1beta1.DataformClient.FetchWorkspaceHistoryPagedResponse;
 import static com.google.cloud.dataform.v1beta1.DataformClient.ListCompilationResultsPagedResponse;
 import static com.google.cloud.dataform.v1beta1.DataformClient.ListLocationsPagedResponse;
 import static com.google.cloud.dataform.v1beta1.DataformClient.ListReleaseConfigsPagedResponse;
@@ -429,6 +430,15 @@ public class DataformSettings extends ClientSettings<DataformSettings> {
     return ((DataformStubSettings) getStubSettings()).fetchGitAheadBehindSettings();
   }
 
+  /** Returns the object with the settings used for calls to fetchWorkspaceHistory. */
+  public PagedCallSettings<
+          FetchWorkspaceHistoryRequest,
+          FetchWorkspaceHistoryResponse,
+          FetchWorkspaceHistoryPagedResponse>
+      fetchWorkspaceHistorySettings() {
+    return ((DataformStubSettings) getStubSettings()).fetchWorkspaceHistorySettings();
+  }
+
   /** Returns the object with the settings used for calls to commitWorkspaceChanges. */
   public UnaryCallSettings<CommitWorkspaceChangesRequest, CommitWorkspaceChangesResponse>
       commitWorkspaceChangesSettings() {
@@ -545,6 +555,20 @@ public class DataformSettings extends ClientSettings<DataformSettings> {
   public UnaryCallSettings<CreateCompilationResultRequest, CompilationResult>
       createCompilationResultSettings() {
     return ((DataformStubSettings) getStubSettings()).createCompilationResultSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createCompilationResultLongRunning. */
+  public UnaryCallSettings<CreateCompilationResultRequest, Operation>
+      createCompilationResultLongRunningSettings() {
+    return ((DataformStubSettings) getStubSettings()).createCompilationResultLongRunningSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createCompilationResultLongRunning. */
+  public OperationCallSettings<
+          CreateCompilationResultRequest, CompilationResult, CreateCompilationResultMetadata>
+      createCompilationResultLongRunningOperationSettings() {
+    return ((DataformStubSettings) getStubSettings())
+        .createCompilationResultLongRunningOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to queryCompilationResultActions. */
@@ -1074,6 +1098,15 @@ public class DataformSettings extends ClientSettings<DataformSettings> {
       return getStubSettingsBuilder().fetchGitAheadBehindSettings();
     }
 
+    /** Returns the builder for the settings used for calls to fetchWorkspaceHistory. */
+    public PagedCallSettings.Builder<
+            FetchWorkspaceHistoryRequest,
+            FetchWorkspaceHistoryResponse,
+            FetchWorkspaceHistoryPagedResponse>
+        fetchWorkspaceHistorySettings() {
+      return getStubSettingsBuilder().fetchWorkspaceHistorySettings();
+    }
+
     /** Returns the builder for the settings used for calls to commitWorkspaceChanges. */
     public UnaryCallSettings.Builder<CommitWorkspaceChangesRequest, CommitWorkspaceChangesResponse>
         commitWorkspaceChangesSettings() {
@@ -1196,6 +1229,23 @@ public class DataformSettings extends ClientSettings<DataformSettings> {
     public UnaryCallSettings.Builder<CreateCompilationResultRequest, CompilationResult>
         createCompilationResultSettings() {
       return getStubSettingsBuilder().createCompilationResultSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to createCompilationResultLongRunning.
+     */
+    public UnaryCallSettings.Builder<CreateCompilationResultRequest, Operation>
+        createCompilationResultLongRunningSettings() {
+      return getStubSettingsBuilder().createCompilationResultLongRunningSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to createCompilationResultLongRunning.
+     */
+    public OperationCallSettings.Builder<
+            CreateCompilationResultRequest, CompilationResult, CreateCompilationResultMetadata>
+        createCompilationResultLongRunningOperationSettings() {
+      return getStubSettingsBuilder().createCompilationResultLongRunningOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to queryCompilationResultActions. */

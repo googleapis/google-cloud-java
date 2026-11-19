@@ -55,6 +55,9 @@ public final class StreamAssistResponse extends com.google.protobuf.GeneratedMes
 
   private StreamAssistResponse() {
     assistToken_ = "";
+    invocationTools_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    invokedSkills_ = java.util.Collections.emptyList();
+    connectorAuthErrors_ = java.util.Collections.emptyList();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -719,6 +722,1691 @@ public final class StreamAssistResponse extends com.google.protobuf.GeneratedMes
     }
   }
 
+  public interface InvokedSkillOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.discoveryengine.v1.StreamAssistResponse.InvokedSkill)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * The resource name of the skill.
+     * </pre>
+     *
+     * <code>string name = 1;</code>
+     *
+     * @return The name.
+     */
+    java.lang.String getName();
+
+    /**
+     *
+     *
+     * <pre>
+     * The resource name of the skill.
+     * </pre>
+     *
+     * <code>string name = 1;</code>
+     *
+     * @return The bytes for name.
+     */
+    com.google.protobuf.ByteString getNameBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * The display name of the skill.
+     * </pre>
+     *
+     * <code>string display_name = 2;</code>
+     *
+     * @return The displayName.
+     */
+    java.lang.String getDisplayName();
+
+    /**
+     *
+     *
+     * <pre>
+     * The display name of the skill.
+     * </pre>
+     *
+     * <code>string display_name = 2;</code>
+     *
+     * @return The bytes for displayName.
+     */
+    com.google.protobuf.ByteString getDisplayNameBytes();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Represents a skill used during the assist call.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.discoveryengine.v1.StreamAssistResponse.InvokedSkill}
+   */
+  public static final class InvokedSkill extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1.StreamAssistResponse.InvokedSkill)
+      InvokedSkillOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 6,
+          /* suffix= */ "",
+          "InvokedSkill");
+    }
+
+    // Use InvokedSkill.newBuilder() to construct.
+    private InvokedSkill(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private InvokedSkill() {
+      name_ = "";
+      displayName_ = "";
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.discoveryengine.v1.AssistantServiceProto
+          .internal_static_google_cloud_discoveryengine_v1_StreamAssistResponse_InvokedSkill_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.discoveryengine.v1.AssistantServiceProto
+          .internal_static_google_cloud_discoveryengine_v1_StreamAssistResponse_InvokedSkill_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.discoveryengine.v1.StreamAssistResponse.InvokedSkill.class,
+              com.google.cloud.discoveryengine.v1.StreamAssistResponse.InvokedSkill.Builder.class);
+    }
+
+    public static final int NAME_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object name_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * The resource name of the skill.
+     * </pre>
+     *
+     * <code>string name = 1;</code>
+     *
+     * @return The name.
+     */
+    @java.lang.Override
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The resource name of the skill.
+     * </pre>
+     *
+     * <code>string name = 1;</code>
+     *
+     * @return The bytes for name.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int DISPLAY_NAME_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object displayName_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * The display name of the skill.
+     * </pre>
+     *
+     * <code>string display_name = 2;</code>
+     *
+     * @return The displayName.
+     */
+    @java.lang.Override
+    public java.lang.String getDisplayName() {
+      java.lang.Object ref = displayName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        displayName_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The display name of the skill.
+     * </pre>
+     *
+     * <code>string display_name = 2;</code>
+     *
+     * @return The bytes for displayName.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getDisplayNameBytes() {
+      java.lang.Object ref = displayName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        displayName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 1, name_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(displayName_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 2, displayName_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(1, name_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(displayName_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(2, displayName_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.discoveryengine.v1.StreamAssistResponse.InvokedSkill)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.discoveryengine.v1.StreamAssistResponse.InvokedSkill other =
+          (com.google.cloud.discoveryengine.v1.StreamAssistResponse.InvokedSkill) obj;
+
+      if (!getName().equals(other.getName())) return false;
+      if (!getDisplayName().equals(other.getDisplayName())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+      hash = (37 * hash) + DISPLAY_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getDisplayName().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.discoveryengine.v1.StreamAssistResponse.InvokedSkill parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.StreamAssistResponse.InvokedSkill parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.StreamAssistResponse.InvokedSkill parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.StreamAssistResponse.InvokedSkill parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.StreamAssistResponse.InvokedSkill parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.StreamAssistResponse.InvokedSkill parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.StreamAssistResponse.InvokedSkill parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.StreamAssistResponse.InvokedSkill parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.StreamAssistResponse.InvokedSkill
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.StreamAssistResponse.InvokedSkill
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.StreamAssistResponse.InvokedSkill parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.StreamAssistResponse.InvokedSkill parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.discoveryengine.v1.StreamAssistResponse.InvokedSkill prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Represents a skill used during the assist call.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.discoveryengine.v1.StreamAssistResponse.InvokedSkill}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.discoveryengine.v1.StreamAssistResponse.InvokedSkill)
+        com.google.cloud.discoveryengine.v1.StreamAssistResponse.InvokedSkillOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.discoveryengine.v1.AssistantServiceProto
+            .internal_static_google_cloud_discoveryengine_v1_StreamAssistResponse_InvokedSkill_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.discoveryengine.v1.AssistantServiceProto
+            .internal_static_google_cloud_discoveryengine_v1_StreamAssistResponse_InvokedSkill_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.discoveryengine.v1.StreamAssistResponse.InvokedSkill.class,
+                com.google.cloud.discoveryengine.v1.StreamAssistResponse.InvokedSkill.Builder
+                    .class);
+      }
+
+      // Construct using
+      // com.google.cloud.discoveryengine.v1.StreamAssistResponse.InvokedSkill.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        name_ = "";
+        displayName_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.discoveryengine.v1.AssistantServiceProto
+            .internal_static_google_cloud_discoveryengine_v1_StreamAssistResponse_InvokedSkill_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1.StreamAssistResponse.InvokedSkill
+          getDefaultInstanceForType() {
+        return com.google.cloud.discoveryengine.v1.StreamAssistResponse.InvokedSkill
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1.StreamAssistResponse.InvokedSkill build() {
+        com.google.cloud.discoveryengine.v1.StreamAssistResponse.InvokedSkill result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1.StreamAssistResponse.InvokedSkill buildPartial() {
+        com.google.cloud.discoveryengine.v1.StreamAssistResponse.InvokedSkill result =
+            new com.google.cloud.discoveryengine.v1.StreamAssistResponse.InvokedSkill(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.discoveryengine.v1.StreamAssistResponse.InvokedSkill result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.name_ = name_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.displayName_ = displayName_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof com.google.cloud.discoveryengine.v1.StreamAssistResponse.InvokedSkill) {
+          return mergeFrom(
+              (com.google.cloud.discoveryengine.v1.StreamAssistResponse.InvokedSkill) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.discoveryengine.v1.StreamAssistResponse.InvokedSkill other) {
+        if (other
+            == com.google.cloud.discoveryengine.v1.StreamAssistResponse.InvokedSkill
+                .getDefaultInstance()) return this;
+        if (!other.getName().isEmpty()) {
+          name_ = other.name_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (!other.getDisplayName().isEmpty()) {
+          displayName_ = other.displayName_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  name_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  displayName_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object name_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * The resource name of the skill.
+       * </pre>
+       *
+       * <code>string name = 1;</code>
+       *
+       * @return The name.
+       */
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          name_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The resource name of the skill.
+       * </pre>
+       *
+       * <code>string name = 1;</code>
+       *
+       * @return The bytes for name.
+       */
+      public com.google.protobuf.ByteString getNameBytes() {
+        java.lang.Object ref = name_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          name_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The resource name of the skill.
+       * </pre>
+       *
+       * <code>string name = 1;</code>
+       *
+       * @param value The name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setName(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        name_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The resource name of the skill.
+       * </pre>
+       *
+       * <code>string name = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearName() {
+        name_ = getDefaultInstance().getName();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The resource name of the skill.
+       * </pre>
+       *
+       * <code>string name = 1;</code>
+       *
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNameBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        name_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object displayName_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * The display name of the skill.
+       * </pre>
+       *
+       * <code>string display_name = 2;</code>
+       *
+       * @return The displayName.
+       */
+      public java.lang.String getDisplayName() {
+        java.lang.Object ref = displayName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          displayName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The display name of the skill.
+       * </pre>
+       *
+       * <code>string display_name = 2;</code>
+       *
+       * @return The bytes for displayName.
+       */
+      public com.google.protobuf.ByteString getDisplayNameBytes() {
+        java.lang.Object ref = displayName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          displayName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The display name of the skill.
+       * </pre>
+       *
+       * <code>string display_name = 2;</code>
+       *
+       * @param value The displayName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDisplayName(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        displayName_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The display name of the skill.
+       * </pre>
+       *
+       * <code>string display_name = 2;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearDisplayName() {
+        displayName_ = getDefaultInstance().getDisplayName();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The display name of the skill.
+       * </pre>
+       *
+       * <code>string display_name = 2;</code>
+       *
+       * @param value The bytes for displayName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDisplayNameBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        displayName_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.discoveryengine.v1.StreamAssistResponse.InvokedSkill)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.discoveryengine.v1.StreamAssistResponse.InvokedSkill)
+    private static final com.google.cloud.discoveryengine.v1.StreamAssistResponse.InvokedSkill
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.cloud.discoveryengine.v1.StreamAssistResponse.InvokedSkill();
+    }
+
+    public static com.google.cloud.discoveryengine.v1.StreamAssistResponse.InvokedSkill
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<InvokedSkill> PARSER =
+        new com.google.protobuf.AbstractParser<InvokedSkill>() {
+          @java.lang.Override
+          public InvokedSkill parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<InvokedSkill> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<InvokedSkill> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1.StreamAssistResponse.InvokedSkill
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface ConnectorAuthErrorOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.discoveryengine.v1.StreamAssistResponse.ConnectorAuthError)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Resource name of the data connector that failed authentication.
+     * </pre>
+     *
+     * <code>string data_connector = 1;</code>
+     *
+     * @return The dataConnector.
+     */
+    java.lang.String getDataConnector();
+
+    /**
+     *
+     *
+     * <pre>
+     * Resource name of the data connector that failed authentication.
+     * </pre>
+     *
+     * <code>string data_connector = 1;</code>
+     *
+     * @return The bytes for dataConnector.
+     */
+    com.google.protobuf.ByteString getDataConnectorBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Human-readable error message describing the auth failure.
+     * </pre>
+     *
+     * <code>string error_message = 2;</code>
+     *
+     * @return The errorMessage.
+     */
+    java.lang.String getErrorMessage();
+
+    /**
+     *
+     *
+     * <pre>
+     * Human-readable error message describing the auth failure.
+     * </pre>
+     *
+     * <code>string error_message = 2;</code>
+     *
+     * @return The bytes for errorMessage.
+     */
+    com.google.protobuf.ByteString getErrorMessageBytes();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Describes an authentication error for a specific data connector.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.discoveryengine.v1.StreamAssistResponse.ConnectorAuthError}
+   */
+  public static final class ConnectorAuthError extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1.StreamAssistResponse.ConnectorAuthError)
+      ConnectorAuthErrorOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 6,
+          /* suffix= */ "",
+          "ConnectorAuthError");
+    }
+
+    // Use ConnectorAuthError.newBuilder() to construct.
+    private ConnectorAuthError(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private ConnectorAuthError() {
+      dataConnector_ = "";
+      errorMessage_ = "";
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.discoveryengine.v1.AssistantServiceProto
+          .internal_static_google_cloud_discoveryengine_v1_StreamAssistResponse_ConnectorAuthError_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.discoveryengine.v1.AssistantServiceProto
+          .internal_static_google_cloud_discoveryengine_v1_StreamAssistResponse_ConnectorAuthError_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.discoveryengine.v1.StreamAssistResponse.ConnectorAuthError.class,
+              com.google.cloud.discoveryengine.v1.StreamAssistResponse.ConnectorAuthError.Builder
+                  .class);
+    }
+
+    public static final int DATA_CONNECTOR_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object dataConnector_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Resource name of the data connector that failed authentication.
+     * </pre>
+     *
+     * <code>string data_connector = 1;</code>
+     *
+     * @return The dataConnector.
+     */
+    @java.lang.Override
+    public java.lang.String getDataConnector() {
+      java.lang.Object ref = dataConnector_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        dataConnector_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Resource name of the data connector that failed authentication.
+     * </pre>
+     *
+     * <code>string data_connector = 1;</code>
+     *
+     * @return The bytes for dataConnector.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getDataConnectorBytes() {
+      java.lang.Object ref = dataConnector_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        dataConnector_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ERROR_MESSAGE_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object errorMessage_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Human-readable error message describing the auth failure.
+     * </pre>
+     *
+     * <code>string error_message = 2;</code>
+     *
+     * @return The errorMessage.
+     */
+    @java.lang.Override
+    public java.lang.String getErrorMessage() {
+      java.lang.Object ref = errorMessage_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        errorMessage_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Human-readable error message describing the auth failure.
+     * </pre>
+     *
+     * <code>string error_message = 2;</code>
+     *
+     * @return The bytes for errorMessage.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getErrorMessageBytes() {
+      java.lang.Object ref = errorMessage_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        errorMessage_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(dataConnector_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 1, dataConnector_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(errorMessage_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 2, errorMessage_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(dataConnector_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(1, dataConnector_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(errorMessage_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(2, errorMessage_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof com.google.cloud.discoveryengine.v1.StreamAssistResponse.ConnectorAuthError)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.discoveryengine.v1.StreamAssistResponse.ConnectorAuthError other =
+          (com.google.cloud.discoveryengine.v1.StreamAssistResponse.ConnectorAuthError) obj;
+
+      if (!getDataConnector().equals(other.getDataConnector())) return false;
+      if (!getErrorMessage().equals(other.getErrorMessage())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + DATA_CONNECTOR_FIELD_NUMBER;
+      hash = (53 * hash) + getDataConnector().hashCode();
+      hash = (37 * hash) + ERROR_MESSAGE_FIELD_NUMBER;
+      hash = (53 * hash) + getErrorMessage().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.discoveryengine.v1.StreamAssistResponse.ConnectorAuthError
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.StreamAssistResponse.ConnectorAuthError
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.StreamAssistResponse.ConnectorAuthError
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.StreamAssistResponse.ConnectorAuthError
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.StreamAssistResponse.ConnectorAuthError
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.StreamAssistResponse.ConnectorAuthError
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.StreamAssistResponse.ConnectorAuthError
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.StreamAssistResponse.ConnectorAuthError
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.StreamAssistResponse.ConnectorAuthError
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.StreamAssistResponse.ConnectorAuthError
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.StreamAssistResponse.ConnectorAuthError
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.StreamAssistResponse.ConnectorAuthError
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.discoveryengine.v1.StreamAssistResponse.ConnectorAuthError prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Describes an authentication error for a specific data connector.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.discoveryengine.v1.StreamAssistResponse.ConnectorAuthError}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.discoveryengine.v1.StreamAssistResponse.ConnectorAuthError)
+        com.google.cloud.discoveryengine.v1.StreamAssistResponse.ConnectorAuthErrorOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.discoveryengine.v1.AssistantServiceProto
+            .internal_static_google_cloud_discoveryengine_v1_StreamAssistResponse_ConnectorAuthError_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.discoveryengine.v1.AssistantServiceProto
+            .internal_static_google_cloud_discoveryengine_v1_StreamAssistResponse_ConnectorAuthError_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.discoveryengine.v1.StreamAssistResponse.ConnectorAuthError.class,
+                com.google.cloud.discoveryengine.v1.StreamAssistResponse.ConnectorAuthError.Builder
+                    .class);
+      }
+
+      // Construct using
+      // com.google.cloud.discoveryengine.v1.StreamAssistResponse.ConnectorAuthError.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        dataConnector_ = "";
+        errorMessage_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.discoveryengine.v1.AssistantServiceProto
+            .internal_static_google_cloud_discoveryengine_v1_StreamAssistResponse_ConnectorAuthError_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1.StreamAssistResponse.ConnectorAuthError
+          getDefaultInstanceForType() {
+        return com.google.cloud.discoveryengine.v1.StreamAssistResponse.ConnectorAuthError
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1.StreamAssistResponse.ConnectorAuthError build() {
+        com.google.cloud.discoveryengine.v1.StreamAssistResponse.ConnectorAuthError result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1.StreamAssistResponse.ConnectorAuthError
+          buildPartial() {
+        com.google.cloud.discoveryengine.v1.StreamAssistResponse.ConnectorAuthError result =
+            new com.google.cloud.discoveryengine.v1.StreamAssistResponse.ConnectorAuthError(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.discoveryengine.v1.StreamAssistResponse.ConnectorAuthError result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.dataConnector_ = dataConnector_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.errorMessage_ = errorMessage_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof
+            com.google.cloud.discoveryengine.v1.StreamAssistResponse.ConnectorAuthError) {
+          return mergeFrom(
+              (com.google.cloud.discoveryengine.v1.StreamAssistResponse.ConnectorAuthError) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.discoveryengine.v1.StreamAssistResponse.ConnectorAuthError other) {
+        if (other
+            == com.google.cloud.discoveryengine.v1.StreamAssistResponse.ConnectorAuthError
+                .getDefaultInstance()) return this;
+        if (!other.getDataConnector().isEmpty()) {
+          dataConnector_ = other.dataConnector_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (!other.getErrorMessage().isEmpty()) {
+          errorMessage_ = other.errorMessage_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  dataConnector_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  errorMessage_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object dataConnector_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Resource name of the data connector that failed authentication.
+       * </pre>
+       *
+       * <code>string data_connector = 1;</code>
+       *
+       * @return The dataConnector.
+       */
+      public java.lang.String getDataConnector() {
+        java.lang.Object ref = dataConnector_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          dataConnector_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Resource name of the data connector that failed authentication.
+       * </pre>
+       *
+       * <code>string data_connector = 1;</code>
+       *
+       * @return The bytes for dataConnector.
+       */
+      public com.google.protobuf.ByteString getDataConnectorBytes() {
+        java.lang.Object ref = dataConnector_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          dataConnector_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Resource name of the data connector that failed authentication.
+       * </pre>
+       *
+       * <code>string data_connector = 1;</code>
+       *
+       * @param value The dataConnector to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDataConnector(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        dataConnector_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Resource name of the data connector that failed authentication.
+       * </pre>
+       *
+       * <code>string data_connector = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearDataConnector() {
+        dataConnector_ = getDefaultInstance().getDataConnector();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Resource name of the data connector that failed authentication.
+       * </pre>
+       *
+       * <code>string data_connector = 1;</code>
+       *
+       * @param value The bytes for dataConnector to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDataConnectorBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        dataConnector_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object errorMessage_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Human-readable error message describing the auth failure.
+       * </pre>
+       *
+       * <code>string error_message = 2;</code>
+       *
+       * @return The errorMessage.
+       */
+      public java.lang.String getErrorMessage() {
+        java.lang.Object ref = errorMessage_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          errorMessage_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Human-readable error message describing the auth failure.
+       * </pre>
+       *
+       * <code>string error_message = 2;</code>
+       *
+       * @return The bytes for errorMessage.
+       */
+      public com.google.protobuf.ByteString getErrorMessageBytes() {
+        java.lang.Object ref = errorMessage_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          errorMessage_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Human-readable error message describing the auth failure.
+       * </pre>
+       *
+       * <code>string error_message = 2;</code>
+       *
+       * @param value The errorMessage to set.
+       * @return This builder for chaining.
+       */
+      public Builder setErrorMessage(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        errorMessage_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Human-readable error message describing the auth failure.
+       * </pre>
+       *
+       * <code>string error_message = 2;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearErrorMessage() {
+        errorMessage_ = getDefaultInstance().getErrorMessage();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Human-readable error message describing the auth failure.
+       * </pre>
+       *
+       * <code>string error_message = 2;</code>
+       *
+       * @param value The bytes for errorMessage to set.
+       * @return This builder for chaining.
+       */
+      public Builder setErrorMessageBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        errorMessage_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.discoveryengine.v1.StreamAssistResponse.ConnectorAuthError)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.discoveryengine.v1.StreamAssistResponse.ConnectorAuthError)
+    private static final com.google.cloud.discoveryengine.v1.StreamAssistResponse.ConnectorAuthError
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.cloud.discoveryengine.v1.StreamAssistResponse.ConnectorAuthError();
+    }
+
+    public static com.google.cloud.discoveryengine.v1.StreamAssistResponse.ConnectorAuthError
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ConnectorAuthError> PARSER =
+        new com.google.protobuf.AbstractParser<ConnectorAuthError>() {
+          @java.lang.Override
+          public ConnectorAuthError parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<ConnectorAuthError> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ConnectorAuthError> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1.StreamAssistResponse.ConnectorAuthError
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
   public static final int ANSWER_FIELD_NUMBER = 1;
   private com.google.cloud.discoveryengine.v1.AssistAnswer answer_;
@@ -739,11 +2427,14 @@ public final class StreamAssistResponse extends com.google.protobuf.GeneratedMes
    * see if more parts are to be expected. While the state is `IN_PROGRESS`, the
    * [AssistAnswer.replies][google.cloud.discoveryengine.v1.AssistAnswer.replies]
    * field in each response will contain replies (reply fragments) to be
-   * appended to the ones received in previous responses. [AssistAnswer.name][]
+   * appended to the ones received in previous responses.
+   * [AssistAnswer.name][google.cloud.discoveryengine.v1.AssistAnswer.name]
    * won't be filled.
    *
    * If the state is `SUCCEEDED`, `FAILED` or `SKIPPED`, the response
-   * is the last response and [AssistAnswer.name][] will have a value.
+   * is the last response and
+   * [AssistAnswer.name][google.cloud.discoveryengine.v1.AssistAnswer.name] will
+   * have a value.
    * </pre>
    *
    * <code>.google.cloud.discoveryengine.v1.AssistAnswer answer = 1;</code>
@@ -771,11 +2462,14 @@ public final class StreamAssistResponse extends com.google.protobuf.GeneratedMes
    * see if more parts are to be expected. While the state is `IN_PROGRESS`, the
    * [AssistAnswer.replies][google.cloud.discoveryengine.v1.AssistAnswer.replies]
    * field in each response will contain replies (reply fragments) to be
-   * appended to the ones received in previous responses. [AssistAnswer.name][]
+   * appended to the ones received in previous responses.
+   * [AssistAnswer.name][google.cloud.discoveryengine.v1.AssistAnswer.name]
    * won't be filled.
    *
    * If the state is `SUCCEEDED`, `FAILED` or `SKIPPED`, the response
-   * is the last response and [AssistAnswer.name][] will have a value.
+   * is the last response and
+   * [AssistAnswer.name][google.cloud.discoveryengine.v1.AssistAnswer.name] will
+   * have a value.
    * </pre>
    *
    * <code>.google.cloud.discoveryengine.v1.AssistAnswer answer = 1;</code>
@@ -805,11 +2499,14 @@ public final class StreamAssistResponse extends com.google.protobuf.GeneratedMes
    * see if more parts are to be expected. While the state is `IN_PROGRESS`, the
    * [AssistAnswer.replies][google.cloud.discoveryengine.v1.AssistAnswer.replies]
    * field in each response will contain replies (reply fragments) to be
-   * appended to the ones received in previous responses. [AssistAnswer.name][]
+   * appended to the ones received in previous responses.
+   * [AssistAnswer.name][google.cloud.discoveryengine.v1.AssistAnswer.name]
    * won't be filled.
    *
    * If the state is `SUCCEEDED`, `FAILED` or `SKIPPED`, the response
-   * is the last response and [AssistAnswer.name][] will have a value.
+   * is the last response and
+   * [AssistAnswer.name][google.cloud.discoveryengine.v1.AssistAnswer.name] will
+   * have a value.
    * </pre>
    *
    * <code>.google.cloud.discoveryengine.v1.AssistAnswer answer = 1;</code>
@@ -828,7 +2525,8 @@ public final class StreamAssistResponse extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Session information.
+   * Session information. Only included in the final StreamAssistResponse of the
+   * response stream.
    * </pre>
    *
    * <code>.google.cloud.discoveryengine.v1.StreamAssistResponse.SessionInfo session_info = 2;
@@ -845,7 +2543,8 @@ public final class StreamAssistResponse extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Session information.
+   * Session information. Only included in the final StreamAssistResponse of the
+   * response stream.
    * </pre>
    *
    * <code>.google.cloud.discoveryengine.v1.StreamAssistResponse.SessionInfo session_info = 2;
@@ -864,7 +2563,8 @@ public final class StreamAssistResponse extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Session information.
+   * Session information. Only included in the final StreamAssistResponse of the
+   * response stream.
    * </pre>
    *
    * <code>.google.cloud.discoveryengine.v1.StreamAssistResponse.SessionInfo session_info = 2;
@@ -933,6 +2633,268 @@ public final class StreamAssistResponse extends com.google.protobuf.GeneratedMes
     }
   }
 
+  public static final int INVOCATION_TOOLS_FIELD_NUMBER = 8;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList invocationTools_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+
+  /**
+   *
+   *
+   * <pre>
+   * The tool names of the tools that were invoked.
+   * </pre>
+   *
+   * <code>repeated string invocation_tools = 8;</code>
+   *
+   * @return A list containing the invocationTools.
+   */
+  public com.google.protobuf.ProtocolStringList getInvocationToolsList() {
+    return invocationTools_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The tool names of the tools that were invoked.
+   * </pre>
+   *
+   * <code>repeated string invocation_tools = 8;</code>
+   *
+   * @return The count of invocationTools.
+   */
+  public int getInvocationToolsCount() {
+    return invocationTools_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The tool names of the tools that were invoked.
+   * </pre>
+   *
+   * <code>repeated string invocation_tools = 8;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The invocationTools at the given index.
+   */
+  public java.lang.String getInvocationTools(int index) {
+    return invocationTools_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The tool names of the tools that were invoked.
+   * </pre>
+   *
+   * <code>repeated string invocation_tools = 8;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the invocationTools at the given index.
+   */
+  public com.google.protobuf.ByteString getInvocationToolsBytes(int index) {
+    return invocationTools_.getByteString(index);
+  }
+
+  public static final int INVOKED_SKILLS_FIELD_NUMBER = 10;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.discoveryengine.v1.StreamAssistResponse.InvokedSkill>
+      invokedSkills_;
+
+  /**
+   *
+   *
+   * <pre>
+   * The skills executed during the turn.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1.StreamAssistResponse.InvokedSkill invoked_skills = 10;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.discoveryengine.v1.StreamAssistResponse.InvokedSkill>
+      getInvokedSkillsList() {
+    return invokedSkills_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The skills executed during the turn.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1.StreamAssistResponse.InvokedSkill invoked_skills = 10;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<
+          ? extends com.google.cloud.discoveryengine.v1.StreamAssistResponse.InvokedSkillOrBuilder>
+      getInvokedSkillsOrBuilderList() {
+    return invokedSkills_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The skills executed during the turn.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1.StreamAssistResponse.InvokedSkill invoked_skills = 10;
+   * </code>
+   */
+  @java.lang.Override
+  public int getInvokedSkillsCount() {
+    return invokedSkills_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The skills executed during the turn.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1.StreamAssistResponse.InvokedSkill invoked_skills = 10;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1.StreamAssistResponse.InvokedSkill getInvokedSkills(
+      int index) {
+    return invokedSkills_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The skills executed during the turn.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1.StreamAssistResponse.InvokedSkill invoked_skills = 10;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1.StreamAssistResponse.InvokedSkillOrBuilder
+      getInvokedSkillsOrBuilder(int index) {
+    return invokedSkills_.get(index);
+  }
+
+  public static final int CONNECTOR_AUTH_ERRORS_FIELD_NUMBER = 11;
+
+  @SuppressWarnings("serial")
+  private java.util.List<
+          com.google.cloud.discoveryengine.v1.StreamAssistResponse.ConnectorAuthError>
+      connectorAuthErrors_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Per-connector authentication errors encountered during the request.
+   * Present when one or more connectors failed authentication but the
+   * request proceeded with the remaining connectors.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1.StreamAssistResponse.ConnectorAuthError connector_auth_errors = 11;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.discoveryengine.v1.StreamAssistResponse.ConnectorAuthError>
+      getConnectorAuthErrorsList() {
+    return connectorAuthErrors_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Per-connector authentication errors encountered during the request.
+   * Present when one or more connectors failed authentication but the
+   * request proceeded with the remaining connectors.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1.StreamAssistResponse.ConnectorAuthError connector_auth_errors = 11;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<
+          ? extends
+              com.google.cloud.discoveryengine.v1.StreamAssistResponse.ConnectorAuthErrorOrBuilder>
+      getConnectorAuthErrorsOrBuilderList() {
+    return connectorAuthErrors_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Per-connector authentication errors encountered during the request.
+   * Present when one or more connectors failed authentication but the
+   * request proceeded with the remaining connectors.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1.StreamAssistResponse.ConnectorAuthError connector_auth_errors = 11;
+   * </code>
+   */
+  @java.lang.Override
+  public int getConnectorAuthErrorsCount() {
+    return connectorAuthErrors_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Per-connector authentication errors encountered during the request.
+   * Present when one or more connectors failed authentication but the
+   * request proceeded with the remaining connectors.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1.StreamAssistResponse.ConnectorAuthError connector_auth_errors = 11;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1.StreamAssistResponse.ConnectorAuthError
+      getConnectorAuthErrors(int index) {
+    return connectorAuthErrors_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Per-connector authentication errors encountered during the request.
+   * Present when one or more connectors failed authentication but the
+   * request proceeded with the remaining connectors.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1.StreamAssistResponse.ConnectorAuthError connector_auth_errors = 11;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1.StreamAssistResponse.ConnectorAuthErrorOrBuilder
+      getConnectorAuthErrorsOrBuilder(int index) {
+    return connectorAuthErrors_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -956,6 +2918,15 @@ public final class StreamAssistResponse extends com.google.protobuf.GeneratedMes
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(assistToken_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 4, assistToken_);
     }
+    for (int i = 0; i < invocationTools_.size(); i++) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 8, invocationTools_.getRaw(i));
+    }
+    for (int i = 0; i < invokedSkills_.size(); i++) {
+      output.writeMessage(10, invokedSkills_.get(i));
+    }
+    for (int i = 0; i < connectorAuthErrors_.size(); i++) {
+      output.writeMessage(11, connectorAuthErrors_.get(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -973,6 +2944,21 @@ public final class StreamAssistResponse extends com.google.protobuf.GeneratedMes
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(assistToken_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(4, assistToken_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < invocationTools_.size(); i++) {
+        dataSize += computeStringSizeNoTag(invocationTools_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getInvocationToolsList().size();
+    }
+    for (int i = 0; i < invokedSkills_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, invokedSkills_.get(i));
+    }
+    for (int i = 0; i < connectorAuthErrors_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(11, connectorAuthErrors_.get(i));
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -999,6 +2985,9 @@ public final class StreamAssistResponse extends com.google.protobuf.GeneratedMes
       if (!getSessionInfo().equals(other.getSessionInfo())) return false;
     }
     if (!getAssistToken().equals(other.getAssistToken())) return false;
+    if (!getInvocationToolsList().equals(other.getInvocationToolsList())) return false;
+    if (!getInvokedSkillsList().equals(other.getInvokedSkillsList())) return false;
+    if (!getConnectorAuthErrorsList().equals(other.getConnectorAuthErrorsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1020,6 +3009,18 @@ public final class StreamAssistResponse extends com.google.protobuf.GeneratedMes
     }
     hash = (37 * hash) + ASSIST_TOKEN_FIELD_NUMBER;
     hash = (53 * hash) + getAssistToken().hashCode();
+    if (getInvocationToolsCount() > 0) {
+      hash = (37 * hash) + INVOCATION_TOOLS_FIELD_NUMBER;
+      hash = (53 * hash) + getInvocationToolsList().hashCode();
+    }
+    if (getInvokedSkillsCount() > 0) {
+      hash = (37 * hash) + INVOKED_SKILLS_FIELD_NUMBER;
+      hash = (53 * hash) + getInvokedSkillsList().hashCode();
+    }
+    if (getConnectorAuthErrorsCount() > 0) {
+      hash = (37 * hash) + CONNECTOR_AUTH_ERRORS_FIELD_NUMBER;
+      hash = (53 * hash) + getConnectorAuthErrorsList().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1166,6 +3167,8 @@ public final class StreamAssistResponse extends com.google.protobuf.GeneratedMes
       if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
         internalGetAnswerFieldBuilder();
         internalGetSessionInfoFieldBuilder();
+        internalGetInvokedSkillsFieldBuilder();
+        internalGetConnectorAuthErrorsFieldBuilder();
       }
     }
 
@@ -1184,6 +3187,21 @@ public final class StreamAssistResponse extends com.google.protobuf.GeneratedMes
         sessionInfoBuilder_ = null;
       }
       assistToken_ = "";
+      invocationTools_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      if (invokedSkillsBuilder_ == null) {
+        invokedSkills_ = java.util.Collections.emptyList();
+      } else {
+        invokedSkills_ = null;
+        invokedSkillsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000010);
+      if (connectorAuthErrorsBuilder_ == null) {
+        connectorAuthErrors_ = java.util.Collections.emptyList();
+      } else {
+        connectorAuthErrors_ = null;
+        connectorAuthErrorsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000020);
       return this;
     }
 
@@ -1211,11 +3229,34 @@ public final class StreamAssistResponse extends com.google.protobuf.GeneratedMes
     public com.google.cloud.discoveryengine.v1.StreamAssistResponse buildPartial() {
       com.google.cloud.discoveryengine.v1.StreamAssistResponse result =
           new com.google.cloud.discoveryengine.v1.StreamAssistResponse(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.discoveryengine.v1.StreamAssistResponse result) {
+      if (invokedSkillsBuilder_ == null) {
+        if (((bitField0_ & 0x00000010) != 0)) {
+          invokedSkills_ = java.util.Collections.unmodifiableList(invokedSkills_);
+          bitField0_ = (bitField0_ & ~0x00000010);
+        }
+        result.invokedSkills_ = invokedSkills_;
+      } else {
+        result.invokedSkills_ = invokedSkillsBuilder_.build();
+      }
+      if (connectorAuthErrorsBuilder_ == null) {
+        if (((bitField0_ & 0x00000020) != 0)) {
+          connectorAuthErrors_ = java.util.Collections.unmodifiableList(connectorAuthErrors_);
+          bitField0_ = (bitField0_ & ~0x00000020);
+        }
+        result.connectorAuthErrors_ = connectorAuthErrors_;
+      } else {
+        result.connectorAuthErrors_ = connectorAuthErrorsBuilder_.build();
+      }
     }
 
     private void buildPartial0(com.google.cloud.discoveryengine.v1.StreamAssistResponse result) {
@@ -1232,6 +3273,10 @@ public final class StreamAssistResponse extends com.google.protobuf.GeneratedMes
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.assistToken_ = assistToken_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        invocationTools_.makeImmutable();
+        result.invocationTools_ = invocationTools_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1259,6 +3304,70 @@ public final class StreamAssistResponse extends com.google.protobuf.GeneratedMes
         assistToken_ = other.assistToken_;
         bitField0_ |= 0x00000004;
         onChanged();
+      }
+      if (!other.invocationTools_.isEmpty()) {
+        if (invocationTools_.isEmpty()) {
+          invocationTools_ = other.invocationTools_;
+          bitField0_ |= 0x00000008;
+        } else {
+          ensureInvocationToolsIsMutable();
+          invocationTools_.addAll(other.invocationTools_);
+        }
+        onChanged();
+      }
+      if (invokedSkillsBuilder_ == null) {
+        if (!other.invokedSkills_.isEmpty()) {
+          if (invokedSkills_.isEmpty()) {
+            invokedSkills_ = other.invokedSkills_;
+            bitField0_ = (bitField0_ & ~0x00000010);
+          } else {
+            ensureInvokedSkillsIsMutable();
+            invokedSkills_.addAll(other.invokedSkills_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.invokedSkills_.isEmpty()) {
+          if (invokedSkillsBuilder_.isEmpty()) {
+            invokedSkillsBuilder_.dispose();
+            invokedSkillsBuilder_ = null;
+            invokedSkills_ = other.invokedSkills_;
+            bitField0_ = (bitField0_ & ~0x00000010);
+            invokedSkillsBuilder_ =
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                    ? internalGetInvokedSkillsFieldBuilder()
+                    : null;
+          } else {
+            invokedSkillsBuilder_.addAllMessages(other.invokedSkills_);
+          }
+        }
+      }
+      if (connectorAuthErrorsBuilder_ == null) {
+        if (!other.connectorAuthErrors_.isEmpty()) {
+          if (connectorAuthErrors_.isEmpty()) {
+            connectorAuthErrors_ = other.connectorAuthErrors_;
+            bitField0_ = (bitField0_ & ~0x00000020);
+          } else {
+            ensureConnectorAuthErrorsIsMutable();
+            connectorAuthErrors_.addAll(other.connectorAuthErrors_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.connectorAuthErrors_.isEmpty()) {
+          if (connectorAuthErrorsBuilder_.isEmpty()) {
+            connectorAuthErrorsBuilder_.dispose();
+            connectorAuthErrorsBuilder_ = null;
+            connectorAuthErrors_ = other.connectorAuthErrors_;
+            bitField0_ = (bitField0_ & ~0x00000020);
+            connectorAuthErrorsBuilder_ =
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                    ? internalGetConnectorAuthErrorsFieldBuilder()
+                    : null;
+          } else {
+            connectorAuthErrorsBuilder_.addAllMessages(other.connectorAuthErrors_);
+          }
+        }
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1305,6 +3414,43 @@ public final class StreamAssistResponse extends com.google.protobuf.GeneratedMes
                 bitField0_ |= 0x00000004;
                 break;
               } // case 34
+            case 66:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureInvocationToolsIsMutable();
+                invocationTools_.add(s);
+                break;
+              } // case 66
+            case 82:
+              {
+                com.google.cloud.discoveryengine.v1.StreamAssistResponse.InvokedSkill m =
+                    input.readMessage(
+                        com.google.cloud.discoveryengine.v1.StreamAssistResponse.InvokedSkill
+                            .parser(),
+                        extensionRegistry);
+                if (invokedSkillsBuilder_ == null) {
+                  ensureInvokedSkillsIsMutable();
+                  invokedSkills_.add(m);
+                } else {
+                  invokedSkillsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 82
+            case 90:
+              {
+                com.google.cloud.discoveryengine.v1.StreamAssistResponse.ConnectorAuthError m =
+                    input.readMessage(
+                        com.google.cloud.discoveryengine.v1.StreamAssistResponse.ConnectorAuthError
+                            .parser(),
+                        extensionRegistry);
+                if (connectorAuthErrorsBuilder_ == null) {
+                  ensureConnectorAuthErrorsIsMutable();
+                  connectorAuthErrors_.add(m);
+                } else {
+                  connectorAuthErrorsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 90
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1347,11 +3493,14 @@ public final class StreamAssistResponse extends com.google.protobuf.GeneratedMes
      * see if more parts are to be expected. While the state is `IN_PROGRESS`, the
      * [AssistAnswer.replies][google.cloud.discoveryengine.v1.AssistAnswer.replies]
      * field in each response will contain replies (reply fragments) to be
-     * appended to the ones received in previous responses. [AssistAnswer.name][]
+     * appended to the ones received in previous responses.
+     * [AssistAnswer.name][google.cloud.discoveryengine.v1.AssistAnswer.name]
      * won't be filled.
      *
      * If the state is `SUCCEEDED`, `FAILED` or `SKIPPED`, the response
-     * is the last response and [AssistAnswer.name][] will have a value.
+     * is the last response and
+     * [AssistAnswer.name][google.cloud.discoveryengine.v1.AssistAnswer.name] will
+     * have a value.
      * </pre>
      *
      * <code>.google.cloud.discoveryengine.v1.AssistAnswer answer = 1;</code>
@@ -1378,11 +3527,14 @@ public final class StreamAssistResponse extends com.google.protobuf.GeneratedMes
      * see if more parts are to be expected. While the state is `IN_PROGRESS`, the
      * [AssistAnswer.replies][google.cloud.discoveryengine.v1.AssistAnswer.replies]
      * field in each response will contain replies (reply fragments) to be
-     * appended to the ones received in previous responses. [AssistAnswer.name][]
+     * appended to the ones received in previous responses.
+     * [AssistAnswer.name][google.cloud.discoveryengine.v1.AssistAnswer.name]
      * won't be filled.
      *
      * If the state is `SUCCEEDED`, `FAILED` or `SKIPPED`, the response
-     * is the last response and [AssistAnswer.name][] will have a value.
+     * is the last response and
+     * [AssistAnswer.name][google.cloud.discoveryengine.v1.AssistAnswer.name] will
+     * have a value.
      * </pre>
      *
      * <code>.google.cloud.discoveryengine.v1.AssistAnswer answer = 1;</code>
@@ -1415,11 +3567,14 @@ public final class StreamAssistResponse extends com.google.protobuf.GeneratedMes
      * see if more parts are to be expected. While the state is `IN_PROGRESS`, the
      * [AssistAnswer.replies][google.cloud.discoveryengine.v1.AssistAnswer.replies]
      * field in each response will contain replies (reply fragments) to be
-     * appended to the ones received in previous responses. [AssistAnswer.name][]
+     * appended to the ones received in previous responses.
+     * [AssistAnswer.name][google.cloud.discoveryengine.v1.AssistAnswer.name]
      * won't be filled.
      *
      * If the state is `SUCCEEDED`, `FAILED` or `SKIPPED`, the response
-     * is the last response and [AssistAnswer.name][] will have a value.
+     * is the last response and
+     * [AssistAnswer.name][google.cloud.discoveryengine.v1.AssistAnswer.name] will
+     * have a value.
      * </pre>
      *
      * <code>.google.cloud.discoveryengine.v1.AssistAnswer answer = 1;</code>
@@ -1454,11 +3609,14 @@ public final class StreamAssistResponse extends com.google.protobuf.GeneratedMes
      * see if more parts are to be expected. While the state is `IN_PROGRESS`, the
      * [AssistAnswer.replies][google.cloud.discoveryengine.v1.AssistAnswer.replies]
      * field in each response will contain replies (reply fragments) to be
-     * appended to the ones received in previous responses. [AssistAnswer.name][]
+     * appended to the ones received in previous responses.
+     * [AssistAnswer.name][google.cloud.discoveryengine.v1.AssistAnswer.name]
      * won't be filled.
      *
      * If the state is `SUCCEEDED`, `FAILED` or `SKIPPED`, the response
-     * is the last response and [AssistAnswer.name][] will have a value.
+     * is the last response and
+     * [AssistAnswer.name][google.cloud.discoveryengine.v1.AssistAnswer.name] will
+     * have a value.
      * </pre>
      *
      * <code>.google.cloud.discoveryengine.v1.AssistAnswer answer = 1;</code>
@@ -1491,11 +3649,14 @@ public final class StreamAssistResponse extends com.google.protobuf.GeneratedMes
      * see if more parts are to be expected. While the state is `IN_PROGRESS`, the
      * [AssistAnswer.replies][google.cloud.discoveryengine.v1.AssistAnswer.replies]
      * field in each response will contain replies (reply fragments) to be
-     * appended to the ones received in previous responses. [AssistAnswer.name][]
+     * appended to the ones received in previous responses.
+     * [AssistAnswer.name][google.cloud.discoveryengine.v1.AssistAnswer.name]
      * won't be filled.
      *
      * If the state is `SUCCEEDED`, `FAILED` or `SKIPPED`, the response
-     * is the last response and [AssistAnswer.name][] will have a value.
+     * is the last response and
+     * [AssistAnswer.name][google.cloud.discoveryengine.v1.AssistAnswer.name] will
+     * have a value.
      * </pre>
      *
      * <code>.google.cloud.discoveryengine.v1.AssistAnswer answer = 1;</code>
@@ -1535,11 +3696,14 @@ public final class StreamAssistResponse extends com.google.protobuf.GeneratedMes
      * see if more parts are to be expected. While the state is `IN_PROGRESS`, the
      * [AssistAnswer.replies][google.cloud.discoveryengine.v1.AssistAnswer.replies]
      * field in each response will contain replies (reply fragments) to be
-     * appended to the ones received in previous responses. [AssistAnswer.name][]
+     * appended to the ones received in previous responses.
+     * [AssistAnswer.name][google.cloud.discoveryengine.v1.AssistAnswer.name]
      * won't be filled.
      *
      * If the state is `SUCCEEDED`, `FAILED` or `SKIPPED`, the response
-     * is the last response and [AssistAnswer.name][] will have a value.
+     * is the last response and
+     * [AssistAnswer.name][google.cloud.discoveryengine.v1.AssistAnswer.name] will
+     * have a value.
      * </pre>
      *
      * <code>.google.cloud.discoveryengine.v1.AssistAnswer answer = 1;</code>
@@ -1571,11 +3735,14 @@ public final class StreamAssistResponse extends com.google.protobuf.GeneratedMes
      * see if more parts are to be expected. While the state is `IN_PROGRESS`, the
      * [AssistAnswer.replies][google.cloud.discoveryengine.v1.AssistAnswer.replies]
      * field in each response will contain replies (reply fragments) to be
-     * appended to the ones received in previous responses. [AssistAnswer.name][]
+     * appended to the ones received in previous responses.
+     * [AssistAnswer.name][google.cloud.discoveryengine.v1.AssistAnswer.name]
      * won't be filled.
      *
      * If the state is `SUCCEEDED`, `FAILED` or `SKIPPED`, the response
-     * is the last response and [AssistAnswer.name][] will have a value.
+     * is the last response and
+     * [AssistAnswer.name][google.cloud.discoveryengine.v1.AssistAnswer.name] will
+     * have a value.
      * </pre>
      *
      * <code>.google.cloud.discoveryengine.v1.AssistAnswer answer = 1;</code>
@@ -1602,11 +3769,14 @@ public final class StreamAssistResponse extends com.google.protobuf.GeneratedMes
      * see if more parts are to be expected. While the state is `IN_PROGRESS`, the
      * [AssistAnswer.replies][google.cloud.discoveryengine.v1.AssistAnswer.replies]
      * field in each response will contain replies (reply fragments) to be
-     * appended to the ones received in previous responses. [AssistAnswer.name][]
+     * appended to the ones received in previous responses.
+     * [AssistAnswer.name][google.cloud.discoveryengine.v1.AssistAnswer.name]
      * won't be filled.
      *
      * If the state is `SUCCEEDED`, `FAILED` or `SKIPPED`, the response
-     * is the last response and [AssistAnswer.name][] will have a value.
+     * is the last response and
+     * [AssistAnswer.name][google.cloud.discoveryengine.v1.AssistAnswer.name] will
+     * have a value.
      * </pre>
      *
      * <code>.google.cloud.discoveryengine.v1.AssistAnswer answer = 1;</code>
@@ -1637,11 +3807,14 @@ public final class StreamAssistResponse extends com.google.protobuf.GeneratedMes
      * see if more parts are to be expected. While the state is `IN_PROGRESS`, the
      * [AssistAnswer.replies][google.cloud.discoveryengine.v1.AssistAnswer.replies]
      * field in each response will contain replies (reply fragments) to be
-     * appended to the ones received in previous responses. [AssistAnswer.name][]
+     * appended to the ones received in previous responses.
+     * [AssistAnswer.name][google.cloud.discoveryengine.v1.AssistAnswer.name]
      * won't be filled.
      *
      * If the state is `SUCCEEDED`, `FAILED` or `SKIPPED`, the response
-     * is the last response and [AssistAnswer.name][] will have a value.
+     * is the last response and
+     * [AssistAnswer.name][google.cloud.discoveryengine.v1.AssistAnswer.name] will
+     * have a value.
      * </pre>
      *
      * <code>.google.cloud.discoveryengine.v1.AssistAnswer answer = 1;</code>
@@ -1674,7 +3847,8 @@ public final class StreamAssistResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Session information.
+     * Session information. Only included in the final StreamAssistResponse of the
+     * response stream.
      * </pre>
      *
      * <code>.google.cloud.discoveryengine.v1.StreamAssistResponse.SessionInfo session_info = 2;
@@ -1690,7 +3864,8 @@ public final class StreamAssistResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Session information.
+     * Session information. Only included in the final StreamAssistResponse of the
+     * response stream.
      * </pre>
      *
      * <code>.google.cloud.discoveryengine.v1.StreamAssistResponse.SessionInfo session_info = 2;
@@ -1713,7 +3888,8 @@ public final class StreamAssistResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Session information.
+     * Session information. Only included in the final StreamAssistResponse of the
+     * response stream.
      * </pre>
      *
      * <code>.google.cloud.discoveryengine.v1.StreamAssistResponse.SessionInfo session_info = 2;
@@ -1738,7 +3914,8 @@ public final class StreamAssistResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Session information.
+     * Session information. Only included in the final StreamAssistResponse of the
+     * response stream.
      * </pre>
      *
      * <code>.google.cloud.discoveryengine.v1.StreamAssistResponse.SessionInfo session_info = 2;
@@ -1761,7 +3938,8 @@ public final class StreamAssistResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Session information.
+     * Session information. Only included in the final StreamAssistResponse of the
+     * response stream.
      * </pre>
      *
      * <code>.google.cloud.discoveryengine.v1.StreamAssistResponse.SessionInfo session_info = 2;
@@ -1793,7 +3971,8 @@ public final class StreamAssistResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Session information.
+     * Session information. Only included in the final StreamAssistResponse of the
+     * response stream.
      * </pre>
      *
      * <code>.google.cloud.discoveryengine.v1.StreamAssistResponse.SessionInfo session_info = 2;
@@ -1814,7 +3993,8 @@ public final class StreamAssistResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Session information.
+     * Session information. Only included in the final StreamAssistResponse of the
+     * response stream.
      * </pre>
      *
      * <code>.google.cloud.discoveryengine.v1.StreamAssistResponse.SessionInfo session_info = 2;
@@ -1831,7 +4011,8 @@ public final class StreamAssistResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Session information.
+     * Session information. Only included in the final StreamAssistResponse of the
+     * response stream.
      * </pre>
      *
      * <code>.google.cloud.discoveryengine.v1.StreamAssistResponse.SessionInfo session_info = 2;
@@ -1853,7 +4034,8 @@ public final class StreamAssistResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Session information.
+     * Session information. Only included in the final StreamAssistResponse of the
+     * response stream.
      * </pre>
      *
      * <code>.google.cloud.discoveryengine.v1.StreamAssistResponse.SessionInfo session_info = 2;
@@ -1990,6 +4172,1098 @@ public final class StreamAssistResponse extends com.google.protobuf.GeneratedMes
       bitField0_ |= 0x00000004;
       onChanged();
       return this;
+    }
+
+    private com.google.protobuf.LazyStringArrayList invocationTools_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureInvocationToolsIsMutable() {
+      if (!invocationTools_.isModifiable()) {
+        invocationTools_ = new com.google.protobuf.LazyStringArrayList(invocationTools_);
+      }
+      bitField0_ |= 0x00000008;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The tool names of the tools that were invoked.
+     * </pre>
+     *
+     * <code>repeated string invocation_tools = 8;</code>
+     *
+     * @return A list containing the invocationTools.
+     */
+    public com.google.protobuf.ProtocolStringList getInvocationToolsList() {
+      invocationTools_.makeImmutable();
+      return invocationTools_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The tool names of the tools that were invoked.
+     * </pre>
+     *
+     * <code>repeated string invocation_tools = 8;</code>
+     *
+     * @return The count of invocationTools.
+     */
+    public int getInvocationToolsCount() {
+      return invocationTools_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The tool names of the tools that were invoked.
+     * </pre>
+     *
+     * <code>repeated string invocation_tools = 8;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The invocationTools at the given index.
+     */
+    public java.lang.String getInvocationTools(int index) {
+      return invocationTools_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The tool names of the tools that were invoked.
+     * </pre>
+     *
+     * <code>repeated string invocation_tools = 8;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the invocationTools at the given index.
+     */
+    public com.google.protobuf.ByteString getInvocationToolsBytes(int index) {
+      return invocationTools_.getByteString(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The tool names of the tools that were invoked.
+     * </pre>
+     *
+     * <code>repeated string invocation_tools = 8;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The invocationTools to set.
+     * @return This builder for chaining.
+     */
+    public Builder setInvocationTools(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureInvocationToolsIsMutable();
+      invocationTools_.set(index, value);
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The tool names of the tools that were invoked.
+     * </pre>
+     *
+     * <code>repeated string invocation_tools = 8;</code>
+     *
+     * @param value The invocationTools to add.
+     * @return This builder for chaining.
+     */
+    public Builder addInvocationTools(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureInvocationToolsIsMutable();
+      invocationTools_.add(value);
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The tool names of the tools that were invoked.
+     * </pre>
+     *
+     * <code>repeated string invocation_tools = 8;</code>
+     *
+     * @param values The invocationTools to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllInvocationTools(java.lang.Iterable<java.lang.String> values) {
+      ensureInvocationToolsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, invocationTools_);
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The tool names of the tools that were invoked.
+     * </pre>
+     *
+     * <code>repeated string invocation_tools = 8;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearInvocationTools() {
+      invocationTools_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000008);
+      ;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The tool names of the tools that were invoked.
+     * </pre>
+     *
+     * <code>repeated string invocation_tools = 8;</code>
+     *
+     * @param value The bytes of the invocationTools to add.
+     * @return This builder for chaining.
+     */
+    public Builder addInvocationToolsBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureInvocationToolsIsMutable();
+      invocationTools_.add(value);
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    private java.util.List<com.google.cloud.discoveryengine.v1.StreamAssistResponse.InvokedSkill>
+        invokedSkills_ = java.util.Collections.emptyList();
+
+    private void ensureInvokedSkillsIsMutable() {
+      if (!((bitField0_ & 0x00000010) != 0)) {
+        invokedSkills_ =
+            new java.util.ArrayList<
+                com.google.cloud.discoveryengine.v1.StreamAssistResponse.InvokedSkill>(
+                invokedSkills_);
+        bitField0_ |= 0x00000010;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.cloud.discoveryengine.v1.StreamAssistResponse.InvokedSkill,
+            com.google.cloud.discoveryengine.v1.StreamAssistResponse.InvokedSkill.Builder,
+            com.google.cloud.discoveryengine.v1.StreamAssistResponse.InvokedSkillOrBuilder>
+        invokedSkillsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The skills executed during the turn.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.StreamAssistResponse.InvokedSkill invoked_skills = 10;
+     * </code>
+     */
+    public java.util.List<com.google.cloud.discoveryengine.v1.StreamAssistResponse.InvokedSkill>
+        getInvokedSkillsList() {
+      if (invokedSkillsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(invokedSkills_);
+      } else {
+        return invokedSkillsBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The skills executed during the turn.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.StreamAssistResponse.InvokedSkill invoked_skills = 10;
+     * </code>
+     */
+    public int getInvokedSkillsCount() {
+      if (invokedSkillsBuilder_ == null) {
+        return invokedSkills_.size();
+      } else {
+        return invokedSkillsBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The skills executed during the turn.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.StreamAssistResponse.InvokedSkill invoked_skills = 10;
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1.StreamAssistResponse.InvokedSkill getInvokedSkills(
+        int index) {
+      if (invokedSkillsBuilder_ == null) {
+        return invokedSkills_.get(index);
+      } else {
+        return invokedSkillsBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The skills executed during the turn.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.StreamAssistResponse.InvokedSkill invoked_skills = 10;
+     * </code>
+     */
+    public Builder setInvokedSkills(
+        int index, com.google.cloud.discoveryengine.v1.StreamAssistResponse.InvokedSkill value) {
+      if (invokedSkillsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureInvokedSkillsIsMutable();
+        invokedSkills_.set(index, value);
+        onChanged();
+      } else {
+        invokedSkillsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The skills executed during the turn.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.StreamAssistResponse.InvokedSkill invoked_skills = 10;
+     * </code>
+     */
+    public Builder setInvokedSkills(
+        int index,
+        com.google.cloud.discoveryengine.v1.StreamAssistResponse.InvokedSkill.Builder
+            builderForValue) {
+      if (invokedSkillsBuilder_ == null) {
+        ensureInvokedSkillsIsMutable();
+        invokedSkills_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        invokedSkillsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The skills executed during the turn.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.StreamAssistResponse.InvokedSkill invoked_skills = 10;
+     * </code>
+     */
+    public Builder addInvokedSkills(
+        com.google.cloud.discoveryengine.v1.StreamAssistResponse.InvokedSkill value) {
+      if (invokedSkillsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureInvokedSkillsIsMutable();
+        invokedSkills_.add(value);
+        onChanged();
+      } else {
+        invokedSkillsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The skills executed during the turn.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.StreamAssistResponse.InvokedSkill invoked_skills = 10;
+     * </code>
+     */
+    public Builder addInvokedSkills(
+        int index, com.google.cloud.discoveryengine.v1.StreamAssistResponse.InvokedSkill value) {
+      if (invokedSkillsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureInvokedSkillsIsMutable();
+        invokedSkills_.add(index, value);
+        onChanged();
+      } else {
+        invokedSkillsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The skills executed during the turn.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.StreamAssistResponse.InvokedSkill invoked_skills = 10;
+     * </code>
+     */
+    public Builder addInvokedSkills(
+        com.google.cloud.discoveryengine.v1.StreamAssistResponse.InvokedSkill.Builder
+            builderForValue) {
+      if (invokedSkillsBuilder_ == null) {
+        ensureInvokedSkillsIsMutable();
+        invokedSkills_.add(builderForValue.build());
+        onChanged();
+      } else {
+        invokedSkillsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The skills executed during the turn.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.StreamAssistResponse.InvokedSkill invoked_skills = 10;
+     * </code>
+     */
+    public Builder addInvokedSkills(
+        int index,
+        com.google.cloud.discoveryengine.v1.StreamAssistResponse.InvokedSkill.Builder
+            builderForValue) {
+      if (invokedSkillsBuilder_ == null) {
+        ensureInvokedSkillsIsMutable();
+        invokedSkills_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        invokedSkillsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The skills executed during the turn.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.StreamAssistResponse.InvokedSkill invoked_skills = 10;
+     * </code>
+     */
+    public Builder addAllInvokedSkills(
+        java.lang.Iterable<
+                ? extends com.google.cloud.discoveryengine.v1.StreamAssistResponse.InvokedSkill>
+            values) {
+      if (invokedSkillsBuilder_ == null) {
+        ensureInvokedSkillsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, invokedSkills_);
+        onChanged();
+      } else {
+        invokedSkillsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The skills executed during the turn.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.StreamAssistResponse.InvokedSkill invoked_skills = 10;
+     * </code>
+     */
+    public Builder clearInvokedSkills() {
+      if (invokedSkillsBuilder_ == null) {
+        invokedSkills_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000010);
+        onChanged();
+      } else {
+        invokedSkillsBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The skills executed during the turn.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.StreamAssistResponse.InvokedSkill invoked_skills = 10;
+     * </code>
+     */
+    public Builder removeInvokedSkills(int index) {
+      if (invokedSkillsBuilder_ == null) {
+        ensureInvokedSkillsIsMutable();
+        invokedSkills_.remove(index);
+        onChanged();
+      } else {
+        invokedSkillsBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The skills executed during the turn.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.StreamAssistResponse.InvokedSkill invoked_skills = 10;
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1.StreamAssistResponse.InvokedSkill.Builder
+        getInvokedSkillsBuilder(int index) {
+      return internalGetInvokedSkillsFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The skills executed during the turn.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.StreamAssistResponse.InvokedSkill invoked_skills = 10;
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1.StreamAssistResponse.InvokedSkillOrBuilder
+        getInvokedSkillsOrBuilder(int index) {
+      if (invokedSkillsBuilder_ == null) {
+        return invokedSkills_.get(index);
+      } else {
+        return invokedSkillsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The skills executed during the turn.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.StreamAssistResponse.InvokedSkill invoked_skills = 10;
+     * </code>
+     */
+    public java.util.List<
+            ? extends
+                com.google.cloud.discoveryengine.v1.StreamAssistResponse.InvokedSkillOrBuilder>
+        getInvokedSkillsOrBuilderList() {
+      if (invokedSkillsBuilder_ != null) {
+        return invokedSkillsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(invokedSkills_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The skills executed during the turn.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.StreamAssistResponse.InvokedSkill invoked_skills = 10;
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1.StreamAssistResponse.InvokedSkill.Builder
+        addInvokedSkillsBuilder() {
+      return internalGetInvokedSkillsFieldBuilder()
+          .addBuilder(
+              com.google.cloud.discoveryengine.v1.StreamAssistResponse.InvokedSkill
+                  .getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The skills executed during the turn.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.StreamAssistResponse.InvokedSkill invoked_skills = 10;
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1.StreamAssistResponse.InvokedSkill.Builder
+        addInvokedSkillsBuilder(int index) {
+      return internalGetInvokedSkillsFieldBuilder()
+          .addBuilder(
+              index,
+              com.google.cloud.discoveryengine.v1.StreamAssistResponse.InvokedSkill
+                  .getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The skills executed during the turn.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.StreamAssistResponse.InvokedSkill invoked_skills = 10;
+     * </code>
+     */
+    public java.util.List<
+            com.google.cloud.discoveryengine.v1.StreamAssistResponse.InvokedSkill.Builder>
+        getInvokedSkillsBuilderList() {
+      return internalGetInvokedSkillsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.cloud.discoveryengine.v1.StreamAssistResponse.InvokedSkill,
+            com.google.cloud.discoveryengine.v1.StreamAssistResponse.InvokedSkill.Builder,
+            com.google.cloud.discoveryengine.v1.StreamAssistResponse.InvokedSkillOrBuilder>
+        internalGetInvokedSkillsFieldBuilder() {
+      if (invokedSkillsBuilder_ == null) {
+        invokedSkillsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilder<
+                com.google.cloud.discoveryengine.v1.StreamAssistResponse.InvokedSkill,
+                com.google.cloud.discoveryengine.v1.StreamAssistResponse.InvokedSkill.Builder,
+                com.google.cloud.discoveryengine.v1.StreamAssistResponse.InvokedSkillOrBuilder>(
+                invokedSkills_,
+                ((bitField0_ & 0x00000010) != 0),
+                getParentForChildren(),
+                isClean());
+        invokedSkills_ = null;
+      }
+      return invokedSkillsBuilder_;
+    }
+
+    private java.util.List<
+            com.google.cloud.discoveryengine.v1.StreamAssistResponse.ConnectorAuthError>
+        connectorAuthErrors_ = java.util.Collections.emptyList();
+
+    private void ensureConnectorAuthErrorsIsMutable() {
+      if (!((bitField0_ & 0x00000020) != 0)) {
+        connectorAuthErrors_ =
+            new java.util.ArrayList<
+                com.google.cloud.discoveryengine.v1.StreamAssistResponse.ConnectorAuthError>(
+                connectorAuthErrors_);
+        bitField0_ |= 0x00000020;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.cloud.discoveryengine.v1.StreamAssistResponse.ConnectorAuthError,
+            com.google.cloud.discoveryengine.v1.StreamAssistResponse.ConnectorAuthError.Builder,
+            com.google.cloud.discoveryengine.v1.StreamAssistResponse.ConnectorAuthErrorOrBuilder>
+        connectorAuthErrorsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Per-connector authentication errors encountered during the request.
+     * Present when one or more connectors failed authentication but the
+     * request proceeded with the remaining connectors.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.StreamAssistResponse.ConnectorAuthError connector_auth_errors = 11;
+     * </code>
+     */
+    public java.util.List<
+            com.google.cloud.discoveryengine.v1.StreamAssistResponse.ConnectorAuthError>
+        getConnectorAuthErrorsList() {
+      if (connectorAuthErrorsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(connectorAuthErrors_);
+      } else {
+        return connectorAuthErrorsBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Per-connector authentication errors encountered during the request.
+     * Present when one or more connectors failed authentication but the
+     * request proceeded with the remaining connectors.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.StreamAssistResponse.ConnectorAuthError connector_auth_errors = 11;
+     * </code>
+     */
+    public int getConnectorAuthErrorsCount() {
+      if (connectorAuthErrorsBuilder_ == null) {
+        return connectorAuthErrors_.size();
+      } else {
+        return connectorAuthErrorsBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Per-connector authentication errors encountered during the request.
+     * Present when one or more connectors failed authentication but the
+     * request proceeded with the remaining connectors.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.StreamAssistResponse.ConnectorAuthError connector_auth_errors = 11;
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1.StreamAssistResponse.ConnectorAuthError
+        getConnectorAuthErrors(int index) {
+      if (connectorAuthErrorsBuilder_ == null) {
+        return connectorAuthErrors_.get(index);
+      } else {
+        return connectorAuthErrorsBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Per-connector authentication errors encountered during the request.
+     * Present when one or more connectors failed authentication but the
+     * request proceeded with the remaining connectors.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.StreamAssistResponse.ConnectorAuthError connector_auth_errors = 11;
+     * </code>
+     */
+    public Builder setConnectorAuthErrors(
+        int index,
+        com.google.cloud.discoveryengine.v1.StreamAssistResponse.ConnectorAuthError value) {
+      if (connectorAuthErrorsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureConnectorAuthErrorsIsMutable();
+        connectorAuthErrors_.set(index, value);
+        onChanged();
+      } else {
+        connectorAuthErrorsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Per-connector authentication errors encountered during the request.
+     * Present when one or more connectors failed authentication but the
+     * request proceeded with the remaining connectors.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.StreamAssistResponse.ConnectorAuthError connector_auth_errors = 11;
+     * </code>
+     */
+    public Builder setConnectorAuthErrors(
+        int index,
+        com.google.cloud.discoveryengine.v1.StreamAssistResponse.ConnectorAuthError.Builder
+            builderForValue) {
+      if (connectorAuthErrorsBuilder_ == null) {
+        ensureConnectorAuthErrorsIsMutable();
+        connectorAuthErrors_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        connectorAuthErrorsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Per-connector authentication errors encountered during the request.
+     * Present when one or more connectors failed authentication but the
+     * request proceeded with the remaining connectors.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.StreamAssistResponse.ConnectorAuthError connector_auth_errors = 11;
+     * </code>
+     */
+    public Builder addConnectorAuthErrors(
+        com.google.cloud.discoveryengine.v1.StreamAssistResponse.ConnectorAuthError value) {
+      if (connectorAuthErrorsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureConnectorAuthErrorsIsMutable();
+        connectorAuthErrors_.add(value);
+        onChanged();
+      } else {
+        connectorAuthErrorsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Per-connector authentication errors encountered during the request.
+     * Present when one or more connectors failed authentication but the
+     * request proceeded with the remaining connectors.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.StreamAssistResponse.ConnectorAuthError connector_auth_errors = 11;
+     * </code>
+     */
+    public Builder addConnectorAuthErrors(
+        int index,
+        com.google.cloud.discoveryengine.v1.StreamAssistResponse.ConnectorAuthError value) {
+      if (connectorAuthErrorsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureConnectorAuthErrorsIsMutable();
+        connectorAuthErrors_.add(index, value);
+        onChanged();
+      } else {
+        connectorAuthErrorsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Per-connector authentication errors encountered during the request.
+     * Present when one or more connectors failed authentication but the
+     * request proceeded with the remaining connectors.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.StreamAssistResponse.ConnectorAuthError connector_auth_errors = 11;
+     * </code>
+     */
+    public Builder addConnectorAuthErrors(
+        com.google.cloud.discoveryengine.v1.StreamAssistResponse.ConnectorAuthError.Builder
+            builderForValue) {
+      if (connectorAuthErrorsBuilder_ == null) {
+        ensureConnectorAuthErrorsIsMutable();
+        connectorAuthErrors_.add(builderForValue.build());
+        onChanged();
+      } else {
+        connectorAuthErrorsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Per-connector authentication errors encountered during the request.
+     * Present when one or more connectors failed authentication but the
+     * request proceeded with the remaining connectors.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.StreamAssistResponse.ConnectorAuthError connector_auth_errors = 11;
+     * </code>
+     */
+    public Builder addConnectorAuthErrors(
+        int index,
+        com.google.cloud.discoveryengine.v1.StreamAssistResponse.ConnectorAuthError.Builder
+            builderForValue) {
+      if (connectorAuthErrorsBuilder_ == null) {
+        ensureConnectorAuthErrorsIsMutable();
+        connectorAuthErrors_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        connectorAuthErrorsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Per-connector authentication errors encountered during the request.
+     * Present when one or more connectors failed authentication but the
+     * request proceeded with the remaining connectors.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.StreamAssistResponse.ConnectorAuthError connector_auth_errors = 11;
+     * </code>
+     */
+    public Builder addAllConnectorAuthErrors(
+        java.lang.Iterable<
+                ? extends
+                    com.google.cloud.discoveryengine.v1.StreamAssistResponse.ConnectorAuthError>
+            values) {
+      if (connectorAuthErrorsBuilder_ == null) {
+        ensureConnectorAuthErrorsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, connectorAuthErrors_);
+        onChanged();
+      } else {
+        connectorAuthErrorsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Per-connector authentication errors encountered during the request.
+     * Present when one or more connectors failed authentication but the
+     * request proceeded with the remaining connectors.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.StreamAssistResponse.ConnectorAuthError connector_auth_errors = 11;
+     * </code>
+     */
+    public Builder clearConnectorAuthErrors() {
+      if (connectorAuthErrorsBuilder_ == null) {
+        connectorAuthErrors_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000020);
+        onChanged();
+      } else {
+        connectorAuthErrorsBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Per-connector authentication errors encountered during the request.
+     * Present when one or more connectors failed authentication but the
+     * request proceeded with the remaining connectors.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.StreamAssistResponse.ConnectorAuthError connector_auth_errors = 11;
+     * </code>
+     */
+    public Builder removeConnectorAuthErrors(int index) {
+      if (connectorAuthErrorsBuilder_ == null) {
+        ensureConnectorAuthErrorsIsMutable();
+        connectorAuthErrors_.remove(index);
+        onChanged();
+      } else {
+        connectorAuthErrorsBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Per-connector authentication errors encountered during the request.
+     * Present when one or more connectors failed authentication but the
+     * request proceeded with the remaining connectors.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.StreamAssistResponse.ConnectorAuthError connector_auth_errors = 11;
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1.StreamAssistResponse.ConnectorAuthError.Builder
+        getConnectorAuthErrorsBuilder(int index) {
+      return internalGetConnectorAuthErrorsFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Per-connector authentication errors encountered during the request.
+     * Present when one or more connectors failed authentication but the
+     * request proceeded with the remaining connectors.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.StreamAssistResponse.ConnectorAuthError connector_auth_errors = 11;
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1.StreamAssistResponse.ConnectorAuthErrorOrBuilder
+        getConnectorAuthErrorsOrBuilder(int index) {
+      if (connectorAuthErrorsBuilder_ == null) {
+        return connectorAuthErrors_.get(index);
+      } else {
+        return connectorAuthErrorsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Per-connector authentication errors encountered during the request.
+     * Present when one or more connectors failed authentication but the
+     * request proceeded with the remaining connectors.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.StreamAssistResponse.ConnectorAuthError connector_auth_errors = 11;
+     * </code>
+     */
+    public java.util.List<
+            ? extends
+                com.google.cloud.discoveryengine.v1.StreamAssistResponse
+                    .ConnectorAuthErrorOrBuilder>
+        getConnectorAuthErrorsOrBuilderList() {
+      if (connectorAuthErrorsBuilder_ != null) {
+        return connectorAuthErrorsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(connectorAuthErrors_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Per-connector authentication errors encountered during the request.
+     * Present when one or more connectors failed authentication but the
+     * request proceeded with the remaining connectors.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.StreamAssistResponse.ConnectorAuthError connector_auth_errors = 11;
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1.StreamAssistResponse.ConnectorAuthError.Builder
+        addConnectorAuthErrorsBuilder() {
+      return internalGetConnectorAuthErrorsFieldBuilder()
+          .addBuilder(
+              com.google.cloud.discoveryengine.v1.StreamAssistResponse.ConnectorAuthError
+                  .getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Per-connector authentication errors encountered during the request.
+     * Present when one or more connectors failed authentication but the
+     * request proceeded with the remaining connectors.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.StreamAssistResponse.ConnectorAuthError connector_auth_errors = 11;
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1.StreamAssistResponse.ConnectorAuthError.Builder
+        addConnectorAuthErrorsBuilder(int index) {
+      return internalGetConnectorAuthErrorsFieldBuilder()
+          .addBuilder(
+              index,
+              com.google.cloud.discoveryengine.v1.StreamAssistResponse.ConnectorAuthError
+                  .getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Per-connector authentication errors encountered during the request.
+     * Present when one or more connectors failed authentication but the
+     * request proceeded with the remaining connectors.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.StreamAssistResponse.ConnectorAuthError connector_auth_errors = 11;
+     * </code>
+     */
+    public java.util.List<
+            com.google.cloud.discoveryengine.v1.StreamAssistResponse.ConnectorAuthError.Builder>
+        getConnectorAuthErrorsBuilderList() {
+      return internalGetConnectorAuthErrorsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.cloud.discoveryengine.v1.StreamAssistResponse.ConnectorAuthError,
+            com.google.cloud.discoveryengine.v1.StreamAssistResponse.ConnectorAuthError.Builder,
+            com.google.cloud.discoveryengine.v1.StreamAssistResponse.ConnectorAuthErrorOrBuilder>
+        internalGetConnectorAuthErrorsFieldBuilder() {
+      if (connectorAuthErrorsBuilder_ == null) {
+        connectorAuthErrorsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilder<
+                com.google.cloud.discoveryengine.v1.StreamAssistResponse.ConnectorAuthError,
+                com.google.cloud.discoveryengine.v1.StreamAssistResponse.ConnectorAuthError.Builder,
+                com.google.cloud.discoveryengine.v1.StreamAssistResponse
+                    .ConnectorAuthErrorOrBuilder>(
+                connectorAuthErrors_,
+                ((bitField0_ & 0x00000020) != 0),
+                getParentForChildren(),
+                isClean());
+        connectorAuthErrors_ = null;
+      }
+      return connectorAuthErrorsBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.discoveryengine.v1.StreamAssistResponse)

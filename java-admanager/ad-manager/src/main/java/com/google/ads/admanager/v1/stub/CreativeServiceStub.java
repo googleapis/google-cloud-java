@@ -20,12 +20,18 @@ import static com.google.ads.admanager.v1.CreativeServiceClient.ListCreativesPag
 
 import com.google.ads.admanager.v1.BatchActivateCreativesRequest;
 import com.google.ads.admanager.v1.BatchActivateCreativesResponse;
+import com.google.ads.admanager.v1.BatchCreateCreativesRequest;
+import com.google.ads.admanager.v1.BatchCreateCreativesResponse;
 import com.google.ads.admanager.v1.BatchDeactivateCreativesRequest;
 import com.google.ads.admanager.v1.BatchDeactivateCreativesResponse;
+import com.google.ads.admanager.v1.BatchUpdateCreativesRequest;
+import com.google.ads.admanager.v1.BatchUpdateCreativesResponse;
+import com.google.ads.admanager.v1.CreateCreativeRequest;
 import com.google.ads.admanager.v1.Creative;
 import com.google.ads.admanager.v1.GetCreativeRequest;
 import com.google.ads.admanager.v1.ListCreativesRequest;
 import com.google.ads.admanager.v1.ListCreativesResponse;
+import com.google.ads.admanager.v1.UpdateCreativeRequest;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
 import javax.annotation.Generated;
@@ -52,6 +58,24 @@ public abstract class CreativeServiceStub implements BackgroundResource {
 
   public UnaryCallable<ListCreativesRequest, ListCreativesResponse> listCreativesCallable() {
     throw new UnsupportedOperationException("Not implemented: listCreativesCallable()");
+  }
+
+  public UnaryCallable<CreateCreativeRequest, Creative> createCreativeCallable() {
+    throw new UnsupportedOperationException("Not implemented: createCreativeCallable()");
+  }
+
+  public UnaryCallable<UpdateCreativeRequest, Creative> updateCreativeCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateCreativeCallable()");
+  }
+
+  public UnaryCallable<BatchCreateCreativesRequest, BatchCreateCreativesResponse>
+      batchCreateCreativesCallable() {
+    throw new UnsupportedOperationException("Not implemented: batchCreateCreativesCallable()");
+  }
+
+  public UnaryCallable<BatchUpdateCreativesRequest, BatchUpdateCreativesResponse>
+      batchUpdateCreativesCallable() {
+    throw new UnsupportedOperationException("Not implemented: batchUpdateCreativesCallable()");
   }
 
   public UnaryCallable<BatchActivateCreativesRequest, BatchActivateCreativesResponse>

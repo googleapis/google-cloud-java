@@ -1811,6 +1811,7 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    *           .setDocumentSchema(DocumentSchema.newBuilder().build())
    *           .setInputData(TrainProcessorVersionRequest.InputData.newBuilder().build())
    *           .setBaseProcessorVersion("baseProcessorVersion337709271")
+   *           .setProcessorVersionOverrides(ProcessorVersionOverrides.newBuilder().build())
    *           .build();
    *   TrainProcessorVersionResponse response =
    *       documentProcessorServiceClient.trainProcessorVersionAsync(request).get();
@@ -1847,6 +1848,7 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    *           .setDocumentSchema(DocumentSchema.newBuilder().build())
    *           .setInputData(TrainProcessorVersionRequest.InputData.newBuilder().build())
    *           .setBaseProcessorVersion("baseProcessorVersion337709271")
+   *           .setProcessorVersionOverrides(ProcessorVersionOverrides.newBuilder().build())
    *           .build();
    *   OperationFuture<TrainProcessorVersionResponse, TrainProcessorVersionMetadata> future =
    *       documentProcessorServiceClient
@@ -1887,6 +1889,7 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    *           .setDocumentSchema(DocumentSchema.newBuilder().build())
    *           .setInputData(TrainProcessorVersionRequest.InputData.newBuilder().build())
    *           .setBaseProcessorVersion("baseProcessorVersion337709271")
+   *           .setProcessorVersionOverrides(ProcessorVersionOverrides.newBuilder().build())
    *           .build();
    *   ApiFuture<Operation> future =
    *       documentProcessorServiceClient.trainProcessorVersionCallable().futureCall(request);

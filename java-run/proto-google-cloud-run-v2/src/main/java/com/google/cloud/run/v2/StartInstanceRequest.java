@@ -80,10 +80,7 @@ public final class StartInstanceRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. The name of the Instance to stop.
-   * Format:
-   * `projects/{project}/locations/{location}/instances/{instance}`,
-   * where `{project}` can be project id or number.
+   * Required. The name of the Instance to start.
    * </pre>
    *
    * <code>
@@ -109,10 +106,7 @@ public final class StartInstanceRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. The name of the Instance to stop.
-   * Format:
-   * `projects/{project}/locations/{location}/instances/{instance}`,
-   * where `{project}` can be project id or number.
+   * Required. The name of the Instance to start.
    * </pre>
    *
    * <code>
@@ -570,10 +564,7 @@ public final class StartInstanceRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The name of the Instance to stop.
-     * Format:
-     * `projects/{project}/locations/{location}/instances/{instance}`,
-     * where `{project}` can be project id or number.
+     * Required. The name of the Instance to start.
      * </pre>
      *
      * <code>
@@ -598,10 +589,7 @@ public final class StartInstanceRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The name of the Instance to stop.
-     * Format:
-     * `projects/{project}/locations/{location}/instances/{instance}`,
-     * where `{project}` can be project id or number.
+     * Required. The name of the Instance to start.
      * </pre>
      *
      * <code>
@@ -626,10 +614,7 @@ public final class StartInstanceRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The name of the Instance to stop.
-     * Format:
-     * `projects/{project}/locations/{location}/instances/{instance}`,
-     * where `{project}` can be project id or number.
+     * Required. The name of the Instance to start.
      * </pre>
      *
      * <code>
@@ -653,10 +638,7 @@ public final class StartInstanceRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The name of the Instance to stop.
-     * Format:
-     * `projects/{project}/locations/{location}/instances/{instance}`,
-     * where `{project}` can be project id or number.
+     * Required. The name of the Instance to start.
      * </pre>
      *
      * <code>
@@ -676,10 +658,7 @@ public final class StartInstanceRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The name of the Instance to stop.
-     * Format:
-     * `projects/{project}/locations/{location}/instances/{instance}`,
-     * where `{project}` can be project id or number.
+     * Required. The name of the Instance to start.
      * </pre>
      *
      * <code>

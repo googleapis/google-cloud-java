@@ -30,79 +30,241 @@ public interface EntitySignalsMappingOrBuilder
    *
    *
    * <pre>
-   * ID of an AudienceSegment that this mapping belongs to.
+   * Deprecated: ID of an AudienceSegment that this mapping belongs to.
    * </pre>
    *
-   * <code>int64 audience_segment_id = 3;</code>
+   * <code>int64 audience_segment_id = 3 [deprecated = true];</code>
    *
+   * @deprecated google.ads.admanager.v1.EntitySignalsMapping.audience_segment_id is deprecated. See
+   *     google/ads/admanager/v1/entity_signals_mapping_messages.proto;l=41
    * @return Whether the audienceSegmentId field is set.
    */
+  @java.lang.Deprecated
   boolean hasAudienceSegmentId();
 
   /**
    *
    *
    * <pre>
-   * ID of an AudienceSegment that this mapping belongs to.
+   * Deprecated: ID of an AudienceSegment that this mapping belongs to.
    * </pre>
    *
-   * <code>int64 audience_segment_id = 3;</code>
+   * <code>int64 audience_segment_id = 3 [deprecated = true];</code>
    *
+   * @deprecated google.ads.admanager.v1.EntitySignalsMapping.audience_segment_id is deprecated. See
+   *     google/ads/admanager/v1/entity_signals_mapping_messages.proto;l=41
    * @return The audienceSegmentId.
    */
+  @java.lang.Deprecated
   long getAudienceSegmentId();
 
   /**
    *
    *
    * <pre>
-   * ID of a ContentBundle that this mapping belongs to.
+   * Deprecated: ID of a ContentBundle that this mapping belongs to.
    * </pre>
    *
-   * <code>int64 content_bundle_id = 4;</code>
+   * <code>int64 content_bundle_id = 4 [deprecated = true];</code>
    *
+   * @deprecated google.ads.admanager.v1.EntitySignalsMapping.content_bundle_id is deprecated. See
+   *     google/ads/admanager/v1/entity_signals_mapping_messages.proto;l=44
    * @return Whether the contentBundleId field is set.
    */
+  @java.lang.Deprecated
   boolean hasContentBundleId();
 
   /**
    *
    *
    * <pre>
-   * ID of a ContentBundle that this mapping belongs to.
+   * Deprecated: ID of a ContentBundle that this mapping belongs to.
    * </pre>
    *
-   * <code>int64 content_bundle_id = 4;</code>
+   * <code>int64 content_bundle_id = 4 [deprecated = true];</code>
    *
+   * @deprecated google.ads.admanager.v1.EntitySignalsMapping.content_bundle_id is deprecated. See
+   *     google/ads/admanager/v1/entity_signals_mapping_messages.proto;l=44
    * @return The contentBundleId.
    */
+  @java.lang.Deprecated
   long getContentBundleId();
 
   /**
    *
    *
    * <pre>
-   * ID of a CustomValue that this mapping belongs to.
+   * Deprecated: ID of a CustomTargetingValue that this mapping belongs to.
    * </pre>
    *
-   * <code>int64 custom_targeting_value_id = 5;</code>
+   * <code>int64 custom_targeting_value_id = 5 [deprecated = true];</code>
    *
+   * @deprecated google.ads.admanager.v1.EntitySignalsMapping.custom_targeting_value_id is
+   *     deprecated. See google/ads/admanager/v1/entity_signals_mapping_messages.proto;l=47
    * @return Whether the customTargetingValueId field is set.
    */
+  @java.lang.Deprecated
   boolean hasCustomTargetingValueId();
 
   /**
    *
    *
    * <pre>
-   * ID of a CustomValue that this mapping belongs to.
+   * Deprecated: ID of a CustomTargetingValue that this mapping belongs to.
    * </pre>
    *
-   * <code>int64 custom_targeting_value_id = 5;</code>
+   * <code>int64 custom_targeting_value_id = 5 [deprecated = true];</code>
    *
+   * @deprecated google.ads.admanager.v1.EntitySignalsMapping.custom_targeting_value_id is
+   *     deprecated. See google/ads/admanager/v1/entity_signals_mapping_messages.proto;l=47
    * @return The customTargetingValueId.
    */
+  @java.lang.Deprecated
   long getCustomTargetingValueId();
+
+  /**
+   *
+   *
+   * <pre>
+   * The resource name of an
+   * [AudienceSegment][google.ads.admanager.v1.AudienceSegment] that this
+   * mapping belongs to. Format:
+   * `networks/{network_code}/audienceSegments/{audience_segment_id}`
+   * </pre>
+   *
+   * <code>string audience_segment = 10 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return Whether the audienceSegment field is set.
+   */
+  boolean hasAudienceSegment();
+
+  /**
+   *
+   *
+   * <pre>
+   * The resource name of an
+   * [AudienceSegment][google.ads.admanager.v1.AudienceSegment] that this
+   * mapping belongs to. Format:
+   * `networks/{network_code}/audienceSegments/{audience_segment_id}`
+   * </pre>
+   *
+   * <code>string audience_segment = 10 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The audienceSegment.
+   */
+  java.lang.String getAudienceSegment();
+
+  /**
+   *
+   *
+   * <pre>
+   * The resource name of an
+   * [AudienceSegment][google.ads.admanager.v1.AudienceSegment] that this
+   * mapping belongs to. Format:
+   * `networks/{network_code}/audienceSegments/{audience_segment_id}`
+   * </pre>
+   *
+   * <code>string audience_segment = 10 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The bytes for audienceSegment.
+   */
+  com.google.protobuf.ByteString getAudienceSegmentBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The resource name of a
+   * [ContentBundle][google.ads.admanager.v1.ContentBundle] that this mapping
+   * belongs to. Format:
+   * `networks/{network_code}/contentBundles/{content_bundle_id}`
+   * </pre>
+   *
+   * <code>string content_bundle = 11 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return Whether the contentBundle field is set.
+   */
+  boolean hasContentBundle();
+
+  /**
+   *
+   *
+   * <pre>
+   * The resource name of a
+   * [ContentBundle][google.ads.admanager.v1.ContentBundle] that this mapping
+   * belongs to. Format:
+   * `networks/{network_code}/contentBundles/{content_bundle_id}`
+   * </pre>
+   *
+   * <code>string content_bundle = 11 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The contentBundle.
+   */
+  java.lang.String getContentBundle();
+
+  /**
+   *
+   *
+   * <pre>
+   * The resource name of a
+   * [ContentBundle][google.ads.admanager.v1.ContentBundle] that this mapping
+   * belongs to. Format:
+   * `networks/{network_code}/contentBundles/{content_bundle_id}`
+   * </pre>
+   *
+   * <code>string content_bundle = 11 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The bytes for contentBundle.
+   */
+  com.google.protobuf.ByteString getContentBundleBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The resource name of a
+   * [CustomTargetingValue][google.ads.admanager.v1.CustomTargetingValue] that
+   * this mapping belongs to. Format:
+   * `networks/{network_code}/customTargetingValues/{custom_targeting_value_id}`
+   * </pre>
+   *
+   * <code>string custom_targeting_value = 12 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return Whether the customTargetingValue field is set.
+   */
+  boolean hasCustomTargetingValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * The resource name of a
+   * [CustomTargetingValue][google.ads.admanager.v1.CustomTargetingValue] that
+   * this mapping belongs to. Format:
+   * `networks/{network_code}/customTargetingValues/{custom_targeting_value_id}`
+   * </pre>
+   *
+   * <code>string custom_targeting_value = 12 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The customTargetingValue.
+   */
+  java.lang.String getCustomTargetingValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * The resource name of a
+   * [CustomTargetingValue][google.ads.admanager.v1.CustomTargetingValue] that
+   * this mapping belongs to. Format:
+   * `networks/{network_code}/customTargetingValues/{custom_targeting_value_id}`
+   * </pre>
+   *
+   * <code>string custom_targeting_value = 12 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The bytes for customTargetingValue.
+   */
+  com.google.protobuf.ByteString getCustomTargetingValueBytes();
 
   /**
    *
@@ -146,7 +308,7 @@ public interface EntitySignalsMappingOrBuilder
    * </code>
    *
    * @deprecated google.ads.admanager.v1.EntitySignalsMapping.entity_signals_mapping_id is
-   *     deprecated. See google/ads/admanager/v1/entity_signals_mapping_messages.proto;l=56
+   *     deprecated. See google/ads/admanager/v1/entity_signals_mapping_messages.proto;l=83
    * @return Whether the entitySignalsMappingId field is set.
    */
   @java.lang.Deprecated
@@ -164,7 +326,7 @@ public interface EntitySignalsMappingOrBuilder
    * </code>
    *
    * @deprecated google.ads.admanager.v1.EntitySignalsMapping.entity_signals_mapping_id is
-   *     deprecated. See google/ads/admanager/v1/entity_signals_mapping_messages.proto;l=56
+   *     deprecated. See google/ads/admanager/v1/entity_signals_mapping_messages.proto;l=83
    * @return The entitySignalsMappingId.
    */
   @java.lang.Deprecated
@@ -174,47 +336,135 @@ public interface EntitySignalsMappingOrBuilder
    *
    *
    * <pre>
-   * Optional. The IDs of the categories that are associated with the
-   * referencing entity.
+   * Optional. Deprecated: The IDs of the categories that are associated with
+   * the referencing entity.
    * </pre>
    *
-   * <code>repeated int64 taxonomy_category_ids = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * <code>
+   * repeated int64 taxonomy_category_ids = 6 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
+   * @deprecated google.ads.admanager.v1.EntitySignalsMapping.taxonomy_category_ids is deprecated.
+   *     See google/ads/admanager/v1/entity_signals_mapping_messages.proto;l=88
    * @return A list containing the taxonomyCategoryIds.
    */
+  @java.lang.Deprecated
   java.util.List<java.lang.Long> getTaxonomyCategoryIdsList();
 
   /**
    *
    *
    * <pre>
-   * Optional. The IDs of the categories that are associated with the
-   * referencing entity.
+   * Optional. Deprecated: The IDs of the categories that are associated with
+   * the referencing entity.
    * </pre>
    *
-   * <code>repeated int64 taxonomy_category_ids = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * <code>
+   * repeated int64 taxonomy_category_ids = 6 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
+   * @deprecated google.ads.admanager.v1.EntitySignalsMapping.taxonomy_category_ids is deprecated.
+   *     See google/ads/admanager/v1/entity_signals_mapping_messages.proto;l=88
    * @return The count of taxonomyCategoryIds.
    */
+  @java.lang.Deprecated
   int getTaxonomyCategoryIdsCount();
 
   /**
    *
    *
    * <pre>
-   * Optional. The IDs of the categories that are associated with the
-   * referencing entity.
+   * Optional. Deprecated: The IDs of the categories that are associated with
+   * the referencing entity.
    * </pre>
    *
-   * <code>repeated int64 taxonomy_category_ids = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * <code>
+   * repeated int64 taxonomy_category_ids = 6 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
+   * @deprecated google.ads.admanager.v1.EntitySignalsMapping.taxonomy_category_ids is deprecated.
+   *     See google/ads/admanager/v1/entity_signals_mapping_messages.proto;l=88
    * @param index The index of the element to return.
    * @return The taxonomyCategoryIds at the given index.
    */
+  @java.lang.Deprecated
   long getTaxonomyCategoryIds(int index);
 
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The resource names of the
+   * [TaxonomyCategory][google.ads.admanager.v1.TaxonomyCategory] that are
+   * associated with the referencing entity. Format:
+   * `networks/{network_code}/taxonomyCategories/{taxonomyCategoryId}`
+   * </pre>
+   *
+   * <code>
+   * repeated string taxonomy_categories = 13 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return A list containing the taxonomyCategories.
+   */
+  java.util.List<java.lang.String> getTaxonomyCategoriesList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The resource names of the
+   * [TaxonomyCategory][google.ads.admanager.v1.TaxonomyCategory] that are
+   * associated with the referencing entity. Format:
+   * `networks/{network_code}/taxonomyCategories/{taxonomyCategoryId}`
+   * </pre>
+   *
+   * <code>
+   * repeated string taxonomy_categories = 13 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The count of taxonomyCategories.
+   */
+  int getTaxonomyCategoriesCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The resource names of the
+   * [TaxonomyCategory][google.ads.admanager.v1.TaxonomyCategory] that are
+   * associated with the referencing entity. Format:
+   * `networks/{network_code}/taxonomyCategories/{taxonomyCategoryId}`
+   * </pre>
+   *
+   * <code>
+   * repeated string taxonomy_categories = 13 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The taxonomyCategories at the given index.
+   */
+  java.lang.String getTaxonomyCategories(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The resource names of the
+   * [TaxonomyCategory][google.ads.admanager.v1.TaxonomyCategory] that are
+   * associated with the referencing entity. Format:
+   * `networks/{network_code}/taxonomyCategories/{taxonomyCategoryId}`
+   * </pre>
+   *
+   * <code>
+   * repeated string taxonomy_categories = 13 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the taxonomyCategories at the given index.
+   */
+  com.google.protobuf.ByteString getTaxonomyCategoriesBytes(int index);
+
   com.google.ads.admanager.v1.EntitySignalsMapping.EntityCase getEntityCase();
+
+  com.google.ads.admanager.v1.EntitySignalsMapping.EntityNameCase getEntityNameCase();
 }

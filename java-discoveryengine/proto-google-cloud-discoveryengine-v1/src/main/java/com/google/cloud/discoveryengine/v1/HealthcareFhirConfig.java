@@ -51,7 +51,9 @@ public final class HealthcareFhirConfig extends com.google.protobuf.GeneratedMes
     super(builder);
   }
 
-  private HealthcareFhirConfig() {}
+  private HealthcareFhirConfig() {
+    initialFilterGroups_ = com.google.protobuf.LazyStringArrayList.emptyList();
+  }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.discoveryengine.v1.CommonProto
@@ -114,6 +116,98 @@ public final class HealthcareFhirConfig extends com.google.protobuf.GeneratedMes
     return enableStaticIndexingForBatchIngestion_;
   }
 
+  public static final int INITIAL_FILTER_GROUPS_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList initialFilterGroups_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Names of the Group resources to use as a basis for the initial
+   * patient filter, in format
+   * `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/fhirStores/{fhir_store_id}/fhir/Group/{group_id}`.
+   * The filter group must be a FHIR resource name of
+   * type Group, and the filter will be constructed from the direct members of
+   * the group which are Patient resources.
+   * </pre>
+   *
+   * <code>repeated string initial_filter_groups = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return A list containing the initialFilterGroups.
+   */
+  public com.google.protobuf.ProtocolStringList getInitialFilterGroupsList() {
+    return initialFilterGroups_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Names of the Group resources to use as a basis for the initial
+   * patient filter, in format
+   * `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/fhirStores/{fhir_store_id}/fhir/Group/{group_id}`.
+   * The filter group must be a FHIR resource name of
+   * type Group, and the filter will be constructed from the direct members of
+   * the group which are Patient resources.
+   * </pre>
+   *
+   * <code>repeated string initial_filter_groups = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The count of initialFilterGroups.
+   */
+  public int getInitialFilterGroupsCount() {
+    return initialFilterGroups_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Names of the Group resources to use as a basis for the initial
+   * patient filter, in format
+   * `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/fhirStores/{fhir_store_id}/fhir/Group/{group_id}`.
+   * The filter group must be a FHIR resource name of
+   * type Group, and the filter will be constructed from the direct members of
+   * the group which are Patient resources.
+   * </pre>
+   *
+   * <code>repeated string initial_filter_groups = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The initialFilterGroups at the given index.
+   */
+  public java.lang.String getInitialFilterGroups(int index) {
+    return initialFilterGroups_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Names of the Group resources to use as a basis for the initial
+   * patient filter, in format
+   * `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/fhirStores/{fhir_store_id}/fhir/Group/{group_id}`.
+   * The filter group must be a FHIR resource name of
+   * type Group, and the filter will be constructed from the direct members of
+   * the group which are Patient resources.
+   * </pre>
+   *
+   * <code>repeated string initial_filter_groups = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the initialFilterGroups at the given index.
+   */
+  public com.google.protobuf.ByteString getInitialFilterGroupsBytes(int index) {
+    return initialFilterGroups_.getByteString(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -134,6 +228,9 @@ public final class HealthcareFhirConfig extends com.google.protobuf.GeneratedMes
     if (enableStaticIndexingForBatchIngestion_ != false) {
       output.writeBool(2, enableStaticIndexingForBatchIngestion_);
     }
+    for (int i = 0; i < initialFilterGroups_.size(); i++) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 4, initialFilterGroups_.getRaw(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -150,6 +247,14 @@ public final class HealthcareFhirConfig extends com.google.protobuf.GeneratedMes
       size +=
           com.google.protobuf.CodedOutputStream.computeBoolSize(
               2, enableStaticIndexingForBatchIngestion_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < initialFilterGroups_.size(); i++) {
+        dataSize += computeStringSizeNoTag(initialFilterGroups_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getInitialFilterGroupsList().size();
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -170,6 +275,7 @@ public final class HealthcareFhirConfig extends com.google.protobuf.GeneratedMes
     if (getEnableConfigurableSchema() != other.getEnableConfigurableSchema()) return false;
     if (getEnableStaticIndexingForBatchIngestion()
         != other.getEnableStaticIndexingForBatchIngestion()) return false;
+    if (!getInitialFilterGroupsList().equals(other.getInitialFilterGroupsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -187,6 +293,10 @@ public final class HealthcareFhirConfig extends com.google.protobuf.GeneratedMes
     hash =
         (53 * hash)
             + com.google.protobuf.Internal.hashBoolean(getEnableStaticIndexingForBatchIngestion());
+    if (getInitialFilterGroupsCount() > 0) {
+      hash = (37 * hash) + INITIAL_FILTER_GROUPS_FIELD_NUMBER;
+      hash = (53 * hash) + getInitialFilterGroupsList().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -330,6 +440,7 @@ public final class HealthcareFhirConfig extends com.google.protobuf.GeneratedMes
       bitField0_ = 0;
       enableConfigurableSchema_ = false;
       enableStaticIndexingForBatchIngestion_ = false;
+      initialFilterGroups_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -372,6 +483,10 @@ public final class HealthcareFhirConfig extends com.google.protobuf.GeneratedMes
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.enableStaticIndexingForBatchIngestion_ = enableStaticIndexingForBatchIngestion_;
       }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        initialFilterGroups_.makeImmutable();
+        result.initialFilterGroups_ = initialFilterGroups_;
+      }
     }
 
     @java.lang.Override
@@ -392,6 +507,16 @@ public final class HealthcareFhirConfig extends com.google.protobuf.GeneratedMes
       }
       if (other.getEnableStaticIndexingForBatchIngestion() != false) {
         setEnableStaticIndexingForBatchIngestion(other.getEnableStaticIndexingForBatchIngestion());
+      }
+      if (!other.initialFilterGroups_.isEmpty()) {
+        if (initialFilterGroups_.isEmpty()) {
+          initialFilterGroups_ = other.initialFilterGroups_;
+          bitField0_ |= 0x00000004;
+        } else {
+          ensureInitialFilterGroupsIsMutable();
+          initialFilterGroups_.addAll(other.initialFilterGroups_);
+        }
+        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -431,6 +556,13 @@ public final class HealthcareFhirConfig extends com.google.protobuf.GeneratedMes
                 bitField0_ |= 0x00000002;
                 break;
               } // case 16
+            case 34:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureInitialFilterGroupsIsMutable();
+                initialFilterGroups_.add(s);
+                break;
+              } // case 34
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -582,6 +714,243 @@ public final class HealthcareFhirConfig extends com.google.protobuf.GeneratedMes
     public Builder clearEnableStaticIndexingForBatchIngestion() {
       bitField0_ = (bitField0_ & ~0x00000002);
       enableStaticIndexingForBatchIngestion_ = false;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringArrayList initialFilterGroups_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureInitialFilterGroupsIsMutable() {
+      if (!initialFilterGroups_.isModifiable()) {
+        initialFilterGroups_ = new com.google.protobuf.LazyStringArrayList(initialFilterGroups_);
+      }
+      bitField0_ |= 0x00000004;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Names of the Group resources to use as a basis for the initial
+     * patient filter, in format
+     * `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/fhirStores/{fhir_store_id}/fhir/Group/{group_id}`.
+     * The filter group must be a FHIR resource name of
+     * type Group, and the filter will be constructed from the direct members of
+     * the group which are Patient resources.
+     * </pre>
+     *
+     * <code>repeated string initial_filter_groups = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return A list containing the initialFilterGroups.
+     */
+    public com.google.protobuf.ProtocolStringList getInitialFilterGroupsList() {
+      initialFilterGroups_.makeImmutable();
+      return initialFilterGroups_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Names of the Group resources to use as a basis for the initial
+     * patient filter, in format
+     * `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/fhirStores/{fhir_store_id}/fhir/Group/{group_id}`.
+     * The filter group must be a FHIR resource name of
+     * type Group, and the filter will be constructed from the direct members of
+     * the group which are Patient resources.
+     * </pre>
+     *
+     * <code>repeated string initial_filter_groups = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The count of initialFilterGroups.
+     */
+    public int getInitialFilterGroupsCount() {
+      return initialFilterGroups_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Names of the Group resources to use as a basis for the initial
+     * patient filter, in format
+     * `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/fhirStores/{fhir_store_id}/fhir/Group/{group_id}`.
+     * The filter group must be a FHIR resource name of
+     * type Group, and the filter will be constructed from the direct members of
+     * the group which are Patient resources.
+     * </pre>
+     *
+     * <code>repeated string initial_filter_groups = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The initialFilterGroups at the given index.
+     */
+    public java.lang.String getInitialFilterGroups(int index) {
+      return initialFilterGroups_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Names of the Group resources to use as a basis for the initial
+     * patient filter, in format
+     * `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/fhirStores/{fhir_store_id}/fhir/Group/{group_id}`.
+     * The filter group must be a FHIR resource name of
+     * type Group, and the filter will be constructed from the direct members of
+     * the group which are Patient resources.
+     * </pre>
+     *
+     * <code>repeated string initial_filter_groups = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the initialFilterGroups at the given index.
+     */
+    public com.google.protobuf.ByteString getInitialFilterGroupsBytes(int index) {
+      return initialFilterGroups_.getByteString(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Names of the Group resources to use as a basis for the initial
+     * patient filter, in format
+     * `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/fhirStores/{fhir_store_id}/fhir/Group/{group_id}`.
+     * The filter group must be a FHIR resource name of
+     * type Group, and the filter will be constructed from the direct members of
+     * the group which are Patient resources.
+     * </pre>
+     *
+     * <code>repeated string initial_filter_groups = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The initialFilterGroups to set.
+     * @return This builder for chaining.
+     */
+    public Builder setInitialFilterGroups(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureInitialFilterGroupsIsMutable();
+      initialFilterGroups_.set(index, value);
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Names of the Group resources to use as a basis for the initial
+     * patient filter, in format
+     * `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/fhirStores/{fhir_store_id}/fhir/Group/{group_id}`.
+     * The filter group must be a FHIR resource name of
+     * type Group, and the filter will be constructed from the direct members of
+     * the group which are Patient resources.
+     * </pre>
+     *
+     * <code>repeated string initial_filter_groups = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The initialFilterGroups to add.
+     * @return This builder for chaining.
+     */
+    public Builder addInitialFilterGroups(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureInitialFilterGroupsIsMutable();
+      initialFilterGroups_.add(value);
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Names of the Group resources to use as a basis for the initial
+     * patient filter, in format
+     * `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/fhirStores/{fhir_store_id}/fhir/Group/{group_id}`.
+     * The filter group must be a FHIR resource name of
+     * type Group, and the filter will be constructed from the direct members of
+     * the group which are Patient resources.
+     * </pre>
+     *
+     * <code>repeated string initial_filter_groups = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param values The initialFilterGroups to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllInitialFilterGroups(java.lang.Iterable<java.lang.String> values) {
+      ensureInitialFilterGroupsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, initialFilterGroups_);
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Names of the Group resources to use as a basis for the initial
+     * patient filter, in format
+     * `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/fhirStores/{fhir_store_id}/fhir/Group/{group_id}`.
+     * The filter group must be a FHIR resource name of
+     * type Group, and the filter will be constructed from the direct members of
+     * the group which are Patient resources.
+     * </pre>
+     *
+     * <code>repeated string initial_filter_groups = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearInitialFilterGroups() {
+      initialFilterGroups_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      ;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Names of the Group resources to use as a basis for the initial
+     * patient filter, in format
+     * `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/fhirStores/{fhir_store_id}/fhir/Group/{group_id}`.
+     * The filter group must be a FHIR resource name of
+     * type Group, and the filter will be constructed from the direct members of
+     * the group which are Patient resources.
+     * </pre>
+     *
+     * <code>repeated string initial_filter_groups = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The bytes of the initialFilterGroups to add.
+     * @return This builder for chaining.
+     */
+    public Builder addInitialFilterGroupsBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureInitialFilterGroupsIsMutable();
+      initialFilterGroups_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

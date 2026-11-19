@@ -34,6 +34,7 @@ import com.google.bigtable.v2.OpenFakeSessionRequest.Action;
 import com.google.bigtable.v2.OpenFakeSessionRequest.ActionList;
 import com.google.bigtable.v2.OpenFakeSessionRequest.StreamError;
 import com.google.bigtable.v2.OpenSessionRequest;
+import com.google.bigtable.v2.SessionClientConfiguration.SessionPoolConfiguration;
 import com.google.bigtable.v2.SessionFakeScriptedRequest;
 import com.google.bigtable.v2.SessionFakeScriptedResponse;
 import com.google.bigtable.v2.SessionRefreshConfig;
@@ -51,6 +52,7 @@ import com.google.cloud.bigtable.data.v2.internal.csm.tracers.VRpcTracer;
 import com.google.cloud.bigtable.data.v2.internal.middleware.VRpc;
 import com.google.cloud.bigtable.data.v2.internal.middleware.VRpc.VRpcCallContext;
 import com.google.cloud.bigtable.data.v2.internal.middleware.VRpc.VRpcResult;
+import com.google.cloud.bigtable.data.v2.internal.session.Session.SessionState;
 import com.google.cloud.bigtable.data.v2.internal.session.SessionList.SessionHandle;
 import com.google.cloud.bigtable.data.v2.internal.session.fake.FakeClock;
 import com.google.cloud.bigtable.data.v2.internal.session.fake.FakeServiceBuilder;
@@ -82,6 +84,7 @@ import io.grpc.ServerInterceptor;
 import io.grpc.Status;
 import java.io.IOException;
 import java.lang.reflect.Field;
+import java.lang.reflect.Method;
 import java.time.Duration;
 import java.time.Instant;
 import java.util.ArrayList;
@@ -187,8 +190,7 @@ public class SessionPoolImplTest {
             .setReason(CloseSessionRequest.CloseSessionReason.CLOSE_SESSION_REASON_USER)
             .setDescription("close session")
             .build());
-    // Wait for sessions to drain so the watchdog can be closed before testTimer.stop() races
-    // with its self-reschedule loop.
+    // Wait for sessions to drain before stopping the shared timer.
     sessionPool.awaitTerminated(Duration.ofSeconds(10));
     channelPool.close();
     // channel gets shutdown in channelPool.close()
@@ -333,13 +335,57 @@ public class SessionPoolImplTest {
   }
 
   @Test
+  @SuppressWarnings("GuardedBy")
+  void goAwayOnClosedPoolDoesNotCreateReplacementSession() throws Exception {
+    sessionPool.start(OpenFakeSessionRequest.getDefaultInstance(), new Metadata());
+
+    long deadlineNano = System.nanoTime() + TimeUnit.SECONDS.toNanos(5);
+    ReentrantLock poolLock = extractPoolLock(sessionPool);
+    while (System.nanoTime() < deadlineNano) {
+      poolLock.lock();
+      try {
+        if (sessionPool.sessions.getStats().getReadyCount() == 5) {
+          break;
+        }
+      } finally {
+        poolLock.unlock();
+      }
+      Thread.sleep(20);
+    }
+
+    SessionHandle handle;
+    poolLock.lock();
+    try {
+      handle = sessionPool.sessions.getAllSessions().iterator().next();
+    } finally {
+      poolLock.unlock();
+    }
+
+    int openCountBeforeClose = fakeService.getOpenRequestCount().get();
+    sessionPool.close(
+        CloseSessionRequest.newBuilder()
+            .setReason(CloseSessionRequest.CloseSessionReason.CLOSE_SESSION_REASON_USER)
+            .setDescription("closed before goaway")
+            .build());
+
+    java.lang.reflect.Method onSessionGoAway =
+        SessionPoolImpl.class.getDeclaredMethod(
+            "onSessionGoAway", SessionHandle.class, com.google.bigtable.v2.GoAwayResponse.class);
+    onSessionGoAway.setAccessible(true);
+    onSessionGoAway.invoke(
+        sessionPool, handle, com.google.bigtable.v2.GoAwayResponse.getDefaultInstance());
+
+    assertThat(fakeService.getOpenRequestCount().get()).isEqualTo(openCountBeforeClose);
+  }
+
+  @Test
   void closeCancelsInFlightVRpcAndDrains() throws InterruptedException {
     // Park the session-open response in the client interceptor so the vRPC cannot drain to a
     // ready session and sits in pendingRpcs. Then close the pool and verify (a) the queued
     // vRPC's listener gets a CANCELLED onClose with the "SessionPool closed:" description from
     // SessionPoolImpl.close()'s cancellation loop, (b) awaitTerminated returns true (the
     // OPENING session is driven to CLOSED by sessions.close(req), not parked until the
-    // watchdog tick), and (c) no second onClose arrives once the delayed responses finally
+    // closeTimeout tick), and (c) no second onClose arrives once the delayed responses finally
     // flush past the interceptor.
     SessionPool<OpenFakeSessionRequest> testSessionPool = null;
     try (ChannelPool delayedPool =
@@ -832,16 +878,16 @@ public class SessionPoolImplTest {
     @Test
     public void test() throws Exception {
       ArgumentCaptor<Runnable> runnableCaptor = ArgumentCaptor.forClass(Runnable.class);
-      // Filter out watchdog (5 min, exact), AFE prune (10 min, exact), and per-session open-timeout
-      // (OPEN_SESSION_TIMEOUT, exact) ticks. The retry-create-session site computes its delay
-      // against the real wall clock and the fake budget clock, so it can land anywhere from
-      // sub-second to a couple of penalty intervals. Match anything that isn't one of the fixed
-      // cadences.
-      long watchdogMs = Duration.ofMinutes(5).toMillis();
+      // Filter out close-timeout (5 min, exact), AFE prune (10 min, exact), and per-session
+      // open-timeout (OPEN_SESSION_TIMEOUT, exact) ticks. The retry-create-session site computes
+      // its delay against the real wall clock and the fake budget clock, so it can land anywhere
+      // from sub-second to a couple of penalty intervals. Match anything that isn't one of the
+      // fixed cadences.
+      long closeTimeoutMs = SessionImpl.CLOSE_SESSION_TIMEOUT.toMillis();
       long afePruneMs = SessionList.SESSION_LIST_PRUNE_INTERVAL.toMillis();
       long openTimeoutMs = SessionImpl.OPEN_SESSION_TIMEOUT.toMillis();
       LongPredicate isRetrySchedule =
-          d -> d > 0 && d != watchdogMs && d != afePruneMs && d != openTimeoutMs;
+          d -> d > 0 && d != closeTimeoutMs && d != afePruneMs && d != openTimeoutMs;
 
       // start the pool
       sessionPool.start(
@@ -912,7 +958,7 @@ public class SessionPoolImplTest {
     @BeforeEach
     void setUp() throws Exception {
       fakeClock = new FakeClock(Instant.now());
-      // Mock timer so the pool's watchdog / AFE-prune / create-session-retry ticks never fire on
+      // Mock timer so the pool's AFE-prune / create-session-retry ticks never fire on
       // their own -- the budget stays quiescent after the session lifecycle completes, leaving the
       // test thread as the only actor that touches it.
       mockTimer = mock(BigtableTimer.class, Mockito.RETURNS_DEEP_STUBS);
@@ -1018,7 +1064,7 @@ public class SessionPoolImplTest {
     @BeforeEach
     void setUp() {
       fakeClock = new FakeClock(Instant.now());
-      // Mock timer so the pool's watchdog / AFE-prune / create-session-retry ticks never fire on
+      // Mock timer so the pool's AFE-prune / create-session-retry ticks never fire on
       // their own, leaving the test thread as the only actor touching the budget.
       mockTimer = mock(BigtableTimer.class, Mockito.RETURNS_DEEP_STUBS);
 
@@ -1323,6 +1369,250 @@ public class SessionPoolImplTest {
     }
 
     assertPoolServesVRpc(sessionPool, "after an interrupted caller (pool must remain healthy)");
+  }
+
+  @Test
+  @SuppressWarnings({"unchecked", "GuardedBy"})
+  void configUpdateToEmptyClosesSessionsAndScalesBackUpWhenEnabled() throws Exception {
+    ArgumentCaptor<ClientConfigurationManager.ConfigListener<SessionPoolConfiguration>>
+        listenerCaptor = ArgumentCaptor.forClass(ClientConfigurationManager.ConfigListener.class);
+    verify(configManager).addListener(any(), listenerCaptor.capture());
+    ClientConfigurationManager.ConfigListener<SessionPoolConfiguration> configListener =
+        listenerCaptor.getValue();
+
+    sessionPool.start(OpenFakeSessionRequest.getDefaultInstance(), new Metadata());
+    assertPoolServesVRpc(sessionPool, "initial started pool");
+    waitForOpenRequestCount(5, Duration.ofSeconds(5));
+    assertThat(sessionPool.hasSession()).isTrue();
+
+    // Queue a pending vRPC while no ready sessions are available, then update config to empty and
+    // verify the pending vRPC is rejected immediately instead of hanging until deadline.
+    ReentrantLock poolLock = extractPoolLock(sessionPool);
+    UnaryResponseFuture<SessionFakeScriptedResponse> pendingFuture = new UnaryResponseFuture<>();
+    poolLock.lock();
+    try {
+      for (SessionHandle handle : new ArrayList<>(sessionPool.sessions.getAllSessions())) {
+        handle.onSessionClosing();
+      }
+      VRpc<SessionFakeScriptedRequest, SessionFakeScriptedResponse> queuedRpc =
+          sessionPool.newCall(FakeDescriptor.SCRIPTED);
+      queuedRpc.start(
+          SessionFakeScriptedRequest.newBuilder().setTag(0).build(),
+          VRpcCallContext.create(Deadline.after(1, TimeUnit.MINUTES), true, vrpcTracer),
+          pendingFuture);
+      assertThat(pendingFuture.isDone()).isFalse();
+    } finally {
+      poolLock.unlock();
+    }
+
+    // Update config to empty (session_load == 0 clears session_configuration).
+    configListener.onChange(SessionPoolConfiguration.getDefaultInstance());
+    assertThat(sessionPool.hasSession()).isFalse();
+    ExecutionException pendingError =
+        assertThrows(ExecutionException.class, () -> pendingFuture.get(5, TimeUnit.SECONDS));
+    assertThat(pendingError).hasCauseThat().isInstanceOf(VRpcException.class);
+    VRpcException vrpcError = (VRpcException) pendingError.getCause();
+    assertThat(vrpcError.getResult().getRejected()).isTrue();
+    assertThat(vrpcError.getStatus().getCode()).isEqualTo(Status.Code.UNAVAILABLE);
+
+    // Wait for all sessions to finish closing.
+    long deadline = System.currentTimeMillis() + 5000;
+    while (System.currentTimeMillis() < deadline
+        && !sessionPool.sessions.getAllSessions().isEmpty()) {
+      Thread.sleep(10);
+    }
+    assertThat(sessionPool.sessions.getAllSessions()).isEmpty();
+    assertThat(sessionPool.sessions.getStats().getExpectedCapacity()).isEqualTo(0);
+
+    // Starting a new call while config is disabled must also fail immediately without queueing.
+    UnaryResponseFuture<SessionFakeScriptedResponse> disabledCallFuture =
+        new UnaryResponseFuture<>();
+    VRpc<SessionFakeScriptedRequest, SessionFakeScriptedResponse> disabledRpc =
+        sessionPool.newCall(FakeDescriptor.SCRIPTED);
+    disabledRpc.start(
+        SessionFakeScriptedRequest.newBuilder().setTag(0).build(),
+        VRpcCallContext.create(Deadline.after(1, TimeUnit.MINUTES), true, vrpcTracer),
+        disabledCallFuture);
+    ExecutionException disabledCallError =
+        assertThrows(ExecutionException.class, () -> disabledCallFuture.get(5, TimeUnit.SECONDS));
+    assertThat(disabledCallError).hasCauseThat().isInstanceOf(VRpcException.class);
+    assertThat(((VRpcException) disabledCallError.getCause()).getResult().getRejected()).isTrue();
+
+    // Re-enable SessionPoolConfiguration and verify pool scales back up.
+    SessionPoolConfiguration enabledConfig =
+        ClientConfigurationManager.loadDefault()
+            .getSessionConfiguration()
+            .getSessionPoolConfiguration();
+    configListener.onChange(enabledConfig);
+
+    waitForOpenRequestCount(10, Duration.ofSeconds(5));
+    assertPoolServesVRpc(sessionPool, "after re-enabling session pool configuration");
+    assertThat(sessionPool.hasSession()).isTrue();
+  }
+
+  @Test
+  @SuppressWarnings("GuardedBy")
+  void consecutiveFailuresFastFailsDuringBudgetLockout() throws Exception {
+    com.google.rpc.Status errorStatus =
+        com.google.rpc.Status.newBuilder()
+            .setCode(Code.INTERNAL_VALUE)
+            .setMessage("fake internal error")
+            .build();
+    OpenFakeSessionRequest request =
+        OpenFakeSessionRequest.newBuilder()
+            .setStreamError(
+                StreamError.newBuilder()
+                    .setStatus(errorStatus)
+                    .setDelay(Durations.fromMillis(0))
+                    .build())
+            .build();
+    sessionPool.start(request, new Metadata());
+
+    // Wait until all initial SessionCreationBudget slots have been exhausted and closed on the
+    // client
+    ReentrantLock poolLock = extractPoolLock(sessionPool);
+    Field consecutiveFailuresField = SessionPoolImpl.class.getDeclaredField("consecutiveFailures");
+    consecutiveFailuresField.setAccessible(true);
+    long deadline = System.currentTimeMillis() + 5000;
+    while (System.currentTimeMillis() < deadline) {
+      poolLock.lock();
+      try {
+        if (sessionPool.sessions.getAllSessions().isEmpty()
+            && consecutiveFailuresField.getInt(sessionPool) >= 10) {
+          break;
+        }
+      } finally {
+        poolLock.unlock();
+      }
+      Thread.sleep(10);
+    }
+    poolLock.lock();
+    try {
+      assertThat(sessionPool.sessions.getAllSessions()).isEmpty();
+      assertThat(consecutiveFailuresField.getInt(sessionPool)).isAtLeast(10);
+    } finally {
+      poolLock.unlock();
+    }
+
+    // A new call arriving during the 60s budget lockout must fail immediately instead of queueing
+    UnaryResponseFuture<SessionFakeScriptedResponse> f = new UnaryResponseFuture<>();
+    VRpc<SessionFakeScriptedRequest, SessionFakeScriptedResponse> rpc =
+        sessionPool.newCall(FakeDescriptor.SCRIPTED);
+    rpc.start(
+        SessionFakeScriptedRequest.getDefaultInstance(),
+        VRpcCallContext.create(Deadline.after(1, TimeUnit.MINUTES), true, vrpcTracer),
+        f);
+
+    ExecutionException ex =
+        assertThrows(ExecutionException.class, () -> f.get(1, TimeUnit.SECONDS));
+    assertThat(ex.getCause())
+        .hasMessageThat()
+        .contains("INTERNAL: Session failed with consecutive failures.");
+  }
+
+  @Test
+  @SuppressWarnings("GuardedBy")
+  void consecutiveFailuresPreservesPendingRpcsWhilePoolHasInUseSessions() throws Exception {
+    sessionPool.start(OpenFakeSessionRequest.getDefaultInstance(), new Metadata());
+    ReentrantLock poolLock = extractPoolLock(sessionPool);
+    long readyDeadline = System.currentTimeMillis() + 5000;
+    while (System.currentTimeMillis() < readyDeadline) {
+      poolLock.lock();
+      try {
+        if (sessionPool.sessions.getStats().getReadyCount() == 5) {
+          break;
+        }
+      } finally {
+        poolLock.unlock();
+      }
+      Thread.sleep(10);
+    }
+
+    Field consecutiveFailuresField = SessionPoolImpl.class.getDeclaredField("consecutiveFailures");
+    consecutiveFailuresField.setAccessible(true);
+    Field budgetField = SessionPoolImpl.class.getDeclaredField("budget");
+    budgetField.setAccessible(true);
+    Method onSessionCloseMethod =
+        SessionPoolImpl.class.getDeclaredMethod(
+            "onSessionClose",
+            SessionHandle.class,
+            SessionState.class,
+            Status.class,
+            Metadata.class);
+    onSessionCloseMethod.setAccessible(true);
+
+    UnaryResponseFuture<SessionFakeScriptedResponse> checkedOutFuture = new UnaryResponseFuture<>();
+    UnaryResponseFuture<SessionFakeScriptedResponse> queuedBeforeCloseFuture =
+        new UnaryResponseFuture<>();
+    UnaryResponseFuture<SessionFakeScriptedResponse> queuedAfterCloseFuture =
+        new UnaryResponseFuture<>();
+    VRpc<SessionFakeScriptedRequest, SessionFakeScriptedResponse> checkedOutRpc;
+    poolLock.lock();
+    try {
+      assertThat(sessionPool.sessions.getStats().getReadyCount()).isEqualTo(5);
+      // Exhaust the session creation budget so scale-up triggers in start()/onSessionClose() do not
+      // open new background sessions that could race with the single in-use session under test.
+      SessionCreationBudget budget = (SessionCreationBudget) budgetField.get(sessionPool);
+      while (budget.tryReserveSession()) {
+        budget.onSessionCreationFailure();
+      }
+
+      // Mark 4 of the 5 ready sessions closing, then check out the remaining 1 ready session via
+      // newCall() so readyCount == 0 and inUseCount == 1.
+      List<SessionHandle> handles = new ArrayList<>(sessionPool.sessions.getAllSessions());
+      for (int i = 1; i < handles.size(); i++) {
+        handles.get(i).onSessionClosing();
+      }
+      checkedOutRpc = sessionPool.newCall(FakeDescriptor.SCRIPTED);
+      assertThat(sessionPool.sessions.getStats().getReadyCount()).isEqualTo(0);
+      assertThat(sessionPool.sessions.getStats().getInUseCount()).isEqualTo(1);
+
+      // Queue a first PendingVRpc before the 10th STARTING failure arrives in onSessionClose.
+      consecutiveFailuresField.setInt(sessionPool, 9);
+      VRpc<SessionFakeScriptedRequest, SessionFakeScriptedResponse> queuedBeforeCloseRpc =
+          sessionPool.newCall(FakeDescriptor.SCRIPTED);
+      queuedBeforeCloseRpc.start(
+          SessionFakeScriptedRequest.newBuilder().setTag(0).build(),
+          VRpcCallContext.create(Deadline.after(1, TimeUnit.MINUTES), true, vrpcTracer),
+          queuedBeforeCloseFuture);
+      assertThat(queuedBeforeCloseFuture.isDone()).isFalse();
+
+      Session mockStartingSession = mock(Session.class);
+      when(mockStartingSession.getLogName()).thenReturn("mock-starting");
+      SessionHandle failingStartingHandle = sessionPool.sessions.newHandle(mockStartingSession);
+
+      // Trigger the 10th STARTING failure via onSessionClose while inUseCount == 1;
+      // queuedBeforeCloseFuture must remain queued rather than being aborted.
+      onSessionCloseMethod.invoke(
+          sessionPool,
+          failingStartingHandle,
+          SessionState.STARTING,
+          Status.INTERNAL.withDescription("fake internal error"),
+          new Metadata());
+      assertThat(consecutiveFailuresField.getInt(sessionPool)).isEqualTo(10);
+      assertThat(queuedBeforeCloseFuture.isDone()).isFalse();
+
+      // A second PendingVRpc started after consecutiveFailures == 10 while inUseCount == 1 must
+      // also queue instead of failing fast.
+      VRpc<SessionFakeScriptedRequest, SessionFakeScriptedResponse> queuedAfterCloseRpc =
+          sessionPool.newCall(FakeDescriptor.SCRIPTED);
+      queuedAfterCloseRpc.start(
+          SessionFakeScriptedRequest.newBuilder().setTag(0).build(),
+          VRpcCallContext.create(Deadline.after(1, TimeUnit.MINUTES), true, vrpcTracer),
+          queuedAfterCloseFuture);
+      assertThat(queuedAfterCloseFuture.isDone()).isFalse();
+    } finally {
+      poolLock.unlock();
+    }
+
+    // Complete the checked-out RPC so its session returns to the pool and drains both pending RPCs.
+    checkedOutRpc.start(
+        SessionFakeScriptedRequest.newBuilder().setTag(0).build(),
+        VRpcCallContext.create(Deadline.after(1, TimeUnit.MINUTES), true, vrpcTracer),
+        checkedOutFuture);
+    assertThat(checkedOutFuture.get(5, TimeUnit.SECONDS)).isNotNull();
+    assertThat(queuedBeforeCloseFuture.get(5, TimeUnit.SECONDS)).isNotNull();
+    assertThat(queuedAfterCloseFuture.get(5, TimeUnit.SECONDS)).isNotNull();
   }
 
   private void waitForOpenRequestCount(int minCount, Duration timeout) throws InterruptedException {

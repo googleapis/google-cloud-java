@@ -149,11 +149,11 @@ public final class GoldengateConnectionAssignment extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Required. The properties of the GoldengateConnectionAssignment.
+   * Required. Immutable. The properties of the GoldengateConnectionAssignment.
    * </pre>
    *
    * <code>
-   * .google.cloud.oracledatabase.v1.GoldengateConnectionAssignmentProperties properties = 2 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.oracledatabase.v1.GoldengateConnectionAssignmentProperties properties = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
    * @return Whether the properties field is set.
@@ -167,11 +167,11 @@ public final class GoldengateConnectionAssignment extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Required. The properties of the GoldengateConnectionAssignment.
+   * Required. Immutable. The properties of the GoldengateConnectionAssignment.
    * </pre>
    *
    * <code>
-   * .google.cloud.oracledatabase.v1.GoldengateConnectionAssignmentProperties properties = 2 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.oracledatabase.v1.GoldengateConnectionAssignmentProperties properties = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
    * @return The properties.
@@ -189,11 +189,11 @@ public final class GoldengateConnectionAssignment extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Required. The properties of the GoldengateConnectionAssignment.
+   * Required. Immutable. The properties of the GoldengateConnectionAssignment.
    * </pre>
    *
    * <code>
-   * .google.cloud.oracledatabase.v1.GoldengateConnectionAssignmentProperties properties = 2 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.oracledatabase.v1.GoldengateConnectionAssignmentProperties properties = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    */
   @java.lang.Override
@@ -377,10 +377,13 @@ public final class GoldengateConnectionAssignment extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Optional. The display name for the GoldengateConnectionAssignment.
+   * Optional. Immutable. The display name for the
+   * GoldengateConnectionAssignment.
    * </pre>
    *
-   * <code>string display_name = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string display_name = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The displayName.
    */
@@ -401,10 +404,13 @@ public final class GoldengateConnectionAssignment extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Optional. The display name for the GoldengateConnectionAssignment.
+   * Optional. Immutable. The display name for the
+   * GoldengateConnectionAssignment.
    * </pre>
    *
-   * <code>string display_name = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string display_name = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The bytes for displayName.
    */
@@ -1107,11 +1113,11 @@ public final class GoldengateConnectionAssignment extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. The properties of the GoldengateConnectionAssignment.
+     * Required. Immutable. The properties of the GoldengateConnectionAssignment.
      * </pre>
      *
      * <code>
-     * .google.cloud.oracledatabase.v1.GoldengateConnectionAssignmentProperties properties = 2 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.oracledatabase.v1.GoldengateConnectionAssignmentProperties properties = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @return Whether the properties field is set.
@@ -1124,11 +1130,11 @@ public final class GoldengateConnectionAssignment extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. The properties of the GoldengateConnectionAssignment.
+     * Required. Immutable. The properties of the GoldengateConnectionAssignment.
      * </pre>
      *
      * <code>
-     * .google.cloud.oracledatabase.v1.GoldengateConnectionAssignmentProperties properties = 2 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.oracledatabase.v1.GoldengateConnectionAssignmentProperties properties = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @return The properties.
@@ -1149,11 +1155,11 @@ public final class GoldengateConnectionAssignment extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. The properties of the GoldengateConnectionAssignment.
+     * Required. Immutable. The properties of the GoldengateConnectionAssignment.
      * </pre>
      *
      * <code>
-     * .google.cloud.oracledatabase.v1.GoldengateConnectionAssignmentProperties properties = 2 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.oracledatabase.v1.GoldengateConnectionAssignmentProperties properties = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     public Builder setProperties(
@@ -1175,11 +1181,11 @@ public final class GoldengateConnectionAssignment extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. The properties of the GoldengateConnectionAssignment.
+     * Required. Immutable. The properties of the GoldengateConnectionAssignment.
      * </pre>
      *
      * <code>
-     * .google.cloud.oracledatabase.v1.GoldengateConnectionAssignmentProperties properties = 2 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.oracledatabase.v1.GoldengateConnectionAssignmentProperties properties = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     public Builder setProperties(
@@ -1199,11 +1205,11 @@ public final class GoldengateConnectionAssignment extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. The properties of the GoldengateConnectionAssignment.
+     * Required. Immutable. The properties of the GoldengateConnectionAssignment.
      * </pre>
      *
      * <code>
-     * .google.cloud.oracledatabase.v1.GoldengateConnectionAssignmentProperties properties = 2 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.oracledatabase.v1.GoldengateConnectionAssignmentProperties properties = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     public Builder mergeProperties(
@@ -1232,11 +1238,11 @@ public final class GoldengateConnectionAssignment extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. The properties of the GoldengateConnectionAssignment.
+     * Required. Immutable. The properties of the GoldengateConnectionAssignment.
      * </pre>
      *
      * <code>
-     * .google.cloud.oracledatabase.v1.GoldengateConnectionAssignmentProperties properties = 2 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.oracledatabase.v1.GoldengateConnectionAssignmentProperties properties = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     public Builder clearProperties() {
@@ -1254,11 +1260,11 @@ public final class GoldengateConnectionAssignment extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. The properties of the GoldengateConnectionAssignment.
+     * Required. Immutable. The properties of the GoldengateConnectionAssignment.
      * </pre>
      *
      * <code>
-     * .google.cloud.oracledatabase.v1.GoldengateConnectionAssignmentProperties properties = 2 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.oracledatabase.v1.GoldengateConnectionAssignmentProperties properties = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     public com.google.cloud.oracledatabase.v1.GoldengateConnectionAssignmentProperties.Builder
@@ -1272,11 +1278,11 @@ public final class GoldengateConnectionAssignment extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. The properties of the GoldengateConnectionAssignment.
+     * Required. Immutable. The properties of the GoldengateConnectionAssignment.
      * </pre>
      *
      * <code>
-     * .google.cloud.oracledatabase.v1.GoldengateConnectionAssignmentProperties properties = 2 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.oracledatabase.v1.GoldengateConnectionAssignmentProperties properties = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     public com.google.cloud.oracledatabase.v1.GoldengateConnectionAssignmentPropertiesOrBuilder
@@ -1295,11 +1301,11 @@ public final class GoldengateConnectionAssignment extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. The properties of the GoldengateConnectionAssignment.
+     * Required. Immutable. The properties of the GoldengateConnectionAssignment.
      * </pre>
      *
      * <code>
-     * .google.cloud.oracledatabase.v1.GoldengateConnectionAssignmentProperties properties = 2 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.oracledatabase.v1.GoldengateConnectionAssignmentProperties properties = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilder<
@@ -1717,10 +1723,13 @@ public final class GoldengateConnectionAssignment extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Optional. The display name for the GoldengateConnectionAssignment.
+     * Optional. Immutable. The display name for the
+     * GoldengateConnectionAssignment.
      * </pre>
      *
-     * <code>string display_name = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string display_name = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return The displayName.
      */
@@ -1740,10 +1749,13 @@ public final class GoldengateConnectionAssignment extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Optional. The display name for the GoldengateConnectionAssignment.
+     * Optional. Immutable. The display name for the
+     * GoldengateConnectionAssignment.
      * </pre>
      *
-     * <code>string display_name = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string display_name = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return The bytes for displayName.
      */
@@ -1763,10 +1775,13 @@ public final class GoldengateConnectionAssignment extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Optional. The display name for the GoldengateConnectionAssignment.
+     * Optional. Immutable. The display name for the
+     * GoldengateConnectionAssignment.
      * </pre>
      *
-     * <code>string display_name = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string display_name = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @param value The displayName to set.
      * @return This builder for chaining.
@@ -1785,10 +1800,13 @@ public final class GoldengateConnectionAssignment extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Optional. The display name for the GoldengateConnectionAssignment.
+     * Optional. Immutable. The display name for the
+     * GoldengateConnectionAssignment.
      * </pre>
      *
-     * <code>string display_name = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string display_name = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -1803,10 +1821,13 @@ public final class GoldengateConnectionAssignment extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Optional. The display name for the GoldengateConnectionAssignment.
+     * Optional. Immutable. The display name for the
+     * GoldengateConnectionAssignment.
      * </pre>
      *
-     * <code>string display_name = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string display_name = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @param value The bytes for displayName to set.
      * @return This builder for chaining.

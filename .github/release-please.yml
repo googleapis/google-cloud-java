@@ -51,3 +51,8 @@ branches:
       onDemand: true
       local: true
       localCloneDepth: 200
+    - branch: 1.90.x
+      releaseType: java-backport
+      onDemand: true
+      local: true
+      localCloneDepth: 200

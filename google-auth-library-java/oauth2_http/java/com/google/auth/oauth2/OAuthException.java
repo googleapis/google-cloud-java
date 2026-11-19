@@ -36,7 +36,7 @@ import static com.google.common.base.Preconditions.checkNotNull;
 import com.google.api.client.http.HttpResponseException;
 import com.google.api.client.json.GenericJson;
 import com.google.api.client.json.JsonParser;
-import java.io.IOException;
+import java.util.Map;
 import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
 
@@ -47,14 +47,27 @@ import org.jspecify.annotations.Nullable;
 @NullMarked
 class OAuthException extends GoogleAuthException {
 
+  // Matches the computed value in released versions so previously serialized instances still load.
+  private static final long serialVersionUID = -5276727039237496975L;
+
   private final String errorCode;
   @Nullable private final String errorDescription;
   @Nullable private final String errorUri;
+  private final int httpStatusCode;
 
   OAuthException(String errorCode, @Nullable String errorDescription, @Nullable String errorUri) {
+    this(errorCode, errorDescription, errorUri, 0);
+  }
+
+  OAuthException(
+      String errorCode,
+      @Nullable String errorDescription,
+      @Nullable String errorUri,
+      int httpStatusCode) {
     this.errorCode = checkNotNull(errorCode);
     this.errorDescription = errorDescription;
     this.errorUri = errorUri;
+    this.httpStatusCode = httpStatusCode;
   }
 
   @Override
@@ -82,20 +95,93 @@ class OAuthException extends GoogleAuthException {
     return errorUri;
   }
 
-  static OAuthException createFromHttpResponseException(HttpResponseException e)
-      throws IOException {
-    JsonParser parser = OAuth2Utils.JSON_FACTORY.createJsonParser((e).getContent());
-    GenericJson errorResponse = parser.parseAndClose(GenericJson.class);
+  int getHttpStatusCode() {
+    return httpStatusCode;
+  }
 
-    String errorCode = (String) errorResponse.get("error");
-    String errorDescription = null;
-    String errorUri = null;
-    if (errorResponse.containsKey("error_description")) {
-      errorDescription = (String) errorResponse.get("error_description");
+  static OAuthException createFromHttpResponseException(HttpResponseException e) {
+    String content = e.getContent();
+    if (content == null || content.trim().isEmpty()) {
+      // When the HTTP error response has no body, synthesize "http_error_<status>" as the
+      // required non-null errorCode and pass e.getStatusMessage() as errorDescription.
+      OAuthException oauthException =
+          new OAuthException(
+              "http_error_" + e.getStatusCode(), e.getStatusMessage(), null, e.getStatusCode());
+      oauthException.initCause(e);
+      return oauthException;
     }
-    if (errorResponse.containsKey("error_uri")) {
+    try {
+      JsonParser parser = OAuth2Utils.JSON_FACTORY.createJsonParser(content);
+      GenericJson errorResponse = parser.parseAndClose(GenericJson.class);
+      if (errorResponse == null) {
+        OAuthException oauthException =
+            new OAuthException(
+                "http_error_" + e.getStatusCode(), e.getStatusMessage(), null, e.getStatusCode());
+        oauthException.initCause(e);
+        return oauthException;
+      }
+      return createFromJsonErrorResponse(errorResponse, content, e);
+    } catch (Exception parseException) {
+      // Non-JSON response body (e.g. HTML/text from a proxy): preserve the status code and raw
+      // body rather than failing with a JSON parse error.
+      OAuthException oauthException =
+          new OAuthException("http_error_" + e.getStatusCode(), content, null, e.getStatusCode());
+      oauthException.initCause(e);
+      return oauthException;
+    }
+  }
+
+  /**
+   * Extracts OAuth error fields from a parsed JSON error response body.
+   *
+   * <p>OAuth, STS, and IAM endpoints can return JSON error bodies in two schemas:
+   *
+   * <ol>
+   *   <li>RFC 6749 Section 5.2 OAuth 2.0 format, where {@code "error"} is a top-level String:
+   *       {@code {"error": "invalid_grant", "error_description": "...", "error_uri": "..."}}
+   *   <li>Google API Standard Error format ({@code google.rpc.Status} / AIP-193), returned by
+   *       GFE/STS/IAM on mTLS or HTTP 401/403 authentication errors, where {@code "error"} is a
+   *       nested JSON object: {@code {"error": {"code": 401, "status": "UNAUTHENTICATED",
+   *       "message": "..."}}}
+   * </ol>
+   */
+  private static OAuthException createFromJsonErrorResponse(
+      GenericJson errorResponse, String content, HttpResponseException e) {
+    String errorCode = null;
+    String errorDescription = null;
+    Object rawError = errorResponse.get("error");
+    if (rawError instanceof String) {
+      errorCode = (String) rawError;
+    } else if (rawError instanceof Map) {
+      Map<?, ?> errorMap = (Map<?, ?>) rawError;
+      if (errorMap.get("status") instanceof String) {
+        errorCode = (String) errorMap.get("status");
+      }
+      if (errorMap.get("message") instanceof String) {
+        errorDescription = (String) errorMap.get("message");
+      }
+    }
+    if (errorCode == null) {
+      errorCode = "http_error_" + e.getStatusCode();
+    }
+    // Prefer top-level "error_description" (RFC 6749) when present; otherwise fall back to
+    // nested "error.message", top-level "message", or the HTTP status message / raw body.
+    String errorUri = null;
+    if (errorResponse.get("error_description") instanceof String) {
+      errorDescription = (String) errorResponse.get("error_description");
+    } else if (errorDescription == null && errorResponse.get("message") instanceof String) {
+      errorDescription = (String) errorResponse.get("message");
+    }
+    if (errorDescription == null && !(rawError instanceof String)) {
+      errorDescription =
+          errorResponse.isEmpty() && e.getStatusMessage() != null ? e.getStatusMessage() : content;
+    }
+    if (errorResponse.get("error_uri") instanceof String) {
       errorUri = (String) errorResponse.get("error_uri");
     }
-    return new OAuthException(errorCode, errorDescription, errorUri);
+    OAuthException oauthException =
+        new OAuthException(errorCode, errorDescription, errorUri, e.getStatusCode());
+    oauthException.initCause(e);
+    return oauthException;
   }
 }

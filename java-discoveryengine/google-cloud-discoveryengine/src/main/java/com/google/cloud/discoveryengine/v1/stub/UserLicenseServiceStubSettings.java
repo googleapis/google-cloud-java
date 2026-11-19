@@ -52,6 +52,8 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.discoveryengine.v1.BatchUpdateUserLicensesMetadata;
 import com.google.cloud.discoveryengine.v1.BatchUpdateUserLicensesRequest;
 import com.google.cloud.discoveryengine.v1.BatchUpdateUserLicensesResponse;
+import com.google.cloud.discoveryengine.v1.ListLicenseConfigsUsageStatsRequest;
+import com.google.cloud.discoveryengine.v1.ListLicenseConfigsUsageStatsResponse;
 import com.google.cloud.discoveryengine.v1.ListUserLicensesRequest;
 import com.google.cloud.discoveryengine.v1.ListUserLicensesResponse;
 import com.google.cloud.discoveryengine.v1.UserLicense;
@@ -85,7 +87,7 @@ import org.jspecify.annotations.Nullable;
  *
  * <p>For example, to set the
  * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
- * of listUserLicenses:
+ * of listLicenseConfigsUsageStats:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -96,10 +98,10 @@ import org.jspecify.annotations.Nullable;
  * UserLicenseServiceStubSettings.Builder userLicenseServiceSettingsBuilder =
  *     UserLicenseServiceStubSettings.newBuilder();
  * userLicenseServiceSettingsBuilder
- *     .listUserLicensesSettings()
+ *     .listLicenseConfigsUsageStatsSettings()
  *     .setRetrySettings(
  *         userLicenseServiceSettingsBuilder
- *             .listUserLicensesSettings()
+ *             .listLicenseConfigsUsageStatsSettings()
  *             .getRetrySettings()
  *             .toBuilder()
  *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
@@ -151,11 +153,18 @@ import org.jspecify.annotations.Nullable;
 public class UserLicenseServiceStubSettings extends StubSettings<UserLicenseServiceStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
-      ImmutableList.<String>builder().add("https://www.googleapis.com/auth/cloud-platform").build();
+      ImmutableList.<String>builder()
+          .add("https://www.googleapis.com/auth/cloud-platform")
+          .add("https://www.googleapis.com/auth/discoveryengine.readwrite")
+          .add("https://www.googleapis.com/auth/discoveryengine.serving.readwrite")
+          .build();
 
   private final PagedCallSettings<
           ListUserLicensesRequest, ListUserLicensesResponse, ListUserLicensesPagedResponse>
       listUserLicensesSettings;
+  private final UnaryCallSettings<
+          ListLicenseConfigsUsageStatsRequest, ListLicenseConfigsUsageStatsResponse>
+      listLicenseConfigsUsageStatsSettings;
   private final UnaryCallSettings<BatchUpdateUserLicensesRequest, Operation>
       batchUpdateUserLicensesSettings;
   private final OperationCallSettings<
@@ -226,6 +235,13 @@ public class UserLicenseServiceStubSettings extends StubSettings<UserLicenseServ
           ListUserLicensesRequest, ListUserLicensesResponse, ListUserLicensesPagedResponse>
       listUserLicensesSettings() {
     return listUserLicensesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listLicenseConfigsUsageStats. */
+  public UnaryCallSettings<
+          ListLicenseConfigsUsageStatsRequest, ListLicenseConfigsUsageStatsResponse>
+      listLicenseConfigsUsageStatsSettings() {
+    return listLicenseConfigsUsageStatsSettings;
   }
 
   /** Returns the object with the settings used for calls to batchUpdateUserLicenses. */
@@ -355,6 +371,8 @@ public class UserLicenseServiceStubSettings extends StubSettings<UserLicenseServ
     super(settingsBuilder);
 
     listUserLicensesSettings = settingsBuilder.listUserLicensesSettings().build();
+    listLicenseConfigsUsageStatsSettings =
+        settingsBuilder.listLicenseConfigsUsageStatsSettings().build();
     batchUpdateUserLicensesSettings = settingsBuilder.batchUpdateUserLicensesSettings().build();
     batchUpdateUserLicensesOperationSettings =
         settingsBuilder.batchUpdateUserLicensesOperationSettings().build();
@@ -376,6 +394,9 @@ public class UserLicenseServiceStubSettings extends StubSettings<UserLicenseServ
     private final PagedCallSettings.Builder<
             ListUserLicensesRequest, ListUserLicensesResponse, ListUserLicensesPagedResponse>
         listUserLicensesSettings;
+    private final UnaryCallSettings.Builder<
+            ListLicenseConfigsUsageStatsRequest, ListLicenseConfigsUsageStatsResponse>
+        listLicenseConfigsUsageStatsSettings;
     private final UnaryCallSettings.Builder<BatchUpdateUserLicensesRequest, Operation>
         batchUpdateUserLicensesSettings;
     private final OperationCallSettings.Builder<
@@ -411,12 +432,15 @@ public class UserLicenseServiceStubSettings extends StubSettings<UserLicenseServ
       super(clientContext);
 
       listUserLicensesSettings = PagedCallSettings.newBuilder(LIST_USER_LICENSES_PAGE_STR_FACT);
+      listLicenseConfigsUsageStatsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       batchUpdateUserLicensesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       batchUpdateUserLicensesOperationSettings = OperationCallSettings.newBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              listUserLicensesSettings, batchUpdateUserLicensesSettings);
+              listUserLicensesSettings,
+              listLicenseConfigsUsageStatsSettings,
+              batchUpdateUserLicensesSettings);
       initDefaults(this);
     }
 
@@ -424,13 +448,17 @@ public class UserLicenseServiceStubSettings extends StubSettings<UserLicenseServ
       super(settings);
 
       listUserLicensesSettings = settings.listUserLicensesSettings.toBuilder();
+      listLicenseConfigsUsageStatsSettings =
+          settings.listLicenseConfigsUsageStatsSettings.toBuilder();
       batchUpdateUserLicensesSettings = settings.batchUpdateUserLicensesSettings.toBuilder();
       batchUpdateUserLicensesOperationSettings =
           settings.batchUpdateUserLicensesOperationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              listUserLicensesSettings, batchUpdateUserLicensesSettings);
+              listUserLicensesSettings,
+              listLicenseConfigsUsageStatsSettings,
+              batchUpdateUserLicensesSettings);
     }
 
     private static Builder createDefault() {
@@ -460,6 +488,11 @@ public class UserLicenseServiceStubSettings extends StubSettings<UserLicenseServ
     private static Builder initDefaults(Builder builder) {
       builder
           .listUserLicensesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .listLicenseConfigsUsageStatsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -517,6 +550,13 @@ public class UserLicenseServiceStubSettings extends StubSettings<UserLicenseServ
             ListUserLicensesRequest, ListUserLicensesResponse, ListUserLicensesPagedResponse>
         listUserLicensesSettings() {
       return listUserLicensesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listLicenseConfigsUsageStats. */
+    public UnaryCallSettings.Builder<
+            ListLicenseConfigsUsageStatsRequest, ListLicenseConfigsUsageStatsResponse>
+        listLicenseConfigsUsageStatsSettings() {
+      return listLicenseConfigsUsageStatsSettings;
     }
 
     /** Returns the builder for the settings used for calls to batchUpdateUserLicenses. */

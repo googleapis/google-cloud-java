@@ -51,7 +51,10 @@ public final class MachineImageParams extends com.google.protobuf.GeneratedMessa
     super(builder);
   }
 
-  private MachineImageParams() {}
+  private MachineImageParams() {
+    excludedDisks_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    includedDisks_ = com.google.protobuf.LazyStringArrayList.emptyList();
+  }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.compute.v1.Compute
@@ -78,6 +81,150 @@ public final class MachineImageParams extends com.google.protobuf.GeneratedMessa
         .ensureFieldAccessorsInitialized(
             com.google.cloud.compute.v1.MachineImageParams.class,
             com.google.cloud.compute.v1.MachineImageParams.Builder.class);
+  }
+
+  public static final int EXCLUDED_DISKS_FIELD_NUMBER = 301656001;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList excludedDisks_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Input only. Specifies the list of disk device names that must be excluded from the
+   * new machine image.
+   * </pre>
+   *
+   * <code>repeated string excluded_disks = 301656001;</code>
+   *
+   * @return A list containing the excludedDisks.
+   */
+  public com.google.protobuf.ProtocolStringList getExcludedDisksList() {
+    return excludedDisks_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Input only. Specifies the list of disk device names that must be excluded from the
+   * new machine image.
+   * </pre>
+   *
+   * <code>repeated string excluded_disks = 301656001;</code>
+   *
+   * @return The count of excludedDisks.
+   */
+  public int getExcludedDisksCount() {
+    return excludedDisks_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Input only. Specifies the list of disk device names that must be excluded from the
+   * new machine image.
+   * </pre>
+   *
+   * <code>repeated string excluded_disks = 301656001;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The excludedDisks at the given index.
+   */
+  public java.lang.String getExcludedDisks(int index) {
+    return excludedDisks_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Input only. Specifies the list of disk device names that must be excluded from the
+   * new machine image.
+   * </pre>
+   *
+   * <code>repeated string excluded_disks = 301656001;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the excludedDisks at the given index.
+   */
+  public com.google.protobuf.ByteString getExcludedDisksBytes(int index) {
+    return excludedDisks_.getByteString(index);
+  }
+
+  public static final int INCLUDED_DISKS_FIELD_NUMBER = 139709747;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList includedDisks_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Input only. Specifies the list of disk device names that must be included with the
+   * new machine image.
+   * </pre>
+   *
+   * <code>repeated string included_disks = 139709747;</code>
+   *
+   * @return A list containing the includedDisks.
+   */
+  public com.google.protobuf.ProtocolStringList getIncludedDisksList() {
+    return includedDisks_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Input only. Specifies the list of disk device names that must be included with the
+   * new machine image.
+   * </pre>
+   *
+   * <code>repeated string included_disks = 139709747;</code>
+   *
+   * @return The count of includedDisks.
+   */
+  public int getIncludedDisksCount() {
+    return includedDisks_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Input only. Specifies the list of disk device names that must be included with the
+   * new machine image.
+   * </pre>
+   *
+   * <code>repeated string included_disks = 139709747;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The includedDisks at the given index.
+   */
+  public java.lang.String getIncludedDisks(int index) {
+    return includedDisks_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Input only. Specifies the list of disk device names that must be included with the
+   * new machine image.
+   * </pre>
+   *
+   * <code>repeated string included_disks = 139709747;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the includedDisks at the given index.
+   */
+  public com.google.protobuf.ByteString getIncludedDisksBytes(int index) {
+    return includedDisks_.getByteString(index);
   }
 
   public static final int RESOURCE_MANAGER_TAGS_FIELD_NUMBER = 377671164;
@@ -229,6 +376,12 @@ public final class MachineImageParams extends com.google.protobuf.GeneratedMessa
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    for (int i = 0; i < includedDisks_.size(); i++) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 139709747, includedDisks_.getRaw(i));
+    }
+    for (int i = 0; i < excludedDisks_.size(); i++) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 301656001, excludedDisks_.getRaw(i));
+    }
     com.google.protobuf.GeneratedMessage.serializeStringMapTo(
         output,
         internalGetResourceManagerTags(),
@@ -243,6 +396,22 @@ public final class MachineImageParams extends com.google.protobuf.GeneratedMessa
     if (size != -1) return size;
 
     size = 0;
+    {
+      int dataSize = 0;
+      for (int i = 0; i < includedDisks_.size(); i++) {
+        dataSize += computeStringSizeNoTag(includedDisks_.getRaw(i));
+      }
+      size += dataSize;
+      size += 5 * getIncludedDisksList().size();
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < excludedDisks_.size(); i++) {
+        dataSize += computeStringSizeNoTag(excludedDisks_.getRaw(i));
+      }
+      size += dataSize;
+      size += 5 * getExcludedDisksList().size();
+    }
     for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
         internalGetResourceManagerTags().getMap().entrySet()) {
       com.google.protobuf.MapEntry<java.lang.String, java.lang.String> resourceManagerTags__ =
@@ -271,6 +440,8 @@ public final class MachineImageParams extends com.google.protobuf.GeneratedMessa
     com.google.cloud.compute.v1.MachineImageParams other =
         (com.google.cloud.compute.v1.MachineImageParams) obj;
 
+    if (!getExcludedDisksList().equals(other.getExcludedDisksList())) return false;
+    if (!getIncludedDisksList().equals(other.getIncludedDisksList())) return false;
     if (!internalGetResourceManagerTags().equals(other.internalGetResourceManagerTags()))
       return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
@@ -284,6 +455,14 @@ public final class MachineImageParams extends com.google.protobuf.GeneratedMessa
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    if (getExcludedDisksCount() > 0) {
+      hash = (37 * hash) + EXCLUDED_DISKS_FIELD_NUMBER;
+      hash = (53 * hash) + getExcludedDisksList().hashCode();
+    }
+    if (getIncludedDisksCount() > 0) {
+      hash = (37 * hash) + INCLUDED_DISKS_FIELD_NUMBER;
+      hash = (53 * hash) + getIncludedDisksList().hashCode();
+    }
     if (!internalGetResourceManagerTags().getMap().isEmpty()) {
       hash = (37 * hash) + RESOURCE_MANAGER_TAGS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetResourceManagerTags().hashCode();
@@ -450,6 +629,8 @@ public final class MachineImageParams extends com.google.protobuf.GeneratedMessa
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
+      excludedDisks_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      includedDisks_ = com.google.protobuf.LazyStringArrayList.emptyList();
       internalGetMutableResourceManagerTags().clear();
       return this;
     }
@@ -488,6 +669,14 @@ public final class MachineImageParams extends com.google.protobuf.GeneratedMessa
     private void buildPartial0(com.google.cloud.compute.v1.MachineImageParams result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        excludedDisks_.makeImmutable();
+        result.excludedDisks_ = excludedDisks_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        includedDisks_.makeImmutable();
+        result.includedDisks_ = includedDisks_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
         result.resourceManagerTags_ = internalGetResourceManagerTags();
         result.resourceManagerTags_.makeImmutable();
       }
@@ -505,8 +694,28 @@ public final class MachineImageParams extends com.google.protobuf.GeneratedMessa
 
     public Builder mergeFrom(com.google.cloud.compute.v1.MachineImageParams other) {
       if (other == com.google.cloud.compute.v1.MachineImageParams.getDefaultInstance()) return this;
+      if (!other.excludedDisks_.isEmpty()) {
+        if (excludedDisks_.isEmpty()) {
+          excludedDisks_ = other.excludedDisks_;
+          bitField0_ |= 0x00000001;
+        } else {
+          ensureExcludedDisksIsMutable();
+          excludedDisks_.addAll(other.excludedDisks_);
+        }
+        onChanged();
+      }
+      if (!other.includedDisks_.isEmpty()) {
+        if (includedDisks_.isEmpty()) {
+          includedDisks_ = other.includedDisks_;
+          bitField0_ |= 0x00000002;
+        } else {
+          ensureIncludedDisksIsMutable();
+          includedDisks_.addAll(other.includedDisks_);
+        }
+        onChanged();
+      }
       internalGetMutableResourceManagerTags().mergeFrom(other.internalGetResourceManagerTags());
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000004;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -533,6 +742,20 @@ public final class MachineImageParams extends com.google.protobuf.GeneratedMessa
             case 0:
               done = true;
               break;
+            case 1117677978:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureIncludedDisksIsMutable();
+                includedDisks_.add(s);
+                break;
+              } // case 1117677978
+            case -1881719286:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureExcludedDisksIsMutable();
+                excludedDisks_.add(s);
+                break;
+              } // case -1881719286
             case -1273597982:
               {
                 com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
@@ -543,7 +766,7 @@ public final class MachineImageParams extends com.google.protobuf.GeneratedMessa
                 internalGetMutableResourceManagerTags()
                     .getMutableMap()
                     .put(resourceManagerTags__.getKey(), resourceManagerTags__.getValue());
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000004;
                 break;
               } // case -1273597982
             default:
@@ -564,6 +787,390 @@ public final class MachineImageParams extends com.google.protobuf.GeneratedMessa
     }
 
     private int bitField0_;
+
+    private com.google.protobuf.LazyStringArrayList excludedDisks_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureExcludedDisksIsMutable() {
+      if (!excludedDisks_.isModifiable()) {
+        excludedDisks_ = new com.google.protobuf.LazyStringArrayList(excludedDisks_);
+      }
+      bitField0_ |= 0x00000001;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Specifies the list of disk device names that must be excluded from the
+     * new machine image.
+     * </pre>
+     *
+     * <code>repeated string excluded_disks = 301656001;</code>
+     *
+     * @return A list containing the excludedDisks.
+     */
+    public com.google.protobuf.ProtocolStringList getExcludedDisksList() {
+      excludedDisks_.makeImmutable();
+      return excludedDisks_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Specifies the list of disk device names that must be excluded from the
+     * new machine image.
+     * </pre>
+     *
+     * <code>repeated string excluded_disks = 301656001;</code>
+     *
+     * @return The count of excludedDisks.
+     */
+    public int getExcludedDisksCount() {
+      return excludedDisks_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Specifies the list of disk device names that must be excluded from the
+     * new machine image.
+     * </pre>
+     *
+     * <code>repeated string excluded_disks = 301656001;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The excludedDisks at the given index.
+     */
+    public java.lang.String getExcludedDisks(int index) {
+      return excludedDisks_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Specifies the list of disk device names that must be excluded from the
+     * new machine image.
+     * </pre>
+     *
+     * <code>repeated string excluded_disks = 301656001;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the excludedDisks at the given index.
+     */
+    public com.google.protobuf.ByteString getExcludedDisksBytes(int index) {
+      return excludedDisks_.getByteString(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Specifies the list of disk device names that must be excluded from the
+     * new machine image.
+     * </pre>
+     *
+     * <code>repeated string excluded_disks = 301656001;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The excludedDisks to set.
+     * @return This builder for chaining.
+     */
+    public Builder setExcludedDisks(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureExcludedDisksIsMutable();
+      excludedDisks_.set(index, value);
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Specifies the list of disk device names that must be excluded from the
+     * new machine image.
+     * </pre>
+     *
+     * <code>repeated string excluded_disks = 301656001;</code>
+     *
+     * @param value The excludedDisks to add.
+     * @return This builder for chaining.
+     */
+    public Builder addExcludedDisks(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureExcludedDisksIsMutable();
+      excludedDisks_.add(value);
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Specifies the list of disk device names that must be excluded from the
+     * new machine image.
+     * </pre>
+     *
+     * <code>repeated string excluded_disks = 301656001;</code>
+     *
+     * @param values The excludedDisks to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllExcludedDisks(java.lang.Iterable<java.lang.String> values) {
+      ensureExcludedDisksIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, excludedDisks_);
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Specifies the list of disk device names that must be excluded from the
+     * new machine image.
+     * </pre>
+     *
+     * <code>repeated string excluded_disks = 301656001;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearExcludedDisks() {
+      excludedDisks_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000001);
+      ;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Specifies the list of disk device names that must be excluded from the
+     * new machine image.
+     * </pre>
+     *
+     * <code>repeated string excluded_disks = 301656001;</code>
+     *
+     * @param value The bytes of the excludedDisks to add.
+     * @return This builder for chaining.
+     */
+    public Builder addExcludedDisksBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureExcludedDisksIsMutable();
+      excludedDisks_.add(value);
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringArrayList includedDisks_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureIncludedDisksIsMutable() {
+      if (!includedDisks_.isModifiable()) {
+        includedDisks_ = new com.google.protobuf.LazyStringArrayList(includedDisks_);
+      }
+      bitField0_ |= 0x00000002;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Specifies the list of disk device names that must be included with the
+     * new machine image.
+     * </pre>
+     *
+     * <code>repeated string included_disks = 139709747;</code>
+     *
+     * @return A list containing the includedDisks.
+     */
+    public com.google.protobuf.ProtocolStringList getIncludedDisksList() {
+      includedDisks_.makeImmutable();
+      return includedDisks_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Specifies the list of disk device names that must be included with the
+     * new machine image.
+     * </pre>
+     *
+     * <code>repeated string included_disks = 139709747;</code>
+     *
+     * @return The count of includedDisks.
+     */
+    public int getIncludedDisksCount() {
+      return includedDisks_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Specifies the list of disk device names that must be included with the
+     * new machine image.
+     * </pre>
+     *
+     * <code>repeated string included_disks = 139709747;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The includedDisks at the given index.
+     */
+    public java.lang.String getIncludedDisks(int index) {
+      return includedDisks_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Specifies the list of disk device names that must be included with the
+     * new machine image.
+     * </pre>
+     *
+     * <code>repeated string included_disks = 139709747;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the includedDisks at the given index.
+     */
+    public com.google.protobuf.ByteString getIncludedDisksBytes(int index) {
+      return includedDisks_.getByteString(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Specifies the list of disk device names that must be included with the
+     * new machine image.
+     * </pre>
+     *
+     * <code>repeated string included_disks = 139709747;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The includedDisks to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIncludedDisks(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureIncludedDisksIsMutable();
+      includedDisks_.set(index, value);
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Specifies the list of disk device names that must be included with the
+     * new machine image.
+     * </pre>
+     *
+     * <code>repeated string included_disks = 139709747;</code>
+     *
+     * @param value The includedDisks to add.
+     * @return This builder for chaining.
+     */
+    public Builder addIncludedDisks(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureIncludedDisksIsMutable();
+      includedDisks_.add(value);
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Specifies the list of disk device names that must be included with the
+     * new machine image.
+     * </pre>
+     *
+     * <code>repeated string included_disks = 139709747;</code>
+     *
+     * @param values The includedDisks to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllIncludedDisks(java.lang.Iterable<java.lang.String> values) {
+      ensureIncludedDisksIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, includedDisks_);
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Specifies the list of disk device names that must be included with the
+     * new machine image.
+     * </pre>
+     *
+     * <code>repeated string included_disks = 139709747;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearIncludedDisks() {
+      includedDisks_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000002);
+      ;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Specifies the list of disk device names that must be included with the
+     * new machine image.
+     * </pre>
+     *
+     * <code>repeated string included_disks = 139709747;</code>
+     *
+     * @param value The bytes of the includedDisks to add.
+     * @return This builder for chaining.
+     */
+    public Builder addIncludedDisksBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureIncludedDisksIsMutable();
+      includedDisks_.add(value);
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String> resourceManagerTags_;
 
@@ -586,7 +1193,7 @@ public final class MachineImageParams extends com.google.protobuf.GeneratedMessa
       if (!resourceManagerTags_.isMutable()) {
         resourceManagerTags_ = resourceManagerTags_.copy();
       }
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000004;
       onChanged();
       return resourceManagerTags_;
     }
@@ -702,7 +1309,7 @@ public final class MachineImageParams extends com.google.protobuf.GeneratedMessa
     }
 
     public Builder clearResourceManagerTags() {
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       internalGetMutableResourceManagerTags().getMutableMap().clear();
       return this;
     }
@@ -733,7 +1340,7 @@ public final class MachineImageParams extends com.google.protobuf.GeneratedMessa
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableResourceManagerTags() {
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000004;
       return internalGetMutableResourceManagerTags().getMutableMap();
     }
 
@@ -760,7 +1367,7 @@ public final class MachineImageParams extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException("map value");
       }
       internalGetMutableResourceManagerTags().getMutableMap().put(key, value);
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000004;
       return this;
     }
 
@@ -782,7 +1389,7 @@ public final class MachineImageParams extends com.google.protobuf.GeneratedMessa
     public Builder putAllResourceManagerTags(
         java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableResourceManagerTags().getMutableMap().putAll(values);
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000004;
       return this;
     }
 

@@ -120,6 +120,10 @@ public final class ResourcesProto extends com.google.protobuf.GeneratedFile {
       internal_static_google_cloud_secretmanager_v1_SecretPayload_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_secretmanager_v1_SecretPayload_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_secretmanager_v1_CloudSqlSingleUserCredentials_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_secretmanager_v1_CloudSqlSingleUserCredentials_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -274,11 +278,15 @@ public final class ResourcesProto extends com.google.protobuf.GeneratedFile {
           + "SecretPayload\022\014\n"
           + "\004data\030\001 \001(\014\022\036\n"
           + "\013data_crc32c\030\002 \001(\003B\004\342A\001\001H\000\210\001\001B\016\n"
-          + "\014_data_crc32cB\347\001\n"
-          + "!com.google.cloud.secretmanager.v1B\016ResourcesProtoP\001ZGcloud.goog"
-          + "le.com/go/secretmanager/apiv1/secretmana"
-          + "gerpb;secretmanagerpb\242\002\003GSM\252\002\035Google.Clo"
-          + "ud.SecretManager.V1\312\002\035Google\\Cloud\\SecretManager\\V1\352\002"
+          + "\014_data_crc32c\"j\n"
+          + "\035CloudSqlSingleUserCredentials\022\031\n"
+          + "\013instance_id\030\001 \001(\tB\004\342A\001\002\022\026\n"
+          + "\010username\030\002 \001(\tB\004\342A\001\002\022\026\n"
+          + "\010password\030\003 \001(\tB\004\342A\001\001B\347\001\n"
+          + "!com.google.cloud.secretmanager.v1B\016ResourcesProtoP\001ZGcloud.google.com/go/se"
+          + "cretmanager/apiv1/secretmanagerpb;secret"
+          + "managerpb\242\002\003GSM\252\002\035Google.Cloud.SecretMan"
+          + "ager.V1\312\002\035Google\\Cloud\\SecretManager\\V1\352\002"
           + " Google::Cloud::SecretManager::V1b\006proto3"
     };
     descriptor =
@@ -477,6 +485,14 @@ public final class ResourcesProto extends com.google.protobuf.GeneratedFile {
             internal_static_google_cloud_secretmanager_v1_SecretPayload_descriptor,
             new java.lang.String[] {
               "Data", "DataCrc32C",
+            });
+    internal_static_google_cloud_secretmanager_v1_CloudSqlSingleUserCredentials_descriptor =
+        getDescriptor().getMessageType(9);
+    internal_static_google_cloud_secretmanager_v1_CloudSqlSingleUserCredentials_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_secretmanager_v1_CloudSqlSingleUserCredentials_descriptor,
+            new java.lang.String[] {
+              "InstanceId", "Username", "Password",
             });
     descriptor.resolveAllFeaturesImmutable();
     com.google.api.FieldBehaviorProto.getDescriptor();

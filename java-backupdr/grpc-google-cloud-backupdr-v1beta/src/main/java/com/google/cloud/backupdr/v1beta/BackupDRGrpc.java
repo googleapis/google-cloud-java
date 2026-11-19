@@ -226,6 +226,923 @@ public final class BackupDRGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.backupdr.v1beta.CreateRestoreTemplateRequest,
+          com.google.longrunning.Operation>
+      getCreateRestoreTemplateMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateRestoreTemplate",
+      requestType = com.google.cloud.backupdr.v1beta.CreateRestoreTemplateRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.backupdr.v1beta.CreateRestoreTemplateRequest,
+          com.google.longrunning.Operation>
+      getCreateRestoreTemplateMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.backupdr.v1beta.CreateRestoreTemplateRequest,
+            com.google.longrunning.Operation>
+        getCreateRestoreTemplateMethod;
+    if ((getCreateRestoreTemplateMethod = BackupDRGrpc.getCreateRestoreTemplateMethod) == null) {
+      synchronized (BackupDRGrpc.class) {
+        if ((getCreateRestoreTemplateMethod = BackupDRGrpc.getCreateRestoreTemplateMethod)
+            == null) {
+          BackupDRGrpc.getCreateRestoreTemplateMethod =
+              getCreateRestoreTemplateMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.backupdr.v1beta.CreateRestoreTemplateRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "CreateRestoreTemplate"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.backupdr.v1beta.CreateRestoreTemplateRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BackupDRMethodDescriptorSupplier("CreateRestoreTemplate"))
+                      .build();
+        }
+      }
+    }
+    return getCreateRestoreTemplateMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.backupdr.v1beta.GetRestoreTemplateRequest,
+          com.google.cloud.backupdr.v1beta.RestoreTemplate>
+      getGetRestoreTemplateMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetRestoreTemplate",
+      requestType = com.google.cloud.backupdr.v1beta.GetRestoreTemplateRequest.class,
+      responseType = com.google.cloud.backupdr.v1beta.RestoreTemplate.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.backupdr.v1beta.GetRestoreTemplateRequest,
+          com.google.cloud.backupdr.v1beta.RestoreTemplate>
+      getGetRestoreTemplateMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.backupdr.v1beta.GetRestoreTemplateRequest,
+            com.google.cloud.backupdr.v1beta.RestoreTemplate>
+        getGetRestoreTemplateMethod;
+    if ((getGetRestoreTemplateMethod = BackupDRGrpc.getGetRestoreTemplateMethod) == null) {
+      synchronized (BackupDRGrpc.class) {
+        if ((getGetRestoreTemplateMethod = BackupDRGrpc.getGetRestoreTemplateMethod) == null) {
+          BackupDRGrpc.getGetRestoreTemplateMethod =
+              getGetRestoreTemplateMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.backupdr.v1beta.GetRestoreTemplateRequest,
+                          com.google.cloud.backupdr.v1beta.RestoreTemplate>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetRestoreTemplate"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.backupdr.v1beta.GetRestoreTemplateRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.backupdr.v1beta.RestoreTemplate
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BackupDRMethodDescriptorSupplier("GetRestoreTemplate"))
+                      .build();
+        }
+      }
+    }
+    return getGetRestoreTemplateMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.backupdr.v1beta.ListRestoreTemplatesRequest,
+          com.google.cloud.backupdr.v1beta.ListRestoreTemplatesResponse>
+      getListRestoreTemplatesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListRestoreTemplates",
+      requestType = com.google.cloud.backupdr.v1beta.ListRestoreTemplatesRequest.class,
+      responseType = com.google.cloud.backupdr.v1beta.ListRestoreTemplatesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.backupdr.v1beta.ListRestoreTemplatesRequest,
+          com.google.cloud.backupdr.v1beta.ListRestoreTemplatesResponse>
+      getListRestoreTemplatesMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.backupdr.v1beta.ListRestoreTemplatesRequest,
+            com.google.cloud.backupdr.v1beta.ListRestoreTemplatesResponse>
+        getListRestoreTemplatesMethod;
+    if ((getListRestoreTemplatesMethod = BackupDRGrpc.getListRestoreTemplatesMethod) == null) {
+      synchronized (BackupDRGrpc.class) {
+        if ((getListRestoreTemplatesMethod = BackupDRGrpc.getListRestoreTemplatesMethod) == null) {
+          BackupDRGrpc.getListRestoreTemplatesMethod =
+              getListRestoreTemplatesMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.backupdr.v1beta.ListRestoreTemplatesRequest,
+                          com.google.cloud.backupdr.v1beta.ListRestoreTemplatesResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListRestoreTemplates"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.backupdr.v1beta.ListRestoreTemplatesRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.backupdr.v1beta.ListRestoreTemplatesResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BackupDRMethodDescriptorSupplier("ListRestoreTemplates"))
+                      .build();
+        }
+      }
+    }
+    return getListRestoreTemplatesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.backupdr.v1beta.UpdateRestoreTemplateRequest,
+          com.google.longrunning.Operation>
+      getUpdateRestoreTemplateMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateRestoreTemplate",
+      requestType = com.google.cloud.backupdr.v1beta.UpdateRestoreTemplateRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.backupdr.v1beta.UpdateRestoreTemplateRequest,
+          com.google.longrunning.Operation>
+      getUpdateRestoreTemplateMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.backupdr.v1beta.UpdateRestoreTemplateRequest,
+            com.google.longrunning.Operation>
+        getUpdateRestoreTemplateMethod;
+    if ((getUpdateRestoreTemplateMethod = BackupDRGrpc.getUpdateRestoreTemplateMethod) == null) {
+      synchronized (BackupDRGrpc.class) {
+        if ((getUpdateRestoreTemplateMethod = BackupDRGrpc.getUpdateRestoreTemplateMethod)
+            == null) {
+          BackupDRGrpc.getUpdateRestoreTemplateMethod =
+              getUpdateRestoreTemplateMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.backupdr.v1beta.UpdateRestoreTemplateRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "UpdateRestoreTemplate"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.backupdr.v1beta.UpdateRestoreTemplateRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BackupDRMethodDescriptorSupplier("UpdateRestoreTemplate"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateRestoreTemplateMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.backupdr.v1beta.DeleteRestoreTemplateRequest,
+          com.google.longrunning.Operation>
+      getDeleteRestoreTemplateMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteRestoreTemplate",
+      requestType = com.google.cloud.backupdr.v1beta.DeleteRestoreTemplateRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.backupdr.v1beta.DeleteRestoreTemplateRequest,
+          com.google.longrunning.Operation>
+      getDeleteRestoreTemplateMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.backupdr.v1beta.DeleteRestoreTemplateRequest,
+            com.google.longrunning.Operation>
+        getDeleteRestoreTemplateMethod;
+    if ((getDeleteRestoreTemplateMethod = BackupDRGrpc.getDeleteRestoreTemplateMethod) == null) {
+      synchronized (BackupDRGrpc.class) {
+        if ((getDeleteRestoreTemplateMethod = BackupDRGrpc.getDeleteRestoreTemplateMethod)
+            == null) {
+          BackupDRGrpc.getDeleteRestoreTemplateMethod =
+              getDeleteRestoreTemplateMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.backupdr.v1beta.DeleteRestoreTemplateRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "DeleteRestoreTemplate"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.backupdr.v1beta.DeleteRestoreTemplateRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BackupDRMethodDescriptorSupplier("DeleteRestoreTemplate"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteRestoreTemplateMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.backupdr.v1beta.RunRestoreTemplateRequest,
+          com.google.longrunning.Operation>
+      getRunRestoreTemplateMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "RunRestoreTemplate",
+      requestType = com.google.cloud.backupdr.v1beta.RunRestoreTemplateRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.backupdr.v1beta.RunRestoreTemplateRequest,
+          com.google.longrunning.Operation>
+      getRunRestoreTemplateMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.backupdr.v1beta.RunRestoreTemplateRequest,
+            com.google.longrunning.Operation>
+        getRunRestoreTemplateMethod;
+    if ((getRunRestoreTemplateMethod = BackupDRGrpc.getRunRestoreTemplateMethod) == null) {
+      synchronized (BackupDRGrpc.class) {
+        if ((getRunRestoreTemplateMethod = BackupDRGrpc.getRunRestoreTemplateMethod) == null) {
+          BackupDRGrpc.getRunRestoreTemplateMethod =
+              getRunRestoreTemplateMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.backupdr.v1beta.RunRestoreTemplateRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "RunRestoreTemplate"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.backupdr.v1beta.RunRestoreTemplateRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BackupDRMethodDescriptorSupplier("RunRestoreTemplate"))
+                      .build();
+        }
+      }
+    }
+    return getRunRestoreTemplateMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.backupdr.v1beta.GetRestoreTemplateExecutionRequest,
+          com.google.cloud.backupdr.v1beta.RestoreTemplateExecution>
+      getGetRestoreTemplateExecutionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetRestoreTemplateExecution",
+      requestType = com.google.cloud.backupdr.v1beta.GetRestoreTemplateExecutionRequest.class,
+      responseType = com.google.cloud.backupdr.v1beta.RestoreTemplateExecution.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.backupdr.v1beta.GetRestoreTemplateExecutionRequest,
+          com.google.cloud.backupdr.v1beta.RestoreTemplateExecution>
+      getGetRestoreTemplateExecutionMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.backupdr.v1beta.GetRestoreTemplateExecutionRequest,
+            com.google.cloud.backupdr.v1beta.RestoreTemplateExecution>
+        getGetRestoreTemplateExecutionMethod;
+    if ((getGetRestoreTemplateExecutionMethod = BackupDRGrpc.getGetRestoreTemplateExecutionMethod)
+        == null) {
+      synchronized (BackupDRGrpc.class) {
+        if ((getGetRestoreTemplateExecutionMethod =
+                BackupDRGrpc.getGetRestoreTemplateExecutionMethod)
+            == null) {
+          BackupDRGrpc.getGetRestoreTemplateExecutionMethod =
+              getGetRestoreTemplateExecutionMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.backupdr.v1beta.GetRestoreTemplateExecutionRequest,
+                          com.google.cloud.backupdr.v1beta.RestoreTemplateExecution>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "GetRestoreTemplateExecution"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.backupdr.v1beta.GetRestoreTemplateExecutionRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.backupdr.v1beta.RestoreTemplateExecution
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BackupDRMethodDescriptorSupplier("GetRestoreTemplateExecution"))
+                      .build();
+        }
+      }
+    }
+    return getGetRestoreTemplateExecutionMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.backupdr.v1beta.ListRestoreTemplateExecutionsRequest,
+          com.google.cloud.backupdr.v1beta.ListRestoreTemplateExecutionsResponse>
+      getListRestoreTemplateExecutionsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListRestoreTemplateExecutions",
+      requestType = com.google.cloud.backupdr.v1beta.ListRestoreTemplateExecutionsRequest.class,
+      responseType = com.google.cloud.backupdr.v1beta.ListRestoreTemplateExecutionsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.backupdr.v1beta.ListRestoreTemplateExecutionsRequest,
+          com.google.cloud.backupdr.v1beta.ListRestoreTemplateExecutionsResponse>
+      getListRestoreTemplateExecutionsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.backupdr.v1beta.ListRestoreTemplateExecutionsRequest,
+            com.google.cloud.backupdr.v1beta.ListRestoreTemplateExecutionsResponse>
+        getListRestoreTemplateExecutionsMethod;
+    if ((getListRestoreTemplateExecutionsMethod =
+            BackupDRGrpc.getListRestoreTemplateExecutionsMethod)
+        == null) {
+      synchronized (BackupDRGrpc.class) {
+        if ((getListRestoreTemplateExecutionsMethod =
+                BackupDRGrpc.getListRestoreTemplateExecutionsMethod)
+            == null) {
+          BackupDRGrpc.getListRestoreTemplateExecutionsMethod =
+              getListRestoreTemplateExecutionsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.backupdr.v1beta.ListRestoreTemplateExecutionsRequest,
+                          com.google.cloud.backupdr.v1beta.ListRestoreTemplateExecutionsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListRestoreTemplateExecutions"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.backupdr.v1beta.ListRestoreTemplateExecutionsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.backupdr.v1beta.ListRestoreTemplateExecutionsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BackupDRMethodDescriptorSupplier("ListRestoreTemplateExecutions"))
+                      .build();
+        }
+      }
+    }
+    return getListRestoreTemplateExecutionsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.backupdr.v1beta.TriggerRestoreCleanupRequest,
+          com.google.longrunning.Operation>
+      getTriggerRestoreCleanupMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "TriggerRestoreCleanup",
+      requestType = com.google.cloud.backupdr.v1beta.TriggerRestoreCleanupRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.backupdr.v1beta.TriggerRestoreCleanupRequest,
+          com.google.longrunning.Operation>
+      getTriggerRestoreCleanupMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.backupdr.v1beta.TriggerRestoreCleanupRequest,
+            com.google.longrunning.Operation>
+        getTriggerRestoreCleanupMethod;
+    if ((getTriggerRestoreCleanupMethod = BackupDRGrpc.getTriggerRestoreCleanupMethod) == null) {
+      synchronized (BackupDRGrpc.class) {
+        if ((getTriggerRestoreCleanupMethod = BackupDRGrpc.getTriggerRestoreCleanupMethod)
+            == null) {
+          BackupDRGrpc.getTriggerRestoreCleanupMethod =
+              getTriggerRestoreCleanupMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.backupdr.v1beta.TriggerRestoreCleanupRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "TriggerRestoreCleanup"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.backupdr.v1beta.TriggerRestoreCleanupRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BackupDRMethodDescriptorSupplier("TriggerRestoreCleanup"))
+                      .build();
+        }
+      }
+    }
+    return getTriggerRestoreCleanupMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.backupdr.v1beta.CreateRestoreVerificationPlanRequest,
+          com.google.longrunning.Operation>
+      getCreateRestoreVerificationPlanMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateRestoreVerificationPlan",
+      requestType = com.google.cloud.backupdr.v1beta.CreateRestoreVerificationPlanRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.backupdr.v1beta.CreateRestoreVerificationPlanRequest,
+          com.google.longrunning.Operation>
+      getCreateRestoreVerificationPlanMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.backupdr.v1beta.CreateRestoreVerificationPlanRequest,
+            com.google.longrunning.Operation>
+        getCreateRestoreVerificationPlanMethod;
+    if ((getCreateRestoreVerificationPlanMethod =
+            BackupDRGrpc.getCreateRestoreVerificationPlanMethod)
+        == null) {
+      synchronized (BackupDRGrpc.class) {
+        if ((getCreateRestoreVerificationPlanMethod =
+                BackupDRGrpc.getCreateRestoreVerificationPlanMethod)
+            == null) {
+          BackupDRGrpc.getCreateRestoreVerificationPlanMethod =
+              getCreateRestoreVerificationPlanMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.backupdr.v1beta.CreateRestoreVerificationPlanRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "CreateRestoreVerificationPlan"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.backupdr.v1beta.CreateRestoreVerificationPlanRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BackupDRMethodDescriptorSupplier("CreateRestoreVerificationPlan"))
+                      .build();
+        }
+      }
+    }
+    return getCreateRestoreVerificationPlanMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.backupdr.v1beta.CreateRestoreVerificationPlanAssociationRequest,
+          com.google.longrunning.Operation>
+      getCreateRestoreVerificationPlanAssociationMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateRestoreVerificationPlanAssociation",
+      requestType =
+          com.google.cloud.backupdr.v1beta.CreateRestoreVerificationPlanAssociationRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.backupdr.v1beta.CreateRestoreVerificationPlanAssociationRequest,
+          com.google.longrunning.Operation>
+      getCreateRestoreVerificationPlanAssociationMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.backupdr.v1beta.CreateRestoreVerificationPlanAssociationRequest,
+            com.google.longrunning.Operation>
+        getCreateRestoreVerificationPlanAssociationMethod;
+    if ((getCreateRestoreVerificationPlanAssociationMethod =
+            BackupDRGrpc.getCreateRestoreVerificationPlanAssociationMethod)
+        == null) {
+      synchronized (BackupDRGrpc.class) {
+        if ((getCreateRestoreVerificationPlanAssociationMethod =
+                BackupDRGrpc.getCreateRestoreVerificationPlanAssociationMethod)
+            == null) {
+          BackupDRGrpc.getCreateRestoreVerificationPlanAssociationMethod =
+              getCreateRestoreVerificationPlanAssociationMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.backupdr.v1beta
+                              .CreateRestoreVerificationPlanAssociationRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              SERVICE_NAME, "CreateRestoreVerificationPlanAssociation"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.backupdr.v1beta
+                                  .CreateRestoreVerificationPlanAssociationRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BackupDRMethodDescriptorSupplier(
+                              "CreateRestoreVerificationPlanAssociation"))
+                      .build();
+        }
+      }
+    }
+    return getCreateRestoreVerificationPlanAssociationMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.backupdr.v1beta.GetRestoreVerificationPlanAssociationRequest,
+          com.google.cloud.backupdr.v1beta.RestoreVerificationPlanAssociation>
+      getGetRestoreVerificationPlanAssociationMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetRestoreVerificationPlanAssociation",
+      requestType =
+          com.google.cloud.backupdr.v1beta.GetRestoreVerificationPlanAssociationRequest.class,
+      responseType = com.google.cloud.backupdr.v1beta.RestoreVerificationPlanAssociation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.backupdr.v1beta.GetRestoreVerificationPlanAssociationRequest,
+          com.google.cloud.backupdr.v1beta.RestoreVerificationPlanAssociation>
+      getGetRestoreVerificationPlanAssociationMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.backupdr.v1beta.GetRestoreVerificationPlanAssociationRequest,
+            com.google.cloud.backupdr.v1beta.RestoreVerificationPlanAssociation>
+        getGetRestoreVerificationPlanAssociationMethod;
+    if ((getGetRestoreVerificationPlanAssociationMethod =
+            BackupDRGrpc.getGetRestoreVerificationPlanAssociationMethod)
+        == null) {
+      synchronized (BackupDRGrpc.class) {
+        if ((getGetRestoreVerificationPlanAssociationMethod =
+                BackupDRGrpc.getGetRestoreVerificationPlanAssociationMethod)
+            == null) {
+          BackupDRGrpc.getGetRestoreVerificationPlanAssociationMethod =
+              getGetRestoreVerificationPlanAssociationMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.backupdr.v1beta
+                              .GetRestoreVerificationPlanAssociationRequest,
+                          com.google.cloud.backupdr.v1beta.RestoreVerificationPlanAssociation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              SERVICE_NAME, "GetRestoreVerificationPlanAssociation"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.backupdr.v1beta
+                                  .GetRestoreVerificationPlanAssociationRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.backupdr.v1beta.RestoreVerificationPlanAssociation
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BackupDRMethodDescriptorSupplier(
+                              "GetRestoreVerificationPlanAssociation"))
+                      .build();
+        }
+      }
+    }
+    return getGetRestoreVerificationPlanAssociationMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.backupdr.v1beta.ListRestoreVerificationPlanAssociationsRequest,
+          com.google.cloud.backupdr.v1beta.ListRestoreVerificationPlanAssociationsResponse>
+      getListRestoreVerificationPlanAssociationsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListRestoreVerificationPlanAssociations",
+      requestType =
+          com.google.cloud.backupdr.v1beta.ListRestoreVerificationPlanAssociationsRequest.class,
+      responseType =
+          com.google.cloud.backupdr.v1beta.ListRestoreVerificationPlanAssociationsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.backupdr.v1beta.ListRestoreVerificationPlanAssociationsRequest,
+          com.google.cloud.backupdr.v1beta.ListRestoreVerificationPlanAssociationsResponse>
+      getListRestoreVerificationPlanAssociationsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.backupdr.v1beta.ListRestoreVerificationPlanAssociationsRequest,
+            com.google.cloud.backupdr.v1beta.ListRestoreVerificationPlanAssociationsResponse>
+        getListRestoreVerificationPlanAssociationsMethod;
+    if ((getListRestoreVerificationPlanAssociationsMethod =
+            BackupDRGrpc.getListRestoreVerificationPlanAssociationsMethod)
+        == null) {
+      synchronized (BackupDRGrpc.class) {
+        if ((getListRestoreVerificationPlanAssociationsMethod =
+                BackupDRGrpc.getListRestoreVerificationPlanAssociationsMethod)
+            == null) {
+          BackupDRGrpc.getListRestoreVerificationPlanAssociationsMethod =
+              getListRestoreVerificationPlanAssociationsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.backupdr.v1beta
+                              .ListRestoreVerificationPlanAssociationsRequest,
+                          com.google.cloud.backupdr.v1beta
+                              .ListRestoreVerificationPlanAssociationsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              SERVICE_NAME, "ListRestoreVerificationPlanAssociations"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.backupdr.v1beta
+                                  .ListRestoreVerificationPlanAssociationsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.backupdr.v1beta
+                                  .ListRestoreVerificationPlanAssociationsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BackupDRMethodDescriptorSupplier(
+                              "ListRestoreVerificationPlanAssociations"))
+                      .build();
+        }
+      }
+    }
+    return getListRestoreVerificationPlanAssociationsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.backupdr.v1beta.DeleteRestoreVerificationPlanAssociationRequest,
+          com.google.longrunning.Operation>
+      getDeleteRestoreVerificationPlanAssociationMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteRestoreVerificationPlanAssociation",
+      requestType =
+          com.google.cloud.backupdr.v1beta.DeleteRestoreVerificationPlanAssociationRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.backupdr.v1beta.DeleteRestoreVerificationPlanAssociationRequest,
+          com.google.longrunning.Operation>
+      getDeleteRestoreVerificationPlanAssociationMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.backupdr.v1beta.DeleteRestoreVerificationPlanAssociationRequest,
+            com.google.longrunning.Operation>
+        getDeleteRestoreVerificationPlanAssociationMethod;
+    if ((getDeleteRestoreVerificationPlanAssociationMethod =
+            BackupDRGrpc.getDeleteRestoreVerificationPlanAssociationMethod)
+        == null) {
+      synchronized (BackupDRGrpc.class) {
+        if ((getDeleteRestoreVerificationPlanAssociationMethod =
+                BackupDRGrpc.getDeleteRestoreVerificationPlanAssociationMethod)
+            == null) {
+          BackupDRGrpc.getDeleteRestoreVerificationPlanAssociationMethod =
+              getDeleteRestoreVerificationPlanAssociationMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.backupdr.v1beta
+                              .DeleteRestoreVerificationPlanAssociationRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              SERVICE_NAME, "DeleteRestoreVerificationPlanAssociation"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.backupdr.v1beta
+                                  .DeleteRestoreVerificationPlanAssociationRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BackupDRMethodDescriptorSupplier(
+                              "DeleteRestoreVerificationPlanAssociation"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteRestoreVerificationPlanAssociationMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.backupdr.v1beta.TriggerRestoreVerificationRequest,
+          com.google.longrunning.Operation>
+      getTriggerRestoreVerificationMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "TriggerRestoreVerification",
+      requestType = com.google.cloud.backupdr.v1beta.TriggerRestoreVerificationRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.backupdr.v1beta.TriggerRestoreVerificationRequest,
+          com.google.longrunning.Operation>
+      getTriggerRestoreVerificationMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.backupdr.v1beta.TriggerRestoreVerificationRequest,
+            com.google.longrunning.Operation>
+        getTriggerRestoreVerificationMethod;
+    if ((getTriggerRestoreVerificationMethod = BackupDRGrpc.getTriggerRestoreVerificationMethod)
+        == null) {
+      synchronized (BackupDRGrpc.class) {
+        if ((getTriggerRestoreVerificationMethod = BackupDRGrpc.getTriggerRestoreVerificationMethod)
+            == null) {
+          BackupDRGrpc.getTriggerRestoreVerificationMethod =
+              getTriggerRestoreVerificationMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.backupdr.v1beta.TriggerRestoreVerificationRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "TriggerRestoreVerification"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.backupdr.v1beta.TriggerRestoreVerificationRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BackupDRMethodDescriptorSupplier("TriggerRestoreVerification"))
+                      .build();
+        }
+      }
+    }
+    return getTriggerRestoreVerificationMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.backupdr.v1beta.GetRestoreVerificationPlanRequest,
+          com.google.cloud.backupdr.v1beta.RestoreVerificationPlan>
+      getGetRestoreVerificationPlanMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetRestoreVerificationPlan",
+      requestType = com.google.cloud.backupdr.v1beta.GetRestoreVerificationPlanRequest.class,
+      responseType = com.google.cloud.backupdr.v1beta.RestoreVerificationPlan.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.backupdr.v1beta.GetRestoreVerificationPlanRequest,
+          com.google.cloud.backupdr.v1beta.RestoreVerificationPlan>
+      getGetRestoreVerificationPlanMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.backupdr.v1beta.GetRestoreVerificationPlanRequest,
+            com.google.cloud.backupdr.v1beta.RestoreVerificationPlan>
+        getGetRestoreVerificationPlanMethod;
+    if ((getGetRestoreVerificationPlanMethod = BackupDRGrpc.getGetRestoreVerificationPlanMethod)
+        == null) {
+      synchronized (BackupDRGrpc.class) {
+        if ((getGetRestoreVerificationPlanMethod = BackupDRGrpc.getGetRestoreVerificationPlanMethod)
+            == null) {
+          BackupDRGrpc.getGetRestoreVerificationPlanMethod =
+              getGetRestoreVerificationPlanMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.backupdr.v1beta.GetRestoreVerificationPlanRequest,
+                          com.google.cloud.backupdr.v1beta.RestoreVerificationPlan>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "GetRestoreVerificationPlan"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.backupdr.v1beta.GetRestoreVerificationPlanRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.backupdr.v1beta.RestoreVerificationPlan
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BackupDRMethodDescriptorSupplier("GetRestoreVerificationPlan"))
+                      .build();
+        }
+      }
+    }
+    return getGetRestoreVerificationPlanMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.backupdr.v1beta.ListRestoreVerificationPlansRequest,
+          com.google.cloud.backupdr.v1beta.ListRestoreVerificationPlansResponse>
+      getListRestoreVerificationPlansMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListRestoreVerificationPlans",
+      requestType = com.google.cloud.backupdr.v1beta.ListRestoreVerificationPlansRequest.class,
+      responseType = com.google.cloud.backupdr.v1beta.ListRestoreVerificationPlansResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.backupdr.v1beta.ListRestoreVerificationPlansRequest,
+          com.google.cloud.backupdr.v1beta.ListRestoreVerificationPlansResponse>
+      getListRestoreVerificationPlansMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.backupdr.v1beta.ListRestoreVerificationPlansRequest,
+            com.google.cloud.backupdr.v1beta.ListRestoreVerificationPlansResponse>
+        getListRestoreVerificationPlansMethod;
+    if ((getListRestoreVerificationPlansMethod = BackupDRGrpc.getListRestoreVerificationPlansMethod)
+        == null) {
+      synchronized (BackupDRGrpc.class) {
+        if ((getListRestoreVerificationPlansMethod =
+                BackupDRGrpc.getListRestoreVerificationPlansMethod)
+            == null) {
+          BackupDRGrpc.getListRestoreVerificationPlansMethod =
+              getListRestoreVerificationPlansMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.backupdr.v1beta.ListRestoreVerificationPlansRequest,
+                          com.google.cloud.backupdr.v1beta.ListRestoreVerificationPlansResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListRestoreVerificationPlans"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.backupdr.v1beta.ListRestoreVerificationPlansRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.backupdr.v1beta.ListRestoreVerificationPlansResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BackupDRMethodDescriptorSupplier("ListRestoreVerificationPlans"))
+                      .build();
+        }
+      }
+    }
+    return getListRestoreVerificationPlansMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.backupdr.v1beta.DeleteRestoreVerificationPlanRequest,
+          com.google.longrunning.Operation>
+      getDeleteRestoreVerificationPlanMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteRestoreVerificationPlan",
+      requestType = com.google.cloud.backupdr.v1beta.DeleteRestoreVerificationPlanRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.backupdr.v1beta.DeleteRestoreVerificationPlanRequest,
+          com.google.longrunning.Operation>
+      getDeleteRestoreVerificationPlanMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.backupdr.v1beta.DeleteRestoreVerificationPlanRequest,
+            com.google.longrunning.Operation>
+        getDeleteRestoreVerificationPlanMethod;
+    if ((getDeleteRestoreVerificationPlanMethod =
+            BackupDRGrpc.getDeleteRestoreVerificationPlanMethod)
+        == null) {
+      synchronized (BackupDRGrpc.class) {
+        if ((getDeleteRestoreVerificationPlanMethod =
+                BackupDRGrpc.getDeleteRestoreVerificationPlanMethod)
+            == null) {
+          BackupDRGrpc.getDeleteRestoreVerificationPlanMethod =
+              getDeleteRestoreVerificationPlanMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.backupdr.v1beta.DeleteRestoreVerificationPlanRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "DeleteRestoreVerificationPlan"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.backupdr.v1beta.DeleteRestoreVerificationPlanRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BackupDRMethodDescriptorSupplier("DeleteRestoreVerificationPlan"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteRestoreVerificationPlanMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.backupdr.v1beta.CreateBackupVaultRequest,
           com.google.longrunning.Operation>
       getCreateBackupVaultMethod;
@@ -2528,6 +3445,279 @@ public final class BackupDRGrpc {
      *
      *
      * <pre>
+     * Creates a new RestoreTemplate in a given project and location.
+     * </pre>
+     */
+    default void createRestoreTemplate(
+        com.google.cloud.backupdr.v1beta.CreateRestoreTemplateRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateRestoreTemplateMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a RestoreTemplate.
+     * </pre>
+     */
+    default void getRestoreTemplate(
+        com.google.cloud.backupdr.v1beta.GetRestoreTemplateRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.backupdr.v1beta.RestoreTemplate>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetRestoreTemplateMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists RestoreTemplates in a given project and location.
+     * </pre>
+     */
+    default void listRestoreTemplates(
+        com.google.cloud.backupdr.v1beta.ListRestoreTemplatesRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.backupdr.v1beta.ListRestoreTemplatesResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListRestoreTemplatesMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the settings of a RestoreTemplate.
+     * </pre>
+     */
+    default void updateRestoreTemplate(
+        com.google.cloud.backupdr.v1beta.UpdateRestoreTemplateRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateRestoreTemplateMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a RestoreTemplate.
+     * </pre>
+     */
+    default void deleteRestoreTemplate(
+        com.google.cloud.backupdr.v1beta.DeleteRestoreTemplateRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteRestoreTemplateMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Runs a RestoreTemplate.
+     * </pre>
+     */
+    default void runRestoreTemplate(
+        com.google.cloud.backupdr.v1beta.RunRestoreTemplateRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getRunRestoreTemplateMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a RestoreTemplateExecution.
+     * </pre>
+     */
+    default void getRestoreTemplateExecution(
+        com.google.cloud.backupdr.v1beta.GetRestoreTemplateExecutionRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.backupdr.v1beta.RestoreTemplateExecution>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetRestoreTemplateExecutionMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists RestoreTemplateExecutions in a given project, location and restore
+     * template.
+     * </pre>
+     */
+    default void listRestoreTemplateExecutions(
+        com.google.cloud.backupdr.v1beta.ListRestoreTemplateExecutionsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.backupdr.v1beta.ListRestoreTemplateExecutionsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListRestoreTemplateExecutionsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Triggers cleanup of restored resources created during execution.
+     * </pre>
+     */
+    default void triggerRestoreCleanup(
+        com.google.cloud.backupdr.v1beta.TriggerRestoreCleanupRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getTriggerRestoreCleanupMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new RestoreVerificationPlan in a given project and location.
+     * </pre>
+     */
+    default void createRestoreVerificationPlan(
+        com.google.cloud.backupdr.v1beta.CreateRestoreVerificationPlanRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateRestoreVerificationPlanMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new RestoreVerificationPlanAssociation in a given
+     * RestoreVerificationPlan.
+     * </pre>
+     */
+    default void createRestoreVerificationPlanAssociation(
+        com.google.cloud.backupdr.v1beta.CreateRestoreVerificationPlanAssociationRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateRestoreVerificationPlanAssociationMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single RestoreVerificationPlanAssociation in a given
+     * RestoreVerificationPlan.
+     * </pre>
+     */
+    default void getRestoreVerificationPlanAssociation(
+        com.google.cloud.backupdr.v1beta.GetRestoreVerificationPlanAssociationRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.backupdr.v1beta.RestoreVerificationPlanAssociation>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetRestoreVerificationPlanAssociationMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists RestoreVerificationPlanAssociations in a given
+     * RestoreVerificationPlan.
+     * </pre>
+     */
+    default void listRestoreVerificationPlanAssociations(
+        com.google.cloud.backupdr.v1beta.ListRestoreVerificationPlanAssociationsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.backupdr.v1beta.ListRestoreVerificationPlanAssociationsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListRestoreVerificationPlanAssociationsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single RestoreVerificationPlanAssociation in a given
+     * RestoreVerificationPlan.
+     * </pre>
+     */
+    default void deleteRestoreVerificationPlanAssociation(
+        com.google.cloud.backupdr.v1beta.DeleteRestoreVerificationPlanAssociationRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteRestoreVerificationPlanAssociationMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Triggers a new Restore Verification for the association in a given
+     * RestoreVerificationPlan.
+     * </pre>
+     */
+    default void triggerRestoreVerification(
+        com.google.cloud.backupdr.v1beta.TriggerRestoreVerificationRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getTriggerRestoreVerificationMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single RestoreVerificationPlan. Returns the requested
+     * RestoreVerificationPlan.
+     * </pre>
+     */
+    default void getRestoreVerificationPlan(
+        com.google.cloud.backupdr.v1beta.GetRestoreVerificationPlanRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.backupdr.v1beta.RestoreVerificationPlan>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetRestoreVerificationPlanMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists RestoreVerificationPlans in a given project and location.
+     * </pre>
+     */
+    default void listRestoreVerificationPlans(
+        com.google.cloud.backupdr.v1beta.ListRestoreVerificationPlansRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.backupdr.v1beta.ListRestoreVerificationPlansResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListRestoreVerificationPlansMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single RestoreVerificationPlan. If the `force` flag is set to
+     * `true`, any RestoreVerificationPlanAssociations linked to this
+     * RestoreVerificationPlan will also be deleted.
+     * </pre>
+     */
+    default void deleteRestoreVerificationPlan(
+        com.google.cloud.backupdr.v1beta.DeleteRestoreVerificationPlanRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteRestoreVerificationPlanMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a new BackupVault in a given project and location.
      * </pre>
      */
@@ -3285,6 +4475,318 @@ public final class BackupDRGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteManagementServerMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new RestoreTemplate in a given project and location.
+     * </pre>
+     */
+    public void createRestoreTemplate(
+        com.google.cloud.backupdr.v1beta.CreateRestoreTemplateRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateRestoreTemplateMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a RestoreTemplate.
+     * </pre>
+     */
+    public void getRestoreTemplate(
+        com.google.cloud.backupdr.v1beta.GetRestoreTemplateRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.backupdr.v1beta.RestoreTemplate>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetRestoreTemplateMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists RestoreTemplates in a given project and location.
+     * </pre>
+     */
+    public void listRestoreTemplates(
+        com.google.cloud.backupdr.v1beta.ListRestoreTemplatesRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.backupdr.v1beta.ListRestoreTemplatesResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListRestoreTemplatesMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the settings of a RestoreTemplate.
+     * </pre>
+     */
+    public void updateRestoreTemplate(
+        com.google.cloud.backupdr.v1beta.UpdateRestoreTemplateRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateRestoreTemplateMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a RestoreTemplate.
+     * </pre>
+     */
+    public void deleteRestoreTemplate(
+        com.google.cloud.backupdr.v1beta.DeleteRestoreTemplateRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteRestoreTemplateMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Runs a RestoreTemplate.
+     * </pre>
+     */
+    public void runRestoreTemplate(
+        com.google.cloud.backupdr.v1beta.RunRestoreTemplateRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getRunRestoreTemplateMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a RestoreTemplateExecution.
+     * </pre>
+     */
+    public void getRestoreTemplateExecution(
+        com.google.cloud.backupdr.v1beta.GetRestoreTemplateExecutionRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.backupdr.v1beta.RestoreTemplateExecution>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetRestoreTemplateExecutionMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists RestoreTemplateExecutions in a given project, location and restore
+     * template.
+     * </pre>
+     */
+    public void listRestoreTemplateExecutions(
+        com.google.cloud.backupdr.v1beta.ListRestoreTemplateExecutionsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.backupdr.v1beta.ListRestoreTemplateExecutionsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListRestoreTemplateExecutionsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Triggers cleanup of restored resources created during execution.
+     * </pre>
+     */
+    public void triggerRestoreCleanup(
+        com.google.cloud.backupdr.v1beta.TriggerRestoreCleanupRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getTriggerRestoreCleanupMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new RestoreVerificationPlan in a given project and location.
+     * </pre>
+     */
+    public void createRestoreVerificationPlan(
+        com.google.cloud.backupdr.v1beta.CreateRestoreVerificationPlanRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateRestoreVerificationPlanMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new RestoreVerificationPlanAssociation in a given
+     * RestoreVerificationPlan.
+     * </pre>
+     */
+    public void createRestoreVerificationPlanAssociation(
+        com.google.cloud.backupdr.v1beta.CreateRestoreVerificationPlanAssociationRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel()
+              .newCall(getCreateRestoreVerificationPlanAssociationMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single RestoreVerificationPlanAssociation in a given
+     * RestoreVerificationPlan.
+     * </pre>
+     */
+    public void getRestoreVerificationPlanAssociation(
+        com.google.cloud.backupdr.v1beta.GetRestoreVerificationPlanAssociationRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.backupdr.v1beta.RestoreVerificationPlanAssociation>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetRestoreVerificationPlanAssociationMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists RestoreVerificationPlanAssociations in a given
+     * RestoreVerificationPlan.
+     * </pre>
+     */
+    public void listRestoreVerificationPlanAssociations(
+        com.google.cloud.backupdr.v1beta.ListRestoreVerificationPlanAssociationsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.backupdr.v1beta.ListRestoreVerificationPlanAssociationsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel()
+              .newCall(getListRestoreVerificationPlanAssociationsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single RestoreVerificationPlanAssociation in a given
+     * RestoreVerificationPlan.
+     * </pre>
+     */
+    public void deleteRestoreVerificationPlanAssociation(
+        com.google.cloud.backupdr.v1beta.DeleteRestoreVerificationPlanAssociationRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel()
+              .newCall(getDeleteRestoreVerificationPlanAssociationMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Triggers a new Restore Verification for the association in a given
+     * RestoreVerificationPlan.
+     * </pre>
+     */
+    public void triggerRestoreVerification(
+        com.google.cloud.backupdr.v1beta.TriggerRestoreVerificationRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getTriggerRestoreVerificationMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single RestoreVerificationPlan. Returns the requested
+     * RestoreVerificationPlan.
+     * </pre>
+     */
+    public void getRestoreVerificationPlan(
+        com.google.cloud.backupdr.v1beta.GetRestoreVerificationPlanRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.backupdr.v1beta.RestoreVerificationPlan>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetRestoreVerificationPlanMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists RestoreVerificationPlans in a given project and location.
+     * </pre>
+     */
+    public void listRestoreVerificationPlans(
+        com.google.cloud.backupdr.v1beta.ListRestoreVerificationPlansRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.backupdr.v1beta.ListRestoreVerificationPlansResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListRestoreVerificationPlansMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single RestoreVerificationPlan. If the `force` flag is set to
+     * `true`, any RestoreVerificationPlanAssociations linked to this
+     * RestoreVerificationPlan will also be deleted.
+     * </pre>
+     */
+    public void deleteRestoreVerificationPlan(
+        com.google.cloud.backupdr.v1beta.DeleteRestoreVerificationPlanRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteRestoreVerificationPlanMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -4127,6 +5629,283 @@ public final class BackupDRGrpc {
      *
      *
      * <pre>
+     * Creates a new RestoreTemplate in a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createRestoreTemplate(
+        com.google.cloud.backupdr.v1beta.CreateRestoreTemplateRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateRestoreTemplateMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a RestoreTemplate.
+     * </pre>
+     */
+    public com.google.cloud.backupdr.v1beta.RestoreTemplate getRestoreTemplate(
+        com.google.cloud.backupdr.v1beta.GetRestoreTemplateRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetRestoreTemplateMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists RestoreTemplates in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.backupdr.v1beta.ListRestoreTemplatesResponse listRestoreTemplates(
+        com.google.cloud.backupdr.v1beta.ListRestoreTemplatesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListRestoreTemplatesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the settings of a RestoreTemplate.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateRestoreTemplate(
+        com.google.cloud.backupdr.v1beta.UpdateRestoreTemplateRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateRestoreTemplateMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a RestoreTemplate.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteRestoreTemplate(
+        com.google.cloud.backupdr.v1beta.DeleteRestoreTemplateRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteRestoreTemplateMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Runs a RestoreTemplate.
+     * </pre>
+     */
+    public com.google.longrunning.Operation runRestoreTemplate(
+        com.google.cloud.backupdr.v1beta.RunRestoreTemplateRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getRunRestoreTemplateMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a RestoreTemplateExecution.
+     * </pre>
+     */
+    public com.google.cloud.backupdr.v1beta.RestoreTemplateExecution getRestoreTemplateExecution(
+        com.google.cloud.backupdr.v1beta.GetRestoreTemplateExecutionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetRestoreTemplateExecutionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists RestoreTemplateExecutions in a given project, location and restore
+     * template.
+     * </pre>
+     */
+    public com.google.cloud.backupdr.v1beta.ListRestoreTemplateExecutionsResponse
+        listRestoreTemplateExecutions(
+            com.google.cloud.backupdr.v1beta.ListRestoreTemplateExecutionsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListRestoreTemplateExecutionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Triggers cleanup of restored resources created during execution.
+     * </pre>
+     */
+    public com.google.longrunning.Operation triggerRestoreCleanup(
+        com.google.cloud.backupdr.v1beta.TriggerRestoreCleanupRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getTriggerRestoreCleanupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new RestoreVerificationPlan in a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createRestoreVerificationPlan(
+        com.google.cloud.backupdr.v1beta.CreateRestoreVerificationPlanRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateRestoreVerificationPlanMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new RestoreVerificationPlanAssociation in a given
+     * RestoreVerificationPlan.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createRestoreVerificationPlanAssociation(
+        com.google.cloud.backupdr.v1beta.CreateRestoreVerificationPlanAssociationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(),
+          getCreateRestoreVerificationPlanAssociationMethod(),
+          getCallOptions(),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single RestoreVerificationPlanAssociation in a given
+     * RestoreVerificationPlan.
+     * </pre>
+     */
+    public com.google.cloud.backupdr.v1beta.RestoreVerificationPlanAssociation
+        getRestoreVerificationPlanAssociation(
+            com.google.cloud.backupdr.v1beta.GetRestoreVerificationPlanAssociationRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(),
+          getGetRestoreVerificationPlanAssociationMethod(),
+          getCallOptions(),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists RestoreVerificationPlanAssociations in a given
+     * RestoreVerificationPlan.
+     * </pre>
+     */
+    public com.google.cloud.backupdr.v1beta.ListRestoreVerificationPlanAssociationsResponse
+        listRestoreVerificationPlanAssociations(
+            com.google.cloud.backupdr.v1beta.ListRestoreVerificationPlanAssociationsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(),
+          getListRestoreVerificationPlanAssociationsMethod(),
+          getCallOptions(),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single RestoreVerificationPlanAssociation in a given
+     * RestoreVerificationPlan.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteRestoreVerificationPlanAssociation(
+        com.google.cloud.backupdr.v1beta.DeleteRestoreVerificationPlanAssociationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(),
+          getDeleteRestoreVerificationPlanAssociationMethod(),
+          getCallOptions(),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Triggers a new Restore Verification for the association in a given
+     * RestoreVerificationPlan.
+     * </pre>
+     */
+    public com.google.longrunning.Operation triggerRestoreVerification(
+        com.google.cloud.backupdr.v1beta.TriggerRestoreVerificationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getTriggerRestoreVerificationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single RestoreVerificationPlan. Returns the requested
+     * RestoreVerificationPlan.
+     * </pre>
+     */
+    public com.google.cloud.backupdr.v1beta.RestoreVerificationPlan getRestoreVerificationPlan(
+        com.google.cloud.backupdr.v1beta.GetRestoreVerificationPlanRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetRestoreVerificationPlanMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists RestoreVerificationPlans in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.backupdr.v1beta.ListRestoreVerificationPlansResponse
+        listRestoreVerificationPlans(
+            com.google.cloud.backupdr.v1beta.ListRestoreVerificationPlansRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListRestoreVerificationPlansMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single RestoreVerificationPlan. If the `force` flag is set to
+     * `true`, any RestoreVerificationPlanAssociations linked to this
+     * RestoreVerificationPlan will also be deleted.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteRestoreVerificationPlan(
+        com.google.cloud.backupdr.v1beta.DeleteRestoreVerificationPlanRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteRestoreVerificationPlanMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a new BackupVault in a given project and location.
      * </pre>
      */
@@ -4852,6 +6631,266 @@ public final class BackupDRGrpc {
      *
      *
      * <pre>
+     * Creates a new RestoreTemplate in a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createRestoreTemplate(
+        com.google.cloud.backupdr.v1beta.CreateRestoreTemplateRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateRestoreTemplateMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a RestoreTemplate.
+     * </pre>
+     */
+    public com.google.cloud.backupdr.v1beta.RestoreTemplate getRestoreTemplate(
+        com.google.cloud.backupdr.v1beta.GetRestoreTemplateRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetRestoreTemplateMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists RestoreTemplates in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.backupdr.v1beta.ListRestoreTemplatesResponse listRestoreTemplates(
+        com.google.cloud.backupdr.v1beta.ListRestoreTemplatesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListRestoreTemplatesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the settings of a RestoreTemplate.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateRestoreTemplate(
+        com.google.cloud.backupdr.v1beta.UpdateRestoreTemplateRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateRestoreTemplateMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a RestoreTemplate.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteRestoreTemplate(
+        com.google.cloud.backupdr.v1beta.DeleteRestoreTemplateRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteRestoreTemplateMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Runs a RestoreTemplate.
+     * </pre>
+     */
+    public com.google.longrunning.Operation runRestoreTemplate(
+        com.google.cloud.backupdr.v1beta.RunRestoreTemplateRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRunRestoreTemplateMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a RestoreTemplateExecution.
+     * </pre>
+     */
+    public com.google.cloud.backupdr.v1beta.RestoreTemplateExecution getRestoreTemplateExecution(
+        com.google.cloud.backupdr.v1beta.GetRestoreTemplateExecutionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetRestoreTemplateExecutionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists RestoreTemplateExecutions in a given project, location and restore
+     * template.
+     * </pre>
+     */
+    public com.google.cloud.backupdr.v1beta.ListRestoreTemplateExecutionsResponse
+        listRestoreTemplateExecutions(
+            com.google.cloud.backupdr.v1beta.ListRestoreTemplateExecutionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListRestoreTemplateExecutionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Triggers cleanup of restored resources created during execution.
+     * </pre>
+     */
+    public com.google.longrunning.Operation triggerRestoreCleanup(
+        com.google.cloud.backupdr.v1beta.TriggerRestoreCleanupRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getTriggerRestoreCleanupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new RestoreVerificationPlan in a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createRestoreVerificationPlan(
+        com.google.cloud.backupdr.v1beta.CreateRestoreVerificationPlanRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateRestoreVerificationPlanMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new RestoreVerificationPlanAssociation in a given
+     * RestoreVerificationPlan.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createRestoreVerificationPlanAssociation(
+        com.google.cloud.backupdr.v1beta.CreateRestoreVerificationPlanAssociationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(),
+          getCreateRestoreVerificationPlanAssociationMethod(),
+          getCallOptions(),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single RestoreVerificationPlanAssociation in a given
+     * RestoreVerificationPlan.
+     * </pre>
+     */
+    public com.google.cloud.backupdr.v1beta.RestoreVerificationPlanAssociation
+        getRestoreVerificationPlanAssociation(
+            com.google.cloud.backupdr.v1beta.GetRestoreVerificationPlanAssociationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(),
+          getGetRestoreVerificationPlanAssociationMethod(),
+          getCallOptions(),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists RestoreVerificationPlanAssociations in a given
+     * RestoreVerificationPlan.
+     * </pre>
+     */
+    public com.google.cloud.backupdr.v1beta.ListRestoreVerificationPlanAssociationsResponse
+        listRestoreVerificationPlanAssociations(
+            com.google.cloud.backupdr.v1beta.ListRestoreVerificationPlanAssociationsRequest
+                request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(),
+          getListRestoreVerificationPlanAssociationsMethod(),
+          getCallOptions(),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single RestoreVerificationPlanAssociation in a given
+     * RestoreVerificationPlan.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteRestoreVerificationPlanAssociation(
+        com.google.cloud.backupdr.v1beta.DeleteRestoreVerificationPlanAssociationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(),
+          getDeleteRestoreVerificationPlanAssociationMethod(),
+          getCallOptions(),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Triggers a new Restore Verification for the association in a given
+     * RestoreVerificationPlan.
+     * </pre>
+     */
+    public com.google.longrunning.Operation triggerRestoreVerification(
+        com.google.cloud.backupdr.v1beta.TriggerRestoreVerificationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getTriggerRestoreVerificationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single RestoreVerificationPlan. Returns the requested
+     * RestoreVerificationPlan.
+     * </pre>
+     */
+    public com.google.cloud.backupdr.v1beta.RestoreVerificationPlan getRestoreVerificationPlan(
+        com.google.cloud.backupdr.v1beta.GetRestoreVerificationPlanRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetRestoreVerificationPlanMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists RestoreVerificationPlans in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.backupdr.v1beta.ListRestoreVerificationPlansResponse
+        listRestoreVerificationPlans(
+            com.google.cloud.backupdr.v1beta.ListRestoreVerificationPlansRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListRestoreVerificationPlansMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single RestoreVerificationPlan. If the `force` flag is set to
+     * `true`, any RestoreVerificationPlanAssociations linked to this
+     * RestoreVerificationPlan will also be deleted.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteRestoreVerificationPlan(
+        com.google.cloud.backupdr.v1beta.DeleteRestoreVerificationPlanRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteRestoreVerificationPlanMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a new BackupVault in a given project and location.
      * </pre>
      */
@@ -5538,6 +7577,285 @@ public final class BackupDRGrpc {
      *
      *
      * <pre>
+     * Creates a new RestoreTemplate in a given project and location.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        createRestoreTemplate(
+            com.google.cloud.backupdr.v1beta.CreateRestoreTemplateRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateRestoreTemplateMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a RestoreTemplate.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.backupdr.v1beta.RestoreTemplate>
+        getRestoreTemplate(com.google.cloud.backupdr.v1beta.GetRestoreTemplateRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetRestoreTemplateMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists RestoreTemplates in a given project and location.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.backupdr.v1beta.ListRestoreTemplatesResponse>
+        listRestoreTemplates(com.google.cloud.backupdr.v1beta.ListRestoreTemplatesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListRestoreTemplatesMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the settings of a RestoreTemplate.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        updateRestoreTemplate(
+            com.google.cloud.backupdr.v1beta.UpdateRestoreTemplateRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateRestoreTemplateMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a RestoreTemplate.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        deleteRestoreTemplate(
+            com.google.cloud.backupdr.v1beta.DeleteRestoreTemplateRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteRestoreTemplateMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Runs a RestoreTemplate.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        runRestoreTemplate(com.google.cloud.backupdr.v1beta.RunRestoreTemplateRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getRunRestoreTemplateMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a RestoreTemplateExecution.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.backupdr.v1beta.RestoreTemplateExecution>
+        getRestoreTemplateExecution(
+            com.google.cloud.backupdr.v1beta.GetRestoreTemplateExecutionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetRestoreTemplateExecutionMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists RestoreTemplateExecutions in a given project, location and restore
+     * template.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.backupdr.v1beta.ListRestoreTemplateExecutionsResponse>
+        listRestoreTemplateExecutions(
+            com.google.cloud.backupdr.v1beta.ListRestoreTemplateExecutionsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListRestoreTemplateExecutionsMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Triggers cleanup of restored resources created during execution.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        triggerRestoreCleanup(
+            com.google.cloud.backupdr.v1beta.TriggerRestoreCleanupRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getTriggerRestoreCleanupMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new RestoreVerificationPlan in a given project and location.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        createRestoreVerificationPlan(
+            com.google.cloud.backupdr.v1beta.CreateRestoreVerificationPlanRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateRestoreVerificationPlanMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new RestoreVerificationPlanAssociation in a given
+     * RestoreVerificationPlan.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        createRestoreVerificationPlanAssociation(
+            com.google.cloud.backupdr.v1beta.CreateRestoreVerificationPlanAssociationRequest
+                request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel()
+              .newCall(getCreateRestoreVerificationPlanAssociationMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single RestoreVerificationPlanAssociation in a given
+     * RestoreVerificationPlan.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.backupdr.v1beta.RestoreVerificationPlanAssociation>
+        getRestoreVerificationPlanAssociation(
+            com.google.cloud.backupdr.v1beta.GetRestoreVerificationPlanAssociationRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetRestoreVerificationPlanAssociationMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists RestoreVerificationPlanAssociations in a given
+     * RestoreVerificationPlan.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.backupdr.v1beta.ListRestoreVerificationPlanAssociationsResponse>
+        listRestoreVerificationPlanAssociations(
+            com.google.cloud.backupdr.v1beta.ListRestoreVerificationPlanAssociationsRequest
+                request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel()
+              .newCall(getListRestoreVerificationPlanAssociationsMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single RestoreVerificationPlanAssociation in a given
+     * RestoreVerificationPlan.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        deleteRestoreVerificationPlanAssociation(
+            com.google.cloud.backupdr.v1beta.DeleteRestoreVerificationPlanAssociationRequest
+                request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel()
+              .newCall(getDeleteRestoreVerificationPlanAssociationMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Triggers a new Restore Verification for the association in a given
+     * RestoreVerificationPlan.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        triggerRestoreVerification(
+            com.google.cloud.backupdr.v1beta.TriggerRestoreVerificationRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getTriggerRestoreVerificationMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single RestoreVerificationPlan. Returns the requested
+     * RestoreVerificationPlan.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.backupdr.v1beta.RestoreVerificationPlan>
+        getRestoreVerificationPlan(
+            com.google.cloud.backupdr.v1beta.GetRestoreVerificationPlanRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetRestoreVerificationPlanMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists RestoreVerificationPlans in a given project and location.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.backupdr.v1beta.ListRestoreVerificationPlansResponse>
+        listRestoreVerificationPlans(
+            com.google.cloud.backupdr.v1beta.ListRestoreVerificationPlansRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListRestoreVerificationPlansMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single RestoreVerificationPlan. If the `force` flag is set to
+     * `true`, any RestoreVerificationPlanAssociations linked to this
+     * RestoreVerificationPlan will also be deleted.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        deleteRestoreVerificationPlan(
+            com.google.cloud.backupdr.v1beta.DeleteRestoreVerificationPlanRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteRestoreVerificationPlanMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a new BackupVault in a given project and location.
      * </pre>
      */
@@ -6191,51 +8509,69 @@ public final class BackupDRGrpc {
   private static final int METHODID_GET_MANAGEMENT_SERVER = 1;
   private static final int METHODID_CREATE_MANAGEMENT_SERVER = 2;
   private static final int METHODID_DELETE_MANAGEMENT_SERVER = 3;
-  private static final int METHODID_CREATE_BACKUP_VAULT = 4;
-  private static final int METHODID_LIST_BACKUP_VAULTS = 5;
-  private static final int METHODID_FETCH_USABLE_BACKUP_VAULTS = 6;
-  private static final int METHODID_GET_BACKUP_VAULT = 7;
-  private static final int METHODID_UPDATE_BACKUP_VAULT = 8;
-  private static final int METHODID_DELETE_BACKUP_VAULT = 9;
-  private static final int METHODID_LIST_DATA_SOURCES = 10;
-  private static final int METHODID_GET_DATA_SOURCE = 11;
-  private static final int METHODID_UPDATE_DATA_SOURCE = 12;
-  private static final int METHODID_LIST_BACKUPS = 13;
-  private static final int METHODID_FETCH_BACKUPS_FOR_RESOURCE_TYPE = 14;
-  private static final int METHODID_GET_BACKUP = 15;
-  private static final int METHODID_UPDATE_BACKUP = 16;
-  private static final int METHODID_DELETE_BACKUP = 17;
-  private static final int METHODID_RESTORE_BACKUP = 18;
-  private static final int METHODID_CREATE_BACKUP_PLAN = 19;
-  private static final int METHODID_UPDATE_BACKUP_PLAN = 20;
-  private static final int METHODID_GET_BACKUP_PLAN = 21;
-  private static final int METHODID_LIST_BACKUP_PLANS = 22;
-  private static final int METHODID_DELETE_BACKUP_PLAN = 23;
-  private static final int METHODID_GET_BACKUP_PLAN_REVISION = 24;
-  private static final int METHODID_LIST_BACKUP_PLAN_REVISIONS = 25;
-  private static final int METHODID_CREATE_BACKUP_PLAN_ASSOCIATION = 26;
-  private static final int METHODID_UPDATE_BACKUP_PLAN_ASSOCIATION = 27;
-  private static final int METHODID_GET_BACKUP_PLAN_ASSOCIATION = 28;
-  private static final int METHODID_LIST_BACKUP_PLAN_ASSOCIATIONS = 29;
-  private static final int METHODID_FETCH_BACKUP_PLAN_ASSOCIATIONS_FOR_RESOURCE_TYPE = 30;
-  private static final int METHODID_DELETE_BACKUP_PLAN_ASSOCIATION = 31;
-  private static final int METHODID_TRIGGER_BACKUP = 32;
-  private static final int METHODID_GET_DATA_SOURCE_REFERENCE = 33;
-  private static final int METHODID_LIST_DATA_SOURCE_REFERENCES = 34;
-  private static final int METHODID_FETCH_DATA_SOURCE_REFERENCES_FOR_RESOURCE_TYPE = 35;
-  private static final int METHODID_INITIALIZE_SERVICE = 36;
-  private static final int METHODID_CREATE_AUTO_PROTECTION_POLICY = 37;
-  private static final int METHODID_LIST_AUTO_PROTECTION_POLICIES = 38;
-  private static final int METHODID_GET_AUTO_PROTECTION_POLICY = 39;
-  private static final int METHODID_UPDATE_AUTO_PROTECTION_POLICY = 40;
-  private static final int METHODID_DELETE_AUTO_PROTECTION_POLICY = 41;
-  private static final int METHODID_CREATE_AUTO_PROTECTION_POLICY_BINDING = 42;
-  private static final int METHODID_GET_AUTO_PROTECTION_POLICY_BINDING = 43;
-  private static final int METHODID_LIST_AUTO_PROTECTION_POLICY_BINDINGS = 44;
-  private static final int METHODID_LIST_APPLIED_AUTO_PROTECTION_POLICIES = 45;
-  private static final int METHODID_INITIATE_DELETE_AUTO_PROTECTION_POLICY_BINDING = 46;
-  private static final int METHODID_GET_BINDING_MATCHING_RESOURCE = 47;
-  private static final int METHODID_LIST_BINDING_MATCHING_RESOURCES = 48;
+  private static final int METHODID_CREATE_RESTORE_TEMPLATE = 4;
+  private static final int METHODID_GET_RESTORE_TEMPLATE = 5;
+  private static final int METHODID_LIST_RESTORE_TEMPLATES = 6;
+  private static final int METHODID_UPDATE_RESTORE_TEMPLATE = 7;
+  private static final int METHODID_DELETE_RESTORE_TEMPLATE = 8;
+  private static final int METHODID_RUN_RESTORE_TEMPLATE = 9;
+  private static final int METHODID_GET_RESTORE_TEMPLATE_EXECUTION = 10;
+  private static final int METHODID_LIST_RESTORE_TEMPLATE_EXECUTIONS = 11;
+  private static final int METHODID_TRIGGER_RESTORE_CLEANUP = 12;
+  private static final int METHODID_CREATE_RESTORE_VERIFICATION_PLAN = 13;
+  private static final int METHODID_CREATE_RESTORE_VERIFICATION_PLAN_ASSOCIATION = 14;
+  private static final int METHODID_GET_RESTORE_VERIFICATION_PLAN_ASSOCIATION = 15;
+  private static final int METHODID_LIST_RESTORE_VERIFICATION_PLAN_ASSOCIATIONS = 16;
+  private static final int METHODID_DELETE_RESTORE_VERIFICATION_PLAN_ASSOCIATION = 17;
+  private static final int METHODID_TRIGGER_RESTORE_VERIFICATION = 18;
+  private static final int METHODID_GET_RESTORE_VERIFICATION_PLAN = 19;
+  private static final int METHODID_LIST_RESTORE_VERIFICATION_PLANS = 20;
+  private static final int METHODID_DELETE_RESTORE_VERIFICATION_PLAN = 21;
+  private static final int METHODID_CREATE_BACKUP_VAULT = 22;
+  private static final int METHODID_LIST_BACKUP_VAULTS = 23;
+  private static final int METHODID_FETCH_USABLE_BACKUP_VAULTS = 24;
+  private static final int METHODID_GET_BACKUP_VAULT = 25;
+  private static final int METHODID_UPDATE_BACKUP_VAULT = 26;
+  private static final int METHODID_DELETE_BACKUP_VAULT = 27;
+  private static final int METHODID_LIST_DATA_SOURCES = 28;
+  private static final int METHODID_GET_DATA_SOURCE = 29;
+  private static final int METHODID_UPDATE_DATA_SOURCE = 30;
+  private static final int METHODID_LIST_BACKUPS = 31;
+  private static final int METHODID_FETCH_BACKUPS_FOR_RESOURCE_TYPE = 32;
+  private static final int METHODID_GET_BACKUP = 33;
+  private static final int METHODID_UPDATE_BACKUP = 34;
+  private static final int METHODID_DELETE_BACKUP = 35;
+  private static final int METHODID_RESTORE_BACKUP = 36;
+  private static final int METHODID_CREATE_BACKUP_PLAN = 37;
+  private static final int METHODID_UPDATE_BACKUP_PLAN = 38;
+  private static final int METHODID_GET_BACKUP_PLAN = 39;
+  private static final int METHODID_LIST_BACKUP_PLANS = 40;
+  private static final int METHODID_DELETE_BACKUP_PLAN = 41;
+  private static final int METHODID_GET_BACKUP_PLAN_REVISION = 42;
+  private static final int METHODID_LIST_BACKUP_PLAN_REVISIONS = 43;
+  private static final int METHODID_CREATE_BACKUP_PLAN_ASSOCIATION = 44;
+  private static final int METHODID_UPDATE_BACKUP_PLAN_ASSOCIATION = 45;
+  private static final int METHODID_GET_BACKUP_PLAN_ASSOCIATION = 46;
+  private static final int METHODID_LIST_BACKUP_PLAN_ASSOCIATIONS = 47;
+  private static final int METHODID_FETCH_BACKUP_PLAN_ASSOCIATIONS_FOR_RESOURCE_TYPE = 48;
+  private static final int METHODID_DELETE_BACKUP_PLAN_ASSOCIATION = 49;
+  private static final int METHODID_TRIGGER_BACKUP = 50;
+  private static final int METHODID_GET_DATA_SOURCE_REFERENCE = 51;
+  private static final int METHODID_LIST_DATA_SOURCE_REFERENCES = 52;
+  private static final int METHODID_FETCH_DATA_SOURCE_REFERENCES_FOR_RESOURCE_TYPE = 53;
+  private static final int METHODID_INITIALIZE_SERVICE = 54;
+  private static final int METHODID_CREATE_AUTO_PROTECTION_POLICY = 55;
+  private static final int METHODID_LIST_AUTO_PROTECTION_POLICIES = 56;
+  private static final int METHODID_GET_AUTO_PROTECTION_POLICY = 57;
+  private static final int METHODID_UPDATE_AUTO_PROTECTION_POLICY = 58;
+  private static final int METHODID_DELETE_AUTO_PROTECTION_POLICY = 59;
+  private static final int METHODID_CREATE_AUTO_PROTECTION_POLICY_BINDING = 60;
+  private static final int METHODID_GET_AUTO_PROTECTION_POLICY_BINDING = 61;
+  private static final int METHODID_LIST_AUTO_PROTECTION_POLICY_BINDINGS = 62;
+  private static final int METHODID_LIST_APPLIED_AUTO_PROTECTION_POLICIES = 63;
+  private static final int METHODID_INITIATE_DELETE_AUTO_PROTECTION_POLICY_BINDING = 64;
+  private static final int METHODID_GET_BINDING_MATCHING_RESOURCE = 65;
+  private static final int METHODID_LIST_BINDING_MATCHING_RESOURCES = 66;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -6275,6 +8611,116 @@ public final class BackupDRGrpc {
         case METHODID_DELETE_MANAGEMENT_SERVER:
           serviceImpl.deleteManagementServer(
               (com.google.cloud.backupdr.v1beta.DeleteManagementServerRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_CREATE_RESTORE_TEMPLATE:
+          serviceImpl.createRestoreTemplate(
+              (com.google.cloud.backupdr.v1beta.CreateRestoreTemplateRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_GET_RESTORE_TEMPLATE:
+          serviceImpl.getRestoreTemplate(
+              (com.google.cloud.backupdr.v1beta.GetRestoreTemplateRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.backupdr.v1beta.RestoreTemplate>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_RESTORE_TEMPLATES:
+          serviceImpl.listRestoreTemplates(
+              (com.google.cloud.backupdr.v1beta.ListRestoreTemplatesRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.backupdr.v1beta.ListRestoreTemplatesResponse>)
+                  responseObserver);
+          break;
+        case METHODID_UPDATE_RESTORE_TEMPLATE:
+          serviceImpl.updateRestoreTemplate(
+              (com.google.cloud.backupdr.v1beta.UpdateRestoreTemplateRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_DELETE_RESTORE_TEMPLATE:
+          serviceImpl.deleteRestoreTemplate(
+              (com.google.cloud.backupdr.v1beta.DeleteRestoreTemplateRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_RUN_RESTORE_TEMPLATE:
+          serviceImpl.runRestoreTemplate(
+              (com.google.cloud.backupdr.v1beta.RunRestoreTemplateRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_GET_RESTORE_TEMPLATE_EXECUTION:
+          serviceImpl.getRestoreTemplateExecution(
+              (com.google.cloud.backupdr.v1beta.GetRestoreTemplateExecutionRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.backupdr.v1beta.RestoreTemplateExecution>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_RESTORE_TEMPLATE_EXECUTIONS:
+          serviceImpl.listRestoreTemplateExecutions(
+              (com.google.cloud.backupdr.v1beta.ListRestoreTemplateExecutionsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.backupdr.v1beta.ListRestoreTemplateExecutionsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_TRIGGER_RESTORE_CLEANUP:
+          serviceImpl.triggerRestoreCleanup(
+              (com.google.cloud.backupdr.v1beta.TriggerRestoreCleanupRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_CREATE_RESTORE_VERIFICATION_PLAN:
+          serviceImpl.createRestoreVerificationPlan(
+              (com.google.cloud.backupdr.v1beta.CreateRestoreVerificationPlanRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_CREATE_RESTORE_VERIFICATION_PLAN_ASSOCIATION:
+          serviceImpl.createRestoreVerificationPlanAssociation(
+              (com.google.cloud.backupdr.v1beta.CreateRestoreVerificationPlanAssociationRequest)
+                  request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_GET_RESTORE_VERIFICATION_PLAN_ASSOCIATION:
+          serviceImpl.getRestoreVerificationPlanAssociation(
+              (com.google.cloud.backupdr.v1beta.GetRestoreVerificationPlanAssociationRequest)
+                  request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.backupdr.v1beta.RestoreVerificationPlanAssociation>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_RESTORE_VERIFICATION_PLAN_ASSOCIATIONS:
+          serviceImpl.listRestoreVerificationPlanAssociations(
+              (com.google.cloud.backupdr.v1beta.ListRestoreVerificationPlanAssociationsRequest)
+                  request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.backupdr.v1beta
+                          .ListRestoreVerificationPlanAssociationsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_DELETE_RESTORE_VERIFICATION_PLAN_ASSOCIATION:
+          serviceImpl.deleteRestoreVerificationPlanAssociation(
+              (com.google.cloud.backupdr.v1beta.DeleteRestoreVerificationPlanAssociationRequest)
+                  request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_TRIGGER_RESTORE_VERIFICATION:
+          serviceImpl.triggerRestoreVerification(
+              (com.google.cloud.backupdr.v1beta.TriggerRestoreVerificationRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_GET_RESTORE_VERIFICATION_PLAN:
+          serviceImpl.getRestoreVerificationPlan(
+              (com.google.cloud.backupdr.v1beta.GetRestoreVerificationPlanRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.backupdr.v1beta.RestoreVerificationPlan>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_RESTORE_VERIFICATION_PLANS:
+          serviceImpl.listRestoreVerificationPlans(
+              (com.google.cloud.backupdr.v1beta.ListRestoreVerificationPlansRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.backupdr.v1beta.ListRestoreVerificationPlansResponse>)
+                  responseObserver);
+          break;
+        case METHODID_DELETE_RESTORE_VERIFICATION_PLAN:
+          serviceImpl.deleteRestoreVerificationPlan(
+              (com.google.cloud.backupdr.v1beta.DeleteRestoreVerificationPlanRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         case METHODID_CREATE_BACKUP_VAULT:
@@ -6592,6 +9038,130 @@ public final class BackupDRGrpc {
                 new MethodHandlers<
                     com.google.cloud.backupdr.v1beta.DeleteManagementServerRequest,
                     com.google.longrunning.Operation>(service, METHODID_DELETE_MANAGEMENT_SERVER)))
+        .addMethod(
+            getCreateRestoreTemplateMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.backupdr.v1beta.CreateRestoreTemplateRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_RESTORE_TEMPLATE)))
+        .addMethod(
+            getGetRestoreTemplateMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.backupdr.v1beta.GetRestoreTemplateRequest,
+                    com.google.cloud.backupdr.v1beta.RestoreTemplate>(
+                    service, METHODID_GET_RESTORE_TEMPLATE)))
+        .addMethod(
+            getListRestoreTemplatesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.backupdr.v1beta.ListRestoreTemplatesRequest,
+                    com.google.cloud.backupdr.v1beta.ListRestoreTemplatesResponse>(
+                    service, METHODID_LIST_RESTORE_TEMPLATES)))
+        .addMethod(
+            getUpdateRestoreTemplateMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.backupdr.v1beta.UpdateRestoreTemplateRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_RESTORE_TEMPLATE)))
+        .addMethod(
+            getDeleteRestoreTemplateMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.backupdr.v1beta.DeleteRestoreTemplateRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_RESTORE_TEMPLATE)))
+        .addMethod(
+            getRunRestoreTemplateMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.backupdr.v1beta.RunRestoreTemplateRequest,
+                    com.google.longrunning.Operation>(service, METHODID_RUN_RESTORE_TEMPLATE)))
+        .addMethod(
+            getGetRestoreTemplateExecutionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.backupdr.v1beta.GetRestoreTemplateExecutionRequest,
+                    com.google.cloud.backupdr.v1beta.RestoreTemplateExecution>(
+                    service, METHODID_GET_RESTORE_TEMPLATE_EXECUTION)))
+        .addMethod(
+            getListRestoreTemplateExecutionsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.backupdr.v1beta.ListRestoreTemplateExecutionsRequest,
+                    com.google.cloud.backupdr.v1beta.ListRestoreTemplateExecutionsResponse>(
+                    service, METHODID_LIST_RESTORE_TEMPLATE_EXECUTIONS)))
+        .addMethod(
+            getTriggerRestoreCleanupMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.backupdr.v1beta.TriggerRestoreCleanupRequest,
+                    com.google.longrunning.Operation>(service, METHODID_TRIGGER_RESTORE_CLEANUP)))
+        .addMethod(
+            getCreateRestoreVerificationPlanMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.backupdr.v1beta.CreateRestoreVerificationPlanRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_CREATE_RESTORE_VERIFICATION_PLAN)))
+        .addMethod(
+            getCreateRestoreVerificationPlanAssociationMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.backupdr.v1beta
+                        .CreateRestoreVerificationPlanAssociationRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_CREATE_RESTORE_VERIFICATION_PLAN_ASSOCIATION)))
+        .addMethod(
+            getGetRestoreVerificationPlanAssociationMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.backupdr.v1beta.GetRestoreVerificationPlanAssociationRequest,
+                    com.google.cloud.backupdr.v1beta.RestoreVerificationPlanAssociation>(
+                    service, METHODID_GET_RESTORE_VERIFICATION_PLAN_ASSOCIATION)))
+        .addMethod(
+            getListRestoreVerificationPlanAssociationsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.backupdr.v1beta.ListRestoreVerificationPlanAssociationsRequest,
+                    com.google.cloud.backupdr.v1beta
+                        .ListRestoreVerificationPlanAssociationsResponse>(
+                    service, METHODID_LIST_RESTORE_VERIFICATION_PLAN_ASSOCIATIONS)))
+        .addMethod(
+            getDeleteRestoreVerificationPlanAssociationMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.backupdr.v1beta
+                        .DeleteRestoreVerificationPlanAssociationRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_DELETE_RESTORE_VERIFICATION_PLAN_ASSOCIATION)))
+        .addMethod(
+            getTriggerRestoreVerificationMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.backupdr.v1beta.TriggerRestoreVerificationRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_TRIGGER_RESTORE_VERIFICATION)))
+        .addMethod(
+            getGetRestoreVerificationPlanMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.backupdr.v1beta.GetRestoreVerificationPlanRequest,
+                    com.google.cloud.backupdr.v1beta.RestoreVerificationPlan>(
+                    service, METHODID_GET_RESTORE_VERIFICATION_PLAN)))
+        .addMethod(
+            getListRestoreVerificationPlansMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.backupdr.v1beta.ListRestoreVerificationPlansRequest,
+                    com.google.cloud.backupdr.v1beta.ListRestoreVerificationPlansResponse>(
+                    service, METHODID_LIST_RESTORE_VERIFICATION_PLANS)))
+        .addMethod(
+            getDeleteRestoreVerificationPlanMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.backupdr.v1beta.DeleteRestoreVerificationPlanRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_DELETE_RESTORE_VERIFICATION_PLAN)))
         .addMethod(
             getCreateBackupVaultMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -6952,6 +9522,24 @@ public final class BackupDRGrpc {
                       .addMethod(getGetManagementServerMethod())
                       .addMethod(getCreateManagementServerMethod())
                       .addMethod(getDeleteManagementServerMethod())
+                      .addMethod(getCreateRestoreTemplateMethod())
+                      .addMethod(getGetRestoreTemplateMethod())
+                      .addMethod(getListRestoreTemplatesMethod())
+                      .addMethod(getUpdateRestoreTemplateMethod())
+                      .addMethod(getDeleteRestoreTemplateMethod())
+                      .addMethod(getRunRestoreTemplateMethod())
+                      .addMethod(getGetRestoreTemplateExecutionMethod())
+                      .addMethod(getListRestoreTemplateExecutionsMethod())
+                      .addMethod(getTriggerRestoreCleanupMethod())
+                      .addMethod(getCreateRestoreVerificationPlanMethod())
+                      .addMethod(getCreateRestoreVerificationPlanAssociationMethod())
+                      .addMethod(getGetRestoreVerificationPlanAssociationMethod())
+                      .addMethod(getListRestoreVerificationPlanAssociationsMethod())
+                      .addMethod(getDeleteRestoreVerificationPlanAssociationMethod())
+                      .addMethod(getTriggerRestoreVerificationMethod())
+                      .addMethod(getGetRestoreVerificationPlanMethod())
+                      .addMethod(getListRestoreVerificationPlansMethod())
+                      .addMethod(getDeleteRestoreVerificationPlanMethod())
                       .addMethod(getCreateBackupVaultMethod())
                       .addMethod(getListBackupVaultsMethod())
                       .addMethod(getFetchUsableBackupVaultsMethod())

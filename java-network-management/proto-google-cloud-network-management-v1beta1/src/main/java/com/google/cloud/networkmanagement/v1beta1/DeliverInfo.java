@@ -298,6 +298,16 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessage
      * <code>DMS_PRIVATE_CONNECTION = 21;</code>
      */
     DMS_PRIVATE_CONNECTION(21),
+    /**
+     *
+     *
+     * <pre>
+     * Target is a Datastream Private Connection. Used only for return traces.
+     * </pre>
+     *
+     * <code>DATASTREAM_PRIVATE_CONNECTION = 22;</code>
+     */
+    DATASTREAM_PRIVATE_CONNECTION(22),
     UNRECOGNIZED(-1),
     ;
 
@@ -545,6 +555,17 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessage
      */
     public static final int DMS_PRIVATE_CONNECTION_VALUE = 21;
 
+    /**
+     *
+     *
+     * <pre>
+     * Target is a Datastream Private Connection. Used only for return traces.
+     * </pre>
+     *
+     * <code>DATASTREAM_PRIVATE_CONNECTION = 22;</code>
+     */
+    public static final int DATASTREAM_PRIVATE_CONNECTION_VALUE = 22;
+
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -611,6 +632,8 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessage
           return CLOUD_RUN_JOB;
         case 21:
           return DMS_PRIVATE_CONNECTION;
+        case 22:
+          return DATASTREAM_PRIVATE_CONNECTION;
         default:
           return null;
       }
@@ -974,6 +997,9 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * URI of the resource that the packet is delivered to.
+   * For example:
+   * * `"projects/{project}/zones/{zone}/instances/{instance}"`
+   * * `"projects/{project}/regions/{region}/networkEndpointGroups/{network_endpoint_group}"`
    * </pre>
    *
    * <code>string resource_uri = 2;</code>
@@ -998,6 +1024,9 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * URI of the resource that the packet is delivered to.
+   * For example:
+   * * `"projects/{project}/zones/{zone}/instances/{instance}"`
+   * * `"projects/{project}/regions/{region}/networkEndpointGroups/{network_endpoint_group}"`
    * </pre>
    *
    * <code>string resource_uri = 2;</code>
@@ -1766,6 +1795,9 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * URI of the resource that the packet is delivered to.
+     * For example:
+     * * `"projects/{project}/zones/{zone}/instances/{instance}"`
+     * * `"projects/{project}/regions/{region}/networkEndpointGroups/{network_endpoint_group}"`
      * </pre>
      *
      * <code>string resource_uri = 2;</code>
@@ -1789,6 +1821,9 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * URI of the resource that the packet is delivered to.
+     * For example:
+     * * `"projects/{project}/zones/{zone}/instances/{instance}"`
+     * * `"projects/{project}/regions/{region}/networkEndpointGroups/{network_endpoint_group}"`
      * </pre>
      *
      * <code>string resource_uri = 2;</code>
@@ -1812,6 +1847,9 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * URI of the resource that the packet is delivered to.
+     * For example:
+     * * `"projects/{project}/zones/{zone}/instances/{instance}"`
+     * * `"projects/{project}/regions/{region}/networkEndpointGroups/{network_endpoint_group}"`
      * </pre>
      *
      * <code>string resource_uri = 2;</code>
@@ -1834,6 +1872,9 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * URI of the resource that the packet is delivered to.
+     * For example:
+     * * `"projects/{project}/zones/{zone}/instances/{instance}"`
+     * * `"projects/{project}/regions/{region}/networkEndpointGroups/{network_endpoint_group}"`
      * </pre>
      *
      * <code>string resource_uri = 2;</code>
@@ -1852,6 +1893,9 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * URI of the resource that the packet is delivered to.
+     * For example:
+     * * `"projects/{project}/zones/{zone}/instances/{instance}"`
+     * * `"projects/{project}/regions/{region}/networkEndpointGroups/{network_endpoint_group}"`
      * </pre>
      *
      * <code>string resource_uri = 2;</code>

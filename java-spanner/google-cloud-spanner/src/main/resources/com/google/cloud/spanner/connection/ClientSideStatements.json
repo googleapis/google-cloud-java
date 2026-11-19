@@ -924,7 +924,7 @@
 			"propertyName": "PROTO_DESCRIPTORS_FILE_PATH",
 			"separator": "=",
 			"allowedValues": "'((\\S+)|())'",
-			"converterName": "ClientSideStatementValueConverters$ProtoDescriptorsFileConverter"
+			"converterName": "ClientSideStatementValueConverters$StringValueConverter"
 		}
 	},
 	{

@@ -67,6 +67,8 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
     conditions_ = java.util.Collections.emptyList();
     logUri_ = "";
     creator_ = "";
+    client_ = "";
+    clientVersion_ = "";
     etag_ = "";
   }
 
@@ -711,7 +713,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
    *
    * Note that this value might not be what was used
    * as input. For example, if ALPHA was provided as input in the parent
-   * resource, but only BETA and GA-level features are were, this field will be
+   * resource, but only BETA and GA-level features are used, this field will be
    * BETA.
    * </pre>
    *
@@ -735,7 +737,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
    *
    * Note that this value might not be what was used
    * as input. For example, if ALPHA was provided as input in the parent
-   * resource, but only BETA and GA-level features are were, this field will be
+   * resource, but only BETA and GA-level features are used, this field will be
    * BETA.
    * </pre>
    *
@@ -1045,7 +1047,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Holds the single container that defines the unit of execution for this
+   * Holds the list which define the units of execution for this
    * Revision.
    * </pre>
    *
@@ -1060,7 +1062,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Holds the single container that defines the unit of execution for this
+   * Holds the list which define the units of execution for this
    * Revision.
    * </pre>
    *
@@ -1076,7 +1078,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Holds the single container that defines the unit of execution for this
+   * Holds the list which define the units of execution for this
    * Revision.
    * </pre>
    *
@@ -1091,7 +1093,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Holds the single container that defines the unit of execution for this
+   * Holds the list which define the units of execution for this
    * Revision.
    * </pre>
    *
@@ -1106,7 +1108,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Holds the single container that defines the unit of execution for this
+   * Holds the list which define the units of execution for this
    * Revision.
    * </pre>
    *
@@ -1115,6 +1117,65 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
   @java.lang.Override
   public com.google.cloud.run.v2.ContainerOrBuilder getContainersOrBuilder(int index) {
     return containers_.get(index);
+  }
+
+  public static final int SANDBOXES_FIELD_NUMBER = 56;
+  private com.google.cloud.run.v2.SandboxConfiguration sandboxes_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Configuration for sandboxes.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.run.v2.SandboxConfiguration sandboxes = 56 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the sandboxes field is set.
+   */
+  @java.lang.Override
+  public boolean hasSandboxes() {
+    return ((bitField0_ & 0x00000080) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Configuration for sandboxes.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.run.v2.SandboxConfiguration sandboxes = 56 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The sandboxes.
+   */
+  @java.lang.Override
+  public com.google.cloud.run.v2.SandboxConfiguration getSandboxes() {
+    return sandboxes_ == null
+        ? com.google.cloud.run.v2.SandboxConfiguration.getDefaultInstance()
+        : sandboxes_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Configuration for sandboxes.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.run.v2.SandboxConfiguration sandboxes = 56 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.run.v2.SandboxConfigurationOrBuilder getSandboxesOrBuilder() {
+    return sandboxes_ == null
+        ? com.google.cloud.run.v2.SandboxConfiguration.getDefaultInstance()
+        : sandboxes_;
   }
 
   public static final int VOLUMES_FIELD_NUMBER = 18;
@@ -1303,7 +1364,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasServiceMesh() {
-    return ((bitField0_ & 0x00000080) != 0);
+    return ((bitField0_ & 0x00000100) != 0);
   }
 
   /**
@@ -1399,7 +1460,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasEncryptionKeyShutdownDuration() {
-    return ((bitField0_ & 0x00000100) != 0);
+    return ((bitField0_ & 0x00000200) != 0);
   }
 
   /**
@@ -1685,7 +1746,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasScalingStatus() {
-    return ((bitField0_ & 0x00000200) != 0);
+    return ((bitField0_ & 0x00000400) != 0);
   }
 
   /**
@@ -1742,7 +1803,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasNodeSelector() {
-    return ((bitField0_ & 0x00000400) != 0);
+    return ((bitField0_ & 0x00000800) != 0);
   }
 
   /**
@@ -1779,6 +1840,66 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
         : nodeSelector_;
   }
 
+  public static final int WORKLOAD_IDENTITY_CONFIG_FIELD_NUMBER = 52;
+  private com.google.cloud.run.v2.WorkloadIdentityConfig workloadIdentityConfig_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Revision's workload identity settings.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.run.v2.WorkloadIdentityConfig workload_identity_config = 52 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the workloadIdentityConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasWorkloadIdentityConfig() {
+    return ((bitField0_ & 0x00001000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Revision's workload identity settings.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.run.v2.WorkloadIdentityConfig workload_identity_config = 52 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The workloadIdentityConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.run.v2.WorkloadIdentityConfig getWorkloadIdentityConfig() {
+    return workloadIdentityConfig_ == null
+        ? com.google.cloud.run.v2.WorkloadIdentityConfig.getDefaultInstance()
+        : workloadIdentityConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Revision's workload identity settings.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.run.v2.WorkloadIdentityConfig workload_identity_config = 52 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.run.v2.WorkloadIdentityConfigOrBuilder
+      getWorkloadIdentityConfigOrBuilder() {
+    return workloadIdentityConfig_ == null
+        ? com.google.cloud.run.v2.WorkloadIdentityConfig.getDefaultInstance()
+        : workloadIdentityConfig_;
+  }
+
   public static final int GPU_ZONAL_REDUNDANCY_DISABLED_FIELD_NUMBER = 48;
   private boolean gpuZonalRedundancyDisabled_ = false;
 
@@ -1798,7 +1919,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasGpuZonalRedundancyDisabled() {
-    return ((bitField0_ & 0x00000800) != 0);
+    return ((bitField0_ & 0x00002000) != 0);
   }
 
   /**
@@ -1871,6 +1992,171 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int CLIENT_FIELD_NUMBER = 53;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object client_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Arbitrary identifier for the API client.
+   * </pre>
+   *
+   * <code>string client = 53 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The client.
+   */
+  @java.lang.Override
+  public java.lang.String getClient() {
+    java.lang.Object ref = client_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      client_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Arbitrary identifier for the API client.
+   * </pre>
+   *
+   * <code>string client = 53 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for client.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getClientBytes() {
+    java.lang.Object ref = client_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      client_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int CLIENT_VERSION_FIELD_NUMBER = 54;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object clientVersion_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Arbitrary version identifier for the API client.
+   * </pre>
+   *
+   * <code>string client_version = 54 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The clientVersion.
+   */
+  @java.lang.Override
+  public java.lang.String getClientVersion() {
+    java.lang.Object ref = clientVersion_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      clientVersion_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Arbitrary version identifier for the API client.
+   * </pre>
+   *
+   * <code>string client_version = 54 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for clientVersion.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getClientVersionBytes() {
+    java.lang.Object ref = clientVersion_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      clientVersion_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int AMBIENT_NETWORKING_FIELD_NUMBER = 59;
+  private com.google.cloud.run.v2.AmbientNetworking ambientNetworking_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The ambient networking configuration for this revision.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.run.v2.AmbientNetworking ambient_networking = 59 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the ambientNetworking field is set.
+   */
+  @java.lang.Override
+  public boolean hasAmbientNetworking() {
+    return ((bitField0_ & 0x00004000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The ambient networking configuration for this revision.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.run.v2.AmbientNetworking ambient_networking = 59 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The ambientNetworking.
+   */
+  @java.lang.Override
+  public com.google.cloud.run.v2.AmbientNetworking getAmbientNetworking() {
+    return ambientNetworking_ == null
+        ? com.google.cloud.run.v2.AmbientNetworking.getDefaultInstance()
+        : ambientNetworking_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The ambient networking configuration for this revision.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.run.v2.AmbientNetworking ambient_networking = 59 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.run.v2.AmbientNetworkingOrBuilder getAmbientNetworkingOrBuilder() {
+    return ambientNetworking_ == null
+        ? com.google.cloud.run.v2.AmbientNetworking.getDefaultInstance()
+        : ambientNetworking_;
   }
 
   public static final int ETAG_FIELD_NUMBER = 99;
@@ -1999,7 +2285,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(encryptionKey_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 21, encryptionKey_);
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       output.writeMessage(22, getServiceMesh());
     }
     if (encryptionKeyRevocationAction_
@@ -2008,7 +2294,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
             .getNumber()) {
       output.writeEnum(23, encryptionKeyRevocationAction_);
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       output.writeMessage(24, getEncryptionKeyShutdownDuration());
     }
     if (reconciling_ != false) {
@@ -2032,17 +2318,32 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
     if (sessionAffinity_ != false) {
       output.writeBool(38, sessionAffinity_);
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       output.writeMessage(39, getScalingStatus());
     }
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       output.writeMessage(40, getNodeSelector());
     }
-    if (((bitField0_ & 0x00000800) != 0)) {
+    if (((bitField0_ & 0x00002000) != 0)) {
       output.writeBool(48, gpuZonalRedundancyDisabled_);
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(creator_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 49, creator_);
+    }
+    if (((bitField0_ & 0x00001000) != 0)) {
+      output.writeMessage(52, getWorkloadIdentityConfig());
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(client_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 53, client_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(clientVersion_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 54, clientVersion_);
+    }
+    if (((bitField0_ & 0x00000080) != 0)) {
+      output.writeMessage(56, getSandboxes());
+    }
+    if (((bitField0_ & 0x00004000) != 0)) {
+      output.writeMessage(59, getAmbientNetworking());
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(etag_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 99, etag_);
@@ -2129,7 +2430,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(encryptionKey_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(21, encryptionKey_);
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(22, getServiceMesh());
     }
     if (encryptionKeyRevocationAction_
@@ -2139,7 +2440,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
       size +=
           com.google.protobuf.CodedOutputStream.computeEnumSize(23, encryptionKeyRevocationAction_);
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               24, getEncryptionKeyShutdownDuration());
@@ -2167,18 +2468,34 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
     if (sessionAffinity_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(38, sessionAffinity_);
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(39, getScalingStatus());
     }
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(40, getNodeSelector());
     }
-    if (((bitField0_ & 0x00000800) != 0)) {
+    if (((bitField0_ & 0x00002000) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeBoolSize(48, gpuZonalRedundancyDisabled_);
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(creator_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(49, creator_);
+    }
+    if (((bitField0_ & 0x00001000) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(52, getWorkloadIdentityConfig());
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(client_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(53, client_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(clientVersion_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(54, clientVersion_);
+    }
+    if (((bitField0_ & 0x00000080) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(56, getSandboxes());
+    }
+    if (((bitField0_ & 0x00004000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(59, getAmbientNetworking());
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(etag_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(99, etag_);
@@ -2237,6 +2554,10 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
     }
     if (!getServiceAccount().equals(other.getServiceAccount())) return false;
     if (!getContainersList().equals(other.getContainersList())) return false;
+    if (hasSandboxes() != other.hasSandboxes()) return false;
+    if (hasSandboxes()) {
+      if (!getSandboxes().equals(other.getSandboxes())) return false;
+    }
     if (!getVolumesList().equals(other.getVolumesList())) return false;
     if (executionEnvironment_ != other.executionEnvironment_) return false;
     if (!getEncryptionKey().equals(other.getEncryptionKey())) return false;
@@ -2265,11 +2586,21 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
     if (hasNodeSelector()) {
       if (!getNodeSelector().equals(other.getNodeSelector())) return false;
     }
+    if (hasWorkloadIdentityConfig() != other.hasWorkloadIdentityConfig()) return false;
+    if (hasWorkloadIdentityConfig()) {
+      if (!getWorkloadIdentityConfig().equals(other.getWorkloadIdentityConfig())) return false;
+    }
     if (hasGpuZonalRedundancyDisabled() != other.hasGpuZonalRedundancyDisabled()) return false;
     if (hasGpuZonalRedundancyDisabled()) {
       if (getGpuZonalRedundancyDisabled() != other.getGpuZonalRedundancyDisabled()) return false;
     }
     if (!getCreator().equals(other.getCreator())) return false;
+    if (!getClient().equals(other.getClient())) return false;
+    if (!getClientVersion().equals(other.getClientVersion())) return false;
+    if (hasAmbientNetworking() != other.hasAmbientNetworking()) return false;
+    if (hasAmbientNetworking()) {
+      if (!getAmbientNetworking().equals(other.getAmbientNetworking())) return false;
+    }
     if (!getEtag().equals(other.getEtag())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -2336,6 +2667,10 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + CONTAINERS_FIELD_NUMBER;
       hash = (53 * hash) + getContainersList().hashCode();
     }
+    if (hasSandboxes()) {
+      hash = (37 * hash) + SANDBOXES_FIELD_NUMBER;
+      hash = (53 * hash) + getSandboxes().hashCode();
+    }
     if (getVolumesCount() > 0) {
       hash = (37 * hash) + VOLUMES_FIELD_NUMBER;
       hash = (53 * hash) + getVolumesList().hashCode();
@@ -2376,6 +2711,10 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + NODE_SELECTOR_FIELD_NUMBER;
       hash = (53 * hash) + getNodeSelector().hashCode();
     }
+    if (hasWorkloadIdentityConfig()) {
+      hash = (37 * hash) + WORKLOAD_IDENTITY_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getWorkloadIdentityConfig().hashCode();
+    }
     if (hasGpuZonalRedundancyDisabled()) {
       hash = (37 * hash) + GPU_ZONAL_REDUNDANCY_DISABLED_FIELD_NUMBER;
       hash =
@@ -2383,6 +2722,14 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
     }
     hash = (37 * hash) + CREATOR_FIELD_NUMBER;
     hash = (53 * hash) + getCreator().hashCode();
+    hash = (37 * hash) + CLIENT_FIELD_NUMBER;
+    hash = (53 * hash) + getClient().hashCode();
+    hash = (37 * hash) + CLIENT_VERSION_FIELD_NUMBER;
+    hash = (53 * hash) + getClientVersion().hashCode();
+    if (hasAmbientNetworking()) {
+      hash = (37 * hash) + AMBIENT_NETWORKING_FIELD_NUMBER;
+      hash = (53 * hash) + getAmbientNetworking().hashCode();
+    }
     hash = (37 * hash) + ETAG_FIELD_NUMBER;
     hash = (53 * hash) + getEtag().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
@@ -2561,12 +2908,15 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
         internalGetVpcAccessFieldBuilder();
         internalGetTimeoutFieldBuilder();
         internalGetContainersFieldBuilder();
+        internalGetSandboxesFieldBuilder();
         internalGetVolumesFieldBuilder();
         internalGetServiceMeshFieldBuilder();
         internalGetEncryptionKeyShutdownDurationFieldBuilder();
         internalGetConditionsFieldBuilder();
         internalGetScalingStatusFieldBuilder();
         internalGetNodeSelectorFieldBuilder();
+        internalGetWorkloadIdentityConfigFieldBuilder();
+        internalGetAmbientNetworkingFieldBuilder();
       }
     }
 
@@ -2626,13 +2976,18 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
         containersBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00010000);
+      sandboxes_ = null;
+      if (sandboxesBuilder_ != null) {
+        sandboxesBuilder_.dispose();
+        sandboxesBuilder_ = null;
+      }
       if (volumesBuilder_ == null) {
         volumes_ = java.util.Collections.emptyList();
       } else {
         volumes_ = null;
         volumesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00020000);
+      bitField0_ = (bitField0_ & ~0x00040000);
       executionEnvironment_ = 0;
       encryptionKey_ = "";
       serviceMesh_ = null;
@@ -2653,7 +3008,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
         conditions_ = null;
         conditionsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x01000000);
+      bitField0_ = (bitField0_ & ~0x02000000);
       observedGeneration_ = 0L;
       logUri_ = "";
       satisfiesPzs_ = false;
@@ -2668,8 +3023,20 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
         nodeSelectorBuilder_.dispose();
         nodeSelectorBuilder_ = null;
       }
+      workloadIdentityConfig_ = null;
+      if (workloadIdentityConfigBuilder_ != null) {
+        workloadIdentityConfigBuilder_.dispose();
+        workloadIdentityConfigBuilder_ = null;
+      }
       gpuZonalRedundancyDisabled_ = false;
       creator_ = "";
+      client_ = "";
+      clientVersion_ = "";
+      ambientNetworking_ = null;
+      if (ambientNetworkingBuilder_ != null) {
+        ambientNetworkingBuilder_.dispose();
+        ambientNetworkingBuilder_ = null;
+      }
       etag_ = "";
       return this;
     }
@@ -2719,18 +3086,18 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
         result.containers_ = containersBuilder_.build();
       }
       if (volumesBuilder_ == null) {
-        if (((bitField0_ & 0x00020000) != 0)) {
+        if (((bitField0_ & 0x00040000) != 0)) {
           volumes_ = java.util.Collections.unmodifiableList(volumes_);
-          bitField0_ = (bitField0_ & ~0x00020000);
+          bitField0_ = (bitField0_ & ~0x00040000);
         }
         result.volumes_ = volumes_;
       } else {
         result.volumes_ = volumesBuilder_.build();
       }
       if (conditionsBuilder_ == null) {
-        if (((bitField0_ & 0x01000000) != 0)) {
+        if (((bitField0_ & 0x02000000) != 0)) {
           conditions_ = java.util.Collections.unmodifiableList(conditions_);
-          bitField0_ = (bitField0_ & ~0x01000000);
+          bitField0_ = (bitField0_ & ~0x02000000);
         }
         result.conditions_ = conditions_;
       } else {
@@ -2798,54 +3165,54 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x00008000) != 0)) {
         result.serviceAccount_ = serviceAccount_;
       }
-      if (((from_bitField0_ & 0x00040000) != 0)) {
-        result.executionEnvironment_ = executionEnvironment_;
-      }
-      if (((from_bitField0_ & 0x00080000) != 0)) {
-        result.encryptionKey_ = encryptionKey_;
-      }
-      if (((from_bitField0_ & 0x00100000) != 0)) {
-        result.serviceMesh_ =
-            serviceMeshBuilder_ == null ? serviceMesh_ : serviceMeshBuilder_.build();
+      if (((from_bitField0_ & 0x00020000) != 0)) {
+        result.sandboxes_ = sandboxesBuilder_ == null ? sandboxes_ : sandboxesBuilder_.build();
         to_bitField0_ |= 0x00000080;
       }
+      if (((from_bitField0_ & 0x00080000) != 0)) {
+        result.executionEnvironment_ = executionEnvironment_;
+      }
+      if (((from_bitField0_ & 0x00100000) != 0)) {
+        result.encryptionKey_ = encryptionKey_;
+      }
       if (((from_bitField0_ & 0x00200000) != 0)) {
-        result.encryptionKeyRevocationAction_ = encryptionKeyRevocationAction_;
+        result.serviceMesh_ =
+            serviceMeshBuilder_ == null ? serviceMesh_ : serviceMeshBuilder_.build();
+        to_bitField0_ |= 0x00000100;
       }
       if (((from_bitField0_ & 0x00400000) != 0)) {
+        result.encryptionKeyRevocationAction_ = encryptionKeyRevocationAction_;
+      }
+      if (((from_bitField0_ & 0x00800000) != 0)) {
         result.encryptionKeyShutdownDuration_ =
             encryptionKeyShutdownDurationBuilder_ == null
                 ? encryptionKeyShutdownDuration_
                 : encryptionKeyShutdownDurationBuilder_.build();
-        to_bitField0_ |= 0x00000100;
-      }
-      if (((from_bitField0_ & 0x00800000) != 0)) {
-        result.reconciling_ = reconciling_;
-      }
-      if (((from_bitField0_ & 0x02000000) != 0)) {
-        result.observedGeneration_ = observedGeneration_;
-      }
-      if (((from_bitField0_ & 0x04000000) != 0)) {
-        result.logUri_ = logUri_;
-      }
-      if (((from_bitField0_ & 0x08000000) != 0)) {
-        result.satisfiesPzs_ = satisfiesPzs_;
-      }
-      if (((from_bitField0_ & 0x10000000) != 0)) {
-        result.sessionAffinity_ = sessionAffinity_;
-      }
-      if (((from_bitField0_ & 0x20000000) != 0)) {
-        result.scalingStatus_ =
-            scalingStatusBuilder_ == null ? scalingStatus_ : scalingStatusBuilder_.build();
         to_bitField0_ |= 0x00000200;
       }
+      if (((from_bitField0_ & 0x01000000) != 0)) {
+        result.reconciling_ = reconciling_;
+      }
+      if (((from_bitField0_ & 0x04000000) != 0)) {
+        result.observedGeneration_ = observedGeneration_;
+      }
+      if (((from_bitField0_ & 0x08000000) != 0)) {
+        result.logUri_ = logUri_;
+      }
+      if (((from_bitField0_ & 0x10000000) != 0)) {
+        result.satisfiesPzs_ = satisfiesPzs_;
+      }
+      if (((from_bitField0_ & 0x20000000) != 0)) {
+        result.sessionAffinity_ = sessionAffinity_;
+      }
       if (((from_bitField0_ & 0x40000000) != 0)) {
-        result.nodeSelector_ =
-            nodeSelectorBuilder_ == null ? nodeSelector_ : nodeSelectorBuilder_.build();
+        result.scalingStatus_ =
+            scalingStatusBuilder_ == null ? scalingStatus_ : scalingStatusBuilder_.build();
         to_bitField0_ |= 0x00000400;
       }
       if (((from_bitField0_ & 0x80000000) != 0)) {
-        result.gpuZonalRedundancyDisabled_ = gpuZonalRedundancyDisabled_;
+        result.nodeSelector_ =
+            nodeSelectorBuilder_ == null ? nodeSelector_ : nodeSelectorBuilder_.build();
         to_bitField0_ |= 0x00000800;
       }
       result.bitField0_ |= to_bitField0_;
@@ -2853,12 +3220,38 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
 
     private void buildPartial1(com.google.cloud.run.v2.Revision result) {
       int from_bitField1_ = bitField1_;
+      int to_bitField0_ = 0;
       if (((from_bitField1_ & 0x00000001) != 0)) {
-        result.creator_ = creator_;
+        result.workloadIdentityConfig_ =
+            workloadIdentityConfigBuilder_ == null
+                ? workloadIdentityConfig_
+                : workloadIdentityConfigBuilder_.build();
+        to_bitField0_ |= 0x00001000;
       }
       if (((from_bitField1_ & 0x00000002) != 0)) {
+        result.gpuZonalRedundancyDisabled_ = gpuZonalRedundancyDisabled_;
+        to_bitField0_ |= 0x00002000;
+      }
+      if (((from_bitField1_ & 0x00000004) != 0)) {
+        result.creator_ = creator_;
+      }
+      if (((from_bitField1_ & 0x00000008) != 0)) {
+        result.client_ = client_;
+      }
+      if (((from_bitField1_ & 0x00000010) != 0)) {
+        result.clientVersion_ = clientVersion_;
+      }
+      if (((from_bitField1_ & 0x00000020) != 0)) {
+        result.ambientNetworking_ =
+            ambientNetworkingBuilder_ == null
+                ? ambientNetworking_
+                : ambientNetworkingBuilder_.build();
+        to_bitField0_ |= 0x00004000;
+      }
+      if (((from_bitField1_ & 0x00000040) != 0)) {
         result.etag_ = etag_;
       }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -2954,11 +3347,14 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
           }
         }
       }
+      if (other.hasSandboxes()) {
+        mergeSandboxes(other.getSandboxes());
+      }
       if (volumesBuilder_ == null) {
         if (!other.volumes_.isEmpty()) {
           if (volumes_.isEmpty()) {
             volumes_ = other.volumes_;
-            bitField0_ = (bitField0_ & ~0x00020000);
+            bitField0_ = (bitField0_ & ~0x00040000);
           } else {
             ensureVolumesIsMutable();
             volumes_.addAll(other.volumes_);
@@ -2971,7 +3367,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
             volumesBuilder_.dispose();
             volumesBuilder_ = null;
             volumes_ = other.volumes_;
-            bitField0_ = (bitField0_ & ~0x00020000);
+            bitField0_ = (bitField0_ & ~0x00040000);
             volumesBuilder_ =
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
                     ? internalGetVolumesFieldBuilder()
@@ -2986,7 +3382,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
       }
       if (!other.getEncryptionKey().isEmpty()) {
         encryptionKey_ = other.encryptionKey_;
-        bitField0_ |= 0x00080000;
+        bitField0_ |= 0x00100000;
         onChanged();
       }
       if (other.hasServiceMesh()) {
@@ -3005,7 +3401,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
         if (!other.conditions_.isEmpty()) {
           if (conditions_.isEmpty()) {
             conditions_ = other.conditions_;
-            bitField0_ = (bitField0_ & ~0x01000000);
+            bitField0_ = (bitField0_ & ~0x02000000);
           } else {
             ensureConditionsIsMutable();
             conditions_.addAll(other.conditions_);
@@ -3018,7 +3414,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
             conditionsBuilder_.dispose();
             conditionsBuilder_ = null;
             conditions_ = other.conditions_;
-            bitField0_ = (bitField0_ & ~0x01000000);
+            bitField0_ = (bitField0_ & ~0x02000000);
             conditionsBuilder_ =
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
                     ? internalGetConditionsFieldBuilder()
@@ -3033,7 +3429,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
       }
       if (!other.getLogUri().isEmpty()) {
         logUri_ = other.logUri_;
-        bitField0_ |= 0x04000000;
+        bitField0_ |= 0x08000000;
         onChanged();
       }
       if (other.getSatisfiesPzs() != false) {
@@ -3048,17 +3444,33 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
       if (other.hasNodeSelector()) {
         mergeNodeSelector(other.getNodeSelector());
       }
+      if (other.hasWorkloadIdentityConfig()) {
+        mergeWorkloadIdentityConfig(other.getWorkloadIdentityConfig());
+      }
       if (other.hasGpuZonalRedundancyDisabled()) {
         setGpuZonalRedundancyDisabled(other.getGpuZonalRedundancyDisabled());
       }
       if (!other.getCreator().isEmpty()) {
         creator_ = other.creator_;
-        bitField1_ |= 0x00000001;
+        bitField1_ |= 0x00000004;
         onChanged();
+      }
+      if (!other.getClient().isEmpty()) {
+        client_ = other.client_;
+        bitField1_ |= 0x00000008;
+        onChanged();
+      }
+      if (!other.getClientVersion().isEmpty()) {
+        clientVersion_ = other.clientVersion_;
+        bitField1_ |= 0x00000010;
+        onChanged();
+      }
+      if (other.hasAmbientNetworking()) {
+        mergeAmbientNetworking(other.getAmbientNetworking());
       }
       if (!other.getEtag().isEmpty()) {
         etag_ = other.etag_;
-        bitField1_ |= 0x00000002;
+        bitField1_ |= 0x00000040;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -3222,26 +3634,26 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
             case 160:
               {
                 executionEnvironment_ = input.readEnum();
-                bitField0_ |= 0x00040000;
+                bitField0_ |= 0x00080000;
                 break;
               } // case 160
             case 170:
               {
                 encryptionKey_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00080000;
+                bitField0_ |= 0x00100000;
                 break;
               } // case 170
             case 178:
               {
                 input.readMessage(
                     internalGetServiceMeshFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00100000;
+                bitField0_ |= 0x00200000;
                 break;
               } // case 178
             case 184:
               {
                 encryptionKeyRevocationAction_ = input.readEnum();
-                bitField0_ |= 0x00200000;
+                bitField0_ |= 0x00400000;
                 break;
               } // case 184
             case 194:
@@ -3249,13 +3661,13 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
                 input.readMessage(
                     internalGetEncryptionKeyShutdownDurationFieldBuilder().getBuilder(),
                     extensionRegistry);
-                bitField0_ |= 0x00400000;
+                bitField0_ |= 0x00800000;
                 break;
               } // case 194
             case 240:
               {
                 reconciling_ = input.readBool();
-                bitField0_ |= 0x00800000;
+                bitField0_ |= 0x01000000;
                 break;
               } // case 240
             case 250:
@@ -3274,13 +3686,13 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
             case 256:
               {
                 observedGeneration_ = input.readInt64();
-                bitField0_ |= 0x02000000;
+                bitField0_ |= 0x04000000;
                 break;
               } // case 256
             case 266:
               {
                 logUri_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x04000000;
+                bitField0_ |= 0x08000000;
                 break;
               } // case 266
             case 272:
@@ -3292,45 +3704,79 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
             case 296:
               {
                 satisfiesPzs_ = input.readBool();
-                bitField0_ |= 0x08000000;
+                bitField0_ |= 0x10000000;
                 break;
               } // case 296
             case 304:
               {
                 sessionAffinity_ = input.readBool();
-                bitField0_ |= 0x10000000;
+                bitField0_ |= 0x20000000;
                 break;
               } // case 304
             case 314:
               {
                 input.readMessage(
                     internalGetScalingStatusFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x20000000;
+                bitField0_ |= 0x40000000;
                 break;
               } // case 314
             case 322:
               {
                 input.readMessage(
                     internalGetNodeSelectorFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x40000000;
+                bitField0_ |= 0x80000000;
                 break;
               } // case 322
             case 384:
               {
                 gpuZonalRedundancyDisabled_ = input.readBool();
-                bitField0_ |= 0x80000000;
+                bitField1_ |= 0x00000002;
                 break;
               } // case 384
             case 394:
               {
                 creator_ = input.readStringRequireUtf8();
-                bitField1_ |= 0x00000001;
+                bitField1_ |= 0x00000004;
                 break;
               } // case 394
+            case 418:
+              {
+                input.readMessage(
+                    internalGetWorkloadIdentityConfigFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField1_ |= 0x00000001;
+                break;
+              } // case 418
+            case 426:
+              {
+                client_ = input.readStringRequireUtf8();
+                bitField1_ |= 0x00000008;
+                break;
+              } // case 426
+            case 434:
+              {
+                clientVersion_ = input.readStringRequireUtf8();
+                bitField1_ |= 0x00000010;
+                break;
+              } // case 434
+            case 450:
+              {
+                input.readMessage(
+                    internalGetSandboxesFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00020000;
+                break;
+              } // case 450
+            case 474:
+              {
+                input.readMessage(
+                    internalGetAmbientNetworkingFieldBuilder().getBuilder(), extensionRegistry);
+                bitField1_ |= 0x00000020;
+                break;
+              } // case 474
             case 794:
               {
                 etag_ = input.readStringRequireUtf8();
-                bitField1_ |= 0x00000002;
+                bitField1_ |= 0x00000040;
                 break;
               } // case 794
             default:
@@ -4949,7 +5395,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
      *
      * Note that this value might not be what was used
      * as input. For example, if ALPHA was provided as input in the parent
-     * resource, but only BETA and GA-level features are were, this field will be
+     * resource, but only BETA and GA-level features are used, this field will be
      * BETA.
      * </pre>
      *
@@ -4973,7 +5419,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
      *
      * Note that this value might not be what was used
      * as input. For example, if ALPHA was provided as input in the parent
-     * resource, but only BETA and GA-level features are were, this field will be
+     * resource, but only BETA and GA-level features are used, this field will be
      * BETA.
      * </pre>
      *
@@ -5000,7 +5446,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
      *
      * Note that this value might not be what was used
      * as input. For example, if ALPHA was provided as input in the parent
-     * resource, but only BETA and GA-level features are were, this field will be
+     * resource, but only BETA and GA-level features are used, this field will be
      * BETA.
      * </pre>
      *
@@ -5025,7 +5471,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
      *
      * Note that this value might not be what was used
      * as input. For example, if ALPHA was provided as input in the parent
-     * resource, but only BETA and GA-level features are were, this field will be
+     * resource, but only BETA and GA-level features are used, this field will be
      * BETA.
      * </pre>
      *
@@ -5055,7 +5501,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
      *
      * Note that this value might not be what was used
      * as input. For example, if ALPHA was provided as input in the parent
-     * resource, but only BETA and GA-level features are were, this field will be
+     * resource, but only BETA and GA-level features are used, this field will be
      * BETA.
      * </pre>
      *
@@ -5975,7 +6421,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Holds the single container that defines the unit of execution for this
+     * Holds the list which define the units of execution for this
      * Revision.
      * </pre>
      *
@@ -5993,7 +6439,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Holds the single container that defines the unit of execution for this
+     * Holds the list which define the units of execution for this
      * Revision.
      * </pre>
      *
@@ -6011,7 +6457,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Holds the single container that defines the unit of execution for this
+     * Holds the list which define the units of execution for this
      * Revision.
      * </pre>
      *
@@ -6029,7 +6475,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Holds the single container that defines the unit of execution for this
+     * Holds the list which define the units of execution for this
      * Revision.
      * </pre>
      *
@@ -6053,7 +6499,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Holds the single container that defines the unit of execution for this
+     * Holds the list which define the units of execution for this
      * Revision.
      * </pre>
      *
@@ -6075,7 +6521,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Holds the single container that defines the unit of execution for this
+     * Holds the list which define the units of execution for this
      * Revision.
      * </pre>
      *
@@ -6099,7 +6545,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Holds the single container that defines the unit of execution for this
+     * Holds the list which define the units of execution for this
      * Revision.
      * </pre>
      *
@@ -6123,7 +6569,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Holds the single container that defines the unit of execution for this
+     * Holds the list which define the units of execution for this
      * Revision.
      * </pre>
      *
@@ -6144,7 +6590,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Holds the single container that defines the unit of execution for this
+     * Holds the list which define the units of execution for this
      * Revision.
      * </pre>
      *
@@ -6166,7 +6612,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Holds the single container that defines the unit of execution for this
+     * Holds the list which define the units of execution for this
      * Revision.
      * </pre>
      *
@@ -6188,7 +6634,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Holds the single container that defines the unit of execution for this
+     * Holds the list which define the units of execution for this
      * Revision.
      * </pre>
      *
@@ -6209,7 +6655,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Holds the single container that defines the unit of execution for this
+     * Holds the list which define the units of execution for this
      * Revision.
      * </pre>
      *
@@ -6230,7 +6676,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Holds the single container that defines the unit of execution for this
+     * Holds the list which define the units of execution for this
      * Revision.
      * </pre>
      *
@@ -6244,7 +6690,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Holds the single container that defines the unit of execution for this
+     * Holds the list which define the units of execution for this
      * Revision.
      * </pre>
      *
@@ -6262,7 +6708,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Holds the single container that defines the unit of execution for this
+     * Holds the list which define the units of execution for this
      * Revision.
      * </pre>
      *
@@ -6281,7 +6727,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Holds the single container that defines the unit of execution for this
+     * Holds the list which define the units of execution for this
      * Revision.
      * </pre>
      *
@@ -6296,7 +6742,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Holds the single container that defines the unit of execution for this
+     * Holds the list which define the units of execution for this
      * Revision.
      * </pre>
      *
@@ -6311,7 +6757,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Holds the single container that defines the unit of execution for this
+     * Holds the list which define the units of execution for this
      * Revision.
      * </pre>
      *
@@ -6338,13 +6784,226 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
       return containersBuilder_;
     }
 
+    private com.google.cloud.run.v2.SandboxConfiguration sandboxes_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.run.v2.SandboxConfiguration,
+            com.google.cloud.run.v2.SandboxConfiguration.Builder,
+            com.google.cloud.run.v2.SandboxConfigurationOrBuilder>
+        sandboxesBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Configuration for sandboxes.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.SandboxConfiguration sandboxes = 56 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the sandboxes field is set.
+     */
+    public boolean hasSandboxes() {
+      return ((bitField0_ & 0x00020000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Configuration for sandboxes.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.SandboxConfiguration sandboxes = 56 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The sandboxes.
+     */
+    public com.google.cloud.run.v2.SandboxConfiguration getSandboxes() {
+      if (sandboxesBuilder_ == null) {
+        return sandboxes_ == null
+            ? com.google.cloud.run.v2.SandboxConfiguration.getDefaultInstance()
+            : sandboxes_;
+      } else {
+        return sandboxesBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Configuration for sandboxes.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.SandboxConfiguration sandboxes = 56 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setSandboxes(com.google.cloud.run.v2.SandboxConfiguration value) {
+      if (sandboxesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        sandboxes_ = value;
+      } else {
+        sandboxesBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Configuration for sandboxes.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.SandboxConfiguration sandboxes = 56 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setSandboxes(
+        com.google.cloud.run.v2.SandboxConfiguration.Builder builderForValue) {
+      if (sandboxesBuilder_ == null) {
+        sandboxes_ = builderForValue.build();
+      } else {
+        sandboxesBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Configuration for sandboxes.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.SandboxConfiguration sandboxes = 56 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeSandboxes(com.google.cloud.run.v2.SandboxConfiguration value) {
+      if (sandboxesBuilder_ == null) {
+        if (((bitField0_ & 0x00020000) != 0)
+            && sandboxes_ != null
+            && sandboxes_ != com.google.cloud.run.v2.SandboxConfiguration.getDefaultInstance()) {
+          getSandboxesBuilder().mergeFrom(value);
+        } else {
+          sandboxes_ = value;
+        }
+      } else {
+        sandboxesBuilder_.mergeFrom(value);
+      }
+      if (sandboxes_ != null) {
+        bitField0_ |= 0x00020000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Configuration for sandboxes.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.SandboxConfiguration sandboxes = 56 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearSandboxes() {
+      bitField0_ = (bitField0_ & ~0x00020000);
+      sandboxes_ = null;
+      if (sandboxesBuilder_ != null) {
+        sandboxesBuilder_.dispose();
+        sandboxesBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Configuration for sandboxes.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.SandboxConfiguration sandboxes = 56 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.run.v2.SandboxConfiguration.Builder getSandboxesBuilder() {
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return internalGetSandboxesFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Configuration for sandboxes.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.SandboxConfiguration sandboxes = 56 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.run.v2.SandboxConfigurationOrBuilder getSandboxesOrBuilder() {
+      if (sandboxesBuilder_ != null) {
+        return sandboxesBuilder_.getMessageOrBuilder();
+      } else {
+        return sandboxes_ == null
+            ? com.google.cloud.run.v2.SandboxConfiguration.getDefaultInstance()
+            : sandboxes_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Configuration for sandboxes.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.SandboxConfiguration sandboxes = 56 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.run.v2.SandboxConfiguration,
+            com.google.cloud.run.v2.SandboxConfiguration.Builder,
+            com.google.cloud.run.v2.SandboxConfigurationOrBuilder>
+        internalGetSandboxesFieldBuilder() {
+      if (sandboxesBuilder_ == null) {
+        sandboxesBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.run.v2.SandboxConfiguration,
+                com.google.cloud.run.v2.SandboxConfiguration.Builder,
+                com.google.cloud.run.v2.SandboxConfigurationOrBuilder>(
+                getSandboxes(), getParentForChildren(), isClean());
+        sandboxes_ = null;
+      }
+      return sandboxesBuilder_;
+    }
+
     private java.util.List<com.google.cloud.run.v2.Volume> volumes_ =
         java.util.Collections.emptyList();
 
     private void ensureVolumesIsMutable() {
-      if (!((bitField0_ & 0x00020000) != 0)) {
+      if (!((bitField0_ & 0x00040000) != 0)) {
         volumes_ = new java.util.ArrayList<com.google.cloud.run.v2.Volume>(volumes_);
-        bitField0_ |= 0x00020000;
+        bitField0_ |= 0x00040000;
       }
     }
 
@@ -6567,7 +7226,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
     public Builder clearVolumes() {
       if (volumesBuilder_ == null) {
         volumes_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00020000);
+        bitField0_ = (bitField0_ & ~0x00040000);
         onChanged();
       } else {
         volumesBuilder_.clear();
@@ -6695,7 +7354,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
                 com.google.cloud.run.v2.Volume,
                 com.google.cloud.run.v2.Volume.Builder,
                 com.google.cloud.run.v2.VolumeOrBuilder>(
-                volumes_, ((bitField0_ & 0x00020000) != 0), getParentForChildren(), isClean());
+                volumes_, ((bitField0_ & 0x00040000) != 0), getParentForChildren(), isClean());
         volumes_ = null;
       }
       return volumesBuilder_;
@@ -6733,7 +7392,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
      */
     public Builder setExecutionEnvironmentValue(int value) {
       executionEnvironment_ = value;
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -6772,7 +7431,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       executionEnvironment_ = value.getNumber();
       onChanged();
       return this;
@@ -6790,7 +7449,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearExecutionEnvironment() {
-      bitField0_ = (bitField0_ & ~0x00040000);
+      bitField0_ = (bitField0_ & ~0x00080000);
       executionEnvironment_ = 0;
       onChanged();
       return this;
@@ -6867,7 +7526,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       encryptionKey_ = value;
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -6887,7 +7546,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearEncryptionKey() {
       encryptionKey_ = getDefaultInstance().getEncryptionKey();
-      bitField0_ = (bitField0_ & ~0x00080000);
+      bitField0_ = (bitField0_ & ~0x00100000);
       onChanged();
       return this;
     }
@@ -6912,7 +7571,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       encryptionKey_ = value;
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -6936,7 +7595,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
      * @return Whether the serviceMesh field is set.
      */
     public boolean hasServiceMesh() {
-      return ((bitField0_ & 0x00100000) != 0);
+      return ((bitField0_ & 0x00200000) != 0);
     }
 
     /**
@@ -6978,7 +7637,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
       } else {
         serviceMeshBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -6998,7 +7657,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
       } else {
         serviceMeshBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -7014,7 +7673,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeServiceMesh(com.google.cloud.run.v2.ServiceMesh value) {
       if (serviceMeshBuilder_ == null) {
-        if (((bitField0_ & 0x00100000) != 0)
+        if (((bitField0_ & 0x00200000) != 0)
             && serviceMesh_ != null
             && serviceMesh_ != com.google.cloud.run.v2.ServiceMesh.getDefaultInstance()) {
           getServiceMeshBuilder().mergeFrom(value);
@@ -7025,7 +7684,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
         serviceMeshBuilder_.mergeFrom(value);
       }
       if (serviceMesh_ != null) {
-        bitField0_ |= 0x00100000;
+        bitField0_ |= 0x00200000;
         onChanged();
       }
       return this;
@@ -7041,7 +7700,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
      * <code>.google.cloud.run.v2.ServiceMesh service_mesh = 22;</code>
      */
     public Builder clearServiceMesh() {
-      bitField0_ = (bitField0_ & ~0x00100000);
+      bitField0_ = (bitField0_ & ~0x00200000);
       serviceMesh_ = null;
       if (serviceMeshBuilder_ != null) {
         serviceMeshBuilder_.dispose();
@@ -7061,7 +7720,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
      * <code>.google.cloud.run.v2.ServiceMesh service_mesh = 22;</code>
      */
     public com.google.cloud.run.v2.ServiceMesh.Builder getServiceMeshBuilder() {
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return internalGetServiceMeshFieldBuilder().getBuilder();
     }
@@ -7147,7 +7806,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
      */
     public Builder setEncryptionKeyRevocationActionValue(int value) {
       encryptionKeyRevocationAction_ = value;
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x00400000;
       onChanged();
       return this;
     }
@@ -7195,7 +7854,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x00400000;
       encryptionKeyRevocationAction_ = value.getNumber();
       onChanged();
       return this;
@@ -7215,7 +7874,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearEncryptionKeyRevocationAction() {
-      bitField0_ = (bitField0_ & ~0x00200000);
+      bitField0_ = (bitField0_ & ~0x00400000);
       encryptionKeyRevocationAction_ = 0;
       onChanged();
       return this;
@@ -7241,7 +7900,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
      * @return Whether the encryptionKeyShutdownDuration field is set.
      */
     public boolean hasEncryptionKeyShutdownDuration() {
-      return ((bitField0_ & 0x00400000) != 0);
+      return ((bitField0_ & 0x00800000) != 0);
     }
 
     /**
@@ -7285,7 +7944,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
       } else {
         encryptionKeyShutdownDurationBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -7307,7 +7966,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
       } else {
         encryptionKeyShutdownDurationBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -7324,7 +7983,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeEncryptionKeyShutdownDuration(com.google.protobuf.Duration value) {
       if (encryptionKeyShutdownDurationBuilder_ == null) {
-        if (((bitField0_ & 0x00400000) != 0)
+        if (((bitField0_ & 0x00800000) != 0)
             && encryptionKeyShutdownDuration_ != null
             && encryptionKeyShutdownDuration_
                 != com.google.protobuf.Duration.getDefaultInstance()) {
@@ -7336,7 +7995,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
         encryptionKeyShutdownDurationBuilder_.mergeFrom(value);
       }
       if (encryptionKeyShutdownDuration_ != null) {
-        bitField0_ |= 0x00400000;
+        bitField0_ |= 0x00800000;
         onChanged();
       }
       return this;
@@ -7353,7 +8012,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
      * <code>.google.protobuf.Duration encryption_key_shutdown_duration = 24;</code>
      */
     public Builder clearEncryptionKeyShutdownDuration() {
-      bitField0_ = (bitField0_ & ~0x00400000);
+      bitField0_ = (bitField0_ & ~0x00800000);
       encryptionKeyShutdownDuration_ = null;
       if (encryptionKeyShutdownDurationBuilder_ != null) {
         encryptionKeyShutdownDurationBuilder_.dispose();
@@ -7374,7 +8033,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
      * <code>.google.protobuf.Duration encryption_key_shutdown_duration = 24;</code>
      */
     public com.google.protobuf.Duration.Builder getEncryptionKeyShutdownDurationBuilder() {
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return internalGetEncryptionKeyShutdownDurationFieldBuilder().getBuilder();
     }
@@ -7463,7 +8122,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
     public Builder setReconciling(boolean value) {
 
       reconciling_ = value;
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x01000000;
       onChanged();
       return this;
     }
@@ -7482,7 +8141,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearReconciling() {
-      bitField0_ = (bitField0_ & ~0x00800000);
+      bitField0_ = (bitField0_ & ~0x01000000);
       reconciling_ = false;
       onChanged();
       return this;
@@ -7492,9 +8151,9 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
         java.util.Collections.emptyList();
 
     private void ensureConditionsIsMutable() {
-      if (!((bitField0_ & 0x01000000) != 0)) {
+      if (!((bitField0_ & 0x02000000) != 0)) {
         conditions_ = new java.util.ArrayList<com.google.cloud.run.v2.Condition>(conditions_);
-        bitField0_ |= 0x01000000;
+        bitField0_ |= 0x02000000;
       }
     }
 
@@ -7763,7 +8422,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
     public Builder clearConditions() {
       if (conditionsBuilder_ == null) {
         conditions_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x01000000);
+        bitField0_ = (bitField0_ & ~0x02000000);
         onChanged();
       } else {
         conditionsBuilder_.clear();
@@ -7919,7 +8578,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
                 com.google.cloud.run.v2.Condition,
                 com.google.cloud.run.v2.Condition.Builder,
                 com.google.cloud.run.v2.ConditionOrBuilder>(
-                conditions_, ((bitField0_ & 0x01000000) != 0), getParentForChildren(), isClean());
+                conditions_, ((bitField0_ & 0x02000000) != 0), getParentForChildren(), isClean());
         conditions_ = null;
       }
       return conditionsBuilder_;
@@ -7962,7 +8621,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
     public Builder setObservedGeneration(long value) {
 
       observedGeneration_ = value;
-      bitField0_ |= 0x02000000;
+      bitField0_ |= 0x04000000;
       onChanged();
       return this;
     }
@@ -7981,7 +8640,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearObservedGeneration() {
-      bitField0_ = (bitField0_ & ~0x02000000);
+      bitField0_ = (bitField0_ & ~0x04000000);
       observedGeneration_ = 0L;
       onChanged();
       return this;
@@ -8052,7 +8711,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       logUri_ = value;
-      bitField0_ |= 0x04000000;
+      bitField0_ |= 0x08000000;
       onChanged();
       return this;
     }
@@ -8070,7 +8729,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearLogUri() {
       logUri_ = getDefaultInstance().getLogUri();
-      bitField0_ = (bitField0_ & ~0x04000000);
+      bitField0_ = (bitField0_ & ~0x08000000);
       onChanged();
       return this;
     }
@@ -8093,7 +8752,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       logUri_ = value;
-      bitField0_ |= 0x04000000;
+      bitField0_ |= 0x08000000;
       onChanged();
       return this;
     }
@@ -8131,7 +8790,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
     public Builder setSatisfiesPzs(boolean value) {
 
       satisfiesPzs_ = value;
-      bitField0_ |= 0x08000000;
+      bitField0_ |= 0x10000000;
       onChanged();
       return this;
     }
@@ -8148,7 +8807,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearSatisfiesPzs() {
-      bitField0_ = (bitField0_ & ~0x08000000);
+      bitField0_ = (bitField0_ & ~0x10000000);
       satisfiesPzs_ = false;
       onChanged();
       return this;
@@ -8187,7 +8846,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
     public Builder setSessionAffinity(boolean value) {
 
       sessionAffinity_ = value;
-      bitField0_ |= 0x10000000;
+      bitField0_ |= 0x20000000;
       onChanged();
       return this;
     }
@@ -8204,7 +8863,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearSessionAffinity() {
-      bitField0_ = (bitField0_ & ~0x10000000);
+      bitField0_ = (bitField0_ & ~0x20000000);
       sessionAffinity_ = false;
       onChanged();
       return this;
@@ -8231,7 +8890,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
      * @return Whether the scalingStatus field is set.
      */
     public boolean hasScalingStatus() {
-      return ((bitField0_ & 0x20000000) != 0);
+      return ((bitField0_ & 0x40000000) != 0);
     }
 
     /**
@@ -8277,7 +8936,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
       } else {
         scalingStatusBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x20000000;
+      bitField0_ |= 0x40000000;
       onChanged();
       return this;
     }
@@ -8300,7 +8959,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
       } else {
         scalingStatusBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x20000000;
+      bitField0_ |= 0x40000000;
       onChanged();
       return this;
     }
@@ -8318,7 +8977,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeScalingStatus(com.google.cloud.run.v2.RevisionScalingStatus value) {
       if (scalingStatusBuilder_ == null) {
-        if (((bitField0_ & 0x20000000) != 0)
+        if (((bitField0_ & 0x40000000) != 0)
             && scalingStatus_ != null
             && scalingStatus_
                 != com.google.cloud.run.v2.RevisionScalingStatus.getDefaultInstance()) {
@@ -8330,7 +8989,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
         scalingStatusBuilder_.mergeFrom(value);
       }
       if (scalingStatus_ != null) {
-        bitField0_ |= 0x20000000;
+        bitField0_ |= 0x40000000;
         onChanged();
       }
       return this;
@@ -8348,7 +9007,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearScalingStatus() {
-      bitField0_ = (bitField0_ & ~0x20000000);
+      bitField0_ = (bitField0_ & ~0x40000000);
       scalingStatus_ = null;
       if (scalingStatusBuilder_ != null) {
         scalingStatusBuilder_.dispose();
@@ -8370,7 +9029,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.cloud.run.v2.RevisionScalingStatus.Builder getScalingStatusBuilder() {
-      bitField0_ |= 0x20000000;
+      bitField0_ |= 0x40000000;
       onChanged();
       return internalGetScalingStatusFieldBuilder().getBuilder();
     }
@@ -8443,7 +9102,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
      * @return Whether the nodeSelector field is set.
      */
     public boolean hasNodeSelector() {
-      return ((bitField0_ & 0x40000000) != 0);
+      return ((bitField0_ & 0x80000000) != 0);
     }
 
     /**
@@ -8485,7 +9144,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
       } else {
         nodeSelectorBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x40000000;
+      bitField0_ |= 0x80000000;
       onChanged();
       return this;
     }
@@ -8505,7 +9164,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
       } else {
         nodeSelectorBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x40000000;
+      bitField0_ |= 0x80000000;
       onChanged();
       return this;
     }
@@ -8521,7 +9180,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeNodeSelector(com.google.cloud.run.v2.NodeSelector value) {
       if (nodeSelectorBuilder_ == null) {
-        if (((bitField0_ & 0x40000000) != 0)
+        if (((bitField0_ & 0x80000000) != 0)
             && nodeSelector_ != null
             && nodeSelector_ != com.google.cloud.run.v2.NodeSelector.getDefaultInstance()) {
           getNodeSelectorBuilder().mergeFrom(value);
@@ -8532,7 +9191,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
         nodeSelectorBuilder_.mergeFrom(value);
       }
       if (nodeSelector_ != null) {
-        bitField0_ |= 0x40000000;
+        bitField0_ |= 0x80000000;
         onChanged();
       }
       return this;
@@ -8548,7 +9207,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
      * <code>.google.cloud.run.v2.NodeSelector node_selector = 40;</code>
      */
     public Builder clearNodeSelector() {
-      bitField0_ = (bitField0_ & ~0x40000000);
+      bitField0_ = (bitField0_ & ~0x80000000);
       nodeSelector_ = null;
       if (nodeSelectorBuilder_ != null) {
         nodeSelectorBuilder_.dispose();
@@ -8568,7 +9227,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
      * <code>.google.cloud.run.v2.NodeSelector node_selector = 40;</code>
      */
     public com.google.cloud.run.v2.NodeSelector.Builder getNodeSelectorBuilder() {
-      bitField0_ |= 0x40000000;
+      bitField0_ |= 0x80000000;
       onChanged();
       return internalGetNodeSelectorFieldBuilder().getBuilder();
     }
@@ -8618,6 +9277,223 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
       return nodeSelectorBuilder_;
     }
 
+    private com.google.cloud.run.v2.WorkloadIdentityConfig workloadIdentityConfig_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.run.v2.WorkloadIdentityConfig,
+            com.google.cloud.run.v2.WorkloadIdentityConfig.Builder,
+            com.google.cloud.run.v2.WorkloadIdentityConfigOrBuilder>
+        workloadIdentityConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Revision's workload identity settings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.WorkloadIdentityConfig workload_identity_config = 52 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the workloadIdentityConfig field is set.
+     */
+    public boolean hasWorkloadIdentityConfig() {
+      return ((bitField1_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Revision's workload identity settings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.WorkloadIdentityConfig workload_identity_config = 52 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The workloadIdentityConfig.
+     */
+    public com.google.cloud.run.v2.WorkloadIdentityConfig getWorkloadIdentityConfig() {
+      if (workloadIdentityConfigBuilder_ == null) {
+        return workloadIdentityConfig_ == null
+            ? com.google.cloud.run.v2.WorkloadIdentityConfig.getDefaultInstance()
+            : workloadIdentityConfig_;
+      } else {
+        return workloadIdentityConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Revision's workload identity settings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.WorkloadIdentityConfig workload_identity_config = 52 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setWorkloadIdentityConfig(com.google.cloud.run.v2.WorkloadIdentityConfig value) {
+      if (workloadIdentityConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        workloadIdentityConfig_ = value;
+      } else {
+        workloadIdentityConfigBuilder_.setMessage(value);
+      }
+      bitField1_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Revision's workload identity settings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.WorkloadIdentityConfig workload_identity_config = 52 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setWorkloadIdentityConfig(
+        com.google.cloud.run.v2.WorkloadIdentityConfig.Builder builderForValue) {
+      if (workloadIdentityConfigBuilder_ == null) {
+        workloadIdentityConfig_ = builderForValue.build();
+      } else {
+        workloadIdentityConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField1_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Revision's workload identity settings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.WorkloadIdentityConfig workload_identity_config = 52 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeWorkloadIdentityConfig(
+        com.google.cloud.run.v2.WorkloadIdentityConfig value) {
+      if (workloadIdentityConfigBuilder_ == null) {
+        if (((bitField1_ & 0x00000001) != 0)
+            && workloadIdentityConfig_ != null
+            && workloadIdentityConfig_
+                != com.google.cloud.run.v2.WorkloadIdentityConfig.getDefaultInstance()) {
+          getWorkloadIdentityConfigBuilder().mergeFrom(value);
+        } else {
+          workloadIdentityConfig_ = value;
+        }
+      } else {
+        workloadIdentityConfigBuilder_.mergeFrom(value);
+      }
+      if (workloadIdentityConfig_ != null) {
+        bitField1_ |= 0x00000001;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Revision's workload identity settings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.WorkloadIdentityConfig workload_identity_config = 52 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearWorkloadIdentityConfig() {
+      bitField1_ = (bitField1_ & ~0x00000001);
+      workloadIdentityConfig_ = null;
+      if (workloadIdentityConfigBuilder_ != null) {
+        workloadIdentityConfigBuilder_.dispose();
+        workloadIdentityConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Revision's workload identity settings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.WorkloadIdentityConfig workload_identity_config = 52 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.run.v2.WorkloadIdentityConfig.Builder
+        getWorkloadIdentityConfigBuilder() {
+      bitField1_ |= 0x00000001;
+      onChanged();
+      return internalGetWorkloadIdentityConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Revision's workload identity settings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.WorkloadIdentityConfig workload_identity_config = 52 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.run.v2.WorkloadIdentityConfigOrBuilder
+        getWorkloadIdentityConfigOrBuilder() {
+      if (workloadIdentityConfigBuilder_ != null) {
+        return workloadIdentityConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return workloadIdentityConfig_ == null
+            ? com.google.cloud.run.v2.WorkloadIdentityConfig.getDefaultInstance()
+            : workloadIdentityConfig_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Revision's workload identity settings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.WorkloadIdentityConfig workload_identity_config = 52 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.run.v2.WorkloadIdentityConfig,
+            com.google.cloud.run.v2.WorkloadIdentityConfig.Builder,
+            com.google.cloud.run.v2.WorkloadIdentityConfigOrBuilder>
+        internalGetWorkloadIdentityConfigFieldBuilder() {
+      if (workloadIdentityConfigBuilder_ == null) {
+        workloadIdentityConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.run.v2.WorkloadIdentityConfig,
+                com.google.cloud.run.v2.WorkloadIdentityConfig.Builder,
+                com.google.cloud.run.v2.WorkloadIdentityConfigOrBuilder>(
+                getWorkloadIdentityConfig(), getParentForChildren(), isClean());
+        workloadIdentityConfig_ = null;
+      }
+      return workloadIdentityConfigBuilder_;
+    }
+
     private boolean gpuZonalRedundancyDisabled_;
 
     /**
@@ -8636,7 +9512,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasGpuZonalRedundancyDisabled() {
-      return ((bitField0_ & 0x80000000) != 0);
+      return ((bitField1_ & 0x00000002) != 0);
     }
 
     /**
@@ -8676,7 +9552,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
     public Builder setGpuZonalRedundancyDisabled(boolean value) {
 
       gpuZonalRedundancyDisabled_ = value;
-      bitField0_ |= 0x80000000;
+      bitField1_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -8696,7 +9572,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearGpuZonalRedundancyDisabled() {
-      bitField0_ = (bitField0_ & ~0x80000000);
+      bitField1_ = (bitField1_ & ~0x00000002);
       gpuZonalRedundancyDisabled_ = false;
       onChanged();
       return this;
@@ -8767,7 +9643,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       creator_ = value;
-      bitField1_ |= 0x00000001;
+      bitField1_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -8785,7 +9661,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearCreator() {
       creator_ = getDefaultInstance().getCreator();
-      bitField1_ = (bitField1_ & ~0x00000001);
+      bitField1_ = (bitField1_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -8808,9 +9684,445 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       creator_ = value;
-      bitField1_ |= 0x00000001;
+      bitField1_ |= 0x00000004;
       onChanged();
       return this;
+    }
+
+    private java.lang.Object client_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Arbitrary identifier for the API client.
+     * </pre>
+     *
+     * <code>string client = 53 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The client.
+     */
+    public java.lang.String getClient() {
+      java.lang.Object ref = client_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        client_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Arbitrary identifier for the API client.
+     * </pre>
+     *
+     * <code>string client = 53 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for client.
+     */
+    public com.google.protobuf.ByteString getClientBytes() {
+      java.lang.Object ref = client_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        client_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Arbitrary identifier for the API client.
+     * </pre>
+     *
+     * <code>string client = 53 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The client to set.
+     * @return This builder for chaining.
+     */
+    public Builder setClient(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      client_ = value;
+      bitField1_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Arbitrary identifier for the API client.
+     * </pre>
+     *
+     * <code>string client = 53 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearClient() {
+      client_ = getDefaultInstance().getClient();
+      bitField1_ = (bitField1_ & ~0x00000008);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Arbitrary identifier for the API client.
+     * </pre>
+     *
+     * <code>string client = 53 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for client to set.
+     * @return This builder for chaining.
+     */
+    public Builder setClientBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      client_ = value;
+      bitField1_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object clientVersion_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Arbitrary version identifier for the API client.
+     * </pre>
+     *
+     * <code>string client_version = 54 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The clientVersion.
+     */
+    public java.lang.String getClientVersion() {
+      java.lang.Object ref = clientVersion_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        clientVersion_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Arbitrary version identifier for the API client.
+     * </pre>
+     *
+     * <code>string client_version = 54 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for clientVersion.
+     */
+    public com.google.protobuf.ByteString getClientVersionBytes() {
+      java.lang.Object ref = clientVersion_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        clientVersion_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Arbitrary version identifier for the API client.
+     * </pre>
+     *
+     * <code>string client_version = 54 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The clientVersion to set.
+     * @return This builder for chaining.
+     */
+    public Builder setClientVersion(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      clientVersion_ = value;
+      bitField1_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Arbitrary version identifier for the API client.
+     * </pre>
+     *
+     * <code>string client_version = 54 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearClientVersion() {
+      clientVersion_ = getDefaultInstance().getClientVersion();
+      bitField1_ = (bitField1_ & ~0x00000010);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Arbitrary version identifier for the API client.
+     * </pre>
+     *
+     * <code>string client_version = 54 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for clientVersion to set.
+     * @return This builder for chaining.
+     */
+    public Builder setClientVersionBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      clientVersion_ = value;
+      bitField1_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    private com.google.cloud.run.v2.AmbientNetworking ambientNetworking_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.run.v2.AmbientNetworking,
+            com.google.cloud.run.v2.AmbientNetworking.Builder,
+            com.google.cloud.run.v2.AmbientNetworkingOrBuilder>
+        ambientNetworkingBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The ambient networking configuration for this revision.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.AmbientNetworking ambient_networking = 59 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the ambientNetworking field is set.
+     */
+    public boolean hasAmbientNetworking() {
+      return ((bitField1_ & 0x00000020) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The ambient networking configuration for this revision.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.AmbientNetworking ambient_networking = 59 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The ambientNetworking.
+     */
+    public com.google.cloud.run.v2.AmbientNetworking getAmbientNetworking() {
+      if (ambientNetworkingBuilder_ == null) {
+        return ambientNetworking_ == null
+            ? com.google.cloud.run.v2.AmbientNetworking.getDefaultInstance()
+            : ambientNetworking_;
+      } else {
+        return ambientNetworkingBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The ambient networking configuration for this revision.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.AmbientNetworking ambient_networking = 59 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setAmbientNetworking(com.google.cloud.run.v2.AmbientNetworking value) {
+      if (ambientNetworkingBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ambientNetworking_ = value;
+      } else {
+        ambientNetworkingBuilder_.setMessage(value);
+      }
+      bitField1_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The ambient networking configuration for this revision.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.AmbientNetworking ambient_networking = 59 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setAmbientNetworking(
+        com.google.cloud.run.v2.AmbientNetworking.Builder builderForValue) {
+      if (ambientNetworkingBuilder_ == null) {
+        ambientNetworking_ = builderForValue.build();
+      } else {
+        ambientNetworkingBuilder_.setMessage(builderForValue.build());
+      }
+      bitField1_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The ambient networking configuration for this revision.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.AmbientNetworking ambient_networking = 59 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeAmbientNetworking(com.google.cloud.run.v2.AmbientNetworking value) {
+      if (ambientNetworkingBuilder_ == null) {
+        if (((bitField1_ & 0x00000020) != 0)
+            && ambientNetworking_ != null
+            && ambientNetworking_
+                != com.google.cloud.run.v2.AmbientNetworking.getDefaultInstance()) {
+          getAmbientNetworkingBuilder().mergeFrom(value);
+        } else {
+          ambientNetworking_ = value;
+        }
+      } else {
+        ambientNetworkingBuilder_.mergeFrom(value);
+      }
+      if (ambientNetworking_ != null) {
+        bitField1_ |= 0x00000020;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The ambient networking configuration for this revision.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.AmbientNetworking ambient_networking = 59 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearAmbientNetworking() {
+      bitField1_ = (bitField1_ & ~0x00000020);
+      ambientNetworking_ = null;
+      if (ambientNetworkingBuilder_ != null) {
+        ambientNetworkingBuilder_.dispose();
+        ambientNetworkingBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The ambient networking configuration for this revision.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.AmbientNetworking ambient_networking = 59 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.run.v2.AmbientNetworking.Builder getAmbientNetworkingBuilder() {
+      bitField1_ |= 0x00000020;
+      onChanged();
+      return internalGetAmbientNetworkingFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The ambient networking configuration for this revision.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.AmbientNetworking ambient_networking = 59 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.run.v2.AmbientNetworkingOrBuilder getAmbientNetworkingOrBuilder() {
+      if (ambientNetworkingBuilder_ != null) {
+        return ambientNetworkingBuilder_.getMessageOrBuilder();
+      } else {
+        return ambientNetworking_ == null
+            ? com.google.cloud.run.v2.AmbientNetworking.getDefaultInstance()
+            : ambientNetworking_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The ambient networking configuration for this revision.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.AmbientNetworking ambient_networking = 59 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.run.v2.AmbientNetworking,
+            com.google.cloud.run.v2.AmbientNetworking.Builder,
+            com.google.cloud.run.v2.AmbientNetworkingOrBuilder>
+        internalGetAmbientNetworkingFieldBuilder() {
+      if (ambientNetworkingBuilder_ == null) {
+        ambientNetworkingBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.run.v2.AmbientNetworking,
+                com.google.cloud.run.v2.AmbientNetworking.Builder,
+                com.google.cloud.run.v2.AmbientNetworkingOrBuilder>(
+                getAmbientNetworking(), getParentForChildren(), isClean());
+        ambientNetworking_ = null;
+      }
+      return ambientNetworkingBuilder_;
     }
 
     private java.lang.Object etag_ = "";
@@ -8881,7 +10193,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       etag_ = value;
-      bitField1_ |= 0x00000002;
+      bitField1_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -8900,7 +10212,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearEtag() {
       etag_ = getDefaultInstance().getEtag();
-      bitField1_ = (bitField1_ & ~0x00000002);
+      bitField1_ = (bitField1_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -8924,7 +10236,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       etag_ = value;
-      bitField1_ |= 0x00000002;
+      bitField1_ |= 0x00000040;
       onChanged();
       return this;
     }

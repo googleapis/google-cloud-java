@@ -52,6 +52,7 @@ public final class VideoPosition extends com.google.protobuf.GeneratedMessage
   }
 
   private VideoPosition() {
+    adSpot_ = "";
     positionType_ = 0;
     bumperType_ = 0;
   }
@@ -159,9 +160,8 @@ public final class VideoPosition extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The video position within a pod to target. This field must be
-   * unset in order to target a specific video position (e.g. position_type),
-   * bumper type (e.g. bumper_type), or custom ad spot (e.g. custom_spot_id).
+   * Optional. The video position within a pod to target. If set, `adSpot`,
+   * `bumperType`, and `positionType` must be unset.
    * </pre>
    *
    * <code>optional int64 pod_position = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -177,9 +177,8 @@ public final class VideoPosition extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The video position within a pod to target. This field must be
-   * unset in order to target a specific video position (e.g. position_type),
-   * bumper type (e.g. bumper_type), or custom ad spot (e.g. custom_spot_id).
+   * Optional. The video position within a pod to target. If set, `adSpot`,
+   * `bumperType`, and `positionType` must be unset.
    * </pre>
    *
    * <code>optional int64 pod_position = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -189,6 +188,87 @@ public final class VideoPosition extends com.google.protobuf.GeneratedMessage
   @java.lang.Override
   public long getPodPosition() {
     return podPosition_;
+  }
+
+  public static final int AD_SPOT_FIELD_NUMBER = 7;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object adSpot_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The resource name of the custom ad spot to target. If set,
+   * `bumperType`, `podPosition`, and `positionType` must be unset. Format:
+   * `networks/{network_code}/adSpots/{ad_spot_id}`
+   * </pre>
+   *
+   * <code>
+   * optional string ad_spot = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return Whether the adSpot field is set.
+   */
+  @java.lang.Override
+  public boolean hasAdSpot() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The resource name of the custom ad spot to target. If set,
+   * `bumperType`, `podPosition`, and `positionType` must be unset. Format:
+   * `networks/{network_code}/adSpots/{ad_spot_id}`
+   * </pre>
+   *
+   * <code>
+   * optional string ad_spot = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The adSpot.
+   */
+  @java.lang.Override
+  public java.lang.String getAdSpot() {
+    java.lang.Object ref = adSpot_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      adSpot_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The resource name of the custom ad spot to target. If set,
+   * `bumperType`, `podPosition`, and `positionType` must be unset. Format:
+   * `networks/{network_code}/adSpots/{ad_spot_id}`
+   * </pre>
+   *
+   * <code>
+   * optional string ad_spot = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for adSpot.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getAdSpotBytes() {
+    java.lang.Object ref = adSpot_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      adSpot_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int POSITION_TYPE_FIELD_NUMBER = 5;
@@ -211,7 +291,7 @@ public final class VideoPosition extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasPositionType() {
-    return ((bitField0_ & 0x00000008) != 0);
+    return ((bitField0_ & 0x00000010) != 0);
   }
 
   /**
@@ -265,9 +345,8 @@ public final class VideoPosition extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The video bumper type to target. This field must be unset in
-   * order to target a specific video position (e.g. position_type), pod
-   * position (e.g. pod_position), or custom ad spot (e.g. custom_spot_id).
+   * Optional. The video bumper type to target. If set, `adSpot`, `podPosition`,
+   * and `positionType` must be unset.
    * </pre>
    *
    * <code>
@@ -278,16 +357,15 @@ public final class VideoPosition extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasBumperType() {
-    return ((bitField0_ & 0x00000010) != 0);
+    return ((bitField0_ & 0x00000020) != 0);
   }
 
   /**
    *
    *
    * <pre>
-   * Optional. The video bumper type to target. This field must be unset in
-   * order to target a specific video position (e.g. position_type), pod
-   * position (e.g. pod_position), or custom ad spot (e.g. custom_spot_id).
+   * Optional. The video bumper type to target. If set, `adSpot`, `podPosition`,
+   * and `positionType` must be unset.
    * </pre>
    *
    * <code>
@@ -305,9 +383,8 @@ public final class VideoPosition extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The video bumper type to target. This field must be unset in
-   * order to target a specific video position (e.g. position_type), pod
-   * position (e.g. pod_position), or custom ad spot (e.g. custom_spot_id).
+   * Optional. The video bumper type to target. If set, `adSpot`, `podPosition`,
+   * and `positionType` must be unset.
    * </pre>
    *
    * <code>
@@ -351,11 +428,14 @@ public final class VideoPosition extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeInt64(3, podPosition_);
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       output.writeEnum(5, positionType_);
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       output.writeEnum(6, bumperType_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 7, adSpot_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -375,11 +455,14 @@ public final class VideoPosition extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(3, podPosition_);
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(5, positionType_);
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(6, bumperType_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(7, adSpot_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -408,6 +491,10 @@ public final class VideoPosition extends com.google.protobuf.GeneratedMessage
     if (hasPodPosition() != other.hasPodPosition()) return false;
     if (hasPodPosition()) {
       if (getPodPosition() != other.getPodPosition()) return false;
+    }
+    if (hasAdSpot() != other.hasAdSpot()) return false;
+    if (hasAdSpot()) {
+      if (!getAdSpot().equals(other.getAdSpot())) return false;
     }
     if (hasPositionType() != other.hasPositionType()) return false;
     if (hasPositionType()) {
@@ -439,6 +526,10 @@ public final class VideoPosition extends com.google.protobuf.GeneratedMessage
     if (hasPodPosition()) {
       hash = (37 * hash) + POD_POSITION_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getPodPosition());
+    }
+    if (hasAdSpot()) {
+      hash = (37 * hash) + AD_SPOT_FIELD_NUMBER;
+      hash = (53 * hash) + getAdSpot().hashCode();
     }
     if (hasPositionType()) {
       hash = (37 * hash) + POSITION_TYPE_FIELD_NUMBER;
@@ -591,6 +682,7 @@ public final class VideoPosition extends com.google.protobuf.GeneratedMessage
       midrollIndex_ = 0L;
       reverseMidrollIndex_ = 0L;
       podPosition_ = 0L;
+      adSpot_ = "";
       positionType_ = 0;
       bumperType_ = 0;
       return this;
@@ -643,12 +735,16 @@ public final class VideoPosition extends com.google.protobuf.GeneratedMessage
         to_bitField0_ |= 0x00000004;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
-        result.positionType_ = positionType_;
+        result.adSpot_ = adSpot_;
         to_bitField0_ |= 0x00000008;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
-        result.bumperType_ = bumperType_;
+        result.positionType_ = positionType_;
         to_bitField0_ |= 0x00000010;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.bumperType_ = bumperType_;
+        to_bitField0_ |= 0x00000020;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -673,6 +769,11 @@ public final class VideoPosition extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasPodPosition()) {
         setPodPosition(other.getPodPosition());
+      }
+      if (other.hasAdSpot()) {
+        adSpot_ = other.adSpot_;
+        bitField0_ |= 0x00000008;
+        onChanged();
       }
       if (other.hasPositionType()) {
         setPositionTypeValue(other.getPositionTypeValue());
@@ -727,15 +828,21 @@ public final class VideoPosition extends com.google.protobuf.GeneratedMessage
             case 40:
               {
                 positionType_ = input.readEnum();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 40
             case 48:
               {
                 bumperType_ = input.readEnum();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 48
+            case 58:
+              {
+                adSpot_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 58
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -925,9 +1032,8 @@ public final class VideoPosition extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The video position within a pod to target. This field must be
-     * unset in order to target a specific video position (e.g. position_type),
-     * bumper type (e.g. bumper_type), or custom ad spot (e.g. custom_spot_id).
+     * Optional. The video position within a pod to target. If set, `adSpot`,
+     * `bumperType`, and `positionType` must be unset.
      * </pre>
      *
      * <code>optional int64 pod_position = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -943,9 +1049,8 @@ public final class VideoPosition extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The video position within a pod to target. This field must be
-     * unset in order to target a specific video position (e.g. position_type),
-     * bumper type (e.g. bumper_type), or custom ad spot (e.g. custom_spot_id).
+     * Optional. The video position within a pod to target. If set, `adSpot`,
+     * `bumperType`, and `positionType` must be unset.
      * </pre>
      *
      * <code>optional int64 pod_position = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -961,9 +1066,8 @@ public final class VideoPosition extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The video position within a pod to target. This field must be
-     * unset in order to target a specific video position (e.g. position_type),
-     * bumper type (e.g. bumper_type), or custom ad spot (e.g. custom_spot_id).
+     * Optional. The video position within a pod to target. If set, `adSpot`,
+     * `bumperType`, and `positionType` must be unset.
      * </pre>
      *
      * <code>optional int64 pod_position = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -983,9 +1087,8 @@ public final class VideoPosition extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The video position within a pod to target. This field must be
-     * unset in order to target a specific video position (e.g. position_type),
-     * bumper type (e.g. bumper_type), or custom ad spot (e.g. custom_spot_id).
+     * Optional. The video position within a pod to target. If set, `adSpot`,
+     * `bumperType`, and `positionType` must be unset.
      * </pre>
      *
      * <code>optional int64 pod_position = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -995,6 +1098,156 @@ public final class VideoPosition extends com.google.protobuf.GeneratedMessage
     public Builder clearPodPosition() {
       bitField0_ = (bitField0_ & ~0x00000004);
       podPosition_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object adSpot_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The resource name of the custom ad spot to target. If set,
+     * `bumperType`, `podPosition`, and `positionType` must be unset. Format:
+     * `networks/{network_code}/adSpots/{ad_spot_id}`
+     * </pre>
+     *
+     * <code>
+     * optional string ad_spot = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return Whether the adSpot field is set.
+     */
+    public boolean hasAdSpot() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The resource name of the custom ad spot to target. If set,
+     * `bumperType`, `podPosition`, and `positionType` must be unset. Format:
+     * `networks/{network_code}/adSpots/{ad_spot_id}`
+     * </pre>
+     *
+     * <code>
+     * optional string ad_spot = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The adSpot.
+     */
+    public java.lang.String getAdSpot() {
+      java.lang.Object ref = adSpot_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        adSpot_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The resource name of the custom ad spot to target. If set,
+     * `bumperType`, `podPosition`, and `positionType` must be unset. Format:
+     * `networks/{network_code}/adSpots/{ad_spot_id}`
+     * </pre>
+     *
+     * <code>
+     * optional string ad_spot = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for adSpot.
+     */
+    public com.google.protobuf.ByteString getAdSpotBytes() {
+      java.lang.Object ref = adSpot_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        adSpot_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The resource name of the custom ad spot to target. If set,
+     * `bumperType`, `podPosition`, and `positionType` must be unset. Format:
+     * `networks/{network_code}/adSpots/{ad_spot_id}`
+     * </pre>
+     *
+     * <code>
+     * optional string ad_spot = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The adSpot to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAdSpot(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      adSpot_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The resource name of the custom ad spot to target. If set,
+     * `bumperType`, `podPosition`, and `positionType` must be unset. Format:
+     * `networks/{network_code}/adSpots/{ad_spot_id}`
+     * </pre>
+     *
+     * <code>
+     * optional string ad_spot = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAdSpot() {
+      adSpot_ = getDefaultInstance().getAdSpot();
+      bitField0_ = (bitField0_ & ~0x00000008);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The resource name of the custom ad spot to target. If set,
+     * `bumperType`, `podPosition`, and `positionType` must be unset. Format:
+     * `networks/{network_code}/adSpots/{ad_spot_id}`
+     * </pre>
+     *
+     * <code>
+     * optional string ad_spot = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes for adSpot to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAdSpotBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      adSpot_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1018,7 +1271,7 @@ public final class VideoPosition extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasPositionType() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
 
     /**
@@ -1059,7 +1312,7 @@ public final class VideoPosition extends com.google.protobuf.GeneratedMessage
      */
     public Builder setPositionTypeValue(int value) {
       positionType_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1109,7 +1362,7 @@ public final class VideoPosition extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       positionType_ = value.getNumber();
       onChanged();
       return this;
@@ -1131,7 +1384,7 @@ public final class VideoPosition extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearPositionType() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       positionType_ = 0;
       onChanged();
       return this;
@@ -1143,9 +1396,8 @@ public final class VideoPosition extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The video bumper type to target. This field must be unset in
-     * order to target a specific video position (e.g. position_type), pod
-     * position (e.g. pod_position), or custom ad spot (e.g. custom_spot_id).
+     * Optional. The video bumper type to target. If set, `adSpot`, `podPosition`,
+     * and `positionType` must be unset.
      * </pre>
      *
      * <code>
@@ -1156,16 +1408,15 @@ public final class VideoPosition extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasBumperType() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
 
     /**
      *
      *
      * <pre>
-     * Optional. The video bumper type to target. This field must be unset in
-     * order to target a specific video position (e.g. position_type), pod
-     * position (e.g. pod_position), or custom ad spot (e.g. custom_spot_id).
+     * Optional. The video bumper type to target. If set, `adSpot`, `podPosition`,
+     * and `positionType` must be unset.
      * </pre>
      *
      * <code>
@@ -1183,9 +1434,8 @@ public final class VideoPosition extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The video bumper type to target. This field must be unset in
-     * order to target a specific video position (e.g. position_type), pod
-     * position (e.g. pod_position), or custom ad spot (e.g. custom_spot_id).
+     * Optional. The video bumper type to target. If set, `adSpot`, `podPosition`,
+     * and `positionType` must be unset.
      * </pre>
      *
      * <code>
@@ -1197,7 +1447,7 @@ public final class VideoPosition extends com.google.protobuf.GeneratedMessage
      */
     public Builder setBumperTypeValue(int value) {
       bumperType_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1206,9 +1456,8 @@ public final class VideoPosition extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The video bumper type to target. This field must be unset in
-     * order to target a specific video position (e.g. position_type), pod
-     * position (e.g. pod_position), or custom ad spot (e.g. custom_spot_id).
+     * Optional. The video bumper type to target. If set, `adSpot`, `podPosition`,
+     * and `positionType` must be unset.
      * </pre>
      *
      * <code>
@@ -1233,9 +1482,8 @@ public final class VideoPosition extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The video bumper type to target. This field must be unset in
-     * order to target a specific video position (e.g. position_type), pod
-     * position (e.g. pod_position), or custom ad spot (e.g. custom_spot_id).
+     * Optional. The video bumper type to target. If set, `adSpot`, `podPosition`,
+     * and `positionType` must be unset.
      * </pre>
      *
      * <code>
@@ -1250,7 +1498,7 @@ public final class VideoPosition extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       bumperType_ = value.getNumber();
       onChanged();
       return this;
@@ -1260,9 +1508,8 @@ public final class VideoPosition extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The video bumper type to target. This field must be unset in
-     * order to target a specific video position (e.g. position_type), pod
-     * position (e.g. pod_position), or custom ad spot (e.g. custom_spot_id).
+     * Optional. The video bumper type to target. If set, `adSpot`, `podPosition`,
+     * and `positionType` must be unset.
      * </pre>
      *
      * <code>
@@ -1272,7 +1519,7 @@ public final class VideoPosition extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearBumperType() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       bumperType_ = 0;
       onChanged();
       return this;

@@ -471,6 +471,38 @@ public interface EndpointOrBuilder
    *
    *
    * <pre>
+   * A [Datastream Private
+   * Connection](https://docs.cloud.google.com/datastream/docs/reference/rest/v1/projects.locations.privateConnections)
+   * name format:
+   * projects/{project}/locations/{location}/privateConnections/{privateConnection}.
+   * </pre>
+   *
+   * <code>string datastream_private_connection = 23;</code>
+   *
+   * @return The datastreamPrivateConnection.
+   */
+  java.lang.String getDatastreamPrivateConnection();
+
+  /**
+   *
+   *
+   * <pre>
+   * A [Datastream Private
+   * Connection](https://docs.cloud.google.com/datastream/docs/reference/rest/v1/projects.locations.privateConnections)
+   * name format:
+   * projects/{project}/locations/{location}/privateConnections/{privateConnection}.
+   * </pre>
+   *
+   * <code>string datastream_private_connection = 23;</code>
+   *
+   * @return The bytes for datastreamPrivateConnection.
+   */
+  com.google.protobuf.ByteString getDatastreamPrivateConnectionBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * A [Cloud Function](https://cloud.google.com/functions). Applicable only to
    * source endpoint.
    * </pre>

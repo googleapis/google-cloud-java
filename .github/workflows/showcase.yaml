@@ -2,9 +2,6 @@ permissions:
   contents: read
 
 on:
-  push:
-    branches:
-      - main
   pull_request:
 name: showcase
 jobs:

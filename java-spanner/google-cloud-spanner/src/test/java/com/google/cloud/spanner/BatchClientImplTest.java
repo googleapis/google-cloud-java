@@ -39,6 +39,7 @@ import io.opentelemetry.api.OpenTelemetry;
 import java.time.Duration;
 import java.util.Collections;
 import java.util.Map;
+import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -69,6 +70,11 @@ public final class BatchClientImplTest {
   public static void setupOpenTelemetry() {
     SpannerOptions.resetActiveTracingFramework();
     SpannerOptions.enableOpenTelemetryTraces();
+  }
+
+  @AfterClass
+  public static void resetOpenTelemetry() {
+    SpannerOptions.resetActiveTracingFramework();
   }
 
   @SuppressWarnings("unchecked")

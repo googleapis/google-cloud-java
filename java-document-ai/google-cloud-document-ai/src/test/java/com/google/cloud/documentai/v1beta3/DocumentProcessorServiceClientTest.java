@@ -826,6 +826,7 @@ public class DocumentProcessorServiceClientTest {
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
             .setGenAiModelInfo(ProcessorVersion.GenAiModelInfo.newBuilder().build())
+            .setGroundingSettings(GroundingSettings.newBuilder().build())
             .build();
     mockDocumentProcessorService.addResponse(expectedResponse);
 
@@ -880,6 +881,7 @@ public class DocumentProcessorServiceClientTest {
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
             .setGenAiModelInfo(ProcessorVersion.GenAiModelInfo.newBuilder().build())
+            .setGroundingSettings(GroundingSettings.newBuilder().build())
             .build();
     mockDocumentProcessorService.addResponse(expectedResponse);
 

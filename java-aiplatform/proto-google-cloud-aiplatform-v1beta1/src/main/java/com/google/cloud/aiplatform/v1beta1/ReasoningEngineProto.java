@@ -81,6 +81,10 @@ public final class ReasoningEngineProto extends com.google.protobuf.GeneratedFil
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngineSpec_SourceCodeSpec_DeveloperConnectSource_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngineSpec_SourceCodeSpec_GitSource_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngineSpec_SourceCodeSpec_GitSource_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngineSpec_SourceCodeSpec_PythonSpec_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngineSpec_SourceCodeSpec_PythonSpec_fieldAccessorTable;
@@ -157,7 +161,7 @@ public final class ReasoningEngineProto extends com.google.protobuf.GeneratedFil
           + "v_var.proto\0328google/cloud/aiplatform/v1b"
           + "eta1/service_networking.proto\032\036google/pr"
           + "otobuf/duration.proto\032\034google/protobuf/s"
-          + "truct.proto\032\037google/protobuf/timestamp.proto\"\255\026\n"
+          + "truct.proto\032\037google/protobuf/timestamp.proto\"\335\027\n"
           + "\023ReasoningEngineSpec\022_\n"
           + "\020source_code_spec\030\013 \001(\0132C.google.cloud.aiplatform"
           + ".v1beta1.ReasoningEngineSpec.SourceCodeSpecH\000\022\\\n"
@@ -197,22 +201,24 @@ public final class ReasoningEngineProto extends com.google.protobuf.GeneratedFil
           + "\005value\030\002 \001(\t:\0028\001B\020\n"
           + "\016_min_instancesB\020\n"
           + "\016_max_instancesB\030\n"
-          + "\026_container_concurrency\032\204\t\n"
+          + "\026_container_concurrency\032\264\n\n"
           + "\016SourceCodeSpec\022i\n\r"
           + "inline_source\030\001 \001(\0132P.google.c"
           + "loud.aiplatform.v1beta1.ReasoningEngineSpec.SourceCodeSpec.InlineSourceH\000\022~\n"
           + "\030developer_connect_source\030\003 \001(\0132Z.google.clo"
           + "ud.aiplatform.v1beta1.ReasoningEngineSpe"
-          + "c.SourceCodeSpec.DeveloperConnectSourceH\000\022e\n"
-          + "\013python_spec\030\002 \001(\0132N.google.cloud.ai"
-          + "platform.v1beta1.ReasoningEngineSpec.SourceCodeSpec.PythonSpecH\001\022i\n\n"
-          + "image_spec\030\005 \001(\0132M.google.cloud.aiplatform.v1beta1.R"
-          + "easoningEngineSpec.SourceCodeSpec.ImageSpecB\004\342A\001\001H\001\032-\n"
+          + "c.SourceCodeSpec.DeveloperConnectSourceH\000\022c\n\n"
+          + "git_source\030\006 \001(\0132M.google.cloud.aip"
+          + "latform.v1beta1.ReasoningEngineSpec.SourceCodeSpec.GitSourceH\000\022e\n"
+          + "\013python_spec\030\002 \001(\0132N.google.cloud.aiplatform.v1beta1.Re"
+          + "asoningEngineSpec.SourceCodeSpec.PythonSpecH\001\022i\n\n"
+          + "image_spec\030\005 \001(\0132M.google.cloud"
+          + ".aiplatform.v1beta1.ReasoningEngineSpec.SourceCodeSpec.ImageSpecB\004\342A\001\001H\001\032-\n"
           + "\014InlineSource\022\035\n"
           + "\016source_archive\030\001 \001(\014B\005\342A\002\002\004\032\265\001\n"
           + "\tImageSpec\022v\n\n"
-          + "build_args\030\001 \003(\0132\\.google.cloud.aiplatform.v"
-          + "1beta1.ReasoningEngineSpec.SourceCodeSpec.ImageSpec.BuildArgsEntryB\004\342A\001\001\0320\n"
+          + "build_args\030\001 \003(\0132\\.google.cloud.aiplatform.v1beta1.ReasoningEng"
+          + "ineSpec.SourceCodeSpec.ImageSpec.BuildArgsEntryB\004\342A\001\001\0320\n"
           + "\016BuildArgsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001\032\234\001\n"
@@ -222,8 +228,12 @@ public final class ReasoningEngineProto extends com.google.protobuf.GeneratedFil
           + "\003dir\030\002 \001(\tB\004\342A\001\002\022\026\n"
           + "\010revision\030\003 \001(\tB\004\342A\001\002\032\212\001\n"
           + "\026DeveloperConnectSource\022p\n"
-          + "\006config\030\001 \001(\0132Z.google.cloud.aiplatform.v1beta1.R"
-          + "easoningEngineSpec.SourceCodeSpec.DeveloperConnectConfigB\004\342A\001\002\032\206\001\n\n"
+          + "\006config\030\001 \001(\0132Z.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec."
+          + "SourceCodeSpec.DeveloperConnectConfigB\004\342A\001\002\032I\n"
+          + "\tGitSource\022\021\n"
+          + "\003url\030\001 \001(\tB\004\342A\001\002\022\021\n"
+          + "\003dir\030\002 \001(\tB\004\342A\001\001\022\026\n"
+          + "\010revision\030\003 \001(\tB\004\342A\001\002\032\206\001\n\n"
           + "PythonSpec\022\025\n"
           + "\007version\030\001 \001(\tB\004\342A\001\001\022\037\n"
           + "\021entrypoint_module\030\002 \001(\tB\004\342A\001\001\022\037\n"
@@ -246,31 +256,29 @@ public final class ReasoningEngineProto extends com.google.protobuf.GeneratedFil
           + "\004name\030\001 \001(\tB\004\342A\001\010\022\032\n"
           + "\014display_name\030\002 \001(\tB\004\342A\001\002\022\031\n"
           + "\013description\030\007 \001(\tB\004\342A\001\001\022H\n"
-          + "\004spec\030\003"
-          + " \001(\01324.google.cloud.aiplatform.v1beta1.ReasoningEngineSpecB\004\342A\001\001\0225\n"
+          + "\004spec\030\003 \001(\01324.goog"
+          + "le.cloud.aiplatform.v1beta1.ReasoningEngineSpecB\004\342A\001\001\0225\n"
           + "\013create_time\030\004"
           + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\0225\n"
           + "\013update_time\030\005"
           + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\022\022\n"
           + "\004etag\030\006 \001(\tB\004\342A\001\001\022W\n"
-          + "\014context_spec\030\t \001(\0132;.google.c"
-          + "loud.aiplatform.v1beta1.ReasoningEngineContextSpecB\004\342A\001\001\022H\n"
-          + "\017encryption_spec\030\013 \001("
-          + "\0132/.google.cloud.aiplatform.v1beta1.EncryptionSpec\022L\n"
-          + "\006labels\030\021 \003(\0132<.google.clou"
-          + "d.aiplatform.v1beta1.ReasoningEngine.LabelsEntry\022\\\n"
-          + "\016traffic_config\030\024 \001(\0132>.googl"
-          + "e.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfigB\004\342A\001\001\032\302\004\n\r"
+          + "\014context_spec\030\t"
+          + " \001(\0132;.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpecB\004\342A\001\001\022H\n"
+          + "\017encryption_spec\030\013"
+          + " \001(\0132/.google.cloud.aiplatform.v1beta1.EncryptionSpec\022L\n"
+          + "\006labels\030\021 \003"
+          + "(\0132<.google.cloud.aiplatform.v1beta1.ReasoningEngine.LabelsEntry\022\\\n"
+          + "\016traffic_config\030\024 \001(\0132>.google.cloud.aiplatform.v1bet"
+          + "a1.ReasoningEngine.TrafficConfigB\004\342A\001\001\032\302\004\n\r"
           + "TrafficConfig\022w\n"
-          + "\024traffic_split_manual\030\022 \001(\0132Q.google."
-          + "cloud.aiplatform.v1beta1.ReasoningEngine"
-          + ".TrafficConfig.TrafficSplitManualB\004\342A\001\001H\000\022\204\001\n"
-          + "\033traffic_split_always_latest\030\023 \001(\0132"
-          + "W.google.cloud.aiplatform.v1beta1.Reason"
-          + "ingEngine.TrafficConfig.TrafficSplitAlwaysLatestB\004\342A\001\001H\000\032\203\002\n"
+          + "\024traffic_split_manual\030\022 \001(\0132Q.google.cloud.aiplatform.v1beta1"
+          + ".ReasoningEngine.TrafficConfig.TrafficSplitManualB\004\342A\001\001H\000\022\204\001\n"
+          + "\033traffic_split_always_latest\030\023 \001(\0132W.google.cloud.aiplatfor"
+          + "m.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitAlwaysLatestB\004\342A\001\001H\000\032\203\002\n"
           + "\022TrafficSplitManual\022i\n"
-          + "\007targets\030\001 \003(\0132X.google.cloud.aiplatfo"
-          + "rm.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual.Target\032\201\001\n"
+          + "\007targets\030\001 \003(\0132X.google.cloud.aiplatform.v1beta1.ReasoningEngi"
+          + "ne.TrafficConfig.TrafficSplitManual.Target\032\201\001\n"
           + "\006Target\022`\n"
           + "\025runtime_revision_name\030\001 \001(\tBA\342A\001\002\372A:\n"
           + "8aiplatform.googleapis.com/ReasoningEngineRuntimeRevision\022\025\n"
@@ -280,26 +288,26 @@ public final class ReasoningEngineProto extends com.google.protobuf.GeneratedFil
           + "\013LabelsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001:\237\001\352A\233\001\n"
-          + ")aiplatform.googleapis.com/ReasoningEngine\022Kprojects/{project}"
-          + "/locations/{location}/reasoningEngines/{"
-          + "reasoning_engine}*\020reasoningEngines2\017reasoningEngine\"\367\010\n"
+          + ")aiplatform.googleapis.com/ReasoningEngine\022Kpr"
+          + "ojects/{project}/locations/{location}/re"
+          + "asoningEngines/{reasoning_engine}*\020reasoningEngines2\017reasoningEngine\"\367\010\n"
           + "\032ReasoningEngineContextSpec\022n\n"
-          + "\022memory_bank_config\030\001 \001(\0132L.google"
-          + ".cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.MemoryBankConfigB\004\342A\001\001\032\350\007\n"
+          + "\022memory_bank_config\030\001 \001(\0132L.google.cloud.aiplatform.v1beta"
+          + "1.ReasoningEngineContextSpec.MemoryBankConfigB\004\342A\001\001\032\350\007\n"
           + "\020MemoryBankConfig\022~\n"
-          + "\021generation_config\030\001 \001(\0132].google.cloud.aiplatform.v1beta1.Re"
-          + "asoningEngineContextSpec.MemoryBankConfig.GenerationConfigB\004\342A\001\001\022\213\001\n"
-          + "\030similarity_search_config\030\002 \001(\0132c.google.cloud.aipla"
+          + "\021generation_config\030\001 \001(\0132].google.cloud.aipla"
           + "tform.v1beta1.ReasoningEngineContextSpec"
-          + ".MemoryBankConfig.SimilaritySearchConfigB\004\342A\001\001\022p\n\n"
-          + "ttl_config\030\005 \001(\0132V.google.cloud.aiplatform.v1beta1.ReasoningEngineCont"
-          + "extSpec.MemoryBankConfig.TtlConfigB\004\342A\001\001\032\243\003\n"
+          + ".MemoryBankConfig.GenerationConfigB\004\342A\001\001\022\213\001\n"
+          + "\030similarity_search_config\030\002 \001(\0132c.go"
+          + "ogle.cloud.aiplatform.v1beta1.ReasoningE"
+          + "ngineContextSpec.MemoryBankConfig.SimilaritySearchConfigB\004\342A\001\001\022p\n\n"
+          + "ttl_config\030\005 \001(\0132V.google.cloud.aiplatform.v1beta1.Rea"
+          + "soningEngineContextSpec.MemoryBankConfig.TtlConfigB\004\342A\001\001\032\243\003\n"
           + "\tTtlConfig\0226\n"
           + "\013default_ttl\030\001"
           + " \001(\0132\031.google.protobuf.DurationB\004\342A\001\001H\000\022\215\001\n"
-          + "\023granular_ttl_config\030\002 \001(\0132h.google.cloud.aipl"
-          + "atform.v1beta1.ReasoningEngineContextSpe"
-          + "c.MemoryBankConfig.TtlConfig.GranularTtlConfigB\004\342A\001\001H\000\032\306\001\n"
+          + "\023granular_ttl_config\030\002 \001(\0132h.google.cloud.aiplatform.v1beta1.Reasoning"
+          + "EngineContextSpec.MemoryBankConfig.TtlConfig.GranularTtlConfigB\004\342A\001\001H\000\032\306\001\n"
           + "\021GranularTtlConfig\0223\n\n"
           + "create_ttl\030\001 \001(\0132\031.google.protobuf.DurationB\004\342A\001\001\022=\n"
           + "\024generate_created_ttl\030\002"
@@ -313,14 +321,14 @@ public final class ReasoningEngineProto extends com.google.protobuf.GeneratedFil
           + "\026SimilaritySearchConfig\022D\n"
           + "\017embedding_model\030\001 \001(\tB+\342A\001\002\372A$\n"
           + "\"aiplatform.googleapis.com/EndpointB\215\003\n"
-          + "#com.google.cloud.aiplatform.v1beta1B\024ReasoningEngineProtoP\001ZCcloud.google.com"
-          + "/go/aiplatform/apiv1beta1/aiplatformpb;a"
-          + "iplatformpb\252\002\037Google.Cloud.AIPlatform.V1"
-          + "Beta1\312\002\037Google\\Cloud\\AIPlatform\\V1beta1\352"
-          + "\002\"Google::Cloud::AIPlatform::V1beta1\352A\236\001\n"
-          + "1developerconnect.googleapis.com/GitRepositoryLink\022iprojects/{project}/location"
-          + "s/{location}/connections/{connection}/gitRepositoryLinks/{git_repository_link}b\006"
-          + "proto3"
+          + "#com.google.cloud.aiplatform.v1beta1B\024ReasoningEngineProtoP\001ZC"
+          + "cloud.google.com/go/aiplatform/apiv1beta"
+          + "1/aiplatformpb;aiplatformpb\252\002\037Google.Clo"
+          + "ud.AIPlatform.V1Beta1\312\002\037Google\\Cloud\\AIP"
+          + "latform\\V1beta1\352\002\"Google::Cloud::AIPlatform::V1beta1\352A\236\001\n"
+          + "1developerconnect.googleapis.com/GitRepositoryLink\022iprojects/{p"
+          + "roject}/locations/{location}/connections/{connection}/gitRepositoryLinks/{git_re"
+          + "pository_link}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -394,6 +402,7 @@ public final class ReasoningEngineProto extends com.google.protobuf.GeneratedFil
             new java.lang.String[] {
               "InlineSource",
               "DeveloperConnectSource",
+              "GitSource",
               "PythonSpec",
               "ImageSpec",
               "Source",
@@ -444,9 +453,18 @@ public final class ReasoningEngineProto extends com.google.protobuf.GeneratedFil
             new java.lang.String[] {
               "Config",
             });
-    internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngineSpec_SourceCodeSpec_PythonSpec_descriptor =
+    internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngineSpec_SourceCodeSpec_GitSource_descriptor =
         internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngineSpec_SourceCodeSpec_descriptor
             .getNestedType(4);
+    internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngineSpec_SourceCodeSpec_GitSource_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngineSpec_SourceCodeSpec_GitSource_descriptor,
+            new java.lang.String[] {
+              "Url", "Dir", "Revision",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngineSpec_SourceCodeSpec_PythonSpec_descriptor =
+        internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngineSpec_SourceCodeSpec_descriptor
+            .getNestedType(5);
     internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngineSpec_SourceCodeSpec_PythonSpec_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngineSpec_SourceCodeSpec_PythonSpec_descriptor,

@@ -30,8 +30,8 @@ public interface SizeInfoOrBuilder
    *
    *
    * <pre>
-   * Output only. Estimated number of members in this user list, on the Google
-   * Display Network.
+   * Output only. Estimated number of active members in this user list on the
+   * Google Display Network over the last 30 days.
    * </pre>
    *
    * <code>int64 display_network_members_count = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -45,9 +45,9 @@ public interface SizeInfoOrBuilder
    *
    *
    * <pre>
-   * Output only. Estimated number of members in this user list in the
-   * google.com domain. These are the members available for targeting in Search
-   * campaigns.
+   * Output only. Estimated number of active members in this user list in the
+   * google.com domain over the last 30 days. These are the members available
+   * for targeting in Search campaigns.
    * </pre>
    *
    * <code>int64 search_network_members_count = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];

@@ -751,7 +751,7 @@ public interface TargetHttpsProxyOrBuilder
    * Certificate Manager Certificates accepted formats are:
    *
    * - //certificatemanager.googleapis.com/projects/{project}/locations/{location}/certificates/{resourceName}.
-   * - https://certificatemanager.googleapis.com/v1alpha1/projects/{project}/locations/{location}/certificates/{resourceName}.
+   * - https://certificatemanager.{universeDomain}/v1alpha1/projects/{project}/locations/{location}/certificates/{resourceName}.
    * </pre>
    *
    * <code>repeated string ssl_certificates = 366006543;</code>
@@ -783,7 +783,7 @@ public interface TargetHttpsProxyOrBuilder
    * Certificate Manager Certificates accepted formats are:
    *
    * - //certificatemanager.googleapis.com/projects/{project}/locations/{location}/certificates/{resourceName}.
-   * - https://certificatemanager.googleapis.com/v1alpha1/projects/{project}/locations/{location}/certificates/{resourceName}.
+   * - https://certificatemanager.{universeDomain}/v1alpha1/projects/{project}/locations/{location}/certificates/{resourceName}.
    * </pre>
    *
    * <code>repeated string ssl_certificates = 366006543;</code>
@@ -815,7 +815,7 @@ public interface TargetHttpsProxyOrBuilder
    * Certificate Manager Certificates accepted formats are:
    *
    * - //certificatemanager.googleapis.com/projects/{project}/locations/{location}/certificates/{resourceName}.
-   * - https://certificatemanager.googleapis.com/v1alpha1/projects/{project}/locations/{location}/certificates/{resourceName}.
+   * - https://certificatemanager.{universeDomain}/v1alpha1/projects/{project}/locations/{location}/certificates/{resourceName}.
    * </pre>
    *
    * <code>repeated string ssl_certificates = 366006543;</code>
@@ -848,7 +848,7 @@ public interface TargetHttpsProxyOrBuilder
    * Certificate Manager Certificates accepted formats are:
    *
    * - //certificatemanager.googleapis.com/projects/{project}/locations/{location}/certificates/{resourceName}.
-   * - https://certificatemanager.googleapis.com/v1alpha1/projects/{project}/locations/{location}/certificates/{resourceName}.
+   * - https://certificatemanager.{universeDomain}/v1alpha1/projects/{project}/locations/{location}/certificates/{resourceName}.
    * </pre>
    *
    * <code>repeated string ssl_certificates = 366006543;</code>

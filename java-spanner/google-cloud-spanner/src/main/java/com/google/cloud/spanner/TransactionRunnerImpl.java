@@ -825,36 +825,10 @@ class TransactionRunnerImpl implements SessionTransaction, TransactionRunner {
       // must be included with the transaction to ensure that any locks that are taken by the
       // statement are included in the transaction, even if the statement again causes an error
       // during the retry.
+      SpannerException exceptionToThrow = e;
       if (withBeginTransaction) {
-        if (lastStatement) {
-          this.transactionIdFuture.setException(e);
-        } else {
-          // Simulate an aborted transaction to force a retry with a new transaction.
-          this.transactionIdFuture.setException(
-              SpannerExceptionFactory.newSpannerException(
-                  ErrorCode.ABORTED,
-                  "Aborted due to failed initial statement",
-                  SpannerExceptionFactory.createAbortedExceptionWithRetryDelay(
-                      "Aborted due to failed initial statement", e, 0, 1)));
-        }
-      }
-      SpannerException exceptionToThrow;
-      if (withBeginTransaction
-          && e.getErrorCode() == ErrorCode.CANCELLED
-          && e.getMessage().contains(TRANSACTION_CANCELLED_MESSAGE)) {
-        // If the first statement of a transaction fails because it was invalidated by a later
-        // transaction, then the transaction should be retried with an explicit BeginTransaction
-        // RPC. It could be that this occurred because of a previous transaction that timed out or
-        // was cancelled by the client, but that was sent to Cloud Spanner and that was still active
-        // on the backend.
-        exceptionToThrow =
-            SpannerExceptionFactory.newSpannerException(
-                ErrorCode.ABORTED,
-                e.getMessage(),
-                SpannerExceptionFactory.createAbortedExceptionWithRetryDelay(
-                    "Aborted due to failed initial statement", e, 0, 1));
-      } else {
-        exceptionToThrow = e;
+        exceptionToThrow = translateInitialStatementError(e);
+        failTransactionIdFutureForInitialStatement(exceptionToThrow, lastStatement);
       }
 
       if (exceptionToThrow.getErrorCode() == ErrorCode.ABORTED) {
@@ -880,6 +854,48 @@ class TransactionRunnerImpl implements SessionTransaction, TransactionRunner {
       return exceptionToThrow;
     }
 
+    private SpannerException translateInitialStatementError(SpannerException exception) {
+      if (exception.getErrorCode() == ErrorCode.CANCELLED
+          && exception.getMessage().contains(TRANSACTION_CANCELLED_MESSAGE)) {
+        // If the first statement of a transaction fails because it was invalidated by a later
+        // transaction, then the transaction should be retried with an explicit BeginTransaction
+        // RPC. It could be that this occurred because of a previous transaction that timed out or
+        // was cancelled by the client, but that was sent to Cloud Spanner and that was still active
+        // on the backend.
+        return SpannerExceptionFactory.newSpannerException(
+            ErrorCode.ABORTED,
+            exception.getMessage(),
+            SpannerExceptionFactory.createAbortedExceptionWithRetryDelay(
+                "Aborted due to failed initial statement", exception, 0, 1));
+      }
+      return exception;
+    }
+
+    /**
+     * Completes {@link #transactionIdFuture} with an exception when the initial statement that
+     * carried an inlined {@code BeginTransaction} fails. This method is idempotent because a
+     * synchronous stream-start failure invokes {@link #onStartFailed} immediately and then {@link
+     * #onError} when {@link GrpcResultSet} catches the thrown exception.
+     */
+    private void failTransactionIdFutureForInitialStatement(
+        SpannerException exception, boolean lastStatement) {
+      final SettableApiFuture<ByteString> future = this.transactionIdFuture;
+      if (future == null || future.isDone()) {
+        return;
+      }
+      if (lastStatement || exception instanceof AbortedException) {
+        future.setException(exception);
+      } else {
+        // Simulate an aborted transaction to force a retry with a new transaction.
+        future.setException(
+            SpannerExceptionFactory.newSpannerException(
+                ErrorCode.ABORTED,
+                "Aborted due to failed initial statement",
+                SpannerExceptionFactory.createAbortedExceptionWithRetryDelay(
+                    "Aborted due to failed initial statement", exception, 0, 1)));
+      }
+    }
+
     @Override
     public void onDone(boolean withBeginTransaction) {
       if (withBeginTransaction
@@ -888,8 +904,21 @@ class TransactionRunnerImpl implements SessionTransaction, TransactionRunner {
         // Context was done (closed) before a transaction id was returned.
         this.transactionIdFuture.setException(
             SpannerExceptionFactory.newSpannerException(
-                ErrorCode.FAILED_PRECONDITION,
-                "ResultSet was closed before a transaction id was returned"));
+                ErrorCode.FAILED_PRECONDITION, RESULT_SET_CLOSED_BEFORE_ID_RETURNED_MESSAGE));
+      }
+    }
+
+    @Override
+    void onClosedBeforeStreamStarted(boolean withBeginTransaction) {
+      onDone(withBeginTransaction);
+    }
+
+    @Override
+    void onStartFailed(boolean withBeginTransaction, boolean lastStatement, Throwable throwable) {
+      if (withBeginTransaction) {
+        SpannerException exception =
+            translateInitialStatementError(SpannerExceptionFactory.asSpannerException(throwable));
+        failTransactionIdFutureForInitialStatement(exception, lastStatement);
       }
     }
 
@@ -1404,6 +1433,9 @@ class TransactionRunnerImpl implements SessionTransaction, TransactionRunner {
                 "Transaction Attempt Failed in Commit",
                 ImmutableMap.of(
                     "Attempt", attempt.longValue(), "Status", e.getErrorCode().toString()));
+            if (shouldRollbackOnCommitFailure(e)) {
+              rollbackBestEffort(txn, e);
+            }
             throw e;
           }
         };
@@ -1428,4 +1460,27 @@ class TransactionRunnerImpl implements SessionTransaction, TransactionRunner {
 
   @Override
   public void close() {}
+
+  static boolean shouldRollbackOnCommitFailure(Throwable t) {
+    SpannerException e = SpannerExceptionFactory.asSpannerException(t);
+    switch (e.getErrorCode()) {
+      case DEADLINE_EXCEEDED:
+      case CANCELLED:
+      case UNAVAILABLE:
+        return true;
+      case RESOURCE_EXHAUSTED:
+        return e.getRetryDelayInMillis() > -1L;
+      default:
+        return false;
+    }
+  }
+
+  @SuppressWarnings("FutureReturnValueIgnored")
+  static void rollbackBestEffort(TransactionContextImpl txn, Throwable commitError) {
+    try {
+      txn.rollbackAsync();
+    } catch (RuntimeException rollbackError) {
+      commitError.addSuppressed(rollbackError);
+    }
+  }
 }

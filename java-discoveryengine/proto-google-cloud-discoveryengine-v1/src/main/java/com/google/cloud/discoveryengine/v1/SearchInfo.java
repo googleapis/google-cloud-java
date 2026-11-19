@@ -81,7 +81,7 @@ public final class SearchInfo extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The user's search query.
+   * Optional. The user's search query.
    *
    * See
    * [SearchRequest.query][google.cloud.discoveryengine.v1.SearchRequest.query]
@@ -97,7 +97,7 @@ public final class SearchInfo extends com.google.protobuf.GeneratedMessage
    * field. Otherwise, an `INVALID_ARGUMENT` error is returned.
    * </pre>
    *
-   * <code>string search_query = 1;</code>
+   * <code>string search_query = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The searchQuery.
    */
@@ -118,7 +118,7 @@ public final class SearchInfo extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The user's search query.
+   * Optional. The user's search query.
    *
    * See
    * [SearchRequest.query][google.cloud.discoveryengine.v1.SearchRequest.query]
@@ -134,7 +134,7 @@ public final class SearchInfo extends com.google.protobuf.GeneratedMessage
    * field. Otherwise, an `INVALID_ARGUMENT` error is returned.
    * </pre>
    *
-   * <code>string search_query = 1;</code>
+   * <code>string search_query = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for searchQuery.
    */
@@ -648,7 +648,7 @@ public final class SearchInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The user's search query.
+     * Optional. The user's search query.
      *
      * See
      * [SearchRequest.query][google.cloud.discoveryengine.v1.SearchRequest.query]
@@ -664,7 +664,7 @@ public final class SearchInfo extends com.google.protobuf.GeneratedMessage
      * field. Otherwise, an `INVALID_ARGUMENT` error is returned.
      * </pre>
      *
-     * <code>string search_query = 1;</code>
+     * <code>string search_query = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The searchQuery.
      */
@@ -684,7 +684,7 @@ public final class SearchInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The user's search query.
+     * Optional. The user's search query.
      *
      * See
      * [SearchRequest.query][google.cloud.discoveryengine.v1.SearchRequest.query]
@@ -700,7 +700,7 @@ public final class SearchInfo extends com.google.protobuf.GeneratedMessage
      * field. Otherwise, an `INVALID_ARGUMENT` error is returned.
      * </pre>
      *
-     * <code>string search_query = 1;</code>
+     * <code>string search_query = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for searchQuery.
      */
@@ -720,7 +720,7 @@ public final class SearchInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The user's search query.
+     * Optional. The user's search query.
      *
      * See
      * [SearchRequest.query][google.cloud.discoveryengine.v1.SearchRequest.query]
@@ -736,7 +736,7 @@ public final class SearchInfo extends com.google.protobuf.GeneratedMessage
      * field. Otherwise, an `INVALID_ARGUMENT` error is returned.
      * </pre>
      *
-     * <code>string search_query = 1;</code>
+     * <code>string search_query = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The searchQuery to set.
      * @return This builder for chaining.
@@ -755,7 +755,7 @@ public final class SearchInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The user's search query.
+     * Optional. The user's search query.
      *
      * See
      * [SearchRequest.query][google.cloud.discoveryengine.v1.SearchRequest.query]
@@ -771,7 +771,7 @@ public final class SearchInfo extends com.google.protobuf.GeneratedMessage
      * field. Otherwise, an `INVALID_ARGUMENT` error is returned.
      * </pre>
      *
-     * <code>string search_query = 1;</code>
+     * <code>string search_query = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -786,7 +786,7 @@ public final class SearchInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The user's search query.
+     * Optional. The user's search query.
      *
      * See
      * [SearchRequest.query][google.cloud.discoveryengine.v1.SearchRequest.query]
@@ -802,7 +802,7 @@ public final class SearchInfo extends com.google.protobuf.GeneratedMessage
      * field. Otherwise, an `INVALID_ARGUMENT` error is returned.
      * </pre>
      *
-     * <code>string search_query = 1;</code>
+     * <code>string search_query = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for searchQuery to set.
      * @return This builder for chaining.

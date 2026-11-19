@@ -56,6 +56,7 @@ public final class CreateAutoProtectionPolicyBindingRequest
   private CreateAutoProtectionPolicyBindingRequest() {
     parent_ = "";
     autoProtectionPolicyBindingId_ = "";
+    requestId_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -147,6 +148,9 @@ public final class CreateAutoProtectionPolicyBindingRequest
    * <pre>
    * Required. The ID to use for the binding.
    * This will become the final component of the binding's resource name.
+   *
+   * This value must start with a lowercase letter followed by up to 62
+   * lowercase letters, numbers, or hyphens, and cannot end with a hyphen.
    * </pre>
    *
    * <code>string auto_protection_policy_binding_id = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -173,6 +177,9 @@ public final class CreateAutoProtectionPolicyBindingRequest
    * <pre>
    * Required. The ID to use for the binding.
    * This will become the final component of the binding's resource name.
+   *
+   * This value must start with a lowercase letter followed by up to 62
+   * lowercase letters, numbers, or hyphens, and cannot end with a hyphen.
    * </pre>
    *
    * <code>string auto_protection_policy_binding_id = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -254,6 +261,75 @@ public final class CreateAutoProtectionPolicyBindingRequest
         : autoProtectionPolicyBinding_;
   }
 
+  public static final int REQUEST_ID_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. An optional request ID to identify requests. Specify a unique
+   * request ID so that if you must retry your request, the server will know to
+   * ignore the request if it has already been completed. The server will
+   * guarantee that for at least 60 minutes since the first request.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is
+   * not supported (00000000-0000-0000-0000-000000000000).
+   * </pre>
+   *
+   * <code>
+   * string request_id = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+   * </code>
+   *
+   * @return The requestId.
+   */
+  @java.lang.Override
+  public java.lang.String getRequestId() {
+    java.lang.Object ref = requestId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      requestId_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. An optional request ID to identify requests. Specify a unique
+   * request ID so that if you must retry your request, the server will know to
+   * ignore the request if it has already been completed. The server will
+   * guarantee that for at least 60 minutes since the first request.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is
+   * not supported (00000000-0000-0000-0000-000000000000).
+   * </pre>
+   *
+   * <code>
+   * string request_id = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+   * </code>
+   *
+   * @return The bytes for requestId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getRequestIdBytes() {
+    java.lang.Object ref = requestId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      requestId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -277,6 +353,9 @@ public final class CreateAutoProtectionPolicyBindingRequest
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(3, getAutoProtectionPolicyBinding());
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(requestId_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 4, requestId_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -297,6 +376,9 @@ public final class CreateAutoProtectionPolicyBindingRequest
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               3, getAutoProtectionPolicyBinding());
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(requestId_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(4, requestId_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -323,6 +405,7 @@ public final class CreateAutoProtectionPolicyBindingRequest
       if (!getAutoProtectionPolicyBinding().equals(other.getAutoProtectionPolicyBinding()))
         return false;
     }
+    if (!getRequestId().equals(other.getRequestId())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -342,6 +425,8 @@ public final class CreateAutoProtectionPolicyBindingRequest
       hash = (37 * hash) + AUTO_PROTECTION_POLICY_BINDING_FIELD_NUMBER;
       hash = (53 * hash) + getAutoProtectionPolicyBinding().hashCode();
     }
+    hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getRequestId().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -502,6 +587,7 @@ public final class CreateAutoProtectionPolicyBindingRequest
         autoProtectionPolicyBindingBuilder_.dispose();
         autoProtectionPolicyBindingBuilder_ = null;
       }
+      requestId_ = "";
       return this;
     }
 
@@ -557,6 +643,9 @@ public final class CreateAutoProtectionPolicyBindingRequest
                 : autoProtectionPolicyBindingBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.requestId_ = requestId_;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -589,6 +678,11 @@ public final class CreateAutoProtectionPolicyBindingRequest
       }
       if (other.hasAutoProtectionPolicyBinding()) {
         mergeAutoProtectionPolicyBinding(other.getAutoProtectionPolicyBinding());
+      }
+      if (!other.getRequestId().isEmpty()) {
+        requestId_ = other.requestId_;
+        bitField0_ |= 0x00000008;
+        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -636,6 +730,12 @@ public final class CreateAutoProtectionPolicyBindingRequest
                 bitField0_ |= 0x00000004;
                 break;
               } // case 26
+            case 34:
+              {
+                requestId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 34
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -794,6 +894,9 @@ public final class CreateAutoProtectionPolicyBindingRequest
      * <pre>
      * Required. The ID to use for the binding.
      * This will become the final component of the binding's resource name.
+     *
+     * This value must start with a lowercase letter followed by up to 62
+     * lowercase letters, numbers, or hyphens, and cannot end with a hyphen.
      * </pre>
      *
      * <code>string auto_protection_policy_binding_id = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -819,6 +922,9 @@ public final class CreateAutoProtectionPolicyBindingRequest
      * <pre>
      * Required. The ID to use for the binding.
      * This will become the final component of the binding's resource name.
+     *
+     * This value must start with a lowercase letter followed by up to 62
+     * lowercase letters, numbers, or hyphens, and cannot end with a hyphen.
      * </pre>
      *
      * <code>string auto_protection_policy_binding_id = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -844,6 +950,9 @@ public final class CreateAutoProtectionPolicyBindingRequest
      * <pre>
      * Required. The ID to use for the binding.
      * This will become the final component of the binding's resource name.
+     *
+     * This value must start with a lowercase letter followed by up to 62
+     * lowercase letters, numbers, or hyphens, and cannot end with a hyphen.
      * </pre>
      *
      * <code>string auto_protection_policy_binding_id = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -868,6 +977,9 @@ public final class CreateAutoProtectionPolicyBindingRequest
      * <pre>
      * Required. The ID to use for the binding.
      * This will become the final component of the binding's resource name.
+     *
+     * This value must start with a lowercase letter followed by up to 62
+     * lowercase letters, numbers, or hyphens, and cannot end with a hyphen.
      * </pre>
      *
      * <code>string auto_protection_policy_binding_id = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -888,6 +1000,9 @@ public final class CreateAutoProtectionPolicyBindingRequest
      * <pre>
      * Required. The ID to use for the binding.
      * This will become the final component of the binding's resource name.
+     *
+     * This value must start with a lowercase letter followed by up to 62
+     * lowercase letters, numbers, or hyphens, and cannot end with a hyphen.
      * </pre>
      *
      * <code>string auto_protection_policy_binding_id = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -1126,6 +1241,157 @@ public final class CreateAutoProtectionPolicyBindingRequest
         autoProtectionPolicyBinding_ = null;
       }
       return autoProtectionPolicyBindingBuilder_;
+    }
+
+    private java.lang.Object requestId_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An optional request ID to identify requests. Specify a unique
+     * request ID so that if you must retry your request, the server will know to
+     * ignore the request if it has already been completed. The server will
+     * guarantee that for at least 60 minutes since the first request.
+     *
+     * The request ID must be a valid UUID with the exception that zero UUID is
+     * not supported (00000000-0000-0000-0000-000000000000).
+     * </pre>
+     *
+     * <code>
+     * string request_id = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+     * </code>
+     *
+     * @return The requestId.
+     */
+    public java.lang.String getRequestId() {
+      java.lang.Object ref = requestId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        requestId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An optional request ID to identify requests. Specify a unique
+     * request ID so that if you must retry your request, the server will know to
+     * ignore the request if it has already been completed. The server will
+     * guarantee that for at least 60 minutes since the first request.
+     *
+     * The request ID must be a valid UUID with the exception that zero UUID is
+     * not supported (00000000-0000-0000-0000-000000000000).
+     * </pre>
+     *
+     * <code>
+     * string request_id = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+     * </code>
+     *
+     * @return The bytes for requestId.
+     */
+    public com.google.protobuf.ByteString getRequestIdBytes() {
+      java.lang.Object ref = requestId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        requestId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An optional request ID to identify requests. Specify a unique
+     * request ID so that if you must retry your request, the server will know to
+     * ignore the request if it has already been completed. The server will
+     * guarantee that for at least 60 minutes since the first request.
+     *
+     * The request ID must be a valid UUID with the exception that zero UUID is
+     * not supported (00000000-0000-0000-0000-000000000000).
+     * </pre>
+     *
+     * <code>
+     * string request_id = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+     * </code>
+     *
+     * @param value The requestId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRequestId(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      requestId_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An optional request ID to identify requests. Specify a unique
+     * request ID so that if you must retry your request, the server will know to
+     * ignore the request if it has already been completed. The server will
+     * guarantee that for at least 60 minutes since the first request.
+     *
+     * The request ID must be a valid UUID with the exception that zero UUID is
+     * not supported (00000000-0000-0000-0000-000000000000).
+     * </pre>
+     *
+     * <code>
+     * string request_id = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRequestId() {
+      requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000008);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An optional request ID to identify requests. Specify a unique
+     * request ID so that if you must retry your request, the server will know to
+     * ignore the request if it has already been completed. The server will
+     * guarantee that for at least 60 minutes since the first request.
+     *
+     * The request ID must be a valid UUID with the exception that zero UUID is
+     * not supported (00000000-0000-0000-0000-000000000000).
+     * </pre>
+     *
+     * <code>
+     * string request_id = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+     * </code>
+     *
+     * @param value The bytes for requestId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRequestIdBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      requestId_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.backupdr.v1beta.CreateAutoProtectionPolicyBindingRequest)

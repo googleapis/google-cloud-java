@@ -205,8 +205,7 @@ public interface FilterConfigOrBuilder
    *
    * <pre>
    * Optional. Settings for customizing filter rules.
-   * Note: This field is not supported in FloorSetting and Streaming
-   * Sanitization APIs.
+   * Note: This field is not supported in FloorSetting.
    * </pre>
    *
    * <code>
@@ -222,8 +221,7 @@ public interface FilterConfigOrBuilder
    *
    * <pre>
    * Optional. Settings for customizing filter rules.
-   * Note: This field is not supported in FloorSetting and Streaming
-   * Sanitization APIs.
+   * Note: This field is not supported in FloorSetting.
    * </pre>
    *
    * <code>
@@ -239,8 +237,7 @@ public interface FilterConfigOrBuilder
    *
    * <pre>
    * Optional. Settings for customizing filter rules.
-   * Note: This field is not supported in FloorSetting and Streaming
-   * Sanitization APIs.
+   * Note: This field is not supported in FloorSetting.
    * </pre>
    *
    * <code>
@@ -248,4 +245,47 @@ public interface FilterConfigOrBuilder
    * </code>
    */
   com.google.cloud.modelarmor.v1.FilterRuleSettingsOrBuilder getFilterRuleSettingsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Child sexual abuse material (CSAM) filter settings.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.modelarmor.v1.CsamFilterSettings csam_filter_settings = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the csamFilterSettings field is set.
+   */
+  boolean hasCsamFilterSettings();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Child sexual abuse material (CSAM) filter settings.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.modelarmor.v1.CsamFilterSettings csam_filter_settings = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The csamFilterSettings.
+   */
+  com.google.cloud.modelarmor.v1.CsamFilterSettings getCsamFilterSettings();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Child sexual abuse material (CSAM) filter settings.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.modelarmor.v1.CsamFilterSettings csam_filter_settings = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.modelarmor.v1.CsamFilterSettingsOrBuilder getCsamFilterSettingsOrBuilder();
 }

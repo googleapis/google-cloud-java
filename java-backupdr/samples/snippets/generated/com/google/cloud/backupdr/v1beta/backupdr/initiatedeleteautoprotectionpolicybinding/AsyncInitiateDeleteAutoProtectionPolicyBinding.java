@@ -42,6 +42,8 @@ public class AsyncInitiateDeleteAutoProtectionPolicyBinding {
                   AutoProtectionPolicyBindingName.of(
                           "[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]", "[BINDING]")
                       .toString())
+              .setEtag("etag3123477")
+              .setRequestId("requestId693933066")
               .build();
       ApiFuture<Operation> future =
           backupDRClient.initiateDeleteAutoProtectionPolicyBindingCallable().futureCall(request);

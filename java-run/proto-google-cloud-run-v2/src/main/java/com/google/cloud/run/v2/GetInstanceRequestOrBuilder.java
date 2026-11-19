@@ -27,6 +27,12 @@ public interface GetInstanceRequestOrBuilder
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
+   * <pre>
+   * Required. The name of the Instance to retrieve.
+   * </pre>
+   *
    * <code>
    * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
@@ -36,6 +42,12 @@ public interface GetInstanceRequestOrBuilder
   java.lang.String getName();
 
   /**
+   *
+   *
+   * <pre>
+   * Required. The name of the Instance to retrieve.
+   * </pre>
+   *
    * <code>
    * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>

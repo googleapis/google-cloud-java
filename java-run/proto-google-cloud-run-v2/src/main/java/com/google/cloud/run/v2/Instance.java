@@ -67,6 +67,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
     encryptionKey_ = "";
     encryptionKeyRevocationAction_ = 0;
     ingress_ = 0;
+    restartPolicy_ = 0;
     logUri_ = "";
     conditions_ = java.util.Collections.emptyList();
     containerStatuses_ = java.util.Collections.emptyList();
@@ -102,6 +103,199 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
             com.google.cloud.run.v2.Instance.class, com.google.cloud.run.v2.Instance.Builder.class);
   }
 
+  /**
+   *
+   *
+   * <pre>
+   * Restart policy options for the instance. If not provided, the default is
+   * `ON_FAILURE`.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.run.v2.Instance.RestartPolicy}
+   */
+  public enum RestartPolicy implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Unspecified restart policy.
+     * </pre>
+     *
+     * <code>RESTART_POLICY_UNSPECIFIED = 0;</code>
+     */
+    RESTART_POLICY_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Always restart the instance.
+     * </pre>
+     *
+     * <code>ALWAYS = 1;</code>
+     */
+    ALWAYS(1),
+    /**
+     *
+     *
+     * <pre>
+     * Restart if the instance terminates with non-zero exit code.
+     * </pre>
+     *
+     * <code>ON_FAILURE = 2;</code>
+     */
+    ON_FAILURE(2),
+    /**
+     *
+     *
+     * <pre>
+     * Never restart the instance.
+     * </pre>
+     *
+     * <code>NEVER = 3;</code>
+     */
+    NEVER(3),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 6,
+          /* suffix= */ "",
+          "RestartPolicy");
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Unspecified restart policy.
+     * </pre>
+     *
+     * <code>RESTART_POLICY_UNSPECIFIED = 0;</code>
+     */
+    public static final int RESTART_POLICY_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Always restart the instance.
+     * </pre>
+     *
+     * <code>ALWAYS = 1;</code>
+     */
+    public static final int ALWAYS_VALUE = 1;
+
+    /**
+     *
+     *
+     * <pre>
+     * Restart if the instance terminates with non-zero exit code.
+     * </pre>
+     *
+     * <code>ON_FAILURE = 2;</code>
+     */
+    public static final int ON_FAILURE_VALUE = 2;
+
+    /**
+     *
+     *
+     * <pre>
+     * Never restart the instance.
+     * </pre>
+     *
+     * <code>NEVER = 3;</code>
+     */
+    public static final int NEVER_VALUE = 3;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static RestartPolicy valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static RestartPolicy forNumber(int value) {
+      switch (value) {
+        case 0:
+          return RESTART_POLICY_UNSPECIFIED;
+        case 1:
+          return ALWAYS;
+        case 2:
+          return ON_FAILURE;
+        case 3:
+          return NEVER;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<RestartPolicy> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<RestartPolicy> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<RestartPolicy>() {
+          public RestartPolicy findValueByNumber(int number) {
+            return RestartPolicy.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.run.v2.Instance.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final RestartPolicy[] VALUES = values();
+
+    public static RestartPolicy valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private RestartPolicy(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.run.v2.Instance.RestartPolicy)
+  }
+
   private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
 
@@ -112,12 +306,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The fully qualified name of this Instance. In CreateInstanceRequest, this
-   * field is ignored, and instead composed from CreateInstanceRequest.parent
-   * and CreateInstanceRequest.instance_id.
-   *
-   * Format:
-   * projects/{project}/locations/{location}/instances/{instance_id}
+   * The fully qualified name of this Instance. In `CreateInstanceRequest`, this
+   * field is ignored, and instead composed from `CreateInstanceRequest.parent`
+   * and `CreateInstanceRequest.instance_id`.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -141,12 +332,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The fully qualified name of this Instance. In CreateInstanceRequest, this
-   * field is ignored, and instead composed from CreateInstanceRequest.parent
-   * and CreateInstanceRequest.instance_id.
-   *
-   * Format:
-   * projects/{project}/locations/{location}/instances/{instance_id}
+   * The fully qualified name of this Instance. In `CreateInstanceRequest`, this
+   * field is ignored, and instead composed from `CreateInstanceRequest.parent`
+   * and `CreateInstanceRequest.instance_id`.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -287,7 +475,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Output only. A number that monotonically increases every time the user
    * modifies the desired state.
-   * Please note that unlike v1, this is an int64 value. As with most Google
+   * Please note that unlike v1, this is an `int64` value. As with most Google
    * APIs, its JSON representation will be a `string` instead of an `integer`.
    * </pre>
    *
@@ -883,14 +1071,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
    * <pre>
    * The launch stage as defined by [Google Cloud Platform
    * Launch Stages](https://cloud.google.com/terms/launch-stages).
-   * Cloud Run supports `ALPHA`, `BETA`, and `GA`. If no value is specified, GA
-   * is assumed.
-   * Set the launch stage to a preview stage on input to allow use of preview
-   * features in that stage. On read (or output), describes whether the
-   * resource uses preview features.
-   * &lt;p&gt;
-   * For example, if ALPHA is provided as input, but only BETA and GA-level
-   * features are used, this field will be BETA on output.
+   * Cloud Run supports `ALPHA`, `BETA`, and `GA`. If no value is specified,
+   * `GA` is assumed. Set the launch stage to a preview stage on input to allow
+   * use of preview features in that stage. On read (or output), describes
+   * whether the resource uses preview features.
+   *
+   * For example, if `ALPHA` is provided as input, but only `BETA` and
+   * `GA`-level features are used, this field will be `BETA` on output.
    * </pre>
    *
    * <code>.google.api.LaunchStage launch_stage = 16;</code>
@@ -908,14 +1095,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
    * <pre>
    * The launch stage as defined by [Google Cloud Platform
    * Launch Stages](https://cloud.google.com/terms/launch-stages).
-   * Cloud Run supports `ALPHA`, `BETA`, and `GA`. If no value is specified, GA
-   * is assumed.
-   * Set the launch stage to a preview stage on input to allow use of preview
-   * features in that stage. On read (or output), describes whether the
-   * resource uses preview features.
-   * &lt;p&gt;
-   * For example, if ALPHA is provided as input, but only BETA and GA-level
-   * features are used, this field will be BETA on output.
+   * Cloud Run supports `ALPHA`, `BETA`, and `GA`. If no value is specified,
+   * `GA` is assumed. Set the launch stage to a preview stage on input to allow
+   * use of preview features in that stage. On read (or output), describes
+   * whether the resource uses preview features.
+   *
+   * For example, if `ALPHA` is provided as input, but only `BETA` and
+   * `GA`-level features are used, this field will be `BETA` on output.
    * </pre>
    *
    * <code>.google.api.LaunchStage launch_stage = 16;</code>
@@ -1171,6 +1357,65 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
     return containers_.get(index);
   }
 
+  public static final int SANDBOXES_FIELD_NUMBER = 34;
+  private com.google.cloud.run.v2.SandboxConfiguration sandboxes_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for sandboxes.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.run.v2.SandboxConfiguration sandboxes = 34 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the sandboxes field is set.
+   */
+  @java.lang.Override
+  public boolean hasSandboxes() {
+    return ((bitField0_ & 0x00000040) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for sandboxes.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.run.v2.SandboxConfiguration sandboxes = 34 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The sandboxes.
+   */
+  @java.lang.Override
+  public com.google.cloud.run.v2.SandboxConfiguration getSandboxes() {
+    return sandboxes_ == null
+        ? com.google.cloud.run.v2.SandboxConfiguration.getDefaultInstance()
+        : sandboxes_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for sandboxes.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.run.v2.SandboxConfiguration sandboxes = 34 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.run.v2.SandboxConfigurationOrBuilder getSandboxesOrBuilder() {
+    return sandboxes_ == null
+        ? com.google.cloud.run.v2.SandboxConfiguration.getDefaultInstance()
+        : sandboxes_;
+  }
+
   public static final int VOLUMES_FIELD_NUMBER = 21;
 
   @SuppressWarnings("serial")
@@ -1353,7 +1598,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * If encryption_key_revocation_action is SHUTDOWN, the duration before
+   * If `encryption_key_revocation_action` is `SHUTDOWN`, the duration before
    * shutting down all instances. The minimum increment is 1 hour.
    * </pre>
    *
@@ -1363,14 +1608,14 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasEncryptionKeyShutdownDuration() {
-    return ((bitField0_ & 0x00000040) != 0);
+    return ((bitField0_ & 0x00000080) != 0);
   }
 
   /**
    *
    *
    * <pre>
-   * If encryption_key_revocation_action is SHUTDOWN, the duration before
+   * If `encryption_key_revocation_action` is `SHUTDOWN`, the duration before
    * shutting down all instances. The minimum increment is 1 hour.
    * </pre>
    *
@@ -1389,7 +1634,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * If encryption_key_revocation_action is SHUTDOWN, the duration before
+   * If `encryption_key_revocation_action` is `SHUTDOWN`, the duration before
    * shutting down all instances. The minimum increment is 1 hour.
    * </pre>
    *
@@ -1420,7 +1665,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasNodeSelector() {
-    return ((bitField0_ & 0x00000080) != 0);
+    return ((bitField0_ & 0x00000100) != 0);
   }
 
   /**
@@ -1479,7 +1724,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasGpuZonalRedundancyDisabled() {
-    return ((bitField0_ & 0x00000100) != 0);
+    return ((bitField0_ & 0x00000200) != 0);
   }
 
   /**
@@ -1509,7 +1754,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Optional. Provides the ingress settings for this Instance. On output,
    * returns the currently observed ingress settings, or
-   * INGRESS_TRAFFIC_UNSPECIFIED if no revision is active.
+   * `INGRESS_TRAFFIC_UNSPECIFIED` if no revision is active.
    * </pre>
    *
    * <code>
@@ -1529,7 +1774,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Optional. Provides the ingress settings for this Instance. On output,
    * returns the currently observed ingress settings, or
-   * INGRESS_TRAFFIC_UNSPECIFIED if no revision is active.
+   * `INGRESS_TRAFFIC_UNSPECIFIED` if no revision is active.
    * </pre>
    *
    * <code>
@@ -1552,7 +1797,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Disables IAM permission check for run.routes.invoke for callers
+   * Optional. Disables IAM permission check for `run.routes.invoke` for callers
    * of this Instance. For more information, visit
    * https://cloud.google.com/run/docs/securing/managing-access#invoker_check.
    * </pre>
@@ -1564,6 +1809,25 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
   @java.lang.Override
   public boolean getInvokerIamDisabled() {
     return invokerIamDisabled_;
+  }
+
+  public static final int DEFAULT_URI_DISABLED_FIELD_NUMBER = 33;
+  private boolean defaultUriDisabled_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Disables public resolution of the default URI of this Instance.
+   * </pre>
+   *
+   * <code>bool default_uri_disabled = 33 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The defaultUriDisabled.
+   */
+  @java.lang.Override
+  public boolean getDefaultUriDisabled() {
+    return defaultUriDisabled_;
   }
 
   public static final int IAP_ENABLED_FIELD_NUMBER = 30;
@@ -1585,6 +1849,82 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
     return iapEnabled_;
   }
 
+  public static final int SSH_ENABLED_FIELD_NUMBER = 32;
+  private boolean sshEnabled_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Enables SSH access to the Instance.
+   * </pre>
+   *
+   * <code>optional bool ssh_enabled = 32 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the sshEnabled field is set.
+   */
+  @java.lang.Override
+  public boolean hasSshEnabled() {
+    return ((bitField0_ & 0x00000400) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Enables SSH access to the Instance.
+   * </pre>
+   *
+   * <code>optional bool ssh_enabled = 32 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The sshEnabled.
+   */
+  @java.lang.Override
+  public boolean getSshEnabled() {
+    return sshEnabled_;
+  }
+
+  public static final int RESTART_POLICY_FIELD_NUMBER = 35;
+  private int restartPolicy_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Restart policy for the Instance.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.run.v2.Instance.RestartPolicy restart_policy = 35 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for restartPolicy.
+   */
+  @java.lang.Override
+  public int getRestartPolicyValue() {
+    return restartPolicy_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Restart policy for the Instance.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.run.v2.Instance.RestartPolicy restart_policy = 35 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The restartPolicy.
+   */
+  @java.lang.Override
+  public com.google.cloud.run.v2.Instance.RestartPolicy getRestartPolicy() {
+    com.google.cloud.run.v2.Instance.RestartPolicy result =
+        com.google.cloud.run.v2.Instance.RestartPolicy.forNumber(restartPolicy_);
+    return result == null ? com.google.cloud.run.v2.Instance.RestartPolicy.UNRECOGNIZED : result;
+  }
+
   public static final int OBSERVED_GENERATION_FIELD_NUMBER = 40;
   private long observedGeneration_ = 0L;
 
@@ -1594,7 +1934,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Output only. The generation of this Instance currently serving traffic. See
    * comments in `reconciling` for additional information on reconciliation
-   * process in Cloud Run. Please note that unlike v1, this is an int64 value.
+   * process in Cloud Run. Please note that unlike v1, this is an `int64` value.
    * As with most Google APIs, its JSON representation will be a `string`
    * instead of an `integer`.
    * </pre>
@@ -1682,7 +2022,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasTerminalCondition() {
-    return ((bitField0_ & 0x00000200) != 0);
+    return ((bitField0_ & 0x00000800) != 0);
   }
 
   /**
@@ -2015,15 +2355,15 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. Returns true if the Instance is currently being acted upon by
-   * the system to bring it into the desired state.
+   * Output only. Returns `true` if the Instance is currently being acted upon
+   * by the system to bring it into the desired state.
    *
    * When a new Instance is created, or an existing one is updated, Cloud Run
    * will asynchronously perform all necessary steps to bring the Instance to
    * the desired serving state. This process is called reconciliation. While
    * reconciliation is in process, `observed_generation` will have a transient
    * value that might mismatch the intended state.
-   * Once reconciliation is over (and this field is false), there are two
+   * Once reconciliation is over (and this field is `false`), there are two
    * possible outcomes: reconciliation succeeded and the serving state matches
    * the Instance, or there was an error, and reconciliation failed. This state
    * can be found in `terminal_condition.state`.
@@ -2174,13 +2514,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
             .getNumber()) {
       output.writeEnum(24, encryptionKeyRevocationAction_);
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       output.writeMessage(25, getEncryptionKeyShutdownDuration());
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       output.writeMessage(26, getNodeSelector());
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       output.writeBool(27, gpuZonalRedundancyDisabled_);
     }
     if (ingress_
@@ -2193,13 +2533,26 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
     if (iapEnabled_ != false) {
       output.writeBool(30, iapEnabled_);
     }
+    if (((bitField0_ & 0x00000400) != 0)) {
+      output.writeBool(32, sshEnabled_);
+    }
+    if (defaultUriDisabled_ != false) {
+      output.writeBool(33, defaultUriDisabled_);
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      output.writeMessage(34, getSandboxes());
+    }
+    if (restartPolicy_
+        != com.google.cloud.run.v2.Instance.RestartPolicy.RESTART_POLICY_UNSPECIFIED.getNumber()) {
+      output.writeEnum(35, restartPolicy_);
+    }
     if (observedGeneration_ != 0L) {
       output.writeInt64(40, observedGeneration_);
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(logUri_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 41, logUri_);
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       output.writeMessage(42, getTerminalCondition());
     }
     for (int i = 0; i < conditions_.size(); i++) {
@@ -2314,15 +2667,15 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
       size +=
           com.google.protobuf.CodedOutputStream.computeEnumSize(24, encryptionKeyRevocationAction_);
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               25, getEncryptionKeyShutdownDuration());
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(26, getNodeSelector());
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeBoolSize(27, gpuZonalRedundancyDisabled_);
     }
@@ -2336,13 +2689,26 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
     if (iapEnabled_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(30, iapEnabled_);
     }
+    if (((bitField0_ & 0x00000400) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(32, sshEnabled_);
+    }
+    if (defaultUriDisabled_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(33, defaultUriDisabled_);
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(34, getSandboxes());
+    }
+    if (restartPolicy_
+        != com.google.cloud.run.v2.Instance.RestartPolicy.RESTART_POLICY_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(35, restartPolicy_);
+    }
     if (observedGeneration_ != 0L) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(40, observedGeneration_);
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(logUri_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(41, logUri_);
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(42, getTerminalCondition());
     }
     for (int i = 0; i < conditions_.size(); i++) {
@@ -2421,6 +2787,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
     }
     if (!getServiceAccount().equals(other.getServiceAccount())) return false;
     if (!getContainersList().equals(other.getContainersList())) return false;
+    if (hasSandboxes() != other.hasSandboxes()) return false;
+    if (hasSandboxes()) {
+      if (!getSandboxes().equals(other.getSandboxes())) return false;
+    }
     if (!getVolumesList().equals(other.getVolumesList())) return false;
     if (!getEncryptionKey().equals(other.getEncryptionKey())) return false;
     if (encryptionKeyRevocationAction_ != other.encryptionKeyRevocationAction_) return false;
@@ -2440,7 +2810,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
     }
     if (ingress_ != other.ingress_) return false;
     if (getInvokerIamDisabled() != other.getInvokerIamDisabled()) return false;
+    if (getDefaultUriDisabled() != other.getDefaultUriDisabled()) return false;
     if (getIapEnabled() != other.getIapEnabled()) return false;
+    if (hasSshEnabled() != other.hasSshEnabled()) return false;
+    if (hasSshEnabled()) {
+      if (getSshEnabled() != other.getSshEnabled()) return false;
+    }
+    if (restartPolicy_ != other.restartPolicy_) return false;
     if (getObservedGeneration() != other.getObservedGeneration()) return false;
     if (!getLogUri().equals(other.getLogUri())) return false;
     if (hasTerminalCondition() != other.hasTerminalCondition()) return false;
@@ -2520,6 +2896,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + CONTAINERS_FIELD_NUMBER;
       hash = (53 * hash) + getContainersList().hashCode();
     }
+    if (hasSandboxes()) {
+      hash = (37 * hash) + SANDBOXES_FIELD_NUMBER;
+      hash = (53 * hash) + getSandboxes().hashCode();
+    }
     if (getVolumesCount() > 0) {
       hash = (37 * hash) + VOLUMES_FIELD_NUMBER;
       hash = (53 * hash) + getVolumesList().hashCode();
@@ -2545,8 +2925,16 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
     hash = (53 * hash) + ingress_;
     hash = (37 * hash) + INVOKER_IAM_DISABLED_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getInvokerIamDisabled());
+    hash = (37 * hash) + DEFAULT_URI_DISABLED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDefaultUriDisabled());
     hash = (37 * hash) + IAP_ENABLED_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIapEnabled());
+    if (hasSshEnabled()) {
+      hash = (37 * hash) + SSH_ENABLED_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSshEnabled());
+    }
+    hash = (37 * hash) + RESTART_POLICY_FIELD_NUMBER;
+    hash = (53 * hash) + restartPolicy_;
     hash = (37 * hash) + OBSERVED_GENERATION_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getObservedGeneration());
     hash = (37 * hash) + LOG_URI_FIELD_NUMBER;
@@ -2747,6 +3135,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
         internalGetBinaryAuthorizationFieldBuilder();
         internalGetVpcAccessFieldBuilder();
         internalGetContainersFieldBuilder();
+        internalGetSandboxesFieldBuilder();
         internalGetVolumesFieldBuilder();
         internalGetEncryptionKeyShutdownDurationFieldBuilder();
         internalGetNodeSelectorFieldBuilder();
@@ -2810,13 +3199,18 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
         containersBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00040000);
+      sandboxes_ = null;
+      if (sandboxesBuilder_ != null) {
+        sandboxesBuilder_.dispose();
+        sandboxesBuilder_ = null;
+      }
       if (volumesBuilder_ == null) {
         volumes_ = java.util.Collections.emptyList();
       } else {
         volumes_ = null;
         volumesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00080000);
+      bitField0_ = (bitField0_ & ~0x00100000);
       encryptionKey_ = "";
       encryptionKeyRevocationAction_ = 0;
       encryptionKeyShutdownDuration_ = null;
@@ -2832,7 +3226,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
       gpuZonalRedundancyDisabled_ = false;
       ingress_ = 0;
       invokerIamDisabled_ = false;
+      defaultUriDisabled_ = false;
       iapEnabled_ = false;
+      sshEnabled_ = false;
+      restartPolicy_ = 0;
       observedGeneration_ = 0L;
       logUri_ = "";
       terminalCondition_ = null;
@@ -2846,14 +3243,14 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
         conditions_ = null;
         conditionsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x80000000);
+      bitField1_ = (bitField1_ & ~0x00000008);
       if (containerStatusesBuilder_ == null) {
         containerStatuses_ = java.util.Collections.emptyList();
       } else {
         containerStatuses_ = null;
         containerStatusesBuilder_.clear();
       }
-      bitField1_ = (bitField1_ & ~0x00000001);
+      bitField1_ = (bitField1_ & ~0x00000010);
       satisfiesPzs_ = false;
       urls_ = com.google.protobuf.LazyStringArrayList.emptyList();
       reconciling_ = false;
@@ -2906,27 +3303,27 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
         result.containers_ = containersBuilder_.build();
       }
       if (volumesBuilder_ == null) {
-        if (((bitField0_ & 0x00080000) != 0)) {
+        if (((bitField0_ & 0x00100000) != 0)) {
           volumes_ = java.util.Collections.unmodifiableList(volumes_);
-          bitField0_ = (bitField0_ & ~0x00080000);
+          bitField0_ = (bitField0_ & ~0x00100000);
         }
         result.volumes_ = volumes_;
       } else {
         result.volumes_ = volumesBuilder_.build();
       }
       if (conditionsBuilder_ == null) {
-        if (((bitField0_ & 0x80000000) != 0)) {
+        if (((bitField1_ & 0x00000008) != 0)) {
           conditions_ = java.util.Collections.unmodifiableList(conditions_);
-          bitField0_ = (bitField0_ & ~0x80000000);
+          bitField1_ = (bitField1_ & ~0x00000008);
         }
         result.conditions_ = conditions_;
       } else {
         result.conditions_ = conditionsBuilder_.build();
       }
       if (containerStatusesBuilder_ == null) {
-        if (((bitField1_ & 0x00000001) != 0)) {
+        if (((bitField1_ & 0x00000010) != 0)) {
           containerStatuses_ = java.util.Collections.unmodifiableList(containerStatuses_);
-          bitField1_ = (bitField1_ & ~0x00000001);
+          bitField1_ = (bitField1_ & ~0x00000010);
         }
         result.containerStatuses_ = containerStatuses_;
       } else {
@@ -3002,68 +3399,84 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x00020000) != 0)) {
         result.serviceAccount_ = serviceAccount_;
       }
-      if (((from_bitField0_ & 0x00100000) != 0)) {
-        result.encryptionKey_ = encryptionKey_;
+      if (((from_bitField0_ & 0x00080000) != 0)) {
+        result.sandboxes_ = sandboxesBuilder_ == null ? sandboxes_ : sandboxesBuilder_.build();
+        to_bitField0_ |= 0x00000040;
       }
       if (((from_bitField0_ & 0x00200000) != 0)) {
-        result.encryptionKeyRevocationAction_ = encryptionKeyRevocationAction_;
+        result.encryptionKey_ = encryptionKey_;
       }
       if (((from_bitField0_ & 0x00400000) != 0)) {
+        result.encryptionKeyRevocationAction_ = encryptionKeyRevocationAction_;
+      }
+      if (((from_bitField0_ & 0x00800000) != 0)) {
         result.encryptionKeyShutdownDuration_ =
             encryptionKeyShutdownDurationBuilder_ == null
                 ? encryptionKeyShutdownDuration_
                 : encryptionKeyShutdownDurationBuilder_.build();
-        to_bitField0_ |= 0x00000040;
-      }
-      if (((from_bitField0_ & 0x00800000) != 0)) {
-        result.nodeSelector_ =
-            nodeSelectorBuilder_ == null ? nodeSelector_ : nodeSelectorBuilder_.build();
         to_bitField0_ |= 0x00000080;
       }
       if (((from_bitField0_ & 0x01000000) != 0)) {
-        result.gpuZonalRedundancyDisabled_ = gpuZonalRedundancyDisabled_;
+        result.nodeSelector_ =
+            nodeSelectorBuilder_ == null ? nodeSelector_ : nodeSelectorBuilder_.build();
         to_bitField0_ |= 0x00000100;
       }
       if (((from_bitField0_ & 0x02000000) != 0)) {
-        result.ingress_ = ingress_;
+        result.gpuZonalRedundancyDisabled_ = gpuZonalRedundancyDisabled_;
+        to_bitField0_ |= 0x00000200;
       }
       if (((from_bitField0_ & 0x04000000) != 0)) {
-        result.invokerIamDisabled_ = invokerIamDisabled_;
+        result.ingress_ = ingress_;
       }
       if (((from_bitField0_ & 0x08000000) != 0)) {
-        result.iapEnabled_ = iapEnabled_;
+        result.invokerIamDisabled_ = invokerIamDisabled_;
       }
       if (((from_bitField0_ & 0x10000000) != 0)) {
-        result.observedGeneration_ = observedGeneration_;
+        result.defaultUriDisabled_ = defaultUriDisabled_;
       }
       if (((from_bitField0_ & 0x20000000) != 0)) {
-        result.logUri_ = logUri_;
+        result.iapEnabled_ = iapEnabled_;
       }
       if (((from_bitField0_ & 0x40000000) != 0)) {
-        result.terminalCondition_ =
-            terminalConditionBuilder_ == null
-                ? terminalCondition_
-                : terminalConditionBuilder_.build();
-        to_bitField0_ |= 0x00000200;
+        result.sshEnabled_ = sshEnabled_;
+        to_bitField0_ |= 0x00000400;
+      }
+      if (((from_bitField0_ & 0x80000000) != 0)) {
+        result.restartPolicy_ = restartPolicy_;
       }
       result.bitField0_ |= to_bitField0_;
     }
 
     private void buildPartial1(com.google.cloud.run.v2.Instance result) {
       int from_bitField1_ = bitField1_;
+      if (((from_bitField1_ & 0x00000001) != 0)) {
+        result.observedGeneration_ = observedGeneration_;
+      }
       if (((from_bitField1_ & 0x00000002) != 0)) {
+        result.logUri_ = logUri_;
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField1_ & 0x00000004) != 0)) {
+        result.terminalCondition_ =
+            terminalConditionBuilder_ == null
+                ? terminalCondition_
+                : terminalConditionBuilder_.build();
+        to_bitField0_ |= 0x00000800;
+      }
+      if (((from_bitField1_ & 0x00000020) != 0)) {
         result.satisfiesPzs_ = satisfiesPzs_;
       }
-      if (((from_bitField1_ & 0x00000004) != 0)) {
+      if (((from_bitField1_ & 0x00000040) != 0)) {
         urls_.makeImmutable();
         result.urls_ = urls_;
       }
-      if (((from_bitField1_ & 0x00000008) != 0)) {
+      if (((from_bitField1_ & 0x00000080) != 0)) {
         result.reconciling_ = reconciling_;
       }
-      if (((from_bitField1_ & 0x00000010) != 0)) {
+      if (((from_bitField1_ & 0x00000100) != 0)) {
         result.etag_ = etag_;
       }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -3173,11 +3586,14 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
           }
         }
       }
+      if (other.hasSandboxes()) {
+        mergeSandboxes(other.getSandboxes());
+      }
       if (volumesBuilder_ == null) {
         if (!other.volumes_.isEmpty()) {
           if (volumes_.isEmpty()) {
             volumes_ = other.volumes_;
-            bitField0_ = (bitField0_ & ~0x00080000);
+            bitField0_ = (bitField0_ & ~0x00100000);
           } else {
             ensureVolumesIsMutable();
             volumes_.addAll(other.volumes_);
@@ -3190,7 +3606,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
             volumesBuilder_.dispose();
             volumesBuilder_ = null;
             volumes_ = other.volumes_;
-            bitField0_ = (bitField0_ & ~0x00080000);
+            bitField0_ = (bitField0_ & ~0x00100000);
             volumesBuilder_ =
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
                     ? internalGetVolumesFieldBuilder()
@@ -3202,7 +3618,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
       }
       if (!other.getEncryptionKey().isEmpty()) {
         encryptionKey_ = other.encryptionKey_;
-        bitField0_ |= 0x00100000;
+        bitField0_ |= 0x00200000;
         onChanged();
       }
       if (other.encryptionKeyRevocationAction_ != 0) {
@@ -3223,15 +3639,24 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
       if (other.getInvokerIamDisabled() != false) {
         setInvokerIamDisabled(other.getInvokerIamDisabled());
       }
+      if (other.getDefaultUriDisabled() != false) {
+        setDefaultUriDisabled(other.getDefaultUriDisabled());
+      }
       if (other.getIapEnabled() != false) {
         setIapEnabled(other.getIapEnabled());
+      }
+      if (other.hasSshEnabled()) {
+        setSshEnabled(other.getSshEnabled());
+      }
+      if (other.restartPolicy_ != 0) {
+        setRestartPolicyValue(other.getRestartPolicyValue());
       }
       if (other.getObservedGeneration() != 0L) {
         setObservedGeneration(other.getObservedGeneration());
       }
       if (!other.getLogUri().isEmpty()) {
         logUri_ = other.logUri_;
-        bitField0_ |= 0x20000000;
+        bitField1_ |= 0x00000002;
         onChanged();
       }
       if (other.hasTerminalCondition()) {
@@ -3241,7 +3666,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
         if (!other.conditions_.isEmpty()) {
           if (conditions_.isEmpty()) {
             conditions_ = other.conditions_;
-            bitField0_ = (bitField0_ & ~0x80000000);
+            bitField1_ = (bitField1_ & ~0x00000008);
           } else {
             ensureConditionsIsMutable();
             conditions_.addAll(other.conditions_);
@@ -3254,7 +3679,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
             conditionsBuilder_.dispose();
             conditionsBuilder_ = null;
             conditions_ = other.conditions_;
-            bitField0_ = (bitField0_ & ~0x80000000);
+            bitField1_ = (bitField1_ & ~0x00000008);
             conditionsBuilder_ =
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
                     ? internalGetConditionsFieldBuilder()
@@ -3268,7 +3693,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
         if (!other.containerStatuses_.isEmpty()) {
           if (containerStatuses_.isEmpty()) {
             containerStatuses_ = other.containerStatuses_;
-            bitField1_ = (bitField1_ & ~0x00000001);
+            bitField1_ = (bitField1_ & ~0x00000010);
           } else {
             ensureContainerStatusesIsMutable();
             containerStatuses_.addAll(other.containerStatuses_);
@@ -3281,7 +3706,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
             containerStatusesBuilder_.dispose();
             containerStatusesBuilder_ = null;
             containerStatuses_ = other.containerStatuses_;
-            bitField1_ = (bitField1_ & ~0x00000001);
+            bitField1_ = (bitField1_ & ~0x00000010);
             containerStatusesBuilder_ =
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
                     ? internalGetContainerStatusesFieldBuilder()
@@ -3297,7 +3722,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
       if (!other.urls_.isEmpty()) {
         if (urls_.isEmpty()) {
           urls_ = other.urls_;
-          bitField1_ |= 0x00000004;
+          bitField1_ |= 0x00000040;
         } else {
           ensureUrlsIsMutable();
           urls_.addAll(other.urls_);
@@ -3309,7 +3734,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
       }
       if (!other.getEtag().isEmpty()) {
         etag_ = other.etag_;
-        bitField1_ |= 0x00000010;
+        bitField1_ |= 0x00000100;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -3492,13 +3917,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
             case 178:
               {
                 encryptionKey_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00100000;
+                bitField0_ |= 0x00200000;
                 break;
               } // case 178
             case 192:
               {
                 encryptionKeyRevocationAction_ = input.readEnum();
-                bitField0_ |= 0x00200000;
+                bitField0_ |= 0x00400000;
                 break;
               } // case 192
             case 202:
@@ -3506,57 +3931,82 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
                 input.readMessage(
                     internalGetEncryptionKeyShutdownDurationFieldBuilder().getBuilder(),
                     extensionRegistry);
-                bitField0_ |= 0x00400000;
+                bitField0_ |= 0x00800000;
                 break;
               } // case 202
             case 210:
               {
                 input.readMessage(
                     internalGetNodeSelectorFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00800000;
+                bitField0_ |= 0x01000000;
                 break;
               } // case 210
             case 216:
               {
                 gpuZonalRedundancyDisabled_ = input.readBool();
-                bitField0_ |= 0x01000000;
+                bitField0_ |= 0x02000000;
                 break;
               } // case 216
             case 224:
               {
                 ingress_ = input.readEnum();
-                bitField0_ |= 0x02000000;
+                bitField0_ |= 0x04000000;
                 break;
               } // case 224
             case 232:
               {
                 invokerIamDisabled_ = input.readBool();
-                bitField0_ |= 0x04000000;
+                bitField0_ |= 0x08000000;
                 break;
               } // case 232
             case 240:
               {
                 iapEnabled_ = input.readBool();
-                bitField0_ |= 0x08000000;
+                bitField0_ |= 0x20000000;
                 break;
               } // case 240
+            case 256:
+              {
+                sshEnabled_ = input.readBool();
+                bitField0_ |= 0x40000000;
+                break;
+              } // case 256
+            case 264:
+              {
+                defaultUriDisabled_ = input.readBool();
+                bitField0_ |= 0x10000000;
+                break;
+              } // case 264
+            case 274:
+              {
+                input.readMessage(
+                    internalGetSandboxesFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00080000;
+                break;
+              } // case 274
+            case 280:
+              {
+                restartPolicy_ = input.readEnum();
+                bitField0_ |= 0x80000000;
+                break;
+              } // case 280
             case 320:
               {
                 observedGeneration_ = input.readInt64();
-                bitField0_ |= 0x10000000;
+                bitField1_ |= 0x00000001;
                 break;
               } // case 320
             case 330:
               {
                 logUri_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x20000000;
+                bitField1_ |= 0x00000002;
                 break;
               } // case 330
             case 338:
               {
                 input.readMessage(
                     internalGetTerminalConditionFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x40000000;
+                bitField1_ |= 0x00000004;
                 break;
               } // case 338
             case 346:
@@ -3595,19 +4045,19 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
             case 368:
               {
                 satisfiesPzs_ = input.readBool();
-                bitField1_ |= 0x00000002;
+                bitField1_ |= 0x00000020;
                 break;
               } // case 368
             case 784:
               {
                 reconciling_ = input.readBool();
-                bitField1_ |= 0x00000008;
+                bitField1_ |= 0x00000080;
                 break;
               } // case 784
             case 794:
               {
                 etag_ = input.readStringRequireUtf8();
-                bitField1_ |= 0x00000010;
+                bitField1_ |= 0x00000100;
                 break;
               } // case 794
             default:
@@ -3636,12 +4086,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The fully qualified name of this Instance. In CreateInstanceRequest, this
-     * field is ignored, and instead composed from CreateInstanceRequest.parent
-     * and CreateInstanceRequest.instance_id.
-     *
-     * Format:
-     * projects/{project}/locations/{location}/instances/{instance_id}
+     * The fully qualified name of this Instance. In `CreateInstanceRequest`, this
+     * field is ignored, and instead composed from `CreateInstanceRequest.parent`
+     * and `CreateInstanceRequest.instance_id`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -3664,12 +4111,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The fully qualified name of this Instance. In CreateInstanceRequest, this
-     * field is ignored, and instead composed from CreateInstanceRequest.parent
-     * and CreateInstanceRequest.instance_id.
-     *
-     * Format:
-     * projects/{project}/locations/{location}/instances/{instance_id}
+     * The fully qualified name of this Instance. In `CreateInstanceRequest`, this
+     * field is ignored, and instead composed from `CreateInstanceRequest.parent`
+     * and `CreateInstanceRequest.instance_id`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -3692,12 +4136,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The fully qualified name of this Instance. In CreateInstanceRequest, this
-     * field is ignored, and instead composed from CreateInstanceRequest.parent
-     * and CreateInstanceRequest.instance_id.
-     *
-     * Format:
-     * projects/{project}/locations/{location}/instances/{instance_id}
+     * The fully qualified name of this Instance. In `CreateInstanceRequest`, this
+     * field is ignored, and instead composed from `CreateInstanceRequest.parent`
+     * and `CreateInstanceRequest.instance_id`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -3719,12 +4160,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The fully qualified name of this Instance. In CreateInstanceRequest, this
-     * field is ignored, and instead composed from CreateInstanceRequest.parent
-     * and CreateInstanceRequest.instance_id.
-     *
-     * Format:
-     * projects/{project}/locations/{location}/instances/{instance_id}
+     * The fully qualified name of this Instance. In `CreateInstanceRequest`, this
+     * field is ignored, and instead composed from `CreateInstanceRequest.parent`
+     * and `CreateInstanceRequest.instance_id`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -3742,12 +4180,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The fully qualified name of this Instance. In CreateInstanceRequest, this
-     * field is ignored, and instead composed from CreateInstanceRequest.parent
-     * and CreateInstanceRequest.instance_id.
-     *
-     * Format:
-     * projects/{project}/locations/{location}/instances/{instance_id}
+     * The fully qualified name of this Instance. In `CreateInstanceRequest`, this
+     * field is ignored, and instead composed from `CreateInstanceRequest.parent`
+     * and `CreateInstanceRequest.instance_id`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -4011,7 +4446,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Output only. A number that monotonically increases every time the user
      * modifies the desired state.
-     * Please note that unlike v1, this is an int64 value. As with most Google
+     * Please note that unlike v1, this is an `int64` value. As with most Google
      * APIs, its JSON representation will be a `string` instead of an `integer`.
      * </pre>
      *
@@ -4030,7 +4465,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Output only. A number that monotonically increases every time the user
      * modifies the desired state.
-     * Please note that unlike v1, this is an int64 value. As with most Google
+     * Please note that unlike v1, this is an `int64` value. As with most Google
      * APIs, its JSON representation will be a `string` instead of an `integer`.
      * </pre>
      *
@@ -4053,7 +4488,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Output only. A number that monotonically increases every time the user
      * modifies the desired state.
-     * Please note that unlike v1, this is an int64 value. As with most Google
+     * Please note that unlike v1, this is an `int64` value. As with most Google
      * APIs, its JSON representation will be a `string` instead of an `integer`.
      * </pre>
      *
@@ -5612,14 +6047,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      * <pre>
      * The launch stage as defined by [Google Cloud Platform
      * Launch Stages](https://cloud.google.com/terms/launch-stages).
-     * Cloud Run supports `ALPHA`, `BETA`, and `GA`. If no value is specified, GA
-     * is assumed.
-     * Set the launch stage to a preview stage on input to allow use of preview
-     * features in that stage. On read (or output), describes whether the
-     * resource uses preview features.
-     * &lt;p&gt;
-     * For example, if ALPHA is provided as input, but only BETA and GA-level
-     * features are used, this field will be BETA on output.
+     * Cloud Run supports `ALPHA`, `BETA`, and `GA`. If no value is specified,
+     * `GA` is assumed. Set the launch stage to a preview stage on input to allow
+     * use of preview features in that stage. On read (or output), describes
+     * whether the resource uses preview features.
+     *
+     * For example, if `ALPHA` is provided as input, but only `BETA` and
+     * `GA`-level features are used, this field will be `BETA` on output.
      * </pre>
      *
      * <code>.google.api.LaunchStage launch_stage = 16;</code>
@@ -5637,14 +6071,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      * <pre>
      * The launch stage as defined by [Google Cloud Platform
      * Launch Stages](https://cloud.google.com/terms/launch-stages).
-     * Cloud Run supports `ALPHA`, `BETA`, and `GA`. If no value is specified, GA
-     * is assumed.
-     * Set the launch stage to a preview stage on input to allow use of preview
-     * features in that stage. On read (or output), describes whether the
-     * resource uses preview features.
-     * &lt;p&gt;
-     * For example, if ALPHA is provided as input, but only BETA and GA-level
-     * features are used, this field will be BETA on output.
+     * Cloud Run supports `ALPHA`, `BETA`, and `GA`. If no value is specified,
+     * `GA` is assumed. Set the launch stage to a preview stage on input to allow
+     * use of preview features in that stage. On read (or output), describes
+     * whether the resource uses preview features.
+     *
+     * For example, if `ALPHA` is provided as input, but only `BETA` and
+     * `GA`-level features are used, this field will be `BETA` on output.
      * </pre>
      *
      * <code>.google.api.LaunchStage launch_stage = 16;</code>
@@ -5665,14 +6098,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      * <pre>
      * The launch stage as defined by [Google Cloud Platform
      * Launch Stages](https://cloud.google.com/terms/launch-stages).
-     * Cloud Run supports `ALPHA`, `BETA`, and `GA`. If no value is specified, GA
-     * is assumed.
-     * Set the launch stage to a preview stage on input to allow use of preview
-     * features in that stage. On read (or output), describes whether the
-     * resource uses preview features.
-     * &lt;p&gt;
-     * For example, if ALPHA is provided as input, but only BETA and GA-level
-     * features are used, this field will be BETA on output.
+     * Cloud Run supports `ALPHA`, `BETA`, and `GA`. If no value is specified,
+     * `GA` is assumed. Set the launch stage to a preview stage on input to allow
+     * use of preview features in that stage. On read (or output), describes
+     * whether the resource uses preview features.
+     *
+     * For example, if `ALPHA` is provided as input, but only `BETA` and
+     * `GA`-level features are used, this field will be `BETA` on output.
      * </pre>
      *
      * <code>.google.api.LaunchStage launch_stage = 16;</code>
@@ -5691,14 +6123,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      * <pre>
      * The launch stage as defined by [Google Cloud Platform
      * Launch Stages](https://cloud.google.com/terms/launch-stages).
-     * Cloud Run supports `ALPHA`, `BETA`, and `GA`. If no value is specified, GA
-     * is assumed.
-     * Set the launch stage to a preview stage on input to allow use of preview
-     * features in that stage. On read (or output), describes whether the
-     * resource uses preview features.
-     * &lt;p&gt;
-     * For example, if ALPHA is provided as input, but only BETA and GA-level
-     * features are used, this field will be BETA on output.
+     * Cloud Run supports `ALPHA`, `BETA`, and `GA`. If no value is specified,
+     * `GA` is assumed. Set the launch stage to a preview stage on input to allow
+     * use of preview features in that stage. On read (or output), describes
+     * whether the resource uses preview features.
+     *
+     * For example, if `ALPHA` is provided as input, but only `BETA` and
+     * `GA`-level features are used, this field will be `BETA` on output.
      * </pre>
      *
      * <code>.google.api.LaunchStage launch_stage = 16;</code>
@@ -5722,14 +6153,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      * <pre>
      * The launch stage as defined by [Google Cloud Platform
      * Launch Stages](https://cloud.google.com/terms/launch-stages).
-     * Cloud Run supports `ALPHA`, `BETA`, and `GA`. If no value is specified, GA
-     * is assumed.
-     * Set the launch stage to a preview stage on input to allow use of preview
-     * features in that stage. On read (or output), describes whether the
-     * resource uses preview features.
-     * &lt;p&gt;
-     * For example, if ALPHA is provided as input, but only BETA and GA-level
-     * features are used, this field will be BETA on output.
+     * Cloud Run supports `ALPHA`, `BETA`, and `GA`. If no value is specified,
+     * `GA` is assumed. Set the launch stage to a preview stage on input to allow
+     * use of preview features in that stage. On read (or output), describes
+     * whether the resource uses preview features.
+     *
+     * For example, if `ALPHA` is provided as input, but only `BETA` and
+     * `GA`-level features are used, this field will be `BETA` on output.
      * </pre>
      *
      * <code>.google.api.LaunchStage launch_stage = 16;</code>
@@ -6669,13 +7099,226 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
       return containersBuilder_;
     }
 
+    private com.google.cloud.run.v2.SandboxConfiguration sandboxes_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.run.v2.SandboxConfiguration,
+            com.google.cloud.run.v2.SandboxConfiguration.Builder,
+            com.google.cloud.run.v2.SandboxConfigurationOrBuilder>
+        sandboxesBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for sandboxes.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.SandboxConfiguration sandboxes = 34 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the sandboxes field is set.
+     */
+    public boolean hasSandboxes() {
+      return ((bitField0_ & 0x00080000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for sandboxes.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.SandboxConfiguration sandboxes = 34 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The sandboxes.
+     */
+    public com.google.cloud.run.v2.SandboxConfiguration getSandboxes() {
+      if (sandboxesBuilder_ == null) {
+        return sandboxes_ == null
+            ? com.google.cloud.run.v2.SandboxConfiguration.getDefaultInstance()
+            : sandboxes_;
+      } else {
+        return sandboxesBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for sandboxes.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.SandboxConfiguration sandboxes = 34 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setSandboxes(com.google.cloud.run.v2.SandboxConfiguration value) {
+      if (sandboxesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        sandboxes_ = value;
+      } else {
+        sandboxesBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for sandboxes.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.SandboxConfiguration sandboxes = 34 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setSandboxes(
+        com.google.cloud.run.v2.SandboxConfiguration.Builder builderForValue) {
+      if (sandboxesBuilder_ == null) {
+        sandboxes_ = builderForValue.build();
+      } else {
+        sandboxesBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for sandboxes.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.SandboxConfiguration sandboxes = 34 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeSandboxes(com.google.cloud.run.v2.SandboxConfiguration value) {
+      if (sandboxesBuilder_ == null) {
+        if (((bitField0_ & 0x00080000) != 0)
+            && sandboxes_ != null
+            && sandboxes_ != com.google.cloud.run.v2.SandboxConfiguration.getDefaultInstance()) {
+          getSandboxesBuilder().mergeFrom(value);
+        } else {
+          sandboxes_ = value;
+        }
+      } else {
+        sandboxesBuilder_.mergeFrom(value);
+      }
+      if (sandboxes_ != null) {
+        bitField0_ |= 0x00080000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for sandboxes.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.SandboxConfiguration sandboxes = 34 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearSandboxes() {
+      bitField0_ = (bitField0_ & ~0x00080000);
+      sandboxes_ = null;
+      if (sandboxesBuilder_ != null) {
+        sandboxesBuilder_.dispose();
+        sandboxesBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for sandboxes.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.SandboxConfiguration sandboxes = 34 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.run.v2.SandboxConfiguration.Builder getSandboxesBuilder() {
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return internalGetSandboxesFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for sandboxes.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.SandboxConfiguration sandboxes = 34 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.run.v2.SandboxConfigurationOrBuilder getSandboxesOrBuilder() {
+      if (sandboxesBuilder_ != null) {
+        return sandboxesBuilder_.getMessageOrBuilder();
+      } else {
+        return sandboxes_ == null
+            ? com.google.cloud.run.v2.SandboxConfiguration.getDefaultInstance()
+            : sandboxes_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for sandboxes.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.SandboxConfiguration sandboxes = 34 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.run.v2.SandboxConfiguration,
+            com.google.cloud.run.v2.SandboxConfiguration.Builder,
+            com.google.cloud.run.v2.SandboxConfigurationOrBuilder>
+        internalGetSandboxesFieldBuilder() {
+      if (sandboxesBuilder_ == null) {
+        sandboxesBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.run.v2.SandboxConfiguration,
+                com.google.cloud.run.v2.SandboxConfiguration.Builder,
+                com.google.cloud.run.v2.SandboxConfigurationOrBuilder>(
+                getSandboxes(), getParentForChildren(), isClean());
+        sandboxes_ = null;
+      }
+      return sandboxesBuilder_;
+    }
+
     private java.util.List<com.google.cloud.run.v2.Volume> volumes_ =
         java.util.Collections.emptyList();
 
     private void ensureVolumesIsMutable() {
-      if (!((bitField0_ & 0x00080000) != 0)) {
+      if (!((bitField0_ & 0x00100000) != 0)) {
         volumes_ = new java.util.ArrayList<com.google.cloud.run.v2.Volume>(volumes_);
-        bitField0_ |= 0x00080000;
+        bitField0_ |= 0x00100000;
       }
     }
 
@@ -6898,7 +7541,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
     public Builder clearVolumes() {
       if (volumesBuilder_ == null) {
         volumes_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00080000);
+        bitField0_ = (bitField0_ & ~0x00100000);
         onChanged();
       } else {
         volumesBuilder_.clear();
@@ -7026,7 +7669,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
                 com.google.cloud.run.v2.Volume,
                 com.google.cloud.run.v2.Volume.Builder,
                 com.google.cloud.run.v2.VolumeOrBuilder>(
-                volumes_, ((bitField0_ & 0x00080000) != 0), getParentForChildren(), isClean());
+                volumes_, ((bitField0_ & 0x00100000) != 0), getParentForChildren(), isClean());
         volumes_ = null;
       }
       return volumesBuilder_;
@@ -7103,7 +7746,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       encryptionKey_ = value;
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -7123,7 +7766,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearEncryptionKey() {
       encryptionKey_ = getDefaultInstance().getEncryptionKey();
-      bitField0_ = (bitField0_ & ~0x00100000);
+      bitField0_ = (bitField0_ & ~0x00200000);
       onChanged();
       return this;
     }
@@ -7148,7 +7791,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       encryptionKey_ = value;
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -7189,7 +7832,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      */
     public Builder setEncryptionKeyRevocationActionValue(int value) {
       encryptionKeyRevocationAction_ = value;
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x00400000;
       onChanged();
       return this;
     }
@@ -7237,7 +7880,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x00400000;
       encryptionKeyRevocationAction_ = value.getNumber();
       onChanged();
       return this;
@@ -7257,7 +7900,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearEncryptionKeyRevocationAction() {
-      bitField0_ = (bitField0_ & ~0x00200000);
+      bitField0_ = (bitField0_ & ~0x00400000);
       encryptionKeyRevocationAction_ = 0;
       onChanged();
       return this;
@@ -7274,7 +7917,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * If encryption_key_revocation_action is SHUTDOWN, the duration before
+     * If `encryption_key_revocation_action` is `SHUTDOWN`, the duration before
      * shutting down all instances. The minimum increment is 1 hour.
      * </pre>
      *
@@ -7283,14 +7926,14 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      * @return Whether the encryptionKeyShutdownDuration field is set.
      */
     public boolean hasEncryptionKeyShutdownDuration() {
-      return ((bitField0_ & 0x00400000) != 0);
+      return ((bitField0_ & 0x00800000) != 0);
     }
 
     /**
      *
      *
      * <pre>
-     * If encryption_key_revocation_action is SHUTDOWN, the duration before
+     * If `encryption_key_revocation_action` is `SHUTDOWN`, the duration before
      * shutting down all instances. The minimum increment is 1 hour.
      * </pre>
      *
@@ -7312,7 +7955,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * If encryption_key_revocation_action is SHUTDOWN, the duration before
+     * If `encryption_key_revocation_action` is `SHUTDOWN`, the duration before
      * shutting down all instances. The minimum increment is 1 hour.
      * </pre>
      *
@@ -7327,7 +7970,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
       } else {
         encryptionKeyShutdownDurationBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -7336,7 +7979,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * If encryption_key_revocation_action is SHUTDOWN, the duration before
+     * If `encryption_key_revocation_action` is `SHUTDOWN`, the duration before
      * shutting down all instances. The minimum increment is 1 hour.
      * </pre>
      *
@@ -7349,7 +7992,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
       } else {
         encryptionKeyShutdownDurationBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -7358,7 +8001,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * If encryption_key_revocation_action is SHUTDOWN, the duration before
+     * If `encryption_key_revocation_action` is `SHUTDOWN`, the duration before
      * shutting down all instances. The minimum increment is 1 hour.
      * </pre>
      *
@@ -7366,7 +8009,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeEncryptionKeyShutdownDuration(com.google.protobuf.Duration value) {
       if (encryptionKeyShutdownDurationBuilder_ == null) {
-        if (((bitField0_ & 0x00400000) != 0)
+        if (((bitField0_ & 0x00800000) != 0)
             && encryptionKeyShutdownDuration_ != null
             && encryptionKeyShutdownDuration_
                 != com.google.protobuf.Duration.getDefaultInstance()) {
@@ -7378,7 +8021,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
         encryptionKeyShutdownDurationBuilder_.mergeFrom(value);
       }
       if (encryptionKeyShutdownDuration_ != null) {
-        bitField0_ |= 0x00400000;
+        bitField0_ |= 0x00800000;
         onChanged();
       }
       return this;
@@ -7388,14 +8031,14 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * If encryption_key_revocation_action is SHUTDOWN, the duration before
+     * If `encryption_key_revocation_action` is `SHUTDOWN`, the duration before
      * shutting down all instances. The minimum increment is 1 hour.
      * </pre>
      *
      * <code>.google.protobuf.Duration encryption_key_shutdown_duration = 25;</code>
      */
     public Builder clearEncryptionKeyShutdownDuration() {
-      bitField0_ = (bitField0_ & ~0x00400000);
+      bitField0_ = (bitField0_ & ~0x00800000);
       encryptionKeyShutdownDuration_ = null;
       if (encryptionKeyShutdownDurationBuilder_ != null) {
         encryptionKeyShutdownDurationBuilder_.dispose();
@@ -7409,14 +8052,14 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * If encryption_key_revocation_action is SHUTDOWN, the duration before
+     * If `encryption_key_revocation_action` is `SHUTDOWN`, the duration before
      * shutting down all instances. The minimum increment is 1 hour.
      * </pre>
      *
      * <code>.google.protobuf.Duration encryption_key_shutdown_duration = 25;</code>
      */
     public com.google.protobuf.Duration.Builder getEncryptionKeyShutdownDurationBuilder() {
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return internalGetEncryptionKeyShutdownDurationFieldBuilder().getBuilder();
     }
@@ -7425,7 +8068,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * If encryption_key_revocation_action is SHUTDOWN, the duration before
+     * If `encryption_key_revocation_action` is `SHUTDOWN`, the duration before
      * shutting down all instances. The minimum increment is 1 hour.
      * </pre>
      *
@@ -7445,7 +8088,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * If encryption_key_revocation_action is SHUTDOWN, the duration before
+     * If `encryption_key_revocation_action` is `SHUTDOWN`, the duration before
      * shutting down all instances. The minimum increment is 1 hour.
      * </pre>
      *
@@ -7489,7 +8132,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      * @return Whether the nodeSelector field is set.
      */
     public boolean hasNodeSelector() {
-      return ((bitField0_ & 0x00800000) != 0);
+      return ((bitField0_ & 0x01000000) != 0);
     }
 
     /**
@@ -7535,7 +8178,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
       } else {
         nodeSelectorBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x01000000;
       onChanged();
       return this;
     }
@@ -7557,7 +8200,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
       } else {
         nodeSelectorBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x01000000;
       onChanged();
       return this;
     }
@@ -7575,7 +8218,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeNodeSelector(com.google.cloud.run.v2.NodeSelector value) {
       if (nodeSelectorBuilder_ == null) {
-        if (((bitField0_ & 0x00800000) != 0)
+        if (((bitField0_ & 0x01000000) != 0)
             && nodeSelector_ != null
             && nodeSelector_ != com.google.cloud.run.v2.NodeSelector.getDefaultInstance()) {
           getNodeSelectorBuilder().mergeFrom(value);
@@ -7586,7 +8229,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
         nodeSelectorBuilder_.mergeFrom(value);
       }
       if (nodeSelector_ != null) {
-        bitField0_ |= 0x00800000;
+        bitField0_ |= 0x01000000;
         onChanged();
       }
       return this;
@@ -7604,7 +8247,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearNodeSelector() {
-      bitField0_ = (bitField0_ & ~0x00800000);
+      bitField0_ = (bitField0_ & ~0x01000000);
       nodeSelector_ = null;
       if (nodeSelectorBuilder_ != null) {
         nodeSelectorBuilder_.dispose();
@@ -7626,7 +8269,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.cloud.run.v2.NodeSelector.Builder getNodeSelectorBuilder() {
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x01000000;
       onChanged();
       return internalGetNodeSelectorFieldBuilder().getBuilder();
     }
@@ -7697,7 +8340,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasGpuZonalRedundancyDisabled() {
-      return ((bitField0_ & 0x01000000) != 0);
+      return ((bitField0_ & 0x02000000) != 0);
     }
 
     /**
@@ -7735,7 +8378,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
     public Builder setGpuZonalRedundancyDisabled(boolean value) {
 
       gpuZonalRedundancyDisabled_ = value;
-      bitField0_ |= 0x01000000;
+      bitField0_ |= 0x02000000;
       onChanged();
       return this;
     }
@@ -7754,7 +8397,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearGpuZonalRedundancyDisabled() {
-      bitField0_ = (bitField0_ & ~0x01000000);
+      bitField0_ = (bitField0_ & ~0x02000000);
       gpuZonalRedundancyDisabled_ = false;
       onChanged();
       return this;
@@ -7768,7 +8411,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. Provides the ingress settings for this Instance. On output,
      * returns the currently observed ingress settings, or
-     * INGRESS_TRAFFIC_UNSPECIFIED if no revision is active.
+     * `INGRESS_TRAFFIC_UNSPECIFIED` if no revision is active.
      * </pre>
      *
      * <code>
@@ -7788,7 +8431,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. Provides the ingress settings for this Instance. On output,
      * returns the currently observed ingress settings, or
-     * INGRESS_TRAFFIC_UNSPECIFIED if no revision is active.
+     * `INGRESS_TRAFFIC_UNSPECIFIED` if no revision is active.
      * </pre>
      *
      * <code>
@@ -7800,7 +8443,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      */
     public Builder setIngressValue(int value) {
       ingress_ = value;
-      bitField0_ |= 0x02000000;
+      bitField0_ |= 0x04000000;
       onChanged();
       return this;
     }
@@ -7811,7 +8454,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. Provides the ingress settings for this Instance. On output,
      * returns the currently observed ingress settings, or
-     * INGRESS_TRAFFIC_UNSPECIFIED if no revision is active.
+     * `INGRESS_TRAFFIC_UNSPECIFIED` if no revision is active.
      * </pre>
      *
      * <code>
@@ -7833,7 +8476,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. Provides the ingress settings for this Instance. On output,
      * returns the currently observed ingress settings, or
-     * INGRESS_TRAFFIC_UNSPECIFIED if no revision is active.
+     * `INGRESS_TRAFFIC_UNSPECIFIED` if no revision is active.
      * </pre>
      *
      * <code>
@@ -7847,7 +8490,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x02000000;
+      bitField0_ |= 0x04000000;
       ingress_ = value.getNumber();
       onChanged();
       return this;
@@ -7859,7 +8502,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. Provides the ingress settings for this Instance. On output,
      * returns the currently observed ingress settings, or
-     * INGRESS_TRAFFIC_UNSPECIFIED if no revision is active.
+     * `INGRESS_TRAFFIC_UNSPECIFIED` if no revision is active.
      * </pre>
      *
      * <code>
@@ -7869,7 +8512,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearIngress() {
-      bitField0_ = (bitField0_ & ~0x02000000);
+      bitField0_ = (bitField0_ & ~0x04000000);
       ingress_ = 0;
       onChanged();
       return this;
@@ -7881,7 +8524,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Disables IAM permission check for run.routes.invoke for callers
+     * Optional. Disables IAM permission check for `run.routes.invoke` for callers
      * of this Instance. For more information, visit
      * https://cloud.google.com/run/docs/securing/managing-access#invoker_check.
      * </pre>
@@ -7899,7 +8542,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Disables IAM permission check for run.routes.invoke for callers
+     * Optional. Disables IAM permission check for `run.routes.invoke` for callers
      * of this Instance. For more information, visit
      * https://cloud.google.com/run/docs/securing/managing-access#invoker_check.
      * </pre>
@@ -7912,7 +8555,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
     public Builder setInvokerIamDisabled(boolean value) {
 
       invokerIamDisabled_ = value;
-      bitField0_ |= 0x04000000;
+      bitField0_ |= 0x08000000;
       onChanged();
       return this;
     }
@@ -7921,7 +8564,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Disables IAM permission check for run.routes.invoke for callers
+     * Optional. Disables IAM permission check for `run.routes.invoke` for callers
      * of this Instance. For more information, visit
      * https://cloud.google.com/run/docs/securing/managing-access#invoker_check.
      * </pre>
@@ -7931,8 +8574,64 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearInvokerIamDisabled() {
-      bitField0_ = (bitField0_ & ~0x04000000);
+      bitField0_ = (bitField0_ & ~0x08000000);
       invokerIamDisabled_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean defaultUriDisabled_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Disables public resolution of the default URI of this Instance.
+     * </pre>
+     *
+     * <code>bool default_uri_disabled = 33 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The defaultUriDisabled.
+     */
+    @java.lang.Override
+    public boolean getDefaultUriDisabled() {
+      return defaultUriDisabled_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Disables public resolution of the default URI of this Instance.
+     * </pre>
+     *
+     * <code>bool default_uri_disabled = 33 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The defaultUriDisabled to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDefaultUriDisabled(boolean value) {
+
+      defaultUriDisabled_ = value;
+      bitField0_ |= 0x10000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Disables public resolution of the default URI of this Instance.
+     * </pre>
+     *
+     * <code>bool default_uri_disabled = 33 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDefaultUriDisabled() {
+      bitField0_ = (bitField0_ & ~0x10000000);
+      defaultUriDisabled_ = false;
       onChanged();
       return this;
     }
@@ -7970,7 +8669,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
     public Builder setIapEnabled(boolean value) {
 
       iapEnabled_ = value;
-      bitField0_ |= 0x08000000;
+      bitField0_ |= 0x20000000;
       onChanged();
       return this;
     }
@@ -7987,8 +8686,185 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearIapEnabled() {
-      bitField0_ = (bitField0_ & ~0x08000000);
+      bitField0_ = (bitField0_ & ~0x20000000);
       iapEnabled_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean sshEnabled_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Enables SSH access to the Instance.
+     * </pre>
+     *
+     * <code>optional bool ssh_enabled = 32 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the sshEnabled field is set.
+     */
+    @java.lang.Override
+    public boolean hasSshEnabled() {
+      return ((bitField0_ & 0x40000000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Enables SSH access to the Instance.
+     * </pre>
+     *
+     * <code>optional bool ssh_enabled = 32 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The sshEnabled.
+     */
+    @java.lang.Override
+    public boolean getSshEnabled() {
+      return sshEnabled_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Enables SSH access to the Instance.
+     * </pre>
+     *
+     * <code>optional bool ssh_enabled = 32 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The sshEnabled to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSshEnabled(boolean value) {
+
+      sshEnabled_ = value;
+      bitField0_ |= 0x40000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Enables SSH access to the Instance.
+     * </pre>
+     *
+     * <code>optional bool ssh_enabled = 32 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSshEnabled() {
+      bitField0_ = (bitField0_ & ~0x40000000);
+      sshEnabled_ = false;
+      onChanged();
+      return this;
+    }
+
+    private int restartPolicy_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Restart policy for the Instance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.Instance.RestartPolicy restart_policy = 35 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for restartPolicy.
+     */
+    @java.lang.Override
+    public int getRestartPolicyValue() {
+      return restartPolicy_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Restart policy for the Instance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.Instance.RestartPolicy restart_policy = 35 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for restartPolicy to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRestartPolicyValue(int value) {
+      restartPolicy_ = value;
+      bitField0_ |= 0x80000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Restart policy for the Instance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.Instance.RestartPolicy restart_policy = 35 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The restartPolicy.
+     */
+    @java.lang.Override
+    public com.google.cloud.run.v2.Instance.RestartPolicy getRestartPolicy() {
+      com.google.cloud.run.v2.Instance.RestartPolicy result =
+          com.google.cloud.run.v2.Instance.RestartPolicy.forNumber(restartPolicy_);
+      return result == null ? com.google.cloud.run.v2.Instance.RestartPolicy.UNRECOGNIZED : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Restart policy for the Instance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.Instance.RestartPolicy restart_policy = 35 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The restartPolicy to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRestartPolicy(com.google.cloud.run.v2.Instance.RestartPolicy value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x80000000;
+      restartPolicy_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Restart policy for the Instance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.Instance.RestartPolicy restart_policy = 35 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRestartPolicy() {
+      bitField0_ = (bitField0_ & ~0x80000000);
+      restartPolicy_ = 0;
       onChanged();
       return this;
     }
@@ -8001,7 +8877,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Output only. The generation of this Instance currently serving traffic. See
      * comments in `reconciling` for additional information on reconciliation
-     * process in Cloud Run. Please note that unlike v1, this is an int64 value.
+     * process in Cloud Run. Please note that unlike v1, this is an `int64` value.
      * As with most Google APIs, its JSON representation will be a `string`
      * instead of an `integer`.
      * </pre>
@@ -8021,7 +8897,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Output only. The generation of this Instance currently serving traffic. See
      * comments in `reconciling` for additional information on reconciliation
-     * process in Cloud Run. Please note that unlike v1, this is an int64 value.
+     * process in Cloud Run. Please note that unlike v1, this is an `int64` value.
      * As with most Google APIs, its JSON representation will be a `string`
      * instead of an `integer`.
      * </pre>
@@ -8034,7 +8910,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
     public Builder setObservedGeneration(long value) {
 
       observedGeneration_ = value;
-      bitField0_ |= 0x10000000;
+      bitField1_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -8045,7 +8921,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Output only. The generation of this Instance currently serving traffic. See
      * comments in `reconciling` for additional information on reconciliation
-     * process in Cloud Run. Please note that unlike v1, this is an int64 value.
+     * process in Cloud Run. Please note that unlike v1, this is an `int64` value.
      * As with most Google APIs, its JSON representation will be a `string`
      * instead of an `integer`.
      * </pre>
@@ -8055,7 +8931,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearObservedGeneration() {
-      bitField0_ = (bitField0_ & ~0x10000000);
+      bitField1_ = (bitField1_ & ~0x00000001);
       observedGeneration_ = 0L;
       onChanged();
       return this;
@@ -8126,7 +9002,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       logUri_ = value;
-      bitField0_ |= 0x20000000;
+      bitField1_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -8144,7 +9020,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearLogUri() {
       logUri_ = getDefaultInstance().getLogUri();
-      bitField0_ = (bitField0_ & ~0x20000000);
+      bitField1_ = (bitField1_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -8167,7 +9043,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       logUri_ = value;
-      bitField0_ |= 0x20000000;
+      bitField1_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -8196,7 +9072,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      * @return Whether the terminalCondition field is set.
      */
     public boolean hasTerminalCondition() {
-      return ((bitField0_ & 0x40000000) != 0);
+      return ((bitField1_ & 0x00000004) != 0);
     }
 
     /**
@@ -8248,7 +9124,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
       } else {
         terminalConditionBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x40000000;
+      bitField1_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -8273,7 +9149,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
       } else {
         terminalConditionBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x40000000;
+      bitField1_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -8294,7 +9170,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeTerminalCondition(com.google.cloud.run.v2.Condition value) {
       if (terminalConditionBuilder_ == null) {
-        if (((bitField0_ & 0x40000000) != 0)
+        if (((bitField1_ & 0x00000004) != 0)
             && terminalCondition_ != null
             && terminalCondition_ != com.google.cloud.run.v2.Condition.getDefaultInstance()) {
           getTerminalConditionBuilder().mergeFrom(value);
@@ -8305,7 +9181,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
         terminalConditionBuilder_.mergeFrom(value);
       }
       if (terminalCondition_ != null) {
-        bitField0_ |= 0x40000000;
+        bitField1_ |= 0x00000004;
         onChanged();
       }
       return this;
@@ -8326,7 +9202,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearTerminalCondition() {
-      bitField0_ = (bitField0_ & ~0x40000000);
+      bitField1_ = (bitField1_ & ~0x00000004);
       terminalCondition_ = null;
       if (terminalConditionBuilder_ != null) {
         terminalConditionBuilder_.dispose();
@@ -8351,7 +9227,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.cloud.run.v2.Condition.Builder getTerminalConditionBuilder() {
-      bitField0_ |= 0x40000000;
+      bitField1_ |= 0x00000004;
       onChanged();
       return internalGetTerminalConditionFieldBuilder().getBuilder();
     }
@@ -8415,9 +9291,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
         java.util.Collections.emptyList();
 
     private void ensureConditionsIsMutable() {
-      if (!((bitField0_ & 0x80000000) != 0)) {
+      if (!((bitField1_ & 0x00000008) != 0)) {
         conditions_ = new java.util.ArrayList<com.google.cloud.run.v2.Condition>(conditions_);
-        bitField0_ |= 0x80000000;
+        bitField1_ |= 0x00000008;
       }
     }
 
@@ -8697,7 +9573,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
     public Builder clearConditions() {
       if (conditionsBuilder_ == null) {
         conditions_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x80000000);
+        bitField1_ = (bitField1_ & ~0x00000008);
         onChanged();
       } else {
         conditionsBuilder_.clear();
@@ -8860,7 +9736,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
                 com.google.cloud.run.v2.Condition,
                 com.google.cloud.run.v2.Condition.Builder,
                 com.google.cloud.run.v2.ConditionOrBuilder>(
-                conditions_, ((bitField0_ & 0x80000000) != 0), getParentForChildren(), isClean());
+                conditions_, ((bitField1_ & 0x00000008) != 0), getParentForChildren(), isClean());
         conditions_ = null;
       }
       return conditionsBuilder_;
@@ -8870,10 +9746,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
         java.util.Collections.emptyList();
 
     private void ensureContainerStatusesIsMutable() {
-      if (!((bitField1_ & 0x00000001) != 0)) {
+      if (!((bitField1_ & 0x00000010) != 0)) {
         containerStatuses_ =
             new java.util.ArrayList<com.google.cloud.run.v2.ContainerStatus>(containerStatuses_);
-        bitField1_ |= 0x00000001;
+        bitField1_ |= 0x00000010;
       }
     }
 
@@ -9132,7 +10008,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
     public Builder clearContainerStatuses() {
       if (containerStatusesBuilder_ == null) {
         containerStatuses_ = java.util.Collections.emptyList();
-        bitField1_ = (bitField1_ & ~0x00000001);
+        bitField1_ = (bitField1_ & ~0x00000010);
         onChanged();
       } else {
         containerStatusesBuilder_.clear();
@@ -9284,7 +10160,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
                 com.google.cloud.run.v2.ContainerStatus.Builder,
                 com.google.cloud.run.v2.ContainerStatusOrBuilder>(
                 containerStatuses_,
-                ((bitField1_ & 0x00000001) != 0),
+                ((bitField1_ & 0x00000010) != 0),
                 getParentForChildren(),
                 isClean());
         containerStatuses_ = null;
@@ -9325,7 +10201,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
     public Builder setSatisfiesPzs(boolean value) {
 
       satisfiesPzs_ = value;
-      bitField1_ |= 0x00000002;
+      bitField1_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -9342,7 +10218,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearSatisfiesPzs() {
-      bitField1_ = (bitField1_ & ~0x00000002);
+      bitField1_ = (bitField1_ & ~0x00000020);
       satisfiesPzs_ = false;
       onChanged();
       return this;
@@ -9355,7 +10231,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
       if (!urls_.isModifiable()) {
         urls_ = new com.google.protobuf.LazyStringArrayList(urls_);
       }
-      bitField1_ |= 0x00000004;
+      bitField1_ |= 0x00000040;
     }
 
     /**
@@ -9440,7 +10316,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
       }
       ensureUrlsIsMutable();
       urls_.set(index, value);
-      bitField1_ |= 0x00000004;
+      bitField1_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -9463,7 +10339,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
       }
       ensureUrlsIsMutable();
       urls_.add(value);
-      bitField1_ |= 0x00000004;
+      bitField1_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -9483,7 +10359,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
     public Builder addAllUrls(java.lang.Iterable<java.lang.String> values) {
       ensureUrlsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, urls_);
-      bitField1_ |= 0x00000004;
+      bitField1_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -9501,7 +10377,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearUrls() {
       urls_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField1_ = (bitField1_ & ~0x00000004);
+      bitField1_ = (bitField1_ & ~0x00000040);
       ;
       onChanged();
       return this;
@@ -9526,7 +10402,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
       checkByteStringIsUtf8(value);
       ensureUrlsIsMutable();
       urls_.add(value);
-      bitField1_ |= 0x00000004;
+      bitField1_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -9537,15 +10413,15 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Returns true if the Instance is currently being acted upon by
-     * the system to bring it into the desired state.
+     * Output only. Returns `true` if the Instance is currently being acted upon
+     * by the system to bring it into the desired state.
      *
      * When a new Instance is created, or an existing one is updated, Cloud Run
      * will asynchronously perform all necessary steps to bring the Instance to
      * the desired serving state. This process is called reconciliation. While
      * reconciliation is in process, `observed_generation` will have a transient
      * value that might mismatch the intended state.
-     * Once reconciliation is over (and this field is false), there are two
+     * Once reconciliation is over (and this field is `false`), there are two
      * possible outcomes: reconciliation succeeded and the serving state matches
      * the Instance, or there was an error, and reconciliation failed. This state
      * can be found in `terminal_condition.state`.
@@ -9564,15 +10440,15 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Returns true if the Instance is currently being acted upon by
-     * the system to bring it into the desired state.
+     * Output only. Returns `true` if the Instance is currently being acted upon
+     * by the system to bring it into the desired state.
      *
      * When a new Instance is created, or an existing one is updated, Cloud Run
      * will asynchronously perform all necessary steps to bring the Instance to
      * the desired serving state. This process is called reconciliation. While
      * reconciliation is in process, `observed_generation` will have a transient
      * value that might mismatch the intended state.
-     * Once reconciliation is over (and this field is false), there are two
+     * Once reconciliation is over (and this field is `false`), there are two
      * possible outcomes: reconciliation succeeded and the serving state matches
      * the Instance, or there was an error, and reconciliation failed. This state
      * can be found in `terminal_condition.state`.
@@ -9586,7 +10462,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
     public Builder setReconciling(boolean value) {
 
       reconciling_ = value;
-      bitField1_ |= 0x00000008;
+      bitField1_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -9595,15 +10471,15 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Returns true if the Instance is currently being acted upon by
-     * the system to bring it into the desired state.
+     * Output only. Returns `true` if the Instance is currently being acted upon
+     * by the system to bring it into the desired state.
      *
      * When a new Instance is created, or an existing one is updated, Cloud Run
      * will asynchronously perform all necessary steps to bring the Instance to
      * the desired serving state. This process is called reconciliation. While
      * reconciliation is in process, `observed_generation` will have a transient
      * value that might mismatch the intended state.
-     * Once reconciliation is over (and this field is false), there are two
+     * Once reconciliation is over (and this field is `false`), there are two
      * possible outcomes: reconciliation succeeded and the serving state matches
      * the Instance, or there was an error, and reconciliation failed. This state
      * can be found in `terminal_condition.state`.
@@ -9614,7 +10490,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearReconciling() {
-      bitField1_ = (bitField1_ & ~0x00000008);
+      bitField1_ = (bitField1_ & ~0x00000080);
       reconciling_ = false;
       onChanged();
       return this;
@@ -9688,7 +10564,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       etag_ = value;
-      bitField1_ |= 0x00000010;
+      bitField1_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -9707,7 +10583,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearEtag() {
       etag_ = getDefaultInstance().getEtag();
-      bitField1_ = (bitField1_ & ~0x00000010);
+      bitField1_ = (bitField1_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -9731,7 +10607,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       etag_ = value;
-      bitField1_ |= 0x00000010;
+      bitField1_ |= 0x00000100;
       onChanged();
       return this;
     }

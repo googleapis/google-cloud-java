@@ -104,6 +104,9 @@ public class SessionStreamImpl implements SessionStream {
   }
 
   @Override
+  public void afterSessionStart() {}
+
+  @Override
   public void sendMessage(SessionRequest request) {
     call.sendMessage(request);
   }

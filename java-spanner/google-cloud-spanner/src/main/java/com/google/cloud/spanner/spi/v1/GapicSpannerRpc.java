@@ -75,6 +75,7 @@ import com.google.cloud.grpc.fallback.GcpFallbackOpenTelemetry;
 import com.google.cloud.grpc.fallback.GcpFallbackState;
 import com.google.cloud.spanner.AdminRequestsPerMinuteExceededException;
 import com.google.cloud.spanner.BackupId;
+import com.google.cloud.spanner.BuiltInMetricsConstant;
 import com.google.cloud.spanner.ErrorCode;
 import com.google.cloud.spanner.Restore;
 import com.google.cloud.spanner.SpannerException;
@@ -206,6 +207,8 @@ import io.grpc.ManagedChannelBuilder;
 import io.grpc.MethodDescriptor;
 import io.grpc.auth.MoreCallCredentials;
 import io.opentelemetry.api.OpenTelemetry;
+import io.opentelemetry.api.common.Attributes;
+import io.opentelemetry.api.metrics.Meter;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
@@ -330,6 +333,7 @@ public class GapicSpannerRpc implements SpannerRpc {
   @Nullable private final KeyAwareChannel keyAwareChannel;
   @Nullable private final GcpManagedChannel grpcGcpChannel;
   @Nullable private final DynamicChannelPoolPrimer channelPrimer;
+  @Nullable private final BuiltInChannelPoolMetrics builtInChannelPoolMetrics;
 
   private final GrpcCallContext baseGrpcCallContext;
 
@@ -391,45 +395,31 @@ public class GapicSpannerRpc implements SpannerRpc {
     this.baseGrpcCallContext = createBaseCallContext();
 
     boolean isEnableDirectAccess = options.isEnableDirectAccess();
+    this.builtInChannelPoolMetrics =
+        initializeStubs ? createBuiltInChannelPoolMetrics(options) : null;
 
     if (initializeStubs) {
       CredentialsProvider credentialsProvider =
           GrpcTransportOptions.setUpCredentialsProvider(options);
       this.channelPrimer = createChannelPrimer(options, credentialsProvider);
 
-      InstantiatingGrpcChannelProvider.Builder defaultChannelProviderBuilder =
-          createBaseChannelProviderBuilder(
-              options, headerProviderWithUserAgent, isEnableDirectAccess);
-      GrpcGcpEndpointChannelConfigurator endpointChannelConfigurator =
-          createGrpcGcpEndpointChannelConfigurator(defaultChannelProviderBuilder, options);
-      boolean useGcpFallback =
-          options.getChannelProvider() == null
-              && isEnableDirectAccess
-              && options.isEnableGcpFallback();
-      if (useGcpFallback) {
-        setupGcpFallback(
-            defaultChannelProviderBuilder,
-            options,
-            headerProviderWithUserAgent,
-            credentialsProvider,
-            channelPrimer);
-      } else {
-        maybeEnableGrpcGcpExtension(defaultChannelProviderBuilder, options, channelPrimer);
-      }
-
-      boolean enableLocationApi = options.isEnableLocationApi();
-      // First check if SpannerOptions provides a TransportChannelProvider. Create one
-      // with information gathered from SpannerOptions if none is provided
-      TransportChannelProvider baseChannelProvider =
-          MoreObjects.firstNonNull(
-              options.getChannelProvider(), defaultChannelProviderBuilder.build());
       TransportChannelProvider channelProvider =
-          enableLocationApi && baseChannelProvider instanceof InstantiatingGrpcChannelProvider
-              ? new KeyAwareTransportChannelProvider(
-                  (InstantiatingGrpcChannelProvider) baseChannelProvider,
-                  options.getChannelEndpointCacheFactory(),
-                  endpointChannelConfigurator)
-              : baseChannelProvider;
+          createTransportChannelProvider(
+              options,
+              headerProviderWithUserAgent,
+              credentialsProvider,
+              isEnableDirectAccess,
+              builtInChannelPoolMetrics);
+      TransportChannelProvider adminChannelProvider =
+          builtInChannelPoolMetrics == null
+              ? channelProvider
+              : createTransportChannelProvider(
+                  options,
+                  headerProviderWithUserAgent,
+                  credentialsProvider,
+                  isEnableDirectAccess,
+                  /* builtInChannelPoolMetrics= */ null);
+      boolean enableLocationApi = options.isEnableLocationApi();
 
       spannerWatchdog =
           Executors.newSingleThreadScheduledExecutor(
@@ -534,12 +524,14 @@ public class GapicSpannerRpc implements SpannerRpc {
                   .getStreamWatchdogProvider()
                   .withCheckInterval(pdmlSettings.getStreamWatchdogCheckInterval()));
         }
+        ClientContext partitionedDmlClientContext =
+            createPartitionedDmlClientContext(clientContext, this.keyAwareChannel);
         this.partitionedDmlStub =
             GrpcSpannerStubWithStubSettingsAndClientContext.create(
-                pdmlSettings.build(), clientContext);
+                pdmlSettings.build(), partitionedDmlClientContext);
         this.instanceAdminStubSettings =
             options.getInstanceAdminStubSettings().toBuilder()
-                .setTransportChannelProvider(channelProvider)
+                .setTransportChannelProvider(adminChannelProvider)
                 .setCredentialsProvider(credentialsProvider)
                 .setStreamWatchdogProvider(watchdogProvider)
                 .setTracerFactory(
@@ -550,7 +542,7 @@ public class GapicSpannerRpc implements SpannerRpc {
 
         this.databaseAdminStubSettings =
             options.getDatabaseAdminStubSettings().toBuilder()
-                .setTransportChannelProvider(channelProvider)
+                .setTransportChannelProvider(adminChannelProvider)
                 .setCredentialsProvider(credentialsProvider)
                 .setStreamWatchdogProvider(watchdogProvider)
                 .setTracerFactory(
@@ -624,6 +616,82 @@ public class GapicSpannerRpc implements SpannerRpc {
     }
   }
 
+  private TransportChannelProvider createTransportChannelProvider(
+      SpannerOptions options,
+      HeaderProvider headerProviderWithUserAgent,
+      CredentialsProvider credentialsProvider,
+      boolean isEnableDirectAccess,
+      @Nullable BuiltInChannelPoolMetrics builtInChannelPoolMetrics) {
+    InstantiatingGrpcChannelProvider.Builder defaultChannelProviderBuilder =
+        createBaseChannelProviderBuilder(
+            options, headerProviderWithUserAgent, isEnableDirectAccess);
+    GrpcGcpEndpointChannelConfigurator endpointChannelConfigurator =
+        createGrpcGcpEndpointChannelConfigurator(defaultChannelProviderBuilder, options);
+    boolean useGcpFallback =
+        options.getChannelProvider() == null
+            && isEnableDirectAccess
+            && options.isEnableGcpFallback();
+    if (useGcpFallback) {
+      setupGcpFallback(
+          defaultChannelProviderBuilder,
+          options,
+          headerProviderWithUserAgent,
+          credentialsProvider,
+          channelPrimer,
+          builtInChannelPoolMetrics);
+    } else {
+      maybeEnableGrpcGcpExtension(
+          defaultChannelProviderBuilder,
+          options,
+          channelPrimer,
+          builtInChannelPoolMetrics,
+          isEnableDirectAccess
+              ? BuiltInMetricsConstant.LANE_DIRECTPATH
+              : BuiltInMetricsConstant.LANE_CLOUDPATH);
+    }
+
+    // First check if SpannerOptions provides a TransportChannelProvider. Create one
+    // with information gathered from SpannerOptions if none is provided
+    TransportChannelProvider baseChannelProvider =
+        MoreObjects.firstNonNull(
+            options.getChannelProvider(), defaultChannelProviderBuilder.build());
+    return options.isEnableLocationApi()
+            && baseChannelProvider instanceof InstantiatingGrpcChannelProvider
+        ? new KeyAwareTransportChannelProvider(
+            (InstantiatingGrpcChannelProvider) baseChannelProvider,
+            options.getChannelEndpointCacheFactory(),
+            endpointChannelConfigurator)
+        : baseChannelProvider;
+  }
+
+  @Nullable
+  private static BuiltInChannelPoolMetrics createBuiltInChannelPoolMetrics(SpannerOptions options) {
+    if (options.getChannelProvider() != null
+        || !options.isGrpcGcpExtensionEnabled()
+        || !options.isEnableChannelPoolBuiltInMetrics()
+        || isEmulatorEnabled(options, System.getenv("SPANNER_EMULATOR_HOST"))) {
+      return null;
+    }
+    OpenTelemetry builtInOpenTelemetry = options.getBuiltInOpenTelemetry();
+    if (builtInOpenTelemetry == null) {
+      return null;
+    }
+    return new BuiltInChannelPoolMetrics(
+        builtInOpenTelemetry.getMeter(BuiltInMetricsConstant.GRPC_GCP_METER_NAME),
+        GcpMetricsOptions.nextBuiltInMetricsPoolIndex());
+  }
+
+  @VisibleForTesting
+  static final class BuiltInChannelPoolMetrics {
+    private final Meter meter;
+    private final String poolIndex;
+
+    BuiltInChannelPoolMetrics(Meter meter, String poolIndex) {
+      this.meter = meter;
+      this.poolIndex = poolIndex;
+    }
+  }
+
   @VisibleForTesting
   List<GcpFallbackState> getFallbackStates() {
     return Collections.unmodifiableList(fallbackStates);
@@ -677,6 +745,21 @@ public class GapicSpannerRpc implements SpannerRpc {
     return null;
   }
 
+  private static ClientContext createPartitionedDmlClientContext(
+      ClientContext clientContext, @Nullable KeyAwareChannel keyAwareChannel) {
+    if (keyAwareChannel == null) {
+      return clientContext;
+    }
+    GrpcTransportChannel defaultTransportChannel =
+        GrpcTransportChannel.create(keyAwareChannel.defaultChannel());
+    return clientContext.toBuilder()
+        .setTransportChannel(defaultTransportChannel)
+        .setDefaultCallContext(
+            clientContext.getDefaultCallContext().withTransportChannel(defaultTransportChannel))
+        .setBackgroundResources(Collections.emptyList())
+        .build();
+  }
+
   @Nullable
   private static GcpManagedChannel extractGrpcGcpChannel(TransportChannel transportChannel) {
     if (!(transportChannel instanceof GrpcTransportChannel)) {
@@ -703,7 +786,8 @@ public class GapicSpannerRpc implements SpannerRpc {
       final SpannerOptions options,
       final HeaderProvider headerProviderWithUserAgent,
       final CredentialsProvider credentialsProvider,
-      @Nullable final DynamicChannelPoolPrimer channelPrimer) {
+      @Nullable final DynamicChannelPoolPrimer channelPrimer,
+      @Nullable final BuiltInChannelPoolMetrics builtInChannelPoolMetrics) {
     InstantiatingGrpcChannelProvider.Builder cloudPathProviderBuilder =
         createBaseChannelProviderBuilder(
             options, headerProviderWithUserAgent, /* isEnableDirectAccess= */ false);
@@ -760,9 +844,19 @@ public class GapicSpannerRpc implements SpannerRpc {
 
           return options.isEnableGcpFallbackRecovery()
               ? wrapFallbackChannelsInGrpcGcpPool(
-                  options, builder, cloudPathBuilder, fallbackTelemetry, channelPrimer)
+                  options,
+                  builder,
+                  cloudPathBuilder,
+                  fallbackTelemetry,
+                  channelPrimer,
+                  builtInChannelPoolMetrics)
               : wrapGrpcGcpPoolsInFallbackChannel(
-                  options, builder, cloudPathBuilder, fallbackTelemetry, channelPrimer);
+                  options,
+                  builder,
+                  cloudPathBuilder,
+                  fallbackTelemetry,
+                  channelPrimer,
+                  builtInChannelPoolMetrics);
         });
   }
 
@@ -776,7 +870,8 @@ public class GapicSpannerRpc implements SpannerRpc {
       ManagedChannelBuilder<?> directPathBuilder,
       ManagedChannelBuilder<?> cloudPathBuilder,
       GcpFallbackOpenTelemetry fallbackTelemetry,
-      @Nullable DynamicChannelPoolPrimer channelPrimer) {
+      @Nullable DynamicChannelPoolPrimer channelPrimer,
+      @Nullable BuiltInChannelPoolMetrics builtInChannelPoolMetrics) {
     boolean usePool = options.isGrpcGcpExtensionEnabled();
     ManagedChannelBuilder<?> fallbackChannelBuilder =
         new FallbackChannelBuilder(
@@ -785,7 +880,12 @@ public class GapicSpannerRpc implements SpannerRpc {
             createFallbackChannelOptions(
                 fallbackTelemetry, 1, usePool ? newFallbackState() : null));
     return usePool
-        ? wrapInGrpcGcpPool(fallbackChannelBuilder, options, channelPrimer)
+        ? wrapInGrpcGcpPool(
+            fallbackChannelBuilder,
+            options,
+            channelPrimer,
+            builtInChannelPoolMetrics,
+            /* lane= */ null)
         : fallbackChannelBuilder;
   }
 
@@ -798,12 +898,25 @@ public class GapicSpannerRpc implements SpannerRpc {
       ManagedChannelBuilder<?> directPathBuilder,
       ManagedChannelBuilder<?> cloudPathBuilder,
       GcpFallbackOpenTelemetry fallbackTelemetry,
-      @Nullable DynamicChannelPoolPrimer channelPrimer) {
+      @Nullable DynamicChannelPoolPrimer channelPrimer,
+      @Nullable BuiltInChannelPoolMetrics builtInChannelPoolMetrics) {
     ManagedChannelBuilder<?> primaryBuilder = directPathBuilder;
     ManagedChannelBuilder<?> fallbackBuilder = cloudPathBuilder;
     if (options.isGrpcGcpExtensionEnabled()) {
-      primaryBuilder = wrapInGrpcGcpPool(directPathBuilder, options, channelPrimer);
-      fallbackBuilder = wrapInGrpcGcpPool(cloudPathBuilder, options, channelPrimer);
+      primaryBuilder =
+          wrapInGrpcGcpPool(
+              directPathBuilder,
+              options,
+              channelPrimer,
+              builtInChannelPoolMetrics,
+              BuiltInMetricsConstant.LANE_DIRECTPATH);
+      fallbackBuilder =
+          wrapInGrpcGcpPool(
+              cloudPathBuilder,
+              options,
+              channelPrimer,
+              builtInChannelPoolMetrics,
+              BuiltInMetricsConstant.LANE_CLOUDPATH);
     }
     return new FallbackChannelBuilder(
         primaryBuilder,
@@ -814,10 +927,14 @@ public class GapicSpannerRpc implements SpannerRpc {
   private static ManagedChannelBuilder<?> wrapInGrpcGcpPool(
       ManagedChannelBuilder<?> delegate,
       SpannerOptions options,
-      @Nullable DynamicChannelPoolPrimer channelPrimer) {
+      @Nullable DynamicChannelPoolPrimer channelPrimer,
+      @Nullable BuiltInChannelPoolMetrics builtInChannelPoolMetrics,
+      @Nullable String lane) {
     return GcpManagedChannelBuilder.forDelegateBuilder(delegate)
         .withApiConfigJsonString(parseGrpcGcpApiConfig())
-        .withOptions(grpcGcpOptionsWithMetricsAndDcp(options, channelPrimer));
+        .withOptions(
+            grpcGcpOptionsWithMetricsAndDcp(
+                options, channelPrimer, builtInChannelPoolMetrics, lane));
   }
 
   private InstantiatingGrpcChannelProvider.Builder createChannelProviderBuilder(
@@ -827,7 +944,12 @@ public class GapicSpannerRpc implements SpannerRpc {
     InstantiatingGrpcChannelProvider.Builder defaultChannelProviderBuilder =
         createBaseChannelProviderBuilder(
             options, headerProviderWithUserAgent, isEnableDirectAccess);
-    maybeEnableGrpcGcpExtension(defaultChannelProviderBuilder, options, channelPrimer);
+    maybeEnableGrpcGcpExtension(
+        defaultChannelProviderBuilder,
+        options,
+        channelPrimer,
+        /* builtInChannelPoolMetrics= */ null,
+        /* lane= */ null);
     return defaultChannelProviderBuilder;
   }
 
@@ -941,13 +1063,21 @@ public class GapicSpannerRpc implements SpannerRpc {
 
   // Enhance gRPC-GCP options with metrics and dynamic channel pool configuration.
   private static GcpManagedChannelOptions grpcGcpOptionsWithMetricsAndDcp(SpannerOptions options) {
-    return grpcGcpOptionsWithMetricsAndDcp(options, /* channelPrimer= */ null);
+    return grpcGcpOptionsWithMetricsAndDcp(
+        options,
+        /* channelPrimer= */ null,
+        /* builtInChannelPoolMetrics= */ null,
+        /* lane= */ null);
   }
 
   // Enhance gRPC-GCP options with metrics and dynamic channel pool configuration, including the
   // given primer for scaled-up channels.
-  private static GcpManagedChannelOptions grpcGcpOptionsWithMetricsAndDcp(
-      SpannerOptions options, @Nullable GcpChannelPrimer channelPrimer) {
+  @VisibleForTesting
+  static GcpManagedChannelOptions grpcGcpOptionsWithMetricsAndDcp(
+      SpannerOptions options,
+      @Nullable GcpChannelPrimer channelPrimer,
+      @Nullable BuiltInChannelPoolMetrics builtInChannelPoolMetrics,
+      @Nullable String lane) {
     GcpManagedChannelOptions grpcGcpOptions =
         MoreObjects.firstNonNull(options.getGrpcGcpOptions(), new GcpManagedChannelOptions());
     GcpManagedChannelOptions.Builder optionsBuilder =
@@ -966,6 +1096,19 @@ public class GapicSpannerRpc implements SpannerRpc {
     if (metricsOptions.getOpenTelemetryMeter() == null && options.isGrpcGcpOtelMetricsEnabled()) {
       metricsOptionsBuilder.withOpenTelemetryMeter(
           options.getOpenTelemetry().getMeter("com.google.cloud.spanner"));
+    }
+    if (builtInChannelPoolMetrics == null) {
+      metricsOptionsBuilder
+          .withBuiltInMetrics(/* meter= */ null, Attributes.empty())
+          .withBuiltInMetricsPoolIndex(/* poolIndex= */ null);
+    } else {
+      metricsOptionsBuilder
+          .withBuiltInMetrics(
+              builtInChannelPoolMetrics.meter,
+              lane == null
+                  ? Attributes.empty()
+                  : Attributes.of(BuiltInMetricsConstant.LANE_KEY, lane))
+          .withBuiltInMetricsPoolIndex(builtInChannelPoolMetrics.poolIndex);
     }
     optionsBuilder.withMetricsOptions(metricsOptionsBuilder.build());
 
@@ -1030,7 +1173,8 @@ public class GapicSpannerRpc implements SpannerRpc {
   }
 
   @Nullable
-  private static GrpcGcpEndpointChannelConfigurator createGrpcGcpEndpointChannelConfigurator(
+  @VisibleForTesting
+  static GrpcGcpEndpointChannelConfigurator createGrpcGcpEndpointChannelConfigurator(
       InstantiatingGrpcChannelProvider.Builder channelProviderBuilder, SpannerOptions options) {
     if (!options.isGrpcGcpExtensionEnabled()) {
       return null;
@@ -1050,14 +1194,16 @@ public class GapicSpannerRpc implements SpannerRpc {
   private static void maybeEnableGrpcGcpExtension(
       InstantiatingGrpcChannelProvider.Builder defaultChannelProviderBuilder,
       final SpannerOptions options,
-      @Nullable final DynamicChannelPoolPrimer channelPrimer) {
+      @Nullable final DynamicChannelPoolPrimer channelPrimer,
+      @Nullable final BuiltInChannelPoolMetrics builtInChannelPoolMetrics,
+      @Nullable final String lane) {
     if (!options.isGrpcGcpExtensionEnabled()) {
       return;
     }
 
     final String jsonApiConfig = parseGrpcGcpApiConfig();
     final GcpManagedChannelOptions grpcGcpOptions =
-        grpcGcpOptionsWithMetricsAndDcp(options, channelPrimer);
+        grpcGcpOptionsWithMetricsAndDcp(options, channelPrimer, builtInChannelPoolMetrics, lane);
 
     ApiFunction<ManagedChannelBuilder, ManagedChannelBuilder> baseConfigurator =
         defaultChannelProviderBuilder.getChannelConfigurator();
@@ -2591,6 +2737,15 @@ public class GapicSpannerRpc implements SpannerRpc {
     context =
         context.withCallOptions(
             context.getCallOptions().withOption(REQUEST_ID_CALL_OPTIONS_KEY, requestId));
+    if (builtInChannelPoolMetrics != null) {
+      context =
+          context.withCallOptions(
+              context
+                  .getCallOptions()
+                  .withOption(
+                      GcpManagedChannel.BUILT_IN_METRICS_ATTRIBUTES_KEY,
+                      metadataProvider.newBuiltInMetricsAttributes(resource)));
+    }
     context = context.withExtraHeaders(metadataProvider.newExtraHeaders(resource, projectName));
     if (routeToLeader && leaderAwareRoutingEnabled) {
       context = context.withExtraHeaders(metadataProvider.newRouteToLeaderHeader());

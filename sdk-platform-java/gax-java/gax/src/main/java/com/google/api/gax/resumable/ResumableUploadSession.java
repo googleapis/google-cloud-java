@@ -41,7 +41,7 @@ import org.jspecify.annotations.NullMarked;
 @AutoValue
 public abstract class ResumableUploadSession {
 
-  private static final int DEFAULT_CHUNK_GRANULARITY = 1;
+  public static final int DEFAULT_CHUNK_GRANULARITY = 1;
 
   /** Returns the server-provided URL to which data uploads are directed. */
   public abstract String getUploadUrl();

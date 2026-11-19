@@ -74,7 +74,7 @@ public final class LineItemMessagesProto extends com.google.protobuf.GeneratedFi
           + "hird_party_measurement_settings.proto\032\037g"
           + "oogle/api/field_behavior.proto\032\031google/a"
           + "pi/resource.proto\032\036google/protobuf/durat"
-          + "ion.proto\032\037google/protobuf/timestamp.proto\032\027google/type/money.proto\"\246+\n"
+          + "ion.proto\032\037google/protobuf/timestamp.proto\032\027google/type/money.proto\"\256,\n"
           + "\010LineItem\022\022\n"
           + "\004name\030\001 \001(\tB\004\342A\001\010\022<\n"
           + "\005order\030\002 \001(\tB(\342A\002\002\005\372A \n"
@@ -189,7 +189,9 @@ public final class LineItemMessagesProto extends com.google.protobuf.GeneratedFi
           + "\023creative_targetings\030^"
           + " \003(\0132*.google.ads.admanager.v1.CreativeTargetingB\004\342A\001\001\022g\n"
           + "\017allowed_formats\030p \003(\0162H.google.ads.admanager.v1.LineIt"
-          + "emAllowedFormatEnum.LineItemAllowedFormatB\004\342A\001\001:j\352Ag\n"
+          + "emAllowedFormatEnum.LineItemAllowedFormatB\004\342A\001\001\022f\n"
+          + "\033allocation_delivery_profile\030\203\001 \001(\tB;\342A\001\001\372A4\n"
+          + "2admanager.googleapis.com/AllocationDeliveryProfileH5\210\001\001:j\352Ag\n"
           + "!admanager.googleapis.com/LineItem\022-networks/{network_code}/lineItems/{line_item}*"
           + "\tlineItems2\010lineItemB\010\n"
           + "\006_orderB\017\n\r"
@@ -237,20 +239,20 @@ public final class LineItemMessagesProto extends com.google.protobuf.GeneratedFi
           + "!_third_party_measurement_settingsB\032\n"
           + "\030_youtube_kids_restrictedB\036\n"
           + "\034_max_video_creative_durationB\007\n"
-          + "\005_goalB\017\n"
-          + "\r"
+          + "\005_goalB\017\n\r"
           + "_grp_settingsB\014\n\n"
           + "_deal_infoB\034\n"
           + "\032_child_content_eligibilityB\030\n"
           + "\026_custom_vast_extensionB\"\n"
           + " _sponsorship_exclusivity_enabledB$\n"
           + "\"_repeated_creative_serving_enabledB\014\n\n"
-          + "_targetingB\311\001\n"
-          + "\033com.google.ads.admanager.v1B\025LineItemMessagesProtoP\001Z@google.go"
-          + "lang.org/genproto/googleapis/ads/admanag"
-          + "er/v1;admanager\252\002\027Google.Ads.AdManager.V"
-          + "1\312\002\027Google\\Ads\\AdManager\\V1\352\002\032Google::Ad"
-          + "s::AdManager::V1b\006proto3"
+          + "_targetingB\036\n"
+          + "\034_allocation_delivery_profileB\311\001\n"
+          + "\033com.google.ads.admanager.v1B\025LineItemMessagesPr"
+          + "otoP\001Z@google.golang.org/genproto/google"
+          + "apis/ads/admanager/v1;admanager\252\002\027Google"
+          + ".Ads.AdManager.V1\312\002\027Google\\Ads\\AdManager"
+          + "\\V1\352\002\032Google::Ads::AdManager::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -352,6 +354,7 @@ public final class LineItemMessagesProto extends com.google.protobuf.GeneratedFi
               "Targeting",
               "CreativeTargetings",
               "AllowedFormats",
+              "AllocationDeliveryProfile",
             });
     descriptor.resolveAllFeaturesImmutable();
     com.google.ads.admanager.v1.AppliedLabelProto.getDescriptor();

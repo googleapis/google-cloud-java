@@ -448,7 +448,15 @@ public class DatasetInfo implements Serializable {
   /**
    * Returns the dataset's access control configuration.
    *
-   * <p>Update the ACLs for a dataset.
+   * <p>Each {@link Acl} entry is immutable. Calling {@code acls.add(...)} appends a new entry to
+   * the dataset's access list; to modify an existing {@link Acl} (for example, to change its {@link
+   * Acl.Role} or {@link Acl.Expr} condition), remove the existing entry from the copied list and
+   * add a new {@link Acl} before calling {@link BigQuery#update(DatasetInfo,
+   * BigQuery.DatasetOption...)}. When reading or updating conditional ACLs ({@link Acl.Expr}), pass
+   * {@link BigQuery.DatasetOption#accessPolicyVersion(Integer)
+   * DatasetOption.accessPolicyVersion(3)} to {@code getDataset} and {@code update}.
+   *
+   * <p>Append a new ACL entry to a dataset:
    *
    * <pre>{@code
    * Dataset dataset = bigquery.getDataset(DatasetId.of("my_dataset"));
@@ -463,7 +471,9 @@ public class DatasetInfo implements Serializable {
    * bigquery.update(builder.build());  // API request.
    * }</pre>
    *
-   * @see <a href="https://cloud.google.com/bigquery/access-control">Access Control</a>
+   * @see <a href="https://cloud.google.com/bigquery/docs/access-control">Access Control</a>
+   * @see <a href="https://cloud.google.com/bigquery/docs/conditions">Control access with IAM
+   *     Conditions</a>
    */
   public List<Acl> getAcl() {
     return acl;

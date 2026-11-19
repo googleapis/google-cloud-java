@@ -121,6 +121,16 @@ public class PluggableAuthCredentials extends ExternalAccountCredentials {
 
   @Override
   public AccessToken refreshAccessToken() throws IOException {
+    // Delegate to ImpersonatedCredentials before calling retrieveSubjectToken().
+    // ImpersonatedCredentials refreshes its own non-impersonated sourceCredentials copy (and
+    // caches the intermediate STS token via refreshIfExpired()), so calling retrieveSubjectToken()
+    // here would redundantly execute the subject token retrieval only for
+    // exchangeExternalCredentialForAccessToken() to discard the built StsTokenExchangeRequest.
+    ImpersonatedCredentials impersonated = getImpersonatedCredentials();
+    if (impersonated != null) {
+      return impersonated.refreshAccessToken();
+    }
+
     String credential = retrieveSubjectToken();
     StsTokenExchangeRequest.Builder stsTokenExchangeRequest =
         StsTokenExchangeRequest.newBuilder(credential, getSubjectTokenType())

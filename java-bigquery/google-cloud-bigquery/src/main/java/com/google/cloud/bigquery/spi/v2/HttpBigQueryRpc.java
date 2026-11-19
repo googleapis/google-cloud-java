@@ -67,6 +67,8 @@ import com.google.api.services.bigquery.model.TestIamPermissionsResponse;
 import com.google.cloud.Tuple;
 import com.google.cloud.bigquery.BigQueryException;
 import com.google.cloud.bigquery.BigQueryOptions;
+import com.google.cloud.bigquery.DataFormatOptions;
+import com.google.cloud.bigquery.DataFormatOptions.TimestampFormatOptions;
 import com.google.cloud.bigquery.telemetry.BigQueryTelemetryTracer;
 import com.google.cloud.bigquery.telemetry.HttpTracingRequestInitializer;
 import com.google.cloud.http.HttpTransportOptions;
@@ -1419,6 +1421,8 @@ public class HttpBigQueryRpc implements BigQueryRpc {
       String projectId, String datasetId, String tableId, Map<Option, ?> options)
       throws IOException {
     validateRPC();
+    DataFormatOptions formatOptions = this.options.getDataFormatOptions();
+    TimestampFormatOptions timestampFormat = formatOptions.timestampFormatOptions();
     Bigquery.Tabledata.List bqListRequest =
         bigquery
             .tabledata()
@@ -1429,6 +1433,11 @@ public class HttpBigQueryRpc implements BigQueryRpc {
             .setStartIndex(
                 Option.START_INDEX.getLong(options) != null
                     ? BigInteger.valueOf(Option.START_INDEX.getLong(options))
+                    : null)
+            .setFormatOptionsUseInt64Timestamp(formatOptions.useInt64Timestamp() ? true : null)
+            .setFormatOptionsTimestampOutputFormat(
+                timestampFormat != TimestampFormatOptions.TIMESTAMP_OUTPUT_FORMAT_UNSPECIFIED
+                    ? timestampFormat.toString()
                     : null);
 
     bqListRequest

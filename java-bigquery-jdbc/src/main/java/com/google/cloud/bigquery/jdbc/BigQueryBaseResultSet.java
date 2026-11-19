@@ -52,13 +52,7 @@ import java.sql.SQLWarning;
 import java.sql.Statement;
 import java.sql.Time;
 import java.sql.Timestamp;
-import java.time.Instant;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
-import java.time.OffsetDateTime;
 import java.time.ZoneId;
-import java.time.ZonedDateTime;
 import java.util.Calendar;
 import java.util.List;
 import javax.sql.rowset.serial.SerialBlob;
@@ -318,43 +312,32 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
 
   abstract Object getObjectInternal(int columnIndex) throws SQLException;
 
+  private Object getTemporalValue(int columnIndex, StandardSQLTypeName bqType, ZoneId zone)
+      throws SQLException {
+    return BigQueryTemporalUtility.isCivilTemporalType(bqType)
+        ? getObjectInternal(columnIndex)
+        : getObject(columnIndex, zone);
+  }
+
   @Override
   public <T> T getObject(int columnIndex, Class<T> type) throws SQLException {
     LOG.finestTrace("getObject");
     try {
-      if (isRawViewTarget(type)) {
-        StandardSQLTypeName bqType = getStandardSQLTypeName(columnIndex);
-        // java.sql types can't hold every value of these (sub-ms TIME, pre-1582 DATE/DATETIME).
-        if (bqType == StandardSQLTypeName.TIME
-            || bqType == StandardSQLTypeName.DATE
-            || bqType == StandardSQLTypeName.DATETIME) {
-          return BigQueryTypeRegistry.convert(getObjectInternal(columnIndex), bqType, type, null);
-        }
+      StandardSQLTypeName bqType = getStandardSQLTypeName(columnIndex);
+      if (type != null && BigQueryTemporalUtility.isCivilTemporalType(bqType)) {
+        return BigQueryTypeRegistry.convert(getObjectInternal(columnIndex), bqType, type, null);
       }
       Object value = getObject(columnIndex);
       if (value == null) {
         return null;
       }
-      if (type != null && !type.isInstance(value)) {
-        StandardSQLTypeName bqType = getStandardSQLTypeName(columnIndex);
-        if (bqType == StandardSQLTypeName.TIMESTAMP) {
-          return BigQueryTypeRegistry.convert(value, bqType, type, null);
-        }
+      if (type != null && !type.isInstance(value) && bqType == StandardSQLTypeName.TIMESTAMP) {
+        return BigQueryTypeRegistry.convert(value, bqType, type, null);
       }
       return BigQueryTypeRegistry.convert(value, type);
     } catch (RuntimeException e) {
       throw createCoercionException(columnIndex, type, e);
     }
-  }
-
-  private static boolean isRawViewTarget(Class<?> type) {
-    return type == String.class
-        || type == LocalDate.class
-        || type == LocalDateTime.class
-        || type == LocalTime.class
-        || type == Instant.class
-        || type == OffsetDateTime.class
-        || type == ZonedDateTime.class;
   }
 
   @Override
@@ -592,7 +575,7 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
     StandardSQLTypeName bqType = getStandardSQLTypeName(columnIndex);
     ZoneId zone = getEffectiveZone(bqType, cal);
     try {
-      Object value = getObject(columnIndex, zone);
+      Object value = getTemporalValue(columnIndex, bqType, zone);
       return BigQueryTypeRegistry.convert(value, bqType, Date.class, zone);
     } catch (BigQueryJdbcException e) {
       throw createCoercionException(columnIndex, Date.class, e);
@@ -608,7 +591,7 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
     }
     ZoneId zone = getEffectiveZone(bqType, cal);
     try {
-      Object value = getObject(columnIndex, zone);
+      Object value = getTemporalValue(columnIndex, bqType, zone);
       return BigQueryTypeRegistry.convert(value, bqType, Time.class, zone);
     } catch (BigQueryJdbcException e) {
       throw createCoercionException(columnIndex, Time.class, e);
@@ -624,7 +607,7 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
     }
     ZoneId zone = getEffectiveZone(bqType, cal);
     try {
-      Object value = getObject(columnIndex, zone);
+      Object value = getTemporalValue(columnIndex, bqType, zone);
       return BigQueryTypeRegistry.convert(value, bqType, Timestamp.class, zone);
     } catch (BigQueryJdbcException e) {
       throw createCoercionException(columnIndex, Timestamp.class, e);

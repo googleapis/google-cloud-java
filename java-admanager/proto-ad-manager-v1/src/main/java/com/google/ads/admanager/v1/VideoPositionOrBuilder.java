@@ -92,9 +92,8 @@ public interface VideoPositionOrBuilder
    *
    *
    * <pre>
-   * Optional. The video position within a pod to target. This field must be
-   * unset in order to target a specific video position (e.g. position_type),
-   * bumper type (e.g. bumper_type), or custom ad spot (e.g. custom_spot_id).
+   * Optional. The video position within a pod to target. If set, `adSpot`,
+   * `bumperType`, and `positionType` must be unset.
    * </pre>
    *
    * <code>optional int64 pod_position = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -107,9 +106,8 @@ public interface VideoPositionOrBuilder
    *
    *
    * <pre>
-   * Optional. The video position within a pod to target. This field must be
-   * unset in order to target a specific video position (e.g. position_type),
-   * bumper type (e.g. bumper_type), or custom ad spot (e.g. custom_spot_id).
+   * Optional. The video position within a pod to target. If set, `adSpot`,
+   * `bumperType`, and `positionType` must be unset.
    * </pre>
    *
    * <code>optional int64 pod_position = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -117,6 +115,57 @@ public interface VideoPositionOrBuilder
    * @return The podPosition.
    */
   long getPodPosition();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The resource name of the custom ad spot to target. If set,
+   * `bumperType`, `podPosition`, and `positionType` must be unset. Format:
+   * `networks/{network_code}/adSpots/{ad_spot_id}`
+   * </pre>
+   *
+   * <code>
+   * optional string ad_spot = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return Whether the adSpot field is set.
+   */
+  boolean hasAdSpot();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The resource name of the custom ad spot to target. If set,
+   * `bumperType`, `podPosition`, and `positionType` must be unset. Format:
+   * `networks/{network_code}/adSpots/{ad_spot_id}`
+   * </pre>
+   *
+   * <code>
+   * optional string ad_spot = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The adSpot.
+   */
+  java.lang.String getAdSpot();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The resource name of the custom ad spot to target. If set,
+   * `bumperType`, `podPosition`, and `positionType` must be unset. Format:
+   * `networks/{network_code}/adSpots/{ad_spot_id}`
+   * </pre>
+   *
+   * <code>
+   * optional string ad_spot = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for adSpot.
+   */
+  com.google.protobuf.ByteString getAdSpotBytes();
 
   /**
    *
@@ -173,9 +222,8 @@ public interface VideoPositionOrBuilder
    *
    *
    * <pre>
-   * Optional. The video bumper type to target. This field must be unset in
-   * order to target a specific video position (e.g. position_type), pod
-   * position (e.g. pod_position), or custom ad spot (e.g. custom_spot_id).
+   * Optional. The video bumper type to target. If set, `adSpot`, `podPosition`,
+   * and `positionType` must be unset.
    * </pre>
    *
    * <code>
@@ -190,9 +238,8 @@ public interface VideoPositionOrBuilder
    *
    *
    * <pre>
-   * Optional. The video bumper type to target. This field must be unset in
-   * order to target a specific video position (e.g. position_type), pod
-   * position (e.g. pod_position), or custom ad spot (e.g. custom_spot_id).
+   * Optional. The video bumper type to target. If set, `adSpot`, `podPosition`,
+   * and `positionType` must be unset.
    * </pre>
    *
    * <code>
@@ -207,9 +254,8 @@ public interface VideoPositionOrBuilder
    *
    *
    * <pre>
-   * Optional. The video bumper type to target. This field must be unset in
-   * order to target a specific video position (e.g. position_type), pod
-   * position (e.g. pod_position), or custom ad spot (e.g. custom_spot_id).
+   * Optional. The video bumper type to target. If set, `adSpot`, `podPosition`,
+   * and `positionType` must be unset.
    * </pre>
    *
    * <code>

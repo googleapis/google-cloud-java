@@ -900,6 +900,7 @@ public class DocumentProcessorServiceClientHttpJsonTest {
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
             .setGenAiModelInfo(ProcessorVersion.GenAiModelInfo.newBuilder().build())
+            .setGroundingSettings(GroundingSettings.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -960,6 +961,7 @@ public class DocumentProcessorServiceClientHttpJsonTest {
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
             .setGenAiModelInfo(ProcessorVersion.GenAiModelInfo.newBuilder().build())
+            .setGroundingSettings(GroundingSettings.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 

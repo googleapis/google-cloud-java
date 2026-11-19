@@ -316,8 +316,7 @@ public final class FilterConfig extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Optional. Settings for customizing filter rules.
-   * Note: This field is not supported in FloorSetting and Streaming
-   * Sanitization APIs.
+   * Note: This field is not supported in FloorSetting.
    * </pre>
    *
    * <code>
@@ -336,8 +335,7 @@ public final class FilterConfig extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Optional. Settings for customizing filter rules.
-   * Note: This field is not supported in FloorSetting and Streaming
-   * Sanitization APIs.
+   * Note: This field is not supported in FloorSetting.
    * </pre>
    *
    * <code>
@@ -358,8 +356,7 @@ public final class FilterConfig extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Optional. Settings for customizing filter rules.
-   * Note: This field is not supported in FloorSetting and Streaming
-   * Sanitization APIs.
+   * Note: This field is not supported in FloorSetting.
    * </pre>
    *
    * <code>
@@ -372,6 +369,66 @@ public final class FilterConfig extends com.google.protobuf.GeneratedMessage
     return filterRuleSettings_ == null
         ? com.google.cloud.modelarmor.v1.FilterRuleSettings.getDefaultInstance()
         : filterRuleSettings_;
+  }
+
+  public static final int CSAM_FILTER_SETTINGS_FIELD_NUMBER = 9;
+  private com.google.cloud.modelarmor.v1.CsamFilterSettings csamFilterSettings_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Child sexual abuse material (CSAM) filter settings.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.modelarmor.v1.CsamFilterSettings csam_filter_settings = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the csamFilterSettings field is set.
+   */
+  @java.lang.Override
+  public boolean hasCsamFilterSettings() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Child sexual abuse material (CSAM) filter settings.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.modelarmor.v1.CsamFilterSettings csam_filter_settings = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The csamFilterSettings.
+   */
+  @java.lang.Override
+  public com.google.cloud.modelarmor.v1.CsamFilterSettings getCsamFilterSettings() {
+    return csamFilterSettings_ == null
+        ? com.google.cloud.modelarmor.v1.CsamFilterSettings.getDefaultInstance()
+        : csamFilterSettings_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Child sexual abuse material (CSAM) filter settings.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.modelarmor.v1.CsamFilterSettings csam_filter_settings = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.modelarmor.v1.CsamFilterSettingsOrBuilder
+      getCsamFilterSettingsOrBuilder() {
+    return csamFilterSettings_ == null
+        ? com.google.cloud.modelarmor.v1.CsamFilterSettings.getDefaultInstance()
+        : csamFilterSettings_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -403,6 +460,9 @@ public final class FilterConfig extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000010) != 0)) {
       output.writeMessage(7, getFilterRuleSettings());
     }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      output.writeMessage(9, getCsamFilterSettings());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -430,6 +490,9 @@ public final class FilterConfig extends com.google.protobuf.GeneratedMessage
     }
     if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getFilterRuleSettings());
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, getCsamFilterSettings());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -469,6 +532,10 @@ public final class FilterConfig extends com.google.protobuf.GeneratedMessage
     if (hasFilterRuleSettings()) {
       if (!getFilterRuleSettings().equals(other.getFilterRuleSettings())) return false;
     }
+    if (hasCsamFilterSettings() != other.hasCsamFilterSettings()) return false;
+    if (hasCsamFilterSettings()) {
+      if (!getCsamFilterSettings().equals(other.getCsamFilterSettings())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -499,6 +566,10 @@ public final class FilterConfig extends com.google.protobuf.GeneratedMessage
     if (hasFilterRuleSettings()) {
       hash = (37 * hash) + FILTER_RULE_SETTINGS_FIELD_NUMBER;
       hash = (53 * hash) + getFilterRuleSettings().hashCode();
+    }
+    if (hasCsamFilterSettings()) {
+      hash = (37 * hash) + CSAM_FILTER_SETTINGS_FIELD_NUMBER;
+      hash = (53 * hash) + getCsamFilterSettings().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -646,6 +717,7 @@ public final class FilterConfig extends com.google.protobuf.GeneratedMessage
         internalGetPiAndJailbreakFilterSettingsFieldBuilder();
         internalGetMaliciousUriFilterSettingsFieldBuilder();
         internalGetFilterRuleSettingsFieldBuilder();
+        internalGetCsamFilterSettingsFieldBuilder();
       }
     }
 
@@ -677,6 +749,11 @@ public final class FilterConfig extends com.google.protobuf.GeneratedMessage
       if (filterRuleSettingsBuilder_ != null) {
         filterRuleSettingsBuilder_.dispose();
         filterRuleSettingsBuilder_ = null;
+      }
+      csamFilterSettings_ = null;
+      if (csamFilterSettingsBuilder_ != null) {
+        csamFilterSettingsBuilder_.dispose();
+        csamFilterSettingsBuilder_ = null;
       }
       return this;
     }
@@ -746,6 +823,13 @@ public final class FilterConfig extends com.google.protobuf.GeneratedMessage
                 : filterRuleSettingsBuilder_.build();
         to_bitField0_ |= 0x00000010;
       }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.csamFilterSettings_ =
+            csamFilterSettingsBuilder_ == null
+                ? csamFilterSettings_
+                : csamFilterSettingsBuilder_.build();
+        to_bitField0_ |= 0x00000020;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -775,6 +859,9 @@ public final class FilterConfig extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasFilterRuleSettings()) {
         mergeFilterRuleSettings(other.getFilterRuleSettings());
+      }
+      if (other.hasCsamFilterSettings()) {
+        mergeCsamFilterSettings(other.getCsamFilterSettings());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -839,6 +926,13 @@ public final class FilterConfig extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000010;
                 break;
               } // case 58
+            case 74:
+              {
+                input.readMessage(
+                    internalGetCsamFilterSettingsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 74
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1738,8 +1832,7 @@ public final class FilterConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. Settings for customizing filter rules.
-     * Note: This field is not supported in FloorSetting and Streaming
-     * Sanitization APIs.
+     * Note: This field is not supported in FloorSetting.
      * </pre>
      *
      * <code>
@@ -1757,8 +1850,7 @@ public final class FilterConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. Settings for customizing filter rules.
-     * Note: This field is not supported in FloorSetting and Streaming
-     * Sanitization APIs.
+     * Note: This field is not supported in FloorSetting.
      * </pre>
      *
      * <code>
@@ -1782,8 +1874,7 @@ public final class FilterConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. Settings for customizing filter rules.
-     * Note: This field is not supported in FloorSetting and Streaming
-     * Sanitization APIs.
+     * Note: This field is not supported in FloorSetting.
      * </pre>
      *
      * <code>
@@ -1809,8 +1900,7 @@ public final class FilterConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. Settings for customizing filter rules.
-     * Note: This field is not supported in FloorSetting and Streaming
-     * Sanitization APIs.
+     * Note: This field is not supported in FloorSetting.
      * </pre>
      *
      * <code>
@@ -1834,8 +1924,7 @@ public final class FilterConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. Settings for customizing filter rules.
-     * Note: This field is not supported in FloorSetting and Streaming
-     * Sanitization APIs.
+     * Note: This field is not supported in FloorSetting.
      * </pre>
      *
      * <code>
@@ -1868,8 +1957,7 @@ public final class FilterConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. Settings for customizing filter rules.
-     * Note: This field is not supported in FloorSetting and Streaming
-     * Sanitization APIs.
+     * Note: This field is not supported in FloorSetting.
      * </pre>
      *
      * <code>
@@ -1892,8 +1980,7 @@ public final class FilterConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. Settings for customizing filter rules.
-     * Note: This field is not supported in FloorSetting and Streaming
-     * Sanitization APIs.
+     * Note: This field is not supported in FloorSetting.
      * </pre>
      *
      * <code>
@@ -1912,8 +1999,7 @@ public final class FilterConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. Settings for customizing filter rules.
-     * Note: This field is not supported in FloorSetting and Streaming
-     * Sanitization APIs.
+     * Note: This field is not supported in FloorSetting.
      * </pre>
      *
      * <code>
@@ -1936,8 +2022,7 @@ public final class FilterConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. Settings for customizing filter rules.
-     * Note: This field is not supported in FloorSetting and Streaming
-     * Sanitization APIs.
+     * Note: This field is not supported in FloorSetting.
      * </pre>
      *
      * <code>
@@ -1959,6 +2044,223 @@ public final class FilterConfig extends com.google.protobuf.GeneratedMessage
         filterRuleSettings_ = null;
       }
       return filterRuleSettingsBuilder_;
+    }
+
+    private com.google.cloud.modelarmor.v1.CsamFilterSettings csamFilterSettings_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.modelarmor.v1.CsamFilterSettings,
+            com.google.cloud.modelarmor.v1.CsamFilterSettings.Builder,
+            com.google.cloud.modelarmor.v1.CsamFilterSettingsOrBuilder>
+        csamFilterSettingsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Child sexual abuse material (CSAM) filter settings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.modelarmor.v1.CsamFilterSettings csam_filter_settings = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the csamFilterSettings field is set.
+     */
+    public boolean hasCsamFilterSettings() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Child sexual abuse material (CSAM) filter settings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.modelarmor.v1.CsamFilterSettings csam_filter_settings = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The csamFilterSettings.
+     */
+    public com.google.cloud.modelarmor.v1.CsamFilterSettings getCsamFilterSettings() {
+      if (csamFilterSettingsBuilder_ == null) {
+        return csamFilterSettings_ == null
+            ? com.google.cloud.modelarmor.v1.CsamFilterSettings.getDefaultInstance()
+            : csamFilterSettings_;
+      } else {
+        return csamFilterSettingsBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Child sexual abuse material (CSAM) filter settings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.modelarmor.v1.CsamFilterSettings csam_filter_settings = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setCsamFilterSettings(com.google.cloud.modelarmor.v1.CsamFilterSettings value) {
+      if (csamFilterSettingsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        csamFilterSettings_ = value;
+      } else {
+        csamFilterSettingsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Child sexual abuse material (CSAM) filter settings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.modelarmor.v1.CsamFilterSettings csam_filter_settings = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setCsamFilterSettings(
+        com.google.cloud.modelarmor.v1.CsamFilterSettings.Builder builderForValue) {
+      if (csamFilterSettingsBuilder_ == null) {
+        csamFilterSettings_ = builderForValue.build();
+      } else {
+        csamFilterSettingsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Child sexual abuse material (CSAM) filter settings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.modelarmor.v1.CsamFilterSettings csam_filter_settings = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeCsamFilterSettings(
+        com.google.cloud.modelarmor.v1.CsamFilterSettings value) {
+      if (csamFilterSettingsBuilder_ == null) {
+        if (((bitField0_ & 0x00000020) != 0)
+            && csamFilterSettings_ != null
+            && csamFilterSettings_
+                != com.google.cloud.modelarmor.v1.CsamFilterSettings.getDefaultInstance()) {
+          getCsamFilterSettingsBuilder().mergeFrom(value);
+        } else {
+          csamFilterSettings_ = value;
+        }
+      } else {
+        csamFilterSettingsBuilder_.mergeFrom(value);
+      }
+      if (csamFilterSettings_ != null) {
+        bitField0_ |= 0x00000020;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Child sexual abuse material (CSAM) filter settings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.modelarmor.v1.CsamFilterSettings csam_filter_settings = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearCsamFilterSettings() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      csamFilterSettings_ = null;
+      if (csamFilterSettingsBuilder_ != null) {
+        csamFilterSettingsBuilder_.dispose();
+        csamFilterSettingsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Child sexual abuse material (CSAM) filter settings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.modelarmor.v1.CsamFilterSettings csam_filter_settings = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.modelarmor.v1.CsamFilterSettings.Builder
+        getCsamFilterSettingsBuilder() {
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return internalGetCsamFilterSettingsFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Child sexual abuse material (CSAM) filter settings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.modelarmor.v1.CsamFilterSettings csam_filter_settings = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.modelarmor.v1.CsamFilterSettingsOrBuilder
+        getCsamFilterSettingsOrBuilder() {
+      if (csamFilterSettingsBuilder_ != null) {
+        return csamFilterSettingsBuilder_.getMessageOrBuilder();
+      } else {
+        return csamFilterSettings_ == null
+            ? com.google.cloud.modelarmor.v1.CsamFilterSettings.getDefaultInstance()
+            : csamFilterSettings_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Child sexual abuse material (CSAM) filter settings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.modelarmor.v1.CsamFilterSettings csam_filter_settings = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.modelarmor.v1.CsamFilterSettings,
+            com.google.cloud.modelarmor.v1.CsamFilterSettings.Builder,
+            com.google.cloud.modelarmor.v1.CsamFilterSettingsOrBuilder>
+        internalGetCsamFilterSettingsFieldBuilder() {
+      if (csamFilterSettingsBuilder_ == null) {
+        csamFilterSettingsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.modelarmor.v1.CsamFilterSettings,
+                com.google.cloud.modelarmor.v1.CsamFilterSettings.Builder,
+                com.google.cloud.modelarmor.v1.CsamFilterSettingsOrBuilder>(
+                getCsamFilterSettings(), getParentForChildren(), isClean());
+        csamFilterSettings_ = null;
+      }
+      return csamFilterSettingsBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.modelarmor.v1.FilterConfig)

@@ -69,7 +69,7 @@ public class GrpcStreamIteratorTest {
             /* cancelQueryWhenClientIsClosed= */ false);
 
     streamIterator.close("Cancelled before setCall");
-    streamIterator.setCall(call, /* withBeginTransaction= */ false);
+    streamIterator.setCall(call);
 
     verify(call).cancel("Cancelled before setCall");
   }
@@ -86,7 +86,7 @@ public class GrpcStreamIteratorTest {
             /* prefetchChunks= */ 10,
             /* cancelQueryWhenClientIsClosed= */ false);
 
-    streamIterator.setCall(call, /* withBeginTransaction= */ false);
+    streamIterator.setCall(call);
     streamIterator.close("Cancelled after setCall");
 
     verify(call).cancel("Cancelled after setCall");
@@ -104,7 +104,7 @@ public class GrpcStreamIteratorTest {
             /* prefetchChunks= */ 10,
             /* cancelQueryWhenClientIsClosed= */ false);
 
-    streamIterator.setCall(call, /* withBeginTransaction= */ false);
+    streamIterator.setCall(call);
 
     PartialResultSet lastChunk =
         PartialResultSet.newBuilder()
@@ -134,7 +134,7 @@ public class GrpcStreamIteratorTest {
             /* prefetchChunks= */ 10,
             /* cancelQueryWhenClientIsClosed= */ false);
 
-    streamIterator.setCall(call, /* withBeginTransaction= */ false);
+    streamIterator.setCall(call);
 
     PartialResultSet lastChunk =
         PartialResultSet.newBuilder()
@@ -176,7 +176,7 @@ public class GrpcStreamIteratorTest {
       if (closeBeforeSetCall) {
         streamIterator.close("Closed before setCall");
       }
-      streamIterator.setCall(call, /* withBeginTransaction= */ false);
+      streamIterator.setCall(call);
       if (!closeBeforeSetCall) {
         streamIterator.close("Closed after setCall");
       }
@@ -198,7 +198,7 @@ public class GrpcStreamIteratorTest {
 
     SpannerRpc.StreamingCall call = mock(SpannerRpc.StreamingCall.class);
     when(call.getCallContext()).thenReturn(GrpcCallContext.createDefault());
-    streamIterator.setCall(call, /* withBeginTransaction= */ false);
+    streamIterator.setCall(call);
 
     PartialResultSet lastChunk =
         PartialResultSet.newBuilder()
@@ -228,7 +228,7 @@ public class GrpcStreamIteratorTest {
 
     SpannerRpc.StreamingCall call = mock(SpannerRpc.StreamingCall.class);
     when(call.getCallContext()).thenReturn(GrpcCallContext.createDefault());
-    streamIterator.setCall(call, /* withBeginTransaction= */ false);
+    streamIterator.setCall(call);
 
     PartialResultSet lastChunk =
         PartialResultSet.newBuilder()
@@ -261,7 +261,7 @@ public class GrpcStreamIteratorTest {
 
     SpannerRpc.StreamingCall call = mock(SpannerRpc.StreamingCall.class);
     when(call.getCallContext()).thenReturn(GrpcCallContext.createDefault());
-    streamIterator.setCall(call, /* withBeginTransaction= */ false);
+    streamIterator.setCall(call);
 
     streamIterator.requestPrefetchChunks();
     verify(call).request(5);
@@ -274,10 +274,14 @@ public class GrpcStreamIteratorTest {
             /* statement= */ null,
             /* lastStatement= */ true,
             /* prefetchChunks= */ 2,
-            /* cancelQueryWhenClientIsClosed= */ false);
+            /* cancelQueryWhenClientIsClosed= */ false,
+            /* withBeginTransaction= */ true);
+    assertTrue(streamIterator.isLastStatement());
+    assertTrue(streamIterator.isWithBeginTransaction());
+
     SpannerRpc.StreamingCall call = mock(SpannerRpc.StreamingCall.class);
     when(call.getCallContext()).thenReturn(GrpcCallContext.createDefault());
-    streamIterator.setCall(call, /* withBeginTransaction= */ true);
+    streamIterator.setCall(call);
 
     assertTrue(streamIterator.isLastStatement());
     assertTrue(streamIterator.isWithBeginTransaction());
@@ -320,7 +324,7 @@ public class GrpcStreamIteratorTest {
             /* prefetchChunks= */ 2,
             /* cancelQueryWhenClientIsClosed= */ false);
 
-    streamIterator.setCall(call, /* withBeginTransaction= */ false);
+    streamIterator.setCall(call);
 
     SpannerException thrown = assertThrows(SpannerException.class, streamIterator::hasNext);
     assertEquals(ErrorCode.DEADLINE_EXCEEDED, thrown.getErrorCode());
@@ -339,7 +343,7 @@ public class GrpcStreamIteratorTest {
             /* cancelQueryWhenClientIsClosed= */ false);
 
     streamIterator.close("Closed before setCall");
-    streamIterator.setCall(call, /* withBeginTransaction= */ false);
+    streamIterator.setCall(call);
 
     verify(call).cancel("Closed before setCall");
     // Since streamIterator was already closed, requestPrefetchChunks should safely no-op
@@ -360,7 +364,7 @@ public class GrpcStreamIteratorTest {
             /* prefetchChunks= */ 5,
             /* cancelQueryWhenClientIsClosed= */ false);
 
-    streamIterator.setCall(call, /* withBeginTransaction= */ false);
+    streamIterator.setCall(call);
     streamIterator.close("Closed after setCall");
 
     verify(call).cancel("Closed after setCall");
@@ -391,7 +395,7 @@ public class GrpcStreamIteratorTest {
             () -> {
               try {
                 startLatch.await();
-                streamIterator.setCall(call, /* withBeginTransaction= */ false);
+                streamIterator.setCall(call);
               } catch (InterruptedException ignored) {
               } finally {
                 doneLatch.countDown();
@@ -432,7 +436,7 @@ public class GrpcStreamIteratorTest {
             /* lastStatement= */ false,
             /* prefetchChunks= */ 5,
             /* cancelQueryWhenClientIsClosed= */ false);
-    streamIterator.setCall(call, /* withBeginTransaction= */ false);
+    streamIterator.setCall(call);
 
     AtomicReference<Throwable> consumerError = new AtomicReference<>();
     Thread consumerThread =
@@ -479,7 +483,7 @@ public class GrpcStreamIteratorTest {
             /* lastStatement= */ false,
             /* prefetchChunks= */ 5,
             /* cancelQueryWhenClientIsClosed= */ false);
-    streamIterator.setCall(call, /* withBeginTransaction= */ false);
+    streamIterator.setCall(call);
 
     streamIterator.requestPrefetchChunks();
     verify(call).request(5);
@@ -498,7 +502,7 @@ public class GrpcStreamIteratorTest {
             /* lastStatement= */ false,
             /* prefetchChunks= */ 5,
             /* cancelQueryWhenClientIsClosed= */ false);
-    streamIterator.setCall(call, /* withBeginTransaction= */ false);
+    streamIterator.setCall(call);
 
     SpannerException spannerException =
         assertThrows(SpannerException.class, streamIterator::hasNext);
@@ -516,7 +520,7 @@ public class GrpcStreamIteratorTest {
             /* lastStatement= */ false,
             /* prefetchChunks= */ 5,
             /* cancelQueryWhenClientIsClosed= */ false);
-    streamIterator.setCall(call, /* withBeginTransaction= */ false);
+    streamIterator.setCall(call);
 
     streamIterator.close("First close");
     streamIterator.close("Second close");
@@ -536,7 +540,7 @@ public class GrpcStreamIteratorTest {
             /* lastStatement= */ false,
             /* prefetchChunks= */ 5,
             /* cancelQueryWhenClientIsClosed= */ false);
-    streamIterator.setCall(call, /* withBeginTransaction= */ false);
+    streamIterator.setCall(call);
 
     streamIterator
         .consumer()
@@ -575,7 +579,7 @@ public class GrpcStreamIteratorTest {
             () -> {
               try {
                 startLatch.await();
-                streamIterator.setCall(call, /* withBeginTransaction= */ false);
+                streamIterator.setCall(call);
               } catch (Throwable t) {
                 error.set(t);
               } finally {
@@ -701,7 +705,7 @@ public class GrpcStreamIteratorTest {
             /* lastStatement= */ false,
             /* prefetchChunks= */ 1,
             /* cancelQueryWhenClientIsClosed= */ false);
-    streamIterator.setCall(call, /* withBeginTransaction= */ false);
+    streamIterator.setCall(call);
 
     streamIterator
         .consumer()
@@ -776,7 +780,7 @@ public class GrpcStreamIteratorTest {
             /* lastStatement= */ false,
             /* prefetchChunks= */ 5,
             /* cancelQueryWhenClientIsClosed= */ false);
-    streamIterator.setCall(call, /* withBeginTransaction= */ false);
+    streamIterator.setCall(call);
 
     AtomicReference<Throwable> thrown = new AtomicReference<>();
     Thread consumerThread =
@@ -818,7 +822,7 @@ public class GrpcStreamIteratorTest {
 
     SpannerRpc.StreamingCall call = mock(SpannerRpc.StreamingCall.class);
     when(call.getCallContext()).thenReturn(GrpcCallContext.createDefault());
-    streamIterator.setCall(call, /* withBeginTransaction= */ false);
+    streamIterator.setCall(call);
 
     assertFalse(streamIterator.canPollWithoutErrorOrBlocking());
     assertFalse(streamIterator.isDataAvailable());
@@ -835,7 +839,7 @@ public class GrpcStreamIteratorTest {
 
     SpannerRpc.StreamingCall call = mock(SpannerRpc.StreamingCall.class);
     when(call.getCallContext()).thenReturn(GrpcCallContext.createDefault());
-    streamIterator.setCall(call, /* withBeginTransaction= */ false);
+    streamIterator.setCall(call);
 
     PartialResultSet chunk1 =
         PartialResultSet.newBuilder()
@@ -876,7 +880,7 @@ public class GrpcStreamIteratorTest {
 
     SpannerRpc.StreamingCall call = mock(SpannerRpc.StreamingCall.class);
     when(call.getCallContext()).thenReturn(GrpcCallContext.createDefault());
-    streamIterator.setCall(call, /* withBeginTransaction= */ false);
+    streamIterator.setCall(call);
 
     PartialResultSet lastChunk =
         PartialResultSet.newBuilder()
@@ -912,7 +916,7 @@ public class GrpcStreamIteratorTest {
 
     SpannerRpc.StreamingCall call = mock(SpannerRpc.StreamingCall.class);
     when(call.getCallContext()).thenReturn(GrpcCallContext.createDefault());
-    streamIterator.setCall(call, /* withBeginTransaction= */ false);
+    streamIterator.setCall(call);
 
     SpannerException spannerException =
         SpannerExceptionFactory.newSpannerException(ErrorCode.UNAVAILABLE, "network unavailable");
@@ -962,7 +966,7 @@ public class GrpcStreamIteratorTest {
     // Now initialize call via setCall.
     SpannerRpc.StreamingCall call = mock(SpannerRpc.StreamingCall.class);
     when(call.getCallContext()).thenReturn(GrpcCallContext.createDefault());
-    streamIterator.setCall(call, /* withBeginTransaction= */ false);
+    streamIterator.setCall(call);
 
     // Flushing pending message in setCall notifies the listener.
     assertEquals(chunk, receivedMessage.get());
@@ -982,7 +986,7 @@ public class GrpcStreamIteratorTest {
 
     SpannerRpc.StreamingCall call = mock(SpannerRpc.StreamingCall.class);
     when(call.getCallContext()).thenReturn(GrpcCallContext.createDefault());
-    streamIterator.setCall(call, /* withBeginTransaction= */ false);
+    streamIterator.setCall(call);
 
     AtomicReference<PartialResultSet> receivedMessage = new AtomicReference<>();
     AtomicBoolean receivedBlockedState = new AtomicBoolean();
@@ -1033,7 +1037,7 @@ public class GrpcStreamIteratorTest {
 
     SpannerRpc.StreamingCall call = mock(SpannerRpc.StreamingCall.class);
     when(call.getCallContext()).thenReturn(GrpcCallContext.createDefault());
-    streamIterator.setCall(call, /* withBeginTransaction= */ false);
+    streamIterator.setCall(call);
 
     // Initial state: No messages received yet. Polling would block on network I/O.
     assertFalse(streamIterator.canPollWithoutErrorOrBlocking());
@@ -1066,7 +1070,7 @@ public class GrpcStreamIteratorTest {
 
     SpannerRpc.StreamingCall call = mock(SpannerRpc.StreamingCall.class);
     when(call.getCallContext()).thenReturn(GrpcCallContext.createDefault());
-    streamIterator.setCall(call, /* withBeginTransaction= */ false);
+    streamIterator.setCall(call);
 
     PartialResultSet chunk =
         PartialResultSet.newBuilder()
@@ -1109,7 +1113,7 @@ public class GrpcStreamIteratorTest {
 
     SpannerRpc.StreamingCall call = mock(SpannerRpc.StreamingCall.class);
     when(call.getCallContext()).thenReturn(GrpcCallContext.createDefault());
-    streamIterator.setCall(call, /* withBeginTransaction= */ false);
+    streamIterator.setCall(call);
 
     PartialResultSet chunk =
         PartialResultSet.newBuilder()
@@ -1174,7 +1178,7 @@ public class GrpcStreamIteratorTest {
             () -> {
               try {
                 startLatch.await();
-                streamIterator.setCall(call, /* withBeginTransaction= */ false);
+                streamIterator.setCall(call);
               } catch (Throwable throwable) {
                 threadError.set(throwable);
               } finally {
@@ -1239,7 +1243,7 @@ public class GrpcStreamIteratorTest {
             () -> {
               try {
                 startLatch.await();
-                streamIterator.setCall(call, /* withBeginTransaction= */ false);
+                streamIterator.setCall(call);
               } catch (Throwable throwable) {
                 threadError.set(throwable);
               } finally {
@@ -1298,7 +1302,7 @@ public class GrpcStreamIteratorTest {
             () -> {
               try {
                 startLatch.await();
-                streamIterator.setCall(call, /* withBeginTransaction= */ false);
+                streamIterator.setCall(call);
               } catch (Throwable throwable) {
                 threadError.set(throwable);
               } finally {
@@ -1394,7 +1398,7 @@ public class GrpcStreamIteratorTest {
 
     SpannerRpc.StreamingCall call = mock(SpannerRpc.StreamingCall.class);
     when(call.getCallContext()).thenReturn(GrpcCallContext.createDefault());
-    streamIterator.setCall(call, /* withBeginTransaction= */ false);
+    streamIterator.setCall(call);
 
     verify(listener, times(1)).onStreamMessage(chunk1, false);
     verify(listener, times(1)).onStreamMessage(chunk2, false);
@@ -1413,7 +1417,7 @@ public class GrpcStreamIteratorTest {
 
     SpannerRpc.StreamingCall call = mock(SpannerRpc.StreamingCall.class);
     when(call.getCallContext()).thenReturn(GrpcCallContext.createDefault());
-    streamIterator.setCall(call, /* withBeginTransaction= */ false);
+    streamIterator.setCall(call);
 
     PartialResultSet chunk1 =
         PartialResultSet.newBuilder().setResumeToken(ByteString.copyFromUtf8("token-1")).build();
@@ -1468,7 +1472,7 @@ public class GrpcStreamIteratorTest {
 
     SpannerRpc.StreamingCall call = mock(SpannerRpc.StreamingCall.class);
     when(call.getCallContext()).thenReturn(GrpcCallContext.createDefault());
-    streamIterator.setCall(call, /* withBeginTransaction= */ false);
+    streamIterator.setCall(call);
 
     verify(listener, times(1)).onStreamMessage(GrpcStreamIterator.END_OF_STREAM, false);
     assertFalse(streamIterator.canPollWithoutErrorOrBlocking());
@@ -1499,7 +1503,7 @@ public class GrpcStreamIteratorTest {
 
     SpannerRpc.StreamingCall call = mock(SpannerRpc.StreamingCall.class);
     when(call.getCallContext()).thenReturn(GrpcCallContext.createDefault());
-    streamIterator.setCall(call, /* withBeginTransaction= */ false);
+    streamIterator.setCall(call);
 
     verify(listener, times(1)).onStreamMessage(GrpcStreamIterator.END_OF_STREAM, false);
     assertTrue(streamIterator.canPollWithoutErrorOrBlocking());
@@ -1518,7 +1522,7 @@ public class GrpcStreamIteratorTest {
 
     SpannerRpc.StreamingCall call = mock(SpannerRpc.StreamingCall.class);
     when(call.getCallContext()).thenReturn(GrpcCallContext.createDefault());
-    streamIterator.setCall(call, /* withBeginTransaction= */ false);
+    streamIterator.setCall(call);
 
     PartialResultSet chunk =
         PartialResultSet.newBuilder()

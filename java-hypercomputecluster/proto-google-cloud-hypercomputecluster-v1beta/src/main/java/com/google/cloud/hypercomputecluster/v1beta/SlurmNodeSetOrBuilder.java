@@ -77,10 +77,10 @@ public interface SlurmNodeSetOrBuilder
    *
    *
    * <pre>
-   * Required. Identifier for the nodeset, which allows it to be referenced by
-   * partitions. Must conform to
-   * [RFC-1034](https://datatracker.ietf.org/doc/html/rfc1034) (lower-case,
-   * alphanumeric, and at most 63 characters).
+   * Required. The ID for the nodeset, which allows it to be referenced by
+   * cluster partitions. The nodeset ID must start with a lowercase letter
+   * (`a`-`z`), use only lowercase letters or numbers, and contain up to 15
+   * characters. For example, specify `nodeset001`.
    * </pre>
    *
    * <code>string id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -93,10 +93,10 @@ public interface SlurmNodeSetOrBuilder
    *
    *
    * <pre>
-   * Required. Identifier for the nodeset, which allows it to be referenced by
-   * partitions. Must conform to
-   * [RFC-1034](https://datatracker.ietf.org/doc/html/rfc1034) (lower-case,
-   * alphanumeric, and at most 63 characters).
+   * Required. The ID for the nodeset, which allows it to be referenced by
+   * cluster partitions. The nodeset ID must start with a lowercase letter
+   * (`a`-`z`), use only lowercase letters or numbers, and contain up to 15
+   * characters. For example, specify `nodeset001`.
    * </pre>
    *
    * <code>string id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -109,12 +109,12 @@ public interface SlurmNodeSetOrBuilder
    *
    *
    * <pre>
-   * Optional. ID of the compute resource on which this nodeset will run. Must
+   * Required. The ID of the compute resource on which this nodeset runs. Must
    * match a key in the cluster's
-   * [compute_resources](Cluster.compute_resources).
+   * [compute_resources][google.cloud.hypercomputecluster.v1beta.Cluster.compute_resources].
    * </pre>
    *
-   * <code>string compute_id = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string compute_id = 16 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The computeId.
    */
@@ -124,12 +124,12 @@ public interface SlurmNodeSetOrBuilder
    *
    *
    * <pre>
-   * Optional. ID of the compute resource on which this nodeset will run. Must
+   * Required. The ID of the compute resource on which this nodeset runs. Must
    * match a key in the cluster's
-   * [compute_resources](Cluster.compute_resources).
+   * [compute_resources][google.cloud.hypercomputecluster.v1beta.Cluster.compute_resources].
    * </pre>
    *
-   * <code>string compute_id = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string compute_id = 16 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for computeId.
    */
@@ -243,6 +243,50 @@ public interface SlurmNodeSetOrBuilder
    * @return The maxDynamicNodeCount.
    */
   long getMaxDynamicNodeCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Resource policy configuration for the nodeset.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.hypercomputecluster.v1beta.ResourcePolicyConfig resource_policy_config = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the resourcePolicyConfig field is set.
+   */
+  boolean hasResourcePolicyConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Resource policy configuration for the nodeset.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.hypercomputecluster.v1beta.ResourcePolicyConfig resource_policy_config = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The resourcePolicyConfig.
+   */
+  com.google.cloud.hypercomputecluster.v1beta.ResourcePolicyConfig getResourcePolicyConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Resource policy configuration for the nodeset.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.hypercomputecluster.v1beta.ResourcePolicyConfig resource_policy_config = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.hypercomputecluster.v1beta.ResourcePolicyConfigOrBuilder
+      getResourcePolicyConfigOrBuilder();
 
   com.google.cloud.hypercomputecluster.v1beta.SlurmNodeSet.TypeCase getTypeCase();
 }

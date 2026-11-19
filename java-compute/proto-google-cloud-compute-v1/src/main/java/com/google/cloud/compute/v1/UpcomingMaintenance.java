@@ -98,6 +98,17 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
+     * Maintenance due to a fault reported by the customer via the R&amp;R
+     * (Report-and-Replace) API.
+     * </pre>
+     *
+     * <code>FAILURE_CUSTOMER_REPORTED = 42889343;</code>
+     */
+    FAILURE_CUSTOMER_REPORTED(42889343),
+    /**
+     *
+     *
+     * <pre>
      * Maintenance due to disk errors.
      * </pre>
      *
@@ -289,6 +300,18 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
      * <code>UNDEFINED_MAINTENANCE_REASONS = 0;</code>
      */
     public static final int UNDEFINED_MAINTENANCE_REASONS_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Maintenance due to a fault reported by the customer via the R&amp;R
+     * (Report-and-Replace) API.
+     * </pre>
+     *
+     * <code>FAILURE_CUSTOMER_REPORTED = 42889343;</code>
+     */
+    public static final int FAILURE_CUSTOMER_REPORTED_VALUE = 42889343;
 
     /**
      *
@@ -505,6 +528,8 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
       switch (value) {
         case 0:
           return UNDEFINED_MAINTENANCE_REASONS;
+        case 42889343:
+          return FAILURE_CUSTOMER_REPORTED;
         case 8573778:
           return FAILURE_DISK;
         case 467876919:

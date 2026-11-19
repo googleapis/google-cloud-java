@@ -315,6 +315,50 @@ public interface TrainProcessorVersionRequestOrBuilder
    */
   com.google.protobuf.ByteString getBaseProcessorVersionBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Options to override structures in the base processor version.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.documentai.v1beta3.ProcessorVersionOverrides processor_version_overrides = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the processorVersionOverrides field is set.
+   */
+  boolean hasProcessorVersionOverrides();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Options to override structures in the base processor version.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.documentai.v1beta3.ProcessorVersionOverrides processor_version_overrides = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The processorVersionOverrides.
+   */
+  com.google.cloud.documentai.v1beta3.ProcessorVersionOverrides getProcessorVersionOverrides();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Options to override structures in the base processor version.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.documentai.v1beta3.ProcessorVersionOverrides processor_version_overrides = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.documentai.v1beta3.ProcessorVersionOverridesOrBuilder
+      getProcessorVersionOverridesOrBuilder();
+
   com.google.cloud.documentai.v1beta3.TrainProcessorVersionRequest.ProcessorFlagsCase
       getProcessorFlagsCase();
 }

@@ -1591,7 +1591,7 @@ public final class BatchUpdateUserLicensesRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * The inline source for the input content for document embeddings.
+   * The inline source for the input content for license assignment.
    * </pre>
    *
    * <code>
@@ -1609,7 +1609,7 @@ public final class BatchUpdateUserLicensesRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * The inline source for the input content for document embeddings.
+   * The inline source for the input content for license assignment.
    * </pre>
    *
    * <code>
@@ -1633,7 +1633,7 @@ public final class BatchUpdateUserLicensesRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * The inline source for the input content for document embeddings.
+   * The inline source for the input content for license assignment.
    * </pre>
    *
    * <code>
@@ -1660,7 +1660,8 @@ public final class BatchUpdateUserLicensesRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Required. The parent [UserStore][] resource name, format:
+   * Required. The parent [UserStore][google.cloud.discoveryengine.v1.UserStore]
+   * resource name, format:
    * `projects/{project}/locations/{location}/userStores/{user_store_id}`.
    * </pre>
    *
@@ -1687,7 +1688,8 @@ public final class BatchUpdateUserLicensesRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Required. The parent [UserStore][] resource name, format:
+   * Required. The parent [UserStore][google.cloud.discoveryengine.v1.UserStore]
+   * resource name, format:
    * `projects/{project}/locations/{location}/userStores/{user_store_id}`.
    * </pre>
    *
@@ -2164,7 +2166,7 @@ public final class BatchUpdateUserLicensesRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The inline source for the input content for document embeddings.
+     * The inline source for the input content for license assignment.
      * </pre>
      *
      * <code>
@@ -2182,7 +2184,7 @@ public final class BatchUpdateUserLicensesRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The inline source for the input content for document embeddings.
+     * The inline source for the input content for license assignment.
      * </pre>
      *
      * <code>
@@ -2214,7 +2216,7 @@ public final class BatchUpdateUserLicensesRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The inline source for the input content for document embeddings.
+     * The inline source for the input content for license assignment.
      * </pre>
      *
      * <code>
@@ -2240,7 +2242,7 @@ public final class BatchUpdateUserLicensesRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The inline source for the input content for document embeddings.
+     * The inline source for the input content for license assignment.
      * </pre>
      *
      * <code>
@@ -2264,7 +2266,7 @@ public final class BatchUpdateUserLicensesRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The inline source for the input content for document embeddings.
+     * The inline source for the input content for license assignment.
      * </pre>
      *
      * <code>
@@ -2305,7 +2307,7 @@ public final class BatchUpdateUserLicensesRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The inline source for the input content for document embeddings.
+     * The inline source for the input content for license assignment.
      * </pre>
      *
      * <code>
@@ -2333,7 +2335,7 @@ public final class BatchUpdateUserLicensesRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The inline source for the input content for document embeddings.
+     * The inline source for the input content for license assignment.
      * </pre>
      *
      * <code>
@@ -2349,7 +2351,7 @@ public final class BatchUpdateUserLicensesRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The inline source for the input content for document embeddings.
+     * The inline source for the input content for license assignment.
      * </pre>
      *
      * <code>
@@ -2375,7 +2377,7 @@ public final class BatchUpdateUserLicensesRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The inline source for the input content for document embeddings.
+     * The inline source for the input content for license assignment.
      * </pre>
      *
      * <code>
@@ -2418,7 +2420,8 @@ public final class BatchUpdateUserLicensesRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. The parent [UserStore][] resource name, format:
+     * Required. The parent [UserStore][google.cloud.discoveryengine.v1.UserStore]
+     * resource name, format:
      * `projects/{project}/locations/{location}/userStores/{user_store_id}`.
      * </pre>
      *
@@ -2444,7 +2447,8 @@ public final class BatchUpdateUserLicensesRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. The parent [UserStore][] resource name, format:
+     * Required. The parent [UserStore][google.cloud.discoveryengine.v1.UserStore]
+     * resource name, format:
      * `projects/{project}/locations/{location}/userStores/{user_store_id}`.
      * </pre>
      *
@@ -2470,7 +2474,8 @@ public final class BatchUpdateUserLicensesRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. The parent [UserStore][] resource name, format:
+     * Required. The parent [UserStore][google.cloud.discoveryengine.v1.UserStore]
+     * resource name, format:
      * `projects/{project}/locations/{location}/userStores/{user_store_id}`.
      * </pre>
      *
@@ -2495,7 +2500,8 @@ public final class BatchUpdateUserLicensesRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. The parent [UserStore][] resource name, format:
+     * Required. The parent [UserStore][google.cloud.discoveryengine.v1.UserStore]
+     * resource name, format:
      * `projects/{project}/locations/{location}/userStores/{user_store_id}`.
      * </pre>
      *
@@ -2516,7 +2522,8 @@ public final class BatchUpdateUserLicensesRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. The parent [UserStore][] resource name, format:
+     * Required. The parent [UserStore][google.cloud.discoveryengine.v1.UserStore]
+     * resource name, format:
      * `projects/{project}/locations/{location}/userStores/{user_store_id}`.
      * </pre>
      *

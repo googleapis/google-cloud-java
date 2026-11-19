@@ -87,7 +87,9 @@ public final class EngineServiceProto extends com.google.protobuf.GeneratedFile 
           + "oogle/api/client.proto\032\037google/api/field"
           + "_behavior.proto\032\031google/api/resource.pro"
           + "to\032,google/cloud/discoveryengine/v1/engi"
-          + "ne.proto\032#google/longrunning/operations.proto\032\033google/protobuf/empty.proto\032"
+          + "ne.proto\032\036google/iam/v1/iam_policy.proto"
+          + "\032\032google/iam/v1/policy.proto\032#google/lon"
+          + "grunning/operations.proto\032\033google/protobuf/empty.proto\032"
           + " google/protobuf/field_mask.proto\032\037google/protobuf/timestamp.proto\"\261\001\n"
           + "\023CreateEngineRequest\022B\n"
           + "\006parent\030\001 \001(\tB2\342A\001\002\372A+\n"
@@ -117,39 +119,49 @@ public final class EngineServiceProto extends com.google.protobuf.GeneratedFile 
           + "\007engines\030\001 \003(\0132\'.google.cloud.discoveryengine.v1.Engine\022\027\n"
           + "\017next_page_token\030\002 \001(\t\"\205\001\n"
           + "\023UpdateEngineRequest\022=\n"
-          + "\006engine\030\001 \001"
-          + "(\0132\'.google.cloud.discoveryengine.v1.EngineB\004\342A\001\002\022/\n"
-          + "\013update_mask\030\002 \001(\0132\032.google.protobuf.FieldMask2\343\t\n\r"
+          + "\006engine\030\001"
+          + " \001(\0132\'.google.cloud.discoveryengine.v1.EngineB\004\342A\001\002\022/\n"
+          + "\013update_mask\030\002 \001(\0132\032.google.protobuf.FieldMask2\301\r\n\r"
           + "EngineService\022\252\002\n"
-          + "\014CreateEngine\0224.google.cloud.discoveryen"
-          + "gine.v1.CreateEngineRequest\032\035.google.longrunning.Operation\"\304\001\312A^\n"
-          + "&google.cloud.discoveryengine.v1.Engine\0224google.cloud.d"
-          + "iscoveryengine.v1.CreateEngineMetadata\332A"
-          + "\027parent,engine,engine_id\202\323\344\223\002C\"9/v1/{par"
-          + "ent=projects/*/locations/*/collections/*}/engines:\006engine\022\376\001\n"
-          + "\014DeleteEngine\0224.google.cloud.discoveryengine.v1.DeleteEngin"
-          + "eRequest\032\035.google.longrunning.Operation\"\230\001\312AM\n"
-          + "\025google.protobuf.Empty\0224google.cloud.discoveryengine.v1.DeleteEngineMetada"
-          + "ta\332A\004name\202\323\344\223\002;*9/v1/{name=projects/*/locations/*/collections/*/engines/*}\022\324\001\n"
-          + "\014UpdateEngine\0224.google.cloud.discoveryengi"
-          + "ne.v1.UpdateEngineRequest\032\'.google.cloud"
-          + ".discoveryengine.v1.Engine\"e\332A\022engine,up"
-          + "date_mask\202\323\344\223\002J2@/v1/{engine.name=projec"
-          + "ts/*/locations/*/collections/*/engines/*}:\006engine\022\261\001\n"
-          + "\tGetEngine\0221.google.cloud.discoveryengine.v1.GetEngineRequest\032\'.goo"
-          + "gle.cloud.discoveryengine.v1.Engine\"H\332A\004"
-          + "name\202\323\344\223\002;\0229/v1/{name=projects/*/locations/*/collections/*/engines/*}\022\304\001\n"
-          + "\013ListEngines\0223.google.cloud.discoveryengine.v1."
-          + "ListEnginesRequest\0324.google.cloud.discov"
-          + "eryengine.v1.ListEnginesResponse\"J\332A\006par"
-          + "ent\202\323\344\223\002;\0229/v1/{parent=projects/*/locati"
-          + "ons/*/collections/*}/engines\032R\312A\036discove"
-          + "ryengine.googleapis.com\322A.https://www.googleapis.com/auth/cloud-platformB\205\002\n"
-          + "#com.google.cloud.discoveryengine.v1B\022Engine"
-          + "ServiceProtoP\001ZMcloud.google.com/go/discoveryengine/apiv1/discoveryenginepb;disc"
-          + "overyenginepb\242\002\017DISCOVERYENGINE\252\002\037Google"
-          + ".Cloud.DiscoveryEngine.V1\312\002\037Google\\Cloud"
-          + "\\DiscoveryEngine\\V1\352\002\"Google::Cloud::DiscoveryEngine::V1b\006proto3"
+          + "\014CreateEngine\0224.google.cloud.discoveryengine.v1.CreateEngine"
+          + "Request\032\035.google.longrunning.Operation\"\304\001\312A^\n"
+          + "&google.cloud.discoveryengine.v1.Engine\0224google.cloud.discoveryengine.v1.Cr"
+          + "eateEngineMetadata\332A\027parent,engine,engin"
+          + "e_id\202\323\344\223\002C\"9/v1/{parent=projects/*/locat"
+          + "ions/*/collections/*}/engines:\006engine\022\376\001\n"
+          + "\014DeleteEngine\0224.google.cloud.discoverye"
+          + "ngine.v1.DeleteEngineRequest\032\035.google.longrunning.Operation\"\230\001\312AM\n"
+          + "\025google.protobuf.Empty\0224google.cloud.discoveryengine.v"
+          + "1.DeleteEngineMetadata\332A\004name\202\323\344\223\002;*9/v1"
+          + "/{name=projects/*/locations/*/collections/*/engines/*}\022\324\001\n"
+          + "\014UpdateEngine\0224.google.cloud.discoveryengine.v1.UpdateEngineRe"
+          + "quest\032\'.google.cloud.discoveryengine.v1."
+          + "Engine\"e\332A\022engine,update_mask\202\323\344\223\002J2@/v1"
+          + "/{engine.name=projects/*/locations/*/collections/*/engines/*}:\006engine\022\261\001\n"
+          + "\tGetEngine\0221.google.cloud.discoveryengine.v1.Ge"
+          + "tEngineRequest\032\'.google.cloud.discoverye"
+          + "ngine.v1.Engine\"H\332A\004name\202\323\344\223\002;\0229/v1/{nam"
+          + "e=projects/*/locations/*/collections/*/engines/*}\022\304\001\n"
+          + "\013ListEngines\0223.google.cloud.discoveryengine.v1.ListEnginesRequest\0324"
+          + ".google.cloud.discoveryengine.v1.ListEng"
+          + "inesResponse\"J\332A\006parent\202\323\344\223\002;\0229/v1/{pare"
+          + "nt=projects/*/locations/*/collections/*}/engines\022\250\001\n"
+          + "\014GetIamPolicy\022\".google.iam.v1.GetIamPolicyRequest\032\025.google.iam.v1.Po"
+          + "licy\"]\332A\010resource\202\323\344\223\002L\022J/v1/{resource=p"
+          + "rojects/*/locations/*/collections/*/engines/*}:getIamPolicy\022\262\001\n"
+          + "\014SetIamPolicy\022\".google.iam.v1.SetIamPolicyRequest\032\025.googl"
+          + "e.iam.v1.Policy\"g\332A\017resource,policy\202\323\344\223\002"
+          + "O\"J/v1/{resource=projects/*/locations/*/collections/*/engines/*}:setIamPolicy:\001*"
+          + "\032\317\001\312A\036discoveryengine.googleapis.com\322A\252\001"
+          + "https://www.googleapis.com/auth/cloud-platform,https://www.googleapis.com/auth/d"
+          + "iscoveryengine.readwrite,https://www.goo"
+          + "gleapis.com/auth/discoveryengine.serving.readwriteB\205\002\n"
+          + "#com.google.cloud.discoveryengine.v1B\022EngineServiceProtoP\001ZMcloud."
+          + "google.com/go/discoveryengine/apiv1/disc"
+          + "overyenginepb;discoveryenginepb\242\002\017DISCOV"
+          + "ERYENGINE\252\002\037Google.Cloud.DiscoveryEngine"
+          + ".V1\312\002\037Google\\Cloud\\DiscoveryEngine\\V1\352\002\""
+          + "Google::Cloud::DiscoveryEngine::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -160,6 +172,8 @@ public final class EngineServiceProto extends com.google.protobuf.GeneratedFile 
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.discoveryengine.v1.EngineProto.getDescriptor(),
+              com.google.iam.v1.IamPolicyProto.getDescriptor(),
+              com.google.iam.v1.PolicyProto.getDescriptor(),
               com.google.longrunning.OperationsProto.getDescriptor(),
               com.google.protobuf.EmptyProto.getDescriptor(),
               com.google.protobuf.FieldMaskProto.getDescriptor(),
@@ -235,6 +249,8 @@ public final class EngineServiceProto extends com.google.protobuf.GeneratedFile 
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.discoveryengine.v1.EngineProto.getDescriptor();
+    com.google.iam.v1.IamPolicyProto.getDescriptor();
+    com.google.iam.v1.PolicyProto.getDescriptor();
     com.google.longrunning.OperationsProto.getDescriptor();
     com.google.protobuf.EmptyProto.getDescriptor();
     com.google.protobuf.FieldMaskProto.getDescriptor();
