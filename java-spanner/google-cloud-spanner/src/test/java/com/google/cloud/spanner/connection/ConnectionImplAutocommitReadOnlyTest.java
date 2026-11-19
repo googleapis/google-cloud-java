@@ -16,14 +16,48 @@
 
 package com.google.cloud.spanner.connection;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertThrows;
+import static org.junit.Assert.assertTrue;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.never;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
+
+import com.google.api.gax.core.ExecutorProvider;
+import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.cloud.NoCredentials;
+import com.google.cloud.Timestamp;
+import com.google.cloud.spanner.BatchClient;
+import com.google.cloud.spanner.CommitResponse;
+import com.google.cloud.spanner.DatabaseClient;
+import com.google.cloud.spanner.Dialect;
+import com.google.cloud.spanner.ErrorCode;
+import com.google.cloud.spanner.ReadContext.QueryAnalyzeMode;
+import com.google.cloud.spanner.ResultSet;
+import com.google.cloud.spanner.Spanner;
+import com.google.cloud.spanner.SpannerException;
+import com.google.cloud.spanner.SpannerExceptionFactory;
 import com.google.cloud.spanner.Statement;
 import com.google.cloud.spanner.TimestampBound;
 import com.google.cloud.spanner.TimestampBound.Mode;
+import com.google.cloud.spanner.TransactionContext;
+import com.google.cloud.spanner.TransactionRunner;
 import com.google.cloud.spanner.connection.AbstractStatementParser.StatementType;
+import com.google.cloud.spanner.connection.StatementResult.ResultType;
+import com.google.common.util.concurrent.ThreadFactoryBuilder;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
+import org.junit.Test;
 import org.junit.experimental.runners.Enclosed;
 import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
+import org.junit.runners.Parameterized.Parameter;
+import org.junit.runners.Parameterized.Parameters;
 
 /**
  * The tests in this class do not need to be implemented for client libraries in other programming
@@ -933,6 +967,184 @@ public class ConnectionImplAutocommitReadOnlyTest {
     @Override
     boolean isAbortBatchAllowed() {
       return false;
+    }
+  }
+
+  /**
+   * Verifies that autocommit read-only connections reject DML statements with GoogleSQL {@code THEN
+   * RETURN} and PostgreSQL {@code RETURNING} clauses across all synchronous and asynchronous
+   * execution entrypoints without issuing write RPCs or mutating transient connection state.
+   */
+  @RunWith(Parameterized.class)
+  public static class ConnectionImplAutocommitReadOnlyDmlReturningTest {
+    private static final ExecutorProvider ASYNC_EXECUTOR_PROVIDER =
+        InstantiatingExecutorProvider.newBuilder()
+            .setExecutorThreadCount(1)
+            .setThreadFactory(
+                new ThreadFactoryBuilder()
+                    .setDaemon(true)
+                    .setNameFormat("autocommit-readonly-dml-returning-test-%d")
+                    .build())
+            .build();
+
+    @Parameter public Dialect dialect;
+
+    @Parameters(name = "dialect = {0}")
+    public static Object[] data() {
+      return Dialect.values();
+    }
+
+    private List<String> dmlReturningStatements() {
+      if (dialect == Dialect.POSTGRESQL) {
+        return Arrays.asList(
+            "INSERT INTO foo (id, name) VALUES (1, 'bar') RETURNING id",
+            "UPDATE foo SET bar=1 WHERE id=1 RETURNING bar",
+            "DELETE FROM foo WHERE id=1 RETURNING id");
+      }
+      return Arrays.asList(
+          "INSERT INTO foo (id, name) VALUES (1, 'bar') THEN RETURN id",
+          "UPDATE foo SET bar=1 WHERE id=1 THEN RETURN bar",
+          "DELETE FROM foo WHERE id=1 THEN RETURN id");
+    }
+
+    /**
+     * Creates an autocommit read-only {@link ConnectionImpl} backed by {@code dbClient} with a
+     * stubbed {@code readWriteTransaction()} so any unguarded write execution succeeds rather than
+     * failing with an unrelated mock null-pointer error.
+     */
+    private ConnectionImpl createAutocommitReadOnlyConnection(DatabaseClient dbClient) {
+      Spanner spanner = mock(Spanner.class);
+      when(spanner.getAsyncExecutorProvider()).thenReturn(ASYNC_EXECUTOR_PROVIDER);
+      SpannerPool spannerPool = mock(SpannerPool.class);
+      when(spannerPool.getSpanner(any(ConnectionOptions.class), any(ConnectionImpl.class)))
+          .thenReturn(spanner);
+      when(dbClient.getDialect()).thenReturn(dialect);
+      when(dbClient.readWriteTransaction())
+          .thenAnswer(
+              invocation ->
+                  new TransactionRunner() {
+                    private CommitResponse commitResponse;
+
+                    @Override
+                    public <T> T run(TransactionCallable<T> callable) {
+                      TransactionContext txContext = mock(TransactionContext.class);
+                      ResultSet returningRs = mock(ResultSet.class);
+                      when(returningRs.next()).thenReturn(true, false);
+                      when(returningRs.getLong(0)).thenReturn(1L);
+                      when(txContext.executeQuery(any(Statement.class), any()))
+                          .thenReturn(returningRs);
+                      try {
+                        T result = callable.run(txContext);
+                        commitResponse = new CommitResponse(Timestamp.ofTimeSecondsAndNanos(1, 1));
+                        return result;
+                      } catch (Exception e) {
+                        throw SpannerExceptionFactory.newSpannerException(e);
+                      }
+                    }
+
+                    @Override
+                    public Timestamp getCommitTimestamp() {
+                      return commitResponse.getCommitTimestamp();
+                    }
+
+                    @Override
+                    public CommitResponse getCommitResponse() {
+                      return commitResponse;
+                    }
+
+                    @Override
+                    public TransactionRunner allowNestedTransaction() {
+                      return this;
+                    }
+                  });
+
+      ConnectionOptions options =
+          ConnectionOptions.newBuilder()
+              .setCredentials(NoCredentials.getInstance())
+              .setUri(ConnectionImplTest.URI)
+              .build();
+      ConnectionImpl connection =
+          new ConnectionImpl(
+              options, spannerPool, mock(DdlClient.class), dbClient, mock(BatchClient.class));
+      connection.setAutocommit(true);
+      connection.setReadOnly(true);
+      assertTrue(connection.isAutocommit());
+      assertTrue(connection.isReadOnly());
+      return connection;
+    }
+
+    @Test
+    public void testExecuteDmlReturningRejectedInAutocommitReadOnly() {
+      for (String sql : dmlReturningStatements()) {
+        Statement stmt = Statement.of(sql);
+        String expectedMessage =
+            "DML statement with returning clause cannot be executed in read-only mode: " + sql;
+        DatabaseClient dbClient = mock(DatabaseClient.class);
+        try (ConnectionImpl connection = createAutocommitReadOnlyConnection(dbClient)) {
+          connection.setStatementTag("autocommit-tag");
+
+          SpannerException execEx =
+              assertThrows(SpannerException.class, () -> connection.execute(stmt));
+          assertEquals(ErrorCode.FAILED_PRECONDITION, execEx.getErrorCode());
+          assertTrue(execEx.getMessage().contains(expectedMessage));
+          assertEquals("autocommit-tag", connection.getStatementTag());
+
+          SpannerException execAllowedTypesEx =
+              assertThrows(
+                  SpannerException.class,
+                  () -> connection.execute(stmt, Collections.singleton(ResultType.RESULT_SET)));
+          assertEquals(ErrorCode.FAILED_PRECONDITION, execAllowedTypesEx.getErrorCode());
+          assertTrue(execAllowedTypesEx.getMessage().contains(expectedMessage));
+          assertEquals("autocommit-tag", connection.getStatementTag());
+
+          SpannerException execAsyncEx =
+              assertThrows(SpannerException.class, () -> connection.executeAsync(stmt));
+          assertEquals(ErrorCode.FAILED_PRECONDITION, execAsyncEx.getErrorCode());
+          assertTrue(execAsyncEx.getMessage().contains(expectedMessage));
+          assertEquals("autocommit-tag", connection.getStatementTag());
+          assertFalse(connection.isTransactionStarted());
+
+          verify(dbClient, never()).readWriteTransaction();
+          verify(dbClient, never()).readWriteTransaction(any());
+        }
+      }
+    }
+
+    @Test
+    public void testExecuteQueryAndAnalyzeQueryDmlReturningRejectedInAutocommitReadOnly() {
+      for (String sql : dmlReturningStatements()) {
+        Statement stmt = Statement.of(sql);
+        String expectedMessage =
+            "DML statement with returning clause cannot be executed in read-only mode: " + sql;
+        DatabaseClient dbClient = mock(DatabaseClient.class);
+        try (ConnectionImpl connection = createAutocommitReadOnlyConnection(dbClient)) {
+          connection.setStatementTag("query-tag");
+
+          SpannerException queryEx =
+              assertThrows(SpannerException.class, () -> connection.executeQuery(stmt));
+          assertEquals(ErrorCode.FAILED_PRECONDITION, queryEx.getErrorCode());
+          assertTrue(queryEx.getMessage().contains(expectedMessage));
+          assertEquals("query-tag", connection.getStatementTag());
+
+          SpannerException queryAsyncEx =
+              assertThrows(SpannerException.class, () -> connection.executeQueryAsync(stmt));
+          assertEquals(ErrorCode.FAILED_PRECONDITION, queryAsyncEx.getErrorCode());
+          assertTrue(queryAsyncEx.getMessage().contains(expectedMessage));
+          assertEquals("query-tag", connection.getStatementTag());
+
+          for (QueryAnalyzeMode analyzeMode : QueryAnalyzeMode.values()) {
+            SpannerException analyzeEx =
+                assertThrows(
+                    SpannerException.class, () -> connection.analyzeQuery(stmt, analyzeMode));
+            assertEquals(ErrorCode.FAILED_PRECONDITION, analyzeEx.getErrorCode());
+            assertTrue(analyzeEx.getMessage().contains(expectedMessage));
+            assertEquals("query-tag", connection.getStatementTag());
+          }
+
+          verify(dbClient, never()).readWriteTransaction();
+          verify(dbClient, never()).readWriteTransaction(any());
+        }
+      }
     }
   }
 }

@@ -1756,16 +1756,6 @@ class ConnectionImpl implements Connection {
           return internalExecuteQuery(callType, parsedStatement, analyzeMode, options);
         case UPDATE:
           if (parsedStatement.hasReturningClause()) {
-            // Cannot execute DML statement with returning clause in read-only mode or in
-            // READ_ONLY_TRANSACTION transaction mode.
-            if (this.isReadOnly()
-                || (this.isInTransaction()
-                    && this.getTransactionMode() == TransactionMode.READ_ONLY_TRANSACTION)) {
-              throw SpannerExceptionFactory.newSpannerException(
-                  ErrorCode.FAILED_PRECONDITION,
-                  "DML statement with returning clause cannot be executed in read-only mode: "
-                      + parsedStatement.getSql());
-            }
             return internalExecuteQuery(callType, parsedStatement, analyzeMode, options);
           }
         case DDL:
@@ -1797,16 +1787,6 @@ class ConnectionImpl implements Connection {
               CallType.ASYNC, parsedStatement, AnalyzeMode.NONE, options);
         case UPDATE:
           if (parsedStatement.hasReturningClause()) {
-            // Cannot execute DML statement with returning clause in read-only mode or in
-            // READ_ONLY_TRANSACTION transaction mode.
-            if (this.isReadOnly()
-                || (this.isInTransaction()
-                    && this.getTransactionMode() == TransactionMode.READ_ONLY_TRANSACTION)) {
-              throw SpannerExceptionFactory.newSpannerException(
-                  ErrorCode.FAILED_PRECONDITION,
-                  "DML statement with returning clause cannot be executed in read-only mode: "
-                      + parsedStatement.getSql());
-            }
             return internalExecuteQueryAsync(
                 CallType.ASYNC, parsedStatement, AnalyzeMode.NONE, options);
           }
@@ -2075,6 +2055,24 @@ class ConnectionImpl implements Connection {
     return options;
   }
 
+  /**
+   * Throws a {@link SpannerException} with {@link ErrorCode#FAILED_PRECONDITION} if this connection
+   * is in read-only mode or in a {@link TransactionMode#READ_ONLY_TRANSACTION}, since DML
+   * statements mutate data and require a read/write transaction.
+   */
+  private void checkDmlReturningAllowed(ParsedStatement parsedStatement) {
+    if (this.isReadOnly()
+        || (this.isInTransaction()
+            && this.getTransactionMode() == TransactionMode.READ_ONLY_TRANSACTION)) {
+      throw SpannerExceptionFactory.newSpannerException(
+          ErrorCode.FAILED_PRECONDITION,
+          parsedStatement.hasReturningClause()
+              ? "DML statement with returning clause cannot be executed in read-only mode: "
+                  + parsedStatement.getSql()
+              : "Update statements are not allowed in read-only mode");
+    }
+  }
+
   private ResultSet internalExecuteQuery(
       final CallType callType,
       final ParsedStatement statement,
@@ -2086,6 +2084,10 @@ class ConnectionImpl implements Connection {
                 && (analyzeMode != AnalyzeMode.NONE || statement.hasReturningClause())),
         "Statement must either be a query or a DML mode with analyzeMode!=NONE or returning"
             + " clause");
+    // Enforce read-only restrictions before allocating a UnitOfWork or consuming statementTag.
+    if (statement.isUpdate()) {
+      checkDmlReturningAllowed(statement);
+    }
     boolean isInternalMetadataQuery = isInternalMetadataQuery(options);
     QueryOption[] combinedOptions = concat(statement.getOptionsFromHints(), options);
     UnitOfWork transaction =
@@ -2113,6 +2115,10 @@ class ConnectionImpl implements Connection {
         (statement.getType() == StatementType.QUERY)
             || (statement.getType() == StatementType.UPDATE && statement.hasReturningClause()),
         "Statement must be a query or DML with returning clause.");
+    // Enforce read-only restrictions before allocating a UnitOfWork or consuming statementTag.
+    if (statement.isUpdate()) {
+      checkDmlReturningAllowed(statement);
+    }
     ConnectionPreconditions.checkState(
         !(isAutoPartitionMode() && statement.getType() == StatementType.QUERY),
         "Partitioned queries cannot be executed asynchronously");
