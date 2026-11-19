@@ -354,6 +354,20 @@ public class MockSpannerServiceImpl extends SpannerImplBase implements MockGrpcS
     }
 
     /**
+     * Creates a result for the query that detects the dialect and default transaction isolation
+     * level of the database, with the given value for the default transaction isolation level. Use
+     * this to return a value that is not known to the client.
+     */
+    public static StatementResult detectDialectResult(
+        Dialect resultDialect, String defaultIsolationLevelValue) {
+      Map<String, String> options = new LinkedHashMap<>();
+      options.put(DatabaseMetadata.DATABASE_DIALECT_OPTION, resultDialect.toString());
+      options.put(
+          DatabaseMetadata.DEFAULT_TRANSACTION_ISOLATION_OPTION, defaultIsolationLevelValue);
+      return detectDatabaseMetadataResult(options);
+    }
+
+    /**
      * Creates a result for the query that reads the database options that are cached by the client.
      * The result contains one row for each option in the given map. Options that are not in the map
      * are treated as not set.

@@ -574,6 +574,16 @@ final class MultiplexedSessionDatabaseClient extends AbstractMultiplexedSessionD
   }
 
   @Override
+  @Nullable
+  public String getDatabaseDefaultIsolationLevelValue() {
+    try {
+      return databaseMetadataSupplier.get().getDefaultIsolationLevelValue();
+    } catch (Exception exception) {
+      throw SpannerExceptionFactory.asSpannerException(exception);
+    }
+  }
+
+  @Override
   public String getDatabaseRole() {
     return this.sessionClient.getSpanner().getOptions().getDatabaseRole();
   }
