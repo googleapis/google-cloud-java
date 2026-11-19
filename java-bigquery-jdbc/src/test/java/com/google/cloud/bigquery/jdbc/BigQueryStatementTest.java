@@ -914,6 +914,24 @@ public class BigQueryStatementTest {
     verify(statementSpy, Mockito.never()).processJsonResultSet(eq(tableResultMock), any());
   }
 
+  @Test
+  public void testProcessQueryResponseFallsBackToJsonWhenReadSessionIsDenied() throws SQLException {
+    BigQueryStatement statementSpy = Mockito.spy(bigQueryStatement);
+    TableResult tableResultMock = mockTableResultWithJob("job-id");
+    doReturn(true).when(statementSpy).useReadAPI(tableResultMock);
+    doReturn(TABLE_ID).when(statementSpy).getDestinationTable(any());
+    // processArrowResultSet is not stubbed: the fallback inspects the exception it really throws.
+    Mockito.doThrow(mockApiException(StatusCode.Code.PERMISSION_DENIED))
+        .when(statementSpy)
+        .getReadSession(any(CreateReadSessionRequest.class));
+    BigQueryJsonResultSet jsonResultSetMock = mock(BigQueryJsonResultSet.class);
+    doReturn(jsonResultSetMock).when(statementSpy).processJsonResultSet(eq(tableResultMock), any());
+
+    statementSpy.processQueryResponse("SELECT 1", tableResultMock);
+
+    assertThat(statementSpy.currentResultSet).isEqualTo(jsonResultSetMock);
+  }
+
   private TableResult mockTableResultWithJob(String jobId) {
     TableResult tableResult = mock(TableResult.class);
     doReturn(JobId.of(jobId)).when(tableResult).getJobId();
