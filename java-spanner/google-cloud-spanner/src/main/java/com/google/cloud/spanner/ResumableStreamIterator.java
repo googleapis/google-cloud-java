@@ -64,7 +64,7 @@ import org.jspecify.annotations.Nullable;
  * regularly makes progress is not terminated by an occasional transient error. The default settings
  * have no maximum number of attempts or total timeout. Setting maxAttempts to 1 disables streaming
  * retries. Positive server-supplied retry delays are capped at {@link
- * RetrySettings#getMaxRetryDelayDuration()} (defaulting to 1000ms when unset or non-positive), and
+ * RetrySettings#getMaxRetryDelayDuration()} (defaulting to 32s when unset or non-positive), and
  * missing or non-positive server retry delays fall back to exponential backoff.
  *
  * <p>These limits bound the number of streams that this iterator starts. Each (re)started stream is
@@ -92,7 +92,7 @@ abstract class ResumableStreamIterator extends AbstractIterator<PartialResultSet
   @Nullable private volatile StreamMessageListener streamMessageListener;
   private final RetrySettings streamingRetrySettings;
   private final Set<Code> retryableCodes;
-  private static final long DEFAULT_MAX_RETRY_DELAY_MILLIS = 1000L;
+  private static final long DEFAULT_MAX_RETRY_DELAY_MILLIS = 32_000L;
   private static final Logger logger = Logger.getLogger(ResumableStreamIterator.class.getName());
   @Nullable private BackOff backOff;
   private final ArrayDeque<PartialResultSet> buffer = new ArrayDeque<>();
@@ -221,38 +221,35 @@ abstract class ResumableStreamIterator extends AbstractIterator<PartialResultSet
   }
 
   /**
-   * Returns the effective maximum retry delay in milliseconds: the configured {@link
-   * RetrySettings#getMaxRetryDelayDuration()} when positive (floored at 1ms for sub-millisecond
-   * durations and saturated at {@link Long#MAX_VALUE}), or {@link #DEFAULT_MAX_RETRY_DELAY_MILLIS}
-   * when unset or non-positive.
+   * Converts {@code duration} to positive milliseconds (floored at 1ms for positive sub-millisecond
+   * durations and saturated at {@code maxMillis} on overflow), or returns {@code
+   * nonPositiveDefaultMillis} when {@code duration} is zero or negative.
    */
-  private long effectiveMaxRetryDelayMillis() {
-    Duration maxRetryDelay = streamingRetrySettings.getMaxRetryDelayDuration();
-    if (maxRetryDelay.isZero() || maxRetryDelay.isNegative()) {
-      return DEFAULT_MAX_RETRY_DELAY_MILLIS;
+  private static long saturatedDurationMillis(
+      Duration duration, long nonPositiveDefaultMillis, long maxMillis) {
+    if (duration.isZero() || duration.isNegative()) {
+      return nonPositiveDefaultMillis;
     }
     try {
-      return Math.max(1L, maxRetryDelay.toMillis());
+      return Math.max(1L, Math.min(duration.toMillis(), maxMillis));
     } catch (ArithmeticException overflow) {
-      return Long.MAX_VALUE;
+      return maxMillis;
     }
   }
 
-  private int effectiveInitialRetryDelayMillis() {
-    Duration initialRetryDelay = streamingRetrySettings.getInitialRetryDelayDuration();
-    if (initialRetryDelay.isZero() || initialRetryDelay.isNegative()) {
-      return 1;
-    }
-    try {
-      return Math.max(1, (int) Math.min(initialRetryDelay.toMillis(), Integer.MAX_VALUE));
-    } catch (ArithmeticException overflow) {
-      return Integer.MAX_VALUE;
-    }
+  private long effectiveMaxRetryDelayMillis() {
+    return saturatedDurationMillis(
+        streamingRetrySettings.getMaxRetryDelayDuration(),
+        DEFAULT_MAX_RETRY_DELAY_MILLIS,
+        Long.MAX_VALUE);
   }
 
   @VisibleForTesting
   BackOff newBackOff() {
-    int initialIntervalMillis = effectiveInitialRetryDelayMillis();
+    int initialIntervalMillis =
+        (int)
+            saturatedDurationMillis(
+                streamingRetrySettings.getInitialRetryDelayDuration(), 1L, Integer.MAX_VALUE);
     int maxIntervalMillis =
         Math.max(
             initialIntervalMillis,
@@ -278,7 +275,8 @@ abstract class ResumableStreamIterator extends AbstractIterator<PartialResultSet
     }
   }
 
-  private void backoffSleep(Context context, long backoffMillis) throws SpannerException {
+  @VisibleForTesting
+  void backoffSleep(Context context, long backoffMillis) throws SpannerException {
     tracer.getCurrentSpan().addAnnotation("Backing off", "Delay", backoffMillis);
     final CountDownLatch latch = new CountDownLatch(1);
     final Context.CancellationListener listener =

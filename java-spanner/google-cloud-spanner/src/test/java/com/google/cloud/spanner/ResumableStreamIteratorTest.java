@@ -205,13 +205,15 @@ public class ResumableStreamIteratorTest {
     SpannerOptions.resetActiveTracingFramework();
   }
 
+  private static RetrySettings defaultTestRetrySettings() {
+    return RetrySettings.newBuilder()
+        .setInitialRetryDelayDuration(java.time.Duration.ofMillis(10))
+        .setMaxRetryDelayDuration(java.time.Duration.ofSeconds(32))
+        .build();
+  }
+
   private void initWithLimit(int maxBufferSize) {
-    initWithLimitAndRetrySettings(
-        maxBufferSize,
-        RetrySettings.newBuilder()
-            .setInitialRetryDelayDuration(java.time.Duration.ofMillis(10))
-            .setMaxRetryDelayDuration(java.time.Duration.ofMillis(1000))
-            .build());
+    initWithLimitAndRetrySettings(maxBufferSize, defaultTestRetrySettings());
   }
 
   private void initWithLimitAndRetrySettings(int maxBufferSize, RetrySettings retrySettings) {
@@ -221,12 +223,29 @@ public class ResumableStreamIteratorTest {
         new TraceWrapper(Tracing.getTracer(), OpenTelemetry.noop().getTracer(""), false));
   }
 
+  private void initWithRecordingBackoffSleep(
+      RetrySettings retrySettings, List<Long> recordedSleeps) {
+    initWithLimitAndRetrySettings(
+        Integer.MAX_VALUE,
+        retrySettings,
+        new TraceWrapper(Tracing.getTracer(), OpenTelemetry.noop().getTracer(""), false),
+        recordedSleeps);
+  }
+
   private static OpenTelemetrySpan mockOpenTelemetrySpan() {
     return new OpenTelemetrySpan(mock(io.opentelemetry.api.trace.Span.class));
   }
 
   private void initWithLimitAndRetrySettings(
       int maxBufferSize, RetrySettings retrySettings, TraceWrapper tracer) {
+    initWithLimitAndRetrySettings(maxBufferSize, retrySettings, tracer, null);
+  }
+
+  private void initWithLimitAndRetrySettings(
+      int maxBufferSize,
+      RetrySettings retrySettings,
+      TraceWrapper tracer,
+      @Nullable List<Long> recordedSleeps) {
     resumableStreamIterator =
         new ResumableStreamIterator(
             maxBufferSize,
@@ -240,6 +259,15 @@ public class ResumableStreamIteratorTest {
           @Override
           long nanoTime() {
             return nanoTime.getAsLong();
+          }
+
+          @Override
+          void backoffSleep(Context context, long backoffMillis) throws SpannerException {
+            if (recordedSleeps != null) {
+              recordedSleeps.add(backoffMillis);
+            } else {
+              super.backoffSleep(context, backoffMillis);
+            }
           }
 
           @Override
@@ -580,8 +608,8 @@ public class ResumableStreamIteratorTest {
             statusWithRetryInfo(
                 errorCodeParameter, TimeUnit.MILLISECONDS.toSeconds(totalTimeoutMillis), 0));
     nanoTime = () -> 0L;
-    assertEquals(1000L, resumableStreamIterator.checkRetryBudgetAndGetDelay(exception));
-    nanoTime = () -> TimeUnit.MILLISECONDS.toNanos(totalTimeoutMillis - 1000L);
+    assertEquals(32_000L, resumableStreamIterator.checkRetryBudgetAndGetDelay(exception));
+    nanoTime = () -> TimeUnit.MILLISECONDS.toNanos(totalTimeoutMillis - 32_000L);
     assertThat(
             assertThrows(
                 SpannerException.class,
@@ -613,7 +641,8 @@ public class ResumableStreamIteratorTest {
     assertThat(subMsBackoff).isAtLeast(5L);
     assertThat(subMsBackoff).isAtMost(15L);
 
-    initWithLimit(Integer.MAX_VALUE);
+    List<Long> recordedSleeps = new ArrayList<>();
+    initWithRecordingBackoffSleep(defaultTestRetrySettings(), recordedSleeps);
     ResultSetStream s1 = Mockito.mock(ResultSetStream.class);
     Mockito.when(starter.startStream(null, null)).thenReturn(new ResultSetIterator(s1));
     Mockito.when(s1.next())
@@ -627,6 +656,9 @@ public class ResumableStreamIteratorTest {
         .thenReturn(resultSet(ByteString.copyFromUtf8("r2"), "b"))
         .thenReturn(null);
     assertThat(consume(resumableStreamIterator)).containsExactly("a", "b").inOrder();
+    assertThat(recordedSleeps).hasSize(1);
+    assertThat(recordedSleeps.get(0)).isAtLeast(5L);
+    assertThat(recordedSleeps.get(0)).isAtMost(15L);
   }
 
   @Test
@@ -656,7 +688,8 @@ public class ResumableStreamIteratorTest {
       assertThat(delayMillis).isAtMost(15L);
     }
 
-    initWithLimit(Integer.MAX_VALUE);
+    List<Long> recordedSleeps = new ArrayList<>();
+    initWithRecordingBackoffSleep(defaultTestRetrySettings(), recordedSleeps);
     ResultSetStream s1 = Mockito.mock(ResultSetStream.class);
     Mockito.when(starter.startStream(null, null)).thenReturn(new ResultSetIterator(s1));
     Mockito.when(s1.next())
@@ -670,9 +703,12 @@ public class ResumableStreamIteratorTest {
         .thenReturn(resultSet(ByteString.copyFromUtf8("r2"), "b"))
         .thenReturn(null);
     assertThat(consume(resumableStreamIterator)).containsExactly("a", "b").inOrder();
+    assertThat(recordedSleeps).hasSize(1);
+    assertThat(recordedSleeps.get(0)).isAtLeast(5L);
+    assertThat(recordedSleeps.get(0)).isAtMost(15L);
   }
 
-  @Test(timeout = 10_000L)
+  @Test
   public void retryInfoWithMultiHourDelay_clampedToConfiguredMaxRetryDelay() {
     RetrySettings settings =
         RetrySettings.newBuilder()
@@ -688,7 +724,8 @@ public class ResumableStreamIteratorTest {
     assertEquals(TimeUnit.HOURS.toMillis(3L), threeHourException.getRetryDelayInMillis());
     assertEquals(250L, resumableStreamIterator.checkRetryBudgetAndGetDelay(threeHourException));
 
-    initWithLimitAndRetrySettings(Integer.MAX_VALUE, settings);
+    List<Long> recordedSleeps = new ArrayList<>();
+    initWithRecordingBackoffSleep(settings, recordedSleeps);
     ResultSetStream s1 = Mockito.mock(ResultSetStream.class);
     Mockito.when(starter.startStream(null, null)).thenReturn(new ResultSetIterator(s1));
     Mockito.when(s1.next())
@@ -702,12 +739,11 @@ public class ResumableStreamIteratorTest {
         .thenReturn(resultSet(ByteString.copyFromUtf8("r2"), "b"))
         .thenReturn(null);
 
-    Stopwatch stopwatch = Stopwatch.createStarted();
     assertThat(consume(resumableStreamIterator)).containsExactly("a", "b").inOrder();
-    assertThat(stopwatch.elapsed(TimeUnit.MILLISECONDS)).isLessThan(5000L);
+    assertThat(recordedSleeps).containsExactly(250L);
   }
 
-  @Test(timeout = 10_000L)
+  @Test
   public void retryInfoWithMultiHourDelayAndUnsetMaxRetryDelay_clampedToDefaultCap() {
     RetrySettings unsetSettings = RetrySettings.newBuilder().build();
     assertTrue(unsetSettings.getMaxRetryDelayDuration().isZero());
@@ -719,9 +755,10 @@ public class ResumableStreamIteratorTest {
             errorCodeParameter,
             "3h delay",
             statusWithRetryInfo(errorCodeParameter, TimeUnit.HOURS.toSeconds(3L), 0));
-    assertEquals(1000L, resumableStreamIterator.checkRetryBudgetAndGetDelay(threeHourException));
+    assertEquals(32_000L, resumableStreamIterator.checkRetryBudgetAndGetDelay(threeHourException));
 
-    initWithLimitAndRetrySettings(Integer.MAX_VALUE, unsetSettings);
+    List<Long> recordedSleeps = new ArrayList<>();
+    initWithRecordingBackoffSleep(unsetSettings, recordedSleeps);
     ResultSetStream s1 = Mockito.mock(ResultSetStream.class);
     Mockito.when(starter.startStream(null, null)).thenReturn(new ResultSetIterator(s1));
     Mockito.when(s1.next())
@@ -735,20 +772,17 @@ public class ResumableStreamIteratorTest {
         .thenReturn(resultSet(ByteString.copyFromUtf8("r2"), "b"))
         .thenReturn(null);
 
-    Stopwatch stopwatch = Stopwatch.createStarted();
     assertThat(consume(resumableStreamIterator)).containsExactly("a", "b").inOrder();
-    assertThat(stopwatch.elapsed(TimeUnit.MILLISECONDS)).isLessThan(5000L);
+    assertThat(recordedSleeps).containsExactly(32_000L);
   }
 
   @Test
   public void retryInfoWithinMaxRetryDelay_honorsServerDelayAndChecksTotalTimeout() {
-    SpannerException twoHundredMsException =
+    SpannerException fiveSecondException =
         new RetryableException(
-            errorCodeParameter,
-            "200ms delay",
-            statusWithRetryInfo(errorCodeParameter, 0L, (int) TimeUnit.MILLISECONDS.toNanos(200L)));
-    assertEquals(200L, twoHundredMsException.getRetryDelayInMillis());
-    assertEquals(200L, resumableStreamIterator.checkRetryBudgetAndGetDelay(twoHundredMsException));
+            errorCodeParameter, "5s delay", statusWithRetryInfo(errorCodeParameter, 5L, 0));
+    assertEquals(5_000L, fiveSecondException.getRetryDelayInMillis());
+    assertEquals(5_000L, resumableStreamIterator.checkRetryBudgetAndGetDelay(fiveSecondException));
 
     // Clamping occurs before totalTimeoutExceeded: a 3-hour server delay clamped to 250ms fits in
     // a 1000ms total timeout at t=0, then throws immediately once remaining budget drops to 250ms.
@@ -785,45 +819,17 @@ public class ResumableStreamIteratorTest {
             "absent delay",
             errorCodeParameter.getGrpcStatus().asRuntimeException());
 
-    TraceWrapper noopTracer =
-        new TraceWrapper(Tracing.getTracer(), OpenTelemetry.noop().getTracer(""), false);
     ResumableStreamIterator zeroBackoffIterator =
-        new TestResumableStreamIterator(noopTracer, RetrySettings.newBuilder().build()) {
-          @Override
-          BackOff newBackOff() {
-            return fixedBackOff(0L);
-          }
-
-          @Override
-          CloseableIterator<PartialResultSet> startStream(
-              @Nullable ByteString resumeToken,
-              @Nullable StreamMessageListener streamMessageListener,
-              XGoogSpannerRequestId requestId) {
-            throw new AssertionError("unexpected startStream");
-          }
-        };
+        new FixedBackOffTestIterator(RetrySettings.newBuilder().build(), 0L);
     assertEquals(1L, zeroBackoffIterator.checkRetryBudgetAndGetDelay(zeroDelayException));
     assertEquals(1L, zeroBackoffIterator.checkRetryBudgetAndGetDelay(absentDelayException));
 
     ResumableStreamIterator stopBackoffUnsetMaxIterator =
-        new TestResumableStreamIterator(noopTracer, RetrySettings.newBuilder().build()) {
-          @Override
-          BackOff newBackOff() {
-            return fixedBackOff(BackOff.STOP);
-          }
-
-          @Override
-          CloseableIterator<PartialResultSet> startStream(
-              @Nullable ByteString resumeToken,
-              @Nullable StreamMessageListener streamMessageListener,
-              XGoogSpannerRequestId requestId) {
-            throw new AssertionError("unexpected startStream");
-          }
-        };
+        new FixedBackOffTestIterator(RetrySettings.newBuilder().build(), BackOff.STOP);
     assertEquals(
-        1000L, stopBackoffUnsetMaxIterator.checkRetryBudgetAndGetDelay(zeroDelayException));
+        32_000L, stopBackoffUnsetMaxIterator.checkRetryBudgetAndGetDelay(zeroDelayException));
     assertEquals(
-        1000L, stopBackoffUnsetMaxIterator.checkRetryBudgetAndGetDelay(absentDelayException));
+        32_000L, stopBackoffUnsetMaxIterator.checkRetryBudgetAndGetDelay(absentDelayException));
 
     RetrySettings customMaxSettings =
         RetrySettings.newBuilder()
@@ -831,20 +837,7 @@ public class ResumableStreamIteratorTest {
             .setMaxRetryDelayDuration(java.time.Duration.ofMillis(250L))
             .build();
     ResumableStreamIterator stopBackoffCustomMaxIterator =
-        new TestResumableStreamIterator(noopTracer, customMaxSettings) {
-          @Override
-          BackOff newBackOff() {
-            return fixedBackOff(BackOff.STOP);
-          }
-
-          @Override
-          CloseableIterator<PartialResultSet> startStream(
-              @Nullable ByteString resumeToken,
-              @Nullable StreamMessageListener streamMessageListener,
-              XGoogSpannerRequestId requestId) {
-            throw new AssertionError("unexpected startStream");
-          }
-        };
+        new FixedBackOffTestIterator(customMaxSettings, BackOff.STOP);
     assertEquals(
         250L, stopBackoffCustomMaxIterator.checkRetryBudgetAndGetDelay(absentDelayException));
 
@@ -915,11 +908,11 @@ public class ResumableStreamIteratorTest {
     for (int i = 0; i < 6; i++) {
       long delayMillis = resumableStreamIterator.checkRetryBudgetAndGetDelay(absentDelayException);
       assertThat(delayMillis).isAtLeast(1L);
-      assertThat(delayMillis).isAtMost(1500L);
+      assertThat(delayMillis).isAtMost(48_000L);
       maxObserved = Math.max(maxObserved, delayMillis);
     }
-    // Intervals 1, 10, 100, 1000, 1000, 1000 (+/-50% jitter): the 1000ms ceiling is reached.
-    assertThat(maxObserved).isAtLeast(500L);
+    // Intervals 1, 10, 100, 1000, 10000, 32000 (+/-50% jitter): the 32s ceiling is reached.
+    assertThat(maxObserved).isAtLeast(16_000L);
   }
 
   @Test(timeout = 60000L)
@@ -3319,6 +3312,30 @@ public class ResumableStreamIteratorTest {
           retrySettings,
           SpannerStubSettings.newBuilder().executeStreamingSqlSettings().getRetryableCodes(),
           NoopRequestIdCreator.INSTANCE);
+    }
+  }
+
+  private static final class FixedBackOffTestIterator extends TestResumableStreamIterator {
+    private final long delayMillis;
+
+    FixedBackOffTestIterator(RetrySettings retrySettings, long delayMillis) {
+      super(
+          new TraceWrapper(Tracing.getTracer(), OpenTelemetry.noop().getTracer(""), false),
+          retrySettings);
+      this.delayMillis = delayMillis;
+    }
+
+    @Override
+    BackOff newBackOff() {
+      return fixedBackOff(delayMillis);
+    }
+
+    @Override
+    CloseableIterator<PartialResultSet> startStream(
+        @Nullable ByteString resumeToken,
+        @Nullable StreamMessageListener streamMessageListener,
+        XGoogSpannerRequestId requestId) {
+      throw new AssertionError("unexpected startStream");
     }
   }
 
