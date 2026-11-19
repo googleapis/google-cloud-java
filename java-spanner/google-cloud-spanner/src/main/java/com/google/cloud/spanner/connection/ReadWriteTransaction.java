@@ -784,16 +784,22 @@ class ReadWriteTransaction extends AbstractMultiUseTransaction {
                 () -> {
                   checkTimedOut();
                   checkAborted();
-                  try {
-                    return DirectExecuteResultSet.ofResultSet(
-                        internalExecuteQuery(statement, analyzeMode, options));
-                  } catch (AbortedException aborted) {
-                    if (keepAbortedTransactionOpen) {
-                      this.state = UnitOfWorkState.ABORTED;
-                      this.abortedException = aborted;
-                    }
-                    throw aborted;
+                  ResultSet queryResultSet = internalExecuteQuery(statement, analyzeMode, options);
+                  if (keepAbortedTransactionOpen) {
+                    queryResultSet =
+                        new ReplaceableForwardingResultSet(queryResultSet) {
+                          @Override
+                          public boolean next() throws SpannerException {
+                            try {
+                              return super.next();
+                            } catch (AbortedException aborted) {
+                              markAborted(aborted);
+                              throw aborted;
+                            }
+                          }
+                        };
                   }
+                  return DirectExecuteResultSet.ofResultSet(queryResultSet);
                 },
                 SpannerGrpc.getExecuteStreamingSqlMethod());
       }
@@ -1500,10 +1506,13 @@ class ReadWriteTransaction extends AbstractMultiUseTransaction {
         }
       }
       if (!resetSucceeded) {
-        try {
-          txManager.close();
-        } catch (Throwable ignored) {
-          // Ignore cleanup errors when closing an un-aborted transaction manager.
+        TransactionState managerState = txManager.getState();
+        if (managerState == TransactionState.STARTED || managerState == TransactionState.ABORTED) {
+          try {
+            txManager.close();
+          } catch (Throwable ignored) {
+            // Ignore cleanup errors when closing an un-aborted transaction manager.
+          }
         }
         txManager = null;
         txContextFuture = null;

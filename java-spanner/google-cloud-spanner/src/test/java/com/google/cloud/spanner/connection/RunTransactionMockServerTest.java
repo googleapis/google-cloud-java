@@ -21,6 +21,9 @@ import static com.google.cloud.spanner.connection.ConnectionProperties.READ_LOCK
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertThrows;
 import static org.junit.Assert.assertTrue;
@@ -30,6 +33,7 @@ import com.google.cloud.Timestamp;
 import com.google.cloud.spanner.AbortedException;
 import com.google.cloud.spanner.ErrorCode;
 import com.google.cloud.spanner.MockSpannerServiceImpl.SimulatedExecutionTime;
+import com.google.cloud.spanner.MockSpannerServiceImpl.StatementResult;
 import com.google.cloud.spanner.Mutation;
 import com.google.cloud.spanner.ResultSet;
 import com.google.cloud.spanner.SpannerApiFutures;
@@ -38,6 +42,7 @@ import com.google.cloud.spanner.SpannerExceptionFactory;
 import com.google.cloud.spanner.SpannerOptions;
 import com.google.cloud.spanner.SpannerOptionsTestHelper;
 import com.google.cloud.spanner.connection.UnitOfWork.UnitOfWorkState;
+import com.google.protobuf.ByteString;
 import com.google.rpc.RetryInfo;
 import com.google.spanner.v1.BeginTransactionRequest;
 import com.google.spanner.v1.CommitRequest;
@@ -912,31 +917,11 @@ public class RunTransactionMockServerTest extends AbstractMockServerTest {
   }
 
   @Test
-  public void testRunTransactionInterruptedDuringBackoffAfterCommitAbort() throws Exception {
-    Metadata trailers = new Metadata();
-    trailers.put(
-        ProtoUtils.keyForProto(RetryInfo.getDefaultInstance()),
-        RetryInfo.newBuilder()
-            .setRetryDelay(com.google.protobuf.Duration.newBuilder().setSeconds(30L))
-            .build());
-    mockSpanner.setCommitExecutionTime(
-        SimulatedExecutionTime.ofException(
-            Status.ABORTED.withDescription("commit aborted").asRuntimeException(trailers)));
-    Thread runnerThread = Thread.currentThread();
-    long deadline = System.nanoTime() + TimeUnit.SECONDS.toNanos(30L);
-    // The 30s RetryInfo delay is the only timed wait the runner thread enters; interrupt it there.
-    Thread interrupter =
-        new Thread(
-            () -> {
-              while (runnerThread.getState() != Thread.State.TIMED_WAITING
-                  && System.nanoTime() < deadline) {
-                Thread.yield();
-              }
-              runnerThread.interrupt();
-            });
+  public void testRunTransactionInterruptedDuringBackoffAfterAbort() {
+    // 1. Statement abort with pre-set interrupt closes kept-open aborted txManager without sending
+    // a Rollback RPC.
     try (Connection connection = createConnection()) {
       connection.setAutocommit(true);
-      interrupter.start();
       SpannerException exception =
           assertThrows(
               SpannerException.class,
@@ -944,7 +929,16 @@ public class RunTransactionMockServerTest extends AbstractMockServerTest {
                   connection.runTransaction(
                       transaction -> {
                         assertEquals(1L, transaction.executeUpdate(INSERT_STATEMENT));
-                        return null;
+                        mockSpanner.abortNextStatement();
+                        AbortedException aborted =
+                            assertThrows(
+                                AbortedException.class,
+                                () -> transaction.executeUpdate(INSERT_STATEMENT));
+                        // Pre-setting the interrupt flag ensures Thread.sleep(...) in the runner's
+                        // catch (AbortedException) block deterministically throws
+                        // InterruptedException immediately without sleeping or background threads.
+                        Thread.currentThread().interrupt();
+                        throw aborted;
                       }));
       assertEquals(ErrorCode.CANCELLED, exception.getErrorCode());
       assertTrue(Thread.interrupted());
@@ -952,12 +946,44 @@ public class RunTransactionMockServerTest extends AbstractMockServerTest {
       assertFalse(connection.isTransactionStarted());
       assertTrue(connection.isRetryAbortsInternally());
     } finally {
-      interrupter.join();
       Thread.interrupted();
-      mockSpanner.removeAllExecutionTimes();
     }
-    assertEquals(1, mockSpanner.countRequestsOfType(CommitRequest.class));
+    assertEquals(2, mockSpanner.countRequestsOfType(ExecuteSqlRequest.class));
+    assertEquals(0, mockSpanner.countRequestsOfType(CommitRequest.class));
     assertEquals(0, mockSpanner.countRequestsOfType(RollbackRequest.class));
+    mockSpanner.clearRequests();
+
+    // 2. Active DML batch + pre-set interrupt during post-abort backoff exercises
+    // rollbackAfterAbort() (whereas rollbackAsync() would fail with FAILED_PRECONDITION due to the
+    // active batch and mask CANCELLED).
+    try (Connection connection = createConnection()) {
+      connection.setAutocommit(true);
+      SpannerException exception =
+          assertThrows(
+              SpannerException.class,
+              () ->
+                  connection.runTransaction(
+                      transaction -> {
+                        assertEquals(1L, transaction.executeUpdate(INSERT_STATEMENT));
+                        transaction.startBatchDml();
+                        transaction.executeUpdate(INSERT_STATEMENT);
+                        Thread.currentThread().interrupt();
+                        throw SpannerExceptionFactory.newSpannerException(
+                            ErrorCode.ABORTED, "abort during active batch");
+                      }));
+      assertEquals(ErrorCode.CANCELLED, exception.getErrorCode());
+      assertTrue(Thread.interrupted());
+      assertFalse(connection.isDmlBatchActive());
+      assertFalse(connection.isInTransaction());
+      assertFalse(connection.isTransactionStarted());
+      assertTrue(connection.isRetryAbortsInternally());
+    } finally {
+      Thread.interrupted();
+    }
+    assertEquals(1, mockSpanner.countRequestsOfType(ExecuteSqlRequest.class));
+    assertEquals(0, mockSpanner.countRequestsOfType(ExecuteBatchDmlRequest.class));
+    assertEquals(0, mockSpanner.countRequestsOfType(CommitRequest.class));
+    assertEquals(1, mockSpanner.countRequestsOfType(RollbackRequest.class));
   }
 
   @Test
@@ -1011,27 +1037,203 @@ public class RunTransactionMockServerTest extends AbstractMockServerTest {
 
   @Test
   public void testSyntheticAbortWithoutRetryInfoAppliesExponentialBackoff() {
+    for (int attempt = 0; attempt <= 25; attempt++) {
+      long expectedMax = Math.min(32_000L, 1L << Math.min(attempt + 1, 15));
+      long expectedMin = Math.max(1L, expectedMax / 2L);
+      for (int sample = 0; sample < 20; sample++) {
+        long delayMillis = TransactionRunnerImpl.nextFallbackBackoffMillis(attempt);
+        assertTrue(
+            "Attempt "
+                + attempt
+                + " delay "
+                + delayMillis
+                + "ms outside ["
+                + expectedMin
+                + ", "
+                + expectedMax
+                + "]",
+            delayMillis >= expectedMin && delayMillis <= expectedMax);
+      }
+    }
+  }
+
+  @Test
+  public void testResetForRetryHandlesNonAbortedManagerAndPreservesPreviousTransactionId() {
+    // 1. When internal retry fails with concurrent modification, ReadWriteTransaction rolls back
+    // txManager (ROLLED_BACK) and marks itself ABORTED; resetForRetry() must fall back cleanly
+    // instead of throwing IllegalStateException from txManager.resetForRetry().
     try (Connection connection = createConnection()) {
+      connection.setAutocommit(false);
+      connection.setRetryAbortsInternally(true);
+      ReadWriteTransaction uow =
+          (ReadWriteTransaction)
+              ((ConnectionImpl) connection).getCurrentUnitOfWorkOrStartNewUnitOfWork();
+      try {
+        try (ResultSet rs = connection.executeQuery(SELECT_COUNT_STATEMENT)) {
+          assertTrue(rs.next());
+          assertEquals(COUNT_BEFORE_INSERT, rs.getLong(0));
+        }
+        mockSpanner.putStatementResult(
+            StatementResult.query(SELECT_COUNT_STATEMENT, SELECT_COUNT_RESULTSET_AFTER_INSERT));
+        mockSpanner.abortNextStatement();
+        assertThrows(AbortedException.class, () -> connection.executeUpdate(INSERT_STATEMENT));
+      } finally {
+        mockSpanner.putStatementResult(
+            StatementResult.query(SELECT_COUNT_STATEMENT, SELECT_COUNT_RESULTSET_BEFORE_INSERT));
+      }
+      assertEquals(UnitOfWorkState.ABORTED, uow.getState());
+      assertNotNull(uow.getAbortedException());
+      uow.resetForRetry();
+      assertEquals(UnitOfWorkState.STARTED, uow.getState());
+      assertNull(uow.getAbortedException());
+      assertEquals(1L, connection.executeUpdate(INSERT_STATEMENT));
+      connection.commit();
+      mockSpanner.clearRequests();
+
+      // 2. Statement-level backend abort leaves txManager.getState() as STARTED while
+      // txn.isAborted() is true; resetForRetry() must still invoke txManager.resetForRetry() so
+      // multiplexed sessions forward the aborted attempt's transaction ID on retry.
       connection.setAutocommit(true);
-      final AtomicInteger attempts = new AtomicInteger();
-      long startNanos = System.nanoTime();
-      String result =
-          connection.runTransaction(
-              transaction -> {
-                if (attempts.incrementAndGet() <= 6) {
-                  throw SpannerExceptionFactory.newSpannerException(
-                      ErrorCode.ABORTED, "synthetic abort without retry info");
-                }
-                return "done";
-              });
-      long elapsedMillis = TimeUnit.NANOSECONDS.toMillis(System.nanoTime() - startNanos);
-      assertEquals("done", result);
-      assertEquals(7, attempts.get());
-      assertTrue(
-          "Expected exponential fallback backoff (>= 50ms across 6 retries), got "
-              + elapsedMillis
-              + "ms",
-          elapsedMillis >= 50L);
+      final AtomicInteger stmtAbortAttempts = new AtomicInteger();
+      connection.runTransaction(
+          transaction -> {
+            assertEquals(1L, transaction.executeUpdate(INSERT_STATEMENT));
+            if (stmtAbortAttempts.incrementAndGet() == 1) {
+              mockSpanner.abortNextStatement();
+            }
+            assertEquals(1L, transaction.executeUpdate(INSERT_STATEMENT));
+            return null;
+          });
+      assertEquals(2, stmtAbortAttempts.get());
+      List<ExecuteSqlRequest> sqlRequests = mockSpanner.getRequestsOfType(ExecuteSqlRequest.class);
+      assertEquals(4, sqlRequests.size());
+      assertTrue(sqlRequests.get(1).getTransaction().hasId());
+      assertNotEquals(ByteString.EMPTY, sqlRequests.get(1).getTransaction().getId());
+      assertEquals(
+          sqlRequests.get(1).getTransaction().getId(),
+          sqlRequests
+              .get(2)
+              .getTransaction()
+              .getBegin()
+              .getReadWrite()
+              .getMultiplexedSessionPreviousTransactionId());
+    }
+  }
+
+  @Test
+  public void testRunTransactionMidStreamQueryAbort() {
+    SpannerOptionsTestHelper.resetActiveTracingFramework();
+    SpannerOptions.enableOpenTelemetryTraces();
+    InMemorySpanExporter spanExporter = InMemorySpanExporter.create();
+    SdkTracerProvider tracerProvider =
+        SdkTracerProvider.builder()
+            .addSpanProcessor(SimpleSpanProcessor.create(spanExporter))
+            .build();
+    OpenTelemetrySdk openTelemetry =
+        OpenTelemetrySdk.builder()
+            .setPropagators(ContextPropagators.create(W3CTraceContextPropagator.getInstance()))
+            .setTracerProvider(tracerProvider)
+            .build();
+
+    try {
+      try (Connection connection = createTracingConnection(openTelemetry, ";autocommit=true")) {
+        Metadata trailers = new Metadata();
+        trailers.put(
+            ProtoUtils.keyForProto(RetryInfo.getDefaultInstance()),
+            RetryInfo.newBuilder()
+                .setRetryDelay(com.google.protobuf.Duration.newBuilder().setNanos(1_000_000))
+                .build());
+
+        // 1. Uncaught mid-stream abort on ResultSet.next() (after row 0 succeeded) must preserve
+        // a single CloudSpanner.ReadWriteTransaction span and forward previousTransactionId.
+        mockSpanner.setExecuteStreamingSqlExecutionTime(
+            SimulatedExecutionTime.ofStreamException(
+                Status.ABORTED.withDescription("mid-stream abort").asRuntimeException(trailers),
+                2L));
+        final AtomicInteger attempts = new AtomicInteger();
+        int rowCount =
+            connection.runTransaction(
+                transaction -> {
+                  attempts.incrementAndGet();
+                  int rows = 0;
+                  try (ResultSet resultSet = transaction.executeQuery(SELECT_RANDOM_STATEMENT)) {
+                    while (resultSet.next()) {
+                      rows++;
+                    }
+                  }
+                  return rows;
+                });
+        assertEquals(RANDOM_RESULT_SET_ROW_COUNT, rowCount);
+        assertEquals(2, attempts.get());
+        assertEquals(1L, countFinishedSpans(spanExporter, "CloudSpannerJdbc.ReadWriteTransaction"));
+        assertEquals(1L, countFinishedSpans(spanExporter, "CloudSpanner.ReadWriteTransaction"));
+        List<ExecuteSqlRequest> streamRequests =
+            mockSpanner.getRequestsOfType(ExecuteSqlRequest.class);
+        assertEquals(2, streamRequests.size());
+        assertNotEquals(
+            ByteString.EMPTY,
+            streamRequests
+                .get(1)
+                .getTransaction()
+                .getBegin()
+                .getReadWrite()
+                .getMultiplexedSessionPreviousTransactionId());
+
+        // 2. Caught mid-stream abort on ResultSet.next() + thrown non-abort exception must not
+        // send an unnecessary Rollback RPC on the already-aborted transaction.
+        mockSpanner.clearRequests();
+        mockSpanner.setExecuteStreamingSqlExecutionTime(
+            SimulatedExecutionTime.ofStreamException(
+                Status.ABORTED.withDescription("mid-stream abort").asRuntimeException(trailers),
+                2L));
+        assertThrows(
+            IllegalStateException.class,
+            () ->
+                connection.runTransaction(
+                    transaction -> {
+                      try (ResultSet resultSet =
+                          transaction.executeQuery(SELECT_RANDOM_STATEMENT)) {
+                        while (resultSet.next()) {
+                          // Consume until mid-stream abort.
+                        }
+                      } catch (AbortedException ignored) {
+                        // Swallow abort and fail with non-abort exception.
+                      }
+                      throw new IllegalStateException("failed after caught mid-stream abort");
+                    }));
+        assertEquals(0, mockSpanner.countRequestsOfType(RollbackRequest.class));
+
+        // 3. Caught mid-stream abort on ResultSet.next() + normal return must re-surface the
+        // stored AbortedException before commitAsync and retry cleanly.
+        mockSpanner.clearRequests();
+        mockSpanner.setExecuteStreamingSqlExecutionTime(
+            SimulatedExecutionTime.ofStreamException(
+                Status.ABORTED.withDescription("mid-stream abort").asRuntimeException(trailers),
+                2L));
+        final AtomicInteger swallowedMidStreamAttempts = new AtomicInteger();
+        int recoveredRows =
+            connection.runTransaction(
+                transaction -> {
+                  int attempt = swallowedMidStreamAttempts.incrementAndGet();
+                  int rows = 0;
+                  try (ResultSet resultSet = transaction.executeQuery(SELECT_RANDOM_STATEMENT)) {
+                    while (resultSet.next()) {
+                      rows++;
+                    }
+                  } catch (AbortedException ignored) {
+                    assertEquals(1, attempt);
+                    return -1;
+                  }
+                  return rows;
+                });
+        assertEquals(RANDOM_RESULT_SET_ROW_COUNT, recoveredRows);
+        assertEquals(2, swallowedMidStreamAttempts.get());
+      }
+    } finally {
+      mockSpanner.removeAllExecutionTimes();
+      SpannerPool.closeSpannerPool();
+      openTelemetry.close();
+      SpannerOptionsTestHelper.resetActiveTracingFramework();
     }
   }
 
