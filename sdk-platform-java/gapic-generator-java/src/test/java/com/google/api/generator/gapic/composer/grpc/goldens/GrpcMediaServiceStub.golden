@@ -93,6 +93,7 @@ public class GrpcMediaServiceStub extends MediaServiceStub {
         getMediaMetadataTransportSettings =
             GrpcCallSettings.<GetMediaMetadataRequest, GetMediaMetadataResponse>newBuilder()
                 .setMethodDescriptor(getMediaMetadataMethodDescriptor)
+                .setJavaMethodName("getMediaMetadata")
                 .build();
 
     this.getMediaMetadataCallable =

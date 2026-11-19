@@ -178,6 +178,11 @@ public class EchoWithVersionStubSettings extends StubSettings<EchoWithVersionStu
     return LibraryMetadata.newBuilder().setVersion(Version.VERSION).build();
   }
 
+  @Override
+  protected String getJavaClientName() {
+    return "com.google.api.version.test.EchoWithVersionClient";
+  }
+
   /** Builder for EchoWithVersionStubSettings. */
   public static class Builder extends StubSettings.Builder<EchoWithVersionStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;

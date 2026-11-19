@@ -265,6 +265,11 @@ public class IamCredentialsStubSettings extends StubSettings<IamCredentialsStubS
     return LibraryMetadata.newBuilder().build();
   }
 
+  @Override
+  protected String getJavaClientName() {
+    return "com.google.cloud.iam.credentials.v1.IamCredentialsClient";
+  }
+
   /** Builder for IamCredentialsStubSettings. */
   public static class Builder extends StubSettings.Builder<IamCredentialsStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;

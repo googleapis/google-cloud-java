@@ -126,6 +126,7 @@ public class HttpJsonMediaServiceStub extends MediaServiceStub {
             HttpJsonCallSettings.<GetMediaMetadataRequest, GetMediaMetadataResponse>newBuilder()
                 .setMethodDescriptor(getMediaMetadataMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setJavaMethodName("getMediaMetadata")
                 .build();
 
     this.getMediaMetadataCallable =

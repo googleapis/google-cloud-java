@@ -450,44 +450,52 @@ public class HttpJsonEchoStub extends EchoStub {
             .setMethodDescriptor(echoMethodDescriptor)
             .setTypeRegistry(typeRegistry)
             .setResourceNameExtractor(request -> request.getName())
+            .setJavaMethodName("echo")
             .build();
     HttpJsonCallSettings<ExpandRequest, EchoResponse> expandTransportSettings =
         HttpJsonCallSettings.<ExpandRequest, EchoResponse>newBuilder()
             .setMethodDescriptor(expandMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setJavaMethodName("expand")
             .build();
     HttpJsonCallSettings<PagedExpandRequest, PagedExpandResponse> pagedExpandTransportSettings =
         HttpJsonCallSettings.<PagedExpandRequest, PagedExpandResponse>newBuilder()
             .setMethodDescriptor(pagedExpandMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setJavaMethodName("pagedExpand")
             .build();
     HttpJsonCallSettings<PagedExpandRequest, PagedExpandResponse>
         simplePagedExpandTransportSettings =
             HttpJsonCallSettings.<PagedExpandRequest, PagedExpandResponse>newBuilder()
                 .setMethodDescriptor(simplePagedExpandMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setJavaMethodName("simplePagedExpand")
                 .build();
     HttpJsonCallSettings<WaitRequest, Operation> waitTransportSettings =
         HttpJsonCallSettings.<WaitRequest, Operation>newBuilder()
             .setMethodDescriptor(waitMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setJavaMethodName("wait")
             .build();
     HttpJsonCallSettings<BlockRequest, BlockResponse> blockTransportSettings =
         HttpJsonCallSettings.<BlockRequest, BlockResponse>newBuilder()
             .setMethodDescriptor(blockMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setJavaMethodName("block")
             .build();
     HttpJsonCallSettings<EchoRequest, Object> collideNameTransportSettings =
         HttpJsonCallSettings.<EchoRequest, Object>newBuilder()
             .setMethodDescriptor(collideNameMethodDescriptor)
             .setTypeRegistry(typeRegistry)
             .setResourceNameExtractor(request -> request.getName())
+            .setJavaMethodName("collideName")
             .build();
     HttpJsonCallSettings<PagedExpandLegacyRequest, PagedExpandResponse>
         pagedExpandLegacyTransportSettings =
             HttpJsonCallSettings.<PagedExpandLegacyRequest, PagedExpandResponse>newBuilder()
                 .setMethodDescriptor(pagedExpandLegacyMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setJavaMethodName("pagedExpandLegacy")
                 .build();
 
     this.echoCallable =

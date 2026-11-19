@@ -108,6 +108,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
                   builder.add("project_id", String.valueOf(request.getProjectId()));
                   return builder.build();
                 })
+            .setJavaMethodName("deleteJob")
             .build();
     GrpcCallSettings<JobProto.ListJobsRequest, JobProto.JobList> listJobsTransportSettings =
         GrpcCallSettings.<JobProto.ListJobsRequest, JobProto.JobList>newBuilder()
@@ -118,6 +119,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
                   builder.add("project_id", String.valueOf(request.getProjectId()));
                   return builder.build();
                 })
+            .setJavaMethodName("listJobs")
             .build();
 
     this.deleteJobCallable =

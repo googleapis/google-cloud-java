@@ -302,6 +302,11 @@ public class ConnectionServiceStubSettings extends StubSettings<ConnectionServic
     return LibraryMetadata.newBuilder().build();
   }
 
+  @Override
+  protected String getJavaClientName() {
+    return "com.google.cloud.apigeeconnect.v1.ConnectionServiceClient";
+  }
+
   /** Builder for ConnectionServiceStubSettings. */
   public static class Builder extends StubSettings.Builder<ConnectionServiceStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;

@@ -202,17 +202,20 @@ public class GrpcLoggingServiceV2Stub extends LoggingServiceV2Stub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getLogName())
+            .setJavaMethodName("deleteLog")
             .build();
     GrpcCallSettings<WriteLogEntriesRequest, WriteLogEntriesResponse>
         writeLogEntriesTransportSettings =
             GrpcCallSettings.<WriteLogEntriesRequest, WriteLogEntriesResponse>newBuilder()
                 .setMethodDescriptor(writeLogEntriesMethodDescriptor)
                 .setResourceNameExtractor(request -> request.getLogName())
+                .setJavaMethodName("writeLogEntries")
                 .build();
     GrpcCallSettings<ListLogEntriesRequest, ListLogEntriesResponse>
         listLogEntriesTransportSettings =
             GrpcCallSettings.<ListLogEntriesRequest, ListLogEntriesResponse>newBuilder()
                 .setMethodDescriptor(listLogEntriesMethodDescriptor)
+                .setJavaMethodName("listLogEntries")
                 .build();
     GrpcCallSettings<
             ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse>
@@ -221,6 +224,7 @@ public class GrpcLoggingServiceV2Stub extends LoggingServiceV2Stub {
                 .<ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse>
                     newBuilder()
                 .setMethodDescriptor(listMonitoredResourceDescriptorsMethodDescriptor)
+                .setJavaMethodName("listMonitoredResourceDescriptors")
                 .build();
     GrpcCallSettings<ListLogsRequest, ListLogsResponse> listLogsTransportSettings =
         GrpcCallSettings.<ListLogsRequest, ListLogsResponse>newBuilder()
@@ -232,11 +236,13 @@ public class GrpcLoggingServiceV2Stub extends LoggingServiceV2Stub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getParent())
+            .setJavaMethodName("listLogs")
             .build();
     GrpcCallSettings<TailLogEntriesRequest, TailLogEntriesResponse>
         tailLogEntriesTransportSettings =
             GrpcCallSettings.<TailLogEntriesRequest, TailLogEntriesResponse>newBuilder()
                 .setMethodDescriptor(tailLogEntriesMethodDescriptor)
+                .setJavaMethodName("tailLogEntries")
                 .build();
 
     this.deleteLogCallable =
