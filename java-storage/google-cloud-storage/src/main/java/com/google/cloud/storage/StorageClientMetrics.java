@@ -79,6 +79,7 @@ final class StorageClientMetrics implements AutoCloseable {
   static final String METRIC_GCP_CLIENT_REQUEST_DURATION = "gcp.client.request.duration";
   static final String METRIC_GCP_STORAGE_CLIENT_OPERATIONS = "gcp.storage.client.operations";
   static final String METRIC_GCP_STORAGE_CLIENT_ATTEMPTS = "gcp.storage.client.attempts";
+  static final String METRIC_GCP_STORAGE_CLIENT_RETRIES = "gcp.storage.client.retries";
   static final String METRIC_GCP_STORAGE_CLIENT_ERRORS = "gcp.storage.client.errors";
   static final String METRIC_GCP_STORAGE_CLIENT_TTFB = "gcp.storage.client.ttfb";
   static final String METRIC_GCP_STORAGE_CLIENT_REQUEST_BODY_SIZE =
@@ -185,6 +186,7 @@ final class StorageClientMetrics implements AutoCloseable {
   @Nullable private final DoubleHistogram gcpClientRequestDuration;
   @Nullable private final LongCounter operations;
   @Nullable private final LongCounter attempts;
+  @Nullable private final LongCounter retries;
   @Nullable private final LongCounter errors;
   @Nullable private final DoubleHistogram ttfb;
   @Nullable private final LongHistogram requestBodySize;
@@ -251,6 +253,14 @@ final class StorageClientMetrics implements AutoCloseable {
                       + " including retries, resumable upload chunks and list pages.")
               .setUnit("{attempt}")
               .build();
+      this.retries =
+          meter
+              .counterBuilder(METRIC_GCP_STORAGE_CLIENT_RETRIES)
+              .setDescription(
+                  "Number of GCS client attempts that retried an earlier failed attempt of the same"
+                      + " request.")
+              .setUnit("{attempt}")
+              .build();
       this.errors =
           meter
               .counterBuilder(METRIC_GCP_STORAGE_CLIENT_ERRORS)
@@ -295,6 +305,7 @@ final class StorageClientMetrics implements AutoCloseable {
       this.gcpClientRequestDuration = null;
       this.operations = null;
       this.attempts = null;
+      this.retries = null;
       this.errors = null;
       this.ttfb = null;
       this.requestBodySize = null;
@@ -400,6 +411,10 @@ final class StorageClientMetrics implements AutoCloseable {
     return attempts;
   }
 
+  @Nullable LongCounter getRetries() {
+    return retries;
+  }
+
   @Nullable LongCounter getErrors() {
     return errors;
   }
@@ -499,6 +514,20 @@ final class StorageClientMetrics implements AutoCloseable {
             .put(KEY_NETWORK_PATH, networkPath)
             .build();
     ttfb.record(ttfbSeconds, attributes, otelContext);
+  }
+
+  void recordRetry(
+      Context otelContext, String operationName, String networkPath, String errorType) {
+    if (retries == null) {
+      return;
+    }
+    Attributes attributes =
+        baseAttributes.toBuilder()
+            .put(KEY_GCP_STORAGE_OPERATION, operationName)
+            .put(KEY_NETWORK_PATH, networkPath)
+            .put(KEY_ERROR_TYPE, errorType)
+            .build();
+    retries.add(1L, attributes, otelContext);
   }
 
   @Nullable
