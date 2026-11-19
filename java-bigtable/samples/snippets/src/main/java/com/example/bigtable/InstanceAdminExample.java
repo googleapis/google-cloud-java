@@ -175,7 +175,6 @@ public class InstanceAdminExample {
   /** Demonstrates how to list all instances within a project. */
   public void listInstances() {
     System.out.println("\nListing Instances");
-    // [START bigtable_list_instances]
     try {
       String parent = "projects/" + projectId;
       ListInstancesRequest request = ListInstancesRequest.newBuilder().setParent(parent).build();
@@ -186,7 +185,6 @@ public class InstanceAdminExample {
     } catch (Exception e) {
       System.err.println("Failed to list instances: " + e.getMessage());
     }
-    // [END bigtable_list_instances]
   }
 
   /** Demonstrates how to get an instance. */
