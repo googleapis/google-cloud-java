@@ -17,18 +17,26 @@
 package com.google.cloud.spanner;
 
 import com.google.auth.Credentials;
-import com.google.cloud.opentelemetry.trace.TraceConfiguration;
-import com.google.cloud.opentelemetry.trace.TraceExporter;
+import com.google.auth.oauth2.GoogleCredentials;
 import com.google.common.annotations.VisibleForTesting;
+import com.google.common.base.Strings;
 import com.google.common.collect.ImmutableList;
 import io.opentelemetry.api.OpenTelemetry;
+import io.opentelemetry.api.common.AttributeKey;
+import io.opentelemetry.api.common.Attributes;
+import io.opentelemetry.api.common.AttributesBuilder;
 import io.opentelemetry.api.trace.propagation.W3CTraceContextPropagator;
 import io.opentelemetry.context.propagation.ContextPropagators;
+import io.opentelemetry.exporter.otlp.trace.OtlpGrpcSpanExporter;
 import io.opentelemetry.sdk.OpenTelemetrySdk;
+import io.opentelemetry.sdk.resources.Resource;
 import io.opentelemetry.sdk.trace.SdkTracerProvider;
 import io.opentelemetry.sdk.trace.export.BatchSpanProcessor;
 import io.opentelemetry.sdk.trace.export.SpanExporter;
 import io.opentelemetry.sdk.trace.samplers.Sampler;
+import java.io.IOException;
+import java.net.URI;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -48,9 +56,18 @@ final class BuiltInTracingProvider {
 
   private static final Logger logger = Logger.getLogger(BuiltInTracingProvider.class.getName());
 
+  private static final String TELEMETRY_API_ENDPOINT = "https://telemetry.googleapis.com";
+  private static final String CLOUD_PLATFORM_SCOPE =
+      "https://www.googleapis.com/auth/cloud-platform";
+  private static final AttributeKey<String> GCP_PROJECT_ID_KEY =
+      AttributeKey.stringKey("gcp.project_id");
+  private static final AttributeKey<String> SERVICE_NAME_KEY =
+      AttributeKey.stringKey("service.name");
+  private static final String OTEL_SERVICE_NAME = "OTEL_SERVICE_NAME";
+
   private final Map<List<Object>, OpenTelemetrySdk> openTelemetries = new HashMap<>();
   private BiFunction<String, Credentials, SpanExporter> spanExporterFactory =
-      BuiltInTracingProvider::createCloudTraceExporter;
+      BuiltInTracingProvider::createTelemetryApiExporter;
   private Thread shutdownHook;
   private boolean openCensusWarningLogged;
   private boolean customTracingInfoLogged;
@@ -65,7 +82,8 @@ final class BuiltInTracingProvider {
     if (openTelemetry == null) {
       try {
         openTelemetry =
-            createOpenTelemetry(spanExporterFactory.apply(projectId, credentials), samplingRate);
+            createOpenTelemetry(
+                projectId, spanExporterFactory.apply(projectId, credentials), samplingRate);
       } catch (Throwable throwable) {
         logger.log(
             Level.WARNING,
@@ -119,7 +137,7 @@ final class BuiltInTracingProvider {
   synchronized void reset() {
     shutdown();
     openTelemetries.clear();
-    spanExporterFactory = BuiltInTracingProvider::createCloudTraceExporter;
+    spanExporterFactory = BuiltInTracingProvider::createTelemetryApiExporter;
     openCensusWarningLogged = false;
     customTracingInfoLogged = false;
   }
@@ -131,9 +149,10 @@ final class BuiltInTracingProvider {
   }
 
   private static OpenTelemetrySdk createOpenTelemetry(
-      SpanExporter spanExporter, double samplingRate) {
+      String projectId, SpanExporter spanExporter, double samplingRate) {
     SdkTracerProvider tracerProvider =
         SdkTracerProvider.builder()
+            .setResource(createResource(projectId, System.getenv(OTEL_SERVICE_NAME)))
             .setSampler(Sampler.parentBased(Sampler.traceIdRatioBased(samplingRate)))
             .addSpanProcessor(BatchSpanProcessor.builder(spanExporter).build())
             .build();
@@ -143,8 +162,42 @@ final class BuiltInTracingProvider {
         .build();
   }
 
-  private static SpanExporter createCloudTraceExporter(String projectId, Credentials credentials) {
-    return TraceExporter.createWithConfiguration(
-        TraceConfiguration.builder().setProjectId(projectId).setCredentials(credentials).build());
+  @VisibleForTesting
+  static Resource createResource(String projectId, @Nullable String serviceName) {
+    AttributesBuilder attributes = Attributes.builder().put(GCP_PROJECT_ID_KEY, projectId);
+    if (!Strings.isNullOrEmpty(serviceName)) {
+      attributes.put(SERVICE_NAME_KEY, serviceName);
+    }
+    return Resource.getDefault().merge(Resource.create(attributes.build()));
+  }
+
+  private static SpanExporter createTelemetryApiExporter(
+      String projectId, Credentials credentials) {
+    Credentials scopedCredentials =
+        credentials instanceof GoogleCredentials
+                && ((GoogleCredentials) credentials).createScopedRequired()
+            ? ((GoogleCredentials) credentials).createScoped(CLOUD_PLATFORM_SCOPE)
+            : credentials;
+    return OtlpGrpcSpanExporter.builder()
+        .setEndpoint(TELEMETRY_API_ENDPOINT)
+        .setHeaders(() -> getRequestHeaders(scopedCredentials))
+        .build();
+  }
+
+  @VisibleForTesting
+  static Map<String, String> getRequestHeaders(Credentials credentials) {
+    try {
+      Map<String, String> headers = new HashMap<>();
+      for (Map.Entry<String, List<String>> header :
+          credentials.getRequestMetadata(URI.create(TELEMETRY_API_ENDPOINT)).entrySet()) {
+        if (!header.getValue().isEmpty()) {
+          headers.put(header.getKey(), header.getValue().get(0));
+        }
+      }
+      return headers;
+    } catch (IOException exception) {
+      logger.log(Level.WARNING, "Unable to get credentials for built-in tracing", exception);
+      return Collections.emptyMap();
+    }
   }
 }

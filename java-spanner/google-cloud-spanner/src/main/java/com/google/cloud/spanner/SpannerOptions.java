@@ -3056,7 +3056,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
       return getOpenTelemetry();
     }
     OpenTelemetry openTelemetry = getOpenTelemetry();
-    if (this.openTelemetry != null || openTelemetry.getTracerProvider() != TracerProvider.noop()) {
+    if (isTracingEnabled(openTelemetry)) {
       BuiltInTracingProvider.INSTANCE.logCustomTracingInfoOnce(this.openTelemetry != null);
       return openTelemetry;
     }
@@ -3070,6 +3070,19 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
         BuiltInTracingProvider.INSTANCE.getOrCreateOpenTelemetry(
             getProjectId(), getCredentials(), builtInTracingSamplingRate);
     return builtInOpenTelemetry == null ? openTelemetry : builtInOpenTelemetry;
+  }
+
+  private boolean isTracingEnabled(OpenTelemetry openTelemetry) {
+    try {
+      return openTelemetry
+          .getTracer(
+              MetricRegistryConstants.INSTRUMENTATION_SCOPE,
+              GaxProperties.getLibraryVersion(getClass()))
+          .isEnabled();
+    } catch (Throwable throwable) {
+      return this.openTelemetry != null
+          || openTelemetry.getTracerProvider() != TracerProvider.noop();
+    }
   }
 
   @Override

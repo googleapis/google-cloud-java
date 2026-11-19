@@ -35,11 +35,15 @@ import io.grpc.ServerInterceptor;
 import io.grpc.netty.shaded.io.grpc.netty.NettyServerBuilder;
 import io.opentelemetry.api.GlobalOpenTelemetry;
 import io.opentelemetry.api.OpenTelemetry;
+import io.opentelemetry.api.common.AttributeKey;
 import io.opentelemetry.api.trace.TracerProvider;
 import io.opentelemetry.sdk.OpenTelemetrySdk;
+import io.opentelemetry.sdk.metrics.SdkMeterProvider;
+import io.opentelemetry.sdk.resources.Resource;
 import io.opentelemetry.sdk.testing.exporter.InMemorySpanExporter;
 import io.opentelemetry.sdk.trace.SdkTracerProvider;
 import io.opentelemetry.sdk.trace.data.SpanData;
+import io.opentelemetry.sdk.trace.export.SimpleSpanProcessor;
 import java.net.InetSocketAddress;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -118,6 +122,19 @@ public class BuiltInTracingTest {
     SpannerOptionsHelper.resetActiveTracingFramework();
     SpannerOptions.useDefaultEnvironment();
     mockSpanner.reset();
+  }
+
+  private static OpenTelemetry createOpenTelemetryWithTracing() {
+    return OpenTelemetrySdk.builder()
+        .setTracerProvider(
+            SdkTracerProvider.builder()
+                .addSpanProcessor(SimpleSpanProcessor.create(InMemorySpanExporter.create()))
+                .build())
+        .build();
+  }
+
+  private static OpenTelemetry createMetricsOnlyOpenTelemetry() {
+    return OpenTelemetrySdk.builder().setMeterProvider(SdkMeterProvider.builder().build()).build();
   }
 
   private static SpannerOptions.Builder createOptionsBuilder() {
@@ -202,6 +219,28 @@ public class BuiltInTracingTest {
     List<SpanData> spans = spanExporter.getFinishedSpanItems();
     assertThat(spans).isNotEmpty();
     assertThat(spans.stream().map(SpanData::getTraceId)).contains(traceParentParts[1]);
+    assertThat(spans.get(0).getResource().getAttribute(AttributeKey.stringKey("gcp.project_id")))
+        .isEqualTo("test-project");
+  }
+
+  @Test
+  public void resourceUsesTheServiceNameWhenSet() {
+    Resource resource = BuiltInTracingProvider.createResource("test-project", "my-service");
+
+    assertThat(resource.getAttribute(AttributeKey.stringKey("gcp.project_id")))
+        .isEqualTo("test-project");
+    assertThat(resource.getAttribute(AttributeKey.stringKey("service.name")))
+        .isEqualTo("my-service");
+    assertThat(
+            BuiltInTracingProvider.createResource("test-project", null)
+                .getAttribute(AttributeKey.stringKey("service.name")))
+        .isEqualTo(Resource.getDefault().getAttribute(AttributeKey.stringKey("service.name")));
+  }
+
+  @Test
+  public void requestHeadersContainTheCredentials() {
+    assertThat(BuiltInTracingProvider.getRequestHeaders(CREDENTIALS))
+        .containsEntry("Authorization", "Bearer token");
   }
 
   @Test
@@ -221,7 +260,7 @@ public class BuiltInTracingTest {
 
   @Test
   public void openTelemetryOfTheClientIsUsedInsteadOfBuiltInTracing() {
-    OpenTelemetry openTelemetry = OpenTelemetry.noop();
+    OpenTelemetry openTelemetry = createOpenTelemetryWithTracing();
     SpannerOptions options =
         createOptionsBuilder()
             .setEnableBuiltInTracing(true)
@@ -234,13 +273,34 @@ public class BuiltInTracingTest {
 
   @Test
   public void globalOpenTelemetryWithTracingIsUsedInsteadOfBuiltInTracing() {
-    OpenTelemetrySdk global =
-        OpenTelemetrySdk.builder().setTracerProvider(SdkTracerProvider.builder().build()).build();
-    GlobalOpenTelemetry.set(global);
+    GlobalOpenTelemetry.set(createOpenTelemetryWithTracing());
     SpannerOptions options = createOptionsBuilder().setEnableBuiltInTracing(true).build();
 
     assertThat(options.getTracingOpenTelemetry()).isSameInstanceAs(GlobalOpenTelemetry.get());
     assertThat(options.isEndToEndTracingEnabled()).isTrue();
+  }
+
+  @Test
+  public void metricsOnlyOpenTelemetryOfTheClientDoesNotDisableBuiltInTracing() {
+    OpenTelemetry openTelemetry = createMetricsOnlyOpenTelemetry();
+    SpannerOptions options =
+        createOptionsBuilder()
+            .setEnableBuiltInTracing(true)
+            .setOpenTelemetry(openTelemetry)
+            .build();
+
+    assertThat(options.getTracingOpenTelemetry()).isInstanceOf(OpenTelemetrySdk.class);
+    assertThat(options.getTracingOpenTelemetry()).isNotSameInstanceAs(openTelemetry);
+    assertThat(options.getOpenTelemetry()).isSameInstanceAs(openTelemetry);
+  }
+
+  @Test
+  public void metricsOnlyGlobalOpenTelemetryDoesNotDisableBuiltInTracing() {
+    GlobalOpenTelemetry.set(createMetricsOnlyOpenTelemetry());
+    SpannerOptions options = createOptionsBuilder().setEnableBuiltInTracing(true).build();
+
+    assertThat(options.getTracingOpenTelemetry()).isInstanceOf(OpenTelemetrySdk.class);
+    assertThat(options.getOpenTelemetry()).isSameInstanceAs(GlobalOpenTelemetry.get());
   }
 
   @Test
