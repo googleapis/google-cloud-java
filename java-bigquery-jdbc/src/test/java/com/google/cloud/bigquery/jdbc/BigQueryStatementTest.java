@@ -17,6 +17,7 @@
 package com.google.cloud.bigquery.jdbc;
 
 import static com.google.cloud.bigquery.jdbc.utils.ArrowUtilities.serializeSchema;
+import static com.google.cloud.bigquery.jdbc.utils.ArrowUtilities.serializeVectorSchemaRoot;
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
@@ -26,6 +27,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
 import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.anyLong;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.mock;
@@ -66,8 +68,10 @@ import com.google.cloud.bigquery.StandardSQLTypeName;
 import com.google.cloud.bigquery.TableId;
 import com.google.cloud.bigquery.TableResult;
 import com.google.cloud.bigquery.exception.BigQueryJdbcException;
+import com.google.cloud.bigquery.exception.BigQueryJdbcRuntimeException;
 import com.google.cloud.bigquery.jdbc.BigQueryStatement.JobIdWrapper;
 import com.google.cloud.bigquery.jdbc.telemetry.v1.DriverFeature;
+import com.google.cloud.bigquery.jdbc.telemetry.v1.QueryApiType;
 import com.google.cloud.bigquery.jdbc.telemetry.v1.TelemetryManager;
 import com.google.cloud.bigquery.spi.BigQueryRpcFactory;
 import com.google.cloud.bigquery.storage.v1.ArrowRecordBatch;
@@ -107,6 +111,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.concurrent.LinkedBlockingDeque;
+import java.util.concurrent.RejectedExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.stream.Stream;
@@ -1840,6 +1845,387 @@ public class BigQueryStatementTest {
     assertTrue(queue.isEmpty());
   }
 
+  /** A statement with EnableQueryResultsArrowFormat on and a small-result threshold of 100 rows. */
+  private BigQueryStatement arrowFormatStatement() throws SQLException {
+    return arrowFormatStatement(100);
+  }
+
+  private BigQueryStatement arrowFormatStatement(int smallResultThreshold) throws SQLException {
+    doReturn(true).when(bigQueryConnection).isEnableQueryResultsArrowFormat();
+    doReturn(smallResultThreshold).when(bigQueryConnection).getHighThroughputMinTableSize();
+    return new BigQueryStatement(bigQueryConnection);
+  }
+
+  private static TableResult selectResult(JobId jobId, long totalRows, boolean hasNextPage) {
+    TableResult result = mock(TableResult.class);
+    doReturn(jobId).when(result).getJobId();
+    doReturn(Schema.of(fieldList)).when(result).getSchema();
+    doReturn(totalRows).when(result).getTotalRows();
+    doReturn(hasNextPage).when(result).hasNextPage();
+    return result;
+  }
+
+  /** A result with more pages and a complete job reference: streamed if it has enough rows. */
+  private static TableResult multiPageResult(long totalRows) {
+    return selectResult(STREAM_JOB_ID, totalRows, true);
+  }
+
+  @Test
+  public void testUseJobStream_LargeResultWithNextPage() throws SQLException {
+    // 100 rows is the threshold itself.
+    assertTrue(arrowFormatStatement().useJobStream(multiPageResult(100L)));
+  }
+
+  @Test
+  public void testUseJobStream_PropertyOff() throws SQLException {
+    doReturn(100).when(bigQueryConnection).getHighThroughputMinTableSize();
+    BigQueryStatement statement = new BigQueryStatement(bigQueryConnection);
+
+    assertFalse(statement.useJobStream(multiPageResult(5000L)));
+  }
+
+  @Test
+  public void testUseJobStream_DestinationTableSet() throws SQLException {
+    doReturn("destination_table").when(bigQueryConnection).getDestinationTable();
+
+    assertFalse(arrowFormatStatement().useJobStream(multiPageResult(5000L)));
+  }
+
+  @Test
+  public void testUseJobStream_DestinationDatasetSet() throws SQLException {
+    doReturn("destination_dataset").when(bigQueryConnection).getDestinationDataset();
+
+    assertFalse(arrowFormatStatement().useJobStream(multiPageResult(5000L)));
+  }
+
+  @Test
+  public void testUseJobStream_NoNextPage() throws SQLException {
+    assertFalse(arrowFormatStatement().useJobStream(selectResult(STREAM_JOB_ID, 5000L, false)));
+  }
+
+  @Test
+  public void testUseJobStream_BelowThreshold() throws SQLException {
+    assertFalse(arrowFormatStatement().useJobStream(multiPageResult(99L)));
+  }
+
+  @Test
+  public void testUseJobStream_CountsRowsAfterMaxRows() throws SQLException {
+    BigQueryStatement statement = arrowFormatStatement();
+    TableResult result = multiPageResult(1_000_000L);
+
+    statement.setMaxRows(99);
+    assertFalse(statement.useJobStream(result));
+
+    statement.setMaxRows(100);
+    assertTrue(statement.useJobStream(result));
+  }
+
+  @Test
+  public void testUseJobStream_MaxRowsWithinFirstPage() throws SQLException {
+    BigQueryStatement statement = arrowFormatStatement();
+    TableResult result = multiPageResult(1_000_000L);
+    doReturn(1000L).when(result).getRowsInPage();
+
+    // The first page already holds every row that setMaxRows lets through.
+    statement.setMaxRows(1000);
+    assertFalse(statement.useJobStream(result));
+
+    statement.setMaxRows(1001);
+    assertTrue(statement.useJobStream(result));
+  }
+
+  @Test
+  public void testUseJobStream_FirstPageSizeUnknown() throws SQLException {
+    TableResult result = multiPageResult(5000L);
+    // The count is nullable in TableResult. A mock returns 0 for it unless told otherwise.
+    doReturn(null).when(result).getRowsInPage();
+
+    assertTrue(arrowFormatStatement().useJobStream(result));
+  }
+
+  @Test
+  public void testUseJobStream_IncompleteJobReference() throws SQLException {
+    BigQueryStatement statement = arrowFormatStatement();
+
+    for (JobId incomplete :
+        Arrays.asList(
+            null,
+            JobId.of("j"),
+            STREAM_JOB_ID.toBuilder().setProject(null).build(),
+            STREAM_JOB_ID.toBuilder().setLocation(null).build(),
+            STREAM_JOB_ID.toBuilder().setLocation("").build(),
+            STREAM_JOB_ID.toBuilder().setJob(null).build())) {
+      assertFalse(
+          statement.useJobStream(selectResult(incomplete, 5000L, true)),
+          "Expected no job stream for " + incomplete);
+    }
+  }
+
+  @Test
+  public void testUseJobStream_IgnoresActivationRatio() throws SQLException {
+    // The High-Throughput API would need more than 1000 pages here. The job stream has no such
+    // rule.
+    doReturn(1000).when(bigQueryConnection).getHighThroughputActivationRatio();
+
+    assertTrue(arrowFormatStatement().useJobStream(multiPageResult(5000L)));
+  }
+
+  /** {@link #arrowFormatStatement()} as a spy that starts no real job-stream reader. */
+  private BigQueryStatement jobStreamStatementSpy() throws SQLException {
+    BigQueryStatement stmtSpy = Mockito.spy(arrowFormatStatement());
+    doReturn(storageReadClient).when(stmtSpy).getBigQueryReadClient();
+    doReturn(mock(Future.class))
+        .when(stmtSpy)
+        .populateArrowBufferedQueueFromJobStream(
+            any(JobId.class), anyLong(), any(BlockingQueue.class), any(BigQueryReadClient.class));
+    return stmtSpy;
+  }
+
+  private static void verifyNoJobStreamReader(BigQueryStatement stmtSpy) throws SQLException {
+    verify(stmtSpy, Mockito.never())
+        .populateArrowBufferedQueueFromJobStream(
+            any(), anyLong(), any(BlockingQueue.class), any(BigQueryReadClient.class));
+  }
+
+  @Test
+  public void testProcessQueryResponseReadsLargeResultFromJobStream() throws SQLException {
+    BigQueryStatement stmtSpy = jobStreamStatementSpy();
+
+    stmtSpy.processQueryResponse("SELECT 1", multiPageResult(5000L));
+
+    assertThat(stmtSpy.currentResultSet).isInstanceOf(BigQueryArrowResultSet.class);
+    assertEquals(-1, stmtSpy.getUpdateCount());
+    assertEquals(
+        QueryApiType.QUERY_API_TYPE_READ_API, stmtSpy.currentExecutionBuilder.getQueryApiType());
+    // The stream is the result's own job's, read from row 0.
+    verify(stmtSpy)
+        .populateArrowBufferedQueueFromJobStream(
+            eq(STREAM_JOB_ID), eq(0L), any(BlockingQueue.class), eq(storageReadClient));
+    // Neither a read session nor the jobs.get call that finds its table.
+    verify(stmtSpy, Mockito.never()).getReadSession(any());
+    verify(bigquery, Mockito.never()).getJob(any(JobId.class));
+    verify(stmtSpy, Mockito.never()).processJsonResultSet(any(), any());
+  }
+
+  @Test
+  public void testProcessQueryResponseUsesNoReadSessionInArrowFormat() throws SQLException {
+    // The High-Throughput API is on too, and its own rule is met: 5 pages of 1,000 rows.
+    doReturn(true).when(bigQueryConnection).isEnableHighThroughputAPI();
+    doReturn(2).when(bigQueryConnection).getHighThroughputActivationRatio();
+    BigQueryStatement stmtSpy = jobStreamStatementSpy();
+    TableResult result = multiPageResult(5000L);
+    assertTrue(stmtSpy.useReadAPI(result));
+    // Fewer rows than the job stream needs.
+    stmtSpy.setMaxRows(50);
+    BigQueryJsonResultSet jsonResultSet = mock(BigQueryJsonResultSet.class);
+    doReturn(jsonResultSet).when(stmtSpy).processJsonResultSet(eq(result), any());
+
+    stmtSpy.processQueryResponse("SELECT 1", result);
+
+    assertThat(stmtSpy.currentResultSet).isEqualTo(jsonResultSet);
+    assertEquals(
+        QueryApiType.QUERY_API_TYPE_STANDARD_REST_API,
+        stmtSpy.currentExecutionBuilder.getQueryApiType());
+    verify(stmtSpy, Mockito.never()).processArrowResultSet(any(), any());
+    verifyNoJobStreamReader(stmtSpy);
+  }
+
+  @Test
+  public void testProcessQueryResponseKeepsReadSessionForDestinationTable() throws SQLException {
+    doReturn(true).when(bigQueryConnection).isEnableHighThroughputAPI();
+    doReturn(2).when(bigQueryConnection).getHighThroughputActivationRatio();
+    doReturn("destination_table").when(bigQueryConnection).getDestinationTable();
+    BigQueryStatement stmtSpy = jobStreamStatementSpy();
+    TableResult result = multiPageResult(5000L);
+    ResultSet readSessionResultSet = mock(ResultSet.class);
+    doReturn(readSessionResultSet).when(stmtSpy).processArrowResultSet(eq(result), any());
+
+    stmtSpy.processQueryResponse("SELECT 1", result);
+
+    assertThat(stmtSpy.currentResultSet).isEqualTo(readSessionResultSet);
+    verifyNoJobStreamReader(stmtSpy);
+  }
+
+  @Test
+  public void testProcessQueryResponseFailsWhenJobStreamReaderCannotStart() throws SQLException {
+    BigQueryStatement stmtSpy = jobStreamStatementSpy();
+    Mockito.doThrow(new RejectedExecutionException("The pool is full"))
+        .when(stmtSpy)
+        .populateArrowBufferedQueueFromJobStream(
+            any(JobId.class), anyLong(), any(BlockingQueue.class), any(BigQueryReadClient.class));
+
+    SQLException thrown =
+        assertThrows(
+            SQLException.class,
+            () -> stmtSpy.processQueryResponse("SELECT 1", multiPageResult(5000L)));
+
+    assertThat(thrown.getMessage()).contains("Unable to allocate background threads");
+    // The fallback to JSON is not part of this change.
+    verify(stmtSpy, Mockito.never()).processJsonResultSet(any(), any());
+  }
+
+  @Test
+  public void testProcessQueryResponseFailsWhenReadClientCannotBeCreated() throws SQLException {
+    BigQueryStatement stmtSpy = jobStreamStatementSpy();
+    BigQueryJdbcRuntimeException noClient =
+        new BigQueryJdbcRuntimeException("Failed to initialize BigQueryReadClient");
+    Mockito.doThrow(noClient).when(stmtSpy).getBigQueryReadClient();
+
+    SQLException thrown =
+        assertThrows(
+            SQLException.class,
+            () -> stmtSpy.processQueryResponse("SELECT 1", multiPageResult(5000L)));
+
+    assertThat(thrown.getMessage()).contains("Failed to initialize BigQueryReadClient");
+    assertEquals(noClient, thrown.getCause());
+    verifyNoJobStreamReader(stmtSpy);
+    verify(stmtSpy, Mockito.never()).processJsonResultSet(any(), any());
+  }
+
+  @Test
+  public void testProcessQueryResponseCancelsReaderWhenResultSetCannotBeBuilt()
+      throws SQLException {
+    BigQueryStatement stmtSpy = jobStreamStatementSpy();
+    Future<?> reader = mock(Future.class);
+    doReturn(reader)
+        .when(stmtSpy)
+        .populateArrowBufferedQueueFromJobStream(
+            any(JobId.class), anyLong(), any(BlockingQueue.class), any(BigQueryReadClient.class));
+    TableResult result = multiPageResult(5000L);
+    Mockito.doThrow(new IllegalStateException("No schema")).when(result).getSchema();
+
+    SQLException thrown =
+        assertThrows(SQLException.class, () -> stmtSpy.processQueryResponse("SELECT 1", result));
+
+    assertThat(thrown.getMessage()).contains("No schema");
+    // The reader had started, so it must not be left running.
+    verify(reader).cancel(true);
+  }
+
+  @Test
+  public void testCancelDuringJobStreamSetupDoesNotBreakTheResultSet() throws Exception {
+    BigQueryStatement stmtSpy = jobStreamStatementSpy();
+    // cancel() from another thread lands right after the reader starts, and clears the statement's
+    // state. The stub then queues an end of stream; a real reader would keep reading.
+    // Known gap, not what this test is for: nothing checks for a cancel between here and the
+    // result set being stored, so the cancel is lost and the statement keeps the result set. When
+    // that is fixed, this test must change.
+    Mockito.doAnswer(
+            invocation -> {
+              BlockingQueue<BigQueryArrowBatchWrapper> queue = invocation.getArgument(2);
+              stmtSpy.cancel();
+              queue.put(BigQueryArrowBatchWrapper.of(null, true));
+              return mock(Future.class);
+            })
+        .when(stmtSpy)
+        .populateArrowBufferedQueueFromJobStream(
+            any(JobId.class), anyLong(), any(BlockingQueue.class), any(BigQueryReadClient.class));
+
+    stmtSpy.processQueryResponse("SELECT 1", multiPageResult(5000L));
+
+    // The result set reads the queue its reader was given: it sees the stream end early and
+    // reports that. A queue taken from statement state would be null by now, and next() would
+    // throw NullPointerException.
+    try (ResultSet resultSet = stmtSpy.getResultSet()) {
+      SQLException thrown = assertThrows(SQLException.class, resultSet::next);
+      assertThat(thrown.getCause().getMessage()).contains("ended after 0 of 5000 rows");
+    }
+  }
+
+  @Test
+  public void testLongRunningJobIsReadFromJobStream() throws Exception {
+    BigQueryStatement stmtSpy = jobStreamStatementSpy();
+    // jobs.query returned before the job finished, so the driver waits on the job.
+    Job job =
+        getJobMock(
+            multiPageResult(5000L),
+            QueryJobConfiguration.newBuilder(query).build(),
+            StatementType.SELECT);
+    doReturn(job).when(bigquery).queryWithTimeout(any(QueryJobConfiguration.class), any(), any());
+
+    assertTrue(stmtSpy.execute(query));
+
+    verify(job).getQueryResults(QueryResultsOption.pageSize(1000L));
+    assertThat(stmtSpy.getResultSet()).isInstanceOf(BigQueryArrowResultSet.class);
+    verify(stmtSpy)
+        .populateArrowBufferedQueueFromJobStream(
+            eq(STREAM_JOB_ID), eq(0L), any(BlockingQueue.class), eq(storageReadClient));
+  }
+
+  @Test
+  public void testScriptUsesJsonForSmallSelectAndJobStreamForLargeSelect() throws Exception {
+    BigQueryStatement stmtSpy = jobStreamStatementSpy();
+
+    TableResult parentResult = mockTableResultWithJob("parent-script-job");
+    doReturn(StatementType.SCRIPT).when(parentResult).getStatementType();
+    doReturn(parentResult)
+        .when(bigquery)
+        .queryWithTimeout(any(QueryJobConfiguration.class), any(), any());
+
+    JobId largeChildId = STREAM_JOB_ID.toBuilder().setJob("child-large-select").build();
+    Job smallChildJob =
+        createScriptChildJobMock("child-small-select", StatementType.SELECT, 10L, 10L, false, null);
+    Job largeChildJob =
+        createScriptChildJobMock(largeChildId, StatementType.SELECT, 5000L, 1000L, true, null);
+
+    @SuppressWarnings("unchecked")
+    Page<Job> childJobsPage = mock(Page.class);
+    doReturn(Arrays.asList(largeChildJob, smallChildJob)).when(childJobsPage).iterateAll();
+    doReturn(childJobsPage)
+        .when(bigquery)
+        .listJobs(eq(JobListOption.parentJobId("parent-script-job")));
+
+    assertTrue(stmtSpy.execute("SELECT 1; SELECT * FROM UNNEST(GENERATE_ARRAY(1, 5000));"));
+    assertThat(stmtSpy.getResultSet()).isInstanceOf(BigQueryJsonResultSet.class);
+    verifyNoJobStreamReader(stmtSpy);
+
+    assertTrue(stmtSpy.getMoreResults());
+    assertThat(stmtSpy.getResultSet()).isInstanceOf(BigQueryArrowResultSet.class);
+    // Each child job has its own stream.
+    verify(stmtSpy)
+        .populateArrowBufferedQueueFromJobStream(
+            eq(largeChildId), eq(0L), any(BlockingQueue.class), eq(storageReadClient));
+
+    assertFalse(stmtSpy.getMoreResults());
+    verify(stmtSpy, Mockito.never()).getReadSession(any());
+  }
+
+  @Test
+  public void testJobStreamResultSetReturnsStreamedRows() throws Exception {
+    BigQueryStatement stmtSpy = Mockito.spy(arrowFormatStatement(2));
+    // The test root holds one row: (false, 1).
+    ReadRowsResponse schemaAndRow =
+        ReadRowsResponse.newBuilder()
+            .setArrowSchema(arrowSchema)
+            .setArrowRecordBatch(
+                ArrowRecordBatch.newBuilder()
+                    .setSerializedRecordBatch(serializeVectorSchemaRoot(getTestVectorSchemaRoot())))
+            .setRowCount(1)
+            .build();
+    ReadRowsResponse row = schemaAndRow.toBuilder().clearArrowSchema().build();
+    List<ReadRowsRequest> requests = new ArrayList<>();
+    doReturn(readClientServing(requests, readRowsAttempt(null, schemaAndRow, row)))
+        .when(stmtSpy)
+        .getBigQueryReadClient();
+
+    stmtSpy.processQueryResponse("SELECT 1", multiPageResult(2L));
+
+    int rows = 0;
+    try (ResultSet resultSet = stmtSpy.getResultSet()) {
+      while (resultSet.next()) {
+        assertFalse(resultSet.getBoolean(1));
+        assertEquals(1L, resultSet.getLong(2));
+        rows++;
+      }
+    }
+    assertEquals(2, rows);
+    // One request: the job's stream from row 0, with the Arrow options.
+    assertEquals(1, requests.size());
+    assertEquals(JOB_STREAM_NAME, requests.get(0).getReadStream());
+    assertEquals(0L, requests.get(0).getOffset());
+    assertTrue(requests.get(0).hasArrowSerializationOptions());
+  }
+
   private static FieldValueList createTestRow(boolean first, long second) {
     return FieldValueList.of(
         Arrays.asList(
@@ -2133,11 +2519,20 @@ public class BigQueryStatementTest {
       boolean hasNextPage,
       Long dmlAffectedRows)
       throws InterruptedException {
-    TableResult childResult = mockTableResultWithJob(childId);
-    doReturn(Schema.of(fieldList)).when(childResult).getSchema();
-    doReturn(totalRows).when(childResult).getTotalRows();
+    return createScriptChildJobMock(
+        JobId.of(childId), statementType, totalRows, rowsInPage, hasNextPage, dmlAffectedRows);
+  }
+
+  private Job createScriptChildJobMock(
+      JobId childId,
+      StatementType statementType,
+      long totalRows,
+      long rowsInPage,
+      boolean hasNextPage,
+      Long dmlAffectedRows)
+      throws InterruptedException {
+    TableResult childResult = selectResult(childId, totalRows, hasNextPage);
     doReturn(rowsInPage).when(childResult).getRowsInPage();
-    doReturn(hasNextPage).when(childResult).hasNextPage();
     if (dmlAffectedRows != null) {
       doReturn(dmlAffectedRows).when(childResult).getNumDmlAffectedRows();
     }
