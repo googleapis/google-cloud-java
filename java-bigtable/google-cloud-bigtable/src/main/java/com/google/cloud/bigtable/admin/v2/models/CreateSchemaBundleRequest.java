@@ -17,6 +17,7 @@
 package com.google.cloud.bigtable.admin.v2.models;
 
 import com.google.api.core.InternalApi;
+import com.google.bigtable.admin.v2.AvroSchema;
 import com.google.bigtable.admin.v2.ProtoSchema;
 import com.google.cloud.bigtable.admin.v2.internal.NameUtil;
 import com.google.common.base.Objects;
@@ -25,6 +26,9 @@ import com.google.protobuf.ByteString;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.Collections;
+import java.util.List;
+import java.util.logging.Logger;
 import javax.annotation.Nonnull;
 
 /**
@@ -42,6 +46,8 @@ import javax.annotation.Nonnull;
  * @see SchemaBundle for more details.
  */
 public final class CreateSchemaBundleRequest {
+  private static final Logger LOGGER = Logger.getLogger(CreateSchemaBundleRequest.class.getName());
+
   private final String tableId;
   private final com.google.bigtable.admin.v2.CreateSchemaBundleRequest.Builder requestBuilder =
       com.google.bigtable.admin.v2.CreateSchemaBundleRequest.newBuilder();
@@ -70,9 +76,34 @@ public final class CreateSchemaBundleRequest {
   /** Sets the proto schema for this schema bundle. */
   public CreateSchemaBundleRequest setProtoSchema(@Nonnull ByteString protoSchema) {
     Preconditions.checkNotNull(protoSchema, "protoSchema must be set");
-    requestBuilder.setSchemaBundle(
-        com.google.bigtable.admin.v2.SchemaBundle.newBuilder()
-            .setProtoSchema(ProtoSchema.newBuilder().setProtoDescriptors(protoSchema)));
+    if (requestBuilder.getSchemaBundleBuilder().hasAvroSchema()) {
+      LOGGER.warning(
+          "This schema bundle already has an Avro schema set. Setting the proto schema will"
+              + " unset the Avro schema.");
+    }
+    requestBuilder
+        .getSchemaBundleBuilder()
+        .setProtoSchema(ProtoSchema.newBuilder().setProtoDescriptors(protoSchema));
+    return this;
+  }
+
+  /** Sets the avro schema for this schema bundle. */
+  public CreateSchemaBundleRequest setAvroSchema(@Nonnull String avroSchema) {
+    Preconditions.checkNotNull(avroSchema, "avroSchema must be set");
+    return setAvroSchema(Collections.singletonList(avroSchema));
+  }
+
+  /** Sets a list of avro schemas for this schema bundle. */
+  public CreateSchemaBundleRequest setAvroSchema(@Nonnull List<String> avroSchema) {
+    Preconditions.checkNotNull(avroSchema, "avroSchema must be set");
+    if (requestBuilder.getSchemaBundleBuilder().hasProtoSchema()) {
+      LOGGER.warning(
+          "This schema bundle already has a proto schema set. Setting the Avro schema will"
+              + " unset the proto schema.");
+    }
+    requestBuilder
+        .getSchemaBundleBuilder()
+        .setAvroSchema(AvroSchema.newBuilder().addAllJsonSchemas(avroSchema));
     return this;
   }
 
