@@ -892,14 +892,11 @@ public class ResumableStreamIteratorTest {
     assertThat(backoffDelay).isAtLeast(5L);
     assertThat(backoffDelay).isAtMost(15L);
 
-    RetrySettings overflowInitialAndMaxSettings = mock(RetrySettings.class);
-    when(overflowInitialAndMaxSettings.getTotalTimeoutDuration())
-        .thenReturn(java.time.Duration.ZERO);
-    when(overflowInitialAndMaxSettings.getRetryDelayMultiplier()).thenReturn(1.0);
-    when(overflowInitialAndMaxSettings.getInitialRetryDelayDuration())
-        .thenReturn(java.time.Duration.ofSeconds(Long.MAX_VALUE));
-    when(overflowInitialAndMaxSettings.getMaxRetryDelayDuration())
-        .thenReturn(java.time.Duration.ofSeconds(Long.MAX_VALUE));
+    RetrySettings overflowInitialAndMaxSettings =
+        RetrySettings.newBuilder()
+            .setInitialRetryDelayDuration(java.time.Duration.ofMillis(Long.MAX_VALUE))
+            .setMaxRetryDelayDuration(java.time.Duration.ofSeconds(Long.MAX_VALUE))
+            .build();
     initWithLimitAndRetrySettings(Integer.MAX_VALUE, overflowInitialAndMaxSettings);
     assertThat(resumableStreamIterator.checkRetryBudgetAndGetDelay(zeroDelayException))
         .isAtLeast(1L);
