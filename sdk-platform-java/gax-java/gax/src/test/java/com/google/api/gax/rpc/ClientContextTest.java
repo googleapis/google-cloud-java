@@ -55,6 +55,7 @@ import com.google.api.gax.rpc.testing.FakeChannel;
 import com.google.api.gax.rpc.testing.FakeClientSettings;
 import com.google.api.gax.rpc.testing.FakeStubSettings;
 import com.google.api.gax.rpc.testing.FakeTransportChannel;
+import com.google.api.gax.tracing.ApiTracerContext;
 import com.google.api.gax.tracing.ApiTracerFactory;
 import com.google.auth.ApiKeyCredentials;
 import com.google.auth.CredentialTypeForMetrics;
@@ -1403,6 +1404,36 @@ class ClientContextTest {
     assertThat(apiTracerFactory).isSameInstanceAs(withContextTracerFactory);
     verify(mockTracerFactory, times(1))
         .withContext(Mockito.any(com.google.api.gax.tracing.ApiTracerContext.class));
+  }
+
+  @Test
+  void testGetApiTracerFactory_passesJavaClientName() throws IOException {
+    ApiTracerFactory mockTracerFactory =
+        Mockito.mock(ApiTracerFactory.class, Mockito.withSettings().withoutAnnotations());
+    when(mockTracerFactory.needsContext()).thenReturn(true);
+    when(mockTracerFactory.withContext(Mockito.any(ApiTracerContext.class)))
+        .thenReturn(mockTracerFactory);
+
+    FakeStubSettings.Builder builder = FakeStubSettings.newBuilder();
+    builder.setTracerFactory(mockTracerFactory);
+    FakeStubSettings settings = Mockito.spy(builder.build());
+    Mockito.doReturn("com.google.cloud.v1.FakeServiceClient").when(settings).getJavaClientName();
+
+    EndpointContext endpointContext =
+        Mockito.mock(EndpointContext.class, Mockito.withSettings().withoutAnnotations());
+    when(endpointContext.resolvedServerAddress()).thenReturn("test-address");
+    when(endpointContext.resolvedServerPort()).thenReturn(443);
+
+    ClientContext.getApiTracerFactory(settings, endpointContext);
+
+    verify(mockTracerFactory, times(1))
+        .withContext(
+            ApiTracerContext.newBuilder()
+                .setServerAddress("test-address")
+                .setServerPort(443)
+                .setLibraryMetadata(LibraryMetadata.empty())
+                .setJavaClientName("com.google.cloud.v1.FakeServiceClient")
+                .build());
   }
 
   // This test should only run when the maven profile `EnvVarTest` is enabled.

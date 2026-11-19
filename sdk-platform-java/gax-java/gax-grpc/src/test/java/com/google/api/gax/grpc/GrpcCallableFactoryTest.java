@@ -40,9 +40,11 @@ import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.EndpointContext;
 import com.google.api.gax.rpc.InvalidArgumentException;
+import com.google.api.gax.rpc.LibraryMetadata;
 import com.google.api.gax.rpc.ServerStreamingCallSettings;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.StatusCode.Code;
+import com.google.api.gax.tracing.ApiTracerContext;
 import com.google.api.gax.tracing.SpanName;
 import com.google.auth.Credentials;
 import com.google.common.collect.ImmutableList;
@@ -161,6 +163,33 @@ class GrpcCallableFactoryTest {
 
     SpanName actualSpanName = SpanName.of(GrpcCallableFactory.getApiTracerContext(descriptor));
     assertThat(actualSpanName).isEqualTo(SpanName.of("Bigtable", "ReadRows"));
+  }
+
+  @Test
+  void testGetApiTracerContextWithGrpcCallSettings() {
+    @SuppressWarnings("unchecked")
+    MethodDescriptor<Color, Money> descriptor =
+        MethodDescriptor.<Color, Money>newBuilder()
+            .setType(MethodType.UNARY)
+            .setFullMethodName("google.bigtable.v2.Bigtable/ReadRows")
+            .setRequestMarshaller(mock(Marshaller.class))
+            .setResponseMarshaller(mock(Marshaller.class))
+            .build();
+
+    GrpcCallSettings<Color, Money> grpcCallSettings =
+        GrpcCallSettings.<Color, Money>newBuilder()
+            .setMethodDescriptor(descriptor)
+            .setJavaMethodName("readRows")
+            .build();
+
+    assertThat(GrpcCallableFactory.getApiTracerContext(grpcCallSettings))
+        .isEqualTo(
+            ApiTracerContext.newBuilder()
+                .setFullMethodName("google.bigtable.v2.Bigtable/ReadRows")
+                .setTransport(ApiTracerContext.Transport.GRPC)
+                .setLibraryMetadata(LibraryMetadata.empty())
+                .setJavaMethodName("readRows")
+                .build());
   }
 
   @Test
