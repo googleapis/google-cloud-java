@@ -192,7 +192,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     BigQuerySettings.Builder querySettings = BigQuerySettings.newBuilder();
     DatasetId defaultDataset = this.connection.getDefaultDataset();
     if (defaultDataset != null) {
-      querySettings.setDefaultDataset(this.connection.defaultDataset);
+      querySettings.setDefaultDataset(defaultDataset);
     }
     Long maxBytesBilled = this.connection.getMaxBytesBilled();
     if (maxBytesBilled > 0) {
@@ -1634,9 +1634,9 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     return queryConfigBuilder;
   }
 
-  private boolean getUseLegacySql() {
-    return QueryDialectType.BIG_QUERY.equals(
-        QueryDialectType.valueOf(this.querySettings.getQueryDialect()));
+  boolean getUseLegacySql() {
+    String dialect = this.querySettings.getQueryDialect();
+    return dialect != null && QueryDialectType.BIG_QUERY.equals(QueryDialectType.valueOf(dialect));
   }
 
   boolean isEnableTimestampPicos() {

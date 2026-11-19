@@ -19,9 +19,10 @@ package com.google.cloud.bigquery.jdbc;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.services.bigquery.model.QueryParameter;
 import com.google.cloud.Tuple;
+import com.google.cloud.bigquery.DatasetId;
+import com.google.cloud.bigquery.Field;
 import com.google.cloud.bigquery.FieldList;
 import com.google.cloud.bigquery.JobStatistics.QueryStatistics;
-import com.google.cloud.bigquery.JobStatistics.QueryStatistics.StatementType;
 import com.google.cloud.bigquery.QueryJobConfiguration;
 import com.google.cloud.bigquery.QueryParameterValue;
 import com.google.cloud.bigquery.Schema;
@@ -30,7 +31,10 @@ import com.google.cloud.bigquery.TableId;
 import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import com.google.cloud.bigquery.exception.BigQueryJdbcSqlFeatureNotSupportedException;
 import com.google.cloud.bigquery.jdbc.telemetry.v1.DriverFeature;
+import com.google.cloud.bigquery.jdbc.telemetry.v1.QueryApiType;
 import com.google.cloud.bigquery.jdbc.telemetry.v1.StatementExecution;
+import com.google.cloud.bigquery.jdbc.telemetry.v1.StatementType;
+import com.google.cloud.bigquery.jdbc.telemetry.v1.Status;
 import com.google.cloud.bigquery.jdbc.telemetry.v1.TelemetryManager;
 import com.google.cloud.bigquery.storage.v1.BatchCommitWriteStreamsRequest;
 import com.google.cloud.bigquery.storage.v1.BatchCommitWriteStreamsResponse;
@@ -38,7 +42,6 @@ import com.google.cloud.bigquery.storage.v1.BigQueryWriteClient;
 import com.google.cloud.bigquery.storage.v1.TableName;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
-import com.google.gson.JsonNull;
 import com.google.gson.JsonObject;
 import com.google.protobuf.Descriptors.DescriptorValidationException;
 import java.io.IOException;
@@ -65,9 +68,15 @@ import java.sql.Types;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Locale;
+import java.util.Map;
 import java.util.Queue;
+import java.util.Set;
 
 class BigQueryPreparedStatement extends BigQueryStatement implements PreparedStatement {
   private static final BigQueryJdbcCustomLogger LOG =
@@ -75,17 +84,23 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
   private static final char POSITIONAL_PARAMETER_CHAR = '?';
   // parameterHandler is inherited from BigQueryStatement
   protected final int parameterCount;
-  protected String currentQuery;
+  protected final String currentQuery;
+  private final DirectInsertShape directInsertShape;
+  private boolean insertMetadataEvaluated = false;
   private Queue<ArrayList<BigQueryJdbcParameter>> batchParameters = new LinkedList<>();
-  // Both hold statistics.getSchema(), which reports different things per statement type: the rows
-  // a SELECT returns, versus the columns an INSERT writes.
+  // resultSchema feeds getMetaData() for SELECT statements; insertSchema holds the target columns
+  // in placeholder order for single-table direct-VALUES INSERT statements on the Storage Write API.
   Schema resultSchema = null; // Feeds getMetaData().
   Schema insertSchema = null; // Feeds the Storage Write API.
   private TableName insertTableName = null;
 
   BigQueryPreparedStatement(BigQueryConnection connection, String query) throws SQLException {
     super(connection);
+    if (query == null) {
+      throw new BigQueryJdbcException("SQL query cannot be null.");
+    }
     this.currentQuery = query;
+    this.directInsertShape = parseDirectInsertValues(query);
     QueryStatistics queryStatistics = describeQueryQuietly();
     this.parameterCount = resolveParameterCount(query, queryStatistics);
     this.parameterHandler =
@@ -112,7 +127,7 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
    * of the query text, so a statement stays usable against a service that refuses the dry run.
    */
   private QueryStatistics describeQueryQuietly() {
-    if (this.currentQuery.indexOf(POSITIONAL_PARAMETER_CHAR) == -1) {
+    if (this.currentQuery.indexOf(POSITIONAL_PARAMETER_CHAR) == -1 || getUseLegacySql()) {
       return null;
     }
     try {
@@ -156,27 +171,397 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
     }
   }
 
-  // Remembers the table and schema of single-table INSERT targets, for the Storage Write API.
-  // Failure is delegated to executeBatch instead of the constructor.
+  // Remembers the table and target column schema of direct single-table INSERT ... VALUES (?, ...)
+  // statements for the Storage Write API. Statements with SQL expressions, partial column lists, or
+  // unsupported column types leave insertSchema null so executeBatch uses standard SQL execution.
   private void captureInsertMetadata(QueryStatistics statistics) {
-    if (!StatementType.INSERT.equals(statistics.getStatementType())
+    if (statistics == null) {
+      return;
+    }
+    this.insertMetadataEvaluated = true;
+    if (this.directInsertShape == null
+        || !QueryStatistics.StatementType.INSERT.equals(statistics.getStatementType())
         || statistics.getSchema() == null
         || statistics.getReferencedTables() == null
         || statistics.getReferencedTables().stream().distinct().count() != 1) {
       return;
     }
-    this.insertSchema = statistics.getSchema();
     TableId tableId = statistics.getReferencedTables().get(0);
-    this.insertTableName =
-        TableName.of(tableId.getProject(), tableId.getDataset(), tableId.getTable());
+    String project = resolveTargetProject(tableId);
+    if (project == null || tableId.getDataset() == null || tableId.getTable() == null) {
+      return;
+    }
+    Schema resolvedSchema =
+        resolveInsertSchema(statistics.getSchema(), this.directInsertShape, this.parameterCount);
+    if (resolvedSchema == null) {
+      LOG.fine(
+          "INSERT target schema is incompatible with direct Storage Write API streaming;"
+              + " falling back to standard SQL batch execution.");
+      return;
+    }
+    this.insertSchema = resolvedSchema;
+    this.insertTableName = TableName.of(project, tableId.getDataset(), tableId.getTable());
     LOG.finer("insertTableName: %s, insertSchema: %s", this.insertTableName, this.insertSchema);
+  }
+
+  private String resolveTargetProject(TableId tableId) {
+    if (tableId.getProject() != null) {
+      return tableId.getProject();
+    }
+    DatasetId defaultDataset = this.querySettings.getDefaultDataset();
+    String catalog = this.connection != null ? this.connection.getCatalog() : null;
+    if (defaultDataset != null
+        && defaultDataset.getProject() != null
+        && (catalog == null
+            || (tableId.getDataset() != null
+                && tableId.getDataset().equals(defaultDataset.getDataset())))) {
+      return defaultDataset.getProject();
+    }
+    return catalog;
+  }
+
+  static Schema resolveInsertSchema(
+      Schema tableSchema, DirectInsertShape shape, int parameterCount) {
+    if (tableSchema == null || shape == null) {
+      return null;
+    }
+    FieldList tableFields = tableSchema.getFields();
+    if (tableFields == null
+        || shape.placeholderCount == 0
+        || shape.placeholderCount != parameterCount
+        || tableFields.size() != shape.placeholderCount) {
+      return null;
+    }
+    for (Field field : tableFields) {
+      if (!BigQueryTypeRegistry.isSupportedWriteApiField(field)) {
+        return null;
+      }
+    }
+    if (shape.columnNames == null) {
+      return tableSchema;
+    }
+    if (shape.columnNames.size() != tableFields.size()) {
+      return null;
+    }
+    Map<String, Field> fieldsByLowerName = new HashMap<>(tableFields.size() * 2);
+    for (Field field : tableFields) {
+      fieldsByLowerName.put(field.getName().toLowerCase(Locale.ROOT), field);
+    }
+    List<Field> orderedFields = new ArrayList<>(shape.columnNames.size());
+    Set<String> seenColumns = new HashSet<>(shape.columnNames.size() * 2);
+    for (String columnName : shape.columnNames) {
+      String normalized = columnName.toLowerCase(Locale.ROOT);
+      if (!seenColumns.add(normalized)) {
+        return null;
+      }
+      Field matched = fieldsByLowerName.get(normalized);
+      if (matched == null) {
+        return null;
+      }
+      orderedFields.add(matched);
+    }
+    return Schema.of(orderedFields);
+  }
+
+  static final class DirectInsertShape {
+    final int placeholderCount;
+    final List<String> columnNames;
+
+    DirectInsertShape(int placeholderCount, List<String> columnNames) {
+      this.placeholderCount = placeholderCount;
+      this.columnNames =
+          columnNames == null ? null : Collections.unmodifiableList(new ArrayList<>(columnNames));
+    }
+  }
+
+  /**
+   * Recognizes single-row {@code INSERT [INTO] <table> [(<col1>, ...)] VALUES (?, ...) [;]}
+   * statements whose {@code VALUES} tuple consists strictly of bare positional {@code ?}
+   * placeholders. Returns {@code null} for any SQL expression, function/UDF call, cast, literal,
+   * {@code DEFAULT}, {@code SELECT}, multi-row tuple list, or {@code _SESSION}-qualified temporary
+   * table so the statement executes on BigQuery's SQL engine instead of the Storage Write API.
+   */
+  static DirectInsertShape parseDirectInsertValues(String sql) {
+    if (sql == null) {
+      return null;
+    }
+    int pos = skipTrivia(sql, 0);
+    if (pos < 0) {
+      return null;
+    }
+    pos = matchKeyword(sql, pos, "INSERT");
+    if (pos < 0) {
+      return null;
+    }
+    pos = skipTrivia(sql, pos);
+    if (pos < 0) {
+      return null;
+    }
+    int afterInto = matchKeyword(sql, pos, "INTO");
+    if (afterInto >= 0) {
+      pos = skipTrivia(sql, afterInto);
+      if (pos < 0) {
+        return null;
+      }
+    }
+    pos = consumeTablePath(sql, pos);
+    if (pos < 0 || pos >= sql.length()) {
+      return null;
+    }
+
+    List<String> columnNames = null;
+    if (sql.charAt(pos) == '(') {
+      columnNames = new ArrayList<>();
+      pos++;
+      while (true) {
+        pos = skipTrivia(sql, pos);
+        if (pos < 0 || pos >= sql.length()) {
+          return null;
+        }
+        Tuple<String, Integer> column = readColumnIdentifier(sql, pos);
+        if (column == null) {
+          return null;
+        }
+        columnNames.add(column.x());
+        pos = skipTrivia(sql, column.y());
+        if (pos < 0 || pos >= sql.length()) {
+          return null;
+        }
+        char sep = sql.charAt(pos);
+        if (sep == ',') {
+          pos++;
+        } else if (sep == ')') {
+          pos++;
+          break;
+        } else {
+          return null;
+        }
+      }
+    }
+
+    pos = skipTrivia(sql, pos);
+    if (pos < 0) {
+      return null;
+    }
+    pos = matchKeyword(sql, pos, "VALUES");
+    if (pos < 0) {
+      return null;
+    }
+    pos = skipTrivia(sql, pos);
+    if (pos < 0 || pos >= sql.length() || sql.charAt(pos) != '(') {
+      return null;
+    }
+    pos++;
+
+    int placeholderCount = 0;
+    while (true) {
+      pos = skipTrivia(sql, pos);
+      if (pos < 0 || pos >= sql.length() || sql.charAt(pos) != POSITIONAL_PARAMETER_CHAR) {
+        return null;
+      }
+      placeholderCount++;
+      pos = skipTrivia(sql, pos + 1);
+      if (pos < 0 || pos >= sql.length()) {
+        return null;
+      }
+      char sep = sql.charAt(pos);
+      if (sep == ',') {
+        pos++;
+      } else if (sep == ')') {
+        pos++;
+        break;
+      } else {
+        return null;
+      }
+    }
+
+    pos = skipTrivia(sql, pos);
+    if (pos < 0) {
+      return null;
+    }
+    if (pos < sql.length() && sql.charAt(pos) == ';') {
+      pos = skipTrivia(sql, pos + 1);
+      if (pos < 0) {
+        return null;
+      }
+    }
+    if (pos != sql.length()) {
+      return null;
+    }
+    return new DirectInsertShape(placeholderCount, columnNames);
+  }
+
+  private static int consumeTablePath(String sql, int pos) {
+    Tuple<String, Integer> firstSegment = readTableSegment(sql, pos);
+    if (firstSegment == null) {
+      return -1;
+    }
+    String firstName = firstSegment.x();
+    pos = firstSegment.y();
+    int segmentCount = 1;
+    while (true) {
+      int next = skipTrivia(sql, pos);
+      if (next < 0) {
+        return -1;
+      }
+      if (next < sql.length() && (sql.charAt(next) == '.' || sql.charAt(next) == ':')) {
+        pos = skipTrivia(sql, next + 1);
+        if (pos < 0) {
+          return -1;
+        }
+        Tuple<String, Integer> segment = readTableSegment(sql, pos);
+        if (segment == null) {
+          return -1;
+        }
+        pos = segment.y();
+        segmentCount++;
+      } else {
+        pos = next;
+        break;
+      }
+    }
+    if (segmentCount == 2 && "_session".equalsIgnoreCase(firstName)) {
+      return -1;
+    }
+    if (segmentCount == 1
+        && firstName.length() > 9
+        && firstName.regionMatches(true, 0, "_session.", 0, 9)) {
+      return -1;
+    }
+    return pos;
+  }
+
+  private static Tuple<String, Integer> readTableSegment(String sql, int pos) {
+    if (pos >= sql.length()) {
+      return null;
+    }
+    char first = sql.charAt(pos);
+    if (first == '`') {
+      return readBacktickIdentifier(sql, pos);
+    }
+    if (!isUnquotedTableStart(first)) {
+      return null;
+    }
+    int i = pos + 1;
+    while (i < sql.length() && isUnquotedTablePart(sql.charAt(i))) {
+      i++;
+    }
+    return Tuple.of(sql.substring(pos, i), i);
+  }
+
+  private static Tuple<String, Integer> readColumnIdentifier(String sql, int pos) {
+    if (pos >= sql.length()) {
+      return null;
+    }
+    char first = sql.charAt(pos);
+    if (first == '`') {
+      return readBacktickIdentifier(sql, pos);
+    }
+    if (!isIdentifierStart(first)) {
+      return null;
+    }
+    int i = pos + 1;
+    while (i < sql.length() && isIdentifierPart(sql.charAt(i))) {
+      i++;
+    }
+    return Tuple.of(sql.substring(pos, i), i);
+  }
+
+  private static Tuple<String, Integer> readBacktickIdentifier(String sql, int pos) {
+    StringBuilder sb = new StringBuilder();
+    int i = pos + 1;
+    while (i < sql.length()) {
+      char c = sql.charAt(i);
+      if (c == '\\') {
+        if (i + 1 >= sql.length()) {
+          return null;
+        }
+        char escaped = sql.charAt(i + 1);
+        if (escaped != '\\' && escaped != '`') {
+          return null;
+        }
+        sb.append(escaped);
+        i += 2;
+      } else if (c == '`') {
+        if (sb.length() == 0) {
+          return null;
+        }
+        return Tuple.of(sb.toString(), i + 1);
+      } else {
+        sb.append(c);
+        i++;
+      }
+    }
+    return null;
+  }
+
+  private static int matchKeyword(String sql, int pos, String keyword) {
+    int end = pos + keyword.length();
+    if (end > sql.length() || !sql.regionMatches(true, pos, keyword, 0, keyword.length())) {
+      return -1;
+    }
+    if (end < sql.length() && isIdentifierPart(sql.charAt(end))) {
+      return -1;
+    }
+    return end;
+  }
+
+  private static int skipTrivia(String sql, int pos) {
+    int len = sql.length();
+    while (pos < len) {
+      char ch = sql.charAt(pos);
+      if (Character.isWhitespace(ch)) {
+        pos++;
+      } else if (ch == '#') {
+        pos = skipToEndOfLine(sql, pos + 1);
+      } else if (ch == '-' && pos + 1 < len && sql.charAt(pos + 1) == '-') {
+        pos = skipToEndOfLine(sql, pos + 2);
+      } else if (ch == '/' && pos + 1 < len && sql.charAt(pos + 1) == '*') {
+        int closeIdx = sql.indexOf("*/", pos + 2);
+        if (closeIdx < 0) {
+          return -1;
+        }
+        pos = closeIdx + 2;
+      } else {
+        break;
+      }
+    }
+    return pos;
+  }
+
+  private static int skipToEndOfLine(String sql, int pos) {
+    int len = sql.length();
+    while (pos < len) {
+      char ch = sql.charAt(pos);
+      if (ch == '\n' || ch == '\r') {
+        return pos + 1;
+      }
+      pos++;
+    }
+    return len;
+  }
+
+  private static boolean isIdentifierStart(char ch) {
+    return (ch >= 'A' && ch <= 'Z') || (ch >= 'a' && ch <= 'z') || ch == '_';
+  }
+
+  private static boolean isIdentifierPart(char ch) {
+    return isIdentifierStart(ch) || (ch >= '0' && ch <= '9');
+  }
+
+  private static boolean isUnquotedTableStart(char ch) {
+    return isIdentifierPart(ch);
+  }
+
+  private static boolean isUnquotedTablePart(char ch) {
+    return isIdentifierPart(ch) || ch == '-';
   }
 
   // This populates the schema of the ResultSet that is being returned by the query.
   // The column names are as they are returned from the query dryRun and may not match the actual
   // table column names.
   private void captureResultSchema(QueryStatistics statistics) {
-    if (StatementType.SELECT.equals(statistics.getStatementType())) {
+    if (QueryStatistics.StatementType.SELECT.equals(statistics.getStatementType())) {
       this.resultSchema = statistics.getSchema();
     }
   }
@@ -378,14 +763,46 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
     this.batchParameters.add(currentParameterList);
   }
 
+  @Override
+  public void clearBatch() {
+    super.clearBatch();
+    this.batchParameters.clear();
+  }
+
+  @Override
+  public void close() throws SQLException {
+    try {
+      super.close();
+    } finally {
+      this.batchParameters.clear();
+    }
+  }
+
   private ArrayList<BigQueryJdbcParameter> deepCopyParameterList(
       ArrayList<BigQueryJdbcParameter> parametersList) {
-    ArrayList<BigQueryJdbcParameter> copiedParameterList = new ArrayList<>();
+    ArrayList<BigQueryJdbcParameter> copiedParameterList = new ArrayList<>(parametersList.size());
     for (BigQueryJdbcParameter parameter : parametersList) {
-      BigQueryJdbcParameter newParameter = new BigQueryJdbcParameter(parameter);
-      copiedParameterList.add(newParameter);
+      copiedParameterList.add(parameter == null ? null : new BigQueryJdbcParameter(parameter));
     }
     return copiedParameterList;
+  }
+
+  private void validateBatchParameters() throws BigQueryJdbcException {
+    for (ArrayList<BigQueryJdbcParameter> parameterList : this.batchParameters) {
+      for (int i = 1; i <= this.parameterCount; i++) {
+        int arrayIndex = i - 1;
+        if (parameterList == null
+            || parameterList.size() <= arrayIndex
+            || parameterList.get(arrayIndex) == null
+            || !parameterList.get(arrayIndex).isBound()) {
+          throw new BigQueryJdbcException(
+              String.format(
+                  "One or more parameters missing in Prepared statement. No value was set for"
+                      + " parameter %d of %d.",
+                  i, this.parameterCount));
+        }
+      }
+    }
   }
 
   @Override
@@ -396,86 +813,112 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
       return result;
     }
 
-    // The constructor's dry run may have happened before the target table existed.
-    if (this.insertSchema == null
-        && this.querySettings.isUseWriteAPI()
-        && this.batchParameters.size() >= this.querySettings.getWriteAPIActivationRowCount()) {
-      try {
-        captureInsertMetadata(
-            getQueryStatistics(getWriteBatchJobConfiguration(this.batchParameters.peek())));
-      } catch (SQLException | RuntimeException ex) {
-        LOG.warning(ex, "Could not describe INSERT target; using the standard batch path.");
-      }
-    }
+    try {
+      validateBatchParameters();
 
-    if (useWriteAPI()) {
-      long startTime = System.currentTimeMillis();
-      StatementExecution.Builder writeApiExecutionBuilder =
-          StatementExecution.newBuilder()
-              .setStatementType(
-                  com.google.cloud.bigquery.jdbc.telemetry.v1.StatementType.STATEMENT_TYPE_INSERT)
-              .setQueryApiType(
-                  com.google.cloud.bigquery.jdbc.telemetry.v1.QueryApiType
-                      .QUERY_API_TYPE_WRITE_API);
-      try (BigQueryWriteClient writeClient = this.connection.getBigQueryWriteClient()) {
-        LOG.info("Using Write API for bulk INSERT operation.");
-
-        long rowCount = bulkInsertWithWriteAPI(writeClient);
-        int[] insertArray = new int[Math.toIntExact(rowCount)];
-        Arrays.fill(insertArray, 1);
-
-        writeApiExecutionBuilder.setStatus(
-            com.google.cloud.bigquery.jdbc.telemetry.v1.Status.STATUS_SUCCESS);
-
-        return insertArray;
-
-      } catch (InterruptedException e) {
-        Thread.currentThread().interrupt();
-        writeApiExecutionBuilder
-            .setStatus(com.google.cloud.bigquery.jdbc.telemetry.v1.Status.STATUS_ERROR)
-            .setErrorCode(TelemetryManager.extractErrorCode(e));
-        throw new BigQueryJdbcException("Interrupted during Write API batch", e);
-      } catch (DescriptorValidationException | IOException e) {
-        writeApiExecutionBuilder
-            .setStatus(com.google.cloud.bigquery.jdbc.telemetry.v1.Status.STATUS_ERROR)
-            .setErrorCode(TelemetryManager.extractErrorCode(e));
-        throw new BigQueryJdbcException("Failed to execute batch with Write API", e);
-      } finally {
-        long durationMs = System.currentTimeMillis() - startTime;
-        TelemetryManager.recordStatementExecution(writeApiExecutionBuilder, durationMs);
-        TelemetryManager.recordFeatureUsage(DriverFeature.DRIVER_FEATURE_BATCH_OPERATIONS);
-      }
-
-    } else {
-      try {
-        LOG.info("Using individual INSERT query runs.");
-        int count = this.batchParameters.size();
-        StringBuilder combinedQuery = new StringBuilder();
-        for (int i = 0; i < count; i++) {
-
-          if (this.currentQuery.trim().endsWith(";")) {
-            combinedQuery.append(this.currentQuery);
-          } else {
-            combinedQuery.append(this.currentQuery).append(";");
+      // The constructor's dry run may have happened before the target table existed.
+      if (!this.insertMetadataEvaluated
+          && this.directInsertShape != null
+          && this.querySettings.isUseWriteAPI()
+          && !getUseLegacySql()
+          && (this.connection == null || !this.connection.isTransactionStarted())
+          && this.batchParameters.size() >= this.querySettings.getWriteAPIActivationRowCount()) {
+        try {
+          QueryStatistics statistics = describePositionalParameterQuery(this.currentQuery);
+          this.insertMetadataEvaluated = true;
+          if (statistics != null) {
+            applyInferredParameterTypes(statistics);
+            captureInsertMetadata(statistics);
           }
+        } catch (SQLException | RuntimeException ex) {
+          LOG.warning(ex, "Could not describe INSERT target; using the standard batch path.");
         }
-        // executeBatch in PreparedStatement is used for BulkInsert/DML.
-        // If not correct Type, fails later.
-        runQuery(
-            combinedQuery.toString(), getStandardBatchJobConfiguration(combinedQuery.toString()));
-        int i = 0;
-        while (getUpdateCount() != -1 && i < count) {
-          result[i] = getUpdateCount();
-          getMoreResults();
-          i++;
-        }
-        return result;
-      } catch (SQLException e) {
-        throw new BigQueryJdbcException("SQL error during individual INSERT batch", e);
-      } finally {
-        TelemetryManager.recordFeatureUsage(DriverFeature.DRIVER_FEATURE_BATCH_OPERATIONS);
       }
+
+      if (useWriteAPI()) {
+        long startTime = System.currentTimeMillis();
+        int fallbackErrorCode = 1000;
+        StatementExecution.Builder writeApiExecutionBuilder =
+            StatementExecution.newBuilder()
+                .setStatementType(StatementType.STATEMENT_TYPE_INSERT)
+                .setQueryApiType(QueryApiType.QUERY_API_TYPE_WRITE_API);
+        try {
+          // Lifecycle of the cached BigQueryWriteClient belongs to BigQueryConnection.close().
+          BigQueryWriteClient writeClient = this.connection.getBigQueryWriteClient();
+          LOG.info("Using Write API for bulk INSERT operation.");
+
+          long rowCount = bulkInsertWithWriteAPI(writeClient);
+          int[] insertArray = new int[Math.toIntExact(rowCount)];
+          Arrays.fill(insertArray, 1);
+
+          writeApiExecutionBuilder.setStatus(Status.STATUS_SUCCESS);
+
+          return insertArray;
+
+        } catch (InterruptedException e) {
+          Thread.currentThread().interrupt();
+          fallbackErrorCode = TelemetryManager.extractErrorCode(e);
+          writeApiExecutionBuilder.setStatus(Status.STATUS_ERROR).setErrorCode(fallbackErrorCode);
+          throw new BigQueryJdbcException("Interrupted during Write API batch", e);
+        } catch (BigQueryJdbcException e) {
+          fallbackErrorCode = TelemetryManager.extractErrorCode(e);
+          writeApiExecutionBuilder.setStatus(Status.STATUS_ERROR).setErrorCode(fallbackErrorCode);
+          throw e;
+        } catch (DescriptorValidationException | IOException | RuntimeException e) {
+          fallbackErrorCode = TelemetryManager.extractErrorCode(e);
+          writeApiExecutionBuilder.setStatus(Status.STATUS_ERROR).setErrorCode(fallbackErrorCode);
+          throw new BigQueryJdbcException("Failed to execute batch with Write API", e);
+        } finally {
+          if (writeApiExecutionBuilder.getStatus() == Status.STATUS_UNSPECIFIED) {
+            writeApiExecutionBuilder.setStatus(Status.STATUS_ERROR).setErrorCode(fallbackErrorCode);
+          }
+          long durationMs = System.currentTimeMillis() - startTime;
+          TelemetryManager.recordStatementExecution(writeApiExecutionBuilder, durationMs);
+          TelemetryManager.recordFeatureUsage(DriverFeature.DRIVER_FEATURE_BATCH_OPERATIONS);
+        }
+
+      } else {
+        if (this.querySettings.isUseWriteAPI()
+            && this.batchParameters.size() >= this.querySettings.getWriteAPIActivationRowCount()) {
+          LOG.fine(
+              "Batch query is not eligible for Storage Write API; falling back to standard SQL"
+                  + " batch execution.");
+        }
+        try {
+          LOG.info("Using individual INSERT query runs.");
+          int count = this.batchParameters.size();
+          StringBuilder combinedQuery = new StringBuilder();
+          for (int i = 0; i < count; i++) {
+            if (this.currentQuery.trim().endsWith(";")) {
+              combinedQuery.append(this.currentQuery);
+            } else {
+              combinedQuery.append(this.currentQuery).append(";");
+            }
+          }
+          // executeBatch in PreparedStatement is used for BulkInsert/DML.
+          // If not correct Type, fails later.
+          runQuery(
+              combinedQuery.toString(), getStandardBatchJobConfiguration(combinedQuery.toString()));
+          int i = 0;
+          while (getUpdateCount() != -1 && i < count) {
+            result[i] = getUpdateCount();
+            getMoreResults();
+            i++;
+          }
+          return result;
+        } catch (SQLException e) {
+          throw new BigQueryJdbcException("SQL error during individual INSERT batch", e);
+        } finally {
+          TelemetryManager.recordFeatureUsage(DriverFeature.DRIVER_FEATURE_BATCH_OPERATIONS);
+        }
+      }
+    } finally {
+      this.batchParameters.clear();
     }
+  }
+
+  BigQueryJdbcBulkInsertWriter createBulkInsertWriter() {
+    return new BigQueryJdbcBulkInsertWriter();
   }
 
   private long bulkInsertWithWriteAPI(BigQueryWriteClient bigQueryWriteClient)
@@ -486,68 +929,67 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
     LOG.finer("++enter++");
     RetrySettings retrySettings = this.connection.getRetrySettings();
 
-    BigQueryJdbcBulkInsertWriter bulkInsertWriter = new BigQueryJdbcBulkInsertWriter();
-    bulkInsertWriter.initialize(this.insertTableName, bigQueryWriteClient, retrySettings);
-
+    BigQueryJdbcBulkInsertWriter bulkInsertWriter = createBulkInsertWriter();
+    boolean cleanedUp = false;
     try {
+      bulkInsertWriter.initialize(this.insertTableName, bigQueryWriteClient, retrySettings);
+
       long offset = 0;
       JsonArray jsonArray = new JsonArray();
-      Gson gson = new Gson();
+      FieldList fieldLists = this.insertSchema.getFields();
       int count = this.batchParameters.size();
+      boolean timestampPicos = this.isEnableTimestampPicos();
       for (int i = 0; i < count; i++) {
-
         ArrayList<BigQueryJdbcParameter> parameterList = this.batchParameters.poll();
-        FieldList fieldLists = this.insertSchema.getFields();
-        if (fieldLists.size() == parameterList.size()) {
-
-          JsonObject rowObject = createJsonRow(fieldLists, parameterList, gson);
-          jsonArray.add(rowObject);
-
-          if (jsonArray.size() == this.querySettings.getWriteAPIAppendRowCount()
-              || this.batchParameters.size() == 0) {
-            bulkInsertWriter.append(jsonArray, offset);
-            LOG.finer("Append called ");
-            offset += jsonArray.size();
-            jsonArray = new JsonArray();
-          }
-        } else {
+        if (fieldLists.size() != parameterList.size()) {
           throw new BigQueryJdbcException("Mismatch between field count and parameter count.");
         }
+
+        JsonObject rowObject = createJsonRow(fieldLists, parameterList, timestampPicos);
+        jsonArray.add(rowObject);
+
+        if (jsonArray.size() == this.querySettings.getWriteAPIAppendRowCount()
+            || this.batchParameters.isEmpty()) {
+          bulkInsertWriter.append(jsonArray, offset);
+          LOG.finer("Append called ");
+          offset += jsonArray.size();
+          jsonArray = new JsonArray();
+        }
       }
-    } catch (BigQueryJdbcException e) {
-      throw new BigQueryJdbcException("BigQueryJdbcException during bulkInsertWithWriteAPI", e);
-    }
 
-    long rowCount = bulkInsertWriter.cleanup(bigQueryWriteClient);
+      long rowCount = bulkInsertWriter.cleanup(bigQueryWriteClient);
+      cleanedUp = true;
 
-    BatchCommitWriteStreamsRequest commitRequest =
-        BatchCommitWriteStreamsRequest.newBuilder()
-            .setParent(this.insertTableName.toString())
-            .addWriteStreams(bulkInsertWriter.getStreamName())
-            .build();
-    BatchCommitWriteStreamsResponse commitResponse =
-        bigQueryWriteClient.batchCommitWriteStreams(commitRequest);
-    if (commitResponse.hasCommitTime() == false) {
-      throw new BigQueryJdbcException("Error committing the streams");
+      BatchCommitWriteStreamsRequest commitRequest =
+          BatchCommitWriteStreamsRequest.newBuilder()
+              .setParent(this.insertTableName.toString())
+              .addWriteStreams(bulkInsertWriter.getStreamName())
+              .build();
+      BatchCommitWriteStreamsResponse commitResponse =
+          bigQueryWriteClient.batchCommitWriteStreams(commitRequest);
+      if (!commitResponse.hasCommitTime()) {
+        throw new BigQueryJdbcException("Error committing the streams");
+      }
+      LOG.finer("Commit called.");
+      return rowCount;
+    } finally {
+      if (!cleanedUp) {
+        bulkInsertWriter.closeQuietly();
+      }
     }
-    LOG.finer("Commit called.");
-    return rowCount;
   }
 
   static JsonObject createJsonRow(
       FieldList fieldLists, List<BigQueryJdbcParameter> parameterList, Gson gson) {
-    JsonObject rowObject = new JsonObject();
-    for (int j = 0; j < parameterList.size(); j++) {
-      BigQueryJdbcParameter parameter = parameterList.get(j);
-      if (parameter.getValue() == null) {
-        rowObject.add(fieldLists.get(j).getName(), JsonNull.INSTANCE);
-      } else if (parameter.getSqlType() == StandardSQLTypeName.STRING) {
-        rowObject.addProperty(fieldLists.get(j).getName(), parameter.getValue().toString());
-      } else {
-        rowObject.addProperty(fieldLists.get(j).getName(), gson.toJson(parameter.getValue()));
-      }
-    }
-    return rowObject;
+    return createJsonRow(fieldLists, parameterList, false);
+  }
+
+  static JsonObject createJsonRow(
+      FieldList fieldLists,
+      List<BigQueryJdbcParameter> parameterList,
+      boolean enableTimestampPicos) {
+    return BigQueryParameterHandler.createWriteApiJsonRow(
+        fieldLists, parameterList, enableTimestampPicos);
   }
 
   QueryJobConfiguration getWriteBatchJobConfiguration(
@@ -567,19 +1009,19 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
     QueryJobConfiguration.Builder jobConfiguration = getJobConfig(query);
     jobConfiguration.setParameterMode("POSITIONAL");
     jobConfiguration.setPriority(QueryJobConfiguration.Priority.BATCH);
+    boolean enableTimestampPicos = this.isEnableTimestampPicos();
     int index = 0;
     while (!this.batchParameters.isEmpty()) {
       ArrayList<BigQueryJdbcParameter> parameterList = this.batchParameters.poll();
 
-      for (BigQueryJdbcParameter parameter : parameterList) {
-        Object parameterValue =
-            BigQueryParameterHandler.formatValueForQueryParameter(
-                parameter.getValue(), parameter.getSqlType(), this.isEnableTimestampPicos());
-        StandardSQLTypeName sqlType = parameter.getSqlType();
+      for (int i = 0; i < this.parameterCount; i++) {
+        BigQueryJdbcParameter parameter = parameterList.get(i);
+        QueryParameterValue queryParameter =
+            BigQueryParameterHandler.toQueryParameterValue(parameter, enableTimestampPicos);
         LOG.finer(
             "Parameter %s of type %s at index %s added to QueryJobConfiguration",
-            parameterValue, sqlType, index++);
-        jobConfiguration.addPositionalParameter(QueryParameterValue.of(parameterValue, sqlType));
+            queryParameter.getValue(), queryParameter.getType(), index++);
+        jobConfiguration.addPositionalParameter(queryParameter);
       }
     }
     return jobConfiguration.build();
@@ -588,9 +1030,32 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
   Boolean useWriteAPI() {
     LOG.finer("++enter++");
     return this.querySettings.isUseWriteAPI()
-        // the constructor dry run already confirmed a single-table INSERT
         && this.insertSchema != null
-        && this.batchParameters.size() >= this.querySettings.getWriteAPIActivationRowCount();
+        && this.batchParameters.size() >= this.querySettings.getWriteAPIActivationRowCount()
+        && isWriteApiAllowedBySessionAndTransaction()
+        && BigQueryParameterHandler.areBatchParametersCompatibleWithWriteApi(
+            this.insertSchema.getFields(), this.batchParameters);
+  }
+
+  private boolean isWriteApiAllowedBySessionAndTransaction() {
+    if (this.connection == null) {
+      return true;
+    }
+    if (this.connection.isTransactionStarted()) {
+      return false;
+    }
+    if (this.insertTableName != null && this.insertTableName.getDataset().startsWith("_")) {
+      BigQueryConnection.SessionState snapshot = this.connection.getSessionStateSnapshot();
+      boolean sessionActive =
+          this.connection.isSessionEnabled() || (snapshot != null && snapshot.sessionInfo != null);
+      DatasetId defaultDataset = this.querySettings.getDefaultDataset();
+      if (sessionActive
+          && (defaultDataset == null
+              || !this.insertTableName.getDataset().equals(defaultDataset.getDataset()))) {
+        return false;
+      }
+    }
+    return true;
   }
 
   @Override

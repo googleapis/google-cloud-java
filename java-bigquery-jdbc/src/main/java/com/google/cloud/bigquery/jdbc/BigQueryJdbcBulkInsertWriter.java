@@ -34,17 +34,21 @@ import com.google.gson.JsonArray;
 import com.google.protobuf.Descriptors.DescriptorValidationException;
 import java.io.IOException;
 import java.util.concurrent.Phaser;
+import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.logging.Level;
 import javax.annotation.concurrent.GuardedBy;
 
 class BigQueryJdbcBulkInsertWriter {
   private static final BigQueryJdbcCustomLogger LOG =
       new BigQueryJdbcCustomLogger(BigQueryJdbcBulkInsertWriter.class.getName());
-  private JsonStreamWriter jsonStreamWriter;
+  JsonStreamWriter jsonStreamWriter;
+  // Written once during initialize() and read by background gRPC completion callbacks.
+  private volatile String streamName;
   private final Phaser openRequestCount = new Phaser(1);
+  private final AtomicBoolean writerClosed = new AtomicBoolean(false);
   private final Object streamLock = new Object();
 
-  @GuardedBy("lock")
+  @GuardedBy("streamLock")
   private RuntimeException error = null;
 
   void initialize(TableName parentTable, BigQueryWriteClient client, RetrySettings retrySettings)
@@ -59,15 +63,21 @@ class BigQueryJdbcBulkInsertWriter {
             .setWriteStream(stream)
             .build();
     WriteStream writeStream = client.createWriteStream(createWriteStreamRequest);
+    this.streamName = writeStream.getName();
 
     JsonStreamWriter.Builder jsonStreamWriterBuilder =
-        JsonStreamWriter.newBuilder(writeStream.getName(), writeStream.getTableSchema(), client);
+        JsonStreamWriter.newBuilder(this.streamName, writeStream.getTableSchema(), client);
 
     if (retrySettings != null) {
       jsonStreamWriterBuilder.setRetrySettings(retrySettings);
     }
 
-    this.jsonStreamWriter = jsonStreamWriterBuilder.build();
+    this.jsonStreamWriter = buildJsonStreamWriter(jsonStreamWriterBuilder);
+  }
+
+  JsonStreamWriter buildJsonStreamWriter(JsonStreamWriter.Builder builder)
+      throws DescriptorValidationException, IOException, InterruptedException {
+    return builder.build();
   }
 
   void append(JsonArray data, long offset) throws DescriptorValidationException, IOException {
@@ -80,17 +90,29 @@ class BigQueryJdbcBulkInsertWriter {
       }
     }
 
-    ApiFuture<AppendRowsResponse> future = jsonStreamWriter.append(data, offset);
+    // Register before submitting so a synchronously completed future cannot drop the party count
+    // to zero (which permanently terminates the Phaser) before registration occurs.
+    openRequestCount.register();
+    ApiFuture<AppendRowsResponse> future;
+    try {
+      future = jsonStreamWriter.append(data, offset);
+    } catch (Throwable t) {
+      openRequestCount.arriveAndDeregister();
+      throw t;
+    }
     ApiFutures.addCallback(
         future, new AppendCompleteCallback(this), MoreExecutors.directExecutor());
-    openRequestCount.register();
   }
 
-  long cleanup(BigQueryWriteClient client) {
+  long cleanup(BigQueryWriteClient client) throws InterruptedException {
     LOG.finer("++enter++");
-    LOG.fine("Cleaning up bulk insert writer for stream: %s", jsonStreamWriter.getStreamName());
-    openRequestCount.arriveAndAwaitAdvance();
-    jsonStreamWriter.close();
+    String currentStreamName = getStreamName();
+    LOG.fine("Cleaning up bulk insert writer for stream: %s", currentStreamName);
+    try {
+      openRequestCount.awaitAdvanceInterruptibly(openRequestCount.arrive());
+    } finally {
+      closeStreamWriter();
+    }
 
     synchronized (this.streamLock) {
       if (this.error != null) {
@@ -99,14 +121,32 @@ class BigQueryJdbcBulkInsertWriter {
     }
 
     // Finalize the stream.
-    FinalizeWriteStreamResponse finalizeResponse =
-        client.finalizeWriteStream(jsonStreamWriter.getStreamName());
-    LOG.finer("Rows written: " + finalizeResponse.getRowCount());
+    FinalizeWriteStreamResponse finalizeResponse = client.finalizeWriteStream(currentStreamName);
+    LOG.finer("Rows written: %d", finalizeResponse.getRowCount());
     return finalizeResponse.getRowCount();
   }
 
+  void closeQuietly() {
+    if (this.jsonStreamWriter != null && this.writerClosed.compareAndSet(false, true)) {
+      try {
+        this.jsonStreamWriter.close();
+      } catch (RuntimeException ex) {
+        LOG.warning(ex, "Failed to close JsonStreamWriter during error cleanup.");
+      }
+    }
+  }
+
+  private void closeStreamWriter() {
+    if (this.jsonStreamWriter != null && this.writerClosed.compareAndSet(false, true)) {
+      this.jsonStreamWriter.close();
+    }
+  }
+
   String getStreamName() {
-    return jsonStreamWriter.getStreamName();
+    if (this.streamName != null) {
+      return this.streamName;
+    }
+    return this.jsonStreamWriter != null ? this.jsonStreamWriter.getStreamName() : null;
   }
 
   static class AppendCompleteCallback implements ApiFutureCallback<AppendRowsResponse> {
@@ -122,7 +162,7 @@ class BigQueryJdbcBulkInsertWriter {
     }
 
     public void onFailure(Throwable throwable) {
-      parent.LOG.warning(
+      LOG.warning(
           "Append failed for stream %s: %s", parent.getStreamName(), throwable.getMessage());
       synchronized (this.parent.streamLock) {
         if (this.parent.error == null) {

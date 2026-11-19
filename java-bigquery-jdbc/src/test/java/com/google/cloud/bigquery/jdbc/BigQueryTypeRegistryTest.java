@@ -19,6 +19,7 @@ package com.google.cloud.bigquery.jdbc;
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
+import com.google.cloud.bigquery.Field;
 import com.google.cloud.bigquery.StandardSQLTypeName;
 import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import java.sql.Date;
@@ -324,5 +325,53 @@ public class BigQueryTypeRegistryTest {
                   .getTime())
           .isEqualTo(Duration.ofHours(2).plusMinutes(30).toMillis());
     }
+  }
+
+  @Test
+  public void testWriteApiHelpersReuseRegistryDescriptorsAndExtractInstant() {
+    assertThat(BigQueryTypeRegistry.isSupportedWriteApiField(null)).isFalse();
+    assertThat(
+            BigQueryTypeRegistry.isSupportedWriteApiField(
+                Field.of("s", StandardSQLTypeName.STRING)))
+        .isTrue();
+    assertThat(
+            BigQueryTypeRegistry.isSupportedWriteApiField(
+                Field.newBuilder("rep", StandardSQLTypeName.STRING)
+                    .setMode(Field.Mode.REPEATED)
+                    .build()))
+        .isFalse();
+    assertThat(
+            BigQueryTypeRegistry.isSupportedWriteApiField(
+                Field.of(
+                    "st", StandardSQLTypeName.STRUCT, Field.of("a", StandardSQLTypeName.STRING))))
+        .isFalse();
+
+    assertThat(BigQueryTypeRegistry.isSupportedJavaValue(null, "x")).isFalse();
+    assertThat(BigQueryTypeRegistry.isSupportedJavaValue(StandardSQLTypeName.STRING, null))
+        .isFalse();
+    assertThat(BigQueryTypeRegistry.isSupportedJavaValue(StandardSQLTypeName.INT64, (byte) 1))
+        .isTrue();
+    assertThat(BigQueryTypeRegistry.isSupportedJavaValue(StandardSQLTypeName.INT64, (short) 2))
+        .isTrue();
+    assertThat(BigQueryTypeRegistry.isSupportedJavaValue(StandardSQLTypeName.INT64, 3)).isTrue();
+    assertThat(BigQueryTypeRegistry.isSupportedJavaValue(StandardSQLTypeName.INT64, 4L)).isTrue();
+    assertThat(BigQueryTypeRegistry.isSupportedJavaValue(StandardSQLTypeName.INT64, "4")).isFalse();
+    assertThat(
+            BigQueryTypeRegistry.isSupportedJavaValue(
+                StandardSQLTypeName.DATE, LocalDate.of(2026, 11, 18)))
+        .isTrue();
+    assertThat(
+            BigQueryTypeRegistry.isSupportedJavaValue(
+                StandardSQLTypeName.TIME, Time.valueOf("10:00:00")))
+        .isTrue();
+
+    Instant expected = Instant.parse("2026-11-18T19:39:36.123456789Z");
+    assertThat(BigQueryTypeRegistry.extractInstant(expected)).isEqualTo(expected);
+    assertThat(BigQueryTypeRegistry.extractInstant(expected.atOffset(ZoneOffset.ofHours(-5))))
+        .isEqualTo(expected);
+    assertThat(BigQueryTypeRegistry.extractInstant(expected.atZone(ZoneId.of("Asia/Tokyo"))))
+        .isEqualTo(expected);
+    assertThat(BigQueryTypeRegistry.extractInstant(Timestamp.from(expected))).isEqualTo(expected);
+    assertThat(BigQueryTypeRegistry.extractInstant(Date.valueOf("2026-11-18"))).isNull();
   }
 }

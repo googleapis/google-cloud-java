@@ -16,6 +16,7 @@
 
 package com.google.cloud.bigquery.jdbc;
 
+import com.google.cloud.bigquery.Field;
 import com.google.cloud.bigquery.FieldValue;
 import com.google.cloud.bigquery.StandardSQLTypeName;
 import com.google.cloud.bigquery.exception.BigQueryJdbcException;
@@ -39,9 +40,13 @@ import java.time.ZoneId;
 import java.time.ZoneOffset;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
 import java.util.Arrays;
 import java.util.Base64;
+import java.util.Collections;
+import java.util.EnumSet;
 import java.util.Map;
+import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import org.apache.arrow.vector.PeriodDuration;
 
@@ -54,6 +59,23 @@ final class BigQueryTypeRegistry {
   private static final TypeDescriptor<?>[] DESCRIPTORS_BY_ORDINAL;
   private static final Map<Class<?>, TypeDescriptor<?>> DESCRIPTORS_BY_CLASS;
   private static final Map<Integer, TypeDescriptor<?>> DESCRIPTORS_BY_JDBC_TYPE;
+  private static final Set<StandardSQLTypeName> SUPPORTED_WRITE_API_TYPES =
+      Collections.unmodifiableSet(
+          EnumSet.of(
+              StandardSQLTypeName.STRING,
+              StandardSQLTypeName.BYTES,
+              StandardSQLTypeName.INT64,
+              StandardSQLTypeName.FLOAT64,
+              StandardSQLTypeName.NUMERIC,
+              StandardSQLTypeName.BIGNUMERIC,
+              StandardSQLTypeName.BOOL,
+              StandardSQLTypeName.DATE,
+              StandardSQLTypeName.TIME,
+              StandardSQLTypeName.DATETIME,
+              StandardSQLTypeName.TIMESTAMP,
+              StandardSQLTypeName.JSON,
+              StandardSQLTypeName.GEOGRAPHY,
+              StandardSQLTypeName.INTERVAL));
 
   private static final DateTimeFormatter TIMESTAMP_FORMATTER =
       DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSSSSS");
@@ -366,25 +388,19 @@ final class BigQueryTypeRegistry {
               || targetClass == LocalTime.class
               || targetClass == Date.class
               || targetClass == Time.class) {
-            Instant instant;
-            if (val instanceof Instant) {
-              instant = (Instant) val;
-            } else if (val instanceof OffsetDateTime) {
-              instant = ((OffsetDateTime) val).toInstant();
-            } else if (val instanceof ZonedDateTime) {
-              instant = ((ZonedDateTime) val).toInstant();
-            } else if (val instanceof Timestamp) {
-              instant = ((Timestamp) val).toInstant();
-            } else if (val instanceof java.util.Date) {
-              instant = Instant.ofEpochMilli(((java.util.Date) val).getTime());
-            } else if (val instanceof LocalDateTime) {
-              instant = ((LocalDateTime) val).toInstant(ZoneOffset.UTC);
-            } else if (val instanceof Long) {
-              instant = Instant.EPOCH.plus((Long) val, java.time.temporal.ChronoUnit.MICROS);
-            } else if (val instanceof String) {
-              instant = BigQueryTemporalUtility.boxTimestamp((String) val).toInstant();
-            } else {
-              throw new BigQueryJdbcException("Cannot convert to TIMESTAMP: " + val);
+            Instant instant = extractInstant(val);
+            if (instant == null) {
+              if (val instanceof java.util.Date) {
+                instant = Instant.ofEpochMilli(((java.util.Date) val).getTime());
+              } else if (val instanceof LocalDateTime) {
+                instant = ((LocalDateTime) val).toInstant(ZoneOffset.UTC);
+              } else if (val instanceof Long) {
+                instant = Instant.EPOCH.plus((Long) val, ChronoUnit.MICROS);
+              } else if (val instanceof String) {
+                instant = BigQueryTemporalUtility.boxTimestamp((String) val).toInstant();
+              } else {
+                throw new BigQueryJdbcException("Cannot convert to TIMESTAMP: " + val);
+              }
             }
 
             if (isInstantView(targetClass)) {
@@ -414,24 +430,21 @@ final class BigQueryTypeRegistry {
           Timestamp ts;
           if (val instanceof Timestamp) {
             ts = (Timestamp) val;
-          } else if (val instanceof java.util.Date) {
-            ts = new Timestamp(((java.util.Date) val).getTime());
-          } else if (val instanceof Instant) {
-            ts = Timestamp.from((Instant) val);
-          } else if (val instanceof OffsetDateTime) {
-            ts = Timestamp.from(((OffsetDateTime) val).toInstant());
-          } else if (val instanceof ZonedDateTime) {
-            ts = Timestamp.from(((ZonedDateTime) val).toInstant());
-          } else if (val instanceof LocalDateTime) {
-            ts = Timestamp.from(((LocalDateTime) val).toInstant(ZoneOffset.UTC));
-          } else if (val instanceof Long) {
-            ts =
-                Timestamp.from(
-                    Instant.EPOCH.plus((Long) val, java.time.temporal.ChronoUnit.MICROS));
-          } else if (val instanceof String) {
-            ts = BigQueryTemporalUtility.boxTimestamp((String) val);
           } else {
-            throw new BigQueryJdbcException("Cannot convert to TIMESTAMP: " + val);
+            Instant instant = extractInstant(val);
+            if (instant != null) {
+              ts = Timestamp.from(instant);
+            } else if (val instanceof java.util.Date) {
+              ts = new Timestamp(((java.util.Date) val).getTime());
+            } else if (val instanceof LocalDateTime) {
+              ts = Timestamp.from(((LocalDateTime) val).toInstant(ZoneOffset.UTC));
+            } else if (val instanceof Long) {
+              ts = Timestamp.from(Instant.EPOCH.plus((Long) val, ChronoUnit.MICROS));
+            } else if (val instanceof String) {
+              ts = BigQueryTemporalUtility.boxTimestamp((String) val);
+            } else {
+              throw new BigQueryJdbcException("Cannot convert to TIMESTAMP: " + val);
+            }
           }
 
           return ts;
@@ -997,5 +1010,46 @@ final class BigQueryTypeRegistry {
 
   public static ColumnTypeInfo getColumnTypeInfo(StandardSQLTypeName bqType) {
     return STANDARD_TYPE_INFO.get(bqType);
+  }
+
+  static boolean isSupportedWriteApiField(Field field) {
+    return field != null
+        && field.getMode() != Field.Mode.REPEATED
+        && (field.getSubFields() == null || field.getSubFields().isEmpty())
+        && field.getType() != null
+        && field.getType().getStandardType() != null
+        && SUPPORTED_WRITE_API_TYPES.contains(field.getType().getStandardType());
+  }
+
+  static boolean isSupportedJavaValue(StandardSQLTypeName bqType, Object value) {
+    if (bqType == null || value == null) {
+      return false;
+    }
+    int ordinal = bqType.ordinal();
+    if (ordinal >= DESCRIPTORS_BY_ORDINAL.length || DESCRIPTORS_BY_ORDINAL[ordinal] == null) {
+      return false;
+    }
+    for (Class<?> supported : DESCRIPTORS_BY_ORDINAL[ordinal].getSupportedJavaTypes()) {
+      if (supported.isInstance(value)) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  static Instant extractInstant(Object value) {
+    if (value instanceof Instant) {
+      return (Instant) value;
+    }
+    if (value instanceof OffsetDateTime) {
+      return ((OffsetDateTime) value).toInstant();
+    }
+    if (value instanceof ZonedDateTime) {
+      return ((ZonedDateTime) value).toInstant();
+    }
+    if (value instanceof Timestamp) {
+      return ((Timestamp) value).toInstant();
+    }
+    return null;
   }
 }
