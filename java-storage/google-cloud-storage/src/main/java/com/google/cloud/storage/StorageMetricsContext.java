@@ -44,6 +44,7 @@ final class StorageMetricsContext {
       CallOptions.Key.create("storage-metrics-context");
 
   private static final ThreadLocal<StorageMetricsContext> CURRENT = new ThreadLocal<>();
+  private static final ThreadLocal<Runnable> WATCHDOG_TIMEOUT_CALLBACK = new ThreadLocal<>();
   private static final long HTTP_STATUS_OK = 200L;
   private static final long HTTP_STATUS_UNSET = 0L;
 
@@ -178,6 +179,25 @@ final class StorageMetricsContext {
 
   static @Nullable StorageMetricsContext current() {
     return CURRENT.get();
+  }
+
+  static Scope enterWatchdogScope(Runnable onWatchdogTimeout) {
+    Runnable prev = WATCHDOG_TIMEOUT_CALLBACK.get();
+    WATCHDOG_TIMEOUT_CALLBACK.set(onWatchdogTimeout);
+    return () -> {
+      if (prev == null) {
+        WATCHDOG_TIMEOUT_CALLBACK.remove();
+      } else {
+        WATCHDOG_TIMEOUT_CALLBACK.set(prev);
+      }
+    };
+  }
+
+  static void notifyWatchdogTimeout() {
+    Runnable callback = WATCHDOG_TIMEOUT_CALLBACK.get();
+    if (callback != null) {
+      callback.run();
+    }
   }
 
   Scope makeCurrent() {

@@ -713,6 +713,68 @@ public final class StorageClientMetricsTest {
             unknownReceiveAttrs, 64L);
   }
 
+  @Test
+  public void recordStallDuration_recordsExactEightAttributesAndSkipsWhenDebugDisabled() {
+    SdkMeterProvider provider = SdkMeterProvider.builder().registerMetricReader(reader).build();
+    StorageClientMetrics standardMetrics =
+        StorageOptions.grpc()
+            .setProjectId("test-project")
+            .setCredentials(NoCredentials.getInstance())
+            .setEnableOtelMetrics(true)
+            .setMeterProvider(provider)
+            .build()
+            .getStorageClientMetrics();
+    standardMetrics.recordStallDuration(
+        Context.current(),
+        2.5,
+        "ReadObject",
+        "google.storage.v2.Storage/ReadObject",
+        StorageClientMetrics.NETWORK_PATH_DIRECTPATH);
+    assertThat(findMetric(StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_STALL_DURATION)).isNull();
+
+    StorageClientMetrics debugMetrics =
+        StorageOptions.grpc()
+            .setProjectId("test-project")
+            .setCredentials(NoCredentials.getInstance())
+            .setEnableOtelMetrics(true)
+            .setEnableOtelDebugMetrics(true)
+            .setMeterProvider(provider)
+            .build()
+            .getStorageClientMetrics();
+    debugMetrics.recordStallDuration(
+        Context.current(),
+        2.5,
+        "ReadObject",
+        "google.storage.v2.Storage/ReadObject",
+        StorageClientMetrics.NETWORK_PATH_DIRECTPATH);
+
+    MetricData metricData =
+        findMetric(StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_STALL_DURATION);
+    assertThat(metricData).isNotNull();
+    assertThat(metricData.getUnit()).isEqualTo("s");
+    assertThat(metricData.getHistogramData().getPoints()).hasSize(1);
+    HistogramPointData point = metricData.getHistogramData().getPoints().iterator().next();
+    assertThat(point.getSum()).isWithin(0.0001).of(2.5);
+    assertThat(point.getAttributes())
+        .isEqualTo(
+            Attributes.builder()
+                .put(
+                    StorageClientMetrics.KEY_GCP_CLIENT_SERVICE,
+                    StorageClientMetrics.SERVICE_STORAGE)
+                .put(StorageClientMetrics.KEY_GCP_CLIENT_VERSION, StorageOptions.version())
+                .put(
+                    StorageClientMetrics.KEY_GCP_CLIENT_ARTIFACT,
+                    StorageClientMetrics.ARTIFACT_STORAGE)
+                .put(StorageClientMetrics.KEY_RPC_SYSTEM_NAME, "grpc")
+                .put(StorageClientMetrics.KEY_SERVER_ADDRESS, "storage.googleapis.com")
+                .put(StorageClientMetrics.KEY_GCP_STORAGE_OPERATION, "ReadObject")
+                .put(StorageClientMetrics.KEY_RPC_METHOD, "google.storage.v2.Storage/ReadObject")
+                .put(
+                    StorageClientMetrics.KEY_NETWORK_PATH,
+                    StorageClientMetrics.NETWORK_PATH_DIRECTPATH)
+                .build());
+  }
+
   static final class TestMetricReader implements MetricReader {
     private final MetricReader delegate = InMemoryMetricReader.create();
     final AtomicBoolean shutdownCalled = new AtomicBoolean(false);

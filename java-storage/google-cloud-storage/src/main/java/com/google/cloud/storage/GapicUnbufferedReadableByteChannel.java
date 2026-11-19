@@ -446,6 +446,9 @@ final class GapicUnbufferedReadableByteChannel
 
     @Override
     protected void onErrorImpl(Throwable t) {
+      if (t instanceof WatchdogTimeoutException) {
+        StorageMetricsContext.notifyWatchdogTimeout();
+      }
       if (t instanceof CancellationException) {
         cancellation.set(t);
       }

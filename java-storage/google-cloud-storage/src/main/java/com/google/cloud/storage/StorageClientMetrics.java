@@ -340,8 +340,7 @@ final class StorageClientMetrics implements AutoCloseable {
           meter
               .histogramBuilder(METRIC_GCP_STORAGE_CLIENT_STALL_DURATION)
               .setDescription(
-                  "Stall timeout after which a read attempt was aborted while waiting for the"
-                      + " initial response.")
+                  "Duration of stalled streaming read or write attempts before watchdog timeout.")
               .setUnit("s")
               .setExplicitBucketBoundariesAdvice(
                   OpenTelemetryBootstrappingUtils.latencyHistogramBoundaries())
@@ -584,6 +583,24 @@ final class StorageClientMetrics implements AutoCloseable {
               .build();
       networkIo.add(receiveBytes, receiveAttributes, otelContext);
     }
+  }
+
+  void recordStallDuration(
+      Context otelContext,
+      double durationSeconds,
+      String operationName,
+      String rpcMethod,
+      String networkPath) {
+    if (stallDuration == null) {
+      return;
+    }
+    Attributes attributes =
+        baseAttributes.toBuilder()
+            .put(KEY_GCP_STORAGE_OPERATION, operationName)
+            .put(KEY_RPC_METHOD, rpcMethod)
+            .put(KEY_NETWORK_PATH, networkPath)
+            .build();
+    stallDuration.record(durationSeconds, attributes, otelContext);
   }
 
   @Nullable

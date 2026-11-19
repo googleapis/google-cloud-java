@@ -20,10 +20,14 @@ import static com.google.cloud.storage.TestUtils.xxd;
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.assertThrows;
 
+import com.google.api.core.ApiClock;
 import com.google.api.core.SettableApiFuture;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ResponseObserver;
 import com.google.api.gax.rpc.ServerStreamingCallable;
+import com.google.api.gax.rpc.StreamController;
+import com.google.api.gax.rpc.Watchdog;
+import com.google.api.gax.rpc.WatchdogTimeoutException;
 import com.google.cloud.NoCredentials;
 import com.google.cloud.storage.GrpcUtils.ZeroCopyServerStreamingCallable;
 import com.google.cloud.storage.Retrying.Retrier;
@@ -34,15 +38,21 @@ import com.google.storage.v2.ReadObjectRequest;
 import com.google.storage.v2.ReadObjectResponse;
 import io.grpc.Status;
 import io.opentelemetry.api.common.Attributes;
+import io.opentelemetry.context.Scope;
 import io.opentelemetry.sdk.metrics.SdkMeterProvider;
 import io.opentelemetry.sdk.metrics.data.LongPointData;
 import io.opentelemetry.sdk.metrics.data.MetricData;
 import io.opentelemetry.sdk.testing.exporter.InMemoryMetricReader;
 import java.io.IOException;
 import java.nio.ByteBuffer;
+import java.time.Duration;
 import java.util.Collection;
+import java.util.concurrent.CancellationException;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicLong;
 import org.junit.Test;
 
 public final class GapicUnbufferedReadableByteChannelTest {
@@ -643,6 +653,73 @@ public final class GapicUnbufferedReadableByteChannelTest {
             .mapToLong(LongPointData::getValue)
             .sum();
     assertThat(attemptsTotal).isEqualTo(2L);
+  }
+
+  @Test
+  public void read_watchdogTimeout_notifiesWatchdogScopeSynchronously() throws IOException {
+    AtomicLong nanos = new AtomicLong(1_000_000_000L);
+    ApiClock fakeClock =
+        new ApiClock() {
+          @Override
+          public long nanoTime() {
+            return nanos.get();
+          }
+
+          @Override
+          public long millisTime() {
+            return nanos.get() / 1_000_000L;
+          }
+        };
+    ScheduledExecutorService scheduler = Executors.newSingleThreadScheduledExecutor();
+    AtomicBoolean watchdogNotified = new AtomicBoolean(false);
+    try (Watchdog watchdog = Watchdog.createDuration(fakeClock, Duration.ofHours(1), scheduler);
+        GapicUnbufferedReadableByteChannel c =
+            new GapicUnbufferedReadableByteChannel(
+                SettableApiFuture.create(),
+                new ZeroCopyServerStreamingCallable<>(
+                    new ServerStreamingCallable<ReadObjectRequest, ReadObjectResponse>() {
+                      @Override
+                      public void call(
+                          ReadObjectRequest request,
+                          ResponseObserver<ReadObjectResponse> respond,
+                          ApiCallContext context) {
+                        ResponseObserver<ReadObjectResponse> watched =
+                            watchdog.watchDuration(
+                                respond, Duration.ofSeconds(1), Duration.ofSeconds(2));
+                        watched.onStart(
+                            new StreamController() {
+                              @Override
+                              public void cancel() {
+                                try (Scope ignore =
+                                    StorageMetricsContext.enterWatchdogScope(
+                                        () -> watchdogNotified.set(true))) {
+                                  watched.onError(
+                                      new CancellationException("cancelled by watchdog"));
+                                }
+                              }
+
+                              @Override
+                              public void disableAutoInboundFlowControl() {}
+
+                              @Override
+                              public void request(int count) {}
+                            });
+                        nanos.addAndGet(1_500_000_000L);
+                        watchdog.run();
+                      }
+                    },
+                    ResponseContentLifecycleManager.noop()),
+                ReadObjectRequest.getDefaultInstance(),
+                Hasher.noop(),
+                Retrier.attemptOnce(),
+                Retrying.neverRetry())) {
+      StorageException se =
+          assertThrows(StorageException.class, () -> c.read(ByteBuffer.allocate(16)));
+      assertThat(se.getCause()).isInstanceOf(WatchdogTimeoutException.class);
+      assertThat(watchdogNotified.get()).isTrue();
+    } finally {
+      scheduler.shutdownNow();
+    }
   }
 
   private static LongPointData findSinglePoint(Collection<MetricData> collected, String name) {

@@ -22,6 +22,10 @@ import static com.google.common.truth.Truth.assertWithMessage;
 import com.google.api.core.ApiClock;
 import com.google.api.gax.grpc.GrpcInterceptorProvider;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
+import com.google.api.gax.rpc.ResponseObserver;
+import com.google.api.gax.rpc.StreamController;
+import com.google.api.gax.rpc.Watchdog;
+import com.google.api.gax.rpc.WatchdogTimeoutException;
 import com.google.cloud.NoCredentials;
 import com.google.common.collect.ImmutableList;
 import com.google.storage.v2.BidiWriteObjectRequest;
@@ -62,13 +66,18 @@ import java.net.InetSocketAddress;
 import java.net.UnknownHostException;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.CancellationException;
 import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
+import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.stream.Collectors;
 import javax.net.ssl.SSLException;
@@ -726,6 +735,184 @@ public final class StorageGrpcMetricsInterceptorTest {
     zeroCall.close(Status.UNAVAILABLE, new Metadata());
     MetricData afterZero = findMetric(StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_NETWORK_IO);
     assertThat(afterZero.getLongSumData().getPoints()).hasSize(2);
+  }
+
+  @Test
+  public void interceptCall_watchdogTimeout_recordsStallDurationAndTimeoutErrorType()
+      throws Exception {
+    ScheduledExecutorService scheduler = Executors.newSingleThreadScheduledExecutor();
+    try (Watchdog watchdog = Watchdog.createDuration(clock, Duration.ofHours(1), scheduler)) {
+      Attributes cloudPathAttrs =
+          Attributes.newBuilder()
+              .set(
+                  Grpc.TRANSPORT_ATTR_REMOTE_ADDR,
+                  new InetSocketAddress(InetAddress.getByName("142.250.1.1"), 443))
+              .build();
+
+      // 1) Standard tier (debug disabled): Watchdog timeout still tags TIMEOUT and omits stall.
+      TestClientCall<Void, Void> stdCall = new TestClientCall<>(cloudPathAttrs);
+      interceptor
+          .interceptCall(READ_OBJECT_METHOD, CallOptions.DEFAULT, new TestChannel(stdCall))
+          .start(
+              new ClientCall.Listener<Void>() {
+                @Override
+                public void onClose(Status status, Metadata trailers) {
+                  StorageMetricsContext.notifyWatchdogTimeout();
+                }
+              },
+              new Metadata());
+      stdCall.close(Status.CANCELLED, new Metadata());
+      assertThat(findMetric(StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_STALL_DURATION))
+          .isNull();
+      assertThat(findMetric(StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_SERVER_UNREACHED))
+          .isNull();
+      HistogramPointData stdRpcPoint =
+          findMetric(StorageClientMetrics.METRIC_RPC_CLIENT_CALL_DURATION)
+              .getHistogramData()
+              .getPoints()
+              .iterator()
+              .next();
+      assertThat(stdRpcPoint.getCount()).isEqualTo(1L);
+      assertThat(stdRpcPoint.getAttributes().get(StorageClientMetrics.KEY_ERROR_TYPE))
+          .isEqualTo(StorageErrorTypeMapper.STATUS_TIMEOUT);
+
+      // 2) Debug enabled: mid-stream Watchdog wait timeout records stall since last onMessage
+      // synchronously inside onError before returning, tags TIMEOUT, and omits server.unreached.
+      StorageGrpcMetricsInterceptor debugInterceptor = createDebugInterceptor();
+      TestClientCall<Void, Void> stallCall = new TestClientCall<>(cloudPathAttrs);
+      AtomicBoolean observedBeforeReturn = new AtomicBoolean(false);
+      ResponseObserver<Void> watched =
+          watchdog.watchDuration(
+              new ResponseObserver<Void>() {
+                @Override
+                public void onStart(StreamController controller) {}
+
+                @Override
+                public void onResponse(Void response) {}
+
+                @Override
+                public void onError(Throwable t) {
+                  assertThat(t).isInstanceOf(WatchdogTimeoutException.class);
+                  StorageMetricsContext.notifyWatchdogTimeout();
+                  // Verify metrics are already recorded before observer unblocks caller thread.
+                  assertThat(
+                          findMetric(StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_STALL_DURATION))
+                      .isNotNull();
+                  observedBeforeReturn.set(true);
+                }
+
+                @Override
+                public void onComplete() {}
+              },
+              Duration.ofSeconds(1),
+              Duration.ofSeconds(2));
+
+      ClientCall<Void, Void> intercepted =
+          debugInterceptor.interceptCall(
+              READ_OBJECT_METHOD, CallOptions.DEFAULT, new TestChannel(stallCall));
+      intercepted.start(
+          new ClientCall.Listener<Void>() {
+            @Override
+            public void onMessage(Void message) {
+              watched.onResponse(message);
+            }
+
+            @Override
+            public void onClose(Status status, Metadata trailers) {
+              watched.onError(new CancellationException(status.getCode().name()));
+            }
+          },
+          new Metadata());
+      watched.onStart(
+          new StreamController() {
+            @Override
+            public void cancel() {
+              stallCall.close(Status.CANCELLED, new Metadata());
+            }
+
+            @Override
+            public void disableAutoInboundFlowControl() {}
+
+            @Override
+            public void request(int count) {}
+          });
+
+      clock.advanceNanos(1_000_000_000L);
+      stallCall.deliverMessage(null);
+      clock.advanceNanos(2_500_000_000L);
+      watchdog.run();
+
+      assertThat(observedBeforeReturn.get()).isTrue();
+      MetricData stallMetric =
+          findMetric(StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_STALL_DURATION);
+      assertThat(stallMetric).isNotNull();
+      assertThat(stallMetric.getUnit()).isEqualTo("s");
+      assertThat(stallMetric.getHistogramData().getPoints()).hasSize(1);
+      HistogramPointData stallPoint = stallMetric.getHistogramData().getPoints().iterator().next();
+      assertThat(stallPoint.getSum()).isWithin(0.0001).of(2.5);
+      assertThat(stallPoint.getAttributes())
+          .isEqualTo(
+              io.opentelemetry.api.common.Attributes.builder()
+                  .put(
+                      StorageClientMetrics.KEY_GCP_CLIENT_SERVICE,
+                      StorageClientMetrics.SERVICE_STORAGE)
+                  .put(StorageClientMetrics.KEY_GCP_CLIENT_VERSION, StorageOptions.version())
+                  .put(
+                      StorageClientMetrics.KEY_GCP_CLIENT_ARTIFACT,
+                      StorageClientMetrics.ARTIFACT_STORAGE)
+                  .put(StorageClientMetrics.KEY_RPC_SYSTEM_NAME, "grpc")
+                  .put(StorageClientMetrics.KEY_SERVER_ADDRESS, "storage.googleapis.com")
+                  .put(StorageClientMetrics.KEY_GCP_STORAGE_OPERATION, "ReadObject")
+                  .put(StorageClientMetrics.KEY_RPC_METHOD, "google.storage.v2.Storage/ReadObject")
+                  .put(
+                      StorageClientMetrics.KEY_NETWORK_PATH,
+                      StorageClientMetrics.NETWORK_PATH_CLOUDPATH)
+                  .build());
+
+      HistogramPointData rpcPoint =
+          findMetric(StorageClientMetrics.METRIC_RPC_CLIENT_CALL_DURATION)
+              .getHistogramData()
+              .getPoints()
+              .iterator()
+              .next();
+      assertThat(rpcPoint.getCount()).isEqualTo(2L);
+      assertThat(rpcPoint.getSum()).isWithin(0.0001).of(3.5);
+      assertThat(rpcPoint.getAttributes().get(StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE))
+          .isEqualTo("CANCELLED");
+      assertThat(rpcPoint.getAttributes().get(StorageClientMetrics.KEY_ERROR_TYPE))
+          .isEqualTo(StorageErrorTypeMapper.STATUS_TIMEOUT);
+      assertThat(findMetric(StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_SERVER_UNREACHED))
+          .isNull();
+      assertThat(requestActivePoint().getValue()).isEqualTo(0L);
+
+      // 3) Non-watchdog user CANCELLED: tags CANCELLED and does not record stall.duration.
+      TestClientCall<Void, Void> cancelCall = new TestClientCall<>(cloudPathAttrs);
+      debugInterceptor
+          .interceptCall(READ_OBJECT_METHOD, CallOptions.DEFAULT, new TestChannel(cancelCall))
+          .start(new TestListener<>(), new Metadata());
+      cancelCall.close(Status.CANCELLED, new Metadata());
+      assertThat(
+              findMetric(StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_STALL_DURATION)
+                  .getHistogramData()
+                  .getPoints()
+                  .iterator()
+                  .next()
+                  .getCount())
+          .isEqualTo(1L);
+      boolean sawCancelled =
+          findMetric(StorageClientMetrics.METRIC_RPC_CLIENT_CALL_DURATION)
+              .getHistogramData()
+              .getPoints()
+              .stream()
+              .anyMatch(
+                  p ->
+                      StorageErrorTypeMapper.STATUS_CANCELLED.equals(
+                          p.getAttributes().get(StorageClientMetrics.KEY_ERROR_TYPE)));
+      assertThat(sawCancelled).isTrue();
+      assertThat(requestActivePoint().getValue()).isEqualTo(0L);
+    } finally {
+      scheduler.shutdownNow();
+    }
   }
 
   @Test

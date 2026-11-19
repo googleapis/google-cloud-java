@@ -330,6 +330,32 @@ public final class StorageMetricsContextTest {
   }
 
   @Test
+  public void enterWatchdogScope_setsRestoresAndNoOpsOutsideScope() {
+    AtomicInteger outerCalls = new AtomicInteger();
+    AtomicInteger innerCalls = new AtomicInteger();
+
+    // Outside any scope: safe no-op.
+    StorageMetricsContext.notifyWatchdogTimeout();
+
+    try (Scope outerScope = StorageMetricsContext.enterWatchdogScope(outerCalls::incrementAndGet)) {
+      try (Scope innerScope =
+          StorageMetricsContext.enterWatchdogScope(innerCalls::incrementAndGet)) {
+        StorageMetricsContext.notifyWatchdogTimeout();
+      }
+      assertThat(innerCalls.get()).isEqualTo(1);
+      assertThat(outerCalls.get()).isEqualTo(0);
+
+      StorageMetricsContext.notifyWatchdogTimeout();
+    }
+    assertThat(outerCalls.get()).isEqualTo(1);
+
+    // After outer scope closes, ThreadLocal is cleared and notifications no-op.
+    StorageMetricsContext.notifyWatchdogTimeout();
+    assertThat(outerCalls.get()).isEqualTo(1);
+    assertThat(innerCalls.get()).isEqualTo(1);
+  }
+
+  @Test
   public void multiStepContext_behavior() {
     StorageMetricsContext context1 = StorageMetricsContext.createForMultiStep("WriteObject");
     assertThat(context1.shouldRecordOperationOnRetrierExit()).isFalse();
