@@ -36,6 +36,8 @@ import io.opentelemetry.context.Context;
 import java.net.InetAddress;
 import java.net.InetSocketAddress;
 import java.net.SocketAddress;
+import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicLong;
 import org.jspecify.annotations.NullMarked;
@@ -47,6 +49,9 @@ import org.jspecify.annotations.Nullable;
  */
 @NullMarked
 final class StorageGrpcMetricsInterceptor implements ClientInterceptor {
+
+  static final Metadata.Key<byte[]> GRPC_SERVER_STATS_BIN_KEY =
+      Metadata.Key.of("grpc-server-stats-bin", Metadata.BINARY_BYTE_MARSHALLER);
 
   private final StorageClientMetrics metrics;
   private final ApiClock clock;
@@ -112,6 +117,13 @@ final class StorageGrpcMetricsInterceptor implements ClientInterceptor {
 
                   metrics.recordRpcCallDuration(
                       otelContext, durationSeconds, rpcMethod, statusCode, networkPath, errorType);
+                  if (metrics.getServerDuration() != null) {
+                    double serverDurationSeconds = decodeServerDurationSeconds(trailers);
+                    if (serverDurationSeconds >= 0.0) {
+                      metrics.recordServerDuration(
+                          otelContext, serverDurationSeconds, operationName, networkPath);
+                    }
+                  }
                 } finally {
                   metrics.recordRequestActive(otelContext, operationName, -1L);
                   super.onClose(status, trailers);
@@ -129,6 +141,16 @@ final class StorageGrpcMetricsInterceptor implements ClientInterceptor {
         super.sendMessage(message);
       }
     };
+  }
+
+  static double decodeServerDurationSeconds(Metadata trailers) {
+    byte[] bytes = trailers.get(GRPC_SERVER_STATS_BIN_KEY);
+    // Census ServerStats binary encoding: version (0x00), field ID (0x00), 8-byte LE uint64 nanos.
+    if (bytes == null || bytes.length != 10 || bytes[0] != 0 || bytes[1] != 0) {
+      return -1.0;
+    }
+    long nanos = ByteBuffer.wrap(bytes, 2, 8).order(ByteOrder.LITTLE_ENDIAN).getLong();
+    return nanos >= 0 ? nanos / 1_000_000_000.0 : -1.0;
   }
 
   static String defaultOperationName(@Nullable String bareMethod) {

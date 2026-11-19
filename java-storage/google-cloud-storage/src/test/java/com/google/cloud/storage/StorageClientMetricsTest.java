@@ -41,6 +41,7 @@ import java.util.Map;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.function.Function;
 import java.util.stream.Collectors;
+import org.jspecify.annotations.Nullable;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -525,6 +526,61 @@ public final class StorageClientMetricsTest {
         .isEqualTo(0L);
   }
 
+  @Test
+  public void recordServerDuration_recordsExactSevenAttributes() {
+    SdkMeterProvider provider = SdkMeterProvider.builder().registerMetricReader(reader).build();
+    StorageClientMetrics standardMetrics =
+        StorageOptions.grpc()
+            .setProjectId("test-project")
+            .setCredentials(NoCredentials.getInstance())
+            .setEnableOtelMetrics(true)
+            .setMeterProvider(provider)
+            .build()
+            .getStorageClientMetrics();
+    standardMetrics.recordServerDuration(
+        Context.current(), 0.125, "ReadObject", StorageClientMetrics.NETWORK_PATH_DIRECTPATH);
+    assertThat(findMetric(StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_SERVER_DURATION)).isNull();
+
+    StorageClientMetrics grpcMetrics =
+        StorageOptions.grpc()
+            .setProjectId("test-project")
+            .setCredentials(NoCredentials.getInstance())
+            .setEnableOtelMetrics(true)
+            .setEnableOtelDebugMetrics(true)
+            .setMeterProvider(provider)
+            .build()
+            .getStorageClientMetrics();
+
+    grpcMetrics.recordServerDuration(
+        Context.current(), 0.125, "ReadObject", StorageClientMetrics.NETWORK_PATH_DIRECTPATH);
+
+    MetricData metricData =
+        findMetric(StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_SERVER_DURATION);
+    assertThat(metricData).isNotNull();
+    assertThat(metricData.getUnit()).isEqualTo("s");
+    assertThat(metricData.getHistogramData().getPoints()).hasSize(1);
+    HistogramPointData point = metricData.getHistogramData().getPoints().iterator().next();
+    assertThat(point.getCount()).isEqualTo(1L);
+    assertThat(point.getSum()).isWithin(1e-6).of(0.125);
+    assertThat(point.getAttributes())
+        .isEqualTo(
+            Attributes.builder()
+                .put(
+                    StorageClientMetrics.KEY_GCP_CLIENT_SERVICE,
+                    StorageClientMetrics.SERVICE_STORAGE)
+                .put(StorageClientMetrics.KEY_GCP_CLIENT_VERSION, StorageOptions.version())
+                .put(
+                    StorageClientMetrics.KEY_GCP_CLIENT_ARTIFACT,
+                    StorageClientMetrics.ARTIFACT_STORAGE)
+                .put(StorageClientMetrics.KEY_RPC_SYSTEM_NAME, "grpc")
+                .put(StorageClientMetrics.KEY_SERVER_ADDRESS, "storage.googleapis.com")
+                .put(StorageClientMetrics.KEY_GCP_STORAGE_OPERATION, "ReadObject")
+                .put(
+                    StorageClientMetrics.KEY_NETWORK_PATH,
+                    StorageClientMetrics.NETWORK_PATH_DIRECTPATH)
+                .build());
+  }
+
   static final class TestMetricReader implements MetricReader {
     private final MetricReader delegate = InMemoryMetricReader.create();
     final AtomicBoolean shutdownCalled = new AtomicBoolean(false);
@@ -554,6 +610,13 @@ public final class StorageClientMetricsTest {
       shutdownCalled.set(true);
       return delegate.shutdown();
     }
+  }
+
+  private @Nullable MetricData findMetric(String name) {
+    return reader.collectAllMetrics().stream()
+        .filter(m -> m.getName().equals(name))
+        .findFirst()
+        .orElse(null);
   }
 
   private static int findBucketIndex(List<Double> boundaries, double value) {

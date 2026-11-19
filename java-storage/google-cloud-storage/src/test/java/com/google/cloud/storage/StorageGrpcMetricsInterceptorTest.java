@@ -17,6 +17,7 @@
 package com.google.cloud.storage;
 
 import static com.google.common.truth.Truth.assertThat;
+import static com.google.common.truth.Truth.assertWithMessage;
 
 import com.google.api.core.ApiClock;
 import com.google.api.gax.grpc.GrpcInterceptorProvider;
@@ -56,6 +57,8 @@ import java.io.InputStream;
 import java.lang.reflect.Field;
 import java.net.InetAddress;
 import java.net.InetSocketAddress;
+import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -345,17 +348,7 @@ public final class StorageGrpcMetricsInterceptorTest {
 
   @Test
   public void interceptCall_requestActive_tracksInFlightAndBalancesOnClose() {
-    StorageClientMetrics debugMetrics =
-        StorageOptions.grpc()
-            .setProjectId("test-project")
-            .setCredentials(NoCredentials.getInstance())
-            .setEnableOtelMetrics(true)
-            .setEnableOtelDebugMetrics(true)
-            .setMeterProvider(meterProvider)
-            .build()
-            .getStorageClientMetrics();
-    StorageGrpcMetricsInterceptor debugInterceptor =
-        new StorageGrpcMetricsInterceptor(debugMetrics, clock);
+    StorageGrpcMetricsInterceptor debugInterceptor = createDebugInterceptor();
 
     TestClientCall<Void, Void> okCall = new TestClientCall<>(Attributes.EMPTY);
     ClientCall<Void, Void> wrappedOk =
@@ -391,6 +384,102 @@ public final class StorageGrpcMetricsInterceptorTest {
     okCall.close(Status.OK, new Metadata());
     errCall.close(Status.UNAVAILABLE, new Metadata());
     assertThat(requestActivePoint().getValue()).isEqualTo(0L);
+  }
+
+  @Test
+  public void decodeServerDurationSeconds_cases() {
+    Object[][] cases = {
+      {"valid 125ms", encodeServerStats(0, 0, 125_000_000L), 0.125},
+      {
+        "raw LE wire bytes 250ms",
+        new byte[] {0, 0, (byte) 0x80, (byte) 0xB2, (byte) 0xE6, 0x0E, 0, 0, 0, 0},
+        0.25
+      },
+      {"valid 0ns", encodeServerStats(0, 0, 0L), 0.0},
+      {"absent trailer", null, -1.0},
+      {"too short (9 bytes)", new byte[9], -1.0},
+      {"too long (11 bytes)", new byte[11], -1.0},
+      {"wrong version", encodeServerStats(1, 0, 125_000_000L), -1.0},
+      {"wrong field id", encodeServerStats(0, 1, 125_000_000L), -1.0},
+      {"negative nanos overflow", encodeServerStats(0, 0, Long.MIN_VALUE), -1.0},
+    };
+    for (Object[] testCase : cases) {
+      String label = (String) testCase[0];
+      byte[] payload = (byte[]) testCase[1];
+      double expected = (double) testCase[2];
+      Metadata trailers = new Metadata();
+      if (payload != null) {
+        trailers.put(StorageGrpcMetricsInterceptor.GRPC_SERVER_STATS_BIN_KEY, payload);
+      }
+      assertWithMessage(label)
+          .that(StorageGrpcMetricsInterceptor.decodeServerDurationSeconds(trailers))
+          .isWithin(1e-9)
+          .of(expected);
+    }
+  }
+
+  @Test
+  public void interceptCall_serverDuration_recordsWhenDebugEnabledAndValidTrailerPresent()
+      throws Exception {
+    Attributes directPathAttrs =
+        Attributes.newBuilder()
+            .set(
+                Grpc.TRANSPORT_ATTR_REMOTE_ADDR,
+                new InetSocketAddress(InetAddress.getByName("34.126.1.2"), 443))
+            .build();
+    Metadata validTrailers = new Metadata();
+    validTrailers.put(
+        StorageGrpcMetricsInterceptor.GRPC_SERVER_STATS_BIN_KEY,
+        encodeServerStats(0, 0, 250_000_000L));
+
+    // Debug disabled: must not record server.duration even when trailer is present.
+    TestClientCall<Void, Void> standardCall = new TestClientCall<>(directPathAttrs);
+    interceptor
+        .interceptCall(READ_OBJECT_METHOD, CallOptions.DEFAULT, new TestChannel(standardCall))
+        .start(new TestListener<>(), new Metadata());
+    standardCall.close(Status.OK, validTrailers);
+    assertThat(findMetric(StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_SERVER_DURATION)).isNull();
+
+    // Debug enabled: records exact 7-key server.duration on valid 10-byte trailer; skips absent.
+    StorageGrpcMetricsInterceptor debugInterceptor = createDebugInterceptor();
+
+    TestClientCall<Void, Void> noTrailerCall = new TestClientCall<>(directPathAttrs);
+    debugInterceptor
+        .interceptCall(READ_OBJECT_METHOD, CallOptions.DEFAULT, new TestChannel(noTrailerCall))
+        .start(new TestListener<>(), new Metadata());
+    noTrailerCall.close(Status.OK, new Metadata());
+    assertThat(findMetric(StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_SERVER_DURATION)).isNull();
+
+    TestClientCall<Void, Void> withTrailerCall = new TestClientCall<>(directPathAttrs);
+    debugInterceptor
+        .interceptCall(READ_OBJECT_METHOD, CallOptions.DEFAULT, new TestChannel(withTrailerCall))
+        .start(new TestListener<>(), new Metadata());
+    withTrailerCall.close(Status.OK, validTrailers);
+
+    MetricData serverDuration =
+        findMetric(StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_SERVER_DURATION);
+    assertThat(serverDuration).isNotNull();
+    assertThat(serverDuration.getHistogramData().getPoints()).hasSize(1);
+    HistogramPointData point = serverDuration.getHistogramData().getPoints().iterator().next();
+    assertThat(point.getCount()).isEqualTo(1L);
+    assertThat(point.getSum()).isWithin(1e-6).of(0.25);
+    assertThat(point.getAttributes())
+        .isEqualTo(
+            io.opentelemetry.api.common.Attributes.builder()
+                .put(
+                    StorageClientMetrics.KEY_GCP_CLIENT_SERVICE,
+                    StorageClientMetrics.SERVICE_STORAGE)
+                .put(StorageClientMetrics.KEY_GCP_CLIENT_VERSION, StorageOptions.version())
+                .put(
+                    StorageClientMetrics.KEY_GCP_CLIENT_ARTIFACT,
+                    StorageClientMetrics.ARTIFACT_STORAGE)
+                .put(StorageClientMetrics.KEY_RPC_SYSTEM_NAME, "grpc")
+                .put(StorageClientMetrics.KEY_SERVER_ADDRESS, "storage.googleapis.com")
+                .put(StorageClientMetrics.KEY_GCP_STORAGE_OPERATION, "ReadObject")
+                .put(
+                    StorageClientMetrics.KEY_NETWORK_PATH,
+                    StorageClientMetrics.NETWORK_PATH_DIRECTPATH)
+                .build());
   }
 
   @Test
@@ -644,6 +733,28 @@ public final class StorageGrpcMetricsInterceptorTest {
         (InstantiatingGrpcChannelProvider)
             disabledDefaultOptions.getStorageSettings().getTransportChannelProvider();
     assertThat(extractInterceptorProvider(disabledDefaultChannelProvider)).isNull();
+  }
+
+  private StorageGrpcMetricsInterceptor createDebugInterceptor() {
+    StorageClientMetrics debugMetrics =
+        StorageOptions.grpc()
+            .setProjectId("test-project")
+            .setCredentials(NoCredentials.getInstance())
+            .setEnableOtelMetrics(true)
+            .setEnableOtelDebugMetrics(true)
+            .setMeterProvider(meterProvider)
+            .build()
+            .getStorageClientMetrics();
+    return new StorageGrpcMetricsInterceptor(debugMetrics, clock);
+  }
+
+  private static byte[] encodeServerStats(int version, int fieldId, long nanos) {
+    return ByteBuffer.allocate(10)
+        .order(ByteOrder.LITTLE_ENDIAN)
+        .put((byte) version)
+        .put((byte) fieldId)
+        .putLong(nanos)
+        .array();
   }
 
   private LongPointData requestActivePoint() {
