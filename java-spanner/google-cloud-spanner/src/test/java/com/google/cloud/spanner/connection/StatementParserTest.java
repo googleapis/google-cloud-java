@@ -275,23 +275,24 @@ public class StatementParserTest {
   public void testPostgresSQLDialectDollarQuoted() {
     assumeTrue(dialect == Dialect.POSTGRESQL);
 
-    assertThat(parser.removeCommentsAndTrim("$$foo$$")).isEqualTo("$$foo$$");
-    assertThat(parser.removeCommentsAndTrim("$$--foo$$")).isEqualTo("$$--foo$$");
-    assertThat(parser.removeCommentsAndTrim("$$\nline 1\n--line2$$"))
-        .isEqualTo("$$\nline 1\n--line2$$");
-    assertThat(parser.removeCommentsAndTrim("$bar$--foo$bar$")).isEqualTo("$bar$--foo$bar$");
-    assertThat(
-            parser.removeCommentsAndTrim(
-                "$bar$\nThis is a valid string\n -- That could contain special characters$bar$"))
-        .isEqualTo("$bar$\nThis is a valid string\n -- That could contain special characters$bar$");
+    assertEquals("$$foo$$", parser.removeCommentsAndTrim("$$foo$$"));
+    assertEquals("$$--foo$$", parser.removeCommentsAndTrim("$$--foo$$"));
+    assertEquals("$$\nline 1\n--line2$$", parser.removeCommentsAndTrim("$$\nline 1\n--line2$$"));
+    assertEquals("$bar$--foo$bar$", parser.removeCommentsAndTrim("$bar$--foo$bar$"));
+    assertEquals(
+        "$bar$\nThis is a valid string\n -- That could contain special characters$bar$",
+        parser.removeCommentsAndTrim(
+            "$bar$\nThis is a valid string\n -- That could contain special characters$bar$"));
 
-    assertThat(parser.removeCommentsAndTrim("SELECT FOO$BAR FROM SOME_TABLE"))
-        .isEqualTo("SELECT FOO$BAR FROM SOME_TABLE");
-    assertThat(parser.removeCommentsAndTrim("SELECT FOO$BAR -- This is a comment\nFROM SOME_TABLE"))
-        .isEqualTo("SELECT FOO$BAR \nFROM SOME_TABLE");
-    assertThat(
-            parser.removeCommentsAndTrim("SELECT FOO, $BAR -- This is a comment\nFROM SOME_TABLE"))
-        .isEqualTo("SELECT FOO, $BAR \nFROM SOME_TABLE");
+    assertEquals(
+        "SELECT FOO$BAR FROM SOME_TABLE",
+        parser.removeCommentsAndTrim("SELECT FOO$BAR FROM SOME_TABLE"));
+    assertEquals(
+        "SELECT FOO$BAR \nFROM SOME_TABLE",
+        parser.removeCommentsAndTrim("SELECT FOO$BAR -- This is a comment\nFROM SOME_TABLE"));
+    assertEquals(
+        "SELECT FOO, $BAR \nFROM SOME_TABLE",
+        parser.removeCommentsAndTrim("SELECT FOO, $BAR -- This is a comment\nFROM SOME_TABLE"));
 
     // Mid-identifier $tag$ is part of an unquoted identifier, not a dollar-quote opener.
     ParametersInfo midIdentifierParams =
@@ -306,14 +307,17 @@ public class StatementParserTest {
     assertEquals("SELECT col$tag$a WHERE x = $1", singleMidIdentifierParam.sqlWithNamedParameters);
 
     // Mid-identifier $$ and chained/digit-preceded $ tags strip comments and detect RETURNING.
-    assertThat(parser.removeCommentsAndTrim("SELECT col$$ -- comment\nFROM t"))
-        .isEqualTo("SELECT col$$ \nFROM t");
-    assertThat(parser.removeCommentsAndTrim("SELECT col$$tag$a -- comment\nFROM t"))
-        .isEqualTo("SELECT col$$tag$a \nFROM t");
-    assertThat(parser.removeCommentsAndTrim("SELECT col1$tag$a -- comment\nFROM t"))
-        .isEqualTo("SELECT col1$tag$a \nFROM t");
-    assertThat(parser.removeCommentsAndTrim("SELECT $$foo$$col$tag$a -- comment\nFROM t"))
-        .isEqualTo("SELECT $$foo$$col$tag$a \nFROM t");
+    assertEquals(
+        "SELECT col$$ \nFROM t", parser.removeCommentsAndTrim("SELECT col$$ -- comment\nFROM t"));
+    assertEquals(
+        "SELECT col$$tag$a \nFROM t",
+        parser.removeCommentsAndTrim("SELECT col$$tag$a -- comment\nFROM t"));
+    assertEquals(
+        "SELECT col1$tag$a \nFROM t",
+        parser.removeCommentsAndTrim("SELECT col1$tag$a -- comment\nFROM t"));
+    assertEquals(
+        "SELECT $$foo$$col$tag$a \nFROM t",
+        parser.removeCommentsAndTrim("SELECT $$foo$$col$tag$a -- comment\nFROM t"));
     assertTrue(
         parser.parse(Statement.of("UPDATE t SET a = col$$ RETURNING col$$")).hasReturningClause());
     assertTrue(
@@ -326,17 +330,17 @@ public class StatementParserTest {
             .hasReturningClause());
 
     // Numeric-leading tags ($1$, $10$, $12$, $1a$, and non-ASCII digit $١$) are rejected.
-    assertThat(parser.removeCommentsAndTrim("SELECT $1$ -- comment\nFROM t"))
-        .isEqualTo("SELECT $1$ \nFROM t");
-    assertThat(parser.removeCommentsAndTrim("SELECT $10$11")).isEqualTo("SELECT $10$11");
-    assertThat(parser.removeCommentsAndTrim("SELECT $12$ -- comment\nFROM t"))
-        .isEqualTo("SELECT $12$ \nFROM t");
-    assertThat(parser.removeCommentsAndTrim("SELECT $1a$ -- comment\nFROM t"))
-        .isEqualTo("SELECT $1a$ \nFROM t");
-    assertThat(parser.removeCommentsAndTrim("SELECT $\u0661$ -- comment\nFROM t"))
-        .isEqualTo("SELECT $\u0661$ \nFROM t");
-    assertThat(parser.removeCommentsAndTrim("SELECT $1$ /* comment */ $1$"))
-        .isEqualTo("SELECT $1$  $1$");
+    assertEquals(
+        "SELECT $1$ \nFROM t", parser.removeCommentsAndTrim("SELECT $1$ -- comment\nFROM t"));
+    assertEquals("SELECT $10$11", parser.removeCommentsAndTrim("SELECT $10$11"));
+    assertEquals(
+        "SELECT $12$ \nFROM t", parser.removeCommentsAndTrim("SELECT $12$ -- comment\nFROM t"));
+    assertEquals(
+        "SELECT $1a$ \nFROM t", parser.removeCommentsAndTrim("SELECT $1a$ -- comment\nFROM t"));
+    assertEquals(
+        "SELECT $\u0661$ \nFROM t",
+        parser.removeCommentsAndTrim("SELECT $\u0661$ -- comment\nFROM t"));
+    assertEquals("SELECT $1$  $1$", parser.removeCommentsAndTrim("SELECT $1$ /* comment */ $1$"));
 
     for (String invalidNumericTag : new String[] {"$1$", "$10$", "$12$", "$1a$", "$\u0661$"}) {
       ParametersInfo numericTagParams =
@@ -366,8 +370,9 @@ public class StatementParserTest {
       assertEquals(1, validTagParams.numberOfParameters);
       assertEquals(
           "SELECT " + literalWithTokens + " WHERE id = $1", validTagParams.sqlWithNamedParameters);
-      assertThat(parser.removeCommentsAndTrim("SELECT " + literalWithTokens + " -- outer comment"))
-          .isEqualTo("SELECT " + literalWithTokens);
+      assertEquals(
+          "SELECT " + literalWithTokens,
+          parser.removeCommentsAndTrim("SELECT " + literalWithTokens + " -- outer comment"));
       assertFalse(
           parser
               .parse(Statement.of("UPDATE t SET x = " + literalWithTokens + " WHERE id = 1"))
@@ -381,8 +386,9 @@ public class StatementParserTest {
     assertEquals(1, dollarBeforeCloseParams.numberOfParameters);
     assertEquals(
         "SELECT $a$price ? $$a$ WHERE id = $1", dollarBeforeCloseParams.sqlWithNamedParameters);
-    assertThat(parser.removeCommentsAndTrim("SELECT $a$-- price $$a$ -- outer comment"))
-        .isEqualTo("SELECT $a$-- price $$a$");
+    assertEquals(
+        "SELECT $a$-- price $$a$",
+        parser.removeCommentsAndTrim("SELECT $a$-- price $$a$ -- outer comment"));
     assertFalse(
         parser
             .parse(Statement.of("UPDATE t SET x = $a$ RETURNING price $$a$ WHERE id = 1"))
@@ -397,6 +403,57 @@ public class StatementParserTest {
   }
 
   @Test
+  public void testPostgreSQLDollarQuotedRegressions() {
+    assumeTrue(dialect == Dialect.POSTGRESQL);
+
+    // Adjacent dollar-quoted literals.
+    assertEquals(
+        "SELECT $$a$$$$--comment\n$$", parser.removeCommentsAndTrim("SELECT $$a$$$$--comment\n$$"));
+    assertEquals("SELECT $$a$$$$it's$$", parser.removeCommentsAndTrim("SELECT $$a$$$$it's$$"));
+
+    ParametersInfo adjacentParams =
+        parser.convertPositionalParametersToNamedParameters('?', "SELECT $$a$$$$?$$");
+    assertEquals(0, adjacentParams.numberOfParameters);
+    assertEquals("SELECT $$a$$$$?$$", adjacentParams.sqlWithNamedParameters);
+
+    assertFalse(
+        parser.parse(Statement.of("UPDATE t SET a = $$a$$$$ RETURNING $$")).hasReturningClause());
+
+    PostgreSQLStatementParser pgParser = (PostgreSQLStatementParser) parser;
+    assertEquals(ImmutableSet.of(), pgParser.getQueryParameters("SELECT $$a$$$$1$$"));
+
+    // Dollar-quoted literal immediately following a numeric literal or positional parameter.
+    assertEquals(
+        "SELECT 1$$--comment\n$$", parser.removeCommentsAndTrim("SELECT 1$$--comment\n$$"));
+    assertEquals("SELECT 1$$it's$$", parser.removeCommentsAndTrim("SELECT 1$$it's$$"));
+    assertEquals(ImmutableSet.of("$1"), pgParser.getQueryParameters("SELECT $1$$2$$"));
+  }
+
+  @Test
+  public void testPostgreSQLDollarQuotedPreExistingGaps() {
+    assumeTrue(dialect == Dialect.POSTGRESQL);
+    PostgreSQLStatementParser pgParser = (PostgreSQLStatementParser) parser;
+
+    // Dollar-quoted literal immediately after a positional parameter.
+    assertEquals(
+        "SELECT $1$tag$--comment\n$tag$",
+        parser.removeCommentsAndTrim("SELECT $1$tag$--comment\n$tag$"));
+
+    // Unquoted identifier containing $1 is not extracted as a query parameter.
+    assertEquals(ImmutableSet.of("$2"), pgParser.getQueryParameters("SELECT col$1, $2 FROM t"));
+
+    // Unquoted identifier col$returning does not trigger hasReturningClause().
+    assertFalse(
+        parser.parse(Statement.of("UPDATE t SET a = col$returning *")).hasReturningClause());
+
+    // Dollar-quote tags remain case-sensitive in checkReturningClauseInternal ($Tag$ != $tag$).
+    assertFalse(
+        parser
+            .parse(Statement.of("UPDATE t SET x = $Tag$ $tag$ RETURNING * $Tag$"))
+            .hasReturningClause());
+  }
+
+  @Test
   public void testPostgreSQLSkipDollarQuoted() {
     assumeTrue(dialect == Dialect.POSTGRESQL);
 
@@ -408,14 +465,16 @@ public class StatementParserTest {
     assertEquals("$a$price $$a$", skipPostgreSQL("$a$price $$a$ bar", 0));
     assertEquals("$$foo$$", skipPostgreSQL("SELECT $$foo$$", 7));
 
-    // Mid-identifier $, numeric-leading tags, and trailing $ advance exactly 1 character.
-    assertEquals("$", skipPostgreSQL("col$tag$a$tag$", 3));
-    assertEquals("$", skipPostgreSQL("col$$foo$$", 3));
-    assertEquals("$", skipPostgreSQL("col1$tag$a$tag$", 4));
+    // Unquoted identifiers containing '$' are skipped as complete identifier tokens.
+    assertEquals("col$tag$a$tag$", skipPostgreSQL("col$tag$a$tag$ bar", 0));
+    assertEquals("col$$foo$$", skipPostgreSQL("col$$foo$$ bar", 0));
+    assertEquals("col1$tag$a$tag$", skipPostgreSQL("col1$tag$a$tag$ bar", 0));
+    assertEquals("col$", skipPostgreSQL("col$ bar", 0));
+
+    // Numeric-leading tags and trailing '$' advance exactly 1 character.
     assertEquals("$", skipPostgreSQL("$1$foo$1$", 0));
     assertEquals("$", skipPostgreSQL("SELECT $12$foo$12$", 7));
     assertEquals("$", skipPostgreSQL("SELECT $\u0661$foo$\u0661$", 7));
-    assertEquals("$", skipPostgreSQL("col$", 3));
     assertEquals("$", skipPostgreSQL("SELECT $", 7));
   }
 

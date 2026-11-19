@@ -981,17 +981,25 @@ public abstract class AbstractStatementParser {
         || (supportsBacktickQuote() && currentChar == BACKTICK_QUOTE)) {
       appendIfNotNull(result, currentChar);
       return skipQuoted(sql, currentIndex, currentChar, result);
-    } else if (supportsDollarQuotedStrings()
-        && currentChar == DOLLAR
-        // In PostgreSQL, '$' is a valid identifier continuation character (e.g. col$tag$a, col$$)
-        // and cannot open a dollar-quoted literal immediately after an identifier character.
-        && (currentIndex == 0 || !isValidIdentifierChar(sql.charAt(currentIndex - 1)))) {
+    } else if (supportsDollarQuotedStrings() && currentChar == DOLLAR) {
       String dollarTag = parseDollarQuotedString(sql, currentIndex + 1);
       if (dollarTag != null) {
         appendIfNotNull(result, currentChar, dollarTag, currentChar);
         return skipQuoted(
             sql, currentIndex + dollarTag.length() + 1, currentChar, dollarTag, result);
       }
+    } else if (supportsDollarQuotedStrings()
+        && isValidIdentifierFirstChar(currentChar)
+        // Dialects with dollar-quoted strings treat '$' as an identifier character, so consume
+        // the whole identifier to avoid opening a literal mid-identifier (while keeping 1-char
+        // steps in GoogleSQL and skipping exponent suffixes like 10e2returning*).
+        && (currentIndex == 0 || !Character.isDigit(sql.charAt(currentIndex - 1)))) {
+      int endIndex = currentIndex + 1;
+      while (endIndex < sql.length() && isValidIdentifierChar(sql.charAt(endIndex))) {
+        endIndex++;
+      }
+      appendIfNotNull(result, sql.substring(currentIndex, endIndex));
+      return endIndex;
     } else if (currentChar == HYPHEN
         && sql.length() > (currentIndex + 1)
         && sql.charAt(currentIndex + 1) == HYPHEN) {
