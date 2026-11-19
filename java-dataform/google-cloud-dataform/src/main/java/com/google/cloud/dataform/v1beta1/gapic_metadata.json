@@ -52,6 +52,9 @@
             "CreateWorkspace": {
               "methods": ["createWorkspace", "createWorkspace", "createWorkspace", "createWorkspaceCallable"]
             },
+            "CreateWorkspaceLongRunning": {
+              "methods": ["createWorkspaceLongRunningAsync", "createWorkspaceLongRunningAsync", "createWorkspaceLongRunningAsync", "createWorkspaceLongRunningOperationCallable", "createWorkspaceLongRunningCallable"]
+            },
             "DeleteBranch": {
               "methods": ["deleteBranch", "deleteBranchCallable"]
             },

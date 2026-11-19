@@ -186,6 +186,52 @@ public final class McpServer extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     com.google.cloud.agentregistry.v1.McpServer.Tool.AnnotationsOrBuilder getAnnotationsOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Protocol-level tool metadata conforming to MCP _meta
+     * specification. Output only.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Struct meta = 4 [json_name = "_meta", (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the meta field is set.
+     */
+    boolean hasMeta();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Protocol-level tool metadata conforming to MCP _meta
+     * specification. Output only.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Struct meta = 4 [json_name = "_meta", (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The meta.
+     */
+    com.google.protobuf.Struct getMeta();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Protocol-level tool metadata conforming to MCP _meta
+     * specification. Output only.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Struct meta = 4 [json_name = "_meta", (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    com.google.protobuf.StructOrBuilder getMetaOrBuilder();
   }
 
   /**
@@ -1514,6 +1560,64 @@ public final class McpServer extends com.google.protobuf.GeneratedMessage
           : annotations_;
     }
 
+    public static final int META_FIELD_NUMBER = 4;
+    private com.google.protobuf.Struct meta_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Protocol-level tool metadata conforming to MCP _meta
+     * specification. Output only.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Struct meta = 4 [json_name = "_meta", (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the meta field is set.
+     */
+    @java.lang.Override
+    public boolean hasMeta() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Protocol-level tool metadata conforming to MCP _meta
+     * specification. Output only.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Struct meta = 4 [json_name = "_meta", (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The meta.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Struct getMeta() {
+      return meta_ == null ? com.google.protobuf.Struct.getDefaultInstance() : meta_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Protocol-level tool metadata conforming to MCP _meta
+     * specification. Output only.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Struct meta = 4 [json_name = "_meta", (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.StructOrBuilder getMetaOrBuilder() {
+      return meta_ == null ? com.google.protobuf.Struct.getDefaultInstance() : meta_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -1537,6 +1641,9 @@ public final class McpServer extends com.google.protobuf.GeneratedMessage
       if (((bitField0_ & 0x00000001) != 0)) {
         output.writeMessage(3, getAnnotations());
       }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        output.writeMessage(4, getMeta());
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -1554,6 +1661,9 @@ public final class McpServer extends com.google.protobuf.GeneratedMessage
       }
       if (((bitField0_ & 0x00000001) != 0)) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getAnnotations());
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getMeta());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -1577,6 +1687,10 @@ public final class McpServer extends com.google.protobuf.GeneratedMessage
       if (hasAnnotations()) {
         if (!getAnnotations().equals(other.getAnnotations())) return false;
       }
+      if (hasMeta() != other.hasMeta()) return false;
+      if (hasMeta()) {
+        if (!getMeta().equals(other.getMeta())) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -1595,6 +1709,10 @@ public final class McpServer extends com.google.protobuf.GeneratedMessage
       if (hasAnnotations()) {
         hash = (37 * hash) + ANNOTATIONS_FIELD_NUMBER;
         hash = (53 * hash) + getAnnotations().hashCode();
+      }
+      if (hasMeta()) {
+        hash = (37 * hash) + META_FIELD_NUMBER;
+        hash = (53 * hash) + getMeta().hashCode();
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
@@ -1738,6 +1856,7 @@ public final class McpServer extends com.google.protobuf.GeneratedMessage
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
           internalGetAnnotationsFieldBuilder();
+          internalGetMetaFieldBuilder();
         }
       }
 
@@ -1751,6 +1870,11 @@ public final class McpServer extends com.google.protobuf.GeneratedMessage
         if (annotationsBuilder_ != null) {
           annotationsBuilder_.dispose();
           annotationsBuilder_ = null;
+        }
+        meta_ = null;
+        if (metaBuilder_ != null) {
+          metaBuilder_.dispose();
+          metaBuilder_ = null;
         }
         return this;
       }
@@ -1800,6 +1924,10 @@ public final class McpServer extends com.google.protobuf.GeneratedMessage
               annotationsBuilder_ == null ? annotations_ : annotationsBuilder_.build();
           to_bitField0_ |= 0x00000001;
         }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.meta_ = metaBuilder_ == null ? meta_ : metaBuilder_.build();
+          to_bitField0_ |= 0x00000002;
+        }
         result.bitField0_ |= to_bitField0_;
       }
 
@@ -1828,6 +1956,9 @@ public final class McpServer extends com.google.protobuf.GeneratedMessage
         }
         if (other.hasAnnotations()) {
           mergeAnnotations(other.getAnnotations());
+        }
+        if (other.hasMeta()) {
+          mergeMeta(other.getMeta());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -1874,6 +2005,12 @@ public final class McpServer extends com.google.protobuf.GeneratedMessage
                   bitField0_ |= 0x00000004;
                   break;
                 } // case 26
+              case 34:
+                {
+                  input.readMessage(internalGetMetaFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 34
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2332,6 +2469,223 @@ public final class McpServer extends com.google.protobuf.GeneratedMessage
           annotations_ = null;
         }
         return annotationsBuilder_;
+      }
+
+      private com.google.protobuf.Struct meta_;
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.protobuf.Struct,
+              com.google.protobuf.Struct.Builder,
+              com.google.protobuf.StructOrBuilder>
+          metaBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Protocol-level tool metadata conforming to MCP _meta
+       * specification. Output only.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Struct meta = 4 [json_name = "_meta", (.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return Whether the meta field is set.
+       */
+      public boolean hasMeta() {
+        return ((bitField0_ & 0x00000008) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Protocol-level tool metadata conforming to MCP _meta
+       * specification. Output only.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Struct meta = 4 [json_name = "_meta", (.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The meta.
+       */
+      public com.google.protobuf.Struct getMeta() {
+        if (metaBuilder_ == null) {
+          return meta_ == null ? com.google.protobuf.Struct.getDefaultInstance() : meta_;
+        } else {
+          return metaBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Protocol-level tool metadata conforming to MCP _meta
+       * specification. Output only.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Struct meta = 4 [json_name = "_meta", (.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder setMeta(com.google.protobuf.Struct value) {
+        if (metaBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          meta_ = value;
+        } else {
+          metaBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Protocol-level tool metadata conforming to MCP _meta
+       * specification. Output only.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Struct meta = 4 [json_name = "_meta", (.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder setMeta(com.google.protobuf.Struct.Builder builderForValue) {
+        if (metaBuilder_ == null) {
+          meta_ = builderForValue.build();
+        } else {
+          metaBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Protocol-level tool metadata conforming to MCP _meta
+       * specification. Output only.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Struct meta = 4 [json_name = "_meta", (.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder mergeMeta(com.google.protobuf.Struct value) {
+        if (metaBuilder_ == null) {
+          if (((bitField0_ & 0x00000008) != 0)
+              && meta_ != null
+              && meta_ != com.google.protobuf.Struct.getDefaultInstance()) {
+            getMetaBuilder().mergeFrom(value);
+          } else {
+            meta_ = value;
+          }
+        } else {
+          metaBuilder_.mergeFrom(value);
+        }
+        if (meta_ != null) {
+          bitField0_ |= 0x00000008;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Protocol-level tool metadata conforming to MCP _meta
+       * specification. Output only.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Struct meta = 4 [json_name = "_meta", (.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder clearMeta() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        meta_ = null;
+        if (metaBuilder_ != null) {
+          metaBuilder_.dispose();
+          metaBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Protocol-level tool metadata conforming to MCP _meta
+       * specification. Output only.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Struct meta = 4 [json_name = "_meta", (.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.protobuf.Struct.Builder getMetaBuilder() {
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return internalGetMetaFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Protocol-level tool metadata conforming to MCP _meta
+       * specification. Output only.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Struct meta = 4 [json_name = "_meta", (.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.protobuf.StructOrBuilder getMetaOrBuilder() {
+        if (metaBuilder_ != null) {
+          return metaBuilder_.getMessageOrBuilder();
+        } else {
+          return meta_ == null ? com.google.protobuf.Struct.getDefaultInstance() : meta_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Protocol-level tool metadata conforming to MCP _meta
+       * specification. Output only.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Struct meta = 4 [json_name = "_meta", (.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.protobuf.Struct,
+              com.google.protobuf.Struct.Builder,
+              com.google.protobuf.StructOrBuilder>
+          internalGetMetaFieldBuilder() {
+        if (metaBuilder_ == null) {
+          metaBuilder_ =
+              new com.google.protobuf.SingleFieldBuilder<
+                  com.google.protobuf.Struct,
+                  com.google.protobuf.Struct.Builder,
+                  com.google.protobuf.StructOrBuilder>(
+                  getMeta(), getParentForChildren(), isClean());
+          meta_ = null;
+        }
+        return metaBuilder_;
       }
 
       // @@protoc_insertion_point(builder_scope:google.cloud.agentregistry.v1.McpServer.Tool)

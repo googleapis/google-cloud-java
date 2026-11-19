@@ -19,6 +19,9 @@
             "GetAuthorization": {
               "methods": ["getAuthorization", "getAuthorization", "getAuthorization", "getAuthorizationCallable"]
             },
+            "GetChatAppConfig": {
+              "methods": ["getChatAppConfig", "getChatAppConfig", "getChatAppConfig", "getChatAppConfigCallable"]
+            },
             "GetDeployment": {
               "methods": ["getDeployment", "getDeployment", "getDeployment", "getDeploymentCallable"]
             },
@@ -36,6 +39,9 @@
             },
             "UninstallDeployment": {
               "methods": ["uninstallDeployment", "uninstallDeployment", "uninstallDeployment", "uninstallDeploymentCallable"]
+            },
+            "UpdateChatAppConfig": {
+              "methods": ["updateChatAppConfig", "updateChatAppConfig", "updateChatAppConfigCallable"]
             }
           }
         }

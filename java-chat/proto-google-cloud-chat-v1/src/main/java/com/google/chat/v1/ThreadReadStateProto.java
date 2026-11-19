@@ -48,6 +48,10 @@ public final class ThreadReadStateProto extends com.google.protobuf.GeneratedFil
       internal_static_google_chat_v1_GetThreadReadStateRequest_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_chat_v1_GetThreadReadStateRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_chat_v1_UpdateThreadReadStateRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_chat_v1_UpdateThreadReadStateRequest_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -59,20 +63,25 @@ public final class ThreadReadStateProto extends com.google.protobuf.GeneratedFil
     java.lang.String[] descriptorData = {
       "\n&google/chat/v1/thread_read_state.proto"
           + "\022\016google.chat.v1\032\037google/api/field_behav"
-          + "ior.proto\032\031google/api/resource.proto\032\037go"
-          + "ogle/protobuf/timestamp.proto\"\314\001\n\017Thread"
-          + "ReadState\022\014\n\004name\030\001 \001(\t\0222\n\016last_read_tim"
-          + "e\030\002 \001(\0132\032.google.protobuf.Timestamp:w\352At"
-          + "\n#chat.googleapis.com/ThreadReadState\022<u"
-          + "sers/{user}/spaces/{space}/threads/{thre"
-          + "ad}/threadReadState2\017threadReadState\"W\n\031"
-          + "GetThreadReadStateRequest\022:\n\004name\030\001 \001(\tB"
-          + ",\342A\001\002\372A%\n#chat.googleapis.com/ThreadRead"
-          + "StateB\255\001\n\022com.google.chat.v1B\024ThreadRead"
-          + "StateProtoP\001Z,cloud.google.com/go/chat/a"
-          + "piv1/chatpb;chatpb\242\002\013DYNAPIProto\252\002\023Googl"
-          + "e.Apps.Chat.V1\312\002\023Google\\Apps\\Chat\\V1\352\002\026G"
-          + "oogle::Apps::Chat::V1b\006proto3"
+          + "ior.proto\032\031google/api/resource.proto\032 go"
+          + "ogle/protobuf/field_mask.proto\032\037google/p"
+          + "rotobuf/timestamp.proto\"\314\001\n\017ThreadReadSt"
+          + "ate\022\014\n\004name\030\001 \001(\t\0222\n\016last_read_time\030\002 \001("
+          + "\0132\032.google.protobuf.Timestamp:w\352At\n#chat"
+          + ".googleapis.com/ThreadReadState\022<users/{"
+          + "user}/spaces/{space}/threads/{thread}/th"
+          + "readReadState2\017threadReadState\"W\n\031GetThr"
+          + "eadReadStateRequest\022:\n\004name\030\001 \001(\tB,\342A\001\002\372"
+          + "A%\n#chat.googleapis.com/ThreadReadState\""
+          + "\227\001\n\034UpdateThreadReadStateRequest\022@\n\021thre"
+          + "ad_read_state\030\001 \001(\0132\037.google.chat.v1.Thr"
+          + "eadReadStateB\004\342A\001\002\0225\n\013update_mask\030\002 \001(\0132"
+          + "\032.google.protobuf.FieldMaskB\004\342A\001\002B\255\001\n\022co"
+          + "m.google.chat.v1B\024ThreadReadStateProtoP\001"
+          + "Z,cloud.google.com/go/chat/apiv1/chatpb;"
+          + "chatpb\242\002\013DYNAPIProto\252\002\023Google.Apps.Chat."
+          + "V1\312\002\023Google\\Apps\\Chat\\V1\352\002\026Google::Apps:"
+          + ":Chat::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -80,6 +89,7 @@ public final class ThreadReadStateProto extends com.google.protobuf.GeneratedFil
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
+              com.google.protobuf.FieldMaskProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
             });
     internal_static_google_chat_v1_ThreadReadState_descriptor = getDescriptor().getMessageType(0);
@@ -97,9 +107,18 @@ public final class ThreadReadStateProto extends com.google.protobuf.GeneratedFil
             new java.lang.String[] {
               "Name",
             });
+    internal_static_google_chat_v1_UpdateThreadReadStateRequest_descriptor =
+        getDescriptor().getMessageType(2);
+    internal_static_google_chat_v1_UpdateThreadReadStateRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_chat_v1_UpdateThreadReadStateRequest_descriptor,
+            new java.lang.String[] {
+              "ThreadReadState", "UpdateMask",
+            });
     descriptor.resolveAllFeaturesImmutable();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
+    com.google.protobuf.FieldMaskProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

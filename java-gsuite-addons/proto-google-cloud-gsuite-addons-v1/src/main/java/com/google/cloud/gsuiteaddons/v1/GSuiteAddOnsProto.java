@@ -96,6 +96,58 @@ public final class GSuiteAddOnsProto extends com.google.protobuf.GeneratedFile {
       internal_static_google_cloud_gsuiteaddons_v1_AddOns_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_gsuiteaddons_v1_AddOns_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gsuiteaddons_v1_GetChatAppConfigRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_gsuiteaddons_v1_GetChatAppConfigRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gsuiteaddons_v1_UpdateChatAppConfigRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_gsuiteaddons_v1_UpdateChatAppConfigRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gsuiteaddons_v1_ChatAppConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_gsuiteaddons_v1_ChatAppConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gsuiteaddons_v1_InteractiveFeatureConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_gsuiteaddons_v1_InteractiveFeatureConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gsuiteaddons_v1_ConnectionConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_gsuiteaddons_v1_ConnectionConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gsuiteaddons_v1_HttpEndpointConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_gsuiteaddons_v1_HttpEndpointConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gsuiteaddons_v1_HttpPerEventEndpointConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_gsuiteaddons_v1_HttpPerEventEndpointConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gsuiteaddons_v1_AppsScriptEndpointConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_gsuiteaddons_v1_AppsScriptEndpointConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gsuiteaddons_v1_AppsScriptPerEventEndpointConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_gsuiteaddons_v1_AppsScriptPerEventEndpointConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gsuiteaddons_v1_CloudPubSubEndpointConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_gsuiteaddons_v1_CloudPubSubEndpointConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gsuiteaddons_v1_DialogflowEndpointConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_gsuiteaddons_v1_DialogflowEndpointConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gsuiteaddons_v1_AppCommand_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_gsuiteaddons_v1_AppCommand_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gsuiteaddons_v1_UrlPattern_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_gsuiteaddons_v1_UrlPattern_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -105,127 +157,249 @@ public final class GSuiteAddOnsProto extends com.google.protobuf.GeneratedFile {
 
   static {
     java.lang.String[] descriptorData = {
-      "\n/google/cloud/gsuiteaddons/v1/gsuiteadd"
+      "\n"
+          + "/google/cloud/gsuiteaddons/v1/gsuiteadd"
           + "ons.proto\022\034google.cloud.gsuiteaddons.v1\032"
           + "\034google/api/annotations.proto\032\027google/ap"
           + "i/client.proto\032\037google/api/field_behavio"
           + "r.proto\032\031google/api/resource.proto\032>goog"
-          + "le/apps/script/type/calendar/calendar_ad"
-          + "don_manifest.proto\0326google/apps/script/t"
-          + "ype/docs/docs_addon_manifest.proto\0328goog"
-          + "le/apps/script/type/drive/drive_addon_ma"
-          + "nifest.proto\0328google/apps/script/type/gm"
-          + "ail/gmail_addon_manifest.proto\032-google/a"
-          + "pps/script/type/script_manifest.proto\032:g"
-          + "oogle/apps/script/type/sheets/sheets_add"
+          + "le/apps/script/type/calendar/calendar_addon_manifest.proto\0326google/apps/script/t"
+          + "ype/docs/docs_addon_manifest.proto\0328google/apps/script/type/drive/drive_addon_ma"
+          + "nifest.proto\0328google/apps/script/type/gmail/gmail_addon_manifest.proto\032-google/a"
+          + "pps/script/type/script_manifest.proto\032:google/apps/script/type/sheets/sheets_add"
           + "on_manifest.proto\032:google/apps/script/ty"
-          + "pe/slides/slides_addon_manifest.proto\032\033g"
-          + "oogle/protobuf/empty.proto\032\036google/proto"
-          + "buf/wrappers.proto\"[\n\027GetAuthorizationRe"
-          + "quest\022@\n\004name\030\002 \001(\tB2\342A\001\002\372A+\n)gsuiteaddo"
-          + "ns.googleapis.com/Authorization\"\247\001\n\rAuth"
-          + "orization\022\014\n\004name\030\001 \001(\t\022\035\n\025service_accou"
-          + "nt_email\030\002 \001(\t\022\027\n\017oauth_client_id\030\003 \001(\t:"
-          + "P\352AM\n)gsuiteaddons.googleapis.com/Author"
-          + "ization\022 projects/{project}/authorizatio"
-          + "n\"\300\001\n\027CreateDeploymentRequest\022D\n\006parent\030"
-          + "\001 \001(\tB4\342A\001\002\372A-\n+cloudresourcemanager.goo"
-          + "gleapis.com/Project\022\033\n\rdeployment_id\030\002 \001"
-          + "(\tB\004\342A\001\002\022B\n\ndeployment\030\003 \001(\0132(.google.cl"
-          + "oud.gsuiteaddons.v1.DeploymentB\004\342A\001\002\"^\n\030"
-          + "ReplaceDeploymentRequest\022B\n\ndeployment\030\002"
-          + " \001(\0132(.google.cloud.gsuiteaddons.v1.Depl"
-          + "oymentB\004\342A\001\002\"U\n\024GetDeploymentRequest\022=\n\004"
-          + "name\030\001 \001(\tB/\342A\001\002\372A(\n&gsuiteaddons.google"
-          + "apis.com/Deployment\"\205\001\n\026ListDeploymentsR"
-          + "equest\022D\n\006parent\030\001 \001(\tB4\342A\001\002\372A-\n+cloudre"
-          + "sourcemanager.googleapis.com/Project\022\021\n\t"
-          + "page_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\"q\n\027L"
-          + "istDeploymentsResponse\022=\n\013deployments\030\001 "
-          + "\003(\0132(.google.cloud.gsuiteaddons.v1.Deplo"
-          + "yment\022\027\n\017next_page_token\030\002 \001(\t\"f\n\027Delete"
-          + "DeploymentRequest\022=\n\004name\030\001 \001(\tB/\342A\001\002\372A("
-          + "\n&gsuiteaddons.googleapis.com/Deployment"
-          + "\022\014\n\004etag\030\002 \001(\t\"Y\n\030InstallDeploymentReque"
-          + "st\022=\n\004name\030\001 \001(\tB/\342A\001\002\372A(\n&gsuiteaddons."
-          + "googleapis.com/Deployment\"[\n\032UninstallDe"
-          + "ploymentRequest\022=\n\004name\030\001 \001(\tB/\342A\001\002\372A(\n&"
-          + "gsuiteaddons.googleapis.com/Deployment\"["
-          + "\n\027GetInstallStatusRequest\022@\n\004name\030\001 \001(\tB"
-          + "2\342A\001\002\372A+\n)gsuiteaddons.googleapis.com/In"
-          + "stallStatus\"\267\001\n\rInstallStatus\022\014\n\004name\030\001 "
-          + "\001(\t\022-\n\tinstalled\030\002 \001(\0132\032.google.protobuf"
-          + ".BoolValue:i\352Af\n)gsuiteaddons.googleapis"
-          + ".com/InstallStatus\0229projects/{project}/d"
-          + "eployments/{deployment}/installStatus\"\317\001"
-          + "\n\nDeployment\022\014\n\004name\030\001 \001(\t\022\024\n\014oauth_scop"
-          + "es\030\002 \003(\t\0225\n\007add_ons\030\003 \001(\0132$.google.cloud"
-          + ".gsuiteaddons.v1.AddOns\022\014\n\004etag\030\005 \001(\t:X\352"
-          + "AU\n&gsuiteaddons.googleapis.com/Deployme"
-          + "nt\022+projects/{project}/deployments/{depl"
-          + "oyment}\"\232\004\n\006AddOns\022<\n\006common\030\001 \001(\0132,.goo"
-          + "gle.apps.script.type.CommonAddOnManifest"
-          + "\022@\n\005gmail\030\002 \001(\01321.google.apps.script.typ"
-          + "e.gmail.GmailAddOnManifest\022@\n\005drive\030\005 \001("
-          + "\01321.google.apps.script.type.drive.DriveA"
-          + "ddOnManifest\022I\n\010calendar\030\006 \001(\01327.google."
-          + "apps.script.type.calendar.CalendarAddOnM"
-          + "anifest\022=\n\004docs\030\007 \001(\0132/.google.apps.scri"
-          + "pt.type.docs.DocsAddOnManifest\022C\n\006sheets"
-          + "\030\010 \001(\01323.google.apps.script.type.sheets."
-          + "SheetsAddOnManifest\022C\n\006slides\030\n \001(\01323.go"
-          + "ogle.apps.script.type.slides.SlidesAddOn"
-          + "Manifest\022:\n\014http_options\030\017 \001(\0132$.google."
-          + "apps.script.type.HttpOptions2\244\r\n\014GSuiteA"
-          + "ddOns\022\252\001\n\020GetAuthorization\0225.google.clou"
-          + "d.gsuiteaddons.v1.GetAuthorizationReques"
-          + "t\032+.google.cloud.gsuiteaddons.v1.Authori"
-          + "zation\"2\332A\004name\202\323\344\223\002%\022#/v1/{name=project"
-          + "s/*/authorization}\022\316\001\n\020CreateDeployment\022"
-          + "5.google.cloud.gsuiteaddons.v1.CreateDep"
-          + "loymentRequest\032(.google.cloud.gsuiteaddo"
-          + "ns.v1.Deployment\"Y\332A\037parent,deployment,d"
-          + "eployment_id\202\323\344\223\0021\"#/v1/{parent=projects"
-          + "/*}/deployments:\ndeployment\022\306\001\n\021ReplaceD"
-          + "eployment\0226.google.cloud.gsuiteaddons.v1"
-          + ".ReplaceDeploymentRequest\032(.google.cloud"
-          + ".gsuiteaddons.v1.Deployment\"O\332A\ndeployme"
-          + "nt\202\323\344\223\002<\032./v1/{deployment.name=projects/"
-          + "*/deployments/*}:\ndeployment\022\241\001\n\rGetDepl"
-          + "oyment\0222.google.cloud.gsuiteaddons.v1.Ge"
-          + "tDeploymentRequest\032(.google.cloud.gsuite"
-          + "addons.v1.Deployment\"2\332A\004name\202\323\344\223\002%\022#/v1"
-          + "/{name=projects/*/deployments/*}\022\264\001\n\017Lis"
-          + "tDeployments\0224.google.cloud.gsuiteaddons"
-          + ".v1.ListDeploymentsRequest\0325.google.clou"
-          + "d.gsuiteaddons.v1.ListDeploymentsRespons"
-          + "e\"4\332A\006parent\202\323\344\223\002%\022#/v1/{parent=projects"
-          + "/*}/deployments\022\225\001\n\020DeleteDeployment\0225.g"
-          + "oogle.cloud.gsuiteaddons.v1.DeleteDeploy"
-          + "mentRequest\032\026.google.protobuf.Empty\"2\332A\004"
-          + "name\202\323\344\223\002%*#/v1/{name=projects/*/deploym"
-          + "ents/*}\022\242\001\n\021InstallDeployment\0226.google.c"
-          + "loud.gsuiteaddons.v1.InstallDeploymentRe"
-          + "quest\032\026.google.protobuf.Empty\"=\332A\004name\202\323"
-          + "\344\223\0020\"+/v1/{name=projects/*/deployments/*"
-          + "}:install:\001*\022\250\001\n\023UninstallDeployment\0228.g"
-          + "oogle.cloud.gsuiteaddons.v1.UninstallDep"
-          + "loymentRequest\032\026.google.protobuf.Empty\"?"
-          + "\332A\004name\202\323\344\223\0022\"-/v1/{name=projects/*/depl"
-          + "oyments/*}:uninstall:\001*\022\270\001\n\020GetInstallSt"
-          + "atus\0225.google.cloud.gsuiteaddons.v1.GetI"
-          + "nstallStatusRequest\032+.google.cloud.gsuit"
-          + "eaddons.v1.InstallStatus\"@\332A\004name\202\323\344\223\0023\022"
-          + "1/v1/{name=projects/*/deployments/*/inst"
-          + "allStatus}\032O\312A\033gsuiteaddons.googleapis.c"
-          + "om\322A.https://www.googleapis.com/auth/clo"
-          + "ud-platformB\335\001\n com.google.cloud.gsuitea"
-          + "ddons.v1B\021GSuiteAddOnsProtoP\001ZDcloud.goo"
-          + "gle.com/go/gsuiteaddons/apiv1/gsuiteaddo"
-          + "nspb;gsuiteaddonspb\252\002\034Google.Cloud.GSuit"
-          + "eAddOns.V1\312\002\034Google\\Cloud\\GSuiteAddOns\\V"
-          + "1\352\002\037Google::Cloud::GSuiteAddOns::V1b\006pro"
-          + "to3"
+          + "pe/slides/slides_addon_manifest.proto\032\033google/protobuf/empty.proto\032"
+          + " google/protobuf/field_mask.proto\032\036google/protobuf/wrappers.proto\"[\n"
+          + "\027GetAuthorizationRequest\022@\n"
+          + "\004name\030\002 \001(\tB2\342A\001\002\372A+\n"
+          + ")gsuiteaddons.googleapis.com/Authorization\"\247\001\n\r"
+          + "Authorization\022\014\n"
+          + "\004name\030\001 \001(\t\022\035\n"
+          + "\025service_account_email\030\002 \001(\t\022\027\n"
+          + "\017oauth_client_id\030\003 \001(\t:P\352AM\n"
+          + ")gsuiteaddons.googleapis.com/Authorization\022"
+          + " projects/{project}/authorization\"\300\001\n"
+          + "\027CreateDeploymentRequest\022D\n"
+          + "\006parent\030\001 \001(\tB4\342A\001\002\372A-\n"
+          + "+cloudresourcemanager.googleapis.com/Project\022\033\n\r"
+          + "deployment_id\030\002 \001(\tB\004\342A\001\002\022B\n\n"
+          + "deployment\030\003"
+          + " \001(\0132(.google.cloud.gsuiteaddons.v1.DeploymentB\004\342A\001\002\"^\n"
+          + "\030ReplaceDeploymentRequest\022B\n\n"
+          + "deployment\030\002 \001(\0132("
+          + ".google.cloud.gsuiteaddons.v1.DeploymentB\004\342A\001\002\"U\n"
+          + "\024GetDeploymentRequest\022=\n"
+          + "\004name\030\001 \001(\tB/\342A\001\002\372A(\n"
+          + "&gsuiteaddons.googleapis.com/Deployment\"\205\001\n"
+          + "\026ListDeploymentsRequest\022D\n"
+          + "\006parent\030\001 \001(\tB4\342A\001\002\372A-\n"
+          + "+cloudresourcemanager.googleapis.com/Project\022\021\n"
+          + "\tpage_size\030\002 \001(\005\022\022\n\n"
+          + "page_token\030\003 \001(\t\"q\n"
+          + "\027ListDeploymentsResponse\022=\n"
+          + "\013deployments\030\001 \003(\0132(.google.cloud.gsuiteaddons.v1.Deployment\022\027\n"
+          + "\017next_page_token\030\002 \001(\t\"f\n"
+          + "\027DeleteDeploymentRequest\022=\n"
+          + "\004name\030\001 \001(\tB/\342A\001\002\372A(\n"
+          + "&gsuiteaddons.googleapis.com/Deployment\022\014\n"
+          + "\004etag\030\002 \001(\t\"Y\n"
+          + "\030InstallDeploymentRequest\022=\n"
+          + "\004name\030\001 \001(\tB/\342A\001\002\372A(\n"
+          + "&gsuiteaddons.googleapis.com/Deployment\"[\n"
+          + "\032UninstallDeploymentRequest\022=\n"
+          + "\004name\030\001 \001(\tB/\342A\001\002\372A(\n"
+          + "&gsuiteaddons.googleapis.com/Deployment\"[\n"
+          + "\027GetInstallStatusRequest\022@\n"
+          + "\004name\030\001 \001(\tB2\342A\001\002\372A+\n"
+          + ")gsuiteaddons.googleapis.com/InstallStatus\"\267\001\n\r"
+          + "InstallStatus\022\014\n"
+          + "\004name\030\001 \001(\t\022-\n"
+          + "\tinstalled\030\002 \001(\0132\032.google.protobuf.BoolValue:i\352Af\n"
+          + ")gsuiteaddons.googleapis.com/I"
+          + "nstallStatus\0229projects/{project}/deployments/{deployment}/installStatus\"\317\001\n\n"
+          + "Deployment\022\014\n"
+          + "\004name\030\001 \001(\t\022\024\n"
+          + "\014oauth_scopes\030\002 \003(\t\0225\n"
+          + "\007add_ons\030\003 \001(\0132$.google.cloud.gsuiteaddons.v1.AddOns\022\014\n"
+          + "\004etag\030\005 \001(\t:X\352AU\n"
+          + "&gsuiteaddons.googleapis.com/Deployment\022+pr"
+          + "ojects/{project}/deployments/{deployment}\"\232\004\n"
+          + "\006AddOns\022<\n"
+          + "\006common\030\001 \001(\0132,.google.apps.script.type.CommonAddOnManifest\022@\n"
+          + "\005gmail\030\002 \001(\01321.google.apps.script.type.gmail.GmailAddOnManifest\022@\n"
+          + "\005drive\030\005 \001(\01321.google.apps.script.type.drive.DriveAddOnManifest\022I\n"
+          + "\010calendar\030\006 \001(\01327.google.apps.s"
+          + "cript.type.calendar.CalendarAddOnManifest\022=\n"
+          + "\004docs\030\007 \001(\0132/.google.apps.script.type.docs.DocsAddOnManifest\022C\n"
+          + "\006sheets\030\010 \001(\013"
+          + "23.google.apps.script.type.sheets.SheetsAddOnManifest\022C\n"
+          + "\006slides\030\n"
+          + " \001(\01323.google.apps.script.type.slides.SlidesAddOnManifest\022:\n"
+          + "\014http_options\030\017 \001(\0132$.google.apps.script.type.HttpOptions\"\210\002\n"
+          + "\027GetChatAppConfigRequest\022@\n"
+          + "\004name\030\001 \001(\tB2\342A\001\002\372A+\n"
+          + ")gsuiteaddons.googleapis.com/ChatAppConfig\022[\n"
+          + "\004view\030\002 \001(\0162G.google.cloud.gsuiteaddons.v"
+          + "1.GetChatAppConfigRequest.ChatAppConfigViewB\004\342A\001\001\"N\n"
+          + "\021ChatAppConfigView\022$\n"
+          + " CHAT_APP_CONFIG_VIEW_UNSPECIFIED\020\000\022\t\n"
+          + "\005BASIC\020\001\022\010\n"
+          + "\004FULL\020\002\"\237\001\n"
+          + "\032UpdateChatAppConfigRequest\022J\n"
+          + "\017chat_app_config\030\001"
+          + " \001(\0132+.google.cloud.gsuiteaddons.v1.ChatAppConfigB\004\342A\001\002\0225\n"
+          + "\013update_mask\030\002"
+          + " \001(\0132\032.google.protobuf.FieldMaskB\004\342A\001\001\"\214\006\n\r"
+          + "ChatAppConfig\022\023\n"
+          + "\004name\030\001 \001(\tB\005\342A\002\002\010\022\032\n"
+          + "\014display_name\030\002 \001(\tB\004\342A\001\002\022\035\n\n"
+          + "avatar_uri\030\003 \001(\tB\004\342A\001\001H\000\210\001\001\022\031\n"
+          + "\013description\030\004 \001(\tB\004\342A\001\002\022N\n"
+          + "\005state\030\005 \001(\01624.google"
+          + ".cloud.gsuiteaddons.v1.ChatAppConfig.AppStateB\004\342A\001\001H\001\210\001\001\022`\n"
+          + "\032interactive_feature_config\030\006"
+          + " \001(\01326.google.cloud.gsuiteaddons.v1.InteractiveFeatureConfigB\004\342A\001\001\022(\n"
+          + "\025error_logging_enabled\030\007"
+          + " \001(\010B\004\342A\001\001H\002\210\001\001\022Z\n\r"
+          + "markup_syntax\030\010 \001(\01628.google.cloud.gsuit"
+          + "eaddons.v1.ChatAppConfig.MarkupSyntaxB\004\342A\001\001H\003\210\001\001\"?\n"
+          + "\010AppState\022\031\n"
+          + "\025APP_STATE_UNSPECIFIED\020\000\022\n\n"
+          + "\006ACTIVE\020\001\022\014\n"
+          + "\010DISABLED\020\002\"a\n"
+          + "\014MarkupSyntax\022\035\n"
+          + "\031MARKUP_SYNTAX_UNSPECIFIED\020\000\022\026\n"
+          + "\022MARKUP_SYNTAX_CHAT\020\001\022\032\n"
+          + "\026MARKUP_SYNTAX_MARKDOWN\020\002:o\352Al\n"
+          + ")gsuiteaddons.googleapis.com/ChatAppConfig\022"
+          + " projects/{project}/chatAppConfig*\016chatAppConfigs2\r"
+          + "chatAppConfigB\r\n"
+          + "\013_avatar_uriB\010\n"
+          + "\006_stateB\030\n"
+          + "\026_error_logging_enabledB\020\n"
+          + "\016_markup_syntax\"\361\002\n"
+          + "\030InteractiveFeatureConfig\022,\n"
+          + "\031supports_multiuser_spaces\030\001"
+          + " \001(\010B\004\342A\001\001H\000\210\001\001\022O\n"
+          + "\021connection_config\030\002"
+          + " \001(\0132..google.cloud.gsuiteaddons.v1.ConnectionConfigB\004\342A\001\002\022D\n"
+          + "\014app_commands\030\003"
+          + " \003(\0132(.google.cloud.gsuiteaddons.v1.AppCommandB\004\342A\001\001\022D\n"
+          + "\014url_patterns\030\004 \003"
+          + "(\0132(.google.cloud.gsuiteaddons.v1.UrlPatternB\004\342A\001\001\022,\n"
+          + "\036allowlisted_testing_principals\030\005 \003(\tB\004\342A\001\001B\034\n"
+          + "\032_supports_multiuser_spaces\"\215\003\n"
+          + "\020ConnectionConfig\022P\n"
+          + "\024http_endpoint_config\030\001"
+          + " \001(\01320.google.cloud.gsuiteaddons.v1.HttpEndpointConfigH\000\022]\n"
+          + "\033apps_script_endpoint_config\030\002 \001(\01326.google.clou"
+          + "d.gsuiteaddons.v1.AppsScriptEndpointConfigH\000\022`\n"
+          + "\035cloud_pub_sub_endpoint_config\030\003 "
+          + "\001(\01327.google.cloud.gsuiteaddons.v1.CloudPubSubEndpointConfigH\000\022\\\n"
+          + "\032dialogflow_endpoint_config\030\004"
+          + " \001(\01326.google.cloud.gsuiteaddons.v1.DialogflowEndpointConfigH\000B\010\n"
+          + "\006config\"\237\001\n"
+          + "\022HttpEndpointConfig\022\032\n\n"
+          + "common_url\030\001 \001(\tB\004\342A\001\001H\000\022c\n"
+          + "\031per_event_endpoint_config\030\002 \001(\01328.google.cloud.gsuiteaddons"
+          + ".v1.HttpPerEventEndpointConfigB\004\342A\001\001H\000B\010\n"
+          + "\006config\"\262\001\n"
+          + "\032HttpPerEventEndpointConfig\022\"\n"
+          + "\024app_command_endpoint\030\001 \001(\tB\004\342A\001\002\022%\n"
+          + "\027added_to_space_endpoint\030\002 \001(\tB\004\342A\001\002\022\036\n"
+          + "\020message_endpoint\030\003 \001(\tB\004\342A\001\002\022)\n"
+          + "\033removed_from_space_endpoint\030\004 \001(\tB\004\342A\001\002\"\240\001\n"
+          + "\030AppsScriptEndpointConfig\022\033\n\r"
+          + "deployment_id\030\001 \001(\tB\004\342A\001\002\022g\n"
+          + "\031per_event_endpoint_config\030\002 \001"
+          + "(\0132>.google.cloud.gsuiteaddons.v1.AppsScriptPerEventEndpointConfigB\004\342A\001\001\"\266\002\n"
+          + " AppsScriptPerEventEndpointConfig\022\'\n"
+          + "\024app_command_endpoint\030\001 \001(\tB\004\342A\001\001H\000\210\001\001\022*\n"
+          + "\027added_to_space_endpoint\030\002 \001(\tB\004\342A\001\001H\001\210\001\001\022#\n"
+          + "\020message_endpoint\030\003 \001(\tB\004\342A\001\001H\002\210\001\001\022.\n"
+          + "\033removed_from_space_endpoint\030\004 \001("
+          + "\tB\004\342A\001\001H\003\210\001\001B\027\n"
+          + "\025_app_command_endpointB\032\n"
+          + "\030_added_to_space_endpointB\023\n"
+          + "\021_message_endpointB\036\n"
+          + "\034_removed_from_space_endpoint\"P\n"
+          + "\031CloudPubSubEndpointConfig\0223\n"
+          + "\005topic\030\001 \001(\tB$\342A\001\002\372A\035\n"
+          + "\033pubsub.googleapis.com/Topic\"\363\001\n"
+          + "\030DialogflowEndpointConfig\022j\n"
+          + "\022dialogflow_edition\030\001 \001(\0162H.google.cloud.gsuiteaddons.v1.Dial"
+          + "ogflowEndpointConfig.DialogflowEditionB\004\342A\001\002\022\030\n"
+          + "\005agent\030\002 \001(\tB\004\342A\001\001H\000\210\001\001\"G\n"
+          + "\021DialogflowEdition\022\"\n"
+          + "\036DIALOGFLOW_EDITION_UNSPECIFIED\020\000\022\006\n"
+          + "\002ES\020\001\022\006\n"
+          + "\002CX\020\002B\010\n"
+          + "\006_agent\"\367\002\n\n"
+          + "AppCommand\022P\n"
+          + "\014command_type\030\001 \001(\01624.google."
+          + "cloud.gsuiteaddons.v1.AppCommand.CommandTypeB\004\342A\001\002\022\030\n\n"
+          + "command_id\030\002 \001(\005B\004\342A\001\002\022\025\n"
+          + "\007command\030\003 \001(\tB\004\342A\001\001\022\032\n"
+          + "\014display_name\030\004 \001(\tB\004\342A\001\001\022\031\n"
+          + "\013description\030\005 \001(\tB\004\342A\001\002\022\034\n"
+          + "\016dialog_enabled\030\006 \001(\010B\004\342A\001\001\022*\n"
+          + "\034loading_notification_message\030\007 \001(\tB\004\342A\001\001\"e\n"
+          + "\013CommandType\022\034\n"
+          + "\030COMMAND_TYPE_UNSPECIFIED\020\000\022\021\n\r"
+          + "SLASH_COMMAND\020\001\022\021\n\r"
+          + "QUICK_COMMAND\020\002\022\022\n"
+          + "\016MESSAGE_ACTION\020\003\"C\n\n"
+          + "UrlPattern\022\032\n"
+          + "\014host_pattern\030\001 \001(\tB\004\342A\001\002\022\031\n"
+          + "\013path_prefix\030\002 \001(\tB\004\342A\001\0012\366\020\n"
+          + "\014GSuiteAddOns\022\252\001\n"
+          + "\020GetAuthorization\0225.google.cloud.gsuiteaddons.v1.GetAuthori"
+          + "zationRequest\032+.google.cloud.gsuiteaddon"
+          + "s.v1.Authorization\"2\332A\004name\202\323\344\223\002%\022#/v1/{name=projects/*/authorization}\022\316\001\n"
+          + "\020CreateDeployment\0225.google.cloud.gsuiteaddons."
+          + "v1.CreateDeploymentRequest\032(.google.clou"
+          + "d.gsuiteaddons.v1.Deployment\"Y\332A\037parent,"
+          + "deployment,deployment_id\202\323\344\223\0021\"#/v1/{parent=projects/*}/deployments:\n"
+          + "deployment\022\306\001\n"
+          + "\021ReplaceDeployment\0226.google.cloud.gsuiteaddons.v1.ReplaceDeploymentRequest\032(."
+          + "google.cloud.gsuiteaddons.v1.Deployment\"O\332A\n"
+          + "deployment\202\323\344\223\002<\032./v1/{deployment.name=projects/*/deployments/*}:\n"
+          + "deployment\022\241\001\n\r"
+          + "GetDeployment\0222.google.cloud.gsuiteaddons.v1.GetDeploymentRequest\032(.google."
+          + "cloud.gsuiteaddons.v1.Deployment\"2\332A\004nam"
+          + "e\202\323\344\223\002%\022#/v1/{name=projects/*/deployments/*}\022\264\001\n"
+          + "\017ListDeployments\0224.google.cloud.gsuiteaddons.v1.ListDeploymentsRequest\0325"
+          + ".google.cloud.gsuiteaddons.v1.ListDeploy"
+          + "mentsResponse\"4\332A\006parent\202\323\344\223\002%\022#/v1/{parent=projects/*}/deployments\022\225\001\n"
+          + "\020DeleteDeployment\0225.google.cloud.gsuiteaddons.v1."
+          + "DeleteDeploymentRequest\032\026.google.protobu"
+          + "f.Empty\"2\332A\004name\202\323\344\223\002%*#/v1/{name=projects/*/deployments/*}\022\242\001\n"
+          + "\021InstallDeployment\0226.google.cloud.gsuiteaddons.v1.Install"
+          + "DeploymentRequest\032\026.google.protobuf.Empt"
+          + "y\"=\332A\004name\202\323\344\223\0020\"+/v1/{name=projects/*/deployments/*}:install:\001*\022\250\001\n"
+          + "\023UninstallDeployment\0228.google.cloud.gsuiteaddons.v1."
+          + "UninstallDeploymentRequest\032\026.google.prot"
+          + "obuf.Empty\"?\332A\004name\202\323\344\223\0022\"-/v1/{name=projects/*/deployments/*}:uninstall:\001*\022\270\001\n"
+          + "\020GetInstallStatus\0225.google.cloud.gsuitead"
+          + "dons.v1.GetInstallStatusRequest\032+.google"
+          + ".cloud.gsuiteaddons.v1.InstallStatus\"@\332A"
+          + "\004name\202\323\344\223\0023\0221/v1/{name=projects/*/deployments/*/installStatus}\022\252\001\n"
+          + "\020GetChatAppConfig\0225.google.cloud.gsuiteaddons.v1.GetCh"
+          + "atAppConfigRequest\032+.google.cloud.gsuite"
+          + "addons.v1.ChatAppConfig\"2\332A\004name\202\323\344\223\002%\022#/v1/{name=projects/*/chatAppConfig}\022\350\001\n"
+          + "\023UpdateChatAppConfig\0228.google.cloud.gsuit"
+          + "eaddons.v1.UpdateChatAppConfigRequest\032+.google.cloud.gsuiteaddons.v1.ChatAppConf"
+          + "ig\"j\332A\033chat_app_config,update_mask\202\323\344\223\002F"
+          + "23/v1/{chat_app_config.name=projects/*/c"
+          + "hatAppConfig}:\017chat_app_config\032\210\001\312A\033gsui"
+          + "teaddons.googleapis.com\322Aghttps://www.googleapis.com/auth/cloud-platform,https:/"
+          + "/www.googleapis.com/auth/cloud-platform.read-onlyB\257\002\n"
+          + " com.google.cloud.gsuiteaddons.v1B\021GSuiteAddOnsProtoP\001ZDcloud.googl"
+          + "e.com/go/gsuiteaddons/apiv1/gsuiteaddons"
+          + "pb;gsuiteaddonspb\252\002\034Google.Cloud.GSuiteA"
+          + "ddOns.V1\312\002\034Google\\Cloud\\GSuiteAddOns\\V1\352\002\037Google::Cloud::GSuiteAddOns::V1\352AO\n"
+          + "\033pubsub.googleapis.com/Topic\022!projects/{pro"
+          + "ject}/topics/{topic}*\006topics2\005topicb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -243,6 +417,7 @@ public final class GSuiteAddOnsProto extends com.google.protobuf.GeneratedFile {
               com.google.apps.script.type.sheets.SheetsAddOnManifestProto.getDescriptor(),
               com.google.apps.script.type.slides.SlidesAddOnManifestProto.getDescriptor(),
               com.google.protobuf.EmptyProto.getDescriptor(),
+              com.google.protobuf.FieldMaskProto.getDescriptor(),
               com.google.protobuf.WrappersProto.getDescriptor(),
             });
     internal_static_google_cloud_gsuiteaddons_v1_GetAuthorizationRequest_descriptor =
@@ -357,6 +532,137 @@ public final class GSuiteAddOnsProto extends com.google.protobuf.GeneratedFile {
             new java.lang.String[] {
               "Common", "Gmail", "Drive", "Calendar", "Docs", "Sheets", "Slides", "HttpOptions",
             });
+    internal_static_google_cloud_gsuiteaddons_v1_GetChatAppConfigRequest_descriptor =
+        getDescriptor().getMessageType(14);
+    internal_static_google_cloud_gsuiteaddons_v1_GetChatAppConfigRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_gsuiteaddons_v1_GetChatAppConfigRequest_descriptor,
+            new java.lang.String[] {
+              "Name", "View",
+            });
+    internal_static_google_cloud_gsuiteaddons_v1_UpdateChatAppConfigRequest_descriptor =
+        getDescriptor().getMessageType(15);
+    internal_static_google_cloud_gsuiteaddons_v1_UpdateChatAppConfigRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_gsuiteaddons_v1_UpdateChatAppConfigRequest_descriptor,
+            new java.lang.String[] {
+              "ChatAppConfig", "UpdateMask",
+            });
+    internal_static_google_cloud_gsuiteaddons_v1_ChatAppConfig_descriptor =
+        getDescriptor().getMessageType(16);
+    internal_static_google_cloud_gsuiteaddons_v1_ChatAppConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_gsuiteaddons_v1_ChatAppConfig_descriptor,
+            new java.lang.String[] {
+              "Name",
+              "DisplayName",
+              "AvatarUri",
+              "Description",
+              "State",
+              "InteractiveFeatureConfig",
+              "ErrorLoggingEnabled",
+              "MarkupSyntax",
+            });
+    internal_static_google_cloud_gsuiteaddons_v1_InteractiveFeatureConfig_descriptor =
+        getDescriptor().getMessageType(17);
+    internal_static_google_cloud_gsuiteaddons_v1_InteractiveFeatureConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_gsuiteaddons_v1_InteractiveFeatureConfig_descriptor,
+            new java.lang.String[] {
+              "SupportsMultiuserSpaces",
+              "ConnectionConfig",
+              "AppCommands",
+              "UrlPatterns",
+              "AllowlistedTestingPrincipals",
+            });
+    internal_static_google_cloud_gsuiteaddons_v1_ConnectionConfig_descriptor =
+        getDescriptor().getMessageType(18);
+    internal_static_google_cloud_gsuiteaddons_v1_ConnectionConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_gsuiteaddons_v1_ConnectionConfig_descriptor,
+            new java.lang.String[] {
+              "HttpEndpointConfig",
+              "AppsScriptEndpointConfig",
+              "CloudPubSubEndpointConfig",
+              "DialogflowEndpointConfig",
+              "Config",
+            });
+    internal_static_google_cloud_gsuiteaddons_v1_HttpEndpointConfig_descriptor =
+        getDescriptor().getMessageType(19);
+    internal_static_google_cloud_gsuiteaddons_v1_HttpEndpointConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_gsuiteaddons_v1_HttpEndpointConfig_descriptor,
+            new java.lang.String[] {
+              "CommonUrl", "PerEventEndpointConfig", "Config",
+            });
+    internal_static_google_cloud_gsuiteaddons_v1_HttpPerEventEndpointConfig_descriptor =
+        getDescriptor().getMessageType(20);
+    internal_static_google_cloud_gsuiteaddons_v1_HttpPerEventEndpointConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_gsuiteaddons_v1_HttpPerEventEndpointConfig_descriptor,
+            new java.lang.String[] {
+              "AppCommandEndpoint",
+              "AddedToSpaceEndpoint",
+              "MessageEndpoint",
+              "RemovedFromSpaceEndpoint",
+            });
+    internal_static_google_cloud_gsuiteaddons_v1_AppsScriptEndpointConfig_descriptor =
+        getDescriptor().getMessageType(21);
+    internal_static_google_cloud_gsuiteaddons_v1_AppsScriptEndpointConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_gsuiteaddons_v1_AppsScriptEndpointConfig_descriptor,
+            new java.lang.String[] {
+              "DeploymentId", "PerEventEndpointConfig",
+            });
+    internal_static_google_cloud_gsuiteaddons_v1_AppsScriptPerEventEndpointConfig_descriptor =
+        getDescriptor().getMessageType(22);
+    internal_static_google_cloud_gsuiteaddons_v1_AppsScriptPerEventEndpointConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_gsuiteaddons_v1_AppsScriptPerEventEndpointConfig_descriptor,
+            new java.lang.String[] {
+              "AppCommandEndpoint",
+              "AddedToSpaceEndpoint",
+              "MessageEndpoint",
+              "RemovedFromSpaceEndpoint",
+            });
+    internal_static_google_cloud_gsuiteaddons_v1_CloudPubSubEndpointConfig_descriptor =
+        getDescriptor().getMessageType(23);
+    internal_static_google_cloud_gsuiteaddons_v1_CloudPubSubEndpointConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_gsuiteaddons_v1_CloudPubSubEndpointConfig_descriptor,
+            new java.lang.String[] {
+              "Topic",
+            });
+    internal_static_google_cloud_gsuiteaddons_v1_DialogflowEndpointConfig_descriptor =
+        getDescriptor().getMessageType(24);
+    internal_static_google_cloud_gsuiteaddons_v1_DialogflowEndpointConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_gsuiteaddons_v1_DialogflowEndpointConfig_descriptor,
+            new java.lang.String[] {
+              "DialogflowEdition", "Agent",
+            });
+    internal_static_google_cloud_gsuiteaddons_v1_AppCommand_descriptor =
+        getDescriptor().getMessageType(25);
+    internal_static_google_cloud_gsuiteaddons_v1_AppCommand_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_gsuiteaddons_v1_AppCommand_descriptor,
+            new java.lang.String[] {
+              "CommandType",
+              "CommandId",
+              "Command",
+              "DisplayName",
+              "Description",
+              "DialogEnabled",
+              "LoadingNotificationMessage",
+            });
+    internal_static_google_cloud_gsuiteaddons_v1_UrlPattern_descriptor =
+        getDescriptor().getMessageType(26);
+    internal_static_google_cloud_gsuiteaddons_v1_UrlPattern_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_gsuiteaddons_v1_UrlPattern_descriptor,
+            new java.lang.String[] {
+              "HostPattern", "PathPrefix",
+            });
     descriptor.resolveAllFeaturesImmutable();
     com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.ClientProto.getDescriptor();
@@ -370,6 +676,7 @@ public final class GSuiteAddOnsProto extends com.google.protobuf.GeneratedFile {
     com.google.apps.script.type.sheets.SheetsAddOnManifestProto.getDescriptor();
     com.google.apps.script.type.slides.SlidesAddOnManifestProto.getDescriptor();
     com.google.protobuf.EmptyProto.getDescriptor();
+    com.google.protobuf.FieldMaskProto.getDescriptor();
     com.google.protobuf.WrappersProto.getDescriptor();
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
@@ -379,6 +686,7 @@ public final class GSuiteAddOnsProto extends com.google.protobuf.GeneratedFile {
     registry.add(com.google.api.ClientProto.methodSignature);
     registry.add(com.google.api.ClientProto.oauthScopes);
     registry.add(com.google.api.ResourceProto.resource);
+    registry.add(com.google.api.ResourceProto.resourceDefinition);
     registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);

@@ -154,17 +154,26 @@
             "AcceptSpokeUpdate": {
               "methods": ["acceptSpokeUpdateAsync", "acceptSpokeUpdateAsync", "acceptSpokeUpdateAsync", "acceptSpokeUpdateAsync", "acceptSpokeUpdateAsync", "acceptSpokeUpdateOperationCallable", "acceptSpokeUpdateCallable"]
             },
+            "CreateGatewayAdvertisedRoute": {
+              "methods": ["createGatewayAdvertisedRouteAsync", "createGatewayAdvertisedRouteAsync", "createGatewayAdvertisedRouteAsync", "createGatewayAdvertisedRouteOperationCallable", "createGatewayAdvertisedRouteCallable"]
+            },
             "CreateHub": {
               "methods": ["createHubAsync", "createHubAsync", "createHubAsync", "createHubOperationCallable", "createHubCallable"]
             },
             "CreateSpoke": {
               "methods": ["createSpokeAsync", "createSpokeAsync", "createSpokeAsync", "createSpokeOperationCallable", "createSpokeCallable"]
             },
+            "DeleteGatewayAdvertisedRoute": {
+              "methods": ["deleteGatewayAdvertisedRouteAsync", "deleteGatewayAdvertisedRouteAsync", "deleteGatewayAdvertisedRouteAsync", "deleteGatewayAdvertisedRouteOperationCallable", "deleteGatewayAdvertisedRouteCallable"]
+            },
             "DeleteHub": {
               "methods": ["deleteHubAsync", "deleteHubAsync", "deleteHubAsync", "deleteHubOperationCallable", "deleteHubCallable"]
             },
             "DeleteSpoke": {
               "methods": ["deleteSpokeAsync", "deleteSpokeAsync", "deleteSpokeAsync", "deleteSpokeOperationCallable", "deleteSpokeCallable"]
+            },
+            "GetGatewayAdvertisedRoute": {
+              "methods": ["getGatewayAdvertisedRoute", "getGatewayAdvertisedRoute", "getGatewayAdvertisedRoute", "getGatewayAdvertisedRouteCallable"]
             },
             "GetGroup": {
               "methods": ["getGroup", "getGroup", "getGroup", "getGroupCallable"]
@@ -186,6 +195,9 @@
             },
             "GetSpoke": {
               "methods": ["getSpoke", "getSpoke", "getSpoke", "getSpokeCallable"]
+            },
+            "ListGatewayAdvertisedRoutes": {
+              "methods": ["listGatewayAdvertisedRoutes", "listGatewayAdvertisedRoutes", "listGatewayAdvertisedRoutes", "listGatewayAdvertisedRoutesPagedCallable", "listGatewayAdvertisedRoutesCallable"]
             },
             "ListGroups": {
               "methods": ["listGroups", "listGroups", "listGroups", "listGroupsPagedCallable", "listGroupsCallable"]
@@ -222,6 +234,9 @@
             },
             "TestIamPermissions": {
               "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "UpdateGatewayAdvertisedRoute": {
+              "methods": ["updateGatewayAdvertisedRouteAsync", "updateGatewayAdvertisedRouteAsync", "updateGatewayAdvertisedRouteOperationCallable", "updateGatewayAdvertisedRouteCallable"]
             },
             "UpdateGroup": {
               "methods": ["updateGroupAsync", "updateGroupAsync", "updateGroupOperationCallable", "updateGroupCallable"]

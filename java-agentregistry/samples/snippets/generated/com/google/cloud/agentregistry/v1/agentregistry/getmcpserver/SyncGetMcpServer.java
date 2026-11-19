@@ -37,7 +37,10 @@ public class SyncGetMcpServer {
     try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
       GetMcpServerRequest request =
           GetMcpServerRequest.newBuilder()
-              .setName(McpServerName.of("[PROJECT]", "[LOCATION]", "[MCP_SERVER]").toString())
+              .setName(
+                  McpServerName.ofProjectLocationMcpServerName(
+                          "[PROJECT]", "[LOCATION]", "[MCP_SERVER]")
+                      .toString())
               .build();
       McpServer response = agentRegistryClient.getMcpServer(request);
     }

@@ -529,4 +529,116 @@ public class MockHubServiceImpl extends HubServiceImplBase {
                   Exception.class.getName())));
     }
   }
+
+  @Override
+  public void createGatewayAdvertisedRoute(
+      CreateGatewayAdvertisedRouteRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateGatewayAdvertisedRoute, expected"
+                      + " %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getGatewayAdvertisedRoute(
+      GetGatewayAdvertisedRouteRequest request,
+      StreamObserver<GatewayAdvertisedRoute> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof GatewayAdvertisedRoute) {
+      requests.add(request);
+      responseObserver.onNext(((GatewayAdvertisedRoute) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetGatewayAdvertisedRoute, expected %s"
+                      + " or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  GatewayAdvertisedRoute.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listGatewayAdvertisedRoutes(
+      ListGatewayAdvertisedRoutesRequest request,
+      StreamObserver<ListGatewayAdvertisedRoutesResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListGatewayAdvertisedRoutesResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListGatewayAdvertisedRoutesResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListGatewayAdvertisedRoutes, expected"
+                      + " %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListGatewayAdvertisedRoutesResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateGatewayAdvertisedRoute(
+      UpdateGatewayAdvertisedRouteRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateGatewayAdvertisedRoute, expected"
+                      + " %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteGatewayAdvertisedRoute(
+      DeleteGatewayAdvertisedRouteRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteGatewayAdvertisedRoute, expected"
+                      + " %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
 }

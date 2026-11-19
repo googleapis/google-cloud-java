@@ -28,6 +28,7 @@ import com.google.cloud.gsuiteaddons.v1.stub.GSuiteAddOnsStub;
 import com.google.cloud.gsuiteaddons.v1.stub.GSuiteAddOnsStubSettings;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.protobuf.Empty;
+import com.google.protobuf.FieldMask;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -37,28 +38,7 @@ import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * Service Description: A service for managing Google Workspace add-ons deployments.
- *
- * <p>A Google Workspace add-on is a third-party embedded component that can be installed in Google
- * Workspace Applications like Gmail, Calendar, Drive, and the Google Docs, Sheets, and Slides
- * editors. Google Workspace add-ons can display UI cards, receive contextual information from the
- * host application, and perform actions in the host application (See:
- * https://developers.google.com/gsuite/add-ons/overview for more information).
- *
- * <p>A Google Workspace add-on deployment resource specifies metadata about the add-on, including a
- * specification of the entry points in the host application that trigger add-on executions (see:
- * https://developers.google.com/gsuite/add-ons/concepts/gsuite-manifests). Add-on deployments
- * defined via the Google Workspace add-ons API define their entrypoints using HTTPS URLs (See:
- * https://developers.google.com/gsuite/add-ons/guides/alternate-runtimes),
- *
- * <p>A Google Workspace add-on deployment can be installed in developer mode, which allows an
- * add-on developer to test the experience an end-user would see when installing and running the
- * add-on in their G Suite applications. When running in developer mode, more detailed error
- * messages are exposed in the add-on UI to aid in debugging.
- *
- * <p>A Google Workspace add-on deployment can be published to Google Workspace Marketplace, which
- * allows other Google Workspace users to discover and install the add-on. See:
- * https://developers.google.com/gsuite/add-ons/how-tos/publish-add-on-overview for details.
+ * Service Description: A service for managing Google Workspace add-ons.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -253,6 +233,45 @@ import org.jspecify.annotations.Nullable;
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
  *           <li><p> getInstallStatusCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetChatAppConfig</td>
+ *      <td><p> Gets the Chat app configuration of a project. Only Chat apps built as Google Workspace add-ons are supported. Each Google Cloud project has exactly one Chat app configuration.
+ * <p>  Requires authenticating and authorizing with user credentials and the `gsuiteaddons.chatAppConfigs.get` and `chat.bots.get` IAM permissions on the project.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getChatAppConfig(GetChatAppConfigRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getChatAppConfig(ChatAppConfigName name)
+ *           <li><p> getChatAppConfig(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getChatAppConfigCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateChatAppConfig</td>
+ *      <td><p> Updates the Chat app configuration of a project. Only Chat apps built as Google Workspace add-ons are supported. Each Google Cloud project has exactly one Chat app configuration.
+ * <p>  Requires authenticating and authorizing with user credentials and the `gsuiteaddons.chatAppConfigs.update`, `chat.bots.update` and `chat.bots.get` IAM permissions on the project.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateChatAppConfig(UpdateChatAppConfigRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateChatAppConfig(ChatAppConfig chatAppConfig, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateChatAppConfigCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -1423,6 +1442,244 @@ public class GSuiteAddOnsClient implements BackgroundResource {
    */
   public final UnaryCallable<GetInstallStatusRequest, InstallStatus> getInstallStatusCallable() {
     return stub.getInstallStatusCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the Chat app configuration of a project. Only Chat apps built as Google Workspace add-ons
+   * are supported. Each Google Cloud project has exactly one Chat app configuration.
+   *
+   * <p>Requires authenticating and authorizing with user credentials and the
+   * `gsuiteaddons.chatAppConfigs.get` and `chat.bots.get` IAM permissions on the project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (GSuiteAddOnsClient gSuiteAddOnsClient = GSuiteAddOnsClient.create()) {
+   *   ChatAppConfigName name = ChatAppConfigName.of("[PROJECT]");
+   *   ChatAppConfig response = gSuiteAddOnsClient.getChatAppConfig(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Resource name of the Chat app configuration.
+   *     <p>Format: `projects/{project}/chatAppConfig`, where `{project}` is the Google Cloud
+   *     project number.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ChatAppConfig getChatAppConfig(@Nullable ChatAppConfigName name) {
+    GetChatAppConfigRequest request =
+        GetChatAppConfigRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getChatAppConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the Chat app configuration of a project. Only Chat apps built as Google Workspace add-ons
+   * are supported. Each Google Cloud project has exactly one Chat app configuration.
+   *
+   * <p>Requires authenticating and authorizing with user credentials and the
+   * `gsuiteaddons.chatAppConfigs.get` and `chat.bots.get` IAM permissions on the project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (GSuiteAddOnsClient gSuiteAddOnsClient = GSuiteAddOnsClient.create()) {
+   *   String name = ChatAppConfigName.of("[PROJECT]").toString();
+   *   ChatAppConfig response = gSuiteAddOnsClient.getChatAppConfig(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Resource name of the Chat app configuration.
+   *     <p>Format: `projects/{project}/chatAppConfig`, where `{project}` is the Google Cloud
+   *     project number.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ChatAppConfig getChatAppConfig(String name) {
+    GetChatAppConfigRequest request = GetChatAppConfigRequest.newBuilder().setName(name).build();
+    return getChatAppConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the Chat app configuration of a project. Only Chat apps built as Google Workspace add-ons
+   * are supported. Each Google Cloud project has exactly one Chat app configuration.
+   *
+   * <p>Requires authenticating and authorizing with user credentials and the
+   * `gsuiteaddons.chatAppConfigs.get` and `chat.bots.get` IAM permissions on the project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (GSuiteAddOnsClient gSuiteAddOnsClient = GSuiteAddOnsClient.create()) {
+   *   GetChatAppConfigRequest request =
+   *       GetChatAppConfigRequest.newBuilder()
+   *           .setName(ChatAppConfigName.of("[PROJECT]").toString())
+   *           .build();
+   *   ChatAppConfig response = gSuiteAddOnsClient.getChatAppConfig(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ChatAppConfig getChatAppConfig(GetChatAppConfigRequest request) {
+    return getChatAppConfigCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the Chat app configuration of a project. Only Chat apps built as Google Workspace add-ons
+   * are supported. Each Google Cloud project has exactly one Chat app configuration.
+   *
+   * <p>Requires authenticating and authorizing with user credentials and the
+   * `gsuiteaddons.chatAppConfigs.get` and `chat.bots.get` IAM permissions on the project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (GSuiteAddOnsClient gSuiteAddOnsClient = GSuiteAddOnsClient.create()) {
+   *   GetChatAppConfigRequest request =
+   *       GetChatAppConfigRequest.newBuilder()
+   *           .setName(ChatAppConfigName.of("[PROJECT]").toString())
+   *           .build();
+   *   ApiFuture<ChatAppConfig> future =
+   *       gSuiteAddOnsClient.getChatAppConfigCallable().futureCall(request);
+   *   // Do something.
+   *   ChatAppConfig response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetChatAppConfigRequest, ChatAppConfig> getChatAppConfigCallable() {
+    return stub.getChatAppConfigCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the Chat app configuration of a project. Only Chat apps built as Google Workspace
+   * add-ons are supported. Each Google Cloud project has exactly one Chat app configuration.
+   *
+   * <p>Requires authenticating and authorizing with user credentials and the
+   * `gsuiteaddons.chatAppConfigs.update`, `chat.bots.update` and `chat.bots.get` IAM permissions on
+   * the project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (GSuiteAddOnsClient gSuiteAddOnsClient = GSuiteAddOnsClient.create()) {
+   *   ChatAppConfig chatAppConfig = ChatAppConfig.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   ChatAppConfig response = gSuiteAddOnsClient.updateChatAppConfig(chatAppConfig, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param chatAppConfig Required. The app configuration to update.
+   * @param updateMask Optional. The list of fields to update.
+   *     <p>If omitted, only the fields with non-empty values in the provided Chat app configuration
+   *     are updated.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ChatAppConfig updateChatAppConfig(
+      ChatAppConfig chatAppConfig, FieldMask updateMask) {
+    UpdateChatAppConfigRequest request =
+        UpdateChatAppConfigRequest.newBuilder()
+            .setChatAppConfig(chatAppConfig)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateChatAppConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the Chat app configuration of a project. Only Chat apps built as Google Workspace
+   * add-ons are supported. Each Google Cloud project has exactly one Chat app configuration.
+   *
+   * <p>Requires authenticating and authorizing with user credentials and the
+   * `gsuiteaddons.chatAppConfigs.update`, `chat.bots.update` and `chat.bots.get` IAM permissions on
+   * the project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (GSuiteAddOnsClient gSuiteAddOnsClient = GSuiteAddOnsClient.create()) {
+   *   UpdateChatAppConfigRequest request =
+   *       UpdateChatAppConfigRequest.newBuilder()
+   *           .setChatAppConfig(ChatAppConfig.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ChatAppConfig response = gSuiteAddOnsClient.updateChatAppConfig(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ChatAppConfig updateChatAppConfig(UpdateChatAppConfigRequest request) {
+    return updateChatAppConfigCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the Chat app configuration of a project. Only Chat apps built as Google Workspace
+   * add-ons are supported. Each Google Cloud project has exactly one Chat app configuration.
+   *
+   * <p>Requires authenticating and authorizing with user credentials and the
+   * `gsuiteaddons.chatAppConfigs.update`, `chat.bots.update` and `chat.bots.get` IAM permissions on
+   * the project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (GSuiteAddOnsClient gSuiteAddOnsClient = GSuiteAddOnsClient.create()) {
+   *   UpdateChatAppConfigRequest request =
+   *       UpdateChatAppConfigRequest.newBuilder()
+   *           .setChatAppConfig(ChatAppConfig.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<ChatAppConfig> future =
+   *       gSuiteAddOnsClient.updateChatAppConfigCallable().futureCall(request);
+   *   // Do something.
+   *   ChatAppConfig response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateChatAppConfigRequest, ChatAppConfig>
+      updateChatAppConfigCallable() {
+    return stub.updateChatAppConfigCallable();
   }
 
   @Override

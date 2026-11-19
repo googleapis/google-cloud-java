@@ -117,6 +117,7 @@ import com.google.chat.v1.UpdateSectionRequest;
 import com.google.chat.v1.UpdateSpaceNotificationSettingRequest;
 import com.google.chat.v1.UpdateSpaceReadStateRequest;
 import com.google.chat.v1.UpdateSpaceRequest;
+import com.google.chat.v1.UpdateThreadReadStateRequest;
 import com.google.chat.v1.UploadAttachmentRequest;
 import com.google.chat.v1.UploadAttachmentResponse;
 import com.google.longrunning.stub.GrpcOperationsStub;
@@ -515,6 +516,17 @@ public class GrpcChatServiceStub extends ChatServiceStub {
               .setSampledToLocalTracing(true)
               .build();
 
+  private static final MethodDescriptor<UpdateThreadReadStateRequest, ThreadReadState>
+      updateThreadReadStateMethodDescriptor =
+          MethodDescriptor.<UpdateThreadReadStateRequest, ThreadReadState>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.chat.v1.ChatService/UpdateThreadReadState")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateThreadReadStateRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(ThreadReadState.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private static final MethodDescriptor<GetThreadReadStateRequest, ThreadReadState>
       getThreadReadStateMethodDescriptor =
           MethodDescriptor.<GetThreadReadStateRequest, ThreadReadState>newBuilder()
@@ -778,6 +790,8 @@ public class GrpcChatServiceStub extends ChatServiceStub {
   private final UnaryCallable<GetSpaceReadStateRequest, SpaceReadState> getSpaceReadStateCallable;
   private final UnaryCallable<UpdateSpaceReadStateRequest, SpaceReadState>
       updateSpaceReadStateCallable;
+  private final UnaryCallable<UpdateThreadReadStateRequest, ThreadReadState>
+      updateThreadReadStateCallable;
   private final UnaryCallable<GetThreadReadStateRequest, ThreadReadState>
       getThreadReadStateCallable;
   private final UnaryCallable<GetAvailabilityRequest, Availability> getAvailabilityCallable;
@@ -1188,6 +1202,19 @@ public class GrpcChatServiceStub extends ChatServiceStub {
                       return builder.build();
                     })
                 .build();
+    GrpcCallSettings<UpdateThreadReadStateRequest, ThreadReadState>
+        updateThreadReadStateTransportSettings =
+            GrpcCallSettings.<UpdateThreadReadStateRequest, ThreadReadState>newBuilder()
+                .setMethodDescriptor(updateThreadReadStateMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "thread_read_state.name",
+                          String.valueOf(request.getThreadReadState().getName()));
+                      return builder.build();
+                    })
+                .build();
     GrpcCallSettings<GetThreadReadStateRequest, ThreadReadState>
         getThreadReadStateTransportSettings =
             GrpcCallSettings.<GetThreadReadStateRequest, ThreadReadState>newBuilder()
@@ -1541,6 +1568,11 @@ public class GrpcChatServiceStub extends ChatServiceStub {
             updateSpaceReadStateTransportSettings,
             settings.updateSpaceReadStateSettings(),
             clientContext);
+    this.updateThreadReadStateCallable =
+        callableFactory.createUnaryCallable(
+            updateThreadReadStateTransportSettings,
+            settings.updateThreadReadStateSettings(),
+            clientContext);
     this.getThreadReadStateCallable =
         callableFactory.createUnaryCallable(
             getThreadReadStateTransportSettings,
@@ -1852,6 +1884,12 @@ public class GrpcChatServiceStub extends ChatServiceStub {
   @Override
   public UnaryCallable<UpdateSpaceReadStateRequest, SpaceReadState> updateSpaceReadStateCallable() {
     return updateSpaceReadStateCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateThreadReadStateRequest, ThreadReadState>
+      updateThreadReadStateCallable() {
+    return updateThreadReadStateCallable;
   }
 
   @Override

@@ -68,6 +68,10 @@ public final class OdbDnsZoneProto extends com.google.protobuf.GeneratedFile {
       internal_static_google_cloud_oracledatabase_v1_GetOdbDnsZoneRequest_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_oracledatabase_v1_GetOdbDnsZoneRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_oracledatabase_v1_UpdateOdbDnsZoneRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_oracledatabase_v1_UpdateOdbDnsZoneRequest_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -80,15 +84,15 @@ public final class OdbDnsZoneProto extends com.google.protobuf.GeneratedFile {
       "\n"
           + "1google/cloud/oracledatabase/v1/odb_dns_zone.proto\022\036google.cloud.oracledatabase"
           + ".v1\032\037google/api/field_behavior.proto\032\033go"
-          + "ogle/api/field_info.proto\032\031google/api/re"
-          + "source.proto\032\037google/protobuf/timestamp.proto\"\306\004\n\n"
+          + "ogle/api/field_info.proto\032\031google/api/resource.proto\032"
+          + " google/protobuf/field_mask.proto\032\037google/protobuf/timestamp.proto\"\306\004\n\n"
           + "OdbDnsZone\022\022\n"
           + "\004name\030\001 \001(\tB\004\342A\001\010\022\025\n"
           + "\006domain\030\002 \001(\tB\005\342A\002\002\005\022L\n"
-          + "\006labels\030\003 \003(\0132"
-          + "6.google.cloud.oracledatabase.v1.OdbDnsZone.LabelsEntryB\004\342A\001\001\022E\n"
-          + "\005state\030\004 \001(\01620.g"
-          + "oogle.cloud.oracledatabase.v1.OdbDnsZone.StateB\004\342A\001\003\0225\n"
+          + "\006labels\030\003 \003(\01326.goog"
+          + "le.cloud.oracledatabase.v1.OdbDnsZone.LabelsEntryB\004\342A\001\001\022E\n"
+          + "\005state\030\004 \001(\01620.google."
+          + "cloud.oracledatabase.v1.OdbDnsZone.StateB\004\342A\001\003\0225\n"
           + "\013create_time\030\005"
           + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\032-\n"
           + "\013LabelsEntry\022\013\n"
@@ -96,18 +100,19 @@ public final class OdbDnsZoneProto extends com.google.protobuf.GeneratedFile {
           + "\005value\030\002 \001(\t:\0028\001\"j\n"
           + "\005State\022\025\n"
           + "\021STATE_UNSPECIFIED\020\000\022\020\n"
-          + "\014PROVISIONING\020\001\022\r\n"
+          + "\014PROVISIONING\020\001\022\r"
+          + "\n"
           + "\tAVAILABLE\020\002\022\014\n"
           + "\010INACTIVE\020\003\022\017\n"
           + "\013TERMINATING\020\004\022\n\n"
           + "\006FAILED\020\005:\245\001\352A\241\001\n"
-          + "(oracledatabase.googleapis.com/OdbDnsZone\022\\project"
-          + "s/{project}/locations/{location}/odbNetw"
-          + "orks/{odb_network}/odbDnsZones/{odb_dns_zone}*\013odbDnsZones2\n"
+          + "(oracledatabase.googleapis.com/OdbDnsZone\022\\projects/{pro"
+          + "ject}/locations/{location}/odbNetworks/{"
+          + "odb_network}/odbDnsZones/{odb_dns_zone}*\013odbDnsZones2\n"
           + "odbDnsZone\"\345\001\n"
           + "\027CreateOdbDnsZoneRequest\022A\n"
-          + "\006parent\030\001 \001(\tB1\342A\001\002"
-          + "\372A*\022(oracledatabase.googleapis.com/OdbDnsZone\022\035\n"
+          + "\006parent\030\001 \001(\tB1\342A\001\002\372A*\022(o"
+          + "racledatabase.googleapis.com/OdbDnsZone\022\035\n"
           + "\017odb_dns_zone_id\030\002 \001(\tB\004\342A\001\002\022F\n"
           + "\014odb_dns_zone\030\003"
           + " \001(\0132*.google.cloud.oracledatabase.v1.OdbDnsZoneB\004\342A\001\002\022 \n\n"
@@ -118,8 +123,8 @@ public final class OdbDnsZoneProto extends com.google.protobuf.GeneratedFile {
           + "request_id\030\002 \001("
           + "\tB\014\342A\001\001\342\214\317\327\010\002\010\001\"\274\001\n"
           + "\026ListOdbDnsZonesRequest\022A\n"
-          + "\006parent\030\001 \001(\tB1\342A\001\002\372A*"
-          + "\022(oracledatabase.googleapis.com/OdbDnsZone\022\027\n"
+          + "\006parent\030\001 \001("
+          + "\tB1\342A\001\002\372A*\022(oracledatabase.googleapis.com/OdbDnsZone\022\027\n"
           + "\tpage_size\030\002 \001(\005B\004\342A\001\001\022\030\n\n"
           + "page_token\030\003 \001(\tB\004\342A\001\001\022\024\n"
           + "\006filter\030\004 \001(\tB\004\342A\001\001\022\026\n"
@@ -130,12 +135,19 @@ public final class OdbDnsZoneProto extends com.google.protobuf.GeneratedFile {
           + "\013unreachable\030\003 \003(\t\"W\n"
           + "\024GetOdbDnsZoneRequest\022?\n"
           + "\004name\030\001 \001(\tB1\342A\001\002\372A*\n"
-          + "(oracledatabase.googleapis.com/OdbDnsZoneB\351\001\n"
-          + "\"com.google.cloud.oracledatabase.v1B\017OdbDnsZoneProtoP\001ZJcloud.googl"
-          + "e.com/go/oracledatabase/apiv1/oracledata"
-          + "basepb;oracledatabasepb\252\002\036Google.Cloud.O"
-          + "racleDatabase.V1\312\002\036Google\\Cloud\\OracleDa"
-          + "tabase\\V1\352\002!Google::Cloud::OracleDatabase::V1b\006proto3"
+          + "(oracledatabase.googleapis.com/OdbDnsZone\"\272\001\n"
+          + "\027UpdateOdbDnsZoneRequest\0225\n"
+          + "\013update_mask\030\001"
+          + " \001(\0132\032.google.protobuf.FieldMaskB\004\342A\001\001\022F\n"
+          + "\014odb_dns_zone\030\002"
+          + " \001(\0132*.google.cloud.oracledatabase.v1.OdbDnsZoneB\004\342A\001\002\022 \n\n"
+          + "request_id\030\003 \001("
+          + "\tB\014\342A\001\001\342\214\317\327\010\002\010\001B\351\001\n"
+          + "\"com.google.cloud.oracledatabase.v1B\017OdbDnsZ"
+          + "oneProtoP\001ZJcloud.google.com/go/oracledatabase/apiv1/oracledatabasepb;oracledata"
+          + "basepb\252\002\036Google.Cloud.OracleDatabase.V1\312"
+          + "\002\036Google\\Cloud\\OracleDatabase\\V1\352\002!Googl"
+          + "e::Cloud::OracleDatabase::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -144,6 +156,7 @@ public final class OdbDnsZoneProto extends com.google.protobuf.GeneratedFile {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.FieldInfoProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
+              com.google.protobuf.FieldMaskProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
             });
     internal_static_google_cloud_oracledatabase_v1_OdbDnsZone_descriptor =
@@ -202,10 +215,19 @@ public final class OdbDnsZoneProto extends com.google.protobuf.GeneratedFile {
             new java.lang.String[] {
               "Name",
             });
+    internal_static_google_cloud_oracledatabase_v1_UpdateOdbDnsZoneRequest_descriptor =
+        getDescriptor().getMessageType(6);
+    internal_static_google_cloud_oracledatabase_v1_UpdateOdbDnsZoneRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_oracledatabase_v1_UpdateOdbDnsZoneRequest_descriptor,
+            new java.lang.String[] {
+              "UpdateMask", "OdbDnsZone", "RequestId",
+            });
     descriptor.resolveAllFeaturesImmutable();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.FieldInfoProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
+    com.google.protobuf.FieldMaskProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

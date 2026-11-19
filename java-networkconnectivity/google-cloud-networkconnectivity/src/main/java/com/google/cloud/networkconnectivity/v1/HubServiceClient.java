@@ -541,6 +541,104 @@ import org.jspecify.annotations.Nullable;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> CreateGatewayAdvertisedRoute</td>
+ *      <td><p> Create a GatewayAdvertisedRoute</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createGatewayAdvertisedRouteAsync(CreateGatewayAdvertisedRouteRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> createGatewayAdvertisedRouteAsync(SpokeName parent, GatewayAdvertisedRoute gatewayAdvertisedRoute, String gatewayAdvertisedRouteId)
+ *           <li><p> createGatewayAdvertisedRouteAsync(String parent, GatewayAdvertisedRoute gatewayAdvertisedRoute, String gatewayAdvertisedRouteId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createGatewayAdvertisedRouteOperationCallable()
+ *           <li><p> createGatewayAdvertisedRouteCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetGatewayAdvertisedRoute</td>
+ *      <td><p> Get a GatewayAdvertisedRoute</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getGatewayAdvertisedRoute(GetGatewayAdvertisedRouteRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getGatewayAdvertisedRoute(GatewayAdvertisedRouteName name)
+ *           <li><p> getGatewayAdvertisedRoute(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getGatewayAdvertisedRouteCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListGatewayAdvertisedRoutes</td>
+ *      <td><p> List GatewayAdvertisedRoutes</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listGatewayAdvertisedRoutes(ListGatewayAdvertisedRoutesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listGatewayAdvertisedRoutes(SpokeName parent)
+ *           <li><p> listGatewayAdvertisedRoutes(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listGatewayAdvertisedRoutesPagedCallable()
+ *           <li><p> listGatewayAdvertisedRoutesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateGatewayAdvertisedRoute</td>
+ *      <td><p> Update a GatewayAdvertisedRoute</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateGatewayAdvertisedRouteAsync(UpdateGatewayAdvertisedRouteRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> updateGatewayAdvertisedRouteAsync(GatewayAdvertisedRoute gatewayAdvertisedRoute, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateGatewayAdvertisedRouteOperationCallable()
+ *           <li><p> updateGatewayAdvertisedRouteCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteGatewayAdvertisedRoute</td>
+ *      <td><p> Delete a GatewayAdvertisedRoute</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteGatewayAdvertisedRouteAsync(DeleteGatewayAdvertisedRouteRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> deleteGatewayAdvertisedRouteAsync(GatewayAdvertisedRouteName name)
+ *           <li><p> deleteGatewayAdvertisedRouteAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteGatewayAdvertisedRouteOperationCallable()
+ *           <li><p> deleteGatewayAdvertisedRouteCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> ListLocations</td>
  *      <td><p> Lists information about the supported locations for this service.</td>
  *      <td>
@@ -4353,6 +4451,794 @@ public class HubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Create a GatewayAdvertisedRoute
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   SpokeName parent = SpokeName.of("[PROJECT]", "[LOCATION]", "[SPOKE]");
+   *   GatewayAdvertisedRoute gatewayAdvertisedRoute = GatewayAdvertisedRoute.newBuilder().build();
+   *   String gatewayAdvertisedRouteId = "gatewayAdvertisedRouteId1531070339";
+   *   GatewayAdvertisedRoute response =
+   *       hubServiceClient
+   *           .createGatewayAdvertisedRouteAsync(
+   *               parent, gatewayAdvertisedRoute, gatewayAdvertisedRouteId)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource.
+   * @param gatewayAdvertisedRoute Required. Initial values for the new gateway advertised route.
+   * @param gatewayAdvertisedRouteId Required. Unique id for the route to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<GatewayAdvertisedRoute, OperationMetadata>
+      createGatewayAdvertisedRouteAsync(
+          @Nullable SpokeName parent,
+          GatewayAdvertisedRoute gatewayAdvertisedRoute,
+          String gatewayAdvertisedRouteId) {
+    CreateGatewayAdvertisedRouteRequest request =
+        CreateGatewayAdvertisedRouteRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setGatewayAdvertisedRoute(gatewayAdvertisedRoute)
+            .setGatewayAdvertisedRouteId(gatewayAdvertisedRouteId)
+            .build();
+    return createGatewayAdvertisedRouteAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Create a GatewayAdvertisedRoute
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   String parent = SpokeName.of("[PROJECT]", "[LOCATION]", "[SPOKE]").toString();
+   *   GatewayAdvertisedRoute gatewayAdvertisedRoute = GatewayAdvertisedRoute.newBuilder().build();
+   *   String gatewayAdvertisedRouteId = "gatewayAdvertisedRouteId1531070339";
+   *   GatewayAdvertisedRoute response =
+   *       hubServiceClient
+   *           .createGatewayAdvertisedRouteAsync(
+   *               parent, gatewayAdvertisedRoute, gatewayAdvertisedRouteId)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource.
+   * @param gatewayAdvertisedRoute Required. Initial values for the new gateway advertised route.
+   * @param gatewayAdvertisedRouteId Required. Unique id for the route to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<GatewayAdvertisedRoute, OperationMetadata>
+      createGatewayAdvertisedRouteAsync(
+          String parent,
+          GatewayAdvertisedRoute gatewayAdvertisedRoute,
+          String gatewayAdvertisedRouteId) {
+    CreateGatewayAdvertisedRouteRequest request =
+        CreateGatewayAdvertisedRouteRequest.newBuilder()
+            .setParent(parent)
+            .setGatewayAdvertisedRoute(gatewayAdvertisedRoute)
+            .setGatewayAdvertisedRouteId(gatewayAdvertisedRouteId)
+            .build();
+    return createGatewayAdvertisedRouteAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Create a GatewayAdvertisedRoute
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   CreateGatewayAdvertisedRouteRequest request =
+   *       CreateGatewayAdvertisedRouteRequest.newBuilder()
+   *           .setParent(SpokeName.of("[PROJECT]", "[LOCATION]", "[SPOKE]").toString())
+   *           .setGatewayAdvertisedRouteId("gatewayAdvertisedRouteId1531070339")
+   *           .setGatewayAdvertisedRoute(GatewayAdvertisedRoute.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   GatewayAdvertisedRoute response =
+   *       hubServiceClient.createGatewayAdvertisedRouteAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<GatewayAdvertisedRoute, OperationMetadata>
+      createGatewayAdvertisedRouteAsync(CreateGatewayAdvertisedRouteRequest request) {
+    return createGatewayAdvertisedRouteOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Create a GatewayAdvertisedRoute
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   CreateGatewayAdvertisedRouteRequest request =
+   *       CreateGatewayAdvertisedRouteRequest.newBuilder()
+   *           .setParent(SpokeName.of("[PROJECT]", "[LOCATION]", "[SPOKE]").toString())
+   *           .setGatewayAdvertisedRouteId("gatewayAdvertisedRouteId1531070339")
+   *           .setGatewayAdvertisedRoute(GatewayAdvertisedRoute.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<GatewayAdvertisedRoute, OperationMetadata> future =
+   *       hubServiceClient.createGatewayAdvertisedRouteOperationCallable().futureCall(request);
+   *   // Do something.
+   *   GatewayAdvertisedRoute response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          CreateGatewayAdvertisedRouteRequest, GatewayAdvertisedRoute, OperationMetadata>
+      createGatewayAdvertisedRouteOperationCallable() {
+    return stub.createGatewayAdvertisedRouteOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Create a GatewayAdvertisedRoute
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   CreateGatewayAdvertisedRouteRequest request =
+   *       CreateGatewayAdvertisedRouteRequest.newBuilder()
+   *           .setParent(SpokeName.of("[PROJECT]", "[LOCATION]", "[SPOKE]").toString())
+   *           .setGatewayAdvertisedRouteId("gatewayAdvertisedRouteId1531070339")
+   *           .setGatewayAdvertisedRoute(GatewayAdvertisedRoute.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       hubServiceClient.createGatewayAdvertisedRouteCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateGatewayAdvertisedRouteRequest, Operation>
+      createGatewayAdvertisedRouteCallable() {
+    return stub.createGatewayAdvertisedRouteCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get a GatewayAdvertisedRoute
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   GatewayAdvertisedRouteName name =
+   *       GatewayAdvertisedRouteName.of(
+   *           "[PROJECT]", "[LOCATION]", "[SPOKE]", "[GATEWAY_ADVERTISED_ROUTE]");
+   *   GatewayAdvertisedRoute response = hubServiceClient.getGatewayAdvertisedRoute(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the gateway advertised route to get.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final GatewayAdvertisedRoute getGatewayAdvertisedRoute(
+      @Nullable GatewayAdvertisedRouteName name) {
+    GetGatewayAdvertisedRouteRequest request =
+        GetGatewayAdvertisedRouteRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getGatewayAdvertisedRoute(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get a GatewayAdvertisedRoute
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   String name =
+   *       GatewayAdvertisedRouteName.of(
+   *               "[PROJECT]", "[LOCATION]", "[SPOKE]", "[GATEWAY_ADVERTISED_ROUTE]")
+   *           .toString();
+   *   GatewayAdvertisedRoute response = hubServiceClient.getGatewayAdvertisedRoute(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the gateway advertised route to get.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final GatewayAdvertisedRoute getGatewayAdvertisedRoute(String name) {
+    GetGatewayAdvertisedRouteRequest request =
+        GetGatewayAdvertisedRouteRequest.newBuilder().setName(name).build();
+    return getGatewayAdvertisedRoute(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get a GatewayAdvertisedRoute
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   GetGatewayAdvertisedRouteRequest request =
+   *       GetGatewayAdvertisedRouteRequest.newBuilder()
+   *           .setName(
+   *               GatewayAdvertisedRouteName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[SPOKE]", "[GATEWAY_ADVERTISED_ROUTE]")
+   *                   .toString())
+   *           .build();
+   *   GatewayAdvertisedRoute response = hubServiceClient.getGatewayAdvertisedRoute(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final GatewayAdvertisedRoute getGatewayAdvertisedRoute(
+      GetGatewayAdvertisedRouteRequest request) {
+    return getGatewayAdvertisedRouteCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get a GatewayAdvertisedRoute
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   GetGatewayAdvertisedRouteRequest request =
+   *       GetGatewayAdvertisedRouteRequest.newBuilder()
+   *           .setName(
+   *               GatewayAdvertisedRouteName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[SPOKE]", "[GATEWAY_ADVERTISED_ROUTE]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<GatewayAdvertisedRoute> future =
+   *       hubServiceClient.getGatewayAdvertisedRouteCallable().futureCall(request);
+   *   // Do something.
+   *   GatewayAdvertisedRoute response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetGatewayAdvertisedRouteRequest, GatewayAdvertisedRoute>
+      getGatewayAdvertisedRouteCallable() {
+    return stub.getGatewayAdvertisedRouteCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List GatewayAdvertisedRoutes
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   SpokeName parent = SpokeName.of("[PROJECT]", "[LOCATION]", "[SPOKE]");
+   *   for (GatewayAdvertisedRoute element :
+   *       hubServiceClient.listGatewayAdvertisedRoutes(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource's name.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListGatewayAdvertisedRoutesPagedResponse listGatewayAdvertisedRoutes(
+      @Nullable SpokeName parent) {
+    ListGatewayAdvertisedRoutesRequest request =
+        ListGatewayAdvertisedRoutesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listGatewayAdvertisedRoutes(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List GatewayAdvertisedRoutes
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   String parent = SpokeName.of("[PROJECT]", "[LOCATION]", "[SPOKE]").toString();
+   *   for (GatewayAdvertisedRoute element :
+   *       hubServiceClient.listGatewayAdvertisedRoutes(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource's name.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListGatewayAdvertisedRoutesPagedResponse listGatewayAdvertisedRoutes(String parent) {
+    ListGatewayAdvertisedRoutesRequest request =
+        ListGatewayAdvertisedRoutesRequest.newBuilder().setParent(parent).build();
+    return listGatewayAdvertisedRoutes(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List GatewayAdvertisedRoutes
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   ListGatewayAdvertisedRoutesRequest request =
+   *       ListGatewayAdvertisedRoutesRequest.newBuilder()
+   *           .setParent(SpokeName.of("[PROJECT]", "[LOCATION]", "[SPOKE]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   for (GatewayAdvertisedRoute element :
+   *       hubServiceClient.listGatewayAdvertisedRoutes(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListGatewayAdvertisedRoutesPagedResponse listGatewayAdvertisedRoutes(
+      ListGatewayAdvertisedRoutesRequest request) {
+    return listGatewayAdvertisedRoutesPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List GatewayAdvertisedRoutes
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   ListGatewayAdvertisedRoutesRequest request =
+   *       ListGatewayAdvertisedRoutesRequest.newBuilder()
+   *           .setParent(SpokeName.of("[PROJECT]", "[LOCATION]", "[SPOKE]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   ApiFuture<GatewayAdvertisedRoute> future =
+   *       hubServiceClient.listGatewayAdvertisedRoutesPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (GatewayAdvertisedRoute element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          ListGatewayAdvertisedRoutesRequest, ListGatewayAdvertisedRoutesPagedResponse>
+      listGatewayAdvertisedRoutesPagedCallable() {
+    return stub.listGatewayAdvertisedRoutesPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List GatewayAdvertisedRoutes
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   ListGatewayAdvertisedRoutesRequest request =
+   *       ListGatewayAdvertisedRoutesRequest.newBuilder()
+   *           .setParent(SpokeName.of("[PROJECT]", "[LOCATION]", "[SPOKE]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   while (true) {
+   *     ListGatewayAdvertisedRoutesResponse response =
+   *         hubServiceClient.listGatewayAdvertisedRoutesCallable().call(request);
+   *     for (GatewayAdvertisedRoute element : response.getGatewayAdvertisedRoutesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          ListGatewayAdvertisedRoutesRequest, ListGatewayAdvertisedRoutesResponse>
+      listGatewayAdvertisedRoutesCallable() {
+    return stub.listGatewayAdvertisedRoutesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Update a GatewayAdvertisedRoute
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   GatewayAdvertisedRoute gatewayAdvertisedRoute = GatewayAdvertisedRoute.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   GatewayAdvertisedRoute response =
+   *       hubServiceClient
+   *           .updateGatewayAdvertisedRouteAsync(gatewayAdvertisedRoute, updateMask)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param gatewayAdvertisedRoute Required. The gateway advertised route to update.
+   *     <p>The gateway advertised route's `name` field is used to identify the gateway advertised
+   *     route to update. Format:
+   *     `projects/{project}/locations/{location}/spokes/{spoke}/gatewayAdvertisedRoutes/{gatewayAdvertisedRoute}`
+   * @param updateMask Optional. In the case of an update to an existing group, field mask is used
+   *     to specify the fields to be overwritten. The fields specified in the update_mask are
+   *     relative to the resource, not the full request. A field is overwritten if it is in the
+   *     mask. If the user does not provide a mask, then all fields are overwritten.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<GatewayAdvertisedRoute, OperationMetadata>
+      updateGatewayAdvertisedRouteAsync(
+          GatewayAdvertisedRoute gatewayAdvertisedRoute, FieldMask updateMask) {
+    UpdateGatewayAdvertisedRouteRequest request =
+        UpdateGatewayAdvertisedRouteRequest.newBuilder()
+            .setGatewayAdvertisedRoute(gatewayAdvertisedRoute)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateGatewayAdvertisedRouteAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Update a GatewayAdvertisedRoute
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   UpdateGatewayAdvertisedRouteRequest request =
+   *       UpdateGatewayAdvertisedRouteRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setGatewayAdvertisedRoute(GatewayAdvertisedRoute.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   GatewayAdvertisedRoute response =
+   *       hubServiceClient.updateGatewayAdvertisedRouteAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<GatewayAdvertisedRoute, OperationMetadata>
+      updateGatewayAdvertisedRouteAsync(UpdateGatewayAdvertisedRouteRequest request) {
+    return updateGatewayAdvertisedRouteOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Update a GatewayAdvertisedRoute
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   UpdateGatewayAdvertisedRouteRequest request =
+   *       UpdateGatewayAdvertisedRouteRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setGatewayAdvertisedRoute(GatewayAdvertisedRoute.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<GatewayAdvertisedRoute, OperationMetadata> future =
+   *       hubServiceClient.updateGatewayAdvertisedRouteOperationCallable().futureCall(request);
+   *   // Do something.
+   *   GatewayAdvertisedRoute response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          UpdateGatewayAdvertisedRouteRequest, GatewayAdvertisedRoute, OperationMetadata>
+      updateGatewayAdvertisedRouteOperationCallable() {
+    return stub.updateGatewayAdvertisedRouteOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Update a GatewayAdvertisedRoute
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   UpdateGatewayAdvertisedRouteRequest request =
+   *       UpdateGatewayAdvertisedRouteRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setGatewayAdvertisedRoute(GatewayAdvertisedRoute.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       hubServiceClient.updateGatewayAdvertisedRouteCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateGatewayAdvertisedRouteRequest, Operation>
+      updateGatewayAdvertisedRouteCallable() {
+    return stub.updateGatewayAdvertisedRouteCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Delete a GatewayAdvertisedRoute
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   GatewayAdvertisedRouteName name =
+   *       GatewayAdvertisedRouteName.of(
+   *           "[PROJECT]", "[LOCATION]", "[SPOKE]", "[GATEWAY_ADVERTISED_ROUTE]");
+   *   hubServiceClient.deleteGatewayAdvertisedRouteAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the gateway advertised route to delete.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteGatewayAdvertisedRouteAsync(
+      @Nullable GatewayAdvertisedRouteName name) {
+    DeleteGatewayAdvertisedRouteRequest request =
+        DeleteGatewayAdvertisedRouteRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return deleteGatewayAdvertisedRouteAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Delete a GatewayAdvertisedRoute
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   String name =
+   *       GatewayAdvertisedRouteName.of(
+   *               "[PROJECT]", "[LOCATION]", "[SPOKE]", "[GATEWAY_ADVERTISED_ROUTE]")
+   *           .toString();
+   *   hubServiceClient.deleteGatewayAdvertisedRouteAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the gateway advertised route to delete.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteGatewayAdvertisedRouteAsync(
+      String name) {
+    DeleteGatewayAdvertisedRouteRequest request =
+        DeleteGatewayAdvertisedRouteRequest.newBuilder().setName(name).build();
+    return deleteGatewayAdvertisedRouteAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Delete a GatewayAdvertisedRoute
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   DeleteGatewayAdvertisedRouteRequest request =
+   *       DeleteGatewayAdvertisedRouteRequest.newBuilder()
+   *           .setName(
+   *               GatewayAdvertisedRouteName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[SPOKE]", "[GATEWAY_ADVERTISED_ROUTE]")
+   *                   .toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   hubServiceClient.deleteGatewayAdvertisedRouteAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteGatewayAdvertisedRouteAsync(
+      DeleteGatewayAdvertisedRouteRequest request) {
+    return deleteGatewayAdvertisedRouteOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Delete a GatewayAdvertisedRoute
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   DeleteGatewayAdvertisedRouteRequest request =
+   *       DeleteGatewayAdvertisedRouteRequest.newBuilder()
+   *           .setName(
+   *               GatewayAdvertisedRouteName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[SPOKE]", "[GATEWAY_ADVERTISED_ROUTE]")
+   *                   .toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Empty, OperationMetadata> future =
+   *       hubServiceClient.deleteGatewayAdvertisedRouteOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeleteGatewayAdvertisedRouteRequest, Empty, OperationMetadata>
+      deleteGatewayAdvertisedRouteOperationCallable() {
+    return stub.deleteGatewayAdvertisedRouteOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Delete a GatewayAdvertisedRoute
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   DeleteGatewayAdvertisedRouteRequest request =
+   *       DeleteGatewayAdvertisedRouteRequest.newBuilder()
+   *           .setName(
+   *               GatewayAdvertisedRouteName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[SPOKE]", "[GATEWAY_ADVERTISED_ROUTE]")
+   *                   .toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       hubServiceClient.deleteGatewayAdvertisedRouteCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteGatewayAdvertisedRouteRequest, Operation>
+      deleteGatewayAdvertisedRouteCallable() {
+    return stub.deleteGatewayAdvertisedRouteCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Lists information about the supported locations for this service.
    *
    * <p>Sample code:
@@ -5244,6 +6130,106 @@ public class HubServiceClient implements BackgroundResource {
     protected ListGroupsFixedSizeCollection createCollection(
         @Nullable List<ListGroupsPage> pages, int collectionSize) {
       return new ListGroupsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListGatewayAdvertisedRoutesPagedResponse
+      extends AbstractPagedListResponse<
+          ListGatewayAdvertisedRoutesRequest,
+          ListGatewayAdvertisedRoutesResponse,
+          GatewayAdvertisedRoute,
+          ListGatewayAdvertisedRoutesPage,
+          ListGatewayAdvertisedRoutesFixedSizeCollection> {
+
+    public static ApiFuture<ListGatewayAdvertisedRoutesPagedResponse> createAsync(
+        PageContext<
+                ListGatewayAdvertisedRoutesRequest,
+                ListGatewayAdvertisedRoutesResponse,
+                GatewayAdvertisedRoute>
+            context,
+        ApiFuture<ListGatewayAdvertisedRoutesResponse> futureResponse) {
+      ApiFuture<ListGatewayAdvertisedRoutesPage> futurePage =
+          ListGatewayAdvertisedRoutesPage.createEmptyPage()
+              .createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListGatewayAdvertisedRoutesPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListGatewayAdvertisedRoutesPagedResponse(ListGatewayAdvertisedRoutesPage page) {
+      super(page, ListGatewayAdvertisedRoutesFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListGatewayAdvertisedRoutesPage
+      extends AbstractPage<
+          ListGatewayAdvertisedRoutesRequest,
+          ListGatewayAdvertisedRoutesResponse,
+          GatewayAdvertisedRoute,
+          ListGatewayAdvertisedRoutesPage> {
+
+    private ListGatewayAdvertisedRoutesPage(
+        @Nullable
+            PageContext<
+                ListGatewayAdvertisedRoutesRequest,
+                ListGatewayAdvertisedRoutesResponse,
+                GatewayAdvertisedRoute>
+            context,
+        @Nullable ListGatewayAdvertisedRoutesResponse response) {
+      super(context, response);
+    }
+
+    private static ListGatewayAdvertisedRoutesPage createEmptyPage() {
+      return new ListGatewayAdvertisedRoutesPage(null, null);
+    }
+
+    @Override
+    protected ListGatewayAdvertisedRoutesPage createPage(
+        @Nullable
+            PageContext<
+                ListGatewayAdvertisedRoutesRequest,
+                ListGatewayAdvertisedRoutesResponse,
+                GatewayAdvertisedRoute>
+            context,
+        @Nullable ListGatewayAdvertisedRoutesResponse response) {
+      return new ListGatewayAdvertisedRoutesPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListGatewayAdvertisedRoutesPage> createPageAsync(
+        @Nullable
+            PageContext<
+                ListGatewayAdvertisedRoutesRequest,
+                ListGatewayAdvertisedRoutesResponse,
+                GatewayAdvertisedRoute>
+            context,
+        ApiFuture<ListGatewayAdvertisedRoutesResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListGatewayAdvertisedRoutesFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListGatewayAdvertisedRoutesRequest,
+          ListGatewayAdvertisedRoutesResponse,
+          GatewayAdvertisedRoute,
+          ListGatewayAdvertisedRoutesPage,
+          ListGatewayAdvertisedRoutesFixedSizeCollection> {
+
+    private ListGatewayAdvertisedRoutesFixedSizeCollection(
+        @Nullable List<ListGatewayAdvertisedRoutesPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListGatewayAdvertisedRoutesFixedSizeCollection createEmptyCollection() {
+      return new ListGatewayAdvertisedRoutesFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListGatewayAdvertisedRoutesFixedSizeCollection createCollection(
+        @Nullable List<ListGatewayAdvertisedRoutesPage> pages, int collectionSize) {
+      return new ListGatewayAdvertisedRoutesFixedSizeCollection(pages, collectionSize);
     }
   }
 
