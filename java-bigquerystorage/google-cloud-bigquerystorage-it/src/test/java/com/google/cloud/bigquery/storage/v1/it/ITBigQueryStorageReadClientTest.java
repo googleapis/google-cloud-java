@@ -37,6 +37,7 @@ import com.google.api.gax.rpc.UnauthenticatedException;
 import com.google.cloud.RetryOption;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.bigquery.BigQuery;
+import com.google.cloud.bigquery.BigQueryException;
 import com.google.cloud.bigquery.DatasetId;
 import com.google.cloud.bigquery.DatasetInfo;
 import com.google.cloud.bigquery.Field;
@@ -107,6 +108,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.TimeUnit;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
 import org.apache.avro.Conversions;
@@ -1632,17 +1634,19 @@ class ITBigQueryStorageReadClientTest {
   void testSimpleReadWithBackgroundExecutorProvider() throws InterruptedException, IOException {
     String tableName =
         "test_simple_read_background_executor_" + UUID.randomUUID().toString().substring(0, 8);
+    TableId tableId = TableId.of(DATASET, tableName);
     String createTableStatement =
         String.format(
             "CREATE TABLE %s.%s AS SELECT 1 AS int_field, 'abc' AS str_field", DATASET, tableName);
-    runQueryJobAndExpectSuccess(QueryJobConfiguration.newBuilder(createTableStatement).build());
-
-    BigQueryReadSettings.Builder settingsBuilder =
-        Helper.createBigQueryReadSettingsBuilder()
-            .setBackgroundExecutorProvider(
-                InstantiatingExecutorProvider.newBuilder().setExecutorThreadCount(14).build());
-    BigQueryReadClient localClient = BigQueryReadClient.create(settingsBuilder.build());
+    BigQueryReadClient localClient = null;
     try {
+      runQueryJobAndExpectSuccess(QueryJobConfiguration.newBuilder(createTableStatement).build());
+
+      BigQueryReadSettings.Builder settingsBuilder =
+          Helper.createBigQueryReadSettingsBuilder()
+              .setBackgroundExecutorProvider(
+                  InstantiatingExecutorProvider.newBuilder().setExecutorThreadCount(14).build());
+      localClient = BigQueryReadClient.create(settingsBuilder.build());
       assertTrue(
           localClient.getStub().getStubSettings().getBackgroundExecutorProvider()
               instanceof InstantiatingExecutorProvider);
@@ -1659,7 +1663,14 @@ class ITBigQueryStorageReadClientTest {
           Helper.readAllRows(localClient, parentProjectId, /* table= */ table, /* filter= */ null);
       assertEquals(1, rows.size(), "Actual rows read: " + rows);
     } finally {
-      localClient.close();
+      if (localClient != null) {
+        localClient.close();
+      }
+      try {
+        bigquery.delete(tableId);
+      } catch (BigQueryException e) {
+        LOG.log(Level.WARNING, "Failed to delete temporary table: " + tableId, e);
+      }
     }
   }
 
