@@ -34,6 +34,7 @@ import io.grpc.CallOptions;
 import io.grpc.Channel;
 import io.grpc.ClientCall;
 import io.grpc.ClientInterceptor;
+import io.grpc.ClientStreamTracer;
 import io.grpc.Grpc;
 import io.grpc.Metadata;
 import io.grpc.MethodDescriptor;
@@ -64,10 +65,12 @@ import java.nio.ByteOrder;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import java.util.concurrent.atomic.AtomicLong;
+import java.util.stream.Collectors;
 import javax.net.ssl.SSLException;
 import javax.security.sasl.AuthenticationException;
 import org.jspecify.annotations.Nullable;
@@ -648,6 +651,84 @@ public final class StorageGrpcMetricsInterceptorTest {
   }
 
   @Test
+  public void interceptCall_networkIo_tracksWireBytesWhenDebugEnabled() throws Exception {
+    // Debug disabled: must not attach a stream tracer or record network.io.
+    TestClientCall<Void, Void> standardCall = new TestClientCall<>(Attributes.EMPTY);
+    TestChannel standardChannel = new TestChannel(standardCall);
+    interceptor
+        .interceptCall(READ_OBJECT_METHOD, CallOptions.DEFAULT, standardChannel)
+        .start(new TestListener<>(), new Metadata());
+    standardCall.close(Status.OK, new Metadata());
+    assertThat(standardChannel.lastCallOptions.getStreamTracerFactories()).isEmpty();
+    assertThat(findMetric(StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_NETWORK_IO)).isNull();
+
+    // Debug enabled: accumulates across streams and skips non-positive/zero-byte calls.
+    StorageGrpcMetricsInterceptor debugInterceptor = createDebugInterceptor();
+    Attributes directPathAttrs =
+        Attributes.newBuilder()
+            .set(
+                Grpc.TRANSPORT_ATTR_REMOTE_ADDR,
+                new InetSocketAddress(InetAddress.getByName("34.126.1.2"), 443))
+            .build();
+    TestClientCall<Void, Void> testCall = new TestClientCall<>(directPathAttrs);
+    TestChannel testChannel = new TestChannel(testCall);
+
+    debugInterceptor
+        .interceptCall(READ_OBJECT_METHOD, CallOptions.DEFAULT, testChannel)
+        .start(new TestListener<>(), new Metadata());
+    List<ClientStreamTracer.Factory> factories =
+        testChannel.lastCallOptions.getStreamTracerFactories();
+    assertThat(factories).hasSize(1);
+    ClientStreamTracer.StreamInfo streamInfo = ClientStreamTracer.StreamInfo.newBuilder().build();
+    ClientStreamTracer stream1 = factories.get(0).newClientStreamTracer(streamInfo, new Metadata());
+    stream1.outboundWireSize(128L);
+    stream1.outboundWireSize(0L);
+    stream1.outboundWireSize(-10L);
+    stream1.inboundWireSize(512L);
+    ClientStreamTracer stream2 = factories.get(0).newClientStreamTracer(streamInfo, new Metadata());
+    stream2.outboundWireSize(256L);
+    stream2.inboundWireSize(1024L);
+    testCall.close(Status.OK, new Metadata());
+
+    MetricData metricData = findMetric(StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_NETWORK_IO);
+    assertThat(metricData).isNotNull();
+    assertThat(metricData.getUnit()).isEqualTo("By");
+    Map<io.opentelemetry.api.common.Attributes, Long> pointsByAttrs =
+        metricData.getLongSumData().getPoints().stream()
+            .collect(Collectors.toMap(LongPointData::getAttributes, LongPointData::getValue));
+    io.opentelemetry.api.common.Attributes transmitAttrs =
+        io.opentelemetry.api.common.Attributes.builder()
+            .put(StorageClientMetrics.KEY_GCP_CLIENT_SERVICE, StorageClientMetrics.SERVICE_STORAGE)
+            .put(StorageClientMetrics.KEY_GCP_CLIENT_VERSION, StorageOptions.version())
+            .put(
+                StorageClientMetrics.KEY_GCP_CLIENT_ARTIFACT, StorageClientMetrics.ARTIFACT_STORAGE)
+            .put(StorageClientMetrics.KEY_RPC_SYSTEM_NAME, "grpc")
+            .put(StorageClientMetrics.KEY_SERVER_ADDRESS, "storage.googleapis.com")
+            .put(
+                StorageClientMetrics.KEY_NETWORK_PATH, StorageClientMetrics.NETWORK_PATH_DIRECTPATH)
+            .put(
+                StorageClientMetrics.KEY_NETWORK_IO_DIRECTION,
+                StorageClientMetrics.NETWORK_IO_DIRECTION_TRANSMIT)
+            .build();
+    io.opentelemetry.api.common.Attributes receiveAttrs =
+        transmitAttrs.toBuilder()
+            .put(
+                StorageClientMetrics.KEY_NETWORK_IO_DIRECTION,
+                StorageClientMetrics.NETWORK_IO_DIRECTION_RECEIVE)
+            .build();
+    assertThat(pointsByAttrs).containsExactly(transmitAttrs, 384L, receiveAttrs, 1536L);
+
+    // Zero-byte call should not alter existing counts or create new points.
+    TestClientCall<Void, Void> zeroCall = new TestClientCall<>(Attributes.EMPTY);
+    debugInterceptor
+        .interceptCall(READ_OBJECT_METHOD, CallOptions.DEFAULT, new TestChannel(zeroCall))
+        .start(new TestListener<>(), new Metadata());
+    zeroCall.close(Status.UNAVAILABLE, new Metadata());
+    MetricData afterZero = findMetric(StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_NETWORK_IO);
+    assertThat(afterZero.getLongSumData().getPoints()).hasSize(2);
+  }
+
+  @Test
   public void interceptCall_withStorageMetricsContext_propagatesContextAndFeedsNetworkPath()
       throws Exception {
     StorageMetricsContext metricsContext = metrics.createContext("CustomOperation");
@@ -1061,6 +1142,7 @@ public final class StorageGrpcMetricsInterceptorTest {
 
   private static final class TestChannel extends Channel {
     private final TestClientCall<?, ?> call;
+    CallOptions lastCallOptions;
 
     TestChannel(TestClientCall<?, ?> call) {
       this.call = call;
@@ -1070,6 +1152,7 @@ public final class StorageGrpcMetricsInterceptorTest {
     @Override
     public <RequestT, ResponseT> ClientCall<RequestT, ResponseT> newCall(
         MethodDescriptor<RequestT, ResponseT> methodDescriptor, CallOptions callOptions) {
+      this.lastCallOptions = callOptions;
       return (ClientCall<RequestT, ResponseT>) call;
     }
 

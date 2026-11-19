@@ -637,6 +637,82 @@ public final class StorageClientMetricsTest {
                 .build());
   }
 
+  @Test
+  public void recordNetworkIo_recordsExactSevenAttributesAndSkipsNonPositiveOrDisabled() {
+    SdkMeterProvider provider = SdkMeterProvider.builder().registerMetricReader(reader).build();
+    StorageClientMetrics standardMetrics =
+        StorageOptions.grpc()
+            .setProjectId("test-project")
+            .setCredentials(NoCredentials.getInstance())
+            .setEnableOtelMetrics(true)
+            .setMeterProvider(provider)
+            .build()
+            .getStorageClientMetrics();
+    standardMetrics.recordNetworkIo(
+        Context.current(), StorageClientMetrics.NETWORK_PATH_DIRECTPATH, 100L, 200L);
+    assertThat(findMetric(StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_NETWORK_IO)).isNull();
+
+    StorageClientMetrics debugMetrics =
+        StorageOptions.grpc()
+            .setProjectId("test-project")
+            .setCredentials(NoCredentials.getInstance())
+            .setEnableOtelMetrics(true)
+            .setEnableOtelDebugMetrics(true)
+            .setMeterProvider(provider)
+            .build()
+            .getStorageClientMetrics();
+    debugMetrics.recordNetworkIo(
+        Context.current(), StorageClientMetrics.NETWORK_PATH_DIRECTPATH, 0L, -5L);
+    assertThat(findMetric(StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_NETWORK_IO)).isNull();
+
+    debugMetrics.recordNetworkIo(
+        Context.current(), StorageClientMetrics.NETWORK_PATH_DIRECTPATH, 512L, 2048L);
+    debugMetrics.recordNetworkIo(
+        Context.current(), StorageClientMetrics.NETWORK_PATH_CLOUDPATH, 128L, 0L);
+    debugMetrics.recordNetworkIo(
+        Context.current(), StorageClientMetrics.NETWORK_PATH_UNKNOWN, 0L, 64L);
+    MetricData metricData = findMetric(StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_NETWORK_IO);
+    assertThat(metricData).isNotNull();
+    assertThat(metricData.getUnit()).isEqualTo("By");
+    Map<Attributes, Long> pointsByAttrs =
+        metricData.getLongSumData().getPoints().stream()
+            .collect(Collectors.toMap(LongPointData::getAttributes, LongPointData::getValue));
+    Attributes transmitAttrs =
+        Attributes.builder()
+            .put(StorageClientMetrics.KEY_GCP_CLIENT_SERVICE, StorageClientMetrics.SERVICE_STORAGE)
+            .put(StorageClientMetrics.KEY_GCP_CLIENT_VERSION, StorageOptions.version())
+            .put(
+                StorageClientMetrics.KEY_GCP_CLIENT_ARTIFACT, StorageClientMetrics.ARTIFACT_STORAGE)
+            .put(StorageClientMetrics.KEY_RPC_SYSTEM_NAME, "grpc")
+            .put(StorageClientMetrics.KEY_SERVER_ADDRESS, "storage.googleapis.com")
+            .put(
+                StorageClientMetrics.KEY_NETWORK_PATH, StorageClientMetrics.NETWORK_PATH_DIRECTPATH)
+            .put(
+                StorageClientMetrics.KEY_NETWORK_IO_DIRECTION,
+                StorageClientMetrics.NETWORK_IO_DIRECTION_TRANSMIT)
+            .build();
+    Attributes receiveAttrs =
+        transmitAttrs.toBuilder()
+            .put(
+                StorageClientMetrics.KEY_NETWORK_IO_DIRECTION,
+                StorageClientMetrics.NETWORK_IO_DIRECTION_RECEIVE)
+            .build();
+    Attributes cloudTransmitAttrs =
+        transmitAttrs.toBuilder()
+            .put(StorageClientMetrics.KEY_NETWORK_PATH, StorageClientMetrics.NETWORK_PATH_CLOUDPATH)
+            .build();
+    Attributes unknownReceiveAttrs =
+        receiveAttrs.toBuilder()
+            .put(StorageClientMetrics.KEY_NETWORK_PATH, StorageClientMetrics.NETWORK_PATH_UNKNOWN)
+            .build();
+    assertThat(pointsByAttrs)
+        .containsExactly(
+            transmitAttrs, 512L,
+            receiveAttrs, 2048L,
+            cloudTransmitAttrs, 128L,
+            unknownReceiveAttrs, 64L);
+  }
+
   static final class TestMetricReader implements MetricReader {
     private final MetricReader delegate = InMemoryMetricReader.create();
     final AtomicBoolean shutdownCalled = new AtomicBoolean(false);

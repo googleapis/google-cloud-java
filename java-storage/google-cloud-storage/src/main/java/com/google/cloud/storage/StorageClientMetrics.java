@@ -563,6 +563,29 @@ final class StorageClientMetrics implements AutoCloseable {
     serverUnreached.add(1L, attributes, otelContext);
   }
 
+  void recordNetworkIo(
+      Context otelContext, String networkPath, long transmitBytes, long receiveBytes) {
+    if (networkIo == null) {
+      return;
+    }
+    if (transmitBytes > 0) {
+      Attributes transmitAttributes =
+          baseAttributes.toBuilder()
+              .put(KEY_NETWORK_PATH, networkPath)
+              .put(KEY_NETWORK_IO_DIRECTION, NETWORK_IO_DIRECTION_TRANSMIT)
+              .build();
+      networkIo.add(transmitBytes, transmitAttributes, otelContext);
+    }
+    if (receiveBytes > 0) {
+      Attributes receiveAttributes =
+          baseAttributes.toBuilder()
+              .put(KEY_NETWORK_PATH, networkPath)
+              .put(KEY_NETWORK_IO_DIRECTION, NETWORK_IO_DIRECTION_RECEIVE)
+              .build();
+      networkIo.add(receiveBytes, receiveAttributes, otelContext);
+    }
+  }
+
   @Nullable
   static StorageMetricsContext createContext(
       @Nullable StorageClientMetrics metrics, String operationName) {
