@@ -298,14 +298,7 @@ final class StorageMetricsContext {
       String errorType = StorageErrorTypeMapper.mapThrowable(e);
       String networkPath = resolveNetworkPath();
       Attributes attemptBase = buildAttemptBaseAttributes(metrics);
-      if (metrics.getErrors() != null) {
-        Attributes errorAttributes =
-            attemptBase.toBuilder()
-                .put(StorageClientMetrics.KEY_ERROR_TYPE, errorType)
-                .put(StorageClientMetrics.KEY_NETWORK_PATH, networkPath)
-                .build();
-        metrics.getErrors().add(1, errorAttributes);
-      }
+      recordErrorCounter(metrics, attemptBase, errorType, networkPath);
       if (metrics.getAttempts() != null) {
         AttributesBuilder builder =
             attemptBase.toBuilder()
@@ -317,6 +310,21 @@ final class StorageMetricsContext {
     }
   }
 
+  void recordError(Throwable e) {
+    if (metrics == null || metrics.getErrors() == null) {
+      return;
+    }
+    recordErrorCounter(
+        metrics,
+        buildAttemptBaseAttributes(metrics),
+        StorageErrorTypeMapper.mapThrowable(e),
+        resolveNetworkPath());
+  }
+
+  void recordRetry(Throwable priorError) {
+    recordRetry(this.metrics, priorError);
+  }
+
   void recordRetry(@Nullable StorageClientMetrics metrics, Throwable priorError) {
     if (metrics == null) {
       return;
@@ -326,6 +334,18 @@ final class StorageMetricsContext {
         operationName,
         resolveNetworkPath(),
         StorageErrorTypeMapper.mapThrowable(priorError));
+  }
+
+  private void recordErrorCounter(
+      StorageClientMetrics metrics, Attributes attemptBase, String errorType, String networkPath) {
+    if (metrics.getErrors() != null) {
+      Attributes errorAttributes =
+          attemptBase.toBuilder()
+              .put(StorageClientMetrics.KEY_ERROR_TYPE, errorType)
+              .put(StorageClientMetrics.KEY_NETWORK_PATH, networkPath)
+              .build();
+      metrics.getErrors().add(1, errorAttributes, otelContext);
+    }
   }
 
   void setNetworkPath(String networkPath) {

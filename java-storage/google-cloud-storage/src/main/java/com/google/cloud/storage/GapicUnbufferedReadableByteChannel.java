@@ -163,6 +163,7 @@ final class GapicUnbufferedReadableByteChannel
       if (take instanceof IOException) {
         IOException ioe = (IOException) take;
         if (alg.shouldRetry(ioe, null)) {
+          recordMidStreamRetry(StorageException.coalesce(ioe));
           cancelAndDrainCurrentObserver();
           continue;
         } else {
@@ -174,6 +175,7 @@ final class GapicUnbufferedReadableByteChannel
         Throwable throwable = (Throwable) take;
         BaseServiceException coalesce = StorageException.coalesce(throwable);
         if (alg.shouldRetry(coalesce, null)) {
+          recordMidStreamRetry(coalesce);
           cancelAndDrainCurrentObserver();
           continue;
         } else {
@@ -295,6 +297,14 @@ final class GapicUnbufferedReadableByteChannel
       if (shouldInterupt) {
         Thread.currentThread().interrupt();
       }
+    }
+  }
+
+  private void recordMidStreamRetry(Throwable error) {
+    StorageMetricsContext metricsContext = retrier.getMetricsContext();
+    if (metricsContext != null) {
+      metricsContext.recordError(error);
+      metricsContext.recordRetry(error);
     }
   }
 

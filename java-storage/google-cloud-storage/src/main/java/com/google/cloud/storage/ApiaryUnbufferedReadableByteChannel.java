@@ -152,10 +152,12 @@ class ApiaryUnbufferedReadableByteChannel implements UnbufferedReadableByteChann
         if (resultRetryAlgorithm.shouldRetry(t, null)) {
           // if our retry algorithm COULD allow a retry, continue the loop and allow trying to
           // open the stream again.
+          recordMidStreamRetry(t);
           sbc = null;
         } else if (t instanceof IOException) {
           IOException ioE = (IOException) t;
           if (resultRetryAlgorithm.shouldRetry(StorageException.translate(ioE), null)) {
+            recordMidStreamRetry(ioE);
             sbc = null;
           } else {
             throw ioE;
@@ -200,6 +202,14 @@ class ApiaryUnbufferedReadableByteChannel implements UnbufferedReadableByteChann
       if (sbc != null) {
         sbc.close();
       }
+    }
+  }
+
+  private void recordMidStreamRetry(Throwable error) {
+    StorageMetricsContext metricsContext = retrier.getMetricsContext();
+    if (metricsContext != null) {
+      metricsContext.recordError(error);
+      metricsContext.recordRetry(error);
     }
   }
 

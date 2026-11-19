@@ -150,7 +150,12 @@ final class StorageHttpMetricsInterceptor implements HttpRequestInitializer {
             boolean handled =
                 existingUnsuccessfulHandler.handleResponse(req, response, supportsRetry);
             if (handled && response.getRequest() == req && recorded.compareAndSet(false, true)) {
-              recordResponse(req, startTimeNanos.get(), endNanos, response.getStatusCode());
+              recordResponse(
+                  req,
+                  startTimeNanos.get(),
+                  endNanos,
+                  response.getStatusCode(),
+                  /* isRetry= */ supportsRetry);
             }
             return handled;
           });
@@ -163,7 +168,12 @@ final class StorageHttpMetricsInterceptor implements HttpRequestInitializer {
             existingResp.interceptResponse(response);
           }
           if (recorded.compareAndSet(false, true)) {
-            recordResponse(request, startTimeNanos.get(), endNanos, response.getStatusCode());
+            recordResponse(
+                request,
+                startTimeNanos.get(),
+                endNanos,
+                response.getStatusCode(),
+                /* isRetry= */ false);
           }
         });
 
@@ -172,21 +182,35 @@ final class StorageHttpMetricsInterceptor implements HttpRequestInitializer {
     // (specific subtypes like TIMEOUT, DNS_FAILURE, and TLS_FAILURE are mapped in Retrying).
     request.setIOExceptionHandler(
         (req, supportsRetry) -> {
-          if (recorded.compareAndSet(false, true)) {
-            double durationSeconds = (clock.nanoTime() - startTimeNanos.get()) / 1_000_000_000.0;
+          long endNanos = clock.nanoTime();
+          boolean recordedThisAttempt = recorded.compareAndSet(false, true);
+          String urlTemplate = recordedThisAttempt ? extractUrlTemplate(req.getUrl()) : "";
+          if (recordedThisAttempt) {
+            double durationSeconds = (endNanos - startTimeNanos.get()) / 1_000_000_000.0;
             recordDuration(
                 req,
                 durationSeconds,
                 0L,
-                extractUrlTemplate(req.getUrl()),
+                urlTemplate,
                 StorageErrorTypeMapper.STATUS_CONNECTION_ERROR);
           }
-          return existingIoHandler != null
-              && existingIoHandler.handleIOException(req, supportsRetry);
+          boolean handled =
+              existingIoHandler != null && existingIoHandler.handleIOException(req, supportsRetry);
+          if (supportsRetry && handled && recordedThisAttempt) {
+            StorageMetricsContext ctx = StorageMetricsContext.current();
+            Context otelContext = ctx != null ? ctx.getOtelContext() : Context.current();
+            metrics.recordRetry(
+                otelContext,
+                resolveOperationName(ctx, req, urlTemplate),
+                StorageClientMetrics.NETWORK_PATH_CLOUDPATH,
+                StorageErrorTypeMapper.STATUS_CONNECTION_ERROR);
+          }
+          return handled;
         });
   }
 
-  private void recordResponse(HttpRequest request, long startNanos, long endNanos, int statusCode) {
+  private void recordResponse(
+      HttpRequest request, long startNanos, long endNanos, int statusCode, boolean isRetry) {
     double durationSeconds = (endNanos - startNanos) / 1_000_000_000.0;
     String urlTemplate = extractUrlTemplate(request.getUrl());
     String errorType =
@@ -199,11 +223,13 @@ final class StorageHttpMetricsInterceptor implements HttpRequestInitializer {
     // may append query parameters (e.g. alt=media, uploadType) after buildRequest().
     StorageMetricsContext ctx = StorageMetricsContext.current();
     Context otelContext = ctx != null ? ctx.getOtelContext() : Context.current();
+    String operationName = resolveOperationName(ctx, request, urlTemplate);
     metrics.recordTtfb(
-        otelContext,
-        resolveOperationName(request, urlTemplate),
-        durationSeconds,
-        StorageClientMetrics.NETWORK_PATH_CLOUDPATH);
+        otelContext, operationName, durationSeconds, StorageClientMetrics.NETWORK_PATH_CLOUDPATH);
+    if (isRetry) {
+      metrics.recordRetry(
+          otelContext, operationName, StorageClientMetrics.NETWORK_PATH_CLOUDPATH, errorType);
+    }
   }
 
   private void recordDuration(
@@ -217,7 +243,11 @@ final class StorageHttpMetricsInterceptor implements HttpRequestInitializer {
   }
 
   static String resolveOperationName(HttpRequest request, String urlTemplate) {
-    StorageMetricsContext ctx = StorageMetricsContext.current();
+    return resolveOperationName(StorageMetricsContext.current(), request, urlTemplate);
+  }
+
+  private static String resolveOperationName(
+      @Nullable StorageMetricsContext ctx, HttpRequest request, String urlTemplate) {
     return ctx != null ? ctx.getOperationName() : defaultOperationName(request, urlTemplate);
   }
 
