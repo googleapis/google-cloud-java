@@ -37,6 +37,7 @@ import com.google.api.gax.rpc.UnauthenticatedException;
 import com.google.cloud.RetryOption;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.bigquery.BigQuery;
+import com.google.cloud.bigquery.BigQueryException;
 import com.google.cloud.bigquery.DatasetId;
 import com.google.cloud.bigquery.DatasetInfo;
 import com.google.cloud.bigquery.Field;
@@ -107,6 +108,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.TimeUnit;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
 import org.apache.avro.Conversions;
@@ -118,7 +120,6 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /** Integration tests for BigQuery Storage API. */
@@ -1629,18 +1630,23 @@ class ITBigQueryStorageReadClientTest {
     assertEquals(new Utf8("abc"), structRecord.get("str_field"), rowAssertMessage);
   }
 
-  @Disabled("Flaky test: b/575539309")
   @Test
-  void testSimpleReadWithBackgroundExecutorProvider() throws IOException {
-    BigQueryReadSettings.Builder settingsBuilder =
-        Helper.createBigQueryReadSettingsBuilder()
-            .setBackgroundExecutorProvider(
-                InstantiatingExecutorProvider.newBuilder().setExecutorThreadCount(14).build());
-    if (Helper.isRegionalEndpoint()) {
-      settingsBuilder.setEndpoint(BigQueryReadSettings.getDefaultEndpoint());
-    }
-    BigQueryReadClient localClient = BigQueryReadClient.create(settingsBuilder.build());
+  void testSimpleReadWithBackgroundExecutorProvider() throws InterruptedException, IOException {
+    String tableName =
+        "test_simple_read_background_executor_" + UUID.randomUUID().toString().substring(0, 8);
+    TableId tableId = TableId.of(DATASET, tableName);
+    String createTableStatement =
+        String.format(
+            "CREATE TABLE %s.%s AS SELECT 1 AS int_field, 'abc' AS str_field", DATASET, tableName);
+    BigQueryReadClient localClient = null;
     try {
+      runQueryJobAndExpectSuccess(QueryJobConfiguration.newBuilder(createTableStatement).build());
+
+      BigQueryReadSettings.Builder settingsBuilder =
+          Helper.createBigQueryReadSettingsBuilder()
+              .setBackgroundExecutorProvider(
+                  InstantiatingExecutorProvider.newBuilder().setExecutorThreadCount(14).build());
+      localClient = BigQueryReadClient.create(settingsBuilder.build());
       assertTrue(
           localClient.getStub().getStubSettings().getBackgroundExecutorProvider()
               instanceof InstantiatingExecutorProvider);
@@ -1651,38 +1657,20 @@ class ITBigQueryStorageReadClientTest {
               .getExecutorThreadCount());
       String table =
           BigQueryResource.formatTableResource(
-              /* projectId= */ "bigquery-public-data",
-              /* datasetId= */ "samples",
-              /* tableId= */ "shakespeare");
+              /* projectId= */ projectName, /* datasetId= */ DATASET, /* tableId= */ tableName);
 
-      ReadSession session =
-          localClient.createReadSession(
-              /* parent= */ parentProjectId,
-              /* readSession= */ ReadSession.newBuilder()
-                  .setTable(table)
-                  .setDataFormat(DataFormat.AVRO)
-                  .build(),
-              /* maxStreamCount= */ 1);
-      assertEquals(
-          1,
-          session.getStreamsCount(),
-          String.format(
-              "Did not receive expected number of streams for table '%s' CreateReadSession"
-                  + " response:%n%s",
-              table, session.toString()));
-
-      ReadRowsRequest readRowsRequest =
-          ReadRowsRequest.newBuilder().setReadStream(session.getStreams(0).getName()).build();
-
-      long rowCount = 0;
-      ServerStream<ReadRowsResponse> stream = localClient.readRowsCallable().call(readRowsRequest);
-      for (ReadRowsResponse response : stream) {
-        rowCount += response.getRowCount();
-      }
-
-      assertEquals(SHAKESPEARE_SAMPLE_ROW_COUNT, rowCount);
+      List<GenericData.Record> rows =
+          Helper.readAllRows(localClient, parentProjectId, /* table= */ table, /* filter= */ null);
+      assertEquals(1, rows.size(), "Actual rows read: " + rows);
     } finally {
-      localClient.close();
+      if (localClient != null) {
+        localClient.close();
+      }
+      try {
+        bigquery.delete(tableId);
+      } catch (BigQueryException e) {
+        LOG.log(Level.WARNING, "Failed to delete temporary table: " + tableId, e);
+      }
     }
   }
 
