@@ -75,6 +75,7 @@ final class StorageGrpcMetricsInterceptor implements ClientInterceptor {
       public void start(Listener<RespT> responseListener, Metadata headers) {
         long startTimeNanos = clock.nanoTime();
         ttfbStartNanos.set(startTimeNanos);
+        metrics.recordRequestActive(otelContext, operationName, 1L);
 
         super.start(
             new SimpleForwardingClientCallListener<RespT>(responseListener) {
@@ -112,6 +113,7 @@ final class StorageGrpcMetricsInterceptor implements ClientInterceptor {
                   metrics.recordRpcCallDuration(
                       otelContext, durationSeconds, rpcMethod, statusCode, networkPath, errorType);
                 } finally {
+                  metrics.recordRequestActive(otelContext, operationName, -1L);
                   super.onClose(status, trailers);
                 }
               }

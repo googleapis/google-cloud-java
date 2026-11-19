@@ -530,6 +530,15 @@ final class StorageClientMetrics implements AutoCloseable {
     retries.add(1L, attributes, otelContext);
   }
 
+  void recordRequestActive(Context otelContext, String operationName, long delta) {
+    if (requestActive == null) {
+      return;
+    }
+    Attributes attributes =
+        baseAttributes.toBuilder().put(KEY_GCP_STORAGE_OPERATION, operationName).build();
+    requestActive.add(delta, attributes, otelContext);
+  }
+
   @Nullable
   static StorageMetricsContext createContext(
       @Nullable StorageClientMetrics metrics, String operationName) {

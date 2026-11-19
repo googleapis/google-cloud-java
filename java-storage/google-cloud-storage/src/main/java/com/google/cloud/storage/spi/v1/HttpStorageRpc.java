@@ -132,6 +132,7 @@ public class HttpStorageRpc implements StorageRpc {
 
   private final StorageOptions options;
   private final Storage storage;
+  private final Storage batchPartStorage;
   private final Tracer tracer = Tracing.getTracer();
   private final HttpRequestInitializer batchRequestInitializer;
 
@@ -159,6 +160,7 @@ public class HttpStorageRpc implements StorageRpc {
     CensusHttpModule censusHttpModule = new CensusHttpModule(tracer, IS_RECORD_EVENTS);
     initializer = censusHttpModule.getHttpRequestInitializer(initializer);
     initializer = new InvocationIdInitializer(initializer, applicationName, tm);
+    HttpRequestInitializer batchPartInitializer = initializer;
     initializer = options.decorateWithMetrics(initializer);
     batchRequestInitializer =
         options.decorateWithMetrics(censusHttpModule.getHttpRequestInitializer(null));
@@ -186,6 +188,10 @@ public class HttpStorageRpc implements StorageRpc {
       storageBuilder.setRootUrl(host);
     }
     storage = storageBuilder.build();
+    batchPartStorage =
+        initializer == batchPartInitializer
+            ? storage
+            : storageBuilder.setHttpRequestInitializer(batchPartInitializer).build();
   }
 
   public Storage getStorage() {
@@ -288,7 +294,7 @@ public class HttpStorageRpc implements StorageRpc {
           batches.add(storage.batch(batchRequestInitializer));
           currentBatchSize = 0;
         }
-        Delete call = deleteCall(storageObject, options);
+        Delete call = deleteCall(this.storage, storageObject, options);
         addIdempotencyTokenToCall(call);
         call.queue(batches.getLast(), toJsonCallback(callback));
         currentBatchSize++;
@@ -307,7 +313,7 @@ public class HttpStorageRpc implements StorageRpc {
           batches.add(storage.batch(batchRequestInitializer));
           currentBatchSize = 0;
         }
-        Patch call = patchCall(storageObject, options);
+        Patch call = patchCall(this.storage, storageObject, options);
         addIdempotencyTokenToCall(call);
         call.queue(batches.getLast(), toJsonCallback(callback));
         currentBatchSize++;
@@ -326,7 +332,7 @@ public class HttpStorageRpc implements StorageRpc {
           batches.add(storage.batch(batchRequestInitializer));
           currentBatchSize = 0;
         }
-        Get call = getCall(storageObject, options);
+        Get call = getCall(this.storage, storageObject, options);
         addIdempotencyTokenToCall(call);
         call.queue(batches.getLast(), toJsonCallback(callback));
         currentBatchSize++;
@@ -607,9 +613,9 @@ public class HttpStorageRpc implements StorageRpc {
     }
   }
 
-  private Storage.Objects.Get getCall(StorageObject object, Map<Option, ?> options)
+  private Storage.Objects.Get getCall(Storage client, StorageObject object, Map<Option, ?> options)
       throws IOException {
-    Storage.Objects.Get get = storage.objects().get(object.getBucket(), object.getName());
+    Storage.Objects.Get get = client.objects().get(object.getBucket(), object.getName());
     setEncryptionHeaders(get.getRequestHeaders(), ENCRYPTION_KEY_PREFIX, options);
     setExtraHeaders(get, options);
     return get.setGeneration(object.getGeneration())
@@ -628,7 +634,7 @@ public class HttpStorageRpc implements StorageRpc {
     Span span = startSpan(HttpStorageRpcSpans.SPAN_NAME_GET_OBJECT);
     Scope scope = tracer.withSpan(span);
     try {
-      return getCall(object, options).execute();
+      return getCall(storage, object, options).execute();
     } catch (IOException ex) {
       span.setStatus(Status.UNKNOWN.withDescription(ex.getMessage()));
       StorageException serviceException = translate(ex);
@@ -726,10 +732,10 @@ public class HttpStorageRpc implements StorageRpc {
     }
   }
 
-  private Storage.Objects.Patch patchCall(StorageObject storageObject, Map<Option, ?> options)
-      throws IOException {
+  private Storage.Objects.Patch patchCall(
+      Storage client, StorageObject storageObject, Map<Option, ?> options) throws IOException {
     Storage.Objects.Patch patch =
-        storage
+        client
             .objects()
             .patch(storageObject.getBucket(), storageObject.getName(), storageObject)
             .setProjection(DEFAULT_PROJECTION)
@@ -749,7 +755,7 @@ public class HttpStorageRpc implements StorageRpc {
     Span span = startSpan(HttpStorageRpcSpans.SPAN_NAME_PATCH_OBJECT);
     Scope scope = tracer.withSpan(span);
     try {
-      return patchCall(storageObject, options).execute();
+      return patchCall(storage, storageObject, options).execute();
     } catch (IOException ex) {
       span.setStatus(Status.UNKNOWN.withDescription(ex.getMessage()));
       throw translate(ex);
@@ -787,10 +793,10 @@ public class HttpStorageRpc implements StorageRpc {
     }
   }
 
-  private Storage.Objects.Delete deleteCall(StorageObject blob, Map<Option, ?> options)
-      throws IOException {
+  private Storage.Objects.Delete deleteCall(
+      Storage client, StorageObject blob, Map<Option, ?> options) throws IOException {
     Storage.Objects.Delete delete =
-        storage
+        client
             .objects()
             .delete(blob.getBucket(), blob.getName())
             .setGeneration(blob.getGeneration())
@@ -808,7 +814,7 @@ public class HttpStorageRpc implements StorageRpc {
     Span span = startSpan(HttpStorageRpcSpans.SPAN_NAME_DELETE_OBJECT);
     Scope scope = tracer.withSpan(span);
     try {
-      deleteCall(blob, options).execute();
+      deleteCall(storage, blob, options).execute();
       return true;
     } catch (IOException ex) {
       span.setStatus(Status.UNKNOWN.withDescription(ex.getMessage()));
@@ -906,7 +912,7 @@ public class HttpStorageRpc implements StorageRpc {
     Span span = startSpan(HttpStorageRpcSpans.SPAN_NAME_CREATE_BATCH);
     Scope scope = tracer.withSpan(span);
     try {
-      return new DefaultRpcBatch(storage);
+      return new DefaultRpcBatch(batchPartStorage);
     } finally {
       scope.close();
       span.end(HttpStorageRpcSpans.END_SPAN_OPTIONS);

@@ -99,6 +99,7 @@ public final class StorageHttpMetricsInterceptorTest {
         "/download/storage/v1/b/{bucket}/o/{object}"
       },
       {"https://storage.googleapis.com/batch/storage/v1", "/batch/storage/v1"},
+      {"https://storage.googleapis.com//batch/storage/v1", "/batch/storage/v1"},
       {"https://storage.googleapis.com/storage/v1/b", "/storage/v1/b"},
       {"https://storage.googleapis.com/storage/v1/b/my-b", "/storage/v1/b/{bucket}"},
       {"https://storage.googleapis.com/storage/v1/b/my-b/o", "/storage/v1/b/{bucket}/o"},
@@ -826,6 +827,140 @@ public final class StorageHttpMetricsInterceptorTest {
 
     assertThat(durationPoints()).hasSize(2);
     assertThat(retriesPoints()).isEmpty();
+    assertThat(requestActivePoints()).isEmpty();
+  }
+
+  @Test
+  public void initialize_requestActive_tracksInFlightAndBalancesAcrossOutcomes()
+      throws IOException {
+    StorageClientMetrics debugMetrics =
+        httpOptions.toBuilder().setEnableOtelDebugMetrics(true).build().getStorageClientMetrics();
+
+    AtomicLong observedInFlight = new AtomicLong(-1L);
+    AtomicBoolean firstAttempt = new AtomicBoolean(true);
+    HttpRequestInitializer retryDelegate =
+        request -> {
+          request.setUnsuccessfulResponseHandler(
+              (req, response, supportsRetry) -> {
+                if (response.getStatusCode() == 401) {
+                  return true;
+                }
+                if (response.getStatusCode() == 500) {
+                  throw new IOException("refresh failed");
+                }
+                return false;
+              });
+          request.setIOExceptionHandler((req, supportsRetry) -> true);
+        };
+    StorageHttpMetricsInterceptor debugInterceptor =
+        new StorageHttpMetricsInterceptor(retryDelegate, debugMetrics, clock);
+
+    // 1. 401 refresh retry -> 200 success: observes in-flight == 1 and returns to 0.
+    HttpTransport retryTransport =
+        new MockHttpTransport() {
+          @Override
+          public LowLevelHttpRequest buildRequest(String method, String url) {
+            return new MockLowLevelHttpRequest() {
+              @Override
+              public LowLevelHttpResponse execute() {
+                List<LongPointData> active = requestActivePoints();
+                assertThat(active).hasSize(1);
+                observedInFlight.set(active.get(0).getValue());
+                MockLowLevelHttpResponse resp = new MockLowLevelHttpResponse();
+                resp.setStatusCode(firstAttempt.compareAndSet(true, false) ? 401 : 200);
+                return resp;
+              }
+            };
+          }
+        };
+    retryTransport
+        .createRequestFactory(debugInterceptor)
+        .buildGetRequest(new GenericUrl("https://storage.googleapis.com/storage/v1/b/my-b"))
+        .execute();
+    assertThat(observedInFlight.get()).isEqualTo(1L);
+    assertSingleRequestActive(0L, "GetBucket");
+
+    // 2. IOException retry -> 200 success: returns to 0.
+    AtomicBoolean failIoOnce = new AtomicBoolean(true);
+    HttpTransport ioTransport =
+        new MockHttpTransport() {
+          @Override
+          public LowLevelHttpRequest buildRequest(String method, String url) {
+            return new MockLowLevelHttpRequest() {
+              @Override
+              public LowLevelHttpResponse execute() throws IOException {
+                if (failIoOnce.compareAndSet(true, false)) {
+                  throw new IOException("connection reset");
+                }
+                return new MockLowLevelHttpResponse().setStatusCode(200);
+              }
+            };
+          }
+        };
+    ioTransport
+        .createRequestFactory(debugInterceptor)
+        .buildGetRequest(new GenericUrl("https://storage.googleapis.com/storage/v1/b/my-b"))
+        .execute();
+    assertSingleRequestActive(0L, "GetBucket");
+
+    // 3. UnsuccessfulResponseHandler throws IOException: active gauge must still return to 0.
+    HttpTransport throwingHandlerTransport = createAdvancingTransport(500, 10_000_000L);
+    HttpRequest failingReq =
+        throwingHandlerTransport
+            .createRequestFactory(debugInterceptor)
+            .buildGetRequest(new GenericUrl("https://storage.googleapis.com/storage/v1/b/my-b"));
+    assertThrows(IOException.class, failingReq::execute);
+    assertSingleRequestActive(0L, "GetBucket");
+  }
+
+  @Test
+  public void endToEnd_storageBatch_requestActiveDoesNotLeakPartPoints() throws Exception {
+    HttpTransport batchTransport =
+        new MockHttpTransport() {
+          @Override
+          public LowLevelHttpRequest buildRequest(String method, String url) {
+            return new MockLowLevelHttpRequest(url) {
+              @Override
+              public LowLevelHttpResponse execute() {
+                String body =
+                    "--batch_boundary\r\n"
+                        + "Content-Type: application/http\r\n\r\n"
+                        + "HTTP/1.1 200 OK\r\n"
+                        + "Content-Type: application/json\r\n\r\n"
+                        + "{\"bucket\":\"my-b\",\"name\":\"obj-1\"}\r\n"
+                        + "--batch_boundary\r\n"
+                        + "Content-Type: application/http\r\n\r\n"
+                        + "HTTP/1.1 204 No Content\r\n\r\n"
+                        + "--batch_boundary--\r\n";
+                return new MockLowLevelHttpResponse()
+                    .setStatusCode(200)
+                    .setContentType("multipart/mixed; boundary=batch_boundary")
+                    .setContent(body);
+              }
+            };
+          }
+        };
+
+    try (Storage storage =
+        httpOptions.toBuilder()
+            .setEnableOtelDebugMetrics(true)
+            .setTransportOptions(
+                HttpTransportOptions.newBuilder()
+                    .setHttpTransportFactory(() -> batchTransport)
+                    .build())
+            .setRetrySettings(ServiceOptions.getNoRetrySettings())
+            .build()
+            .getService()) {
+      StorageBatch batch = storage.batch();
+      StorageBatchResult<Blob> getResult = batch.get(BlobId.of("my-b", "obj-1"));
+      StorageBatchResult<Boolean> deleteResult = batch.delete(BlobId.of("my-b", "obj-2"));
+      batch.submit();
+
+      assertThat(getResult.get().getName()).isEqualTo("obj-1");
+      assertThat(deleteResult.get()).isTrue();
+    }
+
+    assertSingleRequestActive(0L, "Batch");
   }
 
   @Test
@@ -1042,11 +1177,39 @@ public final class StorageHttpMetricsInterceptorTest {
   }
 
   private List<LongPointData> retriesPoints() {
+    return longSumPoints(StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_RETRIES);
+  }
+
+  private List<LongPointData> requestActivePoints() {
+    return longSumPoints(StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_REQUEST_ACTIVE);
+  }
+
+  private List<LongPointData> longSumPoints(String metricName) {
     return reader.collectAllMetrics().stream()
-        .filter(m -> m.getName().equals(StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_RETRIES))
+        .filter(m -> m.getName().equals(metricName))
         .findFirst()
         .map(m -> ImmutableList.copyOf(m.getLongSumData().getPoints()))
         .orElse(ImmutableList.of());
+  }
+
+  private void assertSingleRequestActive(long expectedValue, String expectedOperation) {
+    List<LongPointData> points = requestActivePoints();
+    assertThat(points).hasSize(1);
+    assertThat(points.get(0).getValue()).isEqualTo(expectedValue);
+    assertThat(points.get(0).getAttributes())
+        .isEqualTo(
+            Attributes.builder()
+                .put(
+                    StorageClientMetrics.KEY_GCP_CLIENT_SERVICE,
+                    StorageClientMetrics.SERVICE_STORAGE)
+                .put(StorageClientMetrics.KEY_GCP_CLIENT_VERSION, StorageOptions.version())
+                .put(
+                    StorageClientMetrics.KEY_GCP_CLIENT_ARTIFACT,
+                    StorageClientMetrics.ARTIFACT_STORAGE)
+                .put(StorageClientMetrics.KEY_RPC_SYSTEM_NAME, "http")
+                .put(StorageClientMetrics.KEY_SERVER_ADDRESS, "storage.googleapis.com")
+                .put(StorageClientMetrics.KEY_GCP_STORAGE_OPERATION, expectedOperation)
+                .build());
   }
 
   private static Attributes expectedRetryAttributes(String operationName, String errorType) {

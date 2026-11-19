@@ -469,6 +469,62 @@ public final class StorageClientMetricsTest {
                 .build());
   }
 
+  @Test
+  public void recordRequestActive_recordsExactSixAttributes() {
+    SdkMeterProvider provider = SdkMeterProvider.builder().registerMetricReader(reader).build();
+    StorageClientMetrics grpcMetrics =
+        StorageOptions.grpc()
+            .setProjectId("test-project")
+            .setCredentials(NoCredentials.getInstance())
+            .setEnableOtelMetrics(true)
+            .setEnableOtelDebugMetrics(true)
+            .setMeterProvider(provider)
+            .build()
+            .getStorageClientMetrics();
+
+    grpcMetrics.recordRequestActive(Context.current(), "ReadObject", 1L);
+
+    MetricData metricData =
+        reader.collectAllMetrics().stream()
+            .filter(
+                m ->
+                    m.getName()
+                        .equals(StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_REQUEST_ACTIVE))
+            .findFirst()
+            .orElseThrow(() -> new AssertionError("Missing request.active metric"));
+    assertThat(metricData.getUnit()).isEqualTo("{request}");
+    assertThat(metricData.getLongSumData().isMonotonic()).isFalse();
+    assertThat(metricData.getLongSumData().getPoints()).hasSize(1);
+    LongPointData point = metricData.getLongSumData().getPoints().iterator().next();
+    assertThat(point.getValue()).isEqualTo(1L);
+    assertThat(point.getAttributes())
+        .isEqualTo(
+            Attributes.builder()
+                .put(
+                    StorageClientMetrics.KEY_GCP_CLIENT_SERVICE,
+                    StorageClientMetrics.SERVICE_STORAGE)
+                .put(StorageClientMetrics.KEY_GCP_CLIENT_VERSION, StorageOptions.version())
+                .put(
+                    StorageClientMetrics.KEY_GCP_CLIENT_ARTIFACT,
+                    StorageClientMetrics.ARTIFACT_STORAGE)
+                .put(StorageClientMetrics.KEY_RPC_SYSTEM_NAME, "grpc")
+                .put(StorageClientMetrics.KEY_SERVER_ADDRESS, "storage.googleapis.com")
+                .put(StorageClientMetrics.KEY_GCP_STORAGE_OPERATION, "ReadObject")
+                .build());
+
+    grpcMetrics.recordRequestActive(Context.current(), "ReadObject", -1L);
+    MetricData afterDecrement =
+        reader.collectAllMetrics().stream()
+            .filter(
+                m ->
+                    m.getName()
+                        .equals(StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_REQUEST_ACTIVE))
+            .findFirst()
+            .orElseThrow(() -> new AssertionError("Missing request.active metric"));
+    assertThat(afterDecrement.getLongSumData().getPoints().iterator().next().getValue())
+        .isEqualTo(0L);
+  }
+
   static final class TestMetricReader implements MetricReader {
     private final MetricReader delegate = InMemoryMetricReader.create();
     final AtomicBoolean shutdownCalled = new AtomicBoolean(false);

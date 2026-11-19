@@ -48,6 +48,7 @@ import io.opentelemetry.context.ContextKey;
 import io.opentelemetry.context.Scope;
 import io.opentelemetry.sdk.metrics.SdkMeterProvider;
 import io.opentelemetry.sdk.metrics.data.HistogramPointData;
+import io.opentelemetry.sdk.metrics.data.LongPointData;
 import io.opentelemetry.sdk.metrics.data.MetricData;
 import io.opentelemetry.sdk.testing.exporter.InMemoryMetricReader;
 import java.io.ByteArrayInputStream;
@@ -339,6 +340,57 @@ public final class StorageGrpcMetricsInterceptorTest {
         .isEqualTo("storage.googleapis.com");
 
     assertThat(findMetric(StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_TTFB)).isNull();
+    assertThat(findMetric(StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_REQUEST_ACTIVE)).isNull();
+  }
+
+  @Test
+  public void interceptCall_requestActive_tracksInFlightAndBalancesOnClose() {
+    StorageClientMetrics debugMetrics =
+        StorageOptions.grpc()
+            .setProjectId("test-project")
+            .setCredentials(NoCredentials.getInstance())
+            .setEnableOtelMetrics(true)
+            .setEnableOtelDebugMetrics(true)
+            .setMeterProvider(meterProvider)
+            .build()
+            .getStorageClientMetrics();
+    StorageGrpcMetricsInterceptor debugInterceptor =
+        new StorageGrpcMetricsInterceptor(debugMetrics, clock);
+
+    TestClientCall<Void, Void> okCall = new TestClientCall<>(Attributes.EMPTY);
+    ClientCall<Void, Void> wrappedOk =
+        debugInterceptor.interceptCall(
+            READ_OBJECT_METHOD, CallOptions.DEFAULT, new TestChannel(okCall));
+    wrappedOk.start(new TestListener<>(), new Metadata());
+
+    LongPointData inFlightPoint = requestActivePoint();
+    assertThat(inFlightPoint.getValue()).isEqualTo(1L);
+    assertThat(inFlightPoint.getAttributes())
+        .isEqualTo(
+            io.opentelemetry.api.common.Attributes.builder()
+                .put(
+                    StorageClientMetrics.KEY_GCP_CLIENT_SERVICE,
+                    StorageClientMetrics.SERVICE_STORAGE)
+                .put(StorageClientMetrics.KEY_GCP_CLIENT_VERSION, StorageOptions.version())
+                .put(
+                    StorageClientMetrics.KEY_GCP_CLIENT_ARTIFACT,
+                    StorageClientMetrics.ARTIFACT_STORAGE)
+                .put(StorageClientMetrics.KEY_RPC_SYSTEM_NAME, "grpc")
+                .put(StorageClientMetrics.KEY_SERVER_ADDRESS, "storage.googleapis.com")
+                .put(StorageClientMetrics.KEY_GCP_STORAGE_OPERATION, "ReadObject")
+                .build());
+
+    // Start a second concurrent call and close both (OK + error) to verify gauge returns to 0.
+    TestClientCall<Void, Void> errCall = new TestClientCall<>(Attributes.EMPTY);
+    ClientCall<Void, Void> wrappedErr =
+        debugInterceptor.interceptCall(
+            READ_OBJECT_METHOD, CallOptions.DEFAULT, new TestChannel(errCall));
+    wrappedErr.start(new TestListener<>(), new Metadata());
+    assertThat(requestActivePoint().getValue()).isEqualTo(2L);
+
+    okCall.close(Status.OK, new Metadata());
+    errCall.close(Status.UNAVAILABLE, new Metadata());
+    assertThat(requestActivePoint().getValue()).isEqualTo(0L);
   }
 
   @Test
@@ -592,6 +644,13 @@ public final class StorageGrpcMetricsInterceptorTest {
         (InstantiatingGrpcChannelProvider)
             disabledDefaultOptions.getStorageSettings().getTransportChannelProvider();
     assertThat(extractInterceptorProvider(disabledDefaultChannelProvider)).isNull();
+  }
+
+  private LongPointData requestActivePoint() {
+    MetricData metric = findMetric(StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_REQUEST_ACTIVE);
+    assertThat(metric).isNotNull();
+    assertThat(metric.getLongSumData().getPoints()).hasSize(1);
+    return metric.getLongSumData().getPoints().iterator().next();
   }
 
   private @Nullable MetricData findMetric(String name) {

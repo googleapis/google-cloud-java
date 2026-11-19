@@ -33,6 +33,7 @@ import java.io.IOException;
 import java.util.Locale;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicLong;
+import java.util.concurrent.atomic.AtomicReference;
 import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
 
@@ -133,6 +134,8 @@ final class StorageHttpMetricsInterceptor implements HttpRequestInitializer {
 
     AtomicLong startTimeNanos = new AtomicLong();
     AtomicBoolean recorded = new AtomicBoolean(true);
+    AtomicReference<Context> activeOtelContext = new AtomicReference<>(Context.root());
+    AtomicReference<String> activeOperationName = new AtomicReference<>("");
 
     request.setInterceptor(
         req -> {
@@ -140,22 +143,38 @@ final class StorageHttpMetricsInterceptor implements HttpRequestInitializer {
             existingExec.intercept(req);
           }
           startTimeNanos.set(clock.nanoTime());
-          recorded.set(false);
+          if (recorded.compareAndSet(true, false) && metrics.getRequestActive() != null) {
+            StorageMetricsContext ctx = StorageMetricsContext.current();
+            Context otelContext = ctx != null ? ctx.getOtelContext() : Context.current();
+            String operationName = resolveOperationName(ctx, req, extractUrlTemplate(req.getUrl()));
+            activeOtelContext.set(otelContext);
+            activeOperationName.set(operationName);
+            metrics.recordRequestActive(otelContext, operationName, 1L);
+          }
         });
 
     if (existingUnsuccessfulHandler != null) {
       request.setUnsuccessfulResponseHandler(
           (req, response, supportsRetry) -> {
             long endNanos = clock.nanoTime();
-            boolean handled =
-                existingUnsuccessfulHandler.handleResponse(req, response, supportsRetry);
-            if (handled && response.getRequest() == req && recorded.compareAndSet(false, true)) {
-              recordResponse(
-                  req,
-                  startTimeNanos.get(),
-                  endNanos,
-                  response.getStatusCode(),
-                  /* isRetry= */ supportsRetry);
+            boolean handled = false;
+            boolean completedNormally = false;
+            try {
+              handled = existingUnsuccessfulHandler.handleResponse(req, response, supportsRetry);
+              completedNormally = true;
+            } finally {
+              if ((handled || !completedNormally)
+                  && response.getRequest() == req
+                  && recorded.compareAndSet(false, true)) {
+                metrics.recordRequestActive(
+                    activeOtelContext.get(), activeOperationName.get(), -1L);
+                recordResponse(
+                    req,
+                    startTimeNanos.get(),
+                    endNanos,
+                    response.getStatusCode(),
+                    /* isRetry= */ handled && supportsRetry);
+              }
             }
             return handled;
           });
@@ -164,16 +183,20 @@ final class StorageHttpMetricsInterceptor implements HttpRequestInitializer {
     request.setResponseInterceptor(
         response -> {
           long endNanos = clock.nanoTime();
-          if (existingResp != null) {
-            existingResp.interceptResponse(response);
-          }
-          if (recorded.compareAndSet(false, true)) {
-            recordResponse(
-                request,
-                startTimeNanos.get(),
-                endNanos,
-                response.getStatusCode(),
-                /* isRetry= */ false);
+          try {
+            if (existingResp != null) {
+              existingResp.interceptResponse(response);
+            }
+          } finally {
+            if (response.getRequest() == request && recorded.compareAndSet(false, true)) {
+              metrics.recordRequestActive(activeOtelContext.get(), activeOperationName.get(), -1L);
+              recordResponse(
+                  request,
+                  startTimeNanos.get(),
+                  endNanos,
+                  response.getStatusCode(),
+                  /* isRetry= */ false);
+            }
           }
         });
 
@@ -186,6 +209,7 @@ final class StorageHttpMetricsInterceptor implements HttpRequestInitializer {
           boolean recordedThisAttempt = recorded.compareAndSet(false, true);
           String urlTemplate = recordedThisAttempt ? extractUrlTemplate(req.getUrl()) : "";
           if (recordedThisAttempt) {
+            metrics.recordRequestActive(activeOtelContext.get(), activeOperationName.get(), -1L);
             double durationSeconds = (endNanos - startTimeNanos.get()) / 1_000_000_000.0;
             recordDuration(
                 req,
@@ -277,6 +301,9 @@ final class StorageHttpMetricsInterceptor implements HttpRequestInitializer {
     String path = url.getRawPath();
     if (path == null || path.isEmpty()) {
       return "/";
+    }
+    while (path.length() > 1 && path.startsWith("//")) {
+      path = path.substring(1);
     }
     String host = url.getHost();
     if (host != null
