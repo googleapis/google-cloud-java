@@ -118,7 +118,6 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /** Integration tests for BigQuery Storage API. */
@@ -1629,16 +1628,19 @@ class ITBigQueryStorageReadClientTest {
     assertEquals(new Utf8("abc"), structRecord.get("str_field"), rowAssertMessage);
   }
 
-  @Disabled("Flaky test: b/575539309")
   @Test
-  void testSimpleReadWithBackgroundExecutorProvider() throws IOException {
+  void testSimpleReadWithBackgroundExecutorProvider() throws InterruptedException, IOException {
+    String tableName =
+        "test_simple_read_background_executor_" + UUID.randomUUID().toString().substring(0, 8);
+    String createTableStatement =
+        String.format(
+            "CREATE TABLE %s.%s AS SELECT 1 AS int_field, 'abc' AS str_field", DATASET, tableName);
+    runQueryJobAndExpectSuccess(QueryJobConfiguration.newBuilder(createTableStatement).build());
+
     BigQueryReadSettings.Builder settingsBuilder =
         Helper.createBigQueryReadSettingsBuilder()
             .setBackgroundExecutorProvider(
                 InstantiatingExecutorProvider.newBuilder().setExecutorThreadCount(14).build());
-    if (Helper.isRegionalEndpoint()) {
-      settingsBuilder.setEndpoint(BigQueryReadSettings.getDefaultEndpoint());
-    }
     BigQueryReadClient localClient = BigQueryReadClient.create(settingsBuilder.build());
     try {
       assertTrue(
@@ -1651,36 +1653,11 @@ class ITBigQueryStorageReadClientTest {
               .getExecutorThreadCount());
       String table =
           BigQueryResource.formatTableResource(
-              /* projectId= */ "bigquery-public-data",
-              /* datasetId= */ "samples",
-              /* tableId= */ "shakespeare");
+              /* projectId= */ projectName, /* datasetId= */ DATASET, /* tableId= */ tableName);
 
-      ReadSession session =
-          localClient.createReadSession(
-              /* parent= */ parentProjectId,
-              /* readSession= */ ReadSession.newBuilder()
-                  .setTable(table)
-                  .setDataFormat(DataFormat.AVRO)
-                  .build(),
-              /* maxStreamCount= */ 1);
-      assertEquals(
-          1,
-          session.getStreamsCount(),
-          String.format(
-              "Did not receive expected number of streams for table '%s' CreateReadSession"
-                  + " response:%n%s",
-              table, session.toString()));
-
-      ReadRowsRequest readRowsRequest =
-          ReadRowsRequest.newBuilder().setReadStream(session.getStreams(0).getName()).build();
-
-      long rowCount = 0;
-      ServerStream<ReadRowsResponse> stream = localClient.readRowsCallable().call(readRowsRequest);
-      for (ReadRowsResponse response : stream) {
-        rowCount += response.getRowCount();
-      }
-
-      assertEquals(SHAKESPEARE_SAMPLE_ROW_COUNT, rowCount);
+      List<GenericData.Record> rows =
+          Helper.readAllRows(localClient, parentProjectId, /* table= */ table, /* filter= */ null);
+      assertEquals(1, rows.size(), "Actual rows read: " + rows);
     } finally {
       localClient.close();
     }
