@@ -33,16 +33,21 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 import com.google.api.core.ApiClock;
+import com.google.api.gax.rpc.internal.QuotaProjectIdHidingCredentials;
 import com.google.auth.CredentialTypeForMetrics;
 import com.google.auth.Credentials;
 import com.google.auth.RequestMetadataCallback;
+import com.google.auth.ServiceAccountSigner;
 import com.google.auth.oauth2.AccessToken;
+import com.google.auth.oauth2.ComputeEngineCredentials;
 import com.google.auth.oauth2.GdchCredentials;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.auth.oauth2.OAuth2Credentials;
 import com.google.auth.oauth2.QuotaProjectIdProvider;
 import com.google.auth.oauth2.ServiceAccountCredentials;
 import com.google.cloud.NoCredentials;
+import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
 import com.google.common.util.concurrent.MoreExecutors;
 import io.opentelemetry.api.common.Attributes;
 import io.opentelemetry.sdk.metrics.SdkMeterProvider;
@@ -350,6 +355,131 @@ public final class MetricsRecordingCredentialsTest {
     assertThat(findPointByError(STATUS_AUTHENTICATION_ERROR).getCount()).isEqualTo(1L);
   }
 
+  @Test
+  public void httpStorageOptions_wiresScopedCredentialsWithoutMutating() throws Exception {
+    SigningTestCredentials signingCreds = new SigningTestCredentials();
+    HttpStorageOptions httpDebugOptions =
+        StorageOptions.http()
+            .setProjectId("test-project")
+            .setCredentials(signingCreds)
+            .setEnableOtelMetrics(true)
+            .setEnableOtelDebugMetrics(true)
+            .setMeterProvider(provider)
+            .build();
+    HttpStorageOptions httpDebugOptionsCopy = httpDebugOptions.toBuilder().build();
+
+    // getCredentials() stays untouched (ServiceAccountSigner, equals, hashCode, Serializable).
+    assertThat(httpDebugOptions.getCredentials()).isSameInstanceAs(signingCreds);
+    assertThat(httpDebugOptions.getCredentials()).isInstanceOf(ServiceAccountSigner.class);
+    assertThat(httpDebugOptions).isEqualTo(httpDebugOptionsCopy);
+    assertThat(httpDebugOptions.hashCode()).isEqualTo(httpDebugOptionsCopy.hashCode());
+    assertThat(httpDebugOptions.getScopedCredentials())
+        .isInstanceOf(MetricsRecordingCredentials.class);
+    ByteArrayOutputStream baos = new ByteArrayOutputStream();
+    try (ObjectOutputStream oos = new ObjectOutputStream(baos)) {
+      oos.writeObject(httpDebugOptions);
+    }
+    try (ObjectInputStream ois =
+        new ObjectInputStream(new ByteArrayInputStream(baos.toByteArray()))) {
+      HttpStorageOptions deserializedOptions = (HttpStorageOptions) ois.readObject();
+      assertThat(deserializedOptions.getCredentials()).isInstanceOf(ServiceAccountSigner.class);
+    }
+
+    // HTTP safely wraps ComputeEngineCredentials when debug metrics are enabled.
+    ComputeEngineCredentials computeCreds = ComputeEngineCredentials.create();
+    HttpStorageOptions httpComputeOptions =
+        StorageOptions.http()
+            .setProjectId("test-project")
+            .setCredentials(computeCreds)
+            .setEnableOtelMetrics(true)
+            .setEnableOtelDebugMetrics(true)
+            .setMeterProvider(provider)
+            .build();
+    assertThat(httpComputeOptions.getScopedCredentials())
+        .isInstanceOf(MetricsRecordingCredentials.class);
+
+    // Toggling debug off via toBuilder() yields unwrapped credentials without leaking a wrapper.
+    HttpStorageOptions httpStdOptions =
+        httpDebugOptions.toBuilder().setEnableOtelDebugMetrics(false).build();
+    assertThat(httpStdOptions.getScopedCredentials()).isSameInstanceAs(signingCreds);
+  }
+
+  @Test
+  public void grpcStorageOptions_wiresCredentialsWithoutMutating() throws Exception {
+    // 1) GoogleCredentials.create(null) is wrapped by MetricsRecordingCredentials and throws
+    // IllegalStateException during the quota-project probe; must not emit a spurious error.
+    GrpcStorageOptions nullTokenOptions =
+        StorageOptions.grpc()
+            .setProjectId("test-project")
+            .setCredentials(GoogleCredentials.create(/* accessToken= */ null))
+            .setClock(fakeClock)
+            .setEnableOtelMetrics(true)
+            .setEnableOtelDebugMetrics(true)
+            .setMeterProvider(provider)
+            .build();
+    assertThat(nullTokenOptions.getStorageSettings().getCredentialsProvider().getCredentials())
+        .isInstanceOf(MetricsRecordingCredentials.class);
+    assertThat(findRefreshMetric()).isNull();
+
+    // 2) With x-goog-user-project: probe records refresh, preserves getCredentials(), and wraps
+    // QuotaProjectIdHidingCredentials around MetricsRecordingCredentials.
+    TestGoogleCredentials grpcCreds = new TestGoogleCredentials();
+    grpcCreds.extraHeaders = ImmutableMap.of("x-goog-user-project", ImmutableList.of("quota-proj"));
+    grpcCreds.onRefresh = () -> clockNanos.addAndGet(150_000_000L);
+    GrpcStorageOptions grpcDebugOptions =
+        StorageOptions.grpc()
+            .setProjectId("test-project")
+            .setCredentials(grpcCreds)
+            .setClock(fakeClock)
+            .setEnableOtelMetrics(true)
+            .setEnableOtelDebugMetrics(true)
+            .setMeterProvider(provider)
+            .build();
+    assertThat(grpcDebugOptions.getCredentials()).isSameInstanceAs(grpcCreds);
+    Credentials providerCreds =
+        grpcDebugOptions.getStorageSettings().getCredentialsProvider().getCredentials();
+    assertThat(providerCreds).isInstanceOf(QuotaProjectIdHidingCredentials.class);
+    assertThat(providerCreds.getRequestMetadata(STORAGE_URI))
+        .doesNotContainKey("x-goog-user-project");
+    HistogramPointData okPoint = findPointByError(STATUS_OK);
+    assertThat(okPoint.getCount()).isEqualTo(1L);
+    assertThat(okPoint.getSum()).isWithin(0.0001).of(0.15);
+    providerCreds.refresh();
+    assertThat(findPointByError(STATUS_OK).getCount()).isEqualTo(2L);
+
+    // 3) Without x-goog-user-project: direct MetricsRecordingCredentials when debug enabled, and
+    // unwrapped passthrough when debug toggled off via toBuilder().
+    TestGoogleCredentials noQuotaCreds = new TestGoogleCredentials();
+    GrpcStorageOptions grpcNoQuotaDebug =
+        StorageOptions.grpc()
+            .setProjectId("test-project")
+            .setCredentials(noQuotaCreds)
+            .setClock(fakeClock)
+            .setEnableOtelMetrics(true)
+            .setEnableOtelDebugMetrics(true)
+            .setMeterProvider(provider)
+            .build();
+    assertThat(grpcNoQuotaDebug.getStorageSettings().getCredentialsProvider().getCredentials())
+        .isInstanceOf(MetricsRecordingCredentials.class);
+    GrpcStorageOptions grpcNoQuotaStd =
+        grpcNoQuotaDebug.toBuilder().setEnableOtelDebugMetrics(false).build();
+    assertThat(grpcNoQuotaStd.getStorageSettings().getCredentialsProvider().getCredentials())
+        .isSameInstanceAs(noQuotaCreds);
+
+    // 4) gRPC keeps ComputeEngineCredentials unwrapped for DirectPath ALTS hard-bound tokens.
+    ComputeEngineCredentials mockCompute = mock(ComputeEngineCredentials.class);
+    GrpcStorageOptions grpcComputeOptions =
+        StorageOptions.grpc()
+            .setProjectId("test-project")
+            .setCredentials(mockCompute)
+            .setEnableOtelMetrics(true)
+            .setEnableOtelDebugMetrics(true)
+            .setMeterProvider(provider)
+            .build();
+    assertThat(grpcComputeOptions.getStorageSettings().getCredentialsProvider().getCredentials())
+        .isSameInstanceAs(mockCompute);
+  }
+
   private StorageClientMetrics createMetrics(boolean debug) {
     return StorageOptions.http()
         .setProjectId("test-project")
@@ -378,11 +508,12 @@ public final class MetricsRecordingCredentialsTest {
         .orElseThrow(() -> new AssertionError("Missing point for error.type=" + errorType));
   }
 
-  private static final class TestGoogleCredentials extends GoogleCredentials {
+  private static class TestGoogleCredentials extends GoogleCredentials {
     private static final long serialVersionUID = 1L;
     private final AtomicInteger counter = new AtomicInteger();
     transient @Nullable Runnable onRefresh;
     transient @Nullable IOException failureToThrow;
+    transient @Nullable Map<String, List<String>> extraHeaders;
 
     @Override
     public AccessToken refreshAccessToken() throws IOException {
@@ -398,6 +529,11 @@ public final class MetricsRecordingCredentialsTest {
     }
 
     @Override
+    protected Map<String, List<String>> getAdditionalHeaders() {
+      return extraHeaders != null ? extraHeaders : ImmutableMap.of();
+    }
+
+    @Override
     public String getUniverseDomain() {
       return "custom.universe.test";
     }
@@ -410,6 +546,21 @@ public final class MetricsRecordingCredentialsTest {
     @Override
     public String getQuotaProjectId() {
       return "quota-proj";
+    }
+  }
+
+  private static final class SigningTestCredentials extends TestGoogleCredentials
+      implements ServiceAccountSigner {
+    private static final long serialVersionUID = 1L;
+
+    @Override
+    public String getAccount() {
+      return "sa@test-project.iam.gserviceaccount.com";
+    }
+
+    @Override
+    public byte[] sign(byte[] toSign) {
+      return toSign;
     }
   }
 }

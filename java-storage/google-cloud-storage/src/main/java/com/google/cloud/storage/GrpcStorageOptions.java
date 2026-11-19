@@ -49,6 +49,7 @@ import com.google.api.gax.rpc.internal.QuotaProjectIdHidingCredentials;
 import com.google.api.gax.tracing.ApiTracerFactory;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.auth.Credentials;
+import com.google.auth.oauth2.ComputeEngineCredentials;
 import com.google.cloud.NoCredentials;
 import com.google.cloud.ServiceFactory;
 import com.google.cloud.ServiceOptions;
@@ -254,10 +255,18 @@ public final class GrpcStorageOptions extends StorageOptions
     if (credentials instanceof NoCredentials) {
       credentialsProvider = NoCredentialsProvider.create();
     } else {
+      // Keep ComputeEngineCredentials unwrapped on gRPC so InstantiatingGrpcChannelProvider
+      // preserves DirectPath ALTS hard-bound tokens and EndpointContext skips unnecessary MDS
+      // universe domain lookups.
+      Credentials effectiveCredentials =
+          !isEnableOtelDebugMetrics() || credentials instanceof ComputeEngineCredentials
+              ? credentials
+              : MetricsRecordingCredentials.wrap(
+                  credentials, getStorageClientMetrics(), getClock());
       boolean foundQuotaProject = false;
-      if (credentials.hasRequestMetadata()) {
+      if (effectiveCredentials.hasRequestMetadata()) {
         try {
-          Map<String, List<String>> requestMetadata = credentials.getRequestMetadata(uri);
+          Map<String, List<String>> requestMetadata = effectiveCredentials.getRequestMetadata(uri);
           for (Entry<String, List<String>> e : requestMetadata.entrySet()) {
             String key = e.getKey();
             if ("x-goog-user-project".equals(Utils.headerNameToLowerCase(key.trim()))) {
@@ -282,9 +291,10 @@ public final class GrpcStorageOptions extends StorageOptions
       if (foundQuotaProject) {
         // fix for https://github.com/googleapis/java-storage/issues/1736
         credentialsProvider =
-            FixedCredentialsProvider.create(new QuotaProjectIdHidingCredentials(credentials));
+            FixedCredentialsProvider.create(
+                new QuotaProjectIdHidingCredentials(effectiveCredentials));
       } else {
-        credentialsProvider = FixedCredentialsProvider.create(credentials);
+        credentialsProvider = FixedCredentialsProvider.create(effectiveCredentials);
       }
     }
 

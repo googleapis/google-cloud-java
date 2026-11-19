@@ -86,6 +86,16 @@ public class HttpStorageOptions extends StorageOptions {
     return SCOPES;
   }
 
+  @Override
+  public Credentials getScopedCredentials() {
+    Credentials scopedCredentials = super.getScopedCredentials();
+    if (!isEnableOtelDebugMetrics()) {
+      return scopedCredentials;
+    }
+    return MetricsRecordingCredentials.wrap(
+        scopedCredentials, getStorageClientMetrics(), getClock());
+  }
+
   @InternalApi
   HttpRetryAlgorithmManager getRetryAlgorithmManager() {
     return retryAlgorithmManager;
