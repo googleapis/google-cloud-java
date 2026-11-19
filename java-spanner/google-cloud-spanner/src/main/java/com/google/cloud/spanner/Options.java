@@ -18,6 +18,7 @@ package com.google.cloud.spanner;
 
 import com.google.common.base.Preconditions;
 import com.google.spanner.v1.DirectedReadOptions;
+import com.google.spanner.v1.ExecuteSqlRequest;
 import com.google.spanner.v1.ReadRequest.LockHint;
 import com.google.spanner.v1.ReadRequest.OrderBy;
 import com.google.spanner.v1.RequestOptions;
@@ -314,6 +315,19 @@ public final class Options implements Serializable {
       builder.setClientContext(clientContext());
     }
     return builder.build();
+  }
+
+  void applyTo(ExecuteSqlRequest.Builder builder) {
+    if (hasDataBoostEnabled()) {
+      builder.setDataBoostEnabled(dataBoostEnabled());
+    }
+    if (hasDirectedReadOptions()) {
+      builder.setDirectedReadOptions(directedReadOptions());
+    }
+    RequestOptions requestOptions = toRequestOptionsProto(false);
+    if (!requestOptions.equals(RequestOptions.getDefaultInstance())) {
+      builder.getRequestOptionsBuilder().mergeFrom(requestOptions);
+    }
   }
 
   /**

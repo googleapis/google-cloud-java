@@ -25,6 +25,7 @@ import com.google.cloud.spanner.connection.AbstractStatementParser;
 import com.google.cloud.spanner.connection.AbstractStatementParser.ParametersInfo;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
+import com.google.spanner.v1.ExecuteSqlRequest;
 import com.google.spanner.v1.ExecuteSqlRequest.QueryOptions;
 import java.io.Serializable;
 import java.util.Collections;
@@ -222,6 +223,16 @@ public final class Statement implements Serializable {
   /** Returns the parameters bound to this {@code Statement}. */
   public Map<String, Value> getParameters() {
     return parameters;
+  }
+
+  /** Converts this {@code Statement} to an {@link ExecuteSqlRequest.Builder}. */
+  ExecuteSqlRequest.Builder toExecuteSqlRequestBuilder() {
+    ExecuteSqlRequest.Builder builder = ExecuteSqlRequest.newBuilder().setSql(this.sql);
+    AbstractReadContext.addParameters(builder, this.parameters);
+    if (this.queryOptions != null) {
+      builder.setQueryOptions(this.queryOptions);
+    }
+    return builder;
   }
 
   public Builder toBuilder() {
