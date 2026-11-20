@@ -336,6 +336,7 @@ public class TestClientInitializer {
       ApiTracerFactory metricsTracerFactory, RetrySettings retrySettings) throws Exception {
     EchoStubSettings.Builder grpcEchoSettingsBuilder = EchoStubSettings.newBuilder();
     grpcEchoSettingsBuilder.echoSettings().setRetrySettings(retrySettings);
+    grpcEchoSettingsBuilder.blockSettings().setRetrySettings(retrySettings);
     EchoSettings grpcEchoSettings = EchoSettings.create(grpcEchoSettingsBuilder.build());
     grpcEchoSettings =
         grpcEchoSettings.toBuilder()
@@ -354,6 +355,7 @@ public class TestClientInitializer {
       ApiTracerFactory metricsTracerFactory, RetrySettings retrySettings) throws Exception {
     EchoStubSettings.Builder httpJsonEchoSettingsBuilder = EchoStubSettings.newHttpJsonBuilder();
     httpJsonEchoSettingsBuilder.echoSettings().setRetrySettings(retrySettings);
+    httpJsonEchoSettingsBuilder.blockSettings().setRetrySettings(retrySettings);
     EchoSettings httpJsonEchoSettings = EchoSettings.create(httpJsonEchoSettingsBuilder.build());
     httpJsonEchoSettings =
         httpJsonEchoSettings.toBuilder()
