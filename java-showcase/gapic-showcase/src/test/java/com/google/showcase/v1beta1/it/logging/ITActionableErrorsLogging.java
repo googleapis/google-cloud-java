@@ -28,7 +28,9 @@ import com.google.api.client.testing.http.MockHttpTransport;
 import com.google.api.client.testing.http.MockLowLevelHttpRequest;
 import com.google.api.client.testing.http.MockLowLevelHttpResponse;
 import com.google.api.gax.core.NoCredentialsProvider;
+import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiException;
+import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.tracing.ApiTracerFactory;
 import com.google.api.gax.tracing.CompositeTracerFactory;
 import com.google.api.gax.tracing.LoggingTracerFactory;
@@ -36,12 +38,18 @@ import com.google.api.gax.tracing.ObservabilityAttributes;
 import com.google.api.gax.tracing.OpenTelemetryMetricsFactory;
 import com.google.api.gax.tracing.OpenTelemetryTracingFactory;
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableSet;
 import com.google.protobuf.Any;
+import com.google.rpc.Code;
 import com.google.rpc.ErrorInfo;
 import com.google.rpc.Status;
+import com.google.showcase.v1beta1.AttemptSequenceRequest;
+import com.google.showcase.v1beta1.CreateSequenceRequest;
 import com.google.showcase.v1beta1.EchoClient;
 import com.google.showcase.v1beta1.EchoRequest;
 import com.google.showcase.v1beta1.EchoSettings;
+import com.google.showcase.v1beta1.Sequence;
+import com.google.showcase.v1beta1.SequenceServiceClient;
 import com.google.showcase.v1beta1.it.util.TestClientInitializer;
 import com.google.showcase.v1beta1.stub.EchoStubSettings;
 import io.grpc.CallOptions;
@@ -71,6 +79,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.TimeUnit;
+import java.util.stream.Collectors;
 import org.awaitility.Awaitility;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
@@ -565,6 +574,188 @@ public class ITActionableErrorsLogging {
         client.shutdownNow();
         client.awaitTermination(TestClientInitializer.AWAIT_TERMINATION_SECONDS, TimeUnit.SECONDS);
       }
+    }
+  }
+
+  /** Builds a Showcase {@link Sequence} returning the given status codes in order. */
+  private static Sequence buildSequence(Code... codes) {
+    Sequence.Builder builder = Sequence.newBuilder();
+    for (Code code : codes) {
+      builder.addResponses(
+          Sequence.Response.newBuilder()
+              .setStatus(Status.newBuilder().setCode(code.getNumber()).build())
+              .build());
+    }
+    return builder.build();
+  }
+
+  /** Builds deterministic {@link RetrySettings} with short delays for Showcase retry tests. */
+  private static RetrySettings buildRetrySettings(int maxAttempts) {
+    return RetrySettings.newBuilder()
+        .setInitialRetryDelayDuration(Duration.ofMillis(50L))
+        .setRetryDelayMultiplier(1.0)
+        .setMaxRetryDelayDuration(Duration.ofMillis(100L))
+        .setInitialRpcTimeoutDuration(Duration.ofSeconds(5L))
+        .setRpcTimeoutMultiplier(1.0)
+        .setMaxRpcTimeoutDuration(Duration.ofSeconds(5L))
+        .setTotalTimeoutDuration(Duration.ofSeconds(15L))
+        .setMaxAttempts(maxAttempts)
+        .setJittered(false)
+        .build();
+  }
+
+  /** Returns all captured {@link LoggingTracer} events matching the given log {@link Level}. */
+  private List<ILoggingEvent> getLoggingEventsByLevel(Level level) {
+    return testAppender.events.stream()
+        .filter(event -> event.getLevel() == level)
+        .collect(Collectors.toList());
+  }
+
+  /**
+   * Verifies that when an HTTP/JSON RPC fails once and succeeds on retry, an L4 (DEBUG) log is
+   * emitted for the failed attempt and no L3 (ERROR) log is emitted (F4.6, F5.6).
+   */
+  @Test
+  void testHttpJson_retrySucceeds_emitsL4DebugLogAndNoL3ErrorLog() throws Exception {
+    try (SequenceServiceClient sequenceClient =
+        TestClientInitializer.createHttpJsonSequenceClientWithRetrySettings(
+            buildRetrySettings(3), ImmutableSet.of(StatusCode.Code.UNAVAILABLE))) {
+      Sequence created =
+          sequenceClient.createSequence(
+              CreateSequenceRequest.newBuilder()
+                  .setSequence(buildSequence(Code.UNAVAILABLE, Code.OK))
+                  .build());
+      testAppender.clearEvents();
+
+      sequenceClient.attemptSequence(
+          AttemptSequenceRequest.newBuilder().setName(created.getName()).build());
+
+      Awaitility.await()
+          .atMost(Duration.ofSeconds(5))
+          .until(() -> !getLoggingEventsByLevel(Level.DEBUG).isEmpty());
+
+      List<ILoggingEvent> debugEvents = getLoggingEventsByLevel(Level.DEBUG);
+      assertThat(debugEvents).hasSize(1);
+      Map<String, Object> kvps = getKvps(debugEvents.get(0));
+      assertThat(kvps).containsEntry(ObservabilityAttributes.RPC_SYSTEM_NAME_ATTRIBUTE, "http");
+      assertThat(kvps)
+          .containsEntry(ObservabilityAttributes.RPC_RESPONSE_STATUS_ATTRIBUTE, "UNAVAILABLE");
+      assertThat(getLoggingEventsByLevel(Level.ERROR)).isEmpty();
+    }
+  }
+
+  /**
+   * Verifies that when an HTTP/JSON RPC exhausts all retries, an L4 (DEBUG) log is emitted for each
+   * failed attempt and a single L3 (ERROR) log is emitted for the operation failure (F4.6, F5.7).
+   */
+  @Test
+  void testHttpJson_retriesExhausted_emitsL4DebugLogsAndSingleL3ErrorLog() throws Exception {
+    try (SequenceServiceClient sequenceClient =
+        TestClientInitializer.createHttpJsonSequenceClientWithRetrySettings(
+            buildRetrySettings(2), ImmutableSet.of(StatusCode.Code.UNAVAILABLE))) {
+      Sequence created =
+          sequenceClient.createSequence(
+              CreateSequenceRequest.newBuilder()
+                  .setSequence(buildSequence(Code.UNAVAILABLE, Code.UNAVAILABLE))
+                  .build());
+      testAppender.clearEvents();
+
+      assertThrows(
+          ApiException.class,
+          () ->
+              sequenceClient.attemptSequence(
+                  AttemptSequenceRequest.newBuilder().setName(created.getName()).build()));
+
+      Awaitility.await()
+          .atMost(Duration.ofSeconds(5))
+          .until(
+              () ->
+                  getLoggingEventsByLevel(Level.DEBUG).size() >= 2
+                      && !getLoggingEventsByLevel(Level.ERROR).isEmpty());
+
+      List<ILoggingEvent> debugEvents = getLoggingEventsByLevel(Level.DEBUG);
+      List<ILoggingEvent> errorEvents = getLoggingEventsByLevel(Level.ERROR);
+      assertThat(debugEvents).hasSize(2);
+      assertThat(errorEvents).hasSize(1);
+      Map<String, Object> errorKvps = getKvps(errorEvents.get(0));
+      assertThat(errorKvps)
+          .containsEntry(ObservabilityAttributes.RPC_SYSTEM_NAME_ATTRIBUTE, "http");
+      assertThat(errorKvps)
+          .containsEntry(ObservabilityAttributes.RPC_RESPONSE_STATUS_ATTRIBUTE, "UNAVAILABLE");
+    }
+  }
+
+  /**
+   * Verifies that when a gRPC RPC fails once and succeeds on retry, an L4 (DEBUG) log is emitted
+   * for the failed attempt and no L3 (ERROR) log is emitted (F4.12, F5.13).
+   */
+  @Test
+  void testGrpc_retrySucceeds_emitsL4DebugLogAndNoL3ErrorLog() throws Exception {
+    try (SequenceServiceClient sequenceClient =
+        TestClientInitializer.createGrpcSequenceClientWithRetrySettings(
+            buildRetrySettings(3), ImmutableSet.of(StatusCode.Code.UNAVAILABLE))) {
+      Sequence created =
+          sequenceClient.createSequence(
+              CreateSequenceRequest.newBuilder()
+                  .setSequence(buildSequence(Code.UNAVAILABLE, Code.OK))
+                  .build());
+      testAppender.clearEvents();
+
+      sequenceClient.attemptSequence(
+          AttemptSequenceRequest.newBuilder().setName(created.getName()).build());
+
+      Awaitility.await()
+          .atMost(Duration.ofSeconds(5))
+          .until(() -> !getLoggingEventsByLevel(Level.DEBUG).isEmpty());
+
+      List<ILoggingEvent> debugEvents = getLoggingEventsByLevel(Level.DEBUG);
+      assertThat(debugEvents).hasSize(1);
+      Map<String, Object> kvps = getKvps(debugEvents.get(0));
+      assertThat(kvps).containsEntry(ObservabilityAttributes.RPC_SYSTEM_NAME_ATTRIBUTE, "grpc");
+      assertThat(kvps)
+          .containsEntry(ObservabilityAttributes.RPC_RESPONSE_STATUS_ATTRIBUTE, "UNAVAILABLE");
+      assertThat(getLoggingEventsByLevel(Level.ERROR)).isEmpty();
+    }
+  }
+
+  /**
+   * Verifies that when a gRPC RPC exhausts all retries, an L4 (DEBUG) log is emitted for each
+   * failed attempt and a single L3 (ERROR) log is emitted for the operation failure (F4.12, F5.14).
+   */
+  @Test
+  void testGrpc_retriesExhausted_emitsL4DebugLogsAndSingleL3ErrorLog() throws Exception {
+    try (SequenceServiceClient sequenceClient =
+        TestClientInitializer.createGrpcSequenceClientWithRetrySettings(
+            buildRetrySettings(2), ImmutableSet.of(StatusCode.Code.UNAVAILABLE))) {
+      Sequence created =
+          sequenceClient.createSequence(
+              CreateSequenceRequest.newBuilder()
+                  .setSequence(buildSequence(Code.UNAVAILABLE, Code.UNAVAILABLE))
+                  .build());
+      testAppender.clearEvents();
+
+      assertThrows(
+          ApiException.class,
+          () ->
+              sequenceClient.attemptSequence(
+                  AttemptSequenceRequest.newBuilder().setName(created.getName()).build()));
+
+      Awaitility.await()
+          .atMost(Duration.ofSeconds(5))
+          .until(
+              () ->
+                  getLoggingEventsByLevel(Level.DEBUG).size() >= 2
+                      && !getLoggingEventsByLevel(Level.ERROR).isEmpty());
+
+      List<ILoggingEvent> debugEvents = getLoggingEventsByLevel(Level.DEBUG);
+      List<ILoggingEvent> errorEvents = getLoggingEventsByLevel(Level.ERROR);
+      assertThat(debugEvents).hasSize(2);
+      assertThat(errorEvents).hasSize(1);
+      Map<String, Object> errorKvps = getKvps(errorEvents.get(0));
+      assertThat(errorKvps)
+          .containsEntry(ObservabilityAttributes.RPC_SYSTEM_NAME_ATTRIBUTE, "grpc");
+      assertThat(errorKvps)
+          .containsEntry(ObservabilityAttributes.RPC_RESPONSE_STATUS_ATTRIBUTE, "UNAVAILABLE");
     }
   }
 }
