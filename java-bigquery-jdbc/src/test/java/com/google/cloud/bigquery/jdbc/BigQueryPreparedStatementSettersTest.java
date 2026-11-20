@@ -19,6 +19,7 @@ package com.google.cloud.bigquery.jdbc;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -38,9 +39,12 @@ import com.google.cloud.bigquery.StandardSQLTypeName;
 import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import com.google.cloud.bigquery.jdbc.telemetry.v1.DriverFeature;
 import com.google.cloud.bigquery.jdbc.telemetry.v1.TelemetryManager;
-import com.google.gson.Gson;
-import com.google.gson.JsonNull;
-import com.google.gson.JsonObject;
+import com.google.cloud.bigquery.storage.v1.BQTableSchemaToProtoDescriptor;
+import com.google.cloud.bigquery.storage.v1.TableFieldSchema;
+import com.google.cloud.bigquery.storage.v1.TableSchema;
+import com.google.protobuf.ByteString;
+import com.google.protobuf.Descriptors.Descriptor;
+import com.google.protobuf.DynamicMessage;
 import java.sql.Array;
 import java.sql.Date;
 import java.sql.ParameterMetaData;
@@ -359,10 +363,10 @@ public class BigQueryPreparedStatementSettersTest {
     assertEquals(StandardSQLTypeName.STRING, config.getPositionalParameters().get(0).getType());
   }
 
-  // Verifies Storage Write API JSON row serialization maps null parameter values to
-  // JsonNull.INSTANCE.
+  // Verifies ProtoRows DynamicMessage row encoding leaves optional fields unset for null values
+  // and resolves placeholder field names for non-ASCII / hyphenated column names.
   @Test
-  public void testCreateJsonRowWithSetObjectNull() throws Exception {
+  public void testEncodeProtoRowWithSetObjectNullAndNonAsciiColumn() throws Exception {
     preparedStatement.setObject(1, null);
     preparedStatement.setInt(2, 42);
     preparedStatement.setString(3, "test");
@@ -373,17 +377,50 @@ public class BigQueryPreparedStatementSettersTest {
         FieldList.of(
             Field.of("col1", StandardSQLTypeName.STRING),
             Field.of("col2", StandardSQLTypeName.INT64),
-            Field.of("col3", StandardSQLTypeName.STRING),
+            Field.of("col-é", StandardSQLTypeName.STRING),
             Field.of("col4", StandardSQLTypeName.FLOAT64),
             Field.of("col5", StandardSQLTypeName.BOOL));
-
-    ArrayList<BigQueryJdbcParameter> params = preparedStatement.parameterHandler.parametersList;
-    JsonObject jsonRow = BigQueryPreparedStatement.createJsonRow(fieldList, params, new Gson());
-
-    assertNotNull(jsonRow);
-    assertEquals(JsonNull.INSTANCE, jsonRow.get("col1"));
-    assertTrue(jsonRow.get("col1").isJsonNull());
-    assertEquals("42", jsonRow.get("col2").getAsString());
+    TableSchema tableSchema =
+        TableSchema.newBuilder()
+            .addFields(
+                TableFieldSchema.newBuilder()
+                    .setName("col1")
+                    .setType(TableFieldSchema.Type.STRING)
+                    .setMode(TableFieldSchema.Mode.NULLABLE))
+            .addFields(
+                TableFieldSchema.newBuilder()
+                    .setName("col2")
+                    .setType(TableFieldSchema.Type.INT64)
+                    .setMode(TableFieldSchema.Mode.NULLABLE))
+            .addFields(
+                TableFieldSchema.newBuilder()
+                    .setName("col-é")
+                    .setType(TableFieldSchema.Type.STRING)
+                    .setMode(TableFieldSchema.Mode.NULLABLE))
+            .addFields(
+                TableFieldSchema.newBuilder()
+                    .setName("col4")
+                    .setType(TableFieldSchema.Type.DOUBLE)
+                    .setMode(TableFieldSchema.Mode.NULLABLE))
+            .addFields(
+                TableFieldSchema.newBuilder()
+                    .setName("col5")
+                    .setType(TableFieldSchema.Type.BOOL)
+                    .setMode(TableFieldSchema.Mode.NULLABLE))
+            .build();
+    Descriptor descriptor =
+        BQTableSchemaToProtoDescriptor.convertBQTableSchemaToProtoDescriptor(tableSchema);
+    BigQueryWriteApiProtoEncoder.ResolvedColumn[] cols =
+        BigQueryWriteApiProtoEncoder.resolveColumns(descriptor, fieldList);
+    ByteString encoded =
+        BigQueryWriteApiProtoEncoder.encodeRow(
+            descriptor, cols, preparedStatement.parameterHandler.parametersList);
+    DynamicMessage msg = DynamicMessage.parseFrom(descriptor, encoded);
+    assertFalse(msg.hasField(cols[0].fieldDescriptor));
+    assertEquals(42L, msg.getField(cols[1].fieldDescriptor));
+    assertEquals("test", msg.getField(cols[2].fieldDescriptor));
+    assertEquals(3.14d, msg.getField(cols[3].fieldDescriptor));
+    assertEquals(true, msg.getField(cols[4].fieldDescriptor));
   }
 
   @Test

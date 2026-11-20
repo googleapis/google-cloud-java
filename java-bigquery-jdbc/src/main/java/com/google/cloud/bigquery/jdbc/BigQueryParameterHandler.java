@@ -222,7 +222,7 @@ class BigQueryParameterHandler {
   }
 
   /** Renders an absolute instant as UTC wall-clock digits with a trailing 'Z'. */
-  private static String formatInstantUtc(Instant instant, boolean enableTimestampPicos) {
+  static String formatInstantUtc(Instant instant, boolean enableTimestampPicos) {
     // Fixed-width 'S' truncates (does not round), matching the legacy nanos/1000*1000 behaviour.
     return (enableTimestampPicos ? TIMESTAMP_NANOS_UTC : TIMESTAMP_MICROS_UTC)
         .format(instant.atOffset(ZoneOffset.UTC));

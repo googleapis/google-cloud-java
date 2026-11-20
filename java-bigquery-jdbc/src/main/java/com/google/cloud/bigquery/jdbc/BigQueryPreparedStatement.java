@@ -37,11 +37,9 @@ import com.google.cloud.bigquery.jdbc.telemetry.v1.TelemetryManager;
 import com.google.cloud.bigquery.storage.v1.BatchCommitWriteStreamsRequest;
 import com.google.cloud.bigquery.storage.v1.BatchCommitWriteStreamsResponse;
 import com.google.cloud.bigquery.storage.v1.BigQueryWriteClient;
+import com.google.cloud.bigquery.storage.v1.ProtoRows;
 import com.google.cloud.bigquery.storage.v1.TableName;
-import com.google.gson.Gson;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonNull;
-import com.google.gson.JsonObject;
+import com.google.protobuf.Descriptors.Descriptor;
 import com.google.protobuf.Descriptors.DescriptorValidationException;
 import java.io.IOException;
 import java.io.InputStream;
@@ -540,71 +538,60 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
     RetrySettings retrySettings = this.connection.getRetrySettings();
 
     BigQueryJdbcBulkInsertWriter bulkInsertWriter = createBulkInsertWriter();
-    bulkInsertWriter.initialize(this.insertTableName, bigQueryWriteClient, retrySettings);
-
+    boolean cleanedUp = false;
     try {
+      bulkInsertWriter.initialize(this.insertTableName, bigQueryWriteClient, retrySettings);
+
       long offset = 0;
-      JsonArray jsonArray = new JsonArray();
-      Gson gson = new Gson();
+      ProtoRows.Builder protoRowsBuilder = ProtoRows.newBuilder();
+      FieldList fieldLists = this.insertSchema.getFields();
+      Descriptor descriptor = bulkInsertWriter.getDescriptor();
+      BigQueryWriteApiProtoEncoder.ResolvedColumn[] resolvedColumns =
+          BigQueryWriteApiProtoEncoder.resolveColumns(descriptor, fieldLists);
       int count = this.batchParameters.size();
       for (int i = 0; i < count; i++) {
-
         ArrayList<BigQueryJdbcParameter> parameterList = this.batchParameters.poll();
-        FieldList fieldLists = this.insertSchema.getFields();
-        if (fieldLists.size() == parameterList.size()) {
-
-          JsonObject rowObject = createJsonRow(fieldLists, parameterList, gson);
-          jsonArray.add(rowObject);
-
-          if (jsonArray.size() == this.querySettings.getWriteAPIAppendRowCount()
-              || this.batchParameters.size() == 0) {
-            bulkInsertWriter.append(jsonArray, offset);
-            LOG.finer("Append called ");
-            offset += jsonArray.size();
-            jsonArray = new JsonArray();
-          }
-        } else {
+        if (fieldLists.size() != parameterList.size()) {
           throw new BigQueryJdbcException("Mismatch between field count and parameter count.");
         }
+
+        protoRowsBuilder.addSerializedRows(
+            BigQueryWriteApiProtoEncoder.encodeRow(descriptor, resolvedColumns, parameterList));
+
+        if (protoRowsBuilder.getSerializedRowsCount()
+                == this.querySettings.getWriteAPIAppendRowCount()
+            || this.batchParameters.isEmpty()) {
+          bulkInsertWriter.append(protoRowsBuilder.build(), offset);
+          LOG.finer("Append called ");
+          offset += protoRowsBuilder.getSerializedRowsCount();
+          protoRowsBuilder = ProtoRows.newBuilder();
+        }
       }
-    } catch (BigQueryJdbcException e) {
-      throw new BigQueryJdbcException("BigQueryJdbcException during bulkInsertWithWriteAPI", e);
-    }
 
-    long rowCount = bulkInsertWriter.cleanup(bigQueryWriteClient);
+      long rowCount = bulkInsertWriter.cleanup(bigQueryWriteClient);
+      cleanedUp = true;
 
-    BatchCommitWriteStreamsRequest commitRequest =
-        BatchCommitWriteStreamsRequest.newBuilder()
-            .setParent(this.insertTableName.toString())
-            .addWriteStreams(bulkInsertWriter.getStreamName())
-            .build();
-    BatchCommitWriteStreamsResponse commitResponse =
-        bigQueryWriteClient.batchCommitWriteStreams(commitRequest);
-    if (!commitResponse.hasCommitTime()) {
-      String details =
-          commitResponse.getStreamErrorsList().isEmpty()
-              ? ""
-              : ": " + commitResponse.getStreamErrorsList();
-      throw new BigQueryJdbcException("Error committing the streams" + details);
-    }
-    LOG.finer("Commit called.");
-    return rowCount;
-  }
-
-  static JsonObject createJsonRow(
-      FieldList fieldLists, List<BigQueryJdbcParameter> parameterList, Gson gson) {
-    JsonObject rowObject = new JsonObject();
-    for (int j = 0; j < parameterList.size(); j++) {
-      BigQueryJdbcParameter parameter = parameterList.get(j);
-      if (parameter.getValue() == null) {
-        rowObject.add(fieldLists.get(j).getName(), JsonNull.INSTANCE);
-      } else if (parameter.getSqlType() == StandardSQLTypeName.STRING) {
-        rowObject.addProperty(fieldLists.get(j).getName(), parameter.getValue().toString());
-      } else {
-        rowObject.addProperty(fieldLists.get(j).getName(), gson.toJson(parameter.getValue()));
+      BatchCommitWriteStreamsRequest commitRequest =
+          BatchCommitWriteStreamsRequest.newBuilder()
+              .setParent(this.insertTableName.toString())
+              .addWriteStreams(bulkInsertWriter.getStreamName())
+              .build();
+      BatchCommitWriteStreamsResponse commitResponse =
+          bigQueryWriteClient.batchCommitWriteStreams(commitRequest);
+      if (!commitResponse.hasCommitTime()) {
+        String details =
+            commitResponse.getStreamErrorsList().isEmpty()
+                ? ""
+                : ": " + commitResponse.getStreamErrorsList();
+        throw new BigQueryJdbcException("Error committing the streams" + details);
+      }
+      LOG.finer("Commit called.");
+      return rowCount;
+    } finally {
+      if (!cleanedUp) {
+        bulkInsertWriter.closeQuietly();
       }
     }
-    return rowObject;
   }
 
   QueryJobConfiguration getWriteBatchJobConfiguration(

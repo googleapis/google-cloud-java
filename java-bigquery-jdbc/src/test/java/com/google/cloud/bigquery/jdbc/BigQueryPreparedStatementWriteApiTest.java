@@ -50,10 +50,14 @@ import com.google.cloud.bigquery.jdbc.telemetry.v1.QueryApiType;
 import com.google.cloud.bigquery.jdbc.telemetry.v1.StatementExecution;
 import com.google.cloud.bigquery.jdbc.telemetry.v1.Status;
 import com.google.cloud.bigquery.jdbc.telemetry.v1.TelemetryManager;
+import com.google.cloud.bigquery.storage.v1.BQTableSchemaToProtoDescriptor;
 import com.google.cloud.bigquery.storage.v1.BatchCommitWriteStreamsRequest;
 import com.google.cloud.bigquery.storage.v1.BatchCommitWriteStreamsResponse;
 import com.google.cloud.bigquery.storage.v1.BigQueryWriteClient;
 import com.google.cloud.bigquery.storage.v1.StorageError;
+import com.google.cloud.bigquery.storage.v1.TableFieldSchema;
+import com.google.cloud.bigquery.storage.v1.TableSchema;
+import com.google.protobuf.Descriptors.Descriptor;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.Collections;
@@ -163,8 +167,18 @@ public class BigQueryPreparedStatementWriteApiTest {
         .create(any(JobInfo.class));
 
     BigQueryWriteClient writeClient = stubCommitClient(true);
+    Descriptor singleStrDescriptor =
+        BQTableSchemaToProtoDescriptor.convertBQTableSchemaToProtoDescriptor(
+            TableSchema.newBuilder()
+                .addFields(
+                    TableFieldSchema.newBuilder()
+                        .setName("c1")
+                        .setType(TableFieldSchema.Type.STRING)
+                        .setMode(TableFieldSchema.Mode.NULLABLE))
+                .build());
     BigQueryJdbcBulkInsertWriter okWriter = mock(BigQueryJdbcBulkInsertWriter.class);
     when(okWriter.getStreamName()).thenReturn(STREAM_NAME);
+    when(okWriter.getDescriptor()).thenReturn(singleStrDescriptor);
     when(okWriter.cleanup(writeClient)).thenReturn(3L);
 
     BigQueryPreparedStatement ps = newStatementWithWriter("INSERT INTO TAB VALUES (?)", okWriter);
@@ -212,6 +226,7 @@ public class BigQueryPreparedStatementWriteApiTest {
       psIo.addBatch();
     }
     assertSame(ioEx, assertThrows(BigQueryJdbcException.class, psIo::executeBatch).getCause());
+    verify(ioFailWriter, times(1)).closeQuietly();
 
     BigQueryJdbcBulkInsertWriter interruptWriter = mock(BigQueryJdbcBulkInsertWriter.class);
     doThrow(new InterruptedException("stop")).when(interruptWriter).initialize(any(), any(), any());
