@@ -335,7 +335,10 @@ public class BigQueryJdbcCustomLoggerTest extends BigQueryJdbcLoggingBaseTest {
         BigQueryJdbcResultSetLogger.getLogger(BigQueryBaseResultSet.class);
     BigQueryJdbcResultSetLogger globalLogger2 =
         BigQueryJdbcResultSetLogger.getLogger(BigQueryBaseResultSet.class);
+    BigQueryJdbcResultSetLogger emptyIdLogger =
+        BigQueryJdbcResultSetLogger.getLogger(BigQueryBaseResultSet.class, "");
     assertSame(globalLogger1, globalLogger2);
+    assertSame(globalLogger1, emptyIdLogger);
     // Connection-scoped facades are distinct lightweight objects, but they all forward to the
     // single registered logger for the class — that is what prevents the registration leak.
     BigQueryJdbcResultSetLogger connLogger1 =
@@ -360,14 +363,17 @@ public class BigQueryJdbcCustomLoggerTest extends BigQueryJdbcLoggingBaseTest {
       LogRecord record = new LogRecord(Level.INFO, "Processing job {0}");
       record.setParameters(new Object[] {"job-999"});
       rsLogger.log(record);
+      // Calling log() again with an already-stamped record must be idempotent.
+      rsLogger.log(record);
 
       List<LogRecord> records = rsHandler.getRecords();
-      assertEquals(1, records.size());
-      LogRecord loggedRecord = records.get(0);
+      assertEquals(2, records.size());
+      LogRecord loggedRecord = records.get(1);
 
       Object[] params = loggedRecord.getParameters();
       assertEquals(2, params.length);
-      assertEquals("conn-123", params[0]);
+      assertTrue(params[0] instanceof ConnectionLogContext);
+      assertEquals("conn-123", ((ConnectionLogContext) params[0]).connectionId());
       assertEquals("job-999", params[1]);
     } finally {
       rsLogger.delegate().removeHandler(rsHandler);
@@ -394,7 +400,9 @@ public class BigQueryJdbcCustomLoggerTest extends BigQueryJdbcLoggingBaseTest {
       capturedLogs.clear();
       action.run();
       assertEquals(1, capturedLogs.size());
-      assertEquals(connectionId, capturedLogs.get(0).getParameters()[0]);
+      Object firstParam = capturedLogs.get(0).getParameters()[0];
+      assertTrue(firstParam instanceof ConnectionLogContext);
+      assertEquals(connectionId, ((ConnectionLogContext) firstParam).connectionId());
       assertTrue(assertLogContains(expectedMessage));
     } finally {
       BigQueryJdbcRootLogger.getRootLogger().setLevel(originalRootLevel);

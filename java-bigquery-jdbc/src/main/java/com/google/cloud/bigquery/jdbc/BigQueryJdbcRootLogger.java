@@ -25,6 +25,7 @@ import java.lang.management.ManagementFactory;
 import java.time.Instant;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.logging.ConsoleHandler;
 import java.util.logging.Formatter;
 import java.util.logging.Handler;
@@ -43,8 +44,10 @@ class BigQueryJdbcRootLogger {
 
   private static final Logger storageLogger = Logger.getLogger("com.google.cloud.bigquery.storage");
   private static final boolean isTest = Boolean.getBoolean("JDBC_TESTS");
+  private static final ConcurrentHashMap<String, ConnectionLogContext> ACTIVE_CONNECTIONS =
+      new ConcurrentHashMap<>();
 
-  private static Handler fileHandler = null;
+  private static volatile Handler fileHandler = null;
 
   static final String PROCESS_ID = ManagementFactory.getRuntimeMXBean().getName().split("@")[0];
 
@@ -104,9 +107,9 @@ class BigQueryJdbcRootLogger {
         String date = DATE_FORMATTER.format(Instant.ofEpochMilli(record.getMillis()));
         String connectionId = BigQueryJdbcMdc.getConnectionId();
         if (connectionId == null || connectionId.isEmpty()) {
-          Object[] params = record.getParameters();
-          if (params != null && params.length > 0 && params[0] instanceof String) {
-            connectionId = (String) params[0];
+          ConnectionLogContext context = ConnectionLogContext.extractFromParameters(record);
+          if (context != null) {
+            connectionId = context.connectionId();
           }
         }
         String connStr =
@@ -162,7 +165,7 @@ class BigQueryJdbcRootLogger {
     return logger;
   }
 
-  public static void setLevel(Level level, String logPath) throws IOException {
+  public static synchronized void setLevel(Level level, String logPath) throws IOException {
     if (level != Level.OFF) {
       if (logPath != null) {
         setPath(logPath, level);
@@ -177,7 +180,7 @@ class BigQueryJdbcRootLogger {
     logger.setLevel(level);
   }
 
-  static void setPath(String logPath, Level level) {
+  static synchronized void setPath(String logPath, Level level) {
     try {
       if (logPath == null) {
         logPath = "";
@@ -201,9 +204,46 @@ class BigQueryJdbcRootLogger {
     }
   }
 
+  static ConnectionLogContext registerConnection(String connectionId) {
+    if (connectionId == null || connectionId.isEmpty()) {
+      return null;
+    }
+    ConnectionLogContext context =
+        ACTIVE_CONNECTIONS.computeIfAbsent(
+            connectionId, id -> new ConnectionLogContext(id, ConnectionLogContext.ALL_VALUE));
+    Handler currentHandler = fileHandler;
+    if (currentHandler instanceof PerConnectionFileHandler) {
+      ((PerConnectionFileHandler) currentHandler).registerConnection(connectionId);
+    }
+    return context;
+  }
+
+  static ConnectionLogContext findActiveContext(String connectionId) {
+    if (connectionId == null || connectionId.isEmpty()) {
+      return null;
+    }
+    return ACTIVE_CONNECTIONS.get(connectionId);
+  }
+
+  static boolean isConnectionActive(String connectionId) {
+    return connectionId != null && ACTIVE_CONNECTIONS.containsKey(connectionId);
+  }
+
+  static int activeConnectionCount() {
+    return ACTIVE_CONNECTIONS.size();
+  }
+
   public static void closeConnectionHandler(String connectionId) {
-    if (fileHandler instanceof PerConnectionFileHandler) {
-      ((PerConnectionFileHandler) fileHandler).closeHandler(connectionId);
+    if (connectionId == null) {
+      return;
+    }
+    ConnectionLogContext removed = ACTIVE_CONNECTIONS.remove(connectionId);
+    if (removed != null) {
+      removed.setLevelValue(ConnectionLogContext.OFF_VALUE);
+    }
+    Handler currentHandler = fileHandler;
+    if (currentHandler instanceof PerConnectionFileHandler) {
+      ((PerConnectionFileHandler) currentHandler).closeHandler(connectionId);
     }
   }
 }
