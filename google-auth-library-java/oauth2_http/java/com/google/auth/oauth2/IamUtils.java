@@ -207,27 +207,24 @@ class IamUtils {
    * error.
    */
   private static String parseErrorMessage(HttpResponse response) {
+    GenericData responseError;
     try {
-      if (response.getContent() != null) {
-        GenericData responseError = response.parseAs(GenericData.class);
-        if (responseError != null) {
-          Object error = responseError.get("error");
-          if (error instanceof Map) {
-            Object message = ((Map<?, ?>) error).get("message");
-            if (message instanceof String && !((String) message).isEmpty()) {
-              return (String) message;
-            }
-          }
-        }
+      if (response.getContent() == null) {
+        return getStatusMessageOrDefault(response);
       }
+      responseError = response.parseAs(GenericData.class);
     } catch (IOException | IllegalArgumentException e) {
       // Empty body ("no JSON input found"), non-JSON body (for example, an HTML error page from a
-      // proxy), or unreadable stream: fall back to the HTTP status message below.
-    } finally {
-      try {
-        response.disconnect();
-      } catch (IOException ignored) {
-        // Best-effort cleanup before throwing the 4xx error.
+      // proxy), or unreadable stream.
+      return getStatusMessageOrDefault(response);
+    }
+    if (responseError != null) {
+      Object error = responseError.get("error");
+      if (error instanceof Map) {
+        Object message = ((Map<?, ?>) error).get("message");
+        if (message instanceof String && !((String) message).isEmpty()) {
+          return (String) message;
+        }
       }
     }
     return getStatusMessageOrDefault(response);
