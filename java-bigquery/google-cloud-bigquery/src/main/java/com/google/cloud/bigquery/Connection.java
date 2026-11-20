@@ -49,7 +49,7 @@ public interface Connection {
    * <pre>{@code
    * ConnectionSettings connectionSettings =
    *     ConnectionSettings.newBuilder()
-   *         .setRequestTimeout(10L)
+   *         .setRequestTimeout(10000L)
    *         .setMaxResults(100L)
    *         .setUseQueryCache(true)
    *         .build();
@@ -112,7 +112,7 @@ public interface Connection {
    *   throw executeSelectRes.getBigQuerySQLException();
    * }
    *
-   * BigQueryResult bigQueryResult = executeSelectRes.getBigQueryResult();
+   * BigQueryResult bigQueryResult = executeSelectRes.getResultSet();
    * ResultSet rs = bigQueryResult.getResultSet();
    * while (rs.next()) {
    *   System.out.println(rs.getString("corpus"));
@@ -161,7 +161,7 @@ public interface Connection {
    *   throw executeSelectRes.getBigQuerySQLException();
    * }
    *
-   * BigQueryResult bigQueryResult = executeSelectRes.getBigQueryResult();
+   * BigQueryResult bigQueryResult = executeSelectRes.getResultSet();
    * ResultSet rs = bigQueryResult.getResultSet();
    * while (rs.next()) {
    *   System.out.println(rs.getString("StringField"));

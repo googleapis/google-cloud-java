@@ -288,7 +288,7 @@ class ConnectionImpl implements Connection {
    *   throw executeSelectRes.getBigQuerySQLException();
    * }
    *
-   * BigQueryResult bigQueryResult = executeSelectRes.getBigQueryResult();
+   * BigQueryResult bigQueryResult = executeSelectRes.getResultSet();
    * ResultSet rs = bigQueryResult.getResultSet();
    * while (rs.next()) {
    *   System.out.println(rs.getString("corpus"));
@@ -401,7 +401,7 @@ class ConnectionImpl implements Connection {
    *   throw executeSelectRes.getBigQuerySQLException();
    * }
    *
-   * BigQueryResult bigQueryResult = executeSelectRes.getBigQueryResult();
+   * BigQueryResult bigQueryResult = executeSelectRes.getResultSet();
    * ResultSet rs = bigQueryResult.getResultSet();
    * while (rs.next()) {
    *   System.out.println(rs.getString("StringField"));

@@ -647,7 +647,7 @@ public interface BigQuery extends Service<BigQueryOptions>, AutoCloseable {
     }
   }
 
-  /** Class for specifying job get and create options. */
+  /** Class for specifying job get, create, and query options. */
   class JobOption extends Option {
 
     private static final long serialVersionUID = -3111736712316353664L;
