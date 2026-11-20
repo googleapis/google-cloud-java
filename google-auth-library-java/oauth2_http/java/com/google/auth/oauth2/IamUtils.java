@@ -196,28 +196,41 @@ class IamUtils {
   }
 
   /**
-   * Returns the error message from an IAM Credentials 4xx response.
+   * Returns the error message from an IAM Credentials 4xx response, or falls back to the HTTP
+   * status message when the body is missing, empty, not JSON, or lacks {@code error.message}.
    *
-   * <p>The response can have no content or an empty body. For example, {@code HttpURLConnection}
-   * (used by {@code NetHttpTransport}) discards the body of a 401 or 407 response to a request sent
-   * in streaming mode, which includes every POST with content, and of any response with {@code
-   * Content-Length: 0}. In those cases, the HTTP status message is returned instead of failing with
-   * a {@link NullPointerException} or {@link IllegalArgumentException} while parsing.
+   * <p>For example, {@code HttpURLConnection} (used by {@code NetHttpTransport}) discards the body
+   * of a 401 or 407 response to a request sent in streaming mode (every POST with content) and of
+   * any response with {@code Content-Length: 0}, and proxies can return HTML or other non-IAM
+   * bodies. Falling back preserves the HTTP status code in the caller's {@link IOException} instead
+   * of failing with a {@link NullPointerException}, {@link IllegalArgumentException}, or JSON parse
+   * error.
    */
-  private static String parseErrorMessage(HttpResponse response) throws IOException {
-    if (response.getContent() == null) {
-      return getStatusMessageOrDefault(response);
-    }
-    GenericData responseError;
+  private static String parseErrorMessage(HttpResponse response) {
     try {
-      responseError = response.parseAs(GenericData.class);
-    } catch (IllegalArgumentException e) {
-      // The JSON parser throws IllegalArgumentException for an empty body ("no JSON input found").
-      return getStatusMessageOrDefault(response);
+      if (response.getContent() != null) {
+        GenericData responseError = response.parseAs(GenericData.class);
+        if (responseError != null) {
+          Object error = responseError.get("error");
+          if (error instanceof Map) {
+            Object message = ((Map<?, ?>) error).get("message");
+            if (message instanceof String && !((String) message).isEmpty()) {
+              return (String) message;
+            }
+          }
+        }
+      }
+    } catch (IOException | IllegalArgumentException e) {
+      // Empty body ("no JSON input found"), non-JSON body (for example, an HTML error page from a
+      // proxy), or unreadable stream: fall back to the HTTP status message below.
+    } finally {
+      try {
+        response.disconnect();
+      } catch (IOException ignored) {
+        // Best-effort cleanup before throwing the 4xx error.
+      }
     }
-    Map<String, Object> error =
-        OAuth2Utils.validateMap(responseError, "error", PARSE_ERROR_MESSAGE);
-    return OAuth2Utils.validateString(error, "message", PARSE_ERROR_MESSAGE);
+    return getStatusMessageOrDefault(response);
   }
 
   private static String getStatusMessageOrDefault(HttpResponse response) {

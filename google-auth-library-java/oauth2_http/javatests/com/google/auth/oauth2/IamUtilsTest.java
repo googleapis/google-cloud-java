@@ -412,9 +412,9 @@ class IamUtilsTest {
   }
 
   @Test
-  void sign_4xxErrorWithJsonNullBody_throwsSigningExceptionNotNullPointerException() {
-    // A JSON null body parses to Data.nullOf(GenericData.class), not a Java null, so the missing
-    // "error" field is reported as a parse error with the status code.
+  void sign_4xxErrorWithJsonNullBody_usesStatusMessage() {
+    // A JSON null body parses to Data.nullOf(GenericData.class), not a Java null, and has no
+    // "error.message" field, so it falls back to the HTTP status message with the status code.
     MockHttpTransport transport =
         new MockHttpTransport.Builder()
             .setLowLevelHttpResponse(
@@ -437,8 +437,122 @@ class IamUtilsTest {
                     new byte[] {0xD, 0xE, 0xA, 0xD},
                     ImmutableMap.of()));
     assertTrue(exception.getCause() instanceof IOException);
-    assertTrue(
-        exception.getCause().getMessage().startsWith("Error parsing error message response."),
+    assertEquals(
+        "Error code 401 trying to sign provided bytes: Unauthorized",
         exception.getCause().getMessage());
+  }
+
+  @Test
+  void sign_4xxErrorWithHtmlBody_usesStatusMessage() {
+    MockHttpTransport transport =
+        new MockHttpTransport.Builder()
+            .setLowLevelHttpResponse(
+                new MockLowLevelHttpResponse()
+                    .setStatusCode(HttpStatusCodes.STATUS_CODE_FORBIDDEN)
+                    .setReasonPhrase("Forbidden")
+                    .setContentType("text/html")
+                    .setContent("<html><body><h1>403 Forbidden</h1></body></html>"))
+            .build();
+
+    ServiceAccountSigner.SigningException exception =
+        assertThrows(
+            ServiceAccountSigner.SigningException.class,
+            () ->
+                IamUtils.sign(
+                    CLIENT_EMAIL,
+                    credentials,
+                    Credentials.GOOGLE_DEFAULT_UNIVERSE,
+                    transport,
+                    new byte[] {0xD, 0xE, 0xA, 0xD},
+                    ImmutableMap.of()));
+    assertTrue(exception.getCause() instanceof IOException);
+    assertEquals(
+        "Error code 403 trying to sign provided bytes: Forbidden",
+        exception.getCause().getMessage());
+  }
+
+  @Test
+  void sign_4xxErrorWithEmptyJsonObject_usesStatusMessage() {
+    MockHttpTransport transport =
+        new MockHttpTransport.Builder()
+            .setLowLevelHttpResponse(
+                new MockLowLevelHttpResponse()
+                    .setStatusCode(HttpStatusCodes.STATUS_CODE_UNAUTHORIZED)
+                    .setReasonPhrase("Unauthorized")
+                    .setContentType("application/json")
+                    .setContent("{}"))
+            .build();
+
+    ServiceAccountSigner.SigningException exception =
+        assertThrows(
+            ServiceAccountSigner.SigningException.class,
+            () ->
+                IamUtils.sign(
+                    CLIENT_EMAIL,
+                    credentials,
+                    Credentials.GOOGLE_DEFAULT_UNIVERSE,
+                    transport,
+                    new byte[] {0xD, 0xE, 0xA, 0xD},
+                    ImmutableMap.of()));
+    assertTrue(exception.getCause() instanceof IOException);
+    assertEquals(
+        "Error code 401 trying to sign provided bytes: Unauthorized",
+        exception.getCause().getMessage());
+  }
+
+  @Test
+  void getIdToken_4xxErrorWithHtmlBody_usesStatusMessage() {
+    MockHttpTransport transport =
+        new MockHttpTransport.Builder()
+            .setLowLevelHttpResponse(
+                new MockLowLevelHttpResponse()
+                    .setStatusCode(HttpStatusCodes.STATUS_CODE_FORBIDDEN)
+                    .setReasonPhrase("Forbidden")
+                    .setContentType("text/html")
+                    .setContent("<html><body><h1>403 Forbidden</h1></body></html>"))
+            .build();
+
+    IOException exception =
+        assertThrows(
+            IOException.class,
+            () ->
+                IamUtils.getIdToken(
+                    CLIENT_EMAIL,
+                    credentials,
+                    transport,
+                    "https://example.com",
+                    false,
+                    ImmutableMap.of(),
+                    CredentialTypeForMetrics.SERVICE_ACCOUNT_CREDENTIALS_AT,
+                    Credentials.GOOGLE_DEFAULT_UNIVERSE));
+    assertEquals("Error code 403 trying to getIDToken: Forbidden", exception.getMessage());
+  }
+
+  @Test
+  void getIdToken_4xxErrorWithJsonMissingMessage_usesStatusMessage() {
+    MockHttpTransport transport =
+        new MockHttpTransport.Builder()
+            .setLowLevelHttpResponse(
+                new MockLowLevelHttpResponse()
+                    .setStatusCode(HttpStatusCodes.STATUS_CODE_FORBIDDEN)
+                    .setReasonPhrase("Forbidden")
+                    .setContentType("application/json")
+                    .setContent("{\"error\": {\"code\": 403}}"))
+            .build();
+
+    IOException exception =
+        assertThrows(
+            IOException.class,
+            () ->
+                IamUtils.getIdToken(
+                    CLIENT_EMAIL,
+                    credentials,
+                    transport,
+                    "https://example.com",
+                    false,
+                    ImmutableMap.of(),
+                    CredentialTypeForMetrics.SERVICE_ACCOUNT_CREDENTIALS_AT,
+                    Credentials.GOOGLE_DEFAULT_UNIVERSE));
+    assertEquals("Error code 403 trying to getIDToken: Forbidden", exception.getMessage());
   }
 }
