@@ -427,6 +427,14 @@ public class StatementParserTest {
         "SELECT 1$$--comment\n$$", parser.removeCommentsAndTrim("SELECT 1$$--comment\n$$"));
     assertEquals("SELECT 1$$it's$$", parser.removeCommentsAndTrim("SELECT 1$$it's$$"));
     assertEquals(ImmutableSet.of("$1"), pgParser.getQueryParameters("SELECT $1$$2$$"));
+
+    // Dollar-quoted literal immediately following a scientific-notation numeric literal.
+    assertEquals(
+        "SELECT 10e2$$--comment\n$$", parser.removeCommentsAndTrim("SELECT 10e2$$--comment\n$$"));
+    assertEquals("SELECT 10e2$$it's$$", parser.removeCommentsAndTrim("SELECT 10e2$$it's$$"));
+    assertFalse(
+        parser.parse(Statement.of("UPDATE t SET a = 10e2$$ RETURNING $$")).hasReturningClause());
+    assertEquals(ImmutableSet.of(), pgParser.getQueryParameters("SELECT 10e2$$1$$"));
   }
 
   @Test
@@ -471,10 +479,11 @@ public class StatementParserTest {
     assertEquals("col1$tag$a$tag$", skipPostgreSQL("col1$tag$a$tag$ bar", 0));
     assertEquals("col$", skipPostgreSQL("col$ bar", 0));
 
-    // Numeric-leading tags and trailing '$' advance exactly 1 character.
+    // Numeric-leading tags, unterminated tags, and trailing '$' advance exactly 1 character.
     assertEquals("$", skipPostgreSQL("$1$foo$1$", 0));
     assertEquals("$", skipPostgreSQL("SELECT $12$foo$12$", 7));
     assertEquals("$", skipPostgreSQL("SELECT $\u0661$foo$\u0661$", 7));
+    assertEquals("$", skipPostgreSQL("SELECT $tag", 7));
     assertEquals("$", skipPostgreSQL("SELECT $", 7));
   }
 
@@ -1739,6 +1748,9 @@ public class StatementParserTest {
         ImmutableSet.of("$1", "$2"),
         parser.getQueryParameters("SELECT col$tag$a, $1, col$tag$b, $2"));
     assertEquals(ImmutableSet.of("$1"), parser.getQueryParameters("SELECT $_1$$2$_1$, $1"));
+    assertEquals(
+        ImmutableSet.of("$4"), parser.getQueryParameters("SELECT col$1$2, _$3, $4 FROM t"));
+    assertEquals(ImmutableSet.of(), parser.getQueryParameters("SELECT $tag"));
   }
 
   @Test
@@ -1949,6 +1961,16 @@ public class StatementParserTest {
         parser.parse(Statement.of("insert into t select 2,3returning*")).hasReturningClause());
     assertTrue(
         parser.parse(Statement.of("insert into t1 select 10.returning*")).hasReturningClause());
+    assertFalse(
+        parser
+            .parse(Statement.of("INSERT INTO t1 SELECT 1 AS RETURNING FROM t2"))
+            .hasReturningClause());
+    assertFalse(
+        parser.parse(Statement.of("INSERT INTO t1 SELECT 1 AS RETURNING(a)")).hasReturningClause());
+    assertTrue(
+        parser
+            .parse(Statement.of("INSERT INTO t1 SELECT 1 AS RETURNING RETURNING *"))
+            .hasReturningClause());
   }
 
   int skipSingleLineComment(String sql, int prefixLength, int startIndex) {

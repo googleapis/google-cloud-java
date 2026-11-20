@@ -998,7 +998,9 @@ public abstract class AbstractStatementParser {
       while (endIndex < sql.length() && isValidIdentifierChar(sql.charAt(endIndex))) {
         endIndex++;
       }
-      appendIfNotNull(result, sql.substring(currentIndex, endIndex));
+      if (result != null) {
+        result.append(sql, currentIndex, endIndex);
+      }
       return endIndex;
     } else if (currentChar == HYPHEN
         && sql.length() > (currentIndex + 1)
