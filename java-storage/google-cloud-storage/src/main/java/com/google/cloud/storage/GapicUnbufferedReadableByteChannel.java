@@ -424,7 +424,7 @@ final class GapicUnbufferedReadableByteChannel
         queue.offer(ReadObjectResponseChildRef.from(handle));
         fetchOffset.addAndGet(contentSize);
         if (response.hasMetadata() && !result.isDone()) {
-          result.set(response.getMetadata());
+          result.set(GrpcUtils.copyOf(response.getMetadata()));
         }
       } catch (InterruptedException e) {
         Thread.currentThread().interrupt();

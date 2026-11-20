@@ -36,6 +36,7 @@ import com.google.api.gax.rpc.StreamController;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
+import com.google.protobuf.InvalidProtocolBufferException;
 import com.google.protobuf.Message;
 import com.google.rpc.Status;
 import com.google.storage.v2.BidiReadObjectError;
@@ -54,6 +55,15 @@ import org.checkerframework.checker.nullness.qual.Nullable;
 final class GrpcUtils {
 
   private GrpcUtils() {}
+
+  @SuppressWarnings("unchecked")
+  static <M extends Message> M copyOf(M msg) {
+    try {
+      return (M) msg.getParserForType().parseFrom(msg.toByteString());
+    } catch (InvalidProtocolBufferException e) {
+      throw new IllegalStateException(e);
+    }
+  }
 
   static GrpcCallContext contextWithBucketName(String bucketName, GrpcCallContext baseContext) {
     if (bucketName != null && !bucketName.isEmpty()) {
