@@ -23,13 +23,21 @@ import com.google.common.collect.ImmutableMap;
 import java.io.Serializable;
 import javax.annotation.Nullable;
 
+/**
+ * Represents a BigQuery {@code RANGE} value, which defines a contiguous range between two {@code
+ * DATE}, {@code DATETIME}, or {@code TIMESTAMP} bounds.
+ *
+ * @see <a
+ *     href="https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-types#range_type">BigQuery
+ *     Range type</a>
+ */
 @AutoValue
 public abstract class Range implements Serializable {
   private static final long serialVersionUID = 1L;
 
   /** Returns the start value of the range. A null value represents an unbounded start. */
   public FieldValue getStart() {
-    // The supported Range types [DATE, TIME, TIMESTAMP] are all Attribute.PRIMITIVE.
+    // The supported Range types [DATE, DATETIME, TIMESTAMP] are all Attribute.PRIMITIVE.
     return FieldValue.of(Attribute.PRIMITIVE, getStartInner());
   }
 
@@ -38,7 +46,7 @@ public abstract class Range implements Serializable {
 
   /** Returns the end value of the range. A null value represents an unbounded end. */
   public FieldValue getEnd() {
-    // The supported Range types [DATE, TIME, TIMESTAMP] are all Attribute.PRIMITIVE.
+    // The supported Range types [DATE, DATETIME, TIMESTAMP] are all Attribute.PRIMITIVE.
     return FieldValue.of(Attribute.PRIMITIVE, getEndInner());
   }
 
@@ -96,7 +104,11 @@ public abstract class Range implements Serializable {
    * Creates an instance of {@code Range} from a string representation.
    *
    * <p>The expected string format is: "[start, end)", where start and end are string format of
-   * [DATE, TIME, TIMESTAMP].
+   * [DATE, DATETIME, TIMESTAMP].
+   *
+   * @see <a
+   *     href="https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-types#range_type">BigQuery
+   *     Range type</a>
    */
   public static Range of(String value, FieldElementType type) throws IllegalArgumentException {
     checkNotNull(value);

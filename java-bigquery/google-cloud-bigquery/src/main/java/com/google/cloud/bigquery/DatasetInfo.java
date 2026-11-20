@@ -35,9 +35,11 @@ import java.util.Objects;
 
 /**
  * Google BigQuery Dataset information. A dataset is a grouping mechanism that holds zero or more
- * tables. Datasets are the lowest level unit of access control; you cannot control access at the
- * table level.
+ * tables. Access controls can be configured at the dataset level as well as on individual resources
+ * such as tables and views.
  *
+ * @see <a href="https://docs.cloud.google.com/bigquery/docs/control-access-to-resources-iam">
+ *     Control access to resources with IAM</a>
  * @see <a href="https://cloud.google.com/bigquery/docs/managing_jobs_datasets_projects#datasets">
  *     Managing Jobs, Datasets, and Projects</a>
  */
