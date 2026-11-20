@@ -70,7 +70,12 @@ public final class BigQueryError implements Serializable {
   }
 
   /**
-   * Returns short error code that summarizes the error.
+   * Returns a short error code that summarizes the error (for example, {@code rateLimitExceeded},
+   * {@code backendError}, or {@code notFound}).
+   *
+   * <p>Inspect this reason alongside the HTTP status code when classifying transient versus
+   * permanent failures, because distinct BigQuery errors can share an HTTP status code or occur
+   * asynchronously in job status without an HTTP status code.
    *
    * @see <a href="https://docs.cloud.google.com/bigquery/docs/errors">BigQuery API HTTP status and
    *     error codes</a>
