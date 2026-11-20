@@ -103,6 +103,33 @@ public final class StorageClass extends StringEnumValue {
       type.createAndRegister("DURABLE_REDUCED_AVAILABILITY");
 
   /**
+   * Standard Enterprise storage class.
+   *
+   * @see <a
+   *     href="https://cloud.google.com/storage/docs/storage-classes">https://cloud.google.com/storage/docs/storage-classes</a>
+   */
+  public static final StorageClass STANDARD_ENTERPRISE =
+      type.createAndRegister("STANDARD_ENTERPRISE");
+
+  /**
+   * Local Region Standard Enterprise storage class.
+   *
+   * @see <a
+   *     href="https://cloud.google.com/storage/docs/storage-classes">https://cloud.google.com/storage/docs/storage-classes</a>
+   */
+  public static final StorageClass LR_STANDARD_ENTERPRISE =
+      type.createAndRegister("LR_STANDARD_ENTERPRISE");
+
+  /**
+   * Standard Flexbackup Enterprise storage class.
+   *
+   * @see <a
+   *     href="https://cloud.google.com/storage/docs/storage-classes">https://cloud.google.com/storage/docs/storage-classes</a>
+   */
+  public static final StorageClass STANDARD_FLEXBACKUP_ENTERPRISE =
+      type.createAndRegister("STANDARD_FLEXBACKUP_ENTERPRISE");
+
+  /**
    * Get the StorageClass for the given String constant, and throw an exception if the constant is
    * not recognized.
    */
