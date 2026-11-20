@@ -21,6 +21,7 @@ import static com.google.cloud.storage.TestUtils.xxd;
 import static com.google.common.truth.Truth.assertThat;
 import static com.google.common.truth.Truth.assertWithMessage;
 import static org.junit.Assert.assertThrows;
+import static org.junit.Assume.assumeTrue;
 
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
@@ -33,10 +34,13 @@ import java.nio.channels.SeekableByteChannel;
 import java.nio.channels.WritableByteChannel;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.attribute.PosixFilePermission;
+import java.nio.file.attribute.PosixFilePermissions;
 import java.time.Duration;
 import java.time.Instant;
 import java.util.Objects;
 import java.util.Random;
+import java.util.Set;
 import java.util.stream.Stream;
 import org.junit.Rule;
 import org.junit.Test;
@@ -114,6 +118,33 @@ public final class RecoveryFileManagerTest {
     assertThat(Files.exists(subPathA)).isFalse();
     RecoveryFileManager rfm = RecoveryFileManager.of(ImmutableList.of(subPathA));
     assertThat(Files.exists(subPathA)).isTrue();
+  }
+
+  @Test
+  public void directoryDoesNotExistIsCreatedWithTempDirectoryDefaults() throws IOException {
+    Path tempDir = temporaryFolder.newFolder(testName.getMethodName()).toPath();
+    assumeTrue(tempDir.getFileSystem().supportedFileAttributeViews().contains("posix"));
+
+    Path sub = tempDir.resolve("sub");
+    Path subPathA = sub.resolve("path/a");
+    RecoveryFileManager.of(ImmutableList.of(subPathA));
+
+    Set<PosixFilePermission> expected =
+        Files.getPosixFilePermissions(Files.createTempDirectory(tempDir, "ref"));
+    assertThat(Files.getPosixFilePermissions(sub)).isEqualTo(expected);
+    assertThat(Files.getPosixFilePermissions(subPathA)).isEqualTo(expected);
+  }
+
+  @Test
+  public void existingDirectoryIsUnchanged() throws IOException {
+    Path tempDir = temporaryFolder.newFolder(testName.getMethodName()).toPath();
+    assumeTrue(tempDir.getFileSystem().supportedFileAttributeViews().contains("posix"));
+
+    Set<PosixFilePermission> expected = PosixFilePermissions.fromString("rwxr-xr-x");
+    Files.setPosixFilePermissions(tempDir, expected);
+    RecoveryFileManager.of(ImmutableList.of(tempDir));
+
+    assertThat(Files.getPosixFilePermissions(tempDir)).isEqualTo(expected);
   }
 
   @Test

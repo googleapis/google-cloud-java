@@ -27,6 +27,7 @@ import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.attribute.PosixFilePermissions;
 import java.util.Base64;
 import java.util.Collections;
 import java.util.HashMap;
@@ -88,7 +89,13 @@ final class RecoveryFileManager {
 
     for (Path v : volumes) {
       if (!Files.exists(v)) {
-        Files.createDirectories(v);
+        if (v.getFileSystem().supportedFileAttributeViews().contains("posix")) {
+          Files.createDirectories(
+              v,
+              PosixFilePermissions.asFileAttribute(PosixFilePermissions.fromString("rwx------")));
+        } else {
+          Files.createDirectories(v);
+        }
       }
     }
     ImmutableList<RecoveryVolume> recoveryVolumes =

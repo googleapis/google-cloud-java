@@ -18,6 +18,7 @@ package com.google.cloud.storage;
 
 import static com.google.cloud.storage.TestUtils.xxd;
 import static com.google.common.truth.Truth.assertThat;
+import static org.junit.Assume.assumeTrue;
 
 import com.google.cloud.storage.BlobWriteSessionConfig.WriterFactory;
 import com.google.cloud.storage.UnifiedOpts.ObjectTargetOpt;
@@ -28,6 +29,7 @@ import java.nio.ByteBuffer;
 import java.nio.channels.WritableByteChannel;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.time.Duration;
 import java.time.Instant;
 import java.util.concurrent.atomic.AtomicReference;
@@ -73,6 +75,56 @@ public final class BufferToDiskThenUploadTest {
     String xxdActual = xxd(actualBytes.get());
     String xxdExpected = xxd(bytes);
     assertThat(xxdActual).isEqualTo(xxdExpected);
+  }
+
+  @Test
+  public void bufferToTempDirThenUpload_usesUniqueDirectory() throws IOException {
+    Path dir1 = stagingDirectory(BlobWriteSessionConfigs.bufferToTempDirThenUpload());
+    Path dir2 = stagingDirectory(BlobWriteSessionConfigs.bufferToTempDirThenUpload());
+    try {
+      assertThat(dir1).isNotEqualTo(dir2);
+      assertThat(dir1.getParent()).isEqualTo(Paths.get(System.getProperty("java.io.tmpdir")));
+      assertThat(dir1.getFileName().toString()).startsWith("google-cloud-storage-");
+      assertThat(dir2.getFileName().toString()).startsWith("google-cloud-storage-");
+    } finally {
+      Files.deleteIfExists(dir1);
+      Files.deleteIfExists(dir2);
+    }
+  }
+
+  @Test
+  public void bufferToTempDirThenUpload_matchesTempDirectoryDefaults() throws IOException {
+    Path dir = stagingDirectory(BlobWriteSessionConfigs.bufferToTempDirThenUpload());
+    try {
+      assumeTrue(dir.getFileSystem().supportedFileAttributeViews().contains("posix"));
+      Path reference = Files.createTempDirectory(temporaryFolder.getRoot().toPath(), "ref");
+      assertThat(Files.getPosixFilePermissions(dir))
+          .isEqualTo(Files.getPosixFilePermissions(reference));
+    } finally {
+      Files.deleteIfExists(dir);
+    }
+  }
+
+  private static Path stagingDirectory(BlobWriteSessionConfig config) throws IOException {
+    TestClock clock = TestClock.tickBy(Instant.EPOCH, Duration.ofSeconds(1));
+    WriterFactory factory = ((BufferToDiskThenUpload) config).createFactory(clock);
+    AtomicReference<Path> dir = new AtomicReference<>(null);
+    WritableByteChannelSession<?, BlobInfo> writeSession =
+        factory.writeSession(
+            new StorageInternal() {
+              @Override
+              public BlobInfo internalCreateFrom(
+                  Path path, BlobInfo info, Opts<ObjectTargetOpt> opts) {
+                dir.compareAndSet(null, path.getParent());
+                return info;
+              }
+            },
+            BlobInfo.newBuilder("bucket", "object").build(),
+            Opts.empty());
+    try (WritableByteChannel open = writeSession.open()) {
+      open.write(ByteBuffer.wrap(new byte[] {1}));
+    }
+    return dir.get();
   }
 
   @Test
