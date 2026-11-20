@@ -90,6 +90,7 @@ public final class BatchClientImplTest {
     when(spannerOptions.getSpannerRpcV1()).thenReturn(gapicRpc);
     when(spannerOptions.getSessionLabels()).thenReturn(Collections.emptyMap());
     when(spannerOptions.getOpenTelemetry()).thenReturn(OpenTelemetry.noop());
+    when(spannerOptions.getTracingOpenTelemetry()).thenReturn(OpenTelemetry.noop());
     GrpcTransportOptions transportOptions = mock(GrpcTransportOptions.class);
     when(transportOptions.getExecutorFactory()).thenReturn(mock(ExecutorFactory.class));
     when(spannerOptions.getTransportOptions()).thenReturn(transportOptions);

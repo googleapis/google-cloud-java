@@ -61,7 +61,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
       new TraceWrapper(
           Tracing.getTracer(),
           getOptions()
-              .getOpenTelemetry()
+              .getTracingOpenTelemetry()
               .getTracer(
                   MetricRegistryConstants.INSTRUMENTATION_SCOPE,
                   GaxProperties.getLibraryVersion(this.getOptions().getClass())),
@@ -174,6 +174,11 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
             + options.isEnableExtendedTracing()
             + "\nEnd to end tracing enabled: "
             + options.isEndToEndTracingEnabled()
+            + "\nBuilt-in tracing enabled: "
+            + options.isEnableBuiltInTracing()
+            + (options.isEnableBuiltInTracing()
+                ? "\nBuilt-in tracing sampling rate: " + options.getBuiltInTracingSamplingRate()
+                : "")
             + "\nBuilt-in metrics enabled: "
             + options.isEnableBuiltInMetrics());
     if (options.getSessionPoolOptions() != null) {

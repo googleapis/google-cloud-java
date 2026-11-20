@@ -92,6 +92,7 @@ import io.opencensus.trace.Tracing;
 import io.opentelemetry.api.GlobalOpenTelemetry;
 import io.opentelemetry.api.OpenTelemetry;
 import io.opentelemetry.api.common.Attributes;
+import io.opentelemetry.api.trace.TracerProvider;
 import io.opentelemetry.sdk.OpenTelemetrySdk;
 import java.io.File;
 import java.io.IOException;
@@ -355,6 +356,8 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
   private final boolean enableLocationApi;
   private final boolean enableExtendedTracing;
   private final boolean enableEndToEndTracing;
+  private final boolean enableBuiltInTracing;
+  private final double builtInTracingSamplingRate;
   private final String monitoringHost;
   private final TransactionOptions defaultTransactionOptions;
   private final RequestOptions.ClientContext clientContext;
@@ -384,6 +387,8 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
   private static final Object lock = new Object();
 
   private static volatile TracingFramework activeTracingFramework;
+
+  static final double DEFAULT_BUILT_IN_TRACING_SAMPLING_RATE = 0.1;
 
   /** Interface that can be used to provide {@link CallCredentials} to {@link SpannerOptions}. */
   public interface CallCredentialsProvider {
@@ -1088,6 +1093,15 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
       enableLocationApi = builder.enableLocationApi;
     }
     enableEndToEndTracing = builder.enableEndToEndTracing;
+    enableBuiltInTracing = builder.enableBuiltInTracing;
+    builtInTracingSamplingRate = builder.builtInTracingSamplingRate;
+    if (enableBuiltInTracing) {
+      synchronized (lock) {
+        if (activeTracingFramework == null) {
+          activeTracingFramework = TracingFramework.OPEN_TELEMETRY;
+        }
+      }
+    }
     monitoringHost = builder.monitoringHost;
     defaultTransactionOptions = builder.defaultTransactionOptions;
     clientContext = builder.clientContext;
@@ -1173,6 +1187,14 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
       return false;
     }
 
+    default boolean isEnableBuiltInTracing() {
+      return false;
+    }
+
+    default double getBuiltInTracingSamplingRate() {
+      return DEFAULT_BUILT_IN_TRACING_SAMPLING_RATE;
+    }
+
     default boolean isEnableLocationApi() {
       return false;
     }
@@ -1219,6 +1241,8 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
         "GOOGLE_SPANNER_EXPERIMENTAL_GCP_FALLBACK_RECOVERY";
     private static final String SPANNER_ENABLE_END_TO_END_TRACING =
         "SPANNER_ENABLE_END_TO_END_TRACING";
+    private static final String SPANNER_ENABLE_TRACING = "SPANNER_ENABLE_TRACING";
+    private static final String OTEL_TRACES_SAMPLER_ARG = "OTEL_TRACES_SAMPLER_ARG";
     private static final String SPANNER_DISABLE_BUILTIN_METRICS = "SPANNER_DISABLE_BUILTIN_METRICS";
     private static final String SPANNER_DISABLE_DIRECT_ACCESS_GRPC_BUILTIN_METRICS =
         "SPANNER_DISABLE_DIRECT_ACCESS_GRPC_BUILTIN_METRICS";
@@ -1297,6 +1321,27 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     @Override
     public boolean isEnableEndToEndTracing() {
       return Boolean.parseBoolean(System.getenv(SPANNER_ENABLE_END_TO_END_TRACING));
+    }
+
+    @Override
+    public boolean isEnableBuiltInTracing() {
+      return Boolean.parseBoolean(System.getenv(SPANNER_ENABLE_TRACING));
+    }
+
+    @Override
+    public double getBuiltInTracingSamplingRate() {
+      String samplingRate = System.getenv(OTEL_TRACES_SAMPLER_ARG);
+      if (samplingRate != null) {
+        try {
+          double value = Double.parseDouble(samplingRate);
+          if (value >= 0.0 && value <= 1.0) {
+            return value;
+          }
+        } catch (NumberFormatException exception) {
+          return DEFAULT_BUILT_IN_TRACING_SAMPLING_RATE;
+        }
+      }
+      return DEFAULT_BUILT_IN_TRACING_SAMPLING_RATE;
     }
 
     @Override
@@ -1461,6 +1506,9 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     private boolean enableApiTracing = SpannerOptions.environment.isEnableApiTracing();
     private boolean enableExtendedTracing = SpannerOptions.environment.isEnableExtendedTracing();
     private boolean enableEndToEndTracing = SpannerOptions.environment.isEnableEndToEndTracing();
+    private boolean enableBuiltInTracing = SpannerOptions.environment.isEnableBuiltInTracing();
+    private double builtInTracingSamplingRate =
+        SpannerOptions.environment.getBuiltInTracingSamplingRate();
     private boolean enableBuiltInMetrics = SpannerOptions.environment.isEnableBuiltInMetrics();
     private MetricsProvider metricsProvider = DefaultMetricsProvider.INSTANCE;
     private boolean enableLocationApi = SpannerOptions.environment.isEnableLocationApi();
@@ -1582,6 +1630,8 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
       this.metricsProvider = options.metricsProvider;
       this.enableLocationApi = options.enableLocationApi;
       this.enableEndToEndTracing = options.enableEndToEndTracing;
+      this.enableBuiltInTracing = options.enableBuiltInTracing;
+      this.builtInTracingSamplingRate = options.builtInTracingSamplingRate;
       this.monitoringHost = options.monitoringHost;
       this.defaultTransactionOptions = options.defaultTransactionOptions;
       this.clientContext = options.clientContext;
@@ -2501,6 +2551,32 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     }
 
     /**
+     * Sets whether to enable built-in tracing. When enabled, the client exports traces to Cloud
+     * Trace in the project of the client and enables end to end tracing, without the need to set up
+     * OpenTelemetry. If OpenTelemetry tracing has already been configured for the client or the
+     * application, then that configuration is used instead, and only end to end tracing is enabled.
+     * Built-in tracing is disabled by default, and can also be enabled by setting the environment
+     * variable SPANNER_ENABLE_TRACING to true. Cloud Trace charges for the spans that are exported.
+     */
+    public Builder setEnableBuiltInTracing(boolean enableBuiltInTracing) {
+      this.enableBuiltInTracing = enableBuiltInTracing;
+      return this;
+    }
+
+    /**
+     * Sets the fraction of requests that are traced by built-in tracing. The value must be between
+     * 0.0 and 1.0. The default is the value of the environment variable OTEL_TRACES_SAMPLER_ARG if
+     * that is set, and otherwise 0.1.
+     */
+    public Builder setBuiltInTracingSamplingRate(double builtInTracingSamplingRate) {
+      Preconditions.checkArgument(
+          builtInTracingSamplingRate >= 0.0 && builtInTracingSamplingRate <= 1.0,
+          "The sampling rate must be between 0.0 and 1.0");
+      this.builtInTracingSamplingRate = builtInTracingSamplingRate;
+      return this;
+    }
+
+    /**
      * Provides the default read-write transaction options for all databases. These defaults are
      * overridden by any explicit {@link com.google.cloud.spanner.Options.TransactionOption}
      * provided through {@link DatabaseClient}.
@@ -2615,7 +2691,8 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
 
       synchronized (lock) {
         if (activeTracingFramework == null) {
-          activeTracingFramework = TracingFramework.OPEN_CENSUS;
+          activeTracingFramework =
+              enableBuiltInTracing ? TracingFramework.OPEN_TELEMETRY : TracingFramework.OPEN_CENSUS;
         }
       }
       return new SpannerOptions(this);
@@ -2964,6 +3041,50 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     }
   }
 
+  /**
+   * Returns the OpenTelemetry instance that is used for tracing. This is the built-in tracing
+   * instance if built-in tracing is enabled and no OpenTelemetry tracing has been configured for
+   * the client or the application, and otherwise the same as {@link #getOpenTelemetry()}.
+   */
+  @InternalApi
+  public OpenTelemetry getTracingOpenTelemetry() {
+    if (!enableBuiltInTracing) {
+      return getOpenTelemetry();
+    }
+    if (activeTracingFramework != TracingFramework.OPEN_TELEMETRY) {
+      BuiltInTracingProvider.INSTANCE.logOpenCensusWarningOnce();
+      return getOpenTelemetry();
+    }
+    OpenTelemetry openTelemetry = getOpenTelemetry();
+    if (isTracingEnabled(openTelemetry)) {
+      BuiltInTracingProvider.INSTANCE.logCustomTracingInfoOnce(this.openTelemetry != null);
+      return openTelemetry;
+    }
+    if (usesNoCredentials()
+        || emulatorHost != null
+        || instanceType == InstanceType.OMNI
+        || !GOOGLE_DEFAULT_UNIVERSE.equals(getResolvedUniverseDomain())) {
+      return openTelemetry;
+    }
+    OpenTelemetry builtInOpenTelemetry =
+        BuiltInTracingProvider.INSTANCE.getOrCreateOpenTelemetry(
+            getProjectId(), getCredentials(), builtInTracingSamplingRate);
+    return builtInOpenTelemetry == null ? openTelemetry : builtInOpenTelemetry;
+  }
+
+  private boolean isTracingEnabled(OpenTelemetry openTelemetry) {
+    try {
+      return openTelemetry
+          .getTracer(
+              MetricRegistryConstants.INSTRUMENTATION_SCOPE,
+              GaxProperties.getLibraryVersion(getClass()))
+          .isEnabled();
+    } catch (Throwable throwable) {
+      return this.openTelemetry != null
+          || openTelemetry.getTracerProvider() != TracerProvider.noop();
+    }
+  }
+
   @Override
   public ApiTracerFactory getApiTracerFactory() {
     return createApiTracerFactory(false, false);
@@ -3073,7 +3194,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     if (isEnableApiTracing()) {
       if (activeTracingFramework == TracingFramework.OPEN_TELEMETRY) {
         return new OpenTelemetryApiTracerFactory(
-            getOpenTelemetry()
+            getTracingOpenTelemetry()
                 .getTracer(
                     MetricRegistryConstants.INSTRUMENTATION_SCOPE,
                     GaxProperties.getLibraryVersion(getClass())),
@@ -3218,10 +3339,22 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
 
   /**
    * Returns whether end to end tracing is enabled. If this option is enabled then trace spans will
-   * be created at the Spanner layer.
+   * be created at the Spanner layer. End to end tracing is also enabled when built-in tracing is
+   * enabled and OpenTelemetry tracing is used.
    */
   public boolean isEndToEndTracingEnabled() {
-    return enableEndToEndTracing;
+    return enableEndToEndTracing
+        || (enableBuiltInTracing && activeTracingFramework == TracingFramework.OPEN_TELEMETRY);
+  }
+
+  /** Returns whether built-in tracing is enabled. */
+  public boolean isEnableBuiltInTracing() {
+    return enableBuiltInTracing;
+  }
+
+  /** Returns the fraction of requests that are traced by built-in tracing. */
+  public double getBuiltInTracingSamplingRate() {
+    return builtInTracingSamplingRate;
   }
 
   /** Returns the default query options to use for the specific database. */

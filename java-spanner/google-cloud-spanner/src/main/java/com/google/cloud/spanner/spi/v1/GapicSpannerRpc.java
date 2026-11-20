@@ -978,7 +978,7 @@ public class GapicSpannerRpc implements SpannerRpc {
                             options.getInterceptorProvider(),
                             SpannerInterceptorProvider.createDefault(options.getOpenTelemetry())))
                     // This sets the trace context headers.
-                    .withTraceContext(endToEndTracingEnabled, options.getOpenTelemetry())
+                    .withTraceContext(endToEndTracingEnabled, options.getTracingOpenTelemetry())
                     // This sets the response compressor (Server -> Client).
                     .withEncoding(compressorName))
             .setHeaderProvider(headerProviderWithUserAgent)
