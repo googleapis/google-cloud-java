@@ -19,9 +19,10 @@ import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.gax.grpc.GrpcStatusCode;
+import com.google.api.gax.retrying.ResultRetryAlgorithm;
+import com.google.api.gax.retrying.ResultRetryAlgorithmWithContext;
 import com.google.api.gax.retrying.RetryAlgorithm;
 import com.google.api.gax.retrying.RetryingFuture;
-import com.google.api.gax.retrying.TimedAttemptSettings;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiException;
 import com.google.api.gax.rpc.ApiExceptionFactory;
@@ -110,8 +111,7 @@ class MutateRowsAttemptCallable implements Callable<MutateRowsAttemptResult> {
   @Nullable private List<Integer> originalIndexes;
   @Nonnull private final Set<StatusCode.Code> retryableCodes;
   @Nonnull private final List<FailedMutation> permanentFailures;
-  @Nonnull private final RetryAlgorithm<MutateRowsRequest> retryAlgorithm;
-  @Nonnull private TimedAttemptSettings attemptSettings;
+  @Nonnull private final RetryAlgorithm<MutateRowsAttemptResult> retryAlgorithm;
 
   // Parent controller
   private RetryingFuture<MutateRowsAttemptResult> externalFuture;
@@ -140,14 +140,12 @@ class MutateRowsAttemptCallable implements Callable<MutateRowsAttemptResult> {
       @Nonnull MutateRowsRequest originalRequest,
       @Nonnull ApiCallContext callContext,
       @Nonnull Set<StatusCode.Code> retryableCodes,
-      @Nonnull RetryAlgorithm<MutateRowsRequest> retryAlgorithm) {
+      @Nonnull RetryAlgorithm<MutateRowsAttemptResult> retryAlgorithm) {
     this.innerCallable = Preconditions.checkNotNull(innerCallable, "innerCallable");
     this.currentRequest = Preconditions.checkNotNull(originalRequest, "currentRequest");
     this.callContext = Preconditions.checkNotNull(callContext, "callContext");
     this.retryableCodes = Preconditions.checkNotNull(retryableCodes, "retryableCodes");
-    this.retryAlgorithm = retryAlgorithm;
-    // TODO: pass in the callContext so that the retry setting can be overridden per call
-    this.attemptSettings = retryAlgorithm.createFirstAttempt(null);
+    this.retryAlgorithm = Preconditions.checkNotNull(retryAlgorithm, "retryAlgorithm");
 
     permanentFailures = Lists.newArrayList();
   }
@@ -235,15 +233,13 @@ class MutateRowsAttemptCallable implements Callable<MutateRowsAttemptResult> {
     MutateRowsRequest.Builder builder = lastRequest.toBuilder().clearEntries();
     List<Integer> newOriginalIndexes = Lists.newArrayList();
 
-    attemptSettings = retryAlgorithm.createNextAttempt(null, entryError, null, attemptSettings);
-
     for (int i = 0; i < currentRequest.getEntriesCount(); i++) {
       int origIndex = getOriginalIndex(i);
 
       FailedMutation failedMutation = FailedMutation.create(origIndex, entryError);
       allFailures.add(failedMutation);
 
-      if (!retryAlgorithm.shouldRetry(null, failedMutation.getError(), null, attemptSettings)) {
+      if (!shouldRetryBasedOnResult(failedMutation.getError())) {
         permanentFailures.add(failedMutation);
       } else {
         // Schedule the mutation entry for the next RPC by adding it to the request builder and
@@ -258,6 +254,15 @@ class MutateRowsAttemptCallable implements Callable<MutateRowsAttemptResult> {
 
     throw MutateRowsException.create(
         rpcError, entryError.getStatusCode(), allFailures.build(), builder.getEntriesCount() > 0);
+  }
+
+  private boolean shouldRetryBasedOnResult(Throwable throwable) {
+    ResultRetryAlgorithm<?> resultAlgorithm = retryAlgorithm.getResultAlgorithm();
+    if (resultAlgorithm instanceof ResultRetryAlgorithmWithContext) {
+      return ((ResultRetryAlgorithmWithContext<?>) resultAlgorithm)
+          .shouldRetry(callContext, throwable, null);
+    }
+    return resultAlgorithm.shouldRetry(throwable, null);
   }
 
   /**
@@ -345,11 +350,13 @@ class MutateRowsAttemptCallable implements Callable<MutateRowsAttemptResult> {
             .withDescription(protoStatus.getMessage());
 
     StatusCode gaxStatusCode = GrpcStatusCode.of(grpcStatus.getCode());
+    Set<StatusCode.Code> effectiveRetryableCodes =
+        callContext.getRetryableCodes() != null ? callContext.getRetryableCodes() : retryableCodes;
 
     return ApiExceptionFactory.createException(
         grpcStatus.asRuntimeException(),
         gaxStatusCode,
-        retryableCodes.contains(gaxStatusCode.getCode()));
+        effectiveRetryableCodes.contains(gaxStatusCode.getCode()));
   }
 
   /**
@@ -357,14 +364,24 @@ class MutateRowsAttemptCallable implements Callable<MutateRowsAttemptResult> {
    * implies that all entries failed as well. This helper is used to make that behavior explicit.
    * The generated exception will have the overall error as its cause.
    */
-  private static ApiException createSyntheticErrorForRpcFailure(Throwable overallRequestError) {
+  private ApiException createSyntheticErrorForRpcFailure(Throwable overallRequestError) {
     if (overallRequestError instanceof ApiException) {
       ApiException requestApiException = (ApiException) overallRequestError;
+      // When no per-call retryableCodes override is present on callContext, preserve
+      // requestApiException.isRetryable() so both the stub's configured retryableCodes (applied by
+      // GrpcRawCallableFactory) and ConvertExceptionCallable's retryable flag on transient
+      // INTERNAL errors (e.g. RST_STREAM / GOAWAY) are honored.
+      boolean isRetryable =
+          callContext.getRetryableCodes() != null
+              ? callContext
+                  .getRetryableCodes()
+                  .contains(requestApiException.getStatusCode().getCode())
+              : requestApiException.isRetryable();
 
       return ApiExceptionFactory.createException(
           overallRequestError,
           requestApiException.getStatusCode(),
-          requestApiException.isRetryable(),
+          isRetryable,
           requestApiException.getErrorDetails());
     }
 

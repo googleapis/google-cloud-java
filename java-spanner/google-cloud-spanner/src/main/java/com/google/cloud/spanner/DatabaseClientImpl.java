@@ -86,6 +86,12 @@ class DatabaseClientImpl implements DatabaseClient {
     return this.multiplexedSessionDatabaseClient.getDatabaseDefaultIsolationLevel();
   }
 
+  @Override
+  @Nullable
+  public String getDatabaseDefaultIsolationLevelValue() {
+    return this.multiplexedSessionDatabaseClient.getDatabaseDefaultIsolationLevelValue();
+  }
+
   private final AbstractLazyInitializer<StatementFactory> statementFactorySupplier =
       new AbstractLazyInitializer<StatementFactory>() {
         @Override

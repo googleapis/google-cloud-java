@@ -38,6 +38,11 @@ public class ForwardingSessionStream implements SessionStream {
   }
 
   @Override
+  public void afterSessionStart() {
+    delegate.afterSessionStart();
+  }
+
+  @Override
   public void sendMessage(SessionRequest request) {
     delegate.sendMessage(request);
   }

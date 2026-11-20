@@ -42,6 +42,7 @@ import com.google.cloud.spanner.MockSpannerServiceImpl.StatementResult;
 import com.google.cloud.spanner.Options.RpcPriority;
 import com.google.cloud.spanner.TransactionRunnerImpl.TransactionContextImpl;
 import com.google.cloud.spanner.connection.RandomResultSetGenerator;
+import com.google.common.base.Stopwatch;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import com.google.common.util.concurrent.MoreExecutors;
@@ -53,7 +54,11 @@ import io.grpc.Status;
 import java.time.Duration;
 import java.util.*;
 import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.stream.Collectors;
@@ -148,6 +153,120 @@ public class MultiplexedSessionDatabaseClientMockServerTest extends AbstractMock
     assertEquals(1, requests.size());
 
     testSpanner.close();
+  }
+
+  @Test
+  public void testCloseUnblocksWaitingTransaction() throws Exception {
+    mockSpanner.freeze();
+
+    Spanner testSpanner =
+        SpannerOptions.newBuilder()
+            .setProjectId("test-project")
+            .setChannelProvider(channelProvider)
+            .setCredentials(NoCredentials.getInstance())
+            .build()
+            .getService();
+    ExecutorService executor = Executors.newFixedThreadPool(2);
+    try {
+      DatabaseClient client = testSpanner.getDatabaseClient(DatabaseId.of("p", "i", "d"));
+
+      // Wait until the initial CreateSession request is in flight and frozen on the server.
+      mockSpanner.waitForRequestsToContain(CreateSessionRequest.class, 5000);
+
+      // Start a query on a background thread so it blocks waiting for the session to be created.
+      try (ReadContext readContext = client.singleUse();
+          ResultSet resultSet = readContext.executeQuery(STATEMENT)) {
+        CountDownLatch queryStarted = new CountDownLatch(1);
+        Future<SpannerException> queryFailure =
+            executor.submit(
+                () -> {
+                  queryStarted.countDown();
+                  return assertThrows(SpannerException.class, resultSet::next);
+                });
+        assertTrue(queryStarted.await(5, TimeUnit.SECONDS));
+
+        // Close the client asynchronously so we can verify the blocked transaction fails before
+        // mockSpanner is unfrozen (GapicSpannerRpc.shutdown() otherwise waits up to 20s for the
+        // frozen CreateSession RPC to finish).
+        Future<?> closeFuture = executor.submit(testSpanner::close);
+
+        SpannerException exception = queryFailure.get(5, TimeUnit.SECONDS);
+        assertEquals(ErrorCode.FAILED_PRECONDITION, exception.getErrorCode());
+        assertTrue(exception.getMessage().contains("This client has been closed"));
+
+        mockSpanner.unfreeze();
+        closeFuture.get(5, TimeUnit.SECONDS);
+      }
+    } finally {
+      mockSpanner.unfreeze();
+      if (!testSpanner.isClosed()) {
+        testSpanner.close();
+      }
+      executor.shutdown();
+      assertTrue(executor.awaitTermination(5, TimeUnit.SECONDS));
+    }
+  }
+
+  @Test
+  public void testCloseUnblocksTransactionWaitingOnRetry() throws Exception {
+    // Attempt 1 fails immediately with DEADLINE_EXCEEDED, and freezeAfter(1) atomically freezes
+    // the mock server as soon as the retry CreateSessionRequest (attempt 2) arrives.
+    mockSpanner.setCreateSessionExecutionTime(
+        SimulatedExecutionTime.ofException(Status.DEADLINE_EXCEEDED.asRuntimeException()));
+    mockSpanner.freezeAfter(1);
+
+    Spanner testSpanner =
+        SpannerOptions.newBuilder()
+            .setProjectId("test-project")
+            .setChannelProvider(channelProvider)
+            .setCredentials(NoCredentials.getInstance())
+            .build()
+            .getService();
+    ExecutorService executor = Executors.newFixedThreadPool(2);
+    try {
+      DatabaseClient client = testSpanner.getDatabaseClient(DatabaseId.of("p", "i", "d"));
+
+      // Wait until attempt 1 has failed and attempt 2 has reached the mock server and frozen.
+      Stopwatch watch = Stopwatch.createStarted();
+      while (mockSpanner.countRequestsOfType(CreateSessionRequest.class) < 2) {
+        if (watch.elapsed(TimeUnit.MILLISECONDS) > 5000) {
+          throw new TimeoutException(
+              "Timed out waiting for retry CreateSessionRequest to reach mock server");
+        }
+        Thread.sleep(1L);
+      }
+
+      // Start a query that binds to the pending retry future (attempt 2).
+      try (ReadContext readContext = client.singleUse();
+          ResultSet resultSet = readContext.executeQuery(STATEMENT)) {
+        CountDownLatch queryStarted = new CountDownLatch(1);
+        Future<SpannerException> queryFailure =
+            executor.submit(
+                () -> {
+                  queryStarted.countDown();
+                  return assertThrows(SpannerException.class, resultSet::next);
+                });
+        assertTrue(queryStarted.await(5, TimeUnit.SECONDS));
+
+        Future<?> closeFuture = executor.submit(testSpanner::close);
+
+        // The transaction must immediately fail with FAILED_PRECONDITION (client closed) while
+        // attempt 2 is still frozen.
+        SpannerException exception = queryFailure.get(5, TimeUnit.SECONDS);
+        assertEquals(ErrorCode.FAILED_PRECONDITION, exception.getErrorCode());
+        assertTrue(exception.getMessage().contains("This client has been closed"));
+
+        mockSpanner.unfreeze();
+        closeFuture.get(5, TimeUnit.SECONDS);
+      }
+    } finally {
+      mockSpanner.unfreeze();
+      if (!testSpanner.isClosed()) {
+        testSpanner.close();
+      }
+      executor.shutdown();
+      assertTrue(executor.awaitTermination(5, TimeUnit.SECONDS));
+    }
   }
 
   @Test
