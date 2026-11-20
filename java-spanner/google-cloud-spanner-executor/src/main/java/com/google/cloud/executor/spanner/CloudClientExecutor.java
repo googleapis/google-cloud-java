@@ -24,7 +24,6 @@ import com.google.api.gax.rpc.DeadlineExceededException;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnavailableException;
 import com.google.auth.Credentials;
-import com.google.auth.oauth2.ServiceAccountCredentials;
 import com.google.cloud.ByteArray;
 import com.google.cloud.Date;
 import com.google.cloud.NoCredentials;
@@ -165,8 +164,6 @@ import io.grpc.stub.StreamObserver;
 import io.opentelemetry.api.trace.Span;
 import io.opentelemetry.api.trace.Tracer;
 import io.opentelemetry.context.Scope;
-import java.io.ByteArrayInputStream;
-import java.io.File;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -192,7 +189,6 @@ import java.util.logging.Logger;
 import java.util.stream.Collectors;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
-import org.apache.commons.io.FileUtils;
 
 /**
  * Implementation of the SpannerExecutorProxy gRPC service that proxies action request through the
@@ -874,18 +870,9 @@ public class CloudClientExecutor extends CloudExecutor {
   private synchronized Spanner initializeClient(long timeoutSeconds, boolean useMultiplexedSession)
       throws IOException {
     // Create a cloud spanner client
-    Credentials credentials;
-    if (WorkerProxy.serviceKeyFile == null
-        || WorkerProxy.serviceKeyFile.isEmpty()
-        || !new File(WorkerProxy.serviceKeyFile).exists()
-        || new File(WorkerProxy.serviceKeyFile).isDirectory()) {
+    Credentials credentials = WorkerProxy.getCredentialsFromFlags();
+    if (credentials == null) {
       credentials = NoCredentials.getInstance();
-    } else {
-      credentials =
-          ServiceAccountCredentials.fromStream(
-              new ByteArrayInputStream(
-                  FileUtils.readFileToByteArray(new File(WorkerProxy.serviceKeyFile))),
-              HTTP_TRANSPORT_FACTORY);
     }
 
     TransportChannelProvider channelProvider =
@@ -959,18 +946,9 @@ public class CloudClientExecutor extends CloudExecutor {
       return traceServiceClient;
     }
     // Create a trace service client
-    Credentials credentials;
-    if (WorkerProxy.serviceKeyFile == null
-        || WorkerProxy.serviceKeyFile.isEmpty()
-        || !new File(WorkerProxy.serviceKeyFile).exists()
-        || new File(WorkerProxy.serviceKeyFile).isDirectory()) {
+    Credentials credentials = WorkerProxy.getCredentialsFromFlags();
+    if (credentials == null) {
       credentials = NoCredentials.getInstance();
-    } else {
-      credentials =
-          ServiceAccountCredentials.fromStream(
-              new ByteArrayInputStream(
-                  FileUtils.readFileToByteArray(new File(WorkerProxy.serviceKeyFile))),
-              HTTP_TRANSPORT_FACTORY);
     }
 
     TraceServiceSettings traceServiceSettings =
