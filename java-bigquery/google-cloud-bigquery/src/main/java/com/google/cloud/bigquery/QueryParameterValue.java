@@ -201,7 +201,7 @@ public abstract class QueryParameterValue implements Serializable {
   @Nullable
   abstract Map<String, QueryParameterValue> getStructValuesInner();
 
-  /** Returns the struct values of this parameter. The returned map, if not null, is immutable. */
+  /** Returns the range values of this parameter. */
   @Nullable
   public Range getRangeValues() {
     return getRangeValuesInner();

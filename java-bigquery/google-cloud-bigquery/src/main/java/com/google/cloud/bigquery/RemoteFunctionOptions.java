@@ -30,15 +30,15 @@ public abstract class RemoteFunctionOptions implements Serializable {
   public abstract static class Builder {
 
     /**
-     * Sets Endpoint argument Endpoint of the user-provided remote service, e.g.
-     * ```https://us-east1-my_gcf_project.cloudfunctions.net/remote_add```
+     * Sets the endpoint of the user-provided remote service, for example {@code
+     * https://us-east1-my_gcf_project.cloudfunctions.net/remote_add}.
      */
     public abstract Builder setEndpoint(String endpoint);
 
     /**
      * Fully qualified name of the user-provided connection object which holds the authentication
-     * information to send requests to the remote service. Format:
-     * ```\"projects/{projectId}/locations/{locationId}/connections/{connectionId}\"```
+     * information to send requests to the remote service. Format: {@code
+     * projects/{projectId}/locations/{locationId}/connections/{connectionId}}.
      */
     public abstract Builder setConnection(String connection);
 
