@@ -21,6 +21,8 @@ import static java.time.Month.MARCH;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.mockStatic;
+import static org.mockito.Mockito.times;
 
 import com.google.cloud.bigquery.Field;
 import com.google.cloud.bigquery.Field.Mode;
@@ -34,6 +36,8 @@ import com.google.cloud.bigquery.Range;
 import com.google.cloud.bigquery.Schema;
 import com.google.cloud.bigquery.StandardSQLTypeName;
 import com.google.cloud.bigquery.jdbc.rules.TimeZoneRule;
+import com.google.cloud.bigquery.jdbc.telemetry.v1.DriverFeature;
+import com.google.cloud.bigquery.jdbc.telemetry.v1.TelemetryManager;
 import com.google.common.collect.ImmutableList;
 import com.google.common.io.BaseEncoding;
 import com.google.common.io.CharStreams;
@@ -73,6 +77,7 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 import org.junit.jupiter.params.provider.ValueSource;
+import org.mockito.MockedStatic;
 
 public class BigQueryJsonResultSetTest {
 
@@ -912,6 +917,39 @@ public class BigQueryJsonResultSetTest {
           .isEqualTo(expectedLocal.toLocalTime().withNano(0));
     } finally {
       TimeZone.setDefault(originalDefault);
+    }
+  }
+
+  @Test
+  public void testGetMetaData_recordsFeatureOncePerResultSet() throws SQLException {
+    // Called inside row loops by many tools; the adoption signal must be recorded once.
+    try (MockedStatic<TelemetryManager> telemetry = mockStatic(TelemetryManager.class)) {
+      bigQueryJsonResultSet.getMetaData();
+      bigQueryJsonResultSet.getMetaData();
+      telemetry.verify(
+          () ->
+              TelemetryManager.recordFeatureUsage(
+                  DriverFeature.DRIVER_FEATURE_METADATA_RETRIEVAL,
+                  "DRIVER_FEATURE_RESULTSET_METADATA_RETRIEVAL"),
+          times(1));
+    }
+  }
+
+  @Test
+  public void testGetMetaData_recordsEvenWhenOwningStatementIsInternal() throws SQLException {
+    // ResultSet.getMetaData() is only ever a user call, even on result sets produced by
+    // driver-internal statements (e.g. DatabaseMetaData.getExportedKeys), so it must count.
+    BigQueryStatement internalStatement = mock(BigQueryStatement.class);
+    BigQueryJsonResultSet internalResultSet =
+        BigQueryJsonResultSet.of(QUERY_SCHEMA, 1L, buffer, internalStatement, new Future<?>[0]);
+    try (MockedStatic<TelemetryManager> telemetry = mockStatic(TelemetryManager.class)) {
+      internalResultSet.getMetaData();
+      telemetry.verify(
+          () ->
+              TelemetryManager.recordFeatureUsage(
+                  DriverFeature.DRIVER_FEATURE_METADATA_RETRIEVAL,
+                  "DRIVER_FEATURE_RESULTSET_METADATA_RETRIEVAL"),
+          times(1));
     }
   }
 }

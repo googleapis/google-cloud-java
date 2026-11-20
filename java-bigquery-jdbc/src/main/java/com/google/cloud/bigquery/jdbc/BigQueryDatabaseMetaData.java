@@ -1559,7 +1559,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       validateCatalogIdentifier(project);
       String formattedSql = replaceSqlParameters(getGraphTablesSqlContent(), project, scope);
 
-      try (PreparedStatement statement = this.connection.prepareStatement(formattedSql)) {
+      try (PreparedStatement statement = this.connection.prepareStatementInternal(formattedSql)) {
         statement.setString(1, effectiveSchemaPattern == null ? "%" : effectiveSchemaPattern);
         statement.setString(2, effectiveTablePattern);
 
@@ -1855,7 +1855,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       }
 
       String formattedSql = replaceSqlParameters(getGraphColumnsSqlContent(), project, scope);
-      try (PreparedStatement statement = this.connection.prepareStatement(formattedSql)) {
+      try (PreparedStatement statement = this.connection.prepareStatementInternal(formattedSql)) {
         statement.setString(1, effectiveSchemaLike);
         statement.setString(2, effectiveTableLike);
         statement.setString(3, effectiveColumnLike);
@@ -2447,7 +2447,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       validateCatalogIdentifier(project);
       String formattedSql = replaceSqlParameters(getGraphPrimaryKeysSqlContent(), project, scope);
 
-      try (PreparedStatement statement = this.connection.prepareStatement(formattedSql)) {
+      try (PreparedStatement statement = this.connection.prepareStatementInternal(formattedSql)) {
         statement.setString(1, table); // exact "<graph>.<element>"
         try (ResultSet rs = statement.executeQuery()) {
           while (rs.next()) {
@@ -2610,7 +2610,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     validateSchemaIdentifier(schema);
     String sql = getExportedKeysSqlContent();
     String formattedSql = replaceSqlParameters(sql, catalog, schema, table);
-    PreparedStatement stmt = this.connection.prepareStatement(formattedSql);
+    PreparedStatement stmt = this.connection.prepareStatementInternal(formattedSql);
     if (stmt == null) {
       throw new BigQueryJdbcException("Failed to prepare statement for getExportedKeys");
     }

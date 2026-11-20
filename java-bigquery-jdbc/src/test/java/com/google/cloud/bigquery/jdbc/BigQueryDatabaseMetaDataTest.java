@@ -43,7 +43,6 @@ import io.opentelemetry.sdk.trace.data.SpanData;
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.DatabaseMetaData;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
@@ -3627,16 +3626,54 @@ public class BigQueryDatabaseMetaDataTest {
   }
 
   @Test
+  public void testGraphMetadataQueries_useInternalPreparedStatements() throws SQLException {
+    // The PROPERTY_GRAPHS lookups behind getTables, getColumns and getPrimaryKeys are
+    // driver-internal and must not be reported as user PREPARED_STATEMENT / PARAMETER_BINDING /
+    // SELECT telemetry: they must go through prepareStatementInternal, never prepareStatement.
+    when(bigQueryConnection.isEnableGraphMetadata()).thenReturn(true);
+    BigQueryPreparedStatement mockStmt = mock(BigQueryPreparedStatement.class);
+    ResultSet emptyRs = mock(ResultSet.class);
+    when(emptyRs.next()).thenReturn(false);
+    when(mockStmt.executeQuery()).thenReturn(emptyRs);
+    when(bigQueryConnection.prepareStatementInternal(anyString())).thenReturn(mockStmt);
+
+    List<FieldValueList> rows = new ArrayList<>();
+    dbMetadata.appendGraphTableRows(
+        "test-project",
+        "dataset_p",
+        "Graph.%",
+        Collections.singleton("GRAPH TABLE"),
+        rows,
+        dbMetadata.defineGetTablesSchema().getFields());
+    dbMetadata.appendGraphColumnRows(
+        "test-project",
+        "dataset_p",
+        "Graph.Node",
+        "%",
+        rows,
+        dbMetadata.defineGetColumnsSchema().getFields());
+    try (ResultSet rs = dbMetadata.getPrimaryKeys("test-project", "dataset_p", "Graph.Node")) {
+      assertFalse(rs.next());
+    }
+
+    verify(bigQueryConnection, times(3)).prepareStatementInternal(anyString());
+    verify(bigQueryConnection, never()).prepareStatement(anyString());
+  }
+
+  @Test
   public void testGetExportedKeys_infoSchema() throws SQLException {
-    PreparedStatement mockStmt = mock(PreparedStatement.class);
+    BigQueryPreparedStatement mockStmt = mock(BigQueryPreparedStatement.class);
     ResultSet mockRs = mock(ResultSet.class);
-    when(bigQueryConnection.prepareStatement(anyString())).thenReturn(mockStmt);
+    when(bigQueryConnection.prepareStatementInternal(anyString())).thenReturn(mockStmt);
     when(mockStmt.executeQuery()).thenReturn(mockRs);
 
     ResultSet rs = dbMetadata.getExportedKeys("test-project", "dataset_p", "ref_table");
     assertEquals(mockRs, rs);
     verify(mockStmt).closeOnCompletion();
     verify(mockStmt).executeQuery();
+    // Driver-internal metadata queries must not go through the user-facing, telemetry-recording
+    // prepareStatement.
+    verify(bigQueryConnection, never()).prepareStatement(anyString());
   }
 
   @Test
