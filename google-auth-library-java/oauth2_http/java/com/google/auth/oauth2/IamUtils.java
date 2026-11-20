@@ -48,16 +48,22 @@ import com.google.auth.CredentialTypeForMetrics;
 import com.google.auth.Credentials;
 import com.google.auth.ServiceAccountSigner;
 import com.google.auth.http.HttpCredentialsAdapter;
+import com.google.auth.http.HttpTransportFactory;
+import com.google.auth.mtls.MtlsHttpTransportFactory;
 import com.google.auth.oauth2.MetricsUtils.RequestType;
+import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Strings;
 import com.google.common.io.BaseEncoding;
 import java.io.IOException;
 import java.io.InputStream;
+import java.security.KeyStore;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
+import java.util.function.Function;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * This internal class provides shared utilities for interacting with the IAM API for common
@@ -81,6 +87,150 @@ class IamUtils {
   // https://cloud.google.com/iam/docs/retry-strategy#errors-to-retry
   static final Set<Integer> IAM_RETRYABLE_STATUS_CODES =
       new HashSet<>(Arrays.asList(500, 502, 503, 504));
+
+  // Prefix that turns a universe domain into the mTLS domain in the IAM_*_ENDPOINT_FORMAT URLs,
+  // for example iamcredentials.mtls.googleapis.com.
+  private static final String MTLS_DOMAIN_PREFIX = "mtls.";
+
+  // Creates the mTLS transport factory for a bound token's key store. Replaced only in tests.
+  private static volatile Function<KeyStore, HttpTransportFactory> mtlsTransportFactoryProvider =
+      MtlsHttpTransportFactory::new;
+
+  /**
+   * The credentials, transport and endpoint domain to use for one IAM Credentials call.
+   *
+   * <p>{@link #endpointDomain} is the value to substitute into the {@code IAM_*_ENDPOINT_FORMAT}
+   * templates (and to pass as the universe domain argument of {@link #sign} and {@link
+   * #getIdToken}): the universe domain, or {@code mtls.<universe domain>} for the mTLS endpoint.
+   */
+  static final class IamCallTarget {
+    final Credentials credentials;
+    final HttpTransportFactory transportFactory;
+    final String endpointDomain;
+    private final boolean usesMtls;
+
+    IamCallTarget(
+        Credentials credentials,
+        HttpTransportFactory transportFactory,
+        String endpointDomain,
+        boolean usesMtls) {
+      this.credentials = credentials;
+      this.transportFactory = transportFactory;
+      this.endpointDomain = endpointDomain;
+      this.usesMtls = usesMtls;
+    }
+
+    boolean usesMtls() {
+      return usesMtls;
+    }
+  }
+
+  /**
+   * A {@link GoogleCredentials} pinned to a single already-minted {@link AccessToken}, so the
+   * request header always uses the token bound to the presented mTLS certificate even if the source
+   * credential refreshes concurrently.
+   */
+  private static final class PinnedTokenCredentials extends GoogleCredentials {
+    private static final long serialVersionUID = 1L;
+    private final AccessToken token;
+
+    PinnedTokenCredentials(
+        AccessToken token, @Nullable String quotaProjectId, String universeDomain) {
+      super(
+          GoogleCredentials.newBuilder()
+              .setQuotaProjectId(quotaProjectId)
+              .setUniverseDomain(universeDomain));
+      this.token = token;
+    }
+
+    @Override
+    public AccessToken refreshAccessToken() {
+      return token;
+    }
+  }
+
+  /**
+   * Returns where and how to send an IAM Credentials call that is authenticated with {@code
+   * authCredentials}.
+   *
+   * <p>When {@code authCredentials} is a {@link ComputeEngineCredentials} whose current access
+   * token is bound to an agent identity certificate, a bound token is accepted only over mTLS,
+   * presenting that certificate, to the mTLS endpoint. In that case the call goes to {@code
+   * iamcredentials.mtls.<universe domain>} over an mTLS transport that presents the certificate the
+   * token was bound to, authenticated with that same token.
+   *
+   * <p>Otherwise, and whenever the caller customized the endpoint or the transport, or the universe
+   * domain isn't the default one, the call goes to {@code iamcredentials.<universe domain>} with
+   * {@code authCredentials} and {@code transportFactory}, as before.
+   */
+  static IamCallTarget resolveCallTarget(
+      Credentials authCredentials,
+      HttpTransportFactory transportFactory,
+      String universeDomain,
+      boolean endpointOverridden)
+      throws IOException {
+    if (endpointOverridden
+        || !(transportFactory instanceof OAuth2Utils.DefaultHttpTransportFactory)) {
+      return new IamCallTarget(
+          authCredentials, transportFactory, universeDomain, /* usesMtls= */ false);
+    }
+    return resolveBoundTokenCallTarget(
+        authCredentials, transportFactory, universeDomain, mtlsTransportFactoryProvider);
+  }
+
+  @VisibleForTesting
+  static void setMtlsTransportFactoryProvider(Function<KeyStore, HttpTransportFactory> provider) {
+    mtlsTransportFactoryProvider = provider;
+  }
+
+  @VisibleForTesting
+  static void resetForTest() {
+    mtlsTransportFactoryProvider = MtlsHttpTransportFactory::new;
+  }
+
+  /**
+   * Like {@link #resolveCallTarget}, without the endpoint and transport checks, and with the mTLS
+   * transport factory supplied by the caller.
+   */
+  @VisibleForTesting
+  static IamCallTarget resolveBoundTokenCallTarget(
+      Credentials authCredentials,
+      HttpTransportFactory transportFactory,
+      String universeDomain,
+      Function<KeyStore, HttpTransportFactory> mtlsTransportFactory)
+      throws IOException {
+    IamCallTarget defaultTarget =
+        new IamCallTarget(authCredentials, transportFactory, universeDomain, /* usesMtls= */ false);
+    if (!(authCredentials instanceof ComputeEngineCredentials)
+        || !Credentials.GOOGLE_DEFAULT_UNIVERSE.equals(universeDomain)) {
+      return defaultTarget;
+    }
+    ComputeEngineCredentials computeEngineCredentials = (ComputeEngineCredentials) authCredentials;
+    computeEngineCredentials.refreshIfExpired();
+    // The token object carries the certificate it was bound to, so the token and the certificate
+    // presented below always match, even if another thread refreshes the credentials meanwhile.
+    final AccessToken token = computeEngineCredentials.getAccessToken();
+    if (!(token instanceof BoundAccessToken)) {
+      return defaultTarget;
+    }
+    KeyStore keyStore = ((BoundAccessToken) token).getCertInfo().getKeyStore();
+    if (keyStore == null) {
+      return defaultTarget;
+    }
+    // Authenticate with exactly this token: the source credentials could otherwise refresh and
+    // attach a token bound to a different certificate. Calling refresh() populates OAuthValue in
+    // memory via getAdditionalHeaders() after quotaProjectId is initialized, so x-goog-user-project
+    // is preserved while getAccessToken() and getRequestMetadata() start ready without extra I/O.
+    PinnedTokenCredentials pinnedTokenCredentials =
+        new PinnedTokenCredentials(
+            token, computeEngineCredentials.getQuotaProjectId(), universeDomain);
+    pinnedTokenCredentials.refresh();
+    return new IamCallTarget(
+        pinnedTokenCredentials,
+        mtlsTransportFactory.apply(keyStore),
+        MTLS_DOMAIN_PREFIX + universeDomain,
+        /* usesMtls= */ true);
+  }
 
   /**
    * Returns a signature for the provided bytes.
@@ -277,6 +427,11 @@ class IamUtils {
     HttpCredentialsAdapter adapter = new HttpCredentialsAdapter(credentials);
     HttpRequest request =
         transport.createRequestFactory(adapter).buildPostRequest(genericUrl, idTokenContent);
+    if (credentials instanceof PinnedTokenCredentials) {
+      // PinnedTokenCredentials always returns the same token on refresh(), so disable
+      // HttpCredentialsAdapter's 401 retry to avoid resending a rejected token 10 times.
+      request.setUnsuccessfulResponseHandler(null);
+    }
 
     // Disable automatic logging by google-http-java-client to prevent leakage of sensitive tokens.
     // Client Library Debug Logging via LoggingUtils is used instead.

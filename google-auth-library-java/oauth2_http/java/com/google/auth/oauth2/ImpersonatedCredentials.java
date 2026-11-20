@@ -365,19 +365,34 @@ public class ImpersonatedCredentials extends GoogleCredentials
    */
   @Override
   public byte[] sign(byte[] toSign) {
+    String universeDomain;
     try {
-      return IamUtils.sign(
-          getAccount(),
-          sourceCredentials,
-          getUniverseDomain(),
-          transportFactory.create(),
-          toSign,
-          ImmutableMap.of("delegates", this.delegates));
+      universeDomain = getUniverseDomain();
     } catch (IOException ex) {
       // Throwing an IOException would be a breaking change, so wrap it here.
       // This should not happen for this credential type.
       throw new SigningException("Failed to sign: Error obtaining universe domain", ex);
     }
+    IamUtils.IamCallTarget target;
+    try {
+      target =
+          IamUtils.resolveCallTarget(
+              sourceCredentials,
+              transportFactory,
+              universeDomain,
+              // iamEndpointOverride only applies to generateAccessToken; signBlob always uses the
+              // IAM Credentials endpoint.
+              /* endpointOverridden= */ false);
+    } catch (IOException ex) {
+      throw new SigningException("Failed to sign: Error refreshing source credentials", ex);
+    }
+    return IamUtils.sign(
+        getAccount(),
+        target.credentials,
+        target.endpointDomain,
+        target.transportFactory.create(),
+        toSign,
+        ImmutableMap.of("delegates", this.delegates));
   }
 
   /**
@@ -709,6 +724,8 @@ public class ImpersonatedCredentials extends GoogleCredentials
     HttpTransportFactory effectiveTransportFactory =
         firstNonNull(cycleTransportFactory, this.transportFactory);
     HttpCredentialsAdapter adapter;
+    // Set only when the IAM endpoint domain differs from getUniverseDomain() (mTLS).
+    @Nullable String iamEndpointDomain = null;
     AccessToken intermediateAccessTokenForCache = null;
     boolean usedCachedStsToken = false;
     if (this.sourceCredentials instanceof ExternalAccountCredentials) {
@@ -773,6 +790,26 @@ public class ImpersonatedCredentials extends GoogleCredentials
         }
       }
       adapter = new HttpCredentialsAdapter(sourceCredentials);
+      if (this.iamEndpointOverride == null) {
+        // A certificate-bound agent identity token must be sent over mTLS to the mTLS endpoint.
+        String universeDomain = getUniverseDomain();
+        IamUtils.IamCallTarget target;
+        try {
+          target =
+              IamUtils.resolveCallTarget(
+                  this.sourceCredentials,
+                  effectiveTransportFactory,
+                  universeDomain,
+                  /* endpointOverridden= */ false);
+        } catch (IOException e) {
+          throw new IOException("Unable to refresh sourceCredentials", e);
+        }
+        if (target.usesMtls()) {
+          adapter = new HttpCredentialsAdapter(target.credentials);
+          effectiveTransportFactory = target.transportFactory;
+          iamEndpointDomain = target.endpointDomain;
+        }
+      }
     }
 
     HttpTransport httpTransport = effectiveTransportFactory.create();
@@ -785,7 +822,7 @@ public class ImpersonatedCredentials extends GoogleCredentials
             ? this.iamEndpointOverride
             : String.format(
                 IamUtils.IAM_ACCESS_TOKEN_ENDPOINT_FORMAT,
-                getUniverseDomain(),
+                iamEndpointDomain != null ? iamEndpointDomain : getUniverseDomain(),
                 this.targetPrincipal);
 
     GenericUrl url = new GenericUrl(endpointUrl);
@@ -800,11 +837,14 @@ public class ImpersonatedCredentials extends GoogleCredentials
     // Client Library Debug Logging via LoggingUtils is used instead.
     request.setLoggingEnabled(false);
     adapter.initialize(request);
-    if (cycleTransportFactory != null
-        && this.sourceCredentials instanceof ExternalAccountCredentials) {
-      // Disable HttpCredentialsAdapter's default 401 retry so 401 responses propagate to the
-      // caller (e.g. IdentityPoolCredentials) to re-snapshot the certificate and retry the full
-      // cycle with a newly pinned transport.
+    if ((cycleTransportFactory != null
+            && this.sourceCredentials instanceof ExternalAccountCredentials)
+        || iamEndpointDomain != null) {
+      // Disable HttpCredentialsAdapter's default 401 retry when the request uses a pinned
+      // single-token credential (whose refresh() is a no-op): for ExternalAccountCredentials so
+      // 401 responses propagate to IdentityPoolCredentials to re-snapshot the certificate and retry
+      // the full cycle, and for bound agent-identity tokens so a 401 doesn't resend the same
+      // rejected token 10 times.
       request.setUnsuccessfulResponseHandler(null);
     }
     request.setParser(parser);
@@ -899,15 +939,23 @@ public class ImpersonatedCredentials extends GoogleCredentials
       String targetAudience, @Nullable List<IdTokenProvider.Option> options) throws IOException {
     boolean includeEmail =
         options != null && options.contains(IdTokenProvider.Option.INCLUDE_EMAIL);
+    IamUtils.IamCallTarget target =
+        IamUtils.resolveCallTarget(
+            sourceCredentials,
+            transportFactory,
+            getUniverseDomain(),
+            // iamEndpointOverride only applies to generateAccessToken; generateIdToken always uses
+            // the IAM Credentials endpoint.
+            /* endpointOverridden= */ false);
     return IamUtils.getIdToken(
         getAccount(),
-        sourceCredentials,
-        transportFactory.create(),
+        target.credentials,
+        target.transportFactory.create(),
         targetAudience,
         includeEmail,
         ImmutableMap.of("delegates", this.delegates),
         getMetricsCredentialType(),
-        getUniverseDomain());
+        target.endpointDomain);
   }
 
   @Override
