@@ -25,12 +25,18 @@ import io.opentelemetry.api.OpenTelemetry;
 import io.opentelemetry.api.common.AttributeKey;
 import io.opentelemetry.api.common.Attributes;
 import io.opentelemetry.api.common.AttributesBuilder;
+import io.opentelemetry.api.trace.Span;
 import io.opentelemetry.api.trace.propagation.W3CTraceContextPropagator;
+import io.opentelemetry.context.Context;
+import io.opentelemetry.context.Scope;
 import io.opentelemetry.context.propagation.ContextPropagators;
 import io.opentelemetry.exporter.otlp.trace.OtlpGrpcSpanExporter;
 import io.opentelemetry.sdk.OpenTelemetrySdk;
 import io.opentelemetry.sdk.resources.Resource;
+import io.opentelemetry.sdk.trace.ReadWriteSpan;
+import io.opentelemetry.sdk.trace.ReadableSpan;
 import io.opentelemetry.sdk.trace.SdkTracerProvider;
+import io.opentelemetry.sdk.trace.SpanProcessor;
 import io.opentelemetry.sdk.trace.export.BatchSpanProcessor;
 import io.opentelemetry.sdk.trace.export.SpanExporter;
 import io.opentelemetry.sdk.trace.samplers.Sampler;
@@ -41,6 +47,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.function.BiFunction;
+import java.util.function.BooleanSupplier;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.jspecify.annotations.Nullable;
@@ -68,6 +75,8 @@ final class BuiltInTracingProvider {
   private final Map<List<Object>, OpenTelemetrySdk> openTelemetries = new HashMap<>();
   private BiFunction<String, Credentials, SpanExporter> spanExporterFactory =
       BuiltInTracingProvider::createTelemetryApiExporter;
+  private BooleanSupplier contextCheck = BuiltInTracingProvider::contextCanHoldSpans;
+  private Boolean contextCanHoldSpans;
   private Thread shutdownHook;
   private boolean openCensusWarningLogged;
   private boolean customTracingInfoLogged;
@@ -77,6 +86,9 @@ final class BuiltInTracingProvider {
   @Nullable
   synchronized OpenTelemetry getOrCreateOpenTelemetry(
       String projectId, Credentials credentials, double samplingRate) {
+    if (!isContextUsable()) {
+      return null;
+    }
     List<Object> key = ImmutableList.of(projectId, samplingRate);
     OpenTelemetrySdk openTelemetry = openTelemetries.get(key);
     if (openTelemetry == null) {
@@ -98,6 +110,58 @@ final class BuiltInTracingProvider {
       }
     }
     return openTelemetry;
+  }
+
+  private boolean isContextUsable() {
+    if (contextCanHoldSpans == null) {
+      contextCanHoldSpans = contextCheck.getAsBoolean();
+      if (!contextCanHoldSpans) {
+        logger.log(
+            Level.WARNING,
+            "Built-in tracing is enabled, but spans of built-in tracing cannot be set as the"
+                + " current span in this application, for example because the OpenTelemetry Java"
+                + " agent is attached. Built-in tracing is not used. Enable tracing in the agent"
+                + " instead.");
+      }
+    }
+    return contextCanHoldSpans;
+  }
+
+  @VisibleForTesting
+  static boolean contextCanHoldSpans() {
+    try (SdkTracerProvider tracerProvider =
+        SdkTracerProvider.builder().addSpanProcessor(new NoopSpanProcessor()).build()) {
+      Span span =
+          tracerProvider
+              .get(BuiltInTracingProvider.class.getName())
+              .spanBuilder("check")
+              .startSpan();
+      try (Scope ignore = span.makeCurrent()) {
+        return Span.current() == span;
+      } finally {
+        span.end();
+      }
+    } catch (Throwable throwable) {
+      return false;
+    }
+  }
+
+  private static final class NoopSpanProcessor implements SpanProcessor {
+    @Override
+    public void onStart(Context parentContext, ReadWriteSpan span) {}
+
+    @Override
+    public boolean isStartRequired() {
+      return false;
+    }
+
+    @Override
+    public void onEnd(ReadableSpan span) {}
+
+    @Override
+    public boolean isEndRequired() {
+      return false;
+    }
   }
 
   synchronized void logOpenCensusWarningOnce() {
@@ -138,10 +202,17 @@ final class BuiltInTracingProvider {
   }
 
   @VisibleForTesting
+  synchronized void setContextCheck(BooleanSupplier contextCheck) {
+    this.contextCheck = contextCheck;
+  }
+
+  @VisibleForTesting
   synchronized void reset() {
     shutdown();
     openTelemetries.clear();
     spanExporterFactory = BuiltInTracingProvider::createTelemetryApiExporter;
+    contextCheck = BuiltInTracingProvider::contextCanHoldSpans;
+    contextCanHoldSpans = null;
     openCensusWarningLogged = false;
     customTracingInfoLogged = false;
   }

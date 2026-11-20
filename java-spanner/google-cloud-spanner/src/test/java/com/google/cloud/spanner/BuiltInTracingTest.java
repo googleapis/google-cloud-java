@@ -348,6 +348,19 @@ public class BuiltInTracingTest {
   }
 
   @Test
+  public void builtInTracingIsNotUsedWhenItsSpansCannotBeCurrent() {
+    BuiltInTracingProvider.INSTANCE.setContextCheck(() -> false);
+    SpannerOptions options = createOptionsBuilder().setEnableBuiltInTracing(true).build();
+
+    assertThat(options.getTracingOpenTelemetry()).isNotInstanceOf(OpenTelemetrySdk.class);
+  }
+
+  @Test
+  public void spansOfBuiltInTracingCanBeCurrent() {
+    assertThat(BuiltInTracingProvider.contextCanHoldSpans()).isTrue();
+  }
+
+  @Test
   public void builtInTracingDoesNotChangeTheRecordedMetrics() {
     SpannerOptions.enableOpenTelemetryTraces();
     Set<String> metricsWithoutBuiltInTracing = recordMetrics(false);
