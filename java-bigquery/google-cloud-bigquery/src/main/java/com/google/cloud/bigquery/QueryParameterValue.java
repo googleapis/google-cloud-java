@@ -73,7 +73,8 @@ import org.threeten.extra.PeriodDuration;
  * calling {@link #of(Object, StandardSQLTypeName)} with the value and a particular
  * StandardSQLTypeName enum value.
  *
- * <p>Struct parameters are currently not supported.
+ * <p>Use {@link #array(Object[], StandardSQLTypeName)} for array parameters and {@link
+ * #struct(Map)} for struct parameters.
  */
 @AutoValue
 public abstract class QueryParameterValue implements Serializable {

@@ -145,12 +145,12 @@ public class TableInfo implements Serializable {
     /**
      * Sets the labels applied to this table.
      *
-     * <p>Unstable, because labels are <a
-     * href="https://cloud.google.com/bigquery/docs/reference/rest/v2/tables">experimental</a>.
-     *
      * <p>When used with {@link BigQuery#update(TableInfo, TableOption...)}, setting {@code labels}
      * to {@code null} removes all labels; otherwise all keys that are mapped to {@code null} values
      * are removed and other keys are updated to their respective values.
+     *
+     * @see <a href="https://docs.cloud.google.com/bigquery/docs/labels-intro">Introduction to
+     *     labels</a>
      */
     @BetaApi
     public abstract Builder setLabels(Map<String, String> labels);
@@ -619,8 +619,8 @@ public class TableInfo implements Serializable {
   /**
    * Return a map for labels applied to the table.
    *
-   * <p>Unstable, because labels are <a
-   * href="https://cloud.google.com/bigquery/docs/reference/rest/v2/tables">experimental</a>.
+   * @see <a href="https://docs.cloud.google.com/bigquery/docs/labels-intro">Introduction to
+   *     labels</a>
    */
   @BetaApi
   public Map<String, String> getLabels() {

@@ -95,7 +95,7 @@ public interface LoadConfiguration {
      * Sets whether BigQuery should allow extra values that are not represented in the table schema.
      * If {@code true}, the extra values are ignored. If {@code false}, records with extra columns
      * are treated as bad records, and if there are too many bad records, an invalid error is
-     * returned in the job result. By default unknown values are not allowed.
+     * returned in the job result. Defaults to {@code false} (unknown values are not allowed).
      */
     Builder setIgnoreUnknownValues(Boolean ignoreUnknownValues);
 
@@ -193,9 +193,9 @@ public interface LoadConfiguration {
 
   /**
    * Returns whether BigQuery should allow extra values that are not represented in the table
-   * schema. If {@code true}, the extra values are ignored. If {@code true}, records with extra
+   * schema. If {@code true}, the extra values are ignored. If {@code false}, records with extra
    * columns are treated as bad records, and if there are too many bad records, an invalid error is
-   * returned in the job result. By default unknown values are not allowed.
+   * returned in the job result. Defaults to {@code false} (unknown values are not allowed).
    */
   Boolean ignoreUnknownValues();
 
