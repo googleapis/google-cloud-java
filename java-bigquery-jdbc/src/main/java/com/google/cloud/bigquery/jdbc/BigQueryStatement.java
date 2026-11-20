@@ -1262,14 +1262,14 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
       // The job stream or JSON. A read session is never used where the job stream is allowed.
       if (useJobStream(results)) {
         LOG.info("Using the job stream to read the data.");
-        resultSet = processJobStreamResultSet(results, job);
         this.currentExecutionBuilder.setQueryApiType(QueryApiType.QUERY_API_TYPE_READ_API);
+        resultSet = processJobStreamResultSet(results, job);
       }
     } else if (jobId != null && useReadAPI(results)) {
       try {
         LOG.info("Using ReadAPI to read the data.");
-        resultSet = processArrowResultSet(results, job);
         this.currentExecutionBuilder.setQueryApiType(QueryApiType.QUERY_API_TYPE_READ_API);
+        resultSet = processArrowResultSet(results, job);
       } catch (SQLException e) {
         if (!isPermissionDeniedException(e)) {
           throw e;

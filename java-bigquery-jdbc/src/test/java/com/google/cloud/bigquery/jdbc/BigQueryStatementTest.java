@@ -930,6 +930,31 @@ public class BigQueryStatementTest {
     statementSpy.processQueryResponse("SELECT 1", tableResultMock);
 
     assertThat(statementSpy.currentResultSet).isEqualTo(jsonResultSetMock);
+    // The fallback replaces the Read API type recorded before the attempt.
+    assertEquals(
+        QueryApiType.QUERY_API_TYPE_STANDARD_REST_API,
+        statementSpy.currentExecutionBuilder.getQueryApiType());
+  }
+
+  @Test
+  public void testProcessQueryResponseRecordsReadApiWhenReadSessionSetupFails()
+      throws SQLException {
+    BigQueryStatement statementSpy = Mockito.spy(bigQueryStatement);
+    TableResult tableResultMock = mockTableResultWithJob("job-id");
+    doReturn(true).when(statementSpy).useReadAPI(tableResultMock);
+    // What executeJob records for a query that ran as a job, before the result is routed.
+    statementSpy.currentExecutionBuilder.setQueryApiType(
+        QueryApiType.QUERY_API_TYPE_STANDARD_REST_API);
+    Mockito.doThrow(new BigQueryJdbcException("No read session"))
+        .when(statementSpy)
+        .processArrowResultSet(eq(tableResultMock), any());
+
+    assertThrows(
+        SQLException.class, () -> statementSpy.processQueryResponse("SELECT 1", tableResultMock));
+
+    assertEquals(
+        QueryApiType.QUERY_API_TYPE_READ_API,
+        statementSpy.currentExecutionBuilder.getQueryApiType());
   }
 
   private TableResult mockTableResultWithJob(String jobId) {
@@ -2096,6 +2121,24 @@ public class BigQueryStatementTest {
     assertThat(thrown.getMessage()).contains("Unable to allocate background threads");
     // The fallback to JSON is not part of this change.
     verify(stmtSpy, Mockito.never()).processJsonResultSet(any(), any());
+  }
+
+  @Test
+  public void testProcessQueryResponseRecordsReadApiWhenJobStreamSetupFails() throws SQLException {
+    BigQueryStatement stmtSpy = jobStreamStatementSpy();
+    // What executeJob records for a query that ran as a job, before the result is routed.
+    stmtSpy.currentExecutionBuilder.setQueryApiType(QueryApiType.QUERY_API_TYPE_STANDARD_REST_API);
+    Mockito.doThrow(new RejectedExecutionException("The pool is full"))
+        .when(stmtSpy)
+        .populateArrowBufferedQueueFromJobStream(
+            any(JobId.class), anyLong(), any(BlockingQueue.class), any(BigQueryReadClient.class));
+
+    assertThrows(
+        SQLException.class, () -> stmtSpy.processQueryResponse("SELECT 1", multiPageResult(5000L)));
+
+    // Telemetry reports the failed statement against the API that failed.
+    assertEquals(
+        QueryApiType.QUERY_API_TYPE_READ_API, stmtSpy.currentExecutionBuilder.getQueryApiType());
   }
 
   @Test
