@@ -59,9 +59,9 @@ class CompositeTracer extends BaseApiTracer {
 
   /**
    * Opens a scope on each child tracer in forward order and returns a composite scope that closes
-   * them in reverse (LIFO) order. Null scopes are ignored.
+   * them in reverse (LIFO) order. Null scopes are ignored, preventing against implementations that
+   * break the non-null contract.
    */
-  // Preventing against implementations that break the non-null contract.
   @SuppressWarnings("java:S2589")
   @Override
   public Scope inScope() {
