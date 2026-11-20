@@ -16,6 +16,8 @@
 
 package com.google.cloud.bigquery.jdbc;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -26,17 +28,26 @@ import com.google.cloud.bigquery.Field;
 import com.google.cloud.bigquery.FieldList;
 import com.google.cloud.bigquery.StandardSQLTypeName;
 import java.io.IOException;
+import java.nio.channels.SeekableByteChannel;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.attribute.PosixFilePermissions;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.List;
 import java.util.Optional;
 import java.util.concurrent.Future;
 import java.util.logging.Level;
 import java.util.logging.LogRecord;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.condition.EnabledOnOs;
+import org.junit.jupiter.api.condition.OS;
 import org.junit.jupiter.api.io.TempDir;
 import org.mockito.Mockito;
 
@@ -66,13 +77,19 @@ public class PerConnectionFileHandlerTest {
     BigQueryJdbcRootLogger.getRootLogger().setLevel(originalLevel);
   }
 
+  private Optional<Path> findLogFile(Path dir, String suffix) throws IOException {
+    try (Stream<Path> files = Files.list(dir)) {
+      return files
+          .filter(
+              p ->
+                  p.getFileName().toString().startsWith("BQ-JDBC-")
+                      && p.getFileName().toString().endsWith(suffix))
+          .findFirst();
+    }
+  }
+
   private Optional<Path> findLogFile(String suffix) throws IOException {
-    return Files.list(tempDir)
-        .filter(
-            p ->
-                p.getFileName().toString().startsWith("BQ-JDBC-")
-                    && p.getFileName().toString().endsWith(suffix))
-        .findFirst();
+    return findLogFile(tempDir, suffix);
   }
 
   @Test
@@ -219,6 +236,184 @@ public class PerConnectionFileHandlerTest {
     } finally {
       // Cleanup
       rootLogger.removeHandler(handler);
+    }
+  }
+
+  private static void assertMode(Path path, String expected) throws IOException {
+    assertEquals(expected, PosixFilePermissions.toString(Files.getPosixFilePermissions(path)));
+  }
+
+  private static String readUtf8(Path path) throws IOException {
+    return new String(Files.readAllBytes(path), StandardCharsets.UTF_8);
+  }
+
+  @Test
+  @EnabledOnOs({OS.LINUX, OS.MAC})
+  public void testPosixOwnerOnlyPermissionsOnCreatedDirsAndFiles() throws IOException {
+    Path nestedDir = tempDir.resolve("parent_logs/child_logs");
+    PerConnectionFileHandler posixHandler =
+        new PerConnectionFileHandler(nestedDir.toString(), Level.FINEST);
+    try {
+      try (BigQueryJdbcMdc.MdcCloseable mdc = BigQueryJdbcMdc.registerInstance("p999")) {
+        posixHandler.publish(new LogRecord(Level.INFO, "Query log entry"));
+      }
+      posixHandler.flush();
+
+      assertMode(nestedDir.getParent(), "rwx------");
+      assertMode(nestedDir, "rwx------");
+      assertMode(nestedDir.resolve("BQ-JDBC-GLOBAL.log"), "rw-------");
+
+      Optional<Path> connLog = findLogFile(nestedDir, "-p999.log");
+      assertTrue(connLog.isPresent());
+      assertMode(connLog.get(), "rw-------");
+    } finally {
+      posixHandler.close();
+    }
+  }
+
+  @Test
+  @EnabledOnOs({OS.LINUX, OS.MAC})
+  public void testExistingSharedDirectoryAndPermissiveFileHandling() throws IOException {
+    Path sharedDir = Files.createDirectory(tempDir.resolve("shared_dir"));
+    Files.setPosixFilePermissions(sharedDir, PosixFilePermissions.fromString("rwxr-xr-x"));
+
+    Path existingGlobal =
+        Files.write(
+            sharedDir.resolve("BQ-JDBC-GLOBAL.log"),
+            "Prior entry\n".getBytes(StandardCharsets.UTF_8));
+    Files.setPosixFilePermissions(existingGlobal, PosixFilePermissions.fromString("rw-r--r--"));
+
+    PerConnectionFileHandler sharedHandler =
+        new PerConnectionFileHandler(sharedDir.toString(), Level.INFO);
+    try {
+      sharedHandler.publish(new LogRecord(Level.INFO, "Appended entry"));
+      try (BigQueryJdbcMdc.MdcCloseable badIdMdc = BigQueryJdbcMdc.registerInstance("a/bc")) {
+        sharedHandler.publish(new LogRecord(Level.INFO, "Fallback to global entry"));
+      }
+      sharedHandler.flush();
+      assertMode(sharedDir, "rwxr-xr-x");
+      assertMode(existingGlobal, "rw-------");
+      String combined = readUtf8(existingGlobal);
+      assertTrue(combined.contains("Prior entry") && combined.contains("Appended entry"));
+      assertTrue(combined.contains("Fallback to global entry"));
+
+      PerConnectionFileHandler secondHandler =
+          new PerConnectionFileHandler(sharedDir.toString(), Level.INFO);
+      try {
+        secondHandler.publish(new LogRecord(Level.INFO, "Isolated PID entry"));
+        secondHandler.flush();
+        Path pidGlobal =
+            sharedDir.resolve("BQ-JDBC-GLOBAL-" + BigQueryJdbcRootLogger.PROCESS_ID + ".log");
+        assertTrue(Files.exists(pidGlobal));
+        assertMode(pidGlobal, "rw-------");
+      } finally {
+        secondHandler.close();
+      }
+    } finally {
+      sharedHandler.close();
+    }
+
+    String origUser = System.getProperty("user.name");
+    try {
+      System.setProperty("user.name", "");
+      assertThrows(
+          IOException.class,
+          () -> PerConnectionFileHandler.openSecureAppendChannel(existingGlobal));
+      System.setProperty("user.name", "other_user");
+      assertThrows(
+          IOException.class,
+          () -> PerConnectionFileHandler.openSecureAppendChannel(existingGlobal));
+    } finally {
+      if (origUser != null) {
+        System.setProperty("user.name", origUser);
+      } else {
+        System.clearProperty("user.name");
+      }
+    }
+
+    assertNotNull(PerConnectionFileHandler.ensureSecureDirectory(Paths.get("/tmp")));
+  }
+
+  @Test
+  @EnabledOnOs({OS.LINUX, OS.MAC})
+  public void testSymbolicLinksAndNonRegularPathsAreRejected() throws IOException {
+    Path targetFile =
+        Files.write(tempDir.resolve("target.txt"), "keep".getBytes(StandardCharsets.UTF_8));
+    Path fileSymlink = tempDir.resolve("symlink.log");
+    Files.createSymbolicLink(fileSymlink, targetFile);
+
+    assertThrows(
+        IOException.class, () -> PerConnectionFileHandler.openSecureAppendChannel(fileSymlink));
+    assertEquals("keep", readUtf8(targetFile));
+
+    Path subDir = Files.createDirectory(tempDir.resolve("not_a_regular_file"));
+    assertThrows(IOException.class, () -> PerConnectionFileHandler.openSecureAppendChannel(subDir));
+    assertThrows(
+        IOException.class, () -> PerConnectionFileHandler.ensureSecureDirectory(targetFile));
+
+    Path realTargetDir = Files.createDirectory(tempDir.resolve("real_target_dir"));
+    Path dirSymlink = tempDir.resolve("dir_symlink");
+    Files.createSymbolicLink(dirSymlink, realTargetDir);
+    assertThrows(
+        IOException.class, () -> PerConnectionFileHandler.ensureSecureDirectory(dirSymlink));
+    assertThrows(
+        IOException.class,
+        () -> PerConnectionFileHandler.ensureSecureDirectory(dirSymlink.resolve("nested_child")));
+    PerConnectionFileHandler rejectedHandler =
+        new PerConnectionFileHandler(dirSymlink.toString(), Level.INFO);
+    try (BigQueryJdbcMdc.MdcCloseable mdc = BigQueryJdbcMdc.registerInstance("sym-conn")) {
+      rejectedHandler.publish(new LogRecord(Level.INFO, "Should not write through symlink"));
+    }
+    rejectedHandler.close();
+    assertFalse(Files.exists(realTargetDir.resolve("BQ-JDBC-GLOBAL.log")));
+
+    PerConnectionFileHandler badSyntaxHandler =
+        new PerConnectionFileHandler("bad\0path", Level.INFO);
+    badSyntaxHandler.publish(new LogRecord(Level.INFO, "Gracefully ignored on invalid path"));
+    badSyntaxHandler.close();
+
+    try (SeekableByteChannel ch =
+        PerConnectionFileHandler.openSecureAppendChannel(tempDir.resolve("owned.log"))) {
+      assertNotNull(ch);
+    }
+  }
+
+  @Test
+  public void testPercentTokensAndCollisionIsolation() throws IOException {
+    Path literalPercentDir = tempDir.resolve("dir_%t_%h_%g_%u");
+    PerConnectionFileHandler percentHandler =
+        new PerConnectionFileHandler(literalPercentDir.toString(), Level.INFO);
+    BigQueryJdbcCustomLogger customLogger =
+        new BigQueryJdbcCustomLogger(PerConnectionFileHandlerTest.class.getName());
+    customLogger.setLevel(Level.ALL);
+    customLogger.addHandler(percentHandler);
+    try {
+      customLogger.info("Literal percent dir log %s", "ok");
+      try (BigQueryJdbcMdc.MdcCloseable m1 = BigQueryJdbcMdc.registerInstance("abcd-1111")) {
+        percentHandler.publish(new LogRecord(Level.INFO, "First abcd connection"));
+      }
+      try (BigQueryJdbcMdc.MdcCloseable m2 = BigQueryJdbcMdc.registerInstance("abcd-2222")) {
+        percentHandler.publish(new LogRecord(Level.INFO, "Second abcd connection"));
+      }
+      percentHandler.flush();
+      String content = readUtf8(literalPercentDir.resolve("BQ-JDBC-GLOBAL.log"));
+      assertTrue(content.contains("Literal percent dir log ok"));
+      assertTrue(content.contains("PerConnectionFileHandlerTest"));
+    } finally {
+      customLogger.removeHandler(percentHandler);
+      percentHandler.close();
+    }
+
+    try (BigQueryJdbcMdc.MdcCloseable m3 = BigQueryJdbcMdc.registerInstance("after-close")) {
+      percentHandler.publish(new LogRecord(Level.INFO, "Ignored after handler close"));
+    }
+
+    try (Stream<Path> stream = Files.list(literalPercentDir)) {
+      List<Path> files = stream.collect(Collectors.toList());
+      assertTrue(files.stream().noneMatch(p -> p.getFileName().toString().endsWith(".lck")));
+      assertTrue(files.stream().noneMatch(p -> p.getFileName().toString().endsWith("-afte.log")));
+      assertEquals(
+          2L, files.stream().filter(p -> p.getFileName().toString().endsWith("-abcd.log")).count());
     }
   }
 }
