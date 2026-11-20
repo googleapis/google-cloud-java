@@ -135,7 +135,8 @@ public class BigQueryDriver implements Driver {
         String connectionId = UUID.randomUUID().toString();
         BigQueryConnection connection = null;
         boolean connectionReturned = false;
-        try (BigQueryJdbcMdc.MdcCloseable mdc = BigQueryJdbcMdc.registerInstance(connectionId)) {
+        try (BigQueryJdbcMdc.MdcCloseable mdc =
+            BigQueryJdbcMdc.registerAndBindConnection(connectionId)) {
           Properties connectInfo = info == null ? new Properties() : (Properties) info.clone();
           Object customOpenTelemetryObj = connectInfo.remove("customOpenTelemetry");
 
