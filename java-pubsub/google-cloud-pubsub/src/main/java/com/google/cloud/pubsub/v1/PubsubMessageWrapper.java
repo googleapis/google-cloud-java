@@ -179,6 +179,10 @@ public class PubsubMessageWrapper {
     this.subscribeSchedulerSpan = span;
   }
 
+  Span getSubscribeProcessSpan() {
+    return subscribeProcessSpan;
+  }
+
   void setSubscribeProcessSpan(Span span) {
     this.subscribeProcessSpan = span;
   }
