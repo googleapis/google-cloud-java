@@ -247,8 +247,8 @@ public final class Field implements Serializable {
 
     /**
      * Precision can be used to constrain the maximum number of total digits allowed for NUMERIC or
-     * BIGNUMERIC types. It is invalid to set values for Precision for types other than // NUMERIC
-     * or BIGNUMERIC. For NUMERIC type, acceptable values for Precision must be: 1 ≤ (Precision -
+     * BIGNUMERIC types. It is invalid to set values for Precision for types other than NUMERIC or
+     * BIGNUMERIC. For NUMERIC type, acceptable values for Precision must be: 1 ≤ (Precision -
      * Scale) ≤ 29. Values for Scale must be: 0 ≤ Scale ≤ 9. For BIGNUMERIC type, acceptable values
      * for Precision must be: 1 ≤ (Precision - Scale) ≤ 38. Values for Scale must be: 0 ≤ Scale ≤
      * 38.
@@ -303,9 +303,10 @@ public final class Field implements Serializable {
      * Optional. Field collation can be set only when the type of field is STRING. The following
      * values are supported:
      *
-     * <p>* 'und:ci': undetermined locale, case insensitive. * '': empty string. Default to
-     * case-sensitive behavior. (-- A wrapper is used here because it is possible to set the value
-     * to the empty string. --)
+     * <ul>
+     *   <li>{@code 'und:ci'}: undetermined locale, case insensitive.
+     *   <li>{@code ''}: empty string. Default to case-sensitive behavior.
+     * </ul>
      */
     public Builder setCollation(String collation) {
       this.collation = collation;

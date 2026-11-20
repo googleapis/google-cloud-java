@@ -180,9 +180,10 @@ public class DatasetInfo implements Serializable {
      * do not have explicit collation specified. A change to this field affects only tables created
      * afterwards, and does not alter the existing tables. The following values are supported:
      *
-     * <p>* 'und:ci': undetermined locale, case insensitive. * '': empty string. Default to
-     * case-sensitive behavior. (-- A wrapper is used here because it is possible to set the value
-     * to the empty string. --) (-- api-linter: standard-fields=disabled --)
+     * <ul>
+     *   <li>{@code 'und:ci'}: undetermined locale, case insensitive.
+     *   <li>{@code ''}: empty string. Default to case-sensitive behavior.
+     * </ul>
      */
     public abstract Builder setDefaultCollation(String defaultCollation);
 

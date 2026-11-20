@@ -1238,8 +1238,8 @@ public final class QueryJobConfiguration extends JobConfiguration {
   }
 
   /**
-   * Returns a BigQuery Copy Job for the given the query to be run. Job's id is chosen by the
-   * service.
+   * Returns a BigQuery Query Job configuration for the given query to be run. Job's id is chosen by
+   * the service.
    */
   public static QueryJobConfiguration of(String query) {
     return newBuilder(query).build();

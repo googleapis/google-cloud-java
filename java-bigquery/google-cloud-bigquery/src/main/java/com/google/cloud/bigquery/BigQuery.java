@@ -397,7 +397,7 @@ public interface BigQuery extends Service<BigQueryOptions>, AutoCloseable {
     }
   }
 
-  /** Class for specifying table list options. */
+  /** Class for specifying model list options. */
   class ModelListOption extends Option {
 
     private static final long serialVersionUID = 8660294969063322498L;
@@ -528,7 +528,7 @@ public interface BigQuery extends Service<BigQueryOptions>, AutoCloseable {
     }
   }
 
-  /** Class for specifying table get, create and update options. */
+  /** Class for specifying routine get, create and update options. */
   class RoutineOption extends Option {
 
     private static final long serialVersionUID = -1723870122095226772L;
@@ -538,8 +538,8 @@ public interface BigQuery extends Service<BigQueryOptions>, AutoCloseable {
     }
 
     /**
-     * Returns an option to specify the routines's fields to be returned by the RPC call. If this
-     * option is not provided all model's fields are returned. {@code RoutineOption.fields} can be
+     * Returns an option to specify the routine's fields to be returned by the RPC call. If this
+     * option is not provided all routine's fields are returned. {@code RoutineOption.fields} can be
      * used to specify only the fields of interest.
      */
     public static RoutineOption fields(RoutineField... fields) {
@@ -634,7 +634,7 @@ public interface BigQuery extends Service<BigQueryOptions>, AutoCloseable {
 
     /**
      * Returns an option to specify the job's fields to be returned by the RPC call. If this option
-     * is not provided all job's fields are returned. {@code JobOption.fields()} can be used to
+     * is not provided all job's fields are returned. {@code JobListOption.fields()} can be used to
      * specify only the fields of interest. {@link Job#getJobId()}, {@link JobStatus#getState()},
      * {@link JobStatus#getError()} as well as type-specific configuration (e.g. {@link
      * QueryJobConfiguration#getQuery()} for Query Jobs) are always returned, even if not specified.
@@ -647,7 +647,7 @@ public interface BigQuery extends Service<BigQueryOptions>, AutoCloseable {
     }
   }
 
-  /** Class for specifying table get and create options. */
+  /** Class for specifying job get and create options. */
   class JobOption extends Option {
 
     private static final long serialVersionUID = -3111736712316353664L;
@@ -1083,7 +1083,7 @@ public interface BigQuery extends Service<BigQueryOptions>, AutoCloseable {
    * <pre>{@code
    * String projectId = "my_project_id";
    * String datasetName = "my_dataset_name";
-   * String tableName = "my_model_name";
+   * String modelName = "my_model_name";
    * ModelId modelId = ModelId.of(projectId, datasetName, modelName);
    * boolean deleted = bigquery.delete(modelId);
    * if (deleted) {
@@ -1106,8 +1106,8 @@ public interface BigQuery extends Service<BigQueryOptions>, AutoCloseable {
    * <pre>{@code
    * String projectId = "my_project_id";
    * String datasetId = "my_dataset_id";
-   * String routineId = "my_routine_id";
-   * RoutineId routineId = RoutineId.of(projectId, datasetId, routineId);
+   * String routineName = "my_routine_id";
+   * RoutineId routineId = RoutineId.of(projectId, datasetId, routineName);
    * boolean deleted = bigquery.delete(routineId);
    * if (deleted) {
    *   // the routine was deleted
@@ -1133,20 +1133,14 @@ public interface BigQuery extends Service<BigQueryOptions>, AutoCloseable {
    * Updates dataset information.
    *
    * <p>Example of updating a dataset by changing its description.
-   * <!--SNIPPET
-   * bigquery_update_table_description-->
    *
    * <pre>{@code
-   * // String datasetName = "my_dataset_name";
-   * // String tableName = "my_table_name";
-   * // String newDescription = "new_description";
-   *
-   * Table beforeTable = bigquery.getTable(datasetName, tableName);
-   * TableInfo tableInfo = beforeTable.toBuilder().setDescription(newDescription).build();
-   * Table afterTable = bigquery.update(tableInfo);
+   * String datasetName = "my_dataset_name";
+   * String newDescription = "new_description";
+   * Dataset beforeDataset = bigquery.getDataset(datasetName);
+   * DatasetInfo datasetInfo = beforeDataset.toBuilder().setDescription(newDescription).build();
+   * Dataset afterDataset = bigquery.update(datasetInfo);
    * }</pre>
-   *
-   * <!--SNIPPET bigquery_update_table_description-->
    *
    * @throws BigQueryException upon failure
    */
@@ -1269,7 +1263,7 @@ public interface BigQuery extends Service<BigQueryOptions>, AutoCloseable {
    * String projectId = "my_project_id";
    * String datasetName = "my_dataset_name";
    * String modelName = "my_model_name";
-   * ModelId modelId = ModelId.of(projectId, datasetName, tableName);
+   * ModelId modelId = ModelId.of(projectId, datasetName, modelName);
    * Model model = bigquery.getModel(modelId);
    * }</pre>
    *
