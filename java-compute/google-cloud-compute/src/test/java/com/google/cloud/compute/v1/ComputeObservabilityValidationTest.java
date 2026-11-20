@@ -142,6 +142,7 @@ public class ComputeObservabilityValidationTest {
   public void tearDown() throws InterruptedException {
     if (loggingTracerLogger != null && testAppender != null) {
       loggingTracerLogger.detachAppender(testAppender);
+      testAppender.stop();
       loggingTracerLogger.setLevel(previousLogLevel);
     }
     if (client != null) {
