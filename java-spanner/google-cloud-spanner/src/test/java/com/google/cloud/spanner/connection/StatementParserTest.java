@@ -1926,6 +1926,103 @@ public class StatementParserTest {
         parsedStatement.getClientSideStatementType());
   }
 
+  @Test
+  public void testPostgreSQLEscapeStrings() {
+    assumeTrue(dialect == Dialect.POSTGRESQL);
+
+    ParametersInfo upperEscape =
+        parser.convertPositionalParametersToNamedParameters('?', "SELECT E'it\\'s ?', ?");
+    assertEquals(1, upperEscape.numberOfParameters);
+    assertEquals("SELECT E'it\\'s ?', $1", upperEscape.sqlWithNamedParameters);
+
+    ParametersInfo lowerEscape =
+        parser.convertPositionalParametersToNamedParameters('?', "SELECT e'a\\' ? b\\'', ?");
+    assertEquals(1, lowerEscape.numberOfParameters);
+    assertEquals("SELECT e'a\\' ? b\\'', $1", lowerEscape.sqlWithNamedParameters);
+
+    ParametersInfo trailingBackslash =
+        parser.convertPositionalParametersToNamedParameters('?', "SELECT E'path\\\\', ?");
+    assertEquals(1, trailingBackslash.numberOfParameters);
+    assertEquals("SELECT E'path\\\\', $1", trailingBackslash.sqlWithNamedParameters);
+
+    ParametersInfo doubledQuoteAndDelimiters =
+        parser.convertPositionalParametersToNamedParameters(
+            '?', "SELECT E'doubled''quote?', (?, E'\\'?')");
+    assertEquals(1, doubledQuoteAndDelimiters.numberOfParameters);
+    assertEquals(
+        "SELECT E'doubled''quote?', ($1, E'\\'?')",
+        doubledQuoteAndDelimiters.sqlWithNamedParameters);
+
+    // An identifier ending in 'e' or 'E' before a quote is a standard string literal, not E'...'.
+    ParametersInfo identifierEndingWithE =
+        parser.convertPositionalParametersToNamedParameters('?', "SELECT cole'\\', ?");
+    assertEquals(1, identifierEndingWithE.numberOfParameters);
+    assertEquals("SELECT cole'\\', $1", identifierEndingWithE.sqlWithNamedParameters);
+
+    assertEquals(
+        "SELECT E'\\' -- not a comment' \nFROM t",
+        parser.removeCommentsAndTrim("SELECT E'\\' -- not a comment' -- real comment\nFROM t"));
+    assertEquals(
+        ImmutableSet.of("$2"),
+        ((PostgreSQLStatementParser) parser).getQueryParameters("SELECT E'\\' $1', $2"));
+    assertFalse(parser.checkReturningClause("INSERT INTO t VALUES (E'\\' RETURNING *')"));
+  }
+
+  @Test
+  public void testCommentAndCarriageReturnEdgeCases() {
+    String firstParam = dialect == Dialect.POSTGRESQL ? "$1" : "@p1";
+
+    ParametersInfo unterminatedComment =
+        parser.convertPositionalParametersToNamedParameters('?', "SELECT ?, /* unterminated ?");
+    assertEquals(1, unterminatedComment.numberOfParameters);
+    assertEquals(
+        "SELECT " + firstParam + ", /* unterminated ?", unterminatedComment.sqlWithNamedParameters);
+
+    ParametersInfo crSingleLineComment =
+        parser.convertPositionalParametersToNamedParameters('?', "-- comment ?\rSELECT ?");
+    assertEquals(1, crSingleLineComment.numberOfParameters);
+    assertEquals("-- comment ?\rSELECT " + firstParam, crSingleLineComment.sqlWithNamedParameters);
+    assertEquals("SELECT 1", parser.removeCommentsAndTrim("-- comment\rSELECT 1"));
+    assertEquals("SELECT 1 \rFROM t", parser.removeCommentsAndTrim("SELECT 1 -- comment\rFROM t"));
+    assertTrue(parser.parse(Statement.of("-- comment\rSELECT 1")).isQuery());
+
+    if (dialect == Dialect.POSTGRESQL) {
+      ParametersInfo slashStarSlash =
+          parser.convertPositionalParametersToNamedParameters('?', "SELECT /*/*/ ? */ ? */ ?");
+      assertEquals(1, slashStarSlash.numberOfParameters);
+      assertEquals("SELECT /*/*/ ? */ ? */ $1", slashStarSlash.sqlWithNamedParameters);
+
+      ParametersInfo starSlashStar =
+          parser.convertPositionalParametersToNamedParameters('?', "SELECT /* /* inner */* ? */ ?");
+      assertEquals(1, starSlashStar.numberOfParameters);
+      assertEquals("SELECT /* /* inner */* ? */ $1", starSlashStar.sqlWithNamedParameters);
+
+      ParametersInfo pgCrLiteral =
+          parser.convertPositionalParametersToNamedParameters('?', "SELECT 'line1\r?line2', ?");
+      assertEquals(1, pgCrLiteral.numberOfParameters);
+      assertEquals("SELECT 'line1\r?line2', $1", pgCrLiteral.sqlWithNamedParameters);
+    } else {
+      ParametersInfo hashCrComment =
+          parser.convertPositionalParametersToNamedParameters('?', "# comment ?\rSELECT ?");
+      assertEquals(1, hashCrComment.numberOfParameters);
+      assertEquals("# comment ?\rSELECT @p1", hashCrComment.sqlWithNamedParameters);
+      assertEquals("SELECT 1", parser.removeCommentsAndTrim("# comment\rSELECT 1"));
+      assertTrue(parser.parse(Statement.of("# comment\rSELECT 1")).isQuery());
+
+      assertUnclosedLiteral(parser, "SELECT 'line1\rline2', ?");
+
+      ParametersInfo tripleQuotedCr =
+          parser.convertPositionalParametersToNamedParameters('?', "SELECT '''line1\r?line2''', ?");
+      assertEquals(1, tripleQuotedCr.numberOfParameters);
+      assertEquals("SELECT '''line1\r?line2''', @p1", tripleQuotedCr.sqlWithNamedParameters);
+
+      ParametersInfo nonNestedSlashStarSlash =
+          parser.convertPositionalParametersToNamedParameters('?', "SELECT /*/*/ ?");
+      assertEquals(1, nonNestedSlashStarSlash.numberOfParameters);
+      assertEquals("SELECT /*/*/ @p1", nonNestedSlashStarSlash.sqlWithNamedParameters);
+    }
+  }
+
   static void assertUnclosedLiteral(AbstractStatementParser parser, String sql) {
     SpannerException exception =
         assertThrows(

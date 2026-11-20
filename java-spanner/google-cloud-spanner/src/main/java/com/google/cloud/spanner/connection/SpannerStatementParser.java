@@ -77,6 +77,11 @@ public class SpannerStatementParser extends AbstractStatementParser {
   }
 
   @Override
+  boolean supportsEscapeStringConstants() {
+    return false;
+  }
+
+  @Override
   boolean supportsHashSingleLineComments() {
     return true;
   }
@@ -153,9 +158,9 @@ public class SpannerStatementParser extends AbstractStatementParser {
       } else {
         // We are not in a quoted string.
         if (isInSingleLineComment) {
-          if (c == '\n') {
+          if (c == '\n' || c == '\r') {
             isInSingleLineComment = false;
-            // Include the line feed in the result.
+            // Include the line break in the result.
             res.append(c);
           }
         } else if (isInMultiLineComment) {

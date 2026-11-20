@@ -77,6 +77,11 @@ public class PostgreSQLStatementParser extends AbstractStatementParser {
   }
 
   @Override
+  boolean supportsEscapeStringConstants() {
+    return true;
+  }
+
+  @Override
   boolean supportsHashSingleLineComments() {
     return false;
   }
@@ -120,9 +125,9 @@ public class PostgreSQLStatementParser extends AbstractStatementParser {
     while (index < length) {
       char c = sql.charAt(index);
       if (isInSingleLineComment) {
-        if (c == '\n') {
+        if (c == '\n' || c == '\r') {
           isInSingleLineComment = false;
-          // Include the line feed in the result.
+          // Include the line break in the result.
           res.append(c);
         }
       } else if (multiLineCommentLevel > 0) {
