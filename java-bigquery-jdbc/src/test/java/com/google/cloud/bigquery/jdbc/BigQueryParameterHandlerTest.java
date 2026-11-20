@@ -17,20 +17,35 @@
 package com.google.cloud.bigquery.jdbc;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import com.google.cloud.bigquery.Field;
 import com.google.cloud.bigquery.QueryJobConfiguration;
 import com.google.cloud.bigquery.QueryParameterValue;
+import com.google.cloud.bigquery.Schema;
 import com.google.cloud.bigquery.StandardSQLTypeName;
+import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import com.google.cloud.bigquery.jdbc.BigQueryParameterHandler.BigQueryStatementParameterType;
+import com.google.gson.JsonObject;
+import java.math.BigDecimal;
+import java.sql.Date;
+import java.sql.Time;
 import java.sql.Timestamp;
 import java.time.Instant;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.time.OffsetDateTime;
 import java.time.ZoneId;
 import java.time.ZoneOffset;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.TimeZone;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -372,5 +387,123 @@ public class BigQueryParameterHandlerTest {
         "2025-01-01 12:00:00.123456",
         BigQueryParameterHandler.formatDateTimeDigits(
             LocalDateTime.of(2025, 1, 1, 12, 0, 0, 123_456_789)));
+  }
+
+  @Test
+  public void testDoor1AndDoor2ShareConversionAndStrictCalendarValidation() {
+    Schema schema =
+        Schema.of(
+            Field.of("s_int", StandardSQLTypeName.INT64),
+            Field.of("b_int", StandardSQLTypeName.INT64),
+            Field.of("f_col", StandardSQLTypeName.FLOAT64),
+            Field.of("d_col", StandardSQLTypeName.DATE),
+            Field.of("t_col", StandardSQLTypeName.TIME),
+            Field.of("dt_col", StandardSQLTypeName.DATETIME),
+            Field.of("ts6_col", StandardSQLTypeName.TIMESTAMP),
+            Field.newBuilder("ts12_col", StandardSQLTypeName.TIMESTAMP)
+                .setTimestampPrecision(12L)
+                .build());
+
+    BigQueryParameterHandler handler = new BigQueryParameterHandler(8, true);
+    handler.setParameter(1, (short) 7, Short.class);
+    handler.setParameter(2, (byte) 9, Byte.class);
+    handler.setParameter(3, 0.25f, Float.class);
+    handler.setParameter(4, LocalDate.of(2026, 11, 18), Date.class);
+    handler.setParameter(5, LocalTime.of(9, 8, 7, 123_456_000), Time.class);
+    handler.setParameter(
+        6,
+        BigQueryParameterHandler.formatDateTimeDigits(LocalDateTime.of(2026, 11, 18, 9, 8, 7)),
+        String.class);
+    Instant tsInstant = Instant.parse("2026-11-18T19:39:36.123456789Z");
+    handler.setParameter(7, Timestamp.from(tsInstant), Timestamp.class);
+    handler.setParameter(8, Timestamp.from(tsInstant), Timestamp.class);
+
+    Queue<ArrayList<BigQueryJdbcParameter>> batches = new LinkedList<>();
+    batches.add(handler.parametersList);
+    assertTrue(
+        BigQueryParameterHandler.areBatchParametersCompatibleWithWriteApi(
+            schema.getFields(), batches));
+
+    JsonObject jsonRow =
+        BigQueryParameterHandler.createWriteApiJsonRow(
+            schema.getFields(), handler.parametersList, true);
+    for (int i = 0; i < 6; i++) {
+      String fieldName = schema.getFields().get(i).getName();
+      QueryParameterValue qpv =
+          BigQueryParameterHandler.toQueryParameterValue(handler.parametersList.get(i), true);
+      assertEquals(qpv.getValue(), jsonRow.get(fieldName).getAsString());
+    }
+    assertEquals("2026-11-18 19:39:36.123456Z", jsonRow.get("ts6_col").getAsString());
+    assertEquals("2026-11-18 19:39:36.123456789000Z", jsonRow.get("ts12_col").getAsString());
+
+    // ResolverStyle.STRICT rejects non-existent calendar dates like 1500-02-29 or 2026-02-31.
+    Schema dtSchema = Schema.of(Field.of("dt_col", StandardSQLTypeName.DATETIME));
+    for (String badDateTime :
+        new String[] {"1500-02-29 10:20:30.000000", "2026-02-31 10:20:30.000000"}) {
+      BigQueryParameterHandler invalidDtHandler = new BigQueryParameterHandler(1);
+      invalidDtHandler.setParameter(1, badDateTime, String.class);
+      Queue<ArrayList<BigQueryJdbcParameter>> invalidBatch = new LinkedList<>();
+      invalidBatch.add(invalidDtHandler.parametersList);
+      assertFalse(
+          BigQueryParameterHandler.areBatchParametersCompatibleWithWriteApi(
+              dtSchema.getFields(), invalidBatch));
+    }
+
+    // ResolverStyle.STRICT on DATE_DIGITS rejects Julian leap date 1500-02-29 for DATE columns.
+    Schema dateSchema = Schema.of(Field.of("d_col", StandardSQLTypeName.DATE));
+    BigQueryParameterHandler invalidDateHandler = new BigQueryParameterHandler(1);
+    invalidDateHandler.setParameter(1, Date.valueOf("1500-02-29"), Date.class);
+    Queue<ArrayList<BigQueryJdbcParameter>> invalidDateBatch = new LinkedList<>();
+    invalidDateBatch.add(invalidDateHandler.parametersList);
+    assertFalse(
+        BigQueryParameterHandler.areBatchParametersCompatibleWithWriteApi(
+            dateSchema.getFields(), invalidDateBatch));
+
+    // Extreme negative BigDecimal scale on unparameterized NUMERIC & precision-only NUMERIC(5).
+    Schema numSchema =
+        Schema.of(
+            Field.of("n_any", StandardSQLTypeName.NUMERIC),
+            Field.newBuilder("n5", StandardSQLTypeName.NUMERIC).setPrecision(5L).build());
+    for (BigDecimal[] row :
+        new BigDecimal[][] {
+          {BigDecimal.valueOf(1, Integer.MIN_VALUE), BigDecimal.ONE},
+          {BigDecimal.valueOf(10, Integer.MIN_VALUE), BigDecimal.ONE},
+          {BigDecimal.ONE, new BigDecimal("12.5")}
+        }) {
+      BigQueryParameterHandler badNumHandler = new BigQueryParameterHandler(2);
+      badNumHandler.setParameter(1, row[0], BigDecimal.class);
+      badNumHandler.setParameter(2, row[1], BigDecimal.class);
+      Queue<ArrayList<BigQueryJdbcParameter>> badNumBatch = new LinkedList<>();
+      badNumBatch.add(badNumHandler.parametersList);
+      assertFalse(
+          BigQueryParameterHandler.areBatchParametersCompatibleWithWriteApi(
+              numSchema.getFields(), badNumBatch));
+    }
+    BigQueryParameterHandler okNumHandler = new BigQueryParameterHandler(2);
+    okNumHandler.setParameter(1, new BigDecimal("999.123456789"), BigDecimal.class);
+    okNumHandler.setParameter(2, new BigDecimal("12300"), BigDecimal.class);
+    Queue<ArrayList<BigQueryJdbcParameter>> okNumBatch = new LinkedList<>();
+    okNumBatch.add(okNumHandler.parametersList);
+    assertTrue(
+        BigQueryParameterHandler.areBatchParametersCompatibleWithWriteApi(
+            numSchema.getFields(), okNumBatch));
+  }
+
+  @Test
+  public void testConfigureParametersThrowsBigQueryJdbcExceptionWhenParametersUnset() {
+    BigQueryParameterHandler unsetAllHandler = new BigQueryParameterHandler(2);
+    QueryJobConfiguration.Builder builder1 = QueryJobConfiguration.newBuilder("SELECT ?, ?");
+    BigQueryJdbcException missingFirst =
+        assertThrows(
+            BigQueryJdbcException.class, () -> unsetAllHandler.configureParameters(builder1));
+    assertTrue(missingFirst.getMessage().contains("parameter 1 of 2"));
+
+    BigQueryParameterHandler partialHandler = new BigQueryParameterHandler(2);
+    partialHandler.setParameter(1, "only-first", String.class);
+    QueryJobConfiguration.Builder builder2 = QueryJobConfiguration.newBuilder("SELECT ?, ?");
+    BigQueryJdbcException missingSecond =
+        assertThrows(
+            BigQueryJdbcException.class, () -> partialHandler.configureParameters(builder2));
+    assertTrue(missingSecond.getMessage().contains("parameter 2 of 2"));
   }
 }

@@ -19,6 +19,7 @@ package com.google.cloud.bigquery.jdbc;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.services.bigquery.model.QueryParameter;
 import com.google.cloud.Tuple;
+import com.google.cloud.bigquery.Field;
 import com.google.cloud.bigquery.FieldList;
 import com.google.cloud.bigquery.JobStatistics.QueryStatistics;
 import com.google.cloud.bigquery.QueryJobConfiguration;
@@ -40,7 +41,6 @@ import com.google.cloud.bigquery.storage.v1.BigQueryWriteClient;
 import com.google.cloud.bigquery.storage.v1.TableName;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
-import com.google.gson.JsonNull;
 import com.google.gson.JsonObject;
 import com.google.protobuf.Descriptors.DescriptorValidationException;
 import java.io.IOException;
@@ -164,13 +164,20 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
   // Remembers the table and schema of single-table INSERT targets, for the Storage Write API.
   // Failure is delegated to executeBatch instead of the constructor.
   private void captureInsertMetadata(QueryStatistics statistics) {
+    Schema schema = statistics.getSchema();
     if (!QueryStatistics.StatementType.INSERT.equals(statistics.getStatementType())
-        || statistics.getSchema() == null
+        || schema == null
+        || schema.getFields() == null
         || statistics.getReferencedTables() == null
         || statistics.getReferencedTables().stream().distinct().count() != 1) {
       return;
     }
-    this.insertSchema = statistics.getSchema();
+    for (Field field : schema.getFields()) {
+      if (!BigQueryTypeRegistry.isSupportedWriteApiField(field)) {
+        return;
+      }
+    }
+    this.insertSchema = schema;
     TableId tableId = statistics.getReferencedTables().get(0);
     this.insertTableName =
         TableName.of(tableId.getProject(), tableId.getDataset(), tableId.getTable());
@@ -546,16 +553,16 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
 
       long offset = 0;
       JsonArray jsonArray = new JsonArray();
-      Gson gson = new Gson();
       FieldList fieldLists = this.insertSchema.getFields();
       int count = this.batchParameters.size();
+      boolean timestampPicos = this.isEnableTimestampPicos();
       for (int i = 0; i < count; i++) {
         ArrayList<BigQueryJdbcParameter> parameterList = this.batchParameters.poll();
         if (fieldLists.size() != parameterList.size()) {
           throw new BigQueryJdbcException("Mismatch between field count and parameter count.");
         }
 
-        JsonObject rowObject = createJsonRow(fieldLists, parameterList, gson);
+        JsonObject rowObject = createJsonRow(fieldLists, parameterList, timestampPicos);
         jsonArray.add(rowObject);
 
         if (jsonArray.size() == this.querySettings.getWriteAPIAppendRowCount()
@@ -591,18 +598,15 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
 
   static JsonObject createJsonRow(
       FieldList fieldLists, List<BigQueryJdbcParameter> parameterList, Gson gson) {
-    JsonObject rowObject = new JsonObject();
-    for (int j = 0; j < parameterList.size(); j++) {
-      BigQueryJdbcParameter parameter = parameterList.get(j);
-      if (parameter.getValue() == null) {
-        rowObject.add(fieldLists.get(j).getName(), JsonNull.INSTANCE);
-      } else if (parameter.getSqlType() == StandardSQLTypeName.STRING) {
-        rowObject.addProperty(fieldLists.get(j).getName(), parameter.getValue().toString());
-      } else {
-        rowObject.addProperty(fieldLists.get(j).getName(), gson.toJson(parameter.getValue()));
-      }
-    }
-    return rowObject;
+    return createJsonRow(fieldLists, parameterList, false);
+  }
+
+  static JsonObject createJsonRow(
+      FieldList fieldLists,
+      List<BigQueryJdbcParameter> parameterList,
+      boolean enableTimestampPicos) {
+    return BigQueryParameterHandler.createWriteApiJsonRow(
+        fieldLists, parameterList, enableTimestampPicos);
   }
 
   QueryJobConfiguration getWriteBatchJobConfiguration(
@@ -622,19 +626,19 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
     QueryJobConfiguration.Builder jobConfiguration = getJobConfig(query);
     jobConfiguration.setParameterMode("POSITIONAL");
     jobConfiguration.setPriority(QueryJobConfiguration.Priority.BATCH);
+    boolean enableTimestampPicos = this.isEnableTimestampPicos();
     int index = 0;
     while (!this.batchParameters.isEmpty()) {
       ArrayList<BigQueryJdbcParameter> parameterList = this.batchParameters.poll();
 
-      for (BigQueryJdbcParameter parameter : parameterList) {
-        Object parameterValue =
-            BigQueryParameterHandler.formatValueForQueryParameter(
-                parameter.getValue(), parameter.getSqlType(), this.isEnableTimestampPicos());
-        StandardSQLTypeName sqlType = parameter.getSqlType();
+      for (int i = 0; i < this.parameterCount; i++) {
+        BigQueryJdbcParameter parameter = parameterList.get(i);
+        QueryParameterValue queryParameter =
+            BigQueryParameterHandler.toQueryParameterValue(parameter, enableTimestampPicos);
         LOG.finer(
             "Parameter %s of type %s at index %s added to QueryJobConfiguration",
-            parameterValue, sqlType, index++);
-        jobConfiguration.addPositionalParameter(QueryParameterValue.of(parameterValue, sqlType));
+            queryParameter.getValue(), queryParameter.getType(), index++);
+        jobConfiguration.addPositionalParameter(queryParameter);
       }
     }
     return jobConfiguration.build();
@@ -645,7 +649,9 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
     return this.querySettings.isUseWriteAPI()
         // the constructor dry run already confirmed a single-table INSERT
         && this.insertSchema != null
-        && this.batchParameters.size() >= this.querySettings.getWriteAPIActivationRowCount();
+        && this.batchParameters.size() >= this.querySettings.getWriteAPIActivationRowCount()
+        && BigQueryParameterHandler.areBatchParametersCompatibleWithWriteApi(
+            this.insertSchema.getFields(), this.batchParameters);
   }
 
   @Override
