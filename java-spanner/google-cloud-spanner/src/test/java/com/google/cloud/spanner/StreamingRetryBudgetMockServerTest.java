@@ -285,7 +285,7 @@ public class StreamingRetryBudgetMockServerTest {
             .setTotalTimeoutDuration(Duration.ZERO)
             .setMaxAttempts(0)
             .setInitialRetryDelayDuration(Duration.ofMillis(10))
-            .setMaxRetryDelayDuration(Duration.ofMillis(1000))
+            .setMaxRetryDelayDuration(Duration.ofSeconds(32))
             .build();
     assertEquals(expected, spanner.getOptions().getSpannerRpcV1().getExecuteQueryRetrySettings());
     assertEquals(expected, spanner.getOptions().getSpannerRpcV1().getReadRetrySettings());
