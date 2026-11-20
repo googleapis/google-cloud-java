@@ -234,6 +234,24 @@ class UserCredentialsTest extends BaseSerializationTest {
   }
 
   @Test
+  void refreshAccessToken_retriesIOException() throws IOException {
+    MockTokenServerTransportFactory transportFactory = new MockTokenServerTransportFactory();
+    transportFactory.transport.addClient(CLIENT_ID, CLIENT_SECRET);
+    transportFactory.transport.addResponseErrorSequence(new IOException("dropped connection"));
+    transportFactory.transport.addRefreshToken(REFRESH_TOKEN, ACCESS_TOKEN);
+    UserCredentials userCredentials =
+        UserCredentials.newBuilder()
+            .setClientId(CLIENT_ID)
+            .setClientSecret(CLIENT_SECRET)
+            .setRefreshToken(REFRESH_TOKEN)
+            .setHttpTransportFactory(transportFactory)
+            .build();
+
+    assertEquals(ACCESS_TOKEN, userCredentials.refreshAccessToken().getTokenValue());
+    assertEquals(2, transportFactory.transport.buildRequestCount);
+  }
+
+  @Test
   void getRequestMetadata_customTokenServer_hasAccessToken() throws IOException {
     final URI tokenServerUri = URI.create("https://foo.com/bar");
     MockTokenServerTransportFactory transportFactory = new MockTokenServerTransportFactory();

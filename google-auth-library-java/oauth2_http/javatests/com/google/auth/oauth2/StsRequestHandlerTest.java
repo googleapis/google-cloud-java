@@ -36,7 +36,9 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import com.google.api.client.http.HttpHeaders;
+import com.google.api.client.http.HttpStatusCodes;
 import com.google.api.client.testing.http.MockLowLevelHttpRequest;
+import com.google.api.client.testing.http.MockLowLevelHttpResponse;
 import com.google.api.client.util.GenericData;
 import com.google.auth.TestUtils;
 import com.google.common.base.Joiner;
@@ -172,9 +174,11 @@ final class StsRequestHandlerTest {
                 TOKEN_URL, stsTokenExchangeRequest, transport.createRequestFactory())
             .build();
 
-    transport.addResponseErrorSequence(
-        TestUtils.buildHttpResponseException(
-            "invalidRequest", /* errorDescription= */ null, /* errorUri= */ null));
+    transport.addResponseSequence(
+        new MockLowLevelHttpResponse()
+            .setStatusCode(HttpStatusCodes.STATUS_CODE_BAD_REQUEST)
+            .setContentType("application/json")
+            .setContent("{\"error\":\"invalidRequest\"}"));
 
     OAuthException e = assertThrows(OAuthException.class, requestHandler::exchangeToken);
 
@@ -193,8 +197,13 @@ final class StsRequestHandlerTest {
                 TOKEN_URL, stsTokenExchangeRequest, transport.createRequestFactory())
             .build();
 
-    transport.addResponseErrorSequence(
-        TestUtils.buildHttpResponseException("invalidRequest", "errorDescription", "errorUri"));
+    transport.addResponseSequence(
+        new MockLowLevelHttpResponse()
+            .setStatusCode(HttpStatusCodes.STATUS_CODE_BAD_REQUEST)
+            .setContentType("application/json")
+            .setContent(
+                "{\"error\":\"invalidRequest\",\"error_description\":\"errorDescription\","
+                    + "\"error_uri\":\"errorUri\"}"));
 
     OAuthException e = assertThrows(OAuthException.class, requestHandler::exchangeToken);
 
@@ -214,10 +223,26 @@ final class StsRequestHandlerTest {
             .build();
 
     IOException e = new IOException();
-    transport.addResponseErrorSequence(e);
+    transport.addResponseErrorSequence(e, e, e, e);
 
     IOException thrownException = assertThrows(IOException.class, requestHandler::exchangeToken);
     assertEquals(e, thrownException);
+  }
+
+  @Test
+  void exchangeToken_retriesIOException() throws IOException {
+    StsTokenExchangeRequest stsTokenExchangeRequest =
+        StsTokenExchangeRequest.newBuilder("credential", "subjectTokenType").build();
+    StsRequestHandler requestHandler =
+        StsRequestHandler.newBuilder(
+                TOKEN_URL, stsTokenExchangeRequest, transport.createRequestFactory())
+            .build();
+    transport.addResponseErrorSequence(new IOException("dropped connection"));
+
+    StsTokenExchangeResponse response = requestHandler.exchangeToken();
+
+    assertEquals(transport.getAccessToken(), response.getAccessToken().getTokenValue());
+    assertEquals(2, transport.getRequestCount());
   }
 
   @Test
