@@ -43,6 +43,8 @@ import com.google.api.gax.rpc.UnavailableException;
 import com.google.api.gax.tracing.ObservabilityAttributes;
 import com.google.api.gax.tracing.OpenTelemetryMetricsFactory;
 import com.google.common.collect.ImmutableList;
+import com.google.showcase.v1beta1.BlockRequest;
+import com.google.showcase.v1beta1.BlockResponse;
 import com.google.showcase.v1beta1.EchoClient;
 import com.google.showcase.v1beta1.EchoRequest;
 import com.google.showcase.v1beta1.EchoSettings;
@@ -394,23 +396,25 @@ class ITOtelGoldenMetrics {
   void testMetrics_clientTimeout_grpc() throws Exception {
     OpenTelemetryMetricsFactory tracerFactory = new OpenTelemetryMetricsFactory(openTelemetrySdk);
 
-    // Using 1ms as 0ms might be rejected by some validation or trigger immediate failure before
-    // metrics
-    RetrySettings zeroRetrySettings =
+    RetrySettings shortTimeoutSettings =
         RetrySettings.newBuilder()
-            .setInitialRpcTimeoutDuration(Duration.ofMillis(1))
-            .setMaxRpcTimeoutDuration(Duration.ofMillis(1))
-            .setTotalTimeoutDuration(Duration.ofMillis(1))
+            .setInitialRpcTimeoutDuration(Duration.ofMillis(100))
+            .setMaxRpcTimeoutDuration(Duration.ofMillis(100))
+            .setTotalTimeoutDuration(Duration.ofMillis(100))
             .setMaxAttempts(1)
+            .build();
+
+    BlockRequest blockRequest =
+        BlockRequest.newBuilder()
+            .setResponseDelay(com.google.protobuf.Duration.newBuilder().setSeconds(2).build())
+            .setSuccess(BlockResponse.newBuilder().setContent("metrics-test").build())
             .build();
 
     try (EchoClient client =
         TestClientInitializer.createGrpcEchoClientOpentelemetryWithRetrySettings(
-            tracerFactory, zeroRetrySettings)) {
+            tracerFactory, shortTimeoutSettings)) {
 
-      assertThrows(
-          Exception.class,
-          () -> client.echo(EchoRequest.newBuilder().setContent("metrics-test").build()));
+      assertThrows(Exception.class, () -> client.block(blockRequest));
 
       Collection<MetricData> metrics = waitAndCollectMetrics();
       assertThat(metrics).isNotEmpty();
@@ -438,21 +442,25 @@ class ITOtelGoldenMetrics {
   void testMetrics_clientTimeout_httpjson() throws Exception {
     OpenTelemetryMetricsFactory tracerFactory = new OpenTelemetryMetricsFactory(openTelemetrySdk);
 
-    RetrySettings zeroRetrySettings =
+    RetrySettings shortTimeoutSettings =
         RetrySettings.newBuilder()
-            .setInitialRpcTimeoutDuration(Duration.ofMillis(1))
-            .setMaxRpcTimeoutDuration(Duration.ofMillis(1))
-            .setTotalTimeoutDuration(Duration.ofMillis(1))
+            .setInitialRpcTimeoutDuration(Duration.ofMillis(100))
+            .setMaxRpcTimeoutDuration(Duration.ofMillis(100))
+            .setTotalTimeoutDuration(Duration.ofMillis(100))
             .setMaxAttempts(1)
+            .build();
+
+    BlockRequest blockRequest =
+        BlockRequest.newBuilder()
+            .setResponseDelay(com.google.protobuf.Duration.newBuilder().setSeconds(2).build())
+            .setSuccess(BlockResponse.newBuilder().setContent("metrics-test").build())
             .build();
 
     try (EchoClient client =
         TestClientInitializer.createHttpJsonEchoClientOpentelemetryWithRetrySettings(
-            tracerFactory, zeroRetrySettings)) {
+            tracerFactory, shortTimeoutSettings)) {
 
-      assertThrows(
-          Exception.class,
-          () -> client.echo(EchoRequest.newBuilder().setContent("metrics-test").build()));
+      assertThrows(Exception.class, () -> client.block(blockRequest));
 
       Collection<MetricData> metrics = waitAndCollectMetrics();
       assertThat(metrics).isNotEmpty();
