@@ -580,7 +580,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage, 
               StorageObject storageObject = new StorageObject();
               storageObject.setContexts(tmp.getContexts());
               StorageObject outputJson =
-                  JsonUtils.getOutputJsonWithSelectedFields(storageObject, subFields);
+                  JsonUtils.getOutputJsonWithSelectedFields(storageObject, subFields, false);
               pb.setContexts(outputJson.getContexts());
             } else if (topLevelField == BlobField.METADATA) {
               // our field names are from the root of the storage object, create a temporary
@@ -588,7 +588,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage, 
               StorageObject storageObject = new StorageObject();
               storageObject.setMetadata(tmp.getMetadata());
               StorageObject outputJson =
-                  JsonUtils.getOutputJsonWithSelectedFields(storageObject, subFields);
+                  JsonUtils.getOutputJsonWithSelectedFields(storageObject, subFields, false);
               pb.setMetadata(outputJson.getMetadata());
             } else {
               checkState(subFields.size() <= 1, "unexpected nested field(s) %s", subFields);
