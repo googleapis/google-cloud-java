@@ -36,6 +36,7 @@ import com.google.showcase.v1beta1.it.util.TestClientInitializer;
 import java.time.Duration;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicReference;
 import org.awaitility.Awaitility;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
@@ -556,12 +557,17 @@ class ITRetries {
   private SequenceReport getSequenceReport(
       SequenceServiceClient client, String sequenceName, int expectedAttempts) {
     String reportName = sequenceName + "/sequenceReport";
-    return Awaitility.await()
+    AtomicReference<SequenceReport> reportRef = new AtomicReference<>();
+    Awaitility.await()
         .atMost(Duration.ofSeconds(3))
-        .until(
-            () ->
-                client.getSequenceReport(
-                    GetSequenceReportRequest.newBuilder().setName(reportName).build()),
-            report -> report.getAttemptsCount() >= expectedAttempts);
+        .untilAsserted(
+            () -> {
+              SequenceReport report =
+                  client.getSequenceReport(
+                      GetSequenceReportRequest.newBuilder().setName(reportName).build());
+              assertThat(report.getAttemptsCount()).isAtLeast(expectedAttempts);
+              reportRef.set(report);
+            });
+    return reportRef.get();
   }
 }
