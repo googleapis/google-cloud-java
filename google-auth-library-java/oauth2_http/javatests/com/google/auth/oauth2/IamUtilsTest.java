@@ -364,8 +364,7 @@ class IamUtilsTest {
         new MockHttpTransport.Builder()
             .setLowLevelHttpResponse(
                 new MockLowLevelHttpResponse()
-                    .setStatusCode(HttpStatusCodes.STATUS_CODE_UNAUTHORIZED)
-                    .setReasonPhrase(""))
+                    .setStatusCode(HttpStatusCodes.STATUS_CODE_UNAUTHORIZED))
             .build();
 
     ServiceAccountSigner.SigningException exception =
@@ -382,6 +381,34 @@ class IamUtilsTest {
     assertEquals(
         "Error code 401 trying to sign provided bytes: (no error details in the response)",
         exception.getCause().getMessage());
+  }
+
+  @Test
+  void getIdToken_4xxErrorWithEmptyBodyAndEmptyReasonPhrase_usesFallbackMessage() {
+    MockHttpTransport transport =
+        new MockHttpTransport.Builder()
+            .setLowLevelHttpResponse(
+                new MockLowLevelHttpResponse()
+                    .setStatusCode(HttpStatusCodes.STATUS_CODE_FORBIDDEN)
+                    .setReasonPhrase(""))
+            .build();
+
+    IOException exception =
+        assertThrows(
+            IOException.class,
+            () ->
+                IamUtils.getIdToken(
+                    CLIENT_EMAIL,
+                    credentials,
+                    transport,
+                    "https://example.com",
+                    false,
+                    ImmutableMap.of(),
+                    CredentialTypeForMetrics.SERVICE_ACCOUNT_CREDENTIALS_AT,
+                    Credentials.GOOGLE_DEFAULT_UNIVERSE));
+    assertEquals(
+        "Error code 403 trying to getIDToken: (no error details in the response)",
+        exception.getMessage());
   }
 
   @Test
@@ -538,6 +565,34 @@ class IamUtilsTest {
                     .setReasonPhrase("Forbidden")
                     .setContentType("application/json")
                     .setContent("{\"error\": {\"code\": 403}}"))
+            .build();
+
+    IOException exception =
+        assertThrows(
+            IOException.class,
+            () ->
+                IamUtils.getIdToken(
+                    CLIENT_EMAIL,
+                    credentials,
+                    transport,
+                    "https://example.com",
+                    false,
+                    ImmutableMap.of(),
+                    CredentialTypeForMetrics.SERVICE_ACCOUNT_CREDENTIALS_AT,
+                    Credentials.GOOGLE_DEFAULT_UNIVERSE));
+    assertEquals("Error code 403 trying to getIDToken: Forbidden", exception.getMessage());
+  }
+
+  @Test
+  void getIdToken_4xxErrorWithJsonEmptyMessage_usesStatusMessage() {
+    MockHttpTransport transport =
+        new MockHttpTransport.Builder()
+            .setLowLevelHttpResponse(
+                new MockLowLevelHttpResponse()
+                    .setStatusCode(HttpStatusCodes.STATUS_CODE_FORBIDDEN)
+                    .setReasonPhrase("Forbidden")
+                    .setContentType("application/json")
+                    .setContent("{\"error\": {\"code\": 403, \"message\": \"\"}}"))
             .build();
 
     IOException exception =
