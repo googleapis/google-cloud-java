@@ -116,7 +116,7 @@ class BigQueryParameterHandler {
     this(parameterCount, new ArrayList<>(parameterCount), enableTimestampPicos);
   }
 
-  BigQueryParameterHandler(
+  private BigQueryParameterHandler(
       int parameterCount,
       ArrayList<BigQueryJdbcParameter> parametersList,
       boolean enableTimestampPicos) {
