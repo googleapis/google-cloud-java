@@ -123,6 +123,8 @@ final class BigQueryJdbcUrlUtility {
   static final String LOG_PATH_PROPERTY_NAME = "LogPath";
   static final String LOG_LEVEL_ENV_VAR = "BIGQUERY_JDBC_LOG_LEVEL";
   static final String LOG_PATH_ENV_VAR = "BIGQUERY_JDBC_LOG_PATH";
+  static final String ALLOW_URL_LOG_PATH_SYSTEM_PROPERTY =
+      "com.google.cloud.bigquery.jdbc.allowUrlLogPath";
   static final String ENABLE_SESSION_PROPERTY_NAME = "EnableSession";
   static final String ENABLE_TIMESTAMP_PICOS_PROPERTY_NAME = "EnableTimestampPicos";
   static final boolean DEFAULT_ENABLE_TIMESTAMP_PICOS_VALUE = false;
@@ -852,17 +854,33 @@ final class BigQueryJdbcUrlUtility {
    * @param properties The properties to append.
    * @return The string value of the updated URL.
    */
+  static boolean isUrlLogPathAllowed() {
+    String prop = System.getProperty(ALLOW_URL_LOG_PATH_SYSTEM_PROPERTY);
+    return prop == null || !"false".equalsIgnoreCase(prop.trim());
+  }
+
   static String appendPropertiesToURL(String url, String callerClassName, Properties properties) {
-    LOG.finest("++enter++  " + callerClassName);
+    LOG.finest(() -> "++enter++  " + callerClassName);
+    if (properties == null || properties.isEmpty()) {
+      return url;
+    }
     StringBuilder urlBuilder = new StringBuilder(url);
     for (Entry<Object, Object> entry : properties.entrySet()) {
-      if (entry.getValue() != null && !"".equals(entry.getValue())) {
-        LOG.finest("Appending %s with value %s to URL", entry.getKey(), entry.getValue());
-        String encodedValue =
-            UrlEscapers.urlFormParameterEscaper()
-                .escape((String) entry.getValue())
-                .replace("+", "%20");
-        urlBuilder.append(";").append(entry.getKey()).append("=").append(encodedValue);
+      Object rawKey = entry.getKey();
+      Object rawValue = entry.getValue();
+      if (rawKey != null && rawValue != null) {
+        String key = String.valueOf(rawKey);
+        String valueStr = String.valueOf(rawValue);
+        if (!valueStr.isEmpty()) {
+          LOG.finest(
+              () ->
+                  String.format(
+                      "Appending %s with value %s to URL",
+                      key, BigQueryConnection.maskPropertyValue(key, valueStr)));
+          String encodedValue =
+              UrlEscapers.urlFormParameterEscaper().escape(valueStr).replace("+", "%20");
+          urlBuilder.append(";").append(key).append("=").append(encodedValue);
+        }
       }
     }
     return urlBuilder.toString();

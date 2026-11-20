@@ -36,6 +36,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Properties;
+import java.util.UUID;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -131,98 +132,129 @@ public class BigQueryDriver implements Driver {
     AuthenticationType authType = AuthenticationType.AUTHENTICATION_TYPE_UNSPECIFIED;
     try {
       if (acceptsURL(url)) {
-        Properties connectInfo = info == null ? new Properties() : (Properties) info.clone();
-        Object customOpenTelemetryObj = connectInfo.remove("customOpenTelemetry");
+        String connectionId = UUID.randomUUID().toString();
+        BigQueryConnection connection = null;
+        boolean connectionReturned = false;
+        try (BigQueryJdbcMdc.MdcCloseable mdc = BigQueryJdbcMdc.registerInstance(connectionId)) {
+          Properties connectInfo = info == null ? new Properties() : (Properties) info.clone();
+          Object customOpenTelemetryObj = connectInfo.remove("customOpenTelemetry");
 
-        String connectionUri =
-            BigQueryJdbcUrlUtility.appendPropertiesToURL(
-                url.substring(5), this.toString(), connectInfo);
+          String connectionUri =
+              BigQueryJdbcUrlUtility.appendPropertiesToURL(
+                  url.substring(5), this.toString(), connectInfo);
 
-        String telemetryOptOut =
-            BigQueryJdbcUrlUtility.parseUriPropertyWithoutValidation(
-                connectionUri, BigQueryJdbcUrlUtility.ENABLE_DIAGNOSTIC_TELEMETRY_PROPERTY_NAME);
-
-        if (telemetryOptOut != null) {
-          connectInfo.setProperty(
-              BigQueryJdbcUrlUtility.ENABLE_DIAGNOSTIC_TELEMETRY_PROPERTY_NAME, telemetryOptOut);
-        }
-        TelemetryManager.getInstance(connectInfo);
-
-        Level logLevel;
-        String logPath;
-        try {
-          // LogLevel
-          String logLevelStr =
+          String telemetryOptOut =
               BigQueryJdbcUrlUtility.parseUriPropertyWithoutValidation(
-                  connectionUri, BigQueryJdbcUrlUtility.LOG_LEVEL_PROPERTY_NAME);
-          if (logLevelStr == null) {
-            logLevelStr = System.getenv(BigQueryJdbcUrlUtility.LOG_LEVEL_ENV_VAR);
-          }
-          logLevel = BigQueryJdbcUrlUtility.parseLogLevel(logLevelStr);
+                  connectionUri, BigQueryJdbcUrlUtility.ENABLE_DIAGNOSTIC_TELEMETRY_PROPERTY_NAME);
 
-          // LogPath
-          logPath =
-              BigQueryJdbcUrlUtility.parseUriPropertyWithoutValidation(
-                  connectionUri, BigQueryJdbcUrlUtility.LOG_PATH_PROPERTY_NAME);
-          if (logPath == null) {
-            logPath = System.getenv(BigQueryJdbcUrlUtility.LOG_PATH_ENV_VAR);
+          if (telemetryOptOut != null) {
+            connectInfo.setProperty(
+                BigQueryJdbcUrlUtility.ENABLE_DIAGNOSTIC_TELEMETRY_PROPERTY_NAME, telemetryOptOut);
+          }
+          TelemetryManager.getInstance(connectInfo);
+
+          Level logLevel;
+          String logPath;
+          try {
+            // LogLevel
+            String logLevelStr =
+                BigQueryJdbcUrlUtility.parseUriPropertyWithoutValidation(
+                    connectionUri, BigQueryJdbcUrlUtility.LOG_LEVEL_PROPERTY_NAME);
+            if (logLevelStr == null) {
+              logLevelStr = System.getenv(BigQueryJdbcUrlUtility.LOG_LEVEL_ENV_VAR);
+            }
+            logLevel = BigQueryJdbcUrlUtility.parseLogLevel(logLevelStr);
+
+            // LogPath
+            String urlLogPath =
+                BigQueryJdbcUrlUtility.parseUriPropertyWithoutValidation(
+                    connectionUri, BigQueryJdbcUrlUtility.LOG_PATH_PROPERTY_NAME);
+            String envLogPath = System.getenv(BigQueryJdbcUrlUtility.LOG_PATH_ENV_VAR);
+            boolean allowUrlLogPath = BigQueryJdbcUrlUtility.isUrlLogPathAllowed();
+
+            String enableGcpLogExporterStr =
+                BigQueryJdbcUrlUtility.parseUriPropertyWithoutValidation(
+                    connectionUri, BigQueryJdbcUrlUtility.ENABLE_GCP_LOG_EXPORTER_PROPERTY_NAME);
+            boolean enableGcpLogExporter = false;
+            if (enableGcpLogExporterStr != null) {
+              enableGcpLogExporter =
+                  BigQueryJdbcUrlUtility.convertToBoolean(
+                      enableGcpLogExporterStr,
+                      BigQueryJdbcUrlUtility.ENABLE_GCP_LOG_EXPORTER_PROPERTY_NAME);
+            }
+
+            boolean ignoredUrlLogPath = false;
+            if (allowUrlLogPath) {
+              logPath = urlLogPath != null ? urlLogPath : envLogPath;
+              // Fallback to default path only if not specified and not in Cloud-Only mode
+              if (logPath == null && !enableGcpLogExporter) {
+                logPath = BigQueryJdbcUrlUtility.DEFAULT_LOG_PATH;
+              }
+            } else {
+              ignoredUrlLogPath = urlLogPath != null;
+              logPath = envLogPath;
+            }
+
+            BigQueryJdbcRootLogger.registerConnection(connectionId, logLevel, logPath);
+            if (ignoredUrlLogPath) {
+              LOG.warning(
+                  "Ignoring URL/Properties %s because system property %s is false.",
+                  BigQueryJdbcUrlUtility.LOG_PATH_PROPERTY_NAME,
+                  BigQueryJdbcUrlUtility.ALLOW_URL_LOG_PATH_SYSTEM_PROPERTY);
+            }
+          } catch (RuntimeException e) {
+            LOG.log(Level.SEVERE, "Failed to parse connection URL properties", e);
+            throw new BigQueryJdbcException("Failed to parse connection URL properties", e);
           }
 
-          // Fallback to default path only if not specified and not in Cloud-Only mode
-          String enableGcpLogExporterStr =
-              BigQueryJdbcUrlUtility.parseUriPropertyWithoutValidation(
-                  connectionUri, BigQueryJdbcUrlUtility.ENABLE_GCP_LOG_EXPORTER_PROPERTY_NAME);
-          boolean enableGcpLogExporter = false;
-          if (enableGcpLogExporterStr != null) {
-            enableGcpLogExporter =
-                BigQueryJdbcUrlUtility.convertToBoolean(
-                    enableGcpLogExporterStr,
-                    BigQueryJdbcUrlUtility.ENABLE_GCP_LOG_EXPORTER_PROPERTY_NAME);
+          // Logging starts from here.
+          DataSource ds;
+          try {
+            ds = DataSource.fromUrl(connectionUri);
+          } catch (BigQueryJdbcRuntimeException e) {
+            LOG.log(Level.SEVERE, "Failed to parse connection URL", e);
+            throw new BigQueryJdbcException("Failed to parse connection URL", e);
           }
-          if (logPath == null && !enableGcpLogExporter) {
-            logPath = BigQueryJdbcUrlUtility.DEFAULT_LOG_PATH;
+          authType = TelemetryManager.toAuthenticationType(ds.getOAuthType());
+          if (customOpenTelemetryObj instanceof OpenTelemetry) {
+            ds.setCustomOpenTelemetry((OpenTelemetry) customOpenTelemetryObj);
           }
+          connection = new BigQueryConnection(connectionUri, ds, connectionId);
+          DatabaseMetaData metaData = connection.getMetaData();
+          LOG.info(
+              "Driver info : { {Database Product Name : %s}, "
+                  + "{Database Product Version : %s}, "
+                  + "{Driver Name : %s}, "
+                  + "{Driver Version : %s}, "
+                  + "{LogLevel : %s}, "
+                  + "{LogPath : %s}, "
+                  + "{Driver Instance : %s} }",
+              metaData.getDatabaseProductName(),
+              metaData.getDatabaseProductVersion(),
+              metaData.getDriverName(),
+              metaData.getDriverVersion(),
+              logLevel,
+              logPath,
+              this.toString());
 
-          BigQueryJdbcRootLogger.setLevel(logLevel, logPath);
-        } catch (RuntimeException e) {
-          LOG.log(Level.SEVERE, "Failed to parse connection URL properties", e);
-          throw new BigQueryJdbcException("Failed to parse connection URL properties", e);
+          Connection wrapped = BigQueryJdbcContextProxy.wrap(connection, Connection.class);
+
+          TelemetryManager.recordConnectionAttempt(Status.STATUS_SUCCESS, 0, authType);
+          connectionReturned = true;
+          return wrapped;
+        } finally {
+          if (!connectionReturned) {
+            if (connection != null) {
+              try {
+                connection.close();
+              } catch (SQLException ignored) {
+                BigQueryJdbcRootLogger.closeConnectionHandler(connectionId);
+              }
+            } else {
+              BigQueryJdbcRootLogger.closeConnectionHandler(connectionId);
+            }
+          }
         }
-
-        // Logging starts from here.
-        DataSource ds;
-        try {
-          ds = DataSource.fromUrl(connectionUri);
-        } catch (BigQueryJdbcRuntimeException e) {
-          LOG.log(Level.SEVERE, "Failed to parse connection URL", e);
-          throw new BigQueryJdbcException("Failed to parse connection URL", e);
-        }
-        authType = TelemetryManager.toAuthenticationType(ds.getOAuthType());
-        if (customOpenTelemetryObj instanceof OpenTelemetry) {
-          ds.setCustomOpenTelemetry((OpenTelemetry) customOpenTelemetryObj);
-        }
-        BigQueryConnection connection = new BigQueryConnection(connectionUri, ds);
-        DatabaseMetaData metaData = connection.getMetaData();
-        LOG.info(
-            "Driver info : { {Database Product Name : %s}, "
-                + "{Database Product Version : %s}, "
-                + "{Driver Name : %s}, "
-                + "{Driver Version : %s}, "
-                + "{LogLevel : %s}, "
-                + "{LogPath : %s}, "
-                + "{Driver Instance : %s} }",
-            metaData.getDatabaseProductName(),
-            metaData.getDatabaseProductVersion(),
-            metaData.getDriverName(),
-            metaData.getDriverVersion(),
-            logLevel,
-            logPath,
-            this.toString());
-
-        Connection wrapped = BigQueryJdbcContextProxy.wrap(connection, Connection.class);
-
-        TelemetryManager.recordConnectionAttempt(Status.STATUS_SUCCESS, 0, authType);
-        return wrapped;
       } else {
         return null;
       }

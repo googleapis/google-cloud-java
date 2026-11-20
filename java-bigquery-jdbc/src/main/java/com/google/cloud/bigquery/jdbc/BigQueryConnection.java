@@ -155,7 +155,6 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
               BigQueryJdbcUrlUtility.HTTP_CONNECT_TIMEOUT_PROPERTY_NAME,
               BigQueryJdbcUrlUtility.HTTP_READ_TIMEOUT_PROPERTY_NAME,
               BigQueryJdbcUrlUtility.BYOID_AUDIENCE_URI_PROPERTY_NAME,
-              BigQueryJdbcUrlUtility.BYOID_CREDENTIAL_SOURCE_PROPERTY_NAME,
               BigQueryJdbcUrlUtility.BYOID_POOL_USER_PROJECT_PROPERTY_NAME,
               BigQueryJdbcUrlUtility.BYOID_SA_IMPERSONATION_URI_PROPERTY_NAME,
               BigQueryJdbcUrlUtility.BYOID_SUBJECT_TOKEN_TYPE_PROPERTY_NAME,
@@ -264,12 +263,26 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
   private final AtomicReference<SessionState> sessionState =
       new AtomicReference<>(new SessionState(null, Collections.emptyList(), false));
 
+  static String maskPropertyValue(String key, Object value) {
+    if (value == null) {
+      return null;
+    }
+    if (key == null || !SAFE_TO_LOG_PROPERTIES.contains(key)) {
+      return "*****";
+    }
+    return String.valueOf(value);
+  }
+
   BigQueryConnection(String url) throws SQLException {
     this(url, DataSource.fromUrl(url));
   }
 
   BigQueryConnection(String url, DataSource ds) throws SQLException {
-    this.connectionId = UUID.randomUUID().toString();
+    this(url, ds, UUID.randomUUID().toString());
+  }
+
+  BigQueryConnection(String url, DataSource ds, String connectionId) throws SQLException {
+    this.connectionId = connectionId != null ? connectionId : UUID.randomUUID().toString();
     Baggage baggage =
         Baggage.builder()
             .put(BigQueryJdbcOpenTelemetry.CONNECTION_ID_BAGGAGE_KEY, this.connectionId)
@@ -285,11 +298,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
         Properties connectionProps = ds.createProperties();
         Properties maskedProps = new Properties();
         for (String name : connectionProps.stringPropertyNames()) {
-          String value = connectionProps.getProperty(name);
-          if (!SAFE_TO_LOG_PROPERTIES.contains(name)) {
-            value = "*****";
-          }
-          maskedProps.setProperty(name, value);
+          maskedProps.setProperty(name, maskPropertyValue(name, connectionProps.getProperty(name)));
         }
         LOG.config("Connection properties: %s", maskedProps.toString());
       }

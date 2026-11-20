@@ -31,6 +31,8 @@ import java.util.Collections;
 import java.util.Map;
 import java.util.Properties;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 
 public class BigQueryJdbcUrlUtilityTest extends BigQueryJdbcLoggingBaseTest {
 
@@ -412,5 +414,60 @@ public class BigQueryJdbcUrlUtilityTest extends BigQueryJdbcLoggingBaseTest {
     DataSource defaultDs = DataSource.fromUrl(urlWithoutGraph);
     assertThat(defaultDs.getEnableGraphMetadata())
         .isEqualTo(BigQueryJdbcUrlUtility.DEFAULT_ENABLE_GRAPH_METADATA_VALUE);
+  }
+
+  @ParameterizedTest
+  @ValueSource(
+      strings = {
+        "OAuthAccessToken",
+        "OAuthRefreshToken",
+        "OAuthPvtKey",
+        "OAuthClientSecret",
+        "OAuthP12Password",
+        "ProxyPwd",
+        "ProxyUid",
+        "SSLTrustStorePwd",
+        "gcpTelemetryCredentials",
+        "BYOID_CredentialSource",
+        "CustomSecretProperty"
+      })
+  public void testAppendPropertiesToURL_masksSensitivePropertiesAtFinest(String secretKey) {
+    capturedLogs.clear();
+    String baseUrl = "bigquery://https://www.googleapis.com/bigquery/v2:443";
+    Properties props = new Properties();
+    String rawSecret = "super-secret-value-98765";
+    props.setProperty(secretKey, rawSecret);
+    props.setProperty("ProjectId", "visible-project");
+
+    String updated = BigQueryJdbcUrlUtility.appendPropertiesToURL(baseUrl, "TestCaller", props);
+
+    assertThat(updated).contains(secretKey + "=" + rawSecret);
+    assertThat(assertLogContains("Appending " + secretKey + " with value ***** to URL")).isTrue();
+    assertThat(assertLogContains("Appending ProjectId with value visible-project to URL")).isTrue();
+    assertThat(assertLogContains(rawSecret)).isFalse();
+  }
+
+  @Test
+  public void testAppendPropertiesToURL_handlesNullAndNonStringProperties() {
+    String baseUrl = "bigquery://https://www.googleapis.com/bigquery/v2:443";
+    assertThat(BigQueryJdbcUrlUtility.appendPropertiesToURL(baseUrl, "Caller", null))
+        .isEqualTo(baseUrl);
+    assertThat(BigQueryJdbcUrlUtility.appendPropertiesToURL(baseUrl, "Caller", new Properties()))
+        .isEqualTo(baseUrl);
+
+    Properties nonStringProps = new Properties();
+    nonStringProps.put("MaxResults", 500);
+    nonStringProps.put("OAuthAccessToken", 123456);
+    capturedLogs.clear();
+
+    String updated =
+        BigQueryJdbcUrlUtility.appendPropertiesToURL(baseUrl, "Caller", nonStringProps);
+    assertThat(updated).contains("MaxResults=500");
+    assertThat(updated).contains("OAuthAccessToken=123456");
+    assertThat(assertLogContains("Appending MaxResults with value 500 to URL")).isTrue();
+    assertThat(assertLogContains("Appending OAuthAccessToken with value ***** to URL")).isTrue();
+    assertThat(assertLogContains("123456")).isFalse();
+    assertThat(BigQueryConnection.maskPropertyValue(null, "secret")).isEqualTo("*****");
+    assertThat(BigQueryConnection.maskPropertyValue("ProjectId", null)).isNull();
   }
 }

@@ -71,11 +71,46 @@ class PerConnectionFileHandler extends Handler {
   private final Path baseLogPath;
   private final Level level;
   private final int maxFileBytes;
+  private final boolean allowImplicitSlots;
   private final Formatter logFormatter;
   private final Set<String> registeredConnections = ConcurrentHashMap.newKeySet();
   private final ConcurrentHashMap<String, ConnectionFileSlot> slots = new ConcurrentHashMap<>();
   private final BoundedLogFileWriter defaultWriter;
   private volatile boolean handlerClosed = false;
+
+  /**
+   * Persistent multi-connection handler used by {@link BigQueryJdbcRootLogger}. Each connection
+   * registers its own {@code (logPath, level)} slot; a global fallback writer is opened only when
+   * JVM-wide {@code BIGQUERY_JDBC_LOG_PATH} and {@code BIGQUERY_JDBC_LOG_LEVEL} environment
+   * variables are configured.
+   */
+  PerConnectionFileHandler() {
+    this.level = Level.ALL;
+    this.maxFileBytes = resolveMaxLogFileBytes();
+    this.allowImplicitSlots = false;
+    this.logFormatter = BigQueryJdbcRootLogger.getFormatter();
+    setLevel(Level.ALL);
+    setFormatter(this.logFormatter);
+
+    String envLogPath = System.getenv(BigQueryJdbcUrlUtility.LOG_PATH_ENV_VAR);
+    String envLogLevelStr = System.getenv(BigQueryJdbcUrlUtility.LOG_LEVEL_ENV_VAR);
+    BoundedLogFileWriter initializedDefault = null;
+    if (envLogPath != null && envLogLevelStr != null) {
+      try {
+        Level envLevel = BigQueryJdbcUrlUtility.parseLogLevel(envLogLevelStr);
+        if (envLevel != Level.OFF) {
+          Path verifiedEnvDir = ensureSecureDirectory(Paths.get(envLogPath).toAbsolutePath());
+          initializedDefault =
+              createLogWriter(DEFAULT_HANDLER_ID, verifiedEnvDir, envLevel, this.maxFileBytes);
+        }
+      } catch (RuntimeException | IOException e) {
+        Exception ex = (e instanceof Exception) ? (Exception) e : new IOException(e);
+        reportError("Failed to initialize env default log file", ex, ErrorManager.OPEN_FAILURE);
+      }
+    }
+    this.baseLogPath = null;
+    this.defaultWriter = initializedDefault;
+  }
 
   PerConnectionFileHandler(String baseLogPath, Level level) {
     this(baseLogPath, level, resolveMaxLogFileBytes());
@@ -85,6 +120,7 @@ class PerConnectionFileHandler extends Handler {
   PerConnectionFileHandler(String baseLogPath, Level level, int maxFileBytes) {
     this.level = level;
     this.maxFileBytes = maxFileBytes > 0 ? maxFileBytes : DEFAULT_MAX_LOG_FILE_BYTES;
+    this.allowImplicitSlots = true;
     this.logFormatter = BigQueryJdbcRootLogger.getFormatter();
     setLevel(level);
     setFormatter(this.logFormatter);
@@ -245,7 +281,16 @@ class PerConnectionFileHandler extends Handler {
     try {
       Path verifiedDir = ensureSecureDirectory(logDir);
       SeekableByteChannel channel = openChannelForId(verifiedDir, id);
-      return new BoundedLogFileWriter(channel, writerLevel, limitBytes, logFormatter, this);
+      try {
+        return new BoundedLogFileWriter(channel, writerLevel, limitBytes, logFormatter, this);
+      } catch (IOException initEx) {
+        try {
+          channel.close();
+        } catch (IOException closeEx) {
+          initEx.addSuppressed(closeEx);
+        }
+        throw initEx;
+      }
     } catch (IOException e) {
       reportError("Failed to create log file for connection " + id, e, ErrorManager.OPEN_FAILURE);
       return null;
@@ -300,8 +345,29 @@ class PerConnectionFileHandler extends Handler {
     registeredConnections.add(connectionId);
   }
 
+  void registerConnection(String connectionId, Level connectionLevel, String connectionLogPath)
+      throws IOException {
+    if (connectionId == null
+        || connectionId.isEmpty()
+        || handlerClosed
+        || connectionLevel == null
+        || connectionLevel == Level.OFF
+        || connectionLogPath == null) {
+      return;
+    }
+    Path verifiedDir = ensureSecureDirectory(Paths.get(connectionLogPath).toAbsolutePath());
+    registeredConnections.add(connectionId);
+    ConnectionFileSlot previous =
+        slots.put(connectionId, new ConnectionFileSlot(verifiedDir, connectionLevel, maxFileBytes));
+    if (previous != null) {
+      previous.closeSlot();
+    }
+  }
+
   private boolean canOpenSlotFor(String connectionId) {
     return !handlerClosed
+        && allowImplicitSlots
+        && baseLogPath != null
         && (registeredConnections.contains(connectionId)
             || BigQueryJdbcRootLogger.isConnectionActive(connectionId));
   }
@@ -334,6 +400,11 @@ class PerConnectionFileHandler extends Handler {
                 return new ConnectionFileSlot(baseLogPath, level, maxFileBytes);
               });
       if (slot != null && slot.publishIfOpen(record, connectionId, this)) {
+        return;
+      }
+      if (!allowImplicitSlots) {
+        // On the persistent multi-connection handler, connection-attributed records without an
+        // active file slot (e.g., LogLevel=0 or Cloud-Only mode) must not spill to defaultWriter.
         return;
       }
     }
@@ -491,10 +562,16 @@ class PerConnectionFileHandler extends Handler {
 
     synchronized boolean publishIfOpen(
         LogRecord record, String connectionId, PerConnectionFileHandler owner) {
-      if (closed || owner.handlerClosed || !owner.canOpenSlotFor(connectionId)) {
+      if (closed
+          || owner.handlerClosed
+          || (!owner.registeredConnections.contains(connectionId)
+              && !BigQueryJdbcRootLogger.isConnectionActive(connectionId))) {
         closeSlot();
         owner.slots.remove(connectionId, this);
         return false;
+      }
+      if (record.getLevel().intValue() < level.intValue()) {
+        return true;
       }
       if (writer == null) {
         writer = owner.createLogWriter(connectionId, logPath, level, maxFileBytes);
