@@ -22,7 +22,10 @@ import com.google.api.core.ApiFutureCallback;
 import com.google.api.core.ApiFutures;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.pubsub.v1.PublishResponse;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
@@ -41,14 +44,8 @@ class CancellationSharer extends AbstractApiFuture<PublishResponse> {
   // Guarded by lock
   private final Map<Integer, ApiFuture<PublishResponse>> runningAttempts = new HashMap<>();
   private boolean done = false;
-  private Throwable lastError;
 
   private final Lock lock = new ReentrantLock();
-
-  private void cleanupLocked() {
-    runningAttempts.clear();
-    this.batch = null;
-  }
 
   CancellationSharer(
       final Publisher.OutstandingBatch batch,
@@ -60,15 +57,19 @@ class CancellationSharer extends AbstractApiFuture<PublishResponse> {
   }
 
   void addAttempt(final int attemptNumber, final ApiFuture<PublishResponse> future) {
+    boolean cancelAttempt;
     lock.lock();
     try {
-      if (done) {
-        future.cancel(true);
-        return;
+      cancelAttempt = done;
+      if (!cancelAttempt) {
+        runningAttempts.put(attemptNumber, future);
       }
-      runningAttempts.put(attemptNumber, future);
     } finally {
       lock.unlock();
+    }
+    if (cancelAttempt) {
+      future.cancel(true);
+      return;
     }
 
     ApiFutures.addCallback(
@@ -88,82 +89,78 @@ class CancellationSharer extends AbstractApiFuture<PublishResponse> {
   }
 
   private void handleAttemptSuccess(final int attemptNumber, final PublishResponse response) {
-    boolean shouldSetResponse = false;
+    List<ApiFuture<PublishResponse>> attemptsToCancel;
     lock.lock();
     try {
       if (done) {
         return;
       }
-      done = true;
       batch.successfulAttempt = attemptNumber;
       publisher.refillTokenBucket();
-      cancelAllExceptLocked(attemptNumber);
-      cleanupLocked();
-      shouldSetResponse = true;
+      runningAttempts.remove(attemptNumber);
+      attemptsToCancel = finishLocked();
     } finally {
       lock.unlock();
     }
-    if (shouldSetResponse) {
-      set(response);
-    }
+    cancelAttempts(attemptsToCancel);
+    set(response);
   }
 
   private void handleAttemptFailure(final int attemptNumber, final Throwable t) {
-    boolean shouldSetException = false;
+    List<ApiFuture<PublishResponse>> attemptsToCancel;
     lock.lock();
     try {
       if (done) {
         return;
       }
       runningAttempts.remove(attemptNumber);
-      lastError = t;
-      if (attemptNumber == 0 || runningAttempts.isEmpty()) {
-        done = true;
-        cancelAllLocked();
-        cleanupLocked();
-        shouldSetException = true;
+      if (attemptNumber != 0 && !runningAttempts.isEmpty()) {
+        return;
       }
+      attemptsToCancel = finishLocked();
     } finally {
       lock.unlock();
     }
-
-    if (shouldSetException) {
-      setException(lastError);
-    }
+    cancelAttempts(attemptsToCancel);
+    setException(t);
   }
 
   @Override
   public boolean cancel(final boolean mayInterruptIfRunning) {
-    boolean cancelled = false;
+    List<ApiFuture<PublishResponse>> attemptsToCancel;
     lock.lock();
     try {
-      if (super.cancel(mayInterruptIfRunning)) {
-        cancelled = true;
-        done = true;
-        cancelAllLocked();
-        cleanupLocked();
+      if (done) {
+        return false;
       }
+      attemptsToCancel = finishLocked();
     } finally {
       lock.unlock();
     }
-    return cancelled;
-  }
-
-  private void cancelAllLocked() {
-    for (ApiFuture<PublishResponse> future : runningAttempts.values()) {
-      future.cancel(true);
+    try {
+      return super.cancel(mayInterruptIfRunning);
+    } finally {
+      cancelAttempts(attemptsToCancel);
     }
-    runningAttempts.clear();
   }
 
-  private void cancelAllExceptLocked(final int successfulAttempt) {
-    runningAttempts.forEach(
-        (attempt, future) -> {
-          if (attempt != successfulAttempt) {
-            future.cancel(true);
-          }
-        });
+  private List<ApiFuture<PublishResponse>> finishLocked() {
+    done = true;
+    List<ApiFuture<PublishResponse>> attemptsToCancel =
+        runningAttempts.isEmpty()
+            ? Collections.emptyList()
+            : new ArrayList<>(runningAttempts.values());
     runningAttempts.clear();
+    batch = null;
+    return attemptsToCancel;
+  }
+
+  // An attempt callback can enter this coordinator while holding the attempt future's lock.
+  // Cancel the attempts only after releasing the coordinator lock.
+  private static void cancelAttempts(List<ApiFuture<PublishResponse>> attempts) {
+    for (ApiFuture<PublishResponse> attempt : attempts) {
+      attempt.cancel(true);
+    }
   }
 
   Publisher.OutstandingBatch getBatchIfActive() {
