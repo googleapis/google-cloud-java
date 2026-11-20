@@ -1185,12 +1185,15 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage, 
     SignatureInfo.Builder signatureInfoBuilder =
         new SignatureInfo.Builder(httpVerb, expiration, path);
 
-    if (firstNonNull((Boolean) optionMap.get(SignUrlOption.Option.MD5), false)) {
+    boolean includeMd5 = firstNonNull((Boolean) optionMap.get(SignUrlOption.Option.MD5), false);
+    if (includeMd5) {
       checkArgument(blobInfo.getMd5() != null, "Blob is missing a value for md5");
       signatureInfoBuilder.setContentMd5(blobInfo.getMd5());
     }
 
-    if (firstNonNull((Boolean) optionMap.get(SignUrlOption.Option.CONTENT_TYPE), false)) {
+    boolean includeContentType =
+        firstNonNull((Boolean) optionMap.get(SignUrlOption.Option.CONTENT_TYPE), false);
+    if (includeContentType) {
       checkArgument(blobInfo.getContentType() != null, "Blob is missing a value for content-type");
       signatureInfoBuilder.setContentType(blobInfo.getContentType());
     }
@@ -1203,6 +1206,10 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage, 
     signatureInfoBuilder.setTimestamp(getOptions().getClock().millisTime());
 
     ImmutableMap.Builder<String, String> extHeadersBuilder = new ImmutableMap.Builder<>();
+    Map<String, String> extHeaders =
+        optionMap.containsKey(SignUrlOption.Option.EXT_HEADERS)
+            ? (Map<String, String>) optionMap.get(SignUrlOption.Option.EXT_HEADERS)
+            : ImmutableMap.of();
 
     boolean isV4 =
         SignUrlOption.SignatureVersion.V4.equals(
@@ -1218,12 +1225,15 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage, 
           || getOptions().getUniverseDomain() != null) {
         extHeadersBuilder.put("host", getBaseStorageHostName(optionMap));
       }
+      if (includeContentType && !containsHeader(extHeaders, "content-type")) {
+        extHeadersBuilder.put("content-type", blobInfo.getContentType());
+      }
+      if (includeMd5 && !containsHeader(extHeaders, "content-md5")) {
+        extHeadersBuilder.put("content-md5", blobInfo.getMd5());
+      }
     }
 
-    if (optionMap.containsKey(SignUrlOption.Option.EXT_HEADERS)) {
-      extHeadersBuilder.putAll(
-          (Map<String, String>) optionMap.get(SignUrlOption.Option.EXT_HEADERS));
-    }
+    extHeadersBuilder.putAll(extHeaders);
 
     ImmutableMap.Builder<String, String> queryParamsBuilder = new ImmutableMap.Builder<>();
     if (optionMap.containsKey(SignUrlOption.Option.QUERY_PARAMS)) {
@@ -1235,6 +1245,10 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage, 
         .setCanonicalizedExtensionHeaders(extHeadersBuilder.build())
         .setCanonicalizedQueryParams(queryParamsBuilder.build())
         .build();
+  }
+
+  private static boolean containsHeader(Map<String, String> headers, String name) {
+    return headers.keySet().stream().anyMatch(name::equalsIgnoreCase);
   }
 
   private String slashlessBucketNameFromBlobInfo(BlobInfo blobInfo) {
