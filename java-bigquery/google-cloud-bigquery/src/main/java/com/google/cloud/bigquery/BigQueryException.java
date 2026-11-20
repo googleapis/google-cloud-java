@@ -30,10 +30,10 @@ import java.util.concurrent.ExecutionException;
 /**
  * BigQuery service exception.
  *
- * @see <a href="https://docs.cloud.google.com/bigquery/docs/errors">Google Cloud BigQuery error
- *     codes</a>
- * @see <a href="https://docs.cloud.google.com/bigquery/docs/error-messages">Google Cloud BigQuery
- *     error messages</a>
+ * @see <a href="https://docs.cloud.google.com/bigquery/docs/errors">BigQuery API HTTP status and
+ *     error codes</a>
+ * @see <a href="https://docs.cloud.google.com/bigquery/docs/error-messages">BigQuery client and
+ *     connectivity error messages</a>
  */
 public final class BigQueryException extends BaseHttpServiceException {
 

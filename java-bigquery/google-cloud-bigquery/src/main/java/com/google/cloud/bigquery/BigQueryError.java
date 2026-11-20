@@ -72,7 +72,8 @@ public final class BigQueryError implements Serializable {
   /**
    * Returns short error code that summarizes the error.
    *
-   * @see <a href="https://docs.cloud.google.com/bigquery/docs/errors">Troubleshooting Errors</a>
+   * @see <a href="https://docs.cloud.google.com/bigquery/docs/errors">BigQuery API HTTP status and
+   *     error codes</a>
    */
   public String getReason() {
     return reason;
