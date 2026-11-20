@@ -38,7 +38,18 @@ import org.checkerframework.checker.nullness.qual.NonNull;
 /**
  * An interface for Google Cloud BigQuery.
  *
- * @see <a href="https://cloud.google.com/bigquery/what-is-bigquery">Google Cloud BigQuery</a>
+ * <p>Provides synchronous operations to manage BigQuery resources ({@link Dataset}, {@link Table},
+ * {@link Model}, {@link Routine}), run SQL queries ({@link #query(QueryJobConfiguration,
+ * JobOption...)}), submit and monitor asynchronous {@link Job}s, and ingest data ({@link #writer},
+ * {@link #insertAll}).
+ *
+ * <p>Typically, create one {@code BigQuery} instance per application via {@link
+ * BigQueryOptions#getService()} and reuse it across threads. Call {@link #close()} on application
+ * shutdown to release cached background resources (such as Storage Read API clients used for query
+ * streaming). Operations on {@code BigQuery} are thread-safe, except for stateful helpers returned
+ * by this client such as {@link Connection} and {@link TableDataWriteChannel}.
+ *
+ * @see <a href="https://docs.cloud.google.com/bigquery/docs/introduction">Google Cloud BigQuery</a>
  */
 public interface BigQuery extends Service<BigQueryOptions>, AutoCloseable {
 
