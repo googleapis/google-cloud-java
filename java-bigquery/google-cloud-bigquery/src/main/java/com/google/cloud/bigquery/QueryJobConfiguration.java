@@ -86,8 +86,8 @@ public final class QueryJobConfiguration extends JobConfiguration {
   public enum Priority {
     /**
      * Query is executed as soon as possible and count towards the <a
-     * href="https://cloud.google.com/bigquery/quota-policy">concurrent rate limit and the daily
-     * rate limit</a>.
+     * href="https://docs.cloud.google.com/bigquery/quotas">concurrent rate limit and the daily rate
+     * limit</a>.
      */
     INTERACTIVE,
 
@@ -454,7 +454,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
      * Sets whether the job is allowed to create tables.
      *
      * @see <a
-     *     href="https://cloud.google.com/bigquery/docs/reference/v2/jobs#configuration.query.createDisposition">
+     *     href="https://docs.cloud.google.com/bigquery/docs/reference/rest/v2/Job#JobConfigurationQuery.FIELDS.create_disposition">
      *     Create Disposition</a>
      */
     public Builder setCreateDisposition(CreateDisposition createDisposition) {
@@ -466,7 +466,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
      * Sets the action that should occur if the destination table already exists.
      *
      * @see <a
-     *     href="https://cloud.google.com/bigquery/docs/reference/v2/jobs#configuration.query.writeDisposition">
+     *     href="https://docs.cloud.google.com/bigquery/docs/reference/rest/v2/Job#JobConfigurationQuery.FIELDS.write_disposition">
      *     Write Disposition</a>
      */
     public Builder setWriteDisposition(WriteDisposition writeDisposition) {
@@ -515,7 +515,8 @@ public final class QueryJobConfiguration extends JobConfiguration {
      * query is allowed to create large results at a slight cost in performance. If {@code true}
      * {@link Builder#setDestinationTable(TableId)} must be provided.
      *
-     * @see <a href="https://cloud.google.com/bigquery/querying-data#largequeryresults">Returning
+     * @see <a
+     *     href="https://docs.cloud.google.com/bigquery/docs/writing-results#large-results">Returning
      *     Large Query Results</a>
      */
     public Builder setAllowLargeResults(Boolean allowLargeResults) {
@@ -528,7 +529,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
      * cache that will be flushed whenever tables in the query are modified. Moreover, the query
      * cache is only available when {@link Builder#setDestinationTable(TableId)} is not set.
      *
-     * @see <a href="https://cloud.google.com/bigquery/querying-data#querycaching">Query Caching</a>
+     * @see <a href="https://docs.cloud.google.com/bigquery/docs/cached-results">Query Caching</a>
      */
     public Builder setUseQueryCache(Boolean useQueryCache) {
       this.useQueryCache = useQueryCache;
@@ -540,7 +541,8 @@ public final class QueryJobConfiguration extends JobConfiguration {
      * Builder#setAllowLargeResults(Boolean)} must be {@code true}. By default results are
      * flattened.
      *
-     * @see <a href="https://cloud.google.com/bigquery/docs/data#flatten">Flatten</a>
+     * @see <a
+     *     href="https://docs.cloud.google.com/bigquery/docs/legacy-nested-repeated#flatten">Flatten</a>
      */
     public Builder setFlattenResults(Boolean flattenResults) {
       this.flattenResults = flattenResults;
@@ -560,8 +562,8 @@ public final class QueryJobConfiguration extends JobConfiguration {
     /**
      * Sets whether to use BigQuery's legacy SQL dialect for this query. By default this property is
      * set to {@code false}. If set to {@code false}, the query will use BigQuery's <a
-     * href="https://cloud.google.com/bigquery/sql-reference/">Standard SQL</a>. When set to {@code
-     * false}, the values of {@link #setAllowLargeResults(Boolean)} and {@link
+     * href="https://docs.cloud.google.com/bigquery/docs/introduction-sql">Standard SQL</a>. When
+     * set to {@code false}, the values of {@link #setAllowLargeResults(Boolean)} and {@link
      * #setFlattenResults(Boolean)} are ignored; query will be run as if {@link
      * #setAllowLargeResults(Boolean)} is {@code true} and {@link #setFlattenResults(Boolean)} is
      * {@code false}.
@@ -802,7 +804,8 @@ public final class QueryJobConfiguration extends JobConfiguration {
    * query is allowed to create large results at a slight cost in performance. the query is allowed
    * to create large results at a slight cost in performance.
    *
-   * @see <a href="https://cloud.google.com/bigquery/querying-data#largequeryresults">Returning
+   * @see <a
+   *     href="https://docs.cloud.google.com/bigquery/docs/writing-results#large-results">Returning
    *     Large Query Results</a>
    */
   public Boolean allowLargeResults() {
@@ -812,7 +815,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
   /**
    * Returns whether to create a new session.
    *
-   * @see <a href="https://cloud.google.com/bigquery/docs/sessions-create">Create Sessions</a>
+   * @see <a href="https://docs.cloud.google.com/bigquery/docs/sessions">Create Sessions</a>
    */
   public Boolean createSession() {
     return createSession;
@@ -822,7 +825,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
    * Returns whether the job is allowed to create new tables.
    *
    * @see <a
-   *     href="https://cloud.google.com/bigquery/docs/reference/v2/jobs#configuration.query.createDisposition">
+   *     href="https://docs.cloud.google.com/bigquery/docs/reference/rest/v2/Job#JobConfigurationQuery.FIELDS.create_disposition">
    *     Create Disposition</a>
    */
   public CreateDisposition getCreateDisposition() {
@@ -853,7 +856,8 @@ public final class QueryJobConfiguration extends JobConfiguration {
    * Returns whether nested and repeated fields should be flattened. If set to {@code false} {@link
    * Builder#setAllowLargeResults(Boolean)} must be {@code true}.
    *
-   * @see <a href="https://cloud.google.com/bigquery/docs/data#flatten">Flatten</a>
+   * @see <a
+   *     href="https://docs.cloud.google.com/bigquery/docs/legacy-nested-repeated#flatten">Flatten</a>
    */
   public Boolean flattenResults() {
     return flattenResults;
@@ -894,7 +898,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
    * cache that will be flushed whenever tables in the query are modified. Moreover, the query cache
    * is only available when {@link Builder#setDestinationTable(TableId)} is not set.
    *
-   * @see <a href="https://cloud.google.com/bigquery/querying-data#querycaching">Query Caching</a>
+   * @see <a href="https://docs.cloud.google.com/bigquery/docs/cached-results">Query Caching</a>
    */
   public Boolean useQueryCache() {
     return useQueryCache;
@@ -913,7 +917,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
    * Returns the action that should occur if the destination table already exists.
    *
    * @see <a
-   *     href="https://cloud.google.com/bigquery/docs/reference/v2/jobs#configuration.query.writeDisposition">
+   *     href="https://docs.cloud.google.com/bigquery/docs/reference/rest/v2/Job#JobConfigurationQuery.FIELDS.write_disposition">
    *     Write Disposition</a>
    */
   public WriteDisposition getWriteDisposition() {
@@ -932,9 +936,9 @@ public final class QueryJobConfiguration extends JobConfiguration {
   /**
    * Returns whether to use BigQuery's legacy SQL dialect for this query. By default this property
    * is set to {@code false}. If set to {@code false}, the query will use BigQuery's <a
-   * href="https://cloud.google.com/bigquery/sql-reference/">Standard SQL</a>. When set to {@code
-   * false}, the values of {@link #allowLargeResults()} and {@link #flattenResults()} are ignored;
-   * query will be run as if {@link #allowLargeResults()} is {@code true} and {@link
+   * href="https://docs.cloud.google.com/bigquery/docs/introduction-sql">Standard SQL</a>. When set
+   * to {@code false}, the values of {@link #allowLargeResults()} and {@link #flattenResults()} are
+   * ignored; query will be run as if {@link #allowLargeResults()} is {@code true} and {@link
    * #flattenResults()} is {@code false}. If set to {@code null} or {@code true}, legacy SQL dialect
    * is used. This property is experimental and might be subject to change.
    */

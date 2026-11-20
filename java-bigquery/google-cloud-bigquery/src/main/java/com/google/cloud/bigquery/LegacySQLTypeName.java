@@ -27,7 +27,7 @@ import java.util.Map;
  * queries that use standard SQL, the return types are the legacy SQL types.
  *
  * @see <a
- *     href="https://cloud.google.com/bigquery/data-types">https://cloud.google.com/bigquery/data-types</a>
+ *     href="https://docs.cloud.google.com/bigquery/docs/data-types">https://docs.cloud.google.com/bigquery/docs/data-types</a>
  */
 public final class LegacySQLTypeName extends StringEnumValue {
   private static final long serialVersionUID = 1421040468991161123L;

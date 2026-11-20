@@ -35,8 +35,8 @@ import javax.annotation.Nullable;
  * reside outside of BigQuery but can be queried as normal BigQuery tables. External tables are
  * experimental and might be subject to change or removed.
  *
- * @see <a href="https://cloud.google.com/bigquery/federated-data-sources">Federated Data Sources
- *     </a>
+ * @see <a href="https://docs.cloud.google.com/bigquery/docs/external-data-sources">Federated Data
+ *     Sources </a>
  */
 @AutoValue
 public abstract class ExternalTableDefinition extends TableDefinition {
@@ -99,7 +99,7 @@ public abstract class ExternalTableDefinition extends TableDefinition {
      * <p>For Google Cloud Datastore backup URIs: Exactly one URI can be specified. Also, the '*'
      * wildcard character is not allowed.
      *
-     * @see <a href="https://cloud.google.com/bigquery/loading-data-into-bigquery#quota">Quota</a>
+     * @see <a href="https://docs.cloud.google.com/bigquery/quotas#external_tables">Quota</a>
      */
     public Builder setSourceUris(List<String> sourceUris) {
       return setSourceUrisImmut(ImmutableList.copyOf(sourceUris));
@@ -124,7 +124,7 @@ public abstract class ExternalTableDefinition extends TableDefinition {
      * formats are {@code CSV} and {@code NEWLINE_DELIMITED_JSON}.
      *
      * <p><a
-     * href="https://cloud.google.com/bigquery/docs/reference/v2/tables#externalDataConfiguration.sourceFormat">
+     * href="https://docs.cloud.google.com/bigquery/docs/reference/rest/v2/tables#ExternalDataConfiguration.FIELDS.source_format">
      * Source Format</a>
      */
     public Builder setFormatOptions(FormatOptions formatOptions) {
@@ -159,7 +159,7 @@ public abstract class ExternalTableDefinition extends TableDefinition {
      * #setFormatOptions(FormatOptions)} property determines what BigQuery treats as an extra value.
      *
      * @see <a
-     *     href="https://cloud.google.com/bigquery/docs/reference/v2/tables#externalDataConfiguration.ignoreUnknownValues">
+     *     href="https://docs.cloud.google.com/bigquery/docs/reference/rest/v2/tables#ExternalDataConfiguration.FIELDS.ignore_unknown_values">
      *     Ignore Unknown Values</a>
      */
     public abstract Builder setIgnoreUnknownValues(Boolean ignoreUnknownValues);
@@ -168,7 +168,7 @@ public abstract class ExternalTableDefinition extends TableDefinition {
      * Sets compression type of the data source. By default no compression is assumed.
      *
      * @see <a
-     *     href="https://cloud.google.com/bigquery/docs/reference/v2/tables#externalDataConfiguration.compression">
+     *     href="https://docs.cloud.google.com/bigquery/docs/reference/rest/v2/tables#ExternalDataConfiguration.FIELDS.compression">
      *     Compression</a>
      */
     public abstract Builder setCompression(String compression);
@@ -218,7 +218,7 @@ public abstract class ExternalTableDefinition extends TableDefinition {
      * external data source.
      *
      * @see <a
-     *     href="https://cloud.google.com/bigquery/docs/reference/rest/v2/tables#metadatacachemode">
+     *     href="https://docs.cloud.google.com/bigquery/docs/reference/rest/v2/tables#metadatacachemode">
      *     MetadataCacheMode</a>
      */
     public Builder setMetadataCacheMode(String metadataCacheMode) {
@@ -232,7 +232,7 @@ public abstract class ExternalTableDefinition extends TableDefinition {
      * external data source.
      *
      * @see <a
-     *     href="https://cloud.google.com/bigquery/docs/reference/rest/v2/tables#resource:-table">
+     *     href="https://docs.cloud.google.com/bigquery/docs/reference/rest/v2/tables#resource:-table">
      *     MaxStaleness</a>
      */
     public Builder setMaxStaleness(String maxStaleness) {
@@ -289,7 +289,7 @@ public abstract class ExternalTableDefinition extends TableDefinition {
    * Returns the compression type of the data source.
    *
    * @see <a
-   *     href="https://cloud.google.com/bigquery/docs/reference/v2/tables#externalDataConfiguration.compression">
+   *     href="https://docs.cloud.google.com/bigquery/docs/reference/rest/v2/tables#ExternalDataConfiguration.FIELDS.compression">
    *     Compression</a>
    */
   @Nullable
@@ -299,7 +299,7 @@ public abstract class ExternalTableDefinition extends TableDefinition {
    * Returns the connection ID used to connect to external data source.
    *
    * @see <a
-   *     href="https://cloud.google.com/bigquery/docs/reference/v2/tables#externalDataConfiguration">
+   *     href="https://docs.cloud.google.com/bigquery/docs/reference/rest/v2/tables#ExternalDataConfiguration">
    *     ConnectionId</a>
    */
   @Nullable
@@ -313,7 +313,7 @@ public abstract class ExternalTableDefinition extends TableDefinition {
    * BigQuery treats as an extra value.
    *
    * @see <a
-   *     href="https://cloud.google.com/bigquery/docs/reference/v2/tables#externalDataConfiguration.ignoreUnknownValues">
+   *     href="https://docs.cloud.google.com/bigquery/docs/reference/rest/v2/tables#ExternalDataConfiguration.FIELDS.ignore_unknown_values">
    *     Ignore Unknown Values</a>
    */
   @Nullable
@@ -338,7 +338,7 @@ public abstract class ExternalTableDefinition extends TableDefinition {
    * to load jobs apply to external data sources, plus an additional limit of 10 GB maximum size
    * across all URIs.
    *
-   * @see <a href="https://cloud.google.com/bigquery/loading-data-into-bigquery#quota">Quota</a>
+   * @see <a href="https://docs.cloud.google.com/bigquery/quotas#external_tables">Quota</a>
    */
   @Nullable
   public List<String> getSourceUris() {
@@ -360,7 +360,7 @@ public abstract class ExternalTableDefinition extends TableDefinition {
    * Returns the object metadata.
    *
    * @see <a
-   *     href="https://cloud.google.com/bigquery/docs/reference/v2/tables#externalDataConfiguration">
+   *     href="https://docs.cloud.google.com/bigquery/docs/reference/rest/v2/tables#ExternalDataConfiguration">
    *     ObjectMetadata</a>
    */
   @Nullable
@@ -375,7 +375,7 @@ public abstract class ExternalTableDefinition extends TableDefinition {
    * Returns the metadata cache mode.
    *
    * @see <a
-   *     href="https://cloud.google.com/bigquery/docs/reference/rest/v2/tables#metadatacachemode">
+   *     href="https://docs.cloud.google.com/bigquery/docs/reference/rest/v2/tables#metadatacachemode">
    *     MetadataCacheMode</a>
    */
   @Nullable
@@ -391,7 +391,7 @@ public abstract class ExternalTableDefinition extends TableDefinition {
    * Staleness encoded as a string encoding of sql IntervalValue type.
    *
    * @see <a
-   *     href="hhttps://cloud.google.com/bigquery/docs/reference/rest/v2/tables#resource:-table">
+   *     href="https://docs.cloud.google.com/bigquery/docs/reference/rest/v2/tables#resource:-table">
    *     MaxStaleness</a>
    */
   @Nullable
@@ -591,9 +591,9 @@ public abstract class ExternalTableDefinition extends TableDefinition {
    * @param schema the schema for the external data
    * @param format the source format of the external data
    * @return a builder for an ExternalTableDefinition object given source URIs, schema and format
-   * @see <a href="https://cloud.google.com/bigquery/loading-data-into-bigquery#quota">Quota</a>
+   * @see <a href="https://docs.cloud.google.com/bigquery/quotas#external_tables">Quota</a>
    * @see <a
-   *     href="https://cloud.google.com/bigquery/docs/reference/v2/tables#externalDataConfiguration.sourceFormat">
+   *     href="https://docs.cloud.google.com/bigquery/docs/reference/rest/v2/tables#ExternalDataConfiguration.FIELDS.source_format">
    *     Source Format</a>
    */
   public static Builder newBuilder(List<String> sourceUris, Schema schema, FormatOptions format) {
@@ -609,9 +609,9 @@ public abstract class ExternalTableDefinition extends TableDefinition {
    * @param schema the schema for the external data
    * @param format the source format of the external data
    * @return a builder for an ExternalTableDefinition object given source URI, schema and format
-   * @see <a href="https://cloud.google.com/bigquery/loading-data-into-bigquery#quota">Quota</a>
+   * @see <a href="https://docs.cloud.google.com/bigquery/quotas#external_tables">Quota</a>
    * @see <a
-   *     href="https://cloud.google.com/bigquery/docs/reference/v2/tables#externalDataConfiguration.sourceFormat">
+   *     href="https://docs.cloud.google.com/bigquery/docs/reference/rest/v2/tables#ExternalDataConfiguration.FIELDS.source_format">
    *     Source Format</a>
    */
   public static Builder newBuilder(String sourceUri, Schema schema, FormatOptions format) {
@@ -628,9 +628,9 @@ public abstract class ExternalTableDefinition extends TableDefinition {
    *     to external data sources, plus an additional limit of 10 GB maximum size across all URIs.
    * @param format the source format of the external data
    * @return a builder for an ExternalTableDefinition object given source URIs and format
-   * @see <a href="https://cloud.google.com/bigquery/loading-data-into-bigquery#quota">Quota</a>
+   * @see <a href="https://docs.cloud.google.com/bigquery/quotas#external_tables">Quota</a>
    * @see <a
-   *     href="https://cloud.google.com/bigquery/docs/reference/v2/tables#externalDataConfiguration.sourceFormat">
+   *     href="https://docs.cloud.google.com/bigquery/docs/reference/rest/v2/tables#ExternalDataConfiguration.FIELDS.source_format">
    *     Source Format</a>
    */
   public static Builder newBuilder(String sourceUri, FormatOptions format) {
@@ -646,9 +646,9 @@ public abstract class ExternalTableDefinition extends TableDefinition {
    *     valid HTTPS URL for a Google Cloud Bigtable table. Size limits related to load jobs apply
    *     to external data sources, plus an additional limit of 10 GB maximum size across all URIs.
    * @return a builder for an ExternalTableDefinition object given source URIs and format
-   * @see <a href="https://cloud.google.com/bigquery/loading-data-into-bigquery#quota">Quota</a>
+   * @see <a href="https://docs.cloud.google.com/bigquery/quotas#external_tables">Quota</a>
    * @see <a
-   *     href="https://cloud.google.com/bigquery/docs/reference/v2/tables#externalDataConfiguration.sourceFormat">
+   *     href="https://docs.cloud.google.com/bigquery/docs/reference/rest/v2/tables#ExternalDataConfiguration.FIELDS.source_format">
    *     Source Format</a>
    */
   public static Builder newBuilder(String sourceUri) {
@@ -666,9 +666,9 @@ public abstract class ExternalTableDefinition extends TableDefinition {
    * @param schema the schema for the external data
    * @param format the source format of the external data
    * @return an ExternalTableDefinition object given source URIs, schema and format
-   * @see <a href="https://cloud.google.com/bigquery/loading-data-into-bigquery#quota">Quota</a>
+   * @see <a href="https://docs.cloud.google.com/bigquery/quotas#external_tables">Quota</a>
    * @see <a
-   *     href="https://cloud.google.com/bigquery/docs/reference/v2/tables#externalDataConfiguration.sourceFormat">
+   *     href="https://docs.cloud.google.com/bigquery/docs/reference/rest/v2/tables#ExternalDataConfiguration.FIELDS.source_format">
    *     Source Format</a>
    */
   public static ExternalTableDefinition of(
@@ -685,9 +685,9 @@ public abstract class ExternalTableDefinition extends TableDefinition {
    * @param schema the schema for the external data
    * @param format the source format of the external data
    * @return an ExternalTableDefinition object given source URIs, schema and format
-   * @see <a href="https://cloud.google.com/bigquery/loading-data-into-bigquery#quota">Quota</a>
+   * @see <a href="https://docs.cloud.google.com/bigquery/quotas#external_tables">Quota</a>
    * @see <a
-   *     href="https://cloud.google.com/bigquery/docs/reference/v2/tables#externalDataConfiguration.sourceFormat">
+   *     href="https://docs.cloud.google.com/bigquery/docs/reference/rest/v2/tables#ExternalDataConfiguration.FIELDS.source_format">
    *     Source Format</a>
    */
   public static ExternalTableDefinition of(String sourceUri, Schema schema, FormatOptions format) {
@@ -703,9 +703,9 @@ public abstract class ExternalTableDefinition extends TableDefinition {
    *     to external data sources, plus an additional limit of 10 GB maximum size across all URIs.
    * @param format the source format of the external data
    * @return a builder for an ExternalTableDefinition object given source URIs and format
-   * @see <a href="https://cloud.google.com/bigquery/loading-data-into-bigquery#quota">Quota</a>
+   * @see <a href="https://docs.cloud.google.com/bigquery/quotas#external_tables">Quota</a>
    * @see <a
-   *     href="https://cloud.google.com/bigquery/docs/reference/v2/tables#externalDataConfiguration.sourceFormat">
+   *     href="https://docs.cloud.google.com/bigquery/docs/reference/rest/v2/tables#ExternalDataConfiguration.FIELDS.source_format">
    *     Source Format</a>
    */
   public static ExternalTableDefinition of(String sourceUri, FormatOptions format) {

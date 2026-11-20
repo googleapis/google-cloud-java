@@ -135,7 +135,7 @@ public final class CopyJobConfiguration extends JobConfiguration {
 
     /**
      * Sets the supported operation types (COPY, CLONE, SNAPSHOT or RESTORE) in table copy job. More
-     * info: https://cloud.google.com/bigquery/docs/reference/rest/v2/Job#operationtype
+     * info: https://docs.cloud.google.com/bigquery/docs/reference/rest/v2/Job#operationtype
      */
     public Builder setOperationType(String operationType) {
       this.operationType = operationType;
@@ -145,7 +145,7 @@ public final class CopyJobConfiguration extends JobConfiguration {
     /**
      * Sets the time when the destination table expires. Expired tables will be deleted and their
      * storage reclaimed. More info:
-     * https://cloud.google.com/bigquery/docs/reference/rest/v2/Job#jobconfigurationtablecopy
+     * https://docs.cloud.google.com/bigquery/docs/reference/rest/v2/Job#jobconfigurationtablecopy
      */
     public Builder setDestinationExpirationTime(String destinationExpirationTime) {
       this.destinationExpirationTime = destinationExpirationTime;
@@ -162,7 +162,7 @@ public final class CopyJobConfiguration extends JobConfiguration {
      * Sets whether the job is allowed to create new tables.
      *
      * @see <a
-     *     href="https://cloud.google.com/bigquery/docs/reference/v2/jobs#configuration.copy.createDisposition">
+     *     href="https://docs.cloud.google.com/bigquery/docs/reference/rest/v2/Job#JobConfigurationTableCopy.FIELDS.create_disposition">
      *     Create Disposition</a>
      */
     public Builder setCreateDisposition(JobInfo.CreateDisposition createDisposition) {
@@ -174,7 +174,7 @@ public final class CopyJobConfiguration extends JobConfiguration {
      * Sets the action that should occur if the destination table already exists.
      *
      * @see <a
-     *     href="https://cloud.google.com/bigquery/docs/reference/v2/jobs#configuration.copy.writeDisposition">
+     *     href="https://docs.cloud.google.com/bigquery/docs/reference/rest/v2/Job#JobConfigurationTableCopy.FIELDS.write_disposition">
      *     Write Disposition</a>
      */
     public Builder setWriteDisposition(JobInfo.WriteDisposition writeDisposition) {
@@ -267,7 +267,7 @@ public final class CopyJobConfiguration extends JobConfiguration {
    * Returns whether the job is allowed to create new tables.
    *
    * @see <a
-   *     href="https://cloud.google.com/bigquery/docs/reference/v2/jobs#configuration.copy.createDisposition">
+   *     href="https://docs.cloud.google.com/bigquery/docs/reference/rest/v2/Job#JobConfigurationTableCopy.FIELDS.create_disposition">
    *     Create Disposition</a>
    */
   public JobInfo.CreateDisposition getCreateDisposition() {
@@ -278,7 +278,7 @@ public final class CopyJobConfiguration extends JobConfiguration {
    * Returns the action that should occur if the destination table already exists.
    *
    * @see <a
-   *     href="https://cloud.google.com/bigquery/docs/reference/v2/jobs#configuration.copy.writeDisposition">
+   *     href="https://docs.cloud.google.com/bigquery/docs/reference/rest/v2/Job#JobConfigurationTableCopy.FIELDS.write_disposition">
    *     Write Disposition</a>
    */
   public JobInfo.WriteDisposition getWriteDisposition() {

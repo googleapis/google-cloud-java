@@ -36,10 +36,10 @@ import java.util.Objects;
  * stored procedures.
  *
  * <p>For more information about the REST representation of routines, see:
- * https://cloud.google.com/bigquery/docs/reference/rest/v2/routines
+ * https://docs.cloud.google.com/bigquery/docs/reference/rest/v2/routines
  *
  * <p>For more information about working with scalar functions, see:
- * https://cloud.google.com/bigquery/docs/reference/standard-sql/user-defined-functions
+ * https://docs.cloud.google.com/bigquery/docs/user-defined-functions
  */
 public class RoutineInfo implements Serializable {
 
@@ -84,7 +84,7 @@ public class RoutineInfo implements Serializable {
     /**
      * Sets the routine type for the Builder (e.g. SCALAR_FUNCTION).
      *
-     * <p>See https://cloud.google.com/bigquery/docs/reference/rest/v2/routines
+     * <p>See https://docs.cloud.google.com/bigquery/docs/reference/rest/v2/routines
      */
     public abstract Builder setRoutineType(String routineType);
 
@@ -163,7 +163,7 @@ public class RoutineInfo implements Serializable {
     /**
      * Sets the data governance type for the Builder (e.g. DATA_MASKING).
      *
-     * <p>See https://cloud.google.com/bigquery/docs/reference/rest/v2/routines
+     * <p>See https://docs.cloud.google.com/bigquery/docs/reference/rest/v2/routines
      */
     public abstract Builder setDataGovernanceType(String dataGovernanceType);
 

@@ -45,7 +45,8 @@ public interface BigQuery extends Service<BigQueryOptions>, AutoCloseable {
   /**
    * Fields of a BigQuery Dataset resource.
    *
-   * @see <a href= "https://cloud.google.com/bigquery/docs/reference/v2/datasets#resource">Dataset
+   * @see <a href=
+   *     "https://docs.cloud.google.com/bigquery/docs/reference/rest/v2/datasets#resource:-dataset">Dataset
    *     Resource</a>
    */
   enum DatasetField implements FieldSelector {
@@ -116,7 +117,8 @@ public interface BigQuery extends Service<BigQueryOptions>, AutoCloseable {
   /**
    * Fields of a BigQuery Table resource.
    *
-   * @see <a href= "https://cloud.google.com/bigquery/docs/reference/v2/tables#resource">Table
+   * @see <a href=
+   *     "https://docs.cloud.google.com/bigquery/docs/reference/rest/v2/tables#resource:-table">Table
    *     Resource</a>
    */
   enum TableField implements FieldSelector {
@@ -161,7 +163,7 @@ public interface BigQuery extends Service<BigQueryOptions>, AutoCloseable {
    * Metadata of a BigQuery Table.
    *
    * @see <a href=
-   *     "https://cloud.google.com/bigquery/docs/reference/rest/v2/tables/get#tablemetadataview">Table
+   *     "https://docs.cloud.google.com/bigquery/docs/reference/rest/v2/tables/get#tablemetadataview">Table
    *     Resource</a>
    */
   enum TableMetadataView {
@@ -174,7 +176,8 @@ public interface BigQuery extends Service<BigQueryOptions>, AutoCloseable {
   /**
    * Fields of a BigQuery Model resource.
    *
-   * @see <a href= "https://cloud.google.com/bigquery/docs/reference/v2/models#resource">Model
+   * @see <a href=
+   *     "https://docs.cloud.google.com/bigquery/docs/reference/rest/v2/models#Model">Model
    *     Resource</a>
    */
   enum ModelField implements FieldSelector {
@@ -209,7 +212,8 @@ public interface BigQuery extends Service<BigQueryOptions>, AutoCloseable {
   /**
    * Fields of a BigQuery Routine resource.
    *
-   * @see <a href= "https://cloud.google.com/bigquery/docs/reference/v2/routines#resource">Routine
+   * @see <a href=
+   *     "https://docs.cloud.google.com/bigquery/docs/reference/rest/v2/routines#resource:-routine">Routine
    *     Resource</a>
    */
   enum RoutineField implements FieldSelector {
@@ -242,8 +246,8 @@ public interface BigQuery extends Service<BigQueryOptions>, AutoCloseable {
   /**
    * Fields of a BigQuery Job resource.
    *
-   * @see <a href= "https://cloud.google.com/bigquery/docs/reference/v2/jobs#resource">Job Resource
-   *     </a>
+   * @see <a href= "https://docs.cloud.google.com/bigquery/docs/reference/rest/v2/jobs#resource">Job
+   *     Resource </a>
    */
   enum JobField implements FieldSelector {
     CONFIGURATION("configuration"),
@@ -281,7 +285,7 @@ public interface BigQuery extends Service<BigQueryOptions>, AutoCloseable {
 
     /**
      * Returns an option to specify a label filter. @see <a href=
-     * "https://cloud.google.com/bigquery/docs/adding-using-labels#filtering_datasets_using_labels">Filtering
+     * "https://docs.cloud.google.com/bigquery/docs/filtering-labels#filtering_datasets_using_labels">Filtering
      * using labels</a>
      *
      * @param labelFilter In the form "labels.key:value"
@@ -351,11 +355,11 @@ public interface BigQuery extends Service<BigQueryOptions>, AutoCloseable {
      * for conditional access policy binding in datasets must specify version 3. Datasets with no
      * conditional role bindings in access policy may specify any valid value or leave the field
      * unset. This field will be mapped to <a
-     * href="https://cloud.google.com/iam/docs/policies#versions">IAM Policy version</a> and will be
-     * used to fetch the policy from IAM. If unset or if 0 or 1 the value is used for a dataset with
-     * conditional bindings, access entry with condition will have role string appended by
-     * 'withcond' string followed by a hash value. Please refer to <a
-     * href="https://cloud.google.com/iam/docs/troubleshooting-withcond">Troubleshooting
+     * href="https://docs.cloud.google.com/iam/docs/allow-policies#versions">IAM Policy version</a>
+     * and will be used to fetch the policy from IAM. If unset or if 0 or 1 the value is used for a
+     * dataset with conditional bindings, access entry with condition will have role string appended
+     * by 'withcond' string followed by a hash value. Please refer to <a
+     * href="https://docs.cloud.google.com/iam/docs/troubleshooting-withcond">Troubleshooting
      * withcond</a> for more details.
      */
     public static DatasetOption accessPolicyVersion(Integer accessPolicyVersion) {

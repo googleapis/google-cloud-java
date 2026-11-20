@@ -80,7 +80,8 @@ public abstract class ConnectionSettings {
    * Returns whether nested and repeated fields should be flattened. If set to {@code false} {@link
    * ConnectionSettings.Builder#setAllowLargeResults(Boolean)} must be {@code true}.
    *
-   * @see <a href="https://cloud.google.com/bigquery/docs/data#flatten">Flatten</a>
+   * @see <a
+   *     href="https://docs.cloud.google.com/bigquery/docs/legacy-nested-repeated#flatten">Flatten</a>
    */
   @Nullable
   public abstract Boolean getFlattenResults();
@@ -103,7 +104,7 @@ public abstract class ConnectionSettings {
    * Returns whether the job is allowed to create new tables.
    *
    * @see <a
-   *     href="https://cloud.google.com/bigquery/docs/reference/v2/jobs#configuration.query.createDisposition">
+   *     href="https://docs.cloud.google.com/bigquery/docs/reference/rest/v2/Job#JobConfigurationQuery.FIELDS.create_disposition">
    *     Create Disposition</a>
    */
   @Nullable
@@ -137,7 +138,8 @@ public abstract class ConnectionSettings {
    * query is allowed to create large results at a slight cost in performance. the query is allowed
    * to create large results at a slight cost in performance.
    *
-   * @see <a href="https://cloud.google.com/bigquery/querying-data#largequeryresults">Returning
+   * @see <a
+   *     href="https://docs.cloud.google.com/bigquery/docs/writing-results#large-results">Returning
    *     Large Query Results</a>
    */
   @Nullable
@@ -146,7 +148,7 @@ public abstract class ConnectionSettings {
   /**
    * Returns whether to create a new session.
    *
-   * @see <a href="https://cloud.google.com/bigquery/docs/sessions-create">Create Sessions</a>
+   * @see <a href="https://docs.cloud.google.com/bigquery/docs/sessions">Create Sessions</a>
    */
   @Nullable
   public abstract Boolean getCreateSession();
@@ -190,7 +192,7 @@ public abstract class ConnectionSettings {
    * Returns the action that should occur if the destination table already exists.
    *
    * @see <a
-   *     href="https://cloud.google.com/bigquery/docs/reference/v2/jobs#configuration.query.writeDisposition">
+   *     href="https://docs.cloud.google.com/bigquery/docs/reference/rest/v2/Job#JobConfigurationQuery.FIELDS.write_disposition">
    *     Write Disposition</a>
    */
   @Nullable
@@ -303,7 +305,7 @@ public abstract class ConnectionSettings {
      * cache is only available when {@link ConnectionSettings.Builder#setDestinationTable(TableId)}
      * is not set.
      *
-     * @see <a href="https://cloud.google.com/bigquery/querying-data#querycaching">Query Caching</a>
+     * @see <a href="https://docs.cloud.google.com/bigquery/docs/cached-results">Query Caching</a>
      */
     public abstract Builder setUseQueryCache(Boolean useQueryCache);
 
@@ -312,7 +314,8 @@ public abstract class ConnectionSettings {
      * ConnectionSettings.Builder#setAllowLargeResults(Boolean)} must be {@code true}. By default
      * results are flattened.
      *
-     * @see <a href="https://cloud.google.com/bigquery/docs/data#flatten">Flatten</a>
+     * @see <a
+     *     href="https://docs.cloud.google.com/bigquery/docs/legacy-nested-repeated#flatten">Flatten</a>
      */
     public abstract Builder setFlattenResults(Boolean flattenResults);
 
@@ -341,7 +344,7 @@ public abstract class ConnectionSettings {
      * Sets whether the job is allowed to create tables.
      *
      * @see <a
-     *     href="https://cloud.google.com/bigquery/docs/reference/v2/jobs#configuration.query.createDisposition">
+     *     href="https://docs.cloud.google.com/bigquery/docs/reference/rest/v2/Job#JobConfigurationQuery.FIELDS.create_disposition">
      *     Create Disposition</a>
      */
     public abstract Builder setCreateDisposition(CreateDisposition createDisposition);
@@ -389,7 +392,8 @@ public abstract class ConnectionSettings {
      * query is allowed to create large results at a slight cost in performance. If {@code true}
      * {@link ConnectionSettings.Builder#setDestinationTable(TableId)} must be provided.
      *
-     * @see <a href="https://cloud.google.com/bigquery/querying-data#largequeryresults">Returning
+     * @see <a
+     *     href="https://docs.cloud.google.com/bigquery/docs/writing-results#large-results">Returning
      *     Large Query Results</a>
      */
     public abstract Builder setAllowLargeResults(Boolean allowLargeResults);
@@ -441,7 +445,7 @@ public abstract class ConnectionSettings {
      * Sets the action that should occur if the destination table already exists.
      *
      * @see <a
-     *     href="https://cloud.google.com/bigquery/docs/reference/v2/jobs#configuration.query.writeDisposition">
+     *     href="https://docs.cloud.google.com/bigquery/docs/reference/rest/v2/Job#JobConfigurationQuery.FIELDS.write_disposition">
      *     Write Disposition</a>
      */
     public abstract Builder setWriteDisposition(WriteDisposition writeDisposition);
