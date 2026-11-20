@@ -2609,17 +2609,24 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     validateCatalogIdentifier(catalog);
     validateSchemaIdentifier(schema);
     String sql = getExportedKeysSqlContent();
-    String formattedSql = replaceSqlParameters(sql, catalog, schema, table);
+    String formattedSql = replaceSqlParameters(sql, catalog, schema);
     PreparedStatement stmt = this.connection.prepareStatement(formattedSql);
     if (stmt == null) {
       throw new BigQueryJdbcException("Failed to prepare statement for getExportedKeys");
     }
+    boolean succeeded = false;
     try {
       stmt.closeOnCompletion();
-      return stmt.executeQuery();
+      stmt.setString(1, table);
+      ResultSet rs = stmt.executeQuery();
+      succeeded = true;
+      return rs;
     } catch (SQLException e) {
-      closeStatementIgnoreException(stmt);
       throw new BigQueryJdbcException("Error executing getExportedKeys", e);
+    } finally {
+      if (!succeeded) {
+        closeStatementIgnoreException(stmt);
+      }
     }
   }
 
@@ -5304,8 +5311,8 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     }
   }
 
-  String replaceSqlParameters(String sql, String... params) throws SQLException {
-    return String.format(sql, (Object[]) params);
+  static String replaceSqlParameters(String sql, String catalog, String scope) {
+    return String.format(sql, catalog, scope);
   }
 
   private void closeStatementIgnoreException(Statement stmt) {
