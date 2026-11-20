@@ -145,7 +145,7 @@ public final class CopyJobConfiguration extends JobConfiguration {
     /**
      * Sets the time when the destination table expires. Expired tables will be deleted and their
      * storage reclaimed. More info:
-     * https://docs.cloud.google.com/bigquery/docs/reference/rest/v2/Job#jobconfigurationtablecopy
+     * https://docs.cloud.google.com/bigquery/docs/reference/rest/v2/Job#JobConfigurationTableCopy.FIELDS.destination_expiration_time
      */
     public Builder setDestinationExpirationTime(String destinationExpirationTime) {
       this.destinationExpirationTime = destinationExpirationTime;

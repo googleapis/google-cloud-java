@@ -25,9 +25,8 @@ import javax.annotation.Nullable;
  * A Google BigQuery Model table definition. This definition is used to represent a BigQuery ML
  * model.
  *
- * @see <a
- *     href="https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-create#model_name">BigQuery
- *     ML Model</a>
+ * @see <a href="https://docs.cloud.google.com/bigquery/docs/bqml-introduction">BigQuery ML
+ *     Model</a>
  */
 @AutoValue
 @BetaApi

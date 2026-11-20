@@ -61,7 +61,8 @@ public abstract class TableDefinition implements Serializable {
      * SQL query whose result is persisted. Instances of {@code MaterializedViewDefinition} for this
      * type are implemented by {@link MaterializedViewDefinition}.
      *
-     * @see <a href="https://docs.cloud.google.com/bigquery/docs/views-intro">Views</a>
+     * @see <a href="https://docs.cloud.google.com/bigquery/docs/materialized-views-intro">
+     *     Materialized Views</a>
      */
     public static final Type MATERIALIZED_VIEW = type.createAndRegister("MATERIALIZED_VIEW");
 
@@ -77,9 +78,8 @@ public abstract class TableDefinition implements Serializable {
     /**
      * A BigQuery table representing BigQuery ML Model.
      *
-     * @see <a
-     *     href="https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-create#model_name">
-     *     BigQuery ML Model</a>
+     * @see <a href="https://docs.cloud.google.com/bigquery/docs/bqml-introduction">BigQuery ML
+     *     Model</a>
      */
     public static final Type MODEL = type.createAndRegister("MODEL");
 

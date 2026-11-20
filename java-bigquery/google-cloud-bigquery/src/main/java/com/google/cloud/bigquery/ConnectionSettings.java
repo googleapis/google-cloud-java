@@ -148,7 +148,8 @@ public abstract class ConnectionSettings {
   /**
    * Returns whether to create a new session.
    *
-   * @see <a href="https://docs.cloud.google.com/bigquery/docs/sessions">Create Sessions</a>
+   * @see <a href="https://docs.cloud.google.com/bigquery/docs/sessions#create-session">Create
+   *     Sessions</a>
    */
   @Nullable
   public abstract Boolean getCreateSession();

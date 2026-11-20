@@ -162,9 +162,8 @@ public interface BigQuery extends Service<BigQueryOptions>, AutoCloseable {
   /**
    * Metadata of a BigQuery Table.
    *
-   * @see <a href=
-   *     "https://docs.cloud.google.com/bigquery/docs/reference/rest/v2/tables/get#tablemetadataview">Table
-   *     Resource</a>
+   * @see <a
+   *     href="https://docs.cloud.google.com/bigquery/docs/reference/rest/v2/tables/get#tablemetadataview">TableMetadataView</a>
    */
   enum TableMetadataView {
     BASIC,
@@ -246,8 +245,8 @@ public interface BigQuery extends Service<BigQueryOptions>, AutoCloseable {
   /**
    * Fields of a BigQuery Job resource.
    *
-   * @see <a href= "https://docs.cloud.google.com/bigquery/docs/reference/rest/v2/jobs#resource">Job
-   *     Resource </a>
+   * @see <a href="https://docs.cloud.google.com/bigquery/docs/reference/rest/v2/Job">Job
+   *     Resource</a>
    */
   enum JobField implements FieldSelector {
     CONFIGURATION("configuration"),

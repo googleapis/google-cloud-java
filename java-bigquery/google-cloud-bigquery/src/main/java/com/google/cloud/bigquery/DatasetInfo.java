@@ -558,7 +558,8 @@ public class DatasetInfo implements Serializable {
   /**
    * Return a map for labels applied to the dataset.
    *
-   * @see <a href="https://docs.cloud.google.com/bigquery/docs/adding-labels">Labeling Datasets</a>
+   * @see <a href="https://docs.cloud.google.com/bigquery/docs/adding-labels#adding_dataset_labels">
+   *     Labeling Datasets</a>
    */
   public Map<String, String> getLabels() {
     return labels.userMap();

@@ -86,8 +86,8 @@ public final class QueryJobConfiguration extends JobConfiguration {
   public enum Priority {
     /**
      * Query is executed as soon as possible and count towards the <a
-     * href="https://docs.cloud.google.com/bigquery/quotas">concurrent rate limit and the daily rate
-     * limit</a>.
+     * href="https://docs.cloud.google.com/bigquery/quotas#query_jobs">concurrent rate limit and the
+     * daily rate limit</a>.
      */
     INTERACTIVE,
 
@@ -815,7 +815,8 @@ public final class QueryJobConfiguration extends JobConfiguration {
   /**
    * Returns whether to create a new session.
    *
-   * @see <a href="https://docs.cloud.google.com/bigquery/docs/sessions">Create Sessions</a>
+   * @see <a href="https://docs.cloud.google.com/bigquery/docs/sessions#create-session">Create
+   *     Sessions</a>
    */
   public Boolean createSession() {
     return createSession;

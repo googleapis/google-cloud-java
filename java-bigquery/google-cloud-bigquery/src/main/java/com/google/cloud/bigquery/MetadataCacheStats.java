@@ -26,7 +26,9 @@ import javax.annotation.Nullable;
 /**
  * Represents statistics for metadata caching in BigLake tables.
  *
- * @see <a href="https://docs.cloud.google.com/bigquery/docs/biglake-intro">BigLake Tables</a>
+ * @see <a
+ *     href="https://docs.cloud.google.com/bigquery/docs/biglake-intro#metadata_caching_for_performance">
+ *     BigLake Tables</a>
  */
 @AutoValue
 public abstract class MetadataCacheStats implements Serializable {

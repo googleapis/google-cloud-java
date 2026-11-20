@@ -232,7 +232,7 @@ public abstract class ExternalTableDefinition extends TableDefinition {
      * external data source.
      *
      * @see <a
-     *     href="https://docs.cloud.google.com/bigquery/docs/reference/rest/v2/tables#resource:-table">
+     *     href="https://docs.cloud.google.com/bigquery/docs/reference/rest/v2/tables#Table.FIELDS.max_staleness">
      *     MaxStaleness</a>
      */
     public Builder setMaxStaleness(String maxStaleness) {
@@ -299,7 +299,7 @@ public abstract class ExternalTableDefinition extends TableDefinition {
    * Returns the connection ID used to connect to external data source.
    *
    * @see <a
-   *     href="https://docs.cloud.google.com/bigquery/docs/reference/rest/v2/tables#ExternalDataConfiguration">
+   *     href="https://docs.cloud.google.com/bigquery/docs/reference/rest/v2/tables#ExternalDataConfiguration.FIELDS.connection_id">
    *     ConnectionId</a>
    */
   @Nullable
@@ -360,7 +360,7 @@ public abstract class ExternalTableDefinition extends TableDefinition {
    * Returns the object metadata.
    *
    * @see <a
-   *     href="https://docs.cloud.google.com/bigquery/docs/reference/rest/v2/tables#ExternalDataConfiguration">
+   *     href="https://docs.cloud.google.com/bigquery/docs/reference/rest/v2/tables#ExternalDataConfiguration.FIELDS.object_metadata">
    *     ObjectMetadata</a>
    */
   @Nullable
@@ -391,7 +391,7 @@ public abstract class ExternalTableDefinition extends TableDefinition {
    * Staleness encoded as a string encoding of sql IntervalValue type.
    *
    * @see <a
-   *     href="https://docs.cloud.google.com/bigquery/docs/reference/rest/v2/tables#resource:-table">
+   *     href="https://docs.cloud.google.com/bigquery/docs/reference/rest/v2/tables#Table.FIELDS.max_staleness">
    *     MaxStaleness</a>
    */
   @Nullable

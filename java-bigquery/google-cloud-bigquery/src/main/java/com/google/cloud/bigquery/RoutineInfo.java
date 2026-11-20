@@ -84,7 +84,7 @@ public class RoutineInfo implements Serializable {
     /**
      * Sets the routine type for the Builder (e.g. SCALAR_FUNCTION).
      *
-     * <p>See https://docs.cloud.google.com/bigquery/docs/reference/rest/v2/routines
+     * <p>See https://docs.cloud.google.com/bigquery/docs/reference/rest/v2/routines#routinetype
      */
     public abstract Builder setRoutineType(String routineType);
 
@@ -163,7 +163,8 @@ public class RoutineInfo implements Serializable {
     /**
      * Sets the data governance type for the Builder (e.g. DATA_MASKING).
      *
-     * <p>See https://docs.cloud.google.com/bigquery/docs/reference/rest/v2/routines
+     * <p>See
+     * https://docs.cloud.google.com/bigquery/docs/reference/rest/v2/routines#datagovernancetype
      */
     public abstract Builder setDataGovernanceType(String dataGovernanceType);
 

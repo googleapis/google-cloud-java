@@ -62,7 +62,7 @@ public interface LoadConfiguration {
      * specified, {@code CSV} format is assumed.
      *
      * <p><a
-     * href="https://docs.cloud.google.com/bigquery/docs/reference/rest/v2/tables#ExternalDataConfiguration.FIELDS.source_format">
+     * href="https://docs.cloud.google.com/bigquery/docs/reference/rest/v2/Job#JobConfigurationLoad.FIELDS.source_format">
      * Source Format</a>
      */
     Builder setFormatOptions(FormatOptions formatOptions);
