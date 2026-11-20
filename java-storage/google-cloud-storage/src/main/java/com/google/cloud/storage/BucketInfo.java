@@ -2757,13 +2757,16 @@ public class BucketInfo implements Serializable {
     private CustomerManagedEncryptionEnforcementConfig customerManagedEncryptionEnforcementConfig;
     private CustomerSuppliedEncryptionEnforcementConfig customerSuppliedEncryptionEnforcementConfig;
     private Boolean isUnreachable;
+    private final boolean hasOriginalState;
     private final ImmutableSet.Builder<NamedField> modifiedFields = ImmutableSet.builder();
 
     BuilderImpl(String name) {
       this.name = name;
+      this.hasOriginalState = false;
     }
 
     BuilderImpl(BucketInfo bucketInfo) {
+      this.hasOriginalState = true;
       generatedId = bucketInfo.generatedId;
       project = bucketInfo.project;
       name = bucketInfo.name;
@@ -3061,8 +3064,13 @@ public class BucketInfo implements Serializable {
     public Builder setLabels(@Nullable Map<@NonNull String, @Nullable String> labels) {
       Map<String, String> left = this.labels;
       Map<String, String> right = labels;
-      if (!Objects.equals(left, right)) {
-        diffMaps(BucketField.LABELS, left, right, modifiedFields::add);
+      boolean clearWithoutBase = !hasOriginalState && (right == null || right.isEmpty());
+      if (!Objects.equals(left, right) || clearWithoutBase) {
+        if (clearWithoutBase) {
+          modifiedFields.add(BucketField.LABELS);
+        } else {
+          diffMaps(BucketField.LABELS, left, right, modifiedFields::add);
+        }
         if (right != null) {
           this.labels = new HashMap<>(right);
         } else {
